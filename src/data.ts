@@ -1,6 +1,46 @@
 import { ProductionRecord } from './types';
 
 export const initialProductionData: ProductionRecord[] = [
+  // LUCK OF THE IRISH - Recurring Skit
+  {
+    id: 'story-02',
+    title: 'Luck of the Irish!',
+    description: 'A recurring interdimensional-TV style commercial interruption. Boring reality suddenly hijacked by a maniacal cartoon leprechaun screaming "LUCK OF THE IRISH!!!" followed by a green Looney Tunes-style iris wipe and absurd disclaimers for a product that doesn\'t exist.',
+    type: 'STORY',
+    status: 'IDEA',
+    contentType: 'FICTIONAL_CREATION',
+    provenance: {
+      realityStatus: 'FICTIONAL',
+      captureStatus: 'NOT_CAPTURED',
+      authorship: 'USER_AUTHORED',
+      generationMethods: ['AI_GENERATED', '2D_ANIMATED'],
+      assemblyMode: 'PURE_GENERATED',
+      aiContributions: ['AI_CO_GENERATED'],
+      aggregate: 'FICTIONAL_CREATION'
+    },
+    verified: 'not_applicable',
+    metadata: {
+      recurrence: 'OPTIONAL / RANDOM_TRIGGER'
+    }
+  },
+  {
+    id: 'char-01',
+    title: 'Hood Leprechaun',
+    description: 'Little crazy animated evil manic wild wide-eyed wrinkly mad hatter "leprechaun from the hood" cartoon mascot. Green suit, tiny hat, gold teeth. Transforms from live-action character.',
+    type: 'CHARACTER',
+    status: 'IDEA',
+    contentType: 'FICTIONAL_CREATION',
+    provenance: {
+      realityStatus: 'FICTIONAL',
+      captureStatus: 'NOT_CAPTURED',
+      authorship: 'USER_AUTHORED',
+      generationMethods: ['AI_GENERATED', '2D_ANIMATED'],
+      assemblyMode: 'PURE_GENERATED',
+      aiContributions: ['AI_CO_GENERATED'],
+      aggregate: 'FICTIONAL_CREATION'
+    },
+    verified: 'not_applicable'
+  },
   // A fictional story concept
   {
     id: 'story-01',
@@ -9,18 +49,73 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'STORY',
     status: 'IDEA',
     contentType: 'FICTIONAL_CREATION',
-    provenance: 'USER_CREATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'USER_AUTHORED',
+      generationMethods: [],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['NONE'],
+      aggregate: 'IDEA'
+    },
     verified: 'not_applicable'
   },
   // Previous Brainstormed episode 
   {
+    id: 'char-joe',
+    title: 'Joe',
+    description: 'A normal guy. Average build, average clothes. Speaks casually. Inexplicably defies spatial continuity.',
+    type: 'CHARACTER',
+    status: 'PLANNED',
+    contentType: 'FICTIONAL_CREATION',
+    provenance: {
+      realityStatus: 'FACTUAL',
+      captureStatus: 'RECONSTRUCTED',
+      authorship: 'USER_AUTHORED',
+      generationMethods: ['AI_GENERATED', 'AI_CO_ANIMATED'],
+      assemblyMode: 'RECONSTRUCTED_REAL_EVENT',
+      aiContributions: ['AI_CO_ANIMATED'],
+      aggregate: 'HYBRID_PRODUCTION'
+    },
+    verified: 'not_applicable'
+  },
+  {
     id: 'ep-01',
-    title: 'Episode 01: The Walk',
+    title: 'Episode 1: Motel / Joe Prayer Scene',
     type: 'EPISODE',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'USER_CREATED',
+    provenance: {
+      realityStatus: 'FACTUAL',
+      captureStatus: 'PARTIALLY_CAPTURED',
+      authorship: 'USER_AUTHORED',
+      generationMethods: ['MIXED'],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['AI_CO_ANIMATED'],
+      aggregate: 'HYBRID_PRODUCTION'
+    },
     verified: false
+  },
+  {
+    id: 'sc-joe',
+    title: 'Scene: Joe Prayer',
+    description: 'Mars and Tanesha are sitting outside their motel room. A man named Joe walks past, then inexplicably approaches from the wrong direction, asks for a prayer, offers a Tic Tac, and leaves, breaking spatial reality.',
+    type: 'SCENE',
+    status: 'PLANNED',
+    contentType: 'PLAN',
+    provenance: {
+      realityStatus: 'FACTUAL',
+      captureStatus: 'PARTIALLY_CAPTURED',
+      authorship: 'USER_AUTHORED',
+      generationMethods: ['LIVE_CAPTURE', 'AI_GENERATED', 'AI_CO_ANIMATED'],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['AI_CO_ANIMATED'],
+      aggregate: 'HYBRID_PRODUCTION'
+    },
+    verified: false,
+    metadata: {
+      location: 'UNKNOWN / NEEDS_LOCATION_VERIFICATION'
+    }
   },
   {
     id: 'sc-01',
@@ -28,7 +123,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SCENE',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_ASSISTED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_ASSISTED',
+      generationMethods: ['AI_ASSISTED'],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['AI_ASSISTED'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   {
@@ -37,7 +140,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SCENE',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_ASSISTED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_ASSISTED',
+      generationMethods: ['AI_ASSISTED'],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['AI_ASSISTED'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   {
@@ -46,7 +157,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SCENE',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_ASSISTED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_ASSISTED',
+      generationMethods: ['AI_ASSISTED'],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['AI_ASSISTED'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   {
@@ -55,7 +174,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SCENE',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_ASSISTED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_ASSISTED',
+      generationMethods: ['AI_ASSISTED'],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['AI_ASSISTED'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   {
@@ -64,7 +191,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SCENE',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_ASSISTED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_ASSISTED',
+      generationMethods: ['AI_ASSISTED'],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['AI_ASSISTED'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   // Shots based on brainstorming
@@ -75,7 +210,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SHOT',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_GENERATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_AUTHORED',
+      generationMethods: ['AI_GENERATED'],
+      assemblyMode: 'PURE_GENERATED',
+      aiContributions: ['AI_CO_GENERATED'],
+      aggregate: 'FICTIONAL_CREATION'
+    },
     verified: false
   },
   {
@@ -85,7 +228,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SHOT',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_GENERATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_AUTHORED',
+      generationMethods: ['AI_GENERATED'],
+      assemblyMode: 'PURE_GENERATED',
+      aiContributions: ['AI_CO_GENERATED'],
+      aggregate: 'FICTIONAL_CREATION'
+    },
     verified: false
   },
   {
@@ -95,7 +246,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SHOT',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_GENERATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_AUTHORED',
+      generationMethods: ['AI_GENERATED'],
+      assemblyMode: 'PURE_GENERATED',
+      aiContributions: ['AI_CO_GENERATED'],
+      aggregate: 'FICTIONAL_CREATION'
+    },
     verified: false
   },
   {
@@ -105,7 +264,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SHOT',
     status: 'PLANNED',
     contentType: 'PLAN',
-    provenance: 'AI_GENERATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'AI_AUTHORED',
+      generationMethods: ['AI_GENERATED'],
+      assemblyMode: 'PURE_GENERATED',
+      aiContributions: ['AI_CO_GENERATED'],
+      aggregate: 'FICTIONAL_CREATION'
+    },
     verified: false
   },
   {
@@ -114,7 +281,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SHOT',
     status: 'IDEA',
     contentType: 'IDEA',
-    provenance: 'USER_CREATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'USER_AUTHORED',
+      generationMethods: [],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['NONE'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   {
@@ -123,7 +298,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'SHOT',
     status: 'IDEA',
     contentType: 'IDEA',
-    provenance: 'USER_CREATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'USER_AUTHORED',
+      generationMethods: [],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['NONE'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   // Ideas for VFX/Edits
@@ -133,7 +316,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'VFX',
     status: 'IDEA',
     contentType: 'IDEA',
-    provenance: 'USER_CREATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'USER_AUTHORED',
+      generationMethods: [],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['NONE'],
+      aggregate: 'IDEA'
+    },
     verified: false
   },
   {
@@ -142,7 +333,15 @@ export const initialProductionData: ProductionRecord[] = [
     type: 'VFX',
     status: 'IDEA',
     contentType: 'IDEA',
-    provenance: 'USER_CREATED',
+    provenance: {
+      realityStatus: 'UNKNOWN',
+      captureStatus: 'UNKNOWN',
+      authorship: 'USER_AUTHORED',
+      generationMethods: [],
+      assemblyMode: 'MIXED_MEDIA',
+      aiContributions: ['NONE'],
+      aggregate: 'IDEA'
+    },
     verified: false
   }
 ];

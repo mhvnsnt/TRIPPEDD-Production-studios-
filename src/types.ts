@@ -1,20 +1,6 @@
-export type ContentType = 
-  | 'REAL_PRODUCTION' 
-  | 'FICTIONAL_CREATION' 
-  | 'HYBRID_PRODUCTION' 
-  | 'REFERENCE' 
-  | 'IDEA' 
-  | 'PLAN';
 
-export type Provenance = 
-  | 'USER_CREATED' 
-  | 'USER_CAPTURED' 
-  | 'AI_GENERATED' 
-  | 'AI_ASSISTED' 
-  | 'IMPORTED' 
-  | 'GENERATED_FROM_REAL_MEDIA' 
-  | 'GENERATED_FROM_FICTION' 
-  | 'UNKNOWN';
+
+import { ContentProvenance, AggregateClassification } from "./core/types";
 
 export type ProductionStatus = 
   | 'IDEA'
@@ -35,12 +21,13 @@ export interface ProductionRecord {
   type: RecordType;
   status: ProductionStatus;
   
-  contentType: ContentType;
-  provenance: Provenance;
+  contentType: AggregateClassification;
+  provenance: ContentProvenance;
   verified: boolean | 'not_applicable';
   
   evidence?: string;
   createdAt?: string;
   verifiedAt?: string;
+  metadata?: any;
 }
 

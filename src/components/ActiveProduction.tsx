@@ -81,7 +81,7 @@ export function ActiveProduction() {
                   <div className="text-xs font-mono text-blue-500 mb-1 flex items-center gap-2">
                     TERMINAL: {activeRecord.id.toUpperCase()}
                     <span className="text-neutral-500">|</span>
-                    <span className="text-neutral-400">PROVENANCE: {activeRecord.provenance}</span>
+                    <span className="text-neutral-400">PROVENANCE: {activeRecord.provenance.aggregate}</span>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">{activeRecord.title}</h3>
                   {activeRecord.description && (
@@ -124,7 +124,7 @@ export function ActiveProduction() {
                   <div className="text-center text-neutral-500 flex flex-col items-center">
                     <Video size={32} className="mb-3 opacity-50" />
                     <p className="text-sm font-medium mb-1">No verified footage exists.</p>
-                    <p className="text-xs text-neutral-600 max-w-xs">This item was generated from {activeRecord.provenance.toLowerCase().replace('_', ' ')}. Upload footage to mark it as verified.</p>
+                    <p className="text-xs text-neutral-600 max-w-xs">This item was generated from {activeRecord.provenance.aggregate.toLowerCase().replace('_', ' ')}. Upload footage to mark it as verified.</p>
                   </div>
                 )}
               </div>

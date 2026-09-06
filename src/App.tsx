@@ -9,7 +9,14 @@ import { Dashboard } from './components/Dashboard';
 import { ActiveProduction } from './components/ActiveProduction';
 import { ShowBible } from './components/ShowBible';
 import { AILab } from './components/AILab';
+import { ToolManager } from './components/ToolManager';
+import { StoryWorkspace } from './components/StoryWorkspace';
+import { JobsPipeline } from './components/JobsPipeline';
+import { AssetWorkspace } from './components/AssetWorkspace';
+import { FormatsWorkspace } from './components/FormatsWorkspace';
+import { EpisodeWorkspace } from './components/EpisodeWorkspace';
 import { motion, AnimatePresence } from 'motion/react';
+import { Wrench } from 'lucide-react';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -20,13 +27,41 @@ export default function App() {
         return <Dashboard setCurrentView={setCurrentView} />;
       case 'production':
         return <ActiveProduction />;
+      case 'formats':
+        return <FormatsWorkspace />;
       case 'bible':
         return <ShowBible />;
       case 'ailab':
         return <AILab />;
+      case 'tool_manager':
+        return <ToolManager />;
+      case 'episodes':
+        return <EpisodeWorkspace />;
+      case 'story':
+        return <StoryWorkspace />;
+      case 'jobs':
+        return <JobsPipeline />;
+      case 'assets':
+        return <AssetWorkspace />;
+      // Placeholders for un-implemented tools/views
+      case 'tool_video':
+      case 'tool_comfy':
+      case 'tool_blender':
+      case 'tool_unreal':
+      case 'tool_audio':
+      case 'tool_capture':
+      case 'tool_2d':
+      case 'settings':
+        return (
+          <div className="flex-1 flex flex-col items-center justify-center text-neutral-500 h-full p-8 text-center min-h-full">
+            <Wrench size={48} className="mb-4 opacity-20" />
+            <h2 className="text-xl font-bold text-neutral-400 mb-2 font-mono tracking-widest uppercase">Integration Not Implemented</h2>
+            <p className="text-sm max-w-md">The {currentView.replace('tool_', '')} module is pending implementation in the Tool Registry.</p>
+          </div>
+        );
       default:
         return (
-          <div className="flex-1 flex items-center justify-center text-neutral-500 font-mono text-sm h-full">
+          <div className="flex-1 flex items-center justify-center text-neutral-500 font-mono text-sm min-h-full">
             Module [{currentView}] in development...
           </div>
         );
@@ -39,7 +74,7 @@ export default function App() {
       <main className="flex-1 overflow-y-auto bg-neutral-950/50 relative">
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
-        <div className="relative z-10 min-h-full">
+        <div className="relative z-10 min-h-full h-full flex flex-col">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentView}
@@ -47,7 +82,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="h-full"
+              className="flex-1 flex flex-col"
             >
               {renderView()}
             </motion.div>
@@ -57,4 +92,3 @@ export default function App() {
     </div>
   );
 }
-

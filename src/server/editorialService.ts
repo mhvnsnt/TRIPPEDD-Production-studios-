@@ -19,6 +19,7 @@ import { renderScene, MissingRenderMediaError, type RenderResult } from '../core
 import { parseInstruction, applyInstruction, type EditIntent } from '../core/editorial/naturalEdit';
 import { explainScene, type SceneExplanation } from '../core/editorial/explain';
 import { runnerRoot } from '../core/tools/execution/runnerRoot';
+import { executeTool } from '../core/tools/execution/executor';
 import type { EditorialSceneCandidate, StoryBeat } from '../core/editorial/types';
 import type { MediaJob } from '../core/types';
 
@@ -184,8 +185,28 @@ export class EditorialService {
         path: res.outputPath, durationSec: res.durationSec ?? 0,
         renderedAt: new Date().toISOString(), version,
       });
+      // Transcode a VP9/WebM companion in the background. H.264 plays in every
+      // normal browser, but not in builds shipped without proprietary codecs,
+      // and a creator should never meet "no supported source" because of that.
+      void this.makeWebm(res.outputPath);
     }
     return { ...res, version };
+  }
+
+  /** WebM companion so playback never depends on H.264 being available. */
+  private async makeWebm(mp4Path: string): Promise<void> {
+    const webm = mp4Path.replace(/\.mp4$/, '.webm');
+    try {
+      const { existsSync } = await import('fs');
+      if (existsSync(webm)) return;
+      await executeTool({
+        tool: 'ffmpeg', version: 'preview-webm', executablePath: this.ffmpegPath,
+        args: ['-y', '-v', 'error', '-i', mp4Path,
+               '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '34', '-deadline', 'realtime', '-cpu-used', '5',
+               '-c:a', 'libopus', '-b:a', '96k', webm],
+        sourceFileId: 'preview-webm', timeoutMs: 900_000,
+      });
+    } catch { /* the mp4 remains the primary; a missing companion is not fatal */ }
   }
 
   explain(sceneId: string): SceneExplanation | undefined {

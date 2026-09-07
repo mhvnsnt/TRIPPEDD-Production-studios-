@@ -3,6 +3,7 @@ import { queueManager } from "./src/server/queueManager";
 import { ToolProvisioner } from "./src/core/tools/provisioning/ToolProvisioner";
 import { DriveWatcher } from "./src/server/driveWatcher";
 import { driveCredentials } from "./src/server/driveCredentials";
+import { ingestDriveFolder } from "./src/server/driveDownload";
 import { editorialRouter } from "./src/server/editorialRoute";
 import { editorialService } from "./src/server/editorialService";
 import path from "path";
@@ -131,6 +132,25 @@ async function startServer() {
       }
     });
 
+  /**
+   * Pull the real footage out of the configured Drive folder.
+   * Never falls back to generated media: if Drive cannot be reached it says so.
+   */
+  app.post("/api/footage/from-drive", async (req, res) => {
+    const folder = req.body?.folder || WATCH_FOLDER;
+    const dest = pathMod.join(process.cwd(), "footage");
+    const py = pathMod.join(process.cwd(), ".trippedd_venv", "bin", "python");
+    try {
+      const report = await ingestDriveFolder(folder, dest, py);
+      res.status(report.ok ? 200 : 409).json(report);
+    } catch (e: any) {
+      res.status(500).json({
+        ok: false, route: "NONE",
+        blocker: "REAL SOURCE MEDIA IS NOT ACCESSIBLE — " + e.message,
+      });
+    }
+  });
+
   /** What footage is sitting in the drop folder right now. */
   app.get("/api/footage", (_req, res) => {
     const dir = pathMod.join(process.cwd(), "footage");
@@ -195,6 +215,17 @@ async function startServer() {
     if (!r || !fs.existsSync(r.path)) {
       return res.status(404).json({ error: "this scene has not been rendered yet" });
     }
+    // Serve the WebM companion when asked for, so a browser without H.264 can
+    // still play the cut.
+    if (req.query.f === "webm") {
+      const webm = r.path.replace(/\.mp4$/, ".webm");
+      if (fs.existsSync(webm)) {
+        res.type("video/webm");
+        return res.sendFile(pathMod.resolve(webm));
+      }
+      return res.status(404).json({ error: "webm companion not ready yet" });
+    }
+    res.type("video/mp4");
     res.sendFile(pathMod.resolve(r.path));
   });
 
@@ -440,38 +471,18 @@ async function startServer() {
         }
         jobState.progress = 30;
 
-        jobState.logs.push('[ffmpeg] Checking keyframe extraction dependency...');
-        try {
-          await execAsync('ffmpeg -version');
-          jobState.logs.push('[ffmpeg] Executing... (Simulated extraction to avoid container disk overload)');
-          // Real command would be: ffmpeg -i mediaUrl -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr thumb_%03d.jpg
-          jobState.analysis.ffmpeg.status = 'COMPLETED';
-          jobState.analysis.ffmpeg.keyframesExtracted = 0; // Did not actually extract to disk
-          jobState.logs.push('[ffmpeg] Execution successful.');
-        } catch (e: any) {
-          jobState.logs.push(`[ffmpeg] UNAVAILABLE or FAILED: ${e.message}`);
-          jobState.analysis.ffmpeg.status = 'UNAVAILABLE';
-        }
-        jobState.progress = 50;
-
-        jobState.logs.push('[pyscenedetect] Checking dependency...');
-        try {
-          await execAsync('scenedetect version');
-          jobState.analysis.pyscenedetect.status = 'COMPLETED';
-        } catch (e: any) {
-          jobState.logs.push(`[pyscenedetect] UNAVAILABLE: ${e.message}`);
-          jobState.analysis.pyscenedetect.status = 'UNAVAILABLE';
-        }
+        // REMOVED: this block marked ffmpeg/pyscenedetect/whisper COMPLETED on the
+        // strength of `--version` alone, and logged "(Simulated extraction)" while
+        // recording keyframesExtracted: 0. Analysis now runs only through the real
+        // pipeline in queueManager, where a tool is COMPLETED only after a process
+        // has actually run against the media.
+        jobState.analysis.ffmpeg.status = 'UNAVAILABLE';
+        jobState.logs.push('[ffmpeg] Not run here — use the real pipeline (Make The Show) which executes tools against the media.');
+        jobState.analysis.pyscenedetect.status = 'UNAVAILABLE';
         jobState.progress = 70;
 
-        jobState.logs.push('[whisper] Checking dependency...');
-        try {
-          await execAsync('whisper --version');
-          jobState.analysis.whisper.status = 'COMPLETED';
-        } catch (e: any) {
-          jobState.logs.push(`[whisper] UNAVAILABLE: ${e.message}`);
-          jobState.analysis.whisper.status = 'UNAVAILABLE';
-        }
+        jobState.analysis.whisper.status = 'UNAVAILABLE';
+
         jobState.progress = 90;
 
         jobState.logs.push('[VLM] Checking visual observation dependency...');

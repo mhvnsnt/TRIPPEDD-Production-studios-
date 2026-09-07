@@ -96,6 +96,24 @@ export function MakeTheShowWorkspace() {
 
   const loadNextRef = useRef<(() => Promise<void>) | null>(null);
 
+  /** Pull the real footage from the configured Drive folder. */
+  const getFromDrive = useCallback(async () => {
+    setBusy('drive');
+    setErr(null);
+    try {
+      const r = await fetch('/api/footage/from-drive', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}',
+      });
+      const d = await r.json();
+      if (!d.ok) {
+        // The real reason, not a shrug — and never a generated stand-in.
+        setErr(`${d.blocker}${d.howToFix ? `\n\n${d.howToFix}` : ''}`);
+        return;
+      }
+      await loadFootage();
+    } catch (e: any) { setErr(e.message); } finally { setBusy(null); }
+  }, [loadFootage]);
+
   const loadEpisode = useCallback(async () => {
     try { setEpisode(await (await fetch('/api/editorial/episode')).json()); } catch { /* shown elsewhere */ }
   }, []);
@@ -187,6 +205,11 @@ export function MakeTheShowWorkspace() {
           )}
         </div>
         <div className="flex gap-2">
+          <button onClick={getFromDrive} disabled={!!busy || !!uploading}
+            className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-900 disabled:opacity-40">
+            {busy === 'drive' ? <Loader2 size={15} className="animate-spin" /> : <Upload size={15} />}
+            {busy === 'drive' ? 'Getting your footage…' : 'Get my footage from Drive'}
+          </button>
           <button onClick={() => fileInput.current?.click()} disabled={!!busy || !!uploading}
             className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-neutral-700 hover:bg-neutral-900 disabled:opacity-40">
             <Upload size={15} />Add footage
@@ -310,7 +333,11 @@ export function MakeTheShowWorkspace() {
                     <span className="text-sm">{busy === 'working' ? 'Re-cutting it…' : 'Cutting the scene together…'}</span>
                   </div>
                 ) : videoUrl ? (
-                  <video ref={videoRef} key={videoUrl} src={videoUrl} controls className="w-full h-full" />
+                  // Two sources: the browser plays whichever codec it supports.
+                  <video ref={videoRef} key={videoUrl} controls className="w-full h-full">
+                    <source src={videoUrl} type="video/mp4" />
+                    <source src={`${videoUrl}${videoUrl.includes('?') ? '&' : '?'}f=webm`} type="video/webm" />
+                  </video>
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-neutral-600 text-sm px-8 text-center">
                     Couldn't cut this one together. The footage may not be on this machine.

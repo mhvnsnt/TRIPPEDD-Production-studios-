@@ -98,6 +98,7 @@ const BEAT_TO_SEGMENT: Record<string, string> = {
   'walk.motel_chilling': 'EP01_MOTEL',
   'walk.motel_clerk': 'EP01_MOTEL',
   'walk.shumafied_pack': 'EP01_SHUMAFIED',
+  'walk.shumafied_letdown': 'EP01_SHUMAFIED_LETDOWN',
   'walk.cigar_walk': 'EP01_CIGARS',
   'walk.cigar_trip': 'EP01_CIGARS',
   'walk.bag_interruption': 'EP01_BAG_SEQUENCE',

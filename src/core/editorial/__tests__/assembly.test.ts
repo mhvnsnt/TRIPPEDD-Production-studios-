@@ -3,6 +3,8 @@ import { assembleScenes } from '../assembler';
 import { classifyAll, classifySegment } from '../classification';
 import { reconcileInventory, type ObservationWithSource } from '../reconciliation';
 import { DEFAULT_STORY_INVENTORY } from '../storyInventory';
+import { checkCanonCompliance } from '../../canon/canonCompliance';
+import { EP01_LOCKED_ORDER } from '../../canon/episode01';
 
 let n = 0;
 function o(sourceFileId: string, text: string, start: number, end: number, type = 'TRANSCRIPT_SEGMENT'): ObservationWithSource {
@@ -195,5 +197,74 @@ describe('Assembly — beat map and gaps', () => {
     const s = build(bagClip())[0];
     expect(Array.isArray(s.missingEvidence)).toBe(true);
     expect(s.generatedAssetIds).toEqual([]);
+  });
+});
+
+/**
+ * Canon ordering. The autonomous first pass has to land in the episode the
+ * creator locked, not in the order the phone happened to record the day.
+ */
+describe('assembleScenes — canon ordering', () => {
+  /**
+   * Two clips whose physical order is the OPPOSITE of the episode order: the
+   * Joe encounter (canon position 8) is in the first clip, the motel (canon
+   * position 2) in the second. Physical order sorts by clip, so Joe comes
+   * first; the canon spine has to flip them. A fixture where both clips map to
+   * the same segment would pass this test without ordering anything.
+   */
+  const obs = [
+    o('c1', 'hey joe what is your name man', 2, 8),
+    o('c1', 'joe wants some tic tacs', 8.5, 14),
+    o('c2', 'we are just chilling here at the motel room', 2, 8),
+    o('c2', 'this motel room is alright for the night', 8.5, 14),
+  ];
+
+  function build(useCanonOrder: boolean) {
+    const beats = DEFAULT_STORY_INVENTORY;
+    const reconciled = reconcileInventory(obs as any, beats).beats;
+    return assembleScenes({
+      productionUnitId: 'walk_ep1', observations: obs as any,
+      reconciled, beats, useCanonOrder,
+    });
+  }
+
+  it('ties scenes to canon segments and stamps the id it decided on', () => {
+    const scenes = build(true).filter((s) => s.canonSegmentId);
+    expect(scenes.length).toBeGreaterThan(0);
+    for (const s of scenes) expect(EP01_LOCKED_ORDER).toContain(s.canonSegmentId!);
+  });
+
+  it('orders the cut by the locked spine, not by physical chronology', () => {
+    const all = build(true).filter((s) => s.canonSegmentId);
+    const byEditorial = [...all].sort((a, b) => a.proposedOrder - b.proposedOrder).map((s) => s.canonSegmentId!);
+    const byPhysical = [...all].sort((a, b) => a.physicalOrder - b.physicalOrder).map((s) => s.canonSegmentId!);
+
+    // The motel is canon position 2, Joe position 8 — the cut must flip them.
+    expect(byEditorial.indexOf('EP01_MOTEL')).toBeLessThan(byEditorial.indexOf('EP01_JOE'));
+    // And this only means something because physical order had them the other way.
+    expect(byPhysical.indexOf('EP01_JOE')).toBeLessThan(byPhysical.indexOf('EP01_MOTEL'));
+    expect(byEditorial).not.toEqual(byPhysical);
+
+    // The canon-ordered cut passes its own gate. That is the point of it.
+    expect(checkCanonCompliance(build(true)).violations
+      .filter((v) => v.origin === 'ASSEMBLY')).toEqual([]);
+  });
+
+  it('FAILS its own gate when canon ordering is off — proving the ordering does the work', () => {
+    const v = checkCanonCompliance(build(false)).violations.filter((x) => x.origin === 'ASSEMBLY');
+    expect(v.map((x) => x.constraintId)).toContain('C10_NO_LOCKED_SEGMENT_RELOCATED');
+  });
+
+  it('records every canon reorder as a reorder, naming the locked position', () => {
+    for (const s of build(true)) {
+      if (s.proposedOrder === s.physicalOrder) continue;
+      expect(s.reorderReason, `${s.proposedTitle} moved with no reason`).toBeTruthy();
+      expect(s.reorderReason).toContain('Physical chronology is unchanged');
+    }
+  });
+
+  it('leaves the assembly in physical order when canon ordering is off', () => {
+    const scenes = build(false);
+    for (const s of scenes) expect(s.proposedOrder).toBe(s.physicalOrder);
   });
 });

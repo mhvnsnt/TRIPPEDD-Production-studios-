@@ -36,6 +36,18 @@ export const WALK_STORY_BEATS: StoryBeat[] = [
     'The bit involving the Shumafied pack/device.', 'EXPLICIT',
     { dialogue: ['shumafied', 'shuma', 'pack', 'device'], entities: ['shumafied'] }),
 
+  // The letdown is a locked EP01 segment (EP01_SHUMAFIED_LETDOWN) and the setup
+  // the Luck of the Irish commercial pays off. Without a beat here, the
+  // reconciliation could never find it in the footage and the autonomous
+  // assembly could never place it — the canon spine would have a permanent hole
+  // at exactly the position the creator has had to restate most often.
+  beat('walk.shumafied_letdown', 'WALK', 'Shumafied disappointment + cigar decision',
+    'The Shumafied thing is not working, leading into the conversation about going to get cigars.',
+    'EXPLICIT',
+    { dialogue: ['not doing shit', "isn't doing", 'not working', 'nothing', 'lets go get', 'we should get',
+                 'go get some cigars', 'shumafied'],
+      entities: ['shumafied'] }),
+
   beat('walk.cigar_walk', 'WALK', 'Walking for cigars',
     'Walking out to get cigars.', 'EXPLICIT',
     { dialogue: ['cigar', 'cigars', 'store', 'walk', 'swisher', 'black'], entities: ['cigars'] }),

@@ -17,6 +17,8 @@ import type {
   BeatMapEntry, ReconciledBeat, StoryBeat, CandidateKind,
 } from './types';
 import { classifyAll, type ClassifiedSegment } from './classification';
+import { resolveCanonSegment } from '../canon/canonCompliance';
+import { EPISODE_01, lockedOrder } from '../canon/episode01';
 
 export interface AssemblyInput {
   productionUnitId: string;
@@ -30,6 +32,13 @@ export interface AssemblyInput {
    * built from that file declare the gap and carry reduced confidence.
    */
   blockedTools?: Record<string, string[]>;
+  /**
+   * Order the first pass by the locked EP01 canon rather than by physical
+   * chronology. This is what makes the autonomous assembly land in the episode
+   * the creator actually asked for instead of the order the phone recorded it.
+   * A narrativeOrder, when given, still wins — it is the creator speaking.
+   */
+  useCanonOrder?: boolean;
 }
 
 /** Pad around evidence so a cut does not start mid-word. */
@@ -408,6 +417,43 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
         c.reorderReason =
           `Editorial position ${i} differs from physical position ${c.physicalOrder}: ` +
           `placed to follow the creator's narrative order. Physical chronology is unchanged.`;
+      }
+    });
+  } else if (input.useCanonOrder) {
+    // The locked EP01 spine. Each candidate is tied to a canon segment (and the
+    // id is stamped on it, so the compliance check reads a decision rather than
+    // re-deriving one). Anything that does not resolve keeps physical order and
+    // sits after the spine — it is extra material, not a reason to guess.
+    const canonRank = new Map(lockedOrder().map((id, i) => [id, i]));
+    const spineSize = canonRank.size;
+
+    for (const c of candidates) {
+      const m = resolveCanonSegment({
+        id: c.id, proposedTitle: c.proposedTitle,
+        proposedOrder: c.proposedOrder, physicalOrder: c.physicalOrder,
+        storyBeatIds: c.storyBeatIds, canonSegmentId: c.canonSegmentId,
+      });
+      if (m.canonSegmentId) c.canonSegmentId = m.canonSegmentId;
+    }
+
+    const rankOf = (c: EditorialSceneCandidate) =>
+      c.canonSegmentId !== undefined ? canonRank.get(c.canonSegmentId) ?? spineSize : spineSize;
+
+    const byCanon = [...candidates].sort((a, b) => {
+      const ar = rankOf(a), br = rankOf(b);
+      return ar === br ? a.physicalOrder - b.physicalOrder : ar - br;
+    });
+    byCanon.forEach((c, i) => {
+      c.proposedOrder = i;
+      if (c.proposedOrder !== c.physicalOrder) {
+        const seg = EPISODE_01.find((x) => x.id === c.canonSegmentId);
+        c.reorderReason = seg
+          ? `Editorial position ${i} differs from physical position ${c.physicalOrder}: ` +
+            `placed at the locked EP01 position for ${seg.name}. ${seg.placementReason} ` +
+            'Physical chronology is unchanged.'
+          : `Editorial position ${i} differs from physical position ${c.physicalOrder}: ` +
+            'material outside the locked EP01 spine, kept in physical order behind it. ' +
+            'Physical chronology is unchanged.';
       }
     });
   } else {

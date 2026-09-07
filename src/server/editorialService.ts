@@ -52,6 +52,8 @@ export class EditorialService {
   private lastBuiltAt?: string;
   private beats: StoryBeat[] = DEFAULT_STORY_INVENTORY;
   private narrativeOrder?: string[];
+  /** EP01 assembles in canon order by default; physical order is the opt-out. */
+  private useCanonOrder = true;
   /** sourceFileId -> local media path, for export. */
   private mediaPaths = new Map<string, string>();
   /** sourceFileId -> analyzers that were resource-blocked during its ingest. */
@@ -76,6 +78,8 @@ export class EditorialService {
   getLastBuiltAt(): string | undefined { return this.lastBuiltAt; }
 
   setNarrativeOrder(order: string[] | undefined): void { this.narrativeOrder = order; }
+  /** Off only if someone deliberately wants a physical-chronology assembly. */
+  setCanonOrder(on: boolean): void { this.useCanonOrder = on; }
   registerMedia(sourceFileId: string, localPath: string): void { this.mediaPaths.set(sourceFileId, localPath); }
   getMediaPath(id: string): string | undefined { return this.mediaPaths.get(id); }
   getMediaMap(): Record<string, string> { return Object.fromEntries(this.mediaPaths); }
@@ -121,6 +125,10 @@ export class EditorialService {
       beats: this.beats,
       narrativeOrder: this.narrativeOrder,
       blockedTools: this.blockedTools,
+      // The first pass lands in the creator's locked EP01 order, not in the
+      // order the phone recorded the day. An explicit narrativeOrder still
+      // wins — that is the creator speaking directly.
+      useCanonOrder: this.useCanonOrder,
     });
 
     // Preserve creator decisions across rebuilds.

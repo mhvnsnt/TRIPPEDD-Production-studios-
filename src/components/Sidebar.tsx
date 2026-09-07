@@ -19,7 +19,7 @@ import {
   ChevronRight,
   Activity,
   Layers
-} from 'lucide-react';
+, Scissors} from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -82,6 +82,7 @@ export function Sidebar({ currentView, setCurrentView }: { currentView: string, 
     { id: 'production', label: 'Active Production', icon: Clapperboard },
     { id: 'ingest', label: 'Media Ingest', icon: Video },
     { id: 'physical_evidence', label: 'Evidence Review', icon: Search },
+    { id: 'editorial_review', label: 'Editorial Review', icon: Scissors },
     { id: 'assets', label: 'Assets', icon: FolderOpen },
     { id: 'ailab', label: 'AI Lab', icon: Wand2 },
   ];

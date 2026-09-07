@@ -247,6 +247,57 @@ describe('Pipeline — temporary media handling', () => {
   }, 30_000);
 });
 
+describe('Pipeline — analyzers run in dependency order', () => {
+  it('an analyzer waits for the one it depends on', async () => {
+    const order: string[] = [];
+    const mk = (id: string, dependsOn?: string[]): Analyzer => ({
+      id, requiresTool: id, resourceClass: 'LIGHT', requiresLocalFile: false, dependsOn,
+      async run(ctx) {
+        order.push(`${id}:start`);
+        await new Promise((r) => setTimeout(r, 60));
+        order.push(`${id}:end`);
+        return { tool: id, status: 'COMPLETED', provenance: adapterDefined(id, ctx.fileId, 't'), observations: [], derivedArtifacts: [] } as AnalyzerResult;
+      },
+    });
+
+    const qm = new QueueManager({
+      provisioner: registry({ 'faster-whisper': 'AVAILABLE', whisperx: 'AVAILABLE' }),
+      analyzers: [mk('whisperx', ['faster-whisper']), mk('faster-whisper')],
+      workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
+    });
+
+    const j = job('f_dep');
+    qm.addJob(j);
+    await qm.runPipeline(j);
+
+    // Alignment must not begin before the transcript pass has finished.
+    expect(order.indexOf('whisperx:start')).toBeGreaterThan(order.indexOf('faster-whisper:end'));
+  }, 30_000);
+
+  it('marks a dependent analyzer UNAVAILABLE when its prerequisite never completes', async () => {
+    const dependent: Analyzer = {
+      id: 'whisperx', requiresTool: 'whisperx', resourceClass: 'LIGHT',
+      requiresLocalFile: false, dependsOn: ['faster-whisper'],
+      async run() { throw new Error('should never run'); },
+    };
+    const qm = new QueueManager({
+      // The prerequisite's tool is missing, so it can never complete.
+      provisioner: registry({ whisperx: 'AVAILABLE' }),
+      analyzers: [dependent],
+      workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
+    });
+
+    const j = job('f_dep2');
+    qm.addJob(j);
+    await qm.runPipeline(j);
+
+    const wx = (j.tools as any).whisperx;
+    expect(wx.status).toBe('UNAVAILABLE');
+    expect(wx.error).toMatch(/prerequisite/i);
+    expect(j.evidenceRefs).toEqual([]);
+  }, 30_000);
+});
+
 describe('Pipeline — a job never runs twice concurrently', () => {
   it('a second runPipeline call joins the in-flight run instead of racing it', async () => {
     let runs = 0;

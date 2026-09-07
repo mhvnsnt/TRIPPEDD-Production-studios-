@@ -27,6 +27,14 @@ export interface QueueDeps {
   /** Streams the source to disk. Returns bytes written. */
   downloadMedia?: (job: MediaJob, dest: string) => Promise<number>;
   workRoot?: string;
+  /**
+   * Keep acquired media in a managed library instead of deleting it.
+   * Editing genuinely requires the media on disk — an edit project that
+   * references files we threw away is not an edit project. Derived scratch
+   * (extracted frames, scene CSVs) is still cleaned up either way.
+   */
+  retainMedia?: boolean;
+  mediaLibraryDir?: string;
 }
 
 /**
@@ -54,6 +62,7 @@ export class QueueManager {
   private analyzers: Analyzer[];
   private provisioner?: { getTool(id: string): ToolHandle | undefined };
   private workRoot: string;
+  private mediaLibraryDir: string;
 
   constructor(deps: QueueDeps = {}) {
     this.deps = deps;
@@ -61,6 +70,11 @@ export class QueueManager {
     this.analyzers = deps.analyzers ?? ALL_ANALYZERS;
     this.provisioner = deps.provisioner;
     this.workRoot = deps.workRoot ?? path.join(os.tmpdir(), 'trippedd_pipeline');
+    this.mediaLibraryDir = deps.mediaLibraryDir ?? path.join(runnerRoot(), '.trippedd_tools', 'media');
+  }
+
+  getMediaLibraryDir(): string {
+    return this.mediaLibraryDir;
   }
 
   /** Late-bind the provisioner once boot-time provisioning has finished. */
@@ -235,38 +249,70 @@ export class QueueManager {
 
     const observations: MachineObservation[] = [];
 
-    // Light work runs concurrently; heavier classes are bounded by the
-    // scheduler, so a burst of clips cannot start five transcriptions at once.
-    await Promise.all(
-      runnable.map((a) =>
-        this.scheduler.withSlot(a.resourceClass, async () => {
-          setToolStatus(job, a.requiresTool, { status: 'RUNNING' });
-          try {
-            const res = await a.run(ctx);
-            setToolStatus(job, a.requiresTool, {
-              status: res.status === 'COMPLETED' ? 'COMPLETED' : res.status === 'UNAVAILABLE' ? 'UNAVAILABLE' : 'FAILED',
-              error: res.error,
-              provenance: res.provenance,
-              data: res.data,
-            });
-            if (res.status === 'COMPLETED') observations.push(...res.observations);
-            this.log(
-              job.fileId,
-              `[${a.requiresTool}] ${res.status}` +
-                (res.status === 'COMPLETED' ? ` — ${res.observations.length} observation(s)` : res.error ? ` — ${res.error}` : '')
-            );
-          } catch (e: any) {
-            setToolStatus(job, a.requiresTool, { status: 'FAILED', error: e?.message ?? String(e) });
-            this.log(job.fileId, `[${a.requiresTool}] FAILED — ${e?.message ?? e}`);
-          }
-        })
-      )
-    );
+    // Analyzers run in dependency waves: everything with its prerequisites met
+    // goes concurrently, bounded by resource class. WhisperX therefore waits for
+    // the transcript it aligns rather than racing it.
+    const completed = new Set<string>();
+    const pending = [...runnable];
+    const runOne = (a: Analyzer) =>
+      this.scheduler.withSlot(a.resourceClass, async () => {
+        setToolStatus(job, a.requiresTool, { status: 'RUNNING' });
+        try {
+          const res = await a.run(ctx);
+          setToolStatus(job, a.requiresTool, {
+            status: res.status === 'COMPLETED' ? 'COMPLETED' : res.status === 'UNAVAILABLE' ? 'UNAVAILABLE' : 'FAILED',
+            error: res.error,
+            provenance: res.provenance,
+            data: res.data,
+          });
+          if (res.status === 'COMPLETED') { observations.push(...res.observations); completed.add(a.id); }
+          this.log(
+            job.fileId,
+            `[${a.requiresTool}] ${res.status}` +
+              (res.status === 'COMPLETED' ? ` — ${res.observations.length} observation(s)` : res.error ? ` — ${res.error}` : '')
+          );
+        } catch (e: any) {
+          setToolStatus(job, a.requiresTool, { status: 'FAILED', error: e?.message ?? String(e) });
+          this.log(job.fileId, `[${a.requiresTool}] FAILED — ${e?.message ?? e}`);
+        }
+      });
 
-    // 4. Release resources and clean temp media on every path.
+    while (pending.length) {
+      const ready = pending.filter((a) => (a.dependsOn ?? []).every((d) => completed.has(d)));
+      if (!ready.length) {
+        // Prerequisites never completed, so these can never run. Record why
+        // rather than leaving them silently pending forever.
+        for (const a of pending) {
+          const missing = (a.dependsOn ?? []).filter((d) => !completed.has(d));
+          setToolStatus(job, a.requiresTool, {
+            status: 'UNAVAILABLE',
+            error: `prerequisite analyzer(s) did not complete: ${missing.join(', ')}`,
+          });
+          this.log(job.fileId, `[${a.requiresTool}] SKIPPED — prerequisite ${missing.join(', ')} did not complete`);
+        }
+        break;
+      }
+      for (const a of ready) pending.splice(pending.indexOf(a), 1);
+      await Promise.all(ready.map(runOne));
+    }
+
+    // 4. Retain the source media when the editor will need it, then clear the
+    //    scratch directory. Resources are released on every path, success or not.
+    if (localPath && this.deps.retainMedia) {
+      try {
+        await fs.mkdir(this.mediaLibraryDir, { recursive: true });
+        const kept = path.join(this.mediaLibraryDir, `${job.fileId}${path.extname(localPath) || '.mp4'}`);
+        await fs.copyFile(localPath, kept);
+        (job as any).localMediaPath = kept;
+        this.log(job.fileId, `Source media retained for editing at ${kept}.`);
+      } catch (e: any) {
+        this.log(job.fileId, `Could not retain source media: ${e?.message ?? e}`);
+      }
+    }
+
     if (reservedDisk) this.scheduler.releaseDisk(diskKey);
     await safeRm(jobWork);
-    this.log(job.fileId, 'Temporary media cleaned up.');
+    this.log(job.fileId, 'Temporary scratch cleaned up.');
 
     (job as any).observations = observations;
     job.evidenceRefs = observations.map((o) => o.id);
@@ -289,6 +335,13 @@ export class QueueManager {
 
   private async download(job: MediaJob, dest: string): Promise<number> {
     if (this.deps.downloadMedia) return this.deps.downloadMedia(job, dest);
+
+    // A job discovered on local disk needs no network round trip.
+    const localSource = (job as any).__localSource as string | undefined;
+    if (localSource) {
+      await fs.copyFile(localSource, dest);
+      return (await fs.stat(localSource)).size;
+    }
 
     const token = (job as any).token;
     const url = (job as any).streamUrl || `https://www.googleapis.com/drive/v3/files/${job.fileId}?alt=media`;
@@ -333,4 +386,6 @@ async function safeRm(p: string) {
   } catch { /* cleanup is best-effort; a leftover temp dir must not fail a job */ }
 }
 
-export const queueManager = new QueueManager();
+// The app-level queue retains source media: the editorial layer cannot build a
+// real project against files that were deleted after analysis.
+export const queueManager = new QueueManager({ retainMedia: true });

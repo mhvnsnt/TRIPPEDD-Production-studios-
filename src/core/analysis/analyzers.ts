@@ -68,6 +68,12 @@ export interface Analyzer {
   resourceClass: ResourceClass;
   /** True when the tool cannot work from a URL and needs bytes on disk. */
   requiresLocalFile: boolean;
+  /**
+   * Analyzer ids that must COMPLETE first. WhisperX aligns the transcript
+   * faster-whisper produces, so running them concurrently would hand alignment
+   * a file that does not exist yet.
+   */
+  dependsOn?: string[];
   run(ctx: AnalysisContext): Promise<AnalyzerResult>;
 }
 
@@ -423,6 +429,140 @@ export const WhisperAnalyzer: Analyzer = {
   },
 };
 
+// ---------------------------------------------------------- WhisperX
+
+/**
+ * Word-level forced alignment on top of the faster-whisper transcript.
+ *
+ * Utterance timestamps are good enough to find a moment; word timestamps are
+ * what let a cut land between words instead of chopping one. Runs only when the
+ * transcript already exists — it refines, it does not re-transcribe.
+ */
+export const WhisperXAnalyzer: Analyzer = {
+  id: 'whisperx',
+  requiresTool: 'whisperx',
+  resourceClass: 'GPU',
+  requiresLocalFile: true,
+  dependsOn: ['faster-whisper'],
+  async run(ctx) {
+    const t = ctx.getTool('whisperx');
+    if (!t || t.state !== 'AVAILABLE') {
+      return unavailable('whisperx', ctx.fileId, `whisperx ${t?.state ?? 'NOT_INSTALLED'}`);
+    }
+    if (!ctx.localPath) return unavailable('whisperx', ctx.fileId, 'requires a local file');
+
+    // Alignment needs the transcript the whisper pass wrote.
+    const transcriptPath = path.join(ctx.workDir, 'transcript.json');
+    try {
+      await readFile(transcriptPath, 'utf8');
+    } catch {
+      return unavailable('whisperx', ctx.fileId, 'no transcript to align — faster-whisper did not produce one');
+    }
+
+    const modelDir = path.join(runnerRoot(), '.trippedd_tools', 'models');
+    const r = await executeTool({
+      tool: 'whisperx', version: t.version ?? 'unknown', executablePath: ctx.pythonPath(),
+      args: [scriptPath('whisperx_align.py'), ctx.localPath, transcriptPath, modelDir],
+      sourceFileId: ctx.fileId, sourcePath: ctx.localPath, sourceHash: ctx.sourceHash,
+      timeoutMs: 3_600_000,
+      env: {
+        // NLTK refuses proxied downloads by default as an SSRF guard and names
+        // this flag as the opt-in. This container's egress IS a documented
+        // policy-enforcing proxy, so opting in is the intended path. No TLS
+        // verification is disabled anywhere.
+        NLTK_ALLOW_PROXIED_URLOPEN: '1',
+      },
+    });
+
+    if (!r.provenance.success) {
+      return { tool: 'whisperx', status: 'FAILED', provenance: r.provenance, observations: [], derivedArtifacts: [], error: r.stderr.slice(0, 300) };
+    }
+
+    let d: any;
+    try { d = JSON.parse(r.stdout.trim().split('\n').pop() || '{}'); } catch (e: any) {
+      return { tool: 'whisperx', status: 'FAILED', provenance: { ...r.provenance, success: false }, observations: [], derivedArtifacts: [], error: `unparseable output: ${e.message}` };
+    }
+    if (!d.aligned) {
+      return { tool: 'whisperx', status: 'COMPLETED', provenance: r.provenance, observations: [], derivedArtifacts: [], data: { aligned: false, reason: d.reason } };
+    }
+
+    const version = t.version ?? 'unknown';
+    const wordsPath = path.join(ctx.workDir, 'words.json');
+    await writeFile(wordsPath, JSON.stringify(d, null, 2));
+
+    return {
+      tool: 'whisperx',
+      status: 'COMPLETED',
+      provenance: { ...r.provenance, derivedArtifactIds: ['words.json'] },
+      derivedArtifacts: [wordsPath],
+      data: { wordCount: d.wordCount, language: d.language },
+      observations: (d.words ?? []).map((w: any) =>
+        obs('WORD_TIMING', 'whisperx', version, {
+          startTime: w.start, endTime: w.end, text: w.word,
+          data: { score: w.score },
+        })
+      ),
+    };
+  },
+};
+
+// ----------------------------------------------------------- Demucs
+
+/**
+ * Stem separation. Isolating dialogue from music/noise makes a cut cleaner and
+ * gives the editor usable production audio. Derived stems are new artifacts —
+ * the original media is never modified.
+ */
+export const DemucsAnalyzer: Analyzer = {
+  id: 'demucs',
+  requiresTool: 'demucs',
+  resourceClass: 'GPU',
+  requiresLocalFile: true,
+  async run(ctx) {
+    const t = ctx.getTool('demucs');
+    if (!t || t.state !== 'AVAILABLE') {
+      return unavailable('demucs', ctx.fileId, `demucs ${t?.state ?? 'NOT_INSTALLED'}`);
+    }
+    if (!ctx.localPath) return unavailable('demucs', ctx.fileId, 'requires a local file');
+
+    const outDir = path.join(ctx.workDir, 'stems');
+    await mkdir(outDir, { recursive: true });
+
+    const r = await executeTool({
+      tool: 'demucs', version: t.version ?? 'unknown', executablePath: ctx.pythonPath(),
+      args: ['-m', 'demucs', '--two-stems', 'vocals', '-d', 'cpu', '-o', outDir, ctx.localPath],
+      sourceFileId: ctx.fileId, sourcePath: ctx.localPath, sourceHash: ctx.sourceHash,
+      timeoutMs: 3_600_000,
+    });
+
+    if (!r.provenance.success) {
+      return { tool: 'demucs', status: 'FAILED', provenance: r.provenance, observations: [], derivedArtifacts: [], error: r.stderr.slice(0, 300) };
+    }
+
+    const produced: string[] = [];
+    async function walk(dir: string) {
+      for (const e of await readdir(dir, { withFileTypes: true })) {
+        const p = path.join(dir, e.name);
+        if (e.isDirectory()) await walk(p);
+        else if (/\.(wav|mp3|flac)$/i.test(e.name)) produced.push(p);
+      }
+    }
+    try { await walk(outDir); } catch { /* no stems written */ }
+
+    const version = t.version ?? 'unknown';
+    return {
+      tool: 'demucs',
+      status: 'COMPLETED',
+      provenance: { ...r.provenance, derivedArtifactIds: produced.map((p) => path.basename(p)) },
+      derivedArtifacts: produced,
+      data: { stemCount: produced.length },
+      observations: produced.length
+        ? [obs('AUDIO_STEMS', 'demucs', version, { data: { stems: produced.map((p) => path.basename(p)), count: produced.length } })]
+        : [],
+    };
+  },
+};
+
 /** Ordered so cheap structural facts land before expensive analysis. */
 export const ALL_ANALYZERS: Analyzer[] = [
   FFprobeAnalyzer,
@@ -430,4 +570,7 @@ export const ALL_ANALYZERS: Analyzer[] = [
   OpenCVAnalyzer,
   TesseractAnalyzer,
   WhisperAnalyzer,
+  // Enhancements last: they refine what the earlier passes produced.
+  WhisperXAnalyzer,
+  DemucsAnalyzer,
 ];

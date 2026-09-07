@@ -3,7 +3,10 @@ import { queueManager } from "./src/server/queueManager";
 import { ToolProvisioner } from "./src/core/tools/provisioning/ToolProvisioner";
 import { DriveWatcher } from "./src/server/driveWatcher";
 import { driveCredentials } from "./src/server/driveCredentials";
+import { editorialRouter } from "./src/server/editorialRoute";
+import { editorialService } from "./src/server/editorialService";
 import path from "path";
+import * as pathMod from "path";
 import { createServer as createViteServer } from "vite";
 import { exec, spawn, execSync } from "child_process";
 import { promisify } from "util";
@@ -94,6 +97,53 @@ async function startServer() {
 
   app.get("/api/queue", (req, res) => {
     res.json(queueManager.getJobs());
+  });
+
+  app.use("/api/editorial", editorialRouter);
+
+  // Ingest from a local folder. Drive is the intended source, but footage on
+  // disk should never be blocked behind an OAuth round trip.
+  app.post("/api/queue/local", async (req, res) => {
+    const dir = req.body?.dir;
+    if (!dir || !fs.existsSync(dir)) return res.status(400).json({ error: "dir not found" });
+    const VIDEO = /\.(mp4|mov|m4v|mkv|avi|webm)$/i;
+    const files = fs.readdirSync(dir).filter((f: string) => VIDEO.test(f));
+    let queued = 0;
+    for (const f of files) {
+      const id = f.replace(VIDEO, "");
+      if (queueManager.getJob(id)) continue;
+      const src = pathMod.join(dir, f);
+      const job: any = {
+        id: "JOB_" + id, fileId: id, originalName: f, mimeType: "video/mp4",
+        size: String(fs.statSync(src).size), state: "QUEUED", progress: 0,
+        logs: ["Discovered in local folder " + dir + "."],
+        createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
+        tools: {}, evidenceRefs: [], __localSource: src,
+      };
+      queueManager.addJob(job);
+      queued++;
+    }
+    res.json({ discovered: files.length, queued });
+  });
+
+  // Serve retained source media so the review UI can play the actual clip at
+  // the actual in/out points. Restricted to the managed media library: a path
+  // that escapes it is refused rather than read.
+  app.get("/api/media/:fileId", (req, res) => {
+    const dir = queueManager.getMediaLibraryDir();
+    const direct = editorialService.getMediaPath(req.params.fileId);
+    let resolved = direct;
+    if (!resolved) {
+      const guess = pathMod.join(dir, req.params.fileId + ".mp4");
+      if (fs.existsSync(guess)) resolved = guess;
+    }
+    if (!resolved) return res.status(404).json({ error: "no retained media for this source file" });
+    const abs = pathMod.resolve(resolved);
+    if (!abs.startsWith(pathMod.resolve(dir))) {
+      return res.status(403).json({ error: "media path outside the managed library" });
+    }
+    if (!fs.existsSync(abs)) return res.status(404).json({ error: "media file missing" });
+    res.sendFile(abs);
   });
 
   // --- Pipeline health: tool table + live queue counts -------------------

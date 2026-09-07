@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { EpisodeRegistry } from '../episodes';
+import { EpisodeRegistry, EP01_AUTHORED_SEGMENTS } from '../episodes';
 import { FormatRegistry } from '../formats';
 
 describe('Episode and Segment Ontology Tests', () => {
@@ -10,10 +10,14 @@ describe('Episode and Segment Ontology Tests', () => {
     expect(format?.defaultProvenance.realityStatus).toBe('FACTUAL');
   });
 
-  it('should retrieve Episode 1 test fixture', () => {
+  it('should retrieve Episode 1', () => {
     const episode = EpisodeRegistry.getEpisode('EP01');
     expect(episode).toBeDefined();
-    expect(episode?.segments.length).toBe(5);
+    // Five segments were authored; the episode is the eleven the creator locked
+    // plus the two Goodville gags whose position is not locked. The unbuilt ones
+    // are present and marked, not omitted.
+    expect(EP01_AUTHORED_SEGMENTS.length).toBe(5);
+    expect(episode?.segments.length).toBe(13);
   });
 
   it('should distinguish real capture in Motel Reality segment', () => {

@@ -217,6 +217,18 @@ export interface Segment {
   description: string;
   formatId?: string;
   locationId?: string;
+  /**
+   * The EP01 canon segment this realises. Present means the production graph
+   * and the locked blueprint agree about what this is.
+   */
+  canonSegmentId?: string;
+  /**
+   * How far the production actually is. NOT_STARTED is the honest state for a
+   * segment the creator has locked into the episode and nobody has built yet —
+   * it belongs in the graph, visibly unbuilt, rather than being left out and
+   * quietly forgotten.
+   */
+  productionState?: 'NOT_STARTED' | 'IN_PROGRESS' | 'BUILT';
   performances: Performance[];
   gags: Gag[];
   sourceClips: SourceClip[]; // Direct source materials

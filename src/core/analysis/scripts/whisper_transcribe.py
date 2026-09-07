@@ -37,20 +37,50 @@ model = WhisperModel(model_size, device="cpu", compute_type="int8", download_roo
 # conversation, which then poisons every downstream editorial decision.
 language = os.environ.get("TRIPPEDD_LANGUAGE", "en")
 
-# VAD kept, but far less eager: the default trims quiet or overlapped speech,
-# and handheld production audio is full of both. min_silence 700ms and a lower
-# speech threshold keep real dialogue that the default drops.
+# VAD AT THE LIBRARY DEFAULT, and the reason is measured, not stylistic.
+#
+# This was loosened to threshold=0.35 / min_silence=700ms on the theory that
+# handheld audio is quiet and the default was trimming real dialogue. It was
+# not. What it actually did was admit short bursts of NON-speech as speech
+# regions, and Whisper hallucinates a stock phrase on each one.
+#
+# A/B on the 6.5-minute clip that broke worst (scripts/ab_vad.py):
+#   threshold 0.35  23 regions  19 segments  repeated text 8/19, "This up
+#                                            here." EIGHT TIMES IN A ROW
+#   threshold 0.50  11 regions  20 segments  repeated text 0/20
+#   threshold 0.60   8 regions  10 segments  repeated text 2/10
+#   no VAD at all               39 segments  repeated text 15/39
+# The default finds MORE real segments AND zero repetitions. Loosening it
+# bought nothing and cost the longest clip in the shoot.
+#
+# The same A/B on the clips that returned nothing at all shows the VAD is right
+# about those: 0 speech regions at every threshold, and with VAD off Whisper
+# invents "We're going to take a look at some of the things that we've been" —
+# a known hallucination on non-speech audio. Those clips have no dialogue and
+# have to be identified visually, not by transcript.
 segments, info = model.transcribe(
     prepared,
     language=language,
     beam_size=5,
     vad_filter=True,
-    vad_parameters=dict(min_silence_duration_ms=700, threshold=0.35),
+    vad_parameters=dict(min_silence_duration_ms=2000, threshold=0.5),
     condition_on_previous_text=False,
+    # Bias decoding toward this production's own vocabulary. "Shumafied" is a
+    # made-up word no ASR will ever produce unprompted, and it returned zero
+    # hits across all 19 clips while being one of the locked EP01 segments.
+    hotwords=os.environ.get("TRIPPEDD_HOTWORDS") or None,
 )
 
-out = [{"start": round(s.start, 3), "end": round(s.end, 3), "text": s.text.strip()}
-       for s in segments]
+# Carry the per-segment confidences forward. faster-whisper computes both and
+# this pipeline was throwing them away, which is how a hallucinated line reached
+# the editorial layer looking exactly like a confident one.
+out = [{
+    "start": round(s.start, 3),
+    "end": round(s.end, 3),
+    "text": s.text.strip(),
+    "avgLogprob": round(float(s.avg_logprob), 4),
+    "noSpeechProb": round(float(s.no_speech_prob), 4),
+} for s in segments]
 if prepared != path:
     try: os.unlink(prepared)
     except Exception: pass

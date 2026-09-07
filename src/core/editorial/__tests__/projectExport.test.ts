@@ -39,7 +39,7 @@ beforeAll(() => {
 let n = 0;
 function scene(over: Partial<EditorialSceneCandidate> = {}): EditorialSceneCandidate {
   return {
-    id: `sc${n++}`, productionUnitId: 'u', proposedTitle: 'A Scene', purpose: 'p',
+    id: `sc${n++}`, kind: 'SCENE', kindReason: 'test', qualityScore: 0.8, productionUnitId: 'u', proposedTitle: 'A Scene', purpose: 'p',
     sourceEvidenceIds: [], sourceClipIds: ['a'], transcriptSegmentIds: [],
     visualObservationIds: [], referenceIds: [], storyBeatIds: ['b'],
     proposedOrder: 0, physicalOrder: 0,

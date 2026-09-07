@@ -140,6 +140,11 @@ editorialRouter.post('/scenes/:id/instruct', async (req, res) => {
   catch (e) { fail(res, e); }
 });
 
+/** The catalog: what each clip actually is, in plain names. */
+editorialRouter.get('/catalog', (_req, res) => {
+  res.json({ clips: editorialService.getClipNames() });
+});
+
 editorialRouter.get('/episode', (_req, res) => {
   res.json(editorialService.episodeStatus());
 });

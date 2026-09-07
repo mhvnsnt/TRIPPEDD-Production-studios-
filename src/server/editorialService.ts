@@ -18,6 +18,7 @@ import { exportOTIO, exportKdenlive, type ExportResult, MissingMediaError } from
 import { renderScene, MissingRenderMediaError, type RenderResult } from '../core/editorial/render/SceneRenderer';
 import { parseInstruction, applyInstruction, type EditIntent } from '../core/editorial/naturalEdit';
 import { explainScene, type SceneExplanation } from '../core/editorial/explain';
+import { nameClips, type ClipName } from '../core/editorial/naming';
 import { runnerRoot } from '../core/tools/execution/runnerRoot';
 import { executeTool } from '../core/tools/execution/executor';
 import type { EditorialSceneCandidate, StoryBeat } from '../core/editorial/types';
@@ -46,6 +47,12 @@ export class EditorialService {
   /** sceneId -> rendered preview on disk. */
   private renders = new Map<string, { path: string; durationSec: number; renderedAt: string; version: number }>();
   private ffmpegPath = '/usr/bin/ffmpeg';
+  /** sourceFileId -> original filename, kept for the life of the project. */
+  private originalNames: Record<string, string> = {};
+  private durations: Record<string, number> = {};
+  private clipNames: ClipName[] = [];
+
+  getClipNames(): ClipName[] { return this.clipNames; }
 
   setFfmpegPath(p: string): void { this.ffmpegPath = p; }
   getRender(sceneId: string) { return this.renders.get(sceneId); }
@@ -74,6 +81,12 @@ export class EditorialService {
         this.observations.push({ ...o, sourceFileId: o.sourceFileId ?? job.fileId });
         added++;
       }
+      // The original filename is never lost, whatever we end up calling it.
+      this.originalNames[job.fileId] = job.originalName || job.fileId;
+      const probe = (job.tools as any)?.ffprobe?.data;
+      const dur = Number(probe?.format?.duration);
+      if (Number.isFinite(dur)) this.durations[job.fileId] = dur;
+
       const local = (job as any).localMediaPath;
       if (local) this.mediaPaths.set(job.fileId, local);
       const blocked = (job as any).resourceBlockedTools as string[] | undefined;
@@ -113,6 +126,15 @@ export class EditorialService {
     }
     // Carry feedback history forward.
     for (const f of this.store.getFeedback()) (next as any).feedback?.push?.(f);
+
+    // Give every clip a human name once the evidence is in.
+    this.clipNames = nameClips({
+      files: this.originalNames,
+      durations: this.durations,
+      observations: this.observations,
+      reconciled: reconciliation.beats,
+      beats: this.beats,
+    });
 
     this.store = next;
     this.lastReconciliation = reconciliation;

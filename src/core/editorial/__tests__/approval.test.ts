@@ -5,7 +5,7 @@ import type { EditorialSceneCandidate } from '../types';
 let n = 0;
 function scene(over: Partial<EditorialSceneCandidate> = {}): EditorialSceneCandidate {
   return {
-    id: `s${n++}`, productionUnitId: 'u1', proposedTitle: 'Scene', purpose: 'p',
+    id: `s${n++}`, kind: 'SCENE', kindReason: 'test', qualityScore: 0.8, productionUnitId: 'u1', proposedTitle: 'Scene', purpose: 'p',
     sourceEvidenceIds: ['e1'], sourceClipIds: ['c1'], transcriptSegmentIds: ['t1'],
     visualObservationIds: [], referenceIds: [], storyBeatIds: ['b1'],
     proposedOrder: 0, physicalOrder: 0,

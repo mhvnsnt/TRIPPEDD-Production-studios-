@@ -14,7 +14,7 @@
 import type { MachineObservation } from '../analysis/analyzers';
 import type {
   EditorialSceneCandidate, SourceRange, EditorialExclusion,
-  BeatMapEntry, ReconciledBeat, StoryBeat,
+  BeatMapEntry, ReconciledBeat, StoryBeat, CandidateKind,
 } from './types';
 import { classifyAll, type ClassifiedSegment } from './classification';
 
@@ -35,6 +35,22 @@ export interface AssemblyInput {
 /** Pad around evidence so a cut does not start mid-word. */
 const LEAD_IN = 1.0;
 const LEAD_OUT = 1.5;
+
+/**
+ * A scene has to be long enough to be a scene. A 1.8-second fragment is a beat,
+ * an insert or a reaction — not something to put in front of the creator and
+ * call Scene 1.
+ *
+ * The fix is never to pad with unrelated footage: the window is EXPANDED into
+ * the surrounding material that belongs to the same exchange, and if there
+ * genuinely is not enough, the candidate is reported as a short beat rather
+ * than promoted.
+ */
+const MIN_SCENE_SECONDS = 12;
+/** How far either side we will look for material belonging to the same moment. */
+const CONTEXT_REACH_SECONDS = 25;
+/** A silence longer than this means the exchange has ended; stop expanding. */
+const CONVERSATION_GAP = 6;
 /** Ranges closer than this are merged rather than left as a visible seam. */
 const MERGE_GAP = 0.75;
 
@@ -124,6 +140,44 @@ function confidencePenalty(blocked: string[]): number {
   return Math.max(0.5, blocked.reduce((acc, t) => acc * (LIMITATION_WEIGHT[t] ?? 0.95), 1));
 }
 
+/**
+ * How good a candidate is as a scene, and what it should be called.
+ * Duration dominates: everything else is a refinement on top of "is there
+ * actually enough here to watch".
+ */
+function scoreCandidate(x: {
+  seconds: number; pieces: number; evidence: number;
+  exclusions: number; confidence: number; spokenLines: number;
+}): { kind: CandidateKind; reason: string; score: number } {
+  const durationScore = Math.min(1, x.seconds / 45);
+  const evidenceScore = Math.min(1, x.evidence / 6);
+  const talkScore = Math.min(1, x.spokenLines / 5);
+  const score = Number((durationScore * 0.45 + evidenceScore * 0.2 + talkScore * 0.2 + x.confidence * 0.15).toFixed(3));
+
+  if (x.seconds < 4) {
+    return {
+      kind: 'INSERT', score,
+      reason: `Only ${x.seconds.toFixed(1)}s of usable material — this is a cutaway or insert, not a scene on its own.`,
+    };
+  }
+  if (x.seconds < MIN_SCENE_SECONDS) {
+    return {
+      kind: 'BEAT', score,
+      reason: `${x.seconds.toFixed(1)}s — one beat inside a larger moment. I could not find enough surrounding footage to build it into a full scene.`,
+    };
+  }
+  if (x.spokenLines === 0 && x.seconds < 20) {
+    return {
+      kind: 'INSUFFICIENT_COVERAGE', score,
+      reason: `${x.seconds.toFixed(1)}s with no dialogue detected — not enough to tell what is happening.`,
+    };
+  }
+  return {
+    kind: 'SCENE', score,
+    reason: `${x.seconds.toFixed(1)}s across ${x.pieces} piece${x.pieces === 1 ? '' : 's'} with ${x.spokenLines} spoken line${x.spokenLines === 1 ? '' : 's'} — enough for a beginning, a middle and an end.`,
+  };
+}
+
 let seq = 0;
 
 export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] {
@@ -165,7 +219,33 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
     const winStart = snapToShot(Math.max(0, evStart - LEAD_IN), shots, 'start');
     const winEnd = snapToShot(evEnd + LEAD_OUT, shots, 'end');
 
-    const inWindow = segs.filter((s) => s.endTime > winStart && s.startTime < winEnd);
+    // Grow the window outwards through speech that belongs to the same
+    // exchange, so the scene contains the whole interaction rather than the one
+    // line that happened to match a cue.
+    const ordered = [...segs].sort((a, b) => a.startTime - b.startTime);
+    let expStart = winStart, expEnd = winEnd;
+
+    for (let pass = 0; pass < 40; pass++) {
+      const before = ordered.filter((x) => x.endTime <= expStart && expStart - x.endTime <= CONVERSATION_GAP);
+      const after = ordered.filter((x) => x.startTime >= expEnd && x.startTime - expEnd <= CONVERSATION_GAP);
+      const prev = before[before.length - 1];
+      const next = after[0];
+      let grew = false;
+
+      if (prev && expStart - prev.startTime <= CONTEXT_REACH_SECONDS) {
+        expStart = Math.max(0, prev.startTime - 0.3);
+        grew = true;
+      }
+      if (next && next.endTime - expEnd <= CONTEXT_REACH_SECONDS) {
+        expEnd = next.endTime + 0.4;
+        grew = true;
+      }
+      if (!grew) break;
+      if (expEnd - expStart >= MIN_SCENE_SECONDS * 2.5) break; // long enough
+    }
+
+    const winStartX = expStart, winEndX = expEnd;
+    const inWindow = segs.filter((s) => s.endTime > winStartX && s.startTime < winEndX);
 
     // Production artifacts are excluded from the cut and preserved in source.
     const exclusions: EditorialExclusion[] = inWindow
@@ -173,8 +253,8 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
       .map((s) => ({
         range: {
           sourceFileId: s.sourceFileId,
-          startTime: Math.max(winStart, s.startTime),
-          endTime: Math.min(winEnd, s.endTime),
+          startTime: Math.max(winStartX, s.startTime),
+          endTime: Math.min(winEndX, s.endTime),
           derivedFromObservationIds: [s.observationId],
         },
         classification: s.classification,
@@ -192,12 +272,12 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
     const rawRanges: SourceRange[] = keep.length
       ? keep.map((s) => ({
           sourceFileId: s.sourceFileId,
-          startTime: Math.max(winStart, s.startTime - 0.2),
-          endTime: Math.min(winEnd, s.endTime + 0.3),
+          startTime: Math.max(winStartX, s.startTime - 0.2),
+          endTime: Math.min(winEndX, s.endTime + 0.3),
           derivedFromObservationIds: [s.observationId],
         }))
       : [{
-          sourceFileId: fileId, startTime: winStart, endTime: winEnd,
+          sourceFileId: fileId, startTime: winStartX, endTime: winEndX,
           derivedFromObservationIds: ev.map((e) => e.observationId),
         }];
 
@@ -217,8 +297,21 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
 
     const uncertain = inWindow.filter((s) => s.classification === 'UNCERTAIN');
 
+    const sceneSeconds = duration(ranges);
+    const quality = scoreCandidate({
+      seconds: sceneSeconds,
+      pieces: ranges.length,
+      evidence: ev.length,
+      exclusions: exclusions.length,
+      confidence: rb.confidence,
+      spokenLines: keep.length,
+    });
+
     candidates.push({
       id: `scene_${Date.now().toString(36)}_${(seq++).toString(36)}`,
+      kind: quality.kind,
+      kindReason: quality.reason,
+      qualityScore: quality.score,
       productionUnitId,
       proposedTitle: beat.title,
       purpose: beat.description,
@@ -321,5 +414,9 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
     byPhysical.forEach((c, i) => { c.proposedOrder = i; });
   }
 
-  return candidates.sort((a, b) => a.proposedOrder - b.proposedOrder);
+  // Real scenes are shown before beats and inserts, so the creator is never
+  // handed a 2-second fragment as "Scene 1" while a proper scene waits behind it.
+  const rank: Record<CandidateKind, number> = { SCENE: 0, BEAT: 1, INSERT: 2, INSUFFICIENT_COVERAGE: 3 };
+  return candidates.sort((a, b) =>
+    rank[a.kind] !== rank[b.kind] ? rank[a.kind] - rank[b.kind] : a.proposedOrder - b.proposedOrder);
 }

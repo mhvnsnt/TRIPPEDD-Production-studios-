@@ -118,8 +118,19 @@ export interface BeatMapEntry {
   rationale: string;
 }
 
+/**
+ * What a candidate actually is. A short fragment is a beat or an insert; it
+ * should not be handed to the creator as a finished scene.
+ */
+export type CandidateKind = 'SCENE' | 'BEAT' | 'INSERT' | 'INSUFFICIENT_COVERAGE';
+
 export interface EditorialSceneCandidate {
   id: string;
+  kind: CandidateKind;
+  /** Why it is (or is not) a scene, in the creator's language. */
+  kindReason: string;
+  /** 0..1 — duration, continuity, evidence strength, dead air, chatter. */
+  qualityScore: number;
   productionUnitId: string;
   proposedTitle: string;
   purpose: string;

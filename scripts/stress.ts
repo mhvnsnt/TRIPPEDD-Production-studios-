@@ -108,13 +108,12 @@ const line = (c = '─') => console.log(c.repeat(76));
   const peakRss = Math.max(0, ...Object.values(obs).map((o: any) => o.peakRssMB));
 
   const usage = queue.getLifecycle().usage();
-  let reclaimed = 0;
-  for (const j of jobs) {
-    for (const l of j.logs) {
-      const m = l.match(/([\d.]+)MB reclaimed/);
-      if (m) reclaimed += Number(m[1]);
-    }
-  }
+  // Read the real byte counts off the lifecycle rather than re-parsing logs.
+  const lifecycle = queue.getLifecycle();
+  const released = lifecycle.all().filter((a) => a.releasedAt);
+  const reclaimedBytes = released.reduce((a, x) => a + x.sizeBytes, 0);
+  const fmtB = (n: number) =>
+    n < 1024 ? `${n} B` : n < 1048576 ? `${(n / 1024).toFixed(1)} KB` : `${(n / 1048576).toFixed(1)} MB`;
 
   console.log('\n'); line('═'); console.log('MEASURED RESULTS'); line('═');
   console.log(`clips completed              ${counts.processed}/${files.length}`);
@@ -126,7 +125,7 @@ const line = (c = '─') => console.log(c.repeat(76));
   console.log(`max concurrent HEAVY         ${peakHeavy}        (limit ${HEAVY})`);
   console.log(`budget breaches              ${breaches}        (samples ${samples})`);
   console.log(`resource waits               ${totalWaits}`);
-  console.log(`cleanup reclaimed            ${reclaimed.toFixed(1)} MB`);
+  console.log(`cleanup reclaimed            ${fmtB(reclaimedBytes)} across ${released.length} artifact(s)`);
   console.log(`live artifacts by policy     ${Object.entries(usage).filter(([, v]: any) => v.count).map(([k, v]: any) => `${k}=${v.count}/${(v.bytes / 1048576).toFixed(1)}MB`).join(' ') || 'none'}`);
   console.log(`peak RSS observed (real)     ${peakRss} MB`);
   console.log(`per-tool measured RSS        ${Object.entries(obs).map(([k, v]: any) => `${k}=${v.peakRssMB}MB`).join(' ')}`);

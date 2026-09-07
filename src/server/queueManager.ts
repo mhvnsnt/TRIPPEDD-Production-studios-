@@ -195,7 +195,7 @@ export class QueueManager {
       this.governor.release(`job:${next.fileId}`);
       const cleaned = await this.lifecycle.cleanupJob(next.fileId);
       if (cleaned.bytesReclaimed) {
-        this.log(next.fileId, `Released ${(cleaned.bytesReclaimed / 1048576).toFixed(1)}MB after failure.`);
+        this.log(next.fileId, `Released ${formatBytes(cleaned.bytesReclaimed)} after failure.`);
       }
       // Distinguish a transient failure from a terminal one so a retry is
       // meaningful rather than a guess.
@@ -489,7 +489,7 @@ export class QueueManager {
     await safeRm(jobWork);
     this.log(
       job.fileId,
-      `Scratch cleaned: ${cleaned.removed} artifact(s), ${(cleaned.bytesReclaimed / 1048576).toFixed(1)}MB reclaimed, ${cleaned.preserved} preserved.`
+      `Scratch cleaned: ${cleaned.removed} artifact(s), ${formatBytes(cleaned.bytesReclaimed)} reclaimed, ${cleaned.preserved} preserved.`
     );
 
     (job as any).observations = observations;
@@ -557,6 +557,18 @@ function estimateSizeMB(job: MediaJob): number {
 function isRetryable(e: any): boolean {
   const m = String(e?.message ?? e);
   return /ECONNRESET|ETIMEDOUT|EAI_AGAIN|socket hang up|fetch failed|50\d\s/i.test(m);
+}
+
+/**
+ * Human-readable size that does not round small-but-real values to nothing.
+ * "0.0MB reclaimed" after actually deleting five files reads as a no-op.
+ */
+function formatBytes(n: number): string {
+  if (n <= 0) return '0 B';
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  if (n < 1024 * 1024 * 1024) return `${(n / 1048576).toFixed(1)} MB`;
+  return `${(n / 1073741824).toFixed(2)} GB`;
 }
 
 async function safeRm(p: string) {

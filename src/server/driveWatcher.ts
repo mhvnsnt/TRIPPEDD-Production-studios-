@@ -11,6 +11,7 @@
  */
 import type { MediaJob } from '../core/types';
 import type { QueueManager } from './queueManager';
+import { driveCredentials } from './driveCredentials';
 
 export interface DriveFile {
   id: string;
@@ -23,8 +24,14 @@ export interface DriveFile {
 
 export interface WatcherOptions {
   folderId: string;
-  /** Supplies a currently valid OAuth token, or undefined if not connected. */
-  getToken: () => string | undefined;
+  /**
+   * Resolves a usable Drive token. Defaults to the durable credential chain
+   * (service account -> refresh token -> browser token) so unattended ingest
+   * survives the browser being closed.
+   */
+  getToken?: () => string | undefined | Promise<string | undefined>;
+  /** Explains what is missing when getToken yields nothing. */
+  describeCredential?: () => Promise<{ detail: string; missingCapability?: string }>;
   intervalMs?: number;
   /** Injectable for tests; defaults to the real Drive list call. */
   listFiles?: (folderId: string, token: string) => Promise<DriveFile[]>;
@@ -49,6 +56,8 @@ export interface ScanResult {
   skippedExisting: number;
   skippedNonVideo: number;
   error?: string;
+  /** Set when the failure is a missing credential rather than a Drive fault. */
+  missingCapability?: string;
 }
 
 export class DriveWatcher {
@@ -81,9 +90,21 @@ export class DriveWatcher {
     }
     this.scanning = true;
     try {
-      const token = this.opts.getToken();
+      const token = this.opts.getToken
+        ? await this.opts.getToken()
+        : (await driveCredentials.resolve())?.token;
+
       if (!token) {
-        const r: ScanResult = { discovered: 0, enqueued: 0, skippedExisting: 0, skippedNonVideo: 0, error: 'Drive not connected (no token)' };
+        // Stop at the credential boundary and name it. Never substitute a
+        // synthetic listing to make the scan look successful.
+        const desc = this.opts.describeCredential
+          ? await this.opts.describeCredential()
+          : await driveCredentials.status();
+        const r: ScanResult = {
+          discovered: 0, enqueued: 0, skippedExisting: 0, skippedNonVideo: 0,
+          error: `Drive not connected — ${desc.detail}`,
+          missingCapability: (desc as any).missingCapability,
+        };
         this.lastResult = r;
         this.lastScanAt = new Date().toISOString();
         return r;
@@ -115,6 +136,7 @@ export class DriveWatcher {
           evidenceRefs: [],
         };
         (job as any).token = token;
+        (job as any).streamUrl = `https://www.googleapis.com/drive/v3/files/${f.id}?alt=media`;
         this.queue.addJob(job);
         enqueued++;
       }

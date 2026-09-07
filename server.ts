@@ -2,6 +2,7 @@ import express from "express";
 import { queueManager } from "./src/server/queueManager";
 import { ToolProvisioner } from "./src/core/tools/provisioning/ToolProvisioner";
 import { DriveWatcher } from "./src/server/driveWatcher";
+import { driveCredentials } from "./src/server/driveCredentials";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { exec, spawn, execSync } from "child_process";
@@ -51,7 +52,7 @@ async function startServer() {
 
   app.post("/api/queue/scan", async (req, res) => {
     const { folderId, token } = req.body;
-    if (token) lastDriveToken = token;
+    if (token) { lastDriveToken = token; driveCredentials.setBrowserToken(token); }
     try {
       const driveRes = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&fields=files(id,name,mimeType,size,md5Checksum,thumbnailLink,videoMediaMetadata)`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -113,6 +114,7 @@ async function startServer() {
       counts: queueManager.getCounts(),
       scheduler: queueManager.getScheduler().getSnapshot(),
       watcher: driveWatcher?.getStatus() ?? { running: false },
+      credential: await driveCredentials.status(),
     });
   });
 
@@ -138,11 +140,11 @@ async function startServer() {
   // --- Automatic ingestion ------------------------------------------------
   app.post("/api/pipeline/watch/start", (req, res) => {
     const { folderId, token, intervalMs } = req.body ?? {};
-    if (token) lastDriveToken = token;
+    if (token) { lastDriveToken = token; driveCredentials.setBrowserToken(token); }
     driveWatcher?.stop();
     driveWatcher = new DriveWatcher(queueManager, {
       folderId: folderId || WATCH_FOLDER,
-      getToken: () => lastDriveToken,
+      // No getToken override: the watcher uses the durable credential chain.
       intervalMs: intervalMs ?? 60_000,
       onError: (e) => console.error("[watcher]", e.message),
     });

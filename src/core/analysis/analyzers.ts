@@ -389,7 +389,19 @@ export const WhisperAnalyzer: Analyzer = {
     if (!ctx.localPath) return unavailable('faster-whisper', ctx.fileId, 'requires a local file');
 
     const modelDir = path.join(runnerRoot(), '.trippedd_tools', 'models');
-    const modelSize = process.env.TRIPPEDD_WHISPER_MODEL || 'tiny';
+    // distil-large-v3, not tiny/small, and the difference is measured
+    // (scripts/ab_asr.py, on the real footage, one clip of shop dialogue):
+    //   small            8 segments   57 words   mean logprob -0.52
+    //   distil-large-v3 19 segments   82 words   mean logprob -0.34
+    // 44% more speech recovered and far better segmentation, for roughly 2x the
+    // CPU time on a box with no GPU. Distilled large-v3 is what makes a
+    // large-class model affordable here at all.
+    //
+    // hotwords are NOT enabled by default even though the plumbing is there:
+    // biasing with the show's proper nouns measured WORSE on the same clip
+    // (73 words, logprob -0.40). Available via TRIPPEDD_HOTWORDS for anyone who
+    // wants to re-test it, off until a measurement says otherwise.
+    const modelSize = process.env.TRIPPEDD_WHISPER_MODEL || 'Systran/faster-distil-whisper-large-v3';
 
     const r = await executeTool({
       tool: 'faster-whisper', version: t.version ?? 'unknown', executablePath: ctx.pythonPath(),

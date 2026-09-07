@@ -3,7 +3,7 @@ import path from 'path';
 import os from 'os';
 import { mkdtempSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { QueueManager } from '../queueManager';
-import { ResourceScheduler } from '../../core/scheduler/ResourceScheduler';
+import { ResourceGovernor } from '../../core/scheduler/ResourceGovernor';
 import type { Analyzer, AnalysisContext, AnalyzerResult, ToolHandle } from '../../core/analysis/analyzers';
 import { adapterDefined, executeTool } from '../../core/tools/execution/executor';
 import type { MediaJob } from '../../core/types';
@@ -139,11 +139,11 @@ describe('Pipeline — newly provisioned capabilities are picked up', () => {
 
 describe('Pipeline — resource limits bound concurrent analysis', () => {
   it('never runs more CPU-heavy analyzers at once than the limit allows', async () => {
-    const scheduler = new ResourceScheduler({ cpuHeavy: 2, light: 8 });
+    const scheduler = new ResourceGovernor({ limits: { HEAVY: 2, LIGHT: 8 } });
     let live = 0, peak = 0;
 
     const heavy = (id: string): Analyzer => ({
-      id, requiresTool: id, resourceClass: 'CPU_HEAVY', requiresLocalFile: false,
+      id, requiresTool: id, resourceClass: 'HEAVY', requiresLocalFile: false,
       async run(ctx) {
         live++; peak = Math.max(peak, live);
         await new Promise((r) => setTimeout(r, 120));
@@ -159,7 +159,7 @@ describe('Pipeline — resource limits bound concurrent analysis', () => {
     const ids = ['a', 'b', 'c', 'd', 'e', 'f'];
     const qm = new QueueManager({
       provisioner: registry(Object.fromEntries(ids.map((i) => [i, 'AVAILABLE']))),
-      analyzers: ids.map(heavy), scheduler,
+      analyzers: ids.map(heavy), governor: scheduler,
       workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
     });
 
@@ -171,24 +171,32 @@ describe('Pipeline — resource limits bound concurrent analysis', () => {
     expect(peak).toBeGreaterThan(0);
   }, 30_000);
 
-  it('enforces a hard temp-disk quota instead of filling the volume', () => {
-    const s = new ResourceScheduler({ diskQuotaMB: 100 });
-    expect(s.reserveDisk('a', 60)).toBe(true);
-    expect(s.reserveDisk('b', 60)).toBe(false); // would breach
-    s.releaseDisk('a');
-    expect(s.reserveDisk('b', 60)).toBe(true);
+  it('enforces a hard temp-disk quota instead of filling the volume', async () => {
+    const g = new ResourceGovernor({ limits: { diskQuotaMB: 100 } });
+    expect((await g.reserve('a', 60)).admitted).toBe(true);
+
+    const refused = await g.reserve('b', 60); // would breach the budget
+    expect(refused.admitted).toBe(false);
+    expect(refused.code).toBe('RESOURCE_BLOCKED');
+    expect(refused.constraint).toBe('QUOTA');
+    // The refusal states the actual numbers, not just "no".
+    expect(refused.requiredBytes).toBe(60 * 1024 * 1024);
+    expect(refused.reservedBytes).toBe(60 * 1024 * 1024);
+
+    g.release('a');
+    expect((await g.reserve('b', 60)).admitted).toBe(true);
   });
 
   it('releases the slot when an analyzer throws, so the queue cannot wedge', async () => {
-    const scheduler = new ResourceScheduler({ cpuHeavy: 1 });
+    const scheduler = new ResourceGovernor({ limits: { HEAVY: 1 } });
     const boom: Analyzer = {
-      id: 'boom', requiresTool: 'boom', resourceClass: 'CPU_HEAVY', requiresLocalFile: false,
+      id: 'boom', requiresTool: 'boom', resourceClass: 'HEAVY', requiresLocalFile: false,
       async run() { throw new Error('analyzer exploded'); },
     };
     const qm = new QueueManager({
       provisioner: registry({ boom: 'AVAILABLE', ok: 'AVAILABLE' }),
-      analyzers: [boom, { ...realAnalyzer('ok'), resourceClass: 'CPU_HEAVY' } as Analyzer],
-      scheduler, workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
+      analyzers: [boom, { ...realAnalyzer('ok'), resourceClass: 'HEAVY' } as Analyzer],
+      governor: scheduler, workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
     });
 
     const j = job('f_boom');
@@ -198,7 +206,7 @@ describe('Pipeline — resource limits bound concurrent analysis', () => {
     expect((j.tools as any).boom.status).toBe('FAILED');
     // The healthy analyzer still got a slot afterwards.
     expect((j.tools as any).ok.status).toBe('COMPLETED');
-    expect(scheduler.getSnapshot().active.CPU_HEAVY).toBe(0);
+    expect((await scheduler.snapshot()).active.HEAVY).toBe(0);
   }, 30_000);
 });
 
@@ -226,14 +234,14 @@ describe('Pipeline — temporary media handling', () => {
     expect((j.tools as any).ffprobe.status).toBe('COMPLETED');
     // Nothing left behind for this job.
     expect(existsSync(path.join(workRoot, 'f_tmp'))).toBe(false);
-    expect(qm.getScheduler().getDiskUsedMB()).toBe(0);
+    expect(qm.getGovernor().getReservedMB()).toBe(0);
   }, 30_000);
 
   it('defers rather than exceeding the disk quota', async () => {
     const qm = new QueueManager({
       provisioner: registry({ ffprobe: 'AVAILABLE' }),
       analyzers: [{ ...realAnalyzer('ffprobe'), requiresLocalFile: true } as Analyzer],
-      scheduler: new ResourceScheduler({ diskQuotaMB: 1 }),
+      governor: new ResourceGovernor({ limits: { diskQuotaMB: 1 } }),
       workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
       downloadMedia: async () => { throw new Error('should not download'); },
     });
@@ -242,8 +250,94 @@ describe('Pipeline — temporary media handling', () => {
     qm.addJob(j);
     await qm.runPipeline(j);
 
-    expect(j.state).toBe('RETRYABLE_FAILURE');
-    expect(j.logs.some((l) => /quota/i.test(l))).toBe(true);
+    // Short on space is a WAIT, not a failure: the media is fine, the box is
+    // busy. The job parks and the governor retries it.
+    expect(j.state).toBe('RESOURCE_WAIT');
+    expect(j.logs.some((l) => /RESOURCE_BLOCKED/.test(l))).toBe(true);
+    // The log states the actual numbers rather than just refusing.
+    expect(j.logs.some((l) => /required .*MB, available .*MB, reserved .*MB/.test(l))).toBe(true);
+    expect(qm.getResourceWaits()['f_big']).toBe(1);
+    // Nothing was downloaded, so nothing needs cleaning up.
+    expect(qm.getGovernor().getReservedMB()).toBe(0);
+  }, 30_000);
+});
+
+describe('Pipeline — resource pressure degrades rather than crashes', () => {
+  it('blocks a heavy analyzer that does not fit, and says so on the job', async () => {
+    // Big enough for light scratch (16MB), too small for heavy (256MB), so the
+    // run degrades selectively instead of stopping altogether.
+    const governor = new ResourceGovernor({ limits: { diskQuotaMB: 64, HEAVY: 4 } });
+    const heavy: Analyzer = {
+      id: 'whisper', requiresTool: 'faster-whisper', resourceClass: 'HEAVY',
+      requiresLocalFile: false,
+      async run() { throw new Error('should never run — it was not affordable'); },
+    };
+
+    const qm = new QueueManager({
+      provisioner: registry({ 'faster-whisper': 'AVAILABLE', ffprobe: 'AVAILABLE' }),
+      analyzers: [realAnalyzer('ffprobe'), heavy],
+      governor,
+      workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
+    });
+
+    const j = job('f_pressure');
+    qm.addJob(j);
+    await qm.runPipeline(j);
+
+    const w = (j.tools as any).whisper;
+    expect(w.status).toBe('UNAVAILABLE');
+    expect(w.error).toMatch(/RESOURCE_BLOCKED/);
+    // The cheap analyzer still ran: pressure degrades the run, it does not stop it.
+    expect((j.tools as any).ffprobe.status).toBe('COMPLETED');
+    expect(j.state).toBe('NEEDS_REVIEW');
+    // And the blocked tool is recorded for the editorial layer to declare.
+    expect((j as any).resourceBlockedTools).toContain('faster-whisper');
+  }, 30_000);
+
+  it('an affordable heavy analyzer is admitted', async () => {
+    const governor = new ResourceGovernor({ limits: { diskQuotaMB: 4096, HEAVY: 2 } });
+    const qm = new QueueManager({
+      provisioner: registry({ 'faster-whisper': 'AVAILABLE' }),
+      analyzers: [{ ...realAnalyzer('faster-whisper'), resourceClass: 'HEAVY' } as Analyzer],
+      governor,
+      workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
+    });
+
+    const j = job('f_ok');
+    qm.addJob(j);
+    await qm.runPipeline(j);
+
+    expect((j.tools as any).whisper.status).toBe('COMPLETED');
+    expect((j as any).resourceBlockedTools ?? []).toEqual([]);
+  }, 30_000);
+
+  it('feeds measured RSS back so the next decision is not a guess', async () => {
+    const governor = new ResourceGovernor({ limits: { diskQuotaMB: 4096 } });
+    const qm = new QueueManager({
+      provisioner: registry({ ffprobe: 'AVAILABLE' }),
+      analyzers: [realAnalyzer('ffprobe')],
+      governor,
+      workRoot: mkdtempSync(path.join(os.tmpdir(), 'q-')),
+    });
+
+    const before = governor.requirementFor('ffprobe', { cls: 'LIGHT', diskMB: 1, ramMB: 999 });
+    expect(before.ramSource).toBe('ESTIMATED');
+
+    const j = job('f_meas');
+    qm.addJob(j);
+    await qm.runPipeline(j);
+
+    // /bin/echo may exit before a sample lands; when it does, the figure must
+    // stay honestly ESTIMATED rather than becoming a fabricated measurement.
+    const after = governor.requirementFor('ffprobe', { cls: 'LIGHT', diskMB: 1, ramMB: 999 });
+    const obs = governor.getObservation('ffprobe');
+    if (obs) {
+      expect(after.ramSource).toBe('MEASURED');
+      expect(obs.peakRssMB).toBeGreaterThan(0);
+    } else {
+      expect(after.ramSource).toBe('ESTIMATED');
+      expect(after.ramMB).toBe(999);
+    }
   }, 30_000);
 });
 

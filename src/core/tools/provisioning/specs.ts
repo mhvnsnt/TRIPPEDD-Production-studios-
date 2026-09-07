@@ -58,8 +58,11 @@ export interface ToolSpec {
     gpu: boolean;
     ramMB: number;
     diskMB: number;
-    /** Scheduling class the queue uses to bound concurrency. */
-    resourceClass: 'LIGHT' | 'CPU_HEAVY' | 'GPU';
+    /**
+     * Cost class the governor uses to bound concurrency. Separate from `gpu`,
+     * because "expensive" and "needs a GPU" are different claims.
+     */
+    resourceClass: 'LIGHT' | 'MEDIUM' | 'HEAVY';
   };
   install: InstallPlan;
   detect: DetectPlan;
@@ -83,7 +86,7 @@ export const TOOL_SPECS: ToolSpec[] = [
     description: 'Decode, transcode and extract frames/audio from source media.',
     capabilities: ['transcode', 'frame-extraction', 'audio-extraction', 'thumbnailing'],
     toolCapability: JOB,
-    runtimeRequirements: { cpu: true, gpu: false, ramMB: 512, diskMB: 200, resourceClass: 'CPU_HEAVY' },
+    runtimeRequirements: { cpu: true, gpu: false, ramMB: 512, diskMB: 200, resourceClass: 'MEDIUM' },
     install: { kind: 'apt', package: 'ffmpeg' },
     detect: { bin: 'ffmpeg', versionArgs: ['-version'], versionPattern: /ffmpeg version (\S+)/i },
     health: {
@@ -124,7 +127,7 @@ export const TOOL_SPECS: ToolSpec[] = [
     description: 'Shot-boundary detection — the spine of the physical source timeline.',
     capabilities: ['scene-detection', 'shot-boundaries', 'cut-list'],
     toolCapability: JOB,
-    runtimeRequirements: { cpu: true, gpu: false, ramMB: 1024, diskMB: 100, resourceClass: 'CPU_HEAVY' },
+    runtimeRequirements: { cpu: true, gpu: false, ramMB: 1024, diskMB: 100, resourceClass: 'MEDIUM' },
     install: { kind: 'pip', package: 'scenedetect[opencv]' },
     detect: { bin: 'scenedetect', versionArgs: ['version'], versionPattern: /PySceneDetect[ v]+([\d.]+)/i },
     health: {
@@ -142,7 +145,7 @@ export const TOOL_SPECS: ToolSpec[] = [
     description: 'Frame-level computer vision: histograms, motion, black/blank frames.',
     capabilities: ['frame-analysis', 'histogram', 'motion-estimation', 'blank-detection'],
     toolCapability: JOB,
-    runtimeRequirements: { cpu: true, gpu: false, ramMB: 1024, diskMB: 300, resourceClass: 'CPU_HEAVY' },
+    runtimeRequirements: { cpu: true, gpu: false, ramMB: 1024, diskMB: 300, resourceClass: 'MEDIUM' },
     install: { kind: 'pip', package: 'opencv-python-headless' },
     detect: {
       pythonModule: 'cv2',
@@ -173,7 +176,7 @@ sys.exit(0 if ok and fr is not None else 3)`,
     description: 'On-screen text recovery from frames (slates, timecode burn-in, signage).',
     capabilities: ['ocr', 'slate-reading', 'burn-in-timecode'],
     toolCapability: JOB,
-    runtimeRequirements: { cpu: true, gpu: false, ramMB: 512, diskMB: 150, resourceClass: 'CPU_HEAVY' },
+    runtimeRequirements: { cpu: true, gpu: false, ramMB: 512, diskMB: 150, resourceClass: 'MEDIUM' },
     install: { kind: 'apt', package: 'tesseract-ocr' },
     detect: { bin: 'tesseract', versionArgs: ['--version'], versionPattern: /tesseract\s+v?([\d.]+)/i },
     health: {
@@ -193,7 +196,7 @@ sys.exit(0 if ok and fr is not None else 3)`,
     description: 'CTranslate2 Whisper transcription — dialogue and spoken slate capture.',
     capabilities: ['transcription', 'timestamps', 'language-detection'],
     toolCapability: JOB,
-    runtimeRequirements: { cpu: true, gpu: false, ramMB: 2048, diskMB: 900, resourceClass: 'CPU_HEAVY' },
+    runtimeRequirements: { cpu: true, gpu: false, ramMB: 2048, diskMB: 900, resourceClass: 'HEAVY' },
     install: { kind: 'pip', package: 'faster-whisper' },
     detect: {
       pythonModule: 'faster_whisper',
@@ -218,7 +221,7 @@ sys.exit(0 if ok and fr is not None else 3)`,
     description: 'Word-level alignment and diarisation on top of Whisper.',
     capabilities: ['transcription', 'word-alignment', 'diarisation'],
     toolCapability: JOB,
-    runtimeRequirements: { cpu: true, gpu: true, ramMB: 6144, diskMB: 4000, resourceClass: 'GPU' },
+    runtimeRequirements: { cpu: true, gpu: true, ramMB: 6144, diskMB: 4000, resourceClass: 'HEAVY' },
     install: { kind: 'pip', package: 'whisperx' },
     detect: {
       pythonModule: 'whisperx',
@@ -237,7 +240,7 @@ sys.exit(0 if ok and fr is not None else 3)`,
     description: 'Music/dialogue stem separation for isolating usable production audio.',
     capabilities: ['source-separation', 'stem-extraction', 'dialogue-isolation'],
     toolCapability: JOB,
-    runtimeRequirements: { cpu: true, gpu: true, ramMB: 8192, diskMB: 5000, resourceClass: 'GPU' },
+    runtimeRequirements: { cpu: true, gpu: true, ramMB: 8192, diskMB: 5000, resourceClass: 'HEAVY' },
     install: { kind: 'pip', package: 'demucs' },
     detect: {
       pythonModule: 'demucs',
@@ -256,7 +259,7 @@ sys.exit(0 if ok and fr is not None else 3)`,
     description: 'Editorial project format and renderer. Kdenlive projects are MLT documents, so one export both opens in Kdenlive and renders with melt.',
     capabilities: ['timeline-export', 'kdenlive-project', 'render', 'transitions'],
     toolCapability: { ...JOB, canOpenProject: true, canExportAsset: true },
-    runtimeRequirements: { cpu: true, gpu: false, ramMB: 1024, diskMB: 400, resourceClass: 'CPU_HEAVY' },
+    runtimeRequirements: { cpu: true, gpu: false, ramMB: 1024, diskMB: 400, resourceClass: 'HEAVY' },
     install: { kind: 'apt', package: 'melt' },
     detect: { bin: 'melt', versionArgs: ['-version'], versionPattern: /melt\s+([\d.]+)/i },
     health: {

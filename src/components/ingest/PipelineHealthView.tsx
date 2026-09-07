@@ -38,12 +38,16 @@ interface Health {
   counts: {
     discovered: number; queued: number; processing: number;
     processed: number; failed: number; unavailable: number;
+    resourceWaiting?: number;
   };
-  scheduler: {
+  resources: {
+    diskFreeMB: number; diskTotalMB: number; memFreeMB: number; memTotalMB: number;
+    reservedMB: number; reservations: number; waiting: number;
     active: Record<string, number>;
-    limits: { light: number; cpuHeavy: number; gpu: number; diskQuotaMB: number };
-    queuedWaiters: number; diskUsedMB: number; diskQuotaMB: number;
+    limits: { LIGHT: number; MEDIUM: number; HEAVY: number; gpu: number; diskQuotaMB: number; diskFloorMB: number; memoryFloorMB: number };
   };
+  artifacts: Record<string, { count: number; bytes: number }>;
+  resourceWaits: Record<string, number>;
   watcher: { running: boolean; folderId?: string; intervalMs?: number; lastScanAt?: string; lastResult?: any };
 }
 
@@ -124,7 +128,7 @@ export function PipelineHealthView({ accessToken, folderUrl }: { accessToken?: s
   }
 
   const c = health.counts;
-  const s = health.scheduler;
+  const s = health.resources;
   const available = health.tools.filter((t) => t.state === 'AVAILABLE').length;
   const optIn = health.tools.filter((t) => t.tier === 'ENHANCED' || t.tier === 'INTERCHANGE');
   const optInMissing = optIn.filter((t) => t.state !== 'AVAILABLE');
@@ -191,14 +195,18 @@ export function PipelineHealthView({ accessToken, folderUrl }: { accessToken?: s
           <span className="font-bold text-xs tracking-tight">RESOURCE LIMITS</span>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-[11px] text-neutral-400 tabular-nums">
-          <span>light <b className="text-neutral-200">{s.active.LIGHT ?? 0}/{s.limits.light}</b></span>
-          <span>cpu-heavy <b className="text-neutral-200">{s.active.CPU_HEAVY ?? 0}/{s.limits.cpuHeavy}</b></span>
-          <span>gpu <b className="text-neutral-200">{s.active.GPU ?? 0}/{s.limits.gpu}</b></span>
+          <span>light <b className="text-neutral-200">{s.active.LIGHT ?? 0}/{s.limits.LIGHT}</b></span>
+          <span>medium <b className="text-neutral-200">{s.active.MEDIUM ?? 0}/{s.limits.MEDIUM}</b></span>
+          <span>heavy <b className="text-neutral-200">{s.active.HEAVY ?? 0}/{s.limits.HEAVY}</b></span>
           <span className="flex items-center gap-1">
-            <HardDrive size={11} /> temp
-            <b className="text-neutral-200">{s.diskUsedMB}/{s.diskQuotaMB} MB</b>
+            <HardDrive size={11} /> reserved
+            <b className="text-neutral-200">{s.reservedMB}/{s.limits.diskQuotaMB} MB</b>
           </span>
-          {s.queuedWaiters > 0 && <span className="text-amber-400">{s.queuedWaiters} waiting for a slot</span>}
+          {/* Real free disk, read from the filesystem, not a running total. */}
+          <span>disk free <b className={s.diskFreeMB < s.limits.diskFloorMB ? 'text-red-400' : 'text-neutral-200'}>{(s.diskFreeMB / 1024).toFixed(1)} GB</b></span>
+          <span>mem free <b className={s.memFreeMB < s.limits.memoryFloorMB ? 'text-red-400' : 'text-neutral-200'}>{(s.memFreeMB / 1024).toFixed(1)} GB</b></span>
+          {s.waiting > 0 && <span className="text-amber-400">{s.waiting} waiting for a slot</span>}
+          {!!c.resourceWaiting && <span className="text-amber-400">{c.resourceWaiting} job(s) in RESOURCE_WAIT</span>}
         </div>
       </div>
 

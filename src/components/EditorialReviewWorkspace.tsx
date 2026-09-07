@@ -24,6 +24,7 @@ interface Scene {
   confidence: number; editorialRationale: string;
   chronologyAssumptions: { statement: string; confidence: string }[];
   missingEvidence: string[]; sourceClipIds: string[]; storyBeatIds: string[];
+  evidenceLimitations: { tool: string; reason: string; effect: string }[];
   sourceEvidenceIds: string[]; humanReviewState: string;
   revisionHistory: { at: string; from: string; to: string; actor: string; note?: string }[];
 }
@@ -373,6 +374,24 @@ export function EditorialReviewWorkspace() {
                     <span className="text-neutral-500"> ({a.confidence})</span>
                   </div>
                 ))}
+              </div>
+            )}
+
+            {scene.evidenceLimitations?.length > 0 && (
+              <div className="border border-amber-500/20 bg-amber-500/5 rounded-lg p-4 space-y-2">
+                <div className="text-[10px] uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                  <FileWarning size={11} /> Evidence quality
+                </div>
+                {/* Approving should never be a guess about what the machine saw. */}
+                {scene.evidenceLimitations.map((l, i) => (
+                  <div key={i} className="text-[11px] leading-snug">
+                    <span className="text-amber-400 font-bold">{l.tool.toUpperCase()}: {l.reason}</span>
+                    <div className="text-neutral-400">{l.effect}</div>
+                  </div>
+                ))}
+                <div className="text-[10px] text-neutral-500 pt-1 border-t border-neutral-800">
+                  Confidence above is reduced to reflect this.
+                </div>
               </div>
             )}
 

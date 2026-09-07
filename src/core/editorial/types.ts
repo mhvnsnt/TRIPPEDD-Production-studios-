@@ -149,6 +149,16 @@ export interface EditorialSceneCandidate {
   editorialRationale: string;
   chronologyAssumptions: { statement: string; confidence: ChronologyConfidence }[];
   missingEvidence: string[];
+  /**
+   * Analyzers that would normally have contributed but could not run. A scene
+   * assembled without word-level alignment is still usable — but the creator
+   * must be able to see that before approving it.
+   */
+  evidenceLimitations: {
+    tool: string;
+    reason: string;
+    effect: string;
+  }[];
   requiredAssets: string[];
   generatedAssetIds: string[];
 

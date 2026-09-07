@@ -25,6 +25,11 @@ export interface AssemblyInput {
   beats: StoryBeat[];
   /** Narrative order the creator wants, by beat id. Absent = physical order. */
   narrativeOrder?: string[];
+  /**
+   * Tools that were resource-blocked during ingest, by source file id. Scenes
+   * built from that file declare the gap and carry reduced confidence.
+   */
+  blockedTools?: Record<string, string[]>;
 }
 
 /** Pad around evidence so a cut does not start mid-word. */
@@ -85,6 +90,38 @@ function overlapFraction(a: EditorialSceneCandidate, b: EditorialSceneCandidate)
   }
   const smaller = Math.min(a.proposedDuration, b.proposedDuration);
   return smaller > 0 ? shared / smaller : 0;
+}
+
+/** What the absence of each analyzer actually costs the edit. */
+const LIMITATION_EFFECT: Record<string, string> = {
+  whisperx: 'cut points come from utterance-level timings, so in/out points are less precise than word-level alignment would give',
+  'faster-whisper': 'no transcript, so dialogue could not inform selection or exclusion',
+  pyscenedetect: 'no shot boundaries, so cuts were not snapped to real edit points',
+  opencv: 'no visual motion or blank-frame analysis',
+  tesseract: 'no on-screen text recovery',
+  demucs: 'dialogue was not isolated from background audio',
+};
+
+/** Confidence multiplier per missing analyzer, floored so a scene stays usable. */
+const LIMITATION_WEIGHT: Record<string, number> = {
+  'faster-whisper': 0.7,
+  pyscenedetect: 0.85,
+  whisperx: 0.92,
+  opencv: 0.95,
+  tesseract: 0.97,
+  demucs: 0.98,
+};
+
+function limitationsFor(blocked: string[]) {
+  return blocked.map((tool) => ({
+    tool,
+    reason: 'RESOURCE_BLOCKED during ingest',
+    effect: LIMITATION_EFFECT[tool] ?? 'this analysis did not contribute to the scene',
+  }));
+}
+
+function confidencePenalty(blocked: string[]): number {
+  return Math.max(0.5, blocked.reduce((acc, t) => acc * (LIMITATION_WEIGHT[t] ?? 0.95), 1));
 }
 
 let seq = 0;
@@ -199,7 +236,10 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
       proposedDuration: duration(ranges),
       beatMap,
       excludedMaterial: exclusions,
-      confidence: rb.confidence,
+      // Missing analysis lowers confidence rather than being silently ignored.
+      confidence: Number(
+        (rb.confidence * confidencePenalty(input.blockedTools?.[fileId] ?? [])).toFixed(3)
+      ),
       editorialRationale:
         `Assembled from ${ev.length} supporting observation(s) in ${fileId}. ` +
         `${exclusions.length} production-artifact segment(s) excluded from the cut and preserved in the physical timeline.`,
@@ -210,6 +250,7 @@ export function assembleScenes(input: AssemblyInput): EditorialSceneCandidate[] 
       missingEvidence: rb.unmatchedCues.length
         ? [`cues with no supporting evidence: ${rb.unmatchedCues.join(', ')}`]
         : [],
+      evidenceLimitations: limitationsFor(input.blockedTools?.[fileId] ?? []),
       requiredAssets: [],
       generatedAssetIds: [],
       humanReviewState: 'PROPOSED',

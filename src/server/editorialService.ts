@@ -37,6 +37,8 @@ export class EditorialService {
   private narrativeOrder?: string[];
   /** sourceFileId -> local media path, for export. */
   private mediaPaths = new Map<string, string>();
+  /** sourceFileId -> analyzers that were resource-blocked during its ingest. */
+  private blockedTools: Record<string, string[]> = {};
 
   getStore(): SceneApprovalStore { return this.store; }
   getBeats(): StoryBeat[] { return this.beats; }
@@ -64,6 +66,8 @@ export class EditorialService {
       }
       const local = (job as any).localMediaPath;
       if (local) this.mediaPaths.set(job.fileId, local);
+      const blocked = (job as any).resourceBlockedTools as string[] | undefined;
+      if (blocked?.length) this.blockedTools[job.fileId] = blocked;
     }
     return added;
   }
@@ -81,6 +85,7 @@ export class EditorialService {
       reconciled: reconciliation.beats,
       beats: this.beats,
       narrativeOrder: this.narrativeOrder,
+      blockedTools: this.blockedTools,
     });
 
     // Preserve creator decisions across rebuilds.

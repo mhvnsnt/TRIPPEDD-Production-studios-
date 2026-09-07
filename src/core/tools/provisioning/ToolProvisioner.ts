@@ -12,6 +12,7 @@ import { executeTool } from '../execution/executor';
 import { runnerRoot } from '../execution/runnerRoot';
 import { ensureFixtures, type Fixtures } from './fixtures';
 import { TOOL_SPECS, AUTO_PROVISION_TIERS, type ToolSpec, type ToolTier } from './specs';
+import { ModelArtifactManager, WHISPERX_ALIGN_EN } from './ModelArtifactManager';
 import type { ToolStatus } from '../../types';
 
 export const PROVISIONING_UNAVAILABLE =
@@ -89,6 +90,8 @@ export class ToolProvisioner {
   private opts: ProvisionerOptions;
   private env: EnvironmentCapability = { canApt: false, canPip: false };
   private fixtures?: Fixtures;
+  private models: ModelArtifactManager;
+  private modelPurge?: { removed: string[]; bytesReclaimed: number };
 
   constructor(opts: ProvisionerOptions = {}) {
     this.opts = opts;
@@ -99,6 +102,16 @@ export class ToolProvisioner {
     this.binDir = path.join(this.root, '.trippedd_tools', 'bin');
     this.statePath = path.join(this.root, '.trippedd_toolchain.json');
     this.fixtureDir = path.join(this.root, '.trippedd_tools', 'fixtures');
+    this.models = new ModelArtifactManager(path.join(this.root, '.trippedd_tools', 'models'));
+  }
+
+  getModels(): ModelArtifactManager {
+    return this.models;
+  }
+
+  /** What the boot-time model sweep removed, if anything. */
+  getModelPurge() {
+    return this.modelPurge;
   }
 
   getTools(): ProvisionedTool[] {
@@ -349,6 +362,14 @@ export class ToolProvisioner {
       });
       return r.provenance.success;
     });
+
+    // Sweep corrupt or half-downloaded model artifacts BEFORE any tool is
+    // declared available. A truncated model surfaces here, as a named artifact
+    // problem, instead of as an opaque loader error minutes into a real job.
+    this.modelPurge = await this.models.purgeInvalid([WHISPERX_ALIGN_EN]);
+    if (this.modelPurge.removed.length) {
+      console.log(`[toolchain] purged ${this.modelPurge.removed.length} invalid model artifact(s), reclaimed ${(this.modelPurge.bytesReclaimed / 1048576).toFixed(0)}MB`);
+    }
 
     const persisted = await this.loadState();
 

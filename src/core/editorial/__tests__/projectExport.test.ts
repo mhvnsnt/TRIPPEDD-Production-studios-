@@ -45,7 +45,7 @@ function scene(over: Partial<EditorialSceneCandidate> = {}): EditorialSceneCandi
     proposedOrder: 0, physicalOrder: 0,
     ranges: [{ sourceFileId: 'a', startTime: 2, endTime: 6, derivedFromObservationIds: ['o1'] }],
     proposedDuration: 4, beatMap: [], excludedMaterial: [], confidence: 0.8,
-    editorialRationale: 'r', chronologyAssumptions: [], missingEvidence: [],
+    editorialRationale: 'r', chronologyAssumptions: [], missingEvidence: [], evidenceLimitations: [],
     requiredAssets: [], generatedAssetIds: [], humanReviewState: 'PROPOSED',
     revisionHistory: [], createdAt: '', updatedAt: '', ...over,
   };

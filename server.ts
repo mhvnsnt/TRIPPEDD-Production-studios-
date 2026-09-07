@@ -162,7 +162,9 @@ async function startServer() {
       environment: provisioner.getEnvironment(),
       // Counts are derived from the live queue, never declared.
       counts: queueManager.getCounts(),
-      scheduler: queueManager.getScheduler().getSnapshot(),
+      resources: await queueManager.getGovernor().snapshot(),
+      artifacts: queueManager.getLifecycle().usage(),
+      resourceWaits: queueManager.getResourceWaits(),
       watcher: driveWatcher?.getStatus() ?? { running: false },
       credential: await driveCredentials.status(),
     });

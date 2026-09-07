@@ -13,7 +13,8 @@ import path from 'path';
 import os from 'os';
 import { MediaJob, QueueJobState, JobToolStatus } from '../core/types';
 import { ToolProvisioner } from '../core/tools/provisioning/ToolProvisioner';
-import { ResourceScheduler } from '../core/scheduler/ResourceScheduler';
+import { ResourceGovernor, type ResourceClass } from '../core/scheduler/ResourceGovernor';
+import { ArtifactLifecycle } from '../core/scheduler/ArtifactLifecycle';
 import { ALL_ANALYZERS, type Analyzer, type AnalysisContext, type MachineObservation, type ToolHandle } from '../core/analysis/analyzers';
 import { hashFile } from '../core/tools/execution/executor';
 import { runnerRoot } from '../core/tools/execution/runnerRoot';
@@ -21,7 +22,12 @@ import { runnerRoot } from '../core/tools/execution/runnerRoot';
 /** Everything the queue talks to, injectable so tests are deterministic. */
 export interface QueueDeps {
   provisioner?: { getTool(id: string): ToolHandle | undefined };
-  scheduler?: ResourceScheduler;
+  governor?: ResourceGovernor;
+  lifecycle?: ArtifactLifecycle;
+  /** How long a resource-blocked job waits before being retried. */
+  resourceRetryMs?: number;
+  /** Bounded retries, so a permanently short box cannot loop forever. */
+  maxResourceWaits?: number;
   analyzers?: Analyzer[];
   pythonPath?: () => string;
   /** Streams the source to disk. Returns bytes written. */
@@ -45,6 +51,23 @@ export interface QueueDeps {
  */
 const DEFAULT_MAX_JOBS = 1;
 
+/**
+ * Scratch a single analyzer run needs, over and above the job's own media
+ * reservation. Deliberately modest: stems and frame dumps, not install size.
+ */
+const ANALYZER_SCRATCH_MB: Record<ResourceClass, number> = {
+  LIGHT: 16,
+  MEDIUM: 64,
+  HEAVY: 256,
+};
+
+/** Starting RAM estimate per class; replaced by measured peaks once observed. */
+const ANALYZER_RAM_MB: Record<ResourceClass, number> = {
+  LIGHT: 128,
+  MEDIUM: 512,
+  HEAVY: 1536,
+};
+
 export class QueueManager {
   private jobs = new Map<string, MediaJob>();
   private activeProcessing = 0;
@@ -58,7 +81,11 @@ export class QueueManager {
    */
   private inFlight = new Map<string, Promise<void>>();
   private deps: QueueDeps;
-  private scheduler: ResourceScheduler;
+  private governor: ResourceGovernor;
+  private lifecycle: ArtifactLifecycle;
+  /** Resource waits per job, so retries are bounded. */
+  private resourceWaits = new Map<string, number>();
+  private waitTimers = new Map<string, NodeJS.Timeout>();
   private analyzers: Analyzer[];
   private provisioner?: { getTool(id: string): ToolHandle | undefined };
   private workRoot: string;
@@ -66,7 +93,8 @@ export class QueueManager {
 
   constructor(deps: QueueDeps = {}) {
     this.deps = deps;
-    this.scheduler = deps.scheduler ?? new ResourceScheduler();
+    this.governor = deps.governor ?? new ResourceGovernor({ workspacePath: runnerRoot() });
+    this.lifecycle = deps.lifecycle ?? new ArtifactLifecycle();
     this.analyzers = deps.analyzers ?? ALL_ANALYZERS;
     this.provisioner = deps.provisioner;
     this.workRoot = deps.workRoot ?? path.join(os.tmpdir(), 'trippedd_pipeline');
@@ -91,8 +119,17 @@ export class QueueManager {
     return this.MAX_CONCURRENT;
   }
 
-  getScheduler(): ResourceScheduler {
-    return this.scheduler;
+  getGovernor(): ResourceGovernor {
+    return this.governor;
+  }
+
+  getLifecycle(): ArtifactLifecycle {
+    return this.lifecycle;
+  }
+
+  /** How many times each job has had to wait for resources. */
+  getResourceWaits(): Record<string, number> {
+    return Object.fromEntries(this.resourceWaits);
   }
 
   getJobs(): MediaJob[] {
@@ -133,6 +170,7 @@ export class QueueManager {
       discovered: jobs.length,
       queued: jobs.filter((j) => j.state === 'QUEUED' || j.state === 'DISCOVERED').length,
       processing: jobs.filter((j) => processingStates.includes(j.state)).length,
+      resourceWaiting: jobs.filter((j) => j.state === 'RESOURCE_WAIT').length,
       processed: jobs.filter((j) => j.state === 'NEEDS_REVIEW' || j.state === 'EVIDENCE_READY').length,
       failed: jobs.filter((j) => j.state === 'FAILED' || j.state === 'RETRYABLE_FAILURE').length,
       unavailable: jobs.filter((j) => j.state === 'UNAVAILABLE').length,
@@ -152,6 +190,13 @@ export class QueueManager {
       await this.runPipeline(next);
     } catch (e: any) {
       this.log(next.fileId, `FATAL: ${e?.message ?? e}`);
+      // A crashed job must not keep its reservations or its scratch. Provenance
+      // and stderr already recorded on the job are left untouched.
+      this.governor.release(`job:${next.fileId}`);
+      const cleaned = await this.lifecycle.cleanupJob(next.fileId);
+      if (cleaned.bytesReclaimed) {
+        this.log(next.fileId, `Released ${(cleaned.bytesReclaimed / 1048576).toFixed(1)}MB after failure.`);
+      }
       // Distinguish a transient failure from a terminal one so a retry is
       // meaningful rather than a guess.
       this.updateJob(next.fileId, {
@@ -161,6 +206,53 @@ export class QueueManager {
       this.activeProcessing--;
       void this.processNext();
     }
+  }
+
+  /**
+   * Park a job that cannot start yet and schedule a retry. Resource shortage is
+   * a temporary condition, so the job waits instead of being failed — but the
+   * waiting is bounded, because a permanently undersized box should surface as
+   * a real failure rather than an infinite loop.
+   */
+  private blockOnResources(job: MediaJob, reason: string, decision: { requiredBytes?: number; availableBytes?: number; reservedBytes?: number; constraint?: string }): void {
+    const waits = (this.resourceWaits.get(job.fileId) ?? 0) + 1;
+    this.resourceWaits.set(job.fileId, waits);
+    const max = this.deps.maxResourceWaits ?? 10;
+    const mb = (b?: number) => (b === undefined ? '?' : `${Math.round(b / 1048576)}MB`);
+
+    this.log(
+      job.fileId,
+      `RESOURCE_BLOCKED (${decision.constraint ?? 'RESOURCE'}) — ${reason}. ` +
+        `required ${mb(decision.requiredBytes)}, available ${mb(decision.availableBytes)}, reserved ${mb(decision.reservedBytes)}. ` +
+        `wait ${waits}/${max}.`
+    );
+
+    if (waits >= max) {
+      this.log(job.fileId, `Giving up after ${max} resource waits; the environment is persistently short.`);
+      this.updateJob(job.fileId, { state: 'RETRYABLE_FAILURE' });
+      return;
+    }
+
+    this.updateJob(job.fileId, { state: 'RESOURCE_WAIT' });
+    const delay = this.deps.resourceRetryMs ?? 15_000;
+    const existing = this.waitTimers.get(job.fileId);
+    if (existing) clearTimeout(existing);
+    const t = setTimeout(() => {
+      this.waitTimers.delete(job.fileId);
+      // Only re-queue if nothing else moved it on in the meantime.
+      if (this.jobs.get(job.fileId)?.state === 'RESOURCE_WAIT') {
+        this.updateJob(job.fileId, { state: 'QUEUED' });
+        void this.processNext();
+      }
+    }, delay);
+    t.unref?.();
+    this.waitTimers.set(job.fileId, t);
+  }
+
+  /** Stop pending retry timers, e.g. on shutdown. */
+  stop(): void {
+    for (const t of this.waitTimers.values()) clearTimeout(t);
+    this.waitTimers.clear();
   }
 
   private toolHandle(id: string): ToolHandle | undefined {
@@ -212,14 +304,17 @@ export class QueueManager {
     let reservedDisk = false;
 
     if (needsLocal) {
-      const estMB = estimateSizeMB(job);
-      reservedDisk = this.scheduler.reserveDisk(diskKey, estMB);
-      if (!reservedDisk) {
-        this.log(job.fileId, `Deferred: temp disk quota reached (needs ~${estMB}MB, used ${this.scheduler.getDiskUsedMB()}MB of ${this.scheduler.getLimits().diskQuotaMB}MB).`);
-        this.updateJob(job.fileId, { state: 'RETRYABLE_FAILURE' });
+      // Working space for the media plus the artifacts derived from it
+      // (extracted frames, stems, transcripts) — roughly triple the source.
+      const estMB = Math.ceil(estimateSizeMB(job) * 3);
+      const decision = await this.governor.reserve(diskKey, estMB);
+      if (!decision.admitted) {
+        // Short on resources is a WAIT, not a failure of the media.
         await safeRm(jobWork);
+        this.blockOnResources(job, decision.reason ?? 'insufficient resources', decision);
         return;
       }
+      reservedDisk = true;
 
       this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING' });
       localPath = path.join(jobWork, sanitizeName(job.originalName || `${job.fileId}.mp4`));
@@ -228,7 +323,8 @@ export class QueueManager {
         this.log(job.fileId, `Fetched ${bytes} bytes for local analysis.`);
         sourceHash = await hashFile(localPath);
       } catch (e: any) {
-        this.scheduler.releaseDisk(diskKey);
+        this.governor.release(diskKey);
+        await this.lifecycle.cleanupJob(job.fileId);
         await safeRm(jobWork);
         throw e;
       }
@@ -248,6 +344,8 @@ export class QueueManager {
     };
 
     const observations: MachineObservation[] = [];
+    /** Analyzers that could have run but were refused resources. */
+    const blocked: string[] = [];
 
     // Analyzers run in dependency waves: everything with its prerequisites met
     // goes concurrently, bounded by resource class. WhisperX therefore waits for
@@ -255,10 +353,36 @@ export class QueueManager {
     const completed = new Set<string>();
     const pending = [...runnable];
     const runOne = (a: Analyzer) =>
-      this.scheduler.withSlot(a.resourceClass, async () => {
+      this.governor.withSlot(a.resourceClass, async () => {
+        // A heavy analyzer must fit the budget, not merely find a free slot.
+        //
+        // The figure here is RUNTIME SCRATCH, not the tool's install footprint:
+        // the job already reserved space for the media and its derivatives, and
+        // the models are on disk long before this point. Charging a tool its
+        // multi-gigabyte install size again would make every heavy analyzer
+        // permanently unaffordable — which is exactly what it did, silently
+        // producing zero transcripts while the run reported success.
+        const need = this.governor.requirementFor(a.requiresTool, {
+          cls: a.resourceClass,
+          diskMB: ANALYZER_SCRATCH_MB[a.resourceClass],
+          ramMB: ANALYZER_RAM_MB[a.resourceClass],
+        });
+        const ok = await this.governor.admit(need);
+        if (!ok.admitted) {
+          setToolStatus(job, a.requiresTool, {
+            status: 'UNAVAILABLE',
+            error: `RESOURCE_BLOCKED — ${ok.reason}`,
+          });
+          blocked.push(a.requiresTool);
+          this.log(job.fileId, `[${a.requiresTool}] RESOURCE_BLOCKED — ${ok.reason}`);
+          return;
+        }
+
         setToolStatus(job, a.requiresTool, { status: 'RUNNING' });
         try {
           const res = await a.run(ctx);
+          // Feed real peak RSS back so the next decision is measured, not guessed.
+          this.governor.recordUsage(a.requiresTool, res.provenance?.resourceSampling?.peakRssMB);
           setToolStatus(job, a.requiresTool, {
             status: res.status === 'COMPLETED' ? 'COMPLETED' : res.status === 'UNAVAILABLE' ? 'UNAVAILABLE' : 'FAILED',
             error: res.error,
@@ -310,11 +434,16 @@ export class QueueManager {
       }
     }
 
-    if (reservedDisk) this.scheduler.releaseDisk(diskKey);
+    if (reservedDisk) this.governor.release(diskKey);
+    const cleaned = await this.lifecycle.cleanupJob(job.fileId);
     await safeRm(jobWork);
-    this.log(job.fileId, 'Temporary scratch cleaned up.');
+    this.log(
+      job.fileId,
+      `Scratch cleaned: ${cleaned.removed} artifact(s), ${(cleaned.bytesReclaimed / 1048576).toFixed(1)}MB reclaimed, ${cleaned.preserved} preserved.`
+    );
 
     (job as any).observations = observations;
+    (job as any).resourceBlockedTools = blocked;
     job.evidenceRefs = observations.map((o) => o.id);
 
     const anyEvidence = observations.length > 0;

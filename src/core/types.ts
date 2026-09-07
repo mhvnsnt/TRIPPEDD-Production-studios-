@@ -769,7 +769,15 @@ export interface CaptureSession {
 
 // --- Media Queue Pipeline ---
 
-export type QueueJobState = 'DISCOVERED' | 'QUEUED' | 'DOWNLOADING/STREAMING' | 'PROBING' | 'ANALYZING' | 'EVIDENCE_READY' | 'NEEDS_REVIEW' | 'FAILED' | 'UNAVAILABLE' | 'RETRYABLE_FAILURE';
+export type QueueJobState =
+  | 'DISCOVERED' | 'QUEUED' | 'DOWNLOADING/STREAMING' | 'PROBING' | 'ANALYZING'
+  | 'EVIDENCE_READY' | 'NEEDS_REVIEW' | 'FAILED' | 'UNAVAILABLE'
+  | 'RETRYABLE_FAILURE'
+  /**
+   * Admitted work that cannot start yet because disk or memory is short. It is
+   * WAITING, not failed: the governor retries it when resources free up.
+   */
+  | 'RESOURCE_WAIT';
 
 export interface ToolRunProvenance {
   executionState: 'ADAPTER_DEFINED' | 'EXECUTED';

@@ -12,7 +12,7 @@ import { readFile, writeFile, readdir, mkdir } from 'fs/promises';
 import { executeTool, adapterDefined } from '../tools/execution/executor';
 import { runnerRoot } from '../tools/execution/runnerRoot';
 import type { ToolRunProvenance } from '../types';
-import type { ResourceClass } from '../scheduler/ResourceScheduler';
+import type { ResourceClass } from '../scheduler/ResourceGovernor';
 
 export type AnalyzerStatus = 'COMPLETED' | 'FAILED' | 'UNAVAILABLE' | 'SKIPPED';
 
@@ -181,7 +181,7 @@ export const FFprobeAnalyzer: Analyzer = {
 export const SceneDetectAnalyzer: Analyzer = {
   id: 'pyscenedetect',
   requiresTool: 'pyscenedetect',
-  resourceClass: 'CPU_HEAVY',
+  resourceClass: 'MEDIUM',
   requiresLocalFile: true,
   async run(ctx) {
     const t = ctx.getTool('pyscenedetect');
@@ -248,7 +248,7 @@ export const SceneDetectAnalyzer: Analyzer = {
 export const OpenCVAnalyzer: Analyzer = {
   id: 'opencv',
   requiresTool: 'opencv',
-  resourceClass: 'CPU_HEAVY',
+  resourceClass: 'MEDIUM',
   requiresLocalFile: true,
   async run(ctx) {
     const t = ctx.getTool('opencv');
@@ -309,7 +309,7 @@ export const OpenCVAnalyzer: Analyzer = {
 export const TesseractAnalyzer: Analyzer = {
   id: 'tesseract',
   requiresTool: 'tesseract',
-  resourceClass: 'CPU_HEAVY',
+  resourceClass: 'MEDIUM',
   requiresLocalFile: true,
   async run(ctx) {
     const t = ctx.getTool('tesseract');
@@ -379,7 +379,7 @@ export const TesseractAnalyzer: Analyzer = {
 export const WhisperAnalyzer: Analyzer = {
   id: 'faster-whisper',
   requiresTool: 'faster-whisper',
-  resourceClass: 'CPU_HEAVY',
+  resourceClass: 'HEAVY',
   requiresLocalFile: true,
   async run(ctx) {
     const t = ctx.getTool('faster-whisper');
@@ -441,7 +441,7 @@ export const WhisperAnalyzer: Analyzer = {
 export const WhisperXAnalyzer: Analyzer = {
   id: 'whisperx',
   requiresTool: 'whisperx',
-  resourceClass: 'GPU',
+  resourceClass: 'HEAVY',
   requiresLocalFile: true,
   dependsOn: ['faster-whisper'],
   async run(ctx) {
@@ -516,7 +516,7 @@ export const WhisperXAnalyzer: Analyzer = {
 export const DemucsAnalyzer: Analyzer = {
   id: 'demucs',
   requiresTool: 'demucs',
-  resourceClass: 'GPU',
+  resourceClass: 'HEAVY',
   requiresLocalFile: true,
   async run(ctx) {
     const t = ctx.getTool('demucs');

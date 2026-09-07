@@ -52,6 +52,29 @@ export interface SegmentTreatment {
   referenceLanguage?: string;
 }
 
+/**
+ * One live-action shot inside a segment.
+ *
+ * `recordedOrder` and `editorialOrder` are SEPARATE FIELDS on purpose. The Luck
+ * of the Irish shots were deliberately recorded out of story order for a
+ * practical reason on the day, and anything that sorts them back into recording
+ * order destroys the gag. Physical chronology is a fact about the shoot;
+ * editorial order is a decision about the episode.
+ */
+export interface CanonShot {
+  id: string;
+  description: string;
+  status: CanonStatus;
+  /** Position in the finished ad. */
+  editorialOrder?: number;
+  /** Position on the day. Differs from editorialOrder where it differs. */
+  recordedOrder?: number;
+  /** Camera setup, which is WHY the recording order differs. */
+  cameraAngle?: string;
+  /** Why it was shot when it was shot. */
+  recordingNote?: string;
+}
+
 export interface CanonSegment {
   position: number;
   id: string;
@@ -62,7 +85,7 @@ export interface CanonSegment {
   placementReason: string;
   treatment: SegmentTreatment;
   /** Shot construction where the creator specified one. */
-  shots?: { id: string; description: string; status: CanonStatus }[];
+  shots?: CanonShot[];
   /** What the editor still needs from the creator before building this. */
   openQuestions: string[];
   /** Cross-references into src/core/pipeline/episodes.ts where they exist. */
@@ -158,10 +181,28 @@ export const EPISODE_01: CanonSegment[] = [
       sourceReality: 'FICTIONAL', footageExists: true,
       dialogueSource: 'scripted gag; the "LUCK OF THE IRISH!!!" break is the hinge',
     },
+    // THE THREE LIVE-ACTION SHOTS WERE RECORDED OUT OF STORY ORDER, DELIBERATELY.
+    // Shots A and C share one camera setup; B is the other angle. Rather than
+    // move the camera for B and move it back for C, both A-angle shots were
+    // recorded back to back, so the day runs A, C, B while the AD runs A, B, C.
+    // Sorting these by recording time — which is what a physical-chronology
+    // assembly does — puts the "LUCK OF THE IRISH!!!" break in the middle and
+    // the silent beat last, which kills the gag. This is the clearest example
+    // in the episode of why physical order is never editorial order.
     shots: [
-      { id: 'SHOT_A', description: 'Far away, slow zoom in, suspense-building, chilling.', status: 'LOCKED_CANON' },
-      { id: 'SHOT_B', description: 'Different angle, closer, up near the subject, suspense-building.', status: 'LOCKED_CANON' },
-      { id: 'SHOT_C', description: 'Back to wide. Fourth-wall break "LUCK OF THE IRISH!!!". Generative handoff.', status: 'LOCKED_CANON' },
+      { id: 'SHOT_A', editorialOrder: 1, recordedOrder: 1, cameraAngle: 'A (wide)',
+        description: 'Far away, slow zoom in. Nerve-racking nothingness, suspense building, chilling.',
+        status: 'LOCKED_CANON' },
+      { id: 'SHOT_B', editorialOrder: 2, recordedOrder: 3, cameraAngle: 'B (closer, different angle)',
+        description: 'Different angle, closer, up near the subject. Face zoom, nothing said — suspense.',
+        recordingNote: 'Recorded THIRD on the day, plays SECOND in the ad.',
+        status: 'LOCKED_CANON' },
+      { id: 'SHOT_C', editorialOrder: 3, recordedOrder: 2, cameraAngle: 'A (wide)',
+        description: 'Back to the A angle. Zoom on the face, straight to camera: "LUCK OF THE IRISH!!!". ' +
+          'Fourth-wall break, then the generative handoff into the green Luck of the Irish ad.',
+        recordingNote: 'Recorded SECOND on the day because it shares camera angle A with SHOT_A — ' +
+          'the operator did not want to move for B and move back for C. Plays THIRD in the ad.',
+        status: 'LOCKED_CANON' },
     ],
     openQuestions: [
       'What does the generated portion after the handoff actually look like? Style is not recorded.',

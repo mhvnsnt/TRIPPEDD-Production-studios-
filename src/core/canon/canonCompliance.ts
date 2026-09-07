@@ -179,6 +179,10 @@ export const BLUEPRINT_CONSTRAINT_IDS = [
   'C05_CLOTHED_AND_CONFUSED_REALISTIC',
   'C05_CLOTHED_AND_CONFUSED_NOT_2D_OR_3D',
   'C05_CLOTHED_AND_CONFUSED_CLASSIFIED_ANIMATED',
+  'C05C_IRISH_IS_THREE_SHOTS',
+  'C05D_IRISH_EDITORIAL_ORDER',
+  'C05E_IRISH_RECORDED_ORDER_PRESERVED',
+  'C05F_IRISH_BREAK_LANDS_LAST',
   'C06_MCBRAIN_FEED_SEPARATE',
   'C07_GOODVILLE_IS_A_GAG_FAMILY',
   'C08_UNRECORDED_STYLE_NEVER_LOCKED',
@@ -274,6 +278,44 @@ function blueprintChecks(): { violations: CanonViolation[]; checked: number } {
         'Clothed and Confused is realistic. Classifying it as 2D or 3D is the correction the creator has already made twice.',
         `the treatment now positively asserts 2D/3D: "${asserted.trim().slice(0, 120)}"`,
         'remove the animated classification; the segment is realistic survival-documentary footage');
+    }
+  }
+
+  // C05b — the Luck of the Irish shots. Recorded A, C, B on the day; the ad
+  // plays A, B, C. A physical-chronology assembly puts the "LUCK OF THE IRISH!!!"
+  // break in the middle and the silent beat last, which kills the gag — so the
+  // two orders are checked as separate facts, and the fact that they DIFFER is
+  // itself part of the canon.
+  const irishSeg = seg('EP01_LUCK_OF_THE_IRISH');
+  const shots = irishSeg?.shots ?? [];
+  if (shots.length !== 3) {
+    B('C05C_IRISH_IS_THREE_SHOTS',
+      'The Luck of the Irish live action is three shots: wide suspense, closer angle, then the break to camera.',
+      `the blueprint carries ${shots.length} shot(s)`,
+      'restore all three shots');
+  } else {
+    const ed = shots.map((x) => x.editorialOrder);
+    const rec = shots.map((x) => x.recordedOrder);
+    if (ed.join() !== '1,2,3') {
+      B('C05D_IRISH_EDITORIAL_ORDER',
+        'The ad plays SHOT_A (wide suspense) → SHOT_B (closer angle) → SHOT_C (the break and the handoff).',
+        `editorial order reads ${ed.join(', ')}`,
+        'restore the ad order; the break has to land last or there is no gag');
+    }
+    // The shoot order is a fact about the day and must survive as one.
+    if (rec.join() !== '1,3,2') {
+      B('C05E_IRISH_RECORDED_ORDER_PRESERVED',
+        'The shots were recorded A, C, B — the two A-angle shots back to back, so the camera did not ' +
+        'have to move twice. That the recorded order DIFFERS from the ad order is itself canon.',
+        `recorded order reads ${rec.join(', ')}`,
+        'restore the recorded order as the creator stated it; do not overwrite it with the ad order');
+    }
+    const breakShot = shots.find((x) => /luck of the irish/i.test(x.description));
+    if (breakShot && breakShot.editorialOrder !== 3) {
+      B('C05F_IRISH_BREAK_LANDS_LAST',
+        'The "LUCK OF THE IRISH!!!" fourth-wall break is the LAST live-action shot, and hands off to the ad.',
+        `the break is at editorial position ${breakShot.editorialOrder}`,
+        'move the break back to the end of the live action');
     }
   }
 

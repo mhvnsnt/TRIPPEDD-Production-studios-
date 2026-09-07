@@ -6,3 +6,7 @@ coverage/
 *.log
 .env*
 !.env.example
+.trippedd_venv
+.trippedd_tools
+.trippedd_toolchain.json
+dist

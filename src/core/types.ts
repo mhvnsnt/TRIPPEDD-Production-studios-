@@ -792,6 +792,26 @@ export interface ToolRunProvenance {
     cpuPercent?: number;
     ramMB?: number;
   };
+  /** Working directory the process was explicitly launched in. */
+  cwd?: string;
+  /** How memory measurement went, including the honest no-sample case. */
+  resourceSampling?: ResourceSampling;
+}
+
+/**
+ * Result of sampling a real child process's memory.
+ *
+ * A process that exits before the first sampling tick legitimately yields NO
+ * measurement. That is recorded as sampleCount 0 with a reason — never as a
+ * zero-byte reading, which would be a fabricated number dressed as telemetry.
+ */
+export interface ResourceSampling {
+  sampleCount: number;
+  samplingIntervalMs: number;
+  peakRssMB?: number;
+  avgRssMB?: number;
+  status: 'SAMPLED' | 'NO_SAMPLE_CAPTURED' | 'SAMPLING_UNSUPPORTED';
+  reason?: string;
 }
 
 export interface JobToolStatus {

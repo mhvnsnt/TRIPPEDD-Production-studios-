@@ -8,6 +8,7 @@ import { SummaryDashboard } from './ingest/SummaryDashboard';
 import { PhysicalTimelineView } from './ingest/PhysicalTimelineView';
 import { StoryboardComparison } from './ingest/StoryboardComparison';
 import { PipelineMonitor } from './ingest/PipelineMonitor';
+import { PipelineHealthView } from './ingest/PipelineHealthView';
 import { MediaJob } from '../core/types';
 
 interface IngestFile {
@@ -278,6 +279,9 @@ export function DriveIngestWorkspace() {
           
   {activeTab === 'ingest' && (
      <div className="h-full mt-[-24px] mx-[-24px]">
+       <div className="px-6 pt-6">
+         <PipelineHealthView accessToken={accessToken} folderUrl={folderUrl} />
+       </div>
        <PipelineMonitor 
           folderUrl={folderUrl} 
           accessToken={accessToken} 

@@ -1,6 +1,7 @@
 import express from "express";
-import { toolManager } from "./src/server/toolManager";
 import { queueManager } from "./src/server/queueManager";
+import { ToolProvisioner } from "./src/core/tools/provisioning/ToolProvisioner";
+import { DriveWatcher } from "./src/server/driveWatcher";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { exec, spawn, execSync } from "child_process";
@@ -14,16 +15,43 @@ const execAsync = promisify(exec);
 // Job Runner State
 const activeJobs = new Map<string, any>();
 
+// The app-owned toolchain. Provisioning runs once at boot and the queue is
+// pointed at the result, so analyzers see real, health-checked tools.
+const provisioner = new ToolProvisioner();
+let provisioningPromise: Promise<unknown> | undefined;
+let driveWatcher: DriveWatcher | undefined;
+// Last token seen from the client, used by the background watcher.
+let lastDriveToken: string | undefined;
+const WATCH_FOLDER = process.env.TRIPPEDD_DRIVE_FOLDER || "1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI";
+
 async function startServer() {
-  try { await toolManager.initialize(); } catch(e) { console.error(e); }
+  // NOTE: toolManager.initialize() used to provision the same media tools with
+  // its own apt/pip logic. Two systems installing the same dependencies is a
+  // second dependency system by another name, so provisioning now lives solely
+  // in ToolProvisioner below. toolManager remains only for the broader
+  // tool-detection endpoints (blender/comfyui/obs).
+
+  // Provision in the background: a slow install must not block the UI, and the
+  // queue reports tools as unavailable until they are genuinely ready.
+  queueManager.setProvisioner(provisioner);
+  provisioningPromise = provisioner.initialize()
+    .then((tools) => {
+      const ready = tools.filter(t => t.state === "AVAILABLE").map(t => `${t.id}@${t.version}`);
+      console.log(`[toolchain] AVAILABLE: ${ready.join(", ") || "none"}`);
+      for (const t of tools.filter(t => t.state !== "AVAILABLE")) {
+        console.log(`[toolchain] ${t.id}: ${t.state}${t.installError ? " — " + t.installError : ""}`);
+      }
+      return tools;
+    })
+    .catch((e) => { console.error("[toolchain] provisioning error", e); return []; });
   const app = express();
   const PORT = 3000;
   
   app.use(express.json());
-  const { queueManager } = await import('./src/server/queueManager.ts');
 
   app.post("/api/queue/scan", async (req, res) => {
     const { folderId, token } = req.body;
+    if (token) lastDriveToken = token;
     try {
       const driveRes = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&fields=files(id,name,mimeType,size,md5Checksum,thumbnailLink,videoMediaMetadata)`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -65,6 +93,71 @@ async function startServer() {
 
   app.get("/api/queue", (req, res) => {
     res.json(queueManager.getJobs());
+  });
+
+  // --- Pipeline health: tool table + live queue counts -------------------
+  app.get("/api/pipeline/health", async (_req, res) => {
+    const tools = provisioner.getTools().map(t => ({
+      id: t.id, name: t.name, tier: t.tier, state: t.state,
+      version: t.version ?? null, executablePath: t.executablePath ?? null,
+      installSource: t.installSource ?? null, installError: t.installError ?? null,
+      capabilities: t.capabilities,
+      runtimeRequirements: t.runtimeRequirements,
+      lastHealthCheck: t.lastHealthCheck ?? null,
+      provisionedByApp: !!t.provisionedByApp,
+    }));
+    res.json({
+      tools,
+      environment: provisioner.getEnvironment(),
+      // Counts are derived from the live queue, never declared.
+      counts: queueManager.getCounts(),
+      scheduler: queueManager.getScheduler().getSnapshot(),
+      watcher: driveWatcher?.getStatus() ?? { running: false },
+    });
+  });
+
+  // Opt-in provisioning for the expensive/interchange tiers.
+  app.post("/api/pipeline/provision", async (req, res) => {
+    const { tools: ids, tiers } = req.body ?? {};
+    try {
+      const p = new ToolProvisioner({ enableTools: ids, enableTiers: tiers });
+      const result = await p.initialize();
+      for (const t of result) {
+        // Merge newly provisioned tools into the live registry.
+        const existing = provisioner.getTool(t.id);
+        if (t.state === "AVAILABLE" && existing && existing.state !== "AVAILABLE") {
+          Object.assign(existing, t);
+        }
+      }
+      res.json({ success: true, tools: provisioner.getTools() });
+    } catch (e: any) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
+  // --- Automatic ingestion ------------------------------------------------
+  app.post("/api/pipeline/watch/start", (req, res) => {
+    const { folderId, token, intervalMs } = req.body ?? {};
+    if (token) lastDriveToken = token;
+    driveWatcher?.stop();
+    driveWatcher = new DriveWatcher(queueManager, {
+      folderId: folderId || WATCH_FOLDER,
+      getToken: () => lastDriveToken,
+      intervalMs: intervalMs ?? 60_000,
+      onError: (e) => console.error("[watcher]", e.message),
+    });
+    driveWatcher.start();
+    res.json({ success: true, status: driveWatcher.getStatus() });
+  });
+
+  app.post("/api/pipeline/watch/stop", (_req, res) => {
+    driveWatcher?.stop();
+    res.json({ success: true, status: driveWatcher?.getStatus() ?? { running: false } });
+  });
+
+  app.post("/api/pipeline/watch/scan", async (_req, res) => {
+    if (!driveWatcher) return res.status(400).json({ error: "watcher not started" });
+    res.json(await driveWatcher.scanOnce());
   });
 
   app.get("/api/queue/:fileId", (req, res) => {

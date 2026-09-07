@@ -116,6 +116,39 @@ editorialRouter.post('/scenes/:id/ranges', (req, res) => {
   } catch (e) { fail(res, e); }
 });
 
+/** Cut the scene together into a watchable file. */
+editorialRouter.post('/scenes/:id/render', async (req, res) => {
+  try { res.json(await editorialService.renderScene(req.params.id)); }
+  catch (e) { fail(res, e); }
+});
+
+/** Plain-English account of what the editor did. */
+editorialRouter.get('/scenes/:id/explain', (req, res) => {
+  const x = editorialService.explain(req.params.id);
+  if (!x) return res.status(404).json({ error: 'unknown scene' });
+  res.json(x);
+});
+
+/**
+ * The creator types what they want changed. This is the main way the show gets
+ * made — everything else is scaffolding around it.
+ */
+editorialRouter.post('/scenes/:id/instruct', async (req, res) => {
+  const text = (req.body?.text ?? '').toString().trim();
+  if (!text) return res.status(400).json({ error: 'tell me what to change' });
+  try { res.json(await editorialService.instruct(req.params.id, text)); }
+  catch (e) { fail(res, e); }
+});
+
+editorialRouter.get('/episode', (_req, res) => {
+  res.json(editorialService.episodeStatus());
+});
+
+editorialRouter.post('/episode/render', async (_req, res) => {
+  try { res.json(await editorialService.renderEpisode()); }
+  catch (e) { fail(res, e); }
+});
+
 editorialRouter.post('/export/:format', async (req, res) => {
   const format = req.params.format as 'otio' | 'kdenlive';
   if (format !== 'otio' && format !== 'kdenlive') {

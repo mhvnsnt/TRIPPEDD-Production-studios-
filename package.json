@@ -12,7 +12,8 @@
     "lint": "tsc --noEmit",
     "ingest": "tsx scripts/ingest.ts",
     "test": "vitest run",
-    "stress": "tsx scripts/stress.ts"
+    "stress": "tsx scripts/stress.ts",
+    "scene": "tsx scripts/make_scene.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

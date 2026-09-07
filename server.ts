@@ -101,6 +101,69 @@ async function startServer() {
 
   app.use("/api/editorial", editorialRouter);
 
+  /**
+   * Drop footage straight into the app from the browser.
+   *
+   * Raw body rather than multipart: it avoids another dependency and streams
+   * large video without buffering a base64 copy. The filename rides on the
+   * query string and is sanitised before it touches the filesystem.
+   */
+  app.post("/api/footage/upload",
+    express.raw({ type: "*/*", limit: "8gb" }),
+    async (req, res) => {
+      try {
+        const raw = String(req.query.name || "footage.mp4");
+        const safe = pathMod.basename(raw).replace(/[^\w.\- ]+/g, "_").slice(0, 160);
+        if (!/\.(mp4|mov|m4v|mkv|avi|webm)$/i.test(safe)) {
+          return res.status(400).json({ error: "that does not look like a video file" });
+        }
+        const body = req.body as Buffer;
+        if (!body?.length) return res.status(400).json({ error: "empty upload" });
+
+        const dir = pathMod.join(process.cwd(), "footage");
+        fs.mkdirSync(dir, { recursive: true });
+        const dest = pathMod.join(dir, safe);
+        fs.writeFileSync(dest, body);
+
+        res.json({ ok: true, name: safe, bytes: body.length, path: dest });
+      } catch (e: any) {
+        res.status(500).json({ error: e.message });
+      }
+    });
+
+  /** What footage is sitting in the drop folder right now. */
+  app.get("/api/footage", (_req, res) => {
+    const dir = pathMod.join(process.cwd(), "footage");
+    if (!fs.existsSync(dir)) return res.json({ dir, files: [] });
+    const files = fs.readdirSync(dir)
+      .filter((f: string) => /\.(mp4|mov|m4v|mkv|avi|webm)$/i.test(f))
+      .map((f: string) => ({ name: f, bytes: fs.statSync(pathMod.join(dir, f)).size }));
+    res.json({ dir, files });
+  });
+
+  /** Analyse everything in the drop folder. One button, no arguments. */
+  app.post("/api/footage/process", async (_req, res) => {
+    const dir = pathMod.join(process.cwd(), "footage");
+    if (!fs.existsSync(dir)) return res.status(400).json({ error: "no footage folder yet" });
+    const VIDEO = /\.(mp4|mov|m4v|mkv|avi|webm)$/i;
+    let queued = 0;
+    for (const f of fs.readdirSync(dir).filter((x: string) => VIDEO.test(x))) {
+      const id = f.replace(VIDEO, "");
+      if (queueManager.getJob(id)) continue;
+      const src = pathMod.join(dir, f);
+      const job: any = {
+        id: "JOB_" + id, fileId: id, originalName: f, mimeType: "video/mp4",
+        size: String(fs.statSync(src).size), state: "QUEUED", progress: 0,
+        logs: ["Added from your footage folder."],
+        createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
+        tools: {}, evidenceRefs: [], __localSource: src,
+      };
+      queueManager.addJob(job);
+      queued++;
+    }
+    res.json({ queued, total: queueManager.getJobs().length });
+  });
+
   // Ingest from a local folder. Drive is the intended source, but footage on
   // disk should never be blocked behind an OAuth round trip.
   app.post("/api/queue/local", async (req, res) => {
@@ -124,6 +187,15 @@ async function startServer() {
       queued++;
     }
     res.json({ discovered: files.length, queued });
+  });
+
+  // Serve rendered scene/episode previews so the creator can just press play.
+  app.get("/api/preview/:sceneId", (req, res) => {
+    const r = editorialService.getRender(req.params.sceneId);
+    if (!r || !fs.existsSync(r.path)) {
+      return res.status(404).json({ error: "this scene has not been rendered yet" });
+    }
+    res.sendFile(pathMod.resolve(r.path));
   });
 
   // Serve retained source media so the review UI can play the actual clip at

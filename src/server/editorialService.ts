@@ -15,6 +15,9 @@ import { DEFAULT_STORY_INVENTORY } from '../core/editorial/storyInventory';
 import { assembleScenes } from '../core/editorial/assembler';
 import { SceneApprovalStore } from '../core/editorial/approval';
 import { exportOTIO, exportKdenlive, type ExportResult, MissingMediaError } from '../core/editorial/projectExport';
+import { renderScene, MissingRenderMediaError, type RenderResult } from '../core/editorial/render/SceneRenderer';
+import { parseInstruction, applyInstruction, type EditIntent } from '../core/editorial/naturalEdit';
+import { explainScene, type SceneExplanation } from '../core/editorial/explain';
 import { runnerRoot } from '../core/tools/execution/runnerRoot';
 import type { EditorialSceneCandidate, StoryBeat } from '../core/editorial/types';
 import type { MediaJob } from '../core/types';
@@ -39,6 +42,12 @@ export class EditorialService {
   private mediaPaths = new Map<string, string>();
   /** sourceFileId -> analyzers that were resource-blocked during its ingest. */
   private blockedTools: Record<string, string[]> = {};
+  /** sceneId -> rendered preview on disk. */
+  private renders = new Map<string, { path: string; durationSec: number; renderedAt: string; version: number }>();
+  private ffmpegPath = '/usr/bin/ffmpeg';
+
+  setFfmpegPath(p: string): void { this.ffmpegPath = p; }
+  getRender(sceneId: string) { return this.renders.get(sceneId); }
 
   getStore(): SceneApprovalStore { return this.store; }
   getBeats(): StoryBeat[] { return this.beats; }
@@ -149,6 +158,160 @@ export class EditorialService {
       }
     }
     return out.sort((a, b) => a.start - b.start);
+  }
+
+  /** Cuts the scene together into an actual watchable file. */
+  async renderScene(sceneId: string): Promise<RenderResult & { version?: number }> {
+    const scene = this.store.get(sceneId);
+    if (!scene) throw new Error(`unknown scene ${sceneId}`);
+
+    const outDir = path.join(runnerRoot(), '.trippedd_tools', 'previews');
+    const prior = this.renders.get(sceneId);
+    const version = (prior?.version ?? 0) + 1;
+
+    const res = await renderScene({
+      // Version the filename so the browser cannot serve a stale cut from cache
+      // after the creator has asked for a change.
+      sceneId: `${sceneId}_v${version}`,
+      ranges: scene.ranges,
+      resolveMedia: (id) => this.mediaPaths.get(id),
+      outDir,
+      ffmpegPath: this.ffmpegPath,
+    });
+
+    if (res.ok && res.outputPath) {
+      this.renders.set(sceneId, {
+        path: res.outputPath, durationSec: res.durationSec ?? 0,
+        renderedAt: new Date().toISOString(), version,
+      });
+    }
+    return { ...res, version };
+  }
+
+  explain(sceneId: string): SceneExplanation | undefined {
+    const scene = this.store.get(sceneId);
+    if (!scene) return undefined;
+    return explainScene(scene, this.observations);
+  }
+
+  /**
+   * The creator types what they want; the cut changes and is re-rendered.
+   * A locked scene refuses, and an instruction that was not understood changes
+   * nothing and says so.
+   */
+  async instruct(sceneId: string, text: string): Promise<{
+    intent: EditIntent;
+    changed: boolean;
+    summary: string;
+    problem?: string;
+    render?: RenderResult & { version?: number };
+    scene?: EditorialSceneCandidate;
+    reorderedTo?: number;
+  }> {
+    const scene = this.store.get(sceneId);
+    if (!scene) throw new Error(`unknown scene ${sceneId}`);
+
+    const intent = parseInstruction(text);
+
+    if (intent.kind === 'APPROVE') {
+      const locked = this.store.lock(sceneId, text);
+      return { intent, changed: true, summary: 'Locked. Moving to the next scene.', scene: locked };
+    }
+    if (intent.kind === 'REJECT') {
+      const rejected = this.store.reject(sceneId, text);
+      return { intent, changed: true, summary: 'Dropped this version. Your footage is untouched.', scene: rejected };
+    }
+    if (intent.kind === 'REORDER') {
+      const moved = this.reorderScene(scene, intent);
+      return { intent, changed: moved !== undefined, summary: moved !== undefined
+        ? `Moved "${scene.proposedTitle}" to position ${moved + 1} in the episode.`
+        : 'I could not work out where to move it.', scene, reorderedTo: moved };
+    }
+
+    const outcome = applyInstruction(scene, intent, {
+      observations: this.observations,
+      excluded: scene.excludedMaterial,
+    });
+
+    if (!outcome.changed) {
+      return { intent, changed: false, summary: outcome.summary, problem: outcome.problem };
+    }
+
+    // Record the change against the scene, keeping the previous cut in history.
+    this.store.applyMachineEdit(sceneId, (s) => {
+      s.ranges = outcome.ranges;
+      s.excludedMaterial = outcome.excluded;
+      s.proposedDuration = Number(outcome.ranges.reduce((a, r) => a + (r.endTime - r.startTime), 0).toFixed(3));
+    }, `creator: "${text}"`);
+
+    const render = await this.renderScene(sceneId);
+    return { intent, changed: true, summary: outcome.summary, render, scene: this.store.get(sceneId) };
+  }
+
+  /** Moves a scene in the episode running order. */
+  private reorderScene(scene: EditorialSceneCandidate, intent: EditIntent): number | undefined {
+    const all = this.store.all();
+    let target: number | undefined;
+
+    if (intent.targetScene) {
+      const want = intent.targetScene.toLowerCase();
+      const match = all.find((s) => s.id !== scene.id && s.proposedTitle.toLowerCase().includes(want));
+      if (match) target = intent.where === 'before' ? match.proposedOrder : match.proposedOrder + 1;
+    } else if (intent.where === 'before') target = 0;
+    else if (intent.where === 'after') target = all.length - 1;
+
+    if (target === undefined) return undefined;
+
+    const others = all.filter((s) => s.id !== scene.id).sort((a, b) => a.proposedOrder - b.proposedOrder);
+    const clamped = Math.max(0, Math.min(others.length, target));
+    others.splice(clamped, 0, scene);
+    others.forEach((s, i) => { s.proposedOrder = i; s.updatedAt = new Date().toISOString(); });
+    return clamped;
+  }
+
+  /**
+   * Joins the approved scenes into a full episode the creator can watch.
+   * Only locked/approved scenes go in — a draft nobody signed off is not the
+   * episode.
+   */
+  async renderEpisode(): Promise<RenderResult & { sceneCount: number; sceneOrder: string[] }> {
+    const approved = this.store.all()
+      .filter((s) => s.humanReviewState === 'LOCKED' || s.humanReviewState === 'APPROVED')
+      .sort((a, b) => a.proposedOrder - b.proposedOrder);
+
+    if (!approved.length) {
+      return {
+        ok: false, segmentCount: 0, warnings: [], provenance: [],
+        error: 'no approved scenes yet — approve at least one scene first',
+        sceneCount: 0, sceneOrder: [],
+      };
+    }
+
+    const ranges = approved.flatMap((s) => s.ranges);
+    const res = await renderScene({
+      sceneId: `episode_${Date.now().toString(36)}`,
+      ranges,
+      resolveMedia: (id) => this.mediaPaths.get(id),
+      outDir: path.join(runnerRoot(), '.trippedd_tools', 'previews'),
+      ffmpegPath: this.ffmpegPath,
+    });
+
+    return { ...res, sceneCount: approved.length, sceneOrder: approved.map((s) => s.proposedTitle) };
+  }
+
+  /** How the episode reads right now: what is locked, what is still open. */
+  episodeStatus() {
+    const all = this.store.all();
+    const approved = all.filter((s) => s.humanReviewState === 'LOCKED' || s.humanReviewState === 'APPROVED')
+      .sort((a, b) => a.proposedOrder - b.proposedOrder);
+    return {
+      totalScenes: all.length,
+      approved: approved.length,
+      waitingOnYou: all.filter((s) => s.humanReviewState === 'PROPOSED' || s.humanReviewState === 'REVISION_REQUESTED').length,
+      rejected: all.filter((s) => s.humanReviewState === 'REJECTED').length,
+      runningTimeSec: Number(approved.reduce((a, s) => a + s.proposedDuration, 0).toFixed(1)),
+      order: approved.map((s, i) => ({ position: i + 1, title: s.proposedTitle, seconds: s.proposedDuration })),
+    };
   }
 
   async exportProject(

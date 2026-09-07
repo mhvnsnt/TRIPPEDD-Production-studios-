@@ -73,6 +73,7 @@ export function Sidebar({ currentView, setCurrentView }: { currentView: string, 
   );
 
   const studioItems = [
+    { id: 'make_show', label: 'Make The Show', icon: Clapperboard },
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'studio_ops', label: 'Studio Operations', icon: Users },
     { id: 'story', label: 'Story / Fiction', icon: PenTool },

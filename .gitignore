@@ -10,3 +10,4 @@ coverage/
 .trippedd_tools
 .trippedd_toolchain.json
 dist
+footage/

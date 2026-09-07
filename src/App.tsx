@@ -21,6 +21,7 @@ import { PeopleCastWorkspace } from './components/PeopleCastWorkspace';
 import { ProductionControlWorkspace } from './components/ProductionControlWorkspace';
 import { PhysicalEvidenceWorkspace } from './components/PhysicalEvidenceWorkspace';
 import { EditorialReviewWorkspace } from './components/EditorialReviewWorkspace';
+import { MakeTheShowWorkspace } from './components/MakeTheShowWorkspace';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wrench } from 'lucide-react';
 
@@ -41,6 +42,8 @@ export default function App() {
 
       case 'physical_evidence':
         return <PhysicalEvidenceWorkspace />;
+      case 'make_show':
+        return <MakeTheShowWorkspace />;
       case 'editorial_review':
         return <EditorialReviewWorkspace />;
       case 'production':

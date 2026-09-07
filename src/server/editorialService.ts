@@ -19,10 +19,22 @@ import { renderScene, MissingRenderMediaError, type RenderResult } from '../core
 import { parseInstruction, applyInstruction, type EditIntent } from '../core/editorial/naturalEdit';
 import { explainScene, type SceneExplanation } from '../core/editorial/explain';
 import { nameClips, type ClipName } from '../core/editorial/naming';
+import { checkCanonCompliance, summariseCanonFailure, type CanonComplianceReport } from '../core/canon/canonCompliance';
 import { runnerRoot } from '../core/tools/execution/runnerRoot';
 import { executeTool } from '../core/tools/execution/executor';
 import type { EditorialSceneCandidate, StoryBeat } from '../core/editorial/types';
 import type { MediaJob } from '../core/types';
+
+/**
+ * A render either happened or was refused by the canon gate. The report rides
+ * along either way, so a refusal is readable without a second request.
+ */
+export type EpisodeRenderResult = RenderResult & {
+  sceneCount: number;
+  sceneOrder: string[];
+  canonStatus?: 'CANON_COMPLIANT' | 'CANON_COMPLIANCE_FAILED';
+  canon?: CanonComplianceReport;
+};
 
 export interface EditorialBuildResult {
   reconciliation: ReconciliationReport;
@@ -317,7 +329,7 @@ export class EditorialService {
    * Only locked/approved scenes go in — a draft nobody signed off is not the
    * episode.
    */
-  async renderEpisode(): Promise<RenderResult & { sceneCount: number; sceneOrder: string[] }> {
+  async renderEpisode(): Promise<EpisodeRenderResult> {
     const approved = this.store.all()
       .filter((s) => s.humanReviewState === 'LOCKED' || s.humanReviewState === 'APPROVED')
       .sort((a, b) => a.proposedOrder - b.proposedOrder);
@@ -330,6 +342,22 @@ export class EditorialService {
       };
     }
 
+    // The canon gate. A cut that breaks a locked decision does not get rendered
+    // and does not get quietly repaired — the creator has had to restate the
+    // EP01 order more than once, and a checker that fixes the order behind his
+    // back is how it goes wrong again without anyone noticing.
+    const canon = checkCanonCompliance(approved);
+    if (!canon.ok) {
+      return {
+        ok: false, segmentCount: 0, warnings: [], provenance: [],
+        error: summariseCanonFailure(canon),
+        canonStatus: 'CANON_COMPLIANCE_FAILED',
+        canon,
+        sceneCount: approved.length,
+        sceneOrder: approved.map((s) => s.proposedTitle),
+      };
+    }
+
     const ranges = approved.flatMap((s) => s.ranges);
     const res = await renderScene({
       sceneId: `episode_${Date.now().toString(36)}`,
@@ -339,7 +367,21 @@ export class EditorialService {
       ffmpegPath: this.ffmpegPath,
     });
 
-    return { ...res, sceneCount: approved.length, sceneOrder: approved.map((s) => s.proposedTitle) };
+    return {
+      ...res,
+      canonStatus: 'CANON_COMPLIANT',
+      canon,
+      sceneCount: approved.length,
+      sceneOrder: approved.map((s) => s.proposedTitle),
+    };
+  }
+
+  /** The canon gate on its own, so the creator can see it before rendering. */
+  canonCheck(): CanonComplianceReport {
+    return checkCanonCompliance(
+      this.store.all().filter((s) => s.humanReviewState !== 'REJECTED')
+        .sort((a, b) => a.proposedOrder - b.proposedOrder)
+    );
   }
 
   /** How the episode reads right now: what is locked, what is still open. */

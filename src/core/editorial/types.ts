@@ -143,6 +143,13 @@ export interface EditorialSceneCandidate {
   referenceIds: string[];
   storyBeatIds: string[];
 
+  /**
+   * The EP01 canon segment this scene belongs to, when the creator has pinned
+   * it. Left unset the compliance check infers it from story beats or the
+   * title and records which — an inference the creator can always overrule.
+   */
+  canonSegmentId?: string;
+
   /** Editorial position, which may deliberately differ from physical order. */
   proposedOrder: number;
   /** Physical position, retained so a reorder is always visible as a reorder. */

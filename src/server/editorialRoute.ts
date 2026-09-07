@@ -149,6 +149,11 @@ editorialRouter.get('/episode', (_req, res) => {
   res.json(editorialService.episodeStatus());
 });
 
+/** The canon gate, readable before you spend a render on a cut that will fail. */
+editorialRouter.get('/canon', (_req, res) => {
+  res.json(editorialService.canonCheck());
+});
+
 editorialRouter.post('/episode/render', async (_req, res) => {
   try { res.json(await editorialService.renderEpisode()); }
   catch (e) { fail(res, e); }

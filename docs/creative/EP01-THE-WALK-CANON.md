@@ -3,7 +3,22 @@
 **Read this before touching Episode 1. It outranks the editor.**
 
 Machine-readable source of truth: `src/core/canon/episode01.ts`
-Enforced by: `src/core/canon/__tests__/episode01.test.ts`
+Enforced by: `src/core/canon/canonCompliance.ts` — the **Canon Compliance Check**,
+which runs before every episode render.
+
+This document is not a note that hopes to be read. Break anything below and the
+render stops with `CANON_COMPLIANCE_FAILED` and the name of the constraint you
+broke. **The check never repairs the cut.** If it silently reordered the episode
+back into canon, a locked decision could go missing without anyone seeing it —
+which is the exact failure this file exists to prevent.
+
+- Blueprint checks (C01–C09) catch the canon file itself being edited.
+- Assembly checks (C10–C11) catch the cut being wrong.
+- Advisories (A12–A13) are shown, never fatal: a partially built episode is
+  normal during review, and refusing to render one would make the gate useless
+  in the phase that matters.
+
+Read it before rendering: `GET /api/editorial/canon`.
 
 ---
 
@@ -150,3 +165,45 @@ Stated plainly so no agent assumes otherwise:
 
 These were established verbally. They need to be written down here before an
 agent builds against them.
+
+---
+
+## The Canon Compliance Check — what is actually enforced
+
+Every constraint below is a real assertion in `src/core/canon/canonCompliance.ts`
+with a test that deliberately breaks it and proves the check fires. A check that
+only passes on correct input proves nothing; these are tested from the failing
+side.
+
+| ID | Constraint | Severity |
+|----|------------|----------|
+| C01 | The locked order is the order the creator stated | BLOCKING |
+| C02 | The Cold Open opens the episode | BLOCKING |
+| C03 | Luck of the Irish sits **after** the Shumafied letdown and **before** the cigar trip | BLOCKING |
+| C04 | Joe happened but was never filmed — 2D reconstruction, never presented as recovered footage | BLOCKING |
+| C05 | Clothed and Confused is realistic; **not** 2D, **not** a Blender-looking 3D cartoon | BLOCKING |
+| C06 | McBrain Feed is a separate television segment, not merged into Clothed and Confused | BLOCKING |
+| C07 | Goodville is a gag **family**, not one insert | BLOCKING |
+| C08 | A treatment the creator only described verbally can never be marked LOCKED_CANON | BLOCKING |
+| C09 | LIVE_ACTION / AI_ASSISTED / GENERATIVE_AI / HYBRID are different claims and are not interchangeable | BLOCKING |
+| C10 | No locked segment is relocated in the cut | BLOCKING |
+| C11 | Editorial order may differ from physical chronology — but the reorder is always recorded | BLOCKING |
+| A12 | Locked segments missing from the cut are reported | ADVISORY |
+| A13 | Scenes that cannot be tied to a canon segment are reported, never guessed into one | ADVISORY |
+
+### How a scene is tied to canon
+
+In order of authority:
+
+1. `canonSegmentId` — the creator pinned it. Always wins.
+2. A story beat (`walk.shumafied_pack` → `EP01_SHUMAFIED`). The mapping is
+   written down in `BEAT_TO_SEGMENT`, not inferred from similar wording.
+3. The scene title, matched on longest phrase first so "Shumafied
+   Disappointment" is never swallowed by "Shumafied".
+4. Otherwise **UNMATCHED** — reported as an advisory. The check does not guess.
+
+### If the check fails
+
+It tells you the constraint, what it found, and what has to change. Fix the cut
+or the blueprint — or have the creator change the canon on the record. Nothing
+in this pipeline is allowed to change it on his behalf.

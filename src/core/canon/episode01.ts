@@ -69,7 +69,18 @@ export interface CanonSegment {
   existingSegmentId?: string;
 }
 
-const UNKNOWN_STYLE =
+/**
+ * The prose doc that mirrors this file for humans. It is the same canon; this
+ * module is the enforceable copy.
+ */
+export const CANON_DOC_PATH = 'docs/creative/EP01-THE-WALK-CANON.md';
+
+/**
+ * The sentinel for a treatment the creator described verbally and that nobody
+ * wrote down. A segment carrying it must never be marked LOCKED_CANON — that
+ * would launder a gap into an instruction.
+ */
+export const UNKNOWN_STYLE =
   'NOT RECORDED IN THE REPO — the creator specified this verbally; ask before building.';
 
 /**
@@ -299,11 +310,22 @@ export const EP01_UNPLACED_CANON = [
   },
 ];
 
-/** Order-only view, for the editor to obey. */
-export const EP01_LOCKED_ORDER = EPISODE_01
-  .filter((s) => s.positionStatus === 'LOCKED_CANON')
-  .sort((a, b) => a.position - b.position)
-  .map((s) => s.id);
+/**
+ * Order-only view, for the editor to obey.
+ *
+ * A FUNCTION, not a frozen constant. The compliance check exists to catch the
+ * blueprint being edited, and it cannot do that if it reads a snapshot taken
+ * before the edit.
+ */
+export function lockedOrder(): string[] {
+  return EPISODE_01
+    .filter((s) => s.positionStatus === 'LOCKED_CANON')
+    .sort((a, b) => a.position - b.position)
+    .map((s) => s.id);
+}
+
+/** The order as it stands at module load. Convenience only — prefer lockedOrder(). */
+export const EP01_LOCKED_ORDER = lockedOrder();
 
 /** Everything the editor must ask about instead of inventing. */
 export function openCreativeQuestions(): { segment: string; question: string }[] {

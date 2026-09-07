@@ -168,3 +168,92 @@ describe('EditorialService — export guards', () => {
     await expect(svc.exportProject('kdenlive')).rejects.toThrow(/no local media resolved/i);
   });
 });
+
+/**
+ * The canon gate at the render boundary. The point of the gate is that a cut
+ * breaking a locked decision does not become a video file, so the assertions
+ * here are about REFUSAL, not about the report being present.
+ */
+describe('EditorialService — canon gate before render', () => {
+  function pinned(id: string, title: string, canonSegmentId: string, order: number) {
+    const now = new Date().toISOString();
+    return {
+      id, kind: 'SCENE' as const, kindReason: 'test fixture', qualityScore: 0.8,
+      productionUnitId: 'EP01', proposedTitle: title, purpose: 'test',
+      sourceEvidenceIds: [], sourceClipIds: ['c1'], transcriptSegmentIds: [],
+      visualObservationIds: [], referenceIds: [], storyBeatIds: [],
+      canonSegmentId,
+      proposedOrder: order, physicalOrder: order,
+      ranges: [{ sourceFileId: 'c1', startTime: 0, endTime: 5, derivedFromObservationIds: [] }],
+      proposedDuration: 5, beatMap: [], excludedMaterial: [],
+      confidence: 0.8, editorialRationale: 'test', chronologyAssumptions: [],
+      missingEvidence: [], evidenceLimitations: [], requiredAssets: [], generatedAssetIds: [],
+      humanReviewState: 'PROPOSED' as const, revisionHistory: [], createdAt: now, updatedAt: now,
+    };
+  }
+
+  function serviceWith(scenes: ReturnType<typeof pinned>[]) {
+    const svc = new EditorialService();
+    svc.getStore().addAll(scenes as any);
+    for (const s of scenes) svc.getStore().approve(s.id);
+    // Point ffmpeg at a path that does not exist: if the gate ever lets a
+    // non-compliant cut through, the test fails loudly instead of quietly
+    // rendering something.
+    svc.setFfmpegPath('/nonexistent/ffmpeg');
+    return svc;
+  }
+
+  it('refuses to render a cut that puts Luck of the Irish after the cigar trip', async () => {
+    const svc = serviceWith([
+      pinned('a', 'Shumafied Disappointment + Cigar Setup', 'EP01_SHUMAFIED_LETDOWN', 0),
+      pinned('b', 'Cigars / The Walk', 'EP01_CIGARS', 1),
+      pinned('c', 'Luck of the Irish', 'EP01_LUCK_OF_THE_IRISH', 2),
+    ]);
+
+    const res = await svc.renderEpisode();
+    expect(res.ok).toBe(false);
+    expect(res.canonStatus).toBe('CANON_COMPLIANCE_FAILED');
+    expect(res.error).toContain('C10_NO_LOCKED_SEGMENT_RELOCATED');
+    // Refused, not rendered.
+    expect(res.outputPath).toBeUndefined();
+    expect(res.canon?.violations[0].requiredAction).toBeTruthy();
+  });
+
+  it('does not silently repair the order it refused', async () => {
+    const scenes = [
+      pinned('a', 'Shumafied Disappointment + Cigar Setup', 'EP01_SHUMAFIED_LETDOWN', 0),
+      pinned('b', 'Cigars / The Walk', 'EP01_CIGARS', 1),
+      pinned('c', 'Luck of the Irish', 'EP01_LUCK_OF_THE_IRISH', 2),
+    ];
+    const svc = serviceWith(scenes);
+    await svc.renderEpisode();
+    const after = svc.getStore().all().sort((a, b) => a.proposedOrder - b.proposedOrder).map((s) => s.id);
+    expect(after).toEqual(['a', 'b', 'c']);
+  });
+
+  it('reaches the renderer once the order is compliant', async () => {
+    const svc = serviceWith([
+      pinned('a', 'Shumafied Disappointment + Cigar Setup', 'EP01_SHUMAFIED_LETDOWN', 0),
+      pinned('b', 'Luck of the Irish', 'EP01_LUCK_OF_THE_IRISH', 1),
+      pinned('c', 'Cigars / The Walk', 'EP01_CIGARS', 2),
+    ]);
+    svc.registerMedia('c1', '/media/c1.mp4');
+
+    // A compliant cut reaches the renderer, which then refuses for its own,
+    // different reason: the media is not on disk. That refusal is the proof
+    // the canon gate let it past — a gate that blocked here would never throw
+    // MissingRenderMediaError at all.
+    await expect(svc.renderEpisode()).rejects.toThrow(/no media on disk/);
+    expect(svc.canonCheck().status).toBe('CANON_COMPLIANT');
+  });
+
+  it('canonCheck() reports the gate without rendering anything', () => {
+    const svc = serviceWith([
+      pinned('a', 'Cigars / The Walk', 'EP01_CIGARS', 0),
+      pinned('b', 'Luck of the Irish', 'EP01_LUCK_OF_THE_IRISH', 1),
+    ]);
+    const r = svc.canonCheck();
+    expect(r.status).toBe('CANON_COMPLIANCE_FAILED');
+    expect(r.violations.map((v) => v.constraintId)).toContain('C10_NO_LOCKED_SEGMENT_RELOCATED');
+  });
+});

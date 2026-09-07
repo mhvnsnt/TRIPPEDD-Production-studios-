@@ -56,6 +56,28 @@ const svc = new EditorialService();
 svc.ingestFromJobs(jobs as any);
 const built = svc.build();
 
+/**
+ * "Not analysed yet" and "analysed and contains no speech" are different facts
+ * and must never print the same. Conflating them is the bug that just cost this
+ * project a whole re-run — a clip whose analyzers never started looked exactly
+ * like a clip that was transcribed and found silent.
+ */
+function speechState(job: any): 'NOT_ANALYSED' | 'ANALYSED_NO_SPEECH' | 'HAS_SPEECH' {
+  if (!job) return 'NOT_ANALYSED';
+  const analysed = job.state === 'NEEDS_REVIEW' || job.state === 'COMPLETED' || job.state === 'READY';
+  if (!analysed) return 'NOT_ANALYSED';
+  const whisper = job.tools?.whisper;
+  // An analyzer that never ran cannot testify that a clip is silent.
+  if (whisper && whisper.status !== 'COMPLETED') return 'NOT_ANALYSED';
+  const lines = (job.observations ?? []).filter((o: any) => o.type === 'TRANSCRIPT_SEGMENT').length;
+  return lines ? 'HAS_SPEECH' : 'ANALYSED_NO_SPEECH';
+}
+
+const noSpeechNote = (job: any): string =>
+  speechState(job) === 'NOT_ANALYSED'
+    ? `      NOT ANALYSED YET (job state ${job?.state ?? 'unknown'}) — no claim either way about speech`
+    : '      analysed, NO SPEECH FOUND — identify this one visually';
+
 const hhmm = (iso?: string) => iso ? new Date(iso).toISOString().slice(11, 16) : ' ?  ';
 const mmss = (s?: number) => s === undefined ? ' ? ' : `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
 const segName = (id?: string) => id ? (EPISODE_01.find((s) => s.id === id)?.name ?? id) : '(none)';
@@ -109,7 +131,7 @@ for (const [canonId, scenes] of [...groups.entries()]) {
         const conf = o.avgLogprob !== undefined ? ` [logprob ${Number(o.avgLogprob).toFixed(2)}]` : '';
         console.log(`         ${Number(o.startTime).toFixed(1).padStart(6)}s  ${String(o.text).slice(0, 66)}${conf}`);
       }
-      if (!tr.length) console.log('         (no speech found in this clip — identify it visually)');
+      if (!tr.length) console.log('   ' + noSpeechNote(job));
     }
   }
 }
@@ -125,11 +147,18 @@ if (orphans.length) {
     const job = byFileId.get(t.fileId);
     const tr = (job?.observations ?? []).filter((o: any) => o.type === 'TRANSCRIPT_SEGMENT');
     console.log(`\n  ${hhmm(t.recordedAt.at)}  ${mmss(t.durationSec).padStart(5)}  ${t.originalName}   (session ${t.sessionId})`);
-    if (!tr.length) console.log('      no speech found — identify visually');
+    if (!tr.length) console.log(noSpeechNote(job));
     for (const o of tr.slice(0, 3)) console.log(`      ${Number(o.startTime).toFixed(1).padStart(6)}s  ${String(o.text).slice(0, 70)}`);
   }
 }
 
+const states = timeline.map((t) => speechState(byFileId.get(t.fileId)));
+const notYet = states.filter((s) => s === 'NOT_ANALYSED').length;
 console.log('\n' + '─'.repeat(100));
+console.log(
+  `${states.filter((s) => s === 'HAS_SPEECH').length} clips with speech, ` +
+  `${states.filter((s) => s === 'ANALYSED_NO_SPEECH').length} analysed with none, ` +
+  `${notYet} NOT ANALYSED YET.`);
+if (notYet) console.log('This report is INCOMPLETE — re-run it when the queue drains.');
 console.log('To settle any of these, one line each:');
 console.log('  npx tsx scripts/confirm_clips.ts "104742101 = cigar store" "110016345 = walk" "160715990 != joe"');

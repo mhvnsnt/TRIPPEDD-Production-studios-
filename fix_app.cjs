@@ -1,15 +1,17 @@
 const fs = require('fs');
+let appCode = fs.readFileSync('src/App.tsx', 'utf8');
 
-let content = fs.readFileSync('src/App.tsx', 'utf8');
+if (!appCode.includes('PhysicalEvidenceWorkspace')) {
+  appCode = appCode.replace(
+    "import { ProductionControlWorkspace } from './components/ProductionControlWorkspace';",
+    "import { ProductionControlWorkspace } from './components/ProductionControlWorkspace';\nimport { PhysicalEvidenceWorkspace } from './components/PhysicalEvidenceWorkspace';"
+  );
 
-content = content.replace(
-  "import { AssetWorkspace } from './components/AssetWorkspace';",
-  "import { AssetWorkspace } from './components/AssetWorkspace';\nimport { FormatsWorkspace } from './components/FormatsWorkspace';"
-);
-
-content = content.replace(
-  "case 'bible':",
-  "case 'formats':\n        return <FormatsWorkspace />;\n      case 'bible':"
-);
-
-fs.writeFileSync('src/App.tsx', content);
+  appCode = appCode.replace(
+    "case 'production':",
+    "case 'physical_evidence':\n        return <PhysicalEvidenceWorkspace />;\n      case 'production':"
+  );
+  
+  fs.writeFileSync('src/App.tsx', appCode);
+  console.log("App.tsx updated");
+}

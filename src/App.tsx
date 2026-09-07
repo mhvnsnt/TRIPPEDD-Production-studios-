@@ -6,6 +6,7 @@
 import { useState } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Dashboard } from './components/Dashboard';
+import { StudioOpsWorkspace } from './components/StudioOpsWorkspace';
 import { ActiveProduction } from './components/ActiveProduction';
 import { ShowBible } from './components/ShowBible';
 import { AILab } from './components/AILab';
@@ -15,6 +16,10 @@ import { JobsPipeline } from './components/JobsPipeline';
 import { AssetWorkspace } from './components/AssetWorkspace';
 import { FormatsWorkspace } from './components/FormatsWorkspace';
 import { EpisodeWorkspace } from './components/EpisodeWorkspace';
+import { DriveIngestWorkspace } from './components/DriveIngestWorkspace';
+import { PeopleCastWorkspace } from './components/PeopleCastWorkspace';
+import { ProductionControlWorkspace } from './components/ProductionControlWorkspace';
+import { PhysicalEvidenceWorkspace } from './components/PhysicalEvidenceWorkspace';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wrench } from 'lucide-react';
 
@@ -25,6 +30,16 @@ export default function App() {
     switch (currentView) {
       case 'dashboard':
         return <Dashboard setCurrentView={setCurrentView} />;
+
+      case 'studio_ops':
+        return <StudioOpsWorkspace />;
+      case 'people_cast':
+        return <PeopleCastWorkspace />;
+      case 'control':
+        return <ProductionControlWorkspace />;
+
+      case 'physical_evidence':
+        return <PhysicalEvidenceWorkspace />;
       case 'production':
         return <ActiveProduction />;
       case 'formats':
@@ -37,6 +52,8 @@ export default function App() {
         return <ToolManager />;
       case 'episodes':
         return <EpisodeWorkspace />;
+      case 'ingest':
+        return <DriveIngestWorkspace />;
       case 'story':
         return <StoryWorkspace />;
       case 'jobs':

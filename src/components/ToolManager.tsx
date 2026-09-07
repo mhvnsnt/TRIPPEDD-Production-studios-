@@ -18,7 +18,7 @@ export function ToolManager() {
     if (!adapter) return;
     
     // Optimistic UI update
-    setTools(prev => prev.map(t => t.id === toolId ? { ...t, installationStatus: 'NOT_CHECKED' } : t));
+    setTools(prev => prev.map(t => t.id === toolId ? { ...t, installationStatus: 'UNAVAILABLE' } : t));
     
     try {
       const status = await adapter.detect();
@@ -31,13 +31,13 @@ export function ToolManager() {
       // Update definition in registry (just for in-memory persistence)
       adapter.definition.installationStatus = status;
     } catch (err) {
-      setTools(prev => prev.map(t => t.id === toolId ? { ...t, installationStatus: 'ERROR' } : t));
+      setTools(prev => prev.map(t => t.id === toolId ? { ...t, installationStatus: 'INSTALL_FAILED' } : t));
     }
   };
 
   const handleDetectAll = async () => {
     for (const tool of tools) {
-      if (tool.installationStatus !== 'NOT_IMPLEMENTED') {
+      if (tool.installationStatus !== 'UNAVAILABLE') {
         await handleDetect(tool.id);
       }
     }
@@ -45,18 +45,15 @@ export function ToolManager() {
 
   const StatusBadge = ({ status }: { status: ToolStatus }) => {
     switch (status) {
-      case 'INSTALLED':
-      case 'CONFIGURED':
-      case 'CONNECTED':
-      case 'RUNNING':
+      case 'AVAILABLE':
         return <span className="bg-emerald-500/10 text-emerald-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-emerald-500/20"><CheckCircle2 size={12} /> {status}</span>;
+      case 'INSTALLING':
+        return <span className="bg-blue-500/10 text-blue-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-blue-500/20"><RefreshCw className="animate-spin" size={12} /> {status}</span>;
       case 'ERROR':
-        return <span className="bg-red-500/10 text-red-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-red-500/20"><XCircle size={12} /> ERROR</span>;
-      case 'NOT_IMPLEMENTED':
-      case 'UNSUPPORTED':
+      case 'VERSION_UNSUPPORTED':
         return <span className="bg-neutral-800 text-neutral-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-neutral-700"> {status}</span>;
-      case 'NOT_INSTALLED':
-        return <span className="bg-amber-500/10 text-amber-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-amber-500/20"><AlertCircle size={12} /> NOT INSTALLED</span>;
+      case 'UNAVAILABLE':
+        return <span className="bg-amber-500/10 text-amber-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-amber-500/20"><AlertCircle size={12} /> NOT AVAILABLE</span>;
       default:
         return <span className="bg-neutral-800 text-neutral-400 px-2 py-1 rounded text-xs font-bold border border-neutral-700">{status}</span>;
     }
@@ -115,7 +112,7 @@ export function ToolManager() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 pt-4 border-t border-neutral-800 mt-auto">
-                    {tool.installationStatus !== 'NOT_IMPLEMENTED' && (
+                    {tool.installationStatus !== 'UNAVAILABLE' && (
                       <button 
                         onClick={() => handleDetect(tool.id)}
                         className="bg-neutral-800 hover:bg-neutral-700 text-white px-3 py-1.5 rounded text-xs font-bold transition-colors flex items-center gap-1"
@@ -123,7 +120,7 @@ export function ToolManager() {
                         <RefreshCw size={14} /> DETECT
                       </button>
                     )}
-                    {tool.capabilities.canLaunch && tool.installationStatus === 'INSTALLED' && (
+                    {tool.capabilities.canLaunch && tool.installationStatus === 'AVAILABLE' && (
                       <button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded text-xs font-bold transition-colors flex items-center gap-1">
                         <Play size={14} /> LAUNCH
                       </button>

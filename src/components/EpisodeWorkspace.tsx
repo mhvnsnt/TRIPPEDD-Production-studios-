@@ -138,7 +138,7 @@ function SegmentCard({ segment, index }: { segment: Segment, index: number, key?
             </h4>
             {segment.performances.map(perf => (
               <div key={perf.id} className="text-xs text-neutral-300">
-                <span className="font-bold text-white">{perf.actorId}</span> as <span className="text-blue-400">{perf.characterId}</span>
+                <span className="font-bold text-white">{perf.personId}</span> as <span className="text-blue-400">{perf.characterId}</span>
               </div>
             ))}
           </div>

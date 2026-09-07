@@ -1,0 +1,366 @@
+import React, { useState, useEffect } from 'react';
+import { Users, Clapperboard, Briefcase, Plus, Search, ChevronRight, Activity, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
+import { ProductionGraph } from '../core/pipeline/productionGraph';
+import { Person, ProductionUnit, WorkItem, ProductionRequirement, ProductionEvent, ProductionUnitStatus } from '../core/types';
+
+const STAGE_GROUPS = [
+  { name: 'Writing', stages: ['IDEA', 'DEVELOPMENT', 'GREENLIT', 'WRITING', 'SCRIPT_LOCK'] },
+  { name: 'Pre-production', stages: ['PRE_PRODUCTION', 'CAST', 'SCHEDULED'] },
+  { name: 'Production', stages: ['SHOOTING', 'INGEST'] },
+  { name: 'Media Intelligence', stages: ['SOURCE_REVIEW'] },
+  { name: 'Editorial', stages: ['EDITORIAL', 'PICTURE_LOCK'] },
+  { name: 'Post', stages: ['POST'] },
+  { name: 'Delivery', stages: ['QC', 'DELIVERY', 'ARCHIVED'] }
+];
+
+export function StudioOpsWorkspace() {
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'productions' | 'people' | 'work'>('dashboard');
+  const [graph] = useState(() => ProductionGraph.getInstance());
+  
+  const [people, setPeople] = useState<Person[]>([]);
+  const [productions, setProductions] = useState<ProductionUnit[]>([]);
+  const [workItems, setWorkItems] = useState<WorkItem[]>([]);
+  const [requirements, setRequirements] = useState<ProductionRequirement[]>([]);
+  const [events, setEvents] = useState<ProductionEvent[]>([]);
+
+  useEffect(() => {
+    // Seed some mock data if empty
+    if (graph.productionUnits.size === 0) {
+      graph.addProductionUnit({
+        id: 'pu1', type: 'SKETCH', name: 'Joe Reconstruction', 
+        description: 'The physical reconstruction of the motel lot encounter.',
+        status: 'PRE_PRODUCTION'
+      });
+      graph.addProductionUnit({
+        id: 'pu2', type: 'SKETCH', name: 'Luck of the Irish', 
+        description: 'Bar confrontation and magic trick.',
+        status: 'SOURCE_REVIEW'
+      });
+      graph.addProductionUnit({
+        id: 'pu3', type: 'ANIMATION', name: 'Goodville Cartoon', 
+        description: 'Animated geography setup.',
+        status: 'SHOOTING' // For animation, SHOOTING = ANIMATING
+      });
+      
+      // Requirements for Joe
+      graph.addRequirement({ id: 'req_j1', productionUnitId: 'pu1', type: 'CAST_REQUIRED', description: 'Joe Actor', status: 'SATISFIED', requiredByStage: 'CAST', blocking: true });
+      graph.addRequirement({ id: 'req_j2', productionUnitId: 'pu1', type: 'LOCATION_REQUIRED', description: 'Motel Location', status: 'OPEN', requiredByStage: 'SCHEDULED', blocking: true });
+      graph.addRequirement({ id: 'req_j3', productionUnitId: 'pu1', type: 'PROP_REQUIRED', description: 'Bag Prop', status: 'IN_PROGRESS', requiredByStage: 'SHOOTING', blocking: true });
+
+      // Requirements for Luck of the Irish
+      graph.addRequirement({ id: 'req_l1', productionUnitId: 'pu2', type: 'SOURCE_REVIEW_REQUIRED', description: 'Shot C human verification', status: 'OPEN', requiredByStage: 'EDITORIAL', blocking: true });
+      graph.addRequirement({ id: 'req_l2', productionUnitId: 'pu2', type: 'SOURCE_REVIEW_REQUIRED', description: 'Generated element provenance confirmation', status: 'OPEN', requiredByStage: 'EDITORIAL', blocking: true });
+      graph.addRequirement({ id: 'req_l3', productionUnitId: 'pu2', type: 'AUDIO_REQUIRED', description: 'Dialogue review', status: 'OPEN', requiredByStage: 'EDITORIAL', blocking: true });
+
+      // Add events
+      graph.logEvent({ description: 'Source media ingested for Luck of the Irish', type: 'SUCCESS', productionUnitId: 'pu2' });
+      graph.logEvent({ description: 'Physical/storyboard discrepancy detected in CAM_A_0042', type: 'WARNING', productionUnitId: 'pu2' });
+      graph.logEvent({ description: 'Casting decision recorded: Joe Actor', type: 'INFO', productionUnitId: 'pu1' });
+      graph.logEvent({ description: 'Script revision approved', type: 'SUCCESS', productionUnitId: 'pu3' });
+    }
+
+    const refresh = () => {
+      setPeople(Array.from(graph.people.values()));
+      setProductions(Array.from(graph.productionUnits.values()));
+      setWorkItems(Array.from(graph.workItems.values()));
+      setRequirements(Array.from(graph.requirements.values()));
+      setEvents(graph.getRecentEvents(10));
+    };
+
+    refresh();
+    const interval = setInterval(refresh, 2000); // Hacky reactive update for demo
+    return () => clearInterval(interval);
+  }, [graph]);
+
+  const getReadiness = (unitId: string) => {
+    const reqs = graph.getRequirementsForProduction(unitId);
+    if (reqs.length === 0) return 0;
+    const satisfied = reqs.filter(r => r.status === 'SATISFIED' || r.status === 'WAIVED').length;
+    return Math.round((satisfied / reqs.length) * 100);
+  };
+
+  const getStageGroupIndex = (status: ProductionUnitStatus) => {
+    return STAGE_GROUPS.findIndex(g => g.stages.includes(status));
+  };
+
+  const renderProgressBar = (status: ProductionUnitStatus) => {
+    const currentGroupIdx = getStageGroupIndex(status);
+    return (
+      <div className="flex w-full h-2 gap-1 mt-2">
+        {STAGE_GROUPS.map((group, idx) => {
+          let bgColor = 'bg-neutral-800';
+          if (idx < currentGroupIdx) bgColor = 'bg-purple-600';
+          else if (idx === currentGroupIdx) bgColor = 'bg-purple-400';
+          return (
+            <div key={group.name} className={`flex-1 rounded-sm ${bgColor}`} title={group.name}></div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const blockers = requirements.filter(r => r.blocking && r.status !== 'SATISFIED' && r.status !== 'WAIVED');
+
+  return (
+    <div className="h-full flex flex-col bg-black text-white">
+      <header className="px-6 py-4 border-b border-neutral-800 bg-black/50 backdrop-blur-md shrink-0">
+        <h1 className="text-xl font-bold uppercase tracking-widest text-white flex items-center">
+          <Activity className="mr-3 text-purple-500" size={20} /> Studio Operations
+        </h1>
+        <p className="text-neutral-400 text-sm mt-1">Production graph tracking people, roles, tasks, and reality.</p>
+      </header>
+
+      <div className="flex border-b border-neutral-800 shrink-0">
+        <button onClick={() => setActiveTab('dashboard')} className={`px-6 py-3 text-xs font-bold uppercase tracking-widest border-b-2 transition-colors ${activeTab === 'dashboard' ? 'border-purple-500 text-purple-400' : 'border-transparent text-neutral-500 hover:text-neutral-300'}`}>
+          <Activity size={14} className="inline mr-2 -mt-1" /> Dashboard
+        </button>
+        <button onClick={() => setActiveTab('productions')} className={`px-6 py-3 text-xs font-bold uppercase tracking-widest border-b-2 transition-colors ${activeTab === 'productions' ? 'border-purple-500 text-purple-400' : 'border-transparent text-neutral-500 hover:text-neutral-300'}`}>
+          <Clapperboard size={14} className="inline mr-2 -mt-1" /> Productions
+        </button>
+        <button onClick={() => setActiveTab('people')} className={`px-6 py-3 text-xs font-bold uppercase tracking-widest border-b-2 transition-colors ${activeTab === 'people' ? 'border-purple-500 text-purple-400' : 'border-transparent text-neutral-500 hover:text-neutral-300'}`}>
+          <Users size={14} className="inline mr-2 -mt-1" /> People & Roles
+        </button>
+        <button onClick={() => setActiveTab('work')} className={`px-6 py-3 text-xs font-bold uppercase tracking-widest border-b-2 transition-colors ${activeTab === 'work' ? 'border-purple-500 text-purple-400' : 'border-transparent text-neutral-500 hover:text-neutral-300'}`}>
+          <Briefcase size={14} className="inline mr-2 -mt-1" /> Work Items
+        </button>
+      </div>
+
+      <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
+        <div className="max-w-6xl mx-auto space-y-8">
+          
+          {activeTab === 'dashboard' && (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              
+              {/* Left Column: Productions & Events */}
+              <div className="lg:col-span-2 space-y-6">
+                <section>
+                  <h2 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-4">Active Productions</h2>
+                  <div className="space-y-3">
+                    {productions.map(pu => {
+                      const readiness = getReadiness(pu.id);
+                      return (
+                        <div key={pu.id} className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <h3 className="text-base font-bold text-white">{pu.name}</h3>
+                              <p className="text-xs text-neutral-400 font-mono mt-1">{pu.status.replace('_', ' ')}</p>
+                            </div>
+                            <div className="text-right">
+                              <span className="text-xs font-mono text-purple-400">{readiness}% Ready</span>
+                            </div>
+                          </div>
+                          {renderProgressBar(pu.status)}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </section>
+
+                <section>
+                  <h2 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-4">Recent Production Events</h2>
+                  <div className="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden">
+                    {events.map((evt, idx) => (
+                      <div key={evt.id} className={`p-4 flex items-start gap-3 ${idx !== events.length - 1 ? 'border-b border-neutral-800/50' : ''}`}>
+                        {evt.type === 'SUCCESS' ? <CheckCircle size={16} className="text-green-500 mt-0.5 shrink-0" /> :
+                         evt.type === 'WARNING' ? <AlertTriangle size={16} className="text-yellow-500 mt-0.5 shrink-0" /> :
+                         <Activity size={16} className="text-blue-500 mt-0.5 shrink-0" />}
+                        <div>
+                          <p className="text-sm text-neutral-200">{evt.description}</p>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-[10px] text-neutral-500 font-mono">{new Date(evt.timestamp).toLocaleTimeString()}</span>
+                            {evt.productionUnitId && (
+                              <span className="text-[10px] bg-black border border-neutral-800 px-1.5 py-0.5 rounded text-neutral-400">
+                                {graph.productionUnits.get(evt.productionUnitId)?.name || evt.productionUnitId}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </div>
+
+              {/* Right Column: Blockers & Today */}
+              <div className="space-y-6">
+                <section>
+                  <h2 className="text-xs font-bold text-red-500/80 uppercase tracking-widest mb-4 flex items-center">
+                    <AlertTriangle size={14} className="mr-2" /> Blockers
+                  </h2>
+                  <div className="space-y-3">
+                    {blockers.map(b => {
+                      const pu = graph.productionUnits.get(b.productionUnitId);
+                      return (
+                        <div key={b.id} className="bg-red-950/20 border border-red-900/50 rounded-lg p-3">
+                          <div className="flex justify-between items-start mb-1">
+                            <span className="text-[10px] font-bold text-red-400 uppercase">{b.type.replace('_', ' ')}</span>
+                            <span className="text-[10px] text-neutral-500 uppercase">Blocks {b.requiredByStage}</span>
+                          </div>
+                          <p className="text-sm text-white mb-2">{b.description}</p>
+                          <div className="text-[10px] text-neutral-400 font-mono truncate">{pu?.name}</div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </section>
+
+                <section>
+                  <h2 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-4">Today</h2>
+                  <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
+                    <div className="flex justify-between items-center mb-4 pb-4 border-b border-neutral-800/50">
+                      <div className="text-sm text-neutral-400">Assigned Tasks</div>
+                      <div className="text-lg font-bold text-white">{workItems.length}</div>
+                    </div>
+                    <div className="flex justify-between items-center mb-4 pb-4 border-b border-neutral-800/50">
+                      <div className="text-sm text-neutral-400">Requirements Satisfied</div>
+                      <div className="text-lg font-bold text-green-400">{requirements.filter(r => r.status === 'SATISFIED').length}</div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div className="text-sm text-neutral-400">Pending Approvals</div>
+                      <div className="text-lg font-bold text-yellow-400">{requirements.filter(r => r.type.includes('REVIEW')).length}</div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+            </div>
+          )}
+
+          {activeTab === 'productions' && (
+            <div className="space-y-4">
+              <div className="flex justify-between items-center mb-6">
+                <div className="relative flex-1 max-w-md">
+                  <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500" />
+                  <input type="text" placeholder="Search productions..." className="w-full bg-neutral-900 border border-neutral-800 rounded-md py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors" />
+                </div>
+                <button className="flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-md text-xs font-bold uppercase tracking-wide transition-colors">
+                  <Plus size={14} className="mr-2" /> New Unit
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {productions.map(pu => (
+                  <div key={pu.id} className="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-purple-500/50 transition-colors cursor-pointer group">
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">{pu.type}</span>
+                        <h3 className="text-lg font-bold text-white mt-1 group-hover:text-purple-400 transition-colors">{pu.name}</h3>
+                      </div>
+                      <span className="px-2 py-1 bg-black border border-neutral-800 rounded text-[10px] font-bold text-neutral-400 uppercase">
+                        {pu.status}
+                      </span>
+                    </div>
+                    <p className="text-sm text-neutral-400 line-clamp-2 mt-2 mb-4">{pu.description}</p>
+                    {renderProgressBar(pu.status)}
+                    
+                    <div className="mt-4 pt-4 border-t border-neutral-800 flex items-center justify-between text-xs font-mono text-neutral-500">
+                      <span>{getReadiness(pu.id)}% Requirements Met</span>
+                      <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'people' && (
+            <div className="space-y-4">
+              <div className="flex justify-between items-center mb-6">
+                <div className="relative flex-1 max-w-md">
+                  <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500" />
+                  <input type="text" placeholder="Search people..." className="w-full bg-neutral-900 border border-neutral-800 rounded-md py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors" />
+                </div>
+                <button className="flex items-center px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white rounded-md text-xs font-bold uppercase tracking-wide transition-colors">
+                  <Plus size={14} className="mr-2" /> Add Person
+                </button>
+              </div>
+
+              <div className="space-y-3">
+                {people.map(person => {
+                  const roles = graph.getRolesForPerson(person.id);
+                  return (
+                    <div key={person.id} className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col md:flex-row md:items-center justify-between">
+                      <div className="flex items-center space-x-4 mb-3 md:mb-0">
+                        <div className="w-10 h-10 rounded-full bg-purple-900/30 border border-purple-800/50 flex items-center justify-center font-bold text-purple-400">
+                          {person.name.charAt(0)}
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-bold text-white">{person.name}</h3>
+                          <p className="text-xs text-neutral-500 font-mono mt-0.5">{person.contactInfo || 'No contact info'}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        {roles.map(r => {
+                          const pu = graph.productionUnits.get(r.productionUnitId);
+                          return (
+                            <div key={r.id} className="flex flex-col bg-black border border-neutral-800 rounded px-3 py-1.5 min-w-[120px]">
+                              <span className="text-[10px] font-bold text-neutral-500 uppercase">{r.department}</span>
+                              <span className="text-xs text-white truncate">{r.role}</span>
+                              <span className="text-[9px] text-purple-400 truncate mt-1">{pu?.name}</span>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+                {people.length === 0 && (
+                  <div className="text-center p-8 border border-dashed border-neutral-800 rounded-lg text-neutral-500">
+                    No people added yet.
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'work' && (
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                {['TODO', 'IN_PROGRESS', 'IN_REVIEW'].map(colStatus => (
+                  <div key={colStatus} className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-4 h-[600px] flex flex-col">
+                    <h3 className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-4 flex justify-between items-center">
+                      {colStatus.replace('_', ' ')}
+                      <span className="bg-black text-neutral-400 px-2 py-0.5 rounded-full">{workItems.filter(w => w.status === colStatus).length}</span>
+                    </h3>
+                    
+                    <div className="flex-1 overflow-y-auto space-y-3 custom-scrollbar pr-1">
+                      {workItems.filter(w => w.status === colStatus).map(item => {
+                        const pu = graph.productionUnits.get(item.productionUnitId);
+                        return (
+                          <div key={item.id} className="bg-black border border-neutral-800 rounded p-3 cursor-grab active:cursor-grabbing hover:border-neutral-600 transition-colors">
+                            <div className="flex justify-between items-start mb-2">
+                              <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${
+                                item.priority === 'HIGH' ? 'bg-red-950 text-red-400' :
+                                item.priority === 'MEDIUM' ? 'bg-yellow-950 text-yellow-400' :
+                                'bg-neutral-800 text-neutral-400'
+                              }`}>
+                                {item.priority}
+                              </span>
+                              <span className="text-[10px] text-neutral-600 font-mono">{item.department}</span>
+                            </div>
+                            <h4 className="text-sm font-medium text-white mb-1 leading-snug">{item.title}</h4>
+                            <div className="text-[10px] text-purple-400 font-mono truncate">{pu?.name}</div>
+                          </div>
+                        )
+                      })}
+                      {workItems.filter(w => w.status === colStatus).length === 0 && (
+                        <div className="text-center p-4 border border-dashed border-neutral-800/50 rounded-lg text-neutral-600 text-xs">
+                          No items
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                
+              </div>
+            </div>
+          )}
+
+        </div>
+      </div>
+    </div>
+  );
+}
+

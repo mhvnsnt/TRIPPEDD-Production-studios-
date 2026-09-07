@@ -8,7 +8,7 @@ export class ComfyUIAdapter implements ToolAdapter {
     category: 'AI',
     description: 'AI image/video generation and node-based AI pipelines',
     license: 'GPLv3',
-    installationStatus: 'NOT_CHECKED' as ToolStatus,
+    installationStatus: 'UNAVAILABLE' as ToolStatus,
     integrationType: 'LOCAL_SERVICE' as const,
     capabilities: {
       canLaunch: false,
@@ -17,7 +17,7 @@ export class ComfyUIAdapter implements ToolAdapter {
       canExportAsset: true,
       canSubmitJob: true
     },
-    healthStatus: 'NOT_CHECKED' as ToolStatus
+    healthStatus: 'UNAVAILABLE' as ToolStatus
   };
 
   async detect(): Promise<ToolStatus> {
@@ -26,7 +26,7 @@ export class ComfyUIAdapter implements ToolAdapter {
       if (res.ok) {
         const data = await res.json();
         if (data.installed) {
-          return 'CONNECTED';
+          return 'AVAILABLE';
         }
       }
       return 'NOT_INSTALLED';

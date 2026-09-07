@@ -1,93 +1,15 @@
-import { JobManager } from '../jobs/manager';
-import { AssetRegistry } from '../assets/registry';
-
-export type GagTrigger = 'MANUAL' | 'SCRIPTED' | 'RANDOM' | 'EVENT';
-
-export interface GagDefinition {
-  id: string;
-  name: string;
-  description: string;
-  trigger: GagTrigger;
-  eligibleShotTypes: string[]; // e.g., ['LIVE_ACTION', 'WATERCOLOR']
-  toolRequirements: string[];
-  execute: (inputAssetId: string, projectId: string, params?: any) => Promise<string>;
-}
-
-export class TrippeddGagRegistry {
-  private static gags = new Map<string, GagDefinition>();
-
-  static registerGag(gag: GagDefinition) {
-    this.gags.set(gag.id, gag);
-  }
-
-  static getGag(id: string): GagDefinition | undefined {
-    return this.gags.get(id);
-  }
-
-  static getAllGags(): GagDefinition[] {
-    return Array.from(this.gags.values());
-  }
-
-  static async executeGag(id: string, inputAssetId: string, projectId: string, params?: any) {
-    const gag = this.gags.get(id);
-    if (!gag) throw new Error(`Gag ${id} not found in registry`);
-
-    console.log(`Executing TRIPPEDD Gag: ${gag.name}`);
-    return gag.execute(inputAssetId, projectId, params);
-  }
-}
-
-// Register basic gags
-TrippeddGagRegistry.registerGag({
-  id: 'WILHELM_SCREAM',
-  name: 'Wilhelm Scream',
-  description: 'The classic canned scream.',
-  trigger: 'RANDOM',
-  eligibleShotTypes: ['ALL'],
-  toolRequirements: ['ffmpeg'],
-  execute: async (inputAssetId, projectId) => {
-    // Overlays the Wilhelm scream audio
-    const jobId = await JobManager.submitJob('ffmpeg', 'overlay_audio', {
-      inputAssetId,
-      audioFile: '/assets/sfx/wilhelm.wav'
-    }, { projectId });
-    const job = await JobManager.waitForJob(jobId);
-    return job.outputs!.assetId;
-  }
-});
-
-TrippeddGagRegistry.registerGag({
-  id: 'TRIPPEDD_SCREAM',
-  name: 'TRIPPEDD Scream',
-  description: 'The recurring TRIPPEDD scream.',
-  trigger: 'RANDOM',
-  eligibleShotTypes: ['ALL'],
-  toolRequirements: ['ffmpeg'],
-  execute: async (inputAssetId, projectId) => {
-    const jobId = await JobManager.submitJob('ffmpeg', 'overlay_audio', {
-      inputAssetId,
-      audioFile: '/assets/sfx/trippedd_scream.wav'
-    }, { projectId });
-    const job = await JobManager.waitForJob(jobId);
-    return job.outputs!.assetId;
-  }
-});
-
-TrippeddGagRegistry.registerGag({
-  id: 'FREEZE_FRAME',
-  name: 'Freeze Frame',
-  description: 'Freezes the final frame for a set duration.',
-  trigger: 'SCRIPTED',
-  eligibleShotTypes: ['ALL'],
-  toolRequirements: ['ffmpeg'],
-  execute: async (inputAssetId, projectId, params = { duration: 3 }) => {
-    const jobId = await JobManager.submitJob('ffmpeg', 'freeze_frame', {
-      inputAssetId,
-      duration: params.duration
-    }, { projectId });
-    const job = await JobManager.waitForJob(jobId);
-    return job.outputs!.assetId;
-  }
-});
-
-// We can move Luck of the Irish here, or keep it in EffectOrchestrator and register it.
+export const LUCK_OF_THE_IRISH_DISCLAIMERS = [
+  { id: '001', type: 'CANONICAL_ORIGINAL', text: 'Luck of the Irish is not responsible for luck, Ireland, leprechauns, gold, or any resulting bullshit.' },
+  { id: '002', type: 'COMMERCIAL_LINE', text: 'Luck of the Irish™. Nobody knows what it is.' },
+  { id: '003', type: 'COMMERCIAL_LINE', text: 'Available wherever absolutely nothing is sold.' },
+  { id: '004', type: 'ACTIVE', text: 'Luck of the Irish may cause excessive luck, unexpected misfortune, or an uncontrollable desire to yell at strangers.' },
+  { id: '005', type: 'ACTIVE', text: 'Do not operate Luck of the Irish while driving, swimming, gambling, sleeping, or making responsible decisions.' },
+  { id: '006', type: 'ACTIVE', text: 'Luck of the Irish is not a substitute for money, common sense, medical advice, or whatever the hell you thought this was.' },
+  { id: '007', type: 'ACTIVE', text: 'Side effects may include confusion, confidence, temporary wealth, permanent stupidity, and unexplained green objects.' },
+  { id: '008', type: 'ACTIVE', text: 'Luck of the Irish has not been evaluated by anyone qualified to evaluate anything. Results may vary.' },
+  { id: '009', type: 'ACTIVE', text: 'If your luck lasts longer than four hours, congratulations. Nobody knows what to do next.' },
+  { id: '010', type: 'ACTIVE', text: 'Luck of the Irish does not guarantee Irishness, luckiness, gold, rainbows, pots, leprechauns, or a satisfactory explanation.' },
+  { id: '011', type: 'ACTIVE', text: 'Please consult anybody before using Luck of the Irish™.' },
+  { id: '012', type: 'ACTIVE', text: 'Luck of the Irish™ may contain traces of luck, Irishness, or absolutely nothing.' },
+  { id: '013', type: 'ACTIVE', text: 'Luck of the Irish™. Because apparently somebody had to make this.' },
+];

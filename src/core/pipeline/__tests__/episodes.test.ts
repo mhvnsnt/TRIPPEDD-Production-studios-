@@ -41,9 +41,9 @@ describe('Episode and Segment Ontology Tests', () => {
     
     // Verify performance linkage to original raw footage
     expect(reconstruction?.performances.length).toBe(1);
-    expect(reconstruction?.performances[0].actorId).toBe('TYNESHIA');
+    expect(reconstruction?.performances[0].personId).toBe('TYNESHIA');
     expect(reconstruction?.performances[0].characterId).toBe('JOE');
-    expect(reconstruction?.performances[0].sourceClipIds).toContain('SC_MOTEL_RAW_001');
+    // Removed sourceClipIds check on performance
   });
 
   it('should allow real documentary clips as source material inside a Goodville Geography gag', () => {

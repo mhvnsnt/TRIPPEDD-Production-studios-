@@ -1,10 +1,17 @@
 const fs = require('fs');
+let code = fs.readFileSync('src/components/Sidebar.tsx', 'utf8');
 
-let content = fs.readFileSync('src/components/Sidebar.tsx', 'utf8');
+if (!code.includes("id: 'physical_evidence'")) {
+  code = code.replace(
+    "{ id: 'ingest', label: 'Media Ingest', icon: Video },",
+    "{ id: 'ingest', label: 'Media Ingest', icon: Video },\n    { id: 'physical_evidence', label: 'Evidence Review', icon: Search },"
+  );
+  
+  // also add Search to lucide-react import
+  if (!code.includes('Search,')) {
+    code = code.replace("Settings,", "Settings,\n  Search,");
+  }
 
-content = content.replace(
-  "{ id: 'bible', label: 'Show Bible', icon: BookOpen },",
-  "{ id: 'bible', label: 'Show Bible', icon: BookOpen },\n      { id: 'formats', label: 'Formats & Lore', icon: BookOpen },"
-);
-
-fs.writeFileSync('src/components/Sidebar.tsx', content);
+  fs.writeFileSync('src/components/Sidebar.tsx', code);
+  console.log("Sidebar.tsx updated");
+}

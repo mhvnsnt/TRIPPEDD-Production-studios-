@@ -31,10 +31,10 @@ export class GenericAdapter implements ToolAdapter {
       category,
       description,
       license,
-      installationStatus: 'NOT_CHECKED',
+      installationStatus: 'UNAVAILABLE',
       integrationType,
       capabilities,
-      healthStatus: 'NOT_CHECKED'
+      healthStatus: 'UNAVAILABLE'
     };
   }
 
@@ -45,7 +45,7 @@ export class GenericAdapter implements ToolAdapter {
         const data = await res.json();
         if (data.installed) {
           this.definition.version = data.version;
-          return 'INSTALLED';
+          return 'AVAILABLE';
         }
       }
       return 'NOT_INSTALLED';

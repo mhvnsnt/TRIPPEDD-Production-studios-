@@ -8,7 +8,7 @@ export class BlenderAdapter implements ToolAdapter {
     category: '3D',
     description: '3D / animation / simulation / rendering / compositing',
     license: 'GPL',
-    installationStatus: 'NOT_CHECKED' as ToolStatus,
+    installationStatus: 'UNAVAILABLE' as ToolStatus,
     integrationType: 'SUBPROCESS' as const,
     capabilities: {
       canLaunch: true,
@@ -17,7 +17,7 @@ export class BlenderAdapter implements ToolAdapter {
       canExportAsset: true,
       canSubmitJob: true
     },
-    healthStatus: 'NOT_CHECKED' as ToolStatus
+    healthStatus: 'UNAVAILABLE' as ToolStatus
   };
 
   async detect(): Promise<ToolStatus> {
@@ -28,7 +28,7 @@ export class BlenderAdapter implements ToolAdapter {
         const data = await res.json();
         if (data.installed) {
           this.definition.version = data.version;
-          return 'INSTALLED';
+          return 'AVAILABLE';
         }
       }
       return 'NOT_INSTALLED';

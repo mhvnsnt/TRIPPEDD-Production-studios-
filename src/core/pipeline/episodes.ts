@@ -85,10 +85,14 @@ const episode1: Episode = {
       performances: [
         {
           id: 'PERF_TYNESHIA_JOE_TIMING',
-          actorId: 'TYNESHIA',
+          productionUnitId: 'u1',
           characterId: 'JOE',
-          sourceClipIds: ['SC_MOTEL_RAW_001'],
-          description: 'Tyneshia establishing blocking and timing for Joe.'
+          performerType: 'MIXED',
+          personId: 'TYNESHIA' as any,
+          status: 'CAPTURED',
+          notes: 'Tyneshia establishing blocking and timing for Joe.',
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
         }
       ],
       gags: [],
@@ -155,28 +159,62 @@ const episode1: Episode = {
     {
       id: 'SEG04',
       name: 'Luck of the Irish',
-      description: 'Fake commercial gag.',
+      description: 'Fake commercial gag. Live action suspense building up to a generative 4th-wall break.',
       formatId: 'TRIPPEDD_ADULT_ANIMATION_PARODY',
-      performances: [],
+      performances: [
+        {
+          id: 'PERF_MARS_IRISH_BREAK',
+          productionUnitId: 'u1',
+          characterId: 'MARS_MASCOT',
+          performerType: 'HUMAN',
+          personId: 'MARS' as any,
+          status: 'PLANNED',
+          notes: 'Live-action chilling, leading to "LUCK OF THE IRISH!!!" and freeze for generative handoff.',
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        }
+      ],
       gags: [
         {
           id: 'GAG_LUCK_IRISH',
           name: 'Luck of the Irish Commercial',
           type: 'FAKE_COMMERCIAL',
-          description: 'A completely fictional commercial interrupting the flow.'
+          description: 'A completely fictional commercial interrupting the flow. Uses canonical disclaimer #001 for its first appearance.'
         }
       ],
-      sourceClips: [],
-      assetIds: [],
-      jobIds: [],
+      sourceClips: [
+        {
+          id: 'SC_LOTI_SHOT_A',
+          assetId: 'PENDING_LOTI_WIDE',
+          startTimecode: 'TBD',
+          endTimecode: 'TBD',
+          description: 'Shot A: Far away, slow zoom in, suspense-building, chilling.'
+        },
+        {
+          id: 'SC_LOTI_SHOT_B',
+          assetId: 'PENDING_LOTI_CLOSEUP',
+          startTimecode: 'TBD',
+          endTimecode: 'TBD',
+          description: 'Shot B: Different angle, closer, up near the subject, suspense-building.'
+        },
+        {
+          id: 'SC_LOTI_SHOT_C',
+          assetId: 'PENDING_LOTI_ACTION',
+          startTimecode: 'TBD',
+          endTimecode: 'TBD',
+          description: 'Shot C: Back to wide. Fourth wall break "LUCK OF THE IRISH!!!". Generative handoff.'
+        }
+      ],
+      assetIds: ['ASSET_LOTI_GENERATED_TRANSFORMATION'],
+      jobIds: ['JOB_COMFYUI_LOTI_TRANSFORMATION'],
       provenance: {
         realityStatus: 'FICTIONAL',
-        captureStatus: 'NOT_CAPTURED',
+        captureStatus: 'PARTIALLY_CAPTURED',
         authorship: 'COLLABORATIVE_AUTHORED',
-        generationMethods: ['AI_GENERATED', '2D_ANIMATED'],
-        assemblyMode: 'PURE_ANIMATION',
+        generationMethods: ['LIVE_CAPTURE', 'AI_GENERATED'],
+        assemblyMode: 'LIVE_ACTION_WITH_GENERATED_ELEMENTS',
         aiContributions: ['AI_CO_GENERATED'],
-        aggregate: 'FICTIONAL_CREATION'
+        aggregate: 'HYBRID_PRODUCTION'
       }
     },
     {

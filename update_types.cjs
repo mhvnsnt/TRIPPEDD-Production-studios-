@@ -1,37 +1,84 @@
 const fs = require('fs');
-const coreTypesFile = './src/core/types.ts';
-let coreTypes = fs.readFileSync(coreTypesFile, 'utf8');
 
-const newProvenance = `
-export type RealityStatus = 'FACTUAL' | 'FICTIONAL' | 'FICTIONALIZED_FACT' | 'SPECULATIVE' | 'UNKNOWN';
-export type CaptureStatus = 'DIRECTLY_CAPTURED' | 'PARTIALLY_CAPTURED' | 'NOT_CAPTURED' | 'RECONSTRUCTED' | 'REENACTED' | 'ARCHIVAL' | 'UNKNOWN';
-export type AuthorshipStatus = 'USER_AUTHORED' | 'COLLABORATIVE_AUTHORED' | 'AI_ASSISTED' | 'AI_AUTHORED' | 'SOURCE_DERIVED' | 'UNKNOWN';
-export type GenerationMethod = 'LIVE_CAPTURE' | 'USER_PERFORMED' | 'ACTOR_PERFORMED' | 'AI_GENERATED' | 'AI_ASSISTED' | 'AI_CO_GENERATED' | 'AI_CO_ANIMATED' | 'PROCEDURAL' | '2D_ANIMATED' | '3D_ANIMATED' | 'MOTION_CAPTURE' | 'EDITORIAL_RECONSTRUCTION' | 'COMPOSITED' | 'MIXED';
-export type AssemblyMode = 'PURE_LIVE_ACTION' | 'PURE_ANIMATION' | 'PURE_GENERATED' | 'LIVE_ACTION_WITH_GENERATED_ELEMENTS' | 'ANIMATION_WITH_REAL_PERFORMANCE' | 'LIVE_ACTION_WITH_ANIMATION' | 'MULTI_ENGINE_HYBRID' | 'RECONSTRUCTED_REAL_EVENT' | 'MIXED_MEDIA';
-export type AIContribution = 'USER_ORIGINATED' | 'AI_ASSISTED' | 'AI_CO_AUTHORED' | 'AI_CO_GENERATED' | 'AI_CO_ANIMATED' | 'TOOL_PROCESSED' | 'NONE';
-export type AggregateClassification = 'REAL_PRODUCTION' | 'FICTIONAL_CREATION' | 'HYBRID_PRODUCTION' | 'IDEA' | 'PLAN' | 'REFERENCE' | 'SIMULATION' | 'TEST_FIXTURE';
+let content = fs.readFileSync('src/core/types.ts', 'utf8');
 
-export interface ContentProvenance {
-  realityStatus: RealityStatus;
-  captureStatus: CaptureStatus;
-  authorship: AuthorshipStatus;
-  generationMethods: GenerationMethod[];
-  assemblyMode: AssemblyMode;
-  aiContributions: AIContribution[];
-  aggregate: AggregateClassification;
-}
+const newToolStatus = `export type ToolStatus = 
+  | 'AVAILABLE'
+  | 'INSTALLING'
+  | 'NOT_INSTALLED'
+  | 'UNAVAILABLE'
+  | 'INSTALL_FAILED'
+  | 'VERSION_UNSUPPORTED'
+  | 'HEALTH_CHECK_FAILED';
 `;
+content = content.replace(/export type ToolStatus =[\s\S]*?;/, newToolStatus);
 
-coreTypes = coreTypes.replace(/export type ProvenanceType = [^;]+;/, newProvenance);
-coreTypes = coreTypes.replace(/provenance: ProvenanceType;/, 'provenance: ContentProvenance;');
+const newToolAdapter = `export interface ToolDefinition {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  license: string;
+  sourceRepository?: string;
+  version?: string;
+  installationStatus: ToolStatus;
+  integrationType: IntegrationType;
+  capabilities: ToolCapability;
+  healthStatus: ToolStatus;
+  
+  // New fields
+  executablePath?: string;
+  installSource?: string;
+  installError?: string;
+  runtimeRequirements?: {
+    cpu?: boolean;
+    gpu?: boolean;
+    ramMB?: number;
+  };
+}
 
-fs.writeFileSync(coreTypesFile, coreTypes);
+export interface ToolAdapter {
+  id: string;
+  definition: ToolDefinition;
+  
+  detect(): Promise<ToolStatus>;
+  healthCheck(): Promise<ToolStatus>;
+  provision?(): Promise<ToolStatus>;
+  
+  getVersion?(): Promise<string>;
+  configure?(config: any): Promise<boolean>;
+  launch?(): Promise<boolean>;
+  stop?(): Promise<boolean>;
+  openProject?(projectId: string): Promise<boolean>;
+  importAsset?(assetId: string): Promise<boolean>;
+}`;
 
-const typesFile = './src/types.ts';
-let types = fs.readFileSync(typesFile, 'utf8');
-types = types.replace(/export type ContentType = [^;]+;/, '');
-types = types.replace(/export type Provenance = [^;]+;/, 'import { ContentProvenance, AggregateClassification } from "./core/types";');
-types = types.replace(/contentType: ContentType;/, 'contentType: AggregateClassification;');
-types = types.replace(/provenance: Provenance;/, 'provenance: ContentProvenance;');
+content = content.replace(/export interface ToolDefinition \{[\s\S]*?importAsset\?\(assetId: string\): Promise<boolean>;\n\}/, newToolAdapter);
 
-fs.writeFileSync(typesFile, types);
+const newToolRunProvenance = `export interface ToolRunProvenance {
+  executionState: 'ADAPTER_DEFINED' | 'EXECUTED';
+  tool: string;
+  version: string;
+  executablePath?: string;
+  command: string;
+  sourceFileId: string;
+  sourceHash?: string;
+  success: boolean;
+  startTime: string;
+  endTime: string;
+  timestamp: string; // legacy alias
+  stdout?: string;
+  stderr?: string;
+  exitCode?: number;
+  durationMs?: number;
+  derivedArtifactIds?: string[];
+  resourceUsage?: {
+    cpuPercent?: number;
+    ramMB?: number;
+  };
+}`;
+
+content = content.replace(/export interface ToolRunProvenance \{[\s\S]*?durationMs\?: number;\n\}/, newToolRunProvenance);
+
+fs.writeFileSync('src/core/types.ts', content);
+console.log('Types updated');

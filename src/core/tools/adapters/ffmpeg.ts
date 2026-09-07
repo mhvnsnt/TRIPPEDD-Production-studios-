@@ -8,7 +8,7 @@ export class FFmpegAdapter implements ToolAdapter {
     category: 'Media',
     description: 'Core media processing/transcoding/inspection',
     license: 'LGPL/GPL',
-    installationStatus: 'NOT_CHECKED' as ToolStatus,
+    installationStatus: 'UNAVAILABLE' as ToolStatus,
     integrationType: 'CLI' as const,
     capabilities: {
       canLaunch: false,
@@ -17,7 +17,7 @@ export class FFmpegAdapter implements ToolAdapter {
       canExportAsset: true,
       canSubmitJob: true
     },
-    healthStatus: 'NOT_CHECKED' as ToolStatus
+    healthStatus: 'UNAVAILABLE' as ToolStatus
   };
 
   async detect(): Promise<ToolStatus> {
@@ -27,7 +27,7 @@ export class FFmpegAdapter implements ToolAdapter {
         const data = await res.json();
         if (data.installed) {
           this.definition.version = data.version;
-          return 'INSTALLED';
+          return 'AVAILABLE';
         }
       }
       return 'NOT_INSTALLED';

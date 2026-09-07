@@ -1,4 +1,5 @@
 import {
+  Users,
   Film,
   LayoutDashboard,
   BookOpen,
@@ -6,6 +7,7 @@ import {
   Video,
   MonitorPlay,
   Settings,
+  Search,
   FolderOpen,
   Wrench,
   PenTool,
@@ -72,11 +74,14 @@ export function Sidebar({ currentView, setCurrentView }: { currentView: string, 
 
   const studioItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'studio_ops', label: 'Studio Operations', icon: Users },
     { id: 'story', label: 'Story / Fiction', icon: PenTool },
     { id: 'episodes', label: 'Episode Pipeline', icon: Film },
     { id: 'bible', label: 'Show Bible', icon: BookOpen },
       { id: 'formats', label: 'Formats & Lore', icon: BookOpen },
     { id: 'production', label: 'Active Production', icon: Clapperboard },
+    { id: 'ingest', label: 'Media Ingest', icon: Video },
+    { id: 'physical_evidence', label: 'Evidence Review', icon: Search },
     { id: 'assets', label: 'Assets', icon: FolderOpen },
     { id: 'ailab', label: 'AI Lab', icon: Wand2 },
   ];

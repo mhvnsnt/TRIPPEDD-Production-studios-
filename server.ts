@@ -38,7 +38,6 @@ async function startServer() {
 
   // Provision in the background: a slow install must not block the UI, and the
   // queue reports tools as unavailable until they are genuinely ready.
-  queueManager.setProvisioner(provisioner);
   provisioningPromise = provisioner.initialize()
     .then((tools) => {
       const ready = tools.filter(t => t.state === "AVAILABLE").map(t => `${t.id}@${t.version}`);
@@ -49,6 +48,12 @@ async function startServer() {
       return tools;
     })
     .catch((e) => { console.error("[toolchain] provisioning error", e); return []; });
+  // Hand the queue BOTH the provisioner and the promise that says when
+  // detection finished. Without the promise, jobs queued during boot see every
+  // Python tool as NOT_INSTALLED, skip every analyzer, and still report
+  // "Pipeline complete" — a clip that was never transcribed looks identical to
+  // one that was transcribed and found silent.
+  queueManager.setProvisioner(provisioner, provisioningPromise);
   const app = express();
   const PORT = 3000;
   

@@ -88,6 +88,8 @@ export class QueueManager {
   private waitTimers = new Map<string, NodeJS.Timeout>();
   private analyzers: Analyzer[];
   private provisioner?: { getTool(id: string): ToolHandle | undefined };
+  /** Resolves when tool detection has finished. Jobs wait on it. */
+  private provisionerReady?: Promise<void>;
   private workRoot: string;
   private mediaLibraryDir: string;
 
@@ -105,9 +107,29 @@ export class QueueManager {
     return this.mediaLibraryDir;
   }
 
-  /** Late-bind the provisioner once boot-time provisioning has finished. */
-  setProvisioner(p: { getTool(id: string): ToolHandle | undefined }) {
+  /**
+   * Late-bind the provisioner, and — critically — the promise that says when
+   * detection has actually finished.
+   *
+   * Without the second argument a job that arrives during boot asks the
+   * provisioner about tools it has not detected yet, gets NOT_INSTALLED for
+   * every one, skips every Python analyzer, and then logs "Pipeline complete"
+   * and lands in NEEDS_REVIEW looking exactly like a clip that was analysed and
+   * found to contain nothing. MEASURED: on a fresh server all 19 clips were
+   * queued one second after boot and the first two were silently emptied that
+   * way. A pipeline that produces no evidence because the tools were not ready
+   * is not a finished job.
+   */
+  setProvisioner(
+    p: { getTool(id: string): ToolHandle | undefined },
+    ready?: Promise<unknown>
+  ) {
     this.provisioner = p;
+    if (ready) {
+      // Never let a rejected provisioning promise wedge the queue forever —
+      // a failed install should degrade the run, not stop it starting.
+      this.provisionerReady = ready.then(() => undefined, () => undefined);
+    }
   }
 
   setMaxConcurrentJobs(n: number) {
@@ -182,6 +204,15 @@ export class QueueManager {
 
     const next = Array.from(this.jobs.values()).find((j) => j.state === 'QUEUED');
     if (!next) return;
+
+    // Wait for tool detection before claiming the job. Running now would mark
+    // every analyzer NOT_INSTALLED and finish the clip with no evidence.
+    if (this.provisionerReady) {
+      const waiting = this.provisionerReady;
+      this.provisionerReady = undefined; // only the first job logs the wait
+      this.log(next.fileId, 'Waiting for toolchain detection to finish before analysing.');
+      await waiting;
+    }
 
     this.updateJob(next.fileId, { state: 'PROBING' });
     this.activeProcessing++;

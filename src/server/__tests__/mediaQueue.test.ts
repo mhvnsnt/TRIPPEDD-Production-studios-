@@ -75,3 +75,63 @@ describe('Media Pipeline Queue', () => {
     expect(finishedJob?.tools.whisper?.provenance).toBeUndefined();
   });
 });
+
+/**
+ * The boot race. A job that starts before tool detection finishes asks about
+ * tools that have not been detected, is told NOT_INSTALLED for all of them,
+ * skips every analyzer, and then reports itself complete — a clip that was
+ * never transcribed becomes indistinguishable from one that was transcribed and
+ * found silent. Measured on a real server: 19 clips queued one second after
+ * boot, the first two silently emptied.
+ */
+describe('QueueManager — waits for tool detection before analysing', () => {
+  function lateProvisioner() {
+    let detected = false;
+    let resolve!: () => void;
+    const ready = new Promise<void>((r) => { resolve = r; });
+    return {
+      ready,
+      finishDetection: () => { detected = true; resolve(); },
+      /** Before detection completes it knows about nothing, exactly like the real one. */
+      getTool: (id: string) =>
+        detected ? ({ id, state: 'AVAILABLE', version: '1.0' } as any) : undefined,
+      sawToolBeforeDetection: () => false,
+    };
+  }
+
+  it('does not claim a job while detection is still running', async () => {
+    const q = new QueueManager();
+    const p = lateProvisioner();
+    q.setProvisioner(p, p.ready);
+
+    q.addJob({ fileId: 'race1', state: 'QUEUED', tools: {}, logs: [] } as any);
+    // Give the event loop room; the job must still be waiting, not finished.
+    await new Promise((r) => setTimeout(r, 30));
+    expect(q.getJob('race1')!.state).toBe('QUEUED');
+
+    p.finishDetection();
+    await new Promise((r) => setTimeout(r, 30));
+    // Once detection lands the job is allowed to move on.
+    expect(q.getJob('race1')!.state).not.toBe('QUEUED');
+  });
+
+  it('records the wait on the job, so a slow boot is visible rather than silent', async () => {
+    const q = new QueueManager();
+    const p = lateProvisioner();
+    q.setProvisioner(p, p.ready);
+    q.addJob({ fileId: 'race2', state: 'QUEUED', tools: {}, logs: [] } as any);
+    await new Promise((r) => setTimeout(r, 20));
+    expect(q.getJob('race2')!.logs.join(' ')).toContain('Waiting for toolchain detection');
+    p.finishDetection();
+  });
+
+  it('a failed provisioning promise must not wedge the queue forever', async () => {
+    const q = new QueueManager();
+    const failed = Promise.reject(new Error('apt exploded'));
+    q.setProvisioner({ getTool: () => undefined }, failed);
+    q.addJob({ fileId: 'race3', state: 'QUEUED', tools: {}, logs: [] } as any);
+    await new Promise((r) => setTimeout(r, 40));
+    // A broken install degrades the run; it does not stop it starting.
+    expect(q.getJob('race3')!.state).not.toBe('QUEUED');
+  });
+});

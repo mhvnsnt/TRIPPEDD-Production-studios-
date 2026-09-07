@@ -88,8 +88,9 @@ export class QueueManager {
   private waitTimers = new Map<string, NodeJS.Timeout>();
   private analyzers: Analyzer[];
   private provisioner?: { getTool(id: string): ToolHandle | undefined };
-  /** Resolves when tool detection has finished. Jobs wait on it. */
+  /** Resolves when tool detection has finished. EVERY job waits on it. */
   private provisionerReady?: Promise<void>;
+  private loggedProvisionWait = false;
   private workRoot: string;
   private mediaLibraryDir: string;
 
@@ -129,6 +130,9 @@ export class QueueManager {
       // Never let a rejected provisioning promise wedge the queue forever —
       // a failed install should degrade the run, not stop it starting.
       this.provisionerReady = ready.then(() => undefined, () => undefined);
+      // Once detection is done the gate is dropped entirely, so steady-state
+      // jobs never pay for an extra microtask.
+      void this.provisionerReady.then(() => { this.provisionerReady = undefined; });
     }
   }
 
@@ -207,11 +211,23 @@ export class QueueManager {
 
     // Wait for tool detection before claiming the job. Running now would mark
     // every analyzer NOT_INSTALLED and finish the clip with no evidence.
+    //
+    // The readiness promise is NOT cleared here, and that matters. Clearing it
+    // before awaiting made only the FIRST job wait; the other eighteen found it
+    // already undefined and sailed straight through — and because
+    // activeProcessing is incremented after the await, the concurrency guard
+    // did not hold them either. Measured: the first job waited, jobs 2-19 ran
+    // against a half-detected toolchain and lost their analyzers exactly as
+    // before. Only the LOG is once-only.
     if (this.provisionerReady) {
-      const waiting = this.provisionerReady;
-      this.provisionerReady = undefined; // only the first job logs the wait
-      this.log(next.fileId, 'Waiting for toolchain detection to finish before analysing.');
-      await waiting;
+      if (!this.loggedProvisionWait) {
+        this.loggedProvisionWait = true;
+        this.log(next.fileId, 'Waiting for toolchain detection to finish before analysing.');
+      }
+      await this.provisionerReady;
+      // Another job may have claimed a slot while this one waited.
+      if (this.activeProcessing >= this.MAX_CONCURRENT) { void this.processNext(); return; }
+      if (next.state !== 'QUEUED') { void this.processNext(); return; }
     }
 
     this.updateJob(next.fileId, { state: 'PROBING' });

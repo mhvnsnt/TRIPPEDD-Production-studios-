@@ -125,6 +125,26 @@ describe('QueueManager — waits for tool detection before analysing', () => {
     p.finishDetection();
   });
 
+  it('EVERY queued job waits, not just the first', async () => {
+    // The first version of this fix cleared the readiness flag before awaiting,
+    // so job 1 waited and jobs 2..N found it already gone. Since
+    // activeProcessing is only incremented after the await, the concurrency
+    // guard did not hold them either — 18 of 19 clips still ran against a
+    // half-detected toolchain.
+    const q = new QueueManager();
+    const p = lateProvisioner();
+    q.setProvisioner(p, p.ready);
+
+    for (const id of ['m1', 'm2', 'm3', 'm4']) {
+      q.addJob({ fileId: id, state: 'QUEUED', tools: {}, logs: [] } as any);
+    }
+    await new Promise((r) => setTimeout(r, 40));
+    for (const id of ['m1', 'm2', 'm3', 'm4']) {
+      expect(q.getJob(id)!.state, `${id} did not wait for detection`).toBe('QUEUED');
+    }
+    p.finishDetection();
+  });
+
   it('a failed provisioning promise must not wedge the queue forever', async () => {
     const q = new QueueManager();
     const failed = Promise.reject(new Error('apt exploded'));

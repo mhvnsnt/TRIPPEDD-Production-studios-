@@ -371,6 +371,19 @@ export class ToolProvisioner {
       console.log(`[toolchain] purged ${this.modelPurge.removed.length} invalid model artifact(s), reclaimed ${(this.modelPurge.bytesReclaimed / 1048576).toFixed(0)}MB`);
     }
 
+    // Sweep model repos nothing asks for any more. purgeInvalid above only
+    // catches CORRUPT files; a perfectly valid model that is simply never
+    // requested again is invisible to it, and those are what fill the disk.
+    // A stale 1.2 GB Korean alignment model — pulled once by a
+    // language-detection miss that has since been fixed — is what starved the
+    // longest clip in the shoot of the 800 MB it needed.
+    const keepModel = process.env.TRIPPEDD_WHISPER_MODEL
+      || 'Systran/faster-distil-whisper-large-v3';
+    const repoSweep = await this.models.purgeUnusedModelRepos({ keepRepoIds: [keepModel] });
+    if (repoSweep.removed.length) {
+      console.log(`[toolchain] removed ${repoSweep.removed.length} unused model repo(s), reclaimed ${(repoSweep.bytesReclaimed / 1048576).toFixed(0)}MB: ${repoSweep.removed.join(', ')}`);
+    }
+
     const persisted = await this.loadState();
 
     for (const spec of this.specs) {

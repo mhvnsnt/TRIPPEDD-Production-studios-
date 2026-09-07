@@ -13,7 +13,7 @@ from faster_whisper import WhisperModel, decode_audio
 from faster_whisper.vad import VadOptions, get_speech_timestamps
 import subprocess, tempfile
 
-CACHE = os.path.join(os.getcwd(), '.trippedd_models')
+CACHE = os.path.join(os.getcwd(), '.trippedd_tools', 'models')
 MODEL = os.environ.get('AB_MODEL', 'small')
 
 def prep(path):

@@ -16,7 +16,7 @@ Each stage is one open-source thing this project already has or can pull:
 """
 import sys, os, subprocess, tempfile, time, collections, shutil
 
-CACHE = os.path.join(os.getcwd(), '.trippedd_models')
+CACHE = os.path.join(os.getcwd(), '.trippedd_tools', 'models')
 from faster_whisper import WhisperModel
 
 def opt(flag, default):

@@ -22,7 +22,8 @@ def opt(name, default):
     if name in sys.argv: return sys.argv[sys.argv.index(name) + 1]
     return default
 MODEL = opt('--model', 'small')
-CACHE = opt('--cache', os.path.join(os.getcwd(), '.trippedd_models'))
+# Same cache the pipeline uses. A separate one silently duplicates 1.5GB of weights.
+CACHE = opt('--cache', os.path.join(os.getcwd(), '.trippedd_tools', 'models'))
 # The VAD settings currently in whisper_transcribe.py.
 VAD_THRESHOLD = float(opt('--vad-threshold', '0.35'))
 VAD_MIN_SILENCE = int(opt('--vad-min-silence', '700'))

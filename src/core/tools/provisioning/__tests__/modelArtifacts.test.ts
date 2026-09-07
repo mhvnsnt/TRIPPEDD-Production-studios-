@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import os from 'os';
 import path from 'path';
-import { mkdtempSync, writeFileSync, readFileSync, statSync, existsSync } from 'fs';
+import { mkdtempSync, writeFileSync, readFileSync, statSync, existsSync, mkdirSync, utimesSync } from 'fs';
 import { deflateSync } from 'zlib';
 import { ModelArtifactManager, WHISPERX_ALIGN_EN, type ModelSpec } from '../ModelArtifactManager';
 
@@ -145,4 +145,82 @@ describe('ModelArtifactManager — real cached model', () => {
     const purged = await m.purgeInvalid([WHISPERX_ALIGN_EN]);
     expect(purged.bytesReclaimed).toBeGreaterThan(100 * 1024 * 1024);
   }, 120_000);
+});
+
+/**
+ * Sweeping model repos nothing asks for any more.
+ *
+ * purgeInvalid only removes CORRUPT files. A perfectly valid model that is
+ * simply never requested again is invisible to it — and those are what actually
+ * fill the disk. A 1.2 GB Korean alignment model, pulled once by a
+ * language-detection miss that has since been fixed, is what eventually starved
+ * the longest clip in the shoot of the 800 MB the governor required.
+ */
+describe('ModelArtifactManager — unused model repos', () => {
+  function cacheWith(repos: Record<string, { bytes: number; incomplete?: boolean; ageMs?: number }>) {
+    const dir = mkdtempSync(path.join(os.tmpdir(), 'repo-sweep-'));
+    for (const [repo, o] of Object.entries(repos)) {
+      const repoDir = path.join(dir, repo, 'snapshots', 'abc');
+      mkdirSync(repoDir, { recursive: true });
+      const f = path.join(repoDir, o.incomplete ? 'model.bin.incomplete' : 'model.bin');
+      writeFileSync(f, Buffer.alloc(o.bytes, 1));
+      if (o.ageMs) {
+        const t = new Date(Date.now() - o.ageMs);
+        utimesSync(f, t, t);
+        utimesSync(repoDir, t, t);
+        utimesSync(path.join(dir, repo, 'snapshots'), t, t);
+        utimesSync(path.join(dir, repo), t, t);
+      }
+    }
+    return dir;
+  }
+
+  const OLD = 60 * 60_000; // an hour, comfortably past the idle threshold
+
+  it('removes a repo nothing keeps, and reports the bytes', async () => {
+    const dir = cacheWith({
+      'models--Systran--faster-distil-whisper-large-v3': { bytes: 2048, ageMs: OLD },
+      'models--kresnik--wav2vec2-large-xlsr-korean': { bytes: 4096, ageMs: OLD },
+    });
+    const m = new ModelArtifactManager(dir);
+    const r = await m.purgeUnusedModelRepos({
+      keepRepoIds: ['Systran/faster-distil-whisper-large-v3'],
+    });
+    expect(r.removed).toEqual(['models--kresnik--wav2vec2-large-xlsr-korean']);
+    expect(r.bytesReclaimed).toBe(4096);
+    expect(existsSync(path.join(dir, 'models--Systran--faster-distil-whisper-large-v3'))).toBe(true);
+    expect(existsSync(path.join(dir, 'models--kresnik--wav2vec2-large-xlsr-korean'))).toBe(false);
+  });
+
+  it('NEVER deletes a repo that is mid-download', async () => {
+    const dir = cacheWith({
+      'models--someone--half-fetched': { bytes: 1024, incomplete: true, ageMs: OLD },
+    });
+    const m = new ModelArtifactManager(dir);
+    const r = await m.purgeUnusedModelRepos({ keepRepoIds: [] });
+    expect(r.removed).toEqual([]);
+    expect(existsSync(path.join(dir, 'models--someone--half-fetched'))).toBe(true);
+  });
+
+  it('NEVER deletes a repo touched recently — a fetch in flight is not garbage', async () => {
+    const dir = cacheWith({ 'models--someone--just-arrived': { bytes: 1024 } });
+    const m = new ModelArtifactManager(dir);
+    const r = await m.purgeUnusedModelRepos({ keepRepoIds: [], minIdleMs: 30 * 60_000 });
+    expect(r.removed).toEqual([]);
+  });
+
+  it('leaves non-model directories alone', async () => {
+    const dir = cacheWith({ 'models--gone--soon': { bytes: 512, ageMs: OLD } });
+    mkdirSync(path.join(dir, 'fixtures'), { recursive: true });
+    writeFileSync(path.join(dir, 'fixtures', 'probe.wav'), Buffer.alloc(64));
+    const m = new ModelArtifactManager(dir);
+    await m.purgeUnusedModelRepos({ keepRepoIds: [] });
+    expect(existsSync(path.join(dir, 'fixtures', 'probe.wav'))).toBe(true);
+  });
+
+  it('a missing cache directory is not an error', async () => {
+    const m = new ModelArtifactManager(path.join(os.tmpdir(), 'no-such-cache-' + Date.now()));
+    await expect(m.purgeUnusedModelRepos({ keepRepoIds: [] }))
+      .resolves.toEqual({ removed: [], bytesReclaimed: 0 });
+  });
 });

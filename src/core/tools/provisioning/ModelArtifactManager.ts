@@ -108,6 +108,84 @@ export class ModelArtifactManager {
   }
 
   /**
+   * Sweep whole Hugging Face model repos the pipeline no longer uses.
+   *
+   * purgeInvalid only removes files that are CORRUPT. A model that is perfectly
+   * valid and simply never requested again is invisible to it, and those are
+   * what actually fill the disk: superseded ASR sizes, and alignment models for
+   * languages a fixed bug once asked for.
+   *
+   * MEASURED, and this is why the method exists: an early language-detection
+   * miss transcribed a low-speech clip as Korean, which pulled a 1.2 GB Korean
+   * wav2vec2 alignment model. Language has been forced to English since, but
+   * nothing ever removed it — and the leftovers eventually starved the longest
+   * clip in the shoot, which the resource governor correctly refused to analyse
+   * for want of 800 MB.
+   *
+   * Deliberately conservative. A repo is removed only when it is not in the
+   * keep set, contains no in-flight download marker, and nothing inside it has
+   * been touched recently — a model being fetched right now must never be
+   * deleted out from under the fetch.
+   */
+  async purgeUnusedModelRepos(opts: {
+    /** Hugging Face repo ids to keep, e.g. 'Systran/faster-distil-whisper-large-v3'. */
+    keepRepoIds: string[];
+    /** Extra cache directories to sweep besides this manager's own. */
+    extraDirs?: string[];
+    /** Leave anything touched more recently than this. Default 30 minutes. */
+    minIdleMs?: number;
+  }): Promise<{ removed: string[]; bytesReclaimed: number }> {
+    const minIdleMs = opts.minIdleMs ?? 30 * 60_000;
+    const keep = new Set(opts.keepRepoIds.map((id) => `models--${id.replace(/\//g, '--')}`));
+    const dirs = [this.cacheDir, ...(opts.extraDirs ?? [])];
+    const removed: string[] = [];
+    let bytes = 0;
+
+    for (const dir of dirs) {
+      let entries: string[];
+      try { entries = await readdir(dir); } catch { continue; }
+
+      for (const name of entries) {
+        if (!name.startsWith('models--') || keep.has(name)) continue;
+        const repoPath = path.join(dir, name);
+
+        const scan = await this.scanTree(repoPath);
+        // An incomplete blob means a fetch is in progress or was interrupted;
+        // either way this is not ours to delete on a size sweep.
+        if (scan.hasIncomplete) continue;
+        if (Date.now() - scan.newestMtimeMs < minIdleMs) continue;
+
+        try {
+          await rm(repoPath, { recursive: true, force: true });
+          removed.push(name);
+          bytes += scan.bytes;
+        } catch { /* a repo we cannot remove is not worth failing provisioning over */ }
+      }
+    }
+    return { removed, bytesReclaimed: bytes };
+  }
+
+  /** Total size, newest mtime, and whether a download is mid-flight. */
+  private async scanTree(root: string): Promise<{ bytes: number; newestMtimeMs: number; hasIncomplete: boolean }> {
+    let bytes = 0, newest = 0, hasIncomplete = false;
+    const walk = async (p: string): Promise<void> => {
+      let st;
+      try { st = await stat(p); } catch { return; }
+      newest = Math.max(newest, st.mtimeMs);
+      if (st.isDirectory()) {
+        let kids: string[];
+        try { kids = await readdir(p); } catch { return; }
+        for (const k of kids) await walk(path.join(p, k));
+        return;
+      }
+      bytes += st.size;
+      if (p.includes('.incomplete') || p.endsWith('.partial')) hasIncomplete = true;
+    };
+    await walk(root);
+    return { bytes, newestMtimeMs: newest, hasIncomplete };
+  }
+
+  /**
    * Remove cache entries that are present but unusable, so a corrupt copy
    * cannot be picked up on the next run and cannot accumulate duplicates.
    */

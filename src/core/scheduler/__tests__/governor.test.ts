@@ -65,7 +65,9 @@ describe('ResourceGovernor — admission control', () => {
   });
 
   it('refuses work that would eat the disk floor', async () => {
-    const g = new ResourceGovernor({ workspacePath: process.cwd() });
+    // Quota deliberately huge so the FILESYSTEM floor is what binds here,
+    // not the workspace budget — otherwise this passes for the wrong reason.
+    const g = new ResourceGovernor({ workspacePath: process.cwd(), limits: { diskQuotaMB: 10_000_000 } });
     const free = await g.diskFreeMB();
     // Demand nearly all remaining space; the floor must stop it.
     const d = await g.admit({

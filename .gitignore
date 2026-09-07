@@ -9,6 +9,9 @@ coverage/
 .trippedd_venv
 .trippedd_tools
 .trippedd_toolchain.json
+# ASR model weights, fetched at runtime and verified by ModelArtifactManager.
+# 1.9 GB of binaries that the toolchain re-downloads on demand — never repo content.
+.trippedd_models
 dist
 footage/
 

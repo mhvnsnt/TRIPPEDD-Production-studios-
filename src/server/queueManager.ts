@@ -14,7 +14,7 @@ import os from 'os';
 import { MediaJob, QueueJobState, JobToolStatus } from '../core/types';
 import { ToolProvisioner } from '../core/tools/provisioning/ToolProvisioner';
 import { ResourceGovernor, type ResourceClass } from '../core/scheduler/ResourceGovernor';
-import { ArtifactLifecycle } from '../core/scheduler/ArtifactLifecycle';
+import { ArtifactLifecycle, type RetentionPolicy } from '../core/scheduler/ArtifactLifecycle';
 import { ALL_ANALYZERS, type Analyzer, type AnalysisContext, type MachineObservation, type ToolHandle } from '../core/analysis/analyzers';
 import { hashFile } from '../core/tools/execution/executor';
 import { runnerRoot } from '../core/tools/execution/runnerRoot';
@@ -255,6 +255,48 @@ export class QueueManager {
     this.waitTimers.clear();
   }
 
+  /**
+   * Give every file an analyzer wrote an owner and a retention policy.
+   *
+   * Most derived files are scratch: their CONTENT has already been lifted into
+   * observations, so the evidence survives the file. Separated audio stems are
+   * the exception — they are useful as audio, not just as a fact about audio —
+   * so they are moved out of the scratch directory and preserved.
+   */
+  private async registerArtifacts(job: MediaJob, a: Analyzer, files: string[]): Promise<void> {
+    if (!files.length) return;
+    const isStem = a.requiresTool === 'demucs';
+
+    for (const f of files) {
+      let filePath = f;
+      let retention: RetentionPolicy = 'DISPOSABLE';
+
+      if (isStem) {
+        // Move it somewhere that survives the scratch sweep.
+        const keepDir = path.join(this.mediaLibraryDir, 'stems', job.fileId);
+        try {
+          await fs.mkdir(keepDir, { recursive: true });
+          const dest = path.join(keepDir, path.basename(f));
+          await fs.copyFile(f, dest);
+          filePath = dest;
+          retention = 'EVIDENCE';
+        } catch {
+          // If it cannot be preserved it stays scratch rather than being lost
+          // silently in a place that claims to be permanent.
+          retention = 'DISPOSABLE';
+        }
+      }
+
+      await this.lifecycle.register({
+        jobId: job.fileId,
+        sourceFileId: job.fileId,
+        filePath,
+        purpose: `${a.requiresTool} output`,
+        retention,
+      });
+    }
+  }
+
   private toolHandle(id: string): ToolHandle | undefined {
     return this.provisioner?.getTool(id);
   }
@@ -389,7 +431,11 @@ export class QueueManager {
             provenance: res.provenance,
             data: res.data,
           });
-          if (res.status === 'COMPLETED') { observations.push(...res.observations); completed.add(a.id); }
+          if (res.status === 'COMPLETED') {
+            observations.push(...res.observations);
+            completed.add(a.id);
+            await this.registerArtifacts(job, a, res.derivedArtifacts ?? []);
+          }
           this.log(
             job.fileId,
             `[${a.requiresTool}] ${res.status}` +
@@ -428,6 +474,10 @@ export class QueueManager {
         const kept = path.join(this.mediaLibraryDir, `${job.fileId}${path.extname(localPath) || '.mp4'}`);
         await fs.copyFile(localPath, kept);
         (job as any).localMediaPath = kept;
+        await this.lifecycle.register({
+          jobId: job.fileId, sourceFileId: job.fileId, filePath: kept,
+          purpose: 'retained source media', retention: 'SOURCE_MEDIA',
+        });
         this.log(job.fileId, `Source media retained for editing at ${kept}.`);
       } catch (e: any) {
         this.log(job.fileId, `Could not retain source media: ${e?.message ?? e}`);

@@ -4,6 +4,7 @@ import os from 'os';
 import { mkdtempSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { QueueManager } from '../queueManager';
 import { ResourceGovernor } from '../../core/scheduler/ResourceGovernor';
+import { ArtifactLifecycle } from '../../core/scheduler/ArtifactLifecycle';
 import type { Analyzer, AnalysisContext, AnalyzerResult, ToolHandle } from '../../core/analysis/analyzers';
 import { adapterDefined, executeTool } from '../../core/tools/execution/executor';
 import type { MediaJob } from '../../core/types';
@@ -259,6 +260,75 @@ describe('Pipeline — temporary media handling', () => {
     expect(qm.getResourceWaits()['f_big']).toBe(1);
     // Nothing was downloaded, so nothing needs cleaning up.
     expect(qm.getGovernor().getReservedMB()).toBe(0);
+  }, 30_000);
+});
+
+describe('Pipeline — derived artifacts are owned, not orphaned', () => {
+  it('registers every file an analyzer wrote, so cleanup reports real bytes', async () => {
+    const workRoot = mkdtempSync(path.join(os.tmpdir(), 'q-'));
+
+    // An analyzer that genuinely writes a file, like the real ones do.
+    const writer: Analyzer = {
+      id: 'pyscenedetect', requiresTool: 'pyscenedetect', resourceClass: 'MEDIUM',
+      requiresLocalFile: false,
+      async run(ctx) {
+        const f = path.join(ctx.workDir, 'scenes.csv');
+        writeFileSync(f, Buffer.alloc(4096, 1));
+        return {
+          tool: 'pyscenedetect', status: 'COMPLETED',
+          provenance: adapterDefined('pyscenedetect', ctx.fileId, 't'),
+          observations: [], derivedArtifacts: [f],
+        } as AnalyzerResult;
+      },
+    };
+
+    const lifecycle = new ArtifactLifecycle();
+    const qm = new QueueManager({
+      provisioner: registry({ pyscenedetect: 'AVAILABLE' }),
+      analyzers: [writer], lifecycle, workRoot,
+    });
+
+    const j = job('f_art');
+    qm.addJob(j);
+    await qm.runPipeline(j);
+
+    // The lifecycle must have SEEN the file. Before this was wired, the
+    // registry was permanently empty and every cleanup number read zero.
+    const seen = lifecycle.all();
+    expect(seen.length).toBeGreaterThan(0);
+    const csv = seen.find((a) => a.filePath.endsWith('scenes.csv'))!;
+    expect(csv, 'the analyzer output should be registered').toBeTruthy();
+    expect(csv.sizeBytes).toBe(4096);
+    expect(csv.jobId).toBe('f_art');
+    expect(csv.purpose).toContain('pyscenedetect');
+    expect(csv.retention).toBe('DISPOSABLE');
+    // And it was actually cleaned.
+    expect(csv.releasedAt).toBeTruthy();
+    expect(j.logs.some((l) => /Scratch cleaned: [1-9]/.test(l))).toBe(true);
+  }, 30_000);
+
+  it('registers retained source media as SOURCE_MEDIA and never deletes it', async () => {
+    const workRoot = mkdtempSync(path.join(os.tmpdir(), 'q-'));
+    const mediaDir = mkdtempSync(path.join(os.tmpdir(), 'lib-'));
+    const lifecycle = new ArtifactLifecycle();
+
+    const qm = new QueueManager({
+      provisioner: registry({ ffprobe: 'AVAILABLE' }),
+      analyzers: [{ ...realAnalyzer('ffprobe'), requiresLocalFile: true } as Analyzer],
+      lifecycle, workRoot, retainMedia: true, mediaLibraryDir: mediaDir,
+      downloadMedia: async (_j, dest) => { writeFileSync(dest, Buffer.alloc(2048, 9)); return 2048; },
+    });
+
+    const j = job('f_src');
+    qm.addJob(j);
+    await qm.runPipeline(j);
+
+    const src = lifecycle.all().find((a) => a.retention === 'SOURCE_MEDIA');
+    expect(src, 'retained media should be registered').toBeTruthy();
+    // Preserved through cleanup, because deleting the source is never cleanup.
+    expect(src!.releasedAt).toBeUndefined();
+    expect(existsSync(src!.filePath)).toBe(true);
+    expect((j as any).localMediaPath).toBe(src!.filePath);
   }, 30_000);
 });
 

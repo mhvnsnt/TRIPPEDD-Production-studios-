@@ -1,17 +1,15 @@
 import fs from 'fs/promises';
 import path from 'path';
 import crypto from 'crypto';
-
 const GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
 const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
 const DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.readonly';
 const TOKEN_FILE = process.env.TRIPPEDD_GOOGLE_TOKEN_FILE || path.join(process.cwd(), '.trippedd', 'google-drive-oauth.json');
 type StoredTokens = { access_token?: string; refresh_token?: string; expires_at?: number; scope?: string; token_type?: string };
 type PendingAuth = { expiresAt: number; verifier: string };
-const pendingStates = new Map<string, PendingAuth>();
-let cachedTokens: StoredTokens | null = null;
+const pendingStates = new Map<string, PendingAuth>(); let cachedTokens: StoredTokens | null = null;
 function clientId() { const value = process.env.GOOGLE_CLIENT_ID || process.env.VITE_GOOGLE_CLIENT_ID; if (!value) throw new Error('Google OAuth client ID is not configured. Set GOOGLE_CLIENT_ID or VITE_GOOGLE_CLIENT_ID.'); return value; }
-export function publicDriveApiKey() { return process.env.GOOGLE_API_KEY || process.env.GOOGLE_MAPS_API_KEY || ''; }
+export function publicDriveApiKey() { return process.env.GOOGLE_API_KEY || process.env.GOOGLE_MAPS_API_KEY || process.env.GEMINI_API_KEY || ''; }
 function redirectUri() { return process.env.GOOGLE_REDIRECT_URI || `${(process.env.APP_URL || 'http://localhost:3000').replace(/\/$/, '')}/api/auth/google/callback`; }
 function base64Url(input: Buffer) { return input.toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, ''); }
 function createVerifier() { return base64Url(crypto.randomBytes(48)); }

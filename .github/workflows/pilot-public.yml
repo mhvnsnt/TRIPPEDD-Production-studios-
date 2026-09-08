@@ -12,6 +12,7 @@ on:
       - src/server/queueManager.ts
       - src/server/mediaPipeline.ts
       - src/server/pilotRenderer.ts
+      - src/server/productionMemory.ts
 
 permissions:
   contents: read
@@ -77,6 +78,7 @@ jobs:
           WHISPER_MODEL: 'tiny'
           TRIPPEDD_WHISPER_DEVICE: 'cpu'
           TRIPPEDD_WHISPER_COMPUTE_TYPE: 'int8'
+          TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '2'

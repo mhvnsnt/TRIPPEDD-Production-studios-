@@ -2,6 +2,8 @@ import fs from "fs/promises";
 import path from "path";
 import os from "os";
 import { MediaJob } from "../core/types";
+import { AutonomousStudioOrchestrator, type ProductionWorkItem } from "../core/agents/orchestrator";
+import { planSourceClip } from "../core/agents/studioPlan";
 import { toolManager } from "./toolManager";
 import { analyzeMedia, downloadToFile } from "./mediaPipeline";
 import { discoverComedy } from "./comedyDiscovery";
@@ -12,6 +14,8 @@ export class QueueManager {
   private tokens = new Map<string, string>();
   private activeProcessing = 0;
   private MAX_CONCURRENT = Math.max(1, Number(process.env.MEDIA_MAX_CONCURRENT || 1));
+  private studio = new AutonomousStudioOrchestrator();
+  private sourcePlans = new Map<string, ProductionWorkItem[]>();
 
   getJobs(): MediaJob[] {
     return Array.from(this.jobs.values()).map(job => this.publicJob(job)).sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
@@ -60,7 +64,11 @@ export class QueueManager {
   }
 
   addJob(job: MediaJob) {
-    if (!this.jobs.has(job.fileId)) this.jobs.set(job.fileId, job);
+    if (this.jobs.has(job.fileId)) return;
+    this.jobs.set(job.fileId, job);
+    const plan = planSourceClip(this.studio, job.fileId, job.originalName || job.fileId);
+    this.sourcePlans.set(job.fileId, plan.work);
+    (job as any).productionPlan = plan.work.map(work => ({ id: work.id, kind: work.kind, title: work.title, status: work.status, requiresHumanApproval: work.requiresHumanApproval }));
   }
 
   updateJob(id: string, updates: Partial<MediaJob>) {
@@ -92,6 +100,7 @@ export class QueueManager {
     } catch (e: any) {
       this.log(job.fileId, `FATAL: ${e?.message || String(e)}`);
       this.updateJob(job.fileId, { state: 'FAILED', progress: 100 });
+      this.failPlan(job.fileId);
     }
   }
 
@@ -99,6 +108,22 @@ export class QueueManager {
     const copy = { ...job } as any;
     delete copy.token;
     return copy;
+  }
+
+  private completePlanKind(fileId: string, kind: ProductionWorkItem['kind'], outputRefs: string[] = []) {
+    const item = this.sourcePlans.get(fileId)?.find(work => work.kind === kind);
+    if (!item || item.status === 'DONE') return;
+    this.studio.complete(item.id, outputRefs);
+    const job = this.jobs.get(fileId) as any;
+    if (job?.productionPlan) {
+      const planItem = job.productionPlan.find((work: any) => work.id === item.id);
+      if (planItem) planItem.status = 'DONE';
+    }
+  }
+
+  private failPlan(fileId: string) {
+    const item = this.sourcePlans.get(fileId)?.find(work => work.status === 'RUNNING' || work.status === 'READY');
+    if (item) this.studio.fail(item.id);
   }
 
   async runPipeline(job: MediaJob) {
@@ -129,6 +154,7 @@ export class QueueManager {
       await downloadToFile(mediaUrl, token, localFilePath);
       this.log(job.fileId, '[download] Source media is locally available.');
       this.updateJob(job.fileId, { state: 'ANALYZING', progress: 10 });
+      this.completePlanKind(job.fileId, 'INGEST', [`source:${job.fileId}`]);
 
       const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => {
         this.log(job.fileId, `[${stage}] ${message}`);
@@ -141,14 +167,17 @@ export class QueueManager {
       if (result.ocr !== undefined) job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', 'tesseract <sampled-frame> stdout') } as any;
       if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`) } as any;
 
+      this.completePlanKind(job.fileId, 'MEDIA_ANALYSIS', [`analysis:${job.fileId}`]);
       const comedy = discoverComedy({ transcript: result.transcript, scenes: result.scenes, ocr: result.ocr });
       await productionMemory.recordGags('trippedd', comedy);
+      this.completePlanKind(job.fileId, 'GAG_DISCOVERY', comedy.map(gag => `gag:${gag.id}`));
       const snapshot = await productionMemory.upsert('trippedd', {
         sources: { [job.fileId]: { fileId: job.fileId, name: job.originalName, ingestedAt: new Date().toISOString(), analysis: result } },
         jobs: { [job.fileId]: { state: 'NEEDS_REVIEW', updatedAt: new Date().toISOString(), gagCount: comedy.length } },
       });
       (job as any).productionIntelligence = { gagCandidates: comedy, callbackKeys: comedy.flatMap(g => g.callbackKeys), memoryUpdatedAt: snapshot.updatedAt };
       this.log(job.fileId, `Comedy discovery produced ${comedy.length} machine-suggested candidates; source evidence remains unchanged.`);
+      this.log(job.fileId, 'Autonomous plan advanced through ingest, analysis, and gag discovery. Story development is now waiting at the human review gate.');
 
       const completedTools = Object.values(tools).filter(Boolean).length;
       this.log(job.fileId, `Analysis complete. ${completedTools}/${Object.keys(tools).length} analysis tools available.`);

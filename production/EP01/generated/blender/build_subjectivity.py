@@ -4,10 +4,9 @@ Run with Blender in background mode. The render range is controlled by:
   TRIPPEDD_FRAME_START / TRIPPEDD_FRAME_END
   TRIPPEDD_FRAME_DIR
 
-The generator writes individual JPEG frames instead of rendering directly to an
-MP4. The CI workflow renders independent frame chunks in parallel and assembles
-the verified chunks with FFmpeg. That makes cancellation/retry cheap and avoids
-losing a multi-hour partially encoded movie.
+Frames are rendered individually and existing frames are skipped. This makes
+small CI chunks restartable: a worker can die without requiring an entire
+animation range to be rendered again.
 
 The sequence is explicitly GENERATED and is never physical source evidence.
 """
@@ -17,7 +16,6 @@ import os
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
 OUTPUT_DIR = os.path.join(ROOT, "production", "EP01", "generated", "blender")
-BLEND_OUTPUT = os.path.join(OUTPUT_DIR, "ep01_subjectivity.blend")
 FRAME_DIR = os.environ.get("TRIPPEDD_FRAME_DIR", os.path.join(OUTPUT_DIR, "subjectivity_frames"))
 FRAME_START = int(os.environ.get("TRIPPEDD_FRAME_START", "1"))
 FRAME_END = int(os.environ.get("TRIPPEDD_FRAME_END", "144"))
@@ -75,10 +73,6 @@ for loc in ((-6, -4, 8), (6, 2, 6), (0, 12, 10)):
 
 scene = bpy.context.scene
 scene.render.engine = 'BLENDER_EEVEE_NEXT'
-# Generated inserts do not need full-resolution source treatment. Rendering at
-# 960x540 and 2 samples keeps the visual rupture while cutting CI render cost
-# dramatically; the editorial renderer can scale the generated insert to the
-# delivery canvas during assembly.
 scene.render.resolution_x = 960
 scene.render.resolution_y = 540
 scene.render.resolution_percentage = 100
@@ -89,7 +83,6 @@ scene.render.image_settings.quality = 92
 scene.render.fps = 24
 scene.frame_start = 1
 scene.frame_end = 144
-scene.render.filepath = os.path.join(FRAME_DIR, "frame-")
 
 for frame in (1, 36, 72, 108, 144):
     camera.location = (math.sin(frame * 0.035) * 4, -18 + frame * 0.035, 4 + math.cos(frame * 0.03) * 2)
@@ -102,13 +95,28 @@ scene["TRIPPEDD_SEQUENCE_ID"] = "ep01-lost-acid-subjectivity"
 scene["TRIPPEDD_PURPOSE"] = "Audience sees the character's subjective experience; character may dismiss it on return to live action."
 scene["TRIPPEDD_SOURCE_TRUTH"] = "This scene is not physical source evidence."
 scene["TRIPPEDD_EDITORIAL_RETURN"] = "Return to live action before the character says it was not even shit."
-scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_2_SAMPLES_960x540_JPEG_CHUNKED"
+scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS"
 scene["TRIPPEDD_FRAME_RANGE"] = f"{FRAME_START}-{FRAME_END}"
 
-# Every chunk carries a scene file so a failed chunk is independently inspectable.
 chunk_blend = os.path.join(FRAME_DIR, f"subjectivity-{FRAME_START:04d}-{FRAME_END:04d}.blend")
-bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
 
-scene.frame_start = FRAME_START
-scene.frame_end = FRAME_END
-bpy.ops.render.render(animation=True)
+for frame in range(FRAME_START, FRAME_END + 1):
+    frame_path = os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")
+    if os.path.isfile(frame_path) and os.path.getsize(frame_path) > 0:
+        print(f"[subjectivity] checkpoint exists: frame {frame}")
+        continue
+
+    scene.frame_set(frame)
+    scene.render.filepath = frame_path
+    print(f"[subjectivity] rendering frame {frame}/{FRAME_END}", flush=True)
+    bpy.ops.render.render(write_still=True)
+
+    if not os.path.isfile(frame_path) or os.path.getsize(frame_path) == 0:
+        raise RuntimeError(f"Blender did not produce expected frame: {frame_path}")
+
+    scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = frame
+    bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
+    print(f"[subjectivity] completed frame {frame}", flush=True)
+
+bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
+print(f"[subjectivity] complete: frames {FRAME_START}-{FRAME_END}", flush=True)

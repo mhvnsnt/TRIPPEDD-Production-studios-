@@ -1,4 +1,5 @@
-Trigger the EP01 public Drive build workflow.
-Fire this build from the public-link path; no OAuth/API key is required.
-Retry with the full production stack: PySceneDetect + OpenCV + OpenAI Whisper fallback + faster-whisper fast path + OpenTimelineIO.
-The goal is a real watchable EP01 first assembly, not an infrastructure-only check.
+EP01 PUBLIC BUILD
+
+This marker intentionally triggers the production pipeline.
+The pipeline ingests the physical source footage, analyzes it, builds the real rough assembly, generates the EP01 subjectivity sequence, and places clearly-labelled generated material into the assembly without treating it as source evidence.
+Final editorial selection and showrunner greenlight remain human-controlled.

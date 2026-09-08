@@ -1,6 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { QueueManager } from '../queueManager';
 import { MediaJob } from '../../core/types';
+import os from 'os';
+import path from 'path';
+import { mkdtempSync, writeFileSync, readFileSync, existsSync } from 'fs';
 
 describe('Media Pipeline Queue', () => {
   let qm: QueueManager;
@@ -153,5 +156,97 @@ describe('QueueManager — waits for tool detection before analysing', () => {
     await new Promise((r) => setTimeout(r, 40));
     // A broken install degrades the run; it does not stop it starting.
     expect(q.getJob('race3')!.state).not.toBe('QUEUED');
+  });
+});
+
+/**
+ * Evidence has to survive a restart.
+ *
+ * Transcribing this shoot is ~40 minutes of CPU, and all of it lived in one
+ * in-memory Map. A container restart destroyed 237 transcript lines and every
+ * observation behind them, and the only recovery was to run the machine again.
+ * A pipeline whose output evaporates on a restart is not doing the work, it is
+ * redoing it.
+ */
+describe('QueueManager — evidence survives a restart', () => {
+  const dirs: string[] = [];
+
+  /**
+   * Held at the toolchain-readiness gate with a promise that never resolves, so
+   * a job stays in the state the test set. Without it the pipeline claims the
+   * job the moment it is added and the assertion races real work — which is
+   * what happened first time and reported PROBING for everything.
+   */
+  function held(persistPath?: string) {
+    const q = new QueueManager();
+    q.setProvisioner({ getTool: () => undefined }, new Promise<void>(() => {}));
+    if (persistPath) { (q as any).persistPath = persistPath; return q; }
+    const dir = mkdtempSync(path.join(os.tmpdir(), 'queue-persist-'));
+    dirs.push(dir);
+    (q as any).persistPath = path.join(dir, 'queue.json');
+    return q;
+  }
+  const isolated = () => held();
+
+  it('reloads completed work, with its observations intact', async () => {
+    const a = isolated();
+    a.addJob({ fileId: 'k1', originalName: 'k1.mp4', state: 'QUEUED', tools: {}, logs: [] } as any);
+    a.updateJob('k1', {
+      state: 'NEEDS_REVIEW',
+      observations: [{ id: 'o1', type: 'TRANSCRIPT_SEGMENT', text: 'we are at the cigar store' }],
+    } as any);
+    await a.persist();
+
+    const b = held((a as any).persistPath);
+    const r = await b.restore();
+    expect(r.restored).toBe(1);
+    const job: any = b.getJob('k1');
+    expect(job.state).toBe('NEEDS_REVIEW');
+    expect(job.observations[0].text).toBe('we are at the cigar store');
+  });
+
+  it('requeues a clip the restart caught mid-analysis instead of trusting it', async () => {
+    const a = isolated();
+    a.addJob({ fileId: 'k2', originalName: 'k2.mp4', state: 'QUEUED', tools: {}, logs: [] } as any);
+    a.updateJob('k2', { state: 'ANALYZING' } as any);
+    await a.persist();
+
+    const b = held((a as any).persistPath);
+    const r = await b.restore();
+    expect(r.requeued).toBe(1);
+    expect(b.getJob('k2')!.state).toBe('QUEUED');
+    // and it says why, rather than silently reverting
+    expect(b.getJob('k2')!.logs.join(' ')).toContain('interrupted');
+  });
+
+  it('a resource-blocked clip is retried, not left blocked forever', async () => {
+    const a = isolated();
+    a.addJob({ fileId: 'k3', originalName: 'k3.mp4', state: 'QUEUED', tools: {}, logs: [] } as any);
+    a.updateJob('k3', { state: 'RESOURCE_WAIT' } as any);
+    await a.persist();
+
+    const b = held((a as any).persistPath);
+    await b.restore();
+    expect(b.getJob('k3')!.state).toBe('QUEUED');
+  });
+
+  it('a corrupt or missing evidence file is not fatal', async () => {
+    const dir = mkdtempSync(path.join(os.tmpdir(), 'queue-persist-'));
+    dirs.push(dir);
+    const q = held(path.join(dir, 'queue.json'));
+    await expect(q.restore()).resolves.toEqual({ restored: 0, requeued: 0 });
+
+    writeFileSync(path.join(dir, 'queue.json'), '{ not json');
+    await expect(q.restore()).resolves.toEqual({ restored: 0, requeued: 0 });
+  });
+
+  it('never leaves a half-written evidence file where a reader could load it', async () => {
+    const a = isolated();
+    a.addJob({ fileId: 'k4', originalName: 'k4.mp4', state: 'QUEUED', tools: {}, logs: [] } as any);
+    await a.persist();
+    const dir = path.dirname((a as any).persistPath);
+    // The temp file is renamed into place, never left behind.
+    expect(existsSync(path.join(dir, 'queue.json.writing'))).toBe(false);
+    expect(JSON.parse(readFileSync(path.join(dir, 'queue.json'), 'utf8')).jobs.length).toBe(1);
   });
 });

@@ -158,6 +158,82 @@ export class QueueManager {
     return Object.fromEntries(this.resourceWaits);
   }
 
+  // ── evidence persistence ──────────────────────────────────────────────────
+  //
+  // Analysis is EXPENSIVE and it is EVIDENCE. Transcribing this shoot is ~40
+  // minutes of CPU, and the whole of it lived in this Map and nowhere else — a
+  // container restart destroyed 237 transcript lines and every observation
+  // behind them, and the only recovery was to run the machine again.
+  //
+  // A pipeline whose output evaporates on a restart is not doing the work, it
+  // is redoing it. The queue now writes itself to disk after every meaningful
+  // change and reloads on boot.
+  //
+  // Written via a temp file and renamed, because a half-written evidence file
+  // is worse than none: it would load as a clip that looks analysed and is not.
+  private persistPath = path.join(runnerRoot(), '.trippedd_tools', 'queue.json');
+  private persistTimer?: NodeJS.Timeout;
+  private persistInFlight = false;
+
+  /** Coalesced so a burst of log lines does not write the file forty times. */
+  private schedulePersist(): void {
+    if (this.persistTimer) return;
+    this.persistTimer = setTimeout(() => {
+      this.persistTimer = undefined;
+      void this.persist();
+    }, 1000);
+    // Never hold the process open for a save.
+    this.persistTimer.unref?.();
+  }
+
+  async persist(): Promise<void> {
+    if (this.persistInFlight) return;
+    this.persistInFlight = true;
+    try {
+      await fs.mkdir(path.dirname(this.persistPath), { recursive: true });
+      const tmp = `${this.persistPath}.writing`;
+      await fs.writeFile(tmp, JSON.stringify({
+        version: 1,
+        savedAt: new Date().toISOString(),
+        jobs: Array.from(this.jobs.values()),
+      }, null, 1));
+      await fs.rename(tmp, this.persistPath);
+    } catch { /* a save that fails must not take the pipeline down with it */ }
+    finally { this.persistInFlight = false; }
+  }
+
+  /**
+   * Reload evidence from a previous run.
+   *
+   * A job caught mid-flight by the restart is put back to QUEUED — it holds no
+   * evidence worth keeping and its scratch is gone. A job that COMPLETED keeps
+   * everything: that is the point of the file.
+   */
+  async restore(): Promise<{ restored: number; requeued: number }> {
+    let raw: string;
+    try { raw = await fs.readFile(this.persistPath, 'utf8'); }
+    catch { return { restored: 0, requeued: 0 }; }
+
+    let parsed: { jobs?: MediaJob[] };
+    try { parsed = JSON.parse(raw); } catch { return { restored: 0, requeued: 0 }; }
+    if (!Array.isArray(parsed.jobs)) return { restored: 0, requeued: 0 };
+
+    const INTERRUPTED: QueueJobState[] = ['PROBING', 'ANALYZING', 'DOWNLOADING/STREAMING', 'RESOURCE_WAIT'];
+    let restored = 0, requeued = 0;
+    for (const job of parsed.jobs) {
+      if (!job?.fileId || this.jobs.has(job.fileId)) continue;
+      if (INTERRUPTED.includes(job.state)) {
+        job.state = 'QUEUED';
+        job.logs = [...(job.logs ?? []), `[${new Date().toISOString()}] Requeued: the previous run was interrupted before this clip finished.`];
+        requeued++;
+      }
+      this.jobs.set(job.fileId, job);
+      restored++;
+    }
+    if (requeued) void this.processNext();
+    return { restored, requeued };
+  }
+
   getJobs(): MediaJob[] {
     return Array.from(this.jobs.values()).sort(
       (a, b) => new Date(b.updatedAt || 0).getTime() - new Date(a.updatedAt || 0).getTime()
@@ -172,12 +248,15 @@ export class QueueManager {
   addJob(job: MediaJob) {
     if (this.jobs.has(job.fileId)) return;
     this.jobs.set(job.fileId, job);
+    this.schedulePersist();
     this.processNext();
   }
 
   updateJob(id: string, updates: Partial<MediaJob>) {
     const job = this.jobs.get(id);
-    if (job) Object.assign(job, updates, { updatedAt: new Date().toISOString() });
+    if (!job) return;
+    Object.assign(job, updates, { updatedAt: new Date().toISOString() });
+    this.schedulePersist();
   }
 
   log(id: string, message: string) {

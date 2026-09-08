@@ -54,6 +54,15 @@ async function startServer() {
   // "Pipeline complete" — a clip that was never transcribed looks identical to
   // one that was transcribed and found silent.
   queueManager.setProvisioner(provisioner, provisioningPromise);
+
+  // Reload evidence from the last run BEFORE anything queues new work.
+  // Analysis is expensive and it is evidence; a restart used to destroy all of
+  // it and the only recovery was to run the machine again.
+  const restored = await queueManager.restore();
+  if (restored.restored) {
+    console.log(`[queue] restored ${restored.restored} job(s) from the last run` +
+      (restored.requeued ? `, ${restored.requeued} requeued (interrupted mid-analysis)` : ''));
+  }
   const app = express();
   const PORT = 3000;
   

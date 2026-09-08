@@ -20,3 +20,6 @@ public/contact/
 
 # The source catalog is the creator's ground truth, built locally per machine.
 .trippedd_catalog.json
+
+# Analysed evidence — rebuilt from the footage, not repo content.
+.trippedd_tools/

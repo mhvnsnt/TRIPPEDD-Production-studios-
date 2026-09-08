@@ -102,7 +102,7 @@ export const DEFAULT_STUDIO_AGENTS: AgentDefinition[] = [
   { id: 'post-supervisor', name: 'Post Supervisor', role: 'POST_SUPERVISOR', capabilities: ['EDIT_ASSEMBLY', 'RUN_TOOL'], autonomy: 'EXECUTE_UNTIL_REVIEW', systemPurpose: 'Build reversible editorial assemblies and keep every cut traceable to source evidence.' },
   { id: 'qc-editor', name: 'QC Editor', role: 'QC_EDITOR', capabilities: ['READ_SOURCE', 'RUN_QC'], autonomy: 'EXECUTE', systemPurpose: 'Continuously detect missing media, broken provenance, technical failures, continuity problems, and delivery risks.' },
   { id: 'production-manager', name: 'Production Manager', role: 'PRODUCTION_MANAGER', capabilities: ['READ_SOURCE', 'RUN_QC', 'PUBLISH_INTERNAL'], autonomy: 'EXECUTE', systemPurpose: 'Keep the autonomous queue moving, surface blockers, and optimize the one-person studio workload.' },
-  { id: 'showrunner', name: 'Showrunner', role: 'SHOWRUNNER', capabilities: ['READ_SOURCE', 'DRAFT_STORY', 'DRAFT_SCRIPT', 'EDIT_ASSEMBLY', 'GREENLIGHT_EPISODE'], autonomy: 'FINAL_AUTHORITY', systemPurpose: 'Represent the owner's creative authority and make final editorial/greenlight decisions.' },
+  { id: 'showrunner', name: 'Showrunner', role: 'SHOWRUNNER', capabilities: ['READ_SOURCE', 'DRAFT_STORY', 'DRAFT_SCRIPT', 'EDIT_ASSEMBLY', 'GREENLIGHT_EPISODE'], autonomy: 'FINAL_AUTHORITY', systemPurpose: 'Represent the owner as final creative authority for editorial and greenlight decisions.' },
 ];
 
 export class AutonomousStudioOrchestrator {

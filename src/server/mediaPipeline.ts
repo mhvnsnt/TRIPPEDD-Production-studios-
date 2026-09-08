@@ -5,8 +5,17 @@ import path from 'path';
 import os from 'os';
 import { Readable } from 'stream';
 import { pipeline } from 'stream/promises';
+import { evidenceCache, EvidenceCache } from './evidenceCache';
 
 const execFileAsync = promisify(execFile);
+
+const ANALYZER_VERSIONS = {
+  ffprobe: 'ffprobe-json-v1',
+  pyscenedetect: 'pyscenedetect-content-v1',
+  opencv: 'opencv-10s-sampling-v1',
+  tesseract: 'tesseract-12-frame-v1',
+  whisper: 'whisper-json-v1',
+} as const;
 
 export interface MediaPipelineProgress {
   stage: string;
@@ -19,7 +28,7 @@ export interface MediaPipelineResult {
   scenes?: any[];
   transcript?: any;
   ocr?: string;
-  visual?: { sampledFrames: number; width?: number; height?: number; fps?: number; duration?: number };
+  visual?: { sampledFrames: number; width?: number; height?: number; fps?: number; duration?: number; frameCount?: number };
 }
 
 async function run(command: string, args: string[], onOutput?: (text: string) => void) {
@@ -45,11 +54,19 @@ export async function analyzeMedia(
   onProgress: (progress: MediaPipelineProgress) => void,
 ): Promise<MediaPipelineResult> {
   const result: MediaPipelineResult = {};
+  const sourceSha256 = await EvidenceCache.sha256(inputPath);
 
   onProgress({ stage: 'ffprobe', progress: 10, message: 'Reading technical media metadata.' });
   if (tools.ffprobe) {
-    const { stdout } = await run('ffprobe', ['-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', inputPath]);
-    result.ffprobe = JSON.parse(stdout);
+    const key = { sourceSha256, analyzer: 'ffprobe', analyzerVersion: ANALYZER_VERSIONS.ffprobe };
+    result.ffprobe = await evidenceCache.get<any>(key);
+    if (result.ffprobe) {
+      onProgress({ stage: 'ffprobe', progress: 12, message: 'Reused checksum-keyed FFprobe evidence.' });
+    } else {
+      const { stdout } = await run('ffprobe', ['-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', inputPath]);
+      result.ffprobe = JSON.parse(stdout);
+      await evidenceCache.put(key, result.ffprobe);
+    }
   }
 
   const videoStream = result.ffprobe?.streams?.find((stream: any) => stream.codec_type === 'video');
@@ -69,6 +86,13 @@ export async function analyzeMedia(
   if (tools.pyscenedetect) {
     tasks.push((async () => {
       onProgress({ stage: 'pyscenedetect', progress: 30, message: 'Detecting shot boundaries.' });
+      const key = { sourceSha256, analyzer: 'pyscenedetect', analyzerVersion: ANALYZER_VERSIONS.pyscenedetect };
+      const cached = await evidenceCache.get<any[]>(key);
+      if (cached) {
+        result.scenes = cached;
+        onProgress({ stage: 'pyscenedetect', progress: 32, message: 'Reused checksum-keyed scene evidence.' });
+        return;
+      }
       const workDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-scenes-'));
       try {
         await run('scenedetect', ['-i', inputPath, 'detect-content', 'list-scenes', '-o', workDir]);
@@ -82,6 +106,7 @@ export async function analyzeMedia(
             return Object.fromEntries(headers.map((header, index) => [header.trim(), values[index]?.trim() ?? '']));
           });
         } catch { result.scenes = []; }
+        await evidenceCache.put(key, result.scenes || []);
       } finally { await fs.rm(workDir, { recursive: true, force: true }); }
     })());
   }
@@ -89,6 +114,13 @@ export async function analyzeMedia(
   if (tools.opencv) {
     tasks.push((async () => {
       onProgress({ stage: 'opencv', progress: 45, message: 'Sampling frames for visual coverage.' });
+      const key = { sourceSha256, analyzer: 'opencv', analyzerVersion: ANALYZER_VERSIONS.opencv };
+      const cached = await evidenceCache.get<MediaPipelineResult['visual']>(key);
+      if (cached) {
+        result.visual = cached;
+        onProgress({ stage: 'opencv', progress: 47, message: 'Reused checksum-keyed visual sampling evidence.' });
+        return;
+      }
       const python = [
         'import cv2, json, sys',
         'p=cv2.VideoCapture(sys.argv[1])',
@@ -109,12 +141,20 @@ export async function analyzeMedia(
       ].join('\n');
       const { stdout } = await run('python3', ['-c', python, inputPath]);
       result.visual = { ...JSON.parse(stdout.trim()), duration, width, height, fps };
+      await evidenceCache.put(key, result.visual);
     })());
   }
 
   if (tools.tesseract && width && height) {
     tasks.push((async () => {
       onProgress({ stage: 'tesseract', progress: 60, message: 'Running OCR on representative video frames.' });
+      const key = { sourceSha256, analyzer: 'tesseract', analyzerVersion: ANALYZER_VERSIONS.tesseract };
+      const cached = await evidenceCache.get<string>(key);
+      if (cached !== null) {
+        result.ocr = cached;
+        onProgress({ stage: 'tesseract', progress: 62, message: 'Reused checksum-keyed OCR evidence.' });
+        return;
+      }
       const frameDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ocr-'));
       try {
         const fpsForSampling = duration > 0 ? Math.min(1 / Math.max(duration / 12, 1), 1) : 0.1;
@@ -125,6 +165,7 @@ export async function analyzeMedia(
           try { const { stdout } = await run('tesseract', [path.join(frameDir, frame), 'stdout', '--psm', '6']); if (stdout.trim()) chunks.push(`[${frame}] ${stdout.trim()}`); } catch {}
         }
         result.ocr = chunks.join('\n');
+        await evidenceCache.put(key, result.ocr);
       } finally { await fs.rm(frameDir, { recursive: true, force: true }); }
     })());
   }
@@ -132,6 +173,13 @@ export async function analyzeMedia(
   if (tools.whisper && process.env.TRIPPEDD_ENABLE_WHISPER !== 'false') {
     tasks.push((async () => {
       onProgress({ stage: 'whisper', progress: 80, message: 'Transcribing dialogue and speech.' });
+      const key = { sourceSha256, analyzer: 'whisper', analyzerVersion: ANALYZER_VERSIONS.whisper };
+      const cached = await evidenceCache.get<any>(key);
+      if (cached !== null) {
+        result.transcript = cached;
+        onProgress({ stage: 'whisper', progress: 82, message: 'Reused checksum-keyed transcript evidence.' });
+        return;
+      }
       const outputDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-whisper-'));
       try {
         const model = process.env.WHISPER_MODEL || 'tiny';
@@ -143,6 +191,7 @@ export async function analyzeMedia(
           result.transcript = null;
           onProgress({ stage: 'whisper', progress: 85, message: `Whisper failed; continuing with visual/audio evidence. ${error?.message || String(error)}` });
         }
+        if (result.transcript !== null && result.transcript !== undefined) await evidenceCache.put(key, result.transcript);
       } finally { await fs.rm(outputDir, { recursive: true, force: true }); }
     })());
   } else if (tools.whisper) {

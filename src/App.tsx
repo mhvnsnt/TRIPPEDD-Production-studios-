@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Dashboard } from './components/Dashboard';
 import { StudioOpsWorkspace } from './components/StudioOpsWorkspace';
@@ -25,7 +25,19 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Wrench } from 'lucide-react';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('dashboard');
+  const [currentView, setCurrentView] = useState(() => {
+    const requestedView = new URLSearchParams(window.location.search).get('view');
+    return requestedView || 'dashboard';
+  });
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('view') || params.has('drive')) {
+      params.delete('drive');
+      const cleanUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}`;
+      window.history.replaceState({}, '', cleanUrl);
+    }
+  }, []);
 
   const renderView = () => {
     switch (currentView) {

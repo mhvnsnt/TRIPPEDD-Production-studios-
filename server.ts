@@ -606,8 +606,28 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
+  // A server that cannot bind must FAIL LOUDLY and exit.
+  //
+  // This cost real time: a stale server survived a container restart, the new
+  // one hit EADDRINUSE, printed into a log nobody was reading, and kept the
+  // process alive. Every request was answered by the OLD build, so a change
+  // that had never run looked like it was working — including, with some irony,
+  // the queue-persistence change itself, which appeared to succeed while its
+  // save file did not exist.
+  const server = app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${PORT}`);
+  });
+  server.on("error", (e: NodeJS.ErrnoException) => {
+    if (e.code === "EADDRINUSE") {
+      console.error(
+        `\nFATAL: port ${PORT} is already in use.\n` +
+        `Another server is answering on it and it is NOT this build, so anything you test\n` +
+        `will be the old code. Stop it first:  pkill -f "tsx server.ts"\n`
+      );
+    } else {
+      console.error("FATAL: server could not start —", e.message);
+    }
+    process.exit(1);
   });
 }
 

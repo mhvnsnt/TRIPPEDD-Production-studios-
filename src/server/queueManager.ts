@@ -4,6 +4,8 @@ import os from "os";
 import { MediaJob } from "../core/types";
 import { toolManager } from "./toolManager";
 import { analyzeMedia, downloadToFile } from "./mediaPipeline";
+import { discoverComedy } from "./comedyDiscovery";
+import { productionMemory } from "./productionMemory";
 
 export class QueueManager {
   private jobs = new Map<string, MediaJob>();
@@ -139,10 +141,19 @@ export class QueueManager {
       if (result.ocr !== undefined) job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', 'tesseract <sampled-frame> stdout') } as any;
       if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`) } as any;
 
+      const comedy = discoverComedy({ transcript: result.transcript, scenes: result.scenes, ocr: result.ocr });
+      await productionMemory.recordGags('trippedd', comedy);
+      const snapshot = await productionMemory.upsert('trippedd', {
+        sources: { [job.fileId]: { fileId: job.fileId, name: job.originalName, ingestedAt: new Date().toISOString(), analysis: result } },
+        jobs: { [job.fileId]: { state: 'NEEDS_REVIEW', updatedAt: new Date().toISOString(), gagCount: comedy.length } },
+      });
+      (job as any).productionIntelligence = { gagCandidates: comedy, callbackKeys: comedy.flatMap(g => g.callbackKeys), memoryUpdatedAt: snapshot.updatedAt };
+      this.log(job.fileId, `Comedy discovery produced ${comedy.length} machine-suggested candidates; source evidence remains unchanged.`);
+
       const completedTools = Object.values(tools).filter(Boolean).length;
       this.log(job.fileId, `Analysis complete. ${completedTools}/${Object.keys(tools).length} analysis tools available.`);
       this.updateJob(job.fileId, { state: 'NEEDS_REVIEW', progress: 100 });
-      this.log(job.fileId, 'Pipeline completed with real tool outputs.');
+      this.log(job.fileId, 'Pipeline completed with real tool outputs and production intelligence.');
     } finally {
       await fs.rm(tmpDir, { recursive: true, force: true });
     }

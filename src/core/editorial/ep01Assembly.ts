@@ -1,5 +1,4 @@
 import { createEp01PilotPlan, type PilotBeat } from './ep01Pilot';
-import type { ProductionFormat } from '../types';
 
 export interface EpisodeAssemblyItem {
   id: string;
@@ -7,7 +6,7 @@ export interface EpisodeAssemblyItem {
   kind: 'SOURCE' | 'GENERATED' | 'EDITORIAL';
   title: string;
   sourceLabels: string[];
-  format: ProductionFormat;
+  formatId: string;
   generationPurpose?: string;
   approvalRequired: boolean;
   terminal?: boolean;
@@ -26,7 +25,7 @@ const source = (beat: PilotBeat, labels: string[]): EpisodeAssemblyItem => ({
   kind: 'SOURCE',
   title: beat.title,
   sourceLabels: labels,
-  format: 'LIVE_SKETCH',
+  formatId: 'LIVE_SKETCH',
   approvalRequired: beat.humanApprovalRequired,
 });
 
@@ -36,7 +35,7 @@ const generated = (beat: PilotBeat, purpose: string): EpisodeAssemblyItem => ({
   kind: 'GENERATED',
   title: beat.title,
   sourceLabels: [],
-  format: 'HYBRID',
+  formatId: 'HYBRID',
   generationPurpose: purpose,
   approvalRequired: beat.humanApprovalRequired,
 });

@@ -4,17 +4,21 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - config/studio-toolchain.json
+      - config/**
       - scripts/audit-studio-toolchain.ts
+      - scripts/test-evidence-cache.ts
       - src/server/toolManager.ts
+      - src/server/evidenceCache.ts
       - package.json
   push:
     branches:
       - 'upgrade/**'
     paths:
-      - config/studio-toolchain.json
+      - config/**
       - scripts/audit-studio-toolchain.ts
+      - scripts/test-evidence-cache.ts
       - src/server/toolManager.ts
+      - src/server/evidenceCache.ts
       - package.json
 
 permissions:
@@ -50,6 +54,9 @@ jobs:
 
       - name: Typecheck
         run: bun run lint
+
+      - name: Test shared evidence cache
+        run: bun run studio:test:evidence-cache
 
       - name: Audit executable toolchain
         run: bun run studio:audit

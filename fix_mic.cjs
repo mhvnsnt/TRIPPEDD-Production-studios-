@@ -1,5 +1,15 @@
 const fs = require('fs');
 
-let pev = fs.readFileSync('src/components/PhysicalEvidenceWorkspace.tsx', 'utf8');
-pev = pev.replace(/<Mic size=\{14\} \/>/g, "<div />");
-fs.writeFileSync('src/components/PhysicalEvidenceWorkspace.tsx', pev);
+const path = 'src/components/PhysicalEvidenceWorkspace.tsx';
+let source = fs.readFileSync(path, 'utf8');
+
+if (source.includes('<Mic ')) {
+  const importPattern = /import \{([^}]+)\} from 'lucide-react';/;
+  const match = source.match(importPattern);
+  if (match && !match[1].split(',').map(s => s.trim()).includes('Mic')) {
+    const icons = match[1].trim();
+    source = source.replace(importPattern, `import { ${icons}, Mic } from 'lucide-react';`);
+  }
+}
+
+fs.writeFileSync(path, source);

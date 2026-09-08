@@ -93,7 +93,7 @@ async function startServer() {
       if (!token) throw new Error('Google OAuth completed but no access token is available.');
       const scan = await scanDriveFolder(DEFAULT_DRIVE_FOLDER_ID, token);
       console.log(`[Drive] OAuth connected. Initial scan found ${scan.total}; queued ${scan.new} new media item(s).`);
-      res.redirect('/?drive=connected');
+      res.redirect('/?view=pilot_build&drive=connected');
     } catch (e: any) {
       console.error('[Drive OAuth] callback failed:', e);
       res.status(500).send(`Google Drive authorization failed: ${e.message}`);
@@ -238,41 +238,19 @@ async function startServer() {
     res.json({ jobId });
   });
 
-  app.get('/api/jobs/:id', (req, res) => {
-    const job = activeJobs.get(req.params.id);
-    if (job) res.json(job); else res.status(404).json({ error: 'Job not found' });
-  });
-
-  app.get('/api/tools/:tool/detect', async (req, res) => {
-    const tool = req.params.tool;
-    try {
-      const commands: Record<string, string> = {
-        ffmpeg: 'ffmpeg -version', blender: 'blender --version', whisper: 'whisper --version', obs: 'obs --version',
-        kdenlive: 'kdenlive --version', krita: 'krita --version', audacity: 'audacity --version', gimp: 'gimp --version',
-        natron: 'NatronRenderer -version', mlt: 'melt -version', huggingface: 'huggingface-cli --version', piper: 'piper --version', makehuman: 'makehuman --version'
-      };
-      if (tool === 'comfyui') {
-        try { const r = await fetch('http://127.0.0.1:8188/system_stats'); return res.json(r.ok ? { installed: true, version: 'Service Running' } : { installed: false, error: 'Not running' }); }
-        catch { return res.json({ installed: false, error: 'Not running' }); }
-      }
-      if (tool === 'unreal') return res.json({ installed: false, error: 'UnrealEditor-Cmd not in PATH' });
-      const command = commands[tool];
-      if (!command) return res.json({ installed: false, error: 'Unknown tool' });
-      const { stdout } = await execAsync(command);
-      return res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-    } catch (e: any) { return res.json({ installed: false, error: e.message }); }
-  });
+  app.use(express.static(path.join(process.cwd(), 'dist')));
+  app.use('/production', express.static(path.join(process.cwd(), 'public', 'production')));
 
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({ server: { middlewareMode: true }, appType: 'spa' });
     app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (_req, res) => res.sendFile(path.join(distPath, 'index.html')));
   }
 
-  app.listen(PORT, '0.0.0.0', () => console.log(`Server running on http://localhost:${PORT}`));
+  app.get('*', (_req, res) => {
+    res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
+  });
+
+  app.listen(PORT, () => console.log(`TRIPPEDD Production Studio running on port ${PORT}`));
 }
 
 startServer();

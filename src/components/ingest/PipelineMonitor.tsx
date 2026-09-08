@@ -1,61 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { RefreshCcw, CheckCircle, AlertTriangle, XCircle, Search, Cpu } from 'lucide-react';
 import { MediaJob, JobToolStatus } from '../../core/types';
-
-interface Props {
-  folderUrl: string;
-  accessToken: string | null;
-  onJobPromote: (job: MediaJob) => void;
-  timelineClips: string[];
-}
-
+interface Props { folderUrl: string; accessToken: string | null; onJobPromote: (job: MediaJob) => void; timelineClips: string[]; }
 export function PipelineMonitor({ folderUrl, accessToken, onJobPromote, timelineClips }: Props) {
-  const [jobs, setJobs] = useState<MediaJob[]>([]);
-  const [isScanning, setIsScanning] = useState(false);
-  const [backendAuthenticated, setBackendAuthenticated] = useState(false);
-  const [scanError, setScanError] = useState<string | null>(null);
-  const [scanResult, setScanResult] = useState<string | null>(null);
-  const [selectedJobId, setSelectedJobId] = useState<string | null>(null);
-  const autoScanKey = useRef<string | null>(null);
-
+  const [jobs, setJobs] = useState<MediaJob[]>([]); const [isScanning, setIsScanning] = useState(false); const [backendAuthenticated, setBackendAuthenticated] = useState(false); const [scanError, setScanError] = useState<string | null>(null); const [scanResult, setScanResult] = useState<string | null>(null); const [selectedJobId, setSelectedJobId] = useState<string | null>(null); const autoScanKey = useRef<string | null>(null);
   const fetchJobs = async () => { try { const res = await fetch('/api/queue'); if (res.ok) setJobs(await res.json()); } catch {} };
-  const fetchAuth = async () => { try { const res = await fetch('/api/auth/google/status'); if (res.ok) setBackendAuthenticated(Boolean((await res.json()).authenticated)); } catch {} };
-
+  const fetchAuth = async () => { try { const res = await fetch('/api/auth/google/status'); if (res.ok) { const data = await res.json(); setBackendAuthenticated(Boolean(data.authenticated || data.publicDrive)); } } catch {} };
   useEffect(() => { void fetchJobs(); void fetchAuth(); const interval = setInterval(() => { void fetchJobs(); void fetchAuth(); }, 2000); return () => clearInterval(interval); }, []);
-
   const handleScan = async () => {
-    if (isScanning || (!accessToken && !backendAuthenticated)) return;
-    setIsScanning(true); setScanError(null); setScanResult(null);
-    try {
-      const folderId = folderUrl.split('/').filter(Boolean).pop();
-      const res = await fetch('/api/queue/scan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ folderId, ...(accessToken ? { token: accessToken } : {}) }) });
-      const payload = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(payload.error || `Drive scan failed (${res.status}).`);
-      setScanResult(`Drive scan found ${payload.total ?? 0} media item(s); ${payload.new ?? 0} new item(s) queued.`);
-      await fetchJobs();
-    } catch (e: any) { setScanError(e?.message || 'Drive scan failed.'); }
-    finally { setIsScanning(false); }
+    if (isScanning || (!accessToken && !backendAuthenticated)) return; setIsScanning(true); setScanError(null); setScanResult(null);
+    try { const folderId = folderUrl.split('/').filter(Boolean).pop(); const res = await fetch('/api/queue/scan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ folderId, ...(accessToken ? { token: accessToken } : {}) }) }); const payload = await res.json().catch(() => ({})); if (!res.ok) throw new Error(payload.error || `Drive scan failed (${res.status}).`); setScanResult(`Drive scan found ${payload.total ?? 0} media item(s); ${payload.new ?? 0} new item(s) queued (${payload.accessMode === 'public-link' ? 'public link' : 'OAuth'}).`); await fetchJobs(); } catch (e: any) { setScanError(e?.message || 'Drive scan failed.'); } finally { setIsScanning(false); }
   };
-
-  useEffect(() => {
-    if (!folderUrl || (!accessToken && !backendAuthenticated)) return;
-    const key = `${folderUrl}|${accessToken ? 'browser' : 'server'}`;
-    if (autoScanKey.current === key) return;
-    autoScanKey.current = key;
-    void handleScan();
-  }, [accessToken, backendAuthenticated, folderUrl]);
-
+  useEffect(() => { if (!folderUrl || (!accessToken && !backendAuthenticated)) return; const key = `${folderUrl}|${accessToken ? 'browser' : 'server'}`; if (autoScanKey.current === key) return; autoScanKey.current = key; void handleScan(); }, [accessToken, backendAuthenticated, folderUrl]);
   const handleRetry = async (fileId: string) => { try { const res = await fetch(`/api/queue/${fileId}/retry`, { method: 'POST' }); if (!res.ok) throw new Error((await res.json()).error || 'Retry failed'); await fetchJobs(); } catch (e: any) { setScanError(e.message); } };
   const selectedJob = jobs.find(j => j.fileId === selectedJobId);
-
   const renderTool = (name: string, status?: JobToolStatus) => !status ? null : <div key={name} className="flex items-center justify-between p-2 bg-neutral-900 border border-neutral-800 rounded"><span className="text-xs font-mono text-white">{name}</span>{status.status === 'COMPLETED' ? <CheckCircle size={12} className="text-green-500" /> : status.status === 'UNAVAILABLE' ? <AlertTriangle size={12} className="text-yellow-500" /> : status.status === 'FAILED' ? <XCircle size={12} className="text-red-500" /> : <RefreshCcw size={12} className="text-blue-500 animate-spin" />}</div>;
-
   return <div className="flex-1 flex overflow-hidden">
     <div className="w-1/2 border-r border-neutral-800 flex flex-col bg-black overflow-hidden">
       <div className="p-4 border-b border-neutral-800 flex items-center justify-between bg-neutral-950/50"><div className="flex items-center space-x-2 text-sm font-bold uppercase tracking-widest text-neutral-300"><Cpu size={16} className="text-blue-500" /><span>Automated Media Pipeline</span></div><button onClick={handleScan} disabled={isScanning || (!accessToken && !backendAuthenticated)} className="flex items-center px-4 py-2 bg-blue-900/30 text-blue-400 hover:bg-blue-900/50 rounded text-xs font-bold disabled:opacity-50">{isScanning ? <RefreshCcw size={14} className="animate-spin mr-2" /> : <Search size={14} className="mr-2" />}{isScanning ? 'Scanning Drive…' : 'Process New Media'}</button></div>
       {(scanError || scanResult) && <div className={`px-4 py-2 text-xs font-mono border-b border-neutral-800 ${scanError ? 'text-red-400 bg-red-950/20' : 'text-emerald-400 bg-emerald-950/20'}`}>{scanError || scanResult}</div>}
       <div className="flex items-center space-x-4 p-4 border-b border-neutral-800 bg-neutral-900/30"><div className="flex-1 text-center"><div className="text-2xl font-bold text-white">{jobs.length}</div><div className="text-[10px] font-bold text-neutral-500 uppercase">Discovered</div></div><div className="w-px h-8 bg-neutral-800" /><div className="flex-1 text-center"><div className="text-2xl font-bold text-yellow-400">{jobs.filter(j => ['QUEUED','DOWNLOADING/STREAMING','PROBING','ANALYZING'].includes(j.state)).length}</div><div className="text-[10px] font-bold text-neutral-500 uppercase">Processing</div></div><div className="w-px h-8 bg-neutral-800" /><div className="flex-1 text-center"><div className="text-2xl font-bold text-emerald-400">{jobs.filter(j => j.state === 'NEEDS_REVIEW' || j.state === 'EVIDENCE_READY').length}</div><div className="text-[10px] font-bold text-neutral-500 uppercase">Awaiting Review</div></div></div>
-      <div className="flex-1 overflow-y-auto p-4 space-y-3">{jobs.length === 0 ? <div className="text-center py-12 text-neutral-500 text-sm">{isScanning ? 'Scanning the configured Google Drive folder…' : 'No media discovered yet. Connect Drive to start the scan.'}</div> : jobs.map(job => <div key={job.id} onClick={() => setSelectedJobId(job.fileId)} className={`p-4 rounded-lg border cursor-pointer ${selectedJobId === job.fileId ? 'bg-blue-900/10 border-blue-500/50' : 'bg-neutral-900/50 border-neutral-800'}`}><div className="flex items-center justify-between mb-2"><div className="font-mono text-sm text-white truncate mr-4">{job.originalName}</div><div className="px-2 py-1 rounded text-[10px] font-bold uppercase bg-neutral-800 text-neutral-400">{job.state}</div></div><div className="flex items-center justify-between text-xs text-neutral-500"><span>{job.mimeType}</span><div className="flex items-center space-x-1">{Object.entries(job.tools).map(([name, statusRaw]) => <div key={name} title={name} className={`w-2 h-2 rounded-full ${((statusRaw as JobToolStatus).status === 'COMPLETED') ? 'bg-green-500' : ((statusRaw as JobToolStatus).status === 'FAILED') ? 'bg-red-500' : 'bg-yellow-500'}`} />)}</div></div></div>)}</div>
+      <div className="flex-1 overflow-y-auto p-4 space-y-3">{jobs.length === 0 ? <div className="text-center py-12 text-neutral-500 text-sm">{isScanning ? 'Scanning the configured Google Drive folder…' : 'No media discovered yet. Configure the public Drive API key or connect Drive to start the scan.'}</div> : jobs.map(job => <div key={job.id} onClick={() => setSelectedJobId(job.fileId)} className={`p-4 rounded-lg border cursor-pointer ${selectedJobId === job.fileId ? 'bg-blue-900/10 border-blue-500/50' : 'bg-neutral-900/50 border-neutral-800'}`}><div className="flex items-center justify-between mb-2"><div className="font-mono text-sm text-white truncate mr-4">{job.originalName}</div><div className="px-2 py-1 rounded text-[10px] font-bold uppercase bg-neutral-800 text-neutral-400">{job.state}</div></div><div className="flex items-center justify-between text-xs text-neutral-500"><span>{job.mimeType}</span><div className="flex items-center space-x-1">{Object.entries(job.tools).map(([name, statusRaw]) => <div key={name} title={name} className={`w-2 h-2 rounded-full ${((statusRaw as JobToolStatus).status === 'COMPLETED') ? 'bg-green-500' : ((statusRaw as JobToolStatus).status === 'FAILED') ? 'bg-red-500' : 'bg-yellow-500'}`} />)}</div></div></div>)}</div>
     </div>
     <div className="w-1/2 flex flex-col bg-neutral-950">{selectedJob ? <div className="flex-1 flex flex-col overflow-hidden"><div className="p-6 border-b border-neutral-800"><h2 className="text-xl font-bold text-white mb-1 break-all">{selectedJob.originalName}</h2><div className="text-xs font-mono text-neutral-500">ID: {selectedJob.fileId}</div><div className="grid grid-cols-2 gap-4 mt-6">{Object.entries(selectedJob.tools).map(([name, status]) => renderTool(name, status as JobToolStatus))}</div>{selectedJob.state === 'NEEDS_REVIEW' && !timelineClips.includes(selectedJob.fileId) && <button onClick={() => onJobPromote(selectedJob)} className="w-full mt-6 py-3 bg-emerald-600 text-white rounded font-bold uppercase text-xs">Promote to SourceClip & Extract Evidence</button>}{timelineClips.includes(selectedJob.fileId) && <div className="w-full mt-6 py-3 bg-neutral-900 border border-neutral-800 text-neutral-500 text-center rounded font-bold uppercase text-xs">Promoted to Timeline</div>}{selectedJob.state === 'FAILED' && <button onClick={() => handleRetry(selectedJob.fileId)} className="w-full mt-6 py-3 bg-neutral-800 text-white rounded font-bold uppercase text-xs">Retry Pipeline</button>}</div><div className="flex-1 overflow-y-auto p-6 bg-black"><h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-4">Pipeline Execution Logs</h3><div className="font-mono text-[10px] text-green-400/80 space-y-1">{selectedJob.logs.map((log, i) => <div key={i} className="break-all">{log}</div>)}</div></div></div> : <div className="flex-1 flex items-center justify-center text-neutral-600 text-sm">Select a media job to view details</div>}</div>
   </div>;

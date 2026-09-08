@@ -20,6 +20,9 @@ concurrency:
   group: ep01-autonomous-${{ github.ref }}
   cancel-in-progress: false
 
+authorizations:
+  contents: read
+
 permissions:
   contents: read
 
@@ -92,8 +95,11 @@ jobs:
           time blender -b --python production/EP01/generated/blender/build_subjectivity.py
           actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
           test "$actual" -eq "$expected"
-          test -s "$TRIPPEDD_FRAME_DIR/subjectivity-${TRIPPEDD_FRAME_START}-${TRIPPEDD_FRAME_END}.blend"
-          printf '{"chunk":"%s","start":%s,"end":%s,"frames":%s,"render_profile":"EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS","generator_sha":"%s"}\n' "${{ matrix.chunk }}" "$TRIPPEDD_FRAME_START" "$TRIPPEDD_FRAME_END" "$actual" "${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}" > "$TRIPPEDD_FRAME_DIR/manifest.json"
+          printf -v start_padded '%04d' "$TRIPPEDD_FRAME_START"
+          printf -v end_padded '%04d' "$TRIPPEDD_FRAME_END"
+          checkpoint="$TRIPPEDD_FRAME_DIR/subjectivity-${start_padded}-${end_padded}.blend"
+          test -s "$checkpoint"
+          printf '{"chunk":"%s","start":%s,"end":%s,"frames":%s,"checkpoint":"%s","render_profile":"EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS","generator_sha":"%s"}\n' "${{ matrix.chunk }}" "$TRIPPEDD_FRAME_START" "$TRIPPEDD_FRAME_END" "$actual" "$checkpoint" "${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}" > "$TRIPPEDD_FRAME_DIR/manifest.json"
       - name: Upload subjectivity chunk
         uses: actions/upload-artifact@v4
         with:
@@ -118,7 +124,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          # No pip cache: this repository intentionally has no requirements.txt/pyproject.toml.
       - name: Cache Whisper model
         uses: actions/cache@v4
         with:

@@ -28,8 +28,12 @@ async function run(command: string, args: string[], onOutput?: (text: string) =>
   return result;
 }
 
-export async function downloadToFile(url: string, token: string, destination: string) {
-  const response = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+export async function downloadToFile(url: string, credential: string, destination: string) {
+  const isPublicKey = credential.startsWith('public:');
+  const requestUrl = isPublicKey
+    ? `${url}&key=${encodeURIComponent(credential.slice('public:'.length))}`
+    : url;
+  const response = await fetch(requestUrl, isPublicKey ? undefined : { headers: { Authorization: `Bearer ${credential}` } });
   if (!response.ok || !response.body) {
     throw new Error(`Media download failed: ${response.status} ${response.statusText}`);
   }
@@ -65,12 +69,7 @@ export async function analyzeMedia(
     onProgress({ stage: 'pyscenedetect', progress: 30, message: 'Detecting shot boundaries.' });
     const workDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-scenes-'));
     try {
-      await run('scenedetect', [
-        '-i', inputPath,
-        'detect-content',
-        'list-scenes',
-        '-o', workDir,
-      ]);
+      await run('scenedetect', ['-i', inputPath, 'detect-content', 'list-scenes', '-o', workDir]);
       const csvPath = path.join(workDir, `${path.basename(inputPath).replace(/\.[^.]+$/, '')}-Scenes.csv`);
       try {
         const csv = await fs.readFile(csvPath, 'utf8');
@@ -80,32 +79,18 @@ export async function analyzeMedia(
           const values = line.split(',');
           return Object.fromEntries(headers.map((header, index) => [header.trim(), values[index]?.trim() ?? '']));
         });
-      } catch {
-        result.scenes = [];
-      }
-    } finally {
-      await fs.rm(workDir, { recursive: true, force: true });
-    }
+      } catch { result.scenes = []; }
+    } finally { await fs.rm(workDir, { recursive: true, force: true }); }
   }
 
   if (tools.opencv) {
     onProgress({ stage: 'opencv', progress: 45, message: 'Sampling frames for visual coverage.' });
     const python = [
-      'import cv2, json, sys',
-      'p=cv2.VideoCapture(sys.argv[1])',
-      'fps=p.get(cv2.CAP_PROP_FPS) or 0',
-      'frames=int(p.get(cv2.CAP_PROP_FRAME_COUNT) or 0)',
-      'w=int(p.get(cv2.CAP_PROP_FRAME_WIDTH) or 0)',
-      'h=int(p.get(cv2.CAP_PROP_FRAME_HEIGHT) or 0)',
-      'step=max(1,int(fps*10))',
-      'count=0; sampled=0',
-      'while True:',
-      ' ok,_=p.read()',
-      ' if not ok: break',
-      ' count+=1',
-      ' if count % step == 0: sampled+=1',
-      'p.release()',
-      'print(json.dumps({"sampledFrames":sampled,"frameCount":frames,"width":w,"height":h,"fps":fps}))',
+      'import cv2, json, sys', 'p=cv2.VideoCapture(sys.argv[1])', 'fps=p.get(cv2.CAP_PROP_FPS) or 0',
+      'frames=int(p.get(cv2.CAP_PROP_FRAME_COUNT) or 0)', 'w=int(p.get(cv2.CAP_PROP_FRAME_WIDTH) or 0)',
+      'h=int(p.get(cv2.CAP_PROP_FRAME_HEIGHT) or 0)', 'step=max(1,int(fps*10))', 'count=0; sampled=0',
+      'while True:', ' ok,_=p.read()', ' if not ok: break', ' count+=1', ' if count % step == 0: sampled+=1',
+      'p.release()', 'print(json.dumps({"sampledFrames":sampled,"frameCount":frames,"width":w,"height":h,"fps":fps}))',
     ].join(';');
     const { stdout } = await run('python3', ['-c', python, inputPath]);
     const visual = JSON.parse(stdout.trim());
@@ -117,23 +102,14 @@ export async function analyzeMedia(
     const frameDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ocr-'));
     try {
       const fpsForSampling = duration > 0 ? Math.min(1 / Math.max(duration / 12, 1), 1) : 0.1;
-      await run('ffmpeg', [
-        '-hide_banner', '-loglevel', 'error', '-i', inputPath,
-        '-vf', `fps=${fpsForSampling},scale=iw:ih`, '-frames:v', '12',
-        path.join(frameDir, 'frame-%02d.png'),
-      ]);
+      await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-i', inputPath, '-vf', `fps=${fpsForSampling},scale=iw:ih`, '-frames:v', '12', path.join(frameDir, 'frame-%02d.png')]);
       const frames = (await fs.readdir(frameDir)).filter(name => name.endsWith('.png')).sort();
       const chunks: string[] = [];
       for (const frame of frames) {
-        try {
-          const { stdout } = await run('tesseract', [path.join(frameDir, frame), 'stdout', '--psm', '6']);
-          if (stdout.trim()) chunks.push(`[${frame}] ${stdout.trim()}`);
-        } catch { /* OCR failure on one frame should not kill the ingest. */ }
+        try { const { stdout } = await run('tesseract', [path.join(frameDir, frame), 'stdout', '--psm', '6']); if (stdout.trim()) chunks.push(`[${frame}] ${stdout.trim()}`); } catch {}
       }
       result.ocr = chunks.join('\n');
-    } finally {
-      await fs.rm(frameDir, { recursive: true, force: true });
-    }
+    } finally { await fs.rm(frameDir, { recursive: true, force: true }); }
   }
 
   if (tools.whisper) {
@@ -143,14 +119,8 @@ export async function analyzeMedia(
       const model = process.env.WHISPER_MODEL || 'tiny';
       await run('whisper', [inputPath, '--model', model, '--output_dir', outputDir, '--output_format', 'json']);
       const jsonPath = path.join(outputDir, `${path.basename(inputPath).replace(/\.[^.]+$/, '')}.json`);
-      try {
-        result.transcript = JSON.parse(await fs.readFile(jsonPath, 'utf8'));
-      } catch {
-        result.transcript = null;
-      }
-    } finally {
-      await fs.rm(outputDir, { recursive: true, force: true });
-    }
+      try { result.transcript = JSON.parse(await fs.readFile(jsonPath, 'utf8')); } catch { result.transcript = null; }
+    } finally { await fs.rm(outputDir, { recursive: true, force: true }); }
   }
 
   onProgress({ stage: 'complete', progress: 100, message: 'Media analysis completed.' });

@@ -13,8 +13,7 @@ async function waitForJob(fileId: string) {
   for (;;) {
     const job = queueManager.getJob(fileId);
     if (!job) throw new Error(`Job disappeared: ${fileId}`);
-    if (job.state === 'NEEDS_REVIEW' || job.state === 'EVIDENCE_READY') return job;
-    if (job.state === 'FAILED') return job;
+    if (job.state === 'NEEDS_REVIEW' || job.state === 'EVIDENCE_READY' || job.state === 'FAILED') return job;
     await new Promise(resolve => setTimeout(resolve, 1000));
   }
 }
@@ -29,21 +28,24 @@ async function main() {
   if (!media.length) throw new Error('The public Drive folder produced no supported media files.');
 
   const jobs: string[] = [];
-  for (const filePath of media) {
+  for (let sourceOrder = 0; sourceOrder < media.length; sourceOrder++) {
+    const filePath = media[sourceOrder];
     const fileId = `PUBLIC_${Buffer.from(path.resolve(filePath)).toString('base64url').slice(-48)}`;
     const stat = await fs.stat(filePath);
     queueManager.setLocalSource(fileId, filePath);
     if (!queueManager.getJob(fileId)) {
-      queueManager.addJob({ id: `JOB_${fileId}`, fileId, originalName: path.basename(filePath), mimeType: 'video/*', size: stat.size, state: 'QUEUED', progress: 0, logs: ['Credential-free public Drive source.', `Local source: ${filePath}`], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [] } as any);
+      queueManager.addJob({ id: `JOB_${fileId}`, fileId, originalName: path.basename(filePath), mimeType: 'video/*', size: stat.size, state: 'QUEUED', progress: 0, logs: ['Credential-free public Drive source.', `Local source: ${filePath}`], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [], sourceOrder } as any);
     } else {
+      const existing = queueManager.getJob(fileId) as any;
+      if (existing) existing.sourceOrder = sourceOrder;
       queueManager.setLocalSource(fileId, filePath);
     }
     jobs.push(fileId);
   }
 
+  const results = await Promise.all(jobs.map(fileId => waitForJob(fileId)));
   let failed = 0;
-  for (const fileId of jobs) {
-    const job = await waitForJob(fileId);
+  for (const job of results) {
     if (job.state === 'FAILED') {
       failed++;
       console.warn(`[EP01] Skipping failed source ${job.originalName}; continuing with remaining footage.`);
@@ -51,7 +53,9 @@ async function main() {
       console.log(`[EP01] Analyzed ${job.originalName}`);
     }
   }
-  console.log(`[EP01] Analysis batch complete: ${jobs.length - failed}/${jobs.length} source jobs usable.`);
+  const usable = jobs.length - failed;
+  console.log(`[EP01] Analysis batch complete: ${usable}/${jobs.length} source jobs usable.`);
+  if (!usable) throw new Error(`All ${jobs.length} source analyses failed; refusing to manufacture an assembly from missing evidence.`);
 
   const manifest = await buildEp01FirstAssembly({ maxClips: Number(process.env.EP01_MAX_CLIPS || 24), clipPaddingSeconds: Number(process.env.EP01_CLIP_PADDING || 1.25) });
   console.log(JSON.stringify(manifest, null, 2));

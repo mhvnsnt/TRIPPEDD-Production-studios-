@@ -32,8 +32,6 @@ export class QueueManager {
     const plan = planSourceClip(this.studio, job.fileId, job.originalName || job.fileId);
     this.sourcePlans.set(job.fileId, plan.work);
     (job as any).productionPlan = plan.work.map(work => ({ id: work.id, kind: work.kind, title: work.title, status: work.status, requiresHumanApproval: work.requiresHumanApproval }));
-    // A local/public source may have been registered immediately before addJob().
-    // Wake the queue here too so registration order can never leave a job stranded.
     if (this.tokens.has(job.fileId) && job.state === 'QUEUED') void this.processNext();
   }
   updateJob(id: string, updates: Partial<MediaJob>) { const job = this.jobs.get(id); if (job) Object.assign(job, updates, { updatedAt: new Date().toISOString() }); }
@@ -78,7 +76,8 @@ export class QueueManager {
       const comedy = discoverComedy({ sourceFileId: job.fileId, transcript: result.transcript, scenes: result.scenes, ocr: result.ocr });
       await productionMemory.recordGags('trippedd', comedy);
       this.completePlanKind(job.fileId, 'GAG_DISCOVERY', comedy.map(gag => `gag:${gag.id}`));
-      const snapshot = await productionMemory.upsert('trippedd', { sources: { [job.fileId]: { fileId: job.fileId, name: job.originalName, mediaPath: localFilePath, ingestedAt: new Date().toISOString(), analysis: result } }, jobs: { [job.fileId]: { state: 'NEEDS_REVIEW', updatedAt: new Date().toISOString(), gagCount: comedy.length, mediaPath: localFilePath } } });
+      const sourceOrder = Number.isFinite(Number((job as any).sourceOrder)) ? Number((job as any).sourceOrder) : Number.MAX_SAFE_INTEGER;
+      const snapshot = await productionMemory.upsert('trippedd', { sources: { [job.fileId]: { fileId: job.fileId, name: job.originalName, mediaPath: localFilePath, sourceOrder, ingestedAt: new Date().toISOString(), analysis: result } }, jobs: { [job.fileId]: { state: 'NEEDS_REVIEW', updatedAt: new Date().toISOString(), gagCount: comedy.length, mediaPath: localFilePath, sourceOrder } } });
       (job as any).productionIntelligence = { gagCandidates: comedy, callbackKeys: comedy.flatMap(g => g.callbackKeys), mediaPath: localFilePath, memoryUpdatedAt: snapshot.updatedAt };
       this.log(job.fileId, `Comedy discovery produced ${comedy.length} machine-suggested candidates; source evidence remains unchanged.`);
       this.log(job.fileId, 'Autonomous plan advanced through ingest, analysis, and gag discovery. Story development is now waiting at the human review gate.');

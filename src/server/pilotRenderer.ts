@@ -3,7 +3,7 @@ import path from 'path';
 import { spawn } from 'child_process';
 import { productionMemory } from './productionMemory';
 
-export interface PilotAssemblyClip { sourceFileId: string; sourcePath: string; start: number; end: number; gagId?: string; score?: number; reason: string; }
+export interface PilotAssemblyClip { sourceFileId: string; sourcePath: string; start: number; end: number; gagId?: string; score?: number; reason: string; sourceOrder?: number; }
 export interface PilotAssemblyManifest {
   episodeId: 'EP01'; title: 'The Walk'; status: 'ROUGH_CUT_READY' | 'WAITING_FOR_EVIDENCE'; generatedAt: string;
   sourceClipCount: number; selectedClipCount: number; clips: PilotAssemblyClip[]; missingBeats: string[]; outputPath?: string; timelinePath?: string;
@@ -39,7 +39,7 @@ async function mapConcurrent<T>(items: T[], concurrency: number, worker: (item: 
   await Promise.all(workers);
 }
 
-function writeOtioTimeline(clips: PilotAssemblyClip[], outputPath: string) {
+function writeOtioTimeline(clips: PilotAssemblyClip[]) {
   const rate = 24;
   let timelineFrame = 0;
   const otioClips = clips.map((clip, index) => {
@@ -47,45 +47,14 @@ function writeOtioTimeline(clips: PilotAssemblyClip[], outputPath: string) {
     const item = {
       OTIO_SCHEMA: 'Clip.2',
       name: `EP01-${String(index + 1).padStart(3, '0')}-${clip.gagId || 'select'}`,
-      source_range: {
-        OTIO_SCHEMA: 'TimeRange.1',
-        start_time: { OTIO_SCHEMA: 'RationalTime.1', value: Math.round(clip.start * rate), rate },
-        duration: { OTIO_SCHEMA: 'RationalTime.1', value: durationFrames, rate }
-      },
-      media_reference: {
-        OTIO_SCHEMA: 'ExternalReference.1',
-        target_url: clip.sourcePath,
-        available_range: null,
-        metadata: {
-          trippedd: {
-            sourceFileId: clip.sourceFileId,
-            gagId: clip.gagId,
-            score: clip.score,
-            reason: clip.reason,
-            provenance: 'SOURCE_MEDIA'
-          }
-        }
-      },
-      metadata: { trippedd: { timelineStartFrame: timelineFrame, physicalTruth: true } }
+      source_range: { OTIO_SCHEMA: 'TimeRange.1', start_time: { OTIO_SCHEMA: 'RationalTime.1', value: Math.round(clip.start * rate), rate }, duration: { OTIO_SCHEMA: 'RationalTime.1', value: durationFrames, rate } },
+      media_reference: { OTIO_SCHEMA: 'ExternalReference.1', target_url: clip.sourcePath, available_range: null, metadata: { trippedd: { sourceFileId: clip.sourceFileId, gagId: clip.gagId, score: clip.score, reason: clip.reason, provenance: 'SOURCE_MEDIA' } } },
+      metadata: { trippedd: { timelineStartFrame: timelineFrame, physicalTruth: true, sourceOrder: clip.sourceOrder } }
     };
     timelineFrame += durationFrames;
     return item;
   });
-  return {
-    OTIO_SCHEMA: 'Timeline.1',
-    name: 'TRIPPEDD EP01 — The Walk — First Assembly',
-    global_start_time: null,
-    tracks: [{ OTIO_SCHEMA: 'Stack.1', name: 'Video 1', children: [{ OTIO_SCHEMA: 'Track.1', name: 'Picture', kind: 'Video', children: otioClips }] }],
-    metadata: {
-      trippedd: {
-        episodeId: 'EP01',
-        editorialStatus: 'ROUGH_CUT',
-        physicalSourceChronology: 'AUTHORITATIVE_FOR_WHAT_HAPPENED',
-        generatedMaterialPolicy: 'NOT_PHYSICAL_SOURCE_EVIDENCE',
-        nextStages: ['SUBJECTIVITY_GENERATION', 'EDITORIAL_LOCK', 'QC', 'SHOWRUNNER_GREENLIGHT']
-      }
-    }
-  };
+  return { OTIO_SCHEMA: 'Timeline.1', name: 'TRIPPEDD EP01 — The Walk — First Assembly', global_start_time: null, tracks: [{ OTIO_SCHEMA: 'Stack.1', name: 'Video 1', children: [{ OTIO_SCHEMA: 'Track.1', name: 'Picture', kind: 'Video', children: otioClips }] }], metadata: { trippedd: { episodeId: 'EP01', editorialStatus: 'ROUGH_CUT', physicalSourceChronology: 'AUTHORITATIVE_FOR_WHAT_HAPPENED', generatedMaterialPolicy: 'NOT_PHYSICAL_SOURCE_EVIDENCE', nextStages: ['SUBJECTIVITY_GENERATION', 'EDITORIAL_LOCK', 'QC', 'SHOWRUNNER_GREENLIGHT'] } } };
 }
 
 /** Build an actual MP4 first assembly from cached source media and timed comedy selects. */
@@ -93,25 +62,32 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
   const maxClips = Math.max(1, Math.min(options.maxClips ?? 24, 80));
   const padding = Math.max(0, Math.min(options.clipPaddingSeconds ?? 1.25, 5));
   const memory = await productionMemory.load('trippedd');
-  const sources = Object.values(memory.sources) as Array<{ fileId?: string; mediaPath?: string }>;
+  const sources = Object.values(memory.sources) as Array<{ fileId?: string; mediaPath?: string; sourceOrder?: number }>;
   const gags = Object.values(memory.gags) as Array<any>;
-  const sourcePaths = new Map<string, string>();
-  for (const source of sources) if (source.fileId && source.mediaPath && safeCachedPath(source.mediaPath)) sourcePaths.set(source.fileId, source.mediaPath);
+  const sourcePaths = new Map<string, { path: string; sourceOrder: number }>();
+  for (const source of sources) if (source.fileId && source.mediaPath && safeCachedPath(source.mediaPath)) sourcePaths.set(source.fileId, { path: source.mediaPath, sourceOrder: Number.isFinite(source.sourceOrder) ? Number(source.sourceOrder) : Number.MAX_SAFE_INTEGER });
 
   const candidates: PilotAssemblyClip[] = [];
   for (const gag of gags) {
     const sourceFileId = gag.sourceFileId;
-    const sourcePath = sourceFileId ? sourcePaths.get(sourceFileId) : undefined;
-    if (!sourceFileId || !sourcePath || gag.reviewState === 'HUMAN_REJECTED') continue;
+    const source = sourceFileId ? sourcePaths.get(sourceFileId) : undefined;
+    if (!sourceFileId || !source || gag.reviewState === 'HUMAN_REJECTED') continue;
     for (const signal of (gag.signals ?? []).filter((item: any) => Number.isFinite(item.startTime) && Number.isFinite(item.endTime))) {
       const start = Math.max(0, Number(signal.startTime) - padding);
       const end = Math.max(start + 0.25, Number(signal.endTime) + padding);
-      candidates.push({ sourceFileId, sourcePath, start, end, gagId: gag.id, score: Number(gag.score) || 0, reason: `${signal.type}: ${signal.evidence}` });
+      candidates.push({ sourceFileId, sourcePath: source.path, sourceOrder: source.sourceOrder, start, end, gagId: gag.id, score: Number(gag.score) || 0, reason: `${signal.type}: ${signal.evidence}` });
     }
   }
 
-  candidates.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
-  const selected = candidates.slice(0, maxClips).sort((a, b) => a.sourceFileId.localeCompare(b.sourceFileId) || a.start - b.start);
+  candidates.sort((a, b) => (b.score ?? 0) - (a.score ?? 0) || (a.sourceOrder ?? Number.MAX_SAFE_INTEGER) - (b.sourceOrder ?? Number.MAX_SAFE_INTEGER) || a.start - b.start);
+  const selected: PilotAssemblyClip[] = [];
+  for (const candidate of candidates) {
+    const duplicate = selected.some(existing => existing.sourceFileId === candidate.sourceFileId && Math.abs(existing.start - candidate.start) < 0.75 && Math.abs(existing.end - candidate.end) < 0.75);
+    if (!duplicate) selected.push(candidate);
+    if (selected.length >= maxClips) break;
+  }
+  selected.sort((a, b) => (a.sourceOrder ?? Number.MAX_SAFE_INTEGER) - (b.sourceOrder ?? Number.MAX_SAFE_INTEGER) || a.start - b.start || (b.score ?? 0) - (a.score ?? 0));
+
   const manifest: PilotAssemblyManifest = {
     episodeId: 'EP01', title: 'The Walk', status: selected.length ? 'ROUGH_CUT_READY' : 'WAITING_FOR_EVIDENCE', generatedAt: new Date().toISOString(),
     sourceClipCount: sourcePaths.size, selectedClipCount: selected.length, clips: selected,
@@ -120,7 +96,7 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
 
   await fs.mkdir(OUTPUT_ROOT, { recursive: true });
   const timelinePath = path.join(OUTPUT_ROOT, 'EP01-first-assembly.otio');
-  await fs.writeFile(timelinePath, JSON.stringify(writeOtioTimeline(selected, timelinePath), null, 2), 'utf8');
+  await fs.writeFile(timelinePath, JSON.stringify(writeOtioTimeline(selected), null, 2), 'utf8');
   manifest.timelinePath = '/production/EP01-first-assembly.otio';
   await fs.writeFile(path.join(OUTPUT_ROOT, 'EP01-first-assembly.json'), JSON.stringify(manifest, null, 2), 'utf8');
   if (!selected.length) return manifest;

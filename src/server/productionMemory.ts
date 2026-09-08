@@ -33,7 +33,7 @@ export class ProductionMemoryStore {
 
   async upsert(projectId: string, patch: Partial<Omit<ProductionMemorySnapshot, 'projectId' | 'updatedAt'>>): Promise<ProductionMemorySnapshot> {
     let committed: ProductionMemorySnapshot = this.empty(projectId);
-    this.writeChain = this.writeChain.then(async () => {
+    const operation = this.writeChain.catch(() => undefined).then(async () => {
       const current = await this.load(projectId);
       committed = {
         ...current,
@@ -52,7 +52,8 @@ export class ProductionMemoryStore {
       await fs.writeFile(temporary, JSON.stringify(committed, null, 2), 'utf8');
       await fs.rename(temporary, this.filePath);
     });
-    await this.writeChain;
+    this.writeChain = operation.then(() => undefined, () => undefined);
+    await operation;
 
     const autoBuild = process.env.TRIPPEDD_AUTO_FIRST_ASSEMBLY === 'true';
     if (autoBuild && projectId === 'trippedd' && patch.jobs && Object.keys(committed.jobs).length > 0 && !this.pilotBuildRunning) {
@@ -72,14 +73,30 @@ export class ProductionMemoryStore {
   }
 
   async recordGags(projectId: string, gags: any[]): Promise<ProductionMemorySnapshot> {
-    const current = await this.load(projectId);
-    const nextGags = { ...current.gags };
-    const callbacks = { ...current.callbacks };
-    for (const gag of gags) {
-      nextGags[gag.id] = gag;
-      for (const key of gag.callbackKeys ?? []) callbacks[key] = [...new Set([...(callbacks[key] ?? []), gag.id])];
-    }
-    return this.upsert(projectId, { gags: nextGags, callbacks });
+    let committed: ProductionMemorySnapshot = this.empty(projectId);
+    const operation = this.writeChain.catch(() => undefined).then(async () => {
+      const current = await this.load(projectId);
+      const nextGags = { ...current.gags };
+      const callbacks = { ...current.callbacks };
+      for (const gag of gags) {
+        nextGags[gag.id] = gag;
+        for (const key of gag.callbackKeys ?? []) callbacks[key] = [...new Set([...(callbacks[key] ?? []), gag.id])];
+      }
+      committed = {
+        ...current,
+        gags: nextGags,
+        callbacks,
+        projectId,
+        updatedAt: new Date().toISOString(),
+      };
+      await fs.mkdir(path.dirname(this.filePath), { recursive: true });
+      const temporary = `${this.filePath}.tmp`;
+      await fs.writeFile(temporary, JSON.stringify(committed, null, 2), 'utf8');
+      await fs.rename(temporary, this.filePath);
+    });
+    this.writeChain = operation.then(() => undefined, () => undefined);
+    await operation;
+    return committed;
   }
 
   private empty(projectId: string): ProductionMemorySnapshot {

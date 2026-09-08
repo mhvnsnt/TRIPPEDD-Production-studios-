@@ -1,5 +1,5 @@
 EP01 PUBLIC BUILD
 
-This marker intentionally triggers the production pipeline.
-The pipeline ingests the physical source footage, analyzes it, builds the real rough assembly, generates the EP01 subjectivity sequence, and places clearly-labelled generated material into the assembly without treating it as source evidence.
+Trigger the single canonical EP01 production workflow.
+Ingest physical source footage, analyze it, build the source-driven rough assembly, generate the approved subjectivity sequence, and include clearly-labelled generated material in the assembly.
 Final editorial selection and showrunner greenlight remain human-controlled.

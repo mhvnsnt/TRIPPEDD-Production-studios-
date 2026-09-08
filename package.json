@@ -11,6 +11,7 @@
     "clean": "rm -rf dist server.js",
     "lint": "node fix_mic.cjs && tsc --noEmit",
     "pilot:build": "tsx scripts/build-ep01.ts",
+    "pilot:qc": "tsx scripts/qc-ep01.ts",
     "pilot:master": "tsx scripts/build-ep01-master.ts"
   },
   "dependencies": {
@@ -32,7 +33,7 @@
     "@types/node": "^22.14.0",
     "autoprefixer": "^10.4.21",
     "esbuild": "^0.25.0",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.0",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
     "vitest": "^5.0.0"

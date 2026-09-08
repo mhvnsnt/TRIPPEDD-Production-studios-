@@ -132,6 +132,18 @@ jobs:
           python-version: '3.11'
           cache: pip
 
+      - name: Cache Whisper model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub
+          key: trippedd-whisper-tiny-${{ runner.os }}
+
+      - name: Cache EP01 assembly segments
+        uses: actions/cache@v4
+        with:
+          path: .trippedd/media/assembly-segments
+          key: ep01-assembly-segments-${{ hashFiles('src/server/pilotRenderer.ts') }}-${{ runner.os }}
+
       - name: Install system media tools
         run: |
           sudo apt-get update
@@ -223,6 +235,8 @@ jobs:
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_SEGMENT_CACHE: ${{ github.workspace }}/.trippedd/media/assembly-segments
+          HF_HOME: ${{ github.workspace }}/.trippedd/huggingface
           TRIPPEDD_ENABLE_WHISPER: 'true'
           WHISPER_MODEL: 'tiny'
           TRIPPEDD_WHISPER_DEVICE: 'cpu'
@@ -233,7 +247,7 @@ jobs:
           MEDIA_MAX_CONCURRENT: '2'
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
-          EP01_RENDER_CONCURRENCY: '2'
+          EP01_RENDER_CONCURRENCY: '4'
         run: bun run pilot:build:public
 
       - name: Verify autonomous cut

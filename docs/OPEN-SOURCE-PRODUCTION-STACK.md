@@ -22,7 +22,7 @@ The studio uses open-source projects as infrastructure while keeping showrunner/
 
 - **OpenTimelineIO** is the canonical machine-readable editorial interchange layer.
 - OTIO describes editorial structure and references media; it is not a media container.
-- Kdenlive 26.08 has native OTIO import/export for multi-track timelines and markers, so the studio does not depend on the deprecated adapter. citeturn0search2turn0search8
+- Kdenlive 26.08 has native OTIO import/export for multi-track timelines and markers, so the studio does not depend on the deprecated adapter.
 
 ### Generation / finishing
 
@@ -34,7 +34,7 @@ The studio uses open-source projects as infrastructure while keeping showrunner/
 ### Asset and render infrastructure
 
 - **OpenAssetIO** — asset-centric interoperability boundary for production tools and asset management.
-- **OpenCue** — optional distributed render-management layer for scaling generated/VFX jobs beyond one GitHub runner. OpenCue 1.19.1 is the current documented stable release, and the 2026 project has added a Rust distributed scheduler and a feature-complete browser-based OpenCueWeb interface. citeturn0search1turn0search0
+- **OpenCue** — optional distributed render-management layer for scaling generated/VFX jobs beyond one GitHub runner. The current OpenCue release line includes a Rust distributed scheduler and a feature-complete browser-based OpenCueWeb interface.
 
 ### Audio
 

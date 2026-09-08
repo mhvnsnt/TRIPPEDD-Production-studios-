@@ -20,7 +20,8 @@ const checks: Record<string, { command: string; args: string[] }> = {
   ffmpeg: { command: 'ffmpeg', args: ['-version'] },
   ffprobe: { command: 'ffprobe', args: ['-version'] },
   opencv: { command: 'python3', args: ['-c', 'import cv2; print(cv2.__version__)'] },
-  pyscenedetect: { command: 'scenedetect', args: ['--version'] },
+  // PySceneDetect's CLI has no --version option; import the package instead.
+  pyscenedetect: { command: 'python3', args: ['-c', 'import scenedetect; print(getattr(scenedetect, "__version__", "installed"))'] },
   whisper: { command: 'python3', args: ['-c', 'import faster_whisper; print("faster-whisper import OK")'] },
   tesseract: { command: 'tesseract', args: ['--version'] },
   otio: { command: 'python3', args: ['-c', 'import opentimelineio as otio; print(otio.__version__)'] },

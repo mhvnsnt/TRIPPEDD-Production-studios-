@@ -12,38 +12,25 @@
     "terminalBeat": "lost-acid-button",
     "endingRule": "Do not solve the disappearance. Cut to black after the character becomes sad that he never got to trip."
   },
-  "sourceLabels": [
-    "MOTEL_HANGOUT",
-    "SHUMAFIED_ITEM",
-    "DECISION_TO_GET_CIGARS",
-    "WALK_TO_GET_CIGARS",
-    "BAG_INCIDENT",
-    "BAG_ARGUMENT",
-    "JOE_INTERACTION",
-    "PRAYER",
-    "TIC_TAC_EXCHANGE",
-    "INTRODUCTION",
-    "PEOPLE_LEAVE",
-    "SMOKING_HANGOUT",
-    "OTHER"
-  ],
+  "sourceLabels": ["MOTEL_HANGOUT", "SHUMAFIED_ITEM", "DECISION_TO_GET_CIGARS", "WALK_TO_GET_CIGARS", "BAG_INCIDENT", "BAG_ARGUMENT", "JOE_INTERACTION", "PRAYER", "TIC_TAC_EXCHANGE", "INTRODUCTION", "PEOPLE_LEAVE", "SMOKING_HANGOUT", "OTHER"],
   "autonomousStages": [
     { "id": "ingest", "status": "READY", "humanGate": false },
-    { "id": "media-analysis", "status": "BLOCKED", "humanGate": false },
-    { "id": "physical-evidence", "status": "BLOCKED", "humanGate": true },
-    { "id": "comedy-discovery", "status": "BLOCKED", "humanGate": false },
-    { "id": "story-development", "status": "BLOCKED", "humanGate": true },
-    { "id": "subjectivity-generation", "status": "BLOCKED", "humanGate": true },
-    { "id": "editorial-assembly", "status": "BLOCKED", "humanGate": true },
-    { "id": "qc", "status": "BLOCKED", "humanGate": false },
-    { "id": "delivery", "status": "BLOCKED", "humanGate": true }
+    { "id": "media-analysis", "status": "READY", "humanGate": false },
+    { "id": "physical-evidence", "status": "READY", "humanGate": false },
+    { "id": "comedy-discovery", "status": "READY", "humanGate": false },
+    { "id": "story-development", "status": "READY", "humanGate": false },
+    { "id": "subjectivity-generation", "status": "READY", "humanGate": false },
+    { "id": "editorial-assembly", "status": "READY", "humanGate": false },
+    { "id": "qc", "status": "READY", "humanGate": false },
+    { "id": "delivery", "status": "WAITING_FOR_GREENLIGHT", "humanGate": true }
   ],
   "requiredTools": ["ffprobe", "ffmpeg", "pyscenedetect", "opencv", "tesseract", "whisper", "blender", "comfyui"],
   "generationPolicy": {
     "subjectivitySequence": "ep01-lost-acid-subjectivity",
     "allowedModes": ["VISUAL_DISTORTION", "ANIMATION", "THREE_D", "BLENDER_CG", "IMPOSSIBLE_WORLD"],
     "mustReturnToLiveAction": true,
-    "mustLabelGeneratedMedia": true
+    "mustLabelGeneratedMedia": true,
+    "humanApprovalAppliesToFinalEditorialSelectionOnly": true
   },
   "delivery": {
     "workingDirectory": "production/EP01/output",

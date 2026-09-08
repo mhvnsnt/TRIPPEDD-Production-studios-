@@ -61,8 +61,8 @@ jobs:
       - name: Activate production transcription wrapper
         run: |
           chmod +x scripts/bin/whisper
-          echo "${{ github.workspace }}/scripts/bin" >> "$GITHUB_PATH"
-          whisper --help
+          test -x scripts/bin/whisper
+          ./scripts/bin/whisper --help
 
       - name: Install Node dependencies
         run: bun install --frozen-lockfile

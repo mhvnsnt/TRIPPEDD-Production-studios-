@@ -7,8 +7,10 @@ on:
       - config/**
       - scripts/audit-studio-toolchain.ts
       - scripts/test-evidence-cache.ts
+      - scripts/test-provenance.ts
       - src/server/toolManager.ts
       - src/server/evidenceCache.ts
+      - src/server/provenance.ts
       - package.json
   push:
     branches:
@@ -17,8 +19,10 @@ on:
       - config/**
       - scripts/audit-studio-toolchain.ts
       - scripts/test-evidence-cache.ts
+      - scripts/test-provenance.ts
       - src/server/toolManager.ts
       - src/server/evidenceCache.ts
+      - src/server/provenance.ts
       - package.json
 
 permissions:
@@ -57,6 +61,9 @@ jobs:
 
       - name: Test shared evidence cache
         run: bun run studio:test:evidence-cache
+
+      - name: Test production provenance model
+        run: bun run studio:test:provenance
 
       - name: Audit executable toolchain
         run: bun run studio:audit

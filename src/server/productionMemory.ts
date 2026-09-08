@@ -47,13 +47,12 @@ export class ProductionMemoryStore {
     });
     await this.writeChain;
 
-    // Once every currently-known source job has real analysis, immediately build a
-    // watchable first assembly. This is intentionally a runtime trigger: the pilot
-    // renderer consumes only persisted source media and timed evidence, never mocks.
+    // As soon as persisted source jobs reach a terminal analysis state, build a
+    // watchable first assembly from the real cached media and timed evidence.
     if (projectId === 'trippedd' && patch.jobs && Object.keys(next.jobs).length > 0 && !this.pilotBuildRunning) {
       const jobs = Object.values(next.jobs) as Array<{ state?: string }>;
-      const allAnalyzed = jobs.every(job => job.state === 'NEEDS_REVIEW' || job.state === 'COMPLETED');
-      if (allAnalyzed && Object.keys(next.sources).length > 0) {
+      const allTerminal = jobs.every(job => job.state === 'NEEDS_REVIEW' || job.state === 'COMPLETED' || job.state === 'FAILED');
+      if (allTerminal && Object.keys(next.sources).length > 0) {
         this.pilotBuildRunning = true;
         void import('./pilotRenderer')
           .then(({ buildEp01FirstAssembly }) => buildEp01FirstAssembly())

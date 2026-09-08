@@ -1,3 +1,4 @@
 Trigger the EP01 public Drive build workflow.
 Fire this build from the public-link path; no OAuth/API key is required.
-Retry after toolchain fix: Whisper + PySceneDetect + OpenCV are installed before analysis.
+Retry with the full production stack: PySceneDetect + OpenCV + OpenAI Whisper fallback + faster-whisper fast path + OpenTimelineIO.
+The goal is a real watchable EP01 first assembly, not an infrastructure-only check.

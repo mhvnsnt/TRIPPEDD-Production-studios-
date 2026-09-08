@@ -7,6 +7,7 @@ on:
       - production/EP01/RUN-PUBLIC-BUILD
       - .github/workflows/pilot-public.yml
       - scripts/run-public-pilot.ts
+      - scripts/bin/whisper
       - src/server/publicDriveFolder.ts
       - src/server/queueManager.ts
       - src/server/mediaPipeline.ts
@@ -22,6 +23,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Activate production transcription wrapper
+        run: |
+          chmod +x scripts/bin/whisper
+          echo "${{ github.workspace }}/scripts/bin" >> "$GITHUB_PATH"
+          whisper --help
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -45,9 +52,9 @@ jobs:
           # Credential-free public Drive ingestion.
           # PySceneDetect = shot boundaries.
           # OpenCV = frame sampling / visual measurements.
-          # OpenAI Whisper = baseline local transcription.
-          # faster-whisper = faster CTranslate2 transcription path.
-          # OpenTimelineIO = editorial interchange representation.
+          # OpenAI Whisper = compatibility/fallback transcription.
+          # faster-whisper = fast CTranslate2 transcription backend.
+          # OpenTimelineIO = editorial interchange.
           python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'openai-whisper>=20240930' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
           python -m scenedetect --version
           python -m gdown --version
@@ -68,6 +75,8 @@ jobs:
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_ENABLE_WHISPER: 'true'
           WHISPER_MODEL: 'tiny'
+          TRIPPEDD_WHISPER_DEVICE: 'cpu'
+          TRIPPEDD_WHISPER_COMPUTE_TYPE: 'int8'
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '2'

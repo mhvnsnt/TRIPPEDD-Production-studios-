@@ -29,7 +29,6 @@ if world_bg is not None:
     world_bg.inputs['Color'].default_value = (0.002, 0.002, 0.004, 1)
     world_bg.inputs['Strength'].default_value = 0.08
 
-# Jagged cliff / ground.
 bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, -2.1))
 cliff = bpy.context.object
 cliff.name = 'Bastard_Cliff'
@@ -78,9 +77,12 @@ for i in range(180):
     r.keyframe_insert('location', frame=1, index=2); r.location.z -= 8; r.keyframe_insert('location', frame=scene.frame_end, index=2)
 
 bpy.ops.object.light_add(type='POINT', location=(0, 2, 7))
-flash = bpy.context.object; flash.data.energy = 0
+flash = bpy.context.object
+flash.data.energy = 0
+# Blender 4.5 keeps light power on the Light data-block; keyframe the same data-block.
 for f, e in [(1, 0), (36, 0), (42, 12000), (46, 0), (scene.frame_end, 0)]:
-    flash.data.energy = e; flash.keyframe_insert('energy', frame=f)
+    flash.data.energy = e
+    flash.data.keyframe_insert('energy', frame=f)
 
 bpy.ops.object.text_add(location=(0, 0, -1.8), rotation=(math.radians(90), 0, 0))
 title = bpy.context.object

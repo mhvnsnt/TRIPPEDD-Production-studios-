@@ -19,6 +19,10 @@ function clientId() {
   return value;
 }
 
+export function publicDriveApiKey() {
+  return process.env.GOOGLE_API_KEY || process.env.GOOGLE_MAPS_API_KEY || '';
+}
+
 function redirectUri() {
   return process.env.GOOGLE_REDIRECT_URI || `${(process.env.APP_URL || 'http://localhost:3000').replace(/\/$/, '')}/api/auth/google/callback`;
 }
@@ -40,8 +44,9 @@ async function saveTokens(tokens: StoredTokens) {
 
 export function getGoogleOAuthStatus() {
   return {
-    configured: Boolean(process.env.GOOGLE_CLIENT_ID || process.env.VITE_GOOGLE_CLIENT_ID),
+    configured: Boolean(process.env.GOOGLE_CLIENT_ID || process.env.VITE_GOOGLE_CLIENT_ID || publicDriveApiKey()),
     authenticated: Boolean(cachedTokens?.refresh_token || cachedTokens?.access_token),
+    publicDrive: Boolean(publicDriveApiKey()),
     redirectUri: redirectUri(),
     scope: DRIVE_SCOPE,
   };
@@ -81,7 +86,7 @@ export async function getGoogleAccessToken(): Promise<string | null> {
   const payload = await response.json() as any;
   if (!response.ok || !payload.access_token) { cachedTokens = null; throw new Error(payload.error_description || payload.error || 'Google access-token refresh failed; reconnect Drive.'); }
   await saveTokens({ ...tokens, access_token: payload.access_token, expires_at: Date.now() + Number(payload.expires_in || 3600) * 1000, scope: payload.scope || tokens.scope, token_type: payload.token_type || tokens.token_type });
-  return payload.access_token;
+  return tokens.access_token;
 }
 
 export async function revokeGoogleAccess() {

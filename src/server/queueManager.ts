@@ -12,15 +12,12 @@ export class QueueManager {
   private MAX_CONCURRENT = Math.max(1, Number(process.env.MEDIA_MAX_CONCURRENT || 1));
 
   getJobs(): MediaJob[] {
-    return Array.from(this.jobs.values()).map(job => this.publicJob(job)).sort((a, b) =>
-      new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
-    );
+    return Array.from(this.jobs.values()).map(job => this.publicJob(job)).sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
   }
 
   getJob(fileId: string): MediaJob | undefined {
     const job = this.jobs.get(fileId);
     if (!job) return undefined;
-
     const manager = this;
     return new Proxy(job as any, {
       get(target, property, receiver) {
@@ -30,7 +27,10 @@ export class QueueManager {
       },
       set(target, property, value, receiver) {
         if (property === 'token') {
-          if (typeof value === 'string' && value) manager.tokens.set(fileId, value);
+          if (typeof value === 'string' && value) {
+            manager.tokens.set(fileId, value);
+            void manager.processNext();
+          }
           return true;
         }
         const changed = Reflect.set(target, property, value, receiver);
@@ -43,6 +43,7 @@ export class QueueManager {
   setAccessToken(fileId: string, token: string) {
     if (!token) throw new Error('Cannot attach an empty Drive access token.');
     this.tokens.set(fileId, token);
+    void this.processNext();
   }
 
   retry(fileId: string) {
@@ -57,10 +58,7 @@ export class QueueManager {
   }
 
   addJob(job: MediaJob) {
-    if (!this.jobs.has(job.fileId)) {
-      this.jobs.set(job.fileId, job);
-      void this.processNext();
-    }
+    if (!this.jobs.has(job.fileId)) this.jobs.set(job.fileId, job);
   }
 
   updateJob(id: string, updates: Partial<MediaJob>) {
@@ -75,7 +73,7 @@ export class QueueManager {
 
   async processNext() {
     while (this.activeProcessing < this.MAX_CONCURRENT) {
-      const job = Array.from(this.jobs.values()).find(j => j.state === 'QUEUED');
+      const job = Array.from(this.jobs.values()).find(j => j.state === 'QUEUED' && this.tokens.has(j.fileId));
       if (!job) return;
       this.updateJob(job.fileId, { state: 'PROBING', progress: 1 });
       this.activeProcessing++;
@@ -128,8 +126,8 @@ export class QueueManager {
       this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING', progress: 8 });
       await downloadToFile(mediaUrl, token, localFilePath);
       this.log(job.fileId, '[download] Source media is locally available.');
-
       this.updateJob(job.fileId, { state: 'ANALYZING', progress: 10 });
+
       const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => {
         this.log(job.fileId, `[${stage}] ${message}`);
         this.updateJob(job.fileId, { state: 'ANALYZING', progress });
@@ -151,13 +149,7 @@ export class QueueManager {
   }
 
   private provenance(job: MediaJob, tool: string, command: string) {
-    return {
-      executionState: 'EXECUTED', sourceFileId: job.fileId,
-      startTime: new Date().toISOString(), endTime: new Date().toISOString(),
-      tool, version: toolManager.getTool(tool)?.version || 'unknown',
-      executablePath: toolManager.getTool(tool)?.executablePath,
-      command, success: true, timestamp: new Date().toISOString(), durationMs: 0,
-    };
+    return { executionState: 'EXECUTED', sourceFileId: job.fileId, startTime: new Date().toISOString(), endTime: new Date().toISOString(), tool, version: toolManager.getTool(tool)?.version || 'unknown', executablePath: toolManager.getTool(tool)?.executablePath, command, success: true, timestamp: new Date().toISOString(), durationMs: 0 };
   }
 }
 

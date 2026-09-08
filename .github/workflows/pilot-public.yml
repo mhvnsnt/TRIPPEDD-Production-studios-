@@ -22,6 +22,10 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  BLENDER_VERSION: '4.5.13'
+  BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+
 jobs:
   build-ep01-showrunner:
     runs-on: ubuntu-latest
@@ -43,7 +47,19 @@ jobs:
       - name: Install system media tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg tesseract-ocr blender
+          sudo apt-get install -y ffmpeg tesseract-ocr curl xz-utils
+
+      - name: Install production Blender LTS
+        run: |
+          set -euo pipefail
+          url="https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}"
+          checksum_url="${url%.*}.sha256"
+          curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"
+          curl -fsSL "$checksum_url" -o /tmp/blender.sha256
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sha256sum -c -
+          sudo tar -xJf "/tmp/${BLENDER_ARCHIVE}" -C /opt
+          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          blender --version | head -n 2
 
       - name: Install open-source media stack
         run: |

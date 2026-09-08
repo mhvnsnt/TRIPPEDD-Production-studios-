@@ -1,20 +1,22 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "openimageio", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco"],
-  "interchange": { "editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "images": "OpenImageIO" },
+  "optional": ["blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco"],
+  "interchange": { "editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "images": "OpenImageIO/OpenEXR" },
   "backends": {
     "deterministicMedia": "ffmpeg",
-    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio"],
+    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr"],
     "procedural3D": "blender",
     "editorial": "kdenlive",
     "editorialRender": "mlt",
     "compositing": "natron",
     "colorManagement": "opencolorio",
     "assetInterchange": "openassetio",
-    "distributedRendering": ["flamenco", "opencue"]
+    "distributedRendering": ["flamenco", "opencue"],
+    "audioUtility": ["sox", "rubberband", "demucs"],
+    "imageUtility": ["openimageio", "openexr", "imagemagick"]
   },
   "episodeCuts": {
     "autonomous": "AUTONOMOUS",
@@ -27,6 +29,9 @@
     "archivedProjectsMustNotBeBlindlyProvisioned": true,
     "humanEditorialLockRequiredForFinalMaster": true,
     "generatedMaterialMustCarryProvenance": true,
-    "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true
+    "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true,
+    "openSourceFirst": true,
+    "optionalAccelerationMustBeBenchmarked": true,
+    "noToolReplacementWithoutDeterministicFallback": true
   }
 }

@@ -12,42 +12,22 @@ export function DriveIngestWorkspace() {
   const [folderUrl] = useState('https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI');
   const [driveAuthenticated, setDriveAuthenticated] = useState(false);
   const [driveConfigured, setDriveConfigured] = useState(false);
+  const [publicDrive, setPublicDrive] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [ptManager] = useState(() => new PhysicalTimelineManager());
   const [timelineState, setTimelineState] = useState(ptManager.getTimeline());
   const [analysisJob, setAnalysisJob] = useState<any>(null);
   const [analyzingFileId, setAnalyzingFileId] = useState<string | null>(null);
-
-  const refreshDriveStatus = async () => {
-    try {
-      const res = await fetch('/api/auth/google/status');
-      const data = await res.json();
-      setDriveAuthenticated(Boolean(data.authenticated));
-      setDriveConfigured(Boolean(data.configured));
-      setAuthError(null);
-    } catch (e: any) { setAuthError(e?.message || 'Unable to check Drive authorization.'); }
-  };
-
+  const refreshDriveStatus = async () => { try { const res = await fetch('/api/auth/google/status'); const data = await res.json(); setDriveAuthenticated(Boolean(data.authenticated)); setPublicDrive(Boolean(data.publicDrive)); setDriveConfigured(Boolean(data.configured)); setAuthError(null); } catch (e: any) { setAuthError(e?.message || 'Unable to check Drive authorization.'); } };
   useEffect(() => { void refreshDriveStatus(); const interval = setInterval(() => void refreshDriveStatus(), 5000); return () => clearInterval(interval); }, []);
   const connectDrive = () => window.location.assign('/api/auth/google/start');
   const revokeDrive = async () => { await fetch('/api/auth/google/revoke', { method: 'POST' }); await refreshDriveStatus(); };
-
-  const promoteToSourceClip = (job: MediaJob) => {
-    const tl = ptManager.getTimeline();
-    if (!tl.clips.some(c => c.id === job.fileId)) tl.clips.push({ id: job.fileId, assetId: job.originalName, startTimecode: '00:00:00', endTimecode: 'Unknown', description: 'Ingested source file', hash: job.hash || '' } as any);
-    if (job.tools?.ffprobe?.status === 'COMPLETED') {
-      const data = job.tools.ffprobe.data;
-      const videoStream = data.streams?.find((s: any) => s.codec_type === 'video');
-      const audioStream = data.streams?.find((s: any) => s.codec_type === 'audio');
-      ptManager.addObservation({ id: 'obs_ffprobe_' + Date.now(), sourceClipId: job.fileId, type: 'VISUAL', description: `Video: ${videoStream?.codec_name || 'unknown'} ${videoStream?.width}x${videoStream?.height} ${videoStream?.r_frame_rate}fps | Audio: ${audioStream?.codec_name || 'unknown'}`, confidence: 1.0, origin: 'MACHINE_GENERATED', reviewState: 'CONFIRMED', editorialClassification: 'PRODUCTION_ARTIFACT', editorialReason: 'Technical metadata', createdAt: new Date().toISOString(), toolProvenance: job.tools.ffprobe.provenance } as any);
-    }
-    setTimelineState({ ...ptManager.getTimeline() });
-  };
-
+  const promoteToSourceClip = (job: MediaJob) => { const tl = ptManager.getTimeline(); if (!tl.clips.some(c => c.id === job.fileId)) tl.clips.push({ id: job.fileId, assetId: job.originalName, startTimecode: '00:00:00', endTimecode: 'Unknown', description: 'Ingested source file', hash: job.hash || '' } as any); if (job.tools?.ffprobe?.status === 'COMPLETED') { const data = job.tools.ffprobe.data; const videoStream = data.streams?.find((s: any) => s.codec_type === 'video'); const audioStream = data.streams?.find((s: any) => s.codec_type === 'audio'); ptManager.addObservation({ id: 'obs_ffprobe_' + Date.now(), sourceClipId: job.fileId, type: 'VISUAL', description: `Video: ${videoStream?.codec_name || 'unknown'} ${videoStream?.width}x${videoStream?.height} ${videoStream?.r_frame_rate}fps | Audio: ${audioStream?.codec_name || 'unknown'}`, confidence: 1.0, origin: 'MACHINE_GENERATED', reviewState: 'CONFIRMED', editorialClassification: 'PRODUCTION_ARTIFACT', editorialReason: 'Technical metadata', createdAt: new Date().toISOString(), toolProvenance: job.tools.ffprobe.provenance } as any); } setTimelineState({ ...ptManager.getTimeline() }); };
   return <div className="h-full flex flex-col bg-black text-white">
-    <header className="px-6 py-4 border-b border-neutral-800 bg-black/50 backdrop-blur-md flex items-center justify-between shrink-0"><div><h1 className="text-xl font-bold uppercase tracking-widest flex items-center"><HardDrive className="mr-3 text-blue-500" size={20} /> Source Reality / Media Ingest</h1><p className="text-neutral-400 text-sm mt-1">Server-owned Drive authorization, immutable source ingestion, and chronological verification.</p></div><div className="flex items-center gap-2">{driveAuthenticated ? <><div className="flex items-center px-3 py-1.5 bg-green-950/30 border border-green-900/50 rounded-md text-green-400 text-xs font-bold"><ShieldCheck size={14} className="mr-2" /> DRIVE CONNECTED</div><button onClick={revokeDrive} className="px-3 py-1.5 bg-neutral-800 hover:bg-neutral-700 rounded-md text-xs font-bold">DISCONNECT</button></> : <button onClick={connectDrive} disabled={!driveConfigured} className="flex items-center px-4 py-2 bg-blue-700 hover:bg-blue-600 disabled:bg-neutral-800 disabled:text-neutral-500 text-white rounded-md text-xs font-bold"><ExternalLink size={14} className="mr-2" /> CONNECT DRIVE</button>}</div></header>
+    <header className="px-6 py-4 border-b border-neutral-800 bg-black/50 backdrop-blur-md flex items-center justify-between shrink-0"><div><h1 className="text-xl font-bold uppercase tracking-widest flex items-center"><HardDrive className="mr-3 text-blue-500" size={20} /> Source Reality / Media Ingest</h1><p className="text-neutral-400 text-sm mt-1">Public-link Drive ingestion, immutable source ingestion, and chronological verification.</p></div><div className="flex items-center gap-2">{driveAuthenticated ? <><div className="flex items-center px-3 py-1.5 bg-green-950/30 border border-green-900/50 rounded-md text-green-400 text-xs font-bold"><ShieldCheck size={14} className="mr-2" /> DRIVE CONNECTED</div><button onClick={revokeDrive} className="px-3 py-1.5 bg-neutral-800 hover:bg-neutral-700 rounded-md text-xs font-bold">DISCONNECT</button></> : publicDrive ? <div className="flex items-center px-3 py-1.5 bg-blue-950/30 border border-blue-900/50 rounded-md text-blue-400 text-xs font-bold"><ShieldCheck size={14} className="mr-2" /> PUBLIC DRIVE LINK</div> : <button onClick={connectDrive} disabled={!driveConfigured} className="flex items-center px-4 py-2 bg-blue-700 hover:bg-blue-600 disabled:bg-neutral-800 disabled:text-neutral-500 text-white rounded-md text-xs font-bold"><ExternalLink size={14} className="mr-2" /> CONNECT DRIVE</button>}</div></header>
     {authError && <div className="px-6 py-2 border-b border-red-900/50 bg-red-950/20 text-red-400 text-xs font-mono">{authError}</div>}
-    {!driveConfigured && <div className="px-6 py-2 border-b border-yellow-900/50 bg-yellow-950/20 text-yellow-400 text-xs font-mono">Google Drive OAuth is not configured. Provide the existing Google OAuth client ID; no browser access token or client secret is required.</div>}
+    {!driveConfigured && <div className="px-6 py-2 border-b border-yellow-900/50 bg-yellow-950/20 text-yellow-400 text-xs font-mono">No public Drive API key or OAuth client is configured.</div>}
+    {publicDrive && !driveAuthenticated && <div className="px-6 py-2 border-b border-blue-900/50 bg-blue-950/20 text-blue-300 text-xs font-mono">This folder is configured for anonymous public-link ingestion. No Google OAuth consent is required.</div>}
     <div className="flex border-b border-neutral-800 shrink-0">{(['ingest','dashboard','timeline','comparison'] as const).map(tab => <button key={tab} onClick={() => setActiveTab(tab)} className={`px-6 py-3 text-xs font-bold uppercase tracking-widest border-b-2 ${activeTab === tab ? 'border-blue-500 text-blue-400' : 'border-transparent text-neutral-500 hover:text-neutral-300'}`}>{tab === 'ingest' ? 'Ingest & Discovery' : tab === 'dashboard' ? 'Telemetry' : tab === 'timeline' ? 'Physical Timeline' : 'Storyboard Comparison'}</button>)}</div>
     <div className="flex-1 overflow-y-auto p-6 custom-scrollbar"><div className="max-w-5xl mx-auto space-y-8">{activeTab === 'ingest' && <div className="h-full mt-[-24px] mx-[-24px]"><PipelineMonitor folderUrl={folderUrl} accessToken={null} onJobPromote={promoteToSourceClip} timelineClips={timelineState.clips.map((c: any) => c.id)} /></div>}{activeTab === 'dashboard' && <SummaryDashboard timeline={timelineState} totalDriveFiles={0} />}{activeTab === 'timeline' && <PhysicalTimelineView timeline={timelineState} onConfirm={(id) => { ptManager.confirmObservation(id); setTimelineState({ ...ptManager.getTimeline() }); }} onReject={(id) => { ptManager.rejectObservation(id); setTimelineState({ ...ptManager.getTimeline() }); }} />}{activeTab === 'comparison' && <StoryboardComparison results={ptManager.compareWithStoryboard()} />}</div></div>
     {analyzingFileId && analysisJob && <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6"><div className="bg-neutral-900 border border-neutral-700 rounded-lg w-full max-w-3xl p-6"><div className="flex items-center justify-between mb-4"><h3 className="font-bold uppercase tracking-widest"><Activity className="inline mr-2 text-blue-500" size={18} /> Media Analysis</h3><button onClick={() => { setAnalyzingFileId(null); setAnalysisJob(null); }}><XCircle /></button></div><div className="font-mono text-xs text-green-400 space-y-1 max-h-96 overflow-y-auto">{analysisJob.logs?.map((l: string, i: number) => <div key={i}>{l}</div>)}</div></div></div>}

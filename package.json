@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "node fix_mic.cjs && tsc --noEmit",
-    "pilot:build": "tsx scripts/build-ep01.ts"
+    "pilot:build": "tsx scripts/build-ep01.ts",
+    "pilot:master": "tsx scripts/build-ep01-master.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

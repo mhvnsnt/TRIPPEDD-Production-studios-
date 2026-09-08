@@ -1,1 +1,2 @@
 Trigger the EP01 public Drive build workflow.
+Fire this build from the public-link path; no OAuth/API key is required.

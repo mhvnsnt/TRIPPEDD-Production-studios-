@@ -26,13 +26,15 @@ const checks: Record<string, { command: string; args: string[] }> = {
   tesseract: { command: 'tesseract', args: ['--version'] },
   otio: { command: 'python3', args: ['-c', 'import opentimelineio as otio; print(otio.__version__)'] },
   blender: { command: 'blender', args: ['--version'] },
+  openimageio: { command: 'oiiotool', args: ['--version'] },
   kdenlive: { command: 'kdenlive', args: ['--version'] },
   mlt: { command: 'melt', args: ['-version'] },
   natron: { command: 'Natron', args: ['--version'] },
   opencolorio: { command: 'ociocheck', args: ['--version'] },
   openassetio: { command: 'python3', args: ['-c', 'import openassetio; print("openassetio import OK")'] },
   opencue: { command: 'cueadmin', args: ['-version'] },
-  demucs: { command: 'demucs', args: ['--help'] }
+  demucs: { command: 'demucs', args: ['--help'] },
+  flamenco: { command: 'flamenco-manager', args: ['--version'] }
 };
 
 async function check(id: string): Promise<Result> {

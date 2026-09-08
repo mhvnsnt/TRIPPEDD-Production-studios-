@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { spawn } from 'child_process';
+import { createHash } from 'crypto';
 import { productionMemory } from './productionMemory';
 
 export type PilotCutMode = 'AUTONOMOUS' | 'SHOWRUNNER';
@@ -9,11 +10,13 @@ export interface PilotAssemblyGeneratedClip { id: string; path: string; purpose:
 export interface PilotAssemblyManifest { episodeId: 'EP01'; title: 'The Walk'; cutMode: PilotCutMode; status: 'ROUGH_CUT_READY' | 'WAITING_FOR_EVIDENCE'; generatedAt: string; sourceClipCount: number; selectedClipCount: number; clips: PilotAssemblyClip[]; generatedClips: PilotAssemblyGeneratedClip[]; missingBeats: string[]; outputPath?: string; timelinePath?: string; }
 
 const CACHE_ROOT = path.resolve(process.env.TRIPPEDD_MEDIA_CACHE || path.join(process.cwd(), '.trippedd', 'media'));
+const SEGMENT_CACHE_ROOT = path.resolve(process.env.TRIPPEDD_SEGMENT_CACHE || path.join(CACHE_ROOT, 'assembly-segments'));
 const OUTPUT_ROOT = path.resolve(process.env.TRIPPEDD_OUTPUT_DIR || path.join(process.cwd(), 'public', 'production'));
 const GENERATED_SUBJECTIVITY = path.resolve(process.cwd(), 'production', 'EP01', 'generated', 'blender', 'ep01_subjectivity.mp4');
 const GENERATED_BASTARD_TAG = path.resolve(process.cwd(), 'production', 'EP01', 'generated', 'blender', 'ep01_bastard_tag.mp4');
 const CUT_MODE: PilotCutMode = process.env.TRIPPEDD_CUT_MODE === 'AUTONOMOUS' ? 'AUTONOMOUS' : 'SHOWRUNNER';
 const OUTPUT_BASENAME = process.env.TRIPPEDD_OUTPUT_BASENAME || (CUT_MODE === 'AUTONOMOUS' ? 'EP01-AUTONOMOUS' : 'EP01-SHOWRUNNER');
+const SEGMENT_PROFILE = 'h264-1080p24-crf20-veryfast-aac160k';
 
 function run(command: string, args: string[]): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -28,6 +31,14 @@ function run(command: string, args: string[]): Promise<void> {
 function safeCachedPath(filePath: string): boolean {
   const resolved = path.resolve(filePath);
   return resolved === CACHE_ROOT || resolved.startsWith(`${CACHE_ROOT}${path.sep}`);
+}
+
+function segmentCachePath(clip: PilotAssemblyClip): string {
+  const key = createHash('sha256')
+    .update(JSON.stringify({ sourceFileId: clip.sourceFileId, sourcePath: clip.sourcePath, start: Number(clip.start.toFixed(3)), end: Number(clip.end.toFixed(3)), profile: SEGMENT_PROFILE }))
+    .digest('hex')
+    .slice(0, 32);
+  return path.join(SEGMENT_CACHE_ROOT, `${key}.mp4`);
 }
 
 async function mapConcurrent<T>(items: T[], concurrency: number, worker: (item: T, index: number) => Promise<void>) {
@@ -125,12 +136,25 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
   const segmentDir = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}-segments`);
   await fs.rm(segmentDir, { recursive: true, force: true });
   await fs.mkdir(segmentDir, { recursive: true });
+  await fs.mkdir(SEGMENT_CACHE_ROOT, { recursive: true });
 
   const sourceSegmentPaths: string[] = Array(selected.length);
   const renderConcurrency = Math.max(1, Math.min(Number(process.env.EP01_RENDER_CONCURRENCY || 4), 8));
   await mapConcurrent(selected, renderConcurrency, async (clip, i) => {
+    const cachePath = segmentCachePath(clip);
     const segmentPath = path.join(segmentDir, `${String(i).padStart(3, '0')}.mp4`);
-    await run('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-ss', clip.start.toFixed(3), '-i', clip.sourcePath, '-t', (clip.end - clip.start).toFixed(3), '-map', '0:v:0', '-map', '0:a?', '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=24', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', '-movflags', '+faststart', segmentPath]);
+    if (await fs.stat(cachePath).then(stat => stat.size > 0).catch(() => false)) {
+      await fs.copyFile(cachePath, segmentPath);
+      console.log(`[pilot-renderer] cache hit: ${path.basename(cachePath)}`);
+    } else {
+      const tempPath = `${cachePath}.partial-${process.pid}-${i}`;
+      await fs.rm(tempPath, { force: true });
+      await run('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-ss', clip.start.toFixed(3), '-i', clip.sourcePath, '-t', (clip.end - clip.start).toFixed(3), '-map', '0:v:0', '-map', '0:a?', '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=24', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', '-movflags', '+faststart', tempPath]);
+      await fs.rename(tempPath, cachePath);
+      await fs.copyFile(cachePath, segmentPath);
+      console.log(`[pilot-renderer] encoded and cached: ${path.basename(cachePath)}`);
+    }
+    if (!(await fs.stat(segmentPath).then(stat => stat.size > 0).catch(() => false))) throw new Error(`Missing source segment after render: ${segmentPath}`);
     sourceSegmentPaths[i] = segmentPath;
   });
 

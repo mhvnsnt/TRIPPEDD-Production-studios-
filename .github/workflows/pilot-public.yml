@@ -18,7 +18,7 @@ permissions:
 jobs:
   build-ep01:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,21 +38,25 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg tesseract-ocr
 
-      - name: Install public Drive downloader
+      - name: Install open-source media analysis tools
         run: |
           python -m pip install --upgrade pip
-          python -m pip install 'gdown>=6.1.0'
+          python -m pip install 'gdown>=6.1.0' 'openai-whisper' 'scenedetect[opencv]' 'opencv-python-headless'
+          whisper --help >/dev/null
+          python -m scenedetect --help >/dev/null
+          python -c "import cv2; print('OpenCV', cv2.__version__)"
 
       - name: Install Node dependencies
-        run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Verify public Drive access path
         run: python -m gdown --version
 
       - name: Build EP01 from public Drive footage
         env:
-          TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
+          TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNQ1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          WHISPER_MODEL: tiny
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
         run: bun run pilot:build:public

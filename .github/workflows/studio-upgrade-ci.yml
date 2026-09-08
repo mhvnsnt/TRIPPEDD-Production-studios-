@@ -31,14 +31,17 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+          cache: true
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
+          cache-dependency-path: package.json
       - name: Install baseline open-source analysis stack
         run: |
           python -m pip install --upgrade pip
-          python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
+          python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
       - name: Install Node dependencies
         run: bun install --frozen-lockfile
       - name: Typecheck

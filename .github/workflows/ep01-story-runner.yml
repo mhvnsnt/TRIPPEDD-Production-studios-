@@ -1,0 +1,114 @@
+name: EP01 Story Runner Cut
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ep01-story-runner-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  BLENDER_VERSION: '4.5.13'
+  BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+
+jobs:
+  build-ep01-story-runner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install system media tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+
+      - name: Install production Blender LTS
+        run: |
+          set -euo pipefail
+          base="https://download.blender.org/release/Blender4.5"
+          url="${base}/${BLENDER_ARCHIVE}"
+          checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
+          curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"
+          curl -fsSL "$checksum_url" -o /tmp/blender.sha256
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/tmp/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          sudo tar -xJf "/tmp/${BLENDER_ARCHIVE}" -C /opt
+          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          blender --version | head -n 2
+
+      - name: Install open-source media stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
+          python -m scenedetect --help >/dev/null
+          python -m gdown --version
+          python -c "import cv2; print('OpenCV', cv2.__version__)"
+          python -c "import faster_whisper; print('faster-whisper import OK')"
+          python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
+
+      - name: Activate production transcription wrapper
+        run: |
+          chmod +x scripts/bin/whisper
+          ./scripts/bin/whisper --help
+
+      - name: Install Node dependencies
+        run: bun install
+
+      - name: Build generated editorial material
+        run: |
+          blender -b --python production/EP01/generated/blender/build_subjectivity.py
+          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          test -s production/EP01/generated/blender/ep01_subjectivity.mp4
+          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+
+      - name: Build EP01 Story Runner cut
+        env:
+          TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
+          TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_ENABLE_WHISPER: 'true'
+          WHISPER_MODEL: 'tiny'
+          TRIPPEDD_WHISPER_DEVICE: 'cpu'
+          TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
+          TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
+          TRIPPEDD_CUT_MODE: SHOWRUNNER
+          TRIPPEDD_OUTPUT_BASENAME: EP01-STORY-RUNNER
+          MEDIA_MAX_CONCURRENT: '2'
+          EP01_MAX_CLIPS: '24'
+          EP01_CLIP_PADDING: '1.25'
+          EP01_RENDER_CONCURRENCY: '2'
+        run: timeout 150m bun run pilot:build:public
+
+      - name: Verify Story Runner cut
+        run: |
+          test -s public/production/EP01-STORY-RUNNER.mp4
+          test -s public/production/EP01-STORY-RUNNER.json
+          test -s public/production/EP01-STORY-RUNNER.otio
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json public/production/EP01-STORY-RUNNER.mp4
+
+      - name: Upload Story Runner cut
+        uses: actions/upload-artifact@v4
+        with:
+          name: EP01-STORY-RUNNER
+          path: |
+            public/production/EP01-STORY-RUNNER.mp4
+            public/production/EP01-STORY-RUNNER.json
+            public/production/EP01-STORY-RUNNER.otio
+            production/EP01/generated/blender/ep01_subjectivity.blend
+            production/EP01/generated/blender/ep01_subjectivity.mp4
+            production/EP01/generated/blender/ep01_bastard_tag.blend
+            production/EP01/generated/blender/ep01_bastard_tag.mp4
+          if-no-files-found: error

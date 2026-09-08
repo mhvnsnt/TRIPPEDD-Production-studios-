@@ -41,31 +41,49 @@ SHOWRUNNER CUT     AUTONOMOUS CUT
 
 Use:
 
-`YYYY-MM-DD-<topic>.md`
+`storyrunner-YYYY-MM-DD-topic.md`
 
-For example:
+under the month directory:
 
-`2026-09-08-the-bastard-series-development.md`
+`YYYY/YYYY-MM/`
 
-## Required front matter
+Example:
 
-```yaml
----
-date: YYYY-MM-DD
-property: TRIPPEDD | The Walk | The Bastard | Bannon | Studio
-layer: STORYRUNNER
-participants:
-  - USER_SHOWRUNNER
-  - CHATGPT
-status: DISCUSSION | DECISION | DISCOVERY | REFERENCE | UNRESOLVED
----
-```
+`2026/2026-09/storyrunner-2026-09-08-the-bastard-series-development.md`
+
+## Required record fields
+
+Each record should identify, when known:
+
+- date/time
+- property / project
+- layer (`STORYRUNNER`)
+- participants
+- status (`DISCUSSION`, `DECISION`, `DISCOVERY`, `REFERENCE`, `UNRESOLVED`, or `RECONSTRUCTED`)
+- source/provenance
+- resulting production artifacts
+- related canon decisions
+- related autonomous discoveries/cuts
 
 ## Historical reconstruction rule
 
 If the original conversation is available, preserve it faithfully.
 
 If only prior project context is available, create a section explicitly labeled `RECONSTRUCTED FROM AVAILABLE CONTEXT`. Never manufacture a verbatim transcript that is not actually available.
+
+## Current conversation policy
+
+The production-room archive is **append-oriented**. New materially relevant exchanges should become new dated records rather than silently rewriting older records. Corrections should preserve the history of the correction.
+
+The archive should preserve not only decisions, but also:
+
+- ideas that were rejected;
+- reversals and changes of mind;
+- unresolved questions;
+- references and influences;
+- technical discoveries that change production;
+- disagreements between showrunner and autonomous systems;
+- the reasoning that makes a decision intelligible later.
 
 ## Cross-references
 
@@ -77,6 +95,18 @@ and
 
 `production artifact → originating conversation`
 
-## Permanent studio policy
+## Standing cross-repository convention
 
-The same archive pattern should be applied to future repositories/projects that are used as production workspaces whenever technically possible. The repository-local archive policy is the enforceable implementation; it does not imply that GitHub account settings can automatically capture private ChatGPT conversations.
+For any repository used as a production workspace through the connected GitHub workflow, use this same architecture whenever technically possible:
+
+```text
+<repo>/docs/PRODUCTION-CONVERSATION-ARCHIVE.md
+<repo>/docs/production-conversations/README.md
+<repo>/docs/production-conversations/YYYY/YYYY-MM/storyrunner-YYYY-MM-DD-topic.md
+```
+
+The archive remains a separate source layer from implementation/canon and from machine-generated/autonomous work. This convention applies to entertainment projects and to other substantive projects where preserving the reasoning/history materially helps continuity.
+
+## Technical boundary
+
+A repository-local policy cannot make GitHub or ChatGPT automatically capture private conversations that are not supplied to the connected workflow. It is therefore not accurate to claim that GitHub is globally recording every ChatGPT conversation. The standing production convention is instead: **whenever a connected workflow has access to a materially relevant production conversation, archive it in the repository's production-conversation layer.**

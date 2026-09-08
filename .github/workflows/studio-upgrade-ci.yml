@@ -54,6 +54,15 @@ jobs:
         run: |
           bun run studio:test:evidence-cache
           bun run studio:test:provenance
+      - name: Generate capability matrix
+        run: bun x tsx scripts/production-capability-matrix.ts
       - name: Validate production artifact checker
         run: bun x tsx scripts/validate-production-artifact.ts
         continue-on-error: true
+      - name: Upload upgrade diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-studio-upgrade-diagnostics
+          path: public/production/*.json
+          if-no-files-found: error
+          retention-days: 14

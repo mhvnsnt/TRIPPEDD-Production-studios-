@@ -33,6 +33,7 @@ export interface SubjectivitySequencePlan {
   rule: string;
   modes: VisualRealityMode[];
   transitions: SubjectivityTransition[];
+  characterAcknowledges: boolean;
   returnToReality: string;
   comedyPrinciple: string;
 }
@@ -81,6 +82,7 @@ export function createSubjectivitySequence(input: {
     rule: REALITY_SUBJECTIVITY_RULE,
     modes,
     transitions,
+    characterAcknowledges,
     returnToReality: 'Return to live action without requiring the character to validate what the audience just saw.',
     comedyPrinciple: 'The spectacle can be enormous; the character response can be completely ordinary.',
   };

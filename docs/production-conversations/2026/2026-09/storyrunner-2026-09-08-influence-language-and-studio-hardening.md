@@ -100,21 +100,20 @@ The showrunner directed the studio to continue hardening the actual production i
 
 ## Immediate engineering direction
 
-The upgrade branch is the safe workspace while the main-branch EP01 Autonomous render remains active. The current branch already has executable open-source tool checks, checksum-keyed evidence caching, provenance modeling, programming/interstitial data structures, delivery profiles, and a Story Runner workflow.
+The upgrade branch is the safe workspace while the main-branch EP01 Autonomous render remains active. The branch now contains executable open-source tool checks, checksum-keyed evidence caching, provenance modeling, programming/interstitial data structures with validation, delivery profiles, a Story Runner workflow, an influence/cultural grammar, a production-integrity audit, and cleanup of obsolete scratch/wait scripts.
 
 Next hardening passes should prioritize:
 
-1. production-integrity/stub detection;
-2. technical media preflight;
-3. exact physical-timeline placement for generated sequences;
-4. audio provenance and loudness QC;
-5. frame-level render QC;
-6. resumable render checkpoints;
-7. real Kdenlive/MLT export validation;
-8. OpenAssetIO manager integration;
-9. OpenCue submission when distributed rendering is justified;
-10. OCIO configuration/version control;
-11. delivery-profile execution and verification;
-12. broader open-source audio, asset-management, editorial, capture, and compositing integrations where they become real working capabilities.
+1. technical media preflight;
+2. exact physical-timeline placement for generated sequences;
+3. audio provenance and loudness QC;
+4. frame-level render QC;
+5. resumable render checkpoints;
+6. real Kdenlive/MLT export validation;
+7. OpenAssetIO manager integration;
+8. OpenCue submission when distributed rendering is justified;
+9. OCIO configuration/version control;
+10. delivery-profile execution and verification;
+11. broader open-source audio, asset-management, editorial, capture, and compositing integrations where they become real working capabilities.
 
 The studio should continue to grow by implementation, verification, and measured research—not by declaring unfinished architecture complete.

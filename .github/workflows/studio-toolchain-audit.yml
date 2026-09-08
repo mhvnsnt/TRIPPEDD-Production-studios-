@@ -6,11 +6,13 @@ on:
     paths:
       - config/**
       - scripts/audit-studio-toolchain.ts
+      - scripts/audit-production-integrity.ts
       - scripts/test-evidence-cache.ts
       - scripts/test-provenance.ts
       - src/server/toolManager.ts
       - src/server/evidenceCache.ts
       - src/server/provenance.ts
+      - src/core/studio/**
       - package.json
   push:
     branches:
@@ -18,11 +20,13 @@ on:
     paths:
       - config/**
       - scripts/audit-studio-toolchain.ts
+      - scripts/audit-production-integrity.ts
       - scripts/test-evidence-cache.ts
       - scripts/test-provenance.ts
       - src/server/toolManager.ts
       - src/server/evidenceCache.ts
       - src/server/provenance.ts
+      - src/core/studio/**
       - package.json
 
 permissions:
@@ -64,6 +68,9 @@ jobs:
 
       - name: Test production provenance model
         run: bun run studio:test:provenance
+
+      - name: Audit production integrity
+        run: bun run studio:audit:integrity
 
       - name: Audit executable toolchain
         run: bun run studio:audit

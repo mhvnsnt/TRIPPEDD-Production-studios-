@@ -3,7 +3,7 @@
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "openimageio", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs"],
+  "optional": ["blender", "openimageio", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco"],
   "interchange": { "editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "images": "OpenImageIO" },
   "backends": {
     "deterministicMedia": "ffmpeg",
@@ -14,7 +14,7 @@
     "compositing": "natron",
     "colorManagement": "opencolorio",
     "assetInterchange": "openassetio",
-    "distributedRendering": "opencue"
+    "distributedRendering": ["flamenco", "opencue"]
   },
   "episodeCuts": {
     "autonomous": "AUTONOMOUS",

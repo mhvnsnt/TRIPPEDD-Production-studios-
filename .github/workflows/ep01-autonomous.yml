@@ -84,7 +84,9 @@ jobs:
 
       - name: Build generated EP01 subjectivity sequence
         run: |
-          blender -b --python production/EP01/generated/blender/build_subjectivity.py
+          set -euo pipefail
+          echo 'Rendering EP01 subjectivity with CI-safe EEVEE profile...'
+          time blender -b --python production/EP01/generated/blender/build_subjectivity.py
           test -s production/EP01/generated/blender/ep01_subjectivity.mp4
           test -s production/EP01/generated/blender/ep01_subjectivity.blend
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_subjectivity.mp4
@@ -111,7 +113,7 @@ jobs:
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '2'
-        run: timeout 150m bun run pilot:build:public
+        run: bun run pilot:build:public
 
       - name: Verify autonomous cut
         run: |

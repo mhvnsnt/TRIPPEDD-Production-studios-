@@ -1,0 +1,12 @@
+{
+  "episodeId": "EP01",
+  "title": "The Walk",
+  "approved": false,
+  "segments": [
+    "ABSOLUTE_RUNTIME_PATH_TO_APPROVED_SOURCE_SEGMENT",
+    "ABSOLUTE_RUNTIME_PATH_TO_APPROVED_SUBJECTIVITY_MP4",
+    "ABSOLUTE_RUNTIME_PATH_TO_APPROVED_SOURCE_SEGMENT"
+  ],
+  "terminalBeat": "lost-acid-button",
+  "notes": "Replace this example with the actual locked sequence only after reviewing the real first assembly. Generated subjectivity must be explicitly included as generated editorial material, never physical source evidence."
+}

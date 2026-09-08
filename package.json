@@ -11,6 +11,7 @@
     "clean": "rm -rf dist server.js",
     "lint": "node fix_mic.cjs && tsc --noEmit",
     "pilot:build": "tsx scripts/build-ep01.ts",
+    "pilot:build:public": "tsx scripts/run-public-pilot.ts",
     "pilot:qc": "tsx scripts/qc-ep01.ts",
     "pilot:greenlight": "tsx scripts/greenlight-ep01.ts",
     "pilot:master": "tsx scripts/build-ep01-master.ts"
@@ -18,6 +19,7 @@
   "dependencies": {
     "@google/genai": "^2.4.0",
     "@react-oauth/google": "^0.13.5",
+    "@tailwindcss/vite": "^4.1.14",
     "@tailwindcss/vite": "^4.1.14",
     "@vitejs/plugin-react": "^5.0.4",
     "date-fns": "^4.4.0",

@@ -1,0 +1,55 @@
+{
+  "episodeId": "EP01",
+  "title": "The Walk",
+  "status": "ACTIVE_PRODUCTION",
+  "source": {
+    "provider": "GOOGLE_DRIVE",
+    "folderId": "1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI",
+    "authority": "PHYSICAL_SOURCE_TIMELINE"
+  },
+  "editorial": {
+    "grammar": ["COLD_OPEN", "REALITY_ANCHOR", "ESCALATION", "FORMAT_SHIFT", "CALLBACK", "PRESSURE_COOKER", "SURREAL_RELEASE", "BUTTON"],
+    "terminalBeat": "lost-acid-button",
+    "endingRule": "Do not solve the disappearance. Cut to black after the character becomes sad that he never got to trip."
+  },
+  "sourceLabels": [
+    "MOTEL_HANGOUT",
+    "SHUMAFIED_ITEM",
+    "DECISION_TO_GET_CIGARS",
+    "WALK_TO_GET_CIGARS",
+    "BAG_INCIDENT",
+    "BAG_ARGUMENT",
+    "JOE_INTERACTION",
+    "PRAYER",
+    "TIC_TAC_EXCHANGE",
+    "INTRODUCTION",
+    "PEOPLE_LEAVE",
+    "SMOKING_HANGOUT",
+    "OTHER"
+  ],
+  "autonomousStages": [
+    { "id": "ingest", "status": "READY", "humanGate": false },
+    { "id": "media-analysis", "status": "BLOCKED", "humanGate": false },
+    { "id": "physical-evidence", "status": "BLOCKED", "humanGate": true },
+    { "id": "comedy-discovery", "status": "BLOCKED", "humanGate": false },
+    { "id": "story-development", "status": "BLOCKED", "humanGate": true },
+    { "id": "subjectivity-generation", "status": "BLOCKED", "humanGate": true },
+    { "id": "editorial-assembly", "status": "BLOCKED", "humanGate": true },
+    { "id": "qc", "status": "BLOCKED", "humanGate": false },
+    { "id": "delivery", "status": "BLOCKED", "humanGate": true }
+  ],
+  "requiredTools": ["ffprobe", "ffmpeg", "pyscenedetect", "opencv", "tesseract", "whisper", "blender", "comfyui"],
+  "generationPolicy": {
+    "subjectivitySequence": "ep01-lost-acid-subjectivity",
+    "allowedModes": ["VISUAL_DISTORTION", "ANIMATION", "THREE_D", "BLENDER_CG", "IMPOSSIBLE_WORLD"],
+    "mustReturnToLiveAction": true,
+    "mustLabelGeneratedMedia": true
+  },
+  "delivery": {
+    "workingDirectory": "production/EP01/output",
+    "assemblyDirectory": "production/EP01/assembly",
+    "evidenceDirectory": "production/EP01/evidence",
+    "generatedDirectory": "production/EP01/generated",
+    "finalDirectory": "production/EP01/final"
+  }
+}

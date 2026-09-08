@@ -1,7 +1,7 @@
 {
-  "name": "react-example",
+  "name": "trippedd-production-studios",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "node fix_mic.cjs && tsx server.ts",
@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "node fix_mic.cjs && tsc --noEmit",
+    "studio:audit": "tsx scripts/audit-studio-toolchain.ts",
     "pilot:build": "tsx scripts/build-ep01.ts",
     "pilot:build:public": "tsx scripts/run-public-pilot.ts",
     "pilot:qc": "tsx scripts/qc-ep01.ts",
@@ -20,7 +21,6 @@
     "@google/genai": "^2.4.0",
     "@react-oauth/google": "^0.13.5",
     "@tailwindcss/vite": "^4.1.14",
-    "@vitejs/plugin-react": "^5.0.4",
     "date-fns": "^4.4.0",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",

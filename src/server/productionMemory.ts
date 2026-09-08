@@ -36,9 +36,16 @@ export class ProductionMemoryStore {
     const next: ProductionMemorySnapshot = {
       ...current,
       ...patch,
+      sources: { ...current.sources, ...(patch.sources ?? {}) },
+      observations: { ...current.observations, ...(patch.observations ?? {}) },
+      gags: { ...current.gags, ...(patch.gags ?? {}) },
+      callbacks: { ...current.callbacks, ...(patch.callbacks ?? {}) },
+      segments: { ...current.segments, ...(patch.segments ?? {}) },
+      jobs: { ...current.jobs, ...(patch.jobs ?? {}) },
       projectId,
       updatedAt: new Date().toISOString(),
     };
+
     this.writeChain = this.writeChain.then(async () => {
       await fs.mkdir(path.dirname(this.filePath), { recursive: true });
       const temporary = `${this.filePath}.tmp`;
@@ -47,24 +54,17 @@ export class ProductionMemoryStore {
     });
     await this.writeChain;
 
-    // As soon as persisted source jobs reach a terminal analysis state, build a
-    // watchable first assembly from the real cached media and timed evidence.
-    if (projectId === 'trippedd' && patch.jobs && Object.keys(next.jobs).length > 0 && !this.pilotBuildRunning) {
+    const autoBuild = process.env.TRIPPEDD_AUTO_FIRST_ASSEMBLY === 'true';
+    if (autoBuild && projectId === 'trippedd' && patch.jobs && Object.keys(next.jobs).length > 0 && !this.pilotBuildRunning) {
       const jobs = Object.values(next.jobs) as Array<{ state?: string }>;
       const allTerminal = jobs.every(job => job.state === 'NEEDS_REVIEW' || job.state === 'COMPLETED' || job.state === 'FAILED');
       if (allTerminal && Object.keys(next.sources).length > 0) {
         this.pilotBuildRunning = true;
         void import('./pilotRenderer')
           .then(({ buildEp01FirstAssembly }) => buildEp01FirstAssembly())
-          .then(manifest => {
-            console.log(`[EP01] First assembly: ${manifest.status} (${manifest.selectedClipCount}/${manifest.sourceClipCount} source selects).`);
-          })
-          .catch(error => {
-            console.error('[EP01] First assembly build failed:', error);
-          })
-          .finally(() => {
-            this.pilotBuildRunning = false;
-          });
+          .then(manifest => console.log(`[EP01] First assembly: ${manifest.status} (${manifest.selectedClipCount}/${manifest.sourceClipCount} source selects).`))
+          .catch(error => console.error('[EP01] First assembly build failed:', error))
+          .finally(() => { this.pilotBuildRunning = false; });
       }
     }
 
@@ -77,9 +77,7 @@ export class ProductionMemoryStore {
     const callbacks = { ...current.callbacks };
     for (const gag of gags) {
       nextGags[gag.id] = gag;
-      for (const key of gag.callbackKeys ?? []) {
-        callbacks[key] = [...new Set([...(callbacks[key] ?? []), gag.id])];
-      }
+      for (const key of gag.callbackKeys ?? []) callbacks[key] = [...new Set([...(callbacks[key] ?? []), gag.id])];
     }
     return this.upsert(projectId, { gags: nextGags, callbacks });
   }

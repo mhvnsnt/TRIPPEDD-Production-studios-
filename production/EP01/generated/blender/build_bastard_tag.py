@@ -19,7 +19,6 @@ scene.render.ffmpeg.format = 'MPEG4'
 scene.render.ffmpeg.codec = 'H264'
 scene.render.ffmpeg.constant_rate_factor = 'MEDIUM'
 scene.render.filepath = OUT
-scene.world.color = (0.002, 0.002, 0.004)
 
 # Jagged cliff / ground.
 bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, -2.1))

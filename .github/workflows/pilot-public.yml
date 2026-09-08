@@ -79,6 +79,7 @@ jobs:
           TRIPPEDD_WHISPER_DEVICE: 'cpu'
           TRIPPEDD_WHISPER_COMPUTE_TYPE: 'int8'
           TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
+          MEDIA_MAX_CONCURRENT: '2'
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '2'

@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - upgrade/production-pipeline-speed-2026-09-08
+      - dev/production-hardening-2026-09-08
     paths:
       - src/**
       - scripts/**
@@ -21,10 +22,14 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  BLENDER_VERSION: '4.5.13'
+  BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,12 +51,31 @@ jobs:
       - name: Install optional open-source media stack
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends openimageio-tools openexr-tools imagemagick sox rubberband-cli
+          sudo apt-get install -y --no-install-recommends openimageio-tools openexr-tools imagemagick sox rubberband-cli curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
           oiiotool --version
           exrheader --help >/dev/null
           magick -version
           sox --version
           rubberband --help >/dev/null
+      - name: Cache Blender LTS
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
+          key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
+      - name: Install exact production Blender LTS
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.cache/trippedd
+          base="https://download.blender.org/release/Blender4.5"
+          archive="$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          if [ ! -s "$archive" ]; then curl -fsSL "${base}/${BLENDER_ARCHIVE}" -o "$archive"; fi
+          curl -fsSL "${base}/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$archive#" | sha256sum -c -
+          sudo tar -xJf "$archive" -C /opt
+          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          blender --version | head -n 2
+      - name: Preflight generated Bastard terminal tag
+        run: python scripts/production/preflight-bastard-tag.py --blender blender
       - name: Install Node dependencies
         run: bun install --frozen-lockfile
       - name: Typecheck

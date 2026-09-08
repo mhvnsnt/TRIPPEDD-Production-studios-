@@ -67,6 +67,10 @@ scene.render.engine = 'BLENDER_EEVEE_NEXT'
 scene.render.resolution_x = 1920
 scene.render.resolution_y = 1080
 scene.render.resolution_percentage = 50
+# The previous run used Blender's default 64 EEVEE render samples and spent ~74s/frame.
+# This is a stylized subjective insert, so 4 samples is an intentional production setting:
+# fast enough for CI, with the same composition/material language and no dependency on Cycles.
+scene.eevee.taa_render_samples = 4
 scene.render.image_settings.file_format = 'FFMPEG'
 scene.render.ffmpeg.format = 'MPEG4'
 scene.render.ffmpeg.codec = 'H264'
@@ -74,9 +78,11 @@ scene.render.ffmpeg.constant_rate_factor = 'MEDIUM'
 scene.render.fps = 24
 scene.render.filepath = VIDEO_OUTPUT
 scene.frame_start = 1
-scene.frame_end = 240
+# Six seconds at 24fps: long enough to establish the rupture without turning a generated
+# insert into a multi-hour CI render.
+scene.frame_end = 144
 
-for frame in (1, 60, 120, 180, 240):
+for frame in (1, 36, 72, 108, 144):
     camera.location = (math.sin(frame * 0.035) * 4, -18 + frame * 0.035, 4 + math.cos(frame * 0.03) * 2)
     camera.rotation_euler = (math.radians(78 + math.sin(frame * 0.02) * 8), math.sin(frame * 0.015) * 0.4, math.cos(frame * 0.017) * 0.5)
     camera.keyframe_insert(data_path="location", frame=frame)
@@ -87,6 +93,7 @@ scene["TRIPPEDD_SEQUENCE_ID"] = "ep01-lost-acid-subjectivity"
 scene["TRIPPEDD_PURPOSE"] = "Audience sees the character's subjective experience; character may dismiss it on return to live action."
 scene["TRIPPEDD_SOURCE_TRUTH"] = "This scene is not physical source evidence."
 scene["TRIPPEDD_EDITORIAL_RETURN"] = "Return to live action before the character says it was not even shit."
+scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_4_SAMPLES_50_PERCENT_6_SECONDS"
 
 bpy.ops.wm.save_as_mainfile(filepath=BLEND_OUTPUT)
 bpy.ops.render.render(animation=True)

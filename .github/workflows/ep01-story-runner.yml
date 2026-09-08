@@ -97,7 +97,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: pip
+          # No pip cache: this repository intentionally has no requirements.txt/pyproject.toml.
       - name: Cache assembly segments
         uses: actions/cache@v4
         with:

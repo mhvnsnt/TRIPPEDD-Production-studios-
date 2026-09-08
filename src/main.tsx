@@ -6,6 +6,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import './index.css';
 import { ProductionProvider } from './context.tsx';
 import { initTools } from './core/tools/init.ts';
+import './micGlobal.ts';
 
 initTools();
 

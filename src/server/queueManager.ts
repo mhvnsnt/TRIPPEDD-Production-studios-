@@ -1,20 +1,23 @@
-import { exec } from "child_process";
+import { execFile } from "child_process";
 import { promisify } from "util";
 import fs from "fs/promises";
 import path from "path";
-import { toolManager } from "./toolManager";
 import os from "os";
-import { MediaJob, QueueJobState } from "../core/types";
+import { MediaJob } from "../core/types";
+import { toolManager } from "./toolManager";
+import { analyzeMedia, downloadToFile } from "./mediaPipeline";
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 export class QueueManager {
   private jobs = new Map<string, MediaJob>();
   private activeProcessing = 0;
-  private MAX_CONCURRENT = 1; // Streamlined processing for heavy jobs
+  private MAX_CONCURRENT = Math.max(1, Number(process.env.MEDIA_MAX_CONCURRENT || 1));
 
   getJobs(): MediaJob[] {
-    return Array.from(this.jobs.values()).sort((a,b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+    return Array.from(this.jobs.values()).sort((a, b) =>
+      new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+    );
   }
 
   getJob(fileId: string): MediaJob | undefined {
@@ -24,171 +27,163 @@ export class QueueManager {
   addJob(job: MediaJob) {
     if (!this.jobs.has(job.fileId)) {
       this.jobs.set(job.fileId, job);
-      this.processNext();
+      void this.processNext();
     }
   }
 
   updateJob(id: string, updates: Partial<MediaJob>) {
     const job = this.jobs.get(id);
-    if (job) {
-      Object.assign(job, updates, { updatedAt: new Date().toISOString() });
-    }
+    if (job) Object.assign(job, updates, { updatedAt: new Date().toISOString() });
   }
 
   log(id: string, message: string) {
     const job = this.jobs.get(id);
-    if (job) {
-      job.logs.push(`[${new Date().toISOString()}] ${message}`);
-    }
+    if (job) job.logs.push(`[${new Date().toISOString()}] ${message}`);
   }
 
   async processNext() {
-    if (this.activeProcessing >= this.MAX_CONCURRENT) return;
-    
-    const queuedJobs = Array.from(this.jobs.values()).filter(j => j.state === 'QUEUED');
-    if (queuedJobs.length === 0) return;
+    while (this.activeProcessing < this.MAX_CONCURRENT) {
+      const job = Array.from(this.jobs.values()).find(j => j.state === 'QUEUED');
+      if (!job) return;
 
-    const job = queuedJobs[0];
-    this.updateJob(job.fileId, { state: 'PROBING' });
-    this.activeProcessing++;
+      this.updateJob(job.fileId, { state: 'PROBING', progress: 1 });
+      this.activeProcessing++;
+      void this.processJob(job).finally(() => {
+        this.activeProcessing--;
+        void this.processNext();
+      });
+    }
+  }
 
+  private async processJob(job: MediaJob) {
     try {
       await this.runPipeline(job);
     } catch (e: any) {
-      this.log(job.fileId, `FATAL: ${e.message}`);
-      this.updateJob(job.fileId, { state: 'FAILED' });
-    } finally {
-      this.activeProcessing--;
-      this.processNext(); // Check for more jobs
+      this.log(job.fileId, `FATAL: ${e?.message || String(e)}`);
+      this.updateJob(job.fileId, { state: 'FAILED', progress: 100 });
     }
   }
 
   async runPipeline(job: MediaJob) {
-    const mediaUrl = `https://www.googleapis.com/drive/v3/files/${job.fileId}?alt=media`;
-    const token = (job as any).token; // Storing token on job temporarily for simplicity
+    const mediaUrl = `https://www.googleapis.com/drive/v3/files/${encodeURIComponent(job.fileId)}?alt=media`;
+    const token = (job as any).token as string | undefined;
+    if (!token) throw new Error('No Drive access token is attached to this ingest job.');
 
-    this.log(job.fileId, 'Starting execution pipeline...');
+    this.log(job.fileId, 'Starting production media analysis pipeline.');
+    this.updateJob(job.fileId, { state: 'PROBING', progress: 5 });
 
-    // 1. FFprobe (Streamable)
-    this.log(job.fileId, '[ffprobe] Checking dependency...');
+    const available = (id: string) => toolManager.getTool(id)?.installationStatus === 'AVAILABLE';
+    const tools = {
+      ffprobe: available('ffprobe'),
+      pyscenedetect: available('pyscenedetect'),
+      opencv: available('opencv'),
+      tesseract: available('tesseract'),
+      whisper: available('whisper'),
+    };
+
+    if (!tools.ffprobe) {
+      throw new Error('ffprobe is required for ingest and is unavailable.');
+    }
+
+    const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ingest-'));
+    const extension = path.extname(job.originalName || '') || '.media';
+    const localFilePath = path.join(tmpDir, `source${extension}`);
+
     try {
-      const { stdout: versionOut } = await execAsync('ffprobe -version');
-      this.log(job.fileId, '[ffprobe] Executing analysis on stream...');
-      
-      const cmd = `ffprobe -v quiet -print_format json -show_format -show_streams -headers "Authorization: Bearer ${token}" "${mediaUrl}"`;
-      const start = Date.now();
-      const { stdout } = await execAsync(cmd);
-      const data = JSON.parse(stdout);
-      
-      job.tools.ffprobe = {
-        status: 'COMPLETED' as const,
-        data,
-        provenance: { executionState: 'EXECUTED', sourceFileId: job.fileId, startTime: new Date(start).toISOString(), endTime: new Date().toISOString(), tool: 'ffprobe', version: versionOut.split('\n')[0], command: cmd.substring(0, 100) + '...', success: true, timestamp: new Date().toISOString(), durationMs: Date.now() - start }
-      };
-      this.log(job.fileId, '[ffprobe] Analysis successful.');
-    } catch (e: any) {
-      this.log(job.fileId, `[ffprobe] UNAVAILABLE or FAILED: ${e.message}`);
-      job.tools.ffprobe = { status: 'UNAVAILABLE' as const, error: e.message };
-    }
+      this.log(job.fileId, '[download] Streaming source media from Google Drive.');
+      this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING', progress: 8 });
+      await downloadToFile(mediaUrl, token, localFilePath);
+      this.log(job.fileId, '[download] Source media is locally available.');
 
-    // Prepare temp space for tools requiring local file
-    const tmpDir = path.join(os.tmpdir(), 'trippedd_pipeline');
-    await fs.mkdir(tmpDir, { recursive: true });
-    
-    // Check if any local tool is actually available before downloading
-    let requiresLocal = false;
-    
-    // 2. OpenCV Dependency Check
-    try {
-      await execAsync('python3 -c "import cv2; print(cv2.__version__)"');
-      requiresLocal = true;
-      job.tools.opencv = { status: 'PENDING' as const };
-    } catch(e) {
-      this.log(job.fileId, '[opencv] UNAVAILABLE');
-      job.tools.opencv = { status: 'UNAVAILABLE' as const };
-    }
+      this.updateJob(job.fileId, { state: 'ANALYZING', progress: 10 });
+      const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => {
+        this.log(job.fileId, `[${stage}] ${message}`);
+        this.updateJob(job.fileId, { state: stage === 'complete' ? 'ANALYZING' : 'ANALYZING', progress });
+      });
 
-    // 3. Tesseract Check
-    try {
-      await execAsync('tesseract --version');
-      requiresLocal = true;
-      job.tools.tesseract = { status: 'PENDING' as const };
-    } catch(e) {
-      this.log(job.fileId, '[tesseract] UNAVAILABLE');
-      job.tools.tesseract = { status: 'UNAVAILABLE' as const };
-    }
-
-    // 4. Whisper Check
-    try {
-      await execAsync('whisper --version');
-      requiresLocal = true;
-      job.tools.whisper = { status: 'PENDING' as const };
-    } catch(e) {
-      this.log(job.fileId, '[whisper] UNAVAILABLE');
-      job.tools.whisper = { status: 'UNAVAILABLE' as const };
-    }
-
-    let localFilePath = '';
-    
-    if (requiresLocal) {
-      this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING' });
-      this.log(job.fileId, 'Downloading file for local tool analysis (chunked)...');
-      localFilePath = path.join(tmpDir, `${job.fileId}_${Date.now()}.mp4`);
-      
-      const fetchRes = await fetch(mediaUrl, { headers: { Authorization: `Bearer ${token}` } });
-      if (!fetchRes.ok) throw new Error('Failed to stream media');
-      
-      const arrayBuffer = await fetchRes.arrayBuffer();
-      await fs.writeFile(localFilePath, Buffer.from(arrayBuffer));
-      this.log(job.fileId, 'Download complete.');
-    }
-
-    this.updateJob(job.fileId, { state: 'ANALYZING' });
-
-    // Execute local tools
-    if (job.tools.opencv?.status === 'PENDING') {
-      const toolDef = toolManager.getTool('opencv');
-      if (toolDef && toolDef.installationStatus === 'AVAILABLE') {
-        job.tools.opencv = { status: 'COMPLETED' as const, provenance: { executionState: 'EXECUTED', sourceFileId: job.fileId, startTime: new Date().toISOString(), endTime: new Date().toISOString(), tool: 'opencv', version: toolDef.version || 'unknown', executablePath: toolDef.executablePath, command: 'cv2.VideoCapture', success: true, timestamp: new Date().toISOString() }};
-        this.log(job.fileId, '[opencv] Visual analysis completed using provisioned tool.');
-      } else {
-        job.tools.opencv = { status: 'UNAVAILABLE' as const, error: toolDef?.installError || 'PROVISIONING_UNAVAILABLE' };
-        this.log(job.fileId, '[opencv] UNAVAILABLE');
+      if (result.ffprobe) {
+        job.tools.ffprobe = {
+          status: 'COMPLETED' as const,
+          data: result.ffprobe,
+          provenance: {
+            executionState: 'EXECUTED', sourceFileId: job.fileId,
+            startTime: new Date().toISOString(), endTime: new Date().toISOString(),
+            tool: 'ffprobe', version: toolManager.getTool('ffprobe')?.version || 'unknown',
+            executablePath: toolManager.getTool('ffprobe')?.executablePath,
+            command: 'ffprobe -print_format json -show_format -show_streams <local-source>',
+            success: true, timestamp: new Date().toISOString(), durationMs: 0,
+          },
+        } as any;
       }
-    }
 
-    if (job.tools.tesseract?.status === 'PENDING') {
-      const toolDef = toolManager.getTool('tesseract');
-      if (toolDef && toolDef.installationStatus === 'AVAILABLE') {
-        job.tools.tesseract = { status: 'COMPLETED' as const, provenance: { executionState: 'EXECUTED', sourceFileId: job.fileId, startTime: new Date().toISOString(), endTime: new Date().toISOString(), tool: 'tesseract', version: toolDef.version || 'unknown', executablePath: toolDef.executablePath, command: 'tesseract', success: true, timestamp: new Date().toISOString() }};
-        this.log(job.fileId, '[tesseract] OCR completed using provisioned tool.');
-      } else {
-        job.tools.tesseract = { status: 'UNAVAILABLE' as const, error: toolDef?.installError || 'PROVISIONING_UNAVAILABLE' };
-        this.log(job.fileId, '[tesseract] UNAVAILABLE');
+      if (result.scenes) {
+        job.tools.pyscenedetect = {
+          status: 'COMPLETED' as const,
+          data: result.scenes,
+          provenance: {
+            executionState: 'EXECUTED', sourceFileId: job.fileId,
+            startTime: new Date().toISOString(), endTime: new Date().toISOString(),
+            tool: 'pyscenedetect', version: toolManager.getTool('pyscenedetect')?.version || 'unknown',
+            executablePath: toolManager.getTool('pyscenedetect')?.executablePath,
+            command: 'scenedetect detect-content list-scenes <local-source>',
+            success: true, timestamp: new Date().toISOString(), durationMs: 0,
+          },
+        } as any;
       }
-    }
-    
-    if (job.tools.whisper?.status === 'PENDING') {
-      const toolDef = toolManager.getTool('whisper');
-      if (toolDef && toolDef.installationStatus === 'AVAILABLE') {
-        job.tools.whisper = { status: 'COMPLETED' as const, provenance: { executionState: 'EXECUTED', sourceFileId: job.fileId, startTime: new Date().toISOString(), endTime: new Date().toISOString(), tool: 'whisper', version: toolDef.version || 'unknown', executablePath: toolDef.executablePath, command: 'whisper', success: true, timestamp: new Date().toISOString() }};
-        this.log(job.fileId, '[whisper] Transcription completed using provisioned tool.');
-      } else {
-        job.tools.whisper = { status: 'UNAVAILABLE' as const, error: toolDef?.installError || 'PROVISIONING_UNAVAILABLE' };
-        this.log(job.fileId, '[whisper] UNAVAILABLE');
+
+      if (result.visual) {
+        job.tools.opencv = {
+          status: 'COMPLETED' as const,
+          data: result.visual,
+          provenance: {
+            executionState: 'EXECUTED', sourceFileId: job.fileId,
+            startTime: new Date().toISOString(), endTime: new Date().toISOString(),
+            tool: 'opencv', version: toolManager.getTool('opencv')?.version || 'unknown',
+            executablePath: toolManager.getTool('opencv')?.executablePath,
+            command: 'cv2.VideoCapture frame sampling',
+            success: true, timestamp: new Date().toISOString(), durationMs: 0,
+          },
+        } as any;
       }
-    }
 
-    // Cleanup
-    if (localFilePath) {
-      try {
-         await fs.unlink(localFilePath);
-         this.log(job.fileId, 'Temporary disk space cleaned up.');
-      } catch(e) {}
-    }
+      if (result.ocr !== undefined) {
+        job.tools.tesseract = {
+          status: 'COMPLETED' as const,
+          data: { text: result.ocr },
+          provenance: {
+            executionState: 'EXECUTED', sourceFileId: job.fileId,
+            startTime: new Date().toISOString(), endTime: new Date().toISOString(),
+            tool: 'tesseract', version: toolManager.getTool('tesseract')?.version || 'unknown',
+            executablePath: toolManager.getTool('tesseract')?.executablePath,
+            command: 'tesseract <sampled-frame> stdout',
+            success: true, timestamp: new Date().toISOString(), durationMs: 0,
+          },
+        } as any;
+      }
 
-    this.updateJob(job.fileId, { state: 'NEEDS_REVIEW', progress: 100 });
-    this.log(job.fileId, 'Pipeline completed successfully.');
+      if (result.transcript !== undefined) {
+        job.tools.whisper = {
+          status: result.transcript ? 'COMPLETED' as const : 'FAILED' as const,
+          data: result.transcript,
+          provenance: {
+            executionState: 'EXECUTED', sourceFileId: job.fileId,
+            startTime: new Date().toISOString(), endTime: new Date().toISOString(),
+            tool: 'whisper', version: toolManager.getTool('whisper')?.version || 'unknown',
+            executablePath: toolManager.getTool('whisper')?.executablePath,
+            command: `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`,
+            success: Boolean(result.transcript), timestamp: new Date().toISOString(), durationMs: 0,
+          },
+        } as any;
+      }
+
+      const completedTools = Object.values(tools).filter(Boolean).length;
+      this.log(job.fileId, `Analysis complete. ${completedTools}/${Object.keys(tools).length} analysis tools available.`);
+      this.updateJob(job.fileId, { state: 'NEEDS_REVIEW', progress: 100 });
+      this.log(job.fileId, 'Pipeline completed with real tool outputs.');
+    } finally {
+      await fs.rm(tmpDir, { recursive: true, force: true });
+    }
   }
 }
+
 export const queueManager = new QueueManager();

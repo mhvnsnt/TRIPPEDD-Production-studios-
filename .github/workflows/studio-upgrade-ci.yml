@@ -10,6 +10,7 @@ on:
       - scripts/**
       - config/**
       - package.json
+      - bun.lock
       - bun.lockb
       - .github/workflows/studio-upgrade-ci.yml
 
@@ -42,6 +43,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
+      - name: Install optional OpenImageIO tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends openimageio-tools
+          oiiotool --version
       - name: Install Node dependencies
         run: bun install --frozen-lockfile
       - name: Typecheck

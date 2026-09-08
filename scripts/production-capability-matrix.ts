@@ -19,14 +19,23 @@ const capabilities = [
   { id: 'deterministic-delivery', tools: ['ffmpeg', 'ffprobe', 'mediainfo'], output: 'reproducible MP4 encode and technical QC' },
 ];
 
-const required = new Set(config.required || []);
-const optional = new Set(config.optional || []);
+const required = new Set<string>(config.required || []);
+const optional = new Set<string>(config.optional || []);
 const report = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   generatedAt: new Date().toISOString(),
   targets: { episodeMinutes: performance.targetEpisodeMinutes, generationWallClockMinutes: performance.targetGenerationWallClockMinutes, stretchSpeedupFactor: performance.stretchSpeedupFactor },
-  capabilities: capabilities.map(capability => ({ ...capability, requiredTools: capability.tools.filter((tool: string) => required.has(tool)), optionalTools: capability.tools.filter((tool: string) => optional.has(tool) || !required.has(tool)) })),
-  architecture: { requiredToolchain: [...required], optionalToolchain: [...optional], featureGatedOptionalAcceleration: performance.policy?.optionalAccelerationMustBeFeatureGated === true },
+  capabilities: capabilities.map(capability => ({
+    ...capability,
+    requiredTools: capability.tools.filter((tool: string) => required.has(tool)),
+    optionalTools: capability.tools.filter((tool: string) => optional.has(tool)),
+    unprovisionedTools: capability.tools.filter((tool: string) => !required.has(tool) && !optional.has(tool)),
+  })),
+  architecture: {
+    requiredToolchain: [...required],
+    optionalToolchain: [...optional],
+    featureGatedOptionalAcceleration: performance.policy?.optionalAccelerationMustBeFeatureGated === true,
+  },
 };
 
 const out = path.join(root, 'public', 'production', 'production-capability-matrix.json');

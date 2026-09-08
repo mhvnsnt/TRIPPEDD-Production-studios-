@@ -32,7 +32,6 @@ export class ToolManager {
   async initialize() {
     console.log('Initializing open-source media toolchain...');
     
-    // Define tools
     this.definitions.set('ffmpeg', this.createDef('ffmpeg', 'FFmpeg', 'Media processing', 'CLI'));
     this.definitions.set('ffprobe', this.createDef('ffprobe', 'FFprobe', 'Media metadata', 'CLI'));
     this.definitions.set('opencv', this.createDef('opencv', 'OpenCV', 'Computer Vision', 'PYTHON'));
@@ -43,17 +42,14 @@ export class ToolManager {
     this.definitions.set('whisperx', this.createDef('whisperx', 'WhisperX', 'Aligned Speech recognition', 'PYTHON'));
     this.definitions.set('otio', this.createDef('otio', 'OpenTimelineIO', 'Editorial interchange', 'PYTHON'));
 
-    // Check binaries
     await this.checkBinary('ffmpeg', 'ffmpeg -version', /ffmpeg version (.*?)\s/);
     await this.checkBinary('ffprobe', 'ffprobe -version', /ffprobe version (.*?)\s/);
     await this.checkAptPackage('tesseract', 'tesseract --version', /tesseract (.*?)\s/, 'tesseract-ocr');
 
-    // Check Python tools
     await this.provisionPythonTool('opencv', 'python3 -c "import cv2; print(cv2.__version__)"', null, 'opencv-python');
     await this.provisionPythonTool('pyscenedetect', 'scenedetect --version', /PySceneDetect v(.*)/, 'scenedetect');
-    await this.provisionPythonTool('whisper', 'whisper --help', null, 'openai-whisper'); // no easy version string, just check it runs
+    await this.provisionPythonTool('whisper', 'whisper --help', null, 'openai-whisper');
     
-    // Optional/Enhanced tools
     await this.provisionPythonTool('demucs', 'demucs --version', /demucs (.*?)/, 'demucs', true);
     await this.provisionPythonTool('whisperx', 'whisperx --help', null, 'whisperx', true);
     await this.provisionPythonTool('otio', 'python3 -c "import opentimelineio as otio; print(otio.__version__)"', null, 'opentimelineio', true);
@@ -79,7 +75,7 @@ export class ToolManager {
       def.installationStatus = 'AVAILABLE';
       def.healthStatus = 'AVAILABLE';
       def.version = version;
-      def.executablePath = id; // system path
+      def.executablePath = id;
     } catch (e: any) {
       def.installationStatus = 'UNAVAILABLE';
       def.healthStatus = 'UNAVAILABLE';
@@ -93,42 +89,52 @@ export class ToolManager {
       const { stdout } = await execAsync(checkCmd);
       def.installationStatus = 'AVAILABLE';
       def.healthStatus = 'AVAILABLE';
-      if (versionRegex) {
-        const m = stdout.match(versionRegex);
-        if (m) def.version = m[1];
-      }
+      const m = stdout.match(versionRegex);
+      if (m) def.version = m[1];
     } catch (e) {
-      // Try to provision
       def.installationStatus = 'INSTALLING';
       try {
-         // Without sudo, apt-get install might fail. If it fails, report PROVISIONING_UNAVAILABLE
-         await execAsync(`apt-get install -y ${aptPackage}`);
-         const { stdout } = await execAsync(checkCmd);
-         def.installationStatus = 'AVAILABLE';
-         def.healthStatus = 'AVAILABLE';
-         if (versionRegex) {
-           const m = stdout.match(versionRegex);
-           if (m) def.version = m[1];
-         }
+        await execAsync(`apt-get install -y ${aptPackage}`);
+        const { stdout } = await execAsync(checkCmd);
+        def.installationStatus = 'AVAILABLE';
+        def.healthStatus = 'AVAILABLE';
+        const m = stdout.match(versionRegex);
+        if (m) def.version = m[1];
       } catch (err: any) {
-         def.installationStatus = 'UNAVAILABLE';
-         def.healthStatus = 'UNAVAILABLE';
-         def.installError = 'PROVISIONING_UNAVAILABLE - environment does not permit dependency installation: ' + err.message;
+        def.installationStatus = 'UNAVAILABLE';
+        def.healthStatus = 'UNAVAILABLE';
+        def.installError = 'PROVISIONING_UNAVAILABLE - environment does not permit dependency installation: ' + err.message;
       }
     }
   }
 
+  private async markPythonAvailable(def: ToolDefinition, checkCmd: string, versionRegex: RegExp | null, executablePath: string) {
+    const { stdout } = await execAsync(checkCmd);
+    def.installationStatus = 'AVAILABLE';
+    def.healthStatus = 'AVAILABLE';
+    if (versionRegex) {
+      const m = stdout.match(versionRegex);
+      if (m) def.version = m[1];
+    }
+    def.executablePath = executablePath;
+  }
+
   private async provisionPythonTool(id: string, checkCmd: string, versionRegex: RegExp | null, pipPackage: string, skipProvisioning: boolean = false) {
     const def = this.definitions.get(id)!;
-    
-    // Check if venv exists
+
+    // CI and developer machines may already have the complete open-source stack.
+    // Prefer it instead of creating a second venv and reinstalling the same tools.
+    try {
+      await this.markPythonAvailable(def, checkCmd, versionRegex, id);
+      return;
+    } catch {}
+
     const venvBin = path.join(this.baseVenvPath, 'bin');
     const activate = `source ${path.join(venvBin, 'activate')}`;
-    
+
     try {
       await fs.stat(this.baseVenvPath);
     } catch {
-      // Create venv if missing
       try {
         await execAsync(`python3 -m venv ${this.baseVenvPath}`);
       } catch (err: any) {
@@ -139,36 +145,22 @@ export class ToolManager {
     }
 
     try {
-      const { stdout } = await execAsync(`bash -c "${activate} && ${checkCmd}"`);
-      def.installationStatus = 'AVAILABLE';
-      def.healthStatus = 'AVAILABLE';
-      if (versionRegex) {
-        const m = stdout.match(versionRegex);
-        if (m) def.version = m[1];
-      }
-      def.executablePath = path.join(venvBin, id);
+      await this.markPythonAvailable(def, `bash -c "${activate} && ${checkCmd}"`, versionRegex, path.join(venvBin, id));
     } catch (e) {
       if (skipProvisioning) {
         def.installationStatus = 'UNAVAILABLE';
         def.healthStatus = 'UNAVAILABLE';
         return;
       }
-      
+
       def.installationStatus = 'INSTALLING';
       try {
-         await execAsync(`bash -c "${activate} && pip install ${pipPackage}"`);
-         const { stdout } = await execAsync(`bash -c "${activate} && ${checkCmd}"`);
-         def.installationStatus = 'AVAILABLE';
-         def.healthStatus = 'AVAILABLE';
-         if (versionRegex) {
-           const m = stdout.match(versionRegex);
-           if (m) def.version = m[1];
-         }
-         def.executablePath = path.join(venvBin, id);
+        await execAsync(`bash -c "${activate} && pip install ${pipPackage}"`);
+        await this.markPythonAvailable(def, `bash -c "${activate} && ${checkCmd}"`, versionRegex, path.join(venvBin, id));
       } catch (err: any) {
-         def.installationStatus = 'UNAVAILABLE';
-         def.healthStatus = 'UNAVAILABLE';
-         def.installError = 'PROVISIONING_UNAVAILABLE - pip install failed: ' + err.message;
+        def.installationStatus = 'UNAVAILABLE';
+        def.healthStatus = 'UNAVAILABLE';
+        def.installError = 'PROVISIONING_UNAVAILABLE - pip install failed: ' + err.message;
       }
     }
   }

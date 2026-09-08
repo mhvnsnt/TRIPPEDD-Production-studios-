@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 
-export type ComedySignalType = 'ESCALATION' | 'REACTION' | 'AWKWARD_SILENCE' | 'INTERRUPTION' | 'UNUSUAL_BEHAVIOR' | 'VISUAL_GAG' | 'DIALOGUE_DENSITY' | 'CALLBACK' | 'CONTINUITY';
+export type ComedySignalType = 'ESCALATION' | 'REACTION' | 'AWKWARD_SILENCE' | 'INTERRUPTION' | 'UNUSUAL_BEHAVIOR' | 'VISUAL_GAG' | 'DIALOGUE_DENSITY' | 'CALLBACK' | 'CONTINUITY' | 'CONTRADICTION' | 'SUBJECTIVITY_RUPTURE' | 'MUNDANE_BUTTON';
 export interface ComedySignal { id: string; type: ComedySignalType; score: number; startTime?: number; endTime?: number; evidence: string; source: 'TRANSCRIPT' | 'SCENE' | 'VISUAL' | 'METADATA'; }
 export interface GagCandidate { id: string; sourceFileId?: string; title: string; score: number; signals: ComedySignal[]; tags: string[]; callbackKeys: string[]; reviewState: 'MACHINE_SUGGESTED' | 'HUMAN_ACCEPTED' | 'HUMAN_REJECTED'; }
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
@@ -17,6 +17,9 @@ export function discoverComedy(input: { sourceFileId?: string; transcript?: { se
     if (/[!?]{2,}|\b(what|why|no|wait|damn|shit|fuck)\b/i.test(text)) signals.push({ id: randomUUID(), type: 'REACTION', score: 0.62, startTime: current.start, endTime: current.end, evidence: text.slice(0, 180), source: 'TRANSCRIPT' });
     if (/\b(but|then|actually|except|instead|so now|turns out)\b/i.test(text)) signals.push({ id: randomUUID(), type: 'ESCALATION', score: 0.58, startTime: current.start, endTime: current.end, evidence: text.slice(0, 180), source: 'TRANSCRIPT' });
     if (/(interrupt|hold on|wait a second|let me|stop|shut up)/i.test(text)) signals.push({ id: randomUUID(), type: 'INTERRUPTION', score: 0.66, startTime: current.start, endTime: current.end, evidence: text.slice(0, 180), source: 'TRANSCRIPT' });
+    if (/\b(doesn't|does not|isn't|is not|can't|cannot|impossible|normal|nothing happened|not a big deal|wasn't|was not)\b/i.test(text) && /\b(but|yet|still|actually|then|look|happened|saw|seeing)\b/i.test(text)) signals.push({ id: randomUUID(), type: 'CONTRADICTION', score: 0.72, startTime: current.start, endTime: current.end, evidence: `Possible character/world contradiction: ${text.slice(0, 180)}`, source: 'TRANSCRIPT' });
+    if (/\b(dream|dreaming|trip|tripping|hallucinat|vision|seeing|saw|imagined|in my head|what the hell is happening|reality|world|everything changed)\b/i.test(text)) signals.push({ id: randomUUID(), type: 'SUBJECTIVITY_RUPTURE', score: 0.68, startTime: current.start, endTime: current.end, evidence: text.slice(0, 180), source: 'TRANSCRIPT' });
+    if (/\b(just|anyway|whatever|never mind|it's fine|its fine|no big deal|wasn't shit|was not shit|nothing|forgot|lost|where is|can't find|cannot find)\b/i.test(text)) signals.push({ id: randomUUID(), type: 'MUNDANE_BUTTON', score: 0.56, startTime: current.start, endTime: current.end, evidence: `Possible anticlimactic/denial button: ${text.slice(0, 180)}`, source: 'TRANSCRIPT' });
     if (signals.length) candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: text.length > 80 ? `${text.slice(0, 77)}...` : text, score: clamp(signals.reduce((sum, signal) => sum + signal.score, 0) / signals.length + (signals.length > 1 ? 0.12 : 0)), signals, tags: [...new Set(signals.map(signal => signal.type.toLowerCase()))], callbackKeys: extractCallbackKeys(text), reviewState: 'MACHINE_SUGGESTED' });
   }
   const ocr = String(input.ocr ?? '').trim();

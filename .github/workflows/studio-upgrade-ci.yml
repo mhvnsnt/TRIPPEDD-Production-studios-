@@ -46,9 +46,14 @@ jobs:
         run: bun install --frozen-lockfile
       - name: Typecheck
         run: bun run lint
+      - name: Production integrity audit
+        run: bun run studio:audit:integrity
       - name: Audit production toolchain
         run: bun run studio:audit
       - name: Validate evidence/provenance contracts
         run: |
           bun run studio:test:evidence-cache
           bun run studio:test:provenance
+      - name: Validate production artifact checker
+        run: bun x tsx scripts/validate-production-artifact.ts
+        continue-on-error: true

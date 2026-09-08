@@ -15,9 +15,6 @@ on:
       - src/server/pilotRenderer.ts
       - src/server/productionMemory.ts
 
-# Never let a later push kill an expensive render already in progress.
-# A new revision waits for the current production run instead of destroying
-# partial work. The render itself is also split into independent matrix jobs.
 concurrency:
   group: ep01-autonomous-${{ github.ref }}
   cancel-in-progress: false
@@ -179,20 +176,20 @@ jobs:
           done
           rm -rf production/EP01/generated/blender/subjectivity/assembled
           mkdir -p production/EP01/generated/blender/subjectivity/assembled
-          for frame in $(seq -w 1 144); do
-            n=$((10#$frame))
+          for n in $(seq 1 144); do
+            printf -v frame '%04d' "$n"
             if [ "$n" -le 36 ]; then chunk=01; else
               if [ "$n" -le 72 ]; then chunk=02; else
                 if [ "$n" -le 108 ]; then chunk=03; else chunk=04; fi
               fi
             fi
-            src="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${n}.jpg"
+            src="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${frame}.jpg"
             test -s "$src"
             cp "$src" "production/EP01/generated/blender/subjectivity/assembled/frame-${frame}.jpg"
           done
           ffmpeg -y -hide_banner -loglevel error \
             -framerate 24 \
-            -i production/EP01/generated/blender/subjectivity/assembled/frame-%03d.jpg \
+            -i production/EP01/generated/blender/subjectivity/assembled/frame-%04d.jpg \
             -vf "scale=1920:1080:flags=lanczos,format=yuv420p" \
             -c:v libx264 -preset veryfast -crf 20 -movflags +faststart \
             production/EP01/generated/blender/ep01_subjectivity.mp4

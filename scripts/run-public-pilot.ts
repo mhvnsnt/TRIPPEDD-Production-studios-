@@ -8,6 +8,7 @@ import { buildEp01FirstAssembly } from '../src/server/pilotRenderer';
 const folderUrl = process.env.TRIPPEDD_DRIVE_FOLDER_URL || 'https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI';
 const cacheRoot = path.resolve(process.env.TRIPPEDD_MEDIA_CACHE || path.join(process.cwd(), '.trippedd', 'media'));
 const mediaExtensions = new Set(['.mp4', '.mov', '.m4v', '.webm', '.avi', '.mkv', '.mpg', '.mpeg', '.3gp', '.wav', '.mp3', '.m4a']);
+const cutMode = process.env.TRIPPEDD_CUT_MODE === 'AUTONOMOUS' ? 'AUTONOMOUS' : 'SHOWRUNNER';
 
 async function waitForJob(fileId: string) {
   for (;;) {
@@ -21,10 +22,10 @@ async function waitForJob(fileId: string) {
 async function main() {
   await toolManager.initialize();
   await fs.mkdir(cacheRoot, { recursive: true });
-  console.log(`[EP01] Downloading public Drive folder without API key: ${folderUrl}`);
+  console.log(`[EP01/${cutMode}] Downloading public Drive folder without API key: ${folderUrl}`);
   const downloaded = await downloadPublicDriveFolder(folderUrl, cacheRoot);
   const media = downloaded.filter(file => mediaExtensions.has(path.extname(file).toLowerCase()));
-  console.log(`[EP01] Downloaded ${media.length} media file(s).`);
+  console.log(`[EP01/${cutMode}] Downloaded ${media.length} media file(s).`);
   if (!media.length) throw new Error('The public Drive folder produced no supported media files.');
 
   const jobs: string[] = [];
@@ -34,7 +35,7 @@ async function main() {
     const stat = await fs.stat(filePath);
     queueManager.setLocalSource(fileId, filePath);
     if (!queueManager.getJob(fileId)) {
-      queueManager.addJob({ id: `JOB_${fileId}`, fileId, originalName: path.basename(filePath), mimeType: 'video/*', size: stat.size, state: 'QUEUED', progress: 0, logs: ['Credential-free public Drive source.', `Local source: ${filePath}`], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [], sourceOrder } as any);
+      queueManager.addJob({ id: `JOB_${fileId}`, fileId, originalName: path.basename(filePath), mimeType: 'video/*', size: stat.size, state: 'QUEUED', progress: 0, logs: ['Credential-free public Drive source.', `Local source: ${filePath}`, `Cut mode: ${cutMode}`], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [], sourceOrder } as any);
     } else {
       const existing = queueManager.getJob(fileId) as any;
       if (existing) existing.sourceOrder = sourceOrder;
@@ -48,13 +49,13 @@ async function main() {
   for (const job of results) {
     if (job.state === 'FAILED') {
       failed++;
-      console.warn(`[EP01] Skipping failed source ${job.originalName}; continuing with remaining footage.`);
+      console.warn(`[EP01/${cutMode}] Skipping failed source ${job.originalName}; continuing with remaining footage.`);
     } else {
-      console.log(`[EP01] Analyzed ${job.originalName}`);
+      console.log(`[EP01/${cutMode}] Analyzed ${job.originalName}`);
     }
   }
   const usable = jobs.length - failed;
-  console.log(`[EP01] Analysis batch complete: ${usable}/${jobs.length} source jobs usable.`);
+  console.log(`[EP01/${cutMode}] Analysis batch complete: ${usable}/${jobs.length} source jobs usable.`);
   if (!usable) throw new Error(`All ${jobs.length} source analyses failed; refusing to manufacture an assembly from missing evidence.`);
 
   const manifest = await buildEp01FirstAssembly({ maxClips: Number(process.env.EP01_MAX_CLIPS || 24), clipPaddingSeconds: Number(process.env.EP01_CLIP_PADDING || 1.25) });

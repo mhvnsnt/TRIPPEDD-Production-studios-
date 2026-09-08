@@ -22,7 +22,7 @@ The studio uses open-source projects as infrastructure while keeping showrunner/
 
 - **OpenTimelineIO** is the canonical machine-readable editorial interchange layer.
 - OTIO describes editorial structure and references media; it is not a media container.
-- Kdenlive has native OTIO import/export, so the studio does not depend on the deprecated Kdenlive OTIO adapter.
+- Kdenlive 26.08 has native OTIO import/export for multi-track timelines and markers, so the studio does not depend on the deprecated adapter. citeturn0search2turn0search8
 
 ### Generation / finishing
 
@@ -34,7 +34,7 @@ The studio uses open-source projects as infrastructure while keeping showrunner/
 ### Asset and render infrastructure
 
 - **OpenAssetIO** — asset-centric interoperability boundary for production tools and asset management.
-- **OpenCue** — optional distributed render-management layer for scaling generated/VFX jobs beyond one GitHub runner.
+- **OpenCue** — optional distributed render-management layer for scaling generated/VFX jobs beyond one GitHub runner. OpenCue 1.19.1 is the current documented stable release, and the 2026 project has added a Rust distributed scheduler and a feature-complete browser-based OpenCueWeb interface. citeturn0search1turn0search0
 
 ### Audio
 
@@ -61,7 +61,7 @@ TECHNICAL PREFLIGHT
     +--> FFPROBE / HASH / CONTAINER CHECK
     |
     v
-EVIDENCE CACHE
+CHECKSUM-KEYED EVIDENCE CACHE
     |
     +--> SCENES ----+
     +--> FRAMES ----+
@@ -98,19 +98,20 @@ EVIDENCE CACHE
           |                   |
           +---------+---------+
                     v
-                 MASTER
+              MASTER / MEZZANINE
                     |
                     v
-               DISTRIBUTION
+             DELIVERY PROFILES
+             /       |       \
+         YOUTUBE   SOCIAL   ARCHIVE
 ```
 
 ## Current implementation gap list
 
-The studio is deliberately moving from scaffolding to verified capabilities. The following are tracked as engineering work rather than pretending they already exist:
+The studio is deliberately moving from scaffolding to verified capabilities. The remaining items are tracked as engineering work rather than pretending they already exist:
 
-- reusable checksum-keyed analysis cache;
 - exact physical-event placement for generated sequences;
-- parallel Story Runner and Autonomous jobs over shared evidence;
+- parallel Story Runner and Autonomous jobs over the shared evidence cache;
 - audio provenance and loudness QC;
 - frame-level black/silence/title checks;
 - render checkpoints and resumable generated segments;
@@ -119,6 +120,6 @@ The studio is deliberately moving from scaffolding to verified capabilities. The
 - OCIO configuration/version pinning;
 - Kdenlive/MLT project export and render validation;
 - Natron project generation where compositing is actually needed;
-- final delivery profiles and automated deliverable packaging.
+- automated delivery packaging/verification implementation around the delivery profiles.
 
 These are real TODOs, not fake `AVAILABLE` features.

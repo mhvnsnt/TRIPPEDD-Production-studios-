@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Settings, RefreshCw, Play, CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
+import { Settings, RefreshCw, Play, CheckCircle2, AlertCircle } from 'lucide-react';
 import { ToolRegistry } from '../core/tools/registry';
 import { ToolDefinition, ToolStatus } from '../core/types';
 
@@ -49,7 +49,6 @@ export function ToolManager() {
         return <span className="bg-emerald-500/10 text-emerald-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-emerald-500/20"><CheckCircle2 size={12} /> {status}</span>;
       case 'INSTALLING':
         return <span className="bg-blue-500/10 text-blue-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-blue-500/20"><RefreshCw className="animate-spin" size={12} /> {status}</span>;
-      case 'ERROR':
       case 'VERSION_UNSUPPORTED':
         return <span className="bg-neutral-800 text-neutral-500 px-2 py-1 rounded text-xs font-bold flex items-center gap-1 border border-neutral-700"> {status}</span>;
       case 'UNAVAILABLE':

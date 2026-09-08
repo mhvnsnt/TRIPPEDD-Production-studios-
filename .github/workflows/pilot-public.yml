@@ -8,6 +8,7 @@ on:
       - .github/workflows/pilot-public.yml
       - scripts/run-public-pilot.ts
       - scripts/bin/whisper
+      - production/EP01/generated/blender/**
       - src/server/publicDriveFolder.ts
       - src/server/queueManager.ts
       - src/server/mediaPipeline.ts
@@ -38,12 +39,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: pip
 
       - name: Install system media tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg tesseract-ocr
+          sudo apt-get install -y ffmpeg tesseract-ocr blender
 
       - name: Install full open-source media stack
         run: |
@@ -55,6 +55,7 @@ jobs:
           python -c "import whisper; print('Whisper import OK')"
           python -c "import faster_whisper; print('faster-whisper import OK')"
           python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
+          blender --version | head -n 2
 
       - name: Activate production transcription wrapper
         run: |
@@ -67,6 +68,13 @@ jobs:
 
       - name: Verify public Drive access path
         run: python -m gdown --version
+
+      - name: Build generated EP01 subjectivity sequence
+        run: |
+          blender -b --python production/EP01/generated/blender/build_subjectivity.py
+          test -s production/EP01/generated/blender/ep01_subjectivity.mp4
+          test -s production/EP01/generated/blender/ep01_subjectivity.blend
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_subjectivity.mp4
 
       - name: Build EP01 from public Drive footage
         env:
@@ -98,4 +106,6 @@ jobs:
             public/production/EP01-first-assembly.mp4
             public/production/EP01-first-assembly.json
             public/production/EP01-first-assembly.otio
+            production/EP01/generated/blender/ep01_subjectivity.blend
+            production/EP01/generated/blender/ep01_subjectivity.mp4
           if-no-files-found: error

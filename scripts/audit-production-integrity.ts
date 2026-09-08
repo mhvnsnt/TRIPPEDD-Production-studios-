@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 const root = process.cwd();
-const scanRoots = ['src', 'server.ts', 'production/EP01/generated'];
+const scanRoots = ['src', 'scripts', 'server.ts', 'production/EP01/generated'];
 const sourceExtensions = new Set(['.ts', '.tsx', '.js', '.cjs', '.mjs', '.py']);
 const suspiciousPatterns: Array<[string, RegExp]> = [
   ['not-implemented', /not\s+implemented/i],
@@ -10,6 +10,7 @@ const suspiciousPatterns: Array<[string, RegExp]> = [
   ['placeholder-implementation', /placeholder\s+(implementation|logic|function)/i],
   ['stub-implementation', /stub\s+(implementation|function|logic)/i],
   ['implement-me', /IMPLEMENT[_ -]?ME/i],
+  ['fake-available', /(?:status|healthStatus|installationStatus)\s*[:=]\s*['"]AVAILABLE['"]/i],
 ];
 
 async function collectFiles(entry: string): Promise<string[]> {
@@ -40,7 +41,7 @@ for (const file of files) {
 }
 
 const report = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   generatedAt: new Date().toISOString(),
   scannedRoots: scanRoots,
   scannedFiles: files.length,
@@ -49,6 +50,7 @@ const report = {
   policy: {
     emptyProductionSourceIsForbidden: true,
     explicitImplementationStubsAreForbidden: true,
+    hardcodedAvailableHealthStateIsForbidden: true,
     documentationMayDescribeUnimplementedWorkOutsideThisScan: true,
   },
 };

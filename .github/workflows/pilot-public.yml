@@ -73,6 +73,13 @@ jobs:
           test -s production/EP01/generated/blender/ep01_subjectivity.blend
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_subjectivity.mp4
 
+      - name: Build generated Bastard terminal tag
+        run: |
+          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+          test -s production/EP01/generated/blender/ep01_bastard_tag.blend
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_bastard_tag.mp4
+
       - name: Build EP01 showrunner cut
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
@@ -107,4 +114,6 @@ jobs:
             public/production/EP01-SHOWRUNNER.otio
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
+            production/EP01/generated/blender/ep01_bastard_tag.blend
+            production/EP01/generated/blender/ep01_bastard_tag.mp4
           if-no-files-found: error

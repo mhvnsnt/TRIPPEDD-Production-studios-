@@ -100,5 +100,11 @@ scene['TRIPPEDD_PURPOSE'] = 'First mysterious introduction of Bannon/The Bastard
 scene['TRIPPEDD_SOURCE_TRUTH'] = 'This scene is generated and is not physical source evidence.'
 scene['TRIPPEDD_EDITORIAL_POSITION'] = 'TERMINAL_TAG'
 
+# Factory-reset scenes can have no World datablock. Create one explicitly so the
+# render is deterministic across Blender versions/headless runners.
+if scene.world is None:
+    scene.world = bpy.data.worlds.new('TRIPPEDD_Bastard_World')
+scene.world.color = (0.002, 0.002, 0.004)
+
 bpy.ops.wm.save_as_mainfile(filepath=OUT.replace('.mp4', '.blend'))
 bpy.ops.render.render(animation=True)

@@ -72,9 +72,9 @@ The existing stack remains centered on FFmpeg/FFprobe, OpenCV, PySceneDetect, Te
 
 The studio is expanding executable tool discovery to include **Ardour** for serious audio post and **OBS Studio** for capture/recording/monitoring. These are optional capabilities and are only considered available when real health checks succeed.
 
-OpenCue remains the target for distributed rendering when workload justifies a render farm. Its current project documentation describes scalable job scheduling, dependencies, monitoring, Python integration, DCC integrations, and OpenCueWeb browser management. citeturn0search0turn0search2
+OpenCue remains the target for distributed rendering when workload justifies a render farm. Its current project documentation describes scalable job scheduling, dependencies, monitoring, Python integration, DCC integrations, and browser-based OpenCueWeb management.
 
-Kitsu is also recognized as a serious open-source production-tracking candidate for a later integration boundary. Its documentation describes shared production data, assignments, statuses, scheduling, reports, review, publisher workflows, API automation, and self-hosting through Kitsu/Zou. It should not be represented as integrated until an actual connector and health-checked deployment exist. citeturn0search12turn0search13
+Kitsu is also recognized as a serious open-source production-tracking candidate for a later integration boundary. Its documentation describes shared production data, assignments, statuses, scheduling, reports, review, publisher workflows, API automation, and self-hosting through Kitsu/Zou. It should not be represented as integrated until an actual connector and health-checked deployment exist.
 
 Open-source dependencies are adopted as real capabilities with executable health checks and provenance, not as a shopping list. Archived or weakly maintained projects remain optional and should not become hidden required dependencies.
 

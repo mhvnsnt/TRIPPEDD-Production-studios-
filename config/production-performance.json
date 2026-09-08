@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "targetEpisodeMinutes": 15,
+  "targetGenerationWallClockMinutes": 20,
+  "stretchSpeedupFactor": 3,
+  "principles": [
+    "Never trade physical-source truth for speed.",
+    "Never rerun completed deterministic work when a valid content-addressed artifact exists.",
+    "Parallelize independent analysis and render work.",
+    "Encode once per stable stage and prefer remux/concat-copy after normalization.",
+    "Every expensive stage emits timing and cache-hit telemetry."
+  ],
+  "stageTargets": {
+    "ingest": { "cacheRequired": true, "parallel": true },
+    "ffprobe": { "cacheRequired": true, "parallel": true },
+    "sceneDetection": { "cacheRequired": true, "parallel": true },
+    "visualAnalysis": { "cacheRequired": true, "parallel": true },
+    "ocr": { "cacheRequired": true, "parallel": true },
+    "transcription": { "cacheRequired": true, "parallel": true },
+    "sourceSegmentEncoding": { "cacheRequired": true, "parallel": true },
+    "generatedMedia": { "cacheRequired": true, "parallel": true },
+    "assembly": { "cacheRequired": false, "parallel": false },
+    "qc": { "cacheRequired": false, "parallel": true }
+  },
+  "optionalOpenSourceAcceleration": [
+    "OpenImageIO for image inspection and metadata validation",
+    "Demucs for dialogue/music/effects separation",
+    "Blender for procedural 3D generation",
+    "Natron for node-based compositing",
+    "OpenColorIO for deterministic color management",
+    "OpenAssetIO for asset interchange",
+    "Flamenco/OpenCue for distributed rendering when GPU workers are available"
+  ],
+  "policy": {
+    "optionalAccelerationMustBeFeatureGated": true,
+    "benchmarkBeforeAndAfter": true,
+    "productionBranchMustRemainReproducible": true
+  }
+}

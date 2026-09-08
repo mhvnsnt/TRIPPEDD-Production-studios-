@@ -52,8 +52,9 @@ jobs:
       - name: Install production Blender LTS
         run: |
           set -euo pipefail
-          url="https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}"
-          checksum_url="${url%.*}.sha256"
+          base="https://download.blender.org/release/Blender4.5"
+          url="${base}/${BLENDER_ARCHIVE}"
+          checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
           curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"
           curl -fsSL "$checksum_url" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sha256sum -c -

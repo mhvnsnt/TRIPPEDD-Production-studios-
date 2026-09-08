@@ -56,6 +56,7 @@ jobs:
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_ENABLE_WHISPER: 'false'
           WHISPER_MODEL: tiny
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'

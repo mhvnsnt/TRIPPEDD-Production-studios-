@@ -1,5 +1,5 @@
 EP01 PUBLIC BUILD
 
-Trigger the single canonical EP01 production workflow.
-Ingest physical source footage, analyze it, build the source-driven rough assembly, generate the approved subjectivity sequence, and include clearly-labelled generated material in the assembly.
+Run the canonical EP01 production pipeline.
+Ingest physical source footage, analyze it, build the real source-driven rough assembly, generate the EP01 subjectivity sequence, and include clearly-labelled generated material in the assembly.
 Final editorial selection and showrunner greenlight remain human-controlled.

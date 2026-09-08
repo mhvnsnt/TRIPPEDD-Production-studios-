@@ -46,12 +46,15 @@ jobs:
           # PySceneDetect = shot boundaries.
           # OpenCV = frame sampling / visual measurements.
           # OpenAI Whisper = baseline local transcription.
-          # All independent analysis stages run concurrently in mediaPipeline.ts.
-          python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'openai-whisper>=20240930'
+          # faster-whisper = faster CTranslate2 transcription path.
+          # OpenTimelineIO = editorial interchange representation.
+          python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'openai-whisper>=20240930' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
           python -m scenedetect --version
           python -m gdown --version
           python -c "import cv2; print('OpenCV', cv2.__version__)"
           python -c "import whisper; print('Whisper import OK')"
+          python -c "import faster_whisper; print('faster-whisper import OK')"
+          python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
 
       - name: Install Node dependencies
         run: bun install --frozen-lockfile
@@ -64,14 +67,17 @@ jobs:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_ENABLE_WHISPER: 'true'
+          WHISPER_MODEL: 'tiny'
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
+          EP01_RENDER_CONCURRENCY: '2'
         run: timeout 150m bun run pilot:build:public
 
       - name: Verify first assembly exists
         run: |
           test -s public/production/EP01-first-assembly.mp4
           test -s public/production/EP01-first-assembly.json
+          test -s public/production/EP01-first-assembly.otio
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json public/production/EP01-first-assembly.mp4
 
       - name: Upload EP01 first assembly
@@ -81,4 +87,5 @@ jobs:
           path: |
             public/production/EP01-first-assembly.mp4
             public/production/EP01-first-assembly.json
+            public/production/EP01-first-assembly.otio
           if-no-files-found: error

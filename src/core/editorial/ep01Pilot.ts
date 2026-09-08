@@ -1,5 +1,4 @@
 import { EP01_LOST_ACID_SUBJECTIVITY } from './subjectivityRule';
-import type { ProductionFormat } from '../types';
 
 export type PilotBeatKind =
   | 'COLD_OPEN'
@@ -25,7 +24,7 @@ export interface PilotEpisodePlan {
   episodeId: string;
   title: string;
   sourceStory: string;
-  format: ProductionFormat;
+  formatId: string;
   grammar: PilotBeatKind[];
   beats: PilotBeat[];
   subjectivitySequenceId: string;
@@ -56,7 +55,7 @@ export function createEp01PilotPlan(): PilotEpisodePlan {
     title: 'The Walk',
     sourceStory:
       'A real motel hangout grows into a cigar run, interruptions, encounters, and an attempted altered-state experience that ultimately collapses into the character losing the acid he bought.',
-    format: 'HYBRID',
+    formatId: 'HYBRID',
     grammar: [
       'COLD_OPEN',
       'REALITY_ANCHOR',

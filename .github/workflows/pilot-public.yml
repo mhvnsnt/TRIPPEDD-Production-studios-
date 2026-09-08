@@ -1,4 +1,4 @@
-name: EP01 Public Drive Build
+name: EP01 Showrunner Cut
 
 on:
   workflow_dispatch:
@@ -16,14 +16,14 @@ on:
       - src/server/productionMemory.ts
 
 concurrency:
-  group: ep01-public-build-${{ github.ref }}
+  group: ep01-showrunner-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: read
 
 jobs:
-  build-ep01:
+  build-ep01-showrunner:
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
@@ -66,9 +66,6 @@ jobs:
       - name: Install Node dependencies
         run: bun install --frozen-lockfile
 
-      - name: Verify public Drive access path
-        run: python -m gdown --version
-
       - name: Build generated EP01 subjectivity sequence
         run: |
           blender -b --python production/EP01/generated/blender/build_subjectivity.py
@@ -76,36 +73,38 @@ jobs:
           test -s production/EP01/generated/blender/ep01_subjectivity.blend
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_subjectivity.mp4
 
-      - name: Build EP01 from public Drive footage
+      - name: Build EP01 showrunner cut
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_ENABLE_WHISPER: 'true'
           WHISPER_MODEL: 'tiny'
           TRIPPEDD_WHISPER_DEVICE: 'cpu'
-          TRIPPEDD_WHISPER_COMPUTE_TYPE: 'int8'
+          TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
           TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
+          TRIPPEDD_CUT_MODE: SHOWRUNNER
+          TRIPPEDD_OUTPUT_BASENAME: EP01-SHOWRUNNER
           MEDIA_MAX_CONCURRENT: '2'
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '2'
         run: timeout 150m bun run pilot:build:public
 
-      - name: Verify first assembly exists
+      - name: Verify showrunner cut
         run: |
-          test -s public/production/EP01-first-assembly.mp4
-          test -s public/production/EP01-first-assembly.json
-          test -s public/production/EP01-first-assembly.otio
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json public/production/EP01-first-assembly.mp4
+          test -s public/production/EP01-SHOWRUNNER.mp4
+          test -s public/production/EP01-SHOWRUNNER.json
+          test -s public/production/EP01-SHOWRUNNER.otio
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json public/production/EP01-SHOWRUNNER.mp4
 
-      - name: Upload EP01 first assembly
+      - name: Upload showrunner cut
         uses: actions/upload-artifact@v4
         with:
-          name: EP01-first-assembly
+          name: EP01-SHOWRUNNER
           path: |
-            public/production/EP01-first-assembly.mp4
-            public/production/EP01-first-assembly.json
-            public/production/EP01-first-assembly.otio
+            public/production/EP01-SHOWRUNNER.mp4
+            public/production/EP01-SHOWRUNNER.json
+            public/production/EP01-SHOWRUNNER.otio
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
           if-no-files-found: error

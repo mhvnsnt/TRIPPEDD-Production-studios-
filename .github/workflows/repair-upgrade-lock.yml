@@ -1,0 +1,32 @@
+name: Repair upgrade lockfile
+
+on:
+  push:
+    paths:
+      - .github/workflows/repair-upgrade-lock.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Regenerate lockfile and remove one-shot workflow
+        run: |
+          set -euo pipefail
+          bun install
+          rm .github/workflows/repair-upgrade-lock.yml
+          if git diff --quiet -- bun.lock; then
+            git add -A
+            git diff --cached --quiet && exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add bun.lock .github/workflows/repair-upgrade-lock.yml
+          git commit -m 'chore: refresh upgrade branch lockfile'
+          git push

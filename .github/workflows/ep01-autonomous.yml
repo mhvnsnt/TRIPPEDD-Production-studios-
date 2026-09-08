@@ -6,6 +6,7 @@ on:
     paths:
       - production/EP01/RUN-PUBLIC-BUILD
       - .github/workflows/ep01-autonomous.yml
+      - .github/workflows/ep01-story-runner.yml
       - scripts/run-public-pilot.ts
       - scripts/bin/whisper
       - production/EP01/generated/blender/**
@@ -51,24 +52,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Cache Blender archive
         uses: actions/cache@v4
         with:
           path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
           key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
-
       - name: Cache completed subjectivity frames
         uses: actions/cache@v4
         with:
           path: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}/
           key: subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-${{ matrix.chunk }}
-
       - name: Install system render tools
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
-
       - name: Install production Blender LTS
         run: |
           set -euo pipefail
@@ -76,15 +73,12 @@ jobs:
           base="https://download.blender.org/release/Blender4.5"
           url="${base}/${BLENDER_ARCHIVE}"
           checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
-          if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then
-            curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
-          fi
+          if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
           curl -fsSL "$checksum_url" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
-
       - name: Render verified frame chunk
         env:
           TRIPPEDD_FRAME_START: ${{ matrix.start }}
@@ -99,11 +93,7 @@ jobs:
           actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
           test "$actual" -eq "$expected"
           test -s "$TRIPPEDD_FRAME_DIR/subjectivity-${TRIPPEDD_FRAME_START}-${TRIPPEDD_FRAME_END}.blend"
-          printf '{"chunk":"%s","start":%s,"end":%s,"frames":%s,"render_profile":"EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS","generator_sha":"%s"}\n' \
-            "${{ matrix.chunk }}" "$TRIPPEDD_FRAME_START" "$TRIPPEDD_FRAME_END" "$actual" \
-            "${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}" \
-            > "$TRIPPEDD_FRAME_DIR/manifest.json"
-
+          printf '{"chunk":"%s","start":%s,"end":%s,"frames":%s,"render_profile":"EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS","generator_sha":"%s"}\n' "${{ matrix.chunk }}" "$TRIPPEDD_FRAME_START" "$TRIPPEDD_FRAME_END" "$actual" "${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}" > "$TRIPPEDD_FRAME_DIR/manifest.json"
       - name: Upload subjectivity chunk
         uses: actions/upload-artifact@v4
         with:
@@ -120,41 +110,34 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
-
       - name: Cache Whisper model
         uses: actions/cache@v4
         with:
           path: .trippedd/huggingface
           key: trippedd-whisper-tiny-${{ runner.os }}
-
       - name: Cache EP01 assembly segments
         uses: actions/cache@v4
         with:
           path: .trippedd/media/assembly-segments
           key: ep01-assembly-segments-${{ hashFiles('src/server/pilotRenderer.ts') }}-${{ runner.os }}
-
       - name: Install system media tools
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg mediainfo tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
-
       - name: Cache Blender archive
         uses: actions/cache@v4
         with:
           path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
           key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
-
       - name: Install production Blender LTS
         run: |
           set -euo pipefail
@@ -162,22 +145,17 @@ jobs:
           base="https://download.blender.org/release/Blender4.5"
           url="${base}/${BLENDER_ARCHIVE}"
           checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
-          if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then
-            curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
-          fi
+          if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
           curl -fsSL "$checksum_url" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
-          blender --version | head -n 2
-
       - name: Download rendered subjectivity chunks
         uses: actions/download-artifact@v4
         with:
           pattern: EP01-SUBJECTIVITY-CHUNK-*
           path: production/EP01/generated/blender/subjectivity
           merge-multiple: false
-
       - name: Verify all subjectivity frames before assembly
         run: |
           set -euo pipefail
@@ -187,50 +165,30 @@ jobs:
             src="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${frame}.jpg"
             test -s "$src"
           done
-          echo "All 144 subjectivity frames verified."
-
       - name: Assemble subjectivity MP4 with FFmpeg
         run: |
           set -euo pipefail
           mkdir -p production/EP01/generated/blender/subjectivity/assembled
-          for n in $(seq 1 144); do
-            printf -v frame '%04d' "$n"
-            if [ "$n" -le 12 ]; then chunk=01; elif [ "$n" -le 24 ]; then chunk=02; elif [ "$n" -le 36 ]; then chunk=03; elif [ "$n" -le 48 ]; then chunk=04; elif [ "$n" -le 60 ]; then chunk=05; elif [ "$n" -le 72 ]; then chunk=06; elif [ "$n" -le 84 ]; then chunk=07; elif [ "$n" -le 96 ]; then chunk=08; elif [ "$n" -le 108 ]; then chunk=09; elif [ "$n" -le 120 ]; then chunk=10; elif [ "$n" -le 132 ]; then chunk=11; else chunk=12; fi
-            src="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${frame}.jpg"
-            cp "$src" "production/EP01/generated/blender/subjectivity/assembled/frame-${frame}.jpg"
-          done
+          for n in $(seq 1 144); do printf -v frame '%04d' "$n"; if [ "$n" -le 12 ]; then chunk=01; elif [ "$n" -le 24 ]; then chunk=02; elif [ "$n" -le 36 ]; then chunk=03; elif [ "$n" -le 48 ]; then chunk=04; elif [ "$n" -le 60 ]; then chunk=05; elif [ "$n" -le 72 ]; then chunk=06; elif [ "$n" -le 84 ]; then chunk=07; elif [ "$n" -le 96 ]; then chunk=08; elif [ "$n" -le 108 ]; then chunk=09; elif [ "$n" -le 120 ]; then chunk=10; elif [ "$n" -le 132 ]; then chunk=11; else chunk=12; fi; cp "production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${frame}.jpg" "production/EP01/generated/blender/subjectivity/assembled/frame-${frame}.jpg"; done
           ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/subjectivity/assembled/frame-%04d.jpg -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_subjectivity.mp4
           test -s production/EP01/generated/blender/ep01_subjectivity.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json production/EP01/generated/blender/ep01_subjectivity.mp4 > production/EP01/generated/blender/subjectivity-qc.json
           mediainfo production/EP01/generated/blender/ep01_subjectivity.mp4 > production/EP01/generated/blender/subjectivity-mediainfo.txt
-
       - name: Build generated Bastard terminal tag
         run: |
           blender -b --python production/EP01/generated/blender/build_bastard_tag.py
           test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
           test -s production/EP01/generated/blender/ep01_bastard_tag.blend
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_bastard_tag.mp4
-
       - name: Install open-source media stack
         run: |
           python -m pip install --upgrade pip
           python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
-          python -m scenedetect --help >/dev/null
-          python -m gdown --version
-          python -c "import cv2; print('OpenCV', cv2.__version__)"
-          python -c "import faster_whisper; print('faster-whisper import OK')"
-          python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
-          mediainfo --Version
-
       - name: Activate production transcription wrapper
         run: |
           chmod +x scripts/bin/whisper
-          test -x scripts/bin/whisper
           ./scripts/bin/whisper --help
-
       - name: Install Node dependencies
         run: bun install
-
       - name: Build EP01 autonomous cut
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
@@ -249,7 +207,6 @@ jobs:
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '4'
         run: bun run pilot:build:public
-
       - name: Verify autonomous cut
         run: |
           set -euo pipefail
@@ -258,9 +215,6 @@ jobs:
           test -s public/production/EP01-AUTONOMOUS.otio
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.ffprobe.json
           mediainfo public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.mediainfo.txt
-          test -s public/production/EP01-AUTONOMOUS.ffprobe.json
-          test -s public/production/EP01-AUTONOMOUS.mediainfo.txt
-
       - name: Upload autonomous cut
         uses: actions/upload-artifact@v4
         with:

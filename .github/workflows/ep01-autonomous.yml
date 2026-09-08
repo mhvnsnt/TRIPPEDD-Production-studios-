@@ -20,9 +20,6 @@ concurrency:
   group: ep01-autonomous-${{ github.ref }}
   cancel-in-progress: false
 
-authorizations:
-  contents: read
-
 permissions:
   contents: read
 

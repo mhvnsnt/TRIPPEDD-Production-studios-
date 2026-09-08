@@ -27,6 +27,18 @@ export class QueueManager {
     this.tokens.set(fileId, token);
   }
 
+  retry(fileId: string) {
+    const job = this.jobs.get(fileId);
+    if (!job) return false;
+    if (!this.tokens.has(fileId)) return false;
+    job.state = 'QUEUED' as any;
+    job.progress = 0;
+    job.logs.push(`[${new Date().toISOString()}] Retry requested.`);
+    job.updatedAt = new Date().toISOString();
+    void this.processNext();
+    return true;
+  }
+
   addJob(job: MediaJob) {
     if (!this.jobs.has(job.fileId)) {
       this.jobs.set(job.fileId, job);
@@ -48,7 +60,6 @@ export class QueueManager {
     while (this.activeProcessing < this.MAX_CONCURRENT) {
       const job = Array.from(this.jobs.values()).find(j => j.state === 'QUEUED');
       if (!job) return;
-
       this.updateJob(job.fileId, { state: 'PROBING', progress: 1 });
       this.activeProcessing++;
       void this.processJob(job).finally(() => {
@@ -64,8 +75,6 @@ export class QueueManager {
     } catch (e: any) {
       this.log(job.fileId, `FATAL: ${e?.message || String(e)}`);
       this.updateJob(job.fileId, { state: 'FAILED', progress: 100 });
-    } finally {
-      this.tokens.delete(job.fileId);
     }
   }
 
@@ -91,7 +100,6 @@ export class QueueManager {
       tesseract: available('tesseract'),
       whisper: available('whisper'),
     };
-
     if (!tools.ffprobe) throw new Error('ffprobe is required for ingest and is unavailable.');
 
     const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ingest-'));
@@ -110,25 +118,11 @@ export class QueueManager {
         this.updateJob(job.fileId, { state: 'ANALYZING', progress });
       });
 
-      if (result.ffprobe) {
-        job.tools.ffprobe = { status: 'COMPLETED' as const, data: result.ffprobe, provenance: this.provenance(job, 'ffprobe', 'ffprobe -print_format json -show_format -show_streams <local-source>') } as any;
-      }
-      if (result.scenes) {
-        job.tools.pyscenedetect = { status: 'COMPLETED' as const, data: result.scenes, provenance: this.provenance(job, 'pyscenedetect', 'scenedetect detect-content list-scenes <local-source>') } as any;
-      }
-      if (result.visual) {
-        job.tools.opencv = { status: 'COMPLETED' as const, data: result.visual, provenance: this.provenance(job, 'opencv', 'cv2.VideoCapture frame sampling') } as any;
-      }
-      if (result.ocr !== undefined) {
-        job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', 'tesseract <sampled-frame> stdout') } as any;
-      }
-      if (result.transcript !== undefined) {
-        job.tools.whisper = {
-          status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const,
-          data: result.transcript,
-          provenance: this.provenance(job, 'whisper', `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`),
-        } as any;
-      }
+      if (result.ffprobe) job.tools.ffprobe = { status: 'COMPLETED' as const, data: result.ffprobe, provenance: this.provenance(job, 'ffprobe', 'ffprobe -print_format json -show_format -show_streams <local-source>') } as any;
+      if (result.scenes) job.tools.pyscenedetect = { status: 'COMPLETED' as const, data: result.scenes, provenance: this.provenance(job, 'pyscenedetect', 'scenedetect detect-content list-scenes <local-source>') } as any;
+      if (result.visual) job.tools.opencv = { status: 'COMPLETED' as const, data: result.visual, provenance: this.provenance(job, 'opencv', 'cv2.VideoCapture frame sampling') } as any;
+      if (result.ocr !== undefined) job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', 'tesseract <sampled-frame> stdout') } as any;
+      if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`) } as any;
 
       const completedTools = Object.values(tools).filter(Boolean).length;
       this.log(job.fileId, `Analysis complete. ${completedTools}/${Object.keys(tools).length} analysis tools available.`);

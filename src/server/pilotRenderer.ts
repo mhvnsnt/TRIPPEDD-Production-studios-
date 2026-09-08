@@ -3,13 +3,16 @@ import path from 'path';
 import { spawn } from 'child_process';
 import { productionMemory } from './productionMemory';
 
+export type PilotCutMode = 'AUTONOMOUS' | 'SHOWRUNNER';
 export interface PilotAssemblyClip { sourceFileId: string; sourcePath: string; start: number; end: number; gagId?: string; score?: number; reason: string; sourceOrder?: number; }
 export interface PilotAssemblyGeneratedClip { id: string; path: string; purpose: string; provenance: 'GENERATED'; position: 'POST_SOURCE_DISCOVERY'; }
-export interface PilotAssemblyManifest { episodeId: 'EP01'; title: 'The Walk'; status: 'ROUGH_CUT_READY' | 'WAITING_FOR_EVIDENCE'; generatedAt: string; sourceClipCount: number; selectedClipCount: number; clips: PilotAssemblyClip[]; generatedClips: PilotAssemblyGeneratedClip[]; missingBeats: string[]; outputPath?: string; timelinePath?: string; }
+export interface PilotAssemblyManifest { episodeId: 'EP01'; title: 'The Walk'; cutMode: PilotCutMode; status: 'ROUGH_CUT_READY' | 'WAITING_FOR_EVIDENCE'; generatedAt: string; sourceClipCount: number; selectedClipCount: number; clips: PilotAssemblyClip[]; generatedClips: PilotAssemblyGeneratedClip[]; missingBeats: string[]; outputPath?: string; timelinePath?: string; }
 
 const CACHE_ROOT = path.resolve(process.env.TRIPPEDD_MEDIA_CACHE || path.join(process.cwd(), '.trippedd', 'media'));
 const OUTPUT_ROOT = path.resolve(process.env.TRIPPEDD_OUTPUT_DIR || path.join(process.cwd(), 'public', 'production'));
 const GENERATED_SUBJECTIVITY = path.resolve(process.cwd(), 'production', 'EP01', 'generated', 'blender', 'ep01_subjectivity.mp4');
+const CUT_MODE: PilotCutMode = process.env.TRIPPEDD_CUT_MODE === 'AUTONOMOUS' ? 'AUTONOMOUS' : 'SHOWRUNNER';
+const OUTPUT_BASENAME = process.env.TRIPPEDD_OUTPUT_BASENAME || (CUT_MODE === 'AUTONOMOUS' ? 'EP01-AUTONOMOUS' : 'EP01-SHOWRUNNER');
 
 function run(command: string, args: string[]): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -44,18 +47,18 @@ function writeOtioTimeline(clips: PilotAssemblyClip[], generated: PilotAssemblyG
   const otioClips = clips.map((clip, index) => {
     const durationFrames = Math.max(1, Math.round((clip.end - clip.start) * rate));
     const item = {
-      OTIO_SCHEMA: 'Clip.2', name: `EP01-${String(index + 1).padStart(3, '0')}-${clip.gagId || 'select'}`,
+      OTIO_SCHEMA: 'Clip.2', name: `${OUTPUT_BASENAME}-${String(index + 1).padStart(3, '0')}-${clip.gagId || 'select'}`,
       source_range: { OTIO_SCHEMA: 'TimeRange.1', start_time: { OTIO_SCHEMA: 'RationalTime.1', value: Math.round(clip.start * rate), rate }, duration: { OTIO_SCHEMA: 'RationalTime.1', value: durationFrames, rate } },
       media_reference: { OTIO_SCHEMA: 'ExternalReference.1', target_url: clip.sourcePath, available_range: null, metadata: { trippedd: { sourceFileId: clip.sourceFileId, gagId: clip.gagId, score: clip.score, reason: clip.reason, provenance: 'SOURCE_MEDIA' } } },
-      metadata: { trippedd: { timelineStartFrame: timelineFrame, physicalTruth: true, sourceOrder: clip.sourceOrder } }
+      metadata: { trippedd: { timelineStartFrame: timelineFrame, physicalTruth: true, sourceOrder: clip.sourceOrder, cutMode: CUT_MODE } }
     };
     timelineFrame += durationFrames;
     return item;
   });
   for (const item of generated) {
-    otioClips.push({ OTIO_SCHEMA: 'Clip.2', name: item.id, source_range: null, media_reference: { OTIO_SCHEMA: 'ExternalReference.1', target_url: item.path, available_range: null, metadata: { trippedd: { provenance: item.provenance, purpose: item.purpose } } }, metadata: { trippedd: { timelineStartFrame: timelineFrame, physicalTruth: false, generated: true, purpose: item.purpose } } } as any);
+    otioClips.push({ OTIO_SCHEMA: 'Clip.2', name: item.id, source_range: null, media_reference: { OTIO_SCHEMA: 'ExternalReference.1', target_url: item.path, available_range: null, metadata: { trippedd: { provenance: item.provenance, purpose: item.purpose } } }, metadata: { trippedd: { timelineStartFrame: timelineFrame, physicalTruth: false, generated: true, purpose: item.purpose, cutMode: CUT_MODE } } } as any);
   }
-  return { OTIO_SCHEMA: 'Timeline.1', name: 'TRIPPEDD EP01 — The Walk — First Assembly', global_start_time: null, tracks: [{ OTIO_SCHEMA: 'Stack.1', name: 'Video 1', children: [{ OTIO_SCHEMA: 'Track.1', name: 'Picture', kind: 'Video', children: otioClips }] }], metadata: { trippedd: { episodeId: 'EP01', editorialStatus: 'ROUGH_CUT', physicalSourceChronology: 'AUTHORITATIVE_FOR_WHAT_HAPPENED', generatedMaterialPolicy: 'GENERATED_MATERIAL_IS_EXPLICITLY_NON_PHYSICAL', generatedSequences: generated.map(item => item.id), nextStages: ['EDITORIAL_REVIEW', 'FINAL_EDITORIAL_ASSEMBLY', 'QC', 'SHOWRUNNER_GREENLIGHT'] } } };
+  return { OTIO_SCHEMA: 'Timeline.1', name: `TRIPPEDD EP01 — The Walk — ${CUT_MODE} Cut`, global_start_time: null, tracks: [{ OTIO_SCHEMA: 'Stack.1', name: 'Video 1', children: [{ OTIO_SCHEMA: 'Track.1', name: 'Picture', kind: 'Video', children: otioClips }] }], metadata: { trippedd: { episodeId: 'EP01', cutMode: CUT_MODE, editorialStatus: 'ROUGH_CUT', physicalSourceChronology: 'AUTHORITATIVE_FOR_WHAT_HAPPENED', generatedMaterialPolicy: 'GENERATED_MATERIAL_IS_EXPLICITLY_NON_PHYSICAL', generatedSequences: generated.map(item => item.id), nextStages: ['EDITORIAL_REVIEW', 'FINAL_EDITORIAL_ASSEMBLY', 'QC', 'SHOWRUNNER_GREENLIGHT'] } } };
 }
 
 export async function buildEp01FirstAssembly(options: { maxClips?: number; clipPaddingSeconds?: number } = {}): Promise<PilotAssemblyManifest> {
@@ -91,16 +94,19 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
   const hasSubjectivity = await fs.access(GENERATED_SUBJECTIVITY).then(() => true).catch(() => false);
   const generatedClips: PilotAssemblyGeneratedClip[] = hasSubjectivity ? [{ id: 'ep01-lost-acid-subjectivity', path: GENERATED_SUBJECTIVITY, purpose: "Audience sees the character's subjective experience before returning to live action; generated material is not physical source evidence.", provenance: 'GENERATED', position: 'POST_SOURCE_DISCOVERY' }] : [];
   const missingBeats = selected.length ? ['STORY_REVIEW', ...(hasSubjectivity ? [] : ['SUBJECTIVITY_GENERATION']), 'FINAL_EDITORIAL_ASSEMBLY', 'QC', 'GREENLIGHT'] : ['MEDIA_ANALYSIS', 'GAG_DISCOVERY', 'SOURCE_SELECTS'];
-  const manifest: PilotAssemblyManifest = { episodeId: 'EP01', title: 'The Walk', status: selected.length ? 'ROUGH_CUT_READY' : 'WAITING_FOR_EVIDENCE', generatedAt: new Date().toISOString(), sourceClipCount: sourcePaths.size, selectedClipCount: selected.length, clips: selected, generatedClips, missingBeats };
+  const manifest: PilotAssemblyManifest = { episodeId: 'EP01', title: 'The Walk', cutMode: CUT_MODE, status: selected.length ? 'ROUGH_CUT_READY' : 'WAITING_FOR_EVIDENCE', generatedAt: new Date().toISOString(), sourceClipCount: sourcePaths.size, selectedClipCount: selected.length, clips: selected, generatedClips, missingBeats };
 
   await fs.mkdir(OUTPUT_ROOT, { recursive: true });
-  await fs.writeFile(path.join(OUTPUT_ROOT, 'EP01-first-assembly.otio'), JSON.stringify(writeOtioTimeline(selected, generatedClips), null, 2), 'utf8');
-  manifest.timelinePath = '/production/EP01-first-assembly.otio';
-  await fs.writeFile(path.join(OUTPUT_ROOT, 'EP01-first-assembly.json'), JSON.stringify(manifest, null, 2), 'utf8');
+  const otioPath = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}.otio`);
+  const jsonPath = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}.json`);
+  const outputPath = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}.mp4`);
+  await fs.writeFile(otioPath, JSON.stringify(writeOtioTimeline(selected, generatedClips), null, 2), 'utf8');
+  manifest.timelinePath = `/production/${OUTPUT_BASENAME}.otio`;
+  await fs.writeFile(jsonPath, JSON.stringify(manifest, null, 2), 'utf8');
   if (!selected.length) return manifest;
 
-  const listPath = path.join(OUTPUT_ROOT, 'EP01-first-assembly.concat.txt');
-  const segmentDir = path.join(OUTPUT_ROOT, 'EP01-first-assembly-segments');
+  const listPath = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}.concat.txt`);
+  const segmentDir = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}-segments`);
   await fs.rm(segmentDir, { recursive: true, force: true });
   await fs.mkdir(segmentDir, { recursive: true });
   const segmentPaths: string[] = Array(selected.length + generatedClips.length);
@@ -120,9 +126,8 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
 
   const concatText = segmentPaths.map(file => `file '${file.replace(/'/g, "'\\''")}'`).join('\n') + '\n';
   await fs.writeFile(listPath, concatText, 'utf8');
-  const outputPath = path.join(OUTPUT_ROOT, 'EP01-first-assembly.mp4');
   await run('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', listPath, '-c', 'copy', '-movflags', '+faststart', outputPath]);
-  manifest.outputPath = '/production/EP01-first-assembly.mp4';
-  await fs.writeFile(path.join(OUTPUT_ROOT, 'EP01-first-assembly.json'), JSON.stringify(manifest, null, 2), 'utf8');
+  manifest.outputPath = `/production/${OUTPUT_BASENAME}.mp4`;
+  await fs.writeFile(jsonPath, JSON.stringify(manifest, null, 2), 'utf8');
   return manifest;
 }

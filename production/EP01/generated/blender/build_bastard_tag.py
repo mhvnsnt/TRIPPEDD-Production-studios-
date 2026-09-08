@@ -72,11 +72,11 @@ for i in range(180):
     r = bpy.context.object; r.data.materials.append(rain_mat); r.rotation_euler[0] = math.radians(10)
     r.keyframe_insert('location', frame=1, index=2); r.location.z -= 8; r.keyframe_insert('location', frame=scene.frame_end, index=2)
 
-# Lightning: one brief flash.
+# Lightning: one brief flash. Energy is a LightData property, so keyframe the data block.
 bpy.ops.object.light_add(type='POINT', location=(0, 2, 7))
 flash = bpy.context.object; flash.data.energy = 0
 for f, e in [(1, 0), (36, 0), (42, 12000), (46, 0), (scene.frame_end, 0)]:
-    flash.data.energy = e; flash.keyframe_insert('energy', frame=f)
+    flash.data.energy = e; flash.data.keyframe_insert(data_path='energy', frame=f)
 
 # Terminal title card appears only after the picture cuts to black.
 bpy.ops.object.text_add(location=(0, 0, -1.8), rotation=(math.radians(90), 0, 0))

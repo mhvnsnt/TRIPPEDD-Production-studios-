@@ -32,10 +32,14 @@ async function main() {
   for (const filePath of media) {
     const fileId = `PUBLIC_${Buffer.from(path.resolve(filePath)).toString('base64url').slice(-48)}`;
     const stat = await fs.stat(filePath);
+    // Register the local source before queueing the job. QueueManager also guards
+    // against the inverse order, but this is the canonical race-free path.
+    queueManager.setLocalSource(fileId, filePath);
     if (!queueManager.getJob(fileId)) {
       queueManager.addJob({ id: `JOB_${fileId}`, fileId, originalName: path.basename(filePath), mimeType: 'video/*', size: stat.size, state: 'QUEUED', progress: 0, logs: ['Credential-free public Drive source.', `Local source: ${filePath}`], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [] } as any);
+    } else {
+      queueManager.setLocalSource(fileId, filePath);
     }
-    queueManager.setLocalSource(fileId, filePath);
     jobs.push(fileId);
   }
 

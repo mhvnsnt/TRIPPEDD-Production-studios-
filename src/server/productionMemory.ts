@@ -32,33 +32,33 @@ export class ProductionMemoryStore {
   }
 
   async upsert(projectId: string, patch: Partial<Omit<ProductionMemorySnapshot, 'projectId' | 'updatedAt'>>): Promise<ProductionMemorySnapshot> {
-    const current = await this.load(projectId);
-    const next: ProductionMemorySnapshot = {
-      ...current,
-      ...patch,
-      sources: { ...current.sources, ...(patch.sources ?? {}) },
-      observations: { ...current.observations, ...(patch.observations ?? {}) },
-      gags: { ...current.gags, ...(patch.gags ?? {}) },
-      callbacks: { ...current.callbacks, ...(patch.callbacks ?? {}) },
-      segments: { ...current.segments, ...(patch.segments ?? {}) },
-      jobs: { ...current.jobs, ...(patch.jobs ?? {}) },
-      projectId,
-      updatedAt: new Date().toISOString(),
-    };
-
+    let committed: ProductionMemorySnapshot = this.empty(projectId);
     this.writeChain = this.writeChain.then(async () => {
+      const current = await this.load(projectId);
+      committed = {
+        ...current,
+        ...patch,
+        sources: { ...current.sources, ...(patch.sources ?? {}) },
+        observations: { ...current.observations, ...(patch.observations ?? {}) },
+        gags: { ...current.gags, ...(patch.gags ?? {}) },
+        callbacks: { ...current.callbacks, ...(patch.callbacks ?? {}) },
+        segments: { ...current.segments, ...(patch.segments ?? {}) },
+        jobs: { ...current.jobs, ...(patch.jobs ?? {}) },
+        projectId,
+        updatedAt: new Date().toISOString(),
+      };
       await fs.mkdir(path.dirname(this.filePath), { recursive: true });
       const temporary = `${this.filePath}.tmp`;
-      await fs.writeFile(temporary, JSON.stringify(next, null, 2), 'utf8');
+      await fs.writeFile(temporary, JSON.stringify(committed, null, 2), 'utf8');
       await fs.rename(temporary, this.filePath);
     });
     await this.writeChain;
 
     const autoBuild = process.env.TRIPPEDD_AUTO_FIRST_ASSEMBLY === 'true';
-    if (autoBuild && projectId === 'trippedd' && patch.jobs && Object.keys(next.jobs).length > 0 && !this.pilotBuildRunning) {
-      const jobs = Object.values(next.jobs) as Array<{ state?: string }>;
+    if (autoBuild && projectId === 'trippedd' && patch.jobs && Object.keys(committed.jobs).length > 0 && !this.pilotBuildRunning) {
+      const jobs = Object.values(committed.jobs) as Array<{ state?: string }>;
       const allTerminal = jobs.every(job => job.state === 'NEEDS_REVIEW' || job.state === 'COMPLETED' || job.state === 'FAILED');
-      if (allTerminal && Object.keys(next.sources).length > 0) {
+      if (allTerminal && Object.keys(committed.sources).length > 0) {
         this.pilotBuildRunning = true;
         void import('./pilotRenderer')
           .then(({ buildEp01FirstAssembly }) => buildEp01FirstAssembly())
@@ -68,7 +68,7 @@ export class ProductionMemoryStore {
       }
     }
 
-    return next;
+    return committed;
   }
 
   async recordGags(projectId: string, gags: any[]): Promise<ProductionMemorySnapshot> {

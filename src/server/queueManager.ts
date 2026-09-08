@@ -19,7 +19,25 @@ export class QueueManager {
 
   getJob(fileId: string): MediaJob | undefined {
     const job = this.jobs.get(fileId);
-    return job ? this.publicJob(job) : undefined;
+    if (!job) return undefined;
+
+    const manager = this;
+    return new Proxy(job as any, {
+      get(target, property, receiver) {
+        if (property === 'token') return undefined;
+        if (property === 'toJSON') return () => manager.publicJob(target);
+        return Reflect.get(target, property, receiver);
+      },
+      set(target, property, value, receiver) {
+        if (property === 'token') {
+          if (typeof value === 'string' && value) manager.tokens.set(fileId, value);
+          return true;
+        }
+        const changed = Reflect.set(target, property, value, receiver);
+        target.updatedAt = new Date().toISOString();
+        return changed;
+      },
+    }) as MediaJob;
   }
 
   setAccessToken(fileId: string, token: string) {
@@ -29,8 +47,7 @@ export class QueueManager {
 
   retry(fileId: string) {
     const job = this.jobs.get(fileId);
-    if (!job) return false;
-    if (!this.tokens.has(fileId)) return false;
+    if (!job || !this.tokens.has(fileId)) return false;
     job.state = 'QUEUED' as any;
     job.progress = 0;
     job.logs.push(`[${new Date().toISOString()}] Retry requested.`);

@@ -19,6 +19,8 @@ concurrency:
   group: ep01-autonomous-${{ github.ref }}
   cancel-in-progress: false
 
+auto_cancel_stale_runs: false
+
 permissions:
   contents: read
 
@@ -30,23 +32,24 @@ jobs:
   render-subjectivity:
     name: Render subjectivity chunk ${{ matrix.chunk }}
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 20
     strategy:
       fail-fast: false
+      max-parallel: 6
       matrix:
         include:
-          - chunk: '01'
-            start: 1
-            end: 36
-          - chunk: '02'
-            start: 37
-            end: 72
-          - chunk: '03'
-            start: 73
-            end: 108
-          - chunk: '04'
-            start: 109
-            end: 144
+          - { chunk: '01', start: 1, end: 12 }
+          - { chunk: '02', start: 13, end: 24 }
+          - { chunk: '03', start: 25, end: 36 }
+          - { chunk: '04', start: 37, end: 48 }
+          - { chunk: '05', start: 49, end: 60 }
+          - { chunk: '06', start: 61, end: 72 }
+          - { chunk: '07', start: 73, end: 84 }
+          - { chunk: '08', start: 85, end: 96 }
+          - { chunk: '09', start: 97, end: 108 }
+          - { chunk: '10', start: 109, end: 120 }
+          - { chunk: '11', start: 121, end: 132 }
+          - { chunk: '12', start: 133, end: 144 }
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -56,6 +59,12 @@ jobs:
         with:
           path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
           key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
+
+      - name: Cache completed subjectivity frames
+        uses: actions/cache@v4
+        with:
+          path: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}/
+          key: subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-${{ matrix.chunk }}
 
       - name: Install system render tools
         run: |
@@ -85,14 +94,16 @@ jobs:
           TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}
         run: |
           set -euo pipefail
-          echo "Rendering frames ${TRIPPEDD_FRAME_START}-${TRIPPEDD_FRAME_END}"
-          time blender -b --python production/EP01/generated/blender/build_subjectivity.py
           expected=$((TRIPPEDD_FRAME_END - TRIPPEDD_FRAME_START + 1))
+          existing=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' 2>/dev/null | wc -l || true)
+          echo "Chunk ${{ matrix.chunk }}: ${existing}/${expected} checkpoint frames already present"
+          time blender -b --python production/EP01/generated/blender/build_subjectivity.py
           actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
           test "$actual" -eq "$expected"
           test -s "$TRIPPEDD_FRAME_DIR/subjectivity-${TRIPPEDD_FRAME_START}-${TRIPPEDD_FRAME_END}.blend"
-          printf '{"chunk":"%s","start":%s,"end":%s,"frames":%s,"render_profile":"EEVEE_NEXT_2_SAMPLES_960x540_JPEG_CHUNKED"}\n' \
+          printf '{"chunk":"%s","start":%s,"end":%s,"frames":%s,"render_profile":"EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS","generator_sha":"%s"}\n' \
             "${{ matrix.chunk }}" "$TRIPPEDD_FRAME_START" "$TRIPPEDD_FRAME_END" "$actual" \
+            "${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}" \
             > "$TRIPPEDD_FRAME_DIR/manifest.json"
 
       - name: Upload subjectivity chunk
@@ -101,7 +112,7 @@ jobs:
           name: EP01-SUBJECTIVITY-CHUNK-${{ matrix.chunk }}
           path: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}/
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 30
 
   build-ep01-autonomous:
     name: Assemble and build EP01 Autonomous
@@ -126,7 +137,7 @@ jobs:
       - name: Install system media tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+          sudo apt-get install -y ffmpeg mediainfo tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
 
       - name: Cache Blender archive
         uses: actions/cache@v4
@@ -157,44 +168,31 @@ jobs:
           path: production/EP01/generated/blender/subjectivity
           merge-multiple: false
 
+      - name: Verify all subjectivity frames before assembly
+        run: |
+          set -euo pipefail
+          for n in $(seq 1 144); do
+            printf -v frame '%04d' "$n"
+            if [ "$n" -le 12 ]; then chunk=01; elif [ "$n" -le 24 ]; then chunk=02; elif [ "$n" -le 36 ]; then chunk=03; elif [ "$n" -le 48 ]; then chunk=04; elif [ "$n" -le 60 ]; then chunk=05; elif [ "$n" -le 72 ]; then chunk=06; elif [ "$n" -le 84 ]; then chunk=07; elif [ "$n" -le 96 ]; then chunk=08; elif [ "$n" -le 108 ]; then chunk=09; elif [ "$n" -le 120 ]; then chunk=10; elif [ "$n" -le 132 ]; then chunk=11; else chunk=12; fi
+            src="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${frame}.jpg"
+            test -s "$src"
+          done
+          echo "All 144 subjectivity frames verified."
+
       - name: Assemble subjectivity MP4 with FFmpeg
         run: |
           set -euo pipefail
-          mkdir -p production/EP01/generated/blender
-          for chunk in 01 02 03 04; do
-            dir="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}"
-            test -s "$dir/manifest.json"
-            case "$chunk" in
-              01) start=1; end=36 ;;
-              02) start=37; end=72 ;;
-              03) start=73; end=108 ;;
-              04) start=109; end=144 ;;
-            esac
-            expected=$((end-start+1))
-            actual=$(find "$dir" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
-            test "$actual" -eq "$expected"
-          done
-          rm -rf production/EP01/generated/blender/subjectivity/assembled
           mkdir -p production/EP01/generated/blender/subjectivity/assembled
           for n in $(seq 1 144); do
             printf -v frame '%04d' "$n"
-            if [ "$n" -le 36 ]; then chunk=01; else
-              if [ "$n" -le 72 ]; then chunk=02; else
-                if [ "$n" -le 108 ]; then chunk=03; else chunk=04; fi
-              fi
-            fi
+            if [ "$n" -le 12 ]; then chunk=01; elif [ "$n" -le 24 ]; then chunk=02; elif [ "$n" -le 36 ]; then chunk=03; elif [ "$n" -le 48 ]; then chunk=04; elif [ "$n" -le 60 ]; then chunk=05; elif [ "$n" -le 72 ]; then chunk=06; elif [ "$n" -le 84 ]; then chunk=07; elif [ "$n" -le 96 ]; then chunk=08; elif [ "$n" -le 108 ]; then chunk=09; elif [ "$n" -le 120 ]; then chunk=10; elif [ "$n" -le 132 ]; then chunk=11; else chunk=12; fi
             src="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${frame}.jpg"
-            test -s "$src"
             cp "$src" "production/EP01/generated/blender/subjectivity/assembled/frame-${frame}.jpg"
           done
-          ffmpeg -y -hide_banner -loglevel error \
-            -framerate 24 \
-            -i production/EP01/generated/blender/subjectivity/assembled/frame-%04d.jpg \
-            -vf "scale=1920:1080:flags=lanczos,format=yuv420p" \
-            -c:v libx264 -preset veryfast -crf 20 -movflags +faststart \
-            production/EP01/generated/blender/ep01_subjectivity.mp4
+          ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/subjectivity/assembled/frame-%04d.jpg -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_subjectivity.mp4
           test -s production/EP01/generated/blender/ep01_subjectivity.mp4
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json production/EP01/generated/blender/ep01_subjectivity.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json production/EP01/generated/blender/ep01_subjectivity.mp4 > production/EP01/generated/blender/subjectivity-qc.json
+          mediainfo production/EP01/generated/blender/ep01_subjectivity.mp4 > production/EP01/generated/blender/subjectivity-mediainfo.txt
 
       - name: Build generated Bastard terminal tag
         run: |
@@ -212,6 +210,7 @@ jobs:
           python -c "import cv2; print('OpenCV', cv2.__version__)"
           python -c "import faster_whisper; print('faster-whisper import OK')"
           python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
+          mediainfo --Version
 
       - name: Activate production transcription wrapper
         run: |
@@ -245,7 +244,10 @@ jobs:
           test -s public/production/EP01-AUTONOMOUS.mp4
           test -s public/production/EP01-AUTONOMOUS.json
           test -s public/production/EP01-AUTONOMOUS.otio
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json public/production/EP01-AUTONOMOUS.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.ffprobe.json
+          mediainfo public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.mediainfo.txt
+          test -s public/production/EP01-AUTONOMOUS.ffprobe.json
+          test -s public/production/EP01-AUTONOMOUS.mediainfo.txt
 
       - name: Upload autonomous cut
         uses: actions/upload-artifact@v4
@@ -255,8 +257,12 @@ jobs:
             public/production/EP01-AUTONOMOUS.mp4
             public/production/EP01-AUTONOMOUS.json
             public/production/EP01-AUTONOMOUS.otio
+            public/production/EP01-AUTONOMOUS.ffprobe.json
+            public/production/EP01-AUTONOMOUS.mediainfo.txt
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
+            production/EP01/generated/blender/subjectivity-qc.json
+            production/EP01/generated/blender/subjectivity-mediainfo.txt
             production/EP01/generated/blender/ep01_bastard_tag.blend
             production/EP01/generated/blender/ep01_bastard_tag.mp4
           if-no-files-found: error

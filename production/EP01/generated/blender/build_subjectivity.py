@@ -1,9 +1,14 @@
 """EP01 subjectivity sequence generator.
 
-Run with Blender in background mode:
-  blender -b --python build_subjectivity.py
+Run with Blender in background mode. The render range is controlled by:
+  TRIPPEDD_FRAME_START / TRIPPEDD_FRAME_END
+  TRIPPEDD_FRAME_DIR
 
-This creates both the intermediate .blend scene and a real MP4 render.
+The generator writes individual JPEG frames instead of rendering directly to an
+MP4. The CI workflow renders independent frame chunks in parallel and assembles
+the verified chunks with FFmpeg. That makes cancellation/retry cheap and avoids
+losing a multi-hour partially encoded movie.
+
 The sequence is explicitly GENERATED and is never physical source evidence.
 """
 import bpy
@@ -13,8 +18,14 @@ import os
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
 OUTPUT_DIR = os.path.join(ROOT, "production", "EP01", "generated", "blender")
 BLEND_OUTPUT = os.path.join(OUTPUT_DIR, "ep01_subjectivity.blend")
-VIDEO_OUTPUT = os.path.join(OUTPUT_DIR, "ep01_subjectivity.mp4")
+FRAME_DIR = os.environ.get("TRIPPEDD_FRAME_DIR", os.path.join(OUTPUT_DIR, "subjectivity_frames"))
+FRAME_START = int(os.environ.get("TRIPPEDD_FRAME_START", "1"))
+FRAME_END = int(os.environ.get("TRIPPEDD_FRAME_END", "144"))
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(FRAME_DIR, exist_ok=True)
+
+if FRAME_START < 1 or FRAME_END < FRAME_START or FRAME_END > 144:
+    raise SystemExit(f"Invalid subjectivity frame range: {FRAME_START}-{FRAME_END}")
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
 world = bpy.data.worlds.new("EP01 Subjective World")
@@ -64,23 +75,21 @@ for loc in ((-6, -4, 8), (6, 2, 6), (0, 12, 10)):
 
 scene = bpy.context.scene
 scene.render.engine = 'BLENDER_EEVEE_NEXT'
-scene.render.resolution_x = 1920
-scene.render.resolution_y = 1080
-scene.render.resolution_percentage = 50
-# The previous run used Blender's default 64 EEVEE render samples and spent ~74s/frame.
-# This is a stylized subjective insert, so 4 samples is an intentional production setting:
-# fast enough for CI, with the same composition/material language and no dependency on Cycles.
-scene.eevee.taa_render_samples = 4
-scene.render.image_settings.file_format = 'FFMPEG'
-scene.render.ffmpeg.format = 'MPEG4'
-scene.render.ffmpeg.codec = 'H264'
-scene.render.ffmpeg.constant_rate_factor = 'MEDIUM'
+# Generated inserts do not need full-resolution source treatment. Rendering at
+# 960x540 and 2 samples keeps the visual rupture while cutting CI render cost
+# dramatically; the editorial renderer can scale the generated insert to the
+# delivery canvas during assembly.
+scene.render.resolution_x = 960
+scene.render.resolution_y = 540
+scene.render.resolution_percentage = 100
+scene.eevee.taa_render_samples = 2
+scene.render.image_settings.file_format = 'JPEG'
+scene.render.image_settings.color_mode = 'RGB'
+scene.render.image_settings.quality = 92
 scene.render.fps = 24
-scene.render.filepath = VIDEO_OUTPUT
 scene.frame_start = 1
-# Six seconds at 24fps: long enough to establish the rupture without turning a generated
-# insert into a multi-hour CI render.
 scene.frame_end = 144
+scene.render.filepath = os.path.join(FRAME_DIR, "frame-")
 
 for frame in (1, 36, 72, 108, 144):
     camera.location = (math.sin(frame * 0.035) * 4, -18 + frame * 0.035, 4 + math.cos(frame * 0.03) * 2)
@@ -93,7 +102,13 @@ scene["TRIPPEDD_SEQUENCE_ID"] = "ep01-lost-acid-subjectivity"
 scene["TRIPPEDD_PURPOSE"] = "Audience sees the character's subjective experience; character may dismiss it on return to live action."
 scene["TRIPPEDD_SOURCE_TRUTH"] = "This scene is not physical source evidence."
 scene["TRIPPEDD_EDITORIAL_RETURN"] = "Return to live action before the character says it was not even shit."
-scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_4_SAMPLES_50_PERCENT_6_SECONDS"
+scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_2_SAMPLES_960x540_JPEG_CHUNKED"
+scene["TRIPPEDD_FRAME_RANGE"] = f"{FRAME_START}-{FRAME_END}"
 
-bpy.ops.wm.save_as_mainfile(filepath=BLEND_OUTPUT)
+# Every chunk carries a scene file so a failed chunk is independently inspectable.
+chunk_blend = os.path.join(FRAME_DIR, f"subjectivity-{FRAME_START:04d}-{FRAME_END:04d}.blend")
+bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
+
+scene.frame_start = FRAME_START
+scene.frame_end = FRAME_END
 bpy.ops.render.render(animation=True)

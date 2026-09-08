@@ -14,6 +14,7 @@ export class QueueManager {
   private tokens = new Map<string, string>();
   private activeProcessing = 0;
   private MAX_CONCURRENT = Math.max(1, Number(process.env.MEDIA_MAX_CONCURRENT || 1));
+  private readonly mediaCacheDir = process.env.TRIPPEDD_MEDIA_CACHE || path.join(process.cwd(), '.trippedd', 'media');
   private studio = new AutonomousStudioOrchestrator();
   private sourcePlans = new Map<string, ProductionWorkItem[]>();
 
@@ -144,17 +145,25 @@ export class QueueManager {
     };
     if (!tools.ffprobe) throw new Error('ffprobe is required for ingest and is unavailable.');
 
-    const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ingest-'));
+    await fs.mkdir(this.mediaCacheDir, { recursive: true });
     const extension = path.extname(job.originalName || '') || '.media';
-    const localFilePath = path.join(tmpDir, `source${extension}`);
+    const localFilePath = path.join(this.mediaCacheDir, `${job.fileId}${extension}`);
+    const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ingest-'));
+    const downloadPath = path.join(tmpDir, `source${extension}`);
 
     try {
-      this.log(job.fileId, '[download] Streaming source media from Google Drive.');
-      this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING', progress: 8 });
-      await downloadToFile(mediaUrl, token, localFilePath);
-      this.log(job.fileId, '[download] Source media is locally available.');
+      try {
+        await fs.access(localFilePath);
+        this.log(job.fileId, '[download] Reusing cached source media.');
+      } catch {
+        this.log(job.fileId, '[download] Streaming source media from Google Drive into production cache.');
+        this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING', progress: 8 });
+        await downloadToFile(mediaUrl, token, downloadPath);
+        await fs.rename(downloadPath, localFilePath);
+        this.log(job.fileId, '[download] Source media cached for editorial rendering.');
+      }
       this.updateJob(job.fileId, { state: 'ANALYZING', progress: 10 });
-      this.completePlanKind(job.fileId, 'INGEST', [`source:${job.fileId}`]);
+      this.completePlanKind(job.fileId, 'INGEST', [`source:${job.fileId}`, `media:${localFilePath}`]);
 
       const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => {
         this.log(job.fileId, `[${stage}] ${message}`);
@@ -168,21 +177,21 @@ export class QueueManager {
       if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`) } as any;
 
       this.completePlanKind(job.fileId, 'MEDIA_ANALYSIS', [`analysis:${job.fileId}`]);
-      const comedy = discoverComedy({ transcript: result.transcript, scenes: result.scenes, ocr: result.ocr });
+      const comedy = discoverComedy({ sourceFileId: job.fileId, transcript: result.transcript, scenes: result.scenes, ocr: result.ocr });
       await productionMemory.recordGags('trippedd', comedy);
       this.completePlanKind(job.fileId, 'GAG_DISCOVERY', comedy.map(gag => `gag:${gag.id}`));
       const snapshot = await productionMemory.upsert('trippedd', {
-        sources: { [job.fileId]: { fileId: job.fileId, name: job.originalName, ingestedAt: new Date().toISOString(), analysis: result } },
-        jobs: { [job.fileId]: { state: 'NEEDS_REVIEW', updatedAt: new Date().toISOString(), gagCount: comedy.length } },
+        sources: { [job.fileId]: { fileId: job.fileId, name: job.originalName, mediaPath: localFilePath, ingestedAt: new Date().toISOString(), analysis: result } },
+        jobs: { [job.fileId]: { state: 'NEEDS_REVIEW', updatedAt: new Date().toISOString(), gagCount: comedy.length, mediaPath: localFilePath } },
       });
-      (job as any).productionIntelligence = { gagCandidates: comedy, callbackKeys: comedy.flatMap(g => g.callbackKeys), memoryUpdatedAt: snapshot.updatedAt };
+      (job as any).productionIntelligence = { gagCandidates: comedy, callbackKeys: comedy.flatMap(g => g.callbackKeys), mediaPath: localFilePath, memoryUpdatedAt: snapshot.updatedAt };
       this.log(job.fileId, `Comedy discovery produced ${comedy.length} machine-suggested candidates; source evidence remains unchanged.`);
       this.log(job.fileId, 'Autonomous plan advanced through ingest, analysis, and gag discovery. Story development is now waiting at the human review gate.');
 
       const completedTools = Object.values(tools).filter(Boolean).length;
       this.log(job.fileId, `Analysis complete. ${completedTools}/${Object.keys(tools).length} analysis tools available.`);
       this.updateJob(job.fileId, { state: 'NEEDS_REVIEW', progress: 100 });
-      this.log(job.fileId, 'Pipeline completed with real tool outputs and production intelligence.');
+      this.log(job.fileId, 'Pipeline completed with real tool outputs and production intelligence. Source media is retained for editorial assembly.');
     } finally {
       await fs.rm(tmpDir, { recursive: true, force: true });
     }

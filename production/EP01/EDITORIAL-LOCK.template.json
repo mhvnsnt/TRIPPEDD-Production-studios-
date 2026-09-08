@@ -1,0 +1,20 @@
+{
+  "episodeId": "EP01",
+  "title": "The Walk",
+  "status": "PENDING_HUMAN_REVIEW",
+  "segments": [
+    "<absolute-path-to-approved-motel-reality-segment>",
+    "<absolute-path-to-approved-walk-bag-segment>",
+    "<absolute-path-to-approved-joe-goodville-segment>",
+    "<absolute-path-to-generated-subjectivity-mp4>",
+    "<absolute-path-to-approved-return-to-live-action-segment>",
+    "<absolute-path-to-lost-acid-button-segment>"
+  ],
+  "rules": [
+    "Source chronology remains authoritative for physical events.",
+    "Generated subjectivity is labeled GENERATED and never treated as physical evidence.",
+    "Return to live action before the character dismisses the experience.",
+    "The lost-acid disappearance is not solved.",
+    "Nothing follows the terminal button."
+  ]
+}

@@ -57,7 +57,7 @@ jobs:
           checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
           curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"
           curl -fsSL "$checksum_url" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sha256sum -c -
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/tmp/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "/tmp/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
@@ -65,8 +65,6 @@ jobs:
       - name: Install open-source media stack
         run: |
           python -m pip install --upgrade pip
-          # faster-whisper is the production backend. Do not install openai-whisper here:
-          # its current torch dependency pulls a multi-GB CUDA stack onto CPU runners.
           python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
           python -m scenedetect --help >/dev/null
           python -m gdown --version
@@ -82,10 +80,7 @@ jobs:
           ./scripts/bin/whisper --help
 
       - name: Install Node dependencies
-        run: |
-          # The checked-in Bun lock is currently stale relative to package.json.
-          # Resolve from package.json so production builds are not blocked by lock drift.
-          bun install
+        run: bun install
 
       - name: Build generated EP01 subjectivity sequence
         run: |

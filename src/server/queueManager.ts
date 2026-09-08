@@ -1,13 +1,13 @@
-import fs from "fs/promises";
-import path from "path";
-import os from "os";
-import { MediaJob } from "../core/types";
-import { AutonomousStudioOrchestrator, type ProductionWorkItem } from "../core/agents/orchestrator";
-import { planSourceClip } from "../core/agents/studioPlan";
-import { toolManager } from "./toolManager";
-import { analyzeMedia, downloadToFile } from "./mediaPipeline";
-import { discoverComedy } from "./comedyDiscovery";
-import { productionMemory } from "./productionMemory";
+import fs from 'fs/promises';
+import path from 'path';
+import os from 'os';
+import { MediaJob } from '../core/types';
+import { AutonomousStudioOrchestrator, type ProductionWorkItem } from '../core/agents/orchestrator';
+import { planSourceClip } from '../core/agents/studioPlan';
+import { toolManager } from './toolManager';
+import { analyzeMedia, downloadToFile } from './mediaPipeline';
+import { discoverComedy } from './comedyDiscovery';
+import { productionMemory } from './productionMemory';
 
 export class QueueManager {
   private jobs = new Map<string, MediaJob>();
@@ -26,7 +26,16 @@ export class QueueManager {
   setAccessToken(fileId: string, token: string) { if (!token) throw new Error('Cannot attach an empty Drive credential.'); this.tokens.set(fileId, token); void this.processNext(); }
   setLocalSource(fileId: string, localPath: string) { this.tokens.set(fileId, `local:${path.resolve(localPath)}`); void this.processNext(); }
   retry(fileId: string) { const job = this.jobs.get(fileId); if (!job || !this.tokens.has(fileId)) return false; job.state = 'QUEUED' as any; job.progress = 0; job.logs.push(`[${new Date().toISOString()}] Retry requested.`); job.updatedAt = new Date().toISOString(); void this.processNext(); return true; }
-  addJob(job: MediaJob) { if (this.jobs.has(job.fileId)) return; this.jobs.set(job.fileId, job); const plan = planSourceClip(this.studio, job.fileId, job.originalName || job.fileId); this.sourcePlans.set(job.fileId, plan.work); (job as any).productionPlan = plan.work.map(work => ({ id: work.id, kind: work.kind, title: work.title, status: work.status, requiresHumanApproval: work.requiresHumanApproval })); }
+  addJob(job: MediaJob) {
+    if (this.jobs.has(job.fileId)) return;
+    this.jobs.set(job.fileId, job);
+    const plan = planSourceClip(this.studio, job.fileId, job.originalName || job.fileId);
+    this.sourcePlans.set(job.fileId, plan.work);
+    (job as any).productionPlan = plan.work.map(work => ({ id: work.id, kind: work.kind, title: work.title, status: work.status, requiresHumanApproval: work.requiresHumanApproval }));
+    // A local/public source may have been registered immediately before addJob().
+    // Wake the queue here too so registration order can never leave a job stranded.
+    if (this.tokens.has(job.fileId) && job.state === 'QUEUED') void this.processNext();
+  }
   updateJob(id: string, updates: Partial<MediaJob>) { const job = this.jobs.get(id); if (job) Object.assign(job, updates, { updatedAt: new Date().toISOString() }); }
   log(id: string, message: string) { const job = this.jobs.get(id); if (job) job.logs.push(`[${new Date().toISOString()}] ${message}`); }
   async processNext() { while (this.activeProcessing < this.MAX_CONCURRENT) { const job = Array.from(this.jobs.values()).find(j => j.state === 'QUEUED' && this.tokens.has(j.fileId)); if (!job) return; this.updateJob(job.fileId, { state: 'PROBING', progress: 1 }); this.activeProcessing++; void this.processJob(job).finally(() => { this.activeProcessing--; void this.processNext(); }); } }
@@ -62,7 +71,7 @@ export class QueueManager {
       const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => { this.log(job.fileId, `[${stage}] ${message}`); this.updateJob(job.fileId, { state: 'ANALYZING', progress }); });
       if (result.ffprobe) job.tools.ffprobe = { status: 'COMPLETED' as const, data: result.ffprobe, provenance: this.provenance(job, 'ffprobe', 'ffprobe -print_format json -show_format -show_streams <local-source>') } as any;
       if (result.scenes) job.tools.pyscenedetect = { status: 'COMPLETED' as const, data: result.scenes, provenance: this.provenance(job, 'pyscenedetect', 'scenedetect detect-content list-scenes <local-source>') } as any;
-      if (result.visual) job.tools.opencv = { status: 'COMPLETED' as const, data: result.visual, provenance: this.provenance(job, 'opencv', 'cv2.VideoCapture frame sampling') } as any;
+      if (result.visual) job.tools.opencv = { status: 'COMPLETED' as const, data: result.visual, provenance: this.provenance(job, 'opencv', 'cv2.VideoCapture seek-based sampling') } as any;
       if (result.ocr !== undefined) job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', 'tesseract <sampled-frame> stdout') } as any;
       if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`) } as any;
       this.completePlanKind(job.fileId, 'MEDIA_ANALYSIS', [`analysis:${job.fileId}`]);

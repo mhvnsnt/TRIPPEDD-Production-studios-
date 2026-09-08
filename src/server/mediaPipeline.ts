@@ -86,12 +86,23 @@ export async function analyzeMedia(
   if (tools.opencv) {
     onProgress({ stage: 'opencv', progress: 45, message: 'Sampling frames for visual coverage.' });
     const python = [
-      'import cv2, json, sys', 'p=cv2.VideoCapture(sys.argv[1])', 'fps=p.get(cv2.CAP_PROP_FPS) or 0',
-      'frames=int(p.get(cv2.CAP_PROP_FRAME_COUNT) or 0)', 'w=int(p.get(cv2.CAP_PROP_FRAME_WIDTH) or 0)',
-      'h=int(p.get(cv2.CAP_PROP_FRAME_HEIGHT) or 0)', 'step=max(1,int(fps*10))', 'count=0; sampled=0',
-      'while True:', ' ok,_=p.read()', ' if not ok: break', ' count+=1', ' if count % step == 0: sampled+=1',
-      'p.release()', 'print(json.dumps({"sampledFrames":sampled,"frameCount":frames,"width":w,"height":h,"fps":fps}))',
-    ].join(';');
+      'import cv2, json, sys',
+      'p=cv2.VideoCapture(sys.argv[1])',
+      'fps=p.get(cv2.CAP_PROP_FPS) or 0',
+      'frames=int(p.get(cv2.CAP_PROP_FRAME_COUNT) or 0)',
+      'w=int(p.get(cv2.CAP_PROP_FRAME_WIDTH) or 0)',
+      'h=int(p.get(cv2.CAP_PROP_FRAME_HEIGHT) or 0)',
+      'step=max(1,int(fps*10))',
+      'count=0',
+      'sampled=0',
+      'while True:',
+      '    ok,_=p.read()',
+      '    if not ok: break',
+      '    count+=1',
+      '    if count % step == 0: sampled+=1',
+      'p.release()',
+      'print(json.dumps({"sampledFrames":sampled,"frameCount":frames,"width":w,"height":h,"fps":fps}))',
+    ].join('\n');
     const { stdout } = await run('python3', ['-c', python, inputPath]);
     const visual = JSON.parse(stdout.trim());
     result.visual = { ...visual, duration, width, height, fps };
@@ -117,9 +128,14 @@ export async function analyzeMedia(
     const outputDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-whisper-'));
     try {
       const model = process.env.WHISPER_MODEL || 'tiny';
-      await run('whisper', [inputPath, '--model', model, '--output_dir', outputDir, '--output_format', 'json']);
-      const jsonPath = path.join(outputDir, `${path.basename(inputPath).replace(/\.[^.]+$/, '')}.json`);
-      try { result.transcript = JSON.parse(await fs.readFile(jsonPath, 'utf8')); } catch { result.transcript = null; }
+      try {
+        await run('whisper', [inputPath, '--model', model, '--output_dir', outputDir, '--output_format', 'json']);
+        const jsonPath = path.join(outputDir, `${path.basename(inputPath).replace(/\.[^.]+$/, '')}.json`);
+        try { result.transcript = JSON.parse(await fs.readFile(jsonPath, 'utf8')); } catch { result.transcript = null; }
+      } catch (error: any) {
+        result.transcript = null;
+        onProgress({ stage: 'whisper', progress: 85, message: `Whisper failed; continuing with visual/audio evidence. ${error?.message || String(error)}` });
+      }
     } finally { await fs.rm(outputDir, { recursive: true, force: true }); }
   }
 

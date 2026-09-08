@@ -93,13 +93,13 @@ export async function analyzeMedia(
       'w=int(p.get(cv2.CAP_PROP_FRAME_WIDTH) or 0)',
       'h=int(p.get(cv2.CAP_PROP_FRAME_HEIGHT) or 0)',
       'step=max(1,int(fps*10))',
-      'count=0',
+      'pos=0',
       'sampled=0',
-      'while True:',
+      'while pos < frames:',
+      '    p.set(cv2.CAP_PROP_POS_FRAMES, pos)',
       '    ok,_=p.read()',
-      '    if not ok: break',
-      '    count+=1',
-      '    if count % step == 0: sampled+=1',
+      '    if ok: sampled+=1',
+      '    pos+=step',
       'p.release()',
       'print(json.dumps({"sampledFrames":sampled,"frameCount":frames,"width":w,"height":h,"fps":fps}))',
     ].join('\n');
@@ -123,7 +123,7 @@ export async function analyzeMedia(
     } finally { await fs.rm(frameDir, { recursive: true, force: true }); }
   }
 
-  if (tools.whisper) {
+  if (tools.whisper && process.env.TRIPPEDD_ENABLE_WHISPER !== 'false') {
     onProgress({ stage: 'whisper', progress: 80, message: 'Transcribing dialogue and speech.' });
     const outputDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-whisper-'));
     try {
@@ -137,6 +137,8 @@ export async function analyzeMedia(
         onProgress({ stage: 'whisper', progress: 85, message: `Whisper failed; continuing with visual/audio evidence. ${error?.message || String(error)}` });
       }
     } finally { await fs.rm(outputDir, { recursive: true, force: true }); }
+  } else if (tools.whisper) {
+    onProgress({ stage: 'whisper', progress: 85, message: 'Whisper deferred for the fast first assembly; visual and scene evidence are sufficient to build the initial cut.' });
   }
 
   onProgress({ stage: 'complete', progress: 100, message: 'Media analysis completed.' });

@@ -15,6 +15,7 @@ export interface ProductionMemorySnapshot {
 export class ProductionMemoryStore {
   private readonly filePath: string;
   private writeChain: Promise<void> = Promise.resolve();
+  private pilotBuildRunning = false;
 
   constructor(filePath = process.env.TRIPPEDD_MEMORY_FILE || path.join(process.cwd(), '.trippedd', 'production-memory.json')) {
     this.filePath = filePath;
@@ -45,6 +46,29 @@ export class ProductionMemoryStore {
       await fs.rename(temporary, this.filePath);
     });
     await this.writeChain;
+
+    // Once every currently-known source job has real analysis, immediately build a
+    // watchable first assembly. This is intentionally a runtime trigger: the pilot
+    // renderer consumes only persisted source media and timed evidence, never mocks.
+    if (projectId === 'trippedd' && patch.jobs && Object.keys(next.jobs).length > 0 && !this.pilotBuildRunning) {
+      const jobs = Object.values(next.jobs) as Array<{ state?: string }>;
+      const allAnalyzed = jobs.every(job => job.state === 'NEEDS_REVIEW' || job.state === 'COMPLETED');
+      if (allAnalyzed && Object.keys(next.sources).length > 0) {
+        this.pilotBuildRunning = true;
+        void import('./pilotRenderer')
+          .then(({ buildEp01FirstAssembly }) => buildEp01FirstAssembly())
+          .then(manifest => {
+            console.log(`[EP01] First assembly: ${manifest.status} (${manifest.selectedClipCount}/${manifest.sourceClipCount} source selects).`);
+          })
+          .catch(error => {
+            console.error('[EP01] First assembly build failed:', error);
+          })
+          .finally(() => {
+            this.pilotBuildRunning = false;
+          });
+      }
+    }
+
     return next;
   }
 

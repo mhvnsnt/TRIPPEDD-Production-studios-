@@ -67,7 +67,8 @@ export interface ProgramClockIssue {
     | 'INVALID_DURATION'
     | 'MISSING_PROVENANCE'
     | 'MISSING_EDITORIAL_PURPOSE'
-    | 'PHYSICAL_SOURCE_REWRITTEN';
+    | 'PHYSICAL_SOURCE_REWRITTEN'
+    | 'EDITORIAL_AUTHORITY_DISABLED';
   message: string;
   unitId?: string;
 }
@@ -83,10 +84,7 @@ const provenanceRequiredTypes = new Set<ProgramUnitType>([
   'SHORT',
 ]);
 
-/**
- * Build a deterministic program clock. The clock is a programming layer and
- * must not mutate the physical-source timeline.
- */
+/** Build a deterministic programming layer without mutating physical-source chronology. */
 export function createProgramClock(programId: string, units: ProgramUnit[]): ProgramClock {
   return {
     programId,
@@ -106,21 +104,17 @@ export function createProgramClock(programId: string, units: ProgramUnit[]): Pro
   };
 }
 
-/**
- * Validate a program clock before it is scheduled or serialized. This turns
- * the programming model into an executable integrity boundary rather than a
- * passive collection of types.
- */
+/** Validate a program clock before scheduling, serialization, or delivery. */
 export function validateProgramClock(clock: ProgramClock): ProgramClockIssue[] {
   const issues: ProgramClockIssue[] = [];
   if (!clock.programId.trim()) issues.push({ code: 'EMPTY_PROGRAM_ID', message: 'Program clock requires a non-empty program id.' });
   if (!clock.units.length) issues.push({ code: 'EMPTY_UNITS', message: 'Program clock must contain at least one program unit.' });
+  if (!clock.rules.preserveHumanEditorialAuthority) issues.push({ code: 'EDITORIAL_AUTHORITY_DISABLED', message: 'Program clock must preserve human editorial authority.' });
 
   const unitIds = new Set<string>();
   for (const unit of clock.units) {
     if (unitIds.has(unit.id)) issues.push({ code: 'DUPLICATE_UNIT_ID', message: `Duplicate program unit id: ${unit.id}`, unitId: unit.id });
     unitIds.add(unit.id);
-
     if (unit.durationSeconds !== undefined && (!Number.isFinite(unit.durationSeconds) || unit.durationSeconds < 0)) {
       issues.push({ code: 'INVALID_DURATION', message: `Invalid duration for ${unit.id}.`, unitId: unit.id });
     }
@@ -130,8 +124,8 @@ export function validateProgramClock(clock: ProgramClock): ProgramClockIssue[] {
     if (unit.type !== 'EPISODE' && !unit.editorialPurpose?.trim()) {
       issues.push({ code: 'MISSING_EDITORIAL_PURPOSE', message: `${unit.type} unit ${unit.id} requires an editorial purpose.`, unitId: unit.id });
     }
-    const claimsPhysicalSource = unit.tags.some(tag => tag.toUpperCase() === 'PHYSICAL_SOURCE') || unit.tags.some(tag => tag.toUpperCase() === 'PHYSICAL_TRUTH');
-    if (clock.rules.physicalSourceUnitsCannotBeRewrittenAsGenerated && claimsPhysicalSource && unit.tags.some(tag => tag.toUpperCase() === 'GENERATED')) {
+    const tags = new Set(unit.tags.map(tag => tag.toUpperCase()));
+    if (clock.rules.physicalSourceUnitsCannotBeRewrittenAsGenerated && tags.has('PHYSICAL_SOURCE') && tags.has('GENERATED')) {
       issues.push({ code: 'PHYSICAL_SOURCE_REWRITTEN', message: `Unit ${unit.id} cannot claim both physical-source truth and generated status.`, unitId: unit.id });
     }
   }
@@ -144,13 +138,8 @@ export function validateProgramClock(clock: ProgramClock): ProgramClockIssue[] {
     referencedUnits.add(slot.unitId);
     if (!unitIds.has(slot.unitId)) issues.push({ code: 'MISSING_UNIT_REFERENCE', message: `Slot ${slot.id} references missing unit ${slot.unitId}.` });
   }
-
   for (const unit of clock.units) {
     if (!referencedUnits.has(unit.id)) issues.push({ code: 'MISSING_UNIT_REFERENCE', message: `Program unit ${unit.id} has no program slot.`, unitId: unit.id });
-  }
-
-  if (!clock.rules.preserveHumanEditorialAuthority) {
-    issues.push({ code: 'MISSING_EDITORIAL_PURPOSE', message: 'Program clock must preserve human editorial authority.' });
   }
   return issues;
 }

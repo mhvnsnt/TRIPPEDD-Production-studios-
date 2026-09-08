@@ -24,6 +24,7 @@ export class QueueManager {
     return new Proxy(job as any, { get(target, property, receiver) { if (property === 'token') return undefined; if (property === 'toJSON') return () => manager.publicJob(target); return Reflect.get(target, property, receiver); }, set(target, property, value, receiver) { if (property === 'token') { if (typeof value === 'string' && value) { manager.tokens.set(fileId, value); void manager.processNext(); } return true; } const changed = Reflect.set(target, property, value, receiver); target.updatedAt = new Date().toISOString(); return changed; } }) as MediaJob;
   }
   setAccessToken(fileId: string, token: string) { if (!token) throw new Error('Cannot attach an empty Drive credential.'); this.tokens.set(fileId, token); void this.processNext(); }
+  setLocalSource(fileId: string, localPath: string) { this.tokens.set(fileId, `local:${path.resolve(localPath)}`); void this.processNext(); }
   retry(fileId: string) { const job = this.jobs.get(fileId); if (!job || !this.tokens.has(fileId)) return false; job.state = 'QUEUED' as any; job.progress = 0; job.logs.push(`[${new Date().toISOString()}] Retry requested.`); job.updatedAt = new Date().toISOString(); void this.processNext(); return true; }
   addJob(job: MediaJob) { if (this.jobs.has(job.fileId)) return; this.jobs.set(job.fileId, job); const plan = planSourceClip(this.studio, job.fileId, job.originalName || job.fileId); this.sourcePlans.set(job.fileId, plan.work); (job as any).productionPlan = plan.work.map(work => ({ id: work.id, kind: work.kind, title: work.title, status: work.status, requiresHumanApproval: work.requiresHumanApproval })); }
   updateJob(id: string, updates: Partial<MediaJob>) { const job = this.jobs.get(id); if (job) Object.assign(job, updates, { updatedAt: new Date().toISOString() }); }
@@ -35,22 +36,28 @@ export class QueueManager {
   private failPlan(fileId: string) { const item = this.sourcePlans.get(fileId)?.find(work => work.status === 'RUNNING' || work.status === 'READY'); if (item) this.studio.fail(item.id); }
 
   async runPipeline(job: MediaJob) {
-    const mediaUrl = `https://www.googleapis.com/drive/v3/files/${encodeURIComponent(job.fileId)}?alt=media`;
     const credential = this.tokens.get(job.fileId);
-    if (!credential) throw new Error('No Drive credential is attached to this ingest job.');
-    this.log(job.fileId, credential.startsWith('public:') ? 'Starting production media analysis from publicly shared Drive media.' : 'Starting production media analysis pipeline.');
+    if (!credential) throw new Error('No source credential is attached to this ingest job.');
+    const isLocal = credential.startsWith('local:');
+    const mediaUrl = `https://www.googleapis.com/drive/v3/files/${encodeURIComponent(job.fileId)}?alt=media`;
+    this.log(job.fileId, isLocal ? 'Starting production media analysis from credential-free public Drive download.' : credential.startsWith('public:') ? 'Starting production media analysis from publicly shared Drive media.' : 'Starting production media analysis pipeline.');
     this.updateJob(job.fileId, { state: 'PROBING', progress: 5 });
     const available = (id: string) => toolManager.getTool(id)?.installationStatus === 'AVAILABLE';
     const tools = { ffprobe: available('ffprobe'), pyscenedetect: available('pyscenedetect'), opencv: available('opencv'), tesseract: available('tesseract'), whisper: available('whisper') };
     if (!tools.ffprobe) throw new Error('ffprobe is required for ingest and is unavailable.');
     await fs.mkdir(this.mediaCacheDir, { recursive: true });
     const extension = path.extname(job.originalName || '') || '.media';
-    const localFilePath = path.join(this.mediaCacheDir, `${job.fileId}${extension}`);
+    const localFilePath = isLocal ? path.resolve(credential.slice('local:'.length)) : path.join(this.mediaCacheDir, `${job.fileId}${extension}`);
     const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ingest-'));
     const downloadPath = path.join(tmpDir, `source${extension}`);
     try {
-      try { await fs.access(localFilePath); this.log(job.fileId, '[download] Reusing cached source media.'); }
-      catch { this.log(job.fileId, '[download] Streaming source media from Google Drive into production cache.'); this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING', progress: 8 }); await downloadToFile(mediaUrl, credential, downloadPath); await fs.rename(downloadPath, localFilePath); this.log(job.fileId, '[download] Source media cached for editorial rendering.'); }
+      if (isLocal) {
+        await fs.access(localFilePath);
+        this.log(job.fileId, `[source] Using downloaded public media: ${localFilePath}`);
+      } else {
+        try { await fs.access(localFilePath); this.log(job.fileId, '[download] Reusing cached source media.'); }
+        catch { this.log(job.fileId, '[download] Streaming source media from Google Drive into production cache.'); this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING', progress: 8 }); await downloadToFile(mediaUrl, credential, downloadPath); await fs.rename(downloadPath, localFilePath); this.log(job.fileId, '[download] Source media cached for editorial rendering.'); }
+      }
       this.updateJob(job.fileId, { state: 'ANALYZING', progress: 10 }); this.completePlanKind(job.fileId, 'INGEST', [`source:${job.fileId}`, `media:${localFilePath}`]);
       const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => { this.log(job.fileId, `[${stage}] ${message}`); this.updateJob(job.fileId, { state: 'ANALYZING', progress }); });
       if (result.ffprobe) job.tools.ffprobe = { status: 'COMPLETED' as const, data: result.ffprobe, provenance: this.provenance(job, 'ffprobe', 'ffprobe -print_format json -show_format -show_streams <local-source>') } as any;

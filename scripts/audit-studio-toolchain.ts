@@ -20,13 +20,16 @@ const checks: Record<string, { command: string; args: string[] }> = {
   ffmpeg: { command: 'ffmpeg', args: ['-version'] },
   ffprobe: { command: 'ffprobe', args: ['-version'] },
   opencv: { command: 'python3', args: ['-c', 'import cv2; print(cv2.__version__)'] },
-  // PySceneDetect's CLI has no --version option; import the package instead.
   pyscenedetect: { command: 'python3', args: ['-c', 'import scenedetect; print(getattr(scenedetect, "__version__", "installed"))'] },
   whisper: { command: 'python3', args: ['-c', 'import faster_whisper; print("faster-whisper import OK")'] },
   tesseract: { command: 'tesseract', args: ['--version'] },
   otio: { command: 'python3', args: ['-c', 'import opentimelineio as otio; print(otio.__version__)'] },
   blender: { command: 'blender', args: ['--version'] },
   openimageio: { command: 'oiiotool', args: ['--version'] },
+  openexr: { command: 'exrheader', args: ['--help'] },
+  imagemagick: { command: 'magick', args: ['-version'] },
+  sox: { command: 'sox', args: ['--version'] },
+  rubberband: { command: 'rubberband', args: ['--help'] },
   kdenlive: { command: 'kdenlive', args: ['--version'] },
   mlt: { command: 'melt', args: ['-version'] },
   natron: { command: 'Natron', args: ['--version'] },
@@ -53,7 +56,7 @@ const ids = [...new Set([...config.required, ...config.optional])];
 const results = await Promise.all(ids.map(check));
 const requiredFailures = results.filter(result => config.required.includes(result.id) && result.status !== 'AVAILABLE');
 const report = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   generatedAt: new Date().toISOString(),
   status: requiredFailures.length ? 'BLOCKED' : 'READY',
   requiredFailures: requiredFailures.map(result => result.id),
@@ -61,7 +64,8 @@ const report = {
   policy: {
     missingOptionalToolsAreNotFailures: true,
     fakeAvailabilityIsForbidden: true,
-    reportIsTechnicalOnly: true
+    reportIsTechnicalOnly: true,
+    openSourceFirst: true
   }
 };
 

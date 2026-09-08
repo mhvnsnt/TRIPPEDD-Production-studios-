@@ -11,6 +11,7 @@
     "clean": "rm -rf dist server.js",
     "lint": "node fix_mic.cjs && tsc --noEmit",
     "studio:audit": "tsx scripts/audit-studio-toolchain.ts",
+    "studio:audit:integrity": "tsx scripts/audit-production-integrity.ts",
     "studio:test:evidence-cache": "tsx scripts/test-evidence-cache.ts",
     "studio:test:provenance": "tsx scripts/test-provenance.ts",
     "pilot:build": "tsx scripts/build-ep01.ts",

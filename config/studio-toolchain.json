@@ -1,13 +1,13 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs"],
-  "interchange": { "editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe" },
+  "optional": ["blender", "openimageio", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs"],
+  "interchange": { "editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "images": "OpenImageIO" },
   "backends": {
     "deterministicMedia": "ffmpeg",
-    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract"],
+    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio"],
     "procedural3D": "blender",
     "editorial": "kdenlive",
     "editorialRender": "mlt",

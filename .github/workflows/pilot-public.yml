@@ -1,0 +1,72 @@
+name: EP01 Public Drive Build
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - production/EP01/RUN-PUBLIC-BUILD
+      - .github/workflows/pilot-public.yml
+      - scripts/run-public-pilot.ts
+      - src/server/publicDriveFolder.ts
+      - src/server/queueManager.ts
+      - src/server/mediaPipeline.ts
+      - src/server/pilotRenderer.ts
+
+permissions:
+  contents: read
+
+jobs:
+  build-ep01:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install system media tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg tesseract-ocr
+
+      - name: Install public Drive downloader
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'gdown>=6.1.0'
+
+      - name: Install Node dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Verify public Drive access path
+        run: python -m gdown --version
+
+      - name: Build EP01 from public Drive footage
+        env:
+          TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
+          TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          EP01_MAX_CLIPS: '24'
+          EP01_CLIP_PADDING: '1.25'
+        run: bun run pilot:build:public
+
+      - name: Verify first assembly exists
+        run: |
+          test -s public/production/EP01-first-assembly.mp4
+          test -s public/production/EP01-first-assembly.json
+
+      - name: Upload EP01 first assembly
+        uses: actions/upload-artifact@v4
+        with:
+          name: EP01-first-assembly
+          path: |
+            public/production/EP01-first-assembly.mp4
+            public/production/EP01-first-assembly.json
+          if-no-files-found: error

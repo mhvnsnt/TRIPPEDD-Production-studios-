@@ -28,8 +28,6 @@ scene.frame_start = FRAME_START
 scene.frame_end = FRAME_END
 scene.render.image_settings.file_format = 'PNG'
 scene.render.film_transparent = False
-# Keep render data resident across animation frames. This avoids rebuilding
-# render state for every frame while preserving the image-sequence checkpoint.
 if hasattr(scene.render, 'use_persistent_data'):
     scene.render.use_persistent_data = True
 
@@ -145,12 +143,8 @@ if PREFLIGHT:
 
 FRAME_DIR.mkdir(parents=True, exist_ok=True)
 frame_pattern = str(FRAME_DIR / 'frame-')
+checkpoint_dir = FRAME_DIR
 
-# Resume safely, but batch contiguous missing frames into Blender animation
-# renders. The old implementation called bpy.ops.render.render once per frame;
-# that adds substantial Python/operator overhead. Blender's animation renderer
-# already supports a start/end range and writes numbered image frames, so use it
-# for each missing range and keep completed frames untouched.
 def missing_ranges(start, end):
     missing = []
     for frame in range(start, end + 1):
@@ -174,7 +168,7 @@ for range_start, range_end in ranges:
     scene.frame_start = range_start
     scene.frame_end = range_end
     scene.render.filepath = frame_pattern
-    scene.render.use_file_extension = True
+    print(f'[bastard-tag] rendering range {range_start}-{range_end} ({range_end - range_start + 1} frames)', flush=True)
     result = bpy.ops.render.render(animation=True, write_still=True)
     if 'FINISHED' not in result:
         raise RuntimeError(f'frame range {range_start}-{range_end} failed to render: result={result}')
@@ -183,8 +177,16 @@ for range_start, range_end in ranges:
         if not frame_path.is_file() or frame_path.stat().st_size == 0:
             raise RuntimeError(f'frame {frame} missing after range render: {frame_path}')
 
+    scene['TRIPPEDD_LAST_COMPLETED_FRAME'] = range_end
+    checkpoint = checkpoint_dir / f'bastard-tag-{range_start:04d}-{range_end:04d}.blend'
+    bpy.ops.wm.save_as_mainfile(filepath=str(checkpoint))
+    shutil.copy2(checkpoint, BLEND)
+    print(f'[bastard-tag] checkpoint saved: {checkpoint}; canonical blend promoted', flush=True)
+
 scene.frame_start = FRAME_START
 scene.frame_end = FRAME_END
+scene['TRIPPEDD_LAST_COMPLETED_FRAME'] = FRAME_END
+bpy.ops.wm.save_as_mainfile(filepath=str(BLEND))
 
 expected = FRAME_END - FRAME_START + 1
 frames = sorted(FRAME_DIR.glob('frame-*.png'))

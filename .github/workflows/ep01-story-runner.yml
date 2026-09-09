@@ -8,7 +8,8 @@ on:
 
 concurrency:
   group: ep01-story-runner-${{ github.ref }}
-  cancel-in-progress: true
+  # Never kill a valuable render because infrastructure or another kickoff landed.
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -42,6 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Cache Blender archive
+        id: blender-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
@@ -54,10 +56,14 @@ jobs:
       - name: Install render tools
         run: sudo apt-get update && sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
       - name: Install Blender
+        env:
+          BLENDER_CACHE_HIT: ${{ steps.blender-cache.outputs.cache-hit }}
         run: |
           set -euo pipefail
           mkdir -p ~/.cache/trippedd
-          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then
+            curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          fi
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
@@ -84,16 +90,25 @@ jobs:
   build-ep01-story-runner:
     needs: render-subjectivity
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+      - name: Cache Bun install
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          # No pip cache: this repository intentionally has no requirements.txt/pyproject.toml.
+      - name: Cache Python media packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-media-${{ runner.os }}-py311-v1
       - name: Cache assembly segments
         uses: actions/cache@v4
         with:
@@ -104,6 +119,12 @@ jobs:
         with:
           path: .trippedd/huggingface
           key: trippedd-whisper-tiny-${{ runner.os }}
+      - name: Cache Blender archive
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
+          key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
       - name: Install media stack
         run: |
           sudo apt-get update
@@ -111,12 +132,17 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
       - name: Install Blender
+        env:
+          BLENDER_CACHE_HIT: ${{ steps.blender-cache.outputs.cache-hit }}
         run: |
           set -euo pipefail
-          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o /tmp/${BLENDER_ARCHIVE}
+          mkdir -p ~/.cache/trippedd
+          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then
+            curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          fi
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/tmp/${BLENDER_ARCHIVE}#" | sha256sum -c -
-          sudo tar -xJf "/tmp/${BLENDER_ARCHIVE}" -C /opt
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
       - name: Download subjectivity chunks
         uses: actions/download-artifact@v4
@@ -138,7 +164,7 @@ jobs:
       - name: Build Bastard terminal tag (resumable)
         uses: ./.github/actions/resumable-bastard-tag
       - name: Install Node dependencies
-        run: bun install
+        run: bun install --frozen-lockfile
       - name: Build Story Runner cut
         env:
           TRIPPEDD_RUN_ID: ${{ github.run_id }}

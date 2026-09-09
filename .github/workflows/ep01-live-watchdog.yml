@@ -25,14 +25,14 @@ jobs:
           marker='<!-- EP01-LIVE-PROGRESS -->'
 
           issue_json="$(gh api "repos/${REPO}/issues?state=open&per_page=100")"
-          issue_number="$(printf '%s' "$issue_json" | jq -r --arg marker "$marker" '[.[] | select(.pull_request == null) | select(.title == "EP01 live production progress" or (.body // "" | contains($marker)))] | sort_by(.number) | last | .number // empty')"
+          issue_number="$(printf '%s' "$issue_json" | jq -r '[.[] | select(.pull_request == null) | select(.title == "EP01 live production progress" or ((.body // "") | contains("<!-- EP01-LIVE-PROGRESS -->")))] | sort_by(.number) | last | .number // empty')"
 
           if [ -z "$issue_number" ]; then
             created="$(gh api --method POST "repos/${REPO}/issues" -f title='EP01 live production progress' -f body="$marker\n\n## EP01 Showrunner — live\nInitializing production monitor...")"
             issue_number="$(printf '%s' "$created" | jq -r '.number')"
           fi
 
-          comment_id="$(gh api "repos/${REPO}/issues/${issue_number}/comments?per_page=100" --paginate --jq --arg marker "$marker" '.[] | select(.body | contains($marker)) | .id' | tail -n 1 || true)"
+          comment_id="$(gh api "repos/${REPO}/issues/${issue_number}/comments?per_page=100" --paginate --jq '.[] | select(.body | contains("<!-- EP01-LIVE-PROGRESS -->")) | .id' | tail -n 1 || true)"
           if [ -z "$comment_id" ]; then
             created_comment="$(gh api --method POST "repos/${REPO}/issues/${issue_number}/comments" -f body="$marker\n\n## EP01 Showrunner — live\nInitializing production monitor...")"
             comment_id="$(printf '%s' "$created_comment" | jq -r '.id')"

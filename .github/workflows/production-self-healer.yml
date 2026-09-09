@@ -88,11 +88,11 @@ jobs:
               started_epoch=$(date -d "$started" +%s)
               age=$((now-started_epoch))
               echo "  active job $(jq -r '.name' <<<"$job") age=${age}s"
-              if [ "$age" -ge 6600 ]; then stale=1; fi
+              if [ "$age" -ge 3600 ]; then stale=1; fi
             done < <(jq -c '.[]' <<<"$jobs")
 
             if [ "$stale" -eq 1 ] && [ "$attempt" -lt 2 ]; then
-              echo "RECOVERY: cancelling genuinely stale run $run_id after 110 minutes, then replaying it"
+              echo "RECOVERY: cancelling genuinely stale run $run_id after 60 minutes, then replaying it"
               gh run cancel "$run_id" --repo "$REPO" || true
               for i in $(seq 1 12); do
                 state=$(gh run view "$run_id" --repo "$REPO" --json status --jq '.status' || true)
@@ -110,5 +110,5 @@ jobs:
             echo "- Checked: $checked run(s)"
             echo "- Suppressed queued duplicates: $suppressed"
             echo "- Recovery actions: $recovered"
-            echo "- Policy: active runs take priority; queued/waiting runs are preserved; redundant queued duplicates are cancelled only when an active run exists; failed runs get one failed-job replay; active runs get a 110-minute stale-run backstop."
+            echo "- Policy: active runs take priority; queued/waiting runs are preserved; redundant queued duplicates are cancelled only when an active run exists; failed runs get one failed-job replay; active runs get a 60-minute stale-run backstop."
           } >> "$GITHUB_STEP_SUMMARY"

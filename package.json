@@ -17,7 +17,7 @@
     "studio:benchmark": "tsx scripts/production-benchmark.ts",
     "studio:qc:artifact": "tsx scripts/validate-production-artifact.ts",
     "pilot:build": "tsx scripts/build-ep01.ts",
-    "pilot:build:public": "tsx scripts/run-public-pilot-fast.ts",
+    "pilot:build:public": "tsx scripts/production-progress.ts scripts/run-public-pilot-fast.ts",
     "pilot:build:public:full": "tsx scripts/run-public-pilot.ts",
     "pilot:qc": "tsx scripts/qc-ep01.ts",
     "pilot:greenlight": "tsx scripts/greenlight-ep01.ts",

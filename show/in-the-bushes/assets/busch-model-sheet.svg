@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#111"/>
+  <text x="60" y="70" fill="#fff" font-family="sans-serif" font-size="42" font-weight="700">BUSCH — ORIGINAL MODEL SHEET</text>
+  <text x="60" y="108" fill="#aaa" font-family="sans-serif" font-size="20">EP01 opening / reusable silhouette / no beer-brand marks</text>
+  <g stroke="#222" stroke-width="3" fill="#355b32">
+    <path d="M120 520 Q105 400 180 300 Q170 205 270 250 Q320 155 395 245 Q475 180 515 285 Q610 260 625 365 Q680 430 600 520 Z"/>
+    <path d="M720 520 Q700 390 770 300 Q790 205 865 250 Q930 180 990 275 Q1080 245 1100 350 Q1140 430 1070 520 Z"/>
+  </g>
+  <g fill="#ddd" stroke="#111" stroke-width="12">
+    <ellipse cx="265" cy="350" rx="30" ry="38"/><ellipse cx="420" cy="350" rx="30" ry="38"/>
+    <ellipse cx="865" cy="350" rx="30" ry="38"/><ellipse cx="1010" cy="350" rx="30" ry="38"/>
+  </g>
+  <g fill="#111"><circle cx="270" cy="355" r="9"/><circle cx="425" cy="355" r="9"/><circle cx="870" cy="355" r="9"/><circle cx="1015" cy="355" r="9"/></g>
+  <g fill="none" stroke="#111" stroke-width="12" stroke-linecap="round"><path d="M305 430 Q345 455 385 430"/><path d="M905 430 Q945 405 985 430"/></g>
+  <g fill="#aaa" font-family="sans-serif" font-size="22">
+    <text x="125" y="575">idle / neutral</text><text x="725" y="575">look-away / embarrassed</text>
+  </g>
+  <g stroke="#777" stroke-width="2" stroke-dasharray="8 8"><line x1="60" y1="620" x2="1140" y2="620"/></g>
+  <text x="60" y="660" fill="#888" font-family="sans-serif" font-size="18">Design rule: readable bush silhouette first; face is minimal and modular for limited animation.</text>
+</svg>

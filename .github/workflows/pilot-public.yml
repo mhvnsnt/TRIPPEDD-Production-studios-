@@ -130,10 +130,13 @@ jobs:
       - name: Build generated EP01 subjectivity sequence
         shell: bash
         run: |
-          set +e
-          blender -b --python production/EP01/generated/blender/build_subjectivity.py
-          blender_rc=$?
-          set -e
+          set -euo pipefail
+          blender_rc=0
+          if blender -b --python production/EP01/generated/blender/build_subjectivity.py; then
+            blender_rc=0
+          else
+            blender_rc=$?
+          fi
 
           frame_count=$(find production/EP01/generated/blender/subjectivity_frames -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
           test "$frame_count" -eq 144
@@ -178,10 +181,13 @@ jobs:
       - name: Build generated Bastard terminal tag
         shell: bash
         run: |
-          set +e
-          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-          blender_rc=$?
-          set -e
+          set -euo pipefail
+          blender_rc=0
+          if blender -b --python production/EP01/generated/blender/build_bastard_tag.py; then
+            blender_rc=0
+          else
+            blender_rc=$?
+          fi
 
           frame_count=$(find production/EP01/generated/blender/bastard_tag_frames -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)
           test "$frame_count" -eq 144

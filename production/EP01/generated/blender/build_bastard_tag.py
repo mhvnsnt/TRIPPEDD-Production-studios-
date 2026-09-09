@@ -22,7 +22,9 @@ scene = bpy.context.scene
 scene.render.engine = 'BLENDER_EEVEE_NEXT'
 scene.render.resolution_x = W
 scene.render.resolution_y = H
-scene.render.resolution_percentage = 50
+# Render the generated tag at quarter resolution and upscale during assembly.
+# This keeps the terminal composition intact while cutting pixel work by 4x.
+scene.render.resolution_percentage = 25
 scene.render.fps = FPS
 scene.frame_start = FRAME_START
 scene.frame_end = FRAME_END
@@ -206,7 +208,7 @@ ffmpeg = shutil.which('ffmpeg')
 if not ffmpeg:
     raise RuntimeError('ffmpeg is required to assemble the Bastard terminal tag')
 OUT.parent.mkdir(parents=True, exist_ok=True)
-subprocess.run([ffmpeg, '-y', '-hide_banner', '-loglevel', 'error', '-framerate', str(FPS), '-start_number', str(FRAME_START), '-i', str(FRAME_DIR / 'frame-%04d.png'), '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', str(OUT)], check=True)
+subprocess.run([ffmpeg, '-y', '-hide_banner', '-loglevel', 'error', '-framerate', str(FPS), '-start_number', str(FRAME_START), '-i', str(FRAME_DIR / 'frame-%04d.png'), '-vf', f'scale={W}:{H}:flags=lanczos', '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', str(OUT)], check=True)
 if not OUT.is_file() or OUT.stat().st_size == 0:
     raise RuntimeError(f'FFmpeg did not create a valid tag: {OUT}')
 print(f'BASTARD TAG COMPLETE: {OUT} ({OUT.stat().st_size} bytes, {expected} frames)')

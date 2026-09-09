@@ -9,6 +9,7 @@ The sequence is explicitly GENERATED and is never physical source evidence.
 import bpy
 import math
 import os
+import shutil
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
 OUTPUT_DIR = os.path.join(ROOT, "production", "EP01", "generated", "blender")
@@ -97,6 +98,7 @@ scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHEC
 scene["TRIPPEDD_FRAME_RANGE"] = f"{FRAME_START}-{FRAME_END}"
 
 chunk_blend = os.path.join(FRAME_DIR, f"subjectivity-{FRAME_START:04d}-{FRAME_END:04d}.blend")
+canonical_blend = os.path.join(OUTPUT_DIR, "ep01_subjectivity.blend")
 
 def missing_ranges(start, end):
     missing = []
@@ -134,11 +136,13 @@ for start, end in ranges:
         scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = frame
 
     bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
+    shutil.copy2(chunk_blend, canonical_blend)
     print(f"[subjectivity] completed range {start}-{end}", flush=True)
 
 scene.frame_start, scene.frame_end = original_start, original_end
 scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = FRAME_END
 bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
+shutil.copy2(chunk_blend, canonical_blend)
 
 actual = sum(
     1 for frame in range(FRAME_START, FRAME_END + 1)
@@ -148,4 +152,6 @@ actual = sum(
 expected = FRAME_END - FRAME_START + 1
 if actual != expected:
     raise RuntimeError(f"Subjectivity checkpoint count mismatch: {actual}/{expected}")
-print(f"[subjectivity] complete: frames {FRAME_START}-{FRAME_END}", flush=True)
+if not os.path.isfile(canonical_blend) or os.path.getsize(canonical_blend) == 0:
+    raise RuntimeError(f"Canonical subjectivity blend missing: {canonical_blend}")
+print(f"[subjectivity] complete: frames {FRAME_START}-{FRAME_END}; canonical blend ready", flush=True)

@@ -215,6 +215,18 @@ This file is the persistent production-session log requested by the producer. Ne
 >
 > GitHub's cache documentation confirms that cache entries are immutable, so the chunked keys are intentional: each completed chunk becomes a durable checkpoint instead of trying to overwrite one monolithic cache. This is the same principle now being applied to expensive production work generally.
 
+### Producer
+> Go
+
+### Agent — checkpoint cache correctness fix
+> I found a flaw in the first version of the new Bastard checkpoint action before treating it as production-safe. The action restored all chunks into one shared directory, but each chunk had a different cache key. That meant chunk 02 could not actually restore chunk 01's frames; the checkpoints were described as independent while the filesystem layout made them dependent. I corrected that instead of pretending the first implementation was good.
+>
+> Commit `12d84551b60466ca3bff670537d42d97ee30b4e2` was an intermediate correction attempt. I then replaced it with commit `434d49da057e8283ab9b2d21ea9561012be5e989`, which gives every 12-frame chunk its own directory and its own immutable cache key (`chunk-01-v4` through `chunk-12-v4`). Each chunk now restores its own prior frames, renders only missing/invalid frames through the resumable Blender script, verifies exactly 12 frame files, and immediately saves that chunk's checkpoint. The final assembly copies the verified frames into sequence order and encodes the MP4.
+>
+> This is the actual salvage invariant I want: **a completed chunk is independently recoverable, and a later chunk cannot overwrite or invalidate it.** The cache key still includes the actual tag-builder source hash, so a changed renderer cannot silently reuse an incompatible render.
+>
+> The active production run `34380107515` remains untouched; it already checked out its earlier workflow revision. These fixes are for subsequent runs and recovery.
+
 ## Implementation record
 - `d1110f8d65aec407d8f58b7c77135e4282098d94` — persistent conversation log initialized.
 - `9068db7307ab60e4f194d48c6d8b1647ebe367f5` — durable measured production-progress ledger added.
@@ -235,3 +247,5 @@ This file is the persistent production-session log requested by the producer. Ne
 - `25963a610a3dcbf8599200bf1f2f6986dd7c5f98` — Bastard tag renderer converted to resumable frame-range rendering.
 - `4475caca148e41de19c7e92de38a61979e1821a9` — durable 12-chunk Bastard frame checkpoint action added.
 - `823498e70de8f264c181d11fb86ab742be5395a0` — Story Runner workflow switched to the durable Bastard tag checkpoint action.
+- `12d84551b60466ca3bff670537d42d97ee30b4e2` — intermediate Bastard checkpoint layout attempt; superseded by the corrected chunk-isolated implementation.
+- `434d49da057e8283ab9b2d21ea9561012be5e989` — Bastard frame checkpoints isolated per chunk so each completed checkpoint is independently restorable.

@@ -1,27 +1,49 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco"],
-  "interchange": { "editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "images": "OpenImageIO/OpenEXR" },
+  "optional": [
+    "blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt",
+    "frei0r", "vapoursynth", "zimg", "natron", "opencolorio", "openassetio", "opencue", "demucs",
+    "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity"
+  ],
+  "interchange": {
+    "editorial": "OpenTimelineIO",
+    "assets": "OpenAssetIO",
+    "color": "OpenColorIO",
+    "media": "FFmpeg/FFprobe",
+    "images": "OpenImageIO/OpenEXR",
+    "videoProcessing": "VapourSynth",
+    "effects": "frei0r"
+  },
   "backends": {
     "deterministicMedia": "ffmpeg",
-    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr"],
+    "mediaInspection": ["ffprobe", "mediainfo", "bento4", "mkvtoolnix"],
+    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr", "silero-vad", "pyannote-audio"],
     "procedural3D": "blender",
     "editorial": "kdenlive",
     "editorialRender": "mlt",
     "compositing": "natron",
+    "videoProcessing": ["vapoursynth", "zimg", "imagemagick"],
+    "effects": "frei0r",
     "colorManagement": "opencolorio",
     "assetInterchange": "openassetio",
     "distributedRendering": ["flamenco", "opencue"],
-    "audioUtility": ["sox", "rubberband", "demucs"],
+    "audioUtility": ["sox", "rubberband", "demucs", "audacity"],
     "imageUtility": ["openimageio", "openexr", "imagemagick"]
   },
   "episodeCuts": {
     "autonomous": "AUTONOMOUS",
     "storyRunner": "SHOWRUNNER",
     "sharedEvidencePolicy": "Both cuts consume the same physical-source evidence model; editorial interpretation remains separate."
+  },
+  "architecture": {
+    "executionBackends": ["github-hosted", "self-hosted", "flamenco", "opencue"],
+    "cachePolicy": "Content-addressed deterministic artifacts are immutable and reusable across execution backends.",
+    "failurePolicy": "Independent tasks retry without invalidating successful artifacts; assembly begins only after manifest validation.",
+    "provenance": "Every generated media artifact records source evidence, generator identity, toolchain versions, and checksums.",
+    "fallbackPolicy": "Optional tools improve analysis or processing but never replace the deterministic FFmpeg/OTIO path without a verified fallback."
   },
   "policy": {
     "optionalToolsMayBeAbsent": true,
@@ -32,6 +54,8 @@
     "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true,
     "openSourceFirst": true,
     "optionalAccelerationMustBeBenchmarked": true,
-    "noToolReplacementWithoutDeterministicFallback": true
+    "noToolReplacementWithoutDeterministicFallback": true,
+    "modelLicensesMustBeRecorded": true,
+    "thirdPartyAssetsMustCarryLicenseMetadata": true
   }
 }

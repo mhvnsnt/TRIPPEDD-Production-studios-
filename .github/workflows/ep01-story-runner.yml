@@ -135,10 +135,25 @@ jobs:
           done
           ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/subjectivity/assembled/frame-%04d.jpg -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_subjectivity.mp4
           test -s production/EP01/generated/blender/ep01_subjectivity.mp4
+      - name: Cache reusable Bastard tag
+        uses: actions/cache@v4
+        with:
+          path: |
+            production/EP01/generated/blender/ep01_bastard_tag.mp4
+            production/EP01/generated/blender/ep01_bastard_tag.blend
+          key: bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}
       - name: Build Bastard terminal tag
         run: |
-          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          set -euo pipefail
+          if [ -s production/EP01/generated/blender/ep01_bastard_tag.mp4 ]; then
+            echo "BASTARD_TAG_CACHE_HIT=1"
+            stat -c 'BASTARD_TAG_REUSED_BYTES=%s' production/EP01/generated/blender/ep01_bastard_tag.mp4
+          else
+            echo "BASTARD_TAG_CACHE_HIT=0"
+            blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          fi
           test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+          echo "BASTARD_TAG_BYTES=$(stat -c '%s' production/EP01/generated/blender/ep01_bastard_tag.mp4)"
       - name: Install Node dependencies
         run: bun install
       - name: Build Story Runner cut

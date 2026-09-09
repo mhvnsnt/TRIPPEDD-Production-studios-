@@ -8,8 +8,7 @@ on:
 
 concurrency:
   group: ep01-story-runner-${{ github.ref }}
-  # Never kill a valuable render because infrastructure or another kickoff landed.
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -17,6 +16,7 @@ permissions:
 env:
   BLENDER_VERSION: '4.5.13'
   BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+  TRIPPEDD_PROGRESS_STALL_SECONDS: '180'
 
 jobs:
   render-subjectivity:
@@ -43,7 +43,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Cache Blender archive
-        id: blender-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
@@ -56,14 +55,10 @@ jobs:
       - name: Install render tools
         run: sudo apt-get update && sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
       - name: Install Blender
-        env:
-          BLENDER_CACHE_HIT: ${{ steps.blender-cache.outputs.cache-hit }}
         run: |
           set -euo pipefail
           mkdir -p ~/.cache/trippedd
-          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then
-            curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
-          fi
+          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt

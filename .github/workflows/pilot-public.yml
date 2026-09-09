@@ -6,6 +6,7 @@ on:
     paths:
       - production/EP01/RUN-PUBLIC-BUILD
       - .github/workflows/pilot-public.yml
+      - requirements.txt
       - scripts/run-public-pilot.ts
       - scripts/bin/whisper
       - production/EP01/generated/blender/**
@@ -26,6 +27,7 @@ permissions:
 env:
   BLENDER_VERSION: '4.5.13'
   BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+  HF_HOME: ${{ github.workspace }}/.cache/huggingface
 
 jobs:
   build-ep01-showrunner:
@@ -83,6 +85,7 @@ jobs:
           python -c "import cv2; print('OpenCV', cv2.__version__)"
           python -c "import faster_whisper; print('faster-whisper import OK')"
           python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
+          python -c "import openassetio; print('OpenAssetIO', openassetio.__version__)"
       - name: Activate production transcription wrapper
         run: |
           chmod +x scripts/bin/whisper
@@ -90,6 +93,29 @@ jobs:
           ./scripts/bin/whisper --help
       - name: Install Node dependencies
         run: bun install
+
+      - name: Restore Whisper model cache
+        id: whisper-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/huggingface
+          key: ep01-whisper-tiny-${{ hashFiles('requirements.txt') }}
+
+      - name: Warm and validate Whisper model cache
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from faster_whisper import WhisperModel
+          model = WhisperModel('tiny', device='cpu', compute_type='int8')
+          print('faster-whisper tiny model ready:', type(model).__name__)
+          PY
+
+      - name: Persist validated Whisper model cache
+        if: success() && steps.whisper-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/huggingface
+          key: ep01-whisper-tiny-${{ hashFiles('requirements.txt') }}
 
       - name: Restore subjectivity render cache
         id: subjectivity-cache

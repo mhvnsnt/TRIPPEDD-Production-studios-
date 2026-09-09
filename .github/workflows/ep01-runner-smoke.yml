@@ -1,0 +1,29 @@
+name: EP01 Runner Smoke
+
+on:
+  push:
+    paths:
+      - .github/workflows/ep01-runner-smoke.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  runner-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verify runner and open-source media baseline
+        run: |
+          set -euo pipefail
+          echo "runner=$(uname -a)"
+          echo "cpu=$(nproc)"
+          df -h /
+          free -h
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          ffmpeg -version | head -n 2
+          echo "TRIPPEDD_RUNNER_SMOKE_OK"

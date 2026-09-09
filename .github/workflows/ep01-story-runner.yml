@@ -5,11 +5,6 @@ on:
   push:
     paths:
       - production/EP01/RUN-PUBLIC-BUILD
-      - .github/workflows/ep01-story-runner.yml
-      - production/EP01/generated/blender/**
-      - src/server/pilotRenderer.ts
-      - src/server/productionMemory.ts
-      - src/server/productionProgress.ts
 
 concurrency:
   group: ep01-story-runner-${{ github.ref }}

@@ -1,32 +1,16 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": [
-    "blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt",
-    "frei0r", "vapoursynth", "zimg", "natron", "opencolorio", "openassetio", "opencue", "demucs",
-    "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity",
-    "gstreamer", "openusd", "materialx", "osl", "openvdb", "openfx", "openrv", "xstudio", "rez", "aswf-docker"
-  ],
-  "interchange": {
-    "editorial": "OpenTimelineIO",
-    "assets": "OpenAssetIO",
-    "sceneDescription": "OpenUSD",
-    "materials": "MaterialX",
-    "shading": "Open Shading Language",
-    "volumes": "OpenVDB",
-    "color": "OpenColorIO",
-    "media": "FFmpeg/FFprobe",
-    "mediaGraph": "GStreamer",
-    "images": "OpenImageIO/OpenEXR",
-    "videoProcessing": "VapourSynth",
-    "effects": "OpenFX/frei0r"
-  },
+  "optional": ["blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt", "frei0r", "vapoursynth", "zimg", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity", "gstreamer", "openusd", "materialx", "osl", "openvdb", "openfx", "openrv", "xstudio", "rez", "aswf-docker", "kitsu", "ayon", "cvat", "fiftyone", "mediaConch", "qctools", "opentelemetry", "prometheus", "grafana", "loki", "tempo", "minio", "dagster", "temporal", "airflow"],
+  "interchange": {"editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "sceneDescription": "OpenUSD", "materials": "MaterialX", "shading": "Open Shading Language", "volumes": "OpenVDB", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "mediaGraph": "GStreamer", "images": "OpenImageIO/OpenEXR", "videoProcessing": "VapourSynth", "effects": "OpenFX/frei0r", "review": "OpenRV/xSTUDIO"},
   "backends": {
     "deterministicMedia": "ffmpeg",
     "mediaInspection": ["ffprobe", "mediainfo", "bento4", "mkvtoolnix"],
-    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr", "silero-vad", "pyannote-audio"],
+    "qc": ["mediaConch", "qctools", "ffprobe", "mediainfo"],
+    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr", "silero-vad", "pyannote-audio", "cvat", "fiftyone"],
+    "assetTracking": ["kitsu", "ayon", "openassetio"],
     "procedural3D": "blender",
     "sceneGraph": "openusd",
     "lookDevelopment": ["materialx", "osl"],
@@ -40,36 +24,36 @@
     "assetInterchange": "openassetio",
     "mediaGraph": "gstreamer",
     "distributedRendering": ["flamenco", "opencue"],
+    "workflowOrchestration": ["dagster", "temporal", "airflow"],
     "review": ["openrv", "xstudio"],
     "audioUtility": ["sox", "rubberband", "demucs", "audacity"],
     "imageUtility": ["openimageio", "openexr", "imagemagick"],
+    "storage": ["minio"],
+    "observability": ["opentelemetry", "prometheus", "grafana", "loki", "tempo"],
     "environment": "rez"
   },
-  "episodeCuts": {
-    "autonomous": "AUTONOMOUS",
-    "storyRunner": "SHOWRUNNER",
-    "sharedEvidencePolicy": "Both cuts consume the same physical-source evidence model; editorial interpretation remains separate."
-  },
+  "episodeCuts": {"autonomous": "AUTONOMOUS", "storyRunner": "SHOWRUNNER", "sharedEvidencePolicy": "Both cuts consume the same physical-source evidence model; editorial interpretation remains separate."},
   "architecture": {
     "executionBackends": ["github-hosted", "self-hosted", "flamenco", "opencue"],
     "cachePolicy": "Content-addressed deterministic artifacts are immutable and reusable across execution backends.",
     "failurePolicy": "Independent tasks retry without invalidating successful artifacts; assembly begins only after manifest validation.",
     "provenance": "Every generated media artifact records source evidence, generator identity, toolchain versions, and checksums.",
     "fallbackPolicy": "Optional tools improve analysis or processing but never replace the deterministic FFmpeg/OTIO path without a verified fallback.",
-    "integrationPolicy": "A tool is production-integrated only after an executable smoke test, a real artifact or library exercise, and a recorded version/license result."
+    "integrationPolicy": "A tool is production-integrated only after an executable smoke test, a real artifact or library exercise, and a recorded version/license result.",
+    "assetGraph": "Physical source evidence -> tracked production asset -> analysis derivatives -> editorial/scene derivatives -> rendered artifact -> QC/review -> approved master.",
+    "observability": "Every production task emits structured logs, metrics, traces, artifact identity, duration, retry state, and failure context through portable telemetry.",
+    "storage": "Object storage is content-addressed and checksum-verified; manifests remain authoritative and artifacts are independently reproducible.",
+    "orchestration": "Long-running production workflows must be restartable from durable state and must not require full reruns after an isolated task failure."
   },
-  "policy": {
-    "optionalToolsMayBeAbsent": true,
-    "absenceMustBeExplicit": true,
-    "archivedProjectsMustNotBeBlindlyProvisioned": true,
-    "humanEditorialLockRequiredForFinalMaster": true,
-    "generatedMaterialMustCarryProvenance": true,
-    "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true,
-    "openSourceFirst": true,
-    "optionalAccelerationMustBeBenchmarked": true,
-    "noToolReplacementWithoutDeterministicFallback": true,
-    "modelLicensesMustBeRecorded": true,
-    "thirdPartyAssetsMustCarryLicenseMetadata": true,
-    "noEmptyOrShallowStubs": true
-  }
+  "integrationGates": {
+    "assetTracking": ["create asset", "assign stable identity", "link source evidence", "publish version", "retrieve by identity"],
+    "color": ["load OCIO config", "transform test image", "verify metadata", "round-trip sanity check"],
+    "audioPost": ["decode", "measure", "process", "encode", "verify duration/sample rate"],
+    "qc": ["container inspection", "codec inspection", "frame/sample validation", "machine-readable report", "failure exit code"],
+    "observability": ["emit metric", "emit structured log", "emit trace", "correlate artifact/run ID"],
+    "storage": ["put", "checksum", "get", "byte-compare", "manifest verification"],
+    "orchestration": ["execute dependency", "persist state", "retry isolated failure", "resume", "emit run evidence"],
+    "aiMediaAnalysis": ["ingest", "model inference", "timestamp/geometry alignment", "persist structured result", "provenance/license record"]
+  },
+  "policy": {"optionalToolsMayBeAbsent": true, "absenceMustBeExplicit": true, "archivedProjectsMustNotBeBlindlyProvisioned": true, "humanEditorialLockRequiredForFinalMaster": true, "generatedMaterialMustCarryProvenance": true, "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true, "openSourceFirst": true, "optionalAccelerationMustBeBenchmarked": true, "noToolReplacementWithoutDeterministicFallback": true, "modelLicensesMustBeRecorded": true, "thirdPartyAssetsMustCarryLicenseMetadata": true, "noEmptyOrShallowStubs": true, "no_capability_is_production_ready_without_a_real_smoke_test": true}
 }

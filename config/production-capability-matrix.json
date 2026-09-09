@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "doctrine": "docs/PRODUCTION-MACHINE-DOCTRINE.md",
+  "axes": {
+    "vertical": [
+      "source-truth",
+      "development-intelligence",
+      "assembly-editorial",
+      "visual-production",
+      "sound-finishing",
+      "publish-review",
+      "learning-loop"
+    ],
+    "horizontal": [
+      "live-action-sketch",
+      "animation",
+      "stop-motion-puppet",
+      "mixed-media",
+      "documentary-reality",
+      "music-performance",
+      "digital-short",
+      "stand-up-storytelling",
+      "promos-bumpers-interstitials",
+      "serialized-comedy",
+      "character-franchise",
+      "platform-cutdowns",
+      "interactive-virtual-production"
+    ]
+  },
+  "capabilities": [
+    {"id":"physical-source-timeline","vertical":"source-truth","horizontal":["live-action-sketch","documentary-reality","digital-short","mixed-media"],"status":"active","evidence":"source chronology and media analysis"},
+    {"id":"production-graph","vertical":"development-intelligence","horizontal":["live-action-sketch","animation","mixed-media","serialized-comedy","character-franchise"],"status":"active","evidence":"people, requirements, blockers, approvals, artifacts"},
+    {"id":"otio-assembly","vertical":"assembly-editorial","horizontal":["live-action-sketch","animation","mixed-media","digital-short","platform-cutdowns"],"status":"active","evidence":"timeline interchange and deterministic assembly"},
+    {"id":"blender-checkpoint-render","vertical":"visual-production","horizontal":["animation","stop-motion-puppet","mixed-media","promos-bumpers-interstitials"],"status":"active","evidence":"12 isolated resumable frame checkpoints"},
+    {"id":"audio-intelligence","vertical":"sound-finishing","horizontal":["live-action-sketch","documentary-reality","music-performance","digital-short"],"status":"candidate","evidence":"Demucs/aubio/Rubber Band evaluation"},
+    {"id":"perceptual-qc","vertical":"publish-review","horizontal":["all"],"status":"candidate","evidence":"VMAF when a valid reference/candidate pair exists"},
+    {"id":"asset-interchange","vertical":"visual-production","horizontal":["animation","mixed-media","interactive-virtual-production"],"status":"candidate","evidence":"OpenAssetIO + OpenUSD + MaterialX + OCIO boundary"},
+    {"id":"distributed-rendering","vertical":"visual-production","horizontal":["animation","mixed-media","promos-bumpers-interstitials"],"status":"candidate","evidence":"Flamenco evaluation before heavier render-farm infrastructure"},
+    {"id":"creator-development-playground","vertical":"development-intelligence","horizontal":["live-action-sketch","animation","digital-short","stand-up-storytelling","serialized-comedy","character-franchise"],"status":"planned","evidence":"format cards, ideas, talent, proof-of-concept and migration paths"},
+    {"id":"format-dna","vertical":"development-intelligence","horizontal":["all"],"status":"planned","evidence":"tone, audience, recurring characters, segment grammar, visual language, derivatives"}
+  ],
+  "promotionRules": [
+    "No tool is promoted solely because it is open source.",
+    "Every promoted tool needs reproducible installation, real-input smoke evidence, production-boundary integration, measured output, provenance, recovery behavior, and regression checks.",
+    "Horizontal expansion must reuse the same source truth, production graph, provenance, QC and publish primitives whenever possible.",
+    "Vertical hardening takes priority when EP01 is at risk; horizontal experiments must not destabilize the canonical production path."
+  ]
+}

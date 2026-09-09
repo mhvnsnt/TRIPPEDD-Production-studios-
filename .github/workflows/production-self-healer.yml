@@ -36,30 +36,76 @@ jobs:
           runs="$(gh api --paginate \
             -H 'Accept: application/vnd.github+json' \
             "/repos/${REPO}/actions/runs?branch=${BRANCH}&per_page=100" \
-            --jq '.workflow_runs[] | select(.name == "EP01 Showrunner Cut" or .name == "EP01 Autonomous Cut") | [.id,.name,.status,.conclusion,.run_attempt,.head_sha] | @tsv' \
+            --jq '.workflow_runs[] | select(.name == "EP01 Showrunner Cut" or .name == "EP01 Autonomous Cut") | [.id,.name,.status,.conclusion,.run_attempt,.head_sha,.run_started_at] | @tsv' \
             | head -n 20)"
           printf '%s\n' "$runs"
           printf '%s\n' "$runs" > /tmp/ep01-runs.tsv
 
-      - name: Recover one failed production attempt
+      - name: Recover one completed failed production attempt
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          recovered=0
-          while IFS=$'\t' read -r run_id name status conclusion attempt sha; do
+          while IFS=$'\t' read -r run_id name status conclusion attempt sha started; do
             [ -n "${run_id:-}" ] || continue
             if [ "$status" = "completed" ] && [ "$conclusion" = "failure" ] && [ "${attempt:-0}" -lt 2 ]; then
-              echo "Recovering $name run $run_id attempt $attempt at $sha"
+              echo "Recovering failed $name run $run_id attempt $attempt at $sha"
               gh api --method POST \
                 -H 'Accept: application/vnd.github+json' \
                 "/repos/${REPO}/actions/runs/${run_id}/rerun-failed-jobs"
-              recovered=1
               break
             fi
           done < /tmp/ep01-runs.tsv
-          echo "recovered=$recovered"
+
+      - name: Recover one genuinely stuck production job
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          now=$(date -u +%s)
+          while IFS=$'\t' read -r run_id name status conclusion attempt sha started; do
+            [ -n "${run_id:-}" ] || continue
+            [ "$status" = "in_progress" ] || continue
+            [ "${attempt:-0}" -lt 2 ] || continue
+
+            jobs="$(gh api -H 'Accept: application/vnd.github+json' "/repos/${REPO}/actions/runs/${run_id}/jobs?per_page=100")"
+            active="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.status == "in_progress") | {name,started_at,number}] | first // empty')"
+            [ -n "$active" ] || continue
+
+            active_name="$(printf '%s' "$active" | jq -r '.name')"
+            active_started="$(printf '%s' "$active" | jq -r '.started_at')"
+            [ "$active_started" != "null" ] || continue
+            active_epoch="$(date -u -d "$active_started" +%s)"
+            age=$((now-active_epoch))
+
+            # A render/assembly job is allowed to be expensive. Only recover after
+            # 110 minutes with no terminal transition, leaving the workflow's own
+            # 120/180 minute hard timeouts as the final safety net.
+            if [ "$age" -ge 6600 ]; then
+              echo "Stuck production job detected: $name run $run_id active=$active_name age=${age}s attempt=$attempt"
+              echo "Cancelling before replay so the old runner cannot race the recovery."
+              gh api --method POST \
+                -H 'Accept: application/vnd.github+json' \
+                "/repos/${REPO}/actions/runs/${run_id}/cancel"
+              for i in $(seq 1 12); do
+                sleep 5
+                state="$(gh api -H 'Accept: application/vnd.github+json' "/repos/${REPO}/actions/runs/${run_id}" --jq '.status')"
+                [ "$state" = "completed" ] && break
+              done
+              final_state="$(gh api -H 'Accept: application/vnd.github+json' "/repos/${REPO}/actions/runs/${run_id}" --jq '.status')"
+              if [ "$final_state" = "completed" ]; then
+                echo "Replaying the production job from cached/checkpointed artifacts."
+                gh api --method POST \
+                  -H 'Accept: application/vnd.github+json' \
+                  "/repos/${REPO}/actions/runs/${run_id}/rerun"
+              else
+                echo "Recovery deferred: old run did not reach completed state."
+              fi
+              break
+            fi
+          done < /tmp/ep01-runs.tsv
 
       - name: Record terminal failure after bounded retry
         if: always()
@@ -68,7 +114,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          while IFS=$'\t' read -r run_id name status conclusion attempt sha; do
+          while IFS=$'\t' read -r run_id name status conclusion attempt sha started; do
             [ -n "${run_id:-}" ] || continue
             if [ "$status" = "completed" ] && [ "$conclusion" = "failure" ] && [ "${attempt:-0}" -ge 2 ]; then
               title="EP01 autonomous production blocked: ${name} run ${run_id}"

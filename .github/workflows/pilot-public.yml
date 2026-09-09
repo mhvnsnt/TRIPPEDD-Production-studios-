@@ -43,7 +43,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-          cache-dependency-path: production/EP01/generated/blender/requirements.txt
+          cache-dependency-path: requirements.txt
       - name: Install system media tools
         run: |
           sudo apt-get update
@@ -63,7 +63,7 @@ jobs:
       - name: Install open-source media stack
         run: |
           python -m pip install --upgrade pip
-          python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
+          python -m pip install -r requirements.txt
           python -m scenedetect --help >/dev/null
           python -m gdown --version
           python -c "import cv2; print('OpenCV', cv2.__version__)"
@@ -100,8 +100,7 @@ jobs:
 
           if ! test -s production/EP01/generated/blender/ep01_subjectivity.mp4; then
             ffmpeg -y -hide_banner -loglevel error \
-              -framerate 24 \
-              -start_number 1 \
+              -framerate 24 -start_number 1 \
               -i production/EP01/generated/blender/subjectivity_frames/frame-%04d.jpg \
               -an -c:v libx264 -preset veryfast -crf 20 \
               -pix_fmt yuv420p -movflags +faststart \

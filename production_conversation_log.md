@@ -157,7 +157,7 @@ This file is the persistent production-session log requested by the producer. Ne
 >
 > I then wired the ledger into the real `pilotRenderer.ts` work units. The renderer now creates a run-scoped progress document and reports measured stages for source discovery, timeline planning, source segment encoding, generated segment encoding, final concatenation, and assembly completion. Long-running ffmpeg operations emit heartbeat updates and record the active artifact path/size so recovery can distinguish an alive renderer from a dead one. Cache hits still count as completed work; they do not force re-rendering.
 >
-> I exposed the latest ledger through `/api/production/progress/latest` and changed the Active Production UI to poll it every five seconds. The UI now renders actual per-stage loading bars with completed/total counts, percentage, heartbeat-backed run identity, and artifact size when available. It no longer needs to invent assembly progress from timers.
+> I exposed the latest ledger through `/api/production/progress/latest` and changed the Active Production UI to poll it every five seconds. The UI now renders actual per-stage loading bars with completed/total counts, percentage, status, heartbeat-backed run identity, and artifact size when available. It no longer needs to invent assembly progress from timers.
 >
 > I also updated the Story Runner workflow so the new progress implementation is part of its trigger set, passes the GitHub run ID into the renderer, and preserves the generated `.progress` ledger alongside the final Story Runner artifacts.
 >
@@ -175,6 +175,20 @@ This file is the persistent production-session log requested by the producer. Ne
 >
 > The new autonomous and Story Runner executions triggered by the commits are also queued/in progress as GitHub scheduling permits; they are not being used as a reason to cancel the current valuable run.
 
+### Producer — latest instruction
+> All right, keep working, update me on the progress and whatever. Doesn't have loading bars and everything, so you can see the progress, make it so you can see the progress so you're not guessing and so we're not waiting unnecessarily. And, you know, like make it kickstart the next step when the one step is done, make it kickstart the next step, like, you know, autonomous pipeline, and update me, let me know how everything's going, because I've been busy for like the last hour, so it should be a lot of progress. And if you haven't made any progress, bro, that means you need to make a lot of fixes and upgrades and pull in more open source, man.
+
+### Agent — autonomous pipeline hardening pass
+> I checked the live production job instead of assuming it was idle. The active EP01 Story Runner run `34380107515` has all 12 subjectivity chunks complete and has moved into the build job. The build job has completed checkout, Bun/Python setup, both caches, media-stack installation, Blender installation, and subjectivity assembly. It is currently in **Build Bastard terminal tag**; Node install, Story Runner assembly, verification, and upload are still pending. This is real GitHub job-step evidence, not a guessed percentage.
+>
+> I found the bigger pipeline gap: the workflow had an internal dependency from subjectivity → assembly, but there was no automatic post-build technical QC workflow. I added `.github/workflows/ep01-qc.yml` so a successful Story Runner automatically launches technical QC, downloads the exact completed `EP01-STORY-RUNNER` artifact from that run, runs FFprobe + MediaInfo validation, and publishes an `EP01-QC-*` artifact. GitHub's `workflow_run` event and cross-run artifact download support make this handoff deterministic rather than requiring a person to manually kick the next gate. citeturn1search2turn1search1
+>
+> I also added `.github/workflows/production-self-healer.yml`. It checks the EP01 Story Runner and Autonomous workflows on a 10-minute schedule and after completed runs. Failed/timed-out runs get one bounded failed-job replay; genuinely active jobs have a 110-minute stale-run backstop before cancellation/replay. Pending/queued runs are deliberately left alone so the healer doesn't make the queue worse. GitHub exposes job start/completion data through the Actions API, which is the evidence source for that decision. citeturn2search0turn2search2
+>
+> I am keeping the existing production concurrency policy intact: `cancel-in-progress: false`, so a valuable active render isn't killed just because a newer commit arrives. GitHub supports explicit concurrency groups for exactly this kind of controlled sequencing. citeturn0search1
+>
+> I did **not** pull random OSS just to make the repo look busy. The current stack already has FFmpeg, Blender, MediaInfo, Tesseract, PySceneDetect, OpenCV, Faster-Whisper, and OpenTimelineIO in the production path. The right next OSS additions remain evidence-gated: they only get promoted after install + real input + validation + recovery evidence.
+
 ### Implementation record
 - `d1110f8d65aec407d8f58b7c77135e4282098d94` — persistent conversation log initialized.
 - `9068db7307ab60e4f194d48c6d8b1647ebe367f5` — durable measured production-progress ledger added.
@@ -184,5 +198,7 @@ This file is the persistent production-session log requested by the producer. Ne
 - `97fb05366df5d10ec77d40d483161f7ec2bf8bff` — Active Production UI now displays measured stage bars.
 - `cfc6c6a625dd905842f091148fd7da3260db8b43` — Story Runner workflow persists the progress ledger and passes the run ID.
 - `5460b2983818bf1126d63c542c2664ccfd61ea07` — progress completion made monotonic and terminal states protected from late heartbeats.
+- `de775118c3eb3c3bc777a50a35a1be88a4272c42` — automatic EP01 technical QC chained after successful Story Runner completion.
+- `826e42166f6c38726bdf0122d4e8e67d84fd4162` — bounded scheduled/on-completion production self-healer restored in the actual workflow directory.
 - Existing recovery commit recorded from the production session: `eeb67c55d03483a5b71ef3e41c36e00c763a9561`.
 - Existing progress commits recorded from the production session: `4643f38642f97c82023693c1702f2e46df006e14`, `fe61e8d0323f2d8d2c36ab62449e4742abc87aca`.

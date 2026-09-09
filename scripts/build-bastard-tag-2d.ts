@@ -49,13 +49,18 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
 
 await mkdir(ROOT, { recursive: true });
 await writeFile(SVG, svg, "utf8");
-const magick = spawnSync("magick", [SVG, PNG], { stdio: "inherit" });
-if (magick.status !== 0) throw new Error(`ImageMagick failed with status ${magick.status}`);
-const ffmpeg = spawnSync("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error", "-loop", "1", "-i", PNG, "-t", String(DURATION), "-vf", `zoompan=z='min(zoom+0.0006,1.04)':d=${FRAMES}:s=${WIDTH}x${HEIGHT}:fps=${FPS}`, "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-pix_fmt", "yuv420p", "-movflags", "+faststart", OUT], { stdio: "inherit" });
+
+const rasterizer = spawnSync("bash", ["-lc", "command -v magick || command -v convert"], { encoding: "utf8" });
+const rasterizerPath = rasterizer.stdout.trim();
+if (rasterizer.status !== 0 || !rasterizerPath) throw new Error("ImageMagick rasterizer unavailable: expected magick or convert");
+const raster = spawnSync(rasterizerPath, [SVG, PNG], { stdio: "inherit" });
+if (raster.status !== 0) throw new Error(`ImageMagick rasterization failed with status ${raster.status}`);
+
+const ffmpeg = spawnSync("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error", "-loop", "1", "-i", PNG, "-frames:v", String(FRAMES), "-vf", `zoompan=z='min(zoom+0.0006,1.04)':d=1:s=${WIDTH}x${HEIGHT}:fps=${FPS}`, "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-pix_fmt", "yuv420p", "-movflags", "+faststart", OUT], { stdio: "inherit" });
 if (ffmpeg.status !== 0) throw new Error(`FFmpeg failed with status ${ffmpeg.status}`);
 const probe = spawnSync("ffprobe", ["-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,nb_read_frames", "-of", "json", OUT], { encoding: "utf8" });
 if (probe.status !== 0) throw new Error("ffprobe validation failed");
 const stream = JSON.parse(probe.stdout).streams?.[0];
 if (!stream || stream.width !== WIDTH || stream.height !== HEIGHT || stream.nb_read_frames !== String(FRAMES)) throw new Error(`2D Bastard tag validation failed: ${probe.stdout}`);
 await rm(PNG, { force: true });
-console.log(JSON.stringify({ verified: true, mode: "2D_COMIC", character: "Bannon/The Bastard", fps: FPS, frames: FRAMES, width: WIDTH, height: HEIGHT, svg: SVG, mp4: OUT, timestamp: new Date().toISOString() }, null, 2));
+console.log(JSON.stringify({ verified: true, mode: "2D_COMIC", character: "Bannon/The Bastard", fps: FPS, frames: FRAMES, width: WIDTH, height: HEIGHT, svg: SVG, mp4: OUT, rasterizer: rasterizerPath, timestamp: new Date().toISOString() }, null, 2));

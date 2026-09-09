@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "sequence": "EP01-origin-opening",
+  "fps": 24,
+  "timing": [
+    {"shot":"S01","frames":[0,47],"beat":"teens_panic","performance":"quick movement followed by a short hold"},
+    {"shot":"S02","frames":[48,83],"beat":"title_phrase","performance":"dialogue lands clearly before the throw"},
+    {"shot":"S03","frames":[84,119],"beat":"beer_throw","performance":"six-pack and cans travel into frame with readable silhouettes"},
+    {"shot":"S04","frames":[120,167],"beat":"beer_impact_transform","performance":"impact, soak, supernatural wake-up; transformation remains readable"},
+    {"shot":"S05","frames":[168,203],"beat":"busch_look_away","performance":"Busch wakes, registers surroundings, then deliberately looks away"},
+    {"shot":"S06","frames":[204,227],"beat":"reaction_hold","performance":"hold long enough for the joke to breathe"},
+    {"shot":"S07","frames":[228,275],"beat":"title_card","performance":"clean title reveal after reaction beat"}
+  ],
+  "criticalTiming": {
+    "spokenTitleBeforeBeerThrow": true,
+    "lookAwayIsDistinctShotBeat": true,
+    "reactionHoldBeforeTitle": true
+  },
+  "animationBudget": {
+    "principle": "limited animation with strong posing",
+    "preferredTechniques": ["held_poses", "layer_swaps", "camera_moves", "object_translation", "impact_shake", "small_deformations"],
+    "avoid": ["unnecessary_frame_by_frame_redraws"]
+  }
+}

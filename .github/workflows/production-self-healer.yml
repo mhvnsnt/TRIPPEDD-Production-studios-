@@ -34,16 +34,19 @@ jobs:
 
           for workflow in ep01-story-runner.yml ep01-autonomous.yml; do
             runs=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 10 --json databaseId,status,conclusion,attempt,createdAt,updatedAt,headSha)
-            active=$(jq '[.[] | select(.status == "in_progress")] | sort_by(.createdAt) | reverse' <<<"$runs")
+            active=$(jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | sort_by(.createdAt) | reverse' <<<"$runs")
             active_count=$(jq 'length' <<<"$active")
 
             if [ "$active_count" -gt 0 ]; then
-              while IFS= read -r queued_id; do
-                [ -z "$queued_id" ] && continue
-                echo "SUPPRESS: cancelling redundant queued $workflow run $queued_id because an active run already exists"
-                gh run cancel "$queued_id" --repo "$REPO" || true
-                suppressed=$((suppressed+1))
-              done < <(jq -r '.[] | select(.status == "queued") | .databaseId' <<<"$runs")
+              active_running=$(jq '[.[] | select(.status == "in_progress")] | length' <<<"$active")
+              if [ "$active_running" -gt 0 ]; then
+                while IFS= read -r queued_id; do
+                  [ -z "$queued_id" ] && continue
+                  echo "SUPPRESS: cancelling redundant queued $workflow run $queued_id because an active run exists"
+                  gh run cancel "$queued_id" --repo "$REPO" || true
+                  suppressed=$((suppressed+1))
+                done < <(jq -r '.[] | select(.status == "queued") | .databaseId' <<<"$active")
+              fi
               run=$(jq '.[0]' <<<"$active")
             else
               run=$(jq 'map(select(.status != "completed")) | sort_by(.createdAt) | reverse | .[0] // empty' <<<"$runs")
@@ -73,7 +76,7 @@ jobs:
             jobs=$(gh api "/repos/$REPO/actions/runs/$run_id/jobs?per_page=100" --jq '[.jobs[] | select(.status == "in_progress")]')
             active_job_count=$(jq 'length' <<<"$jobs")
             if [ "$active_job_count" -eq 0 ]; then
-              echo "Run $run_id is pending/queued; leave it alone."
+              echo "Run $run_id has no active job yet; leave it alone."
               continue
             fi
 
@@ -107,5 +110,5 @@ jobs:
             echo "- Checked: $checked run(s)"
             echo "- Suppressed queued duplicates: $suppressed"
             echo "- Recovery actions: $recovered"
-            echo "- Policy: active runs take priority; redundant queued duplicates are cancelled per workflow; failed runs get one failed-job replay; active runs get a 110-minute stale-run backstop."
+            echo "- Policy: active runs take priority; queued/waiting runs are preserved; redundant queued duplicates are cancelled only when an active run exists; failed runs get one failed-job replay; active runs get a 110-minute stale-run backstop."
           } >> "$GITHUB_STEP_SUMMARY"

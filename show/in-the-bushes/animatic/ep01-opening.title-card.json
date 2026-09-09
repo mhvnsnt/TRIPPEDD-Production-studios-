@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "show": "In the Bushes",
+  "sequence": "EP01-origin-opening",
+  "durationFrames": 48,
+  "fps": 24,
+  "title": "IN THE BUSHES",
+  "transition": "hard_cut_after_reaction_hold",
+  "design": {
+    "priority": "title_legibility",
+    "characterPresence": "Busch subtly visible behind_or_around_title",
+    "background": "simple_night_graphic",
+    "brandMarks": "none",
+    "beerBranding": "none"
+  },
+  "timing": {
+    "entryFrame": 0,
+    "holdFrame": 12,
+    "fullReadFrame": 24,
+    "exitFrame": 48
+  },
+  "provenance": {
+    "sourceScene": "show/in-the-bushes/animatic/ep01-opening.scene.json",
+    "creativeRule": "Title follows Busch look-away and reaction hold."
+  }
+}

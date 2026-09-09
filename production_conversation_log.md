@@ -157,11 +157,23 @@ This file is the persistent production-session log requested by the producer. Ne
 >
 > I then wired the ledger into the real `pilotRenderer.ts` work units. The renderer now creates a run-scoped progress document and reports measured stages for source discovery, timeline planning, source segment encoding, generated segment encoding, final concatenation, and assembly completion. Long-running ffmpeg operations emit heartbeat updates and record the active artifact path/size so recovery can distinguish an alive renderer from a dead one. Cache hits still count as completed work; they do not force re-rendering.
 >
-> I exposed the latest ledger through `/api/production/progress/latest` and changed the Active Production UI to poll it every five seconds. The UI now renders actual per-stage loading bars with completed/total counts, percentage, status, heartbeat-backed run identity, and artifact size when available. It no longer needs to invent assembly progress from timers.
+> I exposed the latest ledger through `/api/production/progress/latest` and changed the Active Production UI to poll it every five seconds. The UI now renders actual per-stage loading bars with completed/total counts, percentage, heartbeat-backed run identity, and artifact size when available. It no longer needs to invent assembly progress from timers.
 >
 > I also updated the Story Runner workflow so the new progress implementation is part of its trigger set, passes the GitHub run ID into the renderer, and preserves the generated `.progress` ledger alongside the final Story Runner artifacts.
 >
 > I did not intentionally restart/cancel the valuable existing production run. The current code changes are instrumentation and observability; the existing caches/checkpoints remain the source of truth for resumable work.
+
+### Producer
+> Go
+
+### Agent — monotonicity and live-run verification
+> I caught and fixed another real issue before calling this done: with parallel source encodes, a faster worker could report `4/24` and then a slower worker could report `2/24`, making the UI bar move backward. The ledger now enforces monotonic completed work and prevents terminal COMPLETE/FAILED stages from being downgraded by late RUNNING heartbeats.
+>
+> GitHub CI had already passed on the immediately preceding renderer/UI changes. The newest monotonicity fix has a fresh CI run queued, so I am not claiming it green before the runner reports it.
+>
+> I also checked the live production queue. The existing EP01 Story Runner run `34380107515` is still active and is progressing through the subjectivity matrix: chunks 01–08 are complete, while chunks 09–12 were actively running at the check. I am leaving that run alone. The new Story Runner run is queued behind it because the workflow uses `cancel-in-progress: false`, so the valuable current work is not being killed or replaced.
+>
+> The new autonomous and Story Runner executions triggered by the commits are also queued/in progress as GitHub scheduling permits; they are not being used as a reason to cancel the current valuable run.
 
 ### Implementation record
 - `d1110f8d65aec407d8f58b7c77135e4282098d94` — persistent conversation log initialized.
@@ -171,5 +183,6 @@ This file is the persistent production-session log requested by the producer. Ne
 - `059796584a799fa637fc587c48a5ffb940bf0bc6` — live progress API endpoint exposed by the production server.
 - `97fb05366df5d10ec77d40d483161f7ec2bf8bff` — Active Production UI now displays measured stage bars.
 - `cfc6c6a625dd905842f091148fd7da3260db8b43` — Story Runner workflow persists the progress ledger and passes the run ID.
+- `5460b2983818bf1126d63c542c2664ccfd61ea07` — progress completion made monotonic and terminal states protected from late heartbeats.
 - Existing recovery commit recorded from the production session: `eeb67c55d03483a5b71ef3e41c36e00c763a9561`.
 - Existing progress commits recorded from the production session: `4643f38642f97c82023693c1702f2e46df006e14`, `fe61e8d0323f2d8d2c36ab62449e4742abc87aca`.

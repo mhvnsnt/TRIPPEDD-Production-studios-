@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "show": "In the Bushes",
+  "sequence": "EP01-origin-opening",
+  "fps": 24,
+  "resolution": {"width": 1920, "height": 1080},
+  "shots": [
+    {"id":"S01","frames":"0001-0048","asset":"show/in-the-bushes/assets/ep01-opening-night.svg","camera":"wide_push","audioCue":"night_ambience"},
+    {"id":"S02","frames":"0049-0084","asset":"show/in-the-bushes/assets/ep01-opening-night.svg","camera":"teen_close","audioCue":"dialogue_in_the_bushes"},
+    {"id":"S03","frames":"0085-0120","asset":"show/in-the-bushes/assets/ep01-opening-night.svg","camera":"throw_arc","audioCue":"cans_throw"},
+    {"id":"S04","frames":"0121-0168","asset":"show/in-the-bushes/assets/busch/busch-model.svg","camera":"bush_impact","audioCue":"beer_impact_transform"},
+    {"id":"S05","frames":"0169-0204","asset":"show/in-the-bushes/assets/busch/busch-model.svg","camera":"busch_reveal","audioCue":"awkward_reaction"},
+    {"id":"S06","frames":"0205-0228","asset":"show/in-the-bushes/assets/busch/busch-model.svg","camera":"reaction_hold","audioCue":"silence"},
+    {"id":"S07","frames":"0229-0276","asset":"show/in-the-bushes/assets/ep01-opening-title.svg","camera":"title_lock","audioCue":"title_hit"}
+  ],
+  "editRules": [
+    "Do not move S07 earlier than the full S06 reaction hold.",
+    "The spoken title phrase occurs before the beer throw.",
+    "No beverage-company logo or trademark artwork is part of the show assets."
+  ],
+  "toolchain": {
+    "primary2d": "OpenToonz",
+    "media": "FFmpeg",
+    "interchange": "SVG",
+    "note": "SVG is used as editable original source artwork; OpenToonz supports SVG import into a scene workflow."
+  }
+}

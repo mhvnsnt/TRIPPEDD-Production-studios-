@@ -1,0 +1,84 @@
+name: Production Self-Healer
+
+on:
+  workflow_run:
+    workflows:
+      - EP01 Showrunner Cut
+      - EP01 Autonomous Cut
+    types: [completed]
+    branches:
+      - upgrade/production-pipeline-resilient-2026-09-08
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+  issues: write
+
+concurrency:
+  group: production-self-healer
+  cancel-in-progress: false
+
+jobs:
+  inspect-and-recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Inspect latest EP01 production runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: upgrade/production-pipeline-resilient-2026-09-08
+        run: |
+          set -euo pipefail
+          runs="$(gh api --paginate \
+            -H 'Accept: application/vnd.github+json' \
+            "/repos/${REPO}/actions/runs?branch=${BRANCH}&per_page=100" \
+            --jq '.workflow_runs[] | select(.name == "EP01 Showrunner Cut" or .name == "EP01 Autonomous Cut") | [.id,.name,.status,.conclusion,.run_attempt,.head_sha] | @tsv' \
+            | head -n 20)"
+          printf '%s\n' "$runs"
+          printf '%s\n' "$runs" > /tmp/ep01-runs.tsv
+
+      - name: Recover one failed production attempt
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          recovered=0
+          while IFS=$'\t' read -r run_id name status conclusion attempt sha; do
+            [ -n "${run_id:-}" ] || continue
+            if [ "$status" = "completed" ] && [ "$conclusion" = "failure" ] && [ "${attempt:-0}" -lt 2 ]; then
+              echo "Recovering $name run $run_id attempt $attempt at $sha"
+              gh api --method POST \
+                -H 'Accept: application/vnd.github+json' \
+                "/repos/${REPO}/actions/runs/${run_id}/rerun-failed-jobs"
+              recovered=1
+              break
+            fi
+          done < /tmp/ep01-runs.tsv
+          echo "recovered=$recovered"
+
+      - name: Record terminal failure after bounded retry
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          while IFS=$'\t' read -r run_id name status conclusion attempt sha; do
+            [ -n "${run_id:-}" ] || continue
+            if [ "$status" = "completed" ] && [ "$conclusion" = "failure" ] && [ "${attempt:-0}" -ge 2 ]; then
+              title="EP01 autonomous production blocked: ${name} run ${run_id}"
+              if ! gh issue list --repo "$REPO" --state open --search "$title in:title" --json number --jq 'length' | grep -q '^0$'; then
+                continue
+              fi
+              gh issue create --repo "$REPO" \
+                --title "$title" \
+                --body "<!-- EP01-AUTONOMY-BLOCKER -->\nThe production workflow failed twice without an automatic recovery.\n\n- Workflow: $name\n- Run: $run_id\n- Head: $sha\n- Final attempt: $attempt\n\nThe bounded self-healer intentionally stopped retrying. Diagnose the exact failed step, fix the root cause, and rerun the production path." \
+                --label automated || true
+              break
+            fi
+          done < /tmp/ep01-runs.tsv

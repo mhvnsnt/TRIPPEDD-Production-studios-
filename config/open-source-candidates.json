@@ -131,6 +131,32 @@
       "artifactExpected": "AV1 derivative plus encode manifest",
       "fallback": "existing H.264 FFmpeg delivery path",
       "promotionGate": "deterministic fixture encode/decode and size/quality benchmark"
+    },
+    {
+      "id": "chronow",
+      "category": "agent-temporal-reasoning",
+      "upstream": "https://github.com/Hmbown/chronow",
+      "license": "VERIFY_UPSTREAM",
+      "status": "candidate",
+      "whyRelevant": "Rust temporal engine with timezone-correct now, DST-safe local-time resolution, recurrence, interval and duration operations; useful for production agents that must keep dates and times straight.",
+      "integrationTarget": "agent runtime + production timestamps + scheduling + temporal validation",
+      "smokeTest": "build/install MCP server; exercise now, timezone conversion, DST fold/gap, recurrence and interval checks; compare outputs against reference cases",
+      "artifactExpected": "machine-readable temporal test report with timezone and instant provenance",
+      "fallback": "native UTC timestamps plus standard-library datetime logic",
+      "promotionGate": "conformance suite passes, DST cases verified, and production watchdog timestamps round-trip without ambiguity"
+    },
+    {
+      "id": "agentic-time",
+      "category": "agent-temporal-reasoning",
+      "upstream": "https://github.com/agentralabs/agentic-time",
+      "license": "VERIFY_UPSTREAM",
+      "status": "candidate",
+      "whyRelevant": "Persistent temporal graph for deadlines, schedules, workflow sequences, duration estimates and information-freshness decay; directly relevant to agents tracking long-running production work.",
+      "integrationTarget": "agent memory + production schedule + duration estimation + freshness",
+      "smokeTest": "install Rust/Python core and MCP server; create a production sequence; add deadlines and duration estimates; record actuals; query freshness and conflicts",
+      "artifactExpected": "portable .atime timeline plus JSON test evidence tied to production run IDs",
+      "fallback": "GitHub Actions run metadata + native production state files",
+      "promotionGate": "real production-like sequence, persisted restart/reload, duration actual-vs-estimate evidence and conflict detection"
     }
   ]
 }

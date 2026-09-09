@@ -29,7 +29,7 @@ const checks: Record<string, { command: string; args: string[] }> = {
   blender: { command: 'blender', args: ['--version'] },
   openimageio: { command: 'oiiotool', args: ['--version'] },
   openexr: { command: 'exrheader', args: ['--help'] },
-  imagemagick: { command: 'magick', args: ['-version'] },
+  imagemagick: { command: 'identify', args: ['-version'] },
   sox: { command: 'sox', args: ['--version'] },
   rubberband: { command: 'rubberband', args: ['--help'] },
   kdenlive: { command: 'kdenlive', args: ['--version'] },

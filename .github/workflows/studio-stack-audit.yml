@@ -1,0 +1,104 @@
+name: Studio Stack Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - upgrade/open-source-capability-registry-2026-09-08
+    paths:
+      - config/studio-toolchain.json
+      - scripts/audit-studio-toolchain.ts
+      - .github/workflows/studio-stack-audit.yml
+      - package.json
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deterministic media and inspection tools
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg mediainfo tesseract-ocr imagemagick sox \
+            gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
+            pkg-config
+
+      - name: Install required Python production stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install \
+            'opencv-python-headless>=4.10' \
+            'scenedetect-headless>=0.7.1' \
+            'faster-whisper>=1.2.0' \
+            'opentimelineio>=0.17.0' \
+            'openimageio' \
+            'OpenEXR' \
+            'PyOpenColorIO' \
+            'openassetio' \
+            'usd-core' \
+            'MaterialX'
+
+      - name: Install Node dependencies
+        run: npm install --ignore-scripts
+
+      - name: Run real studio capability audit
+        run: npm run studio:audit
+
+      - name: Validate generated audit artifact
+        run: |
+          set -euo pipefail
+          test -s public/production/studio-toolchain-audit.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('public/production/studio-toolchain-audit.json')
+          report = json.loads(p.read_text())
+          assert report['status'] == 'READY', report
+          assert not report['requiredFailures'], report
+          assert not report['brokenTools'], report
+          required = set(['ffmpeg','ffprobe','opencv','pyscenedetect','whisper','tesseract','otio'])
+          actual = {x['id'] for x in report['tools'] if x['status'] == 'AVAILABLE'}
+          assert required <= actual, (required - actual)
+          print('Required production capabilities verified:', sorted(required))
+          print('Available capabilities:', sum(x['status'] == 'AVAILABLE' for x in report['tools']))
+          PY
+
+      - name: Smoke test GStreamer media graph
+        run: |
+          set -euo pipefail
+          gst-launch-1.0 -q videotestsrc num-buffers=3 ! videoconvert ! fakesink
+
+      - name: Smoke test ImageMagick and SoX
+        run: |
+          set -euo pipefail
+          printf 'TRIPPEDD stack smoke test\n' > /tmp/trippedd.txt
+          convert -size 16x16 xc:white /tmp/trippedd.png
+          identify /tmp/trippedd.png
+          sox -n -r 48000 -c 1 /tmp/trippedd.wav synth 0.05 sine 440
+          test -s /tmp/trippedd.wav
+
+      - name: Upload verified stack audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-stack-audit
+          path: public/production/studio-toolchain-audit.json
+          if-no-files-found: error
+          retention-days: 30

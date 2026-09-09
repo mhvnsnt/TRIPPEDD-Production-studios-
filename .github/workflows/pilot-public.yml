@@ -14,6 +14,7 @@ on:
       - src/server/mediaPipeline.ts
       - src/server/pilotRenderer.ts
       - src/server/productionMemory.ts
+      - scripts/qc-ep01.ts
 
 concurrency:
   group: ep01-showrunner-${{ github.ref }}
@@ -33,22 +34,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install system media tools
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
-
       - name: Install production Blender LTS
         run: |
           set -euo pipefail
@@ -61,7 +58,6 @@ jobs:
           sudo tar -xJf "/tmp/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
-
       - name: Install open-source media stack
         run: |
           python -m pip install --upgrade pip
@@ -71,31 +67,25 @@ jobs:
           python -c "import cv2; print('OpenCV', cv2.__version__)"
           python -c "import faster_whisper; print('faster-whisper import OK')"
           python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
-          blender --version | head -n 2
-
       - name: Activate production transcription wrapper
         run: |
           chmod +x scripts/bin/whisper
           test -x scripts/bin/whisper
           ./scripts/bin/whisper --help
-
       - name: Install Node dependencies
         run: bun install
-
       - name: Build generated EP01 subjectivity sequence
         run: |
           blender -b --python production/EP01/generated/blender/build_subjectivity.py
           test -s production/EP01/generated/blender/ep01_subjectivity.mp4
           test -s production/EP01/generated/blender/ep01_subjectivity.blend
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_subjectivity.mp4
-
       - name: Build generated Bastard terminal tag
         run: |
           blender -b --python production/EP01/generated/blender/build_bastard_tag.py
           test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
           test -s production/EP01/generated/blender/ep01_bastard_tag.blend
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_bastard_tag.mp4
-
       - name: Build EP01 showrunner cut
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
@@ -112,14 +102,16 @@ jobs:
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '2'
         run: timeout 150m bun run pilot:build:public
-
       - name: Verify showrunner cut
         run: |
           test -s public/production/EP01-SHOWRUNNER.mp4
           test -s public/production/EP01-SHOWRUNNER.json
           test -s public/production/EP01-SHOWRUNNER.otio
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json public/production/EP01-SHOWRUNNER.mp4
-
+      - name: Run EP01 technical QC
+        env:
+          TRIPPEDD_QC_BASENAME: EP01-SHOWRUNNER
+        run: bunx tsx scripts/qc-ep01.ts
       - name: Upload showrunner cut
         uses: actions/upload-artifact@v4
         with:
@@ -128,8 +120,10 @@ jobs:
             public/production/EP01-SHOWRUNNER.mp4
             public/production/EP01-SHOWRUNNER.json
             public/production/EP01-SHOWRUNNER.otio
+            production/EP01/QC-PASS.json
+            public/production/EP01-vmaf.json
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/ep01_bastard_tag.blend
             production/EP01/generated/blender/ep01_bastard_tag.mp4
-          if-no-files-found: error
+          if-no-files-found: warn

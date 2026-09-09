@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>In the Bushes original title card</title>
+<rect width="1920" height="1080" fill="#0a0d12"/>
+<g opacity=".9" fill="#263925" stroke="#111810" stroke-width="18"><circle cx="1530" cy="760" r="250"/><circle cx="1690" cy="720" r="260"/><circle cx="1810" cy="800" r="190"/></g>
+<g transform="translate(960 500)" text-anchor="middle" font-family="sans-serif" font-weight="900"><text y="0" fill="#f2f2f2" font-size="142" letter-spacing="5">IN THE BUSHES</text><text y="65" fill="#a9b0b8" font-size="28" letter-spacing="9">AN ORIGINAL ANIMATED SERIES</text></g>
+<!-- Busch is suggested behind the title without using any beverage trademark or logo. -->
+<g transform="translate(1480 610) scale(.72)"><ellipse cx="250" cy="270" rx="230" ry="190" fill="#30432f" stroke="#0b0e0c" stroke-width="18"/><circle cx="125" cy="190" r="105" fill="#40583d"/><circle cx="270" cy="150" r="125" fill="#3a5138"/><circle cx="380" cy="220" r="100" fill="#40583d"/><ellipse cx="180" cy="250" rx="23" ry="34" fill="#e8eee5"/><ellipse cx="330" cy="250" rx="23" ry="34" fill="#e8eee5"/><circle cx="185" cy="262" r="9" fill="#111"/><circle cx="335" cy="262" r="9" fill="#111"/></g>
+</svg>

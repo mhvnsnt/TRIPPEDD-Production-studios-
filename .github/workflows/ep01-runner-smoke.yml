@@ -11,7 +11,8 @@ permissions:
 
 jobs:
   runner-smoke:
-    runs-on: ubuntu-latest
+    name: Runner smoke (ubuntu-22.04)
+    runs-on: ubuntu-22.04
     timeout-minutes: 5
     steps:
       - name: Checkout

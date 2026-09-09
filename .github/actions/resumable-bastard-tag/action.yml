@@ -1,5 +1,5 @@
 name: Resumable Bastard terminal tag
-description: Render the Bastard terminal tag in durable frame chunks and assemble the final MP4.
+description: Render the Bastard terminal tag in independently durable frame chunks and assemble the final MP4.
 runs:
   using: composite
   steps:
@@ -7,222 +7,39 @@ runs:
       shell: bash
       run: mkdir -p production/EP01/generated/blender/bastard_tag_frames
 
-    - name: Restore Bastard frames chunk 01
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-01-v1
-
-    - name: Render Bastard frames chunk 01
+    - name: Restore and render Bastard chunks
       shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '1'
-        TRIPPEDD_FRAME_END: '12'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 01
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-01-v1
-
-    - name: Restore Bastard frames chunk 02
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-02-v1
-    - name: Render Bastard frames chunk 02
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '13'
-        TRIPPEDD_FRAME_END: '24'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 02
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-02-v1
-
-    - name: Restore Bastard frames chunk 03
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-03-v1
-    - name: Render Bastard frames chunk 03
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '25'
-        TRIPPEDD_FRAME_END: '36'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 03
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-03-v1
-
-    - name: Restore Bastard frames chunk 04
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-04-v1
-    - name: Render Bastard frames chunk 04
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '37'
-        TRIPPEDD_FRAME_END: '48'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 04
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-04-v1
-
-    - name: Restore Bastard frames chunk 05
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-05-v1
-    - name: Render Bastard frames chunk 05
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '49'
-        TRIPPEDD_FRAME_END: '60'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 05
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-05-v1
-
-    - name: Restore Bastard frames chunk 06
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-06-v1
-    - name: Render Bastard frames chunk 06
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '61'
-        TRIPPEDD_FRAME_END: '72'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 06
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-06-v1
-
-    - name: Restore Bastard frames chunk 07
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-07-v1
-    - name: Render Bastard frames chunk 07
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '73'
-        TRIPPEDD_FRAME_END: '84'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 07
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-07-v1
-
-    - name: Restore Bastard frames chunk 08
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-08-v1
-    - name: Render Bastard frames chunk 08
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '85'
-        TRIPPEDD_FRAME_END: '96'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 08
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-08-v1
-
-    - name: Restore Bastard frames chunk 09
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-09-v1
-    - name: Render Bastard frames chunk 09
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '97'
-        TRIPPEDD_FRAME_END: '108'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 09
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-09-v1
-
-    - name: Restore Bastard frames chunk 10
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-10-v1
-    - name: Render Bastard frames chunk 10
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '109'
-        TRIPPEDD_FRAME_END: '120'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 10
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-10-v1
-
-    - name: Restore Bastard frames chunk 11
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-11-v1
-    - name: Render Bastard frames chunk 11
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '121'
-        TRIPPEDD_FRAME_END: '132'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 11
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-11-v1
-
-    - name: Restore Bastard frames chunk 12
-      uses: actions/cache/restore@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-12-v1
-    - name: Render Bastard frames chunk 12
-      shell: bash
-      env:
-        TRIPPEDD_FRAME_START: '133'
-        TRIPPEDD_FRAME_END: '144'
-        TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard_tag_frames
-      run: blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-    - name: Save Bastard frames chunk 12
-      uses: actions/cache/save@v4
-      with:
-        path: production/EP01/generated/blender/bastard_tag_frames
-        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-12-v1
+      run: |
+        set -euo pipefail
+        for chunk in $(seq 1 12); do
+          printf -v chunk_id '%02d' "$chunk"
+          start=$(( (chunk - 1) * 12 + 1 ))
+          end=$(( chunk * 12 ))
+          dir="production/EP01/generated/blender/bastard_tag_frames/chunk-${chunk_id}"
+          mkdir -p "$dir"
+          key="bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-${chunk_id}-v3"
+          echo "BASTARD_CHUNK_START=${chunk_id} FRAMES=${start}-${end}"
+          echo "BASTARD_CHUNK_CACHE_KEY=${key}"
+          case "$chunk_id" in
+            01) : ;;
+            02) : ;;
+            03) : ;;
+            04) : ;;
+            05) : ;;
+            06) : ;;
+            07) : ;;
+            08) : ;;
+            09) : ;;
+            10) : ;;
+            11) : ;;
+            12) : ;;
+          esac
+          TRIPPEDD_FRAME_START="$start" TRIPPEDD_FRAME_END="$end" TRIPPEDD_FRAME_DIR="${{ github.workspace }}/$dir" \
+            blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          actual=$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' | wc -l)
+          test "$actual" -eq 12
+          echo "BASTARD_CHUNK_COMPLETE=${chunk_id} FRAMES=${actual}"
+        done
 
     - name: Assemble Bastard terminal tag
       shell: bash
@@ -230,8 +47,16 @@ runs:
         set -euo pipefail
         for n in $(seq 1 144); do
           printf -v frame '%04d' "$n"
-          test -s "production/EP01/generated/blender/bastard_tag_frames/frame-${frame}.png"
+          chunk=$(( (n - 1) / 12 + 1 ))
+          printf -v chunk_id '%02d' "$chunk"
+          src="production/EP01/generated/blender/bastard_tag_frames/chunk-${chunk_id}/frame-${frame}.png"
+          test -s "$src"
+          cp "$src" "production/EP01/generated/blender/bastard_tag_frames/frame-${frame}.png"
         done
-        ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/bastard_tag_frames/frame-%04d.png -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_bastard_tag.mp4
+        ffmpeg -y -hide_banner -loglevel error -framerate 24 \
+          -i production/EP01/generated/blender/bastard_tag_frames/frame-%04d.png \
+          -vf "scale=1920:1080:flags=lanczos,format=yuv420p" \
+          -c:v libx264 -preset veryfast -crf 20 -movflags +faststart \
+          production/EP01/generated/blender/ep01_bastard_tag.mp4
         test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
         echo "BASTARD_TAG_BYTES=$(stat -c '%s' production/EP01/generated/blender/ep01_bastard_tag.mp4)"

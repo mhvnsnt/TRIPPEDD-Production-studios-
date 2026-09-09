@@ -9,13 +9,14 @@ on:
       - requirements.txt
       - scripts/run-public-pilot.ts
       - scripts/bin/whisper
-      - production/EP01/generated/blender/**
+      - production/EP01/generated/**
       - src/server/publicDriveFolder.ts
       - src/server/queueManager.ts
       - src/server/mediaPipeline.ts
       - src/server/pilotRenderer.ts
       - src/server/productionMemory.ts
       - scripts/qc-ep01.ts
+      - scripts/build-bastard-tag-2d.ts
 
 concurrency:
   group: ep01-showrunner-${{ github.ref }}
@@ -49,7 +50,7 @@ jobs:
       - name: Install system media tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+          sudo apt-get install -y ffmpeg imagemagick tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
       - name: Restore Blender download cache
         id: blender-cache
         uses: actions/cache/restore@v4
@@ -128,6 +129,8 @@ jobs:
           import subprocess
           result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_subjectivity.py'])
           print(f'Blender subjectivity exit code: {result.returncode}')
+          if result.returncode != 0:
+              raise SystemExit(result.returncode)
           PY
           frame_count=$(find production/EP01/generated/blender/subjectivity_frames -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
           test "$frame_count" -eq 144
@@ -152,47 +155,25 @@ jobs:
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
           key: ep01-subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
-      - name: Restore Bastard terminal tag cache
-        id: bastard-cache
+      - name: Restore 2D Bastard terminal tag cache
+        id: bastard-2d-cache
         uses: actions/cache/restore@v4
         with:
-          path: |
-            production/EP01/generated/blender/bastard_tag_frames
-            production/EP01/generated/blender/ep01_bastard_tag.blend
-            production/EP01/generated/blender/ep01_bastard_tag.mp4
-          key: ep01-bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
-      - name: Build generated Bastard terminal tag
-        shell: bash
+          path: production/EP01/generated/comic
+          key: ep01-bastard-2d-${{ hashFiles('scripts/build-bastard-tag-2d.ts') }}-144f
+      - name: Build 2D comic Bastard terminal tag
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import subprocess
-          result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_bastard_tag.py'])
-          print(f'Blender terminal-tag exit code: {result.returncode}')
-          PY
-          frame_count=$(find production/EP01/generated/blender/bastard_tag_frames -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)
-          test "$frame_count" -eq 144
-          if ! test -s production/EP01/generated/blender/ep01_bastard_tag.blend; then
-            checkpoint=$(find production/EP01/generated/blender/bastard_tag_frames -maxdepth 1 -type f -name 'bastard-tag-*.blend' -size +0c | sort | tail -n 1)
-            test -n "$checkpoint"
-            cp "$checkpoint" production/EP01/generated/blender/ep01_bastard_tag.blend
-            echo "Promoted validated Blender checkpoint: $checkpoint"
-          fi
-          test -s production/EP01/generated/blender/ep01_bastard_tag.blend
-          if ! test -s production/EP01/generated/blender/ep01_bastard_tag.mp4; then
-            ffmpeg -y -hide_banner -loglevel error -framerate 24 -start_number 1 -i production/EP01/generated/blender/bastard_tag_frames/frame-%04d.png -an -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -movflags +faststart production/EP01/generated/blender/ep01_bastard_tag.mp4
-          fi
-          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_bastard_tag.mp4
-      - name: Persist validated Bastard tag cache
-        if: success() && steps.bastard-cache.outputs.cache-hit != 'true'
+          bun run scripts/build-bastard-tag-2d.ts
+          test -s production/EP01/generated/comic/bannon-the-bastard-terminal.svg
+          test -s production/EP01/generated/comic/ep01_bastard_tag.mp4
+          ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=width,height,nb_read_frames -of json production/EP01/generated/comic/ep01_bastard_tag.mp4
+      - name: Persist validated 2D Bastard tag cache
+        if: success() && steps.bastard-2d-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
-          path: |
-            production/EP01/generated/blender/bastard_tag_frames
-            production/EP01/generated/blender/ep01_bastard_tag.blend
-            production/EP01/generated/blender/ep01_bastard_tag.mp4
-          key: ep01-bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
+          path: production/EP01/generated/comic
+          key: ep01-bastard-2d-${{ hashFiles('scripts/build-bastard-tag-2d.ts') }}-144f
       - name: Build EP01 showrunner cut
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
@@ -228,7 +209,7 @@ jobs:
           set -euo pipefail
           manifest="public/production/EP01-SHOWRUNNER.manifest.sha256"
           : > "$manifest"
-          sha256sum public/production/EP01-SHOWRUNNER.mp4 public/production/EP01-SHOWRUNNER.json public/production/EP01-SHOWRUNNER.otio production/EP01/generated/blender/ep01_subjectivity.blend production/EP01/generated/blender/ep01_subjectivity.mp4 production/EP01/generated/blender/ep01_bastard_tag.blend production/EP01/generated/blender/ep01_bastard_tag.mp4 > "$manifest"
+          sha256sum public/production/EP01-SHOWRUNNER.mp4 public/production/EP01-SHOWRUNNER.json public/production/EP01-SHOWRUNNER.otio production/EP01/generated/blender/ep01_subjectivity.blend production/EP01/generated/blender/ep01_subjectivity.mp4 production/EP01/generated/comic/bannon-the-bastard-terminal.svg production/EP01/generated/comic/ep01_bastard_tag.mp4 > "$manifest"
           test "$(wc -l < "$manifest")" -eq 7
       - name: Run EP01 technical QC
         env:
@@ -247,6 +228,6 @@ jobs:
             public/production/EP01-vmaf.json
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
-            production/EP01/generated/blender/ep01_bastard_tag.blend
-            production/EP01/generated/blender/ep01_bastard_tag.mp4
+            production/EP01/generated/comic/bannon-the-bastard-terminal.svg
+            production/EP01/generated/comic/ep01_bastard_tag.mp4
           if-no-files-found: error

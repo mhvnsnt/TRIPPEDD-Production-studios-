@@ -131,6 +131,12 @@ jobs:
           PY
           frame_count=$(find production/EP01/generated/blender/subjectivity_frames -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
           test "$frame_count" -eq 144
+          if ! test -s production/EP01/generated/blender/ep01_subjectivity.blend; then
+            checkpoint=$(find production/EP01/generated/blender/subjectivity_frames -maxdepth 1 -type f -name 'subjectivity-*.blend' -size +0c | sort | tail -n 1)
+            test -n "$checkpoint"
+            cp "$checkpoint" production/EP01/generated/blender/ep01_subjectivity.blend
+            echo "Promoted validated Blender checkpoint: $checkpoint"
+          fi
           test -s production/EP01/generated/blender/ep01_subjectivity.blend
           if ! test -s production/EP01/generated/blender/ep01_subjectivity.mp4; then
             ffmpeg -y -hide_banner -loglevel error -framerate 24 -start_number 1 -i production/EP01/generated/blender/subjectivity_frames/frame-%04d.jpg -an -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -movflags +faststart production/EP01/generated/blender/ep01_subjectivity.mp4
@@ -166,7 +172,16 @@ jobs:
           PY
           frame_count=$(find production/EP01/generated/blender/bastard_tag_frames -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)
           test "$frame_count" -eq 144
+          if ! test -s production/EP01/generated/blender/ep01_bastard_tag.blend; then
+            checkpoint=$(find production/EP01/generated/blender/bastard_tag_frames -maxdepth 1 -type f -name 'bastard-tag-*.blend' -size +0c | sort | tail -n 1)
+            test -n "$checkpoint"
+            cp "$checkpoint" production/EP01/generated/blender/ep01_bastard_tag.blend
+            echo "Promoted validated Blender checkpoint: $checkpoint"
+          fi
           test -s production/EP01/generated/blender/ep01_bastard_tag.blend
+          if ! test -s production/EP01/generated/blender/ep01_bastard_tag.mp4; then
+            ffmpeg -y -hide_banner -loglevel error -framerate 24 -start_number 1 -i production/EP01/generated/blender/bastard_tag_frames/frame-%04d.png -an -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -movflags +faststart production/EP01/generated/blender/ep01_bastard_tag.mp4
+          fi
           test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_bastard_tag.mp4
       - name: Persist validated Bastard tag cache

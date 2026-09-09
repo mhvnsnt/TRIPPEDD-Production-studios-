@@ -9,6 +9,7 @@ on:
       - production/EP01/generated/blender/**
       - src/server/pilotRenderer.ts
       - src/server/productionMemory.ts
+      - src/server/productionProgress.ts
 
 concurrency:
   group: ep01-story-runner-${{ github.ref }}
@@ -147,6 +148,7 @@ jobs:
         run: bun install
       - name: Build Story Runner cut
         env:
+          TRIPPEDD_RUN_ID: ${{ github.run_id }}
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_SEGMENT_CACHE: ${{ github.workspace }}/.trippedd/media/assembly-segments
@@ -181,6 +183,7 @@ jobs:
             public/production/EP01-STORY-RUNNER.otio
             public/production/EP01-STORY-RUNNER.ffprobe.json
             public/production/EP01-STORY-RUNNER.mediainfo.txt
+            public/production/.progress/
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/ep01_bastard_tag.mp4
           if-no-files-found: error

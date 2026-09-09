@@ -1,0 +1,44 @@
+name: Safe branch ref
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: Existing branch whose current commit should become the target
+        required: true
+        type: string
+      target_branch:
+        description: Branch to create or move
+        required: true
+        type: string
+      force:
+        description: Force-update an existing target ref
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  update-ref:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure GitHub CLI
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          source_sha="$(gh api "repos/${GH_REPO}/git/ref/heads/${{ inputs.source_branch }}" --jq '.object.sha')"
+          target="${{ inputs.target_branch }}"
+          if gh api "repos/${GH_REPO}/git/ref/heads/${target}" >/dev/null 2>&1; then
+            gh api --method PATCH "repos/${GH_REPO}/git/refs/heads/${target}" \
+              -f "sha=${source_sha}" \
+              -F "force=${{ inputs.force }}" >/dev/null
+          else
+            gh api --method POST "repos/${GH_REPO}/git/refs" \
+              -f "ref=refs/heads/${target}" \
+              -f "sha=${source_sha}" >/dev/null
+          fi
+          echo "refs/heads/${target} -> ${source_sha}"

@@ -12,6 +12,27 @@ interface QueueJob {
   evidenceRefs?: string[];
 }
 
+interface ProductionStageProgress {
+  id: string;
+  label: string;
+  status: 'PENDING' | 'RUNNING' | 'COMPLETE' | 'FAILED';
+  completed: number;
+  total: number;
+  percent: number;
+  heartbeatAt: string;
+  artifactBytes?: number;
+  message?: string;
+}
+
+interface ProductionProgressSnapshot {
+  schemaVersion: 1;
+  episodeId: string;
+  runId: string;
+  updatedAt: string;
+  currentStageId?: string;
+  stages: ProductionStageProgress[];
+}
+
 const pilot = createEp01PilotPlan();
 const assembly = createEp01AssemblyPlan();
 
@@ -26,16 +47,24 @@ const stageNames = [
   'Final greenlight',
 ];
 
+function formatBytes(bytes?: number) {
+  if (!bytes) return '';
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
 export function ActiveProduction() {
   const [jobs, setJobs] = useState<QueueJob[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedBeat, setSelectedBeat] = useState(pilot.beats[0]?.id ?? null);
+  const [productionProgress, setProductionProgress] = useState<ProductionProgressSnapshot | null>(null);
 
   const refresh = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/queue');
-      if (response.ok) setJobs(await response.json());
+      const [queueResponse, progressResponse] = await Promise.all([fetch('/api/queue'), fetch('/api/production/progress/latest')]);
+      if (queueResponse.ok) setJobs(await queueResponse.json());
+      if (progressResponse.ok) setProductionProgress(await progressResponse.json());
     } catch {
       // The workspace remains useful offline; the Drive ingest workspace owns authentication.
     } finally {
@@ -64,6 +93,37 @@ export function ActiveProduction() {
           <RefreshCw size={16} className={loading ? 'animate-spin' : ''} /> REFRESH PIPELINE
         </button>
       </header>
+
+      <section className="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 mb-5">
+          <div>
+            <div className="text-xs font-mono text-neutral-500">MEASURED RENDER PROGRESS</div>
+            <h3 className="text-xl font-bold text-white">Live stage evidence</h3>
+          </div>
+          <div className="text-[10px] font-mono text-neutral-600">
+            {productionProgress ? `RUN ${productionProgress.runId} · UPDATED ${new Date(productionProgress.updatedAt).toLocaleTimeString()}` : 'WAITING FOR A RENDER LEDGER'}
+          </div>
+        </div>
+        {productionProgress ? (
+          <div className="space-y-4">
+            {productionProgress.stages.map(stage => (
+              <div key={stage.id}>
+                <div className="flex items-center gap-3 mb-1.5">
+                  {stage.status === 'COMPLETE' ? <CheckCircle2 size={15} className="text-emerald-400 shrink-0" /> : stage.status === 'FAILED' ? <AlertTriangle size={15} className="text-red-400 shrink-0" /> : <Circle size={15} className={stage.status === 'RUNNING' ? 'text-blue-400 shrink-0' : 'text-neutral-700 shrink-0'} />}
+                  <span className={`text-sm ${stage.status === 'FAILED' ? 'text-red-300' : stage.status === 'COMPLETE' ? 'text-neutral-300' : stage.status === 'RUNNING' ? 'text-blue-300' : 'text-neutral-500'}`}>{stage.label}</span>
+                  <span className="ml-auto text-xs font-mono text-neutral-500">{stage.completed}/{stage.total} · {stage.percent}%</span>
+                </div>
+                <div className="h-2 bg-neutral-950 border border-neutral-800 rounded-full overflow-hidden">
+                  <div className={`h-full transition-all duration-500 ${stage.status === 'FAILED' ? 'bg-red-500' : stage.status === 'COMPLETE' ? 'bg-emerald-500' : 'bg-blue-500'}`} style={{ width: `${stage.percent}%` }} />
+                </div>
+                {(stage.message || stage.artifactBytes) && <div className="text-[10px] font-mono text-neutral-600 mt-1">{stage.message ?? ''}{stage.artifactBytes ? ` · artifact ${formatBytes(stage.artifactBytes)}` : ''}</div>}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-sm text-neutral-600 font-mono">No measured render ledger has been published yet.</div>
+        )}
+      </section>
 
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 bg-neutral-900 border border-neutral-800 rounded-xl p-5">

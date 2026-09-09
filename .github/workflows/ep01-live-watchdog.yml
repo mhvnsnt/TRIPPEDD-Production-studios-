@@ -1,0 +1,102 @@
+name: EP01 Live Production Watchdog
+
+on:
+  push:
+    paths:
+      - .github/workflows/ep01-live-watchdog.yml
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: Monitor latest EP01 production run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: upgrade/production-pipeline-resilient-2026-09-08
+          ISSUE: '14'
+        run: |
+          set -euo pipefail
+          marker='<!-- EP01-LIVE-PROGRESS -->'
+          comment_id="$(gh api "repos/${REPO}/issues/${ISSUE}/comments?per_page=100" --paginate --jq '.[] | select(.body | contains("<!-- EP01-LIVE-PROGRESS -->")) | .id' | tail -n 1 || true)"
+          if [ -z "$comment_id" ]; then
+            comment_id="$(gh api --method POST "repos/${REPO}/issues/${ISSUE}/comments" -f body="$marker\n\n## EP01 Autonomous — live\nInitializing production monitor...")"
+            comment_id="$(printf '%s' "$comment_id" | jq -r '.id')"
+          fi
+
+          update() {
+            body="$1"
+            gh api --method PATCH "repos/${REPO}/issues/comments/${comment_id}" -f body="$body" >/dev/null
+          }
+
+          for i in $(seq 1 360); do
+            run_json="$(gh api "repos/${REPO}/actions/runs?branch=${BRANCH}&per_page=20")"
+            run="$(printf '%s' "$run_json" | jq -c '[.workflow_runs[] | select(.name == "EP01 Autonomous Cut")][0]')"
+            if [ "$run" = "null" ] || [ -z "$run" ]; then
+              update "$marker
+
+## EP01 Autonomous — waiting
+
+No EP01 Autonomous run found yet.
+
+Heartbeat: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+              sleep 30
+              continue
+            fi
+
+            run_id="$(printf '%s' "$run" | jq -r '.id')"
+            status="$(printf '%s' "$run" | jq -r '.status')"
+            conclusion="$(printf '%s' "$run" | jq -r '.conclusion // "—"')"
+            started="$(printf '%s' "$run" | jq -r '.run_started_at')"
+            jobs="$(gh api "repos/${REPO}/actions/runs/${run_id}/jobs?per_page=100")"
+            active="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.status == "in_progress")] | map(.name) | join(", ")')"
+            completed="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.status == "completed" and .conclusion == "success")] | length')"
+            total="$(printf '%s' "$jobs" | jq -r '.total_count')"
+            current_steps="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.status == "in_progress") | .steps[]? | select(.status == "in_progress") | .name] | join(", ")')"
+
+            if [ "$status" = "completed" ]; then
+              update "$marker
+
+## EP01 Autonomous — ${conclusion}
+
+**Run:** ${run_id}
+**Jobs:** ${completed}/${total} successful
+**Active:** none
+**Last check:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+
+Production run finished with conclusion **${conclusion}**.
+
+GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
+              exit 0
+            fi
+
+            update "$marker
+
+## EP01 Autonomous — LIVE
+
+**Run:** ${run_id}
+**Status:** ${status}
+**Successful jobs:** ${completed}/${total}
+**Active job:** ${active:-none}
+**Active step:** ${current_steps:-waiting/runner transition}
+**Heartbeat:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+**Started:** ${started}
+
+This monitor polls GitHub Actions directly every 30 seconds, so production progress remains visible even when Actions log download is unavailable.
+
+GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
+            sleep 30
+          done
+
+          update "$marker
+
+## EP01 Autonomous — watchdog timeout
+
+The production monitor reached its 3-hour observation window without a terminal state. Inspect run ${run_id} immediately."
+          exit 1

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "policy": "github-first-until-budget-or-capacity-bound-then-local-or-farm",
+  "selection": {
+    "default": "github-actions",
+    "manualFallback": "local",
+    "renderFallback": "flamenco",
+    "distributedFallback": "opencue",
+    "workflowReproduction": "act"
+  },
+  "backends": [
+    {
+      "id": "github-actions",
+      "role": "cloud-orchestration",
+      "status": "production",
+      "costDomain": "github-hosted-minutes",
+      "notes": "Canonical CI/CD path while Actions capacity is available."
+    },
+    {
+      "id": "local",
+      "role": "full-production-fallback",
+      "status": "production-candidate",
+      "costDomain": "local-hardware",
+      "entrypoint": "scripts/production/local-ep01-fallback.sh",
+      "notes": "Runs the EP01 production stages directly without GitHub-hosted runners."
+    },
+    {
+      "id": "act",
+      "role": "workflow-reproduction",
+      "status": "candidate",
+      "project": "nektos/act",
+      "notes": "Runs compatible GitHub Actions workflows locally in Docker; use for workflow parity, not as the render farm itself."
+    },
+    {
+      "id": "flamenco",
+      "role": "blender-render-farm",
+      "status": "service-candidate",
+      "project": "Blender Studio Flamenco",
+      "notes": "Self-hosted Blender render manager for one or more local/network workers."
+    },
+    {
+      "id": "opencue",
+      "role": "distributed-render-and-task-farm",
+      "status": "service-candidate",
+      "project": "AcademySoftwareFoundation/OpenCue",
+      "notes": "Distributed task/render queue for multi-machine, hybrid, and larger studio workloads."
+    }
+  ],
+  "promotionGates": [
+    "license-reviewed",
+    "installed-or-reprovisionable",
+    "real-EP01-input-smoke-test",
+    "measured-output",
+    "failure-recovery-tested",
+    "canonical-artifact-compatible",
+    "no-regression"
+  ]
+}

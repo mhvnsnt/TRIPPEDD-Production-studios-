@@ -1,0 +1,5 @@
+gdown>=6.1.0
+scenedetect-headless>=0.7.1
+opencv-python-headless>=4.10
+faster-whisper>=1.2.0
+opentimelineio>=0.17.0

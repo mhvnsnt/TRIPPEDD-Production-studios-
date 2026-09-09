@@ -1,0 +1,32 @@
+name: OSS MediaInfo Smoke
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/oss-mediainfo-smoke.ts
+      - .github/workflows/oss-mediainfo-smoke.yml
+
+permissions:
+  contents: read
+
+jobs:
+  mediainfo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install MediaInfo and FFmpeg
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y mediainfo ffmpeg
+          mediainfo --Version
+          ffmpeg -version | head -n 1
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Run real MediaInfo fixture exercise
+        run: bun run scripts/oss-mediainfo-smoke.ts

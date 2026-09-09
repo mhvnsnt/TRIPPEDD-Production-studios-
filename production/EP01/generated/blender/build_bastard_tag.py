@@ -1,10 +1,14 @@
-import bpy, math
+import bpy, math, os
 from mathutils import Vector
 
 FPS = 24
 W, H = 1920, 1080
 DURATION = 6.0
+FRAME_START = int(os.environ.get('TRIPPEDD_FRAME_START', '1'))
+FRAME_END = int(os.environ.get('TRIPPEDD_FRAME_END', str(int(DURATION * FPS))))
+FRAME_DIR = os.environ.get('TRIPPEDD_FRAME_DIR', 'production/EP01/generated/blender/bastard_tag_frames')
 OUT = 'production/EP01/generated/blender/ep01_bastard_tag.mp4'
+BLEND_OUT = 'production/EP01/generated/blender/ep01_bastard_tag.blend'
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
 scene = bpy.context.scene
@@ -14,11 +18,7 @@ scene.render.resolution_y = H
 scene.render.resolution_percentage = 50
 scene.render.fps = FPS
 scene.frame_end = int(DURATION * FPS)
-scene.render.image_settings.file_format = 'FFMPEG'
-scene.render.ffmpeg.format = 'MPEG4'
-scene.render.ffmpeg.codec = 'H264'
-scene.render.ffmpeg.constant_rate_factor = 'MEDIUM'
-scene.render.filepath = OUT
+scene.render.image_settings.file_format = 'PNG'
 
 # Jagged cliff / ground.
 bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, -2.1))
@@ -105,5 +105,20 @@ if scene.world is None:
     scene.world = bpy.data.worlds.new('TRIPPEDD_Bastard_World')
 scene.world.color = (0.002, 0.002, 0.004)
 
-bpy.ops.wm.save_as_mainfile(filepath=OUT.replace('.mp4', '.blend'))
-bpy.ops.render.render(animation=True)
+os.makedirs(FRAME_DIR, exist_ok=True)
+bpy.ops.wm.save_as_mainfile(filepath=BLEND_OUT)
+
+# Render only the requested frame range. Existing frame files are preserved so a
+# retry can resume without throwing away completed work.
+for frame in range(FRAME_START, FRAME_END + 1):
+    path = os.path.join(FRAME_DIR, f'frame-{frame:04d}.png')
+    if os.path.isfile(path) and os.path.getsize(path) > 0:
+        print(f'BASTARD_FRAME_REUSED={frame} BYTES={os.path.getsize(path)}')
+        continue
+    scene.frame_set(frame)
+    scene.render.filepath = path
+    print(f'BASTARD_FRAME_RENDER_START={frame}')
+    bpy.ops.render.render(write_still=True)
+    if not os.path.isfile(path) or os.path.getsize(path) <= 0:
+        raise RuntimeError(f'Bastard frame {frame} did not produce a valid image')
+    print(f'BASTARD_FRAME_COMPLETE={frame} BYTES={os.path.getsize(path)}')

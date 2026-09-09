@@ -20,9 +20,6 @@ concurrency:
   group: ep01-showrunner-${{ github.ref }}
   cancel-in-progress: true
 
-authorization:
-  contents: read
-
 permissions:
   contents: read
 

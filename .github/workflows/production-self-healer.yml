@@ -33,12 +33,10 @@ jobs:
           checked=0
 
           for workflow in ep01-story-runner.yml ep01-autonomous.yml; do
-            runs=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 10 --json databaseId,status,conclusion,runAttempt,createdAt,updatedAt,headSha)
+            runs=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 10 --json databaseId,status,conclusion,attempt,createdAt,updatedAt,headSha)
             active=$(jq '[.[] | select(.status == "in_progress")] | sort_by(.createdAt) | reverse' <<<"$runs")
             active_count=$(jq 'length' <<<"$active")
 
-            # Never let a newer queued duplicate obscure the genuinely active run.
-            # Story Runner and Autonomous are handled independently so both cuts can run side-by-side.
             if [ "$active_count" -gt 0 ]; then
               while IFS= read -r queued_id; do
                 [ -z "$queued_id" ] && continue
@@ -53,30 +51,21 @@ jobs:
 
             if [ -z "$run" ] || [ "$run" = "null" ]; then
               failed=$(jq 'map(select(.status == "completed" and (.conclusion == "failure" or .conclusion == "timed_out"))) | sort_by(.createdAt) | reverse | .[0] // empty' <<<"$runs")
-              if [ -n "$failed" ] && [ "$failed" != "null" ]; then
-                run="$failed"
-              else
-                continue
-              fi
+              if [ -n "$failed" ] && [ "$failed" != "null" ]; then run="$failed"; else continue; fi
             fi
 
             checked=$((checked+1))
             run_id=$(jq -r '.databaseId' <<<"$run")
             status=$(jq -r '.status' <<<"$run")
             conclusion=$(jq -r '.conclusion // empty' <<<"$run")
-            attempt=$(jq -r '.runAttempt' <<<"$run")
-
+            attempt=$(jq -r '.attempt // 1' <<<"$run")
             echo "Inspecting $workflow run $run_id status=$status conclusion=$conclusion attempt=$attempt"
 
             if [ "$status" = "completed" ]; then
-              if [ "$conclusion" = "failure" ] || [ "$conclusion" = "timed_out" ]; then
-                if [ "$attempt" -lt 2 ]; then
-                  echo "RECOVERY: rerunning failed jobs for $run_id"
-                  gh run rerun "$run_id" --failed --repo "$REPO"
-                  recovered=$((recovered+1))
-                else
-                  echo "BOUNDED: run $run_id already consumed its automatic retry budget"
-                fi
+              if { [ "$conclusion" = "failure" ] || [ "$conclusion" = "timed_out" ]; } && [ "$attempt" -lt 2 ]; then
+                echo "RECOVERY: rerunning failed jobs for $run_id"
+                gh run rerun "$run_id" --failed --repo "$REPO"
+                recovered=$((recovered+1))
               fi
               continue
             fi

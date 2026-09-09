@@ -27,7 +27,6 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <path d="M1480 0 L1385 210 L1450 190 L1350 430 L1485 275 L1425 290 L1535 90Z" fill="#e8f4ff" opacity=".9"/>
 <path d="M45 45 H1875 V1035 H45 Z" fill="none" stroke="#f1f1eb" stroke-width="10"/><path d="M70 70 H1850 V1010 H70 Z" fill="none" stroke="#7d0a0a" stroke-width="4"/>
 <ellipse cx="970" cy="1010" rx="530" ry="80" fill="#000" opacity=".8"/>
-<!-- original 2D comic silhouette: hulking masked figure, hard inks and chiaroscuro -->
 <path d="M520 1010 C540 820 585 665 700 550 C755 495 800 420 835 315 C865 225 940 170 1020 190 C1110 215 1160 290 1165 390 C1170 470 1215 515 1295 575 C1420 670 1480 825 1510 1010 Z" fill="#030405" stroke="#e7e7e1" stroke-width="12"/>
 <path d="M650 720 C690 570 770 500 850 470 L875 700 L790 905 L625 945Z" fill="#1d2027" stroke="#050505" stroke-width="16"/>
 <path d="M1290 720 C1250 570 1170 500 1090 470 L1065 700 L1150 905 L1315 945Z" fill="#171920" stroke="#050505" stroke-width="16"/>
@@ -50,10 +49,11 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
 await mkdir(ROOT, { recursive: true });
 await writeFile(SVG, svg, "utf8");
 
+// Ubuntu runners may provide ImageMagick 6 as `convert` rather than the ImageMagick 7 `magick` wrapper.
 const rasterizer = spawnSync("bash", ["-lc", "command -v magick || command -v convert"], { encoding: "utf8" });
 const rasterizerPath = rasterizer.stdout.trim();
 if (rasterizer.status !== 0 || !rasterizerPath) throw new Error("ImageMagick rasterizer unavailable: expected magick or convert");
-const raster = spawnSync(rasterizerPath, [SVG, PNG], { stdio: "inherit" });
+const raster = spawnSync(rasterizerPath, ["-background", "none", SVG, PNG], { stdio: "inherit" });
 if (raster.status !== 0) throw new Error(`ImageMagick rasterization failed with status ${raster.status}`);
 
 const ffmpeg = spawnSync("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error", "-loop", "1", "-i", PNG, "-frames:v", String(FRAMES), "-vf", `zoompan=z='min(zoom+0.0006,1.04)':d=1:s=${WIDTH}x${HEIGHT}:fps=${FPS}`, "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-pix_fmt", "yuv420p", "-movflags", "+faststart", OUT], { stdio: "inherit" });
@@ -61,6 +61,6 @@ if (ffmpeg.status !== 0) throw new Error(`FFmpeg failed with status ${ffmpeg.sta
 const probe = spawnSync("ffprobe", ["-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,nb_read_frames", "-of", "json", OUT], { encoding: "utf8" });
 if (probe.status !== 0) throw new Error("ffprobe validation failed");
 const stream = JSON.parse(probe.stdout).streams?.[0];
-if (!stream || stream.width !== WIDTH || stream.height !== HEIGHT || stream.nb_read_frames !== String(FRAMES)) throw new Error(`2D Bastard tag validation failed: ${probe.stdout}`);
+if (!stream || stream.width !== WIDTH || stream.height !== HEIGHT || Number(stream.nb_read_frames) !== FRAMES) throw new Error(`2D Bastard tag validation failed: ${probe.stdout}`);
 await rm(PNG, { force: true });
 console.log(JSON.stringify({ verified: true, mode: "2D_COMIC", character: "Bannon/The Bastard", fps: FPS, frames: FRAMES, width: WIDTH, height: HEIGHT, svg: SVG, mp4: OUT, rasterizer: rasterizerPath, timestamp: new Date().toISOString() }, null, 2));

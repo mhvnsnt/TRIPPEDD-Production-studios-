@@ -21,6 +21,7 @@ import { DriveIngestWorkspace } from './components/DriveIngestWorkspace';
 import { PeopleCastWorkspace } from './components/PeopleCastWorkspace';
 import { ProductionControlWorkspace } from './components/ProductionControlWorkspace';
 import { PhysicalEvidenceWorkspace } from './components/PhysicalEvidenceWorkspace';
+import { StudioAtmosphere } from './components/StudioAtmosphere';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wrench } from 'lucide-react';
 
@@ -71,14 +72,17 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen bg-black text-white font-sans overflow-hidden selection:bg-blue-500/30">
-      <Sidebar currentView={currentView} setCurrentView={setCurrentView} />
-      <main className="flex-1 overflow-y-auto bg-neutral-950/50 relative">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-        <div className="relative z-10 min-h-full h-full flex flex-col">
-          <AnimatePresence mode="wait"><motion.div key={currentView} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="flex-1 flex flex-col">{renderView()}</motion.div></AnimatePresence>
-        </div>
-      </main>
+    <div className="relative flex h-screen bg-black text-white font-sans overflow-hidden selection:bg-blue-500/30">
+      <StudioAtmosphere />
+      <div className="relative z-10 flex h-full w-full">
+        <Sidebar currentView={currentView} setCurrentView={setCurrentView} />
+        <main className="flex-1 overflow-y-auto bg-neutral-950/50 relative">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+          <div className="relative z-10 min-h-full h-full flex flex-col">
+            <AnimatePresence mode="wait"><motion.div key={currentView} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="flex-1 flex flex-col">{renderView()}</motion.div></AnimatePresence>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

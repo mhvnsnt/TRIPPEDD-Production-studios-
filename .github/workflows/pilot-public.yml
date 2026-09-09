@@ -20,6 +20,9 @@ concurrency:
   group: ep01-showrunner-${{ github.ref }}
   cancel-in-progress: true
 
+authorization:
+  contents: read
+
 permissions:
   contents: read
 
@@ -48,18 +51,31 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+      - name: Restore Blender download cache
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/${{ env.BLENDER_ARCHIVE }}
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
       - name: Install production Blender LTS
         run: |
           set -euo pipefail
           base="https://download.blender.org/release/Blender4.5"
           url="${base}/${BLENDER_ARCHIVE}"
           checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
-          curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"
+          if ! test -s "/tmp/${BLENDER_ARCHIVE}"; then
+            curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"
+          fi
           curl -fsSL "$checksum_url" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/tmp/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "/tmp/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
+      - name: Save Blender download cache
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/${{ env.BLENDER_ARCHIVE }}
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
       - name: Install open-source media stack
         run: |
           python -m pip install --upgrade pip
@@ -78,13 +94,13 @@ jobs:
         run: bun install
 
       - name: Restore subjectivity render cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: |
             production/EP01/generated/blender/subjectivity_frames
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
-          key: ep01-subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-144f
+          key: ep01-subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
 
       - name: Build generated EP01 subjectivity sequence
         shell: bash
@@ -114,14 +130,24 @@ jobs:
             echo "Blender exited $blender_rc after producing and validating all 144 subjectivity frames; accepting the completed artifact."
           fi
 
+      - name: Persist validated subjectivity cache
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            production/EP01/generated/blender/subjectivity_frames
+            production/EP01/generated/blender/ep01_subjectivity.blend
+            production/EP01/generated/blender/ep01_subjectivity.mp4
+          key: ep01-subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
+
       - name: Restore Bastard terminal tag cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: |
             production/EP01/generated/blender/bastard_tag_frames
             production/EP01/generated/blender/ep01_bastard_tag.blend
             production/EP01/generated/blender/ep01_bastard_tag.mp4
-          key: ep01-bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-144f
+          key: ep01-bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
 
       - name: Build generated Bastard terminal tag
         shell: bash
@@ -140,6 +166,16 @@ jobs:
           if [ "$blender_rc" -ne 0 ]; then
             echo "Blender exited $blender_rc after producing and validating all 144 Bastard-tag frames; accepting the completed artifact."
           fi
+
+      - name: Persist validated Bastard tag cache
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            production/EP01/generated/blender/bastard_tag_frames
+            production/EP01/generated/blender/ep01_bastard_tag.blend
+            production/EP01/generated/blender/ep01_bastard_tag.mp4
+          key: ep01-bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
 
       - name: Build EP01 showrunner cut
         env:

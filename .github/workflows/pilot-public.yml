@@ -18,9 +18,9 @@ on:
       - scripts/qc-ep01.ts
       - scripts/build-bastard-tag-2d.ts
 
-concurrency:
-  group: ep01-showrunner-${{ github.ref }}
-  cancel-in-progress: true
+# Do not serialize this workflow at the workflow level. GitHub can leave a replacement
+# run pending with zero materialized jobs behind a stale concurrency lock. The pipeline
+# is already content-addressed and its expensive stages are independently cached.
 
 permissions:
   contents: read

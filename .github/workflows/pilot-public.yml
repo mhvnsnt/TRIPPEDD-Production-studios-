@@ -51,6 +51,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg imagemagick tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+      - name: Preflight rasterizer and media toolchain
+        run: |
+          set -euo pipefail
+          rasterizer="$(command -v magick || command -v convert)"
+          test -x "$rasterizer"
+          "$rasterizer" -version | head -n 1
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+          printf '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect width="16" height="16" fill="black"/></svg>\n' > /tmp/ep01-rasterizer-smoke.svg
+          "$rasterizer" -background none /tmp/ep01-rasterizer-smoke.svg /tmp/ep01-rasterizer-smoke.png
+          test -s /tmp/ep01-rasterizer-smoke.png
       - name: Restore Blender download cache
         id: blender-cache
         uses: actions/cache/restore@v4

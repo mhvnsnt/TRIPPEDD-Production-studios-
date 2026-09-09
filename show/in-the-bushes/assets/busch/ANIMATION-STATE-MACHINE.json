@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "character": "Busch",
+  "show": "In the Bushes",
+  "fps": 24,
+  "states": {
+    "busch_idle": {"hold": true, "loop": true, "layers": ["foliage_body", "eyes_neutral", "mouth_neutral"]},
+    "busch_wake": {"hold": false, "loop": false, "layers": ["foliage_body", "eyes_open", "mouth_wake"]},
+    "busch_transform": {"hold": false, "loop": false, "layers": ["beer_impact", "foliage_body", "eyes_transform", "mouth_transform", "energy_fx"]},
+    "busch_confused": {"hold": true, "loop": false, "layers": ["foliage_body", "eyes_confused", "mouth_small"]},
+    "busch_drunk": {"hold": true, "loop": true, "layers": ["foliage_body", "eyes_drunk", "mouth_drunk", "subtle_sway"]},
+    "busch_surprised": {"hold": true, "loop": false, "layers": ["foliage_body", "eyes_wide", "mouth_open"]},
+    "busch_look_away": {"hold": false, "loop": false, "layers": ["foliage_body", "eyes_side", "head_turn", "mouth_neutral"]},
+    "busch_reaction": {"hold": true, "loop": false, "layers": ["foliage_body", "eyes_side", "mouth_small"]}
+  },
+  "transitions": [
+    {"from": "busch_transform", "to": "busch_wake", "trigger": "beer_impact_complete"},
+    {"from": "busch_wake", "to": "busch_confused", "trigger": "wake_complete"},
+    {"from": "busch_confused", "to": "busch_look_away", "trigger": "reaction_window"},
+    {"from": "busch_look_away", "to": "busch_reaction", "trigger": "look_away_complete"},
+    {"from": "busch_reaction", "to": "busch_drunk", "trigger": "title_card_complete"}
+  ],
+  "reuseRule": "States are assembled from reusable character layers; new drawings require an explicit production reason."
+}

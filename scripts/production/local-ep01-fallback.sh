@@ -3,7 +3,7 @@ set -euo pipefail
 
 # GitHub-hosted Actions is not required for this path.
 # Prerequisites: blender, ffmpeg, bun, python3, and the repo's Python media stack.
-# This intentionally preserves the same frame/chunk contracts used by Story Runner.
+# This preserves the same frame/chunk contracts used by Story Runner.
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
@@ -63,9 +63,17 @@ ffmpeg -y -hide_banner -loglevel error -framerate 24 \
 
 test -s production/EP01/generated/blender/ep01_subjectivity.mp4
 
-# Reuse the exact production render action locally; its own chunk checkpoints remain durable.
+echo "SUBJECTIVITY COMPLETE: 144/144 frames"
+
+echo "BASTARD TAG: dispatching local resumable renderer"
 TRIPPEDD_BASTARD_PARALLELISM="${TRIPPEDD_BASTARD_PARALLELISM:-3}" \
-  bash -lc 'if [ -f .github/actions/resumable-bastard-tag/action.yml ]; then echo "Bastard action contract present; run its equivalent local command from the production host."; fi'
+  bash scripts/production/local-bastard-tag.sh
+
+test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+
+test -s production/EP01/generated/blender/ep01_bastard_tag.blend
+
+echo "BASTARD TAG COMPLETE"
 
 bun install
 TRIPPEDD_CUT_MODE=SHOWRUNNER \

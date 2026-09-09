@@ -2,13 +2,10 @@ name: EP01 Story Runner Cut
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - production/EP01/RUN-PUBLIC-BUILD
-      - .github/workflows/ep01-story-runner.yml
-      - production/EP01/generated/blender/**
-      - src/server/pilotRenderer.ts
-      - src/server/productionMemory.ts
+
+# Story Runner is a manual comparison lane. Canonical push-triggered production
+# is handled by the Showrunner and Autonomous workflows; keeping this lane manual
+# prevents duplicate expensive renders on every production change.
 
 concurrency:
   group: ep01-story-runner-${{ github.ref }}
@@ -31,7 +28,7 @@ jobs:
     timeout-minutes: 20
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 1
       matrix:
         include:
           - { chunk: '01', start: 1, end: 12 }
@@ -91,7 +88,12 @@ jobs:
           expected=$((TRIPPEDD_FRAME_END - TRIPPEDD_FRAME_START + 1))
           existing=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' 2>/dev/null | wc -l || true)
           echo "Chunk ${{ matrix.chunk }}: ${existing}/${expected} checkpoint frames already present"
+          set +e
           time blender -b --python production/EP01/generated/blender/build_subjectivity.py
+          rc=$?
+          set -e
+          echo "Blender subjectivity exit code: $rc"
+          test "$rc" -eq 0
           actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
           test "$actual" -eq "$expected"
           printf -v start_padded '%04d' "$TRIPPEDD_FRAME_START"
@@ -132,7 +134,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg mediainfo tesseract-ocr curl xz-utils libegl1 libgl1 libglx0 libgl1-mesa-dri libxrender1 libxi6 libxkbcommon0 libxkbcommon-x11-0 libdbus-1-3 libwayland-client0 mesa-utils
+          sudo apt-get install -y --no-install-recommends ffmpeg imagemagick mediainfo tesseract-ocr curl xz-utils libegl1 libgl1 libglx0 libgl1-mesa-dri libxrender1 libxi6 libxkbcommon0 libxkbcommon-x11-0 libdbus-1-3 libwayland-client0 mesa-utils
           python -m pip install --upgrade pip
           python -m pip install 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
       - name: Install Blender
@@ -172,12 +174,15 @@ jobs:
           ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/subjectivity/assembled/frame-%04d.jpg -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_subjectivity.mp4
           test -s production/EP01/generated/blender/ep01_subjectivity.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json production/EP01/generated/blender/ep01_subjectivity.mp4 > production/EP01/generated/blender/subjectivity-qc.json
-      - name: Build Bastard terminal tag
+      - name: Build 2D comic Bastard terminal tag
         run: |
           set -euo pipefail
-          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
-          test -s production/EP01/generated/blender/ep01_bastard_tag.blend
+          bun run scripts/build-bastard-tag-2d.ts
+          test -s production/EP01/generated/comic/bannon-the-bastard-terminal.svg
+          test -s production/EP01/generated/comic/ep01_bastard_tag.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json production/EP01/generated/comic/ep01_bastard_tag.mp4 > production/EP01/generated/comic/ep01_bastard_tag.ffprobe.json
+          mkdir -p production/EP01/generated/blender
+          cp production/EP01/generated/comic/ep01_bastard_tag.mp4 production/EP01/generated/blender/ep01_bastard_tag.mp4
       - name: Install Node dependencies
         run: bun install
       - name: Build Story Runner cut
@@ -186,14 +191,14 @@ jobs:
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_SEGMENT_CACHE: ${{ github.workspace }}/.trippedd/media/assembly-segments
           HF_HOME: ${{ github.workspace }}/.trippedd/huggingface
-          TRIPPEDD_ENABLE_WHISPER: 'true'
+          TRIPPEDD_ENABLE_WHISPER: 'false'
           WHISPER_MODEL: 'tiny'
           TRIPPEDD_WHISPER_DEVICE: 'cpu'
           TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
           TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
           TRIPPEDD_CUT_MODE: SHOWRUNNER
           TRIPPEDD_OUTPUT_BASENAME: EP01-STORY-RUNNER
-          MEDIA_MAX_CONCURRENT: '2'
+          MEDIA_MAX_CONCURRENT: '1'
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '4'
@@ -222,7 +227,8 @@ jobs:
             public/production/EP01-STORY-RUNNER.mediainfo.txt
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/subjectivity-qc.json
-            production/EP01/generated/blender/ep01_bastard_tag.mp4
-            production/EP01/generated/blender/ep01_bastard_tag.blend
+            production/EP01/generated/comic/bannon-the-bastard-terminal.svg
+            production/EP01/generated/comic/ep01_bastard_tag.mp4
+            production/EP01/generated/comic/ep01_bastard_tag.ffprobe.json
           if-no-files-found: error
           retention-days: 30

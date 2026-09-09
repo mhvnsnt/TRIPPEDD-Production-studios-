@@ -66,8 +66,8 @@ jobs:
             echo "Inspecting $workflow run $run_id status=$status conclusion=$conclusion attempt=$attempt"
 
             if [ "$status" = "completed" ]; then
-              if { [ "$conclusion" = "failure" ] || [ "$conclusion" = "timed_out" ]; } && [ "$attempt" -lt 2 ]; then
-                echo "RECOVERY: rerunning failed jobs for $run_id"
+              if { [ "$conclusion" = "failure" ] || [ "$conclusion" = "timed_out" ]; } && [ "$attempt" -lt 3 ]; then
+                echo "RECOVERY: rerunning failed jobs for $run_id (bounded attempt $attempt -> $((attempt+1)))"
                 gh run rerun "$run_id" --failed --repo "$REPO"
                 recovered=$((recovered+1))
               fi
@@ -92,8 +92,8 @@ jobs:
               if [ "$age" -ge 3600 ]; then stale=1; fi
             done < <(jq -c '.[]' <<<"$jobs")
 
-            if [ "$stale" -eq 1 ] && [ "$attempt" -lt 2 ]; then
-              echo "RECOVERY: cancelling genuinely stale run $run_id after 60 minutes, then replaying it"
+            if [ "$stale" -eq 1 ] && [ "$attempt" -lt 3 ]; then
+              echo "RECOVERY: cancelling genuinely stale run $run_id after 60 minutes, then replaying it (bounded attempt $attempt -> $((attempt+1)))"
               gh run cancel "$run_id" --repo "$REPO" || true
               for i in $(seq 1 12); do
                 state=$(gh run view "$run_id" --repo "$REPO" --json status --jq '.status' || true)
@@ -102,12 +102,11 @@ jobs:
               done
               gh run rerun "$run_id" --repo "$REPO"
               recovered=$((recovered+1))
+            elif [ "$stale" -eq 1 ]; then
+              echo "ESCALATION: run $run_id is stale at attempt=$attempt; retry budget exhausted. Do not silently treat it as healthy."
             fi
           done
 
-          # Once the canonical Story Runner succeeds, automatically start the
-          # Autonomous cut while passing the exact successful run ID so it can
-          # reuse the verified subjectivity and Bastard media instead of rerendering them.
           story_success=$(gh run list --repo "$REPO" --workflow ep01-story-runner.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt,headSha | jq 'map(select(.status == "completed" and .conclusion == "success")) | sort_by(.createdAt) | reverse | .[0] // empty')
           if [ -n "$story_success" ] && [ "$story_success" != "null" ]; then
             story_created=$(jq -r '.createdAt' <<<"$story_success")
@@ -129,5 +128,5 @@ jobs:
             echo "- Suppressed queued duplicates: $suppressed"
             echo "- Recovery actions: $recovered"
             echo "- Autonomous dispatches: $dispatched"
-            echo "- Policy: active runs take priority; queued/waiting runs are preserved; redundant queued duplicates are cancelled only when an active run exists; failed runs get one failed-job replay; active runs get a 60-minute stale-run backstop; successful canonical Story Runner automatically chains the Autonomous cut and reuses its verified media."
+            echo "- Policy: active runs take priority; queued/waiting runs are preserved; redundant queued duplicates are cancelled only when an active run exists; failed/stale runs get a bounded replay through attempt 3; attempt-3 stale runs are explicitly escalated rather than silently treated as healthy; successful canonical Story Runner automatically chains the Autonomous cut and reuses its verified media."
           } >> "$GITHUB_STEP_SUMMARY"

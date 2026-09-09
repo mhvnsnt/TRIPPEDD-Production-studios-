@@ -28,8 +28,11 @@ scene.frame_start = FRAME_START
 scene.frame_end = FRAME_END
 scene.render.image_settings.file_format = 'PNG'
 scene.render.film_transparent = False
+# Keep render data resident across animation frames. This avoids rebuilding
+# render state for every frame while preserving the image-sequence checkpoint.
+if hasattr(scene.render, 'use_persistent_data'):
+    scene.render.use_persistent_data = True
 
-# Blender 4.5 factory startup can leave Scene.world unset. Create it explicitly.
 if scene.world is None:
     scene.world = bpy.data.worlds.new('BastardWorld')
 scene.world.use_nodes = True
@@ -107,7 +110,6 @@ bpy.ops.object.light_add(type='POINT', location=(0, 2, 7))
 flash = bpy.context.object
 flash.name = 'Bastard_Lightning'
 flash.data.energy = 0
-# Blender 4.5 keeps light power on the Light data-block; keyframe that data-block.
 for f, e in [(1, 0), (36, 0), (42, 12000), (46, 0), (FRAME_END, 0)]:
     flash.data.energy = e
     flash.data.keyframe_insert('energy', frame=f)
@@ -141,19 +143,48 @@ if PREFLIGHT:
     print(f'PREFLIGHT PASS: scene built and saved to {BLEND}')
     raise SystemExit(0)
 
-# Render each frame independently so an interruption only loses the current frame.
-# Blender documents write_still as the single-frame image-output path; this avoids
-# coupling the scene build to Blender's movie encoder.
 FRAME_DIR.mkdir(parents=True, exist_ok=True)
-for frame in range(FRAME_START, FRAME_END + 1):
-    frame_path = FRAME_DIR / f'frame-{frame:04d}.png'
-    if frame_path.is_file() and frame_path.stat().st_size > 0:
-        continue
-    scene.frame_set(frame)
-    scene.render.filepath = str(frame_path)
-    result = bpy.ops.render.render(animation=False, write_still=True)
-    if 'FINISHED' not in result or not frame_path.is_file() or frame_path.stat().st_size == 0:
-        raise RuntimeError(f'frame {frame} failed to render: result={result}, path={frame_path}')
+frame_pattern = str(FRAME_DIR / 'frame-')
+
+# Resume safely, but batch contiguous missing frames into Blender animation
+# renders. The old implementation called bpy.ops.render.render once per frame;
+# that adds substantial Python/operator overhead. Blender's animation renderer
+# already supports a start/end range and writes numbered image frames, so use it
+# for each missing range and keep completed frames untouched.
+def missing_ranges(start, end):
+    missing = []
+    for frame in range(start, end + 1):
+        path = FRAME_DIR / f'frame-{frame:04d}.png'
+        if not path.is_file() or path.stat().st_size == 0:
+            missing.append(frame)
+    if not missing:
+        return []
+    ranges = []
+    range_start = previous = missing[0]
+    for frame in missing[1:]:
+        if frame != previous + 1:
+            ranges.append((range_start, previous))
+            range_start = frame
+        previous = frame
+    ranges.append((range_start, previous))
+    return ranges
+
+ranges = missing_ranges(FRAME_START, FRAME_END)
+for range_start, range_end in ranges:
+    scene.frame_start = range_start
+    scene.frame_end = range_end
+    scene.render.filepath = frame_pattern
+    scene.render.use_file_extension = True
+    result = bpy.ops.render.render(animation=True, write_still=True)
+    if 'FINISHED' not in result:
+        raise RuntimeError(f'frame range {range_start}-{range_end} failed to render: result={result}')
+    for frame in range(range_start, range_end + 1):
+        frame_path = FRAME_DIR / f'frame-{frame:04d}.png'
+        if not frame_path.is_file() or frame_path.stat().st_size == 0:
+            raise RuntimeError(f'frame {frame} missing after range render: {frame_path}')
+
+scene.frame_start = FRAME_START
+scene.frame_end = FRAME_END
 
 expected = FRAME_END - FRAME_START + 1
 frames = sorted(FRAME_DIR.glob('frame-*.png'))

@@ -37,16 +37,29 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg mediainfo
 
-      - name: Run technical QC
+      - name: Run technical QC and artifact gate
         env:
           RUN_ID: ${{ github.event.workflow_run.id }}
         run: |
           set -euo pipefail
           mkdir -p qc-output
-          video="qc-input/public/production/EP01-STORY-RUNNER.mp4"
-          test -s "$video"
+          root="qc-input/public/production"
+          video="$root/EP01-STORY-RUNNER.mp4"
+
+          # The cut is not considered complete unless its machine-readable editorial
+          # records and generated terminal assets survived the workflow handoff too.
+          for required in \
+            "$root/EP01-STORY-RUNNER.mp4" \
+            "$root/EP01-STORY-RUNNER.json" \
+            "$root/EP01-STORY-RUNNER.otio" \
+            "qc-input/production/EP01/generated/blender/ep01_subjectivity.mp4" \
+            "qc-input/production/EP01/generated/blender/ep01_bastard_tag.mp4"; do
+            test -s "$required" || { echo "QC failed: missing/empty required artifact $required"; exit 1; }
+          done
+
           ffprobe -v error -show_entries format=duration,size -show_entries stream=index,codec_type,codec_name,width,height,avg_frame_rate,channels -of json "$video" > qc-output/EP01-STORY-RUNNER.ffprobe.json
           mediainfo "$video" > qc-output/EP01-STORY-RUNNER.mediainfo.txt
+
           python - <<'PY'
           import json
           from fractions import Fraction
@@ -76,11 +89,16 @@ jobs:
               raise SystemExit(f"QC failed: expected 24 fps, got {rate}")
           if not audio_streams:
               raise SystemExit('QC failed: no audio stream')
+          # JSON/OTIO must be parseable, not merely non-empty.
+          json.loads(Path('qc-input/public/production/EP01-STORY-RUNNER.json').read_text())
+          if not Path('qc-input/public/production/EP01-STORY-RUNNER.otio').read_text().strip():
+              raise SystemExit('QC failed: empty OTIO')
           Path('qc-output/EP01-QC-PASS.json').write_text(json.dumps({
               'episodeId':'EP01','status':'PASS','workflowRunId':int('${RUN_ID}'),
               'checkedAt':__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),
               'artifact':'EP01-STORY-RUNNER','durationSeconds':duration,'bytes':size,
-              'invariants':{'videoCodec':'h264','resolution':'1920x1080','fps':24,'audioRequired':True},
+              'requiredArtifacts':['EP01-STORY-RUNNER.mp4','EP01-STORY-RUNNER.json','EP01-STORY-RUNNER.otio','ep01_subjectivity.mp4','ep01_bastard_tag.mp4'],
+              'invariants':{'videoCodec':'h264','resolution':'1920x1080','fps':24,'audioRequired':True,'editorialJsonParseable':True,'otioNonEmpty':True},
               'streams':streams
           },indent=2)+'\n')
           PY
@@ -100,5 +118,6 @@ jobs:
             echo "- Story Runner run: ${{ github.event.workflow_run.id }}"
             echo "- Status: PASS"
             echo "- Invariants: H.264 / 1920x1080 / 24 fps / audio present"
+            echo "- Artifact gate: Story Runner MP4 + JSON + OTIO + subjectivity + Bastard terminal tag"
             echo "- Next gate: editorial/showrunner review"
           } >> "$GITHUB_STEP_SUMMARY"

@@ -42,6 +42,7 @@ function clampPercent(completed: number, total: number) {
 export class ProductionProgressLedger {
   private readonly filePath: string;
   private snapshot: ProductionProgressSnapshot;
+  private persistChain: Promise<void> = Promise.resolve();
 
   constructor(options: { episodeId: string; runId: string; rootDir?: string }) {
     const root = path.resolve(options.rootDir || DEFAULT_ROOT);
@@ -105,9 +106,13 @@ export class ProductionProgressLedger {
   getSnapshot(): ProductionProgressSnapshot { return structuredClone(this.snapshot); }
 
   private async persist(): Promise<void> {
-    await fs.mkdir(path.dirname(this.filePath), { recursive: true });
-    const temp = `${this.filePath}.partial-${process.pid}`;
-    await fs.writeFile(temp, JSON.stringify(this.snapshot, null, 2), 'utf8');
-    await fs.rename(temp, this.filePath);
+    const write = async () => {
+      await fs.mkdir(path.dirname(this.filePath), { recursive: true });
+      const temp = `${this.filePath}.partial-${process.pid}`;
+      await fs.writeFile(temp, JSON.stringify(this.snapshot, null, 2), 'utf8');
+      await fs.rename(temp, this.filePath);
+    };
+    this.persistChain = this.persistChain.then(write, write);
+    await this.persistChain;
   }
 }

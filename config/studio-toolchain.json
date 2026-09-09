@@ -1,37 +1,49 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
   "optional": [
     "blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt",
     "frei0r", "vapoursynth", "zimg", "natron", "opencolorio", "openassetio", "opencue", "demucs",
-    "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity"
+    "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity",
+    "gstreamer", "openusd", "materialx", "osl", "openvdb", "openfx", "openrv", "xstudio", "rez", "aswf-docker"
   ],
   "interchange": {
     "editorial": "OpenTimelineIO",
     "assets": "OpenAssetIO",
+    "sceneDescription": "OpenUSD",
+    "materials": "MaterialX",
+    "shading": "Open Shading Language",
+    "volumes": "OpenVDB",
     "color": "OpenColorIO",
     "media": "FFmpeg/FFprobe",
+    "mediaGraph": "GStreamer",
     "images": "OpenImageIO/OpenEXR",
     "videoProcessing": "VapourSynth",
-    "effects": "frei0r"
+    "effects": "OpenFX/frei0r"
   },
   "backends": {
     "deterministicMedia": "ffmpeg",
     "mediaInspection": ["ffprobe", "mediainfo", "bento4", "mkvtoolnix"],
     "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr", "silero-vad", "pyannote-audio"],
     "procedural3D": "blender",
+    "sceneGraph": "openusd",
+    "lookDevelopment": ["materialx", "osl"],
+    "volumetrics": "openvdb",
     "editorial": "kdenlive",
     "editorialRender": "mlt",
     "compositing": "natron",
     "videoProcessing": ["vapoursynth", "zimg", "imagemagick"],
-    "effects": "frei0r",
+    "effects": ["openfx", "frei0r"],
     "colorManagement": "opencolorio",
     "assetInterchange": "openassetio",
+    "mediaGraph": "gstreamer",
     "distributedRendering": ["flamenco", "opencue"],
+    "review": ["openrv", "xstudio"],
     "audioUtility": ["sox", "rubberband", "demucs", "audacity"],
-    "imageUtility": ["openimageio", "openexr", "imagemagick"]
+    "imageUtility": ["openimageio", "openexr", "imagemagick"],
+    "environment": "rez"
   },
   "episodeCuts": {
     "autonomous": "AUTONOMOUS",
@@ -43,7 +55,8 @@
     "cachePolicy": "Content-addressed deterministic artifacts are immutable and reusable across execution backends.",
     "failurePolicy": "Independent tasks retry without invalidating successful artifacts; assembly begins only after manifest validation.",
     "provenance": "Every generated media artifact records source evidence, generator identity, toolchain versions, and checksums.",
-    "fallbackPolicy": "Optional tools improve analysis or processing but never replace the deterministic FFmpeg/OTIO path without a verified fallback."
+    "fallbackPolicy": "Optional tools improve analysis or processing but never replace the deterministic FFmpeg/OTIO path without a verified fallback.",
+    "integrationPolicy": "A tool is production-integrated only after an executable smoke test, a real artifact or library exercise, and a recorded version/license result."
   },
   "policy": {
     "optionalToolsMayBeAbsent": true,
@@ -56,6 +69,7 @@
     "optionalAccelerationMustBeBenchmarked": true,
     "noToolReplacementWithoutDeterministicFallback": true,
     "modelLicensesMustBeRecorded": true,
-    "thirdPartyAssetsMustCarryLicenseMetadata": true
+    "thirdPartyAssetsMustCarryLicenseMetadata": true,
+    "noEmptyOrShallowStubs": true
   }
 }

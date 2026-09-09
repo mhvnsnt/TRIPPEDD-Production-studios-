@@ -3,6 +3,7 @@ import { toolManager } from "./src/server/toolManager";
 import { queueManager } from "./src/server/queueManager";
 import { createGoogleAuthorizationUrl, exchangeGoogleCode, getGoogleAccessToken, getGoogleOAuthStatus, publicDriveApiKey, revokeGoogleAccess } from "./src/server/googleDriveAuth";
 import { downloadPublicDriveFolder } from "./src/server/publicDriveFolder";
+import fs from "fs/promises";
 import path from "path";
 import { spawn } from "child_process";
 import { createServer as createViteServer } from "vite";
@@ -21,7 +22,7 @@ async function queueDownloadedPublicMedia(files: string[]) {
     if (!isMediaPath(filePath)) continue;
     const fileId = localJobId(filePath);
     if (!queueManager.getJob(fileId)) {
-      const stat = await import('fs/promises').then(fs => fs.stat(filePath));
+      const stat = await fs.stat(filePath);
       queueManager.addJob({
         id: `JOB_${fileId}`,
         fileId,
@@ -118,6 +119,26 @@ async function startServer() {
   app.get('/api/queue/:fileId', (req, res) => { const job = queueManager.getJob(req.params.fileId); if (job) res.json(job); else res.status(404).json({ error: 'Job not found' }); });
   app.post('/api/queue/:fileId/retry', async (req, res) => { try { const token = await getGoogleAccessToken(); if (token) queueManager.setAccessToken(req.params.fileId, token); else { const key = publicDriveApiKey(); if (key) queueManager.setAccessToken(req.params.fileId, `public:${key}`); } const ok = queueManager.retry(req.params.fileId); if (ok) res.json({ success: true }); else res.status(404).json({ error: 'Job not found or no source authorization available.' }); } catch (e: any) { res.status(500).json({ error: e.message }); } });
   app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
+
+  app.get('/api/production/progress/latest', async (req, res) => {
+    try {
+      const episodeId = String(req.query.episodeId || 'EP01').replace(/[^A-Za-z0-9_-]/g, '');
+      const progressRoot = path.join(process.cwd(), 'public', 'production', '.progress');
+      const entries = await fs.readdir(progressRoot, { withFileTypes: true });
+      const candidates = await Promise.all(entries.filter(entry => entry.isFile() && entry.name.startsWith(`${episodeId}-`) && entry.name.endsWith('.json')).map(async entry => {
+        const filePath = path.join(progressRoot, entry.name);
+        const stat = await fs.stat(filePath);
+        return { filePath, mtimeMs: stat.mtimeMs };
+      }));
+      const latest = candidates.sort((a, b) => b.mtimeMs - a.mtimeMs)[0];
+      if (!latest) return res.status(404).json({ error: 'No production progress ledger found.' });
+      res.json(JSON.parse(await fs.readFile(latest.filePath, 'utf8')));
+    } catch (e: any) {
+      if (e?.code === 'ENOENT') return res.status(404).json({ error: 'No production progress ledger found.' });
+      console.error('[production progress] failed:', e);
+      res.status(500).json({ error: e.message });
+    }
+  });
 
   app.post('/api/jobs/ffmpeg', (req, res) => { const { command, output_path } = req.body; const jobId = 'srv_job_ff_' + Date.now(); const jobState = { status: 'RUNNING', logs: [], progress: 0, result: null as any }; activeJobs.set(jobId, jobState); jobState.logs.push(`Executing FFmpeg command: ffmpeg ${command.join(' ')}`); const proc = spawn('ffmpeg', command); proc.stdout.on('data', data => jobState.logs.push(data.toString())); proc.stderr.on('data', data => { const str = data.toString(); jobState.logs.push(str); if (str.includes('time=')) jobState.progress = Math.min(jobState.progress + 5, 99); }); proc.on('close', code => { jobState.status = code === 0 ? 'COMPLETED' : 'FAILED'; jobState.progress = 100; if (code === 0) jobState.result = { path: output_path }; }); proc.on('error', err => { jobState.status = 'FAILED'; jobState.logs.push(err.message); }); res.json({ jobId }); });
   app.post('/api/jobs/comfyui', async (req, res) => { const { workflow, output_path } = req.body; const jobId = 'srv_job_cu_' + Date.now(); const jobState = { status: 'RUNNING', logs: ['Starting ComfyUI workflow execution...'], progress: 0, result: null as any }; activeJobs.set(jobId, jobState); try { const fetchRes = await fetch('http://127.0.0.1:8188/prompt', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: workflow }) }); if (!fetchRes.ok) throw new Error(`ComfyUI server responded with error: ${fetchRes.status}`); const data = await fetchRes.json() as any; jobState.logs.push(`ComfyUI accepted prompt. Prompt ID: ${data.prompt_id}`); setTimeout(() => { jobState.status = 'COMPLETED'; jobState.progress = 100; jobState.result = { path: output_path }; jobState.logs.push('ComfyUI workflow finished.'); }, 5000); } catch (e: any) { jobState.status = 'FAILED'; jobState.logs.push(`ComfyUI connection failed: ${e.message}. TOOL UNAVAILABLE.`); jobState.logs.push('JOB BLOCKED: Real execution required. No fallback allowed.'); } res.json({ jobId }); });

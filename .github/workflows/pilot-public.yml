@@ -62,9 +62,7 @@ jobs:
           base="https://download.blender.org/release/Blender4.5"
           url="${base}/${BLENDER_ARCHIVE}"
           checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
-          if ! test -s "/tmp/${BLENDER_ARCHIVE}"; then
-            curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"
-          fi
+          if ! test -s "/tmp/${BLENDER_ARCHIVE}"; then curl -fsSL "$url" -o "/tmp/${BLENDER_ARCHIVE}"; fi
           curl -fsSL "$checksum_url" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/tmp/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "/tmp/${BLENDER_ARCHIVE}" -C /opt
@@ -93,14 +91,12 @@ jobs:
           ./scripts/bin/whisper --help
       - name: Install Node dependencies
         run: bun install
-
       - name: Restore Whisper model cache
         id: whisper-cache
         uses: actions/cache/restore@v4
         with:
           path: .cache/huggingface
           key: ep01-whisper-tiny-${{ hashFiles('requirements.txt') }}
-
       - name: Warm and validate Whisper model cache
         run: |
           set -euo pipefail
@@ -109,14 +105,12 @@ jobs:
           model = WhisperModel('tiny', device='cpu', compute_type='int8')
           print('faster-whisper tiny model ready:', type(model).__name__)
           PY
-
       - name: Persist validated Whisper model cache
         if: success() && steps.whisper-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: .cache/huggingface
           key: ep01-whisper-tiny-${{ hashFiles('requirements.txt') }}
-
       - name: Restore subjectivity render cache
         id: subjectivity-cache
         uses: actions/cache/restore@v4
@@ -126,38 +120,23 @@ jobs:
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
           key: ep01-subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
-
       - name: Build generated EP01 subjectivity sequence
         shell: bash
         run: |
           set -euo pipefail
-          blender_rc=0
-          if blender -b --python production/EP01/generated/blender/build_subjectivity.py; then
-            blender_rc=0
-          else
-            blender_rc=$?
-          fi
-
+          python - <<'PY'
+          import subprocess
+          result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_subjectivity.py'])
+          print(f'Blender subjectivity exit code: {result.returncode}')
+          PY
           frame_count=$(find production/EP01/generated/blender/subjectivity_frames -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
           test "$frame_count" -eq 144
           test -s production/EP01/generated/blender/ep01_subjectivity.blend
-
           if ! test -s production/EP01/generated/blender/ep01_subjectivity.mp4; then
-            ffmpeg -y -hide_banner -loglevel error \
-              -framerate 24 -start_number 1 \
-              -i production/EP01/generated/blender/subjectivity_frames/frame-%04d.jpg \
-              -an -c:v libx264 -preset veryfast -crf 20 \
-              -pix_fmt yuv420p -movflags +faststart \
-              production/EP01/generated/blender/ep01_subjectivity.mp4
+            ffmpeg -y -hide_banner -loglevel error -framerate 24 -start_number 1 -i production/EP01/generated/blender/subjectivity_frames/frame-%04d.jpg -an -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -movflags +faststart production/EP01/generated/blender/ep01_subjectivity.mp4
           fi
-
           test -s production/EP01/generated/blender/ep01_subjectivity.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_subjectivity.mp4
-
-          if [ "$blender_rc" -ne 0 ]; then
-            echo "Blender exited $blender_rc after producing and validating all 144 subjectivity frames; accepting the completed artifact."
-          fi
-
       - name: Persist validated subjectivity cache
         if: success() && steps.subjectivity-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
@@ -167,7 +146,6 @@ jobs:
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
           key: ep01-subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
-
       - name: Restore Bastard terminal tag cache
         id: bastard-cache
         uses: actions/cache/restore@v4
@@ -177,28 +155,20 @@ jobs:
             production/EP01/generated/blender/ep01_bastard_tag.blend
             production/EP01/generated/blender/ep01_bastard_tag.mp4
           key: ep01-bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
-
       - name: Build generated Bastard terminal tag
         shell: bash
         run: |
           set -euo pipefail
-          blender_rc=0
-          if blender -b --python production/EP01/generated/blender/build_bastard_tag.py; then
-            blender_rc=0
-          else
-            blender_rc=$?
-          fi
-
+          python - <<'PY'
+          import subprocess
+          result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_bastard_tag.py'])
+          print(f'Blender terminal-tag exit code: {result.returncode}')
+          PY
           frame_count=$(find production/EP01/generated/blender/bastard_tag_frames -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)
           test "$frame_count" -eq 144
           test -s production/EP01/generated/blender/ep01_bastard_tag.blend
           test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_bastard_tag.mp4
-
-          if [ "$blender_rc" -ne 0 ]; then
-            echo "Blender exited $blender_rc after producing and validating all 144 Bastard-tag frames; accepting the completed artifact."
-          fi
-
       - name: Persist validated Bastard tag cache
         if: success() && steps.bastard-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
@@ -208,7 +178,6 @@ jobs:
             production/EP01/generated/blender/ep01_bastard_tag.blend
             production/EP01/generated/blender/ep01_bastard_tag.mp4
           key: ep01-bastard-tag-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
-
       - name: Build EP01 showrunner cut
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
@@ -244,15 +213,7 @@ jobs:
           set -euo pipefail
           manifest="public/production/EP01-SHOWRUNNER.manifest.sha256"
           : > "$manifest"
-          sha256sum \
-            public/production/EP01-SHOWRUNNER.mp4 \
-            public/production/EP01-SHOWRUNNER.json \
-            public/production/EP01-SHOWRUNNER.otio \
-            production/EP01/generated/blender/ep01_subjectivity.blend \
-            production/EP01/generated/blender/ep01_subjectivity.mp4 \
-            production/EP01/generated/blender/ep01_bastard_tag.blend \
-            production/EP01/generated/blender/ep01_bastard_tag.mp4 \
-            > "$manifest"
+          sha256sum public/production/EP01-SHOWRUNNER.mp4 public/production/EP01-SHOWRUNNER.json public/production/EP01-SHOWRUNNER.otio production/EP01/generated/blender/ep01_subjectivity.blend production/EP01/generated/blender/ep01_subjectivity.mp4 production/EP01/generated/blender/ep01_bastard_tag.blend production/EP01/generated/blender/ep01_bastard_tag.mp4 > "$manifest"
           test "$(wc -l < "$manifest")" -eq 7
       - name: Run EP01 technical QC
         env:

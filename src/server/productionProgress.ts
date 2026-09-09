@@ -79,8 +79,14 @@ export class ProductionProgressLedger {
     if (!stage) throw new Error(`Unknown production progress stage: ${stageId}`);
 
     if (patch.total !== undefined) stage.total = Math.max(0, patch.total);
-    if (patch.completed !== undefined) stage.completed = Math.max(0, Math.min(stage.total || Number.MAX_SAFE_INTEGER, patch.completed));
-    if (patch.status !== undefined) stage.status = patch.status;
+    if (patch.completed !== undefined) {
+      const nextCompleted = Math.max(0, Math.min(stage.total || Number.MAX_SAFE_INTEGER, patch.completed));
+      stage.completed = Math.max(stage.completed, nextCompleted);
+    }
+    if (patch.status !== undefined) {
+      const terminal = stage.status === 'COMPLETE' || stage.status === 'FAILED';
+      if (!(terminal && patch.status === 'RUNNING')) stage.status = patch.status;
+    }
     if (patch.message !== undefined) stage.message = patch.message;
     if (patch.artifactPath !== undefined) stage.artifactPath = patch.artifactPath;
 

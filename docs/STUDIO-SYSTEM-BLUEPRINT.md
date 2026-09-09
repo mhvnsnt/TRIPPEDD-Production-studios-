@@ -2,6 +2,17 @@
 
 The repository is intentionally a **production control system**, not a dump of third-party source. Large production tools belong in reproducible environments, containers, caches, or external services; the repo owns the orchestration, adapters, contracts, provenance, authored UI, and recovery logic.
 
+## Studio operating model
+
+TRIPPEDD is a creator-owned **network/studio machine**, not a single-show editor. It must support a broad programming canvas—live-action sketch, scripted comedy, narrative, animation, stop-motion/hybrid work, music-driven pieces, reality/unscripted, documentary/personality formats, specials, social-native work, games/interactive extensions, and mixed-media experiments.
+
+The studio runs on two simultaneous trajectories:
+
+- **Vertical slice:** make each production deeper, faster, more reliable, measurable, salvageable, and easier to finish.
+- **Horizontal expansion:** add new formats, media types, production pathways, distribution surfaces, and reusable development capabilities without rebuilding the studio.
+
+The detailed network/development model lives in `docs/TRIPPEDD-NETWORK-STUDIO-OPERATING-MODEL.md`; the machine-readable capability matrix lives in `config/production-capability-registry.json`.
+
 ## Capability map
 
 ### Physical source / ingest
@@ -92,7 +103,9 @@ A tool does not become production infrastructure because it is popular. Promotio
 6. Add Demucs as an evidence-preserving audio-isolation branch, never overwriting source audio.
 7. Evaluate Flamenco before introducing heavier distributed render infrastructure.
 8. Build an authored React/visual layer around the production graph instead of treating the UI as a generic dashboard.
-9. Keep third-party binaries out of Git history; provision them reproducibly and cache them.
+9. Make finished productions reusable: retain source lineage, talent, characters, performances, shots, dialogue, music, assets, concepts and derivative opportunities.
+10. Expand the ProductionGraph beyond episodes so sketches, scripted projects, animation, music, reality, experimental work and interactive projects can share infrastructure without sharing the same creative process.
+11. Keep third-party binaries out of Git history; provision them reproducibly and cache them.
 
 ## Size philosophy
 

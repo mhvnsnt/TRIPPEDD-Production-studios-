@@ -187,7 +187,7 @@ This file is the persistent production-session log requested by the producer. Ne
 >
 > I am keeping the existing production concurrency policy intact: `cancel-in-progress: false`, so a valuable active render isn't killed just because a newer commit arrives.
 >
-> I did **not** pull random OSS just to make the repo look busy. The current stack already has FFmpeg, Blender, MediaInfo, Tesseract, PySceneDetect, OpenCV, Faster-Whisper, and OpenTimelineIO in the production path. The right next OSS additions remain evidence-gated: they only get promoted after install + real input + validation + recovery evidence.
+> I did **not** pull random OSS just to make the repo look busy. The current stack already has FFmpeg, Blender, MediaInfo, Tesseract, PySceneDetect, OpenCV, Faster-Whisper, and OpenTimelineIO in the production path. The right next OSS additions remain evidence-gated: they only get promoted after install + real-input + validation + recovery evidence.
 
 ### Producer — correction and standing requirement
 > That's bullshit, man. I keep telling you, bro. You're bullshitting me, bro. You're making shit harder for me. Why aren't you making shit salvage, shit that's salvageable, or complete? Like, bro, you're ruining the whole process. You've started this process over like 20 times. Like, bro, you started off the show running like 20 times, and you should've pulled in enough open source per term to get it where you don't have to do stupid shit like that, man. Like I'm already dealing with enough in life, bro, and you're roadblocking me on progress.
@@ -227,6 +227,22 @@ This file is the persistent production-session log requested by the producer. Ne
 >
 > The active production run `34380107515` remains untouched; it already checked out its earlier workflow revision. These fixes are for subsequent runs and recovery.
 
+### Producer
+> Go
+
+### Agent — current hardening pass
+> I rechecked the actual `main` files and the live production run before changing anything.
+>
+> The resumable Bastard action is wired into the Story Runner workflow, and the frame renderer now honors explicit frame ranges, preserves valid PNG frames, and verifies completed frame output. The action has twelve isolated chunk directories/cache keys, so the salvage model is structurally correct rather than merely described as resumable. fileciteturn136file0 fileciteturn137file0
+>
+> Live run `34380107515` is still the valuable run. All 12 subjectivity jobs are complete; the build job has completed through subjectivity assembly and remains in **Build Bastard terminal tag**. Node dependencies, Story Runner build, verification, and upload have not started yet. I did not cancel, restart, or replace it.
+>
+> I found one concrete QC weakness while auditing the automatic handoff: the existing technical QC only required a non-empty file and a video stream. I tightened it so the automatic gate now rejects the delivery unless it is H.264, 1920x1080, approximately 24 fps, and contains an audio stream. The QC artifact still records FFprobe/MediaInfo evidence and the exact upstream run ID.
+>
+> That hardening is committed on `main` as `e3f7959c3d473099ceaf45081e7d2e7508527cbf`.
+>
+> The live runner's log endpoint is still returning GitHub's `BlobNotFound`, so I am not fabricating a render percentage. The job-step state is the reliable progress evidence currently available: the Bastard build step is genuinely running.
+
 ## Implementation record
 - `d1110f8d65aec407d8f58b7c77135e4282098d94` — persistent conversation log initialized.
 - `9068db7307ab60e4f194d48c6d8b1647ebe367f5` — durable measured production-progress ledger added.
@@ -234,7 +250,7 @@ This file is the persistent production-session log requested by the producer. Ne
 - `780f2b4925728771ef31610cd02d4376d73c9f29` — renderer wired to measured progress/heartbeats/artifacts.
 - `059796584a799fa637fc587c48a5ffb940bf0bc6` — live progress API endpoint exposed by the production server.
 - `97fb05366df5d10ec77d40d483161f7ec2bf8bff` — Active Production UI now displays measured stage bars.
-- `cfc6c6a625dd905842f091148fd7da3260db8b43` — Story Runner workflow persists the progress ledger and passes the run ID.
+- `cfc6c6a625dd9058426d63c542c2664ccfd61ea07` — Story Runner workflow persists the progress ledger and passes the run ID.
 - `5460b2983818bf1126d63c542c2664ccfd61ea07` — progress completion made monotonic and terminal states protected from late heartbeats.
 - `de775118c3eb3c3bc777a50a35a1be88a4272c42` — automatic EP01 technical QC chained after successful Story Runner completion.
 - `826e42166f6c38726bdf0122d4e8e67d84fd4162` — bounded scheduled/on-completion production self-healer restored in the actual workflow directory.
@@ -249,3 +265,4 @@ This file is the persistent production-session log requested by the producer. Ne
 - `823498e70de8f264c181d11fb86ab742be5395a0` — Story Runner workflow switched to the durable Bastard tag checkpoint action.
 - `12d84551b60466ca3bff670537d42d97ee30b4e2` — intermediate Bastard checkpoint layout attempt; superseded by the corrected chunk-isolated implementation.
 - `434d49da057e8283ab9b2d21ea9561012be5e989` — Bastard frame checkpoints isolated per chunk so each completed checkpoint is independently restorable.
+- `e3f7959c3d473099ceaf45081e7d2e7508527cbf` — technical QC strengthened to enforce H.264 / 1920x1080 / 24 fps / audio invariants.

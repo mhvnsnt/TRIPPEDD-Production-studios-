@@ -49,6 +49,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
       - name: Restore Blender download cache
+        id: blender-cache
         uses: actions/cache/restore@v4
         with:
           path: /tmp/${{ env.BLENDER_ARCHIVE }}
@@ -68,7 +69,7 @@ jobs:
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
       - name: Save Blender download cache
-        if: success()
+        if: success() && steps.blender-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: /tmp/${{ env.BLENDER_ARCHIVE }}
@@ -91,6 +92,7 @@ jobs:
         run: bun install
 
       - name: Restore subjectivity render cache
+        id: subjectivity-cache
         uses: actions/cache/restore@v4
         with:
           path: |
@@ -128,7 +130,7 @@ jobs:
           fi
 
       - name: Persist validated subjectivity cache
-        if: success()
+        if: success() && steps.subjectivity-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: |
@@ -138,6 +140,7 @@ jobs:
           key: ep01-subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-blender-${{ env.BLENDER_VERSION }}-144f
 
       - name: Restore Bastard terminal tag cache
+        id: bastard-cache
         uses: actions/cache/restore@v4
         with:
           path: |
@@ -165,7 +168,7 @@ jobs:
           fi
 
       - name: Persist validated Bastard tag cache
-        if: success()
+        if: success() && steps.bastard-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
           path: |
@@ -192,10 +195,33 @@ jobs:
         run: timeout 150m bun run pilot:build:public
       - name: Verify showrunner cut
         run: |
+          set -euo pipefail
           test -s public/production/EP01-SHOWRUNNER.mp4
           test -s public/production/EP01-SHOWRUNNER.json
           test -s public/production/EP01-SHOWRUNNER.otio
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json public/production/EP01-SHOWRUNNER.mp4
+          python - <<'PY'
+          import opentimelineio as otio
+          timeline = otio.adapters.read_from_file('public/production/EP01-SHOWRUNNER.otio')
+          if not timeline.tracks:
+              raise SystemExit('OTIO validation failed: timeline has no tracks')
+          print('OpenTimelineIO validation OK:', timeline.name or 'EP01-SHOWRUNNER', 'tracks=', len(timeline.tracks))
+          PY
+      - name: Write showrunner artifact manifest
+        run: |
+          set -euo pipefail
+          manifest="public/production/EP01-SHOWRUNNER.manifest.sha256"
+          : > "$manifest"
+          sha256sum \
+            public/production/EP01-SHOWRUNNER.mp4 \
+            public/production/EP01-SHOWRUNNER.json \
+            public/production/EP01-SHOWRUNNER.otio \
+            production/EP01/generated/blender/ep01_subjectivity.blend \
+            production/EP01/generated/blender/ep01_subjectivity.mp4 \
+            production/EP01/generated/blender/ep01_bastard_tag.blend \
+            production/EP01/generated/blender/ep01_bastard_tag.mp4 \
+            > "$manifest"
+          test "$(wc -l < "$manifest")" -eq 7
       - name: Run EP01 technical QC
         env:
           TRIPPEDD_QC_BASENAME: EP01-SHOWRUNNER
@@ -208,10 +234,11 @@ jobs:
             public/production/EP01-SHOWRUNNER.mp4
             public/production/EP01-SHOWRUNNER.json
             public/production/EP01-SHOWRUNNER.otio
+            public/production/EP01-SHOWRUNNER.manifest.sha256
             production/EP01/QC-PASS.json
             public/production/EP01-vmaf.json
             production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/ep01_bastard_tag.blend
             production/EP01/generated/blender/ep01_bastard_tag.mp4
-          if-no-files-found: warn
+          if-no-files-found: error

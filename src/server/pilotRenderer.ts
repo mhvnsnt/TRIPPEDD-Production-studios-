@@ -3,6 +3,7 @@ import path from 'path';
 import { spawn } from 'child_process';
 import { createHash } from 'crypto';
 import { productionMemory } from './productionMemory';
+import { ProductionProgressLedger } from './productionProgress';
 
 export type PilotCutMode = 'AUTONOMOUS' | 'SHOWRUNNER';
 export interface PilotAssemblyClip { sourceFileId: string; sourcePath: string; start: number; end: number; gagId?: string; score?: number; reason: string; sourceOrder?: number; }
@@ -26,6 +27,29 @@ function run(command: string, args: string[]): Promise<void> {
     child.on('error', reject);
     child.on('close', code => code === 0 ? resolve() : reject(new Error(`${command} exited ${code}: ${stderr.slice(-2000)}`)));
   });
+}
+
+async function runWithProgress(command: string, args: string[], options: {
+  ledger: ProductionProgressLedger;
+  stageId: string;
+  completed: number;
+  total: number;
+  artifactPath?: string;
+  message?: string;
+}): Promise<void> {
+  const { ledger, stageId, completed, total, artifactPath, message } = options;
+  await ledger.update(stageId, { status: 'RUNNING', completed, total, artifactPath, message });
+  const heartbeat = setInterval(() => {
+    void ledger.update(stageId, { status: 'RUNNING', completed, total, artifactPath, message }).catch(() => undefined);
+  }, 5000);
+  try {
+    await run(command, args);
+  } catch (error) {
+    await ledger.update(stageId, { status: 'FAILED', completed, total, artifactPath, message: error instanceof Error ? error.message : String(error) });
+    throw error;
+  } finally {
+    clearInterval(heartbeat);
+  }
 }
 
 function safeCachedPath(filePath: string): boolean {
@@ -122,12 +146,25 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
 
   const missingBeats = selected.length ? ['STORY_REVIEW', ...(generatedClips.some(item => item.id === 'ep01-lost-acid-subjectivity') ? [] : ['SUBJECTIVITY_GENERATION']), ...(generatedClips.some(item => item.id === 'ep01-bastard-tag') ? [] : ['BASTARD_TAG_GENERATION']), 'FINAL_EDITORIAL_ASSEMBLY', 'QC', 'GREENLIGHT'] : ['MEDIA_ANALYSIS', 'GAG_DISCOVERY', 'SOURCE_SELECTS'];
   const manifest: PilotAssemblyManifest = { episodeId: 'EP01', title: 'The Walk', cutMode: CUT_MODE, status: selected.length ? 'ROUGH_CUT_READY' : 'WAITING_FOR_EVIDENCE', generatedAt: new Date().toISOString(), sourceClipCount: sourcePaths.size, selectedClipCount: selected.length, clips: selected, generatedClips, missingBeats };
+  const runId = process.env.TRIPPEDD_RUN_ID || process.env.GITHUB_RUN_ID || `${Date.now()}-${process.pid}`;
+  const ledger = new ProductionProgressLedger({ episodeId: 'EP01', runId, rootDir: path.join(OUTPUT_ROOT, '.progress') });
+  await ledger.init([
+    { id: 'source-discovery', label: 'Source discovery', total: Math.max(1, sourcePaths.size) },
+    { id: 'timeline-planning', label: 'Timeline planning', total: 1 },
+    { id: 'source-segments', label: 'Source segment encoding', total: selected.length },
+    { id: 'generated-segments', label: 'Generated segment encoding', total: generatedClips.length },
+    { id: 'final-concat', label: 'Final concatenation', total: 1 },
+    { id: 'assembly-complete', label: 'Assembly complete', total: 1 }
+  ]);
+  await ledger.update('source-discovery', { status: 'COMPLETE', completed: sourcePaths.size, total: Math.max(1, sourcePaths.size), message: `Discovered ${sourcePaths.size} cached source media files.` });
 
   await fs.mkdir(OUTPUT_ROOT, { recursive: true });
   const otioPath = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}.otio`);
   const jsonPath = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}.json`);
   const outputPath = path.join(OUTPUT_ROOT, `${OUTPUT_BASENAME}.mp4`);
+  await ledger.update('timeline-planning', { status: 'RUNNING', completed: 0, total: 1, message: 'Writing OTIO and assembly manifest.' });
   await fs.writeFile(otioPath, JSON.stringify(writeOtioTimeline(selected, generatedClips), null, 2), 'utf8');
+  await ledger.update('timeline-planning', { status: 'COMPLETE', completed: 1, total: 1 });
   manifest.timelinePath = `/production/${OUTPUT_BASENAME}.otio`;
   await fs.writeFile(jsonPath, JSON.stringify(manifest, null, 2), 'utf8');
   if (!selected.length) return manifest;
@@ -149,22 +186,26 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
     } else {
       const tempPath = `${cachePath}.partial-${process.pid}-${i}`;
       await fs.rm(tempPath, { force: true });
-      await run('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-ss', clip.start.toFixed(3), '-i', clip.sourcePath, '-t', (clip.end - clip.start).toFixed(3), '-map', '0:v:0', '-map', '0:a?', '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=24', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', '-movflags', '+faststart', tempPath]);
+      await runWithProgress('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-ss', clip.start.toFixed(3), '-i', clip.sourcePath, '-t', (clip.end - clip.start).toFixed(3), '-map', '0:v:0', '-map', '0:a?', '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=24', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', '-movflags', '+faststart', tempPath], { ledger, stageId: 'source-segments', completed: i, total: selected.length, artifactPath: tempPath, message: `Encoding source segment ${i + 1}/${selected.length}.` });
       await fs.rename(tempPath, cachePath);
       await fs.copyFile(cachePath, segmentPath);
       console.log(`[pilot-renderer] encoded and cached: ${path.basename(cachePath)}`);
     }
     if (!(await fs.stat(segmentPath).then(stat => stat.size > 0).catch(() => false))) throw new Error(`Missing source segment after render: ${segmentPath}`);
     sourceSegmentPaths[i] = segmentPath;
+    await ledger.update('source-segments', { status: 'RUNNING', completed: i + 1, total: selected.length, artifactPath: segmentPath, message: `Ready source segment ${i + 1}/${selected.length}.` });
   });
+  await ledger.update('source-segments', { status: 'COMPLETE', completed: selected.length, total: selected.length });
 
   const generatedSegmentPaths = new Map<string, string>();
   for (let i = 0; i < generatedClips.length; i++) {
     const generated = generatedClips[i];
     const segmentPath = path.join(segmentDir, `${String(selected.length + i).padStart(3, '0')}-generated.mp4`);
-    await run('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', generated.path, '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=48000', '-shortest', '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=24', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', '-movflags', '+faststart', segmentPath]);
+    await runWithProgress('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', generated.path, '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=48000', '-shortest', '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=24', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', '-movflags', '+faststart', segmentPath], { ledger, stageId: 'generated-segments', completed: i, total: generatedClips.length, artifactPath: segmentPath, message: `Encoding generated segment ${i + 1}/${generatedClips.length}.` });
     generatedSegmentPaths.set(generated.id, segmentPath);
+    await ledger.update('generated-segments', { status: 'RUNNING', completed: i + 1, total: generatedClips.length, artifactPath: segmentPath, message: `Ready generated segment ${i + 1}/${generatedClips.length}.` });
   }
+  await ledger.update('generated-segments', { status: 'COMPLETE', completed: generatedClips.length, total: generatedClips.length });
 
   const beforeFinal = generatedClips.filter(item => item.position === 'BEFORE_FINAL_SOURCE_CLIPS');
   const terminal = generatedClips.filter(item => item.position === 'TERMINAL_TAG');
@@ -177,7 +218,9 @@ export async function buildEp01FirstAssembly(options: { maxClips?: number; clipP
   ];
   const concatText = orderedPaths.map(file => `file '${file.replace(/'/g, "'\\''")}'`).join('\n') + '\n';
   await fs.writeFile(listPath, concatText, 'utf8');
-  await run('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', listPath, '-c', 'copy', '-movflags', '+faststart', outputPath]);
+  await runWithProgress('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', listPath, '-c', 'copy', '-movflags', '+faststart', outputPath], { ledger, stageId: 'final-concat', completed: 0, total: 1, artifactPath: outputPath, message: 'Concatenating the measured assembly segments.' });
+  await ledger.update('final-concat', { status: 'COMPLETE', completed: 1, total: 1, artifactPath: outputPath });
+  await ledger.update('assembly-complete', { status: 'COMPLETE', completed: 1, total: 1, artifactPath: outputPath, message: 'EP01 assembly artifact verified by successful ffmpeg completion.' });
   manifest.outputPath = `/production/${OUTPUT_BASENAME}.mp4`;
   await fs.writeFile(jsonPath, JSON.stringify(manifest, null, 2), 'utf8');
   return manifest;

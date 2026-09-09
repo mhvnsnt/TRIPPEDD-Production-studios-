@@ -106,16 +106,18 @@ jobs:
           done
 
           # Once the canonical Story Runner succeeds, automatically start the
-          # Autonomous cut unless one has already been started after that success.
+          # Autonomous cut while passing the exact successful run ID so it can
+          # reuse the verified subjectivity and Bastard media instead of rerendering them.
           story_success=$(gh run list --repo "$REPO" --workflow ep01-story-runner.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt,headSha | jq 'map(select(.status == "completed" and .conclusion == "success")) | sort_by(.createdAt) | reverse | .[0] // empty')
           if [ -n "$story_success" ] && [ "$story_success" != "null" ]; then
             story_created=$(jq -r '.createdAt' <<<"$story_success")
+            story_id=$(jq -r '.databaseId' <<<"$story_success")
             auto_runs=$(gh run list --repo "$REPO" --workflow ep01-autonomous.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt)
             auto_active=$(jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | length' <<<"$auto_runs")
             auto_after=$(jq --arg t "$story_created" '[.[] | select(.createdAt > $t)] | length' <<<"$auto_runs")
             if [ "$auto_active" -eq 0 ] && [ "$auto_after" -eq 0 ]; then
-              echo "CHAIN: canonical Story Runner succeeded; dispatching EP01 Autonomous Cut on current main"
-              gh workflow run ep01-autonomous.yml --repo "$REPO" --ref main
+              echo "CHAIN: canonical Story Runner succeeded; dispatching EP01 Autonomous Cut with story_run_id=$story_id for media reuse"
+              gh workflow run ep01-autonomous.yml --repo "$REPO" --ref main -f story_run_id="$story_id"
               dispatched=$((dispatched+1))
             fi
           fi
@@ -127,5 +129,5 @@ jobs:
             echo "- Suppressed queued duplicates: $suppressed"
             echo "- Recovery actions: $recovered"
             echo "- Autonomous dispatches: $dispatched"
-            echo "- Policy: active runs take priority; queued/waiting runs are preserved; redundant queued duplicates are cancelled only when an active run exists; failed runs get one failed-job replay; active runs get a 60-minute stale-run backstop; successful canonical Story Runner automatically chains the Autonomous cut."
+            echo "- Policy: active runs take priority; queued/waiting runs are preserved; redundant queued duplicates are cancelled only when an active run exists; failed runs get one failed-job replay; active runs get a 60-minute stale-run backstop; successful canonical Story Runner automatically chains the Autonomous cut and reuses its verified media."
           } >> "$GITHUB_STEP_SUMMARY"

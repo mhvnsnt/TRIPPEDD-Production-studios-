@@ -231,7 +231,7 @@ jobs:
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '4'
-        run: bun run pilot:build:public
+        run: bash scripts/production/watch-progress.sh --progress-file "public/production/.progress/EP01-${{ github.run_id }}.json" -- bun run pilot:build:public
       - name: Verify autonomous cut
         run: |
           set -euo pipefail

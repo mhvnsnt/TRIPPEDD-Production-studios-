@@ -5,16 +5,6 @@ on:
   push:
     paths:
       - production/EP01/RUN-PUBLIC-BUILD
-      - .github/workflows/ep01-autonomous.yml
-      - .github/workflows/ep01-story-runner.yml
-      - scripts/run-public-pilot.ts
-      - scripts/bin/whisper
-      - production/EP01/generated/blender/**
-      - src/server/publicDriveFolder.ts
-      - src/server/queueManager.ts
-      - src/server/mediaPipeline.ts
-      - src/server/pilotRenderer.ts
-      - src/server/productionMemory.ts
 
 concurrency:
   group: ep01-autonomous-${{ github.ref }}

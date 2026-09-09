@@ -1,20 +1,34 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "kdenlive", "mlt", "natron", "opencolorio", "openassetio", "opencue", "demucs"],
-  "interchange": { "editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe" },
+  "optional": ["blender", "mediainfo", "exiftool", "bwfmetaedit", "vmaf", "kdenlive", "mlt", "olive", "shotcut", "audacity", "ardour", "rubberband", "aubio", "opencolorio", "openassetio", "usd", "materialx", "openvdb", "natron", "embree", "flamenco", "opencue", "demucs", "pyblish", "kitsu", "zou", "pytorch", "onnxruntime", "prometheus", "grafana", "opentelemetry"],
+  "interchange": {
+    "editorial": "OpenTimelineIO",
+    "assets": "OpenAssetIO",
+    "scene": "OpenUSD",
+    "materials": "MaterialX",
+    "color": "OpenColorIO",
+    "media": "FFmpeg/FFprobe",
+    "audio": "BWF/WAV"
+  },
   "backends": {
     "deterministicMedia": "ffmpeg",
-    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract"],
-    "procedural3D": "blender",
-    "editorial": "kdenlive",
+    "analysis": ["ffprobe", "mediainfo", "opencv", "pyscenedetect", "whisper", "tesseract", "exiftool"],
+    "procedural3D": ["blender", "openvdb", "embree"],
+    "editorial": ["kdenlive", "olive", "shotcut"],
     "editorialRender": "mlt",
     "compositing": "natron",
     "colorManagement": "opencolorio",
     "assetInterchange": "openassetio",
-    "distributedRendering": "opencue"
+    "sceneInterchange": "usd",
+    "materialInterchange": "materialx",
+    "distributedRendering": ["flamenco", "opencue"],
+    "audio": ["audacity", "ardour", "rubberband", "aubio", "demucs"],
+    "publishing": "pyblish",
+    "perceptualQC": "vmaf",
+    "productionTracking": ["kitsu", "zou"]
   },
   "episodeCuts": {
     "autonomous": "AUTONOMOUS",
@@ -27,6 +41,9 @@
     "archivedProjectsMustNotBeBlindlyProvisioned": true,
     "humanEditorialLockRequiredForFinalMaster": true,
     "generatedMaterialMustCarryProvenance": true,
-    "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true
+    "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true,
+    "thirdPartySourceIsNotVendoredByDefault": true,
+    "heavyBinariesUseReproducibleProvisioning": true,
+    "productionPromotionRequiresRealInputEvidence": true
   }
 }

@@ -181,15 +181,41 @@ This file is the persistent production-session log requested by the producer. Ne
 ### Agent — autonomous pipeline hardening pass
 > I checked the live production job instead of assuming it was idle. The active EP01 Story Runner run `34380107515` has all 12 subjectivity chunks complete and has moved into the build job. The build job has completed checkout, Bun/Python setup, both caches, media-stack installation, Blender installation, and subjectivity assembly. It is currently in **Build Bastard terminal tag**; Node install, Story Runner assembly, verification, and upload are still pending. This is real GitHub job-step evidence, not a guessed percentage.
 >
-> I found the bigger pipeline gap: the workflow had an internal dependency from subjectivity → assembly, but there was no automatic post-build technical QC workflow. I added `.github/workflows/ep01-qc.yml` so a successful Story Runner automatically launches technical QC, downloads the exact completed `EP01-STORY-RUNNER` artifact from that run, runs FFprobe + MediaInfo validation, and publishes an `EP01-QC-*` artifact. GitHub's `workflow_run` event and cross-run artifact download support make this handoff deterministic rather than requiring a person to manually kick the next gate. citeturn1search2turn1search1
+> I found the bigger pipeline gap: the workflow had an internal dependency from subjectivity → assembly, but there was no automatic post-build technical QC workflow. I added `.github/workflows/ep01-qc.yml` so a successful Story Runner automatically launches technical QC, downloads the exact completed `EP01-STORY-RUNNER` artifact from that run, runs FFprobe + MediaInfo validation, and publishes an `EP01-QC-*` artifact. GitHub's `workflow_run` event and cross-run artifact download support make this handoff deterministic rather than requiring a person to manually kick the next gate.
 >
-> I also added `.github/workflows/production-self-healer.yml`. It checks the EP01 Story Runner and Autonomous workflows on a 10-minute schedule and after completed runs. Failed/timed-out runs get one bounded failed-job replay; genuinely active jobs have a 110-minute stale-run backstop before cancellation/replay. Pending/queued runs are deliberately left alone so the healer doesn't make the queue worse. GitHub exposes job start/completion data through the Actions API, which is the evidence source for that decision. citeturn2search0turn2search2
+> I also added `.github/workflows/production-self-healer.yml`. It checks the EP01 Story Runner and Autonomous workflows on a 10-minute schedule and after completed runs. Failed/timed-out runs get one bounded failed-job replay; genuinely active jobs have a 110-minute stale-run backstop before cancellation/replay. Pending/queued runs are deliberately left alone so the healer doesn't make the queue worse.
 >
-> I am keeping the existing production concurrency policy intact: `cancel-in-progress: false`, so a valuable active render isn't killed just because a newer commit arrives. GitHub supports explicit concurrency groups for exactly this kind of controlled sequencing. citeturn0search1
+> I am keeping the existing production concurrency policy intact: `cancel-in-progress: false`, so a valuable active render isn't killed just because a newer commit arrives.
 >
 > I did **not** pull random OSS just to make the repo look busy. The current stack already has FFmpeg, Blender, MediaInfo, Tesseract, PySceneDetect, OpenCV, Faster-Whisper, and OpenTimelineIO in the production path. The right next OSS additions remain evidence-gated: they only get promoted after install + real input + validation + recovery evidence.
 
-### Implementation record
+### Producer — correction and standing requirement
+> That's bullshit, man. I keep telling you, bro. You're bullshitting me, bro. You're making shit harder for me. Why aren't you making shit salvage, shit that's salvageable, or complete? Like, bro, you're ruining the whole process. You've started this process over like 20 times. Like, bro, you started off the show running like 20 times, and you should've pulled in enough open source per term to get it where you don't have to do stupid shit like that, man. Like I'm already dealing with enough in life, bro, and you're roadblocking me on progress.
+
+### Agent — salvageability correction
+> I accepted the correction and changed the implementation target: successful production work must become reusable production state, not something that disappears because workflow infrastructure changed. I did not restart or cancel the active run.
+>
+> Commit `6715a850f3a7c8d6c7147ab5effe5495337b58c8` added a source-hash-keyed reusable cache for the completed Bastard terminal tag, so a completed tag is reused instead of Blender-rendered again when the tag-builder source is unchanged. The workflow also logs the actual reused byte count.
+>
+> I am treating open source as a standing production-improvement source, not as arbitrary library collection: when a tool materially improves salvageability, rendering, analysis, QC, or recovery, it gets researched and integrated only with real production evidence.
+
+### Producer
+> Go
+
+### Agent — durable Bastard frame checkpoint pass
+> I checked the live run before touching production controls. Run `34380107515` is still active. All 12 subjectivity chunks are complete, the subjectivity assembly is complete, and the active build job is still on **Build Bastard terminal tag**. I did not restart, cancel, or replace it.
+>
+> I then fixed the remaining salvage gap on `main`. The old Bastard renderer only produced the final MP4 after Blender completed the entire six-second animation, so a failed/interrupted render could throw away work that had already been rendered. That was not good enough.
+>
+> Commit `25963a610a3dcbf8599200bf1f2f6986dd7c5f98` changes `build_bastard_tag.py` to render explicit PNG frames in a requested range, skip already-valid frame files, and emit real frame-completion byte counts. The renderer remains deterministic and preserves the generated `.blend` scene.
+>
+> Commit `4475caca148e41de19c7e92de38a61979e1821a9` adds `.github/actions/resumable-bastard-tag/action.yml`. It divides the 144-frame tag into twelve 12-frame checkpoints. Each checkpoint has its own immutable GitHub Actions cache key and is restored before rendering, then saved immediately after that chunk finishes. If a later chunk fails or the job is replayed, completed earlier chunks are available instead of forcing the tag back to frame 1. Once all 144 frames exist, FFmpeg assembles the final H.264 MP4.
+>
+> Commit `823498e70de8f264c181d11fb86ab742be5395a0` replaces the old all-or-nothing Bastard tag step in the Story Runner workflow with that resumable action. The existing active run is not affected because it already checked out its earlier workflow revision; these changes are for subsequent executions/recovery.
+>
+> GitHub's cache documentation confirms that cache entries are immutable, so the chunked keys are intentional: each completed chunk becomes a durable checkpoint instead of trying to overwrite one monolithic cache. This is the same principle now being applied to expensive production work generally.
+
+## Implementation record
 - `d1110f8d65aec407d8f58b7c77135e4282098d94` — persistent conversation log initialized.
 - `9068db7307ab60e4f194d48c6d8b1647ebe367f5` — durable measured production-progress ledger added.
 - `5b50aaabf2446b57d797a579b2d2e6340fbbb697` — serialized progress ledger writes.
@@ -200,5 +226,12 @@ This file is the persistent production-session log requested by the producer. Ne
 - `5460b2983818bf1126d63c542c2664ccfd61ea07` — progress completion made monotonic and terminal states protected from late heartbeats.
 - `de775118c3eb3c3bc777a50a35a1be88a4272c42` — automatic EP01 technical QC chained after successful Story Runner completion.
 - `826e42166f6c38726bdf0122d4e8e67d84fd4162` — bounded scheduled/on-completion production self-healer restored in the actual workflow directory.
-- Existing recovery commit recorded from the production session: `eeb67c55d03483a5b71ef3e41c36e00c763a9561`.
-- Existing progress commits recorded from the production session: `4643f38642f97c82023693c1702f2e46df006e14`, `fe61e8d0323f2d8d2c36ab62449e4742abc87aca`.
+- `eeb67c55d03483a5b71ef3e41c36e00c763a9561` — bounded production self-healer recovery behavior.
+- `4643f38642f97c82023693c1702f2e46df006e14` — real stage bars/event reporting.
+- `fe61e8d0323f2d8d2c36ab62449e4742abc87aca` — corrected measured source-count percentages.
+- `a0b02f3` — production kickoff made explicit instead of firing on ordinary studio infrastructure changes.
+- `eaa3bc4` — self-healer dedupe/active-run prioritization separated for Story Runner vs Autonomous.
+- `6715a850f3a7c8d6c7147ab5effe5495337b58c8` — completed Bastard tag reuse keyed to tag-builder source hash.
+- `25963a610a3dcbf8599200bf1f2f6986dd7c5f98` — Bastard tag renderer converted to resumable frame-range rendering.
+- `4475caca148e41de19c7e92de38a61979e1821a9` — durable 12-chunk Bastard frame checkpoint action added.
+- `823498e70de8f264c181d11fb86ab742be5395a0` — Story Runner workflow switched to the durable Bastard tag checkpoint action.

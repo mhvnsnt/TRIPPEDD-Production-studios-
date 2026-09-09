@@ -79,6 +79,19 @@ runs:
         parallelism="${TRIPPEDD_BASTARD_PARALLELISM:-3}"
         case "$parallelism" in 1|2|3|4) ;; *) echo "Invalid TRIPPEDD_BASTARD_PARALLELISM=$parallelism; using 3"; parallelism=3 ;; esac
 
+        progress_notice() {
+          local done=0 bytes=0 n dir frames percent
+          for n in $(seq -w 1 12); do
+            dir="$root/chunk-$n"
+            frames=$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c 2>/dev/null | wc -l)
+            if [ "$frames" -gt 12 ]; then frames=12; fi
+            done=$((done + frames))
+            if [ -d "$dir" ]; then bytes=$((bytes + $(du -sb "$dir" 2>/dev/null | cut -f1 || echo 0))); fi
+          done
+          percent=$((done * 100 / 144))
+          echo "::notice title=Bastard terminal tag::Bastard terminal tag: ${done}/144 frames (${percent}%) — ${bytes} bytes"
+        }
+
         valid_chunk() {
           local dir="$1"
           test "$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 12
@@ -92,17 +105,33 @@ runs:
           mkdir -p "$dir"
           if valid_chunk "$dir"; then
             echo "BASTARD_CHUNK_CACHE_HIT chunk=$(printf '%02d' "$n") frames=12 bytes=$(du -sb "$dir" | cut -f1)"
+            progress_notice
             return 0
           fi
           echo "BASTARD_CHUNK_START chunk=$(printf '%02d' "$n") frames=${start}-${end}"
           TRIPPEDD_FRAME_START="$start" \
           TRIPPEDD_FRAME_END="$end" \
           TRIPPEDD_FRAME_DIR="$dir" \
-          blender -b --python "$script"
+          blender -b --python "$script" &
+          local pid=$!
+          local last=-1
+          while kill -0 "$pid" 2>/dev/null; do
+            local count
+            count=$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c 2>/dev/null | wc -l)
+            if [ "$count" -ne "$last" ]; then
+              echo "::notice title=Bastard chunk $(printf '%02d' "$n")::Chunk $(printf '%02d' "$n"): ${count}/12 frames"
+              progress_notice
+              last="$count"
+            fi
+            sleep 5
+          done
+          wait "$pid"
           test "$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 12
           echo "BASTARD_CHUNK_COMPLETE chunk=$(printf '%02d' "$n") frames=12 bytes=$(du -sb "$dir" | cut -f1)"
+          progress_notice
         }
 
+        progress_notice
         for batch_start in 1 4 7 10; do
           pids=()
           for n in $(seq "$batch_start" $((batch_start + parallelism - 1))); do
@@ -111,6 +140,8 @@ runs:
             pids+=("$!")
           done
           for pid in "${pids[@]}"; do wait "$pid"; done
+          echo "BASTARD_BATCH_COMPLETE start=${batch_start}"
+          progress_notice
         done
 
     - name: Save Bastard frames chunk 01
@@ -185,6 +216,8 @@ runs:
           find "$root/chunk-$n" -maxdepth 1 -type f -name 'frame-*.png' -size +0c -print0 | xargs -0 -r -I{} cp "{}" production/EP01/generated/blender/bastard_tag_frames/all/
         done
         test "$(find production/EP01/generated/blender/bastard_tag_frames/all -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 144
+        echo "::notice title=Bastard terminal tag::Bastard terminal tag: 144/144 frames (100%) — assembling MP4"
         ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/bastard_tag_frames/all/frame-%04d.png -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_bastard_tag.mp4
         test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
         echo "BASTARD_TAG_BYTES=$(stat -c '%s' production/EP01/generated/blender/ep01_bastard_tag.mp4)"
+        echo "::notice title=Bastard terminal tag::Bastard terminal tag: 144/144 frames (100%) — MP4 complete"

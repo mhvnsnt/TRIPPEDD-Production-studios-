@@ -43,8 +43,25 @@ jobs:
             gh api --method PATCH "repos/${REPO}/issues/comments/${comment_id}" -f body="$body" >/dev/null
           }
 
+          elapsed_seconds() {
+            python - "$1" <<'PY'
+          import sys
+          from datetime import datetime, timezone
+          started=sys.argv[1]
+          if not started or started == 'null':
+              print('—')
+              raise SystemExit
+          dt=datetime.fromisoformat(started.replace('Z','+00:00'))
+          seconds=max(0,int((datetime.now(timezone.utc)-dt).total_seconds()))
+          h, rem=divmod(seconds,3600)
+          m,s=divmod(rem,60)
+          print(f'{h:02d}:{m:02d}:{s:02d}')
+          PY
+          }
+
           run_id=''
           for i in $(seq 1 360); do
+            now="$(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             run_json="$(gh api "repos/${REPO}/actions/runs?branch=${BRANCH}&per_page=20")"
             run="$(printf '%s' "$run_json" | jq -c '[.workflow_runs[] | select(.name == "EP01 Showrunner Cut")][0]')"
             if [ "$run" = "null" ] || [ -z "$run" ]; then
@@ -54,7 +71,7 @@ jobs:
 
 No EP01 Showrunner run found yet.
 
-Heartbeat: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+**Heartbeat:** ${now}"
               sleep 30
               continue
             fi
@@ -62,12 +79,14 @@ Heartbeat: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             run_id="$(printf '%s' "$run" | jq -r '.id')"
             status="$(printf '%s' "$run" | jq -r '.status')"
             conclusion="$(printf '%s' "$run" | jq -r '.conclusion // "—"')"
-            started="$(printf '%s' "$run" | jq -r '.run_started_at')"
+            started="$(printf '%s' "$run" | jq -r '.run_started_at // .created_at')"
+            duration="$(elapsed_seconds "$started")"
             jobs="$(gh api "repos/${REPO}/actions/runs/${run_id}/jobs?per_page=100")"
             active="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.status == "in_progress")] | map(.name) | join(", ")')"
             completed="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.status == "completed" and .conclusion == "success")] | length')"
             total="$(printf '%s' "$jobs" | jq -r '.total_count')"
             current_steps="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.status == "in_progress") | .steps[]? | select(.status == "in_progress") | .name] | join(", ")')"
+            recent_completed="$(printf '%s' "$jobs" | jq -r '[.jobs[] | .steps[]? | select(.status == "completed") | {name,conclusion,completed_at}] | sort_by(.completed_at) | reverse | .[0:4] | map("\(.completed_at // "unknown") — \(.name) [\(.conclusion)]") | join("\n")')"
 
             if [ "$status" = "completed" ]; then
               update "$marker
@@ -77,9 +96,14 @@ Heartbeat: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 **Run:** ${run_id}
 **Jobs:** ${completed}/${total} successful
 **Active:** none
-**Last check:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+**Finished check:** ${now}
+**Run started:** ${started}
+**Elapsed:** ${duration}
 
 Production run finished with conclusion **${conclusion}**.
+
+**Recent completed steps:**
+${recent_completed:-none}
 
 GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
               exit 0
@@ -94,10 +118,14 @@ GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
 **Successful jobs:** ${completed}/${total}
 **Active job:** ${active:-none}
 **Active step:** ${current_steps:-waiting/runner transition}
-**Heartbeat:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
-**Started:** ${started}
+**Heartbeat:** ${now}
+**Run started:** ${started}
+**Elapsed:** ${duration}
 
-This monitor polls GitHub Actions directly every 30 seconds.
+**Recent completed steps:**
+${recent_completed:-none}
+
+This monitor polls GitHub Actions directly every 30 seconds and records UTC timestamps plus elapsed production time.
 
 GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
             sleep 30
@@ -106,6 +134,8 @@ GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
           update "$marker
 
 ## EP01 Showrunner — watchdog timeout
+
+**Heartbeat:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
 
 The production monitor reached its 3-hour observation window without a terminal state. Inspect run ${run_id} immediately."
           exit 1

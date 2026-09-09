@@ -4,5 +4,6 @@ Run the canonical EP01 production pipeline.
 Ingest physical source footage, analyze it, build the real source-driven rough assembly, generate the EP01 subjectivity sequence, introduce Bannon/The Bastard only as the terminal generated tag, and include clearly-labelled generated material in the assembly.
 Final editorial selection and showrunner greenlight remain human-controlled.
 
-BUILD REVISION: 2026-09-08T01:55Z
-RENDER RECOVERY: EEVEE 4 samples / 50% / 144 frames; redundant nested timeout removed.
+BUILD REVISION: 2026-09-09T19:20Z
+RENDER RECOVERY: resumable subjectivity chunks + durable assembly caches.
+RECOVERY HARDENING: stale queued-run protection and current-main production kickoff.

@@ -86,23 +86,37 @@ key.data.shape = 'DISK'
 key.data.size = 7
 point_at(key, (0, 0, 0))
 
+# Keep the 180-streak rain look but store it as one mesh. The old implementation
+# created 180 animated cylinder objects, multiplying dependency-graph evaluation
+# and making this short terminal shot disproportionately expensive and fragile.
 rain_mat = bpy.data.materials.new('Rain')
 rain_mat.use_nodes = True
 bs = rain_mat.node_tree.nodes.get('Principled BSDF')
 bs.inputs['Base Color'].default_value = (0.04, 0.07, 0.1, 1)
 bs.inputs['Emission Color'].default_value = (0.04, 0.08, 0.14, 1)
 bs.inputs['Emission Strength'].default_value = 1.5
+verts = []
+faces = []
 for i in range(180):
     x = ((i * 37) % 240 - 120) / 10
     y = ((i * 61) % 240 - 120) / 10
     z = ((i * 97) % 90) / 10
-    bpy.ops.mesh.primitive_cylinder_add(vertices=5, radius=0.006, depth=0.7, location=(x, y, z))
-    r = bpy.context.object
-    r.data.materials.append(rain_mat)
-    r.rotation_euler[0] = math.radians(10)
-    r.keyframe_insert('location', frame=FRAME_START, index=2)
-    r.location.z -= 8
-    r.keyframe_insert('location', frame=FRAME_END, index=2)
+    dx, dy, dz = 0.006, 0.006, 0.35
+    b = len(verts)
+    verts.extend([(x-dx,y-dy,z-dz),(x+dx,y-dy,z-dz),(x+dx,y+dy,z-dz),(x-dx,y+dy,z-dz),
+                  (x-dx,y-dy,z+dz),(x+dx,y-dy,z+dz),(x+dx,y+dy,z+dz),(x-dx,y+dy,z+dz)])
+    faces.extend([(b,b+1,b+2,b+3),(b+4,b+7,b+6,b+5),(b,b+4,b+5,b+1),
+                  (b+1,b+5,b+6,b+2),(b+2,b+6,b+7,b+3),(b+4,b,b+3,b+7)])
+mesh = bpy.data.meshes.new('RainFieldMesh')
+mesh.from_pydata(verts, [], faces)
+mesh.update()
+rain = bpy.data.objects.new('RainField', mesh)
+scene.collection.objects.link(rain)
+rain.data.materials.append(rain_mat)
+rain.rotation_euler[0] = math.radians(10)
+rain.keyframe_insert('location', frame=FRAME_START, index=2)
+rain.location.z -= 8
+rain.keyframe_insert('location', frame=FRAME_END, index=2)
 
 bpy.ops.object.light_add(type='POINT', location=(0, 2, 7))
 flash = bpy.context.object
@@ -136,7 +150,6 @@ scene['TRIPPEDD_EDITORIAL_POSITION'] = 'TERMINAL_TAG'
 
 BLEND.parent.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.save_as_mainfile(filepath=str(BLEND))
-
 if PREFLIGHT:
     print(f'PREFLIGHT PASS: scene built and saved to {BLEND}')
     raise SystemExit(0)
@@ -163,8 +176,7 @@ def missing_ranges(start, end):
     ranges.append((range_start, previous))
     return ranges
 
-ranges = missing_ranges(FRAME_START, FRAME_END)
-for range_start, range_end in ranges:
+for range_start, range_end in missing_ranges(FRAME_START, FRAME_END):
     scene.frame_start = range_start
     scene.frame_end = range_end
     scene.render.filepath = frame_pattern
@@ -176,7 +188,6 @@ for range_start, range_end in ranges:
         frame_path = FRAME_DIR / f'frame-{frame:04d}.png'
         if not frame_path.is_file() or frame_path.stat().st_size == 0:
             raise RuntimeError(f'frame {frame} missing after range render: {frame_path}')
-
     scene['TRIPPEDD_LAST_COMPLETED_FRAME'] = range_end
     checkpoint = checkpoint_dir / f'bastard-tag-{range_start:04d}-{range_end:04d}.blend'
     bpy.ops.wm.save_as_mainfile(filepath=str(checkpoint))
@@ -187,26 +198,15 @@ scene.frame_start = FRAME_START
 scene.frame_end = FRAME_END
 scene['TRIPPEDD_LAST_COMPLETED_FRAME'] = FRAME_END
 bpy.ops.wm.save_as_mainfile(filepath=str(BLEND))
-
 expected = FRAME_END - FRAME_START + 1
 frames = sorted(FRAME_DIR.glob('frame-*.png'))
 if len(frames) != expected:
     raise RuntimeError(f'expected {expected} tag frames, found {len(frames)}')
-
 ffmpeg = shutil.which('ffmpeg')
 if not ffmpeg:
     raise RuntimeError('ffmpeg is required to assemble the Bastard terminal tag')
-
 OUT.parent.mkdir(parents=True, exist_ok=True)
-subprocess.run([
-    ffmpeg, '-y', '-hide_banner', '-loglevel', 'error',
-    '-framerate', str(FPS),
-    '-start_number', str(FRAME_START),
-    '-i', str(FRAME_DIR / 'frame-%04d.png'),
-    '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
-    '-pix_fmt', 'yuv420p', '-movflags', '+faststart', str(OUT),
-], check=True)
-
+subprocess.run([ffmpeg, '-y', '-hide_banner', '-loglevel', 'error', '-framerate', str(FPS), '-start_number', str(FRAME_START), '-i', str(FRAME_DIR / 'frame-%04d.png'), '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', str(OUT)], check=True)
 if not OUT.is_file() or OUT.stat().st_size == 0:
     raise RuntimeError(f'FFmpeg did not create a valid tag: {OUT}')
 print(f'BASTARD TAG COMPLETE: {OUT} ({OUT.stat().st_size} bytes, {expected} frames)')

@@ -1,0 +1,103 @@
+name: Production Self-Healer
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_run:
+    workflows: ["EP01 Story Runner Cut", "EP01 Autonomous Cut"]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: production-self-healer
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Inspect and recover production runs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          now=$(date -u +%s)
+          recovered=0
+          checked=0
+
+          for workflow in ep01-story-runner.yml ep01-autonomous.yml; do
+            run=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 5 --json databaseId,status,conclusion,runAttempt,createdAt,updatedAt,headSha --jq 'map(select(.status != "completed"))[0] // empty')
+            if [ -z "$run" ]; then
+              failed=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 5 --json databaseId,status,conclusion,runAttempt --jq 'map(select(.status == "completed" and (.conclusion == "failure" or .conclusion == "timed_out")))[0] // empty')
+              if [ -n "$failed" ]; then
+                run="$failed"
+              else
+                continue
+              fi
+            fi
+
+            checked=$((checked+1))
+            run_id=$(jq -r '.databaseId' <<<"$run")
+            status=$(jq -r '.status' <<<"$run")
+            conclusion=$(jq -r '.conclusion // empty' <<<"$run")
+            attempt=$(jq -r '.runAttempt' <<<"$run")
+
+            echo "Inspecting $workflow run $run_id status=$status conclusion=$conclusion attempt=$attempt"
+
+            if [ "$status" = "completed" ]; then
+              if [ "$conclusion" = "failure" ] || [ "$conclusion" = "timed_out" ]; then
+                if [ "$attempt" -lt 2 ]; then
+                  echo "RECOVERY: rerunning failed jobs for $run_id"
+                  gh run rerun "$run_id" --failed --repo "$REPO"
+                  recovered=$((recovered+1))
+                else
+                  echo "BOUNDED: run $run_id already consumed its automatic retry budget"
+                fi
+              fi
+              continue
+            fi
+
+            jobs=$(gh api "/repos/$REPO/actions/runs/$run_id/jobs?per_page=100" --jq '[.jobs[] | select(.status == "in_progress")]')
+            active_count=$(jq 'length' <<<"$jobs")
+            if [ "$active_count" -eq 0 ]; then
+              echo "Run $run_id is pending/queued; leave it alone."
+              continue
+            fi
+
+            stale=0
+            while IFS= read -r job; do
+              [ -z "$job" ] && continue
+              started=$(jq -r '.started_at // empty' <<<"$job")
+              [ -z "$started" ] && continue
+              started_epoch=$(date -d "$started" +%s)
+              age=$((now-started_epoch))
+              echo "  active job $(jq -r '.name' <<<"$job") age=${age}s"
+              if [ "$age" -ge 6600 ]; then stale=1; fi
+            done < <(jq -c '.[]' <<<"$jobs")
+
+            if [ "$stale" -eq 1 ] && [ "$attempt" -lt 2 ]; then
+              echo "RECOVERY: cancelling genuinely stale run $run_id after 110 minutes, then replaying it"
+              gh run cancel "$run_id" --repo "$REPO" || true
+              for i in $(seq 1 12); do
+                state=$(gh run view "$run_id" --repo "$REPO" --json status --jq '.status' || true)
+                [ "$state" = "completed" ] && break
+                sleep 5
+              done
+              gh run rerun "$run_id" --repo "$REPO"
+              recovered=$((recovered+1))
+            fi
+          done
+
+          echo "Self-healer checked $checked production run(s); recovery actions=$recovered."
+          {
+            echo "## Production Self-Healer"
+            echo "- Checked: $checked run(s)"
+            echo "- Recovery actions: $recovered"
+            echo "- Policy: failed runs get one failed-job replay; active runs get a 110-minute stale-run backstop."
+          } >> "$GITHUB_STEP_SUMMARY"

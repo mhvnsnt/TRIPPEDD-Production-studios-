@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "policy": "Candidates are inventory only until install/import/startup, real-input exercise, validation, provenance, and failure/resume evidence are recorded.",
+  "candidates": [
+    {
+      "id": "quadpype",
+      "category": "studio-pipeline",
+      "upstream": "https://github.com/quadproduction/quadpype",
+      "license": "MIT",
+      "status": "candidate",
+      "whyRelevant": "Studio workflow layer for project management, DCC integrations, publishing and modular pipeline extensions.",
+      "integrationTarget": "assetTracking + publishing + DCC workflow",
+      "smokeTest": "install; launch CLI/runtime; create isolated project; publish a test asset; retrieve published identity",
+      "artifactExpected": "published asset/version record plus machine-readable run evidence",
+      "fallback": "Kitsu/AYON/OpenAssetIO plus existing deterministic artifact manifests",
+      "promotionGate": "real publish/retrieve round trip with version/license evidence"
+    },
+    {
+      "id": "avalon",
+      "category": "studio-pipeline",
+      "upstream": "https://github.com/getavalon/core",
+      "license": "MIT",
+      "status": "candidate",
+      "whyRelevant": "Open-source asset/publishing foundation and historical lineage for modern VFX pipeline systems.",
+      "integrationTarget": "asset publishing + workfiles",
+      "smokeTest": "install/import core; create isolated asset hierarchy; publish and resolve a version",
+      "artifactExpected": "resolved asset/version identity and provenance record",
+      "fallback": "OpenAssetIO/Kitsu/AYON",
+      "promotionGate": "successful isolated publish/resolve exercise"
+    },
+    {
+      "id": "openpipeline",
+      "category": "studio-pipeline",
+      "upstream": "https://github.com/OpenPipelinePipeline/OpenPipeline",
+      "license": "VERIFY_UPSTREAM",
+      "status": "candidate",
+      "whyRelevant": "Pipeline framework patterns for production data, workflow, naming and revision control.",
+      "integrationTarget": "pipeline conventions + revisioned production data",
+      "smokeTest": "verify upstream license/version; run minimal pipeline bootstrap; create and resolve a revisioned test item",
+      "artifactExpected": "revision record plus provenance metadata",
+      "fallback": "native manifests + OpenAssetIO/Kitsu/AYON",
+      "promotionGate": "upstream evidence plus isolated end-to-end revision exercise"
+    },
+    {
+      "id": "openmontage",
+      "category": "agentic-video-production",
+      "upstream": "https://github.com/calesthio/OpenMontage",
+      "license": "AGPL-3.0",
+      "status": "candidate",
+      "whyRelevant": "Agent-oriented pipeline manifests, tool registry, checkpoints, review gates and FFmpeg/Remotion composition patterns.",
+      "integrationTarget": "AI orchestration + editorial automation + QC",
+      "smokeTest": "run contract tests; inspect tool registry; execute a local no-key pipeline against test media; validate ffprobe/frame/audio gates",
+      "artifactExpected": "pipeline manifest, checkpoint state, decision log and validated test video",
+      "fallback": "existing GitHub Actions + OTIO + FFmpeg pipeline",
+      "promotionGate": "contract tests plus real local media pipeline with resumable checkpoint evidence"
+    },
+    {
+      "id": "openusd-26.08",
+      "category": "scene-description",
+      "upstream": "https://github.com/PixarAnimationStudios/OpenUSD",
+      "license": "Apache-2.0",
+      "status": "candidate-upgrade",
+      "whyRelevant": "Current OpenUSD release line provides the interoperable scene-description backbone for assets, composition, lighting and future Hydra render integration.",
+      "integrationTarget": "sceneGraph + asset interchange",
+      "smokeTest": "install current stable release; author a USD stage; compose references; reopen and validate stage metadata",
+      "artifactExpected": "validated .usd/.usda/.usdc scene plus manifest",
+      "fallback": "existing Blender/OTIO artifacts",
+      "promotionGate": "round-trip scene test and versioned schema evidence"
+    }
+  ]
+}

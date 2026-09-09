@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "show": "In the Bushes",
+  "sequence": "EP01-origin-opening",
+  "assets": [
+    {"id":"env_night_bush","type":"environment","layers":["sky","distant_lights","ground","bush_back","bush_front"]},
+    {"id":"teens_group","type":"characters","states":["panic","point","throw"]},
+    {"id":"beer_pack_generic","type":"prop","states":["held","thrown","impact"]},
+    {"id":"busch","type":"character","states":["idle","wake","transform","confused","drunk","look_away","reaction","surprised"]},
+    {"id":"beer_impact_fx","type":"fx","states":["splash","soak","energy_pulse","foliage_shake"]},
+    {"id":"title_in_the_bushes","type":"title-card","source":"show/in-the-bushes/animatic/ep01-opening.title-card.json"}
+  ],
+  "productionRule":"All assets are original show assets. Open-source software is production infrastructure only; no third-party character or branded artwork is imported."
+}

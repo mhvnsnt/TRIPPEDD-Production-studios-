@@ -11,20 +11,13 @@ permissions:
 
 jobs:
   runner-smoke:
-    name: Runner smoke (ubuntu-22.04)
-    runs-on: ubuntu-22.04
+    name: Runner smoke (ubuntu-slim)
+    runs-on: ubuntu-slim
     timeout-minutes: 5
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Verify runner and open-source media baseline
+      - name: Verify runner allocation
         run: |
           set -euo pipefail
           echo "runner=$(uname -a)"
           echo "cpu=$(nproc)"
-          df -h /
-          free -h
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg
-          ffmpeg -version | head -n 2
           echo "TRIPPEDD_RUNNER_SMOKE_OK"

@@ -85,7 +85,7 @@ jobs:
           python -c "import cv2; print('OpenCV', cv2.__version__)"
           python -c "import faster_whisper; print('faster-whisper import OK')"
           python -c "import opentimelineio as otio; print('OpenTimelineIO', otio.__version__)"
-          python -c "import openassetio; print('OpenAssetIO', openassetio.__version__)"
+          python -c "import openassetio; print('OpenAssetIO import OK')"
       - name: Activate production transcription wrapper
         run: |
           chmod +x scripts/bin/whisper

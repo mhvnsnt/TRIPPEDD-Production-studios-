@@ -1,16 +1,16 @@
 {
-  "schemaVersion": 6,
+  "schemaVersion": 7,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt", "frei0r", "vapoursynth", "zimg", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity", "gstreamer", "openusd", "materialx", "osl", "openvdb", "openfx", "openrv", "xstudio", "rez", "aswf-docker", "kitsu", "ayon", "cvat", "fiftyone", "mediaConch", "qctools", "opentelemetry", "prometheus", "grafana", "loki", "tempo", "minio", "dagster", "temporal", "airflow"],
+  "optional": ["blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt", "frei0r", "vapoursynth", "zimg", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity", "gstreamer", "openusd", "materialx", "osl", "openvdb", "openfx", "openrv", "xstudio", "rez", "aswf-docker", "kitsu", "ayon", "cvat", "fiftyone", "mediaConch", "qctools", "opentelemetry", "prometheus", "grafana", "loki", "tempo", "minio", "dagster", "temporal", "airflow", "stalker", "ardour", "pipewire", "carla", "openobserve", "argo-workflows", "lakefs"],
   "interchange": {"editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "sceneDescription": "OpenUSD", "materials": "MaterialX", "shading": "Open Shading Language", "volumes": "OpenVDB", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "mediaGraph": "GStreamer", "images": "OpenImageIO/OpenEXR", "videoProcessing": "VapourSynth", "effects": "OpenFX/frei0r", "review": "OpenRV/xSTUDIO"},
   "backends": {
     "deterministicMedia": "ffmpeg",
     "mediaInspection": ["ffprobe", "mediainfo", "bento4", "mkvtoolnix"],
     "qc": ["mediaConch", "qctools", "ffprobe", "mediainfo"],
     "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr", "silero-vad", "pyannote-audio", "cvat", "fiftyone"],
-    "assetTracking": ["kitsu", "ayon", "openassetio"],
+    "assetTracking": ["kitsu", "ayon", "openassetio", "stalker"],
     "procedural3D": "blender",
     "sceneGraph": "openusd",
     "lookDevelopment": ["materialx", "osl"],
@@ -24,12 +24,13 @@
     "assetInterchange": "openassetio",
     "mediaGraph": "gstreamer",
     "distributedRendering": ["flamenco", "opencue"],
-    "workflowOrchestration": ["dagster", "temporal", "airflow"],
+    "workflowOrchestration": ["dagster", "temporal", "airflow", "argo-workflows"],
     "review": ["openrv", "xstudio"],
     "audioUtility": ["sox", "rubberband", "demucs", "audacity"],
+    "audioStudio": ["ardour", "pipewire", "carla"],
     "imageUtility": ["openimageio", "openexr", "imagemagick"],
-    "storage": ["minio"],
-    "observability": ["opentelemetry", "prometheus", "grafana", "loki", "tempo"],
+    "storage": ["minio", "lakefs"],
+    "observability": ["opentelemetry", "prometheus", "grafana", "loki", "tempo", "openobserve"],
     "environment": "rez"
   },
   "episodeCuts": {"autonomous": "AUTONOMOUS", "storyRunner": "SHOWRUNNER", "sharedEvidencePolicy": "Both cuts consume the same physical-source evidence model; editorial interpretation remains separate."},
@@ -53,7 +54,8 @@
     "observability": ["emit metric", "emit structured log", "emit trace", "correlate artifact/run ID"],
     "storage": ["put", "checksum", "get", "byte-compare", "manifest verification"],
     "orchestration": ["execute dependency", "persist state", "retry isolated failure", "resume", "emit run evidence"],
-    "aiMediaAnalysis": ["ingest", "model inference", "timestamp/geometry alignment", "persist structured result", "provenance/license record"]
+    "aiMediaAnalysis": ["ingest", "model inference", "timestamp/geometry alignment", "persist structured result", "provenance/license record"],
+    "audioStudio": ["enumerate devices", "route test signal", "record/playback test", "verify sample rate", "recover from device failure"]
   },
   "policy": {"optionalToolsMayBeAbsent": true, "absenceMustBeExplicit": true, "archivedProjectsMustNotBeBlindlyProvisioned": true, "humanEditorialLockRequiredForFinalMaster": true, "generatedMaterialMustCarryProvenance": true, "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true, "openSourceFirst": true, "optionalAccelerationMustBeBenchmarked": true, "noToolReplacementWithoutDeterministicFallback": true, "modelLicensesMustBeRecorded": true, "thirdPartyAssetsMustCarryLicenseMetadata": true, "noEmptyOrShallowStubs": true, "no_capability_is_production_ready_without_a_real_smoke_test": true}
 }

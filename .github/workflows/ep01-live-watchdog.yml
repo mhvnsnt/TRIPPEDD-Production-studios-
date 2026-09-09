@@ -13,21 +13,29 @@ permissions:
 jobs:
   watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 180
     steps:
       - name: Monitor latest EP01 production run
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
           BRANCH: upgrade/production-pipeline-resilient-2026-09-08
-          ISSUE: '14'
         run: |
           set -euo pipefail
           marker='<!-- EP01-LIVE-PROGRESS -->'
-          comment_id="$(gh api "repos/${REPO}/issues/${ISSUE}/comments?per_page=100" --paginate --jq '.[] | select(.body | contains("<!-- EP01-LIVE-PROGRESS -->")) | .id' | tail -n 1 || true)"
+
+          issue_json="$(gh api "repos/${REPO}/issues?state=open&per_page=100")"
+          issue_number="$(printf '%s' "$issue_json" | jq -r --arg marker "$marker" '[.[] | select(.pull_request == null) | select(.title == "EP01 live production progress" or (.body // "" | contains($marker)))] | sort_by(.number) | last | .number // empty')"
+
+          if [ -z "$issue_number" ]; then
+            created="$(gh api --method POST "repos/${REPO}/issues" -f title='EP01 live production progress' -f body="$marker\n\n## EP01 Showrunner — live\nInitializing production monitor...")"
+            issue_number="$(printf '%s' "$created" | jq -r '.number')"
+          fi
+
+          comment_id="$(gh api "repos/${REPO}/issues/${issue_number}/comments?per_page=100" --paginate --jq --arg marker "$marker" '.[] | select(.body | contains($marker)) | .id' | tail -n 1 || true)"
           if [ -z "$comment_id" ]; then
-            comment_id="$(gh api --method POST "repos/${REPO}/issues/${ISSUE}/comments" -f body="$marker\n\n## EP01 Autonomous — live\nInitializing production monitor...")"
-            comment_id="$(printf '%s' "$comment_id" | jq -r '.id')"
+            created_comment="$(gh api --method POST "repos/${REPO}/issues/${issue_number}/comments" -f body="$marker\n\n## EP01 Showrunner — live\nInitializing production monitor...")"
+            comment_id="$(printf '%s' "$created_comment" | jq -r '.id')"
           fi
 
           update() {
@@ -35,15 +43,16 @@ jobs:
             gh api --method PATCH "repos/${REPO}/issues/comments/${comment_id}" -f body="$body" >/dev/null
           }
 
+          run_id=''
           for i in $(seq 1 360); do
             run_json="$(gh api "repos/${REPO}/actions/runs?branch=${BRANCH}&per_page=20")"
-            run="$(printf '%s' "$run_json" | jq -c '[.workflow_runs[] | select(.name == "EP01 Autonomous Cut")][0]')"
+            run="$(printf '%s' "$run_json" | jq -c '[.workflow_runs[] | select(.name == "EP01 Showrunner Cut")][0]')"
             if [ "$run" = "null" ] || [ -z "$run" ]; then
               update "$marker
 
-## EP01 Autonomous — waiting
+## EP01 Showrunner — waiting
 
-No EP01 Autonomous run found yet.
+No EP01 Showrunner run found yet.
 
 Heartbeat: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
               sleep 30
@@ -63,7 +72,7 @@ Heartbeat: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             if [ "$status" = "completed" ]; then
               update "$marker
 
-## EP01 Autonomous — ${conclusion}
+## EP01 Showrunner — ${conclusion}
 
 **Run:** ${run_id}
 **Jobs:** ${completed}/${total} successful
@@ -78,7 +87,7 @@ GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
 
             update "$marker
 
-## EP01 Autonomous — LIVE
+## EP01 Showrunner — LIVE
 
 **Run:** ${run_id}
 **Status:** ${status}
@@ -88,7 +97,7 @@ GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
 **Heartbeat:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
 **Started:** ${started}
 
-This monitor polls GitHub Actions directly every 30 seconds, so production progress remains visible even when Actions log download is unavailable.
+This monitor polls GitHub Actions directly every 30 seconds.
 
 GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
             sleep 30
@@ -96,7 +105,7 @@ GitHub run: https://github.com/${REPO}/actions/runs/${run_id}"
 
           update "$marker
 
-## EP01 Autonomous — watchdog timeout
+## EP01 Showrunner — watchdog timeout
 
 The production monitor reached its 3-hour observation window without a terminal state. Inspect run ${run_id} immediately."
           exit 1

@@ -1,8 +1,9 @@
 {
-  "schemaVersion": 2,
-  "policy": "github-first-until-budget-or-capacity-bound-then-local-or-farm",
+  "schemaVersion": 3,
+  "policy": "github-first-until-budget-or-capacity-bound-then-self-hosted-or-farm",
   "selection": {
     "default": "github-actions",
+    "workflowFallback": "self-hosted-actions",
     "manualFallback": "local",
     "renderFallback": "flamenco",
     "distributedFallback": "opencue",
@@ -14,7 +15,15 @@
       "role": "cloud-orchestration",
       "status": "production",
       "costDomain": "github-hosted-minutes",
-      "notes": "Canonical CI/CD path while Actions capacity is available."
+      "notes": "Canonical CI/CD path while hosted Actions capacity is available."
+    },
+    {
+      "id": "self-hosted-actions",
+      "role": "workflow-execution-failover",
+      "status": "production-candidate",
+      "costDomain": "owned-or-cloud-hardware",
+      "routingLabels": ["self-hosted", "trippedd-production"],
+      "notes": "Runs the same GitHub Actions workflow contracts on owned hardware when hosted capacity or budget becomes the constraint. Must be explicitly registered and online before routing production jobs."
     },
     {
       "id": "local",
@@ -22,7 +31,7 @@
       "status": "production-candidate",
       "costDomain": "local-hardware",
       "entrypoint": "scripts/production/local-ep01-fallback.sh",
-      "notes": "Runs the EP01 production stages directly without GitHub-hosted runners."
+      "notes": "Runs EP01 production stages directly without GitHub-hosted runners."
     },
     {
       "id": "act",

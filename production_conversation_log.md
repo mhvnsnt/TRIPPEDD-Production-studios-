@@ -126,3 +126,29 @@ This file is the persistent production-session log requested by the producer. Ne
 6. Keep 2D Bastard canonical for the current EP01 cut while preserving 3D Bastard as salvageable/alternate material.
 7. Keep OSS integration evidence-gated: install + real-input execution + validation + recovery evidence before treating a tool as production-grade.
 8. Continue recording subsequent producer/agent production-session exchanges in this file.
+
+### Agent — current work
+> I inspected the repository rather than guessing. The existing project already has a dated production-conversation archive under `docs/production-conversations/2026/2026-09/`, and the root log is now being used as a persistent session ledger as well.
+>
+> I added a durable measured-progress implementation at `src/server/productionProgress.ts`.
+>
+> The ledger records, per stage:
+> - PENDING / RUNNING / COMPLETE / FAILED state
+> - completed work and total work
+> - calculated percentage
+> - heartbeat timestamp
+> - artifact path
+> - artifact byte size and modification time
+> - operator-facing message
+>
+> Writes are atomic (`.partial` then rename), so a crashed runner does not leave a half-written progress document. The same snapshot format is intended for both the UI and the recovery layer; that removes the old problem where the UI could show one notion of progress while the healer used unrelated wall-clock logic.
+>
+> I also confirmed the Story Runner workflow currently has separate subjectivity-render jobs and a long assembly job, with caches for subjectivity frames, assembly segments, and the Whisper model. That structure is compatible with evidence-based recovery and should not be destroyed by the new progress instrumentation.
+>
+> I am deliberately not restarting or cancelling the valuable live production run while making these changes.
+
+### Implementation record
+- `d1110f8d65aec407d8f58b7c77135e4282098d94` — persistent conversation log initialized.
+- `9068db7307ab60e4f194d48c6d8b1647ebe367f5` — durable measured production-progress ledger added.
+- Existing recovery commit recorded from the production session: `eeb67c55d03483a5b71ef3e41c36e00c763a9561`.
+- Existing progress commits recorded from the production session: `4643f38642f97c82023693c1702f2e46df006e14`, `fe61e8d0323f2d8d2c36ab62449e4742abc87aca`.

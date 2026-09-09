@@ -49,7 +49,35 @@ const checks: Record<string, { command: string; args: string[] }> = {
   openrv: { command: 'rv', args: ['-version'] },
   xstudio: { command: 'xstudio', args: ['--version'] },
   rez: { command: 'rez', args: ['--version'] },
-  'aswf-docker': { command: 'docker', args: ['--version'] }
+  'aswf-docker': { command: 'docker', args: ['--version'] },
+
+  // OSS production-management candidates. These checks intentionally verify
+  // real import/CLI surfaces rather than marking a project available by name.
+  kitsu: { command: 'python3', args: ['-c', 'import gazu; print(getattr(gazu, "__version__", "gazu import OK"))'] },
+  ayon: { command: 'python3', args: ['-c', 'import ayon_api; print("ayon_api import OK")'] },
+  cvat: { command: 'python3', args: ['-c', 'import cvat_sdk; print("cvat-sdk import OK")'] },
+  fiftyone: { command: 'python3', args: ['-c', 'import fiftyone; print(fiftyone.__version__)'] },
+  mediaConch: { command: 'MediaConch', args: ['--help'] },
+  qctools: { command: 'qcli', args: ['--help'] },
+  opentelemetry: { command: 'python3', args: ['-c', 'import opentelemetry; print("OpenTelemetry import OK")'] },
+  prometheus: { command: 'promtool', args: ['--version'] },
+  grafana: { command: 'grafana-server', args: ['-v'] },
+  loki: { command: 'loki', args: ['-version'] },
+  tempo: { command: 'tempo', args: ['-version'] },
+  minio: { command: 'minio', args: ['--version'] },
+  dagster: { command: 'python3', args: ['-c', 'import dagster; print(dagster.__version__)'] },
+  temporal: { command: 'temporal', args: ['--version'] },
+  airflow: { command: 'airflow', args: ['version'] },
+
+  // Additional open-source studio-pipeline candidates. They remain optional
+  // until installation, artifact exercise, and integration gates pass.
+  stalker: { command: 'python3', args: ['-c', 'import stalker; print("stalker import OK")'] },
+  ardour: { command: 'ardour', args: ['--version'] },
+  pipewire: { command: 'pw-cli', args: ['--version'] },
+  carla: { command: 'carla', args: ['--version'] },
+  openobserve: { command: 'oo', args: ['--version'] },
+  'argo-workflows': { command: 'argo', args: ['version'] },
+  lakefs: { command: 'lakectl', args: ['version'] }
 };
 
 async function check(id: string): Promise<Result> {
@@ -70,7 +98,7 @@ const results = await Promise.all(ids.map(check));
 const requiredFailures = results.filter(result => config.required.includes(result.id) && result.status !== 'AVAILABLE');
 const brokenTools = results.filter(result => result.status === 'BROKEN');
 const report = {
-  schemaVersion: 3,
+  schemaVersion: 4,
   toolchainSchemaVersion: config.schemaVersion,
   generatedAt: new Date().toISOString(),
   status: requiredFailures.length || brokenTools.length ? 'BLOCKED' : 'READY',

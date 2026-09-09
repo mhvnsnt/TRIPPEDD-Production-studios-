@@ -5,6 +5,16 @@ export interface ComedySignal { id: string; type: ComedySignalType; score: numbe
 export interface GagCandidate { id: string; sourceFileId?: string; title: string; score: number; signals: ComedySignal[]; tags: string[]; callbackKeys: string[]; reviewState: 'MACHINE_SUGGESTED' | 'HUMAN_ACCEPTED' | 'HUMAN_REJECTED'; }
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
 
+function parseTime(value: unknown): number | undefined {
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
+  const text = String(value ?? '').trim();
+  if (!text) return undefined;
+  if (/^\d+(?:\.\d+)?$/.test(text)) return Number(text);
+  const parts = text.split(':').map(Number);
+  if (parts.length !== 3 || parts.some(part => !Number.isFinite(part))) return undefined;
+  return parts[0] * 3600 + parts[1] * 60 + parts[2];
+}
+
 export function discoverComedy(input: { sourceFileId?: string; transcript?: { segments?: Array<{ start?: number; end?: number; text?: string }> } | null; scenes?: any[]; ocr?: string; }): GagCandidate[] {
   const candidates: GagCandidate[] = [];
   const segments = input.transcript?.segments ?? [];
@@ -22,6 +32,19 @@ export function discoverComedy(input: { sourceFileId?: string; transcript?: { se
     if (/\b(just|anyway|whatever|never mind|it's fine|its fine|no big deal|wasn't shit|was not shit|nothing|forgot|lost|where is|can't find|cannot find)\b/i.test(text)) signals.push({ id: randomUUID(), type: 'MUNDANE_BUTTON', score: 0.56, startTime: current.start, endTime: current.end, evidence: `Possible anticlimactic/denial button: ${text.slice(0, 180)}`, source: 'TRANSCRIPT' });
     if (signals.length) candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: text.length > 80 ? `${text.slice(0, 77)}...` : text, score: clamp(signals.reduce((sum, signal) => sum + signal.score, 0) / signals.length + (signals.length > 1 ? 0.12 : 0)), signals, tags: [...new Set(signals.map(signal => signal.type.toLowerCase()))], callbackKeys: extractCallbackKeys(text), reviewState: 'MACHINE_SUGGESTED' });
   }
+
+  if (!candidates.length && input.scenes?.length) {
+    for (const scene of input.scenes) {
+      const start = parseTime(scene['Start Time'] ?? scene['Start Timecode'] ?? scene.start ?? scene.startTime);
+      const end = parseTime(scene['End Time'] ?? scene['End Timecode'] ?? scene.end ?? scene.endTime);
+      if (start === undefined || end === undefined || end <= start) continue;
+      const duration = end - start;
+      if (duration < 0.5) continue;
+      const signal: ComedySignal = { id: randomUUID(), type: 'CONTINUITY', score: 0.22, startTime: start, endTime: end, evidence: `Scene boundary evidence (${duration.toFixed(2)}s scene); semantic comedy evidence unavailable and editorial review required.`, source: 'SCENE' };
+      candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: `Scene select ${start.toFixed(2)}–${end.toFixed(2)}s`, score: 0.22, signals: [signal], tags: ['scene-evidence', 'editorial-review-required'], callbackKeys: [], reviewState: 'MACHINE_SUGGESTED' });
+    }
+  }
+
   const ocr = String(input.ocr ?? '').trim();
   if (ocr) candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: 'On-screen text / prop opportunity', score: 0.45, signals: [{ id: randomUUID(), type: 'VISUAL_GAG', score: 0.45, evidence: ocr.slice(0, 500), source: 'VISUAL' }], tags: ['ocr', 'visual-gag'], callbackKeys: extractCallbackKeys(ocr), reviewState: 'MACHINE_SUGGESTED' });
   return candidates.sort((a, b) => b.score - a.score);

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Durable, authenticated webhook/reconciliation supervisor for TRIPPEDD JIT runners."""
+"""Durable, authenticated, fail-closed webhook/reconciliation supervisor."""
 from __future__ import annotations
 import hashlib,hmac,json,os,pathlib,subprocess,threading,time
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
@@ -25,6 +25,15 @@ def valid_signature(body,signature,secret):
     mac=hmac.new(secret.encode(),body,hashlib.sha256).hexdigest()
     return hmac.compare_digest("sha256="+mac,signature)
 
+def valid_delivery_timestamp(headers, max_age=300):
+    # GitHub does not sign a timestamp header for workflow_job, so this is
+    # intentionally defense-in-depth: reject obviously replayed deliveries
+    # when a trusted proxy supplies X-TRIPPEDD-Received-At.
+    raw=headers.get("X-TRIPPEDD-Received-At","")
+    if not raw:return True
+    try:return abs(time.time()-float(raw)) <= max_age
+    except ValueError:return False
+
 def provision(job):
     jid=str(job["id"])
     with LOCK:
@@ -47,26 +56,36 @@ def provision(job):
 class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         body=self.rfile.read(int(self.headers.get("Content-Length","0")))
-        if not valid_signature(body,self.headers.get("X-Hub-Signature-256",""),os.environ.get("TRIPPEDD_WEBHOOK_SECRET","")):
+        secret=os.environ.get("TRIPPEDD_WEBHOOK_SECRET","")
+        allowed=os.environ.get("TRIPPEDD_ALLOWED_REPOSITORY","")
+        if not secret or not allowed:
+            self.send_response(503); self.end_headers(); return
+        if not valid_signature(body,self.headers.get("X-Hub-Signature-256",""),secret):
             self.send_response(401); self.end_headers(); return
+        if not valid_delivery_timestamp(self.headers):
+            self.send_response(408); self.end_headers(); return
         if self.headers.get("X-GitHub-Event")!="workflow_job":
             self.send_response(204); self.end_headers(); return
         delivery=self.headers.get("X-GitHub-Delivery","")
         if not delivery:
             self.send_response(400); self.end_headers(); return
-        payload=json.loads(body)
+        try: payload=json.loads(body)
+        except json.JSONDecodeError:
+            self.send_response(400); self.end_headers(); return
         repo=payload.get("repository",{}).get("full_name","")
-        allowed=os.environ.get("TRIPPEDD_ALLOWED_REPOSITORY","")
-        if allowed and repo.lower()!=allowed.lower():
+        if repo.lower()!=allowed.lower():
             self.send_response(204); self.end_headers(); return
         action=payload.get("action")
         job=payload.get("workflow_job",{})
+        if not job.get("id") or not job.get("repository"):
+            self.send_response(400); self.end_headers(); return
         with LOCK:
             s=load()
             if delivery in s.setdefault("deliveries",{}):
                 self.send_response(202); self.end_headers(); return
             s["deliveries"][delivery]={"ts":time.time(),"action":action}
-            s["deliveries"]={k:v for k,v in s["deliveries"].items() if time.time()-v["ts"]<86400}
+            cutoff=time.time()-86400
+            s["deliveries"]={k:v for k,v in s["deliveries"].items() if v.get("ts",0)>=cutoff}
             save(s)
         labels={x.get("name") for x in job.get("labels",[])}
         wanted=os.environ.get("TRIPPEDD_RUNNER_LABEL","trippedd-production")
@@ -78,6 +97,8 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     host=os.environ.get("TRIPPEDD_BIND","127.0.0.1")
     port=int(os.environ.get("TRIPPEDD_PORT","8099"))
+    if not os.environ.get("TRIPPEDD_WEBHOOK_SECRET") or not os.environ.get("TRIPPEDD_ALLOWED_REPOSITORY"):
+        raise SystemExit("TRIPPEDD_WEBHOOK_SECRET and TRIPPEDD_ALLOWED_REPOSITORY are mandatory")
     event("supervisor_started",{"host":host,"port":port})
     ThreadingHTTPServer((host,port),Handler).serve_forever()
 

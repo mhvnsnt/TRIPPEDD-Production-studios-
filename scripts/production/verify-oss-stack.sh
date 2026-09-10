@@ -1,15 +1,31 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# OSS production stack verification. Keep this deterministic and fail closed:
-# the episode runner must not claim the media stack is available unless each
-# required open-source component actually imports/executes.
+# Production stack verification. Every component used as a production
+# dependency must be executable/importable before a run is allowed to proceed.
+# Missing telemetry or a missing tool is a hard failure, never a soft PASS.
 
-command -v ffmpeg >/dev/null
-command -v ffprobe >/dev/null
-command -v blender >/dev/null
+require_cmd() {
+  command -v "$1" >/dev/null 2>&1 || {
+    echo "OSS_STACK_FAIL missing-command=$1"
+    exit 2
+  }
+}
 
-python -m scenedetect --help >/dev/null
+require_cmd ffmpeg
+require_cmd ffprobe
+require_cmd blender
+require_cmd mediainfo
+require_cmd exiftool
+require_cmd identify
+require_cmd tesseract
+require_cmd rclone
+
+python -m scenedetect --help >/dev/null 2>&1 || {
+  echo 'OSS_STACK_FAIL PySceneDetect execution failed'
+  exit 2
+}
+
 python - <<'PY'
 import cv2
 import faster_whisper
@@ -22,5 +38,10 @@ PY
 ffmpeg -version | head -n 1
 ffprobe -version | head -n 1
 blender --version | head -n 1
+mediainfo --Version | head -n 1
+exiftool -ver
+identify -version | head -n 1
+tesseract --version | head -n 1
+rclone version | head -n 1
 
 echo 'OSS_STACK_STATUS=PASS'

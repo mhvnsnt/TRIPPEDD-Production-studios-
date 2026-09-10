@@ -13,6 +13,7 @@ The sequence is explicitly GENERATED and is never physical source evidence.
 import bpy
 import math
 import os
+import time
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
 OUTPUT_DIR = os.path.join(ROOT, "production", "EP01", "generated", "blender")
@@ -99,15 +100,48 @@ scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHEC
 scene["TRIPPEDD_FRAME_RANGE"] = f"{FRAME_START}-{FRAME_END}"
 
 chunk_blend = os.path.join(FRAME_DIR, f"subjectivity-{FRAME_START:04d}-{FRAME_END:04d}.blend")
+expected = FRAME_END - FRAME_START + 1
+started = time.time()
+completed = 0
+
+
+def progress_notice(frame, event):
+    global completed
+    completed = frame - FRAME_START + 1
+    elapsed = max(time.time() - started, 0.001)
+    rate = completed / elapsed
+    remaining = expected - completed
+    eta = remaining / rate if rate > 0 else 0
+    percent = completed * 100.0 / expected
+    width = 20
+    filled = min(width, int(percent / 100.0 * width))
+    bar = "#" * filled + "-" * (width - filled)
+    bytes_done = sum(
+        os.path.getsize(os.path.join(FRAME_DIR, name))
+        for name in os.listdir(FRAME_DIR)
+        if name.startswith("frame-") and name.endswith(".jpg") and os.path.isfile(os.path.join(FRAME_DIR, name))
+    )
+    print(
+        f"PRODUCTION_PROGRESS stage=subjectivity status=RUNNING "
+        f"progress=[{bar}] {percent:.1f}% work={completed}/{expected} "
+        f"elapsed={elapsed:.1f}s rate={rate:.3f} frames/s eta={eta:.1f}s "
+        f"frame={frame} event={event} bytes={bytes_done}",
+        flush=True,
+    )
 
 for frame in range(FRAME_START, FRAME_END + 1):
     frame_path = os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")
     if os.path.isfile(frame_path) and os.path.getsize(frame_path) > 0:
         print(f"[subjectivity] checkpoint exists: frame {frame}")
+        progress_notice(frame, "checkpoint-hit")
         continue
 
     scene.frame_set(frame)
     scene.render.filepath = frame_path
+    progress_notice(frame - 1 if frame > FRAME_START else FRAME_START - 1, "render-start") if frame > FRAME_START else print(
+        f"PRODUCTION_PROGRESS stage=subjectivity status=RUNNING progress=[--------------------] 0.0% work=0/{expected} elapsed=0.0s rate=0.000 frames/s eta=UNKNOWN frame={frame} event=render-start bytes=0",
+        flush=True,
+    )
     print(f"[subjectivity] rendering frame {frame}/{FRAME_END}", flush=True)
     bpy.ops.render.render(write_still=True)
 
@@ -117,6 +151,13 @@ for frame in range(FRAME_START, FRAME_END + 1):
     scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = frame
     bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
     print(f"[subjectivity] completed frame {frame}", flush=True)
+    progress_notice(frame, "frame-complete")
 
 bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
+elapsed = max(time.time() - started, 0.001)
+print(
+    f"PRODUCTION_FINAL stage=subjectivity status=COMPLETED progress=[####################] 100.0% "
+    f"work={expected}/{expected} elapsed={elapsed:.1f}s rate={expected/elapsed:.3f} frames/s eta=0s",
+    flush=True,
+)
 print(f"[subjectivity] complete: frames {FRAME_START}-{FRAME_END}", flush=True)

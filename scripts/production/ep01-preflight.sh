@@ -13,8 +13,16 @@ command -v python >/dev/null || { echo 'PREFLIGHT_FAIL python missing'; exit 2; 
 command -v ffprobe >/dev/null || { echo 'PREFLIGHT_FAIL ffprobe missing'; exit 2; }
 python -m gdown --version
 
+GDOWN_COOKIE_ARGS=()
+if [ -n "${TRIPPEDD_DRIVE_COOKIES_FILE:-}" ] && [ -s "$TRIPPEDD_DRIVE_COOKIES_FILE" ]; then
+  GDOWN_COOKIE_ARGS=(--cookies "$TRIPPEDD_DRIVE_COOKIES_FILE")
+  echo 'PREFLIGHT_DRIVE_AUTH=cookies'
+else
+  echo 'PREFLIGHT_DRIVE_AUTH=public'
+fi
+
 manifest=/tmp/trippedd-preflight/manifest.out
-python -m gdown "$TRIPPEDD_DRIVE_FOLDER_URL" --folder --json > "$manifest"
+python -m gdown "${GDOWN_COOKIE_ARGS[@]}" "$TRIPPEDD_DRIVE_FOLDER_URL" --folder --json > "$manifest"
 python - "$manifest" "$EXPECTED" <<'PY'
 import json, sys
 p, expected = sys.argv[1], int(sys.argv[2])
@@ -44,7 +52,7 @@ fi
 source /tmp/trippedd-preflight/probe.env
 probe="$CACHE_DIR/.preflight-$PROBE_NAME"
 set +e
-python -m gdown "$PROBE_URL" -O "$probe" --continue > /tmp/trippedd-preflight/probe.log 2>&1
+python -m gdown "${GDOWN_COOKIE_ARGS[@]}" "$PROBE_URL" -O "$probe" --continue > /tmp/trippedd-preflight/probe.log 2>&1
 code=$?
 set -e
 if [ "$code" -ne 0 ] || [ ! -s "$probe" ]; then

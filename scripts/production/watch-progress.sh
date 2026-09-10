@@ -6,9 +6,9 @@ set -euo pipefail
 # and ETAs are derived from observed work; missing telemetry is UNKNOWN, not
 # healthy RUNNING. This prevents silent multi-hour black boxes.
 #
-# The watcher also mirrors each changed snapshot to a durable GitHub Issues
-# comment through publish-live-telemetry.sh. This is the live API of record
-# when GitHub's Actions log blob endpoint is unavailable during execution.
+# The watcher also mirrors snapshots to a durable GitHub Issues comment through
+# publish-live-telemetry.sh. The issue comment is a live retrieval channel when
+# GitHub's Actions log blob endpoint is unavailable during execution.
 
 if [ "$#" -lt 3 ] || [ "$1" != "--progress-file" ]; then
   echo "usage: $0 --progress-file <path> -- <command> [args...]" >&2
@@ -25,11 +25,20 @@ mkdir -p "$(dirname "$progress_file")"
 "$@" &
 pid=$!
 started_at=$(date +%s)
+publisher_pid=""
 
 cleanup() {
+  if [ -n "$publisher_pid" ] && kill -0 "$publisher_pid" 2>/dev/null; then kill "$publisher_pid" 2>/dev/null || true; fi
   if kill -0 "$pid" 2>/dev/null; then kill "$pid" 2>/dev/null || true; fi
 }
-trap cleanup INT TERM
+trap cleanup INT TERM EXIT
+
+# Do not make the production command wait on the GitHub API. The publisher is
+# a separate best-effort process; the measured ledger remains canonical.
+if [ -n "${GITHUB_TOKEN:-}" ] && command -v curl >/dev/null 2>&1 && command -v jq >/dev/null 2>&1 && [ -f "scripts/production/publish-live-telemetry.sh" ]; then
+  bash scripts/production/publish-live-telemetry.sh "$progress_file" >/tmp/trippedd-live-telemetry.log 2>&1 &
+  publisher_pid=$!
+fi
 
 last=""
 stalled=0
@@ -75,9 +84,6 @@ while kill -0 "$pid" 2>/dev/null; do
     printf '%s\n' "$snapshot"
     if [ -n "${GITHUB_STEP_SUMMARY:-}" ]; then
       printf '### TRIPPEDD live production telemetry\n\n`%s`\n\n' "$snapshot" > "$GITHUB_STEP_SUMMARY"
-    fi
-    if [ -x scripts/production/publish-live-telemetry.sh ]; then
-      scripts/production/publish-live-telemetry.sh "$progress_file" || true
     fi
     last="$snapshot"
   fi

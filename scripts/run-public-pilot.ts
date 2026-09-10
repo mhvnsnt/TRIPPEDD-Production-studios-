@@ -45,17 +45,24 @@ async function main() {
   ]);
   await report('drive-ingest', 0, 1, 'Initializing public Drive ingest.');
   await toolManager.initialize();
-  console.log(`[EP01/${cutMode}] Downloading public Drive folder without API key: ${folderUrl}`);
-  const ingestHeartbeat = setInterval(() => { void report('drive-ingest', 0, 1, 'Downloading and materializing source media; exact byte progress is not exposed by the Drive adapter yet.').catch(() => undefined); }, 5000);
+  console.log(`[EP01/${cutMode}] Downloading public Drive folder with resumable per-file ingest: ${folderUrl}`);
+
   let downloaded: string[];
   try {
-    downloaded = await downloadPublicDriveFolder(folderUrl, cacheRoot);
-  } finally {
-    clearInterval(ingestHeartbeat);
+    downloaded = await downloadPublicDriveFolder(folderUrl, cacheRoot, progress => {
+      const total = Math.max(1, progress.total);
+      const status = progress.phase === 'COMPLETE' && progress.failed === 0 ? 'COMPLETE' : 'RUNNING';
+      const current = progress.current ? ` Current=${progress.current}.` : '';
+      const failures = progress.failed ? ` Failed=${progress.failed}.` : '';
+      void report('drive-ingest', Math.min(progress.completed, total), total, `${progress.phase}: ${progress.completed}/${total} source files materialized.${failures}${current}`, status).catch(() => undefined);
+    });
+  } catch (error) {
+    throw error;
   }
+
   const media = downloaded.filter(file => mediaExtensions.has(path.extname(file).toLowerCase()));
-  console.log(`[EP01/${cutMode}] Downloaded ${media.length} media file(s).`);
-  await report('drive-ingest', 1, 1, `Materialized ${media.length} supported media file(s).`, 'COMPLETE');
+  console.log(`[EP01/${cutMode}] Materialized ${media.length} supported media file(s).`);
+  await report('drive-ingest', media.length, Math.max(media.length, 1), `Materialized ${media.length} supported media file(s).`, 'COMPLETE');
   if (!media.length) throw new Error('The public Drive folder produced no supported media files.');
 
   await ledger.update('source-analysis', { status: 'RUNNING', completed: 0, total: media.length, message: `Analyzing ${media.length} source files.` });

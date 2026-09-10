@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'production/network-ident/**'
+      - 'config/production/**'
       - '.github/workflows/production-short-e2e-gate.yml'
       - 'scripts/production/**'
       - 'scripts/run-public-pilot.ts'
@@ -20,10 +21,8 @@ concurrency:
 permissions:
   contents: read
 
-# HARD GATE: proof runs automatically after changes to the production proof
-# path, while manual dispatch remains available. A pass may promote EP01.
-# The source is one continuous authored network commercial, not a synthetic
-# test card and not physical-source evidence.
+# HARD GATE: one continuous authored commercial must traverse the same OSS
+# ingest -> analysis -> editorial -> render -> QC -> delivery path used by EP01.
 
 jobs:
   short-e2e:
@@ -47,7 +46,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg mediainfo exiftool imagemagick curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr rclone
           python -m pip install --upgrade pip
-          python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
+          python -m pip install -r config/production/oss-stack.requirements.txt
       - name: Install production dependencies
         run: bun install --no-save
       - name: Install and verify Blender

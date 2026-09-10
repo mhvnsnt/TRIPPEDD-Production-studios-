@@ -1,0 +1,10 @@
+{
+  "name":"OpenAssetIO OTIO bridge",
+  "upstream":"https://github.com/OpenAssetIO/otio-openassetio",
+  "license":"Apache-2.0",
+  "maturity":"alpha",
+  "role":"assetized-otio-resolution",
+  "promotion":"isolated-adapter-only",
+  "healthcheck":"upstream-tests-plus-trippedd-otio-roundtrip",
+  "fail_closed":true
+}

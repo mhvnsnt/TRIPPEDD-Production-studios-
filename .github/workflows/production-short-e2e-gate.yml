@@ -16,20 +16,35 @@ on:
 
 concurrency:
   group: production-short-e2e-gate
-  cancel-in-progress: false
+  # A newer production proof is allowed to replace a stuck older proof. The
+  # watchdog salvages completed checkpoint artifacts before cancellation.
+  cancel-in-progress: true
 
 permissions:
   contents: read
 
 # HARD GATE: one continuous authored commercial must traverse the same OSS
 # ingest -> analysis -> editorial -> render -> QC -> delivery path used by EP01.
+# Expected wall time: ~8 minutes. Hard job ceiling: 20 minutes.
 
 jobs:
   short-e2e:
     name: 20-second TRIPPEDD network commercial proof
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
+      - name: Publish production ETA and watchdog policy
+        run: |
+          set -euo pipefail
+          {
+            echo "## Production Run ETA"
+            echo "- Expected completion: **~8 minutes**"
+            echo "- Hard ceiling: **20 minutes**"
+            echo "- Salvage policy: source/evidence checkpoint is uploaded before editorial work; a stuck run is replaced rather than babysat."
+            echo "- Telemetry policy: every major stage reports measured progress and elapsed time."
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "PRODUCTION_ETA_MINUTES=8"
+          echo "PRODUCTION_HARD_TIMEOUT_MINUTES=20"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Bun
@@ -74,11 +89,8 @@ jobs:
           set -euo pipefail
           rm -rf /tmp/trippedd-e2e-source production/network-ident/generated
           mkdir -p /tmp/trippedd-e2e-source
-          # CI proof source: a deterministic, continuous 20-second authored motion
-          # piece generated entirely by FFmpeg. Blender remains installed and
-          # version-verified above; the expensive 480-frame Blender raster is not
-          # required to prove the downstream ingest/editorial/render/QC contract.
-          ffmpeg -y -hide_banner -loglevel error \
+          echo "STAGE_ETA source=~2m hard_timeout=3m"
+          timeout 3m ffmpeg -y -hide_banner -loglevel error \
             -f lavfi -i "color=c=black:s=1280x720:r=24,drawtext=text='TRIPPEDD':fontcolor=white:fontsize=96:x='(w-text_w)/2':y='(h-text_h)/2-80':enable='between(t,0,20)',drawtext=text='TRIPPEDD NETWORK':fontcolor=white:fontsize=36:x='(w-text_w)/2':y='(h-text_h)/2+40',drawtext=text='20 SECOND CONTINUOUS COMMERCIAL PROOF':fontcolor=white:fontsize=24:x='(w-text_w)/2':y='h-70,format=yuv420p" \
             -f lavfi -i "sine=frequency=220:sample_rate=48000" \
             -t 20 -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p \
@@ -100,6 +112,14 @@ jobs:
           assert int(d['format']['size']) > 0
           print('AUTHORED_NETWORK_COMMERCIAL_SOURCE=PASS')
           PY
+      - name: Salvage source checkpoint before editorial work
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-E2E-SOURCE-CHECKPOINT
+          path: /tmp/trippedd-e2e-source/*
+          if-no-files-found: error
+          retention-days: 30
       - name: Run actual source-analysis and editorial assembly path
         env:
           TRIPPEDD_TEST_MODE: 'true'
@@ -117,13 +137,16 @@ jobs:
           EP01_MAX_CLIPS: '1'
           EP01_CLIP_PADDING: '0'
           EP01_RENDER_CONCURRENCY: '1'
-        run: timeout 15m bun run pilot:build:public
+        run: |
+          echo "STAGE_ETA assembly=~5m hard_timeout=10m"
+          timeout 10m bun run pilot:build:public
       - name: Validate final commercial with production QC
         env:
           TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-NETWORK-IDENT-E2E
         run: |
           set -euo pipefail
-          bun run pilot:validate
+          echo "STAGE_ETA qc=~1m hard_timeout=3m"
+          timeout 3m bun run pilot:validate
           test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4
           test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
           test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio

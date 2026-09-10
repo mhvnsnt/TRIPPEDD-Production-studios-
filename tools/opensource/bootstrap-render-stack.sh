@@ -28,7 +28,7 @@ clone_or_update "openimageio" "https://github.com/AcademySoftwareFoundation/Open
 clone_or_update "openexr" "https://github.com/AcademySoftwareFoundation/openexr.git" "main"
 clone_or_update "openvdb" "https://github.com/AcademySoftwareFoundation/openvdb.git" "master"
 clone_or_update "natron" "https://github.com/NatronGitHub/Natron.git" "master"
-clone_or_update "kitsu" "https://github.com/cgwire/cgwire.git" "main"
+clone_or_update "kitsu" "https://github.com/cgwire/kitsu.git" "main"
 clone_or_update "comfyui" "https://github.com/comfyanonymous/ComfyUI.git" "master"
 clone_or_update "vapoursynth" "https://github.com/vapoursynth/vapoursynth.git" "master"
 clone_or_update "mlt" "https://github.com/mltframework/mlt.git" "master"

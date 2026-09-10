@@ -4,7 +4,7 @@ import ast
 import pathlib
 import sys
 
-root=pathlib.Path(__file__).resolve().parents[1]
+root=pathlib.Path(__file__).resolve().parents[2]
 
 def load_module(path):
     return ast.parse(path.read_text())

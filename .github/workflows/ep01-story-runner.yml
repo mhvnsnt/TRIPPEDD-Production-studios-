@@ -275,6 +275,10 @@ jobs:
           test -s public/production/EP01-STORY-RUNNER.otio
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json public/production/EP01-STORY-RUNNER.mp4 > public/production/EP01-STORY-RUNNER.ffprobe.json
           mediainfo public/production/EP01-STORY-RUNNER.mp4 > public/production/EP01-STORY-RUNNER.mediainfo.txt
+      - name: Validate production artifact
+        env:
+          TRIPPEDD_OUTPUT_BASENAME: EP01-STORY-RUNNER
+        run: bun run pilot:validate
       - name: Upload Story Runner
         uses: actions/upload-artifact@v4
         with:
@@ -285,6 +289,7 @@ jobs:
             public/production/EP01-STORY-RUNNER.otio
             public/production/EP01-STORY-RUNNER.ffprobe.json
             public/production/EP01-STORY-RUNNER.mediainfo.txt
+            public/production/production-artifact-qc.json
             public/production/.progress/
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/ep01_bastard_tag.mp4
@@ -301,5 +306,6 @@ jobs:
             public/production/.progress/
             public/production/EP01-STORY-RUNNER.json
             public/production/EP01-STORY-RUNNER.otio
+            public/production/production-artifact-qc.json
           if-no-files-found: warn
           retention-days: 14

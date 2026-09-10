@@ -1,0 +1,86 @@
+name: Production Run Watchdog
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: production-run-watchdog
+  cancel-in-progress: true
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect production runs and restart stale work
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          now=$(date -u +%s)
+          echo "WATCHDOG_STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "POLICY: commercial ETA 8m / hard 20m; episode ETA 30m / hard 60m; salvage checkpoints before restart."
+
+          check_workflow() {
+            local workflow="$1"
+            local stale_seconds="$2"
+            local label="$3"
+            local runs
+            runs=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 10 --json databaseId,status,conclusion,attempt,createdAt,updatedAt,headSha)
+
+            while IFS= read -r run; do
+              [ -z "$run" ] && continue
+              local run_id status attempt created age
+              run_id=$(jq -r '.databaseId' <<<"$run")
+              status=$(jq -r '.status' <<<"$run")
+              attempt=$(jq -r '.attempt // 1' <<<"$run")
+              created=$(jq -r '.createdAt' <<<"$run")
+              age=$((now-$(date -d "$created" +%s)))
+              echo "WATCH $label run=$run_id status=$status attempt=$attempt age=${age}s"
+
+              if [ "$status" = "completed" ]; then
+                if { [ "$(jq -r '.conclusion // empty' <<<"$run")" = "failure" ] || [ "$(jq -r '.conclusion // empty' <<<"$run")" = "timed_out" ]; } && [ "$attempt" -lt 3 ]; then
+                  echo "RESTART failed/timed-out $label run=$run_id attempt=$attempt -> $((attempt+1))"
+                  gh run rerun "$run_id" --failed --repo "$REPO"
+                fi
+                continue
+              fi
+
+              if [ "$age" -ge "$stale_seconds" ] && [ "$attempt" -lt 3 ]; then
+                echo "STALE $label run=$run_id age=${age}s >= ${stale_seconds}s; salvage checkpoint artifacts, cancel, restart"
+                artifacts=$(gh api "/repos/$REPO/actions/runs/$run_id/artifacts?per_page=100" --jq '[.artifacts[] | select(.expired == false)] | map(.name) | join(", ")')
+                echo "SALVAGE_ARTIFACTS=${artifacts:-none}"
+                gh run cancel "$run_id" --repo "$REPO" || true
+                for i in $(seq 1 12); do
+                  state=$(gh run view "$run_id" --repo "$REPO" --json status --jq '.status' || true)
+                  [ "$state" = "completed" ] && break
+                  sleep 5
+                done
+                gh run rerun "$run_id" --repo "$REPO"
+              fi
+            done < <(jq -c '.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")' <<<"$runs")
+          }
+
+          # The short commercial proof is expected to finish in ~8 minutes.
+          # At 12 minutes the watchdog treats it as stuck and restarts it.
+          check_workflow production-short-e2e-gate.yml 720 "commercial-proof"
+
+          # Full episode render paths get a larger envelope, but never wait forever.
+          check_workflow ep01-story-runner.yml 3600 "story-runner"
+          check_workflow ep01-autonomous.yml 3600 "autonomous-cut"
+
+          {
+            echo "## Production Watchdog"
+            echo "- Commercial expected ETA: ~8 minutes"
+            echo "- Commercial stale threshold: 12 minutes"
+            echo "- Episode stale threshold: 60 minutes"
+            echo "- Retry budget: 3 attempts"
+            echo "- Policy: preserve/upload completed checkpoints, cancel stale work, restart automatically."
+          } >> "$GITHUB_STEP_SUMMARY"

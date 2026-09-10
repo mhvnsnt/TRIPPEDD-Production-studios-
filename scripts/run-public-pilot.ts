@@ -84,7 +84,9 @@ async function seedDeterministicTestEvidence(media: string[]) {
     score: 1,
     reviewState: 'AUTO_SELECTED',
     callbackKeys: ['short-e2e'],
-    signals: [{ type: 'TEST_FIXTURE_SIGNAL', evidence: 'Deterministic short end-to-end pipeline gate.', startTime: 1, endTime: 9 }]
+    // The authored proof is 20 seconds; exercise the full continuous source rather
+    // than creating a shortened output that can never satisfy the production gate.
+    signals: [{ type: 'TEST_FIXTURE_SIGNAL', evidence: 'Deterministic continuous 20-second end-to-end pipeline gate.', startTime: 0, endTime: 20 }]
   }]);
   console.log(`[EP01/TEST] Seeded deterministic evidence for ${sourceFileId}.`);
 }

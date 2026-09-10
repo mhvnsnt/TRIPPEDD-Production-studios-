@@ -2,6 +2,14 @@ name: Production Short E2E Gate
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - scripts/run-public-pilot.ts
+      - scripts/validate-production-artifact.ts
+      - src/server/pilotRenderer.ts
+      - src/server/productionMemory.ts
+      - production/EP01/generated/blender/**
+      - .github/workflows/production-short-e2e-gate.yml
 
 concurrency:
   group: production-short-e2e-gate
@@ -11,12 +19,9 @@ permissions:
   contents: read
 
 # HARD GATE:
-# Manual proof run only. A real episode is never started merely because code
-# changed. The promotion workflow starts the episode only after this workflow
-# completes successfully.
-# The proof exercises source ingest, source analysis, editorial assembly,
-# Blender-generated material, final concatenation, OTIO/JSON output, and QC
-# using a deterministic 12-second local source fixture.
+# Code changes can run this proof automatically. A real episode is never
+# started directly by a push. The promotion workflow starts EP01 only after
+# this complete proof succeeds on the current main SHA.
 
 jobs:
   short-e2e:

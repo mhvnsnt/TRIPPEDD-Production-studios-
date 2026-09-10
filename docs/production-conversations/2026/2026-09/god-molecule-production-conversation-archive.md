@@ -49,7 +49,7 @@ The creator explicitly rejected the last two generated Mars images because they 
 - Image generation should function primarily as **editing/effects**, not identity regeneration.
 - The creator's statement that the earlier image worked because it used the actual supplied image is the reference standard.
 
-The creator also explicitly requested **no new image generation in the current conversation turn**; this archive update is documentation only. Future creator-supplied images can be used for additional Mars angles and effects work.
+The creator also explicitly requested no new image generation during the documentation turn. Future creator-supplied images can be used for additional Mars angles and effects work.
 
 ## Sigil direction
 
@@ -120,10 +120,26 @@ God Molecule should remain compatible with the wider TRIPPEDD network identity s
 
 The current TRIPPEDD network proof is a separate 10–20 second commercial/ident designed to prove the production pipeline before a real episode is launched. God Molecule material is creative development reference for that proof and future production; undeveloped footage must not be fabricated as if it already exists.
 
+## Pipeline hardening terminology correction
+
+The creator clarified that the prior wording **“guarding commit”** was incorrect. The intended term is **“hardening the pipeline.”**
+
+What that hardening means operationally is not a superficial guard around the code. It means making the production system refuse to spend expensive compute when prerequisites are not proven, preserve successful work, isolate attempts, expose real progress, detect genuine stalls, recover in bounded ways, validate final media/timeline artifacts, and fail closed instead of claiming success from stale telemetry or partial output.
+
+The current production architecture includes source transport preflight, explicit source completeness, authenticated Drive recovery paths, checkpoint/reuse behavior, attempt-isolated telemetry, stale-run handling, final MP4/JSON/OTIO validation, artifact QC, and bounded self-healing. The CI build is green, but CI success alone is not considered production proof.
+
+## Network commercial / ident proof
+
+The creator referred to the network commercial as the “22nd commercial thing”; the preserved production intent is the **20-second TRIPPEDD network commercial/ident** described by the existing ident contract. The implementation has now been hardened to target the full 20 seconds at 24fps: 480 authored Blender frames, then the same source-analysis/editorial/render/QC path.
+
+The commercial remains a continuous authored piece rather than a slideshow or generic test card. It uses symbolic/generated material and must never be represented as creator-likeness footage or finished God Molecule footage that has not actually been supplied or produced.
+
+The proof gate now validates the complete 480-frame source sequence, 20-second media duration, HD video, 24fps, usable audio, parseable OTIO with one continuous source clip, non-empty final artifacts, and SHA-256 artifact manifests. A successful workflow run without those artifact proofs is not a production pass.
+
 ## Production conversation preservation rule
 
 This archive is a durable production record. Future God Molecule conversations should append or update this record with actual creator decisions, approved references, asset status, technical findings, and open questions. Do not replace creator decisions with guesses. Distinguish established facts, production decisions, hypotheses and experiments.
 
 ## Current priority
 
-Continue hardening the TRIPPEDD Production studios pipeline and prove the full production path with the TRIPPEDD network 10–20 second ident before starting another real EP01 run. God Molecule creative development continues alongside that work, but the pipeline gate is mandatory.
+Continue hardening the TRIPPEDD Production studios pipeline and prove the full **20-second network commercial/ident** before starting another real EP01 run. The production gate remains mandatory. God Molecule creative development continues alongside that work, with creator likeness protected by the hard source-photo editing rule above.

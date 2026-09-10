@@ -221,7 +221,7 @@ jobs:
           chmod +x scripts/bin/whisper
           ./scripts/bin/whisper --help
       - name: Install Node dependencies
-        run: bun install --frozen-lockfile=false
+        run: bun install --no-save
       - name: Build EP01 autonomous cut
         env:
           TRIPPEDD_RUN_ID: ${{ github.run_id }}

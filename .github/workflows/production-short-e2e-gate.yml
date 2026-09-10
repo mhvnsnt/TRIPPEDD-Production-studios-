@@ -53,7 +53,7 @@ jobs:
       - name: Verify autonomous bridge hardening
         run: |
           set -euo pipefail
-          python3 scripts/production/test-autonomous-bridge.py
+          python3 scripts/production/test-connector-independent-bridge.py
 
       - name: Hardened runner preflight
         shell: bash

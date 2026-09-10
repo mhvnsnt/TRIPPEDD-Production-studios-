@@ -195,3 +195,5 @@ jobs:
             /tmp/trippedd-e2e-source/source.sha256
           if-no-files-found: error
           retention-days: 30
+
+# Force a fresh production-proof run so the stuck pre-watchdog run is replaced.

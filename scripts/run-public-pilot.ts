@@ -11,7 +11,8 @@ const cacheRoot = path.resolve(process.env.TRIPPEDD_MEDIA_CACHE || path.join(pro
 const outputRoot = path.resolve(process.env.TRIPPEDD_OUTPUT_DIR || path.join(process.cwd(), 'public', 'production'));
 const mediaExtensions = new Set(['.mp4', '.mov', '.m4v', '.webm', '.avi', '.mkv', '.mpg', '.mpeg', '.3gp', '.wav', '.mp3', '.m4a']);
 const cutMode = process.env.TRIPPEDD_CUT_MODE === 'AUTONOMOUS' ? 'AUTONOMOUS' : 'SHOWRUNNER';
-const runId = process.env.TRIPPEDD_RUN_ID || process.env.GITHUB_RUN_ID || `${Date.now()}-${process.pid}`;
+const runId = process.env.TRIPPEDD_RUN_ID || [process.env.GITHUB_RUN_ID, process.env.GITHUB_RUN_ATTEMPT].filter(Boolean).join('-') || `${Date.now()}-${process.pid}`;
+const expectedSourceFiles = Math.max(1, Number(process.env.TRIPPEDD_EXPECTED_SOURCE_FILES || 19));
 const ledger = new ProductionProgressLedger({ episodeId: 'EP01', runId, rootDir: path.join(outputRoot, '.progress') });
 
 function bar(percent: number, width = 28) {
@@ -39,31 +40,36 @@ async function waitForJob(fileId: string) {
 async function main() {
   await fs.mkdir(cacheRoot, { recursive: true });
   await ledger.init([
-    { id: 'drive-ingest', label: 'Drive ingest', total: 1 },
+    { id: 'drive-ingest', label: 'Drive ingest', total: expectedSourceFiles },
     { id: 'source-analysis', label: 'Source analysis', total: 1 },
     { id: 'editorial-assembly', label: 'Editorial assembly', total: 1 }
   ]);
-  await report('drive-ingest', 0, 1, 'Initializing public Drive ingest.');
+  await report('drive-ingest', 0, expectedSourceFiles, 'Initializing public Drive ingest.');
   await toolManager.initialize();
   console.log(`[EP01/${cutMode}] Downloading public Drive folder with resumable per-file ingest: ${folderUrl}`);
 
-  let downloaded: string[];
-  try {
-    downloaded = await downloadPublicDriveFolder(folderUrl, cacheRoot, progress => {
-      const total = Math.max(1, progress.total);
-      const status = progress.phase === 'COMPLETE' && progress.failed === 0 ? 'COMPLETE' : 'RUNNING';
-      const current = progress.current ? ` Current=${progress.current}.` : '';
-      const failures = progress.failed ? ` Failed=${progress.failed}.` : '';
+  let lastDriveProgress = '';
+  const downloaded = await downloadPublicDriveFolder(folderUrl, cacheRoot, progress => {
+    const total = Math.max(1, progress.total || expectedSourceFiles);
+    const status = progress.phase === 'COMPLETE' && progress.failed === 0 ? 'COMPLETE' : 'RUNNING';
+    const current = progress.current ? ` Current=${progress.current}.` : '';
+    const failures = progress.failed ? ` Failed=${progress.failed}.` : '';
+    const fingerprint = `${progress.phase}|${progress.completed}|${progress.failed}|${progress.current ?? ''}`;
+    // Do not emit artificial heartbeats. If the underlying ingest stops
+    // changing, watch-progress must be able to detect the stall.
+    if (fingerprint !== lastDriveProgress) {
+      lastDriveProgress = fingerprint;
       void report('drive-ingest', Math.min(progress.completed, total), total, `${progress.phase}: ${progress.completed}/${total} source files materialized.${failures}${current}`, status).catch(() => undefined);
-    });
-  } catch (error) {
-    throw error;
-  }
+    }
+  });
 
   const media = downloaded.filter(file => mediaExtensions.has(path.extname(file).toLowerCase()));
   console.log(`[EP01/${cutMode}] Materialized ${media.length} supported media file(s).`);
-  await report('drive-ingest', media.length, Math.max(media.length, 1), `Materialized ${media.length} supported media file(s).`, 'COMPLETE');
-  if (!media.length) throw new Error('The public Drive folder produced no supported media files.');
+  if (media.length < expectedSourceFiles) {
+    await report('drive-ingest', media.length, expectedSourceFiles, `SOURCE BLOCKED: only ${media.length}/${expectedSourceFiles} media files are available; refusing to manufacture a complete episode.`, 'RUNNING');
+    throw new Error(`EP01 source ingest is incomplete: ${media.length}/${expectedSourceFiles} media files available.`);
+  }
+  await report('drive-ingest', media.length, expectedSourceFiles, `Materialized ${media.length}/${expectedSourceFiles} supported media file(s).`, 'COMPLETE');
 
   await ledger.update('source-analysis', { status: 'RUNNING', completed: 0, total: media.length, message: `Analyzing ${media.length} source files.` });
   const jobs: string[] = [];
@@ -82,11 +88,16 @@ async function main() {
     jobs.push(fileId);
   }
 
+  let lastAnalysisFingerprint = '';
   const analysisMonitor = setInterval(() => {
     const jobsNow = jobs.map(fileId => queueManager.getJob(fileId)).filter(Boolean) as any[];
     const completed = jobsNow.reduce((sum, job) => sum + (['NEEDS_REVIEW', 'EVIDENCE_READY', 'FAILED'].includes(job.state) ? 1 : Math.max(0, Math.min(1, Number(job.progress || 0) / 100))), 0);
     const current = jobsNow.find(job => !['NEEDS_REVIEW', 'EVIDENCE_READY', 'FAILED'].includes(job.state));
-    void report('source-analysis', completed, jobs.length, current ? `Analyzing ${current.originalName}; state=${current.state}, source progress=${Math.round(Number(current.progress || 0))}%.` : 'Finalizing analyzed source evidence.').catch(() => undefined);
+    const fingerprint = `${completed.toFixed(3)}|${current?.fileId ?? 'none'}|${current?.state ?? 'none'}|${current?.progress ?? 0}`;
+    if (fingerprint !== lastAnalysisFingerprint) {
+      lastAnalysisFingerprint = fingerprint;
+      void report('source-analysis', completed, jobs.length, current ? `Analyzing ${current.originalName}; state=${current.state}, source progress=${Math.round(Number(current.progress || 0))}%.` : 'Finalizing analyzed source evidence.').catch(() => undefined);
+    }
   }, 2000);
 
   let results: any[];
@@ -105,8 +116,8 @@ async function main() {
     }
   }
   const usable = jobs.length - failed;
-  await report('source-analysis', jobs.length, jobs.length, `Analysis batch complete: ${usable}/${jobs.length} source jobs usable.`, 'COMPLETE');
   if (!usable) throw new Error(`All ${jobs.length} source analyses failed; refusing to manufacture an assembly from missing evidence.`);
+  await report('source-analysis', jobs.length, jobs.length, `Analysis batch complete: ${usable}/${jobs.length} source jobs usable.`, 'COMPLETE');
 
   await report('editorial-assembly', 0, 1, 'Handing measured source evidence to editorial assembly.');
   const manifest = await buildEp01FirstAssembly({ maxClips: Number(process.env.EP01_MAX_CLIPS || 24), clipPaddingSeconds: Number(process.env.EP01_CLIP_PADDING || 1.25) });

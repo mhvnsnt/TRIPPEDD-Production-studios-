@@ -4,11 +4,13 @@ import { downloadPublicDriveFolder } from '../src/server/publicDriveFolder';
 import { queueManager } from '../src/server/queueManager';
 import { toolManager } from '../src/server/toolManager';
 import { ProductionProgressLedger } from '../src/server/productionProgress';
+import { productionMemory } from '../src/server/productionMemory';
 import { buildEp01FirstAssembly } from '../src/server/pilotRenderer';
 
 const folderUrl = process.env.TRIPPEDD_DRIVE_FOLDER_URL || 'https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI';
 const cacheRoot = path.resolve(process.env.TRIPPEDD_MEDIA_CACHE || path.join(process.cwd(), '.trippedd', 'media'));
 const outputRoot = path.resolve(process.env.TRIPPEDD_OUTPUT_DIR || path.join(process.cwd(), 'public', 'production'));
+const testSourceDir = process.env.TRIPPEDD_TEST_SOURCE_DIR ? path.resolve(process.env.TRIPPEDD_TEST_SOURCE_DIR) : null;
 const mediaExtensions = new Set(['.mp4', '.mov', '.m4v', '.webm', '.avi', '.mkv', '.mpg', '.mpeg', '.3gp', '.wav', '.mp3', '.m4a']);
 const cutMode = process.env.TRIPPEDD_CUT_MODE === 'AUTONOMOUS' ? 'AUTONOMOUS' : 'SHOWRUNNER';
 const runId = process.env.TRIPPEDD_RUN_ID || [process.env.GITHUB_RUN_ID, process.env.GITHUB_RUN_ATTEMPT].filter(Boolean).join('-') || `${Date.now()}-${process.pid}`;
@@ -37,6 +39,56 @@ async function waitForJob(fileId: string) {
   }
 }
 
+async function materializeSources(): Promise<string[]> {
+  if (!testSourceDir) {
+    console.log(`[EP01/${cutMode}] Downloading public Drive folder with resumable per-file ingest: ${folderUrl}`);
+    return downloadPublicDriveFolder(folderUrl, cacheRoot, progress => {
+      const total = Math.max(1, progress.total || expectedSourceFiles);
+      const status = progress.phase === 'COMPLETE' && progress.failed === 0 ? 'COMPLETE' : 'RUNNING';
+      const current = progress.current ? ` Current=${progress.current}.` : '';
+      const failures = progress.failed ? ` Failed=${progress.failed}.` : '';
+      const fingerprint = `${progress.phase}|${progress.completed}|${progress.failed}|${progress.current ?? ''}`;
+      if (fingerprint !== (materializeSources as any).lastDriveProgress) {
+        (materializeSources as any).lastDriveProgress = fingerprint;
+        void report('drive-ingest', Math.min(progress.completed, total), total, `${progress.phase}: ${progress.completed}/${total} source files materialized.${failures}${current}`, status).catch(() => undefined);
+      }
+    });
+  }
+
+  console.log(`[EP01/TEST] Using deterministic local fixture source directory: ${testSourceDir}`);
+  const entries = await fs.readdir(testSourceDir, { withFileTypes: true });
+  const sourceFiles = entries.filter(entry => entry.isFile() && mediaExtensions.has(path.extname(entry.name).toLowerCase())).map(entry => path.join(testSourceDir, entry.name)).sort();
+  if (!sourceFiles.length) throw new Error(`TEST source directory contains no supported media: ${testSourceDir}`);
+  await fs.mkdir(cacheRoot, { recursive: true });
+  const materialized: string[] = [];
+  for (const source of sourceFiles) {
+    const target = path.join(cacheRoot, path.basename(source));
+    await fs.copyFile(source, target);
+    materialized.push(target);
+  }
+  return materialized;
+}
+
+async function seedDeterministicTestEvidence(media: string[]) {
+  if (process.env.TRIPPEDD_TEST_MODE !== 'true') return;
+  const sourcePath = path.resolve(media[0]);
+  const sourceFileId = `TEST_${Buffer.from(sourcePath).toString('base64url').slice(-48)}`;
+  await productionMemory.upsert('trippedd', {
+    sources: {
+      [sourceFileId]: { fileId: sourceFileId, mediaPath: sourcePath, sourceOrder: 0, originalName: path.basename(sourcePath), mimeType: 'video/mp4', testFixture: true }
+    }
+  });
+  await productionMemory.recordGags('trippedd', [{
+    id: 'TEST_GAG_SHORT_E2E',
+    sourceFileId,
+    score: 1,
+    reviewState: 'AUTO_SELECTED',
+    callbackKeys: ['short-e2e'],
+    signals: [{ type: 'TEST_FIXTURE_SIGNAL', evidence: 'Deterministic short end-to-end pipeline gate.', startTime: 1, endTime: 9 }]
+  }]);
+  console.log(`[EP01/TEST] Seeded deterministic evidence for ${sourceFileId}.`);
+}
+
 async function main() {
   await fs.mkdir(cacheRoot, { recursive: true });
   await ledger.init([
@@ -44,32 +96,17 @@ async function main() {
     { id: 'source-analysis', label: 'Source analysis', total: 1 },
     { id: 'editorial-assembly', label: 'Editorial assembly', total: 1 }
   ]);
-  await report('drive-ingest', 0, expectedSourceFiles, 'Initializing public Drive ingest.');
+  await report('drive-ingest', 0, expectedSourceFiles, testSourceDir ? 'Initializing deterministic local fixture ingest.' : 'Initializing public Drive ingest.');
   await toolManager.initialize();
-  console.log(`[EP01/${cutMode}] Downloading public Drive folder with resumable per-file ingest: ${folderUrl}`);
-
-  let lastDriveProgress = '';
-  const downloaded = await downloadPublicDriveFolder(folderUrl, cacheRoot, progress => {
-    const total = Math.max(1, progress.total || expectedSourceFiles);
-    const status = progress.phase === 'COMPLETE' && progress.failed === 0 ? 'COMPLETE' : 'RUNNING';
-    const current = progress.current ? ` Current=${progress.current}.` : '';
-    const failures = progress.failed ? ` Failed=${progress.failed}.` : '';
-    const fingerprint = `${progress.phase}|${progress.completed}|${progress.failed}|${progress.current ?? ''}`;
-    // Do not emit artificial heartbeats. If the underlying ingest stops
-    // changing, watch-progress must be able to detect the stall.
-    if (fingerprint !== lastDriveProgress) {
-      lastDriveProgress = fingerprint;
-      void report('drive-ingest', Math.min(progress.completed, total), total, `${progress.phase}: ${progress.completed}/${total} source files materialized.${failures}${current}`, status).catch(() => undefined);
-    }
-  });
-
+  const downloaded = await materializeSources();
   const media = downloaded.filter(file => mediaExtensions.has(path.extname(file).toLowerCase()));
   console.log(`[EP01/${cutMode}] Materialized ${media.length} supported media file(s).`);
-  if (media.length < expectedSourceFiles) {
-    await report('drive-ingest', media.length, expectedSourceFiles, `SOURCE BLOCKED: only ${media.length}/${expectedSourceFiles} media files are available; refusing to manufacture a complete episode.`, 'RUNNING');
-    throw new Error(`EP01 source ingest is incomplete: ${media.length}/${expectedSourceFiles} media files available.`);
+  const required = process.env.TRIPPEDD_TEST_MODE === 'true' ? 1 : expectedSourceFiles;
+  if (media.length < required) {
+    await report('drive-ingest', media.length, required, `SOURCE BLOCKED: only ${media.length}/${required} media files are available; refusing to manufacture a complete episode.`, 'RUNNING');
+    throw new Error(`EP01 source ingest is incomplete: ${media.length}/${required} media files available.`);
   }
-  await report('drive-ingest', media.length, expectedSourceFiles, `Materialized ${media.length}/${expectedSourceFiles} supported media file(s).`, 'COMPLETE');
+  await report('drive-ingest', media.length, required, `Materialized ${media.length}/${required} supported media file(s).`, 'COMPLETE');
 
   await ledger.update('source-analysis', { status: 'RUNNING', completed: 0, total: media.length, message: `Analyzing ${media.length} source files.` });
   const jobs: string[] = [];
@@ -79,7 +116,7 @@ async function main() {
     const stat = await fs.stat(filePath);
     queueManager.setLocalSource(fileId, filePath);
     if (!queueManager.getJob(fileId)) {
-      queueManager.addJob({ id: `JOB_${fileId}`, fileId, originalName: path.basename(filePath), mimeType: 'video/*', size: stat.size, state: 'QUEUED', progress: 0, logs: ['Credential-free public Drive source.', `Local source: ${filePath}`, `Cut mode: ${cutMode}`], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [], sourceOrder } as any);
+      queueManager.addJob({ id: `JOB_${fileId}`, fileId, originalName: path.basename(filePath), mimeType: 'video/*', size: stat.size, state: 'QUEUED', progress: 0, logs: [testSourceDir ? 'Deterministic local test fixture.' : 'Credential-free public Drive source.', `Local source: ${filePath}`, `Cut mode: ${cutMode}`], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [], sourceOrder } as any);
     } else {
       const existing = queueManager.getJob(fileId) as any;
       if (existing) existing.sourceOrder = sourceOrder;
@@ -101,24 +138,18 @@ async function main() {
   }, 2000);
 
   let results: any[];
-  try {
-    results = await Promise.all(jobs.map(fileId => waitForJob(fileId)));
-  } finally {
-    clearInterval(analysisMonitor);
-  }
+  try { results = await Promise.all(jobs.map(fileId => waitForJob(fileId))); }
+  finally { clearInterval(analysisMonitor); }
   let failed = 0;
   for (const job of results) {
-    if (job.state === 'FAILED') {
-      failed++;
-      console.warn(`[EP01/${cutMode}] Skipping failed source ${job.originalName}; continuing with remaining footage.`);
-    } else {
-      console.log(`[EP01/${cutMode}] Analyzed ${job.originalName}`);
-    }
+    if (job.state === 'FAILED') { failed++; console.warn(`[EP01/${cutMode}] Skipping failed source ${job.originalName}; continuing with remaining footage.`); }
+    else console.log(`[EP01/${cutMode}] Analyzed ${job.originalName}`);
   }
   const usable = jobs.length - failed;
   if (!usable) throw new Error(`All ${jobs.length} source analyses failed; refusing to manufacture an assembly from missing evidence.`);
   await report('source-analysis', jobs.length, jobs.length, `Analysis batch complete: ${usable}/${jobs.length} source jobs usable.`, 'COMPLETE');
 
+  await seedDeterministicTestEvidence(media);
   await report('editorial-assembly', 0, 1, 'Handing measured source evidence to editorial assembly.');
   const manifest = await buildEp01FirstAssembly({ maxClips: Number(process.env.EP01_MAX_CLIPS || 24), clipPaddingSeconds: Number(process.env.EP01_CLIP_PADDING || 1.25) });
   console.log(JSON.stringify(manifest, null, 2));

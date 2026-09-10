@@ -5,6 +5,10 @@ set -euo pipefail
 # measured progress ledger is observable and heartbeating. Percentages, rates
 # and ETAs are derived from observed work; missing telemetry is UNKNOWN, not
 # healthy RUNNING. This prevents silent multi-hour black boxes.
+#
+# The watcher also mirrors each changed snapshot to a durable GitHub Issues
+# comment through publish-live-telemetry.sh. This is the live API of record
+# when GitHub's Actions log blob endpoint is unavailable during execution.
 
 if [ "$#" -lt 3 ] || [ "$1" != "--progress-file" ]; then
   echo "usage: $0 --progress-file <path> -- <command> [args...]" >&2
@@ -71,6 +75,9 @@ while kill -0 "$pid" 2>/dev/null; do
     printf '%s\n' "$snapshot"
     if [ -n "${GITHUB_STEP_SUMMARY:-}" ]; then
       printf '### TRIPPEDD live production telemetry\n\n`%s`\n\n' "$snapshot" > "$GITHUB_STEP_SUMMARY"
+    fi
+    if [ -x scripts/production/publish-live-telemetry.sh ]; then
+      scripts/production/publish-live-telemetry.sh "$progress_file" || true
     fi
     last="$snapshot"
   fi

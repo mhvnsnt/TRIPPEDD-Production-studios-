@@ -61,7 +61,7 @@ for (const name of cutNames) {
     if (media.video) {
       const motionProbe = await new Promise<string>((resolve, reject) => {
         const child = spawn('ffmpeg', ['-v','error','-i',file,'-vf','fps=2','-frames:v','16','-f','framemd5','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
-        let stdout='', stderr='';
+        let stdout = '', stderr = '';
         child.stdout.on('data', d => { stdout += d.toString(); });
         child.stderr.on('data', d => { stderr += d.toString(); });
         child.on('error', reject);
@@ -75,18 +75,12 @@ for (const name of cutNames) {
     if (media.audio) {
       const audioProbe = await new Promise<string>((resolve, reject) => {
         const child = spawn('ffmpeg', ['-hide_banner','-i',file,'-af','volumedetect','-f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
-        let stderr=''; child.stderr.on('data', d => { stderr += d.toString(); });
+        let stderr = '';
+        child.stderr.on('data', d => { stderr += d.toString(); });
         child.on('error', reject);
-        child.on('close', () => resolve(stderr));
+        child.on('close', code => code === 0 ? resolve(stderr) : reject(new Error(stderr || 'audio probe failed')));
       });
-      if (/mean_volume:\s*-inf\s*dB/i.test(audioProbe)) failures.push(name + ': audio track is silent.');
-    }, not merely an attached silent track.
-    if (media.audio) {
-      const audioProbe = await new Promise<string>((resolve) => {
-        const child = spawn('ffmpeg', ['-v','error','-i',file,'-af','volumedetect','-f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
-        let err=''; child.stderr.on('data', d => { err += d.toString(); }); child.on('close', () => resolve(err)); child.on('error', () => resolve('ffmpeg audio probe failed'));
-      });
-      if (/mean_volume:\s*-inf\s*dB/i.test(audioProbe)) failures.push(`${name}: audio track is silent.`);
+      if (/mean_volume:\\s*-inf\\s*dB/i.test(audioProbe)) failures.push(name + ': audio track is silent.');
     }
   } catch (error) { failures.push(`${name}: ffprobe failed: ${error instanceof Error ? error.message : String(error)}`); }
 }

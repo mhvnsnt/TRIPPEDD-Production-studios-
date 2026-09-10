@@ -12,3 +12,13 @@
 - The 20-second proof workflow remains strict: it must generate a real MP4, JSON, OTIO, QC report, hashes/provenance, and pass duration/resolution/FPS/audio/continuity checks before being considered green.
 - GitHub's current documentation confirms JIT runners can execute at most one job and are automatically removed; repository JIT configuration requires repository Administration: write. 
 - No episode-scale rerun should be declared successful until the 20-second proof artifact and QC evidence are actually observed.
+
+## 2026-09-10 — Commercial/EP01 hardening pass
+
+- User rejected the earlier commercial as insufficiently cinematic/animated and explicitly excluded Smoke & Mirrors; the commercial scope is only TRIPPEDD, In the Bushes, The Bastard, and God Molecule.
+- Added a hard commercial proof gate requiring the four-show scope and explicitly rejecting Smoke & Mirrors in the commercial generator source.
+- Added a dedicated motion/duration/content validation stage before the mixed-media commercial artifact is accepted.
+- EP01 Story Runner run 34523231896 was observed in GitHub as pending with zero jobs/artifacts at inspection time; it is not being treated as success.
+- Repository permissions through the active GitHub connector are currently real: repository reports admin/maintain/push access.
+- GitHub documentation confirms queued self-hosted jobs remain queued until a matching runner is online, which is why runner routing is a production dependency rather than something to silently call green.
+- Hardened commit for this pass: 533b68f8312756ca1f343a4641b0744a86258c4d.

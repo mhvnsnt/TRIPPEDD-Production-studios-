@@ -20,6 +20,7 @@ DURATION_SECONDS = 20
 TOTAL_FRAMES = FPS * DURATION_SECONDS
 START = int(os.environ.get("TRIPPEDD_FRAME_START", "1"))
 END = int(os.environ.get("TRIPPEDD_FRAME_END", str(TOTAL_FRAMES)))
+FAST_PROOF = os.environ.get("TRIPPEDD_PROOF_FAST", "false").lower() == "true"
 os.makedirs(FRAMES, exist_ok=True)
 if START < 1 or END < START or END > TOTAL_FRAMES:
     raise SystemExit(f"Invalid network ident frame range: {START}-{END}; expected 1-{TOTAL_FRAMES}")
@@ -59,9 +60,7 @@ MAGENTA = mat("NetworkMagenta", (0.8, 0.03, 0.45), 2.5)
 CYAN = mat("NetworkCyan", (0.02, 0.65, 1.0), 2.5)
 GOLD = mat("NetworkGold", (0.95, 0.55, 0.04), 2.0)
 WHITE = mat("NetworkWhite", (0.8, 0.8, 0.8), 1.0)
-DARK = mat("NetworkDark", (0.01, 0.01, 0.02), 0.0)
 
-# Camera looks down the Z axis at a stage so all motion is authored in one shot.
 bpy.ops.object.camera_add(location=(0, 0, 22), rotation=(0, 0, 0))
 cam = bpy.context.object
 cam.rotation_euler = (0, 0, 0)
@@ -69,21 +68,22 @@ scene.camera = cam
 cam.data.type = "ORTHO"
 cam.data.ortho_scale = 13.0
 
-# Central symbolic molecule/head: intentionally generic, never creator likeness.
-bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=3, radius=2.0, location=(0, 0, 0))
+# The proof has a deliberately small geometry budget so CI proves the pipeline,
+# not a multi-minute Blender benchmark. Production EP01 scenes are unaffected.
+bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2 if FAST_PROOF else 3, radius=2.0, location=(0, 0, 0))
 core = bpy.context.object
 core.name = "GodMolecule_SymbolicCore"
 core.data.materials.append(CYAN)
 
-# Forehead-like sigil is a simple original geometric mark, not a claimed sacred symbol.
 for z, r in ((0.8, 0.55), (0.0, 0.42), (-0.8, 0.55)):
-    bpy.ops.mesh.primitive_torus_add(major_radius=r, minor_radius=0.07, major_segments=24, minor_segments=6, location=(0, z, 2.0), rotation=(math.pi / 2, 0, 0))
+    bpy.ops.mesh.primitive_torus_add(major_radius=r, minor_radius=0.07, major_segments=16 if FAST_PROOF else 24, minor_segments=4 if FAST_PROOF else 6, location=(0, z, 2.0), rotation=(math.pi / 2, 0, 0))
     o = bpy.context.object
     o.name = "Original_Geometric_Mark"
     o.data.materials.append(GOLD)
 
-for i in range(8):
-    bpy.ops.mesh.primitive_torus_add(major_radius=2.8 + i * 0.48, minor_radius=0.035 + i * 0.006, major_segments=64, minor_segments=6, location=(0, 0, 0), rotation=(i * 0.19, i * 0.11, i * 0.27))
+orbit_count = 3 if FAST_PROOF else 8
+for i in range(orbit_count):
+    bpy.ops.mesh.primitive_torus_add(major_radius=2.8 + i * 0.48, minor_radius=0.035 + i * 0.006, major_segments=32 if FAST_PROOF else 64, minor_segments=4 if FAST_PROOF else 6, location=(0, 0, 0), rotation=(i * 0.19, i * 0.11, i * 0.27))
     ring = bpy.context.object
     ring.name = f"NetworkOrbit_{i:02d}"
     ring.data.materials.append((MAGENTA, CYAN, GOLD)[i % 3])
@@ -128,6 +128,7 @@ scene["TRIPPEDD_TOTAL_FRAMES"] = TOTAL_FRAMES
 scene["TRIPPEDD_SOURCE_TRUTH"] = "Generated proof material; not physical source evidence."
 scene["TRIPPEDD_GOD_MOLECULE"] = "Symbolic development reference only; no creator likeness."
 scene["TRIPPEDD_REFERENCES"] = "Trippedd; The Bastard; In the Bushes; God Molecule"
+scene["TRIPPEDD_PROOF_FAST"] = FAST_PROOF
 
 started = time.time()
 total = END - START + 1
@@ -139,7 +140,7 @@ for frame in range(START, END + 1):
     phase = (frame - 1) / TOTAL_FRAMES
     core.rotation_euler = (phase * math.tau * 0.7, phase * math.tau * 0.9, phase * math.tau)
     core.scale = (1.0 + 0.12 * math.sin(phase * math.tau * 2), 1.0 + 0.08 * math.cos(phase * math.tau * 3), 1.0)
-    for i in range(8):
+    for i in range(orbit_count):
         ring = bpy.data.objects.get(f"NetworkOrbit_{i:02d}")
         if ring:
             ring.rotation_euler.z += 0.025 + i * 0.004

@@ -165,7 +165,7 @@ jobs:
           fi
           test -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE#}#" | sha256sum -c -
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
       - name: Download subjectivity chunks

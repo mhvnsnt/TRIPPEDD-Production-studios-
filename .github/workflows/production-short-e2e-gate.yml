@@ -82,6 +82,11 @@ jobs:
           mediainfo --Version
           exiftool -ver
           convert -version | head -n 1
+      - name: Initialize run-local production ledger
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/trippedd-run-ledger
+          printf '%s\n' "run_id=$GITHUB_RUN_ID" "run_attempt=$GITHUB_RUN_ATTEMPT" "sha=$GITHUB_SHA" "started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" > /tmp/trippedd-run-ledger/run.txt
       - name: Build continuous authored network commercial source
         run: |
           set -euo pipefail
@@ -181,6 +186,16 @@ jobs:
           print('OTIO_PARSE=PASS')
           print('OTIO_CONTINUITY=PASS clips=1')
           PY
+      - name: Write immutable proof manifest
+        run: |
+          set -euo pipefail
+          sha256sum \\
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4 \\
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.json \\
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio \\
+            public/production/production-artifact-qc.json \\
+            > public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
+          printf '%s\\n' "run_id=$GITHUB_RUN_ID" "run_attempt=$GITHUB_RUN_ATTEMPT" "sha=$GITHUB_SHA" "completed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
       - name: Upload network commercial proof artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -188,6 +203,7 @@ jobs:
           path: |
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4.sha256
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
             public/production/production-artifact-qc.json

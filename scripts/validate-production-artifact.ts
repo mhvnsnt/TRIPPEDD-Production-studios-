@@ -57,15 +57,30 @@ for (const name of cutNames) {
     if (media.video && Math.abs(media.video.fps - 24) > 0.05) failures.push(`${name}: expected 24fps, got ${media.video.fps}.`);
     if (!media.audio) failures.push(`${name}: no audio stream.`);
     if (media.audio && (media.audio.sampleRate < 44100 || media.audio.channels < 1)) failures.push(`${name}: invalid audio stream.`);
-    // HARD GATE: a video stream must contain temporal change; a static frame is not a commercial.
+    // HARD GATE: prove temporal change by hashing sampled decoded frames.
     if (media.video) {
-      const probeFrames = await new Promise<string>((resolve) => {
-        const child = spawn('ffmpeg', ['-v','error','-i',file,'-vf','fps=2,mpdecimate,setpts=N/FRAME_RATE/TB','-frames:v','8','-f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
-        let err=''; child.stderr.on('data', d => { err += d.toString(); }); child.on('close', () => resolve(err)); child.on('error', () => resolve('ffmpeg probe failed'));
+      const motionProbe = await new Promise<string>((resolve, reject) => {
+        const child = spawn('ffmpeg', ['-v','error','-i',file,'-vf','fps=2','-frames:v','16','-f','framemd5','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
+        let stdout='', stderr='';
+        child.stdout.on('data', d => { stdout += d.toString(); });
+        child.stderr.on('data', d => { stderr += d.toString(); });
+        child.on('error', reject);
+        child.on('close', code => code === 0 ? resolve(stdout) : reject(new Error(stderr || 'frame hash probe failed')));
       });
-      if (probeFrames.includes('Invalid') || probeFrames.includes('Error')) failures.push(`${name}: temporal-motion probe failed.`);
+      const hashes = motionProbe.split(/\\r?\\n/).filter(line => line && !line.startsWith('#') && line.includes(',')).map(line => line.split(',').pop()!.trim());
+      const unique = new Set(hashes).size;
+      if (hashes.length < 8 || unique < 4) failures.push(name + ': temporal-motion gate failed (' + unique + ' unique sampled frames).');
     }
     // HARD GATE: audio must contain measurable signal, not merely an attached silent track.
+    if (media.audio) {
+      const audioProbe = await new Promise<string>((resolve, reject) => {
+        const child = spawn('ffmpeg', ['-hide_banner','-i',file,'-af','volumedetect','f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
+        let stderr=''; child.stderr.on('data', d => { stderr += d.toString(); });
+        child.on('error', reject);
+        child.on('close', () => resolve(stderr));
+      });
+      if (/mean_volume:\s*-inf\s*dB/i.test(audioProbe)) failures.push(name + ': audio track is silent.');
+    }, not merely an attached silent track.
     if (media.audio) {
       const audioProbe = await new Promise<string>((resolve) => {
         const child = spawn('ffmpeg', ['-v','error','-i',file,'-af','volumedetect','-f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });

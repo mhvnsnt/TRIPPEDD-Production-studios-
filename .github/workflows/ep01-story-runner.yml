@@ -8,7 +8,9 @@ on:
 
 concurrency:
   group: ep01-story-runner-${{ github.ref }}
-  cancel-in-progress: true
+  # Never cancel an active production run just because another dispatch arrives.
+  # Recovery must be evidence-gated and resumable, not destructive.
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -18,6 +20,8 @@ env:
   BLENDER_VERSION: '4.5.13'
   BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
   TRIPPEDD_PROGRESS_STALL_SECONDS: '180'
+  TRIPPEDD_PROGRESS_TELEMETRY_GRACE_SECONDS: '60'
+  TRIPPEDD_TELEMETRY_PUBLISH_INTERVAL_SECONDS: '5'
   TRIPPEDD_TELEMETRY_ISSUE_NUMBER: '16'
 
 jobs:

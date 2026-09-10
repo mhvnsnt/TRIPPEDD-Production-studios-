@@ -16,3 +16,4 @@ FAIL-CLOSED WATCHER: missing telemetry or stale heartbeats terminate the product
 FRESH-RUN: current-main editorial evidence recovery, dependency recovery, and telemetry recovery are required; do not rely on rerunning the old workflow SHA.
 PIPELINE HARDENING: build identity is recorded; failed-build diagnostics are retained; Autonomous is sequenced only after successful Story Runner and reuses verified Story Runner media instead of competing for the same kickoff.
 OPERATING LAW: no blind reruns; preserve successful renders/checkpoints; measure progress independently; if progress cannot be observed, status is UNKNOWN rather than RUNNING; push toward the finish by fixing the actual blocker and then resume from durable work.
+SOURCE RECOVERY: gdown 6.2 per-file resumable ingest, partial-success preservation, quota-aware failure reporting, and durable source-media caching are required so Google Drive throttling does not discard already recovered footage.

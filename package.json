@@ -18,12 +18,13 @@
     "pilot:build:public": "tsx scripts/run-public-pilot.ts",
     "pilot:qc": "tsx scripts/qc-ep01.ts",
     "pilot:greenlight": "tsx scripts/greenlight-ep01.ts",
-    "pilot:master": "tsx scripts/build-ep01-master.ts"
+    "pilot:master": "tsx scripts/build-ep01-master.ts",
+    "pilot:validate": "tsx scripts/validate-production-artifact.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
     "@react-oauth/google": "^0.13.5",
-    "@tailwindcss/vite": "^4.1.14",
+    "@tailwindcss/vite": "^5.0.0",
     "@vitejs/plugin-react": "^5.0.4",
     "date-fns": "^4.4.0",
     "dotenv": "^17.2.3",

@@ -2,6 +2,16 @@ name: Production Short E2E Gate
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'production/network-ident/**'
+      - '.github/workflows/production-short-e2e-gate.yml'
+      - 'scripts/production/**'
+      - 'scripts/run-public-pilot.ts'
+      - 'scripts/validate-production-artifact.ts'
+      - 'src/core/pipeline/**'
+      - 'src/core/editorial/**'
 
 concurrency:
   group: production-short-e2e-gate
@@ -10,9 +20,10 @@ concurrency:
 permissions:
   contents: read
 
-# HARD GATE: manual proof only. This workflow must pass before promotion can
-# dispatch a real episode. The source is one continuous authored network
-# commercial, not a synthetic test card and not physical-source evidence.
+# HARD GATE: proof runs automatically after changes to the production proof
+# path, while manual dispatch remains available. A pass may promote EP01.
+# The source is one continuous authored network commercial, not a synthetic
+# test card and not physical-source evidence.
 
 jobs:
   short-e2e:
@@ -86,8 +97,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          p=Path('/tmp/trippedd-e2e-source/ffprobe.json')
-          d=json.loads(p.read_text())
+          d=json.loads(Path('/tmp/trippedd-e2e-source/ffprobe.json').read_text())
           v=next(s for s in d['streams'] if s['codec_type']=='video')
           assert int(v['width']) >= 1280 and int(v['height']) >= 720
           assert v['r_frame_rate'] == '24/1'

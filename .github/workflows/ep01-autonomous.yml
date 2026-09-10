@@ -111,6 +111,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Record production build identity
+        run: |
+          set -euo pipefail
+          {
+            echo "github_sha=${GITHUB_SHA}"
+            echo "github_ref=${GITHUB_REF}"
+            echo "workflow=${GITHUB_WORKFLOW}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "event=${GITHUB_EVENT_NAME}"
+            echo "story_run_id=${{ inputs.story_run_id }}"
+          } | tee public-production-build-identity.txt
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -149,7 +161,7 @@ jobs:
           checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
           if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
           curl -fsSL "$checksum_url" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
       - name: Reuse canonical Story Runner artifact
@@ -254,5 +266,18 @@ jobs:
             production/EP01/generated/blender/subjectivity-qc.json
             production/EP01/generated/blender/subjectivity-mediainfo.txt
             production/EP01/generated/blender/ep01_bastard_tag.mp4
+            public-production-build-identity.txt
           if-no-files-found: error
           retention-days: 30
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EP01-AUTONOMOUS-FAILURE-${{ github.run_id }}
+          path: |
+            public-production-build-identity.txt
+            public/production/.progress/
+            public/production/EP01-AUTONOMOUS.json
+            public/production/EP01-AUTONOMOUS.otio
+          if-no-files-found: warn
+          retention-days: 14

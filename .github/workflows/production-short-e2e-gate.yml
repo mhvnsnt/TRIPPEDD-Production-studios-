@@ -1,0 +1,178 @@
+name: Production Short E2E Gate
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/run-public-pilot.ts
+      - scripts/validate-production-artifact.ts
+      - src/server/pilotRenderer.ts
+      - src/server/productionMemory.ts
+      - production/EP01/generated/blender/**
+      - .github/workflows/production-short-e2e-gate.yml
+
+concurrency:
+  group: production-short-e2e-gate
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+# HARD GATE:
+# This workflow must pass before a real episode render is launched.
+# It exercises the same source analysis, editorial assembly, Blender-generated
+# material, final concatenation, OTIO/JSON output, and artifact QC using a
+# deterministic 12-second local source fixture.
+
+jobs:
+  short-e2e:
+    name: 12-second full production proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install media/render tools
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr
+          python -m pip install --upgrade pip
+          python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
+
+      - name: Install production dependencies
+        run: bun install --no-save
+
+      - name: Install and verify Blender
+        env:
+          BLENDER_VERSION: '4.5.13'
+          BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.cache/trippedd
+          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
+          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          blender --version | head -n 2
+
+      - name: Create deterministic 12-second source fixture
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/trippedd-e2e-source
+          ffmpeg -y -hide_banner -loglevel error \
+            -f lavfi -i "testsrc2=size=1280x720:rate=24" \
+            -f lavfi -i "sine=frequency=440:sample_rate=48000" \
+            -t 12 -c:v libx264 -preset ultrafast -pix_fmt yuv420p -c:a aac -b:a 128k \
+            /tmp/trippedd-e2e-source/e2e-fixture.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-e2e-source/e2e-fixture.mp4
+
+      - name: Run Blender subjectivity through production generator
+        env:
+          TRIPPEDD_FRAME_START: '1'
+          TRIPPEDD_FRAME_END: '144'
+          TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/subjectivity-e2e
+        run: |
+          set -euo pipefail
+          blender -b --python production/EP01/generated/blender/build_subjectivity.py
+          test "$(find production/EP01/generated/blender/subjectivity-e2e -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)" -eq 144
+          ffmpeg -y -hide_banner -loglevel error \
+            -framerate 24 -i production/EP01/generated/blender/subjectivity-e2e/frame-%04d.jpg \
+            -f lavfi -i "anullsrc=channel_layout=stereo:sample_rate=48000" -t 6 \
+            -vf "scale=1920:1080:flags=lanczos,format=yuv420p" \
+            -c:v libx264 -preset veryfast -crf 20 -c:a aac -b:a 160k -shortest \
+            production/EP01/generated/blender/ep01_subjectivity.mp4
+          test -s production/EP01/generated/blender/ep01_subjectivity.mp4
+
+      - name: Run Blender Bastard terminal tag generator
+        env:
+          TRIPPEDD_FRAME_START: '1'
+          TRIPPEDD_FRAME_END: '144'
+          TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard-tag-e2e
+        run: |
+          set -euo pipefail
+          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+          test -s production/EP01/generated/blender/ep01_bastard_tag.blend
+
+      - name: Run actual source-analysis and editorial assembly path
+        env:
+          TRIPPEDD_TEST_MODE: 'true'
+          TRIPPEDD_TEST_SOURCE_DIR: /tmp/trippedd-e2e-source
+          TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_OUTPUT_DIR: ${{ github.workspace }}/public/production
+          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-SHORT-E2E
+          TRIPPEDD_EXPECTED_SOURCE_FILES: '1'
+          TRIPPEDD_CUT_MODE: SHOWRUNNER
+          TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
+          TRIPPEDD_ENABLE_WHISPER: 'true'
+          WHISPER_MODEL: tiny
+          TRIPPEDD_WHISPER_DEVICE: cpu
+          TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
+          EP01_MAX_CLIPS: '1'
+          EP01_CLIP_PADDING: '0.25'
+          EP01_RENDER_CONCURRENCY: '1'
+        run: |
+          set -euo pipefail
+          timeout 15m bun run pilot:build:public
+
+      - name: Validate final artifact with production QC
+        env:
+          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-SHORT-E2E
+        run: |
+          set -euo pipefail
+          bun run pilot:validate
+          test -s public/production/TRIPPEDD-SHORT-E2E.mp4
+          test -s public/production/TRIPPEDD-SHORT-E2E.json
+          test -s public/production/TRIPPEDD-SHORT-E2E.otio
+          test -s public/production/production-artifact-qc.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          qc=json.loads(Path('public/production/production-artifact-qc.json').read_text())
+          assert qc['status']=='PASS', qc
+          media=qc['cuts']['TRIPPEDD-SHORT-E2E']
+          assert 10 <= media['duration'] <= 30, media
+          assert media['video']['width'] >= 1280 and media['video']['height'] >= 720, media
+          assert abs(media['video']['fps']-24) < 0.05, media
+          assert media['audio'] and media['audio']['sampleRate'] >= 44100, media
+          print('SHORT_E2E_GATE=PASS')
+          print(json.dumps(media, indent=2))
+          PY
+
+      - name: Verify OTIO is parseable
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('public/production/TRIPPEDD-SHORT-E2E.otio').read_text())
+          assert data['OTIO_SCHEMA']=='Timeline.1'
+          assert data['tracks'][0]['children']
+          print('OTIO_PARSE=PASS')
+          PY
+
+      - name: Upload short E2E proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-SHORT-E2E-PROOF
+          path: |
+            public/production/TRIPPEDD-SHORT-E2E.mp4
+            public/production/TRIPPEDD-SHORT-E2E.json
+            public/production/TRIPPEDD-SHORT-E2E.otio
+            public/production/production-artifact-qc.json
+            production/EP01/generated/blender/ep01_subjectivity.mp4
+            production/EP01/generated/blender/ep01_bastard_tag.mp4
+          if-no-files-found: error
+          retention-days: 30

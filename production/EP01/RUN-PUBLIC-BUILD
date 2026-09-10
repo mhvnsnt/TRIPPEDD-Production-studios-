@@ -4,11 +4,11 @@ Run the canonical EP01 production pipeline.
 Ingest physical source footage, analyze it, build the real source-driven rough assembly, generate the EP01 subjectivity sequence, introduce Bannon/The Bastard only as the terminal generated tag, and include clearly-labelled generated material in the assembly.
 Final editorial selection and showrunner greenlight remain human-controlled.
 
-BUILD REVISION: 2026-09-10T07:15-05:00
-AUDIT PASS: source transport, attempt-isolated telemetry, truthful completeness, final artifact validation, and pre-render source gating are now active.
-PREVIOUS FAILURE: build attempt 3 failed inside the Story Runner build immediately after setup; the source parser had been corrected, but the next run must prove the corrected path rather than blindly rerun.
-SOURCE PREFLIGHT: fast gdown manifest + real media probe now runs before Blender; incomplete or blocked source access fails fast instead of consuming the render window.
-SOURCE TRANSPORT ORDER: authorized rclone first when configured, then authenticated browser-cookie gdown, then public gdown; no transport is claimed healthy without a real source probe.
+BUILD REVISION: 2026-09-10T09:52-05:00
+KICKOFF: recovery rerun requested after hardening EP01 preflight to accept a complete restored source-media cache before probing the throttled public Drive path.
+AUDIT PASS: source transport, attempt-isolated telemetry, truthful completeness, final artifact validation, and pre-render source gating are active.
+SOURCE PREFLIGHT: fast gdown manifest + real media probe runs before Blender; a complete restored source cache is now accepted first, so a prior successful ingest can resume even when the public Drive path is temporarily throttled.
+SOURCE TRANSPORT ORDER: complete verified cache first, then authorized rclone when configured, then authenticated browser-cookie gdown, then public gdown; no live transport is claimed healthy without a real source probe.
 SOURCE COMPLETENESS: EP01 requires 19 supported source media files for a complete Story Runner build; partial caches are preserved but cannot be mislabeled complete.
 RENDER RECOVERY: resumable subjectivity chunks + durable assembly caches.
 RECOVERY HARDENING: stale queued-run protection and current-main production kickoff.

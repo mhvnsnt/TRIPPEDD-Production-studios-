@@ -7,9 +7,6 @@ on:
         description: 'Successful canonical Story Runner run ID to reuse its verified media outputs'
         required: false
         type: string
-  push:
-    paths:
-      - production/EP01/RUN-PUBLIC-BUILD
 
 concurrency:
   group: ep01-autonomous-${{ github.ref }}

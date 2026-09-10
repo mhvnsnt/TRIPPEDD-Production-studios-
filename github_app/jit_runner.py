@@ -49,12 +49,7 @@ def main():
     _,token_obj=http("POST",f"{API}/app/installations/{installation_id}/access_tokens",app_jwt,{"repositories":[args.repo]})
     token=token_obj["token"]
 
-    _,cfg=http("POST",f"{API}/repos/{args.owner}/{args.repo}/actions/runners/generate-jitconfig",token,{
-        "name":args.name,
-        "labels":["self-hosted","linux","x64",args.label],
-        "work_folder":args.work_folder,
-    })
-    encoded=cfg["encoded_jit_config"]
+    # Detect host architecture instead of assuming x64.\n    machine=os.uname().machine.lower()\n    arch_label={"x86_64":"x64","amd64":"x64","aarch64":"ARM64","arm64":"ARM64"}.get(machine)\n    if not arch_label:\n        raise RuntimeError(f"Unsupported runner architecture: {machine}")\n\n    _,cfg=http("POST",f"{API}/repos/{args.owner}/{args.repo}/actions/runners/generate-jitconfig",token,{\n        "name":args.name,\n        "labels":["self-hosted","linux",arch_label,args.label],\n        "work_folder":args.work_folder,\n    })\n    encoded=cfg["encoded_jit_config"]
 
     runner=pathlib.Path(args.runner_dir)
     runner.mkdir(parents=True,exist_ok=True)

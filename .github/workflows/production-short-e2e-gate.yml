@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'production/network-ident/**'
+      - 'production/conversations/**'
       - 'config/production/**'
       - '.github/workflows/production-short-e2e-gate.yml'
       - 'scripts/production/**'

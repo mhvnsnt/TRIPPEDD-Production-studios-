@@ -11,6 +11,7 @@ on:
       - '.github/workflows/production-short-e2e-gate.yml'
       - 'scripts/production/**'
       - 'scripts/production/build-network-commercial.py'
+      - 'scripts/production/blender/**'
       - 'scripts/run-public-pilot.ts'
       - 'scripts/validate-production-artifact.ts'
       - 'src/core/pipeline/**'
@@ -113,9 +114,11 @@ jobs:
           set -euo pipefail
           bash tools/opensource/bootstrap-render-stack.sh
           test -d .trippedd/opensource/flamenco/.git
-          test -d .trippedd/opensource/opencue/.git
-          echo "FLAMENCO_UPSTREAM=$(git -C .trippedd/opensource/flamenco rev-parse HEAD)"
-          echo "OPENCUE_UPSTREAM=$(git -C .trippedd/opensource/opencue rev-parse HEAD)"
+          for repo in flamenco opencue opentimelineio opencolorio openimageio openexr openvdb natron kitsu comfyui vapoursynth mlt; do
+            test -d ".trippedd/opensource/$repo/.git"
+          done
+          cat .trippedd/opensource/STACK-MANIFEST.txt
+          echo "FULL_UPSTREAM_PROJECTS=12"
       - name: Verify open-source stack before production work
         run: |
           set -euo pipefail
@@ -134,8 +137,15 @@ jobs:
           set -euo pipefail
           rm -rf /tmp/trippedd-e2e-source production/network-ident/generated
           mkdir -p /tmp/trippedd-e2e-source
-          echo "STAGE_ETA creative-commercial=~1m hard_timeout=3m"
-          timeout 3m python3 scripts/production/build-network-commercial.py
+          echo "STAGE_ETA creative-commercial=~6m hard_timeout=12m"
+          rm -rf /tmp/trippedd-v4
+          mkdir -p /tmp/trippedd-v4 public/production
+          timeout 12m blender -b --python scripts/production/blender/build-network-commercial-v4.py
+          test -s /tmp/trippedd-v4/frame_0001.png
+          test -s /tmp/trippedd-v4/frame_0480.png
+          # Compose the rendered 3D frames with an actual 48 kHz stereo music bed:
+          # low-end pulse, harmonic tones, filtered noise and rhythmic modulation.
+          ffmpeg -y -hide_banner -loglevel error             -framerate 24 -i /tmp/trippedd-v4/frame_%04d.png             -f lavfi -i "sine=frequency=55:sample_rate=48000:duration=20"             -f lavfi -i "sine=frequency=110:sample_rate=48000:duration=20"             -f lavfi -i "sine=frequency=220:sample_rate=48000:duration=20"             -f lavfi -i "anoisesrc=color=pink:amplitude=0.018:sample_rate=48000:duration=20"             -filter_complex "[1:a]volume=0.10,apulsator=hz=2.0[a1];[2:a]volume=0.06,apulsator=hz=1.0[a2];[3:a]volume=0.045,apulsator=hz=4.0[a3];[4:a]highpass=f=2200,lowpass=f=9000,volume=0.45[a4];[a1][a2][a3][a4]amix=inputs=4:duration=longest:normalize=0,volume=2.5,aresample=48000[a]"             -map 0:v -map "[a]" -t 20 -c:v libx264 -preset veryfast -crf 17 -pix_fmt yuv420p             -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart             public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
           test -s public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
           cp public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/ffprobe.json
@@ -149,7 +159,8 @@ jobs:
           # The proof source must be a moving four-show ident, not a static title card.
           # Smoke & Mirrors is explicitly out of scope for this commercial.
           for forbidden in ('SMOKE & MIRRORS', 'SMOKE AND MIRRORS'):
-              assert forbidden not in Path('scripts/production/build-network-commercial.py').read_text().upper(), forbidden
+              for source in ('scripts/production/build-network-commercial.py','scripts/production/blender/build-network-commercial-v4.py'):
+                  assert forbidden not in Path(source).read_text().upper(), (forbidden, source)
           d=json.load(open('/tmp/trippedd-e2e-source/ffprobe.json'))
           v=next(x for x in d['streams'] if x['codec_type']=='video')
           a=next(x for x in d['streams'] if x['codec_type']=='audio')
@@ -250,8 +261,10 @@ jobs:
           test -s public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
           ffprobe -v error -show_entries format=duration -of csv=p=0 public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 | awk '{ if ($1 < 19.9 || $1 > 20.1) exit 1 }'
           ffmpeg -v error -i public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 -vf "fps=1,select='gt(scene,0.02)'" -frames:v 12 -f null -
-          for show in "THE BASTARD" "IN THE BUSHES" "GOD MOLECULE" "TRIPPEDD"; do grep -q "$show" scripts/production/build-network-commercial.py; done
-          ! grep -qiE 'SMOKE[[:space:]]*&?[[:space:]]*MIRRORS|SMOKE[[:space:]]+AND[[:space:]]+MIRRORS' scripts/production/build-network-commercial.py
+          for show in "THE BASTARD" "IN THE BUSHES" "GOD MOLECULE" "TRIPPEDD"; do
+            grep -q "$show" scripts/production/blender/build-network-commercial-v4.py
+          done
+          ! grep -qiE 'SMOKE[[:space:]]*&?[[:space:]]*MIRRORS|SMOKE[[:space:]]+AND[[:space:]]+MIRRORS' scripts/production/blender/build-network-commercial-v4.py
           echo "COMMERCIAL_SCOPE=PASS"
           echo "COMMERCIAL_SHOW_COUNT=4"
           echo "COMMERCIAL_FORBIDDEN_SHOW=PASS"

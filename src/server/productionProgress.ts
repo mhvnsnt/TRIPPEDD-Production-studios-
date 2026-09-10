@@ -23,16 +23,18 @@ export interface ProductionStageProgress {
 }
 
 export interface ProductionProgressSnapshot {
-  schemaVersion: 2;
+  schemaVersion: 3;
   episodeId: string;
   runId: string;
   updatedAt: string;
   currentStageId?: string;
+  overallCompleted: number;
+  overallTotal: number;
+  overallPercent: number;
   stages: ProductionStageProgress[];
 }
 
 const DEFAULT_ROOT = path.resolve(process.env.TRIPPEDD_PROGRESS_DIR || path.join(process.cwd(), 'public', 'production', '.progress'));
-
 function now() { return new Date().toISOString(); }
 function clampPercent(completed: number, total: number) {
   if (total <= 0) return completed > 0 ? 100 : 0;
@@ -50,9 +52,9 @@ function formatEta(seconds?: number) {
 }
 
 /**
- * Writes atomic, machine-readable progress that both the UI and recovery layer
- * can consume. Callers supply measured work; the ledger derives rate and ETA
- * from observed progress rather than wall-clock-only guesses.
+ * Durable measured production telemetry. Multiple pipeline layers may append
+ * stages to the same run ledger; completed work is never reset by a later
+ * layer. Percentages, rates and ETAs are derived from observed work only.
  */
 export class ProductionProgressLedger {
   private readonly filePath: string;
@@ -63,23 +65,51 @@ export class ProductionProgressLedger {
     const root = path.resolve(options.rootDir || DEFAULT_ROOT);
     this.filePath = path.join(root, `${options.episodeId}-${options.runId}.json`);
     this.snapshot = {
-      schemaVersion: 2,
+      schemaVersion: 3,
       episodeId: options.episodeId,
       runId: options.runId,
       updatedAt: now(),
+      overallCompleted: 0,
+      overallTotal: 0,
+      overallPercent: 0,
       stages: []
     };
   }
 
   async init(stages: Array<Pick<ProductionStageProgress, 'id' | 'label' | 'total'>>): Promise<void> {
-    this.snapshot.stages = stages.map(stage => ({
-      ...stage,
-      status: 'PENDING',
-      completed: 0,
-      total: Math.max(0, stage.total),
-      percent: 0,
-      heartbeatAt: now()
-    }));
+    try {
+      const existing = JSON.parse(await fs.readFile(this.filePath, 'utf8')) as Partial<ProductionProgressSnapshot>;
+      if (existing && existing.episodeId === this.snapshot.episodeId && existing.runId === this.snapshot.runId && Array.isArray(existing.stages)) {
+        this.snapshot = {
+          schemaVersion: 3,
+          episodeId: this.snapshot.episodeId,
+          runId: this.snapshot.runId,
+          updatedAt: now(),
+          currentStageId: existing.currentStageId,
+          overallCompleted: Number(existing.overallCompleted) || 0,
+          overallTotal: Number(existing.overallTotal) || 0,
+          overallPercent: Number(existing.overallPercent) || 0,
+          stages: existing.stages as ProductionStageProgress[]
+        };
+      }
+    } catch { /* first writer creates the ledger */ }
+
+    for (const definition of stages) {
+      const existing = this.snapshot.stages.find(item => item.id === definition.id);
+      if (existing) {
+        existing.total = Math.max(existing.total, definition.total);
+        continue;
+      }
+      this.snapshot.stages.push({
+        ...definition,
+        status: 'PENDING',
+        completed: 0,
+        total: Math.max(0, definition.total),
+        percent: 0,
+        heartbeatAt: now()
+      });
+    }
+    this.recomputeOverall();
     await this.persist();
   }
 
@@ -92,7 +122,6 @@ export class ProductionProgressLedger {
   }): Promise<void> {
     const stage = this.snapshot.stages.find(item => item.id === stageId);
     if (!stage) throw new Error(`Unknown production progress stage: ${stageId}`);
-
     const heartbeat = Date.now();
     const previousCompleted = stage.completed;
     const previousHeartbeat = Date.parse(stage.heartbeatAt);
@@ -107,7 +136,6 @@ export class ProductionProgressLedger {
     }
     if (patch.message !== undefined) stage.message = patch.message;
     if (patch.artifactPath !== undefined) stage.artifactPath = patch.artifactPath;
-
     if (stage.status === 'RUNNING' && !stage.startedAt) stage.startedAt = now();
     if (stage.startedAt) stage.elapsedMs = Math.max(0, heartbeat - Date.parse(stage.startedAt));
 
@@ -124,11 +152,9 @@ export class ProductionProgressLedger {
       stage.etaSeconds = 0;
       stage.etaLabel = '0s';
     }
-
     stage.percent = stage.status === 'COMPLETE' ? 100 : clampPercent(stage.completed, stage.total);
     stage.heartbeatAt = now();
-    this.snapshot.currentStageId = stage.status === 'RUNNING' ? stage.id : this.snapshot.currentStageId;
-
+    if (stage.status === 'RUNNING') this.snapshot.currentStageId = stage.id;
     if (stage.artifactPath) {
       try {
         const stat = await fs.stat(stage.artifactPath);
@@ -139,12 +165,19 @@ export class ProductionProgressLedger {
         stage.artifactMtimeMs = undefined;
       }
     }
-
+    this.recomputeOverall();
     this.snapshot.updatedAt = now();
     await this.persist();
   }
 
   getSnapshot(): ProductionProgressSnapshot { return structuredClone(this.snapshot); }
+
+  private recomputeOverall() {
+    const activeStages = this.snapshot.stages.filter(stage => stage.total > 0);
+    this.snapshot.overallCompleted = activeStages.reduce((sum, stage) => sum + Math.min(stage.completed, stage.total), 0);
+    this.snapshot.overallTotal = activeStages.reduce((sum, stage) => sum + stage.total, 0);
+    this.snapshot.overallPercent = clampPercent(this.snapshot.overallCompleted, this.snapshot.overallTotal);
+  }
 
   private async persist(): Promise<void> {
     const write = async () => {

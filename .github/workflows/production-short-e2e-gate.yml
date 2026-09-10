@@ -73,6 +73,7 @@ jobs:
         env:
           TRIPPEDD_FRAME_START: '1'
           TRIPPEDD_FRAME_END: '480'
+          TRIPPEDD_PROOF_FAST: 'true'
         run: |
           set -euo pipefail
           rm -rf production/network-ident/generated
@@ -119,7 +120,7 @@ jobs:
           TRIPPEDD_WHISPER_DEVICE: cpu
           TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
           EP01_MAX_CLIPS: '1'
-          EP01_CLIP_PADDING: '0.25'
+          EP01_CLIP_PADDING: '0'
           EP01_RENDER_CONCURRENCY: '1'
         run: timeout 15m bun run pilot:build:public
       - name: Validate final commercial with production QC

@@ -109,15 +109,16 @@ jobs:
             fi
           done
 
-          story_success=$(gh run list --repo "$REPO" --workflow ep01-story-runner.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt,headSha | jq --arg sha "$current_main_sha" 'map(select(.status == "completed" and .conclusion == "success" and .headSha == $sha)) | sort_by(.createdAt) | reverse | .[0] // empty')
+          story_success=$(gh run list --repo "$REPO" --workflow ep01-story-runner.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt,headSha | jq 'map(select(.status == "completed" and .conclusion == "success")) | sort_by(.createdAt) | reverse | .[0] // empty')
           if [ -n "$story_success" ] && [ "$story_success" != "null" ]; then
             story_created=$(jq -r '.createdAt' <<<"$story_success")
             story_id=$(jq -r '.databaseId' <<<"$story_success")
+            story_sha=$(jq -r '.headSha' <<<"$story_success")
             auto_runs=$(gh run list --repo "$REPO" --workflow ep01-autonomous.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt,headSha)
             auto_active=$(jq --arg sha "$current_main_sha" '[.[] | select(.headSha == $sha and (.status == "in_progress" or .status == "queued" or .status == "waiting"))] | length' <<<"$auto_runs")
             auto_after=$(jq --arg t "$story_created" --arg sha "$current_main_sha" '[.[] | select(.headSha == $sha and .createdAt > $t)] | length' <<<"$auto_runs")
             if [ "$auto_active" -eq 0 ] && [ "$auto_after" -eq 0 ]; then
-              echo "CHAIN: current-main canonical Story Runner succeeded; dispatching current-main EP01 Autonomous Cut with story_run_id=$story_id for media reuse"
+              echo "CHAIN: successful Story Runner $story_id (sha=$story_sha); dispatching current-main EP01 Autonomous Cut with story_run_id=$story_id for media reuse"
               gh workflow run ep01-autonomous.yml --repo "$REPO" --ref main -f story_run_id="$story_id"
               dispatched=$((dispatched+1))
             fi
@@ -130,5 +131,5 @@ jobs:
             echo "- Suppressed queued duplicates: $suppressed"
             echo "- Recovery actions: $recovered"
             echo "- Autonomous dispatches: $dispatched"
-            echo "- Policy: recovery and chaining are revision-aware; stale/failed historical runs cannot block a current-main Autonomous chain; active current-main work is preserved; retries remain bounded."
+            echo "- Policy: recovery and chaining are revision-aware; historical Story Runner success can seed a current-main Autonomous run; stale/failed historical Autonomous runs cannot block the current-main chain; active current-main work is preserved; retries remain bounded."
           } >> "$GITHUB_STEP_SUMMARY"

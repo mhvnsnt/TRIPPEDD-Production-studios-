@@ -112,6 +112,22 @@ async function tryRcloneRecovery(destination: string, onProgress?: (progress: Dr
   };
 }
 
+function parseGdownFolderManifest(stdout: string): FolderEntry[] {
+  // gdown --folder --json can pretty-print the JSON array across multiple
+  // lines. Do not parse only the final line: it may be just "]".
+  const text = stdout.replace(/^\uFEFF/, '').trim();
+  const start = text.indexOf('[');
+  const end = text.lastIndexOf(']');
+  if (start < 0 || end <= start) throw new Error('gdown returned no JSON array manifest');
+  const parsed: unknown = JSON.parse(text.slice(start, end + 1));
+  if (!Array.isArray(parsed)) throw new Error('gdown folder manifest is not an array');
+  return parsed.filter((entry): entry is FolderEntry => {
+    if (!entry || typeof entry !== 'object') return false;
+    const value = entry as Record<string, unknown>;
+    return typeof value.url === 'string' && typeof value.path === 'string';
+  });
+}
+
 export async function downloadPublicDriveFolder(
   folderUrl = DEFAULT_FOLDER_URL,
   destination = path.join(process.cwd(), '.trippedd', 'public-drive'),
@@ -151,8 +167,13 @@ export async function downloadPublicDriveFolder(
 
   let entries: FolderEntry[];
   try {
-    entries = JSON.parse(listing.stdout.trim().split('\n').filter(Boolean).at(-1) || '[]');
+    entries = parseGdownFolderManifest(listing.stdout);
   } catch (error) {
+    const existing = await walkMedia(destination);
+    if (existing.length > 0) {
+      onProgress?.({ phase: 'PARTIAL', total: Math.max(rclone.total, existing.length), completed: existing.length, failed: rclone.failed + 1, current: 'gdown manifest parse failed; preserving recovered media', error: error instanceof Error ? error.message : String(error) });
+      return existing;
+    }
     throw new Error(`Unable to parse gdown folder manifest: ${error instanceof Error ? error.message : String(error)}`);
   }
 

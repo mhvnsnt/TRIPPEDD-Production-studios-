@@ -1,0 +1,76 @@
+name: V5 Commercial Proof
+
+on:
+  push:
+    branches:
+      - hardening/v5-mixed-media-commercial-oss-umbrella-2026-09-10
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  commercial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install render stack
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+      - name: Install Blender 4.5.13
+        run: |
+          set -euo pipefail
+          curl -fsSL https://download.blender.org/release/Blender4.5/blender-4.5.13-linux-x64.tar.xz -o /tmp/blender.tar.xz
+          curl -fsSL https://download.blender.org/release/Blender4.5/blender-4.5.13.sha256 -o /tmp/blender.sha256
+          grep blender-4.5.13-linux-x64.tar.xz /tmp/blender.sha256 | sed 's#blender-4.5.13-linux-x64.tar.xz#/tmp/blender.tar.xz#' | sha256sum -c -
+          sudo tar -xJf /tmp/blender.tar.xz -C /opt
+          sudo ln -sfn /opt/blender-4.5.13-linux-x64/blender /usr/local/bin/blender
+          blender --version | head -n 2
+      - name: Build V5 commercial
+        run: |
+          set -euo pipefail
+          bun install --no-save
+          python3 scripts/production/build-network-commercial.py
+      - name: Prove exact delivery and creative motion/audio
+        run: |
+          set -euo pipefail
+          ffprobe -v error -show_entries format=duration -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 > /tmp/media.json
+          python3 - <<'PY'
+          import json, subprocess, hashlib
+          from pathlib import Path
+          p=Path("public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4")
+          d=json.load(open("/tmp/media.json"))
+          v=next(x for x in d["streams"] if x["codec_type"]=="video")
+          a=next(x for x in d["streams"] if x["codec_type"]=="audio")
+          assert int(v["width"])==1920 and int(v["height"])==1080
+          assert v["r_frame_rate"]=="24/1"
+          assert int(a["sample_rate"])==48000 and int(a["channels"])==2
+          assert 19.9 <= float(d["format"]["duration"]) <= 20.1
+          frames=Path("/tmp/v5frames"); frames.mkdir(exist_ok=True)
+          subprocess.run(["ffmpeg","-v","error","-y","-i",str(p),"-vf","fps=1","-frames:v","20",str(frames/"%02d.png")],check=True)
+          hs={hashlib.sha256(x.read_bytes()).hexdigest() for x in frames.glob("*.png")}
+          assert len(hs)>=8, f"too static: {len(hs)} unique sampled frames"
+          r=subprocess.run(["ffmpeg","-hide_banner","-i",str(p),"-af","volumedetect","-f","null","-"],capture_output=True,text=True,check=True)
+          mean=float(next(x.split(":")[1].split()[0] for x in r.stderr.splitlines() if "mean_volume:" in x))
+          assert mean < -12.0, mean
+          src=Path("scripts/production/build-network-commercial.py").read_text().upper()
+          for s in ("THE BASTARD","IN THE BUSHES","GOD MOLECULE","TRIPPEDD"): assert s in src
+          assert "SMOKE & MIRRORS" not in src and "SMOKE AND MIRRORS" not in src
+          print("TRIPPEDD_V5_COMMERCIAL_PROOF=PASS")
+          print("UNIQUE_SAMPLED_FRAMES=",len(hs))
+          print("MEAN_AUDIO_DB=",mean)
+          PY
+      - name: Upload V5 commercial
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-V5-COMMERCIAL
+          path: public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
+          retention-days: 30

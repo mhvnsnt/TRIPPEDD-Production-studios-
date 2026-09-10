@@ -2,15 +2,6 @@ name: Production Short E2E Gate
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - scripts/run-public-pilot.ts
-      - scripts/validate-production-artifact.ts
-      - scripts/production/verify-oss-stack.sh
-      - src/server/pilotRenderer.ts
-      - src/server/productionMemory.ts
-      - production/EP01/generated/blender/**
-      - .github/workflows/production-short-e2e-gate.yml
 
 concurrency:
   group: production-short-e2e-gate
@@ -19,10 +10,9 @@ concurrency:
 permissions:
   contents: read
 
-# HARD GATE: this proof must pass before promotion can dispatch a real episode.
-# It is intentionally a TRIPPEDD network ident/commercial, not a disposable
-# synthetic test card. It uses a deterministic 12-second source fixture so
-# failures are reproducible and cheap to diagnose.
+# HARD GATE: manual proof only. This workflow must pass before promotion can
+# dispatch a real episode. It is a TRIPPEDD network ident/commercial proof,
+# not a disposable synthetic test card.
 
 jobs:
   short-e2e:
@@ -44,7 +34,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y ffmpeg mediainfo exiftool imagemagick curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr rclone opencolorio-tools
+          sudo apt-get install -y ffmpeg mediainfo exiftool imagemagick curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr rclone
           python -m pip install --upgrade pip
           python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
       - name: Install production dependencies
@@ -62,14 +52,13 @@ jobs:
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
-      - name: Verify open-source stack before doing production work
+      - name: Verify open-source stack before production work
         run: |
           set -euo pipefail
           bash scripts/production/verify-oss-stack.sh
           mediainfo --Version
           exiftool -ver
           convert -version | head -n 1
-          ocioarchive --help >/dev/null 2>&1 || true
       - name: Create deterministic 12-second ident source fixture
         run: |
           set -euo pipefail

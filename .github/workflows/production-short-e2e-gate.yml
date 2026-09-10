@@ -11,12 +11,12 @@ permissions:
   contents: read
 
 # HARD GATE: manual proof only. This workflow must pass before promotion can
-# dispatch a real episode. The source is one continuous authored network ident,
-# not a synthetic test card and not physical-source evidence.
+# dispatch a real episode. The source is one continuous authored network
+# commercial, not a synthetic test card and not physical-source evidence.
 
 jobs:
   short-e2e:
-    name: 10-second TRIPPEDD network ident proof
+    name: 20-second TRIPPEDD network commercial proof
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -59,27 +59,30 @@ jobs:
           mediainfo --Version
           exiftool -ver
           convert -version | head -n 1
-      - name: Build continuous authored network ident source
+      - name: Build continuous authored network commercial source
         env:
           TRIPPEDD_FRAME_START: '1'
-          TRIPPEDD_FRAME_END: '240'
+          TRIPPEDD_FRAME_END: '480'
         run: |
           set -euo pipefail
           rm -rf production/network-ident/generated
           blender -b --python production/network-ident/build_network_ident.py
-          test "$(find production/network-ident/generated/frames -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 240
+          frames=$(find production/network-ident/generated/frames -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)
+          test "$frames" -eq 480
+          test "$(find production/network-ident/generated/frames -maxdepth 1 -type f -name 'frame-*.png' -size 0c | wc -l)" -eq 0
           ffmpeg -y -hide_banner -loglevel error \
             -framerate 24 -start_number 1 \
             -i production/network-ident/generated/frames/frame-%04d.png \
             -f lavfi -i "sine=frequency=220:sample_rate=48000" \
-            -t 10 -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p \
+            -t 20 -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p \
             -c:a aac -b:a 160k -shortest \
             /tmp/trippedd-network-ident-source.mp4
           mkdir -p /tmp/trippedd-e2e-source
           cp /tmp/trippedd-network-ident-source.mp4 /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/ffprobe.json
-          mediainfo --Output=JSON /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/mediainfo.json
-          exiftool -j /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/exiftool.json
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-network-ident-source.mp4 > /tmp/trippedd-e2e-source/ffprobe.json
+          mediainfo --Output=JSON /tmp/trippedd-network-ident-source.mp4 > /tmp/trippedd-e2e-source/mediainfo.json
+          exiftool -j /tmp/trippedd-network-ident-source.mp4 > /tmp/trippedd-e2e-source/exiftool.json
+          sha256sum /tmp/trippedd-network-ident-source.mp4 > /tmp/trippedd-e2e-source/source.sha256
           python - <<'PY'
           import json
           from pathlib import Path
@@ -88,8 +91,9 @@ jobs:
           v=next(s for s in d['streams'] if s['codec_type']=='video')
           assert int(v['width']) >= 1280 and int(v['height']) >= 720
           assert v['r_frame_rate'] == '24/1'
-          assert 9.9 <= float(d['format']['duration']) <= 10.1
-          print('AUTHORED_NETWORK_IDENT_SOURCE=PASS')
+          assert 19.9 <= float(d['format']['duration']) <= 20.1
+          assert int(d['format']['size']) > 0
+          print('AUTHORED_NETWORK_COMMERCIAL_SOURCE=PASS')
           PY
       - name: Run actual source-analysis and editorial assembly path
         env:
@@ -109,7 +113,7 @@ jobs:
           EP01_CLIP_PADDING: '0.25'
           EP01_RENDER_CONCURRENCY: '1'
         run: timeout 15m bun run pilot:build:public
-      - name: Validate final ident with production QC
+      - name: Validate final commercial with production QC
         env:
           TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-NETWORK-IDENT-E2E
         run: |
@@ -119,17 +123,18 @@ jobs:
           test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
           test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
           test -s public/production/production-artifact-qc.json
+          sha256sum public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4 > public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4.sha256
           python - <<'PY'
           import json
           from pathlib import Path
           qc=json.loads(Path('public/production/production-artifact-qc.json').read_text())
           assert qc['status']=='PASS', qc
           media=qc['cuts']['TRIPPEDD-NETWORK-IDENT-E2E']
-          assert 10 <= media['duration'] <= 20, media
+          assert 19.9 <= media['duration'] <= 20.1, media
           assert media['video']['width'] >= 1280 and media['video']['height'] >= 720, media
           assert abs(media['video']['fps']-24) < 0.05, media
           assert media['audio'] and media['audio']['sampleRate'] >= 44100, media
-          print('TRIPPEDD_NETWORK_IDENT_GATE=PASS')
+          print('TRIPPEDD_NETWORK_COMMERCIAL_GATE=PASS')
           print(json.dumps(media, indent=2))
           PY
       - name: Verify OTIO is parseable and represents one continuous source
@@ -146,18 +151,20 @@ jobs:
           print('OTIO_PARSE=PASS')
           print('OTIO_CONTINUITY=PASS clips=1')
           PY
-      - name: Upload network ident proof artifacts
+      - name: Upload network commercial proof artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: TRIPPEDD-NETWORK-IDENT-E2E-PROOF
+          name: TRIPPEDD-NETWORK-COMMERCIAL-E2E-PROOF
           path: |
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4.sha256
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
             public/production/production-artifact-qc.json
             /tmp/trippedd-e2e-source/ffprobe.json
             /tmp/trippedd-e2e-source/mediainfo.json
             /tmp/trippedd-e2e-source/exiftool.json
-            production/network-ident/generated/network-ident-0001-0240.blend
+            /tmp/trippedd-e2e-source/source.sha256
+            production/network-ident/generated/network-ident-0001-0480.blend
           if-no-files-found: error
           retention-days: 30

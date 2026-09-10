@@ -12,6 +12,7 @@ concurrency:
 
 permissions:
   contents: read
+  actions: read
   issues: write
 
 env:
@@ -22,6 +23,7 @@ env:
   TRIPPEDD_TELEMETRY_PUBLISH_INTERVAL_SECONDS: '5'
   TRIPPEDD_TELEMETRY_ISSUE_NUMBER: '16'
   TRIPPEDD_EXPECTED_SOURCE_FILES: '19'
+  EP01_SALVAGE_RUN_ID: '34428807358'
 
 jobs:
   preflight-source:
@@ -81,7 +83,7 @@ jobs:
 
   render-subjectivity:
     needs: preflight-source
-    name: Render subjectivity chunk ${{ matrix.chunk }}
+    name: Render/salvage subjectivity chunk ${{ matrix.chunk }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     strategy:
@@ -103,20 +105,50 @@ jobs:
           - { chunk: '12', start: 133, end: 144 }
     steps:
       - uses: actions/checkout@v4
+      - name: Salvage completed chunk from prior run
+        id: salvage
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: EP01-STORY-SUBJECTIVITY-CHUNK-${{ matrix.chunk }}
+          path: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}
+          run-id: ${{ env.EP01_SALVAGE_RUN_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate salvage and decide whether to render
+        id: salvage-check
+        env:
+          FRAME_DIR: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}
+        run: |
+          set -euo pipefail
+          expected=12
+          actual=$(find "$FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
+          if [ "$actual" -eq "$expected" ]; then
+            echo "usable=true" >> "$GITHUB_OUTPUT"
+            echo "SUBJECTIVITY_SALVAGE=COMPLETE chunk=${{ matrix.chunk }} frames=$actual/$expected"
+          else
+            echo "usable=false" >> "$GITHUB_OUTPUT"
+            echo "SUBJECTIVITY_SALVAGE=MISS chunk=${{ matrix.chunk }} frames=$actual/$expected"
+            rm -rf "$FRAME_DIR"
+            mkdir -p "$FRAME_DIR"
+          fi
       - name: Cache Blender archive
+        if: steps.salvage-check.outputs.usable != 'true'
         id: blender-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
           key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
       - name: Cache completed subjectivity frames
+        if: steps.salvage-check.outputs.usable != 'true'
         uses: actions/cache@v4
         with:
           path: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}/
           key: subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-${{ matrix.chunk }}
       - name: Install render tools
+        if: steps.salvage-check.outputs.usable != 'true'
         run: sudo apt-get update && sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
       - name: Install Blender
+        if: steps.salvage-check.outputs.usable != 'true'
         env:
           BLENDER_CACHE_HIT: ${{ steps.blender-cache.outputs.cache-hit }}
         run: |
@@ -128,7 +160,8 @@ jobs:
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
-      - name: Render resumable chunk
+      - name: Render missing subjectivity frames
+        if: steps.salvage-check.outputs.usable != 'true'
         env:
           TRIPPEDD_FRAME_START: ${{ matrix.start }}
           TRIPPEDD_FRAME_END: ${{ matrix.end }}
@@ -136,10 +169,16 @@ jobs:
         run: |
           set -euo pipefail
           blender -b --python production/EP01/generated/blender/build_subjectivity.py
-          expected=$((TRIPPEDD_FRAME_END - TRIPPEDD_FRAME_START + 1))
-          actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
+      - name: Verify chunk
+        env:
+          FRAME_DIR: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}
+        run: |
+          set -euo pipefail
+          expected=12
+          actual=$(find "$FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
           test "$actual" -eq "$expected"
-      - name: Upload chunk
+          echo "SUBJECTIVITY_CHUNK_PROGRESS=100% chunk=${{ matrix.chunk }} frames=$actual/$expected"
+      - name: Upload chunk for current run
         uses: actions/upload-artifact@v4
         with:
           name: EP01-STORY-SUBJECTIVITY-CHUNK-${{ matrix.chunk }}
@@ -163,6 +202,7 @@ jobs:
             echo "run_id=${GITHUB_RUN_ID}"
             echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
             echo "event=${GITHUB_EVENT_NAME}"
+            echo "salvage_run=${EP01_SALVAGE_RUN_ID}"
           } | tee public-production-build-identity.txt
       - uses: oven-sh/setup-bun@v2
         with:
@@ -234,7 +274,7 @@ jobs:
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
-      - name: Download subjectivity chunks
+      - name: Download current-run subjectivity chunks
         uses: actions/download-artifact@v4
         with:
           pattern: EP01-STORY-SUBJECTIVITY-CHUNK-*

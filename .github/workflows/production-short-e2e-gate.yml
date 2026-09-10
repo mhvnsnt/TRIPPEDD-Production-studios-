@@ -70,8 +70,6 @@ jobs:
           else
             echo "TRIPPEDD_RUNNER_LABEL not configured; proof gate uses GitHub-hosted fallback."
           fi
-          command -v ffmpeg
-          command -v ffprobe
           command -v python3
           command -v bash
       - name: Setup Bun
@@ -87,6 +85,8 @@ jobs:
           set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y ffmpeg mediainfo exiftool imagemagick curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr rclone
+          command -v ffmpeg
+          command -v ffprobe
           python -m pip install --upgrade pip
           python -m pip install -r config/production/oss-stack.requirements.txt
       - name: Install production dependencies

@@ -1,0 +1,34 @@
+name: Promote Passed Short Gate To EP01
+
+on:
+  workflow_run:
+    workflows: [Production Short E2E Gate]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  promote:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify the successful gate belongs to current main
+        env:
+          GATE_SHA: ${{ github.event.workflow_run.head_sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          current=$(gh api repos/${{ github.repository }}/commits/main --jq .sha)
+          echo "gate_sha=$GATE_SHA"
+          echo "main_sha=$current"
+          test "$GATE_SHA" = "$current"
+      - name: Dispatch the real EP01 Story Runner
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh workflow run ep01-story-runner.yml --ref main
+          echo 'EP01_PROMOTION=DISPATCHED_AFTER_SHORT_E2E_PASS'

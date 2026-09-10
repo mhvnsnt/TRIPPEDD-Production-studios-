@@ -24,3 +24,29 @@ scripts/production/build-network-commercial.py is the active deterministic mixed
 
 ## Working principle
 AI is a co-author/tool, not a replacement for the user's source material or taste. Preserve authorship, source evidence, checkpoints, artifacts, and measurable QC.
+
+
+## 2026-09-10 — V4 commercial hardening / connector-independent execution
+
+User directed the production pipeline to continue, harden the commercial, and stop treating the ChatGPT↔GitHub execution channel as the production dependency.
+
+Verified the GitHub connector is operational again: repository access is currently authenticated with admin/maintain/push permissions for `mhvnsnt/TRIPPEDD-Production-studios-`.
+
+Creative correction applied:
+- Replaced the weak V3 commercial source with an authored four-show kinetic motion-graphics source.
+- Commercial scope is locked to THE BASTARD, IN THE BUSHES, GOD MOLECULE, and TRIPPEDD.
+- Smoke & Mirrors is explicitly forbidden.
+- Source is 1920×1080, 24fps, 20 seconds, with moving geometric layers, scan/grid/noise treatment, animated title positioning, and a deterministic 48kHz stereo synthetic music bed.
+- Fixed an audio graph indexing defect before proof execution.
+
+Hardening intent:
+- Keep the existing source checkpoint, QC, provenance, OTIO and artifact gates.
+- Require creative motion evidence and audible audio evidence before a commercial can claim PASS.
+- Preserve the connector-independent GitHub App/JIT runner architecture as an execution escape hatch, not a security bypass.
+- Continue toward the real EP01 autonomous/story-runner cuts only after the commercial proof is genuinely green.
+
+Commits:
+- `54a43192fa46fe2d98f42b48cf3159ca5793f2f8` — initial V4 authored motion/audio rebuild.
+- `ac47ba848d0ed05798f44da4c78e28f6e0073941` — corrected commercial audio input indexing.
+
+Important: the workflow run was not yet observable from the commit's workflow-run endpoint at the time of this log update, so no PASS is being claimed until an actual run and artifact are verified.

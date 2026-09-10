@@ -19,6 +19,8 @@ on:
       - 'supervisor/**'
       - 'requirements-autonomous-bridge.txt'
       - 'install/**'
+      - 'opensource/render-stack/**'
+      - 'tools/opensource/**'
 
 concurrency:
   group: production-short-e2e-gate
@@ -42,7 +44,7 @@ jobs:
           set -euo pipefail
           {
             echo "## Production Run ETA"
-            echo "- Expected completion: **~8 minutes**"
+            echo "- Expected completion: **~8 minutes on the canonical runner; measured runtime wins over estimates.**"
             echo "- Hard ceiling: **20 minutes**"
             echo "- Salvage policy: source/evidence checkpoint is uploaded before editorial work; a stuck run is replaced rather than babysat."
             echo "- Telemetry policy: every major stage reports measured progress and elapsed time."
@@ -106,6 +108,14 @@ jobs:
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
+      - name: Provision full open-source render backends
+        run: |
+          set -euo pipefail
+          bash tools/opensource/bootstrap-render-stack.sh
+          test -d .trippedd/opensource/flamenco/.git
+          test -d .trippedd/opensource/opencue/.git
+          echo "FLAMENCO_UPSTREAM=$(git -C .trippedd/opensource/flamenco rev-parse HEAD)"
+          echo "OPENCUE_UPSTREAM=$(git -C .trippedd/opensource/opencue rev-parse HEAD)"
       - name: Verify open-source stack before production work
         run: |
           set -euo pipefail
@@ -113,6 +123,7 @@ jobs:
           mediainfo --Version
           exiftool -ver
           convert -version | head -n 1
+          blender --version | head -n 2
       - name: Initialize run-local production ledger
         run: |
           set -euo pipefail
@@ -184,7 +195,7 @@ jobs:
           TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
           EP01_MAX_CLIPS: '1'
           EP01_CLIP_PADDING: '0'
-          EP01_RENDER_CONCURRENCY: '1'
+          EP01_RENDER_CONCURRENCY: ${{ vars.TRIPPEDD_RENDER_CONCURRENCY || '4' }}
         run: |
           echo "STAGE_ETA assembly=~5m hard_timeout=10m"
           timeout 10m bun run pilot:build:public

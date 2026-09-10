@@ -2,9 +2,7 @@
 set -euo pipefail
 
 # Fast EP01 gate: prove the source transport and manifest before spending
-# runner time on Blender/rendering. This is deliberately conservative: it
-# never claims that a manifest is downloadable until an actual media probe
-# succeeds, and it never deletes an existing cache.
+# runner time on Blender/rendering. Never delete an existing cache.
 
 : "${TRIPPEDD_DRIVE_FOLDER_URL:?TRIPPEDD_DRIVE_FOLDER_URL is required}"
 CACHE_DIR="${TRIPPEDD_MEDIA_CACHE:-.trippedd/media}"
@@ -37,8 +35,8 @@ PY
 
 existing=$(find "$CACHE_DIR" -type f \( -iname '*.mp4' -o -iname '*.mov' -o -iname '*.m4v' -o -iname '*.webm' -o -iname '*.avi' -o -iname '*.mkv' -o -iname '*.mpg' -o -iname '*.mpeg' -o -iname '*.3gp' -o -iname '*.wav' -o -iname '*.mp3' -o -iname '*.m4a' \) -size +0c | wc -l)
 echo "PREFLIGHT_CACHE_MEDIA=$existing"
-if [ "$existing" -gt 0 ]; then
-  echo 'PREFLIGHT_SOURCE_TRANSPORT=cache-ready'
+if [ "$existing" -ge "$EXPECTED" ]; then
+  echo 'PREFLIGHT_SOURCE_TRANSPORT=cache-complete'
   echo 'PREFLIGHT_STATUS=PASS'
   exit 0
 fi
@@ -57,7 +55,6 @@ if [ "$code" -ne 0 ] || [ ! -s "$probe" ]; then
   exit 21
 fi
 
-# Validate the probe is actually media before warming the durable cache.
 ffprobe -v error -show_entries format=duration,size -of json "$probe" > /tmp/trippedd-preflight/probe.ffprobe.json
 mv "$probe" "$CACHE_DIR/$(basename "$PROBE_NAME")"
 echo 'PREFLIGHT_SOURCE_TRANSPORT=public-download-ok'

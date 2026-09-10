@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Production stack verification. Every component used as a production
-dependency must be executable/importable before a run is allowed to proceed.
+# dependency must be executable/importable before a run is allowed to proceed.
 # Missing telemetry or a missing tool is a hard failure, never a soft PASS.
 # Open-source versions are checked at the gate so a successful run is
 # reproducible against the intended production stack, not merely importable.

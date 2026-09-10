@@ -25,10 +25,16 @@ jobs:
           echo "gate_sha=$GATE_SHA"
           echo "main_sha=$current"
           test "$GATE_SHA" = "$current"
+
       - name: Dispatch the real EP01 Story Runner
         env:
           GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          gh workflow run ep01-story-runner.yml --ref main
+          gh api --method POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            /repos/"$REPO"/actions/workflows/ep01-story-runner.yml/dispatches \
+            -f ref=main
           echo 'EP01_PROMOTION=DISPATCHED_AFTER_SHORT_E2E_PASS'

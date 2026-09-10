@@ -218,12 +218,7 @@ jobs:
       - name: Write immutable proof manifest
         run: |
           set -euo pipefail
-          sha256sum \\
-            public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4 \\
-            public/production/TRIPPEDD-NETWORK-IDENT-E2E.json \\
-            public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio \\
-            public/production/production-artifact-qc.json \\
-            > public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
+          sha256sum public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4 public/production/TRIPPEDD-NETWORK-IDENT-E2E.json public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio public/production/production-artifact-qc.json > public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
           printf '%s\\n' "run_id=$GITHUB_RUN_ID" "run_attempt=$GITHUB_RUN_ATTEMPT" "sha=$GITHUB_SHA" "completed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
       - name: Preserve failure diagnostics
         if: always()

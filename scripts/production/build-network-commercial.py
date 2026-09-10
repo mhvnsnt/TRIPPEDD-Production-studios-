@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 """Build the authored TRIPPEDD Network 20-second mixed-media ident.
 
-This is intentionally a real animated ident, not a static title card:
-- four 5-second visual worlds, one for each commissioned show
-- kinetic 2D/2.5D geometry and typography
-- show-specific visual motifs
-- TRIPPEDD wordmark only; no unrequested studio/show names
-- generated musical bed with bass, pulse, arpeggio and transition hits
-- 1920x1080, 24fps, 48kHz stereo AAC
+Four animated show worlds only:
+THE BASTARD, IN THE BUSHES, GOD MOLECULE, and TRIPPEDD.
+The ident is kinetic 2D/2.5D graphics with an actual musical bed.
 """
 import os
 import subprocess
@@ -19,7 +15,6 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
-# Only these four shows are allowed in the network ident.
 SHOWS = [
     ("THE BASTARD", "live / absurd / dangerous", "4A0710", "FF6B35"),
     ("IN THE BUSHES", "wild / strange / unscripted", "063B2B", "B7FF4A"),
@@ -28,9 +23,6 @@ SHOWS = [
 ]
 
 def scene(index, bg, fg, title, subtitle):
-    # Every scene has multiple independently moving layers. The motion is
-    # deliberately graphic/rough rather than a slideshow: sliding blocks,
-    # pulsing frames, a moving grid, scanlines, and kinetic type.
     motions = [
         (
             "drawbox=x='mod(420*t-500,w+900)-450':y='h/2-150':w=300:h=300:color=#%s@0.85:t=fill,"
@@ -54,7 +46,6 @@ def scene(index, bg, fg, title, subtitle):
         ),
     ][index] % (fg, fg, fg)
 
-    # A large central title card moves and breathes over the kinetic world.
     return (
         f"color=c=#{bg}:s=1920x1080:r=24:d=5,"
         f"{motions},"
@@ -77,27 +68,23 @@ def scene(index, bg, fg, title, subtitle):
 filters = [scene(i, bg, fg, title, subtitle) for i, (title, subtitle, bg, fg) in enumerate(SHOWS)]
 filter_complex = ";".join([f"{f}[v{i}]" for i, f in enumerate(filters)] + ["[v0][v1][v2][v3]concat=n=4:v=1:a=0[v]"])
 
-# A musical bed, not a diagnostic hum: kick-like transients, sub bass,
-# stereo-width pulse, arpeggio notes, and four transition accents.
-# The signal is intentionally audible but leaves headroom for later mix work.
-audio = (
-    "aevalsrc="
-    "0.055*sin(2*PI*55*t)*(0.35+0.65*(0.5+0.5*sin(2*PI*2*t)))"
-    "+0.035*sin(2*PI*110*t)"
-    "+0.025*sin(2*PI*(220+55*sin(2*PI*t/5))*t)"
-    "+0.018*sin(2*PI*(330+110*sin(2*PI*t/2.5))*t)"
-    "+0.020*sin(2*PI*440*t)*(0.5+0.5*sin(2*PI*3*t))"
-    "+0.035*exp(-70*mod(t,1))*sin(2*PI*95*t)"
-    "+0.028*exp(-55*mod(t,0.5))*sin(2*PI*180*t)"
-    ":s=48000:d=20,"
-    "highpass=f=35,lowpass=f=11000,volume=1.8"
-)
+# Use separate robust lavfi sine sources rather than a fragile aevalsrc
+# expression. The result is a deliberately audible synthetic music bed:
+# sub bass + fifth + octave + bright arpeggio, with enough headroom for mix.
+audio_freqs = [55, 82.41, 110, 164.81, 220, 329.63, 440]
+audio_inputs = []
+audio_labels = []
+for i, freq in enumerate(audio_freqs):
+    audio_inputs += ["-f", "lavfi", "-i", f"sine=frequency={freq}:sample_rate=48000:duration=20"]
+    audio_labels.append(f"[{i}:a]volume={0.11 if i < 2 else 0.065}[a{i}]")
+mix_inputs = "".join(f"[a{i}]" for i in range(len(audio_freqs)))
+audio_graph = ";".join(audio_labels + [f"{mix_inputs}amix=inputs={len(audio_freqs)}:duration=longest:normalize=0,volume=2.0,highpass=f=35,lowpass=f=10000,aresample=48000[a]"])
 
 cmd = [
     "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
-    "-f", "lavfi", "-i", audio,
-    "-filter_complex", filter_complex,
-    "-map", "[v]", "-map", "0:a:0", "-t", "20",
+    *audio_inputs,
+    "-filter_complex", filter_complex + ";" + audio_graph,
+    "-map", "[v]", "-map", "[a]", "-t", "20",
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
     "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
     "-ar", "48000", "-ac", "2", "-movflags", "+faststart", str(OUT)

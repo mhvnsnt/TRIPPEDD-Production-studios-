@@ -1,60 +1,86 @@
-# 2026-09-10 — Episode Recovery / Trip Network Slate / God Molecule
+# 2026-09-10 — Episode Recovery / TRIPPEDD network Slate / God Molecule / Short Ident Gate
 
 ## Status
 
 `RECONSTRUCTED FROM AVAILABLE CONTEXT`
 
-This record preserves the materially relevant production-room direction available to the connected agent. It is not a fabricated verbatim transcript.
+This record preserves materially relevant production-room direction available to the connected agent. It is not a fabricated verbatim transcript.
+
+## Canonical naming
+
+- **Show:** Trippedd
+- **Network:** TRIPPEDD network
+- **Studio:** TRIPPEDD Production studios
+
+These names are distinct and should remain distinct in repository documentation, production logs, and future generated artifacts.
 
 ## USER / SHOWRUNNER
 
-The production priority is to stop getting trapped in diagnostics and actually get the episode made. The TRIPPEDD Production Studios / Trip Network already has a programming lineup, including **The Bastard**, **In the Bushes**, and **Tripped**. **God Molecule** is being developed as a recurring Tripped segment with potential to become its own show/property. The network needs to move from building infrastructure to producing finished episodes.
+The production priority is to stop getting trapped in diagnostics and actually get the episode made. The TRIPPEDD Production studios / TRIPPEDD network has a programming lineup including **The Bastard**, **In the Bushes**, and **Trippedd**. **God Molecule** is being developed as a recurring Trippedd segment with potential to become its own show/property. Its Mars visual direction and shader work remain part of the development record.
 
-The show-development history matters: the properties were developed in the same broader creator-owned studio/network context, and their ideas should remain in the production record instead of disappearing into individual chat sessions.
+The immediate infrastructure objective is hardening: pull in useful open-source production tooling, eliminate known failure modes, and prove the entire production path on a short piece before spending a long render window on a real episode.
 
-The immediate ask is to get the episode pipeline running, preserve the production conversation, and make sure the God Molecule material and the wider Trip Network slate are represented in GitHub.
+## SHORT PROOF DECISION
 
-## CHATGPT / AGENT
+The 10–20 second proof is not a generic test card. It will be a **TRIPPEDD network commercial/ident** inspired by the network-card idea: a recognizable recurring network mark/card language that can mutate through animation, typography, psychedelic/surreal treatment, texture, material, and rapid transitions while briefly sampling the visual worlds of the network's properties.
 
-Repository verification identified the connected production repository as:
+The initial concept pool is:
 
-`mhvnsnt/TRIPPEDD-Production-studios-`
+- **Trippedd** — umbrella comedy identity / mixed-format energy.
+- **The Bastard** — established reusable terminal/generated material.
+- **In the Bushes** — established network property.
+- **God Molecule** — developing property/segment, with the existing Mars/shader direction treated as development reference rather than fabricated footage.
 
-The repository is public, on `main`, and the connected GitHub access has push permission. The repository already contains a chronological production-conversation archive and explicitly requires materially relevant production conversations to be captured there.
+The piece should read as one coherent **TRIPPEDD network** ident, not a slideshow and not a fake episode.
 
-The current EP01 pipeline is not failing because Blender, Story Runner, QC, or the recovery machinery is fundamentally broken. The latest source gate is a confirmed external source-transport failure: the public Drive/gdown path can reach the folder but Google is refusing retrieval of the first media file. Neither authenticated rclone credentials nor browser cookies are currently configured in GitHub Actions. The repository deliberately refuses to label that condition as a healthy source or burn another long render run against it.
+## HARD GATE
 
-The latest gate result is recorded as run `34480885921`. The current production system already preserves completed subjectivity chunks, resumable/cached Bastard work, progress/heartbeat telemetry, and final MP4/JSON/OTIO validation. The live telemetry channel is GitHub issue `#16`.
+No real episode run/cut is to be launched until the short proof completes the hardened end-to-end path and passes final QC.
 
-## Decisions / actions recorded in this entry
+The proof is required to exercise, as applicable:
 
-1. **EP01 remains the immediate production priority.** Do not substitute infrastructure work for actually finishing the episode.
-2. **The Trip Network slate is canonical production context.** The Bastard, In the Bushes, and Tripped are established properties in the current slate.
-3. **God Molecule is canonical development context.** It is a recurring Tripped segment with potential to become a standalone property.
-4. **God Molecule visual-development context must persist.** Existing Mars/God Molecule visual discussion and shader work are development assets/conversation context, not disposable chat material. New image generation is not part of this recovery entry.
-5. **The production conversation archive remains append-oriented.** This record is a reconstruction from available context and is labeled accordingly rather than pretending to be a verbatim transcript.
-6. **The production machine must finish the current production while making future productions easier.** Network expansion and open-source capability work remain subordinate to preserving and finishing active production state.
+1. deterministic source materialization;
+2. source analysis and evidence generation;
+3. editorial assembly;
+4. generated/animated material;
+5. Blender/headless rendering;
+6. FFmpeg media assembly;
+7. JSON and OpenTimelineIO output;
+8. final MP4 technical QC;
+9. audio/video/duration/resolution/FPS validation;
+10. machine-readable progress/telemetry contracts; and
+11. artifact preservation for inspection.
 
-## Current hard blocker
+A passing unit test, typecheck, or workflow-start status is not sufficient proof.
 
-EP01 source transport is the remaining gate. The repository's documented recovery paths are:
+## OPEN-SOURCE HARDENING DIRECTION
 
-- authenticated rclone Google Drive transport;
-- browser-authenticated gdown cookies.
+The production stack continues to prioritize mature open-source components rather than proprietary black boxes. Current and planned components include FFmpeg, Blender, PySceneDetect, OpenCV, faster-whisper, OpenTimelineIO, rclone, MediaInfo, and OpenColorIO. Motion Canvas is also a candidate for a dedicated 2D/vector animation layer because its TypeScript animation model fits the network-ident/graphics use case; it should be integrated only if it improves the production path without introducing unnecessary dependency fragility.
 
-The source gate should pass before the full Story Runner is launched again. This prevents repeating expensive visual work while the actual media source is inaccessible.
+OpenColorIO is particularly relevant to the network-ident layer because consistent color management matters when rapidly mixing the visual languages of multiple properties. MediaInfo is useful as a second independent technical-metadata/QC view alongside ffprobe.
+
+## RECOVERY / PRODUCTION SAFETY
+
+Real production remains fail-closed. Source completeness cannot be inferred from a successful directory listing; missing or throttled media remains UNKNOWN/BLOCKED. Completed render chunks and valid cached artifacts must be salvaged rather than regenerated blindly. Telemetry must be measured; missing telemetry is not RUNNING.
+
+The real EP01 workflow is gated behind the short proof. The short proof itself must not be confused with completion of EP01.
+
+## CHAT STREAM RESILIENCE
+
+God Molecule development and other materially relevant creative decisions are to be persisted in the GitHub production conversation archive so a ChatGPT stream interruption does not destroy production context. Chat-stream errors are treated as a separate product/session reliability problem, not as evidence that the production repository lost its state.
 
 ## Related production artifacts
 
-- `docs/TRIPPEDD-NETWORK-STUDIO-OPERATING-MODEL.md`
 - `docs/TRIPPEDD-NETWORK-SLATE.md`
+- `docs/TRIPPEDD-NETWORK-STUDIO-OPERATING-MODEL.md`
 - `docs/EP01-SOURCE-UNBLOCK.md`
 - `docs/production-conversations/README.md`
-- `docs/production-conversations/2026-09-10-ep01-source-gate-result.md`
-- `.github/workflows/ep01-source-transport-gate.yml`
+- `.github/workflows/production-short-e2e-gate.yml`
+- `.github/workflows/promote-short-gate-to-ep01.yml`
 - `.github/workflows/ep01-story-runner.yml`
+- `scripts/production/verify-oss-stack.sh`
 - GitHub issue `#16` — TRIPPEDD Live Production Telemetry
 
 ## Next production objective
 
-**Unblock source transport, pass the source gate, salvage every valid prior artifact, run the real EP01 Story Runner cut, validate the final deliverables, and only then move the machine forward to the next property/episode.**
+**Finish the hardening pass, then run the TRIPPEDD network 10–20 second ident as the end-to-end proof. Only after that proof is genuinely green should the real EP01 Story Runner be promoted/launched.**

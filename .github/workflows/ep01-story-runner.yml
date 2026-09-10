@@ -151,9 +151,24 @@ jobs:
       - name: Install media stack
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg mediainfo tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+          sudo apt-get install -y ffmpeg mediainfo tesseract-ocr curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 rclone
+          rclone version
           python -m pip install --upgrade pip
           python -m pip install 'gdown>=6.2.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
+      - name: Configure optional authenticated rclone Drive remote
+        env:
+          TRIPPEDD_RCLONE_CONFIG_B64: ${{ secrets.TRIPPEDD_RCLONE_CONFIG_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -n "${TRIPPEDD_RCLONE_CONFIG_B64:-}" ]; then
+            mkdir -p "$HOME/.config/rclone"
+            printf '%s' "$TRIPPEDD_RCLONE_CONFIG_B64" | base64 --decode > "$HOME/.config/rclone/rclone.conf"
+            chmod 600 "$HOME/.config/rclone/rclone.conf"
+            echo 'Authenticated rclone config installed (credentials redacted).'
+            rclone listremotes | sed 's/:$/: [configured]/'
+          else
+            echo 'No TRIPPEDD_RCLONE_CONFIG_B64 secret configured; rclone recovery will remain disabled and gdown/cookies will be used.'
+          fi
       - name: Install Blender
         env:
           BLENDER_CACHE_HIT: ${{ steps.blender-cache.outputs.cache-hit }}
@@ -210,6 +225,8 @@ jobs:
           EP01_MAX_CLIPS: '24'
           EP01_CLIP_PADDING: '1.25'
           EP01_RENDER_CONCURRENCY: '4'
+          TRIPPEDD_RCLONE_REMOTE: ${{ vars.TRIPPEDD_RCLONE_REMOTE }}
+          TRIPPEDD_RCLONE_PATH: ${{ vars.TRIPPEDD_RCLONE_PATH }}
         run: bash scripts/production/watch-progress.sh --progress-file "public/production/.progress/EP01-${{ github.run_id }}.json" -- bun run pilot:build:public
       - name: Verify Story Runner
         run: |

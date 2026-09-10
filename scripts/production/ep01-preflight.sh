@@ -13,6 +13,24 @@ command -v python >/dev/null || { echo 'PREFLIGHT_FAIL python missing'; exit 2; 
 command -v ffprobe >/dev/null || { echo 'PREFLIGHT_FAIL ffprobe missing'; exit 2; }
 python -m gdown --version
 
+# Prefer the authenticated Drive API transport when configured. This does not
+# bypass Google quotas; it uses credentials the operator explicitly supplied.
+if command -v rclone >/dev/null 2>&1 && [ -n "${TRIPPEDD_RCLONE_REMOTE:-}" ] && [ -n "${TRIPPEDD_RCLONE_PATH:-}" ]; then
+  remote="${TRIPPEDD_RCLONE_REMOTE}:${TRIPPEDD_RCLONE_PATH}"
+  if rclone lsf "$remote" --files-only --recursive > /tmp/trippedd-preflight/rclone-list 2>/tmp/trippedd-preflight/rclone.err; then
+    rclone_media=$(grep -Eic '\.(mp4|mov|m4v|webm|avi|mkv|mpg|mpeg|3gp|wav|mp3|m4a)$' /tmp/trippedd-preflight/rclone-list || true)
+    echo "PREFLIGHT_RCLONE_MEDIA=$rclone_media"
+    if [ "$rclone_media" -ge "$EXPECTED" ]; then
+      echo 'PREFLIGHT_SOURCE_TRANSPORT=rclone-ready'
+      echo 'PREFLIGHT_STATUS=PASS'
+      exit 0
+    fi
+  else
+    echo 'PREFLIGHT_RCLONE=unavailable-or-unauthorized'
+    tail -n 20 /tmp/trippedd-preflight/rclone.err || true
+  fi
+fi
+
 GDOWN_COOKIE_ARGS=()
 if [ -n "${TRIPPEDD_DRIVE_COOKIES_FILE:-}" ] && [ -s "$TRIPPEDD_DRIVE_COOKIES_FILE" ]; then
   GDOWN_COOKIE_ARGS=(--cookies "$TRIPPEDD_DRIVE_COOKIES_FILE")

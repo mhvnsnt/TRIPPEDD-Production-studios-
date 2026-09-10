@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "name": "TRIPPEDD Studio Capability Map",
+  "model": "studio-domain-capability-pipeline-stage-operation-artifact-evidence",
+  "axes": {
+    "vertical": "depth: intent through verified artifact",
+    "horizontal": "breadth: capability reuse across domains, formats, agents and compute"
+  },
+  "domains": [
+    "development-programming",
+    "source-ingest",
+    "media-intelligence",
+    "editorial",
+    "production-runners",
+    "visual-production",
+    "audio-sound-finishing",
+    "color-image-finishing",
+    "encoding-delivery",
+    "qc-verification",
+    "compute-orchestration",
+    "observability-telemetry",
+    "assets-interchange-provenance",
+    "storage-artifact-lifecycle",
+    "agents-automation",
+    "frontend-ux",
+    "visual-identity-system",
+    "network-format-expansion"
+  ],
+  "crossCutting": [
+    "reliability",
+    "recovery",
+    "telemetry",
+    "performance",
+    "caching",
+    "provenance",
+    "reproducibility",
+    "interoperability",
+    "security",
+    "accessibility"
+  ],
+  "maturity": [
+    "discovered",
+    "researched",
+    "candidate",
+    "integrated",
+    "smoke-tested",
+    "validated",
+    "production",
+    "quarantined",
+    "deprecated",
+    "rejected"
+  ],
+  "integrationPolicy": {
+    "activeProductionProtected": true,
+    "blindReruns": false,
+    "blindMerges": false,
+    "unknownTelemetryFailsClosed": true,
+    "preserveSalvageableWork": true,
+    "compareBranchesAgainstCurrentMain": true
+  },
+  "verticalCompletionContract": [
+    "intent",
+    "inputs",
+    "execution",
+    "measured-progress",
+    "artifact",
+    "validation",
+    "provenance",
+    "recovery-path",
+    "usable-output"
+  ],
+  "openSourcePromotionGates": [
+    "license-and-provenance-review",
+    "install-or-reprovision",
+    "real-input-smoke-test",
+    "production-boundary-integration",
+    "measured-output",
+    "recovery-test",
+    "canonical-artifact-compatibility",
+    "regression-check"
+  ]
+}

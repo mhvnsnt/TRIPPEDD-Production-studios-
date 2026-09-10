@@ -12,11 +12,13 @@ concurrency:
 
 permissions:
   contents: read
+  issues: write
 
 env:
   BLENDER_VERSION: '4.5.13'
   BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
   TRIPPEDD_PROGRESS_STALL_SECONDS: '180'
+  TRIPPEDD_TELEMETRY_ISSUE_NUMBER: '16'
 
 jobs:
   render-subjectivity:
@@ -182,6 +184,7 @@ jobs:
         run: bun install --no-save
       - name: Build Story Runner cut
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TRIPPEDD_RUN_ID: ${{ github.run_id }}
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media

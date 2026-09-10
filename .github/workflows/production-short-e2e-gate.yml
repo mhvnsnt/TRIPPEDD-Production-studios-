@@ -251,3 +251,4 @@ jobs:
           retention-days: 30
 
 # Production proof workflow is intentionally triggered by this change.
+# Promotion is gated on this run's exact main SHA and dispatches EP01 via the Actions API.

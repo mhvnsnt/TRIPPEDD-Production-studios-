@@ -26,7 +26,7 @@ jobs:
           set -euo pipefail
           now=$(date -u +%s)
           echo "WATCHDOG_STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          echo "POLICY: commercial ETA 8m / hard 20m; episode ETA 30m / hard 60m; salvage checkpoints before restart."
+          echo "POLICY: commercial ETA 8m / stale 12m / hard 20m; episode ETA 30m / stale 60m; max 3 attempts."
 
           check_workflow() {
             local workflow="$1"
@@ -37,50 +37,66 @@ jobs:
 
             while IFS= read -r run; do
               [ -z "$run" ] && continue
-              local run_id status attempt created age
+              local run_id status attempt created updated idle_age total_age conclusion
               run_id=$(jq -r '.databaseId' <<<"$run")
               status=$(jq -r '.status' <<<"$run")
               attempt=$(jq -r '.attempt // 1' <<<"$run")
               created=$(jq -r '.createdAt' <<<"$run")
-              age=$((now-$(date -d "$created" +%s)))
-              echo "WATCH $label run=$run_id status=$status attempt=$attempt age=${age}s"
+              updated=$(jq -r '.updatedAt' <<<"$run")
+              conclusion=$(jq -r '.conclusion // empty' <<<"$run")
+              idle_age=$((now-$(date -d "$updated" +%s)))
+              total_age=$((now-$(date -d "$created" +%s)))
+              echo "WATCH $label run=$run_id status=$status attempt=$attempt idle=${idle_age}s total=${total_age}s head=$(jq -r '.headSha' <<<\"$run\")"
 
               if [ "$status" = "completed" ]; then
-                if { [ "$(jq -r '.conclusion // empty' <<<"$run")" = "failure" ] || [ "$(jq -r '.conclusion // empty' <<<"$run")" = "timed_out" ]; } && [ "$attempt" -lt 3 ]; then
+                if { [ "$conclusion" = "failure" ] || [ "$conclusion" = "timed_out" ]; } && [ "$attempt" -lt 3 ]; then
                   echo "RESTART failed/timed-out $label run=$run_id attempt=$attempt -> $((attempt+1))"
                   gh run rerun "$run_id" --failed --repo "$REPO"
                 fi
                 continue
               fi
 
-              if [ "$age" -ge "$stale_seconds" ] && [ "$attempt" -lt 3 ]; then
-                echo "STALE $label run=$run_id age=${age}s >= ${stale_seconds}s; salvage checkpoint artifacts, cancel, restart"
+              # Use updatedAt, not createdAt: an active render may legitimately run
+              # longer than its target ETA while still emitting progress/heartbeats.
+              # A run is stale only when GitHub has stopped updating it for the full
+              # watchdog envelope. This prevents killing healthy long renders.
+              if [ "$idle_age" -ge "$stale_seconds" ] && [ "$attempt" -lt 3 ]; then
+                echo "STALE $label run=$run_id idle=${idle_age}s >= ${stale_seconds}s total=${total_age}s"
                 artifacts=$(gh api "/repos/$REPO/actions/runs/$run_id/artifacts?per_page=100" --jq '[.artifacts[] | select(.expired == false)] | map(.name) | join(", ")')
                 echo "SALVAGE_ARTIFACTS=${artifacts:-none}"
+                echo "SALVAGE_POLICY=completed GitHub artifacts remain attached to the run; checkpoint stages upload before expensive downstream work."
+
                 gh run cancel "$run_id" --repo "$REPO" || true
-                for i in $(seq 1 12); do
+                cancelled=false
+                for i in $(seq 1 24); do
                   state=$(gh run view "$run_id" --repo "$REPO" --json status --jq '.status' || true)
-                  [ "$state" = "completed" ] && break
+                  if [ "$state" = "completed" ]; then
+                    cancelled=true
+                    break
+                  fi
                   sleep 5
                 done
-                gh run rerun "$run_id" --repo "$REPO"
+
+                if [ "$cancelled" = true ]; then
+                  echo "RESTARTING $label run=$run_id after confirmed cancellation"
+                  gh run rerun "$run_id" --repo "$REPO"
+                else
+                  echo "RECOVERY_DEFERRED $label run=$run_id cancellation not confirmed within 120s"
+                fi
               fi
             done < <(jq -c '.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")' <<<"$runs")
           }
 
-          # The short commercial proof is expected to finish in ~8 minutes.
-          # At 12 minutes the watchdog treats it as stuck and restarts it.
           check_workflow production-short-e2e-gate.yml 720 "commercial-proof"
-
-          # Full episode render paths get a larger envelope, but never wait forever.
           check_workflow ep01-story-runner.yml 3600 "story-runner"
           check_workflow ep01-autonomous.yml 3600 "autonomous-cut"
 
           {
             echo "## Production Watchdog"
-            echo "- Commercial expected ETA: ~8 minutes"
-            echo "- Commercial stale threshold: 12 minutes"
-            echo "- Episode stale threshold: 60 minutes"
+            echo "- Commercial target ETA: ~8m"
+            echo "- Commercial stale threshold: 12m of no run update"
+            echo "- Commercial hard ceiling: 20m job timeout"
+            echo "- Episode stale threshold: 60m of no run update"
             echo "- Retry budget: 3 attempts"
-            echo "- Policy: preserve/upload completed checkpoints, cancel stale work, restart automatically."
+            echo "- Recovery: enumerate retained artifacts, cancel stale run, confirm cancellation, rerun."
           } >> "$GITHUB_STEP_SUMMARY"

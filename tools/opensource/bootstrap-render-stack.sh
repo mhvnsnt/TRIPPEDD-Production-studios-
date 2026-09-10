@@ -15,11 +15,28 @@ clone_or_update() {
   fi
 }
 
-# Full upstream projects, pinned by release/tag. These remain independently
-# inspectable and are not reduced to copied snippets.
+# Full upstream working trees. They stay independent under the TRIPPEDD
+# umbrella and are integrated through adapters rather than copied snippets.
+# Stable release refs are used where the upstream publishes them; moving
+# branches are explicitly recorded in the run manifest when no stable tag is
+# available. A production run fails closed if a required backend is missing.
 clone_or_update "flamenco" "https://projects.blender.org/studio/flamenco.git" "v3.9.3"
 clone_or_update "opencue" "https://github.com/AcademySoftwareFoundation/OpenCue.git" "v1.19.1"
+clone_or_update "opentimelineio" "https://github.com/AcademySoftwareFoundation/OpenTimelineIO.git" "v0.18.1"
+clone_or_update "opencolorio" "https://github.com/AcademySoftwareFoundation/OpenColorIO.git" "main"
+clone_or_update "openimageio" "https://github.com/AcademySoftwareFoundation/OpenImageIO.git" "main"
+clone_or_update "openexr" "https://github.com/AcademySoftwareFoundation/openexr.git" "main"
+clone_or_update "openvdb" "https://github.com/AcademySoftwareFoundation/openvdb.git" "master"
+clone_or_update "natron" "https://github.com/NatronGitHub/Natron.git" "master"
+clone_or_update "kitsu" "https://github.com/cgwire/cgwire.git" "main"
+clone_or_update "comfyui" "https://github.com/comfyanonymous/ComfyUI.git" "master"
+clone_or_update "vapoursynth" "https://github.com/vapoursynth/vapoursynth.git" "master"
+clone_or_update "mlt" "https://github.com/mltframework/mlt.git" "master"
 
-echo "TRIPPEDD_OPEN_SOURCE_RENDER_STACK=READY"
-printf 'Flamenco: '; git -C "$ROOT/flamenco" rev-parse HEAD
-printf 'OpenCue: '; git -C "$ROOT/opencue" rev-parse HEAD
+{
+  echo "TRIPPEDD_OPEN_SOURCE_RENDER_STACK=READY"
+  for name in flamenco opencue opentimelineio opencolorio openimageio openexr openvdb natron kitsu comfyui vapoursynth mlt; do
+    printf '%s=' "$name"
+    git -C "$ROOT/$name" rev-parse HEAD
+  done
+} | tee "$ROOT/STACK-MANIFEST.txt"

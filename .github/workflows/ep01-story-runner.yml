@@ -43,6 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Cache Blender archive
+        id: blender-cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
@@ -55,10 +56,15 @@ jobs:
       - name: Install render tools
         run: sudo apt-get update && sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
       - name: Install Blender
+        env:
+          BLENDER_CACHE_HIT: ${{ steps.blender-cache.outputs.cache-hit }}
         run: |
           set -euo pipefail
           mkdir -p ~/.cache/trippedd
-          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then
+            curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          fi
+          test -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
@@ -88,6 +94,17 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
+      - name: Record production build identity
+        run: |
+          set -euo pipefail
+          {
+            echo "github_sha=${GITHUB_SHA}"
+            echo "github_ref=${GITHUB_REF}"
+            echo "workflow=${GITHUB_WORKFLOW}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "event=${GITHUB_EVENT_NAME}"
+          } | tee public-production-build-identity.txt
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
@@ -135,6 +152,7 @@ jobs:
           if [ "$BLENDER_CACHE_HIT" != 'true' ]; then
             curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
           fi
+          test -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
@@ -200,5 +218,18 @@ jobs:
             public/production/.progress/
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/ep01_bastard_tag.mp4
+            public-production-build-identity.txt
           if-no-files-found: error
           retention-days: 30
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EP01-STORY-RUNNER-FAILURE-${{ github.run_id }}
+          path: |
+            public-production-build-identity.txt
+            public/production/.progress/
+            public/production/EP01-STORY-RUNNER.json
+            public/production/EP01-STORY-RUNNER.otio
+          if-no-files-found: warn
+          retention-days: 14

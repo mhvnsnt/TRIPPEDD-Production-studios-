@@ -8,8 +8,6 @@ on:
 
 concurrency:
   group: ep01-story-runner-${{ github.ref }}
-  # Never cancel an active production run just because another dispatch arrives.
-  # Recovery must be evidence-gated and resumable, not destructive.
   cancel-in-progress: false
 
 permissions:
@@ -23,9 +21,54 @@ env:
   TRIPPEDD_PROGRESS_TELEMETRY_GRACE_SECONDS: '60'
   TRIPPEDD_TELEMETRY_PUBLISH_INTERVAL_SECONDS: '5'
   TRIPPEDD_TELEMETRY_ISSUE_NUMBER: '16'
+  TRIPPEDD_EXPECTED_SOURCE_FILES: '19'
 
 jobs:
+  preflight-source:
+    name: EP01 source transport preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache EP01 source media
+        uses: actions/cache@v4
+        with:
+          path: .trippedd/media
+          key: trippedd-ep01-source-media-v1-${{ runner.os }}
+      - name: Install preflight tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install 'gdown>=6.2.0'
+      - name: Configure optional Drive cookies
+        env:
+          TRIPPEDD_DRIVE_COOKIES_B64: ${{ secrets.TRIPPEDD_DRIVE_COOKIES_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -n "${TRIPPEDD_DRIVE_COOKIES_B64:-}" ]; then
+            printf '%s' "$TRIPPEDD_DRIVE_COOKIES_B64" | base64 --decode > /tmp/trippedd-cookies.txt
+            chmod 600 /tmp/trippedd-cookies.txt
+            echo 'Drive browser cookies configured for public-source recovery.'
+          else
+            echo 'No Drive cookie secret configured; using normal public gdown transport.'
+          fi
+      - name: Probe real source transport
+        env:
+          TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
+          TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_EXPECTED_SOURCE_FILES: ${{ env.TRIPPEDD_EXPECTED_SOURCE_FILES }}
+          TRIPPEDD_DRIVE_COOKIES_FILE: /tmp/trippedd-cookies.txt
+        run: |
+          set -euo pipefail
+          if [ ! -s "$TRIPPEDD_DRIVE_COOKIES_FILE" ]; then unset TRIPPEDD_DRIVE_COOKIES_FILE; fi
+          bash scripts/production/ep01-preflight.sh
+
   render-subjectivity:
+    needs: preflight-source
     name: Render subjectivity chunk ${{ matrix.chunk }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -67,9 +110,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p ~/.cache/trippedd
-          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then
-            curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
-          fi
+          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
           test -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
@@ -95,7 +136,7 @@ jobs:
           retention-days: 30
 
   build-ep01-story-runner:
-    needs: render-subjectivity
+    needs: [preflight-source, render-subjectivity]
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
@@ -167,7 +208,7 @@ jobs:
             echo 'Authenticated rclone config installed (credentials redacted).'
             rclone listremotes | sed 's/:$/: [configured]/'
           else
-            echo 'No TRIPPEDD_RCLONE_CONFIG_B64 secret configured; rclone recovery will remain disabled and gdown/cookies will be used.'
+            echo 'No TRIPPEDD_RCLONE_CONFIG_B64 secret configured; rclone recovery remains disabled and gdown/cookies remain fallback.'
           fi
       - name: Install Blender
         env:
@@ -175,9 +216,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p ~/.cache/trippedd
-          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then
-            curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
-          fi
+          if [ "$BLENDER_CACHE_HIT" != 'true' ]; then curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
           test -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
           grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
@@ -209,7 +248,7 @@ jobs:
       - name: Build Story Runner cut
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TRIPPEDD_RUN_ID: ${{ github.run_id }}
+          TRIPPEDD_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_SEGMENT_CACHE: ${{ github.workspace }}/.trippedd/media/assembly-segments
@@ -227,7 +266,7 @@ jobs:
           EP01_RENDER_CONCURRENCY: '4'
           TRIPPEDD_RCLONE_REMOTE: ${{ vars.TRIPPEDD_RCLONE_REMOTE }}
           TRIPPEDD_RCLONE_PATH: ${{ vars.TRIPPEDD_RCLONE_PATH }}
-        run: bash scripts/production/watch-progress.sh --progress-file "public/production/.progress/EP01-${{ github.run_id }}.json" -- bun run pilot:build:public
+        run: bash scripts/production/watch-progress.sh --progress-file "public/production/.progress/EP01-${{ github.run_id }}-${{ github.run_attempt }}.json" -- bun run pilot:build:public
       - name: Verify Story Runner
         run: |
           set -euo pipefail
@@ -256,7 +295,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: EP01-STORY-RUNNER-FAILURE-${{ github.run_id }}
+          name: EP01-STORY-RUNNER-FAILURE-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             public-production-build-identity.txt
             public/production/.progress/

@@ -13,6 +13,18 @@ command -v python >/dev/null || { echo 'PREFLIGHT_FAIL python missing'; exit 2; 
 command -v ffprobe >/dev/null || { echo 'PREFLIGHT_FAIL ffprobe missing'; exit 2; }
 python -m gdown --version
 
+# A complete verified runner cache is already a valid source transport. Check
+# it BEFORE touching the public Drive manifest. This is critical when Google
+# throttles the public folder listing/download path but a prior production run
+# successfully populated the immutable Actions cache.
+existing=$(find "$CACHE_DIR" -type f \( -iname '*.mp4' -o -iname '*.mov' -o -iname '*.m4v' -o -iname '*.webm' -o -iname '*.avi' -o -iname '*.mkv' -o -iname '*.mpg' -o -iname '*.mpeg' -o -iname '*.3gp' -o -iname '*.wav' -o -iname '*.mp3' -o -iname '*.m4a' \) -size +0c | wc -l)
+echo "PREFLIGHT_CACHE_MEDIA=$existing"
+if [ "$existing" -ge "$EXPECTED" ]; then
+  echo 'PREFLIGHT_SOURCE_TRANSPORT=cache-complete'
+  echo 'PREFLIGHT_STATUS=PASS'
+  exit 0
+fi
+
 # Prefer the authenticated Drive API transport when configured. This does not
 # bypass Google quotas; it uses credentials the operator explicitly supplied.
 if command -v rclone >/dev/null 2>&1 && [ -n "${TRIPPEDD_RCLONE_REMOTE:-}" ] && [ -n "${TRIPPEDD_RCLONE_PATH:-}" ]; then
@@ -58,14 +70,6 @@ with open('/tmp/trippedd-preflight/probe.env', 'w', encoding='utf8') as f:
     f.write('PROBE_URL=' + entries[0]['url'] + '\n')
     f.write('PROBE_NAME=' + entries[0]['path'].replace('/', '_') + '\n')
 PY
-
-existing=$(find "$CACHE_DIR" -type f \( -iname '*.mp4' -o -iname '*.mov' -o -iname '*.m4v' -o -iname '*.webm' -o -iname '*.avi' -o -iname '*.mkv' -o -iname '*.mpg' -o -iname '*.mpeg' -o -iname '*.3gp' -o -iname '*.wav' -o -iname '*.mp3' -o -iname '*.m4a' \) -size +0c | wc -l)
-echo "PREFLIGHT_CACHE_MEDIA=$existing"
-if [ "$existing" -ge "$EXPECTED" ]; then
-  echo 'PREFLIGHT_SOURCE_TRANSPORT=cache-complete'
-  echo 'PREFLIGHT_STATUS=PASS'
-  exit 0
-fi
 
 source /tmp/trippedd-preflight/probe.env
 probe="$CACHE_DIR/.preflight-$PROBE_NAME"

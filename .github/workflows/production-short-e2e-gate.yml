@@ -43,6 +43,25 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           echo "PRODUCTION_ETA_MINUTES=8"
           echo "PRODUCTION_HARD_TIMEOUT_MINUTES=20"
+      - name: Hardened runner preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "RUNNER_NAME=${RUNNER_NAME:-unknown}"
+          echo "RUNNER_OS=${RUNNER_OS:-unknown}"
+          echo "RUNNER_ARCH=${RUNNER_ARCH:-unknown}"
+          echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
+          echo "GITHUB_RUN_ATTEMPT=$GITHUB_RUN_ATTEMPT"
+          test -n "${GITHUB_SHA:-}"
+          if [[ "${TRIPPEDD_RUNNER_LABEL:-}" != "" ]]; then
+            echo "TRIPPEDD_RUNNER_LABEL is configured: $TRIPPEDD_RUNNER_LABEL"
+          else
+            echo "TRIPPEDD_RUNNER_LABEL not configured; proof gate uses GitHub-hosted fallback."
+          fi
+          command -v ffmpeg
+          command -v ffprobe
+          command -v python3
+          command -v bash
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Bun
@@ -196,6 +215,18 @@ jobs:
             public/production/production-artifact-qc.json \\
             > public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
           printf '%s\\n' "run_id=$GITHUB_RUN_ID" "run_attempt=$GITHUB_RUN_ATTEMPT" "sha=$GITHUB_SHA" "completed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
+      - name: Preserve failure diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-E2E-RUN-DIAGNOSTICS
+          path: |
+            /tmp/trippedd-run-ledger/**
+            /tmp/trippedd-e2e-source/**
+            public/production/production-artifact-qc.json
+          if-no-files-found: warn
+          retention-days: 30
+
       - name: Upload network commercial proof artifacts
         uses: actions/upload-artifact@v4
         with:

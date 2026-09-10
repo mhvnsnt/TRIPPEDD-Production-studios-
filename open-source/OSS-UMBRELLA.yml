@@ -1,0 +1,42 @@
+schema: trippedd-oss-umbrella/v1
+policy:
+  model: full-repo-vendored-at-runtime
+  rule: "Prefer complete mature upstream projects; integrate through explicit adapters and preserve upstream boundaries."
+  no_fake_available: true
+  license_audit_required: true
+projects:
+  - id: comfyui
+    repo: https://github.com/Comfy-Org/ComfyUI.git
+    role: AI-assisted image/video/3D/audio graph engine
+    activation: gpu-optional
+    license: GPL-3.0
+  - id: opencue
+    repo: https://github.com/AcademySoftwareFoundation/OpenCue.git
+    ref: v1.19.1
+    role: distributed render/job orchestration
+    activation: render-farm
+    license: Apache-2.0
+  - id: openassetio
+    repo: https://github.com/OpenAssetIO/OpenAssetIO.git
+    role: asset identity/interchange boundary
+    activation: asset-management
+    license: Apache-2.0
+  - id: opencolorio
+    repo: https://github.com/AcademySoftwareFoundation/OpenColorIO.git
+    role: color management
+    activation: always
+    license: BSD-3-Clause
+  - id: kdenlive
+    repo: https://github.com/KDE/kdenlive.git
+    role: editorial GUI/render fallback
+    activation: editor-optional
+    license: GPL-2.0-or-later
+wiring:
+  source: PhysicalSourceTimeline -> media adapters
+  analysis: ffprobe + PySceneDetect + OpenCV + faster-whisper + Tesseract
+  editorial: OpenTimelineIO -> native pilot assembly -> optional Kdenlive/MLT
+  render: Blender -> FFmpeg -> optional OpenCue dispatch
+  color: OpenColorIO
+  assets: OpenAssetIO
+  generative: ComfyUI -> explicit approved source/artifact handoff
+  observability: repo-observer -> production telemetry -> self-healer

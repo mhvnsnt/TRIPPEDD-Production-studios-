@@ -4,11 +4,12 @@ set -euo pipefail
 # Production law: a process is not considered actively running unless its
 # measured progress ledger is observable and heartbeating. Percentages, rates
 # and ETAs are derived from observed work; missing telemetry is UNKNOWN, not
-# healthy RUNNING. This prevents silent multi-hour black boxes.
+# healthy RUNNING.
 #
-# The watcher also mirrors snapshots to a durable GitHub Issues comment through
-# publish-live-telemetry.sh. The issue comment is a live retrieval channel when
-# GitHub's Actions log blob endpoint is unavailable during execution.
+# The publisher is intentionally long-lived. A one-shot publisher is not a
+# live telemetry channel: it can publish the first snapshot and then leave the
+# rest of a multi-minute/hour build invisible. The publisher now follows the
+# production process and refreshes the durable sinks until the process exits.
 
 if [ "$#" -lt 3 ] || [ "$1" != "--progress-file" ]; then
   echo "usage: $0 --progress-file <path> -- <command> [args...]" >&2
@@ -21,6 +22,7 @@ shift
 
 stall_seconds="${TRIPPEDD_PROGRESS_STALL_SECONDS:-180}"
 telemetry_grace_seconds="${TRIPPEDD_PROGRESS_TELEMETRY_GRACE_SECONDS:-60}"
+publish_interval_seconds="${TRIPPEDD_TELEMETRY_PUBLISH_INTERVAL_SECONDS:-5}"
 mkdir -p "$(dirname "$progress_file")"
 "$@" &
 pid=$!
@@ -33,9 +35,12 @@ cleanup() {
 }
 trap cleanup INT TERM EXIT
 
-# Do not make the production command wait on the GitHub API. The publisher is
-# a separate best-effort process; the measured ledger remains canonical.
-if [ -n "${GITHUB_TOKEN:-}" ] && command -v curl >/dev/null 2>&1 && command -v jq >/dev/null 2>&1 && [ -f "scripts/production/publish-live-telemetry.sh" ]; then
+# Durable live telemetry is best-effort and never blocks production. It can
+# mirror to the GitHub Issue channel and, when configured, to OSS observability
+# backends such as OpenTelemetry Collector / Prometheus Pushgateway.
+if [ -f "scripts/production/publish-live-telemetry.sh" ]; then
+  TRIPPEDD_TELEMETRY_PARENT_PID="$pid" \
+  TRIPPEDD_TELEMETRY_PUBLISH_INTERVAL_SECONDS="$publish_interval_seconds" \
   bash scripts/production/publish-live-telemetry.sh "$progress_file" >/tmp/trippedd-live-telemetry.log 2>&1 &
   publisher_pid=$!
 fi

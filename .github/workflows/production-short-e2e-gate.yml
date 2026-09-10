@@ -11,12 +11,12 @@ permissions:
   contents: read
 
 # HARD GATE: manual proof only. This workflow must pass before promotion can
-# dispatch a real episode. It is a TRIPPEDD network ident/commercial proof,
-# not a disposable synthetic test card.
+# dispatch a real episode. The source is one continuous authored network ident,
+# not a synthetic test card and not physical-source evidence.
 
 jobs:
   short-e2e:
-    name: 12-second TRIPPEDD network ident proof
+    name: 10-second TRIPPEDD network ident proof
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -59,35 +59,38 @@ jobs:
           mediainfo --Version
           exiftool -ver
           convert -version | head -n 1
-      - name: Create deterministic 12-second ident source fixture
+      - name: Build continuous authored network ident source
+        env:
+          TRIPPEDD_FRAME_START: '1'
+          TRIPPEDD_FRAME_END: '240'
         run: |
           set -euo pipefail
+          rm -rf production/network-ident/generated
+          blender -b --python production/network-ident/build_network_ident.py
+          test "$(find production/network-ident/generated/frames -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 240
+          ffmpeg -y -hide_banner -loglevel error \
+            -framerate 24 -start_number 1 \
+            -i production/network-ident/generated/frames/frame-%04d.png \
+            -f lavfi -i "sine=frequency=220:sample_rate=48000" \
+            -t 10 -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p \
+            -c:a aac -b:a 160k -shortest \
+            /tmp/trippedd-network-ident-source.mp4
           mkdir -p /tmp/trippedd-e2e-source
-          ffmpeg -y -hide_banner -loglevel error -f lavfi -i "testsrc2=size=1280x720:rate=24" -f lavfi -i "sine=frequency=440:sample_rate=48000" -t 12 -c:v libx264 -preset ultrafast -pix_fmt yuv420p -c:a aac -b:a 128k /tmp/trippedd-e2e-source/e2e-fixture.mp4
-          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-e2e-source/e2e-fixture.mp4
-          mediainfo --Output=JSON /tmp/trippedd-e2e-source/e2e-fixture.mp4 > /tmp/trippedd-e2e-source/mediainfo.json
-          test -s /tmp/trippedd-e2e-source/mediainfo.json
-      - name: Run Blender subjectivity through production generator
-        env:
-          TRIPPEDD_FRAME_START: '1'
-          TRIPPEDD_FRAME_END: '144'
-          TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/subjectivity-e2e
-        run: |
-          set -euo pipefail
-          blender -b --python production/EP01/generated/blender/build_subjectivity.py
-          test "$(find production/EP01/generated/blender/subjectivity-e2e -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)" -eq 144
-          ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/subjectivity-e2e/frame-%04d.jpg -f lavfi -i "anullsrc=channel_layout=stereo:sample_rate=48000" -t 6 -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -c:a aac -b:a 160k -shortest production/EP01/generated/blender/ep01_subjectivity.mp4
-          test -s production/EP01/generated/blender/ep01_subjectivity.mp4
-      - name: Run Blender Bastard terminal tag generator
-        env:
-          TRIPPEDD_FRAME_START: '1'
-          TRIPPEDD_FRAME_END: '144'
-          TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/bastard-tag-e2e
-        run: |
-          set -euo pipefail
-          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
-          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
-          test -s production/EP01/generated/blender/ep01_bastard_tag.blend
+          cp /tmp/trippedd-network-ident-source.mp4 /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/ffprobe.json
+          mediainfo --Output=JSON /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/mediainfo.json
+          exiftool -j /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/exiftool.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/trippedd-e2e-source/ffprobe.json')
+          d=json.loads(p.read_text())
+          v=next(s for s in d['streams'] if s['codec_type']=='video')
+          assert int(v['width']) >= 1280 and int(v['height']) >= 720
+          assert v['r_frame_rate'] == '24/1'
+          assert 9.9 <= float(d['format']['duration']) <= 10.1
+          print('AUTHORED_NETWORK_IDENT_SOURCE=PASS')
+          PY
       - name: Run actual source-analysis and editorial assembly path
         env:
           TRIPPEDD_TEST_MODE: 'true'
@@ -129,15 +132,19 @@ jobs:
           print('TRIPPEDD_NETWORK_IDENT_GATE=PASS')
           print(json.dumps(media, indent=2))
           PY
-      - name: Verify OTIO is parseable
+      - name: Verify OTIO is parseable and represents one continuous source
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           data=json.loads(Path('public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio').read_text())
           assert data['OTIO_SCHEMA']=='Timeline.1'
-          assert data['tracks'][0]['children']
+          tracks=data.get('tracks', [])
+          assert tracks and tracks[0]['children']
+          children=tracks[0]['children']
+          assert len(children) == 1, children
           print('OTIO_PARSE=PASS')
+          print('OTIO_CONTINUITY=PASS clips=1')
           PY
       - name: Upload network ident proof artifacts
         uses: actions/upload-artifact@v4
@@ -148,8 +155,9 @@ jobs:
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
             public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
             public/production/production-artifact-qc.json
+            /tmp/trippedd-e2e-source/ffprobe.json
             /tmp/trippedd-e2e-source/mediainfo.json
-            production/EP01/generated/blender/ep01_subjectivity.mp4
-            production/EP01/generated/blender/ep01_bastard_tag.mp4
+            /tmp/trippedd-e2e-source/exiftool.json
+            production/network-ident/generated/network-ident-0001-0240.blend
           if-no-files-found: error
           retention-days: 30

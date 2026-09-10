@@ -179,7 +179,7 @@ jobs:
       - name: Build Bastard terminal tag (resumable)
         uses: ./.github/actions/resumable-bastard-tag
       - name: Install Node dependencies
-        run: bun install --frozen-lockfile=false
+        run: bun install --no-save
       - name: Build Story Runner cut
         env:
           TRIPPEDD_RUN_ID: ${{ github.run_id }}

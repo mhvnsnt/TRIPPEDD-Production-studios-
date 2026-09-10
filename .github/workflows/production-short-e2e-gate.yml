@@ -13,6 +13,10 @@ on:
       - 'scripts/validate-production-artifact.ts'
       - 'src/core/pipeline/**'
       - 'src/core/editorial/**'
+      - 'github_app/**'
+      - 'supervisor/**'
+      - 'requirements-autonomous-bridge.txt'
+      - 'install/**'
 
 concurrency:
   group: production-short-e2e-gate

@@ -74,7 +74,7 @@ for (const name of cutNames) {
     // HARD GATE: audio must contain measurable signal, not merely an attached silent track.
     if (media.audio) {
       const audioProbe = await new Promise<string>((resolve, reject) => {
-        const child = spawn('ffmpeg', ['-hide_banner','-i',file,'-af','volumedetect','f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
+        const child = spawn('ffmpeg', ['-hide_banner','-i',file,'-af','volumedetect','-f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
         let stderr=''; child.stderr.on('data', d => { stderr += d.toString(); });
         child.on('error', reject);
         child.on('close', () => resolve(stderr));

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "policy": {
+    "physicalSourceTruth": "never trade physical source truth for speed",
+    "reproducibility": "production branch must remain reproducible",
+    "fallback": "local deterministic render",
+    "distributedRendering": "feature-gated until benchmarked",
+    "noImplicitCloudSpend": true
+  },
+  "backends": [
+    {"id":"local-blender","status":"production","engine":"blender","role":"deterministic procedural generation and fallback rendering"},
+    {"id":"flamenco","status":"candidate","engine":"blender-flamenco","role":"distributed Blender frame/task scheduling","activation":"only when manager and worker health checks pass","benchmarkGate":"must beat local render wall clock without changing frame hashes or editorial ordering"},
+    {"id":"flamenco-cloud-run","status":"candidate","engine":"flamenco","role":"ephemeral remote render workers","activation":"manual and cost-approved only","benchmarkGate":"must preserve deterministic outputs and provide resumable task evidence"},
+    {"id":"opencue","status":"candidate","engine":"opencue","role":"general render-farm scheduling for future multi-application workloads","activation":"after Blender-only orchestration is stable"}
+  ],
+  "jobContract": {
+    "requiredInputs":["sourceCommit","blendOrScriptHash","frameStart","frameEnd","blenderVersion","outputProfile"],
+    "requiredOutputs":["frameManifest","artifactHash","timingTelemetry","workerIdentity"],
+    "resumeRule":"completed valid frame ranges are immutable cache hits",
+    "failureRule":"failed tasks are retryable without invalidating completed ranges",
+    "verificationRule":"assemble only after every expected frame has been independently verified"
+  }
+}

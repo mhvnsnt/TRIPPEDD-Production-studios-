@@ -41,26 +41,38 @@ jobs:
       - name: Install preflight tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt-get install -y ffmpeg rclone
           python -m pip install --upgrade pip
           python -m pip install 'gdown>=6.2.0'
-      - name: Configure optional Drive cookies
+          rclone version
+      - name: Configure optional Drive credentials
         env:
+          TRIPPEDD_RCLONE_CONFIG_B64: ${{ secrets.TRIPPEDD_RCLONE_CONFIG_B64 }}
           TRIPPEDD_DRIVE_COOKIES_B64: ${{ secrets.TRIPPEDD_DRIVE_COOKIES_B64 }}
         run: |
           set -euo pipefail
+          if [ -n "${TRIPPEDD_RCLONE_CONFIG_B64:-}" ]; then
+            mkdir -p "$HOME/.config/rclone"
+            printf '%s' "$TRIPPEDD_RCLONE_CONFIG_B64" | base64 --decode > "$HOME/.config/rclone/rclone.conf"
+            chmod 600 "$HOME/.config/rclone/rclone.conf"
+            echo 'Authenticated rclone config installed (credentials redacted).'
+          else
+            echo 'No rclone credential secret configured.'
+          fi
           if [ -n "${TRIPPEDD_DRIVE_COOKIES_B64:-}" ]; then
             printf '%s' "$TRIPPEDD_DRIVE_COOKIES_B64" | base64 --decode > /tmp/trippedd-cookies.txt
             chmod 600 /tmp/trippedd-cookies.txt
             echo 'Drive browser cookies configured for public-source recovery.'
           else
-            echo 'No Drive cookie secret configured; using normal public gdown transport.'
+            echo 'No Drive cookie secret configured.'
           fi
       - name: Probe real source transport
         env:
           TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_EXPECTED_SOURCE_FILES: ${{ env.TRIPPEDD_EXPECTED_SOURCE_FILES }}
+          TRIPPEDD_RCLONE_REMOTE: ${{ vars.TRIPPEDD_RCLONE_REMOTE }}
+          TRIPPEDD_RCLONE_PATH: ${{ vars.TRIPPEDD_RCLONE_PATH }}
           TRIPPEDD_DRIVE_COOKIES_FILE: /tmp/trippedd-cookies.txt
         run: |
           set -euo pipefail

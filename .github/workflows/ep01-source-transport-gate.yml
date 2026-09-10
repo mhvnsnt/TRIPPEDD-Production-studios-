@@ -1,0 +1,59 @@
+name: EP01 Source Transport Gate
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - production/EP01/RUN-SOURCE-PREFLIGHT
+
+permissions:
+  contents: read
+
+jobs:
+  source-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install transport tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg rclone
+          python -m pip install --upgrade pip
+          python -m pip install 'gdown>=6.2.0'
+      - name: Configure credentials
+        env:
+          TRIPPEDD_RCLONE_CONFIG_B64: ${{ secrets.TRIPPEDD_RCLONE_CONFIG_B64 }}
+          TRIPPEDD_DRIVE_COOKIES_B64: ${{ secrets.TRIPPEDD_DRIVE_COOKIES_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -n "${TRIPPEDD_RCLONE_CONFIG_B64:-}" ]; then
+            mkdir -p "$HOME/.config/rclone"
+            printf '%s' "$TRIPPEDD_RCLONE_CONFIG_B64" | base64 --decode > "$HOME/.config/rclone/rclone.conf"
+            chmod 600 "$HOME/.config/rclone/rclone.conf"
+            echo 'SOURCE_GATE_RCLONE=CONFIGURED'
+          else
+            echo 'SOURCE_GATE_RCLONE=NOT_CONFIGURED'
+          fi
+          if [ -n "${TRIPPEDD_DRIVE_COOKIES_B64:-}" ]; then
+            printf '%s' "$TRIPPEDD_DRIVE_COOKIES_B64" | base64 --decode > /tmp/trippedd-cookies.txt
+            chmod 600 /tmp/trippedd-cookies.txt
+            echo 'SOURCE_GATE_COOKIES=CONFIGURED'
+          else
+            echo 'SOURCE_GATE_COOKIES=NOT_CONFIGURED'
+          fi
+      - name: Run transport gate
+        env:
+          TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
+          TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_EXPECTED_SOURCE_FILES: '19'
+          TRIPPEDD_RCLONE_REMOTE: ${{ vars.TRIPPEDD_RCLONE_REMOTE }}
+          TRIPPEDD_RCLONE_PATH: ${{ vars.TRIPPEDD_RCLONE_PATH }}
+          TRIPPEDD_DRIVE_COOKIES_FILE: /tmp/trippedd-cookies.txt
+        run: |
+          set -euo pipefail
+          if [ ! -s "$TRIPPEDD_DRIVE_COOKIES_FILE" ]; then unset TRIPPEDD_DRIVE_COOKIES_FILE; fi
+          bash scripts/production/ep01-preflight.sh

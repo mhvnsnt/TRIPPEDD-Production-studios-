@@ -57,19 +57,29 @@ for (const name of cutNames) {
     if (media.video && Math.abs(media.video.fps - 24) > 0.05) failures.push(`${name}: expected 24fps, got ${media.video.fps}.`);
     if (!media.audio) failures.push(`${name}: no audio stream.`);
     if (media.audio && (media.audio.sampleRate < 44100 || media.audio.channels < 1)) failures.push(`${name}: invalid audio stream.`);
-    // HARD GATE: prove temporal change by hashing sampled decoded frames.
+    // HARD GATE: prove temporal change by decoding sampled PNG frames and hashing them.
+    // This avoids fragile framemd5 parsing and rejects a video that repeats one frame.
     if (media.video) {
-      const motionProbe = await new Promise<string>((resolve, reject) => {
-        const child = spawn('ffmpeg', ['-v','error','-i',file,'-vf','fps=2','-frames:v','16','-f','framemd5','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
-        let stdout = '', stderr = '';
-        child.stdout.on('data', d => { stdout += d.toString(); });
+      const frameDir = path.join(root, '.trippedd-qc-frames');
+      await fs.rm(frameDir, { recursive: true, force: true });
+      await fs.mkdir(frameDir, { recursive: true });
+      await new Promise<void>((resolve, reject) => {
+        const child = spawn('ffmpeg', ['-v','error','-i',file,'-vf','fps=1','-frames:v','20',path.join(frameDir,'%02d.png')], { cwd: root, stdio: ['ignore','pipe','pipe'] });
+        let stderr = '';
         child.stderr.on('data', d => { stderr += d.toString(); });
         child.on('error', reject);
-        child.on('close', code => code === 0 ? resolve(stdout) : reject(new Error(stderr || 'frame hash probe failed')));
+        child.on('close', code => code === 0 ? resolve() : reject(new Error(stderr || 'frame decode probe failed')));
       });
-      const hashes = motionProbe.split(/\\r?\\n/).filter(line => line && !line.startsWith('#') && line.includes(',')).map(line => line.split(',').pop()!.trim());
+      const frames = (await fs.readdir(frameDir)).filter(x => x.endsWith('.png')).sort();
+      const hashes: string[] = [];
+      for (const frame of frames) {
+        const bytes = await fs.readFile(path.join(frameDir, frame));
+        const crypto = await import('node:crypto');
+        hashes.push(crypto.createHash('sha256').update(bytes).digest('hex'));
+      }
       const unique = new Set(hashes).size;
-      if (hashes.length < 8 || unique < 4) failures.push(name + ': temporal-motion gate failed (' + unique + ' unique sampled frames).');
+      await fs.rm(frameDir, { recursive: true, force: true });
+      if (frames.length < 8 || unique < 4) failures.push(name + ': temporal-motion gate failed (' + unique + ' unique sampled frames).');
     }
     // HARD GATE: audio must contain measurable signal, not merely an attached silent track.
     if (media.audio) {

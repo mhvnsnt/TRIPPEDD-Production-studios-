@@ -4,11 +4,15 @@ Run the canonical EP01 production pipeline.
 Ingest physical source footage, analyze it, build the real source-driven rough assembly, generate the EP01 subjectivity sequence, introduce Bannon/The Bastard only as the terminal generated tag, and include clearly-labelled generated material in the assembly.
 Final editorial selection and showrunner greenlight remain human-controlled.
 
-BUILD REVISION: 2026-09-10T02:00Z
+BUILD REVISION: 2026-09-10T02:15Z
 RENDER RECOVERY: resumable subjectivity chunks + durable assembly caches.
 RECOVERY HARDENING: stale queued-run protection and current-main production kickoff.
 EDITORIAL RECOVERY: when transcript-derived gag discovery is empty, preserve PySceneDetect shot-boundary evidence as low-confidence machine-selected source candidates instead of falsely declaring the episode unevidenced.
 DEPENDENCY RECOVERY: Bun production installs use the supported non-frozen install mode when the checked-in lockfile is inconsistent, preventing dependency resolution from consuming another expensive render attempt.
-FRESH-RUN: current-main editorial evidence recovery and dependency recovery are required; do not rely on rerunning the old workflow SHA.
+TELEMETRY HARDENING: every production layer must expose measured stage progress, total/complete work, percentage, elapsed time, throughput/rate, ETA, heartbeat, and current operation; missing telemetry is UNKNOWN and cannot be treated as actively running.
+LIVE ANALYSIS TELEMETRY: source ingest and per-file analysis now write the durable run ledger before editorial assembly begins, with fractional aggregate source-analysis progress derived from real queue job progress.
+CUMULATIVE LEDGER: downstream assembly stages append to the same run ledger without erasing upstream measured work; overall percentage is derived from observed stage work.
+FAIL-CLOSED WATCHER: missing telemetry or stale heartbeats terminate the production process for bounded recovery instead of permitting a multi-hour black box.
+FRESH-RUN: current-main editorial evidence recovery, dependency recovery, and telemetry recovery are required; do not rely on rerunning the old workflow SHA.
 PIPELINE HARDENING: build identity is recorded; failed-build diagnostics are retained; Autonomous is sequenced only after successful Story Runner and reuses verified Story Runner media instead of competing for the same kickoff.
-OPERATING LAW: no blind reruns; preserve successful renders/checkpoints; measure progress independently; push toward the finish by fixing the actual blocker and then resume from durable work.
+OPERATING LAW: no blind reruns; preserve successful renders/checkpoints; measure progress independently; if progress cannot be observed, status is UNKNOWN rather than RUNNING; push toward the finish by fixing the actual blocker and then resume from durable work.

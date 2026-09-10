@@ -47,7 +47,12 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           echo "PRODUCTION_ETA_MINUTES=8"
           echo "PRODUCTION_HARD_TIMEOUT_MINUTES=20"
-      - name: Verify autonomous bridge hardening\n        run: |\n          set -euo pipefail\n          python3 scripts/production/test-autonomous-bridge.py\n\n      - name: Hardened runner preflight
+      - name: Verify autonomous bridge hardening
+        run: |
+          set -euo pipefail
+          python3 scripts/production/test-autonomous-bridge.py
+
+      - name: Hardened runner preflight
         shell: bash
         run: |
           set -euo pipefail

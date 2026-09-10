@@ -6,6 +6,7 @@ on:
     paths:
       - scripts/run-public-pilot.ts
       - scripts/validate-production-artifact.ts
+      - scripts/production/verify-oss-stack.sh
       - src/server/pilotRenderer.ts
       - src/server/productionMemory.ts
       - production/EP01/generated/blender/**
@@ -18,14 +19,14 @@ concurrency:
 permissions:
   contents: read
 
-# HARD GATE:
-# Code changes can run this proof automatically. A real episode is never
-# started directly by a push. The promotion workflow starts EP01 only after
-# this complete proof succeeds on the current main SHA.
+# HARD GATE: this proof must pass before promotion can dispatch a real episode.
+# It is intentionally a TRIPPEDD network ident/commercial, not a disposable
+# synthetic test card. It uses a deterministic 12-second source fixture so
+# failures are reproducible and cheap to diagnose.
 
 jobs:
   short-e2e:
-    name: 12-second full production proof
+    name: 12-second TRIPPEDD network ident proof
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -39,11 +40,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install media/render tools
+      - name: Install media/render stack
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr
+          sudo apt-get install -y ffmpeg mediainfo exiftool imagemagick curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr rclone opencolorio-tools
           python -m pip install --upgrade pip
           python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
       - name: Install production dependencies
@@ -61,12 +62,22 @@ jobs:
           sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
           sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
-      - name: Create deterministic 12-second source fixture
+      - name: Verify open-source stack before doing production work
+        run: |
+          set -euo pipefail
+          bash scripts/production/verify-oss-stack.sh
+          mediainfo --Version
+          exiftool -ver
+          convert -version | head -n 1
+          ocioarchive --help >/dev/null 2>&1 || true
+      - name: Create deterministic 12-second ident source fixture
         run: |
           set -euo pipefail
           mkdir -p /tmp/trippedd-e2e-source
           ffmpeg -y -hide_banner -loglevel error -f lavfi -i "testsrc2=size=1280x720:rate=24" -f lavfi -i "sine=frequency=440:sample_rate=48000" -t 12 -c:v libx264 -preset ultrafast -pix_fmt yuv420p -c:a aac -b:a 128k /tmp/trippedd-e2e-source/e2e-fixture.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-e2e-source/e2e-fixture.mp4
+          mediainfo --Output=JSON /tmp/trippedd-e2e-source/e2e-fixture.mp4 > /tmp/trippedd-e2e-source/mediainfo.json
+          test -s /tmp/trippedd-e2e-source/mediainfo.json
       - name: Run Blender subjectivity through production generator
         env:
           TRIPPEDD_FRAME_START: '1'
@@ -94,7 +105,7 @@ jobs:
           TRIPPEDD_TEST_SOURCE_DIR: /tmp/trippedd-e2e-source
           TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
           TRIPPEDD_OUTPUT_DIR: ${{ github.workspace }}/public/production
-          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-SHORT-E2E
+          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-NETWORK-IDENT-E2E
           TRIPPEDD_EXPECTED_SOURCE_FILES: '1'
           TRIPPEDD_CUT_MODE: SHOWRUNNER
           TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
@@ -106,27 +117,27 @@ jobs:
           EP01_CLIP_PADDING: '0.25'
           EP01_RENDER_CONCURRENCY: '1'
         run: timeout 15m bun run pilot:build:public
-      - name: Validate final artifact with production QC
+      - name: Validate final ident with production QC
         env:
-          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-SHORT-E2E
+          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-NETWORK-IDENT-E2E
         run: |
           set -euo pipefail
           bun run pilot:validate
-          test -s public/production/TRIPPEDD-SHORT-E2E.mp4
-          test -s public/production/TRIPPEDD-SHORT-E2E.json
-          test -s public/production/TRIPPEDD-SHORT-E2E.otio
+          test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4
+          test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
+          test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
           test -s public/production/production-artifact-qc.json
           python - <<'PY'
           import json
           from pathlib import Path
           qc=json.loads(Path('public/production/production-artifact-qc.json').read_text())
           assert qc['status']=='PASS', qc
-          media=qc['cuts']['TRIPPEDD-SHORT-E2E']
-          assert 10 <= media['duration'] <= 30, media
+          media=qc['cuts']['TRIPPEDD-NETWORK-IDENT-E2E']
+          assert 10 <= media['duration'] <= 20, media
           assert media['video']['width'] >= 1280 and media['video']['height'] >= 720, media
           assert abs(media['video']['fps']-24) < 0.05, media
           assert media['audio'] and media['audio']['sampleRate'] >= 44100, media
-          print('SHORT_E2E_GATE=PASS')
+          print('TRIPPEDD_NETWORK_IDENT_GATE=PASS')
           print(json.dumps(media, indent=2))
           PY
       - name: Verify OTIO is parseable
@@ -134,20 +145,21 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          data=json.loads(Path('public/production/TRIPPEDD-SHORT-E2E.otio').read_text())
+          data=json.loads(Path('public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio').read_text())
           assert data['OTIO_SCHEMA']=='Timeline.1'
           assert data['tracks'][0]['children']
           print('OTIO_PARSE=PASS')
           PY
-      - name: Upload short E2E proof artifacts
+      - name: Upload network ident proof artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: TRIPPEDD-SHORT-E2E-PROOF
+          name: TRIPPEDD-NETWORK-IDENT-E2E-PROOF
           path: |
-            public/production/TRIPPEDD-SHORT-E2E.mp4
-            public/production/TRIPPEDD-SHORT-E2E.json
-            public/production/TRIPPEDD-SHORT-E2E.otio
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
             public/production/production-artifact-qc.json
+            /tmp/trippedd-e2e-source/mediainfo.json
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/ep01_bastard_tag.mp4
           if-no-files-found: error

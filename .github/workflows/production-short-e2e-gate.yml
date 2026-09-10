@@ -133,7 +133,12 @@ jobs:
           sha256sum /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/source.sha256
           python - <<'PY'
           import json, subprocess
+          from pathlib import Path
           p='/tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4'
+          # The proof source must be a moving four-show ident, not a static title card.
+          # Smoke & Mirrors is explicitly out of scope for this commercial.
+          for forbidden in ('SMOKE & MIRRORS', 'SMOKE AND MIRRORS'):
+              assert forbidden not in Path('scripts/production/build-network-commercial.py').read_text().upper(), forbidden
           d=json.load(open('/tmp/trippedd-e2e-source/ffprobe.json'))
           v=next(x for x in d['streams'] if x['codec_type']=='video')
           a=next(x for x in d['streams'] if x['codec_type']=='audio')
@@ -228,6 +233,17 @@ jobs:
           set -euo pipefail
           sha256sum public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4 public/production/TRIPPEDD-NETWORK-IDENT-E2E.json public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio public/production/production-artifact-qc.json > public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
           printf '%s\\n' "run_id=$GITHUB_RUN_ID" "run_attempt=$GITHUB_RUN_ATTEMPT" "sha=$GITHUB_SHA" "completed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
+      - name: Verify commercial content scope and motion/audio evidence
+        run: |
+          set -euo pipefail
+          test -s public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
+          ffprobe -v error -show_entries format=duration -of csv=p=0 public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 | awk '{ if ($1 < 19.9 || $1 > 20.1) exit 1 }'
+          ffmpeg -v error -i public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 -vf "fps=1,select='gt(scene,0.02)'" -frames:v 12 -f null -
+          for show in "THE BASTARD" "IN THE BUSHES" "GOD MOLECULE" "TRIPPEDD"; do grep -q "$show" scripts/production/build-network-commercial.py; done
+          ! grep -qiE 'SMOKE[[:space:]]*&?[[:space:]]*MIRRORS|SMOKE[[:space:]]+AND[[:space:]]+MIRRORS' scripts/production/build-network-commercial.py
+          echo "COMMERCIAL_SCOPE=PASS"
+          echo "COMMERCIAL_SHOW_COUNT=4"
+          echo "COMMERCIAL_FORBIDDEN_SHOW=PASS"
       - name: Upload actual mixed-media commercial
         uses: actions/upload-artifact@v4
         with:

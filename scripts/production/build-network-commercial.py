@@ -93,8 +93,8 @@ for i, (freq, gain, _) in enumerate(audio_specs):
 # on fragile expression parsing.
 audio_inputs += ["-f", "lavfi", "-i", "anoisesrc=color=pink:amplitude=0.025:sample_rate=48000:duration=20"]
 labels.append("[6:a]highpass=f=2500,lowpass=f=9000,volume=0.7[noise]")
-mix = "".join(f"[a{i}]" for i in range(7)) + "[noise]"
-audio_graph = ";".join(labels + [f"{mix}amix=inputs=8:duration=longest:normalize=0,volume=2.8,highpass=f=35,lowpass=f=11000,aresample=48000[a]"])
+mix = "".join(f"[a{i}]" for i in range(len(audio_specs))) + "[noise]"
+audio_graph = ";".join(labels + [f"{mix}amix=inputs=7:duration=longest:normalize=0,volume=2.8,highpass=f=35,lowpass=f=11000,aresample=48000[a]"])
 
 cmd = [
     "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",

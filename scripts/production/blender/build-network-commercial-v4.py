@@ -1,4 +1,4 @@
-# V4 Blender commercial builder\n# Creative contract: only TRIP, IN THE BUSHES, THE BASTARD, and GOD MOLECULE.\n# Smoke & Mirrors and other studio projects are intentionally excluded.
+# V4 Blender commercial builder\n# Creative contract: four TRIPPEDD network shows: TRIPPEDD, IN THE BUSHES, THE BASTARD, and GOD MOLECULE.\n# Smoke & Mirrors and other studio projects are intentionally excluded.
 # Generates a real 3D mixed-media four-show ident: animated camera, emissive
 # geometry, particles, depth, lighting, transitions, and four distinct worlds.
 import bpy, math, os, subprocess
@@ -12,7 +12,7 @@ SHOWS=[
  ("THE BASTARD",(0.55,0.04,0.015,1),(1.0,0.25,0.08,1)),
  ("IN THE BUSHES",(0.01,0.20,0.12,1),(0.55,1.0,0.18,1)),
  ("GOD MOLECULE",(0.03,0.06,0.32,1),(1.0,0.18,0.85,1)),
- ("TRIP",(0.08,0.0,0.18,1),(0.15,0.75,1.0,1)),
+ ("TRIPPEDD",(0.08,0.0,0.18,1),(0.15,0.75,1.0,1)),
 ]
 
 bpy.ops.wm.read_factory_settings(use_empty=True)

@@ -36,6 +36,21 @@ Mars is the planned main character. The current concept is based on the creator'
 
 The intended presentation is a recurring disembodied/floating head that can exist in space, strange environments, caves, voids, dream rooms, or other impossible settings.
 
+## Critical creator likeness / image-editing rule
+
+The creator explicitly rejected the last two generated Mars images because they drifted too far from the creator's actual likeness and did not use the requested source angles. This is now a **hard production rule** for Mars imagery:
+
+- Use the creator's supplied photographs as the source image whenever an image is being made from the creator's likeness.
+- **Do not generate a new-looking person or replace the creator's identity.**
+- Preserve the actual face, facial structure, hair/dreads, beard and supplied camera angle/pose unless the creator explicitly asks for a change.
+- Apply the requested design, recolor, eyes, sigil, background, lighting, degradation and other effects **on top of the supplied photograph**.
+- Do not invent turnaround angles that were not supplied by the creator.
+- When a new angle is needed, use a corresponding source photograph from the creator rather than hallucinating a different person or pretending an unsupplied angle is faithful.
+- Image generation should function primarily as **editing/effects**, not identity regeneration.
+- The creator's statement that the earlier image worked because it used the actual supplied image is the reference standard.
+
+The creator also explicitly requested **no new image generation in the current conversation turn**; this archive update is documentation only. Future creator-supplied images can be used for additional Mars angles and effects work.
+
 ## Sigil direction
 
 A custom Mars/God Molecule sigil was proposed, incorporating visual ideas associated with Mars, an eye, a spiral/trip motif, and an indole-ring reference. It should remain an original production mark rather than being represented as a verified reproduction of a pre-existing sacred symbol.
@@ -86,7 +101,7 @@ Each was described as having a 4K master and a 640×480 era pass, with a matched
 
 The creator specifically corrected the silhouette requirement: **do not cut the neck away too aggressively. Mars should read as a disembodied head with a partial neck, not merely a disembodied face/hair mass.**
 
-Future reference angles requested in the prior conversation were left profile, 3/4 front from both sides, and a top-down shot.
+Future reference angles requested in the prior conversation were left profile, 3/4 front from both sides, and a top-down shot. Those angles remain future source-photo requests, not permission to synthesize a different face.
 
 ## Segment / show structure
 

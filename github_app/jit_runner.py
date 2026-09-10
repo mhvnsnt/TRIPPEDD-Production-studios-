@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
-"""Provision one GitHub Actions JIT runner for TRIPPEDD.
-
-Credentials are read only from environment/files on the execution host.
-No GitHub secret or private key belongs in this repository.
-"""
+"""Provision one GitHub Actions JIT runner for TRIPPEDD."""
 from __future__ import annotations
-import argparse, base64, json, os, pathlib, subprocess, tempfile, time, urllib.request
+import argparse, json, os, pathlib, subprocess, tempfile, time, urllib.request
 from urllib.error import HTTPError
 
 API="https://api.github.com"
@@ -30,6 +26,12 @@ def jwt_token(app_id, key_path):
     now=int(time.time())
     return jwt.encode({"iat":now-30,"exp":now+540,"iss":str(app_id)},key,algorithm="RS256")
 
+def runner_arch_label(machine):
+    value=machine.lower()
+    if value in {"x86_64","amd64"}: return "x64"
+    if value in {"aarch64","arm64"}: return "arm64"
+    raise RuntimeError(f"Unsupported runner architecture: {machine}")
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--owner",default=os.environ["TRIPPEDD_GITHUB_OWNER"])
@@ -39,27 +41,29 @@ def main():
     ap.add_argument("--runner-dir",default=os.environ.get("TRIPPEDD_RUNNER_DIR","/opt/trippedd-runner"))
     ap.add_argument("--name",default=os.environ.get("TRIPPEDD_RUNNER_NAME",f"trippedd-jit-{os.getpid()}-{int(time.time())}"))
     args=ap.parse_args()
-
+    allowed=os.environ.get("TRIPPEDD_ALLOWED_REPOSITORY",f"{args.owner}/{args.repo}")
+    if f"{args.owner}/{args.repo}".lower()!=allowed.lower():
+        raise RuntimeError("repository is outside TRIPPEDD_ALLOWED_REPOSITORY")
     app_id=os.environ["TRIPPEDD_GITHUB_APP_ID"]
     key_path=os.environ["TRIPPEDD_GITHUB_PRIVATE_KEY_PATH"]
     app_jwt=jwt_token(app_id,key_path)
-
     _,installation=http("GET",f"{API}/repos/{args.owner}/{args.repo}/installation",app_jwt)
     installation_id=installation["id"]
     _,token_obj=http("POST",f"{API}/app/installations/{installation_id}/access_tokens",app_jwt,{"repositories":[args.repo]})
     token=token_obj["token"]
-
-    # Detect host architecture instead of assuming x64.\n    arch_label=runner_arch_label(os.uname().machine)\n\n    _,cfg=http("POST",f"{API}/repos/{args.owner}/{args.repo}/actions/runners/generate-jitconfig",token,{\n        "name":args.name,\n        "labels":["self-hosted","linux",arch_label,args.label],\n        "work_folder":args.work_folder,\n    })\n    encoded=cfg["encoded_jit_config"]
-
+    arch_label=runner_arch_label(os.uname().machine)
+    _,cfg=http("POST",f"{API}/repos/{args.owner}/{args.repo}/actions/runners/generate-jitconfig",token,{
+        "name":args.name,
+        "labels":["self-hosted","linux",arch_label,args.label],
+        "work_folder":args.work_folder,
+    })
+    encoded=cfg["encoded_jit_config"]
     runner=pathlib.Path(args.runner_dir)
     runner.mkdir(parents=True,exist_ok=True)
     with tempfile.NamedTemporaryFile("w",delete=False,dir=runner,encoding="utf-8") as f:
-        f.write(encoded)
-        cfg_path=f.name
+        f.write(encoded); cfg_path=f.name
     os.chmod(cfg_path,0o600)
     try:
-        # run.sh consumes the one-time JIT configuration and the service removes
-        # the runner registration after its single job.
         subprocess.run(["./run.sh","--jitconfig",encoded],cwd=runner,check=True)
     finally:
         pathlib.Path(cfg_path).unlink(missing_ok=True)

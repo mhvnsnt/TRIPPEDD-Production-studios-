@@ -4,7 +4,7 @@ This is deliberately GENERATED editorial material: it is not physical source,
 creator likeness, or finished God Molecule footage. It exists to exercise the
 same source -> analysis -> editorial -> render -> QC path before EP01.
 
-Blender background mode renders 240 frames (10 seconds at 24fps) at 1280x720.
+Blender background mode renders 480 frames (20 seconds at 24fps) at 1280x720.
 Existing non-empty frames are reused so a killed render can resume.
 """
 import math
@@ -15,11 +15,14 @@ import bpy
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 OUT = os.path.join(ROOT, "production", "network-ident", "generated")
 FRAMES = os.path.join(OUT, "frames")
+FPS = 24
+DURATION_SECONDS = 20
+TOTAL_FRAMES = FPS * DURATION_SECONDS
 START = int(os.environ.get("TRIPPEDD_FRAME_START", "1"))
-END = int(os.environ.get("TRIPPEDD_FRAME_END", "240"))
+END = int(os.environ.get("TRIPPEDD_FRAME_END", str(TOTAL_FRAMES)))
 os.makedirs(FRAMES, exist_ok=True)
-if START < 1 or END < START or END > 240:
-    raise SystemExit(f"Invalid network ident frame range: {START}-{END}")
+if START < 1 or END < START or END > TOTAL_FRAMES:
+    raise SystemExit(f"Invalid network ident frame range: {START}-{END}; expected 1-{TOTAL_FRAMES}")
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
 scene = bpy.context.scene
@@ -29,9 +32,9 @@ scene.render.resolution_y = 720
 scene.render.resolution_percentage = 100
 scene.render.image_settings.file_format = "PNG"
 scene.render.image_settings.color_mode = "RGB"
-scene.render.fps = 24
+scene.render.fps = FPS
 scene.frame_start = 1
-scene.frame_end = 240
+scene.frame_end = TOTAL_FRAMES
 scene.render.film_transparent = False
 
 world = bpy.data.worlds.new("TRIPPEDD Network Ident World")
@@ -85,7 +88,7 @@ for i in range(8):
     ring.name = f"NetworkOrbit_{i:02d}"
     ring.data.materials.append((MAGENTA, CYAN, GOLD)[i % 3])
 
-# Four identity glyphs orbit the core; they are text, not fabricated footage.
+
 def text_obj(body, location, size, material):
     bpy.ops.object.text_add(location=location, rotation=(0, 0, 0))
     t = bpy.context.object
@@ -119,7 +122,9 @@ scene["TRIPPEDD_NETWORK"] = "TRIPPEDD network"
 scene["TRIPPEDD_SHOW"] = "Trippedd"
 scene["TRIPPEDD_STUDIO"] = "TRIPPEDD Production studios"
 scene["TRIPPEDD_CONTINUITY"] = "SINGLE_CONTINUOUS_AUTHORED_PIECE"
-scene["TRIPPEDD_DURATION_SECONDS"] = 10
+scene["TRIPPEDD_DURATION_SECONDS"] = DURATION_SECONDS
+scene["TRIPPEDD_FPS"] = FPS
+scene["TRIPPEDD_TOTAL_FRAMES"] = TOTAL_FRAMES
 scene["TRIPPEDD_SOURCE_TRUTH"] = "Generated proof material; not physical source evidence."
 scene["TRIPPEDD_GOD_MOLECULE"] = "Symbolic development reference only; no creator likeness."
 scene["TRIPPEDD_REFERENCES"] = "Trippedd; The Bastard; In the Bushes; God Molecule"
@@ -131,7 +136,7 @@ for frame in range(START, END + 1):
     if os.path.isfile(path) and os.path.getsize(path) > 0:
         continue
     scene.frame_set(frame)
-    phase = (frame - 1) / 240.0
+    phase = (frame - 1) / TOTAL_FRAMES
     core.rotation_euler = (phase * math.tau * 0.7, phase * math.tau * 0.9, phase * math.tau)
     core.scale = (1.0 + 0.12 * math.sin(phase * math.tau * 2), 1.0 + 0.08 * math.cos(phase * math.tau * 3), 1.0)
     for i in range(8):
@@ -153,4 +158,4 @@ for frame in range(START, END + 1):
 
 blend = os.path.join(OUT, f"network-ident-{START:04d}-{END:04d}.blend")
 bpy.ops.wm.save_as_mainfile(filepath=blend)
-print(f"PRODUCTION_FINAL stage=network-ident status=COMPLETED work={total}/{total} elapsed={time.time()-started:.1f}s", flush=True)
+print(f"PRODUCTION_FINAL stage=network-ident status=COMPLETED work={total}/{total} duration={DURATION_SECONDS}s elapsed={time.time()-started:.1f}s", flush=True)

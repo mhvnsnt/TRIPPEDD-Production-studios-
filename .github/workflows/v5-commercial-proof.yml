@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - hardening/v5-mixed-media-commercial-oss-umbrella-2026-09-10
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

@@ -132,3 +132,11 @@ Added a production dispatch job to the EP01 Autonomous workflow so a production-
 
 ### Continuation 9 — execution safety correction
 During runner inspection, the explicit self-dispatch job added to EP01 Autonomous was identified as unsafe because that workflow also triggers on pushes to the same branch; dispatching itself would create recursive runs. Removed that dispatcher. Story Runner and Autonomous remain push-triggered, and Commercial Proof remains independently push-triggered. Production execution must be automatic but never recursively self-amplifying.
+
+
+### Overnight verification — 2026-09-11
+The overnight/early-morning GitHub evidence confirms the user's suspicion was substantially correct: no final commercial or Autonomous deliverable was completed. The Story Runner workflow did succeed and its `Build and validate real EP01` job completed artifact upload. The Autonomous workflow rendered all 12 subjectivity chunks successfully but failed at `Build generated Bastard terminal tag`. Root cause was concrete: `build_bastard_tag.py` rendered PNG checkpoints but never assembled them into the declared `ep01_bastard_tag.mp4`, while the workflow immediately asserted that MP4 existed. Fixed by adding an ffmpeg frame-to-MP4 assembly step with output validation.
+
+Commercial proof runs on the hardening branch were repeatedly cancelled by subsequent pushes; the latest commercial run reached `Build V5 commercial` and was cancelled before proof/upload. This means the pipeline is still suffering from rapid-push/concurrency churn in addition to the Autonomous artifact bug.
+
+Main-branch Production Self-Healer also continues to fail, but that is separate from the hardening branch because PR #18 remains unmerged. Do not claim overnight completion. The correct state is: Story Runner produced a successful artifact; Autonomous is blocked by the now-fixed terminal-tag packaging bug; Commercial has not yet completed its proof run.

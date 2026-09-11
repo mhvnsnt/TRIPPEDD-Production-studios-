@@ -56,3 +56,23 @@ The GitHub connector is currently operational for this repository. Authenticated
 - `4b14c79e6f794cae856724d2cf75eeb4ac8d7071` — add scheduled repo observer
 - `7e3e22c8faf9805318eb76cdc3a5fec9f9490da9` — require exact 1920x1080 commercial QC
 - `b24a0dd044183cba651a7e8331783b3382126e31` — lock V5 ident quality floor
+
+
+## Continuation — persistent toolchain / episode throughput hardening
+
+### User directive
+Do not reinstall and re-verify Blender from scratch on every run. Keep the production machine warm through GitHub Actions caches and continue adding open-source infrastructure only where it directly helps finish the episodes.
+
+### Changes made
+- EP01 Autonomous: Blender 4.5.13 is now cached as an extracted toolchain under the runner user's cache. Warm runs activate the cached binary instead of downloading, checksum-verifying, and untarring Blender again.
+- EP01 Autonomous: Bun/Python dependency caches now include the production requirements lock surface and restore prior compatible cache entries.
+- EP01 Story Runner: same extracted Blender cache strategy and expanded dependency cache key.
+- V5 Commercial Proof: same extracted Blender cache strategy.
+- Production Short E2E Gate: caches the complete upstream OSS render backend working trees and skips the bootstrap clone step when the cache is warm.
+- The production path still performs cheap executable/importability verification after activation; expensive download/checksum/extraction work is cold-cache only.
+
+### Cache policy
+GitHub Actions cache is treated as a performance layer, not as proof of integrity. Cold cache performs the normal acquisition/verification path; warm cache activates the exact keyed toolchain and the production verification gate still checks executability/importability. Cache keys are revisioned so intentional stack changes can invalidate them.
+
+### Current production objective
+Commercial proof -> EP01 Story Runner -> EP01 Autonomous, with salvage/checkpoints and bounded self-healing preserved. Do not expand the OSS umbrella unless a project removes a measured production bottleneck.

@@ -53,7 +53,7 @@ for profile in "${PROFILES[@]}"; do
   set +e
   "$BLENDER" -b --factory-startup --python "$ROOT/tools/environment/build_memory_safe_scene.py" -- \
     --mars "$MARS" --output "$OUT" --seed "$SEED" \
-    --frames "$FRAMES" --width "$WIDTH" --height "$HEIGHT" 2>&1 | tee -a "$LOG"
+    --frames "$FRAMES" --width "$WIDTH" --height "$HEIGHT" --instances "$INSTANCES" 2>&1 | tee -a "$LOG"
   RC=${PIPESTATUS[0]}
   set -e
 

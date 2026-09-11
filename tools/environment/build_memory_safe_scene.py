@@ -31,6 +31,7 @@ def parse_args():
     p.add_argument("--output", required=True)
     p.add_argument("--seed", type=int, default=742918)
     p.add_argument("--frames", type=int, default=8)
+    p.add_argument("--instances", type=int, default=96)
     p.add_argument("--width", type=int, default=640)
     p.add_argument("--height", type=int, default=360)
     return p.parse_args()
@@ -64,7 +65,7 @@ def main() -> int:
     # Deterministic, deliberately tiny environment. No external generator is
     # required for the first proof: the seed is the source of scene variation.
     rng = random.Random(args.seed)
-    for i in range(96):
+    for i in range(max(1, min(args.instances, 96))):
         x = rng.uniform(-18.0, 18.0)
         y = rng.uniform(-18.0, 18.0)
         z = rng.uniform(-1.0, 3.5)

@@ -24,6 +24,21 @@ env:
   BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
 
 jobs:
+  launch-production-cuts:
+    name: Launch canonical EP01 production cuts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Story Runner and Autonomous Cut
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh api --method POST /repos/"$REPO"/actions/workflows/ep01-story-runner.yml/dispatches -f ref="${GITHUB_REF_NAME}"
+          gh api --method POST /repos/"$REPO"/actions/workflows/ep01-autonomous.yml/dispatches -f ref="${GITHUB_REF_NAME}"
+          echo "EP01_STORY_RUNNER=DISPATCHED"
+          echo "EP01_AUTONOMOUS=DISPATCHED"
+
   render-subjectivity:
     if: ${{ inputs.story_run_id == '' }}
     name: Render subjectivity chunk ${{ matrix.chunk }}

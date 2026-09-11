@@ -145,3 +145,34 @@ wiring:
     role: programmable editorial assembly, titles, overlays and media transformations
     activation: programmable-editor
     license: MIT
+
+  - id: krita
+    repo: https://github.com/KDE/krita.git
+    role: hand-drawn 2D animation, paint-over, concept and frame-by-frame assets
+    activation: animation-2d-raster
+    license: GPL-3.0
+  - id: grease-pencil
+    repo: https://projects.blender.org/studio/grease-pencil.git
+    role: Blender 2D/3D hybrid animation and storyboarding
+    activation: animation-hybrid
+    license: GPL-3.0
+  - id: storyboarder
+    repo: https://github.com/wonderunit/storyboarder.git
+    role: rapid storyboard and shot planning
+    activation: preproduction-storyboard
+    license: MIT
+  - id: audacity
+    repo: https://github.com/audacity/audacity.git
+    role: dialogue cleanup, waveform editing and audio preparation
+    activation: audio-editing
+    license: GPL-3.0
+  - id: ardour
+    repo: https://github.com/Ardour/ardour.git
+    role: multitrack audio production, mixing and mastering
+    activation: audio-mixing
+    license: GPL-2.0-or-later
+  - id: rtmidi
+    repo: https://github.com/thestk/rtmidi.git
+    role: low-latency MIDI control for animation/audio workflows
+    activation: realtime-control
+    license: MIT

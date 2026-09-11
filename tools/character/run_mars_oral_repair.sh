@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Execute the actual MARS oral repair. This is a production worker, not a
-# registry-only declaration.
+# Execute the actual MARS oral repair. Production worker, not a registry-only declaration.
+# Fail-closed: protrusion survey must PASS before VERIFIED.
+
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 CACHE="${TRIPPEDD_DONOR_CACHE:-${HOME}/.cache/trippedd/god-molecule/oral-donors}"
 OUT="${TRIPPEDD_ORAL_OUTPUT:-$ROOT/.artifacts/god-molecule/mars-oral}"
@@ -27,5 +28,27 @@ mkdir -p "$OUT"
   --output "$OUT/MARS_ORAL_REPAIRED.blend" \
   --render-dir "$OUT/preview"
 
+# Aperture / protrusion survey — fail-closed
+SURVEY_JSON="$OUT/aperture_survey.json"
+"$BLENDER" -b "$OUT/MARS_ORAL_REPAIRED.blend" --python "$ROOT/tools/character/survey_oral_aperture.py" -- \
+  --mouth-frame "$MOUTH_FRAME" \
+  --output-json "$SURVEY_JSON" \
+  --render-dir "$OUT/survey_preview" || {
+    echo "MARS_ORAL_REPAIR: SURVEY_INVOKE_FAIL"
+    exit 1
+  }
+
+if ! grep -q 'PROTRUSION_GATE=PASS\|"protrusion_gate": "PASS"\|"protrusion_gate":"PASS"' "$SURVEY_JSON" 2>/dev/null; then
+  # Prefer structured JSON if survey writes it; also accept stdout capture files
+  if [[ -f "$OUT/survey_stdout.txt" ]] && grep -q 'PROTRUSION_GATE=PASS' "$OUT/survey_stdout.txt"; then
+    :
+  else
+    echo "MARS_ORAL_REPAIR: PROTRUSION_FAIL — survey did not report PASS"
+    echo "SURVEY_JSON=$SURVEY_JSON"
+    exit 1
+  fi
+fi
+
 echo "MARS_ORAL_REPAIR: VERIFIED"
 echo "OUTPUT=$OUT/MARS_ORAL_REPAIRED.blend"
+echo "SURVEY=$SURVEY_JSON"

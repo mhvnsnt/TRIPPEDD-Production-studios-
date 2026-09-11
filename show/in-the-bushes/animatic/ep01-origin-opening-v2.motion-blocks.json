@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "sequence": "EP01-origin-opening-v2",
+  "fps": 24,
+  "coordinateSpace": "1920x1080",
+  "principle": "Animate poses, objects, and camera independently so the scene does not read as a slideshow.",
+  "blocks": [
+    {"id":"teen_run_stop","frames":[72,92],"from":{"x":-260,"y":650,"rotation":-5},"to":{"x":510,"y":650,"rotation":3},"easing":"easeOutCubic"},
+    {"id":"teen_duck_peek","frames":[93,118],"keyframes":[{"frame":93,"pose":"run"},{"frame":102,"pose":"duck"},{"frame":112,"pose":"peek"},{"frame":118,"pose":"hold"}]},
+    {"id":"pack_hand_catch","frames":[104,124],"keyframes":[{"frame":104,"event":"slip"},{"frame":109,"event":"catch"},{"frame":124,"event":"settle"}]},
+    {"id":"can_rattle","frames":[153,165],"keyframes":[{"frame":153,"rotation":0},{"frame":157,"rotation":-7},{"frame":161,"rotation":7},{"frame":165,"rotation":0}]},
+    {"id":"point_and_hold","frames":[185,220],"keyframes":[{"frame":185,"pose":"neutral"},{"frame":195,"pose":"point"},{"frame":204,"pose":"hold"},{"frame":220,"pose":"hold"}]},
+    {"id":"throw_arc_spin","frames":[252,282],"path":{"type":"quadratic","p0":[520,510],"p1":[980,170],"p2":[1320,520]},"rotation":[0,210],"easing":"easeInOutCubic"},
+    {"id":"branch_clip_recoil","frames":[278,286],"rotation":[0,-10,8,0],"easing":"impact"},
+    {"id":"can_bounce","frames":[286,305],"path":{"type":"piecewise","points":[[1190,520],[1260,600],[1310,560],[1350,610]]},"rotation":[0,140,260,360],"easing":"bounce"},
+    {"id":"liquid_spill","frames":[300,323],"path":{"type":"gravity","p0":[1350,570],"p1":[1360,760]},"scale":[0.3,1.0],"easing":"easeIn"},
+    {"id":"foliage_twitch","frames":[346,372],"keyframes":[{"frame":346,"rotation":0},{"frame":352,"rotation":2},{"frame":358,"rotation":-2},{"frame":364,"rotation":1},{"frame":372,"rotation":0}]},
+    {"id":"foliage_shudder","frames":[378,419],"keyframes":[{"frame":378,"scale":1},{"frame":384,"scale":1.02},{"frame":392,"scale":0.98},{"frame":402,"scale":1.03},{"frame":419,"scale":1}]},
+    {"id":"busch_wake_rise","frames":[420,468],"position":[0,-70,0],"scale":[0.96,1.04],"easing":"easeOutBack"},
+    {"id":"branch_arm_delay","frames":[454,482],"keyframes":[{"frame":454,"rotation":0},{"frame":466,"rotation":-5},{"frame":478,"rotation":4},{"frame":482,"rotation":0}]},
+    {"id":"busch_eye_scan","frames":[492,535],"keyframes":[{"frame":492,"look":"center"},{"frame":505,"look":"left"},{"frame":518,"look":"right"},{"frame":535,"look":"down"}]},
+    {"id":"busch_look_away","frames":[552,611],"keyframes":[{"frame":552,"pose":"confused"},{"frame":565,"pose":"turn"},{"frame":580,"pose":"look_away"},{"frame":611,"pose":"hold"}]},
+    {"id":"reaction_blink_sway","frames":[612,659],"keyframes":[{"frame":612,"pose":"reaction"},{"frame":632,"event":"blink"},{"frame":645,"rotation":1},{"frame":652,"rotation":-1},{"frame":659,"rotation":0}]}
+  ],
+  "renderRules":[
+    "Use separate layers for background, teens, props, Busch, and FX.",
+    "Interpolate position and rotation between authored keyframes; do not generate constant zoom-only motion.",
+    "Preserve holds at dialogue decisions and reaction beats.",
+    "Keep all prop artwork generic and unbranded."
+  ]
+}

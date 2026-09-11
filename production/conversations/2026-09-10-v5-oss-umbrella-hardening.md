@@ -158,3 +158,9 @@ The architecture target is now a real mixed-media studio pipeline: source normal
 
 ### OSS expansion pass 2 — studio-scale foundation — 2026-09-11
 Expanded the umbrella with Blender Studio's own production stack: Flamenco for Blender-native render management, Blender Studio Pipeline for shot/asset/project tooling, Syncthing for resilient media synchronization, DJV for professional review playback, VFX Platform metadata for dependency compatibility governance, and MoviePy for programmable media assembly. Blender Studio's documented pipeline itself combines Blender, Kitsu, Flamenco, shared storage and production tooling, validating this direction. The target is now explicitly studio-scale infrastructure rather than a collection of isolated utilities.
+
+
+### OSS expansion pass 3 — animation/story/audio — 2026-09-11
+Added Krita for hand-drawn/frame-by-frame 2D assets and paint-over, Blender Grease Pencil for 2D/3D hybrid animation, Storyboarder for rapid shot planning, Audacity for dialogue cleanup, Ardour for multitrack mixing/mastering, and RtMidi for realtime control. This fills the remaining production layers around animation planning and audio rather than only render infrastructure.
+
+External validation: Blender Studio's current pipeline explicitly organizes production into storyboard, editorial, previz, asset creation, animation, FX, lighting, rendering, coloring and publishing, with Kitsu/Flamenco supporting shot construction and review. TRIPPEDD's OSS architecture is being shaped around those same stage boundaries while retaining its live-action/generative-media requirements.

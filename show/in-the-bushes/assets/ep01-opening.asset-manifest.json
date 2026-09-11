@@ -1,14 +1,15 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "show": "In the Bushes",
-  "sequence": "EP01-origin-opening",
+  "sequence": "EP01-origin-opening-v3-alley-police",
   "assets": [
-    {"id":"env_night_bush","type":"environment","layers":["sky","distant_lights","ground","bush_back","bush_front"]},
-    {"id":"teens_group","type":"characters","states":["panic","point","throw"]},
-    {"id":"beer_pack_generic","type":"prop","states":["held","thrown","impact"]},
+    {"id":"env_alley","type":"environment","source":"show/in-the-bushes/assets/ep01-opening-alley.svg","layers":["brick_walls","fire_escape","alley_lamp","dumpster","puddles","street_opening","bush_exit","distant_lights"]},
+    {"id":"teens_group_origin","type":"characters","source":"show/in-the-bushes/assets/teens/teen-group-origin-states.svg","states":["hang","notice_police","panic","run","duck_hide","peek","beer_realize","point","throw","flee"]},
+    {"id":"beer_pack_generic","type":"prop","source":"show/in-the-bushes/assets/props/generic-beer-throw-kit.svg","states":["held","rattle","thrown","bounce","spill","impact"]},
+    {"id":"police_light_sweep","type":"fx","source":"show/in-the-bushes/assets/fx/police-light-sweep.svg","states":["distant","approach","sweep","fade"]},
     {"id":"busch","type":"character","states":["idle","wake","transform","confused","drunk","look_away","reaction","surprised"]},
-    {"id":"beer_impact_fx","type":"fx","states":["splash","soak","energy_pulse","foliage_shake"]},
+    {"id":"beer_impact_fx","type":"fx","states":["splash","soak","drip","foliage_twitch","foliage_shake","energy_pulse"]},
     {"id":"title_in_the_bushes","type":"title-card","source":"show/in-the-bushes/animatic/ep01-opening.title-card.json"}
   ],
-  "productionRule":"All assets are original show assets. Open-source software is production infrastructure only; no third-party character or branded artwork is imported."
+  "productionRule":"All assets are original show assets. Police presence is represented through original environmental light/audio cues rather than copied police character artwork. Open-source software is production infrastructure only; no third-party character or branded artwork is imported."
 }

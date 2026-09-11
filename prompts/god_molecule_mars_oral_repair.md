@@ -23,10 +23,11 @@ Produce a real talking MARS shot in which:
 ## Required OSS
 
 1. Google GNM Head v3 — https://github.com/google/GNM — Apache-2.0.
-2. GNM-Studio — https://github.com/Saganaki22/GNM-Studio — use its constrained GNM identity-fit/runtime approach and preserve its third-party notices.
-3. MediaPipe — tracking/landmarks.
-4. Existing Rhubarb lane — phoneme timing.
-5. Existing Blender/Cycles render path.
+2. GNM-Studio — https://github.com/Saganaki22/GNM-Studio — use its measured anatomical groups and canonical jaw-open deformation.
+3. FaceCap/Three.js r184 — MIT — use the pinned 52-target oral/face asset as an independent anatomy/expression reference; preserve Face Cap attribution.
+4. OpenFaceFX — MIT — use its phoneme→viseme retarget contract after Rhubarb audio timing.
+5. MediaPipe — tracking/landmarks.
+6. Existing Blender/Cycles render path.
 
 ## Critical identity rule
 
@@ -54,7 +55,7 @@ Use GNM as:
    - lower_lip_region
    - mouth_sock
 5. Align the donor to measured Mars mouth landmarks, not bounding-box guesses.
-6. Create the minimum mouth patch/cavity required to reveal the donor anatomy while preserving the surrounding Mars surface.
+6. Use the GNM mouth_sock itself as the cavity geometry/cutter. Do NOT create a sphere, cube, flat slab, or hand-placed tooth row. The cavity must be shaped by the anatomical donor and fitted to the measured Mars mouth frame.
 7. Transfer only the mouth-region deformation from the fitted GNM expression space onto the Mars mouth/lip shell.
 8. Drive the donor and Mars mouth shell from one shared jaw/viseme signal. Do not animate the teeth independently of the jaw.
 9. Drive blinks separately from mouth animation.

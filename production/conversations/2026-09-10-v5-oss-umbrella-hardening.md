@@ -110,3 +110,9 @@ Do not lock the provisional title, lore, characters, or exact mechanics yet. Pre
 
 ### Continuation 4 — cold-cache safety correction
 A review of the warm-cache changes found an important failure mode: replacing the old Blender installer outright would make a genuinely cold cache fail because the extracted directory did not yet exist. Corrected EP01 Autonomous, EP01 Story Runner, and V5 Commercial Proof so each workflow has a bounded cold-cache bootstrap that downloads/checksums/extracts Blender only when the extracted executable is absent. Warm runs still skip that expensive path. This preserves the original safety contract while achieving the intended persistent-cache behavior.
+
+
+### Continuation 5 — production priority directive
+User directed that this work remain centered on the production-studios repository and that the pipeline must keep moving actual deliverables: the commercial, EP01 story-runner cut, EP01 autonomous cut, and their editorial cuts. Open-source integrations should continue to be pulled into the production repository in full when they are usable production components, while avoiding speculative additions that don't advance a deliverable.
+
+Repository note: GitHub account search did not expose a repository literally named “Church Production Studios”; the connected production repository available and actively running this pipeline is **mhvnsnt/TRIPPEDD-Production-studios-**. Work is therefore continuing there rather than inventing or switching to an unverified repository.

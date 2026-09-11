@@ -254,3 +254,39 @@ wiring:
     role: enforce reference-image identity continuity and reject unrequested facial/body changes
     activation: identity-qc
     license: internal
+
+  - id: hunyuanvideo
+    repo: https://github.com/Tencent-Hunyuan/HunyuanVideo.git
+    role: high-quality open video text-to-video and image-to-video generation
+    activation: generative-video
+    license: custom-model-license
+  - id: hunyuanvideo-1.5
+    repo: https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5.git
+    role: lighter video generation for lower-VRAM production workers
+    activation: generative-video-edge
+    license: custom-model-license
+  - id: flux
+    repo: https://github.com/black-forest-labs/flux.git
+    role: high-quality controllable image generation foundation
+    activation: generative-image
+    license: mixed-model-license
+  - id: cogvideox
+    repo: https://github.com/THUDM/CogVideo.git
+    role: additional open video generation and image-to-video path
+    activation: generative-video-alt
+    license: Apache-2.0
+  - id: rife
+    repo: https://github.com/hzwer/ECCV2022-RIFE.git
+    role: frame interpolation and motion-rate finishing
+    activation: frame-interpolation
+    license: MIT
+  - id: realesrgan
+    repo: https://github.com/xinntao/Real-ESRGAN.git
+    role: image/video restoration and upscaling
+    activation: restoration-upscale
+    license: BSD-3-Clause
+  - id: codeformer
+    repo: https://github.com/sczhou/CodeFormer.git
+    role: face restoration for controlled cleanup, never identity replacement
+    activation: face-restoration
+    license: S-Lab License 1.0

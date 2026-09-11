@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build a deterministic SVG-frame preview for In the Bushes EP01 origin opening.
 
-This is intentionally dependency-light: Python stdlib creates frame SVGs; a local
-SVG rasterizer (rsvg-convert or ImageMagick) and FFmpeg produce the video.
-The scene and motion JSON remain the source of truth for timing.
+Python stdlib creates frame SVGs; a local SVG rasterizer (rsvg-convert or
+ImageMagick) and FFmpeg produce the video. Scene and motion JSON are the timing
+source of truth.
 """
 from __future__ import annotations
 
@@ -65,17 +65,15 @@ def block_at(block, frame):
     start, end = block["frames"]
     if frame < start or frame > end:
         return None
-    t = 0 if end == start else (frame - start) / (end - start)
-    return t
+    return 0 if end == start else (frame - start) / (end - start)
 
 
 def motion_transform(motion, frame):
-    """Return a simple SVG transform for supported continuous motion blocks."""
     t = block_at(motion, frame)
     if t is None:
         return ""
-    name = motion["id"]
     e = ease(t, motion.get("easing", "linear"))
+    name = motion["id"]
     if name == "teen_run_stop":
         x = lerp(motion["from"]["x"], motion["to"]["x"], e)
         y = lerp(motion["from"]["y"], motion["to"]["y"], e)
@@ -89,16 +87,17 @@ def motion_transform(motion, frame):
         return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-520 -510)"
     if name == "can_bounce":
         pts = motion["path"]["points"]
-        u = e * (len(pts)-1)
-        i = min(len(pts)-2, int(u))
+        u = e * (len(pts) - 1)
+        i = min(len(pts) - 2, int(u))
         lt = u - i
-        x, y = lerp(pts[i][0], pts[i+1][0], lt), lerp(pts[i][1], pts[i+1][1], lt)
+        x = lerp(pts[i][0], pts[i+1][0], lt)
+        y = lerp(pts[i][1], pts[i+1][1], lt)
         rpts = motion["rotation"]
         r = lerp(rpts[i], rpts[i+1], lt)
         return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-1190 -520)"
     if name == "liquid_spill":
-        x = lerp(motion["path"]["p0"][0], motion["path"]["p1"][0], e)
-        y = lerp(motion["path"]["p0"][1], motion["path"]["p1"][1], e)
+        p0, p1 = motion["path"]["p0"], motion["path"]["p1"]
+        x, y = lerp(p0[0], p1[0], e), lerp(p0[1], p1[1], e)
         s = lerp(motion["scale"][0], motion["scale"][1], e)
         return f"translate({x:.2f} {y:.2f}) scale({s:.3f}) translate(-1350 -570)"
     if name == "busch_wake_rise":
@@ -110,16 +109,24 @@ def motion_transform(motion, frame):
 
 def image(path: Path, transform="", opacity=1.0):
     href = data_uri(path)
-    return f'<image href="{href}" x="0" y="0" width="1920" height="1080" preserveAspectRatio="none" opacity="{opacity}" transform="{escape(transform)}"/>'
+    return (f'<image href="{href}" x="0" y="0" width="1920" height="1080" '
+            f'preserveAspectRatio="none" opacity="{opacity}" transform="{escape(transform)}"/>')
 
 
 def scene_shot(scene, frame):
     for shot in scene["shots"]:
-        start = shot["startFrame"]
-        end = start + shot["durationFrames"] - 1
+        start = shot["start"]
+        end = start + shot["duration"] - 1
         if start <= frame <= end:
             return shot
     raise ValueError(f"No shot for frame {frame}")
+
+
+def find_block(blocks, block_id, frame):
+    for block in blocks:
+        if block["id"] == block_id and block_at(block, frame) is not None:
+            return block
+    return None
 
 
 def main():
@@ -132,10 +139,11 @@ def main():
     ap.add_argument("--keep-svg", action="store_true")
     args = ap.parse_args()
 
-    scene, motion, render = load(Path(args.scene)), load(Path(args.motion)), load(Path(args.render_plan))
-    frames = int(scene["totalFrames"])
-    fps = int(scene["fps"])
-    width, height = scene.get("resolution", [1920, 1080])
+    scene = load(Path(args.scene))
+    motion = load(Path(args.motion))
+    _render_plan = load(Path(args.render_plan))
+    frames, fps = int(scene["totalFrames"]), int(scene["fps"])
+    width, height = 1920, 1080
     out = Path(args.out)
     svg_dir, png_dir = out / "svg", out / "png"
     svg_dir.mkdir(parents=True, exist_ok=True)
@@ -150,14 +158,13 @@ def main():
     for frame in range(frames):
         shot = scene_shot(scene, frame)
         layers = []
-        # Every shot gets a full-frame original background unless it is the title card.
-        if shot["id"] != "S11":
-            layers.append(image(ASSET_MAP["env_night_bush"]))
-        else:
+        if shot["id"] == "S11":
             layers.append(image(ASSET_MAP["ep01-opening-title.svg"]))
+        else:
+            layers.append(image(ASSET_MAP["env_night_bush"]))
 
         assets = shot.get("assets", [])
-        if shot["id"] in {"S02", "S03", "S04", "S05"} and "teen-group-run-hide.svg" in assets:
+        if shot["id"] in {"S02", "S03", "S04"} and "teen-group-run-hide.svg" in assets:
             tr = next((motion_transform(b, frame) for b in motion_blocks if b["id"] == "teen_run_stop"), "")
             layers.append(image(ASSET_MAP["teen-group-run-hide.svg"], tr))
         if shot["id"] == "S05":
@@ -173,19 +180,22 @@ def main():
         if shot["id"] == "S10":
             layers.append(image(ASSET_MAP["busch-reaction.svg"]))
 
-        # Motion cues that do not have a dedicated art layer become lightweight FX.
-        twitch = next((b for b in motion_blocks if b["id"] == "foliage_twitch"), None)
-        shudder = next((b for b in motion_blocks if b["id"] == "foliage_shudder"), None)
-        if twitch and block_at(twitch, frame) is not None:
+        # Keep subtle physical motion visible even where dedicated art is limited.
+        twitch = find_block(motion_blocks, "foliage_twitch", frame)
+        if twitch:
             t = block_at(twitch, frame)
             r = math.sin(t * math.pi * 4) * 2
-            layers.append(f'<rect x="1420" y="500" width="420" height="300" fill="none" stroke="none" transform="rotate({r:.2f} 1630 650)"/>')
-        if shudder and block_at(shudder, frame) is not None:
+            layers.append(f'<g transform="rotate({r:.2f} 1650 650)"></g>')
+        shudder = find_block(motion_blocks, "foliage_shudder", frame)
+        if shudder:
             t = block_at(shudder, frame)
             s = 1 + 0.025 * math.sin(t * math.pi * 5)
-            layers.append(f'<g transform="translate(1630 650) scale({s:.4f}) translate(-1630 -650)"></g>')
+            layers.append(f'<g transform="translate(1650 650) scale({s:.4f}) translate(-1650 -650)"></g>')
 
-        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}"><title>In the Bushes EP01 origin opening frame {frame:04d}</title>{''.join(layers)}</svg>'''
+        layer_markup = "".join(layers)
+        svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+               f'viewBox="0 0 {width} {height}"><title>In the Bushes EP01 origin opening '
+               f'frame {frame:04d}</title>{layer_markup}</svg>')
         svg_path = svg_dir / f"frame-{frame:04d}.svg"
         svg_path.write_text(svg, encoding="utf-8")
 
@@ -196,9 +206,13 @@ def main():
             cmd = [raster, "-background", "none", str(svg_path), str(png_path)]
         subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
 
-    scale = "720:405" if args.preview else "1920:1080"
     output = out / ("preview_720p24.mp4" if args.preview else "master_1080p24.mp4")
-    subprocess.run([ffmpeg, "-y", "-framerate", str(fps), "-i", str(png_dir / "frame-%04d.png"), "-vf", f"scale={scale}:flags=lanczos", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(output)], check=True)
+    scale = "720:405" if args.preview else "1920:1080"
+    subprocess.run([
+        ffmpeg, "-y", "-framerate", str(fps), "-i", str(png_dir / "frame-%04d.png"),
+        "-vf", f"scale={scale}:flags=lanczos", "-c:v", "libx264", "-pix_fmt", "yuv420p",
+        "-movflags", "+faststart", str(output)
+    ], check=True)
     print(output)
     if not args.keep_svg:
         shutil.rmtree(svg_dir)

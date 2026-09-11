@@ -147,8 +147,10 @@ def main() -> int:
         },
         "human_checklist": [
             "REST: lips sealed, no pink plank past lip plane",
-            "JAW_OPEN: visible cavity behind lips; teeth and/or tongue if modeled",
-            "PROFILE: no cavity liner protruding past lips",
+            "JAW_OPEN: visible cavity behind lips",
+            "JAW_OPEN: distinct teeth (not a pink slab) and gums when donor provides masks",
+            "JAW_OPEN: tongue present if donor includes tongue",
+            "PROFILE: no cavity liner / sock protruding past lips (Y-depth plane)",
             "FRONT: aperture matches OPEN claim",
             "Survey JSON protrusion_gate agrees with pixels (trust pixels if conflict)",
         ],

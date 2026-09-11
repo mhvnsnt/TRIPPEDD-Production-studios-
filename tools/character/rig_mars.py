@@ -101,40 +101,95 @@ print("  jaw hinge measured at ear line %s -> chin %s"
       % ([round(c, 3) for c in jaw_hinge], [round(c, 3) for c in L["chin"]]))
 
 # ── bind, then FIX the jaw weights from geometry ─────────────────────────────
+# ── bind with FULLY EXPLICIT weights ─────────────────────────────────────────
+#
+# ARMATURE_AUTO was the first approach and it does not work on this head. Bone
+# heat weighting reports "failed to find solution", and the weights it does
+# leave behind are spread across root/neck/head so thinly that the armature
+# modifier normalises the jaw down to almost nothing.
+#
+# MEASURED: with automatic weights plus a jaw group layered on top, rotating the
+# jaw 16 degrees moved the chin 0.0016 units. The geometry says an arc of 0.455
+# at 16 degrees should move it about 0.09 — fifty-six times further. The axis
+# was fine (the bone's local X is world X to three decimals); the weights were
+# being diluted.
+#
+# So every weight here is assigned deliberately and normalised by hand. Nothing
+# is inherited from a solver that already said it could not solve this mesh.
 bpy.ops.object.select_all(action="DESELECT")
 mesh_obj.select_set(True); arm.select_set(True)
 bpy.context.view_layer.objects.active = arm
-bpy.ops.object.parent_set(type="ARMATURE_AUTO")
+bpy.ops.object.parent_set(type="ARMATURE_NAME")     # groups + modifier, NO weights
 
-# Automatic weights bind a closed scan head almost entirely to `head` — the jaw
-# gets nothing usable because there is no separate jaw geometry to find. Weight
-# it explicitly: below the hinge, in front of it, falling off toward the ears.
-vg_jaw = mesh_obj.vertex_groups.get("jaw") or mesh_obj.vertex_groups.new(name="jaw")
-vg_head = mesh_obj.vertex_groups.get("head") or mesh_obj.vertex_groups.new(name="head")
+for name in ("root", "neck", "head", "jaw", "eye_L", "eye_R"):
+    if name not in mesh_obj.vertex_groups:
+        mesh_obj.vertex_groups.new(name=name)
+vg = {name: mesh_obj.vertex_groups[name] for name in
+      ("root", "neck", "head", "jaw", "eye_L", "eye_R")}
+
 chin = L["chin"]
 jaw_reach = (chin - jaw_hinge).length
-mouth_mid = (L["mouth_left"] + L["mouth_right"]) / 2.0
+half_x = max(1e-6, size.x * 0.5)
 
 jaw_weighted = 0
 for v in mesh_obj.data.vertices:
     co = v.co
-    below = jaw_hinge.z - co.z              # how far under the hinge
-    forward = jaw_hinge.y - co.y            # how far in front of it (face is -Y)
-    if below <= 0 or forward <= 0:
-        continue
-    # Smooth falloff: full at the chin, zero at the hinge line.
-    w = min(1.0, (below / (jaw_reach * 0.95)) ** 0.75) * min(1.0, forward / (jaw_reach * 0.55))
-    # Do not drag the back of the skull or the locs with the jaw.
-    lateral = abs(co.x) / max(1e-6, size.x * 0.5)
-    w *= max(0.0, 1.0 - lateral ** 2.2)
-    if w <= 0.02:
-        continue
-    vg_jaw.add([v.index], min(1.0, w), "REPLACE")
-    vg_head.add([v.index], max(0.0, 1.0 - w), "REPLACE")
-    jaw_weighted += 1
-print("jaw weights: %d vertices (%.1f%% of mesh)" % (jaw_weighted, 100.0 * jaw_weighted / len(mesh_obj.data.vertices)))
+    below = jaw_hinge.z - co.z          # under the hinge line
+    forward = jaw_hinge.y - co.y        # in front of it (the face looks -Y)
+
+    w_jaw = 0.0
+    if below > 0 and forward > 0:
+        # Full authority at the chin, tapering to nothing at the hinge line.
+        depth = min(1.0, below / (jaw_reach * 0.80))
+        reach = min(1.0, forward / (jaw_reach * 0.45))
+        lateral = min(1.0, abs(co.x) / half_x)
+        w_jaw = (depth ** 0.6) * (reach ** 0.5) * max(0.0, 1.0 - lateral ** 2.0)
+
+    if w_jaw > 0.02:
+        jaw_weighted += 1
+        vg["jaw"].add([v.index], min(1.0, w_jaw), "REPLACE")
+        vg["head"].add([v.index], max(0.0, 1.0 - w_jaw), "REPLACE")
+    else:
+        # Everything else rides the head bone, so the skull is rigid and only
+        # the jaw region deforms.
+        vg["head"].add([v.index], 1.0, "REPLACE")
+
+print("jaw weights: %d vertices (%.1f%% of mesh), explicit and normalised"
+      % (jaw_weighted, 100.0 * jaw_weighted / len(mesh_obj.data.vertices)))
 if jaw_weighted < 50:
     sys.exit("jaw weighting found almost no vertices — the measured hinge is wrong")
+
+# PROVE the binding drives the chin before going any further. A rig that cannot
+# open its jaw is not a rig, and finding that out after an hour of rendering is
+# how the last pass was wasted.
+def jaw_region_travel(deg):
+    """
+    MAX displacement among the vertices the jaw actually owns.
+
+    The first version averaged the height of every point inside a sphere around
+    the chin. That sphere contains plenty of geometry with little or no jaw
+    weight, so it diluted a real 0.118 of travel down to 0.017 and the gate
+    rejected a working rig. Averaging over a region that includes non-moving
+    geometry measures the region, not the motion.
+    """
+    pbj.rotation_euler = (0, 0, 0); bpy.context.view_layer.update()
+    ev = mesh_obj.evaluated_get(bpy.context.evaluated_depsgraph_get()); m = ev.to_mesh()
+    before = [v.co.copy() for v in m.vertices]; ev.to_mesh_clear()
+    pbj.rotation_euler = (math.radians(deg), 0, 0); bpy.context.view_layer.update()
+    ev = mesh_obj.evaluated_get(bpy.context.evaluated_depsgraph_get()); m = ev.to_mesh()
+    after = [v.co.copy() for v in m.vertices]; ev.to_mesh_clear()
+    pbj.rotation_euler = (0, 0, 0); bpy.context.view_layer.update()
+    d = [(a - b).length for a, b in zip(before, after)]
+    return (max(d) if d else 0.0), sum(1 for x in d if x > 1e-4)
+
+pbj = arm.pose.bones["jaw"]
+pbj.rotation_mode = "XYZ"
+jaw_travel, jaw_moved = jaw_region_travel(16.0)
+mouth_w = (L["mouth_right"] - L["mouth_left"]).length
+print("jaw bind check: 16 degrees moves %d vertices, max travel %.5f (%.0f%% of mouth width)"
+      % (jaw_moved, jaw_travel, 100 * jaw_travel / mouth_w))
+if jaw_travel < mouth_w * 0.20 or jaw_moved < 500:
+    sys.exit("THE JAW DOES NOT DRIVE THE MESH — refusing to ship a rig whose main control does nothing")
 
 # ── shape keys, as measured radial deformations ──────────────────────────────
 if not mesh_obj.data.shape_keys:
@@ -172,9 +227,14 @@ SHAPES = {
     "viseme_AA": [(L["lower_lip"], lip_r * 1.25, V((0, 0, -1)), mw * 0.42),
                   (chin, lip_r * 1.6, V((0, 0, -1)), mw * 0.30),
                   (L["upper_lip"], lip_r * 0.9, V((0, 0, 1)), mw * 0.07)],
-    "viseme_EE": [(L["mouth_left"], lip_r * 0.9, V((-1, 0, 0)), mw * 0.22),
-                  (L["mouth_right"], lip_r * 0.9, V((1, 0, 0)), mw * 0.22),
-                  (L["lower_lip"], lip_r, V((0, 0, -1)), mw * 0.10)],
+    # EE is a WIDE, thin mouth. The corner pushes must not overlap at the centre
+    # or they cancel: with a radius of 0.8x mouth width the two regions covered
+    # the midline and fought each other, and the measured result was a mouth
+    # that got NARROWER. Tight radii at each corner, pushed along the corner's
+    # own outward direction, keeps the widening real.
+    "viseme_EE": [(L["mouth_left"], lip_r * 0.42, (L["mouth_left"] - L["mouth_right"]).normalized(), mw * 0.30),
+                  (L["mouth_right"], lip_r * 0.42, (L["mouth_right"] - L["mouth_left"]).normalized(), mw * 0.30),
+                  (L["lower_lip"], lip_r * 0.7, V((0, 0, -1)), mw * 0.07)],
     "viseme_OH": [(L["mouth_left"], lip_r * 0.9, V((1, 0, 0)), mw * 0.20),
                   (L["mouth_right"], lip_r * 0.9, V((-1, 0, 0)), mw * 0.20),
                   (L["upper_lip"], lip_r, V((0, -1, 0)), mw * 0.16),
@@ -211,6 +271,11 @@ if len(made) < 5:
 # ── save ─────────────────────────────────────────────────────────────────────
 state = {
     "character": "MARS", "lod": LOD,
+    "characterPremise": "MARS IS A FLOATING-HEAD BEING. The absence of a body is "
+                        "intentional character design, not missing geometry. Never "
+                        "invent a torso, never treat the neck termination as a defect.",
+    "jawTravelAt16deg": round(jaw_travel, 5),
+    "jawVerticesMovedAt16deg": jaw_moved,
     "sourceAnatomy": os.path.relpath(anat_path, ROOT),
     "bones": [b.name for b in arm_data.bones],
     "jawHinge": [round(c, 5) for c in jaw_hinge],

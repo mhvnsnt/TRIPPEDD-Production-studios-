@@ -1,6 +1,9 @@
 {
   "character": "MARS",
   "lod": "LOD2",
+  "characterPremise": "MARS IS A FLOATING-HEAD BEING. The absence of a body is intentional character design, not missing geometry. Never invent a torso, never treat the neck termination as a defect.",
+  "jawTravelAt16deg": 0.11756,
+  "jawVerticesMovedAt16deg": 7015,
   "sourceAnatomy": "renders/_rig_measure/face_anatomy.json",
   "bones": [
     "root",
@@ -16,10 +19,10 @@
     0.34331
   ],
   "jawHingeSource": "measured ear midpoint (temporomandibular joint)",
-  "jawWeightedVertices": 6318,
+  "jawWeightedVertices": 7017,
   "shapeKeys": {
     "viseme_AA": 2826,
-    "viseme_EE": 1261,
+    "viseme_EE": 390,
     "viseme_OH": 1272,
     "viseme_MM": 821,
     "viseme_FF": 469,

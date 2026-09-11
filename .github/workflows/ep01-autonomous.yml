@@ -46,11 +46,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Cache Blender archive
+      - name: Cache Blender extracted toolchain
         uses: actions/cache@v4
         with:
-          path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
-          key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
+          path: ~/.cache/trippedd/blender-${{ env.BLENDER_VERSION }}-linux-x64
+          key: blender-extracted-${{ env.BLENDER_VERSION }}-${{ runner.os }}-${{ runner.arch }}
       - name: Cache completed subjectivity frames
         uses: actions/cache@v4
         with:
@@ -60,18 +60,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
-      - name: Install production Blender LTS
+      - name: Activate cached Blender toolchain
         run: |
           set -euo pipefail
-          mkdir -p ~/.cache/trippedd
-          base="https://download.blender.org/release/Blender4.5"
-          url="${base}/${BLENDER_ARCHIVE}"
-          checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
-          if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
-          curl -fsSL "$checksum_url" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
-          sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
-          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          test -x "$HOME/.cache/trippedd/blender-${BLENDER_VERSION}-linux-x64/blender"
+          sudo ln -sfn "$HOME/.cache/trippedd/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
       - name: Render verified frame chunk
         env:

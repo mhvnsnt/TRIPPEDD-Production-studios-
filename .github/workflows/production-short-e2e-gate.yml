@@ -96,18 +96,31 @@ jobs:
           python -m pip install -r config/production/oss-stack.requirements.txt
       - name: Install production dependencies
         run: bun install --no-save
-      - name: Install and verify Blender
+      - name: Restore Blender toolchain cache
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/trippedd/blender
+            /opt/blender-4.5.13-linux-x64
+          key: blender-4.5.13-linux-x64-${{ runner.os }}-${{ runner.arch }}
+      - name: Install Blender only on cache miss
+        if: steps.blender-cache.outputs.cache-hit != 'true'
         env:
           BLENDER_VERSION: '4.5.13'
           BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
         run: |
           set -euo pipefail
-          mkdir -p ~/.cache/trippedd
-          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+          mkdir -p ~/.cache/trippedd/blender
+          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/blender/${BLENDER_ARCHIVE}"
           curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
-          sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
-          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/blender/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          sudo tar -xJf "$HOME/.cache/trippedd/blender/${BLENDER_ARCHIVE}" -C /opt
+      - name: Activate cached Blender
+        run: |
+          set -euo pipefail
+          test -x /opt/blender-4.5.13-linux-x64/blender
+          sudo ln -sfn /opt/blender-4.5.13-linux-x64/blender /usr/local/bin/blender
           blender --version | head -n 2
       - name: Provision full open-source render backends
         run: |

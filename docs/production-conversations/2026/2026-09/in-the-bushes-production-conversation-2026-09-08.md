@@ -1,6 +1,6 @@
 # In the Bushes — Production Conversation
 
-**Date:** 2026-09-08  
+**Date:** 2026-09-08 onward  
 **Studio:** TRIPPEDD Production Studios  
 **Property:** In the Bushes  
 **Conversation layer:** STORYRUNNER  
@@ -10,17 +10,13 @@
 
 ## Project relationship
 
-This is a **separate production conversation** from the main TRIPPEDD Production Conversation. TRIPPEDD Production Studios is the studio/network umbrella; **In the Bushes** is its own show/property that can live within the wider TRIPPEDD network.
-
-The user established themself in this discussion as **Person One / CEO of the TRIPPEDD Production Network/Studios**. The show has its own co-producer/main-producer identity and needs its own title and world.
+This is a separate production conversation from the main TRIPPEDD Production Conversation. TRIPPEDD Production Studios is the studio/network umbrella; **In the Bushes** is its own show/property that can live within the wider TRIPPEDD network.
 
 ## Title and naming
 
 The working show title is **In the Bushes**.
 
-The title grew from a chain of broad cultural references and wordplay: Adult Swim-era strange/economical animation → *12 oz. Mouse* as a broad low-budget adult-animation reference → *King of the Hill* → Hank Hill/beer → Busch beer → bushes → **In the Bushes**.
-
-These are reference points, not material to copy. The property must have original characters, dialogue, stories, visual identity, mythology, settings, jokes, props, and world rules.
+The title grew from broad cultural references and wordplay: economical adult animation → *12 oz. Mouse* as a broad low-budget reference → *King of the Hill* → Hank Hill/beer → Busch beer → bushes → **In the Bushes**. These are reference points, not material to copy. The property must have original characters, dialogue, stories, visual identity, mythology, settings, jokes, props, and world rules.
 
 Current naming distinction:
 
@@ -30,104 +26,92 @@ Current naming distinction:
 
 ## Core origin
 
-A group of teenagers are somewhere they should not be, such as an alley, park, or other outdoor location. They see police, parents, or another authority arriving. They have a six-pack of beer, including opened cans.
+A group of teenagers are somewhere they should not be. The opening location is now specifically an **alley**. Police arrive while the teenagers are hanging out with a six-pack and opened cans. They panic, run farther down the alley, duck/hide, and realize they are still carrying the beer.
 
-They panic, take hurried sips while trying to move, and decide to get rid of the beer. They throw the six-pack and opened cans into a nearby bush.
+They ask what to do with it. One teenager points toward a bush at the **alley exit** and shouts **“IN THE BUSHES!”** They then physically **run out of the alley** and throw the six-pack/opened cans into the bush. Beer spills through the foliage. A surreal, exaggerated transformation causes the bush to become **sentient, conscious, alive, and drunk**.
 
-Beer spills through the foliage. A surreal, exaggerated comic-book/superhero-like transformation occurs. The bush becomes **sentient, conscious, and alive**. Because beer caused the transformation, the new being is also **drunk**.
+## Opening revision / creative decision
 
-The transformation has been described as having a “Spider-Man effect” in energy, but it must remain an original transformation for this property.
+### Superseded version
 
-## Busch character
+The earlier v2 opening used a generic nighttime exterior and had the teenagers enter/hide near the bush before throwing the beer. That staging is now **superseded** as the primary opening canon.
 
-Busch is a newly conscious being trying to understand existence from the perspective of a bush. His comedy comes from the mismatch between his perception, human interpretation, his physical limitations, and his accidental drunkenness.
+### New canon: alley / police cold open
 
-Beer is intended as **world DNA/mythology**, not merely a repeating “everyone is drunk” joke. Possible liquid/substance effects (beer/drunk, energy drink/hyper, coffee/paranoid, water/normal) remain exploratory and are **not canon**.
+The production opening is now locked to this causal sequence:
 
-## Opening sequence / title-card staging
+1. **ALLEY HANGOUT** — teenagers casually hang out with beer where they should not be.
+2. **POLICE ARRIVE** — distant siren, footsteps, headlights and an abstract police-light sweep enter the alley.
+3. **“SHIT! THEY'RE COMING!”** — the teens recognize the danger.
+4. **RUN / DUCK / HIDE** — they run down the alley and hide near the exit while police presence remains mostly offscreen.
+5. **REALIZE THEY HAVE THE BEER** — a can rattles; they discover they are still holding the six-pack.
+6. **“WHAT DO WE DO WITH THE BEER?”** — they look toward the bush at the alley exit.
+7. **“IN THE BUSHES!”** — the exact phrase is shouted before the throw.
+8. **RUN OUT OF THE ALLEY** — they burst out toward the bush.
+9. **THROW** — the beer is thrown into the bush only after the phrase and only after they have run out of the alley.
+10. **TRANSFORMATION** — beer drips, foliage twitches, shudders and pulses with supernatural energy.
+11. **BUSCH WAKES** — the bush becomes a conscious, drunken character.
+12. **BUSCH PROCESSES THE SCENE** — he notices the fleeing teens and spilled cans.
+13. **BUSCH LOOKS AWAY** — distinct awkward comedy beat.
+14. **REACTION HOLD** — separate beat.
+15. **TITLE CARD: IN THE BUSHES** — hard cut after the reaction hold.
 
-The origin opening currently follows this rhythm:
+### Important staging lock
 
-1. Black screen.
-2. Night ambience / crickets.
-3. Beer can cracks open.
-4. Teenagers hurry and talk.
-5. Headlights or authority presence approaches.
-6. Panic.
-7. One teenager calls out **“IN THE BUSHES!”** — intentionally using the exact phrase, **not** “the bushes.”
-8. The six-pack and open beers are thrown into the bush.
-9. Beer splashes through the leaves.
-10. Teenagers flee.
-11. Silence / hold.
-12. The bush twitches.
-13. Leaves move; the bush begins to come alive.
-14. Busch experiences consciousness while intoxicated.
-15. **Busch looks away / reacts** in a small, character-revealing beat.
-16. Brief hold.
-17. **TITLE CARD: IN THE BUSHES.**
+The teenagers **do not throw the beer while hiding in the alley**. The bush is at/near the alley exit. The audience must see the causal movement: **police pressure → hide → beer problem → title phrase → run out of alley → throw into bush**.
 
-### Title-origin decision
-
-The title should feel as though it **comes out of the scene itself**, rather than being an unrelated graphic slapped on afterward.
-
-The phrase **“IN THE BUSHES!”** is spoken naturally during the panic and directly describes where the beer is being thrown. The transformation follows. Then Busch's look-away/reaction provides the final comedic punctuation before the title card.
-
-The intended edit grammar is:
-
-**“IN THE BUSHES!” → beer hits bush → transformation → Busch looks away/reacts → brief hold → TITLE CARD: IN THE BUSHES.**
-
-This makes the title simultaneously:
-
-- a spoken phrase
-- a literal location
-- the origin event
-- a recurring expression
-- the show's identity
-
-This is now the **preferred opening/title-card staging** unless explicitly revised later.
+The spoken title phrase must remain before the throw. The look-away must remain separate from the title transition.
 
 ## Visual direction
 
-The show is aimed at surreal, ordinary outdoor environments: nighttime parks, alleys, yards, roadside spaces, parking lots, and other places where something strange could happen unnoticed.
+The opening environment is an original stylized nighttime alley with brick walls, a fire escape, alley lamp, dumpster, puddles, distant street opening and a bush at the exit. The police are conveyed primarily through sound, headlights and original abstract light sweeps rather than a detailed copied police-character design.
 
 Visual priorities:
 
 - sentient anthropomorphic bush as focal character
-- beer cans/bottles as recurring world objects
+- beer cans/bottles as recurring world objects without beverage-company marks
+- alley geography that makes the run-out readable
 - exaggerated transformation moment
 - limited, economical animation
-- strong poses, holds, timing, camera movement, reactions, and sound
+- strong poses, holds, timing, camera movement, reactions and sound
 - cheap-but-intentional adult-animation philosophy
 
-Prior visual references were presented for nighttime suburban bushes, anthropomorphic bush characters, surreal adult-animation environments, and beer/can-and-bush imagery. Those third-party reference images are not represented as owned source assets; this archive preserves their intended visual-reference direction only.
+## Busch character
+
+Busch is a newly conscious being trying to understand existence from the perspective of a bush. His comedy comes from the mismatch between his perception, human interpretation, physical limitations and accidental drunkenness.
+
+Beer is **world DNA/mythology**, not merely a repeating “everyone is drunk” joke.
+
+## Production implementation decision
+
+The story change is being propagated before further animation engineering. The source-of-truth production files now use the alley/police opening, including:
+
+- origin scene timing
+- storyboard continuity
+- render plan
+- motion blocks
+- asset manifest
+- original alley environment
+- original teen origin-state library
+- original police-light sweep FX
+
+The deterministic builder must follow these source-of-truth files rather than preserve the older generic-night staging.
 
 ## Production philosophy
 
 **Write once → build reusable assets → animate with presets → render → publish.**
 
-Busch should be designed as a reusable production asset with modular foliage/body shapes, eyes, mouth states, branch/gesture states, reaction states, drunk states, transformation states, and environmental variants. The design should support shorts, interstitials, social clips, segments, and eventually full episodes.
-
-## Open questions
-
-1. Is *In the Bushes* permanently locked as the show title?
-2. Is Busch definitely the character's name, or is that name acquired later?
-3. Why does beer create consciousness?
-4. Is the effect unique to Busch or part of a larger bush/plant mythology?
-5. Why do strange things keep happening in bushes?
-6. Where does Busch live after the origin?
-7. Can Busch move or is he rooted?
-8. How do humans perceive him?
-9. What is Busch's relationship with the teenagers who created him?
-10. What recurring characters inhabit the world?
-11. How much of the series is beer-related versus ordinary life through Busch's perspective?
-12. What is the exact pilot story after the transformation?
+Busch should remain a reusable production asset with modular foliage/body shapes, eyes, mouth states, branch/gesture states, reaction states, drunk states, transformation states and environmental variants. The teen group should likewise use reusable hang/notice/panic/run/hide/throw/flee states.
 
 ## Current decision snapshot
 
 **Working title:** In the Bushes  
 **Main character:** Busch  
-**Origin:** Teenagers panic and throw beer into a bush, accidentally creating a conscious, living, drunk bush.  
-**Title-origin device:** The teenagers literally say **“IN THE BUSHES!”** while throwing the beer. After the transformation, Busch looks away/reacts, a brief hold lands, and then the **IN THE BUSHES** title card appears.  
+**Origin location:** Alley  
+**Inciting event:** Police arrive while teenagers are hanging out with beer.  
+**Beer disposal:** Teens hide, realize they still have beer, shout **“IN THE BUSHES!”**, run out of the alley, then throw the beer into the bush.  
+**Transformation:** Beer causes the bush to become conscious, alive and drunk.  
+**Title-origin device:** The teenagers literally say **“IN THE BUSHES!”** before the throw. Busch wakes, looks away/reacts, a brief hold lands, then the **IN THE BUSHES** title card appears.  
 **Tone:** Deadpan, surreal, awkward, escalating, character-driven, intentionally low-fi.  
-**Reference philosophy:** Broad Adult Swim/12 oz. Mouse/King of the Hill influence may inform tone and production economy, but the property remains original.  
-**Conversation status:** Active dedicated In the Bushes production archive; future materially relevant discussion should be appended here rather than merged into the main TRIPPEDD conversation archive.
+**Reference philosophy:** Broad adult-animation influences may inform tone and production economy, but the property remains original.  
+**Conversation status:** Active dedicated In the Bushes production archive; future materially relevant discussion should be appended here.

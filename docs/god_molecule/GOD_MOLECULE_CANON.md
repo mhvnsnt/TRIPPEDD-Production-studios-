@@ -112,3 +112,27 @@ Cold-open drafts (e.g. municipal planning inside the mouth) must **serve** Recur
 ## Multi-agent rule
 
 When ChatGPT, Claude, and Grok disagree on “what the show is,” **this document + Show Bible + Mars reference contract** win until the showrunner overrides in a dated production conversation log.
+
+---
+
+## Additive production-room layer (Grok / multi-agent)
+
+Material below is **on top of** the Show Bible, not a replacement.
+
+### Allowed additive texture
+- Adult Swim–grade body/cosmic comedy (e.g. inner weather, zoning inside the mouth, “Kevin district”) **when** it serves nested-consciousness / recursive-room thesis
+- OpenUSD `ParticleField3DGaussianSplat` as Layer-2 environment detail registered to world seeds
+- Fail-closed oral protrusion gates, Rhubarb-or-silence, memory-safe first shot profiles
+- Hybrid language table: Physical / Memory-broadcast / Hallucination / Diagram-god-cam
+
+### Not additive (never override)
+- Episode 01 title/synopsis: *The Recursive Room*
+- Mars identity lock and cobalt / white-eye / sigil / dread visual constitution
+- Cosmology substrate scale stack
+- UNKNOWN ≠ PASS; telemetry ≠ creative final
+
+### Canonical file pointers
+- Cold open (aligned): `production/GOD_MOLECULE_EPISODE_01/COLD_OPEN.md`
+- Scene map: `production/GOD_MOLECULE_EPISODE_01/SCENE_MAP.md`
+- USD world template: `environments/GM-WORLD-0001/GM-WORLD-0001.usda`
+- Creative tone: `docs/god_molecule/CREATIVE_DIRECTION_ADULT_SWIM.md`

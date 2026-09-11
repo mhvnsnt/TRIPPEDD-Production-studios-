@@ -63,4 +63,23 @@ wiring:
   compositing: Natron -> live-action + 2D + 3D + generated-media plates
   production_tracking: Kitsu -> shot/asset/review/delivery state
   pipeline_integration: QuadPype -> DCC/publish/version boundaries
+  editorial_analysis: Auto-Editor -> silence/dead-air analysis -> editor-ready timelines
+  source_triage: LosslessCut/FFmpeg -> verified source orientation and fast selects
+  reframing: FrameShift -> subject-aware aspect-ratio normalization
   observability: repo-observer -> production telemetry -> self-healer
+
+  - id: auto-editor
+    repo: https://github.com/WyattBlue/auto-editor.git
+    role: silence/dead-air removal and editor-ready timeline generation
+    activation: editorial-analysis
+    license: Public-Domain-or-MIT
+  - id: losslesscut
+    repo: https://github.com/mifi/lossless-cut.git
+    role: fast source triage, lossless cutting, segment inspection and rotation repair
+    activation: source-triage
+    license: GPL-2.0-or-later
+  - id: frameshift
+    repo: https://github.com/fralapo/FrameShift.git
+    role: automated aspect-ratio reframing with subject-aware crop
+    activation: reframing
+    license: MIT

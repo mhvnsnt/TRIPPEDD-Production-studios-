@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "show": "In the Bushes",
+  "sequence": "EP01-origin-opening-v2",
+  "fps": 24,
+  "targetDurationSeconds": 24,
+  "shots": [
+    {"id":"S01","start":0,"duration":72,"action":"establish_night_location","details":"Wide exterior. Quiet neighborhood/park edge. Bush sits ordinary in foreground. Distant lights and insects establish the world."},
+    {"id":"S02","start":72,"duration":72,"action":"teens_enter_and_hide","details":"Three teenagers rush into frame, duck behind/near the bush, look back toward approaching trouble, then realize they are still holding the six-pack."},
+    {"id":"S03","start":144,"duration":60,"action":"beer_problem","dialogue":"We gotta get rid of these.","details":"One teen checks the cans. Another tries to quiet a rattling can. They whisper, argue for a beat, and glance toward the bush."},
+    {"id":"S04","start":204,"duration":48,"action":"decision","dialogue":"IN THE BUSHES!","details":"The line is shouted with sudden confidence. Brief reaction from the others before the throw."},
+    {"id":"S05","start":252,"duration":72,"action":"throw_and_miss_near_bush","details":"Six-pack and loose cans arc toward the bush. One can clips a branch, another lands short, then an open can spills directly onto the foliage."},
+    {"id":"S06","start":324,"duration":96,"action":"beer_soaks_bush","details":"The bush is initially still. Liquid drips through leaves. A tiny twitch. Another twitch. Then the foliage begins moving in a way that is clearly not wind."},
+    {"id":"S07","start":420,"duration":72,"action":"busch_wakes","details":"Eyes appear/read through the foliage. Busch rises just enough to establish a face and body language. The transformation is strange but restrained."},
+    {"id":"S08","start":492,"duration":60,"action":"busch_processes_reality","details":"Busch looks left, right, then down at the spilled cans. He seems confused about being alive before noticing the teenagers fleeing."},
+    {"id":"S09","start":552,"duration":60,"action":"busch_looks_away","details":"Busch deliberately looks away from the chaos with an awkward, almost embarrassed reaction. This is a standalone comedy beat."},
+    {"id":"S10","start":612,"duration":48,"action":"reaction_hold","details":"Near-still hold. Tiny sway/blink. Night ambience returns to the foreground."},
+    {"id":"S11","start":660,"duration":48,"action":"title_card","text":"IN THE BUSHES","details":"Hard cut to title. Busch remains subtly present behind/around the lettering."}
+  ],
+  "totalFrames":708,
+  "totalSeconds":29.5,
+  "productionRule":"The expanded version adds story and movement before the established title beat while preserving the exact spoken phrase -> throw -> transformation -> look-away -> hold -> title structure."
+}

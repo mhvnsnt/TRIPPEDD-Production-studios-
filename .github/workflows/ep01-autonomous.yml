@@ -126,6 +126,15 @@ jobs:
         with:
           path: .trippedd/huggingface
           key: trippedd-whisper-tiny-${{ runner.os }}
+      - name: Cache Bun and Python dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun/install/cache
+            ~/.cache/pip
+          key: trippedd-autonomous-deps-${{ runner.os }}-${{ hashFiles('package.json', 'bun.lock', 'config/production/oss-stack.requirements.txt') }}
+          restore-keys: |
+            trippedd-autonomous-deps-${{ runner.os }}-
       - name: Cache EP01 assembly segments
         uses: actions/cache@v4
         with:

@@ -11,13 +11,14 @@
   "source_set": [
     {"id":"mars_front_colored_stars","role":"style_reference_and_front_identity","file":"01-mars-front-colored-stars.png","sha256":"cd76b250b6f3e0c87feb7945a764d2e53c068116a55f4ca12346b62e3146dc6b","dimensions":"1536x1152"},
     {"id":"mars_front_white_stars","role":"secondary_front_style_reference","file":"02-mars-front-white-stars.png","sha256":"a829a0bec1a16ad107a9fccb9c3323f5eb2cd858ddfc0b809d61b9d37187ddba","dimensions":"1536x1152"},
-    {"id":"user_profile_left","role":"identity_geometry_left_profile","file":"03-user-profile-left.jpg","sha256":"616adbe2b45c3a7e2a0740967c8c8a43319f10837cb043bc64a90e4b038d421d","dimensions":"1152x1536"},
-    {"id":"user_profile_right","role":"identity_geometry_right_profile","file":"04-user-profile-right.jpg","sha256":"8fe197d72786b7bd30d1c5b27afbad665017ddfa6a19e125cfa295827cb7f3b0","dimensions":"1152x1536"},
-    {"id":"user_back_head","role":"identity_geometry_back","file":"05-user-back-head.jpg","sha256":"e6f2754fa6fbf3f5b2579e28f751bdbb9e7b5b47ab43f11a2bf11205561a050d","dimensions":"1152x1536"},
+    {"id":"user_profile_left","role":"identity_geometry_left_profile","file":"03-user-profile-left.jpg","sha256":"616adbe2b45c3a7e2a0740967c8c8a43319f10837cb043bc64a90e4b038d421d","dimensions":"1152x1536","archive_file":"records/photos/1000168032.jpg","archive_dimensions":"120x160"},
+    {"id":"user_profile_right","role":"identity_geometry_right_profile","file":"04-user-profile-right.jpg","sha256":"8fe197d72786b7bd30d1c5b27afbad665017ddfcfa6a19e125cfa295827cb7f3b0","dimensions":"1152x1536","archive_file":"records/photos/1000168031.jpg","archive_dimensions":"120x160"},
+    {"id":"user_back_head","role":"identity_geometry_back","file":"05-user-back-head.jpg","sha256":"e6f2754fa6fbf3f5b2579e28f751bdbb9e7b5b47ab43f11a2bf11205561a050d","dimensions":"1152x1536","archive_file":"records/photos/1000168036.jpg","archive_dimensions":"120x160"},
     {"id":"mars_back_3q","role":"style_and_back_geometry_reference","file":"06-mars-back-3q.png","sha256":"dba9ead0a17fa2bd1df54c41c98f952caf8d9443bae0093dc8e20ac212d58e0a","dimensions":"1536x864"},
     {"id":"mars_right_profile","role":"style_and_profile_reference","file":"07-mars-right-profile.png","sha256":"10c815115e23ca6cd5ff2a346235837ab06e05e0b5eb5b7e9dc2f6b94987c0c0","dimensions":"1536x864"},
     {"id":"mars_back","role":"style_and_back_reference","file":"08-mars-back.png","sha256":"3caf5d9034b5a50db389387821449f13a84ee639bb7d7627862235587895cd38","dimensions":"1536x864"}
   ],
+  "archive_note": "The three user-provided source photographs have been archived under records/photos as compact 120x160 reference derivatives. The original full-resolution conversation attachments remain the authoritative source files; the compact repository copies are not substitutes for the originals.",
   "canonical_rules": [
     "Use the real photographs for identity geometry.",
     "Use the blue Mars images for style, not for replacing the face geometry.",

@@ -1,4 +1,4 @@
-version: 2
+version: 3
 purpose: god-molecule-production-runtime
 policy:
   source_first: true
@@ -11,6 +11,13 @@ policy:
     allowed: true
     storage: lfs_or_artifact_cache
     never_bake_secrets: true
+environment_stack:
+  world_seed:
+    required: true
+    recipe: seed -> voxel_macro_layout -> deterministic_scene_manifest
+  gaussian_splat:
+    required_for_captured_3d: false
+    recipe: references -> COLMAP_or_Meshroom -> Nerfstudio/gsplat -> validated_splat
 projects:
   - name: blender
     repo: https://github.com/blender/blender.git
@@ -105,6 +112,33 @@ projects:
   - name: pitch-tts
     repo: https://github.com/adam-cyclones/pitch-tts.git
     lane: speech_to_animation_timing
+  - name: luanti
+    repo: https://github.com/luanti-org/luanti.git
+    lane: voxel_world_seed
+  - name: worldgen
+    repo: https://github.com/randyau/worldgen.git
+    lane: procedural_world_generation
+  - name: blockbench
+    repo: https://github.com/JannisX11/blockbench.git
+    lane: block_world_asset_authoring
+  - name: colmap
+    repo: https://github.com/colmap/colmap.git
+    lane: camera_reconstruction
+  - name: meshroom
+    repo: https://github.com/alicevision/meshroom.git
+    lane: photogrammetry
+  - name: nerfstudio
+    repo: https://github.com/nerfstudio-project/nerfstudio.git
+    lane: gaussian_scene_reconstruction
+  - name: gsplat
+    repo: https://github.com/nerfstudio-project/gsplat.git
+    lane: gaussian_rasterization
+  - name: gsplat-js
+    repo: https://github.com/huggingface/gsplat.js.git
+    lane: gaussian_web_preview
+  - name: openusd
+    repo: https://github.com/PixarAnimationStudios/OpenUSD.git
+    lane: scene_interchange
 asset_ingest:
   drive_model:
     provider: google_drive
@@ -127,6 +161,7 @@ production_gates:
   - likeness_integrity
   - geometry_integrity
   - animation_integrity
+  - environment_integrity
   - render_integrity
   - audio_sync
   - provenance

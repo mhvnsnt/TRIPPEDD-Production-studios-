@@ -124,3 +124,7 @@ The OSS umbrella installer was tightened to match the production directive liter
 
 ### Continuation 7 — runners launched from production branch
 To make the requested production work actually execute without requiring a manual UI dispatch, EP01 Story Runner and EP01 Autonomous Cut now accept pushes to the active production hardening branch in addition to manual `workflow_dispatch`. This push-based trigger is intentional for the active production branch: changes to the production pipeline automatically launch the real Story Runner and Autonomous jobs. The commercial proof already runs on branch push. The objective is now execution, not merely configuration.
+
+
+### Continuation 8 — canonical production dispatch
+Added a production dispatch job to the EP01 Autonomous workflow so a production-branch update explicitly launches both the canonical Story Runner and Autonomous Cut workflows against the same branch. Existing concurrency and self-healing remain bounded. Commercial proof remains independently push-triggered. This makes the requested commercial/episode execution path explicit rather than relying solely on workflow-trigger semantics.

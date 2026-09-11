@@ -33,13 +33,53 @@
   },
   "removedDeadKeys": [],
   "meshVertices": 47021,
-  "mouthSurgery": {
-    "seamEdgesSplit": 24,
-    "upperLipVerts": 170,
-    "lowerLipVerts": 131,
-    "mouthInteriorObject": "MARS_MOUTH_BAG",
-    "apertureAt16degBefore": 0.01321,
-    "apertureAt16degAfter": 0.0185,
-    "note": "The scan's mouth was welded shut with no interior, so jaw rotation smeared one continuous surface instead of opening. The seam is cut, the lower lip follows the jaw, and a dark interior sits behind the lips."
+  "mouthSurgeryReverted": {
+    "what": "bmesh edge-splitting of the lip seam",
+    "why": "It tore the surface. The split edges rendered as jagged shards on the chin and lip, VISIBLE AT REST before any animation \u2014 so it damaged the likeness rather than enabling speech. The owner rule is absolute: never alter his likeness.",
+    "measured": "aperture gain was only +40% (0.01321 -> 0.01850) for that damage",
+    "status": "REVERTED. The rig is rebuilt clean from the canonical master by rig_mars.py."
+  },
+  "innerMouth": {
+    "method": "procedurally fitted to MEASURED landmarks; exterior scan never modified",
+    "apertureMethod": "boolean DIFFERENCE driven by jaw rotation (NOT edge splitting, which tore the face)",
+    "objects": {
+      "MARS_CAVITY": {
+        "parentBone": "head",
+        "verts": 222
+      },
+      "MARS_TEETH_UPPER": {
+        "parentBone": "head",
+        "verts": 80
+      },
+      "MARS_TEETH_UPPER_GUM": {
+        "parentBone": "head",
+        "verts": 192
+      },
+      "MARS_TEETH_LOWER": {
+        "parentBone": "jaw",
+        "verts": 80
+      },
+      "MARS_TEETH_LOWER_GUM": {
+        "parentBone": "jaw",
+        "verts": 192
+      },
+      "MARS_TONGUE": {
+        "parentBone": "jaw",
+        "verts": 146,
+        "shapeKeys": [
+          "tongue_up",
+          "tongue_out"
+        ]
+      },
+      "MARS_APERTURE_CUTTER": {
+        "parentBone": "jaw",
+        "verts": 222
+      }
+    },
+    "mouthWidth": 0.21381,
+    "exteriorVertsUnchanged": 47021,
+    "upperTeethRide": "head",
+    "lowerTeethRide": "jaw",
+    "tongueRides": "jaw"
   }
 }

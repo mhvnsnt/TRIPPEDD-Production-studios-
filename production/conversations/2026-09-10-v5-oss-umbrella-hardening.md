@@ -140,3 +140,11 @@ The overnight/early-morning GitHub evidence confirms the user's suspicion was su
 Commercial proof runs on the hardening branch were repeatedly cancelled by subsequent pushes; the latest commercial run reached `Build V5 commercial` and was cancelled before proof/upload. This means the pipeline is still suffering from rapid-push/concurrency churn in addition to the Autonomous artifact bug.
 
 Main-branch Production Self-Healer also continues to fail, but that is separate from the hardening branch because PR #18 remains unmerged. Do not claim overnight completion. The correct state is: Story Runner produced a successful artifact; Autonomous is blocked by the now-fixed terminal-tag packaging bug; Commercial has not yet completed its proof run.
+
+
+### User production correction — 2026-09-11
+The user reviewed the EP01 Story Runner MP4 and rejected it as an acceptable finished episode. The 149 MB / roughly two-minute result was not coherent: it omitted many source clips, appeared to use clips in the wrong order, lacked necessary scene-to-scene transitions, contained no Blender/3D animation, no 2D animation, and no generative-media sequences, and did not cut away production-side talk when dialogue was not part of the finished show. The user is taking over manual editorial assembly for EP01 rather than using the automated editor as the final editor.
+
+This changes the assistant's production role: **do not act as the final episode editor.** The system should instead provide reliable media ingest/analysis, source chronology, dialogue/production-side detection, 2D/3D animation generation and compositing, generative-media integration, render infrastructure, QC, and automation that gives the user clean components they can assemble manually. Automated Story Runner/Autonomous outputs are experimental/reference cuts, not claims of finished episodes.
+
+The user specifically wants the OSS stack deepened for the missing capabilities: **3D animation, 2D animation, transitions/compositing, generative media, and reliable integration of those assets with real footage**. OSS selection must be production-driven and must materially enable those capabilities rather than adding repositories for volume.

@@ -1,0 +1,32 @@
+name: TRIPPEDD Repo Observer
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: read
+  issues: read
+  pull-requests: read
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Observe repository and production state
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/production/repo-observer.py
+      - name: Upload observer snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-REPO-OBSERVER-${{ github.run_id }}
+          path: public/production/repo-observer.json
+          retention-days: 14

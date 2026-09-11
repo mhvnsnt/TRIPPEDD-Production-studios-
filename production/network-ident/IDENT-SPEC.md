@@ -6,7 +6,7 @@ The first production proof is a **TRIPPEDD network commercial/ident**, not a gen
 
 - Duration: **20 seconds** (within the 10–20 second contract; this implementation targets the full 20 seconds).
 - Continuous moving piece: no slideshow or disconnected cards.
-- Delivery: MP4 with HD video, approximately 24 fps, and usable audio.
+- Delivery: MP4 at exactly 1920x1080, 24 fps, 48 kHz stereo AAC, with audible authored audio.
 - The piece must travel through the real production path: source gate, ingest, analysis, editorial assembly, render, QC, and artifact validation.
 - The visual language may amalgamate the current development directions for **Trippedd**, **The Bastard**, **In the Bushes**, and **God Molecule/Mars** without pretending that undeveloped God Molecule footage already exists.
 - Network identity must remain legible/coherent while the imagery, typography, texture, material, geometry, and motion mutate.
@@ -25,3 +25,7 @@ God Molecule remains a development reference until its actual production materia
 ## Artifact integrity
 
 The gate must validate the complete 20-second frame sequence, exact media duration/fps/audio properties, parseable editorial interchange, and non-empty final artifacts. A successful workflow run without those artifact proofs is not a production pass.
+
+## V5 quality floor
+
+The implementation is not allowed to pass on a static-card approximation. The commercial builder must render real 3D animation through Blender, apply a 2D finishing pass through FFmpeg, and provide a deterministic rhythmic music bed. The gate rejects any output that is not exactly 1920x1080/24fps or that lacks measurable frame variation and non-quiet audio.

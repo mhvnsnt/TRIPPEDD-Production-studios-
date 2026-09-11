@@ -113,17 +113,16 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install 'gdown>=6.2.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
           bun install --no-save
-      - name: Install verified Blender
-        env:
-          BLENDER_CACHE_DIR: ~/.cache/trippedd
+      - name: Cache Blender extracted toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/blender-${{ env.BLENDER_VERSION }}-linux-x64
+          key: blender-extracted-${{ env.BLENDER_VERSION }}-${{ runner.os }}-${{ runner.arch }}
+      - name: Activate cached Blender toolchain
         run: |
           set -euo pipefail
-          mkdir -p "$BLENDER_CACHE_DIR"
-          if [ ! -s "$BLENDER_CACHE_DIR/${BLENDER_ARCHIVE}" ]; then curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$BLENDER_CACHE_DIR/${BLENDER_ARCHIVE}"; fi
-          curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$BLENDER_CACHE_DIR/${BLENDER_ARCHIVE}#" | sha256sum -c -
-          sudo tar -xJf "$BLENDER_CACHE_DIR/${BLENDER_ARCHIVE}" -C /opt
-          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          test -x "$HOME/.cache/trippedd/blender-${BLENDER_VERSION}-linux-x64/blender"
+          sudo ln -sfn "$HOME/.cache/trippedd/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
       - name: Configure authenticated rclone when available
         env:

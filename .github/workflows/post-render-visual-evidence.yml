@@ -1,0 +1,76 @@
+name: Post-Render Visual Evidence
+
+on:
+  workflow_run:
+    workflows:
+      - EP01 Autonomous Cut
+      - Production Short E2E Gate
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  package:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact rendered commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Download render artifacts from completed run
+        uses: actions/download-artifact@v5
+        with:
+          path: /tmp/render-artifacts
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Install visual inspection stack
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg imagemagick
+          python -m pip install --upgrade pip pillow
+
+      - name: Collect visual media
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/visual-input
+          find /tmp/render-artifacts -type f \(             -iname '*.mp4' -o -iname '*.mov' -o -iname '*.mkv' -o             -iname '*.webm' -o -iname '*.png' -o -iname '*.jpg' -o             -iname '*.jpeg' -o -iname '*.webp'           \) -size +0c -print0 | while IFS= read -r -d '' f; do
+            cp -n "$f" "/tmp/visual-input/$(basename "$f")" || true
+          done
+          count=$(find /tmp/visual-input -type f | wc -l)
+          test "$count" -gt 0
+          echo "VISUAL_MEDIA_COUNT=$count"
+
+      - name: Build visual evidence packet
+        run: |
+          set -euo pipefail
+          python tools/visual/make_visual_packet.py /tmp/visual-input/*             --out visual-inspection-packet --frames 12
+          printf '%s\n'             "source_workflow=${{ github.event.workflow_run.name }}"             "source_run_id=${{ github.event.workflow_run.id }}"             "source_sha=${{ github.event.workflow_run.head_sha }}"             "source_conclusion=${{ github.event.workflow_run.conclusion }}"             "visual_verdict=NOT_AUTO_CLAIMED"             >> visual-inspection-packet/PROVENANCE.txt
+
+      - name: Upload visual evidence packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: VISUAL-RENDER-INSPECTION-${{ github.event.workflow_run.id }}
+          path: visual-inspection-packet/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish inspection handoff
+        run: |
+          {
+            echo "## Visual inspection packet ready"
+            echo
+            echo "Source workflow: ${{ github.event.workflow_run.name }}"
+            echo "Source run: ${{ github.event.workflow_run.id }}"
+            echo "Source SHA: ${{ github.event.workflow_run.head_sha }}"
+            echo
+            echo "Original media and representative keyframes are preserved as an Actions artifact."
+            echo "Visual verdict remains **NOT_AUTO_CLAIMED** until the pixels are inspected."
+          } >> "$GITHUB_STEP_SUMMARY"

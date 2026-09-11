@@ -1,10 +1,12 @@
-version: 1
+version: 2
 purpose: god-molecule-production-runtime
 policy:
   source_first: true
   agent_callable: true
   pin_revisions: true
   verify_after_install: true
+  likeness_safe_editing: true
+  supplied_media_is_source_of_truth: true
   weights:
     allowed: true
     storage: lfs_or_artifact_cache
@@ -79,3 +81,53 @@ projects:
   - name: synfig
     repo: https://github.com/synfig/synfig.git
     lane: 2d_animation
+  - name: tripo-face-rig
+    repo: https://github.com/mdj128/facial-animation.git
+    lane: tripo_head_rigging
+  - name: openfacefx
+    repo: https://github.com/OpenFaceFX/OpenFaceFX.git
+    lane: lipsync_visemes
+  - name: pantomatrix
+    repo: https://github.com/PantoMatrix/PantoMatrix.git
+    lane: speech_to_face_body_motion
+  - name: blendcap
+    repo: https://github.com/Arcomade/BlendCap.git
+    lane: performance_capture
+  - name: character-animation-pipeline
+    repo: https://github.com/flora6907/character-animation-pipeline.git
+    lane: image_to_rigged_character
+  - name: moface
+    repo: https://github.com/vlarine/moface.git
+    lane: face_motion_blender
+  - name: animato
+    repo: https://github.com/otdnnc/Animato.git
+    lane: text_to_animation
+  - name: pitch-tts
+    repo: https://github.com/adam-cyclones/pitch-tts.git
+    lane: speech_to_animation_timing
+asset_ingest:
+  drive_model:
+    provider: google_drive
+    file_id: 1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl
+    source_url: https://drive.google.com/file/d/1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl/view?usp=drivesdk
+    intended_lane: tripo_head_rigging
+    status: awaiting_drive_connector_or_download
+    required_checks:
+      - identify_file_type
+      - checksum
+      - archive_or_mesh_inventory
+      - dimensions_and_units
+      - topology_report
+      - material_texture_inventory
+      - facial_landmark_scan
+      - rig_readiness_report
+      - preserve_original_immutable
+production_gates:
+  - source_integrity
+  - likeness_integrity
+  - geometry_integrity
+  - animation_integrity
+  - render_integrity
+  - audio_sync
+  - provenance
+  - final_episode_qc

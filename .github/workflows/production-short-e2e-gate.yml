@@ -89,6 +89,11 @@ jobs:
           key: trippedd-pip-oss-stack-${{ runner.os }}-${{ hashFiles('config/production/oss-stack.requirements.txt') }}
           restore-keys: |
             trippedd-pip-oss-stack-${{ runner.os }}-
+      - name: Cache production media binaries
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/apt
+          key: trippedd-apt-media-${{ runner.os }}-v1
       - name: Install media/render stack
         run: |
           set -euo pipefail

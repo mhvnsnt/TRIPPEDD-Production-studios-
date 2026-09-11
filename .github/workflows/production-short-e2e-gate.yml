@@ -82,6 +82,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Cache Python media/render dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: trippedd-pip-oss-stack-${{ runner.os }}-${{ hashFiles('config/production/oss-stack.requirements.txt') }}
+          restore-keys: |
+            trippedd-pip-oss-stack-${{ runner.os }}-
       - name: Install media/render stack
         run: |
           set -euo pipefail

@@ -268,6 +268,30 @@
       "upstream": "https://github.com/Wan-Video/Wan2.1",
       "status": "CANDIDATE",
       "integration": "reference-conditioned image/video generation and video editing lane"
+    },
+    {
+      "id": "google-gnm-head",
+      "domain": "Character / Oral Anatomy / Facial Expression",
+      "upstream": "https://github.com/google/GNM",
+      "status": "CANDIDATE",
+      "license": "Apache-2.0",
+      "integration": "MARS_CANONICAL oral-anatomy donor: upper/lower teeth, tongue, lower-face expression basis and measured jaw-open bridge; never replaces canonical exterior identity"
+    },
+    {
+      "id": "gnm-studio",
+      "domain": "Character / Identity Fit / Facial Runtime",
+      "upstream": "https://github.com/Saganaki22/GNM-Studio",
+      "status": "CANDIDATE",
+      "license": "Apache-2.0 for project and preserved Google GNM terms for GNM assets; inspect THIRD_PARTY_NOTICES before promotion",
+      "integration": "local-first GNM runtime and photo-guided custom-head fitting used to derive a mouth/lip deformation donor from Mars reference renders"
+    },
+    {
+      "id": "gnm-webcam-puppet",
+      "domain": "Character / Differential Face Tracking",
+      "upstream": "https://github.com/edualvarado/gnm-webcam-puppet",
+      "status": "CANDIDATE",
+      "license": "verify upstream notices before promotion",
+      "integration": "reference solver for differential MediaPipe-to-GNM mouth correspondence and temporal mouth tracking"
     }
   ],
   "fallbackLaw": "No candidate may become a single point of failure. Every promoted capability must retain a deterministic fallback or explicit UNKNOWN state.",

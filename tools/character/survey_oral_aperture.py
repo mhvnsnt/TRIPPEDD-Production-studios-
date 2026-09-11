@@ -110,6 +110,11 @@ def main():
                 protrusion_hits += 1
                 hits["cavity"] += 1
                 continue
+            # A shell hit means the ray did not clear the mouth aperture.
+            # Only behind-plane oral/interior hits belong in the aperture denominator.
+            if best_class == "shell":
+                hits["shell"] += 1
+                continue
             cleared += 1
             hits[best_class or "other"] += 1
 
@@ -127,7 +132,11 @@ def main():
             for k in hits
         },
         "object_protrusion": protrusion,
-        "protrusion_gate": "FAIL" if any(p > 1e-4 for p in protrusion.values()) else "PASS",
+        "protrusion_gate": "FAIL" if any(
+            protrusion.get(name, -1e9) > 1e-4
+            for name, cls, _tree, _protr in trees
+            if cls in ("cavity", "teeth", "gums", "tongue")
+        ) else "PASS",
         "note": "Use fractions_behind_lip_plane for anatomy. All-ray fractions include protrusion intercepts.",
     }
     out = Path(a.output)

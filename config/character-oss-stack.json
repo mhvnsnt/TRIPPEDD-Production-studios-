@@ -2,16 +2,7 @@
   "schemaVersion": 1,
   "purpose": "Production-grade open-source character ingest, geometry inspection, rig detection, facial landmarks, animation and 2D/3D bridge.",
   "statusRule": "REGISTERED_IS_NOT_VALIDATED",
-  "promotionGates": [
-    "upstream_and_license_verified",
-    "reproducible_install_or_source_checkout",
-    "real_mars_input_smoke_test",
-    "measured_output",
-    "failure_and_recovery_exercise",
-    "provenance_recorded",
-    "deterministic_fallback_preserved",
-    "unknown_never_pass"
-  ],
+  "promotionGates": ["upstream_and_license_verified","reproducible_install_or_source_checkout","real_mars_input_smoke_test","measured_output","failure_and_recovery_exercise","provenance_recorded","deterministic_fallback_preserved","unknown_never_pass"],
   "projects": [
     {"id":"blender","upstream":"https://github.com/blender/blender","role":"authoritative_3d_import_rig_animation_render"},
     {"id":"assimp","upstream":"https://github.com/assimp/assimp","role":"multi_format_mesh_import_and_scene_inventory_fallback"},
@@ -19,7 +10,7 @@
     {"id":"open3d","upstream":"https://github.com/isl-org/Open3D","role":"point_cloud_mesh_geometry_measurement_and_registration"},
     {"id":"pymeshlab","upstream":"https://github.com/cnr-isti-vclab/PyMeshLab","role":"mesh_repair_cleanup_normals_and_topology_validation"},
     {"id":"mediapipe","upstream":"https://github.com/google-ai-edge/mediapipe","role":"face_landmarks_and_tracking"},
-    {"id":"openseeFace","upstream":"https://github.com/emilianavt/OpenSeeFace","role":"local_markerless_face_tracking_fallback"},
+    {"id":"openseeface","upstream":"https://github.com/emilianavt/OpenSeeFace","role":"local_markerless_face_tracking_fallback"},
     {"id":"rhubarb-lip-sync","upstream":"https://github.com/DanielSWolf/rhubarb-lip-sync","role":"speech_to_viseme_fallback"},
     {"id":"openfacefx","upstream":"https://github.com/Emilianavt/OpenFaceFX","role":"facial_animation_controls_and_blendshape_workflows"},
     {"id":"pantomatrix","upstream":"https://github.com/PantoMatrix/PantoMatrix","role":"performance_to_face_and_body_animation_research_lane"},

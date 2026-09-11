@@ -82,3 +82,27 @@ Commercial proof -> EP01 Story Runner -> EP01 Autonomous, with salvage/checkpoin
 - Production Short E2E Gate now persists the pip download cache keyed to `config/production/oss-stack.requirements.txt`.
 - Kept system-package installation explicit rather than pretending an Actions cache of `/usr` is portable or reliable. The optimization boundary is therefore: reusable downloads + Python wheels + Blender + OSS source trees; apt installation remains a cheap provisioning step.
 - Next optimization should be based on measured warm-run timing rather than speculative repository additions.
+
+
+## Continuation 3 — new show concept: VR Desolation
+
+### User concept
+The user wants the production conversation to preserve a new show/segment concept provisionally titled **VR Desolation**. The title is intentionally provisional and can change.
+
+Core tonal/concept mix:
+- post-apocalyptic Fallout-style survival world
+- Sword Art Online-style trapped-in-an-RPG premise
+- VR-game framing
+- Code Monkeys-style workplace/programmer comedy
+- Code Lyoko-style digital/real-world crossover energy
+- Mad Max-style desolate survival atmosphere
+
+The intended result is a **comedic survival series** in which characters become stuck inside a dangerous post-apocalyptic RPG/VR world and have to survive, exploit the game systems, deal with bugs/logic, and interact with the absurdity of being trapped in a game.
+
+### Production direction
+Keep developing this as a possible TRIPPEDD Studio show/segment while the immediate production priority remains:
+**commercials + episodes + cuts delivered through the production pipeline.**
+
+Open-source additions should continue to be selected by production value: game/VR worldbuilding, procedural environments, animation, rendering, compositing, editorial, audio, asset management, and automation are all candidates when they directly remove a bottleneck or enable an actual episode.
+
+Do not lock the provisional title, lore, characters, or exact mechanics yet. Preserve the concept and develop it alongside production throughput.

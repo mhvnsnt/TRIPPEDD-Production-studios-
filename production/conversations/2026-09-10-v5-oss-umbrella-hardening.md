@@ -76,3 +76,9 @@ GitHub Actions cache is treated as a performance layer, not as proof of integrit
 
 ### Current production objective
 Commercial proof -> EP01 Story Runner -> EP01 Autonomous, with salvage/checkpoints and bounded self-healing preserved. Do not expand the OSS umbrella unless a project removes a measured production bottleneck.
+
+
+### Continuation 2 — E2E warm-path optimization
+- Production Short E2E Gate now persists the pip download cache keyed to `config/production/oss-stack.requirements.txt`.
+- Kept system-package installation explicit rather than pretending an Actions cache of `/usr` is portable or reliable. The optimization boundary is therefore: reusable downloads + Python wheels + Blender + OSS source trees; apt installation remains a cheap provisioning step.
+- Next optimization should be based on measured warm-run timing rather than speculative repository additions.

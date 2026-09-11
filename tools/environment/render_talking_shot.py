@@ -34,6 +34,7 @@ FRAMES = int(opt("--frames", "36"))
 FPS = int(opt("--fps", "24"))
 SAMPLES = int(opt("--samples", "48"))
 SHOT = opt("--shot", "GM-SHOT-0002-TALK")
+VISEME_TRACK = opt("--viseme-track", None)
 OUT = os.path.abspath(opt("--out", os.path.join("renders", SHOT)))
 RIG = os.path.join(ROOT, "assets/rigs/MARS_rigged.blend")
 
@@ -192,6 +193,24 @@ tr.track_axis = "TRACK_NEGATIVE_Z"; tr.up_axis = "UP_Y"
 # ── the performance ─────────────────────────────────────────────────────────
 keys = mesh_obj.data.shape_keys.key_blocks
 pb = arm.pose.bones
+
+# A viseme track is REAL phoneme timing from real audio (Rhubarb). Without one
+# the mouth follows a written cadence, which reads as speech but is not saying
+# anything — so the shot state records which of the two it was, and never calls
+# an invented rhythm lip-sync.
+track = None
+if VISEME_TRACK and os.path.exists(VISEME_TRACK):
+    vt = json.load(open(VISEME_TRACK))
+    track = vt["track"]
+    state["lipSync"] = {"driven": "AUDIO", "analyser": vt["analyser"],
+                        "source": vt["source"], "cueCount": vt["cueCount"],
+                        "durationSec": vt["durationSec"], "shapeHistogram": vt["shapeHistogram"]}
+    print("lip-sync: %d cues from %s" % (vt["cueCount"], vt["source"]))
+else:
+    state["lipSync"] = {"driven": "WRITTEN_CADENCE",
+                        "note": "No audio track supplied. The mouth follows an authored rhythm — "
+                                "this is NOT lip-sync and is recorded as such."}
+    print("lip-sync: NONE — mouth follows an authored rhythm (recorded as such, not called lip-sync)")
 # A spoken rhythm: jaw opening per frame, mouth shape per syllable. Not random —
 # a repeating open/close with held shapes is what reads as speech.
 SPEECH = [("viseme_AA", 0.9), ("viseme_MM", 0.2), ("viseme_EE", 0.8), ("viseme_AA", 0.5),
@@ -200,17 +219,24 @@ SPEECH = [("viseme_AA", 0.9), ("viseme_MM", 0.2), ("viseme_EE", 0.8), ("viseme_A
 
 def perform(f):
     t = f / max(1, FRAMES - 1)
-    # visemes
-    syl = SPEECH[int(t * len(SPEECH)) % len(SPEECH)]
     for k in keys:
         if k.name.startswith("viseme_"):
             k.value = 0.0
-    if syl[0] in keys:
-        keys[syl[0]].value = syl[1]
-    # the jaw bone carries the opening; the viseme carries the lip shape
-    jaw_open = max(0.0, math.sin(t * math.pi * 2 * 5.5)) * 0.55 + 0.05
     pb["jaw"].rotation_mode = "XYZ"
-    pb["jaw"].rotation_euler = (math.radians(16.0 * jaw_open), 0, 0)
+
+    if track:
+        # Real timing. Sample the track at this frame, looping if the shot runs
+        # longer than the audio rather than freezing on the last phoneme.
+        e = track[f % len(track)]
+        if e["shapeKey"] and e["shapeKey"] in keys:
+            keys[e["shapeKey"]].value = e["weight"]
+        pb["jaw"].rotation_euler = (math.radians(e["jawDegrees"]), 0, 0)
+    else:
+        syl = SPEECH[int(t * len(SPEECH)) % len(SPEECH)]
+        if syl[0] in keys:
+            keys[syl[0]].value = syl[1]
+        jaw_open = max(0.0, math.sin(t * math.pi * 2 * 5.5)) * 0.55 + 0.05
+        pb["jaw"].rotation_euler = (math.radians(16.0 * jaw_open), 0, 0)
     # blinks: two, at moments a real face would take them
     blink = 0.0
     for centre in (0.22, 0.74):
@@ -290,6 +316,9 @@ checks = {
     "noTelemetrySubstitute": state["telemetrySubstituteUsed"] is False,
     "framesActuallyDiffer": len(digests) > 1,
     "rigActuallyDeforms": state["rigDeformation"]["verticesMoved"] > 0,
+    # Not a pass/fail on its own — a shot may legitimately have no dialogue —
+    # but it makes the distinction impossible to lose.
+    "lipSyncSourceRecorded": state["lipSync"]["driven"] in ("AUDIO", "WRITTEN_CADENCE"),
 }
 state["frames"] = written; state["checks"] = checks; state["framesDir"] = frames_dir
 state["quality"] = {"samples": SAMPLES, "resolution": "%dx%d" % (W, H), "fps": FPS,

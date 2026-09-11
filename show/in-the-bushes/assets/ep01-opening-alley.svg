@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>In the Bushes EP01 original alley opening background</title>
+<rect width="1920" height="1080" fill="#07090f"/>
+<!-- brick alley walls -->
+<path d="M0 0H620L760 1080H0Z" fill="#25202a"/><path d="M1920 0H1300L1160 1080H1920Z" fill="#201d25"/>
+<g stroke="#403640" stroke-width="5" opacity=".55">
+<path d="M0 110H650M0 230H665M0 350H680M0 470H695M0 590H710M0 710H725M0 830H740M0 950H755"/>
+<path d="M1920 110H1270M1920 230H1255M1920 350H1240M1920 470H1225M1920 590H1210M1920 710H1195M1920 830H1180M1920 950H1165"/>
+</g>
+<!-- fire escape -->
+<g fill="none" stroke="#59606b" stroke-width="18" opacity=".8"><path d="M260 250H610M300 390H650M280 250V500M610 250V520M300 390V610M650 390V620"/><path d="M330 500H690M360 610H730"/></g>
+<!-- alley lamp --> <path d="M560 0V210" stroke="#565d67" stroke-width="16"/><path d="M525 205Q560 165 595 205L580 245H540Z" fill="#d8c995" opacity=".7"/>
+<!-- dumpster --> <g><rect x="900" y="690" width="330" height="220" rx="24" fill="#303a3a"/><rect x="880" y="670" width="370" height="45" rx="18" fill="#46504f"/><circle cx="945" cy="930" r="32" fill="#121719"/><circle cx="1160" cy="930" r="32" fill="#121719"/></g>
+<!-- puddles --> <g fill="#273445" opacity=".8"><ellipse cx="420" cy="910" rx="240" ry="35"/><ellipse cx="1410" cy="850" rx="260" ry="42"/><ellipse cx="1020" cy="1000" rx="300" ry="28"/></g>
+<!-- distant street opening --> <path d="M760 0H1160L1080 760H840Z" fill="#111b29"/><path d="M850 760H1080L1920 1080H0Z" fill="#0d1117"/>
+<!-- bush at exit, where beer lands -->
+<g fill="#30452f" stroke="#111a12" stroke-width="16"><circle cx="1420" cy="720" r="190"/><circle cx="1570" cy="670" r="225"/><circle cx="1740" cy="740" r="210"/><circle cx="1580" cy="850" r="220"/></g>
+<!-- distant streetlights --> <g fill="#e1c978" opacity=".55"><circle cx="1250" cy="500" r="18"/><circle cx="1810" cy="430" r="20"/></g>
+<!-- original production note --> <text x="70" y="1010" fill="#727b86" font-family="sans-serif" font-size="22">EP01 • ALLEY OPENING • ORIGINAL SHOW ART • NO BRAND MARKS</text>
+</svg>

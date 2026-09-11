@@ -122,3 +122,18 @@ for frame in range(FRAME_START, FRAME_END + 1):
     if not os.path.isfile(path) or os.path.getsize(path) <= 0:
         raise RuntimeError(f'Bastard frame {frame} did not produce a valid image')
     print(f'BASTARD_FRAME_COMPLETE={frame} BYTES={os.path.getsize(path)}')
+
+# The generator writes checkpoint PNGs; assemble those frames into the deliverable MP4.
+import subprocess
+frames = os.path.join(FRAME_DIR, 'frame-%04d.png')
+subprocess.run([
+    'ffmpeg', '-y', '-hide_banner', '-loglevel', 'error',
+    '-framerate', str(FPS), '-start_number', str(FRAME_START),
+    '-i', frames, '-frames:v', str(FRAME_END - FRAME_START + 1),
+    '-vf', f'scale={W}:{H}:flags=lanczos,format=yuv420p',
+    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+    '-movflags', '+faststart', OUT
+], check=True)
+if not os.path.isfile(OUT) or os.path.getsize(OUT) <= 0:
+    raise RuntimeError('Bastard terminal tag MP4 was not produced')
+print(f'BASTARD_MP4_COMPLETE={OUT} BYTES={os.path.getsize(OUT)}')

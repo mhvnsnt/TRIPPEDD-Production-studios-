@@ -113,11 +113,6 @@ projects:
     role: pinned FaceCap 52-target oral/face donor; preserve Face Cap credit and exact asset hash; never replaces MARS_CANONICAL
   - name: openfacefx
     repo: https://github.com/OpenFaceFX/OpenFaceFX.git
-    lane: phoneme_to_viseme_retarget
-    license: MIT
-    role: real phoneme/viseme curves and retargeting; audio timing remains sourced from the real dialogue
-  - name: openfacefx
-    repo: https://github.com/OpenFaceFX/OpenFaceFX.git
     lane: lipsync_visemes
   - name: pantomatrix
     repo: https://github.com/PantoMatrix/PantoMatrix.git

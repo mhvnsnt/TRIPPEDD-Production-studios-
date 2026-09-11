@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <title>In the Bushes — reusable teen group run/hide silhouettes</title>
+  <desc>Original generic silhouettes for the EP01 origin opening. No logos or identifying likenesses.</desc>
+  <g fill="#171923" stroke="#0b0c10" stroke-width="8" stroke-linejoin="round">
+    <g id="teen-1-run">
+      <circle cx="360" cy="300" r="48"/>
+      <path d="M340 350 L390 350 L430 520 L350 520 Z"/>
+      <path d="M350 385 L260 455 L275 475 L380 430 Z"/>
+      <path d="M380 390 L475 445 L462 468 L370 430 Z"/>
+      <path d="M360 515 L300 650 L330 662 L405 535 Z"/>
+      <path d="M400 515 L470 625 L500 610 L430 500 Z"/>
+    </g>
+    <g id="teen-2-run">
+      <circle cx="590" cy="320" r="46"/>
+      <path d="M570 365 L615 365 L650 530 L555 530 Z"/>
+      <path d="M575 395 L500 455 L515 478 L605 435 Z"/>
+      <path d="M610 395 L690 450 L675 475 L600 435 Z"/>
+      <path d="M575 525 L525 640 L555 652 L620 535 Z"/>
+      <path d="M615 525 L705 610 L730 585 L645 505 Z"/>
+    </g>
+    <g id="teen-3-run">
+      <circle cx="820" cy="305" r="50"/>
+      <path d="M795 355 L845 355 L880 525 L775 525 Z"/>
+      <path d="M800 390 L715 450 L730 475 L825 430 Z"/>
+      <path d="M840 390 L925 435 L910 462 L825 430 Z"/>
+      <path d="M795 520 L750 650 L780 660 L835 535 Z"/>
+      <path d="M840 520 L925 615 L950 592 L870 505 Z"/>
+    </g>
+  </g>
+  <g fill="#242734" stroke="#0b0c10" stroke-width="7" stroke-linejoin="round">
+    <path d="M1040 610 Q1120 560 1200 610 L1175 700 L1060 700 Z"/>
+    <circle cx="1115" cy="545" r="45"/>
+    <path d="M1075 620 L1010 690 L1030 710 L1100 660 Z"/>
+    <path d="M1160 620 L1220 675 L1200 700 L1140 660 Z"/>
+  </g>
+  <text x="80" y="820" fill="#b9becb" font-family="sans-serif" font-size="28">IN THE BUSHES • ORIGINAL REUSABLE TEEN SILHOUETTES • RUN / HIDE / PEEK</text>
+</svg>

@@ -176,3 +176,34 @@ wiring:
     role: low-latency MIDI control for animation/audio workflows
     activation: realtime-control
     license: MIT
+
+  - id: openvdb
+    repo: https://github.com/AcademySoftwareFoundation/openvdb.git
+    role: sparse volumetric data for smoke, fire, destruction and procedural VFX
+    activation: volumetrics
+    license: MPL-2.0
+  - id: openshadinglanguage
+    repo: https://github.com/AcademySoftwareFoundation/OpenShadingLanguage.git
+    role: procedural shading and look-development language
+    activation: shading
+    license: BSD-3-Clause
+  - id: materialx
+    repo: https://github.com/AcademySoftwareFoundation/MaterialX.git
+    role: portable material and look-development interchange
+    activation: materials
+    license: Apache-2.0
+  - id: usd
+    repo: https://github.com/PixarAnimationStudios/OpenUSD.git
+    role: scene description, asset composition and interchange for complex 3D productions
+    activation: scene-interchange
+    license: Apache-2.0
+  - id: openexr
+    repo: https://github.com/AcademySoftwareFoundation/openexr.git
+    role: HDR image sequence interchange and high-dynamic-range production storage
+    activation: image-format
+    license: BSD-3-Clause
+  - id: openfx
+    repo: https://github.com/AcademySoftwareFoundation/openfx.git
+    role: standardized VFX plugin interface across host applications
+    activation: vfx-plugins
+    license: BSD-3-Clause

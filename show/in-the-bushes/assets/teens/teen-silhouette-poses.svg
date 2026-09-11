@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <title>In the Bushes — Original Teen Silhouette Pose Library</title>
+  <desc>Reusable original silhouette poses for the three teenagers in the EP01 origin opening. No logos or identifying marks.</desc>
+  <rect width="1600" height="900" fill="none"/>
+  <g fill="#111318" stroke="#111318" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Teen 1: run -->
+    <g id="teen-1-run" transform="translate(80 120)">
+      <circle cx="130" cy="90" r="48"/>
+      <path d="M130 140 L130 330 M130 190 L55 260 M130 190 L205 245 M130 330 L65 455 M130 330 L205 440" fill="none"/>
+      <path d="M55 260 L15 315 M205 245 L245 190" fill="none"/>
+      <path d="M65 455 L15 475 M205 440 L255 465" fill="none"/>
+    </g>
+    <!-- Teen 2: duck/peek -->
+    <g id="teen-2-duck" transform="translate(480 300)">
+      <circle cx="130" cy="75" r="44"/>
+      <path d="M130 118 Q150 180 130 250 M130 155 L55 205 M130 155 L205 190 M130 250 L55 300 M130 250 L205 315" fill="none"/>
+      <path d="M55 300 L15 330 M205 315 L245 340" fill="none"/>
+    </g>
+    <!-- Teen 3: look back / point -->
+    <g id="teen-3-point" transform="translate(850 160)">
+      <circle cx="130" cy="90" r="46"/>
+      <path d="M130 136 L130 345 M130 195 L55 250 M130 195 L225 125 M130 345 L70 470 M130 345 L205 465" fill="none"/>
+      <path d="M225 125 L300 80" fill="none"/>
+      <path d="M70 470 L20 490 M205 465 L255 490" fill="none"/>
+    </g>
+    <!-- Throw pose -->
+    <g id="teen-throw" transform="translate(1180 120)">
+      <circle cx="130" cy="90" r="46"/>
+      <path d="M130 136 L130 345 M130 195 L45 145 M130 195 L230 105 M130 345 L70 470 M130 345 L205 465" fill="none"/>
+      <path d="M230 105 L300 45" fill="none"/>
+      <path d="M70 470 L20 490 M205 465 L255 490" fill="none"/>
+    </g>
+  </g>
+  <g font-family="sans-serif" font-size="30" fill="#111318">
+    <text x="80" y="700">TEEN 1 — RUN</text>
+    <text x="480" y="700">TEEN 2 — DUCK / PEEK</text>
+    <text x="850" y="700">TEEN 3 — LOOK / POINT</text>
+    <text x="1180" y="700">THROW POSE</text>
+    <text x="80" y="760">ORIGINAL REUSABLE SILHOUETTES • EP01 ORIGIN OPENING</text>
+  </g>
+</svg>

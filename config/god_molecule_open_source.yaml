@@ -1,0 +1,81 @@
+version: 1
+purpose: god-molecule-production-runtime
+policy:
+  source_first: true
+  agent_callable: true
+  pin_revisions: true
+  verify_after_install: true
+  weights:
+    allowed: true
+    storage: lfs_or_artifact_cache
+    never_bake_secrets: true
+projects:
+  - name: blender
+    repo: https://github.com/blender/blender.git
+    lane: 3d_animation
+  - name: comfyui
+    repo: https://github.com/comfyanonymous/ComfyUI.git
+    lane: image_generation
+  - name: wan2.1
+    repo: https://github.com/Wan-Video/Wan2.1.git
+    lane: image_video_generation
+  - name: hunyuanvideo
+    repo: https://github.com/Tencent-Hunyuan/HunyuanVideo.git
+    lane: video_generation
+  - name: cogvideox
+    repo: https://github.com/THUDM/CogVideo.git
+    lane: video_generation
+  - name: ltx-video
+    repo: https://github.com/Lightricks/LTX-Video.git
+    lane: video_generation
+  - name: open-sora
+    repo: https://github.com/hpcaitech/Open-Sora.git
+    lane: video_generation
+  - name: animatediff
+    repo: https://github.com/guoyww/AnimateDiff.git
+    lane: motion_generation
+  - name: diffusers
+    repo: https://github.com/huggingface/diffusers.git
+    lane: generation_runtime
+  - name: controlnet
+    repo: https://github.com/lllyasviel/ControlNet.git
+    lane: controlled_generation
+  - name: ip-adapter
+    repo: https://github.com/tencent-ailab/IP-Adapter.git
+    lane: identity_conditioning
+  - name: segment-anything-2
+    repo: https://github.com/facebookresearch/sam2.git
+    lane: segmentation
+  - name: realesrgan
+    repo: https://github.com/xinntao/Real-ESRGAN.git
+    lane: restoration_upscale
+  - name: gfpgan
+    repo: https://github.com/TencentARC/GFPGAN.git
+    lane: face_restoration
+  - name: mediapipe
+    repo: https://github.com/google-ai-edge/mediapipe.git
+    lane: tracking
+  - name: whisper
+    repo: https://github.com/openai/whisper.git
+    lane: transcription
+  - name: demucs
+    repo: https://github.com/facebookresearch/demucs.git
+    lane: audio_separation
+  - name: pyscenedetect
+    repo: https://github.com/Breakthrough/PySceneDetect.git
+    lane: shot_detection
+  - name: ffmpeg
+    repo: https://github.com/FFmpeg/FFmpeg.git
+    lane: media_io
+  - name: kdenlive
+    repo: https://github.com/KDE/kdenlive.git
+    lane: editorial
+  - name: natron
+    repo: https://github.com/NatronGitHub/Natron.git
+    lane: compositing
+  - name: opentoonz
+    repo: https://github.com/opentoonz/opentoonz.git
+    lane: 2d_animation
+  - name: synfig
+    repo: https://github.com/synfig/synfig.git
+    lane: 2d_animation

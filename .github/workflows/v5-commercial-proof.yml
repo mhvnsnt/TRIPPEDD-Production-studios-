@@ -32,6 +32,18 @@ jobs:
         with:
           path: ~/.cache/trippedd/blender-4.5.13-linux-x64
           key: blender-extracted-4.5.13-\${{ runner.os }}-\${{ runner.arch }}
+      - name: Populate Blender cache on miss
+        run: |
+          set -euo pipefail
+          dir="$HOME/.cache/trippedd/blender-4.5.13-linux-x64"
+          if [ ! -x "$dir/blender" ]; then
+            mkdir -p "$HOME/.cache/trippedd"
+            curl -fsSL "https://download.blender.org/release/Blender4.5/blender-4.5.13-linux-x64.tar.xz" -o "$HOME/.cache/trippedd/blender-4.5.13-linux-x64.tar.xz"
+            curl -fsSL "https://download.blender.org/release/Blender4.5/blender-4.5.13.sha256" -o /tmp/blender.sha256
+            grep "blender-4.5.13-linux-x64.tar.xz" /tmp/blender.sha256 | sed "s#blender-4.5.13-linux-x64.tar.xz#$HOME/.cache/trippedd/blender-4.5.13-linux-x64.tar.xz#" | sha256sum -c -
+            mkdir -p "$dir"
+            tar -xJf "$HOME/.cache/trippedd/blender-4.5.13-linux-x64.tar.xz" --strip-components=1 -C "$dir"
+          fi
       - name: Activate cached Blender
         run: |
           set -euo pipefail

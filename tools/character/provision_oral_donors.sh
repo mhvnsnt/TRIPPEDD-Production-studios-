@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Do not vendor binary model data into TRIPPEDD. Download into the worker cache,
-# verify the pinned FaceCap asset, and record the GNM revision/hash at runtime.
+# Binary donors stay in worker cache, never in git.
 ROOT="${TRIPPEDD_DONOR_CACHE:-${HOME}/.cache/trippedd/god-molecule/oral-donors}"
 mkdir -p "$ROOT"
 
@@ -11,6 +10,8 @@ FACE_CAP_SHA256="6BFCE6D0FCBB5839F5102B79733007859FEF7C5DF6D9EB49E2264542810B5F6
 FACE_CAP="$ROOT/facecap.glb"
 GNM_URL="https://raw.githubusercontent.com/google/GNM/main/gnm/shape/data/versions/v3_0/gnm_head.npz"
 GNM="$ROOT/gnm_head.npz"
+GNM_EXPR_URL="https://raw.githubusercontent.com/google/GNM/main/gnm/shape/data/semantic_sampler/expression_decoder_model.h5"
+GNM_EXPR="$ROOT/expression_decoder_model.h5"
 
 fetch() {
   local url="$1" dst="$2"
@@ -33,11 +34,13 @@ actual="$(sha256sum "$FACE_CAP" | awk '{print toupper($1)}')"
 }
 
 if [[ ! -s "$GNM" ]]; then fetch "$GNM_URL" "$GNM"; fi
+if [[ ! -s "$GNM_EXPR" ]]; then fetch "$GNM_EXPR_URL" "$GNM_EXPR"; fi
 gnm_sha="$(sha256sum "$GNM" | awk '{print toupper($1)}')"
+expr_sha="$(sha256sum "$GNM_EXPR" | awk '{print toupper($1)}')"
 
 cat > "$ROOT/manifest.json" <<JSON
 {
-  "schema": "god-molecule.oral-donor-cache.v1",
+  "schema": "god-molecule.oral-donor-cache.v2",
   "facecap": {
     "source": "Saganaki22/GNM-Studio",
     "path": "public/models/facecap.glb",
@@ -50,7 +53,14 @@ cat > "$ROOT/manifest.json" <<JSON
     "path": "gnm/shape/data/versions/v3_0/gnm_head.npz",
     "sha256": "$gnm_sha",
     "license": "Apache-2.0",
-    "purpose": "teeth/tongue/anatomical expression donor; never replaces MARS_CANONICAL"
+    "purpose": "teeth/tongue/mouth-sock anatomy and learned facial expression donor; never replaces MARS_CANONICAL"
+  },
+  "gnm_expression_decoder": {
+    "source": "google/GNM",
+    "path": "gnm/shape/data/semantic_sampler/expression_decoder_model.h5",
+    "sha256": "$expr_sha",
+    "license": "Apache-2.0",
+    "purpose": "canonical mouth-open expression basis"
   }
 }
 JSON

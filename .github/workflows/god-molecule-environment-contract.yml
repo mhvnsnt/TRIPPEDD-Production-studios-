@@ -26,7 +26,7 @@ jobs:
           python -m json.tool config/god_molecule_environment_stack.json >/dev/null
           python -m json.tool config/production/worker-capability-registry.json >/dev/null
       - name: Compile environment adapter
-        run: python -m py_compile tools/environment/build_environment_slice.py
+        run: python -m py_compile tools/environment/build_environment_slice.py tools/environment/build_memory_safe_scene.py
       - name: Execute deterministic environment planning smoke test
         run: |
           python tools/environment/build_environment_slice.py             --seed GOD-MOLECULE-CI-001             --scene ci_environment             --output /tmp/god-molecule-environment.json

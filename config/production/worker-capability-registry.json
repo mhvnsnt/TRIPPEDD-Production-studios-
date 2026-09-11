@@ -7,45 +7,194 @@
     "max_backend_attempts": 3
   },
   "workers": {
-    "2d_motion": ["motion-canvas", "open-motion", "opentoonz", "remotion"],
-    "3d_scene": ["blender", "openusd", "gaffer"],
-    "environment_world": ["luanti", "worldgen", "blockbench"],
-    "scene_reconstruction": ["colmap", "meshroom", "nerfstudio"],
-    "gaussian_splat": ["gsplat", "gsplat-js"],
-    "generative_media": ["comfyui", "pallaidium", "4brospix", "pantomatrix"],
-    "compositing": ["natron", "gaffer", "openfx"],
-    "editorial": ["opentimelineio", "mlt", "kdenlive", "olive"],
-    "render_farm": ["flamenco", "opencue"],
-    "media_transport": ["ffmpeg", "mediainfo", "bento4"],
-    "image_pipeline": ["openimageio", "openexr", "opencolorio"],
-    "video_processing": ["vapoursynth", "pyscenedetect"],
-    "speech_voice": ["whisperx", "piper"],
-    "audio_cleanup": ["demucs"],
-    "audio_edit_mix": ["ardour", "audacity"],
-    "review": ["openrv"]
+    "2d_motion": [
+      "motion-canvas",
+      "open-motion",
+      "opentoonz",
+      "remotion"
+    ],
+    "3d_scene": [
+      "blender",
+      "openusd",
+      "gaffer"
+    ],
+    "environment_world": [
+      "luanti",
+      "worldgen",
+      "blockbench"
+    ],
+    "scene_reconstruction": [
+      "colmap",
+      "meshroom",
+      "nerfstudio"
+    ],
+    "gaussian_splat": [
+      "gsplat",
+      "gsplat-js"
+    ],
+    "generative_media": [
+      "comfyui",
+      "pallaidium",
+      "4brospix",
+      "pantomatrix"
+    ],
+    "compositing": [
+      "natron",
+      "gaffer",
+      "openfx"
+    ],
+    "editorial": [
+      "opentimelineio",
+      "mlt",
+      "kdenlive",
+      "olive"
+    ],
+    "render_farm": [
+      "flamenco",
+      "opencue"
+    ],
+    "media_transport": [
+      "ffmpeg",
+      "mediainfo",
+      "bento4"
+    ],
+    "image_pipeline": [
+      "openimageio",
+      "openexr",
+      "opencolorio"
+    ],
+    "video_processing": [
+      "vapoursynth",
+      "pyscenedetect"
+    ],
+    "speech_voice": [
+      "whisperx",
+      "piper"
+    ],
+    "audio_cleanup": [
+      "demucs"
+    ],
+    "audio_edit_mix": [
+      "ardour",
+      "audacity"
+    ],
+    "review": [
+      "openrv"
+    ]
   },
   "pipelines": {
     "god_molecule_environment": {
-      "preferred": ["luanti", "colmap", "nerfstudio", "gsplat", "blender", "openusd"],
-      "fallback": ["worldgen", "meshroom", "blender", "openusd"],
-      "required_qc": ["seed_reproducibility", "source_provenance", "camera_coverage", "splat_bounds", "scene_scale", "character_identity", "render_integrity"]
+      "preferred": [
+        "luanti",
+        "colmap",
+        "nerfstudio",
+        "gsplat",
+        "blender",
+        "openusd"
+      ],
+      "fallback": [
+        "worldgen",
+        "meshroom",
+        "blender",
+        "openusd"
+      ],
+      "required_qc": [
+        "seed_reproducibility",
+        "source_provenance",
+        "camera_coverage",
+        "splat_bounds",
+        "scene_scale",
+        "character_identity",
+        "render_integrity"
+      ]
     },
     "commercial_v4": {
-      "scope": ["THE BASTARD", "IN THE BUSHES", "GOD MOLECULE", "TRIPPEDD"],
-      "forbidden_scope": ["SMOKE & MIRRORS"],
-      "preferred": ["blender", "motion-canvas", "open-motion"],
-      "fallback": ["remotion"],
-      "required_qc": ["frame_activity", "audio_non_silent", "scope", "resolution", "fps", "duration", "container_integrity"]
+      "scope": [
+        "THE BASTARD",
+        "IN THE BUSHES",
+        "GOD MOLECULE",
+        "TRIPPEDD"
+      ],
+      "forbidden_scope": [
+        "SMOKE & MIRRORS"
+      ],
+      "preferred": [
+        "blender",
+        "motion-canvas",
+        "open-motion"
+      ],
+      "fallback": [
+        "remotion"
+      ],
+      "required_qc": [
+        "frame_activity",
+        "audio_non_silent",
+        "scope",
+        "resolution",
+        "fps",
+        "duration",
+        "container_integrity"
+      ]
     },
     "ep01_story_runner": {
-      "preferred": ["blender", "opentimelineio", "ffmpeg"],
-      "fallback": ["mlt", "kdenlive"],
-      "required_qc": ["source_integrity", "timeline_integrity", "media_integrity"]
+      "preferred": [
+        "blender",
+        "opentimelineio",
+        "ffmpeg"
+      ],
+      "fallback": [
+        "mlt",
+        "kdenlive"
+      ],
+      "required_qc": [
+        "source_integrity",
+        "timeline_integrity",
+        "media_integrity"
+      ]
     },
     "ep01_autonomous": {
-      "preferred": ["blender", "comfyui", "pallaidium", "pantomatrix"],
-      "fallback": ["motion-canvas", "open-motion", "remotion"],
-      "required_qc": ["chunk_integrity", "frame_activity", "audio_non_silent", "assembly_integrity"]
+      "preferred": [
+        "blender",
+        "comfyui",
+        "pallaidium",
+        "pantomatrix"
+      ],
+      "fallback": [
+        "motion-canvas",
+        "open-motion",
+        "remotion"
+      ],
+      "required_qc": [
+        "chunk_integrity",
+        "frame_activity",
+        "audio_non_silent",
+        "assembly_integrity"
+      ]
+    },
+    "god_molecule_first_shot": {
+      "preferred": [
+        "blender",
+        "ffmpeg"
+      ],
+      "fallback": [
+        "blender"
+      ],
+      "profile": "config/god_molecule_memory_safe_first_shot.json",
+      "entrypoint": "tools/environment/build_memory_safe_scene.py",
+      "required_qc": [
+        "source_provenance",
+        "seed_reproducibility",
+        "character_identity",
+        "frame_activity",
+        "render_integrity",
+        "creative_final"
+      ],
+      "forbidden_states": [
+        "TELEMETRY_AS_CREATIVE_FINAL",
+        "MARS_REPLACEMENT",
+        "FAKE_PASS"
+      ],
+      "policy": "The first shot proves a real creative render before GPU-heavy Gaussian training is enabled."
     }
   }
 }

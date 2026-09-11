@@ -1,0 +1,122 @@
+schema: tripped.oss-expansion/v1
+purpose: Horizontal and vertical open-source expansion. Registration is not the same as validation; every tool must pass real-input smoke, provenance, recovery, and artifact-compatibility gates before production promotion.
+
+rules:
+  full_source_projects: true
+  source_checkout_root: third_party/opensource
+  large_model_weights: git_lfs_or_release_artifact
+  no_single_point_of_failure: true
+  test_in_isolation_before_active_ep01_switch: true
+
+projects:
+  - id: rclone
+    domain: transport
+    upstream: https://github.com/rclone/rclone
+    roles: [google_drive, resumable_transfer, checksum, retry, sync]
+  - id: opencue
+    domain: render_farm
+    upstream: https://github.com/AcademySoftwareFoundation/OpenCue
+    roles: [render_queue, distributed_jobs, resource_scheduling, recovery]
+  - id: ayon
+    domain: studio_pipeline
+    upstream: https://github.com/ynput/ayon-core
+    roles: [asset_publish, versioning, dcc_pipeline, production_tracking]
+  - id: pyblish
+    domain: qc
+    upstream: https://github.com/pyblish/pyblish-base
+    roles: [collect, validate, publish, preflight]
+  - id: openusd
+    domain: scene_interchange
+    upstream: https://github.com/PixarAnimationStudios/OpenUSD
+    roles: [scene_graph, composition, asset_interchange, hydra]
+  - id: materialx
+    domain: lookdev
+    upstream: https://github.com/AcademySoftwareFoundation/MaterialX
+    roles: [materials, shaders, look_exchange]
+  - id: gstreamer
+    domain: media_transport
+    upstream: https://gitlab.freedesktop.org/gstreamer/gstreamer
+    roles: [ingest, stream_graphs, transcode, alternate_media_backend]
+  - id: vapoursynth
+    domain: video_processing
+    upstream: https://github.com/vapoursynth/vapoursynth
+    roles: [restoration, filtering, frame_processing]
+  - id: mlt
+    domain: editorial_render
+    upstream: https://github.com/mltframework/mlt
+    roles: [multitrack_editing, deterministic_render, effects_backend]
+  - id: vmaf
+    domain: perceptual_qc
+    upstream: https://github.com/Netflix/vmaf
+    roles: [video_regression, perceptual_quality]
+  - id: mediaconch
+    domain: delivery_qc
+    upstream: https://github.com/MediaArea/MediaConch
+    roles: [media_conformance, policy_validation]
+  - id: qctools
+    domain: media_qc
+    upstream: https://github.com/bavc/qctools
+    roles: [video_diagnostics, broadcast_qc]
+  - id: kitsu
+    domain: production_tracking
+    upstream: https://github.com/cgwire/kitsu
+    roles: [shots, tasks, review, approvals]
+  - id: opentelemetry
+    domain: observability
+    upstream: https://github.com/open-telemetry/opentelemetry-collector
+    roles: [traces, metrics, logs]
+  - id: prometheus
+    domain: observability
+    upstream: https://github.com/prometheus/prometheus
+    roles: [metrics, time_series, alerting]
+  - id: grafana
+    domain: observability
+    upstream: https://github.com/grafana/grafana
+    roles: [dashboards, operations, failure_visibility]
+  - id: ardour
+    domain: audio
+    upstream: https://github.com/Ardour/ardour
+    roles: [multitrack_audio, sound_finishing]
+  - id: krita
+    domain: 2d_art
+    upstream: https://github.com/KDE/krita
+    roles: [illustration, paint, animation_assets]
+  - id: openfacefx
+    domain: facial_animation
+    upstream: https://github.com/Emilianavt/OpenFaceFX
+    roles: [speech_to_viseme, gltf_animation, facial_curves]
+  - id: pantomatrix
+    domain: performance_capture
+    upstream: https://github.com/PantoMatrix/PantoMatrix
+    roles: [speech_to_face, body_motion, arkit_blendshapes]
+  - id: blendcap
+    domain: performance_capture
+    upstream: https://github.com/jasperges/BlendCap
+    roles: [markerless_body_capture, hand_capture, face_capture, blender]
+  - id: moface
+    domain: facial_animation
+    upstream: https://github.com/cgtinker/moface
+    roles: [openpose_face_to_blender]
+  - id: animato
+    domain: animation_generation
+    upstream: https://github.com/BlenderNerd/Animato
+    roles: [text_to_animation, blender_rig_animation]
+  - id: character-animation-pipeline
+    domain: character_pipeline
+    upstream: https://github.com/TencentARC/Character-Animation-Pipeline
+    roles: [image_to_3d, auto_rig, motion_synthesis, retarget]
+  - id: longvideosparseattention
+    domain: video_acceleration
+    upstream: https://github.com/svg-project/LongVideoSparseAttention
+    roles: [long_video_attention, wan_acceleration, hunyuan_acceleration, cogvideox_acceleration]
+
+promotion:
+  states: [REGISTERED, SOURCE_READY, INSTALLED, SMOKE_TESTED, VALIDATED, PRODUCTION, QUARANTINED]
+  required_evidence:
+    - upstream_identity
+    - license_or_model_license
+    - reproducible_provisioning
+    - real_input_smoke
+    - measured_artifact
+    - recovery_resume_test
+    - fallback_path

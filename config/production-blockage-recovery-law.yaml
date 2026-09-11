@@ -1,0 +1,31 @@
+schema: tripped.production-blockage-recovery/v1
+name: Production Blockage Recovery Law
+purpose: Prevent avoidable infrastructure failures from becoming operator roadblocks.
+policy:
+  - detect_failure
+  - classify_root_cause
+  - immediately_search_alternate_tool_or_open_source
+  - prefer_local_or_offline_transport_when_possible
+  - retry_with_bounded_backoff
+  - route_to_secondary_backend
+  - preserve_original_artifact_and_provenance
+  - run_real_input_smoke_test
+  - promote_only_with_measured_evidence
+  - report_blockage_with_active_recovery_plan
+rules:
+  never_stop_at_report: true
+  never_claim_unverified_success: true
+  never_replace_source_asset_on_failure: true
+  unknown_is_not_pass: true
+  active_production_must_not_be_restarted_for_experimental_tools: true
+  every_critical_capability_requires_fallback_or_explicit_unknown: true
+recovery_order:
+  - existing_runtime_capability
+  - alternate_installed_backend
+  - open_source_replacement
+  - alternate_protocol_or_format
+  - local_offline_transport
+  - resumable_transfer
+  - deterministic_fallback
+  - operator_action
+operator_message_contract: "State the blockage, immediately state the recovery path being executed, and only escalate when the available recovery paths are exhausted or require user authorization."

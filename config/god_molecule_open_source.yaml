@@ -106,6 +106,16 @@ projects:
     lane: gnm_differential_face_tracking
     license: Apache-2.0
     role: reference implementation for differential mouth landmark solving; use only the GNM/Apache-2.0 components and record third-party notices
+  - name: facecap-threejs-r184
+    repo: https://github.com/mrdoob/three.js.git
+    lane: oral_anatomy_expression_reference
+    license: MIT
+    role: pinned FaceCap 52-target oral/face donor; preserve Face Cap credit and exact asset hash; never replaces MARS_CANONICAL
+  - name: openfacefx
+    repo: https://github.com/OpenFaceFX/OpenFaceFX.git
+    lane: phoneme_to_viseme_retarget
+    license: MIT
+    role: real phoneme/viseme curves and retargeting; audio timing remains sourced from the real dialogue
   - name: openfacefx
     repo: https://github.com/OpenFaceFX/OpenFaceFX.git
     lane: lipsync_visemes

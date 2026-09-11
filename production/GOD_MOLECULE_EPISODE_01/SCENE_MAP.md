@@ -31,4 +31,15 @@ Canon synopsis + production lanes. Additive gags allowed; identity and cosmology
 1. Cold open script locked (this tree)  
 2. At least one verified memory-safe plate OR SC-01 stills with Mars hash  
 3. Oral gate green if mouth performance is in the cut  
-4. OTIO/JSON/QC when commercial/episode proof path is invoked  
+4. OTIO/JSON/QC when commercial/episode proof path is invoked
+
+## Spec index
+
+| Doc | Path |
+|-----|------|
+| Cold open | `production/GOD_MOLECULE_EPISODE_01/COLD_OPEN.md` |
+| SC-01 shots | `production/GOD_MOLECULE_EPISODE_01/SC01_SHOT_LIST.md` |
+| Tonnō style | `production/GOD_MOLECULE_EPISODE_01/TONNO_PASS_STYLE.md` |
+| SC-03 recurse | `production/GOD_MOLECULE_EPISODE_01/SC03_ROOM_RECURSES.md` |
+| SC-04 observer | `production/GOD_MOLECULE_EPISODE_01/SC04_OBSERVER.md` |
+| USD world | `environments/GM-WORLD-0001/GM-WORLD-0001.usda` |

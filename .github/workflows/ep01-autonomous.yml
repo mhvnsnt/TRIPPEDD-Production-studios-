@@ -60,6 +60,18 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+      - name: Populate Blender cache on miss
+        run: |
+          set -euo pipefail
+          dir="$HOME/.cache/trippedd/blender-${BLENDER_VERSION}-linux-x64"
+          if [ ! -x "$dir/blender" ]; then
+            mkdir -p "$HOME/.cache/trippedd"
+            curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
+            curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
+            grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
+            mkdir -p "$dir"
+            tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" --strip-components=1 -C "$dir"
+          fi
       - name: Activate cached Blender toolchain
         run: |
           set -euo pipefail

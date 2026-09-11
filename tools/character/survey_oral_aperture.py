@@ -62,9 +62,10 @@ def main():
     center = Vector(frame["center"])
     left = Vector(frame["left_corner"])
     right = Vector(frame["right_corner"])
-    front_z = float(frame.get("front_surface_z", center.z))
-    plane_point = Vector((center.x, center.y, front_z))
-    plane_normal = Vector(frame.get("outward_normal", (0.0, 0.0, 1.0))).normalized()
+    # Measured Mars mouth frame uses Y as depth. Never fall back to Z for the lip plane.
+    plane_y = float(frame.get("plane_y", frame.get("front_surface_y", center.y)))
+    plane_point = Vector((center.x, plane_y, center.z))
+    plane_normal = Vector(frame.get("outward_normal", (0.0, 1.0, 0.0))).normalized()
 
     meshes = [o for o in bpy.context.scene.objects if o.type == "MESH" and not o.hide_render]
     trees = []

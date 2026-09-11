@@ -31,6 +31,26 @@ projects:
     role: editorial GUI/render fallback
     activation: editor-optional
     license: GPL-2.0-or-later
+  - id: opentoonz
+    repo: https://github.com/opentoonz/opentoonz.git
+    role: full 2D animation, cutout rigging, effects and scene authoring
+    activation: animation-2d
+    license: BSD-3-Clause
+  - id: natron
+    repo: https://github.com/NatronGitHub/Natron.git
+    role: node-based compositing, rotoscoping, tracking, keying and VFX
+    activation: compositing
+    license: GPL-2.0-or-later
+  - id: kitsu
+    repo: https://github.com/cgwire/kitsu.git
+    role: production tracking, shot review and delivery state
+    activation: production-tracking
+    license: AGPL-3.0
+  - id: quadpype
+    repo: https://github.com/quadproduction/quadpype.git
+    role: 2D/3D/VFX pipeline integration and publishing
+    activation: pipeline-integration
+    license: MIT
 wiring:
   source: PhysicalSourceTimeline -> media adapters
   analysis: ffprobe + PySceneDetect + OpenCV + faster-whisper + Tesseract
@@ -39,4 +59,8 @@ wiring:
   color: OpenColorIO
   assets: OpenAssetIO
   generative: ComfyUI -> explicit approved source/artifact handoff
+  animation2d: OpenToonz -> shot renders -> Natron/Blender composite
+  compositing: Natron -> live-action + 2D + 3D + generated-media plates
+  production_tracking: Kitsu -> shot/asset/review/delivery state
+  pipeline_integration: QuadPype -> DCC/publish/version boundaries
   observability: repo-observer -> production telemetry -> self-healer

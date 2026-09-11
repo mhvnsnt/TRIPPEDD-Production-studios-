@@ -1,0 +1,33 @@
+{
+  "character": "MARS",
+  "lod": "LOD2",
+  "sourceAnatomy": "renders/_rig_measure/face_anatomy.json",
+  "bones": [
+    "root",
+    "neck",
+    "head",
+    "jaw",
+    "eye_L",
+    "eye_R"
+  ],
+  "jawHinge": [
+    -0.00783,
+    -0.11779,
+    0.34331
+  ],
+  "jawHingeSource": "measured ear midpoint (temporomandibular joint)",
+  "jawWeightedVertices": 6318,
+  "shapeKeys": {
+    "viseme_AA": 2826,
+    "viseme_EE": 1261,
+    "viseme_OH": 1272,
+    "viseme_MM": 821,
+    "viseme_FF": 469,
+    "blink_L": 297,
+    "blink_R": 359,
+    "brow_up": 1324,
+    "smile": 1635
+  },
+  "removedDeadKeys": [],
+  "meshVertices": 47021
+}

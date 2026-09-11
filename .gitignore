@@ -32,3 +32,7 @@ public/model_views/
 
 renders/
 vendor/blender
+assets/rigs/*.blend
+assets/rigs/*.glb
+.trippedd_libs/
+.trippedd_models/

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>In the Bushes original abstract police light sweep FX</title>
+<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset=".45" stop-color="#b9d4ff" stop-opacity=".18"/><stop offset=".55" stop-color="#ff9b9b" stop-opacity=".22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>
+<path d="M-300 0L950 0L650 1080L-600 1080Z" fill="url(#sweep)"/>
+<path d="M1050 0L2220 0L2500 1080L1300 1080Z" fill="url(#sweep)" opacity=".75"/>
+</svg>

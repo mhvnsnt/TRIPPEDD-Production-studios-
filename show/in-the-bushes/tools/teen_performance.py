@@ -10,11 +10,7 @@ from __future__ import annotations
 
 import math
 
-
 W, H = 1920, 1080
-
-# Each teen is anchored around a local origin.  Differences in proportions and
-# stance keep the group from reading as three copies of one character.
 TEENS = [
     {"x": 560, "y": 430, "head": 45, "body": 160, "leg": 92, "offset": 0.0},
     {"x": 760, "y": 455, "head": 43, "body": 165, "leg": 88, "offset": 1.7},
@@ -24,10 +20,6 @@ TEENS = [
 
 def esc(v):
     return f"{v:.2f}"
-
-
-def mix(a, b, t):
-    return a + (b - a) * t
 
 
 def clamp(t):
@@ -40,7 +32,6 @@ def ease(t):
 
 
 def pose_at(frame: int, shot_id: str):
-    """Return pose name plus normalized local time for the current shot."""
     ranges = {
         "S01": (0, 83, ["hang", "talk", "hang"]),
         "S02": (108, 143, ["hang", "turn", "stare", "panic"]),
@@ -49,14 +40,13 @@ def pose_at(frame: int, shot_id: str):
         "S05": (300, 371, ["crouch", "breathe", "look_pack", "look_bush"]),
         "S06": (372, 419, ["ask", "glance_bush"]),
         "S07": (420, 455, ["neutral", "point", "commit"]),
-        "S08": (456, 492, ["run", "throw"]),
+        "S08": (456, 539, ["run", "throw", "flee"]),
         "S09": (520, 610, ["flee", "flee_fast"]),
     }
     if shot_id not in ranges:
         return "hang", 0.0
     start, end, poses = ranges[shot_id]
     t = clamp((frame - start) / max(1, end - start))
-    # Map the shot through evenly spaced authored pose beats.
     u = t * (len(poses) - 1)
     i = min(len(poses) - 2, int(u)) if len(poses) > 1 else 0
     local = u - i if len(poses) > 1 else 0.0
@@ -69,16 +59,13 @@ def _limb(x, y, angle_deg, length):
 
 
 def teen_svg(frame: int, shot_id: str) -> str:
-    pose, blend = pose_at(frame, shot_id)
+    pose, _ = pose_at(frame, shot_id)
     groups = []
-    for idx, t in enumerate(TEENS):
-        # Subtle asynchronous offsets make the group feel like three people.
+    for t in TEENS:
         phase = frame * 0.35 + t["offset"] * 35
         sway = math.sin(math.radians(phase)) * (2.5 if pose in {"hang", "breathe", "crouch"} else 1.2)
         x, y = t["x"], t["y"]
-        head = t["head"]
-        body = t["body"]
-        leg = t["leg"]
+        head, body, leg = t["head"], t["body"], t["leg"]
         lean = 0.0
         arm_l, arm_r = -115, 88
         leg_l, leg_r = -25, 25
@@ -91,8 +78,7 @@ def teen_svg(frame: int, shot_id: str) -> str:
         elif pose == "turn":
             lean, head_dx = -5, -8
         elif pose == "stare":
-            lean, head_dx = -7, -12
-            arm_l, arm_r = -100, 105
+            lean, head_dx, arm_l, arm_r = -7, -12, -100, 105
         elif pose == "panic":
             lean, arm_l, arm_r, leg_l, leg_r = -10, -145, 125, -42, 42
             mouth = "<circle cx='0' cy='14' r='8' fill='#0b0d12' stroke='none'/>"
@@ -101,8 +87,7 @@ def teen_svg(frame: int, shot_id: str) -> str:
         elif pose == "grab":
             lean, arm_l, arm_r = -10, -40, 35
         elif pose == "turn_exit":
-            lean, arm_l, arm_r = -14, -55, 35
-            leg_l, leg_r = -38, 42
+            lean, arm_l, arm_r, leg_l, leg_r = -14, -55, 35, -38, 42
         elif pose == "run":
             stride = math.sin(phase) * 18
             lean, arm_l, arm_r = -16, -125 + stride, 110 + stride
@@ -110,23 +95,18 @@ def teen_svg(frame: int, shot_id: str) -> str:
         elif pose == "duck":
             crouch, lean, arm_l, arm_r = 58, -8, -90, 105
         elif pose == "hide":
-            crouch, lean, arm_l, arm_r = 70, -4, -65, 75
-            head_dy = 24
+            crouch, lean, arm_l, arm_r, head_dy = 70, -4, -65, 75, 24
         elif pose == "peek":
-            crouch, lean, head_dx = 62, -12, -20
-            arm_l, arm_r = -70, 80
+            crouch, lean, head_dx, arm_l, arm_r = 62, -12, -20, -70, 80
         elif pose == "crouch":
             crouch, lean, arm_l, arm_r = 62, 2, -75, 70
         elif pose == "breathe":
             crouch = 58 + math.sin(phase) * 3
-            lean = math.sin(phase * .7) * 2
-            arm_l, arm_r = -78, 74
+            lean, arm_l, arm_r = math.sin(phase * .7) * 2, -78, 74
         elif pose == "look_pack":
-            crouch, head_dx, head_dy = 54, 8, 18
-            arm_l, arm_r = -55, 55
+            crouch, head_dx, head_dy, arm_l, arm_r = 54, 8, 18, -55, 55
         elif pose == "look_bush":
-            crouch, head_dx = 50, 28
-            arm_l, arm_r = -75, 90
+            crouch, head_dx, arm_l, arm_r = 50, 28, -75, 90
         elif pose == "ask":
             crouch, arm_l, arm_r, head_dx = 50, -120, 45, -4
             mouth = "<path d='M-14 10 Q0 2 14 10' fill='none'/>"
@@ -134,12 +114,10 @@ def teen_svg(frame: int, shot_id: str) -> str:
             crouch, head_dx, arm_l, arm_r = 48, 26, -75, 88
         elif pose == "point":
             arm_r, arm_l, head_dx = 25, -90, 18
-            leg_l, leg_r = -20, 20
         elif pose == "commit":
             lean, arm_r, arm_l, head_dx = -8, 18, -115, 24
         elif pose == "throw":
-            lean, arm_r, arm_l = -20, 12, -150
-            leg_l, leg_r = -45, 48
+            lean, arm_r, arm_l, leg_l, leg_r = -20, 12, -150, -45, 48
         elif pose == "flee":
             stride = math.sin(phase) * 25
             lean, arm_l, arm_r = -20, -145 + stride, 125 + stride
@@ -149,7 +127,6 @@ def teen_svg(frame: int, shot_id: str) -> str:
             lean, arm_l, arm_r = -24, -155 + stride, 135 + stride
             leg_l, leg_r = -52 - stride, 52 - stride
 
-        # Blend the idle sway into authored pose movement for a less mechanical feel.
         lean += sway
         by = body + crouch
         hx, hy = head_dx, head_dy - crouch * 0.10

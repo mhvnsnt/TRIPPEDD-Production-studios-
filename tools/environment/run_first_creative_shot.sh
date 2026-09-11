@@ -14,7 +14,12 @@ if [[ -z "$MARS" ]]; then
     "$ROOT/.trippedd_assets/MARS_CANONICAL.glb" \
     "$ROOT/.trippedd_assets/mars.glb" \
     "$ROOT/.trippedd_assets/mars.gltf" \
-    "$ROOT/.trippedd_assets/mars.obj"; do
+    "$ROOT/.trippedd_assets/mars.obj" \
+    "$ROOT/.trippedd_assets/mars_proxy.glb" \
+    "${HOME}/.cache/trippedd/god-molecule/MARS_CANONICAL.glb" \
+    "${HOME}/God-Molecule-Show-Studio/.trippedd_assets/mars_proxy.glb" \
+    "${HOME}/God-Molecule-Show-Studio/.trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl_proxy.glb"
+  do
     if [[ -s "$p" ]]; then MARS="$p"; break; fi
   done
 fi
@@ -22,6 +27,7 @@ fi
 if [[ -z "$MARS" || ! -s "$MARS" ]]; then
   echo "MARS_CANONICAL: FAIL — no physical asset found."
   echo "Set MARS_CANONICAL_PATH to the downloaded canonical GLB/GLTF/OBJ."
+  echo "Show-Studio proxies live under .trippedd_assets/ if cloned."
   exit 40
 fi
 
@@ -34,6 +40,10 @@ command -v "$BLENDER" >/dev/null 2>&1 || {
 mkdir -p "$OUT"
 LOG="$OUT/execution.log"
 : > "$LOG"
+
+echo "MARS_PATH=$MARS" | tee -a "$LOG"
+echo "MARS_SHA256=$(sha256sum "$MARS" | awk '{print $1}')" | tee -a "$LOG"
+echo "SEED=$SEED" | tee -a "$LOG"
 
 # Profiles are deliberately conservative. Recovery changes one dimension at a time.
 PROFILES=(
@@ -60,7 +70,19 @@ for profile in "${PROFILES[@]}"; do
   if [[ "$RC" -eq 0 && -s "$OUT/manifest.json" ]]; then
     if grep -q '"creative_final": true' "$OUT/manifest.json" && \
        ! grep -q '"telemetry_substitution": true' "$OUT/manifest.json"; then
+      # Optional contact sheet if evidence tool exists
+      if [[ -f "$ROOT/tools/animation/make_visual_evidence.py" ]]; then
+        "$BLENDER_BIN" -b --python "$ROOT/tools/animation/make_visual_evidence.py" -- \
+          --frames-dir "$OUT/frames" --out "$OUT/CONTACT-SHEET.png" 2>/dev/null || true
+      fi
+      if [[ -f "$ROOT/tools/environment/verify_creative_final.py" ]]; then
+        python3 "$ROOT/tools/environment/verify_creative_final.py" "$OUT" | tee -a "$LOG" || {
+          echo "CREATIVE_FINAL: FAIL — verify_creative_final rejected package" | tee -a "$LOG"
+          continue
+        }
+      fi
       echo "CREATIVE_FINAL: VERIFIED"
+      echo "ARTIFACT=$OUT"
       exit 0
     fi
   fi

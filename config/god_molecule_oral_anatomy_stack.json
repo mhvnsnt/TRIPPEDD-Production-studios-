@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "purpose": "Identity-safe oral anatomy and facial-expression bridge for MARS_CANONICAL",
+  "source_of_truth": "MARS_CANONICAL remains the exterior identity mesh. Open anatomy is an inserted/retargeted subsystem, never a replacement head.",
+  "donor": {
+    "name": "google-gnm-head-v3",
+    "repo": "https://github.com/google/GNM",
+    "license": "Apache-2.0",
+    "model": "gnm/shape/data/versions/v3_0/gnm_head.npz",
+    "capabilities": ["upper/lower teeth and gums","tongue","383 expression components","253 identity components","4-joint head/eye rig","named anatomical vertex groups"]
+  },
+  "bridge": [
+    "build an oral-only GNM donor from the official NPZ",
+    "measure MARS mouth landmarks and local face normal",
+    "fit the donor to the measured Mars mouth coordinate frame",
+    "use GNM-Studio constrained fitting for a Mars-specific lip deformation donor",
+    "retarget GNM lower-face expression to the Mars lip region",
+    "drive teeth/tongue/jaw from the same viseme signal",
+    "drive blink and gaze independently",
+    "use Rhubarb only for audio phoneme timing",
+    "validate mouth gap, lip separation, tongue travel and blink closure"
+  ],
+  "controls": {
+    "jaw_open":"measured/retargeted lower-face opening",
+    "viseme_AA":"jaw_open + open-mouth lower-face deformation",
+    "viseme_EE":"lip spread with bounded jaw contribution",
+    "viseme_OH":"rounded mouth + jaw contribution",
+    "viseme_MM":"lip closure; teeth/tongue hidden",
+    "viseme_FF":"lower-lip/upper-tooth relationship",
+    "blink_L":"independent eyelid control",
+    "blink_R":"independent eyelid control",
+    "tongue":"independent bounded GNM tongue control"
+  },
+  "hard_gates": [
+    "MARS_CANONICAL exterior mesh hash unchanged",
+    "oral donor provenance/license recorded",
+    "jaw_open creates nonzero visible oral gap",
+    "lower teeth move while upper teeth remain anchored",
+    "MM closes and AA/OH opens",
+    "both eyelids visibly close",
+    "no telemetry/placeholder can satisfy animation gates",
+    "UNKNOWN is never PASS"
+  ]
+}

@@ -116,3 +116,7 @@ A review of the warm-cache changes found an important failure mode: replacing th
 User directed that this work remain centered on the production-studios repository and that the pipeline must keep moving actual deliverables: the commercial, EP01 story-runner cut, EP01 autonomous cut, and their editorial cuts. Open-source integrations should continue to be pulled into the production repository in full when they are usable production components, while avoiding speculative additions that don't advance a deliverable.
 
 Repository note: GitHub account search did not expose a repository literally named “Church Production Studios”; the connected production repository available and actively running this pipeline is **mhvnsnt/TRIPPEDD-Production-studios-**. Work is therefore continuing there rather than inventing or switching to an unverified repository.
+
+
+### Continuation 6 — full upstream OSS checkout policy
+The OSS umbrella installer was tightened to match the production directive literally: upstream projects are now cloned without blob filtering and without shallow fetches. The repository therefore vendors complete upstream Git histories when the umbrella is materialized, while Actions caches prevent repeating that expensive operation on warm runs. This is deliberate: “full” means complete upstream source/history, not a lightweight placeholder checkout.

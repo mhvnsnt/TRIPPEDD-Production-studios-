@@ -32,8 +32,7 @@ mkdir -p "$OUT"
 SURVEY_JSON="$OUT/aperture_survey.json"
 "$BLENDER" -b "$OUT/MARS_ORAL_REPAIRED.blend" --python "$ROOT/tools/character/survey_oral_aperture.py" -- \
   --mouth-frame "$MOUTH_FRAME" \
-  --output-json "$SURVEY_JSON" \
-  --render-dir "$OUT/survey_preview" || {
+  --output "$SURVEY_JSON" || {
     echo "MARS_ORAL_REPAIR: SURVEY_INVOKE_FAIL"
     exit 1
   }

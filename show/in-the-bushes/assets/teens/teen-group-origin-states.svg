@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>In the Bushes EP01 original teen origin states</title>
+<g fill="#d6d1c7" stroke="#0b0d12" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+<!-- Teen A hanging out / running / throwing -->
+<g transform="translate(560 430)"><circle cx="0" cy="0" r="45"/><path d="M0 48L-10 210M-10 100L-105 150M-8 105L90 80M-10 210L-90 300M-10 210L85 275" fill="none"/><path d="M-40 130Q0 160 40 130" fill="none"/></g>
+<!-- Teen B -->
+<g transform="translate(760 455)"><circle cx="0" cy="0" r="43"/><path d="M0 45L15 210M5 105L-90 75M8 110L100 150M15 210L-80 300M15 210L100 285" fill="none"/></g>
+<!-- Teen C -->
+<g transform="translate(950 450)"><circle cx="0" cy="0" r="44"/><path d="M0 46L-20 210M-10 105L-100 135M-5 105L95 65M-20 210L-110 275M-20 210L70 300" fill="none"/></g>
+</g>
+<!-- small state guide -->
+<g fill="#8d948e" font-family="sans-serif" font-size="20"><text x="430" y="780">HANG / NOTICE</text><text x="710" y="820">PANIC / HIDE</text><text x="930" y="800">THROW / FLEE</text></g>
+</svg>

@@ -87,6 +87,28 @@ describe('Media Pipeline Queue', () => {
  * found silent. Measured on a real server: 19 clips queued one second after
  * boot, the first two silently emptied.
  */
+/**
+ * Poll until a condition holds, instead of sleeping a fixed number of
+ * milliseconds and hoping.
+ *
+ * A POSITIVE assertion after `await sleep(30)` is a flake waiting to happen: it
+ * passes on an idle box and fails the moment anything else is using the CPU.
+ * One did exactly that in this suite while a Chromium render was running, and a
+ * timing failure is indistinguishable from a real regression at a glance.
+ *
+ * Negative assertions ("still QUEUED") keep a fixed wait on purpose — waiting
+ * LONGER only makes those stronger, so they cannot flake in the failing
+ * direction.
+ */
+async function waitFor(cond: () => boolean, timeoutMs = 3000, label = 'condition'): Promise<void> {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (cond()) return;
+    await new Promise((r) => setTimeout(r, 5));
+  }
+  throw new Error(`timed out after ${timeoutMs}ms waiting for ${label}`);
+}
+
 describe('QueueManager — waits for tool detection before analysing', () => {
   function lateProvisioner() {
     let detected = false;
@@ -113,9 +135,8 @@ describe('QueueManager — waits for tool detection before analysing', () => {
     expect(q.getJob('race1')!.state).toBe('QUEUED');
 
     p.finishDetection();
-    await new Promise((r) => setTimeout(r, 30));
     // Once detection lands the job is allowed to move on.
-    expect(q.getJob('race1')!.state).not.toBe('QUEUED');
+    await waitFor(() => q.getJob('race1')!.state !== 'QUEUED', 3000, 'race1 to leave QUEUED');
   });
 
   it('records the wait on the job, so a slow boot is visible rather than silent', async () => {
@@ -123,8 +144,8 @@ describe('QueueManager — waits for tool detection before analysing', () => {
     const p = lateProvisioner();
     q.setProvisioner(p, p.ready);
     q.addJob({ fileId: 'race2', state: 'QUEUED', tools: {}, logs: [] } as any);
-    await new Promise((r) => setTimeout(r, 20));
-    expect(q.getJob('race2')!.logs.join(' ')).toContain('Waiting for toolchain detection');
+    await waitFor(() => q.getJob('race2')!.logs.join(' ').includes('Waiting for toolchain detection'),
+      3000, 'the wait to be logged on the job');
     p.finishDetection();
   });
 
@@ -153,9 +174,8 @@ describe('QueueManager — waits for tool detection before analysing', () => {
     const failed = Promise.reject(new Error('apt exploded'));
     q.setProvisioner({ getTool: () => undefined }, failed);
     q.addJob({ fileId: 'race3', state: 'QUEUED', tools: {}, logs: [] } as any);
-    await new Promise((r) => setTimeout(r, 40));
     // A broken install degrades the run; it does not stop it starting.
-    expect(q.getJob('race3')!.state).not.toBe('QUEUED');
+    await waitFor(() => q.getJob('race3')!.state !== 'QUEUED', 3000, 'race3 to start despite the failed install');
   });
 });
 

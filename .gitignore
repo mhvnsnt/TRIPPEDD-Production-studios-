@@ -23,3 +23,9 @@ public/contact/
 
 # Analysed evidence — rebuilt from the footage, not repo content.
 .trippedd_tools/
+
+# Supplied source models are pulled from Drive by provenance, not committed as blobs.
+assets/source_models/*.glb
+assets/source_models/*.fbx
+assets/source_models/*.obj
+public/model_views/

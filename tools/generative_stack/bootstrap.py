@@ -9,11 +9,18 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[2] / "third_party" / "generative"
 PROJECTS = {
+    # Generative image/video stack
     "ComfyUI": ("https://github.com/comfyanonymous/ComfyUI.git", "master"),
     "InvokeAI": ("https://github.com/invoke-ai/InvokeAI.git", "main"),
     "DiffSynth-Studio": ("https://github.com/modelscope/DiffSynth-Studio.git", "main"),
     "LTX-Video": ("https://github.com/Lightricks/LTX-Video.git", "main"),
     "Wan2.1": ("https://github.com/Wan-Video/Wan2.1.git", "main"),
+    # 3D / 2D / compositing production stack
+    "Blender": ("https://github.com/blender/blender.git", "main"),
+    "OpenToonz": ("https://github.com/opentoonz/opentoonz.git", "master"),
+    "Synfig": ("https://github.com/synfig/synfig.git", "master"),
+    "Natron": ("https://github.com/NatronGitHub/Natron.git", "RB-2.6"),
+    "MPFB2": ("https://github.com/makehumancommunity/mpfb2.git", "master"),
 }
 
 def run(*args, cwd=None):

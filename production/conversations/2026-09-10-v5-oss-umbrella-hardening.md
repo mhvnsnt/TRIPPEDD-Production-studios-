@@ -128,3 +128,7 @@ To make the requested production work actually execute without requiring a manua
 
 ### Continuation 8 — canonical production dispatch
 Added a production dispatch job to the EP01 Autonomous workflow so a production-branch update explicitly launches both the canonical Story Runner and Autonomous Cut workflows against the same branch. Existing concurrency and self-healing remain bounded. Commercial proof remains independently push-triggered. This makes the requested commercial/episode execution path explicit rather than relying solely on workflow-trigger semantics.
+
+
+### Continuation 9 — execution safety correction
+During runner inspection, the explicit self-dispatch job added to EP01 Autonomous was identified as unsafe because that workflow also triggers on pushes to the same branch; dispatching itself would create recursive runs. Removed that dispatcher. Story Runner and Autonomous remain push-triggered, and Commercial Proof remains independently push-triggered. Production execution must be automatic but never recursively self-amplifying.

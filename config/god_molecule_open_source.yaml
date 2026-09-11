@@ -91,6 +91,21 @@ projects:
   - name: tripo-face-rig
     repo: https://github.com/mdj128/facial-animation.git
     lane: tripo_head_rigging
+  - name: google-gnm-head
+    repo: https://github.com/google/GNM.git
+    lane: oral_anatomy_and_expression
+    license: Apache-2.0
+    role: identity-safe donor for teeth, tongue, lower-face expression and measurable jaw opening; never replaces MARS_CANONICAL
+  - name: gnm-studio
+    repo: https://github.com/Saganaki22/GNM-Studio.git
+    lane: gnm_custom_head_fit_and_runtime
+    license: Apache-2.0
+    role: fit a GNM facial subspace to supplied Mars reference renders and export a reusable expression/oral runtime
+  - name: gnm-webcam-puppet
+    repo: https://github.com/edualvarado/gnm-webcam-puppet.git
+    lane: gnm_differential_face_tracking
+    license: Apache-2.0
+    role: reference implementation for differential mouth landmark solving; use only the GNM/Apache-2.0 components and record third-party notices
   - name: openfacefx
     repo: https://github.com/OpenFaceFX/OpenFaceFX.git
     lane: lipsync_visemes

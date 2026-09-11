@@ -164,3 +164,9 @@ Expanded the umbrella with Blender Studio's own production stack: Flamenco for B
 Added Krita for hand-drawn/frame-by-frame 2D assets and paint-over, Blender Grease Pencil for 2D/3D hybrid animation, Storyboarder for rapid shot planning, Audacity for dialogue cleanup, Ardour for multitrack mixing/mastering, and RtMidi for realtime control. This fills the remaining production layers around animation planning and audio rather than only render infrastructure.
 
 External validation: Blender Studio's current pipeline explicitly organizes production into storyboard, editorial, previz, asset creation, animation, FX, lighting, rendering, coloring and publishing, with Kitsu/Flamenco supporting shot construction and review. TRIPPEDD's OSS architecture is being shaped around those same stage boundaries while retaining its live-action/generative-media requirements.
+
+
+### OSS expansion pass 4 — VFX/3D scene foundation — 2026-09-11
+Added OpenVDB for volumetric smoke/fire/destruction effects; Open Shading Language for procedural shading; MaterialX for portable materials/look development; OpenUSD for complex scene/asset interchange; OpenEXR for HDR production image sequences; and OpenFX for standardized VFX plugin interoperability. These are foundational production standards, not filler dependencies: the target is to let TRIPPEDD move real 2D/3D/generative assets between stages without flattening everything into isolated MP4s.
+
+The architecture is explicitly moving toward shot-level assets and interchange, with OTIO for editorial structure and OpenAssetIO/USD/MaterialX/OCIO/OpenEXR/OpenFX for the 3D/VFX side. ASWF identifies OpenVDB, OpenShadingLanguage, MaterialX/OpenUSD, OpenEXR and OpenFX as core open production technologies for VFX/animation pipelines. citeturn0search1turn0search10

@@ -93,19 +93,28 @@ jobs:
           python -m pip install -r config/production/oss-stack.requirements.txt
       - name: Install production dependencies
         run: bun install --no-save
-      - name: Install and verify Blender
-        env:
-          BLENDER_VERSION: '4.5.13'
-          BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+      - name: Cache Blender extracted toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/blender-4.5.13-linux-x64
+          key: blender-extracted-4.5.13-\${{ runner.os }}-\${{ runner.arch }}
+      - name: Activate cached Blender
         run: |
           set -euo pipefail
-          mkdir -p ~/.cache/trippedd
-          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"
-          curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
-          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
-          sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
-          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          test -x "$HOME/.cache/trippedd/blender-4.5.13-linux-x64/blender"
+          sudo ln -sfn "$HOME/.cache/trippedd/blender-4.5.13-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
+      - name: Cache full open-source render backends
+        uses: actions/cache@v4
+        with:
+          path: .trippedd/opensource
+          key: trippedd-oss-render-stack-v1-\${{ runner.os }}-\${{ hashFiles('tools/opensource/bootstrap-render-stack.sh') }}
+          restore-keys: |
+            trippedd-oss-render-stack-v1-\${{ runner.os }}-
+      - name: Provision full open-source render backends
+        run: |
+          set -euo pipefail
+          bash tools/opensource/bootstrap-render-stack.sh
       - name: Verify open-source stack before production work
         run: |
           set -euo pipefail

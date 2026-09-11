@@ -102,43 +102,27 @@ def world_vertices(ob):
 
 
 def find_front_surface(mars, center):
+    # Mars mouth measurements are in the local Y depth axis (lip y ~= -0.21).
     pts = world_vertices(mars)
-    dxy = np.linalg.norm(pts[:, :2] - np.asarray(center[:2]), axis=1)
+    dxz = np.linalg.norm(pts[:, [0, 2]] - np.asarray(center)[[0, 2]], axis=1)
     radius = max(float(np.ptp(pts[:, 0])) * 0.08, 1e-3)
-    near = pts[dxy <= radius]
+    near = pts[dxz <= radius]
     if len(near) < 20:
-        near = pts[np.argsort(dxy)[: min(200, len(pts))]]
-    return float(np.percentile(near[:, 2], 95.0))
+        near = pts[np.argsort(dxz)[: min(200, len(pts))]]
+    return float(np.percentile(near[:, 1], 95.0))
 
 
 def lip_plane(frame, mars):
     center = np.asarray(frame["center"], dtype=np.float64)
-    left = np.asarray(frame["left_corner"], dtype=np.float64)
-    right = np.asarray(frame["right_corner"], dtype=np.float64)
-
     if "outward_normal" in frame:
         n = np.asarray(frame["outward_normal"], dtype=np.float64)
         n = n / max(np.linalg.norm(n), 1e-12)
         return center, n
 
-    front_z = float(frame.get("front_surface_z", find_front_surface(mars, center)))
-    point = np.array([center[0], center[1], front_z], dtype=np.float64)
-    normal = np.array([0.0, 0.0, 1.0], dtype=np.float64)
-
-    width_vec = right - left
-    if np.linalg.norm(width_vec) > 1e-8:
-        up = np.array([0.0, 1.0, 0.0], dtype=np.float64)
-        n = np.cross(width_vec, up)
-        if np.linalg.norm(n) > 1e-8:
-            n = n / np.linalg.norm(n)
-            if n[2] < 0:
-                n = -n
-            normal = n
-            point = center.copy()
-            point[2] = front_z
-
-    return point, normal
-
+    # Measured Mars mouth plane is a depth plane, approximately y=-0.21.
+    plane_y = float(frame.get("plane_y", frame.get("front_surface_y", find_front_surface(mars, center))))
+    point = np.array([center[0], plane_y, center[2]], dtype=np.float64)
+    return point, np.array([0.0, 1.0, 0.0], dtype=np.float64)
 
 def signed_distances(pts, plane_point, plane_normal):
     return (pts - plane_point) @ plane_normal

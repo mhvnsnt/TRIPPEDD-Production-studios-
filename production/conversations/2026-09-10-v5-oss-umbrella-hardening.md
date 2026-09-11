@@ -120,3 +120,7 @@ Repository note: GitHub account search did not expose a repository literally nam
 
 ### Continuation 6 — full upstream OSS checkout policy
 The OSS umbrella installer was tightened to match the production directive literally: upstream projects are now cloned without blob filtering and without shallow fetches. The repository therefore vendors complete upstream Git histories when the umbrella is materialized, while Actions caches prevent repeating that expensive operation on warm runs. This is deliberate: “full” means complete upstream source/history, not a lightweight placeholder checkout.
+
+
+### Continuation 7 — runners launched from production branch
+To make the requested production work actually execute without requiring a manual UI dispatch, EP01 Story Runner and EP01 Autonomous Cut now accept pushes to the active production hardening branch in addition to manual `workflow_dispatch`. This push-based trigger is intentional for the active production branch: changes to the production pipeline automatically launch the real Story Runner and Autonomous jobs. The commercial proof already runs on branch push. The objective is now execution, not merely configuration.

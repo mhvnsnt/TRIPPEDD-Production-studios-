@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "show": "In the Bushes",
+  "sequence": "EP01-origin-opening",
+  "fps": 24,
+  "resolution": {"width": 1920, "height": 1080},
+  "shots": [
+    {"id":"S01","frames":"0001-0048","motion":"camera_push_102_to_100","beat":"teens_panic"},
+    {"id":"S02","frames":"0049-0084","motion":"teen_head_turn_then_hold","dialogue":"IN THE BUSHES!"},
+    {"id":"S03","frames":"0085-0120","motion":"beer_pack_arc_and_can_spin","beat":"throw"},
+    {"id":"S04","frames":"0121-0168","motion":"impact_shake_then_energy_pulse_then_settle","beat":"Busch_wakes"},
+    {"id":"S05","frames":"0169-0204","motion":"wake_pose_to_look_away_pose","beat":"awkward_reaction"},
+    {"id":"S06","frames":"0205-0228","motion":"micro_sway_and_blink_then_hold","beat":"silence"},
+    {"id":"S07","frames":"0229-0276","motion":"hard_cut_title_lock","title":"IN THE BUSHES"}
+  ],
+  "assetSequence": [
+    "show/in-the-bushes/assets/busch/busch-model.svg",
+    "show/in-the-bushes/assets/busch/busch-wake.svg",
+    "show/in-the-bushes/assets/busch/busch-look-away.svg",
+    "show/in-the-bushes/assets/busch/busch-reaction.svg",
+    "show/in-the-bushes/assets/ep01-opening-night.svg",
+    "show/in-the-bushes/assets/ep01-opening-title.svg"
+  ],
+  "timingRules": [
+    "Spoken IN THE BUSHES! lands before the throw.",
+    "Transformation gets its own readable beat.",
+    "Look-away is separate from reaction hold.",
+    "Title card cannot enter until reaction hold completes."
+  ]
+}

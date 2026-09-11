@@ -27,14 +27,16 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
-      - name: Install Blender 4.5.13
+      - name: Cache Blender extracted toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/blender-4.5.13-linux-x64
+          key: blender-extracted-4.5.13-\${{ runner.os }}-\${{ runner.arch }}
+      - name: Activate cached Blender
         run: |
           set -euo pipefail
-          curl -fsSL https://download.blender.org/release/Blender4.5/blender-4.5.13-linux-x64.tar.xz -o /tmp/blender.tar.xz
-          curl -fsSL https://download.blender.org/release/Blender4.5/blender-4.5.13.sha256 -o /tmp/blender.sha256
-          grep blender-4.5.13-linux-x64.tar.xz /tmp/blender.sha256 | sed 's#blender-4.5.13-linux-x64.tar.xz#/tmp/blender.tar.xz#' | sha256sum -c -
-          sudo tar -xJf /tmp/blender.tar.xz -C /opt
-          sudo ln -sfn /opt/blender-4.5.13-linux-x64/blender /usr/local/bin/blender
+          test -x "$HOME/.cache/trippedd/blender-4.5.13-linux-x64/blender"
+          sudo ln -sfn "$HOME/.cache/trippedd/blender-4.5.13-linux-x64/blender" /usr/local/bin/blender
           blender --version | head -n 2
       - name: Build V5 commercial
         run: |

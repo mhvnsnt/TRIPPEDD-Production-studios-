@@ -32,10 +32,15 @@ clone_or_update "kitsu" "https://github.com/cgwire/kitsu.git" "main"
 clone_or_update "comfyui" "https://github.com/comfyanonymous/ComfyUI.git" "master"
 clone_or_update "vapoursynth" "https://github.com/vapoursynth/vapoursynth.git" "master"
 clone_or_update "mlt" "https://github.com/mltframework/mlt.git" "master"
+clone_or_update "meshroom" "https://github.com/alicevision/meshroom.git" "v2025.1.0"
+clone_or_update "alicevision" "https://github.com/alicevision/AliceVision.git" "develop"
+clone_or_update "colmap" "https://github.com/colmap/colmap.git" "main"
+clone_or_update "trellis2" "https://github.com/microsoft/TRELLIS.2.git" "main"
+clone_or_update "wan2.1" "https://github.com/Wan-Video/Wan2.1.git" "main"
 
 {
   echo "TRIPPEDD_OPEN_SOURCE_RENDER_STACK=READY"
-  for name in flamenco opencue opentimelineio opencolorio openimageio openexr openvdb natron kitsu comfyui vapoursynth mlt; do
+  for name in flamenco opencue opentimelineio opencolorio openimageio openexr openvdb natron kitsu comfyui vapoursynth mlt meshroom alicevision colmap trellis2 wan2.1; do
     printf '%s=' "$name"
     git -C "$ROOT/$name" rev-parse HEAD
   done

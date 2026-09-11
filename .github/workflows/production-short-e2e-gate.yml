@@ -114,7 +114,12 @@ jobs:
       - name: Provision full open-source render backends
         run: |
           set -euo pipefail
-          bash tools/opensource/bootstrap-render-stack.sh
+          if [ -d .trippedd/opensource/flamenco/.git ]; then
+            echo "OSS_RENDER_STACK_CACHE_HIT=true"
+          else
+            echo "OSS_RENDER_STACK_CACHE_HIT=false"
+            bash tools/opensource/bootstrap-render-stack.sh
+          fi
       - name: Verify open-source stack before production work
         run: |
           set -euo pipefail

@@ -1,6 +1,6 @@
 {
   "bridge": "god-molecule-trippedd",
-  "version": 2,
+  "version": 3,
   "source_repo": "mhvnsnt/God-Molecule-Show-Studio",
   "target_repo": "mhvnsnt/TRIPPEDD-Production-studios-",
   "source_head": "9fadf5890d5bda180cd8e6da990306d4b97e3416",
@@ -32,7 +32,7 @@
     "trippedd": "artifacts/evidence/god_molecule/"
   },
   "roles": {
-    "god_molecule_show_studio": "character/creative execution laboratory — oral, Rhubarb, evidence frames, performance",
+    "god_molecule_show_studio": "character/creative execution laboratory \u2014 oral, Rhubarb, evidence frames, performance",
     "trippedd_production_studios": "orchestration, provenance, QC gates, episode packaging, environment/USD, delivery"
   },
   "canon_docs": {
@@ -43,7 +43,18 @@
   },
   "trippedd_ep01_pack_commits_note": "EP01 COLD_OPEN/SCENE_MAP/SC01-SC04/TONNO specs + GM-WORLD-0001.usda on TRIPPEDD main; subordinate to Show Bible",
   "grok_oral_survey_commit": "1a1549c04170997079f92573d8c8d29a0ae6e6",
-  "agreement": "Do not create a third oral system. Promote along promotion_order. Registered OSS ≠ available until install+execute+artifact+provenance.",
+  "agreement": "Do not create a third oral system. Promote along promotion_order. Registered OSS \u2260 available until install+execute+artifact+provenance.",
   "trippedd_oral_runner_commit": "d031c395571391d5d6a1e9ba1dce8194fd09b25b",
-  "bridge_sync_note": "Bridge refreshed after God-Molecule-Show-Studio main advances. TRIPPEDD executable oral path is the single production implementation; God repo remains the character/creative laboratory."
+  "bridge_sync_note": "Bridge refreshed after God-Molecule-Show-Studio main advances. TRIPPEDD executable oral path is the single production implementation; God repo remains the character/creative laboratory.",
+  "trippedd_gate_tools": {
+    "oral_placement_gate": "tools/character/build_mars_oral_bridge.py",
+    "aperture_survey": "tools/character/survey_oral_aperture.py",
+    "human_review_evidence": "tools/character/assemble_human_review_package.py",
+    "jaw_separation": "tools/character/measure_jaw_separation.py",
+    "real_audio_rhubarb": "tools/animation/validate_rhubarb_json.py",
+    "expressions_and_blinks": "tools/character/validate_expression_blink_package.py",
+    "creative_render": "tools/animation/validate_performance_render.py",
+    "seeded_environment": "tools/environment/run_first_creative_shot.sh",
+    "gaussian_splat": "tools/environment/ply_to_particle_field.py"
+  }
 }

@@ -32,5 +32,14 @@
     "smile": 1635
   },
   "removedDeadKeys": [],
-  "meshVertices": 47021
+  "meshVertices": 47021,
+  "mouthSurgery": {
+    "seamEdgesSplit": 24,
+    "upperLipVerts": 170,
+    "lowerLipVerts": 131,
+    "mouthInteriorObject": "MARS_MOUTH_BAG",
+    "apertureAt16degBefore": 0.01321,
+    "apertureAt16degAfter": 0.0185,
+    "note": "The scan's mouth was welded shut with no interior, so jaw rotation smeared one continuous surface instead of opening. The seam is cut, the lower lip follows the jaw, and a dark interior sits behind the lips."
+  }
 }

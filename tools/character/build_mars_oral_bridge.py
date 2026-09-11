@@ -270,18 +270,38 @@ def main():
     plane_point, plane_normal = lip_plane(frame, repaired)
     recess = float(a.recess)
 
+    # Build each anatomical layer from the measured open-source donor masks.
+    # Do not rely on generic upper/lower containers for visible teeth/gums:
+    # those groups are containment sets, while teeth/gums are the actual renderable
+    # anatomy. This also prevents the old "pink slab" from masquerading as teeth.
+    material_specs = {
+        "sock": ("MARS_ORAL_CAVITY", (0.012, 0.002, 0.003, 1.0), 0.78),
+        "teeth": ("MARS_ORAL_TEETH", (0.82, 0.76, 0.60, 1.0), 0.34),
+        "gums": ("MARS_ORAL_GUMS", (0.24, 0.018, 0.025, 1.0), 0.52),
+        "tongue": ("MARS_ORAL_TONGUE", (0.42, 0.045, 0.065, 1.0), 0.48),
+    }
+    def ensure_material(tag):
+        name, rgba, rough = material_specs[tag]
+        m = bpy.data.materials.get(name) or bpy.data.materials.new(name)
+        m.diffuse_color = rgba
+        m.roughness = rough
+        return m
+
     objs = {}
-    for tag in ("sock", "upper", "lower", "tongue"):
+    for tag in ("sock", "teeth", "gums", "tongue"):
         sv, sf, used = submesh(v, f, masks[tag])
         ob = make_mesh("MARS_ORAL_" + tag.upper(), sv, sf, repaired_coll)
         ob.matrix_world = mat.copy()
+        ob.data.materials.append(ensure_material(tag))
         objs[tag] = (ob, used)
 
-        local_jaw = jaw[used] * scale
-        if tag in ("lower", "tongue"):
-            add_shape(ob, "jaw_open", local_jaw)
+        # Lower dental/gum/tongue anatomy follows the measured jaw-open delta.
+        # Upper teeth/gums remain fixed to the head.
+        if tag in ("teeth", "gums", "tongue"):
+            local_jaw = jaw[used] * scale
         else:
-            add_shape(ob, "jaw_open", np.zeros_like(local_jaw))
+            local_jaw = np.zeros_like(jaw[used])
+        add_shape(ob, "jaw_open", local_jaw)
 
     oral_objects = {tag: objs[tag][0] for tag in objs}
     recess_report = {}

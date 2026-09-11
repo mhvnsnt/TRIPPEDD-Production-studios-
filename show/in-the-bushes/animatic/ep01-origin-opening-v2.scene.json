@@ -3,7 +3,7 @@
   "show": "In the Bushes",
   "sequence": "EP01-origin-opening-v2",
   "fps": 24,
-  "targetDurationSeconds": 24,
+  "targetDurationSeconds": 29.5,
   "shots": [
     {"id":"S01","start":0,"duration":72,"action":"establish_night_location","details":"Wide exterior. Quiet neighborhood/park edge. Bush sits ordinary in foreground. Distant lights and insects establish the world."},
     {"id":"S02","start":72,"duration":72,"action":"teens_enter_and_hide","details":"Three teenagers rush into frame, duck behind/near the bush, look back toward approaching trouble, then realize they are still holding the six-pack."},

@@ -8,8 +8,13 @@ Inputs:
 
 The source MARS mesh is duplicated; the canonical source object is never edited.
 The GNM mouth_sock is used as the cavity cutter/liner. No sphere, cube, or
-hand-built tooth row is used. The GNM dental/tongue geometry and canonical
-jaw-open delta become the oral subsystem.
+hand-built tooth row is used.
+
+Placement law (fail-closed):
+  All oral donor geometry must sit BEHIND the measured lip plane.
+  A pink plank protruding past the lips is PROTRUSION_FAIL, not anatomy success.
+  Solidify on the cutter is inward-only so the cavity wall does not expand through
+  the aperture.
 """
 from __future__ import annotations
 
@@ -20,9 +25,13 @@ import sys
 from pathlib import Path
 
 import bpy
-import bmesh
 import numpy as np
-from mathutils import Vector, Matrix, Euler
+from mathutils import Vector, Matrix
+
+
+DEFAULT_RECESS = 0.008
+PROTRUSION_TOLERANCE = 1e-4
+
 
 def args():
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
@@ -31,7 +40,10 @@ def args():
     ap.add_argument("--mouth-frame", required=True)
     ap.add_argument("--output", required=True)
     ap.add_argument("--render-dir", default="")
+    ap.add_argument("--recess", type=float, default=DEFAULT_RECESS,
+                    help="Minimum distance oral donor front must sit behind lip plane")
     return ap.parse_args(argv)
+
 
 def require_mesh():
     named = bpy.data.objects.get("MARS_CANONICAL")
@@ -42,15 +54,18 @@ def require_mesh():
         raise RuntimeError("MARS_ORAL_BRIDGE: FAIL — no mesh in source blend")
     return max(meshes, key=lambda o: len(o.data.vertices))
 
+
 def collection(name):
     c = bpy.data.collections.get(name) or bpy.data.collections.new(name)
     if c.name not in [x.name for x in bpy.context.scene.collection.children]:
         bpy.context.scene.collection.children.link(c)
     return c
 
+
 def unlink_all(obj):
     for c in list(obj.users_collection):
         c.objects.unlink(obj)
+
 
 def make_mesh(name, verts, faces, parent):
     me = bpy.data.meshes.new(name + "_MESH")
@@ -59,6 +74,7 @@ def make_mesh(name, verts, faces, parent):
     ob = bpy.data.objects.new(name, me)
     parent.objects.link(ob)
     return ob
+
 
 def submesh(verts, faces, mask):
     face_mask = np.all(mask[np.asarray(faces, dtype=np.int32)], axis=1)
@@ -70,6 +86,7 @@ def submesh(verts, faces, mask):
     remap[used] = np.arange(len(used), dtype=np.int32)
     return verts[used], remap[selected], used
 
+
 def add_shape(ob, name, delta_by_vertex):
     if not ob.data.shape_keys:
         ob.shape_key_add(name="Basis")
@@ -79,8 +96,10 @@ def add_shape(ob, name, delta_by_vertex):
         key.data[i].co = p + Vector(delta)
     return key
 
+
 def world_vertices(ob):
     return np.asarray([ob.matrix_world @ v.co for v in ob.data.vertices], dtype=np.float64)
+
 
 def find_front_surface(mars, center):
     pts = world_vertices(mars)
@@ -88,8 +107,84 @@ def find_front_surface(mars, center):
     radius = max(float(np.ptp(pts[:, 0])) * 0.08, 1e-3)
     near = pts[dxy <= radius]
     if len(near) < 20:
-        near = pts[np.argsort(dxy)[:min(200, len(pts))]]
+        near = pts[np.argsort(dxy)[: min(200, len(pts))]]
     return float(np.percentile(near[:, 2], 95.0))
+
+
+def lip_plane(frame, mars):
+    center = np.asarray(frame["center"], dtype=np.float64)
+    left = np.asarray(frame["left_corner"], dtype=np.float64)
+    right = np.asarray(frame["right_corner"], dtype=np.float64)
+
+    if "outward_normal" in frame:
+        n = np.asarray(frame["outward_normal"], dtype=np.float64)
+        n = n / max(np.linalg.norm(n), 1e-12)
+        return center, n
+
+    front_z = float(frame.get("front_surface_z", find_front_surface(mars, center)))
+    point = np.array([center[0], center[1], front_z], dtype=np.float64)
+    normal = np.array([0.0, 0.0, 1.0], dtype=np.float64)
+
+    width_vec = right - left
+    if np.linalg.norm(width_vec) > 1e-8:
+        up = np.array([0.0, 1.0, 0.0], dtype=np.float64)
+        n = np.cross(width_vec, up)
+        if np.linalg.norm(n) > 1e-8:
+            n = n / np.linalg.norm(n)
+            if n[2] < 0:
+                n = -n
+            normal = n
+            point = center.copy()
+            point[2] = front_z
+
+    return point, normal
+
+
+def signed_distances(pts, plane_point, plane_normal):
+    return (pts - plane_point) @ plane_normal
+
+
+def protrusion_mm(ob, plane_point, plane_normal):
+    pts = world_vertices(ob)
+    if len(pts) == 0:
+        return 0.0
+    d = signed_distances(pts, plane_point, plane_normal)
+    return float(np.max(d))
+
+
+def recess_object_behind_plane(ob, plane_point, plane_normal, recess):
+    pts = world_vertices(ob)
+    d = signed_distances(pts, plane_point, plane_normal)
+    front = float(np.percentile(d, 95.0))
+    target_front = -abs(recess)
+    if front <= target_front:
+        return 0.0, front
+    shift = Vector(((-plane_normal) * (front - target_front)).tolist())
+    ob.matrix_world.translation += shift
+    pts2 = world_vertices(ob)
+    d2 = signed_distances(pts2, plane_point, plane_normal)
+    return float(front - target_front), float(np.percentile(d2, 95.0))
+
+
+def assert_no_protrusion(objects, plane_point, plane_normal, label="oral donor"):
+    worst_name = None
+    worst = -1e9
+    report = {}
+    for name, ob in objects.items():
+        p = protrusion_mm(ob, plane_point, plane_normal)
+        report[name] = p
+        if p > worst:
+            worst = p
+            worst_name = name
+    if worst > PROTRUSION_TOLERANCE:
+        detail = ", ".join(f"{k}={v:.6f}" for k, v in report.items())
+        raise RuntimeError(
+            f"MARS_ORAL_BRIDGE: PROTRUSION_FAIL — {label} crosses lip plane "
+            f"(worst={worst_name} protrusion={worst:.6f}; {detail}). "
+            f"Pink plank / cavity-in-front-of-aperture is not anatomy success."
+        )
+    return report
+
 
 def fit_transform(sock_verts, frame):
     center = np.asarray(frame["center"], dtype=np.float64)
@@ -108,47 +203,21 @@ def fit_transform(sock_verts, frame):
     rot = Matrix.Rotation(roll, 4, "Z")
 
     donor_center = (lo + hi) * 0.5
-    # Translate donor so its measured mouth center lands on Mars.
-    trans = Vector(center.tolist()) - rot @ Vector((*(donor_center * scale), 1.0))
+    scaled_center = Vector((donor_center * scale).tolist())
+    trans = Vector(center.tolist()) - (rot @ scaled_center)
     mat = Matrix.Translation(trans) @ rot @ Matrix.Diagonal((scale, scale, scale, 1.0))
     return mat, scale
 
-def apply_matrix(ob, mat):
-    ob.matrix_world = mat @ ob.matrix_world
 
-def solidify_cutter(sock):
-    # The cutter must grow inward, never toward the visible lip plane.
-    # offset=-1 keeps the solidification on the interior side of the donor.
+def solidify_cutter_inward(sock, thickness=0.012):
     bpy.context.view_layer.objects.active = sock
     sock.select_set(True)
     mod = sock.modifiers.new("ORAL_SOCK_SOLIDIFY", "SOLIDIFY")
-    mod.thickness = 0.012
-    mod.offset = -1.0
+    mod.thickness = thickness
+    mod.offset = -1.0  # inward only — offset=0 produced the pink plank
     bpy.ops.object.modifier_apply(modifier=mod.name)
     sock.select_set(False)
 
-def recess_to_plane(objs, origin, normal, clearance):
-    # Move every oral donor vertex that crosses the lip plane behind it.
-    # This is a geometry-space correction; it never edits MARS_CANONICAL.
-    inv_cache = {}
-    moved = {}
-    target = -abs(clearance)
-    for ob in objs:
-        inv = ob.matrix_world.inverted()
-        count = 0
-        for vert in ob.data.vertices:
-            p = ob.matrix_world @ vert.co
-            d = (p - origin).dot(normal)
-            if d > target:
-                p = p - normal * (d - target)
-                vert.co = inv @ p
-                count += 1
-        moved[ob.name] = count
-    return moved
-
-def oral_front_distance(ob, origin, normal):
-    pts = world_vertices(ob)
-    return max(float((p - origin).dot(normal)) for p in pts) if len(pts) else -1e9
 
 def boolean_cavity(mars, cutter):
     bpy.context.view_layer.objects.active = mars
@@ -159,6 +228,7 @@ def boolean_cavity(mars, cutter):
     bpy.ops.object.modifier_apply(modifier=mod.name)
     if len(mars.data.vertices) == 0:
         raise RuntimeError("MARS_ORAL_BRIDGE: boolean destroyed Mars mesh")
+
 
 def main():
     a = args()
@@ -197,23 +267,14 @@ def main():
     }
 
     mat, scale = fit_transform(v[masks["sock"]], frame)
-    center = np.asarray(frame["center"], dtype=np.float64)
-    front_z = float(frame.get("front_surface_z", find_front_surface(repaired, center)))
-
-    # Measured mouth-frame plane. Prefer an explicit normal/origin when present;
-    # otherwise use the frame's front_surface_z as the legacy Z-plane.
-    plane_origin = np.asarray(frame.get("origin", [center[0], center[1], front_z]), dtype=np.float64)
-    plane_normal = np.asarray(frame.get("normal", [0.0, 0.0, 1.0]), dtype=np.float64)
-    nlen = float(np.linalg.norm(plane_normal))
-    if nlen <= 1e-9:
-        raise RuntimeError("MARS_ORAL_BRIDGE: invalid mouth-frame plane normal")
-    plane_normal /= nlen
+    plane_point, plane_normal = lip_plane(frame, repaired)
+    recess = float(a.recess)
 
     objs = {}
     for tag in ("sock", "upper", "lower", "tongue"):
         sv, sf, used = submesh(v, f, masks[tag])
         ob = make_mesh("MARS_ORAL_" + tag.upper(), sv, sf, repaired_coll)
-        ob.matrix_world = mat
+        ob.matrix_world = mat.copy()
         objs[tag] = (ob, used)
 
         local_jaw = jaw[used] * scale
@@ -222,49 +283,48 @@ def main():
         else:
             add_shape(ob, "jaw_open", np.zeros_like(local_jaw))
 
-    # Put the anatomical sock just behind the measured Mars lip plane.
+    oral_objects = {tag: objs[tag][0] for tag in objs}
+    recess_report = {}
+    for tag, ob in oral_objects.items():
+        moved, front_after = recess_object_behind_plane(
+            ob, plane_point, plane_normal, recess
+        )
+        recess_report[tag] = {"moved": moved, "front_signed": front_after}
+
+    assert_no_protrusion(
+        oral_objects, plane_point, plane_normal, label="oral donor pre-boolean"
+    )
+
     sock = objs["sock"][0]
-    sock_pts = world_vertices(sock)
-    sock_front = float(np.percentile(sock_pts[:, 2], 95.0))
-    dz = (front_z - 0.006) - sock_front
-    sock.matrix_world.translation.z += dz
 
-    # Recess every donor before cavity construction. No oral donor may cross
-    # the measured lip plane. The cavity is then rebuilt from this recessed sock.
-    oral_donors = [objs[tag][0] for tag in ("sock", "upper", "lower", "tongue")]
-    recess_to_plane(oral_donors, plane_origin, plane_normal, float(frame.get("recess", 0.008)))
-
-    # Fail closed before boolean construction if any donor still protrudes.
-    protrusions = {ob.name: oral_front_distance(ob, plane_origin, plane_normal)
-                   for ob in oral_donors}
-    worst_name, worst = max(protrusions.items(), key=lambda kv: kv[1])
-    if worst > 0.0:
-        raise RuntimeError(f"MARS_ORAL_BRIDGE: PROTRUSION_FAIL {worst_name} signed_distance={worst:.6f}")
-
-    # Cutter is the same recessed anatomical sock. It is solidified inward only.
-    # This is the key difference from the failed sphere:
-    # the cavity shape comes from the real oral anatomy donor.
     cutter = sock.copy()
     cutter.data = sock.data.copy()
     cutter.name = "MARS_ORAL_CAVITY_CUTTER"
     repaired_coll.objects.link(cutter)
     cutter.matrix_world = sock.matrix_world.copy()
-    cutter.scale = cutter.scale * 1.035
-    cutter.matrix_world.translation.z += 0.009
-    solidify_cutter(cutter)
+    cutter.scale = cutter.scale * 1.02
+    cutter.matrix_world.translation += Vector(((-plane_normal) * (recess * 0.5)).tolist())
+    solidify_cutter_inward(cutter, thickness=0.010)
+
+    cutter_protrusion = protrusion_mm(cutter, plane_point, plane_normal)
+    if cutter_protrusion > PROTRUSION_TOLERANCE:
+        cutter.matrix_world.translation += Vector(
+            ((-plane_normal) * (cutter_protrusion + recess * 0.25)).tolist()
+        )
+        cutter_protrusion = protrusion_mm(cutter, plane_point, plane_normal)
+        if cutter_protrusion > PROTRUSION_TOLERANCE:
+            raise RuntimeError(
+                f"MARS_ORAL_BRIDGE: PROTRUSION_FAIL — cavity cutter still past lip plane "
+                f"(protrusion={cutter_protrusion:.6f}). Inward solidify/recess insufficient."
+            )
+
     boolean_cavity(repaired, cutter)
     bpy.data.objects.remove(cutter, do_unlink=True)
 
-    # Post-boolean oral placement gate. This does not declare creative anatomy
-    # complete; it only proves no retained donor crosses the measured plane.
-    final_protrusions = {ob.name: oral_front_distance(ob, plane_origin, plane_normal)
-                         for ob in oral_donors}
-    final_worst_name, final_worst = max(final_protrusions.items(), key=lambda kv: kv[1])
-    if final_worst > 0.0:
-        raise RuntimeError(f"MARS_ORAL_BRIDGE: PROTRUSION_FAIL_POST_BOOLEAN {final_worst_name} signed_distance={final_worst:.6f}")
+    protrusion_after = assert_no_protrusion(
+        oral_objects, plane_point, plane_normal, label="oral donor post-boolean"
+    )
 
-    # One identity-safe jaw aperture key on the actual Mars shell. The amount is
-    # measured from the donor's lower dental travel, not a hard-coded head fraction.
     lower_delta = jaw[masks["lower"]]
     travel = float(np.linalg.norm(np.mean(lower_delta, axis=0)) * scale)
     if travel <= 1e-5:
@@ -288,46 +348,41 @@ def main():
             w = w * w * (3.0 - 2.0 * w)
             deltas_world[i, 1] -= travel * w
 
-    # Convert world delta back to object-local coordinates.
     inv3 = repaired.matrix_world.to_3x3().inverted()
     local_delta = np.asarray([inv3 @ Vector(d) for d in deltas_world])
     add_shape(repaired, "jaw_open", local_delta)
 
-    # Add simple animator-facing viseme keys derived from the same measured
-    # jaw-open basis. They are not separate fake mouth models.
     key = repaired.data.shape_keys.key_blocks["jaw_open"]
     for name, factor in (("AA", 1.0), ("OH", 0.78), ("EE", 0.28), ("MM", 0.0)):
-        if name == "jaw_open":
-            continue
         k = repaired.shape_key_add(name=name)
         for i, p in enumerate(key.data):
             base = repaired.data.vertices[i].co
-            delta = p.co - base.co
+            delta = Vector(p.co) - Vector(base)
             if name == "EE":
-                # small horizontal spread around the measured mouth center
                 w = max(0.0, 1.0 - abs((repaired.matrix_world @ base).x - c[0]) / half_w)
-                k.data[i].co = base.co + delta * factor + Vector((0.002 * w, 0, 0))
+                k.data[i].co = Vector(base) + delta * factor + Vector((0.002 * w, 0, 0))
             elif name == "MM":
-                k.data[i].co = base.co
+                k.data[i].co = Vector(base)
             else:
-                k.data[i].co = base.co + delta * factor
+                k.data[i].co = Vector(base) + delta * factor
 
-    # Provenance and immutable-source assertions.
     repaired["mars_source_object"] = mars.name
     repaired["mars_source_vertex_count"] = original_count
     repaired["oral_donor"] = "Google GNM Head v3 / Apache-2.0"
     repaired["cavity_source"] = "GNM mouth_sock"
-    repaired["oral_placement_gate"] = "PASS" if final_worst <= 0.0 else "FAIL"
-    repaired["oral_placement_max_signed_distance"] = final_worst
-    repaired["oral_recess"] = float(frame.get("recess", 0.008))
     repaired["sphere_cavity"] = False
     repaired["procedural_tooth_grid"] = False
     repaired["measured_mouth_frame"] = str(frame_path)
     repaired["jaw_open_source"] = "GNM canonical mouth-open expression"
     repaired["donor_scale"] = scale
     repaired["lower_dental_travel"] = travel
+    repaired["lip_plane_point"] = plane_point.tolist()
+    repaired["lip_plane_normal"] = plane_normal.tolist()
+    repaired["oral_recess"] = recess
+    repaired["protrusion_gate"] = "FAIL_CLOSED"
+    repaired["protrusion_report"] = json.dumps(protrusion_after)
+    repaired["recess_report"] = json.dumps(recess_report)
 
-    # Keep source untouched and make the repaired scene the active render target.
     mars.hide_render = True
     mars.hide_viewport = True
     repaired.hide_render = False
@@ -348,10 +403,14 @@ def main():
     print(f"SOURCE_VERTICES={original_count}")
     print(f"REPAIRED_VERTICES={len(repaired.data.vertices)}")
     print(f"LOWER_DENTAL_TRAVEL={travel:.6f}")
+    print(f"ORAL_RECESS={recess:.6f}")
+    print(f"PROTRUSION={json.dumps(protrusion_after)}")
     print("CAVITY=GNM_MOUTH_SOCK")
+    print("SOLIDIFY=INWARD_ONLY")
     print("SPHERE_CAVITY=FALSE")
+    print("PROTRUSION_GATE=PASS")
     print("MARS_IDENTITY_REPLACEMENT=FALSE")
-    print(f"PROTRUSION_GATE=PASS max_signed_distance={final_worst:.6f}")
+
 
 if __name__ == "__main__":
     main()

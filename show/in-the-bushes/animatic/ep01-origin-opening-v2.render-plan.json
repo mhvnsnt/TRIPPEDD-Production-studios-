@@ -1,35 +1,25 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "show": "In the Bushes",
   "sequence": "EP01-origin-opening-v2",
   "fps": 24,
   "resolution": [1920,1080],
   "totalFrames": 708,
   "durationSeconds": 29.5,
-  "backend": {
-    "primary2d": "OpenToonz",
-    "media": "FFmpeg",
-    "qc": "FFprobe"
-  },
+  "backend": {"primary2d":"OpenToonz","media":"FFmpeg","qc":"FFprobe"},
   "shots": [
-    {"id":"S01","frames":[0,71],"assets":["env_night_bush"],"camera":["slow_push"],"motion":["leaf_micro_loop","distant_light_flicker"],"audio":["night_ambience"]},
-    {"id":"S02","frames":[72,143],"assets":["teen_silhouette_library","env_night_bush","beer_pack_generic"],"camera":["wide_track"],"motion":["teen_run_stop","teen_duck_peek","teen_look_back","pack_hand_catch"]},
-    {"id":"S03","frames":[144,203],"assets":["teen_silhouette_library","beer_pack_generic"],"camera":["medium_push"],"motion":["can_rattle","point_and_hold","teen_glance_bush"],"audio":["dialogue_we_gotta_get_rid_of_these"]},
-    {"id":"S04","frames":[204,251],"assets":["teen_silhouette_library","env_night_bush"],"camera":["quick_reframe"],"motion":["point_and_hold","reaction_hold"],"audio":["dialogue_in_the_bushes"]},
-    {"id":"S05","frames":[252,323],"assets":["beer_pack_generic","teen_silhouette_library","env_night_bush"],"camera":["follow_throw"],"motion":["throw_arc_spin","branch_clip_recoil","impact_micro_shake","spill"],"audio":["throw_whoosh","branch_tick","impact"]},
-    {"id":"S06","frames":[324,419],"assets":["env_night_bush","beer_spill_fx"],"camera":["hold"],"motion":["liquid_drip_loop","foliage_twitch","foliage_shudder"],"audio":["teen_footsteps_fade","night_ambience"]},
-    {"id":"S07","frames":[420,491],"assets":["busch_wake","env_night_bush"],"camera":["slow_reveal"],"motion":["busch_wake_rise","branch_arm_delay","settle"],"audio":["subtle_transformation_pulse"]},
-    {"id":"S08","frames":[492,551],"assets":["busch_reaction","beer_pack_generic"],"camera":["medium_hold"],"motion":["busch_eye_scan","head_turn","pause","notice_fleeing_teens"]},
-    {"id":"S09","frames":[552,611],"assets":["busch_look_away"],"camera":["locked"],"motion":["look_away","awkward_hold"],"audio":["silence_drop"]},
-    {"id":"S10","frames":[612,659],"assets":["busch_reaction"],"camera":["locked"],"motion":["reaction_blink_sway","leaf_settle"],"audio":["night_ambience"]},
-    {"id":"S11","frames":[660,707],"assets":["title_in_the_bushes","busch_reaction"],"camera":["hard_cut"],"motion":[],"audio":["title_sting"]}
+    {"id":"S01","frames":[0,71],"assets":["env_night_bush"],"camera":["slow_push"],"motion":["leaf_micro_loop","distant_light_flicker","insect_pass"],"audio":["night_ambience"]},
+    {"id":"S02","frames":[72,143],"assets":["teen-group-run-hide.svg","env_night_bush","generic-beer-throw-kit.svg"],"camera":["wide_track"],"motion":["teen_run_stop","teen_duck_peek","teen_look_back","pack_hand_catch"],"audio":["footsteps","breathing","distant_trouble"]},
+    {"id":"S03","frames":[144,203],"assets":["teen-group-run-hide.svg","generic-beer-throw-kit.svg"],"camera":["medium_push"],"motion":["can_rattle","point_and_hold","teen_glance_bush"],"audio":["dialogue_we_gotta_get_rid_of_these","can_rattle"]},
+    {"id":"S04","frames":[204,251],"assets":["teen-group-run-hide.svg","env_night_bush"],"camera":["quick_reframe"],"motion":["point_and_hold","reaction_hold"],"audio":["dialogue_in_the_bushes"]},
+    {"id":"S05","frames":[252,323],"assets":["generic-beer-throw-kit.svg","teen-group-run-hide.svg","env_night_bush"],"camera":["follow_throw"],"motion":["throw_arc_spin","branch_clip_recoil","can_bounce","liquid_spill","impact_micro_shake"],"audio":["throw_whoosh","branch_tick","can_clack","impact"]},
+    {"id":"S06","frames":[324,419],"assets":["env_night_bush","generic-beer-throw-kit.svg"],"camera":["hold"],"motion":["teen_exit","liquid_drip_loop","foliage_twitch","foliage_shudder"],"audio":["teen_footsteps_fade","drips","low_rumble"]},
+    {"id":"S07","frames":[420,491],"assets":["busch-wake.svg","env_night_bush"],"camera":["slow_reveal"],"motion":["busch_wake_rise","branch_arm_delay","settle"],"audio":["subtle_transformation_pulse"]},
+    {"id":"S08","frames":[492,551],"assets":["busch-wake.svg","generic-beer-throw-kit.svg","teen-group-run-hide.svg"],"camera":["medium_hold"],"motion":["busch_eye_scan","head_turn","pause","notice_fleeing_teens"],"audio":["night_ambience","distant_running"]},
+    {"id":"S09","frames":[552,611],"assets":["busch-look-away.svg"],"camera":["locked"],"motion":["look_away","awkward_hold"],"audio":["silence_drop"]},
+    {"id":"S10","frames":[612,659],"assets":["busch-reaction.svg"],"camera":["locked"],"motion":["reaction_blink_sway","leaf_settle"],"audio":["night_ambience"]},
+    {"id":"S11","frames":[660,707],"assets":["ep01-opening-title.svg"],"camera":["hard_cut"],"motion":[],"audio":["title_sting"]}
   ],
-  "editRules":[
-    "Keep the spoken phrase before the throw.",
-    "Do not show Busch waking before the teens have fled.",
-    "Keep look-away and reaction hold as separate beats.",
-    "Hard cut from reaction hold to title card.",
-    "No third-party logos or branded packaging in source art."
-  ],
+  "editRules":["Keep the spoken phrase before the throw.","Teens flee before Busch wakes.","Transformation escalates in stages.","Keep look-away and reaction hold separate.","Hard cut from reaction hold to title.","No third-party logos or branded packaging in source art."],
   "outputs":["master_1080p24","preview_720p24","qc_report"]
 }

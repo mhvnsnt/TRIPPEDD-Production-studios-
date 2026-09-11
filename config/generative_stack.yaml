@@ -1,0 +1,44 @@
+schema: tripped.generative-stack/v2
+purpose: One production umbrella for image, video, 3D, 2D animation, compositing, character preparation, and reference-locked God Molecule work.
+runtimes:
+  - id: comfyui
+    path: third_party/generative/ComfyUI
+    roles: [image_generation, image_editing, video_workflows, orchestration]
+  - id: invokeai
+    path: third_party/generative/InvokeAI
+    roles: [image_editing, inpaint, outpaint, reference_work]
+  - id: diffsynth
+    path: third_party/generative/DiffSynth-Studio
+    roles: [image, video, audio, model_adapters]
+  - id: ltx
+    path: third_party/generative/LTX-Video
+    roles: [image_to_video, video_to_video, keyframes, audio_video]
+  - id: wan
+    path: third_party/generative/Wan2.1
+    roles: [text_to_video, image_to_video, frame_conditioned_video, video_editing]
+  - id: blender
+    path: third_party/generative/Blender
+    roles: [3d_modeling, rigging, facial_animation, shape_keys, rendering, tracking, compositing]
+  - id: opentoonz
+    path: third_party/generative/OpenToonz
+    roles: [2d_frame_animation, cutout_animation, effects, compositing]
+  - id: synfig
+    path: third_party/generative/Synfig
+    roles: [2d_vector_animation, bone_rigging, tweening, effects]
+  - id: natron
+    path: third_party/generative/Natron
+    roles: [compositing, keying, roto, tracking, color, vfx]
+  - id: mpfb2
+    path: third_party/generative/MPFB2
+    roles: [blender_human_tools, character_rigging, human_character_utilities]
+contracts:
+  reference_locked_identity:
+    rule: A supplied person's likeness is immutable unless the production brief explicitly requests an identity change.
+    qc: [compare_source_geometry, compare_landmarks, compare_silhouette, reject_unrequested_identity_drift]
+  asset_ingest:
+    accepted: [glb, gltf, obj, fbx, blend, usd, usdz]
+    required_for_mars: [complete_head, neck, jaw, back_of_head, hair_silhouette]
+    preserve_source: true
+    never_overwrite_source: true
+  output_lineage:
+    required_fields: [source_asset, workflow_id, runtime, model, prompt, seed, parameters, qc_result]

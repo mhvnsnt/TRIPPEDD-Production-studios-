@@ -1,14 +1,17 @@
 {
-  "version": 2,
+  "version": 3,
   "selection_policy": {
     "default": "capability_first",
     "never_failover_on_creative_contract_violation": true,
     "preserve_outputs_before_failover": true,
-    "max_backend_attempts": 2
+    "max_backend_attempts": 3
   },
   "workers": {
     "2d_motion": ["motion-canvas", "open-motion", "opentoonz", "remotion"],
     "3d_scene": ["blender", "openusd", "gaffer"],
+    "environment_world": ["luanti", "worldgen", "blockbench"],
+    "scene_reconstruction": ["colmap", "meshroom", "nerfstudio"],
+    "gaussian_splat": ["gsplat", "gsplat-js"],
     "generative_media": ["comfyui", "pallaidium", "4brospix", "pantomatrix"],
     "compositing": ["natron", "gaffer", "openfx"],
     "editorial": ["opentimelineio", "mlt", "kdenlive", "olive"],
@@ -22,6 +25,11 @@
     "review": ["openrv"]
   },
   "pipelines": {
+    "god_molecule_environment": {
+      "preferred": ["luanti", "colmap", "nerfstudio", "gsplat", "blender", "openusd"],
+      "fallback": ["worldgen", "meshroom", "blender", "openusd"],
+      "required_qc": ["seed_reproducibility", "source_provenance", "camera_coverage", "splat_bounds", "scene_scale", "character_identity", "render_integrity"]
+    },
     "commercial_v4": {
       "scope": ["THE BASTARD", "IN THE BUSHES", "GOD MOLECULE", "TRIPPEDD"],
       "forbidden_scope": ["SMOKE & MIRRORS"],

@@ -1,70 +1,81 @@
 # God Molecule — Episode 01 Cold Open
 
-**Working title:** *The Mouth That Contained a Weather System*  
-**Tone:** Adult Swim — sincere, wrong, funny, a little holy  
-**Tech note:** Seed `742918` world can stand in for the first physical plate; later swap in splat detail without changing the joke.
+**Canon title:** *Episode 01: The Recursive Room*  
+**Sources:** Show Bible (`God-Molecule-Show-Studio`), `docs/god_molecule/GOD_MOLECULE_CANON.md`  
+**Additive layer:** Adult Swim gag texture from production room (Grok) — subordinate to canon synopsis.
+
+**Synopsis (bible):** Mars finds himself in a room that seems to exist entirely within his own thoughts.
 
 ---
 
-## Cold open (approx. 90–120 seconds)
+## Cold open (~90–120s)
 
-**BLACK.**  
-A soft, wet sound — not quite a swallow.
+**BLACK.** Soft wet sound — almost a swallow, almost weather.
 
 **MARS (V.O.)**  
 Okay. Before anyone panics… this is still my face.
 
-**CUT TO:** Mars’s head floating in a black field of cheap stars. Cobalt. White eyes. Forehead sigil catching a light that doesn’t exist in the room.
+**CUT TO:** Mars — cobalt head, indigo dreads, solid white eyes, forehead sigil — floating in near-black space with tiny colored stars and cyan rim light. (`MARS_CANONICAL` + style pass.)
 
-He smiles like a man about to explain a car accident he caused.
+He looks like a man about to explain a car accident he caused on purpose.
 
 **MARS**  
 I used to think consciousness was a room.  
-Turns out it’s more of a… subdivision.
+Turns out the room has subdivisions.  
+And the subdivisions have weather.
 
-**CUT TO:** Macro on his mouth. Lips sealed. A faint pink pressure behind them — production will *not* let this be the plank bug; this is intentional internal weather.
+**CUT TO:** Macro on sealed mouth. Faint internal pressure — intentional, not the pink-plank bug. Oral cavity exists behind the lip plane.
 
 **MARS (V.O.)**  
 There’s a climate in here.
 
-**SFX:** Distant thunder that is definitely coming from inside a head.
+**SFX:** Thunder that is definitely coming from inside a head.
 
-**CUT TO:** Seeded low-poly world (GM-WORLD-0001 energy) — wrong scale, beautiful, a little stupid. A floating city the size of a molar.
+**CUT TO:** Seeded interior that is also a “room” — GM-WORLD energy, seed `742918` optional for first physical plate. Scale is wrong. A hallway the size of a molar. A floating municipal light.
 
 **MARS (V.O.)**  
-When I open my mouth, I’m not “expressing myself.”  
-I’m doing municipal planning.
+When I open my mouth, I’m not expressing myself.  
+I’m doing zoning.
 
-**CUT TO:** Mars again. He tries to open his mouth. For one frame it doesn’t work (callback to the real pipeline fight). Then it does — cavity, teeth, tongue, a tiny streetlight reflection on a molar.
+**CUT TO:** Mars. One frame of locked jaw (pipeline scar as joke). Then aperture opens — cavity, teeth, tongue. A tiny streetlight glints on a molar if the insert is ready; otherwise pure anatomy PASS is enough.
 
 **MARS**  
 See? Infrastructure.
 
-Beat.
+Beat. Deadpan.
 
 **MARS**  
 Also I might have swallowed a guy named Kevin in 2019.  
 We’re still mapping that district.
 
-**TITLE CARD:**  
-**GOD MOLECULE**  
-*Episode 1 — Nested*
+**MARS**  
+Yeah. That happens sometimes.
 
-**HARD CUT** to the episode proper: Mars talking to someone who is either a therapist, an angel, or a municipal inspector from a higher scale of reality.
+**TITLE:**  
+**GOD MOLECULE**  
+*Episode 01 — The Recursive Room*
+
+**HARD CUT** into Scene 01 Awakening / recursive interior proper.
 
 ---
 
-## Production mapping
+## How this respects the bible
+
+| Bible | This open |
+|-------|-----------|
+| Recursive room inside thoughts | Room = consciousness; subdivisions = nested scales |
+| Deadpan → philosophy → stupid joke | Zoning / Kevin district |
+| Floating head + stars + white eyes | Opening image |
+| Tonnō / game degradation later | Held for Scene 02, not the open |
+| Identity lock | No face swap; oral truth required for mouth beat |
+
+## Production lanes
 
 | Beat | Lane |
 |------|------|
-| Floating head / stars | MARS_CANONICAL + style pass |
-| Sealed mouth pressure | Oral anatomy present, aperture closed |
-| Mouth opens / infrastructure joke | Oral bridge PASS + optional 2D insert of “city in molar” |
-| Seeded world insert | Memory-safe first shot / seed 742918 |
-| Title | Motion graphics over black |
+| Void + Mars | `MARS_CANONICAL` + lighting |
+| Sealed / open mouth | Oral bridge + survey PASS |
+| Nested “room” insert | Memory-safe seed world or 2D |
+| Title | Motion graphics |
 
-## Joke load-bearing wall
-
-The comedy is that **inner worlds are real** and **bureaucracy scales**.  
-Do not explain the cosmology. Let Mars be wrong with confidence.
+**Load-bearing joke:** inner worlds are real; bureaucracy scales; Mars is wrong with confidence.

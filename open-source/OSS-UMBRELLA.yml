@@ -83,3 +83,34 @@ wiring:
     role: automated aspect-ratio reframing with subject-aware crop
     activation: reframing
     license: MIT
+
+  - id: glaxnimate
+    repo: https://github.com/Glaxnimate/Glaxnimate.git
+    role: vector motion graphics and 2D scene animation
+    activation: animation-2d-motion
+    license: GPL-3.0
+  - id: opencolorio
+    repo: https://github.com/AcademySoftwareFoundation/OpenColorIO.git
+    role: deterministic color management across Blender, compositing and editorial
+    activation: color-management
+    license: BSD-3-Clause
+  - id: openimageio
+    repo: https://github.com/AcademySoftwareFoundation/OpenImageIO.git
+    role: production image I/O, EXR and image-sequence processing
+    activation: image-pipeline
+    license: BSD-3-Clause
+  - id: openassetio
+    repo: https://github.com/AcademySoftwareFoundation/OpenAssetIO.git
+    role: asset identity and cross-DCC interchange
+    activation: asset-interchange
+    license: Apache-2.0
+  - id: opentimelineio
+    repo: https://github.com/AcademySoftwareFoundation/OpenTimelineIO.git
+    role: authoritative editorial interchange and timeline round-tripping
+    activation: editorial-interchange
+    license: Apache-2.0
+  - id: opencue
+    repo: https://github.com/AcademySoftwareFoundation/OpenCue.git
+    role: distributed render scheduling and dependency-aware execution
+    activation: render-farm
+    license: Apache-2.0

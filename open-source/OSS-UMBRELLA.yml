@@ -114,3 +114,34 @@ wiring:
     role: distributed render scheduling and dependency-aware execution
     activation: render-farm
     license: Apache-2.0
+
+  - id: flamenco
+    repo: https://projects.blender.org/studio/flamenco.git
+    role: Blender-native render-farm management and worker scheduling
+    activation: render-farm-blender
+    license: Apache-2.0
+  - id: blender-studio-pipeline
+    repo: https://projects.blender.org/studio/blender-studio-pipeline.git
+    role: production folder structure, shot building, asset pipeline and Blender studio tooling
+    activation: studio-pipeline
+    license: GPL-3.0
+  - id: syncthing
+    repo: https://github.com/syncthing/syncthing.git
+    role: resilient peer-to-peer synchronization of production media and shared assets
+    activation: media-sync
+    license: MPL-2.0
+  - id: djv
+    repo: https://github.com/darbyjohnston/DJV.git
+    role: professional image-sequence and review playback
+    activation: review
+    license: BSD-3-Clause
+  - id: vfxplatform
+    repo: https://github.com/VFXPlatform/vfxplatform.git
+    role: pinned VFX dependency compatibility reference
+    activation: dependency-governance
+    license: BSD-3-Clause
+  - id: moviepy
+    repo: https://github.com/Zulko/moviepy.git
+    role: programmable editorial assembly, titles, overlays and media transformations
+    activation: programmable-editor
+    license: MIT

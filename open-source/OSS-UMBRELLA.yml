@@ -207,3 +207,50 @@ wiring:
     role: standardized VFX plugin interface across host applications
     activation: vfx-plugins
     license: BSD-3-Clause
+
+  - id: wan2.1
+    repo: https://github.com/Wan-Video/Wan2.1.git
+    role: open video generation foundation for text-to-video and image-to-video
+    activation: generative-video
+    license: Apache-2.0
+  - id: ltx-video
+    repo: https://github.com/Lightricks/LTX-Video.git
+    role: controllable text/image/video generation and video-to-video workflows
+    activation: generative-video
+    license: Apache-2.0
+  - id: opensora
+    repo: https://github.com/hpcaitech/Open-Sora.git
+    role: open video generation research and training/inference pipeline
+    activation: generative-video-research
+    license: Apache-2.0
+  - id: instantid
+    repo: https://github.com/instantX-research/InstantID.git
+    role: identity-preserving image generation from reference faces
+    activation: identity-lock
+    license: Apache-2.0
+  - id: ip-adapter
+    repo: https://github.com/tencent-ailab/IP-Adapter.git
+    role: image-reference conditioning and visual identity/style control
+    activation: reference-conditioning
+    license: Apache-2.0
+  - id: liveportrait
+    repo: https://github.com/KlingTeam/LivePortrait.git
+    role: portrait animation with stitching and retargeting control
+    activation: portrait-animation
+    license: MIT
+  - id: musetalk
+    repo: https://github.com/TMElyralab/MuseTalk.git
+    role: audio-driven lip synchronization and generated-character dialogue
+    activation: lip-sync
+    license: MIT
+  - id: ace-step
+    repo: https://github.com/ace-step/ACE-Step.git
+    role: local music generation, editing, remixing and vocal/accompaniment workflows
+    activation: music-generation
+    license: Apache-2.0
+
+  - id: identity-lock-contract
+    repo: internal-production-contract
+    role: enforce reference-image identity continuity and reject unrequested facial/body changes
+    activation: identity-qc
+    license: internal

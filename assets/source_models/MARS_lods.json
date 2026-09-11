@@ -1,0 +1,58 @@
+{
+  "master": {
+    "file": "MARS_source.glb",
+    "tris": 1940858,
+    "verts": 1114516,
+    "textures": 3,
+    "bbox": [
+      0.9786,
+      0.8439,
+      0.9772
+    ],
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1"
+  },
+  "lods": [
+    {
+      "id": "LOD1",
+      "role": "production mesh — hero shots",
+      "file": "MARS_LOD1.glb",
+      "bytes": 7217916,
+      "tris": 155268,
+      "verts": 135397,
+      "textures": 3,
+      "bbox": [
+        0.9783,
+        0.8438,
+        0.9768
+      ]
+    },
+    {
+      "id": "LOD2",
+      "role": "animation / test mesh",
+      "file": "MARS_LOD2.glb",
+      "bytes": 2083420,
+      "tris": 46778,
+      "verts": 47021,
+      "textures": 3,
+      "bbox": [
+        0.9714,
+        0.8432,
+        0.9734
+      ]
+    },
+    {
+      "id": "LOD3",
+      "role": "preview proxy — cheap iteration",
+      "file": "MARS_LOD3.glb",
+      "bytes": 1833384,
+      "tris": 45850,
+      "verts": 46233,
+      "textures": 3,
+      "bbox": [
+        0.9637,
+        0.8432,
+        0.9734
+      ]
+    }
+  ]
+}

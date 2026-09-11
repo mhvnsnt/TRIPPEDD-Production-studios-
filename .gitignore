@@ -29,3 +29,6 @@ assets/source_models/*.glb
 assets/source_models/*.fbx
 assets/source_models/*.obj
 public/model_views/
+
+renders/
+vendor/blender

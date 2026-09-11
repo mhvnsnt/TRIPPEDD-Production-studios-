@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<title>Busch look-away pose</title>
+<rect width="800" height="800" fill="none"/>
+<g stroke="#0b0e0c" stroke-width="16">
+ <ellipse cx="400" cy="420" rx="285" ry="230" fill="#30432f"/>
+ <circle cx="245" cy="320" r="130" fill="#40583d"/><circle cx="405" cy="275" r="145" fill="#3a5138"/><circle cx="545" cy="340" r="120" fill="#40583d"/>
+ <path d="M260 570 Q215 635 180 665 M540 570 Q585 635 620 665" fill="none" stroke="#1b291b" stroke-width="28" stroke-linecap="round"/>
+ <ellipse cx="300" cy="390" rx="28" ry="42" fill="#e8eee5"/><ellipse cx="500" cy="390" rx="28" ry="42" fill="#e8eee5"/>
+ <circle cx="278" cy="397" r="10" fill="#111" stroke="none"/><circle cx="478" cy="397" r="10" fill="#111" stroke="none"/>
+ <path d="M330 475 Q400 450 470 475" fill="none" stroke="#111" stroke-width="15" stroke-linecap="round"/>
+</g>
+</svg>

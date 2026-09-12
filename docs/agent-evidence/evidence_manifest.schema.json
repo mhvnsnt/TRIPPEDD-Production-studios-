@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRIPPEDD Agent Evidence Manifest",
+  "type": "object",
+  "required": ["schema", "agent", "commit", "status", "artifacts", "commands", "gates"],
+  "properties": {
+    "schema": {"const": "trippedd.agent-evidence/v1"},
+    "agent": {"type": "string"},
+    "commit": {"type": "string"},
+    "status": {"enum": ["PASS", "FAIL", "UNKNOWN", "IN_PROGRESS"]},
+    "artifacts": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "bytes", "mime"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bytes": {"type": "integer", "minimum": 0}, "mime": {"type": "string"}}}},
+    "commands": {"type": "array", "items": {"type": "string"}},
+    "gates": {"type": "array", "items": {"type": "object", "required": ["name", "result"], "properties": {"name": {"type": "string"}, "result": {"enum": ["PASS", "FAIL", "UNKNOWN"]}}}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

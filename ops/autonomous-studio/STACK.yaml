@@ -1,0 +1,76 @@
+version: 1
+name: trippedd-autonomous-production-stack
+principles:
+  - open_source_first
+  - provider_agnostic
+  - evidence_before_claims
+  - durable_execution
+  - human_gate_for_final_greenlight
+
+control_plane:
+  orchestrator:
+    project: langgraph
+    upstream: https://github.com/langchain-ai/langgraph
+    role: durable stateful workflows, checkpoints, recovery, human gates
+  role_team:
+    project: crewai
+    upstream: https://github.com/crewAIInc/crewAI
+    role: specialist delegation and peer review
+  tool_protocol:
+    project: mcp-python-sdk
+    upstream: https://github.com/modelcontextprotocol/python-sdk
+    role: standardized tools/resources/prompts
+  model_gateway:
+    project: litellm
+    upstream: https://github.com/BerriAI/litellm
+    role: unified model routing and observability
+  coding_agent:
+    project: openhands
+    upstream: https://github.com/OpenHands/OpenHands
+    role: autonomous code changes, tests, issue execution
+  automation:
+    project: n8n
+    upstream: https://github.com/n8n-io/n8n
+    role: schedules, webhooks, external integrations and approvals
+
+media_plane:
+  - Blender
+  - ComfyUI
+  - FFmpeg
+  - OpenTimelineIO
+  - ffprobe
+  - PySceneDetect
+  - Whisper
+  - whisper.cpp
+  - OpenCV
+  - Tesseract
+  - Rhubarb Lip Sync
+
+state_and_artifacts:
+  artifact_store: MinIO
+  metadata_store: PostgreSQL
+
+agent_groups:
+  - production_orchestrator
+  - research_and_story
+  - media_analysis
+  - editorial
+  - character_and_animation
+  - generative_visuals
+  - post_and_delivery
+  - qc_and_provenance
+  - recovery_and_ops
+
+execution_contract:
+  every_tool_call:
+    - intent
+    - inputs
+    - execution_record
+    - outputs
+    - provenance
+    - validation
+  forbidden:
+    - fabricated_execution
+    - success_without_evidence
+    - canonical_asset_substitution
+  final_greenlight: human_only

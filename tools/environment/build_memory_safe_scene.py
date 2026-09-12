@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Build and render the first God Molecule memory-safe creative shot.
+"""Build and render the first God Molecule creative shot.
 
-This script is intentionally deterministic and refuses to invent a character asset.
-Run through Blender:
-  blender -b --python tools/environment/build_memory_safe_scene.py -- \
-    --mars /absolute/path/to/MARS_CANONICAL.glb \
-    --output /absolute/path/to/artifacts/env/GM-WORLD-0001-TEST
+The input is always the canonical Mars payload. Blender may ingest GLB/GLTF/OBJ
+or append objects from the canonical .blend source without replacing them with a
+proxy. The scene is deterministic from the supplied world seed.
 """
 from __future__ import annotations
 
@@ -37,6 +35,28 @@ def parse_args():
     return p.parse_args()
 
 
+def import_canonical_mars(mars: Path):
+    import bpy
+
+    suffix = mars.suffix.lower()
+    if suffix in {".glb", ".gltf"}:
+        bpy.ops.import_scene.gltf(filepath=str(mars))
+        return list(bpy.context.selected_objects)
+    if suffix == ".obj":
+        bpy.ops.wm.obj_import(filepath=str(mars))
+        return list(bpy.context.selected_objects)
+    if suffix == ".blend":
+        before = set(bpy.data.objects)
+        with bpy.data.libraries.load(str(mars), link=False) as (data_from, data_to):
+            data_to.objects = list(data_from.objects)
+        imported = [obj for obj in data_to.objects if obj is not None and obj not in before]
+        for obj in imported:
+            if obj.name not in bpy.context.scene.collection.objects:
+                bpy.context.scene.collection.objects.link(obj)
+        return imported
+    raise SystemExit(f"MARS_CANONICAL: FAIL — unsupported Blender import type: {suffix}")
+
+
 def main() -> int:
     args = parse_args()
     mars = Path(args.mars).resolve()
@@ -59,11 +79,8 @@ def main() -> int:
     scene.render.filepath = str(out / "frames" / "frame_")
     scene.render.film_transparent = False
     scene.world.color = (0.003, 0.003, 0.008)
-
     Path(scene.render.filepath).parent.mkdir(parents=True, exist_ok=True)
 
-    # Deterministic, deliberately tiny environment. No external generator is
-    # required for the first proof: the seed is the source of scene variation.
     rng = random.Random(args.seed)
     for i in range(max(1, min(args.instances, 96))):
         x = rng.uniform(-18.0, 18.0)
@@ -79,19 +96,9 @@ def main() -> int:
         bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
 
     bpy.ops.mesh.primitive_plane_add(size=50, location=(0, 0, -1.0))
-    ground = bpy.context.object
-    ground.name = "GM_SEEDED_GROUND"
+    bpy.context.object.name = "GM_SEEDED_GROUND"
 
-    # Import the actual canonical asset. Never generate a replacement.
-    suffix = mars.suffix.lower()
-    if suffix == ".glb" or suffix == ".gltf":
-        bpy.ops.import_scene.gltf(filepath=str(mars))
-    elif suffix == ".obj":
-        bpy.ops.wm.obj_import(filepath=str(mars))
-    else:
-        raise SystemExit(f"MARS_CANONICAL: FAIL — unsupported Blender import type: {suffix}")
-
-    imported = list(bpy.context.selected_objects)
+    imported = import_canonical_mars(mars)
     if not imported:
         raise SystemExit("MARS_CANONICAL: FAIL — import produced no objects")
 
@@ -99,8 +106,6 @@ def main() -> int:
     scene.collection.objects.link(mars_root)
     for obj in imported:
         obj.parent = mars_root
-
-    # Conservative placement. Do not alter geometry to chase a likeness.
     mars_root.location = (0, 0, 0)
 
     bpy.ops.object.camera_add(location=(0, -12, 2.8))
@@ -122,13 +127,10 @@ def main() -> int:
     key.data.size = 5.0
 
     bpy.ops.object.light_add(type="POINT", location=(-3.0, 1.0, 3.0))
-    fill = bpy.context.object
-    fill.data.energy = 150
+    bpy.context.object.data.energy = 150
 
     scene.frame_start = 1
     scene.frame_end = args.frames
-
-    # Very small camera drift proves animation without increasing geometry cost.
     for frame in range(1, args.frames + 1):
         scene.frame_set(frame)
         angle = math.radians((frame - 1) * 2.5)
@@ -138,16 +140,15 @@ def main() -> int:
         camera.keyframe_insert(data_path="location", frame=frame)
         camera.keyframe_insert(data_path="rotation_euler", frame=frame)
 
-    scene["god_molecule_scene_id"] = "GM-WORLD-0001-TEST"
+    mars_sha = sha256_file(mars)
+    scene["god_molecule_scene_id"] = "GM-WORLD-0001-FIRST-SHOT"
     scene["god_molecule_world_seed"] = args.seed
     scene["identity_source"] = "MARS_CANONICAL"
-    scene["mars_sha256"] = sha256_file(mars)
+    scene["mars_sha256"] = mars_sha
     scene["gaussian_splat"] = "NOT_USED_IN_FIRST_PROOF"
 
-    blend_path = out / "GM-WORLD-0001-TEST.blend"
+    blend_path = out / "GM-WORLD-0001-FIRST-SHOT.blend"
     bpy.ops.wm.save_as_mainfile(filepath=str(blend_path))
-
-    scene.render.filepath = str(out / "frames" / "frame_")
     bpy.ops.render.render(animation=True)
 
     frame_files = sorted((out / "frames").glob("frame_*.png"))
@@ -156,10 +157,10 @@ def main() -> int:
 
     manifest = {
         "schema": "god-molecule.creative-shot.v1",
-        "scene": "GM-WORLD-0001-TEST",
+        "scene": "GM-WORLD-0001-FIRST-SHOT",
         "world_seed": args.seed,
         "identity_source": "MARS_CANONICAL",
-        "mars_sha256": scene["mars_sha256"],
+        "mars_sha256": mars_sha,
         "frames": len(frame_files),
         "resolution": [args.width, args.height],
         "fps": scene.render.fps,

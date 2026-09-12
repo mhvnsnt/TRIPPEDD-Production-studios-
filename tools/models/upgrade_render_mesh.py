@@ -110,7 +110,22 @@ os.makedirs(os.path.dirname(OUTJ), exist_ok=True)
 status = "PASS" if follow.get("status") == "MEASURED" and follow.get("outlierVerts",0) == 0 else ("FAIL" if follow.get("status") == "MEASURED" else "UNKNOWN")
 receipt = {"schema":"trippedd.mars-hires-bind/v2","status":status,"hiresSource":os.path.relpath(HI,ROOT),"hiresLevel":HIRES,"cage":CAGE,"cageVerts":int(len(cage_v)),"hiresVerts":int(len(hi_v)),"renderSurfacePolicy":"SOURCE_MESH_IS_RENDER_AUTHORITY; NO_GLOBAL_REMESH","method":"Blender SURFACE_DEFORM","alignment":{"sizeRatio":round(ratio,5),"centreOffsetMM":round(centre_off,3)},"bindCage":{"name":"MARS_CAGE_BIND","splitNonManifoldEdges":len(nm_edges),"vertsBefore":int(n_before),"vertsAfter":int(n_after),"facesBefore":int(f_before),"facesAfter":int(f_after),"triangulated":True,"degenerateFacesDropped":int(len(degen)),"matchesRealCage":split_gate},"restDriftMM":{"mean":round(float(drift.mean()),4),"p99":round(float(np.percentile(drift,99)),4),"max":round(float(drift.max()),4)},"followsCage":follow,"gates":{"restDrift":"PASS" if drift.max()<=2.0 else "FAIL","distribution":"PASS" if follow.get("outlierVerts",0)==0 else "FAIL","visualEyeAperture":"PENDING"},"cageHiddenFromRender":True,"boundWithTargetModifiersDisabled":[m.name for m,_ in _saved]}
 json.dump(receipt,open(OUTJ,"w"),indent=2)
-if status != "PASS": die("hi-res bind receipt=%s; do not publish this as PASS" % status)
-# Save only after all physical gates pass.
-bpy.ops.wm.save_as_mainfile(filepath=OUTB)
-print("PASS: hi-res render mesh bound and saved -> %s" % OUTB, flush=True)
+
+# A NON-PASS MUST NOT BE PROMOTED -- AND MUST NOT BLOCK THE WORK THAT FIXES IT.
+# Refusing to write any scene at all was fail-closed in the right direction and
+# too far: the 35-vertex aperture defect lives in the same tissue the lid rebuild
+# has to touch, so withholding the scene withholds the only thing that can fix
+# the defect. The scene is written either way; only the NAME changes, so nothing
+# downstream can mistake a defective bind for the promoted one.
+#
+# compress=True is NOT optional: uncompressed this is 154 MB at LOD1 and 282 MB at
+# SOURCE, and a file past GitHub's limit becomes the next thing an agent has to
+# beg for (OWNER LAW #6).
+dest = OUTB if status == "PASS" else OUTB.replace(".blend", "_UNPROMOTED.blend")
+bpy.ops.wm.save_as_mainfile(filepath=dest, compress=True)
+print("%s: hi-res render mesh bound -> %s (%.1f MB compressed)"
+      % (status, os.path.relpath(dest, ROOT), os.path.getsize(dest) / 1048576), flush=True)
+if status != "PASS":
+    die("hi-res bind receipt=%s. The scene is at %s and is deliberately NOT named "
+        "MARS_FACE_HIRES.blend -- it is usable for the work that fixes the defect, "
+        "and it is not publishable as a pass." % (status, os.path.relpath(dest, ROOT)))

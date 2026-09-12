@@ -1,0 +1,77 @@
+{
+  "schema": "trippedd.agent-evidence/v1",
+  "agent": "claude",
+  "commit": "7f83f6bad8a268d794d7b72a9319dfb7589a508b",
+  "status": "FAIL",
+  "created": "20260912T210355Z",
+  "artifacts": [
+    {
+      "path": "docs/evidence/hires_nostril/NOSTRIL_REST_vs_FLARE.png",
+      "sha256": "5611a1766f7cb72c0458ba0a08d5064b6c978e5f853fd79d9bf2b917ba1177ea",
+      "bytes": 638411,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hires_nostril/NOSTRIL_FLARE_ARC.png",
+      "sha256": "c7658f1e452c51962f3196a3f384b5ee4da36ead5a77bdc489efa86137546f88",
+      "bytes": 167334,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hires_nostril/nostril_flare.json",
+      "sha256": "239b6fb68c5c547917d9a66f8aad94e0a8fce5a7cb6a19cdc2493e5198bf9e08",
+      "bytes": 1707,
+      "mime": "application/json"
+    },
+    {
+      "path": "docs/evidence/hires_nostril/linework_3d.json",
+      "sha256": "3497a1d834ad2eb712d438195d0ef84006d209a9999edec79926eb3a692b0f1a",
+      "bytes": 29811,
+      "mime": "application/json"
+    }
+  ],
+  "commands": [
+    "vendor/blender/blender -b -P tools/character/nostril_flare.py --",
+    "vendor/blender/blender -b -P tools/models/hires_blink_proof.py -- --key nostril_flare --track nostril_R,nostril_L --set hires_nostril"
+  ],
+  "gates": [
+    {
+      "name": "control_identity",
+      "result": "PASS",
+      "detail": "drove exactly nostril_flare, not the legacy L/R keys"
+    },
+    {
+      "name": "reaches_owner_rims",
+      "result": "PASS",
+      "detail": "peak 3.74 mm at the tissue he drew"
+    },
+    {
+      "name": "aim_vs_legacy",
+      "result": "PASS",
+      "detail": "median 4.1 mm from his rims vs 7.4/8.3/8.4 mm legacy"
+    },
+    {
+      "name": "returns_to_rest",
+      "result": "PASS",
+      "detail": "0.00 -> 3.74 -> 0.00 mm over 7 frames"
+    },
+    {
+      "name": "cross_part_isolation",
+      "result": "PASS",
+      "detail": "nearest other drawn feature 46.4 mm away"
+    },
+    {
+      "name": "cage_resolution",
+      "result": "FAIL",
+      "detail": "his 47/48-point rims select only 12/10 cage verts"
+    },
+    {
+      "name": "visual",
+      "result": "UNKNOWN",
+      "detail": "dead-on camera cannot see the nostril apertures"
+    }
+  ],
+  "notes": [
+    "Nostril lane (Issue #50). nostril_flare_L/R and nose_sneer are PRE-EXISTING; measured separately, none of their motion claimed here."
+  ]
+}

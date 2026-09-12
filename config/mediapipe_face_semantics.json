@@ -1,0 +1,118 @@
+{
+  "schema": "trippedd.mars-face-semantic-authority.v1",
+  "identity": "MARS_CANONICAL",
+  "sources": {
+    "face_landmarker": "Google MediaPipe Face Landmarker / FaceMesh-V2",
+    "canonical_model": "Google MediaPipe canonical_face_model.obj",
+    "iris": "MediaPipe 478-landmark eye refinement",
+    "donor": "Google GNM Head v3"
+  },
+  "rule": "Eyelid geometry is semantic, never inferred from texture darkness, eyebrow shadows, or unconstrained first-hit raycasts.",
+  "landmark_sets": {
+    "upper_lid": [
+      157,
+      158,
+      159,
+      160,
+      161,
+      246,
+      384,
+      385,
+      386,
+      387,
+      388,
+      466
+    ],
+    "lower_lid": [
+      144,
+      145,
+      153,
+      154,
+      163,
+      7,
+      373,
+      374,
+      380,
+      381,
+      390,
+      249
+    ],
+    "eye_right": [
+      33,
+      7,
+      163,
+      144,
+      145,
+      153,
+      154,
+      155,
+      133,
+      173,
+      157,
+      158,
+      159,
+      160,
+      161,
+      246
+    ],
+    "eye_left": [
+      362,
+      249,
+      390,
+      373,
+      374,
+      380,
+      381,
+      382,
+      398,
+      384,
+      385,
+      386,
+      387,
+      388,
+      466,
+      263
+    ],
+    "brow_right": [
+      70,
+      63,
+      105,
+      66,
+      107,
+      55,
+      65,
+      52,
+      53,
+      46
+    ],
+    "brow_left": [
+      336,
+      296,
+      334,
+      293,
+      300,
+      276,
+      283,
+      282,
+      295,
+      285
+    ]
+  },
+  "hard_separation": {
+    "upper_lower_disjoint": true,
+    "lid_brow_disjoint": true,
+    "minimum_lid_brow_distance_mm": 6,
+    "minimum_opening_mm": 3
+  },
+  "mapping": {
+    "method": "canonical-3D-to-MARS similarity fit on stable non-lid anchors, then surface-constrained nearest-point projection within the semantic eye region",
+    "forbidden": [
+      "texture-darkness heuristic",
+      "eyebrow-shadow heuristic",
+      "unconstrained first-hit raycast"
+    ],
+    "evidence": "renders/_rig_measure/semantic_eyelids.json"
+  },
+  "license": "Apache-2.0",
+  "provenance": "MediaPipe landmark group definitions and canonical-face geometry; GNM Head v3 donor remains Apache-2.0"
+}

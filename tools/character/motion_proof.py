@@ -90,14 +90,24 @@ area("RIM", (0.55, 1.45, 1.30), 220, 0.9, (0.55, 0.75, 1.0))
 
 # the vertices whose TRAVEL is the whole question
 track = []
-lp = "renders/_rig_measure/lid_lines.json"
+# TRACK MEDIAPIPE'S LID RINGS, NOT THE DARKNESS FILE.
+# lid_lines.json was the brow-shadow heuristic -- margins 26 mm apart on a
+# 6.5 mm opening. It is out of the rig; tracking it here would still have
+# reported brow travel as if it were a blink.
+lp = "renders/_rig_measure/eyelids.json"
 if spec["watch"] == "eyes" and os.path.exists(lp):
     lj = json.load(open(lp))["eyes"]
     pts = [V(q) for s in ("L", "R") for k in ("upper", "lower")
            for q in lj.get("eye_%s" % s, {}).get(k, [])]
-    for i, v in enumerate(head.data.vertices):
-        w = head.matrix_world @ v.co
-        if any((w - q).length < 0.004 for q in pts): track.append(i)
+    # NEAREST VERTEX, NOT A PROXIMITY TEST. The lid ring points are raycast HIT
+    # POINTS on triangle interiors, so almost none of them sit on a vertex and a
+    # 4 mm tolerance matched ZERO of them -- the tracker then reported 0.00 mm of
+    # travel for a lid that was plainly moving. Each ring point owns the vertex
+    # closest to it; there is always exactly one.
+    _wv = [head.matrix_world @ v.co for v in head.data.vertices]
+    for q in pts:
+        track.append(int(min(range(len(_wv)), key=lambda i: (_wv[i] - q).length)))
+    track = sorted(set(track))
     print("tracking %d measured lid-line vertices through the clip" % len(track))
 
 def sample():

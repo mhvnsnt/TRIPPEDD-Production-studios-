@@ -29,14 +29,12 @@ def main() -> int:
 
     index_path = args.index.resolve()
     index = json.loads(index_path.read_text(encoding="utf-8"))
-    root = (args.root or index_path.parent).resolve()
+    root = (args.root or index_path.parents[3]).resolve()
     frames = []
     for item in index.get("frames", []):
         rel = Path(item["repoPath"])
-        path = root / rel.name if root.name == rel.parent.name else root / rel
+        path = (root / rel).resolve()
         if not path.is_file():
-            # In CI, --root is normally the repository root; keep the manifest
-            # fail-closed rather than inventing a viewer path.
             raise SystemExit(f"REVIEW_MANIFEST: BLOCKED — missing pixel artifact: {path}")
         actual = sha256(path)
         expected = item.get("sha256")

@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Run the first-shot Blender render without fabricating evidence.
-
-The worker requires an explicit, existing .blend scene. It validates the
-first-shot contract before invoking Blender, records the exact source-scene
-hash, and only writes rendered=true evidence after the expected PNG exists.
-It never promotes the production gate; visual and physical QC remain separate.
-"""
+"""Run the first-shot Blender render without fabricating evidence."""
 from __future__ import annotations
 
 import argparse
@@ -60,8 +54,9 @@ def blender_version(blender: str) -> str:
     return result.stdout.splitlines()[0].strip() if result.stdout.splitlines() else "unknown"
 
 
-def build_receipt(repo_root: Path, blend: Path, png: Path, frame: int, version: str) -> dict:
+def build_receipt(repo_root: Path, receipt: Path, blend: Path, png: Path, frame: int, version: str) -> dict:
     width, height = png_dimensions(png)
+    artifact_path = str(png.relative_to(receipt.parent)) if png.is_relative_to(receipt.parent) else str(png)
     return {
         "schema": SCHEMA,
         "rendered": True,
@@ -76,10 +71,10 @@ def build_receipt(repo_root: Path, blend: Path, png: Path, frame: int, version: 
         },
         "frame": frame,
         "artifact": {
-            "path": str(png.relative_to(repo_root)) if png.is_relative_to(repo_root) else str(png),
+            "path": artifact_path,
             "sha256": sha256_file(png),
             "bytes": png.stat().st_size,
-            "format": "PNG",
+            "format": "png",
             "width": width,
             "height": height,
         },
@@ -87,6 +82,21 @@ def build_receipt(repo_root: Path, blend: Path, png: Path, frame: int, version: 
         "physical_qc": "NOT_EVALUATED",
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
+
+
+def verify_receipt(repo_root: Path, receipt: Path) -> None:
+    verifier = repo_root / "scripts" / "verify_render_evidence.py"
+    if not verifier.is_file():
+        raise RuntimeError(f"missing render evidence verifier: {verifier}")
+    result = subprocess.run(
+        [sys.executable, str(verifier), "--receipt", str(receipt)],
+        cwd=repo_root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0 or "RENDER_EVIDENCE: PASS" not in result.stdout:
+        raise RuntimeError("render receipt verification failed\n" + result.stdout + result.stderr)
 
 
 def main() -> int:
@@ -133,8 +143,9 @@ def main() -> int:
         if not expected.is_file():
             raise RuntimeError(f"Blender exited successfully but produced no expected PNG: {expected}")
 
-        data = build_receipt(repo_root, blend, expected, args.frame, version)
+        data = build_receipt(repo_root, receipt, blend, expected, args.frame, version)
         receipt.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        verify_receipt(repo_root, receipt)
         print(f"RENDER_EVIDENCE: PASS {receipt}")
         print("VISUAL_QC: NOT_EVALUATED")
         print("PHYSICAL_QC: NOT_EVALUATED")

@@ -13,6 +13,7 @@ coverage/
 # 1.9 GB of binaries that the toolchain re-downloads on demand — never repo content.
 .trippedd_models
 dist
+.next/
 footage/
 
 # Contact sheets are derived from the footage; regenerate, don't commit.

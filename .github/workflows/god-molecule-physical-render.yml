@@ -40,12 +40,28 @@ jobs:
           git lfs pull || true
           python3 -m pip install --user gdown
 
+      - name: Cache portable Blender
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            vendor/blender-4.2.1-linux-x64
+            vendor/blender
+          key: blender-4.2.1-linux-x64-${{ runner.os }}-${{ runner.arch }}
+
       - name: Install portable Blender
+        if: steps.blender-cache.outputs.cache-hit != 'true'
         run: |
           set -eux
           mkdir -p vendor
           curl -L --fail --retry 4 -o /tmp/blender.tar.xz https://download.blender.org/release/Blender4.2/blender-4.2.1-linux-x64.tar.xz
           tar -xJf /tmp/blender.tar.xz -C vendor
+          ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
+
+      - name: Verify portable Blender
+        run: |
+          set -eux
+          test -x "$PWD/vendor/blender-4.2.1-linux-x64/blender"
           ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
           "$PWD/vendor/blender" --version
 

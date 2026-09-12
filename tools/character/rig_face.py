@@ -629,6 +629,20 @@ def lid_close(side, meet=0.40):
             print("     lid_%s: lifted %d of %d meet points out to clear the globe "
                   "(radius %.4f + %.1f mm)" % (side, _lifted, n, _r, LID_THICK / MM_))
 
+    # BROW EXCLUSION (merged from origin/main's semantic lid gate -- the one idea
+    # that branch had which this one did not). Owner: "now you've connected the
+    # eyebrows to the blink. And when we get to the eyebrows, now the eyebrows
+    # are gonna be fucked up." A vertex whose NEAREST named feature is the brow
+    # is not lid tissue, however close the band puts it, so it never travels.
+    _cf = os.path.join(ROOT, "renders", "_rig_measure", "canonical_fit.json")
+    _brow = []
+    if os.path.exists(_cf):
+        _brow = [F.local(V(q)) for q in
+                 json.load(open(_cf)).get("sets", {}).get("eyebrow_%s" % side, [])]
+    if not _brow:
+        die("lid_close(%s): no canonical eyebrow set -- refusing to build a blink "
+            "that cannot tell lid tissue from brow tissue" % side)
+
     def f(lp):
         w_best, tgt, src = 0.0, None, None
         for i in range(n):
@@ -639,6 +653,8 @@ def lid_close(side, meet=0.40):
                 if w > w_best:
                     w_best, tgt, src = w, meet_pts[i], q
         if w_best <= 0 or tgt is None: return None
+        lid_d = min((lp - F.local(q)).length for i in range(n) for q in (up[i], lo[i]))
+        if min((lp - q).length for q in _brow) <= lid_d: return None
         # travel this vertex the same way its nearest margin station travels
         return F.M.to_3x3().inverted() @ ((tgt - src) * w_best)
 

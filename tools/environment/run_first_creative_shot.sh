@@ -2,38 +2,34 @@
 set -euo pipefail
 
 # God Molecule first-shot executor.
-# Honest state machine: this wrapper never upgrades a failed/telemetry result.
+# This produces a real render package; it does NOT self-certify visual/physical PASS.
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-SCENE="GM-WORLD-0001-TEST"
+SCENE="GM-WORLD-0001-FIRST-SHOT"
 SEED="${GM_WORLD_SEED:-742918}"
 OUT="${GM_OUTPUT:-$ROOT/artifacts/env/$SCENE}"
 MARS="${MARS_CANONICAL_PATH:-}"
 
 if [[ -z "$MARS" ]]; then
   for p in \
-    "$ROOT/.trippedd_assets/MARS_CANONICAL.glb" \
-    "$ROOT/.trippedd_assets/mars.glb" \
-    "$ROOT/.trippedd_assets/mars.gltf" \
-    "$ROOT/.trippedd_assets/mars.obj" \
-    "$ROOT/.trippedd_assets/mars_proxy.glb" \
-    "${HOME}/.cache/trippedd/god-molecule/MARS_CANONICAL.glb" \
-    "${HOME}/God-Molecule-Show-Studio/.trippedd_assets/mars_proxy.glb" \
-    "${HOME}/God-Molecule-Show-Studio/.trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl_proxy.glb"
+    "$ROOT/.trippedd_assets/MARS_CANONICAL.blend" \
+    "$ROOT/.trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl.blend" \
+    "$HOME/God-Molecule-Show-Studio/.trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl.blend" \
+    "$HOME/.cache/trippedd/god-molecule/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl.blend"
   do
     if [[ -s "$p" ]]; then MARS="$p"; break; fi
   done
 fi
 
 if [[ -z "$MARS" || ! -s "$MARS" ]]; then
-  echo "MARS_CANONICAL: FAIL — no physical asset found."
-  echo "Set MARS_CANONICAL_PATH to the downloaded canonical GLB/GLTF/OBJ."
-  echo "Show-Studio proxies live under .trippedd_assets/ if cloned."
+  echo "MARS_CANONICAL: BLOCKED — canonical source payload is not materialized."
+  echo "Required source: God-Molecule-Show-Studio/.trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl.blend"
+  echo "Do not substitute a proxy for the canonical shot."
   exit 40
 fi
 
 BLENDER="${BLENDER_BIN:-blender}"
 command -v "$BLENDER" >/dev/null 2>&1 || {
-  echo "BLENDER: FAIL — executable not available."
+  echo "BLENDER: BLOCKED — executable not available."
   exit 41
 }
 
@@ -41,11 +37,11 @@ mkdir -p "$OUT"
 LOG="$OUT/execution.log"
 : > "$LOG"
 
+echo "SCENE=$SCENE" | tee -a "$LOG"
 echo "MARS_PATH=$MARS" | tee -a "$LOG"
 echo "MARS_SHA256=$(sha256sum "$MARS" | awk '{print $1}')" | tee -a "$LOG"
 echo "SEED=$SEED" | tee -a "$LOG"
 
-# Profiles are deliberately conservative. Recovery changes one dimension at a time.
 PROFILES=(
   "8 640 360 96"
   "8 512 288 64"
@@ -56,7 +52,6 @@ PROFILES=(
 for profile in "${PROFILES[@]}"; do
   read -r FRAMES WIDTH HEIGHT INSTANCES <<<"$profile"
   echo "PROFILE frames=$FRAMES width=$WIDTH height=$HEIGHT instances=$INSTANCES" | tee -a "$LOG"
-
   rm -rf "$OUT/frames"
   mkdir -p "$OUT/frames"
 
@@ -68,20 +63,11 @@ for profile in "${PROFILES[@]}"; do
   set -e
 
   if [[ "$RC" -eq 0 && -s "$OUT/manifest.json" ]]; then
-    if grep -q '"creative_final": true' "$OUT/manifest.json" && \
-       ! grep -q '"telemetry_substitution": true' "$OUT/manifest.json"; then
-      # Optional contact sheet if evidence tool exists
-      if [[ -f "$ROOT/tools/animation/make_visual_evidence.py" ]]; then
-        "$BLENDER_BIN" -b --python "$ROOT/tools/animation/make_visual_evidence.py" -- \
-          --frames-dir "$OUT/frames" --out "$OUT/CONTACT-SHEET.png" 2>/dev/null || true
-      fi
-      if [[ -f "$ROOT/tools/environment/verify_creative_final.py" ]]; then
-        python3 "$ROOT/tools/environment/verify_creative_final.py" "$OUT" | tee -a "$LOG" || {
-          echo "CREATIVE_FINAL: FAIL — verify_creative_final rejected package" | tee -a "$LOG"
-          continue
-        }
-      fi
-      echo "CREATIVE_FINAL: VERIFIED"
+    if python3 "$ROOT/tools/environment/verify_creative_final.py" "$OUT" | tee -a "$LOG"; then
+      echo "RENDER_PACKAGE: READY_FOR_QC" | tee -a "$LOG"
+      echo "VISUAL_QC: NOT_ATTEMPTED" | tee -a "$LOG"
+      echo "PHYSICAL_QC: NOT_ATTEMPTED" | tee -a "$LOG"
+      echo "GATE: BLOCKED_UNTIL_REAL_RENDER_REOPEN_AND_QC" | tee -a "$LOG"
       echo "ARTIFACT=$OUT"
       exit 0
     fi
@@ -90,6 +76,6 @@ for profile in "${PROFILES[@]}"; do
   echo "PROFILE FAILED rc=$RC; preserving log and reducing next profile." | tee -a "$LOG"
 done
 
-echo "CREATIVE_FINAL: FAIL — all memory-safe profiles exhausted."
+echo "RENDER_PACKAGE: FAIL — all memory-safe profiles exhausted."
 echo "Failure evidence: $LOG"
 exit 42

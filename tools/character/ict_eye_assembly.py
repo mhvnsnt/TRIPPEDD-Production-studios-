@@ -104,8 +104,16 @@ manifest = {"source": "ICT-VGL/ICT-FaceKit", "license": "MIT", "nonRigidWarp": N
                    "construction", "eyes": {}}
 
 for ict_side, mars_side in SIDE_OF.items():
+    # EYELASHES ARE REAL GEOMETRY IN ICT, NOT A TEXTURE TRICK.
+    # Owner: "we'll also need to get some eyelashes on there, somehow because
+    # they're not really pronounced off of the texture on the model." ICT ships
+    # 684 verts of lash strip per eye, captured with the lids they sit on, so
+    # they arrive already in the right place through the same warp as
+    # everything else. They go in their own npz because they need a dark,
+    # unlit material and they must ride the LID, not the globe.
     want = ["eyeball_%s" % ict_side, "eye_occlusion_%s" % ict_side,
             "lacrimal_%s" % ict_side]
+    lash_part = "eyelashes_%s" % ict_side
     have = [p for p in want if p in parts]
     if "eyeball_%s" % ict_side not in parts:
         die("ICT has no eyeball_%s -- part list is %s" % (ict_side, sorted(parts)))
@@ -133,6 +141,7 @@ for ict_side, mars_side in SIDE_OF.items():
     # their relative placement, which is the thing ICT is here for, is untouched.
     ball = used[(used >= a) & (used <= b)]
     gc = W[ball].mean(0)
+    gc_pre = gc.copy()
     _dia = float(max(W[ball].max(0) - W[ball].min(0)))
     _k = EYEBALL_MM * MM / _dia
     P = (P - gc) * _k + gc
@@ -201,6 +210,26 @@ for ict_side, mars_side in SIDE_OF.items():
     if not (18.0 <= dia / MM <= 30.0):
         die("eye %s globe came out %.1f mm -- an eyeball is 24 mm, the fit is wrong"
             % (mars_side, dia / MM))
+
+    if lash_part in parts:
+        la, lb = parts[lash_part]
+        lkeep = np.zeros(len(V), bool); lkeep[la:lb + 1] = True
+        lsel = ALL[lkeep[ALL].all(axis=1)]
+        lused = np.unique(lsel)
+        lremap = -np.ones(len(V), np.int64); lremap[lused] = np.arange(len(lused))
+        LP = W[lused].copy()
+        # the lashes get the SAME rescale and the SAME seating as the eye they
+        # belong to, or they would float off the lid they were captured on
+        LP = (LP - gc_pre) * _k + gc_pre
+        LP += lateral if pj else np.zeros(3)
+        LP += ey * want_back if pj else np.zeros(3)
+        np.savez_compressed(os.path.join(OUT, "lash_%s.npz" % mars_side),
+                            vertices=LP.astype(np.float32),
+                            triangles=lremap[lsel].astype(np.int32))
+        print("        lashes %d verts (%s), same rescale and seating as the eye"
+              % (len(lused), lash_part))
+        manifest.setdefault("lashes", {})["lash_%s" % mars_side] = {
+            "ictPart": lash_part, "verts": int(len(lused)), "tris": int(len(lsel))}
 
     np.savez_compressed(os.path.join(OUT, "eye_%s.npz" % mars_side),
                         vertices=P.astype(np.float32),

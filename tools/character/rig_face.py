@@ -54,7 +54,7 @@ scene = bpy.context.scene
 # line used to take everything except the head with it, which is why the blink
 # gate read "0 eyeball rays open" on a head whose sockets had just measured
 # 15/25 and 19/25: the eyes had been deleted a hundred lines earlier.
-KEEP = ("MARS_MESH", "MARS_EYE_L", "MARS_EYE_R")
+KEEP = ("MARS_MESH", "MARS_EYE_L", "MARS_EYE_R", "MARS_LASH_L", "MARS_LASH_R")
 for o in list(bpy.data.objects):
     if o.name.split(".")[0] not in KEEP:
         bpy.data.objects.remove(o, do_unlink=True)

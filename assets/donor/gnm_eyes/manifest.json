@@ -48,5 +48,17 @@
       ],
       "seatedOnPaintedEye": true
     }
+  },
+  "lashes": {
+    "lash_R": {
+      "ictPart": "eyelashes_left",
+      "verts": 684,
+      "tris": 1080
+    },
+    "lash_L": {
+      "ictPart": "eyelashes_right",
+      "verts": 684,
+      "tris": 1080
+    }
   }
 }

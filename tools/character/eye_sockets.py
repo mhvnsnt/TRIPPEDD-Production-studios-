@@ -59,7 +59,7 @@ bpy.ops.wm.open_mainfile(filepath=SRC)
 head = bpy.data.objects["MARS_MESH"]
 scene = bpy.context.scene
 for stale in list(bpy.data.objects):
-    if stale.name.startswith(("MARS_EYE", "MARS_LID_CUTTER")):
+    if stale.name.startswith(("MARS_EYE", "MARS_LID_CUTTER", "MARS_LASH")):
         bpy.data.objects.remove(stale, do_unlink=True)
 for md in [m for m in head.modifiers if m.name.startswith("EYE_APERTURE")]:
     head.modifiers.remove(md)
@@ -200,6 +200,29 @@ for side in ("L", "R"):
                  "assets/donor/gnm_eyes/manifest.json (ratio %.3f). A donor and the mesh "
                  "built from it disagreeing means one of them is stale -- re-run "
                  "gnm_eye_donor.py." % (side, _ext, _claim, _claim / max(_ext, 1e-9)))
+    # EYELASHES: ICT geometry, dark and unlit, riding the LID not the globe.
+    _lp = os.path.join(DONOR, "lash_%s.npz" % side)
+    if os.path.exists(_lp):
+        _lf = np.load(_lp)
+        _lm = bpy.data.meshes.new("MARS_LASH_%s_MESH" % side)
+        _lm.from_pydata([tuple(map(float, v)) for v in _lf["vertices"]], [],
+                        [tuple(map(int, t)) for t in _lf["triangles"]])
+        _lm.validate(verbose=False)
+        _lash_mat = bpy.data.materials.get("MARS_LASH_MAT")
+        if _lash_mat is None:
+            _lash_mat = bpy.data.materials.new("MARS_LASH_MAT")
+            _lash_mat.use_nodes = True
+            _b = _lash_mat.node_tree.nodes.get("Principled BSDF")
+            if _b:
+                _b.inputs["Base Color"].default_value = (0.02, 0.022, 0.03, 1.0)
+                _b.inputs["Roughness"].default_value = 0.55
+        _lm.materials.append(_lash_mat)
+        for _p in _lm.polygons: _p.use_smooth = True
+        _lo = bpy.data.objects.new("MARS_LASH_%s" % side, _lm)
+        scene.collection.objects.link(_lo)
+        print("eye %s: %d eyelash verts inserted (ICT geometry, dark unlit material)"
+              % (side, len(_lf["vertices"])))
+
     report["eye_%s" % side] = {"eyeballVerts": len(verts), "cutterVolume": round(vol, 8),
                                "variant": VARIANT, "eyeParts": PARTS,
                                "eyeballDiameter": round(_ext, 5),

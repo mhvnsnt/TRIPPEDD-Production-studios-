@@ -17,6 +17,7 @@ on:
       - "tools/environment/**"
       - "config/god_molecule_trippedd_bridge.json"
       - "config/god_molecule_asset_registry.json"
+      - "config/opensource_production_stack.json"
       - "docs/production-studio/god-molecule-first-shot.json"
       - ".github/workflows/god-molecule-physical-render.yml"
 
@@ -40,7 +41,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y curl wget unzip xz-utils git-lfs python3-pip libgl1 libegl1 libx11-6 libxrender1 libxi6 libxfixes3 libxxf86vm1 libxkbcommon0
           git lfs pull || true
-          python3 -m pip install --user gdown
+          python3 -m pip install --user gdown opentimelineio
 
       - name: Install portable Blender
         run: |
@@ -50,6 +51,12 @@ jobs:
           tar -xJf /tmp/blender.tar.xz -C vendor
           ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
           "$PWD/vendor/blender" --version
+
+      - name: Probe open-source production stack
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/evidence
+          python3 tools/environment/probe_oss_stack.py | tee .artifacts/evidence/oss-capability-probe.log
 
       - name: Retrieve public Drive production folder
         env:

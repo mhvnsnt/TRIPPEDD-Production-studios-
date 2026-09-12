@@ -38,8 +38,17 @@ POSES = [
 
 FACS_POSES = [
     ("01_REST", 0.0, {}, {}),
+    # THREE DIFFERENT EYE STATES, NAMED FOR WHAT THEY ARE.
+    # Owner: "that first one with the big eyes, that should be more like the
+    # wide eyed look... and what you just called a blink, that's more like a
+    # narrow eyed look." He is right -- a blink is not a narrow eye, it is a
+    # SHUT eye, and the two lid margins meeting is the whole definition.
     ("02_BLINK", 0.0, {"blink_L": 1.0, "blink_R": 1.0}, {}),
     ("03_BLINK_L_ONLY", 0.0, {"blink_L": 1.0}, {}),
+    ("13_NARROW_EYED", 0.0, {"facs_eyeSquint_L": 1.0, "facs_eyeSquint_R": 1.0,
+                             "squint_L": 0.5, "squint_R": 0.5}, {}),
+    ("14_WIDE_EYED", 0.0, {"facs_eyeWide_L": 1.0, "facs_eyeWide_R": 1.0,
+                           "brow_up_L": 0.45, "brow_up_R": 0.45}, {}),
     ("04_SMILE", 3.0, {"facs_mouthSmile_L": 1.0, "facs_mouthSmile_R": 1.0,
                        "facs_cheekRaiser_L": 0.6, "facs_cheekRaiser_R": 0.6}, {}),
     ("05_NOSTRIL_FLARE", 0.0, {"facs_noseSneer_L": 1.0, "facs_noseSneer_R": 1.0}, {}),

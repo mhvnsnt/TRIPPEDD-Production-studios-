@@ -40,7 +40,21 @@ TRIS = d["triangles"].astype(np.int64)
 # tools/character/sweep_eye_fit.sh reports the socket showing through the
 # aperture for each pair.
 NO_PAINTED = "--no-painted" in argv   # fall back to the contour centroid
-# MEASURED AGAINST THE REAL CARVED APERTURE, not chosen. A grid search over
+# AN EYEBALL IS 24 mm AND IT DOES NOT BULGE OUT OF A FACE.
+# Owner: "you kinda have the eyeballs kind of, like, bulging... the eyes are too
+# big and round at rest". Correct, and it was a bad trade I made: the aperture
+# sweep showed socket at the canthi, so I inflated the globe to x1.20 (33 mm)
+# and pushed it FORWARD until it plugged the cut. A sphere pushed through a
+# 6.5 mm slit protrudes past the lid margins, and lids cannot occlude something
+# that sticks out in front of them -- which is exactly the big round look.
+#   FILL 0.835 -> 24.0 mm, the real thing, through his measured 28.7 mm fissure.
+#   SEAT 0.46  -> the corneal apex sits at the lid plane, not in front of it.
+# The socket that then shows at the inner corners is NOT a hole to be plugged.
+# The inner canthus of a real eye IS dark tissue. It is coloured as such rather
+# than papered over with more sphere.
+#
+# (kept for the record) The earlier grid search over scale, depth and height --
+
 # globe scale, depth and height (96 combinations, each re-swept with 325 rays
 # through the actual cut) says the hole is closed by DEPTH, not by size:
 # every entry at -0.45 of the globe radius forward reads 0% socket, down to
@@ -49,8 +63,10 @@ NO_PAINTED = "--no-painted" in argv   # fall back to the contour centroid
 #   chosen     x1.20 seat 0.125 ->  hole  0.0% /  0.0%, 87-90% backed by globe
 # The middle of the zero-hole band, so the globe stays near anatomical size
 # instead of being inflated until it plugs the cut.
-FILL = float(opt("--fill", "1.20"))
-SEAT = float(opt("--seat", "0.125"))
+FILL = float(opt("--fill", "0.835"))
+SEAT = float(opt("--seat", "0.46"))          # kept for --no-derived-seat callers
+# A real cornea stands slightly proud of the lid margin. 1.5 mm, in his units.
+CORNEA_PROUD = float(opt("--cornea-proud-mm", "1.5")) * (0.1930 / 50.0)
 names = [str(x) for x in d["vertex_group_names"]]
 vg = d["vertex_groups"]
 def group(n): return np.where(vg[names.index(n)] > 0.5)[0]
@@ -127,7 +143,21 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     # Seat it only just behind the lid plane. At 0.34 of the radius the globe
     # sat too deep and the lower lid margin outran it, leaving a dark crescent
     # under each eye that reads as a wound rather than an eye.
-    W = W + ey * (fissure_m * FILL * SEAT)
+    # SEAT DERIVED PER EYE, FROM HIS OWN LID RING.
+    # A shared SEAT fraction cannot be right for both eyes: measured, the most
+    # FORWARD point of the lid ring sits 3.3 mm in front of its centroid on the
+    # left and only 1.7 mm on the right, so one constant either sinks one globe
+    # (socket showing through 35% of the aperture) or bulges the other. Put the
+    # corneal apex a real 1.5 mm proud of the lid margin on EACH eye and the
+    # depth follows from geometry instead of a knob.
+    _R = float(max(W.max(0) - W.min(0))) * 0.5
+    _ring_fwd = float(((ring - centre_m) @ ey).min())      # -ve = in front
+    _push = _R + _ring_fwd - CORNEA_PROUD
+    W = W + ey * _push
+    print("eye %s: globe %.1f mm · ring front %+.1f mm · seated %+.1f mm back "
+          "(apex %.1f mm proud of the margin)"
+          % (side, _R * 2 / (0.1930 / 50.0), _ring_fwd / (0.1930 / 50.0),
+             _push / (0.1930 / 50.0), CORNEA_PROUD / (0.1930 / 50.0)))
 
     cls = np.zeros(len(used), np.int32)      # 0 sclera
     for ci, gname in ((1, "irises"), (2, "pupils")):

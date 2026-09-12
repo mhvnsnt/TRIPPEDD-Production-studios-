@@ -556,13 +556,17 @@ def eye_frame(side):
     opening = (up[mid] - lo[mid]).length
     return up, lo, centre, ez, ey, opening
 
-def lid_close(side):
+def lid_close(side, travel=1.15):
+    """CLOSING MEANS THE TWO MARGINS MEET. Owner: "The bottom eyelid and the top
+    eyelid have to meet when it closes. That's literally what closing means."
+    The travel is no longer a constant -- the rig solves for the smallest one
+    that leaves no ray reaching the eyeball (see the solve below)."""
     up, lo, centre, ez, ey, opening = eye_frame(side)
     # "Upper lid" means above the lid line along THIS eye's up axis.
     def above(lp):
         return (F.M @ lp - centre).dot(ez) > -opening * 0.20
     return contour_band(up, opening * 1.9,
-                        lambda lp, q: F.M.to_3x3().inverted() @ (-ez * (opening * 1.15)
+                        lambda lp, q: F.M.to_3x3().inverted() @ (-ez * (opening * travel)
                                                                  + ey * (opening * 0.12)),
                         gate=lambda lp, q: above(lp))
 
@@ -863,6 +867,34 @@ for side in ("L", "R"):
 for k in kb:
     if k.name != "Basis": k.value = 0.0
 bpy.context.view_layer.update()
+# ── SOLVE THE LID TRAVEL UNTIL THE EYE IS ACTUALLY SHUT ────────────────────
+# A fixed multiplier is a guess, and the guess left a sliver of sclera showing
+# under a "closed" lid. Rebuild the key at increasing travel and keep the first
+# value at which NO ray through the aperture still reaches the globe.
+for side in ("L", "R"):
+    key = "blink_%s" % side
+    if key not in kb: continue
+    for t in (1.15, 1.4, 1.7, 2.0, 2.4):
+        for k in kb:
+            if k.name != "Basis": k.value = 0.0
+        kb[key].value = 1.0
+        bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
+        n = eye_rays(side)
+        if n == 0:
+            print("  blink_%s closes the eye at travel x%.2f (0 rays reach the globe)"
+                  % (side, t)); break
+        print("  blink_%s travel x%.2f still lets %d/25 rays through -- rebuilding"
+              % (side, t, n))
+        if t == 2.4:
+            print("  blink_%s STILL NOT SHUT at x%.2f (%d rays). Reported, not claimed."
+                  % (side, t, n)); break
+        head.shape_key_remove(kb[key])
+        nk, mv, mx = make_key(key, lid_close(side, travel=t * 1.0 if t > 1.15 else 1.4))
+        kb = head.data.shape_keys.key_blocks
+    for k in kb:
+        if k.name != "Basis": k.value = 0.0
+    bpy.context.view_layer.update()
+
 worst = min((v["openingsTravelled"] for v in blink_report.values()), default=0.0)
 if blink_report and worst < 0.8:
     print("  BLINK IS WEAK — the lesser lid travels only %+.2f of its own opening. "

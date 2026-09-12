@@ -208,20 +208,14 @@
     },
     "SOCKET": {
       "baseColor": [
-        0.93,
-        0.96,
-        1.0,
+        0.055,
+        0.062,
+        0.085,
         1.0
       ],
-      "roughness": 0.14,
-      "specular": 0.5,
-      "emission": [
-        0.55,
-        0.74,
-        1.0,
-        1.0
-      ],
-      "emissionStrength": 1.6
+      "roughness": 0.72,
+      "specular": 0.12,
+      "_why": "THE SOCKET IS NOT THE EYE. This was an exact copy of SCLERA -- baseColor 0.93/0.96/1.0 AND emission 0.55/0.74/1.0 at strength 1.6 -- so every sliver of socket tunnel visible through the aperture rendered as a glowing white patch indistinguishable from the eyeball. That is what made the eyes read oversized and round at rest, and it is the white still showing under a closed lid: not the lid, not the texture, the lit socket behind it. HIS EYES ARE WHITE ON PURPOSE; the hole behind them is not. A near-black cool neutral, unlit, reads as the shadow an eye socket actually is -- which is what this file's own code comment said it was doing all along."
     }
   },
   "activeVariant": "canonical"

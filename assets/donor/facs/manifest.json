@@ -20,9 +20,9 @@
   "correspondence": {
     "k": 4,
     "maxDistance": 0.035,
-    "marsVerts": 23985,
-    "mapped": 10125,
-    "meanNearest": 0.01695,
+    "marsVerts": 23997,
+    "mapped": 10137,
+    "meanNearest": 0.01693,
     "p95Nearest": 0.03206,
     "sourceParts": [
       "face",
@@ -41,19 +41,19 @@
   "shapes": [
     {
       "name": "browDown_R",
-      "movingVerts": 1259,
+      "movingVerts": 1251,
       "maxDisplacement": 0.02377,
       "percentOfHeadHeight": 2.819
     },
     {
       "name": "browDown_L",
-      "movingVerts": 1691,
+      "movingVerts": 1689,
       "maxDisplacement": 0.02443,
       "percentOfHeadHeight": 2.897
     },
     {
       "name": "browInnerUp_R",
-      "movingVerts": 1841,
+      "movingVerts": 1839,
       "maxDisplacement": 0.02218,
       "percentOfHeadHeight": 2.63
     },
@@ -65,7 +65,7 @@
     },
     {
       "name": "browOuterUp_R",
-      "movingVerts": 3440,
+      "movingVerts": 3453,
       "maxDisplacement": 0.03295,
       "percentOfHeadHeight": 3.907
     },
@@ -77,121 +77,121 @@
     },
     {
       "name": "cheekPuff_R",
-      "movingVerts": 2689,
+      "movingVerts": 2687,
       "maxDisplacement": 0.05383,
       "percentOfHeadHeight": 6.384
     },
     {
       "name": "cheekPuff_L",
-      "movingVerts": 2437,
+      "movingVerts": 2435,
       "maxDisplacement": 0.05314,
       "percentOfHeadHeight": 6.302
     },
     {
       "name": "cheekRaiser_R",
-      "movingVerts": 2849,
+      "movingVerts": 2860,
       "maxDisplacement": 0.02603,
       "percentOfHeadHeight": 3.087
     },
     {
       "name": "cheekRaiser_L",
-      "movingVerts": 2693,
+      "movingVerts": 2694,
       "maxDisplacement": 0.02598,
       "percentOfHeadHeight": 3.081
     },
     {
       "name": "cheekSquint_R",
-      "movingVerts": 4557,
+      "movingVerts": 4568,
       "maxDisplacement": 0.02376,
       "percentOfHeadHeight": 2.818
     },
     {
       "name": "cheekSquint_L",
-      "movingVerts": 4408,
+      "movingVerts": 4409,
       "maxDisplacement": 0.02369,
       "percentOfHeadHeight": 2.81
     },
     {
       "name": "eyeBlink_R",
-      "movingVerts": 338,
+      "movingVerts": 350,
       "maxDisplacement": 0.0247,
       "percentOfHeadHeight": 2.929
     },
     {
       "name": "eyeBlink_L",
-      "movingVerts": 347,
+      "movingVerts": 348,
       "maxDisplacement": 0.02774,
       "percentOfHeadHeight": 3.29
     },
     {
       "name": "eyeLookDown_R",
-      "movingVerts": 316,
+      "movingVerts": 327,
       "maxDisplacement": 0.02098,
       "percentOfHeadHeight": 2.488
     },
     {
       "name": "eyeLookDown_L",
-      "movingVerts": 311,
+      "movingVerts": 312,
       "maxDisplacement": 0.02475,
       "percentOfHeadHeight": 2.935
     },
     {
       "name": "eyeLookIn_R",
-      "movingVerts": 261,
+      "movingVerts": 272,
       "maxDisplacement": 0.00854,
       "percentOfHeadHeight": 1.012
     },
     {
       "name": "eyeLookIn_L",
-      "movingVerts": 227,
+      "movingVerts": 228,
       "maxDisplacement": 0.00863,
       "percentOfHeadHeight": 1.024
     },
     {
       "name": "eyeLookOut_R",
-      "movingVerts": 251,
-      "maxDisplacement": 0.00938,
-      "percentOfHeadHeight": 1.113
+      "movingVerts": 262,
+      "maxDisplacement": 0.00929,
+      "percentOfHeadHeight": 1.102
     },
     {
       "name": "eyeLookOut_L",
-      "movingVerts": 225,
+      "movingVerts": 226,
       "maxDisplacement": 0.00929,
       "percentOfHeadHeight": 1.102
     },
     {
       "name": "eyeLookUp_R",
-      "movingVerts": 267,
+      "movingVerts": 278,
       "maxDisplacement": 0.00988,
       "percentOfHeadHeight": 1.171
     },
     {
       "name": "eyeLookUp_L",
-      "movingVerts": 265,
+      "movingVerts": 266,
       "maxDisplacement": 0.01092,
       "percentOfHeadHeight": 1.295
     },
     {
       "name": "eyeSquint_R",
-      "movingVerts": 1651,
+      "movingVerts": 1662,
       "maxDisplacement": 0.01401,
       "percentOfHeadHeight": 1.661
     },
     {
       "name": "eyeSquint_L",
-      "movingVerts": 1537,
+      "movingVerts": 1538,
       "maxDisplacement": 0.0127,
       "percentOfHeadHeight": 1.506
     },
     {
       "name": "eyeWide_R",
-      "movingVerts": 135,
+      "movingVerts": 143,
       "maxDisplacement": 0.00994,
       "percentOfHeadHeight": 1.179
     },
     {
       "name": "eyeWide_L",
-      "movingVerts": 146,
+      "movingVerts": 147,
       "maxDisplacement": 0.01105,
       "percentOfHeadHeight": 1.31
     },
@@ -209,7 +209,7 @@
     },
     {
       "name": "jawOpen",
-      "movingVerts": 5980,
+      "movingVerts": 5981,
       "maxDisplacement": 0.16057,
       "percentOfHeadHeight": 19.043
     },
@@ -275,13 +275,13 @@
     },
     {
       "name": "mouthPress_R",
-      "movingVerts": 1923,
+      "movingVerts": 1926,
       "maxDisplacement": 0.01651,
       "percentOfHeadHeight": 1.958
     },
     {
       "name": "mouthPress_L",
-      "movingVerts": 1768,
+      "movingVerts": 1767,
       "maxDisplacement": 0.01574,
       "percentOfHeadHeight": 1.867
     },
@@ -317,55 +317,55 @@
     },
     {
       "name": "mouthShrugUpper",
-      "movingVerts": 357,
+      "movingVerts": 356,
       "maxDisplacement": 0.02355,
       "percentOfHeadHeight": 2.793
     },
     {
       "name": "mouthSmile_R",
-      "movingVerts": 3509,
+      "movingVerts": 3526,
       "maxDisplacement": 0.05921,
       "percentOfHeadHeight": 7.022
     },
     {
       "name": "mouthSmile_L",
-      "movingVerts": 3206,
+      "movingVerts": 3207,
       "maxDisplacement": 0.05904,
       "percentOfHeadHeight": 7.002
     },
     {
       "name": "mouthStretch_R",
-      "movingVerts": 2071,
+      "movingVerts": 2070,
       "maxDisplacement": 0.03832,
       "percentOfHeadHeight": 4.544
     },
     {
       "name": "mouthStretch_L",
-      "movingVerts": 1795,
+      "movingVerts": 1797,
       "maxDisplacement": 0.03833,
       "percentOfHeadHeight": 4.546
     },
     {
       "name": "mouthUpperUp_R",
-      "movingVerts": 2213,
+      "movingVerts": 2232,
       "maxDisplacement": 0.03298,
       "percentOfHeadHeight": 3.911
     },
     {
       "name": "mouthUpperUp_L",
-      "movingVerts": 1973,
+      "movingVerts": 1977,
       "maxDisplacement": 0.03369,
       "percentOfHeadHeight": 3.996
     },
     {
       "name": "noseSneer_R",
-      "movingVerts": 3689,
+      "movingVerts": 3704,
       "maxDisplacement": 0.03904,
       "percentOfHeadHeight": 4.63
     },
     {
       "name": "noseSneer_L",
-      "movingVerts": 3390,
+      "movingVerts": 3392,
       "maxDisplacement": 0.03888,
       "percentOfHeadHeight": 4.611
     }

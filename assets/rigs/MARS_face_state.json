@@ -38,8 +38,8 @@
   },
   "weights": {
     "method": "mandible boundary: the lip seam at the mouth, rising to the ear line at the TMJ; blend band capped by the width of the cut so the lip-edge vertices are never caught mid-blend",
-    "jawVertices": 5668,
-    "jawPercent": 23.63,
+    "jawVertices": 5676,
+    "jawPercent": 23.65,
     "lowerLipMeanJawWeight": 0.9939,
     "upperLipMeanJawWeight": 0.022
   },
@@ -48,7 +48,7 @@
     "open22deg": 0.13898,
     "wide32deg": 0.19267,
     "delta": 0.10936,
-    "deltaPercentOfHeadHeight": 0.0,
+    "deltaPercentOfHeadHeight": 100.0,
     "threshold": 3.0,
     "method": "distance between the two lip-edge vertices the boolean created, tracked by index through the armature"
   },
@@ -85,34 +85,34 @@
   "blink": {
     "blink_L": {
       "chosen": "blink_L",
-      "lidVerts": 73,
-      "lidMarginVerts": 49,
-      "travelTowardClosure": 0.02639,
-      "openingsTravelled": 1.047,
-      "openingsTravelledWholeBand": 0.79,
+      "lidVerts": 76,
+      "lidMarginVerts": 51,
+      "travelTowardClosure": 0.02589,
+      "openingsTravelled": 1.027,
+      "openingsTravelledWholeBand": 0.784,
       "eyeballRaysOpen": 25,
-      "eyeballRaysClosed": 25,
-      "occlusionPercent": 0.0,
+      "eyeballRaysClosed": 0,
+      "occlusionPercent": 100.0,
       "candidates": {
-        "blink_L": 1.047,
-        "facs_eyeBlink_L": 0.138
+        "blink_L": 1.027,
+        "facs_eyeBlink_L": 0.134
       },
       "verdict": "CLOSES",
       "method": "lid travel projected onto the upper->lower axis, as a fraction of that eye's measured opening, measured at the LID MARGIN (skin higher on the lid travels less, which is anatomy, not weakness). Occlusion is reported but is NOT the verdict: it cannot tell a closing lid from one being peeled open."
     },
     "blink_R": {
       "chosen": "blink_R",
-      "lidVerts": 77,
-      "lidMarginVerts": 51,
-      "travelTowardClosure": 0.02689,
-      "openingsTravelled": 1.073,
-      "openingsTravelledWholeBand": 0.807,
+      "lidVerts": 88,
+      "lidMarginVerts": 63,
+      "travelTowardClosure": 0.02655,
+      "openingsTravelled": 1.059,
+      "openingsTravelledWholeBand": 0.833,
       "eyeballRaysOpen": 25,
-      "eyeballRaysClosed": 25,
-      "occlusionPercent": 0.0,
+      "eyeballRaysClosed": 0,
+      "occlusionPercent": 100.0,
       "candidates": {
-        "blink_R": 1.073,
-        "facs_eyeBlink_R": 0.203
+        "blink_R": 1.059,
+        "facs_eyeBlink_R": 0.108
       },
       "verdict": "CLOSES",
       "method": "lid travel projected onto the upper->lower axis, as a fraction of that eye's measured opening, measured at the LID MARGIN (skin higher on the lid travels less, which is anatomy, not weakness). Occlusion is reported but is NOT the verdict: it cannot tell a closing lid from one being peeled open."
@@ -184,11 +184,11 @@
       "maxTravel": 0.02046
     },
     "cheek_puff_L": {
-      "verts": 583,
+      "verts": 589,
       "maxTravel": 0.0188
     },
     "cheek_puff_R": {
-      "verts": 745,
+      "verts": 758,
       "maxTravel": 0.0188
     },
     "cheek_suck_L": {
@@ -196,24 +196,24 @@
       "maxTravel": 0.01291
     },
     "cheek_suck_R": {
-      "verts": 517,
+      "verts": 528,
       "maxTravel": 0.01291
     },
     "blink_L": {
-      "verts": 105,
-      "maxTravel": 0.02909
+      "verts": 108,
+      "maxTravel": 0.029
     },
     "blink_R": {
-      "verts": 96,
-      "maxTravel": 0.02888
+      "verts": 107,
+      "maxTravel": 0.02873
     },
     "squint_L": {
-      "verts": 86,
-      "maxTravel": 0.01047
+      "verts": 92,
+      "maxTravel": 0.0103
     },
     "squint_R": {
-      "verts": 95,
-      "maxTravel": 0.01045
+      "verts": 107,
+      "maxTravel": 0.01032
     },
     "nostril_flare_L": {
       "verts": 96,
@@ -228,19 +228,19 @@
       "maxTravel": 0.01594
     },
     "brow_up_L": {
-      "verts": 431,
+      "verts": 432,
       "maxTravel": 0.04053
     },
     "brow_up_R": {
-      "verts": 387,
+      "verts": 398,
       "maxTravel": 0.0421
     },
     "brow_down_L": {
-      "verts": 372,
+      "verts": 373,
       "maxTravel": 0.02802
     },
     "brow_down_R": {
-      "verts": 313,
+      "verts": 326,
       "maxTravel": 0.02927
     },
     "nose_sneer": {
@@ -266,9 +266,9 @@
     "correspondence": {
       "k": 4,
       "maxDistance": 0.035,
-      "marsVerts": 23985,
-      "mapped": 10125,
-      "meanNearest": 0.01695,
+      "marsVerts": 23997,
+      "mapped": 10137,
+      "meanNearest": 0.01693,
       "p95Nearest": 0.03206,
       "sourceParts": [
         "face",
@@ -303,226 +303,226 @@
     ],
     "shapeKeys": {
       "facs_browDown_R": {
-        "verts": 4547,
+        "verts": 4566,
         "maxTravel": 0.02377
       },
       "facs_browDown_L": {
-        "verts": 4517,
+        "verts": 4522,
         "maxTravel": 0.02443
       },
       "facs_browInnerUp_R": {
-        "verts": 5132,
+        "verts": 5151,
         "maxTravel": 0.02218
       },
       "facs_browInnerUp_L": {
-        "verts": 5184,
+        "verts": 5189,
         "maxTravel": 0.02313
       },
       "facs_browOuterUp_R": {
-        "verts": 5163,
+        "verts": 5182,
         "maxTravel": 0.03295
       },
       "facs_browOuterUp_L": {
-        "verts": 5179,
+        "verts": 5184,
         "maxTravel": 0.0321
       },
       "facs_cheekPuff_R": {
-        "verts": 4786,
+        "verts": 4805,
         "maxTravel": 0.05383
       },
       "facs_cheekPuff_L": {
-        "verts": 4874,
+        "verts": 4879,
         "maxTravel": 0.05314
       },
       "facs_cheekRaiser_R": {
-        "verts": 5058,
+        "verts": 5077,
         "maxTravel": 0.02603
       },
       "facs_cheekRaiser_L": {
-        "verts": 5105,
+        "verts": 5110,
         "maxTravel": 0.02598
       },
       "facs_cheekSquint_R": {
-        "verts": 5213,
+        "verts": 5232,
         "maxTravel": 0.02376
       },
       "facs_cheekSquint_L": {
-        "verts": 5239,
+        "verts": 5244,
         "maxTravel": 0.02369
       },
       "facs_eyeBlink_R": {
-        "verts": 7361,
+        "verts": 7372,
         "maxTravel": 0.0247
       },
       "facs_eyeBlink_L": {
-        "verts": 7391,
+        "verts": 7401,
         "maxTravel": 0.02774
       },
       "facs_eyeLookDown_R": {
-        "verts": 3951,
+        "verts": 3970,
         "maxTravel": 0.02098
       },
       "facs_eyeLookDown_L": {
-        "verts": 4072,
+        "verts": 4077,
         "maxTravel": 0.02475
       },
       "facs_eyeLookIn_R": {
-        "verts": 3777,
+        "verts": 3796,
         "maxTravel": 0.00854
       },
       "facs_eyeLookIn_L": {
-        "verts": 3931,
+        "verts": 3936,
         "maxTravel": 0.00863
       },
       "facs_eyeLookOut_R": {
-        "verts": 3788,
-        "maxTravel": 0.00938
+        "verts": 3807,
+        "maxTravel": 0.00929
       },
       "facs_eyeLookOut_L": {
-        "verts": 3934,
+        "verts": 3939,
         "maxTravel": 0.00929
       },
       "facs_eyeLookUp_R": {
-        "verts": 3871,
+        "verts": 3890,
         "maxTravel": 0.00988
       },
       "facs_eyeLookUp_L": {
-        "verts": 3948,
+        "verts": 3953,
         "maxTravel": 0.01092
       },
       "facs_eyeSquint_R": {
-        "verts": 4767,
+        "verts": 4786,
         "maxTravel": 0.01401
       },
       "facs_eyeSquint_L": {
-        "verts": 4836,
+        "verts": 4841,
         "maxTravel": 0.0127
       },
       "facs_eyeWide_R": {
-        "verts": 3679,
+        "verts": 3698,
         "maxTravel": 0.00994
       },
       "facs_eyeWide_L": {
-        "verts": 3805,
+        "verts": 3810,
         "maxTravel": 0.01105
       },
       "facs_jawForward": {
-        "verts": 7802,
+        "verts": 7818,
         "maxTravel": 0.04234
       },
       "facs_jawLeft": {
-        "verts": 8060,
+        "verts": 8072,
         "maxTravel": 0.03407
       },
       "facs_jawOpen": {
-        "verts": 8041,
+        "verts": 8053,
         "maxTravel": 0.16057
       },
       "facs_jawRight": {
-        "verts": 8075,
+        "verts": 8088,
         "maxTravel": 0.03409
       },
       "facs_mouthClose": {
-        "verts": 2851,
+        "verts": 2847,
         "maxTravel": 0.15882
       },
       "facs_mouthDimple_R": {
-        "verts": 5155,
+        "verts": 5170,
         "maxTravel": 0.03355
       },
       "facs_mouthDimple_L": {
-        "verts": 5339,
+        "verts": 5346,
         "maxTravel": 0.03288
       },
       "facs_mouthFrown_R": {
-        "verts": 4701,
+        "verts": 4720,
         "maxTravel": 0.02321
       },
       "facs_mouthFrown_L": {
-        "verts": 4743,
+        "verts": 4748,
         "maxTravel": 0.02331
       },
       "facs_mouthFunnel": {
-        "verts": 8082,
+        "verts": 8094,
         "maxTravel": 0.04477
       },
       "facs_mouthLeft": {
-        "verts": 8157,
+        "verts": 8169,
         "maxTravel": 0.07136
       },
       "facs_mouthLowerDown_R": {
-        "verts": 4587,
+        "verts": 4610,
         "maxTravel": 0.01748
       },
       "facs_mouthLowerDown_L": {
-        "verts": 4662,
+        "verts": 4668,
         "maxTravel": 0.01718
       },
       "facs_mouthPress_R": {
-        "verts": 4852,
+        "verts": 4871,
         "maxTravel": 0.01651
       },
       "facs_mouthPress_L": {
-        "verts": 4946,
+        "verts": 4951,
         "maxTravel": 0.01574
       },
       "facs_mouthPucker": {
-        "verts": 7877,
+        "verts": 7889,
         "maxTravel": 0.04288
       },
       "facs_mouthRight": {
-        "verts": 8165,
+        "verts": 8177,
         "maxTravel": 0.07152
       },
       "facs_mouthRollLower": {
-        "verts": 7878,
+        "verts": 7876,
         "maxTravel": 0.04857
       },
       "facs_mouthRollUpper": {
-        "verts": 8102,
+        "verts": 8105,
         "maxTravel": 0.04411
       },
       "facs_mouthShrugLower": {
-        "verts": 7413,
+        "verts": 7428,
         "maxTravel": 0.04311
       },
       "facs_mouthShrugUpper": {
-        "verts": 7208,
+        "verts": 7231,
         "maxTravel": 0.02355
       },
       "facs_mouthSmile_R": {
-        "verts": 5180,
+        "verts": 5199,
         "maxTravel": 0.05921
       },
       "facs_mouthSmile_L": {
-        "verts": 5217,
+        "verts": 5222,
         "maxTravel": 0.05904
       },
       "facs_mouthStretch_R": {
-        "verts": 7940,
+        "verts": 7955,
         "maxTravel": 0.03832
       },
       "facs_mouthStretch_L": {
-        "verts": 8061,
+        "verts": 8073,
         "maxTravel": 0.03833
       },
       "facs_mouthUpperUp_R": {
-        "verts": 7818,
+        "verts": 7831,
         "maxTravel": 0.03298
       },
       "facs_mouthUpperUp_L": {
-        "verts": 7838,
+        "verts": 7851,
         "maxTravel": 0.03369
       },
       "facs_noseSneer_R": {
-        "verts": 5201,
+        "verts": 5220,
         "maxTravel": 0.03904
       },
       "facs_noseSneer_L": {
-        "verts": 5238,
+        "verts": 5243,
         "maxTravel": 0.03888
       }
     }
   },
-  "meshVertices": 23985
+  "meshVertices": 23997
 }

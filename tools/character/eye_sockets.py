@@ -33,6 +33,14 @@ import numpy as np
 # stays capable of a pupil the moment a scene asks for one.
 APPEAR = json.load(open(os.path.abspath("assets/rigs/MARS_appearance.json")))
 VARIANT = opt("--variant", APPEAR.get("activeVariant", "canonical"))
+# HOW MUCH OF THE MEASURED LID CONTOUR TO CUT.
+# 0.86 cuts an opening wider than a correctly-seated 23 mm globe can back, so
+# rays over the top of the eye reach the socket tunnel -- 18% of the aperture.
+# Inflating the globe to plug that is what produced the bulging, too-round eye
+# the owner rejected. The opening is the thing that should be smaller: a rest
+# eye is NARROW, and a wide-eyed look comes from lifting the lid, not from
+# carving a bigger hole. Swept against the real cut, not chosen.
+INFLATE = float(opt("--inflate", "0.78"))
 PROBE = "--probe" in argv        # report the hole instead of refusing, for diagnosis
 if VARIANT not in APPEAR["variants"]:
     sys.exit("unknown appearance variant %r; have %s" % (VARIANT, list(APPEAR["variants"])))
@@ -119,7 +127,7 @@ for side in ("L", "R"):
     # contour, full size, because the rest pose of an eye is OPEN.
     # Cut slightly INSIDE the measured contour. MediaPipe's lid contour traces
     # the outer lid margin; cutting the whole of it leaves more hole than eye.
-    for depth, inflate in ((-fissure * 0.35, 0.86), (fissure * 0.06, 0.86),
+    for depth, inflate in ((-fissure * 0.35, INFLATE), (fissure * 0.06, INFLATE),
                            (fissure * 0.40, 0.80), (fissure * 0.70, 0.48)):
         rings.append([bm.verts.new(M @ V((p.x * inflate, depth, p.z * inflate))) for p in loc])
     N = len(loc)

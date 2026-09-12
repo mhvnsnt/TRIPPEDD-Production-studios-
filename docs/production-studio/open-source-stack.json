@@ -1,0 +1,83 @@
+{
+  "schema": "trippedd.open-source-stack/v1",
+  "authority": "TRIPPEDD",
+  "production_graph": "src/core/pipeline/productionGraph.ts",
+  "components": [
+    {
+      "id": "showrunner-sdk",
+      "role": "typed-production-artifacts",
+      "status": "adopted",
+      "source": "vendor/showrunner",
+      "license": "Apache-2.0",
+      "gate": "artifact-contract"
+    },
+    {
+      "id": "blender",
+      "role": "3d-scene-executor",
+      "status": "required",
+      "gate": "actual-pixels"
+    },
+    {
+      "id": "opentimelineio",
+      "role": "editorial-interchange",
+      "status": "planned-adapter",
+      "upstream": "AcademySoftwareFoundation/OpenTimelineIO",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "opencue",
+      "role": "render-dispatch",
+      "status": "planned-adapter",
+      "upstream": "AcademySoftwareFoundation/OpenCue",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "kitsu",
+      "role": "production-tracking-interchange",
+      "status": "planned-adapter",
+      "authority": "TRIPPEDD"
+    },
+    {
+      "id": "ffmpeg-ffprobe",
+      "role": "media-inspection-and-assembly",
+      "status": "required",
+      "gate": "media-integrity"
+    },
+    {
+      "id": "opencv",
+      "role": "mechanical-pixel-qc",
+      "status": "planned",
+      "gate": "visual-qc"
+    },
+    {
+      "id": "vision-model",
+      "role": "semantic-visual-qc",
+      "status": "planned",
+      "gate": "visual-qc"
+    }
+  ],
+  "first_proof": {
+    "character": "MARS_CANONICAL",
+    "world": "GM-WORLD-0001",
+    "shot": "GM-WORLD-0001-FIRST-SHOT",
+    "executor": "Blender",
+    "required_artifacts": [
+      "scene-manifest",
+      "render-receipt",
+      "retrievable-pixels",
+      "physical-qc",
+      "visual-qc",
+      "evidence-receipt"
+    ],
+    "pass_requires_all": true,
+    "current_gate": "BLOCKED_UNTIL_REAL_RENDER"
+  },
+  "invariants": [
+    "scheduler_success_is_not_production_pass",
+    "manifest_rendered_true_is_not_pixel_evidence",
+    "exact_render_bytes_must_be_reopened_before_pass",
+    "physical_qc_cannot_override_visual_fail",
+    "visual_qc_cannot_override_physical_fail",
+    "upstream_asset_change_invalidates_dependent_evidence"
+  ]
+}

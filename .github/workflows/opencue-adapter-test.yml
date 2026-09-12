@@ -4,13 +4,18 @@ on:
   pull_request:
     paths:
       - "tools/environment/opencue_first_shot_dispatch.py"
-      - "tests/test_opencue_first_shot_dispatch.py"
+      - "tools/environment/build_opencue_first_shot_job.py"
+      - "tools/environment/build_opencue_pyoutline.py"
+      - "tools/environment/test_opencue_first_shot_job.py"
+      - "tools/environment/opencue_first_shot_dispatch.py"
       - ".github/workflows/opencue-adapter-test.yml"
   push:
     branches: [main]
     paths:
       - "tools/environment/opencue_first_shot_dispatch.py"
-      - "tests/test_opencue_first_shot_dispatch.py"
+      - "tools/environment/build_opencue_first_shot_job.py"
+      - "tools/environment/build_opencue_pyoutline.py"
+      - "tools/environment/test_opencue_first_shot_job.py"
       - ".github/workflows/opencue-adapter-test.yml"
 
 permissions:
@@ -22,4 +27,47 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run fail-closed OpenCue adapter tests
-        run: python3 -m unittest -v tests/test_opencue_first_shot_dispatch.py
+        run: |
+          python3 -m unittest -v tools/environment/test_opencue_first_shot_job.py
+
+      - name: Install PyOutline inspection client
+        run: python3 -m pip install --user opencue-pyoutline
+
+      - name: Build and inspect a non-submitting first-shot outline
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/opencue
+          printf 'synthetic-blend-for-contract-test\n' > .artifacts/opencue/GM-WORLD-0001-FIRST-SHOT.blend
+          sha=$(sha256sum .artifacts/opencue/GM-WORLD-0001-FIRST-SHOT.blend | awk '{print $1}')
+          cat > .artifacts/opencue/render_receipt.json <<EOF
+          {
+            "rendered": true,
+            "shot_id": "GM-WORLD-0001-FIRST-SHOT",
+            "world_id": "GM-WORLD-0001",
+            "frame": 1,
+            "source_scene": {
+              "path": ".artifacts/opencue/GM-WORLD-0001-FIRST-SHOT.blend",
+              "sha256": "${sha}"
+            },
+            "artifact": {
+              "format": "png",
+              "sha256": "contract-test-png-hash"
+            },
+            "visual_qc": "NOT_EVALUATED",
+            "physical_qc": "NOT_EVALUATED"
+          }
+          EOF
+          python3 tools/environment/opencue_first_shot_dispatch.py \
+            --receipt .artifacts/opencue/render_receipt.json \
+            --job-json .artifacts/opencue/opencue_dispatch.json
+          python3 tools/environment/build_opencue_first_shot_job.py \
+            --blend .artifacts/opencue/GM-WORLD-0001-FIRST-SHOT.blend \
+            --output-dir .artifacts/opencue/frames \
+            --receipt .artifacts/opencue/render_receipt.json \
+            --spec-output .artifacts/opencue/opencue_job.json
+          python3 tools/environment/build_opencue_pyoutline.py \
+            --spec .artifacts/opencue/opencue_job.json \
+            --output .artifacts/opencue/first-shot.outline
+          pycuerun -i .artifacts/opencue/first-shot.outline
+          ! grep -q 'cuerun.launch' .artifacts/opencue/first-shot.outline
+          echo 'OPENCUE_PYOUTLINE: INSPECTED_NOT_SUBMITTED'

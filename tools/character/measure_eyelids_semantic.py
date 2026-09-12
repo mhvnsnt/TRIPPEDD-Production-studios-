@@ -177,20 +177,15 @@ def main():
     selected = {}
     errors = []
 
-    for name, indices in (
-        ("eye_L_upper", sets["upper_lid"]),
-        ("eye_L_lower", sets["lower_lid"]),
-        ("eye_R_upper", sets["upper_lid"]),
-        ("eye_R_lower", sets["lower_lid"]),
+    for name, indices, side_set in (
+        ("eye_L_upper", sets["upper_lid"], set(sets["eye_left"])),
+        ("eye_L_lower", sets["lower_lid"], set(sets["eye_left"])),
+        ("eye_R_upper", sets["upper_lid"], set(sets["eye_right"])),
+        ("eye_R_lower", sets["lower_lid"], set(sets["eye_right"])),
     ):
-        # The same semantic sets are split into anatomical sides using the
-        # canonical x coordinate; this avoids viewer-left/right ambiguity.
-        side = "L" if name.startswith("eye_L") else "R"
-        wanted = []
-        for idx in indices:
-            x = canon[idx, 0]
-            if (side == "L" and x >= 0) or (side == "R" and x < 0):
-                wanted.append(idx)
+        # Split using MediaPipe's explicit eye membership, not coordinate sign.
+        # This removes the viewer-left/subject-left ambiguity entirely.
+        wanted = [idx for idx in indices if idx in side_set]
 
         pts = []
         for idx in wanted:

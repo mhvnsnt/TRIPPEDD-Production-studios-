@@ -65,7 +65,9 @@
     "expressions_and_blinks": "tools/character/validate_expression_blink_package.py",
     "creative_render": "tools/animation/validate_performance_render.py",
     "seeded_environment": "tools/environment/run_first_creative_shot.sh",
-    "gaussian_splat": "tools/environment/ply_to_particle_field.py"
+    "gaussian_splat": "tools/environment/ply_to_particle_field.py",
+    "semantic_eyelids": "tools/character/measure_eyelids_semantic.py",
+    "oral_centerline": "tools/character/validate_mars_oral_centerline.py"
   },
   "shared_character_tools": {
     "oral_bridge": "ad29c9cacc5b4b3905fd66e9210618d3ed157242",
@@ -80,5 +82,5 @@
     "promotion": "God Molecule produces candidate character assets and evidence; TRIPPEDD promotes only after executable gates and human-visible evidence",
     "no_direct_canon_rewrite": true
   },
-  "notes": "God Molecule lab and TRIPPEDD production use the same executable character/oral implementation; no third oral stack. The MARS_LOD2 placement plates are constraints, not canonical mesh data. The actual MARS_LOD2.glb must exist before MVMP-478 landmarks, sockets, rig, blink, or PNG evidence may PASS. This file is the cross-repository source-of-truth for the bridge contract."
+  "notes": "God Molecule lab and TRIPPEDD production use the same executable character/oral implementation; no third oral stack. The MARS_LOD2 placement plates are constraints, not canonical mesh data. The actual MARS_LOD2.glb must exist before MVMP-478 landmarks, sockets, rig, blink, or PNG evidence may PASS. This file is the cross-repository source-of-truth for the bridge contract. Semantic eyelid authority is canonical-face-model based and the oral donor is re-anchored to the dental-arch centerline; both are fail-closed before visual promotion."
 }

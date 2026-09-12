@@ -37,42 +37,54 @@ The production build was upgraded from the original minimal stick-figure constru
 
 The character-performance entry point continues to reuse the deterministic EP01 compositor while replacing the old whole-sheet teen translation with the procedural performance rig.
 
-### Technical issues identified
-The production process also exposed problems that need continued attention:
+### Technical issues identified and corrective work
+1. **Characters looked too much like generic stick figures.** Corrected by moving the procedural rig toward developed animated people with clothing, head treatments, hands, legs, shoes and distinct silhouettes.
+2. **Pose transitions were not truly interpolated.** Corrected with numeric interpolation between pose states.
+3. **The three teens could react like synchronized puppets.** Corrected with performer-specific delay and tempo values.
+4. **Character richness could regress silently.** Regression tests now check for distinct head shapes, clothing styles and body geometry.
+5. **The opening still needed a verified render path.** Added `tools/render_preflight.py` to fail fast on missing source assets or required SVG rasterizer/FFmpeg/FFprobe dependencies instead of falsely implying that the render is complete.
+6. **Open-source tooling was not clearly assigned a role.** Added `tools/OPEN-SOURCE-STACK.md` documenting OpenToonz as the primary traditional/cutout escalation backend and Blender Grease Pencil as the secondary deformation/interpolation escalation backend. The deterministic Python/SVG/FFmpeg path remains the default for inexpensive reproducible shots.
+7. **Tooling confusion occurred between Git blob SHAs and commit SHAs.** The workflow was corrected by checking the branch's current commit before writes/ref updates.
+8. **Repository branch clutter remains.** The existing `in-bushes-opening-assets` branch remains the working branch for this show; no new branch was created for this correction pass.
 
-1. The previous character layer could make the teens feel like translated cutouts rather than independently acting characters.
-2. Earlier pose transitions were not truly interpolated; numeric pose values are now interpolated between states.
-3. The three performers need independent timing so they do not react on identical frames.
-4. The opening still needs a verified render through the upgraded character pipeline; the existence of timing/build files must not be confused with a finished, verified video render.
-5. Tooling confusion occurred when a Git blob SHA was treated as though it were a commit SHA. The workflow was corrected by checking the branch's current commit before ref updates/writes.
-6. The repository contains too many historical experimental branches. The existing `in-bushes-opening-assets` branch should remain the working branch for this show unless a genuinely separate workstream requires another branch.
+### Open-source decisions
+The project will use open-source software because it solves concrete production problems, not simply to accumulate dependencies.
 
-### Current production branch checkpoint
-The active working branch is:
+- **OpenToonz:** traditional/cutout 2D production escalation.
+- **Blender 4.5 LTS Grease Pencil:** point/stroke interpolation, deformation, inherited/parented cutout motion, and shots that need a more robust animation/compositing environment.
+- **FFmpeg / FFprobe:** deterministic delivery encoding and media QC.
+- **Python stdlib:** scene validation, procedural performance and preflight without a large dependency footprint.
+
+Official Blender documentation confirms Grease Pencil supports traditional 2D, cutout animation, deformation and inherited animation, and includes Interpolate Sequence for generated in-between frames. Official OpenToonz documentation identifies it as an open-source full-featured 2D animation system and documents its licensing boundaries.
+
+### Current production branch
+Working branch:
 
 `in-bushes-opening-assets`
 
-Latest checkpoint recorded during this conversation:
+Recent correction checkpoints include:
 
-`e3e23045b600188a7af02126bac8c1662bebe519` — `test: lock richer teen character design against regression`
-
-The branch contains the upgraded teen-performance system and regression checks intended to prevent a return to the earlier synchronized/minimal character behavior.
+- richer teen character rig and regression coverage;
+- `90a6bafae13e7607a1245329d673475cabe68587` — added render preflight;
+- `a5f4d34b11f6937a77a7dd79961a8868af23cc88` — documented open-source animation escalation stack;
+- `99d1dd88e1dd8324b2b3e0ea880942bda961e697` — aligned animation-build documentation with richer character rig and preflight.
 
 ### Next build direction
-The next character pass should continue beyond the current upgrade rather than treating it as final. Priority areas:
+Continue from the corrected foundation rather than returning to the old prototype:
 
-- stronger facial-expression system
-- more distinctive hairstyles/accessories without overdesigning
-- clearer body proportions and silhouettes
-- stronger clothing shapes
-- character-specific idle habits
-- character-specific running styles
-- character-specific throwing/beer reactions
-- better prop interaction
-- staging that lets the characters carry comedy instead of relying on camera movement
-- verified frame-level/render-level QC of the full 37-second opening
+- strengthen facial-expression system;
+- add distinctive hairstyles/accessories without overdesigning;
+- improve body proportions and silhouettes;
+- strengthen clothing shapes;
+- add character-specific idle habits;
+- add character-specific running styles;
+- improve character-specific throwing/beer reactions;
+- improve prop interaction;
+- extend the same component-level animation approach to Busch;
+- use Blender/OpenToonz only when the procedural layer reaches a real limitation;
+- produce a verified preview render and run frame/media QC before calling the opening complete.
 
 The production principle remains: **low-fi should mean economical, not unfinished.**
 
 ## Continuity Note
-This entry is a production record of the conversation and decisions available in the current session. It does not claim to reproduce unavailable historical transcript text verbatim.
+This entry records the material production decisions and technical corrections available in the current session. It does not claim to reproduce unavailable historical transcript text verbatim.

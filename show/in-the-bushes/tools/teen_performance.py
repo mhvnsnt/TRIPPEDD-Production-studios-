@@ -2,8 +2,8 @@
 """Procedural stick-figure teen performance layer for EP01.
 
 Three reusable teen performers share the same low-fi construction but differ
-in silhouette, timing, posture, and reaction. The goal is readable personality
-without turning the opening into a crowded character-design exercise.
+in silhouette, timing, posture, and reaction. Pose changes are interpolated so
+characters visibly act between extremes instead of snapping between poses.
 """
 from __future__ import annotations
 
@@ -12,11 +12,11 @@ import math
 W, H = 1920, 1080
 TEENS = [
     {"x": 560, "y": 430, "head": 45, "body": 160, "leg": 92, "offset": 0.0,
-     "head_shape": "spike", "stance": 1.00, "arm_bias": 1.0},
+     "head_shape": "spike", "stance": 1.00, "arm_bias": 1.0, "delay": 0.0, "tempo": 1.06},
     {"x": 760, "y": 455, "head": 43, "body": 165, "leg": 88, "offset": 1.7,
-     "head_shape": "cap", "stance": 0.92, "arm_bias": 0.82},
+     "head_shape": "cap", "stance": 0.92, "arm_bias": 0.82, "delay": 3.0, "tempo": 0.94},
     {"x": 950, "y": 450, "head": 44, "body": 158, "leg": 96, "offset": 3.1,
-     "head_shape": "round", "stance": 1.08, "arm_bias": 0.68},
+     "head_shape": "round", "stance": 1.08, "arm_bias": 0.68, "delay": 6.0, "tempo": 0.88},
 ]
 
 
@@ -64,15 +64,30 @@ def _pose_values(name):
 
 
 def _sequence(frame, start, end, poses):
+    """Return an interpolated pose.
+
+    Every pose is a numeric vector plus a discrete mouth drawing. The old rig
+    returned the left pose and an unused blend value, which made acting snap.
+    This version interpolates every numeric body/head/limb value and only
+    switches mouth artwork at the midpoint of each pose transition.
+    """
     t = clamp((frame - start) / max(1, end - start))
     if len(poses) == 1:
-        return poses[0], 1.0
+        return _pose_values(poses[0])
     u = ease(t) * (len(poses) - 1)
     i = min(len(poses) - 2, int(u))
-    return poses[i], u - i
+    lt = u - i
+    a = _pose_values(poses[i])
+    b = _pose_values(poses[i + 1])
+    values = tuple((lerp(a[j], b[j], lt) if isinstance(a[j], (int, float)) and isinstance(b[j], (int, float)) else (a[j] if lt < 0.5 else b[j])) for j in range(len(a)))
+    return values
 
 
-def pose_at(frame: int, shot_id: str):
+def lerp(a, b, t):
+    return a + (b - a) * t
+
+
+def pose_at(frame: int, shot_id: str, performer: int = 0):
     ranges = {
         "S01": (0, 83, ["hang", "talk", "hang"]),
         "S02": (108, 143, ["hang", "turn", "stare", "panic"]),
@@ -85,9 +100,15 @@ def pose_at(frame: int, shot_id: str):
         "S09": (520, 610, ["flee", "flee_fast"]),
     }
     if shot_id not in ranges:
-        return "hang", 0.0
+        return _pose_values("hang")
     start, end, poses = ranges[shot_id]
-    return _sequence(frame, start, end, poses)
+    performer = max(0, min(len(TEENS) - 1, performer))
+    p = TEENS[performer]
+    # Positive delay makes the performer react later. Tempo changes how quickly
+    # they cross the same acting arc, creating stagger without changing shot cuts.
+    effective = start + (frame - start - p["delay"]) * p["tempo"]
+    effective += p["offset"]
+    return _sequence(effective, start, end, poses)
 
 
 def _limb(x, y, angle_deg, length):
@@ -104,35 +125,25 @@ def _head(shape, r):
 
 
 def teen_svg(frame: int, shot_id: str) -> str:
-    pose, blend = pose_at(frame, shot_id)
-    # Small stagger keeps the group from reading as one synchronized puppet.
     groups = []
     for idx, t in enumerate(TEENS):
         phase = frame * (0.35 + idx * 0.035) + t["offset"] * 35
-        sway = math.sin(math.radians(phase)) * (2.5 if pose in {"hang", "breathe", "crouch"} else 1.2)
+        pose_values = pose_at(frame, shot_id, idx)
+        lean, arm_l, arm_r, leg_l, leg_r, head_dx, head_dy, crouch, mouth = pose_values
+        sway = math.sin(math.radians(phase)) * (2.5 if shot_id in {"S01", "S05"} else 1.2)
         x, y = t["x"], t["y"]
         head, body, leg = t["head"], t["body"], t["leg"]
-        lean, arm_l, arm_r, leg_l, leg_r, head_dx, head_dy, crouch, mouth = _pose_values(pose)
 
         # Personality modifiers: impulsive commits farther, cautious protects the
-        # torso, deadpan moves less and arrives slightly late.
+        # torso, deadpan moves less and arrives later in the shared action arc.
         if idx == 0:
-            lean *= 1.12
-            arm_r += 5
-            head_dx += 3
+            lean *= 1.12; arm_r += 5; head_dx += 3
         elif idx == 1:
-            lean *= 0.78
-            arm_l *= 0.90
-            arm_r *= 0.90
-            head_dx -= 3
-            head_dy += 2
+            lean *= 0.78; arm_l *= 0.90; arm_r *= 0.90; head_dx -= 3; head_dy += 2
         else:
-            lean *= 0.62
-            arm_l *= 0.78
-            arm_r *= 0.78
-            head_dx -= 6
+            lean *= 0.62; arm_l *= 0.78; arm_r *= 0.78; head_dx -= 6
 
-        if shot_id == "S08" and pose == "throw":
+        if shot_id == "S08" and 480 <= frame <= 520:
             if idx == 0:
                 arm_r, lean = 5, -24
             elif idx == 1:
@@ -140,20 +151,17 @@ def teen_svg(frame: int, shot_id: str) -> str:
             else:
                 arm_r, lean = 34, -10
 
-        # Add a tiny temporal offset to each performer so the same pose does not
-        # land on the same frame for everyone.
         local_phase = phase + idx * 13
-        if pose in {"run", "flee", "flee_fast"}:
-            stride = math.sin(math.radians(local_phase * (1.0 if pose != "flee_fast" else 1.25))) * (18 + idx * 3)
-            leg_l -= stride
-            leg_r += stride
+        if shot_id in {"S04", "S08", "S09"}:
+            stride = math.sin(math.radians(local_phase * (1.0 if shot_id != "S09" else 1.25))) * (18 + idx * 3)
+            leg_l -= stride; leg_r += stride
             arm_l -= stride * 0.65 * t["arm_bias"]
             arm_r += stride * 0.65 * t["arm_bias"]
 
         lean += sway
         by = body + crouch
         hx, hy = head_dx, head_dy - crouch * 0.10
-        body_top = (0, 48 + crouch * 0.25)
+        body_top = (hx * 0.15, 48 + crouch * 0.25)
         body_bottom = (lean * 0.35, by)
         shoulder_y = 95 + crouch * 0.22
         hand_l = _limb(-lean * .25 - 4, shoulder_y, arm_l, 92 * t["stance"])
@@ -161,8 +169,6 @@ def teen_svg(frame: int, shot_id: str) -> str:
         foot_l = _limb(body_bottom[0], body_bottom[1], leg_l, leg + crouch * .25)
         foot_r = _limb(body_bottom[0], body_bottom[1], leg_r, leg + crouch * .25)
 
-        # Eyes are intentionally tiny and directionally simple: head direction
-        # does most of the acting at this production scale.
         eye_dx = 5 if idx == 0 else (2 if idx == 1 else 0)
         eye_dir = 1 if head_dx >= 0 else -1
         eyes = (
@@ -172,8 +178,7 @@ def teen_svg(frame: int, shot_id: str) -> str:
 
         groups.append(
             f"<g transform='translate({esc(x)} {esc(y)}) rotate({esc(lean)} 0 {esc(body/2)})'>"
-            f"{_head(t['head_shape'], head)}"
-            f"<g fill='#0b0d12' stroke='none'>{eyes}</g>"
+            f"<g transform='translate({esc(hx)} {esc(hy)})'>{_head(t['head_shape'], head)}{eyes}</g>"
             f"<path d='M{esc(body_top[0])} {esc(body_top[1])} L{esc(body_bottom[0])} {esc(body_bottom[1])}' fill='none'/>"
             f"<path d='M0 {esc(shoulder_y)} L{esc(hand_l[0])} {esc(hand_l[1])}' fill='none'/>"
             f"<path d='M0 {esc(shoulder_y)} L{esc(hand_r[0])} {esc(hand_r[1])}' fill='none'/>"

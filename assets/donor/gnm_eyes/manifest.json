@@ -1,6 +1,7 @@
 {
   "source": "ICT-VGL/ICT-FaceKit",
   "license": "MIT",
+  "nonRigidWarp": true,
   "why": "a matched eye assembly from one scan beats a sphere dropped into a prism -- globe, socket and occlusion are mutually consistent by construction",
   "eyes": {
     "eye_R": {
@@ -15,7 +16,7 @@
       "fissureWidth": 0.10708,
       "lidOpening": 0.02506,
       "aspect": 0.234,
-      "assemblyExtent": 0.09491,
+      "assemblyExtent": 0.09264,
       "eyeballDiameter": 0.09264,
       "eyeballDiameterMM": 24.0,
       "marsEyeCentre": [
@@ -37,7 +38,7 @@
       "fissureWidth": 0.11095,
       "lidOpening": 0.02522,
       "aspect": 0.227,
-      "assemblyExtent": 0.09496,
+      "assemblyExtent": 0.09264,
       "eyeballDiameter": 0.09264,
       "eyeballDiameterMM": 24.0,
       "marsEyeCentre": [

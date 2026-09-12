@@ -85,36 +85,36 @@
   "blink": {
     "blink_L": {
       "chosen": "blink_L",
-      "lidVerts": 76,
-      "lidMarginVerts": 51,
-      "travelTowardClosure": 0.02589,
-      "openingsTravelled": 1.027,
-      "openingsTravelledWholeBand": 0.784,
+      "lidVerts": 139,
+      "lidMarginVerts": 48,
+      "travelTowardClosure": 0.00828,
+      "openingsTravelled": 0.328,
+      "openingsTravelledWholeBand": 0.053,
       "eyeballRaysOpen": 123,
-      "eyeballRaysClosed": 17,
-      "occlusionPercent": 86.2,
+      "eyeballRaysClosed": 0,
+      "occlusionPercent": 100.0,
       "candidates": {
-        "blink_L": 1.027,
+        "blink_L": 0.328,
         "facs_eyeBlink_L": 0.134
       },
-      "verdict": "CLOSES",
+      "verdict": "WEAK",
       "method": "lid travel projected onto the upper->lower axis, as a fraction of that eye's measured opening, measured at the LID MARGIN (skin higher on the lid travels less, which is anatomy, not weakness). Occlusion is reported but is NOT the verdict: it cannot tell a closing lid from one being peeled open."
     },
     "blink_R": {
       "chosen": "blink_R",
-      "lidVerts": 88,
-      "lidMarginVerts": 63,
-      "travelTowardClosure": 0.02655,
-      "openingsTravelled": 1.059,
-      "openingsTravelledWholeBand": 0.833,
+      "lidVerts": 154,
+      "lidMarginVerts": 66,
+      "travelTowardClosure": 0.00811,
+      "openingsTravelled": 0.323,
+      "openingsTravelledWholeBand": 0.073,
       "eyeballRaysOpen": 118,
       "eyeballRaysClosed": 0,
       "occlusionPercent": 100.0,
       "candidates": {
-        "blink_R": 1.059,
+        "blink_R": 0.323,
         "facs_eyeBlink_R": 0.108
       },
-      "verdict": "CLOSES",
+      "verdict": "WEAK",
       "method": "lid travel projected onto the upper->lower axis, as a fraction of that eye's measured opening, measured at the LID MARGIN (skin higher on the lid travels less, which is anatomy, not weakness). Occlusion is reported but is NOT the verdict: it cannot tell a closing lid from one being peeled open."
     }
   },
@@ -200,12 +200,12 @@
       "maxTravel": 0.01291
     },
     "blink_L": {
-      "verts": 108,
-      "maxTravel": 0.029
+      "verts": 148,
+      "maxTravel": 0.01505
     },
     "blink_R": {
-      "verts": 107,
-      "maxTravel": 0.02873
+      "verts": 157,
+      "maxTravel": 0.01491
     },
     "squint_L": {
       "verts": 92,

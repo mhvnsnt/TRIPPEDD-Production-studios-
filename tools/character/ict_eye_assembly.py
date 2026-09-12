@@ -65,7 +65,20 @@ print("ICT -> Mars: scale x%.5f%s" % (c, "  [left/right mirrored]" if swap else 
 QT = np.vstack([QUAD[:, [0, 1, 2]], QUAD[:, [0, 2, 3]]])
 ALL = np.vstack([TRI, QT])
 
-W = c * (V @ R.T) + t                       # every ICT vertex, in Mars's space
+# USE THE WARPED DONOR IF IT EXISTS. The similarity fit is off by 5.9 mm mean
+# and 15.7 mm worst across his face -- that error is exactly what I kept
+# hand-correcting per part, one turn at a time. nonrigid_fit.py warps ICT ONTO
+# his face so every part lands where the corresponding feature is, with nothing
+# left to seat by hand.
+_warp = os.path.abspath("assets/donor/warp/ict_warped.npz")
+if os.path.exists(_warp) and "--no-warp" not in argv:
+    W = np.load(_warp)["vertices"].astype(np.float64)
+    print("using the NON-RIGID WARP (assets/donor/warp) -- parts land by construction")
+    WARPED = True
+else:
+    W = c * (V @ R.T) + t                   # similarity fit only
+    print("no warp available; falling back to the similarity fit")
+    WARPED = False
 
 # his own eyes, read off his own texture -- the residual ICT cannot know
 # the lid contours, so the manifest carries the same fields the old donor did
@@ -85,7 +98,7 @@ if os.path.exists(pe_path):
 # ICT's left maps to Mars's right when the fit mirrored, so name by where it LANDS
 SIDE_OF = {"left": "R", "right": "L"} if swap else {"left": "L", "right": "R"}
 
-manifest = {"source": "ICT-VGL/ICT-FaceKit", "license": "MIT",
+manifest = {"source": "ICT-VGL/ICT-FaceKit", "license": "MIT", "nonRigidWarp": None,
             "why": "a matched eye assembly from one scan beats a sphere dropped into a "
                    "prism -- globe, socket and occlusion are mutually consistent by "
                    "construction", "eyes": {}}
@@ -174,6 +187,10 @@ for ict_side, mars_side in SIDE_OF.items():
               "%.1f mm back so the cornea sits 1.5 mm proud of the lid"
               % (mars_side, ict_side, float(np.linalg.norm(lateral)) / MM,
                  want_back / MM))
+        if WARPED and float(np.linalg.norm(lateral)) / MM > 3.0:
+            print("        NOTE %.1f mm of lateral correction was still needed AFTER the "
+                  "warp -- the warp should have placed this. Worth reading."
+                  % (float(np.linalg.norm(lateral)) / MM))
     else:
         print("eye %s: ICT %s, NO painted-eye reference -- placed by the fit alone"
               % (mars_side, ict_side))
@@ -208,5 +225,6 @@ for ict_side, mars_side in SIDE_OF.items():
         "seatedOnPaintedEye": bool(pj),
     }
 
+manifest["nonRigidWarp"] = WARPED
 json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=2)
 print("\nICT eye assembly -> %s" % OUT)

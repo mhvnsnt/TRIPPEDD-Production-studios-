@@ -556,19 +556,43 @@ def eye_frame(side):
     opening = (up[mid] - lo[mid]).length
     return up, lo, centre, ez, ey, opening
 
-def lid_close(side, travel=1.15):
-    """CLOSING MEANS THE TWO MARGINS MEET. Owner: "The bottom eyelid and the top
-    eyelid have to meet when it closes. That's literally what closing means."
-    The travel is no longer a constant -- the rig solves for the smallest one
-    that leaves no ray reaching the eyeball (see the solve below)."""
+def lid_close(side, meet=0.40):
+    """A BLINK IS DEFINED BY WHERE THE LIDS MEET, NOT BY HOW FAR THEY TRAVEL.
+
+    This was a translation: take the upper lid and push it down by a tuned
+    multiple of the lid opening. That is why it needed x1.15 on one eye, still
+    would not shut at x2.40 on the other, and let the globe poke through in
+    between -- a travel is a guess about a distance, and his two lid contours
+    are not the same distance apart at every station.
+
+    The standard Blender workflow (and every blink tutorial) does the opposite:
+    move the upper lid margin and the lower lid margin ONTO THE SAME LINE, so
+    they meet by construction. Per station, so an asymmetric contour closes just
+    as exactly as a symmetric one, and there is no multiplier at all.
+
+    `meet` is where on the opening they close, 0 = the lower margin, 1 = the
+    upper. Real lids meet below centre, nearer the lower lid.
+    """
     up, lo, centre, ez, ey, opening = eye_frame(side)
-    # "Upper lid" means above the lid line along THIS eye's up axis.
-    def above(lp):
-        return (F.M @ lp - centre).dot(ez) > -opening * 0.20
-    return contour_band(up, opening * 1.9,
-                        lambda lp, q: F.M.to_3x3().inverted() @ (-ez * (opening * travel)
-                                                                 + ey * (opening * 0.12)),
-                        gate=lambda lp, q: above(lp))
+    n = min(len(up), len(lo))
+    # the closed lid line: one target per station, from HIS OWN two contours
+    meet_pts = [lo[i] + (up[i] - lo[i]) * meet for i in range(n)]
+    band = opening * 1.9
+
+    def f(lp):
+        w_best, tgt, src = 0.0, None, None
+        for i in range(n):
+            for q in (up[i], lo[i]):
+                d = (lp - F.local(q)).length
+                if d >= band: continue
+                w = 1.0 - smoothstep(d / band)
+                if w > w_best:
+                    w_best, tgt, src = w, meet_pts[i], q
+        if w_best <= 0 or tgt is None: return None
+        # travel this vertex the same way its nearest margin station travels
+        return F.M.to_3x3().inverted() @ ((tgt - src) * w_best)
+
+    return f
 
 def lid_squint(side):
     up, lo, centre, ez, ey, opening = eye_frame(side)
@@ -904,23 +928,24 @@ bpy.context.view_layer.update()
 for side in ("L", "R"):
     key = "blink_%s" % side
     if key not in kb: continue
-    for t in (1.15, 1.4, 1.7, 2.0, 2.4):
+    for t in (0.40, 0.32, 0.24, 0.16, 0.08):
         for k in kb:
             if k.name != "Basis": k.value = 0.0
         kb[key].value = 1.0
         bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
         n = eye_rays(side, want="socket")
         if n == 0:
-            print("  blink_%s SHUT at travel x%.2f -- 0/231 rays over the whole aperture "
-                  "find globe or cut rim, only outer lid skin" % (side, t)); break
-        print("  blink_%s travel x%.2f still shows globe/rim on %d/231 rays -- rebuilding"
+            print("  blink_%s SHUT with the lids meeting at %.2f of the opening "
+                  "-- 0/231 rays over the whole aperture find globe or cut rim"
+                  % (side, t)); break
+        print("  blink_%s meeting at %.2f still shows globe/rim on %d/231 rays -- lowering"
               % (side, t, n))
-        if t == 2.4:
-            print("  blink_%s STILL NOT SHUT at x%.2f (%d rays). Reported, not claimed."
-                  % (side, t, n)); break
-        nxt = {1.15: 1.4, 1.4: 1.7, 1.7: 2.0, 2.0: 2.4}.get(t, 2.4)
+        if t == 0.08:
+            print("  blink_%s STILL NOT SHUT even meeting at %.2f (%d rays). "
+                  "Reported, not claimed." % (side, t, n)); break
+        nxt = {0.40: 0.32, 0.32: 0.24, 0.24: 0.16, 0.16: 0.08}.get(t, 0.08)
         head.shape_key_remove(kb[key])
-        nk, mv, mx = make_key(key, lid_close(side, travel=nxt))
+        nk, mv, mx = make_key(key, lid_close(side, meet=nxt))
         kb = head.data.shape_keys.key_blocks
     for k in kb:
         if k.name != "Basis": k.value = 0.0

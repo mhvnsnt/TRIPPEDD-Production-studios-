@@ -42,7 +42,11 @@ vendor/blender
 !assets/rigs/*.glb
 .trippedd_libs/
 .trippedd_models/
-assets/rigs/*.blend1  # editor backups only -- not evidence
+# Blender editor backups only -- regenerated on every save, never evidence.
+# NOTE: .gitignore has NO trailing comments. Putting this note on the pattern
+# line itself turned it into a literal pattern with a '#' in it, the rule
+# stopped matching, and a 33 MB .blend1 backup went to main.
+assets/rigs/*.blend1
 vendor/*
 vendor/rhubarb/
 

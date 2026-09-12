@@ -1,0 +1,401 @@
+<title>Mars Oral Build Board</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F4F6FB; --panel:#FFFFFF; --sunk:#E9EEF7; --line:#D5DDEC; --line-soft:#E6EBF5;
+  --ink:#151B2A; --muted:#5E6C88; --faint:#8A97B2;
+  --mars:#2B6FD4; --mars-soft:#E4EDFC;
+  --amber:#A5620F; --pass:#1B7F55; --fail:#BE2026; --pend:#8A6A1A;
+  --shadow:0 1px 2px rgba(21,27,42,.06),0 10px 28px -16px rgba(21,27,42,.22);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#080B12; --panel:#121827; --sunk:#0C111B; --line:#232C40; --line-soft:#1A2231;
+  --ink:#E0E7F6; --muted:#8494B4; --faint:#5C6A88;
+  --mars:#69ACFF; --mars-soft:#15263E;
+  --amber:#E8A44C; --pass:#3FBF7F; --fail:#F0575C; --pend:#D6A94B;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 32px -18px rgba(0,0,0,.9);
+}}
+:root[data-theme="dark"]{
+  --ground:#080B12; --panel:#121827; --sunk:#0C111B; --line:#232C40; --line-soft:#1A2231;
+  --ink:#E0E7F6; --muted:#8494B4; --faint:#5C6A88;
+  --mars:#69ACFF; --mars-soft:#15263E;
+  --amber:#E8A44C; --pass:#3FBF7F; --fail:#F0575C; --pend:#D6A94B;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 32px -18px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);margin:0;padding:0 18px;padding-block:20px 40px;
+  font:400 15px/1.55 "IBM Plex Sans",system-ui,-apple-system,sans-serif}
+.wrap{max-width:1260px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1,h2,h3{margin:0;font-family:Archivo,system-ui,sans-serif;text-wrap:balance}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--mars);outline-offset:2px}
+
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;
+  border-bottom:1px solid var(--line);padding-bottom:14px}
+h1{font-size:clamp(23px,3.2vw,32px);font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:13.5px;max-width:56ch;margin:4px 0 0}
+.ident{font-size:11.5px;color:var(--faint);line-height:1.6;text-align:right}
+.ident b{color:var(--muted);font-weight:500}
+
+/* live strip — every field here corresponds to a real execution event */
+.live{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--line);
+  border-radius:9px;padding:11px 15px;box-shadow:var(--shadow)}
+.live.run{border-left-color:var(--mars)} .live.ok{border-left-color:var(--pass)}
+.live.bad{border-left-color:var(--fail)} .live.idle{border-left-color:var(--line)}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--faint);flex:0 0 auto}
+.live.run .pulse{background:var(--mars);animation:bp 1.5s ease-in-out infinite}
+.live.ok .pulse{background:var(--pass)} .live.bad .pulse{background:var(--fail)}
+@keyframes bp{0%,100%{opacity:1}50%{opacity:.25}}
+.livemain{min-width:0}
+.stage-t{font-family:Archivo,sans-serif;font-weight:600;font-size:15px}
+.op{font-size:12.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.when{font-size:11.5px;color:var(--faint);text-align:right;white-space:nowrap}
+
+.verdict{display:grid;grid-template-columns:minmax(230px,.9fr) 2fr;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px;box-shadow:var(--shadow)}
+.card.bad{border-color:color-mix(in srgb,var(--fail) 42%,var(--line))}
+.status{font-family:Archivo,sans-serif;font-weight:700;font-size:20px;line-height:1.2;letter-spacing:-.01em;margin-top:3px}
+.is-fail{color:var(--fail)} .is-pass{color:var(--pass)} .is-pend{color:var(--pend)}
+.why{font-size:12.5px;color:var(--muted);margin-top:7px}
+.rule{font-size:11.5px;color:var(--faint);border-top:1px dashed var(--line);padding-top:8px;margin-top:9px}
+.checkrow{display:flex;gap:9px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--line-soft);font-size:13px}
+.checkrow:last-child{border-bottom:0}
+.flag{flex:0 0 auto;font:600 10px/1.6 "IBM Plex Mono",monospace;letter-spacing:.06em;padding:1px 6px;border-radius:3px}
+.flag.p{color:var(--pass);background:color-mix(in srgb,var(--pass) 14%,transparent)}
+.flag.f{color:var(--fail);background:color-mix(in srgb,var(--fail) 14%,transparent)}
+.checkrow .d{color:var(--faint);font-size:11.5px;margin-left:auto;text-align:right}
+
+/* pose rail */
+.rail{display:flex;gap:6px;overflow-x:auto;padding-bottom:3px}
+.pose{flex:0 0 auto;display:flex;flex-direction:column;gap:3px;padding:7px 11px;border:1px solid var(--line);
+  border-radius:7px;background:var(--panel);min-width:78px}
+.pose[aria-current="true"]{border-color:var(--mars);background:var(--mars-soft)}
+.pose .n{font:500 12px/1.2 "IBM Plex Mono",monospace}
+.pose .g{font-size:10.5px;color:var(--faint)}
+
+/* BOTH VIEWS AT ONCE — front and the mouth close-up are the two you judge
+   dental anatomy from, so neither one is ever behind a click. */
+.views{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.views.three{grid-template-columns:1fr 1fr 1fr}
+.view{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.vhead{display:flex;gap:8px;align-items:baseline;padding:8px 11px;border-bottom:1px solid var(--line-soft)}
+.vhead .cam{font-family:Archivo,sans-serif;font-weight:600;font-size:13px;text-transform:capitalize}
+.vhead .tog{margin-left:auto;font:500 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.05em;
+  padding:4px 8px;border:1px solid var(--line);border-radius:5px;color:var(--muted)}
+.vhead .tog[aria-pressed="true"]{border-color:var(--mars);color:var(--mars);background:var(--mars-soft)}
+.vhead .tog[disabled]{opacity:.35;cursor:default}
+.frame{position:relative;background:var(--sunk);aspect-ratio:1/1}
+.frame img{display:block;width:100%;height:100%;object-fit:contain}
+.frame .gone{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;
+  font:600 12px/1.4 "IBM Plex Mono",monospace;color:var(--fail);letter-spacing:.06em;text-align:center;padding:16px}
+.frame.missing .gone{display:flex} .frame.missing img{visibility:hidden}
+.frame .gone small{display:block;font-weight:400;letter-spacing:0;color:var(--faint);text-transform:none}
+.vfoot{display:flex;flex-wrap:wrap;gap:3px 12px;padding:8px 11px;border-top:1px solid var(--line-soft);
+  font:400 11px/1.5 "IBM Plex Mono",monospace;color:var(--faint)}
+.vfoot b{color:var(--muted);font-weight:500}
+
+.grid2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,1fr);gap:16px;align-items:start}
+.mrow{display:grid;grid-template-columns:64px 1fr 50px;gap:9px;align-items:center;margin-top:8px;font-size:12.5px}
+.track{height:8px;background:var(--sunk);border-radius:4px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:4px}
+.note{font-size:11.5px;color:var(--faint);margin-top:11px;border-top:1px dashed var(--line);padding-top:8px}
+
+.entries{list-style:none;margin:11px 0 0;padding:0;max-height:230px;overflow-y:auto}
+.entries li{display:grid;grid-template-columns:92px 1fr;gap:11px;padding:6px 0;border-bottom:1px solid var(--line-soft);font-size:12.5px}
+.entries li:last-child{border-bottom:0}
+.entries .ag{color:var(--mars);font-size:11px;font-weight:500}
+.entries time{color:var(--faint);font-size:10.5px}
+.empty{color:var(--faint);font-size:12.5px;padding:8px 0}
+
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+.tblwrap{overflow-x:auto}
+th{text-align:left;font:500 10.5px/1.6 "IBM Plex Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--faint);padding:0 9px 6px 0;border-bottom:1px solid var(--line)}
+td{padding:6px 9px 6px 0;border-bottom:1px solid var(--line-soft)}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;padding-right:13px}
+tr[aria-current="true"] td{background:var(--mars-soft)}
+footer{color:var(--faint);font-size:11.5px;border-top:1px solid var(--line);padding-top:13px}
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--sunk);padding:1px 5px;border-radius:3px}
+@media (max-width:960px){.views,.views.three,.grid2,.verdict{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <h1>Mars Oral Build Board</h1>
+    <p class="sub">Every frame here is the committed artifact at <code>docs/evidence/</code> —
+      the same bytes and the same sha256, not a picture of one.</p>
+  </div>
+  <div class="ident mono" id="ident"></div>
+</header>
+
+<div class="live idle" id="live">
+  <span class="pulse"></span>
+  <div class="livemain">
+    <div class="stage-t" id="liveStage">Waiting for the next production event</div>
+    <div class="op" id="liveOp">Nothing has been reported since this board was built. Workers write here as they run.</div>
+  </div>
+  <div class="when mono" id="liveWhen"></div>
+</div>
+
+<section class="verdict">
+  <div class="card" id="verdictCard">
+    <div class="lbl">Production verdict</div>
+    <div class="status" id="statusText">—</div>
+    <div class="why" id="statusWhy"></div>
+    <div class="rule">Two gates. <b>VISUAL_FAIL outranks the measurements; PENDING is not PASS.</b>
+      These exact numbers went green on a frame whose crowns read as separate pegs.</div>
+  </div>
+  <div class="card">
+    <div class="lbl" style="margin-bottom:7px">Physical gate — rays fired at the mouth, classified by the material each one lands on</div>
+    <div id="checkList"></div>
+  </div>
+</section>
+
+<div class="rail" id="rail"></div>
+
+<section class="views" id="views"></section>
+
+<section class="grid2">
+  <div class="card">
+    <div class="lbl">Every pose, measured</div>
+    <div class="tblwrap" style="margin-top:9px"><table>
+      <thead><tr><th>Pose</th><th class="num">Jaw</th><th class="num">Lip gap</th>
+        <th class="num">Skin</th><th class="num">Cavity</th><th class="num">Teeth</th>
+        <th class="num">Gum</th><th class="num">Tongue</th></tr></thead>
+      <tbody id="poseTable"></tbody>
+    </table></div>
+    <div class="note">Lip gap is a percentage of head height; the rest are percentages of the surveyed
+      mouth area. Material identity cannot be fooled by a hole in the wrong place — a plane test can,
+      because his face curves back to +0.017 local y at the mouth corners.</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="card">
+      <div class="lbl">What the rays hit — <span id="ledgerPose" class="mono"></span></div>
+      <div id="ledger"></div>
+      <div class="note" id="ledgerNote"></div>
+    </div>
+    <div class="card">
+      <div class="lbl">Worker activity</div>
+      <ul class="entries" id="entries"><li class="empty" style="grid-column:1/-1">No agent activity recorded yet.</li></ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Rendered in <span id="eng" class="mono"></span>. Frames published by
+  <code>tools/publish_evidence.py</code>; this board rebuilt by <code>tools/build_viewer.py</code>
+  after any render, so it cannot drift from the manifest. Anatomy is sized from a measured anchor:
+  MW = 0.1930 units is Mars's inter-commissure width, so 1 mm = MW/50.
+</footer>
+</div>
+
+<script>
+const D = /*__DATA__*/null;
+const $ = (id) => document.getElementById(id);
+let pose = D.poses.includes("03_WIDE") ? "03_WIDE" : D.poses[0];
+const showPrev = {};
+const MATS = [["skin","var(--faint)"],["cavity","var(--amber)"],["teeth","var(--mars)"],
+              ["gum","color-mix(in srgb,var(--fail) 55%,var(--amber))"],["tongue","var(--pass)"]];
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function ident(){
+  const a = D.sourceAsset || {};
+  $("ident").innerHTML = a.assetId
+    ? `<b>${esc(a.character || "—")}</b> · ${esc(a.assetId)}<br>source sha256 ${esc((a.sha256||"").slice(0,12))}…`
+    : "source asset not recorded";
+  $("eng").textContent = (D.engine || "—") + " · " + (D.samples ?? "?") + " samples";
+}
+
+function verdict(){
+  const q = D.qc || {}, vis = (q.visual || {}).verdict || "PENDING", phys = (q.physical || {}).verified;
+  const status = phys && vis === "PASS" ? "PASS" : vis === "FAIL" ? "VISUAL_FAIL"
+               : phys ? "PHYSICAL PASS · VISUAL PENDING" : "FAIL";
+  const el = $("statusText");
+  el.textContent = status;
+  el.className = "status " + (status === "PASS" ? "is-pass"
+    : (status === "VISUAL_FAIL" || status === "FAIL") ? "is-fail" : "is-pend");
+  $("verdictCard").classList.toggle("bad", status !== "PASS");
+  $("statusWhy").textContent = (q.visual || {}).notes
+    || (phys ? "Measurements are green. No visual verdict recorded against these pixels."
+             : "Physical checks have not passed.");
+}
+
+function checks(){
+  $("checkList").innerHTML = (D.checks || []).map(c =>
+    `<div class="checkrow"><span class="flag ${c.pass?"p":"f"}">${c.pass?"PASS":"FAIL"}</span>
+     <span>${esc(c.check)}</span><span class="d mono">${esc(c.detail)}</span></div>`).join("")
+    || `<div class="empty">No physical checks in this set.</div>`;
+}
+
+function rail(){
+  $("rail").innerHTML = D.poses.map(p => {
+    const m = D.measured[p];
+    return `<button class="pose" data-pose="${esc(p)}" aria-current="${p===pose}">
+      <span class="n">${esc(p.replace(/^\d+_/,""))}</span>
+      <span class="g mono">${m ? m.gap.toFixed(1)+"% gap" : "—"}</span></button>`;
+  }).join("");
+  $("rail").querySelectorAll(".pose").forEach(b => b.onclick = () => { pose = b.dataset.pose; draw(); });
+}
+
+function views(){
+  const cams = D.cameras;
+  $("views").className = "views" + (cams.length > 2 ? " three" : "");
+  $("views").innerHTML = cams.map(c => `
+    <figure class="view" style="margin:0">
+      <figcaption class="vhead">
+        <span class="cam">${esc(c)}</span>
+        <button class="tog" data-cam="${esc(c)}" aria-pressed="false">BEFORE</button>
+      </figcaption>
+      <div class="frame" id="fr-${esc(c)}">
+        <img id="im-${esc(c)}" alt="" width="900" height="900">
+        <div class="gone">IMAGE_UNAVAILABLE<small id="gn-${esc(c)}"></small></div>
+      </div>
+      <div class="vfoot mono" id="ft-${esc(c)}"></div>
+      <div class="vfoot mono" id="vf-${esc(c)}" style="border-top:0;padding-top:0"></div>
+    </figure>`).join("");
+  $("views").querySelectorAll(".tog").forEach(b => b.onclick = () => {
+    const c = b.dataset.cam; showPrev[c] = !showPrev[c]; draw();
+  });
+}
+
+function ledger(){
+  const m = D.measured[pose];
+  $("ledgerPose").textContent = pose;
+  if (!m){ $("ledger").innerHTML = `<div class="empty">This pose was not surveyed.</div>`;
+           $("ledgerNote").textContent = ""; return; }
+  $("ledger").innerHTML = MATS.map(([k,col]) => {
+    const v = m.vis[k] ?? 0;
+    return `<div class="mrow"><span style="color:var(--muted)">${k}</span>
+      <span class="track"><i style="width:${v}%;background:${col}"></i></span>
+      <span class="mono" style="text-align:right">${v.toFixed(1)}%</span></div>`;
+  }).join("");
+  const sh = Object.keys(m.shapes || {});
+  $("ledgerNote").textContent = `jaw ${m.jaw}° · lip gap ${m.gap.toFixed(2)}% of head height`
+    + (sh.length ? ` · ${sh.length} lip control${sh.length>1?"s":""}: ${sh.join(", ")}` : "");
+}
+
+function poseTable(){
+  $("poseTable").innerHTML = D.poses.map(p => {
+    const m = D.measured[p];
+    if (!m) return `<tr aria-current="${p===pose}"><td class="mono">${esc(p)}</td>
+      <td colspan="7" style="color:var(--faint)">not surveyed</td></tr>`;
+    return `<tr aria-current="${p===pose}"><td class="mono">${esc(p)}</td>
+      <td class="num mono">${m.jaw}°</td><td class="num mono">${m.gap.toFixed(2)}%</td>
+      ${["skin","cavity","teeth","gum","tongue"].map(k=>`<td class="num mono">${(m.vis[k]??0).toFixed(1)}</td>`).join("")}</tr>`;
+  }).join("");
+}
+
+function draw(){
+  for (const c of D.cameras){
+    const f = D.frames[pose + "|" + c];
+    const im = $("im-" + c), fr = $("fr-" + c), ft = $("ft-" + c);
+    const want = f && showPrev[c] && f.prev ? f.prev : (f ? f.src : null);
+    const tog = $("views").querySelector(`.tog[data-cam="${c}"]`);
+    tog.disabled = !(f && f.prev);
+    tog.setAttribute("aria-pressed", String(!!(f && showPrev[c] && f.prev)));
+    tog.textContent = f && f.prev ? (showPrev[c] ? "BEFORE" : "BEFORE") : "NO PRIOR";
+    fr.classList.remove("missing");
+    if (!want){
+      fr.classList.add("missing");
+      $("gn-" + c).textContent = `${pose} · ${c} was not rendered`;
+      im.removeAttribute("src");
+      ft.innerHTML = `<b>no frame</b>`;
+      continue;
+    }
+    // Validation, not decoration: if the pixels cannot actually be decoded the
+    // panel SAYS so. An empty tile reads exactly like "nothing was rendered".
+    // VERIFY, DO NOT ASSUME. A tile is only evidence if its bytes decode, its
+    // decoded size matches what the manifest claims, and its hash matches what
+    // was published. A filename, a hash in a table, or a Markdown reference
+    // with no retrievable pixels behind it is not evidence.
+    im.onerror = () => { fr.classList.add("missing"); $("gn-"+c).textContent = want + " could not be retrieved"; };
+    im.onload  = () => {
+      fr.classList.remove("missing");
+      const exp = showPrev[c] ? null : f.px;
+      if (exp && (im.naturalWidth !== exp[0] || im.naturalHeight !== exp[1])) {
+        fr.classList.add("missing");
+        $("gn-"+c).textContent = `decoded ${im.naturalWidth}x${im.naturalHeight}, manifest says ${exp[0]}x${exp[1]}`;
+      }
+    };
+    im.src = want;
+    im.alt = `${pose.replace(/_/g," ")}, ${c} camera`;
+    ft.innerHTML = `<b>${esc(f.repoPath)}</b><span>sha256 ${esc(f.sha)}…</span>`
+      + `<span>${f.px[0]}×${f.px[1]}</span>`
+      + (showPrev[c] && f.prev ? `<span style="color:var(--pend)">showing the PREVIOUS render</span>` : "");
+  }
+  $("rail").querySelectorAll(".pose").forEach(b => b.setAttribute("aria-current", String(b.dataset.pose === pose)));
+  ledger(); poseTable(); verifyBytes();
+}
+
+// Hash what was actually served and compare it to the manifest. This is the
+// difference between "the manifest says sha256 33f30b4a" and "the bytes in
+// front of you ARE 33f30b4a".
+async function verifyBytes(){
+  if (!window.crypto?.subtle) return;
+  for (const c of D.cameras){
+    const f = D.frames[pose + "|" + c];
+    const el = $("vf-" + c);
+    if (!el) continue;
+    if (!f || !f.publishedSha256 || showPrev[c]){ el.textContent = ""; continue; }
+    el.textContent = "verifying bytes…"; el.style.color = "var(--faint)";
+    try {
+      const buf = await (await fetch(f.src, {cache: "no-store"})).arrayBuffer();
+      const hex = [...new Uint8Array(await crypto.subtle.digest("SHA-256", buf))]
+        .map(b => b.toString(16).padStart(2, "0")).join("");
+      const ok = hex === f.publishedSha256;
+      el.textContent = ok ? "sha256 verified against the manifest"
+                          : "SHA MISMATCH — served " + hex.slice(0,12) + "…";
+      el.style.color = ok ? "var(--pass)" : "var(--fail)";
+      if (!ok) $("fr-" + c).classList.add("missing");
+    } catch (e) {
+      el.textContent = "bytes could not be re-read to verify";
+      el.style.color = "var(--pend)";
+    }
+  }
+}
+
+ident(); verdict(); checks(); rail(); views(); draw();
+
+// ── live layer ───────────────────────────────────────────────────────────────
+// The board is complete and correct with none of this: the committed manifest
+// is the truth it renders. Workers light it up as they run. Every field below
+// corresponds to a real execution event — nothing here is a progress animation.
+const ago = (t) => {
+  const s = (Date.now() - new Date(t).getTime()) / 1000;
+  if (!isFinite(s)) return "";
+  return s < 60 ? Math.max(0,Math.round(s)) + "s ago"
+       : s < 3600 ? Math.round(s/60) + "m ago" : Math.round(s/3600) + "h ago";
+};
+(async () => {
+  const db = await window.claude?.use?.("db");
+  if (!db) return;
+  db.doc("status/current").onSnapshot((doc) => {
+    const s = doc.data(); if (!s) return;
+    const el = $("live");
+    el.className = "live " + ({running:"run", ok:"ok", done:"ok", failed:"bad", error:"bad"}[s.state] || "idle");
+    $("liveStage").textContent = s.stage || "Working";
+    $("liveOp").textContent = s.detail || "";
+    $("liveWhen").textContent = (s.agent ? s.agent + " · " : "") + (s.at ? ago(s.at) : "");
+  });
+  db.collection("feed").orderBy("at","desc").limit(40).onSnapshot((snap) => {
+    const rows = snap.docs.map(d => d.data()).filter(Boolean);
+    $("entries").innerHTML = rows.length
+      ? rows.map(r => `<li><span><span class="ag">${esc(r.agent||"worker")}</span><br>
+          <time>${esc(ago(r.at))}</time></span><span>${esc(r.text||"")}</span></li>`).join("")
+      : `<li class="empty" style="grid-column:1/-1">No agent activity recorded yet.</li>`;
+  });
+  db.doc("verdicts/" + D.set).onSnapshot((doc) => {
+    const v = doc.data(); if (!v) return;
+    D.qc = D.qc || {};
+    D.qc.visual = {verdict: v.verdict, notes: v.notes, reviewer: v.reviewer};
+    verdict();
+  });
+})();
+</script>

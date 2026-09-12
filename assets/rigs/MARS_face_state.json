@@ -1,0 +1,229 @@
+{
+  "character": "MARS",
+  "characterPremise": "MARS IS A FLOATING-HEAD BEING. The absence of a body is intentional character design, not missing geometry. Never invent a torso, never treat the neck termination as a defect, never regenerate the head.",
+  "identity": {
+    "source": "assets/rigs/MARS_ORAL.blend (carved from MARS_LOD2.glb)",
+    "rule": "the scan is the identity; this file adds an animation system around it and never replaces it"
+  },
+  "frame": {
+    "origin": [
+      -0.021031,
+      -0.417486,
+      0.231635
+    ],
+    "unit": "MW = measured mouth width",
+    "MW": 0.193036,
+    "rollOffWorldHorizontalDeg": 5.61
+  },
+  "bones": [
+    "root",
+    "neck",
+    "head",
+    "jaw",
+    "tongue_root",
+    "tongue_mid",
+    "tongue_tip",
+    "eye_L",
+    "eye_R"
+  ],
+  "jawHinge": {
+    "world": [
+      -0.00783,
+      -0.11779,
+      0.34331
+    ],
+    "source": "measured ear midpoint (temporomandibular joint)",
+    "axis": "bone rolled onto the measured ear-to-ear line",
+    "openSign": 1.0
+  },
+  "weights": {
+    "method": "mandible boundary: the lip seam at the mouth, rising to the ear line at the TMJ; blend band capped by the width of the cut so the lip-edge vertices are never caught mid-blend",
+    "jawVertices": 5623,
+    "jawPercent": 23.44,
+    "lowerLipMeanJawWeight": 1.0,
+    "upperLipMeanJawWeight": 0.0
+  },
+  "lipAperture": {
+    "rest": 0.00109,
+    "open22deg": 0.12017,
+    "wide32deg": 0.17326,
+    "delta": 0.11908,
+    "deltaPercentOfHeadHeight": 14.12,
+    "threshold": 3.0,
+    "method": "distance between the two lip-edge vertices the boolean created, tracked by index through the armature"
+  },
+  "oralAnatomy": {
+    "source": "google/GNM v3_0 gnm_head.npz",
+    "license": "Apache-2.0",
+    "fit": {
+      "scale": 3.125644,
+      "anchor": "DENTAL ARCH (inter-molar), not lip width",
+      "targetArchWidthMM": 57.0,
+      "donorArchWidthNative": 0.070405,
+      "marsMouthWidth": 0.193036,
+      "gnmLipGroupWidth": 0.048782,
+      "rejectedLipAnchoredScale": 3.957152,
+      "whyRejected": "a lip-anchored scale put the arch at 72.2 mm inside a 62 mm cavity; the back of it punched through the cavity walls and rendered as fangs at the mouth corners",
+      "method": "similarity transform between two MEASURED mouth frames, scaled so the dental arch matches published inter-molar width"
+    },
+    "method": "scan-derived geometry fitted by a similarity transform between two MEASURED mouth frames -- not primitives tuned by eye",
+    "upperTeethAndGums": 1440,
+    "lowerTeethAndGums": 1440,
+    "tongueVerts": 933,
+    "mouthSockVerts": 406,
+    "upperArchRides": "head",
+    "lowerArchRides": "jaw",
+    "tongueRides": "jaw",
+    "tongueBones": [
+      "tongue_root",
+      "tongue_mid",
+      "tongue_tip"
+    ],
+    "tongueShapeKeys": 31
+  },
+  "appearanceVariant": "canonical",
+  "blink": {
+    "blink_L": {
+      "eyeballRaysOpen": 15,
+      "eyeballRaysClosed": 0,
+      "percentClosed": 100.0
+    },
+    "blink_R": {
+      "eyeballRaysOpen": 19,
+      "eyeballRaysClosed": 0,
+      "percentClosed": 100.0
+    }
+  },
+  "eyes": {
+    "bound": {
+      "eye_L": 771,
+      "eye_R": 771
+    },
+    "source": "google/GNM eyeballs (Apache-2.0), fitted per eye on that eye's own measured lid contour",
+    "apertureCarved": true
+  },
+  "controls": {
+    "lip_upper_raise": {
+      "verts": 214,
+      "maxTravel": 0.01648
+    },
+    "lip_lower_depress": {
+      "verts": 203,
+      "maxTravel": 0.02027
+    },
+    "lip_upper_curl": {
+      "verts": 189,
+      "maxTravel": 0.00975
+    },
+    "lip_lower_curl": {
+      "verts": 160,
+      "maxTravel": 0.01187
+    },
+    "lip_protrude": {
+      "verts": 432,
+      "maxTravel": 0.01736
+    },
+    "lip_compress": {
+      "verts": 399,
+      "maxTravel": 0.00868
+    },
+    "lip_seal": {
+      "verts": 432,
+      "maxTravel": 0.01447
+    },
+    "lip_corner_L_up": {
+      "verts": 103,
+      "maxTravel": 0.02144
+    },
+    "lip_corner_R_up": {
+      "verts": 139,
+      "maxTravel": 0.02116
+    },
+    "lip_corner_L_wide": {
+      "verts": 103,
+      "maxTravel": 0.02144
+    },
+    "lip_corner_R_wide": {
+      "verts": 139,
+      "maxTravel": 0.02116
+    },
+    "lip_corner_L_in": {
+      "verts": 103,
+      "maxTravel": 0.0171
+    },
+    "lip_corner_R_in": {
+      "verts": 139,
+      "maxTravel": 0.01688
+    },
+    "mouth_funnel": {
+      "verts": 417,
+      "maxTravel": 0.02044
+    },
+    "cheek_puff_L": {
+      "verts": 581,
+      "maxTravel": 0.0188
+    },
+    "cheek_puff_R": {
+      "verts": 748,
+      "maxTravel": 0.0188
+    },
+    "cheek_suck_L": {
+      "verts": 403,
+      "maxTravel": 0.01291
+    },
+    "cheek_suck_R": {
+      "verts": 523,
+      "maxTravel": 0.01291
+    },
+    "blink_L": {
+      "verts": 82,
+      "maxTravel": 0.02331
+    },
+    "blink_R": {
+      "verts": 73,
+      "maxTravel": 0.02317
+    },
+    "squint_L": {
+      "verts": 80,
+      "maxTravel": 0.0101
+    },
+    "squint_R": {
+      "verts": 100,
+      "maxTravel": 0.01004
+    },
+    "nostril_flare_L": {
+      "verts": 96,
+      "maxTravel": 0.0213
+    },
+    "nostril_flare_R": {
+      "verts": 47,
+      "maxTravel": 0.02057
+    },
+    "nose_wrinkle": {
+      "verts": 256,
+      "maxTravel": 0.01594
+    },
+    "brow_up_L": {
+      "verts": 430,
+      "maxTravel": 0.04053
+    },
+    "brow_up_R": {
+      "verts": 391,
+      "maxTravel": 0.0421
+    },
+    "brow_down_L": {
+      "verts": 367,
+      "maxTravel": 0.02802
+    },
+    "brow_down_R": {
+      "verts": 311,
+      "maxTravel": 0.02927
+    },
+    "nose_sneer": {
+      "verts": 200,
+      "maxTravel": 0.01497
+    }
+  },
+  "removedDeadControls": [],
+  "meshVertices": 23989
+}

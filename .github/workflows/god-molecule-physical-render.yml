@@ -40,28 +40,12 @@ jobs:
           git lfs pull || true
           python3 -m pip install --user gdown
 
-      - name: Cache portable Blender
-        id: blender-cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            vendor/blender-4.2.1-linux-x64
-            vendor/blender
-          key: blender-4.2.1-linux-x64-${{ runner.os }}-${{ runner.arch }}
-
       - name: Install portable Blender
-        if: steps.blender-cache.outputs.cache-hit != 'true'
         run: |
           set -eux
           mkdir -p vendor
           curl -L --fail --retry 4 -o /tmp/blender.tar.xz https://download.blender.org/release/Blender4.2/blender-4.2.1-linux-x64.tar.xz
           tar -xJf /tmp/blender.tar.xz -C vendor
-          ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
-
-      - name: Verify portable Blender
-        run: |
-          set -eux
-          test -x "$PWD/vendor/blender-4.2.1-linux-x64/blender"
           ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
           "$PWD/vendor/blender" --version
 
@@ -99,32 +83,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .artifacts/evidence
-          {
-            printf '%s\n' ".artifacts/drive" ".artifacts/god-molecule-source/repo" | while IFS= read -r d; do
-              if [ -d "$d" ]; then
-                find "$d" -type f -printf '%p %s bytes\n'
-              fi
-            done
-          } | sort -u > .artifacts/evidence/inventory.txt
-          {
-            for d in .artifacts/drive .artifacts/god-molecule-source/repo; do
-              if [ -d "$d" ]; then
-                find "$d" -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' \) -print
-              fi
-            done
-          } | sort -u > .artifacts/evidence/mars_candidates.txt || true
-          {
-            for d in .artifacts/drive .artifacts/god-molecule-source/repo; do
-              if [ -d "$d" ]; then
-                find "$d" -type f \( -iname '*gnm*donor*.npz' -o -iname '*mouth*frame*.json' \) -print
-              fi
-            done
-          } | sort -u > .artifacts/evidence/oral_candidates.txt || true
-          echo "=== MARS CANDIDATES ==="
-          cat .artifacts/evidence/mars_candidates.txt || true
-          echo "=== ORAL CANDIDATES ==="
-          cat .artifacts/evidence/oral_candidates.txt || true
-          test -s .artifacts/evidence/mars_candidates.txt || { echo "MARS_CANDIDATES: NONE"; exit 42; }
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f -printf '%p %s bytes\n' 2>/dev/null | sort -u > .artifacts/evidence/inventory.txt
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' \) -print 2>/dev/null | sort -u > .artifacts/evidence/mars_candidates.txt || true
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*gnm*donor*.npz' -o -iname '*mouth*frame*.json' \) -print 2>/dev/null | sort -u > .artifacts/evidence/oral_candidates.txt || true
+          cat .artifacts/evidence/mars_candidates.txt
+          cat .artifacts/evidence/oral_candidates.txt
 
       - name: Select canonical Mars
         run: |

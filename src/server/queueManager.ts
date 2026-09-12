@@ -5,7 +5,8 @@ import { MediaJob } from '../core/types';
 import { AutonomousStudioOrchestrator, type ProductionWorkItem } from '../core/agents/orchestrator';
 import { planSourceClip } from '../core/agents/studioPlan';
 import { toolManager } from './toolManager';
-import { analyzeMedia, downloadToFile } from './mediaPipeline';
+import { analyzeMedia, downloadToFile, type ToolRun } from './mediaPipeline';
+import { executedFromMeasuredRun, notAttempted } from '../core/tools/execution/executor';
 import { discoverComedy } from './comedyDiscovery';
 import { productionMemory } from './productionMemory';
 
@@ -67,11 +68,11 @@ export class QueueManager {
       }
       this.updateJob(job.fileId, { state: 'ANALYZING', progress: 10 }); this.completePlanKind(job.fileId, 'INGEST', [`source:${job.fileId}`, `media:${localFilePath}`]);
       const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => { this.log(job.fileId, `[${stage}] ${message}`); this.updateJob(job.fileId, { state: 'ANALYZING', progress }); });
-      if (result.ffprobe) job.tools.ffprobe = { status: 'COMPLETED' as const, data: result.ffprobe, provenance: this.provenance(job, 'ffprobe', 'ffprobe -print_format json -show_format -show_streams <local-source>') } as any;
-      if (result.scenes) job.tools.pyscenedetect = { status: 'COMPLETED' as const, data: result.scenes, provenance: this.provenance(job, 'pyscenedetect', 'scenedetect detect-content list-scenes <local-source>') } as any;
-      if (result.visual) job.tools.opencv = { status: 'COMPLETED' as const, data: result.visual, provenance: this.provenance(job, 'opencv', 'cv2.VideoCapture seek-based sampling') } as any;
-      if (result.ocr !== undefined) job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', 'tesseract <sampled-frame> stdout') } as any;
-      if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', `whisper <local-source> --model ${process.env.WHISPER_MODEL || 'tiny'} --output_format json`) } as any;
+      if (result.ffprobe) job.tools.ffprobe = { status: 'COMPLETED' as const, data: result.ffprobe, provenance: this.provenance(job, 'ffprobe', result.runs) } as any;
+      if (result.scenes) job.tools.pyscenedetect = { status: 'COMPLETED' as const, data: result.scenes, provenance: this.provenance(job, 'pyscenedetect', result.runs) } as any;
+      if (result.visual) job.tools.opencv = { status: 'COMPLETED' as const, data: result.visual, provenance: this.provenance(job, 'opencv', result.runs) } as any;
+      if (result.ocr !== undefined) job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', result.runs) } as any;
+      if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', result.runs) } as any;
       this.completePlanKind(job.fileId, 'MEDIA_ANALYSIS', [`analysis:${job.fileId}`]);
       const comedy = discoverComedy({ sourceFileId: job.fileId, transcript: result.transcript, scenes: result.scenes, ocr: result.ocr });
       await productionMemory.recordGags('trippedd', comedy);
@@ -85,7 +86,35 @@ export class QueueManager {
       this.updateJob(job.fileId, { state: 'NEEDS_REVIEW', progress: 100 }); this.log(job.fileId, 'Pipeline completed with real tool outputs and production intelligence. Source media is retained for editorial assembly.');
     } finally { await fs.rm(tmpDir, { recursive: true, force: true }); }
   }
-  private provenance(job: MediaJob, tool: string, command: string) { return { executionState: 'EXECUTED', sourceFileId: job.fileId, startTime: new Date().toISOString(), endTime: new Date().toISOString(), tool, version: toolManager.getTool(tool)?.version || 'unknown', executablePath: toolManager.getTool(tool)?.executablePath, command, success: true, timestamp: new Date().toISOString(), durationMs: 0 }; }
+  /**
+   * Provenance is READ from the run ledger, and MINTED BY THE EXECUTOR.
+   *
+   * Two separate rules, and the second one is why this does not build the
+   * record itself. The facts must be measured around a real process (that is
+   * the ledger). And the EXECUTED marker is constructible in exactly one module
+   * in this codebase — the sanctioned executor — so that a future edit cannot
+   * quietly reintroduce a hand-written one. This asks for it instead.
+   *
+   * A tool with no ledger entry gets NOT_ATTEMPTED. It does not get EXECUTED.
+   */
+  private provenance(job: MediaJob, tool: string, runs: ToolRun[] = []) {
+    const binary = PROVENANCE_BINARY[tool] ?? tool;
+    const entry = [...runs].reverse().find(r => r.tool === binary);
+    const installed = toolManager.getTool(tool);
+    if (!entry) {
+      return notAttempted(tool, job.fileId,
+        `No process was recorded for ${binary}. An analyzer that never ran cannot testify.`,
+        installed?.version || 'unknown');
+    }
+    return executedFromMeasuredRun(entry, job.fileId,
+      installed?.version || 'unknown', installed?.executablePath);
+  }
 }
+
+/** Which binary each analyzer slot is actually spawned as. */
+const PROVENANCE_BINARY: Record<string, string> = {
+  ffprobe: 'ffprobe', pyscenedetect: 'scenedetect', opencv: 'python3',
+  tesseract: 'tesseract', whisper: 'whisper',
+};
 
 export const queueManager = new QueueManager();

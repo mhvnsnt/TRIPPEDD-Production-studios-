@@ -6,7 +6,51 @@ coverage/
 *.log
 .env*
 !.env.example
+.trippedd_venv
+.trippedd_tools
+.trippedd_toolchain.json
+# ASR model weights, fetched at runtime and verified by ModelArtifactManager.
+# 1.9 GB of binaries that the toolchain re-downloads on demand — never repo content.
+.trippedd_models
+dist
+footage/
+
+# Contact sheets are derived from the footage; regenerate, don't commit.
+public/contact/
+
+# The source catalog is the creator's ground truth, built locally per machine.
+.trippedd_catalog.json
+
+# Analysed evidence — rebuilt from the footage, not repo content.
+.trippedd_tools/
+
+# Supplied source models are pulled from Drive by provenance, not committed as blobs.
+assets/source_models/*.glb
+assets/source_models/*.fbx
+assets/source_models/*.obj
+public/model_views/
+
+renders/
+vendor/blender
+assets/rigs/*.blend
+assets/rigs/*.glb
+.trippedd_libs/
+.trippedd_models/
+assets/rigs/*.blend1
+vendor/
+vendor/rhubarb/
+
+# Python bytecode from the Blender tool scripts.
+__pycache__/
+*.pyc
 .trippedd/
 public/production/*.mp4
 public/production/*.json
 public/production/*-segments/
+
+# Rendered evidence is regenerable and stays out of git...
+#   ...EXCEPT the downscaled published copies under docs/evidence/, which are
+#   how every other agent and every CI runner actually SEES the work. A frame
+#   that exists only on one container is not evidence anyone can check.
+!docs/evidence/
+!docs/evidence/**

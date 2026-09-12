@@ -1,0 +1,26 @@
+{
+  "shotId": "GM-WORLD-0001-TEST",
+  "sceneName": "GM-WORLD-0001-TEST",
+  "worldSeed": 742918,
+  "render": { "width": 640, "height": 360, "fps": 12, "frames": 8 },
+  "subject": {
+    "character": "MARS",
+    "canonicalMaster": "assets/source_models/MARS_source.glb",
+    "canonicalSha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "renderLod": "LOD1",
+    "likenessRule": "The canonical master is the identity source of truth. A LOD is a decimation OF HIM, derived from those exact bytes. No generative system may substitute a different head."
+  },
+  "environment": {
+    "kind": "PROCEDURAL_SEEDED",
+    "gaussianSplats": false,
+    "gaussianSplatsNote": "Deliberately OFF for the first proof. Proving the shot renders comes before adding a second thing that can fail.",
+    "budget": { "maxInstances": 140, "maxLights": 4 }
+  },
+  "verification": {
+    "requireNonEmptyFrames": true,
+    "requireExactFrameCount": true,
+    "requireCanonicalHashMatch": true,
+    "forbidTelemetrySubstitute": true,
+    "creativeFinalRequiresAllOfTheAbove": true
+  }
+}

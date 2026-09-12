@@ -1,0 +1,41 @@
+{
+  "character": "MARS",
+  "note": "THE APPEARANCE SPEC IS CANON, AND IT IS READ BY THE BUILD -- not documentation. Every material the rig creates comes from here, so a look cannot drift by someone editing a hex value inside a Blender script.",
+  "canonical": {
+    "premise": "MARS IS A FLOATING-HEAD BEING. The absence of a body is intentional character design, not missing geometry. Never invent a torso, never treat the neck termination as a defect, never regenerate the head.",
+    "eyes": {
+      "solidWhite": true,
+      "why": "HIS EYES ARE WHITE ON PURPOSE. No iris, no pupil, no visible gaze target -- that is the character, not a missing feature. A build that helpfully adds a blue iris because the donor mesh has one has redesigned him.",
+      "rule": "The GNM donor eyeball ships sclera / iris / pupil as separate vertex classes. In the canonical variant ALL THREE take the sclera material, so the eye reads as one luminous white form while the geometry underneath stays capable of a pupil the moment a scene wants one."
+    },
+    "skin": {"source": "the scan's own texture", "rule": "never replaced; shot looks are lighting and grade, not a new skin"}
+  },
+  "variants": {
+    "canonical": {
+      "label": "MARS as written — solid white luminous eyes",
+      "eyeParts": {"sclera": "SCLERA", "iris": "SCLERA", "pupil": "SCLERA"}
+    },
+    "pupils": {
+      "label": "Pupils visible — for a scene that calls for a readable gaze",
+      "eyeParts": {"sclera": "SCLERA", "iris": "IRIS", "pupil": "PUPIL"}
+    },
+    "human_skin": {
+      "label": "Human skin tone — for a scene outside the neon-blue look",
+      "eyeParts": {"sclera": "SCLERA", "iris": "IRIS", "pupil": "PUPIL"},
+      "skinOverride": {"baseColor": [0.62, 0.44, 0.34, 1.0], "roughness": 0.52, "subsurface": 0.35}
+    }
+  },
+  "materials": {
+    "SCLERA": {"baseColor": [0.93, 0.96, 1.0, 1.0], "roughness": 0.14, "specular": 0.5,
+               "emission": [0.55, 0.74, 1.0, 1.0], "emissionStrength": 1.6},
+    "IRIS":   {"baseColor": [0.28, 0.55, 1.0, 1.0], "roughness": 0.10, "specular": 0.85,
+               "emission": [0.25, 0.60, 1.0, 1.0], "emissionStrength": 2.6},
+    "PUPIL":  {"baseColor": [0.010, 0.012, 0.030, 1.0], "roughness": 0.30, "specular": 0.80},
+    "TEETH":  {"baseColor": [0.76, 0.755, 0.72, 1.0], "roughness": 0.20, "specular": 0.62, "subsurface": 0.55},
+    "GUM":    {"baseColor": [0.32, 0.075, 0.21, 1.0], "roughness": 0.52, "specular": 0.36, "subsurface": 0.45},
+    "TONGUE": {"baseColor": [0.40, 0.085, 0.26, 1.0], "roughness": 0.42, "specular": 0.44, "subsurface": 0.55},
+    "SOCK":   {"baseColor": [0.075, 0.022, 0.040, 1.0], "roughness": 0.66, "specular": 0.30, "subsurface": 0.30},
+    "ORAL":   {"baseColor": [0.055, 0.016, 0.030, 1.0], "roughness": 0.62, "specular": 0.30}
+  },
+  "activeVariant": "canonical"
+}

@@ -23,7 +23,33 @@ export interface MediaPipelineProgress {
   message: string;
 }
 
+/**
+ * What a process ACTUALLY did, recorded as it happens.
+ *
+ * Provenance was previously minted after the fact by a helper that hardcoded
+ * success:true, durationMs:0, identical start and end timestamps, and a command
+ * string containing the literal placeholder '<local-source>'. A record like
+ * that is a DESCRIPTION of what was supposed to happen, and it reads exactly
+ * the same whether the tool ran or never ran — which is the failure this
+ * project has been bitten by four separate times.
+ *
+ * These are measured around the real execFile call. A tool with no entry here
+ * did not run, and provenance refuses to claim otherwise.
+ */
+export interface ToolRun {
+  tool: string;
+  command: string;        // the argv that was actually executed
+  startedAt: string;
+  endedAt: string;
+  durationMs: number;
+  success: boolean;
+  exitCode: number | null;
+  error?: string;
+}
+
 export interface MediaPipelineResult {
+  /** Every process this analysis spawned, in order. */
+  runs: ToolRun[];
   ffprobe?: any;
   scenes?: any[];
   transcript?: any;
@@ -31,10 +57,37 @@ export interface MediaPipelineResult {
   visual?: { sampledFrames: number; width?: number; height?: number; fps?: number; duration?: number; frameCount?: number };
 }
 
-async function run(command: string, args: string[], onOutput?: (text: string) => void) {
-  const result = await execFileAsync(command, args, { maxBuffer: 20 * 1024 * 1024 });
-  if (onOutput && result.stdout) onOutput(result.stdout);
-  return result;
+async function run(
+  command: string,
+  args: string[],
+  onOutput?: (text: string) => void,
+  ledger?: ToolRun[],
+) {
+  const startedAt = new Date();
+  const t0 = Date.now();
+  const record = (success: boolean, exitCode: number | null, error?: string) => {
+    ledger?.push({
+      tool: command,
+      command: [command, ...args].join(' '),
+      startedAt: startedAt.toISOString(),
+      endedAt: new Date().toISOString(),
+      durationMs: Date.now() - t0,
+      success,
+      exitCode,
+      ...(error ? { error } : {}),
+    });
+  };
+  try {
+    const result = await execFileAsync(command, args, { maxBuffer: 20 * 1024 * 1024 });
+    record(true, 0);
+    if (onOutput && result.stdout) onOutput(result.stdout);
+    return result;
+  } catch (e: any) {
+    // A failed run is still a run, and the ledger has to say so — a tool that
+    // was attempted and failed is a different fact from one never attempted.
+    record(false, typeof e?.code === 'number' ? e.code : null, e?.message || String(e));
+    throw e;
+  }
 }
 
 export async function downloadToFile(url: string, credential: string, destination: string) {
@@ -53,7 +106,8 @@ export async function analyzeMedia(
   tools: Record<string, boolean>,
   onProgress: (progress: MediaPipelineProgress) => void,
 ): Promise<MediaPipelineResult> {
-  const result: MediaPipelineResult = {};
+  const result: MediaPipelineResult = { runs: [] };
+  const ledger = result.runs;
   const sourceSha256 = await EvidenceCache.sha256(inputPath);
 
   onProgress({ stage: 'ffprobe', progress: 10, message: 'Reading technical media metadata.' });
@@ -63,7 +117,7 @@ export async function analyzeMedia(
     if (result.ffprobe) {
       onProgress({ stage: 'ffprobe', progress: 12, message: 'Reused checksum-keyed FFprobe evidence.' });
     } else {
-      const { stdout } = await run('ffprobe', ['-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', inputPath]);
+      const { stdout } = await run('ffprobe', ['-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', inputPath], undefined, ledger);
       result.ffprobe = JSON.parse(stdout);
       await evidenceCache.put(key, result.ffprobe);
     }
@@ -95,7 +149,7 @@ export async function analyzeMedia(
       }
       const workDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-scenes-'));
       try {
-        await run('scenedetect', ['-i', inputPath, 'detect-content', 'list-scenes', '-o', workDir]);
+        await run('scenedetect', ['-i', inputPath, 'detect-content', 'list-scenes', '-o', workDir], undefined, ledger);
         const csvPath = path.join(workDir, `${path.basename(inputPath).replace(/\.[^.]+$/, '')}-Scenes.csv`);
         try {
           const csv = await fs.readFile(csvPath, 'utf8');
@@ -139,7 +193,7 @@ export async function analyzeMedia(
         'p.release()',
         'print(json.dumps({"sampledFrames":sampled,"frameCount":frames,"width":w,"height":h,"fps":fps}))',
       ].join('\n');
-      const { stdout } = await run('python3', ['-c', python, inputPath]);
+      const { stdout } = await run('python3', ['-c', python, inputPath], undefined, ledger);
       result.visual = { ...JSON.parse(stdout.trim()), duration, width, height, fps };
       await evidenceCache.put(key, result.visual);
     })());
@@ -158,11 +212,11 @@ export async function analyzeMedia(
       const frameDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ocr-'));
       try {
         const fpsForSampling = duration > 0 ? Math.min(1 / Math.max(duration / 12, 1), 1) : 0.1;
-        await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-i', inputPath, '-vf', `fps=${fpsForSampling},scale=iw:ih`, '-frames:v', '12', path.join(frameDir, 'frame-%02d.png')]);
+        await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-i', inputPath, '-vf', `fps=${fpsForSampling},scale=iw:ih`, '-frames:v', '12', path.join(frameDir, 'frame-%02d.png')], undefined, ledger);
         const frames = (await fs.readdir(frameDir)).filter(name => name.endsWith('.png')).sort();
         const chunks: string[] = [];
         for (const frame of frames) {
-          try { const { stdout } = await run('tesseract', [path.join(frameDir, frame), 'stdout', '--psm', '6']); if (stdout.trim()) chunks.push(`[${frame}] ${stdout.trim()}`); } catch {}
+          try { const { stdout } = await run('tesseract', [path.join(frameDir, frame), 'stdout', '--psm', '6'], undefined, ledger); if (stdout.trim()) chunks.push(`[${frame}] ${stdout.trim()}`); } catch {}
         }
         result.ocr = chunks.join('\n');
         await evidenceCache.put(key, result.ocr);
@@ -184,7 +238,7 @@ export async function analyzeMedia(
       try {
         const model = process.env.WHISPER_MODEL || 'tiny';
         try {
-          await run('whisper', [inputPath, '--model', model, '--output_dir', outputDir, '--output_format', 'json']);
+          await run('whisper', [inputPath, '--model', model, '--output_dir', outputDir, '--output_format', 'json'], undefined, ledger);
           const jsonPath = path.join(outputDir, `${path.basename(inputPath).replace(/\.[^.]+$/, '')}.json`);
           try { result.transcript = JSON.parse(await fs.readFile(jsonPath, 'utf8')); } catch { result.transcript = null; }
         } catch (error: any) {

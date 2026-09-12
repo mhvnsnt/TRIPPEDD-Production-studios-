@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Video, FileText, CheckCircle2, AlertCircle, Clock, Search, Activity, Link as LinkIcon, Edit2, PlayCircle, Eye, GitMerge, SplitSquareHorizontal, Check, X, RefreshCcw } from 'lucide-react';
+import { Video, FileText, CheckCircle2, AlertCircle, Clock, Search, Activity, Link as LinkIcon, Edit2, PlayCircle, Eye, GitMerge, SplitSquareHorizontal, Check, X, RefreshCcw, Mic } from 'lucide-react';
 import { globalGraph, globalPhysicalTimeline } from '../core/pipeline/state';
 import { seedPhysicalEvidence } from '../core/pipeline/seed';
 import { Observation, CaptureSession, SourceClip } from '../core/types';

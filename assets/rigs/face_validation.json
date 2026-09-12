@@ -1,0 +1,92 @@
+{
+  "anatomy": {
+    "mouthWidth": 0.21381,
+    "eyeWidthL": 0.11095,
+    "eyeWidthR": 0.10707
+  },
+  "neutral": {
+    "mouthAperture": 0.03171,
+    "lipSurfaceY": -0.46651,
+    "chinZ": 0.07248
+  },
+  "thresholds": {
+    "openMin": 0.0424,
+    "closedMax": 0.03428,
+    "blinkMinClosureFraction": 0.45
+  },
+  "mouth": {
+    "viseme_AA": {
+      "expect": "open",
+      "aperture": 0.05285,
+      "width": 0.21828,
+      "axis": "vertical",
+      "openedBy": 0.02114,
+      "jawDisplacement": 0.01129,
+      "raysThrough": 23,
+      "pass": true
+    },
+    "viseme_EE": {
+      "expect": "open",
+      "aperture": 0.0185,
+      "width": 0.3181,
+      "axis": "horizontal",
+      "openedBy": -0.01321,
+      "jawDisplacement": 0.00101,
+      "raysThrough": 7,
+      "pass": true
+    },
+    "viseme_OH": {
+      "expect": "open",
+      "aperture": 0.06871,
+      "width": 0.13741,
+      "axis": "vertical",
+      "openedBy": 0.037,
+      "jawDisplacement": 0.01648,
+      "raysThrough": 26,
+      "pass": true
+    },
+    "viseme_MM": {
+      "expect": "closed",
+      "aperture": 0.03171,
+      "width": 0.21676,
+      "axis": "vertical",
+      "openedBy": 0.0,
+      "jawDisplacement": 6e-05,
+      "raysThrough": 12,
+      "pass": true
+    },
+    "viseme_FF": {
+      "expect": "closed",
+      "aperture": 0.01586,
+      "width": 0.21674,
+      "axis": "vertical",
+      "openedBy": -0.01586,
+      "jawDisplacement": 0.00625,
+      "raysThrough": 8,
+      "pass": true
+    }
+  },
+  "eyes": {
+    "blink_L": {
+      "lidDrop": 0.0415,
+      "fractionOfEyeHeight": 0.6256,
+      "regionPoints": 69,
+      "pass": true
+    },
+    "blink_R": {
+      "lidDrop": 0.04788,
+      "fractionOfEyeHeight": 0.7861,
+      "regionPoints": 46,
+      "pass": true
+    }
+  },
+  "failures": [],
+  "jawOnly": {
+    "degrees": 16.0,
+    "maxTravel": 0.11756,
+    "verticesMoved": 7015,
+    "asFractionOfMouthWidth": 0.55,
+    "pass": true
+  },
+  "status": "VERIFIED"
+}

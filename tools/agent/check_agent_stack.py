@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import json
 import shutil
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -24,6 +23,7 @@ COMMANDS = {
     "ripgrep": ["rg"],
     "fd": ["fd", "fdfind"],
     "Semgrep": ["semgrep"],
+    "mini-SWE-agent": ["mini", "mini-swe-agent"],
     "SWE-agent": ["sweagent"],
     "LiteLLM": ["litellm"],
 }

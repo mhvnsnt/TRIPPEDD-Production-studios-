@@ -29,6 +29,11 @@ SAMPLES = int(opt("--samples", "64"))
 RES = int(opt("--res", "900"))
 ONLY = opt("--only", "")
 SET = opt("--set", "mouth")
+# EEVEE runs on software GL in this container, so every extra camera costs real
+# minutes. The mouth sheet needs all three views; an expression is judged from
+# the front, with profile for the nose and brow, and the mouth camera adds
+# nothing to a brow raise. Naming the views beats rendering ones nobody reads.
+CAMS = opt("--cams", "front,mouth,profile").split(",")
 os.makedirs(OUT, exist_ok=True)
 
 F = MouthFrame(); MW = F.MW
@@ -291,6 +296,7 @@ for (name, jaw, shapes, tongue) in POSES:
                        for k in ("skin", "cavity", "teeth", "gum", "tongue", "eye")}}
     report.append(row)
     for cam, tag in ((CAM_FULL, "front"), (CAM_MOUTH, "mouth"), (CAM_PROFILE, "profile")):
+        if tag not in CAMS: continue
         scene.camera = cam
         scene.render.filepath = os.path.join(OUT, "%s_%s.png" % (name, tag))
         bpy.ops.render.render(write_still=True)

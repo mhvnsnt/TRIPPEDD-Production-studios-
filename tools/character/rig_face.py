@@ -294,198 +294,102 @@ def finish(bm, name, smooth=True, bevel=0.0):
     scene.collection.objects.link(ob)
     return ob
 
-# ── the dental arches ───────────────────────────────────────────────────────
-# REAL TEETH, AT REAL SIZE. The first arch was 12 identical-ish boxes on an even
-# angular spacing, and it read as a zip fastener because that is what it was.
-#
-# SCALE IS ANCHORED TO MEASUREMENT, not to a bounding-box fraction. His measured
-# inter-commissure width is MW = 0.1930 units; an adult mouth is about 50 mm
-# across, so one millimetre is MW/50 units. Every crown dimension below is a
-# published odontometric mean in millimetres, converted through that one factor.
-# Checked against what was there: a maxillary central incisor should be 8.6 mm
-# wide and 10.5 mm long = 0.166 x 0.203 MW. The old arch gave it 0.056 x 0.120 --
-# a third the width. That is why they looked like pegs.
-MM = MW / 50.0
+# ── oral anatomy: the GNM donor, fitted ─────────────────────────────────────
+# Procedural crowns got the anatomy right and never got the SHAPE right.
+# Fourteen correctly-sized boxes on a measured arch still render as a dental
+# appliance, because a tooth is not a tapered box and a tongue is not a lofted
+# ellipsoid. This loads scan-derived geometry from google/GNM (Apache-2.0),
+# already fitted to Mars's measured mouth frame by tools/character/gnm_oral_donor.py
+# -- a similarity transform between two MEASURED mouths, scale x3.9572.
+DONOR = os.path.join(ROOT, "assets", "donor", "gnm_oral")
+if not os.path.isdir(DONOR):
+    sys.exit("no oral donor. Run: .trippedd_venv/bin/python tools/character/gnm_oral_donor.py")
 
-# (name, mesiodistal width, crown height, buccolingual depth), midline outward.
-# Mandibular crowns run slightly smaller; MAND_SCALE carries that.
-TOOTH_MM = [
-    ("central_incisor", 8.6, 10.5, 7.0),
-    ("lateral_incisor", 6.6,  9.0, 6.4),
-    ("canine",          7.6, 10.0, 8.1),
-    ("premolar_1",      7.1,  8.5, 9.2),
-    ("premolar_2",      6.6,  8.5, 9.2),
-    ("molar_1",        10.4,  7.5, 11.0),
-    ("molar_2",         9.8,  7.0, 10.8),
-]
-MAND_SCALE = 0.92
-N_TEETH = len(TOOTH_MM) * 2
+import numpy as np
+CLASS_MAT = {1: M_TEETH, 2: M_GUM, 3: M_TONGUE, 0: None}
 
-# The arch has to be wide enough to hold real crowns. Inter-molar width is about
-# 55 mm, so half of that is 27.5 mm.
-ARCH_HALF = 26.0 * MM
-ARCH_FRONT = MW * 0.115        # recessed behind the lips, never at the lip plane
-ARCH_DEPTH = MW * 0.62
+def load_donor(name, obj_name, bone_name, cavity_mat=None):
+    f = np.load(os.path.join(DONOR, name + ".npz"))
+    verts, tris, cls = f["vertices"], f["triangles"], f["vertex_class"]
+    me = bpy.data.meshes.new(obj_name + "_MESH")
+    me.from_pydata([tuple(map(float, v)) for v in verts],
+                   [], [tuple(map(int, t)) for t in tris])
+    me.validate(verbose=False)
+    # Materials by TISSUE, read off GNM's own vertex groups rather than guessed
+    # from position: enamel and gingiva are different materials, and a single
+    # slab colour is most of what made the last arch read as an appliance.
+    slots, slot_of = [], {}
+    for c in sorted(set(int(x) for x in cls)):
+        mat = CLASS_MAT.get(c) or cavity_mat or M_GUM
+        slot_of[c] = len(slots); slots.append(mat)
+    for mat in slots: me.materials.append(mat)
+    for poly in me.polygons:
+        vs = [cls[i] for i in poly.vertices]
+        poly.material_index = slot_of[int(max(set(vs), key=list(vs).count))]
+        poly.use_smooth = True
+    ob = bpy.data.objects.new(obj_name, me)
+    scene.collection.objects.link(ob)
+    ob.parent = arm
+    ob.matrix_parent_inverse = arm.matrix_world.inverted()
+    md = ob.modifiers.new("Armature", "ARMATURE")
+    md.object = arm; md.use_vertex_groups = True
+    return ob, verts, cls
 
-def arch_at(u):
-    """Point and tangent angle on the arch, u in [-1, 1] across the midline."""
-    a = u * math.radians(88.0)
-    return (F.cx + ARCH_HALF * math.sin(a), ARCH_FRONT + ARCH_DEPTH * (1 - math.cos(a)), a)
+teeth_u, vu, _ = load_donor("upper_teeth_and_gums", "MARS_TEETH_UPPER", "head")
+g = teeth_u.vertex_groups.new(name="head"); g.add(range(len(vu)), 1.0, "REPLACE")
+teeth_l, vl, _ = load_donor("lower_teeth_and_gums", "MARS_TEETH_LOWER", "jaw")
+g = teeth_l.vertex_groups.new(name="jaw"); g.add(range(len(vl)), 1.0, "REPLACE")
 
-def dental_arch(name, bone_name, biting_z, gum_z, up):
-    """up=+1 for the lower arch (crowns point up), -1 for the upper."""
-    scale = 1.0 if up < 0 else MAND_SCALE
-    bm = bmesh.new()
-    # Lay teeth out by CUMULATIVE WIDTH so neighbours meet at a contact point,
-    # which is how an arch actually works. Even angular spacing is what left
-    # visible air between every crown.
-    widths = [TOOTH_MM[i][1] * MM * scale for i in range(len(TOOTH_MM))]
-    total = sum(widths)
-    placed = []
-    for sign in (-1, 1):
-        run = 0.0
-        for i, (tname, w_mm, h_mm, d_mm) in enumerate(TOOTH_MM):
-            w = w_mm * MM * scale
-            h = h_mm * MM * scale
-            d = d_mm * MM * scale
-            run += w * 0.5
-            u = sign * min(1.0, run / total)
-            x, y, a = arch_at(u)
-            run += w * 0.5
-            cube = bmesh.ops.create_cube(bm, size=1.0)["verts"]
-            bmesh.ops.scale(bm, vec=(w * 1.005, d, h), verts=cube)   # overlap at the contact point
-            base_z = biting_z - up * h * 0.5
-            for v in cube:
-                # Root end narrows; the crown is widest at the contact point.
-                toward_root = max(0.0, (v.co.z * up * -1) / max(1e-6, h) + 0.5)
-                k = 1.0 - 0.30 * toward_root
-                v.co.x *= k; v.co.y *= k
-                if tname == "canine":
-                    # A canine is a POINT, not a blade. Pull the incisal end in.
-                    toward_tip = max(0.0, (v.co.z * up) / max(1e-6, h) + 0.5)
-                    v.co.x *= 1.0 - 0.45 * toward_tip
-                    v.co.y *= 1.0 - 0.25 * toward_tip
-                elif tname.startswith("molar") or tname.startswith("premolar"):
-                    # Occlusal table stays broad; only the root tapers.
-                    toward_tip = max(0.0, (v.co.z * up) / max(1e-6, h) + 0.5)
-                    v.co.x *= 1.0 + 0.06 * toward_tip
-            bmesh.ops.rotate(bm, verts=cube, cent=(0, 0, 0),
-                             matrix=mathutils.Matrix.Rotation(-a, 3, "Z"))
-            bmesh.ops.translate(bm, vec=(x, y, base_z), verts=cube)
-            placed.append((tname, round(w / MW, 4), round(h / MW, 4)))
-    for v in bm.verts:
-        v.co = F.world(V(v.co))
-    teeth = finish(bm, name, smooth=True, bevel=MM * 0.34)
-    rides(teeth, bone_name, M_TEETH)
+M_SOCK = mat("MARS_SOCK_MAT", (0.075, 0.022, 0.040, 1), 0.66, 0.30, sss=0.30)
+sock, vs_, _ = load_donor("mouth_sock", "MARS_MOUTH_SOCK", "head", cavity_mat=M_SOCK)
+g = sock.vertex_groups.new(name="head"); g.add(range(len(vs_)), 1.0, "REPLACE")
 
-    # Gum ridge: lofted along the SAME arch, sitting at the root ends only, so it
-    # never swallows the crowns the way a fat tube did.
-    bm = bmesh.new()
-    rings, RN = [], 12
-    steps = 96
-    for i in range(steps + 1):
-        u = i / float(steps) * 2.0 - 1.0
-        x, y, a = arch_at(u)
-        # Scalloped: the ridge rises between crowns and dips over each one.
-        papilla = 0.5 + 0.5 * math.cos(u * math.pi * len(TOOTH_MM) * 2.0)
-        rw = 5.6 * MM
-        rh = (5.0 + 3.4 * papilla) * MM
-        ring = []
-        for k in range(RN):
-            t = 2 * math.pi * k / RN
-            ring.append(bm.verts.new(F.world(V((
-                x + math.cos(t) * rw * math.cos(a),
-                y + math.cos(t) * rw * math.sin(a) * 0.4 + math.cos(t) * rw * 0.6,
-                gum_z + math.sin(t) * rh - up * 2.2 * MM * papilla)))))
-        rings.append(ring)
-    for A_, B_ in zip(rings, rings[1:]):
-        for k in range(RN):
-            bm.faces.new((A_[k], A_[(k + 1) % RN], B_[(k + 1) % RN], B_[k]))
-    for end, flip in ((rings[0], False), (rings[-1], True)):
-        bm.faces.new(end[::-1] if flip else end)
-    gum = finish(bm, name + "_GUM", smooth=True)
-    rides(gum, bone_name, M_GUM)
-    return teeth, gum, placed
-
-# Crown length now sets where the gum line sits, rather than the other way round.
-BITE_UP = MW * 0.018
-BITE_LO = -MW * 0.016
-teeth_u, gum_u, placed_u = dental_arch("MARS_TEETH_UPPER", "head", BITE_UP,
-                                       BITE_UP + 10.5 * MM * 0.92, up=-1)
-teeth_l, gum_l, placed_l = dental_arch("MARS_TEETH_LOWER", "jaw", BITE_LO,
-                                       BITE_LO - 10.5 * MM * MAND_SCALE * 0.92, up=+1)
-print("\ndental arches: %d teeth per arch, sized from odontometric means" % N_TEETH)
-for tname, w, h in placed_u[:len(TOOTH_MM)]:
-    print("  %-16s %.3f MW wide x %.3f MW long" % (tname, w, h))
-print("\ndental arches: upper %d verts on the SKULL · lower %d verts on the MANDIBLE"
-      % (len(teeth_u.data.vertices), len(teeth_l.data.vertices)))
-print("  occlusal gap at rest %.4f (%.1f%% of mouth width) · arch front %.3f MW behind the lip plane"
-      % (BITE_UP - BITE_LO, 100 * (BITE_UP - BITE_LO) / MW, ARCH_FRONT / MW))
-
-# ── the tongue: an articulator, not a blob ──────────────────────────────────
-# Three bones drive it, so root / body / tip move independently and it can curl,
-# lift, retract and protrude. Shape keys on a sphere could do none of that.
-TONGUE_SECTIONS = [
-    # (y along the mouth, half-width, half-height, z centre)
-    # REAL PROPORTIONS, same millimetre anchor as the teeth. The oral part of an
-    # adult tongue is about 45 mm across and 18 mm thick and it FILLS the floor
-    # of the mouth; the previous one was 0.47 MW wide inside a cavity 1.0 MW
-    # across, which is exactly why it read as a bead in a box.
-    (66.0 * MM, 17.0 * MM,  8.0 * MM, -MW * 0.300),
-    (58.0 * MM, 21.5 * MM, 10.0 * MM, -MW * 0.320),
-    (48.0 * MM, 23.5 * MM, 10.5 * MM, -MW * 0.335),
-    (38.0 * MM, 24.0 * MM, 10.0 * MM, -MW * 0.345),
-    (28.0 * MM, 23.0 * MM,  9.0 * MM, -MW * 0.350),
-    (19.0 * MM, 20.5 * MM,  7.6 * MM, -MW * 0.346),
-    (11.0 * MM, 16.5 * MM,  6.0 * MM, -MW * 0.336),
-    ( 5.0 * MM, 11.0 * MM,  4.2 * MM, -MW * 0.322),
-    ( 0.0 * MM,  6.0 * MM,  2.6 * MM, -MW * 0.310),
-]
-bm = bmesh.new()
-RN = 26
-rings = []
-for (y, hw, hh, zc) in TONGUE_SECTIONS:
-    ring = []
-    for k in range(RN):
-        t = 2 * math.pi * k / RN
-        # flat underside, domed top: a tongue sits in the floor of the mouth
-        cx_t, sz = math.cos(t), math.sin(t)
-        # Domed top, flat underside, and a midline groove down the middle of the
-        # dorsum -- the one feature that stops a smooth blob reading as plastic.
-        groove = 1.0 - 0.42 * math.exp(-((cx_t / 0.26) ** 2)) if sz > 0 else 1.0
-        if sz > 0:
-            groove *= 1.0 + 0.045 * math.sin(y / MM * 0.75)   # transverse ripple
-        ring.append(bm.verts.new(F.world(V((F.cx + cx_t * hw, y,
-                                            zc + hh * (sz * 1.15 * groove if sz > 0 else sz * 0.55))))))
-    rings.append(ring)
-for A_, B_ in zip(rings, rings[1:]):
-    for k in range(RN):
-        bm.faces.new((A_[k], A_[(k + 1) % RN], B_[(k + 1) % RN], B_[k]))
-back = bm.verts.new(F.world(V((F.cx, 72.0 * MM, -MW * 0.295))))
-tip = bm.verts.new(F.world(V((F.cx, -3.0 * MM, -MW * 0.308))))
-for k in range(RN):
-    bm.faces.new((rings[0][(k + 1) % RN], rings[0][k], back))
-    bm.faces.new((rings[-1][k], rings[-1][(k + 1) % RN], tip))
-tongue = finish(bm, "MARS_TONGUE", smooth=True)
-tongue.data.materials.clear(); tongue.data.materials.append(M_TONGUE)
-tongue.parent = arm
-tongue.matrix_parent_inverse = arm.matrix_world.inverted()
+tongue, vt, _ = load_donor("tongue", "MARS_TONGUE", "jaw")
 for gname in ("tongue_root", "tongue_mid", "tongue_tip"):
     tongue.vertex_groups.new(name=gname)
-TG = {g.name: g for g in tongue.vertex_groups}
+TG = {gg.name: gg for gg in tongue.vertex_groups}
 for i, v in enumerate(tongue.data.vertices):
     ly = F.local(v.co).y / MW
-    wr = smoothstep((ly - 0.55) / 0.40)                    # root owns the back
-    wt = smoothstep((0.55 - ly) / 0.40)                    # tip owns the front
+    wr = smoothstep((ly - 0.55) / 0.40)
+    wt = smoothstep((0.55 - ly) / 0.40)
     wm = max(0.0, 1.0 - wr - wt)
-    tot = wr + wm + wt
+    tot = wr + wm + wt or 1.0
     TG["tongue_root"].add([i], wr / tot, "REPLACE")
     TG["tongue_mid"].add([i], wm / tot, "REPLACE")
     TG["tongue_tip"].add([i], wt / tot, "REPLACE")
-md = tongue.modifiers.new("Armature", "ARMATURE")
-md.object = arm; md.use_vertex_groups = True
-print("tongue: %d verts on a 3-bone chain (root/mid/tip) riding the mandible"
-      % len(tongue.data.vertices))
+
+# 32 MEASURED tongue shapes, in place of two hand-written offsets called
+# tongue_up and tongue_out.
+te = os.path.join(DONOR, "tongue_expressions.npz")
+tongue_shapes = 0
+if os.path.exists(te):
+    f = np.load(te, allow_pickle=True)
+    tnames, tdelta = [str(x) for x in f["names"]], f["deltas"]
+    if tdelta.shape[1] == len(tongue.data.vertices):
+        tongue.shape_key_add(name="Basis", from_mix=False)
+        tbasis = tongue.data.shape_keys.key_blocks["Basis"]
+        for n, tdel in zip(tnames, tdelta):
+            if n.endswith("_mean"): continue
+            k = tongue.shape_key_add(name=n, from_mix=False)
+            for i in range(len(tongue.data.vertices)):
+                k.data[i].co = tbasis.data[i].co + mathutils.Vector(tuple(map(float, tdel[i])))
+            k.value = 0.0
+            tongue_shapes += 1
+    else:
+        print("  tongue deltas do not match the loaded tongue (%d vs %d) -- not applied"
+              % (tdelta.shape[1], len(tongue.data.vertices)))
+
+dmf = json.load(open(os.path.join(DONOR, "manifest.json")))
+print("\noral donor: %s (%s), fitted x%.4f from two measured mouths"
+      % (dmf["source"], dmf["license"], dmf["fit"]["scale"]))
+for n, ob in (("upper teeth+gums", teeth_u), ("lower teeth+gums", teeth_l),
+              ("tongue", tongue), ("mouth sock", sock)):
+    print("  %-18s %5d verts · %d materials · rides %s"
+          % (n, len(ob.data.vertices), len(ob.data.materials),
+             ob.vertex_groups[0].name if ob.vertex_groups else "-"))
+print("  tongue shape keys: %d measured GNM tongue expressions" % tongue_shapes)
+if tongue_shapes < 8:
+    sys.exit("the tongue got almost no measured shapes -- donor mismatch")
 
 # ── the lip control layer ───────────────────────────────────────────────────
 # The scan was captured with the mouth closed, so the exterior has no open-mouth
@@ -570,6 +474,65 @@ CONTROLS = {
                                    + (corner(p, +1, (-1.0, 0, 0), 0.075) or V((0, 0, 0))),
 }
 
+# ── expressions, driven by MEASURED CONTOURS where one exists ────────────────
+# A blink is not a sphere pushed down. The first one was a radial falloff around
+# the eye centre, which moves the brow and the cheek as much as the lid and on a
+# face whose eyes are PAINTED INTO THE TEXTURE reads as skin sliding. MediaPipe
+# already gave us both eyelid contours raycast onto the real surface, so the lid
+# can travel along its own curve, by its own measured opening.
+#     MEASURED: eye L fissure 0.1109, lid opening 0.0252 (aspect 0.23)
+#               eye R fissure 0.1071, lid opening 0.0251 (aspect 0.23)
+# Both aspect ratios are a normal open eye, so the contour is tracking real
+# lids in the texture rather than guessing.
+EYE_C = F.raw["contours"]
+
+def contour_band(points, radius, offset_fn, gate=None):
+    """Deform the band of surface within `radius` of a measured curve."""
+    pts = [V(q) for q in points]
+    def f(lp):
+        w_best, near = 0.0, None
+        for q in pts:
+            d = (lp - F.local(q)).length
+            if d < radius:
+                w = 1.0 - smoothstep(d / radius)
+                if w > w_best: w_best, near = w, q
+        if w_best <= 0 or (gate and not gate(lp, near)): return None
+        return offset_fn(lp, near) * w_best
+    return f
+
+def lid_close(side):
+    up = EYE_C["eye_%s_upper" % side]
+    lo = EYE_C["eye_%s_lower" % side]
+    mid_z = sum(F.local(q).z for q in up + lo) / float(len(up) + len(lo))
+    opening = (F.local(up[len(up) // 2]) - F.local(lo[len(lo) // 2])).length
+    # Only the UPPER lid travels, and it travels the measured opening: a lid
+    # that moves half the fissure is a squint, not a blink.
+    return contour_band(up, opening * 1.5,
+                        lambda lp, q: V((0, -0.10, -1.0)) * (opening * 0.92),
+                        gate=lambda lp, q: lp.z > mid_z - opening * 0.15)
+
+def lid_squint(side):
+    lo = EYE_C["eye_%s_lower" % side]
+    mid_z = sum(F.local(q).z for q in EYE_C["eye_%s_upper" % side] + lo) / float(len(lo) * 2)
+    opening = (F.local(EYE_C["eye_%s_upper" % side][4]) - F.local(lo[4])).length
+    return contour_band(lo, opening * 1.4,
+                        lambda lp, q: V((0, -0.05, 1.0)) * (opening * 0.40),
+                        gate=lambda lp, q: lp.z < mid_z + opening * 0.15)
+
+# Nostrils are REAL geometry in this scan -- the alar walls and the openings are
+# modelled, not painted -- so a flare moves actual surface. The alar base sits
+# about 60%% of the way from the nose tip to the cheek on each side.
+nose = F.local(LM["nose_tip"])
+def alar(side_sign):
+    cheek = F.local(LM["cheek_left"] if side_sign < 0 else LM["cheek_right"])
+    return F.world(nose.lerp(cheek, 0.38))
+
+def nostril_flare(side_sign):
+    centre = alar(side_sign)
+    r = (LM["nose_tip"] - LM["nose_bridge"]).length * 0.34
+    return radial(centre, r, (side_sign * 1.0, 0.30, 0.10), r * 0.42)
+
+# expressions, centred on the measured eye and brow landmarks
 # expressions, centred on the measured eye and brow landmarks
 eye_r = (LM["eye_left_outer"] - LM["eye_left_inner"]).length * 0.85
 def radial(centre_w, radius, vec, amp):
@@ -586,10 +549,14 @@ CONTROLS.update({
     "cheek_puff_R": radial(LM["cheek_right"], MW * 0.80, (0.85, -0.50, 0), MW * 0.10),
     "cheek_suck_L": radial(LM["cheek_left"], MW * 0.70, (0.80, 0.55, 0), MW * 0.07),
     "cheek_suck_R": radial(LM["cheek_right"], MW * 0.70, (-0.80, 0.55, 0), MW * 0.07),
-    "blink_L": radial(eye_L, eye_r, (0, 0, -1), eye_r * 0.80),
-    "blink_R": radial(eye_R, eye_r, (0, 0, -1), eye_r * 0.80),
-    "squint_L": radial(eye_L, eye_r * 1.1, (0, 0, 1), eye_r * 0.22),
-    "squint_R": radial(eye_R, eye_r * 1.1, (0, 0, 1), eye_r * 0.22),
+    "blink_L": lid_close("L"),
+    "blink_R": lid_close("R"),
+    "squint_L": lid_squint("L"),
+    "squint_R": lid_squint("R"),
+    "nostril_flare_L": nostril_flare(-1),
+    "nostril_flare_R": nostril_flare(+1),
+    "nose_wrinkle": radial(LM["nose_bridge"], (LM["nose_tip"] - LM["nose_bridge"]).length * 0.55,
+                           (0, -0.25, 1), (LM["nose_tip"] - LM["nose_bridge"]).length * 0.10),
     "brow_up_L": radial(LM["brow_left"], eye_r * 1.5, (0, 0, 1), eye_r * 0.45),
     "brow_up_R": radial(LM["brow_right"], eye_r * 1.5, (0, 0, 1), eye_r * 0.45),
     "brow_down_L": radial(LM["brow_left"], eye_r * 1.4, (0, -0.3, -1), eye_r * 0.30),
@@ -677,13 +644,19 @@ state = {
                     "deltaPercentOfHeadHeight": round(pct, 2), "threshold": 3.0,
                     "method": "distance between the two lip-edge vertices the boolean created, "
                               "tracked by index through the armature"},
-    "oralAnatomy": {"upperTeeth": len(teeth_u.data.vertices), "lowerTeeth": len(teeth_l.data.vertices),
-                    "teethPerArch": N_TEETH, "upperArchRides": "head", "lowerArchRides": "jaw",
-                    "archHalfWidthMW": round(ARCH_HALF / MW, 3),
-                    "archFrontBehindLipPlaneMW": round(ARCH_FRONT / MW, 3),
-                    "occlusalGapAtRest": round(BITE_UP - BITE_LO, 5),
-                    "tongueVerts": len(tongue.data.vertices),
-                    "tongueBones": ["tongue_root", "tongue_mid", "tongue_tip"]},
+    "oralAnatomy": {
+        "source": dmf["source"], "license": dmf["license"],
+        "fit": dmf["fit"],
+        "method": "scan-derived geometry fitted by a similarity transform between two "
+                  "MEASURED mouth frames -- not primitives tuned by eye",
+        "upperTeethAndGums": len(teeth_u.data.vertices),
+        "lowerTeethAndGums": len(teeth_l.data.vertices),
+        "tongueVerts": len(tongue.data.vertices),
+        "mouthSockVerts": len(sock.data.vertices),
+        "upperArchRides": "head", "lowerArchRides": "jaw", "tongueRides": "jaw",
+        "tongueBones": ["tongue_root", "tongue_mid", "tongue_tip"],
+        "tongueShapeKeys": tongue_shapes,
+    },
     "controls": made, "removedDeadControls": dead,
     "meshVertices": len(head.data.vertices),
 }

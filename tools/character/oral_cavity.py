@@ -162,7 +162,7 @@ def aligned_ring(half_w, half_h, z_c, y):
 # small mouth with small teeth in it. Sized from the same millimetre anchor the
 # teeth use: MW = 0.1930 units is a ~50 mm inter-commissure, so 1 mm = MW/50.
 MM = MW / 50.0
-HW = 32.0 * MM        # half-width at the widest, ~64 mm across inside the cheeks
+HW = 36.5 * MM        # half-width: the mandibular body flares to 69 mm, and that is real
 # y is measured along the frame's "into the head" axis, from the aperture centre.
 FRONT = float(opt("--front", "-0.075"))    # start well clear of the lip surface
 SECTIONS = [

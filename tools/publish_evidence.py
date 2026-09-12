@@ -58,6 +58,14 @@ for p in sorted(glob.glob(os.path.join(SRC, "*.png"))):
         im = im.resize((int(im.size[0] * r), int(im.size[1] * r)), Image.LANCZOS)
     name = os.path.basename(p)
     out = os.path.join(DEST, name)
+    # BEFORE/AFTER. Keep the frame this one replaces, so a viewer can see what
+    # changed instead of being told. Without it every re-render silently
+    # overwrites the only copy of the thing you were comparing against.
+    prev_dir = os.path.join(DEST, "prev")
+    if os.path.exists(out):
+        old = sha_full(out)
+        os.makedirs(prev_dir, exist_ok=True)
+        Image.open(out).convert("RGB").save(os.path.join(prev_dir, name), "PNG", optimize=True)
     im.save(out, "PNG", optimize=True)
     # The manifest has to answer every question another agent could ask WITHOUT
     # anyone hunting through temp directories: what it is, where it is, whether
@@ -77,6 +85,7 @@ for p in sorted(glob.glob(os.path.join(SRC, "*.png"))):
                     "%s_%s" % (pose.split("_", 1)[-1].lower(), cam),
                     "%s_%s" % (pose.split("_", 1)[0], cam)],
         "sourceAsset": SOURCE_ASSET,
+        "prev": ("prev/" + name) if os.path.exists(os.path.join(DEST, "prev", name)) else None,
     })
 
 measurements = {}

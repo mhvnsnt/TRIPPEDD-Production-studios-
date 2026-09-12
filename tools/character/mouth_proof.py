@@ -101,7 +101,18 @@ NAME_OF = {"MARS_MESH": "skin_or_cavity", "MARS_TEETH_UPPER": "teeth", "MARS_TEE
 ORAL_SLOTS = {i for i, m in enumerate(head.data.materials) if m and m.name == "MARS_ORAL_MAT"}
 
 def survey(nx=41, nz=29, span=1.25):
+    # FORCE THE POSE TO BE REAL BEFORE MEASURING IT.
+    # Measured, and this is why the check exists: WIDE rendered alone surveyed
+    # teeth 14.8% / tongue 12.7%; the SAME geometry surveyed inside the 10-pose
+    # sequence gave 4.8% / 7.8% -- values sitting between OPEN and WIDE, because
+    # the depsgraph was still carrying the PREVIOUS pose. The frames were
+    # pixel-identical, so only the instrument moved. lip_gap(), which runs one
+    # call later, was correct both times, which is what pinned it.
+    # Evaluating the head forces the armature and boolean to resolve first.
+    bpy.context.view_layer.update()
     deps = bpy.context.evaluated_depsgraph_get()
+    deps.update()
+    head.evaluated_get(deps)
     tally = {"skin": 0, "cavity": 0, "teeth": 0, "gum": 0, "tongue": 0, "miss": 0}
     for iz in range(nz):
         for ix in range(nx):
@@ -125,7 +136,10 @@ def survey(nx=41, nz=29, span=1.25):
 
 def lip_gap():
     """Vertical extent of the opening, measured where the rays stop hitting skin."""
+    bpy.context.view_layer.update()
     deps = bpy.context.evaluated_depsgraph_get()
+    deps.update()
+    head.evaluated_get(deps)
     lx = F.cx
     zs = []
     for i in range(201):

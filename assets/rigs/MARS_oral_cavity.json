@@ -3,7 +3,7 @@
   "weld": {
     "distance": 1e-06,
     "vertsBefore": 47021,
-    "vertsAfter": 23828,
+    "vertsAfter": 23830,
     "boundaryEdgesBefore": 68237,
     "boundaryEdgesAfterWeld": 8,
     "afterHoleFill": 8,

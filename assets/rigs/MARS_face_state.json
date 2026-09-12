@@ -38,8 +38,8 @@
   },
   "weights": {
     "method": "mandible boundary: the lip seam at the mouth, rising to the ear line at the TMJ; blend band capped by the width of the cut so the lip-edge vertices are never caught mid-blend",
-    "jawVertices": 5541,
-    "jawPercent": 23.25,
+    "jawVertices": 5558,
+    "jawPercent": 23.32,
     "lowerLipMeanJawWeight": 1.0,
     "upperLipMeanJawWeight": 0.0
   },
@@ -53,20 +53,33 @@
     "method": "distance between the two lip-edge vertices the boolean created, tracked by index through the armature"
   },
   "oralAnatomy": {
-    "upperTeeth": 784,
-    "lowerTeeth": 784,
-    "teethPerArch": 14,
+    "source": "google/GNM v3_0 gnm_head.npz",
+    "license": "Apache-2.0",
+    "fit": {
+      "scale": 3.125644,
+      "anchor": "DENTAL ARCH (inter-molar), not lip width",
+      "targetArchWidthMM": 57.0,
+      "donorArchWidthNative": 0.070405,
+      "marsMouthWidth": 0.193036,
+      "gnmLipGroupWidth": 0.048782,
+      "rejectedLipAnchoredScale": 3.957152,
+      "whyRejected": "a lip-anchored scale put the arch at 72.2 mm inside a 62 mm cavity; the back of it punched through the cavity walls and rendered as fangs at the mouth corners",
+      "method": "similarity transform between two MEASURED mouth frames, scaled so the dental arch matches published inter-molar width"
+    },
+    "method": "scan-derived geometry fitted by a similarity transform between two MEASURED mouth frames -- not primitives tuned by eye",
+    "upperTeethAndGums": 1440,
+    "lowerTeethAndGums": 1440,
+    "tongueVerts": 933,
+    "mouthSockVerts": 406,
     "upperArchRides": "head",
     "lowerArchRides": "jaw",
-    "archHalfWidthMW": 0.52,
-    "archFrontBehindLipPlaneMW": 0.115,
-    "occlusalGapAtRest": 0.00656,
-    "tongueVerts": 236,
+    "tongueRides": "jaw",
     "tongueBones": [
       "tongue_root",
       "tongue_mid",
       "tongue_tip"
-    ]
+    ],
+    "tongueShapeKeys": 31
   },
   "controls": {
     "lip_upper_raise": {
@@ -74,88 +87,100 @@
       "maxTravel": 0.01648
     },
     "lip_lower_depress": {
-      "verts": 201,
-      "maxTravel": 0.02029
+      "verts": 203,
+      "maxTravel": 0.02027
     },
     "lip_upper_curl": {
-      "verts": 191,
+      "verts": 189,
       "maxTravel": 0.00975
     },
     "lip_lower_curl": {
       "verts": 160,
-      "maxTravel": 0.0119
+      "maxTravel": 0.01187
     },
     "lip_protrude": {
-      "verts": 430,
-      "maxTravel": 0.01737
+      "verts": 432,
+      "maxTravel": 0.01736
     },
     "lip_compress": {
-      "verts": 395,
-      "maxTravel": 0.00869
+      "verts": 399,
+      "maxTravel": 0.00868
     },
     "lip_seal": {
-      "verts": 430,
-      "maxTravel": 0.01448
+      "verts": 432,
+      "maxTravel": 0.01447
     },
     "lip_corner_L_up": {
-      "verts": 101,
-      "maxTravel": 0.02143
+      "verts": 103,
+      "maxTravel": 0.02144
     },
     "lip_corner_R_up": {
       "verts": 139,
-      "maxTravel": 0.02147
+      "maxTravel": 0.02116
     },
     "lip_corner_L_wide": {
-      "verts": 101,
-      "maxTravel": 0.02142
+      "verts": 103,
+      "maxTravel": 0.02144
     },
     "lip_corner_R_wide": {
       "verts": 139,
-      "maxTravel": 0.02147
+      "maxTravel": 0.02116
     },
     "lip_corner_L_in": {
-      "verts": 101,
-      "maxTravel": 0.01709
+      "verts": 103,
+      "maxTravel": 0.0171
     },
     "lip_corner_R_in": {
       "verts": 139,
-      "maxTravel": 0.01713
+      "maxTravel": 0.01688
     },
     "mouth_funnel": {
-      "verts": 415,
-      "maxTravel": 0.02047
+      "verts": 417,
+      "maxTravel": 0.02044
     },
     "cheek_puff_L": {
-      "verts": 532,
+      "verts": 545,
       "maxTravel": 0.0188
     },
     "cheek_puff_R": {
-      "verts": 678,
+      "verts": 691,
       "maxTravel": 0.0188
     },
     "cheek_suck_L": {
-      "verts": 374,
+      "verts": 379,
       "maxTravel": 0.01291
     },
     "cheek_suck_R": {
-      "verts": 479,
+      "verts": 483,
       "maxTravel": 0.01291
     },
     "blink_L": {
-      "verts": 168,
-      "maxTravel": 0.06667
+      "verts": 60,
+      "maxTravel": 0.02257
     },
     "blink_R": {
-      "verts": 196,
-      "maxTravel": 0.07295
+      "verts": 36,
+      "maxTravel": 0.0219
     },
     "squint_L": {
-      "verts": 202,
-      "maxTravel": 0.01872
+      "verts": 57,
+      "maxTravel": 0.00937
     },
     "squint_R": {
-      "verts": 212,
-      "maxTravel": 0.02018
+      "verts": 64,
+      "maxTravel": 0.00956
+    },
+    "nostril_flare_L": {
+      "verts": 96,
+      "maxTravel": 0.0213
+    },
+    "nostril_flare_R": {
+      "verts": 47,
+      "maxTravel": 0.02057
+    },
+    "nose_wrinkle": {
+      "verts": 256,
+      "maxTravel": 0.01594
     },
     "brow_up_L": {
       "verts": 375,
@@ -179,5 +204,5 @@
     }
   },
   "removedDeadControls": [],
-  "meshVertices": 23828
+  "meshVertices": 23830
 }

@@ -556,7 +556,7 @@ def lid_close(side):
         brow_d=min((lp-q).length for q in _br_l)
         if brow_d<=lid_d: return None
         return (tgt-src)*best
-    print("semantic blink %s: upper->lower closure %.3f mm; brow exclusion active"%(side,_opening/MM_))
+    print("semantic blink %s: upper->lower closure %.3f mm; brow exclusion active"%(side,_opening/(MW/50.0)))
     return _close
 
 def lid_squint(side):

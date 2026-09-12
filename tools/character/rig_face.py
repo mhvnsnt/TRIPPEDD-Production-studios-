@@ -40,6 +40,28 @@ FACE = json.load(open(os.path.join(ROOT, "renders/_rig_measure/face_anatomy.json
 LM = {k: V(v) for k, v in FACE["landmarks"].items()}
 HEAD_H = FACE["bounds"]["size"][2]
 
+# The eye/brow/nose semantic points come from the multi-view authority, not the
+# legacy single-front-pixel raycast. Mouth/jaw legacy measurements remain in
+# FACE until their own authority lane is migrated.
+AUTH_PATH = os.path.join(ROOT, "renders", "_rig_measure", "face_landmark_authority.json")
+if not os.path.exists(AUTH_PATH):
+    sys.exit("missing face landmark authority — run tools/character/measure_face_mvmp.py before rigging")
+FACE_AUTH = json.load(open(AUTH_PATH))
+if FACE_AUTH.get("schema") != "trippedd.mars-face-landmark-authority/v1":
+    sys.exit("wrong face landmark authority schema")
+AUTH_LM = FACE_AUTH["landmarks"]
+for name, idx in {
+    "eye_left_outer": 33, "eye_left_inner": 133,
+    "eye_right_outer": 263, "eye_right_inner": 362,
+    "eye_left_top": 159, "eye_left_bottom": 145,
+    "eye_right_top": 386, "eye_right_bottom": 374,
+    "brow_left": 105, "brow_right": 334,
+    "nose_tip": 1, "nose_bridge": 168,
+    "cheek_left": 50, "cheek_right": 280,
+    "chin": 152, "ear_left": 234, "ear_right": 454,
+}.items():
+    LM[name] = V(AUTH_LM[str(idx)]["xyz"])
+
 bpy.ops.wm.open_mainfile(filepath=SRC)
 head = bpy.data.objects["MARS_MESH"]
 scene = bpy.context.scene
@@ -501,12 +523,6 @@ CONTROLS = {
 #               eye R fissure 0.1071, lid opening 0.0251 (aspect 0.23)
 # Both aspect ratios are a normal open eye, so the contour is tracking real
 # lids in the texture rather than guessing.
-AUTH_PATH = os.path.join(ROOT, "renders", "_rig_measure", "face_landmark_authority.json")
-if not os.path.exists(AUTH_PATH):
-    sys.exit("missing face landmark authority — run tools/character/measure_face_mvmp.py before rigging")
-FACE_AUTH = json.load(open(AUTH_PATH))
-if FACE_AUTH.get("schema") != "trippedd.mars-face-landmark-authority/v1":
-    sys.exit("wrong face landmark authority schema")
 from face_landmark_semantics import CONTOUR_ORDER, EYE_UPPER, EYE_LOWER, EYEBROW
 EYE_C = {
     name: [FACE_AUTH["landmarks"][str(i)]["xyz"] for i in ids]

@@ -15,8 +15,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import shutil
-import subprocess
 from pathlib import Path
 
 SHOT_ID = "GM-WORLD-0001-FIRST-SHOT"
@@ -77,7 +75,7 @@ def build_job(receipt: dict, blend: Path, output_root: str) -> dict:
     frame = int(receipt.get("frame", 1))
     return {
         "schema": "trippedd.opencue-dispatch/v1",
-        "status": "READY_FOR_OPEN CUE_SUBMISSION",
+        "status": "READY_FOR_OPENCUE_SUBMISSION",
         "dispatch_authority": "OpenCue",
         "production_authority": "TRIPPEDD_RENDER_EVIDENCE",
         "shot_id": SHOT_ID,
@@ -102,7 +100,7 @@ def build_job(receipt: dict, blend: Path, output_root: str) -> dict:
         "physical_qc": "NOT_EVALUATED",
         "gate": "BLOCKED_UNTIL_QC",
         "policy": {
-            "open_cue_is_dispatcher_not_source_of_truth": True,
+            "opencue_is_dispatcher_not_source_of_truth": True,
             "local_proof_required_before_submission": True,
             "queue_success_is_not_qc": True,
             "proxy_never_canonical": True,
@@ -154,18 +152,18 @@ def main() -> int:
         spec = build_job(receipt, blend, args.output_root)
         out = args.job_json or receipt_path.with_name("opencue_dispatch.json")
         out.write_text(json.dumps(spec, indent=2) + "\n", encoding="utf-8")
-        print(f"OPEN CUE_DISPATCH: READY {out}")
+        print(f"OPENCUE_DISPATCH: READY {out}")
         print(f"SOURCE_BLEND_SHA256: {spec['source_scene_sha256']}")
         print(f"PROVEN_RENDER_SHA256: {spec['proven_render_png_sha256']}")
         print("PRODUCTION_GATE: BLOCKED_UNTIL_QC")
         if args.submit:
             submit_with_pyoutline(spec, args.show, args.user)
-            print("OPEN CUE_SUBMISSION: ACCEPTED_BY_CLIENT")
+            print("OPENCUE_SUBMISSION: ACCEPTED_BY_CLIENT")
         else:
-            print("OPEN CUE_SUBMISSION: NOT_ATTEMPTED")
+            print("OPENCUE_SUBMISSION: NOT_ATTEMPTED")
         return 0
     except Exception as exc:
-        print("OPEN CUE_DISPATCH: BLOCKED")
+        print("OPENCUE_DISPATCH: BLOCKED")
         print(exc)
         return 40
 

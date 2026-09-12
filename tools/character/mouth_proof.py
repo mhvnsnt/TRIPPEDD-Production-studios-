@@ -28,6 +28,7 @@ ENGINE = opt("--engine", "BLENDER_EEVEE_NEXT")
 SAMPLES = int(opt("--samples", "64"))
 RES = int(opt("--res", "900"))
 ONLY = opt("--only", "")
+SET = opt("--set", "mouth")
 os.makedirs(OUT, exist_ok=True)
 
 F = MouthFrame(); MW = F.MW
@@ -71,6 +72,45 @@ POSES = [
                        "cheek_puff_L": 0.25, "cheek_puff_R": 0.25,
                        "squint_L": 0.35, "squint_R": 0.35}, {}),
 ]
+# ── the FACS set: the NAMED expressions, which is a different question ──────
+# The mouth set asks "is there an oral cavity in there". This one asks "does a
+# named expression reach the screen" -- blinking, brows, nostril flare, smile,
+# the things a face does. They share the rig, the lighting and the cameras on
+# purpose: two proof tools would drift apart and one of them would quietly stop
+# being run.
+FACS_POSES = [
+    ("01_REST", 0.0, {}, {}),
+    ("02_BLINK", 0.0, {"blink_L": 1.0, "blink_R": 1.0}, {}),
+    ("03_BLINK_L_ONLY", 0.0, {"blink_L": 1.0}, {}),
+    ("04_SMILE", 3.0, {"facs_mouthSmile_L": 1.0, "facs_mouthSmile_R": 1.0,
+                       "facs_cheekRaiser_L": 0.6, "facs_cheekRaiser_R": 0.6}, {}),
+    ("05_NOSTRIL_FLARE", 0.0, {"facs_noseSneer_L": 1.0, "facs_noseSneer_R": 1.0}, {}),
+    ("06_BROW_UP", 0.0, {"facs_browInnerUp_L": 1.0, "facs_browInnerUp_R": 1.0,
+                         "facs_browOuterUp_L": 0.8, "facs_browOuterUp_R": 0.8}, {}),
+    ("07_BROW_DOWN", 0.0, {"facs_browDown_L": 1.0, "facs_browDown_R": 1.0}, {}),
+    ("08_CHEEK_PUFF", 0.0, {"facs_cheekPuff_L": 1.0, "facs_cheekPuff_R": 1.0}, {}),
+    ("09_PUCKER", 0.0, {"facs_mouthPucker": 1.0}, {}),
+    ("10_JAW_OPEN", 0.0, {"facs_jawOpen": 1.0}, {}),
+    ("11_SQUINT", 0.0, {"facs_eyeSquint_L": 1.0, "facs_eyeSquint_R": 1.0}, {}),
+    # A compound is the whole point of a FACS basis: disgust is not a shape, it
+    # is sneer + frown + brow together.
+    ("12_DISGUST", 0.0, {"facs_noseSneer_L": 0.9, "facs_noseSneer_R": 0.9,
+                         "facs_mouthFrown_L": 0.7, "facs_mouthFrown_R": 0.7,
+                         "facs_browDown_L": 0.5, "facs_browDown_R": 0.5,
+                         "facs_eyeSquint_L": 0.4, "facs_eyeSquint_R": 0.4}, {}),
+]
+if SET == "facs":
+    POSES = FACS_POSES
+elif SET != "mouth":
+    sys.exit("unknown --set %r (have: mouth, facs)" % SET)
+
+# A pose naming a control this rig does not have would silently render as REST
+# and the sheet would look like a working expression system doing nothing.
+_missing = sorted({k for _, _, sh, _ in POSES for k in sh if k not in kb})
+if _missing:
+    sys.exit("these poses name controls that do not exist on the rig: %s"
+             % ", ".join(_missing))
+
 if ONLY:
     POSES = [p for p in POSES if ONLY in p[0]]
 
@@ -223,6 +263,20 @@ CAM_MOUTH = camera("CAM_MOUTH", tuple(V(mouth_w) + V((0.05, -0.85, 0.10))), mout
 CAM_PROFILE = camera("CAM_PROFILE", (CENTRE.x - 2.30, CENTRE.y - 0.05, CENTRE.z),
                      (CENTRE.x, CENTRE.y, CENTRE.z), 70)
 
+def pixel_delta(a, b):
+    """Mean absolute RGB difference between two rendered frames, 0..1."""
+    if a == b or not (os.path.exists(a) and os.path.exists(b)): return 0.0
+    import numpy as _np
+    ia, ib = bpy.data.images.load(a), bpy.data.images.load(b)
+    try:
+        pa = _np.empty(len(ia.pixels), _np.float32); ia.pixels.foreach_get(pa)
+        pb = _np.empty(len(ib.pixels), _np.float32); ib.pixels.foreach_get(pb)
+        if pa.shape != pb.shape: return 0.0
+        pa = pa.reshape(-1, 4)[:, :3]; pb = pb.reshape(-1, 4)[:, :3]
+        return float(_np.abs(pa - pb).mean())
+    finally:
+        bpy.data.images.remove(ia); bpy.data.images.remove(ib)
+
 # ── run ─────────────────────────────────────────────────────────────────────
 report, rest_survey = [], None
 for (name, jaw, shapes, tongue) in POSES:
@@ -240,6 +294,14 @@ for (name, jaw, shapes, tongue) in POSES:
         scene.camera = cam
         scene.render.filepath = os.path.join(OUT, "%s_%s.png" % (name, tag))
         bpy.ops.render.render(write_still=True)
+    # DOES IT REACH THE SCREEN? Every measurement above is geometry, and
+    # geometry that moves behind an occluder or below the shading threshold is
+    # a control that is real and invisible. Compare the actual rendered pixels
+    # against REST. This is the cheapest possible version of the visual gate
+    # and it catches the case no vertex count can.
+    row["frontPixelDeltaVsRest"] = round(pixel_delta(
+        os.path.join(OUT, "%s_front.png" % name),
+        os.path.join(OUT, "01_REST_front.png")), 5)
     print("%-10s jaw %4.1f  gap %6.2f%% HH   skin %5.1f%%  cavity %5.1f%%  teeth %5.1f%%  "
           "gum %4.1f%%  tongue %5.1f%%"
           % (name, jaw, row["lipGapPercentOfHeadHeight"], row["visible"]["skin"],
@@ -253,8 +315,39 @@ def check(label, ok, detail):
     checks.append({"check": label, "pass": bool(ok), "detail": detail})
     print("  %s  %-42s %s" % ("PASS" if ok else "FAIL", label, detail))
 
-print("\nMOUTH_ANATOMY_VERIFIED gate")
-if "01_REST" in by:
+GATE = "FACE_EXPRESSION_VERIFIED" if SET == "facs" else "MOUTH_ANATOMY_VERIFIED"
+print("\n%s gate" % GATE)
+
+if SET == "facs":
+    rest_eye = by["01_REST"]["visible"]["eye"] if "01_REST" in by else 0.0
+    for r in report:
+        if r["pose"] == "01_REST": continue
+        check("%s reaches the screen" % r["pose"], r["frontPixelDeltaVsRest"] > 0.0015,
+              "mean pixel delta vs REST %.5f" % r["frontPixelDeltaVsRest"])
+    if "02_BLINK" in by:
+        check("BLINK hides the eyes", by["02_BLINK"]["visible"]["eye"] < rest_eye * 0.5,
+              "eye %.1f%% of the surveyed area vs %.1f%% at rest"
+              % (by["02_BLINK"]["visible"]["eye"], rest_eye))
+    if "03_BLINK_L_ONLY" in by and "02_BLINK" in by:
+        check("one lid closes independently of the other",
+              by["02_BLINK"]["visible"]["eye"] < by["03_BLINK_L_ONLY"]["visible"]["eye"] < rest_eye + 0.01,
+              "eye: rest %.1f%% -> one lid %.1f%% -> both %.1f%%"
+              % (rest_eye, by["03_BLINK_L_ONLY"]["visible"]["eye"], by["02_BLINK"]["visible"]["eye"]))
+    if "10_JAW_OPEN" in by and "01_REST" in by:
+        check("the FACS jaw opens the mouth",
+              by["10_JAW_OPEN"]["lipGap"] > by["01_REST"]["lipGap"] * 2.0,
+              "gap %.2f%% of head height vs %.2f%% at rest"
+              % (by["10_JAW_OPEN"]["lipGapPercentOfHeadHeight"],
+                 by["01_REST"]["lipGapPercentOfHeadHeight"]))
+    if "12_DISGUST" in by and "05_NOSTRIL_FLARE" in by:
+        check("a compound is not just its largest part",
+              abs(by["12_DISGUST"]["frontPixelDeltaVsRest"]
+                  - by["05_NOSTRIL_FLARE"]["frontPixelDeltaVsRest"]) > 0.0008,
+              "disgust %.5f vs sneer alone %.5f"
+              % (by["12_DISGUST"]["frontPixelDeltaVsRest"],
+                 by["05_NOSTRIL_FLARE"]["frontPixelDeltaVsRest"]))
+
+if SET == "mouth" and "01_REST" in by:
     r = by["01_REST"]
     check("REST reads as a closed mouth",
           r["visible"]["cavity"] + r["visible"]["tongue"] < 1.0,
@@ -280,12 +373,18 @@ if "07_MM" in by:
     check("MM closes the mouth", by["07_MM"]["visible"]["cavity"] < 1.0,
           "cavity %.1f%%" % by["07_MM"]["visible"]["cavity"])
 
+# A gate with nothing in it reports "0/0 pass" and reads as a clean sheet. That
+# is the same shape as every false green in this project: NOT_ATTEMPTED wearing
+# the costume of SUCCEEDED.
+if not checks:
+    sys.exit("THE GATE RAN ZERO CHECKS for --set %s. That is NOT_ATTEMPTED, not a pass." % SET)
 passed = sum(1 for c in checks if c["pass"])
-json.dump({"engine": ENGINE, "samples": SAMPLES, "poses": report, "checks": checks,
+json.dump({"engine": ENGINE, "samples": SAMPLES, "set": SET, "gate": GATE,
+           "poses": report, "checks": checks,
            "verified": passed == len(checks),
            "method": "grid of rays fired at the mouth, classified by the MATERIAL each one "
                      "lands on; renders from a full-head camera and a mouth camera per pose"},
           open(os.path.join(OUT, "mouth_proof.json"), "w"), indent=2)
 print("\n%d/%d checks pass — %s" % (passed, len(checks),
-      "MOUTH_ANATOMY_VERIFIED" if passed == len(checks) else "NOT VERIFIED"))
+      GATE if passed == len(checks) else "NOT VERIFIED"))
 print("frames → %s" % OUT)

@@ -156,6 +156,22 @@ if resid.mean() > HEAD_H * 0.06:
     sys.exit("ICT DOES NOT FIT MARS (mean error %.1f%% of head height). Refusing to "
              "transfer named expressions through a bad correspondence." % (100 * resid.mean() / HEAD_H))
 
+# THE FIT SWAPPED LEFT AND RIGHT, SO THE SHAPE NAMES MUST SWAP TOO.
+# ICT's left/right convention is mirrored relative to ours -- that is MEASURED
+# above, not assumed. The landmark pairing was swapped to solve the transform,
+# and the geometry that comes through is therefore correct. The LABEL is not:
+# ICT's `eyeBlink_L` deforms ICT's left lid, which lands on MARS'S RIGHT lid.
+# Shipping it under the name `_L` puts every one of the 26 lateralised shapes on
+# the wrong side of his face while every measurement still looks healthy --
+# exactly the failure the fit test was written to prevent, one step later.
+# Caught by the blink comparison in rig_face.py: facs_eyeBlink_L measured 0%
+# against Mars's left eye and 0.4 lid openings from his RIGHT one.
+def flip_side(nm):
+    if not swap: return nm
+    if nm.endswith("_L"): return nm[:-2] + "_R"
+    if nm.endswith("_R"): return nm[:-2] + "_L"
+    return nm
+
 IW = c * (IV @ R.T) + t                 # ICT neutral, in Mars's world space
 DW = np.einsum("ij,svj->svi", c * R, D.astype(np.float64))   # deltas, same rotation+scale
 
@@ -216,26 +232,33 @@ def moving_parts(si):
 
 SOURCE_PARTS = {"face", "head_and_neck"}
 
-MD = np.zeros((len(names), len(MV), 3), np.float32)
-rows, untransferable = [], []
+# AN UNTRANSFERABLE SHAPE IS LEFT OUT OF THE ARRAY, NOT BANKED AS ZEROS.
+# A zero-filled entry sitting in `deltas` under a real name is indistinguishable
+# from a transfer that broke, and the consumer cannot tell them apart -- the rig
+# reads "moved nothing" as fatal, correctly, and a banked zero turns a recorded
+# exclusion into a build failure two tools downstream. So the array carries only
+# what actually transferred; the rest is named separately, with its reason.
+kept, MD_list, rows, untransferable = [], [], [], []
 for si, nm in enumerate(names):
     dv = DW[si][skin]                                   # (skin, 3) in Mars space
     m = (dv[idx] * wts[..., None]).sum(1)
     m[~ok] = 0.0
-    MD[si] = m
     mag = np.linalg.norm(m, axis=1)
     n, mx = int((mag > MOVE_EPS).sum()), float(mag.max())
     if n == 0:
         mp = moving_parts(si)
         if SOURCE_PARTS.isdisjoint(mp):
-            untransferable.append((nm, mp))
+            untransferable.append((flip_side(nm), mp))
             continue
         sys.exit("%s moves ICT skin (%s) but arrived EMPTY on Mars. That is a broken "
                  "transfer, not an exclusion." % (nm, ", ".join(mp)))
     if mx < MOVE_EPS * 4:
         print("  NOTE %-14s transferred, but its largest displacement on Mars is only "
               "%.3f%% of head height" % (nm, 100 * mx / HEAD_H))
-    rows.append((nm, n, mx))
+    kept.append(flip_side(nm))
+    MD_list.append(m.astype(np.float32))
+    rows.append((flip_side(nm), n, mx))
+MD = np.asarray(MD_list, np.float32)
 
 print("\nnamed FACS shapes now on Mars (displacement as %% of head height):")
 for nm, n, mx in rows:
@@ -250,7 +273,8 @@ if untransferable:
               % "")
 
 np.savez_compressed(os.path.join(OUT, "mars_facs.npz"),
-                    shape_names=np.array(names), deltas=MD,
+                    shape_names=np.array(kept), deltas=MD,
+                    untransferable=np.array([n for n, _ in untransferable]),
                     mapped=ok, nearest=dist0.astype(np.float32))
 json.dump({
     "source": "ICT-VGL/ICT-FaceKit", "license": "MIT",
@@ -260,6 +284,10 @@ json.dump({
             "meanLandmarkError": round(float(resid.mean()), 6),
             "errorPercentOfHeadHeight": round(100 * float(resid.mean()) / HEAD_H, 3),
             "leftRightConventionSwapped": bool(swap),
+            "shapeNamesReSided": bool(swap),
+            "reSidedNote": "ICT's left/right is mirrored relative to ours, so every "
+                           "_L/_R shape is EXPORTED UNDER THE SIDE IT LANDS ON for Mars. "
+                           "ICT's eyeBlink_L deforms his RIGHT lid and ships as _R.",
             "landmarks": len(PAIRS),
             "method": "Umeyama similarity over 13 Multi-PIE landmarks shared by both "
                       "heads; both left/right pairings fitted, better one kept"},

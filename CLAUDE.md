@@ -164,3 +164,82 @@ so **1 mm = MW/50**, and every piece of oral anatomy is stated in millimetres th
   Even angular spacing is what left visible air between every crown.
 - Tongue ~45 mm wide × ~18 mm thick = 0.94 × 0.42 MW. Cavity is enlarged **first** so the
   anatomy fits inside it rather than clipping through it.
+
+## A METRIC THAT COUNTS OCCLUSION CANNOT TELL A BLINK FROM AN EYE BEING PULLED OPEN
+The blink gate fired rays at the eyeball and counted how many stopped reaching it. For a whole
+arc it reported **blink_R 84% ("working") and blink_L 0% ("reported, not claimed")**. Both were
+wrong, and the good one was the one being carried as broken:
+
+    blink_L  lid travel toward closure  +0.0199   occlusion   0%
+    blink_R  lid travel toward closure  -0.0149   occlusion  84%
+
+`blink_R` was **peeling the right eye open**, and the skin it bunched over the pupil satisfied
+"a ray stopped reaching the eyeball" perfectly. Any skin in the path does. **The verdict is now
+DIRECTIONAL** — lid travel projected onto the upper→lower axis, as a fraction of that eye's own
+measured opening — and occlusion is still reported but is never the verdict.
+- Measured at the **LID MARGIN**, not the whole band: skin high on the lid travels less than the
+  free edge does, which is anatomy, not weakness. Band-averaging read 0.79 openings (WEAK) for a
+  lid whose margin crosses at 1.05.
+- After the fix: **blink_L +1.05, blink_R +1.07 openings.** Symmetric, both real.
+Same family as the severed rig scoring a perfect deformation result, and the teeth passing every
+physical check while reading as separate pegs. **Ask whether the metric can express the failure.**
+
+## THE TWO EYE CONTOURS ARE WOUND OPPOSITE, SO A CROSS PRODUCT FLIPS BETWEEN THEM
+That is the cause of the above. `ex = (up[-1] - up[0])` is the direction MediaPipe happened to
+walk that contour, and it is **(+0.954, −0.288, +0.085) on the left and (−0.997, −0.051, −0.063)
+on the right**. Every axis built from it inverts between eyes, so `-ez * opening` closed one lid
+and opened the other. **Pin an axis sign to anatomy, never to traversal order:** ez now points
+from the lower lid to the upper lid on both eyes, whatever the winding.
+
+## A MIRRORED FIT MUST RENAME THE SHAPES, NOT JUST SOLVE THE TRANSFORM
+ICT-FaceKit's left/right convention is mirrored relative to ours — measured, by fitting both
+pairings and keeping the better. The landmark swap made the GEOMETRY correct and left every
+`_L`/`_R` **label on the wrong side of his face**: `facs_eyeBlink_L` landed 0.4 lid openings from
+Mars's RIGHT lid and 10.0 from his left. All 26 lateralised shapes were affected, and every
+fit statistic looked healthy throughout. Shapes are now exported under **the side they land on**.
+Caught only because the blink comparison measured each candidate against a named eye.
+
+## A LANDMARK NAME IS NOT A LANDMARK
+Multi-PIE walks the jaw contour from the ear (0) round the chin (8) to the other ear (16), so
+"the jaw landmark" is seventeen different heights. Pairing Mars's MediaPipe jaw point with index
+0/16 put **23% of head height into one residual** and dragged the whole similarity transform.
+Do not pick by eye and do not loosen the gate — **express both as a fraction of their own
+chin→ear-line rise and read the answer off**: Mars 0.33, ICT 0/16 = 1.00, ICT 4/12 = 0.27.
+`facs_donor.py` derives the index that way, so it self-corrects for any future head.
+**8.63% mean / 23.38% worst → 2.98% / 6.42%.**
+
+## ONE THRESHOLD, IN THE TARGET'S UNITS
+"Did this vertex move?" was asked with a raw epsilon of 1e-4 against a donor whose head is ~25
+units tall — four parts per million, i.e. registration noise. It made `PupilDilate_R` look like it
+moved skin (0.024% of head height) when all it moves is the eyeball (2.18%), and two tests then
+contradicted each other about the same shape. **MOVE_EPS = 0.05% of head height, everywhere.**
+
+## AN UNTRANSFERABLE SHAPE IS OMITTED, NOT BANKED AS ZEROS
+A zero-filled entry under a real name is indistinguishable from a transfer that broke. The rig
+reads "moved nothing" as fatal — correctly — so a banked zero turns a *recorded exclusion* into a
+build failure two tools downstream. The array carries only what transferred; the rest is named
+separately with its reason. Same rule as NOT_ATTEMPTED vs ATTEMPTED_AND_EMPTY.
+
+## A GATE WITH ZERO CHECKS REPORTS "0/0 PASS"
+`passed == len(checks)` is true when both are zero. Adding a second pose set to `mouth_proof.py`
+whose names no gate matched would have printed a clean verified sheet having asserted nothing.
+It now **exits** if a set runs no checks. Also: a pose naming a control the rig does not have
+renders exactly like REST, so the pose list is validated against the live shape keys first.
+
+## BLENDER -b SWALLOWS THE ARGUMENT TO sys.exit()
+A fail-closed refusal exited 1 with **nothing printed at all** and read exactly like a crash —
+half an hour went into looking for a segfault that was my own guard firing. `die()` prints the
+reason to stdout and flushes before exiting. A guard whose message nobody can see is the
+"printed into a log nobody read" failure with extra steps.
+
+## FACS: NAMED SHAPES FOR THE FACE, HIS OWN MEASURED CONTOURS FOR THE EYE APERTURE
+Two open-source donors, and neither half is sufficient alone:
+- **GNM** (Apache-2.0) has the ANATOMY — 20 muscle territories as per-vertex weights — but its
+  383 expression deltas are unnamed PCA components. You cannot ask a PCA component for a smile.
+- **ICT-FaceKit** (MIT, `vendor/ict/ict_facs.npz`, 4.6 MB) has the NAMES — 57 FACS/ARKit shapes of
+  real light-stage geometry. 55 transferred; `PupilDilate_L/R` recorded as not transferable
+  through skin (they move only the eyeball, which is the GNM eye donor's business).
+- **The eye aperture is the one place the falloff controls win, and it is measured, not preferred:**
+  the correspondence is mean 0.017 / p95 0.032 while the lid opening is 0.025, so the donor is
+  coarser than the feature. `facs_eyeBlink` travels 0.08–0.09 openings; Mars's own contour blink
+  travels 1.05–1.07. Both are kept and both numbers are recorded.

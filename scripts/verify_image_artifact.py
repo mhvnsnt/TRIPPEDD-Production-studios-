@@ -13,6 +13,7 @@ import json
 import shutil
 import struct
 import subprocess
+import zlib
 from pathlib import Path
 
 
@@ -25,19 +26,110 @@ def sha256(path: Path) -> str:
 
 
 def native_png(path: Path) -> dict[str, object]:
-    with path.open("rb") as f:
-        header = f.read(24)
-    if len(header) < 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
+    """Perform a conservative structural PNG check without claiming full decode.
+
+    This fallback is deliberately weaker than OpenImageIO, but it must not accept
+    a forged signature/header. It validates chunk boundaries, CRCs, IHDR, IDAT's
+    zlib stream, and IEND. Pixel semantics remain FORMAT_CHECK_ONLY evidence.
+    """
+    data = path.read_bytes()
+    signature = b"\x89PNG\r\n\x1a\n"
+    if len(data) < 8 or data[:8] != signature:
         raise ValueError("unsupported or truncated PNG")
-    width, height = struct.unpack(">II", header[16:24])
-    return {"format": "png", "width": width, "height": height}
+
+    offset = 8
+    ihdr: tuple[int, int, int, int, int, int, int] | None = None
+    idat = bytearray()
+    saw_iend = False
+    chunk_count = 0
+
+    while offset < len(data):
+        if len(data) - offset < 12:
+            raise ValueError("truncated PNG chunk")
+        length = struct.unpack(">I", data[offset : offset + 4])[0]
+        chunk_type = data[offset + 4 : offset + 8]
+        chunk_end = offset + 12 + length
+        if chunk_end > len(data):
+            raise ValueError("PNG chunk exceeds file bounds")
+        chunk_data = data[offset + 8 : offset + 8 + length]
+        stored_crc = struct.unpack(">I", data[offset + 8 + length : chunk_end])[0]
+        calculated_crc = zlib.crc32(chunk_type + chunk_data) & 0xFFFFFFFF
+        if stored_crc != calculated_crc:
+            raise ValueError(f"PNG CRC mismatch in {chunk_type.decode('latin1')}")
+
+        chunk_count += 1
+        if chunk_type == b"IHDR":
+            if length != 13 or ihdr is not None:
+                raise ValueError("invalid PNG IHDR")
+            ihdr = struct.unpack(">IIBBBBB", chunk_data)
+            width, height, bit_depth, color_type, compression, filtering, interlace = ihdr
+            if width == 0 or height == 0:
+                raise ValueError("PNG dimensions must be nonzero")
+            if compression != 0 or filtering != 0 or interlace not in (0, 1):
+                raise ValueError("unsupported PNG encoding parameters")
+            valid_depths = {
+                0: {1, 2, 4, 8, 16},
+                2: {8, 16},
+                3: {1, 2, 4, 8},
+                4: {8, 16},
+                6: {8, 16},
+            }
+            if color_type not in valid_depths or bit_depth not in valid_depths[color_type]:
+                raise ValueError("invalid PNG color type/bit depth")
+        elif chunk_type == b"IDAT":
+            if ihdr is None:
+                raise ValueError("PNG IDAT precedes IHDR")
+            idat.extend(chunk_data)
+        elif chunk_type == b"IEND":
+            if length != 0 or ihdr is None or not idat:
+                raise ValueError("invalid PNG IEND/IDAT structure")
+            if chunk_end != len(data):
+                raise ValueError("PNG has data after IEND")
+            saw_iend = True
+            break
+
+        offset = chunk_end
+
+    if ihdr is None or not saw_iend or not idat:
+        raise ValueError("PNG missing required IHDR/IDAT/IEND")
+
+    try:
+        decompressed = zlib.decompress(bytes(idat))
+    except zlib.error as exc:
+        raise ValueError(f"PNG IDAT zlib stream is invalid: {exc}") from exc
+    if not decompressed:
+        raise ValueError("PNG decoded scanline stream is empty")
+
+    width, height, bit_depth, color_type, _compression, _filtering, interlace = ihdr
+    channels = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}[color_type]
+    bits_per_pixel = channels * bit_depth
+    row_bytes = (width * bits_per_pixel + 7) // 8
+    if interlace == 0:
+        expected = height * (row_bytes + 1)
+        if len(decompressed) != expected:
+            raise ValueError("PNG scanline data length does not match dimensions")
+    else:
+        # Adam7 has a more complex row layout; the zlib stream is still proven
+        # structurally valid, but we intentionally do not claim pixel decoding.
+        pass
+
+    return {
+        "format": "png",
+        "width": width,
+        "height": height,
+        "chunks": chunk_count,
+        "idat_zlib_valid": True,
+        "native_structural_check": True,
+    }
 
 
 def oiio_inspect(path: Path) -> dict[str, object] | None:
     if importlib.util.find_spec("OpenImageIO") is None:
         return None
     import OpenImageIO as oiio  # type: ignore
-    inp = oiio.ImageInput.open(str(path))
+    config = oiio.ImageSpec()
+    config["imageinput:strict"] = 1
+    inp = oiio.ImageInput.open(str(path), config)
     if inp is None:
         raise ValueError(f"OpenImageIO could not open artifact: {path}")
     try:

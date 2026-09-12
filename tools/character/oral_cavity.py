@@ -95,6 +95,38 @@ print("      every surviving vertex position is identical to the scan (0 moved)"
 inner_up = [to_local(p) for p in M_ANAT["contours"]["lip_inner_upper"]]
 inner_lo = [to_local(p) for p in M_ANAT["contours"]["lip_inner_lower"]]
 loop = inner_up + list(reversed(inner_lo))[1:-1]          # closed polygon, 20 pts
+
+def resample_closed(poly, n):
+    """Even arc-length resampling of a closed polygon, in the local XZ plane.
+
+    The cavity was rendering as a rectangular prism with hard corners. That was
+    not the profile being wrong -- it was 20 samples of it, carried straight
+    through to a 20-sided tube. Denser sampling of the SAME measured curve makes
+    it read as an oral cavity instead of a box, and invents no new anatomy.
+    """
+    segs = [(poly[i], poly[(i + 1) % len(poly)]) for i in range(len(poly))]
+    lens = [max(1e-12, math.hypot(b.x - a.x, b.z - a.z)) for a, b in segs]
+    total = sum(lens)
+    out, target, acc, k = [], 0.0, 0.0, 0
+    for _ in range(n):
+        while k < len(segs) - 1 and acc + lens[k] < target:
+            acc += lens[k]; k += 1
+        a, b = segs[k]
+        t = min(1.0, max(0.0, (target - acc) / lens[k]))
+        out.append(a.lerp(b, t))
+        target += total / n
+    return out
+
+loop = resample_closed(loop, int(opt("--ring", "56")))
+# Force a known winding in the local XZ plane. Whether the measured contour
+# happens to come back clockwise or anticlockwise is an accident of which
+# MediaPipe indices were listed first, and it decides which way the lofted
+# solid's faces end up pointing.
+_area = sum((loop[i].x * loop[(i + 1) % len(loop)].z - loop[(i + 1) % len(loop)].x * loop[i].z)
+            for i in range(len(loop))) * 0.5
+if _area < 0:
+    loop = [loop[0]] + list(reversed(loop[1:]))
+    print("contour wound clockwise; reversed so the loft faces outward")
 N = len(loop)
 SLIT_Z = float(opt("--slit-z", "0.42"))   # rest slit = 42% of the measured contour height
 cx = sum(p.x for p in loop) / N
@@ -107,7 +139,7 @@ def ellipse_ring(half_w, half_h, z_c, y, n=N):
     for i in range(n):
         t = 2 * math.pi * i / n
         c, s = math.cos(t), math.sin(t)
-        e = 2.4
+        e = 2.05   # ~ellipse; 2.4 squared the corners off
         x = cx + half_w * math.copysign(abs(c) ** (2 / e), c)
         z = z_c + half_h * math.copysign(abs(s) ** (2 / e), s)
         out.append(V((x, y, z)))
@@ -125,7 +157,12 @@ def aligned_ring(half_w, half_h, z_c, y):
         if d < bestd: best, bestd = k, d
     return [r[(i + best) % N] for i in range(N)]
 
-HW = MW * 0.5
+# The cavity has to HOLD real anatomy. A 55 mm dental arch and a 45 mm tongue
+# do not fit in a void half a mouth-width across, and the visible result is a
+# small mouth with small teeth in it. Sized from the same millimetre anchor the
+# teeth use: MW = 0.1930 units is a ~50 mm inter-commissure, so 1 mm = MW/50.
+MM = MW / 50.0
+HW = 32.0 * MM        # half-width at the widest, ~64 mm across inside the cheeks
 # y is measured along the frame's "into the head" axis, from the aperture centre.
 FRONT = float(opt("--front", "-0.075"))    # start well clear of the lip surface
 SECTIONS = [
@@ -164,6 +201,28 @@ for i in range(N):
     bm.faces.new((rings[0][j], rings[0][i], front_c))
     bm.faces.new((rings[-1][i], rings[-1][j], back_c))
 bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+# THE CUTTER MUST BE A VALID SOLID, and this is checked rather than assumed.
+# An open, non-manifold or inward-facing cutter does not make the boolean throw
+# -- it makes it produce garbage, and the garbage looks like a dark plug sitting
+# in the character's face. MEASURED before this check existed: 100 of 834
+# oral-material vertices ended up IN FRONT of the lip surface at REST, and
+# rendering the open mouth with teeth, tongue and gums all hidden still showed
+# the plug, which is how it was finally pinned on the cutter.
+_bound = sum(1 for e in bm.edges if e.is_boundary)
+_nonman = sum(1 for e in bm.edges if not e.is_manifold)
+_vol = bm.calc_volume(signed=True)
+print("cutter solid: %d verts · boundary edges %d · non-manifold %d · signed volume %+.6f"
+      % (len(bm.verts), _bound, _nonman, _vol))
+if _bound or _nonman:
+    sys.exit("THE CAVITY CUTTER IS NOT A CLOSED SOLID (%d boundary, %d non-manifold) -- a boolean "
+             "against it produces geometry, not a void." % (_bound, _nonman))
+if _vol < 0:
+    bmesh.ops.reverse_faces(bm, faces=bm.faces)
+    print("cutter normals pointed inward (volume %+.6f); flipped" % _vol)
+    _vol = bm.calc_volume(signed=True)
+if _vol <= 0:
+    sys.exit("THE CAVITY CUTTER HAS NO POSITIVE VOLUME (%+.6f)" % _vol)
+
 cav_me = bpy.data.meshes.new("MARS_ORAL_VOID_MESH")
 bm.to_mesh(cav_me); bm.free()
 cutter = bpy.data.objects.new("MARS_ORAL_VOID", cav_me)
@@ -217,10 +276,26 @@ deps = bpy.context.evaluated_depsgraph_get()
 ev = head.evaluated_get(deps)
 ORAL_SLOTS = {i for i, m in enumerate(head.data.materials) if m and m.name == "MARS_ORAL_MAT"}
 
-def probe(local_z, n=41, span=0.9):
+# The seam is a CURVE, not a plane -- his mouth corners sit lower than its
+# centre. Firing every ray at a flat local z = 0 misses the slit wherever the
+# seam has moved away from it, and reads as "no aperture" on a mouth that is
+# cut correctly. MEASURED: the same cut scored 8/41 on a flat probe and 39/41
+# following the seam.
+def seam_at(x):
+    pts = sorted((p.x, p.z) for p in loop)
+    if x <= pts[0][0]: return pts[0][1]
+    if x >= pts[-1][0]: return pts[-1][1]
+    for (x0, z0), (x1, z1) in zip(pts, pts[1:]):
+        if x0 <= x <= x1:
+            t = 0.0 if x1 == x0 else (x - x0) / (x1 - x0)
+            return z0 + t * (z1 - z0)
+    return 0.0
+
+def probe(offset_from_seam, n=41, span=0.9):
     hits = 0
     for i in range(n):
         lx = cx + (i / (n - 1.0) - 0.5) * MW * span
+        local_z = seam_at(lx) + offset_from_seam
         o = to_world(V((lx, -0.35, local_z)))
         d = (to_world(V((lx, 1.0, local_z))) - o).normalized()
         hit, loc, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, d)
@@ -248,6 +323,35 @@ print("faces carrying the oral material: %d" % oral_faces)
 if oral_faces < 50:
     sys.exit("the cavity walls did not receive the oral material")
 
+# 4. NOTHING ORAL MAY STICK OUT OF HIS FACE.
+#    This is the check that was missing, and its absence cost a full pass. The
+#    verification above only looked sideways and backwards -- it never asked
+#    whether the carve had left geometry in FRONT of the lips. It had: 100 of
+#    834 oral-material vertices, because an inward-facing cutter makes DIFFERENCE
+#    keep the cutter's own shell. From outside that reads as a dark plug shoved
+#    into the character's mouth, which is exactly what the creator saw twice.
+LIP_FRONT = M_ANAT["aperture"]["lipFrontLocalY"]
+oral_verts, protruding = set(), []
+for f in head.data.polygons:
+    if f.material_index in ORAL_SLOTS:
+        oral_verts.update(f.vertices)
+for vi in oral_verts:
+    ly = to_local(head.data.vertices[vi].co).y
+    if ly < LIP_FRONT:
+        protruding.append(round(ly, 5))
+print("oral-material vertices: %d · in front of the lip surface (local y < %.4f): %d"
+      % (len(oral_verts), LIP_FRONT, len(protruding)))
+if protruding:
+    sys.exit("ORAL GEOMETRY PROTRUDES THROUGH HIS FACE — %d vertices as far forward as %.4f. "
+             "Refusing to save. This is the plug, not a mouth."
+             % (len(protruding), min(protruding)))
+
+smoothed = 0
+for f in head.data.polygons:
+    if f.material_index in ORAL_SLOTS:
+        f.use_smooth = True; smoothed += 1
+print("smooth-shaded %d cavity faces (flat shading on the walls was most of the 'box')" % smoothed)
+
 bpy.ops.wm.save_as_mainfile(filepath=OUT)
 json.dump({
     "source": "assets/source_models/MARS_%s.glb" % LOD,
@@ -262,6 +366,6 @@ json.dump({
     "verification": {"exteriorVertsIdenticalOutsideMouthZone": kept,
                      "exteriorVertsChangedOutsideMouthZone": moved_out,
                      "seamRaysOnCavityWall": through_seam, "raysAboveMouth": above, "raysBelowMouth": below,
-                     "oralMaterialFaces": oral_faces},
+                     "oralMaterialFaces": oral_faces, "oralVerticesProtrudingThroughFace": len(protruding)},
 }, open(os.path.join(os.path.dirname(OUT), "MARS_oral_cavity.json"), "w"), indent=2)
 print("\noral cavity → %s" % OUT)

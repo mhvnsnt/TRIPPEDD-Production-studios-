@@ -47,3 +47,10 @@ __pycache__/
 public/production/*.mp4
 public/production/*.json
 public/production/*-segments/
+
+# Rendered evidence is regenerable and stays out of git...
+#   ...EXCEPT the downscaled published copies under docs/evidence/, which are
+#   how every other agent and every CI runner actually SEES the work. A frame
+#   that exists only on one container is not evidence anyone can check.
+!docs/evidence/
+!docs/evidence/**

@@ -190,7 +190,15 @@ def camera(name, loc, look_at, lens):
 
 CAM_FULL = camera("CAM_FULL", (CENTRE.x + 0.18, CENTRE.y - 2.35, CENTRE.z + HEAD_H * 0.10),
                   (CENTRE.x, CENTRE.y, CENTRE.z + HEAD_H * 0.02), 85)
-CAM_MOUTH = camera("CAM_MOUTH", tuple(V(mouth_w) + V((0.06, -0.60, 0.06))), mouth_w, 85)
+# 85mm at 0.60 framed LESS than the mouth itself -- the first proof sheet was a
+# wall of skin with a slab in it and could not be read. 50mm at 0.85 puts the
+# whole mouth plus the surrounding face in frame, which is what makes a mouth
+# judgeable.
+CAM_MOUTH = camera("CAM_MOUTH", tuple(V(mouth_w) + V((0.05, -0.85, 0.10))), mouth_w, 50)
+# Profile is the view that settles protrusion arguments in one look: anything
+# sticking out of his face is a silhouette, not a shading question.
+CAM_PROFILE = camera("CAM_PROFILE", (CENTRE.x - 2.30, CENTRE.y - 0.05, CENTRE.z),
+                     (CENTRE.x, CENTRE.y, CENTRE.z), 70)
 
 # ── run ─────────────────────────────────────────────────────────────────────
 report, rest_survey = [], None
@@ -205,7 +213,7 @@ for (name, jaw, shapes, tongue) in POSES:
            "visible": {k: round(100.0 * s[k] / s["total"], 1)
                        for k in ("skin", "cavity", "teeth", "gum", "tongue")}}
     report.append(row)
-    for cam, tag in ((CAM_FULL, "full"), (CAM_MOUTH, "mouth")):
+    for cam, tag in ((CAM_FULL, "front"), (CAM_MOUTH, "mouth"), (CAM_PROFILE, "profile")):
         scene.camera = cam
         scene.render.filepath = os.path.join(OUT, "%s_%s.png" % (name, tag))
         bpy.ops.render.render(write_still=True)

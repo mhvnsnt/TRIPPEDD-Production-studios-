@@ -257,7 +257,9 @@ def mat(name, base, rough, spec=0.5, emit=None, strength=0.0, sss=0.0):
 
 # Mars is a neon-blue being. His mouth belongs to that palette — but teeth read
 # as teeth because of SPECULAR and translucency, not because they glow.
-M_TEETH = mat("MARS_TEETH_MAT", (0.86, 0.90, 0.94, 1), 0.16, 0.72, sss=0.22)
+# Enamel, not paint: dimmer base, real translucency, and a wide subsurface
+# radius so light bleeds between crowns the way it does in a mouth.
+M_TEETH = mat("MARS_TEETH_MAT", (0.70, 0.73, 0.76, 1), 0.24, 0.60, sss=0.40)
 M_GUM = mat("MARS_GUM_MAT", (0.32, 0.075, 0.21, 1), 0.52, 0.36, sss=0.45)
 M_TONGUE = mat("MARS_TONGUE_MAT", (0.40, 0.085, 0.26, 1), 0.42, 0.44, sss=0.55)
 
@@ -293,69 +295,125 @@ def finish(bm, name, smooth=True, bevel=0.0):
     return ob
 
 # ── the dental arches ───────────────────────────────────────────────────────
-# An arch, not a row: teeth curve back into the head, and the ones at the back
-# are wider and shorter than the ones at the front. A straight line of identical
-# cubes is what made the last attempt read as a mouthguard.
-ARCH_HALF = MW * 0.38          # inside the cavity wall at every depth
-ARCH_FRONT = MW * 0.135        # recessed behind the lips, never at the lip plane
-ARCH_DEPTH = MW * 0.55
-ARCH_SPAN = math.radians(84.0)
-N_TEETH = 12
+# REAL TEETH, AT REAL SIZE. The first arch was 12 identical-ish boxes on an even
+# angular spacing, and it read as a zip fastener because that is what it was.
+#
+# SCALE IS ANCHORED TO MEASUREMENT, not to a bounding-box fraction. His measured
+# inter-commissure width is MW = 0.1930 units; an adult mouth is about 50 mm
+# across, so one millimetre is MW/50 units. Every crown dimension below is a
+# published odontometric mean in millimetres, converted through that one factor.
+# Checked against what was there: a maxillary central incisor should be 8.6 mm
+# wide and 10.5 mm long = 0.166 x 0.203 MW. The old arch gave it 0.056 x 0.120 --
+# a third the width. That is why they looked like pegs.
+MM = MW / 50.0
 
-def arch_point(u):
-    a = u * ARCH_SPAN
+# (name, mesiodistal width, crown height, buccolingual depth), midline outward.
+# Mandibular crowns run slightly smaller; MAND_SCALE carries that.
+TOOTH_MM = [
+    ("central_incisor", 8.6, 10.5, 7.0),
+    ("lateral_incisor", 6.6,  9.0, 6.4),
+    ("canine",          7.6, 10.0, 8.1),
+    ("premolar_1",      7.1,  8.5, 9.2),
+    ("premolar_2",      6.6,  8.5, 9.2),
+    ("molar_1",        10.4,  7.5, 11.0),
+    ("molar_2",         9.8,  7.0, 10.8),
+]
+MAND_SCALE = 0.92
+N_TEETH = len(TOOTH_MM) * 2
+
+# The arch has to be wide enough to hold real crowns. Inter-molar width is about
+# 55 mm, so half of that is 27.5 mm.
+ARCH_HALF = 26.0 * MM
+ARCH_FRONT = MW * 0.115        # recessed behind the lips, never at the lip plane
+ARCH_DEPTH = MW * 0.62
+
+def arch_at(u):
+    """Point and tangent angle on the arch, u in [-1, 1] across the midline."""
+    a = u * math.radians(88.0)
     return (F.cx + ARCH_HALF * math.sin(a), ARCH_FRONT + ARCH_DEPTH * (1 - math.cos(a)), a)
 
 def dental_arch(name, bone_name, biting_z, gum_z, up):
     """up=+1 for the lower arch (crowns point up), -1 for the upper."""
+    scale = 1.0 if up < 0 else MAND_SCALE
     bm = bmesh.new()
-    crowns = []
-    for i in range(N_TEETH):
-        u = (i + 0.5) / N_TEETH * 2.0 - 1.0
-        x, y, a = arch_point(u)
-        central = math.cos(a)                      # 1 at the incisors, ~0 at the molars
-        w = MW * 0.052 * (0.62 + 0.60 * (1 - central))
-        d = MW * 0.048 * (0.70 + 0.62 * (1 - central))
-        h = abs(gum_z - biting_z) * (0.66 + 0.42 * central)
-        cube = bmesh.ops.create_cube(bm, size=1.0)["verts"]
-        bmesh.ops.scale(bm, vec=(w, d, h), verts=cube)
-        bmesh.ops.rotate(bm, verts=cube, cent=(0, 0, 0),
-                         matrix=mathutils.Matrix.Rotation(-a, 3, "Z"))
-        bmesh.ops.translate(bm, vec=(x, y, biting_z - up * h * 0.5), verts=cube)
-        crowns.append((x, y, a, w))
+    # Lay teeth out by CUMULATIVE WIDTH so neighbours meet at a contact point,
+    # which is how an arch actually works. Even angular spacing is what left
+    # visible air between every crown.
+    widths = [TOOTH_MM[i][1] * MM * scale for i in range(len(TOOTH_MM))]
+    total = sum(widths)
+    placed = []
+    for sign in (-1, 1):
+        run = 0.0
+        for i, (tname, w_mm, h_mm, d_mm) in enumerate(TOOTH_MM):
+            w = w_mm * MM * scale
+            h = h_mm * MM * scale
+            d = d_mm * MM * scale
+            run += w * 0.5
+            u = sign * min(1.0, run / total)
+            x, y, a = arch_at(u)
+            run += w * 0.5
+            cube = bmesh.ops.create_cube(bm, size=1.0)["verts"]
+            bmesh.ops.scale(bm, vec=(w * 0.97, d, h), verts=cube)
+            base_z = biting_z - up * h * 0.5
+            for v in cube:
+                # Root end narrows; the crown is widest at the contact point.
+                toward_root = max(0.0, (v.co.z * up * -1) / max(1e-6, h) + 0.5)
+                k = 1.0 - 0.30 * toward_root
+                v.co.x *= k; v.co.y *= k
+                if tname == "canine":
+                    # A canine is a POINT, not a blade. Pull the incisal end in.
+                    toward_tip = max(0.0, (v.co.z * up) / max(1e-6, h) + 0.5)
+                    v.co.x *= 1.0 - 0.45 * toward_tip
+                    v.co.y *= 1.0 - 0.25 * toward_tip
+                elif tname.startswith("molar") or tname.startswith("premolar"):
+                    # Occlusal table stays broad; only the root tapers.
+                    toward_tip = max(0.0, (v.co.z * up) / max(1e-6, h) + 0.5)
+                    v.co.x *= 1.0 + 0.06 * toward_tip
+            bmesh.ops.rotate(bm, verts=cube, cent=(0, 0, 0),
+                             matrix=mathutils.Matrix.Rotation(-a, 3, "Z"))
+            bmesh.ops.translate(bm, vec=(x, y, base_z), verts=cube)
+            placed.append((tname, round(w / MW, 4), round(h / MW, 4)))
     for v in bm.verts:
         v.co = F.world(V(v.co))
-    teeth = finish(bm, name, smooth=False, bevel=MW * 0.004)
+    teeth = finish(bm, name, smooth=True, bevel=MM * 0.55)
     rides(teeth, bone_name, M_TEETH)
 
-    # gum ridge: lofted along the SAME measured arch the teeth sit on
+    # Gum ridge: lofted along the SAME arch, sitting at the root ends only, so it
+    # never swallows the crowns the way a fat tube did.
     bm = bmesh.new()
-    rings, RN = [], 10
-    for i in range(N_TEETH * 2 + 1):
-        u = i / (N_TEETH * 2.0) * 2.0 - 1.0
-        x, y, a = arch_point(u)
-        rw, rh = MW * 0.040, abs(gum_z - biting_z) * 0.62
+    rings, RN = [], 12
+    steps = 30
+    for i in range(steps + 1):
+        u = i / float(steps) * 2.0 - 1.0
+        x, y, a = arch_at(u)
+        rw, rh = 4.2 * MM, 5.0 * MM
         ring = []
         for k in range(RN):
             t = 2 * math.pi * k / RN
             ring.append(bm.verts.new(F.world(V((
-                x + math.cos(t) * rw * math.cos(a) * 0.55,
-                y + math.cos(t) * rw * 0.75 + math.sin(a) * math.cos(t) * rw * 0.5,
-                gum_z + up * rh * 0.30 * -1 + math.sin(t) * rh)))))
+                x + math.cos(t) * rw * math.cos(a),
+                y + math.cos(t) * rw * math.sin(a) * 0.4 + math.cos(t) * rw * 0.6,
+                gum_z + math.sin(t) * rh)))))
         rings.append(ring)
     for A_, B_ in zip(rings, rings[1:]):
         for k in range(RN):
             bm.faces.new((A_[k], A_[(k + 1) % RN], B_[(k + 1) % RN], B_[k]))
     for end, flip in ((rings[0], False), (rings[-1], True)):
-        f = bm.faces.new(end[::-1] if flip else end)
+        bm.faces.new(end[::-1] if flip else end)
     gum = finish(bm, name + "_GUM", smooth=True)
     rides(gum, bone_name, M_GUM)
-    return teeth, gum
+    return teeth, gum, placed
 
-BITE_UP = MW * 0.022           # upper crowns stop just above the rest slit
-BITE_LO = -MW * 0.020
-teeth_u, gum_u = dental_arch("MARS_TEETH_UPPER", "head", BITE_UP, MW * 0.165, up=-1)
-teeth_l, gum_l = dental_arch("MARS_TEETH_LOWER", "jaw", BITE_LO, -MW * 0.150, up=+1)
+# Crown length now sets where the gum line sits, rather than the other way round.
+BITE_UP = MW * 0.018
+BITE_LO = -MW * 0.016
+teeth_u, gum_u, placed_u = dental_arch("MARS_TEETH_UPPER", "head", BITE_UP,
+                                       BITE_UP + 10.5 * MM * 0.92, up=-1)
+teeth_l, gum_l, placed_l = dental_arch("MARS_TEETH_LOWER", "jaw", BITE_LO,
+                                       BITE_LO - 10.5 * MM * MAND_SCALE * 0.92, up=+1)
+print("\ndental arches: %d teeth per arch, sized from odontometric means" % N_TEETH)
+for tname, w, h in placed_u[:len(TOOTH_MM)]:
+    print("  %-16s %.3f MW wide x %.3f MW long" % (tname, w, h))
 print("\ndental arches: upper %d verts on the SKULL · lower %d verts on the MANDIBLE"
       % (len(teeth_u.data.vertices), len(teeth_l.data.vertices)))
 print("  occlusal gap at rest %.4f (%.1f%% of mouth width) · arch front %.3f MW behind the lip plane"
@@ -366,31 +424,40 @@ print("  occlusal gap at rest %.4f (%.1f%% of mouth width) · arch front %.3f MW
 # lift, retract and protrude. Shape keys on a sphere could do none of that.
 TONGUE_SECTIONS = [
     # (y along the mouth, half-width, half-height, z centre)
-    (MW * 0.92, MW * 0.115, MW * 0.075, -MW * 0.175),
-    (MW * 0.74, MW * 0.150, MW * 0.090, -MW * 0.185),
-    (MW * 0.55, MW * 0.160, MW * 0.088, -MW * 0.200),
-    (MW * 0.38, MW * 0.152, MW * 0.078, -MW * 0.205),
-    (MW * 0.22, MW * 0.130, MW * 0.062, -MW * 0.200),
-    (MW * 0.10, MW * 0.098, MW * 0.044, -MW * 0.190),
-    (MW * 0.02, MW * 0.060, MW * 0.026, -MW * 0.182),
+    # REAL PROPORTIONS, same millimetre anchor as the teeth. The oral part of an
+    # adult tongue is about 45 mm across and 18 mm thick and it FILLS the floor
+    # of the mouth; the previous one was 0.47 MW wide inside a cavity 1.0 MW
+    # across, which is exactly why it read as a bead in a box.
+    (66.0 * MM, 17.0 * MM,  8.0 * MM, -MW * 0.155),
+    (58.0 * MM, 21.5 * MM, 10.0 * MM, -MW * 0.175),
+    (48.0 * MM, 23.5 * MM, 10.5 * MM, -MW * 0.195),
+    (38.0 * MM, 24.0 * MM, 10.0 * MM, -MW * 0.210),
+    (28.0 * MM, 23.0 * MM,  9.0 * MM, -MW * 0.220),
+    (19.0 * MM, 20.5 * MM,  7.6 * MM, -MW * 0.222),
+    (11.0 * MM, 16.5 * MM,  6.0 * MM, -MW * 0.216),
+    ( 5.0 * MM, 11.0 * MM,  4.2 * MM, -MW * 0.206),
+    ( 0.0 * MM,  6.0 * MM,  2.6 * MM, -MW * 0.198),
 ]
 bm = bmesh.new()
-RN = 14
+RN = 26
 rings = []
 for (y, hw, hh, zc) in TONGUE_SECTIONS:
     ring = []
     for k in range(RN):
         t = 2 * math.pi * k / RN
         # flat underside, domed top: a tongue sits in the floor of the mouth
-        sz = math.sin(t)
-        ring.append(bm.verts.new(F.world(V((F.cx + math.cos(t) * hw, y,
-                                            zc + hh * (sz * 1.15 if sz > 0 else sz * 0.55))))))
+        cx_t, sz = math.cos(t), math.sin(t)
+        # Domed top, flat underside, and a midline groove down the middle of the
+        # dorsum -- the one feature that stops a smooth blob reading as plastic.
+        groove = 1.0 - 0.26 * math.exp(-((cx_t / 0.30) ** 2)) if sz > 0 else 1.0
+        ring.append(bm.verts.new(F.world(V((F.cx + cx_t * hw, y,
+                                            zc + hh * (sz * 1.15 * groove if sz > 0 else sz * 0.55))))))
     rings.append(ring)
 for A_, B_ in zip(rings, rings[1:]):
     for k in range(RN):
         bm.faces.new((A_[k], A_[(k + 1) % RN], B_[(k + 1) % RN], B_[k]))
-back = bm.verts.new(F.world(V((F.cx, MW * 0.99, -MW * 0.175))))
-tip = bm.verts.new(F.world(V((F.cx, MW * -0.02, -MW * 0.180))))
+back = bm.verts.new(F.world(V((F.cx, 72.0 * MM, -MW * 0.150))))
+tip = bm.verts.new(F.world(V((F.cx, -3.0 * MM, -MW * 0.196))))
 for k in range(RN):
     bm.faces.new((rings[0][(k + 1) % RN], rings[0][k], back))
     bm.faces.new((rings[-1][k], rings[-1][(k + 1) % RN], tip))
@@ -403,8 +470,8 @@ for gname in ("tongue_root", "tongue_mid", "tongue_tip"):
 TG = {g.name: g for g in tongue.vertex_groups}
 for i, v in enumerate(tongue.data.vertices):
     ly = F.local(v.co).y / MW
-    wr = smoothstep((ly - 0.30) / 0.30)                    # root owns the back
-    wt = smoothstep((0.34 - ly) / 0.26)                    # tip owns the front
+    wr = smoothstep((ly - 0.55) / 0.40)                    # root owns the back
+    wt = smoothstep((0.55 - ly) / 0.40)                    # tip owns the front
     wm = max(0.0, 1.0 - wr - wt)
     tot = wr + wm + wt
     TG["tongue_root"].add([i], wr / tot, "REPLACE")

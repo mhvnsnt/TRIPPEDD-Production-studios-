@@ -1,0 +1,107 @@
+{
+  "set": "mouth",
+  "frames": [
+    {
+      "frame": "01_REST_front.png",
+      "bytes": 887418,
+      "sourceSha8": "86058257",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "01_REST_mouth.png",
+      "bytes": 830476,
+      "sourceSha8": "4627a9b2",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "01_REST_profile.png",
+      "bytes": 866601,
+      "sourceSha8": "ca7bb3c7",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "02_OPEN_front.png",
+      "bytes": 893870,
+      "sourceSha8": "97bc5dc8",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "02_OPEN_mouth.png",
+      "bytes": 859285,
+      "sourceSha8": "2a9066b6",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "02_OPEN_profile.png",
+      "bytes": 868704,
+      "sourceSha8": "2b8aca66",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "03_WIDE_front.png",
+      "bytes": 899484,
+      "sourceSha8": "9d19949b",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "03_WIDE_mouth.png",
+      "bytes": 866832,
+      "sourceSha8": "33f30b4a",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "03_WIDE_profile.png",
+      "bytes": 869803,
+      "sourceSha8": "e61c7c16",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "04_AA_front.png",
+      "bytes": 895453,
+      "sourceSha8": "3f72eedd",
+      "renderedPx": [
+        900,
+        900
+      ]
+    },
+    {
+      "frame": "04_AA_mouth.png",
+      "bytes": 863563,
+      "sourceSha8": "8fc679ad",
+      "renderedPx": [
+        900,
+        900
+      ]
+    }
+  ],
+  "measurements": [
+    "mouth_proof.json"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "engine": "BLENDER_EEVEE_NEXT",
+  "samples": 40,
+  "poses": [
+    {
+      "pose": "03_WIDE",
+      "jawDeg": 31.0,
+      "shapes": {
+        "lip_lower_depress": 0.7,
+        "lip_upper_raise": 0.45,
+        "lip_corner_L_up": 0.2,
+        "lip_corner_R_up": 0.2
+      },
+      "tongueBones": {
+        "tongue_root": [
+          -14,
+          0,
+          0
+        ],
+        "tongue_mid": [
+          -8,
+          0,
+          0
+        ]
+      },
+      "lipGap": 0.12509,
+      "lipGapPercentOfHeadHeight": 14.84,
+      "rays": {
+        "skin": 598,
+        "cavity": 163,
+        "teeth": 161,
+        "gum": 8,
+        "tongue": 259,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 50.3,
+        "cavity": 13.7,
+        "teeth": 13.5,
+        "gum": 0.7,
+        "tongue": 21.8
+      }
+    }
+  ],
+  "checks": [
+    {
+      "check": "WIDE shows real teeth",
+      "pass": true,
+      "detail": "teeth 13.5%"
+    },
+    {
+      "check": "WIDE shows the tongue",
+      "pass": true,
+      "detail": "tongue 21.8%"
+    },
+    {
+      "check": "WIDE shows cavity behind them",
+      "pass": true,
+      "detail": "cavity 13.7%"
+    }
+  ],
+  "verified": true,
+  "method": "grid of rays fired at the mouth, classified by the MATERIAL each one lands on; renders from a full-head camera and a mouth camera per pose"
+}

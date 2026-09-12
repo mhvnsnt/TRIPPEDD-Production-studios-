@@ -5,11 +5,13 @@ on:
     paths:
       - 'docs/evidence/**'
       - 'tools/environment/build_review_manifest.py'
+      - 'tools/environment/probe_oss_functionality.py'
       - '.github/workflows/review-evidence-manifest.yml'
   pull_request:
     paths:
       - 'docs/evidence/**'
       - 'tools/environment/build_review_manifest.py'
+      - 'tools/environment/probe_oss_functionality.py'
       - '.github/workflows/review-evidence-manifest.yml'
   workflow_dispatch:
 
@@ -32,25 +34,37 @@ jobs:
             --output .artifacts/evidence/mouth-review-manifest.json \
             | tee .artifacts/evidence/mouth-review-manifest.log
 
-      - name: Enforce review-manifest policy
+      - name: Functional OSS probes
+        run: |
+          set -euo pipefail
+          python3 tools/environment/probe_oss_functionality.py \
+            --output .artifacts/evidence/oss-functional-probes.json \
+            | tee .artifacts/evidence/oss-functional-probes.log
+
+      - name: Enforce review-manifest and probe policy
         run: |
           set -euo pipefail
           python3 - <<'PY'
           import json
           from pathlib import Path
-          p = Path('.artifacts/evidence/mouth-review-manifest.json')
-          data = json.loads(p.read_text())
-          assert data['schema'] == 'trippedd.review-manifest/v1'
-          assert data['evidence_status'] == 'NOT_ATTEMPTED'
-          assert data['policy']['exact_pixel_sha256_required'] is True
-          assert data['policy']['review_manifest_is_not_visual_qc'] is True
-          assert data['policy']['review_manifest_is_not_physical_qc'] is True
-          assert data['frames'], 'no evidence frames discovered'
-          print(f"REVIEW_MANIFEST: VERIFIED {len(data['frames'])} exact-pixel references")
+          manifest = json.loads(Path('.artifacts/evidence/mouth-review-manifest.json').read_text())
+          probes = json.loads(Path('.artifacts/evidence/oss-functional-probes.json').read_text())
+          assert manifest['schema'] == 'trippedd.review-manifest/v1'
+          assert manifest['evidence_status'] == 'NOT_ATTEMPTED'
+          assert manifest['policy']['exact_pixel_sha256_required'] is True
+          assert manifest['policy']['review_manifest_is_not_visual_qc'] is True
+          assert manifest['policy']['review_manifest_is_not_physical_qc'] is True
+          assert manifest['frames'], 'no evidence frames discovered'
+          assert probes['schema'] == 'trippedd.oss-functional-probes/v1'
+          assert probes['evidence_status'] == 'NOT_ATTEMPTED'
+          assert probes['policy']['functional_probe_is_not_production_evidence'] is True
+          assert probes['policy']['tool_availability_never_promotes_production'] is True
+          print(f"REVIEW_MANIFEST: VERIFIED {len(manifest['frames'])} exact-pixel references")
+          print('OSS_FUNCTIONAL_PROBES: VERIFIED AS CAPABILITY TESTS ONLY')
           PY
 
-      - name: Upload review manifest
+      - name: Upload review and OSS probe manifests
         uses: actions/upload-artifact@v4
         with:
-          name: trippedd-review-manifest-${{ github.run_id }}
-          path: .artifacts/evidence/mouth-review-manifest.json
+          name: trippedd-review-and-oss-probes-${{ github.run_id }}
+          path: .artifacts/evidence/

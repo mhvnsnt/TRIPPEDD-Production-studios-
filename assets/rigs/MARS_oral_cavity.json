@@ -1,0 +1,27 @@
+{
+  "source": "assets/source_models/MARS_LOD2.glb",
+  "weld": {
+    "distance": 1e-06,
+    "vertsBefore": 47021,
+    "vertsAfter": 23608,
+    "boundaryEdgesBefore": 68237,
+    "boundaryEdgesAfterWeld": 8,
+    "afterHoleFill": 8,
+    "surfacePointsMoved": 0
+  },
+  "cavity": {
+    "method": "void carved OUT of the head by boolean DIFFERENCE, lofted from the MediaPipe inner-lip contour raycast onto the real surface",
+    "restSlitZScale": 0.42,
+    "depth": 0.31823,
+    "depthInMouthWidths": 1.649,
+    "sections": 7
+  },
+  "verification": {
+    "exteriorVertsIdenticalOutsideMouthZone": 22964,
+    "exteriorVertsChangedOutsideMouthZone": 0,
+    "seamRaysOnCavityWall": 36,
+    "raysAboveMouth": 0,
+    "raysBelowMouth": 0,
+    "oralMaterialFaces": 186
+  }
+}

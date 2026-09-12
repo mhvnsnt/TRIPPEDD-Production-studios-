@@ -1,0 +1,183 @@
+{
+  "character": "MARS",
+  "characterPremise": "MARS IS A FLOATING-HEAD BEING. The absence of a body is intentional character design, not missing geometry. Never invent a torso, never treat the neck termination as a defect, never regenerate the head.",
+  "identity": {
+    "source": "assets/rigs/MARS_ORAL.blend (carved from MARS_LOD2.glb)",
+    "rule": "the scan is the identity; this file adds an animation system around it and never replaces it"
+  },
+  "frame": {
+    "origin": [
+      -0.021031,
+      -0.417486,
+      0.231635
+    ],
+    "unit": "MW = measured mouth width",
+    "MW": 0.193036,
+    "rollOffWorldHorizontalDeg": 5.61
+  },
+  "bones": [
+    "root",
+    "neck",
+    "head",
+    "jaw",
+    "tongue_root",
+    "tongue_mid",
+    "tongue_tip",
+    "eye_L",
+    "eye_R"
+  ],
+  "jawHinge": {
+    "world": [
+      -0.00783,
+      -0.11779,
+      0.34331
+    ],
+    "source": "measured ear midpoint (temporomandibular joint)",
+    "axis": "bone rolled onto the measured ear-to-ear line",
+    "openSign": 1.0
+  },
+  "weights": {
+    "method": "mandible boundary: the lip seam at the mouth, rising to the ear line at the TMJ; blend band capped by the width of the cut so the lip-edge vertices are never caught mid-blend",
+    "jawVertices": 5421,
+    "jawPercent": 22.96,
+    "lowerLipMeanJawWeight": 0.9986,
+    "upperLipMeanJawWeight": 0.0028
+  },
+  "lipAperture": {
+    "rest": 0.0011,
+    "open22deg": 0.12027,
+    "wide32deg": 0.1734,
+    "delta": 0.11917,
+    "deltaPercentOfHeadHeight": 14.13,
+    "threshold": 3.0,
+    "method": "distance between the two lip-edge vertices the boolean created, tracked by index through the armature"
+  },
+  "oralAnatomy": {
+    "upperTeeth": 672,
+    "lowerTeeth": 672,
+    "teethPerArch": 12,
+    "upperArchRides": "head",
+    "lowerArchRides": "jaw",
+    "archHalfWidthMW": 0.38,
+    "archFrontBehindLipPlaneMW": 0.135,
+    "occlusalGapAtRest": 0.00811,
+    "tongueVerts": 100,
+    "tongueBones": [
+      "tongue_root",
+      "tongue_mid",
+      "tongue_tip"
+    ]
+  },
+  "controls": {
+    "lip_upper_raise": {
+      "verts": 164,
+      "maxTravel": 0.01649
+    },
+    "lip_lower_depress": {
+      "verts": 147,
+      "maxTravel": 0.02029
+    },
+    "lip_upper_curl": {
+      "verts": 148,
+      "maxTravel": 0.00976
+    },
+    "lip_lower_curl": {
+      "verts": 114,
+      "maxTravel": 0.0119
+    },
+    "lip_protrude": {
+      "verts": 324,
+      "maxTravel": 0.01737
+    },
+    "lip_compress": {
+      "verts": 296,
+      "maxTravel": 0.00869
+    },
+    "lip_seal": {
+      "verts": 324,
+      "maxTravel": 0.01448
+    },
+    "lip_corner_L_up": {
+      "verts": 69,
+      "maxTravel": 0.02133
+    },
+    "lip_corner_R_up": {
+      "verts": 110,
+      "maxTravel": 0.0212
+    },
+    "lip_corner_L_wide": {
+      "verts": 69,
+      "maxTravel": 0.02133
+    },
+    "lip_corner_R_wide": {
+      "verts": 110,
+      "maxTravel": 0.0212
+    },
+    "lip_corner_L_in": {
+      "verts": 69,
+      "maxTravel": 0.01702
+    },
+    "lip_corner_R_in": {
+      "verts": 110,
+      "maxTravel": 0.01692
+    },
+    "mouth_funnel": {
+      "verts": 311,
+      "maxTravel": 0.02034
+    },
+    "cheek_puff_L": {
+      "verts": 518,
+      "maxTravel": 0.0188
+    },
+    "cheek_puff_R": {
+      "verts": 671,
+      "maxTravel": 0.0188
+    },
+    "cheek_suck_L": {
+      "verts": 371,
+      "maxTravel": 0.01291
+    },
+    "cheek_suck_R": {
+      "verts": 479,
+      "maxTravel": 0.01291
+    },
+    "blink_L": {
+      "verts": 168,
+      "maxTravel": 0.06667
+    },
+    "blink_R": {
+      "verts": 196,
+      "maxTravel": 0.07295
+    },
+    "squint_L": {
+      "verts": 202,
+      "maxTravel": 0.01872
+    },
+    "squint_R": {
+      "verts": 212,
+      "maxTravel": 0.02018
+    },
+    "brow_up_L": {
+      "verts": 375,
+      "maxTravel": 0.04053
+    },
+    "brow_up_R": {
+      "verts": 324,
+      "maxTravel": 0.0421
+    },
+    "brow_down_L": {
+      "verts": 322,
+      "maxTravel": 0.02802
+    },
+    "brow_down_R": {
+      "verts": 256,
+      "maxTravel": 0.02927
+    },
+    "nose_sneer": {
+      "verts": 200,
+      "maxTravel": 0.01497
+    }
+  },
+  "removedDeadControls": [],
+  "meshVertices": 23608
+}

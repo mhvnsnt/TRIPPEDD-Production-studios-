@@ -38,3 +38,8 @@ assets/rigs/*.glb
 .trippedd_models/
 assets/rigs/*.blend1
 vendor/
+vendor/rhubarb/
+
+# Python bytecode from the Blender tool scripts.
+__pycache__/
+*.pyc

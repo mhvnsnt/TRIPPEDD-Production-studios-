@@ -1,39 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-<title>In the Bushes EP01 teen character personality design v1</title>
+<title>In the Bushes EP01 teen character personality design v2</title>
 <rect width="1600" height="900" fill="#11151b"/>
-<g stroke="#0b0d12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="#d6d1c7">
-  <!-- Teen 1: confident / impulsive -->
-  <g transform="translate(360 390)">
-    <circle cx="0" cy="-120" r="48"/>
-    <path d="M0 -70 L-8 120" fill="none"/>
-    <path d="M-5 -20 L-115 45 M5 -20 L100 -5" fill="none"/>
-    <path d="M-8 120 L-95 245 M-8 120 L90 230" fill="none"/>
-    <path d="M-42 -165 Q0 -205 42 -165" fill="none"/>
-  </g>
-  <!-- Teen 2: cautious / nervous -->
-  <g transform="translate(800 410)">
-    <path d="M-46 -155 Q0 -185 46 -155 L38 -90 L-38 -90 Z"/>
-    <circle cx="0" cy="-115" r="43"/>
-    <path d="M0 -70 L8 120" fill="none"/>
-    <path d="M5 -15 L-92 20 M8 -15 L88 55" fill="none"/>
-    <path d="M8 120 L-70 235 M8 120 L110 210" fill="none"/>
-  </g>
-  <!-- Teen 3: laid-back / deadpan -->
-  <g transform="translate(1230 400)">
-    <circle cx="0" cy="-120" r="46"/>
-    <path d="M0 -75 L12 125" fill="none"/>
-    <path d="M8 -20 L-105 5 M10 -20 L92 25" fill="none"/>
-    <path d="M12 125 L-72 235 M12 125 L88 240" fill="none"/>
-    <path d="M-28 -132 L28 -132" fill="none"/>
-  </g>
+<text x="800" y="70" fill="#f2f2f2" font-family="sans-serif" font-size="40" font-weight="700" text-anchor="middle">IN THE BUSHES — TEEN CAST / DESIGN V2</text>
+<text x="800" y="108" fill="#8d948e" font-family="sans-serif" font-size="20" text-anchor="middle">Original low-fi animated characters • readable silhouettes • clothing + body language carry personality</text>
+
+<!-- Teen 01: impulsive -->
+<g transform="translate(360 360)" stroke="#0b0d12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="0" cy="-125" r="52" fill="#c9c1b5"/>
+  <path d="M-48 -142 Q-25 -205 5 -168 Q38 -210 52 -140" fill="#272d35"/>
+  <path d="M-70 -70 Q0 -105 70 -70 L92 105 Q0 145 -92 105 Z" fill="#4a5664"/>
+  <path d="M-54 -45 L-108 28 M54 -45 L122 8" fill="none"/>
+  <path d="M-72 105 L-96 250 M72 105 L120 245" fill="none" stroke-width="24"/>
+  <path d="M-120 250 L-75 250 M95 245 L145 245" fill="none" stroke-width="22"/>
+  <path d="M-12 -76 L-12 103" fill="none" stroke="#8e98a3" stroke-width="6"/>
+  <path d="M-28 -90 L28 -90" fill="none" stroke="#d5d0c7" stroke-width="5"/>
+  <circle cx="-18" cy="-125" r="5" fill="#0b0d12" stroke="none"/><circle cx="18" cy="-125" r="5" fill="#0b0d12" stroke="none"/>
+  <path d="M-15 -102 Q0 -94 15 -102" fill="none" stroke-width="6"/>
+  <text x="0" y="320" fill="#f2f2f2" stroke="none" font-family="sans-serif" font-size="28" text-anchor="middle">01 — IMPULSIVE</text>
+  <text x="0" y="350" fill="#8d948e" stroke="none" font-family="sans-serif" font-size="18" text-anchor="middle">hoodie • forward lean • big stride • acts first</text>
 </g>
-<g fill="#d6d1c7" font-family="sans-serif" text-anchor="middle">
- <text x="360" y="690" font-size="30">01 — IMPULSIVE</text>
- <text x="360" y="728" font-size="20">moves first • confident • commits hard</text>
- <text x="800" y="690" font-size="30">02 — CAUTIOUS</text>
- <text x="800" y="728" font-size="20">checks danger • hesitates • reacts big</text>
- <text x="1230" y="690" font-size="30">03 — DEADPAN</text>
- <text x="1230" y="728" font-size="20">low reaction • dry timing • observes</text>
+
+<!-- Teen 02: cautious -->
+<g transform="translate(800 370)" stroke="#0b0d12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-52 -160 Q0 -205 52 -160 L45 -95 L-45 -95 Z" fill="#303944"/>
+  <circle cx="0" cy="-125" r="48" fill="#d3cabe"/>
+  <path d="M-78 -65 Q0 -100 78 -65 L68 115 Q0 145 -68 115 Z" fill="#8a6f58"/>
+  <path d="M-58 -35 L-88 38 M58 -35 L95 62" fill="none" stroke-width="18"/>
+  <path d="M-62 112 L-88 245 M62 112 L90 235" fill="none" stroke-width="25"/>
+  <path d="M-108 245 L-68 245 M70 235 L112 235" fill="none" stroke-width="22"/>
+  <path d="M-42 10 Q0 28 42 10" fill="none" stroke="#c8a88d" stroke-width="7"/>
+  <path d="M-20 -125 Q0 -132 20 -125" fill="none" stroke="#0b0d12" stroke-width="5"/>
+  <circle cx="-17" cy="-111" r="5" fill="#0b0d12" stroke="none"/><circle cx="17" cy="-111" r="5" fill="#0b0d12" stroke="none"/>
+  <text x="0" y="320" fill="#f2f2f2" stroke="none" font-family="sans-serif" font-size="28" text-anchor="middle">02 — CAUTIOUS</text>
+  <text x="0" y="350" fill="#8d948e" stroke="none" font-family="sans-serif" font-size="18" text-anchor="middle">oversized jacket • guarded stance • checks danger</text>
 </g>
-<text x="800" y="820" fill="#8d948e" font-family="sans-serif" font-size="18" text-anchor="middle">DESIGN PRINCIPLE: personality comes from silhouette, posture, movement and reaction — not visual clutter.</text>
+
+<!-- Teen 03: deadpan -->
+<g transform="translate(1230 365)" stroke="#0b0d12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="0" cy="-125" r="50" fill="#bfae9e"/>
+  <path d="M-48 -145 Q0 -185 48 -145" fill="#1f242a"/>
+  <path d="M-72 -70 Q0 -88 72 -70 L82 120 Q0 142 -82 120 Z" fill="#566c63"/>
+  <path d="M-58 -35 L-112 5 M58 -35 L105 28" fill="none" stroke-width="16"/>
+  <path d="M-64 118 L-72 248 M64 118 L72 248" fill="none" stroke-width="25"/>
+  <path d="M-95 248 L-52 248 M52 248 L98 248" fill="none" stroke-width="22"/>
+  <path d="M-28 -125 L28 -125" fill="none" stroke-width="6"/>
+  <path d="M-12 -101 L12 -101" fill="none" stroke-width="5"/>
+  <circle cx="-17" cy="-111" r="4" fill="#0b0d12" stroke="none"/><circle cx="17" cy="-111" r="4" fill="#0b0d12" stroke="none"/>
+  <text x="0" y="320" fill="#f2f2f2" stroke="none" font-family="sans-serif" font-size="28" text-anchor="middle">03 — DEADPAN</text>
+  <text x="0" y="350" fill="#8d948e" stroke="none" font-family="sans-serif" font-size="18" text-anchor="middle">oversized tee • relaxed posture • dry reactions</text>
+</g>
+
+<text x="800" y="820" fill="#aab0b7" font-family="sans-serif" font-size="19" text-anchor="middle">DESIGN RULE: not stick figures — simplified animated people with distinct silhouettes, clothes, proportions, poses and acting.</text>
 </svg>

@@ -37,7 +37,7 @@ assets/rigs/*.glb
 .trippedd_libs/
 .trippedd_models/
 assets/rigs/*.blend1
-vendor/
+vendor/*
 vendor/rhubarb/
 
 # Python bytecode from the Blender tool scripts.
@@ -54,3 +54,10 @@ public/production/*-segments/
 #   that exists only on one container is not evidence anyone can check.
 !docs/evidence/
 !docs/evidence/**
+
+# The FACS basis is 4.6 MB and every agent and CI runner needs it to build a
+# face. Cloning ICT-FaceKit to get it is 444 MB. MIT licensed, attribution and
+# hashes in vendor/ict/ict_facs.json. PUBLISHED OR IT DOES NOT EXIST.
+# (`vendor/*` above, not `vendor/`: git cannot re-include anything inside an
+#  excluded DIRECTORY, so the directory itself must stay visible.)
+!vendor/ict/

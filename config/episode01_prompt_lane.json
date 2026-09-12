@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "episode": "EP01",
+  "title": "THE WALK",
+  "mode": "PROMPT_FIRST",
+  "purpose": "Turn operator prompts plus the existing Episode 01 canon/storyboard into executable 2D, hybrid, 3D, animation, audio-sync, and world-building production work.",
+  "source_authority": [
+    "EP01 canon",
+    "existing script/story material",
+    "existing storyboard/reference images",
+    "canonical character assets",
+    "operator prompts"
+  ],
+  "opening_lane": {
+    "style": "2D illustrated/cutout before the 3D reveal",
+    "beats": [
+      "look_left",
+      "look_away",
+      "look_right",
+      "face_camera",
+      "dialogue_performance",
+      "accelerate_away",
+      "2d_to_particle_transition",
+      "particle_to_gaussian_world",
+      "3d_mars_world_reveal"
+    ],
+    "dialogue_source": "operator_voice_recording",
+    "lip_sync": "rhubarb",
+    "mouth_backend": "blender_rhubarb_lipsync_ng_or_equivalent",
+    "body_animation_backend": "blender_animation_mcp",
+    "render_review": "actual_pixels_only"
+  },
+  "motel_lane": {
+    "source_storyboard": "Motel Prayer Scene Storyboard.png",
+    "shot_count": 16,
+    "required_story_beats": [
+      "motel_establishing",
+      "Mars_and_Tanesha_sitting",
+      "Joe_passes_and_waves",
+      "Joe_disappears",
+      "Joe_returns",
+      "greeting",
+      "prayer_request",
+      "agreement",
+      "prayer",
+      "after_prayer",
+      "tic_tac_exchange",
+      "name_exchange",
+      "Joe_departs",
+      "Joe_disappears_again",
+      "Joe_reappears_in_distance",
+      "final_exit"
+    ],
+    "render_strategy": "real_footage_where_available_plus_2d_watercolor_transition_plus_3d_when_required"
+  },
+  "world_reveal": {
+    "representation_stages": [
+      "2d_reference",
+      "particle_geometry",
+      "gaussian_splat_layer",
+      "fused_world",
+      "editable_3d_world"
+    ],
+    "gaussian_backend_candidates": [
+      "nerfstudio-project/gsplat",
+      "ddesmond/opensplat"
+    ],
+    "rule": "Gaussian representation is a production layer, not the canonical character source."
+  },
+  "kevin_portal": {
+    "status": "PLANNED",
+    "mechanism": "physical_forehead_slot_door",
+    "interior": "persistent_real_room",
+    "character": "Kevin",
+    "requirements": [
+      "canonical Kevin source/model",
+      "scan_or_mesh_ingest",
+      "rig",
+      "facial_animation",
+      "room environment",
+      "portal open/close animation",
+      "camera continuity",
+      "actual render review"
+    ]
+  },
+  "prompt_contract": {
+    "operator_can_supply": [
+      "scene intent",
+      "dialogue",
+      "voice recording",
+      "character action",
+      "camera direction",
+      "world description",
+      "visual reference",
+      "desired transition",
+      "revision instruction"
+    ],
+    "system_must_return": [
+      "executed_scene_changes",
+      "animation_artifacts",
+      "rendered_pixels",
+      "measurements",
+      "visual_qc",
+      "lineage",
+      "next_action"
+    ],
+    "fail_closed": true,
+    "unknown_never_pass": true
+  },
+  "tool_selection": {
+    "blender_scene_control": "MCPBlender/blender-mcp",
+    "broad_blender_control": "RFingAdam/mcp-blender",
+    "animation_specialist": "kevindowling/blender_animation_mcp",
+    "lip_sync": "DanielSWolf/rhubarb-lip-sync",
+    "blender_lip_sync": "Premik/blender_rhubarb_lipsync_ng",
+    "world_gaussian_raster": "nerfstudio-project/gsplat",
+    "portable_gaussian_builder": "ddesmond/opensplat"
+  },
+  "promotion": {
+    "registered": true,
+    "validated": false,
+    "requires": [
+      "real_production_input_smoke_test",
+      "actual_pixel_reopen",
+      "measured_output",
+      "failure_and_recovery_exercise",
+      "provenance_recorded",
+      "visual_qc"
+    ]
+  }
+}

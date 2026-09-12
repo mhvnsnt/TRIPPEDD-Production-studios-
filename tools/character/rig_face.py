@@ -518,15 +518,46 @@ def contour_band(points, radius, offset_fn, gate=None):
     return f
 
 def lid_close(side):
-    up = EYE_C["eye_%s_upper" % side]
-    lo = EYE_C["eye_%s_lower" % side]
-    mid_z = sum(F.local(q).z for q in up + lo) / float(len(up) + len(lo))
-    opening = (F.local(up[len(up) // 2]) - F.local(lo[len(lo) // 2])).length
-    # Only the UPPER lid travels, and it travels the measured opening: a lid
-    # that moves half the fissure is a squint, not a blink.
-    return contour_band(up, opening * 1.5,
-                        lambda lp, q: V((0, -0.10, -1.0)) * (opening * 0.92),
-                        gate=lambda lp, q: lp.z > mid_z - opening * 0.15)
+    """Upper-lid blink driven by the canonical MediaPipe semantic fit.
+
+    The target is the measured lower-lid curve, not a guessed travel distance.
+    Vertices are rejected when their nearest semantic feature is the eyebrow.
+    """
+    _cf_path=os.path.join(ROOT,"renders","_rig_measure","canonical_fit.json")
+    if not os.path.exists(_cf_path):
+        die("SEMANTIC LID GATE: canonical_fit.json missing; refusing to build blink")
+    _sets=json.load(open(_cf_path)).get("sets",{})
+    _up=[V(p) for p in _sets.get("eyelid_%s_upper"%side,[])]
+    _lo=[V(p) for p in _sets.get("eyelid_%s_lower"%side,[])]
+    _br=[V(p) for p in _sets.get("eyebrow_%s"%side,[])]
+    if len(_up)<5 or len(_lo)<5 or len(_br)<5:
+        die("SEMANTIC LID GATE: incomplete lid/brow set for eye %s"%side)
+    _up_l=[F.local(q) for q in _up]
+    _lo_l=[F.local(q) for q in _lo]
+    _br_l=[F.local(q) for q in _br]
+    _n=len(_up_l)
+    def _target(i):
+        # Interpolate the lower margin to the upper margin's station count.
+        t=i/float(max(1,_n-1))
+        j=t*(len(_lo_l)-1); j0=int(j); j1=min(len(_lo_l)-1,j0+1); a=j-j0
+        return _lo_l[j0].lerp(_lo_l[j1],a)
+    _targets=[_target(i) for i in range(_n)]
+    _opening=sum((_up_l[i]-_targets[i]).length for i in range(_n))/float(_n)
+    _band=_opening*1.35
+    def _close(lp):
+        best=0.0; src=None; tgt=None
+        for i,q in enumerate(_up_l):
+            d=(lp-q).length
+            if d<_band:
+                w=1.0-smoothstep(d/_band)
+                if w>best: best=w; src=q; tgt=_targets[i]
+        if best<=0 or src is None: return None
+        lid_d=min((lp-q).length for q in _up_l)
+        brow_d=min((lp-q).length for q in _br_l)
+        if brow_d<=lid_d: return None
+        return (tgt-src)*best
+    print("semantic blink %s: upper->lower closure %.3f mm; brow exclusion active"%(side,_opening/MM_))
+    return _close
 
 def lid_squint(side):
     lo = EYE_C["eye_%s_lower" % side]

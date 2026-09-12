@@ -43,8 +43,14 @@ HEAD_H = FACE["bounds"]["size"][2]
 bpy.ops.wm.open_mainfile(filepath=SRC)
 head = bpy.data.objects["MARS_MESH"]
 scene = bpy.context.scene
+# Wipe any previous rig, but KEEP the eyeballs eye_sockets.py inserted. This
+# line used to take everything except the head with it, which is why the blink
+# gate read "0 eyeball rays open" on a head whose sockets had just measured
+# 15/25 and 19/25: the eyes had been deleted a hundred lines earlier.
+KEEP = ("MARS_MESH", "MARS_EYE_L", "MARS_EYE_R")
 for o in list(bpy.data.objects):
-    if o is not head: bpy.data.objects.remove(o, do_unlink=True)
+    if o.name.split(".")[0] not in KEEP:
+        bpy.data.objects.remove(o, do_unlink=True)
 
 mn = V((1e9,) * 3); mx = V((-1e9,) * 3)
 for v in head.data.vertices:
@@ -593,8 +599,91 @@ if dead:
 if len(made) < 18:
     sys.exit("too few working controls (%d) — the measured landmarks are not landing" % len(made))
 
-# The corrective is DRIVEN, so a wide jaw never leaves the corners pinched.
+# ── DOES THE BLINK ACTUALLY CLOSE THE EYE? ──────────────────────────────────
+# A blink that moves lid skin is not a blink; a blink is the eye going AWAY.
+# Now that there is an eyeball behind a carved aperture, that is measurable:
+# fire rays at each eye and count how many reach the eyeball, at rest and with
+# the lid closed. If the count does not collapse, the control is decorative.
+def eye_rays(side):
+    deps = bpy.context.evaluated_depsgraph_get()
+    up = [V(p) for p in F.raw["contours"]["eye_%s_upper" % side]]
+    lo = [V(p) for p in F.raw["contours"]["eye_%s_lower" % side]]
+    centre = (sum(up, V((0, 0, 0))) + sum(lo, V((0, 0, 0)))) / (len(up) + len(lo))
+    span = up[len(up) // 2] - lo[len(lo) // 2]
+    n = 0
+    for i in range(25):
+        t = (i / 24.0 - 0.5)
+        o = centre + V((0, -0.5, 0)) + span * t * 0.55
+        hit, loc_, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, V((0, 1, 0)))
+        if hit and ob.name.startswith("MARS_EYE_"): n += 1
+    return n
+
+# ── bind the eyeballs, so eye_look_L / eye_look_R finally drive something ───
+# They have existed as bones since the first pass and moved zero geometry,
+# because the eyes were painted into the scan. Now there is an eyeball to aim.
+eye_bound = {}
+for side, bone_name in (("L", "eye_L"), ("R", "eye_R")):
+    ob = bpy.data.objects.get("MARS_EYE_%s" % side)
+    if not ob or bone_name not in arm.pose.bones: continue
+    ob.parent = arm
+    ob.matrix_parent_inverse = arm.matrix_world.inverted()
+    gg = ob.vertex_groups.new(name=bone_name)
+    gg.add(range(len(ob.data.vertices)), 1.0, "REPLACE")
+    md = ob.modifiers.new("Armature", "ARMATURE")
+    md.object = arm; md.use_vertex_groups = True
+    eye_bound["eye_%s" % side] = len(ob.data.vertices)
+
+# Prove the gaze moves the eyeball rather than the bone moving alone.
+def eye_travel(bone_name, obj_name, deg=12.0):
+    pb = arm.pose.bones[bone_name]; pb.rotation_mode = "XYZ"
+    ob = bpy.data.objects[obj_name]
+    def pts():
+        ev = ob.evaluated_get(bpy.context.evaluated_depsgraph_get()); m = ev.to_mesh()
+        out = [ob.matrix_world @ v.co.copy() for v in m.vertices]; ev.to_mesh_clear()
+        return out
+    pb.rotation_euler = (0, 0, 0); bpy.context.view_layer.update()
+    a = pts()
+    pb.rotation_euler = (0, 0, math.radians(deg)); bpy.context.view_layer.update()
+    b = pts()
+    pb.rotation_euler = (0, 0, 0); bpy.context.view_layer.update()
+    return max((p - q).length for p, q in zip(a, b)) if a else 0.0
+
+for side in ("L", "R"):
+    nm = "MARS_EYE_%s" % side
+    if nm in bpy.data.objects and "eye_%s" % side in arm.pose.bones:
+        t = eye_travel("eye_%s" % side, nm)
+        print("  eye_look_%s: 12 deg moves the eyeball %.5f (%.1f%% of mouth width)"
+              % (side, t, 100 * t / MW))
+        if t < MW * 0.02:
+            sys.exit("eye_look_%s STILL DRIVES NOTHING (%.5f) — refusing to ship a dead control" % (side, t))
+
 kb = head.data.shape_keys.key_blocks
+blink_report = {}
+for side in ("L", "R"):
+    key = "blink_%s" % side
+    if key not in kb: continue
+    for k in kb:
+        if k.name != "Basis": k.value = 0.0
+    bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
+    open_n = eye_rays(side)
+    kb[key].value = 1.0
+    bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
+    shut_n = eye_rays(side)
+    kb[key].value = 0.0
+    closed_pct = 100.0 * (open_n - shut_n) / max(1, open_n)
+    blink_report[key] = {"eyeballRaysOpen": open_n, "eyeballRaysClosed": shut_n,
+                         "percentClosed": round(closed_pct, 1)}
+    print("  %s: eyeball rays %d open -> %d closed (%.0f%% of the eye covered)"
+          % (key, open_n, shut_n, closed_pct))
+for k in kb:
+    if k.name != "Basis": k.value = 0.0
+bpy.context.view_layer.update()
+worst = min((v["percentClosed"] for v in blink_report.values()), default=0.0)
+if blink_report and worst < 55.0:
+    print("  BLINK IS DECORATIVE — the weaker lid covers only %.0f%% of the eye. "
+          "Reported, not claimed." % worst)
+
+# The corrective is DRIVEN, so a wide jaw never leaves the corners pinched.
 if "lip_corner_L_wide" in kb:
     for kn, gain in (("lip_corner_L_wide", 0.55), ("lip_corner_R_wide", 0.55)):
         d = kb[kn].driver_add("value").driver
@@ -669,6 +758,11 @@ state = {
         "tongueShapeKeys": tongue_shapes,
     },
     "appearanceVariant": VARIANT,
+    "blink": blink_report,
+    "eyes": {"bound": eye_bound,
+             "source": "google/GNM eyeballs (Apache-2.0), fitted per eye on that eye's own "
+                       "measured lid contour",
+             "apertureCarved": True},
     "controls": made, "removedDeadControls": dead,
     "meshVertices": len(head.data.vertices),
 }

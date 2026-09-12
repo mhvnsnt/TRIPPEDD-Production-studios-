@@ -96,9 +96,29 @@ def apply_pose(jaw_deg, shapes, tongue):
     bpy.context.evaluated_depsgraph_get().update()
 
 # ── measurement: what does a ray fired at the mouth actually hit? ────────────
-NAME_OF = {"MARS_MESH": "skin_or_cavity", "MARS_TEETH_UPPER": "teeth", "MARS_TEETH_LOWER": "teeth",
-           "MARS_TEETH_UPPER_GUM": "gum", "MARS_TEETH_LOWER_GUM": "gum", "MARS_TONGUE": "tongue"}
-ORAL_SLOTS = {i for i, m in enumerate(head.data.materials) if m and m.name == "MARS_ORAL_MAT"}
+# ── classify by MATERIAL, on whatever object was hit ─────────────────────────
+# This used to key off OBJECT NAMES, which was fine while every tissue was its
+# own object and silently wrong the moment the GNM donor arrived: its gums live
+# inside MARS_TEETH_UPPER as a second material slot, so every gum hit was
+# counted as a tooth and the gum row read 0.0% in all ten poses while gums were
+# plainly visible in the frame. The mouth sock, being a new object nobody had
+# told the map about, was being counted as SKIN.
+# An instrument that cannot see the thing it claims to measure reports zero and
+# looks exactly like an absence. Material identity is the authority here, and it
+# survives objects being merged, split or renamed.
+MAT_KIND = {
+    "MARS_TEETH_MAT": "teeth", "MARS_GUM_MAT": "gum", "MARS_TONGUE_MAT": "tongue",
+    "MARS_SOCK_MAT": "cavity", "MARS_ORAL_MAT": "cavity",
+    "MARS_SCLERA_MAT": "eye", "MARS_IRIS_MAT": "eye", "MARS_PUPIL_MAT": "eye",
+}
+
+def hit_kind(ob, idx):
+    try:
+        mi = ob.data.polygons[idx].material_index
+        name = ob.data.materials[mi].name if 0 <= mi < len(ob.data.materials) else ""
+    except Exception:
+        name = ""
+    return MAT_KIND.get(name.split(".")[0], "skin")
 
 def survey(nx=41, nz=29, span=1.25):
     # FORCE THE POSE TO BE REAL BEFORE MEASURING IT.
@@ -113,7 +133,7 @@ def survey(nx=41, nz=29, span=1.25):
     deps = bpy.context.evaluated_depsgraph_get()
     deps.update()
     head.evaluated_get(deps)
-    tally = {"skin": 0, "cavity": 0, "teeth": 0, "gum": 0, "tongue": 0, "miss": 0}
+    tally = {"skin": 0, "cavity": 0, "teeth": 0, "gum": 0, "tongue": 0, "eye": 0, "miss": 0}
     for iz in range(nz):
         for ix in range(nx):
             lx = F.cx + (ix / (nx - 1.0) - 0.5) * MW * span
@@ -123,14 +143,7 @@ def survey(nx=41, nz=29, span=1.25):
             hit, loc, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, d)
             if not hit:
                 tally["miss"] += 1; continue
-            base = ob.name.split(".")[0]
-            kind = NAME_OF.get(base, "skin_or_cavity")
-            if kind == "skin_or_cavity":
-                mi = -1
-                try: mi = ob.data.polygons[idx].material_index
-                except Exception: pass
-                kind = "cavity" if mi in ORAL_SLOTS else "skin"
-            tally[kind] += 1
+            tally[hit_kind(ob, idx)] += 1
     tally["total"] = nx * nz
     return tally
 
@@ -147,13 +160,9 @@ def lip_gap():
         o = F.world(V((lx, -0.40, lz)))
         d = (F.world(V((lx, 1.0, lz))) - o).normalized()
         hit, loc, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, d)
-        if not hit: continue
-        base = ob.name.split(".")[0]
-        if base == "MARS_MESH":
-            mi = -1
-            try: mi = ob.data.polygons[idx].material_index
-            except Exception: pass
-            if mi not in ORAL_SLOTS: continue
+        # Anything that is not SKIN means the ray got into the mouth: cavity,
+        # sock, teeth, gums or tongue all count as the opening.
+        if not hit or hit_kind(ob, idx) == "skin": continue
         zs.append(lz)
     return (max(zs) - min(zs)) if len(zs) > 1 else 0.0
 
@@ -225,7 +234,7 @@ for (name, jaw, shapes, tongue) in POSES:
            "lipGap": round(gap, 5), "lipGapPercentOfHeadHeight": round(100 * gap / HEAD_H, 2),
            "rays": s,
            "visible": {k: round(100.0 * s[k] / s["total"], 1)
-                       for k in ("skin", "cavity", "teeth", "gum", "tongue")}}
+                       for k in ("skin", "cavity", "teeth", "gum", "tongue", "eye")}}
     report.append(row)
     for cam, tag in ((CAM_FULL, "front"), (CAM_MOUTH, "mouth"), (CAM_PROFILE, "profile")):
         scene.camera = cam

@@ -38,8 +38,8 @@
   },
   "weights": {
     "method": "mandible boundary: the lip seam at the mouth, rising to the ear line at the TMJ; blend band capped by the width of the cut so the lip-edge vertices are never caught mid-blend",
-    "jawVertices": 5558,
-    "jawPercent": 23.32,
+    "jawVertices": 5623,
+    "jawPercent": 23.44,
     "lowerLipMeanJawWeight": 1.0,
     "upperLipMeanJawWeight": 0.0
   },
@@ -80,6 +80,27 @@
       "tongue_tip"
     ],
     "tongueShapeKeys": 31
+  },
+  "appearanceVariant": "canonical",
+  "blink": {
+    "blink_L": {
+      "eyeballRaysOpen": 15,
+      "eyeballRaysClosed": 0,
+      "percentClosed": 100.0
+    },
+    "blink_R": {
+      "eyeballRaysOpen": 19,
+      "eyeballRaysClosed": 0,
+      "percentClosed": 100.0
+    }
+  },
+  "eyes": {
+    "bound": {
+      "eye_L": 771,
+      "eye_R": 771
+    },
+    "source": "google/GNM eyeballs (Apache-2.0), fitted per eye on that eye's own measured lid contour",
+    "apertureCarved": true
   },
   "controls": {
     "lip_upper_raise": {
@@ -139,36 +160,36 @@
       "maxTravel": 0.02044
     },
     "cheek_puff_L": {
-      "verts": 545,
+      "verts": 581,
       "maxTravel": 0.0188
     },
     "cheek_puff_R": {
-      "verts": 691,
+      "verts": 748,
       "maxTravel": 0.0188
     },
     "cheek_suck_L": {
-      "verts": 379,
+      "verts": 403,
       "maxTravel": 0.01291
     },
     "cheek_suck_R": {
-      "verts": 483,
+      "verts": 523,
       "maxTravel": 0.01291
     },
     "blink_L": {
-      "verts": 60,
-      "maxTravel": 0.02257
+      "verts": 82,
+      "maxTravel": 0.02331
     },
     "blink_R": {
-      "verts": 36,
-      "maxTravel": 0.0219
+      "verts": 73,
+      "maxTravel": 0.02317
     },
     "squint_L": {
-      "verts": 57,
-      "maxTravel": 0.00937
+      "verts": 80,
+      "maxTravel": 0.0101
     },
     "squint_R": {
-      "verts": 64,
-      "maxTravel": 0.00956
+      "verts": 100,
+      "maxTravel": 0.01004
     },
     "nostril_flare_L": {
       "verts": 96,
@@ -183,19 +204,19 @@
       "maxTravel": 0.01594
     },
     "brow_up_L": {
-      "verts": 375,
+      "verts": 430,
       "maxTravel": 0.04053
     },
     "brow_up_R": {
-      "verts": 324,
+      "verts": 391,
       "maxTravel": 0.0421
     },
     "brow_down_L": {
-      "verts": 322,
+      "verts": 367,
       "maxTravel": 0.02802
     },
     "brow_down_R": {
-      "verts": 256,
+      "verts": 311,
       "maxTravel": 0.02927
     },
     "nose_sneer": {
@@ -204,5 +225,5 @@
     }
   },
   "removedDeadControls": [],
-  "meshVertices": 23830
+  "meshVertices": 23989
 }

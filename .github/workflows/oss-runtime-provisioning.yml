@@ -32,6 +32,7 @@ jobs:
           .venv/oss-runtime/bin/python -m pip install --upgrade pip
           .venv/oss-runtime/bin/python -m pip install \
             'OpenImageIO==3.1.17.0' \
+            'MaterialX==1.39.5' \
             'opencue-pycue==1.19.1' \
             'opencue-pyoutline==1.19.1'
 
@@ -41,6 +42,7 @@ jobs:
           mkdir -p .artifacts/evidence
           .venv/oss-runtime/bin/python - <<'PY' | tee .artifacts/evidence/oss-python-runtime.log
           import json
+          import MaterialX as mx
           import OpenImageIO as oiio
           import opencue
           import outline
@@ -50,6 +52,7 @@ jobs:
               'evidence_status': 'NOT_ATTEMPTED',
               'packages': {
                   'OpenImageIO': getattr(oiio, '__version__', 'imported'),
+                  'MaterialX': getattr(mx, '__version__', 'imported'),
                   'opencue': 'imported',
                   'outline': 'imported'
               },
@@ -57,7 +60,8 @@ jobs:
                   'runtime_import_is_not_production_evidence': True,
                   'render_qc_not_attempted': True,
                   'physical_qc_not_attempted': True,
-                  'open_cue_is_dispatch_only': True
+                  'open_cue_is_dispatch_only': True,
+                  'materialx_is_lookdev_interchange_only': True
               }
           }, indent=2))
           PY
@@ -74,6 +78,7 @@ jobs:
               'evidence_status': 'NOT_ATTEMPTED',
               'packages': {
                   'OpenImageIO': '3.1.17.0',
+                  'MaterialX': '1.39.5',
                   'opencue-pycue': '1.19.1',
                   'opencue-pyoutline': '1.19.1'
               },
@@ -81,7 +86,8 @@ jobs:
                   'runtime_import_is_not_production_evidence': True,
                   'render_qc_not_attempted': True,
                   'physical_qc_not_attempted': True,
-                  'open_cue_is_dispatch_only': True
+                  'open_cue_is_dispatch_only': True,
+                  'materialx_is_lookdev_interchange_only': True
               }
           }
           Path('.artifacts/evidence/oss-python-runtime.json').write_text(json.dumps(receipt, indent=2)+'\n')

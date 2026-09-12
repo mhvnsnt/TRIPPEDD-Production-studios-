@@ -47,6 +47,30 @@ RINGS = {
           "lower": [263, 249, 390, 373, 374, 380, 381, 382, 362]},
 }
 
+# PREFER THE CANONICAL-TEMPLATE FIT WHEN IT EXISTS.
+# Raycasting a 2D pixel onto the surface is unreliable exactly where the surface
+# FOLDS -- a lid crease, a brow ridge -- because the pixel can land on either
+# side of the fold. That is how "the upper eyelid" ended up being brow.
+# fit_canonical_face.py warps MediaPipe's 468-vertex 3D template onto him
+# instead, so every index is a real point with its published meaning and the
+# eyelid and eyebrow sets are DISJOINT by construction.
+_CF = os.path.abspath("renders/_rig_measure/canonical_fit.json")
+if os.path.exists(_CF) and "--raycast" not in argv:
+    _cf = json.load(open(_CF))["sets"]
+    _out = {"source": "MediaPipe canonical face model, warped onto his head",
+            "method": "3D template fit -- not a 2D pixel raycast", "eyes": {}}
+    for _s in ("L", "R"):
+        _out["eyes"]["eye_%s" % _s] = {
+            "upper": _cf["eyelid_%s_upper" % _s],
+            "lower": _cf["eyelid_%s_lower" % _s],
+            "openingMM": _cf["eyelid_%s_openingMM" % _s],
+            "lidToBrowMM": _cf["lid_to_brow_%s_MM" % _s]}
+        print("eye %s: from the canonical fit · opening %.1f mm · %.1f mm below the brow"
+              % (_s, _cf["eyelid_%s_openingMM" % _s], _cf["lid_to_brow_%s_MM" % _s]))
+    json.dump(_out, open(OUT, "w"), indent=2)
+    print("\neyelids -> %s (canonical template, brow cannot be mistaken for lid)" % OUT)
+    sys.exit(0)
+
 bpy.ops.wm.read_factory_settings(use_empty=True)
 bpy.ops.import_scene.gltf(filepath=SRC)
 meshes = [o for o in bpy.data.objects if o.type == "MESH"]

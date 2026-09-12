@@ -1,0 +1,60 @@
+{
+  "schema": "god-molecule.mars-lod2-placement-plate.bridge.v1",
+  "source_repo": "mhvnsnt/God-Molecule-Show-Studio",
+  "asset": {
+    "id": "MARS_LOD2",
+    "required_path": "assets/source_models/MARS_LOD2.glb",
+    "status": "BLOCKED_MISSING_FROM_GITHUB_CHECKOUT",
+    "substitution_allowed": false,
+    "identity": "MARS_CANONICAL"
+  },
+  "source_evidence": "artifacts/evidence/mars_lod2_placement_plate_manifest.json",
+  "plate_requirements": {
+    "measured_head_frame": true,
+    "speculars": false,
+    "clipping_gate": true,
+    "annotation_is_ground_truth": false,
+    "annotation_role": "placement_constraint"
+  },
+  "images": [
+    {
+      "id": "front_close",
+      "sha256": "291a42ba82d3bd2d94a84638ead374d2111dab74b5fdc7320b9597f0f071de75",
+      "size_px": [1600, 1600],
+      "marks": {
+        "brows": [[279, 250, 700, 359], [930, 247, 1288, 373]],
+        "upper_lids": [[365, 413, 660, 457], [958, 425, 1278, 459]],
+        "lower_lids": [[356, 437, 684, 517], [967, 448, 1259, 515]],
+        "nostrils": [[686, 854, 786, 883], [869, 856, 977, 900]]
+      }
+    },
+    {
+      "id": "front_wide",
+      "sha256": "e893a4fbb3ed1f084ae1fa6a11b0cfa2b4040d4d1917b9a742893d6de4ea8284",
+      "size_px": [1600, 1600],
+      "marks": {
+        "brows": [[420, 607, 685, 732], [855, 588, 1095, 652]],
+        "upper_lids": [[477, 725, 675, 772], [872, 704, 1070, 750]],
+        "lower_lids": [[481, 764, 671, 785], [881, 741, 1075, 777]],
+        "nostrils": [[683, 879, 750, 931], [792, 875, 869, 921]]
+      }
+    }
+  ],
+  "production_order": [
+    "real_MARS_LOD2_GLb_input",
+    "MVMP_478_landmarks",
+    "semantic_eyelid_assignment",
+    "eye_socket_cut",
+    "face_rig",
+    "actual_blink",
+    "actual_PNG_evidence",
+    "brow_eyelid_measurements",
+    "PASS_FAIL"
+  ],
+  "fail_closed": true,
+  "notes": [
+    "This bridge record preserves the human placement constraints without treating the marked plates as the canonical mesh.",
+    "No donor or generated head may be promoted as MARS_LOD2.",
+    "TRIPPEDD must not claim landmark/socket/blink/PNG success until the actual production GLB is present and executed through the gates."
+  ]
+}

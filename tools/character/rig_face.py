@@ -598,6 +598,19 @@ def lid_close(side, meet=0.40):
     """
     up, lo, centre, ez, ey, opening = eye_frame(side)
     n = min(len(up), len(lo))
+
+    # Semantic exclusion gate: the blink may deform only vertices closer to
+    # the measured lid margins than to the published eyebrow region.
+    _CF = os.path.join(ROOT, "renders", "_rig_measure", "canonical_fit.json")
+    if not os.path.exists(_CF):
+        die("SEMANTIC LID GATE: canonical_fit.json missing; refusing to build blink")
+    _cf = json.load(open(_CF)).get("sets", {})
+    _brow_raw = _cf.get("eyebrow_%s" % side)
+    if not _brow_raw:
+        die("SEMANTIC LID GATE: eyebrow_%s set missing from canonical fit" % side)
+    _BROW_LOCAL = [F.local(V(p)) for p in _brow_raw]
+    _LID_LOCAL = [F.local(V(p)) for p in (up + lo)]
+
     # the closed lid line: one target per station, from HIS OWN two contours
     meet_pts = [lo[i] + (up[i] - lo[i]) * meet for i in range(n)]
     band = opening * 1.9
@@ -639,6 +652,14 @@ def lid_close(side, meet=0.40):
                 if w > w_best:
                     w_best, tgt, src = w, meet_pts[i], q
         if w_best <= 0 or tgt is None: return None
+
+        # Never let the blink win a vertex whose nearest semantic feature is
+        # the eyebrow. This is a semantic gate, not a visual guess.
+        _lid_d = min((lp - q).length for q in _LID_LOCAL)
+        _brow_d = min((lp - q).length for q in _BROW_LOCAL)
+        if _brow_d <= _lid_d:
+            return None
+
         # travel this vertex the same way its nearest margin station travels
         return F.M.to_3x3().inverted() @ ((tgt - src) * w_best)
 

@@ -83,11 +83,32 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .artifacts/evidence
-          find .artifacts/drive .artifacts/god-molecule-source/repo -type f -printf '%p %s bytes\n' 2>/dev/null | sort -u > .artifacts/evidence/inventory.txt
-          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' \) -print 2>/dev/null | sort -u > .artifacts/evidence/mars_candidates.txt || true
-          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*gnm*donor*.npz' -o -iname '*mouth*frame*.json' \) -print 2>/dev/null | sort -u > .artifacts/evidence/oral_candidates.txt || true
-          cat .artifacts/evidence/mars_candidates.txt
-          cat .artifacts/evidence/oral_candidates.txt
+          {
+            printf '%s\\n' ".artifacts/drive" ".artifacts/god-molecule-source/repo" | while IFS= read -r d; do
+              if [ -d "$d" ]; then
+                find "$d" -type f -printf '%p %s bytes\\n'
+              fi
+            done
+          } | sort -u > .artifacts/evidence/inventory.txt
+          {
+            for d in .artifacts/drive .artifacts/god-molecule-source/repo; do
+              if [ -d "$d" ]; then
+                find "$d" -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' \) -print
+              fi
+            done
+          } | sort -u > .artifacts/evidence/mars_candidates.txt || true
+          {
+            for d in .artifacts/drive .artifacts/god-molecule-source/repo; do
+              if [ -d "$d" ]; then
+                find "$d" -type f \( -iname '*gnm*donor*.npz' -o -iname '*mouth*frame*.json' \) -print
+              fi
+            done
+          } | sort -u > .artifacts/evidence/oral_candidates.txt || true
+          echo "=== MARS CANDIDATES ==="
+          cat .artifacts/evidence/mars_candidates.txt || true
+          echo "=== ORAL CANDIDATES ==="
+          cat .artifacts/evidence/oral_candidates.txt || true
+          test -s .artifacts/evidence/mars_candidates.txt || { echo "MARS_CANDIDATES: NONE"; exit 42; }
 
       - name: Select canonical Mars
         run: |

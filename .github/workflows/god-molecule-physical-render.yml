@@ -64,15 +64,16 @@ jobs:
           GOD_REPO: mhvnsnt/God-Molecule-Show-Studio
           GOD_READ_TOKEN: ${{ secrets.GOD_MOLECULE_READ_TOKEN }}
         run: |
-          set -euo pipefail
+          set -eo pipefail
           mkdir -p .artifacts/god-molecule-source
           echo "GOD_MOLECULE_REPO=$GOD_REPO" | tee .artifacts/god-molecule-source/source.txt
           if [ -n "${GOD_READ_TOKEN:-}" ]; then
             if git clone --depth=1 "https://x-access-token:${GOD_READ_TOKEN}@github.com/${GOD_REPO}.git" .artifacts/god-molecule-source/repo; then
-            echo "GOD_MOLECULE_SOURCE: AVAILABLE"
+            echo "GOD_MOLECULE_SOURCE: AVAILABLE" | tee .artifacts/god-molecule-source/state.txt
             find .artifacts/god-molecule-source/repo -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' -o -iname '*mouth*frame*.json' -o -iname '*gnm*donor*.npz' \) -print | sort | tee .artifacts/god-molecule-source/candidates.txt
             else
               echo "GOD_MOLECULE_SOURCE: CLONE_FAILED" | tee .artifacts/god-molecule-source/state.txt
+              echo "Continuing; canonical selection remains fail-closed." | tee .artifacts/god-molecule-source/state.txt
             fi
           else
             echo "GOD_MOLECULE_SOURCE: READ_SECRET_NOT_CONFIGURED" | tee .artifacts/god-molecule-source/state.txt
@@ -82,9 +83,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .artifacts/evidence
-          find . .artifacts/drive -type f -printf '%p %s bytes\n' | sort > .artifacts/evidence/inventory.txt
-          find . .artifacts/drive -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' \) -print > .artifacts/evidence/mars_candidates.txt || true
-          find . .artifacts/drive -type f \( -iname '*gnm*donor*.npz' -o -iname '*mouth*frame*.json' \) -print > .artifacts/evidence/oral_candidates.txt || true
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f -printf '%p %s bytes\n' 2>/dev/null | sort -u > .artifacts/evidence/inventory.txt
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' \) -print 2>/dev/null | sort -u > .artifacts/evidence/mars_candidates.txt || true
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*gnm*donor*.npz' -o -iname '*mouth*frame*.json' \) -print 2>/dev/null | sort -u > .artifacts/evidence/oral_candidates.txt || true
           cat .artifacts/evidence/mars_candidates.txt
           cat .artifacts/evidence/oral_candidates.txt
 
@@ -95,7 +96,8 @@ jobs:
             echo "MARS_CANONICAL: NOT_FOUND" | tee .artifacts/evidence/state.txt
             exit 42
           fi
-          MARS_PATH=$(head -n1 .artifacts/evidence/mars_candidates.txt)
+          MARS_PATH=$(grep -E "/mars_source_.*\.blend$|/MARS_CANONICAL.*\.(blend|glb|gltf)$" .artifacts/evidence/mars_candidates.txt | head -n1 || true)
+          [ -n "$MARS_PATH" ] || MARS_PATH=$(head -n1 .artifacts/evidence/mars_candidates.txt)
           printf '%s\n' "$MARS_PATH" > .artifacts/evidence/mars_path.txt
           sha256sum "$MARS_PATH" | tee .artifacts/evidence/mars.sha256
           echo "MARS_CANONICAL: VERIFIED"

@@ -38,30 +38,30 @@
   },
   "weights": {
     "method": "mandible boundary: the lip seam at the mouth, rising to the ear line at the TMJ; blend band capped by the width of the cut so the lip-edge vertices are never caught mid-blend",
-    "jawVertices": 5421,
-    "jawPercent": 22.96,
-    "lowerLipMeanJawWeight": 0.9986,
-    "upperLipMeanJawWeight": 0.0028
+    "jawVertices": 5541,
+    "jawPercent": 23.25,
+    "lowerLipMeanJawWeight": 1.0,
+    "upperLipMeanJawWeight": 0.0
   },
   "lipAperture": {
-    "rest": 0.0011,
-    "open22deg": 0.12027,
-    "wide32deg": 0.1734,
-    "delta": 0.11917,
-    "deltaPercentOfHeadHeight": 14.13,
+    "rest": 0.00109,
+    "open22deg": 0.12017,
+    "wide32deg": 0.17326,
+    "delta": 0.11908,
+    "deltaPercentOfHeadHeight": 14.12,
     "threshold": 3.0,
     "method": "distance between the two lip-edge vertices the boolean created, tracked by index through the armature"
   },
   "oralAnatomy": {
-    "upperTeeth": 672,
-    "lowerTeeth": 672,
-    "teethPerArch": 12,
+    "upperTeeth": 784,
+    "lowerTeeth": 784,
+    "teethPerArch": 14,
     "upperArchRides": "head",
     "lowerArchRides": "jaw",
-    "archHalfWidthMW": 0.38,
-    "archFrontBehindLipPlaneMW": 0.135,
-    "occlusalGapAtRest": 0.00811,
-    "tongueVerts": 100,
+    "archHalfWidthMW": 0.52,
+    "archFrontBehindLipPlaneMW": 0.115,
+    "occlusalGapAtRest": 0.00656,
+    "tongueVerts": 236,
     "tongueBones": [
       "tongue_root",
       "tongue_mid",
@@ -70,71 +70,71 @@
   },
   "controls": {
     "lip_upper_raise": {
-      "verts": 164,
-      "maxTravel": 0.01649
+      "verts": 214,
+      "maxTravel": 0.01648
     },
     "lip_lower_depress": {
-      "verts": 147,
+      "verts": 201,
       "maxTravel": 0.02029
     },
     "lip_upper_curl": {
-      "verts": 148,
-      "maxTravel": 0.00976
+      "verts": 191,
+      "maxTravel": 0.00975
     },
     "lip_lower_curl": {
-      "verts": 114,
+      "verts": 160,
       "maxTravel": 0.0119
     },
     "lip_protrude": {
-      "verts": 324,
+      "verts": 430,
       "maxTravel": 0.01737
     },
     "lip_compress": {
-      "verts": 296,
+      "verts": 395,
       "maxTravel": 0.00869
     },
     "lip_seal": {
-      "verts": 324,
+      "verts": 430,
       "maxTravel": 0.01448
     },
     "lip_corner_L_up": {
-      "verts": 69,
-      "maxTravel": 0.02133
+      "verts": 101,
+      "maxTravel": 0.02143
     },
     "lip_corner_R_up": {
-      "verts": 110,
-      "maxTravel": 0.0212
+      "verts": 139,
+      "maxTravel": 0.02147
     },
     "lip_corner_L_wide": {
-      "verts": 69,
-      "maxTravel": 0.02133
+      "verts": 101,
+      "maxTravel": 0.02142
     },
     "lip_corner_R_wide": {
-      "verts": 110,
-      "maxTravel": 0.0212
+      "verts": 139,
+      "maxTravel": 0.02147
     },
     "lip_corner_L_in": {
-      "verts": 69,
-      "maxTravel": 0.01702
+      "verts": 101,
+      "maxTravel": 0.01709
     },
     "lip_corner_R_in": {
-      "verts": 110,
-      "maxTravel": 0.01692
+      "verts": 139,
+      "maxTravel": 0.01713
     },
     "mouth_funnel": {
-      "verts": 311,
-      "maxTravel": 0.02034
+      "verts": 415,
+      "maxTravel": 0.02047
     },
     "cheek_puff_L": {
-      "verts": 518,
+      "verts": 532,
       "maxTravel": 0.0188
     },
     "cheek_puff_R": {
-      "verts": 671,
+      "verts": 678,
       "maxTravel": 0.0188
     },
     "cheek_suck_L": {
-      "verts": 371,
+      "verts": 374,
       "maxTravel": 0.01291
     },
     "cheek_suck_R": {
@@ -179,5 +179,5 @@
     }
   },
   "removedDeadControls": [],
-  "meshVertices": 23608
+  "meshVertices": 23828
 }

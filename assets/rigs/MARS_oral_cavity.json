@@ -3,7 +3,7 @@
   "weld": {
     "distance": 1e-06,
     "vertsBefore": 47021,
-    "vertsAfter": 23608,
+    "vertsAfter": 23828,
     "boundaryEdgesBefore": 68237,
     "boundaryEdgesAfterWeld": 8,
     "afterHoleFill": 8,
@@ -17,11 +17,12 @@
     "sections": 7
   },
   "verification": {
-    "exteriorVertsIdenticalOutsideMouthZone": 22964,
+    "exteriorVertsIdenticalOutsideMouthZone": 22968,
     "exteriorVertsChangedOutsideMouthZone": 0,
-    "seamRaysOnCavityWall": 36,
+    "seamRaysOnCavityWall": 41,
     "raysAboveMouth": 0,
     "raysBelowMouth": 0,
-    "oralMaterialFaces": 186
+    "oralMaterialFaces": 378,
+    "oralVerticesProtrudingThroughFace": 0
   }
 }

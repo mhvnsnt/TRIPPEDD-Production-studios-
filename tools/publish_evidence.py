@@ -26,6 +26,24 @@ os.makedirs(DEST, exist_ok=True)
 
 from PIL import Image
 
+VISUAL = opt("--visual", os.environ.get("TRIPPEDD_VISUAL_VERDICT", "PENDING")).upper()
+if VISUAL not in ("PASS", "FAIL", "PENDING"):
+    sys.exit("--visual must be PASS, FAIL or PENDING")
+
+SOURCE_ASSET = {}
+_prov = os.path.join("assets", "source_models", "MARS_source.provenance.json")
+if os.path.exists(_prov):
+    _p = json.load(open(_prov))
+    SOURCE_ASSET = {"assetId": _p.get("assetId"), "character": _p.get("character"),
+                    "sha256": _p.get("integrity", {}).get("sha256"),
+                    "driveFileId": _p.get("source", {}).get("fileId")}
+
+def sha_full(p):
+    h = hashlib.sha256()
+    with open(p, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""): h.update(chunk)
+    return h.hexdigest()
+
 def sha8(p):
     h = hashlib.sha256()
     with open(p, "rb") as fh:
@@ -41,8 +59,25 @@ for p in sorted(glob.glob(os.path.join(SRC, "*.png"))):
     name = os.path.basename(p)
     out = os.path.join(DEST, name)
     im.save(out, "PNG", optimize=True)
-    published.append({"frame": name, "bytes": os.path.getsize(out),
-                      "sourceSha8": sha8(p), "renderedPx": list(Image.open(p).size)})
+    # The manifest has to answer every question another agent could ask WITHOUT
+    # anyone hunting through temp directories: what it is, where it is, whether
+    # the pixels are the ones that were measured, and what the measurement said.
+    pose, _, cam = name.rsplit(".", 1)[0].rpartition("_")
+    published.append({
+        "frame": name,
+        "repoPath": os.path.relpath(out, os.getcwd()),
+        "productionPath": os.path.relpath(p, os.getcwd()),
+        "sha256": sha_full(p),
+        "sourceSha8": sha8(p),
+        "bytes": os.path.getsize(out),
+        "renderedPx": list(Image.open(p).size),
+        "publishedPx": list(im.size),
+        "pose": pose, "camera": cam,
+        "aliases": [name.rsplit(".", 1)[0],
+                    "%s_%s" % (pose.split("_", 1)[-1].lower(), cam),
+                    "%s_%s" % (pose.split("_", 1)[0], cam)],
+        "sourceAsset": SOURCE_ASSET,
+    })
 
 measurements = {}
 for j in glob.glob(os.path.join(SRC, "*.json")):
@@ -73,15 +108,47 @@ if mp:
     lines += ["\n## Gate\n", "| check | result | detail |", "|---|---|---|"]
     for c in mp["checks"]:
         lines.append("| %s | %s | %s |" % (c["check"], "PASS" if c["pass"] else "**FAIL**", c["detail"]))
-    lines.append("\n**%s** — %d of %d checks pass.\n"
-                 % ("MOUTH_ANATOMY_VERIFIED" if mp["verified"] else "NOT VERIFIED",
+    lines.append("\n**Physical gate: %s** — %d of %d checks pass.\n"
+                 % ("PASS" if mp["verified"] else "FAIL",
                     sum(1 for c in mp["checks"] if c["pass"]), len(mp["checks"])))
+    lines.append("**Visual gate: %s.** A passing physical gate is not a passing model — "
+                 "these exact numbers went green on a frame whose crowns still read as "
+                 "separate pegs. VISUAL_FAIL outranks the measurements; PENDING is not "
+                 "PASS.\n" % VISUAL)
 
 for f in sorted(set(x["frame"] for x in published)):
     lines.append("\n### %s\n\n![%s](%s)\n" % (f.rsplit(".", 1)[0].replace("_", " "), f, f))
 
 open(os.path.join(DEST, "README.md"), "w").write("\n".join(lines) + "\n")
-json.dump({"set": SET, "frames": published, "measurements": sorted(measurements)},
-          open(os.path.join(DEST, "index.json"), "w"), indent=2)
+gate = measurements.get("mouth_proof.json", {})
+json.dump({
+    "set": SET,
+    "publishedBy": "tools/publish_evidence.py",
+    "retrieve": "docs/evidence/%s/<frame>  (committed; also listed in README.md)" % SET,
+    "runId": os.environ.get("GITHUB_RUN_ID") or os.environ.get("TRIPPEDD_RUN_ID") or "local",
+    "sourceAsset": SOURCE_ASSET,
+    # TWO GATES, AND THE PHYSICAL ONE ALONE IS NOT A PASS.
+    # Measured 13.5% teeth / 21.8% tongue / 13.7% cavity with every physical
+    # check green, on a frame where the crowns still read as separate pegs and
+    # the cavity still showed a hard rim. A metric that cannot express the
+    # failure is not evidence that the failure is absent. The visual verdict is
+    # PENDING until a human or a vision agent records one against THESE pixels,
+    # and overall status is the AND of the two.
+    "qc": {
+        "physical": {"verified": gate.get("verified"),
+                     "checks": gate.get("checks", []),
+                     "engine": gate.get("engine"), "samples": gate.get("samples")},
+        "visual": {"verdict": VISUAL, "reviewer": os.environ.get("TRIPPEDD_VISUAL_REVIEWER", ""),
+                   "notes": os.environ.get("TRIPPEDD_VISUAL_NOTES", ""),
+                   "rule": "VISUAL_FAIL outranks a passing physical gate. "
+                           "PENDING is not PASS."},
+        "status": ("PASS" if (gate.get("verified") and VISUAL == "PASS")
+                   else "VISUAL_FAIL" if VISUAL == "FAIL"
+                   else "PHYSICAL_PASS_VISUAL_PENDING" if gate.get("verified")
+                   else "FAIL"),
+    },
+    "frames": published,
+    "measurements": sorted(measurements),
+}, open(os.path.join(DEST, "index.json"), "w"), indent=2)
 print("published %d frames + %d measurement files -> %s"
       % (len(published), len(measurements), DEST))

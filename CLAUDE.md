@@ -110,3 +110,57 @@ and is not) and restored on boot. A job caught mid-flight goes back to QUEUED an
 - `scripts/render_model.cjs` — six rendered views, because every number can be perfect on a model
   that is lying on its back
 - `scripts/diagnose_asr.py`, `scripts/ab_vad.py`, `scripts/ab_asr.py` — measure before tuning
+
+## OWNER LAW #2 — PUBLISHED OR IT DOES NOT EXIST. (2026-09-12, PERMANENT)
+
+**If the pixels are not published and retrievable, the evidence does not exist for the
+production system.** A frame described in chat is not evidence. A frame in `renders/` is not
+evidence — that directory is gitignored, so it is visible to exactly one process on one
+container while every other agent and every CI runner sees an empty repository. That is the
+same failure as a worker reporting `MARS_CANDIDATES: NONE` while the asset sits on a disk
+somewhere.
+
+**The contract, for every render, contact sheet, reference, QC frame, viewport capture,
+generated-media output, editorial frame and delivery preview:**
+
+1. The original stays at its real production path. It is never the only copy.
+2. A real copy — **actual pixels**, never a screenshot, thumbnail, substitute or description —
+   is published into `docs/evidence/<set>/` under its exact production filename.
+3. The manifest (`docs/evidence/<set>/index.json`) records, per frame: filename, repo path,
+   production path, **sha256**, run id, pose, camera, resolution, aliases, and the source
+   asset's own identity and hash.
+4. `docs/evidence/` is explicitly un-ignored in `.gitignore`. Keep it that way.
+5. A worker that renders outside the repo **publishes before declaring the render available.**
+6. "The image is ready" without a retrievable image is `NOT_ATTEMPTED` / `BLOCKED`. Never PASS.
+7. No agent is ever made to hunt through temp directories for production evidence.
+
+```bash
+# publish (after any render)
+./.trippedd_venv/bin/python tools/publish_evidence.py --src renders/_mouth_proof --set mouth
+# retrieve (any agent, any model)
+docs/evidence/mouth/index.json        # manifest: paths, sha256, QC verdicts
+docs/evidence/mouth/README.md         # renders on GitHub: frames + measurements + gate
+docs/evidence/mouth/03_WIDE_mouth.png # the pixels themselves
+# whole chain, fail-closed, ends in published evidence
+bash tools/character/run_mouth_pipeline.sh
+```
+
+### TWO GATES. THE PHYSICAL ONE ALONE IS NOT A PASS.
+`PASS` requires measurements green **AND** the actual pixels reviewed green.
+- **VISUAL_FAIL outranks a passing physical gate.** PENDING is not PASS.
+- Receipt: teeth 13.5% / tongue 21.8% / cavity 13.7%, every physical check green, on a frame
+  whose crowns still read as separate pegs and whose cavity still showed a hard rim. **A metric
+  that cannot express the failure is not evidence that the failure is absent** — the same
+  lesson as a severed rig scoring a perfect deformation result because no piece can deform.
+- The verdict is recorded against *those* pixels: `--visual PASS|FAIL|PENDING`, with reviewer
+  and notes, in `index.json` under `qc.visual`.
+
+## ANATOMY IS SIZED FROM A MEASURED ANCHOR, NEVER A BOUNDING-BOX FRACTION
+`MW = 0.1930` is Mars's **measured** inter-commissure width. An adult mouth is ~50 mm across,
+so **1 mm = MW/50**, and every piece of oral anatomy is stated in millimetres through it.
+- Maxillary central incisor 8.6 × 10.5 mm = **0.172 × 0.210 MW**. The parametric arch it
+  replaced gave it 0.056 × 0.120 — a third of the width, which is why they looked like pegs.
+- 14 teeth per arch, laid out by **cumulative width** so neighbours meet at a contact point.
+  Even angular spacing is what left visible air between every crown.
+- Tongue ~45 mm wide × ~18 mm thick = 0.94 × 0.42 MW. Cavity is enlarged **first** so the
+  anatomy fits inside it rather than clipping through it.

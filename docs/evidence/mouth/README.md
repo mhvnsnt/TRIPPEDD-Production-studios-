@@ -18,6 +18,8 @@ source hash recorded, published by `tools/publish_evidence.py`.
 | `03_WIDE_profile.png` | `e61c7c16` | 900x900 |
 | `04_AA_front.png` | `3f72eedd` | 900x900 |
 | `04_AA_mouth.png` | `8fc679ad` | 900x900 |
+| `04_AA_profile.png` | `dfdc5fe2` | 900x900 |
+| `05_OH_front.png` | `e1a2d9d9` | 900x900 |
 
 ## Measured, per pose
 
@@ -36,7 +38,9 @@ Material identity cannot be fooled by a hole in the wrong place; a plane test ca
 | WIDE shows the tongue | PASS | tongue 21.8% |
 | WIDE shows cavity behind them | PASS | cavity 13.7% |
 
-**MOUTH_ANATOMY_VERIFIED** — 3 of 3 checks pass.
+**Physical gate: PASS** — 3 of 3 checks pass.
+
+**Visual gate: FAIL.** A passing physical gate is not a passing model — these exact numbers went green on a frame whose crowns still read as separate pegs. VISUAL_FAIL outranks the measurements; PENDING is not PASS.
 
 
 ### 01 REST front
@@ -92,4 +96,14 @@ Material identity cannot be fooled by a hole in the wrong place; a plane test ca
 ### 04 AA mouth
 
 ![04_AA_mouth.png](04_AA_mouth.png)
+
+
+### 04 AA profile
+
+![04_AA_profile.png](04_AA_profile.png)
+
+
+### 05 OH front
+
+![05_OH_front.png](05_OH_front.png)
 

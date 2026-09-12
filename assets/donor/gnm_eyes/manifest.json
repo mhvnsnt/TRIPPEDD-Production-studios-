@@ -1,0 +1,44 @@
+{
+  "source": "google/GNM v3_0 gnm_head.npz",
+  "license": "Apache-2.0",
+  "eyes": {
+    "eye_L": {
+      "verts": 771,
+      "tris": 1512,
+      "marsEyeCentre": [
+        -0.15668,
+        -0.25474,
+        0.42665
+      ],
+      "fissureWidth": 0.11095,
+      "lidOpening": 0.02522,
+      "aspect": 0.227,
+      "eyeballDiameter": 0.08876,
+      "scale": 1.723249,
+      "parts": {
+        "sclera": 626,
+        "iris": 96,
+        "pupil": 49
+      }
+    },
+    "eye_R": {
+      "verts": 771,
+      "tris": 1512,
+      "marsEyeCentre": [
+        0.10186,
+        -0.25301,
+        0.44829
+      ],
+      "fissureWidth": 0.10708,
+      "lidOpening": 0.02506,
+      "aspect": 0.234,
+      "eyeballDiameter": 0.08566,
+      "scale": 1.663185,
+      "parts": {
+        "sclera": 626,
+        "iris": 96,
+        "pupil": 49
+      }
+    }
+  }
+}

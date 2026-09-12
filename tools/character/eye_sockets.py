@@ -1,40 +1,45 @@
 """
-GIVE MARS EYES THAT MOVE — measured lids, real eyeballs, carved apertures.
+CARVE THE EYE APERTURES — so the blink has something to close over.
 
-The rig has shipped eye_look_L and eye_look_R since the first pass and they
-drive ZERO GEOMETRY. His eyes are PAINTED INTO THE SCAN: the surface there is
-unbroken skin with an iris in the texture. Nothing to rotate, nothing to blink
-past, and two controls that look wired and are not — which this project treats
-as worse than no control at all.
+Same operation that opened the mouth, and for the same reason: an eye is an
+APERTURE with anatomy behind it. Mars's eyes are painted into the scan -- the
+surface there is unbroken skin with an iris in the texture -- so the lid had
+nothing to travel over and eye_look_L / eye_look_R drove zero geometry.
 
-Same fix as the mouth, and for the same reason: an eye is an APERTURE with
-anatomy behind it. Carve the lid opening along the contour MediaPipe found on
-the real surface, put a fitted eyeball behind it, and weight the lids so they
-close over it.
-
-MEASURED on MARS_LOD2 (raycast eyelid contours, renders/_rig_measure/mouth_anatomy.json):
-    eye L  centre [-0.1567 -0.2547 0.4267]  fissure width 0.1109  lid opening 0.0252
-    eye R  centre [ 0.1019 -0.2530 0.4483]  fissure width 0.1071  lid opening 0.0251
-Both aspect ratios are 0.23, which is a normal open eye -- so the contour is
-tracking real eyelids in the texture, not guessing.
+ONE DIFFERENCE FROM THE MOUTH, AND IT MATTERS: a mouth is CLOSED at rest and a
+pair of eyes is OPEN. So the mouth cutter was the lip contour flattened to a
+slit, while these cut the measured lid contour at full size -- the rest pose is
+the open eye, and the blink closes it.
 
   vendor/blender/blender -b -P tools/character/eye_sockets.py --
 """
 import bpy, bmesh, sys, os, json, math, mathutils
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "character"))
-from mars_anatomy import smoothstep
-
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 def opt(f, d): return argv[argv.index(f) + 1] if f in argv else d
 
 SRC = os.path.abspath(opt("--src", "assets/rigs/MARS_ORAL.blend"))
 OUT = os.path.abspath(opt("--out", "assets/rigs/MARS_ORAL.blend"))
-LID = float(opt("--lid-scale", "0.55"))   # rest opening as a fraction of the measured fissure
+DONOR = os.path.abspath(opt("--donor", "assets/donor/gnm_eyes"))
 V = mathutils.Vector
+import numpy as np
+
+# ── the appearance spec is CANON and it is READ, not remembered ─────────────
+# HIS EYES ARE WHITE ON PURPOSE. The GNM donor ships sclera, iris and pupil as
+# separate vertex classes, and a build that helpfully shades the iris blue
+# because the donor has one has redesigned the character. In the canonical
+# variant all three parts take the SCLERA material -- the geometry underneath
+# stays capable of a pupil the moment a scene asks for one.
+APPEAR = json.load(open(os.path.abspath("assets/rigs/MARS_appearance.json")))
+VARIANT = opt("--variant", APPEAR.get("activeVariant", "canonical"))
+if VARIANT not in APPEAR["variants"]:
+    sys.exit("unknown appearance variant %r; have %s" % (VARIANT, list(APPEAR["variants"])))
+VSPEC = APPEAR["variants"][VARIANT]
 
 A = json.load(open("renders/_rig_measure/mouth_anatomy.json"))
 C = A["contours"]
+EM = json.load(open(os.path.join(DONOR, "manifest.json")))
 
 bpy.ops.wm.open_mainfile(filepath=SRC)
 head = bpy.data.objects["MARS_MESH"]
@@ -42,34 +47,45 @@ scene = bpy.context.scene
 for stale in list(bpy.data.objects):
     if stale.name.startswith(("MARS_EYE", "MARS_LID_CUTTER")):
         bpy.data.objects.remove(stale, do_unlink=True)
+for md in [m for m in head.modifiers if m.name.startswith("EYE_APERTURE")]:
+    head.modifiers.remove(md)
 
-def mat(name, base, rough, emit=None, strength=0.0, spec=0.5):
-    m = bpy.data.materials.new(name); m.use_nodes = True
+def spec_mat(key):
+    """Build a material from the appearance spec, by name."""
+    sp = APPEAR["materials"][key]
+    m = bpy.data.materials.new("MARS_%s_MAT" % key); m.use_nodes = True
     b = m.node_tree.nodes["Principled BSDF"]
-    b.inputs["Base Color"].default_value = base
-    b.inputs["Roughness"].default_value = rough
-    b.inputs["Specular IOR Level"].default_value = spec
-    if emit:
-        b.inputs["Emission Color"].default_value = emit
-        b.inputs["Emission Strength"].default_value = strength
+    b.inputs["Base Color"].default_value = tuple(sp["baseColor"])
+    b.inputs["Roughness"].default_value = sp.get("roughness", 0.5)
+    b.inputs["Specular IOR Level"].default_value = sp.get("specular", 0.5)
+    if sp.get("subsurface"):
+        b.inputs["Subsurface Weight"].default_value = sp["subsurface"]
+    if sp.get("emission"):
+        b.inputs["Emission Color"].default_value = tuple(sp["emission"])
+        b.inputs["Emission Strength"].default_value = sp.get("emissionStrength", 0.0)
     return m
 
-# Mars's eyes read as white and self-luminous in the scan. The eyeball keeps
-# that, because it is his LOOK -- this adds an eye that can move, it does not
-# redesign the character's eye.
-M_SCLERA = mat("MARS_SCLERA_MAT", (0.93, 0.95, 1.0, 1), 0.18, (0.55, 0.72, 1.0, 1), 1.4, 0.55)
-M_IRIS = mat("MARS_IRIS_MAT", (0.35, 0.62, 1.0, 1), 0.12, (0.30, 0.65, 1.0, 1), 3.2, 0.85)
-M_SOCKET = mat("MARS_SOCKET_MAT", (0.030, 0.012, 0.040, 1), 0.70)
+# Mars's eyes read WHITE and self-luminous in the scan. That is his look, and
+# this adds an eye that can move -- it does not redesign the character's eye.
+_cache = {}
+def M(key):
+    if key not in _cache: _cache[key] = spec_mat(key)
+    return _cache[key]
+M_SOCKET = M("ORAL")
+# class 0 sclera, 1 iris, 2 pupil -> whatever THIS VARIANT says they are
+PARTS = VSPEC["eyeParts"]
+CLASS_MAT = {0: M(PARTS["sclera"]), 1: M(PARTS["iris"]), 2: M(PARTS["pupil"])}
+print("appearance variant %r: sclera->%s iris->%s pupil->%s"
+      % (VARIANT, PARTS["sclera"], PARTS["iris"], PARTS["pupil"]))
 
+before_n = len(head.data.vertices)
 report = {}
-for side, up_key, lo_key in (("L", "eye_L_upper", "eye_L_lower"), ("R", "eye_R_upper", "eye_R_lower")):
-    up = [V(p) for p in C[up_key]]
-    lo = [V(p) for p in C[lo_key]]
+
+for side in ("L", "R"):
+    up = [V(p) for p in C["eye_%s_upper" % side]]
+    lo = [V(p) for p in C["eye_%s_lower" % side]]
     ring = up + list(reversed(lo))[1:-1]
     centre = sum(ring, V((0, 0, 0))) / len(ring)
-    fissure = (up[0] - up[-1]).length
-
-    # A frame for THIS eye: x along the fissure, z up the lid, y into the skull.
     ex = (up[-1] - up[0]).normalized()
     mid = len(up) // 2
     ez_ref = (up[mid] - lo[mid]).normalized()
@@ -80,41 +96,94 @@ for side, up_key, lo_key in (("L", "eye_L_upper", "eye_L_lower"), ("R", "eye_R_u
                           (ex.z, ey.z, ez.z, centre.z), (0, 0, 0, 1)))
     Mi = M.inverted()
     loc = [Mi @ p for p in ring]
+    # A consistent winding, or the lofted solid faces inward and DIFFERENCE
+    # keeps the cutter instead of removing it -- the exact failure that put a
+    # dark plug in his mouth for three passes.
+    area = sum(loc[i].x * loc[(i + 1) % len(loc)].z - loc[(i + 1) % len(loc)].x * loc[i].z
+               for i in range(len(loc))) * 0.5
+    if area < 0: loc = [loc[0]] + list(reversed(loc[1:]))
 
-    # An eyeball is about 80% of the palpebral fissure across, and it sits with
-    # its front pole just behind the lid plane. Both are measured proportions,
-    # not a sphere dropped at a bounding-box fraction.
-    radius = fissure * 0.40
-    ball_y = radius * 0.72
+    fissure = EM["eyes"]["eye_%s" % side]["fissureWidth"]
+    bm = bmesh.new()
+    rings = []
+    # Straight prism through the lid: the aperture in the skin is the measured
+    # contour, full size, because the rest pose of an eye is OPEN.
+    for depth, inflate in ((-fissure * 0.35, 1.0), (fissure * 0.06, 1.0),
+                           (fissure * 0.40, 0.92), (fissure * 0.70, 0.55)):
+        rings.append([bm.verts.new(M @ V((p.x * inflate, depth, p.z * inflate))) for p in loc])
+    N = len(loc)
+    for a, b in zip(rings, rings[1:]):
+        for i in range(N):
+            bm.faces.new((a[i], a[(i + 1) % N], b[(i + 1) % N], b[i]))
+    front = bm.verts.new(M @ V((0, -fissure * 0.45, 0)))
+    back = bm.verts.new(M @ V((0, fissure * 0.80, 0)))
+    for i in range(N):
+        bm.faces.new((rings[0][(i + 1) % N], rings[0][i], front))
+        bm.faces.new((rings[-1][i], rings[-1][(i + 1) % N], back))
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    if bm.calc_volume(signed=True) < 0:
+        bmesh.ops.reverse_faces(bm, faces=bm.faces)
+    b_edges = sum(1 for e in bm.edges if e.is_boundary)
+    nm = sum(1 for e in bm.edges if not e.is_manifold)
+    vol = bm.calc_volume(signed=True)
+    me = bpy.data.meshes.new("MARS_LID_CUTTER_%s_MESH" % side)
+    bm.to_mesh(me); bm.free()
+    cutter = bpy.data.objects.new("MARS_LID_CUTTER_%s" % side, me)
+    scene.collection.objects.link(cutter)
+    me.materials.append(M_SOCKET)
+    print("lid cutter %s: boundary %d · non-manifold %d · signed volume %+.7f"
+          % (side, b_edges, nm, vol))
+    if b_edges or nm or vol <= 0:
+        sys.exit("LID CUTTER %s IS NOT A VALID SOLID -- a boolean against it makes geometry, "
+                 "not a socket" % side)
 
-    bpy.ops.mesh.primitive_uv_sphere_add(segments=40, ring_count=24, radius=radius,
-                                         location=(M @ V((0, ball_y, 0))))
-    ball = bpy.context.active_object
-    ball.name = "MARS_EYE_%s" % side
-    ball.data.materials.clear(); ball.data.materials.append(M_SCLERA)
-    for p in ball.data.polygons: p.use_smooth = True
-    # The iris is a shallow cap on the front pole, so a rotation of the eyeball
-    # visibly moves the gaze instead of spinning a featureless white sphere.
-    iris_slot = len(ball.data.materials); ball.data.materials.append(M_IRIS)
-    for p in ball.data.polygons:
-        c_local = Mi @ (ball.matrix_world @ p.center)
-        if c_local.y < -radius * 0.62:
-            p.material_index = iris_slot
+    md = head.modifiers.new("EYE_APERTURE_%s" % side, "BOOLEAN")
+    md.operation = "DIFFERENCE"; md.object = cutter; md.solver = "EXACT"
+    md.material_mode = "TRANSFER"
+    bpy.context.view_layer.objects.active = head
+    bpy.ops.object.modifier_apply(modifier=md.name)
+    bpy.data.objects.remove(cutter, do_unlink=True)
+
+    f = np.load(os.path.join(DONOR, "eye_%s.npz" % side))
+    verts, tris, cls = f["vertices"], f["triangles"], f["vertex_class"]
+    eme = bpy.data.meshes.new("MARS_EYE_%s_MESH" % side)
+    eme.from_pydata([tuple(map(float, v)) for v in verts], [],
+                    [tuple(map(int, t)) for t in tris])
+    eme.validate(verbose=False)
+    slot_of = {}
+    for c in sorted(set(int(x) for x in cls)):
+        slot_of[c] = len(eme.materials); eme.materials.append(CLASS_MAT[c])
+    for poly in eme.polygons:
+        vs = [int(cls[i]) for i in poly.vertices]
+        poly.material_index = slot_of[max(set(vs), key=vs.count)]
+        poly.use_smooth = True
+    ball = bpy.data.objects.new("MARS_EYE_%s" % side, eme)
+    scene.collection.objects.link(ball)
     ball.rotation_mode = "XYZ"
+    report["eye_%s" % side] = {"eyeballVerts": len(verts), "cutterVolume": round(vol, 8),
+                               "variant": VARIANT, "eyeParts": PARTS}
 
-    report["eye_%s" % side] = {
-        "centre": [round(c, 5) for c in centre],
-        "fissureWidth": round(fissure, 5),
-        "eyeballRadius": round(radius, 5),
-        "eyeballVerts": len(ball.data.vertices),
-        "irisFaces": sum(1 for p in ball.data.polygons if p.material_index == iris_slot),
-        "restLidOpeningScale": LID,
-    }
-    print("eye %s: fissure %.4f -> eyeball radius %.4f (%d verts, %d iris faces)"
-          % (side, fissure, radius, len(ball.data.vertices), report["eye_%s" % side]["irisFaces"]))
+print("\nexterior %d -> %d verts (the lid apertures)" % (before_n, len(head.data.vertices)))
 
-json.dump(report, open("renders/_rig_measure/eye_anatomy.json", "w"), indent=2)
+# Does a ray fired at each eye now land on an EYEBALL rather than on skin?
+deps = bpy.context.evaluated_depsgraph_get()
+for side in ("L", "R"):
+    up = [V(p) for p in C["eye_%s_upper" % side]]
+    lo = [V(p) for p in C["eye_%s_lower" % side]]
+    centre = (sum(up, V((0, 0, 0))) + sum(lo, V((0, 0, 0)))) / (len(up) + len(lo))
+    hits = {"eyeball": 0, "skin": 0, "miss": 0}
+    for i in range(25):
+        t = (i / 24.0 - 0.5)
+        o = centre + V((0, -0.5, 0)) + (up[len(up) // 2] - lo[len(lo) // 2]) * t * 0.55
+        hit, loc_, nor, idx, ob, mw = scene.ray_cast(deps, o, V((0, 1, 0)))
+        k = "miss" if not hit else ("eyeball" if ob.name.startswith("MARS_EYE_") else "skin")
+        hits[k] += 1
+    report["eye_%s" % side]["rays"] = hits
+    print("eye %s: %d/25 rays land on the EYEBALL (skin %d, miss %d)"
+          % (side, hits["eyeball"], hits["skin"], hits["miss"]))
+    if hits["eyeball"] < 8:
+        sys.exit("EYE %s IS STILL BEHIND SKIN — the aperture did not open" % side)
+
 bpy.ops.wm.save_as_mainfile(filepath=OUT)
-print("\neyeballs -> %s" % OUT)
-print("NOTE: the lid APERTURE is not carved yet. Until it is, these sit behind")
-print("      unbroken skin and are not visible -- reported, not claimed.")
+json.dump(report, open("renders/_rig_measure/eye_sockets.json", "w"), indent=2)
+print("\neye sockets + eyeballs -> %s" % OUT)

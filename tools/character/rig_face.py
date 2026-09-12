@@ -239,7 +239,16 @@ if pct < 3.0:
     sys.exit("THE LIPS STILL DO NOT SEPARATE — %.2f%% of head height. Not building anatomy on that." % pct)
 print("              LIPS SEPARATE")
 
-# ── materials ───────────────────────────────────────────────────────────────
+# ── materials come from the APPEARANCE SPEC, never from a hex in a script ───
+# assets/rigs/MARS_appearance.json is canon and is READ by the build, so a look
+# cannot drift because someone edited a colour inside a Blender file. It also
+# carries the swappable variants: canonical (his eyes are WHITE ON PURPOSE),
+# pupils, human_skin.
+APPEAR = json.load(open(os.path.join(ROOT, "assets", "rigs", "MARS_appearance.json")))
+VARIANT = opt("--variant", APPEAR.get("activeVariant", "canonical"))
+if VARIANT not in APPEAR["variants"]:
+    sys.exit("unknown appearance variant %r; have %s" % (VARIANT, list(APPEAR["variants"])))
+
 def mat(name, base, rough, spec=0.5, emit=None, strength=0.0, sss=0.0):
     m = bpy.data.materials.new(name)
     m.use_nodes = True
@@ -255,13 +264,15 @@ def mat(name, base, rough, spec=0.5, emit=None, strength=0.0, sss=0.0):
         b.inputs["Emission Strength"].default_value = strength
     return m
 
-# Mars is a neon-blue being. His mouth belongs to that palette — but teeth read
-# as teeth because of SPECULAR and translucency, not because they glow.
-# Enamel, not paint: dimmer base, real translucency, and a wide subsurface
-# radius so light bleeds between crowns the way it does in a mouth.
-M_TEETH = mat("MARS_TEETH_MAT", (0.76, 0.755, 0.72, 1), 0.20, 0.62, sss=0.55)
-M_GUM = mat("MARS_GUM_MAT", (0.32, 0.075, 0.21, 1), 0.52, 0.36, sss=0.45)
-M_TONGUE = mat("MARS_TONGUE_MAT", (0.40, 0.085, 0.26, 1), 0.42, 0.44, sss=0.55)
+def spec_mat(key):
+    sp = APPEAR["materials"][key]
+    return mat("MARS_%s_MAT" % key, tuple(sp["baseColor"]), sp.get("roughness", 0.5),
+               sp.get("specular", 0.5),
+               tuple(sp["emission"]) if sp.get("emission") else None,
+               sp.get("emissionStrength", 0.0), sp.get("subsurface", 0.0))
+
+M_TEETH, M_GUM, M_TONGUE = spec_mat("TEETH"), spec_mat("GUM"), spec_mat("TONGUE")
+print("appearance variant: %s — %s" % (VARIANT, APPEAR["variants"][VARIANT]["label"]))
 
 def rides(obj, bone_name, material):
     """Bind an object to exactly one bone with an armature modifier.
@@ -340,7 +351,7 @@ g = teeth_u.vertex_groups.new(name="head"); g.add(range(len(vu)), 1.0, "REPLACE"
 teeth_l, vl, _ = load_donor("lower_teeth_and_gums", "MARS_TEETH_LOWER", "jaw")
 g = teeth_l.vertex_groups.new(name="jaw"); g.add(range(len(vl)), 1.0, "REPLACE")
 
-M_SOCK = mat("MARS_SOCK_MAT", (0.075, 0.022, 0.040, 1), 0.66, 0.30, sss=0.30)
+M_SOCK = spec_mat("SOCK")
 sock, vs_, _ = load_donor("mouth_sock", "MARS_MOUTH_SOCK", "head", cavity_mat=M_SOCK)
 g = sock.vertex_groups.new(name="head"); g.add(range(len(vs_)), 1.0, "REPLACE")
 
@@ -657,6 +668,7 @@ state = {
         "tongueBones": ["tongue_root", "tongue_mid", "tongue_tip"],
         "tongueShapeKeys": tongue_shapes,
     },
+    "appearanceVariant": VARIANT,
     "controls": made, "removedDeadControls": dead,
     "meshVertices": len(head.data.vertices),
 }

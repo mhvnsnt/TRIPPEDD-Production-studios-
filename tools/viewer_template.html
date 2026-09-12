@@ -258,6 +258,7 @@ function views(){
         <div class="gone">IMAGE_UNAVAILABLE<small id="gn-${esc(c)}"></small></div>
       </div>
       <div class="vfoot mono" id="ft-${esc(c)}"></div>
+      <div class="vfoot mono" id="vf-${esc(c)}" style="border-top:0;padding-top:0"></div>
     </figure>`).join("");
   $("views").querySelectorAll(".tog").forEach(b => b.onclick = () => {
     const c = b.dataset.cam; showPrev[c] = !showPrev[c]; draw();
@@ -310,8 +311,19 @@ function draw(){
     }
     // Validation, not decoration: if the pixels cannot actually be decoded the
     // panel SAYS so. An empty tile reads exactly like "nothing was rendered".
-    im.onerror = () => { fr.classList.add("missing"); $("gn-"+c).textContent = want + " could not be decoded"; };
-    im.onload  = () => fr.classList.remove("missing");
+    // VERIFY, DO NOT ASSUME. A tile is only evidence if its bytes decode, its
+    // decoded size matches what the manifest claims, and its hash matches what
+    // was published. A filename, a hash in a table, or a Markdown reference
+    // with no retrievable pixels behind it is not evidence.
+    im.onerror = () => { fr.classList.add("missing"); $("gn-"+c).textContent = want + " could not be retrieved"; };
+    im.onload  = () => {
+      fr.classList.remove("missing");
+      const exp = showPrev[c] ? null : f.px;
+      if (exp && (im.naturalWidth !== exp[0] || im.naturalHeight !== exp[1])) {
+        fr.classList.add("missing");
+        $("gn-"+c).textContent = `decoded ${im.naturalWidth}x${im.naturalHeight}, manifest says ${exp[0]}x${exp[1]}`;
+      }
+    };
     im.src = want;
     im.alt = `${pose.replace(/_/g," ")}, ${c} camera`;
     ft.innerHTML = `<b>${esc(f.repoPath)}</b><span>sha256 ${esc(f.sha)}…</span>`
@@ -319,7 +331,34 @@ function draw(){
       + (showPrev[c] && f.prev ? `<span style="color:var(--pend)">showing the PREVIOUS render</span>` : "");
   }
   $("rail").querySelectorAll(".pose").forEach(b => b.setAttribute("aria-current", String(b.dataset.pose === pose)));
-  ledger(); poseTable();
+  ledger(); poseTable(); verifyBytes();
+}
+
+// Hash what was actually served and compare it to the manifest. This is the
+// difference between "the manifest says sha256 33f30b4a" and "the bytes in
+// front of you ARE 33f30b4a".
+async function verifyBytes(){
+  if (!window.crypto?.subtle) return;
+  for (const c of D.cameras){
+    const f = D.frames[pose + "|" + c];
+    const el = $("vf-" + c);
+    if (!el) continue;
+    if (!f || !f.publishedSha256 || showPrev[c]){ el.textContent = ""; continue; }
+    el.textContent = "verifying bytes…"; el.style.color = "var(--faint)";
+    try {
+      const buf = await (await fetch(f.src, {cache: "no-store"})).arrayBuffer();
+      const hex = [...new Uint8Array(await crypto.subtle.digest("SHA-256", buf))]
+        .map(b => b.toString(16).padStart(2, "0")).join("");
+      const ok = hex === f.publishedSha256;
+      el.textContent = ok ? "sha256 verified against the manifest"
+                          : "SHA MISMATCH — served " + hex.slice(0,12) + "…";
+      el.style.color = ok ? "var(--pass)" : "var(--fail)";
+      if (!ok) $("fr-" + c).classList.add("missing");
+    } catch (e) {
+      el.textContent = "bytes could not be re-read to verify";
+      el.style.color = "var(--pend)";
+    }
+  }
 }
 
 ident(); verdict(); checks(); rail(); views(); draw();

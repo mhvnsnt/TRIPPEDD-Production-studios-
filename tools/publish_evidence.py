@@ -71,8 +71,12 @@ for p in sorted(glob.glob(os.path.join(SRC, "*.png"))):
     # anyone hunting through temp directories: what it is, where it is, whether
     # the pixels are the ones that were measured, and what the measurement said.
     pose, _, cam = name.rsplit(".", 1)[0].rpartition("_")
+    # The SOURCE hash proves which render this came from; the PUBLISHED hash is
+    # what a viewer can actually verify, because publishing re-encodes the PNG
+    # and the bytes therefore differ from the production file by design.
     published.append({
         "frame": name,
+        "publishedSha256": sha_full(out),
         "repoPath": os.path.relpath(out, os.getcwd()),
         "productionPath": os.path.relpath(p, os.getcwd()),
         "sha256": sha_full(p),

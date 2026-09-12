@@ -10,7 +10,18 @@
  * absent upload is not evidence of anything.
  */
 import type { MediaJob } from '../core/types';
-import type { QueueManager } from './queueManager';
+/**
+ * The watcher only ever asks a queue two things, so it asks for exactly those.
+ *
+ * Binding it to one concrete class made it the odd man out the moment a second
+ * queue lane existed: queueManager.ts (orchestrator lane) and evidenceQueue.ts
+ * (provisioner/analyzer lane) both satisfy this and neither is a subtype of the
+ * other. A watcher does not care which one is downstream of it.
+ */
+export interface JobSink {
+  getJob(fileId: string): MediaJob | undefined;
+  addJob(job: MediaJob): void;
+}
 import { driveCredentials } from './driveCredentials';
 
 export interface DriveFile {
@@ -63,12 +74,12 @@ export interface ScanResult {
 export class DriveWatcher {
   private timer: NodeJS.Timeout | undefined;
   private opts: WatcherOptions;
-  private queue: QueueManager;
+  private queue: JobSink;
   private lastScanAt: string | undefined;
   private lastResult: ScanResult | undefined;
   private scanning = false;
 
-  constructor(queue: QueueManager, opts: WatcherOptions) {
+  constructor(queue: JobSink, opts: WatcherOptions) {
     this.queue = queue;
     this.opts = opts;
   }

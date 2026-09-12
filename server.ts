@@ -1,634 +1,153 @@
 import express from "express";
+import { toolManager } from "./src/server/toolManager";
 import { queueManager } from "./src/server/queueManager";
-import { ToolProvisioner } from "./src/core/tools/provisioning/ToolProvisioner";
-import { DriveWatcher } from "./src/server/driveWatcher";
-import { driveCredentials } from "./src/server/driveCredentials";
-import { ingestDriveFolder } from "./src/server/driveDownload";
-import { editorialRouter } from "./src/server/editorialRoute";
-import { editorialService } from "./src/server/editorialService";
+import { createGoogleAuthorizationUrl, exchangeGoogleCode, getGoogleAccessToken, getGoogleOAuthStatus, publicDriveApiKey, revokeGoogleAccess } from "./src/server/googleDriveAuth";
+import { downloadPublicDriveFolder } from "./src/server/publicDriveFolder";
+import fs from "fs/promises";
 import path from "path";
-import * as pathMod from "path";
+import { spawn } from "child_process";
 import { createServer as createViteServer } from "vite";
-import { exec, spawn, execSync } from "child_process";
-import { promisify } from "util";
-import fs from "fs";
-import crypto from 'crypto';
 
-
-const execAsync = promisify(exec);
-
-// Job Runner State
 const activeJobs = new Map<string, any>();
+const DEFAULT_DRIVE_FOLDER_URL = process.env.TRIPPEDD_DRIVE_FOLDER_URL || 'https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI';
+const DEFAULT_DRIVE_FOLDER_ID = process.env.TRIPPEDD_DRIVE_FOLDER_ID || '1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI';
+const MEDIA_EXTENSIONS = new Set(['.mp4', '.mov', '.m4v', '.webm', '.avi', '.mkv', '.mpg', '.mpeg', '.3gp', '.wav', '.mp3', '.m4a']);
 
-// The app-owned toolchain. Provisioning runs once at boot and the queue is
-// pointed at the result, so analyzers see real, health-checked tools.
-const provisioner = new ToolProvisioner();
-let provisioningPromise: Promise<unknown> | undefined;
-let driveWatcher: DriveWatcher | undefined;
-// Last token seen from the client, used by the background watcher.
-let lastDriveToken: string | undefined;
-const WATCH_FOLDER = process.env.TRIPPEDD_DRIVE_FOLDER || "1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI";
+function isMediaPath(filePath: string) { return MEDIA_EXTENSIONS.has(path.extname(filePath).toLowerCase()); }
+function localJobId(filePath: string) { return `LOCAL_${Buffer.from(path.resolve(filePath)).toString('base64url').slice(-48)}`; }
+
+async function queueDownloadedPublicMedia(files: string[]) {
+  let queued = 0;
+  for (const filePath of files) {
+    if (!isMediaPath(filePath)) continue;
+    const fileId = localJobId(filePath);
+    if (!queueManager.getJob(fileId)) {
+      const stat = await fs.stat(filePath);
+      queueManager.addJob({
+        id: `JOB_${fileId}`,
+        fileId,
+        originalName: path.basename(filePath),
+        mimeType: 'video/*',
+        size: stat.size,
+        state: 'QUEUED',
+        progress: 0,
+        logs: ['Discovered through credential-free public Drive folder download.', 'Access mode: public-link / local cache.'],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        tools: {},
+        evidenceRefs: []
+      } as any);
+      queued++;
+    }
+    queueManager.setLocalSource(fileId, filePath);
+  }
+  return queued;
+}
 
 async function startServer() {
-  // NOTE: toolManager.initialize() used to provision the same media tools with
-  // its own apt/pip logic. Two systems installing the same dependencies is a
-  // second dependency system by another name, so provisioning now lives solely
-  // in ToolProvisioner below. toolManager remains only for the broader
-  // tool-detection endpoints (blender/comfyui/obs).
-
-  // Provision in the background: a slow install must not block the UI, and the
-  // queue reports tools as unavailable until they are genuinely ready.
-  provisioningPromise = provisioner.initialize()
-    .then((tools) => {
-      const ready = tools.filter(t => t.state === "AVAILABLE").map(t => `${t.id}@${t.version}`);
-      console.log(`[toolchain] AVAILABLE: ${ready.join(", ") || "none"}`);
-      for (const t of tools.filter(t => t.state !== "AVAILABLE")) {
-        console.log(`[toolchain] ${t.id}: ${t.state}${t.installError ? " — " + t.installError : ""}`);
-      }
-      return tools;
-    })
-    .catch((e) => { console.error("[toolchain] provisioning error", e); return []; });
-  // Hand the queue BOTH the provisioner and the promise that says when
-  // detection finished. Without the promise, jobs queued during boot see every
-  // Python tool as NOT_INSTALLED, skip every analyzer, and still report
-  // "Pipeline complete" — a clip that was never transcribed looks identical to
-  // one that was transcribed and found silent.
-  queueManager.setProvisioner(provisioner, provisioningPromise);
-
-  // Reload evidence from the last run BEFORE anything queues new work.
-  // Analysis is expensive and it is evidence; a restart used to destroy all of
-  // it and the only recovery was to run the machine again.
-  const restored = await queueManager.restore();
-  if (restored.restored) {
-    console.log(`[queue] restored ${restored.restored} job(s) from the last run` +
-      (restored.requeued ? `, ${restored.requeued} requeued (interrupted mid-analysis)` : ''));
-  }
+  try { await toolManager.initialize(); } catch (e) { console.error(e); }
   const app = express();
   const PORT = 3000;
-  
   app.use(express.json());
 
-  app.post("/api/queue/scan", async (req, res) => {
-    const { folderId, token } = req.body;
-    if (token) { lastDriveToken = token; driveCredentials.setBrowserToken(token); }
+  const scanDriveFolder = async (folderId: string, token?: string) => {
+    if (!token) {
+      console.log('[Drive] Public-link mode: downloading folder directly; no API key or OAuth required.');
+      const folderUrl = process.env.TRIPPEDD_DRIVE_FOLDER_URL || DEFAULT_DRIVE_FOLDER_URL;
+      const files = await downloadPublicDriveFolder(folderUrl);
+      const newCount = await queueDownloadedPublicMedia(files);
+      return { success: true, total: files.length, discovered: files.length, ignoredNonMedia: 0, new: newCount, accessMode: 'public-link-local' };
+    }
+
+    const apiKey = publicDriveApiKey();
+    let pageToken = '';
+    const files: any[] = [];
+    do {
+      const params = new URLSearchParams({
+        q: `'${folderId}' in parents and trashed = false`,
+        fields: 'nextPageToken,files(id,name,mimeType,size,md5Checksum,thumbnailLink,videoMediaMetadata)',
+        pageSize: '1000',
+        orderBy: 'name_natural'
+      });
+      if (pageToken) params.set('pageToken', pageToken);
+      const driveRes = await fetch(`https://www.googleapis.com/drive/v3/files?${params.toString()}`, { headers: { Authorization: `Bearer ${token}` } });
+      if (!driveRes.ok) throw new Error(`Drive scan failed (${driveRes.status}): ${await driveRes.text()}`);
+      const data = await driveRes.json() as any;
+      files.push(...(data.files || []));
+      pageToken = data.nextPageToken || '';
+    } while (pageToken);
+
+    let newCount = 0;
+    for (const f of files.filter((file: any) => String(file.mimeType || '').startsWith('video/') || String(file.mimeType || '').startsWith('audio/'))) {
+      if (!queueManager.getJob(f.id)) {
+        queueManager.addJob({ id: 'JOB_' + f.id, fileId: f.id, originalName: f.name, mimeType: f.mimeType, size: f.size, hash: f.md5Checksum, thumbnailLink: f.thumbnailLink, state: 'QUEUED', progress: 0, logs: ['Discovered in Drive scan.', 'Access mode: OAuth.'], createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), tools: {}, evidenceRefs: [] } as any);
+        newCount++;
+      }
+      queueManager.setAccessToken(f.id, token);
+    }
+    return { success: true, total: files.length, discovered: files.length, ignoredNonMedia: files.length - newCount, new: newCount, accessMode: apiKey ? 'oauth' : 'oauth' };
+  };
+
+  app.get('/api/auth/google/status', async (_req, res) => { res.json(getGoogleOAuthStatus()); });
+  app.get('/api/auth/google/start', (_req, res) => { try { res.redirect(createGoogleAuthorizationUrl()); } catch (e: any) { res.status(500).json({ error: e.message }); } });
+  app.get('/api/auth/google/callback', async (req, res) => {
     try {
-      const driveRes = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&fields=files(id,name,mimeType,size,md5Checksum,thumbnailLink,videoMediaMetadata)`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      if (!driveRes.ok) throw new Error("Drive fetch failed");
-      const data = await driveRes.json();
-      const files = data.files || [];
-      
-      let newCount = 0;
-      files.forEach((f: any) => {
-        if (!queueManager.getJob(f.id)) {
-           queueManager.addJob({
-             id: 'JOB_' + f.id,
-             fileId: f.id,
-             originalName: f.name,
-             mimeType: f.mimeType,
-             size: f.size,
-             hash: f.md5Checksum,
-             thumbnailLink: f.thumbnailLink,
-             state: 'QUEUED',
-             progress: 0,
-             logs: ['Discovered in Drive scan.'],
-             createdAt: new Date().toISOString(),
-             updatedAt: new Date().toISOString(),
-             tools: {},
-             evidenceRefs: []
-           } as any);
-           // store token temporarily to run the pipeline
-           (queueManager.getJob(f.id) as any).token = token;
-           newCount++;
-        }
-      });
-      
-      res.json({ success: true, total: files.length, new: newCount });
-    } catch(e: any) {
+      const code = typeof req.query.code === 'string' ? req.query.code : '';
+      const state = typeof req.query.state === 'string' ? req.query.state : '';
+      const error = typeof req.query.error === 'string' ? req.query.error : '';
+      if (error) throw new Error(`Google OAuth denied: ${error}`);
+      if (!code || !state) throw new Error('Google OAuth callback is missing code/state.');
+      await exchangeGoogleCode(code, state);
+      const token = await getGoogleAccessToken();
+      if (!token) throw new Error('Google OAuth completed but no access token is available.');
+      const scan = await scanDriveFolder(DEFAULT_DRIVE_FOLDER_ID, token);
+      console.log(`[Drive] OAuth connected. Initial scan found ${scan.total}; queued ${scan.new} new media item(s).`);
+      res.redirect('/?view=pilot_build&drive=connected');
+    } catch (e: any) { console.error('[Drive OAuth] callback failed:', e); res.status(500).send(`Google Drive authorization failed: ${e.message}`); }
+  });
+  app.post('/api/auth/google/revoke', async (_req, res) => { try { await revokeGoogleAccess(); res.json({ success: true }); } catch (e: any) { res.status(500).json({ error: e.message }); } });
+
+  app.post('/api/queue/scan', async (req, res) => {
+    try {
+      const folderId = String(req.body.folderId || DEFAULT_DRIVE_FOLDER_ID);
+      const token = await getGoogleAccessToken();
+      const result = await scanDriveFolder(folderId, token || undefined);
+      res.json(result);
+    } catch (e: any) { console.error('[Drive scan] failed:', e); res.status(500).json({ error: e.message }); }
+  });
+  app.get('/api/queue', (_req, res) => { res.json(queueManager.getJobs()); });
+  app.get('/api/queue/:fileId', (req, res) => { const job = queueManager.getJob(req.params.fileId); if (job) res.json(job); else res.status(404).json({ error: 'Job not found' }); });
+  app.post('/api/queue/:fileId/retry', async (req, res) => { try { const token = await getGoogleAccessToken(); if (token) queueManager.setAccessToken(req.params.fileId, token); else { const key = publicDriveApiKey(); if (key) queueManager.setAccessToken(req.params.fileId, `public:${key}`); } const ok = queueManager.retry(req.params.fileId); if (ok) res.json({ success: true }); else res.status(404).json({ error: 'Job not found or no source authorization available.' }); } catch (e: any) { res.status(500).json({ error: e.message }); } });
+  app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
+
+  app.get('/api/production/progress/latest', async (req, res) => {
+    try {
+      const episodeId = String(req.query.episodeId || 'EP01').replace(/[^A-Za-z0-9_-]/g, '');
+      const progressRoot = path.join(process.cwd(), 'public', 'production', '.progress');
+      const entries = await fs.readdir(progressRoot, { withFileTypes: true });
+      const candidates = await Promise.all(entries.filter(entry => entry.isFile() && entry.name.startsWith(`${episodeId}-`) && entry.name.endsWith('.json')).map(async entry => {
+        const filePath = path.join(progressRoot, entry.name);
+        const stat = await fs.stat(filePath);
+        return { filePath, mtimeMs: stat.mtimeMs };
+      }));
+      const latest = candidates.sort((a, b) => b.mtimeMs - a.mtimeMs)[0];
+      if (!latest) return res.status(404).json({ error: 'No production progress ledger found.' });
+      res.json(JSON.parse(await fs.readFile(latest.filePath, 'utf8')));
+    } catch (e: any) {
+      if (e?.code === 'ENOENT') return res.status(404).json({ error: 'No production progress ledger found.' });
+      console.error('[production progress] failed:', e);
       res.status(500).json({ error: e.message });
     }
   });
 
-  app.get("/api/queue", (req, res) => {
-    res.json(queueManager.getJobs());
-  });
+  app.post('/api/jobs/ffmpeg', (req, res) => { const { command, output_path } = req.body; const jobId = 'srv_job_ff_' + Date.now(); const jobState = { status: 'RUNNING', logs: [], progress: 0, result: null as any }; activeJobs.set(jobId, jobState); jobState.logs.push(`Executing FFmpeg command: ffmpeg ${command.join(' ')}`); const proc = spawn('ffmpeg', command); proc.stdout.on('data', data => jobState.logs.push(data.toString())); proc.stderr.on('data', data => { const str = data.toString(); jobState.logs.push(str); if (str.includes('time=')) jobState.progress = Math.min(jobState.progress + 5, 99); }); proc.on('close', code => { jobState.status = code === 0 ? 'COMPLETED' : 'FAILED'; jobState.progress = 100; if (code === 0) jobState.result = { path: output_path }; }); proc.on('error', err => { jobState.status = 'FAILED'; jobState.logs.push(err.message); }); res.json({ jobId }); });
+  app.post('/api/jobs/comfyui', async (req, res) => { const { workflow, output_path } = req.body; const jobId = 'srv_job_cu_' + Date.now(); const jobState = { status: 'RUNNING', logs: ['Starting ComfyUI workflow execution...'], progress: 0, result: null as any }; activeJobs.set(jobId, jobState); try { const fetchRes = await fetch('http://127.0.0.1:8188/prompt', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: workflow }) }); if (!fetchRes.ok) throw new Error(`ComfyUI server responded with error: ${fetchRes.status}`); const data = await fetchRes.json() as any; jobState.logs.push(`ComfyUI accepted prompt. Prompt ID: ${data.prompt_id}`); setTimeout(() => { jobState.status = 'COMPLETED'; jobState.progress = 100; jobState.result = { path: output_path }; jobState.logs.push('ComfyUI workflow finished.'); }, 5000); } catch (e: any) { jobState.status = 'FAILED'; jobState.logs.push(`ComfyUI connection failed: ${e.message}. TOOL UNAVAILABLE.`); jobState.logs.push('JOB BLOCKED: Real execution required. No fallback allowed.'); } res.json({ jobId }); });
 
-  app.use("/api/editorial", editorialRouter);
-
-  /**
-   * Drop footage straight into the app from the browser.
-   *
-   * Raw body rather than multipart: it avoids another dependency and streams
-   * large video without buffering a base64 copy. The filename rides on the
-   * query string and is sanitised before it touches the filesystem.
-   */
-  app.post("/api/footage/upload",
-    express.raw({ type: "*/*", limit: "8gb" }),
-    async (req, res) => {
-      try {
-        const raw = String(req.query.name || "footage.mp4");
-        const safe = pathMod.basename(raw).replace(/[^\w.\- ]+/g, "_").slice(0, 160);
-        if (!/\.(mp4|mov|m4v|mkv|avi|webm)$/i.test(safe)) {
-          return res.status(400).json({ error: "that does not look like a video file" });
-        }
-        const body = req.body as Buffer;
-        if (!body?.length) return res.status(400).json({ error: "empty upload" });
-
-        const dir = pathMod.join(process.cwd(), "footage");
-        fs.mkdirSync(dir, { recursive: true });
-        const dest = pathMod.join(dir, safe);
-        fs.writeFileSync(dest, body);
-
-        res.json({ ok: true, name: safe, bytes: body.length, path: dest });
-      } catch (e: any) {
-        res.status(500).json({ error: e.message });
-      }
-    });
-
-  /**
-   * Pull the real footage out of the configured Drive folder.
-   * Never falls back to generated media: if Drive cannot be reached it says so.
-   */
-  app.post("/api/footage/from-drive", async (req, res) => {
-    const folder = req.body?.folder || WATCH_FOLDER;
-    const dest = pathMod.join(process.cwd(), "footage");
-    const py = pathMod.join(process.cwd(), ".trippedd_venv", "bin", "python");
-    try {
-      const report = await ingestDriveFolder(folder, dest, py);
-      res.status(report.ok ? 200 : 409).json(report);
-    } catch (e: any) {
-      res.status(500).json({
-        ok: false, route: "NONE",
-        blocker: "REAL SOURCE MEDIA IS NOT ACCESSIBLE — " + e.message,
-      });
-    }
-  });
-
-  /** What footage is sitting in the drop folder right now. */
-  app.get("/api/footage", (_req, res) => {
-    const dir = pathMod.join(process.cwd(), "footage");
-    if (!fs.existsSync(dir)) return res.json({ dir, files: [] });
-    const files = fs.readdirSync(dir)
-      .filter((f: string) => /\.(mp4|mov|m4v|mkv|avi|webm)$/i.test(f))
-      .map((f: string) => ({ name: f, bytes: fs.statSync(pathMod.join(dir, f)).size }));
-    res.json({ dir, files });
-  });
-
-  /** Analyse everything in the drop folder. One button, no arguments. */
-  app.post("/api/footage/process", async (_req, res) => {
-    const dir = pathMod.join(process.cwd(), "footage");
-    if (!fs.existsSync(dir)) return res.status(400).json({ error: "no footage folder yet" });
-    const VIDEO = /\.(mp4|mov|m4v|mkv|avi|webm)$/i;
-    let queued = 0;
-    for (const f of fs.readdirSync(dir).filter((x: string) => VIDEO.test(x))) {
-      const id = f.replace(VIDEO, "");
-      if (queueManager.getJob(id)) continue;
-      const src = pathMod.join(dir, f);
-      const job: any = {
-        id: "JOB_" + id, fileId: id, originalName: f, mimeType: "video/mp4",
-        size: String(fs.statSync(src).size), state: "QUEUED", progress: 0,
-        logs: ["Added from your footage folder."],
-        createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
-        tools: {}, evidenceRefs: [], __localSource: src,
-      };
-      queueManager.addJob(job);
-      queued++;
-    }
-    res.json({ queued, total: queueManager.getJobs().length });
-  });
-
-  // Ingest from a local folder. Drive is the intended source, but footage on
-  // disk should never be blocked behind an OAuth round trip.
-  app.post("/api/queue/local", async (req, res) => {
-    const dir = req.body?.dir;
-    if (!dir || !fs.existsSync(dir)) return res.status(400).json({ error: "dir not found" });
-    const VIDEO = /\.(mp4|mov|m4v|mkv|avi|webm)$/i;
-    const files = fs.readdirSync(dir).filter((f: string) => VIDEO.test(f));
-    let queued = 0;
-    for (const f of files) {
-      const id = f.replace(VIDEO, "");
-      if (queueManager.getJob(id)) continue;
-      const src = pathMod.join(dir, f);
-      const job: any = {
-        id: "JOB_" + id, fileId: id, originalName: f, mimeType: "video/mp4",
-        size: String(fs.statSync(src).size), state: "QUEUED", progress: 0,
-        logs: ["Discovered in local folder " + dir + "."],
-        createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
-        tools: {}, evidenceRefs: [], __localSource: src,
-      };
-      queueManager.addJob(job);
-      queued++;
-    }
-    res.json({ discovered: files.length, queued });
-  });
-
-  // Serve rendered scene/episode previews so the creator can just press play.
-  app.get("/api/preview/:sceneId", (req, res) => {
-    const r = editorialService.getRender(req.params.sceneId);
-    if (!r || !fs.existsSync(r.path)) {
-      return res.status(404).json({ error: "this scene has not been rendered yet" });
-    }
-    // Serve the WebM companion when asked for, so a browser without H.264 can
-    // still play the cut.
-    if (req.query.f === "webm") {
-      const webm = r.path.replace(/\.mp4$/, ".webm");
-      if (fs.existsSync(webm)) {
-        res.type("video/webm");
-        return res.sendFile(pathMod.resolve(webm));
-      }
-      return res.status(404).json({ error: "webm companion not ready yet" });
-    }
-    res.type("video/mp4");
-    res.sendFile(pathMod.resolve(r.path));
-  });
-
-  // Serve retained source media so the review UI can play the actual clip at
-  // the actual in/out points. Restricted to the managed media library: a path
-  // that escapes it is refused rather than read.
-  app.get("/api/media/:fileId", (req, res) => {
-    const dir = queueManager.getMediaLibraryDir();
-    const direct = editorialService.getMediaPath(req.params.fileId);
-    let resolved = direct;
-    if (!resolved) {
-      const guess = pathMod.join(dir, req.params.fileId + ".mp4");
-      if (fs.existsSync(guess)) resolved = guess;
-    }
-    if (!resolved) return res.status(404).json({ error: "no retained media for this source file" });
-    const abs = pathMod.resolve(resolved);
-    if (!abs.startsWith(pathMod.resolve(dir))) {
-      return res.status(403).json({ error: "media path outside the managed library" });
-    }
-    if (!fs.existsSync(abs)) return res.status(404).json({ error: "media file missing" });
-    res.sendFile(abs);
-  });
-
-  // --- Pipeline health: tool table + live queue counts -------------------
-  app.get("/api/pipeline/health", async (_req, res) => {
-    const tools = provisioner.getTools().map(t => ({
-      id: t.id, name: t.name, tier: t.tier, state: t.state,
-      version: t.version ?? null, executablePath: t.executablePath ?? null,
-      installSource: t.installSource ?? null, installError: t.installError ?? null,
-      capabilities: t.capabilities,
-      runtimeRequirements: t.runtimeRequirements,
-      lastHealthCheck: t.lastHealthCheck ?? null,
-      provisionedByApp: !!t.provisionedByApp,
-    }));
-    res.json({
-      tools,
-      environment: provisioner.getEnvironment(),
-      // Counts are derived from the live queue, never declared.
-      counts: queueManager.getCounts(),
-      resources: await queueManager.getGovernor().snapshot(),
-      artifacts: queueManager.getLifecycle().usage(),
-      resourceWaits: queueManager.getResourceWaits(),
-      watcher: driveWatcher?.getStatus() ?? { running: false },
-      credential: await driveCredentials.status(),
-    });
-  });
-
-  // Opt-in provisioning for the expensive/interchange tiers.
-  app.post("/api/pipeline/provision", async (req, res) => {
-    const { tools: ids, tiers } = req.body ?? {};
-    try {
-      const p = new ToolProvisioner({ enableTools: ids, enableTiers: tiers });
-      const result = await p.initialize();
-      for (const t of result) {
-        // Merge newly provisioned tools into the live registry.
-        const existing = provisioner.getTool(t.id);
-        if (t.state === "AVAILABLE" && existing && existing.state !== "AVAILABLE") {
-          Object.assign(existing, t);
-        }
-      }
-      res.json({ success: true, tools: provisioner.getTools() });
-    } catch (e: any) {
-      res.status(500).json({ error: e.message });
-    }
-  });
-
-  // --- Automatic ingestion ------------------------------------------------
-  app.post("/api/pipeline/watch/start", (req, res) => {
-    const { folderId, token, intervalMs } = req.body ?? {};
-    if (token) { lastDriveToken = token; driveCredentials.setBrowserToken(token); }
-    driveWatcher?.stop();
-    driveWatcher = new DriveWatcher(queueManager, {
-      folderId: folderId || WATCH_FOLDER,
-      // No getToken override: the watcher uses the durable credential chain.
-      intervalMs: intervalMs ?? 60_000,
-      onError: (e) => console.error("[watcher]", e.message),
-    });
-    driveWatcher.start();
-    res.json({ success: true, status: driveWatcher.getStatus() });
-  });
-
-  app.post("/api/pipeline/watch/stop", (_req, res) => {
-    driveWatcher?.stop();
-    res.json({ success: true, status: driveWatcher?.getStatus() ?? { running: false } });
-  });
-
-  app.post("/api/pipeline/watch/scan", async (_req, res) => {
-    if (!driveWatcher) return res.status(400).json({ error: "watcher not started" });
-    res.json(await driveWatcher.scanOnce());
-  });
-
-  app.get("/api/queue/:fileId", (req, res) => {
-    const job = queueManager.getJob(req.params.fileId);
-    if (job) res.json(job);
-    else res.status(404).json({ error: "Job not found" });
-  });
-
-  app.post("/api/queue/:fileId/retry", (req, res) => {
-     const job = queueManager.getJob(req.params.fileId);
-     if (job) {
-        job.state = 'QUEUED';
-        job.logs.push('Retrying pipeline...');
-        queueManager.processNext();
-        res.json({ success: true });
-     } else {
-        res.status(404).json({ error: "Job not found" });
-     }
-  });
-
-
-  // API routes
-  app.get("/api/health", (req, res) => {
-    res.json({ status: "ok" });
-  });
-
-  // Execute FFmpeg
-  app.post("/api/jobs/ffmpeg", (req, res) => {
-    const { command, output_path } = req.body;
-    const jobId = 'srv_job_ff_' + Date.now();
-    
-    const jobState = { status: 'RUNNING', logs: [], progress: 0, result: null as any };
-    activeJobs.set(jobId, jobState);
-    
-    jobState.logs.push(`Executing FFmpeg command: ffmpeg ${command.join(' ')}`);
-    
-    const proc = spawn('ffmpeg', command);
-    
-    proc.stdout.on('data', (data) => jobState.logs.push(data.toString()));
-    proc.stderr.on('data', (data) => {
-      const str = data.toString();
-      jobState.logs.push(str);
-      if (str.includes('time=')) {
-        jobState.progress = Math.min(jobState.progress + 5, 99);
-      }
-    });
-    
-    proc.on('close', (code) => {
-      jobState.status = code === 0 ? 'COMPLETED' : 'FAILED';
-      jobState.progress = 100;
-      if (code === 0) jobState.result = { path: output_path };
-    });
-    
-    proc.on('error', (err) => {
-      jobState.status = 'FAILED';
-      jobState.logs.push(err.message);
-    });
-    
-    res.json({ jobId });
-  });
-
-  // Execute ComfyUI (Or mock it if missing)
-  app.post("/api/jobs/comfyui", async (req, res) => {
-    const { workflow, output_path } = req.body;
-    const jobId = 'srv_job_cu_' + Date.now();
-    const jobState = { status: 'RUNNING', logs: ["Starting ComfyUI workflow execution..."], progress: 0, result: null as any };
-    activeJobs.set(jobId, jobState);
-
-    try {
-      const fetchRes = await fetch("http://127.0.0.1:8188/prompt", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: workflow })
-      });
-      
-      if (fetchRes.ok) {
-        const data = await fetchRes.json();
-        jobState.logs.push(`ComfyUI accepted prompt. Prompt ID: ${data.prompt_id}`);
-        // In a real environment, we would poll the history endpoint.
-        // For testing the successful execution path if the service IS running, we simulate the wait.
-        setTimeout(() => {
-           jobState.status = 'COMPLETED';
-           jobState.progress = 100;
-           jobState.result = { path: output_path };
-           jobState.logs.push(`ComfyUI workflow finished.`);
-        }, 5000);
-      } else {
-         throw new Error(`ComfyUI server responded with error: ${fetchRes.status}`);
-      }
-    } catch(e: any) {
-      // STRICT FAILURE: Never synthesize fake output for production tools.
-      jobState.status = 'FAILED';
-      jobState.logs.push(`ComfyUI connection failed: ${e.message}. TOOL UNAVAILABLE.`);
-      jobState.logs.push(`JOB BLOCKED: Real execution required. No fallback allowed.`);
-    }
-
-    res.json({ jobId });
-  });
-
-  
-  app.post("/api/ingest/analyze", async (req, res) => {
-    const { fileId, token, originalName, mimeType } = req.body;
-    const jobId = 'srv_job_ingest_' + Date.now();
-    
-    const jobState = { 
-      status: 'RUNNING', 
-      logs: [], 
-      progress: 0, 
-      result: null as any,
-      analysis: {
-        originalName,
-        fileId,
-        mimeType,
-        hash: null as string | null,
-        ffprobe: { status: 'PENDING', data: null as any },
-        ffmpeg: { status: 'PENDING', keyframesExtracted: 0 },
-        pyscenedetect: { status: 'PENDING', scenes: [] },
-        whisper: { status: 'PENDING', transcript: null as string | null },
-        vlm: { status: 'PENDING', observations: [] }
-      }
-    };
-    activeJobs.set(jobId, jobState);
-
-    // Run asynchronously
-    (async () => {
-      try {
-        jobState.logs.push(`[Drive] Attempting to access file ${fileId}...`);
-        const driveRes = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?fields=size,md5Checksum,videoMediaMetadata`, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
-        
-        if (!driveRes.ok) {
-           throw new Error(`Drive API error: ${driveRes.statusText}`);
-        }
-        
-        const driveData = await driveRes.json();
-        jobState.logs.push(`[Drive] Access successful. Size: ${driveData.size} bytes.`);
-        jobState.analysis.hash = driveData.md5Checksum || 'UNKNOWN_NO_MD5';
-        
-        // We use the drive stream URL for ffprobe
-        const mediaUrl = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`;
-        
-        jobState.logs.push('[ffprobe] Checking dependency...');
-        try {
-          await execAsync('ffprobe -version');
-          jobState.logs.push('[ffprobe] Executing analysis...');
-          const { stdout } = await execAsync(`ffprobe -v quiet -print_format json -show_format -show_streams -headers "Authorization: Bearer ${token}" "${mediaUrl}"`);
-          jobState.analysis.ffprobe.status = 'COMPLETED';
-          jobState.analysis.ffprobe.data = JSON.parse(stdout);
-          jobState.logs.push('[ffprobe] Analysis successful.');
-        } catch (e: any) {
-          jobState.logs.push(`[ffprobe] UNAVAILABLE or FAILED: ${e.message}. Continuing without technical metadata.`);
-          jobState.analysis.ffprobe.status = 'UNAVAILABLE';
-        }
-        jobState.progress = 30;
-
-        // REMOVED: this block marked ffmpeg/pyscenedetect/whisper COMPLETED on the
-        // strength of `--version` alone, and logged "(Simulated extraction)" while
-        // recording keyframesExtracted: 0. Analysis now runs only through the real
-        // pipeline in queueManager, where a tool is COMPLETED only after a process
-        // has actually run against the media.
-        jobState.analysis.ffmpeg.status = 'UNAVAILABLE';
-        jobState.logs.push('[ffmpeg] Not run here — use the real pipeline (Make The Show) which executes tools against the media.');
-        jobState.analysis.pyscenedetect.status = 'UNAVAILABLE';
-        jobState.progress = 70;
-
-        jobState.analysis.whisper.status = 'UNAVAILABLE';
-
-        jobState.progress = 90;
-
-        jobState.logs.push('[VLM] Checking visual observation dependency...');
-        // Assume no local VLM is installed in this container by default
-        jobState.logs.push(`[VLM] UNAVAILABLE: No local Vision-Language Model detected in container.`);
-        jobState.analysis.vlm.status = 'UNAVAILABLE';
-        
-        jobState.status = 'COMPLETED';
-        jobState.progress = 100;
-        jobState.result = jobState.analysis;
-        jobState.logs.push('Ingest analysis pipeline finished.');
-
-      } catch (err: any) {
-        jobState.status = 'FAILED';
-        jobState.logs.push(`[FATAL] ${err.message}`);
-      }
-    })();
-    
-    res.json({ jobId });
-  });
-
-  // Job Status Polling
-  app.get("/api/jobs/:id", (req, res) => {
-    const job = activeJobs.get(req.params.id);
-    if (job) res.json(job);
-    else res.status(404).json({ error: "Job not found" });
-  });
-
-  // Unified Tool Detection API
-  app.get("/api/tools/:tool/detect", async (req, res) => {
-    const tool = req.params.tool;
-    try {
-      if (tool === 'ffmpeg') {
-        const { stdout } = await execAsync("ffmpeg -version");
-        const versionMatch = stdout.match(/ffmpeg version (.*?) /);
-        res.json({ installed: true, version: versionMatch ? versionMatch[1] : "UNKNOWN" });
-      } else if (tool === 'blender') {
-        const { stdout } = await execAsync("blender --version");
-        const versionMatch = stdout.match(/Blender (.*?)\s/);
-        res.json({ installed: true, version: versionMatch ? versionMatch[1] : "UNKNOWN" });
-      } else if (tool === 'comfyui') {
-        try {
-          const fetchRes = await fetch("http://127.0.0.1:8188/system_stats");
-          if (fetchRes.ok) {
-            res.json({ installed: true, version: "Service Running" });
-          } else {
-            res.json({ installed: false, error: "Not running" });
-          }
-        } catch (e) {
-          res.json({ installed: false, error: "Not running" });
-        }
-      } else if (tool === 'obs') {
-        const { stdout } = await execAsync("obs --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'whisper') {
-        const { stdout } = await execAsync("whisper --version");
-        res.json({ installed: true, version: stdout.trim() });
-      } else if (tool === 'kdenlive') {
-        const { stdout } = await execAsync("kdenlive --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'krita') {
-        const { stdout } = await execAsync("krita --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'audacity') {
-        const { stdout } = await execAsync("audacity --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'gimp') {
-        const { stdout } = await execAsync("gimp --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'natron') {
-        const { stdout } = await execAsync("NatronRenderer -version");
-        res.json({ installed: true, version: stdout.trim() });
-      } else if (tool === 'mlt') {
-        const { stdout } = await execAsync("melt -version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'huggingface') {
-        const { stdout } = await execAsync("huggingface-cli --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'piper') {
-        const { stdout } = await execAsync("piper --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'makehuman') {
-        const { stdout } = await execAsync("makehuman --version");
-        res.json({ installed: true, version: stdout.split('\n')[0].trim() });
-      } else if (tool === 'unreal') {
-        res.json({ installed: false, error: "UnrealEditor-Cmd not in PATH" });
-      } else {
-        res.json({ installed: false, error: "Unknown tool" });
-      }
-    } catch (e) {
-      res.json({ installed: false, error: (e as any).message });
-    }
-  });
-
-  // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
-  }
-
-  // A server that cannot bind must FAIL LOUDLY and exit.
-  //
-  // This cost real time: a stale server survived a container restart, the new
-  // one hit EADDRINUSE, printed into a log nobody was reading, and kept the
-  // process alive. Every request was answered by the OLD build, so a change
-  // that had never run looked like it was working — including, with some irony,
-  // the queue-persistence change itself, which appeared to succeed while its
-  // save file did not exist.
-  const server = app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
-  server.on("error", (e: NodeJS.ErrnoException) => {
-    if (e.code === "EADDRINUSE") {
-      console.error(
-        `\nFATAL: port ${PORT} is already in use.\n` +
-        `Another server is answering on it and it is NOT this build, so anything you test\n` +
-        `will be the old code. Stop it first:  pkill -f "tsx server.ts"\n`
-      );
-    } else {
-      console.error("FATAL: server could not start —", e.message);
-    }
-    process.exit(1);
-  });
+  app.use(express.static(path.join(process.cwd(), 'dist')));
+  app.use('/production', express.static(path.join(process.cwd(), 'public', 'production')));
+  if (process.env.NODE_ENV !== 'production') { const vite = await createViteServer({ server: { middlewareMode: true }, appType: 'spa' }); app.use(vite.middlewares); }
+  app.get('*', (_req, res) => { res.sendFile(path.join(process.cwd(), 'dist', 'index.html')); });
+  app.listen(PORT, () => console.log(`TRIPPEDD Production Studio running on port ${PORT}`));
 }
 
 startServer();

@@ -3,7 +3,7 @@ import path from 'path';
 import os from 'os';
 import { mkdtempSync } from 'fs';
 import { DriveWatcher, type DriveFile } from '../driveWatcher';
-import { QueueManager } from '../queueManager';
+import { QueueManager } from '../evidenceQueue';
 
 function queue() {
   return new QueueManager({

@@ -1,0 +1,43 @@
+{
+  "schema": "god-molecule.memory-safe-render-profile.v1",
+  "purpose": "First real creative-final shot under constrained CPU/RAM/GPU environments.",
+  "scene_id": "GM-WORLD-0001-TEST",
+  "seed": 742918,
+  "resolution": [640, 360],
+  "fps": 12,
+  "frames": 8,
+  "samples": 8,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "max_environment_instances": 96,
+  "max_environment_polygons": 25000,
+  "max_texture_dimension": 1024,
+  "gaussian_splats": {
+    "enabled": false,
+    "reason": "First proof must establish deterministic seed + canonical Mars + real creative render before adding GPU-heavy splat training."
+  },
+  "world": {
+    "layout": "deterministic_low_poly",
+    "instance_seed": 742918,
+    "macro_radius": 18,
+    "height_levels": 5
+  },
+  "character": {
+    "asset_env": "MARS_CANONICAL_PATH",
+    "identity_source_of_truth": "MARS_CANONICAL",
+    "replacement_generation": false
+  },
+  "failures": {
+    "blender_oom": "reduce_environment_instances_then_resolution_then_frames; never emit telemetry as creative_final",
+    "missing_mars": "FAIL",
+    "missing_blender": "FAIL",
+    "render_missing_or_empty": "FAIL"
+  },
+  "creative_final_gate": [
+    "render_file_exists",
+    "render_file_nonzero",
+    "frame_count_verified",
+    "world_seed_recorded",
+    "mars_asset_hash_recorded",
+    "no_telemetry_substitution"
+  ]
+}

@@ -11,7 +11,7 @@ import path from 'path';
 import { readdirSync, statSync } from 'fs';
 import { copyFile } from 'fs/promises';
 import { ToolProvisioner } from '../src/core/tools/provisioning/ToolProvisioner';
-import { QueueManager } from '../src/server/queueManager';
+import { QueueManager } from '../src/server/evidenceQueue';
 import { ResourceGovernor } from '../src/core/scheduler/ResourceGovernor';
 import { EditorialService } from '../src/server/editorialService';
 import { runnerRoot } from '../src/core/tools/execution/runnerRoot';

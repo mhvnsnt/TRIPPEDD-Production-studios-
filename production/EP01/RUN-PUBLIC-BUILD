@@ -1,0 +1,30 @@
+EP01 PUBLIC BUILD
+
+Run the canonical EP01 production pipeline.
+Ingest physical source footage, analyze it, build the real source-driven rough assembly, generate the EP01 subjectivity sequence, introduce Bannon/The Bastard only as the terminal generated tag, and include clearly-labelled generated material in the assembly.
+Final editorial selection and showrunner greenlight remain human-controlled.
+
+BUILD REVISION: 2026-09-10T09:52-05:00
+KICKOFF: recovery rerun requested after hardening EP01 preflight to accept a complete restored source-media cache before probing the throttled public Drive path.
+AUDIT PASS: source transport, attempt-isolated telemetry, truthful completeness, final artifact validation, and pre-render source gating are active.
+SOURCE PREFLIGHT: fast gdown manifest + real media probe runs before Blender; a complete restored source cache is now accepted first, so a prior successful ingest can resume even when the public Drive path is temporarily throttled.
+SOURCE TRANSPORT ORDER: complete verified cache first, then authorized rclone when configured, then authenticated browser-cookie gdown, then public gdown; no live transport is claimed healthy without a real source probe.
+SOURCE COMPLETENESS: EP01 requires 19 supported source media files for a complete Story Runner build; partial caches are preserved but cannot be mislabeled complete.
+RENDER RECOVERY: resumable subjectivity chunks + durable assembly caches.
+RECOVERY HARDENING: stale queued-run protection and current-main production kickoff.
+EDITORIAL RECOVERY: when transcript-derived gag discovery is empty, preserve PySceneDetect shot-boundary evidence as low-confidence machine-selected source candidates instead of falsely declaring the episode unevidenced.
+DEPENDENCY RECOVERY: Bun production installs use the supported non-frozen install mode when the checked-in lockfile is inconsistent, preventing dependency resolution from consuming another expensive render attempt.
+TELEMETRY HARDENING: every production layer must expose measured stage progress, total/complete work, percentage, elapsed time, throughput/rate, ETA, heartbeat, and current operation; missing telemetry is UNKNOWN and cannot be treated as actively running.
+LIVE ANALYSIS TELEMETRY: source ingest and per-file analysis write the durable run ledger before editorial assembly begins, with fractional aggregate source-analysis progress derived from real queue job progress.
+NO-FAKE-HEARTBEAT: source-analysis telemetry only advances when underlying job progress/state changes, so a stuck analyzer can no longer keep the watchdog alive indefinitely.
+CUMULATIVE LEDGER: downstream assembly stages append to the same run ledger without erasing upstream measured work; overall percentage is derived from observed stage work.
+FAIL-CLOSED WATCHER: missing telemetry or stale heartbeats terminate the production process for bounded recovery instead of permitting a multi-hour black box.
+ATTEMPT ISOLATION: production telemetry is keyed by run ID + run attempt so retries cannot inherit terminal progress from an earlier attempt.
+FINAL ARTIFACT GATE: completed MP4s are checked for valid duration, size, HD video, 24fps, and usable audio before upload/promotion.
+FRESH-RUN: current-main editorial evidence recovery, dependency recovery, and telemetry recovery are required; do not rely on rerunning the old workflow SHA.
+PIPELINE HARDENING: build identity is recorded; failed-build diagnostics are retained; Autonomous is sequenced only after successful Story Runner and reuses verified Story Runner media instead of competing for the same kickoff.
+OPERATING LAW: no blind reruns; preserve successful renders/checkpoints; measure progress independently; if progress cannot be observed, status is UNKNOWN rather than RUNNING; push toward the finish by fixing the actual blocker and then resume from durable work.
+SOURCE RECOVERY: gdown 6.2 per-file resumable ingest, partial-success preservation, quota-aware failure reporting, and durable source-media caching are required so Google Drive throttling does not discard already recovered footage.
+RCLONE RECOVERY: when authorized Drive credentials are configured, rclone is the preferred alternate transport for source recovery, with per-file retries, real transfer stats, durable destination preservation, and measured PARTIAL/COMPLETE states. It is an authenticated API path, not a quota bypass; missing credentials leave gdown/cookies as the public-source fallback.
+OSS OBSERVABILITY: OpenTelemetry Collector + Prometheus-compatible telemetry are the production observability path; the durable ledger remains canonical until retrieval/recovery gates pass. OpenTelemetry Collector is vendor-neutral and supports retries/batching; Prometheus Pushgateway remains opt-in for batch metrics.
+FINISH CONTRACT: do not call a stage healthy without measured telemetry; preserve every successful artifact; continue from checkpoints; fail fast on genuine blockers; never burn another six-hour window on a black-box run.

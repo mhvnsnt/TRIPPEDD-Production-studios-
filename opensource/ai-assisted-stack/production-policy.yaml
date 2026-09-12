@@ -1,0 +1,40 @@
+version: 1
+studio: TRIPPEDD
+principle: cooperative_ai_not_automatic_authorship
+
+roles:
+  human_producer:
+    authority: final_creative
+  ai_producer:
+    authority: propose_plan_analyze_generate_assist
+  open_source_tools:
+    authority: execute_deterministic_or_configured_tasks
+  qc:
+    authority: block_nonconforming_artifacts
+
+artifact_lifecycle:
+  - request
+  - plan
+  - generate_or_assist
+  - provenance
+  - human_or_rule_review
+  - deterministic_qc
+  - render
+  - delivery
+
+rules:
+  preserve_source_media: true
+  preserve_prior_successful_artifacts: true
+  require_provenance: true
+  require_audio_validation: true
+  require_video_validation: true
+  require_visual_qc: true
+  ai_output_is_not_canonical_without_promotion: true
+
+routing:
+  transcription: local_whisper
+  timeline: opentimelineio
+  blender_authoring: blender
+  blender_farm: flamenco
+  large_parallel_render: opencue
+  media_finish: ffmpeg

@@ -1,0 +1,14 @@
+{
+  "policy": "capability_only_no_fake_pass",
+  "god_molecule_open_source_lanes": [
+    {"name":"MediaPipe Face Landmarker","license":"Apache-2.0","role":"measured facial landmarks","status":"CANDIDATE_VERIFIED_LICENSE"},
+    {"name":"OpenSeeFace","license":"BSD-2-Clause","role":"runtime face tracking / expression source","status":"CANDIDATE_VERIFIED_LICENSE"},
+    {"name":"Rhubarb Lip Sync","license":"MIT","role":"audio-to-viseme timing","status":"INTEGRATED_REAL_AUDIO"},
+    {"name":"Blender Rigify","license":"GPL-2.0-or-later","role":"optional rig construction aid; not required for canonical identity","status":"OPTIONAL"},
+    {"name":"OpenUSD","license":"Apache-2.0","role":"cross-repo scene interchange","status":"REGISTERED"},
+    {"name":"gsplat","license":"Apache-2.0","role":"Gaussian splat rasterization/training lane","status":"REGISTERED_NOT_PROMOTED"}
+  ],
+  "promotion_rule":"A lane becomes AVAILABLE only after install, smoke execution, physical artifact, provenance, and recovery evidence.",
+  "identity_rule":"MARS_CANONICAL remains immutable; all facial/oral derivatives are rebuildable.",
+  "next_gate":"oral placement + aperture + human-visible evidence before facial performance promotion"
+}

@@ -255,6 +255,78 @@ export async function executeTool(req: ExecuteToolRequest): Promise<ExecuteToolR
  * distinction between "we have an adapter" and "it produced evidence" is
  * carried in the data rather than assumed by the reader.
  */
+/**
+ * The measured facts a caller must produce before this module will mint EXECUTED.
+ *
+ * A second lane (src/server/mediaPipeline.ts) spawns its analyzers through
+ * execFileAsync rather than through executeTool. It genuinely runs them — but
+ * it used to hand queueManager a provenance record it had written by hand, with
+ * success hardcoded true, durationMs 0, identical start and end stamps and a
+ * command string containing the literal placeholder '<local-source>'. That
+ * record reads the same whether the process ran or never ran.
+ *
+ * Rather than weaken the structural rule (the EXECUTED marker is constructible
+ * in exactly one module, this one), that lane now RECORDS what it observed and
+ * asks here for the marker. No observation, no marker.
+ */
+export interface MeasuredRun {
+  tool: string;
+  command: string;
+  startedAt: string;
+  endedAt: string;
+  durationMs: number;
+  success: boolean;
+  exitCode: number | null;
+  error?: string;
+}
+
+/** Mint EXECUTED from facts measured around a real spawn. */
+export function executedFromMeasuredRun(
+  run: MeasuredRun,
+  sourceFileId: string,
+  version = 'unknown',
+  executablePath?: string
+): ToolRunProvenance {
+  return {
+    executionState: 'EXECUTED',
+    tool: run.tool,
+    version,
+    executablePath,
+    command: run.command,
+    sourceFileId,
+    success: run.success,
+    exitCode: run.exitCode ?? undefined,
+    startTime: run.startedAt,
+    endTime: run.endedAt,
+    timestamp: run.endedAt,
+    durationMs: run.durationMs,
+    ...(run.error ? { stderr: run.error } : {}),
+    derivedArtifactIds: [],
+  } as ToolRunProvenance;
+}
+
+/**
+ * The honest answer when nothing was observed.
+ *
+ * NOT the same as a tool that ran and found nothing — conflating those two is
+ * the single most expensive bug this project has hit, and it has hit it four
+ * separate times.
+ */
+export function notAttempted(
+  tool: string,
+  sourceFileId: string,
+  reason: string,
+  version = 'unknown'
+): ToolRunProvenance {
+  const now = new Date().toISOString();
+  return {
+    executionState: 'NOT_ATTEMPTED',
+    tool, version, command: '', sourceFileId,
+    success: false, startTime: now, endTime: now, timestamp: now,
+    stderr: reason, exitCode: undefined, derivedArtifactIds: [],
+  } as unknown as ToolRunProvenance;
+}
+
 export function adapterDefined(
   tool: string,
   sourceFileId: string,

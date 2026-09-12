@@ -1,0 +1,54 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Y"
+    customLayerData = {
+        string god_molecule_scene_id = "GM-WORLD-0001"
+        int god_molecule_world_seed = 742918
+        string episode = "ep-01-the-recursive-room"
+        string note = "Layered environment template: procedural + optional ParticleField splat + Mars ref. OpenUSD 26.03+ for Gaussian prims."
+    }
+)
+
+def Xform "World" (
+    doc = "God Molecule recursive-room substrate. Seed is law; Mars identity is external ref."
+)
+{
+    custom int god_molecule_world_seed = 742918
+    custom string god_molecule_scene_id = "GM-WORLD-0001"
+
+    def Xform "Procedural"
+    {
+        # Author mesh/voxel export from seed 742918 here (luanti/worldgen/Blender).
+        # Keep low-poly for memory-safe profile.
+    }
+
+    def Xform "SplatEnv"
+    {
+        # Optional: ParticleField3DGaussianSplat (OpenUSD >= 26.03)
+        # Register PLY frame → seed world via xformOp on this Xform.
+        # First proof: leave unloaded / variant off.
+        # def ParticleField3DGaussianSplat "Capture" { ... }
+    }
+
+    def Xform "Mars" (
+        doc = "Reference MARS_CANONICAL only. Do not replace with generated face."
+    )
+    {
+        # asset payload or reference to canonical glb/usd
+        custom string identity_source = "MARS_CANONICAL"
+    }
+
+    def Xform "Cameras"
+    {
+        def Camera "GM_FIRST_SHOT_CAMERA"
+        {
+            double focalLength = 52
+        }
+    }
+
+    def Xform "Lights"
+    {
+    }
+}

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import path from 'path';
 import os from 'os';
 import { mkdtempSync, writeFileSync, existsSync, readdirSync } from 'fs';
-import { QueueManager } from '../queueManager';
+import { QueueManager } from '../evidenceQueue';
 import { ResourceGovernor } from '../../core/scheduler/ResourceGovernor';
 import { ArtifactLifecycle } from '../../core/scheduler/ArtifactLifecycle';
 import type { Analyzer, AnalysisContext, AnalyzerResult, ToolHandle } from '../../core/analysis/analyzers';

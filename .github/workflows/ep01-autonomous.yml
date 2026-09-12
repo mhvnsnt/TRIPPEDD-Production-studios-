@@ -1,0 +1,280 @@
+name: EP01 Autonomous Cut
+
+on:
+  workflow_dispatch:
+    inputs:
+      story_run_id:
+        description: 'Successful canonical Story Runner run ID to reuse its verified media outputs'
+        required: false
+        type: string
+
+concurrency:
+  group: ep01-autonomous-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  actions: read
+  contents: read
+
+env:
+  BLENDER_VERSION: '4.5.13'
+  BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+
+jobs:
+  render-subjectivity:
+    if: ${{ inputs.story_run_id == '' }}
+    name: Render subjectivity chunk ${{ matrix.chunk }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include:
+          - { chunk: '01', start: 1, end: 12 }
+          - { chunk: '02', start: 13, end: 24 }
+          - { chunk: '03', start: 25, end: 36 }
+          - { chunk: '04', start: 37, end: 48 }
+          - { chunk: '05', start: 49, end: 60 }
+          - { chunk: '06', start: 61, end: 72 }
+          - { chunk: '07', start: 73, end: 84 }
+          - { chunk: '08', start: 85, end: 96 }
+          - { chunk: '09', start: 97, end: 108 }
+          - { chunk: '10', start: 109, end: 120 }
+          - { chunk: '11', start: 121, end: 132 }
+          - { chunk: '12', start: 133, end: 144 }
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cache Blender archive
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
+          key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
+      - name: Cache completed subjectivity frames
+        uses: actions/cache@v4
+        with:
+          path: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}/
+          key: subjectivity-${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}-${{ matrix.chunk }}
+      - name: Install system render tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+      - name: Install production Blender LTS
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.cache/trippedd
+          base="https://download.blender.org/release/Blender4.5"
+          url="${base}/${BLENDER_ARCHIVE}"
+          checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
+          if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
+          curl -fsSL "$checksum_url" -o /tmp/blender.sha256
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
+          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+          blender --version | head -n 2
+      - name: Render verified frame chunk
+        env:
+          TRIPPEDD_FRAME_START: ${{ matrix.start }}
+          TRIPPEDD_FRAME_END: ${{ matrix.end }}
+          TRIPPEDD_FRAME_DIR: ${{ github.workspace }}/production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}
+        run: |
+          set -euo pipefail
+          expected=$((TRIPPEDD_FRAME_END - TRIPPEDD_FRAME_START + 1))
+          existing=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' 2>/dev/null | wc -l || true)
+          echo "Chunk ${{ matrix.chunk }}: ${existing}/${expected} checkpoint frames already present"
+          time blender -b --python production/EP01/generated/blender/build_subjectivity.py
+          actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
+          test "$actual" -eq "$expected"
+          printf -v start_padded '%04d' "$TRIPPEDD_FRAME_START"
+          printf -v end_padded '%04d' "$TRIPPEDD_FRAME_END"
+          checkpoint="$TRIPPEDD_FRAME_DIR/subjectivity-${start_padded}-${end_padded}.blend"
+          test -s "$checkpoint"
+          printf '{"chunk":"%s","start":%s,"end":%s,"frames":%s,"checkpoint":"%s","render_profile":"EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS","generator_sha":"%s"}\n' "${{ matrix.chunk }}" "$TRIPPEDD_FRAME_START" "$TRIPPEDD_FRAME_END" "$actual" "$(basename "$checkpoint")" "${{ hashFiles('production/EP01/generated/blender/build_subjectivity.py') }}" > "$TRIPPEDD_FRAME_DIR/manifest.json"
+      - name: Upload subjectivity chunk
+        uses: actions/upload-artifact@v4
+        with:
+          name: EP01-SUBJECTIVITY-CHUNK-${{ matrix.chunk }}
+          path: production/EP01/generated/blender/subjectivity/chunk-${{ matrix.chunk }}/
+          if-no-files-found: error
+          retention-days: 30
+
+  build-ep01-autonomous:
+    name: Assemble and build EP01 Autonomous
+    needs: render-subjectivity
+    if: ${{ always() && (needs.render-subjectivity.result == 'success' || inputs.story_run_id != '') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Record production build identity
+        run: |
+          set -euo pipefail
+          {
+            echo "github_sha=${GITHUB_SHA}"
+            echo "github_ref=${GITHUB_REF}"
+            echo "workflow=${GITHUB_WORKFLOW}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "event=${GITHUB_EVENT_NAME}"
+            echo "story_run_id=${{ inputs.story_run_id }}"
+          } | tee public-production-build-identity.txt
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache Whisper model
+        uses: actions/cache@v4
+        with:
+          path: .trippedd/huggingface
+          key: trippedd-whisper-tiny-${{ runner.os }}
+      - name: Cache EP01 assembly segments
+        uses: actions/cache@v4
+        with:
+          path: .trippedd/media/assembly-segments
+          key: ep01-assembly-segments-${{ hashFiles('src/server/pilotRenderer.ts') }}-${{ runner.os }}
+      - name: Install system media tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg mediainfo tesseract-ocr curl unzip xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0
+      - name: Cache Blender archive
+        if: ${{ inputs.story_run_id == '' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trippedd/${{ env.BLENDER_ARCHIVE }}
+          key: blender-${{ env.BLENDER_VERSION }}-${{ runner.os }}
+      - name: Install production Blender LTS
+        if: ${{ inputs.story_run_id == '' }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.cache/trippedd
+          base="https://download.blender.org/release/Blender4.5"
+          url="${base}/${BLENDER_ARCHIVE}"
+          checksum_url="${base}/blender-${BLENDER_VERSION}.sha256"
+          if [ ! -s "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" ]; then curl -fsSL "$url" -o "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}"; fi
+          curl -fsSL "$checksum_url" -o /tmp/blender.sha256
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#/home/runner/.cache/trippedd/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          sudo tar -xJf "$HOME/.cache/trippedd/${BLENDER_ARCHIVE}" -C /opt
+          sudo ln -sfn "/opt/blender-${BLENDER_VERSION}-linux-x64/blender" /usr/local/bin/blender
+      - name: Reuse canonical Story Runner artifact
+        if: ${{ inputs.story_run_id != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          STORY_RUN_ID: ${{ inputs.story_run_id }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/story-artifact
+          artifact_id=$(gh api "/repos/$REPO/actions/runs/$STORY_RUN_ID/artifacts?name=EP01-STORY-RUNNER&per_page=10" --jq '.artifacts[0].id')
+          test -n "$artifact_id" && test "$artifact_id" != "null"
+          gh api "/repos/$REPO/actions/artifacts/$artifact_id/zip" > /tmp/story-artifact/story.zip
+          unzip -q /tmp/story-artifact/story.zip -d /tmp/story-artifact/unpacked
+          mkdir -p production/EP01/generated/blender
+          cp /tmp/story-artifact/unpacked/production/EP01/generated/blender/ep01_subjectivity.mp4 production/EP01/generated/blender/ep01_subjectivity.mp4
+          cp /tmp/story-artifact/unpacked/production/EP01/generated/blender/ep01_bastard_tag.mp4 production/EP01/generated/blender/ep01_bastard_tag.mp4
+          test -s production/EP01/generated/blender/ep01_subjectivity.mp4
+          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+      - name: Download rendered subjectivity chunks
+        if: ${{ inputs.story_run_id == '' }}
+        uses: actions/download-artifact@v4
+        with:
+          pattern: EP01-SUBJECTIVITY-CHUNK-*
+          path: production/EP01/generated/blender/subjectivity
+          merge-multiple: false
+      - name: Verify and assemble subjectivity MP4
+        if: ${{ inputs.story_run_id == '' }}
+        run: |
+          set -euo pipefail
+          mkdir -p production/EP01/generated/blender/subjectivity/assembled
+          for n in $(seq 1 144); do
+            printf -v frame '%04d' "$n"
+            chunk=$(( (n - 1) / 12 + 1 )); printf -v chunk '%02d' "$chunk"
+            src="production/EP01/generated/blender/subjectivity/EP01-SUBJECTIVITY-CHUNK-${chunk}/frame-${frame}.jpg"
+            test -s "$src"
+            cp "$src" "production/EP01/generated/blender/subjectivity/assembled/frame-${frame}.jpg"
+          done
+          ffmpeg -y -hide_banner -loglevel error -framerate 24 -i production/EP01/generated/blender/subjectivity/assembled/frame-%04d.jpg -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_subjectivity.mp4
+          test -s production/EP01/generated/blender/ep01_subjectivity.mp4
+      - name: Verify reused subjectivity and Bastard media
+        if: ${{ inputs.story_run_id != '' }}
+        run: |
+          set -euo pipefail
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json production/EP01/generated/blender/ep01_subjectivity.mp4 > production/EP01/generated/blender/subjectivity-qc.json
+          mediainfo production/EP01/generated/blender/ep01_subjectivity.mp4 > production/EP01/generated/blender/subjectivity-mediainfo.txt
+          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+      - name: Build generated Bastard terminal tag
+        if: ${{ inputs.story_run_id == '' }}
+        run: |
+          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+      - name: Install open-source media stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --cache-dir "$HOME/.cache/pip" 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
+      - name: Activate production transcription wrapper
+        run: |
+          chmod +x scripts/bin/whisper
+          ./scripts/bin/whisper --help
+      - name: Install Node dependencies
+        run: bun install --no-save
+      - name: Build EP01 autonomous cut
+        env:
+          TRIPPEDD_RUN_ID: ${{ github.run_id }}
+          TRIPPEDD_DRIVE_FOLDER_URL: https://drive.google.com/drive/folders/1e55zooUU98r9MXyRzcR0qgNq1EqGiqVI
+          TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_SEGMENT_CACHE: ${{ github.workspace }}/.trippedd/media/assembly-segments
+          HF_HOME: ${{ github.workspace }}/.trippedd/huggingface
+          TRIPPEDD_ENABLE_WHISPER: 'true'
+          WHISPER_MODEL: 'tiny'
+          TRIPPEDD_WHISPER_DEVICE: 'cpu'
+          TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
+          TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
+          TRIPPEDD_CUT_MODE: AUTONOMOUS
+          TRIPPEDD_OUTPUT_BASENAME: EP01-AUTONOMOUS
+          MEDIA_MAX_CONCURRENT: '2'
+          EP01_MAX_CLIPS: '24'
+          EP01_CLIP_PADDING: '1.25'
+          EP01_RENDER_CONCURRENCY: '4'
+        run: bash scripts/production/watch-progress.sh --progress-file "public/production/.progress/EP01-${{ github.run_id }}.json" -- bun run pilot:build:public
+      - name: Verify autonomous cut
+        run: |
+          set -euo pipefail
+          test -s public/production/EP01-AUTONOMOUS.mp4
+          test -s public/production/EP01-AUTONOMOUS.json
+          test -s public/production/EP01-AUTONOMOUS.otio
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.ffprobe.json
+          mediainfo public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.mediainfo.txt
+      - name: Upload autonomous cut
+        uses: actions/upload-artifact@v4
+        with:
+          name: EP01-AUTONOMOUS
+          path: |
+            public/production/EP01-AUTONOMOUS.mp4
+            public/production/EP01-AUTONOMOUS.json
+            public/production/EP01-AUTONOMOUS.otio
+            public/production/EP01-AUTONOMOUS.ffprobe.json
+            public/production/EP01-AUTONOMOUS.mediainfo.txt
+            production/EP01/generated/blender/ep01_subjectivity.mp4
+            production/EP01/generated/blender/subjectivity-qc.json
+            production/EP01/generated/blender/subjectivity-mediainfo.txt
+            production/EP01/generated/blender/ep01_bastard_tag.mp4
+            public-production-build-identity.txt
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: EP01-AUTONOMOUS-FAILURE-${{ github.run_id }}
+          path: |
+            public-production-build-identity.txt
+            public/production/.progress/
+            public/production/EP01-AUTONOMOUS.json
+            public/production/EP01-AUTONOMOUS.otio
+          if-no-files-found: warn
+          retention-days: 14

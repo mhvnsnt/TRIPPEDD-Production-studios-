@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+"""TRIPPEDD Whisper-compatible CLI.
+
+Uses faster-whisper when available for the production fast path, while keeping
+OpenAI Whisper as the compatibility fallback. The media pipeline can continue
+calling `whisper ... --output_format json` without knowing which backend ran.
+"""
+import argparse
+import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+
+def fallback(argv):
+    return subprocess.call([sys.executable, "-m", "whisper", *argv])
+
+
+def main():
+    if "--help" in sys.argv[1:] or "-h" in sys.argv[1:]:
+        print("TRIPPEDD Whisper-compatible CLI (faster-whisper with OpenAI Whisper fallback)")
+        print("Usage: whisper <media> --model <model> --output_dir <dir> --output_format json")
+        return 0
+
+    argv = sys.argv[1:]
+    if not argv or not argv[0].lower().endswith((".mp4", ".mov", ".m4v", ".webm", ".avi", ".mkv", ".mp3", ".wav", ".m4a")):
+        return fallback(argv)
+
+    try:
+        from faster_whisper import WhisperModel
+    except Exception:
+        return fallback(argv)
+
+    media = argv[0]
+    model = "tiny"
+    output_dir = "."
+    output_format = "json"
+    language = os.environ.get("WHISPER_LANGUAGE")
+
+    i = 1
+    while i < len(argv):
+        arg = argv[i]
+        if arg == "--model" and i + 1 < len(argv):
+            model = argv[i + 1]; i += 2; continue
+        if arg == "--output_dir" and i + 1 < len(argv):
+            output_dir = argv[i + 1]; i += 2; continue
+        if arg == "--output_format" and i + 1 < len(argv):
+            output_format = argv[i + 1]; i += 2; continue
+        if arg == "--language" and i + 1 < len(argv):
+            language = argv[i + 1]; i += 2; continue
+        i += 1
+
+    if output_format != "json":
+        return fallback(argv)
+
+    device = os.environ.get("TRIPPEDD_WHISPER_DEVICE", "cpu")
+    compute = os.environ.get("TRIPPEDD_WHISPER_COMPUTE_TYPE", "int8" if device == "cpu" else "float16")
+    try:
+        engine = WhisperModel(model, device=device, compute_type=compute)
+        segments, info = engine.transcribe(media, language=language, vad_filter=True, beam_size=5)
+        payload = {
+            "text": "",
+            "segments": [],
+            "language": info.language,
+            "language_probability": info.language_probability,
+        }
+        for index, segment in enumerate(segments):
+            text = segment.text.strip()
+            payload["segments"].append({
+                "id": index,
+                "start": float(segment.start),
+                "end": float(segment.end),
+                "text": text,
+            })
+        payload["text"] = " ".join(s["text"] for s in payload["segments"])
+        out = Path(output_dir)
+        out.mkdir(parents=True, exist_ok=True)
+        target = out / (Path(media).stem + ".json")
+        target.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        return 0
+    except Exception as exc:
+        print(f"faster-whisper backend failed: {exc}; falling back to OpenAI Whisper", file=sys.stderr)
+        return fallback(argv)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

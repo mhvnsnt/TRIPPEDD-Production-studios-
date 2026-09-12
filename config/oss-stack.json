@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "name": "TRIPPEDD Studio Capability Graph",
+  "principle": "Expand capability, not dependency count. Every tool must own a production job, an interchange contract, or a measurable recovery/quality function.",
+  "tiers": {
+    "core": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "faster-whisper", "tesseract", "opentimelineio", "blender"],
+    "media": ["mediainfo", "vmaf", "bwfmetaedit", "exiftool", "imagemagick", "libreoffice"],
+    "editorial": ["kdenlive", "mlt", "olive", "shotcut", "audacity", "ardour", "rubberband", "aubio"],
+    "animation-3d": ["blender", "openassetio", "opencolorio", "usd", "materialx", "openvdb", "natron", "embree"],
+    "render-distribution": ["flamenco", "opencue", "deadline-alternative-adapter"],
+    "production-management": ["kitsu", "zou", "ftrack-bridge", "pyblish", "openassetio"],
+    "story-development": ["otio", "fountain", "markdown", "json-schema", "graphviz", "mermaid"],
+    "ai-media": ["faster-whisper", "demucs", "opencv", "pytorch", "onnxruntime"],
+    "observability": ["prometheus", "grafana", "opentelemetry", "jsonl-events"],
+    "ui": ["react", "vite", "tailwindcss", "motion", "lucide", "react-flow", "threejs", "react-three-fiber"]
+  },
+  "promotionPolicy": {
+    "research": "document capability, license, maintenance, integration boundary",
+    "probe": "install or resolve executable/library and run a real-input smoke test",
+    "production": "wire into a pipeline stage with measured outputs, provenance, and recovery",
+    "rejection": "do not add a dependency when it duplicates an existing capability or creates more operational cost than it removes"
+  },
+  "priorityNow": [
+    "parallel-resumable-blender-rendering",
+    "perceptual-qc-vmaf",
+    "publish-validation-pyblish",
+    "asset-identity-openassetio",
+    "color-management-opencolorio",
+    "media-forensics-exiftool-mediainfo",
+    "audio-separation-demucs",
+    "production-graph-kitsu-zou",
+    "render-orchestration-flamenco",
+    "authored-react-three-ui"
+  ]
+}

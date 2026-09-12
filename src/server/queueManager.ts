@@ -1,708 +1,120 @@
-/**
- * The media processing queue.
- *
- * Every tool result in a job comes from a real process run through the
- * sanctioned executor. The previous implementation marked opencv/tesseract/
- * whisper COMPLETED with executionState 'EXECUTED' purely because the tool
- * looked installed — no process was ever spawned for them. That is gone: a
- * status of COMPLETED here now means bytes went into a tool and output came
- * back out.
- */
 import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
-import { MediaJob, QueueJobState, JobToolStatus } from '../core/types';
-import { ToolProvisioner } from '../core/tools/provisioning/ToolProvisioner';
-import { ResourceGovernor, type ResourceClass } from '../core/scheduler/ResourceGovernor';
-import { ArtifactLifecycle, type RetentionPolicy } from '../core/scheduler/ArtifactLifecycle';
-import { ALL_ANALYZERS, type Analyzer, type AnalysisContext, type MachineObservation, type ToolHandle } from '../core/analysis/analyzers';
-import { hashFile } from '../core/tools/execution/executor';
-import { runnerRoot } from '../core/tools/execution/runnerRoot';
-
-/** Everything the queue talks to, injectable so tests are deterministic. */
-export interface QueueDeps {
-  provisioner?: { getTool(id: string): ToolHandle | undefined };
-  governor?: ResourceGovernor;
-  lifecycle?: ArtifactLifecycle;
-  /** How long a resource-blocked job waits before being retried. */
-  resourceRetryMs?: number;
-  /** Bounded retries, so a permanently short box cannot loop forever. */
-  maxResourceWaits?: number;
-  analyzers?: Analyzer[];
-  pythonPath?: () => string;
-  /** Streams the source to disk. Returns bytes written. */
-  downloadMedia?: (job: MediaJob, dest: string) => Promise<number>;
-  workRoot?: string;
-  /**
-   * Keep acquired media in a managed library instead of deleting it.
-   * Editing genuinely requires the media on disk — an edit project that
-   * references files we threw away is not an edit project. Derived scratch
-   * (extracted frames, scene CSVs) is still cleaned up either way.
-   */
-  retainMedia?: boolean;
-  mediaLibraryDir?: string;
-}
-
-/**
- * Outer bound on whole clips in flight. Deliberately 1 by default: the
- * capability-aware concurrency the pipeline needs comes from ResourceScheduler
- * bounding tool classes WITHIN a job, not from running many clips at once.
- * Raise it with setMaxConcurrentJobs() on a bigger box.
- */
-const DEFAULT_MAX_JOBS = 1;
-
-/**
- * Scratch a single analyzer run needs, over and above the job's own media
- * reservation. Deliberately modest: stems and frame dumps, not install size.
- */
-const ANALYZER_SCRATCH_MB: Record<ResourceClass, number> = {
-  LIGHT: 16,
-  MEDIUM: 64,
-  HEAVY: 256,
-};
-
-/** Starting RAM estimate per class; replaced by measured peaks once observed. */
-const ANALYZER_RAM_MB: Record<ResourceClass, number> = {
-  LIGHT: 128,
-  MEDIUM: 512,
-  HEAVY: 1536,
-};
+import { MediaJob } from '../core/types';
+import { AutonomousStudioOrchestrator, type ProductionWorkItem } from '../core/agents/orchestrator';
+import { planSourceClip } from '../core/agents/studioPlan';
+import { toolManager } from './toolManager';
+import { analyzeMedia, downloadToFile, type ToolRun } from './mediaPipeline';
+import { executedFromMeasuredRun, notAttempted } from '../core/tools/execution/executor';
+import { discoverComedy } from './comedyDiscovery';
+import { productionMemory } from './productionMemory';
 
 export class QueueManager {
   private jobs = new Map<string, MediaJob>();
+  private tokens = new Map<string, string>();
   private activeProcessing = 0;
-  private MAX_CONCURRENT = DEFAULT_MAX_JOBS;
+  private MAX_CONCURRENT = Math.max(1, Number(process.env.MEDIA_MAX_CONCURRENT || 1));
+  private readonly mediaCacheDir = process.env.TRIPPEDD_MEDIA_CACHE || path.join(process.cwd(), '.trippedd', 'media');
+  private studio = new AutonomousStudioOrchestrator();
+  private sourcePlans = new Map<string, ProductionWorkItem[]>();
 
-  /**
-   * Runs in flight, keyed by fileId. Two concurrent invocations for one job
-   * would share a work directory, and whichever finished first would delete the
-   * media out from under the other — observed as a FileNotFoundError from the
-   * slowest analyzer. A second caller now joins the existing run instead.
-   */
-  private inFlight = new Map<string, Promise<void>>();
-  private deps: QueueDeps;
-  private governor: ResourceGovernor;
-  private lifecycle: ArtifactLifecycle;
-  /** Resource waits per job, so retries are bounded. */
-  private resourceWaits = new Map<string, number>();
-  private waitTimers = new Map<string, NodeJS.Timeout>();
-  private analyzers: Analyzer[];
-  private provisioner?: { getTool(id: string): ToolHandle | undefined };
-  /** Resolves when tool detection has finished. EVERY job waits on it. */
-  private provisionerReady?: Promise<void>;
-  private loggedProvisionWait = false;
-  private workRoot: string;
-  private mediaLibraryDir: string;
-
-  constructor(deps: QueueDeps = {}) {
-    this.deps = deps;
-    this.governor = deps.governor ?? new ResourceGovernor({ workspacePath: runnerRoot() });
-    this.lifecycle = deps.lifecycle ?? new ArtifactLifecycle();
-    this.analyzers = deps.analyzers ?? ALL_ANALYZERS;
-    this.provisioner = deps.provisioner;
-    this.workRoot = deps.workRoot ?? path.join(os.tmpdir(), 'trippedd_pipeline');
-    this.mediaLibraryDir = deps.mediaLibraryDir ?? path.join(runnerRoot(), '.trippedd_tools', 'media');
-  }
-
-  getMediaLibraryDir(): string {
-    return this.mediaLibraryDir;
-  }
-
-  /**
-   * Late-bind the provisioner, and — critically — the promise that says when
-   * detection has actually finished.
-   *
-   * Without the second argument a job that arrives during boot asks the
-   * provisioner about tools it has not detected yet, gets NOT_INSTALLED for
-   * every one, skips every Python analyzer, and then logs "Pipeline complete"
-   * and lands in NEEDS_REVIEW looking exactly like a clip that was analysed and
-   * found to contain nothing. MEASURED: on a fresh server all 19 clips were
-   * queued one second after boot and the first two were silently emptied that
-   * way. A pipeline that produces no evidence because the tools were not ready
-   * is not a finished job.
-   */
-  setProvisioner(
-    p: { getTool(id: string): ToolHandle | undefined },
-    ready?: Promise<unknown>
-  ) {
-    this.provisioner = p;
-    if (ready) {
-      // Never let a rejected provisioning promise wedge the queue forever —
-      // a failed install should degrade the run, not stop it starting.
-      this.provisionerReady = ready.then(() => undefined, () => undefined);
-      // Once detection is done the gate is dropped entirely, so steady-state
-      // jobs never pay for an extra microtask.
-      void this.provisionerReady.then(() => { this.provisionerReady = undefined; });
-    }
-  }
-
-  setMaxConcurrentJobs(n: number) {
-    this.MAX_CONCURRENT = Math.max(1, n);
-    void this.processNext();
-  }
-
-  getMaxConcurrentJobs(): number {
-    return this.MAX_CONCURRENT;
-  }
-
-  getGovernor(): ResourceGovernor {
-    return this.governor;
-  }
-
-  getLifecycle(): ArtifactLifecycle {
-    return this.lifecycle;
-  }
-
-  /** How many times each job has had to wait for resources. */
-  getResourceWaits(): Record<string, number> {
-    return Object.fromEntries(this.resourceWaits);
-  }
-
-  // ── evidence persistence ──────────────────────────────────────────────────
-  //
-  // Analysis is EXPENSIVE and it is EVIDENCE. Transcribing this shoot is ~40
-  // minutes of CPU, and the whole of it lived in this Map and nowhere else — a
-  // container restart destroyed 237 transcript lines and every observation
-  // behind them, and the only recovery was to run the machine again.
-  //
-  // A pipeline whose output evaporates on a restart is not doing the work, it
-  // is redoing it. The queue now writes itself to disk after every meaningful
-  // change and reloads on boot.
-  //
-  // Written via a temp file and renamed, because a half-written evidence file
-  // is worse than none: it would load as a clip that looks analysed and is not.
-  private persistPath = path.join(runnerRoot(), '.trippedd_tools', 'queue.json');
-  private persistTimer?: NodeJS.Timeout;
-  private persistInFlight = false;
-
-  /** Coalesced so a burst of log lines does not write the file forty times. */
-  private schedulePersist(): void {
-    if (this.persistTimer) return;
-    this.persistTimer = setTimeout(() => {
-      this.persistTimer = undefined;
-      void this.persist();
-    }, 1000);
-    // Never hold the process open for a save.
-    this.persistTimer.unref?.();
-  }
-
-  async persist(): Promise<void> {
-    if (this.persistInFlight) return;
-    this.persistInFlight = true;
-    try {
-      await fs.mkdir(path.dirname(this.persistPath), { recursive: true });
-      const tmp = `${this.persistPath}.writing`;
-      await fs.writeFile(tmp, JSON.stringify({
-        version: 1,
-        savedAt: new Date().toISOString(),
-        jobs: Array.from(this.jobs.values()),
-      }, null, 1));
-      await fs.rename(tmp, this.persistPath);
-    } catch { /* a save that fails must not take the pipeline down with it */ }
-    finally { this.persistInFlight = false; }
-  }
-
-  /**
-   * Reload evidence from a previous run.
-   *
-   * A job caught mid-flight by the restart is put back to QUEUED — it holds no
-   * evidence worth keeping and its scratch is gone. A job that COMPLETED keeps
-   * everything: that is the point of the file.
-   */
-  async restore(): Promise<{ restored: number; requeued: number }> {
-    let raw: string;
-    try { raw = await fs.readFile(this.persistPath, 'utf8'); }
-    catch { return { restored: 0, requeued: 0 }; }
-
-    let parsed: { jobs?: MediaJob[] };
-    try { parsed = JSON.parse(raw); } catch { return { restored: 0, requeued: 0 }; }
-    if (!Array.isArray(parsed.jobs)) return { restored: 0, requeued: 0 };
-
-    const INTERRUPTED: QueueJobState[] = ['PROBING', 'ANALYZING', 'DOWNLOADING/STREAMING', 'RESOURCE_WAIT'];
-    let restored = 0, requeued = 0;
-    for (const job of parsed.jobs) {
-      if (!job?.fileId || this.jobs.has(job.fileId)) continue;
-      if (INTERRUPTED.includes(job.state)) {
-        job.state = 'QUEUED';
-        job.logs = [...(job.logs ?? []), `[${new Date().toISOString()}] Requeued: the previous run was interrupted before this clip finished.`];
-        requeued++;
-      }
-      this.jobs.set(job.fileId, job);
-      restored++;
-    }
-    if (requeued) void this.processNext();
-    return { restored, requeued };
-  }
-
-  getJobs(): MediaJob[] {
-    return Array.from(this.jobs.values()).sort(
-      (a, b) => new Date(b.updatedAt || 0).getTime() - new Date(a.updatedAt || 0).getTime()
-    );
-  }
-
+  getJobs(): MediaJob[] { return Array.from(this.jobs.values()).map(job => this.publicJob(job)).sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()); }
   getJob(fileId: string): MediaJob | undefined {
-    return this.jobs.get(fileId);
+    const job = this.jobs.get(fileId); if (!job) return undefined; const manager = this;
+    return new Proxy(job as any, { get(target, property, receiver) { if (property === 'token') return undefined; if (property === 'toJSON') return () => manager.publicJob(target); return Reflect.get(target, property, receiver); }, set(target, property, value, receiver) { if (property === 'token') { if (typeof value === 'string' && value) { manager.tokens.set(fileId, value); void manager.processNext(); } return true; } const changed = Reflect.set(target, property, value, receiver); target.updatedAt = new Date().toISOString(); return changed; } }) as MediaJob;
   }
-
-  /** Deduplicated by stable Drive file id. Re-adding a known file is a no-op. */
+  setAccessToken(fileId: string, token: string) { if (!token) throw new Error('Cannot attach an empty Drive credential.'); this.tokens.set(fileId, token); void this.processNext(); }
+  setLocalSource(fileId: string, localPath: string) { this.tokens.set(fileId, `local:${path.resolve(localPath)}`); void this.processNext(); }
+  retry(fileId: string) { const job = this.jobs.get(fileId); if (!job || !this.tokens.has(fileId)) return false; job.state = 'QUEUED' as any; job.progress = 0; job.logs.push(`[${new Date().toISOString()}] Retry requested.`); job.updatedAt = new Date().toISOString(); void this.processNext(); return true; }
   addJob(job: MediaJob) {
     if (this.jobs.has(job.fileId)) return;
     this.jobs.set(job.fileId, job);
-    this.schedulePersist();
-    this.processNext();
+    const plan = planSourceClip(this.studio, job.fileId, job.originalName || job.fileId);
+    this.sourcePlans.set(job.fileId, plan.work);
+    (job as any).productionPlan = plan.work.map(work => ({ id: work.id, kind: work.kind, title: work.title, status: work.status, requiresHumanApproval: work.requiresHumanApproval }));
+    if (this.tokens.has(job.fileId) && job.state === 'QUEUED') void this.processNext();
   }
+  updateJob(id: string, updates: Partial<MediaJob>) { const job = this.jobs.get(id); if (job) Object.assign(job, updates, { updatedAt: new Date().toISOString() }); }
+  log(id: string, message: string) { const job = this.jobs.get(id); if (job) job.logs.push(`[${new Date().toISOString()}] ${message}`); }
+  async processNext() { while (this.activeProcessing < this.MAX_CONCURRENT) { const job = Array.from(this.jobs.values()).find(j => j.state === 'QUEUED' && this.tokens.has(j.fileId)); if (!job) return; this.updateJob(job.fileId, { state: 'PROBING', progress: 1 }); this.activeProcessing++; void this.processJob(job).finally(() => { this.activeProcessing--; void this.processNext(); }); } }
+  private async processJob(job: MediaJob) { try { await this.runPipeline(job); } catch (e: any) { this.log(job.fileId, `FATAL: ${e?.message || String(e)}`); this.updateJob(job.fileId, { state: 'FAILED', progress: 100 }); this.failPlan(job.fileId); } }
+  private publicJob(job: MediaJob): MediaJob { const copy = { ...job } as any; delete copy.token; return copy; }
+  private completePlanKind(fileId: string, kind: ProductionWorkItem['kind'], outputRefs: string[] = []) { const item = this.sourcePlans.get(fileId)?.find(work => work.kind === kind); if (!item || item.status === 'DONE') return; this.studio.complete(item.id, outputRefs); const job = this.jobs.get(fileId) as any; if (job?.productionPlan) { const planItem = job.productionPlan.find((work: any) => work.id === item.id); if (planItem) planItem.status = 'DONE'; } }
+  private failPlan(fileId: string) { const item = this.sourcePlans.get(fileId)?.find(work => work.status === 'RUNNING' || work.status === 'READY'); if (item) this.studio.fail(item.id); }
 
-  updateJob(id: string, updates: Partial<MediaJob>) {
-    const job = this.jobs.get(id);
-    if (!job) return;
-    Object.assign(job, updates, { updatedAt: new Date().toISOString() });
-    this.schedulePersist();
-  }
-
-  log(id: string, message: string) {
-    const job = this.jobs.get(id);
-    if (job) {
-      if (!job.logs) job.logs = [];
-      job.logs.push(`[${new Date().toISOString()}] ${message}`);
-    }
-  }
-
-  /** Live counts for the pipeline health view. Derived, never hardcoded. */
-  getCounts() {
-    const jobs = this.getJobs();
-    const processingStates: QueueJobState[] = ['PROBING', 'ANALYZING', 'DOWNLOADING/STREAMING'];
-    return {
-      discovered: jobs.length,
-      queued: jobs.filter((j) => j.state === 'QUEUED' || j.state === 'DISCOVERED').length,
-      processing: jobs.filter((j) => processingStates.includes(j.state)).length,
-      resourceWaiting: jobs.filter((j) => j.state === 'RESOURCE_WAIT').length,
-      processed: jobs.filter((j) => j.state === 'NEEDS_REVIEW' || j.state === 'EVIDENCE_READY').length,
-      failed: jobs.filter((j) => j.state === 'FAILED' || j.state === 'RETRYABLE_FAILURE').length,
-      unavailable: jobs.filter((j) => j.state === 'UNAVAILABLE').length,
-    };
-  }
-
-  async processNext(): Promise<void> {
-    if (this.activeProcessing >= this.MAX_CONCURRENT) return;
-
-    const next = Array.from(this.jobs.values()).find((j) => j.state === 'QUEUED');
-    if (!next) return;
-
-    // Wait for tool detection before claiming the job. Running now would mark
-    // every analyzer NOT_INSTALLED and finish the clip with no evidence.
-    //
-    // The readiness promise is NOT cleared here, and that matters. Clearing it
-    // before awaiting made only the FIRST job wait; the other eighteen found it
-    // already undefined and sailed straight through — and because
-    // activeProcessing is incremented after the await, the concurrency guard
-    // did not hold them either. Measured: the first job waited, jobs 2-19 ran
-    // against a half-detected toolchain and lost their analyzers exactly as
-    // before. Only the LOG is once-only.
-    if (this.provisionerReady) {
-      if (!this.loggedProvisionWait) {
-        this.loggedProvisionWait = true;
-        this.log(next.fileId, 'Waiting for toolchain detection to finish before analysing.');
-      }
-      await this.provisionerReady;
-      // Another job may have claimed a slot while this one waited.
-      if (this.activeProcessing >= this.MAX_CONCURRENT) { void this.processNext(); return; }
-      if (next.state !== 'QUEUED') { void this.processNext(); return; }
-    }
-
-    this.updateJob(next.fileId, { state: 'PROBING' });
-    this.activeProcessing++;
-
+  async runPipeline(job: MediaJob) {
+    const credential = this.tokens.get(job.fileId);
+    if (!credential) throw new Error('No source credential is attached to this ingest job.');
+    const isLocal = credential.startsWith('local:');
+    const mediaUrl = `https://www.googleapis.com/drive/v3/files/${encodeURIComponent(job.fileId)}?alt=media`;
+    this.log(job.fileId, isLocal ? 'Starting production media analysis from credential-free public Drive download.' : credential.startsWith('public:') ? 'Starting production media analysis from publicly shared Drive media.' : 'Starting production media analysis pipeline.');
+    this.updateJob(job.fileId, { state: 'PROBING', progress: 5 });
+    const available = (id: string) => toolManager.getTool(id)?.installationStatus === 'AVAILABLE';
+    const tools = { ffprobe: available('ffprobe'), pyscenedetect: available('pyscenedetect'), opencv: available('opencv'), tesseract: available('tesseract'), whisper: available('whisper') };
+    if (!tools.ffprobe) throw new Error('ffprobe is required for ingest and is unavailable.');
+    await fs.mkdir(this.mediaCacheDir, { recursive: true });
+    const extension = path.extname(job.originalName || '') || '.media';
+    const localFilePath = isLocal ? path.resolve(credential.slice('local:'.length)) : path.join(this.mediaCacheDir, `${job.fileId}${extension}`);
+    const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'trippedd-ingest-'));
+    const downloadPath = path.join(tmpDir, `source${extension}`);
     try {
-      await this.runPipeline(next);
-    } catch (e: any) {
-      this.log(next.fileId, `FATAL: ${e?.message ?? e}`);
-      // A crashed job must not keep its reservations or its scratch. Provenance
-      // and stderr already recorded on the job are left untouched.
-      this.governor.release(`job:${next.fileId}`);
-      const cleaned = await this.lifecycle.cleanupJob(next.fileId);
-      if (cleaned.bytesReclaimed) {
-        this.log(next.fileId, `Released ${formatBytes(cleaned.bytesReclaimed)} after failure.`);
-      }
-      // Distinguish a transient failure from a terminal one so a retry is
-      // meaningful rather than a guess.
-      this.updateJob(next.fileId, {
-        state: isRetryable(e) ? 'RETRYABLE_FAILURE' : 'FAILED',
-      });
-    } finally {
-      this.activeProcessing--;
-      void this.processNext();
-    }
-  }
-
-  /**
-   * Park a job that cannot start yet and schedule a retry. Resource shortage is
-   * a temporary condition, so the job waits instead of being failed — but the
-   * waiting is bounded, because a permanently undersized box should surface as
-   * a real failure rather than an infinite loop.
-   */
-  private blockOnResources(job: MediaJob, reason: string, decision: { requiredBytes?: number; availableBytes?: number; reservedBytes?: number; constraint?: string }): void {
-    const waits = (this.resourceWaits.get(job.fileId) ?? 0) + 1;
-    this.resourceWaits.set(job.fileId, waits);
-    const max = this.deps.maxResourceWaits ?? 10;
-    const mb = (b?: number) => (b === undefined ? '?' : `${Math.round(b / 1048576)}MB`);
-
-    this.log(
-      job.fileId,
-      `RESOURCE_BLOCKED (${decision.constraint ?? 'RESOURCE'}) — ${reason}. ` +
-        `required ${mb(decision.requiredBytes)}, available ${mb(decision.availableBytes)}, reserved ${mb(decision.reservedBytes)}. ` +
-        `wait ${waits}/${max}.`
-    );
-
-    if (waits >= max) {
-      this.log(job.fileId, `Giving up after ${max} resource waits; the environment is persistently short.`);
-      this.updateJob(job.fileId, { state: 'RETRYABLE_FAILURE' });
-      return;
-    }
-
-    this.updateJob(job.fileId, { state: 'RESOURCE_WAIT' });
-    const delay = this.deps.resourceRetryMs ?? 15_000;
-    const existing = this.waitTimers.get(job.fileId);
-    if (existing) clearTimeout(existing);
-    const t = setTimeout(() => {
-      this.waitTimers.delete(job.fileId);
-      // Only re-queue if nothing else moved it on in the meantime.
-      if (this.jobs.get(job.fileId)?.state === 'RESOURCE_WAIT') {
-        this.updateJob(job.fileId, { state: 'QUEUED' });
-        void this.processNext();
-      }
-    }, delay);
-    t.unref?.();
-    this.waitTimers.set(job.fileId, t);
-  }
-
-  /** Stop pending retry timers, e.g. on shutdown. */
-  stop(): void {
-    for (const t of this.waitTimers.values()) clearTimeout(t);
-    this.waitTimers.clear();
-  }
-
-  /**
-   * Give every file an analyzer wrote an owner and a retention policy.
-   *
-   * Most derived files are scratch: their CONTENT has already been lifted into
-   * observations, so the evidence survives the file. Separated audio stems are
-   * the exception — they are useful as audio, not just as a fact about audio —
-   * so they are moved out of the scratch directory and preserved.
-   */
-  private async registerArtifacts(job: MediaJob, a: Analyzer, files: string[]): Promise<void> {
-    if (!files.length) return;
-    const isStem = a.requiresTool === 'demucs';
-
-    for (const f of files) {
-      let filePath = f;
-      let retention: RetentionPolicy = 'DISPOSABLE';
-
-      if (isStem) {
-        // Move it somewhere that survives the scratch sweep.
-        const keepDir = path.join(this.mediaLibraryDir, 'stems', job.fileId);
-        try {
-          await fs.mkdir(keepDir, { recursive: true });
-          const dest = path.join(keepDir, path.basename(f));
-          await fs.copyFile(f, dest);
-          filePath = dest;
-          retention = 'EVIDENCE';
-        } catch {
-          // If it cannot be preserved it stays scratch rather than being lost
-          // silently in a place that claims to be permanent.
-          retention = 'DISPOSABLE';
-        }
-      }
-
-      await this.lifecycle.register({
-        jobId: job.fileId,
-        sourceFileId: job.fileId,
-        filePath,
-        purpose: `${a.requiresTool} output`,
-        retention,
-      });
-    }
-  }
-
-  private toolHandle(id: string): ToolHandle | undefined {
-    return this.provisioner?.getTool(id);
-  }
-
-  private pythonPath(): string {
-    if (this.deps.pythonPath) return this.deps.pythonPath();
-    const venv = path.join(runnerRoot(), '.trippedd_venv', 'bin', 'python');
-    return venv;
-  }
-
-  async runPipeline(job: MediaJob): Promise<void> {
-    const existing = this.inFlight.get(job.fileId);
-    if (existing) return existing;
-    const run = this.executePipeline(job).finally(() => this.inFlight.delete(job.fileId));
-    this.inFlight.set(job.fileId, run);
-    return run;
-  }
-
-  private async executePipeline(job: MediaJob): Promise<void> {
-    const jobWork = path.join(this.workRoot, job.fileId);
-    await fs.mkdir(jobWork, { recursive: true });
-
-    if (!job.tools) job.tools = {};
-    this.log(job.fileId, 'Pipeline started.');
-
-    // 1. Partition analyzers by whether their tool is genuinely usable.
-    const runnable: Analyzer[] = [];
-    for (const a of this.analyzers) {
-      const t = this.toolHandle(a.requiresTool);
-      if (t?.state === 'AVAILABLE') {
-        runnable.push(a);
+      if (isLocal) {
+        await fs.access(localFilePath);
+        this.log(job.fileId, `[source] Using downloaded public media: ${localFilePath}`);
       } else {
-        // Unavailable tools are recorded as such and produce no evidence.
-        setToolStatus(job, a.requiresTool, {
-          status: 'UNAVAILABLE',
-          error: `${a.requiresTool} is ${t?.state ?? 'NOT_INSTALLED'}`,
-        });
-        this.log(job.fileId, `[${a.requiresTool}] UNAVAILABLE — ${t?.state ?? 'NOT_INSTALLED'}`);
+        try { await fs.access(localFilePath); this.log(job.fileId, '[download] Reusing cached source media.'); }
+        catch { this.log(job.fileId, '[download] Streaming source media from Google Drive into production cache.'); this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING', progress: 8 }); await downloadToFile(mediaUrl, credential, downloadPath); await fs.rename(downloadPath, localFilePath); this.log(job.fileId, '[download] Source media cached for editorial rendering.'); }
       }
-    }
-
-    // 2. Fetch bytes only if something actually needs a local file.
-    const needsLocal = runnable.some((a) => a.requiresLocalFile);
-    let localPath: string | undefined;
-    let sourceHash: string | undefined;
-    const diskKey = `job:${job.fileId}`;
-    let reservedDisk = false;
-
-    if (needsLocal) {
-      // Working space for the media plus the artifacts derived from it
-      // (extracted frames, stems, transcripts) — roughly triple the source.
-      const estMB = Math.ceil(estimateSizeMB(job) * 3);
-      const decision = await this.governor.reserve(diskKey, estMB);
-      if (!decision.admitted) {
-        // Short on resources is a WAIT, not a failure of the media.
-        await safeRm(jobWork);
-        this.blockOnResources(job, decision.reason ?? 'insufficient resources', decision);
-        return;
-      }
-      reservedDisk = true;
-
-      this.updateJob(job.fileId, { state: 'DOWNLOADING/STREAMING' });
-      localPath = path.join(jobWork, sanitizeName(job.originalName || `${job.fileId}.mp4`));
-      try {
-        const bytes = await this.download(job, localPath);
-        this.log(job.fileId, `Fetched ${bytes} bytes for local analysis.`);
-        sourceHash = await hashFile(localPath);
-      } catch (e: any) {
-        this.governor.release(diskKey);
-        await this.lifecycle.cleanupJob(job.fileId);
-        await safeRm(jobWork);
-        throw e;
-      }
-    }
-
-    // 3. Run the analyzers under resource-class limits.
-    this.updateJob(job.fileId, { state: 'ANALYZING' });
-
-    const ctx: AnalysisContext = {
-      fileId: job.fileId,
-      localPath,
-      streamUrl: (job as any).streamUrl,
-      sourceHash,
-      workDir: jobWork,
-      getTool: (id) => this.toolHandle(id),
-      pythonPath: () => this.pythonPath(),
-    };
-
-    const observations: MachineObservation[] = [];
-    /** Analyzers that could have run but were refused resources. */
-    const blocked: string[] = [];
-
-    // Analyzers run in dependency waves: everything with its prerequisites met
-    // goes concurrently, bounded by resource class. WhisperX therefore waits for
-    // the transcript it aligns rather than racing it.
-    const completed = new Set<string>();
-    const pending = [...runnable];
-    const runOne = (a: Analyzer) =>
-      this.governor.withSlot(a.resourceClass, async () => {
-        // A heavy analyzer must fit the budget, not merely find a free slot.
-        //
-        // The figure here is RUNTIME SCRATCH, not the tool's install footprint:
-        // the job already reserved space for the media and its derivatives, and
-        // the models are on disk long before this point. Charging a tool its
-        // multi-gigabyte install size again would make every heavy analyzer
-        // permanently unaffordable — which is exactly what it did, silently
-        // producing zero transcripts while the run reported success.
-        const need = this.governor.requirementFor(a.requiresTool, {
-          cls: a.resourceClass,
-          diskMB: ANALYZER_SCRATCH_MB[a.resourceClass],
-          ramMB: ANALYZER_RAM_MB[a.resourceClass],
-        });
-        const ok = await this.governor.admit(need);
-        if (!ok.admitted) {
-          setToolStatus(job, a.requiresTool, {
-            status: 'UNAVAILABLE',
-            error: `RESOURCE_BLOCKED — ${ok.reason}`,
-          });
-          blocked.push(a.requiresTool);
-          this.log(job.fileId, `[${a.requiresTool}] RESOURCE_BLOCKED — ${ok.reason}`);
-          return;
-        }
-
-        setToolStatus(job, a.requiresTool, { status: 'RUNNING' });
-        try {
-          const res = await a.run(ctx);
-          // Feed real peak RSS back so the next decision is measured, not guessed.
-          this.governor.recordUsage(a.requiresTool, res.provenance?.resourceSampling?.peakRssMB);
-          setToolStatus(job, a.requiresTool, {
-            status: res.status === 'COMPLETED' ? 'COMPLETED' : res.status === 'UNAVAILABLE' ? 'UNAVAILABLE' : 'FAILED',
-            error: res.error,
-            provenance: res.provenance,
-            data: res.data,
-          });
-          if (res.status === 'COMPLETED') {
-            observations.push(...res.observations);
-            completed.add(a.id);
-            await this.registerArtifacts(job, a, res.derivedArtifacts ?? []);
-          }
-          this.log(
-            job.fileId,
-            `[${a.requiresTool}] ${res.status}` +
-              (res.status === 'COMPLETED' ? ` — ${res.observations.length} observation(s)` : res.error ? ` — ${res.error}` : '')
-          );
-        } catch (e: any) {
-          setToolStatus(job, a.requiresTool, { status: 'FAILED', error: e?.message ?? String(e) });
-          this.log(job.fileId, `[${a.requiresTool}] FAILED — ${e?.message ?? e}`);
-        }
-      });
-
-    while (pending.length) {
-      const ready = pending.filter((a) => (a.dependsOn ?? []).every((d) => completed.has(d)));
-      if (!ready.length) {
-        // Prerequisites never completed, so these can never run. Record why
-        // rather than leaving them silently pending forever.
-        for (const a of pending) {
-          const missing = (a.dependsOn ?? []).filter((d) => !completed.has(d));
-          setToolStatus(job, a.requiresTool, {
-            status: 'UNAVAILABLE',
-            error: `prerequisite analyzer(s) did not complete: ${missing.join(', ')}`,
-          });
-          this.log(job.fileId, `[${a.requiresTool}] SKIPPED — prerequisite ${missing.join(', ')} did not complete`);
-        }
-        break;
-      }
-      for (const a of ready) pending.splice(pending.indexOf(a), 1);
-      await Promise.all(ready.map(runOne));
-    }
-
-    // 4. Retain the source media when the editor will need it, then clear the
-    //    scratch directory. Resources are released on every path, success or not.
-    if (localPath && this.deps.retainMedia) {
-      try {
-        await fs.mkdir(this.mediaLibraryDir, { recursive: true });
-        const kept = path.join(this.mediaLibraryDir, `${job.fileId}${path.extname(localPath) || '.mp4'}`);
-        await fs.copyFile(localPath, kept);
-        (job as any).localMediaPath = kept;
-        await this.lifecycle.register({
-          jobId: job.fileId, sourceFileId: job.fileId, filePath: kept,
-          purpose: 'retained source media', retention: 'SOURCE_MEDIA',
-        });
-        this.log(job.fileId, `Source media retained for editing at ${kept}.`);
-      } catch (e: any) {
-        this.log(job.fileId, `Could not retain source media: ${e?.message ?? e}`);
-      }
-    }
-
-    if (reservedDisk) this.governor.release(diskKey);
-    const cleaned = await this.lifecycle.cleanupJob(job.fileId);
-    await safeRm(jobWork);
-    this.log(
-      job.fileId,
-      `Scratch cleaned: ${cleaned.removed} artifact(s), ${formatBytes(cleaned.bytesReclaimed)} reclaimed, ${cleaned.preserved} preserved.`
-    );
-
-    (job as any).observations = observations;
-    (job as any).resourceBlockedTools = blocked;
-    job.evidenceRefs = observations.map((o) => o.id);
-
-    const anyEvidence = observations.length > 0;
-    const anyRan = Object.values(job.tools).some((t) => t?.status === 'COMPLETED');
-
-    this.updateJob(job.fileId, {
-      state: anyRan ? 'NEEDS_REVIEW' : 'UNAVAILABLE',
-      progress: 100,
-    });
-    this.log(
-      job.fileId,
-      anyRan
-        ? `Pipeline complete — ${observations.length} machine observation(s).`
-        : 'Pipeline complete — no analyzer could run; no evidence produced.'
-    );
-    void anyEvidence;
+      this.updateJob(job.fileId, { state: 'ANALYZING', progress: 10 }); this.completePlanKind(job.fileId, 'INGEST', [`source:${job.fileId}`, `media:${localFilePath}`]);
+      const result = await analyzeMedia(localFilePath, tools, ({ stage, progress, message }) => { this.log(job.fileId, `[${stage}] ${message}`); this.updateJob(job.fileId, { state: 'ANALYZING', progress }); });
+      if (result.ffprobe) job.tools.ffprobe = { status: 'COMPLETED' as const, data: result.ffprobe, provenance: this.provenance(job, 'ffprobe', result.runs) } as any;
+      if (result.scenes) job.tools.pyscenedetect = { status: 'COMPLETED' as const, data: result.scenes, provenance: this.provenance(job, 'pyscenedetect', result.runs) } as any;
+      if (result.visual) job.tools.opencv = { status: 'COMPLETED' as const, data: result.visual, provenance: this.provenance(job, 'opencv', result.runs) } as any;
+      if (result.ocr !== undefined) job.tools.tesseract = { status: 'COMPLETED' as const, data: { text: result.ocr }, provenance: this.provenance(job, 'tesseract', result.runs) } as any;
+      if (result.transcript !== undefined) job.tools.whisper = { status: result.transcript ? 'COMPLETED' as const : 'HEALTH_CHECK_FAILED' as const, data: result.transcript, provenance: this.provenance(job, 'whisper', result.runs) } as any;
+      this.completePlanKind(job.fileId, 'MEDIA_ANALYSIS', [`analysis:${job.fileId}`]);
+      const comedy = discoverComedy({ sourceFileId: job.fileId, transcript: result.transcript, scenes: result.scenes, ocr: result.ocr });
+      await productionMemory.recordGags('trippedd', comedy);
+      this.completePlanKind(job.fileId, 'GAG_DISCOVERY', comedy.map(gag => `gag:${gag.id}`));
+      const sourceOrder = Number.isFinite(Number((job as any).sourceOrder)) ? Number((job as any).sourceOrder) : Number.MAX_SAFE_INTEGER;
+      const snapshot = await productionMemory.upsert('trippedd', { sources: { [job.fileId]: { fileId: job.fileId, name: job.originalName, mediaPath: localFilePath, sourceOrder, ingestedAt: new Date().toISOString(), analysis: result } }, jobs: { [job.fileId]: { state: 'NEEDS_REVIEW', updatedAt: new Date().toISOString(), gagCount: comedy.length, mediaPath: localFilePath, sourceOrder } } });
+      (job as any).productionIntelligence = { gagCandidates: comedy, callbackKeys: comedy.flatMap(g => g.callbackKeys), mediaPath: localFilePath, memoryUpdatedAt: snapshot.updatedAt };
+      this.log(job.fileId, `Comedy discovery produced ${comedy.length} machine-suggested candidates; source evidence remains unchanged.`);
+      this.log(job.fileId, 'Autonomous plan advanced through ingest, analysis, and gag discovery. Story development is now waiting at the human review gate.');
+      const completedTools = Object.values(tools).filter(Boolean).length; this.log(job.fileId, `Analysis complete. ${completedTools}/${Object.keys(tools).length} analysis tools available.`);
+      this.updateJob(job.fileId, { state: 'NEEDS_REVIEW', progress: 100 }); this.log(job.fileId, 'Pipeline completed with real tool outputs and production intelligence. Source media is retained for editorial assembly.');
+    } finally { await fs.rm(tmpDir, { recursive: true, force: true }); }
   }
-
-  private async download(job: MediaJob, dest: string): Promise<number> {
-    if (this.deps.downloadMedia) return this.deps.downloadMedia(job, dest);
-
-    // A job discovered on local disk needs no network round trip.
-    const localSource = (job as any).__localSource as string | undefined;
-    if (localSource) {
-      await fs.copyFile(localSource, dest);
-      return (await fs.stat(localSource)).size;
+  /**
+   * Provenance is READ from the run ledger, and MINTED BY THE EXECUTOR.
+   *
+   * Two separate rules, and the second one is why this does not build the
+   * record itself. The facts must be measured around a real process (that is
+   * the ledger). And the EXECUTED marker is constructible in exactly one module
+   * in this codebase — the sanctioned executor — so that a future edit cannot
+   * quietly reintroduce a hand-written one. This asks for it instead.
+   *
+   * A tool with no ledger entry gets NOT_ATTEMPTED. It does not get EXECUTED.
+   */
+  private provenance(job: MediaJob, tool: string, runs: ToolRun[] = []) {
+    const binary = PROVENANCE_BINARY[tool] ?? tool;
+    const entry = [...runs].reverse().find(r => r.tool === binary);
+    const installed = toolManager.getTool(tool);
+    if (!entry) {
+      return notAttempted(tool, job.fileId,
+        `No process was recorded for ${binary}. An analyzer that never ran cannot testify.`,
+        installed?.version || 'unknown');
     }
-
-    const token = (job as any).token;
-    const url = (job as any).streamUrl || `https://www.googleapis.com/drive/v3/files/${job.fileId}?alt=media`;
-    const res = await fetch(url, token ? { headers: { Authorization: `Bearer ${token}` } } : undefined);
-    if (!res.ok) throw new Error(`media fetch failed: ${res.status} ${res.statusText}`);
-    const buf = Buffer.from(await res.arrayBuffer());
-    await fs.writeFile(dest, buf);
-    return buf.length;
+    return executedFromMeasuredRun(entry, job.fileId,
+      installed?.version || 'unknown', installed?.executablePath);
   }
 }
 
-function setToolStatus(job: MediaJob, toolId: string, status: JobToolStatus) {
-  const key = toolKey(toolId);
-  (job.tools as Record<string, JobToolStatus>)[key] = status;
-}
+/** Which binary each analyzer slot is actually spawned as. */
+const PROVENANCE_BINARY: Record<string, string> = {
+  ffprobe: 'ffprobe', pyscenedetect: 'scenedetect', opencv: 'python3',
+  tesseract: 'tesseract', whisper: 'whisper',
+};
 
-/** Maps registry ids onto the MediaJob.tools shape. */
-function toolKey(toolId: string): string {
-  return toolId === 'faster-whisper' ? 'whisper' : toolId;
-}
-
-function sanitizeName(n: string): string {
-  return n.replace(/[^\w.\-]+/g, '_').slice(0, 120) || 'media.bin';
-}
-
-function estimateSizeMB(job: MediaJob): number {
-  const n = Number(job.size);
-  // Unknown size: assume a modest reservation rather than zero, so an unknown
-  // file still counts against the quota.
-  if (!Number.isFinite(n) || n <= 0) return 512;
-  return Math.max(1, Math.ceil(n / (1024 * 1024)));
-}
-
-function isRetryable(e: any): boolean {
-  const m = String(e?.message ?? e);
-  return /ECONNRESET|ETIMEDOUT|EAI_AGAIN|socket hang up|fetch failed|50\d\s/i.test(m);
-}
-
-/**
- * Human-readable size that does not round small-but-real values to nothing.
- * "0.0MB reclaimed" after actually deleting five files reads as a no-op.
- */
-function formatBytes(n: number): string {
-  if (n <= 0) return '0 B';
-  if (n < 1024) return `${n} B`;
-  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
-  if (n < 1024 * 1024 * 1024) return `${(n / 1048576).toFixed(1)} MB`;
-  return `${(n / 1073741824).toFixed(2)} GB`;
-}
-
-async function safeRm(p: string) {
-  try {
-    await fs.rm(p, { recursive: true, force: true });
-  } catch { /* cleanup is best-effort; a leftover temp dir must not fail a job */ }
-}
-
-// The app-level queue retains source media: the editorial layer cannot build a
-// real project against files that were deleted after analysis.
-export const queueManager = new QueueManager({ retainMedia: true });
+export const queueManager = new QueueManager();

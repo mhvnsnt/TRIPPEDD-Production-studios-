@@ -13,7 +13,7 @@ import path from 'path';
 import { readdirSync, statSync, existsSync } from 'fs';
 import { copyFile } from 'fs/promises';
 import { ToolProvisioner } from '../src/core/tools/provisioning/ToolProvisioner';
-import { QueueManager } from '../src/server/queueManager';
+import { QueueManager } from '../src/server/evidenceQueue';
 import { DriveWatcher, listDriveFiles } from '../src/server/driveWatcher';
 import { driveCredentials } from '../src/server/driveCredentials';
 import { EditorialService } from '../src/server/editorialService';

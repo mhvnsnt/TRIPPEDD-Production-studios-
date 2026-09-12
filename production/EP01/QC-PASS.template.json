@@ -1,0 +1,13 @@
+{
+  "episodeId": "EP01",
+  "status": "PENDING",
+  "checks": {
+    "videoDecodes": false,
+    "audioDecodes": false,
+    "noMissingMedia": false,
+    "generatedMaterialLabeled": false,
+    "terminalButtonPresent": false,
+    "nothingAfterTerminalButton": false
+  },
+  "notes": "Create QC-PASS.json only after running technical and editorial QC against the actual final master."
+}

@@ -10,7 +10,7 @@ import path from 'path';
 import { statSync, existsSync, readdirSync } from 'fs';
 import { copyFile } from 'fs/promises';
 import { ToolProvisioner } from '../src/core/tools/provisioning/ToolProvisioner';
-import { QueueManager } from '../src/server/queueManager';
+import { QueueManager } from '../src/server/evidenceQueue';
 import { EditorialService } from '../src/server/editorialService';
 import type { MediaJob } from '../src/core/types';
 

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "targetEpisodeMinutes": 15,
+  "targetGenerationWallClockMinutes": 20,
+  "stretchSpeedupFactor": 3,
+  "principles": [
+    "Never trade physical-source truth for speed.",
+    "Never rerun completed deterministic work when a valid content-addressed artifact exists.",
+    "Parallelize independent analysis and render work only where the backend is concurrency-safe.",
+    "Encode once per stable stage and prefer remux/concat-copy after normalization.",
+    "Every expensive stage emits timing, cache-hit and recovery telemetry."
+  ],
+  "stageTargets": {
+    "ingest":{"cacheRequired":true,"parallel":true},
+    "ffprobe":{"cacheRequired":true,"parallel":true},
+    "sceneDetection":{"cacheRequired":true,"parallel":true},
+    "visualAnalysis":{"cacheRequired":true,"parallel":true},
+    "ocr":{"cacheRequired":true,"parallel":true},
+    "transcription":{"cacheRequired":true,"parallel":true},
+    "sourceSegmentEncoding":{"cacheRequired":true,"parallel":true},
+    "generatedMedia":{"cacheRequired":true,"parallel":true},
+    "assembly":{"cacheRequired":false,"parallel":false},
+    "qc":{"cacheRequired":false,"parallel":true}
+  },
+  "optionalOpenSourceAcceleration":["OpenImageIO","Demucs","Blender","Natron","OpenColorIO","OpenAssetIO","Flamenco","OpenCue"],
+  "policy": {
+    "optionalAccelerationMustBeFeatureGated":true,
+    "benchmarkBeforeAndAfter":true,
+    "productionBranchMustRemainReproducible":true,
+    "noBlindReruns":true,
+    "unknownTelemetryFailsClosed":true
+  }
+}

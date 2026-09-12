@@ -1,0 +1,82 @@
+name: Studio Toolchain Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - config/**
+      - scripts/audit-studio-toolchain.ts
+      - scripts/audit-production-integrity.ts
+      - scripts/test-evidence-cache.ts
+      - scripts/test-provenance.ts
+      - src/server/toolManager.ts
+      - src/server/evidenceCache.ts
+      - src/server/provenance.ts
+      - src/core/studio/**
+      - package.json
+  push:
+    branches:
+      - 'upgrade/**'
+    paths:
+      - config/**
+      - scripts/audit-studio-toolchain.ts
+      - scripts/audit-production-integrity.ts
+      - scripts/test-evidence-cache.ts
+      - scripts/test-provenance.ts
+      - src/server/toolManager.ts
+      - src/server/evidenceCache.ts
+      - src/server/provenance.ts
+      - src/core/studio/**
+      - package.json
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install required media stack
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg tesseract-ocr
+          python -m pip install --upgrade pip
+          python -m pip install 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.18.1'
+
+      - name: Install Node dependencies
+        run: bun install
+
+      - name: Typecheck
+        run: bun run lint
+
+      - name: Test shared evidence cache
+        run: bun run studio:test:evidence-cache
+
+      - name: Test production provenance model
+        run: bun run studio:test:provenance
+
+      - name: Audit production integrity
+        run: bun run studio:audit:integrity
+
+      - name: Audit executable toolchain
+        run: bun run studio:audit
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-toolchain-audit
+          path: public/production/studio-toolchain-audit.json

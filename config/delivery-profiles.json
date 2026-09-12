@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "profiles": {
+    "master": {
+      "container": "mov",
+      "video": "prores_422_hq",
+      "audio": "pcm_s24le",
+      "purpose": "mezzanine/archive master"
+    },
+    "youtube": {
+      "container": "mp4",
+      "video": "h264",
+      "audio": "aac",
+      "videoBitrate": "20M",
+      "audioBitrate": "320k",
+      "faststart": true,
+      "purpose": "YouTube long-form delivery"
+    },
+    "social-vertical": {
+      "container": "mp4",
+      "video": "h264",
+      "audio": "aac",
+      "width": 1080,
+      "height": 1920,
+      "audioBitrate": "256k",
+      "faststart": true,
+      "purpose": "vertical social delivery"
+    },
+    "archive-lossless": {
+      "container": "mkv",
+      "video": "ffv1",
+      "audio": "flac",
+      "purpose": "lossless preservation"
+    }
+  },
+  "rules": {
+    "neverOverwriteMaster": true,
+    "everyDeliverableGetsManifest": true,
+    "everyDeliverableGetsFfprobeValidation": true,
+    "deliveryNeverChangesEditorialLock": true
+  }
+}

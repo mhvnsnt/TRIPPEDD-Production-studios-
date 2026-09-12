@@ -1,0 +1,14 @@
+EP01 SOURCE TRANSPORT PREFLIGHT
+
+This marker exists only to trigger the bounded source gate. It must pass before a full Story Runner run is started.
+
+Required source outcome:
+- 19 usable media files, OR
+- an equivalent complete cached source set.
+
+Transport order:
+1. authenticated rclone Google Drive remote when configured;
+2. browser-cookie-assisted gdown when configured;
+3. resumable public gdown.
+
+No quota bypass is claimed.

@@ -1,0 +1,97 @@
+name: Studio OSS Capability Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - config/open-source-candidates.json
+      - config/studio-toolchain.json
+      - scripts/audit-studio-toolchain.ts
+      - .github/workflows/studio-oss-capability-audit.yml
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deterministic media inspection tools
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg mediainfo tesseract-ocr imagemagick sox gstreamer1.0-tools pkg-config
+
+      - name: Install production media/interchange probes
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install \
+            'opencv-python-headless>=4.10' \
+            'scenedetect-headless>=0.7.1' \
+            'faster-whisper>=1.2.0' \
+            'opentimelineio>=0.17.0' \
+            'openimageio' \
+            'OpenEXR' \
+            'PyOpenColorIO' \
+            'openassetio' \
+            'usd-core' \
+            'MaterialX'
+
+      - name: Install Node dependencies
+        run: npm install --ignore-scripts
+
+      - name: Audit studio toolchain
+        run: npm run studio:audit
+
+      - name: Validate required deterministic capabilities
+        run: |
+          set -euo pipefail
+          test -s public/production/studio-toolchain-audit.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('public/production/studio-toolchain-audit.json').read_text())
+          assert report.get('status') == 'READY', report
+          assert not report.get('requiredFailures'), report
+          required = {'ffmpeg','ffprobe','opencv','pyscenedetect','whisper','tesseract','otio'}
+          available = {x['id'] for x in report.get('tools', []) if x.get('status') == 'AVAILABLE'}
+          assert required <= available, sorted(required - available)
+          print('Deterministic baseline verified:', sorted(required))
+          print('Available tools:', len(available))
+          PY
+
+      - name: Smoke test GStreamer
+        run: gst-launch-1.0 -q videotestsrc num-buffers=3 ! videoconvert ! fakesink
+
+      - name: Smoke test image/audio utilities
+        run: |
+          set -euo pipefail
+          printf 'TRIPPEDD OSS audit\n' > /tmp/trippedd.txt
+          convert -size 16x16 xc:white /tmp/trippedd.png
+          identify /tmp/trippedd.png
+          sox -n -r 48000 -c 1 /tmp/trippedd.wav synth 0.05 sine 440
+          test -s /tmp/trippedd.wav
+
+      - name: Upload audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-oss-capability-audit
+          path: public/production/studio-toolchain-audit.json
+          if-no-files-found: error
+          retention-days: 30

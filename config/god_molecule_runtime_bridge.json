@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "control_plane": "mhvnsnt/God-Molecule-Show-Studio",
+  "production_engine": "mhvnsnt/TRIPPEDD-Production-studios-",
+  "upstream_ref": "main",
+  "sync_mode": "explicit-manifest",
+  "identity": "MARS_CANONICAL",
+  "rules": {
+    "no_fake_pass": true,
+    "canonical_never_modified": true,
+    "human_review_required_for_visual_claims": true,
+    "oral_gate_before_lipsync": true
+  },
+  "god_molecule_paths": [
+    "tools/character/build_oral_anatomy.py",
+    "tools/character/inspect_mars_asset.py",
+    "tools/character/parse_glb_json.py",
+    "tools/animation/animate_rig.py",
+    "tools/animation/blender_import.py",
+    "tools/animation/build_slice.py",
+    "tools/animation/fallback_render.py",
+    "tools/animation/make_visual_evidence.py",
+    "tools/animation/proxy_generator.py",
+    "tools/animation/rig_proxy.py",
+    "config/trippedd_runtime_bridge.json",
+    "server.ts"
+  ],
+  "promoted_files": [
+    "tools/character/god_molecule_build_mars_oral_bridge.py",
+    "tools/character/survey_oral_aperture.py"
+  ],
+  "sync_policy": "TRIPPEDD may execute God Molecule workers through this manifest; upstream changes are reviewed and promoted, never silently copied.",
+  "next": "oral placement gate -> aperture survey -> human evidence -> Rhubarb -> expressions/blink -> seeded environment -> Gaussian layer"
+}

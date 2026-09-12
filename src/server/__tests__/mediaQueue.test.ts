@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { QueueManager } from '../queueManager';
+import { QueueManager } from '../evidenceQueue';
 import { MediaJob } from '../../core/types';
 import os from 'os';
 import path from 'path';

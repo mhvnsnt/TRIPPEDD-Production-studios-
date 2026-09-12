@@ -1,0 +1,857 @@
+{
+  "set": "expression",
+  "publishedBy": "tools/publish_evidence.py",
+  "retrieve": "docs/evidence/expression/<frame>  (committed; also listed in README.md)",
+  "runId": "local",
+  "sourceAsset": {
+    "assetId": "MARS_HEAD_SOURCE",
+    "character": "MARS",
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+  },
+  "qc": {
+    "physical": {
+      "verified": true,
+      "checks": [
+        {
+          "check": "02_BLINK reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.03441 inside the region it moves (0.00266 over the whole frame)"
+        },
+        {
+          "check": "03_BLINK_L_ONLY reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.03432 inside the region it moves (0.00110 over the whole frame)"
+        },
+        {
+          "check": "04_SMILE reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.04392 inside the region it moves (0.02383 over the whole frame)"
+        },
+        {
+          "check": "05_NOSTRIL_FLARE reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.04361 inside the region it moves (0.02468 over the whole frame)"
+        },
+        {
+          "check": "06_BROW_UP reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.02174 inside the region it moves (0.01214 over the whole frame)"
+        },
+        {
+          "check": "07_BROW_DOWN reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.01764 inside the region it moves (0.00694 over the whole frame)"
+        },
+        {
+          "check": "08_CHEEK_PUFF reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.05026 inside the region it moves (0.01940 over the whole frame)"
+        },
+        {
+          "check": "09_PUCKER reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.04216 inside the region it moves (0.01571 over the whole frame)"
+        },
+        {
+          "check": "10_JAW_OPEN reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.05896 inside the region it moves (0.02949 over the whole frame)"
+        },
+        {
+          "check": "11_SQUINT reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.00951 inside the region it moves (0.00399 over the whole frame)"
+        },
+        {
+          "check": "12_DISGUST reaches the screen",
+          "pass": true,
+          "detail": "pixel delta 0.04132 inside the region it moves (0.02499 over the whole frame)"
+        },
+        {
+          "check": "blink_L closes, not opens (geometry)",
+          "pass": true,
+          "detail": "blink_L travels +1.05 of the eye's own opening (occlusion 0%, which is NOT the verdict)"
+        },
+        {
+          "check": "blink_R closes, not opens (geometry)",
+          "pass": true,
+          "detail": "blink_R travels +1.07 of the eye's own opening (occlusion 100%, which is NOT the verdict)"
+        },
+        {
+          "check": "one lid moves about half of what two lids move",
+          "pass": true,
+          "detail": "one lid 0.00110 vs both 0.00266 = 41% of the two-lid change"
+        },
+        {
+          "check": "the FACS jaw shape parts the lips on its own",
+          "pass": true,
+          "detail": "gap 0.14% of head height vs 0.00% at rest -- skin only; the jaw BONE is what carries the lower arch, and driving it from this shape is not wired yet"
+        },
+        {
+          "check": "a compound is not just its largest part",
+          "pass": true,
+          "detail": "disgust vs sneer-alone differ by 0.01427 across the frame"
+        }
+      ],
+      "engine": "BLENDER_EEVEE_NEXT",
+      "samples": 24
+    },
+    "visual": {
+      "verdict": "FAIL",
+      "reviewer": "Claude (session 01PK45rG), reviewing docs/evidence/expression/*_front.png directly",
+      "notes": "VISUAL_FAIL, and it outranks 16/16 physical. WORKS: the blink is real and symmetric -- both upper lids visibly travel down over the sclera; nostril flare visibly widens the alar walls and wrinkles the nose; every expression reaches the screen. FAILS, none of which any current measurement can express: (1) 10_JAW_OPEN is the worst -- opening the mouth exposes a jagged white sheet where an arch should be and a pale wedge tearing down toward the chin. This is the skin-only facs_jawOpen dragging the lower face while the lower arch, which rides the jaw BONE, stays put. Predicted from the numbers (upper lip -0.0222 vs lower -0.0445, cosine +0.999); far worse in pixels than 'the teeth stay shut'. (2) REST does not seal -- the lips show a dark parted slit with red interior and a tooth at the right corner, on a pose whose whole job is a closed mouth. (3) The eyes never fully close at blink 1.0: slivers of sclera remain, because the globe protrudes past the lid plane. (4) Dark artifacts at the nose base in every frame. (5) A hard horizontal seam above the upper lip, visible in 05_NOSTRIL_FLARE. NEXT: drive the jaw BONE from facs_jawOpen (the lip_corner_*_wide driver pattern), then re-cut the lip seal at REST.",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "VISUAL_FAIL"
+  },
+  "frames": [
+    {
+      "frame": "01_REST_front.png",
+      "publishedSha256": "a6544039c81864cffb9246d24cc68d31b466350666f12b76c0e8fed3c8f32e26",
+      "repoPath": "docs/evidence/expression/01_REST_front.png",
+      "productionPath": "renders/_facs_proof/01_REST_front.png",
+      "sha256": "e5493c039e2cfa22251c4fdd0d23684bdd47b47ce3af6597d70f8099e191aa85",
+      "sourceSha8": "e5493c03",
+      "bytes": 906217,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "01_REST",
+      "camera": "front",
+      "aliases": [
+        "01_REST_front",
+        "rest_front",
+        "01_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/01_REST_front.png"
+    },
+    {
+      "frame": "01_REST_profile.png",
+      "publishedSha256": "ac80c4f4e5d80e553e6dc951feeafa7c2b2bca7d27731502409bbb549915cc98",
+      "repoPath": "docs/evidence/expression/01_REST_profile.png",
+      "productionPath": "renders/_facs_proof/01_REST_profile.png",
+      "sha256": "4d69c38bd9d32691dc041029bcbc960ee5e1711380243738c56dca724dc86aa5",
+      "sourceSha8": "4d69c38b",
+      "bytes": 893278,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "01_REST",
+      "camera": "profile",
+      "aliases": [
+        "01_REST_profile",
+        "rest_profile",
+        "01_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/01_REST_profile.png"
+    },
+    {
+      "frame": "02_BLINK_front.png",
+      "publishedSha256": "939b175b7ca9efc22c0496714a234e479d8b737e4dd42152b6ff9ade5dd82e7f",
+      "repoPath": "docs/evidence/expression/02_BLINK_front.png",
+      "productionPath": "renders/_facs_proof/02_BLINK_front.png",
+      "sha256": "6a3822c57902053c808a9c1049d7ad39be6d135cc68844e1b84c66ea2da565af",
+      "sourceSha8": "6a3822c5",
+      "bytes": 904697,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "02_BLINK",
+      "camera": "front",
+      "aliases": [
+        "02_BLINK_front",
+        "blink_front",
+        "02_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/02_BLINK_front.png"
+    },
+    {
+      "frame": "02_BLINK_profile.png",
+      "publishedSha256": "57a7e9315c624898e7384f8ab69d51578219135e3f2e87449a7df8fae51eb025",
+      "repoPath": "docs/evidence/expression/02_BLINK_profile.png",
+      "productionPath": "renders/_facs_proof/02_BLINK_profile.png",
+      "sha256": "ac8c579f7b6c44567be470f8af20e7e15fbf63a401f5b08e8f2dc18c900d05c0",
+      "sourceSha8": "ac8c579f",
+      "bytes": 893557,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "02_BLINK",
+      "camera": "profile",
+      "aliases": [
+        "02_BLINK_profile",
+        "blink_profile",
+        "02_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/02_BLINK_profile.png"
+    },
+    {
+      "frame": "03_BLINK_L_ONLY_front.png",
+      "publishedSha256": "0243fe3c56e03381a28403bcab8b7dd99cc40f54d2a6f439a9f13b6e5c071fbe",
+      "repoPath": "docs/evidence/expression/03_BLINK_L_ONLY_front.png",
+      "productionPath": "renders/_facs_proof/03_BLINK_L_ONLY_front.png",
+      "sha256": "c9b0bfa5d3c3c1e346cd0c0d87416fe173fbfcf98dd69f1998cf97fd42354d42",
+      "sourceSha8": "c9b0bfa5",
+      "bytes": 905837,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "03_BLINK_L_ONLY",
+      "camera": "front",
+      "aliases": [
+        "03_BLINK_L_ONLY_front",
+        "blink_l_only_front",
+        "03_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/03_BLINK_L_ONLY_front.png"
+    },
+    {
+      "frame": "03_BLINK_L_ONLY_profile.png",
+      "publishedSha256": "9fd80f83554b92e79077cf27c58a8c32de1da16cc7aaa90211425df90f7dc298",
+      "repoPath": "docs/evidence/expression/03_BLINK_L_ONLY_profile.png",
+      "productionPath": "renders/_facs_proof/03_BLINK_L_ONLY_profile.png",
+      "sha256": "f5ff8a9165eda4d1114fa0707cbae18dfb56aa171d9c46a30c28bcd636333606",
+      "sourceSha8": "f5ff8a91",
+      "bytes": 893562,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "03_BLINK_L_ONLY",
+      "camera": "profile",
+      "aliases": [
+        "03_BLINK_L_ONLY_profile",
+        "blink_l_only_profile",
+        "03_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/03_BLINK_L_ONLY_profile.png"
+    },
+    {
+      "frame": "04_SMILE_front.png",
+      "publishedSha256": "6d256883ec0a26ac6dfe76d41e9bed0ceccbd296258d9b9c6a8c3d06d1c883eb",
+      "repoPath": "docs/evidence/expression/04_SMILE_front.png",
+      "productionPath": "renders/_facs_proof/04_SMILE_front.png",
+      "sha256": "92543e6246ed11a58a219de9265537b8942a10b877f7bac3058b30a26e01f520",
+      "sourceSha8": "92543e62",
+      "bytes": 907791,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "04_SMILE",
+      "camera": "front",
+      "aliases": [
+        "04_SMILE_front",
+        "smile_front",
+        "04_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/04_SMILE_front.png"
+    },
+    {
+      "frame": "04_SMILE_profile.png",
+      "publishedSha256": "ce04282ee423b4581babec41ef98dd422381305d1d621f91ea20f50a4591cc52",
+      "repoPath": "docs/evidence/expression/04_SMILE_profile.png",
+      "productionPath": "renders/_facs_proof/04_SMILE_profile.png",
+      "sha256": "0337acf655650a95348ca65c272aea60528e70e3c512971797f0080bb37a353b",
+      "sourceSha8": "0337acf6",
+      "bytes": 896119,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "04_SMILE",
+      "camera": "profile",
+      "aliases": [
+        "04_SMILE_profile",
+        "smile_profile",
+        "04_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/04_SMILE_profile.png"
+    },
+    {
+      "frame": "05_NOSTRIL_FLARE_front.png",
+      "publishedSha256": "8b6962168335014c5c65f0a8317c28edbcc67a8139ef6f2f84ddac1f0a79aecf",
+      "repoPath": "docs/evidence/expression/05_NOSTRIL_FLARE_front.png",
+      "productionPath": "renders/_facs_proof/05_NOSTRIL_FLARE_front.png",
+      "sha256": "a3d1685f6b9554b64bb964ea7ac2ee22b2526c3d2fa0ab33e7ffccbffaa48262",
+      "sourceSha8": "a3d1685f",
+      "bytes": 907927,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "05_NOSTRIL_FLARE",
+      "camera": "front",
+      "aliases": [
+        "05_NOSTRIL_FLARE_front",
+        "nostril_flare_front",
+        "05_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/05_NOSTRIL_FLARE_front.png"
+    },
+    {
+      "frame": "05_NOSTRIL_FLARE_profile.png",
+      "publishedSha256": "2bf543dae1aa0b6736d8eb06d31a8873b117f2782568e8a83d2aedc940ff2932",
+      "repoPath": "docs/evidence/expression/05_NOSTRIL_FLARE_profile.png",
+      "productionPath": "renders/_facs_proof/05_NOSTRIL_FLARE_profile.png",
+      "sha256": "e992a1b03efd1e96787873d025e5d13a412fa1d2c7104d776ed93aaa72de7e18",
+      "sourceSha8": "e992a1b0",
+      "bytes": 894494,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "05_NOSTRIL_FLARE",
+      "camera": "profile",
+      "aliases": [
+        "05_NOSTRIL_FLARE_profile",
+        "nostril_flare_profile",
+        "05_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/05_NOSTRIL_FLARE_profile.png"
+    },
+    {
+      "frame": "06_BROW_UP_front.png",
+      "publishedSha256": "9e99f78cb66f0cc5fb132387dd99d9e587d88fbcec25b5fecf95b1cb10873d0b",
+      "repoPath": "docs/evidence/expression/06_BROW_UP_front.png",
+      "productionPath": "renders/_facs_proof/06_BROW_UP_front.png",
+      "sha256": "bf1cc149cd3261a760e917326ad169c8e7f61351b633a8eeb8f906802af2bf92",
+      "sourceSha8": "bf1cc149",
+      "bytes": 904607,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "06_BROW_UP",
+      "camera": "front",
+      "aliases": [
+        "06_BROW_UP_front",
+        "brow_up_front",
+        "06_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/06_BROW_UP_front.png"
+    },
+    {
+      "frame": "06_BROW_UP_profile.png",
+      "publishedSha256": "deb317438d6ad4fef0c008b54b7f12676e4351480d5bcff9ee0f4631ba6df3d0",
+      "repoPath": "docs/evidence/expression/06_BROW_UP_profile.png",
+      "productionPath": "renders/_facs_proof/06_BROW_UP_profile.png",
+      "sha256": "c90a09fc4320c4e3a423bf7c5d9508f803a20d1e05f01cfda2dab3bc2c6ec410",
+      "sourceSha8": "c90a09fc",
+      "bytes": 896111,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "06_BROW_UP",
+      "camera": "profile",
+      "aliases": [
+        "06_BROW_UP_profile",
+        "brow_up_profile",
+        "06_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/06_BROW_UP_profile.png"
+    },
+    {
+      "frame": "07_BROW_DOWN_front.png",
+      "publishedSha256": "9e26b9e42c3175d7a1a6b4ae40a6a384c05b4ee1a88ccd44f2025dcac448efa7",
+      "repoPath": "docs/evidence/expression/07_BROW_DOWN_front.png",
+      "productionPath": "renders/_facs_proof/07_BROW_DOWN_front.png",
+      "sha256": "5ed82f260f5e8d7101b0020f997b97ef5252445de344e70fb7b840263b5b901d",
+      "sourceSha8": "5ed82f26",
+      "bytes": 907465,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "07_BROW_DOWN",
+      "camera": "front",
+      "aliases": [
+        "07_BROW_DOWN_front",
+        "brow_down_front",
+        "07_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/07_BROW_DOWN_front.png"
+    },
+    {
+      "frame": "07_BROW_DOWN_profile.png",
+      "publishedSha256": "e712c4437a9103f81d03dfc4efc0f4c806a0c5efa0e1fad5524585df8d02fdf6",
+      "repoPath": "docs/evidence/expression/07_BROW_DOWN_profile.png",
+      "productionPath": "renders/_facs_proof/07_BROW_DOWN_profile.png",
+      "sha256": "de8febc1b7cc2d8f1d1764b304fdabb16bff244e5af51f2b84846ef92fb5af2f",
+      "sourceSha8": "de8febc1",
+      "bytes": 893882,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "07_BROW_DOWN",
+      "camera": "profile",
+      "aliases": [
+        "07_BROW_DOWN_profile",
+        "brow_down_profile",
+        "07_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/07_BROW_DOWN_profile.png"
+    },
+    {
+      "frame": "08_CHEEK_PUFF_front.png",
+      "publishedSha256": "0df2191286ba69a5d3648e80c4a40f3167986f6123e776198079e1c62608563d",
+      "repoPath": "docs/evidence/expression/08_CHEEK_PUFF_front.png",
+      "productionPath": "renders/_facs_proof/08_CHEEK_PUFF_front.png",
+      "sha256": "9a35cf1dc088782d2b9b214bb06c6cfd096ed430abce291b2108b916d7d7b724",
+      "sourceSha8": "9a35cf1d",
+      "bytes": 910647,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "08_CHEEK_PUFF",
+      "camera": "front",
+      "aliases": [
+        "08_CHEEK_PUFF_front",
+        "cheek_puff_front",
+        "08_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/08_CHEEK_PUFF_front.png"
+    },
+    {
+      "frame": "08_CHEEK_PUFF_profile.png",
+      "publishedSha256": "6ff21a8936b89dd7a419cb67eec106ec1718e1996fddcbe52f39edf52e69cbde",
+      "repoPath": "docs/evidence/expression/08_CHEEK_PUFF_profile.png",
+      "productionPath": "renders/_facs_proof/08_CHEEK_PUFF_profile.png",
+      "sha256": "21914886576e728a2fb2d67909573417c6f459e8a6f8a3fc69697543f475ed08",
+      "sourceSha8": "21914886",
+      "bytes": 897213,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "08_CHEEK_PUFF",
+      "camera": "profile",
+      "aliases": [
+        "08_CHEEK_PUFF_profile",
+        "cheek_puff_profile",
+        "08_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/08_CHEEK_PUFF_profile.png"
+    },
+    {
+      "frame": "09_PUCKER_front.png",
+      "publishedSha256": "0fbb1e7637342ab825c79b3bda25cb11d844fe8cfe20b366c042ebe66fb51051",
+      "repoPath": "docs/evidence/expression/09_PUCKER_front.png",
+      "productionPath": "renders/_facs_proof/09_PUCKER_front.png",
+      "sha256": "ee450cec2e3d2060612d8f41290974b392656e8ad2ccba2605fc3fb5d48cc117",
+      "sourceSha8": "ee450cec",
+      "bytes": 908338,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "09_PUCKER",
+      "camera": "front",
+      "aliases": [
+        "09_PUCKER_front",
+        "pucker_front",
+        "09_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/09_PUCKER_front.png"
+    },
+    {
+      "frame": "09_PUCKER_profile.png",
+      "publishedSha256": "c8904484e9ecdfafbe1d688fbe24c9dc1e9ec20cffa4e3c4d665e90807353f3b",
+      "repoPath": "docs/evidence/expression/09_PUCKER_profile.png",
+      "productionPath": "renders/_facs_proof/09_PUCKER_profile.png",
+      "sha256": "998272cead8386d2e68ad079e882593c5c6d9f615b5e02727efca2828e6d4048",
+      "sourceSha8": "998272ce",
+      "bytes": 897783,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "09_PUCKER",
+      "camera": "profile",
+      "aliases": [
+        "09_PUCKER_profile",
+        "pucker_profile",
+        "09_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/09_PUCKER_profile.png"
+    },
+    {
+      "frame": "10_JAW_OPEN_front.png",
+      "publishedSha256": "14ef07b20690265f95281081bad81f46f520b25bffeb039f4e68f7cca7d21837",
+      "repoPath": "docs/evidence/expression/10_JAW_OPEN_front.png",
+      "productionPath": "renders/_facs_proof/10_JAW_OPEN_front.png",
+      "sha256": "3af2bcddc255df91a962256b7303a8f5382fa8775838f538d81d614db82acda0",
+      "sourceSha8": "3af2bcdd",
+      "bytes": 910863,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "10_JAW_OPEN",
+      "camera": "front",
+      "aliases": [
+        "10_JAW_OPEN_front",
+        "jaw_open_front",
+        "10_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/10_JAW_OPEN_front.png"
+    },
+    {
+      "frame": "10_JAW_OPEN_profile.png",
+      "publishedSha256": "d2e1cf9759c9bc63c925f71513156c1dadddd5145a21a08797fb33dd29d8e969",
+      "repoPath": "docs/evidence/expression/10_JAW_OPEN_profile.png",
+      "productionPath": "renders/_facs_proof/10_JAW_OPEN_profile.png",
+      "sha256": "c01544e78fd84777d60171ddfdadfbb0b8f4d5ab765d26a8c1097a9680fbf263",
+      "sourceSha8": "c01544e7",
+      "bytes": 915186,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "10_JAW_OPEN",
+      "camera": "profile",
+      "aliases": [
+        "10_JAW_OPEN_profile",
+        "jaw_open_profile",
+        "10_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/10_JAW_OPEN_profile.png"
+    },
+    {
+      "frame": "11_SQUINT_front.png",
+      "publishedSha256": "a48ce16b07e642b8af7cc238b6f583023195652d8d1055504968a0204dd6ace8",
+      "repoPath": "docs/evidence/expression/11_SQUINT_front.png",
+      "productionPath": "renders/_facs_proof/11_SQUINT_front.png",
+      "sha256": "87b2fbbbefc0f39abd25c0a9412d69502c0eec426a217021df251e0f209b5f7e",
+      "sourceSha8": "87b2fbbb",
+      "bytes": 905618,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "11_SQUINT",
+      "camera": "front",
+      "aliases": [
+        "11_SQUINT_front",
+        "squint_front",
+        "11_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/11_SQUINT_front.png"
+    },
+    {
+      "frame": "11_SQUINT_profile.png",
+      "publishedSha256": "2dd70b3259c1fa3609aa02fd0338ebb4fdfd43aa6c25c8f9b1c7a5381f462e46",
+      "repoPath": "docs/evidence/expression/11_SQUINT_profile.png",
+      "productionPath": "renders/_facs_proof/11_SQUINT_profile.png",
+      "sha256": "f8fbe9c96424a7cd7fcab541ef450c26af521808a3b75aa0c55b8faf31fec241",
+      "sourceSha8": "f8fbe9c9",
+      "bytes": 893308,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "11_SQUINT",
+      "camera": "profile",
+      "aliases": [
+        "11_SQUINT_profile",
+        "squint_profile",
+        "11_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/11_SQUINT_profile.png"
+    },
+    {
+      "frame": "12_DISGUST_front.png",
+      "publishedSha256": "b13ddaf45361a4ba5d334cbba5b0d6d2d36919d845a5439742a18b20e9ed1d87",
+      "repoPath": "docs/evidence/expression/12_DISGUST_front.png",
+      "productionPath": "renders/_facs_proof/12_DISGUST_front.png",
+      "sha256": "afe170b2769acc9f0d33ce02076d832ed1788a35a7a9eb962615c7c77ab31fc9",
+      "sourceSha8": "afe170b2",
+      "bytes": 908586,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "12_DISGUST",
+      "camera": "front",
+      "aliases": [
+        "12_DISGUST_front",
+        "disgust_front",
+        "12_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/12_DISGUST_front.png"
+    },
+    {
+      "frame": "12_DISGUST_profile.png",
+      "publishedSha256": "90b47813c2c50851d10a9f932d522712b40df24f0a379ec1030f5a50df03496d",
+      "repoPath": "docs/evidence/expression/12_DISGUST_profile.png",
+      "productionPath": "renders/_facs_proof/12_DISGUST_profile.png",
+      "sha256": "ff95add43f7df6bdf410159d1c6ce9ab5498b3598b03571b591c6c3e72c19604",
+      "sourceSha8": "ff95add4",
+      "bytes": 894407,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "12_DISGUST",
+      "camera": "profile",
+      "aliases": [
+        "12_DISGUST_profile",
+        "disgust_profile",
+        "12_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/12_DISGUST_profile.png"
+    }
+  ],
+  "measurements": [
+    "mouth_proof.json"
+  ]
+}

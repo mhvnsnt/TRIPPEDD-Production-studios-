@@ -42,6 +42,10 @@ MP = {
 
 lms = json.load(open(os.path.join(WORK, "landmarks.json")))
 cam = json.load(open(os.path.join(WORK, "ortho_camera.json")))
+semantic_eye_path = os.path.join(WORK, "semantic_eyelids.json")
+if not os.path.exists(semantic_eye_path):
+    sys.exit("semantic_eyelids.json missing — run measure_eyelids_semantic.py first; eye contours are never allowed to fall back to first-hit raycasts")
+semantic_eyes = json.load(open(semantic_eye_path))
 if not lms.get("detected"):
     sys.exit("no landmarks measured — run measure_face.py stages 1-2 first")
 osc = cam["orthoScale"]
@@ -69,6 +73,16 @@ def pixel_to_world(px, py):
 
 contours, missed = {}, []
 for name, idxs in MP.items():
+    # EYES are authoritative only from the semantic 3-D solver. The old
+    # pixel->first-hit path is retained for lips/jaw only; using it for eyelids
+    # is the exact fold/brow failure this pipeline is eliminating.
+    if name.startswith("eye_"):
+        if name not in semantic_eyes["contours"]:
+            sys.exit("semantic eyelid contour missing: " + name)
+        contours[name] = semantic_eyes["contours"][name]
+        print("%-18s semantic 3-D authority: %2d points" %
+              (name, len(contours[name])))
+        continue
     pts = []
     for i in idxs:
         p = by_index.get(i)
@@ -131,7 +145,7 @@ print("  roll off world-horizontal: %.2f degrees" % math.degrees(math.asin(max(-
 
 json.dump({
     "lod": LOD,
-    "method": "MediaPipe 478-point contours raycast onto the real surface; frame derived from "
+    "method": "MediaPipe 478-point mouth contours raycast onto the real surface; eyelid contours come from semantic canonical-3D authority; frame derived from "
               "the measured inner-lip (aperture) curve, not from world axes or the bounding box",
     "contours": contours,
     "missed": missed,

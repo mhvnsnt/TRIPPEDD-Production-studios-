@@ -7,7 +7,6 @@ on:
       - "tools/environment/build_opencue_first_shot_job.py"
       - "tools/environment/build_opencue_pyoutline.py"
       - "tools/environment/test_opencue_first_shot_job.py"
-      - "tools/environment/opencue_first_shot_dispatch.py"
       - ".github/workflows/opencue-adapter-test.yml"
   push:
     branches: [main]
@@ -45,6 +44,7 @@ jobs:
             "shot_id": "GM-WORLD-0001-FIRST-SHOT",
             "world_id": "GM-WORLD-0001",
             "frame": 1,
+            "bytes_reopened": true,
             "source_scene": {
               "path": ".artifacts/opencue/GM-WORLD-0001-FIRST-SHOT.blend",
               "sha256": "${sha}"

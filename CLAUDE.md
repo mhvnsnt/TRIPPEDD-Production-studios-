@@ -243,3 +243,59 @@ Two open-source donors, and neither half is sufficient alone:
   the correspondence is mean 0.017 / p95 0.032 while the lid opening is 0.025, so the donor is
   coarser than the feature. `facs_eyeBlink` travels 0.08–0.09 openings; Mars's own contour blink
   travels 1.05–1.07. Both are kept and both numbers are recorded.
+
+## OWNER LAW #3 — PULL THE OPEN SOURCE FIRST. BY HAND IS THE EXCEPTION. (2026-09-12, PERMANENT)
+
+Owner, verbatim: *"You keep trying to do it by hand in between. Like, you keep breaking the rules in
+between... Make a rule about pulling in open source to help unless I actually ask you to do stuff by
+hand or in detail, like surgery."*
+
+**Before writing geometry, rigging, simulation or fitting code: find the project that already does
+it and install it.** Hand-rolling is permitted only when the owner asks for it explicitly, or when a
+real search has found nothing that fits and that search is reported.
+
+The receipts, all from one session:
+- Five turns hand-tuning globe diameter / seat depth / aperture width against a sphere I dropped
+  into a prism I cut myself. The knobs are not independent, so every fix broke the last one.
+- The actual cause was a **similarity transform**: 7 degrees of freedom for a whole head, off by
+  **5.9 mm mean / 15.7 mm worst**. One `pip install` (scipy TPS + trimesh/pycpd/libigl) and a
+  non-rigid warp took eye placement error from **4.7 mm to 0.4 mm**, in one pass, for every part.
+- Rigify ships a complete eyelid rig. It is in the Blender that is already installed.
+- ICT-FaceKit ships eyeball + socket + **eye_occlusion** + lacrimal + **eyelashes** as matched parts.
+  I built a sphere instead and then fought see-through lids for hours.
+
+**THE STACK THAT IS ALREADY HERE — USE IT BEFORE WRITING ANYTHING NEW:**
+`vendor/ict/` ICT-FaceKit (MIT: FACS, eye assembly, lashes, teeth) · Rigify (in Blender: face, lid,
+jaw, tongue rigs) · `vendor/opensource/mpfb2/` MakeHuman · trimesh · rtree · pycpd · libigl · scipy
+TPS · MediaPipe · `assets/donor/warp/` the non-rigid fit.
+
+## OWNER LAW #4 — WATCH IT MOVE. A FRAME IS NOT MOTION. (2026-09-12, PERMANENT)
+
+Owner, verbatim: *"you don't even try and use all the tools to actually watch things as they play it
+visually. Like, you don't even try and watch actual videos play like a video. You just be trying to
+look at frames, and then you lie about what's rendering in the frame."*
+
+- **Anything that MOVES is judged as a SEQUENCE.** A blink, a flare, a talk pass, hair — render the
+  motion and step every frame. A single still cannot show whether a lid travels or an outline sits
+  still, which is exactly the bug that survived six turns.
+- **Never describe a render in words that flatter it.** "Largely gone", "much better", "looks right"
+  are banned when a pixel count or the owner's own eyes say otherwise. State the number and show the
+  image. He caught me doing this and he was right.
+- **When the metric and the picture disagree, the picture wins and the METRIC IS THE BUG.** Receipts:
+  occlusion counted a lid peeling an eye OPEN as 84% closed; a 25-ray vertical line scored 0/25 while
+  a pale sheet sat beside it; the cut rim satisfied "nothing reaches the globe" without the eye being
+  shut. Every one of those passed while the render was visibly wrong.
+
+## OWNER LAW #5 — WHAT HE SAYS IS THE OBSERVATION. WHAT THE TOOL SAYS IS A READING. (2026-09-12)
+
+Owner, verbatim: *"You keep saying the blink closed one eye and not the other. I never said that...
+What I said the difference between the eyes was is one of them was too low and not on the texture
+correctly. You're really not listening to what I'm saying."*
+
+He was right. "Closes one eye and not the other" was **my ray metric's claim**, and I repeated it
+back at him for turns while he was describing something else entirely — placement against the
+texture. **Never restate an instrument's story as if it were the owner's report.** When he describes
+a defect, that description is the specification; the tool's job is to find it, not to argue with it.
+And his diagnoses have been right: *"the eyelids are probably not thick enough to cover the eyeball"*
+(a zero-thickness shell — correct), *"you're not moving the actual eyelid line"* (correct, and it was
+the whole defect).

@@ -18,8 +18,10 @@ const evidence = [
 
 const links = [
   ['Face authority', `https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/${FACE_BRANCH}/docs/character/MARS-FACE-AUTHORITY.md`],
+  ['Face linework contract', 'https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/character/FACE-LINEWORK-TO-RIG.md'],
   ['Motion proof', `https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/tools/character/motion_proof.py`],
   ['Hair measurement', `https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/tools/character/measure_hair.py`],
+  ['Ear map', `https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/tools/character/ear_motion_map.py`],
   ['MARS placement manifest', 'https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/artifacts/evidence/god_molecule/mars_lod2_placement_plate_manifest.json'],
 ];
 
@@ -30,13 +32,15 @@ export default function Page() {
       <section>
         <p className="eyebrow">EP01 / MARS / LIVE WORK SURFACE</p>
         <h1>FACE + MOTION LAB</h1>
-        <p className="lead">A subscription-free control surface for the actual production repository. The production runtime stays authoritative; this Next.js surface exposes the latest measurable face, hair, motion, and evidence work without pretending a screenshot is a render PASS.</p>
+        <p className="lead">Subscription-free production cockpit. The production runtime stays authoritative; this Next.js surface exposes measured anatomy, visual evidence, motion proof, hair work, and the new ear-mapping gate without pretending a screenshot is a render PASS.</p>
 
         <div className="statusGrid">
           <article><b>FACE AUTHORITY</b><span>MediaPipe semantic landmarks → measured lid/brow/nose anchors</span><em>STRUCTURAL / FAIL-CLOSED</em></article>
-          <article><b>EYE PLACEMENT</b><span>GNM + ICT-FaceKit donors; similarity/non-rigid fit recorded</span><em>VISUAL REVIEW REQUIRED</em></article>
+          <article><b>EYE + LINEWORK</b><span>Source brow, lid, nostril, nose and mouth lines become 3D constraints rather than screen-space guesses.</span><em>OVERLAY GATE</em></article>
+          <article><b>EAR MOTION</b><span>Measured ear-region candidates + hair occlusion first; subtle controls only after geometry is confirmed.</span><em>MAP BEFORE RIG</em></article>
           <article><b>HAIR</b><span>Trimesh lock segmentation is already in the production tree; next step is bone chains + dynamics.</span><em>MOTION NEXT</em></article>
-          <article><b>MOTION</b><span>motion_proof.py renders every frame and emits a video when ffmpeg is available.</span><em>SEQUENCE GATE</em></article>
+          <article><b>EXPRESSIONS</b><span>Named FACS controls are available after anatomy/placement gates. Blink, flare, brow, smile and squint have sequence proofs.</span><em>SEQUENCE GATE</em></article>
+          <article><b>MOTION</b><span>motion_proof.py renders every frame and emits a video when ffmpeg is available.</span><em>WATCH THE ACTUAL CLIP</em></article>
         </div>
 
         <div className="toolbar">
@@ -45,7 +49,7 @@ export default function Page() {
         </div>
 
         <h2>Visual evidence</h2>
-        <p className="note">These are the committed expression plates from the latest facial-toolchain work. They are evidence to inspect, not an automatic visual PASS.</p>
+        <p className="note">Committed expression plates are evidence to inspect, not automatic PASS. The next visual artifact should be the supplied linework overlaid on the actual model, followed by a rendered motion sequence.</p>
         <div className="gallery">
           {evidence.map(([label, path]) => (
             <figure key={path}>

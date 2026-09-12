@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const REPO = 'https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-';
 const FACE_BRANCH = 'claude/trippedd-toolchain-provisioning-8pccfc';
 
@@ -61,4 +62,10 @@ export default function Page() {
       </section>
     </main>
   );
+=======
+import { StudioClient } from './studio-client';
+
+export default function Page() {
+  return <StudioClient />;
+>>>>>>> origin/claude/trippedd-toolchain-provisioning-8pccfc
 }

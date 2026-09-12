@@ -286,6 +286,40 @@ look at frames, and then you lie about what's rendering in the frame."*
   a pale sheet sat beside it; the cut rim satisfied "nothing reaches the globe" without the eye being
   shut. Every one of those passed while the render was visibly wrong.
 
+## OWNER LAW #6 — NEVER HOLD AN ASSET HOSTAGE. PUSH IT. (2026-09-12, PERMANENT)
+
+Owner, verbatim: *"never ever create a blockage or stoppage by holding a geo model or anything or a
+scene or a file hostage always push them to the drives we have available... we should never hold
+production by holding anything hostage from the other agents... every file image model anything ever
+made should be pushed to the repo or the drive or somewhere where everyone every other agent and
+every other person that's working on this can see the files and don't have to beg and plead for
+them."*
+
+He had to say this twice. The receipt for why:
+
+`assets/source_models/*.glb` was in `.gitignore` under the reasoning "supplied source models are
+pulled from Drive by provenance, not committed as blobs". **`MARS_LOD2.glb` is 2 MB.** Every other
+agent and every CI runner checked out an empty directory, could not render the real mesh, and spent
+days writing preflight gates and PR comments asking for a file that was sitting on one container's
+disk the whole time. One of them wrote *"the only thing I still cannot honestly retrieve from GitHub
+is the actual hostage GLB binary itself."* That stoppage was ours, and it was a one-line ignore rule.
+
+**THE RULE:**
+1. **Every model, scene, rig, texture, render, plate and capture goes to the repo.** GitHub's hard
+   limit is 100 MB per file; under that, commit it. `MARS_source.glb` is 61.8 MB and is committed.
+2. **Over 100 MB, it goes to Drive and the manifest records the file id**, so the retrieval is one
+   documented command and never a request to a human.
+3. **"Pulled by provenance" is not a reason to withhold bytes.** Provenance is a record *about* a
+   file; it is not a substitute for the file. Ship both.
+4. **An ignore rule that hides production input is a production outage.** Treat it as one.
+5. This is OWNER LAW #2 (published or it does not exist) applied to inputs as well as outputs. A
+   source asset no other agent can read is exactly as absent as an unpublished render.
+
+**AND: WORK ON MAIN. MERGE NON-DESTRUCTIVELY.** Owner: *"this should all be going on the main branch
+everything should be made mergeable and a non-destructive way."* Do not leave the real work parked on
+a branch behind a PR nobody can merge while other agents rebuild it from scratch. Merge main in,
+resolve conflicts by KEEPING BOTH GOOD IDEAS rather than picking a side, and push.
+
 ## OWNER LAW #5 — WHAT HE SAYS IS THE OBSERVATION. WHAT THE TOOL SAYS IS A READING. (2026-09-12)
 
 Owner, verbatim: *"You keep saying the blink closed one eye and not the other. I never said that...

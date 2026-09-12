@@ -13,6 +13,7 @@ coverage/
 # 1.9 GB of binaries that the toolchain re-downloads on demand — never repo content.
 .trippedd_models
 dist
+.next/
 footage/
 
 # Contact sheets are derived from the footage; regenerate, don't commit.
@@ -24,19 +25,24 @@ public/contact/
 # Analysed evidence — rebuilt from the footage, not repo content.
 .trippedd_tools/
 
-# Supplied source models are pulled from Drive by provenance, not committed as blobs.
-assets/source_models/*.glb
-assets/source_models/*.fbx
-assets/source_models/*.obj
+# OWNER LAW #6 (2026-09-12): NEVER HOLD AN ASSET HOSTAGE.
+# These four lines were a production stoppage. MARS_LOD2.glb is 2 MB. It was
+# excluded from the checkout for "provenance" reasons, so every other agent and
+# every CI runner saw an empty directory, could not render the real mesh, and
+# spent days asking for a file that was sitting on one container's disk. An
+# agent should never have to beg for bytes. Committed, all of them.
+!assets/source_models/*.glb
+!assets/source_models/*.fbx
+!assets/source_models/*.obj
 public/model_views/
 
 renders/
 vendor/blender
-assets/rigs/*.blend
-assets/rigs/*.glb
+!assets/rigs/*.blend
+!assets/rigs/*.glb
 .trippedd_libs/
 .trippedd_models/
-assets/rigs/*.blend1
+assets/rigs/*.blend1  # editor backups only -- not evidence
 vendor/*
 vendor/rhubarb/
 

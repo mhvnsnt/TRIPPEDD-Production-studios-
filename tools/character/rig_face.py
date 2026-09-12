@@ -598,6 +598,19 @@ def lid_close(side, meet=0.40):
     """
     up, lo, centre, ez, ey, opening = eye_frame(side)
     n = min(len(up), len(lo))
+
+    # Semantic exclusion gate: the blink may deform only vertices closer to
+    # the measured lid margins than to the published eyebrow region.
+    _CF = os.path.join(ROOT, "renders", "_rig_measure", "canonical_fit.json")
+    if not os.path.exists(_CF):
+        die("SEMANTIC LID GATE: canonical_fit.json missing; refusing to build blink")
+    _cf = json.load(open(_CF)).get("sets", {})
+    _brow_raw = _cf.get("eyebrow_%s" % side)
+    if not _brow_raw:
+        die("SEMANTIC LID GATE: eyebrow_%s set missing from canonical fit" % side)
+    _BROW_LOCAL = [F.local(V(p)) for p in _brow_raw]
+    _LID_LOCAL = [F.local(V(p)) for p in (up + lo)]
+
     # the closed lid line: one target per station, from HIS OWN two contours
     meet_pts = [lo[i] + (up[i] - lo[i]) * meet for i in range(n)]
     band = opening * 1.9
@@ -634,11 +647,30 @@ def lid_close(side, meet=0.40):
     # eyebrows to the blink. And when we get to the eyebrows, now the eyebrows
     # are gonna be fucked up." A vertex whose NEAREST named feature is the brow
     # is not lid tissue, however close the band puts it, so it never travels.
+    # WHICH BROW SET THIS TRUSTS MATTERS MORE THAN THE GATE ITSELF.
+    # MEASURED 2026-09-12: MediaPipe's FaceLandmarker misfits this face by one
+    # feature vertically -- its eyebrow ring lands on HIS EYES. canonical_fit.json
+    # was built from it and inherits that, so a brow exclusion keyed to it excludes
+    # the very vertices that should blink. The owner's own drawn brow line wins
+    # whenever it has been lifted to 3D; the canonical set is a loudly-flagged
+    # fallback, never a silent one.
+    _lw = os.path.join(ROOT, "renders", "_rig_measure", "linework_3d.json")
     _cf = os.path.join(ROOT, "renders", "_rig_measure", "canonical_fit.json")
     _brow = []
-    if os.path.exists(_cf):
+    if os.path.exists(_lw):
+        _s = json.load(open(_lw)).get("sets", {})
+        _brow = [F.local(V(q)) for q in _s.get("eyebrow_%s" % side, [])]
+        if _brow:
+            print("     lid_%s: brow exclusion from the OWNER'S DRAWN brow line "
+                  "(%d pts)" % (side, len(_brow)))
+    if not _brow and os.path.exists(_cf):
         _brow = [F.local(V(q)) for q in
                  json.load(open(_cf)).get("sets", {}).get("eyebrow_%s" % side, [])]
+        if _brow:
+            print("     lid_%s: WARNING -- brow exclusion falling back to "
+                  "canonical_fit.json, whose eyebrow ring is MEASURED to land on his "
+                  "EYES (up to 38.9 mm low). Run ingest_linework.py + linework_to_3d.py "
+                  "to key this to his own marks." % side)
     if not _brow:
         die("lid_close(%s): no canonical eyebrow set -- refusing to build a blink "
             "that cannot tell lid tissue from brow tissue" % side)
@@ -653,6 +685,8 @@ def lid_close(side, meet=0.40):
                 if w > w_best:
                     w_best, tgt, src = w, meet_pts[i], q
         if w_best <= 0 or tgt is None: return None
+        # Never let the blink win a vertex whose nearest named feature is the
+        # eyebrow. A semantic gate, not a visual guess.
         lid_d = min((lp - F.local(q)).length for i in range(n) for q in (up[i], lo[i]))
         if min((lp - q).length for q in _brow) <= lid_d: return None
         # travel this vertex the same way its nearest margin station travels

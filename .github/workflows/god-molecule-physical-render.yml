@@ -55,8 +55,22 @@ jobs:
         run: |
           set -euxo pipefail
           mkdir -p .artifacts/drive
-          python3 -m gdown --folder "$DRIVE_FOLDER_URL" -O .artifacts/drive --remaining-ok || true
+          python3 -m gdown --folder "$DRIVE_FOLDER_URL" -O .artifacts/drive || true
           find .artifacts/drive -type f -printf '%p %s bytes\n' | sort | head -300
+
+      - name: Retrieve God Molecule lab source and evidence
+        env:
+          GOD_REPO: mhvnsnt/God-Molecule-Show-Studio
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/god-molecule-source
+          echo "GOD_MOLECULE_REPO=$GOD_REPO" | tee .artifacts/god-molecule-source/source.txt
+          if git clone --depth=1 "https://x-access-token:${GITHUB_TOKEN}@github.com/${GOD_REPO}.git" .artifacts/god-molecule-source/repo; then
+            echo "GOD_MOLECULE_SOURCE: AVAILABLE"
+            find .artifacts/god-molecule-source/repo -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' -o -iname '*mouth*frame*.json' -o -iname '*gnm*donor*.npz' \) -print | sort | tee .artifacts/god-molecule-source/candidates.txt
+          else
+            echo "GOD_MOLECULE_SOURCE: NOT_AVAILABLE_TO_WORKFLOW_TOKEN" | tee .artifacts/god-molecule-source/state.txt
+          fi
 
       - name: Build evidence inventory
         run: |

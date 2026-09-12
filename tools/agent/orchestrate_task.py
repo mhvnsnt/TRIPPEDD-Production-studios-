@@ -14,9 +14,11 @@ import json
 import mimetypes
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+RUNNER = ROOT / "tools" / "agent" / "openhands_runner.py"
 
 
 def load(path: Path) -> dict:
@@ -80,13 +82,7 @@ def artifact_records(worktree: Path, declared: list[str]) -> list[dict]:
             records.append({"path": rel, "status": "UNKNOWN", "reason": "declared artifact missing"})
             continue
         mime = mimetypes.guess_type(p.name)[0] or "application/octet-stream"
-        records.append({
-            "path": rel,
-            "status": "AVAILABLE",
-            "sha256": sha256(p),
-            "bytes": p.stat().st_size,
-            "mime": mime,
-        })
+        records.append({"path": rel, "status": "AVAILABLE", "sha256": sha256(p), "bytes": p.stat().st_size, "mime": mime})
     return records
 
 
@@ -94,13 +90,7 @@ def verification_records(worktree: Path, commands: list[str]) -> list[dict]:
     results: list[dict] = []
     for command in commands:
         proc = subprocess.run(command, cwd=worktree, shell=True, text=True, capture_output=True)
-        results.append({
-            "command": command,
-            "returncode": proc.returncode,
-            "status": "PASS" if proc.returncode == 0 else "FAIL",
-            "stdout_tail": proc.stdout[-4000:],
-            "stderr_tail": proc.stderr[-4000:],
-        })
+        results.append({"command": command, "returncode": proc.returncode, "status": "PASS" if proc.returncode == 0 else "FAIL", "stdout_tail": proc.stdout[-4000:], "stderr_tail": proc.stderr[-4000:]})
         if proc.returncode != 0:
             break
     return results
@@ -132,7 +122,6 @@ def emit_evidence(worktree: Path, contract: dict, receipt: dict) -> Path | None:
         status = "UNKNOWN"
     else:
         status = "PASS"
-
     gates = [
         {"name": "agent_exit", "result": "PASS" if receipt.get("returncode") == 0 else "FAIL"},
         {"name": "path_scope", "result": "PASS" if scope_ok else "FAIL"},
@@ -147,11 +136,7 @@ def emit_evidence(worktree: Path, contract: dict, receipt: dict) -> Path | None:
         "artifacts": artifacts,
         "commands": [v["command"] for v in verification],
         "gates": gates,
-        "notes": [
-            f"source_commit={receipt['source_commit']}",
-            f"task_id={receipt['task_id']}",
-            "UNKNOWN is never PASS",
-        ],
+        "notes": [f"source_commit={receipt['source_commit']}", f"task_id={receipt['task_id']}", "UNKNOWN is never PASS"],
     }
     write_json(target_path, manifest)
     receipt["evidence_manifest"] = str(target_path.relative_to(worktree))
@@ -159,10 +144,21 @@ def emit_evidence(worktree: Path, contract: dict, receipt: dict) -> Path | None:
     return target_path
 
 
+def resolve_agent(agent: str, worktree: Path, contract_path: Path, receipt_path: Path) -> list[str] | None:
+    if agent == "mini-swe-agent":
+        exe = shutil.which("mini") or shutil.which("mini-swe-agent")
+        return [exe, "--task", load(contract_path)["goal"], "--exit-immediately"] if exe else None
+    if agent == "openhands":
+        if not RUNNER.is_file():
+            return None
+        return [sys.executable, str(RUNNER), str(contract_path), "--receipt", str(receipt_path)]
+    return None
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("contract", type=Path)
-    p.add_argument("--agent", choices=["mini-swe-agent"], default="mini-swe-agent")
+    p.add_argument("--agent", choices=["mini-swe-agent", "openhands"], default="mini-swe-agent")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--receipt", type=Path, required=True)
     args = p.parse_args()
@@ -171,7 +167,6 @@ def main() -> int:
         c = load(args.contract)
     except Exception as exc:
         return fail(f"cannot read task contract: {exc}")
-
     required = ["taskId", "goal", "scope", "sourceCommit", "verification", "outputs"]
     missing = [k for k in required if not c.get(k)]
     if missing:
@@ -181,7 +176,6 @@ def main() -> int:
         return fail("scope path lists are invalid")
     if c["verification"].get("unknownNeverPass") is not True:
         return fail("verification.unknownNeverPass must be true")
-
     worktree = Path(c.get("worktree", ROOT))
     if not worktree.is_dir() or not (worktree / ".git").exists():
         return fail(f"worktree is not a usable git worktree: {worktree}")
@@ -191,15 +185,13 @@ def main() -> int:
     actual_commit = head.stdout.strip()
     if actual_commit != c["sourceCommit"]:
         return fail(f"sourceCommit mismatch: contract={c['sourceCommit']} HEAD={actual_commit}")
-
     before = changed_paths(worktree)
     if before:
         return fail("worktree is not clean before agent run; refusing to risk unrelated evidence: " + ", ".join(before[:20]))
 
-    exe = shutil.which("mini") or shutil.which("mini-swe-agent")
-    command = [exe, "--task", c["goal"], "--exit-immediately"] if exe else ["mini", "--task", c["goal"], "--exit-immediately"]
+    command = resolve_agent(args.agent, worktree, args.contract, args.receipt)
     receipt = {
-        "$schema": "trippedd.agent-orchestration/v3",
+        "$schema": "trippedd.agent-orchestration/v4",
         "agent": args.agent,
         "agent_version": "UNKNOWN",
         "task_id": c["taskId"],
@@ -207,10 +199,10 @@ def main() -> int:
         "worktree": str(worktree),
         "contract": str(args.contract),
         "contract_sha256": sha256(args.contract),
-        "command": command,
+        "command": command or [],
         "verification": c["verification"],
         "outputs": c["outputs"],
-        "status": "DRY_RUN" if args.dry_run else ("AVAILABLE" if exe else "UNKNOWN"),
+        "status": "DRY_RUN" if args.dry_run else ("AVAILABLE" if command else "UNKNOWN"),
         "returncode": None,
         "changed_paths": before,
         "scope_violations": {"allowed_misses": [], "forbidden_hits": []},
@@ -220,14 +212,13 @@ def main() -> int:
         "evidence_manifest": None,
         "evidence_status": "UNKNOWN",
     }
-
     if args.dry_run:
         write_json(args.receipt, receipt)
         print(json.dumps(receipt, indent=2))
         return 0
-    if not exe:
+    if not command:
         write_json(args.receipt, receipt)
-        return fail("mini-SWE-agent is not installed")
+        return fail(f"{args.agent} runtime is unavailable")
 
     proc = subprocess.run(command, cwd=worktree, text=True)
     receipt["returncode"] = proc.returncode
@@ -239,7 +230,6 @@ def main() -> int:
     post = git(worktree, "rev-parse", "HEAD")
     if post.returncode == 0:
         receipt["post_run_commit"] = post.stdout.strip()
-
     if proc.returncode != 0:
         receipt["status"] = "FAILED"
     elif forbidden_hits or allowed_misses:
@@ -247,10 +237,8 @@ def main() -> int:
     else:
         receipt["status"] = "EXECUTED"
         receipt["verification_results"] = verification_records(worktree, c["verification"].get("commands", []))
-
     emit_evidence(worktree, c, receipt)
     write_json(args.receipt, receipt)
-
     if receipt["status"] in {"FAILED", "SCOPE_VIOLATION"}:
         return 45
     if receipt.get("evidence_status") != "PASS":

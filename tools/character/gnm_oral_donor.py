@@ -79,6 +79,12 @@ width_m = A["aperture"]["width"]
 # published inter-molar width, through Mars's own millimetre anchor.
 ARCH_MM = float(opt("--arch-mm", "57.0"))
 teeth_idx = group("teeth")
+# The dental arch is the anatomical centerline authority for the donor.
+# Do NOT assume the donor lip-group centroid and the tooth arch share the same
+# lateral origin. They do not have to, and that offset is exactly the kind of
+# small error that makes the tooth/cavity seam read like a one-sided snarl.
+arch_center_g = V[teeth_idx].mean(0)
+arch_center_local_x = float((arch_center_g - origin_g) @ RIGHT_G)
 arch_g = float(V[teeth_idx][:, 0].max() - V[teeth_idx][:, 0].min())
 MM_MARS = width_m / 50.0                    # Mars: MW = 0.1930 is a ~50 mm mouth
 S = (ARCH_MM * MM_MARS) / arch_g
@@ -91,6 +97,10 @@ print("  (a lip-anchored scale would have been x%.4f, which put the arch at %.1f
 def to_mars(P):
     """donor vertex -> Mars world, through both measured mouth frames."""
     local = (P - origin_g) @ Mg            # into the donor's mouth frame
+    # Re-anchor the complete oral assembly on the dental arch centerline, not
+    # the donor lip-band centroid. This keeps the teeth/cavity gap centered in
+    # Mars's measured mouth even when the donor's lip band is asymmetric.
+    local[:, 0] -= arch_center_local_x
     return (local * S) @ Mm.T + origin_m   # out through Mars's
 
 manifest = {"source": "google/GNM v3_0 gnm_head.npz", "license": "Apache-2.0",
@@ -105,6 +115,11 @@ manifest = {"source": "google/GNM v3_0 gnm_head.npz", "license": "Apache-2.0",
                                    "cavity; the back of it punched through the cavity walls and "
                                    "rendered as fangs at the mouth corners"
                                    % (arch_g * S_lip / MM_MARS),
+                    "centerline": {
+                        "anchor": "DENTAL_ARCH_CENTROID",
+                        "donorLocalX": round(arch_center_local_x, 6),
+                        "target": "MARS_MEASURED_MOUTH_CENTER"
+                    },
                     "method": "similarity transform between two MEASURED mouth frames, scaled so "
                               "the dental arch matches published inter-molar width"},
             "components": {}}
@@ -129,7 +144,8 @@ for comp in COMPONENTS:
             member = np.zeros(len(V), bool); member[group(gname)] = True
             cls[member[used]] = ci
     np.savez_compressed(os.path.join(OUT, comp + ".npz"),
-                        vertices=P.astype(np.float32), triangles=F.astype(np.int32),
+                        vertices=P.astype(np.float32),
+                        oral_centerline_local_x=np.array([arch_center_local_x], dtype=np.float32), triangles=F.astype(np.int32),
                         vertex_class=cls)
     manifest["components"][comp] = {
         "vertices": int(len(P)), "triangles": int(len(F)),
@@ -154,4 +170,6 @@ if rows and len(t_used):
     print("  tongue expression deltas  %d shapes x %d verts" % (len(rows), len(t_used)))
 
 json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=2)
+print("\nCENTERLINE: dental arch centroid re-anchored to Mars measured mouth center")
+print("  donor local X correction: %.6f" % arch_center_local_x)
 print("\ndonor -> %s" % OUT)

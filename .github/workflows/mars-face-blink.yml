@@ -45,10 +45,10 @@ jobs:
           set -euo pipefail
           VER=4.2.1
           curl -fsSL -o /tmp/blender.tar.xz \
-            "https://download.blender.org/release/Blender4.2/blender-\${VER}-linux-x64.tar.xz"
+            "https://download.blender.org/release/Blender4.2/blender-${VER}-linux-x64.tar.xz"
           tar -xf /tmp/blender.tar.xz -C /opt
-          echo "/opt/blender-\${VER}-linux-x64" >> "\${GITHUB_PATH}"
-          /opt/blender-\${VER}-linux-x64/blender --version
+          echo "/opt/blender-${VER}-linux-x64" >> "${GITHUB_PATH}"
+          /opt/blender-${VER}-linux-x64/blender --version
 
       - name: Detect 478 landmarks on the real Mars mesh
         run: |

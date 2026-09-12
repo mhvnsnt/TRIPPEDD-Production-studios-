@@ -4,7 +4,7 @@
 
 Turn `EP01-origin-opening-v3-alley-police` into a reproducible 37-second animation proof without falling back to a slideshow treatment.
 
-The current build now has a procedural teen-performance layer in addition to the scene motion data. The teens are constructed from reusable body parts so the render can change pose, lean, arm swing, leg placement and head direction over time.
+The current build has a procedural teen-performance layer in addition to the scene motion data. The teens are constructed from reusable body parts so the render can change pose, lean, arm swing, leg placement and head direction over time.
 
 ## Layer stack
 
@@ -35,7 +35,15 @@ Reusable performance vocabulary currently includes:
 - throw
 - flee / flee faster
 
-The rig deliberately uses simple stick-figure construction while adding independent limb geometry and asynchronous movement between the three teens. This is the foundation for giving each teen a recognizable personality through performance without locking final names or character identities yet.
+The rig uses simple stick-figure construction while adding independent limb geometry and asynchronous movement between the three teens. Each numeric body/head/limb value is now interpolated between pose extremes rather than snapping from one pose to another. Performer-specific delay and tempo values also stagger the shared action arc, so the three characters do not react as synchronized puppets.
+
+Current provisional performance identities remain:
+
+- Teen 01 — impulsive: commits first and farther.
+- Teen 02 — cautious: reacts later and stays more guarded.
+- Teen 03 — deadpan: reacts latest and with less movement.
+
+These are performance placeholders, not final locked names or immutable character canon.
 
 ## Build order
 
@@ -69,6 +77,20 @@ The rig deliberately uses simple stick-figure construction while adding independ
 - Hold the awkward reaction.
 - Hard cut to title.
 
+## Regression checks
+
+`tools/test_teen_performance.py` is a stdlib-only regression test for the character rig. It verifies:
+
+- a mid-transition contains interpolated body values rather than simply matching an endpoint;
+- the three performers occupy different acting states during the shared panic beat;
+- throw timing is staggered by performer delay/tempo.
+
+## Open-source/tooling decision
+
+Blender Grease Pencil is documented as a secondary animation backend for shots that need true point/stroke interpolation, deformation, or hand-drawn breakdowns. Blender's current 4.5 LTS documentation supports traditional 2D animation, cut-out animation, deformation and inherited animation, plus an `Interpolate Sequence` tool for generating in-between keyframes. citeturn0search0turn0search10
+
+For this low-fi deterministic opening, the procedural Python rig remains the fast/reproducible default. Blender is an escalation path, not a mandatory dependency for every shot. OpenToonz remains the primary traditional/cutout 2D backend for production-quality manual animation passes; its current release line includes OpenToonz V1.8 and nightly builds. citeturn0search12
+
 ## Render acceptance checks
 
 - 888 frames exactly.
@@ -77,6 +99,8 @@ The rig deliberately uses simple stick-figure construction while adding independ
 - Teens physically run out of the alley before the beer is thrown.
 - Teen pose/performance changes are visible; no whole-sheet-only translation as the primary teen animation.
 - Legs, arms and body lean change during running/panic beats.
+- Mid-pose interpolation is used instead of endpoint snapping.
+- Teen reactions are staggered rather than synchronized.
 - At least two distinct foliage reaction stages occur.
 - Busch wake has visible weight and delayed secondary motion.
 - Look-away is visibly readable as its own action.
@@ -89,6 +113,7 @@ The rig deliberately uses simple stick-figure construction while adding independ
 - `tools/build_origin_opening.py` — deterministic compositor/render backend.
 - `tools/teen_performance.py` — reusable procedural teen performance rig.
 - `tools/build_origin_opening_character.py` — character-performance entry point that reuses the deterministic builder while injecting the procedural teen layer.
+- `tools/test_teen_performance.py` — regression checks for interpolation and asynchronous acting.
 - `animatic/ep01-origin-opening-v2.motion-blocks.json` — authored timing and major action source of truth.
 
 The next pass should extend the same component-level principle to Busch: independent foliage/body deformation, branch-arm timing, eye direction and mouth swaps, followed by a verified preview render and frame-level QC.

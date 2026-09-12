@@ -126,8 +126,8 @@ jobs:
         run: |
           set -uo pipefail
           MARS_PATH=$(cat .artifacts/evidence/mars_path.txt)
-          DONOR=$(head -n1 .artifacts/evidence/oral_candidates.txt 2>/dev/null || true)
-          FRAME=$(grep -v 'npz$' .artifacts/evidence/oral_candidates.txt | head -n1 || true)
+          DONOR=$(find .artifacts/drive .artifacts/god-molecule-source/repo -type f -iname '*gnm*donor*.npz' -print -quit 2>/dev/null || true)
+          FRAME=$(find .artifacts/drive .artifacts/god-molecule-source/repo -type f -iname '*mouth*frame*.json' -print -quit 2>/dev/null || true)
           if [ -z "$DONOR" ] || [ -z "$FRAME" ]; then
             echo "ORAL_EXECUTION: BLOCKED — exact donor NPZ or measured mouth-frame JSON not found"
             exit 43

@@ -144,14 +144,14 @@ def emit_evidence(worktree: Path, contract: dict, receipt: dict) -> Path | None:
     return target_path
 
 
-def resolve_agent(agent: str, worktree: Path, contract_path: Path) -> list[str] | None:
+def resolve_agent(agent: str, worktree: Path, contract_path: Path, receipt_path: Path) -> list[str] | None:
     if agent == "mini-swe-agent":
         exe = shutil.which("mini") or shutil.which("mini-swe-agent")
         return [exe, "--task", load(contract_path)["goal"], "--exit-immediately"] if exe else None
     if agent == "openhands":
         if not RUNNER.is_file():
             return None
-        return [sys.executable, str(RUNNER), str(contract_path), "--receipt", str(worktree / ".trippedd" / "openhands-run.json")]
+        return [sys.executable, str(RUNNER), str(contract_path), "--receipt", str(receipt_path)]
     return None
 
 
@@ -176,7 +176,6 @@ def main() -> int:
         return fail("scope path lists are invalid")
     if c["verification"].get("unknownNeverPass") is not True:
         return fail("verification.unknownNeverPass must be true")
-
     worktree = Path(c.get("worktree", ROOT))
     if not worktree.is_dir() or not (worktree / ".git").exists():
         return fail(f"worktree is not a usable git worktree: {worktree}")
@@ -190,7 +189,7 @@ def main() -> int:
     if before:
         return fail("worktree is not clean before agent run; refusing to risk unrelated evidence: " + ", ".join(before[:20]))
 
-    command = resolve_agent(args.agent, worktree, args.contract)
+    command = resolve_agent(args.agent, worktree, args.contract, args.receipt)
     receipt = {
         "$schema": "trippedd.agent-orchestration/v4",
         "agent": args.agent,

@@ -25,11 +25,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Assert evidence bytes are materialized
+        run: |
+          set -euo pipefail
+          test -s docs/evidence/mouth/index.json
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('docs/evidence/mouth/01_REST_front.png')
+          data = p.read_bytes()
+          if data.startswith(b'version https://git-lfs.github.com/spec/v1'):
+              raise SystemExit('BLOCKED: evidence PNG is still a Git LFS pointer')
+          if data[:8] != b'\x89PNG\r\n\x1a\n':
+              raise SystemExit('BLOCKED: evidence artifact is not a materialized PNG')
+          print(f'EVIDENCE_BYTES: MATERIALIZED {p} ({len(data)} bytes)')
+          PY
 
       - name: Build exact-pixel review manifest
         run: |
           set -euo pipefail
-          test -s docs/evidence/mouth/index.json
           mkdir -p .artifacts/evidence
           python3 tools/environment/build_review_manifest.py \
             --index docs/evidence/mouth/index.json \
@@ -43,6 +59,14 @@ jobs:
             --output .artifacts/evidence/oss-functional-probes.json \
             | tee .artifacts/evidence/oss-functional-probes.log
 
+      - name: Inspect exact production image artifacts
+        run: |
+          set -euo pipefail
+          python3 tools/environment/inspect_image_artifact.py \
+            docs/evidence/mouth/01_REST_front.png \
+            --output .artifacts/evidence/first-image-inspection.json \
+            | tee .artifacts/evidence/first-image-inspection.log
+
       - name: Enforce review-manifest and probe policy
         run: |
           set -euo pipefail
@@ -51,6 +75,7 @@ jobs:
           from pathlib import Path
           manifest = json.loads(Path('.artifacts/evidence/mouth-review-manifest.json').read_text())
           probes = json.loads(Path('.artifacts/evidence/oss-functional-probes.json').read_text())
+          inspection = json.loads(Path('.artifacts/evidence/first-image-inspection.json').read_text())
           assert manifest['schema'] == 'trippedd.review-manifest/v1'
           assert manifest['evidence_status'] == 'NOT_ATTEMPTED'
           assert manifest['policy']['exact_pixel_sha256_required'] is True
@@ -61,7 +86,9 @@ jobs:
           assert probes['evidence_status'] == 'NOT_ATTEMPTED'
           assert probes['policy']['functional_probe_is_not_production_evidence'] is True
           assert probes['policy']['tool_availability_never_promotes_production'] is True
+          assert inspection['evidence_status'] == 'NOT_ATTEMPTED'
           print(f"REVIEW_MANIFEST: VERIFIED {len(manifest['frames'])} exact-pixel references")
+          print('IMAGE_INSPECTION: VERIFIED AS ARTIFACT INSPECTION ONLY')
           print('OSS_FUNCTIONAL_PROBES: VERIFIED AS CAPABILITY TESTS ONLY')
           PY
 

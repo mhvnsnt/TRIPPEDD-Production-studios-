@@ -1,0 +1,34 @@
+{
+  "schema": "trippedd.mars-linework-authority/v1",
+  "character": "MARS",
+  "status": "P0_CANONICAL",
+  "source": "assets/references/mars_facial_linework/LINEWORK_INDEX.json",
+  "independentOf": [
+    "MediaPipe FaceLandmarker",
+    "canonical_fit.json"
+  ],
+  "measurements": {
+    "liftedPoints": 382,
+    "eyeOpeningLMM": 7.08,
+    "eyeOpeningRMM": 8.24,
+    "maxReprojectionPx": 0.0016
+  },
+  "strokeQuality": {
+    "brow": "SOLID",
+    "upperEyelid": "SOLID",
+    "lowerEyelid": "SOLID",
+    "nostril": "WEAK_ORTHOGRAPHIC_DEPTH"
+  },
+  "blinkAuthority": {
+    "source": "drawn eyelid lines",
+    "browExclusion": "drawn brow lines",
+    "fallback": "FORBIDDEN",
+    "oldMediaPipeFit": "REJECTED"
+  },
+  "gate": {
+    "identicalInput": "PASS",
+    "knownWrongInput": "FAIL",
+    "knownWrongInputResidualMM": 55.0
+  },
+  "note": "The 0.0000 mm canonical_fit residual is not independent evidence because canonical_fit was built from the same misplaced landmark family. This record exists to keep the measured linework authority explicit and machine-readable."
+}

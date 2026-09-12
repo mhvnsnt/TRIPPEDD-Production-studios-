@@ -1,0 +1,48 @@
+{
+  "schema": "trippedd.scene-proof/v1",
+  "show": "god-molecule",
+  "episode": "ep-01-the-recursive-room",
+  "character": {
+    "id": "MARS_CANONICAL",
+    "role": "canonical_character",
+    "source_of_truth": "God-Molecule-Show-Studio Mars gates"
+  },
+  "world": {
+    "id": "GM-WORLD-0001",
+    "meters_per_unit": 1,
+    "up_axis": "Y",
+    "world_seed": 742918
+  },
+  "scene": {
+    "id": "GM-WORLD-0001-FIRST-SHOT",
+    "world_ref": "GM-WORLD-0001",
+    "character_refs": ["MARS_CANONICAL"],
+    "camera_ref": "GM_FIRST_SHOT_CAMERA",
+    "source_environment": "environments/GM-WORLD-0001/GM-WORLD-0001.usda"
+  },
+  "production_contract": {
+    "execution": "Blender",
+    "pixels_required": true,
+    "retrieval_required": true,
+    "physical_qc_required": true,
+    "visual_qc_required": true,
+    "evidence_required": true,
+    "pass_requires_all": true
+  },
+  "evidence": {
+    "render_receipt": null,
+    "rendered_pixels": null,
+    "physical_qc": null,
+    "visual_qc": null,
+    "evidence_artifact": null,
+    "gate": "BLOCKED_UNTIL_REAL_RENDER"
+  },
+  "invariants": [
+    "Do not replace MARS_CANONICAL with a generated face.",
+    "Do not treat a manifest claiming rendered=true as pixel evidence.",
+    "Do not publish PASS without reopening the exact rendered bytes.",
+    "A physical PASS cannot override a visual FAIL.",
+    "A visual PASS cannot override a physical FAIL.",
+    "Any changed upstream asset version invalidates dependent shot evidence."
+  ]
+}

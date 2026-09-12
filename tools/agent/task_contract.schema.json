@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trippedd.agent-task/v1",
+  "title": "TRIPPEDD Agent Task Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["taskId", "goal", "scope", "sourceCommit", "verification", "outputs"],
+  "properties": {
+    "taskId": {"type": "string", "minLength": 1},
+    "goal": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowedPaths", "forbiddenPaths"],
+      "properties": {
+        "allowedPaths": {"type": "array", "items": {"type": "string"}},
+        "forbiddenPaths": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "sourceCommit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commands", "unknownNeverPass", "visualEvidenceRequired"],
+      "properties": {
+        "commands": {"type": "array", "items": {"type": "string"}},
+        "unknownNeverPass": {"const": true},
+        "visualEvidenceRequired": {"type": "boolean"},
+        "numericGates": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requiredArtifacts", "evidenceManifest"],
+      "properties": {
+        "requiredArtifacts": {"type": "array", "items": {"type": "string"}},
+        "evidenceManifest": {"type": "string"}
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "strategy": {"type": "string"},
+        "checkpoint": {"type": "string"}
+      }
+    }
+  }
+}

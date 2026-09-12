@@ -1,116 +1,19 @@
 {
   "$schema": "trippedd.agent-stack/v1",
-  "status": "PLANNED",
+  "status": "ACTIVE",
   "policy": "tools are external runtime dependencies; this repository stores adapters, contracts, versions, and evidence",
   "components": [
-    {
-      "name": "OpenHands",
-      "role": "long_running_agent_runtime",
-      "license": "MIT",
-      "repository": "https://github.com/OpenHands/software-agent-sdk",
-      "integration": "adapter",
-      "priority": "P0",
-      "capabilities": ["sandboxed_execution", "tool_use", "task_loops", "parallel_agents"]
-    },
-    {
-      "name": "Aider",
-      "role": "git_native_coding",
-      "license": "Apache-2.0",
-      "repository": "https://github.com/Aider-AI/aider",
-      "integration": "adapter",
-      "priority": "P0",
-      "capabilities": ["repo_map", "focused_edits", "git_checkpoints"]
-    },
-    {
-      "name": "tree-sitter",
-      "role": "syntax_tree",
-      "license": "MIT",
-      "repository": "https://github.com/tree-sitter/tree-sitter",
-      "integration": "library_or_cli",
-      "priority": "P0",
-      "capabilities": ["structural_search", "language_parsing"]
-    },
-    {
-      "name": "ast-grep",
-      "role": "structural_code_search_and_rewrite",
-      "license": "MIT",
-      "repository": "https://github.com/ast-grep/ast-grep",
-      "integration": "cli",
-      "priority": "P0",
-      "capabilities": ["ast_search", "ast_rewrite", "refactor"]
-    },
-    {
-      "name": "ripgrep",
-      "role": "fast_text_search",
-      "license": "MIT",
-      "repository": "https://github.com/BurntSushi/ripgrep",
-      "integration": "cli",
-      "priority": "P0",
-      "capabilities": ["fast_search"]
-    },
-    {
-      "name": "fd",
-      "role": "fast_file_discovery",
-      "license": "MIT",
-      "repository": "https://github.com/sharkdp/fd",
-      "integration": "cli",
-      "priority": "P0",
-      "capabilities": ["file_discovery"]
-    },
-    {
-      "name": "Semgrep",
-      "role": "static_analysis",
-      "license": "LGPL-2.1",
-      "repository": "https://github.com/semgrep/semgrep",
-      "integration": "cli",
-      "priority": "P0",
-      "capabilities": ["bug_patterns", "security_patterns", "custom_rules"]
-    },
-    {
-      "name": "mini-SWE-agent",
-      "role": "lightweight_issue_to_patch_solver",
-      "license": "MIT",
-      "repository": "https://github.com/SWE-agent/mini-swe-agent",
-      "integration": "adapter",
-      "priority": "P0",
-      "capabilities": ["bash_agent", "issue_solving", "test_driven_repair", "model_agnostic", "sandbox_friendly"]
-    },
-    {
-      "name": "SWE-agent",
-      "role": "issue_to_patch_solver",
-      "license": "MIT",
-      "repository": "https://github.com/SWE-agent/SWE-agent",
-      "integration": "adapter",
-      "priority": "P2",
-      "capabilities": ["issue_solving", "test_driven_repair", "research_harness"]
-    },
-    {
-      "name": "LiteLLM",
-      "role": "model_gateway",
-      "license": "MIT",
-      "repository": "https://github.com/BerriAI/litellm",
-      "integration": "optional_gateway",
-      "priority": "P1",
-      "capabilities": ["provider_routing", "model_selection", "fallbacks"]
-    }
+    {"name":"OpenHands","role":"long_running_agent_runtime","license":"MIT","repository":"https://github.com/OpenHands/software-agent-sdk","integration":"adapter","priority":"P0","status":"ADAPTER_COMMITTED","capabilities":["sandboxed_execution","tool_use","task_loops","parallel_agents"]},
+    {"name":"Aider","role":"git_native_coding","license":"Apache-2.0","repository":"https://github.com/Aider-AI/aider","integration":"adapter","priority":"P0","status":"PLANNED","capabilities":["repo_map","focused_edits","git_checkpoints"]},
+    {"name":"tree-sitter","role":"syntax_tree","license":"MIT","repository":"https://github.com/tree-sitter/tree-sitter","integration":"library_or_cli","priority":"P0","status":"PLANNED","capabilities":["structural_search","language_parsing"]},
+    {"name":"ast-grep","role":"structural_code_search_and_rewrite","license":"MIT","repository":"https://github.com/ast-grep/ast-grep","integration":"cli","priority":"P0","status":"PLANNED","capabilities":["ast_search","ast_rewrite","refactor"]},
+    {"name":"ripgrep","role":"fast_text_search","license":"MIT","repository":"https://github.com/BurntSushi/ripgrep","integration":"cli","priority":"P0","status":"PLANNED","capabilities":["fast_search"]},
+    {"name":"fd","role":"fast_file_discovery","license":"MIT","repository":"https://github.com/sharkdp/fd","integration":"cli","priority":"P0","status":"PLANNED","capabilities":["file_discovery"]},
+    {"name":"Semgrep","role":"static_analysis","license":"LGPL-2.1","repository":"https://github.com/semgrep/semgrep","integration":"cli","priority":"P0","status":"PLANNED","capabilities":["bug_patterns","security_patterns","custom_rules"]},
+    {"name":"mini-SWE-agent","role":"lightweight_issue_to_patch_solver","license":"MIT","repository":"https://github.com/SWE-agent/mini-swe-agent","integration":"adapter","priority":"P0","status":"ADAPTER_COMMITTED","capabilities":["bash_agent","issue_solving","test_driven_repair","model_agnostic","sandbox_friendly"]},
+    {"name":"SWE-agent","role":"issue_to_patch_solver","license":"MIT","repository":"https://github.com/SWE-agent/SWE-agent","integration":"adapter","priority":"P2","status":"RESEARCH_ONLY","capabilities":["issue_solving","test_driven_repair","research_harness"]},
+    {"name":"LiteLLM","role":"model_gateway","license":"MIT","repository":"https://github.com/BerriAI/litellm","integration":"optional_gateway","priority":"P1","status":"PLANNED","capabilities":["provider_routing","model_selection","fallbacks"]}
   ],
-  "non_goals": [
-    "do_not_vendor_entire_agent_source_trees",
-    "do_not_replace_the_existing_production_runtime",
-    "do_not_treat_agent_output_as_quality_evidence_without_verification",
-    "do_not_require_a_paid_hosted_control_plane"
-  ],
-  "required_run_receipt": [
-    "agent",
-    "agent_version",
-    "model",
-    "task_id",
-    "source_commit",
-    "worktree",
-    "commands",
-    "tests",
-    "artifacts",
-    "artifact_sha256",
-    "status"
-  ]
+  "non_goals": ["do_not_vendor_entire_agent_source_trees","do_not_replace_the_existing_production_runtime","do_not_treat_agent_output_as_quality_evidence_without_verification","do_not_require_a_paid_hosted_control_plane"],
+  "required_run_receipt": ["agent","agent_version","model","task_id","source_commit","worktree","commands","tests","artifacts","artifact_sha256","status"]
 }

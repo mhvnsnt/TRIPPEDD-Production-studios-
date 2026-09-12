@@ -530,14 +530,32 @@ def contour_band(points, radius, offset_fn, gate=None):
         return offset_fn(lp, near) * w_best
     return f
 
+# MEDIAPIPE'S OWN EYELID RINGS, NOT A COARSE CONTOUR AND NOT DARK TEXELS.
+# The darkness finder returned margins 26.3 mm and 18.1 mm apart on a 6.5 mm
+# opening -- that is brow shadow, I measured it, said it needed tightening, and
+# wired it into the blink anyway. So the blink was pulling the BROW RIDGE down.
+# measure_eyelids.py raycasts MediaPipe's canonical lid rings onto the surface
+# instead: opening 6.5 mm, fissure 24.6 / 24.3 mm, symmetric. That is an eyelid.
+_ELP = os.path.join(ROOT, "renders", "_rig_measure", "eyelids.json")
+EYELIDS = json.load(open(_ELP))["eyes"] if os.path.exists(_ELP) else {}
+if EYELIDS:
+    print("eyelids: using MediaPipe's lid rings (%s)"
+          % ", ".join("%s opening %.1f mm" % (k[-1], v["openingMM"])
+                      for k, v in sorted(EYELIDS.items())))
+
 def eye_frame(side):
     """Each eye's OWN frame. His head is asymmetric -- the ears sit at -1.23 and
     +1.60 mouth widths -- so the two lids are not at the same angle, and judging
     'above the lid line' in the MOUTH frame works for one eye and not the other.
     Measured: that is exactly why the right lid covered 100% of its globe and
     the left covered 4% on the same control."""
-    up = [V(p) for p in EYE_C["eye_%s_upper" % side]]
-    lo = [V(p) for p in EYE_C["eye_%s_lower" % side]]
+    _e = EYELIDS.get("eye_%s" % side)
+    if _e:
+        up = [V(p) for p in _e["upper"]]
+        lo = [V(p) for p in _e["lower"]]
+    else:
+        up = [V(p) for p in EYE_C["eye_%s_upper" % side]]
+        lo = [V(p) for p in EYE_C["eye_%s_lower" % side]]
     mid = len(up) // 2
     ex = (up[-1] - up[0]).normalized()
     ez_ref = (up[mid] - lo[mid]).normalized()
@@ -611,29 +629,6 @@ def lid_close(side, meet=0.40):
             print("     lid_%s: lifted %d of %d meet points out to clear the globe "
                   "(radius %.4f + %.1f mm)" % (side, _lifted, n, _r, LID_THICK / MM_))
 
-    # THE DARK LID LINE IS THE THING A VIEWER READS AS AN EYELID, SO IT HAS TO
-    # MOVE. Owner: "you're not moving the actual eyelid line... the outline of
-    # the eye is not actually moving or blinking." He is right, and it is why
-    # every version of this changed the eye's COLOUR without looking like a
-    # blink. measure_lid_lines.py finds those vertices by reading the darkest
-    # part of the eye region out of his own texture -- the same trick that found
-    # the painted eyes -- and they are carried here at full weight so the
-    # outline travels with the skin instead of sitting still on top of it.
-    _lines = []
-    _lp = os.path.join(ROOT, "renders", "_rig_measure", "lid_lines.json")
-    if os.path.exists(_lp):
-        _lj = json.load(open(_lp))["eyes"].get("eye_%s" % side, {})
-        for _k, _sgn in (("upper", 1.0), ("lower", -1.0)):
-            for _q in _lj.get(_k, []):
-                _w = V(_q)
-                # its own target on the meet line: nearest station, same rule
-                _j = min(range(n), key=lambda i: (V(_w) - up[i]).length
-                         if _sgn > 0 else (V(_w) - lo[i]).length)
-                _lines.append((F.local(_w), meet_pts[_j], _w))
-        if _lines:
-            print("     lid_%s: carrying %d measured lid-line vertices so the OUTLINE "
-                  "moves, not just the skin under it" % (side, len(_lines)))
-
     def f(lp):
         w_best, tgt, src = 0.0, None, None
         for i in range(n):
@@ -643,10 +638,6 @@ def lid_close(side, meet=0.40):
                 w = 1.0 - smoothstep(d / band)
                 if w > w_best:
                     w_best, tgt, src = w, meet_pts[i], q
-        # a measured lid-line vertex moves FULLY -- it is the margin itself
-        for _l, _t, _src in _lines:
-            if (lp - _l).length < opening * 0.30:
-                return F.M.to_3x3().inverted() @ (_t - _src)
         if w_best <= 0 or tgt is None: return None
         # travel this vertex the same way its nearest margin station travels
         return F.M.to_3x3().inverted() @ ((tgt - src) * w_best)

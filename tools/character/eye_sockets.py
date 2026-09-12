@@ -47,7 +47,19 @@ if VARIANT not in APPEAR["variants"]:
 VSPEC = APPEAR["variants"][VARIANT]
 
 A = json.load(open("renders/_rig_measure/mouth_anatomy.json"))
-C = A["contours"]
+C = dict(A["contours"])
+# CUT THE APERTURE FROM MEDIAPIPE'S LID RINGS. The coarse contour is a rough
+# outline; the rings are the actual lid margins (opening 6.5 mm, fissure 24.6 /
+# 24.3 mm) and they are what the eye opening should be shaped like.
+_ELP = "renders/_rig_measure/eyelids.json"
+if os.path.exists(_ELP):
+    _EL = json.load(open(_ELP))["eyes"]
+    for _s in ("L", "R"):
+        _e = _EL.get("eye_%s" % _s)
+        if _e:
+            C["eye_%s_upper" % _s] = _e["upper"]
+            C["eye_%s_lower" % _s] = _e["lower"]
+    print("aperture cut from MediaPipe's lid rings, not the coarse contour")
 # Every anatomical size in this project is stated through the measured mouth
 # width: MW = 50 mm, so 1 mm = MW/50. An eyeball is 24 mm and a palpebral
 # fissure is 28-30 mm, which is what makes "too small" a measurable claim

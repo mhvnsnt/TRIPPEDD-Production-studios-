@@ -85,12 +85,12 @@
   "blink": {
     "blink_L": {
       "chosen": "blink_L",
-      "lidVerts": 139,
+      "lidVerts": 143,
       "lidMarginVerts": 48,
       "travelTowardClosure": 0.00828,
       "openingsTravelled": 0.328,
-      "openingsTravelledWholeBand": 0.053,
-      "eyeballRaysOpen": 123,
+      "openingsTravelledWholeBand": 0.024,
+      "eyeballRaysOpen": 55,
       "eyeballRaysClosed": 0,
       "occlusionPercent": 100.0,
       "candidates": {
@@ -102,16 +102,16 @@
     },
     "blink_R": {
       "chosen": "blink_R",
-      "lidVerts": 154,
-      "lidMarginVerts": 66,
-      "travelTowardClosure": 0.00811,
-      "openingsTravelled": 0.323,
-      "openingsTravelledWholeBand": 0.073,
-      "eyeballRaysOpen": 118,
+      "lidVerts": 164,
+      "lidMarginVerts": 72,
+      "travelTowardClosure": 0.00554,
+      "openingsTravelled": 0.221,
+      "openingsTravelledWholeBand": 0.007,
+      "eyeballRaysOpen": 39,
       "eyeballRaysClosed": 0,
       "occlusionPercent": 100.0,
       "candidates": {
-        "blink_R": 0.323,
+        "blink_R": 0.221,
         "facs_eyeBlink_R": 0.108
       },
       "verdict": "WEAK",
@@ -200,12 +200,12 @@
       "maxTravel": 0.01291
     },
     "blink_L": {
-      "verts": 148,
-      "maxTravel": 0.01505
+      "verts": 189,
+      "maxTravel": 0.09799
     },
     "blink_R": {
-      "verts": 157,
-      "maxTravel": 0.01491
+      "verts": 171,
+      "maxTravel": 0.08487
     },
     "squint_L": {
       "verts": 92,

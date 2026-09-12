@@ -38,7 +38,9 @@ def die(msg):
 SRC = os.path.abspath(opt("--src", "assets/rigs/MARS_ORAL.blend"))
 OUT = os.path.abspath(opt("--out", "assets/rigs/MARS_ORAL.blend"))
 WORK = os.path.abspath(opt("--work", "renders/_eye_texture"))
-REACH = float(opt("--reach", "0.70"))     # region radius, in fissure widths
+REACH = float(opt("--reach", "0.85"))     # region radius, in fissure widths
+# How unsaturated a texel has to be, relative to his skin, to count as paint.
+PAINT_SAT = float(opt("--paint-sat", "0.90"))
 os.makedirs(WORK, exist_ok=True)
 
 bpy.ops.wm.open_mainfile(filepath=SRC)
@@ -122,7 +124,16 @@ for _ in range(6):
 ring &= ~region
 skin_val = float(np.median(val[ring])); skin_sat = float(np.median(sat[ring]))
 print("skin just outside the eye region: value %.3f · saturation %.3f" % (skin_val, skin_sat))
-painted = region & (sat < skin_sat * 0.55) & (val > 0.45)
+# MEASURED, NOT ASSUMED: with the lids closed, 100% of the white pixels in the
+# render raycast back to MARS_MESH carrying the scan texture -- the eyeball is
+# fully covered and the LID ITSELF is white. So the repaint was not reaching the
+# texels the closed lid actually samples. sat < 0.55*skin only caught the whitest
+# core of the painted eye and left its whole halo, which is what slides over the
+# globe when the lid comes down.
+# The painted eyes are OBSOLETE now -- there is real eyeball geometry behind a
+# real aperture -- so anything in the eye region that is meaningfully less
+# saturated than his skin is paint to be removed, not detail to be preserved.
+painted = region & (sat < skin_sat * PAINT_SAT) & (val > 0.30)
 print("painted-sclera texels: %d (%.1f%% of the eye region)"
       % (int(painted.sum()), 100.0 * painted.sum() / max(region.sum(), 1)))
 if painted.sum() == 0:

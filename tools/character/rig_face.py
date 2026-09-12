@@ -556,6 +556,11 @@ def eye_frame(side):
     opening = (up[mid] - lo[mid]).length
     return up, lo, centre, ez, ey, opening
 
+MM_ = MW / 50.0
+# A real eyelid is about 1 mm of tissue standing off the globe. On a shell with
+# no thickness that has to be added explicitly or the lid intersects the eye.
+LID_THICK = 1.2 * MM_
+
 def lid_close(side, meet=0.40):
     """A BLINK IS DEFINED BY WHERE THE LIDS MEET, NOT BY HOW FAR THEY TRAVEL.
 
@@ -579,6 +584,56 @@ def lid_close(side, meet=0.40):
     meet_pts = [lo[i] + (up[i] - lo[i]) * meet for i in range(n)]
     band = opening * 1.9
 
+    # THE LID HAS NO THICKNESS, SO IT HAS TO RIDE OUTSIDE THE GLOBE.
+    # Owner: "the eyelids are probably not thick enough to cover up the actual
+    # eyeball or something like that's why the white keeps showing through."
+    # That is exactly it. His head is a single-sided SHELL -- the lid is a
+    # zero-thickness surface, and the meet line I computed lies on the ORIGINAL
+    # lid contour, which the cornea bulges in front of. So the closing lid
+    # travels THROUGH the eyeball and the sclera shows on the other side of it.
+    # Push every target radially out from the eye centre until it clears the
+    # globe by a real lid thickness, so the lid passes OVER the eye.
+    _ball = bpy.data.objects.get("MARS_EYE_%s" % side)
+    if _ball:
+        _ws = [_ball.matrix_world @ v.co for v in _ball.data.vertices]
+        _mn = V((min(p.x for p in _ws), min(p.y for p in _ws), min(p.z for p in _ws)))
+        _mx = V((max(p.x for p in _ws), max(p.y for p in _ws), max(p.z for p in _ws)))
+        _ec = (_mn + _mx) / 2.0
+        _r = max(_mx - _mn) * 0.5
+        _clear = _r + LID_THICK
+        _lifted = 0
+        for i in range(n):
+            d = meet_pts[i] - _ec
+            if d.length < _clear:
+                meet_pts[i] = _ec + d.normalized() * _clear
+                _lifted += 1
+        if _lifted:
+            print("     lid_%s: lifted %d of %d meet points out to clear the globe "
+                  "(radius %.4f + %.1f mm)" % (side, _lifted, n, _r, LID_THICK / MM_))
+
+    # THE DARK LID LINE IS THE THING A VIEWER READS AS AN EYELID, SO IT HAS TO
+    # MOVE. Owner: "you're not moving the actual eyelid line... the outline of
+    # the eye is not actually moving or blinking." He is right, and it is why
+    # every version of this changed the eye's COLOUR without looking like a
+    # blink. measure_lid_lines.py finds those vertices by reading the darkest
+    # part of the eye region out of his own texture -- the same trick that found
+    # the painted eyes -- and they are carried here at full weight so the
+    # outline travels with the skin instead of sitting still on top of it.
+    _lines = []
+    _lp = os.path.join(ROOT, "renders", "_rig_measure", "lid_lines.json")
+    if os.path.exists(_lp):
+        _lj = json.load(open(_lp))["eyes"].get("eye_%s" % side, {})
+        for _k, _sgn in (("upper", 1.0), ("lower", -1.0)):
+            for _q in _lj.get(_k, []):
+                _w = V(_q)
+                # its own target on the meet line: nearest station, same rule
+                _j = min(range(n), key=lambda i: (V(_w) - up[i]).length
+                         if _sgn > 0 else (V(_w) - lo[i]).length)
+                _lines.append((F.local(_w), meet_pts[_j], _w))
+        if _lines:
+            print("     lid_%s: carrying %d measured lid-line vertices so the OUTLINE "
+                  "moves, not just the skin under it" % (side, len(_lines)))
+
     def f(lp):
         w_best, tgt, src = 0.0, None, None
         for i in range(n):
@@ -588,6 +643,10 @@ def lid_close(side, meet=0.40):
                 w = 1.0 - smoothstep(d / band)
                 if w > w_best:
                     w_best, tgt, src = w, meet_pts[i], q
+        # a measured lid-line vertex moves FULLY -- it is the margin itself
+        for _l, _t, _src in _lines:
+            if (lp - _l).length < opening * 0.30:
+                return F.M.to_3x3().inverted() @ (_t - _src)
         if w_best <= 0 or tgt is None: return None
         # travel this vertex the same way its nearest margin station travels
         return F.M.to_3x3().inverted() @ ((tgt - src) * w_best)

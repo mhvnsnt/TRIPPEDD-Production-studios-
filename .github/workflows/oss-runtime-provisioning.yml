@@ -5,11 +5,13 @@ on:
     paths:
       - '.github/workflows/oss-runtime-provisioning.yml'
       - 'config/opensource_production_stack.json'
+      - 'config/oss_runtime_pins.json'
       - 'tools/environment/oss_runtime_contract.py'
   pull_request:
     paths:
       - '.github/workflows/oss-runtime-provisioning.yml'
       - 'config/opensource_production_stack.json'
+      - 'config/oss_runtime_pins.json'
       - 'tools/environment/oss_runtime_contract.py'
   workflow_dispatch:
 

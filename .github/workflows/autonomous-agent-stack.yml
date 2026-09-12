@@ -28,3 +28,6 @@ jobs:
               yaml.safe_load(p.read_text())
           print("agent stack manifests valid")
           PY
+
+      - name: Validate agent service composition
+        run: docker compose -f ops/autonomous-studio/docker-compose.yml config --quiet

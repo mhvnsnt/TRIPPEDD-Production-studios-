@@ -161,7 +161,7 @@ if scene.camera is None:
         mx.x=max(mx.x,p.x); mx.y=max(mx.y,p.y); mx.z=max(mx.z,p.z)
     c=(mn+mx)/2
     camd=bpy.data.cameras.new("BLINK_QC_CAMERA")
-    camd.type="ORTHO"; camd.ortho_scale=max(mx.x-mn.x,mx.z-mn.z)*0.45
+    camd.type="ORTHO"; camd.ortho_scale=max(mx.x-mn.x,mx.z-mn.z)*1.05
     cam=bpy.data.objects.new("BLINK_QC_CAMERA",camd)
     scene.collection.objects.link(cam)
     cam.location=(c.x,c.y-((mx.y-mn.y)*3+1),c.z)

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<title>In the Bushes EP01 teen character personality design v1</title>
+<rect width="1600" height="900" fill="#11151b"/>
+<g stroke="#0b0d12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="#d6d1c7">
+  <!-- Teen 1: confident / impulsive -->
+  <g transform="translate(360 390)">
+    <circle cx="0" cy="-120" r="48"/>
+    <path d="M0 -70 L-8 120" fill="none"/>
+    <path d="M-5 -20 L-115 45 M5 -20 L100 -5" fill="none"/>
+    <path d="M-8 120 L-95 245 M-8 120 L90 230" fill="none"/>
+    <path d="M-42 -165 Q0 -205 42 -165" fill="none"/>
+  </g>
+  <!-- Teen 2: cautious / nervous -->
+  <g transform="translate(800 410)">
+    <path d="M-46 -155 Q0 -185 46 -155 L38 -90 L-38 -90 Z"/>
+    <circle cx="0" cy="-115" r="43"/>
+    <path d="M0 -70 L8 120" fill="none"/>
+    <path d="M5 -15 L-92 20 M8 -15 L88 55" fill="none"/>
+    <path d="M8 120 L-70 235 M8 120 L110 210" fill="none"/>
+  </g>
+  <!-- Teen 3: laid-back / deadpan -->
+  <g transform="translate(1230 400)">
+    <circle cx="0" cy="-120" r="46"/>
+    <path d="M0 -75 L12 125" fill="none"/>
+    <path d="M8 -20 L-105 5 M10 -20 L92 25" fill="none"/>
+    <path d="M12 125 L-72 235 M12 125 L88 240" fill="none"/>
+    <path d="M-28 -132 L28 -132" fill="none"/>
+  </g>
+</g>
+<g fill="#d6d1c7" font-family="sans-serif" text-anchor="middle">
+ <text x="360" y="690" font-size="30">01 — IMPULSIVE</text>
+ <text x="360" y="728" font-size="20">moves first • confident • commits hard</text>
+ <text x="800" y="690" font-size="30">02 — CAUTIOUS</text>
+ <text x="800" y="728" font-size="20">checks danger • hesitates • reacts big</text>
+ <text x="1230" y="690" font-size="30">03 — DEADPAN</text>
+ <text x="1230" y="728" font-size="20">low reaction • dry timing • observes</text>
+</g>
+<text x="800" y="820" fill="#8d948e" font-family="sans-serif" font-size="18" text-anchor="middle">DESIGN PRINCIPLE: personality comes from silhouette, posture, movement and reaction — not visual clutter.</text>
+</svg>

@@ -23,7 +23,7 @@ The last two are project-specific and are deliberately treated as first-class ag
 |---|---|---|---|
 | Agent runtime | OpenHands SDK | Long-running coding tasks, tools, sandboxing, multi-agent orchestration | P0; integrate as an adapter, not as the production UI |
 | Git-native coding | Aider | Repo map, focused edits, automatic git checkpoints | P0; use for bounded code tasks |
-| Issue solver | mini-SWE-agent | Minimal shell-first issue-to-patch loop | P0/P1; benchmark against real TRIPPEDD issues |
+| Issue solver | mini-SWE-agent | Minimal shell-first issue-to-patch loop | P0; benchmark against real TRIPPEDD issues |
 | Structural search | tree-sitter + ast-grep | AST-aware search and transformations | P0 for large refactors |
 | Fast search | ripgrep + fd | Cheap broad repository discovery | P0 |
 | Static analysis | Semgrep | Security/bug-pattern verification | P0; findings are evidence, not automatic truth |
@@ -53,7 +53,7 @@ The last two are project-specific and are deliberately treated as first-class ag
                          │
                          ▼
                     Evidence bus
-             manifest · artifacts · commit
+       manifest · artifacts · commit · SHA-256
                          │
                          ▼
                  next agent / human
@@ -76,17 +76,19 @@ This gives TRIPPEDD the useful parts of a Replit/Devin-style harness without mak
 ## Current adapters
 
 - `tools/agent/agent_stack_manifest.json` — declared components, roles, licenses, priorities, and capabilities.
-- `tools/agent/check_agent_stack.py` — fail-closed environment/capability check; missing binaries are UNKNOWN.
-- `tools/agent/task_contract.schema.json` — bounded task contract.
+- `tools/agent/check_agent_stack.py` — fail-closed environment/capability check; missing binaries are UNKNOWN and mini-SWE is the current P0 worker.
+- `tools/agent/task_contract.schema.json` — bounded task contract with explicit worktree, scope, verification, and outputs.
 - `tools/agent/worktree_guard.py` — verifies explicit worktree/path scope without deleting or resetting evidence.
 - `tools/agent/mini_swe_runner.py` — bounded mini-SWE-agent invocation and run-receipt adapter.
+- `tools/agent/orchestrate_task.py` — end-to-end task execution: clean-worktree check, exact source-commit check, mini-SWE run, changed-path scope enforcement, declared verification, artifact SHA-256 harvest, and evidence-manifest emission.
+- `docs/agent-evidence/evidence_manifest.schema.json` — canonical evidence-manifest contract, including `NOT_ATTEMPTED` for lanes that have not run.
 
 ## P0 build sequence
 
-1. Worktree isolation and task contract.
-2. mini-SWE-agent bounded repair worker.
-3. OpenHands SDK adapter for long-running tasks.
-4. Evidence receipt generation and verification handoff.
+1. Worktree isolation and task contract — **implemented**.
+2. mini-SWE-agent bounded repair worker — **implemented**.
+3. Evidence harvesting + verification handoff — **implemented**.
+4. OpenHands SDK adapter for long-running tasks.
 5. Aider/ast-grep structural editing lanes.
 6. Semgrep project-specific failure rules.
 7. Optional LiteLLM model routing.

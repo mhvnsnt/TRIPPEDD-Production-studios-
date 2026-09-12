@@ -61,3 +61,7 @@ public/production/*-segments/
 # (`vendor/*` above, not `vendor/`: git cannot re-include anything inside an
 #  excluded DIRECTORY, so the directory itself must stay visible.)
 !vendor/ict/
+
+# MPFB2 (MakeHuman for Blender) is vendored as a full upstream clone for
+# reference anatomy and its proven eye/lid system. 105 MB, AGPL, re-clonable.
+vendor/opensource/

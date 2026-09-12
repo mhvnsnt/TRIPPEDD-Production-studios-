@@ -156,7 +156,17 @@ for ict_side, mars_side in SIDE_OF.items():
         #   want:  dot(front pole, ey) == dot(ring's most forward point, ey) - 1.5mm
         #   front pole after moving by m  ==  dot(gc,ey) + m - radius
         radius = EYEBALL_MM * MM * 0.5
-        p_front = float(np.dot(ring, ey).min())           # most forward, absolute
+        # AGAINST THE UPPER LID AT THE CENTRE, NOT THE WHOLE RING'S MINIMUM.
+        # The ring's most-forward point can be a canthus that bulges toward the
+        # camera, and clearing THAT leaves the globe proud of the part of the lid
+        # it actually has to pass under. Measured: it seated the left globe only
+        # 2.6 mm back against the right's 4.5 mm, and the left lid then could not
+        # close -- its 28 unclosed samples were all GLOBE, clustered at the
+        # centre-top of the aperture, which is exactly the upper lid's mid span.
+        # That span is the constraint, so that span is what it is measured against.
+        _u = np.array(_C["eye_%s_upper" % mars_side])
+        _lo3, _hi3 = len(_u) // 3, len(_u) - len(_u) // 3
+        p_front = float(np.dot(_u[_lo3:_hi3], ey).min())  # upper lid, middle third
         m = p_front - 1.5 * MM + radius - float(np.dot(gc, ey))
         P += ey * m
         want_back = m

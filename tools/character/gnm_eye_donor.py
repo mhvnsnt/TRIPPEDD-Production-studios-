@@ -69,11 +69,17 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     P = V[used]
     centre_g = P.mean(0)
 
-    # An eyeball is about 80% of the palpebral fissure across -- a measured
-    # proportion, not a sphere dropped at a bounding-box fraction. Scale on the
-    # DONOR EYEBALL's own diameter so the iris lands at the right size too.
-    diam_g = float(np.linalg.norm(P.max(0) - P.min(0)))
-    S = (fissure_m * 0.80) / diam_g
+    # THE BALL MUST FILL THE APERTURE. 0.80 of the fissure was the textbook
+    # ratio and it rendered as a wound: 20% of the cut was not covered by
+    # eyeball, so the dark socket showed as a rim around each eye. A lid margin
+    # wraps the globe -- the fissure is a WINDOW ONTO the ball, never a hole
+    # wider than it. 1.04 leaves the lids overlapping the sclera everywhere.
+    # DIAMETER, not the bbox DIAGONAL. np.linalg.norm(max-min) is sqrt(3) times
+    # the diameter for a sphere, so scaling by it built every globe 1.73x too
+    # small -- which is why a socket rim kept showing however the ball was
+    # seated, and why three passes of moving it never fixed anything.
+    diam_g = float((P.max(0) - P.min(0)).max())
+    S = (fissure_m * 1.04) / diam_g
 
     UP_G = np.array([0.0, 1.0, 0.0]); INTO_G = np.array([0.0, 0.0, -1.0])
     Mg = np.stack([np.cross(INTO_G, UP_G), INTO_G, UP_G], axis=1)
@@ -81,7 +87,10 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     W = (local * S) @ Mm.T + centre_m
     # Seat it so its front pole sits just behind the lid plane rather than
     # bulging through the skin.
-    W = W + ey * (fissure_m * 0.80 * 0.34)
+    # Seat it only just behind the lid plane. At 0.34 of the radius the globe
+    # sat too deep and the lower lid margin outran it, leaving a dark crescent
+    # under each eye that reads as a wound rather than an eye.
+    W = W + ey * (fissure_m * 1.04 * 0.30)
 
     cls = np.zeros(len(used), np.int32)      # 0 sclera
     for ci, gname in ((1, "irises"), (2, "pupils")):

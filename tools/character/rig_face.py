@@ -502,6 +502,12 @@ CONTROLS = {
 # Both aspect ratios are a normal open eye, so the contour is tracking real
 # lids in the texture rather than guessing.
 EYE_C = F.raw["contours"]
+# Measured eyeball diameters, read from the donor fit rather than assumed.
+EYE_D = {}
+_ed = os.path.join(ROOT, "assets", "donor", "gnm_eyes", "manifest.json")
+if os.path.exists(_ed):
+    _em = json.load(open(_ed))
+    EYE_D = {k[-1]: v["eyeballDiameter"] for k, v in _em.get("eyes", {}).items()}
 
 def contour_band(points, radius, offset_fn, gate=None):
     """Deform the band of surface within `radius` of a measured curve."""
@@ -517,24 +523,41 @@ def contour_band(points, radius, offset_fn, gate=None):
         return offset_fn(lp, near) * w_best
     return f
 
+def eye_frame(side):
+    """Each eye's OWN frame. His head is asymmetric -- the ears sit at -1.23 and
+    +1.60 mouth widths -- so the two lids are not at the same angle, and judging
+    'above the lid line' in the MOUTH frame works for one eye and not the other.
+    Measured: that is exactly why the right lid covered 100% of its globe and
+    the left covered 4% on the same control."""
+    up = [V(p) for p in EYE_C["eye_%s_upper" % side]]
+    lo = [V(p) for p in EYE_C["eye_%s_lower" % side]]
+    mid = len(up) // 2
+    ex = (up[-1] - up[0]).normalized()
+    ez_ref = (up[mid] - lo[mid]).normalized()
+    ey = ex.cross(ez_ref).normalized()
+    if ey.y < 0: ey = -ey
+    ez = ex.cross(ey).normalized()
+    centre = (sum(up, V((0, 0, 0))) + sum(lo, V((0, 0, 0)))) / (len(up) + len(lo))
+    opening = (up[mid] - lo[mid]).length
+    return up, lo, centre, ez, ey, opening
+
 def lid_close(side):
-    up = EYE_C["eye_%s_upper" % side]
-    lo = EYE_C["eye_%s_lower" % side]
-    mid_z = sum(F.local(q).z for q in up + lo) / float(len(up) + len(lo))
-    opening = (F.local(up[len(up) // 2]) - F.local(lo[len(lo) // 2])).length
-    # Only the UPPER lid travels, and it travels the measured opening: a lid
-    # that moves half the fissure is a squint, not a blink.
-    return contour_band(up, opening * 1.5,
-                        lambda lp, q: V((0, -0.10, -1.0)) * (opening * 0.92),
-                        gate=lambda lp, q: lp.z > mid_z - opening * 0.15)
+    up, lo, centre, ez, ey, opening = eye_frame(side)
+    # "Upper lid" means above the lid line along THIS eye's up axis.
+    def above(lp):
+        return (F.M @ lp - centre).dot(ez) > -opening * 0.20
+    return contour_band(up, opening * 1.9,
+                        lambda lp, q: F.M.to_3x3().inverted() @ (-ez * (opening * 1.15)
+                                                                 + ey * (opening * 0.12)),
+                        gate=lambda lp, q: above(lp))
 
 def lid_squint(side):
-    lo = EYE_C["eye_%s_lower" % side]
-    mid_z = sum(F.local(q).z for q in EYE_C["eye_%s_upper" % side] + lo) / float(len(lo) * 2)
-    opening = (F.local(EYE_C["eye_%s_upper" % side][4]) - F.local(lo[4])).length
-    return contour_band(lo, opening * 1.4,
-                        lambda lp, q: V((0, -0.05, 1.0)) * (opening * 0.40),
-                        gate=lambda lp, q: lp.z < mid_z + opening * 0.15)
+    up, lo, centre, ez, ey, opening = eye_frame(side)
+    def below(lp):
+        return (F.M @ lp - centre).dot(ez) < opening * 0.20
+    return contour_band(lo, opening * 1.5,
+                        lambda lp, q: F.M.to_3x3().inverted() @ (ez * (opening * 0.42)),
+                        gate=lambda lp, q: below(lp))
 
 # Nostrils are REAL geometry in this scan -- the alar walls and the openings are
 # modelled, not painted -- so a flare moves actual surface. The alar base sits

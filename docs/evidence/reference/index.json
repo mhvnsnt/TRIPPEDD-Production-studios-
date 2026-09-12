@@ -1,0 +1,210 @@
+{
+  "set": "reference",
+  "rule": "These are the authority. Everything built for MARS is judged against them, and a build that disagrees with a reference is wrong even when its numbers are green. Measured values extracted from MARS_CANONICAL_LOOK live in look_measured.json.",
+  "images": [
+    {
+      "name": "MARS_CANONICAL_LOOK",
+      "file": "MARS_CANONICAL_LOOK.png",
+      "repoPath": "docs/evidence/reference/MARS_CANONICAL_LOOK.png",
+      "sha256": "b8abb5c566758d4b454187b0c4e9bd492a151a5c2c2c11030761a7d8e9757d00",
+      "px": [
+        1080,
+        2172
+      ],
+      "what": "THE look. Deep cobalt face, violet dreadlocks, glowing cyan-white forehead sigil, solid luminous white eyes with NO socket or rim, on PURE BLACK with multi-coloured four-point sparkle stars.",
+      "governs": "everything: palette, eyes, starfield, background"
+    },
+    {
+      "name": "SIGIL_ARTWORK",
+      "file": "SIGIL_ARTWORK.png",
+      "repoPath": "docs/evidence/reference/SIGIL_ARTWORK.png",
+      "sha256": "d1c4d46188200a90e0ed9f5ca024dd0299acfbe89e06e660628c55dd72702343",
+      "px": [
+        1024,
+        1024
+      ],
+      "what": "The Mars sigil as drawn: violet ringed triangle, orange Mars glyph, green eye, pink spiral, yellow molecule, teal edges.",
+      "governs": "the forehead sigil's colours and line weights"
+    },
+    {
+      "name": "SIGIL_KEYED_TRANSPARENT",
+      "file": "SIGIL_KEYED_TRANSPARENT.png",
+      "repoPath": "docs/evidence/reference/SIGIL_KEYED_TRANSPARENT.png",
+      "sha256": "e37224c6777abe103ea117c777a03bd20da724476ad23eb28fc287d5a9584722",
+      "px": [
+        1024,
+        1024
+      ],
+      "what": "The same sigil keyed to transparency, ready as a decal.",
+      "governs": "the decal asset itself"
+    },
+    {
+      "name": "SIGIL_ON_FOREHEAD_CORRECT",
+      "file": "SIGIL_ON_FOREHEAD_CORRECT.png",
+      "repoPath": "docs/evidence/reference/SIGIL_ON_FOREHEAD_CORRECT.png",
+      "sha256": "d4d21ed95bc7b7c4b3dd98945fe2975b7732f56efe9a48f77be45e156c10b5b1",
+      "px": [
+        960,
+        540
+      ],
+      "what": "Sigil seated ON the forehead, neon, over a soft bokeh field.",
+      "governs": "where the decal belongs"
+    },
+    {
+      "name": "SIGIL_MISPLACED_FLOATING",
+      "file": "SIGIL_MISPLACED_FLOATING.png",
+      "repoPath": "docs/evidence/reference/SIGIL_MISPLACED_FLOATING.png",
+      "sha256": "7a50091ea25a265bba4d07a22f52168ee74c138a34b1941437891dbd9d650d04",
+      "px": [
+        960,
+        540
+      ],
+      "what": "REJECTED: the decal floating beside the head instead of lying on the brow. Kept as the failure case.",
+      "governs": "what a raycast decal looks like when it misses"
+    },
+    {
+      "name": "ANIMATIC_SQUARES_REJECTED",
+      "file": "ANIMATIC_SQUARES_REJECTED.png",
+      "repoPath": "docs/evidence/reference/ANIMATIC_SQUARES_REJECTED.png",
+      "sha256": "da7ffcf6f1bae3838b8d91b94c39555e13a50f81ba70397c3cb27e5d4f844cd7",
+      "px": [
+        960,
+        540
+      ],
+      "what": "REJECTED: hard square sprites instead of stars/nebula. The 'squares' problem.",
+      "governs": "what NOT to render"
+    },
+    {
+      "name": "ANIMATIC_SQUARES_WIDE",
+      "file": "ANIMATIC_SQUARES_WIDE.png",
+      "repoPath": "docs/evidence/reference/ANIMATIC_SQUARES_WIDE.png",
+      "sha256": "71d984162b1ec3afa3554856b857477dd636887e8cdf6bf06a86cb50f0a746a9",
+      "px": [
+        960,
+        540
+      ],
+      "what": "REJECTED: same squares, wide, with a wireframe icosahedron.",
+      "governs": "the geometric transition beat, wrong star treatment"
+    },
+    {
+      "name": "ANIMATIC_PARTICLE_BAND",
+      "file": "ANIMATIC_PARTICLE_BAND.png",
+      "repoPath": "docs/evidence/reference/ANIMATIC_PARTICLE_BAND.png",
+      "sha256": "501fd396310c0ca105e19933945c2043c3c33c326ca389f3453e92fd7208d93c",
+      "px": [
+        960,
+        540
+      ],
+      "what": "Dense particle band across squares -- closer to stars, still square-backed.",
+      "governs": "density reference for the world-creation beat"
+    },
+    {
+      "name": "ANIMATIC_HEAD_ON_BLACK_3Q",
+      "file": "ANIMATIC_HEAD_ON_BLACK_3Q.png",
+      "repoPath": "docs/evidence/reference/ANIMATIC_HEAD_ON_BLACK_3Q.png",
+      "sha256": "0f41b72e2a158013f07a22b56b3b3ab7449d920f3a9584107311967f90ec71a7",
+      "px": [
+        960,
+        540
+      ],
+      "what": "Mars three-quarter on a clean black starfield. Closest to canon of the animatic frames.",
+      "governs": "camera and lighting for the opening"
+    },
+    {
+      "name": "ANIMATIC_HEAD_ON_BLACK_FRONT",
+      "file": "ANIMATIC_HEAD_ON_BLACK_FRONT.png",
+      "repoPath": "docs/evidence/reference/ANIMATIC_HEAD_ON_BLACK_FRONT.png",
+      "sha256": "b6bbd95e58400bd2cb042490786bd030cb4743520c72863b03adb2db431563bf",
+      "px": [
+        960,
+        540
+      ],
+      "what": "Mars front on black with the sculpted brow sigil.",
+      "governs": "the face-camera beat"
+    },
+    {
+      "name": "COCKPIT_LOGIN",
+      "file": "COCKPIT_LOGIN.png",
+      "repoPath": "docs/evidence/reference/COCKPIT_LOGIN.png",
+      "sha256": "ae37c04291b16e62782a264c518f2632469a21e9384dc1b2cacd202ff37b0236",
+      "px": [
+        1568,
+        882
+      ],
+      "what": "God Molecule control plane operator login.",
+      "governs": "cockpit UI"
+    },
+    {
+      "name": "COCKPIT_STARFIELD_BLOCKED",
+      "file": "COCKPIT_STARFIELD_BLOCKED.png",
+      "repoPath": "docs/evidence/reference/COCKPIT_STARFIELD_BLOCKED.png",
+      "sha256": "48c38acd8feee5a56ee1c082afcb57ab786c6a1bc0dd98ee73a0c47f49210371",
+      "px": [
+        1568,
+        882
+      ],
+      "what": "Cockpit with a run in BLOCKED / NO_BLENDER_WORKER_CONNECTED and QC_PENDING -- honest states, never a fabricated PASS.",
+      "governs": "how the cockpit must report an un-run job"
+    },
+    {
+      "name": "COCKPIT_NO_RUN_DISPATCHED",
+      "file": "COCKPIT_NO_RUN_DISPATCHED.png",
+      "repoPath": "docs/evidence/reference/COCKPIT_NO_RUN_DISPATCHED.png",
+      "sha256": "61f02155da66efc026b66f86ccc021597a46582571d5594a824951e15da56f82",
+      "px": [
+        1568,
+        882
+      ],
+      "what": "Cockpit resting state: NO RUN DISPATCHED, empty run ledger.",
+      "governs": "the honest empty state"
+    },
+    {
+      "name": "MOUTH_BLOCKY_TEETH_REJECTED",
+      "file": "MOUTH_BLOCKY_TEETH_REJECTED.png",
+      "repoPath": "docs/evidence/reference/MOUTH_BLOCKY_TEETH_REJECTED.png",
+      "sha256": "1c35c43e2304a423b411fcc3a2d680a1964b5c273ccb56febd925f63b80c2fac",
+      "px": [
+        1080,
+        2400
+      ],
+      "what": "REJECTED: procedural blocky crowns, the 'mouthguard' arch.",
+      "governs": "why the GNM donor replaced procedural teeth"
+    },
+    {
+      "name": "MOUTH_GNM_DONOR",
+      "file": "MOUTH_GNM_DONOR.png",
+      "repoPath": "docs/evidence/reference/MOUTH_GNM_DONOR.png",
+      "sha256": "afa7c1c74ea2b5f3e7c21002624cf011df1175396e6bfc49fa03b3f3e3c90122",
+      "px": [
+        1080,
+        2400
+      ],
+      "what": "GNM scan-derived teeth, gums and tongue in place.",
+      "governs": "the current oral anatomy"
+    },
+    {
+      "name": "MOUTH_WIDE_CURRENT",
+      "file": "MOUTH_WIDE_CURRENT.png",
+      "repoPath": "docs/evidence/reference/MOUTH_WIDE_CURRENT.png",
+      "sha256": "a41027b56e7bf92d095ecdc24557686b45be504bc1b81aa25b5388092d9e31b8",
+      "px": [
+        900,
+        900
+      ],
+      "what": "The WIDE pose as rendered in this session.",
+      "governs": "current state of the mouth"
+    },
+    {
+      "name": "SESSION_REST_FRAME",
+      "file": "SESSION_REST_FRAME.png",
+      "repoPath": "docs/evidence/reference/SESSION_REST_FRAME.png",
+      "sha256": "af1bc7f3200be3aa9eddc219fba828788bbea45d40dfd2bad29c9064315ebb52",
+      "px": [
+        1080,
+        2400
+      ],
+      "what": "REST after the inverted-cutter fix, as reviewed on device.",
+      "governs": "the closed-mouth reference for this build"
+    }
+  ]
+}

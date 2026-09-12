@@ -1,0 +1,57 @@
+{
+  "source": "creator-supplied canonical look reference",
+  "publishedAt": "docs/evidence/reference/MARS_CANONICAL_LOOK.png",
+  "sha256": "b8abb5c566758d4b454187b0c4e9bd492a151a5c2c2c11030761a7d8e9757d00",
+  "measuredFromTheImage": {
+    "background": "#000000",
+    "eyeWhite": "#F4F9FC",
+    "starFamilies": {
+      "blue": {
+        "hex": "#5BBCF9",
+        "sharePercent": 29.7,
+        "pixels": 1066
+      },
+      "magenta": {
+        "hex": "#F7A5F8",
+        "sharePercent": 20.7,
+        "pixels": 743
+      },
+      "cyan": {
+        "hex": "#B9FAFC",
+        "sharePercent": 12.9,
+        "pixels": 463
+      },
+      "violet": {
+        "hex": "#6173F4",
+        "sharePercent": 12.5,
+        "pixels": 450
+      },
+      "white": {
+        "hex": "#FBFBFB",
+        "sharePercent": 10.3,
+        "pixels": 369
+      },
+      "gold": {
+        "hex": "#FDF7B7",
+        "sharePercent": 5.4,
+        "pixels": 195
+      },
+      "amber": {
+        "hex": "#FAE2B6",
+        "sharePercent": 3.5,
+        "pixels": 125
+      },
+      "green": {
+        "hex": "#FBFEFB",
+        "sharePercent": 3.3,
+        "pixels": 119
+      },
+      "red": {
+        "hex": "#FBCDD9",
+        "sharePercent": 1.6,
+        "pixels": 57
+      }
+    },
+    "note": "The reference shows NO eye socket, NO lid line and NO dark rim. The eye is ONE luminous white shape running to the lid edges. Any dark crescent around the globe is a defect, not shading."
+  }
+}

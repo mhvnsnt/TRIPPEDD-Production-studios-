@@ -71,7 +71,10 @@ _cache = {}
 def M(key):
     if key not in _cache: _cache[key] = spec_mat(key)
     return _cache[key]
-M_SOCKET = M("ORAL")
+# The socket is NOT oral tissue. Using the maroon oral material there put a red
+# rim around each eye wherever the globe did not quite reach the lid margin.
+# A near-black cool neutral reads as shadow, which is what an eye socket is.
+M_SOCKET = M("SOCKET")
 # class 0 sclera, 1 iris, 2 pupil -> whatever THIS VARIANT says they are
 PARTS = VSPEC["eyeParts"]
 CLASS_MAT = {0: M(PARTS["sclera"]), 1: M(PARTS["iris"]), 2: M(PARTS["pupil"])}
@@ -108,8 +111,10 @@ for side in ("L", "R"):
     rings = []
     # Straight prism through the lid: the aperture in the skin is the measured
     # contour, full size, because the rest pose of an eye is OPEN.
-    for depth, inflate in ((-fissure * 0.35, 1.0), (fissure * 0.06, 1.0),
-                           (fissure * 0.40, 0.92), (fissure * 0.70, 0.55)):
+    # Cut slightly INSIDE the measured contour. MediaPipe's lid contour traces
+    # the outer lid margin; cutting the whole of it leaves more hole than eye.
+    for depth, inflate in ((-fissure * 0.35, 0.86), (fissure * 0.06, 0.86),
+                           (fissure * 0.40, 0.80), (fissure * 0.70, 0.48)):
         rings.append([bm.verts.new(M @ V((p.x * inflate, depth, p.z * inflate))) for p in loc])
     N = len(loc)
     for a, b in zip(rings, rings[1:]):

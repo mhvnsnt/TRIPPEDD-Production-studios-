@@ -1,0 +1,27 @@
+name: autonomous-agent-stack
+on:
+  push:
+    paths:
+      - "ops/autonomous-studio/**"
+      - "src/core/agents/**"
+  pull_request:
+    paths:
+      - "ops/autonomous-studio/**"
+      - "src/core/agents/**"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Syntax check
+        run: python -m py_compile ops/autonomous-studio/studio_mcp_server.py ops/autonomous-studio/agent_graph.py
+      - name: Validate manifests
+        run: python - <<'PY'
+import pathlib, yaml
+for p in pathlib.Path("ops/autonomous-studio").glob("*.yaml"):
+    yaml.safe_load(p.read_text())
+print("agent stack manifests valid")
+PY

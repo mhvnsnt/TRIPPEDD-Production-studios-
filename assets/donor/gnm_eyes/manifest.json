@@ -1,44 +1,64 @@
 {
-  "source": "google/GNM v3_0 gnm_head.npz",
-  "license": "Apache-2.0",
+  "source": "ICT-VGL/ICT-FaceKit",
+  "license": "MIT",
+  "nonRigidWarp": true,
+  "why": "a matched eye assembly from one scan beats a sphere dropped into a prism -- globe, socket and occlusion are mutually consistent by construction",
   "eyes": {
-    "eye_L": {
-      "verts": 771,
-      "tris": 1512,
-      "marsEyeCentre": [
-        -0.15668,
-        -0.25474,
-        0.42665
-      ],
-      "fissureWidth": 0.11095,
-      "lidOpening": 0.02522,
-      "aspect": 0.227,
-      "eyeballDiameter": 0.08876,
-      "scale": 1.723249,
-      "parts": {
-        "sclera": 626,
-        "iris": 96,
-        "pupil": 49
-      }
-    },
     "eye_R": {
-      "verts": 771,
-      "tris": 1512,
-      "marsEyeCentre": [
-        0.10186,
-        -0.25301,
-        0.44829
+      "ictSide": "left",
+      "parts": [
+        "eyeball_left",
+        "eye_occlusion_left",
+        "lacrimal_left"
       ],
+      "verts": 1926,
+      "tris": 3714,
       "fissureWidth": 0.10708,
       "lidOpening": 0.02506,
       "aspect": 0.234,
-      "eyeballDiameter": 0.08566,
-      "scale": 1.663185,
-      "parts": {
-        "sclera": 626,
-        "iris": 96,
-        "pupil": 49
-      }
+      "assemblyExtent": 0.09264,
+      "eyeballDiameter": 0.09264,
+      "eyeballDiameterMM": 24.0,
+      "marsEyeCentre": [
+        0.10856,
+        -0.21771,
+        0.44452
+      ],
+      "seatedOnPaintedEye": true
+    },
+    "eye_L": {
+      "ictSide": "right",
+      "parts": [
+        "eyeball_right",
+        "eye_occlusion_right",
+        "lacrimal_right"
+      ],
+      "verts": 1926,
+      "tris": 3714,
+      "fissureWidth": 0.11095,
+      "lidOpening": 0.02522,
+      "aspect": 0.227,
+      "assemblyExtent": 0.09264,
+      "eyeballDiameter": 0.09264,
+      "eyeballDiameterMM": 24.0,
+      "marsEyeCentre": [
+        -0.15607,
+        -0.22147,
+        0.43157
+      ],
+      "seatedOnPaintedEye": true
+    }
+  },
+  "lashes": {
+    "lash_R": {
+      "ictPart": "eyelashes_left",
+      "verts": 684,
+      "tris": 1080
+    },
+    "lash_L": {
+      "ictPart": "eyelashes_right",
+      "verts": 684,
+      "tris": 1080
     }
   }
 }

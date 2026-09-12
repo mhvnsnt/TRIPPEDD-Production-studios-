@@ -146,12 +146,20 @@ for ict_side, mars_side in SIDE_OF.items():
         lateral = d - float(np.dot(d, ey)) * ey     # drop the depth component
         P += lateral; gc = gc + lateral
 
-        # now set depth: corneal apex a real 1.5 mm proud of the lid margin
+        # DEPTH, SOLVED IN ABSOLUTE PROJECTIONS -- NOT RELATIVE TO THE GLOBE.
+        # Measuring the ring's forward extent FROM the globe centre and then
+        # moving the globe changes the very quantity it was measured against, so
+        # the answer depends on where the globe already happened to be. Measured:
+        # it seated the left eye 2.6 mm back and the right 4.5 mm, and the left
+        # lid then could not close at any travel (28/231 rays at x2.40) while the
+        # right shut at base travel. Same eye, same code, different answers.
+        #   want:  dot(front pole, ey) == dot(ring's most forward point, ey) - 1.5mm
+        #   front pole after moving by m  ==  dot(gc,ey) + m - radius
         radius = EYEBALL_MM * MM * 0.5
-        ring_front = float(np.dot(ring - gc, ey).min())   # -ve = in front of centre
-        want_back = radius + ring_front - 1.5 * MM
-        cur_back = 0.0
-        P += ey * (want_back - cur_back)
+        p_front = float(np.dot(ring, ey).min())           # most forward, absolute
+        m = p_front - 1.5 * MM + radius - float(np.dot(gc, ey))
+        P += ey * m
+        want_back = m
         print("eye %s: ICT %s, %.1f mm lateral onto his painted eye, then seated "
               "%.1f mm back so the cornea sits 1.5 mm proud of the lid"
               % (mars_side, ict_side, float(np.linalg.norm(lateral)) / MM,

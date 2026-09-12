@@ -43,6 +43,18 @@ jobs:
           git lfs pull || true
           python3 -m pip install --user gdown opentimelineio
 
+      - name: Provision optional OSS Python APIs
+        run: |
+          set -uo pipefail
+          mkdir -p .artifacts/evidence
+          : > .artifacts/evidence/oss-python-install.log
+          for package in OpenImageIO PyOpenColorIO MaterialX openassetio; do
+            echo "=== $package ===" | tee -a .artifacts/evidence/oss-python-install.log
+            python3 -m pip install --user "$package" 2>&1 | tee -a .artifacts/evidence/oss-python-install.log
+            status=${PIPESTATUS[0]}
+            echo "exit=$status" | tee -a .artifacts/evidence/oss-python-install.log
+          done
+
       - name: Install portable Blender
         run: |
           set -eux

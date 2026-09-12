@@ -52,5 +52,9 @@ if [ ! -e .trippedd_libs/libGLESv2.so.2 ]; then
 fi
 
 echo
-echo "ready. Run facial landmarking with:"
-echo "  LD_LIBRARY_PATH=\"\$PWD/.trippedd_libs:\$LD_LIBRARY_PATH\" .trippedd_venv/bin/python tools/character/measure_face.py --stage 2"
+echo "provisioning open-source face landmark authority..."
+./tools/character/provision_face_vision.sh
+
+echo
+echo "ready. Run facial landmark authority with:"
+echo "  .trippedd_venv/bin/python tools/character/measure_face_mvmp.py --debug renders/_rig_measure/mvmp_debug"

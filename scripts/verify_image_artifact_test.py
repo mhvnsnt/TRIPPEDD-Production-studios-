@@ -19,12 +19,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 VERIFY = ROOT / "scripts" / "verify_image_artifact.py"
 
-# 1x1 RGBA PNG. The CRCs are part of the fixture so the OIIO path can decode it
-# when available; the repository verifier remains responsible for interpretation.
+# 1x1 RGBA PNG with a valid zlib stream and chunk CRCs.
 VALID_PNG = bytes.fromhex(
     "89504e470d0a1a0a"
     "0000000d49484452000000010000000108060000001f15c489"
-    "0000000d49444154789c6360f8cf00000003000101"  # compact zlib payload
+    "0000000d49444154789c63606060f80f00010401005fe5c34b"
     "0000000049454e44ae426082"
 )
 

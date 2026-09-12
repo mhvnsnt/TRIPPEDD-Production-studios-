@@ -7,7 +7,7 @@
     "schema": {"const": "trippedd.agent-evidence/v1"},
     "agent": {"type": "string"},
     "commit": {"type": "string"},
-    "status": {"enum": ["PASS", "FAIL", "UNKNOWN", "IN_PROGRESS"]},
+    "status": {"enum": ["PASS", "FAIL", "UNKNOWN", "IN_PROGRESS", "NOT_ATTEMPTED"]},
     "artifacts": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "bytes", "mime"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bytes": {"type": "integer", "minimum": 0}, "mime": {"type": "string"}}}},
     "commands": {"type": "array", "items": {"type": "string"}},
     "gates": {"type": "array", "items": {"type": "object", "required": ["name", "result"], "properties": {"name": {"type": "string"}, "result": {"enum": ["PASS", "FAIL", "UNKNOWN"]}}}},

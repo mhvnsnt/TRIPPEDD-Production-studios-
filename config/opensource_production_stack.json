@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "purpose": "Open-source production capabilities available to autonomous studio workers without replacing canonical evidence gates",
+  "policy": "optional_capability_layers_must_never_promote_missing_tools_or_failed_outputs_to_PASS",
+  "layers": {
+    "editorial": [
+      {
+        "name": "OpenTimelineIO",
+        "repo": "https://github.com/AcademySoftwareFoundation/OpenTimelineIO",
+        "license": "Apache-2.0",
+        "role": "machine-readable editorial timeline interchange and media references",
+        "python_package": "opentimelineio",
+        "required": false
+      }
+    ],
+    "render_farm": [
+      {
+        "name": "OpenCue",
+        "repo": "https://github.com/AcademySoftwareFoundation/OpenCue",
+        "license": "Apache-2.0",
+        "role": "distributed render-job dispatch and resource scheduling",
+        "required": false
+      }
+    ],
+    "compositing": [
+      {
+        "name": "Natron",
+        "repo": "https://github.com/NatronGitHub/Natron",
+        "license": "GPL-2.0",
+        "role": "headless/node-based compositing and 2D finishing",
+        "required": false
+      }
+    ],
+    "reconstruction": [
+      {
+        "name": "Nerfstudio",
+        "repo": "https://github.com/nerfstudio-project/nerfstudio",
+        "license": "Apache-2.0",
+        "role": "photogrammetry/NeRF/Gaussian-scene reconstruction",
+        "required": false
+      },
+      {
+        "name": "gsplat",
+        "repo": "https://github.com/nerfstudio-project/gsplat",
+        "license": "Apache-2.0",
+        "role": "GPU Gaussian rasterization, depth/ID rendering and large-scene rendering",
+        "required": false
+      }
+    ],
+    "existing_core": [
+      "Blender",
+      "OpenUSD",
+      "COLMAP",
+      "Meshroom",
+      "FFmpeg",
+      "OpenTimelineIO"
+    ]
+  },
+  "evidence_contract": {
+    "tool_presence": "CAPABILITY_ONLY",
+    "render_output": "MUST_BE_RETRIEVED_AND_REOPENED",
+    "visual_qc": "REQUIRED",
+    "physical_qc": "REQUIRED_WHEN_APPLICABLE",
+    "missing_dependency": "BLOCK_OR_FALLBACK_WITH_EXPLICIT_STATUS",
+    "proxy_output": "NEVER_CANONICAL"
+  }
+}

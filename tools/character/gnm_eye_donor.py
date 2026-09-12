@@ -108,7 +108,16 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
         "marsEyeCentre": [round(float(c), 5) for c in centre_m],
         "fissureWidth": round(fissure_m, 5), "lidOpening": round(opening_m, 5),
         "aspect": round(opening_m / fissure_m, 3),
-        "eyeballDiameter": round(float(diam_g * S), 5),
+        # RECORD WHAT WAS WRITTEN, NOT WHAT WAS INTENDED.
+        # diam_g * S is the diameter this SHOULD come out at, measured in GNM's
+        # own orientation. The eye is not a sphere, so after rotating it into
+        # Mars's eye frame the extent is not identical -- 0.1154 intended vs
+        # 0.1114 exported. A manifest that states the intent cannot be used to
+        # detect a stale mesh, which is exactly what it was needed for.
+        "eyeballDiameter": round(float(max(W.max(0) - W.min(0))), 5),
+        "eyeballDiameterIntended": round(float(diam_g * S), 5),
+        "eyeballDiameterMM": round(float(max(W.max(0) - W.min(0))) / (0.1930 / 50.0), 1),
+        "globeOverFissure": round(float(max(W.max(0) - W.min(0))) / fissure_m, 3),
         "scale": round(S, 6),
         "parts": {"sclera": int((cls == 0).sum()), "iris": int((cls == 1).sum()),
                   "pupil": int((cls == 2).sum())},

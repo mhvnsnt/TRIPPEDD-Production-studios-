@@ -1,0 +1,29 @@
+{
+  "eyes": {
+    "apertureEyePercent_L": 34.5,
+    "apertureEyePercent_R": 37.5,
+    "apertureHolePercent_L": 14.8,
+    "apertureHolePercent_R": 10.8,
+    "blinkOpeningsTravelled_L": 1.047,
+    "blinkOpeningsTravelled_R": 1.073,
+    "globeDiameterMM_L": 28.9,
+    "globeDiameterMM_R": 28.3,
+    "globeOverFissure_L": 1.004,
+    "globeOverFissure_R": 1.019
+  },
+  "mouth": {
+    "open22LipGapPercentOfHeadHeight": 0.0,
+    "restCavityPlusTonguePercent": 2.9,
+    "restLipGapPercentOfHeadHeight": 1.61,
+    "restTeethPercent": 0.3,
+    "wide32CavityPercent": 28.2,
+    "wide32TeethPercent": 0.0,
+    "wide32TonguePercent": 0.0
+  },
+  "nose": {
+    "flareLMaxTravelMM": 5.52,
+    "flareRMaxTravelMM": 5.33,
+    "sneerLMaxTravelMM": 10.07,
+    "sneerRMaxTravelMM": 10.11
+  }
+}

@@ -13,7 +13,10 @@
       "fissureWidth": 0.11095,
       "lidOpening": 0.02522,
       "aspect": 0.227,
-      "eyeballDiameter": 0.11539,
+      "eyeballDiameter": 0.11144,
+      "eyeballDiameterIntended": 0.11539,
+      "eyeballDiameterMM": 28.9,
+      "globeOverFissure": 1.004,
       "scale": 3.747187,
       "parts": {
         "sclera": 626,
@@ -32,7 +35,10 @@
       "fissureWidth": 0.10708,
       "lidOpening": 0.02506,
       "aspect": 0.234,
-      "eyeballDiameter": 0.11136,
+      "eyeballDiameter": 0.10912,
+      "eyeballDiameterIntended": 0.11136,
+      "eyeballDiameterMM": 28.3,
+      "globeOverFissure": 1.019,
       "scale": 3.616596,
       "parts": {
         "sclera": 626,

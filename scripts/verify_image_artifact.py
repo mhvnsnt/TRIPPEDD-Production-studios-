@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Inspect an image artifact with optional OpenImageIO support.
+"""Inspect an image artifact with the open-source image stack.
 
-This proves image readability/metadata only. It never grants production PASS,
-visual QC, or physical QC. The exact file hash remains the authoritative byte
-identity in the render evidence receipt.
+This proves readability/metadata only. It never grants production PASS, visual
+QC, or physical QC. Exact byte identity remains the SHA-256 in the receipt.
 """
 from __future__ import annotations
 
@@ -11,7 +10,9 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import shutil
 import struct
+import subprocess
 from pathlib import Path
 
 
@@ -53,21 +54,41 @@ def oiio_inspect(path: Path) -> dict[str, object] | None:
         inp.close()
 
 
+def oiio_cli_inspect(path: Path) -> dict[str, object] | None:
+    tool = shutil.which("iinfo") or shutil.which("oiiotool")
+    if not tool:
+        return None
+    name = Path(tool).name
+    command = [tool, "-v", str(path)] if name == "iinfo" else [tool, "--info", str(path)]
+    proc = subprocess.run(command, capture_output=True, text=True, timeout=15)
+    output = ((proc.stdout or "") + (proc.stderr or "")).strip()
+    if proc.returncode != 0:
+        raise ValueError(f"{name} could not decode artifact: {output[-2000:]}")
+    return {"tool": name, "oiio_cli": True, "output": output[-8000:]}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--image", type=Path, required=True)
     args = parser.parse_args()
     image = args.image.resolve()
-    if not image.is_file():
-        raise SystemExit(f"IMAGE_ARTIFACT: BLOCKED — missing artifact: {image}")
+    if not image.is_file() or image.stat().st_size == 0:
+        raise SystemExit(f"IMAGE_ARTIFACT: BLOCKED — missing or empty artifact: {image}")
     try:
         inspection = oiio_inspect(image)
-        backend = "OpenImageIO" if inspection is not None else "native-header"
+        backend = "OpenImageIO"
+        if inspection is None:
+            inspection = oiio_cli_inspect(image)
+            backend = "OpenImageIO-CLI"
         if inspection is None:
             inspection = native_png(image)
+            backend = "native-format-check"
+            status = "FORMAT_CHECK_ONLY"
+        else:
+            status = "INSPECTED"
         result = {
-            "schema": "trippedd.image-artifact-inspection/v1",
-            "status": "INSPECTED",
+            "schema": "trippedd.image-artifact-inspection/v2",
+            "status": status,
             "evidence_status": "NOT_ATTEMPTED",
             "backend": backend,
             "path": str(image),
@@ -79,6 +100,7 @@ def main() -> int:
                 "inspection_is_not_visual_qc": True,
                 "inspection_is_not_physical_qc": True,
                 "inspection_is_not_production_approval": True,
+                "native_fallback_is_not_decode_evidence": True,
             },
         }
         print(json.dumps(result, indent=2))

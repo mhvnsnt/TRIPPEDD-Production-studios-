@@ -54,56 +54,13 @@ kb = head.data.shape_keys.key_blocks
 # Every value below is a control this rig actually has, and the render is the
 # arbiter of whether the combination reads. That is the whole reason the control
 # layer exists instead of one blob-shaped key per phoneme.
-POSES = [
-    ("01_REST", 0.0, {}, {}),
-    ("02_OPEN", 18.0, {"lip_lower_depress": 0.35, "lip_upper_raise": 0.15}, {}),
-    ("03_WIDE", 31.0, {"lip_lower_depress": 0.70, "lip_upper_raise": 0.45,
-                       "lip_corner_L_up": 0.20, "lip_corner_R_up": 0.20},
-                      {"tongue_root": (-14, 0, 0), "tongue_mid": (-8, 0, 0)}),
-    ("04_AA", 23.0, {"lip_lower_depress": 0.55, "lip_upper_raise": 0.30},
-                    {"tongue_root": (-8, 0, 0), "tongue_mid": (-5, 0, 0)}),
-    ("05_OH", 15.0, {"mouth_funnel": 0.95, "lip_protrude": 0.70,
-                     "lip_corner_L_in": 0.85, "lip_corner_R_in": 0.85,
-                     "lip_lower_depress": 0.25}, {"tongue_root": (-6, 0, 0)}),
-    ("06_EE", 6.0, {"lip_corner_L_wide": 1.0, "lip_corner_R_wide": 1.0,
-                    "lip_upper_raise": 0.35, "lip_lower_depress": 0.18},
-                   {"tongue_mid": (10, 0, 0), "tongue_tip": (8, 0, 0)}),
-    ("07_MM", 0.0, {"lip_seal": 1.0, "lip_compress": 0.65}, {}),
-    ("08_FF", 5.0, {"lip_lower_curl": 0.95, "lip_upper_raise": 0.25,
-                    "lip_corner_L_wide": 0.30, "lip_corner_R_wide": 0.30}, {}),
-    ("09_BLINK", 0.0, {"blink_L": 1.0, "blink_R": 1.0}, {}),
-    ("10_SMILE", 4.0, {"lip_corner_L_up": 1.0, "lip_corner_R_up": 1.0,
-                       "lip_corner_L_wide": 0.65, "lip_corner_R_wide": 0.65,
-                       "cheek_puff_L": 0.25, "cheek_puff_R": 0.25,
-                       "squint_L": 0.35, "squint_R": 0.35}, {}),
-]
+from face_poses import POSES, FACS_POSES
 # ── the FACS set: the NAMED expressions, which is a different question ──────
 # The mouth set asks "is there an oral cavity in there". This one asks "does a
 # named expression reach the screen" -- blinking, brows, nostril flare, smile,
 # the things a face does. They share the rig, the lighting and the cameras on
 # purpose: two proof tools would drift apart and one of them would quietly stop
 # being run.
-FACS_POSES = [
-    ("01_REST", 0.0, {}, {}),
-    ("02_BLINK", 0.0, {"blink_L": 1.0, "blink_R": 1.0}, {}),
-    ("03_BLINK_L_ONLY", 0.0, {"blink_L": 1.0}, {}),
-    ("04_SMILE", 3.0, {"facs_mouthSmile_L": 1.0, "facs_mouthSmile_R": 1.0,
-                       "facs_cheekRaiser_L": 0.6, "facs_cheekRaiser_R": 0.6}, {}),
-    ("05_NOSTRIL_FLARE", 0.0, {"facs_noseSneer_L": 1.0, "facs_noseSneer_R": 1.0}, {}),
-    ("06_BROW_UP", 0.0, {"facs_browInnerUp_L": 1.0, "facs_browInnerUp_R": 1.0,
-                         "facs_browOuterUp_L": 0.8, "facs_browOuterUp_R": 0.8}, {}),
-    ("07_BROW_DOWN", 0.0, {"facs_browDown_L": 1.0, "facs_browDown_R": 1.0}, {}),
-    ("08_CHEEK_PUFF", 0.0, {"facs_cheekPuff_L": 1.0, "facs_cheekPuff_R": 1.0}, {}),
-    ("09_PUCKER", 0.0, {"facs_mouthPucker": 1.0}, {}),
-    ("10_JAW_OPEN", 0.0, {"facs_jawOpen": 1.0}, {}),
-    ("11_SQUINT", 0.0, {"facs_eyeSquint_L": 1.0, "facs_eyeSquint_R": 1.0}, {}),
-    # A compound is the whole point of a FACS basis: disgust is not a shape, it
-    # is sneer + frown + brow together.
-    ("12_DISGUST", 0.0, {"facs_noseSneer_L": 0.9, "facs_noseSneer_R": 0.9,
-                         "facs_mouthFrown_L": 0.7, "facs_mouthFrown_R": 0.7,
-                         "facs_browDown_L": 0.5, "facs_browDown_R": 0.5,
-                         "facs_eyeSquint_L": 0.4, "facs_eyeSquint_R": 0.4}, {}),
-]
 if SET == "facs":
     POSES = FACS_POSES
 elif SET != "mouth":

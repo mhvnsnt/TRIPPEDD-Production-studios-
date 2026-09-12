@@ -6,9 +6,9 @@
       "verts": 771,
       "tris": 1512,
       "marsEyeCentre": [
-        -0.15668,
-        -0.25474,
-        0.42665
+        -0.16442,
+        -0.24622,
+        0.44146
       ],
       "fissureWidth": 0.11095,
       "lidOpening": 0.02522,
@@ -18,6 +18,8 @@
       "eyeballDiameterMM": 28.9,
       "globeOverFissure": 1.004,
       "scale": 3.747187,
+      "fill": 1.04,
+      "seat": 0.3,
       "parts": {
         "sclera": 626,
         "iris": 96,
@@ -28,9 +30,9 @@
       "verts": 771,
       "tris": 1512,
       "marsEyeCentre": [
-        0.10186,
-        -0.25301,
-        0.44829
+        0.10938,
+        -0.24944,
+        0.45693
       ],
       "fissureWidth": 0.10708,
       "lidOpening": 0.02506,
@@ -40,6 +42,8 @@
       "eyeballDiameterMM": 28.3,
       "globeOverFissure": 1.019,
       "scale": 3.616596,
+      "fill": 1.04,
+      "seat": 0.3,
       "parts": {
         "sclera": 626,
         "iris": 96,

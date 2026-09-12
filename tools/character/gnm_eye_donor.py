@@ -35,6 +35,13 @@ if not os.path.exists(NPZ):
 d = np.load(NPZ, allow_pickle=True)
 V = d["template_vertex_positions"].astype(np.float64)
 TRIS = d["triangles"].astype(np.int64)
+# Globe width as a multiple of the measured fissure, and how far back it is
+# seated as a fraction of its own diameter. Swept and measured, not chosen:
+# tools/character/sweep_eye_fit.sh reports the socket showing through the
+# aperture for each pair.
+NO_PAINTED = "--no-painted" in argv   # fall back to the contour centroid
+FILL = float(opt("--fill", "1.04"))
+SEAT = float(opt("--seat", "0.30"))
 names = [str(x) for x in d["vertex_group_names"]]
 vg = d["vertex_groups"]
 def group(n): return np.where(vg[names.index(n)] > 0.5)[0]
@@ -60,6 +67,27 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     ez = np.cross(ex, ey); ez /= np.linalg.norm(ez)
     Mm = np.stack([ex, ey, ez], axis=1)                      # local -> world
 
+    # SEAT ON THE MODEL'S OWN EYE, NOT ON THE CONTOUR CENTROID.
+    # The lid contour is a detector's opinion about where a lid margin runs, and
+    # its centroid sits wherever his lids happen to be asymmetric. The SCAN
+    # knows better: his eyes are PAINTED INTO THE TEXTURE, so the painted sclera
+    # is his own eye at his own position. Measured by measure_painted_eyes.py:
+    #   eye L  painted centre is +4.4 mm ABOVE the contour centroid
+    #   eye R  painted centre is +2.7 mm ABOVE it
+    # Every pass has seated the globes that far low, which is exactly what the
+    # owner reported. Lateral and vertical come from the painted eye; DEPTH
+    # stays with the ring, because a patch painted on the surface says nothing
+    # about how far behind it the globe sits.
+    _pe = os.path.abspath("renders/_rig_measure/painted_eyes.json")
+    if os.path.exists(_pe) and not NO_PAINTED:
+        _pj = json.load(open(_pe))["eyes"].get("eye_%s" % side)
+        if _pj:
+            _d = np.array(_pj["centre"], float) - centre_m
+            _lateral = _d - float(np.dot(_d, ey)) * ey       # drop the depth part
+            centre_m = centre_m + _lateral
+            print("eye %s: seated on the PAINTED eye, %+.1f mm off the contour centroid"
+                  % (side, float(np.linalg.norm(_lateral)) / (0.1930 / 50.0)))
+
     # ── the donor eye ───────────────────────────────────────────────────────
     idx = group(comp)
     keep = np.zeros(len(V), bool); keep[idx] = True
@@ -79,7 +107,7 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     # small -- which is why a socket rim kept showing however the ball was
     # seated, and why three passes of moving it never fixed anything.
     diam_g = float((P.max(0) - P.min(0)).max())
-    S = (fissure_m * 1.04) / diam_g
+    S = (fissure_m * FILL) / diam_g
 
     UP_G = np.array([0.0, 1.0, 0.0]); INTO_G = np.array([0.0, 0.0, -1.0])
     Mg = np.stack([np.cross(INTO_G, UP_G), INTO_G, UP_G], axis=1)
@@ -90,7 +118,7 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     # Seat it only just behind the lid plane. At 0.34 of the radius the globe
     # sat too deep and the lower lid margin outran it, leaving a dark crescent
     # under each eye that reads as a wound rather than an eye.
-    W = W + ey * (fissure_m * 1.04 * 0.30)
+    W = W + ey * (fissure_m * FILL * SEAT)
 
     cls = np.zeros(len(used), np.int32)      # 0 sclera
     for ci, gname in ((1, "irises"), (2, "pupils")):
@@ -118,7 +146,7 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
         "eyeballDiameterIntended": round(float(diam_g * S), 5),
         "eyeballDiameterMM": round(float(max(W.max(0) - W.min(0))) / (0.1930 / 50.0), 1),
         "globeOverFissure": round(float(max(W.max(0) - W.min(0))) / fissure_m, 3),
-        "scale": round(S, 6),
+        "scale": round(S, 6), "fill": FILL, "seat": SEAT,
         "parts": {"sclera": int((cls == 0).sum()), "iris": int((cls == 1).sum()),
                   "pupil": int((cls == 2).sum())},
     }

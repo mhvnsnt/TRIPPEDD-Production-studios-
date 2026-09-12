@@ -10,7 +10,7 @@ A repo cannot magically make an LLM smarter, but it can make the LLM substantial
 2. **Git-native editing** — Aider-style repo mapping and focused diffs.
 3. **Repository intelligence** — ripgrep + fd + tree-sitter/ast-grep for fast structural search and precise edits.
 4. **Static verification** — Semgrep plus the project's existing type/test/build gates.
-5. **Task solving** — SWE-agent/mini-swe-agent patterns for issue-to-patch loops.
+5. **Task solving** — mini-SWE-agent as the preferred lightweight issue-to-patch worker; legacy SWE-agent remains an alternative research harness.
 6. **Model routing** — LiteLLM-compatible provider abstraction so a task can use the best available model without rewriting the harness.
 7. **Durable evidence** — TRIPPEDD's evidence manifests, hashes, visual proofs, and UNKNOWN-never-PASS law.
 8. **Parallel isolation** — Git worktrees so agents never have to destroy another agent's dirty evidence tree to switch tasks.
@@ -23,7 +23,7 @@ The last two are project-specific and are deliberately treated as first-class ag
 |---|---|---|---|
 | Agent runtime | OpenHands SDK | Long-running coding tasks, tools, sandboxing, multi-agent orchestration | P0; integrate as an adapter, not as the production UI |
 | Git-native coding | Aider | Repo map, focused edits, automatic git checkpoints | P0; use for bounded code tasks |
-| Issue solver | SWE-agent / mini-swe-agent | Issue-to-test-to-patch loop | P1; evaluate on real TRIPPEDD issues |
+| Issue solver | mini-SWE-agent | Minimal shell-first issue-to-patch loop | P0/P1; benchmark against real TRIPPEDD issues |
 | Structural search | tree-sitter + ast-grep | AST-aware search and transformations | P0 for large refactors |
 | Fast search | ripgrep + fd | Cheap broad repository discovery | P0 |
 | Static analysis | Semgrep | Security/bug-pattern verification | P0; findings are evidence, not automatic truth |
@@ -33,42 +33,30 @@ The last two are project-specific and are deliberately treated as first-class ag
 ## Architecture
 
 ```text
-                    ┌────────────────────────────┐
-                    │        TRIPPEDD task        │
-                    │ issue / lane / evidence ID  │
-                    └─────────────┬──────────────┘
-                                  │
-                    ┌─────────────▼──────────────┐
-                    │      Agent Task Contract     │
-                    │ scope · inputs · gates ·     │
-                    │ outputs · rollback · owner   │
-                    └─────────────┬──────────────┘
-                                  │
-              ┌───────────────────┼───────────────────┐
-              ▼                   ▼                   ▼
-        OpenHands SDK          Aider              SWE-agent
-        long-running          focused diff       issue solver
-              │                   │                   │
-              └───────────────────┼───────────────────┘
-                                  ▼
-                    ┌────────────────────────────┐
-                    │ Repository intelligence     │
-                    │ rg · fd · tree-sitter      │
-                    │ ast-grep · git worktree    │
-                    └─────────────┬──────────────┘
-                                  ▼
-                    ┌────────────────────────────┐
-                    │ Verification loop            │
-                    │ tests · build · Semgrep     │
-                    │ visual QC · hashes          │
-                    │ contact/geometry gates      │
-                    └─────────────┬──────────────┘
-                                  ▼
-                    ┌────────────────────────────┐
-                    │ Evidence bus                 │
-                    │ manifest + artifacts +       │
-                    │ command + commit + hashes    │
-                    └────────────────────────────┘
+                    TRIPPEDD task
+                         │
+                 Agent Task Contract
+                         │
+       ┌─────────────────┼─────────────────┐
+       ▼                 ▼                 ▼
+ OpenHands SDK         Aider         mini-SWE-agent
+ long-running       focused diff       issue solver
+       └─────────────────┼─────────────────┘
+                         ▼
+              Repository intelligence
+           rg · fd · tree-sitter · ast-grep
+                         │
+                         ▼
+                  Verification loop
+        tests · build · Semgrep · visual QC
+             geometry/contact · hashes
+                         │
+                         ▼
+                    Evidence bus
+             manifest · artifacts · commit
+                         │
+                         ▼
+                 next agent / human
 ```
 
 ## Critical rule: do not vendor agents blindly
@@ -77,45 +65,41 @@ Do **not** dump OpenHands, Aider, or another agent's entire source tree into the
 
 Instead:
 
-- keep the agent tools as external/open-source runtime dependencies;
-- commit a small, versioned adapter/manifest in this repository;
-- record the exact tool version and model used for every reproducible run;
+- keep agent tools as external/open-source runtime dependencies;
+- commit small, versioned adapters and manifests;
+- record exact tool version and model for reproducible runs;
 - make outputs land in the existing evidence bus;
 - make every agent obey the same task contract and quality gates.
 
 This gives TRIPPEDD the useful parts of a Replit/Devin-style harness without making the production app depend on a paid hosted control plane.
 
-## What we should build next
+## Current adapters
 
-### P0
+- `tools/agent/agent_stack_manifest.json` — declared components, roles, licenses, priorities, and capabilities.
+- `tools/agent/check_agent_stack.py` — fail-closed environment/capability check; missing binaries are UNKNOWN.
+- `tools/agent/task_contract.schema.json` — bounded task contract.
+- `tools/agent/worktree_guard.py` — verifies explicit worktree/path scope without deleting or resetting evidence.
+- `tools/agent/mini_swe_runner.py` — bounded mini-SWE-agent invocation and run-receipt adapter.
 
-- `tools/agent/agent_stack_manifest.json` — versions, licenses, roles, install commands, capability flags.
-- `tools/agent/check_agent_stack.py` — fail-closed environment/capability check; never claims a missing binary is installed.
-- Agent task contract with bounded scope and required verification commands.
-- Worktree-per-task convention for Claude/Jules/ChatGPT/other agents.
-- Automatic evidence manifest generation after a successful task.
-- Fast repository map generated from source/config, excluding binary evidence and generated caches.
+## P0 build sequence
 
-### P1
-
-- OpenHands SDK adapter for long-running tasks.
-- Aider adapter for focused code changes.
-- SWE-agent/mini-swe-agent adapter for issue-driven repair.
-- ast-grep recipes for the project's recurring TypeScript/Python/Blender patterns.
-- Semgrep rules for production-specific failure modes.
-- LiteLLM model-routing adapter with per-task model selection.
+1. Worktree isolation and task contract.
+2. mini-SWE-agent bounded repair worker.
+3. OpenHands SDK adapter for long-running tasks.
+4. Evidence receipt generation and verification handoff.
+5. Aider/ast-grep structural editing lanes.
+6. Semgrep project-specific failure rules.
+7. Optional LiteLLM model routing.
 
 ## Definition of better
 
 A better agent is not the one that writes the most code. It is the one that:
 
 - finds the right files quickly;
-- understands the current authority instead of stale artifacts;
+- understands current authority instead of stale artifacts;
 - makes the smallest correct change;
 - runs the right test/render/measurement;
 - notices when its own result is wrong;
 - records enough evidence for another agent to continue;
 - never converts UNKNOWN into PASS;
 - can recover from a failed or interrupted run without destroying evidence.
-
-That is the target for this repository.

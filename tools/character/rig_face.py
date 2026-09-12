@@ -714,18 +714,48 @@ else:
 # Now that there is an eyeball behind a carved aperture, that is measurable:
 # fire rays at each eye and count how many reach the eyeball, at rest and with
 # the lid closed. If the count does not collapse, the control is decorative.
-def eye_rays(side):
+def eye_rays(side, want="globe"):
+    """want="globe": rays still reaching the eyeball.
+       want="socket": rays landing on the CUT RIM rather than on outer lid skin.
+
+    THE RIM SATISFIES "NOTHING REACHES THE GLOBE" WITHOUT BEING A CLOSED EYE.
+    The head is a single-sided shell, so the aperture boolean leaves rim faces
+    that sit IN FRONT of the globe. A ray stopping there never reaches the
+    eyeball, so a travel solve that only asks about the globe declares the lid
+    shut while a pale angular sheet is still plainly visible in the render --
+    which is exactly what the owner kept seeing. Closed means the OUTER SKIN
+    covers it, so the solve has to count the rim too."""
     deps = bpy.context.evaluated_depsgraph_get()
     up = [V(p) for p in F.raw["contours"]["eye_%s_upper" % side]]
     lo = [V(p) for p in F.raw["contours"]["eye_%s_lower" % side]]
     centre = (sum(up, V((0, 0, 0))) + sum(lo, V((0, 0, 0)))) / (len(up) + len(lo))
     span = up[len(up) // 2] - lo[len(lo) // 2]
+    # A GRID OVER THE WHOLE APERTURE, NOT A LINE DOWN ITS MIDDLE.
+    # This sampled 25 points on the vertical centre line only, so a pale sheet
+    # of exposed cut rim sitting off to one side scored a clean 0/25 while it
+    # was plainly visible in the render. An instrument that only looks down the
+    # middle cannot report anything about the sides.
+    wide = up[-1] - up[0]
     n = 0
-    for i in range(25):
-        t = (i / 24.0 - 0.5)
-        o = centre + V((0, -0.5, 0)) + span * t * 0.55
-        hit, loc_, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, V((0, 1, 0)))
-        if hit and ob.name.startswith("MARS_EYE_"): n += 1
+    for gi in range(21):
+        for gj in range(11):
+            t = (gj / 10.0 - 0.5)
+            o = (centre + V((0, -0.5, 0)) + span * t * 0.55
+                 + wide * ((gi / 20.0 - 0.5) * 0.90))
+            hit, loc_, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, V((0, 1, 0)))
+            if not hit: continue
+            if want == "globe":
+                if ob.name.startswith("MARS_EYE_"): n += 1
+            else:
+                if ob.name.startswith("MARS_EYE_"):
+                    n += 1
+                else:
+                    try:
+                        mi = ob.data.polygons[idx].material_index
+                        mn_ = ob.data.materials[mi].name if 0 <= mi < len(ob.data.materials) else ""
+                    except Exception:
+                        mn_ = ""
+                    if "SOCKET" in mn_ or "ORAL" in mn_: n += 1
     return n
 
 # ── bind the eyeballs, so eye_look_L / eye_look_R finally drive something ───
@@ -879,17 +909,18 @@ for side in ("L", "R"):
             if k.name != "Basis": k.value = 0.0
         kb[key].value = 1.0
         bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
-        n = eye_rays(side)
+        n = eye_rays(side, want="socket")
         if n == 0:
-            print("  blink_%s closes the eye at travel x%.2f (0 rays reach the globe)"
-                  % (side, t)); break
-        print("  blink_%s travel x%.2f still lets %d/25 rays through -- rebuilding"
+            print("  blink_%s SHUT at travel x%.2f -- 0/231 rays over the whole aperture "
+                  "find globe or cut rim, only outer lid skin" % (side, t)); break
+        print("  blink_%s travel x%.2f still shows globe/rim on %d/231 rays -- rebuilding"
               % (side, t, n))
         if t == 2.4:
             print("  blink_%s STILL NOT SHUT at x%.2f (%d rays). Reported, not claimed."
                   % (side, t, n)); break
+        nxt = {1.15: 1.4, 1.4: 1.7, 1.7: 2.0, 2.0: 2.4}.get(t, 2.4)
         head.shape_key_remove(kb[key])
-        nk, mv, mx = make_key(key, lid_close(side, travel=t * 1.0 if t > 1.15 else 1.4))
+        nk, mv, mx = make_key(key, lid_close(side, travel=nxt))
         kb = head.data.shape_keys.key_blocks
     for k in kb:
         if k.name != "Basis": k.value = 0.0

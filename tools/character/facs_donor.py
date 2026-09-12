@@ -272,6 +272,11 @@ if untransferable:
         print("  %-18s donor (gnm_eye_donor.py), so this belongs there, not here."
               % "")
 
+# SAVE THE FIT. Anything else that wants ICT geometry in Mars's space -- the eye
+# assembly, the lashes, the occlusion meshes -- needs this exact transform, and
+# re-deriving it somewhere else is how two tools end up with two answers.
+np.savez_compressed(os.path.join(OUT, "ict_to_mars.npz"),
+                    scale=np.array([c]), R=R, t=t, swap=np.array([swap]))
 np.savez_compressed(os.path.join(OUT, "mars_facs.npz"),
                     shape_names=np.array(kept), deltas=MD,
                     untransferable=np.array([n for n, _ in untransferable]),

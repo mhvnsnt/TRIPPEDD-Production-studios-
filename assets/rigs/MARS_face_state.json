@@ -90,7 +90,7 @@
       "travelTowardClosure": 0.02589,
       "openingsTravelled": 1.027,
       "openingsTravelledWholeBand": 0.784,
-      "eyeballRaysOpen": 25,
+      "eyeballRaysOpen": 106,
       "eyeballRaysClosed": 0,
       "occlusionPercent": 100.0,
       "candidates": {
@@ -107,7 +107,7 @@
       "travelTowardClosure": 0.02655,
       "openingsTravelled": 1.059,
       "openingsTravelledWholeBand": 0.833,
-      "eyeballRaysOpen": 25,
+      "eyeballRaysOpen": 102,
       "eyeballRaysClosed": 0,
       "occlusionPercent": 100.0,
       "candidates": {

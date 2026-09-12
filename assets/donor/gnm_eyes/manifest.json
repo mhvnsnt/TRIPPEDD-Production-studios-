@@ -1,54 +1,43 @@
 {
-  "source": "google/GNM v3_0 gnm_head.npz",
-  "license": "Apache-2.0",
+  "source": "ICT-VGL/ICT-FaceKit",
+  "license": "MIT",
+  "why": "a matched eye assembly from one scan beats a sphere dropped into a prism -- globe, socket and occlusion are mutually consistent by construction",
   "eyes": {
-    "eye_L": {
-      "verts": 771,
-      "tris": 1512,
-      "marsEyeCentre": [
-        -0.16442,
-        -0.24622,
-        0.44146
-      ],
-      "fissureWidth": 0.11095,
-      "lidOpening": 0.02522,
-      "aspect": 0.227,
-      "eyeballDiameter": 0.08948,
-      "eyeballDiameterIntended": 0.09264,
-      "eyeballDiameterMM": 23.2,
-      "globeOverFissure": 0.806,
-      "scale": 3.008559,
-      "fill": 0.835,
-      "seat": 0.46,
-      "parts": {
-        "sclera": 626,
-        "iris": 96,
-        "pupil": 49
-      }
-    },
     "eye_R": {
-      "verts": 771,
-      "tris": 1512,
-      "marsEyeCentre": [
-        0.10938,
-        -0.24944,
-        0.45693
+      "ictSide": "left",
+      "parts": [
+        "eyeball_left",
+        "eye_occlusion_left",
+        "lacrimal_left"
       ],
-      "fissureWidth": 0.10708,
-      "lidOpening": 0.02506,
-      "aspect": 0.234,
-      "eyeballDiameter": 0.08761,
-      "eyeballDiameterIntended": 0.08941,
-      "eyeballDiameterMM": 22.7,
-      "globeOverFissure": 0.818,
-      "scale": 2.90371,
-      "fill": 0.835,
-      "seat": 0.46,
-      "parts": {
-        "sclera": 626,
-        "iris": 96,
-        "pupil": 49
-      }
+      "verts": 1926,
+      "tris": 3714,
+      "eyeballDiameter": 0.09264,
+      "eyeballDiameterMM": 24.0,
+      "marsEyeCentre": [
+        0.10951,
+        -0.25442,
+        0.45887
+      ],
+      "seatedOnPaintedEye": true
+    },
+    "eye_L": {
+      "ictSide": "right",
+      "parts": [
+        "eyeball_right",
+        "eye_occlusion_right",
+        "lacrimal_right"
+      ],
+      "verts": 1926,
+      "tris": 3714,
+      "eyeballDiameter": 0.09264,
+      "eyeballDiameterMM": 24.0,
+      "marsEyeCentre": [
+        -0.16635,
+        -0.25195,
+        0.44375
+      ],
+      "seatedOnPaintedEye": true
     }
   }
 }

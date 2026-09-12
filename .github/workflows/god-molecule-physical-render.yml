@@ -15,6 +15,8 @@ on:
     paths:
       - "tools/character/**"
       - "tools/environment/**"
+      - "scripts/verify_image_artifact.py"
+      - "scripts/verify_image_artifact_test.py"
       - "config/god_molecule_trippedd_bridge.json"
       - "config/god_molecule_asset_registry.json"
       - "config/opensource_production_stack.json"
@@ -42,6 +44,11 @@ jobs:
           sudo apt-get install -y curl wget unzip xz-utils git-lfs python3-pip libgl1 libegl1 libx11-6 libxrender1 libxi6 libxfixes3 libxxf86vm1 libxkbcommon0
           git lfs pull || true
           python3 -m pip install --user gdown opentimelineio
+
+      - name: Test image artifact verifier adversarially
+        run: |
+          set -euxo pipefail
+          python3 scripts/verify_image_artifact_test.py
 
       - name: Provision optional OSS Python APIs
         run: |

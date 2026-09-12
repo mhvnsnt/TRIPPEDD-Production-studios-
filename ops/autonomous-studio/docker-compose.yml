@@ -41,6 +41,18 @@ services:
     ports:
       - "5432:5432"
 
+  openhands:
+    image: docker.openhands.dev/openhands/openhands:latest
+    environment:
+      AGENT_SERVER_IMAGE_REPOSITORY: ghcr.io/openhands/agent-server
+      AGENT_SERVER_IMAGE_TAG: latest-python
+      SANDBOX_VOLUMES: ../../:/workspace:rw
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - openhands-data:/root/.openhands
+    ports:
+      - "3000:3000"
+
   n8n:
     image: docker.n8n.io/n8nio/n8n:latest
     environment:
@@ -61,3 +73,4 @@ volumes:
   agent-artifacts:
   agent-db:
   n8n-data:
+  openhands-data:

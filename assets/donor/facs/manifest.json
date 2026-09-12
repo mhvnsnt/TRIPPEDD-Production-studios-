@@ -1,0 +1,390 @@
+{
+  "source": "ICT-VGL/ICT-FaceKit",
+  "license": "MIT",
+  "why": "GNM's 383 expression deltas are unnamed PCA components; a rig control needs a NAMED shape. ICT ships FACS/ARKit-labelled geometry.",
+  "fit": {
+    "scale": 0.038311,
+    "meanLandmarkError": 0.025139,
+    "errorPercentOfHeadHeight": 2.981,
+    "leftRightConventionSwapped": true,
+    "shapeNamesReSided": true,
+    "reSidedNote": "ICT's left/right is mirrored relative to ours, so every _L/_R shape is EXPORTED UNDER THE SIDE IT LANDS ON for Mars. ICT's eyeBlink_L deforms his RIGHT lid and ships as _R.",
+    "landmarks": 15,
+    "method": "Umeyama similarity over 13 Multi-PIE landmarks shared by both heads; both left/right pairings fitted, better one kept"
+  },
+  "moveEpsilon": {
+    "value": 0.000422,
+    "asPercentOfHeadHeight": 0.05,
+    "why": "one threshold in Mars units for every test; a raw donor epsilon is scale-blind and reads registration noise as motion"
+  },
+  "correspondence": {
+    "k": 4,
+    "maxDistance": 0.035,
+    "marsVerts": 23830,
+    "mapped": 10032,
+    "meanNearest": 0.01699,
+    "p95Nearest": 0.03208,
+    "sourceParts": [
+      "face",
+      "head_and_neck"
+    ],
+    "excluded": [
+      "teeth",
+      "eyeballs",
+      "lacrimal",
+      "eyelashes",
+      "gums_and_tongue",
+      "mouth_socket"
+    ],
+    "note": "unmapped = dreadlocks and neck termination"
+  },
+  "shapes": [
+    {
+      "name": "browDown_R",
+      "movingVerts": 1243,
+      "maxDisplacement": 0.02377,
+      "percentOfHeadHeight": 2.819
+    },
+    {
+      "name": "browDown_L",
+      "movingVerts": 1687,
+      "maxDisplacement": 0.02443,
+      "percentOfHeadHeight": 2.897
+    },
+    {
+      "name": "browInnerUp_R",
+      "movingVerts": 1835,
+      "maxDisplacement": 0.02218,
+      "percentOfHeadHeight": 2.63
+    },
+    {
+      "name": "browInnerUp_L",
+      "movingVerts": 2158,
+      "maxDisplacement": 0.02313,
+      "percentOfHeadHeight": 2.743
+    },
+    {
+      "name": "browOuterUp_R",
+      "movingVerts": 3408,
+      "maxDisplacement": 0.03295,
+      "percentOfHeadHeight": 3.907
+    },
+    {
+      "name": "browOuterUp_L",
+      "movingVerts": 3227,
+      "maxDisplacement": 0.0321,
+      "percentOfHeadHeight": 3.807
+    },
+    {
+      "name": "cheekPuff_R",
+      "movingVerts": 2680,
+      "maxDisplacement": 0.05383,
+      "percentOfHeadHeight": 6.384
+    },
+    {
+      "name": "cheekPuff_L",
+      "movingVerts": 2433,
+      "maxDisplacement": 0.05314,
+      "percentOfHeadHeight": 6.302
+    },
+    {
+      "name": "cheekRaiser_R",
+      "movingVerts": 2796,
+      "maxDisplacement": 0.02603,
+      "percentOfHeadHeight": 3.087
+    },
+    {
+      "name": "cheekRaiser_L",
+      "movingVerts": 2653,
+      "maxDisplacement": 0.02598,
+      "percentOfHeadHeight": 3.081
+    },
+    {
+      "name": "cheekSquint_R",
+      "movingVerts": 4504,
+      "maxDisplacement": 0.02376,
+      "percentOfHeadHeight": 2.818
+    },
+    {
+      "name": "cheekSquint_L",
+      "movingVerts": 4368,
+      "maxDisplacement": 0.02369,
+      "percentOfHeadHeight": 2.81
+    },
+    {
+      "name": "eyeBlink_R",
+      "movingVerts": 286,
+      "maxDisplacement": 0.0247,
+      "percentOfHeadHeight": 2.929
+    },
+    {
+      "name": "eyeBlink_L",
+      "movingVerts": 307,
+      "maxDisplacement": 0.02774,
+      "percentOfHeadHeight": 3.29
+    },
+    {
+      "name": "eyeLookDown_R",
+      "movingVerts": 263,
+      "maxDisplacement": 0.02098,
+      "percentOfHeadHeight": 2.488
+    },
+    {
+      "name": "eyeLookDown_L",
+      "movingVerts": 271,
+      "maxDisplacement": 0.02475,
+      "percentOfHeadHeight": 2.935
+    },
+    {
+      "name": "eyeLookIn_R",
+      "movingVerts": 208,
+      "maxDisplacement": 0.00854,
+      "percentOfHeadHeight": 1.012
+    },
+    {
+      "name": "eyeLookIn_L",
+      "movingVerts": 187,
+      "maxDisplacement": 0.00863,
+      "percentOfHeadHeight": 1.024
+    },
+    {
+      "name": "eyeLookOut_R",
+      "movingVerts": 198,
+      "maxDisplacement": 0.00929,
+      "percentOfHeadHeight": 1.102
+    },
+    {
+      "name": "eyeLookOut_L",
+      "movingVerts": 185,
+      "maxDisplacement": 0.00929,
+      "percentOfHeadHeight": 1.102
+    },
+    {
+      "name": "eyeLookUp_R",
+      "movingVerts": 214,
+      "maxDisplacement": 0.00988,
+      "percentOfHeadHeight": 1.171
+    },
+    {
+      "name": "eyeLookUp_L",
+      "movingVerts": 225,
+      "maxDisplacement": 0.01092,
+      "percentOfHeadHeight": 1.295
+    },
+    {
+      "name": "eyeSquint_R",
+      "movingVerts": 1598,
+      "maxDisplacement": 0.01401,
+      "percentOfHeadHeight": 1.661
+    },
+    {
+      "name": "eyeSquint_L",
+      "movingVerts": 1497,
+      "maxDisplacement": 0.0127,
+      "percentOfHeadHeight": 1.506
+    },
+    {
+      "name": "eyeWide_R",
+      "movingVerts": 90,
+      "maxDisplacement": 0.00994,
+      "percentOfHeadHeight": 1.179
+    },
+    {
+      "name": "eyeWide_L",
+      "movingVerts": 119,
+      "maxDisplacement": 0.01105,
+      "percentOfHeadHeight": 1.31
+    },
+    {
+      "name": "jawForward",
+      "movingVerts": 5088,
+      "maxDisplacement": 0.04234,
+      "percentOfHeadHeight": 5.021
+    },
+    {
+      "name": "jawLeft",
+      "movingVerts": 4786,
+      "maxDisplacement": 0.03407,
+      "percentOfHeadHeight": 4.04
+    },
+    {
+      "name": "jawOpen",
+      "movingVerts": 5953,
+      "maxDisplacement": 0.16057,
+      "percentOfHeadHeight": 19.043
+    },
+    {
+      "name": "jawRight",
+      "movingVerts": 4841,
+      "maxDisplacement": 0.03409,
+      "percentOfHeadHeight": 4.043
+    },
+    {
+      "name": "mouthClose",
+      "movingVerts": 1222,
+      "maxDisplacement": 0.15882,
+      "percentOfHeadHeight": 18.836
+    },
+    {
+      "name": "mouthDimple_R",
+      "movingVerts": 1774,
+      "maxDisplacement": 0.03355,
+      "percentOfHeadHeight": 3.979
+    },
+    {
+      "name": "mouthDimple_L",
+      "movingVerts": 1515,
+      "maxDisplacement": 0.03288,
+      "percentOfHeadHeight": 3.899
+    },
+    {
+      "name": "mouthFrown_R",
+      "movingVerts": 2160,
+      "maxDisplacement": 0.02321,
+      "percentOfHeadHeight": 2.752
+    },
+    {
+      "name": "mouthFrown_L",
+      "movingVerts": 2099,
+      "maxDisplacement": 0.02331,
+      "percentOfHeadHeight": 2.764
+    },
+    {
+      "name": "mouthFunnel",
+      "movingVerts": 4008,
+      "maxDisplacement": 0.04477,
+      "percentOfHeadHeight": 5.31
+    },
+    {
+      "name": "mouthLeft",
+      "movingVerts": 3779,
+      "maxDisplacement": 0.07136,
+      "percentOfHeadHeight": 8.463
+    },
+    {
+      "name": "mouthLowerDown_R",
+      "movingVerts": 830,
+      "maxDisplacement": 0.01748,
+      "percentOfHeadHeight": 2.073
+    },
+    {
+      "name": "mouthLowerDown_L",
+      "movingVerts": 817,
+      "maxDisplacement": 0.01718,
+      "percentOfHeadHeight": 2.038
+    },
+    {
+      "name": "mouthPress_R",
+      "movingVerts": 1920,
+      "maxDisplacement": 0.01651,
+      "percentOfHeadHeight": 1.958
+    },
+    {
+      "name": "mouthPress_L",
+      "movingVerts": 1759,
+      "maxDisplacement": 0.01574,
+      "percentOfHeadHeight": 1.867
+    },
+    {
+      "name": "mouthPucker",
+      "movingVerts": 3902,
+      "maxDisplacement": 0.04288,
+      "percentOfHeadHeight": 5.085
+    },
+    {
+      "name": "mouthRight",
+      "movingVerts": 3885,
+      "maxDisplacement": 0.07152,
+      "percentOfHeadHeight": 8.482
+    },
+    {
+      "name": "mouthRollLower",
+      "movingVerts": 1422,
+      "maxDisplacement": 0.04857,
+      "percentOfHeadHeight": 5.761
+    },
+    {
+      "name": "mouthRollUpper",
+      "movingVerts": 1291,
+      "maxDisplacement": 0.04411,
+      "percentOfHeadHeight": 5.231
+    },
+    {
+      "name": "mouthShrugLower",
+      "movingVerts": 1933,
+      "maxDisplacement": 0.04311,
+      "percentOfHeadHeight": 5.112
+    },
+    {
+      "name": "mouthShrugUpper",
+      "movingVerts": 349,
+      "maxDisplacement": 0.02355,
+      "percentOfHeadHeight": 2.793
+    },
+    {
+      "name": "mouthSmile_R",
+      "movingVerts": 3462,
+      "maxDisplacement": 0.05921,
+      "percentOfHeadHeight": 7.022
+    },
+    {
+      "name": "mouthSmile_L",
+      "movingVerts": 3166,
+      "maxDisplacement": 0.05904,
+      "percentOfHeadHeight": 7.002
+    },
+    {
+      "name": "mouthStretch_R",
+      "movingVerts": 2067,
+      "maxDisplacement": 0.03832,
+      "percentOfHeadHeight": 4.544
+    },
+    {
+      "name": "mouthStretch_L",
+      "movingVerts": 1795,
+      "maxDisplacement": 0.03833,
+      "percentOfHeadHeight": 4.546
+    },
+    {
+      "name": "mouthUpperUp_R",
+      "movingVerts": 2186,
+      "maxDisplacement": 0.03298,
+      "percentOfHeadHeight": 3.911
+    },
+    {
+      "name": "mouthUpperUp_L",
+      "movingVerts": 1953,
+      "maxDisplacement": 0.03369,
+      "percentOfHeadHeight": 3.996
+    },
+    {
+      "name": "noseSneer_R",
+      "movingVerts": 3642,
+      "maxDisplacement": 0.03904,
+      "percentOfHeadHeight": 4.63
+    },
+    {
+      "name": "noseSneer_L",
+      "movingVerts": 3352,
+      "maxDisplacement": 0.03888,
+      "percentOfHeadHeight": 4.611
+    }
+  ],
+  "notTransferableThroughSkin": [
+    {
+      "name": "PupilDilate_R",
+      "movesOnly": [
+        "eyeball_left"
+      ],
+      "why": "no skin component; belongs to the eye donor, not this one"
+    },
+    {
+      "name": "PupilDilate_L",
+      "movesOnly": [
+        "gums_and_tongue",
+        "eyeball_right"
+      ],
+      "why": "no skin component; belongs to the eye donor, not this one"
+    }
+  ]
+}

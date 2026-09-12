@@ -26,6 +26,34 @@ This builds that rig on Mars's MEASURED lid contours and his ICT eyeball:
     margins meet, which is an angle READ OFF the geometry, not chosen
 
   vendor/blender/blender -b -P tools/character/lid_bones.py --
+
+STATUS: THE BONES ARE BUILT AND THEY DO NOT CLOSE THE EYE YET. Measured by
+driving them, not assumed:
+
+    eye L   open 150/231 samples  ->  108 at 23.9 deg  ->  86 at 35.9 deg
+    eye R   open 150/231 samples  ->  149 at 25.6 deg  ->  135 at 38.4 deg
+
+Two defects, both wiring rather than approach, and both mine:
+
+ 1. THE WEIGHTS ARE NOT EXCLUSIVE. The lid groups below are added with REPLACE,
+    which sets the lid weight but does NOT remove the head/jaw weight those
+    vertices already carry. Armature deform normalises, so a lid bone at weight
+    w competes with head at 1.0 and only ever gets w/(1+w) of the motion. That
+    is why the right eye moved 150 -> 149, i.e. essentially not at all. The head
+    weight has to be reduced by the lid weight on exactly those vertices.
+
+ 2. THE ROTATION IS IN THE WRONG SPACE. pose_bone.rotation_quaternion is the
+    BONE'S LOCAL space. The drive test built its rotation from the WORLD fissure
+    axis and assigned it straight in, so each bone turned about its own rest
+    axis instead of about the eye's lateral axis. Either convert through the
+    bone's rest matrix, or roll the bones onto that axis where they are created
+    below (b.roll is currently 0.0, which is the honest place to fix it).
+
+The approach stands: the angle is READ from his contours (23.9 / 25.6 deg,
+near-symmetric) instead of tuned, and a lid rooted at the eye centre cannot pass
+through the globe at any angle -- which is the whole class of defect the
+shape-key blink kept producing. Until this closes, the SHAPE-KEY blink is what
+ships, and it still closes the right eye and not the left.
 """
 import bpy, sys, os, json, math
 from mathutils import Vector as V, Matrix

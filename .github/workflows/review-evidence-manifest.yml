@@ -44,6 +44,8 @@ jobs:
           PY
 
       - name: Build exact-pixel review manifest
+        id: build_review_manifest
+        continue-on-error: true
         run: |
           set -euo pipefail
           mkdir -p .artifacts/evidence
@@ -52,7 +54,37 @@ jobs:
             --output .artifacts/evidence/mouth-review-manifest.json \
             | tee .artifacts/evidence/mouth-review-manifest.log
 
+      - name: Audit every committed evidence hash
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/evidence
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          index = json.loads(Path('docs/evidence/mouth/index.json').read_text())
+          mismatches = []
+          missing = []
+          for frame in index.get('frames', []):
+              rel = Path(frame['repoPath'])
+              if not rel.is_file():
+                  missing.append(frame['repoPath'])
+                  continue
+              h = hashlib.sha256(rel.read_bytes()).hexdigest()
+              expected = frame.get('sha256')
+              if h != expected:
+                  mismatches.append({'path': frame['repoPath'], 'expected': expected, 'actual': h, 'bytes': rel.stat().st_size})
+          report = {'schema':'trippedd.evidence-hash-audit/v1','frames':len(index.get('frames', [])),'mismatches':mismatches,'missing':missing,'exact_match':not mismatches and not missing}
+          Path('.artifacts/evidence/evidence-hash-audit.json').write_text(json.dumps(report, indent=2)+'\n')
+          print(f"EVIDENCE_HASH_AUDIT: frames={report['frames']} mismatches={len(mismatches)} missing={len(missing)}")
+          for item in mismatches:
+              print(f"HASH_MISMATCH: {item['path']} expected={item['expected']} actual={item['actual']} bytes={item['bytes']}")
+          for item in missing:
+              print(f"EVIDENCE_MISSING: {item}")
+          PY
+
       - name: Functional OSS probes
+        if: always()
         run: |
           set -euo pipefail
           python3 tools/environment/probe_oss_functional.py \
@@ -60,6 +92,7 @@ jobs:
             | tee .artifacts/evidence/oss-functional-probes.log
 
       - name: Inspect exact production image artifacts
+        if: always()
         run: |
           set -euo pipefail
           python3 tools/environment/inspect_image_artifact.py \
@@ -68,14 +101,24 @@ jobs:
             | tee .artifacts/evidence/first-image-inspection.log
 
       - name: Enforce review-manifest and probe policy
+        if: always()
         run: |
           set -euo pipefail
           python3 - <<'PY'
           import json
           from pathlib import Path
-          manifest = json.loads(Path('.artifacts/evidence/mouth-review-manifest.json').read_text())
-          probes = json.loads(Path('.artifacts/evidence/oss-functional-probes.json').read_text())
-          inspection = json.loads(Path('.artifacts/evidence/first-image-inspection.json').read_text())
+          manifest_path = Path('.artifacts/evidence/mouth-review-manifest.json')
+          probes_path = Path('.artifacts/evidence/oss-functional-probes.json')
+          inspection_path = Path('.artifacts/evidence/first-image-inspection.json')
+          audit = json.loads(Path('.artifacts/evidence/evidence-hash-audit.json').read_text())
+          assert '${{ steps.build_review_manifest.outcome }}' == 'success', 'REVIEW_MANIFEST: BLOCKED'
+          assert audit['exact_match'] is True, f"EVIDENCE_HASH_AUDIT: BLOCKED ({len(audit['mismatches'])} mismatches, {len(audit['missing'])} missing)"
+          assert manifest_path.is_file(), 'review manifest missing'
+          assert probes_path.is_file(), 'OSS probe receipt missing'
+          assert inspection_path.is_file(), 'image inspection receipt missing'
+          manifest = json.loads(manifest_path.read_text())
+          probes = json.loads(probes_path.read_text())
+          inspection = json.loads(inspection_path.read_text())
           assert manifest['schema'] == 'trippedd.review-manifest/v1'
           assert manifest['evidence_status'] == 'NOT_ATTEMPTED'
           assert manifest['policy']['exact_pixel_sha256_required'] is True
@@ -93,6 +136,7 @@ jobs:
           PY
 
       - name: Upload review and OSS probe manifests
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: trippedd-review-and-oss-probes-${{ github.run_id }}

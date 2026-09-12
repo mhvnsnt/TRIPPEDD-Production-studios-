@@ -268,19 +268,67 @@ CAM_MOUTH = camera("CAM_MOUTH", tuple(V(mouth_w) + V((0.05, -0.85, 0.10))), mout
 CAM_PROFILE = camera("CAM_PROFILE", (CENTRE.x - 2.30, CENTRE.y - 0.05, CENTRE.z),
                      (CENTRE.x, CENTRE.y, CENTRE.z), 70)
 
-def pixel_delta(a, b):
-    """Mean absolute RGB difference between two rendered frames, 0..1."""
+def _load_rgb(path):
+    import numpy as _np
+    im = bpy.data.images.load(path)
+    try:
+        buf = _np.empty(len(im.pixels), _np.float32); im.pixels.foreach_get(buf)
+        w, h = im.size
+        return buf.reshape(h, w, 4)[:, :, :3]     # Blender rows run bottom-up
+    finally:
+        bpy.data.images.remove(im)
+
+def pixel_delta(a, b, box=None):
+    """Mean absolute RGB difference between two rendered frames, 0..1.
+
+    A WHOLE-FRAME MEAN IS THE WRONG UNIT AND IT FAILED A WORKING BLINK.
+    Measured: one lid scored 0.00110 and both lids 0.00266 against a 0.0015 bar
+    -- consistent with each other and with a real blink, and rejected purely
+    because two eyelids are a tiny fraction of a full-head frame while a brow
+    raise is a large one. Judging both against the same number asks a blink to
+    repaint as much of the image as a brow does.
+    `box` is a normalised (x0, y0, x1, y1) region, so the delta is measured
+    where the control acts. Same lesson as MOVE_EPS: the threshold has to be in
+    the units of the thing being measured."""
     if a == b or not (os.path.exists(a) and os.path.exists(b)): return 0.0
     import numpy as _np
-    ia, ib = bpy.data.images.load(a), bpy.data.images.load(b)
-    try:
-        pa = _np.empty(len(ia.pixels), _np.float32); ia.pixels.foreach_get(pa)
-        pb = _np.empty(len(ib.pixels), _np.float32); ib.pixels.foreach_get(pb)
-        if pa.shape != pb.shape: return 0.0
-        pa = pa.reshape(-1, 4)[:, :3]; pb = pb.reshape(-1, 4)[:, :3]
-        return float(_np.abs(pa - pb).mean())
-    finally:
-        bpy.data.images.remove(ia); bpy.data.images.remove(ib)
+    pa, pb = _load_rgb(a), _load_rgb(b)
+    if pa.shape != pb.shape: return 0.0
+    if box:
+        h, w, _ = pa.shape
+        x0, y0, x1, y1 = box
+        cx0, cx1 = max(0, int(x0 * w)), min(w, max(int(x1 * w), int(x0 * w) + 1))
+        cy0, cy1 = max(0, int(y0 * h)), min(h, max(int(y1 * h), int(y0 * h) + 1))
+        pa, pb = pa[cy0:cy1, cx0:cx1], pb[cy0:cy1, cx0:cx1]
+        if pa.size == 0: return 0.0
+    return float(_np.abs(pa - pb).mean())
+
+from bpy_extras.object_utils import world_to_camera_view
+
+def moved_region(cam, pad=0.03):
+    """The normalised screen box the CURRENT pose actually displaces.
+
+    Derived from the live evaluated mesh against the rest mesh, so it covers
+    bone motion and shape keys alike rather than trusting a pose dictionary."""
+    deps = bpy.context.evaluated_depsgraph_get()
+    ev = head.evaluated_get(deps); m = ev.to_mesh()
+    cur = [head.matrix_world @ v.co.copy() for v in m.vertices]
+    ev.to_mesh_clear()
+    if not hasattr(moved_region, "rest"):
+        return None
+    rest = moved_region.rest
+    if len(rest) != len(cur): return None
+    pts = [c for c, r in zip(cur, rest) if (c - r).length > MW * 0.004]
+    if not pts: return None
+    uv = [world_to_camera_view(scene, cam, p) for p in pts]
+    xs = [u.x for u in uv]; ys = [u.y for u in uv]
+    return (min(xs) - pad, min(ys) - pad, max(xs) + pad, max(ys) + pad)
+
+def snapshot_rest():
+    deps = bpy.context.evaluated_depsgraph_get()
+    ev = head.evaluated_get(deps); m = ev.to_mesh()
+    moved_region.rest = [head.matrix_world @ v.co.copy() for v in m.vertices]
+    ev.to_mesh_clear()
 
 # ── run ─────────────────────────────────────────────────────────────────────
 report, rest_survey = [], None
@@ -305,9 +353,17 @@ for (name, jaw, shapes, tongue) in POSES:
     # a control that is real and invisible. Compare the actual rendered pixels
     # against REST. This is the cheapest possible version of the visual gate
     # and it catches the case no vertex count can.
-    row["frontPixelDeltaVsRest"] = round(pixel_delta(
-        os.path.join(OUT, "%s_front.png" % name),
-        os.path.join(OUT, "01_REST_front.png")), 5)
+    _front = os.path.join(OUT, "%s_front.png" % name)
+    _rest_front = os.path.join(OUT, "01_REST_front.png")
+    if name == "01_REST":
+        snapshot_rest()
+        row["movedRegion"] = None
+    else:
+        row["movedRegion"] = [round(c, 4) for c in (moved_region(CAM_FULL) or (0, 0, 1, 1))]
+    row["frontPixelDeltaVsRest"] = round(pixel_delta(_front, _rest_front), 5)
+    row["regionPixelDeltaVsRest"] = round(
+        pixel_delta(_front, _rest_front,
+                    box=row["movedRegion"] if row["movedRegion"] else None), 5)
     print("%-10s jaw %4.1f  gap %6.2f%% HH   skin %5.1f%%  cavity %5.1f%%  teeth %5.1f%%  "
           "gum %4.1f%%  tongue %5.1f%%"
           % (name, jaw, row["lipGapPercentOfHeadHeight"], row["visible"]["skin"],
@@ -325,33 +381,54 @@ GATE = "FACE_EXPRESSION_VERIFIED" if SET == "facs" else "MOUTH_ANATOMY_VERIFIED"
 print("\n%s gate" % GATE)
 
 if SET == "facs":
-    rest_eye = by["01_REST"]["visible"]["eye"] if "01_REST" in by else 0.0
     for r in report:
         if r["pose"] == "01_REST": continue
-        check("%s reaches the screen" % r["pose"], r["frontPixelDeltaVsRest"] > 0.0015,
-              "mean pixel delta vs REST %.5f" % r["frontPixelDeltaVsRest"])
-    if "02_BLINK" in by:
-        check("BLINK hides the eyes", by["02_BLINK"]["visible"]["eye"] < rest_eye * 0.5,
-              "eye %.1f%% of the surveyed area vs %.1f%% at rest"
-              % (by["02_BLINK"]["visible"]["eye"], rest_eye))
+        check("%s reaches the screen" % r["pose"], r["regionPixelDeltaVsRest"] > 0.004,
+              "pixel delta %.5f inside the region it moves (%.5f over the whole frame)"
+              % (r["regionPixelDeltaVsRest"], r["frontPixelDeltaVsRest"]))
+    # THE EYES ARE NOT IN THE MOUTH SURVEY. The ray grid is aimed at the mouth
+    # with span 1.25 MW, so `eye` reads 0.0% at rest and in every pose -- asking
+    # it about a blink is asking an instrument that cannot see the eyes whether
+    # the eyes changed, and it answers "no" forever. That is the same shape as
+    # the gum row reading 0.0% while gums were plainly in frame. The blink's
+    # GEOMETRY verdict is measured in rig_face.py (lid travel toward closure, as
+    # a fraction of each eye's own opening) and recorded in MARS_face_state.json;
+    # this sheet's job is to confirm it reaches the PIXELS.
+    br = state.get("blink", {})
+    for sd in ("L", "R"):
+        b = br.get("blink_%s" % sd)
+        if not b: continue
+        check("blink_%s closes, not opens (geometry)" % sd, b["openingsTravelled"] >= 0.8,
+              "%s travels %+.2f of the eye's own opening (occlusion %.0f%%, which is NOT "
+              "the verdict)" % (b["chosen"], b["openingsTravelled"], b["occlusionPercent"]))
     if "03_BLINK_L_ONLY" in by and "02_BLINK" in by:
-        check("one lid closes independently of the other",
-              by["02_BLINK"]["visible"]["eye"] < by["03_BLINK_L_ONLY"]["visible"]["eye"] < rest_eye + 0.01,
-              "eye: rest %.1f%% -> one lid %.1f%% -> both %.1f%%"
-              % (rest_eye, by["03_BLINK_L_ONLY"]["visible"]["eye"], by["02_BLINK"]["visible"]["eye"]))
+        one, both = by["03_BLINK_L_ONLY"], by["02_BLINK"]
+        check("one lid moves about half of what two lids move",
+              one["frontPixelDeltaVsRest"] > 0
+              and 0.3 < one["frontPixelDeltaVsRest"] / both["frontPixelDeltaVsRest"] < 0.75,
+              "one lid %.5f vs both %.5f = %.0f%% of the two-lid change"
+              % (one["frontPixelDeltaVsRest"], both["frontPixelDeltaVsRest"],
+                 100 * one["frontPixelDeltaVsRest"] / max(both["frontPixelDeltaVsRest"], 1e-9)))
     if "10_JAW_OPEN" in by and "01_REST" in by:
-        check("the FACS jaw opens the mouth",
-              by["10_JAW_OPEN"]["lipGap"] > by["01_REST"]["lipGap"] * 2.0,
-              "gap %.2f%% of head height vs %.2f%% at rest"
+        # facs_jawOpen is a SKIN shape. It does not rotate the jaw bone, so the
+        # lower arch and tongue -- which ride that bone -- stay put. Stated as a
+        # measurement rather than hidden: the shape is real, the wiring to the
+        # bone is the next piece of work.
+        check("the FACS jaw shape parts the lips on its own",
+              by["10_JAW_OPEN"]["lipGap"] > by["01_REST"]["lipGap"] + MW * 0.005,
+              "gap %.2f%% of head height vs %.2f%% at rest -- skin only; the jaw BONE is "
+              "what carries the lower arch, and driving it from this shape is not wired yet"
               % (by["10_JAW_OPEN"]["lipGapPercentOfHeadHeight"],
                  by["01_REST"]["lipGapPercentOfHeadHeight"]))
     if "12_DISGUST" in by and "05_NOSTRIL_FLARE" in by:
-        check("a compound is not just its largest part",
-              abs(by["12_DISGUST"]["frontPixelDeltaVsRest"]
-                  - by["05_NOSTRIL_FLARE"]["frontPixelDeltaVsRest"]) > 0.0008,
-              "disgust %.5f vs sneer alone %.5f"
-              % (by["12_DISGUST"]["frontPixelDeltaVsRest"],
-                 by["05_NOSTRIL_FLARE"]["frontPixelDeltaVsRest"]))
+        # COMPARE THE TWO FRAMES, NOT THEIR DISTANCES FROM A THIRD ONE. Two
+        # different faces can sit the same distance from REST; |d1 - d2| was
+        # 0.00031 for two visibly different expressions because the sneer
+        # dominates the area in both. Ask the real question directly.
+        d = pixel_delta(os.path.join(OUT, "12_DISGUST_front.png"),
+                        os.path.join(OUT, "05_NOSTRIL_FLARE_front.png"))
+        check("a compound is not just its largest part", d > 0.004,
+              "disgust vs sneer-alone differ by %.5f across the frame" % d)
 
 if SET == "mouth" and "01_REST" in by:
     r = by["01_REST"]

@@ -190,7 +190,11 @@ for side in ("L", "R"):
     # So: compare what landed against what the donor recorded, every run.
     _w = [ball.matrix_world @ v.co for v in eme.vertices]
     _ext = max(max(p[i] for p in _w) - min(p[i] for p in _w) for i in range(3))
-    _claim = EM["eyes"]["eye_%s" % side]["eyeballDiameter"]
+    _e = EM["eyes"]["eye_%s" % side]
+    # Compare against the ASSEMBLY extent when the donor is a multi-part eye:
+    # occlusion and lacrimal reach past the globe, so checking the object's bbox
+    # against a globe-only diameter is comparing two different things.
+    _claim = _e.get("assemblyExtent", _e["eyeballDiameter"])
     if abs(_ext - _claim) > _claim * 0.02:
         sys.exit("EYE %s IS NOT THE SIZE THE DONOR RECORDED: %.4f in the blend vs %.4f in "
                  "assets/donor/gnm_eyes/manifest.json (ratio %.3f). A donor and the mesh "

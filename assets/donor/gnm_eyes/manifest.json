@@ -12,12 +12,16 @@
       ],
       "verts": 1926,
       "tris": 3714,
+      "fissureWidth": 0.10708,
+      "lidOpening": 0.02506,
+      "aspect": 0.234,
+      "assemblyExtent": 0.09491,
       "eyeballDiameter": 0.09264,
       "eyeballDiameterMM": 24.0,
       "marsEyeCentre": [
-        0.10951,
-        -0.25442,
-        0.45887
+        0.10856,
+        -0.21771,
+        0.44452
       ],
       "seatedOnPaintedEye": true
     },
@@ -30,12 +34,16 @@
       ],
       "verts": 1926,
       "tris": 3714,
+      "fissureWidth": 0.11095,
+      "lidOpening": 0.02522,
+      "aspect": 0.227,
+      "assemblyExtent": 0.09496,
       "eyeballDiameter": 0.09264,
       "eyeballDiameterMM": 24.0,
       "marsEyeCentre": [
-        -0.16635,
-        -0.25195,
-        0.44375
+        -0.15607,
+        -0.22147,
+        0.43157
       ],
       "seatedOnPaintedEye": true
     }

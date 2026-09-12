@@ -68,6 +68,15 @@ ALL = np.vstack([TRI, QT])
 W = c * (V @ R.T) + t                       # every ICT vertex, in Mars's space
 
 # his own eyes, read off his own texture -- the residual ICT cannot know
+# the lid contours, so the manifest carries the same fields the old donor did
+# (eye_sockets.py sizes its cutter from fissureWidth)
+_C = json.load(open("renders/_rig_measure/mouth_anatomy.json"))["contours"]
+def _lid(side):
+    up = np.array(_C["eye_%s_upper" % side]); lo = np.array(_C["eye_%s_lower" % side])
+    mid = len(up) // 2
+    return (float(np.linalg.norm(up[0] - up[-1])),
+            float(np.linalg.norm(up[mid] - lo[mid])))
+
 PE = {}
 pe_path = "renders/_rig_measure/painted_eyes.json"
 if os.path.exists(pe_path):
@@ -118,11 +127,35 @@ for ict_side, mars_side in SIDE_OF.items():
           % (mars_side, _dia / MM, EYEBALL_MM, _k))
     pj = PE.get("eye_%s" % mars_side)
     if pj:
+        # LATERAL AND VERTICAL FROM THE PAINTED EYE. DEPTH FROM THE LID RING.
+        # The painted centre is a point ON THE SKIN. Using it for depth as well
+        # puts the globe's CENTRE at the surface and shoves the front half of the
+        # eye out of his face -- which is why the lid could not close over it at
+        # any travel (188/231 rays still found eye geometry at x2.40). A surface
+        # point says where the eye is across the face, never how deep it sits.
+        up = np.array(_C["eye_%s_upper" % mars_side]); lo_ = np.array(_C["eye_%s_lower" % mars_side])
+        ring = np.vstack([up, lo_]); rc = ring.mean(0)
+        mid = len(up) // 2
+        ex = up[-1] - up[0]; ex = ex / np.linalg.norm(ex)
+        ez = up[mid] - lo_[mid]; ez = ez / np.linalg.norm(ez)
+        ey = np.cross(ex, ez); ey = ey / np.linalg.norm(ey)
+        if ey[1] < 0: ey = -ey                      # +ey = into the skull
+
         target = np.array(pj["centre"], float)
-        shift = target - gc
-        P += shift
-        print("eye %s: ICT %s, shifted %.1f mm onto his painted eye"
-              % (mars_side, ict_side, float(np.linalg.norm(shift)) / MM))
+        d = target - gc
+        lateral = d - float(np.dot(d, ey)) * ey     # drop the depth component
+        P += lateral; gc = gc + lateral
+
+        # now set depth: corneal apex a real 1.5 mm proud of the lid margin
+        radius = EYEBALL_MM * MM * 0.5
+        ring_front = float(np.dot(ring - gc, ey).min())   # -ve = in front of centre
+        want_back = radius + ring_front - 1.5 * MM
+        cur_back = 0.0
+        P += ey * (want_back - cur_back)
+        print("eye %s: ICT %s, %.1f mm lateral onto his painted eye, then seated "
+              "%.1f mm back so the cornea sits 1.5 mm proud of the lid"
+              % (mars_side, ict_side, float(np.linalg.norm(lateral)) / MM,
+                 want_back / MM))
     else:
         print("eye %s: ICT %s, NO painted-eye reference -- placed by the fit alone"
               % (mars_side, ict_side))
@@ -140,9 +173,18 @@ for ict_side, mars_side in SIDE_OF.items():
                         vertex_class=cls,
                         centre=P[remap[ball]].mean(0).astype(np.float32),
                         axes=np.eye(3, dtype=np.float32))
+    _fis, _op = _lid(mars_side)
+    # THE ASSEMBLY IS BIGGER THAN THE GLOBE -- occlusion and lacrimal stick out
+    # past it. eye_sockets.py checks the inserted object against this manifest to
+    # catch a stale mesh, so it has to be given the number it can actually
+    # measure, not the globe-only one.
+    _asm = float(max(P.max(0) - P.min(0)))
     manifest["eyes"]["eye_%s" % mars_side] = {
         "ictSide": ict_side, "parts": have,
         "verts": int(len(used)), "tris": int(len(sel)),
+        "fissureWidth": round(_fis, 5), "lidOpening": round(_op, 5),
+        "aspect": round(_op / _fis, 3),
+        "assemblyExtent": round(_asm, 5),
         "eyeballDiameter": round(dia, 5), "eyeballDiameterMM": round(dia / MM, 1),
         "marsEyeCentre": [round(float(x), 5) for x in P[remap[ball]].mean(0)],
         "seatedOnPaintedEye": bool(pj),

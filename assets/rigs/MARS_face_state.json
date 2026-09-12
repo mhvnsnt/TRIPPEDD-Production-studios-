@@ -90,9 +90,9 @@
       "travelTowardClosure": 0.02589,
       "openingsTravelled": 1.027,
       "openingsTravelledWholeBand": 0.784,
-      "eyeballRaysOpen": 106,
-      "eyeballRaysClosed": 0,
-      "occlusionPercent": 100.0,
+      "eyeballRaysOpen": 123,
+      "eyeballRaysClosed": 17,
+      "occlusionPercent": 86.2,
       "candidates": {
         "blink_L": 1.027,
         "facs_eyeBlink_L": 0.134
@@ -107,7 +107,7 @@
       "travelTowardClosure": 0.02655,
       "openingsTravelled": 1.059,
       "openingsTravelledWholeBand": 0.833,
-      "eyeballRaysOpen": 102,
+      "eyeballRaysOpen": 118,
       "eyeballRaysClosed": 0,
       "occlusionPercent": 100.0,
       "candidates": {
@@ -120,8 +120,8 @@
   },
   "eyes": {
     "bound": {
-      "eye_L": 771,
-      "eye_R": 771
+      "eye_L": 1926,
+      "eye_R": 1926
     },
     "source": "google/GNM eyeballs (Apache-2.0), fitted per eye on that eye's own measured lid contour",
     "apertureCarved": true

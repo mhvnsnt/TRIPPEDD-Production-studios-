@@ -158,6 +158,45 @@ jobs:
           set -euo pipefail
           python3 tools/environment/verify_creative_final.py .artifacts/god-molecule/first-shot | tee .artifacts/evidence/first-shot-receipt.log
 
+      - name: Functionally decode actual rendered frames with OpenImageIO
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/evidence/oiio
+          frames=(.artifacts/god-molecule/first-shot/frames/frame_*.png)
+          test -e "${frames[0]}"
+          : > .artifacts/evidence/oiio/index.txt
+          for frame in "${frames[@]}"; do
+            name=$(basename "$frame" .png)
+            python3 tools/environment/probe_render_artifact.py \
+              --artifact "$frame" \
+              --output ".artifacts/evidence/oiio/${name}.json" \
+              | tee ".artifacts/evidence/oiio/${name}.log"
+            printf '%s\n' "$frame" >> .artifacts/evidence/oiio/index.txt
+          done
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          probes = sorted(Path('.artifacts/evidence/oiio').glob('frame_*.json'))
+          assert probes, 'no OIIO probe receipts produced'
+          data = [json.loads(p.read_text()) for p in probes]
+          assert all(d['status'] == 'FUNCTIONAL_PROBE' for d in data)
+          assert all(d['evidence_status'] == 'NOT_ATTEMPTED' for d in data)
+          print(f'OIIO_ARTIFACT_PROBES: PASS ({len(data)} frames decoded)')
+          print('EVIDENCE_STATUS: NOT_ATTEMPTED')
+          PY
+
+      - name: Validate OCIO configuration when explicitly supplied
+        if: ${{ env.OCIO != '' }}
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          mkdir -p .artifacts/evidence/ocio
+          if command -v ociocheck >/dev/null 2>&1; then
+            ociocheck --iconfig "$OCIO" | tee .artifacts/evidence/ocio/ociocheck.log
+          else
+            echo "OCIO_CHECK: NOT_AVAILABLE" | tee .artifacts/evidence/ocio/ociocheck.log
+          fi
+
       - name: Execute oral repair and aperture survey
         if: ${{ inputs.run_oral != 'false' }}
         continue-on-error: true

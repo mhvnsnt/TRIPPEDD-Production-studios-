@@ -22,30 +22,61 @@
     "primitives": 1,
     "triangles": 1940858,
     "vertices": 1114516,
-    "vertexAttributes": ["POSITION", "NORMAL", "TEXCOORD_0"],
+    "vertexAttributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0"
+    ],
     "skins": 0,
     "joints": 0,
     "morphTargets": 0,
     "animations": 0,
     "materials": 1,
     "textures": [
-      { "name": "neon_blue_head_3d_model_basecolor", "size": "4096x4096", "mime": "image/jpeg" },
-      { "name": "neon_blue_head_3d_model_normal", "size": "4096x4096", "mime": "image/jpeg" },
-      { "name": "neon_blue_head_3d_model_rm", "size": "4096x4096", "mime": "image/jpeg" }
+      {
+        "name": "neon_blue_head_3d_model_basecolor",
+        "size": "4096x4096",
+        "mime": "image/jpeg"
+      },
+      {
+        "name": "neon_blue_head_3d_model_normal",
+        "size": "4096x4096",
+        "mime": "image/jpeg"
+      },
+      {
+        "name": "neon_blue_head_3d_model_rm",
+        "size": "4096x4096",
+        "mime": "image/jpeg"
+      }
     ],
-    "boundingBox": { "x": 0.979, "y": 0.844, "z": 0.977 },
-    "orientationVerified": "RENDERED — faces forward correctly. The X-longest axis is the dreadlocks spreading wider than the head is tall, NOT a rotation.",
-    "identityVerified": "RENDERED — neon blue head, dreadlocks, white glowing eyes, triangular sigil on the forehead, beard. Head only; no body, no neck stump geometry below the jaw line."
+    "boundingBox": {
+      "x": 0.979,
+      "y": 0.844,
+      "z": 0.977
+    },
+    "orientationVerified": "RENDERED \u2014 faces forward correctly. The X-longest axis is the dreadlocks spreading wider than the head is tall, NOT a rotation.",
+    "identityVerified": "RENDERED \u2014 neon blue head, dreadlocks, white glowing eyes, triangular sigil on the forehead, beard. Head only; no body, no neck stump geometry below the jaw line."
   },
   "productionState": {
-    "canDoNow": ["static textured rendering"],
+    "canDoNow": [
+      "static textured rendering"
+    ],
     "needsFirst": [
-      "RIGGING — no skeleton, so nothing can animate it",
-      "FACIAL BLENDSHAPES — none present, so visemes and expressions need authoring",
-      "DECIMATION — 1.94M triangles is far past what a shot needs; it is a raw generation output"
+      "RIGGING \u2014 no skeleton, so nothing can animate it",
+      "FACIAL BLENDSHAPES \u2014 none present, so visemes and expressions need authoring",
+      "DECIMATION \u2014 1.94M triangles is far past what a shot needs; it is a raw generation output"
     ],
     "likenessGate": "This model is the SOURCE OF TRUTH for the character. Generative tools may augment a shot; they may not silently redesign him. Any derived model is compared back to this one before it is promoted."
   },
   "immutable": true,
-  "note": "The original file is never modified. Every derived asset is written to a new path and gated before it replaces anything."
+  "note": "The original file is never modified. Every derived asset is written to a new path and gated before it replaces anything.",
+  "drive": {
+    "fileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl",
+    "url": "https://drive.google.com/file/d/1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl/view",
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "bytes": 61846048,
+    "verified": "2026-09-12: downloaded from Drive and byte-compared -- IDENTICAL to the committed assets/source_models/MARS_source.glb. The owner-supplied \"better \"model and the repo source are the same 1,940,858-triangle mesh.",
+    "fetch": "./.trippedd_venv/bin/python -m gdown \"https://drive.google.com/uc?id=1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl\" -O <out>",
+    "note": "The GLB is COMMITTED (OWNER LAW #6). This id is a second route, not the only one."
+  }
 }

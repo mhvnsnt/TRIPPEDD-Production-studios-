@@ -1,0 +1,45 @@
+{
+  "hiresSource": "assets/source_models/MARS_LOD1.glb",
+  "hiresLevel": "LOD1",
+  "cage": "MARS_MESH",
+  "cageVerts": 23830,
+  "hiresVerts": 135397,
+  "method": "Blender SURFACE_DEFORM -- the low-res rigged cage drives the full-resolution render mesh. Native modifier, no hand-written geometry (OWNER LAW #3). The cage is unchanged, so every landmark and measurement already banked against it still holds.",
+  "alignment": {
+    "sizeRatio": 0.99625,
+    "centreOffsetMM": 0.714
+  },
+  "bindCage": {
+    "name": "MARS_CAGE_BIND",
+    "splitNonManifoldEdges": 15,
+    "vertsBefore": 23830,
+    "vertsAfter": 23861,
+    "facesBefore": 47174,
+    "facesAfter": 47688,
+    "triangulated": true,
+    "degenerateFacesDropped": 0,
+    "why": "Surface Deform refuses a target with edges on more than two polygons AND a target with concave n-gons. Splitting fixes the first, triangulating the second; neither moves a vertex. Done on a COPY so MARS_MESH stays byte-identical.",
+    "matchesRealCage": {
+      "status": "MEASURED",
+      "key": "blink_L",
+      "maxDeviationMM": 0.0
+    }
+  },
+  "restDriftMM": {
+    "mean": 0.0,
+    "p99": 0.0001,
+    "max": 0.0013
+  },
+  "followsCage": {
+    "status": "MEASURED",
+    "key": "blink_L",
+    "cageMaxTravelMM": 25.387,
+    "hiresMaxTravelMM": 36.556,
+    "cageMovedVerts": 123,
+    "hiresMovedVerts": 846
+  },
+  "cageHiddenFromRender": true,
+  "boundWithTargetModifiersDisabled": [
+    "Armature"
+  ]
+}

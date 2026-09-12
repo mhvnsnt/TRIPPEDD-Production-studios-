@@ -320,6 +320,79 @@ everything should be made mergeable and a non-destructive way."* Do not leave th
 a branch behind a PR nobody can merge while other agents rebuild it from scratch. Merge main in,
 resolve conflicts by KEEPING BOTH GOOD IDEAS rather than picking a side, and push.
 
+## THE WHOLE EYE SAGA, CLOSED: THE BLINK WAS SQUEEZING HIS CHEEK (2026-09-12)
+
+The owner drew his own eyelid, brow and nostril lines on an orthographic plate of
+his face. Reading them back refused, because every stroke sat ~200 px from where
+the pipeline said that feature was. **The refusal was right to fire and wrong
+about who to blame.** MediaPipe's FaceLandmarker, run directly on the clean plate:
+
+    its eyebrow  ring lands on HIS EYES
+    its eyelid   rings land on HIS CHEEKS
+    its nose_alar ring lands on HIS UPPER LIP
+
+`canonical_fit.json` was BUILT from those landmarks, so it is not independent
+corroboration — it is the same error twice, and it reported a **0.0000 mm
+residual while being wrong by up to 38.9 mm**. A perfect thin-plate warp onto
+anchors that sit on the wrong features is a perfect fit to the wrong question.
+
+**Then the consequence, measured on the shipped shape keys.** Every blink key
+moves tissue that sits **5.8–8.1 mm from the canonical "lid"** and
+**33–68 mm from the lid line he drew**. The blinks were never weak, never
+asymmetric, never a falloff problem. They were faithfully deforming his CHEEK.
+Every hour spent on lid thickness, globe clearance, meet-lines, occlusion rays
+and falloff curves was spent on geometry that is not his eyelid.
+
+- His lid aperture, from his own lines: **L 7.08 mm / R 8.24 mm.** The pipeline
+  was built on **3.90 / 3.78** — the gap between two contours on his cheek.
+- `facs_eyeBlink_R` lands nearest the canonical **L** lid (7.3 mm) — the sides are
+  swapped on top of everything else. Moot until it is rebuilt on his lines.
+
+**RULE: A FIT CAN ONLY BE CHECKED AGAINST SOMETHING OUTSIDE ITSELF.**
+`validate_face_authority.py` used to interrogate the fit for internal consistency
+(do the index sets overlap, is the opening plausible, is the lid far enough from
+the brow) and passed it happily while it was 39 mm wrong. It now compares the fit
+to the owner's drawn lines by symmetric Hausdorff and FAILS at 55 mm. Proven both
+directions: identical input PASSes, real input FAILs. NOT_ATTEMPTED is reported as
+itself when he has not marked a plate.
+
+## THE FACE PIPELINE WAS RENDERING THE GAME LOD (2026-09-12)
+
+Owner: *"a bunch of really big, ugly triangles. Like, this is a PS one game."*
+He was right, and I had previously called the same blocky patches "texture
+artifacts" — they are GEOMETRY.
+
+    MARS_source.glb   1,940,858 tris   median face edge 0.48 mm
+    MARS_FACE.glb        55,920 tris   median face edge 2.02 mm, p95 11.66 mm
+
+**4.38% of the source's face triangles**, with single triangles wider than his
+eye opening. `tools/models/measure_mesh_quality.py` renders both from the same
+camera with specular forced off, so the comparison is of geometry and not of two
+shading setups.
+
+**THE FIX IS NOT TO RE-RIG AT HIGH RESOLUTION** — it is Blender's own
+SURFACE_DEFORM: the low-res cage keeps the armature, shape keys and every banked
+measurement; the full-resolution mesh is bound to it and renders. Four things
+block that bind and the modifier only names the next one after the last is fixed:
+
+1. *"Target has edges with more than two polygons"* — 12 non-manifold edges. SPLIT
+   them (duplicates verts in place, moves nothing).
+2. *"Target contains concave polygons"* — TRIANGULATE. **Order matters:** splitting
+   first and triangulating second leaves 3 NEW non-manifold edges, because cutting
+   an n-gon can hand two triangles to an edge that already had two faces.
+   Triangulate FIRST.
+3. *"Target contains invalid polygons"* — and the mesh has no zero-area faces, no
+   repeated verts, no zero normals and no loose geometry. Found by ELIMINATION,
+   not by reading: **the target's ARMATURE modifier blocks the bind.** Disable the
+   target's modifiers, bind, put them back. A bind is taken at rest anyway.
+4. `surfacedeform_bind` only FLAGS the bind; `is_bound` stays False until the
+   modifier next evaluates. Checking it straight after the operator reads False on
+   a bind that is about to succeed, which looks exactly like a refusal.
+
+All of it is done on a COPY, so `MARS_MESH` stays byte-identical and nothing
+already measured against it is invalidated. Gates: REST drift max 0.0013 mm, and
+the render mesh must actually travel when a real control is driven.
+
 ## OWNER LAW #5 — WHAT HE SAYS IS THE OBSERVATION. WHAT THE TOOL SAYS IS A READING. (2026-09-12)
 
 Owner, verbatim: *"You keep saying the blink closed one eye and not the other. I never said that...

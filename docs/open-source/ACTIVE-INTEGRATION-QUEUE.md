@@ -7,6 +7,9 @@ This queue is intentionally implementation-oriented. A candidate is not consider
 ### Blender 5.2 Geometry Nodes / XPBD
 Use for the MARS hair lane after geometric segmentation. Hair roots must remain attached to the deformed head surface; simulation output must be measured and rendered from multiple views. Blender documents surface attachment, pinning, bending, collision, effectors and residual-error diagnostics for the XPBD framework.
 
+### Collision / contact measurement
+Implement the baseline collision/contact law in `docs/character/COLLISION-AND-CONTACT-LAW.md`. Prefer native Blender Cloth/XPBD collision and reusable measured collision proxies over a custom solver. First targets are hair → head/face and tongue → cheek/lips/teeth, followed by eye/lid/socket contact. Collision is a gate, not merely a simulation setting: every pair must be explicitly BLOCK, ALLOW, or STYLE_OVERRIDE, with measured penetration/separation and visual evidence.
+
 ### Open Mocap Blender
 Repository: https://github.com/Larenju-Rai/open-mocap-blender
 Purpose: offline full-body pose capture, hand tracking and rig retargeting. MIT. Evaluate as a capture/retarget lane, never as an authority for facial anatomy.
@@ -38,6 +41,7 @@ Purpose: QuadWild-based derived working cages. Use only when a measured derivati
 8. VISUAL_EVIDENCE
 9. NO_STALE_SCENE_OR_CACHE
 10. ROLLBACK_PATH_DOCUMENTED
+11. COLLISION_CONTACT_QC
 
 ## Performance rules
 

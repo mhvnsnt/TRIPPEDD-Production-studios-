@@ -7,6 +7,7 @@ on:
       - 'tools/environment/build_review_manifest.py'
       - 'tools/environment/probe_oss_functional.py'
       - 'tools/environment/inspect_image_artifact.py'
+      - 'tools/environment/reconcile_evidence_lineage.py'
       - '.github/workflows/review-evidence-manifest.yml'
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - 'tools/environment/build_review_manifest.py'
       - 'tools/environment/probe_oss_functional.py'
       - 'tools/environment/inspect_image_artifact.py'
+      - 'tools/environment/reconcile_evidence_lineage.py'
       - '.github/workflows/review-evidence-manifest.yml'
   workflow_dispatch:
 
@@ -27,10 +29,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           lfs: true
+          fetch-depth: 0
 
       - name: Assert evidence bytes are materialized
         run: |
           set -euo pipefail
+          git lfs install --local
+          git lfs pull
           test -s docs/evidence/mouth/index.json
           python3 - <<'PY'
           from pathlib import Path
@@ -82,6 +87,15 @@ jobs:
           for item in missing:
               print(f"EVIDENCE_MISSING: {item}")
           PY
+
+      - name: Reconcile evidence lineage against Git history
+        if: always()
+        run: |
+          set -euo pipefail
+          python3 tools/environment/reconcile_evidence_lineage.py \
+            --index docs/evidence/mouth/index.json \
+            --output .artifacts/evidence/evidence-lineage-reconciliation.json \
+            | tee .artifacts/evidence/evidence-lineage-reconciliation.log
 
       - name: Functional OSS probes
         if: always()

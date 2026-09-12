@@ -89,8 +89,20 @@ jobs:
           fi
           MARS_PATH=$(grep -E "/mars_source_.*\.blend$|/MARS_CANONICAL.*\.(blend|glb|gltf)$" .artifacts/evidence/mars_candidates.txt | head -n1 || true)
           [ -n "$MARS_PATH" ] || MARS_PATH=$(head -n1 .artifacts/evidence/mars_candidates.txt)
+          if [ ! -s "$MARS_PATH" ]; then
+            echo "MARS_CANONICAL: FAIL — selected payload is missing or empty" | tee .artifacts/evidence/state.txt
+            exit 43
+          fi
+          case "$MARS_PATH" in
+            *.blend|*.glb|*.gltf) ;;
+            *)
+              echo "MARS_CANONICAL: FAIL — selection is not a supported physical payload: $MARS_PATH" | tee .artifacts/evidence/state.txt
+              exit 44
+              ;;
+          esac
           printf '%s\n' "$MARS_PATH" > .artifacts/evidence/mars_path.txt
           sha256sum "$MARS_PATH" | tee .artifacts/evidence/mars.sha256
+          stat -c 'MARS_BYTES=%s' "$MARS_PATH" | tee .artifacts/evidence/mars.size.txt
           echo "MARS_CANONICAL: VERIFIED"
 
       - name: Execute first God Molecule creative shot

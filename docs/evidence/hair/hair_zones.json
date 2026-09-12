@@ -1,0 +1,23 @@
+{
+  "hairVerts": 17819,
+  "rootToTipMM": [
+    6.7,
+    304.9
+  ],
+  "root": 1644,
+  "midshaft": 6702,
+  "tip": 9473,
+  "onFaceVerts": 0,
+  "vertexGroups": [
+    "HAIR_WEIGHT (0 root -> 1 tip)",
+    "HAIR_PIN (1 root -> 0 tip)"
+  ],
+  "method": "hair = not within 26 mm of his face landmarks and above his chin, both from his own measured anatomy; gradient = geodesic along the surface from the CROWN (top 1% of his head-frame height). Nothing typed in to make the mask look right.",
+  "corrections": [
+    "the valley density field measures how PACKED the hair is, not how FREE -- used directly as a motion weight it would have pinned the tips and swung the roots",
+    "using packed-groove density to DEFINE the hair region dropped the longest, most isolated locks -- the ones with the most motion -- because a lone lock has no neighbour to form a groove with",
+    "seeding from his FACE measured front-to-back: the fringe over his forehead is nearest the face and is a TIP. Gate caught it, 78 mm inverted.",
+    "seeding from the HAIRLINE climbed UP over the cap, because the hair/skin boundary is a ring around his forehead. Gate caught it, 75.7 mm inverted, and the span was 64.9 mm against ~200 mm locks.",
+    "seeding from the CROWN is anatomical: a lock attaches at the top and hangs down, so the farthest surface points ARE the tips."
+  ]
+}

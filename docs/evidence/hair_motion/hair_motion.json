@@ -1,0 +1,319 @@
+{
+  "frames": 36,
+  "yawDeg": 38.0,
+  "cameras": [
+    "FRONT",
+    "SIDE"
+  ],
+  "headDrivenBy": "head bone on the armature, NOT the object transform -- Blender cloth simulates in object-local space and ignores object-level animation",
+  "solver": "Blender CLOTH (native) on a hair-only HAIR_SIM object, pin group SIM_PIN; the simulated positions are written back onto the render mesh each frame so his face is not in the solver at all",
+  "clothSettings": {
+    "quality": 6,
+    "mass": 0.25,
+    "bendingStiffness": 6.0,
+    "airDamping": 1.399999976158142,
+    "selfCollision": false
+  },
+  "tipVerts": 2825,
+  "rootVerts": 1644,
+  "peakTipSecondaryMM": 53.59,
+  "peakRootTravelMM": 132.09,
+  "rootPeakFrame": 10,
+  "tipPeakFrame": 36,
+  "lagFramesCrossCorrelation": 5,
+  "rootTipCorrelation": 0.334,
+  "maxHairRootGiveMM": 3.128,
+  "maxSkinRigidResidualMM": 0.0,
+  "skinNote": "his skin comes straight from the armature and is never inside the cloth solver, so it cannot soften. The first attempt ran cloth on the whole mesh and his jaw visibly lost its crispness while every number passed.",
+  "series": [
+    {
+      "frame": 1,
+      "rootTravelMM": 0.0,
+      "tipTravelMM": 0.0,
+      "tipSecondaryMM": 0.0,
+      "rootRigidResidualMM": 0.0,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 2,
+      "rootTravelMM": 21.26,
+      "tipTravelMM": 2.11,
+      "tipSecondaryMM": 2.34,
+      "rootRigidResidualMM": 3.119,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 3,
+      "rootTravelMM": 44.56,
+      "tipTravelMM": 7.27,
+      "tipSecondaryMM": 3.83,
+      "rootRigidResidualMM": 3.02,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 4,
+      "rootTravelMM": 66.29,
+      "tipTravelMM": 13.01,
+      "tipSecondaryMM": 5.29,
+      "rootRigidResidualMM": 2.824,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 5,
+      "rootTravelMM": 85.75,
+      "tipTravelMM": 18.83,
+      "tipSecondaryMM": 7.18,
+      "rootRigidResidualMM": 2.538,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 6,
+      "rootTravelMM": 102.32,
+      "tipTravelMM": 23.92,
+      "tipSecondaryMM": 9.02,
+      "rootRigidResidualMM": 2.171,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 7,
+      "rootTravelMM": 115.52,
+      "tipTravelMM": 28.22,
+      "tipSecondaryMM": 10.86,
+      "rootRigidResidualMM": 1.733,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 8,
+      "rootTravelMM": 125.02,
+      "tipTravelMM": 31.91,
+      "tipSecondaryMM": 12.82,
+      "rootRigidResidualMM": 1.238,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 9,
+      "rootTravelMM": 130.58,
+      "tipTravelMM": 34.99,
+      "tipSecondaryMM": 14.96,
+      "rootRigidResidualMM": 0.702,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 10,
+      "rootTravelMM": 132.09,
+      "tipTravelMM": 37.36,
+      "tipSecondaryMM": 17.1,
+      "rootRigidResidualMM": 0.142,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 11,
+      "rootTravelMM": 129.5,
+      "tipTravelMM": 38.91,
+      "tipSecondaryMM": 19.1,
+      "rootRigidResidualMM": 0.423,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 12,
+      "rootTravelMM": 122.86,
+      "tipTravelMM": 39.7,
+      "tipSecondaryMM": 20.95,
+      "rootRigidResidualMM": 0.973,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 13,
+      "rootTravelMM": 112.34,
+      "tipTravelMM": 39.73,
+      "tipSecondaryMM": 22.6,
+      "rootRigidResidualMM": 1.489,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 14,
+      "rootTravelMM": 98.19,
+      "tipTravelMM": 38.97,
+      "tipSecondaryMM": 24.05,
+      "rootRigidResidualMM": 1.957,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 15,
+      "rootTravelMM": 80.79,
+      "tipTravelMM": 37.47,
+      "tipSecondaryMM": 25.36,
+      "rootRigidResidualMM": 2.361,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 16,
+      "rootTravelMM": 60.65,
+      "tipTravelMM": 35.33,
+      "tipSecondaryMM": 26.52,
+      "rootRigidResidualMM": 2.689,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 17,
+      "rootTravelMM": 38.42,
+      "tipTravelMM": 32.73,
+      "tipSecondaryMM": 27.52,
+      "rootRigidResidualMM": 2.931,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 18,
+      "rootTravelMM": 14.83,
+      "tipTravelMM": 29.97,
+      "tipSecondaryMM": 28.34,
+      "rootRigidResidualMM": 3.079,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 19,
+      "rootTravelMM": 9.28,
+      "tipTravelMM": 29.19,
+      "tipSecondaryMM": 29.01,
+      "rootRigidResidualMM": 3.128,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 20,
+      "rootTravelMM": 33.06,
+      "tipTravelMM": 32.03,
+      "tipSecondaryMM": 29.55,
+      "rootRigidResidualMM": 3.079,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 21,
+      "rootTravelMM": 55.67,
+      "tipTravelMM": 35.38,
+      "tipSecondaryMM": 29.99,
+      "rootRigidResidualMM": 2.93,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 22,
+      "rootTravelMM": 76.35,
+      "tipTravelMM": 38.92,
+      "tipSecondaryMM": 30.39,
+      "rootRigidResidualMM": 2.689,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 23,
+      "rootTravelMM": 94.42,
+      "tipTravelMM": 42.46,
+      "tipSecondaryMM": 30.83,
+      "rootRigidResidualMM": 2.361,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 24,
+      "rootTravelMM": 109.36,
+      "tipTravelMM": 45.86,
+      "tipSecondaryMM": 31.4,
+      "rootRigidResidualMM": 1.957,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 25,
+      "rootTravelMM": 120.75,
+      "tipTravelMM": 49.0,
+      "tipSecondaryMM": 32.16,
+      "rootRigidResidualMM": 1.489,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 26,
+      "rootTravelMM": 128.31,
+      "tipTravelMM": 51.7,
+      "tipSecondaryMM": 33.12,
+      "rootRigidResidualMM": 0.973,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 27,
+      "rootTravelMM": 131.85,
+      "tipTravelMM": 53.88,
+      "tipSecondaryMM": 34.28,
+      "rootRigidResidualMM": 0.423,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 28,
+      "rootTravelMM": 131.3,
+      "tipTravelMM": 55.55,
+      "tipSecondaryMM": 35.7,
+      "rootRigidResidualMM": 0.142,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 29,
+      "rootTravelMM": 126.68,
+      "tipTravelMM": 56.76,
+      "tipSecondaryMM": 37.48,
+      "rootRigidResidualMM": 0.702,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 30,
+      "rootTravelMM": 118.07,
+      "tipTravelMM": 57.48,
+      "tipSecondaryMM": 39.63,
+      "rootRigidResidualMM": 1.238,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 31,
+      "rootTravelMM": 105.7,
+      "tipTravelMM": 57.71,
+      "tipSecondaryMM": 42.05,
+      "rootRigidResidualMM": 1.733,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 32,
+      "rootTravelMM": 89.87,
+      "tipTravelMM": 57.5,
+      "tipSecondaryMM": 44.57,
+      "rootRigidResidualMM": 2.171,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 33,
+      "rootTravelMM": 71.02,
+      "tipTravelMM": 56.88,
+      "tipSecondaryMM": 47.05,
+      "rootRigidResidualMM": 2.538,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 34,
+      "rootTravelMM": 49.75,
+      "tipTravelMM": 55.9,
+      "tipSecondaryMM": 49.4,
+      "rootRigidResidualMM": 2.824,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 35,
+      "rootTravelMM": 26.74,
+      "tipTravelMM": 54.71,
+      "tipSecondaryMM": 51.58,
+      "rootRigidResidualMM": 3.02,
+      "skinRigidResidualMM": 0.0
+    },
+    {
+      "frame": 36,
+      "rootTravelMM": 2.79,
+      "tipTravelMM": 53.76,
+      "tipSecondaryMM": 53.59,
+      "rootRigidResidualMM": 3.119,
+      "skinRigidResidualMM": 0.0
+    }
+  ],
+  "note": "tipSecondary is what survives the inverse of the head's FULL rigid transform (Kabsch on the root vertices), so a rigid yaw contributes exactly zero however far a tip is from the pivot. Subtracting only a translation does NOT do this and reported 29.4 mm of phantom secondary motion at r=0.97, lag 0 -- the signature of a rigid sweep."
+}

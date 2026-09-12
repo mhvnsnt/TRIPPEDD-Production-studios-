@@ -1,0 +1,27 @@
+{
+  "mesh": "CAGE",
+  "verts": 23830,
+  "concavity": {
+    "median": -0.00937,
+    "mad": 0.01949,
+    "cut": 0.02181,
+    "kMad": 1.6,
+    "valleyVerts": 2797,
+    "valleyPct": 11.74
+  },
+  "density": {
+    "radiusMM": 14.0,
+    "median": 0.0991,
+    "cut": 0.1577,
+    "freeVerts": 4153,
+    "freePct": 17.43
+  },
+  "smoothingPasses": 12,
+  "skinExclusionMM": 26.0,
+  "freeZoneOnFaceVerts": 359,
+  "freeZoneHeightMM": [
+    -40.4,
+    180.3
+  ],
+  "method": "concavity = dot(one-ring mean - vertex, normal) / local edge length, so it is scale-free; valley cut = median + k*MAD of the surface's OWN distribution; free zone = valley density over a real millimetre radius, cut the same way. No threshold is typed in."
+}

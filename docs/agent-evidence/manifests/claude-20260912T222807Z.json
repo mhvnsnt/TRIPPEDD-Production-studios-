@@ -1,0 +1,84 @@
+{
+  "schema": "trippedd.agent-evidence/v1",
+  "agent": "claude",
+  "commit": "4d0bc8c572402e0f6d1a6c07cd4ac48b3a5c9d65",
+  "status": "FAIL",
+  "created": "20260912T222807Z",
+  "artifacts": [
+    {
+      "path": "docs/evidence/hair_motion/HAIR_MOTION_SIDE_STRIP.png",
+      "sha256": "312780a987895bf591ab5793883ec8b59dc5783d2a5e5ef53610459913748058",
+      "bytes": 458837,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hair_motion/HAIR_MOTION_FRONT_STRIP.png",
+      "sha256": "b02597b32064599bda978a9470f3c85085d564d5ef726aebd6de50258fec01f4",
+      "bytes": 240256,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hair/HAIR_ROOTTIP_CONTACT.png",
+      "sha256": "fff6d9f8f3e73376cd9a3d50c54d23496839216746ef66f49f59fd0aeefe54a1",
+      "bytes": 387553,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hair_motion/index.json",
+      "sha256": "deb22c8561132c3d88886026f14c1431b833006f6b3350f857ebd9c4f6e33161",
+      "bytes": 25385,
+      "mime": "application/json"
+    },
+    {
+      "path": "docs/evidence/hair/hair_zones.json",
+      "sha256": "4fe350434790571b9ad6672f89481f9f18bb5ca87c2e3f14ea83a0c14774da53",
+      "bytes": 1351,
+      "mime": "application/json"
+    }
+  ],
+  "commands": [
+    "vendor/blender/blender -b -P tools/hair/valley_discriminator.py --",
+    "vendor/blender/blender -b -P tools/hair/hair_zones.py --",
+    "vendor/blender/blender -b -P tools/hair/hair_motion.py --"
+  ],
+  "gates": [
+    {
+      "name": "hair_deforms",
+      "result": "PASS",
+      "detail": "53.59 mm peak with the head's full rigid transform removed (Kabsch)"
+    },
+    {
+      "name": "lags_the_head",
+      "result": "PASS",
+      "detail": "cross-correlation +5 frames, r=0.33"
+    },
+    {
+      "name": "skin_not_in_solver",
+      "result": "PASS",
+      "detail": "skin rigid residual 0.0000 mm"
+    },
+    {
+      "name": "judged_as_sequence",
+      "result": "PASS",
+      "detail": "36 frames, FRONT and SIDE"
+    },
+    {
+      "name": "root_tip_gradient",
+      "result": "PASS",
+      "detail": "298 mm span, tips 197.7 mm below roots"
+    },
+    {
+      "name": "dreadlock_realism",
+      "result": "FAIL",
+      "detail": "too floppy, still swinging at f36 after a 38 deg turn"
+    },
+    {
+      "name": "self_collision",
+      "result": "NOT_ATTEMPTED",
+      "detail": "off this pass, locks can pass through each other"
+    }
+  ],
+  "notes": [
+    "Hair lane. Mechanism passes, realism does not. Six separate measurement/setup bugs found and fixed this pass, all listed in docs/evidence/hair_motion/index.json."
+  ]
+}

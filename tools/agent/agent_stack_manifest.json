@@ -7,7 +7,7 @@
       "name": "OpenHands",
       "role": "long_running_agent_runtime",
       "license": "MIT",
-      "repository": "https://github.com/All-Hands-AI/OpenHands",
+      "repository": "https://github.com/OpenHands/software-agent-sdk",
       "integration": "adapter",
       "priority": "P0",
       "capabilities": ["sandboxed_execution", "tool_use", "task_loops", "parallel_agents"]
@@ -67,13 +67,22 @@
       "capabilities": ["bug_patterns", "security_patterns", "custom_rules"]
     },
     {
+      "name": "mini-SWE-agent",
+      "role": "lightweight_issue_to_patch_solver",
+      "license": "MIT",
+      "repository": "https://github.com/SWE-agent/mini-swe-agent",
+      "integration": "adapter",
+      "priority": "P0",
+      "capabilities": ["bash_agent", "issue_solving", "test_driven_repair", "model_agnostic", "sandbox_friendly"]
+    },
+    {
       "name": "SWE-agent",
       "role": "issue_to_patch_solver",
       "license": "MIT",
       "repository": "https://github.com/SWE-agent/SWE-agent",
       "integration": "adapter",
-      "priority": "P1",
-      "capabilities": ["issue_solving", "test_driven_repair"]
+      "priority": "P2",
+      "capabilities": ["issue_solving", "test_driven_repair", "research_harness"]
     },
     {
       "name": "LiteLLM",

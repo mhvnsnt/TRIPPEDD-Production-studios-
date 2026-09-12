@@ -4,13 +4,13 @@
 
 Turn `EP01-origin-opening-v3-alley-police` into a reproducible 37-second animation proof without falling back to a slideshow treatment.
 
-The current build has a procedural teen-performance layer in addition to the scene motion data. The teens are constructed from reusable body parts so the render can change pose, lean, arm swing, leg placement and head direction over time.
+The current build has a procedural teen-performance layer in addition to the scene motion data. The teens are constructed from reusable character parts so the render can change pose, lean, arm swing, leg placement, head direction, clothing silhouette and facial expression over time.
 
 ## Layer stack
 
 1. `BG_NIGHT` — original alley environment, puddles, fire escape, dumpster and distant street.
 2. `BG_ATMOS` — police-light sweep, headlights, subtle environment movement.
-3. `TEENS` — procedural reusable body-part rig with pose-to-pose performance.
+3. `TEENS` — procedural reusable character rig with pose-to-pose performance.
 4. `PROPS` — generic six-pack, loose cans, spill and impact.
 5. `BUSCH` — wake / reaction / look-away poses.
 6. `FX` — spill, branch recoil, foliage twitch/shudder and supernatural pulse.
@@ -19,6 +19,8 @@ The current build has a procedural teen-performance layer in addition to the sce
 ## Character-performance pass
 
 The teen group must not be treated as one large SVG that only translates across the frame.
+
+The current character system is intentionally **more developed than stick figures** while remaining economical to animate. Each performer has a readable head treatment, torso/clothing silhouette, hands, articulated legs, shoes and individual acting language.
 
 Reusable performance vocabulary currently includes:
 
@@ -35,7 +37,7 @@ Reusable performance vocabulary currently includes:
 - throw
 - flee / flee faster
 
-The rig uses simple stick-figure construction while adding independent limb geometry and asynchronous movement between the three teens. Each numeric body/head/limb value is now interpolated between pose extremes rather than snapping from one pose to another. Performer-specific delay and tempo values also stagger the shared action arc, so the three characters do not react as synchronized puppets.
+The rig uses independent body-part geometry and asynchronous movement between the three teens. Each numeric body/head/limb value is interpolated between pose extremes rather than snapping from one pose to another. Performer-specific delay and tempo values stagger the shared action arc, so the three characters do not react as synchronized puppets.
 
 Current provisional performance identities remain:
 
@@ -83,13 +85,20 @@ These are performance placeholders, not final locked names or immutable characte
 
 - a mid-transition contains interpolated body values rather than simply matching an endpoint;
 - the three performers occupy different acting states during the shared panic beat;
-- throw timing is staggered by performer delay/tempo.
+- throw timing is staggered by performer delay/tempo;
+- the cast retains three distinct character-design languages rather than regressing to a generic stick-figure construction.
+
+`tools/validate_origin_opening.py` verifies the authored 13-shot causal sequence before rendering.
+
+`tools/render_preflight.py` verifies source assets and required render dependencies before attempting a full render.
 
 ## Open-source/tooling decision
 
-Blender Grease Pencil is documented as a secondary animation backend for shots that need true point/stroke interpolation, deformation, or hand-drawn breakdowns. Blender's current 4.5 LTS documentation supports traditional 2D animation, cut-out animation, deformation and inherited animation, plus an `Interpolate Sequence` tool for generating in-between keyframes. citeturn0search0turn0search10
+Blender Grease Pencil is documented as a secondary animation backend for shots that need true point/stroke interpolation, deformation, inherited/parented motion, or hand-drawn breakdowns. Blender 4.5 LTS supports traditional 2D and cut-out animation and provides an `Interpolate Sequence` tool for generating in-between keyframes.
 
-For this low-fi deterministic opening, the procedural Python rig remains the fast/reproducible default. Blender is an escalation path, not a mandatory dependency for every shot. OpenToonz remains the primary traditional/cutout 2D backend for production-quality manual animation passes; its current release line includes OpenToonz V1.8 and nightly builds. citeturn0search12
+OpenToonz remains the primary traditional/cutout 2D backend for production-quality manual animation passes. The project is open source and its official repository documents the Modified BSD licensing boundaries; bundled third-party components must be handled according to their own licenses.
+
+For this low-fi deterministic opening, the procedural Python rig remains the fast/reproducible default. Blender and OpenToonz are escalation backends when a shot's deformation, timing, cleanup or compositing requirements exceed the procedural SVG layer.
 
 ## Render acceptance checks
 
@@ -107,13 +116,16 @@ For this low-fi deterministic opening, the procedural Python rig remains the fas
 - Title does not begin during the look-away.
 - Camera movement is not the primary source of perceived motion.
 - No third-party beverage logos or distinctive branded packaging appear in source art.
+- Final media is inspected with FFprobe before being called verified.
 
 ## Engineering entry points
 
 - `tools/build_origin_opening.py` — deterministic compositor/render backend.
 - `tools/teen_performance.py` — reusable procedural teen performance rig.
 - `tools/build_origin_opening_character.py` — character-performance entry point that reuses the deterministic builder while injecting the procedural teen layer.
-- `tools/test_teen_performance.py` — regression checks for interpolation and asynchronous acting.
+- `tools/test_teen_performance.py` — regression checks for interpolation, asynchronous acting and character-design richness.
+- `tools/validate_origin_opening.py` — story/timing continuity validator.
+- `tools/render_preflight.py` — fail-fast environment/source preflight.
 - `animatic/ep01-origin-opening-v2.motion-blocks.json` — authored timing and major action source of truth.
 
 The next pass should extend the same component-level principle to Busch: independent foliage/body deformation, branch-arm timing, eye direction and mouth swaps, followed by a verified preview render and frame-level QC.

@@ -5,13 +5,15 @@ on:
     paths:
       - 'docs/evidence/**'
       - 'tools/environment/build_review_manifest.py'
-      - 'tools/environment/probe_oss_functionality.py'
+      - 'tools/environment/probe_oss_functional.py'
+      - 'tools/environment/inspect_image_artifact.py'
       - '.github/workflows/review-evidence-manifest.yml'
   pull_request:
     paths:
       - 'docs/evidence/**'
       - 'tools/environment/build_review_manifest.py'
-      - 'tools/environment/probe_oss_functionality.py'
+      - 'tools/environment/probe_oss_functional.py'
+      - 'tools/environment/inspect_image_artifact.py'
       - '.github/workflows/review-evidence-manifest.yml'
   workflow_dispatch:
 
@@ -37,7 +39,7 @@ jobs:
       - name: Functional OSS probes
         run: |
           set -euo pipefail
-          python3 tools/environment/probe_oss_functionality.py \
+          python3 tools/environment/probe_oss_functional.py \
             --output .artifacts/evidence/oss-functional-probes.json \
             | tee .artifacts/evidence/oss-functional-probes.log
 

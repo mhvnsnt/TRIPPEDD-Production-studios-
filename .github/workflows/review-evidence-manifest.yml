@@ -1,0 +1,56 @@
+name: Review evidence manifest
+
+on:
+  push:
+    paths:
+      - 'docs/evidence/**'
+      - 'tools/environment/build_review_manifest.py'
+      - '.github/workflows/review-evidence-manifest.yml'
+  pull_request:
+    paths:
+      - 'docs/evidence/**'
+      - 'tools/environment/build_review_manifest.py'
+      - '.github/workflows/review-evidence-manifest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build exact-pixel review manifest
+        run: |
+          set -euo pipefail
+          test -s docs/evidence/mouth/index.json
+          mkdir -p .artifacts/evidence
+          python3 tools/environment/build_review_manifest.py \
+            --index docs/evidence/mouth/index.json \
+            --output .artifacts/evidence/mouth-review-manifest.json \
+            | tee .artifacts/evidence/mouth-review-manifest.log
+
+      - name: Enforce review-manifest policy
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('.artifacts/evidence/mouth-review-manifest.json')
+          data = json.loads(p.read_text())
+          assert data['schema'] == 'trippedd.review-manifest/v1'
+          assert data['evidence_status'] == 'NOT_ATTEMPTED'
+          assert data['policy']['exact_pixel_sha256_required'] is True
+          assert data['policy']['review_manifest_is_not_visual_qc'] is True
+          assert data['policy']['review_manifest_is_not_physical_qc'] is True
+          assert data['frames'], 'no evidence frames discovered'
+          print(f"REVIEW_MANIFEST: VERIFIED {len(data['frames'])} exact-pixel references")
+          PY
+
+      - name: Upload review manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: trippedd-review-manifest-${{ github.run_id }}
+          path: .artifacts/evidence/mouth-review-manifest.json

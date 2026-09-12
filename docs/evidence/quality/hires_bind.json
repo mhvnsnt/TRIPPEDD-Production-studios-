@@ -1,13 +1,13 @@
 {
-  "hiresSource": "assets/source_models/MARS_LOD1.glb",
-  "hiresLevel": "LOD1",
+  "hiresSource": "assets/source_models/MARS_source.glb",
+  "hiresLevel": "SOURCE",
   "cage": "MARS_MESH",
   "cageVerts": 23830,
-  "hiresVerts": 135397,
+  "hiresVerts": 1114516,
   "method": "Blender SURFACE_DEFORM -- the low-res rigged cage drives the full-resolution render mesh. Native modifier, no hand-written geometry (OWNER LAW #3). The cage is unchanged, so every landmark and measurement already banked against it still holds.",
   "alignment": {
-    "sizeRatio": 0.99625,
-    "centreOffsetMM": 0.714
+    "sizeRatio": 0.996,
+    "centreOffsetMM": 0.706
   },
   "bindCage": {
     "name": "MARS_CAGE_BIND",
@@ -28,15 +28,25 @@
   "restDriftMM": {
     "mean": 0.0,
     "p99": 0.0001,
-    "max": 0.0013
+    "max": 0.0026
   },
   "followsCage": {
     "status": "MEASURED",
     "key": "blink_L",
     "cageMaxTravelMM": 25.387,
-    "hiresMaxTravelMM": 36.556,
+    "hiresMaxTravelMM": 102.197,
+    "hiresTravelMM": {
+      "50": 0.0,
+      "90": 0.0,
+      "99": 1.0303,
+      "99.9": 16.5581
+    },
     "cageMovedVerts": 123,
-    "hiresMovedVerts": 846
+    "hiresMovedVerts": 13761,
+    "outlierThresholdMM": 30.0,
+    "outlierVerts": 35,
+    "outlierFractionPct": 0.00314,
+    "outlierVerdict": "LOCALISED_DEFECT: 35 vert(s) over 30 mm. Not global distortion -- p99 is 1.03 mm -- but a real artifact at the eye aperture that must be fixed when the lid geometry is rebuilt on the owner's linework."
   },
   "cageHiddenFromRender": true,
   "boundWithTargetModifiersDisabled": [

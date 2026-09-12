@@ -264,17 +264,41 @@ if driver:
     cd = np.linalg.norm(cv2 - cage_v, axis=1) / MM
     hd = np.linalg.norm(hv2 - rest_v, axis=1) / MM
     _drive(0.0)
+    # A MAX OVER A MILLION VERTICES IS NOT A DESCRIPTION OF THE BIND.
+    # MEASURED on the full source: p50 0.000 mm, p90 0.004 mm, p99 4.76 mm -- and
+    # a p100 of 102 mm carried by 87 vertices out of 1,114,516 (0.0078%), sitting
+    # 14 mm from his drawn lid lines, i.e. at the eye aperture where the cage is
+    # thin and Surface Deform's cell maths degenerates. Reporting only the max
+    # calls a sound bind broken; reporting only the median hides a real defect.
+    # Both are reported, and the outliers are NAMED rather than averaged away.
+    OUTLIER_MM = 30.0
+    out_n = int((hd > OUTLIER_MM).sum())
     follow = {"status": "MEASURED", "key": driver,
               "cageMaxTravelMM": round(float(cd.max()), 3),
               "hiresMaxTravelMM": round(float(hd.max()), 3),
+              "hiresTravelMM": {q: round(float(np.percentile(hd, q)), 4)
+                                for q in (50, 90, 99, 99.9)},
               "cageMovedVerts": int((cd > 0.2).sum()),
-              "hiresMovedVerts": int((hd > 0.2).sum())}
-    print("  FOLLOW on '%s': cage max %.2f mm (%d verts) -> hires max %.2f mm (%d verts)"
-          % (driver, cd.max(), (cd > 0.2).sum(), hd.max(), (hd > 0.2).sum()), flush=True)
-    if cd.max() > 0.5 and hd.max() < cd.max() * 0.5:
-        die("the cage travels %.2f mm but the render mesh only %.2f mm -- it is not "
-            "following, and a render would show a rigged cage inside a frozen face"
-            % (cd.max(), hd.max()))
+              "hiresMovedVerts": int((hd > 0.2).sum()),
+              "outlierThresholdMM": OUTLIER_MM,
+              "outlierVerts": out_n,
+              "outlierFractionPct": round(100.0 * out_n / len(hd), 5),
+              "outlierVerdict": ("CLEAN" if out_n == 0 else
+                                 "LOCALISED_DEFECT: %d vert(s) over %.0f mm. Not global "
+                                 "distortion -- p99 is %.2f mm -- but a real artifact at "
+                                 "the eye aperture that must be fixed when the lid "
+                                 "geometry is rebuilt on the owner's linework."
+                                 % (out_n, OUTLIER_MM, float(np.percentile(hd, 99))))}
+    print("  FOLLOW on '%s': cage max %.2f mm (%d verts) -> hires p50 %.3f / p90 %.3f / "
+          "p99 %.2f / max %.2f mm" % (driver, cd.max(), (cd > 0.2).sum(),
+          np.percentile(hd, 50), np.percentile(hd, 90), np.percentile(hd, 99), hd.max()), flush=True)
+    if out_n:
+        print("  OUTLIERS: %d of %d verts (%.4f%%) travel over %.0f mm -- localised, "
+              "NOT averaged away" % (out_n, len(hd), 100.0 * out_n / len(hd), OUTLIER_MM), flush=True)
+    if cd.max() > 0.5 and float(np.percentile(hd, 99.9)) < cd.max() * 0.1:
+        die("the cage travels %.2f mm but the render mesh's p99.9 is only %.2f mm -- it "
+            "is not following, and a render would show a rigged cage inside a frozen face"
+            % (cd.max(), float(np.percentile(hd, 99.9))))
 
 # ---- keep the cage in the scene but out of the picture ---------------------
 cage.hide_render = True

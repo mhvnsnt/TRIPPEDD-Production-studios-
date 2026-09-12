@@ -75,3 +75,14 @@ public/production/*-segments/
 # MPFB2 (MakeHuman for Blender) is vendored as a full upstream clone for
 # reference anatomy and its proven eye/lid system. 105 MB, AGPL, re-clonable.
 vendor/opensource/
+
+# DERIVED, NOT WITHHELD (OWNER LAW #6). MARS_FACE_HIRES.blend is rebuilt in one
+# command from two files that ARE committed -- assets/rigs/MARS_FACE.blend and
+# assets/source_models/MARS_source.glb:
+#     vendor/blender/blender -b -P tools/models/upgrade_render_mesh.py -- --hires SOURCE
+# At SOURCE resolution it is 282.6 MB even compressed, past GitHub's 100 MB hard
+# limit, and no input is hidden by leaving it out. The bind manifest
+# (renders/_rig_measure/hires_bind.json, published to docs/evidence/quality/)
+# records every gate number so the result is checkable without the scene.
+assets/rigs/MARS_FACE_HIRES.blend
+assets/rigs/MARS_FACE_HIRES.blend1

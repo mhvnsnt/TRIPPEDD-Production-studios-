@@ -259,7 +259,7 @@ def mat(name, base, rough, spec=0.5, emit=None, strength=0.0, sss=0.0):
 # as teeth because of SPECULAR and translucency, not because they glow.
 # Enamel, not paint: dimmer base, real translucency, and a wide subsurface
 # radius so light bleeds between crowns the way it does in a mouth.
-M_TEETH = mat("MARS_TEETH_MAT", (0.70, 0.73, 0.76, 1), 0.24, 0.60, sss=0.40)
+M_TEETH = mat("MARS_TEETH_MAT", (0.76, 0.755, 0.72, 1), 0.20, 0.62, sss=0.55)
 M_GUM = mat("MARS_GUM_MAT", (0.32, 0.075, 0.21, 1), 0.52, 0.36, sss=0.45)
 M_TONGUE = mat("MARS_TONGUE_MAT", (0.40, 0.085, 0.26, 1), 0.42, 0.44, sss=0.55)
 
@@ -353,7 +353,7 @@ def dental_arch(name, bone_name, biting_z, gum_z, up):
             x, y, a = arch_at(u)
             run += w * 0.5
             cube = bmesh.ops.create_cube(bm, size=1.0)["verts"]
-            bmesh.ops.scale(bm, vec=(w * 0.97, d, h), verts=cube)
+            bmesh.ops.scale(bm, vec=(w * 1.005, d, h), verts=cube)   # overlap at the contact point
             base_z = biting_z - up * h * 0.5
             for v in cube:
                 # Root end narrows; the crown is widest at the contact point.
@@ -375,25 +375,28 @@ def dental_arch(name, bone_name, biting_z, gum_z, up):
             placed.append((tname, round(w / MW, 4), round(h / MW, 4)))
     for v in bm.verts:
         v.co = F.world(V(v.co))
-    teeth = finish(bm, name, smooth=True, bevel=MM * 0.55)
+    teeth = finish(bm, name, smooth=True, bevel=MM * 0.34)
     rides(teeth, bone_name, M_TEETH)
 
     # Gum ridge: lofted along the SAME arch, sitting at the root ends only, so it
     # never swallows the crowns the way a fat tube did.
     bm = bmesh.new()
     rings, RN = [], 12
-    steps = 30
+    steps = 96
     for i in range(steps + 1):
         u = i / float(steps) * 2.0 - 1.0
         x, y, a = arch_at(u)
-        rw, rh = 4.2 * MM, 5.0 * MM
+        # Scalloped: the ridge rises between crowns and dips over each one.
+        papilla = 0.5 + 0.5 * math.cos(u * math.pi * len(TOOTH_MM) * 2.0)
+        rw = 5.6 * MM
+        rh = (5.0 + 3.4 * papilla) * MM
         ring = []
         for k in range(RN):
             t = 2 * math.pi * k / RN
             ring.append(bm.verts.new(F.world(V((
                 x + math.cos(t) * rw * math.cos(a),
                 y + math.cos(t) * rw * math.sin(a) * 0.4 + math.cos(t) * rw * 0.6,
-                gum_z + math.sin(t) * rh)))))
+                gum_z + math.sin(t) * rh - up * 2.2 * MM * papilla)))))
         rings.append(ring)
     for A_, B_ in zip(rings, rings[1:]):
         for k in range(RN):
@@ -428,15 +431,15 @@ TONGUE_SECTIONS = [
     # adult tongue is about 45 mm across and 18 mm thick and it FILLS the floor
     # of the mouth; the previous one was 0.47 MW wide inside a cavity 1.0 MW
     # across, which is exactly why it read as a bead in a box.
-    (66.0 * MM, 17.0 * MM,  8.0 * MM, -MW * 0.155),
-    (58.0 * MM, 21.5 * MM, 10.0 * MM, -MW * 0.175),
-    (48.0 * MM, 23.5 * MM, 10.5 * MM, -MW * 0.195),
-    (38.0 * MM, 24.0 * MM, 10.0 * MM, -MW * 0.210),
-    (28.0 * MM, 23.0 * MM,  9.0 * MM, -MW * 0.220),
-    (19.0 * MM, 20.5 * MM,  7.6 * MM, -MW * 0.222),
-    (11.0 * MM, 16.5 * MM,  6.0 * MM, -MW * 0.216),
-    ( 5.0 * MM, 11.0 * MM,  4.2 * MM, -MW * 0.206),
-    ( 0.0 * MM,  6.0 * MM,  2.6 * MM, -MW * 0.198),
+    (66.0 * MM, 17.0 * MM,  8.0 * MM, -MW * 0.300),
+    (58.0 * MM, 21.5 * MM, 10.0 * MM, -MW * 0.320),
+    (48.0 * MM, 23.5 * MM, 10.5 * MM, -MW * 0.335),
+    (38.0 * MM, 24.0 * MM, 10.0 * MM, -MW * 0.345),
+    (28.0 * MM, 23.0 * MM,  9.0 * MM, -MW * 0.350),
+    (19.0 * MM, 20.5 * MM,  7.6 * MM, -MW * 0.346),
+    (11.0 * MM, 16.5 * MM,  6.0 * MM, -MW * 0.336),
+    ( 5.0 * MM, 11.0 * MM,  4.2 * MM, -MW * 0.322),
+    ( 0.0 * MM,  6.0 * MM,  2.6 * MM, -MW * 0.310),
 ]
 bm = bmesh.new()
 RN = 26
@@ -449,15 +452,17 @@ for (y, hw, hh, zc) in TONGUE_SECTIONS:
         cx_t, sz = math.cos(t), math.sin(t)
         # Domed top, flat underside, and a midline groove down the middle of the
         # dorsum -- the one feature that stops a smooth blob reading as plastic.
-        groove = 1.0 - 0.26 * math.exp(-((cx_t / 0.30) ** 2)) if sz > 0 else 1.0
+        groove = 1.0 - 0.42 * math.exp(-((cx_t / 0.26) ** 2)) if sz > 0 else 1.0
+        if sz > 0:
+            groove *= 1.0 + 0.045 * math.sin(y / MM * 0.75)   # transverse ripple
         ring.append(bm.verts.new(F.world(V((F.cx + cx_t * hw, y,
                                             zc + hh * (sz * 1.15 * groove if sz > 0 else sz * 0.55))))))
     rings.append(ring)
 for A_, B_ in zip(rings, rings[1:]):
     for k in range(RN):
         bm.faces.new((A_[k], A_[(k + 1) % RN], B_[(k + 1) % RN], B_[k]))
-back = bm.verts.new(F.world(V((F.cx, 72.0 * MM, -MW * 0.150))))
-tip = bm.verts.new(F.world(V((F.cx, -3.0 * MM, -MW * 0.196))))
+back = bm.verts.new(F.world(V((F.cx, 72.0 * MM, -MW * 0.295))))
+tip = bm.verts.new(F.world(V((F.cx, -3.0 * MM, -MW * 0.308))))
 for k in range(RN):
     bm.faces.new((rings[0][(k + 1) % RN], rings[0][k], back))
     bm.faces.new((rings[-1][k], rings[-1][(k + 1) % RN], tip))

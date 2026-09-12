@@ -76,8 +76,12 @@ def verify_receipt(repo_root: Path, receipt: Path) -> None:
         raise RuntimeError("render evidence verification failed\n" + result.stdout + result.stderr)
 
 
-def build_receipt(repo_root: Path, blend: Path, png: Path, frame: int, version: str) -> dict:
+def build_receipt(repo_root: Path, receipt: Path, blend: Path, png: Path, frame: int, version: str) -> dict:
     width, height = png_dimensions(png)
+    # The evidence verifier resolves relative artifact paths from the receipt
+    # directory. Keep the receipt relocatable by recording the rendered file
+    # relative to that directory, never relative to the repository root.
+    artifact_path = str(png.relative_to(receipt.parent)) if png.is_relative_to(receipt.parent) else str(png)
     return {
         "schema": SCHEMA,
         "rendered": True,
@@ -92,7 +96,7 @@ def build_receipt(repo_root: Path, blend: Path, png: Path, frame: int, version: 
         },
         "frame": frame,
         "artifact": {
-            "path": str(png.relative_to(repo_root)) if png.is_relative_to(repo_root) else str(png),
+            "path": artifact_path,
             "sha256": sha256_file(png),
             "bytes": png.stat().st_size,
             "format": "png",
@@ -123,6 +127,7 @@ def main() -> int:
     receipt = (args.receipt or output_dir / "render-receipt.json").resolve()
     log_path = (args.log or output_dir / "blender.log").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
+    receipt.parent.mkdir(parents=True, exist_ok=True)
 
     try:
         run_contract_validator(repo_root)
@@ -149,7 +154,7 @@ def main() -> int:
         if not expected.is_file():
             raise RuntimeError(f"Blender exited successfully but produced no expected PNG: {expected}")
 
-        data = build_receipt(repo_root, blend, expected, args.frame, version)
+        data = build_receipt(repo_root, receipt, blend, expected, args.frame, version)
         receipt.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         verify_receipt(repo_root, receipt)
         print(f"RENDER_EVIDENCE: PASS {receipt}")

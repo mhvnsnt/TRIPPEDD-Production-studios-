@@ -37,8 +37,17 @@ if VARIANT not in APPEAR["variants"]:
     sys.exit("unknown appearance variant %r; have %s" % (VARIANT, list(APPEAR["variants"])))
 VSPEC = APPEAR["variants"][VARIANT]
 
-A = json.load(open("renders/_rig_measure/mouth_anatomy.json"))
-C = A["contours"]
+AUTH_PATH = "renders/_rig_measure/face_landmark_authority.json"
+if not os.path.exists(AUTH_PATH):
+    sys.exit("missing face landmark authority; run tools/character/measure_face_mvmp.py first")
+AUTH = json.load(open(AUTH_PATH))
+if AUTH.get("schema") != "trippedd.mars-face-landmark-authority/v1":
+    sys.exit("wrong face landmark authority schema")
+from face_landmark_semantics import CONTOUR_ORDER
+C = {
+    name: [AUTH["landmarks"][str(i)]["xyz"] for i in ids]
+    for name, ids in CONTOUR_ORDER.items()
+}
 EM = json.load(open(os.path.join(DONOR, "manifest.json")))
 
 bpy.ops.wm.open_mainfile(filepath=SRC)

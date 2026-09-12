@@ -40,6 +40,28 @@ FACE = json.load(open(os.path.join(ROOT, "renders/_rig_measure/face_anatomy.json
 LM = {k: V(v) for k, v in FACE["landmarks"].items()}
 HEAD_H = FACE["bounds"]["size"][2]
 
+# The eye/brow/nose semantic points come from the multi-view authority, not the
+# legacy single-front-pixel raycast. Mouth/jaw legacy measurements remain in
+# FACE until their own authority lane is migrated.
+AUTH_PATH = os.path.join(ROOT, "renders", "_rig_measure", "face_landmark_authority.json")
+if not os.path.exists(AUTH_PATH):
+    sys.exit("missing face landmark authority — run tools/character/measure_face_mvmp.py before rigging")
+FACE_AUTH = json.load(open(AUTH_PATH))
+if FACE_AUTH.get("schema") != "trippedd.mars-face-landmark-authority/v1":
+    sys.exit("wrong face landmark authority schema")
+AUTH_LM = FACE_AUTH["landmarks"]
+for name, idx in {
+    "eye_left_outer": 33, "eye_left_inner": 133,
+    "eye_right_outer": 263, "eye_right_inner": 362,
+    "eye_left_top": 159, "eye_left_bottom": 145,
+    "eye_right_top": 386, "eye_right_bottom": 374,
+    "brow_left": 105, "brow_right": 334,
+    "nose_tip": 1, "nose_bridge": 168,
+    "cheek_left": 50, "cheek_right": 280,
+    "chin": 152, "ear_left": 234, "ear_right": 454,
+}.items():
+    LM[name] = V(AUTH_LM[str(idx)]["xyz"])
+
 bpy.ops.wm.open_mainfile(filepath=SRC)
 head = bpy.data.objects["MARS_MESH"]
 scene = bpy.context.scene
@@ -501,40 +523,81 @@ CONTROLS = {
 #               eye R fissure 0.1071, lid opening 0.0251 (aspect 0.23)
 # Both aspect ratios are a normal open eye, so the contour is tracking real
 # lids in the texture rather than guessing.
-EYE_C = F.raw["contours"]
+from face_landmark_semantics import CONTOUR_ORDER, EYE_UPPER, EYE_LOWER, EYEBROW
+EYE_C = {
+    name: [FACE_AUTH["landmarks"][str(i)]["xyz"] for i in ids]
+    for name, ids in CONTOUR_ORDER.items()
+}
+print("face authority: MVMP 478-point semantics — no texture/darkness eyelid detection")
 
-def contour_band(points, radius, offset_fn, gate=None):
-    """Deform the band of surface within `radius` of a measured curve."""
-    pts = [V(q) for q in points]
+def semantic_lid_close(side):
+    """Close ONLY the MediaPipe upper-eyelid semantic region.
+
+    Membership is a geometric Voronoi partition between the published upper-lid
+    landmarks and the published eyebrow landmarks. A vertex belongs to the lid
+    only when it is closer to the lid authority than to the brow authority and
+    lies within one measured eye opening of the lid contour. This makes the
+    brow an explicit exclusion region rather than something a darkness
+    heuristic can accidentally drag.
+
+    The motion vector is measured from the actual upper-lid midpoint toward the
+    actual lower-lid midpoint on this head. No world-axis sign is assumed.
+    """
+    up_w = [V(p) for p in EYE_C["eye_%s_upper" % side]]
+    lo_w = [V(p) for p in EYE_C["eye_%s_lower" % side]]
+    brow_w = [V(p) for p in EYE_C["brow_%s" % side]]
+
+    up = [F.local(p) for p in up_w]
+    lo = [F.local(p) for p in lo_w]
+    brow = [F.local(p) for p in brow_w]
+
+    opening = (lo[len(lo) // 2] - up[len(up) // 2]).length
+    if opening <= 1e-8:
+        raise RuntimeError("eye %s has no measured lid opening" % side)
+
+    close_vec = (lo[len(lo) // 2] - up[len(up) // 2]).normalized()
+    authority_radius = opening
+    print("  blink_%s authority: opening %.6f · upper-lid points %d · brow exclusion points %d"
+          % (side, opening, len(up), len(brow)))
+
+    def nearest(points, lp):
+        return min((lp - q).length for q in points)
+
     def f(lp):
-        w_best, near = 0.0, None
-        for q in pts:
-            d = (lp - F.local(q)).length
-            if d < radius:
-                w = 1.0 - smoothstep(d / radius)
-                if w > w_best: w_best, near = w, q
-        if w_best <= 0 or (gate and not gate(lp, near)): return None
-        return offset_fn(lp, near) * w_best
+        d_lid = nearest(up, lp)
+        d_brow = nearest(brow, lp)
+
+        # Semantic ownership, not darkness: the brow owns everything closer to
+        # its published landmarks. The lid owns only its own side of the
+        # measured boundary.
+        if d_lid >= authority_radius or d_lid >= d_brow:
+            return None
+
+        w = 1.0 - smoothstep(d_lid / authority_radius)
+        return close_vec * (opening * 0.92 * w)
+
     return f
 
-def lid_close(side):
-    up = EYE_C["eye_%s_upper" % side]
-    lo = EYE_C["eye_%s_lower" % side]
-    mid_z = sum(F.local(q).z for q in up + lo) / float(len(up) + len(lo))
-    opening = (F.local(up[len(up) // 2]) - F.local(lo[len(lo) // 2])).length
-    # Only the UPPER lid travels, and it travels the measured opening: a lid
-    # that moves half the fissure is a squint, not a blink.
-    return contour_band(up, opening * 1.5,
-                        lambda lp, q: V((0, -0.10, -1.0)) * (opening * 0.92),
-                        gate=lambda lp, q: lp.z > mid_z - opening * 0.15)
+def semantic_lid_squint(side):
+    lo_w = [V(p) for p in EYE_C["eye_%s_lower" % side]]
+    up_w = [V(p) for p in EYE_C["eye_%s_upper" % side]]
+    brow_w = [V(p) for p in EYE_C["brow_%s" % side]]
+    lo = [F.local(p) for p in lo_w]
+    up = [F.local(p) for p in up_w]
+    brow = [F.local(p) for p in brow_w]
+    opening = (up[len(up) // 2] - lo[len(lo) // 2]).length
+    if opening <= 1e-8:
+        raise RuntimeError("eye %s has no measured lid opening" % side)
+    open_vec = (up[len(up) // 2] - lo[len(lo) // 2]).normalized()
 
-def lid_squint(side):
-    lo = EYE_C["eye_%s_lower" % side]
-    mid_z = sum(F.local(q).z for q in EYE_C["eye_%s_upper" % side] + lo) / float(len(lo) * 2)
-    opening = (F.local(EYE_C["eye_%s_upper" % side][4]) - F.local(lo[4])).length
-    return contour_band(lo, opening * 1.4,
-                        lambda lp, q: V((0, -0.05, 1.0)) * (opening * 0.40),
-                        gate=lambda lp, q: lp.z < mid_z + opening * 0.15)
+    def f(lp):
+        d_lid = min((lp - q).length for q in lo)
+        d_brow = min((lp - q).length for q in brow)
+        if d_lid >= opening * 0.85 or d_lid >= d_brow:
+            return None
+        w = 1.0 - smoothstep(d_lid / (opening * 0.85))
+        return open_vec * (opening * 0.40 * w)
+    return f
 
 # Nostrils are REAL geometry in this scan -- the alar walls and the openings are
 # modelled, not painted -- so a flare moves actual surface. The alar base sits
@@ -566,10 +629,10 @@ CONTROLS.update({
     "cheek_puff_R": radial(LM["cheek_right"], MW * 0.80, (0.85, -0.50, 0), MW * 0.10),
     "cheek_suck_L": radial(LM["cheek_left"], MW * 0.70, (0.80, 0.55, 0), MW * 0.07),
     "cheek_suck_R": radial(LM["cheek_right"], MW * 0.70, (-0.80, 0.55, 0), MW * 0.07),
-    "blink_L": lid_close("L"),
-    "blink_R": lid_close("R"),
-    "squint_L": lid_squint("L"),
-    "squint_R": lid_squint("R"),
+    "blink_L": semantic_lid_close("L"),
+    "blink_R": semantic_lid_close("R"),
+    "squint_L": semantic_lid_squint("L"),
+    "squint_R": semantic_lid_squint("R"),
     "nostril_flare_L": nostril_flare(-1),
     "nostril_flare_R": nostril_flare(+1),
     "nose_wrinkle": radial(LM["nose_bridge"], (LM["nose_tip"] - LM["nose_bridge"]).length * 0.55,

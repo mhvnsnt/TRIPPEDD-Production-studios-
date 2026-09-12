@@ -1,0 +1,25 @@
+{
+  "schema": "trippedd.open-source-face-authority/v1",
+  "components": [
+    {
+      "name": "mvmp",
+      "version": "1.4.2",
+      "source": "https://github.com/gfacchi-dev/mvmp",
+      "license": "MIT",
+      "role": "multi-view 478-point facial landmark detection on the actual 3D mesh",
+      "pypiSha256": "667bb767224a9557d64455381d1dc52371455b1d14dd9c75e79032e5d37ef599"
+    },
+    {
+      "name": "mediapipe-canonical-face-model",
+      "source": "https://github.com/google-ai-edge/mediapipe",
+      "license": "Apache-2.0",
+      "role": "published 468-point semantic topology used by the MediaPipe landmark indices"
+    }
+  ],
+  "policy": {
+    "textureDarknessHeuristic": "FORBIDDEN",
+    "manualEyelidPixelSelection": "FORBIDDEN",
+    "eyelidEyebrowOverlap": "FAIL",
+    "renderDisagreesWithMetric": "FAIL"
+  }
+}

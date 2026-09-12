@@ -1,0 +1,90 @@
+name: Mars Face Blink Authority
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tools/character/**"
+      - "config/open_source_face_authority.json"
+      - "docs/production/MARS-FACE-LANDMARK-AUTHORITY.md"
+      - "assets/source_models/**"
+      - "assets/rigs/**"
+      - "assets/donor/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  face-blink:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout with LFS assets
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install headless graphics dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libosmesa6 libegl1 libgl1 libglx-mesa0
+
+      - name: Install pinned MVMP stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "mvmp==1.4.2" "trimesh>=4.0,<5"
+
+      - name: Install Blender 4.2.1
+        run: |
+          set -euo pipefail
+          VER=4.2.1
+          curl -fsSL -o /tmp/blender.tar.xz \
+            "https://download.blender.org/release/Blender4.2/blender-${VER}-linux-x64.tar.xz"
+          tar -xf /tmp/blender.tar.xz -C /opt
+          echo "/opt/blender-${VER}-linux-x64" >> "${GITHUB_PATH}"
+          /opt/blender-${VER}-linux-x64/blender --version
+
+      - name: Detect 478 landmarks on the real Mars mesh
+        run: |
+          python tools/character/measure_face_mvmp.py \
+            --debug renders/_rig_measure/mvmp_debug
+
+      - name: Validate face semantic authority
+        run: |
+          python tools/character/validate_face_authority.py
+
+      - name: Build eye sockets from the authority
+        run: |
+          blender --background --python-exit-code 1 \
+            --python tools/character/eye_sockets.py -- \
+            --src assets/rigs/MARS_ORAL.blend \
+            --out assets/rigs/MARS_ORAL.blend
+
+      - name: Build the face rig from the authority
+        run: |
+          blender --background --python-exit-code 1 \
+            --python tools/character/rig_face.py -- \
+            --src assets/rigs/MARS_ORAL.blend \
+            --out assets/rigs/MARS_FACE.blend
+
+      - name: Render and gate a real blink
+        run: |
+          blender --background --python-exit-code 1 \
+            --python tools/character/validate_blink_render.py
+
+      - name: Upload face evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mars-face-blink-authority
+          path: |
+            renders/_rig_measure/face_landmark_authority.json
+            renders/_rig_measure/mvmp_debug/**
+            renders/_rig_measure/blink_qc/**
+          if-no-files-found: warn

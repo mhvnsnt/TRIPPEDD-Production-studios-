@@ -1,0 +1,35 @@
+{
+  "schema": "trippedd.mars-eye-blink-linework/v2",
+  "character": "MARS",
+  "authority": "assets/rigs/MARS_linework_authority.json",
+  "source": "assets/source_models/MARS_source.glb",
+  "status": "IN_PROGRESS",
+  "lane": "eyes_blink",
+  "targets": {
+    "eyeOpeningLMM": 7.08,
+    "eyeOpeningRMM": 8.24,
+    "liftedPoints": 382,
+    "maxReprojectionPx": 0.0016
+  },
+  "driverPolicy": {
+    "authority": "owner_drawn_eyelid_lines",
+    "mediapipe": "REJECTED",
+    "canonicalFit": "REJECTED_AS_INDEPENDENT_EVIDENCE",
+    "fallback": "FORBIDDEN",
+    "browInfluence": 0.0
+  },
+  "proofSequence": [
+    {"frame": 0, "state": "OPEN", "weight": 0.0},
+    {"frame": 6, "state": "HALF", "weight": 0.5},
+    {"frame": 12, "state": "CLOSED", "weight": 1.0},
+    {"frame": 18, "state": "HALF", "weight": 0.5},
+    {"frame": 24, "state": "OPEN", "weight": 0.0}
+  ],
+  "measurementPolicy": {
+    "report": ["p50", "p90", "p99", "max", "outlierCount", "affectedVertices"],
+    "visualSequenceRequired": true,
+    "singleFrameRejected": true,
+    "cheekMotionMustBeZeroDriver": true
+  },
+  "gate": "UNKNOWN until a unique linework-derived 3-D lift artifact is committed; never substitute MediaPipe"
+}

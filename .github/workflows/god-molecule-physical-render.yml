@@ -70,6 +70,25 @@ jobs:
           mkdir -p .artifacts/evidence
           python3 tools/environment/probe_oss_stack.py | tee .artifacts/evidence/oss-capability-probe.log
 
+      - name: Resolve OSS runtime capability contract
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/evidence
+          OSS_RUNTIME_CONTRACT="$PWD/.artifacts/evidence/oss_runtime_contract.json" \
+            python3 tools/environment/oss_runtime_contract.py | tee .artifacts/evidence/oss-runtime-contract.log
+          test -s .artifacts/evidence/oss_runtime_contract.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('.artifacts/evidence/oss_runtime_contract.json')
+          data = json.loads(p.read_text())
+          assert data['fail_closed'] is True
+          assert data['evidence_status'] == 'NOT_ATTEMPTED'
+          assert data['policy']['capability_presence_is_not_evidence'] is True
+          print('OSS_RUNTIME_CONTRACT: VERIFIED_CAPABILITY_ONLY')
+          print(json.dumps(data['summary'], indent=2))
+          PY
+
       - name: Retrieve public Drive production folder
         env:
           DRIVE_FOLDER_URL: ${{ inputs.drive_folder_url || 'https://drive.google.com/drive/folders/1Y6NppaQwnM2zutvF_hsIQZCq02BQrNb8' }}

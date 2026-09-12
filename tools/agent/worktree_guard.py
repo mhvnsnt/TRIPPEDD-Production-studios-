@@ -1,44 +1,72 @@
 #!/usr/bin/env python3
 """Fail-closed guard for autonomous agent worktrees.
 
-No cleanup, reset, checkout, or deletion is performed here. The guard only
-checks that an agent task has an explicit worktree and source commit and that
-its requested path scope is bounded.
+The guard is observational: it never cleans, resets, checks out, deletes, or
+stashes anything. It verifies the canonical task contract, the worktree, and
+that the worktree HEAD is exactly the declared source commit before an agent
+is allowed to start.
 """
 from __future__ import annotations
-import argparse, json
+
+import argparse
+import json
+import subprocess
 from pathlib import Path
 
+EXIT_UNKNOWN = 45
+
+
+def git(worktree: Path, *args: str) -> str:
+    result = subprocess.run(
+        ["git", *args], cwd=worktree, text=True, capture_output=True, check=False
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or "git command failed")
+    return result.stdout.strip()
+
+
 def main() -> int:
-    p = argparse.ArgumentParser()
-    p.add_argument("contract", type=Path)
-    args = p.parse_args()
-    c = json.loads(args.contract.read_text(encoding="utf-8"))
-    required = ["task_id", "source_commit", "worktree", "allowed_paths", "forbidden_paths"]
-    missing = [x for x in required if not c.get(x)]
-    if missing:
-        print("UNKNOWN: missing worktree guard fields: " + ", ".join(missing))
-        return 45
-    worktree = Path(c["worktree"])
-    if not worktree.is_dir():
-        print(f"UNKNOWN: worktree does not exist: {worktree}")
-        return 45
-    allowed = c["allowed_paths"]
-    forbidden = c["forbidden_paths"]
-    if not isinstance(allowed, list) or not isinstance(forbidden, list):
-        print("UNKNOWN: path scopes must be arrays")
-        return 45
-    if any(not isinstance(x, str) or not x for x in allowed + forbidden):
-        print("UNKNOWN: path scopes contain invalid entries")
-        return 45
-    print("WORKTREE_GUARD: PASS")
-    print(f"task_id: {c['task_id']}")
-    print(f"source_commit: {c['source_commit']}")
-    print(f"worktree: {worktree}")
-    print(f"allowed_paths: {len(allowed)}")
-    print(f"forbidden_paths: {len(forbidden)}")
-    print("policy: guard is observational; it never deletes or resets evidence")
-    return 0
+    parser = argparse.ArgumentParser()
+    parser.add_argument("contract", type=Path)
+    args = parser.parse_args()
+
+    try:
+        c = json.loads(args.contract.read_text(encoding="utf-8"))
+        required = ["taskId", "sourceCommit", "scope"]
+        missing = [key for key in required if not c.get(key)]
+        if missing:
+            raise ValueError("missing canonical contract fields: " + ", ".join(missing))
+        scope = c["scope"]
+        allowed = scope.get("allowedPaths")
+        forbidden = scope.get("forbiddenPaths")
+        if not isinstance(allowed, list) or not isinstance(forbidden, list):
+            raise ValueError("scope path lists must be arrays")
+        if any(not isinstance(x, str) or not x for x in allowed + forbidden):
+            raise ValueError("scope path lists contain invalid entries")
+
+        worktree = Path(c.get("worktree", ".")).resolve()
+        if not worktree.is_dir():
+            raise ValueError(f"worktree does not exist: {worktree}")
+
+        git_root = Path(git(worktree, "rev-parse", "--show-toplevel")).resolve()
+        head = git(worktree, "rev-parse", "HEAD")
+        source = c["sourceCommit"]
+        if head != source:
+            raise ValueError(f"stale worktree HEAD {head}; expected sourceCommit {source}")
+
+        print("WORKTREE_GUARD: PASS")
+        print(f"task_id: {c['taskId']}")
+        print(f"source_commit: {source}")
+        print(f"worktree: {worktree}")
+        print(f"git_root: {git_root}")
+        print(f"allowed_paths: {len(allowed)}")
+        print(f"forbidden_paths: {len(forbidden)}")
+        print("policy: observational; no cleanup/reset/checkout/deletion is performed")
+        return 0
+    except (OSError, json.JSONDecodeError, RuntimeError, ValueError) as exc:
+        print(f"UNKNOWN: {exc}")
+        return EXIT_UNKNOWN
+
 
 if __name__ == "__main__":
     raise SystemExit(main())

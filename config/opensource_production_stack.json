@@ -1,60 +1,49 @@
 {
-  "version": 1,
+  "version": 2,
   "purpose": "Open-source production capabilities available to autonomous studio workers without replacing canonical evidence gates",
   "policy": "optional_capability_layers_must_never_promote_missing_tools_or_failed_outputs_to_PASS",
   "layers": {
     "editorial": [
-      {
-        "name": "OpenTimelineIO",
-        "repo": "https://github.com/AcademySoftwareFoundation/OpenTimelineIO",
-        "license": "Apache-2.0",
-        "role": "machine-readable editorial timeline interchange and media references",
-        "python_package": "opentimelineio",
-        "required": false
-      }
+      {"name":"OpenTimelineIO","repo":"https://github.com/AcademySoftwareFoundation/OpenTimelineIO","license":"Apache-2.0","role":"machine-readable editorial timeline interchange and media references","python_package":"opentimelineio","required":false},
+      {"name":"OpenAPV","repo":"https://github.com/AcademySoftwareFoundation/OpenAPV","license":"Apache-2.0","role":"professional video interchange with associated metadata","required":false}
+    ],
+    "review": [
+      {"name":"OpenRV","repo":"https://github.com/AcademySoftwareFoundation/OpenRV","license":"Apache-2.0","role":"hardware-accelerated image and sequence review","required":false},
+      {"name":"xSTUDIO","repo":"https://github.com/AcademySoftwareFoundation/xstudio","license":"Apache-2.0","role":"professional media playback/review with pipeline APIs","required":false}
     ],
     "render_farm": [
-      {
-        "name": "OpenCue",
-        "repo": "https://github.com/AcademySoftwareFoundation/OpenCue",
-        "license": "Apache-2.0",
-        "role": "distributed render-job dispatch and resource scheduling",
-        "required": false
-      }
+      {"name":"OpenCue","repo":"https://github.com/AcademySoftwareFoundation/OpenCue","license":"Apache-2.0","role":"distributed render-job dispatch and resource scheduling","required":false}
     ],
     "compositing": [
-      {
-        "name": "Natron",
-        "repo": "https://github.com/NatronGitHub/Natron",
-        "license": "GPL-2.0",
-        "role": "headless/node-based compositing and 2D finishing",
-        "required": false
-      }
+      {"name":"Natron","repo":"https://github.com/NatronGitHub/Natron","license":"GPL-2.0","role":"headless/node-based compositing and 2D finishing","required":false},
+      {"name":"OpenFX","repo":"https://github.com/AcademySoftwareFoundation/openfx","license":"BSD-3-Clause","role":"interoperable VFX plugin standard","required":false}
+    ],
+    "imaging_color": [
+      {"name":"OpenImageIO","repo":"https://github.com/AcademySoftwareFoundation/OpenImageIO","license":"Apache-2.0","role":"format-agnostic image IO, inspection and processing","required":false},
+      {"name":"OpenEXR","repo":"https://github.com/AcademySoftwareFoundation/openexr","license":"BSD-3-Clause","role":"HDR render interchange, multipart imagery and metadata","required":false},
+      {"name":"OpenColorIO","repo":"https://github.com/AcademySoftwareFoundation/OpenColorIO","license":"BSD-3-Clause","role":"consistent production color management","required":false}
+    ],
+    "materials_shading": [
+      {"name":"MaterialX","repo":"https://github.com/AcademySoftwareFoundation/MaterialX","license":"Apache-2.0","role":"portable material and look-development interchange","required":false},
+      {"name":"Open Shading Language","repo":"https://github.com/AcademySoftwareFoundation/OpenShadingLanguage","license":"BSD-3-Clause","role":"physically based renderer shading and procedural patterns","required":false}
+    ],
+    "asset_interchange": [
+      {"name":"OpenAssetIO","repo":"https://github.com/OpenAssetIO/OpenAssetIO","license":"Apache-2.0","role":"stable asset identity and media-production interoperability","required":false},
+      {"name":"OpenUSD","repo":"https://github.com/PixarAnimationStudios/OpenUSD","license":"Apache-2.0","role":"scene, asset and interchange composition","required":false}
+    ],
+    "simulation": [
+      {"name":"OpenVDB","repo":"https://github.com/AcademySoftwareFoundation/openvdb","license":"MPL-2.0","role":"sparse volumetric data for smoke, fluids and effects","required":false}
     ],
     "reconstruction": [
-      {
-        "name": "Nerfstudio",
-        "repo": "https://github.com/nerfstudio-project/nerfstudio",
-        "license": "Apache-2.0",
-        "role": "photogrammetry/NeRF/Gaussian-scene reconstruction",
-        "required": false
-      },
-      {
-        "name": "gsplat",
-        "repo": "https://github.com/nerfstudio-project/gsplat",
-        "license": "Apache-2.0",
-        "role": "GPU Gaussian rasterization, depth/ID rendering and large-scene rendering",
-        "required": false
-      }
+      {"name":"Nerfstudio","repo":"https://github.com/nerfstudio-project/nerfstudio","license":"Apache-2.0","role":"photogrammetry/NeRF/Gaussian-scene reconstruction","required":false},
+      {"name":"gsplat","repo":"https://github.com/nerfstudio-project/gsplat","license":"Apache-2.0","role":"GPU Gaussian rasterization, depth/ID rendering and large-scene rendering","required":false},
+      {"name":"COLMAP","repo":"https://github.com/colmap/colmap","license":"BSD-3-Clause","role":"structure-from-motion and multi-view stereo reconstruction","required":false},
+      {"name":"Meshroom","repo":"https://github.com/alicevision/Meshroom","license":"MPL-2.0","role":"node-based photogrammetry reconstruction","required":false}
     ],
-    "existing_core": [
-      "Blender",
-      "OpenUSD",
-      "COLMAP",
-      "Meshroom",
-      "FFmpeg",
-      "OpenTimelineIO"
-    ]
+    "production_assets": [
+      {"name":"DPEL","repo":"https://github.com/AcademySoftwareFoundation/DPEL","license":"ASWF project","role":"production-scale reference assets for pipeline testing and validation","required":false}
+    ],
+    "existing_core": ["Blender","FFmpeg","OpenTimelineIO"]
   },
   "evidence_contract": {
     "tool_presence": "CAPABILITY_ONLY",
@@ -62,6 +51,9 @@
     "visual_qc": "REQUIRED",
     "physical_qc": "REQUIRED_WHEN_APPLICABLE",
     "missing_dependency": "BLOCK_OR_FALLBACK_WITH_EXPLICIT_STATUS",
-    "proxy_output": "NEVER_CANONICAL"
+    "proxy_output": "NEVER_CANONICAL",
+    "review_output": "MUST_REFERENCE_EXACT_ARTIFACT_BYTES",
+    "color_transform": "MUST_RECORD_CONFIG_AND_VERSION",
+    "asset_identity": "MUST_USE_STABLE_ID_WHEN_AVAILABLE"
   }
 }

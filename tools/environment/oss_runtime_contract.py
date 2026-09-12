@@ -94,14 +94,16 @@ def main() -> int:
         "binaries": {label: command_version(command) for label, command in BINARY_CAPABILITIES.items()},
         "environment": {label: env_hint(names) for label, names in ENVIRONMENT_CAPABILITIES.items()},
     }
-    available = sum(1 for value in result["python"].values() if value["available"])
-    available += sum(1 for value in result["binaries"].values() if value["available"])
-    hinted = sum(1 for value in result["environment"].values() if value["available"])
-    total = len(result["python"]) + len(result["binaries"]) + len(result["environment"])
+    executable_or_importable = sum(1 for value in result["python"].values() if value["available"])
+    executable_or_importable += sum(1 for value in result["binaries"].values() if value["available"])
+    declared_runtime = len(result["python"]) + len(result["binaries"])
+    hinted_environment = sum(1 for value in result["environment"].values() if value["available"])
     result["summary"] = {
-        "available_capabilities": available + hinted,
-        "declared_capabilities": total,
-        "coverage_fraction": round((available + hinted) / total, 4) if total else 0.0,
+        "available_runtime_capabilities": executable_or_importable,
+        "declared_runtime_capabilities": declared_runtime,
+        "runtime_coverage_fraction": round(executable_or_importable / declared_runtime, 4) if declared_runtime else 0.0,
+        "environment_hints_present": hinted_environment,
+        "environment_hints_are_not_runtime_coverage": True,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

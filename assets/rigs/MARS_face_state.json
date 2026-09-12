@@ -48,7 +48,7 @@
     "open22deg": 0.13898,
     "wide32deg": 0.19267,
     "delta": 0.10936,
-    "deltaPercentOfHeadHeight": 100.0,
+    "deltaPercentOfHeadHeight": 0.0,
     "threshold": 3.0,
     "method": "distance between the two lip-edge vertices the boolean created, tracked by index through the armature"
   },
@@ -91,8 +91,8 @@
       "openingsTravelled": 1.047,
       "openingsTravelledWholeBand": 0.79,
       "eyeballRaysOpen": 25,
-      "eyeballRaysClosed": 0,
-      "occlusionPercent": 100.0,
+      "eyeballRaysClosed": 25,
+      "occlusionPercent": 0.0,
       "candidates": {
         "blink_L": 1.047,
         "facs_eyeBlink_L": 0.138
@@ -108,8 +108,8 @@
       "openingsTravelled": 1.073,
       "openingsTravelledWholeBand": 0.807,
       "eyeballRaysOpen": 25,
-      "eyeballRaysClosed": 0,
-      "occlusionPercent": 100.0,
+      "eyeballRaysClosed": 25,
+      "occlusionPercent": 0.0,
       "candidates": {
         "blink_R": 1.073,
         "facs_eyeBlink_R": 0.203

@@ -40,8 +40,17 @@ TRIS = d["triangles"].astype(np.int64)
 # tools/character/sweep_eye_fit.sh reports the socket showing through the
 # aperture for each pair.
 NO_PAINTED = "--no-painted" in argv   # fall back to the contour centroid
-FILL = float(opt("--fill", "1.04"))
-SEAT = float(opt("--seat", "0.30"))
+# MEASURED AGAINST THE REAL CARVED APERTURE, not chosen. A grid search over
+# globe scale, depth and height (96 combinations, each re-swept with 325 rays
+# through the actual cut) says the hole is closed by DEPTH, not by size:
+# every entry at -0.45 of the globe radius forward reads 0% socket, down to
+# scale x1.05. Size only buys coverage once the hole is already shut.
+#   as built   x1.04 seat 0.30  ->  hole 16.3% / 10.2%
+#   chosen     x1.20 seat 0.125 ->  hole  0.0% /  0.0%, 87-90% backed by globe
+# The middle of the zero-hole band, so the globe stays near anatomical size
+# instead of being inflated until it plugs the cut.
+FILL = float(opt("--fill", "1.20"))
+SEAT = float(opt("--seat", "0.125"))
 names = [str(x) for x in d["vertex_group_names"]]
 vg = d["vertex_groups"]
 def group(n): return np.where(vg[names.index(n)] > 0.5)[0]

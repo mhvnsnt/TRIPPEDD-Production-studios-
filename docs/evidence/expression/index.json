@@ -99,8 +99,8 @@
     },
     "visual": {
       "verdict": "FAIL",
-      "reviewer": "Claude (session 01PK45rG), reviewing docs/evidence/expression/*_front.png directly",
-      "notes": "VISUAL_FAIL, and it outranks 16/16 physical. WORKS: the blink is real and symmetric -- both upper lids visibly travel down over the sclera; nostril flare visibly widens the alar walls and wrinkles the nose; every expression reaches the screen. FAILS, none of which any current measurement can express: (1) 10_JAW_OPEN is the worst -- opening the mouth exposes a jagged white sheet where an arch should be and a pale wedge tearing down toward the chin. This is the skin-only facs_jawOpen dragging the lower face while the lower arch, which rides the jaw BONE, stays put. Predicted from the numbers (upper lip -0.0222 vs lower -0.0445, cosine +0.999); far worse in pixels than 'the teeth stay shut'. (2) REST does not seal -- the lips show a dark parted slit with red interior and a tooth at the right corner, on a pose whose whole job is a closed mouth. (3) The eyes never fully close at blink 1.0: slivers of sclera remain, because the globe protrudes past the lid plane. (4) Dark artifacts at the nose base in every frame. (5) A hard horizontal seam above the upper lip, visible in 05_NOSTRIL_FLARE. NEXT: drive the jaw BONE from facs_jawOpen (the lip_corner_*_wide driver pattern), then re-cut the lip seal at REST.",
+      "reviewer": "Claude (session 01PK45rG), reviewing the published front frames",
+      "notes": "EYES: fixed and visible. Globes were seated on the MediaPipe lid-contour centroid, which sits 4.4mm/2.7mm below his actual eyes -- measured by reading the painted sclera out of his own texture. Now seated on the painted centres. Aperture socket 16.3%/10.2% -> 0.0%/0.0%, backed by globe 34.5%->79.1% and 37.5%->88.3%, driven by DEPTH not size (grid search, 96 combinations against the real carved cut). BLINK: the lids close BLUE, not white -- the scan's painted-on eyes are repainted out of the skin map so lid geometry no longer carries sclera-coloured texture with it. MOUTH: unchanged and CHECKED, not assumed -- part_gates reports mouth and nose unchanged across the whole eye rebuild. STILL NOT RIGHT: a white sliver remains at the lower margin of each eye under full blink, and there is a dark notch at one inner canthus. Eyes read slightly large (33.3/32.6mm vs a 24mm human eye) because the cut needs filling; that is the trade the grid search made and it can come down if the aperture is re-cut narrower.",
       "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
     },
     "status": "VISUAL_FAIL"
@@ -108,12 +108,12 @@
   "frames": [
     {
       "frame": "01_REST_front.png",
-      "publishedSha256": "a6544039c81864cffb9246d24cc68d31b466350666f12b76c0e8fed3c8f32e26",
+      "publishedSha256": "37a04492289dba0dc4cbd3d259a1244c12e48a569b92ef71d16cd212078907a7",
       "repoPath": "docs/evidence/expression/01_REST_front.png",
       "productionPath": "renders/_facs_proof/01_REST_front.png",
-      "sha256": "e5493c039e2cfa22251c4fdd0d23684bdd47b47ce3af6597d70f8099e191aa85",
-      "sourceSha8": "e5493c03",
-      "bytes": 906217,
+      "sha256": "e7babdc0faef7d9d72c5f807c573218eb72c24f72115f85e49b4754ef5d5d1f4",
+      "sourceSha8": "e7babdc0",
+      "bytes": 900297,
       "renderedPx": [
         900,
         900
@@ -139,12 +139,12 @@
     },
     {
       "frame": "01_REST_profile.png",
-      "publishedSha256": "ac80c4f4e5d80e553e6dc951feeafa7c2b2bca7d27731502409bbb549915cc98",
+      "publishedSha256": "005b0f57847aa2d33509fe111f00d0397fbe00590a1f347ecbf4daaeff6a14a7",
       "repoPath": "docs/evidence/expression/01_REST_profile.png",
       "productionPath": "renders/_facs_proof/01_REST_profile.png",
-      "sha256": "4d69c38bd9d32691dc041029bcbc960ee5e1711380243738c56dca724dc86aa5",
-      "sourceSha8": "4d69c38b",
-      "bytes": 893278,
+      "sha256": "0d619db87924b028914b83a977451914b7954a39460e60fc49a4fd1ef14bef91",
+      "sourceSha8": "0d619db8",
+      "bytes": 892757,
       "renderedPx": [
         900,
         900
@@ -170,12 +170,12 @@
     },
     {
       "frame": "02_BLINK_front.png",
-      "publishedSha256": "939b175b7ca9efc22c0496714a234e479d8b737e4dd42152b6ff9ade5dd82e7f",
+      "publishedSha256": "2b3c3fdff13d9a4f8a9714d84879070dfa7261162a30217e6eb4c7a54a51839e",
       "repoPath": "docs/evidence/expression/02_BLINK_front.png",
       "productionPath": "renders/_facs_proof/02_BLINK_front.png",
-      "sha256": "6a3822c57902053c808a9c1049d7ad39be6d135cc68844e1b84c66ea2da565af",
-      "sourceSha8": "6a3822c5",
-      "bytes": 904697,
+      "sha256": "33f887d00abd7b1e6e4069cc212ffaf431b68ba609e2f6ac5106c31952b27a33",
+      "sourceSha8": "33f887d0",
+      "bytes": 899880,
       "renderedPx": [
         900,
         900
@@ -201,12 +201,12 @@
     },
     {
       "frame": "02_BLINK_profile.png",
-      "publishedSha256": "57a7e9315c624898e7384f8ab69d51578219135e3f2e87449a7df8fae51eb025",
+      "publishedSha256": "fb5213b06644e8280c91e901e53aede4ded905d911abf6b13d4d2e82c4a99f61",
       "repoPath": "docs/evidence/expression/02_BLINK_profile.png",
       "productionPath": "renders/_facs_proof/02_BLINK_profile.png",
-      "sha256": "ac8c579f7b6c44567be470f8af20e7e15fbf63a401f5b08e8f2dc18c900d05c0",
-      "sourceSha8": "ac8c579f",
-      "bytes": 893557,
+      "sha256": "dc50ce6eb7fe0ca33f9375b43d1745fe5f48ba4e681a681b70f999ae5fb14c3f",
+      "sourceSha8": "dc50ce6e",
+      "bytes": 892980,
       "renderedPx": [
         900,
         900
@@ -232,12 +232,12 @@
     },
     {
       "frame": "03_BLINK_L_ONLY_front.png",
-      "publishedSha256": "0243fe3c56e03381a28403bcab8b7dd99cc40f54d2a6f439a9f13b6e5c071fbe",
+      "publishedSha256": "6de1b481a32ed3151393994a4c7ad3a63f6be40adb08fac682926be4d048589e",
       "repoPath": "docs/evidence/expression/03_BLINK_L_ONLY_front.png",
       "productionPath": "renders/_facs_proof/03_BLINK_L_ONLY_front.png",
-      "sha256": "c9b0bfa5d3c3c1e346cd0c0d87416fe173fbfcf98dd69f1998cf97fd42354d42",
-      "sourceSha8": "c9b0bfa5",
-      "bytes": 905837,
+      "sha256": "ed3c1f5a6c52e782aaa8644bdde92492bd860fd87d98d0b673f514e071343e7c",
+      "sourceSha8": "ed3c1f5a",
+      "bytes": 900360,
       "renderedPx": [
         900,
         900
@@ -263,12 +263,12 @@
     },
     {
       "frame": "03_BLINK_L_ONLY_profile.png",
-      "publishedSha256": "9fd80f83554b92e79077cf27c58a8c32de1da16cc7aaa90211425df90f7dc298",
+      "publishedSha256": "18ff119ab62d8963d762c94f665d0d95efd2cbe5634671f0f76b276b64f43a2b",
       "repoPath": "docs/evidence/expression/03_BLINK_L_ONLY_profile.png",
       "productionPath": "renders/_facs_proof/03_BLINK_L_ONLY_profile.png",
-      "sha256": "f5ff8a9165eda4d1114fa0707cbae18dfb56aa171d9c46a30c28bcd636333606",
-      "sourceSha8": "f5ff8a91",
-      "bytes": 893562,
+      "sha256": "4b77f9c866fe42594af9ea4d0702076171b5aeadaa8d9607f9fe5211253fd3fc",
+      "sourceSha8": "4b77f9c8",
+      "bytes": 892983,
       "renderedPx": [
         900,
         900
@@ -294,12 +294,12 @@
     },
     {
       "frame": "04_SMILE_front.png",
-      "publishedSha256": "6d256883ec0a26ac6dfe76d41e9bed0ceccbd296258d9b9c6a8c3d06d1c883eb",
+      "publishedSha256": "9f7781fff2fad6c5d79e1e233201aecbb44b67236849cfb579d34989a76b8a98",
       "repoPath": "docs/evidence/expression/04_SMILE_front.png",
       "productionPath": "renders/_facs_proof/04_SMILE_front.png",
-      "sha256": "92543e6246ed11a58a219de9265537b8942a10b877f7bac3058b30a26e01f520",
-      "sourceSha8": "92543e62",
-      "bytes": 907791,
+      "sha256": "6dcb2d9ac617c7af9f57f2b51ee765738c4867660b3b4c004263c53d579a4ebf",
+      "sourceSha8": "6dcb2d9a",
+      "bytes": 902279,
       "renderedPx": [
         900,
         900
@@ -325,12 +325,12 @@
     },
     {
       "frame": "04_SMILE_profile.png",
-      "publishedSha256": "ce04282ee423b4581babec41ef98dd422381305d1d621f91ea20f50a4591cc52",
+      "publishedSha256": "339e1a6b1a2d1e3ea15669438b31fed2a3fcb4d4d277839552087d2f40a8d542",
       "repoPath": "docs/evidence/expression/04_SMILE_profile.png",
       "productionPath": "renders/_facs_proof/04_SMILE_profile.png",
-      "sha256": "0337acf655650a95348ca65c272aea60528e70e3c512971797f0080bb37a353b",
-      "sourceSha8": "0337acf6",
-      "bytes": 896119,
+      "sha256": "f95b2f7858742a39573e52e1a57046a5cf01be6edd8a028ad3640c7152a286eb",
+      "sourceSha8": "f95b2f78",
+      "bytes": 895403,
       "renderedPx": [
         900,
         900
@@ -356,12 +356,12 @@
     },
     {
       "frame": "05_NOSTRIL_FLARE_front.png",
-      "publishedSha256": "8b6962168335014c5c65f0a8317c28edbcc67a8139ef6f2f84ddac1f0a79aecf",
+      "publishedSha256": "ba662a446b15cbed0e45b7be612983602031802a0ffa51feb05ecd595c7f0e66",
       "repoPath": "docs/evidence/expression/05_NOSTRIL_FLARE_front.png",
       "productionPath": "renders/_facs_proof/05_NOSTRIL_FLARE_front.png",
-      "sha256": "a3d1685f6b9554b64bb964ea7ac2ee22b2526c3d2fa0ab33e7ffccbffaa48262",
-      "sourceSha8": "a3d1685f",
-      "bytes": 907927,
+      "sha256": "919e5f71dd57c0aabfb999be0ee965f378e81b2fb80568007e1818ecab3ea6cc",
+      "sourceSha8": "919e5f71",
+      "bytes": 901711,
       "renderedPx": [
         900,
         900

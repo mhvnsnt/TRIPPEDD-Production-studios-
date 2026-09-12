@@ -7,15 +7,15 @@ source hash recorded, published by `tools/publish_evidence.py`.
 
 | frame | source sha256[:8] | rendered |
 |---|---|---|
-| `01_REST_front.png` | `e5493c03` | 900x900 |
-| `01_REST_profile.png` | `4d69c38b` | 900x900 |
-| `02_BLINK_front.png` | `6a3822c5` | 900x900 |
-| `02_BLINK_profile.png` | `ac8c579f` | 900x900 |
-| `03_BLINK_L_ONLY_front.png` | `c9b0bfa5` | 900x900 |
-| `03_BLINK_L_ONLY_profile.png` | `f5ff8a91` | 900x900 |
-| `04_SMILE_front.png` | `92543e62` | 900x900 |
-| `04_SMILE_profile.png` | `0337acf6` | 900x900 |
-| `05_NOSTRIL_FLARE_front.png` | `a3d1685f` | 900x900 |
+| `01_REST_front.png` | `e7babdc0` | 900x900 |
+| `01_REST_profile.png` | `0d619db8` | 900x900 |
+| `02_BLINK_front.png` | `33f887d0` | 900x900 |
+| `02_BLINK_profile.png` | `dc50ce6e` | 900x900 |
+| `03_BLINK_L_ONLY_front.png` | `ed3c1f5a` | 900x900 |
+| `03_BLINK_L_ONLY_profile.png` | `4b77f9c8` | 900x900 |
+| `04_SMILE_front.png` | `6dcb2d9a` | 900x900 |
+| `04_SMILE_profile.png` | `f95b2f78` | 900x900 |
+| `05_NOSTRIL_FLARE_front.png` | `919e5f71` | 900x900 |
 | `05_NOSTRIL_FLARE_profile.png` | `e992a1b0` | 900x900 |
 | `06_BROW_UP_front.png` | `bf1cc149` | 900x900 |
 | `06_BROW_UP_profile.png` | `c90a09fc` | 900x900 |

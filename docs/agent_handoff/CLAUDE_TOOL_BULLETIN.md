@@ -4,6 +4,31 @@
 
 **Update law:** When another agent adds a tool, adapter, contract, benchmark, or evidence source, update this bulletin in the same change. When Claude discovers a better open-source route, add it here too.
 
+## DONOR-FIRST / NO-HAND-ROLLING LAW — HARD STOP
+
+Before writing replacement geometry, cutters, heuristics, rig logic, repair code, or a new pipeline stage, Claude MUST search the repository and the existing open-source stack for a proven donor, existing script, adapter, repair chain, or complete project that already solves the problem.
+
+**Known-good parts are assets. Existing tools are the default implementation. Hand-rolling is last resort.**
+
+Decision order:
+1. Search repository for an existing donor/component, successful artifact, repair script, runbook, manifest, or adapter.
+2. Search the current open-source bulletin/stack for an existing capability.
+3. Prefer transferring/attaching/merging the known-good component into `MARS_CANONICAL`.
+4. Prefer using/fixing/extending an existing repair chain over duplicating it.
+5. Prefer deterministic Blender/libigl/CGAL/MeshLab/PyMeshLab/Open3D/trimesh/rigging operations over bespoke substitutes when their gates fit.
+6. Only hand-roll if discovery finds no viable route or a genuinely missing adapter is required.
+7. If hand-rolling is unavoidable, record what was searched, what was rejected, why, and what measurable gate the new code adds.
+
+**Explicit anti-pattern:** Do not hand-cut a mouth/Boolean cutter when a proven oral donor and existing oral-repair chain are already in the repository. Do not rebuild anatomy that already exists in a known-good GLB. Do not write a duplicate script because the existing script is harder to use. Do not burn owner tokens rediscovering a shelf that is already documented.
+
+### Current mouth application
+The current mouth recovery is a donor-first assembly operation:
+`MARS_CANONICAL` → locate proven oral donor → use existing oral-repair chain → measure donor in source space → freeze explicit world-space component data → transfer/attach → reconcile materials/UVs/weights/shape keys → physical oral gates → rendered proof.
+
+A hand-cut flat-sheet cutter is prohibited as a shortcut. If Boolean is actually required, use a proven closed-volume route (Blender Exact or libigl/CGAL) only after input preflight proves closure, thickness, and overlap. libigl's CGAL-backed Boolean/CSG route is an available fallback, but it is not a reason to bypass a known-good donor. citeturn0search0turn0search1turn0search3
+
+See `docs/agent_handoff/DONOR_FIRST_NO_HAND_ROLLING_LAW.md` for the full contract.
+
 ## MARS assembly law — ONE CANONICAL CHARACTER
 
 **Default is one canonical MARS model.** Claude MUST NOT silently create or continue separate competing MARS head/body/face models when the work can be performed by attaching, replacing, merging, or transferring a component into the canonical model.
@@ -108,16 +133,18 @@ Hair is individual lock instances, not one blob. Existing evidence defines `LOCK
 
 ## Candidate workflow — do this without waiting for another prompt
 1. Read `CLAUDE.md`, this bulletin, and the current evidence manifest.
-2. Identify the current real failure from measured evidence.
-3. Identify/lock the canonical MARS model before making component changes.
-4. Prefer transfer/merge into canonical MARS over creating another whole-character model.
-5. Select at least two independent open-source candidates when topology is involved.
-6. Run/implement candidate comparison on the real patch where the environment permits.
-7. Reject candidates that improve statistics while damaging protected anatomy.
-8. Publish comparison renders/meshes/metrics under `docs/evidence/<set>/` with SHA-256.
-9. Leave canonical mesh untouched until a candidate passes physical + visual gates; then promote the component into canonical MARS.
-10. If no owner decision is required, immediately continue to the next useful queue item.
-11. Update this bulletin whenever a new tool/candidate becomes available.
+2. Read `docs/agent_handoff/DONOR_FIRST_NO_HAND_ROLLING_LAW.md` before repair implementation.
+3. Identify the current real failure from measured evidence.
+4. Search repository for donors and existing repair chains before writing replacement code.
+5. Identify/lock the canonical MARS model before making component changes.
+6. Prefer transfer/merge into canonical MARS over creating another whole-character model.
+7. Select at least two independent open-source candidates when topology is involved.
+8. Run/implement candidate comparison on the real patch where the environment permits.
+9. Reject candidates that improve statistics while damaging protected anatomy.
+10. Publish comparison renders/meshes/metrics under `docs/evidence/<set>/` with SHA-256.
+11. Leave canonical mesh untouched until a candidate passes physical + visual gates; then promote the component into canonical MARS.
+12. If no owner decision is required, immediately continue to the next useful queue item.
+13. Update this bulletin whenever a new tool/candidate becomes available.
 
 ## Evidence rule
 No bytes = no evidence. A statement that an overlay/render exists without publishing actual pixels is not PASS. `UNKNOWN` is never PASS.

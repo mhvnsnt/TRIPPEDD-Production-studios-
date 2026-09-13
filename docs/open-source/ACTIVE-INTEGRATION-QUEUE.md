@@ -16,7 +16,18 @@ Purpose: offline full-body pose capture, hand tracking and rig retargeting. MIT.
 
 ### facial-animation
 Repository: https://github.com/mdj128/facial-animation
-Purpose: procedural facial rigging, expression-sheet rendering, lip-sync and verification workflow. MIT. The bounded adapter is `tools/character/run_face_rig_upstream.py`. Generated outputs remain derivative and are validated against owner-drawn MARS authority.
+Purpose: procedural facial rigging, expression-sheet rendering, lip-sync and verification workflow. MIT. The bounded adapter is `tools/character/run_face_rig_upstream.py`. Generated outputs remain derivative and are validated against owner-drawn MARS authority. Its repository also provides assistant-facing skills and rendered expression-sheet tooling, so it is useful as an agent workbench as well as a rig source. citeturn0search0
+
+### Visual inspection / actual-pixel evidence
+`tools/character/mars_visual_evidence_contract.json` and `mars_visual_evidence_gate.py` make the front-end evidence surface first-class. A visual PASS now requires actual committed PNG pixels, front/three-quarter/side views, an owner-linework/model overlay, and OPEN/HALF/CLOSED state coverage. Backend-only numeric assertions cannot substitute for visible evidence.
+
+### Mesh Analysis Overlay
+Repository: https://github.com/dshot92/mesh-analysis-overlay
+Purpose: viewport inspection of triangles, quads, n-gons, non-planar/degenerate faces, seams, boundaries, poles and other topology defects. GPL-3.0-or-later. It is an observer/diagnostic tool only; it cannot change MARS anatomical authority. The current extension supports Blender 4.5 LTS and newer and can inspect evaluated modifier meshes. citeturn0search2
+
+### ARKit Pose Recorder for Blender
+Repository: https://github.com/harlynkingm/ARKit-Pose-Recorder-for-Blender
+Purpose: repeatable in-viewport facial pose recording, left/right mirroring, JSON presets and animated expression references. Apache-2.0. Use it as a repeatable pose-review and bone-to-shape workbench, not as anatomical authority. citeturn0search4
 
 ## P0 — MARS expression wiring
 
@@ -50,11 +61,9 @@ Purpose: independent facial-rig experiment. Compare against the measured MARS au
 ### HairRigAddon
 Purpose: independent hair-rig experiment. Evaluate only after geometry segmentation and collision law are established.
 
-### Remi
-Purpose: derived mesh repair/retopology/diagnostics. Never operate destructively on MARS_source.glb.
-
-### QRemeshify
-Purpose: QuadWild-based derived working cages. Use only when a measured derivative is needed for deformation experiments.
+### BlendCap
+Repository: https://github.com/Arcomade/BlendCap
+Purpose: keep the full open-source performance-capture project available under the umbrella for later body/hand/face scenes and agent reference. GPL-3.0-or-later. It provides markerless body, hand and facial capture plus retargeting and cleanup, but it has substantial third-party model/dependency licensing; therefore use it source-only/reference-first until every redistributed dependency is separately cleared. Its documentation explicitly supports separate detailed face capture combined with body capture, which matches the future MARS-body/visual-memory use case. citeturn1search2turn1search6
 
 ## Integration gates
 
@@ -71,6 +80,8 @@ Purpose: QuadWild-based derived working cages. Use only when a measured derivati
 11. COLLISION_CONTACT_QC
 12. EXPRESSION_AUTHORITY_QC
 13. MOTION_STATE_SEQUENCE_QC
+14. ACTUAL_PIXEL_EVIDENCE_QC
+15. OVERLAY_REGISTRATION_QC
 
 ## Performance rules
 

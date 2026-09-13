@@ -77,8 +77,23 @@ print("before: %d triangles, min angle %.2f deg, p5 %.2f deg, under 15 deg: %d"
 
 edges = list({e for f in region for e in f.edges
               if all(v.index in keep for v in e.verts)})
-bmesh.ops.beautify_fill(bm, faces=tris, edges=edges,
-                        method="AREA", angle_limit=np.radians(180.0))
+# Blender 4.2's beautify_fill takes no angle_limit -- passing one is a TypeError,
+# and the traceback was swallowed into a plain "before:" line with no "after:",
+# which reads exactly like the operator doing nothing. Run it repeatedly: each pass
+# can only rotate an edge if the rotation improves the pair, so it converges.
+for _pass in range(6):
+    _b = quality(bm, [f for f in bm.faces
+                      if len(f.verts) == 3 and all(v.index in keep for v in f.verts)])
+    bmesh.ops.beautify_fill(bm, faces=tris, edges=edges, method="AREA")
+    bm.faces.ensure_lookup_table()
+    tris = [f for f in bm.faces if len(f.verts) == 3 and all(v.index in keep for v in f.verts)]
+    edges = list({e for f in tris for e in f.edges if all(v.index in keep for v in e.verts)})
+    _a = quality(bm, tris)
+    print("  pass %d: slivers under 15 deg %d -> %d (min angle %.2f -> %.2f deg)"
+          % (_pass + 1, int((_b < 15).sum()), int((_a < 15).sum()),
+             float(_b.min()), float(_a.min())), flush=True)
+    if int((_a < 15).sum()) >= int((_b < 15).sum()):
+        break
 bm.faces.ensure_lookup_table()
 region2 = [f for f in bm.faces if all(v.index in keep for v in f.verts) and len(f.verts) == 3]
 ang1 = quality(bm, region2)

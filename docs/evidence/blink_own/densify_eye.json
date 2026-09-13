@@ -1,17 +1,17 @@
 {
   "schema": "trippedd.densify-eye/v1",
   "radiusMM": 14.0,
-  "cuts": 3,
+  "passes": 2,
   "lines": "docs/evidence/blink_own/painted_lid_lines.json",
   "vertsBefore": 23830,
-  "vertsAfter": 27739,
+  "vertsAfter": 27721,
   "within3mm_before": {
     "L": 3,
     "R": 7
   },
   "within3mm_after": {
-    "L": 93,
-    "R": 128
+    "L": 101,
+    "R": 119
   },
   "originalRestDriftMM": 0.0,
   "keysCarried": 88,

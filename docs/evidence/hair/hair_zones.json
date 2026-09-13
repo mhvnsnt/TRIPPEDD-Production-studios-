@@ -1,12 +1,12 @@
 {
-  "hairVerts": 17703,
+  "hairVerts": 17530,
   "rootToTipMM": [
-    4.4,
-    301.9
+    4.2,
+    298.3
   ],
-  "root": 1731,
-  "midshaft": 6634,
-  "tip": 9338,
+  "root": 1693,
+  "midshaft": 6490,
+  "tip": 9347,
   "onFaceVerts": 0,
   "vertexGroups": [
     "HAIR_WEIGHT (0 root -> 1 tip)",

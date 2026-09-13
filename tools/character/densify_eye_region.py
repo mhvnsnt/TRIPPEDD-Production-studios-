@@ -45,7 +45,14 @@ def die(m):
     print("\n*** REFUSED: %s\n" % m, flush=True); sys.stdout.flush(); sys.exit(1)
 
 RADIUS = float(opt("--radius-mm", "14"))
-CUTS   = int(opt("--cuts", "3"))        # 3 cuts per edge = 4x along each edge
+# PASSES OF ONE CUT, NOT ONE PASS OF MANY. Measured: cuts=3 in a single pass left
+# 4,689 triangles under 15 degrees with a minimum angle of 0.16 deg -- the owner's
+# "big ugly triangles", and beautify could only halve them because the topology was
+# already wrong. A face on the BOUNDARY of the selection has only some edges cut, so
+# Blender fans it from the opposite vertex: with 3 cuts that fan is four slivers
+# across one long edge. With ONE cut it is a single clean split, and repeating the
+# pass subdivides the interior again while the boundary stays a one-level fan.
+PASSES = int(opt("--passes", "2"))      # 2 passes of 1 cut = the same 1->16 density
 LINES  = opt("--lines", "docs/evidence/blink_own/painted_lid_lines.json")
 SAVE   = "--no-save" not in argv
 TARGET_MIN = int(opt("--target-min", "40"))   # verts required within 3 mm afterwards
@@ -96,9 +103,16 @@ keep = set(int(i) for i in np.nonzero(sel)[0])
 edges = [e for e in bm.edges if e.verts[0].index in keep and e.verts[1].index in keep]
 if not edges:
     die("no edge has both ends inside the selection")
-print("subdividing %d edges with %d cuts each" % (len(edges), CUTS), flush=True)
-bmesh.ops.subdivide_edges(bm, edges=edges, cuts=CUTS, use_grid_fill=True,
-                          smooth=0.0)   # smooth 0 -> new verts sit ON the old surface
+for _p in range(PASSES):
+    bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+    inside = [e for e in bm.edges
+              if (e.verts[0].index in keep or e.verts[0].index >= n0)
+              and (e.verts[1].index in keep or e.verts[1].index >= n0)]
+    if not inside:
+        break
+    print("  pass %d: subdividing %d edges with 1 cut" % (_p + 1, len(inside)), flush=True)
+    bmesh.ops.subdivide_edges(bm, edges=inside, cuts=1, use_grid_fill=True,
+                              smooth=0.0)  # smooth 0 -> new verts sit ON the old surface
 bm.to_mesh(me)
 bm.free()
 me.update()
@@ -143,7 +157,7 @@ if min(after.values()) < TARGET_MIN:
         "(wanted >= %d). Raise --cuts or --radius-mm; a lid built on this would be "
         "the same three-vertex failure with more steps." % (min(after.values()), TARGET_MIN))
 
-rep = {"schema": "trippedd.densify-eye/v1", "radiusMM": RADIUS, "cuts": CUTS,
+rep = {"schema": "trippedd.densify-eye/v1", "radiusMM": RADIUS, "passes": PASSES,
        "lines": LINES, "vertsBefore": n0, "vertsAfter": n1,
        "within3mm_before": before, "within3mm_after": after,
        "originalRestDriftMM": round(drift, 8),

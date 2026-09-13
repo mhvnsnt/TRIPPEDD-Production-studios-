@@ -2,6 +2,21 @@
 
 This queue is implementation-oriented. A candidate is not considered adopted until it passes an isolated smoke test, license check, source-preservation check, and visual/QC gate.
 
+## P0 — depth / fracture integration
+
+### MiDaS depth evidence
+Repository: https://github.com/isl-org/MiDaS
+
+Pinned under `third_party/oss/MiDaS` at `454597711a62eabcbf7d1e89f3fb9f569051ac9b` (MIT source; weights separately reviewed). Use only for derivative monocular-depth evidence, camera/occlusion assistance, and reconstruction support. It cannot become MARS anatomical authority. `tools/oss/depth_fracture_gate.py` requires separate weight provenance, input/output hashes, exact inference command, depth-error QC, visual evidence, and `canonicalSourceMutated=false` before PASS.
+
+### Shatter It fracture evidence
+Repository: https://github.com/gyomh/shatter-it
+
+Pinned under `third_party/oss/shatter-it` at `1b7917e309dc3b60b86f0b834170cb196993cc6b` (GPL-3.0). Use only on duplicated/derived scene objects. Production adoption requires Blender version, dependency/license inventory, deterministic fragment result, fragment count, rigid-body/collision smoke test, hashes, exact command, and actual-pixel evidence. Canonical MARS geometry remains protected.
+
+### Depth / fracture evidence contract
+`docs/open-source/DEPTH-FRACTURE-EVIDENCE.md` defines the receipt contract; `tools/oss/depth_fracture_gate.py` is fail-closed and `tools/oss/test_depth_fracture_gate.py` covers PASS and deliberate UNKNOWN/invalid cases.
+
 ## P0 — full-tool foundation
 
 ### Full Blender source
@@ -100,53 +115,46 @@ Whole repository pinned under `third_party/oss/SkySplat-Blender` at `982ca46a3d1
 ### Nerfstudio
 Repository: https://github.com/nerfstudio-project/nerfstudio
 
-Whole repository pinned under `third_party/oss/nerfstudio` at `50e0e3c70c775e89333256213363badbf074f29d` (Apache-2.0). This is the higher-level neural-rendering/reconstruction lane above the lower-level gsplat runtime: dataset ingestion, camera data, NeRF/3DGS workflows, training and rendering. Keep it derivative of measured source imagery and camera metadata; it does not become MARS geometry authority.
+Whole repository pinned under `third_party/oss/nerfstudio` at `50e0e3c70c775e89333256213363badbf074f29d` (Apache-2.0). Higher-level neural-rendering/reconstruction lane above the lower-level gsplat runtime.
 
 ### SuperSplat
 Repository: https://github.com/playcanvas/supersplat
 
-Whole repository pinned under `third_party/oss/SuperSplat` at `0911f786db652a7700068fe6ccdfe32e24269e1d` (MIT). Full browser-based Gaussian splat inspection/editing/optimization/publishing tool. Use it as a human/agent review lane for splat cleanup and export, never as the canonical character mesh.
-
-### Gaussian world handoff
-`tools/world/gaussian_world_contract.json` is the interchange/evidence contract. The support lane owns upstream pinning, hashes, coordinate/scale/camera metadata, deterministic orchestration and QC receipts. Claude/Jules own the visual/surgical Blender work and actual-pixel review. Gaussian environments remain derivative data; they cannot mutate canonical MARS geometry.
-
-The world path is:
-
-`2D plate / photo / video / procedural map` → `camera + sparse reconstruction` → `Gaussian training/rasterization` → `world artifact` → `Blender camera/world handoff` → `animation/lighting/compositing` → `actual-pixel evidence`.
+Whole repository pinned under `third_party/oss/SuperSplat` at `0911f786db652a7700068fe6ccdfe32e24269e1d` (MIT). Full browser-based Gaussian splat inspection/editing/optimization/publishing tool.
 
 ## P0 — reconstruction / material authoring
 
 ### Meshroom
 Repository: https://github.com/alicevision/Meshroom
 
-Whole repository pinned under `third_party/oss/Meshroom` at `ca1a2e435b851cb3149d16ea3be2253afb77d11c` (MPL-2.0). Use as the photogrammetry/structure-from-motion/camera-reconstruction lane before Gaussian training when camera poses and sparse geometry need a reproducible node graph. It is a reconstruction source, not character authority.
+Whole repository pinned under `third_party/oss/Meshroom` at `ca1a2e435b851cb3149d16ea3be2253afb77d11c` (MPL-2.0).
 
 ### AliceVision
 Repository: https://github.com/alicevision/AliceVision
 
-Whole repository pinned under `third_party/oss/AliceVision` at `8e4f0be76b250f0dd04b11d2a9a457d59d71b42c` (MPL-2.0). This is the complete computer-vision backend behind the Meshroom class of workflows: feature matching, structure-from-motion, multiview geometry and camera tracking. Keeping the backend itself pinned prevents the reconstruction lane from becoming a black-box binary dependency.
+Whole repository pinned under `third_party/oss/AliceVision` at `8e4f0be76b250f0dd04b11d2a9a457d59d71b42c` (MPL-2.0).
 
 ### ArmorPaint
 Repository: https://github.com/armory3d/armorpaint
 
-Whole repository pinned under `third_party/oss/ArmorPaint` at `c2cbe095a3d7f7bb6f35d3b0b765a403e25679c0` (zlib). Use for PBR texture authoring, baking and image-to-material workflows. Its developer source is open while distributed binaries are separately funded; production automation must use the source/build lane rather than assuming paid binaries.
+Whole repository pinned under `third_party/oss/ArmorPaint` at `c2cbe095a3d7f7bb6f35d3b0b765a403e25679c0` (ZLIB).
 
 ### ArmorPaint Blender bridge
 Repository: https://github.com/armory3d/armorpaint_blender
 
-Whole repository pinned under `third_party/oss/ArmorPaint-Blender` at `d913e3268be47dd9499ad3f13d3866f392eafc9d` (GPL-3.0). Use as the Blender round-trip adapter/reference for PBR textures; outputs remain subject to the mesh/material preservation and actual-pixel gates.
+Whole repository pinned under `third_party/oss/ArmorPaint-Blender` at `d913e3268be47dd9499ad3f13d3866f392eafc9d` (GPL-3.0).
 
 ## P0 — compositing / vegetation
 
 ### Natron
 Repository: https://github.com/NatronGitHub/Natron
 
-Whole repository pinned under `third_party/oss/Natron` at `3763d805d7d277d10af10025ae41af677682b3e6` (GPL-2.0). Use for node-based compositing, roto, keying, tracking, color work and OpenFX after Blender renders. It is an offline production lane, not a replacement for the repo's production runtime.
+Whole repository pinned under `third_party/oss/Natron` at `3763d805d7d277d10af10025ae41af677682b3e6` (GPL-2.0).
 
 ### Easy-Tree
 Repository: https://github.com/jacobcjohnston/Easy-Tree
 
-Whole repository pinned under `third_party/oss/Easy-Tree` at `ff95ef5ab04358978b8d0863c1c2256951359fc0` (GPL-3.0). Use for procedural trees/vegetation and Geometry Nodes wind/variation. Generated vegetation remains scene data subject to camera, scale and visual evidence gates.
+Whole repository pinned under `third_party/oss/Easy-Tree` at `ff95ef5ab04358978b8d0863c1c2256951359fc0` (GPL-3.0).
 
 ## P0 — visual production / evidence
 
@@ -154,7 +162,7 @@ Whole repository pinned under `third_party/oss/Easy-Tree` at `ff95ef5ab04358978b
 `tools/character/mars_visual_evidence_contract.json` and `mars_visual_evidence_gate.py` make the front-end evidence surface first-class. A visual PASS requires actual committed PNG pixels, front/three-quarter/side views, owner-linework/model overlay, and OPEN/HALF/CLOSED state coverage. Backend-only numeric assertions cannot substitute for visible evidence.
 
 ### Agent Blender workbench
-Use `mcp-blender` plus the repo's evidence gates so agents can inspect the same canonical scene they modify. The goal is a closed loop: agent action → Blender scene → render/viewport pixels → overlay/measurement → gate → committed evidence. An agent saying "it looks right" without pixels is UNKNOWN.
+Use `mcp-blender` plus the repo's evidence gates so agents can inspect the same canonical scene they modify. Agent action → Blender scene → render/viewport pixels → overlay/measurement → gate → committed evidence.
 
 ## P0 — MARS expression wiring
 
@@ -162,25 +170,25 @@ Use `mcp-blender` plus the repo's evidence gates so agents can inspect the same 
 `tools/character/mars_expression_contract.json` defines the expression families and authority order: owner linework → measured 3D lift → FACS/ARKit driver → third-party rig output → visual motion evidence. Generic MediaPipe landmarks and unmeasured canonical fits are forbidden authorities.
 
 ### Expression evidence gate
-`tools/character/expression_gate.py` is fail-closed and requires the current linework-authority hash, an allowed driver, the five-state motion proof (neutral/activation/peak/release/neutral), numerical distribution measurements, and visual evidence. A still image cannot pass a motion claim.
+`tools/character/expression_gate.py` is fail-closed and requires the current linework-authority hash, an allowed driver, the five-state motion proof, numerical distribution measurements, and visual evidence.
 
 ## P0 — body/hand motion wiring
 
 ### Open Mocap adapter
-`tools/character/run_open_mocap_upstream.py` records the exact upstream commit, MARS source hash, capture hash, Blender command, output hash and status. The local integration script remains explicit so the addon cannot silently mutate the production scene or source model.
+`tools/character/run_open_mocap_upstream.py` records the exact upstream commit, MARS source hash, capture hash, Blender command, output hash and status.
 
 ## P0 — hair/contact completion
 
 ### Hair XPBD collision proof
-Use the current native XPBD hair system for external head/face colliders, with enough pre-roll/equilibrium time before measuring secondary motion. Collision proof must produce a `trippedd.contact-measurement/v1` receipt consumed by `tools/character/contact_gate.py`. Native XPBD currently has external collision but no self-collision; self-collision therefore remains NOT_ATTEMPTED until a separate solver/reference lane is proven.
+Use native XPBD for external head/face colliders, with enough pre-roll/equilibrium time before measuring secondary motion. Collision proof must produce a `trippedd.contact-measurement/v1` receipt consumed by `tools/character/contact_gate.py`. Native XPBD currently has external collision but no self-collision; self-collision remains NOT_ATTEMPTED until a separate solver/reference lane is proven.
 
 ## P1 — expression and rig accelerators
 
 ### ShapeUp
-Purpose: shape-key/FACS management, hero/combo/inbetween organization. Evaluate against the MARS expression contract and existing shape-key naming/evidence requirements.
+Purpose: shape-key/FACS management, hero/combo/inbetween organization. Evaluate against the MARS expression contract.
 
 ### ARKit Pose Recorder
-Purpose: repeatable expression recording/reference and bone-to-shape review. Use only as a driver/review tool; owner-drawn linework remains anatomical authority.
+Purpose: repeatable expression recording/reference and bone-to-shape review. Use only as a driver/review tool.
 
 ### HairRigAddon
 Purpose: independent hair-rig experiment. Evaluate only after geometry segmentation and collision law are established.
@@ -189,14 +197,14 @@ Purpose: independent hair-rig experiment. Evaluate only after geometry segmentat
 
 When we need a new physical phenomenon or world capability, prefer this order:
 
-1. **Find a complete open-source project** that already solves the class of problem.
-2. **Pin the whole repository** under `third_party/oss/` when practical.
-3. **Wire a narrow adapter** around the complete tool instead of copying its internals into our code.
-4. **Keep upstream license/dependency notices intact.**
-5. **Measure the transformed result** and publish actual visual evidence.
-6. **Only build missing glue ourselves** when no suitable full tool exists.
+1. Find a complete open-source project that already solves the class of problem.
+2. Pin the whole repository under `third_party/oss/` when practical.
+3. Wire a narrow adapter around the complete tool instead of copying its internals.
+4. Keep upstream license/dependency notices intact.
+5. Measure the transformed result and publish actual visual evidence.
+6. Only build missing glue ourselves when no suitable full tool exists.
 
-Candidate categories to keep filling: tissue/muscle deformation, skin sliding, tears and wetness, rain/weather, smoke/fire, destruction/fracture, vegetation/wind, hair/fur, cloth, particles, camera tracking, markerless mocap, facial performance, lip-sync, retargeting, sculpt/shape-key management, topology inspection, texture/material authoring, 2D/Grease Pencil animation, compositing, color management, sound/dialogue alignment, Gaussian editing/compression/viewers, depth estimation, photogrammetry, procedural world generation and render orchestration.
+Candidate categories: tissue/muscle deformation, skin sliding, tears/wetness, rain/weather, smoke/fire, destruction/fracture, vegetation/wind, hair/fur, cloth, particles, camera tracking, markerless mocap, facial performance, lip-sync, retargeting, sculpt/shape-key management, topology inspection, texture/material authoring, 2D/Grease Pencil animation, compositing, color management, sound/dialogue alignment, Gaussian editing/compression/viewers, depth estimation, photogrammetry, procedural world generation and render orchestration.
 
 ## Integration gates
 
@@ -220,6 +228,10 @@ Candidate categories to keep filling: tissue/muscle deformation, skin sliding, t
 18. COORDINATE_SCALE_QC
 19. RECONSTRUCTION_PROVENANCE_QC
 20. MATERIAL_ROUNDTRIP_QC
+21. OSS_REGISTRY_CONSISTENCY_QC
+22. DEPTH_EVIDENCE_QC
+23. FRACTURE_DETERMINISM_QC
+24. FRACTURE_COLLISION_QC
 
 ## Performance rules
 

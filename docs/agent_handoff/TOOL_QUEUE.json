@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "authority": "TRIPPEDD_PRODUCTION",
+  "canonical_character": "MARS_CANONICAL",
+  "continuous_work": true,
+  "unknown_is_never_pass": true,
+  "tasks": [
+    {
+      "id": "mars-mouth-lip-seam",
+      "problem": "upper_lower_lip_surfaces_sealed",
+      "status": "NEXT",
+      "donors": [
+        "assets/donor/gnm_oral/",
+        "tools/character/build_gnm_oral_donor.py",
+        "tools/character/oral_cavity.py",
+        "tools/character/run_mars_oral_repair.sh"
+      ],
+      "required_measurements": ["visible_aperture_fraction", "tooth_escape_fraction", "jaw_open_response"],
+      "hard_stop": "do_not_replace_canonical_mars_or_rebuild_whole_mouth"
+    },
+    {
+      "id": "mars-eye-weld-first",
+      "problem": "fragmented_eye_topology_and_sliver_triangles",
+      "status": "NEXT",
+      "route": ["weld", "prove_zero_vertex_motion", "preserve_uv_shape_keys", "remesh_only_after_weld"],
+      "hard_stop": "no_remesh_before_zero_motion_weld_receipt"
+    },
+    {
+      "id": "component-registration",
+      "problem": "deterministic_donor_to_canonical_alignment",
+      "status": "IMPLEMENTED",
+      "tool": "tools/visual_anatomy/component_registration.py",
+      "authority": "landmark_kabsch",
+      "optional_refinement": "Open3D_ICP",
+      "hard_stop": "fail_on_rms_or_max_residual_threshold"
+    },
+    {
+      "id": "assembly-provenance",
+      "problem": "untrusted_import_transforms",
+      "status": "QUEUED",
+      "required_fields": ["source_sha256", "target_sha256", "transform", "units", "landmark_set", "rms_residual", "max_residual"]
+    },
+    {
+      "id": "deformation-preservation",
+      "problem": "component_transfer_must_not_break_animation_data",
+      "status": "QUEUED",
+      "required_fields": ["uv_preserved", "shape_keys_preserved", "armature_preserved", "weights_preserved"]
+    }
+  ]
+}

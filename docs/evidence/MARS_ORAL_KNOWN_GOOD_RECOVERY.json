@@ -4,7 +4,7 @@
   "authority": "committed production asset + signed Claude evidence",
   "asset": "assets/rigs/MARS_ORAL.blend",
   "asset_commit": "904b419d3e38e7fd8965525c49188dc2be1eb1bf",
-  "asset_size_bytes": 6710886,
+  "asset_size_bytes": null,
   "asset_size_note": "Claude recorded approximately 6.4 MB in the signed commit; exact Git blob bytes must be hashed by the Blender/runtime worker before promotion.",
   "recovery_source_commit": "0dbb965d03ba1a2b806425ecec5245ee5d3a7d00",
   "recovery_source_parent": "981d45b942daec1099ba9674375fff5b526da106",

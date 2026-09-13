@@ -1,13 +1,33 @@
 {
-  "version": 1,
+  "version": 2,
   "authority": "TRIPPEDD_PRODUCTION",
   "canonical_character": "MARS_CANONICAL",
   "continuous_work": true,
   "unknown_is_never_pass": true,
+  "critical_visual_truth": {
+    "mouth_failure": "skin_stretches_inside_open_mouth",
+    "diagnosis": "synthetic radial MARS skin jaw deformation, not missing cavity",
+    "required_fix": "GNM internal anatomy motion plus MARS-own-crease lip ownership",
+    "forbidden_fix": "interpolated_ellipse_skin_deformation"
+  },
   "tasks": [
     {
+      "id": "mars-mouth-gnm-motion",
+      "problem": "skin_stretching_inside_existing_open_cavity",
+      "status": "FIXED_IN_BRIDGE",
+      "route": [
+        "GNM oral donor",
+        "GNM canonical mouth-open expression",
+        "internal teeth/gums/tongue motion",
+        "MARS canonical skin zero synthetic jaw displacement"
+      ],
+      "commit": "f32e8a174c84b37eff0f677204ba1108161e8aed",
+      "gate": "SKIN_JAW_MOTION_MAX == 0",
+      "hard_stop": "never reintroduce radial or height-interpolated skin jaw deformation"
+    },
+    {
       "id": "mars-mouth-lip-seam",
-      "problem": "upper_lower_lip_surfaces_sealed",
+      "problem": "upper_lower_lip_ownership_and_aperture_motion",
       "status": "NEXT",
       "donors": [
         "assets/donor/gnm_oral/",
@@ -15,7 +35,8 @@
         "tools/character/oral_cavity.py",
         "tools/character/run_mars_oral_repair.sh"
       ],
-      "required_measurements": ["visible_aperture_fraction", "tooth_escape_fraction", "jaw_open_response"],
+      "required_measurements": ["visible_aperture_fraction", "tooth_escape_fraction", "jaw_open_response", "skin_motion_inside_aperture"],
+      "authority": "MARS_CANONICAL mesh crease/seam",
       "hard_stop": "do_not_replace_canonical_mars_or_rebuild_whole_mouth"
     },
     {

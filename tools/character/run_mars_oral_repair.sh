@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Execute the actual MARS oral repair. Production worker, not a registry-only declaration.
-# Fail-closed: render visibility and protrusion survey must PASS before VERIFIED.
+# Fail-closed: render visibility, pixel truth and protrusion survey must PASS before VERIFIED.
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 CACHE="${TRIPPEDD_DONOR_CACHE:-${HOME}/.cache/trippedd/god-molecule/oral-donors}"
@@ -51,6 +51,23 @@ if ! grep -q '"persisted": true' "$VISIBILITY_JSON" 2>/dev/null || [[ ! -s "$VIS
   exit 1
 fi
 
+# Actual pixel-ID render. This is the visual authority for oral visibility;
+# the script uses temporary emission materials and records the resulting PNG
+# SHA-256 without saving those temporary material overrides into the blend.
+PIXEL_DIR="$OUT/pixel_truth"
+"$BLENDER" -b "$VISIBLE_BLEND" \
+  --python "$ROOT/tools/character/render_mars_oral_pixel_truth.py" -- \
+  --output-dir "$PIXEL_DIR" || {
+    echo "MARS_ORAL_REPAIR: PIXEL_TRUTH_FAIL"
+    exit 1
+  }
+
+if ! grep -q '"status": "PASS"' "$PIXEL_DIR/mars_oral_pixel_truth.json" 2>/dev/null || [[ ! -s "$PIXEL_DIR/mars_oral_pixel_truth.png" ]]; then
+  echo "MARS_ORAL_REPAIR: PIXEL_TRUTH_FAIL — actual oral pixels did not PASS"
+  echo "PIXEL_TRUTH=$PIXEL_DIR/mars_oral_pixel_truth.json"
+  exit 1
+fi
+
 # Aperture / protrusion survey — fail-closed. Use the persisted corrected blend,
 # not the original repaired file, so the survey sees the same render state that
 # the visibility gate measured.
@@ -76,4 +93,5 @@ echo "MARS_ORAL_REPAIR: VERIFIED"
 echo "OUTPUT=$OUT/MARS_ORAL_REPAIRED.blend"
 echo "RENDER_VISIBLE=$VISIBLE_BLEND"
 echo "VISIBILITY=$VISIBILITY_JSON"
+echo "PIXEL_TRUTH=$PIXEL_DIR/mars_oral_pixel_truth.json"
 echo "SURVEY=$SURVEY_JSON"

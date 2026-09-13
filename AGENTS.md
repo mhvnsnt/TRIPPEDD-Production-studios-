@@ -13,6 +13,13 @@ If a proven donor or existing repair chain exists, use it before inventing anyth
 
 Any exception must record what existing routes were inspected, why they failed, what the new code adds, and how it will be retired if a better donor/tool is found. A failed route is a routing signal; do not spend repeated turns making handcrafted variants of the same mechanism.
 
+## Production law: CANONICAL COMPONENTS ARE ASSETS
+Read `docs/agent_handoff/CANONICAL_COMPONENT_PRESERVATION_LAW.md` before modifying a face component alongside another known-good component.
+
+A known-good component is not raw material. Snapshot it first, work on a copy/branch, change only the requested component, compare protected components afterward, and hard-stop on unexplained changes. For MARS the oral system is protected: upper/lower teeth, upper/lower gums, tongue, mouth sock/cavity, dental-arch registration, mouth-frame data, collision/rig data, shape keys, and working motion must survive unrelated face repairs.
+
+Never silently regenerate or replace the oral system because a whole-face tool wants a simpler input. Never overwrite a known-good `.blend` in place. If a protected component changes unexpectedly, recover it from the known-good donor/snapshot first rather than rebuilding it from memory.
+
 ## Rocket compatibility
 - The root Next.js + TypeScript surface exists only as a control plane for Rocket.
 - The existing React/Vite studio remains canonical; do not replace it.

@@ -60,11 +60,31 @@ def send(cmd, params=None, port=None, timeout=600.0):
         s.close()
 
 
+def unwrap(r):
+    """Peel the addon's reply down to the text the snippet actually printed.
+
+    THE ADDON NESTS ITS RESULT TWICE. blender-mcp answers
+
+        {"status": "success", "result": {"executed": true, "result": "<printed>"}}
+
+    so `r.get("result")` is a DICT, and stringifying it hands every caller a JSON
+    envelope that merely CONTAINS the answer -- with the real newlines escaped to
+    \n, so every line-oriented parser downstream sees exactly one line and reports
+    an empty scene. The /health endpoint printed the whole scene table inside a
+    single "blend" string for precisely this reason. Peel while the payload is a
+    dict carrying a "result".
+    """
+    out = r.get("result", r) if isinstance(r, dict) else r
+    seen = 0
+    while isinstance(out, dict) and "result" in out and seen < 8:
+        out = out["result"]
+        seen += 1
+    return out if isinstance(out, str) else json.dumps(out)
+
+
 def run(code, port=None):
     """Run guarded code and return its printed output as a string."""
-    r = send("execute_code", {"code": guard(code)}, port=port)
-    out = r.get("result", r)
-    return out if isinstance(out, str) else json.dumps(out)
+    return unwrap(send("execute_code", {"code": guard(code)}, port=port))
 
 
 def main():
@@ -88,9 +108,9 @@ def main():
         r = send("get_object_info", {"name": a[1]}, port=port)
     else:
         r = send(cmd, json.loads(a[1]) if len(a) > 1 else {}, port=port)
-    out = r.get("result", r)
-    print(out if isinstance(out, str) else json.dumps(out, indent=2)[:20000])
-    if isinstance(out, str) and ("SNIPPET_FAILED" in out or "SNIPPET_EXIT" in out):
+    out = unwrap(r)
+    print(out[:20000])
+    if "SNIPPET_FAILED" in out or "SNIPPET_EXIT" in out:
         return 1
     return 0 if r.get("status") == "success" else 1
 

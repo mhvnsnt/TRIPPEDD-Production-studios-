@@ -1,0 +1,81 @@
+{
+  "pose": "open",
+  "jawDeg": 30.0,
+  "keys": {
+    "lip_lower_depress": 1.0,
+    "lip_upper_raise": 1.0,
+    "mouth_funnel": 1.0
+  },
+  "mmPerUnit": 0.00386072,
+  "parts": {
+    "MARS_TEETH_UPPER": {
+      "verts": 1440,
+      "tris": 2828,
+      "facesPointingInward": 1101,
+      "nonManifoldEdges": 0,
+      "boundaryEdges": 50,
+      "degenerateFaces": 0,
+      "faceAreaMedianMM2": 0.9942,
+      "faceAreaMaxMM2": 22.004,
+      "materials": [
+        "MARS_TEETH_MAT",
+        "MARS_GUM_MAT"
+      ]
+    },
+    "MARS_TEETH_LOWER": {
+      "verts": 1440,
+      "tris": 2828,
+      "facesPointingInward": 1495,
+      "nonManifoldEdges": 0,
+      "boundaryEdges": 50,
+      "degenerateFaces": 0,
+      "faceAreaMedianMM2": 0.872,
+      "faceAreaMaxMM2": 22.295,
+      "materials": [
+        "MARS_TEETH_MAT",
+        "MARS_GUM_MAT"
+      ]
+    },
+    "MARS_TONGUE": {
+      "verts": 933,
+      "tris": 1824,
+      "facesPointingInward": 403,
+      "nonManifoldEdges": 0,
+      "boundaryEdges": 40,
+      "degenerateFaces": 0,
+      "faceAreaMedianMM2": 2.2003,
+      "faceAreaMaxMM2": 5.76,
+      "materials": [
+        "MARS_TONGUE_MAT"
+      ]
+    },
+    "MARS_MOUTH_SOCK": {
+      "verts": 406,
+      "tris": 752,
+      "facesPointingInward": 752,
+      "nonManifoldEdges": 0,
+      "boundaryEdges": 58,
+      "degenerateFaces": 0,
+      "faceAreaMedianMM2": 9.3496,
+      "faceAreaMaxMM2": 36.222,
+      "materials": [
+        "MARS_SOCK_MAT"
+      ]
+    },
+    "MARS_MESH": {
+      "verts": 27865,
+      "tris": 55591,
+      "facesPointingInward": 7292,
+      "nonManifoldEdges": 15,
+      "boundaryEdges": 178,
+      "degenerateFaces": 0,
+      "faceAreaMedianMM2": 0.4195,
+      "faceAreaMaxMM2": 383.805,
+      "materials": [
+        "tripo_mat_63779a1f-eb9a-4b4a-a12c-e90b88a426b1",
+        "MARS_ORAL_MAT"
+      ]
+    }
+  },
+  "npz": "/home/user/TRIPPEDD-Production-studios-/renders/_oral_contact/oral_open.npz"
+}

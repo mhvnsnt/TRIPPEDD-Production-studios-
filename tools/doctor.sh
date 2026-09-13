@@ -59,6 +59,12 @@ for p in vendor/ict/ict_facs.npz assets/donor/gnm_oral/mouth_sock.npz \
   [ -e "$p" ] && say "$(basename "$p")" "present" || { say "$(basename "$p")" "MISSING"; BAD=1; }
 done
 
+if ./.trippedd_venv/bin/python tools/session/client.py ping >/dev/null 2>&1; then
+  say "blender session" "LIVE on ${TRIPPEDD_SESSION_PORT:-9876} -- use it, do not launch Blender"
+else
+  say "blender session" "not running (bash tools/session/start.sh <blend>)"
+fi
+
 echo
 [ "$BAD" = 0 ] && echo "TOOLCHAIN OK" || echo "TOOLCHAIN INCOMPLETE -- rerun with --fix, or read the lines above"
 exit 0

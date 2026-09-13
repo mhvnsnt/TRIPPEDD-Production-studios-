@@ -1,3 +1,6 @@
+[submodule "third_party/oss/blender"]
+	path = third_party/oss/blender
+	url = https://github.com/blender/blender.git
 [submodule "third_party/oss/blender-addons"]
 	path = third_party/oss/blender-addons
 	url = https://github.com/blender/blender-addons.git

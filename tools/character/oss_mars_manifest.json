@@ -1,34 +1,39 @@
 {
-  "$schema": "trippedd.mars-oss-stack/v1",
-  "canonical_source": "assets/source_models/MARS_source.glb",
-  "authority": {
-    "face_linework": "assets/rigs/MARS_linework_authority.json",
-    "render_surface": "assets/source_models/MARS_source.glb",
-    "contact_law": "docs/character/COLLISION-AND-CONTACT-LAW.md",
-    "expression_contract": "tools/character/mars_expression_contract.json",
-    "face_completion": "tools/character/mars_face_completion_contract.json",
-    "ear_rig": "tools/character/mars_ear_rig_spec.json",
-    "hair_completion": "tools/character/mars_hair_completion_spec.json"
+  "$schema":"trippedd.mars-oss-stack/v1",
+  "canonical_source":"assets/source_models/MARS_source.glb",
+  "authority":{
+    "face_linework":"assets/rigs/MARS_linework_authority.json",
+    "render_surface":"assets/source_models/MARS_source.glb",
+    "contact_law":"docs/character/COLLISION-AND-CONTACT-LAW.md",
+    "expression_contract":"tools/character/mars_expression_contract.json",
+    "face_completion":"tools/character/mars_face_completion_contract.json",
+    "ear_rig":"tools/character/mars_ear_rig_spec.json",
+    "hair_completion":"tools/character/mars_hair_completion_spec.json",
+    "visual_evidence":"tools/character/mars_visual_evidence_contract.json"
   },
-  "components": [
+  "components":[
     {"name":"Blender 5.2 XPBD","repository":"https://www.blender.org/","license":"GPL-2.0-or-later","priority":"P0","lanes":["hair","cloth","collision"],"adapter":"native Blender 5.2 Geometry Nodes/XPBD"},
-    {"name":"facial-animation","repository":"https://github.com/mdj128/facial-animation","license":"MIT","priority":"P0","lanes":["face","expressions","lip_sync","qa"],"adapter":"tools/character/run_face_rig_upstream.py"},
+    {"name":"facial-animation","repository":"https://github.com/mdj128/facial-animation","license":"MIT","priority":"P0","lanes":["face","expressions","lip_sync","qa","visual_inspection"],"adapter":"tools/character/run_face_rig_upstream.py"},
     {"name":"Open Mocap Blender","repository":"https://github.com/Larenju-Rai/open-mocap-blender","license":"MIT","priority":"P0","lanes":["body_capture","hand_capture","retarget"],"adapter":"tools/character/run_open_mocap_upstream.py"},
+    {"name":"Mesh Analysis Overlay","repository":"https://github.com/dshot92/mesh-analysis-overlay","license":"GPL-3.0-or-later","priority":"P0","lanes":["mesh_visual_inspection","topology_qa","normal_qa"],"role":"viewport observer only; never anatomical authority"},
+    {"name":"ARKit Pose Recorder for Blender","repository":"https://github.com/harlynkingm/ARKit-Pose-Recorder-for-Blender","license":"Apache-2.0","priority":"P0","lanes":["expressions","bone_to_shape","pose_review"],"role":"repeatable pose/reference UI; never anatomical authority"},
     {"name":"ShapeUp","repository":"https://github.com/dan283/ShapeUp","license":"MIT","priority":"P1","lanes":["facs","shape_keys","inbetweens"]},
     {"name":"ARKit-Creator-Blender-Addon","repository":"https://github.com/tsikerdekis/ARKit-Creator-Blender-Addon","license":"MIT","priority":"P1","lanes":["expressions","arkit"]},
-    {"name":"ARKit Pose Recorder for Blender","repository":"https://github.com/harlynkingm/ARKit-Pose-Recorder-for-Blender","license":"Apache-2.0","priority":"P1","lanes":["expressions","bone_to_shape"]},
     {"name":"FacialAutoRigger","repository":"https://github.com/joeedh/FacialAutoRigger","license":"MIT","priority":"P1","lanes":["facial_rig_experiment"]},
-    {"name":"HairRigAddon","repository":"https://github.com/latidoremi/HairRigAddon","license":"GPL-3.0","priority":"P1","lanes":["hair_rig_experiment"]}
+    {"name":"HairRigAddon","repository":"https://github.com/latidoremi/HairRigAddon","license":"GPL-3.0","priority":"P1","lanes":["hair_rig_experiment"]},
+    {"name":"BlendCap","repository":"https://github.com/Arcomade/BlendCap","license":"GPL-3.0-or-later","priority":"P1","lanes":["performance_capture","face_capture","hands","body","retarget"],"role":"optional full-project umbrella/reference; source-only integration because bundled dependencies retain their own licenses"}
   ],
-  "execution_lanes": {
-    "face_rig": {"adapter":"tools/character/run_face_rig_upstream.py","gate":"tools/character/expression_gate.py","authority":"assets/rigs/MARS_linework_authority.json"},
-    "body_hand_capture": {"adapter":"tools/character/run_open_mocap_upstream.py","target":"MARS","source_immutable":true},
-    "ears": {"spec":"tools/character/mars_ear_rig_spec.json","target":"measured_source_geometry","source_immutable":true},
-    "hair_collision": {"simulation":"Blender 5.2 XPBD","spec":"tools/character/mars_hair_completion_spec.json","measurement_gate":"tools/character/contact_gate.py","self_collision":"NOT_ATTEMPTED"},
-    "mesh_quality": {"gate":"tools/character/mesh_quality_gate.py","source_immutable":true,"operation_policy":"local_quad_preserving_derivatives_only"}
+  "execution_lanes":{
+    "face_rig":{"adapter":"tools/character/run_face_rig_upstream.py","gate":"tools/character/expression_gate.py","authority":"assets/rigs/MARS_linework_authority.json"},
+    "visual_inspection":{"contract":"tools/character/mars_visual_evidence_contract.json","gate":"tools/character/mars_visual_evidence_gate.py","required":"actual_committed_pixels_and_overlay"},
+    "body_hand_capture":{"adapter":"tools/character/run_open_mocap_upstream.py","target":"MARS","source_immutable":true},
+    "ears":{"spec":"tools/character/mars_ear_rig_spec.json","target":"measured_source_geometry","source_immutable":true},
+    "hair_collision":{"simulation":"Blender 5.2 XPBD","spec":"tools/character/mars_hair_completion_spec.json","measurement_gate":"tools/character/contact_gate.py","self_collision":"NOT_ATTEMPTED"},
+    "mesh_quality":{"gate":"tools/character/mesh_quality_gate.py","source_immutable":true,"operation_policy":"local_quad_preserving_derivatives_only"},
+    "pose_review":{"tool":"ARKit Pose Recorder for Blender","authority":"owner_linework_and_measured_geometry","output":"review_only"}
   },
-  "protected_lanes": ["eyes_blink", "nostrils_nose", "mouth_oral"],
-  "rules": [
+  "protected_lanes":["eyes_blink","nostrils_nose","mouth_oral"],
+  "rules":[
     "Third-party output is derivative, never anatomical authority.",
     "MARS source render surface is immutable by integration tools.",
     "Owner-drawn facial linework overrides generic landmark systems.",
@@ -37,6 +42,7 @@
     "Global voxel remesh, global triangulation and destructive decimation are forbidden on the canonical render surface.",
     "Every adopted run records tool version, source hash, output hash, command and evidence.",
     "Every motion claim requires a multi-state visual sequence and numerical measurements.",
+    "Every visual claim requires actual pixels and an inspectable evidence artifact; backend-only assertions are insufficient.",
     "UNKNOWN is never PASS."
   ]
 }

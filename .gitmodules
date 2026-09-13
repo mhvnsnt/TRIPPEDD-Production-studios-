@@ -1,8 +1,8 @@
-[submodule "third_party/oss/blender"]
-	path = third_party/oss/blender
+[submodule "third_party/oss/Blender"]
+	path = third_party/oss/Blender
 	url = https://github.com/blender/blender.git
-[submodule "third_party/oss/blender-addons"]
-	path = third_party/oss/blender-addons
+[submodule "third_party/oss/Blender-Addons"]
+	path = third_party/oss/Blender-Addons
 	url = https://github.com/blender/blender-addons.git
 [submodule "third_party/oss/facial-animation"]
 	path = third_party/oss/facial-animation
@@ -43,3 +43,51 @@
 [submodule "third_party/oss/JiggleArmature"]
 	path = third_party/oss/JiggleArmature
 	url = https://github.com/cheece/JiggleArmature.git
+[submodule "third_party/oss/gsplat"]
+	path = third_party/oss/gsplat
+	url = https://github.com/nerfstudio-project/gsplat.git
+[submodule "third_party/oss/OpenSplat"]
+	path = third_party/oss/OpenSplat
+	url = https://github.com/WebODM/OpenSplat.git
+[submodule "third_party/oss/Worldsmith"]
+	path = third_party/oss/Worldsmith
+	url = https://github.com/TheDatawiz-dot/Worldsmith.git
+[submodule "third_party/oss/bene-proggen-maps"]
+	path = third_party/oss/bene-proggen-maps
+	url = https://github.com/Beneking102/bene-proggen-maps.git
+[submodule "third_party/oss/SkySplat-Blender"]
+	path = third_party/oss/SkySplat-Blender
+	url = https://github.com/kyjohnso/skysplat_blender.git
+[submodule "third_party/oss/Meshroom"]
+	path = third_party/oss/Meshroom
+	url = https://github.com/alicevision/Meshroom.git
+[submodule "third_party/oss/ArmorPaint"]
+	path = third_party/oss/ArmorPaint
+	url = https://github.com/armory3d/armorpaint.git
+[submodule "third_party/oss/ArmorPaint-Blender"]
+	path = third_party/oss/ArmorPaint-Blender
+	url = https://github.com/armory3d/armorpaint_blender.git
+[submodule "third_party/oss/Natron"]
+	path = third_party/oss/Natron
+	url = https://github.com/NatronGitHub/Natron.git
+[submodule "third_party/oss/Easy-Tree"]
+	path = third_party/oss/Easy-Tree
+	url = https://github.com/jacobcjohnston/Easy-Tree.git
+[submodule "third_party/oss/AliceVision"]
+	path = third_party/oss/AliceVision
+	url = https://github.com/alicevision/AliceVision.git
+[submodule "third_party/oss/nerfstudio"]
+	path = third_party/oss/nerfstudio
+	url = https://github.com/nerfstudio-project/nerfstudio.git
+[submodule "third_party/oss/SuperSplat"]
+	path = third_party/oss/SuperSplat
+	url = https://github.com/playcanvas/supersplat.git
+[submodule "third_party/oss/OpenFaceFX"]
+	path = third_party/oss/OpenFaceFX
+	url = https://github.com/OpenFaceFX/OpenFaceFX.git
+[submodule "third_party/oss/MiDaS"]
+	path = third_party/oss/MiDaS
+	url = https://github.com/isl-org/MiDaS.git
+[submodule "third_party/oss/shatter-it"]
+	path = third_party/oss/shatter-it
+	url = https://github.com/gyomh/shatter-it.git

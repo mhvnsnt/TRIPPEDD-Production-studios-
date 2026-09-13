@@ -88,6 +88,13 @@ Weld fragmented eye geometry before remeshing. Preserve painted eyelid correspon
 - facial-animation / facial rigging routes already recorded in the repository
 - Remi Blender addon as a candidate repair/retopology accelerator; verify license/provenance before redistribution
 
+## ROCKET CLOUD RECOVERY — NEW
+Rocket is currently blocked by cloud/Blender runtime exhaustion. This is an execution dependency, not a reason to stop the control-plane work. The durable resume packet is `docs/agent_handoff/ROCKET_CLOUD_RECOVERY_RUNBOOK.md`, and queue item `rocket-cloud-recovery` is the authoritative runtime-recovery task.
+
+While the cloud runtime is unavailable, Rocket must not fabricate Blender execution, renders, measurements, hashes, or PASS states. It can continue hardening the command center, job schemas, worker adapters, queue/state mapping, retry semantics, evidence ingestion, manifests, provenance, tests, and UI integration. When the cloud returns, Rocket should immediately run a real worker health/capabilities probe, mark runtime AVAILABLE only on actual success, then consume the durable queue without waiting for a new owner prompt.
+
+The command center remains a control/observation surface, not the production runtime. Real production authority remains Blender/GLB artifacts, render bytes, evidence manifests, and deterministic validators. Blender officially supports background/headless command-line rendering and automation, so the cloud worker should reconnect to the actual Blender invocation rather than a simulated renderer.
+
 ## Continuous work
 When a safe next task exists and no owner decision is required: continue. Do not stop after producing recommendations. Sequence: discover → inspect → execute → measure → validate → publish evidence → update bulletin → next task.
 
@@ -95,12 +102,13 @@ When a safe next task exists and no owner decision is required: continue. Do not
 UNKNOWN is never PASS. No artifact bytes = IMAGE_UNAVAILABLE. Visual FAIL overrides numerical PASS. Motion claims require rendered sequences. Reopen exact PNG/MP4 bytes after rendering and record SHA-256. **Do not call geometry/raycast truth pixel truth.**
 
 ## Current queue
-1. **Recover/protect the known-good oral system:** snapshot and compare the existing oral donor before any face rebuild; restore from donor rather than recreating from memory when drift is detected.
-2. **MARS lip seam:** run candidate analyzer on actual canonical MARS and promote only a contiguous chain with pixel validation.
-3. **GNM internal motion:** keep canonical GNM teeth/gums/tongue motion; compare against yesterday's known-good GNM behavior.
-4. **Pixel truth render:** render with oral donor visibility explicitly PASS; compare normal render against skin-hidden control and classify actual object/material pixels.
-5. **Eye weld-first:** measured zero-motion weld before remeshing.
-6. Component registration and transform provenance.
-7. Shape-key / UV / armature-weight preservation during component assembly.
-8. Deterministic mesh QA and visual evidence receipts.
-9. Continue open-source discovery only when it materially improves one of the above lanes.
+1. **Rocket cloud recovery:** reconnect and verify the real worker when cloud returns; meanwhile continue command-center/control-plane hardening without fabricating runtime results.
+2. **Recover/protect the known-good oral system:** snapshot and compare the existing oral donor before any face rebuild; restore from donor rather than recreating from memory when drift is detected.
+3. **MARS lip seam:** run candidate analyzer on actual canonical MARS and promote only a contiguous chain with pixel validation.
+4. **GNM internal motion:** keep canonical GNM teeth/gums/tongue motion; compare against yesterday's known-good GNM behavior.
+5. **Pixel truth render:** render with oral donor visibility explicitly PASS; compare normal render against skin-hidden control and classify actual object/material pixels.
+6. **Eye weld-first:** measured zero-motion weld before remeshing.
+7. Component registration and transform provenance.
+8. Shape-key / UV / armature-weight preservation during component assembly.
+9. Deterministic mesh QA and visual evidence receipts.
+10. Continue open-source discovery only when it materially improves one of the above lanes.

@@ -25,3 +25,6 @@
 [submodule "third_party/oss/mcp-blender"]
 	path = third_party/oss/mcp-blender
 	url = https://github.com/RFingAdam/mcp-blender.git
+[submodule "third_party/oss/mesh-analysis-overlay"]
+	path = third_party/oss/mesh-analysis-overlay
+	url = https://github.com/dshot92/mesh-analysis-overlay.git

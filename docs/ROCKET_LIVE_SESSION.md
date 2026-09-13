@@ -17,6 +17,42 @@ Rocket ───────────┘        (tools/session/start.sh)
 
 There is exactly one scene. Rocket is not looking at a copy, a simulation or React state.
 
+## WHERE `ROCKET_LIVE_SESSION_URL` HAS TO POINT — nobody can supply it from here
+
+Three agents are waiting on this URL and it is worth stating plainly: **the worker in
+Claude's container is bound to `127.0.0.1:8788` in an ephemeral sandbox with no public
+ingress.** The container's only network path is an OUTBOUND CONNECT proxy; there is no
+route in, and the container is reclaimed when the session ends. So the URL is not
+something ChatGPT is withholding or Claude forgot to publish — **it does not exist while
+the runtime lives there.** Opening one needs an external ingress tunnel, which this
+environment's policy refuses.
+
+Two things that work today:
+
+1. **The repository is already the evidence bus, and it needs no URL.** Every measurement
+   this runtime produces is committed with its bytes and its sha256 —
+   `docs/evidence/oral/skin_ab.json`, `carve_prediction.json`,
+   `docs/evidence/mars/mouth/*.png` and their sidecars,
+   `docs/evidence/VISUAL_EVIDENCE_INDEX.json`. Rocket can read those from GitHub right
+   now and display real receipts. Not live, but authoritative — which is the part that
+   matters (OWNER LAW #2).
+2. **Run the worker where Rocket can reach it.** It is not tied to this container: any
+   host with the repo and Blender can run
+
+   ```bash
+   bash tools/session/start.sh assets/rigs/MARS_FACE.blend
+   export TRIPPEDD_SESSION_SECRET=<a real secret>
+   ./.trippedd_venv/bin/python tools/session/worker_http.py --port 8788 --host 0.0.0.0
+   ```
+
+   then `ROCKET_LIVE_SESSION_URL=http://<that host>:8788` and
+   `ROCKET_SESSION_SECRET=<the same secret>`. **Bind `0.0.0.0` only with a secret set** —
+   without one the worker deliberately binds localhost, and `/capabilities` reports
+   `authRequired: false` rather than implying it is protected.
+
+Until one of those is in place Rocket should show BLOCKED/UNAVAILABLE, which is what its
+door already does. That is correct behaviour, not a failure.
+
 ## Start it
 
 ```bash

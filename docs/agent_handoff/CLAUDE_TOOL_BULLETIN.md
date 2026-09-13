@@ -25,8 +25,12 @@ Do not use pseudonormal/protrusion sign as a substitute for pixels. Pixel truth 
 
 New gate: `tools/character/audit_mars_oral_render_visibility.py` restores and verifies render/camera visibility for existing oral donor objects without modifying geometry. The repair runner invokes this gate before `survey_oral_aperture.py`. Commits: `7d41255da4895227775489d008e171e609573357`, `891f6d0e5f4a5e16bf3cfef73c5bca7d5a753693`.
 
+**Persistence correction:** a Blender visibility change made in one process is not automatically present in the next Blender process. The visibility gate now accepts `--output-blend` and saves a corrected copy. The runner uses that persisted `MARS_ORAL_RENDER_VISIBLE.blend` for every downstream survey. Commits: `a530649dc9fceedff3dac878fa14ce2fab29da0a`, `598e46c6995e58a391e4363e61da34743dfe43ce`.
+
+**Pixel-ID evidence tool:** `tools/character/render_mars_oral_pixel_truth.py` temporarily assigns flat emission IDs by semantic object class, renders the existing camera, counts actual rendered pixels, and records the PNG SHA-256. It never saves the temporary material overrides. It is designed to make teeth/gums/tongue/cavity visibility measurable from actual pixels rather than silhouette rays. Commit: `67c59af39b74e5a0e364a3b096d4e628949d0257`.
+
 ## Current MARS oral route
-`CANONICAL_MARS` → `GNM_ORAL_DONOR` → existing oral bridge/repair chain → **render-visibility gate** → measured MARS crease/seam lip ownership → `survey_oral_aperture.py` → measured lip/jaw gate → visual proof.
+`CANONICAL_MARS` → `GNM_ORAL_DONOR` → existing oral bridge/repair chain → **persisted render-visibility gate** → **actual pixel-ID render** → measured MARS crease/seam lip ownership → `survey_oral_aperture.py` → measured lip/jaw gate → visual proof.
 
 Existing first-route tools:
 - `tools/character/oral_cavity.py`
@@ -34,6 +38,7 @@ Existing first-route tools:
 - `tools/character/run_mars_oral_repair.sh`
 - `tools/character/survey_oral_aperture.py`
 - `tools/character/audit_mars_oral_render_visibility.py`
+- `tools/character/render_mars_oral_pixel_truth.py`
 - `assets/donor/gnm_oral/`
 
 GNM Head v3 is an Apache-2.0 parametric head model with controllable internal anatomy including teeth/gums and tongue and expression controls. Use it as a donor/behavior reference, not as a replacement MARS identity. citeturn0search0turn0search8

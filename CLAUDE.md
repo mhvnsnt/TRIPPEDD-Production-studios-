@@ -685,3 +685,77 @@ BE BUILT OUT OF THREE VERTICES.
 ### STALE: THE VERTEX COUNT CHANGED, 27,721 -> 27,865
 `docs/evidence/hair/_valley_CAGE.npy` -> `_hairzones.npy` -> every hair tool. Regenerate
 `valley_discriminator.py` then `hair_zones.py`, in that order.
+
+## OWNER LAW #7 — ROCKET IS THE COCKPIT. BUILD WHAT IT CAN EXPOSE. (2026-09-13, PERMANENT)
+
+Owner: *"Rocket is about to be the preview interface for me to do manual stuff, for me to
+watch episodes and then see the work."*
+
+**Claude builds the machinery. Rocket exposes it. He sees and corrects the actual work.**
+Before shipping any subsystem, answer: *can he SEE this in Rocket, can he MANIPULATE it,
+and can Rocket save his correction back to the canonical artifact?*
+
+**If a correction can be made faster and more safely by his hand than by his description,
+expose the control instead of asking him to describe it again.** Telling him to say "move
+those points 4 mm toward my actual eyelid" when he could grab the line is the failure.
+
+## OWNER LAW #8 — ONE BLENDER, HELD OPEN. NEVER RELAUNCH TO ASK A QUESTION. (2026-09-13)
+
+Owner: *"we need a more efficient pipeline, bro. You're wasting my sessions."* He was right:
+answering ONE question about his mouth cost TEN Blender launches, each reloading the same
+scene.
+
+    bash tools/session/start.sh assets/rigs/MARS_FACE.blend        ready in 4.0 s
+    ./.trippedd_venv/bin/python tools/session/client.py exec-file tools/session/snippets/X.py
+
+MEASURED, same machine, same questions: session start **4.0 s once**; full object /
+material / visibility inspection **0.055 s**; evaluated geometry export with normals,
+manifold and degenerate checks **0.98 s**; the 800-ray crown occlusion measurement
+**0.108 s**; a four-way A/B of sock placements **0.140 s**. Each of those was a ~90-120 s
+launch and a turn.
+
+**PULLED, NOT WRITTEN:** `ahujasid/blender-mcp` (MIT) — a socket server inside Blender that
+executes on the main thread via `bpy.app.timers`. It refuses background mode and says why
+itself: *"commands would never execute ... run Blender with a GUI, or use a virtual display:
+xvfb-run -a blender."* Xvfb is installed here, so `start.sh` does exactly that.
+**The same socket is what Rocket talks to** — one live scene, both hands on it.
+
+THE ORDER OF WORK, cheapest first, and never skip up:
+- **LEVEL 0** counts, transforms, weights, keys, visibility, topology stats. No render.
+- **LEVEL 1** isolated diagnostic renders — material IDs, masks, single components.
+- **LEVEL 2** full deformation, lighting, shot render. Only when 0 and 1 say it is worth it.
+
+`bash tools/doctor.sh` reports whether a session is live, in two seconds, and `--fix`
+restores a missing toolchain. **`vendor/blender` is a symlink into scratch** — a routine
+disk cleanup deleted the entire Blender install and the next command failed a minute into a
+render. That cost a turn. Check first.
+
+## MEASUREMENT TRUTH IS NOT DISPLAY TRUTH
+`mouth_truth.py` renders a material-ID pass and counts pixels. Blender's default view
+transform **re-maps an emission colour**, so an ID pixel no longer equals the colour that
+was assigned and every share is wrong by an amount nobody can see. It forces
+**Standard / look None / exposure 0 / gamma 1** before the ID pass, so a pixel IS its
+material. **Never assume a rendered pixel equals an assigned material unless the render
+conditions establish that correspondence** — applies to eyes, hair, skin, environments,
+splat layers and compositing alike.
+
+## THE RAGGED TEETH ARE THREE SURFACES IN FRONT OF THEM (2026-09-13)
+Not the crowns, and not the gums. Every oral part is **0 non-manifold, 0 degenerate**, and
+**his gums block ONE crown vertex out of eight hundred.**
+
+800 crown vertices, one ray each, classified by the MATERIAL of the first face hit —
+`MARS_TEETH_*` carries teeth AND gums, so the OBJECT cannot answer this:
+
+    his own skin 37%   carved cavity wall 23%   VISIBLE 17%   lower teeth (correct) 14%
+    MARS_MOUTH_SOCK 7%   upper teeth (correct) 2%   tongue 1%
+
+And they are in front by measurement, in his own millimetres:
+
+    upper crowns front edge   y +1.34 mm
+    MARS_MOUTH_SOCK           y +0.06 mm   ->  1.28 mm IN FRONT of the crowns
+    MARS_ORAL_MAT cavity wall y -2.18 mm   ->  3.52 mm IN FRONT of the crowns
+
+A vestibule lining belongs BEHIND the crowns; a carved cavity wall is the BACK of the
+mouth. Sock A/B, live, 0.14 s: as-is 133/800, back 2 mm **147**, back 4 mm 147, back 6 mm
+148, hidden 148 — so 2 mm recovers 14 of the 15 it costs, and **changes nothing about the
+479 of 800 his own head blocks either way.** Still topology.

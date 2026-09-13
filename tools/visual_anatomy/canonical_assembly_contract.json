@@ -1,0 +1,58 @@
+{
+  "schema": "trippedd.canonical_assembly.v1",
+  "purpose": "Prevent silent whole-character forks and make component transfer the default assembly path.",
+  "default_authority": "CANONICAL_MARS",
+  "separation_policy": "deny_without_owner_override",
+  "required_receipts": [
+    "canonical_source_sha256",
+    "component_source_sha256",
+    "component_world_bbox",
+    "canonical_world_bbox",
+    "placement_transform",
+    "material_mapping",
+    "uv_mapping",
+    "armature_mapping",
+    "weight_mapping",
+    "shape_key_mapping",
+    "preflight_metrics",
+    "postflight_metrics",
+    "render_evidence_sha256"
+  ],
+  "assembly_order": [
+    "identify_canonical",
+    "identify_known_good_component",
+    "validate_component_in_source_space",
+    "freeze_component_vertices_in_world_space",
+    "map_component_to_canonical_landmarks",
+    "attach_or_merge",
+    "reconcile_materials_uvs_weights_and_shape_keys",
+    "validate_topology_and_manifoldness",
+    "validate_anatomical_coverage",
+    "render_open_and_closed_proof",
+    "promote_only_if_all_gates_pass"
+  ],
+  "forbidden_defaults": [
+    "create_competing_whole_character",
+    "trust_library_object_world_matrix_before_scene_link",
+    "use_flat_sheet_as_boolean_cutter",
+    "boolean_difference_without_closed_volume_overlap",
+    "declare_boolean_success_without_aperture_measurement"
+  ],
+  "boolean_preflight": {
+    "require_closed_volume": true,
+    "require_positive_intersection_volume": true,
+    "require_cutter_thickness_mm_min": 0.5,
+    "require_overlap_depth_mm_min": 0.1,
+    "measure_in_source_file_before_linking": true,
+    "measure_again_after_world_space_freeze": true,
+    "failure_action": "route_to_structural_mouth_socket_or_exact_mesh_boolean"
+  },
+  "oral_gates": {
+    "required_parts": ["ORAL_CAVITY", "TEETH_UPPER", "TEETH_LOWER", "GUM_UPPER", "GUM_LOWER", "TONGUE"],
+    "jaw_angles_deg": [0, 10, 20, 30],
+    "minimum_escape_ray_fraction": 0.95,
+    "require_visible_aperture": true,
+    "require_upper_lower_teeth_separation": true,
+    "require_tongue_visibility": true
+  }
+}

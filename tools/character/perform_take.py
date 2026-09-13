@@ -61,8 +61,11 @@ have = set(k.name for k in keys)
 BEATS = [
     # (name, start, end, [(target, peak_value)])   target = "key:NAME" or "bone:NAME:axis"
     ("HEAD TURN + HAIR SWAY", 0,  34, [("bone:head:z", np.radians(40))]),
-    ("BLINK",                36,  52, [("key:blink_L", 1.0), ("key:blink_R", 1.0)]),
-    ("BLINK AGAIN",          54,  66, [("key:blink_L", 1.0), ("key:blink_R", 1.0)]),
+    # blink_own_* -- built from the lines HE DREW. blink_L/blink_R stay in the rig as
+    # REGRESSION FIXTURES and are deliberately NOT driven here: measured, they travel
+    # 0.00 of the gap they must close and land 68.5 / 65.8 mm away, on his cheek.
+    ("BLINK",                36,  52, [("key:blink_own_L", 1.0), ("key:blink_own_R", 1.0)]),
+    ("BLINK AGAIN",          54,  66, [("key:blink_own_L", 1.0), ("key:blink_own_R", 1.0)]),
     ("MOUTH / TALK",         68, 110, [("bone:jaw:x", np.radians(14)),
                                        ("key:lip_corner_L_wide", 0.7),
                                        ("key:lip_corner_R_wide", 0.7)]),
@@ -312,14 +315,20 @@ for nm, s, e, tg in BEATS:
     if moved.sum() == 0:
         entry["verdict"] = "MOVES_NOTHING"
     elif nm in EXPECT:
+        # PER-VERTEX, NOT A CENTROID. A bilateral beat moves both eyes, and the
+        # centroid of both sits between them -- measured, that scored the rebuilt
+        # blink 33.9 mm from "the eyelid" while the per-eye gate measured 4.5 mm and
+        # PASSED. The mean of two correct clusters is a point on neither of them.
         cen = P[moved].mean(0)
         best, bestd = None, 1e9
         for k, pts in SETS.items():
             dd = float(np.linalg.norm(pts - cen, axis=1).min()) / MM
             if dd < bestd: best, bestd = k, dd
-        want = min(float(np.linalg.norm(np.vstack([SETS[k] for k in EXPECT[nm]
-                                                   if k in SETS]) - cen, axis=1).min()) / MM,
-                   1e9)
+        EXP = np.vstack([SETS[k] for k in EXPECT[nm] if k in SETS])
+        # each moved vertex's distance to its own nearest expected point, then the
+        # MEDIAN over the moved population -- robust to a beat that drives both sides
+        dists = np.array([float(np.linalg.norm(EXP - q, axis=1).min()) for q in P[moved]]) / MM
+        want = float(np.median(dists))
         entry.update({"landsNearest": best, "mmToNearestDrawnFeature": round(bestd, 2),
                       "expected": EXPECT[nm], "mmToExpectedFeature": round(want, 2),
                       "verdict": "ON_TARGET" if want <= 8.0 else "MISPLACED"})
@@ -404,3 +413,33 @@ rep = {"schema": "trippedd.perform-take/v1", "frames": N, "fps": FPS, "prerollFr
        "framesDir": os.path.relpath(frames_dir, ROOT)}
 json.dump(rep, open(os.path.join(OUT, "perform_take.json"), "w"), indent=2)
 print("\nwrote %s" % os.path.join(OUT, "perform_take.json"), flush=True)
+
+# ---- ENCODE. A FOLDER OF PNGs IS NOT A VIDEO ------------------------------
+# OWNER LAW #4: anything that moves is judged as a SEQUENCE. ffmpeg is installed;
+# each camera becomes an mp4 he can scrub, plus a side-by-side of all three.
+vids = []
+for nm_ in CAMS:
+    mp4 = os.path.join(OUT, "MARS_perform_%s.mp4" % nm_)
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS),
+           "-i", os.path.join(frames_dir, "%s_%%04d.png" % nm_),
+           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", mp4]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode != 0 or not os.path.exists(mp4):
+        die("ffmpeg failed for %s: %s" % (nm_, (r.stderr or "")[-400:]))
+    vids.append(mp4)
+    print("encoded %s (%.1f MB)" % (mp4, os.path.getsize(mp4) / 1e6), flush=True)
+if len(vids) >= 2:
+    grid = os.path.join(OUT, "MARS_perform_ALL.mp4")
+    ins = []
+    for v in vids: ins += ["-i", v]
+    fil = "".join("[%d:v]scale=%d:%d[v%d];" % (i, RES, RES, i) for i in range(len(vids)))
+    fil += "".join("[v%d]" % i for i in range(len(vids))) + "hstack=inputs=%d[o]" % len(vids)
+    r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error"] + ins +
+                       ["-filter_complex", fil, "-map", "[o]", "-c:v", "libx264",
+                        "-pix_fmt", "yuv420p", "-crf", "20", grid], capture_output=True, text=True)
+    if r.returncode == 0 and os.path.exists(grid):
+        print("encoded %s (%.1f MB)" % (grid, os.path.getsize(grid) / 1e6), flush=True)
+        rep["video"] = os.path.relpath(grid, ROOT)
+        json.dump(rep, open(os.path.join(OUT, "perform_take.json"), "w"), indent=2)
+    else:
+        print("side-by-side encode failed: %s" % (r.stderr or "")[-300:], flush=True)

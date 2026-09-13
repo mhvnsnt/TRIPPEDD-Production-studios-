@@ -88,3 +88,9 @@ assets/rigs/MARS_FACE_HIRES.blend
 assets/rigs/MARS_FACE_HIRES.blend1
 assets/rigs/MARS_FACE_HIRES_UNPROMOTED.blend
 assets/rigs/MARS_FACE_HIRES_UNPROMOTED.blend1
+
+# The perform take's raw PNG dump is INTERMEDIATE, not the evidence: it is
+# regenerable from the scene and the .mp4 next to it is the published artifact.
+# OWNER LAW #2 is satisfied by the video and the contact sheet, which ARE committed.
+# Never add a rule here that hides a model, a rig or a final render (OWNER LAW #6).
+docs/evidence/perform/_frames/

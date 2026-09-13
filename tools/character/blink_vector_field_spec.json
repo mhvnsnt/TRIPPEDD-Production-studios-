@@ -1,14 +1,15 @@
 {
-  "$schema": "trippedd.mars-blink-vector-field/v1",
+  "$schema": "trippedd.mars-blink-vector-field/v2",
   "canonical": {
     "source": "MARS_source.glb",
     "mutationAllowed": false
   },
   "problem": {
     "statement": "A single closure-axis projection can move the lid margin away from the authored eyelid curve when additional travel overshoots the local curve.",
-    "latestMeasuredLeftGapMm": 4.13,
-    "previousMeasuredLeftGapMm": 3.37,
+    "latestMeasuredLeftGapMm": 1.38,
     "latestMeasuredRightGapMm": 0.99,
+    "previousOvershootLeftGapMm": 4.13,
+    "previousMeasuredLeftGapMm": 3.37,
     "latestOpenLeftGapMm": 6.92,
     "latestOpenRightGapMm": 6.09
   },
@@ -27,14 +28,22 @@
     "directionRegressionRequired": true
   },
   "eyeball": {
-    "geometryPresent": false,
-    "clearanceStatus": "NOT_ATTEMPTED",
+    "geometryPresent": true,
+    "source": "assets/donor/gnm_eyes/eye_{L,R}.npz",
+    "assemblyTool": "tools/character/ict_eye_assembly.py",
+    "upstream": "ICT-VGL/ICT-FaceKit",
+    "license": "MIT",
+    "globeDiameterMm": 24.0,
+    "globeVerticesPerEye": 1926,
+    "clearanceStatus": "MEASURABLE",
+    "clearanceGateRequired": true,
     "mustNotInventGeometryForGate": true,
-    "nextEnablement": "real_eye_globe_or_explicit_eye_surface_fixture"
+    "historicalFailure": "similarity-fit placement put the eye assembly far behind the authored aperture; rigid re-seating is allowed, globe geometry mutation is not"
   },
   "promotion": {
     "unknownNeverPass": true,
     "actualPixelsRequired": true,
-    "oldBlinkKeysRemainNegativeControls": true
+    "oldBlinkKeysRemainNegativeControls": true,
+    "realEyeballClearanceRequired": true
   }
 }

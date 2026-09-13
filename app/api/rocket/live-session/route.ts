@@ -12,6 +12,10 @@ const ALLOWED_COMMANDS = new Set([
   'checkpoint',
 ]);
 
+function envPath(name: string, fallback: string) {
+  return process.env[name]?.replace(/^\/+|\/+$/g, '') || fallback.replace(/^\/+|\/+$/g, '');
+}
+
 function sessionUrl() {
   return process.env.ROCKET_LIVE_SESSION_URL?.replace(/\/$/, '') || '';
 }
@@ -22,7 +26,7 @@ function unauthorized(request: NextRequest) {
 }
 
 async function proxy(url: string, path: string, init?: RequestInit) {
-  return fetch(`${url}${path}`, {
+  return fetch(`${url}/${path}`, {
     ...init,
     cache: 'no-store',
     headers: {
@@ -46,12 +50,17 @@ export async function GET(request: NextRequest) {
   }
 
   const target = request.nextUrl.searchParams.get('target') || 'state';
-  if (!['health', 'capabilities', 'state'].includes(target)) {
+  const paths: Record<string, string> = {
+    health: envPath('ROCKET_LIVE_SESSION_HEALTH_PATH', 'health'),
+    capabilities: envPath('ROCKET_LIVE_SESSION_CAPABILITIES_PATH', 'capabilities'),
+    state: envPath('ROCKET_LIVE_SESSION_STATE_PATH', 'state'),
+  };
+  if (!Object.hasOwn(paths, target)) {
     return NextResponse.json({ status: 'BLOCKED', liveSession: false, reason: 'Unsupported live-session target.' }, { status: 400 });
   }
 
   try {
-    const response = await proxy(url, `/${target}`);
+    const response = await proxy(url, paths[target]);
     const body = await response.json().catch(() => ({}));
     return NextResponse.json({
       ...body,
@@ -93,7 +102,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const response = await proxy(url, '/command', {
+    const response = await proxy(url, envPath('ROCKET_LIVE_SESSION_COMMAND_PATH', 'command'), {
       method: 'POST',
       body: JSON.stringify({ command: payload.command, args: payload.args ?? {} }),
     });

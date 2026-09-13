@@ -1,0 +1,54 @@
+{
+  "eye_L": {
+    "eyeballVerts": 1926,
+    "cutterVolume": 0.00013592,
+    "variant": "canonical",
+    "eyeParts": {
+      "sclera": "SCLERA",
+      "iris": "SCLERA",
+      "pupil": "SCLERA"
+    },
+    "eyeballDiameter": 0.09264,
+    "diameterMM": 24.0,
+    "fissureWidth": 0.11095,
+    "globeOverFissure": 0.835,
+    "rays": {
+      "eyeball": 15,
+      "skin": 10,
+      "miss": 0
+    },
+    "apertureFill": {
+      "eyeball": 48,
+      "skin": 184,
+      "socket": 93,
+      "nothing": 0
+    },
+    "apertureBackedByGlobePercent": 14.8
+  },
+  "eye_R": {
+    "eyeballVerts": 1926,
+    "cutterVolume": 0.00012322,
+    "variant": "canonical",
+    "eyeParts": {
+      "sclera": "SCLERA",
+      "iris": "SCLERA",
+      "pupil": "SCLERA"
+    },
+    "eyeballDiameter": 0.09264,
+    "diameterMM": 24.0,
+    "fissureWidth": 0.10708,
+    "globeOverFissure": 0.865,
+    "rays": {
+      "eyeball": 11,
+      "skin": 14,
+      "miss": 0
+    },
+    "apertureFill": {
+      "eyeball": 30,
+      "skin": 194,
+      "socket": 101,
+      "nothing": 0
+    },
+    "apertureBackedByGlobePercent": 9.2
+  }
+}

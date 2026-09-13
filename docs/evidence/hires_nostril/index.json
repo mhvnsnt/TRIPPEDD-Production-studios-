@@ -1,0 +1,53 @@
+{
+  "set": "hires_nostril",
+  "frames": [],
+  "qc": {
+    "physical": {
+      "verified": true,
+      "engine": "BLENDER_EEVEE_NEXT",
+      "samples": 16,
+      "checks": [
+        {
+          "check": "the control that moved is the one named",
+          "pass": true,
+          "detail": "drove exactly 'nostril_flare'; an exact name now beats a substring, after a substring match silently drove the pre-existing nostril_flare_L/R for three runs"
+        },
+        {
+          "check": "reaches the tissue the owner drew",
+          "pass": true,
+          "detail": "peak 3.74 mm at the 91 render-mesh verts nearest his drawn nostril rims"
+        },
+        {
+          "check": "aimed better than the legacy keys",
+          "pass": true,
+          "detail": "median distance from his rims 4.1 mm, against 7.4 mm (nostril_flare_R), 8.3 mm (nostril_flare_L) and 8.4 mm (nose_sneer)"
+        },
+        {
+          "check": "it is an arc, not a ramp",
+          "pass": true,
+          "detail": "0.00 -> 3.74 -> 0.00 mm over 7 frames, symmetric, returns to rest"
+        },
+        {
+          "check": "cross-part isolation",
+          "pass": true,
+          "detail": "nothing outside the nose moves; nearest other drawn feature is 46.4 mm away. The owner asked for face parts to be independent and it is gated, not intended"
+        },
+        {
+          "check": "cage resolution limits the flare",
+          "pass": false,
+          "detail": "his 47- and 48-point rims select only 12 and 10 cage vertices. The cage has ~2.02 mm median edges, so a ~25 mm rim cannot carry more. This is the same LOD problem as the render surface, now limiting deformation as well"
+        }
+      ]
+    },
+    "visual": {
+      "verdict": "PENDING",
+      "reviewer": "claude",
+      "notes": "The alar wings widen and the nose base broadens in the A/B, but this camera is dead-on front and the nostril APERTURES are underneath the nose and not in shot. A flare cannot be judged green from a view that cannot see the nares. Needs a low or three-quarter angle before any visual verdict.",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "PENDING"
+  },
+  "control": "nostril_flare",
+  "authority": "renders/_rig_measure/linework_3d.json -- the nostril rims the owner drew",
+  "lane": "nostrils/nose (Issue #50). The eye/blink lane is not touched by this work."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "trippedd.mars-scene-authority/v1",
+  "character": "MARS",
+  "status": "P0_CANONICAL",
+  "renderScene": "assets/rigs/MARS_FACE_HIRES.blend",
+  "renderSceneRole": "canonical hi-res motion-proof scene",
+  "selectionPolicy": "EXPLICIT_PATH_ONLY",
+  "forbiddenFallbacks": [
+    "assets/rigs/MARS_FACE.blend",
+    "LOD1 scene copies",
+    "stale hi-res scene copies",
+    "glob-selected or cwd-selected .blend files"
+  ],
+  "law": "CHECK_THE_THING_YOU_TEST_IS_THE_THING_THAT_RUNS",
+  "proofLauncher": "tools/character/run_motion_proof_canonical.py",
+  "hashPolicy": "SHA256 recorded immediately before Blender launch",
+  "note": "The prior LOD1 MARS_FACE_HIRES.blend could shadow the fresh source-bound scene. Motion proof must use the explicit canonical path and record its hash in the invocation receipt."
+}

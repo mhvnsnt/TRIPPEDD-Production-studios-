@@ -1,0 +1,43 @@
+{
+  "source": "MARS_LOD2.glb",
+  "smoothPasses": 12,
+  "method": "per-vertex displacement from a Laplacian-smoothed copy of the same surface, projected on the vertex normal -- flat skin cancels, embossed detail keeps a positive residual. No assumption about where the symbol is or what shape it has.",
+  "raisedVerts": 58,
+  "reliefThreshold": 0.013918,
+  "reliefThresholdMM": 3.606,
+  "centre": [
+    0.03266,
+    -0.19375,
+    0.6085
+  ],
+  "widthMM": 125.4,
+  "heightMM": 82.1,
+  "proudMM": 7.61,
+  "axisU": [
+    0.97241,
+    0.23324,
+    0.00435
+  ],
+  "axisV": [
+    0.17274,
+    -0.70738,
+    -0.68541
+  ],
+  "normal": [
+    0.15678,
+    -0.66725,
+    0.72815
+  ],
+  "uvBounds": {
+    "u": [
+      0.02368,
+      0.89307
+    ],
+    "v": [
+      0.06738,
+      0.99341
+    ]
+  },
+  "uvMask": "renders/_rig_measure/sigil_uv_mask.png",
+  "maskTexels": 13803
+}

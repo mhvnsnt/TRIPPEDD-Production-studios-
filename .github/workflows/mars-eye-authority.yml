@@ -1,0 +1,21 @@
+name: MARS eye authority
+
+on:
+  push:
+    paths:
+      - 'assets/rigs/MARS_linework_authority.json'
+      - 'assets/references/mars_facial_linework/**'
+      - 'tools/character/linework_eye_authority_gate.py'
+      - 'renders/_rig_measure/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  authority:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify owner-drawn eye authority
+        run: python3 tools/character/linework_eye_authority_gate.py

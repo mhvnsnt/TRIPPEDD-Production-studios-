@@ -1,0 +1,37 @@
+name: History Size Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  oversized-history:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fail if reachable history contains a GitHub-invalid blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          report=$(git rev-list --objects --all | git cat-file --batch-check='%(objectname) %(objecttype) %(objectsize)' | awk '$2=="blob" && $3 > 104857600 {printf "%s %.2f MiB\n", $1, $3/1048576; found=1} END {if (!found) print "NONE"}')
+          echo "$report"
+          if [[ "$report" != "NONE" ]]; then
+            echo "FAIL: reachable history contains a blob over GitHub's 100 MiB limit."
+            echo "Use tools/git/strip_oversize_history.sh, review the rewritten history, then force-with-lease main."
+            exit 1
+          fi
+          echo "PASS: no reachable blob exceeds 100 MiB."
+      - name: Record current source size
+        shell: bash
+        run: |
+          if [[ -f assets/source_models/MARS_source.glb ]]; then
+            stat -c 'MARS_source.glb %s bytes' assets/source_models/MARS_source.glb
+          fi

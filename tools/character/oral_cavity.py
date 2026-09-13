@@ -128,7 +128,7 @@ if _area < 0:
     loop = [loop[0]] + list(reversed(loop[1:]))
     print("contour wound clockwise; reversed so the loft faces outward")
 N = len(loop)
-SLIT_Z = float(opt("--slit-z", "0.42"))   # rest slit = 42% of the measured contour height
+SLIT_Z = float(opt("--slit-z", "0.26"))   # rest slit = 42% of the measured contour height
 cx = sum(p.x for p in loop) / N
 for p in loop:
     p.z *= SLIT_Z

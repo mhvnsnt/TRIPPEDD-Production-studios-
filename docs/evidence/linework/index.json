@@ -1,0 +1,107 @@
+{
+  "set": "linework",
+  "publishedBy": "tools/publish_evidence.py",
+  "retrieve": "docs/evidence/linework/<frame>  (committed; also listed in README.md)",
+  "runId": "local",
+  "sourceAsset": {
+    "assetId": "MARS_HEAD_SOURCE",
+    "character": "MARS",
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+  },
+  "qc": {
+    "physical": {
+      "verified": null,
+      "checks": [],
+      "engine": null,
+      "samples": null
+    },
+    "visual": {
+      "verdict": "PENDING",
+      "reviewer": "",
+      "notes": "",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "FAIL"
+  },
+  "frames": [
+    {
+      "frame": "front_ortho.png",
+      "publishedSha256": "ee9589c130dec46564315ae16b95bca0494102b62e7159d9d851647006123c20",
+      "repoPath": "docs/evidence/linework/front_ortho.png",
+      "productionPath": "renders/_rig_measure/front_ortho.png",
+      "sha256": "fe9cb3982746c4dccac758f1969bb8e9cdb453aae3fb5dfb2ff4a00b3faa8c79",
+      "sourceSha8": "fe9cb398",
+      "bytes": 759067,
+      "renderedPx": [
+        1024,
+        1024
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "front",
+      "camera": "ortho",
+      "aliases": [
+        "front_ortho",
+        "front_ortho",
+        "front_ortho"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "sigil_uv_mask.png",
+      "publishedSha256": "24bb90e5007267bbd3353555ca19c3bc084f1da73a1f6a72e3276eefe617d25a",
+      "repoPath": "docs/evidence/linework/sigil_uv_mask.png",
+      "productionPath": "renders/_rig_measure/sigil_uv_mask.png",
+      "sha256": "6f3f0100f662812be1de719f1e8087d80a0dcf600582b5a9eb418aa4ba217f37",
+      "sourceSha8": "6f3f0100",
+      "bytes": 7433,
+      "renderedPx": [
+        1024,
+        1024
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "sigil_uv",
+      "camera": "mask",
+      "aliases": [
+        "sigil_uv_mask",
+        "uv_mask",
+        "sigil_mask"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    }
+  ],
+  "measurements": [
+    "canonical_fit.json",
+    "eye_sockets.json",
+    "eyelids.json",
+    "face_anatomy.json",
+    "landmarks.json",
+    "lid_bones.json",
+    "lid_lines.json",
+    "linework.json",
+    "linework_3d.json",
+    "mouth_anatomy.json",
+    "ortho_camera.json",
+    "painted_eyes.json",
+    "sigil.json",
+    "white_px.json"
+  ]
+}

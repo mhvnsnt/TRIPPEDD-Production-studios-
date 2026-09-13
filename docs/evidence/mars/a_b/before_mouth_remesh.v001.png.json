@@ -1,0 +1,34 @@
+{
+  "artifact": "docs/evidence/mars/a_b/before_mouth_remesh.v001.png",
+  "sha256": "db966aeb9a00be33b5077bad86270857acc63eb9812425cf94295a91d5873a52",
+  "bytes": 787664,
+  "resolution": [
+    700,
+    700
+  ],
+  "set": "mars/a_b",
+  "label": "before_mouth_remesh",
+  "version": 1,
+  "producedAt": "2026-09-13T20:58:15Z",
+  "producingTool": "tools/session/snippets/render_and_publish.py",
+  "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "4.2.1 LTS",
+  "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+  "viewTransform": "Standard",
+  "shown": [
+    "MARS_EYE_L",
+    "MARS_EYE_R",
+    "MARS_MESH",
+    "MARS_MOUTH_SOCK",
+    "MARS_TEETH_LOWER",
+    "MARS_TEETH_UPPER",
+    "MARS_TONGUE"
+  ],
+  "hidden": [],
+  "status": "PENDING",
+  "note": "canonical rig BEFORE the mouth remesh -- sock recessed 2.28mm and its front wall opened, lip seam cut+split, 27,865 verts, 261 faces filling the mouth",
+  "measurements": {},
+  "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+  "sourceSha256": "9b9d0f699be634c958b735d3034904b3569458ff4eef90b44d624f4f785efb23"
+}

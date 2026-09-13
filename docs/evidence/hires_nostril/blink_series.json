@@ -1,0 +1,65 @@
+{
+  "scene": "assets/rigs/MARS_FACE_HIRES_UNPROMOTED.blend",
+  "renderMesh": "MARS_RENDER",
+  "renderVerts": 1114516,
+  "control": "nostril_flare",
+  "drove": [
+    "nostril_flare"
+  ],
+  "trackedFrom": "the owner's own drawn nostril_R + nostril_L",
+  "trackedVerts": 91,
+  "frames": [
+    "blink_00.png",
+    "blink_01.png",
+    "blink_02.png",
+    "blink_03.png",
+    "blink_04.png",
+    "blink_05.png",
+    "blink_06.png"
+  ],
+  "series": [
+    {
+      "frame": 0,
+      "drive": 0.0,
+      "travelMeanMM": 0.0,
+      "travelMaxMM": 0.0
+    },
+    {
+      "frame": 1,
+      "drive": 0.5,
+      "travelMeanMM": 0.374,
+      "travelMaxMM": 1.89
+    },
+    {
+      "frame": 2,
+      "drive": 0.866,
+      "travelMeanMM": 0.647,
+      "travelMaxMM": 3.25
+    },
+    {
+      "frame": 3,
+      "drive": 1.0,
+      "travelMeanMM": 0.746,
+      "travelMaxMM": 3.742
+    },
+    {
+      "frame": 4,
+      "drive": 0.866,
+      "travelMeanMM": 0.647,
+      "travelMaxMM": 3.25
+    },
+    {
+      "frame": 5,
+      "drive": 0.5,
+      "travelMeanMM": 0.374,
+      "travelMaxMM": 1.89
+    },
+    {
+      "frame": 6,
+      "drive": 0.0,
+      "travelMeanMM": 0.0,
+      "travelMaxMM": 0.0
+    }
+  ],
+  "peakTravelMM": 3.742
+}

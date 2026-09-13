@@ -1,0 +1,379 @@
+{
+  "source": "ICT-VGL/ICT-FaceKit",
+  "url": "https://github.com/ICT-VGL/ICT-FaceKit",
+  "license": "MIT",
+  "copyright": "2020 USC Institute for Creative Technologies",
+  "what": "FACS/ARKit-named facial expression blendshapes on a common topology, derived from light-stage scans",
+  "vendored": {
+    "file": "ict_facs.npz",
+    "bytes": 4580740,
+    "sha256": "0ff00f3d474177ea6776235d3fdcbf8a42159136c772c6c098454993ce3ce43e",
+    "vertices": 26719,
+    "quads": 25836,
+    "tris": 548,
+    "expressionShapes": 57,
+    "storedAs": "deltas from the neutral, float32 -- an absolute shape set would be ~40x larger and says nothing extra"
+  },
+  "notVendored": {
+    "identityShapes": 100,
+    "why": "identity shapes vary WHO the face is. Mars already is who he is, and his geometry is canonical and never regenerated. They remain available from the upstream clone."
+  },
+  "shapes": [
+    {
+      "name": "PupilDilate_L",
+      "movingVerts": 260,
+      "maxDisplacement": 0.48009
+    },
+    {
+      "name": "PupilDilate_R",
+      "movingVerts": 384,
+      "maxDisplacement": 0.48008
+    },
+    {
+      "name": "browDown_L",
+      "movingVerts": 8356,
+      "maxDisplacement": 0.64882
+    },
+    {
+      "name": "browDown_R",
+      "movingVerts": 8485,
+      "maxDisplacement": 0.64882
+    },
+    {
+      "name": "browInnerUp_L",
+      "movingVerts": 10372,
+      "maxDisplacement": 0.60908
+    },
+    {
+      "name": "browInnerUp_R",
+      "movingVerts": 10432,
+      "maxDisplacement": 0.60908
+    },
+    {
+      "name": "browOuterUp_L",
+      "movingVerts": 10244,
+      "maxDisplacement": 0.86194
+    },
+    {
+      "name": "browOuterUp_R",
+      "movingVerts": 10326,
+      "maxDisplacement": 0.86194
+    },
+    {
+      "name": "cheekPuff_L",
+      "movingVerts": 10093,
+      "maxDisplacement": 1.41029
+    },
+    {
+      "name": "cheekPuff_R",
+      "movingVerts": 10203,
+      "maxDisplacement": 1.41029
+    },
+    {
+      "name": "cheekRaiser_L",
+      "movingVerts": 10511,
+      "maxDisplacement": 0.68646
+    },
+    {
+      "name": "cheekRaiser_R",
+      "movingVerts": 10562,
+      "maxDisplacement": 0.68646
+    },
+    {
+      "name": "cheekSquint_L",
+      "movingVerts": 10851,
+      "maxDisplacement": 0.6274
+    },
+    {
+      "name": "cheekSquint_R",
+      "movingVerts": 10900,
+      "maxDisplacement": 0.6274
+    },
+    {
+      "name": "eyeBlink_L",
+      "movingVerts": 12197,
+      "maxDisplacement": 1.77918
+    },
+    {
+      "name": "eyeBlink_R",
+      "movingVerts": 12201,
+      "maxDisplacement": 1.77919
+    },
+    {
+      "name": "eyeLookDown_L",
+      "movingVerts": 6023,
+      "maxDisplacement": 0.77351
+    },
+    {
+      "name": "eyeLookDown_R",
+      "movingVerts": 6194,
+      "maxDisplacement": 0.77351
+    },
+    {
+      "name": "eyeLookIn_L",
+      "movingVerts": 5495,
+      "maxDisplacement": 0.24758
+    },
+    {
+      "name": "eyeLookIn_R",
+      "movingVerts": 5691,
+      "maxDisplacement": 0.24758
+    },
+    {
+      "name": "eyeLookOut_L",
+      "movingVerts": 5509,
+      "maxDisplacement": 0.25488
+    },
+    {
+      "name": "eyeLookOut_R",
+      "movingVerts": 5699,
+      "maxDisplacement": 0.255
+    },
+    {
+      "name": "eyeLookUp_L",
+      "movingVerts": 5604,
+      "maxDisplacement": 0.37025
+    },
+    {
+      "name": "eyeLookUp_R",
+      "movingVerts": 5790,
+      "maxDisplacement": 0.37024
+    },
+    {
+      "name": "eyeSquint_L",
+      "movingVerts": 8155,
+      "maxDisplacement": 0.37223
+    },
+    {
+      "name": "eyeSquint_R",
+      "movingVerts": 8339,
+      "maxDisplacement": 0.37223
+    },
+    {
+      "name": "eyeWide_L",
+      "movingVerts": 5247,
+      "maxDisplacement": 0.35677
+    },
+    {
+      "name": "eyeWide_R",
+      "movingVerts": 5443,
+      "maxDisplacement": 0.35677
+    },
+    {
+      "name": "jawForward",
+      "movingVerts": 17205,
+      "maxDisplacement": 1.11693
+    },
+    {
+      "name": "jawLeft",
+      "movingVerts": 18290,
+      "maxDisplacement": 0.89208
+    },
+    {
+      "name": "jawOpen",
+      "movingVerts": 18895,
+      "maxDisplacement": 4.19865
+    },
+    {
+      "name": "jawRight",
+      "movingVerts": 18337,
+      "maxDisplacement": 0.89208
+    },
+    {
+      "name": "mouthClose",
+      "movingVerts": 6796,
+      "maxDisplacement": 4.17557
+    },
+    {
+      "name": "mouthDimple_L",
+      "movingVerts": 9686,
+      "maxDisplacement": 0.88599
+    },
+    {
+      "name": "mouthDimple_R",
+      "movingVerts": 9558,
+      "maxDisplacement": 0.88599
+    },
+    {
+      "name": "mouthFrown_L",
+      "movingVerts": 9380,
+      "maxDisplacement": 0.61184
+    },
+    {
+      "name": "mouthFrown_R",
+      "movingVerts": 9535,
+      "maxDisplacement": 0.61184
+    },
+    {
+      "name": "mouthFunnel",
+      "movingVerts": 16093,
+      "maxDisplacement": 1.17406
+    },
+    {
+      "name": "mouthLeft",
+      "movingVerts": 16045,
+      "maxDisplacement": 1.8831
+    },
+    {
+      "name": "mouthLowerDown_L",
+      "movingVerts": 8947,
+      "maxDisplacement": 0.45859
+    },
+    {
+      "name": "mouthLowerDown_R",
+      "movingVerts": 9140,
+      "maxDisplacement": 0.45859
+    },
+    {
+      "name": "mouthPress_L",
+      "movingVerts": 9459,
+      "maxDisplacement": 0.43272
+    },
+    {
+      "name": "mouthPress_R",
+      "movingVerts": 9627,
+      "maxDisplacement": 0.43272
+    },
+    {
+      "name": "mouthPucker",
+      "movingVerts": 16329,
+      "maxDisplacement": 1.23521
+    },
+    {
+      "name": "mouthRight",
+      "movingVerts": 15796,
+      "maxDisplacement": 1.8831
+    },
+    {
+      "name": "mouthRollLower",
+      "movingVerts": 13839,
+      "maxDisplacement": 1.42075
+    },
+    {
+      "name": "mouthRollUpper",
+      "movingVerts": 14796,
+      "maxDisplacement": 1.16199
+    },
+    {
+      "name": "mouthShrugLower",
+      "movingVerts": 13098,
+      "maxDisplacement": 1.13142
+    },
+    {
+      "name": "mouthShrugUpper",
+      "movingVerts": 10295,
+      "maxDisplacement": 0.61997
+    },
+    {
+      "name": "mouthSmile_L",
+      "movingVerts": 10746,
+      "maxDisplacement": 1.57575
+    },
+    {
+      "name": "mouthSmile_R",
+      "movingVerts": 10815,
+      "maxDisplacement": 1.57575
+    },
+    {
+      "name": "mouthStretch_L",
+      "movingVerts": 12707,
+      "maxDisplacement": 1.02719
+    },
+    {
+      "name": "mouthStretch_R",
+      "movingVerts": 13395,
+      "maxDisplacement": 1.02719
+    },
+    {
+      "name": "mouthUpperUp_L",
+      "movingVerts": 13867,
+      "maxDisplacement": 0.87941
+    },
+    {
+      "name": "mouthUpperUp_R",
+      "movingVerts": 13886,
+      "maxDisplacement": 0.87941
+    },
+    {
+      "name": "noseSneer_L",
+      "movingVerts": 10809,
+      "maxDisplacement": 1.02975
+    },
+    {
+      "name": "noseSneer_R",
+      "movingVerts": 10863,
+      "maxDisplacement": 1.02975
+    }
+  ],
+  "landmarks68": "Multi-PIE 68-point indices as published in ICT-FaceKit's README",
+  "parts": {
+    "face": [
+      0,
+      9408
+    ],
+    "head_and_neck": [
+      9409,
+      11247
+    ],
+    "mouth_socket": [
+      11248,
+      13293
+    ],
+    "eye_socket_left": [
+      13294,
+      13677
+    ],
+    "eye_socket_right": [
+      13678,
+      14061
+    ],
+    "gums_and_tongue": [
+      14062,
+      17038
+    ],
+    "teeth": [
+      17039,
+      21450
+    ],
+    "eyeball_left": [
+      21451,
+      23020
+    ],
+    "eyeball_right": [
+      23021,
+      24590
+    ],
+    "lacrimal_left": [
+      24591,
+      24794
+    ],
+    "lacrimal_right": [
+      24795,
+      24998
+    ],
+    "eye_blend_left": [
+      24999,
+      25022
+    ],
+    "eye_blend_right": [
+      25023,
+      25046
+    ],
+    "eye_occlusion_left": [
+      25047,
+      25198
+    ],
+    "eye_occlusion_right": [
+      25199,
+      25350
+    ],
+    "eyelashes_left": [
+      25351,
+      26034
+    ],
+    "eyelashes_right": [
+      26035,
+      26718
+    ]
+  }
+}

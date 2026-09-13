@@ -1,0 +1,181 @@
+{
+  "$schema": "trippedd.world-visual-language/v1",
+  "version": "1.0.0",
+  "authority": "MEASURED from docs/evidence/reference/MARS_CANONICAL_LOOK.png, not chosen. Renderer and control plane consume THIS file; neither keeps a second copy.",
+  "referenceImage": {
+    "path": "docs/evidence/reference/MARS_CANONICAL_LOOK.png",
+    "sha256": "b8abb5c566758d4b454187b0c4e9bd492a151a5c2c2c11030761a7d8e9757d00"
+  },
+  "background": {
+    "hex": "#000000",
+    "note": "PURE BLACK. Not dark blue, not navy -- measured #000000 across 14,400 corner pixels."
+  },
+  "stars": {
+    "form": "SPARKLE",
+    "rule": "Four-point diffraction sparkles with a bright core and a soft bloom -- NOT square sprites, NOT nebula blobs. The square-sprite renders are kept as the rejected case at docs/evidence/reference/ANIMATIC_SQUARES_REJECTED.png.",
+    "spikes": 4,
+    "sizeVarianceStops": 3,
+    "measuredPalette": {
+      "blue": {
+        "hex": "#5BBCF9",
+        "share": 29.7
+      },
+      "magenta": {
+        "hex": "#F7A5F8",
+        "share": 20.7
+      },
+      "cyan": {
+        "hex": "#B9FAFC",
+        "share": 12.9
+      },
+      "violet": {
+        "hex": "#6173F4",
+        "share": 12.5
+      },
+      "white": {
+        "hex": "#FBFBFB",
+        "share": 10.3
+      },
+      "gold": {
+        "hex": "#FDF7B7",
+        "share": 5.4
+      },
+      "amber": {
+        "hex": "#FAE2B6",
+        "share": 3.5
+      },
+      "green": {
+        "hex": "#FBFEFB",
+        "share": 3.3
+      },
+      "red": {
+        "hex": "#FBCDD9",
+        "share": 1.6
+      }
+    },
+    "shareNote": "Shares are the measured pixel distribution in the reference, outside the head."
+  },
+  "eyes": {
+    "hex": "#F4F9FC",
+    "rule": "The reference shows NO eye socket, NO lid line and NO dark rim. The eye is ONE luminous white shape running to the lid edges. Any dark crescent around the globe is a defect, not shading."
+  },
+  "actIPalette": {
+    "act_1_primary": "#4000FF",
+    "dark_cosmic_bg": "#081052",
+    "mars_cobalt": "#1F5FFF",
+    "indigo_void": "#352080",
+    "violet_psychedelic": "#6A35D9",
+    "cyan_telemetry": "#31DFFF",
+    "magenta_transcendence": "#D52CFF"
+  },
+  "profiles": {
+    "neutral_white": {
+      "starPalette": {
+        "white": 1.0
+      },
+      "saturation": 0.0,
+      "bloom": 0.25
+    },
+    "cosmic_blue": {
+      "starPalette": {
+        "white": 0.45,
+        "blue": 0.4,
+        "cyan": 0.15
+      },
+      "saturation": 0.55,
+      "bloom": 0.35
+    },
+    "mars_awakened": {
+      "starPalette": {
+        "blue": 0.297,
+        "magenta": 0.207,
+        "cyan": 0.129,
+        "violet": 0.125,
+        "white": 0.10300000000000001,
+        "gold": 0.054000000000000006,
+        "amber": 0.035,
+        "green": 0.033,
+        "red": 0.016
+      },
+      "saturation": 0.85,
+      "bloom": 0.45,
+      "note": "the reference distribution, verbatim"
+    },
+    "violet_dream": {
+      "starPalette": {
+        "violet": 0.42,
+        "magenta": 0.3,
+        "blue": 0.18,
+        "white": 0.1
+      },
+      "saturation": 0.95,
+      "bloom": 0.55
+    },
+    "psychedelic": {
+      "starPalette": {
+        "magenta": 0.3,
+        "cyan": 0.25,
+        "violet": 0.2,
+        "gold": 0.15,
+        "green": 0.1
+      },
+      "saturation": 1.0,
+      "bloom": 0.7
+    },
+    "reality_break": {
+      "starPalette": {
+        "white": 0.5,
+        "magenta": 0.5
+      },
+      "saturation": 1.0,
+      "bloom": 0.9
+    },
+    "world_transition": {
+      "starPalette": {
+        "violet": 0.5,
+        "blue": 0.3,
+        "white": 0.2
+      },
+      "saturation": 0.9,
+      "bloom": 0.65
+    }
+  },
+  "episode01": {
+    "preset": "EP01_MARS_AWARENESS",
+    "event": "MARS_EYE_CONTACT",
+    "worldSeed": 742918,
+    "timeline": [
+      {
+        "t": 0.0,
+        "profile": "neutral_white"
+      },
+      {
+        "t": 0.25,
+        "profile": "neutral_white"
+      },
+      {
+        "t": 0.4,
+        "profile": "cosmic_blue"
+      },
+      {
+        "t": 0.55,
+        "profile": "mars_awakened",
+        "event": "MARS_EYE_CONTACT"
+      },
+      {
+        "t": 0.7,
+        "profile": "violet_dream"
+      },
+      {
+        "t": 0.85,
+        "profile": "world_transition"
+      },
+      {
+        "t": 1.0,
+        "profile": "world_transition",
+        "beat": "WORLD_CREATION"
+      }
+    ],
+    "note": "The stars are neutral white until he makes eye contact. MARS_EYE_CONTACT is the trigger that turns them into the measured multi-coloured sparkle palette."
+  }
+}

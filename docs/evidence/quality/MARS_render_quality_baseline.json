@@ -1,0 +1,23 @@
+{
+  "schema": "trippedd.mars-render-quality-baseline/v1",
+  "authority": "assets/source_models/MARS_source.glb",
+  "sourceTriangles": 1940858,
+  "sourceMedianFaceEdgeMM": 0.48,
+  "previousPipelineTriangles": 55920,
+  "previousPipelineMedianFaceEdgeMM": 2.02,
+  "previousPipelineP95FaceEdgeMM": 11.66,
+  "qualityLaw": "The supplied source mesh is the render authority. Rigging must not globally remesh, decimate, or triangulate it to solve local deformation problems.",
+  "renderStrategy": "SOURCE_MESH + NATIVE_BLENDER_SURFACE_DEFORM_FROM_RIGGED_CAGE",
+  "visualRegressionPolicy": "VISUAL_FAIL_OVERRIDES_NUMERICAL_PASS",
+  "requiredComparisons": [
+    "silhouette",
+    "face-edge distribution",
+    "normal continuity",
+    "UV identity",
+    "material-slot identity",
+    "texture detail",
+    "eye-aperture geometry",
+    "blink sequence"
+  ],
+  "status": "BASELINE_LOCKED"
+}

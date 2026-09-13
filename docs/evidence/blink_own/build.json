@@ -1,0 +1,33 @@
+{
+  "schema": "trippedd.linework-blink/v1",
+  "authority": "PAINTED SCLERA traced at SOURCE resolution (MARS_source.glb). His drawn 'eyelid' lines land on his FOREHEAD and BROW RIDGE on this mesh, 85 mm away -- see docs/evidence/blink_own/ARBITER_linework_vs_painted.png.",
+  "bandMM": 3.0,
+  "falloffMM": 4.0,
+  "overshoot": 1.12,
+  "eyes": {
+    "L": {
+      "apertureMM": 5.198,
+      "bandVerts": 400,
+      "marginVerts": 76,
+      "closureAxis": [
+        0.0764,
+        -0.3862,
+        -0.9193
+      ],
+      "maxTravelMM": 11.514,
+      "keyVertsMoved": 226
+    },
+    "R": {
+      "apertureMM": 4.221,
+      "bandVerts": 219,
+      "marginVerts": 98,
+      "closureAxis": [
+        0.0567,
+        -0.4752,
+        -0.8781
+      ],
+      "maxTravelMM": 7.831,
+      "keyVertsMoved": 84
+    }
+  }
+}

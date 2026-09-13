@@ -1,0 +1,15 @@
+{
+  "schema": "trippedd.beautify-eye/v1",
+  "radiusMM": 16.0,
+  "regionVerts": 4235,
+  "trianglesBefore": 8067,
+  "trianglesAfter": 8067,
+  "minAngleBefore": 0.718,
+  "minAngleAfter": 0.718,
+  "p5AngleBefore": 6.11,
+  "p5AngleAfter": 9.087,
+  "sliversBefore": 3198,
+  "sliversAfter": 2230,
+  "vertexRestDriftMM": 0.0,
+  "vertsUnchanged": 27721
+}

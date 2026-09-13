@@ -1,0 +1,26 @@
+{
+  "$schema":"trippedd.gaussian-world-stack/v1",
+  "purpose":"Whole-project OSS stack for reconstructing, generating, editing and rendering hybrid 2D/3D environments for Blender and animation.",
+  "authority":"Blender remains the canonical animation/scene assembly authority; Gaussian scenes are derivative environment representations.",
+  "projects":[
+    {"name":"gsplat","path":"third_party/oss/gsplat","role":["3dgs_training","cuda_rasterization","2d_to_3d_fitting","large_scene_rendering"],"license":"Apache-2.0","status":"PINNED"},
+    {"name":"OpenSplat","path":"third_party/oss/OpenSplat","role":["portable_3dgs_training","cpu_gpu_splatting","colmap_like_sparse_input","splat_export"],"license":"AGPL-3.0","status":"PINNED"},
+    {"name":"Worldsmith","path":"third_party/oss/Worldsmith","role":["procedural_terrain","biomes","hydrology","heightmaps","world_seed"],"license":"MIT","status":"PINNED"},
+    {"name":"bene-proggen-maps","path":"third_party/oss/bene-proggen-maps","role":["procedural_city","terrain","streets","buildings","dungeons","scene_export"],"license":"GPL-3.0-or-later","status":"PINNED"},
+    {"name":"SkySplat Blender","path":"third_party/oss/SkySplat-Blender","role":["blender_3dgs_tooling","video_to_camera_trajectory","colmap_camera_import","multi_instance_scene_work"],"license":"MIT","status":"REVIEW_REQUIRED","reason":"addon declares external COLMAP and Brush dependencies; dependency licenses/binaries remain outside production authority until audited"}
+  ],
+  "pipeline":[
+    "2D plates, photos, video or procedural maps -> reconstruction/world-source manifest",
+    "camera poses + sparse geometry -> gsplat/OpenSplat reconstruction lane",
+    "procedural terrain/city -> Worldsmith/bene-proggen-maps lane",
+    "Gaussian scene -> Blender environment handoff without mutating canonical character assets",
+    "Blender animation/render -> actual-pixel evidence",
+    "all adopted outputs -> source hash, output hash, exact command, numerical QC and visual evidence"
+  ],
+  "laws":[
+    "Gaussian environment data is derivative and never canonical MARS geometry.",
+    "No opaque dependency or bundled binary becomes production-authoritative without license review.",
+    "No paid service is required for the production control plane.",
+    "UNKNOWN is never PASS."
+  ]
+}

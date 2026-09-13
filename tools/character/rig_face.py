@@ -28,6 +28,13 @@ from mars_anatomy import MouthFrame, smoothstep
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 def opt(f, d): return argv[argv.index(f) + 1] if f in argv else d
 
+def die(msg):
+    """Blender -b swallows the argument to sys.exit(), so a fail-closed refusal
+    exits 1 with NOTHING printed and reads exactly like a crash. Say it first."""
+    print("\n*** REFUSED: %s\n" % msg, flush=True)
+    sys.stdout.flush()
+    sys.exit(1)
+
 ROOT = os.getcwd()
 SRC = os.path.abspath(opt("--src", "assets/rigs/MARS_ORAL.blend"))
 OUT = os.path.abspath(opt("--out", "assets/rigs/MARS_FACE.blend"))
@@ -47,7 +54,7 @@ scene = bpy.context.scene
 # line used to take everything except the head with it, which is why the blink
 # gate read "0 eyeball rays open" on a head whose sockets had just measured
 # 15/25 and 19/25: the eyes had been deleted a hundred lines earlier.
-KEEP = ("MARS_MESH", "MARS_EYE_L", "MARS_EYE_R")
+KEEP = ("MARS_MESH", "MARS_EYE_L", "MARS_EYE_R", "MARS_LASH_L", "MARS_LASH_R")
 for o in list(bpy.data.objects):
     if o.name.split(".")[0] not in KEEP:
         bpy.data.objects.remove(o, do_unlink=True)
@@ -182,10 +189,10 @@ if low:
         print("    w %.3f  at local x %+.4f y %+.4f z %+.4f (seam %+.4f, dz %+.4f)"
               % (w, lp.x, lp.y, lp.z, F.seam_z(lp.x), lp.z - F.seam_z(lp.x)))
 if mean([w for _, w in lip_lower]) < 0.90:
-    sys.exit("THE LOWER LIP STILL DOES NOT BELONG TO THE JAW (mean %.3f) — that was the whole bug"
+    die("THE LOWER LIP STILL DOES NOT BELONG TO THE JAW (mean %.3f) — that was the whole bug"
              % mean([w for _, w in lip_lower]))
 if mean([w for _, w in lip_upper]) > 0.08:
-    sys.exit("THE UPPER LIP IS RIDING THE JAW (mean %.3f) — both lips would move together"
+    die("THE UPPER LIP IS RIDING THE JAW (mean %.3f) — both lips would move together"
              % mean([w for _, w in lip_upper]))
 
 # ── does the lip line actually part? measure it NOW, before building on it ──
@@ -242,7 +249,7 @@ pct = 100.0 * delta / HEAD_H
 print("LIP APERTURE  rest %.5f · open 22deg %.5f · wide 32deg %.5f" % (rest_d, open_d, wide_d))
 print("              delta %+.5f = %.2f%% of head height (threshold 3.00%%)" % (delta, pct))
 if pct < 3.0:
-    sys.exit("THE LIPS STILL DO NOT SEPARATE — %.2f%% of head height. Not building anatomy on that." % pct)
+    die("THE LIPS STILL DO NOT SEPARATE — %.2f%% of head height. Not building anatomy on that." % pct)
 print("              LIPS SEPARATE")
 
 # ── materials come from the APPEARANCE SPEC, never from a hex in a script ───
@@ -253,7 +260,7 @@ print("              LIPS SEPARATE")
 APPEAR = json.load(open(os.path.join(ROOT, "assets", "rigs", "MARS_appearance.json")))
 VARIANT = opt("--variant", APPEAR.get("activeVariant", "canonical"))
 if VARIANT not in APPEAR["variants"]:
-    sys.exit("unknown appearance variant %r; have %s" % (VARIANT, list(APPEAR["variants"])))
+    die("unknown appearance variant %r; have %s" % (VARIANT, list(APPEAR["variants"])))
 
 def mat(name, base, rough, spec=0.5, emit=None, strength=0.0, sss=0.0):
     m = bpy.data.materials.new(name)
@@ -320,7 +327,7 @@ def finish(bm, name, smooth=True, bevel=0.0):
 # -- a similarity transform between two MEASURED mouths, scale x3.9572.
 DONOR = os.path.join(ROOT, "assets", "donor", "gnm_oral")
 if not os.path.isdir(DONOR):
-    sys.exit("no oral donor. Run: .trippedd_venv/bin/python tools/character/gnm_oral_donor.py")
+    die("no oral donor. Run: .trippedd_venv/bin/python tools/character/gnm_oral_donor.py")
 
 import numpy as np
 CLASS_MAT = {1: M_TEETH, 2: M_GUM, 3: M_TONGUE, 0: None}
@@ -406,7 +413,7 @@ for n, ob in (("upper teeth+gums", teeth_u), ("lower teeth+gums", teeth_l),
              ob.vertex_groups[0].name if ob.vertex_groups else "-"))
 print("  tongue shape keys: %d measured GNM tongue expressions" % tongue_shapes)
 if tongue_shapes < 8:
-    sys.exit("the tongue got almost no measured shapes -- donor mismatch")
+    die("the tongue got almost no measured shapes -- donor mismatch")
 
 # ── the lip control layer ───────────────────────────────────────────────────
 # The scan was captured with the mouth closed, so the exterior has no open-mouth
@@ -502,6 +509,12 @@ CONTROLS = {
 # Both aspect ratios are a normal open eye, so the contour is tracking real
 # lids in the texture rather than guessing.
 EYE_C = F.raw["contours"]
+# Measured eyeball diameters, read from the donor fit rather than assumed.
+EYE_D = {}
+_ed = os.path.join(ROOT, "assets", "donor", "gnm_eyes", "manifest.json")
+if os.path.exists(_ed):
+    _em = json.load(open(_ed))
+    EYE_D = {k[-1]: v["eyeballDiameter"] for k, v in _em.get("eyes", {}).items()}
 
 def contour_band(points, radius, offset_fn, gate=None):
     """Deform the band of surface within `radius` of a measured curve."""
@@ -517,55 +530,177 @@ def contour_band(points, radius, offset_fn, gate=None):
         return offset_fn(lp, near) * w_best
     return f
 
-def lid_close(side):
-    """Upper-lid blink driven by the canonical MediaPipe semantic fit.
+# MEDIAPIPE'S OWN EYELID RINGS, NOT A COARSE CONTOUR AND NOT DARK TEXELS.
+# The darkness finder returned margins 26.3 mm and 18.1 mm apart on a 6.5 mm
+# opening -- that is brow shadow, I measured it, said it needed tightening, and
+# wired it into the blink anyway. So the blink was pulling the BROW RIDGE down.
+# measure_eyelids.py raycasts MediaPipe's canonical lid rings onto the surface
+# instead: opening 6.5 mm, fissure 24.6 / 24.3 mm, symmetric. That is an eyelid.
+_ELP = os.path.join(ROOT, "renders", "_rig_measure", "eyelids.json")
+EYELIDS = json.load(open(_ELP))["eyes"] if os.path.exists(_ELP) else {}
+if EYELIDS:
+    print("eyelids: using MediaPipe's lid rings (%s)"
+          % ", ".join("%s opening %.1f mm" % (k[-1], v["openingMM"])
+                      for k, v in sorted(EYELIDS.items())))
 
-    The target is the measured lower-lid curve, not a guessed travel distance.
-    Vertices are rejected when their nearest semantic feature is the eyebrow.
+def eye_frame(side):
+    """Each eye's OWN frame. His head is asymmetric -- the ears sit at -1.23 and
+    +1.60 mouth widths -- so the two lids are not at the same angle, and judging
+    'above the lid line' in the MOUTH frame works for one eye and not the other.
+    Measured: that is exactly why the right lid covered 100% of its globe and
+    the left covered 4% on the same control."""
+    _e = EYELIDS.get("eye_%s" % side)
+    if _e:
+        up = [V(p) for p in _e["upper"]]
+        lo = [V(p) for p in _e["lower"]]
+    else:
+        up = [V(p) for p in EYE_C["eye_%s_upper" % side]]
+        lo = [V(p) for p in EYE_C["eye_%s_lower" % side]]
+    mid = len(up) // 2
+    ex = (up[-1] - up[0]).normalized()
+    ez_ref = (up[mid] - lo[mid]).normalized()
+    ey = ex.cross(ez_ref).normalized()
+    if ey.y < 0: ey = -ey
+    ez = ex.cross(ey).normalized()
+    # ex IS THE DIRECTION THE CONTOUR HAPPENS TO BE WOUND, AND THE TWO EYES ARE
+    # WOUND OPPOSITE -- measured: ex = (+0.954, -0.288, +0.085) on the left and
+    # (-0.997, -0.051, -0.063) on the right. A cross product built on it
+    # therefore flips ez between eyes, so `-ez * opening` closed one lid and
+    # PEELED THE OTHER ONE OPEN. Pin the sign to anatomy instead: ez points from
+    # the lower lid to the upper lid on both eyes, whatever the winding.
+    if ez.dot(up[mid] - lo[mid]) < 0:
+        ez = -ez
+    centre = (sum(up, V((0, 0, 0))) + sum(lo, V((0, 0, 0)))) / (len(up) + len(lo))
+    opening = (up[mid] - lo[mid]).length
+    return up, lo, centre, ez, ey, opening
+
+MM_ = MW / 50.0
+# A real eyelid is about 1 mm of tissue standing off the globe. On a shell with
+# no thickness that has to be added explicitly or the lid intersects the eye.
+LID_THICK = 1.2 * MM_
+
+def lid_close(side, meet=0.40):
+    """A BLINK IS DEFINED BY WHERE THE LIDS MEET, NOT BY HOW FAR THEY TRAVEL.
+
+    This was a translation: take the upper lid and push it down by a tuned
+    multiple of the lid opening. That is why it needed x1.15 on one eye, still
+    would not shut at x2.40 on the other, and let the globe poke through in
+    between -- a travel is a guess about a distance, and his two lid contours
+    are not the same distance apart at every station.
+
+    The standard Blender workflow (and every blink tutorial) does the opposite:
+    move the upper lid margin and the lower lid margin ONTO THE SAME LINE, so
+    they meet by construction. Per station, so an asymmetric contour closes just
+    as exactly as a symmetric one, and there is no multiplier at all.
+
+    `meet` is where on the opening they close, 0 = the lower margin, 1 = the
+    upper. Real lids meet below centre, nearer the lower lid.
     """
-    _cf_path=os.path.join(ROOT,"renders","_rig_measure","canonical_fit.json")
-    if not os.path.exists(_cf_path):
+    up, lo, centre, ez, ey, opening = eye_frame(side)
+    n = min(len(up), len(lo))
+
+    # Semantic exclusion gate: the blink may deform only vertices closer to
+    # the measured lid margins than to the published eyebrow region.
+    _CF = os.path.join(ROOT, "renders", "_rig_measure", "canonical_fit.json")
+    if not os.path.exists(_CF):
         die("SEMANTIC LID GATE: canonical_fit.json missing; refusing to build blink")
-    _sets=json.load(open(_cf_path)).get("sets",{})
-    _up=[V(p) for p in _sets.get("eyelid_%s_upper"%side,[])]
-    _lo=[V(p) for p in _sets.get("eyelid_%s_lower"%side,[])]
-    _br=[V(p) for p in _sets.get("eyebrow_%s"%side,[])]
-    if len(_up)<5 or len(_lo)<5 or len(_br)<5:
-        die("SEMANTIC LID GATE: incomplete lid/brow set for eye %s"%side)
-    _up_l=[F.local(q) for q in _up]
-    _lo_l=[F.local(q) for q in _lo]
-    _br_l=[F.local(q) for q in _br]
-    _n=len(_up_l)
-    def _target(i):
-        # Interpolate the lower margin to the upper margin's station count.
-        t=i/float(max(1,_n-1))
-        j=t*(len(_lo_l)-1); j0=int(j); j1=min(len(_lo_l)-1,j0+1); a=j-j0
-        return _lo_l[j0].lerp(_lo_l[j1],a)
-    _targets=[_target(i) for i in range(_n)]
-    _opening=sum((_up_l[i]-_targets[i]).length for i in range(_n))/float(_n)
-    _band=_opening*1.35
-    def _close(lp):
-        best=0.0; src=None; tgt=None
-        for i,q in enumerate(_up_l):
-            d=(lp-q).length
-            if d<_band:
-                w=1.0-smoothstep(d/_band)
-                if w>best: best=w; src=q; tgt=_targets[i]
-        if best<=0 or src is None: return None
-        lid_d=min((lp-q).length for q in _up_l)
-        brow_d=min((lp-q).length for q in _br_l)
-        if brow_d<=lid_d: return None
-        return (tgt-src)*best
-    print("semantic blink %s: upper->lower closure %.3f mm; brow exclusion active"%(side,_opening/(MW/50.0)))
-    return _close
+    _cf = json.load(open(_CF)).get("sets", {})
+    _brow_raw = _cf.get("eyebrow_%s" % side)
+    if not _brow_raw:
+        die("SEMANTIC LID GATE: eyebrow_%s set missing from canonical fit" % side)
+    _BROW_LOCAL = [F.local(V(p)) for p in _brow_raw]
+    _LID_LOCAL = [F.local(V(p)) for p in (up + lo)]
+
+    # the closed lid line: one target per station, from HIS OWN two contours
+    meet_pts = [lo[i] + (up[i] - lo[i]) * meet for i in range(n)]
+    band = opening * 1.9
+
+    # THE LID HAS NO THICKNESS, SO IT HAS TO RIDE OUTSIDE THE GLOBE.
+    # Owner: "the eyelids are probably not thick enough to cover up the actual
+    # eyeball or something like that's why the white keeps showing through."
+    # That is exactly it. His head is a single-sided SHELL -- the lid is a
+    # zero-thickness surface, and the meet line I computed lies on the ORIGINAL
+    # lid contour, which the cornea bulges in front of. So the closing lid
+    # travels THROUGH the eyeball and the sclera shows on the other side of it.
+    # Push every target radially out from the eye centre until it clears the
+    # globe by a real lid thickness, so the lid passes OVER the eye.
+    _ball = bpy.data.objects.get("MARS_EYE_%s" % side)
+    if _ball:
+        _ws = [_ball.matrix_world @ v.co for v in _ball.data.vertices]
+        _mn = V((min(p.x for p in _ws), min(p.y for p in _ws), min(p.z for p in _ws)))
+        _mx = V((max(p.x for p in _ws), max(p.y for p in _ws), max(p.z for p in _ws)))
+        _ec = (_mn + _mx) / 2.0
+        _r = max(_mx - _mn) * 0.5
+        _clear = _r + LID_THICK
+        _lifted = 0
+        for i in range(n):
+            d = meet_pts[i] - _ec
+            if d.length < _clear:
+                meet_pts[i] = _ec + d.normalized() * _clear
+                _lifted += 1
+        if _lifted:
+            print("     lid_%s: lifted %d of %d meet points out to clear the globe "
+                  "(radius %.4f + %.1f mm)" % (side, _lifted, n, _r, LID_THICK / MM_))
+
+    # BROW EXCLUSION (merged from origin/main's semantic lid gate -- the one idea
+    # that branch had which this one did not). Owner: "now you've connected the
+    # eyebrows to the blink. And when we get to the eyebrows, now the eyebrows
+    # are gonna be fucked up." A vertex whose NEAREST named feature is the brow
+    # is not lid tissue, however close the band puts it, so it never travels.
+    # WHICH BROW SET THIS TRUSTS MATTERS MORE THAN THE GATE ITSELF.
+    # MEASURED 2026-09-12: MediaPipe's FaceLandmarker misfits this face by one
+    # feature vertically -- its eyebrow ring lands on HIS EYES. canonical_fit.json
+    # was built from it and inherits that, so a brow exclusion keyed to it excludes
+    # the very vertices that should blink. The owner's own drawn brow line wins
+    # whenever it has been lifted to 3D; the canonical set is a loudly-flagged
+    # fallback, never a silent one.
+    _lw = os.path.join(ROOT, "renders", "_rig_measure", "linework_3d.json")
+    _cf = os.path.join(ROOT, "renders", "_rig_measure", "canonical_fit.json")
+    _brow = []
+    if os.path.exists(_lw):
+        _s = json.load(open(_lw)).get("sets", {})
+        _brow = [F.local(V(q)) for q in _s.get("eyebrow_%s" % side, [])]
+        if _brow:
+            print("     lid_%s: brow exclusion from the OWNER'S DRAWN brow line "
+                  "(%d pts)" % (side, len(_brow)))
+    if not _brow and os.path.exists(_cf):
+        _brow = [F.local(V(q)) for q in
+                 json.load(open(_cf)).get("sets", {}).get("eyebrow_%s" % side, [])]
+        if _brow:
+            print("     lid_%s: WARNING -- brow exclusion falling back to "
+                  "canonical_fit.json, whose eyebrow ring is MEASURED to land on his "
+                  "EYES (up to 38.9 mm low). Run ingest_linework.py + linework_to_3d.py "
+                  "to key this to his own marks." % side)
+    if not _brow:
+        die("lid_close(%s): no canonical eyebrow set -- refusing to build a blink "
+            "that cannot tell lid tissue from brow tissue" % side)
+
+    def f(lp):
+        w_best, tgt, src = 0.0, None, None
+        for i in range(n):
+            for q in (up[i], lo[i]):
+                d = (lp - F.local(q)).length
+                if d >= band: continue
+                w = 1.0 - smoothstep(d / band)
+                if w > w_best:
+                    w_best, tgt, src = w, meet_pts[i], q
+        if w_best <= 0 or tgt is None: return None
+        # Never let the blink win a vertex whose nearest named feature is the
+        # eyebrow. A semantic gate, not a visual guess.
+        lid_d = min((lp - F.local(q)).length for i in range(n) for q in (up[i], lo[i]))
+        if min((lp - q).length for q in _brow) <= lid_d: return None
+        # travel this vertex the same way its nearest margin station travels
+        return F.M.to_3x3().inverted() @ ((tgt - src) * w_best)
+
+    return f
 
 def lid_squint(side):
-    lo = EYE_C["eye_%s_lower" % side]
-    mid_z = sum(F.local(q).z for q in EYE_C["eye_%s_upper" % side] + lo) / float(len(lo) * 2)
-    opening = (F.local(EYE_C["eye_%s_upper" % side][4]) - F.local(lo[4])).length
-    return contour_band(lo, opening * 1.4,
-                        lambda lp, q: V((0, -0.05, 1.0)) * (opening * 0.40),
-                        gate=lambda lp, q: lp.z < mid_z + opening * 0.15)
+    up, lo, centre, ez, ey, opening = eye_frame(side)
+    def below(lp):
+        return (F.M @ lp - centre).dot(ez) < opening * 0.20
+    return contour_band(lo, opening * 1.5,
+                        lambda lp, q: F.M.to_3x3().inverted() @ (ez * (opening * 0.42)),
+                        gate=lambda lp, q: below(lp))
 
 # Nostrils are REAL geometry in this scan -- the alar walls and the openings are
 # modelled, not painted -- so a flare moves actual surface. The alar base sits
@@ -628,25 +763,123 @@ if dead:
     print("  REMOVED (moved nothing — a control that looks wired and is not is worse "
           "than no control): " + ", ".join(dead))
 if len(made) < 18:
-    sys.exit("too few working controls (%d) — the measured landmarks are not landing" % len(made))
+    die("too few working controls (%d) — the measured landmarks are not landing" % len(made))
+
+# ── THE NAMED FACS LAYER — ICT-FaceKit, fitted to his face ──────────────────
+# Everything above this line is a falloff: a radius around a landmark, a band
+# around a measured contour. Those are honest about WHERE they act, but they
+# still move a disc of skin rather than a muscle. ICT-FaceKit ships FACS/ARKit
+# shapes as real light-stage GEOMETRY -- browDown_L, cheekPuff_R, eyeBlink_L,
+# jawOpen, mouthSmile_L, noseSneer_R -- and tools/character/facs_donor.py has
+# already fitted that head onto Mars and carried every shape across.
+#
+# They are ADDED, not substituted. A falloff and a scanned shape are two claims
+# about the same motion, and the only way to know which is better is to measure
+# both on the same face (see the blink comparison below). Substituting blind
+# would destroy the evidence that settles it.
+FACS_NPZ = os.path.join(ROOT, "assets", "donor", "facs", "mars_facs.npz")
+facs_made, facs_meta = {}, {}
+if os.path.exists(FACS_NPZ):
+    import numpy as _np
+    _f = _np.load(FACS_NPZ, allow_pickle=True)
+    _names = [str(x) for x in _f["shape_names"]]
+    _deltas = _f["deltas"]
+
+    # THE CORRESPONDENCE IS INDEXED BY VERTEX ORDER, SO PROVE THIS IS THAT MESH.
+    # facs_donor.py worked against positions dumped from a build of this file.
+    # If the head it indexed is not the head being built now -- a different LOD,
+    # a re-cut cavity, anything that renumbers vertices -- every delta lands on
+    # the wrong vertex and the result is a face that is subtly, unfixably wrong
+    # while every count still agrees. Compare the actual positions.
+    _dump = os.path.join(ROOT, "assets", "donor", "gnm_face", "_mars_verts.npy")
+    if _deltas.shape[1] != len(head.data.vertices):
+        die("FACS donor is indexed against %d vertices, this head has %d. Re-run "
+                 "dump_mars_verts.py and facs_donor.py." % (_deltas.shape[1], len(head.data.vertices)))
+    if os.path.exists(_dump):
+        _ref = _np.load(_dump)
+        _live = _np.array([tuple(head.matrix_world @ v.co) for v in head.data.vertices])
+        _drift = _np.linalg.norm(_live - _ref, axis=1)
+        print("\nFACS donor index check: max vertex drift %.2e from the dump it was fitted to"
+              % _drift.max())
+        if _drift.max() > 1e-6:
+            die("THIS IS NOT THE MESH THE FACS DONOR WAS FITTED TO (max drift %.5f). "
+                     "Every named shape would land on the wrong vertex while the counts "
+                     "still agreed." % _drift.max())
+
+    _Minv = head.matrix_world.to_3x3().inverted()
+    for _si, _nm in enumerate(_names):
+        _key = head.shape_key_add(name="facs_" + _nm, from_mix=False)
+        _moved, _mx = 0, 0.0
+        for _i, _d in enumerate(_deltas[_si]):
+            _v = V((float(_d[0]), float(_d[1]), float(_d[2])))
+            if _v.length < 1e-7: continue
+            _key.data[_i].co = basis.data[_i].co + _Minv @ _v
+            _moved += 1
+            _mx = max(_mx, _v.length)
+        _key.value = 0.0
+        if _moved == 0:
+            head.shape_key_remove(_key)
+            die("facs_%s moved nothing on the live mesh though the donor banked it "
+                     "as non-empty -- the transfer and the rig disagree." % _nm)
+        facs_made["facs_" + _nm] = {"verts": _moved, "maxTravel": round(_mx, 5)}
+    _fm = os.path.join(ROOT, "assets", "donor", "facs", "manifest.json")
+    facs_meta = json.load(open(_fm)) if os.path.exists(_fm) else {}
+    print("named FACS shape keys: %d (ICT-FaceKit, MIT, fitted at %.2f%% of head height)"
+          % (len(facs_made), facs_meta.get("fit", {}).get("errorPercentOfHeadHeight", float("nan"))))
+    for _n in sorted(facs_made)[:6]:
+        print("  %-24s %5d verts · max travel %.5f" % (_n, facs_made[_n]["verts"], facs_made[_n]["maxTravel"]))
+    print("  ... %d more" % max(0, len(facs_made) - 6))
+else:
+    print("\nNO FACS LAYER: %s absent. Expression is falloff-only this build -- "
+          "NOT_ATTEMPTED, not 'fine'." % FACS_NPZ)
 
 # ── DOES THE BLINK ACTUALLY CLOSE THE EYE? ──────────────────────────────────
 # A blink that moves lid skin is not a blink; a blink is the eye going AWAY.
 # Now that there is an eyeball behind a carved aperture, that is measurable:
 # fire rays at each eye and count how many reach the eyeball, at rest and with
 # the lid closed. If the count does not collapse, the control is decorative.
-def eye_rays(side):
+def eye_rays(side, want="globe"):
+    """want="globe": rays still reaching the eyeball.
+       want="socket": rays landing on the CUT RIM rather than on outer lid skin.
+
+    THE RIM SATISFIES "NOTHING REACHES THE GLOBE" WITHOUT BEING A CLOSED EYE.
+    The head is a single-sided shell, so the aperture boolean leaves rim faces
+    that sit IN FRONT of the globe. A ray stopping there never reaches the
+    eyeball, so a travel solve that only asks about the globe declares the lid
+    shut while a pale angular sheet is still plainly visible in the render --
+    which is exactly what the owner kept seeing. Closed means the OUTER SKIN
+    covers it, so the solve has to count the rim too."""
     deps = bpy.context.evaluated_depsgraph_get()
     up = [V(p) for p in F.raw["contours"]["eye_%s_upper" % side]]
     lo = [V(p) for p in F.raw["contours"]["eye_%s_lower" % side]]
     centre = (sum(up, V((0, 0, 0))) + sum(lo, V((0, 0, 0)))) / (len(up) + len(lo))
     span = up[len(up) // 2] - lo[len(lo) // 2]
+    # A GRID OVER THE WHOLE APERTURE, NOT A LINE DOWN ITS MIDDLE.
+    # This sampled 25 points on the vertical centre line only, so a pale sheet
+    # of exposed cut rim sitting off to one side scored a clean 0/25 while it
+    # was plainly visible in the render. An instrument that only looks down the
+    # middle cannot report anything about the sides.
+    wide = up[-1] - up[0]
     n = 0
-    for i in range(25):
-        t = (i / 24.0 - 0.5)
-        o = centre + V((0, -0.5, 0)) + span * t * 0.55
-        hit, loc_, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, V((0, 1, 0)))
-        if hit and ob.name.startswith("MARS_EYE_"): n += 1
+    for gi in range(21):
+        for gj in range(11):
+            t = (gj / 10.0 - 0.5)
+            o = (centre + V((0, -0.5, 0)) + span * t * 0.55
+                 + wide * ((gi / 20.0 - 0.5) * 0.90))
+            hit, loc_, nor, idx, ob, mw = bpy.context.scene.ray_cast(deps, o, V((0, 1, 0)))
+            if not hit: continue
+            if want == "globe":
+                if ob.name.startswith("MARS_EYE_"): n += 1
+            else:
+                if ob.name.startswith("MARS_EYE_"):
+                    n += 1
+                else:
+                    try:
+                        mi = ob.data.polygons[idx].material_index
+                        mn_ = ob.data.materials[mi].name if 0 <= mi < len(ob.data.materials) else ""
+                    except Exception:
+                        mn_ = ""
+                    if "SOCKET" in mn_ or "ORAL" in mn_: n += 1
     return n
 
 # ── bind the eyeballs, so eye_look_L / eye_look_R finally drive something ───
@@ -686,13 +919,63 @@ for side in ("L", "R"):
         print("  eye_look_%s: 12 deg moves the eyeball %.5f (%.1f%% of mouth width)"
               % (side, t, 100 * t / MW))
         if t < MW * 0.02:
-            sys.exit("eye_look_%s STILL DRIVES NOTHING (%.5f) — refusing to ship a dead control" % (side, t))
+            die("eye_look_%s STILL DRIVES NOTHING (%.5f) — refusing to ship a dead control" % (side, t))
 
 kb = head.data.shape_keys.key_blocks
-blink_report = {}
-for side in ("L", "R"):
-    key = "blink_%s" % side
-    if key not in kb: continue
+
+# ── WHICH BLINK ACTUALLY CLOSES THE EYE? MEASURED, NOT PREFERRED ────────────
+# Two candidates now exist per lid and they disagree about what a blink is:
+#   blink_L/R         a band along Mars's OWN measured lid contour, travelling
+#                     by his own measured lid opening. Built from his face.
+#   facs_eyeBlink_L/R ICT-FaceKit's scanned lid geometry, fitted across. Built
+#                     from a real human lid, but not from HIS lid.
+# Arguing about which ought to be better is how the last pass shipped a blink
+# that covered 84% on one side and 0% on the other. Fire rays at each eyeball
+# and count how many stop reaching it. The one that closes the eye wins, and
+# the loser's number is recorded next to it rather than deleted.
+# THE RAY COUNT CANNOT TELL CLOSING FROM OPENING, AND IT SCORED THE WRONG LID.
+# It asks "did a ray stop reaching the eyeball", which ANY skin in the path
+# satisfies. Measured: blink_R scored 84% while its lid was travelling -0.0149
+# AWAY from closure -- pulling the eye open bunched skin over the pupil and the
+# metric applauded. Meanwhile blink_L, travelling +0.0199 INTO closure, scored
+# 0% and was carried as broken for this whole arc. A metric that cannot express
+# the failure is not evidence the failure is absent.
+# So the verdict is DIRECTIONAL: project the lid's travel onto the upper->lower
+# axis and state it as a fraction of that eye's own measured opening. A real
+# blink crosses roughly one opening. The ray count is still reported, because it
+# is a real observation of occlusion -- it is just not the verdict.
+def blink_closure(side, key):
+    up, lo, centre, ez, ey, opening = eye_frame(side)
+    mid = len(up) // 2
+    close_dir = (lo[mid] - up[mid]).normalized()
+    lid_mid = (up[mid] + lo[mid]) / 2.0
+    R3w = head.matrix_world.to_3x3()
+    k = kb[key]
+    near = [(i, R3w @ (k.data[i].co - basis.data[i].co))
+            for i in range(len(basis.data))
+            if (k.data[i].co - basis.data[i].co).length > 1e-6
+            and ((head.matrix_world @ basis.data[i].co) - lid_mid).length < opening * 3.0]
+    if not near:
+        # FIVE VALUES, LIKE THE OTHER RETURN. This early guard returned three, so
+        # the moment an eye's lid band came back empty the caller died on
+        # "expected 5, got 3" -- and Blender -b exits 0 after a script exception,
+        # so rig_face.py printed a full, healthy-looking report and then simply
+        # never saved the rig. A crash that looks like a clean finish.
+        return 0, 0.0, 0.0, 0.0, 0
+    # THE VERDICT IS THE LID MARGIN, NOT THE WHOLE BAND. Skin high on the lid
+    # travels less than the free edge does -- that is real anatomy, not a weak
+    # control -- so averaging the band understates every blink and would have
+    # this one reading WEAK at 0.79 while its margin crosses the aperture. The
+    # margin is the part that has to meet the other lid, so it is the part the
+    # threshold is about.
+    margin = [(i, v) for i, v in near
+              if min(((head.matrix_world @ basis.data[i].co) - q).length for q in up)
+              < opening * 0.6]
+    band = sum(v.dot(close_dir) for _, v in near) / len(near)
+    travel = (sum(v.dot(close_dir) for _, v in margin) / len(margin)) if margin else band
+    return len(near), travel, travel / max(opening, 1e-9), band / max(opening, 1e-9), len(margin)
+
+def blink_coverage(side, key):
     for k in kb:
         if k.name != "Basis": k.value = 0.0
     bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
@@ -701,17 +984,81 @@ for side in ("L", "R"):
     bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
     shut_n = eye_rays(side)
     kb[key].value = 0.0
-    closed_pct = 100.0 * (open_n - shut_n) / max(1, open_n)
-    blink_report[key] = {"eyeballRaysOpen": open_n, "eyeballRaysClosed": shut_n,
-                         "percentClosed": round(closed_pct, 1)}
-    print("  %s: eyeball rays %d open -> %d closed (%.0f%% of the eye covered)"
-          % (key, open_n, shut_n, closed_pct))
+    bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
+    return open_n, shut_n, 100.0 * (open_n - shut_n) / max(1, open_n)
+
+blink_report = {}
+for side in ("L", "R"):
+    cands = [n for n in ("blink_%s" % side, "facs_eyeBlink_%s" % side) if n in kb]
+    if not cands: continue
+    scored = []
+    for nm in cands:
+        n_v, travel, openings, band_op, n_m = blink_closure(side, nm)
+        o, c, pct = blink_coverage(side, nm)
+        scored.append((openings, nm, n_v, travel, o, c, pct, band_op, n_m))
+        print("  %-20s margin %3d/%3d verts · toward closure %+.5f = %+.2f openings"
+              " (band %+.2f · occlusion %.0f%%)"
+              % (nm, n_m, n_v, travel, openings, band_op, pct))
+        if openings < 0:
+            print("     ^ NEGATIVE: this control pulls the %s eye OPEN, it is not a blink"
+                  % side)
+    scored.sort(reverse=True)
+    openings, nm, n_v, travel, o, c, pct, band_op, n_m = scored[0]
+    blink_report["blink_%s" % side] = {
+        "chosen": nm, "lidVerts": n_v, "lidMarginVerts": n_m,
+        "travelTowardClosure": round(travel, 5),
+        "openingsTravelled": round(openings, 3),
+        "openingsTravelledWholeBand": round(band_op, 3),
+        "eyeballRaysOpen": o, "eyeballRaysClosed": c,
+        "occlusionPercent": round(pct, 1),
+        "candidates": {x[1]: round(x[0], 3) for x in scored},
+        "verdict": "CLOSES" if openings >= 0.8 else ("WEAK" if openings > 0 else "OPENS"),
+        "method": "lid travel projected onto the upper->lower axis, as a fraction of that "
+                  "eye's measured opening, measured at the LID MARGIN (skin higher on "
+                  "the lid travels less, which is anatomy, not weakness). Occlusion is "
+                  "reported but is NOT the verdict: it cannot tell a closing lid from "
+                  "one being peeled open.",
+    }
+    if len(scored) > 1:
+        print("  -> %s wins the %s lid (%+.2f vs %+.2f openings)"
+              % (nm, side, openings, scored[1][0]))
+
 for k in kb:
     if k.name != "Basis": k.value = 0.0
 bpy.context.view_layer.update()
-worst = min((v["percentClosed"] for v in blink_report.values()), default=0.0)
-if blink_report and worst < 55.0:
-    print("  BLINK IS DECORATIVE — the weaker lid covers only %.0f%% of the eye. "
+# ── SOLVE THE LID TRAVEL UNTIL THE EYE IS ACTUALLY SHUT ────────────────────
+# A fixed multiplier is a guess, and the guess left a sliver of sclera showing
+# under a "closed" lid. Rebuild the key at increasing travel and keep the first
+# value at which NO ray through the aperture still reaches the globe.
+for side in ("L", "R"):
+    key = "blink_%s" % side
+    if key not in kb: continue
+    for t in (0.40, 0.32, 0.24, 0.16, 0.08):
+        for k in kb:
+            if k.name != "Basis": k.value = 0.0
+        kb[key].value = 1.0
+        bpy.context.view_layer.update(); bpy.context.evaluated_depsgraph_get().update()
+        n = eye_rays(side, want="socket")
+        if n == 0:
+            print("  blink_%s SHUT with the lids meeting at %.2f of the opening "
+                  "-- 0/231 rays over the whole aperture find globe or cut rim"
+                  % (side, t)); break
+        print("  blink_%s meeting at %.2f still shows globe/rim on %d/231 rays -- lowering"
+              % (side, t, n))
+        if t == 0.08:
+            print("  blink_%s STILL NOT SHUT even meeting at %.2f (%d rays). "
+                  "Reported, not claimed." % (side, t, n)); break
+        nxt = {0.40: 0.32, 0.32: 0.24, 0.24: 0.16, 0.16: 0.08}.get(t, 0.08)
+        head.shape_key_remove(kb[key])
+        nk, mv, mx = make_key(key, lid_close(side, meet=nxt))
+        kb = head.data.shape_keys.key_blocks
+    for k in kb:
+        if k.name != "Basis": k.value = 0.0
+    bpy.context.view_layer.update()
+
+worst = min((v["openingsTravelled"] for v in blink_report.values()), default=0.0)
+if blink_report and worst < 0.8:
+    print("  BLINK IS WEAK — the lesser lid travels only %+.2f of its own opening. "
           "Reported, not claimed." % worst)
 
 # The corrective is DRIVEN, so a wide jaw never leaves the corners pinched.
@@ -734,7 +1081,7 @@ if "lip_corner_L_wide" in kb:
     pbj.rotation_euler = (0, 0, 0); bpy.context.view_layer.update()
     print("  driven: corner widening at 20deg of jaw = %.3f" % driven)
     if driven < 0.05:
-        sys.exit("THE CORNER DRIVER DOES NOT FIRE (%.4f) — it would ship as a dead control" % driven)
+        die("THE CORNER DRIVER DOES NOT FIRE (%.4f) — it would ship as a dead control" % driven)
 
 # ── save ────────────────────────────────────────────────────────────────────
 for o in (head, arm): o.hide_render = False
@@ -795,6 +1142,16 @@ state = {
                        "measured lid contour",
              "apertureCarved": True},
     "controls": made, "removedDeadControls": dead,
+    "facs": {"source": facs_meta.get("source", "ICT-VGL/ICT-FaceKit"),
+             "license": facs_meta.get("license", "MIT"),
+             "why": "the falloff controls move a disc of skin; these are scanned FACS "
+                    "geometry with real names, fitted to his face",
+             "fit": facs_meta.get("fit"),
+             "correspondence": facs_meta.get("correspondence"),
+             "notTransferableThroughSkin": facs_meta.get("notTransferableThroughSkin", []),
+             "shapeKeys": facs_made} if facs_made else {
+             "status": "NOT_ATTEMPTED",
+             "why": "assets/donor/facs/mars_facs.npz absent; run tools/character/facs_donor.py"},
     "meshVertices": len(head.data.vertices),
 }
 json.dump(state, open(os.path.join(os.path.dirname(OUT), "MARS_face_state.json"), "w"), indent=2)

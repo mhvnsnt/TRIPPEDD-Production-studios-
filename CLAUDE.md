@@ -873,3 +873,39 @@ leak was at the COMMISSURES — 721 rays beyond x −15 mm and 203 beyond +15 mm
 across the whole centre, and what showed through was the sock, which spans ±33.9 mm against
 his aperture's ±25.26 mm. Trimming 271 sock faces back inside his lip corners took the rest
 leak 840 → 538 rays. The corners are still the wrong place for it.
+
+## HIS CORNER SKIN IS CAVED IN, NOT HOLED AND NOT PROTRUDING (2026-09-13)
+
+Owner: *"when the mouth is closed the lips should meet. At rest it should be maybe a little
+opening slightly in the middle ... there's too many corner openings at rest."*
+
+Traced EVERY crossing of a rest ray, which is what finally settled it:
+
+    x -28   CAVITY@+38.2 -> skin@+177.9      <- nothing in front of it. No skin at all.
+    x -24   CAVITY@+44.7
+    x -18   CAVITY@+51.8
+    x -15   skin@+0.3                        <- his lip is right here
+    x   0   skin@-4.9
+    x +28   CAVITY@+39.2
+
+**His lips already meet from x −15 to +20 mm** — exactly what he asked for. At the
+commissures the head's own surface has been pulled **38–52 mm INTO his face** by the carve.
+Not a hole (there is a surface), not a protrusion (nothing sticks out) — a crater.
+
+That is why **pushing the corner cavity vertices deeper changed the leak by nothing**
+(981 → 981, 109 verts moved up to 14.72 mm): they were already deep and my repair moved
+them the wrong way.
+
+### THE LEAK METRIC IS SOUND; TWO OF MY MEASUREMENTS WERE NOT
+Corner leak measured over five different vertical windows: **919 / 919 / 908 / 911 / 908**
+corner rays and 62 / 62 / 37 / 43 / 37 middle. Stable, so the window was never the issue.
+But one snippet reported **corner 5, middle 0** on the same rig minutes earlier — because it
+had just imported the uncarved scan as a reference and **left it in the scene, where it
+occluded every diagnostic ray**. *A reference object you import for a repair will block the
+measurement you use to judge the repair.* Delete it before measuring, not after.
+
+### AND MY CORNER SELECTION WAS MOST OF HIS HEAD
+`|x| > 16 mm AND deeper than 12 mm` selected **22,998 vertices** — everything behind his
+face — and the shrinkwrap moved 3,217 of them by up to **41 mm**. The gate refused and
+nothing was saved, but the lesson is the selection: a corner of his MOUTH has to be bounded
+by distance to his lip line, never by a lateral coordinate and a depth alone.

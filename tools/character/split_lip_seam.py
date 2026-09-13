@@ -344,6 +344,24 @@ def _densify(n_passes):
     bm.faces.ensure_lookup_table(); bm.verts.index_update()
     _dcache.clear()
 
+def _visible_on_his_face_at_rest():
+    """Every face the camera can see IN FRONT of his crease, with his mouth shut.
+    Measured, not reasoned about -- it is the only thing that must not be touched."""
+    for k in me.shape_keys.key_blocks:
+        if k.name != "Basis": k.value = 0.0
+    arm.pose.bones["jaw"].rotation_euler = (0, 0, 0)
+    bpy.context.view_layer.update()
+    deps = bpy.context.evaluated_depsgraph_get()
+    seen = set()
+    for xx in np.arange(-40.0, 40.01, 0.5):
+        for zz in np.arange(-32.0, 28.01, 0.5):
+            o = (FRAME @ Vector((xx * MM, 0.0, zz * MM))) + OUTWARD * 0.9
+            hit, lo, _n, fi, ob, _m = scene.ray_cast(deps, o, -OUTWARD, distance=1.8)
+            if hit and ob.original == head and to_local(lo).y / MM < 0.5:
+                seen.add(int(fi))
+    return seen
+
+
 def _side_of(co):
     L = to_local(Wm_ @ co)
     return 1.0 if L.z > seam_z_local(L.x) else -1.0
@@ -493,22 +511,72 @@ _dcache.clear()
 # Classifying the FACE by its centroid rather than the vertex by its height is
 # also what makes this epsilon-free -- a centroid is never on the crease, while
 # half the vertices now are, exactly.
-face_side = {}
-for f in bm.faces:
-    c = to_local(Wm_ @ f.calc_center_median())
-    if not (X_MIN - 4.0 * MM < c.x < X_MAX + 4.0 * MM): continue
-    if not any(d_of(v) < ZONE_MM for v in f.verts): continue
-    face_side[f.index] = 1 if c.z > seam_z_local(c.x) else -1
-
-crossing = [e for e in bm.edges
+def _seam_edges():
+    fs = {}
+    for f in bm.faces:
+        c = to_local(Wm_ @ f.calc_center_median())
+        if not (X_MIN - 4.0 * MM < c.x < X_MAX + 4.0 * MM): continue
+        if not any(d_of(v) < ZONE_MM for v in f.verts): continue
+        fs[f.index] = 1 if c.z > seam_z_local(c.x) else -1
+    return [e for e in bm.edges
             if len(e.link_faces) == 2
-            and face_side.get(e.link_faces[0].index, 0) * face_side.get(e.link_faces[1].index, 0) < 0]
-print("seam edges (an upper face meeting a lower face): %d" % len(crossing), flush=True)
-if len(crossing) < 10:
-    die("only %d seam edges -- nothing to split" % len(crossing))
-_span = [to_local(Wm_ @ v.co).x for e in crossing for v in e.verts]
-print("  they span %.1f mm of his %.1f mm mouth"
-      % ((max(_span) - min(_span)) / MM, (X_MAX - X_MIN) / MM), flush=True)
+            and fs.get(e.link_faces[0].index, 0) * fs.get(e.link_faces[1].index, 0) < 0]
+
+def _report_seam(crossing):
+    print("seam edges (an upper face meeting a lower face): %d" % len(crossing), flush=True)
+    if len(crossing) < 10:
+        die("only %d seam edges -- nothing to split" % len(crossing))
+    sp = [to_local(Wm_ @ v.co).x for e in crossing for v in e.verts]
+    print("  they span %.1f mm of his %.1f mm mouth"
+          % ((max(sp) - min(sp)) / MM, (X_MAX - X_MIN) / MM), flush=True)
+
+crossing = _seam_edges()
+_report_seam(crossing)
+
+# ── THE BRIDGES. NOT A CUT -- A REMOVAL. ────────────────────────────────────
+# 23 faces still span his crease after the cut, 14 of them visible at jaw 30 with
+# 1,008 rays landing on them: they ARE the pale shards across his open mouth.
+# Two attempts to CUT them measured worse (narrowing and re-cutting 15.24% ->
+# 15.11%, densifying the whole band -> 14.22%), because his crease curves across
+# a 17-23 mm2 face and no plane follows it.
+#
+# But they do not need cutting. They are BRIDGES of skin joining his upper lip to
+# his lower lip, sitting BEHIND his lip front, with his own mouth sock and the GNM
+# teeth and tongue directly behind them. Removing them is what a mouth opening
+# physically is.
+#
+# THE ONLY REAL RISK IS TAKING A FACE YOU CAN SEE ON HIS FACE, so that is measured
+# rather than reasoned about: at REST, fire the fan and record every face the
+# camera can see in front of the crease. Anything in that set is his skin and is
+# kept, whatever else is true about it.
+if flag("--drop-bridges"):
+    bm.verts.ensure_lookup_table(); bm.faces.ensure_lookup_table(); _dcache.clear()
+    bridges = [f for f in _straddlers()
+               if to_local(Wm_ @ f.calc_center_median()).y / MM > float(opt("--bridge-behind-mm", "1.0"))]
+    print("bridges spanning his crease behind the lip front: %d of %d straddlers"
+          % (len(bridges), len(_straddlers())), flush=True)
+    if bridges:
+        bm.to_mesh(me); me.update()
+        keep = _visible_on_his_face_at_rest()
+        bidx = [f.index for f in bridges]
+        drop = [i for i in bidx if i not in keep]
+        print("  visible on his face at rest: %d -> kept.  removing %d"
+              % (len(bidx) - len(drop), len(drop)), flush=True)
+        bm.free()
+        bm = bmesh.new(); bm.from_mesh(me)
+        bm.faces.ensure_lookup_table()
+        bmesh.ops.delete(bm, geom=[bm.faces[i] for i in drop], context="FACES_ONLY")
+        bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+        bm.faces.ensure_lookup_table(); bm.verts.index_update(); _dcache.clear()
+        n_dropped = len(drop)
+        # THE MESH WAS REBUILT, SO EVERY EDGE REFERENCE FROM BEFORE IS DEAD --
+        # "0 BMEdge has been removed" is bmesh saying exactly that. Re-select.
+        crossing = _seam_edges()
+        _report_seam(crossing)
+    else:
+        n_dropped = 0
+else:
+    n_dropped = 0
 
 bmesh.ops.split_edges(bm, edges=crossing)
 bm.verts.ensure_lookup_table(); bm.faces.ensure_lookup_table(); bm.verts.index_update()
@@ -674,6 +742,7 @@ json.dump({
     "seamEdgesSplit": len(crossing),
     "vertsBefore": n0, "vertsAfter": n1,
     "upperLipVerts": n_up, "lowerLipVerts": n_lo,
+    "bridgeFacesRemoved": n_dropped,
     "originalVertexDriftMM": drift,
     "shapeKeysCarried": len(keys1),
     "seamAperture": gaps,

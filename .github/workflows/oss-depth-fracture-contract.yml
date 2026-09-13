@@ -1,0 +1,39 @@
+name: OSS depth fracture contract
+
+on:
+  pull_request:
+    paths:
+      - '.gitmodules'
+      - 'tools/oss/**'
+      - '.github/workflows/oss-depth-fracture-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - '.gitmodules'
+      - 'tools/oss/**'
+      - '.github/workflows/oss-depth-fracture-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify whole-repository OSS pins
+        run: python3 tools/oss/verify_full_repo_registry.py
+      - name: Validate depth/fracture runtime manifest
+        run: python3 -m json.tool tools/oss/depth_fracture_runtime_manifest.json >/dev/null
+      - name: Run depth/fracture gate regression checks
+        run: python3 tools/oss/test_depth_fracture_gate.py
+      - name: Verify receipt schema is valid JSON
+        run: python3 -m json.tool tools/oss/depth_fracture_receipt.schema.json >/dev/null

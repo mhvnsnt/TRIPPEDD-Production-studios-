@@ -1,9 +1,15 @@
 {
-  "version": 7,
+  "version": 8,
   "authority": "TRIPPEDD_PRODUCTION",
   "canonical_character": "MARS_CANONICAL",
   "continuous_work": true,
   "unknown_is_never_pass": true,
+  "rocket_runtime": {
+    "state": "CLOUD_UNAVAILABLE",
+    "resume_contract": "docs/agent_handoff/ROCKET_CLOUD_RECOVERY_RUNBOOK.md",
+    "rule": "when cloud returns, resume the durable queue and runtime integration without waiting for a new owner prompt",
+    "forbidden": ["fabricated Blender execution", "fabricated renders", "fabricated measurements", "dashboard-only production implementation"]
+  },
   "critical_visual_truth": {
     "mouth_failure": "skin_stretches_inside_open_mouth",
     "diagnosis": "synthetic radial MARS skin jaw deformation, not missing cavity",
@@ -12,6 +18,14 @@
     "forbidden_fix": "interpolated_ellipse_skin_deformation"
   },
   "tasks": [
+    {
+      "id": "rocket-cloud-recovery",
+      "problem": "cloud_blender_runtime_temporarily_unavailable",
+      "status": "WAITING_FOR_REAL_RUNTIME",
+      "route": ["health probe", "worker capabilities", "real job API", "command-center live state", "real render/validation dispatch", "artifact/evidence ingestion"],
+      "handoff": "docs/agent_handoff/ROCKET_CLOUD_RECOVERY_RUNBOOK.md",
+      "hard_stop": "do_not_claim_runtime_execution_until_a_real_worker_probe_and_artifact_receipt_exist"
+    },
     {
       "id": "mars-mouth-gnm-motion",
       "problem": "skin_stretching_inside_existing_open_cavity",

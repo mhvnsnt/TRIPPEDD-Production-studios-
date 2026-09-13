@@ -1,0 +1,249 @@
+{
+  "set": "lip_seam",
+  "publishedBy": "tools/publish_evidence.py",
+  "retrieve": "docs/evidence/lip_seam/<frame>  (committed; also listed in README.md)",
+  "runId": "local",
+  "sourceAsset": {
+    "assetId": "MARS_HEAD_SOURCE",
+    "character": "MARS",
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+  },
+  "qc": {
+    "physical": {
+      "verified": null,
+      "checks": [],
+      "engine": null,
+      "samples": null
+    },
+    "visual": {
+      "verdict": "PENDING",
+      "reviewer": "",
+      "notes": "",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "FAIL"
+  },
+  "frames": [
+    {
+      "frame": "01_BEFORE_rest.png",
+      "publishedSha256": "99b28265e404026565ffb3416293a6064f5f8728ee013698d7ea3bb06668420c",
+      "repoPath": "docs/evidence/lip_seam/01_BEFORE_rest.png",
+      "productionPath": "renders/_lip_seam/01_BEFORE_rest.png",
+      "sha256": "cc8cccfeb47e1f6e48d85f42c98ea8e706a868694f801588600ef5a2d7fd23aa",
+      "sourceSha8": "cc8cccfe",
+      "bytes": 763269,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "01_BEFORE",
+      "camera": "rest",
+      "aliases": [
+        "01_BEFORE_rest",
+        "before_rest",
+        "01_rest"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "02_BEFORE_open_skin_fills_the_mouth.png",
+      "publishedSha256": "bfe7d6503b41d5b623307b162e93a4892fc06361b67d4f614f0a1cca9a277bed",
+      "repoPath": "docs/evidence/lip_seam/02_BEFORE_open_skin_fills_the_mouth.png",
+      "productionPath": "renders/_lip_seam/02_BEFORE_open_skin_fills_the_mouth.png",
+      "sha256": "a85ed3b13392ab4e41010207fc4d31099ff2256598b0bb54f48d9d8a285a878e",
+      "sourceSha8": "a85ed3b1",
+      "bytes": 817570,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "02_BEFORE_open_skin_fills_the",
+      "camera": "mouth",
+      "aliases": [
+        "02_BEFORE_open_skin_fills_the_mouth",
+        "before_open_skin_fills_the_mouth",
+        "02_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "03_AFTER_rest_still_closed.png",
+      "publishedSha256": "e7fa33519111d0a70bd46492169f55c2c7ea84479f2c82de235e4980be36c8e7",
+      "repoPath": "docs/evidence/lip_seam/03_AFTER_rest_still_closed.png",
+      "productionPath": "renders/_lip_seam/03_AFTER_rest_still_closed.png",
+      "sha256": "7bfdcdd1789d28f203c2a86f695801e28bc62555902a1bca2628d24ec666c056",
+      "sourceSha8": "7bfdcdd1",
+      "bytes": 763647,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "03_AFTER_rest_still",
+      "camera": "closed",
+      "aliases": [
+        "03_AFTER_rest_still_closed",
+        "after_rest_still_closed",
+        "03_closed"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "04_AFTER_open_tongue_teeth_gums.png",
+      "publishedSha256": "659f18e2e8c79201a43463ebe7a24cdd4a46ee66c247b4da29603add92cbc94f",
+      "repoPath": "docs/evidence/lip_seam/04_AFTER_open_tongue_teeth_gums.png",
+      "productionPath": "renders/_lip_seam/04_AFTER_open_tongue_teeth_gums.png",
+      "sha256": "d9c1629566c3a8b3a4a6c4e05dbb5113db1c5037b07689d53ef2ada74c915ab8",
+      "sourceSha8": "d9c16295",
+      "bytes": 855624,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "04_AFTER_open_tongue_teeth",
+      "camera": "gums",
+      "aliases": [
+        "04_AFTER_open_tongue_teeth_gums",
+        "after_open_tongue_teeth_gums",
+        "04_gums"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "05_AFTER_jaw18.png",
+      "publishedSha256": "1874e09dbbdeda1b13add2f279d82c8346e380d1157ac1d156ca75b156bf693b",
+      "repoPath": "docs/evidence/lip_seam/05_AFTER_jaw18.png",
+      "productionPath": "renders/_lip_seam/05_AFTER_jaw18.png",
+      "sha256": "560644b17c6979e2fc5bc8772453bc6c16f8a56b1582def25a7798564dea47d4",
+      "sourceSha8": "560644b1",
+      "bytes": 816097,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "05_AFTER",
+      "camera": "jaw18",
+      "aliases": [
+        "05_AFTER_jaw18",
+        "after_jaw18",
+        "05_jaw18"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "06_FALSECOLOUR_before.png",
+      "publishedSha256": "4227eb66f5073329d3d103e41fae7e6f600be54dbb31779f76ce1aa4baea15b0",
+      "repoPath": "docs/evidence/lip_seam/06_FALSECOLOUR_before.png",
+      "productionPath": "renders/_lip_seam/06_FALSECOLOUR_before.png",
+      "sha256": "415d17f5798568077527f1eac14b60ac1f6862e4627235c6109e12356948cb75",
+      "sourceSha8": "415d17f5",
+      "bytes": 435909,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "06_FALSECOLOUR",
+      "camera": "before",
+      "aliases": [
+        "06_FALSECOLOUR_before",
+        "falsecolour_before",
+        "06_before"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "07_FALSECOLOUR_after.png",
+      "publishedSha256": "cb045ec039e9cb31851cc270606ec3ddb63ef0a3d8c2c0abc933d12813fbacfb",
+      "repoPath": "docs/evidence/lip_seam/07_FALSECOLOUR_after.png",
+      "productionPath": "renders/_lip_seam/07_FALSECOLOUR_after.png",
+      "sha256": "31a685975a338ab8c97844d05798722c5e07682441f08f37881a84c1d94aa667",
+      "sourceSha8": "31a68597",
+      "bytes": 447590,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "07_FALSECOLOUR",
+      "camera": "after",
+      "aliases": [
+        "07_FALSECOLOUR_after",
+        "falsecolour_after",
+        "07_after"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    }
+  ],
+  "measurements": [
+    "lip_seam.json"
+  ]
+}

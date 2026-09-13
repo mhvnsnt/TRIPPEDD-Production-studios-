@@ -156,7 +156,13 @@ _bx = np.array(_bx); _bz = np.array(_bz)
 _bzs = _bz.copy()
 for _i in range(1, len(_bz) - 1):
     _bzs[_i] = float(np.median(_bz[_i - 1:_i + 2]))
-_ux, _uz = _bx, _bzs
+# THE MEASURED CONTOUR WINS, AND IT IS MEASURED THAT IT WINS. The mesh-crease
+# derivation above wanders: against the same mesh it reports 94 faces straddling
+# his crease where the contour reports 36, and the split built on it recovered
+# LESS of his mouth in pixels (oral anatomy 3.92% of frame vs 5.02%). It is kept
+# because it is the only independent check on where his crease actually is -- the
+# deviation printed below is that check -- but the contour is what is cut along.
+_ux, _uz = (_bx, _bzs) if flag("--seam-from-mesh") else (_cx, _cz)
 
 def seam_z_local(x):
     """Height of his lip crease directly above/below this lateral position."""
@@ -296,12 +302,140 @@ print("carrying %d shape key layer(s) and %s through the split"
 if len(shape_layers) + 1 < len(keys0):
     die("bmesh sees %d shape layers for %d keys" % (len(shape_layers), len(keys0)))
 
+# ── CUT THE FACES THAT SPAN HIS MOUTH. THERE IS NO EDGE TO SPLIT. ───────────
+# Splitting edges opened the CORNERS of his mouth and left the centre welded, at
+# 44 crossing edges and again at 98. Measured, that is not a tuning problem:
+#
+#     edges crossing the crease in the lip zone                44
+#     FACES STRADDLING the crease                              55
+#       their area              median 13.0 mm2   max 52.7 mm2
+#       their longest edge      median  8.7 mm    max 22.5 mm
+#     whole-head median face area                            0.59 mm2
+#     widest stretch of his mouth with NO crossing edge        7.9 mm
+#
+# A single face 22x the median area spans from his upper lip to his lower lip, so
+# across 7.9 mm of his mouth there is no edge for split_edges to act on at all.
+# That face is what the jaw drags inward, and it is the blue skin filling the
+# centre of his open mouth.
+#
+# So the faces are CUT first, with Blender's own bisect, which creates the
+# crossing edges that were never there. His crease is a CURVE, so one plane
+# cannot follow it (it wanders 7 mm in z across his mouth) -- it is bisected bin
+# by bin, each bin's plane passing through that bin's own measured crease point.
+def _side_of(co):
+    L = to_local(Wm_ @ co)
+    return 1.0 if L.z > seam_z_local(L.x) else -1.0
+
+Wm_ = head.matrix_world
+PLANE_NO = (FRAME.to_3x3() @ Vector((0.0, 0.0, 1.0))).normalized()
+NBIN = int(opt("--cut-bins", "40"))
+bedges = np.linspace(X_MIN - 2.0 * MM, X_MAX + 2.0 * MM, NBIN + 1)
+
+# A VERTEX LYING EXACTLY ON THE CUT IS ON NEITHER SIDE. Without this epsilon
+# every freshly bisected face reads as still straddling -- the bisect puts its new
+# vertices exactly on the plane, `z > seam_z` calls that "below", and the count
+# went 103 -> 117 on a pass that had cut every one of them correctly. The cut was
+# working; the detector was not.
+EPS = 0.2 * MM
+def _sgn(l):
+    z = seam_z_local(l.x)
+    return 1 if l.z > z + EPS else (-1 if l.z < z - EPS else 0)
+
+def _straddlers():
+    out = []
+    for f in bm.faces:
+        L = [to_local(Wm_ @ v.co) for v in f.verts]
+        if not any((d_of(v) < ZONE_MM) for v in f.verts): continue
+        if not all(X_MIN - 4.0 * MM < l.x < X_MAX + 4.0 * MM for l in L): continue
+        sgn = {_sgn(l) for l in L}
+        if 1 in sgn and -1 in sgn: out.append(f)
+    return out
+
+_dcache = {}
+def d_of(v):
+    k = v.index
+    if k not in _dcache:
+        _dcache[k] = float(np.linalg.norm(SEAM_W - np.array(Wm_ @ v.co), axis=1).min()) / MM
+    return _dcache[k]
+
+if not flag("--no-cut"):
+    # PER FACE, AT ITS OWN CREASE POSITION, AND ITERATED. One plane per x-BIN was
+    # measured to make things WORSE -- 103 straddling faces became 117 -- because
+    # a face here is up to 22.5 mm wide and spans several bins, so the bin's plane
+    # cuts it somewhere that is not its crease and each fragment still straddles.
+    # Each face is therefore cut with a plane through the crease at ITS OWN centre,
+    # and because his crease still curves across a face that wide, the pass is
+    # repeated until the count stops falling. Convergence is measured, not assumed.
+    n_before = len(bm.verts)
+    strad0 = _straddlers()
+    print("faces straddling his crease, before the cut: %d" % len(strad0), flush=True)
+    cut_faces, prev = 0, len(strad0)
+    for _pass in range(int(opt("--cut-passes", "1"))):
+        todo = _straddlers()
+        if not todo: break
+        for f in todo:
+            if not f.is_valid: continue
+            c = to_local(Wm_ @ f.calc_center_median())
+            co = FRAME @ Vector((c.x, 0.0, seam_z_local(c.x)))
+            geom = set([f]); geom.update(f.verts); geom.update(f.edges)
+            try:
+                bmesh.ops.bisect_plane(bm, geom=list(geom), dist=1e-7,
+                                       plane_co=Wm_.inverted() @ co,
+                                       plane_no=Wm_.inverted().to_3x3() @ PLANE_NO,
+                                       clear_inner=False, clear_outer=False)
+            except Exception as _e:
+                die("bisect refused: %s" % _e)
+            cut_faces += 1
+        bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+        bm.faces.ensure_lookup_table(); bm.verts.index_update()
+        _dcache.clear()
+        now = len(_straddlers())
+        print("  pass %d: cut %d faces, %d still straddle" % (_pass + 1, len(todo), now), flush=True)
+        if now >= prev: break
+        prev = now
+    _dcache.clear()
+    strad1 = _straddlers()
+    print("cut %d faces; verts %d -> %d; straddling faces %d -> %d"
+          % (cut_faces, n_before, len(bm.verts), len(strad0), len(strad1)), flush=True)
+    # ONE PASS. A SECOND ONE MEASURED WORSE: 36 -> 23 -> 28. Once a wide face has
+    # been cut at its centroid's crease height the fragments that still straddle are
+    # the ends of a curve, and a second plane through THEIR centroids cuts them
+    # somewhere worse than not at all. The residual is carried and the gate that
+    # matters is further down -- how much of his mouth the seam actually spans, and
+    # then the pixels.
+    if len(strad1) >= len(strad0):
+        die("the cut did not reduce the faces spanning his crease (%d -> %d)"
+            % (len(strad0), len(strad1)))
+
+bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+bm.faces.ensure_lookup_table(); bm.verts.index_update()
+_dcache.clear()
+
+# ── THE SEAM IS WHERE AN UPPER FACE MEETS A LOWER FACE ───────────────────────
+# Once the spanning faces are cut, the crease is a CHAIN OF VERTICES SITTING ON
+# IT, shared by the faces above and below. No edge "crosses" it any more, so
+# looking for crossing edges finds nothing. What has to be split is the chain
+# itself: every edge whose two faces lie on OPPOSITE sides of his crease.
+#
+# Classifying the FACE by its centroid rather than the vertex by its height is
+# also what makes this epsilon-free -- a centroid is never on the crease, while
+# half the vertices now are, exactly.
+face_side = {}
+for f in bm.faces:
+    c = to_local(Wm_ @ f.calc_center_median())
+    if not (X_MIN - 4.0 * MM < c.x < X_MAX + 4.0 * MM): continue
+    if not any(d_of(v) < ZONE_MM for v in f.verts): continue
+    face_side[f.index] = 1 if c.z > seam_z_local(c.x) else -1
+
 crossing = [e for e in bm.edges
-            if (e.verts[0].index in upper and e.verts[1].index in lower)
-            or (e.verts[1].index in upper and e.verts[0].index in lower)]
-print("edges crossing the seam: %d" % len(crossing), flush=True)
+            if len(e.link_faces) == 2
+            and face_side.get(e.link_faces[0].index, 0) * face_side.get(e.link_faces[1].index, 0) < 0]
+print("seam edges (an upper face meeting a lower face): %d" % len(crossing), flush=True)
 if len(crossing) < 10:
-    die("only %d edges cross the seam -- nothing to split" % len(crossing))
+    die("only %d seam edges -- nothing to split" % len(crossing))
+_span = [to_local(Wm_ @ v.co).x for e in crossing for v in e.verts]
+print("  they span %.1f mm of his %.1f mm mouth"
+      % ((max(_span) - min(_span)) / MM, (X_MAX - X_MIN) / MM), flush=True)
 
 bmesh.ops.split_edges(bm, edges=crossing)
 bm.verts.ensure_lookup_table(); bm.faces.ensure_lookup_table(); bm.verts.index_update()
@@ -337,7 +471,7 @@ print("verts %d -> %d (+%d)" % (n0, n1, n1 - n0), flush=True)
 drift = float(np.abs(P1[:n0] - P0).max()) / MM
 print("original vertices' rest drift: %.6f mm" % drift, flush=True)
 if drift > 1e-4:
-    die("the split MOVED original vertices by %.6f mm -- every measurement banked "
+    die("the cut MOVED original vertices by %.6f mm -- every measurement banked "
         "against this mesh would be invalidated" % drift)
 keys1 = [k.name for k in me.shape_keys.key_blocks] if me.shape_keys else []
 if keys1 != keys0:

@@ -3,18 +3,18 @@
   "radiusMM": 14.0,
   "passes": 2,
   "lines": "docs/evidence/blink_own/painted_lid_lines.json",
-  "vertsBefore": 23830,
-  "vertsAfter": 27721,
+  "vertsBefore": 23996,
+  "vertsAfter": 27905,
   "within3mm_before": {
     "L": 3,
     "R": 7
   },
   "within3mm_after": {
-    "L": 101,
-    "R": 119
+    "L": 93,
+    "R": 128
   },
   "originalRestDriftMM": 0.0,
-  "keysCarried": 88,
+  "keysCarried": 85,
   "keysMovingNothing": [],
   "STALE_BECAUSE_VERTEX_COUNT_CHANGED": [
     "docs/evidence/hair/_hairzones.npy  (regenerate: tools/hair/hair_zones.py)",

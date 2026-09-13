@@ -46,6 +46,17 @@ MM = FP.MM
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 def opt(f, d): return argv[argv.index(f) + 1] if f in argv else d
+
+# ── --rig / --out, SO THIS CAN RUN ON A REVIEW BLEND ─────────────────────────
+# This read AND wrote a hardcoded assets/rigs/MARS_FACE.blend, so there was no
+# way to try it on a candidate: every run was a promotion. That is the shape of
+# the failure already banked in CLAUDE.md -- "rig_face.py writes straight to
+# assets/rigs/MARS_FACE.blend, which is how the good mouth was lost under the eye
+# work". rig_face.py and split_lip_seam.py already take --rig/--out; this now
+# matches them. Both default to canonical, so every existing call is unchanged.
+RIG = os.path.abspath(opt("--rig", os.path.join(ROOT, "assets/rigs/MARS_FACE.blend")))
+OUT_RIG = os.path.abspath(opt("--out", RIG))
+
 def die(m):
     print("\n*** REFUSED: %s\n" % m, flush=True); sys.stdout.flush(); sys.exit(1)
 
@@ -65,7 +76,7 @@ AUTO = "--no-auto-depth" not in argv
 REST_CLEAR_MM = float(opt("--rest-clearance-mm", "0.5"))
 SAVE = "--no-save" not in argv
 
-bpy.ops.wm.open_mainfile(filepath=os.path.join(ROOT, "assets/rigs/MARS_FACE.blend"))
+bpy.ops.wm.open_mainfile(filepath=RIG)
 LW = json.load(open(os.path.join(ROOT, "docs/evidence/linework/linework_3d.json")))
 S = {k: np.array(v, dtype=float) for k, v in LW["sets"].items()
      if isinstance(v, list) and len(v) and isinstance(v[0], list)}
@@ -206,7 +217,7 @@ for side in ("L", "R"):
             "(%.2f -> %.2f mm). Refusing to bank a worse fit." % (side, before, after))
 
 if SAVE:
-    out = os.path.join(ROOT, "assets/rigs/MARS_FACE.blend")
+    out = OUT_RIG
     bpy.ops.wm.save_as_mainfile(filepath=out, compress=True)
     print("saved %s" % out, flush=True)
 od = os.path.join(ROOT, "docs", "evidence", "blink_own")

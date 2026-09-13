@@ -41,6 +41,17 @@ MM = FP.MM
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 def opt(f, d): return argv[argv.index(f) + 1] if f in argv else d
+
+# ── --rig / --out, SO THIS CAN RUN ON A REVIEW BLEND ─────────────────────────
+# This read AND wrote a hardcoded assets/rigs/MARS_FACE.blend, so there was no
+# way to try it on a candidate: every run was a promotion. That is the shape of
+# the failure already banked in CLAUDE.md -- "rig_face.py writes straight to
+# assets/rigs/MARS_FACE.blend, which is how the good mouth was lost under the eye
+# work". rig_face.py and split_lip_seam.py already take --rig/--out; this now
+# matches them. Both default to canonical, so every existing call is unchanged.
+RIG = os.path.abspath(opt("--rig", os.path.join(ROOT, "assets/rigs/MARS_FACE.blend")))
+OUT_RIG = os.path.abspath(opt("--out", RIG))
+
 def die(m):
     print("\n*** REFUSED: %s\n" % m, flush=True); sys.stdout.flush(); sys.exit(1)
 
@@ -57,7 +68,7 @@ LINES  = opt("--lines", "docs/evidence/blink_own/painted_lid_lines.json")
 SAVE   = "--no-save" not in argv
 TARGET_MIN = int(opt("--target-min", "40"))   # verts required within 3 mm afterwards
 
-blend = os.path.join(ROOT, "assets/rigs/MARS_FACE.blend")
+blend = RIG
 bpy.ops.wm.open_mainfile(filepath=blend)
 o = bpy.data.objects.get("MARS_MESH") or die("no MARS_MESH")
 me = o.data
@@ -170,6 +181,6 @@ od = os.path.join(ROOT, "docs", "evidence", "blink_own")
 os.makedirs(od, exist_ok=True)
 json.dump(rep, open(os.path.join(od, "densify_eye.json"), "w"), indent=2)
 if SAVE:
-    bpy.ops.wm.save_as_mainfile(filepath=blend, compress=True)
+    bpy.ops.wm.save_as_mainfile(filepath=OUT_RIG, compress=True)
     print("saved %s" % blend, flush=True)
 print("wrote %s" % os.path.join(od, "densify_eye.json"), flush=True)

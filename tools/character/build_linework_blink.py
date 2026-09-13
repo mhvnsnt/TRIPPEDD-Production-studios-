@@ -32,6 +32,17 @@ MM = FP.MM
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 def opt(f, d): return argv[argv.index(f) + 1] if f in argv else d
+
+# ── --rig / --out, SO THIS CAN RUN ON A REVIEW BLEND ─────────────────────────
+# This read AND wrote a hardcoded assets/rigs/MARS_FACE.blend, so there was no
+# way to try it on a candidate: every run was a promotion. That is the shape of
+# the failure already banked in CLAUDE.md -- "rig_face.py writes straight to
+# assets/rigs/MARS_FACE.blend, which is how the good mouth was lost under the eye
+# work". rig_face.py and split_lip_seam.py already take --rig/--out; this now
+# matches them. Both default to canonical, so every existing call is unchanged.
+RIG = os.path.abspath(opt("--rig", os.path.join(ROOT, "assets/rigs/MARS_FACE.blend")))
+OUT_RIG = os.path.abspath(opt("--out", RIG))
+
 def die(m):
     print("\n*** REFUSED: %s\n" % m, flush=True); sys.stdout.flush(); sys.exit(1)
 
@@ -57,7 +68,7 @@ CLIP_SIGMA = float(opt("--clip-sigma", "2.5"))
 # about one aperture tall and nothing above that belongs in a blink.
 ABOVE_MM = float(opt("--above-mm", "4.5"))
 
-bpy.ops.wm.open_mainfile(filepath=os.path.join(ROOT, "assets/rigs/MARS_FACE.blend"))
+bpy.ops.wm.open_mainfile(filepath=RIG)
 o = bpy.data.objects.get("MARS_MESH") or die("no MARS_MESH")
 if o.data.shape_keys is None:
     o.shape_key_add(name="Basis", from_mix=False)
@@ -166,10 +177,47 @@ for side in ("L", "R"):
     # per eye, so it cannot flip with contour winding the way a cross product does,
     # and it is what catches a shape that peels the eye OPEN.
     along = np.einsum("ij,j->i", travel, ez)
-    if float(np.median(along)) <= 0:
+
+    # ── THE MEDIAN CANNOT TELL "NO TRAVEL" FROM "THE WRONG WAY" ──────────────
+    # This test was `median(along) <= 0`, and it REFUSED a rebuild whose travel
+    # was never once negative:
+    #     median +0.0000  mean +0.0080  min +0.0000  max +0.0398
+    #     of 550 band verts, 264 travel toward closure and 286 "away"
+    # Every one of those 286 is EXACTLY ZERO. They are the canthus vertices,
+    # where his upper and lower lid lines meet, so the lid line has nowhere to
+    # travel there -- that is anatomy, not weakness, the same lesson as measuring
+    # blink closure at the LID MARGIN rather than band-averaging. With 16 fewer
+    # band verts than the rig it was tuned on, the zeros tipped past half and the
+    # median landed on the boundary of a `<= 0` test.
+    # A lid being PEELED OPEN looks completely different: genuinely negative
+    # travel (the banked receipt is -0.0149). So judge the vertices that actually
+    # move, and report the shape of the distribution either way.
+    EPS = 0.01 * aperture * MM          # 1% of that eye's own aperture
+    nz = along[np.abs(along) > EPS]
+    if nz.size == 0:
+        die("eye %s: NOTHING in the lid band travels at all (band %d verts, aperture "
+            "%.3f mm). That is not a blink pointing the wrong way, it is no blink -- "
+            "reported as itself." % (side, int(band.sum()), aperture))
+    if float(np.median(nz)) <= 0 or float(along.mean()) <= 0:
+        # A GUARD WHOSE MESSAGE NOBODY CAN READ COSTS A TURN. Print the numbers the
+        # verdict was reached on, so a refusal on one rig can be compared against a
+        # pass on another without a second Blender launch.
         die("eye %s: the median lid displacement points AWAY from closure. That is the "
             "signature of a lid being peeled open, which an occlusion metric would "
-            "happily score as a blink." % side)
+            "happily score as a blink.\n"
+            "    aperture %.3f mm · band %d verts (%d at the margin)\n"
+            "    ez %s\n"
+            "    travel along ez: median %+.4f  mean %+.4f  min %+.4f  max %+.4f\n"
+            "    of %d band verts, %d move (eps %.5f): %d toward closure, %d away, "
+            "%d do not move at all"
+            % (side, aperture, int(band.sum()),
+               int((d_up[idx] / MM <= BAND_MM).sum()),
+               np.round(ez, 4).tolist(),
+               float(np.median(nz)), float(along.mean()),
+               float(along.min()), float(along.max()),
+               len(along), int(nz.size), EPS,
+               int((nz > 0).sum()), int((nz < 0).sum()),
+               int(len(along) - nz.size)))
     mv = travel * w[:, None]
     dl = mv @ Winv[:3, :3].T
     delta[idx] += dl
@@ -205,7 +253,7 @@ for side in ("L", "R"):
     print("  %s: %d verts move" % (name, moved), flush=True)
 
 if SAVE:
-    out = os.path.join(ROOT, "assets/rigs/MARS_FACE.blend")
+    out = OUT_RIG
     bpy.ops.wm.save_as_mainfile(filepath=out, compress=True)
     print("saved %s" % out, flush=True)
 od = os.path.join(ROOT, "docs", "evidence", "blink_own")

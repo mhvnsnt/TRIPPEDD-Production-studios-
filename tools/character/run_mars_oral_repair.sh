@@ -33,9 +33,11 @@ mkdir -p "$OUT"
 # geometry/raycast evidence must never be treated as pixel evidence when the
 # corresponding object is not render-visible.
 VISIBILITY_JSON="$OUT/oral_render_visibility.json"
+VISIBLE_BLEND="$OUT/MARS_ORAL_RENDER_VISIBLE.blend"
 "$BLENDER" -b "$OUT/MARS_ORAL_REPAIRED.blend" \
   --python "$ROOT/tools/character/audit_mars_oral_render_visibility.py" -- \
-  --output "$VISIBILITY_JSON" || {
+  --output "$VISIBILITY_JSON" \
+  --output-blend "$VISIBLE_BLEND" || {
     echo "MARS_ORAL_REPAIR: RENDER_VISIBILITY_FAIL"
     exit 1
   }
@@ -44,10 +46,16 @@ if ! grep -q '"status": "PASS"' "$VISIBILITY_JSON" 2>/dev/null; then
   echo "MARS_ORAL_REPAIR: RENDER_VISIBILITY_FAIL — audit did not report PASS"
   exit 1
 fi
+if ! grep -q '"persisted": true' "$VISIBILITY_JSON" 2>/dev/null || [[ ! -s "$VISIBLE_BLEND" ]]; then
+  echo "MARS_ORAL_REPAIR: RENDER_VISIBILITY_FAIL — corrected blend was not persisted"
+  exit 1
+fi
 
-# Aperture / protrusion survey — fail-closed
+# Aperture / protrusion survey — fail-closed. Use the persisted corrected blend,
+# not the original repaired file, so the survey sees the same render state that
+# the visibility gate measured.
 SURVEY_JSON="$OUT/aperture_survey.json"
-"$BLENDER" -b "$OUT/MARS_ORAL_REPAIRED.blend" --python "$ROOT/tools/character/survey_oral_aperture.py" -- \
+"$BLENDER" -b "$VISIBLE_BLEND" --python "$ROOT/tools/character/survey_oral_aperture.py" -- \
   --mouth-frame "$MOUTH_FRAME" \
   --output "$SURVEY_JSON" || {
     echo "MARS_ORAL_REPAIR: SURVEY_INVOKE_FAIL"
@@ -66,5 +74,6 @@ fi
 
 echo "MARS_ORAL_REPAIR: VERIFIED"
 echo "OUTPUT=$OUT/MARS_ORAL_REPAIRED.blend"
+echo "RENDER_VISIBLE=$VISIBLE_BLEND"
 echo "VISIBILITY=$VISIBILITY_JSON"
 echo "SURVEY=$SURVEY_JSON"

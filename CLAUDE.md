@@ -955,3 +955,26 @@ The alternative, and it is cheaper: **re-run `oral_cavity.py` with a narrower ap
 the carve never eats past his lip corners in the first place. That rebuilds MARS_ORAL and
 then `rig_face.py`, which is why it was avoided — but `rig_face.py` is fixed now (the
 three-vs-five return), and `tools/checkpoint.py` makes the eye work recoverable.
+
+### AND THE CULPRIT IS THE BOOLEAN, NOT THE WELD, THE WIDTH, THE NORMALS OR ANYTHING I REPAIRED
+Chain of clean controls, each one the SAME measurement — cells across his commissures where
+the nearest surface is cavity deeper than 15 mm, i.e. his skin is missing:
+
+    his raw uncarved scan (MARS_LOD2.glb)                    0 of 65
+    + the weld alone, 47,021 -> 23,373 verts, boundary 68,237 -> 8   0 of 65
+    + weld AND carve, cutter narrowed to 78% (38.9 mm wide)  6 of 65
+    + weld AND carve, shipped full-width cutter              8 of 65
+
+**His scan is perfect. The weld is innocent. The BOOLEAN DIFFERENCE in `oral_cavity.py` is
+what removes his corner skin**, and narrowing the cutter from 50 mm to 38.9 mm barely helps
+(8 → 6), so it is not the cutter's WIDTH — it is the lofted solid's shape or depth at the
+commissures reaching outside the aperture it is supposed to cut.
+
+That closes eight hypotheses. Six repairs failed because they were all trying to restore
+skin the carve had already destroyed, and the ninth — narrowing the cutter — showed the
+width was never the mechanism either.
+
+`--slit-x` is added to `oral_cavity.py` (lateral counterpart to `--slit-z`) and is kept,
+because it is how the next experiment reaches the cutter's lateral profile. **The lane is
+now the CUTTER'S GEOMETRY AT THE CORNERS, measured against a control that is known to be
+clean.** Nothing downstream needs repairing once the carve stops eating his lip corners.

@@ -129,9 +129,21 @@ if _area < 0:
     print("contour wound clockwise; reversed so the loft faces outward")
 N = len(loop)
 SLIT_Z = float(opt("--slit-z", "0.26"))   # rest slit = 42% of the measured contour height
+# AND A LATERAL ONE, BECAUSE THE CARVE EATS PAST HIS LIP CORNERS.
+# Measured on the shipped head: from x -30..-18 and x +24..+28 the shallowest
+# surface a camera meets is the CAVITY at +35..+50 mm -- his exterior skin is gone
+# there, and six separate repairs (protrusion, four projections, a hole fill and a
+# normal recalc) all failed because it is absent rather than damaged. The cutter is
+# simply wider than his mouth. SLIT_X pulls the contour in toward its own centre,
+# the same way SLIT_Z flattens it.
+SLIT_X = float(opt("--slit-x", "1.0"))
 cx = sum(p.x for p in loop) / N
 for p in loop:
     p.z *= SLIT_Z
+    p.x = cx + (p.x - cx) * SLIT_X
+if SLIT_X != 1.0:
+    _w = (max(p.x for p in loop) - min(p.x for p in loop)) / (MW / 50.0)
+    print("aperture narrowed laterally to %.2f -> %.1f mm wide" % (SLIT_X, _w))
 
 def ellipse_ring(half_w, half_h, z_c, y, n=N):
     """A superellipse: a mouth is a flattened oval, not a circle."""

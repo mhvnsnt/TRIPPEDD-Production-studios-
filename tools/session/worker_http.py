@@ -63,13 +63,23 @@ SECRET = os.environ.get("TRIPPEDD_SESSION_SECRET", "").strip()
 # A NAMED COMMAND CAN ONLY REACH A NAMED TOOL. Rocket's contract is "no arbitrary
 # shell execution", and a command that took a path would be exactly that wearing a
 # different hat. Every gate and every measurement is on a list, by name, here.
+# A GATE THAT IMPORTS bpy CANNOT RUN UNDER THE VENV PYTHON. mouth_proof.py is a
+# Blender script; handing it to .trippedd_venv/bin/python is an instant
+# ModuleNotFoundError that would read to a cockpit as "the gate failed" rather
+# than "the worker ran it wrong". Each entry says which interpreter it needs.
+BLENDER = os.path.join(ROOT, "vendor/blender/blender")
 GATES = {
-    "mouth_proof":      ["tools/character/mouth_proof.py", "--rig", "assets/rigs/MARS_FACE.blend"],
-    "contact_gate":     ["tools/character/contact_gate.py"],
-    "expression_gate":  ["tools/character/expression_gate.py"],
-    "blink_regression": ["tools/character/blink_regression_gate.py"],
-    "mars_face_invariant": ["tools/character/mars_face_invariant_gate.py"],
-    "visual_evidence":  ["tools/character/mars_visual_evidence_gate.py"],
+    "mouth_proof":         ("blender", ["tools/character/mouth_proof.py",
+                                        "--rig", "assets/rigs/MARS_FACE.blend"]),
+    "contact_gate":        ("python", ["tools/character/contact_gate.py"]),
+    "expression_gate":     ("python", ["tools/character/expression_gate.py"]),
+    "blink_regression":    ("python", ["tools/character/blink_regression_gate.py"]),
+    "mars_face_invariant": ("python", ["tools/character/mars_face_invariant_gate.py"]),
+    "visual_evidence":     ("python", ["tools/character/mars_visual_evidence_gate.py"]),
+    # the mouth-crater measurements, so a cockpit can read the number itself
+    "skin_ab":             ("python", ["tools/character/where_did_his_skin_go.py"]),
+    "cutter_breach":       ("python", ["tools/character/measure_cutter_breach.py"]),
+    "carve_prediction":    ("python", ["tools/character/predict_carve.py"]),
 }
 # measurements are LEVEL 0/1 and run INSIDE the live session, so they cost
 # milliseconds and never relaunch Blender.
@@ -169,10 +179,14 @@ def invalidate():
         _cache["val"] = None
 
 
-def run_tool(argv, timeout=1800):
+def run_tool(argv, timeout=1800, interpreter="python"):
     """Run a repo tool as a subprocess. Named tools only -- never a caller's path."""
     t0 = time.time()
-    p = subprocess.run([PY] + argv, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
+    if interpreter == "blender":
+        cmd = [BLENDER, "-b", "-P", argv[0], "--"] + argv[1:]
+    else:
+        cmd = [PY] + argv
+    p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=timeout)
     return {"exit": p.returncode, "seconds": round(time.time() - t0, 2),
             "stdout": p.stdout[-20000:], "stderr": p.stderr[-8000:]}
 
@@ -235,9 +249,25 @@ def cmd_run_gate(params):
     if name not in GATES:
         return {"authoritative": False, "status": "BLOCKED",
                 "why": "%r is not a named gate" % name, "available": sorted(GATES)}
-    r = run_tool(GATES[name])
+    interp, argv = GATES[name]
+    if interp == "blender" and not os.path.exists(BLENDER):
+        return {"authoritative": False, "status": "UNAVAILABLE", "gate": name,
+                "why": "vendor/blender is missing -- it is a symlink into scratch and a "
+                       "disk cleanup has deleted it before. Run bash tools/doctor.sh --fix"}
+    r = run_tool(argv, interpreter=interp)
     # exit 0 is PASS; a non-zero exit from a fail-closed gate is a real verdict,
     # never an error to swallow. Both are authoritative -- the gate ran.
+    # BLENDER -b EXITS 0 AFTER A SCRIPT EXCEPTION, so an exit code alone is not a
+    # verdict for a Blender gate: a traceback in its output is a FAILED RUN, not a
+    # passing one. That is the rig_face.py crash that printed a whole healthy
+    # report and wrote nothing.
+    if interp == "blender" and ("Traceback (most recent call last)" in r["stdout"]
+                                or "Traceback (most recent call last)" in r["stderr"]):
+        return {"authoritative": True, "gate": name, "verdict": "FAILED_RUN",
+                "exit": r["exit"], "seconds": r["seconds"],
+                "why": "the Blender script raised; -b exits 0 after a script exception "
+                       "so the exit code cannot be the verdict",
+                "output": r["stdout"], "stderr": r["stderr"]}
     return {"authoritative": True, "gate": name,
             "verdict": "PASS" if r["exit"] == 0 else "FAIL",
             "exit": r["exit"], "seconds": r["seconds"],

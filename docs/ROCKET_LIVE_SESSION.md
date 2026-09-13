@@ -52,7 +52,7 @@ because `==` on a shared secret leaks its prefix.
 | `refresh` | yes | re-read the live state, bypassing the 1 s cache |
 | `inspect` | yes | LEVEL 0 — counts, transforms, materials, modifiers, vertex groups, shape keys, visibility. No render, no relaunch. `{"object": "MARS_MESH"}` |
 | `measure` | yes | a **banked measurement, by name**, run inside the live session. `rest_gap` returns in **0.197 s**. |
-| `run_gate` | no | one of the repo's **own** gates — `mouth_proof`, `contact_gate`, `expression_gate`, `blink_regression`, `mars_face_invariant`, `visual_evidence` |
+| `run_gate` | no | one of the repo's **own** gates — `mouth_proof`, `contact_gate`, `expression_gate`, `blink_regression`, `mars_face_invariant`, `visual_evidence`, and the mouth-crater measurements `skin_ab`, `cutter_breach`, `carve_prediction` |
 | `render` | yes | render in the live session **and publish** — returns the artifact path and its sha256 |
 | `publish` | no | publish bytes that already exist through `tools/publish_visual.py` |
 | `checkpoint` | no | `save` / `list` / `verify` |
@@ -100,9 +100,20 @@ They exist because Claude drives the model through them; a cockpit does not need
 GET  /health                      blend + sha256 + 7 meshes, Blender 4.2.1 LTS
 POST /command inspect MARS_MESH   27,865 verts · 54,720 faces · 89 keys · 11 groups
 POST /command measure rest_gap    0.197 s, in-session, authoritative
+POST /command run_gate skin_ab    1.371 s, PASS, "44 of 483 cells" straight out
+                                  of the runtime -- a cockpit reads the crater
+                                  number itself instead of being told it
 POST /command measure "rm -rf"    BLOCKED, with the whitelist
 POST /command shell               BLOCKED, with the command list
 ```
+
+### A gate that imports `bpy` cannot run under the venv python
+`mouth_proof.py` is a Blender script. Handing it to `.trippedd_venv/bin/python` is an
+instant `ModuleNotFoundError`, and a cockpit would read that as "the gate failed" rather
+than "the worker ran it wrong". Each gate declares its interpreter. And for a Blender
+gate the exit code is not the verdict: **`blender -b` exits 0 after a script exception**
+— the `rig_face.py` crash that printed a whole healthy report and wrote nothing — so a
+traceback in the output is reported as `FAILED_RUN`, never as a pass.
 
 ### A worker that is already running answers with the OLD code
 Restarting this worker after editing it is not optional. The first restart attempt died on

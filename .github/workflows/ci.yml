@@ -27,3 +27,9 @@ jobs:
 
       - name: Production build
         run: bun run build
+
+      - name: In the Bushes source smoke tests
+        run: python3 show/in-the-bushes/tools/test_render_source.py
+
+      - name: In the Bushes Python syntax checks
+        run: python3 -m py_compile show/in-the-bushes/tools/build_origin_opening.py show/in-the-bushes/tools/build_origin_opening_character.py show/in-the-bushes/tools/teen_performance.py show/in-the-bushes/tools/render_preflight.py

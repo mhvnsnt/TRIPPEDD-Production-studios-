@@ -1,8 +1,8 @@
-[submodule "third_party/oss/blender"]
-	path = third_party/oss/blender
+[submodule "third_party/oss/Blender"]
+	path = third_party/oss/Blender
 	url = https://github.com/blender/blender.git
-[submodule "third_party/oss/blender-addons"]
-	path = third_party/oss/blender-addons
+[submodule "third_party/oss/Blender-Addons"]
+	path = third_party/oss/Blender-Addons
 	url = https://github.com/blender/blender-addons.git
 [submodule "third_party/oss/facial-animation"]
 	path = third_party/oss/facial-animation
@@ -85,3 +85,9 @@
 [submodule "third_party/oss/OpenFaceFX"]
 	path = third_party/oss/OpenFaceFX
 	url = https://github.com/OpenFaceFX/OpenFaceFX.git
+[submodule "third_party/oss/MiDaS"]
+	path = third_party/oss/MiDaS
+	url = https://github.com/isl-org/MiDaS.git
+[submodule "third_party/oss/shatter-it"]
+	path = third_party/oss/shatter-it
+	url = https://github.com/gyomh/shatter-it.git

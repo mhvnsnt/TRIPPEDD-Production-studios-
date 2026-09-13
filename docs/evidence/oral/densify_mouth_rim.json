@@ -1,0 +1,31 @@
+{
+  "schema": "trippedd.densify-mouth-rim/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_recarve/MARS_FACE_CANDIDATE.blend",
+  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_recarve/MARS_FACE_CANDIDATE.blend",
+  "radiusMM": 8.0,
+  "passes": 2,
+  "authority": "his measured inner-lip contour (renders/_rig_measure/mouth_anatomy.json) -- 1.15 mm from his skin, 4.28 mm from the sock rim, and the painted texture's green channel halves at it",
+  "vertsBefore": 27905,
+  "vertsAfter": 31021,
+  "within3mmBefore": 326,
+  "within3mmAfter": 2328,
+  "rimFaceAreaMM2Before": {
+    "count": 332,
+    "median": 1.766,
+    "max": 149.505
+  },
+  "rimFaceAreaMM2After": {
+    "count": 3368,
+    "median": 0.033,
+    "max": 149.506
+  },
+  "wholeHeadMedianFaceAreaMM2": 0.383,
+  "originalRestDriftMM": 0.0,
+  "keysCarried": 87,
+  "keysMovingNothing": [],
+  "STALE_BECAUSE_VERTEX_COUNT_CHANGED": [
+    "docs/evidence/hair/_valley_CAGE.npy -> _hairzones.npy (regenerate: tools/hair/valley_discriminator.py then tools/hair/hair_zones.py, IN THAT ORDER)",
+    "assets/donor/gnm_face/_mars_verts.npy and assets/donor/facs/ (regenerate: dump_mars_verts.py then facs_donor.py)",
+    "any tool that indexes MARS_MESH by vertex id"
+  ]
+}

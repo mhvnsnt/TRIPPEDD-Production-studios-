@@ -1,0 +1,468 @@
+{
+  "engine": "BLENDER_EEVEE_NEXT",
+  "samples": 32,
+  "set": "mouth",
+  "gate": "MOUTH_ANATOMY_VERIFIED",
+  "poses": [
+    {
+      "pose": "01_REST",
+      "jawDeg": 0.0,
+      "shapes": {},
+      "tongueBones": {},
+      "lipGap": 0.0,
+      "lipGapPercentOfHeadHeight": 0.0,
+      "rays": {
+        "skin": 1186,
+        "cavity": 1,
+        "teeth": 1,
+        "gum": 0,
+        "tongue": 1,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 99.7,
+        "cavity": 0.1,
+        "teeth": 0.1,
+        "gum": 0.0,
+        "tongue": 0.1,
+        "eye": 0.0
+      },
+      "movedRegion": null,
+      "frontPixelDeltaVsRest": 0.0,
+      "regionPixelDeltaVsRest": 0.0
+    },
+    {
+      "pose": "02_OPEN",
+      "jawDeg": 18.0,
+      "shapes": {
+        "lip_lower_depress": 0.35,
+        "lip_upper_raise": 0.15
+      },
+      "tongueBones": {},
+      "lipGap": 0.09034,
+      "lipGapPercentOfHeadHeight": 10.71,
+      "rays": {
+        "skin": 872,
+        "cavity": 111,
+        "teeth": 42,
+        "gum": 18,
+        "tongue": 146,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 73.3,
+        "cavity": 9.3,
+        "teeth": 3.5,
+        "gum": 1.5,
+        "tongue": 12.3,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.0857,
+        -0.1202,
+        0.9372,
+        0.6582
+      ],
+      "frontPixelDeltaVsRest": 0.02665,
+      "regionPixelDeltaVsRest": 0.04757
+    },
+    {
+      "pose": "03_WIDE",
+      "jawDeg": 31.0,
+      "shapes": {
+        "lip_lower_depress": 0.7,
+        "lip_upper_raise": 0.45,
+        "lip_corner_L_up": 0.2,
+        "lip_corner_R_up": 0.2
+      },
+      "tongueBones": {
+        "tongue_root": [
+          -14,
+          0,
+          0
+        ],
+        "tongue_mid": [
+          -8,
+          0,
+          0
+        ]
+      },
+      "lipGap": 0.11235,
+      "lipGapPercentOfHeadHeight": 13.32,
+      "rays": {
+        "skin": 718,
+        "cavity": 215,
+        "teeth": 75,
+        "gum": 48,
+        "tongue": 133,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 60.4,
+        "cavity": 18.1,
+        "teeth": 6.3,
+        "gum": 4.0,
+        "tongue": 11.2,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.0859,
+        -0.1393,
+        0.9387,
+        0.6732
+      ],
+      "frontPixelDeltaVsRest": 0.03379,
+      "regionPixelDeltaVsRest": 0.05896
+    },
+    {
+      "pose": "04_AA",
+      "jawDeg": 23.0,
+      "shapes": {
+        "lip_lower_depress": 0.55,
+        "lip_upper_raise": 0.3
+      },
+      "tongueBones": {
+        "tongue_root": [
+          -8,
+          0,
+          0
+        ],
+        "tongue_mid": [
+          -5,
+          0,
+          0
+        ]
+      },
+      "lipGap": 0.10424,
+      "lipGapPercentOfHeadHeight": 12.36,
+      "rays": {
+        "skin": 804,
+        "cavity": 203,
+        "teeth": 59,
+        "gum": 22,
+        "tongue": 101,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 67.6,
+        "cavity": 17.1,
+        "teeth": 5.0,
+        "gum": 1.9,
+        "tongue": 8.5,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.0858,
+        -0.1305,
+        0.9382,
+        0.6581
+      ],
+      "frontPixelDeltaVsRest": 0.03092,
+      "regionPixelDeltaVsRest": 0.05512
+    },
+    {
+      "pose": "05_OH",
+      "jawDeg": 15.0,
+      "shapes": {
+        "mouth_funnel": 0.95,
+        "lip_protrude": 0.7,
+        "lip_corner_L_in": 0.85,
+        "lip_corner_R_in": 0.85,
+        "lip_lower_depress": 0.25
+      },
+      "tongueBones": {
+        "tongue_root": [
+          -6,
+          0,
+          0
+        ]
+      },
+      "lipGap": 0.08339,
+      "lipGapPercentOfHeadHeight": 9.89,
+      "rays": {
+        "skin": 951,
+        "cavity": 40,
+        "teeth": 45,
+        "gum": 15,
+        "tongue": 138,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 80.0,
+        "cavity": 3.4,
+        "teeth": 3.8,
+        "gum": 1.3,
+        "tongue": 11.6,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.0857,
+        -0.1118,
+        0.9372,
+        0.6573
+      ],
+      "frontPixelDeltaVsRest": 0.0251,
+      "regionPixelDeltaVsRest": 0.04487
+    },
+    {
+      "pose": "06_EE",
+      "jawDeg": 6.0,
+      "shapes": {
+        "lip_corner_L_wide": 1.0,
+        "lip_corner_R_wide": 1.0,
+        "lip_upper_raise": 0.35,
+        "lip_lower_depress": 0.18
+      },
+      "tongueBones": {
+        "tongue_mid": [
+          10,
+          0,
+          0
+        ],
+        "tongue_tip": [
+          8,
+          0,
+          0
+        ]
+      },
+      "lipGap": 0.0359,
+      "lipGapPercentOfHeadHeight": 4.26,
+      "rays": {
+        "skin": 1076,
+        "cavity": 50,
+        "teeth": 11,
+        "gum": 1,
+        "tongue": 51,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 90.5,
+        "cavity": 4.2,
+        "teeth": 0.9,
+        "gum": 0.1,
+        "tongue": 4.3,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.0879,
+        -0.0826,
+        0.9252,
+        0.636
+      ],
+      "frontPixelDeltaVsRest": 0.01672,
+      "regionPixelDeltaVsRest": 0.03142
+    },
+    {
+      "pose": "07_MM",
+      "jawDeg": 0.0,
+      "shapes": {
+        "lip_seal": 1.0,
+        "lip_compress": 0.65
+      },
+      "tongueBones": {},
+      "lipGap": 0.0,
+      "lipGapPercentOfHeadHeight": 0.0,
+      "rays": {
+        "skin": 1189,
+        "cavity": 0,
+        "teeth": 0,
+        "gum": 0,
+        "tongue": 0,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 100.0,
+        "cavity": 0.0,
+        "teeth": 0.0,
+        "gum": 0.0,
+        "tongue": 0.0,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.2448,
+        0.1201,
+        0.6298,
+        0.3442
+      ],
+      "frontPixelDeltaVsRest": 0.00267,
+      "regionPixelDeltaVsRest": 0.03088
+    },
+    {
+      "pose": "08_FF",
+      "jawDeg": 5.0,
+      "shapes": {
+        "lip_lower_curl": 0.95,
+        "lip_upper_raise": 0.25,
+        "lip_corner_L_wide": 0.3,
+        "lip_corner_R_wide": 0.3
+      },
+      "tongueBones": {},
+      "lipGap": 0.0278,
+      "lipGapPercentOfHeadHeight": 3.3,
+      "rays": {
+        "skin": 1095,
+        "cavity": 42,
+        "teeth": 16,
+        "gum": 1,
+        "tongue": 35,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 92.1,
+        "cavity": 3.5,
+        "teeth": 1.3,
+        "gum": 0.1,
+        "tongue": 2.9,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.0878,
+        -0.0786,
+        0.9252,
+        0.6254
+      ],
+      "frontPixelDeltaVsRest": 0.01502,
+      "regionPixelDeltaVsRest": 0.02871
+    },
+    {
+      "pose": "09_BLINK",
+      "jawDeg": 0.0,
+      "shapes": {
+        "blink_L": 1.0,
+        "blink_R": 1.0
+      },
+      "tongueBones": {},
+      "lipGap": 0.0,
+      "lipGapPercentOfHeadHeight": 0.0,
+      "rays": {
+        "skin": 1186,
+        "cavity": 1,
+        "teeth": 1,
+        "gum": 0,
+        "tongue": 1,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 99.7,
+        "cavity": 0.1,
+        "teeth": 0.1,
+        "gum": 0.0,
+        "tongue": 0.1,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.1993,
+        0.4121,
+        0.7056,
+        0.5969
+      ],
+      "frontPixelDeltaVsRest": 0.00175,
+      "regionPixelDeltaVsRest": 0.01814
+    },
+    {
+      "pose": "10_SMILE",
+      "jawDeg": 4.0,
+      "shapes": {
+        "lip_corner_L_up": 1.0,
+        "lip_corner_R_up": 1.0,
+        "lip_corner_L_wide": 0.65,
+        "lip_corner_R_wide": 0.65,
+        "cheek_puff_L": 0.25,
+        "cheek_puff_R": 0.25,
+        "squint_L": 0.35,
+        "squint_R": 0.35
+      },
+      "tongueBones": {},
+      "lipGap": 0.01969,
+      "lipGapPercentOfHeadHeight": 2.34,
+      "rays": {
+        "skin": 1116,
+        "cavity": 27,
+        "teeth": 10,
+        "gum": 0,
+        "tongue": 36,
+        "eye": 0,
+        "miss": 0,
+        "total": 1189
+      },
+      "visible": {
+        "skin": 93.9,
+        "cavity": 2.3,
+        "teeth": 0.8,
+        "gum": 0.0,
+        "tongue": 3.0,
+        "eye": 0.0
+      },
+      "movedRegion": [
+        0.0877,
+        -0.0743,
+        0.9252,
+        0.616
+      ],
+      "frontPixelDeltaVsRest": 0.01378,
+      "regionPixelDeltaVsRest": 0.02668
+    }
+  ],
+  "checks": [
+    {
+      "check": "REST reads as a closed mouth",
+      "pass": true,
+      "detail": "cavity 0.1% + tongue 0.1% of the mouth area"
+    },
+    {
+      "check": "REST shows at most a hint of upper teeth",
+      "pass": true,
+      "detail": "teeth 0.1%"
+    },
+    {
+      "check": "OPEN parts the lips",
+      "pass": true,
+      "detail": "gap 10.71% of head height vs 0.00% at rest"
+    },
+    {
+      "check": "WIDE shows real teeth",
+      "pass": true,
+      "detail": "teeth 6.3%"
+    },
+    {
+      "check": "WIDE shows the tongue",
+      "pass": true,
+      "detail": "tongue 11.2%"
+    },
+    {
+      "check": "WIDE shows cavity behind them",
+      "pass": true,
+      "detail": "cavity 18.1%"
+    },
+    {
+      "check": "OH and EE are different mouths",
+      "pass": true,
+      "detail": "OH gap 0.0834 vs EE gap 0.0359"
+    },
+    {
+      "check": "MM closes the mouth",
+      "pass": true,
+      "detail": "cavity 0.0%"
+    }
+  ],
+  "verified": true,
+  "method": "grid of rays fired at the mouth, classified by the MATERIAL each one lands on; renders from a full-head camera and a mouth camera per pose"
+}

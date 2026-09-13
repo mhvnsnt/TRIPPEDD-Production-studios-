@@ -1,0 +1,26 @@
+{
+  "artifact": "docs/evidence/mars/mouth/AB_shipped_vs_recarved.v001.png",
+  "sha256": "0b60e2b3f886867fd06885eb716cebe837c649a0a3ea4bde0815379fc31ccc8c",
+  "bytes": 969345,
+  "resolution": [
+    1162,
+    946
+  ],
+  "set": "mars/mouth",
+  "label": "AB_shipped_vs_recarved",
+  "version": 1,
+  "producedAt": "2026-09-13T23:34:30Z",
+  "producingTool": "tools/character/predict_carve.py",
+  "producingCommit": "fe8b298c20a41f244835ab7ae7e862ea327f4ae4",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "",
+  "camera": "",
+  "viewTransform": "",
+  "shown": [],
+  "hidden": [],
+  "status": "FAIL",
+  "note": "REST: the re-carve closes the corner gap the shipped rig shows -- his stated complaint, fixed. WIDE: the opening now follows his lip line and the crowns read individually, but the RIM IS WORSE -- pale triangular shards all round it and a large wedge at the lower left, where the shipped rectangular slot cuts clean. VISUAL_FAIL on WIDE. The physical gate is 8/8 and the crater is 44 -> 4 cells; the pixels still veto promotion (OWNER LAW #10).",
+  "measurements": {},
+  "sourceArtifact": "renders/_recarve/MARS_FACE_CANDIDATE.blend",
+  "sourceSha256": "5317db4586d9c63e6c6bd88b37a44dbbb0118651ee0021ca8f4ab4adfa461930"
+}

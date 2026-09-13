@@ -1,0 +1,1003 @@
+{
+  "set": "mouth_candidate",
+  "publishedBy": "tools/publish_evidence.py",
+  "retrieve": "docs/evidence/mouth_candidate/<frame>  (committed; also listed in README.md)",
+  "runId": "local",
+  "sourceAsset": {
+    "assetId": "MARS_HEAD_SOURCE",
+    "character": "MARS",
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+  },
+  "qc": {
+    "physical": {
+      "verified": true,
+      "checks": [
+        {
+          "check": "REST reads as a closed mouth",
+          "pass": true,
+          "detail": "cavity 0.1% + tongue 0.1% of the mouth area"
+        },
+        {
+          "check": "REST shows at most a hint of upper teeth",
+          "pass": true,
+          "detail": "teeth 0.1%"
+        },
+        {
+          "check": "OPEN parts the lips",
+          "pass": true,
+          "detail": "gap 10.71% of head height vs 0.00% at rest"
+        },
+        {
+          "check": "WIDE shows real teeth",
+          "pass": true,
+          "detail": "teeth 6.3%"
+        },
+        {
+          "check": "WIDE shows the tongue",
+          "pass": true,
+          "detail": "tongue 11.2%"
+        },
+        {
+          "check": "WIDE shows cavity behind them",
+          "pass": true,
+          "detail": "cavity 18.1%"
+        },
+        {
+          "check": "OH and EE are different mouths",
+          "pass": true,
+          "detail": "OH gap 0.0834 vs EE gap 0.0359"
+        },
+        {
+          "check": "MM closes the mouth",
+          "pass": true,
+          "detail": "cavity 0.0%"
+        }
+      ],
+      "engine": "BLENDER_EEVEE_NEXT",
+      "samples": 32
+    },
+    "visual": {
+      "verdict": "PENDING",
+      "reviewer": "",
+      "notes": "",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "PHYSICAL_PASS_VISUAL_PENDING"
+  },
+  "frames": [
+    {
+      "frame": "01_REST_front.png",
+      "publishedSha256": "db47f41973076ebe992f670671fe0c71c1696c581a00fd5326af197294dcb4a0",
+      "repoPath": "docs/evidence/mouth_candidate/01_REST_front.png",
+      "productionPath": "renders/_recarve/proof/01_REST_front.png",
+      "sha256": "c549dd31a31749869040b93ff40a0449225f4c50ea26706f130099b32b30f2de",
+      "sourceSha8": "c549dd31",
+      "bytes": 902079,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "01_REST",
+      "camera": "front",
+      "aliases": [
+        "01_REST_front",
+        "rest_front",
+        "01_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "01_REST_mouth.png",
+      "publishedSha256": "998d5c604a315eea83b7c69c1ee16bcfb272dda5178746b9f5f85e6150d1fcb2",
+      "repoPath": "docs/evidence/mouth_candidate/01_REST_mouth.png",
+      "productionPath": "renders/_recarve/proof/01_REST_mouth.png",
+      "sha256": "5f42c9aabfc8cc32e9fee1b2c6929e0892a3e73acc5c6375a9986fff62ec8578",
+      "sourceSha8": "5f42c9aa",
+      "bytes": 847041,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "01_REST",
+      "camera": "mouth",
+      "aliases": [
+        "01_REST_mouth",
+        "rest_mouth",
+        "01_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "01_REST_profile.png",
+      "publishedSha256": "2f48c72877835be0123320a2b6ffb99cc163935cb0c5fd4f7970e8bcf9e9d11c",
+      "repoPath": "docs/evidence/mouth_candidate/01_REST_profile.png",
+      "productionPath": "renders/_recarve/proof/01_REST_profile.png",
+      "sha256": "720acdfdd99d1bc545f0c9d4ee9ad16b760a7631fbcbbbb5f43332c72c8b0640",
+      "sourceSha8": "720acdfd",
+      "bytes": 884158,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "01_REST",
+      "camera": "profile",
+      "aliases": [
+        "01_REST_profile",
+        "rest_profile",
+        "01_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "02_OPEN_front.png",
+      "publishedSha256": "4cc6687ae7eb9c69fb7077d29382b065c13f925ee9686a0ad6a192b997111101",
+      "repoPath": "docs/evidence/mouth_candidate/02_OPEN_front.png",
+      "productionPath": "renders/_recarve/proof/02_OPEN_front.png",
+      "sha256": "88e0e3c9043efcb2d8a772ed2257a3a6ef1e1a4018fa6881ef47fdaef0567845",
+      "sourceSha8": "88e0e3c9",
+      "bytes": 917249,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "02_OPEN",
+      "camera": "front",
+      "aliases": [
+        "02_OPEN_front",
+        "open_front",
+        "02_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "02_OPEN_mouth.png",
+      "publishedSha256": "ddabf7d3eb005b01612cf981661037044d74af20a1551969210950d75e3982de",
+      "repoPath": "docs/evidence/mouth_candidate/02_OPEN_mouth.png",
+      "productionPath": "renders/_recarve/proof/02_OPEN_mouth.png",
+      "sha256": "cd09d6bd5300175f4b8d4a10f43d03f270f28c9577c3cad47b816052492e4578",
+      "sourceSha8": "cd09d6bd",
+      "bytes": 889773,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "02_OPEN",
+      "camera": "mouth",
+      "aliases": [
+        "02_OPEN_mouth",
+        "open_mouth",
+        "02_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "02_OPEN_profile.png",
+      "publishedSha256": "2c3080d646831b79066f95c84ac8cb92543759786aebf64e7d1ea55a01a6a93f",
+      "repoPath": "docs/evidence/mouth_candidate/02_OPEN_profile.png",
+      "productionPath": "renders/_recarve/proof/02_OPEN_profile.png",
+      "sha256": "1ce867a9cd12b38ddefe5f0b1afad3583082fb87c26fc328278bdc534abd4e28",
+      "sourceSha8": "1ce867a9",
+      "bytes": 886449,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "02_OPEN",
+      "camera": "profile",
+      "aliases": [
+        "02_OPEN_profile",
+        "open_profile",
+        "02_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "03_WIDE_front.png",
+      "publishedSha256": "2973fb785cd12eecfa8a79cd0522273957fb216de662c0803165b0f2e6eba0de",
+      "repoPath": "docs/evidence/mouth_candidate/03_WIDE_front.png",
+      "productionPath": "renders/_recarve/proof/03_WIDE_front.png",
+      "sha256": "72c9def40aaec300e5bcabac8c70f3494f583a40161bd67f22358c88a068a086",
+      "sourceSha8": "72c9def4",
+      "bytes": 925730,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "03_WIDE",
+      "camera": "front",
+      "aliases": [
+        "03_WIDE_front",
+        "wide_front",
+        "03_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "03_WIDE_mouth.png",
+      "publishedSha256": "ed0b02c73bc6517ea17760f1770f7a3eb6f60de8931e736640026434053c9e0e",
+      "repoPath": "docs/evidence/mouth_candidate/03_WIDE_mouth.png",
+      "productionPath": "renders/_recarve/proof/03_WIDE_mouth.png",
+      "sha256": "ea391ff588bdc0175155b779dcc56501ea37e77e511eba8ce2feeb9222b1cb4d",
+      "sourceSha8": "ea391ff5",
+      "bytes": 902880,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "03_WIDE",
+      "camera": "mouth",
+      "aliases": [
+        "03_WIDE_mouth",
+        "wide_mouth",
+        "03_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "03_WIDE_profile.png",
+      "publishedSha256": "75181ef425df0340c7f8138a33802a2c284f7eda9d206d285a199f69c34efed6",
+      "repoPath": "docs/evidence/mouth_candidate/03_WIDE_profile.png",
+      "productionPath": "renders/_recarve/proof/03_WIDE_profile.png",
+      "sha256": "0d7ccc5cdce6ec5e17b273df4418694c239a0a527808150ac77e8dd15ca13ffa",
+      "sourceSha8": "0d7ccc5c",
+      "bytes": 889055,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "03_WIDE",
+      "camera": "profile",
+      "aliases": [
+        "03_WIDE_profile",
+        "wide_profile",
+        "03_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "04_AA_front.png",
+      "publishedSha256": "36e22a34e96b76d6763de111a370d54c628012eacad550928f5c608ae8590d61",
+      "repoPath": "docs/evidence/mouth_candidate/04_AA_front.png",
+      "productionPath": "renders/_recarve/proof/04_AA_front.png",
+      "sha256": "a788acf96855ae09e7020546b3c4d2678d8d9aa2bea2810457867f4384f237a2",
+      "sourceSha8": "a788acf9",
+      "bytes": 921346,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "04_AA",
+      "camera": "front",
+      "aliases": [
+        "04_AA_front",
+        "aa_front",
+        "04_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "04_AA_mouth.png",
+      "publishedSha256": "e4d8b37e7778272769ba5d0b3761dccde244b9e9c52f746d20602565fe714775",
+      "repoPath": "docs/evidence/mouth_candidate/04_AA_mouth.png",
+      "productionPath": "renders/_recarve/proof/04_AA_mouth.png",
+      "sha256": "342759518b16a941c89cf8e1b33488c0f28d2feab0f54e8ff41ce3b5118950f7",
+      "sourceSha8": "34275951",
+      "bytes": 896783,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "04_AA",
+      "camera": "mouth",
+      "aliases": [
+        "04_AA_mouth",
+        "aa_mouth",
+        "04_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "04_AA_profile.png",
+      "publishedSha256": "7f056272759b967004347f460c2f4fe59b73448de8dadf70e629b307125ed3c5",
+      "repoPath": "docs/evidence/mouth_candidate/04_AA_profile.png",
+      "productionPath": "renders/_recarve/proof/04_AA_profile.png",
+      "sha256": "bf3b9ef3e68c028d78fc95c8f8ad852d1e29b000f2abe6cf0b6ba6e00aea3df8",
+      "sourceSha8": "bf3b9ef3",
+      "bytes": 887841,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "04_AA",
+      "camera": "profile",
+      "aliases": [
+        "04_AA_profile",
+        "aa_profile",
+        "04_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "05_OH_front.png",
+      "publishedSha256": "6449966524233fe38826ceb8be55bda0c9e7450ec3363750cae929169d615f71",
+      "repoPath": "docs/evidence/mouth_candidate/05_OH_front.png",
+      "productionPath": "renders/_recarve/proof/05_OH_front.png",
+      "sha256": "471409236582892cedd8f2633278dc7ba99ac07b983c079e738d3e2a14061885",
+      "sourceSha8": "47140923",
+      "bytes": 915666,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "05_OH",
+      "camera": "front",
+      "aliases": [
+        "05_OH_front",
+        "oh_front",
+        "05_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "05_OH_mouth.png",
+      "publishedSha256": "61117423dff07177c6c9ed06c83b8c729ac4b692fc6a329a4f801e6ff7b96e5f",
+      "repoPath": "docs/evidence/mouth_candidate/05_OH_mouth.png",
+      "productionPath": "renders/_recarve/proof/05_OH_mouth.png",
+      "sha256": "a27910bee5e1ce13cb8e14965f3691a9d99ed1544fa8dd305ec9abc422ebf703",
+      "sourceSha8": "a27910be",
+      "bytes": 886064,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "05_OH",
+      "camera": "mouth",
+      "aliases": [
+        "05_OH_mouth",
+        "oh_mouth",
+        "05_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "05_OH_profile.png",
+      "publishedSha256": "ba5ee3c2ce85046f0ae47b2a15fb813ab11014323f181a86cff3ff1311486030",
+      "repoPath": "docs/evidence/mouth_candidate/05_OH_profile.png",
+      "productionPath": "renders/_recarve/proof/05_OH_profile.png",
+      "sha256": "dfe30e524c23c70a78c5db3c3b7871f866eb8ce17f65ff676b50e091f56af587",
+      "sourceSha8": "dfe30e52",
+      "bytes": 888117,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "05_OH",
+      "camera": "profile",
+      "aliases": [
+        "05_OH_profile",
+        "oh_profile",
+        "05_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "06_EE_front.png",
+      "publishedSha256": "0f92a7f70be8643909dab887b3d8ae97c42f529e8b711627041b04a9f13aac36",
+      "repoPath": "docs/evidence/mouth_candidate/06_EE_front.png",
+      "productionPath": "renders/_recarve/proof/06_EE_front.png",
+      "sha256": "06dcce0487e7207e0ff292e47805e19d8f31a3b3966c6f7afd3035717b5a8f65",
+      "sourceSha8": "06dcce04",
+      "bytes": 908451,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "06_EE",
+      "camera": "front",
+      "aliases": [
+        "06_EE_front",
+        "ee_front",
+        "06_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "06_EE_mouth.png",
+      "publishedSha256": "c5ad0c3dd1da5794fd3ce53e63961a1970868c8b7d3ea2ea4e61cab2cf6789fc",
+      "repoPath": "docs/evidence/mouth_candidate/06_EE_mouth.png",
+      "productionPath": "renders/_recarve/proof/06_EE_mouth.png",
+      "sha256": "88933305679e05a9f53e91853e6fe831472ca2878b400da317890c9a7f6ae11e",
+      "sourceSha8": "88933305",
+      "bytes": 868164,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "06_EE",
+      "camera": "mouth",
+      "aliases": [
+        "06_EE_mouth",
+        "ee_mouth",
+        "06_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "06_EE_profile.png",
+      "publishedSha256": "b944d5b716aa54d4374e666869a653f28510654a73fe280f9329e9cbac851e76",
+      "repoPath": "docs/evidence/mouth_candidate/06_EE_profile.png",
+      "productionPath": "renders/_recarve/proof/06_EE_profile.png",
+      "sha256": "f94e684b4367c7e621e1c0c2c7efb96dff08ae2b9d7ab5cdf97abf6a7f491dc8",
+      "sourceSha8": "f94e684b",
+      "bytes": 884313,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "06_EE",
+      "camera": "profile",
+      "aliases": [
+        "06_EE_profile",
+        "ee_profile",
+        "06_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "07_MM_front.png",
+      "publishedSha256": "77b776ec8d058449b06742746131bb8db39e7e1a53eb6d82c98f892445fdd991",
+      "repoPath": "docs/evidence/mouth_candidate/07_MM_front.png",
+      "productionPath": "renders/_recarve/proof/07_MM_front.png",
+      "sha256": "bff31ff60fbe63a81dc6139c1133de2868f665758b52d00436a0f7641321b6df",
+      "sourceSha8": "bff31ff6",
+      "bytes": 899229,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "07_MM",
+      "camera": "front",
+      "aliases": [
+        "07_MM_front",
+        "mm_front",
+        "07_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "07_MM_mouth.png",
+      "publishedSha256": "84ee591a659bfc76943a3e3b690f365deafc8f6fcc57a0a4c18356fa686a606b",
+      "repoPath": "docs/evidence/mouth_candidate/07_MM_mouth.png",
+      "productionPath": "renders/_recarve/proof/07_MM_mouth.png",
+      "sha256": "1ed146aedc0de55dd32bc8d2145d04d4ee2f975c7f8275d2f651a3e2072fbae1",
+      "sourceSha8": "1ed146ae",
+      "bytes": 842296,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "07_MM",
+      "camera": "mouth",
+      "aliases": [
+        "07_MM_mouth",
+        "mm_mouth",
+        "07_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "07_MM_profile.png",
+      "publishedSha256": "c14109d3fd01e35e0110039a0d6f8169fd5d9a8db1ec6f38baa9c91bd697660b",
+      "repoPath": "docs/evidence/mouth_candidate/07_MM_profile.png",
+      "productionPath": "renders/_recarve/proof/07_MM_profile.png",
+      "sha256": "e045ebe984c0fe32596571d29607c517beee886bfbcea1376fd8c719a49a30cc",
+      "sourceSha8": "e045ebe9",
+      "bytes": 883983,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "07_MM",
+      "camera": "profile",
+      "aliases": [
+        "07_MM_profile",
+        "mm_profile",
+        "07_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "08_FF_front.png",
+      "publishedSha256": "a4b39522a3f248508e4734a98389fc3adea5bbc2d796c996c499bb321174fefa",
+      "repoPath": "docs/evidence/mouth_candidate/08_FF_front.png",
+      "productionPath": "renders/_recarve/proof/08_FF_front.png",
+      "sha256": "75773ec6d6d7c1a7d609f46ad36b6a744fe24e26b5ff465de533e82d3f1c1f68",
+      "sourceSha8": "75773ec6",
+      "bytes": 906977,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "08_FF",
+      "camera": "front",
+      "aliases": [
+        "08_FF_front",
+        "ff_front",
+        "08_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "08_FF_mouth.png",
+      "publishedSha256": "9a88d77bacad9fc9cca684f2e9a97fb5849b602ff60317acc7a921d18ea2ec95",
+      "repoPath": "docs/evidence/mouth_candidate/08_FF_mouth.png",
+      "productionPath": "renders/_recarve/proof/08_FF_mouth.png",
+      "sha256": "1ae03eeb0ba2feca0459decf7357677195fa437170307a9a8ac6fcb718513579",
+      "sourceSha8": "1ae03eeb",
+      "bytes": 864480,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "08_FF",
+      "camera": "mouth",
+      "aliases": [
+        "08_FF_mouth",
+        "ff_mouth",
+        "08_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "08_FF_profile.png",
+      "publishedSha256": "89210a13fd18b77115897eed0806faa8db9a6eca610516c6ade26030be67f83b",
+      "repoPath": "docs/evidence/mouth_candidate/08_FF_profile.png",
+      "productionPath": "renders/_recarve/proof/08_FF_profile.png",
+      "sha256": "ab8e4f2189ad0c43f886979d22b814056803ae0343a272cd043cff3cb73997d6",
+      "sourceSha8": "ab8e4f21",
+      "bytes": 883809,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "08_FF",
+      "camera": "profile",
+      "aliases": [
+        "08_FF_profile",
+        "ff_profile",
+        "08_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "09_BLINK_front.png",
+      "publishedSha256": "d25445d155b9ba6a6517300c24c2ed54949ddd43cd1c60455bd39843606dd3e5",
+      "repoPath": "docs/evidence/mouth_candidate/09_BLINK_front.png",
+      "productionPath": "renders/_recarve/proof/09_BLINK_front.png",
+      "sha256": "1ad25169f127c73f93e83aeff6f02a73a80a3553258fad0970841f846f700521",
+      "sourceSha8": "1ad25169",
+      "bytes": 901307,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "09_BLINK",
+      "camera": "front",
+      "aliases": [
+        "09_BLINK_front",
+        "blink_front",
+        "09_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "09_BLINK_mouth.png",
+      "publishedSha256": "44e267c3fb382222cc6476c2c5dbfbf05f081699b815871026068093bbd5e17d",
+      "repoPath": "docs/evidence/mouth_candidate/09_BLINK_mouth.png",
+      "productionPath": "renders/_recarve/proof/09_BLINK_mouth.png",
+      "sha256": "3b6004952ce1affc09f614cfeab0bbcd5b235cd91e72db072e9d5aed18a2c1e9",
+      "sourceSha8": "3b600495",
+      "bytes": 846324,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "09_BLINK",
+      "camera": "mouth",
+      "aliases": [
+        "09_BLINK_mouth",
+        "blink_mouth",
+        "09_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "09_BLINK_profile.png",
+      "publishedSha256": "30126f297d18d2847f98a022b27c6cc4f66391e8ca29008cba1a3faec12f3249",
+      "repoPath": "docs/evidence/mouth_candidate/09_BLINK_profile.png",
+      "productionPath": "renders/_recarve/proof/09_BLINK_profile.png",
+      "sha256": "7249c490cfd8af5222b03e544a98da6761c6bca11d1abfff22c1cd9e1aa48b04",
+      "sourceSha8": "7249c490",
+      "bytes": 884343,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "09_BLINK",
+      "camera": "profile",
+      "aliases": [
+        "09_BLINK_profile",
+        "blink_profile",
+        "09_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "10_SMILE_front.png",
+      "publishedSha256": "ee9aa6a4604a7ac0571299adb11278ca853cba33be43bec5b1548bac775d0797",
+      "repoPath": "docs/evidence/mouth_candidate/10_SMILE_front.png",
+      "productionPath": "renders/_recarve/proof/10_SMILE_front.png",
+      "sha256": "0049f5400c475c852e1fae2177e06c2cf849986f171f30ec151efd2a324c8848",
+      "sourceSha8": "0049f540",
+      "bytes": 906471,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "10_SMILE",
+      "camera": "front",
+      "aliases": [
+        "10_SMILE_front",
+        "smile_front",
+        "10_front"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "10_SMILE_mouth.png",
+      "publishedSha256": "1f2c06f9da18dcb60491ab481bd7abf9adea30126299eff9ac13efff6299d688",
+      "repoPath": "docs/evidence/mouth_candidate/10_SMILE_mouth.png",
+      "productionPath": "renders/_recarve/proof/10_SMILE_mouth.png",
+      "sha256": "423150d2e712d64cc631fb12b0db8ea4bf7a2c247ae9d4beec62f814ca250c9f",
+      "sourceSha8": "423150d2",
+      "bytes": 862278,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "10_SMILE",
+      "camera": "mouth",
+      "aliases": [
+        "10_SMILE_mouth",
+        "smile_mouth",
+        "10_mouth"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "10_SMILE_profile.png",
+      "publishedSha256": "660ea33c597b5eb75d0b75d3dc39fe5f947fcc02c1901fe254730f9bb81d2c58",
+      "repoPath": "docs/evidence/mouth_candidate/10_SMILE_profile.png",
+      "productionPath": "renders/_recarve/proof/10_SMILE_profile.png",
+      "sha256": "d940e90ff6b5a67ff82e5dd024dcfea672fd082b79847e0feff6cf1f7cd7951d",
+      "sourceSha8": "d940e90f",
+      "bytes": 884023,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "10_SMILE",
+      "camera": "profile",
+      "aliases": [
+        "10_SMILE_profile",
+        "smile_profile",
+        "10_profile"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    }
+  ],
+  "measurements": [
+    "mouth_proof.json"
+  ]
+}

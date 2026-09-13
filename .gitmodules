@@ -1,0 +1,24 @@
+[submodule "third_party/oss/blender-addons"]
+	path = third_party/oss/blender-addons
+	url = https://github.com/blender/blender-addons.git
+[submodule "third_party/oss/facial-animation"]
+	path = third_party/oss/facial-animation
+	url = https://github.com/mdj128/facial-animation.git
+[submodule "third_party/oss/open-mocap-blender"]
+	path = third_party/oss/open-mocap-blender
+	url = https://github.com/Larenju-Rai/open-mocap-blender.git
+[submodule "third_party/oss/BlenRig"]
+	path = third_party/oss/BlenRig
+	url = https://github.com/jpbouza/BlenRig.git
+[submodule "third_party/oss/FacialAutoRigger"]
+	path = third_party/oss/FacialAutoRigger
+	url = https://github.com/joeedh/FacialAutoRigger.git
+[submodule "third_party/oss/ARKit-Creator-Blender-Addon"]
+	path = third_party/oss/ARKit-Creator-Blender-Addon
+	url = https://github.com/tsikerdekis/ARKit-Creator-Blender-Addon.git
+[submodule "third_party/oss/BlendCap"]
+	path = third_party/oss/BlendCap
+	url = https://github.com/Arcomade/BlendCap.git
+[submodule "third_party/oss/mcp-blender"]
+	path = third_party/oss/mcp-blender
+	url = https://github.com/RFingAdam/mcp-blender.git

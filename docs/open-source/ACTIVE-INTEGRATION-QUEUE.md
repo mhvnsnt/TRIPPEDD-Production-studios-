@@ -92,6 +92,16 @@ Repository: https://github.com/kyjohnso/skysplat_blender
 
 Whole repository pinned under `third_party/oss/SkySplat-Blender` at `982ca46a3d16e96aa3b76abff1d3e4852b645483` (MIT). Blender-side 3DGS/video/camera workflow. REVIEW_REQUIRED until its external COLMAP and Brush dependencies are independently audited.
 
+### Nerfstudio
+Repository: https://github.com/nerfstudio-project/nerfstudio
+
+Whole repository pinned under `third_party/oss/nerfstudio` at `50e0e3c70c775e89333256213363badbf074f29d` (Apache-2.0). This is the higher-level neural-rendering/reconstruction lane above the lower-level gsplat runtime: dataset ingestion, camera data, NeRF/3DGS workflows, training and rendering. Keep it derivative of measured source imagery and camera metadata; it does not become MARS geometry authority.
+
+### SuperSplat
+Repository: https://github.com/playcanvas/supersplat
+
+Whole repository pinned under `third_party/oss/SuperSplat` at `0911f786db652a7700068fe6ccdfe32e24269e1d` (MIT). Full browser-based Gaussian splat inspection/editing/optimization/publishing tool. Use it as a human/agent review lane for splat cleanup and export, never as the canonical character mesh.
+
 ### Gaussian world handoff
 `tools/world/gaussian_world_contract.json` is the interchange/evidence contract. The support lane owns upstream pinning, hashes, coordinate/scale/camera metadata, deterministic orchestration and QC receipts. Claude/Jules own the visual/surgical Blender work and actual-pixel review. Gaussian environments remain derivative data; they cannot mutate canonical MARS geometry.
 
@@ -106,6 +116,11 @@ Repository: https://github.com/alicevision/Meshroom
 
 Whole repository pinned under `third_party/oss/Meshroom` at `ca1a2e435b851cb3149d16ea3be2253afb77d11c` (MPL-2.0). Use as the photogrammetry/structure-from-motion/camera-reconstruction lane before Gaussian training when camera poses and sparse geometry need a reproducible node graph. It is a reconstruction source, not character authority.
 
+### AliceVision
+Repository: https://github.com/alicevision/AliceVision
+
+Whole repository pinned under `third_party/oss/AliceVision` at `8e4f0be76b250f0dd04b11d2a9a457d59d71b42c` (MPL-2.0). This is the complete computer-vision backend behind the Meshroom class of workflows: feature matching, structure-from-motion, multiview geometry and camera tracking. Keeping the backend itself pinned prevents the reconstruction lane from becoming a black-box binary dependency.
+
 ### ArmorPaint
 Repository: https://github.com/armory3d/armorpaint
 
@@ -115,6 +130,18 @@ Whole repository pinned under `third_party/oss/ArmorPaint` at `c2cbe095a3d7f7bb6
 Repository: https://github.com/armory3d/armorpaint_blender
 
 Whole repository pinned under `third_party/oss/ArmorPaint-Blender` at `d913e3268be47dd9499ad3f13d3866f392eafc9d` (GPL-3.0). Use as the Blender round-trip adapter/reference for PBR textures; outputs remain subject to the mesh/material preservation and actual-pixel gates.
+
+## P0 — compositing / vegetation
+
+### Natron
+Repository: https://github.com/NatronGitHub/Natron
+
+Whole repository pinned under `third_party/oss/Natron` at `3763d805d7d277d10af10025ae41af677682b3e6` (GPL-2.0). Use for node-based compositing, roto, keying, tracking, color work and OpenFX after Blender renders. It is an offline production lane, not a replacement for the repo's production runtime.
+
+### Easy-Tree
+Repository: https://github.com/jacobcjohnston/Easy-Tree
+
+Whole repository pinned under `third_party/oss/Easy-Tree` at `ff95ef5ab04358978b8d0863c1c2256951359fc0` (GPL-3.0). Use for procedural trees/vegetation and Geometry Nodes wind/variation. Generated vegetation remains scene data subject to camera, scale and visual evidence gates.
 
 ## P0 — visual production / evidence
 

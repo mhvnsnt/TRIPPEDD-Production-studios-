@@ -1,0 +1,23 @@
+{
+  "$schema": "trippedd.mars-face-completion/v1",
+  "source": "assets/source_models/MARS_source.glb",
+  "sourceImmutable": true,
+  "authority": "assets/rigs/MARS_linework_authority.json",
+  "preserveIfPassing": [
+    "eyes_blink",
+    "mouth_oral",
+    "nostrils_nose"
+  ],
+  "lanes": {
+    "eyes_blink": {"status": "LOCKED_UNLESS_REGRESSION", "authority": "owner_drawn_eyelid_linework"},
+    "nostrils_nose": {"status": "LOCKED_UNLESS_REGRESSION", "authority": "owner_drawn_nostril_rims", "depth": "MEASURED_OR_UNKNOWN"},
+    "mouth_oral": {"status": "LOCKED_UNLESS_REGRESSION", "authority": "existing_oral_measurements_and_linework"},
+    "ears": {"status": "BUILD", "authority": "measured_source_geometry", "controls": ["ear_left", "ear_right", "ear_upper", "ear_mid", "ear_lobe", "ear_fold"], "requirements": ["left_right_independent", "silhouette_proof", "front_three_quarter_side_proof"]},
+    "brows": {"status": "BUILD", "authority": "owner_drawn_brow_linework", "blinkInfluence": 0},
+    "hair": {"status": "BUILD", "authority": "measured_source_geometry", "simulation": "Blender_5.2_XPBD", "requirements": ["root_attachment", "pre_roll_equilibrium", "face_collision", "multi_view_motion_proof"]},
+    "face_tissue": {"status": "BUILD", "requirements": ["facs_controls", "small_local_correctives", "no_global_remesh"]}
+  },
+  "integrationOrder": ["preserve_locked_lanes", "ears", "brows", "face_tissue", "hair", "collision", "multi_state_proof"],
+  "regressionRule": "Any locked lane that changes without a measured improvement is FAIL.",
+  "unknownNeverPass": true
+}

@@ -82,3 +82,6 @@
 [submodule "third_party/oss/SuperSplat"]
 	path = third_party/oss/SuperSplat
 	url = https://github.com/playcanvas/supersplat.git
+[submodule "third_party/oss/OpenFaceFX"]
+	path = third_party/oss/OpenFaceFX
+	url = https://github.com/OpenFaceFX/OpenFaceFX.git

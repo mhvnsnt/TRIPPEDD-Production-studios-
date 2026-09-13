@@ -54,6 +54,11 @@ Repository: https://github.com/dshot92/mesh-analysis-overlay
 
 Pinned as a whole project. Observer/diagnostic only: topology, degenerate/non-manifold geometry, seams/boundaries and evaluated meshes. Never anatomical authority.
 
+### OpenFaceFX
+Repository: https://github.com/OpenFaceFX/OpenFaceFX
+
+Whole repository pinned under `third_party/oss/OpenFaceFX` at `7333dc2ffa844e8b3efdecdcfdc813162aea673a` (MIT). Use as the deterministic speech-to-animation lane: phoneme timing → viseme mapping → coarticulation → sparse facial curves, with SRT/WebVTT timing and Unreal animation-notify export. It is a driver, not anatomical authority: MARS owner linework and measured expression gates remain authoritative.
+
 ## P0 — physics / real-world material lanes
 
 ### Hair / cloth / soft tissue

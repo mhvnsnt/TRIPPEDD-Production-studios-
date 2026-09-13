@@ -6,12 +6,17 @@ pixel evidence disagree with geometry/raycast evidence. This tool is the
 single pre-survey gate: it records the original visibility state, explicitly
 restores render visibility for the oral anatomy, and writes a receipt.
 
+When ``--output-blend`` is supplied, the corrected render state is persisted
+into that copy of the .blend. This is mandatory for downstream survey/render
+processes: changing bpy state in one Blender process does not change the input
+blend opened by the next process.
+
 This does NOT alter geometry, materials, topology, animation, or the canonical
 MARS skin. It only makes the already-authoritative oral donor renderable.
 
 Blender:
   blender -b repaired.blend --python audit_mars_oral_render_visibility.py -- \
-    --output visibility.json
+    --output visibility.json --output-blend render_visible.blend
 """
 from __future__ import annotations
 
@@ -39,6 +44,7 @@ def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
     ap = argparse.ArgumentParser()
     ap.add_argument("--output", required=True)
+    ap.add_argument("--output-blend", default=None)
     return ap.parse_args(argv)
 
 
@@ -84,13 +90,23 @@ def main():
     if any(r["camera_visible_after"] is False for r in records):
         raise SystemExit("MARS_ORAL_VISIBILITY: FAIL — oral object remains camera-invisible")
 
+    output_blend = None
+    if args.output_blend:
+        output_blend = Path(args.output_blend)
+        output_blend.parent.mkdir(parents=True, exist_ok=True)
+        bpy.ops.wm.save_as_mainfile(filepath=str(output_blend))
+        if not output_blend.is_file() or output_blend.stat().st_size == 0:
+            raise SystemExit("MARS_ORAL_VISIBILITY: FAIL — corrected blend was not persisted")
+
     report = {
-        "schema": "god-molecule.mars-oral-render-visibility.v1",
+        "schema": "god-molecule.mars-oral-render-visibility.v2",
         "status": "PASS",
         "authority": "actual render visibility, not pseudonormal/raycast-only inference",
         "objects": records,
         "changed_objects": changed,
         "changed_count": len(changed),
+        "output_blend": str(output_blend) if output_blend else None,
+        "persisted": bool(output_blend),
         "law": "oral geometry must be render-visible before pixel truth is measured",
     }
     out = Path(args.output)

@@ -40,6 +40,54 @@ NORENDER= "--no-render" in argv
 RES     = int(opt("--res", "560"))
 YAW     = float(opt("--yaw-deg", "38"))
 QUALITY = int(opt("--quality", "6"))
+# OWNER'S OWN DESCRIPTION OF HIS HAIR, which is the specification (OWNER LAW #5):
+# "they're kinda thin dreads... light dreads, but they're heavy like dreads.
+#  They have some weight to them more than a strand of hair, but they can blow in
+#  the air like hair... they sway with the wind, and they move when I turn my head."
+# So: real weight, real sway, wind-responsive, and they SETTLE. The first pass was
+# too floppy -- locks standing out near-horizontal at the end of a 38 deg turn.
+MASS    = float(opt("--mass", "0.40"))
+BEND    = float(opt("--bend", "25"))     # dreads hold their form; hair does not
+AIR     = float(opt("--air", "3.2"))     # settles instead of flailing
+WIND    = float(opt("--wind", "0"))      # a real force field, off unless asked
+# COLLISION. The owner asked for it in these words: "so hair can't, like, face
+# through the face". Cloth with no collider passes straight through his cheek and
+# every motion number still reads healthy -- lag, sway, damping, all of it. It is
+# the same family as a severed rig scoring a perfect deformation result.
+NOCOLLIDE = "--no-collide" in argv
+SELFCOL   = "--no-self-collide" not in argv
+COL_TRIS  = int(opt("--collider-tris", "9000"))
+COL_THICK = float(opt("--collider-mm", "2.0"))   # his millimetres
+SELF_MM   = float(opt("--self-mm", "2.5"))
+CONTACT_OUT = opt("--contact-out", "")   # per-frame geometry for penetration_measure.py
+# GRAVITY WAS THE WRONG KNOB TO LEAVE ALONE. Stiffness 25->45 and mass 0.40->0.55
+# changed the settle number by 0.4% (69.24 -> 69.56 mm, both ending at 98% of
+# peak). That is not a flail that damping can fix: it is PERMANENT SAG. The locks
+# fall under full gravity and stay fallen, so displacement from frame 1 never
+# comes back however stiff they are.
+# His sculpted lock shape IS the rest shape, so gravity is scaled down until the
+# rest shape is the attractor and the motion is the head turn and the wind --
+# which is exactly what he described.
+GRAV    = float(opt("--gravity", "0.15"))
+# PRE-ROLL. Every parameter I tried ended the take at 97-98% of peak -- gravity
+# 0.0, 0.15 and 0.35, bending 25 and 45, mass 0.40 and 0.55. A number that
+# refuses to move is not a tuning problem. The displacement was growing
+# MONOTONICALLY because the sculpted lock shape is not the solver's equilibrium:
+# the cloth relaxes into its own rest state over the take, and measuring from
+# frame 1 counts that relaxation as motion for ever.
+# So the sim is settled FIRST, with the head held still, and the take is measured
+# from the settled state. This is ordinary cloth practice and it is also the
+# honest reference: "did the hair come back" only means something relative to
+# where the hair actually rests.
+PRE     = int(opt("--preroll", "30"))
+# STRETCH RESISTANCE. Plotting the curve instead of reading its max showed the
+# secondary motion was a MONOTONIC RAMP: the head oscillated 0->131->11->132->2 mm
+# while "secondary" climbed steadily 0->15.34 with only a small ripple on top.
+# That is CREEP, not sway -- the cloth slowly stretching under load -- and it
+# means every hair number reported before this was dominated by drift.
+# Hair does not stretch. Tension/compression/shear go up by more than an order of
+# magnitude and the solver gets more substeps.
+STRETCH = float(opt("--stretch", "400"))
 OUT = os.path.join(ROOT, "docs", "evidence", "hair_motion")
 os.makedirs(OUT, exist_ok=True)
 MM = FP.MM
@@ -83,13 +131,18 @@ for cand in ("head", "Head", "neck", "root"):
 if hb is None: die("no head/neck bone in %s: %s" % (arm.name, [b.name for b in arm.pose.bones]))
 print("driving bone %r on %s" % (hb.name, arm.name), flush=True)
 hb.rotation_mode = "XYZ"
-scene.frame_start = 1; scene.frame_end = N
-for f in range(1, N + 1):
-    t = (f - 1) / float(N - 1)
-    ang = np.radians(YAW) * np.sin(t * 2 * np.pi)
+TOTAL = PRE + N
+scene.frame_start = 1; scene.frame_end = TOTAL
+for f in range(1, TOTAL + 1):
+    if f <= PRE:
+        ang = 0.0                            # held still while the cloth settles
+    else:
+        t = (f - PRE - 1) / float(N - 1)
+        ang = np.radians(YAW) * np.sin(t * 2 * np.pi)
     hb.rotation_euler = (0.0, 0.0, ang)      # yaw about the bone's own axis
     hb.keyframe_insert("rotation_euler", frame=f)
-print("animated a %.0f deg bone-driven head turn over %d frames" % (YAW, N), flush=True)
+print("%d pre-roll frames (head still, cloth settling) then a %.0f deg turn over %d"
+      % (PRE, YAW, N), flush=True)
 
 # ---- SIMULATE HAIR-ONLY GEOMETRY, NOT HIS FACE ----------------------------
 # Blender's cloth modifier runs on the WHOLE object, so putting it on MARS_MESH
@@ -138,6 +191,55 @@ gp = sim.vertex_groups.new(name="SIM_PIN")
 for j, vi in enumerate(hair_idx):
     gp.add([j], float(1.0 - wgt[vi]), "REPLACE")
 
+# ---- THE HEAD HAS TO BE SOMETHING THE HAIR CAN HIT -------------------------
+# A COLLISION PROXY, not the render mesh. Cloth collision is O(cloth x collider)
+# every substep, and MARS_MESH evaluates to 47,002 triangles; a decimated skin
+# proxy costs a fraction of that and the clearance is carried by the cloth's own
+# thickness. The PROXY IS NOT THE AUTHORITY: penetration is measured afterwards
+# against the REAL evaluated MARS_MESH by tools/character/penetration_measure.py,
+# so a proxy that sits a little inside his cheek shows up as hair through the
+# face rather than hiding as a clean sim. That is what the receipt's proxyHash
+# field is for.
+collider = None
+if not NOCOLLIDE:
+    collider = o.copy(); collider.data = o.data.copy(); collider.name = "HEAD_COLLIDER"
+    scene.collection.objects.link(collider)
+    collider.hide_render = True
+    if collider.data.shape_keys: collider.shape_key_clear()
+    bmc = bmesh.new(); bmc.from_mesh(collider.data); bmc.verts.ensure_lookup_table()
+    skin_keep = set(int(i) for i in np.nonzero(~hairf)[0])
+    bmesh.ops.delete(bmc, geom=[v for v in bmc.verts if v.index not in skin_keep],
+                     context="VERTS")
+    bmc.to_mesh(collider.data); bmc.free()
+    # re-key the bone weights onto the carved indices, exactly as HAIR_SIM does --
+    # a collider that does not follow the head turn is a collider in the wrong place
+    skin_idx = np.nonzero(~hairf)[0]
+    for g in list(collider.vertex_groups): collider.vertex_groups.remove(g)
+    for name, arr in wmap.items():
+        if name.startswith("HAIR_"): continue
+        ng = collider.vertex_groups.new(name=name)
+        for j, vi in enumerate(skin_idx):
+            if arr[vi] > 0: ng.add([j], float(arr[vi]), "REPLACE")
+    for md in list(collider.modifiers): collider.modifiers.remove(md)
+    cam = collider.modifiers.new("COL_ARM", "ARMATURE")
+    cam.object = arm; cam.use_vertex_groups = True
+    before = len(collider.data.polygons)
+    if before > COL_TRIS:
+        dm = collider.modifiers.new("COL_DEC", "DECIMATE")
+        dm.ratio = max(0.02, float(COL_TRIS) / float(before))
+    cmod = collider.modifiers.new("COL", "COLLISION")
+    cs_ = collider.collision
+    cs_.thickness_outer = COL_THICK * MM
+    cs_.thickness_inner = COL_THICK * MM
+    cs_.damping = 0.6
+    cs_.cloth_friction = 5.0
+    print("HEAD_COLLIDER: %d skin faces -> ratio %.3f, thickness %.1f mm, follows the head bone"
+          % (before, getattr(collider.modifiers.get("COL_DEC"), "ratio", 1.0), COL_THICK),
+          flush=True)
+else:
+    print("COLLISION DISABLED (--no-collide): this run cannot claim the hair stays "
+          "out of his face.", flush=True)
+
 for md in list(sim.modifiers): sim.modifiers.remove(md)
 am = sim.modifiers.new("HAIR_ARM", "ARMATURE")
 am.object = arm
@@ -146,22 +248,46 @@ cm = sim.modifiers.new("HAIR_CLOTH", "CLOTH")
 cs = cm.settings
 cs.vertex_group_mass = "SIM_PIN"
 cs.quality = QUALITY
-cs.mass = 0.25
-cs.tension_stiffness = 18
-cs.compression_stiffness = 18
-cs.shear_stiffness = 18
-cs.bending_stiffness = 6                 # dreads are stiff, not silk
+cs.mass = MASS
+cs.tension_stiffness = STRETCH
+cs.compression_stiffness = STRETCH
+cs.shear_stiffness = STRETCH
+cs.bending_stiffness = BEND
 cs.tension_damping = 12
 cs.compression_damping = 12
 cs.shear_damping = 12
 cs.bending_damping = 2
-cs.air_damping = 1.4
+cs.air_damping = AIR
 cs.pin_stiffness = 50.0
+cs.effector_weights.gravity = GRAV
 cm.point_cache.frame_start = 1
-cm.point_cache.frame_end = N
-cm.collision_settings.use_self_collision = False   # measured first; see the report
-cm.collision_settings.distance_min = 1.5 * MM
-print("cloth on HAIR_SIM: quality %d, pin group SIM_PIN" % QUALITY, flush=True)
+cm.point_cache.frame_end = TOTAL
+# COLLISION SETTINGS. use_collision is what makes the cloth see HEAD_COLLIDER at
+# all; self-collision is lock against lock, which is the other half of what he
+# asked for ("each piece has collision detection with the other stuff").
+cm.collision_settings.use_collision = not NOCOLLIDE
+cm.collision_settings.distance_min = COL_THICK * MM
+cm.collision_settings.collision_quality = max(4, QUALITY // 2)
+cm.collision_settings.use_self_collision = SELFCOL
+cm.collision_settings.self_distance_min = SELF_MM * MM
+cm.collision_settings.self_friction = 5.0
+print("collision: head=%s (%.1f mm)  self=%s (%.1f mm)  quality=%d"
+      % (not NOCOLLIDE, COL_THICK, SELFCOL, SELF_MM,
+         cm.collision_settings.collision_quality), flush=True)
+if WIND > 0:
+    wd_ = bpy.data.objects.new("HAIR_WIND", None)
+    scene.collection.objects.link(wd_)
+    wd_.location = tuple(C + (x * -1.0 + fwd * 1.0) * 0.9)
+    wd_.rotation_euler = (V(tuple(C)) - V(wd_.location)).to_track_quat("-Z", "Y").to_euler()
+    bpy.context.view_layer.objects.active = wd_
+    bpy.ops.object.forcefield_toggle()
+    ff = wd_.field
+    ff.type = "WIND"; ff.strength = WIND; ff.noise = 2.0; ff.seed = 3
+    ff.use_max_distance = False
+    print("wind field: strength %.1f, blowing across him" % WIND, flush=True)
+print("cloth on HAIR_SIM: quality %d  mass %.2f  bend %.0f  air %.1f  pin SIM_PIN"
+      % (QUALITY, MASS, BEND, AIR), flush=True)
+print("  gravity weight %.2f (his sculpted lock shape is the rest shape)" % GRAV, flush=True)
 
 # BAKE THE CACHE. Stepping frames with scene.frame_set() is enough interactively
 # but NOT in background: the cloth cache never builds and every frame evaluates to
@@ -179,7 +305,7 @@ try:
         bpy.ops.ptcache.bake(bake=True)
 except Exception as exc:
     print("  ptcache.bake raised: %s -- falling back to frame stepping" % exc, flush=True)
-    for f in range(1, N + 1):
+    for f in range(1, TOTAL + 1):
         scene.frame_set(f); sim.evaluated_get(bpy.context.evaluated_depsgraph_get())
 print("  cloth cache: %d frames in %.0fs, is_baked=%s"
       % (cm.point_cache.frame_end, time.time() - t_bake,
@@ -247,7 +373,7 @@ except Exception: pass
 wd = bpy.data.worlds.new("W"); scene.world = wd; wd.use_nodes = True
 wd.node_tree.nodes["Background"].inputs[0].default_value = (0.06, 0.06, 0.07, 1)
 wd.node_tree.nodes["Background"].inputs[1].default_value = 1.6
-scene.frame_set(1)
+scene.frame_set(PRE)          # the SETTLED state is the reference, not frame 1
 P0 = arm_world()
 ctr = P0.mean(0); rad = float(np.linalg.norm(P0 - ctr, axis=1).max())
 for nm, a, b, c, e in (("K", -1.2, 0.9, 1.8, 260), ("F", 1.4, 0.2, 1.2, 140), ("R", 0.0, 0.6, -1.6, 180)):
@@ -274,9 +400,29 @@ if tips.sum() < 100 or roots.sum() < 50:
     die("not enough tip (%d) or root (%d) vertices to measure lag" % (tips.sum(), roots.sum()))
 print("tracking %d tip verts against %d root verts" % (tips.sum(), roots.sum()), flush=True)
 
+# ---- CONTACT GEOMETRY: the bytes the penetration measurement reads ---------
+# Written in the same schema as tools/character/export_contact_geometry.py so
+# stage 2 does not care which tool produced it. B is the WHOLE render mesh at its
+# ARMATURE-ONLY positions: that surface is closed (0 boundary edges, measured),
+# the hair's own rest vertices lie exactly ON it, and a lock swinging into his
+# cheek crosses to the inside of it. Restricting B to "skin faces only" would
+# have left an open hole at the hairline, which is the one place the winding
+# number is least trustworthy -- and it is the place the hair actually lives.
+contact = {"HAIR_SIM/verts": [], "MARS_MESH_SKIN/verts": []}
+if CONTACT_OUT:
+    o.data.calc_loop_triangles()
+    _tri = np.empty(len(o.data.loop_triangles) * 3, dtype=np.int32)
+    o.data.loop_triangles.foreach_get("vertices", _tri)
+    contact["MARS_MESH_SKIN/tris"] = _tri.reshape(-1, 3)
+    sim.data.calc_loop_triangles()
+    _stri = np.empty(len(sim.data.loop_triangles) * 3, dtype=np.int32)
+    sim.data.loop_triangles.foreach_get("vertices", _stri)
+    contact["HAIR_SIM/tris"] = _stri.reshape(-1, 3)
+    print("contact geometry will be written to %s" % CONTACT_OUT, flush=True)
+
 series, t0 = [], time.time()
 ref = None
-for f in range(1, N + 1):
+for f in range(PRE, PRE + N + 1):
     scene.frame_set(f)
     skin_now = arm_world()
     sw_now = sim_world()
@@ -305,18 +451,21 @@ for f in range(1, N + 1):
         (ref[roots] - ref[roots].mean(0)) @ Rk + Pf[roots].mean(0) - Pf[roots], axis=1).max()) / MM
     # THE GATE THAT MATTERS: his skin must be exactly what the armature says.
     skin_fit = float(np.linalg.norm(Pf[~hairf] - skin_now[~hairf], axis=1).max()) / MM
+    if CONTACT_OUT:
+        contact["HAIR_SIM/verts"].append(sw_now.astype(np.float32))
+        contact["MARS_MESH_SKIN/verts"].append(skin_now.astype(np.float32))
     if not NORENDER:
         for nm, cam in CAMS.items():
             scene.camera = cam
-            scene.render.filepath = os.path.join(OUT, "hair_%s_%02d.png" % (nm, f))
+            scene.render.filepath = os.path.join(OUT, "hair_%s_%02d.png" % (nm, f - PRE))
             bpy.ops.render.render(write_still=True)
-    series.append({"frame": f, "rootTravelMM": round(root_abs, 2),
+    series.append({"frame": f - PRE, "rootTravelMM": round(root_abs, 2),
                    "tipTravelMM": round(tip_abs, 2), "tipSecondaryMM": round(tip_rel, 2),
                    "rootRigidResidualMM": round(root_fit, 3),
                    "skinRigidResidualMM": round(skin_fit, 4)})
-    if f % 4 == 0 or f == 1:
+    if (f - PRE) % 4 == 0 or f == PRE:
         print("  f%02d  root %7.2f mm   tip %7.2f mm   tip-minus-rigid %7.2f mm"
-              % (f, root_abs, tip_abs, tip_rel), flush=True)
+              % (f - PRE, root_abs, tip_abs, tip_rel), flush=True)
 print("simulated + rendered %d frames x %d cameras in %.0fs" % (N, len(CAMS), time.time() - t0), flush=True)
 
 sec = np.array([s["tipSecondaryMM"] for s in series])
@@ -331,16 +480,20 @@ xc = np.correlate(bb, aa, "full")
 lag = int(np.arange(-len(aa) + 1, len(aa))[np.argmax(xc)])
 corr = float(xc.max() / len(aa))
 i_root = int(np.argmax(rootv)); i_tip = int(np.argmax(sec))
-rep = {"frames": N, "yawDeg": YAW, "cameras": list(CAMS),
+rep = {"frames": N, "prerollFrames": PRE, "yawDeg": YAW, "cameras": list(CAMS),
        "headDrivenBy": "head bone on the armature, NOT the object transform -- Blender cloth "
                        "simulates in object-local space and ignores object-level animation",
        "solver": "Blender CLOTH (native) on a hair-only HAIR_SIM object, pin group SIM_PIN; "
                  "the simulated positions are written back onto the render mesh each frame so "
                  "his face is not in the solver at all",
        "clothSettings": {"quality": QUALITY, "mass": cs.mass,
+                         "tensionStiffness": cs.tension_stiffness,
                          "bendingStiffness": cs.bending_stiffness,
-                         "airDamping": cs.air_damping,
-                         "selfCollision": False},
+                         "airDamping": cs.air_damping, "wind": WIND, "gravityWeight": GRAV,
+                         "selfCollision": bool(cm.collision_settings.use_self_collision),
+                         "headCollision": bool(cm.collision_settings.use_collision),
+                         "colliderThicknessMM": COL_THICK,
+                         "selfDistanceMM": SELF_MM},
        "tipVerts": int(tips.sum()), "rootVerts": int(roots.sum()),
        "peakTipSecondaryMM": round(peak_sec, 2),
        "peakRootTravelMM": round(float(rootv.max()), 2),
@@ -357,6 +510,22 @@ rep = {"frames": N, "yawDeg": YAW, "cameras": list(CAMS),
                "far a tip is from the pivot. Subtracting only a translation does NOT do this and "
                "reported 29.4 mm of phantom secondary motion at r=0.97, lag 0 -- the signature of "
                "a rigid sweep."}
+if CONTACT_OUT:
+    _out = {}
+    for k, v in contact.items():
+        _out[k] = np.stack(v) if isinstance(v, list) else v
+    _out["HAIR_SIM/nv"] = np.array([_out["HAIR_SIM/verts"].shape[1]])
+    _out["MARS_MESH_SKIN/nv"] = np.array([_out["MARS_MESH_SKIN/verts"].shape[1]])
+    _out["__frames__"] = np.array([s_["frame"] for s_ in series], dtype=np.int32)
+    _out["__parts__"] = np.array(["HAIR_SIM", "MARS_MESH_SKIN"])
+    _out["__specs__"] = np.array(["HAIR_SIM", "MARS_MESH_SKIN"])
+    _out["__blend__"] = np.array([bpy.data.filepath or "<hair_motion>"])
+    os.makedirs(os.path.dirname(os.path.abspath(CONTACT_OUT)) or ".", exist_ok=True)
+    np.savez_compressed(CONTACT_OUT, **_out)
+    print("contact geometry: %s  (%d frames, %d hair verts vs %d skin verts)"
+          % (CONTACT_OUT, len(_out["__frames__"]), _out["HAIR_SIM/nv"][0],
+             _out["MARS_MESH_SKIN/nv"][0]), flush=True)
+
 json.dump(rep, open(os.path.join(OUT, "hair_motion.json"), "w"), indent=2)
 
 print("\npeak secondary motion at the tips: %.2f mm" % peak_sec, flush=True)
@@ -373,9 +542,34 @@ print("SKIN rigid residual: %.4f mm  (this is the gate that matters)" % sk, flus
 if sk > 0.05:
     die("his SKIN deviates from rigid armature deformation by %.4f mm -- something other than "
         "the armature is moving his face" % sk)
+# HE SAID THEY SETTLE. The head returns to rest by the last frame, so the hair
+# must be heading back too -- the first pass ended with the locks standing out at
+# 54 mm and still swinging, which is not what he described.
+# A MAX CANNOT TELL SWAY FROM CREEP, AND THAT IS WHY EVERY TUNING KNOB LOOKED
+# DEAD: gravity 0.0/0.15/0.35, bending 25/45, mass 0.40/0.55 all ended at 97-99%
+# of peak, because the peak was the end of a ramp in every case. Fit the ramp,
+# report it, and measure the SWAY as what is left once it is removed.
+fi = np.arange(len(sec), dtype=float)
+slope, intercept = np.polyfit(fi, sec, 1)
+drift = float(abs(slope) * (len(sec) - 1))
+sway_sig = sec - (slope * fi + intercept)
+sway = float(sway_sig.max() - sway_sig.min())
+tail = float(np.mean(sec[-3:]))
+rep["driftMM"] = round(drift, 2)
+rep["swayMM"] = round(sway, 2)
+rep["settleTailMM"] = round(tail, 2)
+print("drift (linear creep over the take): %.2f mm" % drift, flush=True)
+print("SWAY (peak-to-peak once the creep is removed): %.2f mm" % sway, flush=True)
+if drift > sway:
+    die("the hair CREEPS %.2f mm over the take and only SWAYS %.2f mm. That is cloth slowly "
+        "stretching, not hair moving with his head. Raise stretch resistance; do not report the "
+        "creep as motion." % (drift, sway))
 if peak_sec < 2.0:
     die("the tips move %.2f mm once the head's own rigid motion is removed -- the hair is being "
         "CARRIED, not simulated" % peak_sec)
+if sway < 2.0:
+    die("sway is only %.2f mm peak-to-peak once creep is removed -- the hair is not responding "
+        "to his head at all." % sway)
 if lag <= 0 and corr > 0.9:
     die("the tips track the roots at r=%.2f with lag %+d -- that is a rigid transform with extra "
         "steps, not hair." % (corr, lag))

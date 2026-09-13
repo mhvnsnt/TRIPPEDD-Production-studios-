@@ -31,8 +31,17 @@ New gate: `tools/character/audit_mars_oral_render_visibility.py` restores and ve
 
 The production runner now executes that pixel-ID render and fail-closes on its JSON/image PASS before it can report `MARS_ORAL_REPAIR: VERIFIED`. Commit: `ee5e1d2bf8d1ec1c4523b2f3dc2601d49695ded4`.
 
+## MARS crease/seam route — NEW
+`tools/character/derive_mars_lip_crease_candidates.py` is now the diagnostic entry point for the remaining skin-stretch problem. It does **not** move vertices. It scores actual canonical MARS mesh edges inside the measured mouth region using face-normal dihedral, existing `crease_edge` data when present, and topology/connectivity. It deliberately refuses to infer a lip from a height cutoff, ellipse, radial field, or replacement mouth.
+
+Commit: `32ccb1509523cd8f5e66d4d343778caf1900eb47`.
+
+Blender exposes edge crease as actual mesh data and supports subdivision crease preservation; that makes existing crease/topology evidence materially preferable to another world-space heuristic. citeturn0search0turn0search11
+
+**Important:** candidate edges are NOT yet a production rig. The next promotion gate is a contiguous upper/lower lip chain, then deformation-weight ownership, then rendered pixel proof at closed/partial/open mouth states. No candidate becomes deformation authority merely because its numeric score is high.
+
 ## Current MARS oral route
-`CANONICAL_MARS` → `GNM_ORAL_DONOR` → existing oral bridge/repair chain → **persisted render-visibility gate** → **actual pixel-ID render** → measured MARS crease/seam lip ownership → `survey_oral_aperture.py` → measured lip/jaw gate → visual proof.
+`CANONICAL_MARS` → `GNM_ORAL_DONOR` → existing oral bridge/repair chain → **persisted render-visibility gate** → **actual pixel-ID render** → **canonical mesh-crease candidate analysis** → contiguous lip chain → measured upper/lower ownership → measured deformation → visual proof.
 
 Existing first-route tools:
 - `tools/character/oral_cavity.py`
@@ -41,6 +50,7 @@ Existing first-route tools:
 - `tools/character/survey_oral_aperture.py`
 - `tools/character/audit_mars_oral_render_visibility.py`
 - `tools/character/render_mars_oral_pixel_truth.py`
+- `tools/character/derive_mars_lip_crease_candidates.py`
 - `assets/donor/gnm_oral/`
 
 GNM Head v3 is an Apache-2.0 parametric head model with controllable internal anatomy including teeth/gums and tongue and expression controls. Use it as a donor/behavior reference, not as a replacement MARS identity. citeturn0search0turn0search8
@@ -75,7 +85,7 @@ When a safe next task exists and no owner decision is required: continue. Do not
 UNKNOWN is never PASS. No artifact bytes = IMAGE_UNAVAILABLE. Visual FAIL overrides numerical PASS. Motion claims require rendered sequences. Reopen exact PNG/MP4 bytes after rendering and record SHA-256. **Do not call geometry/raycast truth pixel truth.**
 
 ## Current queue
-1. **MARS lip seam:** derive upper/lower lip ownership from the canonical MARS mesh crease; no interpolated curve-height cutter/deformer.
+1. **MARS lip seam:** run candidate analyzer on actual canonical MARS and promote only a contiguous chain with pixel validation.
 2. **GNM internal motion:** keep canonical GNM teeth/gums/tongue motion; compare against yesterday's known-good GNM behavior.
 3. **Pixel truth render:** render with oral donor visibility explicitly PASS; compare normal render against skin-hidden control and classify actual object/material pixels.
 4. **Eye weld-first:** measured zero-motion weld before remeshing.

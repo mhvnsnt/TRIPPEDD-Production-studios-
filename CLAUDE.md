@@ -978,3 +978,155 @@ width was never the mechanism either.
 because it is how the next experiment reaches the cutter's lateral profile. **The lane is
 now the CUTTER'S GEOMETRY AT THE CORNERS, measured against a control that is known to be
 clean.** Nothing downstream needs repairing once the carve stops eating his lip corners.
+
+## THE CRATER: THE LOFT WAS FLATTENING HIS OWN LIP LINE (2026-09-13, CLOSED)
+
+The section above was right that the boolean does it and **wrong about its own control.**
+"His raw uncarved scan: 0 of 65 missing-skin cells" counted cells whose nearest surface is
+CAVITY deeper than 15 mm — and an uncarved scan has no cavity, so it scores 0 whatever its
+skin is doing. **A control that cannot fail is not a control.** And "`--slit-x` barely
+helped (8 → 6), so it is not the cutter's WIDTH" was never a test of width: `--slit-x`
+scales the CONTOUR, while the cavity body behind it is an ellipse of half-width
+`HW = 36.5 mm` that `--slit-x` never touches. The 78% run narrowed two rings and left the
+flare 69.4 mm wide.
+
+**ASKED PROPERLY** — `tools/character/where_did_his_skin_go.py`, one instrument, the same
+ray at the same (x, z), fired at his raw scan AND at the shipped head:
+
+    44 of 483 cells have NO exterior skin on the shipped head
+    where the scan has skin at +5..+8 mm; the shipped head's first surface
+    in those cells is CAVITY at +31..+47 mm.   35 of the 44 are on his LEFT.
+
+That left/right split is the same asymmetry as the rest leak (721 rays left, 203 right).
+
+**AND A SLIT CANNOT BE SEEN BY A METRIC THAT TAKES A MINIMUM ACROSS IT.** Column-wise all
+69 columns "agree" to 0.05 mm, because at z ±4 mm his lip and cheek are intact. The loss is
+a band at the seam, z −2…+2 mm. Reducing a column to its shallowest hit hid the whole
+defect. Same family as band-averaging a lid margin.
+
+### THE MECHANISM: HIS LIP LINE IS NOT A PLANE
+
+His measured inner-lip contour **sweeps 11.5 mm in depth** — **+4.5 mm at the commissures,
+−7.0 mm at the centre** — and `oral_cavity.py` lofted every ring onto a **constant y**,
+throwing that sweep away. At the corners the front rings then sat *in front of his own lip
+line* and the cutter emerged through his cheek; at the centre they sat 4–5 mm behind it and
+nothing breached. His left commissure is the deeper one, which is why the leak was always
+worse there.
+
+    ring points outside his head (winding number vs the raw scan)   fixed
+    R1 aperture slit  +1.75 mm    15 of 56, worst 2.70 mm        4 of 56, 0.77 mm
+    R2 opening out    +6.50 mm     4 of 56, worst 1.07 mm        0 of 56
+    R3..R6 cavity body            0                              0
+
+Only **3 of 27,150** scan VERTICES fall inside the cutter — the boolean is not swallowing
+his corner vertices, it is shaving the thin shell of FACES the cutter grazes on its way out
+through his cheek. **That is why six repairs that moved vertices all failed.**
+
+### THE FIX, AND IT IS MEASURED END TO END
+
+Each ring now carries the contour's own depth, decaying with `SHEAR_W = [1,1,1,.6,.25,0,0]`
+so the aperture follows his lip line while the cavity deep inside stays a clean plane.
+`--flat-rings` restores the old behaviour.
+
+    cells where his corner skin is gone    44 of 483 (x -31..+28)  ->  4 of 483 (x -18..+17)
+    best visible teeth after the seam split      5 -> 72 of 240    ->  9 -> 88 of 240
+    rest leak                            538 rays (after trimming) ->  101 of 24,321
+    sock corner trim                         271 faces needed      ->  REFUSED, it no
+                                                                       longer reduces anything
+
+The 4 that remain sit at the CENTRE, which is where he says the opening belongs. **The sock
+trim refusing is the point** — the workaround for the corner leak measures as useless once
+the leak is gone at the source, and the tool says so rather than shaving 271 faces for nothing.
+
+`tools/character/carve_ab.py` carves the same welded scan twice with **Blender's own
+DIFFERENCE** — the engine that ships, not a second implementation that might disagree — and
+`predict_carve.py` scores both before any rig is rebuilt. It reproduces the shipped head
+exactly (23,830 verts).
+
+### THREE CONTROLS, BECAUSE A WRONG TRANSFORM STILL PRINTS A PLAUSIBLE TABLE
+1. **glTF is Y-up; Blender is Z-up.** Every measured number in this repo is in the space
+   Blender's importer produced. Querying the raw glTF vertices put every ring point
+   **60–130 mm outside his head** — the scale of a whole skull — which reads exactly like a
+   cutter sticking out of his face and was entirely mine. Read it off the bounds, never
+   assume: `blender = (x, −z, y)`.
+2. **His measured commissures must lie ON the surface** (0.02 / 0.00 mm). Every tool here
+   refuses above 3–6 mm.
+3. **A loft's winding is an accident** of which contour index came first, and it flips the
+   sign of every inside/outside answer while the table still looks reasonable. The cavity
+   centre must read inside the cutter and a point a metre away outside, or the tool refuses.
+
+## SIX TOOLS COULD ONLY EVER WRITE TO CANONICAL (2026-09-13)
+
+`recess_sock`, `open_the_sock`, `trim_sock_corners`, `close_corners` and
+`repair_corner_skin` saved to a **hardcoded `assets/rigs/MARS_FACE.blend`**, and
+`densify_eye_region`, `place_eyeballs_on_linework`, `build_linework_blink`,
+`valley_discriminator` and `hair_zones` read AND wrote it. Run against a REVIEW blend on a
+second session port, the sock snippets wrote their results straight over the canonical rig —
+**an unreviewed promotion nobody asked for, and the same way the good mouth was lost under
+the eye work.** Caught by `checkpoint verify` reporting `MARS_FACE.blend CHANGED`; the
+candidate was preserved and canonical restored.
+- the session snippets now save the blend **their own session has open**
+- the five file-based tools take `--rig`/`--out` like `rig_face.py` already did
+- `tools/character/promote_candidate.sh` moves the rig **and everything indexed against it**
+  (`MARS_ORAL.blend`, `_mars_verts.npy`, `assets/donor/facs/`, the hair zones) together, and
+  DRY RUNS unless given `--yes`
+
+## THE SESSION SAID READY ON A PORT IT NEVER BOUND (2026-09-13)
+
+`addon.register()` **auto-starts a server on 9876 before anything sets the port.** `_boot.py`
+then set `scene.blendermcp_port` and called `blendermcp.start_server()`, which found
+`bpy.types.blendermcp_server` already built on 9876 and merely re-started it: *"Failed to
+start server: [Errno 98] Address already in use"*, followed by `SESSION_READY port=9877`
+from a Blender whose socket was never bound. Every later call to 9877 returned
+ConnectionRefused — which reads like the session was never started rather than like a port
+collision. `_boot.py` now tears the auto-started server down, rebuilds it on the requested
+port, and **connects to that port before it will print READY.** Two sessions now run side by
+side on 9876 and 9877.
+
+**AND FIND A LISTENER BY PORT, NEVER BY MATCHING A COMMAND LINE.** `pkill -f worker_http.py`
+and a `/proc` scan for a blend name both matched the shell running the scan and killed it —
+twice, exit 144. `fuser -k 8788/tcp`, or match on the process's `exe` being Blender.
+
+## A GUARD FIRING ON A TIE IS NOT A FAILING GATE (2026-09-13)
+
+`build_linework_blink` refused a good rebuild with *"the median lid displacement points AWAY
+from closure"*. Its own numbers, once the refusal was made to print them:
+
+    median +0.0000  mean +0.0080  min +0.0000  max +0.0398
+    of 550 band verts, 264 travel toward closure and 286 "away"
+
+**Every one of those 286 is exactly zero.** They are the canthus vertices, where his upper
+and lower lid lines meet, so the lid line has nowhere to travel there — anatomy, not
+weakness. With 16 fewer band verts than the rig the test was tuned on, the zeros tipped past
+half and `median(along) <= 0` landed on its own boundary. A lid being PEELED OPEN looks
+completely different: genuinely negative travel. The verdict is now taken over the vertices
+that actually move (eps = 1% of that eye's own aperture), and "nothing travels at all" is
+reported as itself. **Proven both ways:** real travel saves `blink_own_L` 249 / `blink_own_R`
+161 verts; `--overshoot -1.06` refuses with median −0.0074, 0 toward closure, 257 away.
+
+## THE CUDA LIBRARIES WERE 4.1 GB ON A BOX WITH NO GPU (2026-09-13)
+`torch 2.8.0+cu128`, `torch.cuda.is_available() False`, no `/dev/nvidia*`. The container was
+at **706 MB free** and Blender was about to start failing in ways that look like code bugs.
+Swapping for the CPU build (`--index-url https://download.pytorch.org/whl/cpu`, never
+`--extra-index-url`) freed **5.2 GB** and lost nothing. Check `df -h /` before debugging a
+harness that suddenly stopped working, and check for CUDA wheels before assuming the disk is
+simply full.
+
+## OWNER LAW #7 IS LIVE: THE DOOR IS `tools/session/worker_http.py` (2026-09-13)
+Rocket's PR #64 built its cockpit against `/health`, `/capabilities`, `/state` and a closed
+set of named commands. The runtime answers **those names**, so nobody maps between two
+vocabularies. `docs/ROCKET_LIVE_SESSION.md` is the contract. Point
+`ROCKET_LIVE_SESSION_URL` at it.
+- `POST /command` with `inspect`, `measure`, `run_gate`, `render`, `publish`, `refresh`,
+  `checkpoint`. `measure` and `run_gate` take a **name from a whitelist**, never a path — a
+  command that took a path would be an arbitrary shell wearing a different hat.
+- **A mutation is authoritative only when it returns a receipt whose bytes exist and hash.**
+  `render` and `publish` re-hash the file here and report `sha256Verified` / `hashAgrees`;
+  a receipt that only repeats what the producer said is not independent.
+- `checkpoint restore` is deliberately NOT reachable over HTTP.
+- **A gate that imports `bpy` cannot run under the venv python**, and `blender -b` exits 0
+  after a script exception, so a traceback in a Blender gate's output is `FAILED_RUN`.
+- `client.py` had to learn to unwrap: the addon answers
+  `{"status":"success","result":{"executed":true,"result":"<printed>"}}`, so `r["result"]`
+  is a DICT and stringifying it escapes every newline — which made `/health` report the
+  whole scene table inside one `blend` string.

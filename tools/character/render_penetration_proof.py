@@ -86,7 +86,13 @@ def main():
     ctr = P0.mean(0)
     rad = float(np.linalg.norm(P0 - ctr, axis=1).max())
     BASIS = {}
-    for _nm, _dv in (("FRONT", -np.asarray(hfwd, float)), ("SIDE", np.asarray(hx, float))):
+    # FRONT IS +fwd. face_plate.head_frame documents fwd as "out of the face" and its
+    # own plate camera sits at centre + fwd*CAM_DIST -- the plates the owner DREW ON are
+    # framed that way. Every camera here used -fwd, so every "FRONT" render in this
+    # session was shot from BEHIND HIS HEAD. Measured against his own drawn features:
+    # dot(nostril direction, fwd) = +0.68 (L) and +0.93 (R), so fwd points at his face.
+    # Never re-derive this from a world axis; derive it from a feature he marked.
+    for _nm, _dv in (("FRONT", np.asarray(hfwd, float)), ("SIDE", np.asarray(hx, float))):
         _d = _dv / np.linalg.norm(_dv)
         _u = np.asarray(hup, float).copy()
         _u -= _d * np.dot(_u, _d)

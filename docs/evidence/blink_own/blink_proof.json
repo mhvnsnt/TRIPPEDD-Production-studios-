@@ -1,0 +1,214 @@
+{
+  "schema": "trippedd.blink-proof/v1",
+  "authority": "docs/evidence/linework/linework_3d.json -- the lines the OWNER drew",
+  "verdictRule": "DIRECTIONAL lid-margin travel as a fraction of that eye's own aperture. Occlusion is never the verdict: it once scored a lid being peeled OPEN as 84% closed.",
+  "gates": {
+    "minClosureFraction": 0.9,
+    "maxMMFromHisEyelidLine": 8.0,
+    "maxResidualGapMM": 1.5
+  },
+  "eyeballClearanceLegacyNote": {
+    "state": "SUPERSEDED",
+    "reason": "this rig contains NO eyeball geometry. Objects present: MARS_MESH, MARS_MOUTH_SOCK, MARS_TEETH_UPPER/LOWER, MARS_TONGUE, MARS_RIG and the reference plates. There is no globe to be occluded by a lid or penetrated by one, so an eyeball-visibility gate here would assert nothing and report a clean sheet -- a gate with zero checks reports 0/0 PASS. Mars's eyes are solid white BY DESIGN; whether that is texture or absent geometry is the next thing to establish, and it is recorded as NOT_ATTEMPTED rather than as a pass."
+  },
+  "keys": {
+    "blink_own_L": {
+      "side": "L",
+      "apertureMM": 7.732,
+      "marginVerts": 39,
+      "directionalTravelApertures": 0.905,
+      "closureFraction": 1.011,
+      "maxSkinTravelMM": 15.529,
+      "landsNearest": "eyelid_L_upper",
+      "mmToNearestDrawnFeature": 4.55,
+      "mmToHisEyelidLine": 4.55,
+      "marginToLowerLidMM_before": 6.923,
+      "marginToLowerLidMM_after": 1.381,
+      "verdict": "PASS",
+      "why": [],
+      "eyeballClearanceLadder": [
+        {
+          "state": 0,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 25,
+          "minClearanceMM": 0.929,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 50,
+          "minClearanceMM": 0.987,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 75,
+          "minClearanceMM": 0.991,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 100,
+          "minClearanceMM": 0.84,
+          "vertsInsideGlobe": 0
+        }
+      ]
+    },
+    "blink_own_R": {
+      "side": "R",
+      "apertureMM": 8.772,
+      "marginVerts": 73,
+      "directionalTravelApertures": 0.729,
+      "closureFraction": 1.051,
+      "maxSkinTravelMM": 14.199,
+      "landsNearest": "eyelid_R_upper",
+      "mmToNearestDrawnFeature": 4.49,
+      "mmToHisEyelidLine": 4.49,
+      "marginToLowerLidMM_before": 6.09,
+      "marginToLowerLidMM_after": 0.987,
+      "verdict": "PASS",
+      "why": [],
+      "eyeballClearanceLadder": [
+        {
+          "state": 0,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 25,
+          "minClearanceMM": 1.314,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 50,
+          "minClearanceMM": 1.765,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 75,
+          "minClearanceMM": 1.635,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 100,
+          "minClearanceMM": 2.734,
+          "vertsInsideGlobe": 0
+        }
+      ]
+    },
+    "blink_L": {
+      "side": "L",
+      "apertureMM": 7.732,
+      "marginVerts": 39,
+      "directionalTravelApertures": 0.0,
+      "closureFraction": 0.0,
+      "maxSkinTravelMM": 25.387,
+      "landsNearest": "eyelid_R_lower",
+      "mmToNearestDrawnFeature": 28.21,
+      "mmToHisEyelidLine": 68.45,
+      "marginToLowerLidMM_before": 6.923,
+      "marginToLowerLidMM_after": 6.923,
+      "verdict": "FAIL",
+      "why": [
+        "lands 68.5 mm from his own eyelid line (eyelid_R_lower)",
+        "travels 0.00 of the gap it has to close (0.00 line apertures)",
+        "lid margin still 6.92 mm from the lower lid"
+      ],
+      "eyeballClearanceLadder": [
+        {
+          "state": 0,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 25,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 50,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 75,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 100,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        }
+      ]
+    },
+    "blink_R": {
+      "side": "R",
+      "apertureMM": 8.772,
+      "marginVerts": 73,
+      "directionalTravelApertures": 0.0,
+      "closureFraction": 0.0,
+      "maxSkinTravelMM": 21.748,
+      "landsNearest": "eyelid_L_lower",
+      "mmToNearestDrawnFeature": 27.77,
+      "mmToHisEyelidLine": 65.76,
+      "marginToLowerLidMM_before": 6.09,
+      "marginToLowerLidMM_after": 6.09,
+      "verdict": "FAIL",
+      "why": [
+        "lands 65.8 mm from his own eyelid line (eyelid_L_lower)",
+        "travels 0.00 of the gap it has to close (0.00 line apertures)",
+        "lid margin still 6.09 mm from the lower lid"
+      ],
+      "eyeballClearanceLadder": [
+        {
+          "state": 0,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 25,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 50,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 75,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        },
+        {
+          "state": 100,
+          "minClearanceMM": 1.2,
+          "vertsInsideGlobe": 0
+        }
+      ]
+    }
+  },
+  "ladderFrames": [
+    "docs/evidence/blink_own/L_blink_own_L_000.png",
+    "docs/evidence/blink_own/L_blink_own_L_025.png",
+    "docs/evidence/blink_own/L_blink_own_L_050.png",
+    "docs/evidence/blink_own/L_blink_own_L_075.png",
+    "docs/evidence/blink_own/L_blink_own_L_100.png",
+    "docs/evidence/blink_own/L_blink_L_000.png",
+    "docs/evidence/blink_own/L_blink_L_025.png",
+    "docs/evidence/blink_own/L_blink_L_050.png",
+    "docs/evidence/blink_own/L_blink_L_075.png",
+    "docs/evidence/blink_own/L_blink_L_100.png",
+    "docs/evidence/blink_own/R_blink_own_R_000.png",
+    "docs/evidence/blink_own/R_blink_own_R_025.png",
+    "docs/evidence/blink_own/R_blink_own_R_050.png",
+    "docs/evidence/blink_own/R_blink_own_R_075.png",
+    "docs/evidence/blink_own/R_blink_own_R_100.png",
+    "docs/evidence/blink_own/R_blink_R_000.png",
+    "docs/evidence/blink_own/R_blink_R_025.png",
+    "docs/evidence/blink_own/R_blink_R_050.png",
+    "docs/evidence/blink_own/R_blink_R_075.png",
+    "docs/evidence/blink_own/R_blink_R_100.png"
+  ]
+}

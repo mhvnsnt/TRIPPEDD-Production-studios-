@@ -470,3 +470,82 @@ Correct, and the gate had already refused it: **drift 56.78 mm vs SWAY 4.20 mm.*
   That is why 3.5 mm scored 79.78 mm where 2.0 mm scored 21.88.
 - **A STILL IS NOT A SEQUENCE.** I sent him one frame twice. Every hair result now ships as a
   GIF (`docs/evidence/hair_motion/hair_{FRONT,SIDE}_motion.gif`).
+
+## EVERY "FRONT" CAMERA WAS BEHIND HIS HEAD (2026-09-13)
+
+Owner, on a blink ladder that showed nothing but dreadlocks: *"that was from behind, not from
+in front, dumb camera placement."* He was right, and it was in FOUR tools at once —
+`hair_motion.py`, `perform_take.py`, `blink_proof.py`, `render_penetration_proof.py`.
+
+`face_plate.head_frame` documents its own convention on line 39: **"fwd = out of the face"**,
+and `Plate.__init__` puts its camera at `centre + fwd * CAM_DIST`. Those are the plates the
+owner DREW ON, so that convention is proven correct. Every camera I wrote used `-fwd`.
+
+**Derived from a feature he marked, never from a world axis:**
+
+    dot(direction to nostril_L, fwd) = +0.68
+    dot(direction to nostril_R, fwd) = +0.93
+
+So `fwd` points at his face and `-fwd` points out the back of his skull. The hair GIFs sent
+earlier in the session are the BACK OF HIS HEAD. The penetration numbers are unaffected —
+they are geometric — but every pixel shown was the wrong side.
+
+`head_frame` itself resolves the sign with `if np.dot(fwd, [0, -1, 0]) < 0: fwd = -fwd`, which
+is a WORLD-AXIS GUESS sitting underneath the whole pipeline. It happens to be right. The
+lesson is the same one as the eye contours winding opposite: **pin an axis to anatomy, and if
+you must sanity-check a camera, check it against something he drew.**
+
+## THE BLINK, REBUILT ON HIS OWN LINES (2026-09-13)
+
+The shipped `blink_L`/`blink_R` are not weak or asymmetric. Measured against the lines he drew
+they travel **0.00** of the gap they must close and land **68.5 / 65.8 mm** from his eyelid —
+his cheek. They are now kept deliberately as REGRESSION FIXTURES; a rebuild that cannot tell
+itself apart from them is not a rebuild.
+
+`tools/character/build_linework_blink.py` builds `blink_own_L/R` from
+`docs/evidence/linework/linework_3d.json` alone — no MediaPipe, no `canonical_fit.json`.
+
+    blink_own_L  closure +1.01  lands 4.6 mm from his lid  gap 6.92 -> 1.38 mm  PASS
+    blink_own_R  closure +1.05  lands 4.5 mm from his lid  gap 6.09 -> 0.99 mm  PASS
+
+Four of my own errors on the way, all caught by measurement and all worth keeping:
+1. **Displacement used the vertex's own distance to the lid line**, not the line's travel:
+   18.93 mm of travel on a 7.73 mm aperture — two and a half closures.
+2. **Projecting onto a single closure axis** threw away the part that actually closes: raising
+   overshoot 1.30 → 1.55 pushed travel 1.05 → 1.25 apertures while the LEFT residual gap got
+   WORSE, 3.37 → 4.13 mm. A lid sliding PAST the lower margin. His lid line is a curve; one
+   axis cannot carry it. `ez` is kept only as the anatomical SIGN CHECK that catches a lid
+   being peeled open.
+3. **Two beats drove the same key** in `perform_take`, so the later beat's zero wiped the
+   earlier beat's peak: BLINK moved 0 verts while BLINK AGAIN — the same two keys — moved 191.
+   Identical controls disagreeing inside one take is always a clobber.
+4. **Mismatched denominators.** Margin travel divided by the line-to-line aperture scored a lid
+   that had closed its gap to 0.99 mm as 0.73 — a FAIL on a closure that happened. The gate
+   reads the CLOSURE fraction (travel / the gap those margin verts must close); the gap gate
+   itself is unchanged.
+
+## THE EYEBALLS EXISTED AND THEY WERE ON HIS CHEEKS (2026-09-13)
+
+Owner: *"we DID make the eye/eyeball/optic geometry earlier."* Correct — `assets/donor/
+gnm_eyes/eye_{L,R}.npz`, 1,926 verts each. **They sat 82 mm from the lid lines he drew**
+(55 mm at the nearest vertex), placed through the same MediaPipe fit that put his "eyelids"
+on his cheeks. A clearance test against them would have measured a lid against an eyeball
+eight centimetres away and reported a beautifully clean result.
+
+`tools/character/place_eyeballs_on_linework.py` re-seats them RIGIDLY — the globe geometry,
+radius and axes are untouched; only where it sat was wrong. Centre 82.39 → 6.31 mm (L) and
+81.82 → 13.34 mm (R) from his own aperture.
+
+- **The radius is FITTED, not centroid-plus-max-distance.** The assembly carries a corneal
+  bulge, so its farthest vertex is not its radius: 15.74 mm by that method against **9.57 mm**
+  from a least-squares sphere fit, with the "centre" 3.90 mm off. That error sent the depth
+  solve to its 12 mm limit still reporting the lid 1.63 mm inside the globe.
+- **Clearance is measured against the SURFACE, direction by direction**, not against the
+  fitted sphere (residual p95 ~4 mm — it is not a ball).
+- **The two instruments must use the same method or they will contradict each other about one
+  rest pose.** `blink_proof` measured with centroid+max and reported the lid 7.57 mm INSIDE a
+  globe the placement solve had just put 0.50 mm CLEAR. The giveaway: the OLD blink key, which
+  travels 0.00 and moves nothing, reported the same penetration — **a shape that does not move
+  cannot cause a collision**, so the collision was already in the neutral pose.
+- The dead key now reads **+0.50 mm at every one of the five states**, which is what makes it a
+  working fixture for the clearance metric as well as for the blink.

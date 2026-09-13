@@ -1,0 +1,33 @@
+{
+  "schema": "trippedd.linework-blink/v1",
+  "authority": "OWNER_DRAWN. These points are lifted from lines the owner drew on a plate of his own face. They supersede canonical_fit.json for eyelid, eyebrow and nostril placement (OWNER LAW #5).",
+  "bandMM": 9.0,
+  "falloffMM": 7.0,
+  "overshoot": 1.12,
+  "eyes": {
+    "L": {
+      "apertureMM": 7.732,
+      "bandVerts": 255,
+      "marginVerts": 144,
+      "closureAxis": [
+        -0.0381,
+        -0.8101,
+        -0.5851
+      ],
+      "maxTravelMM": 11.314,
+      "keyVertsMoved": 234
+    },
+    "R": {
+      "apertureMM": 8.772,
+      "bandVerts": 198,
+      "marginVerts": 135,
+      "closureAxis": [
+        0.1334,
+        -0.7591,
+        -0.6372
+      ],
+      "maxTravelMM": 13.407,
+      "keyVertsMoved": 186
+    }
+  }
+}

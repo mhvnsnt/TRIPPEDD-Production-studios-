@@ -447,7 +447,13 @@ for nm, a, b, c, e in (("K", -1.2, 0.9, 1.8, 260), ("F", 1.4, 0.2, 1.2, 140), ("
     ob.location = tuple(ctr + (x * a + up * b + fwd * c) * rad * 2.0)
     ob.rotation_euler = (V(tuple(ctr)) - V(ob.location)).to_track_quat("-Z", "Y").to_euler()
 CAMS = {}
-for nm, dv, uv in (("FRONT", -fwd, up), ("SIDE", x, up)):
+# FRONT IS +fwd. face_plate.head_frame documents fwd as "out of the face" and its
+# own plate camera sits at centre + fwd*CAM_DIST -- the plates the owner DREW ON are
+# framed that way. Every camera here used -fwd, so every "FRONT" render in this
+# session was shot from BEHIND HIS HEAD. Measured against his own drawn features:
+# dot(nostril direction, fwd) = +0.68 (L) and +0.93 (R), so fwd points at his face.
+# Never re-derive this from a world axis; derive it from a feature he marked.
+for nm, dv, uv in (("FRONT", fwd, up), ("SIDE", x, up)):
     d = np.array(dv, float); d /= np.linalg.norm(d)
     u = np.array(uv, float); u -= d * np.dot(u, d); u /= np.linalg.norm(u)
     r = np.cross(u, d)

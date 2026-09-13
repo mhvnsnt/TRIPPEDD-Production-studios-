@@ -1,15 +1,13 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 type Json = Record<string, unknown>;
 type Tab = 'health' | 'reconcile' | 'bus';
 type HealthSample = { at: number; ok: boolean; latencyMs: number };
 type BusEvent = { id: string; at: string; type: string; workspace: string; operationId?: string; authoritative: boolean; detail: string };
 
-const WORKSPACES = ['Mesh', 'Rig', 'Face', 'Anim', 'Editorial', 'Artifact Pipeline', 'Live Door', 'Render Queue', 'Worker Board', 'Publish Gate', 'MARS Diagnostics', 'GitHub Bridge'];
 const MAX_HISTORY = 40;
-
 function nowId(prefix: string) { return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`; }
 function objectFields(value: Json): Array<[string, unknown]> { return Object.entries(value).sort(([a], [b]) => a.localeCompare(b)); }
 function display(value: unknown) { return typeof value === 'string' ? value : JSON.stringify(value); }
@@ -21,6 +19,13 @@ async function getTarget(target: 'health' | 'state') {
   return body as Json;
 }
 
+async function issueCommand(command: string, args: Json) {
+  const response = await fetch('/api/rocket/live-session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ command, args }) });
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(body?.reason || `${command} HTTP ${response.status}`);
+  return body as Json;
+}
+
 export function SessionOpsPanels() {
   const [tab, setTab] = useState<Tab>('health');
   const [health, setHealth] = useState<Json>({ status: 'CHECKING' });
@@ -28,12 +33,12 @@ export function SessionOpsPanels() {
   const [consecutiveFailures, setConsecutiveFailures] = useState(0);
   const [alerts, setAlerts] = useState<string[]>([]);
   const [runtimeState, setRuntimeState] = useState<Json | null>(null);
-  const [rocketState, setRocketState] = useState<Json>({});
+  const [rocketState] = useState<Json>({});
   const [conflicts, setConflicts] = useState<Array<{ key: string; runtime: unknown; rocket: unknown; severity: 'CRITICAL' | 'HIGH' | 'LOW' }>>([]);
   const [bus, setBus] = useState<BusEvent[]>([]);
   const [filter, setFilter] = useState('');
   const [busy, setBusy] = useState(false);
-  const lastRuntimeRef = useRef<Json | null>(null);
+  const [lastReceipt, setLastReceipt] = useState('');
 
   const addEvent = useCallback((event: Omit<BusEvent, 'id' | 'at'>) => {
     setBus(previous => [{ ...event, id: nowId('evt'), at: new Date().toISOString() }, ...previous].slice(0, 100));
@@ -66,7 +71,6 @@ export function SessionOpsPanels() {
       const body = await getTarget('state');
       const runtime = (body.state && typeof body.state === 'object' ? body.state : body) as Json;
       setRuntimeState(runtime);
-      lastRuntimeRef.current = runtime;
       const next: typeof conflicts = [];
       for (const [key, value] of objectFields(runtime)) {
         if (!(key in rocketState)) continue;
@@ -76,16 +80,29 @@ export function SessionOpsPanels() {
         }
       }
       setConflicts(next);
-      addEvent({ type: 'RECONCILE', workspace: 'Live Door', operationId: typeof body.operationId === 'string' ? body.operationId : undefined, authoritative: true, detail: `${next.length} runtime/display conflicts` });
+      setLastReceipt(typeof body.operationId === 'string' ? body.operationId : 'AWAITING_RECEIPT');
+      addEvent({ type: 'RECONCILE', workspace: 'Live Door', operationId: typeof body.operationId === 'string' ? body.operationId : undefined, authoritative: Boolean(body.operationId), detail: `${next.length} measurable runtime/display conflicts` });
     } catch (error) {
       setAlerts(previous => [`${new Date().toLocaleTimeString()} · RECONCILE BLOCKED · ${error instanceof Error ? error.message : 'state failed'}`, ...previous].slice(0, 20));
     } finally { setBusy(false); }
   }, [addEvent, rocketState]);
 
-  const resolveConflict = (key: string, outcome: 'RUNTIME_WINS' | 'ROCKET_WINS' | 'MANUAL') => {
-    if (outcome === 'RUNTIME_WINS' && runtimeState) setRocketState(previous => ({ ...previous, [key]: runtimeState[key] }));
-    setConflicts(previous => previous.filter(item => item.key !== key));
-    addEvent({ type: 'RECONCILE_RESOLUTION', workspace: 'Live Door', authoritative: outcome !== 'ROCKET_WINS', detail: `${key} → ${outcome}` });
+  const resolveConflict = async (key: string, outcome: 'RUNTIME_WINS' | 'ROCKET_WINS' | 'MANUAL') => {
+    setBusy(true);
+    try {
+      const body = await issueCommand('refresh', { source: 'session-health-reconcile', field: key, outcome, runtimeState: runtimeState?.[key] ?? null, rocketState: rocketState[key] ?? null });
+      const operationId = typeof body.operationId === 'string' ? body.operationId : '';
+      const receipt = body.receipt && typeof body.receipt === 'object' ? body.receipt : null;
+      const runtimeSha = typeof body.runtimeSha256 === 'string' ? body.runtimeSha256 : typeof receipt?.runtimeSha256 === 'string' ? receipt.runtimeSha256 : '';
+      if (!operationId || !runtimeSha) throw new Error('Reconcile resolution returned no operationId + runtime SHA receipt. Resolution remains uncommitted.');
+      setLastReceipt(`${operationId} · runtime ${runtimeSha}`);
+      if (outcome === 'RUNTIME_WINS' && runtimeState) setConflicts(previous => previous.filter(item => item.key !== key));
+      else if (outcome === 'MANUAL') setConflicts(previous => previous.filter(item => item.key !== key));
+      addEvent({ type: 'RECONCILE_ACK', workspace: 'Live Door', operationId, authoritative: true, detail: `${key} → ${outcome} · runtime SHA ${runtimeSha}` });
+    } catch (error) {
+      setAlerts(previous => [`${new Date().toLocaleTimeString()} · RESOLUTION BLOCKED · ${error instanceof Error ? error.message : 'resolution failed'}`, ...previous].slice(0, 20));
+      addEvent({ type: 'RECONCILE_BLOCKED', workspace: 'Live Door', authoritative: true, detail: error instanceof Error ? error.message : 'resolution failed' });
+    } finally { setBusy(false); }
   };
 
   const visibleBus = useMemo(() => bus.filter(event => !filter || `${event.type} ${event.workspace} ${event.detail}`.toLowerCase().includes(filter.toLowerCase())), [bus, filter]);
@@ -101,7 +118,7 @@ export function SessionOpsPanels() {
 
     {tab === 'health' && <div style={{ padding: 12 }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6 }}>
-        {[["STATUS", String(health.status || 'UNKNOWN')], ['SUCCESS', `${successRate}%`], ['AVG', `${avgLatency}ms`], ['FAIL STREAK', String(consecutiveFailures)]].map(([label, value]) => <div key={label} style={{ padding: 8, background: 'rgba(255,255,255,.04)', borderRadius: 6 }}><small>{label}</small><div style={{ marginTop: 4 }}>{value}</div></div>)}
+        {[['STATUS', String(health.status || 'UNKNOWN')], ['SUCCESS', `${successRate}%`], ['AVG', `${avgLatency}ms`], ['FAIL STREAK', String(consecutiveFailures)]].map(([label, value]) => <div key={label} style={{ padding: 8, background: 'rgba(255,255,255,.04)', borderRadius: 6 }}><small>{label}</small><div style={{ marginTop: 4 }}>{value}</div></div>)}
       </div>
       <div style={{ marginTop: 10, fontSize: 10, opacity: .7 }}>REAL /health · 5s polling · {samples.length}/{MAX_HISTORY} samples · synthetic heartbeats prohibited</div>
       <div style={{ marginTop: 10, height: 40, display: 'flex', alignItems: 'end', gap: 2 }}>{samples.map((sample, index) => <span key={index} title={`${sample.latencyMs}ms`} style={{ height: `${Math.max(4, Math.min(40, sample.latencyMs / 4))}px`, flex: 1, background: sample.ok ? '#5eead4' : '#ff5c7a', opacity: .75 }} />)}</div>
@@ -110,8 +127,9 @@ export function SessionOpsPanels() {
 
     {tab === 'reconcile' && <div style={{ padding: 12 }}>
       <button onClick={() => void reconcile()} disabled={busy} style={{ width: '100%', padding: 8, borderRadius: 6, border: 0, background: '#4000FF', color: '#fff' }}>{busy ? 'RECONCILING…' : 'RECONCILE FROM RUNTIME /STATE'}</button>
-      <div style={{ marginTop: 8, fontSize: 10, opacity: .7 }}>Runtime state is evidence. Rocket display state is not promoted into runtime by this panel.</div>
-      <div style={{ marginTop: 10 }}>{conflicts.length === 0 ? <div style={{ padding: 12, opacity: .6, fontSize: 11 }}>No measured conflicts. A missing comparison field is not a PASS.</div> : conflicts.map(conflict => <div key={conflict.key} style={{ padding: 9, marginBottom: 6, border: '1px solid rgba(255,255,255,.1)', borderRadius: 7 }}><strong>{conflict.severity} · {conflict.key}</strong><div style={{ fontSize: 10, marginTop: 5 }}>RUNTIME: {display(conflict.runtime)}</div><div style={{ fontSize: 10 }}>ROCKET: {display(conflict.rocket)}</div><div style={{ display: 'flex', gap: 5, marginTop: 7 }}>{(['RUNTIME_WINS', 'ROCKET_WINS', 'MANUAL'] as const).map(outcome => <button key={outcome} onClick={() => resolveConflict(conflict.key, outcome)} style={{ fontSize: 9, padding: 5, background: '#0b1020', color: '#fff', border: '1px solid rgba(255,255,255,.14)', borderRadius: 5 }}>{outcome}</button>)}</div></div>)}</div>
+      <div style={{ marginTop: 8, fontSize: 10, opacity: .7 }}>Runtime state is evidence. No display field is treated as authoritative until the runtime returns an operation receipt + runtime SHA.</div>
+      {lastReceipt && <div style={{ marginTop: 7, fontSize: 10 }}>RECEIPT · {lastReceipt}</div>}
+      <div style={{ marginTop: 10 }}>{conflicts.length === 0 ? <div style={{ padding: 12, opacity: .6, fontSize: 11 }}>No measurable conflicts. Missing comparison fields are UNKNOWN, not PASS.</div> : conflicts.map(conflict => <div key={conflict.key} style={{ padding: 9, marginBottom: 6, border: '1px solid rgba(255,255,255,.1)', borderRadius: 7 }}><strong>{conflict.severity} · {conflict.key}</strong><div style={{ fontSize: 10, marginTop: 5 }}>RUNTIME: {display(conflict.runtime)}</div><div style={{ fontSize: 10 }}>ROCKET: {display(conflict.rocket)}</div><div style={{ display: 'flex', gap: 5, marginTop: 7 }}>{(['RUNTIME_WINS', 'ROCKET_WINS', 'MANUAL'] as const).map(outcome => <button key={outcome} disabled={busy} onClick={() => void resolveConflict(conflict.key, outcome)} style={{ fontSize: 9, padding: 5, background: '#0b1020', color: '#fff', border: '1px solid rgba(255,255,255,.14)', borderRadius: 5 }}>{outcome}</button>)}</div></div>)}</div>
     </div>}
 
     {tab === 'bus' && <div style={{ padding: 12 }}>

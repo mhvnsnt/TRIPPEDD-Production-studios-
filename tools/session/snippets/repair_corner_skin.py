@@ -120,7 +120,12 @@ if after["corner"]>=before["corner"]:
     print("*** REFUSED: the corner leak did not fall (%d -> %d)"%(before["corner"],after["corner"]))
     return
 me["corner_skin_repaired"]=moved
-out=os.path.join(ROOT,"assets/rigs/MARS_FACE.blend")
+out=(bpy.data.filepath or os.path.join(ROOT,"assets/rigs/MARS_FACE.blend"))
+# SAVE THE BLEND THIS SESSION ACTUALLY HAS OPEN, not a hardcoded canonical
+# path. Run against a REVIEW blend on a second session port, these snippets
+# each wrote their result straight over assets/rigs/MARS_FACE.blend -- an
+# unreviewed promotion nobody asked for, and the same way the good mouth was
+# lost under the eye work. A repair belongs to the file it was run on.
 bpy.ops.wm.save_as_mainfile(filepath=out)
 print("corner leak %d -> %d, middle %d -> %d; saved -> %s"
       %(before["corner"],after["corner"],before["middle"],after["middle"],out))

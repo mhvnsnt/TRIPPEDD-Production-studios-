@@ -138,12 +138,40 @@ SLIT_Z = float(opt("--slit-z", "0.26"))   # rest slit = 42% of the measured cont
 # the same way SLIT_Z flattens it.
 SLIT_X = float(opt("--slit-x", "1.0"))
 cx = sum(p.x for p in loop) / N
+
+# ── HIS LIP LINE IS NOT A PLANE, AND FLATTENING IT IS WHAT ATE HIS CORNERS ────
+# MEASURED on his own contour: it sweeps 11.5 mm in depth -- +4.5 mm at the
+# commissures, -7.0 mm at the centre. Every ring below was lofted onto a CONSTANT
+# y, which throws that sweep away, so at the corners the front rings sat IN FRONT
+# of his own lip line and the cutter emerged through his cheek, while at the
+# centre they sat 4-5 mm behind it and nothing breached. That asymmetry is the
+# whole defect, and it is why the rest leak has always been 721 rays on his left
+# against 203 on his right -- his left commissure is the deeper one.
+#
+#   ring points outside his head, winding number against the raw scan:
+#     R1 aperture slit +1.75mm   15 of 56 (2.70mm)  ->  4 of 56 (0.77mm)
+#     R2 opening out   +6.50mm    4 of 56 (1.07mm)  ->  0 of 56
+#   carved head, cells where his exterior skin is gone (predict_carve.py):
+#     flat rings       44 of 483   x -31..+28   ->   4 of 483   x -18..+17
+#
+# So each ring carries the contour's OWN y, decaying with depth: the aperture
+# follows his lip line, and deep inside his head -- where nothing can breach and
+# the cavity wants to be a clean plane -- it does not.
+CONTOUR_DEPTH = "--flat-rings" not in argv
+SHEAR_W = [1.0, 1.0, 1.0, 0.6, 0.25, 0.0, 0.0]
+DY = [p.y for p in loop]                      # captured BEFORE any z/x scaling
+
 for p in loop:
     p.z *= SLIT_Z
     p.x = cx + (p.x - cx) * SLIT_X
 if SLIT_X != 1.0:
     _w = (max(p.x for p in loop) - min(p.x for p in loop)) / (MW / 50.0)
     print("aperture narrowed laterally to %.2f -> %.1f mm wide" % (SLIT_X, _w))
+if CONTOUR_DEPTH:
+    print("rings carry his contour's own depth: %.1f .. %.1f mm sweep, weights %s"
+          % (min(DY) / (MW / 50.0), max(DY) / (MW / 50.0), SHEAR_W))
+else:
+    print("--flat-rings: every ring on a constant plane (the pre-2026-09-13 carve)")
 
 def ellipse_ring(half_w, half_h, z_c, y, n=N):
     """A superellipse: a mouth is a flattened oval, not a circle."""
@@ -191,13 +219,14 @@ CAP_Y = MW * 1.26
 
 bm = bmesh.new()
 rings = []
-for (y, hw, hh, zc, blend) in SECTIONS:
+for k, (y, hw, hh, zc, blend) in enumerate(SECTIONS):
+    w = SHEAR_W[k] if CONTOUR_DEPTH else 0.0
     if blend <= 0.0:
-        pts = [V((p.x, y, p.z)) for p in loop]
+        pts = [V((p.x, y + DY[i] * w, p.z)) for i, p in enumerate(loop)]
     else:
         el = aligned_ring(hw, hh, zc, y)
         pts = [loop[i].lerp(V((el[i].x, y, el[i].z)), blend) for i in range(N)]
-        for p in pts: p.y = y
+        for i, p in enumerate(pts): p.y = y + DY[i] * w
     rings.append([bm.verts.new(to_world(p)) for p in pts])
 bm.verts.ensure_lookup_table()
 
@@ -206,7 +235,12 @@ for a, b in zip(rings, rings[1:]):
         j = (i + 1) % N
         bm.faces.new((a[i], a[j], b[j], b[i]))
 # front cap (in front of the face, gets cut away) and throat cap
-front_c = bm.verts.new(to_world(V((cx, FRONT - MW * 0.05, 0.0))))
+# THE FRONT APEX MUST SIT IN FRONT OF EVERY RING-0 POINT. With the contour's own
+# depth carried, ring 0 is no longer a plane -- a fixed offset from FRONT can end
+# up BEHIND its sheared corner points and turn the front cap inside out, which a
+# DIFFERENCE reads as a solid and leaves as a plug in his mouth.
+_r0y = min(to_local(v.co).y for v in rings[0])
+front_c = bm.verts.new(to_world(V((cx, min(FRONT, _r0y) - MW * 0.05, 0.0))))
 back_c = bm.verts.new(to_world(V((cx, CAP_Y, -MW * 0.02))))
 for i in range(N):
     j = (i + 1) % N
@@ -370,6 +404,11 @@ json.dump({
     "weld": {"distance": WELD, "vertsBefore": before_n, "vertsAfter": len(head.data.vertices),
              "boundaryEdgesBefore": b0, "boundaryEdgesAfterWeld": b1, "afterHoleFill": b2,
              "surfacePointsMoved": 0},
+    "contourDepth": {"carried": CONTOUR_DEPTH, "weights": SHEAR_W,
+                     "sweepMM": [round(min(DY) / (MW / 50.0), 2), round(max(DY) / (MW / 50.0), 2)],
+                     "why": "his inner-lip contour is not a plane; flattening it put the front "
+                            "rings in front of his lip line at the commissures and the cutter "
+                            "emerged through his cheek. 44 -> 4 of 483 cells of lost skin."},
     "cavity": {"method": "void carved OUT of the head by boolean DIFFERENCE, lofted from the "
                          "MediaPipe inner-lip contour raycast onto the real surface",
                "restSlitZScale": SLIT_Z, "depth": round(CAP_Y - FRONT, 5),

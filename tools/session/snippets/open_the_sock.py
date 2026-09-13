@@ -137,7 +137,12 @@ def _run():
     for k in head.data.shape_keys.key_blocks:
         if k.name!="Basis": k.value=0.0
     arm.pose.bones["jaw"].rotation_euler=(0,0,0); bpy.context.view_layer.update()
-    out=os.path.join(ROOT,"assets/rigs/MARS_FACE.blend")
+    out=(bpy.data.filepath or os.path.join(ROOT,"assets/rigs/MARS_FACE.blend"))
+        # SAVE THE BLEND THIS SESSION ACTUALLY HAS OPEN, not a hardcoded canonical
+        # path. Run against a REVIEW blend on a second session port, these snippets
+        # each wrote their result straight over assets/rigs/MARS_FACE.blend -- an
+        # unreviewed promotion nobody asked for, and the same way the good mouth was
+        # lost under the eye work. A repair belongs to the file it was run on.
     bpy.ops.wm.save_as_mainfile(filepath=out)
     print("removed %d front-wall faces; saved -> %s"%(len(drop),out))
 

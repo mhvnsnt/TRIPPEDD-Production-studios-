@@ -201,7 +201,73 @@
       },
       "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
       "sourceSha256": "802b23321e5df2e349dcc5b652a48e0ec29e22b296326bc857541dfdc6ffd4f2"
+    },
+    "mars/a_b/D_native_data_transfer": {
+      "artifact": "docs/evidence/mars/a_b/D_native_data_transfer.v001.png",
+      "sha256": "34fc37b7de45559d8e5da4d7772bd1c6c70602b62e834ae48a2bcf047a869629",
+      "bytes": 902973,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/a_b",
+      "label": "D_native_data_transfer",
+      "version": 1,
+      "producedAt": "2026-09-13T21:10:34Z",
+      "producingTool": "tools/session/snippets/render_and_publish.py",
+      "producingCommit": "501b03d2049b7ab1898223c240621800c6005ed5",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "4.2.1 LTS",
+      "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+      "viewTransform": "Standard",
+      "shown": [
+        "MARS_EYE_L",
+        "MARS_EYE_R",
+        "MARS_MESH",
+        "MARS_MOUTH_SOCK",
+        "MARS_TEETH_LOWER",
+        "MARS_TEETH_UPPER",
+        "MARS_TONGUE"
+      ],
+      "hidden": [],
+      "status": "PENDING",
+      "note": "Variant D: Stage C remesh geometry + Blender's NATIVE Data Transfer for UVs, custom split normals, the smooth flag and vertex groups; 89 shape keys added afterwards by barycentric interpolation (modifier_apply refuses on a mesh with shape keys). All physical gates green: rest drift 0.000000 mm, 68,277/68,316 smooth, custom normals True, UVs True, 11 groups, 89 keys. REVIEW ONLY.",
+      "measurements": {},
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED_D.blend",
+      "sourceSha256": "7f40ba7c9cd6d1b1541cc66e16515954361a05c323d6cfc5d3b6e945ee6106c2"
+    },
+    "mars/mouth/remesh-attempt-3": {
+      "artifact": "docs/evidence/mars/a_b/D_native_data_transfer_VISUAL_FAIL.v001.png",
+      "sha256": "34fc37b7de45559d8e5da4d7772bd1c6c70602b62e834ae48a2bcf047a869629",
+      "bytes": 902973,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/a_b",
+      "label": "D_native_data_transfer_VISUAL_FAIL",
+      "version": 1,
+      "producedAt": "2026-09-13T21:11:19Z",
+      "producingTool": "tools/session/snippets/apply_remesh_dt.py",
+      "producingCommit": "501b03d2049b7ab1898223c240621800c6005ed5",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "",
+      "camera": "",
+      "viewTransform": "",
+      "shown": [],
+      "hidden": [],
+      "status": "FAIL",
+      "note": "VISUAL_FAIL #3, and two named bugs of mine. (1) His MOUTH IS SHUT in a jaw-30 pose -- my mode-D swap removes and re-adds the object's vertex groups AFTER the transfer wrote the weights, and removing a group destroys the weights in the mesh's deform layer, so the armature drives nothing. The test was not even valid. (2) The whole head is covered in scrambled triangular texture -- POLYINTERP_NEAREST resampled UVs across ALL 34,147 verts including the 27,536 survivors that already had correct UVs, and it cannot reproduce a UV seam. NOT PROMOTED.",
+      "measurements": {
+        "restDriftMM": "0.000000",
+        "smoothFaces": "68277",
+        "customNormals": "true",
+        "uvLayers": "1",
+        "vertexGroups": "11"
+      },
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED_D.blend",
+      "sourceSha256": "7f40ba7c9cd6d1b1541cc66e16515954361a05c323d6cfc5d3b6e945ee6106c2"
     }
   },
-  "updatedAt": "2026-09-13T21:05:00Z"
+  "updatedAt": "2026-09-13T21:11:19Z"
 }

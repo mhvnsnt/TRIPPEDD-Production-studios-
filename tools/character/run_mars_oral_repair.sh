@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Execute the actual MARS oral repair. Production worker, not a registry-only declaration.
-# Fail-closed: protrusion survey must PASS before VERIFIED.
+# Fail-closed: render visibility and protrusion survey must PASS before VERIFIED.
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 CACHE="${TRIPPEDD_DONOR_CACHE:-${HOME}/.cache/trippedd/god-molecule/oral-donors}"
@@ -28,6 +28,23 @@ mkdir -p "$OUT"
   --output "$OUT/MARS_ORAL_REPAIRED.blend" \
   --render-dir "$OUT/preview"
 
+# Pixel truth gate: restore render visibility for the already-authoritative oral
+# donor before any pixel/ray comparison. hide_render is a render-state flag;
+# geometry/raycast evidence must never be treated as pixel evidence when the
+# corresponding object is not render-visible.
+VISIBILITY_JSON="$OUT/oral_render_visibility.json"
+"$BLENDER" -b "$OUT/MARS_ORAL_REPAIRED.blend" \
+  --python "$ROOT/tools/character/audit_mars_oral_render_visibility.py" -- \
+  --output "$VISIBILITY_JSON" || {
+    echo "MARS_ORAL_REPAIR: RENDER_VISIBILITY_FAIL"
+    exit 1
+  }
+
+if ! grep -q '"status": "PASS"' "$VISIBILITY_JSON" 2>/dev/null; then
+  echo "MARS_ORAL_REPAIR: RENDER_VISIBILITY_FAIL — audit did not report PASS"
+  exit 1
+fi
+
 # Aperture / protrusion survey — fail-closed
 SURVEY_JSON="$OUT/aperture_survey.json"
 "$BLENDER" -b "$OUT/MARS_ORAL_REPAIRED.blend" --python "$ROOT/tools/character/survey_oral_aperture.py" -- \
@@ -38,7 +55,6 @@ SURVEY_JSON="$OUT/aperture_survey.json"
   }
 
 if ! grep -q 'PROTRUSION_GATE=PASS\|"protrusion_gate": "PASS"\|"protrusion_gate":"PASS"' "$SURVEY_JSON" 2>/dev/null; then
-  # Prefer structured JSON if survey writes it; also accept stdout capture files
   if [[ -f "$OUT/survey_stdout.txt" ]] && grep -q 'PROTRUSION_GATE=PASS' "$OUT/survey_stdout.txt"; then
     :
   else
@@ -50,4 +66,5 @@ fi
 
 echo "MARS_ORAL_REPAIR: VERIFIED"
 echo "OUTPUT=$OUT/MARS_ORAL_REPAIRED.blend"
+echo "VISIBILITY=$VISIBILITY_JSON"
 echo "SURVEY=$SURVEY_JSON"

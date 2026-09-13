@@ -37,6 +37,17 @@ import face_plate as FP
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 def opt(f, d): return argv[argv.index(f) + 1] if f in argv else d
+
+# ── --rig / --out, SO THE HAIR ZONES CAN BE REBUILT ON A CANDIDATE ───────────
+# These are vertex-INDEXED against the rig (docs/evidence/hair/_valley_CAGE.npy ->
+# _hairzones.npy -> every hair tool), so any rebuild that changes the vertex count
+# makes them stale. They read and wrote a hardcoded assets/rigs/MARS_FACE.blend,
+# which meant the only way to regenerate them was to run against canonical --
+# i.e. to promote first and gate afterwards. Both default to canonical, so every
+# existing call is unchanged.
+RIG = os.path.abspath(opt("--rig", os.path.join(ROOT, "assets/rigs/MARS_FACE.blend")))
+OUT_RIG = os.path.abspath(opt("--out", RIG))
+
 def die(m):
     print("\n*** REFUSED: %s\n" % m, flush=True); sys.stdout.flush(); sys.exit(1)
 
@@ -50,7 +61,7 @@ os.makedirs(OUT, exist_ok=True)
 MM = FP.MM
 
 if WHICH == "CAGE":
-    bpy.ops.wm.open_mainfile(filepath=os.path.join(ROOT, "assets/rigs/MARS_FACE.blend"))
+    bpy.ops.wm.open_mainfile(filepath=RIG)
     o = bpy.data.objects.get("MARS_MESH") or die("no MARS_MESH")
     for ob in bpy.data.objects:
         if ob.type == "MESH" and ob is not o: ob.hide_render = True
@@ -227,13 +238,13 @@ if WHICH == "CAGE":
         bpy.ops.render.render(write_still=True)
         print("  mask render %s" % nm, flush=True)
     # bank the zones as vertex groups so the motion stage can just use them
-    bpy.ops.wm.open_mainfile(filepath=os.path.join(ROOT, "assets/rigs/MARS_FACE.blend"))
+    bpy.ops.wm.open_mainfile(filepath=RIG)
     o2 = bpy.data.objects["MARS_MESH"]
     for gname, mask in (("HAIR_FREE", free), ("HAIR_ROOT", ~free)):
         g = o2.vertex_groups.get(gname) or o2.vertex_groups.new(name=gname)
         idx = np.nonzero(mask)[0].tolist()
         g.add(idx, 1.0, "REPLACE")
-    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT, "assets/rigs/MARS_FACE.blend"),
+    bpy.ops.wm.save_as_mainfile(filepath=OUT_RIG,
                                 compress=True)
     print("vertex groups HAIR_FREE (%d) / HAIR_ROOT (%d) written to MARS_FACE.blend"
           % (free.sum(), n - free.sum()), flush=True)

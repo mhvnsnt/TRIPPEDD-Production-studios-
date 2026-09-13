@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "authority": "TRIPPEDD_PRODUCTION",
   "canonical_character": "MARS_CANONICAL",
   "continuous_work": true,
@@ -8,7 +8,7 @@
     "mouth_failure": "skin_stretches_inside_open_mouth",
     "diagnosis": "synthetic radial MARS skin jaw deformation, not missing cavity",
     "pixel_measurement_correction": "oral donor geometry was hide_render=True, so rendered pixels contained MARS skin while ray geometry still contained oral anatomy",
-    "required_fix": "GNM internal anatomy motion plus MARS-own-crease lip ownership plus explicit render visibility",
+    "required_fix": "GNM internal anatomy motion plus MARS-own-crease lip ownership plus explicit persistent render visibility plus actual pixel-ID evidence",
     "forbidden_fix": "interpolated_ellipse_skin_deformation"
   },
   "tasks": [
@@ -24,10 +24,24 @@
     {
       "id": "mars-mouth-render-truth",
       "problem": "pixel_truth_disagreed_with_geometry_because_oral_objects_were_hidden_for_render",
-      "status": "GATED_IN_RUNNER",
-      "tool": "tools/character/audit_mars_oral_render_visibility.py",
-      "commits": ["7d41255da4895227775489d008e171e609573357", "891f6d0e5f4a5e16bf3cfef73c5bca7d5a753693"],
-      "required_measurements": ["hide_render_before", "hide_render_after", "camera_visible_after", "actual_render_pixels"],
+      "status": "PERSISTED_AND_RENDER_READY",
+      "tools": [
+        "tools/character/audit_mars_oral_render_visibility.py",
+        "tools/character/render_mars_oral_pixel_truth.py"
+      ],
+      "commits": [
+        "a530649dc9fceedff3dac878fa14ce2fab29da0a",
+        "598e46c6995e58a391e4363e61da34743dfe43ce",
+        "67c59af39b74e5a0e364a3b096d4e628949d0257"
+      ],
+      "required_measurements": [
+        "hide_render_before",
+        "hide_render_after",
+        "camera_visible_after",
+        "persisted_corrected_blend",
+        "actual_render_pixels",
+        "image_sha256"
+      ],
       "hard_stop": "no_pixel_truth_claim while oral render visibility is UNKNOWN or FAIL",
       "note": "pseudonormal/protrusion sign is geometry diagnostic only; pixel appearance is authoritative for visual claims"
     },

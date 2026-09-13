@@ -80,3 +80,63 @@ geometry, not a modifier laid over the wrong geometry.
 3. **A jaw-weighted cutter can close the hole as the jaw rotates.** 4/120 closed against
    1/120 open — opening his mouth hid teeth. The head's own lower lip already rides the
    jaw and the boolean runs after it, so the aperture should be static.
+
+---
+
+# THE CAVITY WAS NEVER MISSING. THE LIP SEAM DOES NOT PART. (2026-09-13)
+
+Owner: *"probably cause ur doing it by hand instead of the rule and law of using open
+source tools and things we have like Google GNM."* He was right. `tools/character/
+oral_cavity.py`, `build_gnm_oral_donor.py`, `build_mars_oral_bridge.py`,
+`survey_oral_aperture.py` and `run_mars_oral_repair.sh` were already in the repo, with
+the **Google GNM (Apache-2.0)** oral donor sitting in `assets/donor/gnm_oral/` — mouth
+sock, upper and lower teeth-and-gums, tongue and tongue expressions. I hand-built a
+swept cutter instead of running them. OWNER LAW #3.
+
+## Running the real tool
+
+`oral_cavity.py` carves the cavity as a **void cut out of the head**, lofted from his
+measured aperture curve, and it works:
+
+```
+WELD  47,021 verts -> 23,373 · boundary edges 68,237 -> 8 · non-manifold 20
+      every surviving vertex position identical to the scan (0 moved)
+cutter solid: 394 verts · boundary 0 · non-manifold 0 · signed volume +0.004146
+cavity solid: 7 rings x 56 pts · depth 0.3182 (1.65 x mouth width)
+carved: 23,830 verts, 47,174 faces, materials [tripo_mat..., MARS_ORAL_MAT]
+rays landing on CAVITY WALL:  seam 41/41 · upper lip 0/41 · lower lip 0/41
+oral-material vertices in front of the lip surface: 0
+```
+
+**That also explains why my boundary-edge test found nothing.** The cavity is a carved
+VOID — the head stays a closed shell and its walls are the head's own surface turned
+inward. Looking for new boundary edges near the lips was the wrong question entirely.
+
+**And it carries a finding that matters for the eye slivers too:** the scan arrived as
+loose triangles — 68,237 of 104,281 edges shared with nothing, because glTF splits a
+vertex for every corner whose normal or UV differs. Welding at 1e-6 (one part in 840,000
+of head height) gives 8 boundary edges and moves no vertex. *"That is why edge-splitting
+tore the face into shards: the mesh was already shards."*
+
+## So what is actually wrong: the lips are sealed and nothing parts them
+
+| control | upper + lower teeth rays reaching the camera |
+|---|---|
+| rest | **0 / 240** |
+| jaw 18° | 7 / 240 |
+| jaw 30° | 6 / 240 |
+| jaw 18° + `lip_lower_depress` | 6 / 240 |
+| jaw 18° + `lip_lower_depress` + `lip_upper_raise` | 8 / 240 |
+| jaw 30° + both lip keys | 7 / 240 |
+| jaw 30° + both + `mouth_funnel` | **9 / 240** |
+| `facs_jawOpen` 1.0 | 1 / 240 |
+| `facs_jawOpen` + jaw 30° + lips + funnel | 6 / 240 |
+
+**Nine of 240 at the very best.** That is the "small hole" he described, measured. The
+cavity is there, the GNM teeth (1,440 verts each, 738 teeth + 702 gum), gums and tongue
+(933 verts, 31 keys) are there — but the **upper and lower lip surfaces do not separate
+at the seam**, so the jaw can only stretch them.
+
+**NEXT, AND IT IS NOT ANOTHER BOOLEAN:** the lip seam needs to be a real split so the two
+lip surfaces can part, and the jaw needs to carry the lower one. `oral_cavity.py` already
+locates that seam (`seam_at(x)`, and the 41/41 seam probe). That is the lane.

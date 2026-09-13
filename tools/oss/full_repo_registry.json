@@ -8,7 +8,9 @@
     {"name":"RigFlex","path":"third_party/oss/RigFlex","repository":"https://github.com/nerk987/RigFlex","commit":"ddce51fc70011d29188a8a387ea6bfdfc2a39f25","role":["soft_rig","secondary_motion","jiggle"],"license":"REVIEW_REQUIRED"},
     {"name":"SimuSama","path":"third_party/oss/SimuSama","repository":"https://github.com/jfranmatheu/SimuSama","commit":"4545bfe7a7a96dec5b2ffcdec45c1ec33f3ac1fd","role":["MPM","soft_body","fluid_research"],"license":"UNDECLARED_RESEARCH_ONLY"},
     {"name":"Molecular Plus","path":"third_party/oss/molecular-plus","repository":"https://github.com/u3dreal/molecular-plus","commit":"fb2e780d9fa5c166e60e66b44a6c347745167c52","role":["particles","soft_body","granular","fluid_like","destruction"],"license":"GPL-3.0-or-later"},
-    {"name":"JiggleArmature","path":"third_party/oss/JiggleArmature","repository":"https://github.com/cheece/JiggleArmature","commit":"2e2119994c63879ea5e55aca8651eed3b89c8b87","role":["jiggle_bones","secondary_motion"],"license":"REVIEW_REQUIRED"}
+    {"name":"JiggleArmature","path":"third_party/oss/JiggleArmature","repository":"https://github.com/cheece/JiggleArmature","commit":"2e2119994c63879ea5e55aca8651eed3b89c8b87","role":["jiggle_bones","secondary_motion"],"license":"REVIEW_REQUIRED"},
+    {"name":"gsplat","path":"third_party/oss/gsplat","repository":"https://github.com/nerfstudio-project/gsplat","commit":"28e794ca44a4c25ffc39175370c5ee7b38bfcc36","role":["gaussian_splatting","cuda_rasterization","2d_to_3d_fitting","large_scene_rendering"],"license":"Apache-2.0"},
+    {"name":"OpenSplat","path":"third_party/oss/OpenSplat","repository":"https://github.com/WebODM/OpenSplat","commit":"687cc91bbe665cff928998536b6e8bd5bbeb942e","role":["gaussian_splat_training","cpu_gpu_splatting","colmap_ingest","splat_scene_export"],"license":"AGPL-3.0"}
   ],
   "integration_law":[
     "Native Blender capability is production baseline when it covers the task.",

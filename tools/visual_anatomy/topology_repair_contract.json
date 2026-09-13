@@ -1,0 +1,37 @@
+{
+  "schema": "trippedd.topology_repair.v1",
+  "purpose": "repair pathological source topology while preserving measured anatomy",
+  "canonical_mesh_mutation": false,
+  "strategies": [
+    "cgal_isotropic_remesh",
+    "cgal_delaunay_surface_remesh",
+    "instant_meshes_field_aligned_retopology",
+    "pymeshlab_repair",
+    "opensubdiv_post_remesh_refinement"
+  ],
+  "protected_inputs": [
+    "painted_lid_lines.json",
+    "position_map.npz",
+    "MARS_annotation_semantic.png",
+    "MARS_annotation_wireframe.png",
+    "eye_globe_geometry",
+    "UVs",
+    "existing_shape_keys"
+  ],
+  "quality_metrics": {
+    "triangle_min_angle_deg": {"direction": "maximize", "hard_floor": 15.0},
+    "sliver_fraction_below_15deg": {"direction": "minimize", "hard_max": 0.05},
+    "edge_length_cv": {"direction": "minimize"},
+    "self_intersections": {"direction": "minimize", "hard_max": 0},
+    "protected_curve_deviation_mm": {"direction": "minimize", "hard_max": 0.5},
+    "globe_clearance_mm": {"direction": "preserve_gate"}
+  },
+  "promotion": {
+    "requires_before_after_receipt": true,
+    "requires_rendered_wireframe": true,
+    "requires_uv_transfer_check": true,
+    "requires_shape_key_transfer_check": true,
+    "requires_anatomy_regression_check": true,
+    "requires_visual_review": true
+  }
+}

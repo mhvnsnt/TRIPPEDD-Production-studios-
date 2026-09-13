@@ -1,33 +1,33 @@
 {
   "schema": "trippedd.linework-blink/v1",
-  "authority": "OWNER_DRAWN. These points are lifted from lines the owner drew on a plate of his own face. They supersede canonical_fit.json for eyelid, eyebrow and nostril placement (OWNER LAW #5).",
-  "bandMM": 9.0,
-  "falloffMM": 7.0,
+  "authority": "PAINTED SCLERA traced at SOURCE resolution (MARS_source.glb). His drawn 'eyelid' lines land on his FOREHEAD and BROW RIDGE on this mesh, 85 mm away -- see docs/evidence/blink_own/ARBITER_linework_vs_painted.png.",
+  "bandMM": 4.0,
+  "falloffMM": 6.0,
   "overshoot": 1.12,
   "eyes": {
     "L": {
-      "apertureMM": 7.732,
-      "bandVerts": 255,
-      "marginVerts": 144,
+      "apertureMM": 5.198,
+      "bandVerts": 795,
+      "marginVerts": 125,
       "closureAxis": [
-        -0.0381,
-        -0.8101,
-        -0.5851
+        0.0764,
+        -0.3862,
+        -0.9193
       ],
-      "maxTravelMM": 11.314,
-      "keyVertsMoved": 234
+      "maxTravelMM": 10.902,
+      "keyVertsMoved": 458
     },
     "R": {
-      "apertureMM": 8.772,
-      "bandVerts": 198,
-      "marginVerts": 135,
+      "apertureMM": 4.221,
+      "bandVerts": 442,
+      "marginVerts": 154,
       "closureAxis": [
-        0.1334,
-        -0.7591,
-        -0.6372
+        0.0567,
+        -0.4752,
+        -0.8781
       ],
-      "maxTravelMM": 13.407,
-      "keyVertsMoved": 186
+      "maxTravelMM": 7.831,
+      "keyVertsMoved": 245
     }
   }
 }

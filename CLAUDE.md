@@ -549,3 +549,63 @@ radius and axes are untouched; only where it sat was wrong. Centre 82.39 → 6.3
   cannot cause a collision**, so the collision was already in the neutral pose.
 - The dead key now reads **+0.50 mm at every one of the five states**, which is what makes it a
   working fixture for the clearance metric as well as for the blink.
+
+## THE AUTHORITY WAS ON HIS FOREHEAD. THE PAINTED EYE IS THE TRUTH. (2026-09-13)
+
+Owner: *"the blink is happening on the eyebrows and not on the eyes and eyelids."*
+He was right, and it inverts what the two sections above this one concluded.
+
+**`docs/evidence/blink_own/ARBITER_linework_vs_painted.png` settles it in one frame.**
+Both candidates rendered on his face at once:
+
+- the "eyelid" lines in `linework_3d.json` land on his **FOREHEAD and BROW RIDGE**
+- the **PAINTED sclera**, mapped back through his own UVs, lands exactly on his eyes
+
+They are **85 mm apart**, and they are in the same space — the painted centre sits
+**0.51 mm** off the mesh surface, the drawn lines 3–5 mm. So this was never a units or
+transform mismatch. One ruler was simply on the wrong feature, and every blink number
+this session ("3.8 mm from his eyelid") was measured against it.
+
+**THE REVERSAL:** re-measured against the PAINTED eyes, the shipped `blink_L`/`blink_R`
+land **2.5–3.4 mm** from his lid, not 68 mm. They were on his eyes all along. The
+"blinks deform his cheek" conclusion — and the whole eye saga built on it — rests on a
+corrupted authority. *(They are still not usable: rendered, they shatter the eye region
+into spikes. But the reason is not the one that was banked.)*
+
+### THE PAINTED OUTLINE IS TRACED AT SOURCE RESOLUTION, NOT FITTED
+`tools/character/painted_eye_contour.py`. Three things made the earlier pass inaccurate:
+1. **It read the game LOD.** `measure_painted_eyes.py` runs on `MARS_LOD2.glb` and found
+   **21 and 15 faces** per eye — enough for a centroid, so the lid had to be SYNTHESISED
+   as an ellipse. The source carries 1,940,858 triangles: **2,050 painted vertices**.
+2. **A face-majority test throws the rim away.** "Is more than half this face painted"
+   discards exactly the boundary faces that ARE the lid margin. Sample per VERTEX.
+3. **The outline is walked, not fitted** — the extreme vertex in each of 48 bins along
+   the measured fissure axis, so the canthi and his two different eye sizes survive.
+Verified in `docs/evidence/blink_own/PAINTED_FLAT_EYES.png`, flat-lit with specular
+unlinked so the TEXTURE is what you see.
+
+## THE LID CANNOT BE BUILT OUT OF THREE VERTICES (2026-09-13)
+
+Measured on the animated cage against the painted outline:
+
+    eye L  verts within 2mm:2  3mm:3  5mm:19  8mm:68     painted aperture 6.03 mm
+    eye R  verts within 2mm:2  3mm:7  5mm:20  8mm:34     painted aperture 4.63 mm
+
+**Three vertices cannot form an eyelid and no falloff tuning changes that.** This is
+the same defect as "a bunch of really big, ugly triangles": the cage is 23,830 verts
+where the source is 1,114,516.
+
+**SURFACE_DEFORM DOES NOT FIX IT.** Binding the full-resolution mesh to the cage buys
+shading and silhouette; a high-res mesh driven by a 3-vertex lid still has a 3-vertex
+lid. The cage needs geometry where the lid is.
+
+`tools/character/densify_eye_region.py` subdivides ONLY faces within 14 mm of the
+painted lid lines: **23,830 → 27,739 verts**, within 3 mm of the lid **L 3 → 93,
+R 7 → 128**, and the gates that make it safe:
+- every ORIGINAL vertex's rest drift is **0.000000 mm** (Blender keeps originals at the
+  front of the array; new verts are inserted between them, `smooth=0`)
+- all **89 shape key layers** ride through the bmesh subdivision, interpolated
+- **the vertex COUNT changed, so everything indexed by vertex id is STALE** and the
+  report names it rather than letting it break two tools later:
+  `docs/evidence/hair/_valley_CAGE.npy` → `_hairzones.npy` → every hair tool.
+  Regenerate in that order: `valley_discriminator.py` then `hair_zones.py`.

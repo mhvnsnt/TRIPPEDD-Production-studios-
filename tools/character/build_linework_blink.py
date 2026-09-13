@@ -39,6 +39,14 @@ BAND_MM  = float(opt("--band-mm", "9"))    # how far from his lid line still cou
 FALLOFF  = float(opt("--falloff-mm", "7")) # how far the motion feathers out beyond the band
 OVERSHOOT= float(opt("--overshoot", "1.06"))  # close slightly past contact so lids meet
 SAVE = "--no-save" not in argv
+# WHICH AUTHORITY. The lines in linework_3d.json land on his FOREHEAD and BROW RIDGE
+# on this mesh -- 85 mm from his eyes -- which is exactly what he reported: "the blink
+# is happening on the eyebrows and not on the eyes and eyelids". The painted sclera,
+# traced at SOURCE resolution from his own texture and UVs, lands on his eyes and is
+# verified in docs/evidence/blink_own/PAINTED_FLAT_EYES.png. Default to the painted
+# outline; --lines keeps the old file reachable so the two can be compared.
+LINES = opt("--lines", "docs/evidence/blink_own/painted_lid_lines.json")
+CLIP_SIGMA = float(opt("--clip-sigma", "2.5"))
 
 bpy.ops.wm.open_mainfile(filepath=os.path.join(ROOT, "assets/rigs/MARS_FACE.blend"))
 o = bpy.data.objects.get("MARS_MESH") or die("no MARS_MESH")
@@ -47,9 +55,22 @@ if o.data.shape_keys is None:
 for k in o.data.shape_keys.key_blocks:
     if k.name != "Basis": k.value = 0.0
 
-LW = json.load(open(os.path.join(ROOT, "docs/evidence/linework/linework_3d.json")))
+LW = json.load(open(os.path.join(ROOT, LINES)))
 S = {k: np.array(v, dtype=float) for k, v in LW["sets"].items()
      if isinstance(v, list) and len(v) and isinstance(v[0], list)}
+print("authority: %s\n  %s" % (LINES, LW.get("authority", "(none declared)")), flush=True)
+# CLIP THE STRAGGLERS. The traced outline carries the odd vertex that the texture
+# threshold caught outside the eye -- one sat visibly above his right lid. A single
+# stray point drags the lid arc it belongs to, so each line is sigma-clipped against
+# its own spread rather than eyeballed.
+for _k in list(S):
+    _A = S[_k]
+    _c = _A.mean(0); _d = np.linalg.norm(_A - _c, axis=1)
+    _keep = _d <= _d.mean() + CLIP_SIGMA * _d.std()
+    if (~_keep).any():
+        print("  %s: clipped %d stray point(s) beyond %.1f sigma"
+              % (_k, int((~_keep).sum()), CLIP_SIGMA), flush=True)
+        S[_k] = _A[_keep]
 for need in ("eyelid_L_upper", "eyelid_L_lower", "eyelid_R_upper", "eyelid_R_lower"):
     if need not in S:
         die("his linework has no '%s'. A blink cannot be built on a feature he has not "

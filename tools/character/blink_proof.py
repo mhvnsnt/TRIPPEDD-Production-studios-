@@ -51,7 +51,12 @@ for a in bpy.data.objects:
         for b in a.pose.bones:
             b.rotation_mode = "XYZ"; b.rotation_euler = (0, 0, 0); b.location = (0, 0, 0)
 
-LW = json.load(open(os.path.join(ROOT, "docs/evidence/linework/linework_3d.json")))
+# THE GATE MUST READ THE SAME AUTHORITY THE BUILDER DID, or it scores the blink
+# against a ruler on his forehead. linework_3d.json's "eyelid" lines land on his BROW
+# RIDGE on this mesh -- 85 mm out -- which is why this gate reported 3.8-4.6 mm
+# "from his eyelid" on a blink he could see happening on his eyebrows.
+LINES = opt("--lines", "docs/evidence/blink_own/painted_lid_lines.json")
+LW = json.load(open(os.path.join(ROOT, LINES)))
 S = {k: np.array(v, dtype=float) for k, v in LW["sets"].items()
      if isinstance(v, list) and len(v) and isinstance(v[0], list)}
 
@@ -266,7 +271,7 @@ for side in ("L", "R"):
     print("rendered ladder for eye %s" % side, flush=True)
 
 rep = {"schema": "trippedd.blink-proof/v1",
-       "authority": "docs/evidence/linework/linework_3d.json -- the lines the OWNER drew",
+       "authority": LW.get("authority", LINES),
        "verdictRule": "DIRECTIONAL lid-margin travel as a fraction of that eye's own "
                       "aperture. Occlusion is never the verdict: it once scored a lid "
                       "being peeled OPEN as 84% closed.",

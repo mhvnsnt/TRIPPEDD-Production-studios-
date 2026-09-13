@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Fail-fast preflight for the In the Bushes EP01 render pipeline.
 
-This catches the two failure classes that previously made the build look
-healthy while still being unrunnable: missing source assets and missing local
-render dependencies. It intentionally does not install anything or pretend a
-render succeeded.
+The preflight checks the actual active character builder, source graph, scene
+contract, and local delivery dependencies. It intentionally does not install
+anything or pretend a render succeeded.
 """
 from __future__ import annotations
 
@@ -19,10 +18,12 @@ RENDER = ROOT / "show/in-the-bushes/animatic/ep01-origin-opening-v2.render-plan.
 BUILDER = ROOT / "show/in-the-bushes/tools/build_origin_opening.py"
 CHAR_BUILDER = ROOT / "show/in-the-bushes/tools/build_origin_opening_character.py"
 RIG = ROOT / "show/in-the-bushes/tools/teen_performance.py"
+OLD_TEEN_SHEET = ROOT / "show/in-the-bushes/assets/teens/teen-group-origin-states.svg"
+ACTIVE_TEEN_DESIGN = ROOT / "show/in-the-bushes/assets/teens/teen-character-design-v1.svg"
 
 ASSETS = [
     ROOT / "show/in-the-bushes/assets/ep01-opening-alley.svg",
-    ROOT / "show/in-the-bushes/assets/teens/teen-character-design-v1.svg",
+    ACTIVE_TEEN_DESIGN,
     ROOT / "show/in-the-bushes/assets/props/generic-beer-throw-kit.svg",
     ROOT / "show/in-the-bushes/assets/fx/police-light-sweep.svg",
     ROOT / "show/in-the-bushes/assets/busch/busch-wake.svg",
@@ -51,10 +52,24 @@ def main() -> int:
         render = json.loads(RENDER.read_text(encoding="utf-8"))
         if scene.get("totalFrames") != 888 or scene.get("fps") != 24:
             failures.append("scene master is not 888 frames at 24fps")
-        if render.get("totalFrames") != 888 or render.get("resolution") != [1920, 1080]:
-            failures.append("render plan does not match 1920x1080 / 888 frames")
+        if render.get("totalFrames") != 888 or render.get("fps") != 24 or render.get("resolution") != [1920, 1080]:
+            failures.append("render plan does not match 1920x1080 / 888 frames at 24fps")
+        if render.get("activeBuilder") != "show/in-the-bushes/tools/build_origin_opening_character.py":
+            failures.append("render plan is not using the character-performance builder")
+        if render.get("characterSource") != "show/in-the-bushes/tools/teen_performance.py":
+            failures.append("render plan is not using the procedural teen rig")
+        active_assets = [asset for shot in render.get("shots", []) for asset in shot.get("assets", [])]
+        if "teen-group-origin-states.svg" in active_assets:
+            failures.append("obsolete stick-figure teen sheet is still referenced by active render plan")
+        if "teen-character-design-v1.svg" not in active_assets:
+            failures.append("richer teen character design is not referenced by active render plan")
     except Exception as exc:
         failures.append(f"cannot parse render inputs: {exc}")
+
+    # Keep the old sheet available as archive material, but make accidental
+    # reactivation visible during preflight.
+    if OLD_TEEN_SHEET.is_file() and "teen-group-origin-states.svg" in RENDER.read_text(encoding="utf-8"):
+        failures.append("obsolete teen-group-origin-states.svg appears in render-plan text")
 
     raster = next((x for x in ("rsvg-convert", "magick", "convert") if shutil.which(x)), None)
     ffmpeg = shutil.which("ffmpeg")
@@ -64,6 +79,7 @@ def main() -> int:
 
     print("In the Bushes EP01 render preflight")
     print("- Python: available")
+    print(f"- Active character design: {'present' if ACTIVE_TEEN_DESIGN.is_file() else 'MISSING'}")
     print(f"- SVG rasterizer: {raster or 'MISSING'}")
     print(f"- FFmpeg: {ffmpeg or 'MISSING'}")
     print(f"- FFprobe: {ffprobe or 'MISSING'}")

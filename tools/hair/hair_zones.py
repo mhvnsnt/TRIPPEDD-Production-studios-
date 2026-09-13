@@ -41,6 +41,10 @@ os.makedirs(OUT, exist_ok=True)
 MM = FP.MM
 GROW = int(opt("--grow", "6"))
 SKIN_MM = float(opt("--skin-mm", "26"))   # his face has creases too; they are not hair
+# how far ABOVE the chin the neck column still runs -- the back of his neck rises
+# behind the jaw, so the search band cannot stop at the chin
+NECK_ABOVE_CHIN_MM = float(opt("--neck-above-chin-mm", "35"))
+NECK_MARGIN_MM = float(opt("--neck-margin-mm", "8"))
 
 bpy.ops.wm.open_mainfile(filepath=BLEND)
 scene = bpy.context.scene
@@ -79,6 +83,44 @@ VD = np.load(vp)
 dens, dface = VD[:, 1], VD[:, 4]
 chin_u = float(np.percentile(P[dface < 30, 1], 2))
 hair = (dface > SKIN_MM) & (P[:, 1] > chin_u)
+
+# ---- HIS NECK IS NOT HAIR -------------------------------------------------
+# Owner: "the backside of the neck and the bottom side of the neck, and that
+# attaches to the jaw and chin... you have that flopping around instead of being
+# part of the face and neck. It's not a part of the hair."
+#
+# A HEIGHT CUT CANNOT SETTLE THIS and that is all the rule above was. His dreads
+# hang PAST his jaw, so everything below the chin is not neck; and the back of his
+# neck runs UP behind the jaw, so everything above the chin is not hair. Height
+# alone puts the back and underside of his neck into the cloth sim, which is
+# exactly the flopping he is describing.
+#
+# The separable fact is RADIAL, not vertical: at any height, the neck is the inner
+# smooth column and the hair hangs OUTSIDE it. So at each height band below the
+# jaw, the inner cluster by distance from his own head axis is neck. The axis is
+# his head frame's up, through the centroid -- anatomy, not a world guess -- and
+# the radius is read off the mesh per band rather than chosen.
+low = P[:, 1] < chin_u + NECK_ABOVE_CHIN_MM * MM
+neck = np.zeros(len(P), dtype=bool)
+if low.sum() > 50:
+    rad = np.hypot(P[:, 0], P[:, 2])          # distance from his own head axis
+    bands = np.linspace(P[low, 1].min(), chin_u + NECK_ABOVE_CHIN_MM * MM, 10)
+    for k in range(len(bands) - 1):
+        sel = low & (P[:, 1] >= bands[k]) & (P[:, 1] < bands[k + 1])
+        if sel.sum() < 20:
+            continue
+        r = rad[sel]
+        # the inner column: everything within a margin of this band's OWN inner radius
+        inner = float(np.percentile(r, 25))
+        neck |= sel & (rad <= inner + NECK_MARGIN_MM * MM)
+    stripped = int((hair & neck).sum())
+    hair = hair & ~neck
+    print("neck column: %d verts identified as neck/jaw skin, %d of them were being "
+          "simulated as HAIR and are now face" % (int(neck.sum()), stripped), flush=True)
+else:
+    print("neck column: NOT_ATTEMPTED -- only %d verts below the chin band" % int(low.sum()),
+          flush=True)
+
 print("skin bound: %.0f mm from his face landmarks; neck bound: head-frame height %.3f (chin)"
       % (SKIN_MM, chin_u), flush=True)
 print("hair region: %d verts (%.1f%%)  [valley-density seed would have given %d]"

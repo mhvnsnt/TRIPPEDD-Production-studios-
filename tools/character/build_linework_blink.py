@@ -47,6 +47,15 @@ SAVE = "--no-save" not in argv
 # outline; --lines keeps the old file reachable so the two can be compared.
 LINES = opt("--lines", "docs/evidence/blink_own/painted_lid_lines.json")
 CLIP_SIGMA = float(opt("--clip-sigma", "2.5"))
+# HOW FAR ABOVE THE LID MARGIN THE BLINK MAY REACH. Owner: "It's still blinking from
+# too high above the eyelid and the little shadow area underneath the eyebrows. It's
+# still blinking from there instead of ... from the eyelid."
+# A plain RADIUS cannot express that: 10 mm of radius around the upper lid line is
+# 10 mm UP into the brow shadow as readily as 10 mm along the lid. The limit has to
+# be ANISOTROPIC -- generous along the fissure, tight across it -- because that is
+# the shape of an eyelid. His painted aperture is 4.6-6.0 mm, so the moving lid is
+# about one aperture tall and nothing above that belongs in a blink.
+ABOVE_MM = float(opt("--above-mm", "4.5"))
 
 bpy.ops.wm.open_mainfile(filepath=os.path.join(ROOT, "assets/rigs/MARS_FACE.blend"))
 o = bpy.data.objects.get("MARS_MESH") or die("no MARS_MESH")
@@ -114,7 +123,15 @@ for side in ("L", "R"):
     d_up, C_up = seg_dist(Pw, up_line)       # every mesh vert -> his UPPER lid line
     d_lo, C_lo = seg_dist(Pw, lo_line)
     # the lid band: vertices whose nearest lid line is the UPPER one, within reach
-    band = (d_up < (BAND_MM + FALLOFF) * MM) & (d_up <= d_lo)
+    # how far each vertex sits ABOVE his upper lid margin, along the closure axis
+    # (ez runs upper -> lower, so -ez points at the brow)
+    above = ((Pw - C_up) @ (-ez)) / MM
+    band = ((d_up < (BAND_MM + FALLOFF) * MM) & (d_up <= d_lo)
+            & (above <= ABOVE_MM))
+    _cut = int(((d_up < (BAND_MM + FALLOFF) * MM) & (d_up <= d_lo) & (above > ABOVE_MM)).sum())
+    if _cut:
+        print("  eye %s: excluded %d verts more than %.1f mm above the lid margin "
+              "(brow shadow)" % (side, _cut, ABOVE_MM), flush=True)
     if band.sum() < 20:
         die("only %d vertices sit within %.0f mm of his %s upper lid line. Either the "
             "band is too tight or the linework and the mesh are not in the same space -- "

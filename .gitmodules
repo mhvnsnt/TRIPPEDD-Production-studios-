@@ -40,3 +40,6 @@
 [submodule "third_party/oss/molecular-plus"]
 	path = third_party/oss/molecular-plus
 	url = https://github.com/u3dreal/molecular-plus.git
+[submodule "third_party/oss/JiggleArmature"]
+	path = third_party/oss/JiggleArmature
+	url = https://github.com/cheece/JiggleArmature.git

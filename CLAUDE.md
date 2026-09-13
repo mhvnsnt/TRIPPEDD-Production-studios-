@@ -609,3 +609,79 @@ R 7 → 128**, and the gates that make it safe:
   report names it rather than letting it break two tools later:
   `docs/evidence/hair/_valley_CAGE.npy` → `_hairzones.npy` → every hair tool.
   Regenerate in that order: `valley_discriminator.py` then `hair_zones.py`.
+
+## THE SKIN FILLING HIS MOUTH WAS 36 FACES SPANNING THE CREASE (2026-09-13)
+
+Owner: *"it looks like a gooey skin-textured paste of the blue skin and gums and teeth,
+but, like, stretched inside of the mouth cavity"* and *"the literal mouth was perfect
+yesterday."* Both true. Three separate defects, all measured, `tools/character/split_lip_seam.py`.
+
+**1. THE ORAL ANATOMY WAS SWITCHED OFF.** `MARS_MOUTH_SOCK`, `MARS_TEETH_UPPER`,
+`MARS_TEETH_LOWER` and `MARS_TONGUE` all carried `hide_render = True` in the canonical rig.
+**AND `scene.ray_cast` IGNORES `hide_render` ENTIRELY** — so the aperture survey reported
+`sock 9.9% / teeth 2.2%` of a frame containing zero pixels of either. The control that
+settles it: a false-colour render with the skin hidden comes back **100% background**.
+Clear it with ChatGPT's `audit_mars_oral_render_visibility.py`, never by hand.
+
+**2. `rig_face.py` CRASHED BEFORE IT SAVED AND IT LOOKED LIKE A CLEAN RUN.**
+`blink_closure()`'s early guard returned THREE values where its other return gives five.
+Blender `-b` **exits 0 after a script exception**, so the tool printed its whole healthy
+report — every shape key, every FACS travel figure, the blink comparison — and wrote
+nothing. The face rig could not be rebuilt at all. One line. *Check for a SAVE line, never
+an exit code.*
+
+**3. THERE WAS NOTHING TO SPLIT.** Splitting the lip seam opened the CORNERS and left the
+centre welded, at 44 crossing edges and again at 98:
+
+    edges crossing the crease in the lip zone                44
+    FACES STRADDLING the crease                              36
+      their area              median 13.0 mm2   max 52.7 mm2
+      their longest edge      median  8.7 mm    max 22.5 mm
+    whole-head median face area                            0.59 mm2
+    widest stretch of his mouth with NO crossing edge        7.9 mm
+
+A single face **22x the median area** spans from his upper lip to his lower lip, so across
+7.9 mm of his mouth there is no edge for `split_edges` to act on. **That face is the blue
+skin filling the centre of his open mouth.** So the faces are CUT first with Blender's own
+`bisect_plane`, then the seam is split: seam 82 edges spanning 36.8 of his 50.0 mm mouth,
+aperture 0.00 -> 44.36 mm mean, teeth 5 -> 72 of 240, **oral anatomy 7.58% -> 15.24% of
+frame and his tongue 0.09% -> 2.77%, with REST identical to the pixel.**
+
+### FOUR ERRORS OF MINE ON THE WAY, ALL CAUGHT BY MEASUREMENT
+1. **A SPLIT PAIR CANNOT BE TOLD APART BY ITS POSITION.** The two halves sit on top of one
+   another, so "is this vertex above the crease" answers the same for both, they get the
+   same weights and travel together — **seam gap 0.00 mm at every pose.** Classify by which
+   FACES a vertex belongs to: 0.00 -> 21.64 mm. Same family as the eye contours.
+2. **A VERTEX LYING EXACTLY ON THE CUT IS ON NEITHER SIDE.** Without that epsilon every
+   freshly bisected face read as still straddling and the count went **103 -> 117** on a
+   pass that had cut every one correctly. The cut was working; the detector was not.
+3. **AFTER A BISECT THERE ARE NO CROSSING EDGES LEFT.** The crease becomes a chain of
+   vertices sitting ON it. What must be split is that chain — edges whose two FACES lie on
+   opposite sides — and classifying the FACE by its centroid is what makes it epsilon-free,
+   because a centroid is never on the crease.
+4. **A SECOND CUT PASS MEASURED WORSE: 36 -> 23 -> 28.** One pass.
+
+### DERIVING THE SEAM FROM THE MESH'S OWN CREASE WANDERS — THE MEASURED CONTOUR WINS
+94 straddling faces against the contour's 36, and the split built on it recovered LESS of
+his mouth (3.92% vs 5.02%). The crease derivation is kept ONLY as the independent check on
+where his crease is (mean 3.48 mm, max 6.93 mm from the contour). **And unlike the eye
+landmarks, the mouth contour CHECKS OUT against things outside itself:** 1.15 mm from his
+skin, 4.28 mm from the sock rim, and the painted texture's green channel halves at it. A
+fit is not wrong everywhere because it is wrong somewhere — but it has to be checked.
+
+### WHAT IS LEFT IS TOPOLOGY, AND CUTTING CANNOT FIX IT
+23 faces still span the crease; **14 are visible at jaw 30 with 1,008 rays landing on them
+— they ARE the pale shards.** They are 17-23 mm2 fragments. Both attempts to cut them away
+are kept in the tool and **default to off because they measured worse**:
+
+    the plain cut                        oral 15.24%   23 straddlers   <- promoted
+    --residual-rounds 3                       15.11%   23 -> 26
+    --densify-passes 2                        14.22%   +2,804 verts
+
+The count rises while the pixels stay flat. **261 faces fill his entire mouth.** Next is
+RETOPOLOGY of the mouth region (Remi / Instant Meshes), the same remedy as THE LID CANNOT
+BE BUILT OUT OF THREE VERTICES.
+
+### STALE: THE VERTEX COUNT CHANGED, 27,721 -> 27,865
+`docs/evidence/hair/_valley_CAGE.npy` -> `_hairzones.npy` -> every hair tool. Regenerate
+`valley_discriminator.py` then `hair_zones.py`, in that order.

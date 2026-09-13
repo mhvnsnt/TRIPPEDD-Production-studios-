@@ -24,6 +24,13 @@
 ## Open-source-first face pipeline
 Use existing open-source components before hand-built geometry/heuristics. Current approved families include MediaPipe canonical face landmarks, Rigify, ICT-FaceKit, GNM-derived oral anatomy, MPFB2/MakeHuman, trimesh, scipy/pycpd/libigl and the existing Blender tooling. Do not use texture darkness, arbitrary pixel raycasts, or brow geometry as an eyelid detector.
 
+## DONOR-FIRST / NO-HAND-ROLLING LAW — READ BEFORE REPAIR
+See `docs/agent_handoff/DONOR_FIRST_NO_HAND_ROLLING_LAW.md`.
+
+Before writing replacement geometry, cutters, heuristics, rig logic, or repair code, Claude MUST search the repository and the existing open-source stack for a proven donor/tool/repair chain. Known-good components are assets to transfer into `MARS_CANONICAL`, not excuses to build a second character. Existing repair scripts outrank duplicated scripts. Existing Blender/libigl/CGAL/MeshLab/PyMeshLab/Open3D/trimesh/rigging capabilities outrank bespoke substitutes when their gates fit.
+
+**Hand-rolling is last resort.** If a new implementation is genuinely required, record the searched/rejected routes and the measurable reason they could not be used. For the current mouth work, a proven oral donor plus the existing oral repair chain outranks a newly hand-cut Boolean cutter. A flat-sheet cutter shortcut is forbidden.
+
 ## Autonomous tool bulletin — READ EVERY TURN
 The repository maintains an always-current tool bulletin at `docs/agent_handoff/CLAUDE_TOOL_BULLETIN.md`. Read it before visual, mesh, rig, facial, hair, or topology work. It is the handoff mechanism for tools added by other agents so the owner does not have to prompt Claude to use them.
 

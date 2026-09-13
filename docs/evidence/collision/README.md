@@ -188,3 +188,48 @@ not an experiment.
 - `selfCollision` on the hair is **NOT_ATTEMPTED** in these runs (`--no-self-collide`).
 - 21.9 mm of face penetration remains. Next: stop the collider pushing at the hairline,
   by excluding pinned root vertices from collision rather than by thickening the collider.
+
+---
+
+# THE CREEP WAS THE CLOTH SAGGING, AND INTERNAL SPRINGS FIXED IT (2026-09-13)
+
+Owner, on the first sequence: *"it doesn't look like the hair moves or has physics at all."*
+He was right, and the gate had already refused the run for exactly that reason:
+
+```
+drift (linear creep over the take): 56.78 mm
+SWAY (peak-to-peak once the creep is removed): 4.20 mm
+*** REFUSED: the hair CREEPS 56.78 mm and only SWAYS 4.20 mm.
+```
+
+93% of what looked like secondary motion was the cloth slowly stretching under its own
+weight. Raising tension stiffness alone does not fix it — it stiffens the *sheet*, and a
+dread is a solid form. Blender's cloth ships the thing that models a form: **internal
+springs**, which run through the volume between opposing surfaces of a lock.
+
+| | drift | sway | hair through his face |
+|---|---|---|---|
+| stretch 2000, **no** internal springs | **87.52 mm** | 11.35 mm | — |
+| stretch 2000, internal springs | **1.23 mm** | 5.48 mm | — |
+| final: stretch 2000, bend 8, air 1.0, internal 12 | **1.14 mm** | **5.96 mm** | **7.25 mm** |
+
+Drift 87.52 → 1.14 mm, a 77x reduction, and **sway now exceeds creep 5-to-1** — the first
+time in this project that number has been the right way round.
+
+The face penetration fell with it, 15.15 → **7.25 mm**, without touching the collider: a
+lock that holds its own form does not collapse inward through his cheek. That was not
+predicted; it was measured.
+
+Also fixed on the way: cutting the collider back from the hair **roots** removed 0 of
+11,311 faces, because the root→tip gradient was seeded from the **crown** and its roots sit
+on top of his head, nowhere near skin. The shove is where the cap **rests on** the scalp —
+those hair vertices start at ~0 mm from the skin, so any collider thickness is an impulse
+applied to them on frame 1. Cutting 6 mm around the hair's *rest* positions (93% of the
+collider kept) took penetration 21.88 → 15.15 mm before internal springs took it to 7.25.
+
+**Still open and stated as itself:** 7.25 mm of hair still enters his face, `selfCollision`
+is NOT_ATTEMPTED, and 5.96 mm of sway may read as too stiff — that is a visual verdict and
+it belongs to him, not to the number.
+
+`docs/evidence/hair_motion/hair_FRONT_motion.gif` / `hair_SIDE_motion.gif` are the sequence,
+because a frame is not motion.

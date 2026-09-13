@@ -64,6 +64,25 @@ SELF_MM   = float(opt("--self-mm", "2.5"))
 # scored 72.76 mm where the same thickness at quality 5 scored 21.88 mm. Two
 # variables moving together is not an experiment.
 COLQ      = int(opt("--collision-quality", "0"))   # 0 = derive from --quality
+# CUT THE COLLIDER BACK FROM THE ROOTS, DO NOT THICKEN IT. The sweep said thicker
+# and more substeps are WORSE (3.5 mm scored 79.78 mm against 2.0 mm's 21.88 mm),
+# which is the signature of a collider fighting geometry it should not be touching:
+# at the hairline the cap and the skin are THE SAME SURFACE, so any thickness there
+# is a shove applied to vertices that are already welded to the head. Skin within
+# this distance of a hair root is removed from the collider -- the hair cannot fall
+# through the scalp it is attached to, and the locks keep the cheek and jaw they
+# actually need to hit.
+ROOTCLEAR = float(opt("--root-clear-mm", "4"))
+# INTERNAL SPRINGS. The creep is the cloth slowly stretching under its own weight:
+# measured 56.78 mm of drift against 4.20 mm of sway, i.e. 93% of what looked like
+# secondary motion was sag. Raising tension stiffness alone only stiffens the SHEET;
+# a dread is a solid form, and Blender's cloth ships the thing that models that --
+# internal springs run THROUGH the volume between opposite surfaces of a lock, so it
+# resists being pulled long AND holds its sculpted shape. That is the owner's own
+# description: "kinda thick and heavy ... they have some weight to them more than a
+# strand of hair, but they can blow in the air like hair".
+INTERNAL  = "--no-internal" not in argv
+INT_TENS  = float(opt("--internal-tension", "12"))
 CONTACT_OUT = opt("--contact-out", "")   # per-frame geometry for penetration_measure.py
 # GRAVITY WAS THE WRONG KNOB TO LEAVE ALONE. Stiffness 25->45 and mass 0.40->0.55
 # changed the settle number by 0.4% (69.24 -> 69.56 mm, both ending at 98% of
@@ -225,6 +244,39 @@ if not NOCOLLIDE:
         ng = collider.vertex_groups.new(name=name)
         for j, vi in enumerate(skin_idx):
             if arr[vi] > 0: ng.add([j], float(arr[vi]), "REPLACE")
+    if ROOTCLEAR > 0:
+        from mathutils.kdtree import KDTree
+        # NOT the root zone -- measured, cutting 26 mm around it removed 0 of 11,311
+        # collider faces, because the root->tip gradient was seeded from the CROWN and
+        # its roots sit on top of his head, nowhere near skin. The shove is where the
+        # cap RESTS ON the scalp: those hair vertices start at ~0 mm from the skin, so
+        # any collider thickness is an impulse applied to them on frame 1. That is why
+        # 3.5 mm scored 79.78 mm where 2.0 mm scored 21.88. Cut the collider where the
+        # hair is already touching it; keep every face the locks actually need to hit.
+        root_ids = np.nonzero(hairf)[0]
+        kd = KDTree(len(root_ids))
+        for j, vi in enumerate(root_ids):
+            kd.insert(o.data.vertices[int(vi)].co, j)
+        kd.balance()
+        cverts = collider.data.vertices
+        near = np.zeros(len(cverts), dtype=bool)
+        for j, v in enumerate(cverts):
+            _, _, dist = kd.find(v.co)
+            near[j] = (dist is not None and dist < ROOTCLEAR * MM)
+        bmr = bmesh.new(); bmr.from_mesh(collider.data)
+        bmr.verts.ensure_lookup_table()
+        drop = [f for f in bmr.faces if any(near[v.index] for v in f.verts)]
+        nface0 = len(bmr.faces)
+        bmesh.ops.delete(bmr, geom=drop, context="FACES")
+        bmr.to_mesh(collider.data); bmr.free()
+        print("  collider cut back %.1f mm from %d hair verts at rest: %d -> %d faces (%.0f%% kept)"
+              % (ROOTCLEAR, len(root_ids), nface0, len(collider.data.polygons),
+                 100.0 * len(collider.data.polygons) / max(1, nface0)), flush=True)
+        if len(collider.data.polygons) < 200:
+            die("the root clearance removed all but %d collider faces. At %.0f mm there "
+                "is nothing left for the hair to hit, and a collider with no faces "
+                "reports a clean sim for the same reason a gate with zero checks "
+                "reports 0/0 PASS." % (len(collider.data.polygons), ROOTCLEAR))
     for md in list(collider.modifiers): collider.modifiers.remove(md)
     cam = collider.modifiers.new("COL_ARM", "ARMATURE")
     cam.object = arm; cam.use_vertex_groups = True
@@ -265,6 +317,14 @@ cs.bending_damping = 2
 cs.air_damping = AIR
 cs.pin_stiffness = 50.0
 cs.effector_weights.gravity = GRAV
+if INTERNAL:
+    cs.use_internal_springs = True
+    cs.internal_tension_stiffness = INT_TENS
+    cs.internal_compression_stiffness = INT_TENS
+    cs.internal_spring_max_length = 0.0        # 0 = unlimited, let it find the volume
+    cs.internal_spring_normal_check = True     # only between roughly opposing faces
+    print("internal springs ON, tension/compression %.1f -- a dread is a form, not a sheet"
+          % INT_TENS, flush=True)
 cm.point_cache.frame_start = 1
 cm.point_cache.frame_end = TOTAL
 # COLLISION SETTINGS. use_collision is what makes the cloth see HEAD_COLLIDER at

@@ -59,6 +59,11 @@ SELFCOL   = "--no-self-collide" not in argv
 COL_TRIS  = int(opt("--collider-tris", "9000"))
 COL_THICK = float(opt("--collider-mm", "2.0"))   # his millimetres
 SELF_MM   = float(opt("--self-mm", "2.5"))
+# COLLISION SUBSTEPS ARE THEIR OWN KNOB. Tying them to the cloth quality made the
+# sweep unreadable: raising --quality raised both at once, and 2.0 mm at quality 20
+# scored 72.76 mm where the same thickness at quality 5 scored 21.88 mm. Two
+# variables moving together is not an experiment.
+COLQ      = int(opt("--collision-quality", "0"))   # 0 = derive from --quality
 CONTACT_OUT = opt("--contact-out", "")   # per-frame geometry for penetration_measure.py
 # GRAVITY WAS THE WRONG KNOB TO LEAVE ALONE. Stiffness 25->45 and mass 0.40->0.55
 # changed the settle number by 0.4% (69.24 -> 69.56 mm, both ending at 98% of
@@ -267,7 +272,7 @@ cm.point_cache.frame_end = TOTAL
 # asked for ("each piece has collision detection with the other stuff").
 cm.collision_settings.use_collision = not NOCOLLIDE
 cm.collision_settings.distance_min = COL_THICK * MM
-cm.collision_settings.collision_quality = max(4, QUALITY // 2)
+cm.collision_settings.collision_quality = COLQ if COLQ > 0 else max(4, QUALITY // 2)
 cm.collision_settings.use_self_collision = SELFCOL
 cm.collision_settings.self_distance_min = SELF_MM * MM
 cm.collision_settings.self_friction = 5.0
@@ -408,12 +413,24 @@ print("tracking %d tip verts against %d root verts" % (tips.sum(), roots.sum()),
 # cheek crosses to the inside of it. Restricting B to "skin faces only" would
 # have left an open hole at the hairline, which is the one place the winding
 # number is least trustworthy -- and it is the place the hair actually lives.
-contact = {"HAIR_SIM/verts": [], "MARS_MESH_SKIN/verts": []}
+contact = {"HAIR_SIM/verts": [], "MARS_MESH_SKIN/verts": [], "MARS_FACE_SKIN/verts": []}
 if CONTACT_OUT:
     o.data.calc_loop_triangles()
     _tri = np.empty(len(o.data.loop_triangles) * 3, dtype=np.int32)
     o.data.loop_triangles.foreach_get("vertices", _tri)
-    contact["MARS_MESH_SKIN/tris"] = _tri.reshape(-1, 3)
+    _tri = _tri.reshape(-1, 3)
+    contact["MARS_MESH_SKIN/tris"] = _tri
+    # HIS FACE ON ITS OWN. The whole mesh is 75% hair cap by vertex count, so
+    # "inside the head solid" counts a lock swinging through where the STATIC cap
+    # used to be -- measured, 59.24 mm and 141,211 violating samples on a sim that
+    # had a real collider on. That number is about the cap, not about his face.
+    # The face sub-surface is the only thing the question "is the hair through his
+    # face" is actually asking about.
+    _skin = ~hairf
+    _face_tri = _tri[_skin[_tri].all(axis=1)]
+    contact["MARS_FACE_SKIN/tris"] = _face_tri
+    print("MARS_FACE_SKIN: %d of %d triangles are skin-only (the rest are hair cap)"
+          % (len(_face_tri), len(_tri)), flush=True)
     sim.data.calc_loop_triangles()
     _stri = np.empty(len(sim.data.loop_triangles) * 3, dtype=np.int32)
     sim.data.loop_triangles.foreach_get("vertices", _stri)
@@ -454,6 +471,7 @@ for f in range(PRE, PRE + N + 1):
     if CONTACT_OUT:
         contact["HAIR_SIM/verts"].append(sw_now.astype(np.float32))
         contact["MARS_MESH_SKIN/verts"].append(skin_now.astype(np.float32))
+        contact["MARS_FACE_SKIN/verts"].append(skin_now.astype(np.float32))
     if not NORENDER:
         for nm, cam in CAMS.items():
             scene.camera = cam
@@ -516,9 +534,10 @@ if CONTACT_OUT:
         _out[k] = np.stack(v) if isinstance(v, list) else v
     _out["HAIR_SIM/nv"] = np.array([_out["HAIR_SIM/verts"].shape[1]])
     _out["MARS_MESH_SKIN/nv"] = np.array([_out["MARS_MESH_SKIN/verts"].shape[1]])
+    _out["MARS_FACE_SKIN/nv"] = np.array([_out["MARS_FACE_SKIN/verts"].shape[1]])
     _out["__frames__"] = np.array([s_["frame"] for s_ in series], dtype=np.int32)
-    _out["__parts__"] = np.array(["HAIR_SIM", "MARS_MESH_SKIN"])
-    _out["__specs__"] = np.array(["HAIR_SIM", "MARS_MESH_SKIN"])
+    _out["__parts__"] = np.array(["HAIR_SIM", "MARS_MESH_SKIN", "MARS_FACE_SKIN"])
+    _out["__specs__"] = np.array(["HAIR_SIM", "MARS_MESH_SKIN", "MARS_FACE_SKIN"])
     _out["__blend__"] = np.array([bpy.data.filepath or "<hair_motion>"])
     os.makedirs(os.path.dirname(os.path.abspath(CONTACT_OUT)) or ".", exist_ok=True)
     np.savez_compressed(CONTACT_OUT, **_out)

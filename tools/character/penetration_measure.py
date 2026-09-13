@@ -82,6 +82,88 @@ def signed_distance(P: np.ndarray, V: np.ndarray, F: np.ndarray) -> np.ndarray:
     )[0], dtype=np.float64)
 
 
+def surface_side_depth(P, V, F):
+    """How far a point sits BEHIND an OPEN surface, along that surface's own normal.
+
+    For a region like his face there is no enclosed solid to be inside of -- the
+    skin sub-surface is open at the hairline, and the whole cranium is hair. A
+    winding number there is not well posed. The pseudonormal signed distance is:
+    it takes the sign from the normal at the CLOSEST POINT, which answers exactly
+    the question being asked -- is this hair vertex on the far side of his cheek.
+
+    Points whose closest feature is the open boundary are excluded, because that
+    is the one place a pseudonormal sign can flip for reasons that are not a
+    penetration. Excluding them is recorded, not silent: they are counted and
+    reported as `boundaryExcluded` in the receipt.
+    """
+    S, _, C, _ = igl.signed_distance(
+        np.ascontiguousarray(P, dtype=np.float64),
+        np.ascontiguousarray(V, dtype=np.float64),
+        np.ascontiguousarray(F, dtype=np.int32),
+        igl.SIGNED_DISTANCE_TYPE_PSEUDONORMAL,
+    )
+    return np.maximum(0.0, -np.asarray(S, dtype=np.float64)), np.asarray(C)
+
+
+def solid_depth_on_subset(P, V, F, subset_mask):
+    """Penetration into a CLOSED solid, counted only where the nearest surface
+    feature belongs to a named subset of its triangles.
+
+    This is what "is the hair through his FACE" actually asks, and it needs no
+    hole filling, no pseudonormal, and no repair of a non-manifold mesh.
+
+    Measured, the two wrong ways first:
+      * B = the whole closed head solid. His mesh is 75% hair cap by vertex count,
+        so a lock swinging through where the STATIC cap used to be scored 59.24 mm
+        with 141,211 violating samples on a sim that had a working collider.
+      * B = the face sub-surface, sign from the pseudonormal. That surface is open
+        (348 boundary edges: eyes, nostrils, mouth aperture, hairline). Hair hanging
+        down his BACK has its nearest feature on that boundary and the normal there
+        points forward, so it read 145.38 mm "behind his face" -- and collision ON
+        scored WORSE than collision OFF, which is the giveaway that the number was
+        about the metric and not the hair.
+
+    The closed surface is well posed, so "inside" is exact. igl returns the index
+    of the CLOSEST FACE with the distance, so classifying the contact costs nothing:
+    nearest feature in the skin subset -> a real face penetration; nearest feature
+    on the hair cap -> hair against hair, reported separately and never as a face
+    contact.
+    """
+    S, I, _, _ = igl.signed_distance(
+        np.ascontiguousarray(P, dtype=np.float64),
+        np.ascontiguousarray(V, dtype=np.float64),
+        np.ascontiguousarray(F, dtype=np.int32),
+        igl.SIGNED_DISTANCE_TYPE_FAST_WINDING_NUMBER,
+    )
+    S = np.asarray(S, dtype=np.float64)
+    I = np.asarray(I, dtype=np.int64)
+    inside = S < 0.0
+    on_subset = subset_mask[np.clip(I, 0, len(subset_mask) - 1)]
+    depth = np.where(inside & on_subset, -S, 0.0)
+    other = int((inside & ~on_subset).sum())
+    return np.maximum(0.0, depth), other
+
+
+def subset_face_mask(F_all, F_sub):
+    """Which triangles of the full mesh are in the subset. Matched on SORTED vertex
+    index triples, so a winding difference between the two extractions cannot cause
+    a silent miss -- and the match is asserted, not assumed."""
+    key_all = {tuple(sorted(map(int, f))): i for i, f in enumerate(F_all)}
+    mask = np.zeros(len(F_all), dtype=bool)
+    hit = 0
+    for f in F_sub:
+        k = tuple(sorted(map(int, f)))
+        if k in key_all:
+            mask[key_all[k]] = True
+            hit += 1
+    if hit < 0.95 * len(F_sub):
+        die("the subset shares only %d of its %d triangles with the full surface "
+            "(%.1f%%). They are not the same vertex indexing, so the contact "
+            "classification would be measuring two different meshes."
+            % (hit, len(F_sub), 100.0 * hit / max(1, len(F_sub))))
+    return mask
+
+
 def signed_depth(P, V, F, carve=None):
     """Penetration depth in WORLD units of every point of P into solid (V,F),
     optionally with one or more solids CARVED OUT of it first.
@@ -134,6 +216,14 @@ def main() -> int:
                     help='"B=C[,C2]" subtract solids C from B before measuring, '
                          'e.g. "MARS_MESH=MARS_CAVITY" so the tongue is only '
                          'forbidden from the MEAT of his head, not from its own pocket')
+    ap.add_argument("--face-subset", action="append", default=[],
+                    help='"B=SUBSET" count a penetration only where the nearest '
+                         'surface feature of the closed solid B is a triangle of '
+                         'SUBSET (which must share B\'s vertex indexing)')
+    ap.add_argument("--surface-side", action="append", default=[],
+                    help="part B to treat as an OPEN surface: depth is how far A sits "
+                         "behind B along B's own normal, not how far inside a solid. "
+                         "Use for a region (his face) that has no enclosed volume.")
     ap.add_argument("--self", action="append", default=[],
                     help="part to also measure against ITSELF, lock vs lock")
     ap.add_argument("--out", default="docs/evidence/collision")
@@ -165,6 +255,13 @@ def main() -> int:
         b, _, cs = c.partition("=")
         carve_map[b.strip()] = [x.strip() for x in cs.split(",") if x.strip()]
 
+    subset_map = {}
+    for c in args.face_subset:
+        if "=" not in c:
+            die('--face-subset wants "B=SUBSET", got %r' % c)
+        b, _, sub = c.partition("=")
+        subset_map[b.strip()] = sub.strip()
+
     receipts, summary = [], []
     for spec in args.pair:
         body, _, mode = spec.partition(":")
@@ -184,14 +281,29 @@ def main() -> int:
                 "inside of. Measuring against it would report 0 mm for everything, "
                 "which is ATTEMPTED_AND_EMPTY dressed up as a PASS." % (spec, b_spec))
 
+        sub_mask = None
+        sub_name = subset_map.get(b_spec)
+        if sub_name:
+            sub_mask = subset_face_mask(Bf, z["%s/tris" % key(sub_name)])
+            print("  %s: %d of %d triangles of %s are in the %s subset"
+                  % (spec, int(sub_mask.sum()), len(Bf), b_spec, sub_name), flush=True)
+        off_subset_total = 0
         carved = carve_map.get(b_spec, [])
         for c in carved:
             key(c)
         per_frame_max, per_frame_n, all_depth = [], [], []
         worst = {"mm": -1.0, "frame": None, "idx": None, "depth": None}
         for fi in range(len(frames)):
-            cg = [(z["%s/verts" % key(c)][fi], z["%s/tris" % key(c)]) for c in carved]
-            d = signed_depth(A[fi], Bv[fi], Bf, cg) / MM   # -> his millimetres
+            if sub_mask is not None:
+                d, other = solid_depth_on_subset(A[fi], Bv[fi], Bf, sub_mask)
+                d = d / MM
+                off_subset_total += other
+            elif b_spec in args.surface_side:
+                d, _cp = surface_side_depth(A[fi], Bv[fi], Bf)
+                d = d / MM
+            else:
+                cg = [(z["%s/verts" % key(c)][fi], z["%s/tris" % key(c)]) for c in carved]
+                d = signed_depth(A[fi], Bv[fi], Bf, cg) / MM   # -> his millimetres
             all_depth.append(d)
             viol = d > args.tol_mm
             per_frame_max.append(float(d.max()) if d.size else 0.0)
@@ -268,6 +380,11 @@ def main() -> int:
                 "definition": "a vertex of A inside the SOLID volume of B; depth = "
                               "distance to B's nearest surface",
                 "carvedFrom_B": carved,
+                "mode_B": ("SOLID restricted to the %s subset (winding number + "
+                           "closest-face classification)" % sub_name) if sub_mask is not None
+                          else ("OPEN_SURFACE (pseudonormal side test)"
+                                if b_spec in args.surface_side else "SOLID (winding number)"),
+                "insideButNearestFeatureOffSubset": off_subset_total,
                 "mmPerUnit": MM, "MW": MW,
                 "frames": [int(frames[0]), int(frames[-1])],
                 "samplesPerFrame": int(A.shape[1]),

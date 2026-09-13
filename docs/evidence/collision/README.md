@@ -113,3 +113,78 @@ libigl's **generalized winding number** (`signed_distance` with
 `SIGNED_DISTANCE_TYPE_FAST_WINDING_NUMBER`) is robust on the open, self-intersecting,
 non-watertight surfaces a character actually has — which a ray-parity inside test is not.
 FCL (through trimesh) does the broad phase. OWNER LAW #3.
+
+---
+
+# HAIR THROUGH HIS FACE — measured, and NOT clean yet
+
+`hair_through_face_AB.png` — collision OFF (top) vs ON (bottom), the same frame of the
+same take, with **every vertex the measurement flagged drawn on the pixels** at the size
+and colour of its own depth.
+
+| whole take, tolerance 1.0 mm | deepest | violating samples |
+|---|---|---|
+| collision OFF | **34.507 mm** | 663 / 445,475 |
+| collision ON  | **21.881 mm** | 409 / 445,475 |
+
+The collider helps — 37% shallower, 38% fewer — **and it is not a pass.** 21.9 mm of hair
+still goes through his cheek. That is recorded as the number, not as "much better".
+
+At the single worst ON frame (6), collision ON is *worse* than OFF: 24 verts / 21.88 mm
+against 0 verts / 0.38 mm. The aggregate and the frame disagree, and both are reported.
+
+## Two metrics had to be thrown away first, and both looked fine
+
+1. **B = the whole closed head solid → 59.24 mm, 141,211 violating.** His mesh is 75% hair
+   cap by vertex count, so a lock swinging through where the *static* cap used to be
+   scored as hair through his face.
+2. **B = the face sub-surface, sign from the pseudonormal → 145.38 mm, and collision ON
+   scored WORSE than OFF.** That surface is open (348 boundary edges: eyes, nostrils,
+   mouth aperture, hairline), so hair hanging down his BACK had its nearest feature on the
+   boundary, where the normal points forward. **ON scoring worse than OFF is the giveaway**
+   that the number was about the metric.
+
+The test that works needs no hole filling and no repair: **inside the closed head solid
+AND the nearest surface feature is a skin triangle.** libigl returns the closest face index
+with the distance, so the classification is free. A contact whose nearest feature is on the
+hair cap is counted separately as `insideButNearestFeatureOffSubset` — hair against hair,
+never reported as a face contact.
+
+## The overlay was wrong once, and it is worth writing down
+
+The first published version of `hair_through_face_AB.png` projected the markers on **world
+axes**. His head rests ~32.6° pitched back and the FRONT camera's right vector measures
+(-0.995, 0.055, -0.081) — very nearly *minus* world x. So every marker was mirrored
+left-for-right and sheared vertically, and it produced a completely plausible-looking
+picture in which some markers appeared to float in space beside his head. Those "flying
+hair verts" did not exist. The overlay now rebuilds the exact (right, up, forward) triple
+from `face_plate.head_frame`, the same one the renderer built its cameras from.
+
+**An overlay you would read as evidence is the worst thing to get quietly wrong.**
+
+## Collider sweep, with the first condition re-tested at the end
+
+| collider thickness | collision substeps | deepest | violating |
+|---|---|---|---|
+| 2.0 mm | 4 | **21.881 mm** | 409 |
+| 0.5 mm | 6 | 24.695 mm | 639 |
+| 1.0 mm | 12 | 27.682 mm | 419 |
+| 2.0 mm | 16 | 23.496 mm | 418 |
+| 2.0 mm | 10 (cloth quality 20) | 72.758 mm | 1461 |
+| 3.5 mm | 6 | 79.775 mm | 1608 |
+| **2.0 mm — REPEAT of row 1** | **4** | **21.881 mm** | **409** |
+
+The repeat reproduces to the digit, so this is a measurement of the variable and not of
+time — the warm-up curve that inverted a ranking once before in this project.
+
+A thicker collider and more substeps make it **worse**, which is the useful finding: the
+collider is shoving the hairline at frame 1, because the cap and the skin are the same
+surface there. Collision substeps are now their own flag (`--collision-quality`) rather
+than being derived from cloth quality — raising `--quality` moved both at once, which is
+not an experiment.
+
+## Still open, stated as itself
+
+- `selfCollision` on the hair is **NOT_ATTEMPTED** in these runs (`--no-self-collide`).
+- 21.9 mm of face penetration remains. Next: stop the collider pushing at the hairline,
+  by excluding pinned root vertices from collision rather than by thickening the collider.

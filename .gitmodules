@@ -43,3 +43,9 @@
 [submodule "third_party/oss/JiggleArmature"]
 	path = third_party/oss/JiggleArmature
 	url = https://github.com/cheece/JiggleArmature.git
+[submodule "third_party/oss/gsplat"]
+	path = third_party/oss/gsplat
+	url = https://github.com/nerfstudio-project/gsplat.git
+[submodule "third_party/oss/OpenSplat"]
+	path = third_party/oss/OpenSplat
+	url = https://github.com/WebODM/OpenSplat.git

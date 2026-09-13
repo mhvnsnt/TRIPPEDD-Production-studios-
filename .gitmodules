@@ -73,3 +73,12 @@
 [submodule "third_party/oss/Easy-Tree"]
 	path = third_party/oss/Easy-Tree
 	url = https://github.com/jacobcjohnston/Easy-Tree.git
+[submodule "third_party/oss/AliceVision"]
+	path = third_party/oss/AliceVision
+	url = https://github.com/alicevision/AliceVision.git
+[submodule "third_party/oss/nerfstudio"]
+	path = third_party/oss/nerfstudio
+	url = https://github.com/nerfstudio-project/nerfstudio.git
+[submodule "third_party/oss/SuperSplat"]
+	path = third_party/oss/SuperSplat
+	url = https://github.com/playcanvas/supersplat.git

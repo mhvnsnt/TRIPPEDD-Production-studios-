@@ -1,0 +1,40 @@
+{
+  "$schema": "trippedd.mars-blink-vector-field/v1",
+  "canonical": {
+    "source": "MARS_source.glb",
+    "mutationAllowed": false
+  },
+  "problem": {
+    "statement": "A single closure-axis projection can move the lid margin away from the authored eyelid curve when additional travel overshoots the local curve.",
+    "latestMeasuredLeftGapMm": 4.13,
+    "previousMeasuredLeftGapMm": 3.37,
+    "latestMeasuredRightGapMm": 0.99,
+    "latestOpenLeftGapMm": 6.92,
+    "latestOpenRightGapMm": 6.09
+  },
+  "solution": {
+    "model": "per_vertex_curve_targeted_vector_field",
+    "components": ["curve_normal_closure", "curve_tangent_follow", "surface_normal_constraint"],
+    "single_global_closure_axisForbidden": true,
+    "nearestAuthoredCurvePointRequired": true,
+    "correctiveShapeKeyPreferred": true
+  },
+  "measurement": {
+    "travelDenominator": "per_margin_vertex_open_gap_to_authored_curve_target",
+    "lineToLineApertureMayNotBeUsedAsTravelDenominator": true,
+    "report": ["open_gap_mm", "closed_gap_mm", "gap_reduction_mm", "margin_travel_mm", "local_required_travel_mm", "travel_ratio", "curve_landing_mm"],
+    "monotonicClosureRequired": true,
+    "directionRegressionRequired": true
+  },
+  "eyeball": {
+    "geometryPresent": false,
+    "clearanceStatus": "NOT_ATTEMPTED",
+    "mustNotInventGeometryForGate": true,
+    "nextEnablement": "real_eye_globe_or_explicit_eye_surface_fixture"
+  },
+  "promotion": {
+    "unknownNeverPass": true,
+    "actualPixelsRequired": true,
+    "oldBlinkKeysRemainNegativeControls": true
+  }
+}

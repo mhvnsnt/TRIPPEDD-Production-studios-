@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "authority": "TRIPPEDD_PRODUCTION",
   "canonical_character": "MARS_CANONICAL",
   "continuous_work": true,
@@ -7,7 +7,8 @@
   "critical_visual_truth": {
     "mouth_failure": "skin_stretches_inside_open_mouth",
     "diagnosis": "synthetic radial MARS skin jaw deformation, not missing cavity",
-    "required_fix": "GNM internal anatomy motion plus MARS-own-crease lip ownership",
+    "pixel_measurement_correction": "oral donor geometry was hide_render=True, so rendered pixels contained MARS skin while ray geometry still contained oral anatomy",
+    "required_fix": "GNM internal anatomy motion plus MARS-own-crease lip ownership plus explicit render visibility",
     "forbidden_fix": "interpolated_ellipse_skin_deformation"
   },
   "tasks": [
@@ -15,26 +16,26 @@
       "id": "mars-mouth-gnm-motion",
       "problem": "skin_stretching_inside_existing_open_cavity",
       "status": "FIXED_IN_BRIDGE",
-      "route": [
-        "GNM oral donor",
-        "GNM canonical mouth-open expression",
-        "internal teeth/gums/tongue motion",
-        "MARS canonical skin zero synthetic jaw displacement"
-      ],
+      "route": ["GNM oral donor", "GNM canonical mouth-open expression", "internal teeth/gums/tongue motion", "MARS canonical skin zero synthetic jaw displacement"],
       "commit": "f32e8a174c84b37eff0f677204ba1108161e8aed",
       "gate": "SKIN_JAW_MOTION_MAX == 0",
       "hard_stop": "never reintroduce radial or height-interpolated skin jaw deformation"
     },
     {
+      "id": "mars-mouth-render-truth",
+      "problem": "pixel_truth_disagreed_with_geometry_because_oral_objects_were_hidden_for_render",
+      "status": "GATED_IN_RUNNER",
+      "tool": "tools/character/audit_mars_oral_render_visibility.py",
+      "commits": ["7d41255da4895227775489d008e171e609573357", "891f6d0e5f4a5e16bf3cfef73c5bca7d5a753693"],
+      "required_measurements": ["hide_render_before", "hide_render_after", "camera_visible_after", "actual_render_pixels"],
+      "hard_stop": "no_pixel_truth_claim while oral render visibility is UNKNOWN or FAIL",
+      "note": "pseudonormal/protrusion sign is geometry diagnostic only; pixel appearance is authoritative for visual claims"
+    },
+    {
       "id": "mars-mouth-lip-seam",
       "problem": "upper_lower_lip_ownership_and_aperture_motion",
       "status": "NEXT",
-      "donors": [
-        "assets/donor/gnm_oral/",
-        "tools/character/build_gnm_oral_donor.py",
-        "tools/character/oral_cavity.py",
-        "tools/character/run_mars_oral_repair.sh"
-      ],
+      "donors": ["assets/donor/gnm_oral/", "tools/character/build_gnm_oral_donor.py", "tools/character/oral_cavity.py", "tools/character/run_mars_oral_repair.sh"],
       "required_measurements": ["visible_aperture_fraction", "tooth_escape_fraction", "jaw_open_response", "skin_motion_inside_aperture"],
       "authority": "MARS_CANONICAL mesh crease/seam",
       "hard_stop": "do_not_replace_canonical_mars_or_rebuild_whole_mouth"

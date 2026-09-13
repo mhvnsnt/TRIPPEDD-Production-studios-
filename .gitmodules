@@ -28,3 +28,15 @@
 [submodule "third_party/oss/mesh-analysis-overlay"]
 	path = third_party/oss/mesh-analysis-overlay
 	url = https://github.com/dshot92/mesh-analysis-overlay.git
+[submodule "third_party/oss/tissue"]
+	path = third_party/oss/tissue
+	url = https://github.com/alessandro-zomparelli/tissue.git
+[submodule "third_party/oss/RigFlex"]
+	path = third_party/oss/RigFlex
+	url = https://github.com/nerk987/RigFlex.git
+[submodule "third_party/oss/SimuSama"]
+	path = third_party/oss/SimuSama
+	url = https://github.com/jfranmatheu/SimuSama.git
+[submodule "third_party/oss/molecular-plus"]
+	path = third_party/oss/molecular-plus
+	url = https://github.com/u3dreal/molecular-plus.git

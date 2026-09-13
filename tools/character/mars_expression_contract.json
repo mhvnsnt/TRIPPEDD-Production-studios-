@@ -1,0 +1,31 @@
+{
+  "$schema": "trippedd.mars-expression-contract/v1",
+  "character": "MARS",
+  "sourceModel": "assets/source_models/MARS_source.glb",
+  "faceAuthority": "assets/rigs/MARS_linework_authority.json",
+  "authorityOrder": [
+    "owner_linework",
+    "measured_3d_lift",
+    "facs_or_arkit_driver",
+    "third_party_rig_output",
+    "visual_motion_evidence"
+  ],
+  "forbiddenAuthority": ["MediaPipe_generic_landmarks", "unmeasured_canonical_fit"],
+  "expressionFamilies": {
+    "eyes": ["eyeOpenL", "eyeOpenR", "blinkL", "blinkR", "squintL", "squintR"],
+    "brows": ["browUpL", "browUpR", "browDownL", "browDownR", "browInnerUp"],
+    "nose": ["nostrilFlare", "noseSneerL", "noseSneerR"],
+    "mouth": ["jawOpen", "mouthSmileL", "mouthSmileR", "mouthFrownL", "mouthFrownR", "lipPress"],
+    "tongue": ["tongueOut", "tongueLeft", "tongueRight"]
+  },
+  "perControlEvidence": {
+    "required": ["sourceHash", "authorityHash", "driver", "target", "visualEvidence"],
+    "unknownNeverPass": true
+  },
+  "buildOrder": ["eyes", "brows", "nose", "mouth", "tongue", "ears", "full_facs", "performance"],
+  "motionProof": {
+    "minimumStates": ["neutral", "activation", "peak", "release", "neutral"],
+    "requiredMeasurements": ["p50", "p90", "p99", "max", "outlierCount"],
+    "stillImageAloneIsInsufficient": true
+  }
+}

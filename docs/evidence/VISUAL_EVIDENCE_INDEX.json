@@ -1,0 +1,206 @@
+{
+  "schema": "trippedd.visual-evidence-index/v1",
+  "law": "NO BYTES = NO EVIDENCE. UNKNOWN IS NEVER PASS. Append-only.",
+  "entries": [
+    {
+      "artifact": "docs/evidence/mars/mouth/mouth.v001.png",
+      "sha256": "5503ea72545e40aee4016acba4c6c3ef2ac7dc2a6bfa2550fffe1dae7330a870",
+      "bytes": 787664,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/mouth",
+      "label": "mouth",
+      "version": 1,
+      "producedAt": "2026-09-13T20:57:27Z",
+      "producingTool": "tools/session/snippets/render_and_publish.py",
+      "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "4.2.1 LTS",
+      "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+      "viewTransform": "Standard",
+      "shown": [
+        "MARS_EYE_L",
+        "MARS_EYE_R",
+        "MARS_MESH",
+        "MARS_MOUTH_SOCK",
+        "MARS_TEETH_LOWER",
+        "MARS_TEETH_UPPER",
+        "MARS_TONGUE"
+      ],
+      "hidden": [],
+      "status": "PENDING",
+      "note": "",
+      "measurements": {},
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+      "sourceSha256": "9b9d0f699be634c958b735d3034904b3569458ff4eef90b44d624f4f785efb23"
+    },
+    {
+      "artifact": "docs/evidence/mars/a_b/before_mouth_remesh.v001.png",
+      "sha256": "db966aeb9a00be33b5077bad86270857acc63eb9812425cf94295a91d5873a52",
+      "bytes": 787664,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/a_b",
+      "label": "before_mouth_remesh",
+      "version": 1,
+      "producedAt": "2026-09-13T20:58:15Z",
+      "producingTool": "tools/session/snippets/render_and_publish.py",
+      "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "4.2.1 LTS",
+      "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+      "viewTransform": "Standard",
+      "shown": [
+        "MARS_EYE_L",
+        "MARS_EYE_R",
+        "MARS_MESH",
+        "MARS_MOUTH_SOCK",
+        "MARS_TEETH_LOWER",
+        "MARS_TEETH_UPPER",
+        "MARS_TONGUE"
+      ],
+      "hidden": [],
+      "status": "PENDING",
+      "note": "canonical rig BEFORE the mouth remesh -- sock recessed 2.28mm and its front wall opened, lip seam cut+split, 27,865 verts, 261 faces filling the mouth",
+      "measurements": {},
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+      "sourceSha256": "9b9d0f699be634c958b735d3034904b3569458ff4eef90b44d624f4f785efb23"
+    },
+    {
+      "artifact": "docs/evidence/mars/a_b/after_mouth_remesh.v001.png",
+      "sha256": "4ebc232305df191674589daeb77291fab3e50c9c16ce748f8065be2106c732ce",
+      "bytes": 787664,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/a_b",
+      "label": "after_mouth_remesh",
+      "version": 1,
+      "producedAt": "2026-09-13T20:59:07Z",
+      "producingTool": "tools/session/snippets/render_and_publish.py",
+      "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "4.2.1 LTS",
+      "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+      "viewTransform": "Standard",
+      "shown": [
+        "MARS_EYE_L",
+        "MARS_EYE_R",
+        "MARS_MESH",
+        "MARS_MOUTH_SOCK",
+        "MARS_TEETH_LOWER",
+        "MARS_TEETH_UPPER",
+        "MARS_TONGUE"
+      ],
+      "hidden": [],
+      "status": "PENDING",
+      "note": "the SAME rig with the mouth region remeshed: 530 -> 6,812 verts there, 27,865 -> 34,147 total; every vertex outside the region 0.000000 mm; 89 shape keys and 11 vertex groups carried",
+      "measurements": {},
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+      "sourceSha256": "9b9d0f699be634c958b735d3034904b3569458ff4eef90b44d624f4f785efb23"
+    },
+    {
+      "artifact": "docs/evidence/mars/a_b/after_mouth_remesh_VISUAL_FAIL.v001.png",
+      "sha256": "4ebc232305df191674589daeb77291fab3e50c9c16ce748f8065be2106c732ce",
+      "bytes": 787664,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/a_b",
+      "label": "after_mouth_remesh_VISUAL_FAIL",
+      "version": 1,
+      "producedAt": "2026-09-13T20:59:39Z",
+      "producingTool": "tools/session/snippets/apply_remesh.py",
+      "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "",
+      "camera": "",
+      "viewTransform": "",
+      "shown": [],
+      "hidden": [],
+      "status": "FAIL",
+      "note": "VISUAL_FAIL. Every physical gate passed -- 0.000000 mm rest drift and 0.000000 mm shape-key drift on all 27,536 survivors, 89 keys all still moving, 11 vertex groups carried, 0 nearest-surface lookup failures -- and the render is far WORSE than before: his whole face shatters into facets and the mouth fills with stretched columns. VISUAL_FAIL outranks a passing physical gate. NOT PROMOTED; assets/rigs/MARS_FACE.blend is untouched.",
+      "measurements": {
+        "restDriftMM": "0.000000",
+        "shapeKeyDriftMM": "0.000000",
+        "survivors": "27536",
+        "newVerts": "6611",
+        "keysCarried": "89",
+        "groupsCarried": "11"
+      },
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+      "sourceSha256": "9b9d0f699be634c958b735d3034904b3569458ff4eef90b44d624f4f785efb23"
+    },
+    {
+      "artifact": "docs/evidence/mars/a_b/after_remesh_with_shading.v001.png",
+      "sha256": "39442f515d1fe697c6e6816160bbdf72b07eb76fdf3985fe35c77c4e6efed05a",
+      "bytes": 789569,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/a_b",
+      "label": "after_remesh_with_shading",
+      "version": 1,
+      "producedAt": "2026-09-13T21:04:31Z",
+      "producingTool": "tools/session/snippets/render_and_publish.py",
+      "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "4.2.1 LTS",
+      "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+      "viewTransform": "Standard",
+      "shown": [
+        "MARS_EYE_L",
+        "MARS_EYE_R",
+        "MARS_MESH",
+        "MARS_MOUTH_SOCK",
+        "MARS_TEETH_LOWER",
+        "MARS_TEETH_UPPER",
+        "MARS_TONGUE"
+      ],
+      "hidden": [],
+      "status": "PENDING",
+      "note": "Stage C re-run with smooth shading and custom split normals carried across. 34,147 verts, 89 keys, 11 groups, 68,316/68,316 faces smooth, custom normals True, survivor rest+shape-key drift 0.000000 mm. REVIEW ONLY -- canonical untouched.",
+      "measurements": {},
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+      "sourceSha256": "802b23321e5df2e349dcc5b652a48e0ec29e22b296326bc857541dfdc6ffd4f2"
+    },
+    {
+      "artifact": "docs/evidence/mars/a_b/after_remesh_with_shading_VISUAL_FAIL.v001.png",
+      "sha256": "39442f515d1fe697c6e6816160bbdf72b07eb76fdf3985fe35c77c4e6efed05a",
+      "bytes": 789569,
+      "resolution": [
+        700,
+        700
+      ],
+      "set": "mars/a_b",
+      "label": "after_remesh_with_shading_VISUAL_FAIL",
+      "version": 1,
+      "producedAt": "2026-09-13T21:05:00Z",
+      "producingTool": "tools/session/snippets/apply_remesh.py",
+      "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "",
+      "camera": "",
+      "viewTransform": "",
+      "shown": [],
+      "hidden": [],
+      "status": "FAIL",
+      "note": "VISUAL_FAIL #2. Smooth shading and custom split normals ARE now carried (68,316/68,316 smooth, has_custom_normals True) and the facets improved, but his face still shows torn UV patches and the mouth is still stretched columns -- worse than the canonical rig. My hand-rolled per-loop UV transfer is the remaining defect. NOT PROMOTED. The remesh GEOMETRY was never shown to be bad; the attribute transfer is.",
+      "measurements": {
+        "facesSmooth": "68316",
+        "customNormals": "true",
+        "restDriftMM": "0.000000",
+        "shapeKeyDriftMM": "0.000000"
+      },
+      "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+      "sourceSha256": "802b23321e5df2e349dcc5b652a48e0ec29e22b296326bc857541dfdc6ffd4f2"
+    }
+  ]
+}

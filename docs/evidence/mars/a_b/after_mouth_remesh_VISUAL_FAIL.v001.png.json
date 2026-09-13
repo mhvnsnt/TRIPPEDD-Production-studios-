@@ -1,0 +1,33 @@
+{
+  "artifact": "docs/evidence/mars/a_b/after_mouth_remesh_VISUAL_FAIL.v001.png",
+  "sha256": "4ebc232305df191674589daeb77291fab3e50c9c16ce748f8065be2106c732ce",
+  "bytes": 787664,
+  "resolution": [
+    700,
+    700
+  ],
+  "set": "mars/a_b",
+  "label": "after_mouth_remesh_VISUAL_FAIL",
+  "version": 1,
+  "producedAt": "2026-09-13T20:59:39Z",
+  "producingTool": "tools/session/snippets/apply_remesh.py",
+  "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "",
+  "camera": "",
+  "viewTransform": "",
+  "shown": [],
+  "hidden": [],
+  "status": "FAIL",
+  "note": "VISUAL_FAIL. Every physical gate passed -- 0.000000 mm rest drift and 0.000000 mm shape-key drift on all 27,536 survivors, 89 keys all still moving, 11 vertex groups carried, 0 nearest-surface lookup failures -- and the render is far WORSE than before: his whole face shatters into facets and the mouth fills with stretched columns. VISUAL_FAIL outranks a passing physical gate. NOT PROMOTED; assets/rigs/MARS_FACE.blend is untouched.",
+  "measurements": {
+    "restDriftMM": "0.000000",
+    "shapeKeyDriftMM": "0.000000",
+    "survivors": "27536",
+    "newVerts": "6611",
+    "keysCarried": "89",
+    "groupsCarried": "11"
+  },
+  "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+  "sourceSha256": "9b9d0f699be634c958b735d3034904b3569458ff4eef90b44d624f4f785efb23"
+}

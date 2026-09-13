@@ -1,0 +1,34 @@
+{
+  "artifact": "docs/evidence/mars/mouth/mouth.v001.png",
+  "sha256": "5503ea72545e40aee4016acba4c6c3ef2ac7dc2a6bfa2550fffe1dae7330a870",
+  "bytes": 787664,
+  "resolution": [
+    700,
+    700
+  ],
+  "set": "mars/mouth",
+  "label": "mouth",
+  "version": 1,
+  "producedAt": "2026-09-13T20:57:27Z",
+  "producingTool": "tools/session/snippets/render_and_publish.py",
+  "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "4.2.1 LTS",
+  "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+  "viewTransform": "Standard",
+  "shown": [
+    "MARS_EYE_L",
+    "MARS_EYE_R",
+    "MARS_MESH",
+    "MARS_MOUTH_SOCK",
+    "MARS_TEETH_LOWER",
+    "MARS_TEETH_UPPER",
+    "MARS_TONGUE"
+  ],
+  "hidden": [],
+  "status": "PENDING",
+  "note": "",
+  "measurements": {},
+  "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+  "sourceSha256": "9b9d0f699be634c958b735d3034904b3569458ff4eef90b44d624f4f785efb23"
+}

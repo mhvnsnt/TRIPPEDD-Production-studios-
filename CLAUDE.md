@@ -759,3 +759,57 @@ A vestibule lining belongs BEHIND the crowns; a carved cavity wall is the BACK o
 mouth. Sock A/B, live, 0.14 s: as-is 133/800, back 2 mm **147**, back 4 mm 147, back 6 mm
 148, hidden 148 — so 2 mm recovers 14 of the 15 it costs, and **changes nothing about the
 479 of 800 his own head blocks either way.** Still topology.
+
+## OWNER LAW #9 — NO BYTES = NO EVIDENCE. THE REPO IS THE EVIDENCE BUS. (2026-09-13)
+
+Owner: *"Claude should be dropping the visual results in the repo for you to see, so you
+can stop asking me for the images."*
+
+**Never tell another agent a visual result exists without depositing the bytes and the
+manifest.** `tools/publish_visual.py` does it in one call and is wired into the session's
+render snippet, so publication is not something anyone has to remember:
+
+- **nothing is ever overwritten** — `label.v001.png`, `v002`, so an A/B keeps both halves
+  and a known-good reference stays immutable
+- a sidecar records the source `.blend` **and its sha256**, the producing tool and commit,
+  Blender version, camera, **view transform**, what was shown or hidden, the measurements,
+  and PASS / FAIL / PENDING / UNAVAILABLE
+- `docs/evidence/VISUAL_EVIDENCE_INDEX.json` is append-only history
+- `docs/evidence/LATEST_VISUAL_EVIDENCE.json` says what is current, per question
+- the claim is written **after** the bytes are on disk and hashed. UNKNOWN is never PASS.
+
+## OWNER LAW #10 — GEOMETRY CORRECTNESS AND APPEARANCE CORRECTNESS ARE SEPARATE GATES
+
+**A mesh can have zero positional drift and perfectly preserved shape keys and still be
+visibly destroyed**, because normals, smoothing, UVs or materials were never carried. The
+pixels have veto power. Receipt, and it cost two full attempts:
+
+    Stage C rebuild, physical gates       ALL GREEN
+      survivors                           27,536, rest drift 0.000000 mm
+      shape-key drift                     0.000000 mm
+      keys carried                        89 of 89, none landed at Basis
+      vertex groups                       11 of 11
+      nearest-surface lookup failures     0
+    Stage C rebuild, pixels               FAR WORSE. His whole face shattered.
+
+The cause was not the remesh. Measured: the canonical head is **54,681 of 54,720 faces
+smooth with `has_custom_normals=True`**, and a mesh built by `from_pydata` is **0 smooth
+with no custom normals**. **A vertex position is not a surface.** Carrying the shading
+fixed the facets and the render was STILL wrong — torn UV patches — because the remaining
+defect is my own hand-rolled per-loop UV transfer.
+
+**THE LANE WAS WRONG, NOT THE IDEA.** Blender ships a **DATA TRANSFER modifier** built for
+exactly this — UVs, custom split normals and vertex groups from one mesh to another,
+including at seams. Hand-rolling a per-loop UV transfer beside it is OWNER LAW #3 broken
+again, and the pixels said so twice.
+
+## THE QUARANTINE IS WHY NOTHING WAS LOST
+`tools/checkpoint.py save before-mouth-retopo` ran first; every repair went to a REVIEW
+blend under `renders/_remesh/`; and after two visual failures
+`checkpoint.py verify` reports all ten tracked files **`same`**. The canonical rig still
+carries the good state — sock recessed 2.28 mm, its front wall opened, lip seam cut and
+split, teeth 5 -> 72 of 240, oral anatomy 7.58% -> 15.24% of frame.
+
+    DONOR -> REPAIR -> REVIEW BLEND -> EVIDENCE -> PHYSICAL *AND* VISUAL GATES -> PROMOTE
+
+never repair -> overwrite canonical -> discover it broke something.

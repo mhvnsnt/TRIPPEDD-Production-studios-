@@ -1,0 +1,59 @@
+{
+  "schema": "trippedd.cutter-breach/v1",
+  "lod": "LOD2",
+  "slitZ": 0.26,
+  "slitX": 1.0,
+  "hwScale": 1.0,
+  "rings": [
+    {
+      "ring": "R0 aperture slit",
+      "depthMM": -19.43,
+      "outside": 56,
+      "of": 56,
+      "worstBreachMM": 18.5
+    },
+    {
+      "ring": "R1 aperture slit",
+      "depthMM": 1.75,
+      "outside": 15,
+      "of": 56,
+      "worstBreachMM": 2.7
+    },
+    {
+      "ring": "R2 opening out",
+      "depthMM": 6.5,
+      "outside": 4,
+      "of": 56,
+      "worstBreachMM": 1.07
+    },
+    {
+      "ring": "R3 the cavity",
+      "depthMM": 17.0,
+      "outside": 0,
+      "of": 56,
+      "worstBreachMM": 0.0
+    },
+    {
+      "ring": "R4 mid",
+      "depthMM": 35.0,
+      "outside": 0,
+      "of": 56,
+      "worstBreachMM": 0.0
+    },
+    {
+      "ring": "R5 toward throat",
+      "depthMM": 50.0,
+      "outside": 0,
+      "of": 56,
+      "worstBreachMM": 0.0
+    },
+    {
+      "ring": "R6 throat closes",
+      "depthMM": 59.0,
+      "outside": 0,
+      "of": 56,
+      "worstBreachMM": 0.0
+    }
+  ],
+  "cavityBodyOutside": 4
+}

@@ -1,0 +1,424 @@
+{
+  "schema": "trippedd.skin-ab/v1",
+  "lod": "LOD2",
+  "cellsTotal": 483,
+  "cellsSkinGone": 44,
+  "columnsSkinGone": 0,
+  "columnsAgree": 69,
+  "columns": [
+    {
+      "x": -34.0,
+      "uncarved": 6.74,
+      "shipped": 6.78,
+      "verdict": "agree"
+    },
+    {
+      "x": -33.0,
+      "uncarved": 6.1,
+      "shipped": 6.14,
+      "verdict": "agree"
+    },
+    {
+      "x": -32.0,
+      "uncarved": 5.46,
+      "shipped": 5.51,
+      "verdict": "agree"
+    },
+    {
+      "x": -31.0,
+      "uncarved": 5.12,
+      "shipped": 5.16,
+      "verdict": "agree"
+    },
+    {
+      "x": -30.0,
+      "uncarved": 4.42,
+      "shipped": 4.47,
+      "verdict": "agree"
+    },
+    {
+      "x": -29.0,
+      "uncarved": 3.73,
+      "shipped": 3.77,
+      "verdict": "agree"
+    },
+    {
+      "x": -28.0,
+      "uncarved": 3.03,
+      "shipped": 3.07,
+      "verdict": "agree"
+    },
+    {
+      "x": -27.0,
+      "uncarved": 2.33,
+      "shipped": 2.38,
+      "verdict": "agree"
+    },
+    {
+      "x": -26.0,
+      "uncarved": 1.64,
+      "shipped": 1.68,
+      "verdict": "agree"
+    },
+    {
+      "x": -25.0,
+      "uncarved": 0.94,
+      "shipped": 0.98,
+      "verdict": "agree"
+    },
+    {
+      "x": -24.0,
+      "uncarved": 0.24,
+      "shipped": 0.29,
+      "verdict": "agree"
+    },
+    {
+      "x": -23.0,
+      "uncarved": -0.33,
+      "shipped": -0.29,
+      "verdict": "agree"
+    },
+    {
+      "x": -22.0,
+      "uncarved": -0.85,
+      "shipped": -0.81,
+      "verdict": "agree"
+    },
+    {
+      "x": -21.0,
+      "uncarved": -1.37,
+      "shipped": -1.33,
+      "verdict": "agree"
+    },
+    {
+      "x": -20.0,
+      "uncarved": -1.89,
+      "shipped": -1.85,
+      "verdict": "agree"
+    },
+    {
+      "x": -19.0,
+      "uncarved": -2.41,
+      "shipped": -2.37,
+      "verdict": "agree"
+    },
+    {
+      "x": -18.0,
+      "uncarved": -2.93,
+      "shipped": -2.89,
+      "verdict": "agree"
+    },
+    {
+      "x": -17.0,
+      "uncarved": -3.44,
+      "shipped": -3.41,
+      "verdict": "agree"
+    },
+    {
+      "x": -16.0,
+      "uncarved": -3.96,
+      "shipped": -3.93,
+      "verdict": "agree"
+    },
+    {
+      "x": -15.0,
+      "uncarved": -4.48,
+      "shipped": -4.45,
+      "verdict": "agree"
+    },
+    {
+      "x": -14.0,
+      "uncarved": -5.0,
+      "shipped": -4.97,
+      "verdict": "agree"
+    },
+    {
+      "x": -13.0,
+      "uncarved": -5.52,
+      "shipped": -5.48,
+      "verdict": "agree"
+    },
+    {
+      "x": -12.0,
+      "uncarved": -5.95,
+      "shipped": -5.91,
+      "verdict": "agree"
+    },
+    {
+      "x": -11.0,
+      "uncarved": -6.37,
+      "shipped": -6.34,
+      "verdict": "agree"
+    },
+    {
+      "x": -10.0,
+      "uncarved": -6.8,
+      "shipped": -6.77,
+      "verdict": "agree"
+    },
+    {
+      "x": -9.0,
+      "uncarved": -7.23,
+      "shipped": -7.2,
+      "verdict": "agree"
+    },
+    {
+      "x": -8.0,
+      "uncarved": -7.63,
+      "shipped": -7.6,
+      "verdict": "agree"
+    },
+    {
+      "x": -7.0,
+      "uncarved": -8.04,
+      "shipped": -8.0,
+      "verdict": "agree"
+    },
+    {
+      "x": -6.0,
+      "uncarved": -8.44,
+      "shipped": -8.41,
+      "verdict": "agree"
+    },
+    {
+      "x": -5.0,
+      "uncarved": -8.85,
+      "shipped": -8.81,
+      "verdict": "agree"
+    },
+    {
+      "x": -4.0,
+      "uncarved": -8.94,
+      "shipped": -8.92,
+      "verdict": "agree"
+    },
+    {
+      "x": -3.0,
+      "uncarved": -8.98,
+      "shipped": -8.95,
+      "verdict": "agree"
+    },
+    {
+      "x": -2.0,
+      "uncarved": -9.03,
+      "shipped": -9.0,
+      "verdict": "agree"
+    },
+    {
+      "x": -1.0,
+      "uncarved": -9.42,
+      "shipped": -9.38,
+      "verdict": "agree"
+    },
+    {
+      "x": 0.0,
+      "uncarved": -9.82,
+      "shipped": -9.78,
+      "verdict": "agree"
+    },
+    {
+      "x": 1.0,
+      "uncarved": -9.98,
+      "shipped": -9.95,
+      "verdict": "agree"
+    },
+    {
+      "x": 2.0,
+      "uncarved": -9.97,
+      "shipped": -9.95,
+      "verdict": "agree"
+    },
+    {
+      "x": 3.0,
+      "uncarved": -9.66,
+      "shipped": -9.65,
+      "verdict": "agree"
+    },
+    {
+      "x": 4.0,
+      "uncarved": -9.35,
+      "shipped": -9.33,
+      "verdict": "agree"
+    },
+    {
+      "x": 5.0,
+      "uncarved": -9.03,
+      "shipped": -9.02,
+      "verdict": "agree"
+    },
+    {
+      "x": 6.0,
+      "uncarved": -8.72,
+      "shipped": -8.7,
+      "verdict": "agree"
+    },
+    {
+      "x": 7.0,
+      "uncarved": -8.4,
+      "shipped": -8.39,
+      "verdict": "agree"
+    },
+    {
+      "x": 8.0,
+      "uncarved": -7.96,
+      "shipped": -7.95,
+      "verdict": "agree"
+    },
+    {
+      "x": 9.0,
+      "uncarved": -7.51,
+      "shipped": -7.5,
+      "verdict": "agree"
+    },
+    {
+      "x": 10.0,
+      "uncarved": -7.06,
+      "shipped": -7.05,
+      "verdict": "agree"
+    },
+    {
+      "x": 11.0,
+      "uncarved": -6.63,
+      "shipped": -6.61,
+      "verdict": "agree"
+    },
+    {
+      "x": 12.0,
+      "uncarved": -6.19,
+      "shipped": -6.18,
+      "verdict": "agree"
+    },
+    {
+      "x": 13.0,
+      "uncarved": -5.75,
+      "shipped": -5.74,
+      "verdict": "agree"
+    },
+    {
+      "x": 14.0,
+      "uncarved": -5.31,
+      "shipped": -5.3,
+      "verdict": "agree"
+    },
+    {
+      "x": 15.0,
+      "uncarved": -4.86,
+      "shipped": -4.85,
+      "verdict": "agree"
+    },
+    {
+      "x": 16.0,
+      "uncarved": -4.41,
+      "shipped": -4.4,
+      "verdict": "agree"
+    },
+    {
+      "x": 17.0,
+      "uncarved": -3.92,
+      "shipped": -3.91,
+      "verdict": "agree"
+    },
+    {
+      "x": 18.0,
+      "uncarved": -3.38,
+      "shipped": -3.37,
+      "verdict": "agree"
+    },
+    {
+      "x": 19.0,
+      "uncarved": -2.94,
+      "shipped": -2.93,
+      "verdict": "agree"
+    },
+    {
+      "x": 20.0,
+      "uncarved": -2.59,
+      "shipped": -2.58,
+      "verdict": "agree"
+    },
+    {
+      "x": 21.0,
+      "uncarved": -2.25,
+      "shipped": -2.23,
+      "verdict": "agree"
+    },
+    {
+      "x": 22.0,
+      "uncarved": -1.9,
+      "shipped": -1.89,
+      "verdict": "agree"
+    },
+    {
+      "x": 23.0,
+      "uncarved": -1.55,
+      "shipped": -1.54,
+      "verdict": "agree"
+    },
+    {
+      "x": 24.0,
+      "uncarved": -1.21,
+      "shipped": -1.2,
+      "verdict": "agree"
+    },
+    {
+      "x": 25.0,
+      "uncarved": -0.86,
+      "shipped": -0.85,
+      "verdict": "agree"
+    },
+    {
+      "x": 26.0,
+      "uncarved": -0.52,
+      "shipped": -0.5,
+      "verdict": "agree"
+    },
+    {
+      "x": 27.0,
+      "uncarved": -0.17,
+      "shipped": -0.16,
+      "verdict": "agree"
+    },
+    {
+      "x": 28.0,
+      "uncarved": 0.18,
+      "shipped": 0.19,
+      "verdict": "agree"
+    },
+    {
+      "x": 29.0,
+      "uncarved": 0.42,
+      "shipped": 0.44,
+      "verdict": "agree"
+    },
+    {
+      "x": 30.0,
+      "uncarved": 0.53,
+      "shipped": 0.55,
+      "verdict": "agree"
+    },
+    {
+      "x": 31.0,
+      "uncarved": 1.18,
+      "shipped": 1.17,
+      "verdict": "agree"
+    },
+    {
+      "x": 32.0,
+      "uncarved": 2.22,
+      "shipped": 2.21,
+      "verdict": "agree"
+    },
+    {
+      "x": 33.0,
+      "uncarved": 3.25,
+      "shipped": 3.25,
+      "verdict": "agree"
+    },
+    {
+      "x": 34.0,
+      "uncarved": 4.29,
+      "shipped": 4.28,
+      "verdict": "agree"
+    }
+  ]
+}

@@ -909,3 +909,22 @@ measurement you use to judge the repair.* Delete it before measuring, not after.
 face — and the shrinkwrap moved 3,217 of them by up to **41 mm**. The gate refused and
 nothing was saved, but the lesson is the selection: a corner of his MOUTH has to be bounded
 by distance to his lip line, never by a lateral coordinate and a depth alone.
+
+### THE COMMISSURE OPENING SURVIVES PROJECTING HIS OWN SKIN ONTO IT (2026-09-13)
+Four bounded repairs, each gated, each REFUSED, nothing saved — and together they rule out
+most of the hypothesis space:
+
+| attempt | selection | result |
+|---|---|---|
+| push the cavity wall deeper | 224 corner oral verts, 109 moved up to 14.72 mm | leak **981 → 981**, no change at all |
+| shrinkwrap to his uncarved scan | `\|x\| > 16 mm AND deeper than 12 mm` = **22,998 verts**, 3,217 moved up to 41 mm | refused; that selection is most of his head |
+| commissure sphere, 14 mm in 3D | **8 verts** | the crater is 38–52 mm DEEP, so a sphere round the commissure POINT cannot reach one vertex of it |
+| commissure distance **in his lip plane**, 14 mm | **96 verts** projected onto his own scan, up to 41.04 mm | leak **919 → 924**, slightly WORSE |
+
+**So the corner opening is not a displaced-vertex problem.** Moving the vertices that are
+there — even onto his own uncarved scan, which by definition has the right skin — does not
+close it. Either the faces that would cover the commissure do not exist, or the ones there
+face the wrong way. That is a FILL, not a projection, and it is the next thing to test.
+
+And the density is not the obstacle: the crater carries 68 verts deeper than 8 mm at
+x −28..−22 alone and 3,654 faces overall (median 0.7 mm², max 192.2 mm²).

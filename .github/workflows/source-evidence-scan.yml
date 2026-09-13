@@ -1,0 +1,32 @@
+name: Source Evidence Scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/character/**'
+      - 'assets/**'
+      - 'artifacts/evidence/**'
+      - '.github/workflows/source-evidence-scan.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inventory exact source images
+        run: |
+          set +e
+          python3 tools/character/source_evidence_scan.py --out artifacts/evidence/source_evidence_manifest.json
+          rc=$?
+          test "$rc" -eq 40 -o "$rc" -eq 0
+      - name: Upload evidence manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-evidence-manifest
+          path: artifacts/evidence/source_evidence_manifest.json
+          if-no-files-found: error

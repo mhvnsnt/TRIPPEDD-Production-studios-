@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trippedd.mars-blink-vector-field-receipt/v1",
+  "type": "object",
+  "required": ["schema", "canonicalSourceMutated", "channels", "eyeballClearance"],
+  "properties": {
+    "schema": {"const": "trippedd.mars-blink-vector-field-receipt/v1"},
+    "canonicalSourceMutated": {"const": false},
+    "eyeballClearance": {"enum": ["PASS", "FAIL", "NOT_ATTEMPTED"]},
+    "channels": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["key", "openGapMm", "closedGapMm", "gapReductionMm", "marginTravelMm", "localRequiredTravelMm", "travelRatio", "curveLandingMm"],
+        "properties": {
+          "key": {"type": "string"},
+          "openGapMm": {"type": "number", "minimum": 0},
+          "closedGapMm": {"type": "number", "minimum": 0},
+          "gapReductionMm": {"type": "number"},
+          "marginTravelMm": {"type": "number", "minimum": 0},
+          "localRequiredTravelMm": {"type": "number", "exclusiveMinimum": 0},
+          "travelRatio": {"type": "number", "minimum": 0},
+          "curveLandingMm": {"type": "number", "minimum": 0},
+          "monotonicClosure": {"type": "boolean"},
+          "directionCorrect": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

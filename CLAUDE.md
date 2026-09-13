@@ -928,3 +928,30 @@ face the wrong way. That is a FILL, not a projection, and it is the next thing t
 
 And the density is not the obstacle: the crater carries 68 verts deeper than 8 mm at
 x −28..−22 alone and 3,654 faces overall (median 0.7 mm², max 192.2 mm²).
+
+### SIX HYPOTHESES TESTED AT THE COMMISSURE. HIS EXTERIOR SKIN IS GENUINELY ABSENT. (2026-09-13)
+Every one gated, every one refused, canonical never written. Together they close the space:
+
+| # | hypothesis | test | result |
+|---|---|---|---|
+| 1 | the cavity wall protrudes | push 109 corner oral verts up to 14.72 mm deeper | leak **981 → 981**, no change |
+| 2 | the nearby skin is displaced | shrinkwrap to his uncarved scan, `\|x\|>16 ∧ depth>12` | **22,998 verts** selected — most of his head. Refused on the selection |
+| 3 | same, bounded to the commissure | 14 mm sphere round the commissure point | **8 verts** — the crater is 38–52 mm DEEP, so a sphere cannot reach it |
+| 4 | same, bounded in his lip plane | 96 verts projected onto his own scan, up to 41.04 mm | leak **919 → 924**, worse |
+| 5 | it is an open hole | Blender `holes_fill` on the 25 commissure boundary edges | **2 faces**, leak 919 → 924 |
+| 6 | the faces there are inverted | `recalc_face_normals` on the whole shell | **2 of 54,720 flipped.** His normals were already consistent, and the 53 inward-facing faces at the commissure stayed 53 — they point inward because they ARE cavity wall |
+
+**So his exterior skin at the commissures is not displaced, not inverted and not behind an
+openable rim. It is ABSENT.** The carve removed it and the cavity wall now occupies that
+depth, correctly oriented as cavity. The 25 boundary edges out there are scattered, not a
+loop around a missing patch, which is why a fill yields two triangles.
+
+**What is left is a GRAFT, not a repair:** take the skin patch from his uncarved scan over
+each commissure and add it, then bridge it to the existing rim. That adds vertices, so it
+carries the same cost the remesh did — every shape key, UV and weight must be extended for
+the new geometry — and it should be attempted only with that understood.
+
+The alternative, and it is cheaper: **re-run `oral_cavity.py` with a narrower aperture**, so
+the carve never eats past his lip corners in the first place. That rebuilds MARS_ORAL and
+then `rig_face.py`, which is why it was avoided — but `rig_face.py` is fixed now (the
+three-vs-five return), and `tools/checkpoint.py` makes the eye work recoverable.

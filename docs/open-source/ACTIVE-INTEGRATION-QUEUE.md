@@ -87,12 +87,34 @@ Repository: https://github.com/Beneking102/bene-proggen-maps
 
 Whole repository pinned under `third_party/oss/bene-proggen-maps` at `ed622c5ce10f33092c7b651628d7c0d2015dcd61` (GPL-3.0-or-later). Procedural terrain, cities, streets, buildings, props and dungeons with scene exports. Use as a procedural 3D environment source/reference, not as a replacement for Blender's animation authority.
 
+### SkySplat Blender
+Repository: https://github.com/kyjohnso/skysplat_blender
+
+Whole repository pinned under `third_party/oss/SkySplat-Blender` at `982ca46a3d16e96aa3b76abff1d3e4852b645483` (MIT). Blender-side 3DGS/video/camera workflow. REVIEW_REQUIRED until its external COLMAP and Brush dependencies are independently audited.
+
 ### Gaussian world handoff
-`tools/world/gaussian_world_contract.json` is the interchange/evidence contract. The support lane owns upstream pinning, hashes, coordinate/scale/camera metadata, deterministic orchestration and QC receipts. Claude/Jules own the visual/surgical Blender work and actual-pixel review. Gaussian environments remain derivative world data; they cannot mutate canonical MARS geometry.
+`tools/world/gaussian_world_contract.json` is the interchange/evidence contract. The support lane owns upstream pinning, hashes, coordinate/scale/camera metadata, deterministic orchestration and QC receipts. Claude/Jules own the visual/surgical Blender work and actual-pixel review. Gaussian environments remain derivative data; they cannot mutate canonical MARS geometry.
 
 The world path is:
 
 `2D plate / photo / video / procedural map` → `camera + sparse reconstruction` → `Gaussian training/rasterization` → `world artifact` → `Blender camera/world handoff` → `animation/lighting/compositing` → `actual-pixel evidence`.
+
+## P0 — reconstruction / material authoring
+
+### Meshroom
+Repository: https://github.com/alicevision/Meshroom
+
+Whole repository pinned under `third_party/oss/Meshroom` at `ca1a2e435b851cb3149d16ea3be2253afb77d11c` (MPL-2.0). Use as the photogrammetry/structure-from-motion/camera-reconstruction lane before Gaussian training when camera poses and sparse geometry need a reproducible node graph. It is a reconstruction source, not character authority.
+
+### ArmorPaint
+Repository: https://github.com/armory3d/armorpaint
+
+Whole repository pinned under `third_party/oss/ArmorPaint` at `c2cbe095a3d7f7bb6f35d3b0b765a403e25679c0` (zlib). Use for PBR texture authoring, baking and image-to-material workflows. Its developer source is open while distributed binaries are separately funded; production automation must use the source/build lane rather than assuming paid binaries.
+
+### ArmorPaint Blender bridge
+Repository: https://github.com/armory3d/armorpaint_blender
+
+Whole repository pinned under `third_party/oss/ArmorPaint-Blender` at `d913e3268be47dd9499ad3f13d3866f392eafc9d` (GPL-3.0). Use as the Blender round-trip adapter/reference for PBR textures; outputs remain subject to the mesh/material preservation and actual-pixel gates.
 
 ## P0 — visual production / evidence
 
@@ -164,6 +186,8 @@ Candidate categories to keep filling: tissue/muscle deformation, skin sliding, t
 16. GAUSSIAN_WORLD_HANDOFF_QC
 17. CAMERA_CALIBRATION_QC
 18. COORDINATE_SCALE_QC
+19. RECONSTRUCTION_PROVENANCE_QC
+20. MATERIAL_ROUNDTRIP_QC
 
 ## Performance rules
 

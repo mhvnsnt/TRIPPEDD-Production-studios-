@@ -5,7 +5,10 @@
     "face_linework": "assets/rigs/MARS_linework_authority.json",
     "render_surface": "assets/source_models/MARS_source.glb",
     "contact_law": "docs/character/COLLISION-AND-CONTACT-LAW.md",
-    "expression_contract": "tools/character/mars_expression_contract.json"
+    "expression_contract": "tools/character/mars_expression_contract.json",
+    "face_completion": "tools/character/mars_face_completion_contract.json",
+    "ear_rig": "tools/character/mars_ear_rig_spec.json",
+    "hair_completion": "tools/character/mars_hair_completion_spec.json"
   },
   "components": [
     {"name":"Blender 5.2 XPBD","repository":"https://www.blender.org/","license":"GPL-2.0-or-later","priority":"P0","lanes":["hair","cloth","collision"],"adapter":"native Blender 5.2 Geometry Nodes/XPBD"},
@@ -20,12 +23,18 @@
   "execution_lanes": {
     "face_rig": {"adapter":"tools/character/run_face_rig_upstream.py","gate":"tools/character/expression_gate.py","authority":"assets/rigs/MARS_linework_authority.json"},
     "body_hand_capture": {"adapter":"tools/character/run_open_mocap_upstream.py","target":"MARS","source_immutable":true},
-    "hair_collision": {"simulation":"Blender 5.2 XPBD","measurement_gate":"tools/character/contact_gate.py","self_collision":"NOT_ATTEMPTED"}
+    "ears": {"spec":"tools/character/mars_ear_rig_spec.json","target":"measured_source_geometry","source_immutable":true},
+    "hair_collision": {"simulation":"Blender 5.2 XPBD","spec":"tools/character/mars_hair_completion_spec.json","measurement_gate":"tools/character/contact_gate.py","self_collision":"NOT_ATTEMPTED"},
+    "mesh_quality": {"gate":"tools/character/mesh_quality_gate.py","source_immutable":true,"operation_policy":"local_quad_preserving_derivatives_only"}
   },
+  "protected_lanes": ["eyes_blink", "nostrils_nose", "mouth_oral"],
   "rules": [
     "Third-party output is derivative, never anatomical authority.",
     "MARS source render surface is immutable by integration tools.",
     "Owner-drawn facial linework overrides generic landmark systems.",
+    "Eyes, nostrils and mouth are locked against unmeasured changes once their current proof passes.",
+    "A higher triangle count is not sufficient; edge-size distribution, UVs, normals, materials, silhouette and visual detail must be measured.",
+    "Global voxel remesh, global triangulation and destructive decimation are forbidden on the canonical render surface.",
     "Every adopted run records tool version, source hash, output hash, command and evidence.",
     "Every motion claim requires a multi-state visual sequence and numerical measurements.",
     "UNKNOWN is never PASS."

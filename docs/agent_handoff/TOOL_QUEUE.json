@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "authority": "TRIPPEDD_PRODUCTION",
   "canonical_character": "MARS_CANONICAL",
   "continuous_work": true,
@@ -24,15 +24,17 @@
     {
       "id": "mars-mouth-render-truth",
       "problem": "pixel_truth_disagreed_with_geometry_because_oral_objects_were_hidden_for_render",
-      "status": "PERSISTED_AND_RENDER_READY",
+      "status": "PIXEL_GATED_IN_RUNNER",
       "tools": [
         "tools/character/audit_mars_oral_render_visibility.py",
-        "tools/character/render_mars_oral_pixel_truth.py"
+        "tools/character/render_mars_oral_pixel_truth.py",
+        "tools/character/run_mars_oral_repair.sh"
       ],
       "commits": [
         "a530649dc9fceedff3dac878fa14ce2fab29da0a",
         "598e46c6995e58a391e4363e61da34743dfe43ce",
-        "67c59af39b74e5a0e364a3b096d4e628949d0257"
+        "67c59af39b74e5a0e364a3b096d4e628949d0257",
+        "ee5e1d2bf8d1ec1c4523b2f3dc2601d49695ded4"
       ],
       "required_measurements": [
         "hide_render_before",

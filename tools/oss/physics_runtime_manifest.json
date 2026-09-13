@@ -1,0 +1,10 @@
+{
+  "$schema":"trippedd.physics-runtime/v1",
+  "canonical":{"source":"MARS_source.glb","mutationAllowed":false},
+  "lanes":[
+    {"name":"secondary_motion","upstreamPath":"third_party/oss/RigFlex","authority":"DERIVATIVE_SECONDARY_MOTION","upstreamCommit":"ddce51fc70011d29188a8a387ea6bfdfc2a39f25","outputPolicy":"derived_rig_only","selfCollisionEvidenceRequired":true},
+    {"name":"soft_body","upstreamPath":"third_party/oss/SimuSama","authority":"DERIVATIVE_SOFT_BODY_RESEARCH","upstreamCommit":"4545bfe7a7a96dec5b2ffcdec45c1ec33f3ac1fd","outputPolicy":"derived_simulation_only","licenseReviewRequired":true},
+    {"name":"jiggle_bones","upstreamPath":"third_party/oss/JiggleArmature","authority":"DERIVATIVE_SECONDARY_MOTION","upstreamCommit":"2e2119994c63879ea5e55aca8651eed3b89c8b87","outputPolicy":"derived_rig_only","selfCollisionEvidenceRequired":true}
+  ],
+  "promotion":{"unknownNeverPass":true,"actualPixelsRequired":true,"gate":"tools/character/contact_gate.py"}
+}

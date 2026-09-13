@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trippedd.oss-physics-evidence/v1",
+  "title": "TRIPPEDD depth/fracture evidence receipt",
+  "type": "object",
+  "required": ["schema","status","lane","authority","upstreamCommit","exactCommand","inputSha256","outputSha256","visualEvidenceSha256","canonicalSourceMutated"],
+  "properties": {
+    "schema": {"const": "trippedd.oss-physics-evidence/v1"},
+    "status": {"const": "PASS"},
+    "lane": {"enum": ["midas_depth","shatter_it"]},
+    "authority": {"enum": ["DERIVATIVE_DEPTH_EVIDENCE","DERIVATIVE_FRACTURE_OUTPUT"]},
+    "upstreamCommit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "exactCommand": {"type": "string", "minLength": 1},
+    "inputSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "outputSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "visualEvidenceSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "canonicalSourceMutated": {"const": false},
+    "weightsLicenseStatus": {"enum": ["SEPARATELY_VERIFIED","NOT_REQUIRED"]},
+    "depthErrorQc": {"type": "object"},
+    "blenderVersion": {"type": "string", "minLength": 1},
+    "dependencyLicenseInventory": {"type": "array"},
+    "deterministic": {"const": true},
+    "fragmentCount": {"type": "integer", "minimum": 1},
+    "collisionSmokeTest": {"const": true}
+  },
+  "allOf": [
+    {"if": {"properties": {"lane": {"const": "midas_depth"}}}, "then": {"required": ["weightsLicenseStatus","depthErrorQc"]}},
+    {"if": {"properties": {"lane": {"const": "shatter_it"}}}, "then": {"required": ["blenderVersion","dependencyLicenseInventory","deterministic","fragmentCount","collisionSmokeTest"]}}
+  ],
+  "additionalProperties": true
+}

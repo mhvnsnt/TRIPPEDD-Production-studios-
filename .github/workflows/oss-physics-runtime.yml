@@ -1,0 +1,36 @@
+name: OSS Physics Runtime Contract
+on:
+  pull_request:
+    paths:
+      - 'tools/oss/**'
+      - 'tools/character/contact_gate.py'
+      - '.github/workflows/oss-physics-runtime.yml'
+  push:
+    paths:
+      - 'tools/oss/**'
+      - 'tools/character/contact_gate.py'
+      - '.github/workflows/oss-physics-runtime.yml'
+  workflow_dispatch:
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify OSS registry
+        run: python tools/oss/verify_full_repo_registry.py
+      - name: Verify physics runtime contract
+        run: python tools/oss/verify_physics_runtime.py
+      - name: Run physics contract fixture
+        run: python tools/oss/test_physics_runtime.py
+      - name: Run physics evidence gate fixture
+        run: python tools/oss/test_physics_evidence_gate.py
+      - name: Run measured receipt fixture
+        run: python tools/oss/test_physics_evidence_receipt.py
+      - name: Validate manifests and evidence schema
+        run: |
+          python -m json.tool tools/oss/physics_runtime_manifest.json >/dev/null
+          python -m json.tool tools/oss/full_repo_registry.json >/dev/null
+          python -m json.tool tools/oss/physics_evidence.schema.json >/dev/null

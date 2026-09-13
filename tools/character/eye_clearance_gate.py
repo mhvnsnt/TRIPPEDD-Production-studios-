@@ -2,21 +2,27 @@
 """Fail-closed gate for a filled Mars eye clearance ladder receipt.
 
 Mirrors contact_gate.py: never treats missing measurement as PASS.
-Consumes the ladder JSON produced/filled after eye_clearance_ladder.py
-+ penetration_measure.py + reopened render frames.
+Consumes the ladder JSON after eye_clearance_ladder.py + penetration_measure.py
++ reopened render frames.
 
 Exit:
-  0  PASS
-  45 FAIL / UNKNOWN (required evidence absent or rules violated)
+  0   PASS
+  45  FAIL / UNKNOWN
 
 Usage:
   ./.trippedd_venv/bin/python tools/character/eye_clearance_gate.py \
       docs/evidence/eye_clearance/eye_clearance_ladder.json \
       --write docs/evidence/eye_clearance/gate_result.json
+
+  # Optionally reopen render bytes and check SHA:
+  ./.trippedd_venv/bin/python tools/character/eye_clearance_gate.py \
+      docs/evidence/eye_clearance/eye_clearance_ladder.json \
+      --verify-renders
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import sys
@@ -32,15 +38,42 @@ def fail(message: str) -> int:
 
 
 def finite_nonneg(value: object) -> bool:
-    return isinstance(value, (int, float)) and math.isfinite(float(value)) and float(value) >= 0
+    return (
+        isinstance(value, (int, float))
+        and math.isfinite(float(value))
+        and float(value) >= 0
+    )
+
+
+def file_sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for blk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(blk)
+    return h.hexdigest()
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("receipt", type=Path)
     parser.add_argument("--write", type=Path, help="write normalized gate result JSON")
-    parser.add_argument("--tol-mm", type=float, default=None,
-                        help="override tolerance (default: receipt.toleranceMM)")
+    parser.add_argument(
+        "--tol-mm",
+        type=float,
+        default=None,
+        help="override tolerance (default: receipt.toleranceMM)",
+    )
+    parser.add_argument(
+        "--verify-renders",
+        action="store_true",
+        help="reopen renderPath bytes and check renderSHA256",
+    )
+    parser.add_argument(
+        "--root",
+        type=Path,
+        default=Path(__file__).resolve().parents[2],
+        help="repo root for resolving relative renderPath",
+    )
     args = parser.parse_args()
 
     try:
@@ -119,20 +152,29 @@ def main() -> int:
             if status not in ("PASS", "FAIL", "PENDING", "UNKNOWN"):
                 problems.append(f"{label}/{step_name}: bad status {status!r}")
 
-            # PASS on a step requires render evidence
             if status == "PASS":
                 if not isinstance(render, str) or not render.strip():
                     problems.append(f"{label}/{step_name}: PASS without renderPath")
+                elif args.verify_renders:
+                    rpath = Path(render)
+                    if not rpath.is_absolute():
+                        rpath = args.root / rpath
+                    if not rpath.is_file():
+                        problems.append(f"{label}/{step_name}: renderPath not on disk: {render}")
+                    elif isinstance(sha, str) and len(sha) >= 16:
+                        actual = file_sha256(rpath)
+                        if actual != sha:
+                            problems.append(
+                                f"{label}/{step_name}: render SHA mismatch "
+                                f"(receipt={sha[:12]}… disk={actual[:12]}…)"
+                            )
                 if not isinstance(sha, str) or len(sha) < 16:
                     problems.append(f"{label}/{step_name}: PASS without renderSHA256")
                 if isinstance(samples, int) and samples > 0 and step_name not in ("open", "rest"):
-                    # blink steps may still report residual only if documented
                     if not step.get("documentedResidual"):
                         problems.append(
                             f"{label}/{step_name}: PASS with penetrationSamples={samples}"
                         )
-                if finite_nonneg(clear) and float(clear) < 0:
-                    problems.append(f"{label}/{step_name}: negative clearance")
 
     if problems:
         for p in problems:
@@ -150,7 +192,6 @@ def main() -> int:
             args.write.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         return 45
 
-    # All steps present and measured; aggregate status
     any_fail = False
     any_pending = False
     for eye in eyes:

@@ -13,6 +13,8 @@
 
 `export_contact_geometry.py` accepts `OBJECT` or `OBJECT:VERTEX_GROUP`.
 
+A region part only keeps triangles whose vertices are **all** in the group (weight > 0.5). If the modifier stack changes vertex counts, the exporter **refuses** — bake the region to its own object first.
+
 Example (adjust object/group names to the working scene):
 
 ```bash
@@ -25,11 +27,9 @@ vendor/blender/blender -b path/to/working.blend -P tools/character/export_contac
     --out docs/evidence/eye_clearance/geom.npz
 ```
 
-- Lid parts: upper lid region (vertex group weight > 0.5), or dedicated lid objects.
+- Lid parts: upper lid region (vertex group) or dedicated lid objects.
 - Globe parts: **globe-class only** (not full ICT assembly with occlusion/lacrimal).
 - Frames: map 1=open, 2=intermediate, 3=closed (or document mapping in the receipt).
-
-If the modifier stack changes vertex counts, bake the region to its own object first — the exporter refuses silent mismatch.
 
 ## 3. Measurement track
 
@@ -56,7 +56,8 @@ If the modifier stack changes vertex counts, bake the region to its own object f
 
 ./.trippedd_venv/bin/python tools/character/eye_clearance_gate.py \
     docs/evidence/eye_clearance/eye_clearance_ladder.json \
-    --write docs/evidence/eye_clearance/gate_result.json
+    --write docs/evidence/eye_clearance/gate_result.json \
+    --verify-renders
 ```
 
 ## 4. Surface constraint (after rest is clean)
@@ -73,7 +74,7 @@ Blender Shrinkwrap on lid vertex groups:
 - `eye_clearance_gate.py` returns PASS
 - Rest / open penetration samples = 0 (or documented `restResidualReason`)
 - Ladder filled for both eyes, all steps
-- Render frames reopened + SHA matched
+- Render frames reopened + SHA matched (`--verify-renders`)
 - classFilter = globe_only everywhere
 
 No PASS from JSON alone. No new eyeball. Linework remains lid authority.
@@ -87,6 +88,7 @@ No PASS from JSON alone. No new eyeball. Linework remains lid authority.
 | Gate | `tools/character/eye_clearance_gate.py` |
 | Export | `tools/character/export_contact_geometry.py` |
 | Penetration | `tools/character/penetration_measure.py` |
+| Contact gate | `tools/character/contact_gate.py` |
 | Donor | `assets/donor/gnm_eyes/` |
 | Linework | `assets/references/mars_facial_linework/` |
 | Handoff | `docs/agent_handoff/EYE_CLEARANCE_HANDOFF.md` |

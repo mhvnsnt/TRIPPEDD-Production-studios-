@@ -956,7 +956,12 @@ def blink_closure(side, key):
             if (k.data[i].co - basis.data[i].co).length > 1e-6
             and ((head.matrix_world @ basis.data[i].co) - lid_mid).length < opening * 3.0]
     if not near:
-        return 0, 0.0, 0.0
+        # FIVE VALUES, LIKE THE OTHER RETURN. This early guard returned three, so
+        # the moment an eye's lid band came back empty the caller died on
+        # "expected 5, got 3" -- and Blender -b exits 0 after a script exception,
+        # so rig_face.py printed a full, healthy-looking report and then simply
+        # never saved the rig. A crash that looks like a clean finish.
+        return 0, 0.0, 0.0, 0.0, 0
     # THE VERDICT IS THE LID MARGIN, NOT THE WHOLE BAND. Skin high on the lid
     # travels less than the free edge does -- that is real anatomy, not a weak
     # control -- so averaging the band understates every blink and would have

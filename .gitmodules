@@ -49,3 +49,9 @@
 [submodule "third_party/oss/OpenSplat"]
 	path = third_party/oss/OpenSplat
 	url = https://github.com/WebODM/OpenSplat.git
+[submodule "third_party/oss/Worldsmith"]
+	path = third_party/oss/Worldsmith
+	url = https://github.com/TheDatawiz-dot/Worldsmith.git
+[submodule "third_party/oss/bene-proggen-maps"]
+	path = third_party/oss/bene-proggen-maps
+	url = https://github.com/Beneking102/bene-proggen-maps.git

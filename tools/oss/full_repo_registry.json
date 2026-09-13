@@ -10,7 +10,9 @@
     {"name":"Molecular Plus","path":"third_party/oss/molecular-plus","repository":"https://github.com/u3dreal/molecular-plus","commit":"fb2e780d9fa5c166e60e66b44a6c347745167c52","role":["particles","soft_body","granular","fluid_like","destruction"],"license":"GPL-3.0-or-later"},
     {"name":"JiggleArmature","path":"third_party/oss/JiggleArmature","repository":"https://github.com/cheece/JiggleArmature","commit":"2e2119994c63879ea5e55aca8651eed3b89c8b87","role":["jiggle_bones","secondary_motion"],"license":"REVIEW_REQUIRED"},
     {"name":"gsplat","path":"third_party/oss/gsplat","repository":"https://github.com/nerfstudio-project/gsplat","commit":"28e794ca44a4c25ffc39175370c5ee7b38bfcc36","role":["gaussian_splatting","cuda_rasterization","2d_to_3d_fitting","large_scene_rendering"],"license":"Apache-2.0"},
-    {"name":"OpenSplat","path":"third_party/oss/OpenSplat","repository":"https://github.com/WebODM/OpenSplat","commit":"687cc91bbe665cff928998536b6e8bd5bbeb942e","role":["gaussian_splat_training","cpu_gpu_splatting","colmap_ingest","splat_scene_export"],"license":"AGPL-3.0"}
+    {"name":"OpenSplat","path":"third_party/oss/OpenSplat","repository":"https://github.com/WebODM/OpenSplat","commit":"687cc91bbe665cff928998536b6e8bd5bbeb942e","role":["gaussian_splat_training","cpu_gpu_splatting","colmap_ingest","splat_scene_export"],"license":"AGPL-3.0"},
+    {"name":"Worldsmith","path":"third_party/oss/Worldsmith","repository":"https://github.com/TheDatawiz-dot/Worldsmith","commit":"5c131b42990bf8f3b79a343b722bc466990ee4ee","role":["procedural_terrain","biomes","rivers","heightmaps","blender_world_input"],"license":"MIT"},
+    {"name":"bene-proggen-maps","path":"third_party/oss/bene-proggen-maps","repository":"https://github.com/Beneking102/bene-proggen-maps","commit":"ed622c5ce10f33092c7b651628d7c0d2015dcd61","role":["procedural_city","terrain","dungeons","streets","buildings","props","gltf_fbx_usdz_svg_export"],"license":"GPL-3.0-or-later"}
   ],
   "integration_law":[
     "Native Blender capability is production baseline when it covers the task.",

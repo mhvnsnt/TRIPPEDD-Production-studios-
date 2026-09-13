@@ -29,7 +29,7 @@ Weld fragmented eye geometry before remeshing. Preserve painted eyelid correspon
 ## Registration route
 `tools/visual_anatomy/component_registration.py` provides deterministic landmark registration using Kabsch/Procrustes. Optional Open3D ICP is a refinement, never the first authority. Registration must fail closed on RMS/max residual thresholds and must record source/target identity and the transform.
 
-Open3D supports correspondence-based/global registration and ICP refinement; use it only when its measured output improves the registered component without violating anatomical/visual gates. urlOpen3D registration documentationhttps://www.open3d.org/docs/latest/tutorial/pipelines/icp_registration.html
+Open3D registration documentation: https://www.open3d.org/docs/latest/tutorial/pipelines/icp_registration/
 
 ## Approved tool families
 - Blender / Rigify
@@ -44,7 +44,7 @@ Open3D supports correspondence-based/global registration and ICP refinement; use
 - facial-animation / facial rigging routes already recorded in the repository
 - Remi Blender addon as a candidate repair/retopology accelerator; verify license/provenance before redistribution
 
-Remi currently describes repair, guided Instant Meshes retopology, UV validation, and appearance baking while keeping the source mesh untouched. Treat it as a candidate accelerator, not an authority that can replace MARS. urlRemi Blender addonhttps://github.com/shaderko/remi-blender-addon
+Remi project: https://github.com/shaderko/remi-blender-addon
 
 ## Continuous work
 When a safe next task exists and no owner decision is required: continue. Do not stop after producing recommendations. Sequence: discover → inspect → execute → measure → validate → publish evidence → update bulletin → next task.

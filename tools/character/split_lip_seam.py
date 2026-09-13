@@ -322,6 +322,28 @@ if len(shape_layers) + 1 < len(keys0):
 # crossing edges that were never there. His crease is a CURVE, so one plane
 # cannot follow it (it wanders 7 mm in z across his mouth) -- it is bisected bin
 # by bin, each bin's plane passing through that bin's own measured crease point.
+# ── GIVE HIS MOUTH SOME GEOMETRY BEFORE CUTTING IT ──────────────────────────
+# A 13 mm2 face cannot carry a lip, and it cannot be cut cleanly either: one
+# plane through a 22 mm face does not follow a crease that curves across it, so
+# the fragments left over render as pale shards across his open mouth. The same
+# remedy as THE LID CANNOT BE BUILT OUT OF THREE VERTICES -- subdivide only the
+# faces at the crease, PASSES OF ONE CUT rather than one pass of many (measured
+# on the eye: cuts=3 in a single pass left 4,689 triangles under 15 degrees).
+# smooth=0 so every new vertex sits ON the existing surface and nothing moves.
+def _densify(n_passes):
+    for _p in range(n_passes):
+        bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+        _dcache.clear()
+        eds = [e for e in bm.edges
+               if d_of(e.verts[0]) < ZONE_MM and d_of(e.verts[1]) < ZONE_MM]
+        if not eds: break
+        print("  densify pass %d: subdividing %d edges at his lip crease"
+              % (_p + 1, len(eds)), flush=True)
+        bmesh.ops.subdivide_edges(bm, edges=eds, cuts=1, use_grid_fill=True, smooth=0.0)
+    bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+    bm.faces.ensure_lookup_table(); bm.verts.index_update()
+    _dcache.clear()
+
 def _side_of(co):
     L = to_local(Wm_ @ co)
     return 1.0 if L.z > seam_z_local(L.x) else -1.0
@@ -367,6 +389,12 @@ if not flag("--no-cut"):
     # and because his crease still curves across a face that wide, the pass is
     # repeated until the count stops falling. Convergence is measured, not assumed.
     n_before = len(bm.verts)
+    _dp = int(opt("--densify-passes", "0"))
+    if _dp:
+        _s_pre = len(_straddlers())
+        _densify(_dp)
+        print("densify: verts %d -> %d; faces straddling his crease %d -> %d"
+              % (n_before, len(bm.verts), _s_pre, len(_straddlers())), flush=True)
     strad0 = _straddlers()
     print("faces straddling his crease, before the cut: %d" % len(strad0), flush=True)
     cut_faces, prev = 0, len(strad0)
@@ -397,12 +425,57 @@ if not flag("--no-cut"):
     strad1 = _straddlers()
     print("cut %d faces; verts %d -> %d; straddling faces %d -> %d"
           % (cut_faces, n_before, len(bm.verts), len(strad0), len(strad1)), flush=True)
-    # ONE PASS. A SECOND ONE MEASURED WORSE: 36 -> 23 -> 28. Once a wide face has
-    # been cut at its centroid's crease height the fragments that still straddle are
-    # the ends of a curve, and a second plane through THEIR centroids cuts them
-    # somewhere worse than not at all. The residual is carried and the gate that
-    # matters is further down -- how much of his mouth the seam actually spans, and
-    # then the pixels.
+    # ── THE RESIDUAL FRAGMENTS ARE TOO WIDE FOR ONE PLANE. NARROW THEM. ──────
+    # After one pass 23 faces still span his crease, 14 of them visible from
+    # outside with 1,008 rays landing on them -- they ARE the pale shards across
+    # his open mouth. They are fragments of 17-23 mm2, and a second plane through
+    # THEIR centroids measured worse (36 -> 23 -> 28) because the problem is not
+    # where the plane sits, it is that his crease CURVES across a face that wide.
+    #
+    # So the residuals are subdivided FIRST -- only them, never the whole crease
+    # band -- and then cut again. A narrower face is one a single plane can follow.
+    #
+    # MEASURED, AND IT IS OFF BY DEFAULT BECAUSE IT DOES NOT WORK. Oral anatomy in
+    # the frame, jaw 30 + lips + funnel:
+    #     the plain cut                        15.24%
+    #     + residual narrowing (this block)    15.11%   (23 -> 26 straddlers)
+    #     + densifying the whole crease band   14.22%   (for 2,804 extra vertices)
+    # Neither helps, and the straddler COUNT rises while the pixels stay flat. That
+    # says the residual is not a cutting problem at all: these faces are 17-23 mm2
+    # on a head whose median face is 0.59 mm2, and no amount of plane-cutting gives
+    # that region the topology it does not have. It needs retopology.
+    # Kept, off by default, because the measurement is the point.
+    for _r in range(int(opt("--residual-rounds", "0"))):
+        resid = _straddlers()
+        if not resid: break
+        eds = set()
+        for f in resid:
+            if f.is_valid: eds.update(f.edges)
+        if not eds: break
+        bmesh.ops.subdivide_edges(bm, edges=list(eds), cuts=1, use_grid_fill=True, smooth=0.0)
+        bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+        bm.faces.ensure_lookup_table(); bm.verts.index_update(); _dcache.clear()
+        again = _straddlers()
+        for f in again:
+            if not f.is_valid: continue
+            c = to_local(Wm_ @ f.calc_center_median())
+            co = FRAME @ Vector((c.x, 0.0, seam_z_local(c.x)))
+            geom = set([f]); geom.update(f.verts); geom.update(f.edges)
+            try:
+                bmesh.ops.bisect_plane(bm, geom=list(geom), dist=1e-7,
+                                       plane_co=Wm_.inverted() @ co,
+                                       plane_no=Wm_.inverted().to_3x3() @ PLANE_NO,
+                                       clear_inner=False, clear_outer=False)
+            except Exception as _e:
+                die("bisect refused on a residual: %s" % _e)
+            cut_faces += 1
+        bm.verts.ensure_lookup_table(); bm.edges.ensure_lookup_table()
+        bm.faces.ensure_lookup_table(); bm.verts.index_update(); _dcache.clear()
+        left = len(_straddlers())
+        print("  residual round %d: narrowed %d faces, re-cut %d, %d still straddle"
+              % (_r + 1, len(resid), len(again), left), flush=True)
+        if left >= len(resid): break
+
     if len(strad1) >= len(strad0):
         die("the cut did not reduce the faces spanning his crease (%d -> %d)"
             % (len(strad0), len(strad1)))

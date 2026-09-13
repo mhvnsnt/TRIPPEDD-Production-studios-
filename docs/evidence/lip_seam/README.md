@@ -105,3 +105,27 @@ Regenerate in that order: `valley_discriminator.py`, then `hair_zones.py`.
 - **The mouth region has almost no geometry** — 261 faces fill his entire mouth. Densifying
   it is the same remedy as *THE LID CANNOT BE BUILT OUT OF THREE VERTICES*.
 - The seam spans **36.8 mm of his 50.0 mm mouth**; the corners are not cut through.
+
+---
+
+## TWO THINGS THAT DID NOT WORK, MEASURED, AND LEFT OFF BY DEFAULT
+
+The 23 faces still spanning his crease are not a cutting problem. **14 of them are visible
+from outside at jaw 30°, with 1,008 rays landing on them — they ARE the pale shards.** They
+are fragments of **17–23 mm²** on a head whose median face is **0.59 mm²**. Both attempts to
+cut them away were measured and both failed:
+
+| | oral anatomy in frame | note |
+|---|---|---|
+| the plain cut — **promoted** | **15.24%** | 23 faces still straddle |
+| `--residual-rounds 3` (narrow the fragments, re-cut) | 15.11% | 23 → **26** straddlers |
+| `--densify-passes 2` (subdivide the whole crease band) | 14.22% | costs **2,804** vertices |
+
+The straddler count goes *up* while the pixels stay flat. No amount of plane-cutting gives
+that region the topology it does not have — **261 faces fill his entire mouth**. Both code
+paths are kept and both default to off, because the measurement is the point.
+
+**THE NEXT OPERATION IS RETOPOLOGY OF THE MOUTH REGION, NOT ANOTHER CUT.** That is the
+lane ChatGPT already named (Remi: mesh repair + Instant Meshes retopology + UV validation
+without modifying the source mesh), and it is the same remedy as *THE LID CANNOT BE BUILT
+OUT OF THREE VERTICES*.

@@ -38,12 +38,17 @@ for nm in PARTS:
     try:
         M = eo.matrix_world
         V = np.array([list(M @ v.co) for v in m.vertices], dtype=np.float64)
-        T = []
-        for p in m.polygons:
+        T, TP = [], []
+        for pi, p in enumerate(m.polygons):
             vs = list(p.vertices)
             for i in range(1, len(vs) - 1):
-                T.append([vs[0], vs[i], vs[i + 1]])
+                T.append([vs[0], vs[i], vs[i + 1]]); TP.append(pi)
         T = np.array(T, dtype=np.int32)
+        # WHICH POLYGON EACH TRIANGLE CAME FROM. Without it a per-material face mask
+        # (stored per POLYGON) cannot be matched to the triangles libigl works on, and
+        # "is this tooth inside the CAVITY or inside solid skull" -- the only version of
+        # the question that means anything -- cannot be asked at all.
+        store["%s/triPoly" % nm] = np.array(TP, dtype=np.int32)
         # NORMALS: a flipped face is a black or inside-out patch, which is one of
         # the things "ragged teeth" can be. Measure how many point away from the
         # part's own centroid -- for a closed convex-ish part that is the flipped set.

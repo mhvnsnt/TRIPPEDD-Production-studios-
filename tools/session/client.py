@@ -56,3 +56,10 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+# SystemExit INSIDE A SNIPPET KILLS THE WHOLE SESSION. execute_code runs in
+# Blender's own interpreter, so `raise SystemExit` / sys.exit() takes Blender
+# down with it and the next call gets ConnectionRefusedError -- which reads like
+# the session was never started. Snippets wrap their body in a function and
+# `return` instead. Same family as "Blender -b swallows the argument to
+# sys.exit()": a guard whose failure mode is indistinguishable from a crash.

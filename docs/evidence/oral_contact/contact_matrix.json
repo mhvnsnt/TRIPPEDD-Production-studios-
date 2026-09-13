@@ -1,0 +1,291 @@
+{
+  "schema": "trippedd.oral-contact-matrix/v1",
+  "insideHeadClassified": {
+    "MARS_MOUTH_SOCK": {
+      "inside": 217,
+      "nearestIsCavityWall": 217,
+      "nearestIsHisSkin": 0,
+      "maxDepthIntoSkinMM": 0.0
+    },
+    "MARS_TEETH_LOWER": {
+      "inside": 155,
+      "nearestIsCavityWall": 155,
+      "nearestIsHisSkin": 0,
+      "maxDepthIntoSkinMM": 0.0
+    },
+    "MARS_TEETH_UPPER": {
+      "inside": 582,
+      "nearestIsCavityWall": 582,
+      "nearestIsHisSkin": 0,
+      "maxDepthIntoSkinMM": 0.0
+    },
+    "MARS_TONGUE": {
+      "inside": 133,
+      "nearestIsCavityWall": 133,
+      "nearestIsHisSkin": 0,
+      "maxDepthIntoSkinMM": 0.0
+    }
+  },
+  "npz": "renders/_oral_contact/oral_open.npz",
+  "mmPerUnit": 0.00386072,
+  "pose": "open",
+  "jawDeg": 30.0,
+  "tolMM": 0.25,
+  "gateMM": 1.0,
+  "method": "libigl generalized winding number; negative is inside. Both directions of every pair are reported because these parts are OPEN shells (teeth 50 boundary edges, sock 58, tongue 40) and A-inside-B is not the same question as B-inside-A.",
+  "expectedContainment": {
+    "MARS_TEETH_UPPER inside MARS_MOUTH_SOCK": "his teeth sit inside the vestibule lining",
+    "MARS_TEETH_LOWER inside MARS_MOUTH_SOCK": "his teeth sit inside the vestibule lining",
+    "MARS_TONGUE inside MARS_MOUTH_SOCK": "his tongue sits inside the vestibule lining"
+  },
+  "pairs": [
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_MOUTH_SOCK",
+      "vertsInside": 51,
+      "ofVerts": 27865,
+      "maxDepthMM": 7.0828,
+      "meanDepthMM": 4.8312,
+      "nearestGapMM": -7.0828
+    },
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_TEETH_LOWER",
+      "vertsInside": 10,
+      "ofVerts": 27865,
+      "maxDepthMM": 0.4146,
+      "meanDepthMM": 0.2671,
+      "nearestGapMM": -0.4146
+    },
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_TEETH_UPPER",
+      "vertsInside": 27,
+      "ofVerts": 27865,
+      "maxDepthMM": 1.3919,
+      "meanDepthMM": 0.5882,
+      "nearestGapMM": -1.3919
+    },
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_TONGUE",
+      "vertsInside": 19,
+      "ofVerts": 27865,
+      "maxDepthMM": 0.3198,
+      "meanDepthMM": 0.1893,
+      "nearestGapMM": -0.3198
+    },
+    {
+      "a": "MARS_MOUTH_SOCK",
+      "b": "MARS_MESH",
+      "vertsInside": 217,
+      "ofVerts": 406,
+      "maxDepthMM": 15.0667,
+      "meanDepthMM": 6.4425,
+      "nearestGapMM": -15.0667
+    },
+    {
+      "a": "MARS_MOUTH_SOCK",
+      "b": "MARS_TEETH_LOWER",
+      "vertsInside": 0,
+      "ofVerts": 406,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 9.3781
+    },
+    {
+      "a": "MARS_MOUTH_SOCK",
+      "b": "MARS_TEETH_UPPER",
+      "vertsInside": 60,
+      "ofVerts": 406,
+      "maxDepthMM": 1.6598,
+      "meanDepthMM": 0.7564,
+      "nearestGapMM": -1.6598
+    },
+    {
+      "a": "MARS_MOUTH_SOCK",
+      "b": "MARS_TONGUE",
+      "vertsInside": 0,
+      "ofVerts": 406,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 4.6152
+    },
+    {
+      "a": "MARS_TEETH_LOWER",
+      "b": "MARS_MESH",
+      "vertsInside": 155,
+      "ofVerts": 1440,
+      "maxDepthMM": 9.7014,
+      "meanDepthMM": 2.379,
+      "nearestGapMM": -9.7014
+    },
+    {
+      "a": "MARS_TEETH_LOWER",
+      "b": "MARS_MOUTH_SOCK",
+      "vertsInside": 0,
+      "ofVerts": 1440,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 12.6773
+    },
+    {
+      "a": "MARS_TEETH_LOWER",
+      "b": "MARS_TEETH_UPPER",
+      "vertsInside": 0,
+      "ofVerts": 1440,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 15.6297
+    },
+    {
+      "a": "MARS_TEETH_LOWER",
+      "b": "MARS_TONGUE",
+      "vertsInside": 3,
+      "ofVerts": 1440,
+      "maxDepthMM": 0.0058,
+      "meanDepthMM": 0.0048,
+      "nearestGapMM": -0.0058
+    },
+    {
+      "a": "MARS_TEETH_UPPER",
+      "b": "MARS_MESH",
+      "vertsInside": 582,
+      "ofVerts": 1440,
+      "maxDepthMM": 14.4613,
+      "meanDepthMM": 3.1203,
+      "nearestGapMM": -14.4613
+    },
+    {
+      "a": "MARS_TEETH_UPPER",
+      "b": "MARS_MOUTH_SOCK",
+      "vertsInside": 1198,
+      "ofVerts": 1440,
+      "maxDepthMM": 11.5374,
+      "meanDepthMM": 4.4345,
+      "nearestGapMM": -11.5374
+    },
+    {
+      "a": "MARS_TEETH_UPPER",
+      "b": "MARS_TEETH_LOWER",
+      "vertsInside": 0,
+      "ofVerts": 1440,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 14.1831
+    },
+    {
+      "a": "MARS_TEETH_UPPER",
+      "b": "MARS_TONGUE",
+      "vertsInside": 0,
+      "ofVerts": 1440,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 12.5231
+    },
+    {
+      "a": "MARS_TONGUE",
+      "b": "MARS_MESH",
+      "vertsInside": 133,
+      "ofVerts": 933,
+      "maxDepthMM": 4.9938,
+      "meanDepthMM": 1.5207,
+      "nearestGapMM": -4.9938
+    },
+    {
+      "a": "MARS_TONGUE",
+      "b": "MARS_MOUTH_SOCK",
+      "vertsInside": 0,
+      "ofVerts": 933,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 6.2116
+    },
+    {
+      "a": "MARS_TONGUE",
+      "b": "MARS_TEETH_LOWER",
+      "vertsInside": 42,
+      "ofVerts": 933,
+      "maxDepthMM": 1.1272,
+      "meanDepthMM": 0.3319,
+      "nearestGapMM": -1.1272
+    },
+    {
+      "a": "MARS_TONGUE",
+      "b": "MARS_TEETH_UPPER",
+      "vertsInside": 0,
+      "ofVerts": 933,
+      "maxDepthMM": 0.0,
+      "meanDepthMM": 0.0,
+      "nearestGapMM": 12.7867
+    }
+  ],
+  "worst": [
+    {
+      "a": "MARS_MOUTH_SOCK",
+      "b": "MARS_MESH",
+      "maxDepthMM": 15.0667,
+      "verts": 217
+    },
+    {
+      "a": "MARS_TEETH_UPPER",
+      "b": "MARS_MESH",
+      "maxDepthMM": 14.4613,
+      "verts": 582
+    },
+    {
+      "a": "MARS_TEETH_UPPER",
+      "b": "MARS_MOUTH_SOCK",
+      "maxDepthMM": 11.5374,
+      "verts": 1198
+    },
+    {
+      "a": "MARS_TEETH_LOWER",
+      "b": "MARS_MESH",
+      "maxDepthMM": 9.7014,
+      "verts": 155
+    },
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_MOUTH_SOCK",
+      "maxDepthMM": 7.0828,
+      "verts": 51
+    },
+    {
+      "a": "MARS_TONGUE",
+      "b": "MARS_MESH",
+      "maxDepthMM": 4.9938,
+      "verts": 133
+    },
+    {
+      "a": "MARS_MOUTH_SOCK",
+      "b": "MARS_TEETH_UPPER",
+      "maxDepthMM": 1.6598,
+      "verts": 60
+    },
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_TEETH_UPPER",
+      "maxDepthMM": 1.3919,
+      "verts": 27
+    },
+    {
+      "a": "MARS_TONGUE",
+      "b": "MARS_TEETH_LOWER",
+      "maxDepthMM": 1.1272,
+      "verts": 42
+    },
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_TEETH_LOWER",
+      "maxDepthMM": 0.4146,
+      "verts": 10
+    },
+    {
+      "a": "MARS_MESH",
+      "b": "MARS_TONGUE",
+      "maxDepthMM": 0.3198,
+      "verts": 19
+    }
+  ]
+}

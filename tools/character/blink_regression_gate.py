@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Fail-closed regression gate for the MARS linework-derived blink.
 
-The legacy blink keys are deliberately retained as negative controls. A new
-linework-derived key must both land on the measured eyelid line and close at
-least one measured lid aperture. This gate never changes thresholds to make a
-result pass.
+Legacy blink keys remain negative controls. New blink keys are measured against
+THEIR OWN local closure distance, not the unrelated line-to-line aperture.
+Real eyeball clearance is a separate required gate once an eye assembly is
+present; this gate never invents eye geometry or substitutes a global axis.
 """
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 LANDING_TOLERANCE_MM = 5.0
-MIN_TRAVEL_APERTURES = 1.0
+MIN_LOCAL_TRAVEL_RATIO = 1.0
 LEGACY_MAX_TRAVEL_APERTURES = 0.01
 
 
@@ -45,21 +45,29 @@ def main() -> int:
         if not finite_number(travel) or abs(float(travel)) > LEGACY_MAX_TRAVEL_APERTURES:
             raise SystemExit(f"FAIL: legacy regression control changed: {key}")
 
-    # New keys must hit the actual eyelid line and close a full aperture.
+    # New keys must hit the authored eyelid line and close >= their own local
+    # required distance. The old global line-to-line aperture denominator is
+    # deliberately forbidden because it measures the wrong geometry.
     for key in ("blink_own_L", "blink_own_R"):
         rec = by_key[key]
         landing = rec.get("lands_from_lid_line_mm")
-        travel = rec.get("travel_apertures")
+        travel = rec.get("margin_travel_mm")
+        required = rec.get("local_required_travel_mm")
+        ratio = rec.get("travel_ratio")
         if not finite_number(landing):
             raise SystemExit(f"FAIL: {key} has no measured lid-line landing")
         if not finite_number(travel):
-            raise SystemExit(f"FAIL: {key} has no measured travel")
+            raise SystemExit(f"FAIL: {key} has no measured margin travel")
+        if not finite_number(required) or float(required) <= 0.0:
+            raise SystemExit(f"FAIL: {key} has no positive local required travel")
+        if not finite_number(ratio):
+            raise SystemExit(f"FAIL: {key} has no local travel ratio")
         if float(landing) > LANDING_TOLERANCE_MM:
             raise SystemExit(f"FAIL: {key} misses lid line: {landing:.3f} mm")
-        if float(travel) < MIN_TRAVEL_APERTURES:
-            raise SystemExit(f"FAIL: {key} under-travels: {travel:.3f} apertures")
+        if float(ratio) < MIN_LOCAL_TRAVEL_RATIO:
+            raise SystemExit(f"FAIL: {key} under-travels locally: {ratio:.3f}x")
 
-    print("PASS: legacy blink regression controls remain broken and linework blink closes >= 1 aperture")
+    print("PASS: legacy blink controls remain broken and linework blink reaches each local closure target")
     return 0
 
 

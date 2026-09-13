@@ -27,7 +27,9 @@ New gate: `tools/character/audit_mars_oral_render_visibility.py` restores and ve
 
 **Persistence correction:** a Blender visibility change made in one process is not automatically present in the next Blender process. The visibility gate now accepts `--output-blend` and saves a corrected copy. The runner uses that persisted `MARS_ORAL_RENDER_VISIBLE.blend` for every downstream survey. Commits: `a530649dc9fceedff3dac878fa14ce2fab29da0a`, `598e46c6995e58a391e4363e61da34743dfe43ce`.
 
-**Pixel-ID evidence tool:** `tools/character/render_mars_oral_pixel_truth.py` temporarily assigns flat emission IDs by semantic object class, renders the existing camera, counts actual rendered pixels, and records the PNG SHA-256. It never saves the temporary material overrides. It is designed to make teeth/gums/tongue/cavity visibility measurable from actual pixels rather than silhouette rays. Commit: `67c59af39b74e5a0e364a3b096d4e628949d0257`.
+**Pixel-ID evidence tool:** `tools/character/render_mars_oral_pixel_truth.py` temporarily assigns flat emission IDs by semantic object class, renders the existing camera, counts actual rendered pixels, and records the PNG SHA-256. It never saves the temporary material overrides. Commit: `67c59af39b74e5a0e364a3b096d4e628949d0257`.
+
+The production runner now executes that pixel-ID render and fail-closes on its JSON/image PASS before it can report `MARS_ORAL_REPAIR: VERIFIED`. Commit: `ee5e1d2bf8d1ec1c4523b2f3dc2601d49695ded4`.
 
 ## Current MARS oral route
 `CANONICAL_MARS` → `GNM_ORAL_DONOR` → existing oral bridge/repair chain → **persisted render-visibility gate** → **actual pixel-ID render** → measured MARS crease/seam lip ownership → `survey_oral_aperture.py` → measured lip/jaw gate → visual proof.

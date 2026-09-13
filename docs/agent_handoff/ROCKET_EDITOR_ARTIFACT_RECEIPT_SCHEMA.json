@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RocketEditorArtifactReceipt",
+  "type": "object",
+  "required": ["operationId", "repository", "branch", "baseCommit", "editor", "operation", "artifacts", "validation", "checkpoint", "status"],
+  "properties": {
+    "operationId": {"type": "string", "minLength": 1},
+    "repository": {"type": "string", "minLength": 1},
+    "branch": {"type": "string", "minLength": 1},
+    "replacementBranch": {"type": ["string", "null"]},
+    "baseCommit": {"type": "string", "minLength": 7},
+    "commit": {"type": ["string", "null"]},
+    "editor": {"type": "string", "minLength": 1},
+    "operation": {"type": "string", "minLength": 1},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "authority"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": ["string", "null"]},
+          "authority": {"type": "string", "enum": ["AUTHORITATIVE", "DERIVED", "EVIDENCE"]}
+        }
+      }
+    },
+    "validation": {"type": "object"},
+    "checkpoint": {"type": "object"},
+    "push": {"type": ["object", "null"]},
+    "recovery": {"type": ["object", "null"]},
+    "status": {"type": "string", "enum": ["PENDING", "SAVED", "VALIDATED", "CHECKPOINTED", "COMMITTED", "PUSHED", "FAILED", "RECOVERABLE"]}
+  }
+}

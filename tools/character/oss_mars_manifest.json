@@ -1,0 +1,26 @@
+{
+  "$schema": "trippedd.mars-oss-stack/v1",
+  "canonical_source": "assets/source_models/MARS_source.glb",
+  "authority": {
+    "face_linework": "assets/rigs/MARS_linework_authority.json",
+    "render_surface": "assets/source_models/MARS_source.glb",
+    "contact_law": "docs/character/COLLISION-AND-CONTACT-LAW.md"
+  },
+  "components": [
+    {"name":"Blender 5.2 XPBD","repository":"https://www.blender.org/","license":"GPL-2.0-or-later","priority":"P0","lanes":["hair","cloth","collision"]},
+    {"name":"facial-animation","repository":"https://github.com/mdj128/facial-animation","license":"MIT","priority":"P0","lanes":["face","expressions","lip_sync","qa"]},
+    {"name":"Open Mocap Blender","repository":"https://github.com/Larenju-Rai/open-mocap-blender","license":"MIT","priority":"P0","lanes":["body_capture","hand_capture","retarget"]},
+    {"name":"ShapeUp","repository":"https://github.com/dan283/ShapeUp","license":"MIT","priority":"P1","lanes":["facs","shape_keys","inbetweens"]},
+    {"name":"ARKit-Creator-Blender-Addon","repository":"https://github.com/tsikerdekis/ARKit-Creator-Blender-Addon","license":"MIT","priority":"P1","lanes":["expressions","arkit"]},
+    {"name":"ARKit Pose Recorder for Blender","repository":"https://github.com/harlynkingm/ARKit-Pose-Recorder-for-Blender","license":"Apache-2.0","priority":"P1","lanes":["expressions","bone_to_shape"]},
+    {"name":"FacialAutoRigger","repository":"https://github.com/joeedh/FacialAutoRigger","license":"MIT","priority":"P1","lanes":["facial_rig_experiment"]},
+    {"name":"HairRigAddon","repository":"https://github.com/latidoremi/HairRigAddon","license":"GPL-3.0","priority":"P1","lanes":["hair_rig_experiment"]}
+  ],
+  "rules": [
+    "Third-party output is derivative, never anatomical authority.",
+    "MARS source render surface is immutable by integration tools.",
+    "Owner-drawn facial linework overrides generic landmark systems.",
+    "Every adopted run records tool version, source hash, output hash, command and evidence.",
+    "UNKNOWN is never PASS."
+  ]
+}

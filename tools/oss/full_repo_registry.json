@@ -21,7 +21,8 @@
     {"name":"Easy-Tree","path":"third_party/oss/Easy-Tree","repository":"https://github.com/jacobcjohnston/Easy-Tree","commit":"ff95ef5ab04358978b8d0863c1c2256951359fc0","role":["procedural_trees","geometry_nodes","wind","vegetation"],"license":"GPL-3.0","status":"PINNED"},
     {"name":"AliceVision","path":"third_party/oss/AliceVision","repository":"https://github.com/alicevision/AliceVision","commit":"8e4f0be76b250f0dd04b11d2a9a457d59d71b42c","role":["photogrammetry_backend","structure_from_motion","camera_tracking","feature_matching","multiview_geometry"],"license":"MPL-2.0","status":"PINNED"},
     {"name":"nerfstudio","path":"third_party/oss/nerfstudio","repository":"https://github.com/nerfstudio-project/nerfstudio","commit":"50e0e3c70c775e89333256213363badbf074f29d","role":["neural_rendering","nerf","gaussian_splatting_workflows","camera_data","3d_reconstruction"],"license":"Apache-2.0","status":"PINNED"},
-    {"name":"SuperSplat","path":"third_party/oss/SuperSplat","repository":"https://github.com/playcanvas/supersplat","commit":"0911f786db652a7700068fe6ccdfe32e24269e1d","role":["gaussian_splat_editing","inspection","optimization","publishing","web_viewer"],"license":"MIT","status":"PINNED"}
+    {"name":"SuperSplat","path":"third_party/oss/SuperSplat","repository":"https://github.com/playcanvas/supersplat","commit":"0911f786db652a7700068fe6ccdfe32e24269e1d","role":["gaussian_splat_editing","inspection","optimization","publishing","web_viewer"],"license":"MIT","status":"PINNED"},
+    {"name":"OpenFaceFX","path":"third_party/oss/OpenFaceFX","repository":"https://github.com/OpenFaceFX/OpenFaceFX","commit":"7333dc2ffa844e8b3efdecdcfdc813162aea673a","role":["audio_to_phoneme_alignment","phoneme_to_viseme","coarticulation","lip_sync_curves","caption_timing","unreal_animation_notifies"],"license":"MIT","status":"PINNED"}
   ],
   "integration_law":[
     "Native Blender capability is production baseline when it covers the task.",

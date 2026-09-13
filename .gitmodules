@@ -58,3 +58,12 @@
 [submodule "third_party/oss/SkySplat-Blender"]
 	path = third_party/oss/SkySplat-Blender
 	url = https://github.com/kyjohnso/skysplat_blender.git
+[submodule "third_party/oss/Meshroom"]
+	path = third_party/oss/Meshroom
+	url = https://github.com/alicevision/Meshroom.git
+[submodule "third_party/oss/ArmorPaint"]
+	path = third_party/oss/ArmorPaint
+	url = https://github.com/armory3d/armorpaint.git
+[submodule "third_party/oss/ArmorPaint-Blender"]
+	path = third_party/oss/ArmorPaint-Blender
+	url = https://github.com/armory3d/armorpaint_blender.git

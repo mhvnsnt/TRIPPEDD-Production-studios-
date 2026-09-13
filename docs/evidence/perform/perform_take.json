@@ -1,0 +1,187 @@
+{
+  "schema": "trippedd.perform-take/v1",
+  "frames": 191,
+  "fps": 24,
+  "prerollFrames": 60,
+  "resolution": 420,
+  "cameras": [
+    "FRONT",
+    "THREEQ",
+    "SIDE"
+  ],
+  "hair": {
+    "solver": "Blender CLOTH on a separate HAIR_SIM object",
+    "internalSprings": true,
+    "internalTension": 12,
+    "headCollision": true,
+    "colliderThicknessMM": 2.0,
+    "rootClearanceMM": 6.0,
+    "selfCollision": "NOT_ATTEMPTED"
+  },
+  "beats": [
+    {
+      "name": "HEAD TURN + HAIR SWAY",
+      "start": 0,
+      "end": 34,
+      "targets": [
+        "bone:head:z"
+      ]
+    },
+    {
+      "name": "BLINK",
+      "start": 36,
+      "end": 52,
+      "targets": [
+        "key:blink_own_L",
+        "key:blink_own_R"
+      ]
+    },
+    {
+      "name": "BLINK AGAIN",
+      "start": 54,
+      "end": 66,
+      "targets": [
+        "key:blink_own_L",
+        "key:blink_own_R"
+      ]
+    },
+    {
+      "name": "MOUTH / TALK",
+      "start": 68,
+      "end": 110,
+      "targets": [
+        "bone:jaw:x",
+        "key:lip_corner_L_wide",
+        "key:lip_corner_R_wide"
+      ]
+    },
+    {
+      "name": "NOSE FLARE",
+      "start": 112,
+      "end": 130,
+      "targets": [
+        "key:nostril_flare_L",
+        "key:nostril_flare_R"
+      ]
+    },
+    {
+      "name": "BROW UP",
+      "start": 132,
+      "end": 150,
+      "targets": [
+        "key:brow_up_L",
+        "key:brow_up_R"
+      ]
+    },
+    {
+      "name": "HEAD NOD + SETTLE",
+      "start": 152,
+      "end": 190,
+      "targets": [
+        "bone:head:x"
+      ]
+    }
+  ],
+  "channelAudit": [
+    {
+      "beat": "HEAD TURN + HAIR SWAY",
+      "peakFrame": 77,
+      "vertsMoved": 23830,
+      "maxTravelMM": 159.72,
+      "verdict": "MOVED",
+      "statistic": "median over moved vertices of each vertex's own distance to its nearest expected point"
+    },
+    {
+      "beat": "BLINK",
+      "peakFrame": 104,
+      "vertsMoved": 420,
+      "maxTravelMM": 15.53,
+      "landsNearest": "eyebrow_L",
+      "mmToNearestDrawnFeature": 31.69,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_R_upper",
+        "eyelid_L_lower",
+        "eyelid_R_lower"
+      ],
+      "mmToExpectedFeature": 3.8,
+      "verdict": "ON_TARGET",
+      "statistic": "median over moved vertices of each vertex's own distance to its nearest expected point"
+    },
+    {
+      "beat": "BLINK AGAIN",
+      "peakFrame": 120,
+      "vertsMoved": 420,
+      "maxTravelMM": 15.53,
+      "landsNearest": "eyebrow_L",
+      "mmToNearestDrawnFeature": 31.69,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_R_upper"
+      ],
+      "mmToExpectedFeature": 6.6,
+      "verdict": "ON_TARGET",
+      "statistic": "median over moved vertices of each vertex's own distance to its nearest expected point"
+    },
+    {
+      "beat": "MOUTH / TALK",
+      "peakFrame": 149,
+      "vertsMoved": 4938,
+      "maxTravelMM": 29.39,
+      "verdict": "MOVED",
+      "statistic": "median over moved vertices of each vertex's own distance to its nearest expected point"
+    },
+    {
+      "beat": "NOSE FLARE",
+      "peakFrame": 181,
+      "vertsMoved": 102,
+      "maxTravelMM": 5.52,
+      "landsNearest": "nostril_R",
+      "mmToNearestDrawnFeature": 12.38,
+      "expected": [
+        "nostril_L",
+        "nostril_R"
+      ],
+      "mmToExpectedFeature": 8.6,
+      "verdict": "MISPLACED",
+      "statistic": "median over moved vertices of each vertex's own distance to its nearest expected point"
+    },
+    {
+      "beat": "BROW UP",
+      "peakFrame": 201,
+      "vertsMoved": 527,
+      "maxTravelMM": 10.91,
+      "landsNearest": "eyelid_R_lower",
+      "mmToNearestDrawnFeature": 22.14,
+      "expected": [
+        "eyebrow_L",
+        "eyebrow_R"
+      ],
+      "mmToExpectedFeature": 24.2,
+      "verdict": "MISPLACED",
+      "statistic": "median over moved vertices of each vertex's own distance to its nearest expected point"
+    },
+    {
+      "beat": "HEAD NOD + SETTLE",
+      "peakFrame": 231,
+      "vertsMoved": 23830,
+      "maxTravelMM": 76.45,
+      "verdict": "MOVED",
+      "statistic": "median over moved vertices of each vertex's own distance to its nearest expected point"
+    }
+  ],
+  "auditNote": "Verdicts are against the lines the OWNER DREW (docs/evidence/linework/linework_3d.json), not against the rig's own idea of where a feature is. MISPLACED means the key moved real skin in the wrong place -- a different failure from MOVES_NOTHING. SUPERSEDED STATISTIC: an earlier run took the CENTROID of every moved vertex, and a bilateral beat moves BOTH eyes, so the centroid of two correct clusters is a point on neither -- it scored the rebuilt blink 33.9 mm from 'the eyelid' while the per-eye gate (blink_proof.py) measured 4.5 mm and PASSED. These numbers are the per-vertex median.",
+  "framesDir": "docs/evidence/perform/_frames",
+  "video": "docs/evidence/perform/MARS_perform_ALL.mp4",
+  "blinkKeysDriven": [
+    "blink_own_L",
+    "blink_own_R"
+  ],
+  "regressionFixturesNotDriven": {
+    "keys": [
+      "blink_L",
+      "blink_R"
+    ],
+    "why": "measured 0.00 closure, landing 68.5 / 65.8 mm away on his cheek. Kept in the rig so a rebuild has something to prove itself against."
+  }
+}

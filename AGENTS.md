@@ -20,11 +20,27 @@ A known-good component is not raw material. Snapshot it first, work on a copy/br
 
 Never silently regenerate or replace the oral system because a whole-face tool wants a simpler input. Never overwrite a known-good `.blend` in place. If a protected component changes unexpectedly, recover it from the known-good donor/snapshot first rather than rebuilding it from memory.
 
+## ACTIVE: Eye clearance (do not invent eyeballs)
+
+Donor and linework are both on main with real bytes.
+
+- Linework plates: `assets/references/mars_facial_linework/` (P0_CANONICAL_BINARIES_PRESENT)
+- Eye donor: `assets/donor/gnm_eyes/` (ICT-FaceKit, 1926 verts, globe+occlusion+lacrimal)
+- Contract: `tools/character/eye_clearance_contract.json`
+- Ladder: `tools/character/eye_clearance_ladder.py`
+- Runbook: `docs/production/EYE_CLEARANCE_RUNBOOK.md`
+- Handoff: `docs/agent_handoff/EYE_CLEARANCE_HANDOFF.md`
+
+Hard rules: globe-class only; rest penetration before blink travel; no invented geometry; PASS requires ladder receipt + reopened renders + SHA-256.
+
+Baseline after rigid re-seat: 14.24 mm centre depth, 0.49 mm nearest vertex to lid.
+
 ## Rocket compatibility
 - The root Next.js + TypeScript surface exists only as a control plane for Rocket.
 - The existing React/Vite studio remains canonical; do not replace it.
 - Do not move Blender/GLB/footage/render binaries into the Next app.
 - A UI state is never evidence of a render.
+- Rocket is NON-AUTHORITATIVE until the physical runtime returns operation ID + receipt + artifact SHA.
 
 ## Production truth
 - UNKNOWN is never PASS.

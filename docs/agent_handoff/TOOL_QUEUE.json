@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "authority": "TRIPPEDD_PRODUCTION",
   "canonical_character": "MARS_CANONICAL",
   "continuous_work": true,
@@ -25,36 +25,23 @@
       "id": "mars-mouth-render-truth",
       "problem": "pixel_truth_disagreed_with_geometry_because_oral_objects_were_hidden_for_render",
       "status": "PIXEL_GATED_IN_RUNNER",
-      "tools": [
-        "tools/character/audit_mars_oral_render_visibility.py",
-        "tools/character/render_mars_oral_pixel_truth.py",
-        "tools/character/run_mars_oral_repair.sh"
-      ],
-      "commits": [
-        "a530649dc9fceedff3dac878fa14ce2fab29da0a",
-        "598e46c6995e58a391e4363e61da34743dfe43ce",
-        "67c59af39b74e5a0e364a3b096d4e628949d0257",
-        "ee5e1d2bf8d1ec1c4523b2f3dc2601d49695ded4"
-      ],
-      "required_measurements": [
-        "hide_render_before",
-        "hide_render_after",
-        "camera_visible_after",
-        "persisted_corrected_blend",
-        "actual_render_pixels",
-        "image_sha256"
-      ],
+      "tools": ["tools/character/audit_mars_oral_render_visibility.py", "tools/character/render_mars_oral_pixel_truth.py", "tools/character/run_mars_oral_repair.sh"],
+      "commits": ["a530649dc9fceedff3dac878fa14ce2fab29da0a", "598e46c6995e58a391e4363e61da34743dfe43ce", "67c59af39b74e5a0e364a3b096d4e628949d0257", "ee5e1d2bf8d1ec1c4523b2f3dc2601d49695ded4"],
+      "required_measurements": ["hide_render_before", "hide_render_after", "camera_visible_after", "persisted_corrected_blend", "actual_render_pixels", "image_sha256"],
       "hard_stop": "no_pixel_truth_claim while oral render visibility is UNKNOWN or FAIL",
       "note": "pseudonormal/protrusion sign is geometry diagnostic only; pixel appearance is authoritative for visual claims"
     },
     {
       "id": "mars-mouth-lip-seam",
       "problem": "upper_lower_lip_ownership_and_aperture_motion",
-      "status": "NEXT",
-      "donors": ["assets/donor/gnm_oral/", "tools/character/build_gnm_oral_donor.py", "tools/character/oral_cavity.py", "tools/character/run_mars_oral_repair.sh"],
-      "required_measurements": ["visible_aperture_fraction", "tooth_escape_fraction", "jaw_open_response", "skin_motion_inside_aperture"],
+      "status": "ANALYZER_READY",
+      "tool": "tools/character/derive_mars_lip_crease_candidates.py",
+      "commit": "32ccb1509523cd8f5e66d4d343778caf1900eb47",
+      "method": ["measured mouth-frame locality", "actual mesh edge topology", "face-normal dihedral", "existing edge-crease data when present", "edge connectivity"],
+      "required_measurements": ["candidate_count", "contiguous_chain", "upper_lower_ownership", "skin_motion_inside_aperture", "pixel_proof"],
       "authority": "MARS_CANONICAL mesh crease/seam",
-      "hard_stop": "do_not_replace_canonical_mars_or_rebuild_whole_mouth"
+      "hard_stop": "do_not_replace_canonical_mars_or_rebuild_whole_mouth; candidates are diagnostic until contiguous-chain and pixel validation",
+      "forbidden": ["interpolated_ellipse_skin_deformation", "height_cutoff", "world_space_radial_jaw_motion"]
     },
     {
       "id": "mars-eye-weld-first",

@@ -1,0 +1,24 @@
+{
+  "$schema":"trippedd.mars-visual-evidence/v1",
+  "character":"MARS",
+  "source":"assets/source_models/MARS_source.glb",
+  "purpose":"Make actual pixels, overlays and multi-state renders first-class agent evidence rather than backend-only assertions.",
+  "requiredViews":["front","threeQuarter","side"],
+  "requiredStates":["OPEN","HALF","CLOSED"],
+  "requiredArtifacts":["owner_linework_model_overlay","front_render","three_quarter_render","side_render","motion_sequence"],
+  "inspectionRules":[
+    "Actual committed pixels are required for a visual PASS.",
+    "Owner-drawn linework must remain visible in an overlay artifact when checking anatomical registration.",
+    "Numerical receipts cannot override a visual regression.",
+    "A still cannot prove a motion claim; motion requires a multi-state sequence.",
+    "Protected eyes, nostrils and mouth must be compared before and after any upstream rig output is adopted.",
+    "Source and authority hashes must match the current committed inputs.",
+    "UNKNOWN is never PASS."
+  ],
+  "recommendedOpenSourceObservers":[
+    {"name":"Mesh Analysis Overlay","license":"GPL-3.0-or-later","role":"viewport topology/edge/normal/non-manifold visual inspection"},
+    {"name":"ARKit Pose Recorder for Blender","license":"Apache-2.0","role":"in-viewport expression pose references and repeatable bone-to-shape recording"},
+    {"name":"facial-animation","license":"MIT","role":"expression sheets, rig previews, lip-sync and QA renders"}
+  ],
+  "gate":"tools/character/mars_visual_evidence_gate.py"
+}

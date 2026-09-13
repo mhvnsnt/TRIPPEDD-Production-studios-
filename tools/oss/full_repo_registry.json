@@ -1,0 +1,21 @@
+{
+  "$schema":"trippedd.full-oss-registry/v1",
+  "policy":"whole_repository_pinned_submodule",
+  "floating_refs_forbidden":true,
+  "bootstrap":"git submodule update --init --recursive",
+  "projects":[
+    {"name":"Tissue","path":"third_party/oss/tissue","repository":"https://github.com/alessandro-zomparelli/tissue","commit":"d2e8393cac351a07b74b4ff1aed2e4ca758f4e7c","role":["computational_design","tessellation","lattice","surface_construction"],"license":"GPL-2.0-or-later"},
+    {"name":"RigFlex","path":"third_party/oss/RigFlex","repository":"https://github.com/nerk987/RigFlex","commit":"ddce51fc70011d29188a8a387ea6bfdfc2a39f25","role":["soft_rig","secondary_motion","jiggle"],"license":"REVIEW_REQUIRED"},
+    {"name":"SimuSama","path":"third_party/oss/SimuSama","repository":"https://github.com/jfranmatheu/SimuSama","commit":"4545bfe7a7a96dec5b2ffcdec45c1ec33f3ac1fd","role":["MPM","soft_body","fluid_research"],"license":"UNDECLARED_RESEARCH_ONLY"},
+    {"name":"Molecular Plus","path":"third_party/oss/molecular-plus","repository":"https://github.com/u3dreal/molecular-plus","commit":"fb2e780d9fa5c166e60e66b44a6c347745167c52","role":["particles","soft_body","granular","fluid_like","destruction"],"license":"GPL-3.0-or-later"},
+    {"name":"JiggleArmature","path":"third_party/oss/JiggleArmature","repository":"https://github.com/cheece/JiggleArmature","commit":"2e2119994c63879ea5e55aca8651eed3b89c8b87","role":["jiggle_bones","secondary_motion"],"license":"REVIEW_REQUIRED"}
+  ],
+  "integration_law":[
+    "Native Blender capability is production baseline when it covers the task.",
+    "Alternate solvers remain isolated until smoke-tested against canonical assets.",
+    "No project may mutate canonical MARS_source.glb in place.",
+    "All adopted outputs require source/output hashes, exact command, numerical QC and actual-pixel evidence.",
+    "Missing or unclear license means no redistribution of that project's code/assets until cleared.",
+    "UNKNOWN is never PASS."
+  ]
+}

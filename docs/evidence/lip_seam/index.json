@@ -54,7 +54,7 @@
         "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
         "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
       },
-      "prev": null
+      "prev": "prev/01_BEFORE_rest.png"
     },
     {
       "frame": "02_BEFORE_open_skin_fills_the_mouth.png",
@@ -85,7 +85,7 @@
         "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
         "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
       },
-      "prev": null
+      "prev": "prev/02_BEFORE_open_skin_fills_the_mouth.png"
     },
     {
       "frame": "03_AFTER_rest_still_closed.png",
@@ -116,7 +116,7 @@
         "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
         "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
       },
-      "prev": null
+      "prev": "prev/03_AFTER_rest_still_closed.png"
     },
     {
       "frame": "04_AFTER_open_tongue_teeth_gums.png",
@@ -147,7 +147,7 @@
         "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
         "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
       },
-      "prev": null
+      "prev": "prev/04_AFTER_open_tongue_teeth_gums.png"
     },
     {
       "frame": "05_AFTER_jaw18.png",
@@ -178,7 +178,7 @@
         "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
         "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
       },
-      "prev": null
+      "prev": "prev/05_AFTER_jaw18.png"
     },
     {
       "frame": "06_FALSECOLOUR_before.png",
@@ -209,7 +209,7 @@
         "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
         "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
       },
-      "prev": null
+      "prev": "prev/06_FALSECOLOUR_before.png"
     },
     {
       "frame": "07_FALSECOLOUR_after.png",
@@ -240,10 +240,41 @@
         "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
         "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
       },
-      "prev": null
+      "prev": "prev/07_FALSECOLOUR_after.png"
+    },
+    {
+      "frame": "08_mouth_open_AB.gif",
+      "repoPath": "docs/evidence/lip_seam/08_mouth_open_AB.gif",
+      "productionPath": "renders/_lip_seam/08_mouth_open_AB.gif",
+      "sha256": "d50c25853a2511e4ae79d743dd32b260f5d52d1469770dcb47ce459cef904390",
+      "bytes": 6137911,
+      "pose": "jaw 0 -> 30 deg + lip_lower_depress + lip_upper_raise + mouth_funnel, 18 frames",
+      "camera": "mouth, orthographic, out of his face (+fwd)",
+      "aliases": [
+        "08_mouth_open_AB"
+      ],
+      "note": "OWNER LAW #4: a mouth opening is MOTION. A frame cannot show whether his lips part or his skin stretches; the sequence can."
+    },
+    {
+      "frame": "09_mouth_open_AFTER.gif",
+      "repoPath": "docs/evidence/lip_seam/09_mouth_open_AFTER.gif",
+      "productionPath": "renders/_lip_seam/09_mouth_open_AFTER.gif",
+      "sha256": "8ce3baa8795397dbc8625ef6f759819d81518a56d9ba0a5dd1d8922abfc9ff62",
+      "bytes": 3367929,
+      "pose": "jaw 0 -> 30 deg + lip_lower_depress + lip_upper_raise + mouth_funnel, 18 frames",
+      "camera": "mouth, orthographic, out of his face (+fwd)",
+      "aliases": [
+        "09_mouth_open_AFTER"
+      ],
+      "note": "OWNER LAW #4: a mouth opening is MOTION. A frame cannot show whether his lips part or his skin stretches; the sequence can."
     }
   ],
   "measurements": [
     "lip_seam.json"
-  ]
+  ],
+  "motion": {
+    "frames": 18,
+    "loop": true,
+    "why": "a frame is not a sequence"
+  }
 }

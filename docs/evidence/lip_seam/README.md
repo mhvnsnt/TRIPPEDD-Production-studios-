@@ -10,6 +10,11 @@
 | `02_BEFORE_open_skin_fills_the_mouth.png` | what he was looking at |
 | `04_AFTER_open_tongue_teeth_gums.png` | tongue, teeth, gums, cavity |
 | `06_FALSECOLOUR_before.png` · `07_FALSECOLOUR_after.png` | the same two frames, coloured by MATERIAL |
+| **`08_mouth_open_AB.gif`** | **watch it move — before and after, same 18 frames, side by side** |
+| `09_mouth_open_AFTER.gif` | the fixed mouth alone, closed → open → closed |
+
+**OWNER LAW #4: a mouth opening is MOTION.** A still cannot show whether his lips part or
+his skin stretches into the cavity; the sequence can, so the sequence is what ships.
 
 ## THE CAUSE: THERE WAS NOTHING TO SPLIT
 

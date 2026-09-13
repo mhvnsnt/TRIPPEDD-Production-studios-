@@ -27,6 +27,8 @@ jobs:
         run: python tools/oss/test_physics_runtime.py
       - name: Run physics evidence gate fixture
         run: python tools/oss/test_physics_evidence_gate.py
+      - name: Run measured receipt fixture
+        run: python tools/oss/test_physics_evidence_receipt.py
       - name: Validate manifests and evidence schema
         run: |
           python -m json.tool tools/oss/physics_runtime_manifest.json >/dev/null

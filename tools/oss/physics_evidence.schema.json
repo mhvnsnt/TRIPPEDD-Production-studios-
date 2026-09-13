@@ -3,7 +3,7 @@
   "$id":"trippedd.physics-evidence/v1",
   "type":"object",
   "additionalProperties":true,
-  "required":["schema","status","lane","authority","upstreamCommit","exactCommand","inputSha256","outputSha256","visualEvidenceSha256","canonicalSourceMutated","frameCount","contact"],
+  "required":["schema","status","lane","authority","upstreamCommit","exactCommand","inputPath","outputPath","visualEvidencePath","inputSha256","outputSha256","visualEvidenceSha256","canonicalSourceMutated","frameCount","contact"],
   "properties":{
     "schema":{"const":"trippedd.physics-evidence/v1"},
     "status":{"enum":["PASS","FAIL","UNKNOWN"]},
@@ -11,6 +11,9 @@
     "authority":{"type":"string","pattern":"^DERIVATIVE_"},
     "upstreamCommit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
     "exactCommand":{"type":"string","minLength":1},
+    "inputPath":{"type":"string","minLength":1},
+    "outputPath":{"type":"string","minLength":1},
+    "visualEvidencePath":{"type":"string","minLength":1},
     "inputSha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
     "outputSha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
     "visualEvidenceSha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},

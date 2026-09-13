@@ -8,54 +8,17 @@
   "primaryPriority": ["hair", "eyes_blink", "nostrils_nose", "mouth_oral"],
   "preserveIfPassing": ["eyes_blink", "mouth_oral", "nostrils_nose"],
   "lanes": {
-    "hair": {
-      "status": "BUILD_FIRST",
-      "authority": "measured_source_geometry",
-      "simulation": "Blender_5.2_XPBD",
-      "requirements": ["segment_hair", "root_attachment", "120_frame_minimum_pre_roll", "equilibrium_proof", "deforming_face_collision", "edge_contacts", "penetration_measurement", "front_three_quarter_side_motion_proof"],
-      "rule": "Do not build ear deformation around hidden geometry until hair placement and collision are stable."
-    },
-    "eyes_blink": {
-      "status": "LOCKED_UNLESS_REGRESSION",
-      "authority": "owner_drawn_eyelid_linework",
-      "requirements": ["measured_eye_aperture_fit", "upper_lower_lid_seating", "eyeball_hidden_at_closed_state", "eye_corner_continuity", "five_state_motion_proof"],
-      "hard_fail": ["eyeball_visible_through_closed_lid", "eyelid_crossing_eye_surface", "cheek_driven_blink", "unmeasured_landmark_substitution"]
-    },
-    "nostrils_nose": {
-      "status": "LOCKED_UNLESS_REGRESSION",
-      "authority": "owner_drawn_nostril_rims",
-      "depth": "MEASURED_OR_UNKNOWN",
-      "requirements": ["left_right_rim_fit", "nostril_aperture_read", "sneer_locality", "front_three_quarter_side_visual_proof"],
-      "hard_fail": ["legacy_key_replaces_owner_linework", "rim_offset_without_measurement"]
-    },
-    "mouth_oral": {
-      "status": "LOCKED_UNLESS_REGRESSION",
-      "authority": "existing_oral_measurements_and_linework",
-      "requirements": ["mouth_opening_centered_to_authority", "tooth_blinder_opening_alignment_verified", "upper_lower_lip_seating", "oral_cavity_visibility_check", "speech_and_blink_noninterference"],
-      "hard_fail": ["tooth_blinder_opening_shifted_sideways", "teeth_or_cavity_visible_through_closed_lips_without_authorized_opening"]
-    },
-    "ears": {
-      "status": "BUILD_AFTER_HAIR",
-      "authority": "measured_source_geometry",
-      "controls": ["ear_left", "ear_right", "ear_upper", "ear_mid", "ear_lobe", "ear_fold"],
-      "requirements": ["left_right_independent", "silhouette_proof", "front_three_quarter_side_proof"]
-    },
-    "brows": {
-      "status": "BUILD",
-      "authority": "owner_drawn_brow_linework",
-      "blinkInfluence": 0
-    },
-    "face_tissue": {
-      "status": "BUILD",
-      "requirements": ["facs_controls", "small_local_correctives", "no_global_remesh"]
-    },
-    "body_hands": {
-      "status": "DEFERRED",
-      "note": "Bring in body, hand, mocap and full-body rigging only when MARS receives a body or when the Kevin/full-body lane begins."
-    }
+    "hair": {"status":"BUILD_FIRST","authority":"measured_source_geometry","simulation":"Blender_5.2_XPBD","requirements":["segment_hair","root_attachment","120_frame_minimum_pre_roll","equilibrium_proof","deforming_face_collision","edge_contacts","penetration_measurement","front_three_quarter_side_motion_proof"],"rule":"Do not build ear deformation around hidden geometry until hair placement and collision are stable."},
+    "eyes_blink": {"status":"LOCKED_UNLESS_REGRESSION","authority":"owner_drawn_eyelid_linework","requirements":["measured_eye_aperture_fit","upper_lower_lid_seating","eyeball_hidden_at_closed_state","eye_corner_continuity","five_state_motion_proof"],"hard_fail":["eyeball_visible_through_closed_lid","eyelid_crossing_eye_surface","cheek_driven_blink","unmeasured_landmark_substitution"]},
+    "nostrils_nose": {"status":"LOCKED_UNLESS_REGRESSION","authority":"owner_drawn_nostril_rims","depth":"MEASURED_OR_UNKNOWN","requirements":["left_right_rim_fit","nostril_aperture_read","sneer_locality","front_three_quarter_side_visual_proof"],"hard_fail":["legacy_key_replaces_owner_linework","rim_offset_without_measurement"]},
+    "mouth_oral": {"status":"LOCKED_UNLESS_REGRESSION","authority":"existing_oral_measurements_and_linework","requirements":["mouth_opening_centered_to_authority","tooth_glint_opening_alignment_verified","upper_lower_lip_seating","oral_cavity_visibility_check","speech_and_blink_noninterference"],"hard_fail":["tooth_glint_opening_shifted_sideways","teeth_or_cavity_visible_through_closed_lips_without_authorized_opening"]},
+    "ears": {"status":"BUILD_AFTER_HAIR","authority":"measured_source_geometry","controls":["ear_left","ear_right","ear_upper","ear_mid","ear_lobe","ear_fold"],"requirements":["left_right_independent","silhouette_proof","front_three_quarter_side_proof"]},
+    "brows": {"status":"BUILD","authority":"owner_drawn_brow_linework","blinkInfluence":0},
+    "face_tissue": {"status":"BUILD","requirements":["facs_controls","small_local_correctives","no_global_remesh"]},
+    "body_hands": {"status":"DEFERRED","note":"Bring in body, hand, mocap and full-body rigging only when MARS receives a body or when the Kevin/full-body lane begins."}
   },
-  "integrationOrder": ["protect_eyes_nose_mouth", "hair_build_and_collision", "ears_after_hair", "brows", "face_tissue", "multi_state_face_proof", "body_when_needed"],
-  "regressionRule": "Any protected facial lane that changes without a measured improvement is FAIL.",
-  "visualPriority": "Face correctness beats raw polygon count; visual regression FAIL overrides numerical PASS.",
-  "unknownNeverPass": true
+  "integrationOrder":["protect_eyes_nose_mouth","hair_build_and_collision","ears_after_hair","brows","face_tissue","multi_state_face_proof","body_when_needed"],
+  "regressionRule":"Any protected facial lane that changes without a measured improvement is FAIL.",
+  "visualPriority":"Face correctness beats raw polygon count; visual regression FAIL overrides numerical PASS.",
+  "unknownNeverPass":true
 }

@@ -67,3 +67,9 @@
 [submodule "third_party/oss/ArmorPaint-Blender"]
 	path = third_party/oss/ArmorPaint-Blender
 	url = https://github.com/armory3d/armorpaint_blender.git
+[submodule "third_party/oss/Natron"]
+	path = third_party/oss/Natron
+	url = https://github.com/NatronGitHub/Natron.git
+[submodule "third_party/oss/Easy-Tree"]
+	path = third_party/oss/Easy-Tree
+	url = https://github.com/jacobcjohnston/Easy-Tree.git

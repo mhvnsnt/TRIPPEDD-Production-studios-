@@ -1,0 +1,46 @@
+{
+  "schema": "god-molecule.mars-oral-known-good-recovery.v1",
+  "status": "RECOVERY_ANCHOR",
+  "authority": "committed production asset + signed Claude evidence",
+  "asset": "assets/rigs/MARS_ORAL.blend",
+  "asset_commit": "904b419d3e38e7fd8965525c49188dc2be1eb1bf",
+  "asset_size_bytes": 6710886,
+  "asset_size_note": "Claude recorded approximately 6.4 MB in the signed commit; exact Git blob bytes must be hashed by the Blender/runtime worker before promotion.",
+  "recovery_source_commit": "0dbb965d03ba1a2b806425ecec5245ee5d3a7d00",
+  "recovery_source_parent": "981d45b942daec1099ba9674375fff5b526da106",
+  "recovery_evidence": {
+    "cavity": "real carved void from oral_cavity.py",
+    "cavity_cutter_vertices": 394,
+    "cavity_cutter_boundary_edges": 0,
+    "cavity_cutter_non_manifold_edges": 0,
+    "cavity_cutter_volume": 0.004146,
+    "carved_mars_vertices": 23830,
+    "cavity_wall_ray_hits": "41/41",
+    "upper_teeth_vertices": 738,
+    "lower_teeth_vertices": 738,
+    "upper_gum_vertices": 702,
+    "lower_gum_vertices": 702,
+    "tongue_vertices": 933,
+    "tongue_shape_keys": 31,
+    "mouth_open_visibility_best_recorded": "9/240 upper+lower teeth rays reaching camera",
+    "failure_named_by_recovery_commit": "upper/lower lip surfaces did not separate at the seam, so jaw motion stretched the lip surfaces"
+  },
+  "recovery_rule": "Do not recreate this oral system from memory. Start from the committed MARS_ORAL.blend donor and repair only the lip seam/ownership while preserving teeth, gums, tongue, cavity, dental registration, collision and working motion.",
+  "prohibited": [
+    "whole-face oral regeneration",
+    "synthetic radial skin jaw deformation",
+    "height-cutoff skin deformation",
+    "replacement tooth grid",
+    "replacement sphere/cube cavity",
+    "silent overwrite of the known-good donor"
+  ],
+  "verification_required_before_promotion": [
+    "runtime SHA-256 of donor blend",
+    "component fingerprint before repair",
+    "component fingerprint after repair",
+    "lip seam contiguous upper/lower ownership",
+    "actual rendered pixels at closed/partial/open states",
+    "oral collision/rig preservation"
+  ],
+  "note": "This manifest preserves the measured recovery evidence. It does not claim the donor currently has a perfect open-mouth visual; the signed 0dbb965 evidence explicitly says the cavity and internal anatomy existed while the lip seam remained sealed."
+}

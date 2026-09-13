@@ -406,3 +406,67 @@ a defect, that description is the specification; the tool's job is to find it, n
 And his diagnoses have been right: *"the eyelids are probably not thick enough to cover the eyeball"*
 (a zero-thickness shell — correct), *"you're not moving the actual eyelid line"* (correct, and it was
 the whole defect).
+
+## COLLISION IS MEASURED NOW, AND THE METRIC WAS WRONG TWICE FIRST (2026-09-13)
+
+Owner: *"so hair can't, like, face through the face ... so the tongue can't face through the
+cheeks ... unless we start asking for that"* — glitchy/exaggerated stays available as
+`STYLE_OVERRIDE`, which requires a written reason and stays visible in the receipt.
+
+`contact_gate.py` already knew how to JUDGE a contact receipt. **Nothing produced one.**
+Two stages now do:
+- `tools/character/export_contact_geometry.py` — Blender-side, evaluates the depsgraph per
+  frame (armature + shape keys + boolean + cloth cache) and writes world-space verts/tris
+  per named part to a `.npz`. No collision maths: Blender ships numpy 1.24/py3.11 and the
+  collision stack lives in the venv on numpy 2.x. The `.npz` is **published evidence** — any
+  agent re-runs stage 2 with no Blender and no re-bake.
+- `tools/character/penetration_measure.py` — libigl generalized winding number + FCL/trimesh.
+  Penetration = a vertex of A inside the SOLID of B, depth to B's nearest surface, in his mm.
+
+**THREE DEFINITIONS OF "INSIDE", AND ONLY THE THIRD IS THE QUESTION BEING ASKED:**
+1. *Whole closed head solid.* Tongue at REST read **9.73 mm, 113/146 violating** — because
+   `MARS_MESH` evaluates to a CLOSED shell whose only boolean is the mouth APERTURE; no
+   cavity is subtracted. A correct tongue and a tongue out through the cheek read the same.
+   `MARS_CAVITY` **is** the air pocket (146/146 tongue verts inside it, 16.44 mm deep).
+   `--carve MARS_MESH=MARS_CAVITY` → **0.0000 mm**. The difference is taken with WINDING
+   NUMBERS, not a mesh boolean: a point is in B\C iff inside B and outside every C.
+2. *Face sub-surface with a pseudonormal sign.* **145.38 mm, and collision ON scored WORSE
+   than OFF.** That surface is open (348 boundary edges), so hair hanging down his BACK had
+   its nearest feature on the boundary. **ON worse than OFF is the giveaway that the number
+   is about the metric.**
+3. *Inside the CLOSED solid AND the nearest surface feature is a SKIN triangle.* igl returns
+   the closest face index with the distance, so classification is free, and hair-against-
+   static-cap is counted separately as `insideButNearestFeatureOffSubset`. **This one works.**
+
+**PROVEN BOTH DIRECTIONS.** Tongue displaced laterally: 0 mm → PASS, **4 mm → PASS**
+(real anatomical slack, the cavity is wider than the tongue), 10 mm → **FAIL, exit 45**.
+The 4 mm row is the important one — a gate that fired there could not tell slack from a breach.
+Teeth upper 0.5470 mm / 2 verts is a real, small FAIL and is recorded, not rounded away.
+
+### AN OVERLAY PROJECTED ON WORLD AXES IS A LIE THAT LOOKS LIKE EVIDENCE
+The first published proof sheet drew its markers with world x/z. His head rests ~32.6°
+pitched back and the FRONT camera's right vector measures **(-0.995, 0.055, -0.081)** —
+very nearly MINUS world x. Every marker was mirrored left-for-right and sheared vertically,
+and it produced a completely plausible picture in which markers appeared to float in space
+beside his head. Those "flying hair verts" did not exist. **Rebuild the exact (right, up,
+forward) the renderer built its cameras from — `face_plate.head_frame` — never world axes.**
+
+## THE HAIR WAS SAGGING, NOT SWINGING. INTERNAL SPRINGS. (2026-09-13)
+Owner, on the rendered sequence: *"it doesn't look like the hair moves or has physics at all."*
+Correct, and the gate had already refused it: **drift 56.78 mm vs SWAY 4.20 mm.** 93% of the
+"secondary motion" was cloth stretching under its own weight.
+- **Raising tension stiffness does not fix it** — that stiffens the SHEET. A dread is a solid
+  form, and Blender's cloth ships the thing that models one: `use_internal_springs`, run
+  through the volume between opposing faces of a lock.
+- stretch 2000 **without** internal springs: drift **87.52 mm**, sway 11.35 → REFUSED.
+  With them: drift **1.14 mm**, sway **5.96 mm**. 77x, and sway beats creep 5-to-1 for the
+  first time.
+- **Face penetration fell with it, 15.15 → 7.25 mm, with no change to the collider.** A lock
+  that holds its own form does not collapse inward through his cheek. Measured, not predicted.
+- A hypothesis of mine that was WRONG and is worth keeping: cutting the collider back from the
+  hair ROOTS removed **0 of 11,311 faces**, because the root→tip gradient was seeded from the
+  CROWN — its roots sit on top of his head, nowhere near skin. The shove is where the cap
+  **rests on** the scalp (~0 mm from skin), so any collider thickness is an impulse on frame 1.
+  That is why 3.5 mm scored 79.78 mm where 2.0 mm scored 21.88.
+- **A STILL IS NOT A SEQUENCE.** I sent him one frame twice. Every hair result now ships as a
+  GIF (`docs/evidence/hair_motion/hair_{FRONT,SIDE}_motion.gif`).

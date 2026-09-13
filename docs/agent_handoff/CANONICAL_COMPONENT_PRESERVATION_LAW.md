@@ -42,7 +42,7 @@ A mouth-opening repair must not move the canonical MARS skin as a substitute for
 
 ## Visual authority
 
-Telemetry, ray counts, topology statistics, and manifests are diagnostic evidence. They are not visual PASS. A production mouth claim requires actual rendered pixel evidence. Blender separately controls whether objects participate in final renders and whether they are visible to ray traversal, so both states must be explicitly audited and persisted. citeturn0search2turn0search5
+Telemetry, ray counts, topology statistics, and manifests are diagnostic evidence. They are not visual PASS. A production mouth claim requires actual rendered pixel evidence. Blender separately controls whether objects participate in final renders and whether they are visible to ray traversal, so both states must be explicitly audited and persisted.
 
 ## Regeneration prohibition
 

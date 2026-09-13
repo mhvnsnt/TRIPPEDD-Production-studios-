@@ -33,6 +33,8 @@ The bridge is now changed so the canonical MARS skin receives **zero synthetic j
 
 Hard rule: do not restore the radial/height-interpolated skin deformation. The next skin-motion route must derive upper/lower lip ownership from the **actual MARS mesh crease/seam**. The GNM donor remains the authority for the internal teeth/gums/tongue motion because its canonical mouth-open expression is explicitly built around rigid lower dental motion rather than stretching the dental surface.
 
+**Commissure update (2026-09-13):** the boolean DIFFERENCE in `oral_cavity.py` is what removes corner skin — scan and weld are clean. Lane is now the **cutter geometry at the corners**, not downstream skin repair. Canonical remains untouched.
+
 ## Pixel truth correction — NEW
 Claude's control exposed a second measurement failure: the canonical oral objects (`MARS_TEETH_UPPER`, `MARS_TEETH_LOWER`, `MARS_TONGUE`, `MARS_MOUTH_SOCK`) were carrying `hide_render=True`. Therefore geometry/raycast classification could report oral anatomy while rendered pixels contained only MARS skin. The previous “100% skin / zero teeth/tongue/sock pixels” result is valid as a **pixel observation**, but it was not evidence that the donor geometry was absent; it was evidence that the donor was disabled for rendering.
 
@@ -69,22 +71,54 @@ Existing first-route tools:
 
 GNM Head v3 is an Apache-2.0 parametric head model with controllable internal anatomy including teeth/gums and tongue and expression controls. Use it as a donor/behavior reference, not as a replacement MARS identity.
 
-## Current eye route
-Weld fragmented eye geometry before remeshing. Preserve painted eyelid correspondence, UVs, and shape keys. Prove the weld moves zero vertices before invoking CGAL/Instant Meshes or another topology operation.
+## Current eye route — UPDATED (clearance active)
+
+Do **not** invent a new eyeball. Donor and linework are both on main with real bytes.
+
+| Asset | Path | Status |
+|-------|------|--------|
+| Linework plates | `assets/references/mars_facial_linework/*.png` | P0_CANONICAL_BINARIES_PRESENT |
+| Eye donor | `assets/donor/gnm_eyes/eye_{L,R}.npz` | 1926 verts (globe+occlusion+lacrimal) |
+| Donor manifest | `assets/donor/gnm_eyes/manifest.json` | ICT-FaceKit |
+| Clearance contract | `tools/character/eye_clearance_contract.json` | ACTIVE |
+| Ladder runner | `tools/character/eye_clearance_ladder.py` | on main |
+| Runbook | `docs/production/EYE_CLEARANCE_RUNBOOK.md` | on main |
+| Handoff | `docs/agent_handoff/EYE_CLEARANCE_HANDOFF.md` | on main |
+| Donor agent note | `assets/donor/gnm_eyes/AGENTS_READ_THIS.md` | on main |
+
+**Hard rules**
+- Class filter: measure **globe only** (ignore occlusion/lacrimal/socket)
+- Rest penetration before blink travel
+- Local lid travel, not global aperture
+- No invented geometry
+- PASS requires ladder receipt + reopened renders + SHA-256
+
+**Baseline after rigid re-seat:** 14.24 mm centre depth, 0.49 mm nearest vertex to lid (supersedes 82/55 placement error).
+
+**Next physical steps**
+1. Link donor eyes into working `.blend`; globe class filter active
+2. Export contact geometry with eyes present (`tools/character/export_contact_geometry.py`)
+3. `eye_clearance_ladder.py` → skeleton receipt
+4. `penetration_measure.py` on globe-class pairs → fill measured fields
+5. Render open → intermediate → closed with eyes visible; reopen + SHA
+6. Only then Shrinkwrap Outside Surface (offset ~0.4 mm) and re-measure
+
+Weld fragmented eye geometry before remeshing still applies, but clearance measurement is the active gate — not a permanent NOT_ATTEMPTED.
 
 ## Registration route
 `tools/visual_anatomy/component_registration.py` provides deterministic landmark registration using Kabsch/Procrustes. Optional Open3D ICP is a refinement, never the first authority. Registration must fail closed on RMS/max residual thresholds and must record source/target identity and the transform.
 
 ## Approved tool families
 - Blender / Rigify
+- ICT-FaceKit (eye donor)
 - GNM-derived oral anatomy
-- MediaPipe canonical face landmarks
+- MediaPipe canonical face landmarks (diagnostic only — not eyelid authority)
 - PyMeshLab / MeshLab
 - CGAL
 - Instant Meshes
 - OpenSubdiv
 - Open3D
-- libigl
+- libigl (penetration_measure)
 - facial-animation / facial rigging routes already recorded in the repository
 - Remi Blender addon as a candidate repair/retopology accelerator; verify license/provenance before redistribution
 
@@ -95,6 +129,8 @@ While the cloud runtime is unavailable, Rocket must not fabricate Blender execut
 
 The command center remains a control/observation surface, not the production runtime. Real production authority remains Blender/GLB artifacts, render bytes, evidence manifests, and deterministic validators. Blender officially supports background/headless command-line rendering and automation, so the cloud worker should reconnect to the actual Blender invocation rather than a simulated renderer.
 
+Rocket is NON-AUTHORITATIVE until the physical runtime returns operation ID + receipt + artifact SHA (Live Production Door / Artifact Pipeline pattern).
+
 ## Continuous work
 When a safe next task exists and no owner decision is required: continue. Do not stop after producing recommendations. Sequence: discover → inspect → execute → measure → validate → publish evidence → update bulletin → next task.
 
@@ -103,12 +139,14 @@ UNKNOWN is never PASS. No artifact bytes = IMAGE_UNAVAILABLE. Visual FAIL overri
 
 ## Current queue
 1. **Rocket cloud recovery:** reconnect and verify the real worker when cloud returns; meanwhile continue command-center/control-plane hardening without fabricating runtime results.
-2. **Recover/protect the known-good oral system:** snapshot and compare the existing oral donor before any face rebuild; restore from donor rather than recreating from memory when drift is detected.
-3. **MARS lip seam:** run candidate analyzer on actual canonical MARS and promote only a contiguous chain with pixel validation.
-4. **GNM internal motion:** keep canonical GNM teeth/gums/tongue motion; compare against yesterday's known-good GNM behavior.
-5. **Pixel truth render:** render with oral donor visibility explicitly PASS; compare normal render against skin-hidden control and classify actual object/material pixels.
-6. **Eye weld-first:** measured zero-motion weld before remeshing.
-7. Component registration and transform provenance.
-8. Shape-key / UV / armature-weight preservation during component assembly.
-9. Deterministic mesh QA and visual evidence receipts.
-10. Continue open-source discovery only when it materially improves one of the above lanes.
+2. **Oral commissure cutter:** boolean in `oral_cavity.py` eats corner skin; scan+weld clean. Fix cutter geometry at corners; canonical untouched.
+3. **Recover/protect the known-good oral system:** snapshot and compare the existing oral donor before any face rebuild; restore from donor rather than recreating from memory when drift is detected.
+4. **MARS lip seam:** run candidate analyzer on actual canonical MARS and promote only a contiguous chain with pixel validation.
+5. **Eye clearance ladder (ACTIVE parallel):** export geom with eyes present → globe-class penetration_measure → ladder receipt → renders + SHA → Shrinkwrap only after rest is clean. Paths above. Do not invent eyeballs.
+6. **GNM internal motion:** keep canonical GNM teeth/gums/tongue motion; compare against known-good GNM behavior.
+7. **Pixel truth render:** render with oral donor visibility explicitly PASS; compare normal render against skin-hidden control and classify actual object/material pixels.
+8. **Eye weld-first:** measured zero-motion weld before remeshing (after clearance baseline locked).
+9. Component registration and transform provenance.
+10. Shape-key / UV / armature-weight preservation during component assembly.
+11. Deterministic mesh QA and visual evidence receipts.
+12. Continue open-source discovery only when it materially improves one of the above lanes.

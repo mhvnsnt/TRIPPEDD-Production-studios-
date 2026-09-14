@@ -1,23 +1,26 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-## Tongue (candidate)
+## ⚠️ FIRST ACTION ON RESUME
 
-Rigid re-seat under **upper incisal edge** (−0.97 mm), not lower crowns. 0/933 above edge; protected 0 drift; GNM keys intact.  
-`docs/evidence/mars/mouth/TONGUE_SEAT_AND_RIM.md`  
-Promote only with owner word + pixels + SHA. Canonical untouched.
+Read and execute: **`docs/agent_handoff/CLAUDE_START_HERE_ORAL_SWAP.md`**
 
-## Lip rim
+Stop shredded-seam surgery. Run interior swap (host `MARS_ORAL.blend` + interior `MARS_FACE.blend` → `assets/variants/MARS_ORAL_SWAP_REVIEW.blend`). No file-upload requests.
 
-beautify_fill: 75→61 slivers, 0 vertex drift, partial selection. **Still visual FAIL** (jagged + rectangular slot). Seam coverage experiment remains primary for bridges.
+## Oral status
 
-## Survey instruments
+- GNM seated; tongue re-seat under upper incisal edge (candidate)  
+- Seam densify / residual-rounds rejected; drop-bridges cleanup only  
+- Protrusion survey v3: world plane; SURFACE = shell  
+- Swap script: `tools/character/swap_oral_interior_onto_donor_head.py`  
 
-Protrusion plane must be world-consistent (`survey_oral_aperture.py` v3). SURFACE = shell.
+## Canon
+
+MARS = **floating head**. Face/oral/eyes/hair — not body rig as show premise.
 
 ## Queue
 
-1. Seam extension past ±25 mm (9 terminal straddlers)  
-2. Open-mouth PNG → reopen → SHA → mouth_proof  
-3. Optional wider beautify selection if still spike-limited  
-4. Tongue promote on owner word  
-5. Rigify only after mouth/face acceptance + weights  
+1. **Run oral interior swap** (physical)  
+2. Open-mouth pixels + SHA + mouth_proof on review blend  
+3. Seam coverage only if still needed after swap  
+4. Eye clearance ladder  
+5. Live session receipts; PR #64/#65 draft  

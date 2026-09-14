@@ -1,25 +1,25 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-## Tooling correction
+## Tooling (corrected)
 
-**Quadriflow is already in session Blender.** Instant Meshes was a false gap. Rigify registered but unrun. xatlas installed. See `docs/production/OSS_MUST_PULL.md`.
+Quadriflow + Rigify **present** in session Blender. Instant Meshes false gap. xatlas installed. Gap = execution, not download. `docs/production/OSS_MUST_PULL.md`
 
-## Oral status
+## Oral
 
-GNM seated (first full run). mouth_proof 8/8 on candidate. Crater 44→4/483.  
-**Visual FAIL: open-mouth rim** — seam coverage incomplete (split stops ~±22 mm; straddlers to ~±34 mm).  
-Detail: `docs/agent_handoff/LIP_SEAM_COVERAGE.md`  
-Densify rejected. drop-bridges partial, not visual fix. Not promoted.
+GNM seated. Candidate mouth_proof 8/8, crater fixed. **Visual FAIL open-mouth rim** (seam coverage past ±22 mm). Not promoted. `docs/agent_handoff/LIP_SEAM_COVERAGE.md`
 
-## Pixel truth
+## Rigify
 
-Use `--pose open` (default in updated script). Rest closed must not demand oral pixels. Classify linear Render Result, not sRGB PNG.
+Registered ≠ working. No auto-skin. Chain: topology → weights → deform QA → pixels → SHA. `docs/agent_handoff/RIGIFY_MARS.md`
+
+## PR #65
+
+Draft/unmerged. Structural CI only. PHYSICAL_EXECUTION: NOT_CLAIMED.
 
 ## Queue
 
-1. Extend seam split to full straddler lateral span; re-measure coverage  
+1. Seam coverage to straddler lateral span  
 2. Open-mouth pixel truth + SHA  
-3. Run **Rigify** face path (stop hand sphere lids)  
-4. Quadriflow only if triangle QA still fails after seam/registration  
-5. Eye clearance ladder when ready  
-6. Live session URL + receipts; PR #64/#65 draft until physical  
+3. Rigify candidate only after mouth/face acceptance + explicit weights  
+4. Eye clearance ladder  
+5. Live URL + receipts  

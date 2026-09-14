@@ -8,6 +8,8 @@ on:
       - "assets/rigs/MARS_FACE.blend"
       - "assets/checkpoints/before-mouth-retopo/**"
       - ".github/workflows/mars-oral-recovery.yml"
+      - "tools/character/inspect_original_mars_glb.py"
+      - "assets/rigs/MARS_FACE.glb"
   workflow_dispatch:
 
 jobs:
@@ -41,6 +43,16 @@ jobs:
           git fetch --no-tags --depth=1 origin 800c8bc2ba544390f3d9df9cc9c147aea6520aeb
           git show 800c8bc2ba544390f3d9df9cc9c147aea6520aeb:docs/evidence/mouth/03_WIDE_mouth.png > .artifacts/oral/historical_800c_03_WIDE_mouth.png
           file .artifacts/oral/historical_800c_03_WIDE_mouth.png
+      - name: Inspect the original original MARS_FACE GLB
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/original-glb
+          test -s assets/rigs/MARS_FACE.glb
+          sha256sum assets/rigs/MARS_FACE.glb | tee .artifacts/original-glb/MARS_FACE.glb.sha256
+          vendor/blender -b -P tools/character/inspect_original_mars_glb.py -- --glb assets/rigs/MARS_FACE.glb --out .artifacts/original-glb
+          cp assets/rigs/MARS_FACE.glb .artifacts/original-glb/MARS_FACE_original.glb
+          cat .artifacts/original-glb/inventory.json
+
       - name: Verify immutable host anchors
         run: |
           set -euo pipefail
@@ -101,6 +113,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mars-oral-recovery-${{ github.run_id }}
-          path: .artifacts/oral
+          path: |
+            .artifacts/oral
+            .artifacts/original-glb
           if-no-files-found: error
           retention-days: 14

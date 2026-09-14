@@ -34,6 +34,13 @@ jobs:
           ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
           vendor/blender --version
 
+      - name: Extract the known-good Sep 12 visual anchor
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/oral
+          git fetch --no-tags --depth=1 origin 800c8bc2ba544390f3d9df9cc9c147aea6520aeb
+          git show 800c8bc2ba544390f3d9df9cc9c147aea6520aeb:docs/evidence/mouth/03_WIDE_mouth.png > .artifacts/oral/historical_800c_03_WIDE_mouth.png
+          file .artifacts/oral/historical_800c_03_WIDE_mouth.png
       - name: Verify immutable host anchors
         run: |
           set -euo pipefail

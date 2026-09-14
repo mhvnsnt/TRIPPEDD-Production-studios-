@@ -10,6 +10,7 @@ on:
       - ".github/workflows/mars-oral-recovery.yml"
       - "tools/character/inspect_original_mars_glb.py"
       - "tools/character/assemble_original_glb_oral_candidate.py"
+      - "tools/character/render_original_glb_oral_candidate.py"
       - "assets/rigs/MARS_FACE.glb"
   workflow_dispatch:
 
@@ -99,6 +100,15 @@ jobs:
           status=${PIPESTATUS[0]}
           echo "MOUTH_PROOF_EXIT=$status" | tee .artifacts/original-glb-candidate/mouth-proof-status.txt
           exit 0
+
+      - name: Render and structurally audit original-GLB oral candidate
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/original-glb-candidate/recovery-render
+          vendor/blender -b -P tools/character/render_original_glb_oral_candidate.py -- \\
+            --rig .artifacts/original-glb-candidate/MARS_FACE_ORIGINAL_GLB_ORAL_REVIEW.blend \\
+            --out .artifacts/original-glb-candidate/recovery-render
+          cat .artifacts/original-glb-candidate/recovery-render/oral_candidate_structural_audit.json
 
       - name: Materialize committed mouth measurement inputs
         if: steps.swap.outcome == 'success'

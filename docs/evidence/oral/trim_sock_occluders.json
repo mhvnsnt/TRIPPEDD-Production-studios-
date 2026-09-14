@@ -1,0 +1,23 @@
+{
+  "schema": "trippedd.trim-sock-occluders/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_TONGUE.blend",
+  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_TONGUE.blend",
+  "liningFaces": [
+    396,
+    281
+  ],
+  "removed": 115,
+  "occludingBefore": {
+    "faces": 115,
+    "rays": 699
+  },
+  "occludingAfter": {
+    "faces": 6,
+    "rays": 93
+  },
+  "raysMeetingLining": [
+    2393,
+    1643
+  ],
+  "restRaysReachingAnatomy": 48
+}

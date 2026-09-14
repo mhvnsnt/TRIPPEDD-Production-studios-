@@ -1,0 +1,43 @@
+{
+ "schema": "trippedd.evidence/v1",
+ "set": "mouth_shards",
+ "question": "what is hanging in his open mouth, and did shaving and densifying remove it",
+ "frames": [
+  {
+   "filename": "ID_WIDE_after_cavity_densify.png",
+   "repoPath": "docs/evidence/mouth_shards/ID_WIDE_after_cavity_densify.png",
+   "sha256": "0b30e95f73fdad6a93484a89003843653acb9f72abcd8a36f8570dfd19c542e7",
+   "bytes": 598579
+  },
+  {
+   "filename": "ID_WIDE_before.png",
+   "repoPath": "docs/evidence/mouth_shards/ID_WIDE_before.png",
+   "sha256": "8651878616a4685bb91d420c63422eff8a57d17ea7c75692b515ff34c9c7bf53",
+   "bytes": 597568
+  },
+  {
+   "filename": "LIP_SHARDS_after.png",
+   "repoPath": "docs/evidence/mouth_shards/LIP_SHARDS_after.png",
+   "sha256": "0f2d221b495f20f0307e3bd52ae39ca76b12aaf816e6983678f464879dae0781",
+   "bytes": 593208
+  },
+  {
+   "filename": "LIP_SHARDS_before.png",
+   "repoPath": "docs/evidence/mouth_shards/LIP_SHARDS_before.png",
+   "sha256": "cab279e6b6bf3ab83bd1295bb3af640ceb7d527062cf6489d1fe1b2f36bb2ecd",
+   "bytes": 592500
+  },
+  {
+   "filename": "WIDE_after.png",
+   "repoPath": "docs/evidence/mouth_shards/WIDE_after.png",
+   "sha256": "08739144fb9df376d40ed3d84a1f433933a0400a663e94899716f9847d9f918e",
+   "bytes": 1250797
+  },
+  {
+   "filename": "WIDE_before.png",
+   "repoPath": "docs/evidence/mouth_shards/WIDE_before.png",
+   "sha256": "5874ee0d167a1514dc6173fea3bd0096885900cdf4eb21933967595205deff9b",
+   "bytes": 1248521
+  }
+ ]
+}

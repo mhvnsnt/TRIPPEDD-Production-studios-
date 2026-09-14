@@ -1,0 +1,23 @@
+{
+  "schema": "trippedd.drop-mouth-bridges/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_SHAVED2.blend",
+  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_SHAVED2.blend",
+  "bridging": [
+    56,
+    36
+  ],
+  "behindLipFront": 56,
+  "keptVisibleAtRest": 35,
+  "removed": 21,
+  "faces": [
+    61634,
+    61613
+  ],
+  "verts": 34721,
+  "vertexDriftMM": 0.0,
+  "shapeKeys": 89,
+  "visibleAtRest": [
+    447,
+    447
+  ]
+}

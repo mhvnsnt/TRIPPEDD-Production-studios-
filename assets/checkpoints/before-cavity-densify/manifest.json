@@ -1,0 +1,77 @@
+{
+  "label": "before-cavity-densify",
+  "note": "before densifying the carved cavity wall (377 faces, median 20.0 mm2, 49.9% of the open mouth)",
+  "savedAt": "2026-09-14T12:08:03Z",
+  "files": [
+    {
+      "kind": "rig",
+      "path": "assets/rigs/MARS_FACE.blend",
+      "sha256": "b8038dfe23ca0b3affeb5a3638022dfb45882d123ff788cfe745ed0f3f7ecfda",
+      "bytes": 14386157,
+      "why": "the canonical head -- tools save over this IN PLACE, which is how the good mouth was lost under the eye work"
+    },
+    {
+      "kind": "rig",
+      "path": "assets/rigs/MARS_FACE.glb",
+      "sha256": "c1415930ec19d4cf727d15f9edd4172d6bacc068f27da78c9f0cf376e42505ff",
+      "bytes": 20049212,
+      "why": "the exported head"
+    },
+    {
+      "kind": "rig",
+      "path": "assets/rigs/MARS_ORAL.blend",
+      "sha256": "41036605d2ed595ef4868d6b1f7620ca1457f3b92017a00a4708e84f1fe445df",
+      "bytes": 5032009,
+      "why": "the carved-cavity head the face rig is built from"
+    },
+    {
+      "kind": "donor",
+      "path": "assets/donor/gnm_oral/lower_teeth_and_gums.npz",
+      "sha256": "d92ab37102c981a9378ac407f4c32d05c25697fd0e53882c0428e8184bf78809",
+      "bytes": 32647,
+      "why": "the Google GNM oral donor (Apache-2.0) -- INPUT, never a working artifact"
+    },
+    {
+      "kind": "donor",
+      "path": "assets/donor/gnm_oral/manifest.json",
+      "sha256": "3544593b65b34b7e4e7a3b84dd21c3389c6af0e97104f65a26565baa1add92e2",
+      "bytes": 2819,
+      "why": "the Google GNM oral donor (Apache-2.0) -- INPUT, never a working artifact"
+    },
+    {
+      "kind": "donor",
+      "path": "assets/donor/gnm_oral/mouth_sock.npz",
+      "sha256": "caeba0e73bda63546670b5e330b91f09f0703ee38d783025f7052bd9de31483e",
+      "bytes": 8376,
+      "why": "the Google GNM oral donor (Apache-2.0) -- INPUT, never a working artifact"
+    },
+    {
+      "kind": "donor",
+      "path": "assets/donor/gnm_oral/tongue.npz",
+      "sha256": "2f97c0d0aa86da0f588eb038c24730146c6b4624372bd97235f2fcbc68014a06",
+      "bytes": 19184,
+      "why": "the Google GNM oral donor (Apache-2.0) -- INPUT, never a working artifact"
+    },
+    {
+      "kind": "donor",
+      "path": "assets/donor/gnm_oral/tongue_expressions.npz",
+      "sha256": "517d5ae0fa7656fdf52f01b7c9dba991915828cac7f8e4551cd960b59072741f",
+      "bytes": 336965,
+      "why": "the Google GNM oral donor (Apache-2.0) -- INPUT, never a working artifact"
+    },
+    {
+      "kind": "donor",
+      "path": "assets/donor/gnm_oral/upper_teeth_and_gums.npz",
+      "sha256": "ea6fdf8105157c53289137671f89c3f6226bf81efffbd230f172271556b7c4a6",
+      "bytes": 30167,
+      "why": "the Google GNM oral donor (Apache-2.0) -- INPUT, never a working artifact"
+    },
+    {
+      "kind": "measure",
+      "path": "renders/_rig_measure/mouth_anatomy.json",
+      "sha256": "380083aaf62209d3a95bd227235df04232996835f233a729274452fff866802b",
+      "bytes": 8055,
+      "why": "his measured mouth frame"
+    }
+  ]
+}

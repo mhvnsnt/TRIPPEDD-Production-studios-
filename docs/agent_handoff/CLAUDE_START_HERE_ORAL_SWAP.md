@@ -10,65 +10,37 @@
 
 `mhvnsnt/TRIPPEDD-Production-studios-` (main)
 
-## Assets (already committed)
+## One command
+
+```bash
+chmod +x tools/character/run_oral_interior_swap.sh
+export TRIPPEDD_PYTHON_BIN="${TRIPPEDD_PYTHON_BIN:-./.trippedd_venv/bin/python}"
+tools/character/run_oral_interior_swap.sh
+```
+
+Prereqs validated first (`validate_oral_swap_prereqs.py`).  
+Output: `assets/variants/MARS_ORAL_SWAP_REVIEW.blend`
+
+## Assets
 
 | Role | Path |
 |------|------|
-| **Host** (good cavity + lips + weights) | `assets/rigs/MARS_ORAL.blend` (anchor **904b419**) |
-| Checkpoint host | `assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend` |
-| **Interior** (current teeth / seated tongue) | `assets/rigs/MARS_FACE.blend` |
-| Recovery law | `docs/evidence/MARS_ORAL_KNOWN_GOOD_RECOVERY.json` |
+| Host | `assets/rigs/MARS_ORAL.blend` (904b419) |
+| Fallback host | `assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend` |
+| Interior | `assets/rigs/MARS_FACE.blend` |
 
-## Script (already on main — commit family `a9af64db`)
+## After swap
 
-```bash
-# optional inventory
-blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- \
-  --list-only \
-  --host assets/rigs/MARS_ORAL.blend \
-  --interior assets/rigs/MARS_FACE.blend
+Runner prints exact pixel-truth + survey commands. Required:
 
-tools/character/run_oral_interior_swap.sh
-# → assets/variants/MARS_ORAL_SWAP_REVIEW.blend
-```
-
-Or:
-
-```bash
-blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- \
-  --host assets/rigs/MARS_ORAL.blend \
-  --interior assets/rigs/MARS_FACE.blend \
-  --out assets/variants/MARS_ORAL_SWAP_REVIEW.blend
-```
-
-## Steps the script performs
-
-1. Open known-good **host**  
-2. Delete **only** teeth / gums / tongue  
-3. Append current teeth / gums / seated tongue from **interior**  
-4. Parent to host armature (jaw / tongue bones)  
-5. Save **review-only** under `assets/variants/` — **never** overwrite canonical by default  
-
-## After the swap (required before any promote)
-
-1. Open-mouth pixel truth: `--pose open`  
-2. `survey_oral_aperture.py` v3 (world plane)  
+1. `--pose open` pixel truth  
+2. survey v3 (world plane)  
 3. mouth_proof  
-4. Reopen PNG + SHA-256  
-5. Receipt only — pixels veto numbers  
+4. reopen PNG + SHA  
+5. promote only with receipt  
 
 ## Do not
 
-- Ask the owner to upload .blend/.glb  
-- Re-run densify / residual-rounds / re-cut as the primary fix  
-- Treat rim beautify as solving weight corruption  
-- Call Rigify working on MARS without weights + pixels  
-- Invent body-rig work — **MARS is a floating head**  
-
-## Parallel agents
-
-- **Google AI Studio:** Studio UI / mesh viewer / export (PAT)  
-- **Grok:** handoff + swap tooling on main  
-- **Claude:** physical Blender execution of this swap + proof pixels  
+Ask for uploads · re-cut as primary · overwrite canonical · body-rig MARS (floating head)
 
 Detail: `docs/agent_handoff/ORAL_INTERIOR_SWAP.md`

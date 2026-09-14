@@ -62,6 +62,13 @@ jobs:
             --out .artifacts/oral/MARS_FACE_ORAL_ASSEMBLY_REVIEW.blend \
             --report .artifacts/oral/oral_interior_swap_report.json | tee .artifacts/oral/swap.log
 
+      - name: Materialize committed mouth measurement inputs
+        if: steps.swap.outcome == 'success'
+        run: |
+          set -euo pipefail
+          mkdir -p renders/_rig_measure
+          cp docs/evidence/linework/mouth_anatomy.json renders/_rig_measure/mouth_anatomy.json
+          cp docs/evidence/linework/face_anatomy.json renders/_rig_measure/face_anatomy.json
       - name: Run mouth pixel/material proof on review artifact
         if: steps.swap.outcome == 'success'
         continue-on-error: true

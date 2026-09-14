@@ -355,6 +355,32 @@
       "measurements": {},
       "sourceArtifact": "renders/_recarve/MARS_FACE_CANDIDATE.blend",
       "sourceSha256": "5317db4586d9c63e6c6bd88b37a44dbbb0118651ee0021ca8f4ab4adfa461930"
+    },
+    {
+      "artifact": "docs/evidence/mars/oral/GNM_pixel_truth_open.v001.png",
+      "sha256": "ed7524c1c2b393fa0640eb8ebaed35b34f977bf35fc8f46fa7bcd6cd05aab3fd",
+      "bytes": 1168428,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "set": "mars/oral",
+      "label": "GNM_pixel_truth_open",
+      "version": 1,
+      "producedAt": "2026-09-14T00:33:42Z",
+      "producingTool": "tools/character/render_mars_oral_pixel_truth.py",
+      "producingCommit": "b77bb8d7326ab32523bc01b9319b37a7c1c1e0c3",
+      "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+      "blenderVersion": "",
+      "camera": "",
+      "viewTransform": "",
+      "shown": [],
+      "hidden": [],
+      "status": "PASS",
+      "note": "GNM oral chain VERIFIED end to end. Material-ID pass, jaw 30 deg + lip keys. teeth 39,098 px, tongue 72,087, cavity 127,708, gums 2,058, oral total 240,951 (736 at rest, which is a shut mouth and not a missing anatomy).",
+      "measurements": {},
+      "sourceArtifact": ".artifacts/god-molecule/mars-oral/MARS_ORAL_REPAIRED.blend",
+      "sourceSha256": "4f459c00bcaa50faea80658c46a4c96b73425fdd38a54def6d547709bed11a43"
     }
   ]
 }

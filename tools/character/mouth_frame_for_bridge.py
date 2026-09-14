@@ -51,6 +51,7 @@ def main():
     contour = np.vstack([up, lo])
 
     centre = contour.mean(axis=0)
+    cx_local = float(np.mean([(np.linalg.inv(F) @ np.array([*p, 1.0]))[0] for p in contour]))
     inward = F[:3, 1] / np.linalg.norm(F[:3, 1])
     outward = -inward
 
@@ -104,6 +105,15 @@ def main():
         "roll_degrees": round(float(roll), 4),
         "mouth_width": float(MW),
         "mm_per_unit": float(MM),
+        # THE LIP PLANE AS A WORLD POINT, NOT A BARE DEPTH. `plane_y` is a LOCAL
+        # y in the mouth frame, and survey_oral_aperture pairs it with the world
+        # x and z of `center` -- which is only the same plane if his head is
+        # axis-aligned. It is pitched ~32.6 deg back, so that mix put the lip
+        # plane ~94 mm out and every single object, eyes included, read as
+        # "protruding" by about the same amount. Identical amounts across
+        # unrelated objects is the giveaway that the number is about the plane.
+        "plane_point": [float(v) for v in
+                        (F @ np.array([cx_local, d["aperture"]["lipFrontLocalY"], 0.0, 1.0]))[:3]],
         "plane_y": float(d["aperture"]["lipFrontLocalY"]),
         "controls": {"cornerToCornerMM": round(width / MM, 3),
                      "measuredMouthWidthMM": round(MW / MM, 3),

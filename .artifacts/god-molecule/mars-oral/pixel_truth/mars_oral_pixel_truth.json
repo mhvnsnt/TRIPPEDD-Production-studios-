@@ -1,34 +1,36 @@
 {
   "schema": "god-molecule.mars-oral-pixel-truth.v1",
-  "status": "FAIL",
+  "status": "PASS",
   "authority": "actual_render_pixels",
   "image": "/home/user/TRIPPEDD-Production-studios-/.artifacts/god-molecule/mars-oral/pixel_truth/mars_oral_pixel_truth.png",
-  "image_sha256": "0b9f8e1a6f632058cba987e56c68d096386e5c3823f541279fc411ee30b1d796",
+  "image_sha256": "ed7524c1c2b393fa0640eb8ebaed35b34f977bf35fc8f46fa7bcd6cd05aab3fd",
   "resolution": [
     1920,
     1080
   ],
   "pixel_counts": {
-    "shell": 1915212,
-    "teeth": 117,
-    "gums": 0,
-    "tongue": 0,
-    "cavity": 619,
+    "shell": 1673188,
+    "teeth": 39098,
+    "gums": 2058,
+    "tongue": 72087,
+    "cavity": 127708,
     "other": 0,
-    "background": 128664,
-    "unknown": 28988
+    "background": 124885,
+    "unknown": 34576
   },
   "pixel_fractions": {
-    "shell": 0.9236168981481482,
-    "teeth": 5.642361111111111e-05,
-    "gums": 0.0,
-    "tongue": 0.0,
-    "cavity": 0.00029851466049382716,
+    "shell": 0.8069000771604938,
+    "teeth": 0.018855131172839507,
+    "gums": 0.0009924768518518518,
+    "tongue": 0.03476417824074074,
+    "cavity": 0.061587577160493824,
     "other": 0.0,
-    "background": 0.06204861111111111,
-    "unknown": 0.013979552469135802
+    "background": 0.060226176697530866,
+    "unknown": 0.01667438271604938
   },
-  "oral_visible_pixels": 736,
+  "pose": "jaw 30 deg + lip_lower_depress + lip_upper_raise + mouth_funnel",
+  "jawOpened": true,
+  "oral_visible_pixels": 240951,
   "objects": [
     {
       "object": "MARS_MESH",

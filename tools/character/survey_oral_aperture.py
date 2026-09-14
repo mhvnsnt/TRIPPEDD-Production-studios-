@@ -64,7 +64,16 @@ def main():
     right = Vector(frame["right_corner"])
     # Measured Mars mouth frame uses Y as depth. Never fall back to Z for the lip plane.
     plane_y = float(frame.get("plane_y", frame.get("front_surface_y", center.y)))
-    plane_point = Vector((center.x, plane_y, center.z))
+    # PREFER AN EXPLICIT WORLD PLANE POINT. Building it from `center.x/.z` and a
+    # LOCAL `plane_y` is only the same plane when the head is axis-aligned; his
+    # is pitched ~32.6 deg back, and that mix reported ~94 mm of "protrusion" on
+    # EVERY object -- teeth, sock, tongue and both eyeballs -- by almost exactly
+    # the same amount. Equal protrusion across unrelated objects is always the
+    # plane, never the anatomy.
+    if "plane_point" in frame:
+        plane_point = Vector(frame["plane_point"])
+    else:
+        plane_point = Vector((center.x, plane_y, center.z))
     plane_normal = Vector(frame.get("outward_normal", (0.0, 1.0, 0.0))).normalized()
 
     meshes = [o for o in bpy.context.scene.objects if o.type == "MESH" and not o.hide_render]

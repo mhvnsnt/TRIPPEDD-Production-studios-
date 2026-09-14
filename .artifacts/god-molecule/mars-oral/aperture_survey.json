@@ -1,0 +1,49 @@
+{
+  "schema": "god-molecule.oral-aperture-survey.v2",
+  "rays": 64,
+  "cleared_aperture_rays": 2,
+  "protrusion_intercept_rays": 0,
+  "hit_counts": {
+    "teeth": 1,
+    "gums": 0,
+    "tongue": 0,
+    "cavity": 1,
+    "shell": 62,
+    "other": 0,
+    "none": 0
+  },
+  "fractions_of_all_rays": {
+    "teeth": 0.015625,
+    "gums": 0.0,
+    "tongue": 0.0,
+    "cavity": 0.015625,
+    "shell": 0.96875,
+    "other": 0.0,
+    "none": 0.0
+  },
+  "fractions_behind_lip_plane": {
+    "teeth": 0.5,
+    "gums": 0.0,
+    "tongue": 0.0,
+    "cavity": 0.5,
+    "shell": 31.0,
+    "other": 0.0,
+    "none": null
+  },
+  "object_protrusion": {
+    "MARS_MESH": 0.03370410298521165,
+    "MARS_TEETH_UPPER": -0.03862273893901147,
+    "MARS_TEETH_LOWER": -0.04573836644703988,
+    "MARS_MOUTH_SOCK": -0.04213086098570784,
+    "MARS_TONGUE": -0.06420581155180116,
+    "MARS_EYE_L": -0.1803551339544356,
+    "MARS_EYE_R": -0.21730375639162958,
+    "MARS_ORAL_REPAIRED_SURFACE": 0.03370410298521165,
+    "MARS_ORAL_SOCK": -0.04854412339591363,
+    "MARS_ORAL_TEETH": -0.048544101300649345,
+    "MARS_ORAL_GUMS": -0.04854409252584446,
+    "MARS_ORAL_TONGUE": -0.048544100267463364
+  },
+  "protrusion_gate": "PASS",
+  "note": "Use fractions_behind_lip_plane for anatomy. All-ray fractions include protrusion intercepts."
+}

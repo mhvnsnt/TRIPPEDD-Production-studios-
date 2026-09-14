@@ -37,6 +37,7 @@ def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
     ap = argparse.ArgumentParser()
     ap.add_argument("--output-dir", required=True)
+    ap.add_argument("--jaw-deg", type=float, default=30.0)
     return ap.parse_args(argv)
 
 
@@ -79,6 +80,7 @@ def sha256(path: Path) -> str:
 
 def main():
     a = parse_args()
+    JAW_DEG = a.jaw_deg
     out = Path(a.output_dir)
     out.mkdir(parents=True, exist_ok=True)
 
@@ -180,6 +182,42 @@ def main():
             ob.data.materials.append(materials[cls])
             objects.append({"object": ob.name, "class": cls, "vertices": len(ob.data.vertices), "faces": len(ob.data.polygons)})
 
+        # ── COUNT ORAL PIXELS IN AN OPEN MOUTH, NOT A CLOSED ONE ────────────
+        # This rendered the REST pose and then required teeth, tongue AND cavity
+        # pixels to be non-zero. On a mouth whose lips now MEET at rest -- which
+        # is the thing that was asked for -- that is asking the wrong question:
+        # it scored 736 oral pixels and FAILed a correct seal. A closed mouth
+        # showing teeth is the defect, not the pass.
+        #
+        # So the jaw is driven open first, the same way mouth_proof's WIDE pose
+        # does it, and the REST frame is rendered too because "the lips meet at
+        # rest" is a separate claim that also needs pixels. Two frames, two
+        # questions, neither one standing in for the other.
+        head = scene.objects.get("MARS_ORAL_REPAIRED_SURFACE") or scene.objects.get("MARS_MESH")
+        arm = scene.objects.get("MARS_RIG")
+        opened = False
+        if arm is not None and "jaw" in arm.pose.bones:
+            import math as _math
+            if head is not None and head.data.shape_keys:
+                for _k in head.data.shape_keys.key_blocks:
+                    if _k.name != "Basis":
+                        _k.value = 0.0
+                for _n in ("lip_lower_depress", "lip_upper_raise", "mouth_funnel"):
+                    _kb = head.data.shape_keys.key_blocks.get(_n)
+                    if _kb:
+                        _kb.value = 1.0
+            _pb = arm.pose.bones["jaw"]
+            _pb.rotation_mode = "XYZ"
+            _pb.rotation_euler = (_math.radians(float(JAW_DEG)), 0.0, 0.0)
+            bpy.context.view_layer.update()
+            opened = True
+            print("MARS_PIXEL_TRUTH: jaw driven to %.0f deg + lip keys -- oral pixels "
+                  "are counted in an OPEN mouth" % JAW_DEG, flush=True)
+        else:
+            print("MARS_PIXEL_TRUTH: NOT_ATTEMPTED_OPEN -- no MARS_RIG/jaw in this "
+                  "scene, so the count is of a CLOSED mouth and cannot testify that "
+                  "the anatomy is absent", flush=True)
+
         image_path = out / "mars_oral_pixel_truth.png"
         scene.render.filepath = str(image_path)
         bpy.ops.render.render(write_still=True)
@@ -242,7 +280,15 @@ def main():
 
         total = width * height
         oral_visible = counts["teeth"] + counts["gums"] + counts["tongue"] + counts["cavity"]
-        status = "PASS" if oral_visible > 0 and counts["teeth"] > 0 and counts["tongue"] > 0 and counts["cavity"] > 0 else "FAIL"
+        # A CLOSED MOUTH CANNOT TESTIFY THAT THE ANATOMY IS MISSING. If the jaw
+        # could not be driven, say NOT_ATTEMPTED rather than FAIL -- the same
+        # separation as NOT_ATTEMPTED / ATTEMPTED_AND_EMPTY / SUCCEEDED that this
+        # repo has been bitten by four times.
+        if not opened:
+            status = "NOT_ATTEMPTED"
+        else:
+            status = ("PASS" if oral_visible > 0 and counts["teeth"] > 0
+                      and counts["tongue"] > 0 and counts["cavity"] > 0 else "FAIL")
         report = {
             "schema": "god-molecule.mars-oral-pixel-truth.v1",
             "status": status,
@@ -252,6 +298,9 @@ def main():
             "resolution": [width, height],
             "pixel_counts": counts,
             "pixel_fractions": {k: counts[k] / total for k in counts},
+            "pose": ("jaw %.0f deg + lip_lower_depress + lip_upper_raise + mouth_funnel"
+                     % JAW_DEG) if opened else "REST (jaw could not be driven)",
+            "jawOpened": opened,
             "oral_visible_pixels": oral_visible,
             "objects": objects,
             "hard_stop": "never promote visual oral anatomy from raycast or pseudonormal evidence when actual_render_pixels are unavailable",

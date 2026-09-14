@@ -44,8 +44,9 @@ def main():
             deleted.append({"name":n,"verts":len(old.data.vertices)})
             bpy.data.objects.remove(old,do_unlink=True)
 
-    for ob in dst.objects:
-        if ob is None or ob.type!="MESH": refuse("invalid appended oral object")
+    for expected_name, ob in zip(ORAL, dst.objects):
+        if ob is None or ob.type!="MESH": refuse("invalid appended oral object for "+expected_name)
+        ob.name = expected_name
         if not any(c.objects.get(ob.name) is ob for c in ob.users_collection):
             bpy.context.scene.collection.objects.link(ob)
         world=ob.matrix_world.copy()
@@ -53,11 +54,12 @@ def main():
         mods=[m for m in ob.modifiers if m.type=="ARMATURE"]
         if not mods: mods=[ob.modifiers.new("MARS_ORAL_HOST_RIG","ARMATURE")]
         for m in mods: m.object=host_arm
-        if ob.name=="MARS_TONGUE":
+        if expected_name=="MARS_TONGUE":
             if not ob.data.shape_keys or len(ob.data.shape_keys.key_blocks)<2: refuse("tongue expression keys missing")
             if not any(g.name=="tongue_root" for g in ob.vertex_groups): refuse("tongue_root missing")
-        elif not any(g.name in ("head","jaw") for g in ob.vertex_groups): refuse(n+" required rigid jaw/head group missing")
-        appended.append({"name":ob.name,"verts":len(ob.data.vertices),"shapeKeys":len(ob.data.shape_keys.key_blocks) if ob.data.shape_keys else 0})
+        elif expected_name=="MARS_TEETH_UPPER" and not any(g.name=="head" for g in ob.vertex_groups): refuse(expected_name+" required head group missing")
+        elif expected_name=="MARS_TEETH_LOWER" and not any(g.name=="jaw" for g in ob.vertex_groups): refuse(expected_name+" required jaw group missing")
+        appended.append({"name":expected_name,"verts":len(ob.data.vertices),"shapeKeys":len(ob.data.shape_keys.key_blocks) if ob.data.shape_keys else 0})
 
     for n in PROTECTED:
         if bpy.data.objects.get(n) is None: refuse("protected object disappeared "+n)

@@ -45,10 +45,13 @@ that could not fail. That is why the rule is **pixels veto geometry**.
 | Body/parametric | **MakeHuman / MPFB2** | HAVE — `vendor/opensource/mpfb2` |
 | Lip sync | **Rhubarb** | HAVE — `vendor/rhubarb` |
 | Image inspection | **OpenCV** | HAVE |
-| Quad retopology | **Instant Meshes** | **MISSING** — the one real gap for #2 and #3 |
-| UV atlas | **xatlas** | **MISSING** |
-| Point cloud / inspection | **Open3D** | MISSING (libigl + trimesh cover most of it) |
-| Automatic rigging | **Pinocchio** | MISSING, and lower value — Rigify is here and unused |
+| Quad retopology | **QuadriFlow** | **HAVE** — `bpy.ops.object.quadriflow_remesh`, built into the Blender already installed. I listed Instant Meshes as the missing gap an hour ago and that was wrong: the field-guided quad remesher is here. Checked, not assumed. |
+| UV atlas | **xatlas** | HAVE — installed this session, 0.0.11 |
+| Point cloud / inspection | **Open3D** | MISSING, and low value — libigl + trimesh cover what we measure |
+| Automatic rigging | **Pinocchio** | MISSING, and lower value — **Rigify is registered in this Blender and unused** |
+
+**So there is no missing-tool gap.** Every remedy named above is installed. The gap was
+always which of them had been run.
 
 ## The order that stops one stage destroying the last
 

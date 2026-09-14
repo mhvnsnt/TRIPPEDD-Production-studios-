@@ -978,3 +978,43 @@ width was never the mechanism either.
 because it is how the next experiment reaches the cutter's lateral profile. **The lane is
 now the CUTTER'S GEOMETRY AT THE CORNERS, measured against a control that is known to be
 clean.** Nothing downstream needs repairing once the carve stops eating his lip corners.
+
+## MARS ORAL ARTIFACT RECOVERY IS A WHOLE-REGION PROBLEM (2026-09-14)
+
+Owner correction: the failure is not only the lip opening. The visible defect includes pale/gray
+skin shards and weighted skin pulling through the oral volume — centre, roof, and over/around the
+tongue — while the newer GNM teeth, gums, tongue, mouth sock and cavity must remain intact.
+
+The repository evidence already establishes why a seam-only repair is insufficient:
+- the post-cut mouth still has 23 crease-straddling faces, with 14 visible at jaw 30°;
+- those faces are 17–23 mm² against a 0.59 mm² whole-head median face;
+- the mouth region has only 261 faces, so its topology is radically coarser than the surrounding scan;
+- the prior retopo lane produced visual failures because replacing topology lost shading/UV/weight attributes even when geometry gates were green.
+
+### Recovery lane added
+
+`tools/character/repair_mars_oral_skin_artifacts.py` now uses the immutable
+`assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_FACE.blend` as a skin/deformation donor.
+It does not replace the current oral stack.
+
+The operation is bounded to the measured mouth frame and restores:
+1. MARS skin base positions in the oral region;
+2. the same base-position correction to every existing shape-key vertex, preserving current expression deltas;
+3. only `jaw` and `head` weights in the bounded oral region, using the donor's known-good weighting;
+4. donor smoothing flags on affected faces.
+
+It explicitly preserves and verifies the current `MARS_TEETH_UPPER`, `MARS_TEETH_LOWER`,
+`MARS_TONGUE`, `MARS_MOUTH_SOCK`, cavity objects, and materials.
+
+The target and donor must have identical MARS_MESH topology. If they do not, the tool refuses;
+there is no guessed correspondence.
+
+`tools/character/run_mars_oral_artifact_recovery.sh` runs that recovery into
+`assets/variants/MARS_FACE_ORAL_SKIN_RECOVERY_REVIEW.blend`, then runs the existing
+`mouth_truth.py` sequence and `survey_oral_aperture.py`. It never writes the canonical blend.
+
+CI now executes this lane on pushes as a review artifact. Promotion remains:
+physical geometry → pixel truth → aperture/contact evidence → human review → canonical.
+
+This lane is intentionally broader than `split_lip_seam.py`: do not reduce a whole-mouth
+weighted-shard failure to another seam-only cut.

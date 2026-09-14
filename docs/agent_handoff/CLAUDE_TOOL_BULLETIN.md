@@ -1,34 +1,25 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-## GNM oral — executed once (2026-09-13)
+## Tooling correction
 
-Seated on physical run. Infra blockers fixed (exec bit, TRIPPEDD_PYTHON_BIN, mouth-frame schema, recess stats, pre-rig carve, linear vs sRGB ID render).
+**Quadriflow is already in session Blender.** Instant Meshes was a false gap. Rigify registered but unrun. xatlas installed. See `docs/production/OSS_MUST_PULL.md`.
 
-**Next oral:** open-mouth pixel-truth threshold (rest closed is correct); then proof render + SHA. `--drop-bridges` only if residual sealed seam.
+## Oral status
 
-`docs/production/WHAT_IS_ACTUALLY_WRONG.md` · `docs/agent_handoff/ORAL_GNM_FIRST.md`
+GNM seated (first full run). mouth_proof 8/8 on candidate. Crater 44→4/483.  
+**Visual FAIL: open-mouth rim** — seam coverage incomplete (split stops ~±22 mm; straddlers to ~±34 mm).  
+Detail: `docs/agent_handoff/LIP_SEAM_COVERAGE.md`  
+Densify rejected. drop-bridges partial, not visual fix. Not promoted.
 
-## Real OSS gaps for jagged tris / UVs
+## Pixel truth
 
-Pull and wire: **Instant Meshes**, **xatlas**. Rigify is already bundled — prefer it over hand sphere lids.
-
-## Toolchain registry
-
-PR #65 draft: `config/mars-character-toolchain.json` + structural validator + CI. PHYSICAL_EXECUTION: NOT_CLAIMED by contract validators.
-
-## Eye clearance
-
-Parallel; globe-class gates on main.
-
-## Live door
-
-operationId + SHA; no fake connected=authoritative.
+Use `--pose open` (default in updated script). Rest closed must not demand oral pixels. Classify linear Render Result, not sRGB PNG.
 
 ## Queue
 
-1. Fix oral pixel gate pose + colour space  
-2. Proof render / SHA / mouth_proof  
-3. Instant Meshes + xatlas provision lane  
-4. Rigify face (not hand sphere)  
-5. Eye clearance physical ladder  
-6. Real ROCKET_LIVE_SESSION_URL  
+1. Extend seam split to full straddler lateral span; re-measure coverage  
+2. Open-mouth pixel truth + SHA  
+3. Run **Rigify** face path (stop hand sphere lids)  
+4. Quadriflow only if triangle QA still fails after seam/registration  
+5. Eye clearance ladder when ready  
+6. Live session URL + receipts; PR #64/#65 draft until physical  

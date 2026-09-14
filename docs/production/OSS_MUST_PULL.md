@@ -1,20 +1,30 @@
-# OSS that must still be pulled (honest list)
+# OSS status — corrected (do not chase false gaps)
 
-## Already present / in-repo — run them
+## Already in the live Blender session (measured)
 
-Blender, Rigify (bundled face/eyelid), GNM oral chain, ICT-FaceKit eyes, PyMeshLab, libigl, trimesh, OpenCV, owner linework, eye-clearance gates.
+```text
+bpy.ops.object.quadriflow_remesh   True   # field-guided quads — Instant Meshes job
+bpy.ops.object.voxel_remesh        True
+addon_utils → rigify               registered  # never run on MARS face yet
+xatlas                             installed
+```
 
-## Genuinely missing (jagged triangles + UVs)
+**There is no missing-tool gap for the core character stack.**  
+The gap is **which tools have been executed**, same class as GNM sitting complete and never running once.
 
-| Tool | Role | Notes |
-|------|------|--------|
-| **Instant Meshes** | Quad retopology / orientation field | Gap behind PS1/sliver topology |
-| **xatlas** | UV atlas packing | Clean UV islands after retopo |
+| Tool | Status |
+|------|--------|
+| Quadriflow | **Present** — use instead of downloading Instant Meshes |
+| Instant Meshes | **Not required** for Blender path (false gap; corrected) |
+| xatlas | Installed |
+| Rigify | Registered; **unrun** — prefer over hand sphere eyelids |
+| GNM oral | Chain executed once; layers seated |
+| ICT eyes / linework / clearance gates | On main |
 
-Optional candidate accelerators (verify license before ship): Remi (Blender repair→retopo→UV→bake pipeline), Pinocchio (auto skeleton), Tripo face-rig adapter (candidate only).
+Optional research candidates (Pinocchio, Tripo face-rig, Remi): still candidates until physical MARS receipts exist.
 
 ## Do not
 
-- Build another stack diagram instead of provisioning Instant Meshes + xatlas
-- Replace GNM oral with hand densifiers
-- Claim CI contract PASS as physical MARS PASS
+- Tell agents to download Instant Meshes as the blocker
+- Invent another stack diagram
+- Skip Quadriflow/Rigify in favour of hand remesh/hand lids

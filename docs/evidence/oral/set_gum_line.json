@@ -1,0 +1,22 @@
+{
+ "schema": "trippedd.set-gum-line/v1",
+ "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V4.blend",
+ "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V4.blend",
+ "expose": 0.85,
+ "arches": {
+  "MARS_TEETH_LOWER": {
+   "exposureBefore": 0.4413,
+   "exposureAfter": 0.6503,
+   "vertsMoved": 854,
+   "maxMoveMM": 4.024,
+   "tallestCrownMM": 10.205
+  },
+  "MARS_TEETH_UPPER": {
+   "exposureBefore": 0.3813,
+   "exposureAfter": 0.6256,
+   "vertsMoved": 845,
+   "maxMoveMM": 3.68,
+   "tallestCrownMM": 10.814
+  }
+ }
+}

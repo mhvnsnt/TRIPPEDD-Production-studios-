@@ -1,0 +1,24 @@
+{
+ "schema": "trippedd.evidence/v1",
+ "set": "mouth_lips",
+ "frames": [
+  {
+   "filename": "LIP_SHARDS_V2.png",
+   "repoPath": "docs/evidence/mouth_lips/LIP_SHARDS_V2.png",
+   "sha256": "96103bb5933afeaa9839ead15f51333e07f8e858b01ecf1e6c9f58eebaa9fee3",
+   "bytes": 604739
+  },
+  {
+   "filename": "WIDE_after_lips.png",
+   "repoPath": "docs/evidence/mouth_lips/WIDE_after_lips.png",
+   "sha256": "bb924a979e6ea20f46db0e24831d8c6578e342853c210908610e72a3108b7088",
+   "bytes": 1256763
+  },
+  {
+   "filename": "WIDE_before_lips.png",
+   "repoPath": "docs/evidence/mouth_lips/WIDE_before_lips.png",
+   "sha256": "08739144fb9df376d40ed3d84a1f433933a0400a663e94899716f9847d9f918e",
+   "bytes": 1250797
+  }
+ ]
+}

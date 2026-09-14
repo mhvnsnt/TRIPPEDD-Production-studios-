@@ -1,19 +1,19 @@
 {
  "schema": "trippedd.shave-occluders/v1",
- "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_SHAVED3.blend",
- "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_SHAVED3.blend",
+ "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V2.blend",
+ "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V2.blend",
  "capMM": 7.0,
  "clearanceMM": 0.35,
  "falloffRings": 2,
  "blockedRays": [
-  505,
-  288
+  513,
+  328
  ],
- "verticesMoved": 449,
- "maxMoveMM": 6.2253,
+ "verticesMoved": 1697,
+ "maxMoveMM": 6.3434,
  "restVisibleFaces": [
-  446,
-  446
+  2998,
+  2998
  ],
  "rule": "a ray fired OUT of every tooth, gum and tongue face; any MARS_MESH face that stops it is pushed back by the measured protrusion plus clearance, capped, with falloff. Nothing visible on his closed face and nothing outside his lip front is ever moved."
 }

@@ -1,25 +1,29 @@
 {
   "schema": "trippedd.densify-mouth-rim/v1",
-  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_DENSE.blend",
-  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_DENSE.blend",
-  "radiusMM": 8.0,
-  "passes": 2,
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_CLEAN.blend",
+  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_CLEAN.blend",
+  "regionNgons": [
+    152,
+    0
+  ],
+  "radiusMM": 10.0,
+  "passes": 3,
   "authority": "his measured inner-lip contour (renders/_rig_measure/mouth_anatomy.json) -- 1.15 mm from his skin, 4.28 mm from the sock rim, and the painted texture's green channel halves at it",
   "vertsBefore": 27865,
-  "vertsAfter": 34721,
+  "vertsAfter": 61095,
   "within3mmBefore": 241,
-  "within3mmAfter": 1705,
+  "within3mmAfter": 10124,
   "rimFaceAreaMM2Before": {
-    "count": 288,
-    "median": 1.541,
+    "count": 316,
+    "median": 1.755,
     "max": 136.684
   },
   "rimFaceAreaMM2After": {
-    "count": 3105,
-    "median": 0.035,
-    "max": 136.684
+    "count": 42894,
+    "median": 0.016,
+    "max": 2.873
   },
-  "wholeHeadMedianFaceAreaMM2": 0.445,
+  "wholeHeadMedianFaceAreaMM2": 0.133,
   "originalRestDriftMM": 0.0,
   "keysCarried": 88,
   "keysMovingNothing": [],

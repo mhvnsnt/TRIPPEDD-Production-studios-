@@ -1,0 +1,16 @@
+{
+ "schema": "trippedd.relax-lip-rim/v1",
+ "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_LIPS.blend",
+ "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_LIPS.blend",
+ "rimVertices": 1478,
+ "spikeDeg": 60.0,
+ "spikes": {
+  "before": 124,
+  "after": 14
+ },
+ "verticesMoved": 1478,
+ "maxMoveMM": 1.0,
+ "shapeKeys": 89,
+ "shapeKeyDisagreementMM": 3.86e-06,
+ "operation": "boundary relaxation along his lip loop -- each rim vertex moves toward the midpoint of its two rim neighbours. Nothing is cut, no face is removed, and only rim vertices move."
+}

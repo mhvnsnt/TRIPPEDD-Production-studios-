@@ -1,23 +1,23 @@
 {
   "schema": "trippedd.drop-mouth-bridges/v1",
-  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_SHAVED2.blend",
-  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_SHAVED2.blend",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V3.blend",
+  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V3.blend",
   "bridging": [
-    56,
-    36
+    205,
+    43
   ],
-  "behindLipFront": 56,
-  "keptVisibleAtRest": 35,
-  "removed": 21,
+  "behindLipFront": 205,
+  "keptVisibleAtRest": 31,
+  "removed": 174,
   "faces": [
-    61634,
-    61613
+    106225,
+    106051
   ],
-  "verts": 34721,
+  "verts": 61095,
   "vertexDriftMM": 0.0,
   "shapeKeys": 89,
   "visibleAtRest": [
-    447,
-    447
+    2998,
+    2998
   ]
 }

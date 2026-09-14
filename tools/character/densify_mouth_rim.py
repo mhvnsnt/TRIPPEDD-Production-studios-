@@ -140,6 +140,15 @@ def face_areas():
     return np.array([p.area for p in me.polygons], float) / (MM * MM)
 
 
+def _ngons_now():
+    C = np.array([p.center[:] for p in me.polygons]) @ W[:3, :3].T + W[:3, 3]
+    dd = to_seam(C)
+    return int(sum(1 for i, p in enumerate(me.polygons)
+                   if dd[i] < RADIUS and len(p.vertices) > 3))
+
+
+NGON_BEFORE = _ngons_now()
+
 d0 = to_seam(P0w)
 near0 = int((d0 < 3.0).sum())
 # how coarse is the rim RIGHT NOW -- the number the owner's "big ugly triangles"
@@ -307,6 +316,22 @@ if MAX_FACE > 0:
         if not edges:
             break
         bmesh.ops.subdivide_edges(bm, edges=edges, cuts=1, use_grid_fill=(not TRIANGULATE), smooth=0.0)
+        if TRIANGULATE:
+            # NEVER LEAVE AN N-GON BEHIND. A partially-cut boundary face
+            # becomes one, a 51-gon tessellates into slivers, and those
+            # slivers are the shards on screen.
+            bm.faces.ensure_lookup_table()
+            # BY REGION, NOT BY `keep`. After pass 1 the new vertices carry
+            # indices that are not in keep, so a keep-based test missed almost
+            # every n-gon the pass had just made: 152 -> 15,650 in one run.
+            _fc = np.array([f.calc_center_median()[:] for f in bm.faces]) @ W[:3, :3].T + W[:3, 3]
+            _fd = to_seam(_fc)
+            leftover = [f for i_, f in enumerate(bm.faces)
+                        if len(f.verts) > 3 and _fd[i_] < RADIUS * 1.6]
+            if leftover:
+                bmesh.ops.triangulate(bm, faces=leftover)
+                bm.faces.ensure_lookup_table()
+                print('    a pass left %d n-gon(s); triangulated' % len(leftover), flush=True)
     PASSES_DONE = True
 else:
     PASSES_DONE = False
@@ -320,6 +345,22 @@ for _p in range(0 if PASSES_DONE else PASSES):
         break
     print("  pass %d: subdividing %d edges with 1 cut" % (_p + 1, len(inside)), flush=True)
     bmesh.ops.subdivide_edges(bm, edges=inside, cuts=1, use_grid_fill=(not TRIANGULATE), smooth=0.0)
+    if TRIANGULATE:
+        # NEVER LEAVE AN N-GON BEHIND. A partially-cut boundary face
+        # becomes one, a 51-gon tessellates into slivers, and those
+        # slivers are the shards on screen.
+        bm.faces.ensure_lookup_table()
+        # BY REGION, NOT BY `keep`. After pass 1 the new vertices carry
+        # indices that are not in keep, so a keep-based test missed almost
+        # every n-gon the pass had just made: 152 -> 15,650 in one run.
+        _fc = np.array([f.calc_center_median()[:] for f in bm.faces]) @ W[:3, :3].T + W[:3, 3]
+        _fd = to_seam(_fc)
+        leftover = [f for i_, f in enumerate(bm.faces)
+                    if len(f.verts) > 3 and _fd[i_] < RADIUS * 1.6]
+        if leftover:
+            bmesh.ops.triangulate(bm, faces=leftover)
+            bm.faces.ensure_lookup_table()
+            print('    a pass left %d n-gon(s); triangulated' % len(leftover), flush=True)
 bm.to_mesh(me); bm.free(); me.update()
 
 n1 = len(me.vertices)
@@ -397,7 +438,20 @@ if near1 < TARGET_MIN:
         ">= %d). Raise --passes or --radius-mm; an opening cut through this would "
         "shed the same shards with more steps." % (near1, TARGET_MIN))
 
+# N-GONS ARE WHAT THE SHARDS ARE MADE OF, AND THIS TOOL WAS CREATING THEM.
+# Measured across the chain: canonical 210 n-gons in the mouth region, max 15
+# sides; after ONE densify pass 1,666, max 51. And they cannot be repaired
+# afterwards -- triangulating them took the region from 704 slivers to 3,658.
+# They must not be made. So the count is a GATE.
+NGON_AFTER = _ngons_now()
+print("  n-gons in the mouth region: %d -> %d" % (NGON_BEFORE, NGON_AFTER), flush=True)
+if NGON_AFTER > NGON_BEFORE:
+    die("this pass CREATED %d n-gon(s) in his mouth (%d -> %d). They tessellate "
+        "into slivers and those slivers are the shards on screen."
+        % (NGON_AFTER - NGON_BEFORE, NGON_BEFORE, NGON_AFTER))
+
 rep = {"schema": "trippedd.densify-mouth-rim/v1", "rig": RIG, "out": OUT_RIG,
+       "regionNgons": [NGON_BEFORE, NGON_AFTER],
        "radiusMM": RADIUS, "passes": PASSES,
        "authority": "his measured inner-lip contour (renders/_rig_measure/mouth_anatomy.json) "
                     "-- 1.15 mm from his skin, 4.28 mm from the sock rim, and the painted "

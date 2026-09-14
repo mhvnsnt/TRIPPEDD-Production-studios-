@@ -1,0 +1,20 @@
+{
+ "schema": "trippedd.deshard-mouth/v1",
+ "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V4.blend",
+ "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_V4.blend",
+ "radiusMM": 16.0,
+ "sliverDeg": 15.0,
+ "slivers": {
+  "before": 24838,
+  "afterTriangulate": 24838,
+  "after": 21135
+ },
+ "verts": [
+  61095,
+  61095
+ ],
+ "restDriftMM": 0.0,
+ "shapeKeyDriftMM": 0.0,
+ "shapeKeys": 89,
+ "operation": "triangulate the mouth region then bmesh.ops.beautify_fill -- edge flips only, so no vertex moves and nothing measured against this mesh is invalidated"
+}

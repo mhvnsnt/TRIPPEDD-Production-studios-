@@ -132,6 +132,12 @@ def append_current_interior(interior: Path, host_arm):
         if ob.type != "MESH":
             refuse("%s is not a mesh" % ob.name)
 
+        # Library-loaded objects are datablocks first; they are not guaranteed to be
+        # linked into the host scene collection. If we omit this, the swap can be
+        # structurally correct yet completely invisible to Blender render/ray_cast.
+        if not any(c.objects.get(ob.name) is ob for c in ob.users_collection):
+            bpy.context.scene.collection.objects.link(ob)
+
         # The object is already positioned in the current face. Preserve its
         # world transform exactly while changing only its rig owner.
         world = ob.matrix_world.copy()

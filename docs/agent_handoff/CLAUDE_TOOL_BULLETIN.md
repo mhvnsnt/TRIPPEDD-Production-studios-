@@ -1,20 +1,23 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-## PRODUCTION RESET (primary)
+## START
 
-1. `tools/character/run_mars_reset_base.sh`  
-   → `assets/variants/MARS_RESET_BASE.blend` from `MARS_LOD2.glb`  
-2. GNM oral onto that base  
-3. Owner linework + gnm_eyes + gates  
+`docs/agent_handoff/CLAUDE_START_HERE.md`
+
+```bash
+tools/character/run_production_reset_pipeline.sh
+```
+
+## Queue
+
+1. Reset base from `MARS_LOD2.glb`  
+2. GNM oral on reset base  
+3. Owner linework + eyes + clearance  
 4. Open-mouth pixels + SHA  
+5. Hair / EP01 only after owner visual sign-off  
 
-`docs/agent_handoff/PRODUCTION_RESET_FROM_ORIGINAL.md`  
+## Guardrails
+
 `docs/production/AUTONOMOUS_AGENT_GUARDRAILS.md`
 
-## Do not
-
-Primary work on progressive shredded seam mesh. Ask for uploads. Fake PASS.
-
-## Canon
-
-MARS = floating head.
+MARS = floating head. No upload requests. No fake PASS.

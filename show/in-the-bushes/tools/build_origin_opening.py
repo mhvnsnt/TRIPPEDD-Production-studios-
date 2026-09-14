@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import importlib.util
 import json
 import math
 import shutil
@@ -24,10 +25,11 @@ MOTION = ROOT / "show/in-the-bushes/animatic/ep01-origin-opening-v2.motion-block
 RENDER = ROOT / "show/in-the-bushes/animatic/ep01-origin-opening-v2.render-plan.json"
 ASSETS = ROOT / "show/in-the-bushes/assets"
 OUT = ROOT / "show/in-the-bushes/build/origin-opening-v2"
+RIG_PATH = ROOT / "show/in-the-bushes/tools/teen_performance.py"
 
 ASSET_MAP = {
     "alley": ASSETS / "ep01-opening-alley.svg",
-    "teens": ASSETS / "teens/teen-group-origin-states.svg",
+    "teens": ASSETS / "teens/teen-character-design-v1.svg",
     "beer": ASSETS / "props/generic-beer-throw-kit.svg",
     "police_fx": ASSETS / "fx/police-light-sweep.svg",
     "busch_wake": ASSETS / "busch/busch-wake.svg",
@@ -39,6 +41,18 @@ ASSET_MAP = {
 
 def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_teen_performance():
+    spec = importlib.util.spec_from_file_location("in_the_bushes_teen_performance", RIG_PATH)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"unable to load procedural teen rig: {RIG_PATH}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.performance_layer
+
+
+PERFORMANCE_LAYER = load_teen_performance()
 
 
 def data_uri(path: Path) -> str:
@@ -160,13 +174,13 @@ def find_block(blocks, block_id, frame):
 
 
 def teen_layer(blocks, frame, shot_id):
-    ids = {"S01": ["teen_hang_out"], "S02": ["teen_notice"], "S03": ["teen_panic", "grab_beer"],
-           "S04": ["teen_run_out", "duck_hide", "peek_back"], "S05": ["catch_breath", "beer_realize"],
-           "S06": ["question_pose", "group_glance_bush"], "S07": ["point_bush"],
-           "S08": ["run_out_of_alley"], "S09": ["teen_flee"]}.get(shot_id, [])
-    active = next((find_block(blocks, mid, frame) for mid in ids if find_block(blocks, mid, frame)), None)
-    tr = motion_transform(active, frame) if active else ""
-    return image(ASSET_MAP["teens"], tr) if active else ""
+    # The base builder uses the same richer procedural rig as the dedicated
+    # character builder. Keeping this here prevents accidental fallback to
+    # the obsolete stick-figure sheet when this script is invoked directly.
+    active_shots = {"S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09"}
+    if shot_id not in active_shots:
+        return ""
+    return PERFORMANCE_LAYER(frame, shot_id)
 
 
 def main():

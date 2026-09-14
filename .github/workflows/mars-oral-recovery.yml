@@ -9,6 +9,7 @@ on:
       - "assets/checkpoints/before-mouth-retopo/**"
       - ".github/workflows/mars-oral-recovery.yml"
       - "tools/character/inspect_original_mars_glb.py"
+      - "tools/character/assemble_original_glb_oral_candidate.py"
       - "assets/rigs/MARS_FACE.glb"
   workflow_dispatch:
 
@@ -81,6 +82,24 @@ jobs:
             --out .artifacts/oral/MARS_FACE_ORAL_ASSEMBLY_REVIEW.blend \
             --report .artifacts/oral/oral_interior_swap_report.json | tee .artifacts/oral/swap.log
 
+      - name: Assemble original-GLB donor plus improved oral interior
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/original-glb-candidate
+          vendor/blender -b -P tools/character/assemble_original_glb_oral_candidate.py --             --host .artifacts/original-glb/MARS_FACE_original_GLB_import.blend             --interior assets/rigs/MARS_FACE.blend             --out .artifacts/original-glb-candidate/MARS_FACE_ORIGINAL_GLB_ORAL_REVIEW.blend             --report .artifacts/original-glb-candidate/original_glb_oral_report.json | tee .artifacts/original-glb-candidate/assembly.log
+
+      - name: Run mouth proof on original-GLB donor candidate
+        continue-on-error: true
+        run: |
+          set +e
+          mkdir -p .artifacts/original-glb-candidate/mouth-proof
+          cp docs/evidence/linework/mouth_anatomy.json .artifacts/original-glb-candidate/mouth_anatomy.json
+          cp docs/evidence/linework/face_anatomy.json .artifacts/original-glb-candidate/face_anatomy.json
+          vendor/blender -b -P tools/character/mouth_proof.py --             --rig .artifacts/original-glb-candidate/MARS_FACE_ORIGINAL_GLB_ORAL_REVIEW.blend             --out .artifacts/original-glb-candidate/mouth-proof             --only 03_WIDE | tee .artifacts/original-glb-candidate/mouth-proof.log
+          status=${PIPESTATUS[0]}
+          echo "MOUTH_PROOF_EXIT=$status" | tee .artifacts/original-glb-candidate/mouth-proof-status.txt
+          exit 0
+
       - name: Materialize committed mouth measurement inputs
         if: steps.swap.outcome == 'success'
         run: |
@@ -116,5 +135,6 @@ jobs:
           path: |
             .artifacts/oral
             .artifacts/original-glb
+            .artifacts/original-glb-candidate
           if-no-files-found: error
           retention-days: 14

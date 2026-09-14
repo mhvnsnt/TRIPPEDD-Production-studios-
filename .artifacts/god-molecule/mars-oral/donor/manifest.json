@@ -1,0 +1,30 @@
+{
+  "schema": "god-molecule.gnm-oral-donor.v2",
+  "source": "google/GNM Head v3",
+  "license": "Apache-2.0",
+  "gnm_npz_sha256": "501ca8c02a5ecab2ad81025c00865d160f4cceba68521b26238c2f084e02b785",
+  "expression_decoder_sha256": "5eba165f8a414f73b24be96963d0a17e708c0856739ed85a19031f318dfb51e6",
+  "source_vertices": 17821,
+  "oral_vertices": 4219,
+  "oral_triangles": 8232,
+  "upper_teeth_vertices": 1440,
+  "lower_teeth_vertices": 1440,
+  "teeth_vertices": 1868,
+  "gum_vertices": 1404,
+  "tongue_vertices": 933,
+  "mouth_sock_vertices": 406,
+  "expression_dimensions": 383,
+  "jaw_open": {
+    "source": "Saganaki22/GNM-Studio canonical_mouth_open_expression",
+    "upper_teeth_rigid": true,
+    "lower_teeth_rigid_translation": true,
+    "eye_components_zeroed": true,
+    "tongue_components_zeroed": true,
+    "scale": 1.3,
+    "lower_translation_scale": 1.8
+  },
+  "status": "DONOR_READY",
+  "mars_identity_replacement": false,
+  "sphere_cavity": false,
+  "procedural_tooth_grid": false
+}

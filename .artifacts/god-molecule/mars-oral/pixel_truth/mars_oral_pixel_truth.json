@@ -1,0 +1,107 @@
+{
+  "schema": "god-molecule.mars-oral-pixel-truth.v1",
+  "status": "FAIL",
+  "authority": "actual_render_pixels",
+  "image": "/home/user/TRIPPEDD-Production-studios-/.artifacts/god-molecule/mars-oral/pixel_truth/mars_oral_pixel_truth.png",
+  "image_sha256": "0b9f8e1a6f632058cba987e56c68d096386e5c3823f541279fc411ee30b1d796",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "pixel_counts": {
+    "shell": 1915212,
+    "teeth": 117,
+    "gums": 0,
+    "tongue": 0,
+    "cavity": 619,
+    "other": 0,
+    "background": 128664,
+    "unknown": 28988
+  },
+  "pixel_fractions": {
+    "shell": 0.9236168981481482,
+    "teeth": 5.642361111111111e-05,
+    "gums": 0.0,
+    "tongue": 0.0,
+    "cavity": 0.00029851466049382716,
+    "other": 0.0,
+    "background": 0.06204861111111111,
+    "unknown": 0.013979552469135802
+  },
+  "oral_visible_pixels": 736,
+  "objects": [
+    {
+      "object": "MARS_MESH",
+      "class": "shell",
+      "vertices": 27905,
+      "faces": 54786
+    },
+    {
+      "object": "MARS_TEETH_UPPER",
+      "class": "teeth",
+      "vertices": 1440,
+      "faces": 2828
+    },
+    {
+      "object": "MARS_TEETH_LOWER",
+      "class": "teeth",
+      "vertices": 1440,
+      "faces": 2828
+    },
+    {
+      "object": "MARS_MOUTH_SOCK",
+      "class": "cavity",
+      "vertices": 406,
+      "faces": 669
+    },
+    {
+      "object": "MARS_TONGUE",
+      "class": "tongue",
+      "vertices": 933,
+      "faces": 1824
+    },
+    {
+      "object": "MARS_EYE_L",
+      "class": "shell",
+      "vertices": 1926,
+      "faces": 3714
+    },
+    {
+      "object": "MARS_EYE_R",
+      "class": "shell",
+      "vertices": 1926,
+      "faces": 3714
+    },
+    {
+      "object": "MARS_ORAL_REPAIRED_SURFACE",
+      "class": "shell",
+      "vertices": 27905,
+      "faces": 54786
+    },
+    {
+      "object": "MARS_ORAL_SOCK",
+      "class": "cavity",
+      "vertices": 406,
+      "faces": 752
+    },
+    {
+      "object": "MARS_ORAL_TEETH",
+      "class": "teeth",
+      "vertices": 1868,
+      "faces": 3280
+    },
+    {
+      "object": "MARS_ORAL_GUMS",
+      "class": "gums",
+      "vertices": 1404,
+      "faces": 2376
+    },
+    {
+      "object": "MARS_ORAL_TONGUE",
+      "class": "tongue",
+      "vertices": 933,
+      "faces": 1824
+    }
+  ],
+  "hard_stop": "never promote visual oral anatomy from raycast or pseudonormal evidence when actual_render_pixels are unavailable"
+}

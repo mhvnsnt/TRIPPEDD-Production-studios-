@@ -1,0 +1,394 @@
+{
+  "schema": "trippedd.mouth-shards/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_recarve/MARS_FACE_CANDIDATE.blend",
+  "jawDeg": 30.0,
+  "raysTotal": 12100,
+  "raysHit": 12100,
+  "byObject": {
+    "MARS_MESH": 5066,
+    "MARS_MESH/CAVITY": 4754,
+    "MARS_TONGUE": 2430,
+    "MARS_MOUTH_SOCK": 4604,
+    "MARS_MESH/HIS SKIN": 312
+  },
+  "shardFaces": [
+    {
+      "face": 20667,
+      "rays": 50,
+      "areaMM2": 151.3,
+      "xMM": -26.0,
+      "zMM": 29.5,
+      "yMM": 18.0,
+      "toSeamMM": 33.6
+    },
+    {
+      "face": 29218,
+      "rays": 40,
+      "areaMM2": 121.77,
+      "xMM": 27.6,
+      "zMM": 34.3,
+      "yMM": 15.9,
+      "toSeamMM": 38.4
+    },
+    {
+      "face": 30230,
+      "rays": 32,
+      "areaMM2": 44.33,
+      "xMM": 20.4,
+      "zMM": 34.0,
+      "yMM": -2.1,
+      "toSeamMM": 33.8
+    },
+    {
+      "face": 20666,
+      "rays": 21,
+      "areaMM2": 53.55,
+      "xMM": -23.9,
+      "zMM": 26.0,
+      "yMM": 17.0,
+      "toSeamMM": 29.7
+    },
+    {
+      "face": 28221,
+      "rays": 15,
+      "areaMM2": 55.32,
+      "xMM": 23.6,
+      "zMM": 32.4,
+      "yMM": 11.3,
+      "toSeamMM": 34.7
+    },
+    {
+      "face": 20668,
+      "rays": 14,
+      "areaMM2": 13.76,
+      "xMM": -17.5,
+      "zMM": 30.9,
+      "yMM": 15.7,
+      "toSeamMM": 33.0
+    },
+    {
+      "face": 23094,
+      "rays": 12,
+      "areaMM2": 34.47,
+      "xMM": 29.1,
+      "zMM": 25.5,
+      "yMM": 14.0,
+      "toSeamMM": 30.0
+    },
+    {
+      "face": 28441,
+      "rays": 11,
+      "areaMM2": 12.3,
+      "xMM": 12.6,
+      "zMM": 32.7,
+      "yMM": 2.1,
+      "toSeamMM": 31.9
+    },
+    {
+      "face": 23109,
+      "rays": 10,
+      "areaMM2": 16.22,
+      "xMM": -13.3,
+      "zMM": 33.5,
+      "yMM": -1.2,
+      "toSeamMM": 31.8
+    },
+    {
+      "face": 28442,
+      "rays": 9,
+      "areaMM2": 21.45,
+      "xMM": 10.5,
+      "zMM": 32.1,
+      "yMM": 0.4,
+      "toSeamMM": 31.0
+    },
+    {
+      "face": 27106,
+      "rays": 8,
+      "areaMM2": 20.29,
+      "xMM": 9.4,
+      "zMM": 39.3,
+      "yMM": -17.0,
+      "toSeamMM": 39.5
+    },
+    {
+      "face": 25923,
+      "rays": 7,
+      "areaMM2": 30.63,
+      "xMM": 3.7,
+      "zMM": 40.4,
+      "yMM": -17.9,
+      "toSeamMM": 40.4
+    },
+    {
+      "face": 28234,
+      "rays": 7,
+      "areaMM2": 25.61,
+      "xMM": 17.7,
+      "zMM": 37.4,
+      "yMM": -7.6,
+      "toSeamMM": 36.9
+    },
+    {
+      "face": 30233,
+      "rays": 7,
+      "areaMM2": 44.35,
+      "xMM": 22.0,
+      "zMM": 36.0,
+      "yMM": 2.8,
+      "toSeamMM": 36.4
+    },
+    {
+      "face": 24319,
+      "rays": 6,
+      "areaMM2": 15.68,
+      "xMM": -3.1,
+      "zMM": 34.1,
+      "yMM": 1.4,
+      "toSeamMM": 32.5
+    },
+    {
+      "face": 22652,
+      "rays": 5,
+      "areaMM2": 5.78,
+      "xMM": -15.9,
+      "zMM": 29.4,
+      "yMM": 12.2,
+      "toSeamMM": 30.3
+    },
+    {
+      "face": 24061,
+      "rays": 5,
+      "areaMM2": 18.56,
+      "xMM": -7.8,
+      "zMM": 31.5,
+      "yMM": 2.1,
+      "toSeamMM": 29.9
+    },
+    {
+      "face": 30257,
+      "rays": 5,
+      "areaMM2": 33.78,
+      "xMM": 23.1,
+      "zMM": 25.4,
+      "yMM": 9.9,
+      "toSeamMM": 27.5
+    },
+    {
+      "face": 23149,
+      "rays": 4,
+      "areaMM2": 15.97,
+      "xMM": -11.3,
+      "zMM": 35.5,
+      "yMM": -4.7,
+      "toSeamMM": 33.8
+    },
+    {
+      "face": 24058,
+      "rays": 4,
+      "areaMM2": 20.6,
+      "xMM": -10.3,
+      "zMM": 30.6,
+      "yMM": 0.8,
+      "toSeamMM": 28.9
+    },
+    {
+      "face": 25911,
+      "rays": 4,
+      "areaMM2": 23.97,
+      "xMM": -0.8,
+      "zMM": 38.7,
+      "yMM": -17.0,
+      "toSeamMM": 38.3
+    },
+    {
+      "face": 28225,
+      "rays": 4,
+      "areaMM2": 5.76,
+      "xMM": 23.4,
+      "zMM": 32.9,
+      "yMM": 7.0,
+      "toSeamMM": 34.2
+    },
+    {
+      "face": 22651,
+      "rays": 3,
+      "areaMM2": 2.45,
+      "xMM": -16.3,
+      "zMM": 31.3,
+      "yMM": 15.2,
+      "toSeamMM": 33.2
+    },
+    {
+      "face": 24060,
+      "rays": 3,
+      "areaMM2": 28.77,
+      "xMM": -5.2,
+      "zMM": 30.8,
+      "yMM": 1.4,
+      "toSeamMM": 29.2
+    },
+    {
+      "face": 23457,
+      "rays": 2,
+      "areaMM2": 14.48,
+      "xMM": -14.1,
+      "zMM": 27.6,
+      "yMM": 8.0,
+      "toSeamMM": 27.1
+    },
+    {
+      "face": 22603,
+      "rays": 2,
+      "areaMM2": 16.07,
+      "xMM": -13.1,
+      "zMM": 28.9,
+      "yMM": 7.2,
+      "toSeamMM": 28.0
+    },
+    {
+      "face": 28112,
+      "rays": 2,
+      "areaMM2": 6.69,
+      "xMM": 8.1,
+      "zMM": 32.4,
+      "yMM": -0.4,
+      "toSeamMM": 31.2
+    },
+    {
+      "face": 29391,
+      "rays": 2,
+      "areaMM2": 25.36,
+      "xMM": 14.9,
+      "zMM": 34.3,
+      "yMM": -1.4,
+      "toSeamMM": 33.2
+    },
+    {
+      "face": 28904,
+      "rays": 2,
+      "areaMM2": 19.21,
+      "xMM": 15.1,
+      "zMM": 35.9,
+      "yMM": -10.3,
+      "toSeamMM": 35.6
+    },
+    {
+      "face": 30232,
+      "rays": 2,
+      "areaMM2": 3.59,
+      "xMM": 19.3,
+      "zMM": 36.9,
+      "yMM": -4.6,
+      "toSeamMM": 36.4
+    },
+    {
+      "face": 28223,
+      "rays": 2,
+      "areaMM2": 15.26,
+      "xMM": 22.7,
+      "zMM": 36.5,
+      "yMM": 6.7,
+      "toSeamMM": 37.5
+    },
+    {
+      "face": 30234,
+      "rays": 2,
+      "areaMM2": 18.94,
+      "xMM": 24.3,
+      "zMM": 23.3,
+      "yMM": 9.4,
+      "toSeamMM": 25.6
+    },
+    {
+      "face": 22564,
+      "rays": 1,
+      "areaMM2": 8.79,
+      "xMM": -15.8,
+      "zMM": 32.1,
+      "yMM": 14.9,
+      "toSeamMM": 33.9
+    },
+    {
+      "face": 23456,
+      "rays": 1,
+      "areaMM2": 5.66,
+      "xMM": -15.2,
+      "zMM": 28.0,
+      "yMM": 9.4,
+      "toSeamMM": 27.9
+    },
+    {
+      "face": 22604,
+      "rays": 1,
+      "areaMM2": 22.2,
+      "xMM": -15.4,
+      "zMM": 32.4,
+      "yMM": 8.0,
+      "toSeamMM": 31.8
+    },
+    {
+      "face": 22592,
+      "rays": 1,
+      "areaMM2": 6.24,
+      "xMM": -15.7,
+      "zMM": 33.6,
+      "yMM": 6.6,
+      "toSeamMM": 32.7
+    },
+    {
+      "face": 22600,
+      "rays": 1,
+      "areaMM2": 2.93,
+      "xMM": -15.1,
+      "zMM": 33.5,
+      "yMM": 1.1,
+      "toSeamMM": 31.9
+    },
+    {
+      "face": 25922,
+      "rays": 1,
+      "areaMM2": 5.55,
+      "xMM": 1.6,
+      "zMM": 39.2,
+      "yMM": -18.2,
+      "toSeamMM": 39.2
+    },
+    {
+      "face": 29664,
+      "rays": 1,
+      "areaMM2": 20.91,
+      "xMM": 15.0,
+      "zMM": 32.0,
+      "yMM": -1.8,
+      "toSeamMM": 30.9
+    },
+    {
+      "face": 31364,
+      "rays": 1,
+      "areaMM2": 9.64,
+      "xMM": 23.3,
+      "zMM": 28.9,
+      "yMM": 10.7,
+      "toSeamMM": 31.1
+    },
+    {
+      "face": 31359,
+      "rays": 1,
+      "areaMM2": 63.15,
+      "xMM": 23.6,
+      "zMM": 38.7,
+      "yMM": 15.3,
+      "toSeamMM": 41.8
+    },
+    {
+      "face": 30238,
+      "rays": 1,
+      "areaMM2": 8.71,
+      "xMM": 26.2,
+      "zMM": 24.4,
+      "yMM": 12.6,
+      "toSeamMM": 27.9
+    }
+  ]
+}

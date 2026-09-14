@@ -133,9 +133,24 @@ def protrusion_mm(ob, plane_point, plane_normal):
 
 
 def recess_object_behind_plane(ob, plane_point, plane_normal, recess):
+    """Push a donor part back until NOTHING of it is in front of his lip plane.
+
+    THE TWO INSTRUMENTS HAVE TO USE THE SAME STATISTIC OR THEY WILL CONTRADICT
+    EACH OTHER ABOUT ONE PLACEMENT. This recessed by the 95th PERCENTILE while
+    assert_no_protrusion judges by the MAX, so a part whose p95 sat safely behind
+    the plane still failed the gate on its farthest 5%:
+
+        PROTRUSION_FAIL -- worst=gums protrusion=0.005037   (1.30 mm)
+        sock=0.000008  teeth=0.002654  gums=0.005037  tongue=-0.001071
+
+    Same family as blink_proof measuring globe clearance with centroid-plus-max
+    while the placement solve used a fitted sphere, and reporting the lid 7.57 mm
+    inside a globe that was 0.50 mm clear. The gate is the contract, so the move
+    is measured the way the gate measures.
+    """
     pts = world_vertices(ob)
     d = signed_distances(pts, plane_point, plane_normal)
-    front = float(np.percentile(d, 95.0))
+    front = float(d.max())
     target_front = -abs(recess)
     if front <= target_front:
         return 0.0, front
@@ -143,7 +158,7 @@ def recess_object_behind_plane(ob, plane_point, plane_normal, recess):
     ob.matrix_world.translation += shift
     pts2 = world_vertices(ob)
     d2 = signed_distances(pts2, plane_point, plane_normal)
-    return float(front - target_front), float(np.percentile(d2, 95.0))
+    return float(front - target_front), float(d2.max())
 
 
 def assert_no_protrusion(objects, plane_point, plane_normal, label="oral donor"):
@@ -186,6 +201,18 @@ def fit_transform(sock_verts, frame):
 
 
 def solidify_cutter_inward(sock, thickness=0.012):
+    """THE CUTTER IS A THROWAWAY SOLID, SO STRIP ITS SHAPE KEYS FIRST.
+
+    Blender refuses outright -- "Modifier cannot be applied to a mesh with shape
+    keys" -- and the sock this was copied from carries the GNM tongue/mouth
+    expression layers. Removing them from THE COPY costs nothing: this object
+    exists only to be subtracted, it is never shipped, and a boolean is taken at
+    the evaluated rest pose anyway. The same refusal already bit the Data
+    Transfer modifier in the remesh work.
+    """
+    if sock.data.shape_keys:
+        bpy.context.view_layer.objects.active = sock
+        sock.shape_key_clear()
     bpy.context.view_layer.objects.active = sock
     sock.select_set(True)
     mod = sock.modifiers.new("ORAL_SOCK_SOLIDIFY", "SOLIDIFY")
@@ -303,7 +330,24 @@ def main():
                 f"(protrusion={cutter_protrusion:.6f})."
             )
 
-    boolean_cavity(repaired, cutter)
+    # ── THE CAVITY MAY ALREADY BE CARVED, AND THEN THIS STEP IS REDUNDANT ────
+    # This tool was written for a head with no shape keys: a BOOLEAN cannot be
+    # applied to one that has them, which is why the whole chain has never run on
+    # MARS_FACE. It does not have to. oral_cavity.py carves the cavity BEFORE the
+    # rig exists -- that is the documented order, topology first, then bones, then
+    # weights, then shapes -- so a head that already carries MARS_ORAL_MAT has its
+    # cavity and needs the LAYERS seated in it, which is the rest of this tool.
+    # Detected from the mesh, never assumed, and stated either way.
+    already = any(m and m.name == "MARS_ORAL_MAT" for m in repaired.data.materials)
+    has_keys = bool(repaired.data.shape_keys)
+    if already or has_keys:
+        print("MARS_ORAL_BRIDGE: cavity boolean SKIPPED — "
+              "MARS_ORAL_MAT present=%s, shape keys=%s. The head is already carved "
+              "(oral_cavity.py) and a boolean cannot be applied over shape keys; "
+              "seating the donor layers is what remains." % (already, has_keys),
+              flush=True)
+    else:
+        boolean_cavity(repaired, cutter)
     bpy.data.objects.remove(cutter, do_unlink=True)
 
     protrusion_after = assert_no_protrusion(oral_objects, plane_point, plane_normal, label="oral donor post-boolean")

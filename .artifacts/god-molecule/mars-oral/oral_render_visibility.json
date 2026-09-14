@@ -1,0 +1,75 @@
+{
+  "schema": "god-molecule.mars-oral-render-visibility.v2",
+  "status": "PASS",
+  "authority": "actual render visibility, not pseudonormal/raycast-only inference",
+  "objects": [
+    {
+      "object": "MARS_MOUTH_SOCK",
+      "hide_render_before": false,
+      "hide_render_after": false,
+      "camera_visible_before": true,
+      "camera_visible_after": true,
+      "vertices": 406,
+      "faces": 669
+    },
+    {
+      "object": "MARS_ORAL_GUMS",
+      "hide_render_before": false,
+      "hide_render_after": false,
+      "camera_visible_before": true,
+      "camera_visible_after": true,
+      "vertices": 1404,
+      "faces": 2376
+    },
+    {
+      "object": "MARS_ORAL_TEETH",
+      "hide_render_before": false,
+      "hide_render_after": false,
+      "camera_visible_before": true,
+      "camera_visible_after": true,
+      "vertices": 1868,
+      "faces": 3280
+    },
+    {
+      "object": "MARS_ORAL_TONGUE",
+      "hide_render_before": false,
+      "hide_render_after": false,
+      "camera_visible_before": true,
+      "camera_visible_after": true,
+      "vertices": 933,
+      "faces": 1824
+    },
+    {
+      "object": "MARS_TEETH_LOWER",
+      "hide_render_before": false,
+      "hide_render_after": false,
+      "camera_visible_before": true,
+      "camera_visible_after": true,
+      "vertices": 1440,
+      "faces": 2828
+    },
+    {
+      "object": "MARS_TEETH_UPPER",
+      "hide_render_before": false,
+      "hide_render_after": false,
+      "camera_visible_before": true,
+      "camera_visible_after": true,
+      "vertices": 1440,
+      "faces": 2828
+    },
+    {
+      "object": "MARS_TONGUE",
+      "hide_render_before": false,
+      "hide_render_after": false,
+      "camera_visible_before": true,
+      "camera_visible_after": true,
+      "vertices": 933,
+      "faces": 1824
+    }
+  ],
+  "changed_objects": [],
+  "changed_count": 0,
+  "output_blend": "/home/user/TRIPPEDD-Production-studios-/.artifacts/god-molecule/mars-oral/MARS_ORAL_RENDER_VISIBLE.blend",
+  "persisted": true,
+  "law": "oral geometry must be render-visible before pixel truth is measured"
+}

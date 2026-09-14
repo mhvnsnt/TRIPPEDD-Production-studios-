@@ -1,25 +1,17 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-## Tooling (corrected)
+## Working truth
 
-Quadriflow + Rigify **present** in session Blender. Instant Meshes false gap. xatlas installed. Gap = execution, not download. `docs/production/OSS_MUST_PULL.md`
+- Canonical: untouched  
+- Open-mouth pixel truth: default  
+- Rest: must not false-FAIL sealed mouth  
+- Rim: **VISUAL FAIL** — seam coverage, not resolution  
+- densify / residual-rounds: rejected  
+- drop-bridges: cleanup only  
+- QuadriFlow / Rigify / xatlas: present; **execution** is the gap  
+- PR #65: draft; PHYSICAL_EXECUTION NOT_CLAIMED  
 
-## Oral
+## Next experiment
 
-GNM seated. Candidate mouth_proof 8/8, crater fixed. **Visual FAIL open-mouth rim** (seam coverage past ±22 mm). Not promoted. `docs/agent_handoff/LIP_SEAM_COVERAGE.md`
-
-## Rigify
-
-Registered ≠ working. No auto-skin. Chain: topology → weights → deform QA → pixels → SHA. `docs/agent_handoff/RIGIFY_MARS.md`
-
-## PR #65
-
-Draft/unmerged. Structural CI only. PHYSICAL_EXECUTION: NOT_CLAIMED.
-
-## Queue
-
-1. Seam coverage to straddler lateral span  
-2. Open-mouth pixel truth + SHA  
-3. Rigify candidate only after mouth/face acceptance + explicit weights  
-4. Eye clearance ladder  
-5. Live URL + receipts  
+`docs/agent_handoff/SEAM_EXTENSION_EXPERIMENT.md`  
+Extend split past ±25 mm through the 9 terminal straddlers → open-mouth PNG → reopen → SHA → mouth_proof. Pixels decide. No retopo until that fails.

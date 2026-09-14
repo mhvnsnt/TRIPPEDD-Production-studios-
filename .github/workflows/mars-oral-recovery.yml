@@ -1,0 +1,90 @@
+name: MARS Oral Recovery Probe
+
+on:
+  push:
+    paths:
+      - "tools/character/swap_oral_interior_onto_donor_head.py"
+      - "tools/character/run_oral_interior_swap.sh"
+      - "assets/rigs/MARS_ORAL.blend"
+      - "assets/rigs/MARS_FACE.blend"
+      - "assets/checkpoints/before-mouth-retopo/**"
+      - ".github/workflows/mars-oral-recovery.yml"
+  workflow_dispatch:
+
+jobs:
+  oral-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout with LFS
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 1
+
+      - name: Install Blender
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y curl xz-utils libgl1 libegl1 libx11-6 libxrender1 libxi6 libxfixes3 libxxf86vm1 libxkbcommon0
+          mkdir -p vendor
+          curl -L --fail --retry 4 -o /tmp/blender.tar.xz https://download.blender.org/release/Blender4.2/blender-4.2.1-linux-x64.tar.xz
+          tar -xJf /tmp/blender.tar.xz -C vendor
+          ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
+          vendor/blender --version
+
+      - name: Verify immutable host anchors
+        run: |
+          set -euo pipefail
+          test -s assets/rigs/MARS_ORAL.blend
+          test -s assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend
+          test -s assets/rigs/MARS_FACE.blend
+          LIVE_BLOB=$(git rev-parse HEAD:assets/rigs/MARS_ORAL.blend)
+          CHECKPOINT_BLOB=$(git rev-parse HEAD:assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend)
+          test "$LIVE_BLOB" = "$CHECKPOINT_BLOB"
+          echo "MARS_ORAL_GIT_BLOB=$LIVE_BLOB"
+          sha256sum assets/rigs/MARS_ORAL.blend assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend assets/rigs/MARS_FACE.blend
+
+      - name: Inventory host and current interior before mutation
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/oral
+          vendor/blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- --list-only --host assets/rigs/MARS_ORAL.blend --interior assets/rigs/MARS_FACE.blend > .artifacts/oral/inventory.txt
+          cat .artifacts/oral/inventory.txt
+
+      - name: Assemble review-only donor host plus current interior
+        id: swap
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          mkdir -p .artifacts/oral
+          vendor/blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- \
+            --host assets/rigs/MARS_ORAL.blend \
+            --interior assets/rigs/MARS_FACE.blend \
+            --out .artifacts/oral/MARS_ORAL_SWAP_REVIEW.blend \
+            --report .artifacts/oral/oral_interior_swap_report.json | tee .artifacts/oral/swap.log
+
+      - name: Survey review artifact when assembly succeeded
+        if: steps.swap.outcome == 'success'
+        run: |
+          set -euo pipefail
+          test -s .artifacts/oral/MARS_ORAL_SWAP_REVIEW.blend
+          sha256sum .artifacts/oral/MARS_ORAL_SWAP_REVIEW.blend | tee .artifacts/oral/review.sha256
+
+      - name: Package oral recovery evidence
+        if: always()
+        run: |
+          set +e
+          date -u +%FT%TZ > .artifacts/oral/completed_utc.txt
+          find .artifacts/oral -type f -printf '%p %s bytes\n' | sort > .artifacts/oral/inventory-final.txt
+
+      - name: Upload oral recovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mars-oral-recovery-${{ github.run_id }}
+          path: .artifacts/oral
+          if-no-files-found: error
+          retention-days: 14

@@ -55,6 +55,17 @@ jobs:
           cp assets/rigs/MARS_FACE.glb .artifacts/original-glb/MARS_FACE_original.glb
           cat .artifacts/original-glb/inventory.json
 
+      - name: Materialize exact MARS_ORAL donor at 904b419
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/mars-oral-donor
+          git fetch --no-tags --depth=1 origin 904b419
+          git checkout 904b419 -- assets/rigs/MARS_ORAL.blend
+          git lfs checkout assets/rigs/MARS_ORAL.blend
+          test -s assets/rigs/MARS_ORAL.blend
+          sha256sum assets/rigs/MARS_ORAL.blend | tee .artifacts/mars-oral-donor/MARS_ORAL.sha256
+          vendor/blender -b -P tools/character/inspect_original_mars_glb.py -- --glb assets/rigs/MARS_ORAL.blend --out .artifacts/mars-oral-donor 2>&1 | tee .artifacts/mars-oral-donor/inspect.log || true
+
       - name: Verify immutable host anchors
         run: |
           set -euo pipefail
@@ -82,6 +93,14 @@ jobs:
             --interior assets/rigs/MARS_FACE.blend \
             --out .artifacts/oral/MARS_FACE_ORAL_ASSEMBLY_REVIEW.blend \
             --report .artifacts/oral/oral_interior_swap_report.json | tee .artifacts/oral/swap.log
+
+      - name: Assemble exact MARS_ORAL donor plus improved oral interior
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/mars-oral-candidate
+          vendor/blender -b -P tools/character/assemble_original_glb_oral_candidate.py -- --host assets/rigs/MARS_ORAL.blend --interior assets/rigs/MARS_FACE.blend --out .artifacts/mars-oral-candidate/MARS_ORAL_904b419_IMPROVED_ORAL_REVIEW.blend --report .artifacts/mars-oral-candidate/assembly_report.json | tee .artifacts/mars-oral-candidate/assembly.log
+          vendor/blender -b -P tools/character/render_original_glb_oral_candidate.py -- --rig .artifacts/mars-oral-candidate/MARS_ORAL_904b419_IMPROVED_ORAL_REVIEW.blend --out .artifacts/mars-oral-candidate/recovery-render
+          cat .artifacts/mars-oral-candidate/recovery-render/oral_candidate_structural_audit.json
 
       - name: Assemble original-GLB donor plus improved oral interior
         run: |
@@ -144,5 +163,7 @@ jobs:
             .artifacts/oral
             .artifacts/original-glb
             .artifacts/original-glb-candidate
+            .artifacts/mars-oral-donor
+            .artifacts/mars-oral-candidate
           if-no-files-found: error
           retention-days: 14

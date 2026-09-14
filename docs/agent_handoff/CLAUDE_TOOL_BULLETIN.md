@@ -1,47 +1,42 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-Read before visual, mesh, rig, facial, hair, oral, topology, or registration work. Update this file when tools/donors/evidence change.
+Read before visual, mesh, rig, facial, hair, oral, topology, or registration work.
 
-## Canonical law
-ONE MARS. Known-good components are assets — snapshot first, never overwrite canonical in place. Checkpoint caught a hardcoded-path overwrite of `MARS_FACE.blend`; restored.
+## DONOR FIRST (oral)
 
-## Oral — contour depth + drop bridges
+**Stop hand-rolling rim densifiers / straddler counters / shard finders as the primary route.**
 
-**Contour depth:** constant-y loft discarded 11.5 mm lip-depth sweep → 44/483 exterior-skin loss. Re-carve → 4/483. Width/`--slit-x` **retired**. Candidate only: `assets/variants/MARS_FACE_CONTOUR_DEPTH_CANDIDATE.blend`.
-
-**Pale shards = bridges:** after seam cut, faces span upper→lower behind lip front (~14 faces / ~1,008 rays at jaw 30°). Cutting measured worse.
+Four hand passes already happened. The GNM oral chain is in the repo and is the first route:
 
 ```bash
-tools/character/run_lip_seam_drop_bridges.sh
-./.trippedd_venv/bin/python tools/character/lip_seam_bridge_gate.py \
-  docs/evidence/oral/lip_seam_drop_bridges.json
+tools/character/provision_oral_donors.sh
+tools/character/run_mars_oral_repair.sh <mars.blend> <mouth-frame.json>
 ```
 
-Detail: `docs/agent_handoff/LIP_SEAM_DROP_BRIDGES.md`
+Full order: `docs/agent_handoff/ORAL_GNM_FIRST.md`
 
-**Promotion:** gate PASS → proof render → pixels + SHA → receipt → only then promote. Canonical untouched by default.
+`--drop-bridges` only after GNM repair is measured, if the lip seam is still welded.
+
+## Canonical law
+ONE MARS. Snapshot before experiments. Never overwrite canonical in place.
+
+## Contour depth
+Constant-y loft discarded 11.5 mm depth sweep. Candidate only until mouth_proof + pixels + SHA. Width/`--slit-x` retired.
 
 ## Eye clearance (parallel)
-
-Donor + linework on main. Globe-class only; rest before blink.
-
-```text
-export_contact_geometry → eye_clearance_ladder → penetration_measure
-  → eye_clearance_gate --verify-renders → Shrinkwrap after rest clean
-```
-
-Handoff: `docs/agent_handoff/EYE_CLEARANCE_HANDOFF.md`
+Globe-class donor on main. Ladder + gate ready. No invented eyeballs.
+`docs/agent_handoff/EYE_CLEARANCE_HANDOFF.md`
 
 ## Live session door
-
-`docs/ROCKET_LIVE_SESSION.md` — named commands only; `operationId` + sha256Verified required. No URL → blocked. No synthetic health/state as production truth. Bridge stays draft until runtime proven.
+`docs/ROCKET_LIVE_SESSION.md`
+HTTP success ≠ authoritative without `operationId` + receipt/SHA (bridge commit ac3cf987…). No synthetic health as truth. PR #64 draft until runtime proven.
 
 ## Evidence law
-UNKNOWN ≠ PASS. No bytes = IMAGE_UNAVAILABLE. Visual FAIL overrides numerical PASS. Reopen PNG/MP4 + SHA-256.
+UNKNOWN ≠ PASS. Pixels veto numerical PASS. Reopen bytes + SHA-256.
 
 ## Queue
-1. Run `--drop-bridges` (runner) → `lip_seam_bridge_gate` → pixels/SHA.
-2. Contour-depth candidate promotion gate (mouth_proof + pixels).
-3. Point real `ROCKET_LIVE_SESSION_URL`; prove door.
-4. Eye clearance ladder when globe-class geom is exportable.
-5. Checkpoint / oral protect; crease chain; pixel visibility; eye weld after clearance baseline.
+1. **Run GNM oral chain** (`run_mars_oral_repair.sh`) — not another hand densifier.
+2. If still sealed: `run_lip_seam_drop_bridges.sh` → `lip_seam_bridge_gate.py`.
+3. Contour-depth / mouth_proof + pixels for promotion.
+4. Real `ROCKET_LIVE_SESSION_URL` + worker emits operationId/receipt shape.
+5. Eye clearance when globe-class geom exportable.

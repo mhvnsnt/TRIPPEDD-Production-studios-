@@ -2,9 +2,9 @@
 """Source-level render smoke tests for the In the Bushes opening.
 
 These tests do not require FFmpeg or a desktop animation application. They
-exercise the same procedural teen layer used by the character builder and
-parse representative SVG frames, catching malformed SVG and regressions back
-to the obsolete stick-figure asset before an expensive render is attempted.
+exercise the same procedural teen layer used by the character builder and parse
+representative SVG frames, catching malformed SVG and regressions back to the
+obsolete stick-figure asset before an expensive render is attempted.
 """
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[3]
 RIG_PATH = ROOT / "show/in-the-bushes/tools/teen_performance.py"
+BUILDER_PATH = ROOT / "show/in-the-bushes/tools/build_origin_opening.py"
 RENDER_PATH = ROOT / "show/in-the-bushes/animatic/ep01-origin-opening-v2.render-plan.json"
 
 
@@ -29,11 +30,16 @@ def load_rig():
 
 def test_active_render_graph():
     plan = json.loads(RENDER_PATH.read_text(encoding="utf-8"))
+    builder_text = BUILDER_PATH.read_text(encoding="utf-8")
     assert plan["activeBuilder"].endswith("build_origin_opening_character.py")
     assert plan["characterSource"].endswith("teen_performance.py")
     text = RENDER_PATH.read_text(encoding="utf-8")
     assert "teen-group-origin-states.svg" not in text
     assert "teen-character-design-v1.svg" in text
+    assert "teen-group-origin-states.svg" not in builder_text
+    assert "teen-character-design-v1.svg" in builder_text
+    assert "PERFORMANCE_LAYER = load_teen_performance()" in builder_text
+    assert "return PERFORMANCE_LAYER(frame, shot_id)" in builder_text
 
 
 def test_procedural_layer_is_valid_svg():

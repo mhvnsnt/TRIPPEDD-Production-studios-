@@ -1,0 +1,26 @@
+{
+  "artifact": "docs/evidence/mars/mouth/tongue_seated_WIDE.v001.png",
+  "sha256": "88ada58ad3b10a4b7472174b12a010d209272060c20782e0da95f41bd4eada26",
+  "bytes": 1249733,
+  "resolution": [
+    900,
+    900
+  ],
+  "set": "mars/mouth",
+  "label": "tongue_seated_WIDE",
+  "version": 1,
+  "producedAt": "2026-09-14T00:51:57Z",
+  "producingTool": "tools/character/seat_tongue.py",
+  "producingCommit": "5decf15f008f58e1851c189a690466056a9d0084",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "",
+  "camera": "",
+  "viewTransform": "",
+  "shown": [],
+  "hidden": [],
+  "status": "PENDING",
+  "note": "Tongue lowered 9.66 mm onto the plane under his upper crowns: dorsum +7.68 -> -1.97 mm, 307 of 933 verts above the incisal edge -> 0. Teeth, lining and head moved 0.000000 mm; all 32 GNM tongue expressions shifted with it (relative drift 0.000004 mm). Lip rim beautified: slivers under 15 deg 75 -> 61, worst angle 1.09 -> 1.85 deg, vertex drift 0.000000 mm. STILL OPEN: the rim is still jagged and the opening still reads as a rectangular slot rather than a lip.",
+  "measurements": {},
+  "sourceArtifact": "renders/_tongue/MARS_FACE_TONGUE.blend",
+  "sourceSha256": "94b7e3c7271783bf4851141b158218f8bb9ba5f16709342243ef93aeca6dc294"
+}

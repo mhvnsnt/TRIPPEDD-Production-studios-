@@ -1,0 +1,26 @@
+{
+  "artifact": "docs/evidence/mars/mouth/tongue_before_after.v001.png",
+  "sha256": "a664c99e2255078a6b4893abb90beacd7b09e3c13ea2a978339e820d9a5686a8",
+  "bytes": 553904,
+  "resolution": [
+    1076,
+    850
+  ],
+  "set": "mars/mouth",
+  "label": "tongue_before_after",
+  "version": 1,
+  "producedAt": "2026-09-14T00:51:57Z",
+  "producingTool": "tools/character/seat_tongue.py",
+  "producingCommit": "5decf15f008f58e1851c189a690466056a9d0084",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "",
+  "camera": "",
+  "viewTransform": "",
+  "shown": [],
+  "hidden": [],
+  "status": "PENDING",
+  "note": "before/after, same camera and light",
+  "measurements": {},
+  "sourceArtifact": "renders/_tongue/MARS_FACE_TONGUE.blend",
+  "sourceSha256": "94b7e3c7271783bf4851141b158218f8bb9ba5f16709342243ef93aeca6dc294"
+}

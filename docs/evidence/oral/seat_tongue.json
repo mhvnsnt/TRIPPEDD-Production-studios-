@@ -1,0 +1,24 @@
+{
+  "schema": "trippedd.seat-tongue/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_TONGUE.blend",
+  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_TONGUE.blend",
+  "upperIncisalMM": -0.97,
+  "lowerCrownTopMM": 0.66,
+  "dorsumBeforeMM": 7.68,
+  "dorsumAfterMM": -1.97,
+  "loweredMM": 9.66,
+  "vertsAboveIncisalBefore": 307,
+  "vertsAboveIncisalAfter": 0,
+  "bonesMoved": [
+    "tongue_root",
+    "tongue_mid",
+    "tongue_tip"
+  ],
+  "shapeKeys": 32,
+  "untouched": [
+    "MARS_MESH",
+    "MARS_MOUTH_SOCK",
+    "MARS_TEETH_LOWER",
+    "MARS_TEETH_UPPER"
+  ]
+}

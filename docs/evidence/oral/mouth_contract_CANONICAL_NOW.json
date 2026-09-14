@@ -1,0 +1,118 @@
+{
+  "schema": "trippedd.mouth-contract/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/assets/rigs/MARS_FACE.blend",
+  "objects": {
+    "MARS_MESH": {
+      "verts": 27865,
+      "role": "head",
+      "hideRender": false,
+      "depthMM": [
+        -19.23,
+        223.66
+      ]
+    },
+    "MARS_TEETH_UPPER": {
+      "verts": 1440,
+      "role": "teeth",
+      "hideRender": false,
+      "depthMM": [
+        -0.5,
+        53.6
+      ]
+    },
+    "MARS_TEETH_LOWER": {
+      "verts": 1440,
+      "role": "teeth",
+      "hideRender": false,
+      "depthMM": [
+        1.35,
+        47.79
+      ]
+    },
+    "MARS_MOUTH_SOCK": {
+      "verts": 406,
+      "role": "lining",
+      "hideRender": false,
+      "depthMM": [
+        0.41,
+        57.78
+      ]
+    },
+    "MARS_TONGUE": {
+      "verts": 933,
+      "role": "tongue",
+      "hideRender": false,
+      "depthMM": [
+        6.13,
+        62.52
+      ]
+    },
+    "MARS_EYE_L": {
+      "verts": 1926,
+      "role": "eye",
+      "hideRender": false,
+      "depthMM": [
+        53.31,
+        69.44
+      ]
+    },
+    "MARS_EYE_R": {
+      "verts": 1926,
+      "role": "eye",
+      "hideRender": false,
+      "depthMM": [
+        46.78,
+        57.54
+      ]
+    }
+  },
+  "rules": [
+    {
+      "rule": "1 one of each part",
+      "pass": true,
+      "detail": "one head, one tongue, one lining"
+    },
+    {
+      "rule": "2 nothing oral in front of his lips",
+      "pass": true,
+      "detail": "frontmost oral part at -0.5 mm, his lip front is -10.5 mm"
+    },
+    {
+      "rule": "3 the lining sits behind the crowns",
+      "pass": true,
+      "detail": "crowns front -0.50 mm \u00b7 lining front +0.41 mm (lining must be >= crowns)"
+    },
+    {
+      "rule": "6 each part rides the right bone",
+      "pass": true,
+      "detail": "teeth->head/jaw, tongue->tongue_*, lining->head"
+    },
+    {
+      "rule": "5 every oral part is render-visible",
+      "pass": true,
+      "detail": "4 oral parts, none hidden"
+    },
+    {
+      "rule": "9 the arch is 55-60 mm, anchored inter-molar",
+      "pass": true,
+      "detail": "arch 68.9 mm wide (a lip-anchored scale gave 72.2 mm and fanged the corners)"
+    },
+    {
+      "rule": "10 the upper crowns hang into the opening",
+      "pass": true,
+      "detail": "incisal edge at z -0.97 mm; the lip free edge is 0.0 (above it is the veneer-tray look)"
+    },
+    {
+      "rule": "11 there is a real overbite",
+      "pass": true,
+      "detail": "occlusal gap -1.63 mm (negative = the upper overlaps the lower)"
+    },
+    {
+      "rule": "12 the tongue fits inside the arch",
+      "pass": true,
+      "detail": "tongue half-width 18.8 mm vs the arch's 34.4 mm (wider means it passes THROUGH the arch)"
+    }
+  ],
+  "kept": 9,
+  "of": 9
+}

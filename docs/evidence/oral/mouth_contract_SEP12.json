@@ -1,0 +1,80 @@
+{
+  "schema": "trippedd.mouth-contract/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_sep12/MARS_FACE_SEP12.blend",
+  "objects": {
+    "MARS_MESH": {
+      "verts": 23830,
+      "role": "head",
+      "hideRender": false,
+      "depthMM": [
+        -19.23,
+        223.66
+      ]
+    },
+    "MARS_TEETH_UPPER": {
+      "verts": 1440,
+      "role": "teeth",
+      "hideRender": true,
+      "depthMM": [
+        -0.5,
+        53.6
+      ]
+    },
+    "MARS_TEETH_LOWER": {
+      "verts": 1440,
+      "role": "teeth",
+      "hideRender": true,
+      "depthMM": [
+        1.35,
+        47.79
+      ]
+    },
+    "MARS_MOUTH_SOCK": {
+      "verts": 406,
+      "role": "lining",
+      "hideRender": true,
+      "depthMM": [
+        -1.87,
+        55.51
+      ]
+    },
+    "MARS_TONGUE": {
+      "verts": 933,
+      "role": "tongue",
+      "hideRender": true,
+      "depthMM": [
+        6.13,
+        62.52
+      ]
+    }
+  },
+  "rules": [
+    {
+      "rule": "1 one of each part",
+      "pass": true,
+      "detail": "one head, one tongue, one lining"
+    },
+    {
+      "rule": "2 nothing oral in front of his lips",
+      "pass": true,
+      "detail": "frontmost oral part at -1.9 mm, his lip front is -10.5 mm"
+    },
+    {
+      "rule": "3 the lining sits behind the crowns",
+      "pass": false,
+      "detail": "crowns front -0.50 mm \u00b7 lining front -1.87 mm (lining must be >= crowns)"
+    },
+    {
+      "rule": "6 each part rides the right bone",
+      "pass": true,
+      "detail": "teeth->head/jaw, tongue->tongue_*, lining->head"
+    },
+    {
+      "rule": "5 every oral part is render-visible",
+      "pass": false,
+      "detail": "hide_render=True on ['MARS_TEETH_UPPER', 'MARS_TEETH_LOWER', 'MARS_TONGUE', 'MARS_MOUTH_SOCK']"
+    }
+  ],
+  "kept": 3,
+  "of": 5
+}

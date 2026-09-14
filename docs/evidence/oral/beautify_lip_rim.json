@@ -1,0 +1,23 @@
+{
+  "schema": "trippedd.beautify-lip-rim/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_TONGUE.blend",
+  "out": "/home/user/TRIPPEDD-Production-studios-/renders/_tongue/MARS_FACE_TONGUE.blend",
+  "radiusMM": 8.0,
+  "rimFaces": 300,
+  "edgesRotated": 171,
+  "before": {
+    "medianMinAngleDeg": 32.7,
+    "p5": 3.91,
+    "min": 1.09,
+    "sliversUnder15": 75
+  },
+  "after": {
+    "medianMinAngleDeg": 33.9,
+    "p5": 4.81,
+    "min": 1.85,
+    "sliversUnder15": 61
+  },
+  "vertexDriftMM": 0.0,
+  "verts": 27865,
+  "shapeKeys": 89
+}

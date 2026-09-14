@@ -1,0 +1,143 @@
+{
+  "schema": "trippedd.mouth-contract/v1",
+  "rig": "/home/user/TRIPPEDD-Production-studios-/.artifacts/god-molecule/mars-oral/MARS_ORAL_REPAIRED.blend",
+  "objects": {
+    "MARS_MESH": {
+      "verts": 27905,
+      "role": "head",
+      "hideRender": false,
+      "depthMM": [
+        -19.23,
+        223.66
+      ]
+    },
+    "MARS_TEETH_UPPER": {
+      "verts": 1440,
+      "role": "teeth",
+      "hideRender": false,
+      "depthMM": [
+        -0.5,
+        53.6
+      ]
+    },
+    "MARS_TEETH_LOWER": {
+      "verts": 1440,
+      "role": "teeth",
+      "hideRender": false,
+      "depthMM": [
+        1.35,
+        47.79
+      ]
+    },
+    "MARS_MOUTH_SOCK": {
+      "verts": 406,
+      "role": "lining",
+      "hideRender": false,
+      "depthMM": [
+        0.41,
+        57.78
+      ]
+    },
+    "MARS_TONGUE": {
+      "verts": 933,
+      "role": "tongue",
+      "hideRender": false,
+      "depthMM": [
+        6.13,
+        62.52
+      ]
+    },
+    "MARS_EYE_L": {
+      "verts": 1926,
+      "role": "eye",
+      "hideRender": false,
+      "depthMM": [
+        36.21,
+        52.35
+      ]
+    },
+    "MARS_EYE_R": {
+      "verts": 1926,
+      "role": "eye",
+      "hideRender": false,
+      "depthMM": [
+        45.78,
+        56.54
+      ]
+    },
+    "MARS_ORAL_REPAIRED_SURFACE": {
+      "verts": 27905,
+      "role": "head",
+      "hideRender": false,
+      "depthMM": [
+        -19.23,
+        223.66
+      ]
+    },
+    "MARS_ORAL_SOCK": {
+      "verts": 406,
+      "role": "lining",
+      "hideRender": false,
+      "depthMM": [
+        2.07,
+        29.51
+      ]
+    },
+    "MARS_ORAL_TEETH": {
+      "verts": 1868,
+      "role": "teeth",
+      "hideRender": false,
+      "depthMM": [
+        2.07,
+        20.88
+      ]
+    },
+    "MARS_ORAL_GUMS": {
+      "verts": 1404,
+      "role": "gums",
+      "hideRender": false,
+      "depthMM": [
+        2.07,
+        31.58
+      ]
+    },
+    "MARS_ORAL_TONGUE": {
+      "verts": 933,
+      "role": "tongue",
+      "hideRender": false,
+      "depthMM": [
+        2.07,
+        20.41
+      ]
+    }
+  },
+  "rules": [
+    {
+      "rule": "1 one of each part",
+      "pass": false,
+      "detail": "duplicated: {'head': ['MARS_MESH', 'MARS_ORAL_REPAIRED_SURFACE'], 'lining': ['MARS_MOUTH_SOCK', 'MARS_ORAL_SOCK'], 'tongue': ['MARS_TONGUE', 'MARS_ORAL_TONGUE']}"
+    },
+    {
+      "rule": "2 nothing oral in front of his lips",
+      "pass": true,
+      "detail": "frontmost oral part at -0.5 mm, his lip front is -10.5 mm"
+    },
+    {
+      "rule": "3 the lining sits behind the crowns",
+      "pass": true,
+      "detail": "crowns front -0.50 mm \u00b7 lining front +0.41 mm (lining must be >= crowns)"
+    },
+    {
+      "rule": "6 each part rides the right bone",
+      "pass": false,
+      "detail": "MARS_ORAL_TEETH(groups=[] parent_bone=''); MARS_ORAL_TONGUE(groups=[] parent_bone=''); MARS_ORAL_SOCK(groups=[] parent_bone='')"
+    },
+    {
+      "rule": "5 every oral part is render-visible",
+      "pass": true,
+      "detail": "8 oral parts, none hidden"
+    }
+  ],
+  "kept": 3,
+  "of": 5
+}

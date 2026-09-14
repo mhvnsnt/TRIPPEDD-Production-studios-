@@ -109,10 +109,19 @@ light("REC_KEY",(-1.05,-1.55,1.35),centre+Vector((0,0,.05)),260,1.1,(1,.96,.92))
 light("REC_FILL",(1.30,-1.25,.55),centre+Vector((0,0,.05)),90,1.4,(.72,.82,1))
 light("REC_MOUTH",tuple(mouth+Vector((.05,-.55,.10))),mouth,22,.30,(1,.93,.88))
 
+# Render the requested WIDE pose with the source tongue controls, then a host-rig
+# neutral-tongue control pass. The latter isolates armature-axis incompatibility
+# without changing any mesh, weights, or host topology.
 for tag,cam in cams.items():
     scene.camera=cam
     scene.render.filepath=os.path.join(OUT,"03_WIDE_"+tag+".png")
     bpy.ops.render.render(write_still=True)
+if "tongue_root" in arm.pose.bones: arm.pose.bones["tongue_root"].rotation_euler=(0,0,0)
+if "tongue_mid" in arm.pose.bones: arm.pose.bones["tongue_mid"].rotation_euler=(0,0,0)
+bpy.context.view_layer.update()
+scene.camera=cams["mouth"]
+scene.render.filepath=os.path.join(OUT,"03_WIDE_mouth_neutral_tongue.png")
+bpy.ops.render.render(write_still=True)
 
 report={"status":"REVIEW_ONLY","rig":RIG,"pose":{"jawDeg":31,
  "shapeKeys":{n:v for n,v in {"lip_lower_depress":.7,"lip_upper_raise":.45,

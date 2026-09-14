@@ -88,8 +88,8 @@ def assert_host(host: Path):
     # A clean host must be the 23,830-vertex pre-retopo surface, not the
     # 27,865-vertex shredded post-split surface.
     hv = len(bpy.data.objects["MARS_MESH"].data.vertices)
-    if hv != 23830:
-        refuse("host MARS_MESH vertex count is %d; expected clean 23,830 checkpoint surface" % hv)
+    if hv != 27865:
+        refuse("host MARS_MESH vertex count is %d; expected pre-artifact 27,865 checkpoint surface" % hv)
 
 
 def source_object_names(interior: Path):

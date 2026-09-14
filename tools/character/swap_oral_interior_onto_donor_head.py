@@ -156,8 +156,9 @@ def append_current_interior(interior: Path, host_arm):
             if not any(g.name == "tongue_root" for g in ob.vertex_groups):
                 refuse("current tongue has no tongue_root vertex group")
         else:
-            if not any(g.name == "jaw" for g in ob.vertex_groups):
-                refuse("%s has no jaw vertex group" % ob.name)
+            expected = "head" if ob.name == "MARS_TEETH_UPPER" else "jaw"
+            if not any(g.name == expected for g in ob.vertex_groups):
+                refuse("%s has no %s vertex group" % (ob.name, expected))
 
         appended.append(
             {

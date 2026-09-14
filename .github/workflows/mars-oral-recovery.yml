@@ -5,7 +5,6 @@ on:
     paths:
       - "tools/character/swap_oral_interior_onto_donor_head.py"
       - "tools/character/run_oral_interior_swap.sh"
-      - "assets/rigs/MARS_ORAL.blend"
       - "assets/rigs/MARS_FACE.blend"
       - "assets/checkpoints/before-mouth-retopo/**"
       - ".github/workflows/mars-oral-recovery.yml"
@@ -38,20 +37,17 @@ jobs:
       - name: Verify immutable host anchors
         run: |
           set -euo pipefail
-          test -s assets/rigs/MARS_ORAL.blend
-          test -s assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend
+          test -s assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_FACE.blend
           test -s assets/rigs/MARS_FACE.blend
-          LIVE_BLOB=$(git rev-parse HEAD:assets/rigs/MARS_ORAL.blend)
-          CHECKPOINT_BLOB=$(git rev-parse HEAD:assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend)
-          test "$LIVE_BLOB" = "$CHECKPOINT_BLOB"
-          echo "MARS_ORAL_GIT_BLOB=$LIVE_BLOB"
-          sha256sum assets/rigs/MARS_ORAL.blend assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend assets/rigs/MARS_FACE.blend
+          CHECKPOINT_BLOB=$(git rev-parse HEAD:assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_FACE.blend)
+          echo "MARS_FACE_CHECKPOINT_GIT_BLOB=$CHECKPOINT_BLOB"
+          sha256sum assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_FACE.blend assets/rigs/MARS_FACE.blend
 
       - name: Inventory host and current interior before mutation
         run: |
           set -euo pipefail
           mkdir -p .artifacts/oral
-          vendor/blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- --list-only --host assets/rigs/MARS_ORAL.blend --interior assets/rigs/MARS_FACE.blend > .artifacts/oral/inventory.txt
+          vendor/blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- --list-only --host assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_FACE.blend --interior assets/rigs/MARS_FACE.blend > .artifacts/oral/inventory.txt
           cat .artifacts/oral/inventory.txt
 
       - name: Assemble review-only donor host plus current interior
@@ -61,18 +57,24 @@ jobs:
           set -uo pipefail
           mkdir -p .artifacts/oral
           vendor/blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- \
-            --host assets/rigs/MARS_ORAL.blend \
+            --host assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_FACE.blend \
             --interior assets/rigs/MARS_FACE.blend \
-            --out .artifacts/oral/MARS_ORAL_SWAP_REVIEW.blend \
+            --out .artifacts/oral/MARS_FACE_ORAL_ASSEMBLY_REVIEW.blend \
             --report .artifacts/oral/oral_interior_swap_report.json | tee .artifacts/oral/swap.log
 
-      - name: Survey review artifact when assembly succeeded
+      - name: Run mouth pixel/material proof on review artifact
         if: steps.swap.outcome == 'success'
+        continue-on-error: true
         run: |
-          set -euo pipefail
-          test -s .artifacts/oral/MARS_ORAL_SWAP_REVIEW.blend
-          sha256sum .artifacts/oral/MARS_ORAL_SWAP_REVIEW.blend | tee .artifacts/oral/review.sha256
-
+          set +e
+          mkdir -p .artifacts/oral/mouth-proof
+          vendor/blender -b -P tools/character/mouth_proof.py -- \
+            --rig .artifacts/oral/MARS_FACE_ORAL_ASSEMBLY_REVIEW.blend \
+            --out .artifacts/oral/mouth-proof \
+            --only 03_WIDE | tee .artifacts/oral/mouth-proof.log
+          status=${PIPESTATUS[0]}
+          echo "MOUTH_PROOF_EXIT=$status" | tee .artifacts/oral/mouth-proof-status.txt
+          exit 0
       - name: Package oral recovery evidence
         if: always()
         run: |

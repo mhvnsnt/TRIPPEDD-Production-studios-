@@ -150,6 +150,16 @@ jobs:
           stat -c 'MARS_BYTES=%s' "$MARS_PATH" | tee .artifacts/evidence/mars.size.txt
           echo "MARS_CANONICAL: VERIFIED"
 
+      - name: Recover broad MARS oral skin artifacts (review only)
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/god-molecule/mars-oral-artifact-recovery
+          bash tools/character/run_mars_oral_artifact_recovery.sh \
+            assets/rigs/MARS_FACE.blend \
+            renders/_rig_measure/mouth_anatomy.json \
+            assets/variants/MARS_FACE_ORAL_SKIN_RECOVERY_REVIEW.blend \
+            .artifacts/god-molecule/mars-oral-artifact-recovery
+
       - name: Execute first God Molecule creative shot
         run: |
           set -euo pipefail

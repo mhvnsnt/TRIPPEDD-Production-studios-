@@ -1,41 +1,34 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-Read before visual, mesh, rig, facial, hair, oral, topology, or registration work.
+## GNM oral — executed once (2026-09-13)
 
-## Character toolchain registry
+Seated on physical run. Infra blockers fixed (exec bit, TRIPPEDD_PYTHON_BIN, mouth-frame schema, recess stats, pre-rig carve, linear vs sRGB ID render).
 
-Draft PR #65: `config/mars-character-toolchain.json`  
-Pointer on main: `docs/agent_handoff/CHARACTER_TOOLCHAIN.md`  
-**Draft only** — physical validation still pending per lane.
+**Next oral:** open-mouth pixel-truth threshold (rest closed is correct); then proof render + SHA. `--drop-bridges` only if residual sealed seam.
 
-## DONOR FIRST (oral)
+`docs/production/WHAT_IS_ACTUALLY_WRONG.md` · `docs/agent_handoff/ORAL_GNM_FIRST.md`
 
-```bash
-tools/character/provision_oral_donors.sh
-tools/character/run_mars_oral_repair.sh <mars.blend> <mouth-frame.json>
-```
+## Real OSS gaps for jagged tris / UVs
 
-Then, only if still sealed: `run_lip_seam_drop_bridges.sh` → `lip_seam_bridge_gate.py`.  
-Detail: `docs/agent_handoff/ORAL_GNM_FIRST.md`
+Pull and wire: **Instant Meshes**, **xatlas**. Rigify is already bundled — prefer it over hand sphere lids.
 
-No fifth hand densifier / straddler / shard finder as primary route.
+## Toolchain registry
+
+PR #65 draft: `config/mars-character-toolchain.json` + structural validator + CI. PHYSICAL_EXECUTION: NOT_CLAIMED by contract validators.
 
 ## Eye clearance
 
-`docs/agent_handoff/EYE_CLEARANCE_HANDOFF.md` — globe-class only; gate with `--verify-renders`.
+Parallel; globe-class gates on main.
 
 ## Live door
 
-`docs/ROCKET_LIVE_SESSION.md` — operationId + SHA required. PR #64 draft until runtime proven.
-
-## Evidence law
-
-UNKNOWN ≠ PASS. Pixels veto numerical PASS. Protected components are assets.
+operationId + SHA; no fake connected=authoritative.
 
 ## Queue
 
-1. Execute GNM oral chain on physical session (not more registry files).
-2. Residual `--drop-bridges` if measured.
-3. Eye clearance geom export → ladder → gate.
-4. Per-lane: provision → physical run → measure → pixels → SHA → promote (PR #65 order).
-5. Real `ROCKET_LIVE_SESSION_URL`; worker emits receipt shape.
+1. Fix oral pixel gate pose + colour space  
+2. Proof render / SHA / mouth_proof  
+3. Instant Meshes + xatlas provision lane  
+4. Rigify face (not hand sphere)  
+5. Eye clearance physical ladder  
+6. Real ROCKET_LIVE_SESSION_URL  

@@ -42,6 +42,8 @@ Every reply **must** include:
 
 If any of those are missing, Rocket must treat the result as **NON-AUTHORITATIVE**.
 
+Synthetic UI / State Bus demo events are **not** production truth. Session Health must poll real `/health`. Disconnect/degraded state comes from actual health responses, not timers.
+
 ## Mapped production tools (examples)
 
 ### measure
@@ -50,6 +52,7 @@ If any of those are missing, Rocket must treat the result as **NON-AUTHORITATIVE
 |--------|------|
 | Eye clearance ladder skeleton | `tools/character/eye_clearance_ladder.py` |
 | Penetration (globe-class pairs) | `tools/character/penetration_measure.py` |
+| Lip seam + drop bridges | `tools/character/run_lip_seam_drop_bridges.sh` → `split_lip_seam.py --drop-bridges` |
 | Oral / crater cell counts | existing oral survey gates on the session |
 
 ### run_gate
@@ -57,6 +60,7 @@ If any of those are missing, Rocket must treat the result as **NON-AUTHORITATIVE
 | Intent | Tool |
 |--------|------|
 | Eye clearance filled receipt | `tools/character/eye_clearance_gate.py` (`--verify-renders`) |
+| Lip seam bridges dropped | `tools/character/lip_seam_bridge_gate.py` |
 | Contact / penetration BLOCK | `tools/character/contact_gate.py` |
 | Linework eye authority | `tools/character/linework_eye_authority_gate.py` |
 | Blink regression | `tools/character/blink_regression_gate.py` |
@@ -64,7 +68,7 @@ If any of those are missing, Rocket must treat the result as **NON-AUTHORITATIVE
 
 ### render / publish
 
-Reopen exact PNG/MP4 bytes on the runtime. Record SHA-256. UI state is never evidence.
+Reopen exact PNG/MP4 bytes on the runtime. Record SHA-256. UI state is never evidence. **Pixels veto:** numerical/gate PASS cannot promote when proof pixels fail.
 
 ## Fail-closed rules for the door
 
@@ -82,14 +86,16 @@ Handoff: `docs/agent_handoff/EYE_CLEARANCE_HANDOFF.md`
 
 Flow: export geom (eyes present, globe-class) → ladder → penetration_measure → fill receipt → renders + SHA → `eye_clearance_gate.py`.
 
-## Oral contour-depth candidate
+## Oral: contour depth + drop bridges
 
-Candidate only: `assets/variants/MARS_FACE_CONTOUR_DEPTH_CANDIDATE.blend`  
-Not promoted until `mouth_proof` and pixel evidence both pass. Canonical remains untouched.
+- Contour-depth candidate only: `assets/variants/MARS_FACE_CONTOUR_DEPTH_CANDIDATE.blend`
+- Shards: `tools/character/run_lip_seam_drop_bridges.sh` (review-out default; never canonical by default)
+- Detail: `docs/agent_handoff/LIP_SEAM_DROP_BRIDGES.md`
+- Not promoted until mouth_proof + pixels + SHA. Canonical untouched.
 
 ## Bannon transfer
 
-The same door pattern applies later to Bannon builds:
+Same door pattern later for Bannon builds:
 
 ```text
 command → physical runtime → operationId → real artifact + SHA → QC → only then PASS

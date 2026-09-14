@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "name": "MARS canonical character open-source production stack",
+  "principle": "Use the strongest existing donor/tool for each layer, preserve prior artifacts, and promote only from physical evidence.",
+  "authority": {
+    "identity": "MARS_CANONICAL",
+    "production": "TRIPPEDD Production Studios",
+    "visualTruth": "rendered pixels",
+    "unknownIsNeverPass": true,
+    "visualFailOverridesNumericalPass": true
+  },
+  "protectedComponents": [
+    "eyes",
+    "eyelids",
+    "nostrils",
+    "upper_teeth",
+    "lower_teeth",
+    "upper_gums",
+    "lower_gums",
+    "tongue",
+    "mouth_sock",
+    "oral_cavity",
+    "dental_arch_registration",
+    "hair_locks",
+    "ears",
+    "shape_keys",
+    "working_motion"
+  ],
+  "tooling": {
+    "dcc": {
+      "tool": "Blender",
+      "role": ["mesh", "rig", "shape_keys", "animation", "render", "physical_execution"],
+      "status": "approved"
+    },
+    "facialRig": {
+      "tool": "tripo-face-rig",
+      "source": "https://github.com/mdj128/facial-animation",
+      "license": "MIT",
+      "role": ["measured_face_rig", "procedural_expressions", "lipsync_adapter", "facial_QA"],
+      "status": "candidate_for_physical_validation",
+      "constraint": "Must preserve MARS protected components and cannot replace canonical oral/eye donors without evidence."
+    },
+    "controlRig": {
+      "tool": "Rigify",
+      "role": ["production_control_rig", "meta_rig", "face_controls", "limb_controls", "exportable_deform_rig"],
+      "status": "approved"
+    },
+    "automaticRigging": {
+      "tool": "Pinocchio",
+      "source": "https://github.com/jingma-git/Pinocchio",
+      "license": "LGPL-library-MIT-demo",
+      "role": ["skeleton_fit", "automatic_attachment", "rigging_reference"],
+      "status": "approved_candidate",
+      "constraint": "Requires clean connected mesh and physical comparison against MARS anatomy before use."
+    },
+    "meshRepair": {
+      "tools": ["MeshLab", "PyMeshLab", "Blender"],
+      "role": ["non_manifold_detection", "duplicate_cleanup", "normal_validation", "repair", "remesh_when_authorized"],
+      "status": "approved"
+    },
+    "geometryProcessing": {
+      "tools": ["libigl", "CGAL", "trimesh", "Open3D", "scipy"],
+      "role": ["surface_measurement", "intersection_tests", "distance_fields", "topology_metrics", "correspondence"],
+      "status": "approved_candidate"
+    },
+    "retopology": {
+      "tools": ["Instant Meshes", "Blender"],
+      "role": ["quad_retopology", "field_orientation", "deformation_topology"],
+      "status": "approved_candidate",
+      "constraint": "Never globally remesh MARS merely to improve triangle counts; use protected local regions and compare protected components."
+    },
+    "uv": {
+      "tool": "xatlas",
+      "role": ["UV_unwrap", "charting", "packing"],
+      "status": "approved_candidate"
+    },
+    "landmarks": {
+      "tools": ["MediaPipe Face Landmarker", "owner_drawn_MARS_linework", "ICT-FaceKit"],
+      "role": ["semantic_registration", "facial_landmarks", "eye_reference", "correspondence"],
+      "status": "approved_with_MARS_owner_authority",
+      "constraint": "Owner-drawn MARS plates override generic landmark systems when they disagree with the visible anatomy."
+    },
+    "oral": {
+      "tools": ["GNM-derived oral donor", "run_mars_oral_repair.sh", "survey_oral_aperture.py", "lip_seam_drop_bridges"],
+      "role": ["oral_anatomy", "mouth_cavity", "teeth", "gums", "tongue", "mouth_visibility"],
+      "status": "canonical",
+      "order": ["GNM_donor", "oral_repair", "oral_visibility", "pixel_truth", "aperture_survey", "drop_bridges_only_if_measured", "proof_render", "SHA", "promotion"]
+    },
+    "faceQA": {
+      "tools": ["eye_clearance_ladder", "eye_clearance_gate", "facial_invariant_gate", "facial_expression_evidence_gate", "per_control_diagnostic", "OpenCV"],
+      "role": ["eye_clearance", "blink", "expression_motion", "semantic_region_motion", "pixel_validation"],
+      "status": "approved"
+    },
+    "renderProof": {
+      "tools": ["Blender Cycles/Eevee", "OpenCV", "SHA-256 receipts"],
+      "role": ["authoritative_pixels", "reopen_validation", "byte_identity", "promotion_evidence"],
+      "status": "approved"
+    }
+  },
+  "pipeline": [
+    "source_snapshot",
+    "semantic_registration",
+    "source_mesh_measurement",
+    "repair_only_if_measured",
+    "retopology_candidate",
+    "triangle_quality_QA",
+    "deformation_topology_QA",
+    "protected_component_diff",
+    "skinning_candidate",
+    "weight_QA",
+    "Rigify_control_rig",
+    "facial_rig_candidate",
+    "expression_and_blink_sweeps",
+    "deformation_QA",
+    "real_render",
+    "reopen_pixels",
+    "SHA256",
+    "receipt",
+    "promotion"
+  ],
+  "handoffRules": {
+    "sourceToRepair": "repair consumes a measured snapshot and writes a candidate; source remains immutable",
+    "repairToRetopo": "retopo consumes only a candidate whose repair gate passed",
+    "retopoToRig": "rig consumes topology that passed triangle/deformation QA",
+    "rigToAnimation": "animation consumes a rig whose weights and controls have rendered evidence",
+    "animationToPromotion": "promotion requires rendered sequence evidence, reopened bytes, SHA-256, and visual QC",
+    "oralException": "oral anatomy follows the existing GNM-first chain and is not replaced by generic face tools"
+  },
+  "failureStates": [
+    "UNKNOWN",
+    "NOT_IMPLEMENTED",
+    "IMAGE_UNAVAILABLE",
+    "QC_PENDING",
+    "VISUAL_FAIL",
+    "PROTECTED_COMPONENT_CHANGED",
+    "STALE_ARTIFACT",
+    "MISSING_RECEIPT",
+    "HASH_MISMATCH"
+  ]
+}

@@ -57,9 +57,14 @@ jobs:
           : > .artifacts/evidence/oss-python-install.log
           for package in OpenImageIO PyOpenColorIO MaterialX openassetio; do
             echo "=== $package ===" | tee -a .artifacts/evidence/oss-python-install.log
+            set +e
             python3 -m pip install --user "$package" 2>&1 | tee -a .artifacts/evidence/oss-python-install.log
             status=${PIPESTATUS[0]}
+            set -e
             echo "exit=$status" | tee -a .artifacts/evidence/oss-python-install.log
+            if [ "$status" -ne 0 ]; then
+              echo "OPTIONAL_OSS_PACKAGE_UNAVAILABLE: $package (continuing; this must not block Blender/oral work)" | tee -a .artifacts/evidence/oss-python-install.log
+            fi
           done
 
       - name: Install portable Blender

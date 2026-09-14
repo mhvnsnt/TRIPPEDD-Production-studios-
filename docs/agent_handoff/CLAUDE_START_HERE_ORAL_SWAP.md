@@ -1,46 +1,16 @@
-# CLAUDE — START HERE (oral)
+# CLAUDE — READ PRODUCTION RESET FIRST
 
-**When you come back online, read this first. Do not ask for drag-and-drop uploads.**
+**Owner decision:** `docs/agent_handoff/PRODUCTION_RESET_FROM_ORIGINAL.md`
 
-## Order
+Primary path is **no longer** endless repair of the progressive shredded mesh.
 
-**Stop fixing the shredded seam mesh. Good head stays. Swap only the interior.**
+1. Start from **original clean GLB** (e.g. `assets/source_models/MARS_LOD2.glb`)  
+2. Snapshot to `assets/variants/MARS_RESET_BASE.blend`  
+3. Place **GNM** oral + **owner linework** + **gnm_eyes**  
+4. Run gates + open-mouth pixels  
 
-## Repo
+The interior-swap script (`run_oral_interior_swap.sh`) is **optional** only when
+merging good interior onto a **clean host** — not to prolong seam-surgery on the
+corrupted lineage.
 
-`mhvnsnt/TRIPPEDD-Production-studios-` (main)
-
-## One command
-
-```bash
-chmod +x tools/character/run_oral_interior_swap.sh
-export TRIPPEDD_PYTHON_BIN="${TRIPPEDD_PYTHON_BIN:-./.trippedd_venv/bin/python}"
-tools/character/run_oral_interior_swap.sh
-```
-
-Prereqs validated first (`validate_oral_swap_prereqs.py`).  
-Output: `assets/variants/MARS_ORAL_SWAP_REVIEW.blend`
-
-## Assets
-
-| Role | Path |
-|------|------|
-| Host | `assets/rigs/MARS_ORAL.blend` (904b419) |
-| Fallback host | `assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend` |
-| Interior | `assets/rigs/MARS_FACE.blend` |
-
-## After swap
-
-Runner prints exact pixel-truth + survey commands. Required:
-
-1. `--pose open` pixel truth  
-2. survey v3 (world plane)  
-3. mouth_proof  
-4. reopen PNG + SHA  
-5. promote only with receipt  
-
-## Do not
-
-Ask for uploads · re-cut as primary · overwrite canonical · body-rig MARS (floating head)
-
-Detail: `docs/agent_handoff/ORAL_INTERIOR_SWAP.md`
+Do not ask for file uploads; assets are in `mhvnsnt/TRIPPEDD-Production-studios-`.

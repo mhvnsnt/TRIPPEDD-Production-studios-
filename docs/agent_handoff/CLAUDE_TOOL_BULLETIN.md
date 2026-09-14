@@ -1,26 +1,28 @@
 # CLAUDE / ROCKET TOOL BULLETIN
 
-## ⚠️ FIRST ACTION ON RESUME
+## ⚠️ PRODUCTION RESET (owner)
 
-Read and execute: **`docs/agent_handoff/CLAUDE_START_HERE_ORAL_SWAP.md`**
+**Read first:** `docs/agent_handoff/PRODUCTION_RESET_FROM_ORIGINAL.md`
 
-Stop shredded-seam surgery. Run interior swap (host `MARS_ORAL.blend` + interior `MARS_FACE.blend` → `assets/variants/MARS_ORAL_SWAP_REVIEW.blend`). No file-upload requests.
+Stop primary work on the corrupted progressive seam/boolean lineage.  
+**Restart from original clean model (e.g. MARS_LOD2.glb)** → place GNM → owner linework → ICT eyes → gates → pixels.
 
-## Oral status
+Salvage linework, GNM donors, eye donors, measurement contracts.  
+Do **not** keep fighting shredded weights on the old assembly as the main path.
 
-- GNM seated; tongue re-seat under upper incisal edge (candidate)  
-- Seam densify / residual-rounds rejected; drop-bridges cleanup only  
-- Protrusion survey v3: world plane; SURFACE = shell  
-- Swap script: `tools/character/swap_oral_interior_onto_donor_head.py`  
+## Oral swap (optional secondary)
 
-## Canon
-
-MARS = **floating head**. Face/oral/eyes/hair — not body rig as show premise.
+`CLAUDE_START_HERE_ORAL_SWAP.md` remains if a one-shot host+interior merge is useful  
+**onto a clean host** — not as license to continue seam surgery on the broken face.
 
 ## Queue
 
-1. **Run oral interior swap** (physical)  
-2. Open-mouth pixels + SHA + mouth_proof on review blend  
-3. Seam coverage only if still needed after swap  
-4. Eye clearance ladder  
-5. Live session receipts; PR #64/#65 draft  
+1. Snapshot original GLB → `assets/variants/MARS_RESET_BASE.blend`  
+2. GNM oral place on reset base  
+3. Linework + eyes + clearance  
+4. Open-mouth pixels + SHA  
+5. Move on to hair / EP01 / worlds when owner signs visual  
+
+## Canon
+
+MARS = floating head. Pixels veto. UNKNOWN ≠ PASS.

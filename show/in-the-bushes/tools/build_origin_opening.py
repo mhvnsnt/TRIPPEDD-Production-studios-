@@ -153,10 +153,17 @@ def motion_transform(block, frame):
     return ""
 
 
-def image(path: Path, transform="", opacity=1.0):
+def image(path: Path, transform="", opacity=1.0, x=0, y=0, width=1920, height=1080, preserve="none"):
     href = data_uri(path)
-    return (f'<image href="{href}" x="0" y="0" width="1920" height="1080" '
-            f'preserveAspectRatio="none" opacity="{opacity:.4f}" transform="{escape(transform)}"/>')
+    return (f'<image href="{href}" x="{x}" y="{y}" width="{width}" height="{height}" '
+            f'preserveAspectRatio="{preserve}" opacity="{opacity:.4f}" transform="{escape(transform)}"/>')
+
+
+def busch_image(path: Path, transform="", opacity=1.0):
+    # Busch artwork is authored in a square 800x800 canvas. Never stretch it
+    # to the 16:9 delivery frame; keep the character's silhouette intact at
+    # the alley exit where the transformation happens.
+    return image(path, transform, opacity, x=1280, y=460, width=560, height=560, preserve="xMidYMid meet")
 
 
 def scene_shot(scene, frame):
@@ -237,9 +244,9 @@ def main():
                 op = keyframe_value(ep, frame, "opacity", 0); layers.append(f'<circle cx="1580" cy="760" r="280" fill="none" stroke="#e8f6d5" stroke-width="18" opacity="{op:.3f}"/>')
         if shot["id"] in {"S10", "S11"}:
             b = find_block(blocks, "busch_wake_rise", frame)
-            layers.append(image(ASSET_MAP["busch_wake"], motion_transform(b, frame) if b else ""))
-        if shot["id"] == "S12": layers.append(image(ASSET_MAP["busch_look"]))
-        if shot["id"] == "S13" and frame < 864: layers.append(image(ASSET_MAP["busch_reaction"]))
+            layers.append(busch_image(ASSET_MAP["busch_wake"], motion_transform(b, frame) if b else ""))
+        if shot["id"] == "S12": layers.append(busch_image(ASSET_MAP["busch_look"]))
+        if shot["id"] == "S13" and frame < 864: layers.append(busch_image(ASSET_MAP["busch_reaction"]))
 
         svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
                f'<title>In the Bushes EP01 origin frame {frame:04d}</title>{"".join(layers)}</svg>')

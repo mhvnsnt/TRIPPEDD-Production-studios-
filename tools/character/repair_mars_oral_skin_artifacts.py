@@ -90,10 +90,16 @@ def main():
     # 1) seam influence: restore skin weights around the measured lip contour.
     # 2) oral interior: restore skin positions/weights where skin is appearing
     # inside the mouth, including the roof/tongue volume the screenshots expose.
-    xlo=min(float(A["cornerLeft"][0]),float(A["cornerRight"][0]))-extra
-    xhi=max(float(A["cornerLeft"][0]),float(A["cornerRight"][0]))+extra
-    zlo=min(float(p[2]) for p in frame["contours"]["lip_inner_lower"])-extra
-    zhi=max(float(p[2]) for p in frame["contours"]["lip_inner_upper"])+extra
+    # Bounds are evaluated in the measured MOUTH FRAME, not world XYZ.
+    # The scan is rolled, so mixing world z with frame-local z would select the
+    # wrong tissue and is exactly the kind of axis guess this lane replaces.
+    corner_local=[Fi@Vector(A["cornerLeft"]),Fi@Vector(A["cornerRight"])]
+    inner_lower_local=[Fi@Vector(p) for p in frame["contours"]["lip_inner_lower"]]
+    inner_upper_local=[Fi@Vector(p) for p in frame["contours"]["lip_inner_upper"]]
+    xlo=min(p.x for p in corner_local)-extra
+    xhi=max(p.x for p in corner_local)+extra
+    zlo=min(p.z for p in inner_lower_local)-extra
+    zhi=max(p.z for p in inner_upper_local)+extra
 
     indices=[]
     for i in range(len(t.data.vertices)):

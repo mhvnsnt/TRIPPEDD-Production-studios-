@@ -53,7 +53,7 @@ def main():
         mods=[m for m in ob.modifiers if m.type=="ARMATURE"]
         if not mods: mods=[ob.modifiers.new("MARS_ORAL_HOST_RIG","ARMATURE")]
         for m in mods: m.object=host_arm
-        if n=="MARS_TONGUE":
+        if ob.name=="MARS_TONGUE":
             if not ob.data.shape_keys or len(ob.data.shape_keys.key_blocks)<2: refuse("tongue expression keys missing")
             if not any(g.name=="tongue_root" for g in ob.vertex_groups): refuse("tongue_root missing")
         elif not any(g.name in ("head","jaw") for g in ob.vertex_groups): refuse(n+" required rigid jaw/head group missing")

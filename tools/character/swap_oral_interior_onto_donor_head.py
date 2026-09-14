@@ -1,111 +1,60 @@
 #!/usr/bin/env python3
-"""Clean oral assembly: good HOST head + good INTERIOR parts.
+"""Assemble the oral system without touching the face shell.
 
-Stop trying to heal a mesh whose lip seam / boolean already shredded weights
-and created non-manifold shards. Swap parts instead.
+Authority:
+  HOST = the pre-retopo MARS_FACE checkpoint. It carries the clean facial
+         surface, mouth opening/cavity, mouth sock, armature and skin weights.
+  INTERIOR = current MARS_FACE. It carries the improved GNM teeth/gums/tongue.
 
-Strategy (Gemini-aligned, repo assets):
-  1. Open HOST blend = known-good mouth cavity + lip topology + skin weights
-     (default: assets/rigs/MARS_ORAL.blend from commit 904b419 anchor, or
-     assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_ORAL.blend).
-  2. Delete ONLY interior oral meshes (teeth/gums/tongue) from HOST.
-     Do not touch head surface, cavity walls, mouth sock, or armature weights
-     on the shell.
-  3. Append INTERIOR objects from CURRENT blend (seated tongue, improved teeth).
-  4. Parent interior to HOST armature; rigid map teeth	o jaw / tongue	o tongue_*
-     when those bones exist.
-  5. Save REVIEW_ONLY blend. Canonical is never the default write target.
+This is deliberately NOT a lip-seam repair. It never cuts, booleans, remeshes,
+triangulates, welds, or reweights MARS_MESH. It replaces only the three
+standalone GNM oral interior objects:
+  MARS_TEETH_UPPER (teeth + gums)
+  MARS_TEETH_LOWER (teeth + gums)
+  MARS_TONGUE (tongue + expression keys)
 
-  blender -b -P tools/character/swap_oral_interior_onto_donor_head.py -- \\
-    --host assets/rigs/MARS_ORAL.blend \\
-    --interior assets/rigs/MARS_FACE.blend \\
-    --out assets/variants/MARS_ORAL_SWAP_REVIEW.blend
+MARS_MOUTH_SOCK stays with the host because the creator's known-good mouth sock
+is part of the protected opening/cavity assembly.
 
-Object-name patterns are loose; pass --list-only first on each file if unsure.
+The output is always review-only. Canonical assets are never written.
 """
-from __future__ import annotations
 
+from __future__ import annotations
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 
 import bpy
 
 
-def parse_args():
-    argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
-    ap = argparse.ArgumentParser(description=__doc__)
+ORAL_NAMES = ("MARS_TEETH_UPPER", "MARS_TEETH_LOWER", "MARS_TONGUE")
+PROTECTED_HOST = ("MARS_MESH", "MARS_MOUTH_SOCK", "MARS_RIG")
+
+
+def args():
+    argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+    ap = argparse.ArgumentParser()
     ap.add_argument(
         "--host",
-        default="assets/rigs/MARS_ORAL.blend",
-        help="Known-good head+cavity+weights blend",
+        default="assets/checkpoints/before-mouth-retopo/assets/rigs/MARS_FACE.blend",
     )
-    ap.add_argument(
-        "--interior",
-        default="assets/rigs/MARS_FACE.blend",
-        help="Current blend holding improved teeth/gums/tongue",
-    )
-    ap.add_argument(
-        "--out",
-        default="assets/variants/MARS_ORAL_SWAP_REVIEW.blend",
-        help="Review-only output (never default to canonical path)",
-    )
-    ap.add_argument(
-        "--list-only",
-        action="store_true",
-        help="Print mesh/armature names from host and interior, then exit",
-    )
+    ap.add_argument("--interior", default="assets/rigs/MARS_FACE.blend")
+    ap.add_argument("--out", default="assets/variants/MARS_FACE_ORAL_ASSEMBLY_REVIEW.blend")
     ap.add_argument(
         "--report",
         default="docs/evidence/mars/mouth/oral_interior_swap_report.json",
     )
+    ap.add_argument("--list-only", action="store_true")
     return ap.parse_args(argv)
 
 
-def die(msg: str) -> None:
-    print(f"\n*** REFUSED: {msg}\n", flush=True)
-    sys.exit(1)
+def refuse(msg: str) -> None:
+    print("\n*** REFUSED: " + msg, flush=True)
+    raise SystemExit(45)
 
 
-# Host: remove these (interior only). Sock/cavity walls stay with the good head.
-INTERIOR_DELETE = re.compile(
-    r"(TEETH|TOOTH|GUM|TONGUE|ORAL_TEETH|ORAL_GUM|ORAL_TONGUE)",
-    re.I,
-)
-# Never delete these from host even if name partially matches
-HOST_KEEP = re.compile(
-    r"(MESH|SURFACE|CANONICAL|SOCK|CAVITY|VOID|SHELL|HEAD|FACE|RIG|ARMATURE)",
-    re.I,
-)
-# Append from interior
-INTERIOR_HARVEST = re.compile(
-    r"(TEETH|TOOTH|GUM|TONGUE|ORAL_TEETH|ORAL_GUM|ORAL_TONGUE)",
-    re.I,
-)
-
-
-def is_interior_delete(name: str) -> bool:
-    if not INTERIOR_DELETE.search(name):
-        return False
-    # Keep sock/cavity/host surface
-    if re.search(r"(SOCK|CAVITY|VOID|SURFACE|MESH|CANONICAL)", name, re.I):
-        if not re.search(r"(TEETH|TOOTH|GUM|TONGUE)", name, re.I):
-            return False
-    return True
-
-
-def is_harvest(name: str) -> bool:
-    if not INTERIOR_HARVEST.search(name):
-        return False
-    if re.search(r"(SOCK|CAVITY|VOID|SURFACE|MESH|CANONICAL|REPAIRED_SURFACE)", name, re.I):
-        if not re.search(r"(TEETH|TOOTH|GUM|TONGUE)", name, re.I):
-            return False
-    return True
-
-
-def scene_inventory():
+def inventory():
     rows = []
     for ob in bpy.data.objects:
         rows.append(
@@ -114,134 +63,199 @@ def scene_inventory():
                 "type": ob.type,
                 "verts": len(ob.data.vertices) if ob.type == "MESH" and ob.data else None,
                 "parent": ob.parent.name if ob.parent else None,
+                "modifiers": [
+                    {"type": m.type, "object": m.object.name if getattr(m, "object", None) else None}
+                    for m in ob.modifiers
+                ],
+                "shapeKeys": (
+                    [k.name for k in ob.data.shape_keys.key_blocks]
+                    if ob.type == "MESH" and ob.data and ob.data.shape_keys
+                    else []
+                ),
             }
         )
     return rows
 
 
-def find_armature():
-    for name in ("MARS_RIG", "RIG", "Armature"):
+def assert_host(host: Path):
+    for p in PROTECTED_HOST:
+        if bpy.data.objects.get(p) is None:
+            refuse("host is not the required pre-retopo MARS_FACE: missing " + p)
+    if bpy.data.objects["MARS_MESH"].type != "MESH":
+        refuse("MARS_MESH is not a mesh")
+    if bpy.data.objects["MARS_RIG"].type != "ARMATURE":
+        refuse("MARS_RIG is not an armature")
+    # A clean host must be the 23,830-vertex pre-retopo surface, not the
+    # 27,865-vertex shredded post-split surface.
+    hv = len(bpy.data.objects["MARS_MESH"].data.vertices)
+    if hv != 23830:
+        refuse("host MARS_MESH vertex count is %d; expected clean 23,830 checkpoint surface" % hv)
+
+
+def source_object_names(interior: Path):
+    with bpy.data.libraries.load(str(interior), link=False) as (src, dst):
+        available = set(src.objects)
+    missing = [n for n in ORAL_NAMES if n not in available]
+    if missing:
+        refuse("current interior is missing exact GNM objects: " + ", ".join(missing))
+    return available
+
+
+def delete_host_interior():
+    deleted = []
+    for name in ORAL_NAMES:
         ob = bpy.data.objects.get(name)
-        if ob and ob.type == "ARMATURE":
-            return ob
-    arms = [o for o in bpy.data.objects if o.type == "ARMATURE"]
-    return arms[0] if arms else None
+        if ob is not None:
+            deleted.append(
+                {
+                    "name": name,
+                    "verts": len(ob.data.vertices) if ob.type == "MESH" and ob.data else None,
+                    "shapeKeys": (
+                        len(ob.data.shape_keys.key_blocks)
+                        if ob.type == "MESH" and ob.data and ob.data.shape_keys
+                        else 0
+                    ),
+                }
+            )
+            bpy.data.objects.remove(ob, do_unlink=True)
+    return deleted
 
 
-def parent_to_armature(ob, arm):
-    if arm is None:
-        return
-    ob.parent = arm
-    ob.parent_type = "OBJECT"
-    # Prefer bone parenting for rigid dental / tongue when bones exist
-    bones = arm.data.bones if arm.data else None
-    if not bones:
-        return
-    n = ob.name.upper()
-    bone_name = None
-    if "TONGUE" in n:
-        for cand in ("tongue_root", "tongue_mid", "tongue", "jaw"):
-            if cand in bones:
-                bone_name = cand
-                break
-    elif "TEETH" in n or "TOOTH" in n or "GUM" in n:
-        if "LOWER" in n or "_LO" in n or "BOT" in n:
-            for cand in ("jaw", "teeth_lower", "lower_teeth"):
-                if cand in bones:
-                    bone_name = cand
-                    break
+def append_current_interior(interior: Path, host_arm):
+    with bpy.data.libraries.load(str(interior), link=False) as (src, dst):
+        dst.objects = list(ORAL_NAMES)
+
+    appended = []
+    for ob in dst.objects:
+        if ob is None:
+            refuse("Blender failed to append one of the exact oral objects")
+        if ob.type != "MESH":
+            refuse("%s is not a mesh" % ob.name)
+
+        # The object is already positioned in the current face. Preserve its
+        # world transform exactly while changing only its rig owner.
+        world = ob.matrix_world.copy()
+        ob.parent = host_arm
+        ob.parent_type = "OBJECT"
+        ob.matrix_world = world
+
+        # Rebind every Armature modifier to the HOST rig. Never let an object
+        # retain a pointer to an armature from the interior source file.
+        arm_mods = [m for m in ob.modifiers if m.type == "ARMATURE"]
+        if not arm_mods:
+            m = ob.modifiers.new("MARS_ORAL_HOST_RIG", "ARMATURE")
+            arm_mods = [m]
+        for m in arm_mods:
+            m.object = host_arm
+
+        # The GNM meshes must retain their source vertex groups/shape keys.
+        if ob.name == "MARS_TONGUE":
+            keys = ob.data.shape_keys.key_blocks if ob.data.shape_keys else []
+            if len(keys) < 2:
+                refuse("current tongue lost its expression library")
+            if not any(g.name == "tongue_root" for g in ob.vertex_groups):
+                refuse("current tongue has no tongue_root vertex group")
         else:
-            for cand in ("head", "teeth_upper", "upper_teeth", "spine.006"):
-                if cand in bones:
-                    bone_name = cand
-                    break
-    if bone_name:
-        ob.parent_type = "BONE"
-        ob.parent_bone = bone_name
+            if not any(g.name == "jaw" for g in ob.vertex_groups):
+                refuse("%s has no jaw vertex group" % ob.name)
+
+        appended.append(
+            {
+                "name": ob.name,
+                "verts": len(ob.data.vertices),
+                "shapeKeys": len(ob.data.shape_keys.key_blocks) if ob.data.shape_keys else 0,
+                "worldMatrixPreserved": True,
+                "armature": host_arm.name,
+                "materialSlots": [m.name if m else None for m in ob.data.materials],
+            }
+        )
+    return appended
 
 
 def main():
-    a = parse_args()
+    a = args()
     host = Path(a.host).resolve()
     interior = Path(a.interior).resolve()
     out = Path(a.out).resolve()
-    if "assets/rigs/MARS_FACE.blend" in str(out) or out.name == "MARS_FACE.blend":
-        die("refusing to write swap result over canonical MARS_FACE.blend — use variants/")
+    report_path = Path(a.report).resolve()
 
     if not host.is_file():
-        die(f"host not found: {host}")
+        refuse("host not found: " + str(host))
     if not interior.is_file():
-        die(f"interior not found: {interior}")
+        refuse("interior not found: " + str(interior))
+    if out.resolve() in (host.resolve(), interior.resolve()):
+        refuse("review output must not overwrite an input blend")
+    if out.name in {"MARS_FACE.blend", "MARS_ORAL.blend"}:
+        refuse("review output must not use a canonical asset filename")
 
-    # --- inventory mode: load each file briefly
     if a.list_only:
-        report = {"host": str(host), "interior": str(interior), "host_objects": [], "interior_objects": []}
+        report = {"host": str(host), "interior": str(interior)}
         bpy.ops.wm.open_mainfile(filepath=str(host))
-        report["host_objects"] = scene_inventory()
+        report["host_objects"] = inventory()
         bpy.ops.wm.open_mainfile(filepath=str(interior))
-        report["interior_objects"] = scene_inventory()
+        report["interior_objects"] = inventory()
         print(json.dumps(report, indent=2))
-        return
+        return 0
 
-    # 1) Open host (good cavity + weights)
     bpy.ops.wm.open_mainfile(filepath=str(host))
-    host_before = scene_inventory()
-    arm = find_armature()
+    assert_host(host)
+    host_arm = bpy.data.objects["MARS_RIG"]
+    host_before = inventory()
 
-    # 2) Delete interior-only meshes from host
-    deleted = []
-    for ob in list(bpy.data.objects):
-        if ob.type != "MESH":
-            continue
-        if is_interior_delete(ob.name):
-            deleted.append(ob.name)
-            bpy.data.objects.remove(ob, do_unlink=True)
+    # Check the source names before mutating the host.
+    source_object_names(interior)
 
-    # 3) Append harvest objects from interior blend
-    with bpy.data.libraries.load(str(interior), link=False) as (data_from, data_to):
-        want = [n for n in data_from.objects if is_harvest(n)]
-        data_to.objects = want
+    deleted = delete_host_interior()
+    appended = append_current_interior(interior, host_arm)
 
-    appended = []
-    for ob in data_to.objects:
-        if ob is None:
-            continue
-        # Link into scene
-        if ob.name not in bpy.context.scene.collection.objects:
-            bpy.context.scene.collection.objects.link(ob)
-        parent_to_armature(ob, arm)
-        appended.append(ob.name)
+    # The protected host objects must still be exactly the same identities.
+    for name in PROTECTED_HOST:
+        if bpy.data.objects.get(name) is None:
+            refuse("protected host object disappeared: " + name)
 
-    if not appended:
-        die(
-            "no interior objects harvested — run with --list-only and pass matching names. "
-            f"interior file={interior}"
-        )
+    # No accidental duplicates. This catches the old MARS_ORAL-host approach
+    # where embedded oral geometry survived and new teeth were simply stacked on.
+    for name in ORAL_NAMES:
+        matches = [o for o in bpy.data.objects if o.name == name]
+        if len(matches) != 1:
+            refuse("oral object count is not exactly one for " + name)
 
     out.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(out))
 
     report = {
-        "schema": "god-molecule.oral-interior-swap.v1",
+        "schema": "god-molecule.oral-interior-swap.v2",
         "status": "REVIEW_ONLY",
         "host": str(host),
         "interior": str(interior),
         "out": str(out),
-        "deleted_from_host": deleted,
-        "appended_from_interior": appended,
-        "armature": arm.name if arm else None,
-        "host_object_count_before": len(host_before),
-        "note": (
-            "Host keeps cavity/sock/shell/weights. Interior teeth/gums/tongue replaced. "
-            "Do not promote without open-mouth pixels + SHA + mouth_proof."
-        ),
-        "authority": "docs/evidence/MARS_ORAL_KNOWN_GOOD_RECOVERY.json",
+        "hostSurface": {
+            "object": "MARS_MESH",
+            "vertices": len(bpy.data.objects["MARS_MESH"].data.vertices),
+            "preserved": True,
+            "topologyMutated": False,
+            "booleansRun": False,
+            "remeshRun": False,
+            "weldRun": False,
+        },
+        "protectedHostObjects": list(PROTECTED_HOST),
+        "deletedInterior": deleted,
+        "appendedInterior": appended,
+        "hostArmature": "MARS_RIG",
+        "currentOralSourceObjects": list(ORAL_NAMES),
+        "oralObjectCount": {n: sum(1 for o in bpy.data.objects if o.name == n) for n in ORAL_NAMES},
+        "promotionBlockedUntil": [
+            "open-mouth rendered pixels",
+            "profile silhouette check",
+            "mouth_proof material survey",
+            "visual human review",
+        ],
+        "reason": "preserve the clean pre-retopo face/cavity/weights and replace only improved GNM oral interior",
     }
-    rep = Path(a.report)
-    rep.parent.mkdir(parents=True, exist_ok=True)
-    rep.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
-    print(f"ORAL_INTERIOR_SWAP: REVIEW_ONLY -> {out}")
+    print("ORAL_INTERIOR_SWAP: REVIEW_ONLY -> " + str(out))
 
 
 if __name__ == "__main__":

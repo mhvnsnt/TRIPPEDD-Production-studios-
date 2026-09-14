@@ -105,9 +105,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .artifacts/original-glb-candidate/recovery-render
-          vendor/blender -b -P tools/character/render_original_glb_oral_candidate.py -- \\
-            --rig .artifacts/original-glb-candidate/MARS_FACE_ORIGINAL_GLB_ORAL_REVIEW.blend \\
-            --out .artifacts/original-glb-candidate/recovery-render
+          vendor/blender -b -P tools/character/render_original_glb_oral_candidate.py -- --rig .artifacts/original-glb-candidate/MARS_FACE_ORIGINAL_GLB_ORAL_REVIEW.blend --out .artifacts/original-glb-candidate/recovery-render
           cat .artifacts/original-glb-candidate/recovery-render/oral_candidate_structural_audit.json
 
       - name: Materialize committed mouth measurement inputs

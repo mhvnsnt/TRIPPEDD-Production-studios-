@@ -1,0 +1,66 @@
+name: In the Bushes Render Proof
+
+on:
+  push:
+    branches: [in-bushes-opening-assets]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'show/in-the-bushes/**'
+      - '.github/workflows/in-the-bushes-render.yml'
+  workflow_dispatch:
+
+jobs:
+  render-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install open-source render dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends librsvg2-bin ffmpeg
+
+      - name: Validate story and timing contract
+        run: python3 show/in-the-bushes/tools/validate_origin_opening.py
+
+      - name: Validate procedural render source
+        run: python3 show/in-the-bushes/tools/test_render_source.py
+
+      - name: Python syntax check
+        run: |
+          python3 -m py_compile \
+            show/in-the-bushes/tools/build_origin_opening.py \
+            show/in-the-bushes/tools/build_origin_opening_character.py \
+            show/in-the-bushes/tools/teen_performance.py \
+            show/in-the-bushes/tools/render_preflight.py
+
+      - name: Render 25-frame preview smoke
+        run: python3 show/in-the-bushes/tools/build_origin_opening.py --preview
+
+      - name: Render full 37-second opening
+        run: python3 show/in-the-bushes/tools/build_origin_opening.py
+
+      - name: Media QC with FFprobe
+        shell: bash
+        run: |
+          set -euo pipefail
+          VIDEO="show/in-the-bushes/build/origin-opening-v2/in-the-bushes-ep01-origin-opening-v2.mp4"
+          test -s "$VIDEO"
+          FRAMES=$(ffprobe -v error -select_streams v:0 -count_frames -show_entries stream=nb_read_frames -of csv=p=0 "$VIDEO")
+          FPS=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of csv=p=0 "$VIDEO")
+          SIZE=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0:s=x "$VIDEO")
+          echo "frames=$FRAMES fps=$FPS size=$SIZE"
+          test "$FRAMES" = "888"
+          test "$FPS" = "24/1"
+          test "$SIZE" = "1920x1080"
+
+      - name: Upload verified render proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: in-the-bushes-ep01-origin-opening-v2
+          path: show/in-the-bushes/build/origin-opening-v2/in-the-bushes-ep01-origin-opening-v2.mp4
+          if-no-files-found: error
+          retention-days: 7

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "sequence": "EP01-origin-opening-v3-alley-police",
+  "schemaVersion": 3,
+  "sequence": "EP01-origin-opening-v4-alley-police",
   "fps": 24,
   "coordinateSpace": "1920x1080",
   "principle": "Animate the alley geography, teen movement, police-light pressure, beer objects, Busch and camera independently so the scene reads as a moving comedy sequence rather than a slideshow.",
@@ -27,9 +27,9 @@
     {"id":"decision_hold","frames":[438,455],"keyframes":[{"frame":438,"event":"commit"},{"frame":455,"event":"go"}]},
     {"id":"run_out_of_alley","frames":[456,492],"path":{"type":"quadratic","p0":[1180,650],"p1":[1380,600],"p2":[1510,670]},"rotation":[0,5],"easing":"easeInCubic"},
     {"id":"throw_arc_spin","frames":[480,520],"path":{"type":"quadratic","p0":[1350,560],"p1":[1510,260],"p2":[1660,590]},"rotation":[0,250],"easing":"easeInOutCubic"},
-    {"id":"can_bounce","frames":[510,535],"path":{"type":"piecewise","points":[[1550,570],[1610,650],[1660,620],[1710,660]]},"rotation":[0,140,260,360],"easing":"bounce"},
+    {"id":"can_bounce","frames":[510,535],"path":{"type":"piecewise","points":[[1550,570],[1610,650],[1660,620],[1710,660]]},"rotation":[0,140,260,360],"easing":"easeOutBack"},
     {"id":"liquid_spill","frames":[505,539],"path":{"type":"gravity","p0":[1650,580],"p1":[1660,790]},"scale":[0.2,1.1],"easing":"easeIn"},
-    {"id":"branch_recoil","frames":[514,526],"rotation":[0,-12,9,0],"easing":"impact"},
+    {"id":"branch_recoil","frames":[514,526],"rotation":[0,-12,9,0],"easing":"easeOutBack"},
     {"id":"teen_flee","frames":[520,610],"path":{"type":"piecewise","points":[[1500,690],[1280,650],[1000,620],[720,610]]},"easing":"easeInCubic"},
     {"id":"liquid_drip_loop","frames":[540,590],"keyframes":[{"frame":540,"scale":0.2},{"frame":555,"scale":0.55},{"frame":575,"scale":0.85},{"frame":590,"scale":1.0}]},
     {"id":"foliage_twitch","frames":[556,585],"keyframes":[{"frame":556,"rotation":0},{"frame":562,"rotation":2},{"frame":568,"rotation":-2},{"frame":577,"rotation":1},{"frame":585,"rotation":0}]},
@@ -45,10 +45,12 @@
     {"id":"title_cut","frames":[864,887],"keyframes":[{"frame":864,"event":"hold"},{"frame":887,"event":"hard_cut"}]}
   ],
   "renderRules":[
-    "Use separate layers for alley background, teens, beer props, police-light FX, Busch, transformation FX and title.",
-    "The alley exit and bush must remain spatially consistent across S01-S09.",
-    "Interpolate position and rotation between authored keyframes; do not rely on constant zoom-only motion.",
-    "Preserve dialogue holds and the causal order: police arrival -> run/hide -> beer realization -> title phrase -> run out of alley -> throw.",
+    "Use separate layers for alley background, procedural teens, beer props, police-light FX, Busch, transformation FX and title.",
+    "The alley exit and bush remain spatially consistent across S01-S09.",
+    "Interpolate authored keyframes; use path/easing motion for physical travel and staggered performer timing for acting.",
+    "Do not use constant zoom as the primary motion language.",
+    "Preserve dialogue holds and causal order: police arrival -> run/hide -> beer realization -> title phrase -> run out of alley -> throw.",
+    "The teens must physically exit the alley before the beer throw begins.",
     "Keep Busch's look-away separate from the title transition.",
     "Keep all prop artwork generic and unbranded."
   ]

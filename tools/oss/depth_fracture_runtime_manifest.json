@@ -1,0 +1,31 @@
+{
+  "$schema": "trippedd.oss-depth-fracture-runtime/v1",
+  "canonical": {
+    "source": "MARS_source.glb",
+    "mutationAllowed": false
+  },
+  "depth": {
+    "upstreamPath": "third_party/oss/MiDaS",
+    "upstreamCommit": "454597711a62eabcbf7d1e89f3fb9f569051ac9b",
+    "authority": "DERIVATIVE_DEPTH_EVIDENCE",
+    "inputMode": "single_image",
+    "outputKind": "relative_depth",
+    "weights": "external_provenance_required",
+    "receipt": "trippedd.oss-physics-evidence/v1"
+  },
+  "fracture": {
+    "upstreamPath": "third_party/oss/shatter-it",
+    "upstreamCommit": "1b7917e309dc3b60b86f0b834170cb196993cc6b",
+    "authority": "DERIVATIVE_FRACTURE_OUTPUT",
+    "minimumBlender": "5.0",
+    "inputPolicy": "duplicate_or_derived_object_only",
+    "determinismRequired": true,
+    "collisionSmokeTestRequired": true,
+    "receipt": "trippedd.oss-physics-evidence/v1"
+  },
+  "promotion": {
+    "gate": "tools/oss/depth_fracture_gate.py",
+    "unknownNeverPass": true,
+    "actualPixelsRequired": true
+  }
+}

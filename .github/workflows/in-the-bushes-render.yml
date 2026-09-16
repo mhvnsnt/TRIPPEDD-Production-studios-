@@ -1,5 +1,4 @@
 name: In the Bushes Render Proof
-
 on:
   push:
     branches: [in-bushes-opening-assets]
@@ -9,7 +8,6 @@ on:
       - 'show/in-the-bushes/**'
       - '.github/workflows/in-the-bushes-render.yml'
   workflow_dispatch:
-
 jobs:
   render-proof:
     runs-on: ubuntu-latest
@@ -17,32 +15,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Install open-source render dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends librsvg2-bin ffmpeg
-
       - name: Validate story and timing contract
         run: python3 show/in-the-bushes/tools/validate_origin_opening.py
-
       - name: Validate procedural render source
         run: python3 show/in-the-bushes/tools/test_render_source.py
-
       - name: Python syntax check
         run: |
           python3 -m py_compile \
             show/in-the-bushes/tools/build_origin_opening.py \
             show/in-the-bushes/tools/build_origin_opening_character.py \
-            show/in-the-bushes/tools/teen_performance.py \
+            show/in-the-bushes/tools/teen_performance_v2.py \
             show/in-the-bushes/tools/render_preflight.py
-
       - name: Render 25-frame preview smoke
         run: python3 show/in-the-bushes/tools/build_origin_opening.py --preview
-
       - name: Render full 37-second opening
         run: python3 show/in-the-bushes/tools/build_origin_opening.py
-
       - name: Media QC with FFprobe
         shell: bash
         run: |
@@ -56,7 +47,6 @@ jobs:
           test "$FRAMES" = "888"
           test "$FPS" = "24/1"
           test "$SIZE" = "1920x1080"
-
       - name: Upload verified render proof
         uses: actions/upload-artifact@v4
         with:

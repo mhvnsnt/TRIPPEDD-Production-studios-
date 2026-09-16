@@ -31,11 +31,13 @@ def load_rig():
 def test_active_render_graph():
     plan = json.loads(RENDER_PATH.read_text(encoding="utf-8"))
     builder_text = BUILDER_PATH.read_text(encoding="utf-8")
+    active_assets = [asset for shot in plan["shots"] for asset in shot.get("assets", [])]
     assert plan["activeBuilder"].endswith("build_origin_opening_character.py")
     assert plan["characterSource"].endswith("teen_performance.py")
-    text = RENDER_PATH.read_text(encoding="utf-8")
-    assert "teen-group-origin-states.svg" not in text
-    assert "teen-character-design-v1.svg" in text
+    # The archive-only sheet may be mentioned in documentation/edit rules; it
+    # must not appear in an active shot asset list or builder implementation.
+    assert "teen-group-origin-states.svg" not in active_assets
+    assert "teen-character-design-v1.svg" in active_assets
     assert "teen-group-origin-states.svg" not in builder_text
     assert "teen-character-design-v1.svg" in builder_text
     assert "PERFORMANCE_LAYER = load_teen_performance()" in builder_text

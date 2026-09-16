@@ -149,7 +149,12 @@ def motion_transform(block, frame):
     if name == "busch_wake_rise":
         y = lerp(-block["position"][1], 0, e)
         s = lerp(block["scale"][0], block["scale"][1], e)
-        return f"translate(0 {y:.2f}) scale({s:.3f})"
+        # The Busch asset is placed at x=1280,y=460 in a 560x560 box. Apply
+        # rise/scale around that box's center so the bush grows in place
+        # instead of drifting toward the SVG origin as it wakes.
+        cx, cy = 1560, 740
+        return (f"translate({cx} {cy}) translate(0 {y:.2f}) scale({s:.3f}) "
+                f"translate(-{cx} -{cy})")
     return ""
 
 
@@ -253,16 +258,24 @@ def main():
         svg_path = svg_dir / f"frame-{frame:04d}.svg"; svg_path.write_text(svg, encoding="utf-8")
         png_path = png_dir / f"frame-{frame:04d}.png"
         if raster.endswith("rsvg-convert"):
-            cmd = [raster, "-w", str(720 if args.preview else width), "-h", str(405 if args.preview else height), "-o", str(png_path), str(svg_path)]
+            cmd = [raster, "-w", str(width), "-h", str(height), str(svg_path), "-o", str(png_path)]
         else:
-            cmd = [raster, "-background", "none", str(svg_path), str(png_path)]
-        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+            cmd = [raster, "-background", "none", "-density", "96", str(svg_path), str(png_path)]
+        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if args.preview and frame >= 24:
+            break
 
-    output = out / ("preview_720p24.mp4" if args.preview else "master_1080p24.mp4")
-    scale = "720:405" if args.preview else "1920:1080"
-    subprocess.run([ffmpeg, "-y", "-framerate", str(fps), "-i", str(png_dir / "frame-%04d.png"), "-vf", f"scale={scale}:flags=lanczos", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(output)], check=True)
-    print(output)
-    if not args.keep_svg: shutil.rmtree(svg_dir)
+    end_frame = min(frames - 1, 24) if args.preview else frames - 1
+    mp4 = out / "in-the-bushes-ep01-origin-opening-v2.mp4"
+    subprocess.run([
+        ffmpeg, "-y", "-framerate", str(fps), "-start_number", "0",
+        "-i", str(png_dir / "frame-%04d.png"), "-frames:v", str(end_frame + 1),
+        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(mp4)
+    ], check=True)
+    if not args.keep_svg:
+        shutil.rmtree(svg_dir, ignore_errors=True)
+    print(mp4)
 
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    main()

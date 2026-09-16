@@ -30,10 +30,10 @@ jobs:
             show/in-the-bushes/tools/build_origin_opening_character.py \
             show/in-the-bushes/tools/teen_performance_v2.py \
             show/in-the-bushes/tools/render_preflight.py
-      - name: Render 25-frame preview smoke
-        run: python3 show/in-the-bushes/tools/build_origin_opening.py --preview
-      - name: Render full 37-second opening
-        run: python3 show/in-the-bushes/tools/build_origin_opening.py
+      - name: Render 25-frame preview smoke through active builder
+        run: python3 show/in-the-bushes/tools/build_origin_opening_character.py --preview
+      - name: Render full 37-second opening through active builder
+        run: python3 show/in-the-bushes/tools/build_origin_opening_character.py
       - name: Media QC with FFprobe
         shell: bash
         run: |

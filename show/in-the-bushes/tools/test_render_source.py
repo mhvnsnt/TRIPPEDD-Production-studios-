@@ -75,8 +75,21 @@ def test_pose_interpolation_changes_geometry():
     assert "translate(950.00 450.00)" in a
 
 
+def test_busch_source_preserves_organic_aspect_ratio():
+    builder_text = BUILDER_PATH.read_text(encoding="utf-8")
+    assert "def busch_image(" in builder_text
+    assert 'width=560, height=560, preserve="xMidYMid meet"' in builder_text
+    assert 'x=1280, y=460' in builder_text
+    assert "keep the character's silhouette intact" in builder_text
+
+
 if __name__ == "__main__":
-    tests = [test_active_render_graph, test_procedural_layer_is_valid_svg, test_pose_interpolation_changes_geometry]
+    tests = [
+        test_active_render_graph,
+        test_procedural_layer_is_valid_svg,
+        test_pose_interpolation_changes_geometry,
+        test_busch_source_preserves_organic_aspect_ratio,
+    ]
     for test in tests:
         test()
         print(f"PASS {test.__name__}")

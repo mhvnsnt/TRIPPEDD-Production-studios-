@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[3]
 SCENE = ROOT / "show/in-the-bushes/animatic/ep01-origin-opening-v2.scene.json"
 MOTION = ROOT / "show/in-the-bushes/animatic/ep01-origin-opening-v2.motion-blocks.json"
 RENDER = ROOT / "show/in-the-bushes/animatic/ep01-origin-opening-v2.render-plan.json"
+EXPECTED_SEQUENCE = "EP01-origin-opening-v4-alley-police"
 
 
 def load(path):
@@ -30,6 +31,10 @@ def main():
         fail("origin must remain 888 frames at 24fps")
     if scene["targetDurationSeconds"] != 37:
         fail("scene target duration drifted from 37 seconds")
+    if scene.get("sequence") != EXPECTED_SEQUENCE or motion.get("sequence") != EXPECTED_SEQUENCE or render.get("sequence") != EXPECTED_SEQUENCE:
+        fail("scene, motion blocks, and render plan must share the v4 sequence identifier")
+    if scene.get("schemaVersion") < 4 or motion.get("schemaVersion") < 3 or render.get("schemaVersion") < 4:
+        fail("origin production metadata is older than the active v4 pipeline")
     if render["totalFrames"] != scene["totalFrames"] or render["resolution"] != [1920, 1080]:
         fail("render plan no longer matches scene master")
 
@@ -62,7 +67,7 @@ def main():
     # Causal ordering is the most important story invariant.
     if start_end("police_light_sweep")[0] >= start_end("teen_panic")[0]:
         fail("police presence must precede panic")
-    if start_end("run_out_of_alley")[0] <= start_end("point_bush")[1] and start_end("run_out_of_alley")[0] < 456:
+    if start_end("run_out_of_alley")[0] < 456:
         fail("run-out cannot begin before the title phrase/decision")
     if start_end("throw_arc_spin")[0] < 480:
         fail("beer throw begins too early")
@@ -81,6 +86,7 @@ def main():
             fail(f"render plan incomplete for {shot['id']}")
     print("PASS: In the Bushes EP01 origin opening continuity is valid.")
     print("PASS: 13 shots / 888 frames / 37.0s / 1920x1080 / 24fps")
+    print("PASS: v4 scene/motion/render metadata is synchronized")
     print("PASS: police -> hide -> beer realization -> IN THE BUSHES -> run out -> throw -> transformation -> Busch -> look-away -> title")
 
 

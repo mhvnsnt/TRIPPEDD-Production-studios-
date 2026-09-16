@@ -1,14 +1,14 @@
 {
   "schemaVersion": 4,
   "show": "In the Bushes",
-  "sequence": "EP01-origin-opening-v4-alley-police",
+  "sequence": "EP01-origin-opening-v3-alley-police",
   "fps": 24,
   "resolution": [1920,1080],
   "totalFrames": 888,
   "durationSeconds": 37,
   "backend": {"primary2d":"OpenToonz","characterPerformance":"procedural_svg_cutout","media":"FFmpeg","qc":"FFprobe"},
   "activeBuilder": "show/in-the-bushes/tools/build_origin_opening_character.py",
-  "characterSource": "show/in-the-bushes/tools/teen_performance.py",
+  "characterSource": "show/in-the-bushes/tools/teen_performance_v2.py",
   "shots": [
     {"id":"S01","frames":[0,83],"assets":["ep01-opening-alley.svg","teen-character-design-v1.svg","generic-beer-throw-kit.svg"],"camera":["wide_alley_hold","micro_drift"],"motion":["teen_hang_out","can_handoff","environment_micro_motion"],"audio":["night_ambience","teen_murmur","can_crack"]},
     {"id":"S02","frames":[84,143],"assets":["ep01-opening-alley.svg","teen-character-design-v1.svg","fx/police-light-sweep.svg"],"camera":["distant_push"],"motion":["police_light_sweep","headlight_rise","teen_notice"],"audio":["distant_siren","approaching_footsteps","police_presence"]},
@@ -24,6 +24,6 @@
     {"id":"S12","frames":[792,839],"assets":["busch-look-away.svg"],"camera":["locked"],"motion":["look_away","awkward_hold"],"audio":["silence_drop"]},
     {"id":"S13","frames":[840,887],"assets":["busch-reaction.svg","ep01-opening-title.svg"],"camera":["locked","hard_cut"],"motion":["reaction_blink_sway","title_cut"],"audio":["night_ambience","title_sting"]}
   ],
-  "editRules":["Police presence must be established before the teens run.","Teens remain inside the alley while hiding.","The bush is at/near the alley exit.","The teens must physically run out of the alley before throwing the beer.","Keep the spoken phrase IN THE BUSHES before the throw.","Teens flee before Busch wakes.","Transformation escalates in stages.","Keep look-away and reaction hold separate from title.","Use the procedural teen performance layer for all S01-S09 shots; the old teen-group-origin-states.svg sheet is archive-only and must not be rendered.","No third-party logos or branded packaging in source art.","Police are conveyed primarily through light, siren and footsteps; no copied police character design."],
+  "editRules":["Police presence must be established before the teens run.","Teens remain inside the alley while hiding.","The bush is at/near the alley exit.","The teens must physically run out of the alley before throwing the beer.","Keep the spoken phrase IN THE BUSHES before the throw.","Teens flee before Busch wakes.","Transformation escalates in stages.","Keep look-away and reaction hold separate from title.","Use the clean procedural teen performance layer for all S01-S09 shots; the old teen-group-origin-states.svg sheet is archive-only and must not be rendered.","No third-party logos or branded packaging in source art.","Police are conveyed primarily through light, siren and footsteps; no copied police character design."],
   "outputs":["master_1080p24","preview_720p24","qc_report"]
 }

@@ -83,12 +83,20 @@ def test_busch_source_preserves_organic_aspect_ratio():
     assert "keep the character's silhouette intact" in builder_text
 
 
+def test_busch_wake_transform_is_center_anchored():
+    builder_text = BUILDER_PATH.read_text(encoding="utf-8")
+    assert 'cx, cy = 1560, 740' in builder_text
+    assert 'translate({cx} {cy}) translate(0 {y:.2f}) scale({s:.3f})' in builder_text
+    assert 'translate(-{cx} -{cy})' in builder_text
+
+
 if __name__ == "__main__":
     tests = [
         test_active_render_graph,
         test_procedural_layer_is_valid_svg,
         test_pose_interpolation_changes_geometry,
         test_busch_source_preserves_organic_aspect_ratio,
+        test_busch_wake_transform_is_center_anchored,
     ]
     for test in tests:
         test()

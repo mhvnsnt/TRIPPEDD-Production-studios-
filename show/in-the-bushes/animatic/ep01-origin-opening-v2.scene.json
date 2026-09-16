@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "show": "In the Bushes",
-  "sequence": "EP01-origin-opening-v3-alley-police",
+  "sequence": "EP01-origin-opening-v4-alley-police",
   "fps": 24,
   "targetDurationSeconds": 37,
   "shots": [
@@ -21,5 +21,5 @@
   ],
   "totalFrames":888,
   "totalSeconds":37,
-  "productionRule":"The canon opening is now alley-based: teens hang out in an alley, police arrive, the teens run and hide, realize they still have beer, shout IN THE BUSHES, then run out of the alley to throw the beer into the bush. The phrase must precede the throw. Transformation, Busch look-away, reaction hold, and title remain distinct beats."
+  "productionRule":"The canon opening is alley-based: teens hang out in an alley, police arrive, the teens run and hide, realize they still have beer, shout IN THE BUSHES, then run out of the alley to throw the beer into the bush. The phrase must precede the throw. Transformation, Busch look-away, reaction hold, and title remain distinct beats."
 }

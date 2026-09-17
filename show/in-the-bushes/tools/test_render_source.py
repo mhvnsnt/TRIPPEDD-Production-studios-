@@ -8,6 +8,9 @@ ROOT=Path(__file__).resolve().parents[3]
 RIG_PATH=ROOT/"show/in-the-bushes/tools/teen_performance_v2.py"
 BUILDER_PATH=ROOT/"show/in-the-bushes/tools/build_origin_opening.py"
 RENDER_PATH=ROOT/"show/in-the-bushes/animatic/ep01-origin-opening-v2.render-plan.json"
+BUSCH_WAKE=ROOT/"show/in-the-bushes/assets/busch/busch-wake.svg"
+BUSCH_LOOK=ROOT/"show/in-the-bushes/assets/busch/busch-look-away.svg"
+BUSCH_REACTION=ROOT/"show/in-the-bushes/assets/busch/busch-reaction.svg"
 def load_rig():
     spec=importlib.util.spec_from_file_location("teen_performance_v2_test",RIG_PATH)
     assert spec and spec.loader
@@ -39,7 +42,14 @@ def test_busch_source_preserves_organic_aspect_ratio():
     assert "def busch_image(" in builder
     assert 'width=560, height=560, preserve="xMidYMid meet"' in builder
     assert "x=1280, y=460" in builder
+def test_busch_concept_traits_are_present_in_wake_family():
+    for path in (BUSCH_WAKE, BUSCH_LOOK, BUSCH_REACTION):
+        svg=path.read_text()
+        ET.fromstring(svg)
+        assert "#36a94f" in svg
+        assert "#ef3038" in svg
+        assert "No beer branding" in svg
 if __name__=="__main__":
-    for test in (test_active_render_graph,test_procedural_layer_is_valid_svg,test_pose_interpolation_changes_geometry,test_busch_source_preserves_organic_aspect_ratio):
+    for test in (test_active_render_graph,test_procedural_layer_is_valid_svg,test_pose_interpolation_changes_geometry,test_busch_source_preserves_organic_aspect_ratio,test_busch_concept_traits_are_present_in_wake_family):
         test(); print(f"PASS {test.__name__}")
     print("PASS render-source smoke suite")

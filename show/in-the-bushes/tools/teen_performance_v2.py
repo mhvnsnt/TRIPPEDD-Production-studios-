@@ -32,6 +32,16 @@ def character(frame,idx,shot):
  if idx==0:right_a+=5;head_x+=3
  elif idx==1:left_a*=.9;right_a*=.9;head_x-=3
  else:left_a*=.78;right_a*=.78;head_x-=6
+ # Travel is part of the performance, not just a pose change. Stagger the
+ # cast's horizontal movement so the alley run and post-throw flee read as
+ # physical action rather than characters sliding in place.
+ travel_x=0
+ if shot=="S04":
+  u=clamp((frame-(216+idx*3))/62,0,1); travel_x=(u*u*(3-2*u))*520
+ elif shot=="S08":
+  u=clamp((frame-(456+idx*2))/48,0,1); travel_x=(u*u*(3-2*u))*390
+ elif shot=="S09":
+  u=clamp((frame-(520+idx*4))/90,0,1); travel_x=-(u*u*(3-2*u))*720
  left_a-=stride*.55;right_a+=stride*.55
  if shot=="S06":right_a+=math.sin(math.radians((frame-372)*12+idx*30))*4
  if shot=="S07":right_a-=clamp((frame-(420+idx*3))/18,0,1)*10
@@ -59,7 +69,7 @@ def character(frame,idx,shot):
  if p['style']=='hoodie':clothes+="<path d='M-36 -8 Q0 18 36 -8' fill='none' stroke='#8e98a3' stroke-width='7'/><path d='M-10 15 L-10 135 M10 15 L10 135' stroke='#8e98a3' stroke-width='4'/><path d='M-22 52 L22 52' stroke='#394451' stroke-width='10'/>"
  elif p['style']=='jacket':clothes+="<path d='M0 -8 L0 155' stroke='#c8a88d' stroke-width='7'/><path d='M-62 15 L-78 82 M62 15 L78 82' stroke='#6e5949' stroke-width='10'/>"
  else:clothes+="<path d='M-25 22 L25 22 M-20 48 L20 48 M-20 74 L20 74' stroke='#91a59c' stroke-width='5'/>"
- return (f"<g transform='translate({p['x']} {p['y']}) rotate({lean:.2f} 0 78)' fill='none' stroke='#0b0d12' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'>{head}{eyes}{mouth}{clothes}"
+ return (f"<g transform='translate({p['x']+travel_x:.2f} {p['y']}) rotate({lean:.2f} 0 78)' fill='none' stroke='#0b0d12' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'>{head}{eyes}{mouth}{clothes}"
          f"<path d='M0 55 L{hand_l[0]:.2f} {hand_l[1]:.2f}'/><circle cx='{hand_l[0]:.2f}' cy='{hand_l[1]:.2f}' r='9' fill='{p['skin']}'/>"
          f"<path d='M0 55 L{hand_r[0]:.2f} {hand_r[1]:.2f}'/><circle cx='{hand_r[0]:.2f}' cy='{hand_r[1]:.2f}' r='9' fill='{p['skin']}'/>"
          f"<path d='M0 {body_h} L{foot_l[0]:.2f} {foot_l[1]:.2f}' stroke-width='24'/><path d='M0 {body_h} L{foot_r[0]:.2f} {foot_r[1]:.2f}' stroke-width='24'/>"

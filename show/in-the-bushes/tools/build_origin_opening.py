@@ -231,6 +231,16 @@ def main():
                 b = find_block(blocks, bid, frame)
                 if b:
                     layers.append(image(ASSET_MAP["beer"], motion_transform(b, frame), 0.92))
+            # Keep authored physical follow-through visible: bounce and spill
+            # are separate passes so the throw does not end abruptly.
+            if shot["id"] == "S08":
+                bounce = find_block(blocks, "can_bounce", frame)
+                if bounce:
+                    layers.append(image(ASSET_MAP["beer"], motion_transform(bounce, frame), 0.72))
+            if shot["id"] == "S09":
+                spill = find_block(blocks, "liquid_spill", frame)
+                if spill:
+                    layers.append(image(ASSET_MAP["beer"], motion_transform(spill, frame), 0.42))
         pfx = find_block(blocks, "police_light_sweep", frame)
         if pfx and shot["id"] in {"S02", "S03", "S04"}:
             x = keyframe_value(pfx, frame, "x", 0); opacity = keyframe_value(pfx, frame, "opacity", 0)

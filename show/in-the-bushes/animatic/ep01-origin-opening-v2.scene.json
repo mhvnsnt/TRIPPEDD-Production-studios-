@@ -1,25 +1,197 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "show": "In the Bushes",
-  "sequence": "EP01-origin-opening-v4-alley-police",
+  "sequence": "EP01-origin-opening-v5-alley-performance",
   "fps": 24,
   "targetDurationSeconds": 37,
   "shots": [
-    {"id":"S01","start":0,"duration":84,"action":"alley_hang_out","details":"Wide nighttime alley. Three teenagers casually hang out with a six-pack and opened cans. Brick walls, fire escape, dumpster, puddles, alley lamp, distant street opening, and a bush at the exit establish the geography."},
-    {"id":"S02","start":84,"duration":60,"action":"police_arrive","details":"Distant siren, approaching footsteps, headlights and an abstract police-light sweep spill into the alley. The teens notice the sudden change in the environment."},
-    {"id":"S03","start":144,"duration":72,"action":"panic","dialogue":"Shit! They're coming!","details":"One teen spots the approaching police presence. The casual hangout instantly breaks. They grab the beer and scramble toward the alley exit."},
-    {"id":"S04","start":216,"duration":84,"action":"run_and_duck","details":"The teens run down the alley, then duck behind the dumpster/wall near the exit and peek back. Police presence remains mostly offscreen through light, footsteps and siren rather than a detailed police character."},
-    {"id":"S05","start":300,"duration":72,"action":"hide_with_beer","details":"They catch their breath and realize they are still holding the beer. A can rattles. One teen checks the six-pack while another watches the alley behind them."},
-    {"id":"S06","start":372,"duration":48,"action":"beer_problem","dialogue":"What do we do with the beer?","details":"The question lands in a tight comedic pause. They look at the beer, then toward the bush at the alley exit."},
-    {"id":"S07","start":420,"duration":36,"action":"title_phrase_decision","dialogue":"IN THE BUSHES!","details":"A teen points toward the bush and commits to the solution. The others instantly understand. The phrase is spoken before the throw."},
-    {"id":"S08","start":456,"duration":84,"action":"run_out_and_throw","details":"They burst out of the alley toward the bush. The six-pack and loose cans are thrown only after the shouted phrase. The pack arcs toward the foliage; cans spin and one open can spills across the bush."},
-    {"id":"S09","start":540,"duration":108,"action":"beer_transformation","details":"The teenagers keep running away. Beer drips through the foliage. A twitch becomes a shudder, then a strange supernatural pulse. The bush begins moving with intention rather than wind."},
-    {"id":"S10","start":648,"duration":72,"action":"busch_wakes","details":"Busch rises from the foliage into a readable conscious pose. His eyes register confusion and drunken awareness."},
-    {"id":"S11","start":720,"duration":72,"action":"busch_processes_reality","details":"Busch scans the alley exit, watches the teenagers flee, then looks down at the spilled cans. He has no context for being alive."},
-    {"id":"S12","start":792,"duration":48,"action":"busch_looks_away","details":"Busch deliberately looks away from the chaos. This is a standalone awkward comedy beat, separate from the title transition."},
-    {"id":"S13","start":840,"duration":48,"action":"reaction_and_title","details":"Brief reaction hold with tiny sway/blink, then hard cut to the IN THE BUSHES title card. Busch remains subtly present behind the lettering."}
+    {
+      "id": "S01",
+      "start": 0,
+      "duration": 84,
+      "action": "alley_hang_out",
+      "details": "Wide nighttime alley. Three teenagers hang out before trouble arrives. Establish friendship, personalities, beer and geography before the story turns.",
+      "beats": [
+        "0-18: settle into positions; Teen 01 leans forward and talks with hands, Teen 02 listens and checks the alley, Teen 03 stays relaxed and deadpan.",
+        "18-36: small joke/reaction cycle; Teen 01 gets a laugh, Teen 02 reacts, Teen 03 gives a delayed look.",
+        "36-60: beer can handoff; offer -> reach -> catch -> tiny fumble -> recover. Hands and can movement sell the physical interaction.",
+        "60-72: background life continues: alley lamp hum, puddle shimmer, distant street movement.",
+        "72-83: return to casual hang; no one expects the police yet."
+      ]
+    },
+    {
+      "id": "S02",
+      "start": 84,
+      "duration": 60,
+      "action": "police_arrive",
+      "details": "The environment changes before the teenagers fully react. Police remain offscreen; light, sound and shadows create pressure.",
+      "beats": [
+        "84-96: distant siren enters while conversation continues for a moment.",
+        "96-108: first light sweep crosses brick and puddles; Teen 03 notices before the others.",
+        "108-120: Teen 03 stops moving, looks toward the alley mouth, then Teen 02 follows the gaze.",
+        "120-132: headlights grow; all three stop talking.",
+        "132-143: shared stare toward danger, followed by the first panic reaction."
+      ]
+    },
+    {
+      "id": "S03",
+      "start": 144,
+      "duration": 72,
+      "action": "panic",
+      "dialogue": "Shit! They're coming!",
+      "details": "The realization becomes a coordinated but messy scramble.",
+      "beats": [
+        "144-150: freeze; nobody moves for a beat.",
+        "150-160: Teen 01 grabs for the beer first; Teen 02 reaches late; Teen 03 looks for an escape route.",
+        "160-168: shouted warning lands; heads snap toward exit.",
+        "168-180: bodies turn, feet plant, and the group commits to running.",
+        "180-215: staggered acceleration; Teen 01 leads, Teen 02 follows, Teen 03 hesitates half a beat then goes."
+      ]
+    },
+    {
+      "id": "S04",
+      "start": 216,
+      "duration": 84,
+      "action": "run_and_duck",
+      "details": "A physical chase beat inside the alley. The teenagers travel toward the exit, then duck into cover and peek back.",
+      "beats": [
+        "216-240: full run with different strides and arm styles.",
+        "240-260: acceleration toward the exit; police light sweeps across them.",
+        "260-272: first teen brakes and ducks; the others pile into cover.",
+        "272-286: bodies settle behind cover; one peeks too early and ducks again.",
+        "286-299: all hold while listening, with tiny breathing and eye movements."
+      ]
+    },
+    {
+      "id": "S05",
+      "start": 300,
+      "duration": 72,
+      "action": "hide_with_beer",
+      "details": "The panic drops into an awkward hiding beat, then the beer becomes the problem.",
+      "beats": [
+        "300-318: heavy breathing and recovery; shoulders rise/fall.",
+        "318-332: can rattles; everyone freezes.",
+        "332-348: Teen 02 looks down and realizes the six-pack is still in hand.",
+        "348-360: Teen 01 follows the gaze; Teen 03 slowly looks at the beer.",
+        "360-371: all three look toward the bush at the alley exit."
+      ]
+    },
+    {
+      "id": "S06",
+      "start": 372,
+      "duration": 48,
+      "action": "beer_problem",
+      "dialogue": "What do we do with the beer?",
+      "details": "A tight comedic pause built from eye-lines and hesitation.",
+      "beats": [
+        "372-382: Teen 02 asks the question.",
+        "382-395: silence; nobody has an answer.",
+        "395-405: Teen 01 looks at Teen 03.",
+        "405-419: Teen 03 looks toward the bush; the others follow."
+      ]
+    },
+    {
+      "id": "S07",
+      "start": 420,
+      "duration": 36,
+      "action": "title_phrase_decision",
+      "dialogue": "IN THE BUSHES!",
+      "details": "The phrase is the story's trigger and title-origin joke.",
+      "beats": [
+        "420-429: Teen 01 notices the bush and points.",
+        "429-438: Teen 02 understands; Teen 03 turns toward the bush.",
+        "438-450: Teen 01 commits and says the phrase.",
+        "450-455: one beat of stunned agreement; then everybody moves."
+      ]
+    },
+    {
+      "id": "S08",
+      "start": 456,
+      "duration": 84,
+      "action": "run_out_and_throw",
+      "details": "The group physically exits the alley before the throw. The throw is a sequence of anticipation, release, flight, impact and follow-through.",
+      "beats": [
+        "456-468: first teen launches from cover.",
+        "468-480: second and third catch up; camera follows the group rather than simply zooming.",
+        "480-492: run reaches the alley mouth; thrower plants feet and winds up.",
+        "492-505: release begins; pack leaves hand while loose cans separate.",
+        "505-520: cans rotate through the air; open can begins spilling.",
+        "520-535: impact/bounce; bush branches recoil.",
+        "535-539: teens are already fleeing away from the throw."
+      ]
+    },
+    {
+      "id": "S09",
+      "start": 540,
+      "duration": 108,
+      "action": "beer_transformation",
+      "details": "The beer causes a staged transformation. The bush should move from apparently ordinary foliage to unmistakably intentional character movement.",
+      "beats": [
+        "540-555: liquid continues down leaves while teens shrink into the distance.",
+        "555-568: tiny twitch; then stillness.",
+        "568-585: second twitch becomes an irregular shudder.",
+        "585-600: foliage compresses and rebounds as if something inside is waking.",
+        "600-612: first supernatural pulse.",
+        "612-625: pulse fades; bush almost returns to normal.",
+        "625-640: stronger pulse and deliberate movement.",
+        "640-647: transformation settles into a conscious stillness before Busch rises."
+      ]
+    },
+    {
+      "id": "S10",
+      "start": 648,
+      "duration": 72,
+      "action": "busch_wakes",
+      "details": "Busch's first movement establishes personality: confused, newly conscious and slightly drunk.",
+      "beats": [
+        "648-665: foliage rises slowly.",
+        "665-680: head/eyes emerge and orient.",
+        "680-692: one branch arm moves late, as though Busch discovers it.",
+        "692-704: Busch steadies himself.",
+        "704-715: eyes focus on the strange world around him.",
+        "715-719: brief confused hold."
+      ]
+    },
+    {
+      "id": "S11",
+      "start": 720,
+      "duration": 72,
+      "action": "busch_processes_reality",
+      "details": "Busch tries to understand what just happened.",
+      "beats": [
+        "720-736: looks straight ahead, processing.",
+        "736-748: notices fleeing teens.",
+        "748-760: watches them leave; tiny head/eye follow.",
+        "760-772: attention drops toward the cans.",
+        "772-791: studies the beer and his own body, realizing something is different."
+      ]
+    },
+    {
+      "id": "S12",
+      "start": 792,
+      "duration": 48,
+      "action": "busch_looks_away",
+      "details": "A standalone awkward reaction beat.",
+      "beats": [
+        "792-804: Busch looks toward the alley.",
+        "804-820: slowly turns away from the chaos.",
+        "820-839: holds the look-away longer than comfortable; tiny sway sells the joke."
+      ]
+    },
+    {
+      "id": "S13",
+      "start": 840,
+      "duration": 48,
+      "action": "reaction_and_title",
+      "details": "Final reaction hold, then hard title cut.",
+      "beats": [
+        "840-852: Busch returns with a small reaction.",
+        "852-864: blink and tiny sway.",
+        "864-887: hold, then hard cut to title at the end of the shot."
+      ]
+    }
   ],
-  "totalFrames":888,
-  "totalSeconds":37,
-  "productionRule":"The canon opening is alley-based: teens hang out in an alley, police arrive, the teens run and hide, realize they still have beer, shout IN THE BUSHES, then run out of the alley to throw the beer into the bush. The phrase must precede the throw. Transformation, Busch look-away, reaction hold, and title remain distinct beats."
+  "totalFrames": 888,
+  "totalSeconds": 37,
+  "productionRule": "The canon opening is alley-based. Each shot must contain visible acting, physical movement, environmental response or a deliberate comedic hold. The phrase IN THE BUSHES precedes the throw; the teens physically exit the alley before throwing. Transformation, wake, look-away and title remain distinct."
 }

@@ -11,6 +11,10 @@ RENDER_PATH=ROOT/"show/in-the-bushes/animatic/ep01-origin-opening-v2.render-plan
 BUSCH_WAKE=ROOT/"show/in-the-bushes/assets/busch/busch-wake.svg"
 BUSCH_LOOK=ROOT/"show/in-the-bushes/assets/busch/busch-look-away.svg"
 BUSCH_REACTION=ROOT/"show/in-the-bushes/assets/busch/busch-reaction.svg"
+BUSCH_TRANSFORM=ROOT/"show/in-the-bushes/assets/busch/busch-transform.svg"
+BEER_PACK=ROOT/"show/in-the-bushes/assets/props/generic-six-pack.svg"
+BEER_CAN=ROOT/"show/in-the-bushes/assets/props/generic-can.svg"
+BEER_SPILL=ROOT/"show/in-the-bushes/assets/props/generic-beer-spill.svg"
 def load_rig():
     spec=importlib.util.spec_from_file_location("teen_performance_v2_test",RIG_PATH)
     assert spec and spec.loader
@@ -42,6 +46,16 @@ def test_busch_source_preserves_organic_aspect_ratio():
     assert "def busch_image(" in builder
     assert 'width=560, height=560, preserve="xMidYMid meet"' in builder
     assert "x=1280, y=460" in builder
+def test_bush_transformation_uses_foliage_not_an_anthropomorphic_can():
+    builder=BUILDER_PATH.read_text()
+    transform=BUSCH_TRANSFORM.read_text()
+    assert "busch_transform" in builder
+    assert "bush_transform_image" in builder
+    assert "generic-beer-throw-kit.svg" not in builder
+    assert "No face, can, or beverage branding" in transform
+    for path in (BEER_PACK,BEER_CAN,BEER_SPILL):
+        ET.fromstring(path.read_text())
+
 def test_busch_concept_traits_are_present_in_wake_family():
     for path in (BUSCH_WAKE, BUSCH_LOOK, BUSCH_REACTION):
         svg=path.read_text()
@@ -50,6 +64,6 @@ def test_busch_concept_traits_are_present_in_wake_family():
         assert "#ef3038" in svg
         assert "No beer branding" in svg
 if __name__=="__main__":
-    for test in (test_active_render_graph,test_procedural_layer_is_valid_svg,test_pose_interpolation_changes_geometry,test_busch_source_preserves_organic_aspect_ratio,test_busch_concept_traits_are_present_in_wake_family):
+    for test in (test_active_render_graph,test_procedural_layer_is_valid_svg,test_pose_interpolation_changes_geometry,test_busch_source_preserves_organic_aspect_ratio,test_bush_transformation_uses_foliage_not_an_anthropomorphic_can,test_busch_concept_traits_are_present_in_wake_family):
         test(); print(f"PASS {test.__name__}")
     print("PASS render-source smoke suite")

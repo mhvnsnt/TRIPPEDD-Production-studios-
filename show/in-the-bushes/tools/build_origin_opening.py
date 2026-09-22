@@ -130,6 +130,14 @@ def motion_transform(block, frame):
         y = (1-e)**2*p0[1] + 2*(1-e)*e*p1[1] + e**2*p2[1]
         r = lerp(block["rotation"][0], block["rotation"][1], e)
         return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-1180 -650)"
+    if name in {"can_handoff", "grab_beer"}:
+        r = keyframe_value(block, frame, "rotation", 0) or 0
+        return f"translate(640 520) rotate({r:.2f}) translate(-200 -150)"
+    if name == "can_rattle":
+        r = keyframe_value(block, frame, "rotation", 0) or 0
+        return f"translate(650 565) rotate({r:.2f}) translate(-70 -130)"
+    if name == "look_down_cans":
+        return "translate(650 610) rotate(-8) translate(-70 -130)"
     if name == "throw_arc_spin":
         p0, p1, p2 = block["path"]["p0"], block["path"]["p1"], block["path"]["p2"]
         x = (1-e)**2*p0[0] + 2*(1-e)*e*p1[0] + e**2*p2[0]
@@ -144,6 +152,10 @@ def motion_transform(block, frame):
         x, y = lerp(pts[i][0], pts[i + 1][0], lt), lerp(pts[i][1], pts[i + 1][1], lt)
         r = lerp(rotations[i], rotations[i + 1], lt)
         return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-70 -130)"
+    if name == "liquid_drip_loop":
+        scale = keyframe_value(block, frame, "scale", 0.2) or 0.2
+        y = 585 + max(0.0, min(1.0, scale)) * 180
+        return f"translate(1660 {y:.2f}) scale({scale:.3f}) translate(-130 -150)"
     if name == "liquid_spill":
         p0, p1 = block["path"]["p0"], block["path"]["p1"]
         x, y = lerp(p0[0], p1[0], e), lerp(p0[1], p1[1], e)
@@ -233,7 +245,7 @@ def main():
             teens = teen_layer(blocks, frame, shot["id"])
             if teens: layers.append(teens)
         if shot["id"] in {"S01", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S11"}:
-            beer_ids = {"S01":"can_handoff", "S03":"grab_beer", "S05":"can_rattle", "S08":"throw_arc_spin", "S09":"liquid_spill", "S11":"look_down_cans"}
+            beer_ids = {"S01":"can_handoff", "S03":"grab_beer", "S05":"can_rattle", "S08":"throw_arc_spin", "S11":"look_down_cans"}
             bid = beer_ids.get(shot["id"])
             if bid:
                 b = find_block(blocks, bid, frame)
@@ -249,6 +261,9 @@ def main():
                 if bounce:
                     layers.append(image(ASSET_MAP["beer_can"], motion_transform(bounce, frame), 0.72))
             if shot["id"] == "S09":
+            drip = find_block(blocks, "liquid_drip_loop", frame)
+            if drip:
+                layers.append(image(ASSET_MAP["beer_spill"], motion_transform(drip, frame), 0.72))
             tw = find_block(blocks, "foliage_twitch", frame)
             sh = find_block(blocks, "foliage_shudder", frame)
             ep = find_block(blocks, "energy_pulse", frame)

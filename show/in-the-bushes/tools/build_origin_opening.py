@@ -30,7 +30,10 @@ RIG_PATH = ROOT / "show/in-the-bushes/tools/teen_performance.py"
 ASSET_MAP = {
     "alley": ASSETS / "ep01-opening-alley.svg",
     "teens": ASSETS / "teens/teen-character-design-v1.svg",
-    "beer": ASSETS / "props/generic-beer-throw-kit.svg",
+    "beer_pack": ASSETS / "props/generic-six-pack.svg",
+    "beer_can": ASSETS / "props/generic-can.svg",
+    "beer_spill": ASSETS / "props/generic-beer-spill.svg",
+    "busch_transform": ASSETS / "busch/busch-transform.svg",
     "police_fx": ASSETS / "fx/police-light-sweep.svg",
     "busch_wake": ASSETS / "busch/busch-wake.svg",
     "busch_look": ASSETS / "busch/busch-look-away.svg",
@@ -132,7 +135,7 @@ def motion_transform(block, frame):
         x = (1-e)**2*p0[0] + 2*(1-e)*e*p1[0] + e**2*p2[0]
         y = (1-e)**2*p0[1] + 2*(1-e)*e*p1[1] + e**2*p2[1]
         r = lerp(block["rotation"][0], block["rotation"][1], e)
-        return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-1350 -560)"
+        return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-200 -150)"
     if name == "can_bounce":
         pts, rotations = block["path"]["points"], block["rotation"]
         u = e * (len(pts) - 1)
@@ -140,12 +143,12 @@ def motion_transform(block, frame):
         lt = u - i
         x, y = lerp(pts[i][0], pts[i + 1][0], lt), lerp(pts[i][1], pts[i + 1][1], lt)
         r = lerp(rotations[i], rotations[i + 1], lt)
-        return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-1550 -570)"
+        return f"translate({x:.2f} {y:.2f}) rotate({r:.2f}) translate(-70 -130)"
     if name == "liquid_spill":
         p0, p1 = block["path"]["p0"], block["path"]["p1"]
         x, y = lerp(p0[0], p1[0], e), lerp(p0[1], p1[1], e)
         s = lerp(block["scale"][0], block["scale"][1], e)
-        return f"translate({x:.2f} {y:.2f}) scale({s:.3f}) translate(-1650 -580)"
+        return f"translate({x:.2f} {y:.2f}) scale({s:.3f}) translate(-130 -150)"
     if name == "busch_wake_rise":
         y = lerp(-block["position"][1], 0, e)
         s = lerp(block["scale"][0], block["scale"][1], e)
@@ -168,6 +171,11 @@ def busch_image(path: Path, transform="", opacity=1.0):
     # Busch artwork is authored in a square 800x800 canvas. Never stretch it
     # to the 16:9 delivery frame; keep the character's silhouette intact at
     # the alley exit where the transformation happens.
+    return image(path, transform, opacity, x=1280, y=460, width=560, height=560, preserve="xMidYMid meet")
+
+
+def bush_transform_image(path: Path, transform="", opacity=1.0):
+    """Render the foliage-only transformation state over the existing bush."""
     return image(path, transform, opacity, x=1280, y=460, width=560, height=560, preserve="xMidYMid meet")
 
 
@@ -225,38 +233,35 @@ def main():
             teens = teen_layer(blocks, frame, shot["id"])
             if teens: layers.append(teens)
         if shot["id"] in {"S01", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S11"}:
-            beer_ids = {"S01":"can_handoff", "S03":"grab_beer", "S05":"can_rattle", "S08":"throw_arc_spin", "S09":"liquid_drip_loop", "S11":"look_down_cans"}
+            beer_ids = {"S01":"can_handoff", "S03":"grab_beer", "S05":"can_rattle", "S08":"throw_arc_spin", "S09":"liquid_spill", "S11":"look_down_cans"}
             bid = beer_ids.get(shot["id"])
             if bid:
                 b = find_block(blocks, bid, frame)
                 if b:
-                    layers.append(image(ASSET_MAP["beer"], motion_transform(b, frame), 0.92))
+                    prop_asset = ASSET_MAP["beer_can"] if bid in {"can_rattle","look_down_cans"} else ASSET_MAP["beer_pack"]
+                    if bid == "liquid_spill":
+                        prop_asset = ASSET_MAP["beer_spill"]
+                    layers.append(image(prop_asset, motion_transform(b, frame), 0.92))
             # Keep authored physical follow-through visible: bounce and spill
             # are separate passes so the throw does not end abruptly.
             if shot["id"] == "S08":
                 bounce = find_block(blocks, "can_bounce", frame)
                 if bounce:
-                    layers.append(image(ASSET_MAP["beer"], motion_transform(bounce, frame), 0.72))
+                    layers.append(image(ASSET_MAP["beer_can"], motion_transform(bounce, frame), 0.72))
             if shot["id"] == "S09":
-                spill = find_block(blocks, "liquid_spill", frame)
-                if spill:
-                    layers.append(image(ASSET_MAP["beer"], motion_transform(spill, frame), 0.42))
-        pfx = find_block(blocks, "police_light_sweep", frame)
-        if pfx and shot["id"] in {"S02", "S03", "S04"}:
-            x = keyframe_value(pfx, frame, "x", 0); opacity = keyframe_value(pfx, frame, "opacity", 0)
-            layers.append(image(ASSET_MAP["police_fx"], f"translate({x:.2f} 0)", opacity))
-        hr = find_block(blocks, "headlight_rise", frame)
-        if hr and shot["id"] == "S02":
-            t = block_at(hr, frame); op = lerp(hr["opacity"][0], hr["opacity"][1], ease(t, "easeIn")); sc = lerp(hr["scale"][0], hr["scale"][1], ease(t, "easeOutCubic"))
-            layers.append(f'<ellipse cx="960" cy="690" rx="420" ry="180" fill="#dfe8ff" opacity="{op:.3f}" transform="scale({sc:.3f} 1)"/>')
-        if shot["id"] == "S09":
-            tw = find_block(blocks, "foliage_twitch", frame); sh = find_block(blocks, "foliage_shudder", frame); ep = find_block(blocks, "energy_pulse", frame)
+            tw = find_block(blocks, "foliage_twitch", frame)
+            sh = find_block(blocks, "foliage_shudder", frame)
+            ep = find_block(blocks, "energy_pulse", frame)
+            # The bush is the animated subject. Beer remains an ordinary prop.
             if tw:
-                r = keyframe_value(tw, frame, "rotation", 0); layers.append(f'<g transform="rotate({r:.2f} 1580 760)"><circle cx="1580" cy="760" r="245" fill="none" stroke="#c8e6b8" stroke-width="10" opacity=".35"/></g>')
+                r = keyframe_value(tw, frame, "rotation", 0)
+                layers.append(bush_transform_image(ASSET_MAP["busch_transform"], f"rotate({r:.2f} 1560 740)", 0.72))
             if sh:
-                s = keyframe_value(sh, frame, "scale", 1); layers.append(f'<circle cx="1580" cy="760" r="255" fill="none" stroke="#9ac48b" stroke-width="8" opacity=".25" transform="translate(1580 760) scale({s:.4f}) translate(-1580 -760)"/>')
+                scale = keyframe_value(sh, frame, "scale", 1)
+                layers.append(bush_transform_image(ASSET_MAP["busch_transform"], f"translate(1560 740) scale({scale:.4f}) translate(-1560 -740)", 0.82))
             if ep:
-                op = keyframe_value(ep, frame, "opacity", 0); layers.append(f'<circle cx="1580" cy="760" r="280" fill="none" stroke="#e8f6d5" stroke-width="18" opacity="{op:.3f}"/>')
+                op = keyframe_value(ep, frame, "opacity", 0)
+                layers.append(bush_transform_image(ASSET_MAP["busch_transform"], f"scale({1.0 + op * 0.04:.4f})", 0.30 + op * 0.55))
         if shot["id"] in {"S10", "S11"}:
             b = find_block(blocks, "busch_wake_rise", frame)
             layers.append(busch_image(ASSET_MAP["busch_wake"], motion_transform(b, frame) if b else ""))

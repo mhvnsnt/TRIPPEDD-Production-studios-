@@ -34,7 +34,6 @@ huggingface-cli download Zyphra/Zonos-v0.1-transformer --local-dir ./Zonos-v0.1-
 
 # Do NOT do this on a CPU box (it loads the model and OOMs):
 #   model = Zonos.from_pretrained("Zyphra/Zonos-v0.1-transformer", device="cpu")  # RETIRED — exit 137
-```
 # weights land in ./Zonos-v0.1-transformer
 ```
 

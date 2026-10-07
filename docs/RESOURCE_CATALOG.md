@@ -20563,3 +20563,453 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Label site went down; archive.org mirrors are the access path. [Wave 19 Lane A]
+
+#### MmlMusic ✅ Apache-2.0 — Arduino multi-track MML player library
+- **What:** maxint-rd's Arduino library for playing multi-track MML music on different sound devices (ESP8266, ATmega328/168, ATtiny85) — ported from the MusicEngine/mbed Retro Music Engine.
+- **URL:** https://github.com/maxint-rd/MmlMusic
+- **License:** ✅ Apache 2.0 (inherited from the MusicEngine original, per README credits; verified 2026-10-07).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### ArcheAge MML Library ❓ fan MML song archive — terms unverified
+- **What:** Community library of downloadable MML songs for the ArcheAge game's music system (referenced by the MmlMusic README).
+- **URL:** https://github.com/maxint-rd/MmlMusic
+- **License:** ❓ Fan archive; reuse terms not verified this pass.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Maltine Records ⚠️ CC — Japan netlabel (Tomad, est. 2005)
+- **What:** Creative Commons netlabel from Japan (Tomad + Syem) — pop/dance-rooted electronica; launched acts like Gassyoh; "strange takes" on dance music with anime/game samples.
+- **URL:** https://freemusicarchive.org/index.php/label/Maltine_Records/bio/
+- **License:** ⚠️ Creative Commons (per FMA bio; verified 2026-10-07) — exact variant unpinned; assume NC until checked. Note: several releases sample anime/video-game audio (e.g., EarthBound) — underlying sample clearance is a separate risk.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Bunkai-Kei Records ⚠️ NC-SA — Japan ambient/glitch netlabel
+- **What:** One of the biggest Japanese netlabel imprints — ambient, glitch, electronica (Go-qualia, Yako; Vocaloid artist kz).
+- **URL:** https://freemusicarchive.org/index.php/music/Various_Artists_Bunkai-Kei/Creative_Commands_Compilation_Data
+- **License:** ⚠️ CC BY-NC-SA 3.0 (per FMA release page; verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Trekkie Trax ❓ Japan dance netlabel — terms unverified
+- **What:** Tokyo netlabel born from the Akihabara "Under 20" party — juke house, 2-step, brostep, grime-influenced dub; international attention via block.fm (2014).
+- **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
+- **License:** ❓ License terms not verified this pass.
+- **Free tier:** Free releases
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### ALTEMA Records ❓ Japan netlabel — terms unverified
+- **What:** Japanese netlabel — brostep, IDM, tracks sampling 1990s computer-program sounds; heavy anime-cover-art aesthetic.
+- **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
+- **License:** ❓ License terms not verified this pass.
+- **Free tier:** Free releases
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### MarginalRec. ❓ Tokyo netlabel — terms unverified
+- **What:** Tokyo netlabel — J-pop remixes to floor fillers to headphone electronica; known for the Another Weekender live nightclub events (streamed online).
+- **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
+- **License:** ❓ License terms not verified this pass (note: releases include remixes of popular J-pop songs — underlying clearance risk).
+- **Free tier:** Free releases
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Kikapu ⚠️ NC — netlabel (free MP3, non-profit)
+- **What:** Netlabel offering music exclusively via free MP3 downloads (plus occasional CDRs); broad roster incl. ten and tracer, The System Boot, winnie the shit.
+- **URL:** http://sonicsquirrel.net/detail/label/kikapu/183/rpage/1/apage/14
+- **License:** ⚠️ Label's own statement: "All mp3 releases on the site fall under a Creative Commons license... as long as it is not done for profit"; "All rights of the artists and of their recorded material are reserved" (verified 2026-10-07).
+- **Free tier:** Free MP3 downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Zymogen ⚠️ NC-ND — downtempo IDM/ambient netlabel
+- **What:** Netlabel specializing in downtempo IDM, ambient and experimental (Alessio Ballerini, Nicolas Bernier & Simon Trottier, offthesky, Jimmy Behan).
+- **URL:** http://sonicsquirrel.net/detail/label/zymogen/489/apage/2
+- **License:** ⚠️ CC BY-NC-ND per release tags on the sonicsquirrel registry (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Resting Bell ⚠️ NC — Berlin netlabel (per-release CC)
+- **What:** Berlin netlabel (RB series) — ambient, experimental, electroacoustic (Oskar Hallbert, d'incise).
+- **URL:** https://www.restingbell.net/releases/rb086-doodling
+- **License:** ⚠️ Per-release CC on the official site: RB086 CC BY-NC-SA 3.0, RB040 CC BY-NC-ND 3.0 (verified 2026-10-07) — always check the release page.
+- **Free tier:** Free downloads (archive.org + sonicSquirrel)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### mixotic ⚠️ CC — netaudio DJ-mix netlabel
+- **What:** Netlabel (formerly Zerinnerung) focused on netaudio DJ mixes — electronic music in the broadest sense (Q-Man/Entactogen).
+- **URL:** http://sonicsquirrel.net/detail/label/mixotic/616/rpage/6/apage/6
+- **License:** ⚠️ "All mixes are free to download under the terms of the Creative Commons License" (label statement via sonicsquirrel; verified 2026-10-07) — variant unpinned; assume NC.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### RISM — Répertoire International des Sources Musicales ❓ manuscript catalog
+- **What:** The international inventory of musical sources — 620,000+ manuscript records by 22,500+ composers from 800+ libraries/archives in 32 countries; the finding aid behind most pre-1800 manuscript research.
+- **URL:** https://libguides.gc.cuny.edu/c.php?g=159578&p=1045052
+- **License:** ❓ Catalog database (finding aid, not the sources); linked libraries carry their own terms.
+- **Free tier:** Free search
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use to locate the holding library, then verify that library's digitization terms — pairs with every pocket-1 entry. [Wave 19 Lane A]
+
+#### URFM — Ufficio Ricerca Fondi Musicali ❓ Italian music-manuscript catalog
+- **What:** Italy's national catalog of music manuscripts to 1900 — the Italian node of the RISM network.
+- **URL:** https://www.mus.cam.ac.uk/library/library-collections-and-catalogues/catalogues
+- **License:** ❓ Catalog (finding aid); holding libraries' terms apply.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Chipmusic.org ❓ chip-music community + releases — terms unverified
+- **What:** Long-running chip-music community hub (forums, releases, radio) from the late-2000s chip revival.
+- **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
+- **License:** ❓ Community uploads; terms not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### illmatikvibes ❓ netlabel — license unspecified
+- **What:** Netlabel with electronic/experimental releases (phortran, Nick Cramer, Project 65, Plowve).
+- **URL:** http://sonicsquirrel.net/detail/label/illmatikvibes/155/rpage/3/apage/3
+- **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### binkcrsh ❓ netlabel — license unspecified
+- **What:** Netlabel (c67.org/binkcrsh) with electronic releases (mykidsister, can'o'lard, forlon, kdp).
+- **URL:** http://sonicsquirrel.net/detail/label/binkcrsh/45/apage/2/rpage/1
+- **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### floppyswop ❓ netlabel — license unspecified
+- **What:** Netlabel (floppyswop.co.uk) with electronic/chip-adjacent releases (Factro, mikrosopht, The Hardliner, Jotal).
+- **URL:** http://sonicsquirrel.net/detail/label/floppyswop/125/apage/4/rpage/3
+- **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Bypass ⚠️ NC-ND — netlabel
+- **What:** Netlabel (bp.bai-hua.org) with electronic releases (ZhangJW, Out Level, Da-D-Da, Enko).
+- **URL:** http://sonicsquirrel.net/detail/label/Bypass/1178/rpage/6/apage/6
+- **License:** ⚠️ Releases tagged CC BY-NC-ND on the sonicsquirrel registry (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Kreislauf ❓ German ambient/electro netlabel — license unverified
+- **What:** German netlabel and radio show (Hamburg) — ambient, electro, techno; founded 2001 by Andreas Buttweiler and Dirk Hartmann.
+- **URL:** https://en.wikipedia.org/wiki/Kreislauf
+- **License:** ❓ No license statement found this pass.
+- **Free tier:** Free downloads (kreislauf.org)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### US Army Old Guard Fife and Drum Corps ✅ federal PD recordings
+- **What:** The 3d U.S. Infantry Regiment's Fife and Drum Corps — free downloadable recordings of Revolutionary-War-era martial music, drawn from the US Army Center for Martial Music.
+- **URL:** https://fifeanddrum.army.mil
+- **License:** ✅ Site Terms of Use: "All information on this site is considered public information and may be distributed or copied freely except where otherwise noted" (verified 2026-10-07) — US federal work.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Repertoire is traditional/PD Revolutionary-era martial music — fully safe zone. [Wave 19 Lane A]
+
+#### Grainger Museum (University of Melbourne) ❓ 100,000-item composer archive
+- **What:** Percy Grainger's purpose-built autobiographical museum — 100,000+ items (manuscripts, instruments, experimental sound tech); majority accessible online via Collections search.
+- **URL:** https://omeka.cloud.unimelb.edu.au/grainger/items/show/218
+- **License:** ❓ Per-item rights; Grainger died 1961 (works in copyright in Australia until 2031) — verify per item.
+- **Free tier:** Free collection search
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Fondazione Claudio Monteverdi (Cremona) ❓ composer-society archive
+- **What:** Cultural institution at Via Uberto Pallavicino 7, Cremona, preserving Monteverdi's legacy — museum with manuscripts and artifacts.
+- **URL:** http://www.fondazionemonteverdi.it/
+- **License:** ❓ Archive/museum; no free-edition program found this pass — modern critical editions are commercial (Ricordi).
+- **Free tier:** Research access
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### audiotalaia ⚠️ NC-SA — ambient/field-recording netlabel
+- **What:** Netlabel (at-series catalog) — ambient, electroacoustic, field recordings (slow, nigul, ps, Mensa).
+- **URL:** http://sonicsquirrel.net/detail/release/un+cas+estrany/6329
+- **License:** ⚠️ Related releases tagged CC BY-NC-SA on the sonicsquirrel registry (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### hippocamp ❓ netlabel — license unspecified
+- **What:** Netlabel (hippocamp.net) with electronic releases (William Fields, Testrack, dncn, mudlogger).
+- **URL:** http://sonicsquirrel.net/detail/label/hippocamp/148
+- **License:** ❓ No license stated on the sonicsquirrel registry page (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Petite Jolie ✅ BY-SA — netlabel (commercial-safe)
+- **What:** Netlabel (petitejolie.com) — electronic/experimental (kaneel, Valzi, Julian Winter, El zoológico).
+- **URL:** http://sonicsquirrel.net/detail/label/Petite_Jolie/1196
+- **License:** ✅ Releases tagged CC BY-SA on the sonicsquirrel registry (verified 2026-10-07) — commercial use OK with attribution + share-alike.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### ogredung ❓ netlabel — license unspecified
+- **What:** Netlabel (ogredung.org) — electronic (Kkoto, makunouchi bento, Line Noise, Talk Show Host).
+- **URL:** http://sonicsquirrel.net/detail/label/ogredung/260/rpage/1/apage/2
+- **License:** ❓ No license stated on the sonicsquirrel registry page (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### chiptune (netlabel) ❓ chiptune netlabel — license unspecified
+- **What:** Chiptune netlabel (chiptune.com) — chip releases (Storm, TAO, YMCK, zabutom); related to 8bitpeoples/monotonik/Petite&Jolie.
+- **URL:** http://sonicsquirrel.net/detail/label/chiptune/67/apage/4/rpage/1
+- **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Enough Records ⚠️ NC-ND — long-running netlabel
+- **What:** Long-running netlabel (enoughrecords.scene.org, since 2001) — electronic/chiptune scene releases (nullsleep, Line Noise).
+- **URL:** http://sonicsquirrel.net/detail/label/enoughrecords/118/apage/52/rpage/3
+- **License:** ⚠️ Releases tagged CC BY-NC-ND on the sonicsquirrel registry (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Digital Tradition (DigiTrad) ❓ folk-song database — PD-or-permission policy
+- **What:** The Digital Tradition folk song database (searched via mudcat.org) — thousands of folk/traditional songs with lyrics, tunes, histories.
+- **URL:** https://mudcat.org/thread_pf.cfm?threadid=79989
+- **License:** ❓ Mudcat states "major efforts to ensure that what is in the Digital Tradition is either 'public domain' or is there by permission of the creator" — but no formal license; MetaBrainz declined it as a safe lyrics source (verified 2026-10-07).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### The Contemplator ⚠️ pre-1923 folk MIDIs — site usage terms
+- **What:** Lesley Nelson's folk music site — traditional/popular songs of England, Scotland, Ireland, Wales and America, circa 1600–1922, with lyrics, MIDI tunes, histories (Child Ballads, sea shanties).
+- **URL:** https://mail.contemplator.com/intro.html
+- **License:** ⚠️ Repertoire is pre-1923 (PD-era per the site's curation policy) but her MIDI sequencings carry the site's own usage terms — read the intro's Copyrights section before reuse (verified 2026-10-07).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Folk Den ⚠️ NC-ND — Roger McGuinn's traditional folk songs
+- **What:** Roger McGuinn's (The Byrds) folk site, hosted on UNC's ibiblio since 1995 — monthly traditional folk song MP3s with lyrics, chords, histories.
+- **URL:** http://en.wikipedia.org/wiki/Folk_Den
+- **License:** ⚠️ Folk Den Songs licensed CC BY-NC-ND 3.0 US (verified 2026-10-07 via Wikipedia).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Cantus Index ❓ chant concordance hub — terms unverified
+- **What:** The searchable hub of the networked chant databases — 436,000+ chants linked by Cantus IDs, with Volpiano melody incipits and a GitHub data repo.
+- **URL:** http://cantusindex.org/faq
+- **License:** ❓ Academic open data; no explicit reuse license found this pass.
+- **Free tier:** Free search + API + GitHub repo (dact-chant/cantus-index)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Stroboskop ⚠️ NC-ND — Slovakian electronic netlabel
+- **What:** Slovakian netlabel (Bratislava) — 27 releases, 69 artists; techno, minimal, electro, 8-bit, house, acid (Semi Sailor, Acidko & Martinka).
+- **URL:** http://sonicsquirrel.net/detail/label/Stroboskop/1452/apage/5/rpage/3
+- **License:** ⚠️ Tagged "by-nc-nd" on the sonicsquirrel registry (verified 2026-10-07).
+- **Free tier:** Free downloads (archive.org mirrors)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### FUSELab ⚠️ NC-ND — netlabel (fslab.net)
+- **What:** Netlabel (fslab.net) — electronic (Orphan101 & Bloodman, Planet Soap, Strelnikov, Dubmasta, SCSI-9).
+- **URL:** http://sonicsquirrel.net/detail/label/Fuselab/1444/rpage/5/apage/6
+- **License:** ⚠️ Releases tagged CC BY-NC-ND on the sonicsquirrel registry (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### laridae ⚠️ NC-ND — Austrian netlabel (laridae.at)
+- **What:** Austrian netlabel (laridae.at) — electronic (Iambic², firnwald, beitegeuze, Schaua, modex).
+- **URL:** http://sonicsquirrel.net/detail/label/laridae/195/rpage/3
+- **License:** ⚠️ Releases tagged CC BY-NC-ND on the sonicsquirrel registry (verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### mml2vgm IDE ❓ open-source MML editor (kuma4649) — license unverified
+- **What:** Open-source Windows MML editor for PMD, MUCOM88, M98, moondriver and its own mml2vgm format — compiler + player with one-key playback and note highlighting.
+- **URL:** https://github.com/pedipanol/mml-guide/blob/HEAD/docs/pmd/setup.md
+- **License:** ❓ Described as open source; no LICENSE file verified this pass. (Distinct from rjungemann/mml2vgm, which is GPL-3.0 — see quarantine flags.)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Yale Gilmore Music Library — Digitized Treasures ❓
+- **What:** Yale's Irving S. Gilmore Music Library digital highlights — Bach Clavier-Büchlein manuscript, Brahms Capriccio (gift to Clara Schumann), Schumann sketches, Mendelssohn Lied ohne Worte, Lowell Mason Codex, Mellon Chansonnier, open-access manuscripts and early printed editions (Bach, Mozart, Clementi).
+- **URL:** http://guides.library.yale.edu/MusicSpecialCollections/Digital
+- **License:** ❓ Per-item rights; some items open access, some (Wickhambrook lute manuscript) Yale-network only. Yale HSR notes pre-1923 recordings are PD per the Music Modernization Act.
+- **Free tier:** Free web access
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Eastman Sibley Music Library — Musical Scores Collection ✅ PD scores
+- **What:** Eastman School of Music's Sibley Music Library digitized collection — predominately classical music scores and books from the public domain.
+- **URL:** https://libguides.pasadena.edu/c.php?g=126749&p=830207
+- **License:** ✅ Described as "digitized, predominately classical, music scores and books from the public domain" (verified 2026-10-07 via Pasadena City College libguide).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Sheet Music Consortium ✅ open library-built sheet-music collection
+- **What:** Searchable, open collection of digitized sheet music collaboratively created by libraries across the U.S.
+- **URL:** https://libguides.up.edu/music/sheetmusic
+- **License:** ✅ Open collection built by participating libraries (verified 2026-10-07 via University of Portland libguide) — per-item PD.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Duke Historic American Sheet Music Project ✅ 3000 PD pieces
+- **What:** Duke University's digital images of 3000+ pieces of sheet music published in the U.S. between 1850–1920 (Rare Book, Manuscript, and Special Collections Library).
+- **URL:** https://libguides.up.edu/music/sheetmusic
+- **License:** ✅ 1850–1920 U.S. publications — PD era (verified 2026-10-07 via University of Portland libguide).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Harvard Loeb — Digital Scores & Libretti ✅ open rare-score collection
+- **What:** Harvard University's Loeb Music Library open collection — scanned images of rare and unique music scores.
+- **URL:** https://libguides.up.edu/music/sheetmusic
+- **License:** ✅ Described as "an open collection of scanned images of rare and unique music scores" (verified 2026-10-07 via University of Portland libguide).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### BNE Digital ❓ National Library of Spain digital collections
+- **What:** Biblioteca Nacional de España's digital portal (bnedigital) — maps, illustrations, first editions and music collections with step-by-step video tutorials.
+- **URL:** https://www.youtube.com/watch?v=RS59nn3_zEc
+- **License:** ❓ BNE digital collections; per-item rights not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Open-source record label (Wikipedia) ✅ netlabel research reference
+- **What:** Wikipedia's article on the open-source record label movement — history, licensing models, external links to open-composition projects.
+- **URL:** http://en.wikipedia.org/wiki/Open-source_record_label
+- **License:** ✅ Informational (CC BY-SA text); research reference for netlabel ToS audits.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Netlabels in Japan (Wikipedia) ✅ netlabel research reference
+- **What:** Wikipedia's article on Japanese netlabels (Maltine Records, Bunkai-Kei, Trekkie Trax, ALTEMA, MarginalRec.) — used to source this wave's Japanese netlabel audits.
+- **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
+- **License:** ✅ Informational (CC BY-SA text); research reference.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Phlow Magazine — netlabel licensing research (Galuszka 2009) ⚠️ NC-SA
+- **What:** Patryk Galuszka's netlabel research (N=338 netlabels) — which licenses netlabels actually use; non-commercial attitudes dominate (only ~5% earn money from it).
+- **URL:** https://phlow-magazine.com/images/research_on_netlabels_by_patryk_galuszka_cc-by-nc-sa.pdf
+- **License:** ⚠️ CC BY-NC-SA per the filename/landing (verified 2026-10-07).
+- **Free tier:** Free PDF
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Key diligence backing for the netlabel ToS-audit pattern: "free download" usually means NC. [Wave 19 Lane A]

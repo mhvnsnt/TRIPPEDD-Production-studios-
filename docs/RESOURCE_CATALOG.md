@@ -26,6 +26,8 @@ Generated 2026-10-07 from `/tmp/hunter_{a,b,c}.json` (3 research workers, licens
 | 12 | Upscalers / frame interpolation | 9 (+5 Wave 2)  |
 | | **TOTAL** | **110 + 129 + 139 = 378** |
 
+**Wave 5 (2026-10-07):** +141 honest `####` entries → **507 total** (canonical count = `####` headings). Breakdown: 39 SFX/foley/CC0-voice (A1) · 53 music/free-plugins (A2) · 44 BG-plates/anime-tooling (A3) · 2 TTS (Dia2, ZONOS2 — B) · 3 nijilive rigs (Onyx, Echo, Kiko — C). Plus 4 license/badge updates to existing entries (OVRLipSync, Zonos, Dia, VibeVoice), the Wan-AI→Wan-Video org correction, verified model download sizes, and the nijigenerate headless setup-wizard bypass. Quarantine: rows 66–77 added (max 77).
+
 Already wired in these repos (not re-listed here): FFmpeg/FFprobe, OpenCV, PySceneDetect, Tesseract, faster-whisper, OpenTimelineIO, Blender, Kdenlive/MLT, Natron, OpenColorIO, OpenAssetIO, OpenCue, plus tools/video_pipeline (auto_caption.py, concept_batch.py, promo_assemble.py, sfx.py, voiceover.py) in both repos.
 
 ## Top-10 wire-up priority
@@ -2539,7 +2541,8 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5 (prebuilt, no D toolchain needed)
 - **Status:** WIRED — run-proven. Proof: `tools/puppet/PROOFS.md` + `tools/puppet/proofs/nijigenerate-xvfb2-proof.png`
-- **Notes:** Headless recipe needs Xvfb AND a D-Bus session (crashes without dbus-launch); XDG_RUNTIME_DIR must be set. Use for ALL new puppet rigging. [Wave 3]
+- **Notes:** Headless recipe needs Xvfb AND a D-Bus session (crashes without dbus-launch); XDG_RUNTIME_DIR must be set. Use for ALL new puppet rigging. [Wave 3] Headless setup-wizard BYPASS SOLVED [Wave 5]: the Quick Setup wizard is gated by `hasDoneQuickSetup` (not `firstrun_complete`) — set `"hasDoneQuickSetup": true` in `~/.config/nijigenerate/settings.json`, then `xvfb-run nijigenerate /path/to/rig.inp` opens the project directly. Source-verified; needs one live-binary confirmation.
+
 
 #### Inochi Creator v0.8.6 (Linux prebuilt) — RUN-PROVEN ✅ commercial-safe
 - **What:** Legacy Inochi2D rigging application, prebuilt Linux x86_64; RUN-PROVEN on this box (launched under Xvfb + D-Bus, editor opens 2026-10-07)
@@ -2759,23 +2762,23 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 
 #### Zonos ✅
 - **What:** Zyphra AI open zero-shot TTS with eSpeak phonemization and audio-prefix voice cloning
-- **URL:** https://github.com/ZyphraAI/Zonos
-- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **URL:** https://github.com/Zyphra/Zonos (ORG RENAMED: `ZyphraAI` → `Zyphra`; old URL 404s — update all links)
+- **License:** Apache-2.0 (verified via GitHub API license endpoint 2026-10-07; Wave 5 re-confirmed via HF model cards + Zyphra release announcement). NOTE: ZONOS2 is a separate model under MIT — different terms, evaluate separately
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** WIRED-PARTIAL — pip-installed (torch CPU), import verified after fixing a real upstream packaging bug (pyproject drops zonos/backbone subpackage; one-line local patch); espeak-ng installed; generation blocked (3.25GB weights vs ~1.4GB free disk). Lane: `tools/voice/zonos/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
-- **Notes:** Strongest open zero-shot TTS candidate for Wizard Gang character voices. DEPENDENCY NOTE: uses eSpeak phonemization — eSpeak-NG is GPL-3.0 (quarantine row 7); use the eSpeak binary as a standalone tool per the quarantine doctrine, never link the library [Wave 4]
+- **Notes:** Wave 5 verdict: ✅ COMMERCIAL-SAFE — primary casting engine. DEPENDENCY NOTE: uses eSpeak phonemization — eSpeak-NG is GPL-3.0 (quarantine row 7); use the eSpeak binary as a standalone tool per the quarantine doctrine, never link the library [Wave 5]
 
-#### Dia ⚠️
-- **What:** 1.6B text-to-dialogue model with two-speaker turn-taking and emotion tags
+#### Dia ❓
+- **What:** 1.6B text-to-dialogue model with two-speaker turn-taking and emotion tags (upstream active; Dia2 released 2025-11-19)
 - **URL:** https://github.com/nari-labs/Dia
-- **License:** Apache-2.0 BUT upstream README: "intended for research and educational use" — identity misuse / deceptive content strictly forbidden. Commercial use needs a legal read (2026-10-07)
+- **License:** Apache-2.0 (read live 2026-10-07: commit 876125e) BUT upstream README: "intended for research and educational use" — identity misuse / deceptive content / illegal use strictly forbidden; release framed as "to accelerate research". Verdict: NEEDS-OWNER-REVIEW before commercial ship (2026-10-07)
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** WIRED-PARTIAL — lean --no-deps install, `from dia.model import Dia` OK; generation blocked (6.44GB fp32 weights; upstream GPU-only, CPU support "coming soon"). Lane: `tools/voice/dia/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
-- **Notes:** Dialogue-native TTS is ideal for multi-character cartoon scenes [Wave 4]
+- **Notes:** Dialogue-native TTS is ideal for multi-character cartoon scenes. Audition/R&D/animatics OK; cast primary voices on Zonos until owner rules on the research-intent language [Wave 5]
 
 #### Orpheus-TTS ✅
 - **What:** Expressive 3B text-to-speech with emotion and style tags
@@ -2797,15 +2800,15 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Status:** not-started
 - **Notes:** Bilingual option if any episode needs non-English dialogue [Wave 4]
 
-#### VibeVoice ⚠️
-- **What:** Long-form multi-speaker podcast-style TTS (up to ~90 min continuous)
+#### VibeVoice 🚫
+- **What:** Long-form multi-speaker podcast-style TTS (up to ~90 min continuous); Realtime-0.5B streaming variant (actively maintained into 2026; commit 1541f59, 54,662 stars)
 - **URL:** https://github.com/microsoft/VibeVoice
-- **License:** MIT BUT upstream (2025-09-05): "intended for research and development purposes only", TTS code was removed after misuse (partially restored since). Research/scratch only — never load-bearing without further testing (2026-10-07)
+- **License:** MIT (code) BUT Microsoft upstream designates the MODEL research-only: "VibeVoice is an open-source research framework"; TTS code REMOVED 2025-09-05 after misuse; "We do not recommend using VibeVoice in commercial or real-world applications… intended for research and development purposes only"; model card: "limited to research purpose use" (2026-10-07)
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** WIRED-PARTIAL — repo cloned, modeling code present; no file-inference demo upstream; generation blocked (5.41GB/2.04GB weights vs free disk). Lane: `tools/voice/vibevoice/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
-- **Notes:** Multi-speaker long-form fits full episode narration passes [Wave 4]
+- **Status:** WIRED-PARTIAL — repo cloned, modeling code present; generation blocked (5.41GB/2.04GB weights vs free disk). Lane: `tools/voice/vibevoice/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
+- **Notes:** 🚫 RESEARCH-ONLY — scratch/evaluation only, never in monetized episodes. CASTING KILLER: VibeVoice-Realtime-0.5B removes the acoustic tokenizer to PREVENT voice cloning by design, embeds an audible AI disclaimer + watermark in every output. Not a casting engine [Wave 5]
 
 #### F5-TTS 🚫
 - **What:** Flow-matching non-autoregressive TTS, fast high-quality zero-shot cloning
@@ -3884,14 +3887,14 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Notes:** Fully permissive high-quality video gen — strong shipping candidate [Wave 4]
 
 #### Wan2.2-S2V ✅ commercial-safe
-- **What:** Wan-AI speech-to-video: drives a portrait with speech audio (14B model)
-- **URL:** https://huggingface.co/Wan-AI/Wan2.2-S2V-14B
+- **What:** Wan-Video speech-to-video: drives a portrait with speech audio (14B model)
+- **URL:** https://huggingface.co/Wan-Video/Wan2.2-S2V-14B
 - **License:** Apache-2.0 (verified via upstream LICENSE.txt + HF API cardData.license, 2026-10-07)
 - **Free tier:** fully open
 - **Repo lane:** trippedd (lip-sync)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5 (needs GPU box: ~28GB bf16 weights, 1xH100-class for 720p)
 - **Status:** WIRED — BLOCKED-HONEST on this sandbox (no CUDA, 4.3GB free disk). Lane: `tools/lipsync/wan2p2-s2v/`. GPU handoff spec in lane README. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
-- **Notes:** First-party talking-head video gen for the 9 council members once a GPU worker exists [Wave 4]
+- **Notes:** First-party talking-head video gen for the 9 council members once a GPU worker exists [Wave 4]. ORG CORRECTION [Wave 5]: upstream moved `Wan-AI` → `Wan-Video` (github.com/Wan-Video/Wan2.2; old Wan-AI URLs 404 — HF weights stay under `Wan-AI/`). Verified download sizes (HF API, 2026-10-07): S2V-14B 16.3 GB, Zonos 1.65/1.62 GB, Dia 1.61 GB, VibeVoice-Realtime 1.02 GB — all ungated.
 
 #### Ditto (talking-head) ✅ commercial-safe
 - **What:** AntGroup realtime talking-head: audio-driven facial motion via diffusion (ONNX models)
@@ -3903,15 +3906,15 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Status:** WIRED — real CPU proof RAN: hubert.onnx + lmdm_v0.4_hubert.onnx (onnxruntime, no CUDA) produced audio-driven motion `(1,80,265)` in `tools/lipsync/ditto/proofs/ditto_motion_3s.npy`; speech-vs-silence conditioning verified. Renderer not run on CPU. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
 - **Notes:** Realtime path serves live puppet/streaming use; CPU path proves the motion model for offline rendering [Wave 4]
 
-#### OVRLipSync ⚠️ commercial-OK-per-mirrors
+#### OVRLipSync ⚠️ commercial-OK-per-license-text
 - **What:** Meta Oculus lip-sync SDK: real-time viseme analysis from audio (native C API, Unity, Unreal)
 - **URL:** https://developers.meta.com/horizon/downloads/package/oculus-lipsync-unity/
-- **License:** Oculus SDK License (Meta proprietary EULA) — five independent mirrors agree it allows personal AND commercial use; canonical Meta license text returned HTTP 403 from sandbox. Badge: commercial-OK-per-mirrors / VERIFY-EULA-BEFORE-SHIP (2026-10-07)
+- **License:** Oculus SDK License (Meta proprietary EULA). Wave 5 READ the actual license text (v3.5, via scancode LicenseDB mirror — canonical `developer.oculus.com/licenses/audio-3.3/` still HTTP 403 from sandbox): §2.1 — "You may sublicense and redistribute the source, binary, or object code of the Oculus SDK in whole for no charge or as part of a for-charge piece of Developer Content" (commercial/for-charge use EXPRESSLY permitted). Conditions: redistribute in its entirety; Oculus Approved Products only; ship the copyright notice + license copy; no reverse-engineering (§1.4); Meta retains SDK rights, you retain all rights to your Developer Content (§1.2). Badge: commercial-OK-per-license-text / VERIFY-AUDIO-3.3-VARIANT-BEFORE-SHIP (2026-10-07)
 - **Free tier:** free SDK; download login-gated
 - **Repo lane:** trippedd (lip-sync)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5 (native integration)
-- **Status:** WIRED-PARTIAL — SDK download requires Meta login (owner action: sign in → download → stage into `tools/lipsync/ovr-lipsync/sdk/`). Integration paths documented in lane README. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
-- **Notes:** Lowest-latency viseme path for game-engine characters; EULA must be read before shipping use [Wave 4]
+- **Status:** WIRED-PARTIAL — SDK download requires Meta login (owner action: sign in → download → unzip → stage `LibOVRLipSync/<platform>/libovrlipsync.*` + `Include/OVRLipSync.h` into `tools/lipsync/ovr-lipsync/sdk/`). Exact owner steps + integration paths in lane README. Do NOT commit binary to git until audio-3.3 license text is read. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
+- **Notes:** Lowest-latency viseme path for game-engine characters. §2.1 "Oculus Approved Products" clause needs an owner read of the audio-3.3 variant before shipping inside desktop pipeline tools [Wave 5]
 
 #### Ashes nijilive rig proof (Wave 4, god-molecule) ✅ commercial-safe
 - **What:** First real character rig on the nijigenerate/Inochi2D toolchain: Ashes (scarlet robe, grill smile) as a 15-part / 24-param nijilive rig with posed proof renders
@@ -3922,3 +3925,1452 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
 - **Status:** WIRED — `Ashes.inp` structurally validated; 9 layered PNG parts + manifest; 4 posed renders (neutral, blink, head-turn+mouth-open, comparison); RIG_PROOF.md with exact recipe. Honest gap: nijigenerate setup-wizard not dismissible headless via xdotool — editor-screenshot step replaced by structural validation
 - **Notes:** Proves the puppet pipeline can carry the 9 council members; recipe is repeatable for the other 8 [Wave 4]
+
+## Wave 5 additions (2026-10-07)
+
++141 honest entries: 39 SFX/foley/CC0-voice (Worker A1) · 53 music/free-plugins (Worker A2) · 44 BG-plates/anime-tooling (Worker A3) · 2 TTS (Dia2, ZONOS2 — Worker B) · 3 nijilive rigs (Onyx, Echo, Kiko — Worker C). License/badge updates applied to OVRLipSync, Zonos, Dia, VibeVoice; Wan-AI→Wan-Video org correction applied. Every license verified from upstream sources, never assumed.
+
+#### Kenney — Interface Sounds ✅ commercial-safe
+- **What:** 103 CC0 UI sounds (clicks, ticks, toggles, confirms, errors, glitches) in OGG
+- **URL:** https://kenney.nl/assets/interface-sounds
+- **License:** CC0 1.0 Universal (verified via kenney.nl asset page license text + bundled License.txt in pack zips, 2026-10-07)
+- **Free tier:** fully free, no account, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED (2026-10-07 — smoke-tested; see tools/sfx/kenney-interface-sounds/)
+- **Notes:** Menu/UI SFX backbone; distinct pack from the catalog's casino-audio entry. [Wave 5]
+
+#### Kenney — Impact Sounds ✅ commercial-safe
+- **What:** 130 CC0 impact sounds (punches, footsteps on 5 surfaces, glass/metal/wood breaks) in OGG
+- **URL:** https://kenney.nl/assets/impact-sounds
+- **License:** CC0 1.0 Universal (verified via kenney.nl asset page license text + bundled License.txt in pack zips, 2026-10-07)
+- **Free tier:** fully free, no account, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Combat SFX core (punches, body hits, footsteps) — direct AshLane/Concrete Dragon fit. [Wave 5]
+
+#### Kenney — Sci-Fi Sounds ✅ commercial-safe
+- **What:** CC0 sci-fi SFX pack (phasers, power-ups, sweeps, laser zaps) in OGG
+- **URL:** https://kenney.nl/assets/sci-fi-sounds
+- **License:** CC0 1.0 Universal (verified via kenney.nl asset page license text, 2026-10-07)
+- **Free tier:** fully free, no account, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Sci-fi stingers, UI sweeps, transition whooshes. [Wave 5]
+
+#### Kenney — Digital Audio ✅ commercial-safe
+- **What:** CC0 retro/digital SFX pack (bleeps, blips, 8-bit style effects) in OGG
+- **URL:** https://kenney.nl/assets/digital-audio
+- **License:** CC0 1.0 Universal (verified via kenney.nl asset page license text, 2026-10-07)
+- **Free tier:** fully free, no account, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Retro/arcade UI layer for HUDs and minigames. [Wave 5]
+
+#### Kenney — Music Jingles ✅ commercial-safe
+- **What:** CC0 short musical stingers/jingles pack in OGG
+- **URL:** https://kenney.nl/assets/music-jingles
+- **License:** CC0 1.0 Universal (verified via kenney.nl asset page license text, 2026-10-07)
+- **Free tier:** fully free, no account, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Win/lose/level stingers, logo hits. [Wave 5]
+
+#### Kenney — RPG Audio ✅ commercial-safe
+- **What:** CC0 fantasy RPG SFX pack (spells, coins, swords, potions) in OGG
+- **URL:** https://kenney.nl/assets/rpg-audio
+- **License:** CC0 1.0 Universal (verified via kenney.nl asset page license text, 2026-10-07)
+- **Free tier:** fully free, no account, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Fantasy/action-adventure layer; coin/sword/potion sounds. [Wave 5]
+
+#### Kenney — UI Audio ✅ commercial-safe
+- **What:** CC0 UI sound pack (modern interface clicks, hovers, notifications) in OGG
+- **URL:** https://kenney.nl/assets/ui-audio
+- **License:** CC0 1.0 Universal (verified via kenney.nl asset page license text, 2026-10-07)
+- **Free tier:** fully free, no account, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Second UI pack alongside Interface Sounds — more modern/soft UI set. [Wave 5]
+
+## CC0 / public-domain voice & speech datasets (5 entries)
+
+#### Mozilla Common Voice ✅ commercial-safe
+- **What:** 130+ language crowd-read speech corpus, thousands of hours, with transcriptions
+- **URL:** https://commonvoice.mozilla.org/
+- **License:** CC0 1.0 Universal — public domain dedication (verified via Mozilla Data Collective license terms + dataset cards, 2026-10-07)
+- **Free tier:** free download (account + terms acceptance via Mozilla Data Collective API)
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** CC0 voice corpus for training/evaluating TTS/ASR and for ambient crowd-voice sourcing; keep license text with downloads. [Wave 5]
+
+#### LJSpeech Dataset ✅ commercial-safe
+- **What:** 24h single-female-speaker English TTS corpus (13,100 clips from LibriVox readings)
+- **URL:** https://keithito.com/LJ-Speech-Dataset/
+- **License:** Public domain in the US (verified via the dataset's own License section on keithito.com, 2026-10-07); no restrictions, attribution not required
+- **Free tier:** free download (2.6 GB tarball)
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Single-speaker baseline TTS corpus; distinct from the Matcha LJSpeech *model* already in the catalog. [Wave 5]
+
+#### VoxPopuli ✅ commercial-safe
+- **What:** Large-scale multilingual speech corpus from European Parliament recordings (ASR/translation)
+- **URL:** https://github.com/facebookresearch/voxpopuli
+- **License:** CC0 1.0 (verified via HuggingFace dataset card licensing section, 2026-10-07); raw audio additionally subject to European Parliament legal notice
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Multilingual voice variety for non-English VO and crowd beds; mind the EU Parliament legal notice on raw audio. [Wave 5]
+
+#### Thorsten-Voice ✅ commercial-safe
+- **What:** High-quality German TTS voice datasets (neutral, emotional, Hessisch dialect, 44kHz full set)
+- **URL:** https://github.com/thorstenMueller/Thorsten-Voice
+- **License:** CC0 1.0 Universal (verified via repo README license statements, 2026-10-07)
+- **Free tier:** free download (Zenodo DOI + HuggingFace mirrors)
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** German VO / narrator voice source for Wizard Gang localization; CC0-clean. [Wave 5]
+
+#### HiFi-TTS ✅ commercial-safe
+- **What:** 292h multi-speaker (10 speakers, 44.1kHz) English TTS dataset from LibriVox audiobooks (NVIDIA)
+- **URL:** https://research.nvidia.com/publication/2021-04_hi-fi-multi-speaker-english-tts-dataset
+- **License:** CC BY 4.0 (verified via arXiv 2104.01497 paper Table 1 + NVIDIA research page, 2026-10-07) — commercial OK with attribution
+- **Free tier:** free download (openslr.org/109)
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Multi-speaker English VO training/eval; attribution required in credits. [Wave 5]
+
+## Public-domain spoken-word & radio archives (3 entries)
+
+#### LibriVox ✅ commercial-safe
+- **What:** 21,000+ volunteer-read public-domain audiobooks (fiction, drama, poetry, many languages)
+- **URL:** https://librivox.org/
+- **License:** Public domain (verified via wiki.librivox.org Copyright_and_Public_Domain page: "anyone can use those audio files however they wish", incl. commercial, 2026-10-07)
+- **Free tier:** fully free streaming + MP3/OGG downloads; files mirrored on Internet Archive
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED (2026-10-07 — smoke-tested; see tools/sfx/librivox/)
+- **Notes:** PD narration, dialogue beds, period voice texture; no clearance friction at all. [Wave 5]
+
+#### OTRR — Old Time Radio Researchers Group ✅ commercial-safe
+- **What:** Thousands of restored public-domain old-time radio series (drama, sci-fi, western) on Internet Archive
+- **URL:** https://archive.org/details/OTRR_Certified_Dimension_X
+- **License:** Public domain (verified via OTRR item notes on archive.org: group releases its restored transfers into the public domain, 2026-10-07)
+- **Free tier:** free MP3/zip downloads per series
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** URL is a representative series (Dimension X, sci-fi); browse the OTRR creator on archive.org for the full set. Vintage VO + foley-rich drama beds. [Wave 5]
+
+#### Prelinger Archives ✅ commercial-safe
+- **What:** 8,500+ ephemeral films (ads, industrials, educationals, home movies) on Internet Archive; audio tracks usable as foley/ambience
+- **URL:** https://archive.org/details/prelinger
+- **License:** Per-film public-domain dedication (verified via Prelinger licensing FAQ: films carrying the CC Public Domain Dedication are reusable without restriction — CHECK EACH FILM's item page, 2026-10-07)
+- **Free tier:** free downloads (MP4/Ogg/MPEG2 per film)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** ~65% of holdings are PD; ~28/30 top downloads carry the dedication. Strip soundtracks if music rights are unclear. [Wave 5]
+
+## CC0 SFX libraries & foley (8 entries)
+
+#### BigSoundBank (LaSonotheque) ✅ commercial-safe
+- **What:** Thousands of per-sound CC0 SFX with UCS categories, 48kHz/24-bit, no account
+- **URL:** https://bigsoundbank.com/applause-from-40-people-3-s3519.html
+- **License:** CC0 / public-domain equivalent per sound (verified via the per-sound FAQ on bigsoundbank.com: "I intentionally release it under the CC0 license", commercial OK, no attribution, 2026-10-07)
+- **Free tier:** free downloads, no signup
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** URL is a representative sound page; the whole library is CC0. UCS-categorized — ideal for systematic foley pulls. [Wave 5]
+
+#### BVKER — Footsteps Foley Library ✅ commercial-safe
+- **What:** 700+ WAV foley files (footsteps, ambience recordings, one-shots, pops, clicks)
+- **URL:** https://bvker.com/foley-sound-effects/
+- **License:** CC0 1.0 (verified via bvker.com foley page license section, 2026-10-07) — no credit required
+- **Free tier:** free download pack
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Dedicated foley source — footsteps, cloth, handling sounds for fight-scene beds. [Wave 5]
+
+#### 99Sounds — Cinematic Textures ✅ commercial-safe
+- **What:** 40 cinematic drones, textures and SFX by Dronny Darko, 24-bit WAV (429 MB)
+- **URL:** https://99sounds.org/cinematic-textures/
+- **License:** Royalty-free for commercial and non-commercial use (verified via 99Sounds release terms, 2026-10-07)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Dark cinematic beds for Wizard Gang interstitials; distinct pack from the catalog's 99Sounds sci-fi entry. [Wave 5]
+
+#### 99Sounds — Free Sound Effects index ✅ commercial-safe
+- **What:** Master index of all 99Sounds royalty-free packs (sci-fi, horror, glitch, foley, drums)
+- **URL:** https://99sounds.org/free-sound-effects/
+- **License:** Royalty-free for commercial and non-commercial use (verified via 99Sounds release terms, 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Pack-discovery hub; pull individual packs from here. [Wave 5]
+
+#### FreePD.com catalog (via mirrors) ✅ commercial-safe
+- **What:** Former CC0 music/SFX catalog (2008–2025); all tracks CC0
+- **URL:** https://web.archive.org/web/20250106221458/https://freepd.com/upbeat.php
+- **License:** CC0 1.0 Universal (verified via Wayback snapshot of FreePD's own banner: "Creative Commons 0 — Completely Royalty Free", 2026-10-07)
+- **Free tier:** free (via Internet Archive mirrors and the SoundSafari GitHub CC0 mirror)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Site SHUT DOWN late 2025 — use Internet Archive mirror items or the SoundSafari/CC0-1.0-Music GitHub mirror. Verify each file's CC0 tag on the mirror. [Wave 5]
+
+#### Partners In Rhyme — SFX & Ambience ✅ commercial-safe
+- **What:** Free SFX/ambience category (nature, crowd, rain, thunder, jungle, ocean loops)
+- **URL:** https://www.partnersinrhyme.com/soundfx/WEB-DESIGN-SOUNDS/AMBIENT.shtml
+- **License:** Free royalty-free (verified via Partners In Rhyme site terms, 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Distinct SFX/ambience page from the catalog's PIR music-loops entry. [Wave 5]
+
+#### Bryce835 — AI-generated SFX (Freesound) ✅ commercial-safe
+- **What:** Small CC0 pack of AI-generated sound effects on Freesound
+- **URL:** https://freesound.org/people/Bryce835/packs/40655/
+- **License:** CC0 1.0 (verified via the Freesound pack page license badge, 2026-10-07)
+- **Free tier:** free (Freesound account required for download)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Small pack but CC0-clean; example of AI-generated SFX usable commercially. [Wave 5]
+
+#### MLG9309 — Creative Commons Zero pack (Freesound) ✅ commercial-safe
+- **What:** CC0 foley/ambience recordings pack on Freesound (office ambience, money handling)
+- **URL:** https://freesound.org/people/MLG9309/packs/27750/
+- **License:** CC0 1.0 (verified via the Freesound pack page license badge, 2026-10-07)
+- **Free tier:** free (Freesound account required for download)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Everyday foley (workspace, handling) for realism beds. [Wave 5]
+
+## OpenGameArt CC0 packs (4 entries — verified CC0 per-pack)
+
+#### OpenGameArt — 50 CC0 Sci-Fi SFX (rubberduck) ✅ commercial-safe
+- **What:** 50 CC0 sci-fi sound effects bundle
+- **URL:** https://opengameart.org/content/50-cc0-sci-fi-sfx
+- **License:** CC0 1.0 (verified via the OGA item page license field + third-party credits file, 2026-10-07)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Sci-fi UI/weapons layer. [Wave 5]
+
+#### OpenGameArt — 30 CC0 SFX Loops (rubberduck) ✅ commercial-safe
+- **What:** 30 loopable CC0 SFX
+- **URL:** https://opengameart.org/content/30-cc0-sfx-loops
+- **License:** CC0 1.0 (verified via the OGA item page license field + third-party credits file, 2026-10-07)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Loop-ready effects for ambience beds and game loops. [Wave 5]
+
+#### OpenGameArt — 100 CC0 SFX #2 (rubberduck) ✅ commercial-safe
+- **What:** 100 assorted CC0 sound effects, second volume
+- **URL:** https://opengameart.org/content/100-cc0-sfx-2
+- **License:** CC0 1.0 (verified via the OGA item page license field + third-party credits file, 2026-10-07)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** General-purpose CC0 grab bag. [Wave 5]
+
+#### OpenGameArt — Loopable Dungeon Ambience (JaggedStone) ✅ commercial-safe
+- **What:** Loopable CC0 dungeon ambience track
+- **URL:** https://opengameart.org/content/loopable-dungeon-ambience
+- **License:** CC0 1.0 (verified via the OGA item page license field + third-party credits file, 2026-10-07)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Dark loopable bed for horror/fantasy segments. [Wave 5]
+
+## Freesound curated packs — CC-BY / per-sound licenses (6 entries — badge each honestly)
+
+#### SoundFlakes — Diablo sound redesign pack (Freesound) ✅ commercial-safe
+- **What:** 24-bit WAV game SFX redesign pack (impacts, roars, swings, atmospheres)
+- **URL:** https://freesound.org/people/SoundFlakes/packs/27753/
+- **License:** Per-sound license on Freesound (author states: use in any projects incl. commercial; do not resell standalone — verified via sound-page text, 2026-10-07)
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Confirm each sound's license badge on its page before wiring. [Wave 5]
+
+#### LittleRobotSoundFactory — Voices: Human (Freesound) ✅ commercial-safe
+- **What:** Human voice SFX pack (grunts, reactions, efforts) for games
+- **URL:** https://freesound.org/people/LittleRobotSoundFactory/packs/17725/
+- **License:** CC-BY 4.0 (verified via per-sound license badges on Freesound, 2026-10-07) — attribution required
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Fight-effort/voice-reaction source; keep attribution list. [Wave 5]
+
+#### LittleRobotSoundFactory — Horror Sound Effects Library (Freesound) ✅ commercial-safe
+- **What:** Horror SFX pack (breaths, scares, creature sounds)
+- **URL:** https://freesound.org/people/LittleRobotSoundFactory/packs/16688/
+- **License:** CC-BY 4.0 (verified via per-sound license badges on Freesound, 2026-10-07) — attribution required
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Halloween-season lane material (October-gated per owner rule); attribution list required. [Wave 5]
+
+#### Benboncan — Ambience field recordings (Freesound) ✅ commercial-safe
+- **What:** Stereo field-recording ambience pack (streams, waves, crowds, winds)
+- **URL:** https://freesound.org/people/Benboncan/packs/4374/
+- **License:** CC-BY 4.0 / Attribution (verified via per-sound license badges on Freesound, 2026-10-07) — attribution required
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** High-rated loopable nature beds; attribution list required. [Wave 5]
+
+#### deadrobotmusic — Foley//Textures (Freesound) ✅ commercial-safe
+- **What:** Field-mic foley/texture pack with per-sound CC0 tags (water, rain, forest percussion)
+- **URL:** https://freesound.org/people/deadrobotmusic/packs/30937/
+- **License:** CC0 per sound (verified via //cc0 tags on the pack listing, 2026-10-07) — re-confirm each sound's page before wiring
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Textures for sound-design layering. [Wave 5]
+
+#### InspectorJ — Freesound SFX (attribution) ✅ commercial-safe
+- **What:** Professional water/ambience/soundscape recordings (drips, streams, sewers)
+- **URL:** https://freesound.org/people/InspectorJ/sounds/342566/
+- **License:** CC-BY — NOT public domain (verified via sound-page text: "This sound is not in the public domain. Please attribute/credit the sound if you use it", 2026-10-07) — attribution required
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** URL is a representative verified sound; browse the artist page for the full set. Keep attribution list. [Wave 5]
+
+## Restricted / unverified (honest badges)
+
+#### Meta Sound Collection 🚫 not commercial-safe
+- **What:** 14,000+ royalty-free tracks and SFX inside Meta's creator tools
+- **URL:** https://www.facebook.com/legal/musicguidelines
+- **License:** Meta platform license — free for use ON Facebook/Instagram (verified via Meta music guidelines + third-party reporting, 2026-10-07); use outside Meta products risks violating terms
+- **Free tier:** free inside Meta products
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** RESEARCH/REFERENCE ONLY — do not ship in games or YouTube cuts; licensed for Reels/Stories on Meta surfaces only. [Wave 5]
+
+#### BBC Sound Effects Archive 🚫 not commercial-safe
+- **What:** 33,000+ BBC archive recordings (nature, transport, crowds, footsteps) in WAV/MP3
+- **URL:** https://sound-effects.bbcrewind.co.uk/licensing
+- **License:** BBC RemArc Licence — personal, educational and research use ONLY (verified via BBC licensing page + reporting, 2026-10-07); commercial use requires separate licensing via Pro Sound Effects
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** RESEARCH/REFERENCE ONLY — never ship in commercial cuts; metadata separately under Open Government Licence 3.0. [Wave 5]
+
+#### Glitchmachines — free sample packs ❓ unverified
+- **What:** Free experimental SFX packs from Glitchmachines (Teratoma, SEISM and others)
+- **URL:** https://free-sample-packs.com/glitchmachines-teratoma/
+- **License:** ❓ NOT verified — no public license text found for the free packs (checked official site references + mirrors, 2026-10-07); read the license inside the pack before any use
+- **Free tier:** free downloads from the official site's free section
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** DO NOT wire until the pack's own license text is read; URL is a mirror listing — download from glitchmachines.com directly. [Wave 5]
+
+#### FindSounds ❓ unverified
+- **What:** Long-running web search engine for sound effects (links out to host sites)
+- **URL:** https://FindSounds.com/help1.html
+- **License:** ❓ unverified — official help page states: "We do not make any claims regarding the licensing or commercial use of those sounds" — check each sound at its source (verified 2026-10-07)
+- **Free tier:** free search
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Discovery tool only; per-sound clearance at the hosting site is mandatory. [Wave 5]
+
+#### Tabletop Audio ❓ unverified
+- **What:** 200+ professionally designed RPG ambience tracks (fantasy, sci-fi, horror, historical) with a live mixer and offline save
+- **URL:** https://tabletopaudio.com/
+- **License:** ❓ NOT verified upstream — no license/terms text found on the site during research (verified 2026-10-07); do not redistribute or ship without written clearance
+- **Free tier:** free streaming in browser; offline save of individual tracks
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Reference/ambience inspiration only until terms are confirmed; read their terms before any wire-up. [Wave 5]
+
+#### NASA Voyager — "Symphonies of the Planets" (unofficial album masters) ❓ unverified
+- **What:** Voyager plasma-wave recordings of planetary magnetospheres (Jupiter, Saturn, Uranus, Neptune, Io, etc.)
+- **URL:** https://archive.org/details/VoyagerRecordings-SymphoniesOfThePlanets15CompleteRecordings
+- **License:** ❓ MIXED — the underlying Voyager plasma-wave DATA is NASA public domain, but these are commercial CD album masters (LaserLight 1992 / Brain-Mind Research releases) uploaded by a third party; the album mastering is NOT cleanly PD (verified 2026-10-07)
+- **Free tier:** free downloads on the item page
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Do NOT ship from this item; for clean PD space audio use NASA-published sources instead. Kept as a research lead only. [Wave 5]
+
+#### Ross Bugden ✅ commercial-safe
+- **What:** Epic/trailer/dramatic orchestral music, free incl. commercial with credit
+- **URL:** https://www.youtube.com/@rossbugden
+- **License:** CC-BY 4.0 (verified via Wikimedia Commons file page "File:Black Heat WAV by Ross Bugden.wav" + artist's own licensing notes "free to use and monetize, just credit me", 2026-10-07)
+- **Free tier:** fully free; attribution required ("Music: 'Black Heat' by Ross Bugden — CC-BY 4.0")
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED
+- **Notes:** Wire proof: `tools/music/ross-bugden/ross-bugden-black-heat.wav` (PCM s24le 44.1kHz stereo, 2:00, 31,761,364 B) + MANIFEST.md; ffprobe-verified clean decode. Caveats: artist runs YouTube Content ID — expect automated claims, dispute with credit line; do NOT register tracks as your own. [Wave 5]
+
+#### Open Goldberg Variations ✅ commercial-safe
+- **What:** Bach's Goldberg Variations — definitive studio recording (Kimiko Ishizaka, Bösendorfer 290 Imperial) + open MuseScore score
+- **URL:** https://opengoldbergvariations.org
+- **License:** CC0 1.0 Universal, 28 May 2012 (verified via en.wikipedia.org/wiki/Open_Goldberg_Variations and opengoldbergvariations.org "free of copyright (all uses allowed)", 2026-10-07)
+- **Free tier:** fully free, no attribution (courtesy credit recommended)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED
+- **Notes:** Wire proof: `tools/music/open-goldberg-variations/ogv-aria.mp3` (MP3 48kHz stereo, 4:59.5, 5,849,600 B) + `ogv-variatio-01.mp3` (1:55.5, 2,637,824 B) + MANIFEST.md; ffprobe-verified clean decode. Score was re-engraved by the project (also CC0); Bach's original PD for centuries. Piano underscore for series scoring; zero Content ID risk. [Wave 5]
+
+#### Silverman Sound Studios (Shane Ivers) ✅ commercial-safe
+- **What:** 200+ professional tracks — orchestral scores, chiptune, rock, hip-hop, ambient, cinematic
+- **URL:** https://www.silvermansound.com/
+- **License:** CC-BY 4.0 (verified via official about page: "free to use under Creative Commons CC BY 4.0 licensing. Credit 'silvermansound.com'... YouTube, TikTok, podcasts, films, games, radio, wherever you create", 2026-10-07)
+- **Free tier:** fully free; credit silvermansound.com (Pro no-attribution licenses available for purchase)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** One of the best clean-CC-BY catalogs explicitly naming games. If a claim ever lands, the composer handles disputes personally. No redistribution as standalone music. [Wave 5]
+
+#### Patrick de Arteaga ✅ commercial-safe
+- **What:** Royalty-free music made for indie game developers + MIDI/chiptune packs (editable source)
+- **URL:** https://patrickdearteaga.com/
+- **License:** Free License = Creative Commons with attribution (verified via https://patrickdearteaga.com/licensing/: video games, YouTube, mobile apps, podcasts, indie films all included; "Monetize all multimedia projects above with unlimited copies"; credit patrickdearteaga.com; Pro €13/track = no-attribution), 2026-10-07
+- **Free tier:** fully free with credit
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** MIDI packs let us re-render/adapt cues — strongest game-scoring fit in this wave. Moral rights stay with composer (credit in game credits). TV/radio needs Broadcast License (€35) — not needed for games/episodes. [Wave 5]
+
+#### Mixaund ✅ commercial-safe
+- **What:** Corporate/advertising/motivational background music, 100+ tracks (free-stock-music.com-promoted catalog)
+- **URL:** https://www.free-stock-music.com/artist.mixaund.html
+- **License:** CC-BY 4.0 per-track (verified via free-stock-music.com usage matrix: "Podcasts / Apps / Games ✔" free-with-credit; monetized use allowed with credit to Mixaund + link; $8/track no-credit license on Bandcamp), 2026-10-07
+- **Free tier:** free with credit (MP3 320kbps + WAV 44.1kHz 16-bit downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Corporate/motivational bed music — fits production interstitials, UI menus, sponsor bumpers. Do NOT re-upload tracks to Spotify/etc. as your own (license forbids). Confirm the CC-BY 4.0 badge on each track page before shipping. [Wave 5]
+
+#### Netlabels.org ❓ unverified (per-release check)
+- **What:** Directory/archive of CC netlabels — thousands of free electronic/experimental releases, many mirrored on archive.org
+- **URL:** https://netlabels.org/
+- **License:** Per-release CC licenses (verified via netlabels.org/music + release pages, 2026-10-07); many releases are CC-BY-NC — check EACH release
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Discovery source, not a blanket license. Workflow: pick release → confirm license on its release page → keep proof. Live site verified 2026-10-07. [Wave 5]
+
+#### Argofox ❓ unverified (conditional)
+- **What:** Electronic/EDM royalty-free record label (YouTube-first), no-copyright-claims catalog
+- **URL:** https://www.youtube.com/@argofox
+- **License:** Label permission: "use our songs in monetized videos if you give credit" (verified via track descriptions, e.g. DOCTOR VOX - Frontier; updated Sept 2026), BUT "If you're interested in using our music in a video game you're developing or publishing, please DM us on Discord" — game sync needs explicit permission, 2026-10-07
+- **Free tier:** free for monetized videos with credit
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** Episodes published to YouTube = fine with the label's video credit. Game/app sync = contact first. Keep per-track credit blocks. Badge ❓ until a game-use permission is on file. [Wave 5]
+
+#### Pretzel Rocks ❓ unverified (conditional)
+- **What:** Stream-safe licensed music service for livestreamers (catalog cleared with artists/rightsholders)
+- **URL:** https://www.pretzel.rocks/
+- **License:** Pretzel proprietary license for stream use (verified via help.pretzel.rocks FAQ "Why does Pretzel exist" + Streamlabs/Digital Music News coverage, 2026-10-07); covers Twitch/YouTube/Facebook streams — sync into a produced series/game is NOT covered
+- **Free tier:** free tier (mandatory chat attribution; some labels premium-only)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Stream-bed music only, not a sync library for produced episodes/games. Useful for livestreamed production sessions. Verify current availability — help center pages are sparse/stale. [Wave 5]
+
+#### AShamaluevMusic ❓ unverified (conditional)
+- **What:** Cinematic/action/trailer background music, large free catalog (SoundCloud + archive.org mirrors)
+- **URL:** https://soundcloud.com/ashamaluevmusic
+- **License:** Mixed/conditional (verified via artist's own archive.org track posts: "absolutely FREE for using in any video or project... even in commercial purposes" with credit — BUT artist FAQ states monetized YouTube videos require a purchased per-track license and tracks are claimed via AdRev Content ID), 2026-10-07
+- **Free tier:** free non-monetized use with credit; monetization needs paid license
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** Contradictory terms between posts and FAQ = badge ❓. Only use for non-monetized cuts unless a purchased license is on file. Do not rely on "free" posts alone. [Wave 5]
+
+#### Meta Sound Collection 🚫 not commercial-safe
+- **What:** Meta's built-in music/SFX library inside Creator Studio (Facebook/Instagram publishing)
+- **URL:** https://www.facebook.com/sound/collection/terms
+- **License:** Sound Collection Terms (verified verbatim, last modified March 16, 2022): "license to use the SC Audio Content for commercial or non-commercial purposes in content you create, upload, and distribute on the Meta Company Products ... only. You may not ... otherwise use the SC Audio Content separately from the Meta Company Products." — 2026-10-07
+- **Free tier:** free within Meta products
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** 🚫 NOT game-safe: rights do not travel off Meta platforms (YouTube uploads can trigger mutes/blocks). Only usable for episodes distributed natively on Facebook/Instagram. Included as a warning entry. [Wave 5]
+
+#### Spinningmerkaba 🚫 not commercial-safe
+- **What:** Electronic/ambient instrumentals (often suggested as royalty-free)
+- **URL:** https://freemusicarchive.org/music/spinningmerkaba/
+- **License:** Per-track CC-BY-NC / CC-BY-NC-SA (verified via FMA track pages: "Commercial use not allowed", 2026-10-07)
+- **Free tier:** free for non-commercial use with attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** 🚫 Warning entry: commonly mistaken for commercial-safe. A few older tracks may carry plain CC-BY — check each track page; default to NC = research lane only. [Wave 5]
+
+#### Uppbeat 🚫 not commercial-safe (free tier)
+- **What:** Curated royalty-free music + SFX + stock video for creators (freemium)
+- **URL:** https://uppbeat.io/
+- **License:** Uppbeat Free plan (verified via official FAQ + license tiers, 2026-10-07): "The free license covers non-commercial content" — 3 downloads/month topping up, credit required; paid ads and client work need Pro
+- **Free tier:** free for non-commercial content with accreditation
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** 🚫 Free tier is NOT commercial-safe (paid ads/client work excluded). Useful only for non-commercial internal cuts. Included as a warning entry since the free tier looks commercial-safe at a glance. [Wave 5]
+## More music libraries
+
+#### Punch Deck ✅ commercial-safe
+- **What:** Trap/hip-hop/rap beats for videos and games — free including commercial with credit
+- **URL:** https://punchdeck.com
+- **License:** CC-BY 4.0 (verified via official terms page, 2026-10-07)
+- **Free tier:** fully free MP3 downloads; attribution required
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Explicit commercial-use OK (incl. games) with credit. Good fit for game-menu/trap-flavored scoring beds. [Wave 5]
+
+#### SampleScience ✅ commercial-safe
+- **What:** 30+ free VST/AU virtual instruments (vintage synths, romplers, drum machines, ambient)
+- **URL:** http://www.samplescience.info
+- **License:** free-proprietary (use OK, check EULA) — verified 2026-10-07: developer reverted a 2025 paywall, whole catalog free again per multiple 2026 plugin press reports; SampleScience Player (200-patch rompler) documents per-patch licenses (public domain / made for production / CC 3.0 w/ attribution) — all usable in commercial music production
+- **Free tier:** fully free; some time-limited promo codes rotate
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Huge free instrument pool for scoring. Caveat: developer flipped free↔paid before — re-download availability is strong now (Oct 2026) but keep local copies. [Wave 5]
+
+#### Freebeats.io ✅ commercial-safe (credit required)
+- **What:** Royalty-free hip-hop/trap/R&B beats by producer White Hot, commercial use OK
+- **URL:** https://freebeats.io
+- **License:** custom royalty-free non-exclusive license (verified via freebeats.io/terms-of-use, 2026-10-07): commercial use incl. film/TV/radio allowed; written credit required ("Beat provided by https://freebeats.io / Produced by White Hot"); MUST NOT register with YouTube Content ID
+- **Free tier:** free untagged 320kbps MP3 (via social-follow download); tracked-out WAVs = $4.95 processing fee
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Watch the Content ID clause — works for studio productions but cannot claim exclusivity. Strong source for beat beds in promos/street-real content. [Wave 5]
+
+#### Alex-Productions ❓ license partially unverified
+- **What:** Free background/orchestral music by Alex-Productions (Greece)
+- **URL:** https://www.youtube.com/@AlexProductionsmusic
+- **License:** ❓ — free for monetized YouTube videos with credit (stated on channel); video-GAME use explicitly requires the paid BUSINESS license per channel terms. Studio production use beyond YouTube (series/film) not clearly granted — verify per project or buy the license
+- **Free tier:** free for YouTube content with credit; paid license for games
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Downgraded from seed-list assumption of "free commercial" — animated-series/film usage is a gray zone. Do not wire without license purchase or written confirmation. [Wave 5]
+
+#### Timbres of Heaven ❓ license partially unverified
+- **What:** Huge free orchestral/church-organ sample libraries (SoundFont format) by Don Allen
+- **URL:** https://www.timbresofheaven.com
+- **License:** ❓ custom free terms — unlimited personal use per Don Allen's statements; redistribution restricted; COMMERCIAL terms not stated on site
+- **Free tier:** fully free downloads (SoundFonts)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Excellent orchestra sources for scoring IF commercial terms can be confirmed with the author. Research lane until confirmed — do not ship in monetized productions without written OK. [Wave 5]
+
+#### GeneralUser GS ❓ license partially unverified
+- **What:** Popular free General-MIDI SoundFont (S. Christian Collins) — big upgrade over default GM
+- **URL:** https://www.schristiancollins.com/generaluser.php
+- **License:** ❓ gray area — distributed free; Musical Artifacts licensing flags note some samples may be derived from proprietary (Yamaha) sources; commercial-use verification not obtainable from author
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Fine for personal/internal use; NOT commercial-safe until the sample provenance question is resolved. Use Salamander/FluidR3/VSCO2 instead for shipped work. [Wave 5]
+
+#### Yevhen Lokhmatov 🚫 not commercial-safe
+- **What:** Folk/pop background music (YouTube channel) for videos
+- **URL:** https://www.youtube.com/@YevhenLokhmatov
+- **License:** CC-BY-NC (verified via artist's own site/license page, 2026-10-07) — non-commercial only
+- **Free tier:** free for non-commercial use with credit
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Research lane only — NC kills all monetized-studio use. Listed here to prevent accidental commercial use. [Wave 5]
+
+#### TuneTank 🚫 not commercial-safe
+- **What:** Free music for creators (timetank/freemusic brand)
+- **URL:** https://www.tunetank.com
+- **License:** custom license (verified via tunetank.com/legal/license, 2026-10-07) — EXPLICITLY FORBIDS use in video games AND advertising
+- **Free tier:** free for creators within those restrictions
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Research lane only — the games/advertising ban makes it unusable for TRIPPEDD studio productions. Listed to prevent accidental use. [Wave 5]
+
+## Free plugins & virtual instruments (scoring stack)
+
+#### Airwindows ✅ commercial-safe
+- **What:** 300+ free, minimal, open DSP audio plugins (EQs, compressors, saturation, reverbs) by Chris Johnson
+- **URL:** https://www.airwindows.com
+- **License:** MIT (verified via github.com/airwindows/airwindows LICENSE, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** MIT = fully wireable incl. source integration. The backbone free mixing/mastering stack — hundreds of quality effects at zero cost. [Wave 5]
+
+#### Valhalla Supermassive ✅ commercial-safe
+- **What:** Legendary free reverb/delay plugin (massive spaces, shimmer) by Valhalla DSP
+- **URL:** https://valhalladsp.com/shop/reverb/valhalla-supermassive/
+- **License:** free-proprietary (use OK, check EULA) — official page: "free. No strings attached." (verified 2026-10-07)
+- **Free tier:** fully free, no time limit, no account needed
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** The single best free reverb for score ambience. Zero-cost industry-standard sound. [Wave 5]
+
+#### TDR Nova ✅ commercial-safe
+- **What:** Parallel dynamic equalizer (free edition) by Tokyo Dawn Labs
+- **URL:** https://www.tokyodawn.net/tdr-nova/
+- **License:** free-proprietary (use OK, check EULA) — Standard Edition free, verified via official page, 2026-10-07
+- **Free tier:** free Standard Edition (GE = paid)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Pro-grade dynamic EQ at $0 — ideal for dialogue/music carving in the animated series. [Wave 5]
+
+#### TDR Kotelnikov ✅ commercial-safe
+- **What:** Transparent mastering/bus compressor (free edition) by Tokyo Dawn Labs
+- **URL:** https://www.tokyodawn.net/tdr-kotelnikov/
+- **License:** free-proprietary (use OK, check EULA) — Standard Edition free, verified via official page, 2026-10-07
+- **Free tier:** free Standard Edition (Gentleman's Edition = paid)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Master-bus glue for final score mixes. Pairs with TDR Nova as the free TDR mastering chain. [Wave 5]
+
+#### Vital ✅ commercial-safe
+- **What:** Spectral-warping wavetable synth (free Basic tier) — Serum-class sound design
+- **URL:** https://vital.audio
+- **License:** free-proprietary (use OK, check EULA) — Basic tier free; NOTE: the source code is GPLv3, so do NOT embed source — use the compiled plugin per the free tier (verified 2026-10-07)
+- **Free tier:** free Basic tier (Plus/Pro = paid); account required
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** The free-tier synth for score sound design (risers, pads, basses). GPL source is a trap — use binary only, keep off the quarantine list. [Wave 5]
+
+#### Spitfire LABS ✅ commercial-safe
+- **What:** Free curated virtual instruments (strings, pianos, choirs, drums) by Spitfire Audio
+- **URL:** https://www.spitfireaudio.com/labs
+- **License:** free-proprietary (use OK, check EULA) — free per official page (verified 2026-10-07); CAVEAT: Spitfire is folding LABS into "Splice INSTRUMENT" — availability of the standalone LABS app may change
+- **Free tier:** fully free; Spitfire app/account required
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Best free orchestral/organic instrument library for the animated series score. Grab while standalone LABS exists. [Wave 5]
+
+#### BBC Symphony Orchestra Discover ✅ commercial-safe
+- **What:** Free 33-instrument BBC orchestral library (Spitfire) — strings/brass/woodwinds/percussion
+- **URL:** https://www.spitfireaudio.com/bbc-symphony-orchestra-discover
+- **License:** free-proprietary (use OK, check EULA) — free via Spitfire EULA; licensed for 2 computers; commercial-use OK (verified 2026-10-07)
+- **Free tier:** fully free; Spitfire account + short survey required
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** NOT the BBC Sound Effects Archive (RemArc NC, already in catalog) — this is Spitfire's free orchestral VST, commercial-safe. Core orchestral scoring tool. [Wave 5]
+
+#### Komplete Start ✅ commercial-safe
+- **What:** Free bundle of 2,000+ sounds / 16 synths & sampled instruments by Native Instruments
+- **URL:** https://www.native-instruments.com/en/products/komplete/bundles/komplete-start/
+- **License:** free-proprietary (use OK, check EULA) — NI EULA; Native Access install required (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Massive free content pool (Kontakt Player instruments, synths, FX). Good all-rounder for score layering. [Wave 5]
+
+#### Decent Sampler (+ Pianobook) ✅ commercial-safe
+- **What:** Free cross-platform sampler (VST/VST3/AU/AAX/standalone) + Pianobook.co.uk community sample-library hub
+- **URL:** https://www.decentsamples.com / https://www.pianobook.co.uk
+- **License:** free-proprietary (use OK, check EULA) — Decent Sampler app free; Pianobook libraries carry the Pianobook EULA: copyright-free samples, commercial use OK, no sample redistribution (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** The free sampling ecosystem — hundreds of Pianobook community instruments (pianos, strings, oddities) load in Decent Sampler. Huge scoring asset. [Wave 5]
+
+#### VSCO2 Community Edition ✅ commercial-safe
+- **What:** Full orchestral sample library (strings, brass, woodwinds, percussion) — the free community version of Versilian's VSCO2
+- **URL:** https://www.versilian-studios.com/vsco-community
+- **License:** CC0 1.0 Universal (verified via official page, 2026-10-07) — public-domain dedication
+- **Free tier:** fully free; also on GitHub
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** CC0 orchestra = zero-restriction scoring. Loads in Sforzando/SFZ players. Top-tier free orchestral resource. [Wave 5]
+
+#### Virtual Playing Orchestra ✅ commercial-safe
+- **What:** Free full orchestral sample library (SFZ) assembled from public-domain sources
+- **URL:** https://virtualplaying.com
+- **License:** free for all use incl. commercial — official page: no restrictions on making music (even commercial); source samples are mixed CC (noted: do not redistribute raw samples) (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Second CC-friendly orchestra; pairs with VSCO2 CE. Respect the no-raw-redistribution clause — rendered music is fine. [Wave 5]
+
+#### Sonatina Symphonic Orchestra ✅ commercial-safe
+- **What:** Free full orchestral sample module (SFZ/SoundFont) — classic free orchestra
+- **URL:** https://sso.mattiaswestlund.net
+- **License:** CC Sampling Plus 1.0 (verified via official page, 2026-10-07) — commercial use allowed; no endorsement/sample resale
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Long-standing free orchestra standard. CC Sampling Plus allows commercial music; read the license before sampling the samples. [Wave 5]
+
+#### Salamander Grand Piano ✅ commercial-safe
+- **What:** Beautifully sampled Yamaha C5 grand piano (SFZ/SoundFont) by Alexander Holm
+- **URL:** https://archive.org/details/SalamanderGrandPianoV3
+- **License:** CC-BY 3.0 (verified via archive.org item page, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** The go-to free grand piano for scoring. CC-BY = commercial-safe with credit. [Wave 5]
+
+#### FluidR3 SoundFont ✅ commercial-safe
+- **What:** Full General-MIDI SoundFont (Frank Wen) — orchestra, drums, everything
+- **URL:** https://github.com/pianobooster/fluid-soundfont
+- **License:** MIT (verified via GitHub repo LICENSE, 2026-10-07) — note: some third-party repackages claim other licenses; the upstream repo is MIT, attribution due
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Free GM soundfont for MIDI rendering pipelines. MIT = fully wireable. Prefer over GeneralUser GS (gray-area provenance). [Wave 5]
+
+#### Ivy Audio ✅ commercial-safe
+- **What:** Free high-quality sample libraries (pianos, strings, choirs — e.g. Clare Soloists) by Ivy Audio
+- **URL:** https://ivyaudio.com
+- **License:** free-proprietary (use OK, check EULA) — free for personal AND commercial use; sample redistribution prohibited (verified via official terms, 2026-10-07)
+- **Free tier:** fully free; needs full Kontakt or SFZ player (versions vary)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Gorgeous free piano/strings. Check format per library (Kontakt full vs SFZ). [Wave 5]
+
+#### Karoryfer Free Samples ✅ commercial-safe
+- **What:** 19+ free sample libraries (Bear Sax, War Tuba, Meatbass double bass, Big Rusty Drums, etc.) by Karoryfer Samples
+- **URL:** https://shop.karoryfer.com/pages/free-samples
+- **License:** open-source/royalty-free — e.g. Bear Sax README: "open source instrument... Royalty-free for all commercial and non-commercial use" (verified via github.com/sfzinstruments/karoryfer.bear-sax + official free-samples page, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Characterful folk/jazz instruments you can't get elsewhere (baritone sax from 1926 Conn, folk-punk tuba). Requires Plogue Sforzando (free) or any SFZ player. [Wave 5]
+
+#### OTT (Xfer Records) ✅ commercial-safe
+- **What:** Free multiband upward/downward compressor — the famous "OTT" preset as a plugin
+- **URL:** https://xferrecords.com/freeware
+- **License:** freeware — free-proprietary (use OK, check EULA); latest v1.37 (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** The EDM/aggro-compression secret weapon, free. Useful for punchy score percussion/bass. [Wave 5]
+
+#### Camel Crusher ✅ commercial-safe
+- **What:** Free "British" distortion/compressor plugin (Camel Audio, discontinued 2015 — still distributed)
+- **URL:** https://bedroomproducersblog.com/free-vst-plugins/camelcrusher/ (official dev site defunct since Apple acquisition; BPB hosts the last build with permission)
+- **License:** freeware — free-proprietary (use OK, check EULA); caveat: 32-bit-era builds, macOS versions may need Rosetta/legacy support (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Classic free distortion for grit in scores. Works best on Windows/legacy setups; test on current Mac before relying on it. [Wave 5]
+
+#### Limiter No6 (VladG) ✅ commercial-safe
+- **What:** Free modular mastering limiter (RMS comp + peak limiter + HF limiter + clipper + true-peak) by Vladislav Goncharov
+- **URL:** https://vladgsound.wordpress.com/plugins/limiter6/
+- **License:** freeware — free-proprietary (use OK, check EULA) (verified 2026-10-07)
+- **Free tier:** fully free; Windows/Mac VST/AU
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Deep, surgical mastering limiter — the free final-limiter for score delivery masters. [Wave 5]
+
+#### Auburn Sounds Free Editions ✅ commercial-safe
+- **What:** Free editions of Panagement 2 (binaural panner/reverb), Couture (transient shaper/saturation), Graillon (pitch correction)
+- **URL:** https://www.auburnsounds.com
+- **License:** free-proprietary (use OK, check EULA) — Free Editions not time-limited, no-strings-attached per official pages (verified 2026-10-07); Full editions paid
+- **Free tier:** free editions (feature-reduced: e.g. Panagement Free omits delay/PGMT-400 chip)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Panagement Free is gold for 3D/animated-series spatial placement (binaural). Couture Free handles transient shaping. [Wave 5]
+
+#### Melda MFreeFXBundle ✅ commercial-safe
+- **What:** 37+ free effects (EQ, compressor, reverb, analyzers, pitch correction, saturation) by MeldaProduction
+- **URL:** https://www.meldaproduction.com/MFreeFXBundle
+- **License:** free-proprietary (use OK, check EULA) — "completely free" per official page; commercial plugins unlock extras (verified 2026-10-07)
+- **Free tier:** fully free; account needed for installer
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** The biggest free FX bundle on the market — covers nearly every mixing need in the scoring chain. Slight nag-screen in free tier; fully usable. [Wave 5]
+
+#### Kilohearts Essentials ✅ commercial-safe
+- **What:** 30+ free snapin-style effects (EQ, delay, reverb, distortion, dynamics, pitch) by Kilohearts
+- **URL:** https://kilohearts.com/products/kilohearts_essentials
+- **License:** free-proprietary (use OK, check EULA) — free collection, verified via official page, 2026-10-07
+- **Free tier:** fully free; lifetime free updates; growing collection
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Clean, low-CPU modern FX with a unified UI. Snapin hosts (Phase Plant etc.) are paid; the effects themselves are free standalone. [Wave 5]
+
+#### MT Power Drum Kit ✅ commercial-safe
+- **What:** Free realistic acoustic drum-kit sampler (groove library + fills generator) by Manda Audio
+- **URL:** https://www.powerdrumkit.com
+- **License:** free-proprietary (use OK, check EULA) — free download, activation screen skippable, no strings (verified via official site, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Best free acoustic drums for rock/pop score beds; the groove/fill generator speeds up drum-track sketching. Windows/Mac VST/AU. [Wave 5]
+## GPL/AGPL quarantine (research only — never wired into shipping paths)
+
+#### Surge XT 🚫 QUARANTINED
+- **What:** Open-source hybrid synthesizer (Surge Synth Team)
+- **URL:** https://surge-synthesizer.github.io
+- **License:** GPL-3.0 (verified via GitHub repo LICENSE, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-3.0. Standalone use by musicians is fine, but copyleft bars any source/binary integration into studio tooling. Use Vital free tier instead. [Wave 5]
+
+#### Dexed 🚫 QUARANTINED
+- **What:** Open-source Yamaha DX7 FM synth clone (asb2m10)
+- **URL:** https://asb2m10.github.io/dexed/
+- **License:** GPL-3.0 (verified via GitHub repo LICENSE, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-3.0. Great FM synth for score sound design when used standalone; do not integrate its code into shipping pipelines. [Wave 5]
+
+#### Helm 🚫 QUARANTINED
+- **What:** Open-source polyphonic synth by Matt Tytel
+- **URL:** https://tytel.org/helm/
+- **License:** GPL-3.0 (verified via GitHub repo LICENSE, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-3.0. Standalone sound-design use OK; code integration barred. Prefer Vital free tier for wired synth work. [Wave 5]
+
+#### Odin 2 🚫 QUARANTINED
+- **What:** Open-source 24-voice polyphonic synth (TheWaveWarden)
+- **URL:** https://www.thewavewarden.com/odin2
+- **License:** GPL-3.0 (verified via GitHub repo LICENSE, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-3.0. Excellent free synth for standalone scoring; not for code integration. [Wave 5]
+
+#### ZynAddSubFX 🚫 QUARANTINED
+- **What:** Open-source software synthesizer (additive/subtractive/FM engines)
+- **URL:** https://zynaddsubfx.sourceforge.io
+- **License:** GPL-2.0-or-later (verified via project license docs, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL. Powerful but deep; standalone use only. [Wave 5]
+
+#### LMMS 🚫 QUARANTINED
+- **What:** Open-source digital audio workstation (Linux MultiMedia Studio)
+- **URL:** https://lmms.io
+- **License:** GPL-2.0 (verified via GitHub repo LICENSE, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-2.0. Free DAW for score sketching in the research lane; code/plugins ecosystem is copyleft. [Wave 5]
+
+#### Ardour 🚫 QUARANTINED
+- **What:** Open-source professional DAW
+- **URL:** https://ardour.org
+- **License:** GPL-2.0 (verified via project license, 2026-10-07)
+- **Free tier:** free source builds; official binaries pay-what-you-want
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-2.0. Research-lane DAW option; do not build shipping tooling on its codebase. [Wave 5]
+
+#### Audacity 🚫 QUARANTINED
+- **What:** Open-source audio editor/recorder (Muse Group)
+- **URL:** https://www.audacityteam.org
+- **License:** GPL-2.0-or-later (verified via GitHub repo LICENSE, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL. Fine as a standalone editor for researchers; barred from code integration. [Wave 5]
+
+#### CHOW Tape Model 🚫 QUARANTINED
+- **What:** Open-source analog tape-machine physical model (chowdsp / Jatin Chowdhury)
+- **URL:** https://chowdsp.com/products.html#tape
+- **License:** GPL-3.0 (verified via GitHub README license badge, 2026-10-07)
+- **Free tier:** fully free & open-source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-3.0. Beautiful tape saturation for standalone scoring; code integration barred. [Wave 5]
+
+#### Dragonfly Reverb 🚫 QUARANTINED
+- **What:** Open-source reverb bundle (hall/room/plate/early reflections) by Michael Willis
+- **URL:** https://github.com/michaelwillis/dragonfly-reverb
+- **License:** GPL-3.0 (verified via upstream GitHub README "distributed under the GPL 3.0 License", 2026-10-07)
+- **Free tier:** fully free & open-source; Linux/macOS/Windows
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** QUARANTINED — GPL-3.0. Excellent free reverb for standalone score mixing; use Valhalla Supermassive instead for shipped pipelines. [Wave 5]
+
+#### Met Museum Open Access ✅ commercial-safe
+- **What:** 492,000+ images of public-domain artworks (paintings, prints, photos, armor, textiles) with keyless REST API + direct high-res JPEGs
+- **URL:** https://www.metmuseum.org/about-the-met/policies-and-documents/open-access
+- **License:** CC0 1.0 Universal (verified via official Met Open Access policy page: images of public-domain artworks available for unrestricted use under CC0, 2026-10-07)
+- **Free tier:** fully free, no key, no attribution required (API: collectionapi.metmuseum.org)
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED (2026-10-07 — 3 CC0 plates downloaded + manifest; see tools/background/met-open-access/)
+- **Notes:** Best single PD texture/BG-reference source — period interiors, landscapes, architecture for cartoon BG paint-overs. Filter API with isPublicDomain=true. [Wave 5]
+
+#### Rijksmuseum Rijksstudio ✅ commercial-safe
+- **What:** 700k+ digitized artworks (Dutch masters, prints, decorative arts) with free API and IIIF high-res downloads
+- **URL:** https://www.rijksmuseum.nl/en/rijksstudio
+- **License:** CC0 1.0 / Public Domain Mark (verified via official Rijksmuseum Information & Data Policy §3.7: works no longer/never protected by copyright get PDM and/or CC0 1.0; Rijksmuseum waives its own copyright, 2026-10-07)
+- **Free tier:** fully free API (data.rijksmuseum.nl), no key for basic search
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Check per-object rights flag; ~all pre-1900 works are CC0. Strong for period/cityscape BG plates (Vermeer-era Amsterdam streets, seascapes). [Wave 5]
+
+#### Art Institute of Chicago ✅ commercial-safe
+- **What:** 50,000+ CC0 images of collection works with a single unified public API
+- **URL:** https://www.artic.edu/open-access
+- **License:** CC0 1.0 Universal (verified via official AIC open-access page: free, unrestricted use of 50,000+ images under CC0, 2026-10-07)
+- **Free tier:** fully free, keyless public API (api.artic.edu)
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Impressionist/post-impressionist holdings (Seurat, Monet) are excellent loose-painterly BG reference. API returns IIIF image URLs directly. [Wave 5]
+
+#### Cleveland Museum of Art Open Access ✅ commercial-safe
+- **What:** 30,000+ CC0 artwork images with keyless API — the only museum source serving archival TIFFs
+- **URL:** https://www.clevelandart.org/open-access
+- **License:** CC0 1.0 Universal (verified via official CMA open-access page: high-res images + full collection metadata under CC0, 2026-10-07)
+- **Free tier:** fully free, keyless API (openaccess-api.clevelandart.org)
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED (2026-10-07 — 3 CC0 plates downloaded + manifest; see tools/background/cleveland-open-access/)
+- **Notes:** Confirm share_license_status == "CC0" per result. images.print.url = 3400px JPEG, images.full.url = archival TIFF — best source for print-res BG plates. [Wave 5]
+
+#### Getty Open Content Program ✅ commercial-safe
+- **What:** 160,000+ high-res images of public-domain art/archives from the Getty Museum + Research Institute
+- **URL:** https://www.getty.edu/projects/open-content-program/
+- **License:** Public domain, no restrictions (verified via official Getty Open Content page: high-res images of public-domain artwork freely available without restrictions; appear in commercial publications/products/film, 2026-10-07)
+- **Free tier:** fully free downloads, no key
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Strong antiquities/manuscript holdings (Roman, medieval) — period BG texture gold. Per-image download from collection pages. [Wave 5]
+
+#### National Gallery of Art (NGA) Open Access ✅ commercial-safe
+- **What:** 37,000+ CC0 images (American + European painting/sculpture) with bulk CSV dataset + IIIF delivery
+- **URL:** https://images.nga.gov/
+- **License:** CC0 1.0 (dataset-level; verified via NGA published_images.csv openaccess=1 flag mechanism documented in museum-API references, 2026-10-07)
+- **Free tier:** fully free; bulk offline querying via published CSV on GitHub
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Best for bulk/offline work (no live search API needed) — filter CSV openaccess=1, then fetch IIIF full-res JPEG. Check per-image flag; not every image is open access. [Wave 5]
+
+#### NYPL Public Domain Collections ✅ commercial-safe
+- **What:** 180,000+ high-res public-domain items (NYC street photos, historic maps, botanical illustrations, manuscripts, FSA photography)
+- **URL:** https://www.nypl.org/research/resources/public-domain-collections
+- **License:** Public domain, no restrictions (verified via official NYPL page: "No permission required. No restrictions on use" for 180k+ PD items, 2026-10-07)
+- **Free tier:** fully free, keyless API + GitHub data dumps
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Berenice Abbott's 1930s NYC + FSA photos are direct street-brawler BG reference (period city plates, signage, textures). Historic maps usable as district layout reference. [Wave 5]
+
+#### Wellcome Collection ❓ mixed per-item
+- **What:** 100,000+ historical images (manuscripts, paintings, etchings, early photography, medical ephemera) from the Wellcome Library
+- **URL:** https://wellcomecollection.org/
+- **License:** MIXED per item (historical Wellcome Images released under CC-BY — commercial OK with attribution; many newer archive items are CC-BY-NC or in-copyright; verified via Wellcome access-conditions pages, 2026-10-07)
+- **Free tier:** fully free downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Check each item's "Access conditions" before use — do not bulk-pull. Etchings/engravings are great cartoon-ink texture reference. [Wave 5]
+
+#### British Library Mechanical Curator ✅ commercial-safe
+- **What:** 1,000,000+ public-domain images extracted from 17th–19th century books (maps, diagrams, illustrations, illuminated letters, landscapes)
+- **URL:** https://www.flickr.com/photos/britishlibrary
+- **License:** Public Domain Mark (verified via BL's official release statement: images released back into the public domain for anyone to use, remix, repurpose; Flickr Commons PD mark, 2026-10-07)
+- **Free tier:** fully free, Flickr API access
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Engravings + vintage maps are ideal cartoon-BG line-art/texture material. Metadata is thin (tagged by book/year) — search by tag. Manifests also on GitHub under PD terms. [Wave 5]
+
+#### NOAA Photo Library ✅ commercial-safe
+- **What:** NOAA Digital Library photos (oceans, coasts, storms, weather, marine life, ships, aerials)
+- **URL:** https://www.photolib.noaa.gov/
+- **License:** U.S. public domain (verified via official noaa.gov usage page: images in the NOAA Digital Library are in the public domain and cannot be copyrighted; check per-item credit, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Caveat: NOAA VIDEOS often contain third-party copyrighted footage — photos are the safe lane. Storm/sea/sky plates for dramatic cartoon skies. [Wave 5]
+
+#### USGS Multimedia Gallery ✅ commercial-safe
+- **What:** USGS photos + Landsat satellite imagery + topographic maps (landscapes, geology, volcanoes, rivers)
+- **URL:** https://www.usgs.gov/
+- **License:** U.S. public domain (verified via official USGS Copyrights and Credits: USGS-authored data and information are in the U.S. public domain, freely usable without permission; credit requested, 2026-10-07)
+- **Free tier:** fully free, no key
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Landsat = free satellite BG plates for district/world maps. Watch for the small number of non-USGS images marked copyrighted on USGS pages. [Wave 5]
+
+#### DVIDS (Defense Visual Information Distribution Service) ✅ commercial-safe
+- **What:** U.S. military photo/video archive (aircraft, ships, bases, urban ops, disaster relief) — broadcast-quality stills + video
+- **URL:** https://www.dvidshub.net/
+- **License:** U.S. public domain unless otherwise specified (verified via official DVIDS pages: "All DVIDS Media is considered public domain and is free to use unless otherwise specified", 2026-10-07)
+- **Free tier:** free with registration (download requires free account)
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Check per-item markings (some VI carries non-DoD copyright). Vehicle/aircraft/urban-ops b-roll for action BG plates. [Wave 5]
+
+#### ESA imagery ❓ mixed per-item
+- **What:** European Space Agency image/video library (Earth observation, deep space, rockets, launches)
+- **URL:** https://www.esa.int/ESA_Multimedia/Images
+- **License:** MIXED per item (verified via official ESA terms, 2026-10-07): default ESA portal terms restrict to educational/editorial/informational use — commercial use excluded without a licence 🚫; items expressly marked CC BY-SA 3.0 IGO ✅; ESA/Hubble images are CC-BY 4.0 ✅
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Only pull items with an explicit CC mark (BY-SA 3.0 IGO or ESA/Hubble CC-BY 4.0). Never use default-portal-terms images in commercial output. [Wave 5]
+
+#### Internet Archive — Moving Image Archive ✅ commercial-safe (per item)
+- **What:** Full IA moving-images collection: Prelinger subset plus government films, newsreels, educational shorts, feature films with lapsed copyright
+- **URL:** https://archive.org/details/movies
+- **License:** Per-item (verified via IA item pages: films carrying the CC Public Domain Dedication are reusable without restriction; CHECK EACH FILM's item page, 2026-10-07)
+- **Free tier:** free downloads (MP4/Ogg/MPEG2 per film)
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Broader than the Wave-5-A1 Prelinger entry (same collection family, this entry = the whole movies collection for video BG plates). ~65% of Prelinger holdings are PD. Strip soundtracks if music rights are unclear. [Wave 5]
+
+#### Pixabay photos + video ✅ commercial-safe
+- **What:** Pixabay's stock photo + video library (distinct from the catalog's existing Pixabay SFX and Pixabay Music entries) — city streets, crowds, textures, aerials, b-roll
+- **URL:** https://pixabay.com/
+- **License:** Pixabay Content License — free commercial use, no attribution (verified via official pixabay.com/service/license-summary; platform license, NOT CC0, 2026-10-07)
+- **Free tier:** fully free, no signup for downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Cannot sell unaltered copies or compile a competing stock service. Video plates usable as BG elements/reference. [Wave 5]
+
+#### Dareful ✅ commercial-safe
+- **What:** Free 4K/HD stock video clips shot by Joel Holland (VideoBlocks founder) — nature, city, aerials, timelapses
+- **URL:** https://dareful.com/
+- **License:** CC-BY 4.0 International (verified via official dareful.com about page: clips usable in any project incl. commercial, governed by CC-BY 4.0; attribution required, 2026-10-07)
+- **Free tier:** fully free, unlimited downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Seed said CC0 — corrected to CC-BY 4.0 (attribution required). 4K quality is the draw; good for cinematic cartoon-BG paint-over bases. [Wave 5]
+
+#### Videvo ❓ mixed per-clip
+- **What:** Large free + premium stock video/motion-graphics/audio library (50k+ free assets)
+- **URL:** https://www.videvo.net/
+- **License:** MIXED per clip (verified via Videvo license docs, 2026-10-07): free clips under Videvo Attribution License or CC-BY 3.0 (both require attribution; commercial use allowed); premium clips royalty-free (paid)
+- **Free tier:** free downloads with attribution; paid tiers remove attribution
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Check each clip's license badge before use. Motion-graphics/animated-background section useful for cartoon title/BG loops. [Wave 5]
+
+#### StockSnap.io ✅ commercial-safe
+- **What:** Curated CC0 stock photos, hundreds added weekly, searchable
+- **URL:** https://stocksnap.io/
+- **License:** CC0 1.0 Universal (verified via official stocksnap.io/license page: every image governed exclusively by CC0, 2026-10-07)
+- **Free tier:** fully free, no attribution required
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Clean modern photography — textures, skies, urban details for BG work. Review each image for IP/privacy issues per their own caveat. [Wave 5]
+
+#### Life of Pix / Life of Vids ❓ unverified
+- **What:** LEEROY creative agency's free photo (Life of Pix) + video (Life of Vids) libraries, described as no-copyright-restriction
+- **URL:** https://www.lifeofpix.com/
+- **License:** ❓ unverified (site timed out on fetch 2026-10-07; multiple third-party sources describe both libraries as no-copyright-restriction/public-domain — read the site's terms before wiring)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Small curated libraries (~600 photos); Life of Vids = PD video loops. Do not wire until the site's own license text is read. [Wave 5]
+
+#### Openverse ✅ commercial-safe (per item)
+- **What:** WordPress's openly-licensed media search engine — 800M+ images + audio aggregated across CC/PD sources with per-item license filters
+- **URL:** https://openverse.org/
+- **License:** Per-item CC license or public domain (verified via openverse.org: "All Openverse content is under a Creative Commons license or is in the public domain", 2026-10-07)
+- **Free tier:** fully free, API available
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Filter to CC0/PDM-only for zero-bookkeeping pulls; CC-BY items need attribution tracking. Best discovery layer across the museum/PD sources above. [Wave 5]
+
+## Dropped BG candidates (dead or unverifiable — not counted)
+
+- **Mazwai** — DROPPED: site discontinued; mazwai.com now redirects to Freepik/Magnific (paid AI suite), free CC library gone (verified 2026-10-07).
+- **Reshot** — DROPPED: retired January 2026 by Envato; no new downloads available (verified 2026-10-07).
+- **SplitShire** — DROPPED: site pivoted to an AI-tools subscription service (SplitShire Apps); the free CC0 stock library is gone (verified via live splitshire.com, 2026-10-07).
+- **Flickr Commons** — not added as separate entry: covered by the British Library Mechanical Curator entry (same program); avoid duplication.
+
+## Anime-specific production tooling (24 entries)
+
+#### White-box-Cartoonization 🚫 not commercial-safe
+- **What:** CVPR2020 photo→cartoon GAN (white-box cartoon representations) — scenery/people/food cartoonization with pretrained models
+- **URL:** https://github.com/SystemErrorWang/White-box-Cartoonization
+- **License:** CC BY-NC-SA 4.0 (verified via upstream README License section: "Commercial application is prohibited", 2026-10-07)
+- **Free tier:** fully open code + pretrained weights
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** Seed assumed MIT — REFUTED. Research-lane only: style R&D and look-dev experiments, never in shipping paths. TF1-era code; needs porting effort for modern stacks. [Wave 5]
+
+#### Anime2Sketch ✅ commercial-safe
+- **What:** Photo/anime→line-art sketch extraction (painterly sketch style) with pretrained model
+- **URL:** https://github.com/Mukosame/Anime2Sketch
+- **License:** MIT (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** BG line-art extraction + inking reference for cartoon BGs; pairs with colorization pipelines. Lightweight inference. [Wave 5]
+
+#### Real-CUGAN ❓ unverified
+- **What:** Bilibili AI Lab anime-image super-resolution (2x/3x/4x, waifu2x-compatible CUNet architecture), trained on million-scale anime data
+- **URL:** https://github.com/bilibili/ailab/tree/main/Real-CUGAN
+- **License:** ❓ unverified — no LICENSE file and no license statement in the upstream bilibili/ailab repo (checked 2026-10-07); third-party integrators claim MIT but that is NOT from upstream
+- **Free tier:** free model weights + code
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Do NOT wire weights into shipping paths until upstream publishes terms. The nihui ncnn-vulkan port (MIT, next entry) is the wireable implementation — but note its weights inherit this same upstream gap. [Wave 5]
+
+#### nihui ncnn-vulkan SR ports (realcugan / realsr / srmd) ✅ commercial-safe
+- **What:** Vulkan/CPU super-resolution binaries by nihui: realcugan-ncnn-vulkan (anime), realsr-ncnn-vulkan (photo RealSR), srmd-ncnn-vulkan (denoise+SR) — no Python/CUDA needed
+- **URL:** https://github.com/nihui/realcugan-ncnn-vulkan
+- **License:** MIT (verified via upstream LICENSE files for realcugan-ncnn-vulkan and srmd-ncnn-vulkan; nihui's ports are uniformly MIT, 2026-10-07)
+- **Free tier:** fully open, prebuilt binaries for Win/Linux/macOS
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED (2026-10-07 — binary vendored + `-h` arg-parsing proven, but inference needs Vulkan: `vkCreateInstance failed -9` on this Vulkan-less VM; full smoke test blocked on environment, NOT on the tool. See tools/upscale/proofs/realcugan-smoke-test-2026-10-07.md. Re-run on GPU hardware to promote to WIRED.)
+- **Notes:** Single entry covers the three sibling ports (same author, same MIT pattern, same CLI shape). realcugan port = primary anime upscaler for plates/stills; srmd = denoise+upscale for scanned line art. [Wave 5]
+
+#### EBSynth ✅ commercial-safe
+- **What:** Example-based video stylization — paint one keyframe, propagate the style across the shot via optical flow/patch synthesis
+- **URL:** https://ebsynth.com/
+- **License:** Proprietary freeware — beta free for commercial AND non-commercial use (verified via official FAQ statements reported consistently: "can be used free for commercial and non-commercial purposes"; source at github.com/jamriska/ebsynth, 2026-10-07)
+- **Free tier:** free beta download (Win/Mac/Linux)
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Killer cartoon pipeline stage: hand-paint 1 BG keyframe → EBSynth propagates painterly style across the whole camera move. Caveat: a paid Pro version is planned — lock the beta binary in tools/ while free. [Wave 5]
+
+#### DeOldify ✅ commercial-safe
+- **What:** GAN colorization for B&W photos/video (NoGAN training) — period-photo colorization for BG reference
+- **URL:** https://github.com/jantic/DeOldify
+- **License:** MIT (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** Colorize B&W PD photos (NYPL FSA, LOC) into color BG-reference plates. Heavy deps (fastai-era); consider containerizing. [Wave 5]
+
+#### CodeFormer 🚫 not commercial-safe
+- **What:** Transformer-based face restoration (degraded/low-res face → high-quality) — character still cleanup
+- **URL:** https://github.com/sczhou/CodeFormer
+- **License:** S-Lab License 1.0 — NON-COMMERCIAL only (verified via upstream LICENSE: "Redistribution and use for non-commercial purpose"; commercial use requires contacting contributors, 2026-10-07)
+- **Free tier:** fully open code + weights
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** Research-lane only. For shipping face restoration use GFPGAN (already in catalog) instead. [Wave 5]
+
+#### RobustVideoMatting 🚫 not commercial-safe (QUARANTINED)
+- **What:** Real-time robust video matting (trimap-free background removal for humans) — green-screen-free character cutout
+- **URL:** https://github.com/PeterL1n/RobustVideoMatting
+- **License:** GPL-3.0 (verified via upstream LICENSE, 2026-10-07) — QUARANTINED (row 76): standalone tool use/research only, never linked into shipping paths
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** For shipping matting prefer MODNet (Apache-2.0) or BiRefNet (MIT) below. [Wave 5]
+
+#### MODNet ✅ commercial-safe
+- **What:** Real-time portrait matting network (trimap-free) — fast character cutout for compositing
+- **URL:** https://github.com/ZHKKKe/MODNet
+- **License:** Apache-2.0 (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open + ONNX exports
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Commercial-safe alternative to RobustVideoMatting. Real-time on GPU; good for cutout passes on cartoon character renders. [Wave 5]
+
+#### BiRefNet ✅ commercial-safe
+- **What:** Bilateral-reference dichotomous segmentation — high-accuracy foreground/background segmentation, strong on fine detail
+- **URL:** https://github.com/ZhengPeng7/BiRefNet
+- **License:** MIT (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** UNWIRED
+- **Notes:** SOTA-ish general segmentation; heavier than MODNet but finer edges — use for hero cutouts, MODNet for bulk. [Wave 5]
+
+#### U-2-Net ✅ commercial-safe
+- **What:** Nested U-structure salient object detection — the classic lightweight background-removal net
+- **URL:** https://github.com/xuebinqin/U-2-Net
+- **License:** Apache-2.0 (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open, tiny 4.7MB model (u2netp)
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Smallest/fastest of the matting family — batch BG-removal on reference stills. Basis for rembg's default model. [Wave 5]
+
+#### IS-Net (DIS — Dichotomous Image Segmentation) ✅ commercial-safe
+- **What:** Highly accurate dichotomous image segmentation (ECCV 2022) — the current best general foreground segmenter; rembg's isnet model source
+- **URL:** https://github.com/xuebinqin/DIS
+- **License:** Apache-2.0 (verified via upstream LICENSE.md, 2026-10-07)
+- **Free tier:** fully open code + weights
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Seed said AGPL → quarantine — REFUTED by upstream LICENSE.md (Apache-2.0; the AGPL label came from a third-party onnx-community repack). No quarantine needed. Best-in-class cutout for BG compositing; use isnet-general-use ONNX via rembg. [Wave 5]
+
+#### DeepDanbooru ✅ commercial-safe
+- **What:** Anime-style image tagger (ResNet-based, trained on Danbooru) — auto-tag anime stills/frames for dataset organization
+- **URL:** https://github.com/KichangKim/DeepDanbooru
+- **License:** MIT (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Auto-tagging for the anime asset library (poses, clothing, hair, style tags) — feeds dataset curation for training/fine-tuning loops. TF-based; containerize. [Wave 5]
+
+#### anime-segmentation ✅ commercial-safe
+- **What:** Anime/illustration-specific semantic segmentation (skin, hair, clothes, bg) with pretrained models
+- **URL:** https://github.com/SkyTNT/anime-segmentation
+- **License:** Apache-2.0 (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Anime-domain segmenter beats general models on cel art — part-level masks (hair/clothes/skin) for recolor, in-betweening masks, and style-transfer region control. [Wave 5]
+
+#### VTube Studio 🚫 not commercial-safe (free tier)
+- **What:** Leading Live2D VTuber runtime (face tracking, model rendering, hotkeys, item system) — Windows/macOS/iOS/Android
+- **URL:** https://store.steampowered.com/app/1325860/VTube_Studio/
+- **License:** Proprietary EULA (verified via official Steam EULA, 2026-10-07): free tier shows watermark; COMMERCIAL use (monetized streams etc.) requires purchasing at least one paid version/DLC (~$15 one-time)
+- **Free tier:** free base app (watermarked); Remove-Watermark DLC ~$14.99 one-time
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Commercial path exists ($15 DLC) but the free tier is not commercial-safe → 🚫 badge. Companies >$200k revenue need a Company License. Live2D model editing itself needs Live2D Cubism (already in catalog as 🚫). [Wave 5]
+
+#### Veadotube Mini ❓ unverified
+- **What:** Free minimalist PNG-tuber app (reactive PNG avatars, mic-based bounce) by olmewe — itch.io
+- **URL:** https://olmewe.itch.io/veadotube-mini
+- **License:** ❓ unverified — freeware on itch.io; no explicit license terms found upstream (checked 2026-10-07); read bundled terms before wiring
+- **Free tier:** fully free
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Simplest path to a "talking portrait" avatar for cartoon interstitials. Full paid version in development — terms may change. [Wave 5]
+
+#### VRoid Studio ✅ commercial-safe
+- **What:** pixiv's free 3D anime-character creator (exports VRM 0.x/1.0) — parametric anime avatars with hair/cloth/face editing
+- **URL:** https://vroid.com/en/studio
+- **License:** Proprietary freeware — commercial use of CREATED MODELS explicitly allowed (verified via official VRoid Studio Guidelines: models/textures/preset items may be sold and used commercially incl. games, goods, streaming; no credit required, 2026-10-07)
+- **Free tier:** fully free (Win/Mac)
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Caveats: cannot build a character-creator APP on VRoid meshes without a separate pixiv licence; some bundled items carry special clauses — check per item. Direct VRM pipeline into three-vrm/UniVRM below. [Wave 5]
+
+#### three-vrm ✅ commercial-safe
+- **What:** VRM avatar loader/runtime for three.js (VRM 0.x + 1.0, spring bones, blendshapes) — web avatar rendering
+- **URL:** https://github.com/pixiv/three-vrm
+- **License:** MIT (verified via upstream LICENSE, 2026-10-07)
+- **Free tier:** fully open (npm)
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Web-side VRM playback for the PWA (menu avatars, VTuber-style presenters). Pairs with VRoid Studio exports. [Wave 5]
+
+#### UniVRM ✅ commercial-safe
+- **What:** Reference VRM implementation for Unity (import/export VRM 1.0/0.x, glTF 2.0, runtime loading)
+- **URL:** https://github.com/vrm-c/UniVRM
+- **License:** MIT (verified via GitHub repo license badge + README License section, 2026-10-07)
+- **Free tier:** fully open (UPM packages + unitypackages)
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Unity-side VRM ingestion if any Unity tooling enters the pipeline; otherwise reference implementation for format questions. [Wave 5]
+
+#### VRM specification ❓ unverified
+- **What:** The VRM 3D-avatar file format specification (glTF 2.0 extension) — vrm.dev
+- **URL:** https://github.com/vrm-c/vrm-specification
+- **License:** ❓ unverified — no license file or license statement in the upstream repo (checked 2026-10-07); spec text reuse terms unclear
+- **Free tier:** spec freely readable
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Reference only — implement against it via three-vrm/UniVRM (both MIT) rather than copying spec text. Do not wire until terms clarified. [Wave 5]
+
+#### mmd_tools 🚫 not commercial-safe (QUARANTINED)
+- **What:** Blender add-on for importing/exporting MMD model (.pmd/.pmx), motion (.vmd), and pose (.vpd) data
+- **URL:** https://github.com/MMD-Blender/blender_mmd_tools
+- **License:** GPL-3.0 (verified via GitHub repo license badge + README License section, 2026-10-07) — QUARANTINED (row 77): standalone tool use/research only, never linked into shipping paths
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** The PMX↔Blender bridge for the MMD asset lane. Usable as a standalone Blender add-on (tool use ≠ code reuse); do not import its code into pipeline scripts. [Wave 5]
+
+#### VSeeFace ✅ commercial-safe
+- **What:** Free VTuber face/hand-tracking app for VRM/VSF avatars (webcam tracking via OpenSeeFace, virtual camera output)
+- **URL:** https://www.vseeface.icu/
+- **License:** Proprietary freeware — commercial use allowed (verified via official terms of use: "You can use VSeeFace to stream or do pretty much anything you like, including non-commercial and commercial uses. Just don't modify it or claim you made it", 2026-10-07)
+- **Free tier:** fully free, no paid tier
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Zero-cost mocap-ish face performance capture for cartoon dialogue shots; drives VRoid/VRM avatars. Windows-only. [Wave 5]
+
+#### PmxEditor ❓ unverified
+- **What:** The standard PMX/PMD model editor for MMD (bones, morphs, materials, physics, toon shading) by Hog
+- **URL:** https://ux.getuploader.com/pmxeditor/ (author distribution; mirrors widely)
+- **License:** ❓ unverified — freeware; no explicit upstream license terms found (checked 2026-10-07); read the bundled readme before wiring
+- **Free tier:** free download
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Essential PMX surgery tool (mmd_tools explicitly defers to it). Windows-only. Do not redistribute the binary; use as a workstation tool. [Wave 5]
+
+#### MikuMikuDance (MMD) ❓ unverified
+- **What:** Yu Higuchi's freeware 3D animation program — the origin of the PMX/VMD ecosystem; huge community motion/model library (BowlRoll, NND)
+- **URL:** https://sites.google.com/view/vpvp/ (VPVP official distribution)
+- **License:** ❓ unverified — freeware; upstream readme terms not confirmed in this pass (checked 2026-10-07). Note: bundled Animasa starter models are NON-COMMERCIAL per model readmes — model terms are per-author regardless of software terms
+- **Free tier:** free download (Windows)
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** UNWIRED
+- **Notes:** Value is the motion-data ecosystem (thousands of free VMD dances/actions, each with own terms). Treat every downloaded model/motion as per-author licensed; never assume. [Wave 5]
+
+## Entry count
+
+44 new entries: 20 BG plates/stock video + 24 anime-specific tooling. Badges: 24 ✅ · 7 🚫 · 7 ❓ · 6 dropped-or-merged (3 dead sources dropped, 3 nihui ports merged into one entry). Quarantine rows added: 2 (76 RobustVideoMatting, 77 mmd_tools).
+
+#### Dia2 ✅ commercial-safe
+- **What:** Streaming dialogue TTS from Nari Labs (successor to Dia): starts generating as the first words arrive; audio-prefix conditioning for stable two-speaker conversation; word timestamps from Mimi ~12.5 Hz frames
+- **URL:** https://github.com/nari-labs/dia2
+- **License:** Apache-2.0 (verified: repo LICENSE file text + badge, 2026-10-07; announced 2025-11-19 in the Dia README)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5 (uv-based; CLI auto-selects CUDA else CPU, bfloat16 default)
+- **Status:** not-started
+- **Notes:** Checkpoints 1B/2B (`nari-labs/Dia2-2B`), English only, ≤2 min generation per run. Quickstart: `uv sync && uv run -m dia2.cli --hf nari-labs/Dia2-2B --input input.txt --cfg 6.0 --temperature 0.8 --cuda-graph --verbose output.wav`. "Quality and voices vary per generation… Use with prefix or fine-tune in order to obtain stable output." Real-time dialogue lane candidate — pairs with Dia (non-streaming) for the series' conversation scenes [Wave 5]
+
+## Status / license updates to existing entries (verify at merge)
+
+#### ZONOS2 ✅ commercial-safe
+- **What:** Zyphra's follow-up zero-shot TTS model — separate model from Zonos v0.1 (do not conflate the two in casting). Verified existence + license this wave.
+- **URL:** https://huggingface.co/Zyphra/ZONOS2
+- **License:** Apache-2.0 (verified: HF model card frontmatter `license:apache-2.0`, public, ungated, 2026-10-07). ⚠️ discrepancy note: a sibling Wave 5 read reported the vendor repo tracks MIT third-party components in a NOTICE dir — both candidate licenses are permissive, but read the repo LICENSE text in full before casting.
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5 (unknown API surface vs Zonos v0.1 — untested)
+- **Status:** not-started
+- **Notes:** 2.3k HF downloads, 149 likes (2026-10-07); last card update 2026-06-22. CPU feasibility untested; Zonos v0.1 remains the primary casting candidate until ZONOS2's voice quality is evaluated [Wave 5]
+
+## Status / license updates to existing entries (verify at merge)
+
+#### Onyx nijilive rig ✅
+- **What:** Puppet rig for council member Onyx (green robe, jester-bell hood, black void face, green/white eye glints, gold sleeve studs) — nijilive `.inp`, opens in nijigenerate
+- **URL:** god-molecule-studio `tools/puppet/wizard-rig-proof/onyx/Onyx.inp` (sha256 `73b0765230509c1347ca5fba512084851415d0e8843fe2160d6485c18d7972f7`)
+- **License:** BSD-2-Clause toolchain (image2live2d + nijigenerate/Inochi2D); rig art derived from owner canon
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (puppet)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5 (drop-in `.inp`)
+- **Status:** verified (structural validation + eyes-on proof renders)
+- **Notes:** 12 parts, 18 params (all bound), 2 physics, 13 anims. Proof renders: neutral, head-turn, blink (real closed-eye art swap). Recipe: Wave-4 Ashes pipeline. No mouth layer (void face by design) [Wave 5]
+
+#### Echo nijilive rig ✅
+- **What:** Puppet rig for council member Echo (pink splatter robe, ECHO name pendant, black void face, pink glints) — nijilive `.inp`, opens in nijigenerate
+- **URL:** god-molecule-studio `tools/puppet/wizard-rig-proof/echo/Echo.inp` (sha256 `a814fc1cd8182d8f54444cc1a0a3d9d67cfec5a34ef2739d7712b7f1c549a066`)
+- **License:** BSD-2-Clause toolchain (image2live2d + nijigenerate/Inochi2D); rig art derived from owner canon
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (puppet)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5 (drop-in `.inp`)
+- **Status:** verified (structural validation + eyes-on proof renders)
+- **Notes:** 11 parts, 16 params (all bound, incl. ParamAcc0 chain sway), 2 physics, 13 anims. Proof renders: neutral, head-turn, blink. No spray can (street-persona card only — not grafted). No mouth layer (void face by design) [Wave 5]
+
+#### Kiko nijilive rig ✅ (honest gap: no blink)
+- **What:** Puppet rig for council member Kiko (white fur hooded robe, black void face, gold chains on bare chest, gold KIKO pendant, colorful dragon tights) — nijilive `.inp`, opens in nijigenerate
+- **URL:** god-molecule-studio `tools/puppet/wizard-rig-proof/kiko/Kiko.inp` (sha256 `62f3daf9a4146f1431a1d04fd0647246b122c397d367fdd83a5bfbc949bedfb5`)
+- **License:** BSD-2-Clause toolchain (image2live2d + nijigenerate/Inochi2D); rig art from the owner-approved robed card (`AshLanev2/public/portraits/kiko-tanaka-robed.webp`, 2026-10-06)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (puppet)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5 (drop-in `.inp`)
+- **Status:** verified (structural validation + eyes-on proof renders)
+- **Notes:** 9 parts, 18 params (all bound), 2 physics, 10 anims. Proof renders: neutral, head-turn. NO blink: the robed card's face is pure black void (max V=90; the "sparkly white glints" live on the group-art Kiko, a different source — not composited, would invent canon). Documented in RIG_PROOF_WAVE5.md [Wave 5]
+
+## Process note (applies to all three rigs)

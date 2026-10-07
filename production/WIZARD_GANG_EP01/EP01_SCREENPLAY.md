@@ -2,7 +2,7 @@
 ## Full shooting script — read like a play
 
 **Format:** 16:9 · **Total runtime:** 5:00 · **Status:** DRAFT — every line needs the owner's approval before any voice work.
-**Voice law:** only STATIC speaks (genuine Enzo Amore clone, pipeline exists). NARRATOR is voice-only (no figure on screen, ever) — his lines are VO-PENDING until the Bill $aber clone lands. Every other cast member is visual-only this episode; their scripted lines are marked [HELD] and staged silently.
+**Voice law:** STATIC speaks (genuine Enzo Amore clone). CIPHER speaks at the trick bet (S22) — feral 2026 Lio Rush style from Bannon's Cipher material. SOMBRA speaks (Damian Priest likeness). NARRATOR is voice-only (no figure on screen, ever) — his lines are VO-PENDING until the Bill $aber clone lands. Every other cast member is visual-only this episode; their scripted lines are marked [HELD] and staged silently.
 
 **Cast:** ASHES (scarlet, grill grin) · ONYX (green) · THEORY (purple) · CIPHER (yellow) · ECHO (pink) · STATIC (deep blue) · HOLLOW (orange) · SOMBRA NEGRA (black/purple trim) · KIKO (white fur).
 
@@ -152,6 +152,9 @@
 **STATIC:**
 > "Cipher, do NOT— he's gonna do it. He's gonna eat concrete. SOMEBODY FILM THIS."
 
+**CIPHER** (feral, taking the bet):
+> "BET. Watch THIS."
+
 ### S23 — STUDIO (3:32–3:41)
 
 *The "war room" they rented is a podcast studio. STATIC hijacks the mic. Feedback squeal.*
@@ -217,8 +220,10 @@
 
 ## LINE TALLY
 
-- **STATIC (READY — Enzo clone pipeline exists):** 25 lines (P1–P2 + L1–L23). The only voice in the episode mix.
+- **STATIC (READY — Enzo clone pipeline exists):** 25 lines (P1–P2 + L1–L23). The main voice in the episode mix.
+- **CIPHER (READY — style pull in progress):** 1 line (C1, the trick bet — feral 2026 Lio Rush).
+- **SOMBRA (Damian Priest likeness):** 1 line (H3 — speaks; voice work after owner script approval).
 - **NARRATOR (PENDING — Bill $aber clone not yet landed):** 2 lines (N1, N2). Voice-only; no figure.
-- **HELD (scripted, visual-only this episode):** 4 lines — H1 ONYX, H2 ASHES, H3 SOMBRA, H4 KIKO.
-- **Total: 31 numbered lines. ALL DRAFT — owner approves every one before any voice work.**
-- **Not written (deliberate):** THEORY, CIPHER, ECHO, HOLLOW — speaking style unknown or owner-conflict unresolved; written around, never invented.
+- **HELD (scripted, visual-only this episode):** 3 lines — H1 ONYX, H2 ASHES, H4 KIKO.
+- **Total: 32 numbered lines. ALL DRAFT — owner approves every one before any voice work.**
+- **Not written (deliberate):** THEORY, ECHO, HOLLOW — speaking style unknown or no voice found; written around, never invented.

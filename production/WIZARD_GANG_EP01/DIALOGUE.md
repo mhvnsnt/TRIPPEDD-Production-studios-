@@ -3,7 +3,7 @@
 **Status: DRAFT — every line below needs the owner's approval before any voice work.**
 Episode structure: 0:00–0:50 = the existing 50s pilot (cold open, unchanged) · 0:50–5:00 = new show (S10–S29, see STORYBOARD.md).
 
-**Voice law (owner-locked):** only Static speaks in the episode mix — he is the sole cast member with a voice pipeline capable of his locked likeness (genuine Enzo Amore clone; weights + refs at `~/workspace/voice-clone-work/`; Piper `en_US-danny-low` retired 2026-10-06 — never again). Every other cast member stays visual-only in this episode; their scripted lines are marked HELD (voice status below). The Narrator is voice-only by rule (no purple figure on screen, ever); his two lines are VO-PENDING until the Bill $aber clone lands. Never a placeholder voice, never a wrong-likeness voice, never synthetic filler.
+**Voice law (owner-locked, extended 2026-10-07):** STATIC speaks (genuine Enzo Amore clone; weights + refs at `~/workspace/voice-clone-work/`; Piper `en_US-danny-low` retired 2026-10-06 — never again). CIPHER speaks at the trick bet (S22) in the feral-2026-Lio-Rush style, dialogue pulled from Bannon's Cipher material. SOMBRA speaks (Damian Priest likeness; H3 + future lines). Every other cast member stays visual-only in this episode; their scripted lines are marked HELD. HOLLOW is the silent type (Super Dragon likeness; owner hasn't heard the real voice). ONYX is strong-silent intimidating (Black woman ~20–23, soft voice; accent unknown — visual-only until a voice is found). The Narrator is voice-only by rule (no purple figure on screen, ever); his two lines are VO-PENDING until the Bill $aber clone lands. Never a placeholder voice, never a wrong-likeness voice, never synthetic filler.
 
 **Voice-status key:** `READY` = voice pipeline exists, line awaits owner script approval · `PENDING` = clone in progress, line not recorded until it lands + owner approves · `HELD` = no voice work; line is scripted for a future episode and staged visual-only here.
 
@@ -55,6 +55,7 @@ Static narrates THROUGH the whole montage — the motor-mouth never stops. Smash
 | L14 | 3:08 | STATIC (bridge) | READY | "This is a CLASSIFIED exchange! …It's mozzarella sticks. It's a classified mozzarella stick exchange." | DRAFT |
 | L15 | 3:16 | STATIC (parking garage) | READY | "Secure location! Nobody knows we're here! Foldin' chairs, baby — that's how you know it's official." | DRAFT |
 | L16 | 3:24 | STATIC (skate park) | READY | "Cipher, do NOT— he's gonna do it. He's gonna eat concrete. SOMEBODY FILM THIS." | DRAFT |
+| C1 | 3:26 | CIPHER (taking the bet; feral 2026 Lio Rush — line style from Bannon's Cipher material, DRAFT) | READY (style pull in progress) | "BET. Watch THIS." | DRAFT |
 | L17 | 3:33 | STATIC (studio; mic feedback) | READY | "Is this thing on? Ladies and gentlemen, welcome to the COUNCIL CAST, episode one — I'm your host, the main event—" | DRAFT |
 | L18 | 3:42 | STATIC (carnival) | READY | "Sombra. My man. You won the bear. You look TERRIFIED of the bear. …He's keepin' the bear." | DRAFT |
 | L19 | 3:52 | STATIC (grill flare) | READY | "Everything's fine! The grill's fine! We're fine! Somebody get the— it's FINE." | DRAFT |
@@ -77,16 +78,17 @@ Static narrates THROUGH the whole montage — the motor-mouth never stops. Smash
 ## Lines NOT written (deliberate — visual-only)
 
 - **THEORY:** no line written. Speaking style is UNKNOWN in every source (CHARACTER_VOICES.md §3) — her S13/S27 beats are visual-only (takes notes; the notes are a drawing of the grill). Never invented.
-- **CIPHER:** no line written. Speaking style UNKNOWN beyond the Lio Rush likeness lock (CHARACTER_VOICES.md §4) — his chaos is physical (bets the map, eats concrete at the skate park).
 - **ECHO:** no line written. Speaking style UNKNOWN beyond the Shotzi Blackheart likeness lock (CHARACTER_VOICES.md §5) — her mimicry is physical (the claw machine).
-- **HOLLOW:** no line written. Owner conflict unresolved: STORY_BIBLE.md says AshLane's Hollow won't stop talking; the Bannon sources say he's silent (CHARACTER_VOICES.md §7). A talk-driven episode cannot pick a side for him — he stays visual-only (mid-pitch, always recruiting) until the owner rules.
+- **HOLLOW:** no line written. Silent type (owner 2026-10-07); Super Dragon voice target but owner hasn't heard the real voice — he stays visual-only (mid-pitch, always recruiting) until a voice is found.
 
 ## Line counts
 
-- Static (READY): 25 lines — P1–P2 (pilot, kept) + L1–L23 (episode). The only voice in the episode mix.
+- Static (READY): 25 lines — P1–P2 (pilot, kept) + L1–L23 (episode). The main voice in the episode mix.
+- Cipher (READY — style pull in progress): 1 line — C1 (the trick bet, feral 2026 Lio Rush).
+- Sombra (Damian Priest likeness): 1 line — H3 (speaks; voice work after owner script approval).
 - Narrator (PENDING): 2 lines — N1 (summons), N2 (button). Voice-only; no figure on screen.
-- Held (HELD): 4 lines — H1 Onyx, H2 Ashes, H3 Sombra, H4 Kiko. Scripted for future episodes; staged visual-only in Ep1.
-- **Total: 31 numbered lines. Approval status: DRAFT on all 31.**
+- Held (HELD): 3 lines — H1 Onyx, H2 Ashes, H4 Kiko. Scripted for future episodes; staged visual-only in Ep1.
+- **Total: 32 numbered lines. ALL DRAFT — owner approves every one before any voice work.**
 
 ## Mix notes (post-approval)
 

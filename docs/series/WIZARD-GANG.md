@@ -145,16 +145,16 @@ Per the owner's music direction (2026-10-06): intro/promo music does **not** hav
 - Music: licensed-safe or original only. No copyrighted tracks, no fake-licensed cues.
 - Audio must be **listened to and checked** before any cut is READY (entrance-kit evidence gate 7).
 
-### Voice cast (owner-locked 2026-10-06 — AI-generated, tight to likeness)
+### Voice cast (owner-locked 2026-10-06 — AI-generated, tight to likeness; extended 2026-10-07)
 
-- Hollow — Super Dragon cadence
-- Static — Enzo Amore (fast-talking Jersey braggadocio; Piper `en_US-danny-low` samples exist)
-- Cipher — Lio Rush
+- Hollow — Super Dragon cadence; mostly the silent type (owner 2026-10-07 — he hasn't heard Super Dragon's real voice; probably findable online)
+- Static — Enzo Amore (fast-talking Jersey braggadocio; genuine clone — stock Piper retired, owner rejected it as a random British stock voice)
+- Cipher — **feral 2026 Lio Rush** (owner 2026-10-07) — crazy/feral energy; dialogue style from Bannon's Cipher material; speaks at the trick bet
 - Echo — Shotzi Blackheart
-- Sombra Negra — Damian Priest
+- Sombra Negra — Damian Priest (speaks — H3 and future lines)
 - Kiko — Keiji Mutoh / Great Muta
 - Theory — Black 20-year-old New York woman (TBD)
-- Onyx — TBD (owner has never heard her speak)
+- Onyx — **Black woman, ~20–23, soft voice** (owner 2026-10-07) — strong-silent intimidating psycho-clown type; owner never heard her actual voice, accent unknown
 - Ashes / Narrator — Bill $aber (XTTS v2 clone in progress; AI-performed, never owner-recorded)
 
 Rule: AI voices must be TIGHTER — closer matches to the real people they're based on (owner 2026-10-06).

@@ -17963,3 +17963,513 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 ## Entry count — Wave 16
 
 97 new `####` entries appended (33 SFX long-tail · 28 verified-PD archives · 26 caption packaging tools · 10 coordinator PD music/score archives) → **1753 total** honest entries (1656 before this wave). GPL/AGPL copyleft flags for quarantine (17 new rows): SoX, Sonic Visualiser, Rubber Band Library, TarsosDSP, ChucK, Csound (Lane A); OpenStreetMap ODbL (Lane B); pysrt, alass + 8 more caption tools (Lane C). Quarantine audit: rows 146–159 spot-checked (11 confirmed, MediaConch relicensing event documented, 3 duplicates mapped), 10 older rows re-verified, LGPL doctrine still pending owner verdict. Wired: soundbible_pull.py (3 CC-BY sounds, SHA-256 manifest), 2 BG-plate pulls with contact sheets, 7 caption tools with proofs. [Wave 16]
+
+## Wave 17 Lane A — PD music/score long tail + chiptune/retro trackers (2026-10-07)
+
+### PD music / score long tail
+
+#### LiederNet Archive ❓ art-song texts archive, terms unverified this pass
+- **What:** Long-running archive of art-song and choral texts with translations (lieder.net) — the standard reference for vocal repertoire texts.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Most texts are public-domain poetry, but the site's compilation/translation terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Texts only, not recordings — useful for vocal-score metadata, not as audio. Verify terms before bulk use. [Wave 17 Lane A]
+
+#### Lester S. Levy Sheet Music Collection (Johns Hopkins) ⚠️ per-item status — 1780–1980 span
+- **What:** 29,000+ pieces of American popular sheet music (1780–1980), digitized by the Johns Hopkins Sheridan Libraries; strong in military, circus, and minstrelsy material.
+- **URL:** levysheetmusic.mse.jhu.edu (seen in upstream-adjacent records; treat as unverified-verbatim until opened).
+- **License:** ⚠️ The span reaches 1980, so only pre-1929 items are safely US-PD; later items need per-item checks. A third-party ZIM request labels the collection "Public domain" — that is not JHU's own grant.
+- **Free tier:** Free browsing.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to pre-1929 items for PD score art/reference. [Wave 17 Lane A]
+
+#### Duke University — Historic American Sheet Music ❓ terms unverified this pass
+- **What:** Duke Libraries digital collection of 19th/early-20th-century American sheet music scans.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Assumed PD-era material; Duke's per-item rights statements not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-item rights before shipping use. [Wave 17 Lane A]
+
+#### Sibley Music Library — Digital Scores Collection (U. Rochester) ❓ terms unverified this pass
+- **What:** Eastman School of Music's Sibley Library digitized scores — PD-era classical scans.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ PD-era scans presumed; per-item terms not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-item rights before shipping use. [Wave 17 Lane A]
+
+#### UCSB Cylinder Audio Archive ⚠️ transfers are CC-BY-NC 2.5 — the recordings are PD-era, the MP3s are not
+- **What:** 15,000+ digitized wax-cylinder recordings (late 1800s–early 1900s): popular songs, vaudeville, classical, operatic, spoken word; 650+ vernacular "home recordings" on the National Recording Registry.
+- **URL:** https://www.library.ucsb.edu/special-collections/performing-arts/cylinders
+- **License:** ⚠️ The underlying performances are PD-era, but UCSB's MP3 transfers are © UC Regents and licensed CC-BY-NC 2.5 (per the archive's licensing page) — NC bars commercial use of the downloads.
+- **Free tier:** Free download/streaming.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/research only for commercial pipelines unless re-transfers are made from PD sources. The NC applies to UCSB's files, not to the underlying PD performances. [Wave 17 Lane A]
+
+#### DAHR — Discography of American Historical Recordings (UCSB) ⚠️ streaming noncommercial; PD items downloadable
+- **What:** 440,000+ master recordings from the 78-rpm era documented with artist bios and discographical detail; built with NEH funding and the Dust-to-Digital Foundation.
+- **URL:** No verbatim archive URL captured this pass — locate via search; facts verified via https://news.ucsb.edu/2025/022193/vast-collection-historic-american-music-released-ucsb-library-partnership-dust-digital
+- **License:** ⚠️ Free streaming is for noncommercial purposes; recordings in the public domain are available for free download per UCSB's open-access mission — per-recording status must be checked.
+- **Free tier:** Free.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Best used as a PD-recording discovery index; confirm each item's download grant before ingest. [Wave 17 Lane A]
+
+#### Bach Digital ❓ Bach manuscript scans, terms unverified this pass
+- **What:** Scholarly portal for J.S. Bach sources (bach-digital.de): manuscript scans, watermarks, work catalog data.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Bach's works are PD; the site's scan/usage terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference-grade for Bach score work; verify scan terms before reuse. [Wave 17 Lane A]
+
+#### Beethoven-Haus Bonn — digital archive ❓ terms unverified this pass
+- **What:** Beethoven-Haus Bonn's digital archive of Beethoven manuscripts, letters, and first editions.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Beethoven's works are PD; the archive's image-use terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify image terms before shipping use. [Wave 17 Lane A]
+
+#### MDZ — Munich Digitization Center music holdings ❓ terms unverified this pass
+- **What:** Bayerische Staatsbibliothek's digitization portal (daten.digitale-sammlungen.de) with deep PD-era music manuscript/score scans.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ PD-era scans presumed; per-item rights not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-item rights before shipping use. [Wave 17 Lane A]
+
+#### Sheet Music Consortium (UCLA-hosted) ❓ meta-search over PD sheet-music collections
+- **What:** Meta-search across member institutions' sheet-music digital collections (UCLA-hosted).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Aggregator only — each member collection's terms govern; nothing verified this pass.
+- **Free tier:** Free search (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful discovery layer for the Levy/Duke/Sibley-class collections above; always verify at the source collection. [Wave 17 Lane A]
+
+#### Library of Congress — Music for the Nation: American Sheet Music ⚠️ per-item rights statements govern
+- **What:** LoC digital collection of American sheet music (African-American, Civil War, temperance, etc.).
+- **URL:** No verbatim collection URL captured this pass — locate via search; rights framework verified at https://www.loc.gov/legal/security-copyright-and-privacy/understanding-copyright/
+- **License:** ⚠️ LoC marks each item with a "Rights and Access"/"Rights Advisory" statement; only items tagged "public domain" or "no known copyright restrictions" are freely usable — never assume the collection headline covers every item.
+- **Free tier:** Free.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same gating discipline as the image side: the file page's rights statement governs. [Wave 17 Lane A]
+
+#### Kai Engel ⚠️ per-track CC terms on Free Music Archive — no blanket grant
+- **What:** Neoclassical/ambient composer (Anton Fedchenkov); large free catalog on the Free Music Archive; his own video descriptions point to FMA for "free music and types of CC licenses."
+- **URL:** https://freemusicarchive.org/music/Kai_Engel/Deathless_The_Renaissance
+- **License:** ⚠️ Per-track: FMA album pages state "licensed under: Please check individual tracks for their respective licensing info" — some tracks CC-BY, others NC. No blanket commercial grant.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to CC-BY tracks only for production; keep a per-track license log. [Wave 17 Lane A]
+
+#### Zapsplat ❓ free-tier terms unverified this pass
+- **What:** Large SFX/music library with a free tier (attribution-required) and paid tiers.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Described as free with attribution on the free tier; the current license text was not read this pass.
+- **Free tier:** Free tier exists (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read the live license before any use; free-tier attribution must be honored. [Wave 17 Lane A]
+
+#### Pixabay Music ⚠️ Pixabay Content License — not public domain, not CC0
+- **What:** Pixabay's music section (pixabay.com/music).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Covered by Pixabay's own Content License, not CC0 and not public domain; verify the current terms before shipping (allowed uses have changed historically).
+- **Free tier:** Free downloads (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not file Pixabay tracks as PD/CC0 in any manifest. [Wave 17 Lane A]
+
+#### IN Harmony: Sheet Music from Indiana ❓ terms unverified this pass
+- **What:** Indiana University sheet-music digital collection (19th/early-20th century).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ PD-era material presumed; terms not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use. [Wave 17 Lane A]
+
+#### Templeton Digital Sheet Music Collection (Mississippi State) ❓ terms unverified this pass
+- **What:** Mississippi State University's digitized sheet-music collection.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use. [Wave 17 Lane A]
+
+#### DIAMM — Digital Image Archive of Medieval Music ⚠️ academic per-item terms
+- **What:** Oxford-hosted image archive of medieval music manuscripts.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Academic resource; image reuse is per-item/restricted — verify before any production use.
+- **Free tier:** Free viewing (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference value; not a bulk-ingest source. [Wave 17 Lane A]
+
+#### Cantus Database ❓ chant melody database, terms unverified this pass
+- **What:** Database of Latin ecclesiastical chant melodies (cantusdatabase.org) for musicological research.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Chant melodies are PD-era; the database's terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use. [Wave 17 Lane A]
+
+#### Alan Lomax Archive / Association for Cultural Equity ⚠️ per-item terms
+- **What:** Field recordings and documentation from Alan Lomax's folk-music collecting (American, Caribbean, European).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Per-item rights; some material streams free while commercial/download rights are restricted — verify each item.
+- **Free tier:** Free streaming (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not a bulk-ingest source; verify per item. [Wave 17 Lane A]
+
+#### Werner Icking Music Archive (WIMA) ❓ early PD sheet-music archive, terms unverified this pass
+- **What:** One of the earliest public-domain sheet-music archives on the web (listed alongside CPDL/Mutopia in reference works); site responded HTTP 200 this pass.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Presented as a PD archive, but the current terms were not read this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify the live terms before shipping use; do not bulk-ingest on reputation alone. [Wave 17 Lane A]
+
+### Chiptune / retro module archives
+
+#### The Mod Archive ⚠️ per-module license — filter by uploader-stated PD/CC only
+- **What:** The module-file library since 1996 (MOD/XM/IT/S3M and 40+ formats); anyone can upload; charts, reviews, ratings, and browse-by-license.
+- **URL:** https://en.wikipedia.org/wiki/Mod_Archive (verification source for the content-license statement); archive at modarchive.org
+- **License:** ⚠️ "Public domain or Creative Commons licenses, if mentioned by the uploader" — unmarked modules default to all-rights-reserved. The site's Module Copyright help pages govern; never bulk-scrape.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with libxmp (this wave, ✅ MIT) for in-engine playback: filter the Archive to PD/CC-marked modules, log per-module licenses. [Wave 17 Lane A]
+
+#### OverClocked ReMix ⚠️ artist-retained rights — site bars for-profit distribution
+- **What:** The video-game music arrangement community (ocremix.org); thousands of free ReMixes.
+- **URL:** https://ocremix.org/wiki/index.php?title=Content_Policy&diff=next&oldid=1766
+- **License:** ⚠️ Per the submission agreement: artists grant OC ReMix a non-exclusive sub-licensable license and retain ownership; the agreement "explicitly prohibits OverClocked ReMix from distributing submitted materials for for-profit endeavors." No blanket commercial grant — each track's artist terms govern.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/inspiration only for commercial pipelines unless the individual artist grants it. [Wave 17 Lane A]
+
+#### Battle of the Bits ⚠️ per-entry CC terms — check each entry
+- **What:** Chiptune/bytebeat compos (battleofthebits.org) with downloadable entries across chip formats.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Entries carry per-entry Creative Commons terms; check each entry's license — no blanket grant.
+- **Free tier:** Free downloads (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to CC-BY/CC0 entries for production use. [Wave 17 Lane A]
+
+#### High Voltage SID Collection (HVSC) ⚠️ noncommercial distribution — terms not re-verified this pass
+- **What:** The definitive Commodore 64 SID music archive (tens of thousands of tunes).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Distributed for noncommercial use per HVSC documentation; the live terms were not re-verified this pass — verify before any use.
+- **Free tier:** Free downloads (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference only for commercial pipelines; do not ship HVSC tunes in a commercial build. [Wave 17 Lane A]
+
+### Chiptune / retro trackers and music tools — clean licenses, upstream-verified
+
+#### FamiStudio ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** NES/Famicom music editor with piano-roll UI; exports NSF and ROM-ready data. The clean-license Famitracker-class tool.
+- **URL:** https://github.com/BleuBleu/FamiStudio
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest clean Famicom-music path in the lane. Proof: tools/music/evidence_wave17_laneA/license_manifest.json. [Wave 17 Lane A]
+
+#### BeepBox ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Browser-based chiptune sketchpad by John Nesky; exports WAV/MIDI/JSON.
+- **URL:** https://github.com/johnnesky/beepbox
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fast chiptune prototyping; JSON song format is pipeline-friendly. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### JummBox ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** BeepBox fork with extended instruments and song structure.
+- **URL:** https://github.com/jummbus/jummbox
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prefer over BeepBox when longer arrangements are needed. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### klystrack ✅ commercial-safe (MIT, raw LICENSE fetched 2026-10-07)
+- **What:** Chiptune tracker by kometbomb (Tero Lindeman); C64/NES-style composition.
+- **URL:** https://github.com/kometbomb/klystrack
+- **License:** ✅ MIT — GitHub API returned NOASSERTION, so the raw LICENSE was fetched 2026-10-07: MIT grant text ("Permission is hereby granted, free of charge…"). Saved at tools/music/evidence_wave17_laneA/licenses/kometbomb_klystrack_LICENSE.txt.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Proof: license_manifest.json + saved LICENSE. [Wave 17 Lane A]
+
+#### FastTracker II clone (8bitbubsy/ft2-clone) ✅ commercial-safe (BSD-3-Clause, API verified 2026-10-07)
+- **What:** Highly accurate open-source clone of FastTracker II by Olav Sørensen (8bitbubsy).
+- **URL:** https://github.com/8bitbubsy/ft2-clone
+- **License:** ✅ BSD-3-Clause — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean XM authoring path without touching abandonware FT2 binaries. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### ProTracker 2 clone (8bitbubsy/pt2-clone) ✅ commercial-safe (BSD-3-Clause, API verified 2026-10-07)
+- **What:** Highly accurate open-source clone of ProTracker 2.3D (Amiga) by 8bitbubsy.
+- **URL:** https://github.com/8bitbubsy/pt2-clone
+- **License:** ✅ BSD-3-Clause — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean MOD authoring path. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### TIC-80 ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Fantasy computer (nesbox) with a built-in chiptune tracker, sprite/map editors, and Lua/JS/Moon/Wren scripting.
+- **URL:** https://github.com/nesbox/TIC-80
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Chiptune prototyping inside a shippable fantasy console; music format is code-readable. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### GB Studio ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Game Boy game maker (chrismaltby) with a built-in music editor; exports real GB ROMs.
+- **URL:** https://github.com/chrismaltby/gb-studio
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with hUGETracker for a fully clean Game Boy audio chain. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### hUGETracker ✅ commercial-safe (public-domain dedication, README verified 2026-10-07)
+- **What:** Game Boy music tracker + hUGEDriver sound driver by SuperDisk.
+- **URL:** https://github.com/SuperDisk/hUGETracker
+- **License:** ✅ Public-domain dedication — no LICENSE file in the repo; the upstream README.md states "hUGETracker and hUGEDriver are dedicated to the public domain" (read 2026-10-07).
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cleanest-license Game Boy tracker found. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### libxmp ✅ commercial-safe (MIT, upstream README verified 2026-10-07)
+- **What:** Extended Module Player library — plays 90+ tracker module formats (MOD/XM/IT/S3M…).
+- **URL:** https://github.com/libxmp/libxmp
+- **License:** ✅ MIT — GitHub API license field null, so the upstream README was read 2026-10-07: MIT grant text ("Permission is hereby granted, free of charge, to any person obtaining a…").
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The in-engine playback counterpart to The Mod Archive (⚠️, this wave): load PD/CC-marked modules only. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### music21 ✅ commercial-safe (BSD-3-Clause, API verified 2026-10-07)
+- **What:** Python toolkit for computational musicology (MIT's cuthbertLab): score analysis, corpus studies, algorithmic composition, MusicXML/MIDI I/O.
+- **URL:** https://github.com/cuthbertLab/music21
+- **License:** ✅ BSD-3-Clause — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest score-side pipeline tool in the lane (analysis + generation over PD corpora like Mutopia). Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### pretty_midi ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Python MIDI utility (craffel): load/manipulate/synthesize MIDI with a clean API.
+- **URL:** https://github.com/craffel/pretty-midi
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with music21/mido for the MIDI side of the scoring pipeline. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### mido ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Python MIDI I/O library: ports, messages, MIDI files, SysEx.
+- **URL:** https://github.com/mido/mido
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### partitura ✅ commercial-safe (Apache-2.0, GitHub API spdx verified 2026-10-07)
+- **What:** Python toolkit (CPJKU) for symbolic music: scores, MIDI, and expressive performance data in one model.
+- **URL:** https://github.com/CPJKU/partitura
+- **License:** ✅ Apache-2.0 — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bridges score engraving and performance rendering in the pipeline. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### Musagi (DrPetter) ✅ commercial-safe (MIT, license.txt fetched 2026-10-07)
+- **What:** Music sequencer + synthesizer by the sfxr author (DrPetter).
+- **URL:** https://github.com/DrPetter/musagi
+- **License:** ✅ MIT — GitHub API returned NOASSERTION; license.txt fetched 2026-10-07 attaches the MIT license ("Do what you wish with the enclosed source…"). Saved at tools/music/evidence_wave17_laneA/licenses/DrPetter_musagi_license.txt.txt.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Proof: license_manifest.json + saved license.txt. [Wave 17 Lane A]
+
+#### bfxr (increpare) ✅ commercial-safe (Apache-2.0, upstream README verified 2026-10-07)
+- **What:** Flash-era retro sound-effect synthesizer (the bfxr.net tool), source by increpare.
+- **URL:** https://github.com/increpare/bfxr
+- **License:** ✅ Apache-2.0 — GitHub API license field null; the upstream readme.MD states "license: http://www.apache.org/licenses/LICENSE-2.0.html" (read 2026-10-07).
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean-license chiptune SFX synth; complements the already-cataloged sfxr/jsfxr. Proof: license_manifest.json. [Wave 17 Lane A]
+
+### Documented negatives — proprietary, abandonware, or unverifiable trackers
+
+#### DefleMask 🚫 do-not-use — now paid/closed-source, plus a GPL dispute on record
+- **What:** Multi-system chiptune tracker (Genesis/Mega Drive, SMS, Game Boy, NES, C64, PC Engine…).
+- **URL:** https://gbatemp.net/threads/deflemask-tracker-is-no-longer-free.588313/
+- **License:** 🚫 Proprietary closed-source; formerly free, now paid on all platforms including PC, and the legacy free version's availability is not guaranteed. A CSDb thread documents a GPL dispute (use of GPL reSID code without a source release).
+- **Free tier:** None (paid).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Do not build on DefleMask. Clean alternatives: FamiStudio (MIT), Furnace (quarantine, GPL), klystrack (MIT). [Wave 17 Lane A]
+
+#### SunVox ⚠️ proprietary studio app; engine library separately free for commercial use
+- **What:** Modular synthesizer + pattern-based tracker by Alexander Zolotov (NightRadio); desktop/mobile.
+- **URL:** https://warmplace.ru/soft/sunvox/sunvox_lib.php · https://en.wikipedia.org/wiki/SunVox
+- **License:** ⚠️ The SunVox Modular Music Creation Studio app is proprietary (desktop free download; iOS/Android paid). The SunVox ENGINE LIBRARY is stated BSD 3-Clause / free for commercial use by the developer ("You can freely use it in your own products (even commercial ones). But don't forget to read the license file") — but GitHub API returned license:null for warmplace/sunvox, so read the bundled license file before any use. Never treat the studio app as open-source.
+- **Free tier:** Studio app free on desktop; paid on mobile.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Engine library is the only shippable part, and only after reading its license file. [Wave 17 Lane A]
+
+#### NSFPlay (bbbradsmith fork) ⚠️ no formal license — maintainer presumption only, not a grant
+- **What:** Maintained fork of the NES Sound Format player (NSFPlay/NSFPlug by Brezza), with CLI render-to-WAV utilities.
+- **URL:** https://github.com/bbbradsmith/nsfplay
+- **License:** ⚠️ No LICENSE file. The readme.txt says the maintainer "presumed based on text comments and readme files in the original code that it is distributed freely" and "You may reuse this code without restriction" — a presumption about the original author's intent, not a verified grant. Do not ship code from this repo without resolving the license.
+- **Free tier:** Free binaries/source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative: popularity ≠ license. NSF playback alternatives: libgme (quarantine row 184, LGPL-2.1) or clean-room reimplementation. [Wave 17 Lane A]
+
+#### Little Sound DJ (LSDJ) 🚫 proprietary paid software
+- **What:** The classic Game Boy music sequencer by Johan Kotlinski — cartridge/ROM software.
+- **License:** 🚫 Proprietary commercial software (paid). No open-source grant; no public source repository.
+- **Free tier:** None.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Cultural reference only. Clean Game Boy alternatives: hUGETracker (PD), GB Studio (MIT). [Wave 17 Lane A]
+
+#### Arkos Tracker 2 ❓ no public source found; license unverified this pass
+- **What:** Z80/AY-3-8910 tracker for Amstrad CPC / ZX Spectrum / MSX by Arkos (Julien Névo).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ No official source repository found on GitHub (only third-party ports such as ggnkua/Arkos-Tracker-2-ST); license terms not verified against the official site this pass.
+- **Free tier:** Unknown.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Do not vendor third-party ports as if they were upstream. [Wave 17 Lane A]
+
+#### Skale Tracker 🚫 abandonware — no traceable license grant
+- **What:** Windows FastTracker-II-style tracker from the 2000s.
+- **License:** 🚫 Abandoned; no maintained upstream, no license grant traceable. Binaries float on mirror sites with no terms.
+- **Free tier:** None (abandoned).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Use ft2-clone (BSD-3-Clause, this wave) instead. [Wave 17 Lane A]
+
+#### NerdTracker II 🚫 abandonware — no traceable license grant
+- **What:** DOS tracker for composing NES music.
+- **License:** 🚫 Abandoned; no maintained upstream, no license grant traceable.
+- **Free tier:** None (abandoned).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Use FamiStudio (MIT, this wave) instead. [Wave 17 Lane A]
+
+#### Nanoloop 🚫 proprietary commercial software
+- **What:** Chiptune step-sequencer (Game Boy cartridge, iOS, Android).
+- **License:** 🚫 Proprietary commercial software. No open grant.
+- **Free tier:** None.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Reference only. [Wave 17 Lane A]
+
+#### Bosca Ceoil ❓ license unverified this pass
+- **What:** Simple chiptune creation tool associated with Terry Cavanagh.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ No upstream license verification completed this pass — verify before any use.
+- **Free tier:** Unknown.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify before shipping use. [Wave 17 Lane A]
+
+#### Musescore.com ⚠️ proprietary score-sharing site — not covered by the desktop app's GPL grant
+- **What:** The score-sharing website (musescore.com), distinct from MuseScore Studio desktop (GPL-3.0 — quarantine row 177 this wave).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ The site's terms are proprietary: user-uploaded scores carry per-score restrictions and the site's own terms of use. The desktop application's GPL grant does NOT cover site content — never conflate the two.
+- **Free tier:** Freemium site.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: "MuseScore is open source" is true of the app, false of the website's score library. [Wave 17 Lane A]
+
+## Entry count — Wave 17 Lane A
+
+50 new `####` entries appended (20 PD music/score long-tail · 4 chiptune module archives · 16 clean-license trackers/music tools · 10 documented negatives) → **1803 total** honest entries (1753 before this wave). 15 new quarantine rows (170–184): 12 GPL-family trackers/score tools + Verovio LGPL-3.0 + libgme LGPL-2.1 (both LGPL: doctrine still pending owner verdict). Wired: wave17_laneA_verify_licenses.py (30 upstream license checks, license_manifest.json + 6 saved raw license texts) and wave17_laneA_pd_pull.py (3 PD audio pulls with SHA-256 + ffprobe: 2 Wikimedia Commons PD recordings, 1 Mutopia MIDI with MThd verified; 1 honest failure — Open Music Archive homepage exposes no direct audio links). Dedup: 15 planned candidates (Scott Buckley, filmmusic.io, Silverman, Purple Planet, Bensound, Fesliyan, Mixkit, Open Music Archive, Gallica, CPDL, ChipTone, sfxr, RFXGEN, National Jukebox, Jeskola Buzz) were already cataloged — skipped, replaced with fresh entries. [Wave 17 Lane A]

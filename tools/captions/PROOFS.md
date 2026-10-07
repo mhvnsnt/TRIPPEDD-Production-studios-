@@ -19,6 +19,26 @@ Hashes (sha256):
 - `proofs/pysubs2_demo.srt`: `c71801dba0f08c02ea9beea4cd15e5668d31a96402a511a4b58a91f74c4a12a4`
 - `proofs/pysubs2_shifted.srt`: `90ee24dc52763068c3a6bd243ffe26a5a64ddd0cf999c790a266ae73f3fe7753`
 
-## stable-ts (pending)
+## stable-ts (WIRED)
 
-See below once the smoke test completes.
+stable-ts 2.19.1 (**GPL-3.0** — standalone local process, quarantined per
+program `docs/LICENSE_QUARANTINE.md`) + openai-whisper 20250625 + CPU torch.
+
+Install note: `pip install --no-deps --no-build-isolation stable-ts`;
+CPU `torchaudio` from the PyTorch CPU index; `openai-whisper` (its CUDA
+torch dep is already satisfied by the CPU torch — pip accepts the
+`+cpu` local version).
+
+Smoke test (input: the 3.05s Piper TTS proof WAV):
+
+    python3 stable_ts_captions.py ~/workspace/god-molecule-studio/tools/voice/piper_test.wav \
+      -o proofs/stable_ts_test.srt --model tiny
+
+Result: `proofs/stable_ts_test.srt` — **2 segments, 8 words**, word-level
+karaoke SRT (current word highlighted green), timings 0.18s–2.72s,
+transcription exactly matches the spoken line
+("The council does not explain itself. It declares.").
+
+Hash (sha256):
+
+- `proofs/stable_ts_test.srt`: `a4983efb937290ada7fcada9c98ee3f1731954c494489d75455e84ab58a1bd94`

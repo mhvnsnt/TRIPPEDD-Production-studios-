@@ -24,7 +24,7 @@ Legend for each shot: `CAM` camera · `LIGHT` lighting · `ACT` action (characte
 - **CARD:** none (name is canon — "ASHES" when robed — but the short withholds names; presence first).
 - **AUD:** Chains clink. Single sub-bass hit as he faces camera.
 - **MOCAP:** Mixamo "Standing Idle" + "Turn Head" blend, retargeted to the ASHES robed GLB. See MOCAP_PLAN.md.
-- **ASSET:** `swmg-red.webp` **after fix pass** (remove grinning mouth; eye glints only; keep braids). **GATE 2: owner picks fix direction** (ASHES vs Narrator-reading) and approves the corrected key art before use.
+- **ASSET:** `swmg-red.webp` (canon as-is — the grin is Ashes' locked signature per owner 2026-10-07, not a defect). No fix pass needed.
 
 ## SHOT 3 — "ONYX" (0:11–0:16, ~5s)
 

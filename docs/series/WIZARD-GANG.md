@@ -89,6 +89,8 @@ A Wizard Gang beat should be understandable through some combination of:
 - Hoods, never pointy wizard hats. Direct-address poses.
 - **Avoid:** staffs and spell circles as character gear (murals/graffiti only); cartoon/chibi wizardposting variants; literal-magic fantasy tropes. This is urban visual language, NOT literal magic — *"This isn't costume — it's how the Painted [Onyx's gang] see themselves. Wizards of the street."* (HOLLOWS_DISTRICT.md line 138).
 
+**Ashes exception (owner 2026-10-07, his direct say-so):** Ashes KEEPS the grin/mouth — the diamond-grill smile is his locked character signature in EVERY style (3D renders, cartoon series, all). The swmg-red.webp grin is canon, not a defect. The black-void/eye-glints-only face rule governs the other eight wizards; Ashes is the exception.
+
 **Cast roster — confirmed vs TBD**
 
 | Robe | Character | Role | Status | Source |

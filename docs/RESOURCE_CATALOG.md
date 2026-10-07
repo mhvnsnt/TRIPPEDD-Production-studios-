@@ -21173,3 +21173,131 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Italian sound-art long tail — clean dual-license finds. [Wave 20 Lane A]
+#### UK MOD Military Bands (Royal Marines / RAF Music / Army regimental bands) ⚠️ licence-gated
+- **What:** The UK's official service bands — Royal Marines Band Service, RAF Music Services, Army regimental bands. The MOD's own copyright page is explicit: recording a MOD band performance (sound/video/broadcast) requires a contract/licence — modern recordings are NOT public domain.
+- **URL:** https://www.gov.uk/government/publications/ministry-of-defence-copyright-and-merchandising-information-and-documents/ministry-of-defence-copyright-licensing-information
+- **License:** ⚠️ Modern recordings: MOD contract/licence required (verified 2026-10-07 on the gov.uk MOD copyright licensing page, section "2.4 Music by a MOD Band"). Date-gated ✅: UK Crown-copyright sound recordings expire 50 years after publication (CDPA 1988 s.163), so MOD band recordings published before 1976 are PD in the UK.
+- **Free tier:** Licensing via DIPR-CrownCopyrightLicensing@mod.gov.uk (fees likely)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Wave-14 lesson applied: the MOD page is the rights source, not assumptions. Usable lane = pre-1976 published MOD recordings (verify per recording) or licensed engagement. [Wave 20 Lane B]
+
+#### Band of H.M. Coldstream Guards — "Old Comrades" (1917) ⚠️ reference-only
+- **What:** The single strongest verified-PD non-US military-band artifact this wave: "Old Comrades" march (Teike, 1889) performed by the Band of H.M. Coldstream Guards, HMV B 835, matrix 3-352 / HO 3602 ee, recorded 18 May 1917 per discography matrix/catalog match. Real MP3 pulled + ffprobe-verified (178.5 s).
+- **URL:** https://archive.org/details/78_old-comrades-the-favourite-march-of-the-changing-of-the-guard_band-of-hm-coldst_gbia7017577b
+- **License:** ⚠️ REFERENCE ONLY — do not ship. The 1917 recording is PD by age (EU/UK: 70 yrs from publication, Directive 2011/77/EU; US: pre-1923, Music Modernization Act), BUT the file is a Great 78 Project transfer, and the catalog's standing Wave-9-A diligence holds Great 78 audio as settlement-contested (see the "The Great 78 Project" 🚫 entry) — rights host is actively contested, so this artifact stays reference/listening-only.
+- **Free tier:** Free stream/download (reference)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired-reference (tools/wave20_lane_b/pull_great78_band.py → tools/wave20_lane_b/proofs/coldstream_guards_old_comrades_1917.json, PASS; honest failure declared: ✅ ship-grade wire blocked by Great-78 settlement status)
+- **Notes:** Model for the date-gated band pattern: matrix/catalog number → discography date → statute. Composition (Teike 1889) long PD. [Wave 20 Lane B]
+
+#### Canadian Armed Forces Music (DND/CAF bands) ⚠️ licence-gated
+- **What:** The CAF's official music branch — Central Band of the Canadian Armed Forces, regional bands. DND's Crown Copyright page: works "prepared or published by or under the direction or control" of the government are Crown copyright — 50 years from first publication (Copyright Act s.12), explicitly UNCHANGED by the 2022 70-year extension. Modern recordings need DND permission.
+- **URL:** https://www.canada.ca/en/department-national-defence/corporate/intellectual-property/crown-copyright.html
+- **License:** ⚠️ Modern recordings: DND licence required for commercial use (verified 2026-10-07). Date-gated ✅: CAF/DND band recordings first published before 1976 are PD in Canada (50-year Crown copyright expired). Also see CAF Music Instructions Vol.1 (copyright chapter): https://www.canada.ca/content/dam/themes/defence/caf/showcasing/music/canadian-armed-forces-music-instructions-volume-1.pdf
+- **Free tier:** Non-commercial reproduction permitted per DND guidance
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Cleanest state-copyright rule of the wave: the 50-year Crown term survived the 70-year extension — the date gate is statute-solid. [Wave 20 Lane B]
+
+#### Australian Defence Force Bands (Army Band Corps / RAAF Band / Navy Band) ⚠️ licence-gated
+- **What:** ADF's official bands — Australian Army Band (11 sub-units), RAAF Band, Royal Australian Navy Band. Defence sites publish news about the bands and the Navy Band streams/downloads ceremonial tracks; standard Defence copyright is © Commonwealth of Australia, prior written permission required.
+- **URL:** http://www.defence.gov.au/news-events/news/2021-08-10/music-selection-grows
+- **License:** ⚠️ Modern recordings: © Commonwealth of Australia — written permission required (verified 2026-10-07 via Defence copyright notices on defence.gov.au). Date-gated ✅: Commonwealth Crown-copyright sound recordings expire 50 years after publication (Copyright Act 1968 s.180(3)), so ADF band recordings published before 1976 are PD in Australia.
+- **Free tier:** Ceremonial tracks streamable/downloadable from navy.gov.au (personal use)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Navy Band's downloadable ceremonial tracks are the most accessible modern ADF recordings — still © Commonwealth, so reference/comparison use only. [Wave 20 Lane B]
+
+#### Musique de la Garde républicaine (France) ⚠️ licence-gated
+- **What:** The premier French military band (Gendarmerie, founded 1848) — extensive discography: Pathé cylinders from 1906, Zonophone 78s (Gabriel Parès, 1905–1907), EMI/Parlophone LPs, modern AMGR releases. Modern albums are label-controlled (EMI Classics, Warner, AMGR); early-1900s recordings are date-PD.
+- **URL:** https://www.discogs.com/artist/732736-Musique-De-La-Garde-R%C3%A9publicaine?redirected=true
+- **License:** ⚠️ Modern releases: label copyright (verified 2026-10-07 — e.g. "Marches et Fanfares" EMI 2008, "Osmose" AMGR). Date-gated ✅: recordings published before 1956 are PD in the EU (Directive 2011/77/EU, 70 years from publication). France has no general government-works PD exception for recordings, so the date gate is the only safe lane.
+- **Free tier:** Discography reference (Discogs/AllMusic)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The 1906 Pathé cylinder "Marche De Retraite" (Pathé 8908) is the oldest verified Garde républicaine artifact found — cleanly date-PD, but no freely downloadable transfer located this wave. [Wave 20 Lane B]
+
+#### Bundeswehr Musikkorps (Zentrum Militärmusik) ⚠️ permission-gated
+- **What:** Germany's armed-forces music corps (Stabsmusikkorps, Gebirgsmusikkorps, Ausbildungsmusikkorps etc.). The Bundeswehr's own concert-info document states audio/video recordings are only allowed with the Musikkorps' express permission (Leistungsschutzrechte) — modern recordings are NOT PD. No special government-PD provision for recordings under German law (§5 UrhG covers official texts, not performances).
+- **URL:** https://www.bundeswehr.de/resource/blob/226294/c2dbb28fdb6ceff2ae5f65a399f2f337/zmilmusbw-konzert-info-data.pdf
+- **License:** ⚠️ Modern recordings: express permission of the Musikkorps required (verified 2026-10-07 in the official Bundeswehr concert-info PDF). Date-gated ✅: recordings published before 1956 are PD in the EU (Directive 2011/77/EU, 70 years from publication). Note: the Discogs 1987 EMI "Traditions-Märsche" CD is NOT date-PD — verify per release, never per band.
+- **Free tier:** N/A (permission channel: mediendatenbank@bundeswehr.org)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Cleanest official "recordings need our permission" statement of the wave — eliminates any assumption that Bundeswehr performances are public property. [Wave 20 Lane B]
+
+#### EBU-TT-D W3C XML Schema (ebu/ebu-tt-d-xsd) ✅ commercial-safe
+- **What:** The EBU's official normative-helper XSD for EBU-TT-D (Tech 3380) — `ebutt_d.xsd` plus datatype/metadata/styling imports. The machine-readable anchor of the whole EBU-TT-D ecosystem: validate any EBU-TT-D document against it.
+- **URL:** https://github.com/ebu/ebu-tt-d-xsd
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07 via GitHub API spdx_id BSD-3-Clause; repo page states "The code is under BSD (3-Clause) License")
+- **Free tier:** N/A (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED — tools/wave20_lane_b/validate_ebuttd.py downloads all 7 XSD files + one IRT sample and validates with lxml: PASS (proof: tools/captions/proofs/wave20_ebuttd_validation.json)
+- **Notes:** Complements the existing EBU-TT Live toolkit entry (Wave 17 Lane B): this is the distribution-format (EBU-TT-D) schema, not the Live (Part 3) toolkit. Use it as the CI gate for any caption pipeline that emits EBU-TT-D. [Wave 20 Lane B]
+
+#### IRT EBU-TT-D Application Samples ✅ commercial-safe
+- **What:** Institut für Rundfunktechnik's reference EBU-TT-D sample corpus: real EBU-TT-D TTML files, expected-render PNGs, and a 30 s MP4 test video showing correct presentation — the canonical test fixtures for EBU-TT-D implementations.
+- **URL:** https://github.com/IRT-Open-Source/irt-ebu-tt-d-application-samples
+- **License:** ✅ Apache-2.0 (verified 2026-10-07 via GitHub API spdx_id Apache-2.0; README: "subject to the Apache 2.0 license")
+- **Free tier:** N/A (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started (sample `cumulative-rows-001-ttml.xml` consumed by the EBU-TT-D XSD wire, validated PASS)
+- **Notes:** The expected-render PNGs give a pixel-level oracle for testing our own caption renderers (imscJS / mpv / ffmpeg burn-in) against broadcaster-correct output. [Wave 20 Lane B]
+
+#### EBU-TT spec suite (Tech 3350 / 3360 / 3370 / 3380 + Tech 3264 STL) ✅ free reference docs
+- **What:** The full normative EBU-TT document family, free PDF downloads from tech.ebu.ch: Tech 3350 (Part 1 — subtitling format definition), Tech 3360 (Part 2 — EBU STL → EBU-TT mapping), Tech 3370 (Part 3 — Live system model + content profile; Tech 3370s1 WebSocket carriage; Tech 3390 metadata), Tech 3380 (EBU-TT-D distribution profile), Tech 3264 (EBU STL subtitling data exchange format). The specs ttconv/imscJS/SCF implement.
+- **URL:** https://tech.ebu.ch/docs/tech/tech3360.pdf
+- **License:** ✅ Free reference docs (EBU copyright; free PDF download — cite, don't redistribute). Verified 2026-10-07: Tech 3360 and Tech 3370 (https://tech.ebu.ch/publications/tech3370) and Tech 3264 (https://tech.ebu.ch/docs/tech/tech3264.pdf) resolve at tech.ebu.ch; Tech 3350/3380 on the same publications path.
+- **Free tier:** Free PDFs
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 0/5 (reading)
+- **Status:** not-started
+- **Notes:** The one entry that makes the other caption tools legible: Tech 3360 is the STL→TTML Rosetta stone; Tech 3380 is what our EBU-TT-D XSD wire validates against. [Wave 20 Lane B]
+
+#### W3C TTML2 (Timed Text Markup Language 2) Recommendation ✅ royalty-free
+- **What:** The W3C Recommendation that EBU-TT profiles and IMSC derive from — the normative timed-text data model (ttml2). Reading this is the fastest way to understand every TTML-family document our pipeline touches.
+- **URL:** https://www.w3.org/TR/ttml2
+- **License:** ✅ W3C royalty-free (W3C Document License + Patent Policy; verified 2026-10-07 via W3C TR page)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 0/5 (reading)
+- **Status:** not-started
+- **Notes:** Canonical parent of the EBU-TT family — EBU-TT Part 1 is defined as a profile of TTML. [Wave 20 Lane B]
+
+#### W3C IMSC (TTML Profiles for Internet Media Subtitles) ✅ royalty-free
+- **What:** W3C's TTML profiles for internet media (IMSC 1.x Text/Image profiles) — the profile ttconv targets as its canonical model and imscJS renders. The practical interoperability contract between our caption tools and streaming/broadcast players.
+- **URL:** https://www.w3.org/TR/ttml-imsc1.3/
+- **License:** ✅ W3C royalty-free (W3C Document License + Patent Policy; verified 2026-10-07)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 0/5 (reading)
+- **Status:** not-started
+- **Notes:** ttconv's canonical model is constrained to the IMSC Text Profile — reading this spec explains every conversion loss the tool reports. [Wave 20 Lane B]
+
+#### go-amll-ttml-parser (whatdamon) ✅ commercial-safe
+- **What:** A Go TTML parser with diagnostics, profile validation, and faithful/derived layer handling — plus CC0 1.0 test corpus. A compile-to-binary TTML parsing option for caption tooling in Go-based services (no Python runtime needed).
+- **URL:** https://github.com/whatdamon/go-amll-ttml-parser
+- **License:** ✅ MIT (verified 2026-10-07 via GitHub API spdx_id MIT); test corpus CC0 1.0
+- **Free tier:** N/A (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The only permissively-licensed native TTML parser found outside the Python/JS stacks — useful if caption parsing ever needs to live in a Go microservice. [Wave 20 Lane B]
+
+#### bbc/subtitles-generator ❓ license-undeclared
+- **What:** BBC News Labs' node module for generating subtitles from time-coded word lists — exports TTML (incl. Premiere-flavoured), iTT (Apple), SRT, VTT, CSV, and pre-segmented text. Directly relevant to turning Whisper word-timestamps into delivery-ready caption files.
+- **URL:** https://github.com/bbc/subtitles-generator
+- **License:** ❓ NO license declared — GitHub API returns license: null; no LICENSE file in repo (verified 2026-10-07). Default is all-rights-reserved: do NOT use until BBC adds a license.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Honest ❓: the functionality is exactly what the pipeline wants (Whisper words → TTML/SRT/VTT), but undeclared-license code is unusable. Watch for a license addition; ttconv + stable_ts_captions cover the gap meanwhile. [Wave 20 Lane B]

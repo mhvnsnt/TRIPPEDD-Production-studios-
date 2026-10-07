@@ -8,7 +8,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Tool use ≠ code reuse:** running a GPL application as a standalone tool (e.g. opening Krita to paint) does not infect our pipeline — output artwork remains ours per the Krita/GIMP GPL FAQ doctrine. The quarantine targets *code integration*, not *tool usage*.
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 
-## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 + 9 Wave 4 = 65)
+## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 + 9 Wave 4 + 10 Wave 5 A2 + 2 Wave 5 A3 = 77)
 
 | # | Name | License | Lane | Repo | Allowed use | Audit status |
 |---|------|---------|------|------|-------------|--------------|
@@ -113,6 +113,8 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 73 | Audacity | GPL-2.0-or-later | audio editor | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 74 | CHOW Tape Model (chowdsp) | GPL-3.0 | plugin | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 75 | Dragonfly Reverb | GPL-3.0 | plugin | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 76 | RobustVideoMatting | GPL-3.0 (Wave 5 A3, verified via upstream LICENSE) | video matting | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 77 | mmd_tools (MMD-Blender/blender_mmd_tools) | GPL-3.0 (Wave 5 A3, verified via GitHub license badge + README) | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 
 ## Notes from Wave-5 A2 research
 

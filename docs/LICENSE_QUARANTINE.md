@@ -9,7 +9,9 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (169 rows · 160 distinct projects — append-only manifest; see duplicate mapping below)
+## Quarantined items (169 rows · 159 distinct projects — append-only manifest; see duplicate mapping below)
+
+> Wave 17 Lane C (2026-10-07): row 169 (Subtitle Edit) **DELISTED via documented compatible relicense** (see row note). Distinct projects 160 → 159. Row counts: 169 rows · 159 distinct (AGPL 23 · GPL 125 · LGPL-2.1 2 · LGPL-3.0 3 · MPL-2.0 1 · GPLv3+/MPLv2+ 1 · CeCILL-2.1 1 · ODbL-1.0 1 · CC BY-SA 1 · CC BY-NC-ND 1 · municipal/state rights-restricted 10).
 
 ## Row-number convention + duplicate mapping (Wave 8 Lane B, 2026-10-07)
 
@@ -369,4 +371,27 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 166 | OpenStreetMap (planet geodata) | ODbL-1.0 (copyleft on the database; Produced Works such as rendered images are fine, derived databases must be shared-alike) — verified: lane-B rights review, 2026-10-07 — map/BG-plate geodata | bg-plates | trippedd | rendered-image use only with per-use review; never derive-and-close a database from it | PENDING |
 | 167 | DCP-o-matic | GPL-2.0 (verified: Wave 16 Lane C, 2026-10-07; repo github.com/cth103/dcpomatic) — Digital Cinema Package builder with IMSC/TTML subtitle reels | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
 | 168 | ChapterTool (tautcony) | GPL-3.0 (verified: Wave 16 Lane C, 2026-10-07; repo github.com/tautcony/ChapterTool) — Blu-ray/Matroska chapter editor | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
-| 169 | Subtitle Edit (Subtitle Workshop) | GPL-3.0 (verified: Wave 16 Lane C, 2026-10-07 — "Subtitle Workshop and SubtitleAPI source code are both released under the GNU/GPL 3 license") — desktop subtitle editor | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 169 | Subtitle Edit (SubtitleEdit/subtitleedit — corrected Wave 17 Lane C: NOT dekked/subtitleworkshop, which is already quarantined as row 113 and stays GPL-3.0) | **RELICENSED → MIT — DELISTED via documented compatible relicense (Wave 17 Lane C spot-check, 2026-10-07):** root LICENSE file is the MIT License text (Copyright (c) 2026 Nikolaj Olsson); GitHub API spdx_id MIT; relicense landed in the 2026-02/03 codebase switch ("Switch to Subtitle Edit 5 (Avalonia) codebase" + "Minor clean + update license"). The Wave-16 Lane C verification quoted the WRONG project's README (dekked/subtitleworkshop's "released under the GNU/GPL 3 license"). MIT is permissive — no copyleft hazard; leaves quarantine per the audit path. Older 4.x tags remain GPL-3.0; pin accordingly. | captions | trippedd | n/a — permissive (MIT); no quarantine restriction | DELISTED |
+
+## Notes from Wave-17 Lane C quarantine spot-check (2026-10-07)
+
+- **15-row upstream spot-check (GitHub API spdx_id / raw license files / vendor & distro records — never assumed):** the 10 fresh Wave-16 rows (160–169) + 5 older rows never spot-checked before (27, 47, 72, 89, 106).
+  - 160 SoX ✅ (Debian copyright record: "GPL-2+ or LGPL-2.1+"; SourceForge license field: GPLv2 + LGPLv2 — matches the manifest's app/lib split)
+  - 161 Sonic Visualiser ✅ (API spdx_id sonic-visualiser/sonic-visualiser = GPL-2.0)
+  - 162 Rubber Band Library ✅ (API spdx_id breakfastquay/rubberband = GPL-2.0)
+  - 163 TarsosDSP ✅ (API spdx_id JorenSix/TarsosDSP = GPL-3.0)
+  - 164 ChucK ✅ (API spdx_id ccrma/chuck = GPL-2.0)
+  - 165 Csound ✅ (API spdx_id csound/csound = LGPL-2.1 — LGPL doctrine still PENDING OWNER VERDICT; stays quarantined)
+  - 166 OpenStreetMap geodata ✅ (openstreetmap.org/copyright: Open Database License — matches ODbL-1.0)
+  - 167 DCP-o-matic ✅ (API spdx_id cth103/dcpomatic = GPL-2.0)
+  - 168 ChapterTool ✅ (API spdx_id tautcony/ChapterTool = GPL-3.0)
+  - 169 Subtitle Edit → **RELICENSED MIT → DELISTED** (see below — the one finding of this audit)
+  - 27 Video2X ✅ (API spdx_id k4yt3x/video2x = AGPL-3.0)
+  - 47 Upscayl ✅ (API spdx_id upscayl/upscayl = AGPL-3.0)
+  - 72 Ardour ✅ (root COPYING is the GPL-2 text — matches GPL-2.0)
+  - 89 OBS Studio ✅ (API spdx_id obsproject/obs-studio = GPL-2.0)
+  - 106 Jubler ✅ (API spdx_id teras/Jubler = AGPL-3.0)
+- **Row 169 relicense event (the finding):** upstream SubtitleEdit/subtitleedit is now MIT — root LICENSE is the MIT text (Copyright (c) 2026 Nikolaj Olsson), API spdx_id MIT, relicense landed 2026-02/03 in the Avalonia codebase switch. The Wave-16 Lane C "verification" had quoted the WRONG project's README (dekked/subtitleworkshop — which is row 113, still GPL-3.0, still quarantined). Row 169 renamed to SubtitleEdit/subtitleedit, Audit status DELISTED via the documented-compatible-relicense audit path; older 4.x tags stay GPL-3.0 so pin if backporting. Cautionary lesson: verify against the NAMED repo, never a same-name project.
+- **Docker smoke-test:** still DEFERRED — no container runtime on this VM (no docker, podman, or nerdctl binary; no /var/run/docker.sock). Speaches Docker probing remains blocked on infrastructure, not on licensing.
+- **LGPL doctrine:** still PENDING OWNER VERDICT (re-checked — no ruling on record). Rows 63 (marytts), 121 (AivisSpeech), 154 (GPAC), 165 (Csound) stay quarantined. Weak-copyleft watchlist unchanged (Faust LGPL-2.1-or-later · OpenAL Soft LGPL-2.0-or-later · VapourSynth LGPL-2.1).
+- **Header counts refreshed:** 169 rows · 159 distinct (GPL 126 → 125 on the row-169 delist).

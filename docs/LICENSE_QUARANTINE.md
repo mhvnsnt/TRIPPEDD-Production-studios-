@@ -454,3 +454,23 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Dedup discipline:** six Wave 18 catalog entries (Radium, BambooTracker, Frescobaldi, Denemo, Hydrogen, GoatTracker) reference EXISTING quarantine rows (175/173/179/180/126/176) — no duplicate rows added for them. GoatTracker's GPL-2.0 was confirmed via the row-176 mirror-COPYING evidence (canonical cadaver/goattracker repo returns 404).
 - **Not quarantined (by doctrine):** Mucom88 (CC BY-NC-SA 4.0) is a straight 🚫 no-go, not copyleft — catalog-only. QMPlay2 (LGPL-3.0) and Haivision SRT (MPL-2.0) flagged ⚠️ pending the owner's LGPL/MPL doctrine verdict — no quarantine rows per standing rule. FFMS2 (MIT source / GPL binaries) marked ⚠️ with the build-from-source clean path documented.
 - **Header counts refreshed:** 198 rows · 184 distinct (171 + 13 new; GPL 139 → 151, AGPL 23 → 24).
+
+## Wave 18 Lane B quarantine audit (2026-10-07)
+
+- **Lane A append verified (rows 186–198):** numbering sequential and correct (186 Zrythm → 198 xy-VSFilter); every row carries a 🚫-class copyleft license string, `standalone-tool use only — never linked into shipping code` restriction, and PENDING audit status. `grep -c '^| [0-9]'` = 198; header count (198 rows · 184 distinct) matches (171 + 13 new, zero dups/supersedes in the new block). Lane A's stated "header counts refreshed: 198 rows · 184 distinct" confirmed as written.
+- **Rows 173–184 upstream spot-check (GitHub API spdx_id + raw LICENSE/README fetches, 2026-10-07):**
+  - 173 BambooTracker → GPL-2.0 CONFIRMED (API spdx_id BambooTracker/BambooTracker).
+  - 174 0CC-FamiTracker → **CORRECTED: upstream repo reference changed, license unchanged.** `HertzDev/0CC-FamiTracker` now returns 404 and the HertzDev GitHub account hosts only unrelated repos (account repurposed/renamed; original repo deleted or moved). The active continuation is `nyanpasu64/0CC-FamiTracker` (fork, API spdx_id GPL-2.0; README: "licensed under the GNU General Public License Version 2"). Row keeps its GPL-2.0 classification and quarantine status; the upstream reference is now nyanpasu64/0CC-FamiTracker. Cautionary echo of the row-169 lesson: verify against the NAMED repo, never an account name.
+  - 175 Radium → GPL-2.0 CONFIRMED (API spdx_id kmatheussen/radium).
+  - 176 GoatTracker → GPL-2.0 CONFIRMED (API spdx_id leafo/goattracker2 mirror).
+  - 177 MuseScore Studio → GPL-3.0 CONFIRMED (raw LICENSE.txt on `main` branch: "GNU General Public License version 3"; API spdx_id NOASSERTION — branch confusion caused a transient 404 on `master`, resolved).
+  - 178 LilyPond → GPL-3.0-or-later CONFIRMED (raw LICENSE: "either version 3 of the License, or (at your option) any later version"; API spdx_id NOASSERTION).
+  - 179 Frescobaldi → GPL-2.0 CONFIRMED (API spdx_id frescobaldi/frescobaldi).
+  - 180 Denemo → GPL-3.0 CONFIRMED (API spdx_id denemo/denemo).
+  - 181 Abjad → GPL-3.0 CONFIRMED (API spdx_id Abjad/abjad).
+  - 182 mingus → GPL-3.0 CONFIRMED (API spdx_id bspaans/python-mingus).
+  - 183 Verovio → LGPL-3.0 CONFIRMED (API spdx_id rism-digital/verovio) — stays quarantined per standing rule (LGPL doctrine PENDING owner verdict; no ruling as of 2026-10-07).
+  - 184 libgme / game-music-emu → LGPL-2.1 CONFIRMED (API spdx_id libgme/game-music-emu) — stays quarantined (same pending doctrine).
+- **Result: 11 confirmed, 1 corrected (174 repo reference; classification unchanged).** Zero delists, zero new rows from this audit. Header counts unchanged: 198 rows · 184 distinct.
+- **Row 169 (Subtitle Edit) dep-tree audit:** SKIPPED — not a shipping candidate. Repo-wide grep for `subtitleedit|subtitle edit` found zero references in any pipeline path, tooling, or doc outside quarantine/catalog records. Subtitle Edit (SubtitleEdit/subtitleedit, MIT since the 2026-02/03 Avalonia relicense, older 4.x tags still GPL-3.0 — pin accordingly) is catalog/record-only; no dep tree ships it, so no transitive GPL/AGPL contamination path exists. If a shipping use is ever proposed, audit BEFORE wiring.
+- **Speaches Docker:** still deferred — no container runtime on the VM (no docker/podman/nerdctl/crictl binaries; no /var/run/docker.sock), checked 2026-10-07.

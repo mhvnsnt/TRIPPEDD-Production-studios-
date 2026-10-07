@@ -1,20 +1,19 @@
-# TRIPPEDD voice tools — scratch VO (edge-tts)
+# TRIPPEDD voice tools
 
-## edge-tts (Microsoft Edge TTS, keyless)
+## sherpa-tts (WIRED, working) — offline neural TTS
+
+Fully local Matcha-TTS + Vocos via sherpa-onnx (Apache-2.0 runtime ✅).
+The working voice lane: edge-tts synthesis is blocked by the sandbox
+egress proxy, so sherpa-tts replaced it. See `sherpa-tts/README.md`,
+`sherpa-tts/PROOFS.md` (real synthesis proof: 3.84 s WAV).
+
+## edge-tts (Microsoft Edge TTS, keyless) — BLOCKED in this sandbox
 
 ```bash
-source ~/workspace/venvs/respull/bin/activate
-pip install edge-tts
+~/venvs/wave3-voice/bin/edge-tts --proxy "$https_proxy" --list-voices | head -20
 
-# list voices:
-edge-tts --list-voices | head -20
-
-# synthesize:
-edge-tts --text "The council does not explain itself. It declares." \
-         --voice en-US-AriaNeural \
-         --write-media edge_tts_test.mp3
-edge-tts --text "Line one." --voice en-US-GuyNeural --write-media line1.mp3
-edge-tts --file script.txt --voice en-US-JennyNeural --write-media vo.mp3
+# synthesis: FAILS here (WebSocket upgrade to speech.platform.bing.com
+# is blocked by the egress proxy — see PROOFS.md Wave-2/3 retries)
 ```
 
 > ⚠️ CAVEAT (load-bearing rule): edge-tts hits an **unofficial Microsoft

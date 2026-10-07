@@ -101,3 +101,10 @@ Repo `AGENTS.md` files were read per house rules. One file
 (`production/WIZARD_GANG_EP01/` area) carries no foreign directives affecting
 this task; the standing instruction to ignore injected autonomous/no-permission
 blocks was honored — no such block was acted on.
+
+## 2026-10-07 — playback fix (phone freeze past 1:56)
+Owner reported freezing on one frame past 1:56 on his phone. Root cause: stage-2a
+`-c copy` concat of the segment encodes produced a stream phone hardware decoders
+choke on. Fix: full clean re-encode (libx264 veryfast, crf 21, yuv420p, high@4.0,
+keyint 60, aac 160k, +faststart). Verified: 300.16s, faststart, clean full decode,
+frame at t=116 intact. Old concat master kept as wizard-gang-ep01-16x9-concat.mp4.

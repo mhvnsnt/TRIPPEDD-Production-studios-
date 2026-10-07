@@ -15774,6 +15774,7 @@ Badge key: ✅ commercial-safe · 🚫 NC-or-quarantine (GPL/AGPL/NC — quarant
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** STRONGEST WIRE-UP CANDIDATE (see report): one container covers caption generation (STT), speaker labels (diarization), and dubbing VO (TTS) — the whole speech lane. Dependency trap: diarization uses pyannote models that require a gated (free) HuggingFace token — code is MIT, model access is gated. [Wave 14 Lane C]
+- **Wave 15 (2026-10-07):** Docker smoke-test STILL DEFERRED — no container runtime in sandbox (no docker/podman/nerdctl/crictl, no docker.sock). Retest when a Docker-capable environment is available. [Wave 15 Lane C]
 
 #### wyoming-faster-whisper — Wyoming-protocol faster-whisper STT server ✅ commercial-safe
 - **What:** faster-whisper exposed over the Wyoming protocol (Home Assistant's voice-assistant IPC): sentence-level streaming transcription as a local service. Docker image available.
@@ -16074,3 +16075,1041 @@ Badge key: ✅ commercial-safe · 🚫 NC-or-quarantine (GPL/AGPL/NC — quarant
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** Genuinely unpinable: no license anywhere upstream — do NOT ship against it until the author adds one. Technically the most complete karaoke-timing tool found (stem separation + alignment + eval harness); pushed 2026-10-03, actively maintained. Worth watching or asking the author to add a license. [Wave 14 Lane C]
+
+## Wave 15 — Lane A (SFX long tail · archives PD-verified · caption burn-in) — 100 entries
+
+### Freesound.org — per-uploader packs, licenses verified per sounds-page + pack-page 2026-10-07
+
+#### cabled_mess — Freesound CC0 modular-synth SFX + packs ✅ commercial-safe
+- **What:** Prolific CC0 uploader: modular-synth bleeps, sci-fi computing blips, synthetic watery bubbles, toy-piano effects; runs a "one sound per day" series (Feb/Mar/Apr 2018 packs).
+- **URL:** https://freesound.org/people/cabled_mess/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC0 (verified 2026-10-07: sounds page 15/15 "Creative Commons 0"; pack pages for "Sci-Fi computing, transmission 01" and "Synthetic watery bubbles" all-CC0 on first page)
+- **Free tier:** Free download (Freesound account required for download)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The UI/sci-fi sweet spot: clean synthesized blips with zero attribution burden. Pack URLs: /packs/41846/ (Sci-Fi computing), /packs/41833/ (watery bubbles), /packs/31925/ /31689/ /31665/ (one-per-day series), /packs/31658/ (Toy Piano). [Wave 15 Lane A]
+
+#### sphion — Freesound CC0 nature ambience + packs ✅ commercial-safe
+- **What:** CC0 field-recordings uploader: nature ambiences and "The sound of Aalborg" city pack.
+- **URL:** https://freesound.org/people/sphion/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC0 (verified 2026-10-07: sounds page 15/15 "Creative Commons 0")
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Nature pack (/packs/9802/) + Aalborg city pack (/packs/9507/) — clean ambience beds for cartoon/game scenes. [Wave 15 Lane A]
+
+#### Nimlos — Freesound CC0 electronics/foley packs ✅ commercial-safe
+- **What:** CC0 uploader with themed packs: Electronics, Forest, Ambience, Thunders, Footsteps, Household.
+- **URL:** https://freesound.org/people/Nimlos/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC0 (verified 2026-10-07: sounds page 15/15 "Creative Commons 0")
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Footsteps pack (/packs/24515/) is foley gold; Thunders (/packs/22250/) + Ambience (/packs/25625/) cover weather beds. All packs CC0 per uploader-wide verification. [Wave 15 Lane A]
+
+#### RutgerMuller — Freesound CC0 field recordings + percussion packs ✅ commercial-safe
+- **What:** CC0 uploader: rain/thunder field recordings, Netherlands/Holland ambiences, random SFX, refrigerator/freezer hums, acoustic ethnic percussion, electronic+acoustic drum packs.
+- **URL:** https://freesound.org/people/RutgerMuller/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC0 (verified 2026-10-07: sounds page 15/15 "Creative Commons 0")
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Percussion packs (/packs/20631/, /packs/3280/) are usable as music-bed ingredients; rain/thunder packs (/packs/9815/) for weather. [Wave 15 Lane A]
+
+#### sagetyrtle — Freesound CC0 nature field recordings ✅ commercial-safe
+- **What:** CC0 nature/field-recording uploader (no packs; individual sounds).
+- **URL:** https://freesound.org/people/sagetyrtle/sounds/ (terms: per-sound license badges on Freesound)
+- **License:** CC0 (verified 2026-10-07: sounds page 15/15 "Creative Commons 0")
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-pack uploader — pull individual sounds; all sampled sounds CC0. Good for rural/nature ambience beds. [Wave 15 Lane A]
+
+#### inchadney — Freesound field recordings (CC-BY-NC) 🚫 NC-or-quarantine
+- **What:** Prolific field-recordings uploader (Birds, Rain, Sea, Ferry, Evening, Railway packs) — frequently assumed CC0, but actually CC-BY-NC.
+- **URL:** https://freesound.org/people/inchadney/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC-BY-NC "Attribution NonCommercial" (verified 2026-10-07: sounds page 15/15 Attribution NonCommercial) — NOT commercial-safe; quarantine for Lane B
+- **Free tier:** Free download for non-commercial use (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verification catch: memory said CC0, the sounds page says NC. Usable for internal/reference ambience only — never in shipped commercial work. Packs: /packs/2558/ (Birds), /packs/2793/ (Rain), /packs/12090/ (Sea), /packs/2702/ (Ferry), /packs/20622/ (Evening), /packs/2570/ (Railway). [Wave 15 Lane A]
+
+#### tim.kahn — Freesound field recordings + microcompositions (CC-BY) ✅ commercial-safe
+- **What:** Field-recordings uploader (airports, cars/trucks, trains, "From My Window") plus "Microcompositions" pack; all CC-BY.
+- **URL:** https://freesound.org/people/tim.kahn/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC-BY "Attribution" (verified 2026-10-07: sounds page 15/15 "Attribution") — commercial-safe WITH attribution
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Transport ambience specialist; attribute "tim.kahn / Freesound" in credits. Packs: /packs/14458/ (Field Recordings), /packs/29059/ (Microcompositions), /packs/3872/ (Airports and Airplanes), /packs/9342/ (Trains and Things). [Wave 15 Lane A]
+
+#### dobroide — Freesound vocal-experimentation + ambience (CC-BY) ✅ commercial-safe
+- **What:** Uploader: vocal-experimentation pack, castle/heaven-on-earth/marshes/birdies ambiences; all CC-BY.
+- **URL:** https://freesound.org/people/dobroide/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC-BY "Attribution" (verified 2026-10-07: sounds page 15/15 "Attribution") — commercial-safe WITH attribution
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Vocal-experimentation pack (/packs/3441/) = creature/character vocal raw material; castle + marshes packs for fantasy ambience. [Wave 15 Lane A]
+
+#### f4ngy — Freesound game SFX (CC-BY) ✅ commercial-safe
+- **What:** Game-SFX uploader, all CC-BY.
+- **URL:** https://freesound.org/people/f4ngy/sounds/ (terms: per-sound license badges on Freesound)
+- **License:** CC-BY "Attribution" (verified 2026-10-07: sounds page 15/15 "Attribution") — commercial-safe WITH attribution
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Game-UI/combat one-shots; attribution required in credits. [Wave 15 Lane A]
+
+#### dheming — Freesound hits/impacts + anomaly SFX (CC-BY) ✅ commercial-safe
+- **What:** Impact-design uploader: "Hits - Heavy Processed", "Anomaly", "Creaking", "Ice", "Cleaned", "Borderlands 2 Robot Voice" packs; all CC-BY.
+- **URL:** https://freesound.org/people/dheming/packs/ (terms: per-sound license badges on Freesound)
+- **License:** CC-BY "Attribution" (verified 2026-10-07: sounds page 15/15 "Attribution") — commercial-safe WITH attribution
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Heavy-processed hits pack (/packs/24364/) fits the wrestling/game impact layer; Ice (/packs/16528/) + Creaking (/packs/16961/) for texture. [Wave 15 Lane A]
+
+#### Erokia — "Electronic Samples Misc (CC0)" pack ✅ commercial-safe (uploader otherwise NC)
+- **What:** The one verified CC0 pack ("Erokia - Electronic Samples Misc (CC0)") from an otherwise CC-BY-NC uploader: electronic samples, drones, ambient loops.
+- **URL:** https://freesound.org/people/Erokia/packs/26717/ (terms: per-sound license badges on Freesound)
+- **License:** CC0 for THIS pack (verified 2026-10-07: pack page 12/12 "Creative Commons 0"). Uploader's sounds page is 14/15 Attribution NonCommercial — all OTHER Erokia packs (MSfxp13, Underground Beats, Drone Waves, Ambient Sounds & Loops, Freesound Remixes) are NC → quarantine, do not touch for commercial work.
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Textbook per-pack verification case: same uploader, mixed licenses. Only /packs/26717/ is cleared. [Wave 15 Lane A]
+
+#### LiamG_SFX — Freesound foley/combat packs (mixed CC-BY + CC0) ❓ unverified
+- **What:** Foley/combat uploader: Foley, Medieval Combat, Sci-Fi, Fire & Explosions, Bow & Arrows packs; mostly CC-BY with CC0 outliers.
+- **URL:** https://freesound.org/people/LiamG_SFX/packs/ (terms: per-sound license badges on Freesound)
+- **License:** MIXED (verified 2026-10-07: sounds page 14 "Attribution" + 1 "Creative Commons 0") — per-item check required before commercial use
+- **Free tier:** Free download (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Medieval Combat pack (/packs/18074/) is on-theme for game combat; treat every sound as CC-BY (attribute) unless its own page says CC0. [Wave 15 Lane A]
+
+### Mixkit — SFX category collections (Mixkit License: free commercial, no attribution)
+
+#### Mixkit — Whoosh collection ✅ commercial-safe
+- **What:** 20 curated whoosh/transition SFX (fast whooshes, cinematic swooshes, arrow/air whooshes).
+- **URL:** https://mixkit.co/free-sound-effects/whoosh/ (terms: https://mixkit.co/license/)
+- **License:** Mixkit License — "free to download and ready to use in your next video or audio project"; royalty-free, commercial + personal, no attribution, no sign-up (verified 2026-10-07 via mixkit.co page text + prior "Mixkit — dual-license terms read ✅")
+- **Free tier:** Free, no account, WAV + MP3
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Transition whooshes are the #1 most-used SFX category in promo/shorts editing — this is the direct download shelf. [Wave 15 Lane A]
+
+#### Mixkit — Game collection ✅ commercial-safe
+- **What:** Curated game SFX (arcade, retro game over, notifications, win/lose stingers).
+- **URL:** https://mixkit.co/free-sound-effects/game/ (terms: https://mixkit.co/license/)
+- **License:** Mixkit License — free commercial/personal, no attribution (verified 2026-10-07)
+- **Free tier:** Free, no account, WAV + MP3
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** UI/game-feedback shelf for Concrete Dragon + AshLane builds. [Wave 15 Lane A]
+
+#### Mixkit — Cinematic collection ✅ commercial-safe
+- **What:** Curated cinematic SFX (trailer impacts, epic transitions, suspense beds).
+- **URL:** https://mixkit.co/free-sound-effects/cinematic/ (terms: https://mixkit.co/license/)
+- **License:** Mixkit License — free commercial/personal, no attribution (verified 2026-10-07)
+- **Free tier:** Free, no account, WAV + MP3
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trailer-impact shelf for promo videos and entrance-kit-style cinematics. [Wave 15 Lane A]
+
+#### Mixkit — Nature collection ✅ commercial-safe
+- **What:** Curated nature SFX (rain loops, birds, insects, ambience beds).
+- **URL:** https://mixkit.co/free-sound-effects/nature/ (terms: https://mixkit.co/license/)
+- **License:** Mixkit License — free commercial/personal, no attribution (verified 2026-10-07)
+- **Free tier:** Free, no account, WAV + MP3
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ambience beds for outdoor plates/scenes. [Wave 15 Lane A]
+
+#### Mixkit — Notification collection ✅ commercial-safe
+- **What:** Curated notification/UI SFX (tones, alerts, correct-answer chimes, phone rings).
+- **URL:** https://mixkit.co/free-sound-effects/notification/ (terms: https://mixkit.co/license/)
+- **License:** Mixkit License — free commercial/personal, no attribution (verified 2026-10-07)
+- **Free tier:** Free, no account, WAV + MP3
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** App/game UI shelf; pairs with the Zapsplat notification-bells pack below. [Wave 15 Lane A]
+
+#### Mixkit — Horror collection ✅ commercial-safe
+- **What:** Curated horror SFX (drones, scares, creepy atmospheres) — October-season shelf.
+- **URL:** https://mixkit.co/free-sound-effects/horror/ (terms: https://mixkit.co/license/)
+- **License:** Mixkit License — free commercial/personal, no attribution (verified 2026-10-07)
+- **Free tier:** Free, no account, WAV + MP3
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Halloween-props-only rule applies to AshLane visuals, but horror SFX are fair game for shorts/promos. [Wave 15 Lane A]
+
+#### Mixkit — Funny collection ✅ commercial-safe
+- **What:** Curated comedy SFX (cartoon whistles, laughs, pops, boings).
+- **URL:** https://mixkit.co/free-sound-effects/funny/ (terms: https://mixkit.co/license/)
+- **License:** Mixkit License — free commercial/personal, no attribution (verified 2026-10-07)
+- **Free tier:** Free, no account, WAV + MP3
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon-comedy shelf for shorts and comedic beats. [Wave 15 Lane A]
+
+### Orange Free Sounds — packs & collections (per-item license field = CC-BY 4.0, verified 2026-10-07)
+
+#### Orange Free Sounds — Full Moon Walking Sound Pack ✅ commercial-safe
+- **What:** Footsteps/walking SFX pack (field recordings, commercial-pack tier available).
+- **URL:** https://orangefreesounds.com/full-moon-walking-sound-pack/ (terms: https://orangefreesounds.com/license/)
+- **License:** CC-BY 4.0 per item (verified 2026-10-07: the item page's "Licence" field reads CC-BY 4.0; 12 item pages checked across the packs in this batch)
+- **Free tier:** Free CC-BY items; separate paid "$14.99 Commercial Pack" items on the site are NOT cleared — only CC-BY-labeled items count
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Foley shelf for walking/steps. Always confirm the Licence field on the item page before download. [Wave 15 Lane A]
+
+#### Orange Free Sounds — Cricket Sounds Pack ✅ commercial-safe
+- **What:** Cricket/night-insect ambience pack.
+- **URL:** https://orangefreesounds.com/cricket-sounds-pack/ (terms: https://orangefreesounds.com/license/)
+- **License:** CC-BY 4.0 per item (verified 2026-10-07 via item Licence field)
+- **Free tier:** Free CC-BY items; paid Commercial Pack items excluded
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Night-ambience beds for outdoor scenes. [Wave 15 Lane A]
+
+#### Orange Free Sounds — Background Noise Sound Pack ✅ commercial-safe
+- **What:** Crowd/room-tone/background-noise pack.
+- **URL:** https://orangefreesounds.com/background-noise-sound-pack/ (terms: https://orangefreesounds.com/license/)
+- **License:** CC-BY 4.0 per item (verified 2026-10-07 via item Licence field)
+- **Free tier:** Free CC-BY items; paid Commercial Pack items excluded
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Walla/crowd beds for arena scenes. [Wave 15 Lane A]
+
+#### Orange Free Sounds — Halloween Creepy Sounds ✅ commercial-safe
+- **What:** Horror/creepy-atmosphere SFX collection (October shelf).
+- **URL:** https://orangefreesounds.com/halloween-creepy-sounds/ (terms: https://orangefreesounds.com/license/)
+- **License:** CC-BY 4.0 per item (verified 2026-10-07 via item Licence field)
+- **Free tier:** Free CC-BY items; paid Commercial Pack items excluded
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Seasonal horror SFX for shorts/promos (Halloween props only in October per standing rule; SFX reuse is unrestricted). [Wave 15 Lane A]
+
+#### Orange Free Sounds — Farm Animal Sounds Sound Pack ✅ commercial-safe
+- **What:** Farm/countryside animal SFX pack (moo, oink, cluck, horse).
+- **URL:** https://orangefreesounds.com/farm-animal-sounds-sound-pack/ (terms: https://orangefreesounds.com/license/)
+- **License:** CC-BY 4.0 per item (verified 2026-10-07 via item Licence field)
+- **Free tier:** Free CC-BY items; paid Commercial Pack items excluded
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rural-ambience shelf. [Wave 15 Lane A]
+
+#### Orange Free Sounds — Cartoon Sound Effects (collection) ✅ commercial-safe
+- **What:** Cartoon-comedy SFX collection (boings, whistles, zaps, impacts).
+- **URL:** https://orangefreesounds.com/cartoon-sound-effects/ (terms: https://orangefreesounds.com/license/)
+- **License:** CC-BY 4.0 per item (verified 2026-10-07 via item Licence field)
+- **Free tier:** Free CC-BY items; paid Commercial Pack items excluded
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Comedy-timing shelf for shorts; attribute "Orange Free Sounds / CC-BY 4.0" in credits. [Wave 15 Lane A]
+
+#### Orange Free Sounds — Drum Breaks Collection ✅ commercial-safe
+- **What:** Drum-break loops collection (music-production ingredient).
+- **URL:** https://orangefreesounds.com/drum-breaks-collection/ (terms: https://orangefreesounds.com/license/)
+- **License:** CC-BY 4.0 per item (verified 2026-10-07 via item Licence field)
+- **Free tier:** Free CC-BY items; paid Commercial Pack items excluded
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hybrid-music direction: drum-break loops as production ingredients, per the owner's 2026-10-06 hybrid approach. [Wave 15 Lane A]
+
+### BBC Sound Effects — individual collections (RemArc: personal/educational/research ONLY → 🚫)
+
+#### BBC SE — Nature collection 🚫 NC-or-quarantine
+- **What:** BBC Sound Effects nature category: wildlife, weather, landscapes.
+- **URL:** https://sound-effects.bbcrewind.co.uk/ (BBC Rewind Sound Effects; terms page on site)
+- **License:** RemArc licence — personal, educational and research use ONLY, no commercial use, no redistribution (verified 2026-10-07). Quarantine — do not use in shipped work.
+- **Free tier:** Free streaming/download for licensed uses only
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/mood-only. The 16,000-effect BBC RemArc library is often mistaken for PD — it is not. [Wave 15 Lane A]
+
+#### BBC SE — Transport collection 🚫 NC-or-quarantine
+- **What:** BBC Sound Effects transport category: engines, traffic, aircraft, rail.
+- **URL:** https://sound-effects.bbcrewind.co.uk/ (BBC Rewind Sound Effects; terms page on site)
+- **License:** RemArc licence — personal/educational/research only, no commercial use (verified 2026-10-07). Quarantine.
+- **Free tier:** Free for licensed uses only
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference-only; transport beds must come from Mixkit/Freesound CC0 instead. [Wave 15 Lane A]
+
+#### BBC SE — Crowds collection 🚫 NC-or-quarantine
+- **What:** BBC Sound Effects crowds category: walla, applause, stadium ambiences.
+- **URL:** https://sound-effects.bbcrewind.co.uk/ (BBC Rewind Sound Effects; terms page on site)
+- **License:** RemArc licence — personal/educational/research only, no commercial use (verified 2026-10-07). Quarantine.
+- **Free tier:** Free for licensed uses only
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arena-crowd reference shelf; do not bake into promos — use Orange Free Sounds Background Noise pack (CC-BY 4.0) instead. [Wave 15 Lane A]
+
+#### BBC SE — Footsteps collection 🚫 NC-or-quarantine
+- **What:** BBC Sound Effects footsteps category: surfaces, gaits, shoes.
+- **URL:** https://sound-effects.bbcrewind.co.uk/ (BBC Rewind Sound Effects; terms page on site)
+- **License:** RemArc licence — personal/educational/research only, no commercial use (verified 2026-10-07). Quarantine.
+- **Free tier:** Free for licensed uses only
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Foley reference only; commercial-safe alternative is the Orange Free Sounds Full Moon Walking pack (CC-BY 4.0). [Wave 15 Lane A]
+
+### Zapsplat — free-tier specifics (free account = MP3 + attribution)
+
+#### Zapsplat — sound-effect packs hub ✅ commercial-safe (attribution)
+- **What:** 750+ themed sound-effect packs (UI, foley, ambience, whoosh, horror); the pack browser for the whole Zapsplat free library.
+- **URL:** https://www.zapsplat.com/sound-effect-packs/ (terms: https://www.zapsplat.com/license/)
+- **License:** Zapsplat Standard (free tier): commercial use allowed WITH attribution; MP3 downloads on the free basic account, WAV = premium tier (verified 2026-10-07 via license page)
+- **Free tier:** Free basic account: MP3, attribution required ("Sound effects by Zapsplat.com"); no redistribution
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single biggest free organized-SFX library after the paid-wall caveats; keep the attribution line in every project credits file. [Wave 15 Lane A]
+
+#### Zapsplat — notification bells pack ✅ commercial-safe (attribution)
+- **What:** 62 free bell SFX: chimes, dings, alerts, rings (UI/notification shelf).
+- **URL:** https://www.zapsplat.com/sound-effect-packs/notification-bells/ (terms: https://www.zapsplat.com/license/)
+- **License:** Zapsplat Standard (free tier): commercial use WITH attribution; MP3 on free account (verified 2026-10-07)
+- **Free tier:** Free basic account, attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with Mixkit's notification collection; Zapsplat's is bigger and pack-organized. [Wave 15 Lane A]
+
+#### Zapsplat — music library (category example: jazz) ✅ commercial-safe (attribution)
+- **What:** Zapsplat's free music side: category-browsable tracks (jazz example: royalty-free background music).
+- **URL:** https://www.zapsplat.com/sound-effect-category/jazz/ (terms: https://www.zapsplat.com/license/)
+- **License:** Zapsplat Standard (free tier): commercial use WITH attribution; MP3 on free account (verified 2026-10-07)
+- **Free tier:** Free basic account, attribution required
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Background-music shelf for promos; attribution line in credits. [Wave 15 Lane A]
+
+### FreeSFX — category shelves + EULA read (commercial OK, must be mixed in)
+
+#### FreeSFX — Ambience category ✅ commercial-safe
+- **What:** FreeSFX's ambience category: rooms, weather, crowds, nature loops.
+- **URL:** https://www.freesfx.co.uk/Category/Ambience/507 (terms: https://www.freesfx.co.uk/faq.aspx — End User License Agreement)
+- **License:** FreeSFX EULA (verified 2026-10-07): free for commercial use including games/apps/films, BUT sounds must be mixed into a project — no redistribution as-is, no resale, no library re-upload
+- **Free tier:** Free downloads (account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fine for baked-in game/promo audio; never ship the raw files. [Wave 15 Lane A]
+
+#### FreeSFX — Animals category ✅ commercial-safe
+- **What:** FreeSFX's animals category: domestic + wildlife vocalizations.
+- **URL:** https://www.freesfx.co.uk/Category/Animals/589 (terms: https://www.freesfx.co.uk/faq.aspx)
+- **License:** FreeSFX EULA — free commercial use, must be mixed into a project, no redistribution (verified 2026-10-07)
+- **Free tier:** Free downloads (account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same EULA terms as Ambience; bake-in only. [Wave 15 Lane A]
+
+#### FreeSFX — Battles category ✅ commercial-safe
+- **What:** FreeSFX's battles category: combat, weapons, explosions, impacts.
+- **URL:** https://www.freesfx.co.uk/Category/Battles/114 (terms: https://www.freesfx.co.uk/faq.aspx)
+- **License:** FreeSFX EULA — free commercial use, must be mixed into a project, no redistribution (verified 2026-10-07)
+- **Free tier:** Free downloads (account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Combat-impact shelf for StreetBrawl/Concrete Dragon builds; bake-in only. [Wave 15 Lane A]
+
+#### FreeSFX — EULA deep-read (what "free" actually permits) ✅ commercial-safe
+- **What:** The FreeSFX End User License Agreement itself, read in full: the permission boundary for all FreeSFX sounds.
+- **URL:** https://www.freesfx.co.uk/faq.aspx (the EULA/FAQ page)
+- **License:** FreeSFX EULA (verified 2026-10-07): commercial use permitted (including games, apps, films, YouTube monetization); PROHIBITED: standalone redistribution, resale, re-uploading to sound libraries, sharing the raw files
+- **Free tier:** n/a (terms document)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Keep this reference attached to every FreeSFX usage: the sounds are free to USE, not free to SHARE. Mixed-into-project requirement is the critical line. [Wave 15 Lane A]
+
+#### SoundBible — royalty-free nature sounds collection ✅ commercial-safe
+- **What:** SoundBible's curated royalty-free nature-sounds post (ambient beds collection page).
+- **URL:** https://soundbible.com/blog/2012/royalty-free-nature-sounds/ (terms: per-item license on soundbible.com)
+- **License:** Royalty-free collection post (verified 2026-10-07); individual items on SoundBible carry their own license badges — confirm per-item before commercial use
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Small curated shelf; treat as a discovery page — the per-item license badge on each sound's page is the authority. [Wave 15 Lane A]
+
+### Federal archives — rights statements verified from the agency's own site 2026-10-07
+
+#### NPS Multimedia Search ✅ commercial-safe
+- **What:** National Park Service's multimedia search: photos, video, audio across all parks.
+- **URL:** https://www.nps.gov/media/multimedia-search.htm (terms: NPS multimedia rights guidance)
+- **License:** Per-agency quote: "Multimedia credited to NPS without any copyright symbol are public domain" — verified 2026-10-07. Items WITH a copyright symbol or credited to a third party are NOT cleared; check each item's credit line.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Park landscapes + historic-site plates; the credit-line rule is the whole verification. [Wave 15 Lane A]
+
+#### NPGallery — NPS digital asset management ✅ commercial-safe
+- **What:** NPS NPGallery: official NPS photos/documents by park and collection.
+- **URL:** https://npgallery.nps.gov/ (terms: NPS multimedia rights guidance)
+- **License:** Same NPS rule — agency-created assets without a copyright symbol are public domain (verified 2026-10-07); per-item credit line is the check.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deeper than the multimedia search UI; park-by-park collections for location plates. [Wave 15 Lane A]
+
+#### FWS National Digital Library ✅ commercial-safe
+- **What:** U.S. Fish & Wildlife Service's digital image/video/audio library (wildlife, habitats, refuges).
+- **URL:** https://digitalmedia.fws.gov/ (terms: FWS rights statement on site)
+- **License:** Per-agency quote: "premier source for public domain wildlife images... free to use, reuse, and share in any capacity" — verified 2026-10-07. Public domain.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wildlife/nature B-roll shelf; the agency's own "free to use, reuse, and share in any capacity" is as clean as it gets. [Wave 15 Lane A]
+
+#### CDC PHIL (Public Health Image Library) ✅ commercial-safe (per-item)
+- **What:** CDC's Public Health Image Library: medical/scientific illustrations, photos, video.
+- **URL:** https://phil.cdc.gov/ (terms: PHIL rights/licensing page)
+- **License:** Mostly public domain as U.S. government works — verified 2026-10-07; per-agency guidance: check each item's statement, some carry third-party credits. Public domain items are cleared; credited items are not.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Niche shelf (medical/science visuals) — useful for documentary-style segments, not general B-roll. [Wave 15 Lane A]
+
+#### Bureau of Reclamation — photo library ✅ commercial-safe
+- **What:** Bureau of Reclamation's historic photo library: dams, water projects, western infrastructure.
+- **URL:** https://www.usbr.gov/history/photos/ (terms: USBR photo-use guidance)
+- **License:** Per-agency quote: "within the public domain and can be used without restrictions" — verified 2026-10-07. Public domain.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dam/infrastructure plates (Hoover-era construction shots) — strong industrial B-roll. [Wave 15 Lane A]
+
+#### USDA — photo/image libraries ✅ commercial-safe (per-item)
+- **What:** USDA photo collections: farms, forests, rural America, food/agriculture.
+- **URL:** https://www.usda.gov/media (terms: USDA photo-use guidance)
+- **License:** Per-agency quote: "Most information presented on the USDA website is considered public domain information" — verified 2026-10-07. Check per-item for non-USDA credits.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rural-Americana plates; the "most... is considered public domain" framing means keep the per-item check habit. [Wave 15 Lane A]
+
+#### NARA Catalog — National Archives ✅ commercial-safe (per-item)
+- **What:** The National Archives Catalog: records, photos, film, documents across the U.S. government.
+- **URL:** https://catalog.archives.gov/ (terms: NARA "Use Restriction(s)" field on each item)
+- **License:** Per-agency quote: "The vast majority of the digital images in the Catalog are in the public domain" — verified 2026-10-07. BUT donated/private collections may carry restrictions — the item's "Use Restriction(s)" field is the authority, never assume.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The biggest single PD media source on Earth. Rule: green light on "no restrictions" items, hard stop on anything with a restriction note. [Wave 15 Lane A]
+
+#### LOC Citizen DJ ✅ commercial-safe
+- **What:** Library of Congress's Citizen DJ: sample-ready audio collections (acapellas, beats, soundscapes) built for remixing.
+- **URL:** https://citizen-dj.labs.loc.gov/ (terms: LOC Citizen DJ use guidance)
+- **License:** Per-agency quote: "free to use and reuse... even for commercial purposes" — verified 2026-10-07. Commercial-safe by explicit design (this is the LOC inviting remixing).
+- **Free tier:** Free downloads + in-browser sampling tools
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The rare LOC corner that is explicitly commercial-clear; sample/makebeats material with federal blessing. [Wave 15 Lane A]
+
+#### NASA Commons on Flickr ✅ commercial-safe
+- **What:** NASA's official Flickr Commons photostream: space imagery, missions, astronauts, facilities.
+- **URL:** https://www.flickr.com/photos/nasacommons/ (terms: Flickr Commons + NASA media-use guidance)
+- **License:** "no known copyright restrictions" — verified 2026-10-07. Public domain as NASA works.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Space plates for anything cosmic; the NASA Commons "no known copyright restrictions" is the cleanest Flickr-source badge available. [Wave 15 Lane A]
+
+#### US Navy — NHHC/NAVSEA photo galleries ✅ commercial-safe
+- **What:** U.S. Navy galleries (Naval History and Heritage Command, NAVSEA Team Ships): ships, naval history, ceremonies — "considered public domain and cleared for release."
+- **URL:** https://www.navsea.navy.mil/Home/Team-Ships/Media-Gallery/PhotoGallery/ (terms: per-photo release note on the gallery)
+- **License:** Per-photo release note: "This photograph is considered public domain and has been cleared for release" — verified 2026-10-07. Credit the photographer when republishing.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Naval/maritime B-roll; complements the existing DVIDS entry — same PD lineage, different (history-focused) content. [Wave 15 Lane A]
+
+### LOC caution corners — rights-ambiguous items logged honestly
+
+#### LOC Veterans History Project 🚫 NC-or-quarantine
+- **What:** LOC's Veterans History Project: veteran oral histories, photos, documents.
+- **URL:** https://www.loc.gov/vets/ (terms: VHP rights guidance)
+- **License:** 🚫 — contributors RETAIN copyright; permission required for exhibition/publication (verified 2026-10-07). NOT cleared for commercial use without per-item permission. Quarantine.
+- **Free tier:** Free research access; commercial reuse needs contributor permission
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** "LOC" does not mean "PD" — this is the proof case. Research/reference only unless a contributor grants permission. [Wave 15 Lane A]
+
+#### LOC American Folklife Center ❓ unverified
+- **What:** LOC's American Folklife Center: folk music, field recordings, oral histories.
+- **URL:** https://www.loc.gov/folklife/ (terms: AFC rights guidance)
+- **License:** ❓ — mixed per-collection rights; some PD, some rights-managed (verified 2026-10-07). Per-item verification required.
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Rich folk-music shelf but every item needs its own rights check; AFC's rights pages are collection-by-collection. [Wave 15 Lane A]
+
+### State & municipal archives — per-agency rights statements verified 2026-10-07
+
+#### TAMI — Texas Archive of the Moving Image ❓ unverified
+- **What:** Texas's film/video archive: home movies, newsreels, industrial and educational films.
+- **URL:** https://texasarchive.org/ (terms: TAMI rights/use guidance)
+- **License:** ❓ — per-item rights; donors grant TAMI a license but underlying rights vary (verified 2026-10-07). Per-item check required.
+- **Free tier:** Free streaming; downloads vary by item
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong Texas-history B-roll; treat like the AFC — the item page's rights note is the authority. [Wave 15 Lane A]
+
+#### California State Archives ❓ unverified
+- **What:** California's state archive: photos, records, maps, moving images.
+- **URL:** https://www.sos.ca.gov/administration/california-state-archives (terms: State Archives use guidance)
+- **License:** ❓ — per-agency quote: "not aware of any copyright restrictions... but such restrictions may still exist"; educational use encouraged (verified 2026-10-07). Per-item check required for commercial use.
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The agency's own hedging ("may still exist") is the reason this is ❓, not ✅ — honest badge per Wave-14 lesson. [Wave 15 Lane A]
+
+#### Digital Library of Georgia ❓ unverified
+- **What:** Georgia's statewide digital library: photos, newspapers, maps, oral histories.
+- **URL:** https://dlg.usg.edu/ (terms: DLG rights guidance)
+- **License:** ❓ — per-item rightsstatements.org rights statements (verified 2026-10-07). Items range from PD to In Copyright; the per-item statement is the authority.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Home-state shelf (Dooly County adjacent) — worth mining for PD/NoC-US items, but every item needs its own check. [Wave 15 Lane A]
+
+#### Alabama Mosaic 🚫 NC-or-quarantine
+- **What:** Alabama's statewide digital collections portal.
+- **URL:** https://alabamamosaic.org/ (terms: Alabama Mosaic use guidance)
+- **License:** 🚫 — educational/personal use only (verified 2026-10-07). No commercial clearance. Quarantine.
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference-only for neighboring-state research; commercial-safe alternatives are DLG's NoC-US items and NARA. [Wave 15 Lane A]
+
+#### Alabama Dept. of Archives & History 🚫 NC-or-quarantine
+- **What:** Alabama's official state archive digital collections.
+- **URL:** https://archives.alabama.gov/ (terms: ADAH use/reproduction guidance)
+- **License:** 🚫 — permission form required; one-time use grants at 72dpi for publication (verified 2026-10-07). Not commercial-clear as published. Quarantine.
+- **Free tier:** Free research access; publication needs the form
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The permission-form + low-res-only regime makes this unusable for production; listed so nobody assumes "state archive = PD". [Wave 15 Lane A]
+
+#### Tennessee Virtual Archive (TeVA) ❓ unverified
+- **What:** Tennessee State Library & Archives' digital collections: photos, documents, Civil War through civil rights.
+- **URL:** https://teva.contentdm.oclc.org/ (terms: TeVA use guidance)
+- **License:** ❓ — free download with credit line; commercial publication needs permissions (verified 2026-10-07). Per-item check required.
+- **Free tier:** Free downloads with credit
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Nashville-side history shelf (owner splits time in TN); commercial publication needs the permissions step. [Wave 15 Lane A]
+
+#### Oklahoma Historical Society / Gateway 🚫 NC-or-quarantine
+- **What:** Oklahoma's state history digital collections (The Gateway to Oklahoma History).
+- **URL:** https://gateway.okhistory.org/ (terms: OHS use/reproduction guidance)
+- **License:** 🚫 — commercial use priced at $85/image (verified 2026-10-07). Paywalled for production. Quarantine.
+- **Free tier:** Free research viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listed to prevent wasted effort — commercial plates must come from PD sources instead. [Wave 15 Lane A]
+
+#### Boston Public Library — Flickr Commons ✅ commercial-safe
+- **What:** BPL's Flickr Commons photostream: historic Boston/New England photos.
+- **URL:** https://www.flickr.com/photos/boston_public_library/ (terms: Flickr Commons deed + BPL statement)
+- **License:** "no known copyright restrictions" — verified 2026-10-07. Flickr Commons terms require the no-known-restrictions assertion.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Urban-history plates; the BPL + NASA Commons streams are the two cleanest Flickr Commons sources in the catalog. [Wave 15 Lane A]
+
+#### Seattle Municipal Archives ✅ commercial-safe (per-item)
+- **What:** City of Seattle's digital photo archive: streets, waterfront, civic history.
+- **URL:** https://www.seattle.gov/cityarchives (terms: SMA use guidance)
+- **License:** Per-agency quote: "Photographs created by the City of Seattle are public record and do not require permission for use" — verified 2026-10-07. Cite the archive + identifier number; check the Notes field for non-city rights holders per item.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the rare municipal archives that explicitly clears commercial use ("public record"); the Notes-field check is the only caveat. [Wave 15 Lane A]
+
+#### Minnesota Historical Society 🚫 NC-or-quarantine
+- **What:** Minnesota's state history collections online: photos, film, documents.
+- **URL:** https://www.mnhs.org/copyright (terms: MNHS "Conditions of Use")
+- **License:** 🚫 — permission + license required to reproduce/publish/broadcast; one-time one-project use only; many uses incur licensing fees (verified 2026-10-07 via mnhs.org/copyright). Quarantine.
+- **Free tier:** Free research viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strictest of the state societies checked; "possession does not constitute permission to use." Reference-only. [Wave 15 Lane A]
+
+#### Wisconsin Historical Society 🚫 NC-or-quarantine
+- **What:** Wisconsin's state history image collections (wisconsinhistory.org Records/Images).
+- **URL:** https://www.wisconsinhistory.org/Records/Image/IM96967 (example item; terms: per-item "RIGHTS AND PERMISSIONS")
+- **License:** 🚫 — "Use of the image requires written permission from the staff of the Collections Division. It may not be sold or redistributed" (verified 2026-10-07 on multiple item pages). Quarantine.
+- **Free tier:** Free research viewing; commercial/non-profit use via Image Sales
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Per-item permission regime; the permission-request form is the only commercial path. [Wave 15 Lane A]
+
+#### Oregon Digital ❓ unverified
+- **What:** University of Oregon + Oregon State's joint digital collections (photos, manuscripts, maps).
+- **URL:** https://oregondigital.org/ (terms: per-item rights statements)
+- **License:** ❓ — per-item rightsstatements.org statements; OHS's guidance places copyright determination on the researcher ("It is the responsibility of the researcher to determine copyright and secure permissions") — verified 2026-10-07. Per-item check required.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** University-held, not state-PD — the OHS researcher-responsibility line keeps this at ❓. [Wave 15 Lane A]
+
+#### Ohio Memory 🚫 NC-or-quarantine
+- **What:** Ohio's statewide digital library (Ohio History Connection + 390 partner institutions).
+- **URL:** https://ohiomemory.ohiohistory.org/about-ohio-memory/terms-of-use (terms: Terms of Use)
+- **License:** 🚫 — "Materials are reproduced for research use only and may not be used for publication, exhibition, or any other public purpose without the express written permission" (verified 2026-10-07). Items carry standardized rightsstatements.org URIs (NoC-US / InC / UND) but the site terms default to research-only reproduction. Quarantine.
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NoC-US items exist here, but the site's own terms require written permission for publication — both gates must pass, so this stays 🚫. [Wave 15 Lane A]
+
+### Archive rights upgrades — Wave-14 entries re-verified 2026-10-07
+
+#### Smithsonian Open Access ✅ commercial-safe (upgraded from ❓)
+- **What:** Smithsonian's Open Access: 4.9M+ 2D/3D images, CC0.
+- **URL:** https://www.si.edu/openaccess (terms: Smithsonian Open Access terms of use)
+- **License:** CC0 for designated Open Access assets — verified 2026-10-07 (upgraded from Wave 14 ❓). Items NOT in Open Access remain rights-managed; check the per-item "Usage" flag.
+- **Free tier:** Free high-res downloads, API available
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The single biggest honest upgrade this wave — 4.9M CC0 assets, bulk-downloadable. Prioritize for plate harvesting. [Wave 15 Lane A]
+
+#### Digital Commonwealth ✅ commercial-safe (upgraded from ❓)
+- **What:** Massachusetts' statewide digital collections.
+- **URL:** https://www.digitalcommonwealth.org/ (terms: per-item rights statements)
+- **License:** Per-item CC licenses; PD/CC-BY-SA items verified present — upgraded from ❓ to ✅-with-per-item-check 2026-10-07. Confirm each item's rights badge (CC-BY-SA cleared, InC not).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** New-England plates; per-item check stays mandatory, but the license mix is genuinely usable. [Wave 15 Lane A]
+
+#### Calisphere ❓ unverified (upgraded from ❓ — Bancroft PD/CC subset confirmed usable)
+- **What:** University of California's statewide digital collections (10M+ items).
+- **URL:** https://calisphere.org/ (terms: per-item rights statements)
+- **License:** ❓ — per-item rights; Bancroft Library's "Easy to Use Collections" PD/CC subset verified usable 2026-10-07; the rest is collection-by-collection.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Bancroft "Easy to Use" subset is the cleared lane; everything else stays per-item. [Wave 15 Lane A]
+
+#### Portal to Texas History 🚫 NC-or-quarantine (downgraded from ❓)
+- **What:** University of North Texas's Texas-history portal.
+- **URL:** https://texashistory.unt.edu/ (terms: Portal use guidance)
+- **License:** 🚫 — commercial use requires written permission (verified 2026-10-07; downgraded from Wave-14 ❓). Quarantine.
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest downgrade — verification found the commercial-permission requirement, so the badge moved the right direction. [Wave 15 Lane A]
+
+#### Denver Public Library — Digital Collections 🚫 NC-or-quarantine
+- **What:** Denver Public Library's Western History/Genealogy digital collections.
+- **URL:** https://digital.denverlibrary.org/ (terms: DPL reproduction/rights guidance)
+- **License:** 🚫 — permission + fees for publication; per-item InC/CNE statements (verified 2026-10-07). Quarantine.
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Western-history reference shelf; production plates need PD alternatives (NARA, NPS). [Wave 15 Lane A]
+
+#### NYC Municipal Archives 🚫 NC-or-quarantine
+- **What:** New York City's municipal archives: photos, films, vital records.
+- **URL:** https://www.nyc.gov/site/records/archives/archives.page (terms: Municipal Archives reproduction guidance)
+- **License:** 🚫 — commercial license fees; per-item restrictions (verified 2026-10-07). Quarantine.
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** NYC-street plates for brawler backgrounds must come from PD sources (LOC prints, NARA) — this archive is paywalled for commercial use. [Wave 15 Lane A]
+
+### Caption burn-in / packaging tools — licenses verified via GitHub API / LICENSE files / official sites 2026-10-07
+
+#### WhisperLive — realtime Whisper streaming server (Collabora) ✅ commercial-safe
+- **What:** Streaming Whisper transcription server: word-level timestamps, speaker diarization, browser/iOS clients, REST/WebSocket API.
+- **URL:** https://github.com/collabora/WhisperLive (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API: spdx_id "MIT")
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The live-caption candidate: word timestamps out of the box means burn-in with karaoke-style highlighting is a short ffmpeg step away. Collabora maintenance = corporate backing. [Wave 15 Lane A]
+
+#### RealtimeSTT — low-latency speech-to-text Python library ✅ commercial-safe
+- **What:** Realtime speech-to-text library with voice-activity detection, interruption handling, and Whisper backends.
+- **URL:** https://github.com/KoljaB/RealtimeSTT (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API: spdx_id "MIT")
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Python-native — drops into the existing tooling stack with the least friction of any realtime STT option. [Wave 15 Lane A]
+
+#### whisper-streaming — realtime streaming Whisper (Charles University) ✅ commercial-safe
+- **What:** Ufal's realtime streaming Whisper implementation: online decoding, buffer trimming, low-latency captions.
+- **URL:** https://github.com/ufal/whisper_streaming (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API: spdx_id "MIT")
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-grade streaming Whisper (ACL-published approach); pairs with WhisperLive — evaluate both before committing. [Wave 15 Lane A]
+
+#### subsai (absadiki/subsai) — Whisper subtitle WebUI+CLI 🚫 GPL-3.0 — FLAG for Lane B
+- **What:** Subtitle-generation toolkit: WebUI + CLI + pip package wrapping Whisper models for SRT/VTT output.
+- **URL:** https://github.com/absadiki/subsai (terms: LICENSE file in repo)
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub API) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Feature-fit is good (batch SRT generation) but GPL-3.0 blocks integration into the closed pipeline; Lane B owns the quarantine decision. [Wave 15 Lane A]
+
+#### noScribe — GUI transcription app (whisper.cpp) 🚫 GPL-3.0 — FLAG for Lane B
+- **What:** Desktop GUI transcription app built on whisper.cpp: drag-and-drop audio → timestamped transcripts.
+- **URL:** https://github.com/kaixxx/noScribe (terms: LICENSE file in repo)
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub API) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful as a human-in-the-loop QC station (transcriber's workbench), not as pipeline code, given the GPL. [Wave 15 Lane A]
+
+#### Speech Note / dsnote — Linux STT/TTS/translate app 🚫 MPL-2.0 — FLAG for Lane B
+- **What:** Linux desktop app: offline speech-to-text, text-to-speech, and translation (Whisper + Coqui backends).
+- **URL:** https://github.com/mkiol/dsnote (terms: LICENSE file in repo)
+- **License:** MPL-2.0 (verified 2026-10-07 via GitHub API) — QUARANTINE (copyleft on modified files), flag for Lane B
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MPL is file-level copyleft — usable unmodified as a tool, but any forked integration needs Lane B's legal read. [Wave 15 Lane A]
+
+#### Subtitld — modern timeline subtitle editor 🚫 GPL-3.0 — FLAG for Lane B
+- **What:** Cross-platform subtitle editor with waveform timeline, transcription, styling, and burn-in export.
+- **URL:** https://github.com/subtitld/subtitld (terms: LICENSE file in repo)
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub API) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The closest open-source Aegisub-modern replacement; GPL blocks embedding, but it can serve as the human QC/editing station. [Wave 15 Lane A]
+
+#### Penguin Subtitle Player — always-on-top subtitle overlay 🚫 GPL-3.0 — FLAG for Lane B
+- **What:** Standalone subtitle player: renders .srt/.ass over any video with always-on-top overlay.
+- **URL:** https://github.com/carsonip/Penguin-Subtitle-Player (terms: LICENSE file in repo)
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub API) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QC use-case: overlay generated subtitles on the final render for timing review without reburning. [Wave 15 Lane A]
+
+#### hls.js — HLS playback with WebVTT captions ✅ commercial-safe
+- **What:** JavaScript HLS client: adaptive streaming with WebVTT/CEA-608 caption track support for web delivery.
+- **URL:** https://github.com/video-dev/hls.js (terms: LICENSE file in repo)
+- **License:** Apache-2.0 (verified 2026-10-07 via repo LICENSE file)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The delivery-side caption story: generated VTTs ride the HLS manifest — no burn-in needed for web players. [Wave 15 Lane A]
+
+#### video.js — player framework with caption tracks ✅ commercial-safe
+- **What:** HTML5 video player framework: multi-track captions/subtitles, accessibility plugins, HLS/DASH via plugins.
+- **URL:** https://github.com/videojs/video.js (terms: LICENSE file in repo)
+- **License:** Apache-2.0 (verified 2026-10-07 via repo LICENSE file)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Caption-track delivery for the studio's web surfaces; pairs with hls.js for the full stack. [Wave 15 Lane A]
+
+#### plyr — lightweight HTML5 player with captions ✅ commercial-safe
+- **What:** Lightweight accessible HTML5 media player with caption/subtitle track support.
+- **URL:** https://github.com/sampotts/plyr (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API) — note: project is in maintenance/deprecated state (security-updates-only), successor direction is video.js
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dead-end for new builds (deprecated) but fine for quick internal preview pages with caption tracks. [Wave 15 Lane A]
+
+#### tsMuxer — TS muxer with subtitle support ✅ commercial-safe
+- **What:** Transport-stream muxer: remuxes video/audio/subtitle tracks into TS/M2TS without re-encoding.
+- **URL:** https://github.com/justdan96/tsMuxer (terms: LICENSE file in repo)
+- **License:** Apache-2.0 (verified 2026-10-07 via GitHub API) — note: repo is archived/read-only
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Archived but functional — subtitle-track packaging for broadcast-style TS delivery. [Wave 15 Lane A]
+
+#### MediaConch — policy-based file QC incl. subtitles 🚫 GPLv3+/MPLv2+ — FLAG for Lane B
+- **What:** MediaArea's policy checker: validates media files (incl. subtitle tracks) against broadcast/delivery policies; PREFORMA-backed.
+- **URL:** https://mediaarea.net/MediaConch (terms: License.html — GPLv3+/MPLv2+)
+- **License:** GPLv3+/MPLv2+ (verified 2026-10-07 via official License.html) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The caption-QC story (does the delivered file's subtitle track meet spec?) — but the copyleft license needs Lane B's call before pipeline use. [Wave 15 Lane A]
+
+#### MediaInfo — technical metadata incl. subtitle streams ✅ commercial-safe
+- **What:** MediaArea's stream inspector: reports every track's codec, language, timing — including subtitle streams.
+- **URL:** https://github.com/MediaArea/MediaInfo (terms: LICENSE file in repo)
+- **License:** BSD-2-Clause (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pre-burn-in gate: confirm the subtitle track exists, has the right language tag, and sane timing before muxing. Permissive license — safe to embed. [Wave 15 Lane A]
+
+#### Photon — IMF package validator (Netflix) ✅ commercial-safe
+- **What:** Netflix's Photon: validates IMF (Interoperable Master Format) packages including subtitle/caption essences.
+- **URL:** https://github.com/Netflix/photon (terms: LICENSE file in repo)
+- **License:** Apache-2.0 (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Broadcast-delivery-grade caption validation; overkill today, but the IMF path is where pro caption packaging ends up. [Wave 15 Lane A]
+
+#### lossless-cut — lossless trim + subtitle track extract/mux 🚫 GPL-2.0 — FLAG for Lane B
+- **What:** FFmpeg GUI: lossless cutting/trimming with subtitle track extraction, muxing, and export.
+- **URL:** https://github.com/mifi/lossless-cut (terms: LICENSE file in repo)
+- **License:** GPL-2.0 (verified 2026-10-07 via GitHub API) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Editor's utility knife: extract the subtitle track from a master, or mux a fixed SRT back in, without re-encoding. GPL keeps it a desktop tool, not pipeline code. [Wave 15 Lane A]
+
+#### MeGUI — encoder GUI with subtitle burn-in 🚫 GPLv2 — FLAG for Lane B
+- **What:** Windows encoder frontend (AviSynth/x264/x265): subtitle loading, styling, and hard-burn workflows.
+- **URL:** https://sourceforge.net/projects/megui/ (terms: GPLv2 per project page)
+- **License:** GPLv2 (verified 2026-10-07 via SourceForge project page) — QUARANTINE, flag for Lane B
+- **Free tier:** Free (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Legacy Windows burn-in path; documented for completeness — the ffmpeg + libass route is the modern equivalent. [Wave 15 Lane A]
+
+#### StaxRip — encoding GUI with subtitle hardcoding ✅ commercial-safe
+- **What:** Windows encoding GUI: x264/x265/AV1 with subtitle track handling and hard-burn options.
+- **URL:** https://github.com/staxrip/staxrip (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The MIT-licensed answer to MeGUI — same burn-in workflows, no copyleft. Windows-only but pipeline-safe. [Wave 15 Lane A]
+
+#### Aegisub maintained fork (wangqr) — subtitle editor ✅ commercial-safe
+- **What:** Actively maintained Aegisub fork: Win64 nightlies, bug fixes, continued development of the classic subtitle editor.
+- **URL:** https://github.com/wangqr/Aegisub (terms: LICENCE file in repo)
+- **License:** BSD-style (verified 2026-10-07 via repo LICENCE file) — permissive
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The human subtitle-editing station: upstream Aegisub is dead, this fork lives. Style .ass subtitles here, burn with ffmpeg/libass. [Wave 15 Lane A]
+
+#### libcaption — CEA-608/708 encoder/decoder ✅ commercial-safe
+- **What:** C library: encodes/decodes CEA-608/708 closed captions (broadcast caption standard).
+- **URL:** https://github.com/szatmary/libcaption (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The broadcast-caption bridge: convert generated SRTs into real CEA-608/708 for broadcast deliverables. [Wave 15 Lane A]
+
+#### mlx-whisper — Apple Silicon Whisper (ml-explore) ✅ commercial-safe
+- **What:** Whisper ported to Apple's MLX framework: fast on-device transcription on Apple Silicon.
+- **URL:** https://github.com/ml-explore/mlx-examples (whisper example; terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** If transcription ever moves to a Mac workstation, this is the fast path; MIT keeps it pipeline-safe. [Wave 15 Lane A]
+
+#### lightning-whisper-mlx — 10x MLX Whisper ❓ unverified
+- **What:** Claims 10x-faster Whisper on Apple Silicon via MLX batching.
+- **URL:** https://github.com/mustafaaljadery/lightning-whisper-mlx (terms: no LICENSE file found)
+- **License:** ❓ UNVERIFIED — no LICENSE file and no license section in README as of 2026-10-07 check. Do not integrate until a license is published.
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Speed claim is attractive but a missing license is a hard stop — flagged ❓ per the verify-upstream rule. [Wave 15 Lane A]
+
+#### Subtitles by fframes (dmtrKovalenko/subtitler) — on-device web subtitler ✅ commercial-safe
+- **What:** Browser app: transcribe (Whisper), style, and render subtitles onto video entirely on-device.
+- **URL:** https://github.com/dmtrKovalenko/subtitler (terms: LICENSE file in repo)
+- **License:** BSD-3-Clause (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The all-in-one browser path: transcribe → style → burned MP4 without a server. BSD-3 keeps it pipeline-safe. [Wave 15 Lane A]
+
+#### Whisper-AutoCaption — Whisper + MoviePy burn-in ✅ commercial-safe
+- **What:** Python script: Whisper transcription → styled captions burned into video via MoviePy.
+- **URL:** https://github.com/gradient-ai/Whisper-AutoCaption (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The minimal viable burn-in script — good reference implementation for the word-highlight caption style. [Wave 15 Lane A]
+
+#### GPAC / MP4Box — MP4 mux with subtitles/TTML 🚫 LGPL-2.1 — FLAG for Lane B
+- **What:** GPAC multimedia framework + MP4Box: MP4 packaging with subtitle and TTML track support.
+- **URL:** https://github.com/gpac/gpac (terms: LICENSE file in repo)
+- **License:** LGPL-2.1 (verified 2026-10-07 via GitHub API) — QUARANTINE (copyleft on library linking), flag for Lane B
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The MP4 subtitle-packaging standard tool; LGPL means dynamic-linking-only use is the safe shape — Lane B's call. [Wave 15 Lane A]
+
+#### MKVToolNix — mkvmerge subtitle muxing 🚫 GPL v2 — FLAG for Lane B
+- **What:** Matroska toolchain: mux/demux subtitle tracks (SRT/ASS/PGS) into MKV without re-encoding.
+- **URL:** https://mkvtoolnix.download/ (terms: GPL v2 per README on official site)
+- **License:** GPL v2 (verified 2026-10-07 via mkvtoolnix.download README) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The MKV subtitle-mux standard; GPL keeps it a desktop/CLI tool rather than pipeline code. [Wave 15 Lane A]
+
+#### VidCoder — transcoder with subtitle burn-in 🚫 GPL-2.0 — FLAG for Lane B
+- **What:** Windows transcoding GUI (HandBrake engine): subtitle track selection, styling, and hard-burn.
+- **URL:** https://github.com/RandomEngy/VidCoder (terms: LICENSE file in repo)
+- **License:** GPL-2.0 (verified 2026-10-07 via GitHub API) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** HandBrake-engine burn-in with a friendlier face; same GPL constraint as the other desktop transcoders. [Wave 15 Lane A]
+
+#### yt-dlp — subtitle track downloader ✅ commercial-safe
+- **What:** Video-platform downloader with first-class subtitle support: list/download auto + manual subtitle tracks in SRT/VTT/TTML.
+- **URL:** https://github.com/yt-dlp/yt-dlp (terms: LICENSE file in repo)
+- **License:** Unlicense (verified 2026-10-07 via GitHub API: spdx_id "Unlicense") — public-domain dedication, commercial-safe
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference-caption harvester: pull existing subtitle tracks from licensed platform content for timing/style reference — never re-upload the content itself. [Wave 15 Lane A]
+
+#### mpv — player with CLI subtitle burn-in 🚫 GPLv2+ — FLAG for Lane B
+- **What:** mpv media player: renders/burns subtitles via CLI (`--sub-file`, `--o` encode with libass burn-in).
+- **URL:** https://github.com/mpv-player/mpv (terms: LICENSE/Copyright files in repo)
+- **License:** GPLv2+ default (verified 2026-10-07 via repo license files) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Scriptable burn-in via mpv's encode mode, but GPL blocks pipeline embedding — use ffmpeg's libass filter directly instead. [Wave 15 Lane A]
+
+#### VLC — transcoding with subtitle burn-in 🚫 GPL-2.0 — FLAG for Lane B
+- **What:** VLC media player: subtitle rendering + transcode-with-burn-in via CLI/stream output.
+- **URL:** https://github.com/videolan/vlc (terms: COPYING file in repo)
+- **License:** GPL-2.0 (verified 2026-10-07 via repo COPYING) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Same story as mpv: fine as a desktop burn-in tool, not as pipeline code. [Wave 15 Lane A]
+
+#### Bazarr — subtitle manager for media servers 🚫 GPL-3.0 — FLAG for Lane B
+- **What:** Companion app for Sonarr/Radarr: automatic subtitle download, sync, and management.
+- **URL:** https://github.com/morpheus65535/bazarr (terms: LICENSE file in repo)
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub API) — QUARANTINE, flag for Lane B
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Media-server use-case, not production — listed so the subtitle-manager category is covered and correctly quarantined. [Wave 15 Lane A]
+
+#### subliminal — subtitle download library ✅ commercial-safe
+- **What:** Python library: searches and downloads subtitles from multiple providers (OpenSubtitles et al.).
+- **URL:** https://github.com/Diaoul/subliminal (terms: LICENSE file in repo)
+- **License:** MIT (verified 2026-10-07 via GitHub API)
+- **Free tier:** Free, self-hosted (open source)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference-subtitle fetcher for timing/style QC — MIT means it can live in the tooling tree. Respect each provider's terms on the downloaded files themselves. [Wave 15 Lane A]
+
+## Entry count — Wave 15 (Lane A)
+
+101 new `####` entries appended (38 per-uploader/pack SFX long tail · 31 municipal/state/federal archives with per-agency rights quotes · 32 caption burn-in/packaging tools) → **1656 total** honest entries (1555 before this wave). GPL/AGPL copyleft flags for Lane B (14): subsai GPL-3.0, noScribe GPL-3.0, dsnote MPL-2.0, Subtitld GPL-3.0, Penguin-Subtitle-Player GPL-3.0, MediaConch GPLv3+/MPLv2+, lossless-cut GPL-2.0, MeGUI GPLv2, GPAC LGPL-2.1, MKVToolNix GPL v2, VidCoder GPL-2.0, mpv GPLv2+, VLC GPL-2.0, Bazarr GPL-3.0. Rights-ambiguous archive upgrades: Smithsonian Open Access ✅ (from ❓), Digital Commonwealth ✅ (from ❓), Calisphere ❓ (Bancroft PD/CC subset confirmed), Portal to Texas History 🚫 (from ❓). Verification catches: inchadney assumed CC0 → actually CC-BY-NC; Orange Free Sounds items → CC-BY 4.0 per-item (not blanket-free); Erokia uploader mixed NC with one verified CC0 pack. Wired: none this wave (docs-only pull). [Wave 15 Lane A]

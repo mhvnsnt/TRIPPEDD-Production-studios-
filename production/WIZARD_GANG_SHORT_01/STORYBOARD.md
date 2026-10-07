@@ -90,7 +90,7 @@ Legend for each shot: `CAM` camera · `LIGHT` lighting · `ACT` action (characte
 
 - **CAM:** Slow push-in to close-up on the face. He looks **straight at the viewer** — at the player, not at any character.
 - **LIGHT:** Spotlight narrows to the face. The void-black hood interior; two sparkly white eye glints; the diamond-grill smile catches one glint of light.
-- **ACT:** The Narrator. Outside the fiction. His sanctioned 4th-wall beat: the council's public reveal is a story-progression moment. No spoken line — his voice is pending the owner's recording; his eyes do the work.
+- **ACT:** The Narrator — Ashes in the purple robe, outside the fiction. His sanctioned 4th-wall beat: the council's public reveal is a story-progression moment. No spoken line yet — the Bill $aber AI voice clone is still in progress; when it lands, he speaks in it. His eyes do the work for now.
 - **CARD:** "WIZARD GANG" (hard cut, white on black, hold 1.5s) → "TRIPPEDD" network ident card (hold 1.5s). Canon-locked text only.
 - **AUD:** Music cuts on the direct address. Silence except his chains. Then the network ident sting.
 - **MOCAP:** Direct-address head turn + hold. Real mocap; never procedural.

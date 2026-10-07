@@ -16,6 +16,14 @@ The council is inspired by Shadow Wizard Money Gang iconography — hooded robes
 
 The series is developed **simultaneously as a short, a segment, and a series**: the same ~50-second production is (a) a standalone short, (b) a recurring segment embedded in TRIPPEDD show episodes, and (c) the pilot material of the standalone Wizard Gang series. This is the first property launched under the studio's development rule that ships all three functions from inception.
 
+## Series format direction (owner 2026-10-07)
+
+- **Mostly 2D, sometimes 3D.** The series is an animated series first — not a 3D-render showcase. The staged-3D-entrance grammar stays the game-commercial form; the series lives in 2D.
+- **Base art style: the cartoon look.** The owner is supplying the cartoon style references via Drive; the more-cartoon look is the base animation and art style. Style may range from very cartoony to more detailed shot to shot — animated scenes fill in story gaps and serve as episode parts while the style gets locked down across incoming shots.
+- The SHORT_01 storyboard ("The Council Rises") stands as the **pilot's structure** — its 9-shot spine is reused for the pilot, executed in the series' 2D cartoon base.
+- **Tone:** King of the Hill / Beavis and Butt-Head / Metalocalypse — the 9 wizards try to run the gang wars and the AshLane universe but constantly lose control because they're partying, drinking, barbecuing, or doing bullshit magic (owner 2026-10-06). The pilot reveal plays straight; the series plays it as comedy.
+- **Cross-faction-1** appears **once**, in the cartoonier shots. The show never states that 5 of the 9 robed council are the same people as the 5 unrobed street crew (Cipher/Echo/Onyx/Static/Hollow = yellow/pink/green/blue/orange wizards) — it is only **alluded during the meeting scene, in a comedic way that can go over viewers' heads**. The street-form/wizard-form never-share-an-image rule still governs still art; the series allusion is the single sanctioned wink.
+
 ## Canon status and naming rules
 
 All canon claims in this bible are sourced from `~/workspace/game-sweep/AshLanev2/docs/`. Confirmed canon is separated from owner-session notes and from TBD items throughout. Never fill a TBD slot by invention.
@@ -100,7 +108,7 @@ A Wizard Gang beat should be understandable through some combination of:
 - Sombra Negra's council role.
 - Whether "green (sometimes)" implies Onyx has an alternate robe.
 - Theory's full identity (street name, backstory, fighting style, finisher, relationships).
-- **Purple-robe ambiguity:** both Theory (STORY_BIBLE.md line 270) and the Narrator (art-direction/swmg-malakor.md line 202) are purple-robed. No repo doc resolves whether the purple-robed Narrator is Theory in wizard form or a separate entity. Until the owner resolves it, productions must never show two different purple-robed figures — SHORT 01 uses purple for the Narrator only; Theory does not appear in SHORT 01.
+- **Purple robe (RESOLVED owner 2026-10-06):** purple has two sanctioned wearers, never in the same beat — **Theory** in-fiction (THEORY pendant, gang member) and **Ashes-as-Narrator** outside the fiction. SHORT 01 uses purple for the Narrator only; Theory does not appear in SHORT 01.
 
 ## Camera grammar — the El Toro de Oro law
 
@@ -117,12 +125,12 @@ Default shot grammar (from UNIVERSAL_ENTRANCE_VIDEO_KIT.md reference look + "Luc
 
 ## The Narrator rule
 
-The Narrator is the owner's avatar (purple robe, void-black face, sparkly eye glints, diamond-grill smile, blonde braids, gold chains — art-direction/swmg-malakor.md line 202).
+The Narrator is **Ashes (Buffalo Bill) in the PURPLE robe, ONLY when outside the wall** — outside the fiction, breaking the fourth wall (owner-locked 2026-10-06). Purple robe design: void-black face, sparkly eye glints, diamond-grill smile, blonde braids, gold chains.
 
+- The **red-robed gang figure is Ashes, never the Narrator.** Red = Ashes the council's secret leader in-fiction. Purple = Ashes-as-Narrator outside fiction, OR Theory in-fiction (THEORY pendant) — context disambiguates; never both in the same beat.
 - He exists **OUTSIDE the fiction**. He talks to the PLAYER, never to the characters.
 - He breaks the 4th wall **ONLY at story-progression moments** — never constant commentary.
-- **Never mix the Narrator and Ashes.** They are separate entities with separate robes (purple vs scarlet).
-- His voice identity is the owner's own voice — pending (tools/voice/REFERENCE_LEDGER.md lines 19–21). Until he records, the Narrator appears in direct-address visual beats **without spoken lines** — never placeholder voice, never synthetic filler.
+- Voice: **AI-performed Bill $aber voice** (owner confirmed 2026-10-06 — NOT owner-recorded). XTTS v2 clone in progress. Until the clone lands, the Narrator appears in direct-address visual beats **without spoken lines** — never placeholder voice, never synthetic filler.
 - In SHORT 01, the Narrator's cameo is the sanctioned story-progression beat: the council's public reveal to the viewer. That reveal IS the story-progression moment.
 
 ## Sound and music direction
@@ -132,6 +140,20 @@ Per the owner's music direction (2026-10-06): intro/promo music does **not** hav
 - Soundscape: fire crackle, chains clinking, city-night room tone, sub-bass hits, slow ritual percussion.
 - Music: licensed-safe or original only. No copyrighted tracks, no fake-licensed cues.
 - Audio must be **listened to and checked** before any cut is READY (entrance-kit evidence gate 7).
+
+### Voice cast (owner-locked 2026-10-06 — AI-generated, tight to likeness)
+
+- Hollow — Super Dragon cadence
+- Static — Enzo Amore (fast-talking Jersey braggadocio; Piper `en_US-danny-low` samples exist)
+- Cipher — Lio Rush
+- Echo — Shotzi Blackheart
+- Sombra Negra — Damian Priest
+- Kiko — Keiji Mutoh / Great Muta
+- Theory — Black 20-year-old New York woman (TBD)
+- Onyx — TBD (owner has never heard her speak)
+- Ashes / Narrator — Bill $aber (XTTS v2 clone in progress; AI-performed, never owner-recorded)
+
+Rule: AI voices must be TIGHTER — closer matches to the real people they're based on (owner 2026-10-06).
 
 ## Format spec — the Wizard Gang short
 

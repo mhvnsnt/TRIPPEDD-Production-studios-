@@ -3882,3 +3882,33 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Fully permissive high-quality video gen — strong shipping candidate [Wave 4]
+
+#### Wan2.2-S2V ✅ commercial-safe
+- **What:** Wan-AI speech-to-video: drives a portrait with speech audio (14B model)
+- **URL:** https://huggingface.co/Wan-AI/Wan2.2-S2V-14B
+- **License:** Apache-2.0 (verified via upstream LICENSE.txt + HF API cardData.license, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (lip-sync)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5 (needs GPU box: ~28GB bf16 weights, 1xH100-class for 720p)
+- **Status:** WIRED — BLOCKED-HONEST on this sandbox (no CUDA, 4.3GB free disk). Lane: `tools/lipsync/wan2p2-s2v/`. GPU handoff spec in lane README. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
+- **Notes:** First-party talking-head video gen for the 9 council members once a GPU worker exists [Wave 4]
+
+#### Ditto (talking-head) ✅ commercial-safe
+- **What:** AntGroup realtime talking-head: audio-driven facial motion via diffusion (ONNX models)
+- **URL:** https://github.com/antgroup/ditto-talkinghead
+- **License:** Apache-2.0 (verified via upstream README + GitHub license badge, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (lip-sync)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5 (realtime on RTX 3090/4090; CPU proof ran)
+- **Status:** WIRED — real CPU proof RAN: hubert.onnx + lmdm_v0.4_hubert.onnx (onnxruntime, no CUDA) produced audio-driven motion `(1,80,265)` in `tools/lipsync/ditto/proofs/ditto_motion_3s.npy`; speech-vs-silence conditioning verified. Renderer not run on CPU. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
+- **Notes:** Realtime path serves live puppet/streaming use; CPU path proves the motion model for offline rendering [Wave 4]
+
+#### OVRLipSync ⚠️ commercial-OK-per-mirrors
+- **What:** Meta Oculus lip-sync SDK: real-time viseme analysis from audio (native C API, Unity, Unreal)
+- **URL:** https://developers.meta.com/horizon/downloads/package/oculus-lipsync-unity/
+- **License:** Oculus SDK License (Meta proprietary EULA) — five independent mirrors agree it allows personal AND commercial use; canonical Meta license text returned HTTP 403 from sandbox. Badge: commercial-OK-per-mirrors / VERIFY-EULA-BEFORE-SHIP (2026-10-07)
+- **Free tier:** free SDK; download login-gated
+- **Repo lane:** trippedd (lip-sync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5 (native integration)
+- **Status:** WIRED-PARTIAL — SDK download requires Meta login (owner action: sign in → download → stage into `tools/lipsync/ovr-lipsync/sdk/`). Integration paths documented in lane README. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
+- **Notes:** Lowest-latency viseme path for game-engine characters; EULA must be read before shipping use [Wave 4]

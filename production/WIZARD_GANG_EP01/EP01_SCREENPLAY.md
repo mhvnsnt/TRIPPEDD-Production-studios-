@@ -152,8 +152,8 @@
 **STATIC:**
 > "Cipher, do NOT— he's gonna do it. He's gonna eat concrete. SOMEBODY FILM THIS."
 
-**CIPHER** (feral, taking the bet — his real Bannon exhibition line):
-> "Blink and you'll miss me!"
+**CIPHER** (feral Blackheart, taking the bet — authentic fragments from his Bannon dialogue):
+> "He sees you watching! No no no — the cuts! Stronger and stronger and stronger!"
 
 ### S23 — STUDIO (3:32–3:41)
 

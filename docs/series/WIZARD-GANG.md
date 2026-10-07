@@ -157,6 +157,20 @@ Per the owner's music direction (2026-10-06): intro/promo music does **not** hav
 
 Rule: AI voices must be TIGHTER — closer matches to the real people they're based on (owner 2026-10-06).
 
+**Dialogue when necessary (owner 2026-10-07):** the show is talk-driven comedy,
+not a silent reel — characters speak and banter when the episode needs it, always
+in their locked AI likeness voices. Stock TTS approximations are retired wherever
+the owner has rejected them (notably Static: Piper en_US-danny-low rejected
+2026-10-06 as "not sound nothing like Enzo" — genuine clone only).
+
+**Pilot dialogue (SHORT_01, DRAFT — owner approval required before final mix):**
+sparse comedic beats, Static only (sole ready voice pipeline). Full draft with
+timing at production/WIZARD_GANG_SHORT_01/DIALOGUE.md.
+- L1 (~0:23, SHOT 5): "Everybody wanna talk about the council like we some urban legend — listen, we AIN'T no legend, we a PROBLEM, you understand?"
+- L2 (~0:40, SHOT 8): "Ayo! Ninth seat's filled — somebody tell the ghost he late to his own meeting!"
+The pilot ships with the soundscape-only mix; approved dialogue mixes as a
+separate stem afterward.
+
 **Dialogue (owner 2026-10-07):** the show has voices and dialogue WHEN NECESSARY — it is a talk-driven comedy, not a silent reel. The pilot keeps dialogue sparse against the reveal spine, with comedic beats where the tone demands (council banter, the meeting, the 9th-seat reveal). Every pilot line goes to the owner for approval before final mix. A character with no ready AI voice does not speak — never a placeholder or wrong-likeness voice.
 
 ## Format spec — the Wizard Gang short

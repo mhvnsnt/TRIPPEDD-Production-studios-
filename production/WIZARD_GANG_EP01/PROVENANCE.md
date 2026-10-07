@@ -114,3 +114,33 @@ The fixed-playback master lives on Google Drive (file exceeds GitHub's 100MB blo
 limit, so the repo keeps scripts/storyboards/provenance + the concat master only):
 https://drive.google.com/file/d/1LEPIQ6iDJ4cZwf7EcKldlxu2JZn81dV6/view
 "Wizard Gang EP01 THE SUMMIT (fixed playback).mp4" — 300.16s, 16:9, clean re-encode.
+
+## 2026-10-07 — fix #1: S13 tail 1:48–2:10 replaced
+
+**Replaced:** the 108.0–130.0s segment (the S13 "repeated BBQ lineup" tail — the old
+s13 10s×3 loop + 2s freeze) with a new 22.000s Worker-A-built scene
+(`shots/fix1/s13-tail-new.mp4`, 1920x1080 24fps, QC-passed): 4 rooftop grill beats —
+(1) grill close-up, (2) Theory (purple robe, THEORY pendant) sketching the plan,
+(3) Sombra + Onyx (ONYX pendant) grilling, (4) Ashes ($ pendant, diamond-grill
+smile) + Static (STATIC pendant) grilling. Same dusk-rooftop cartoon style as the show.
+
+**Splice method:** single filter_complex full re-encode of three parts —
+base 0–108.0s (3240 frames) + new scene conformed 24→30fps (660 frames) + base
+130.0–300.033s (5101 frames) = 9001 frames, 300.033s video. Muxed with the original
+audio via `-c:a copy` (audio MD5 f00758fec678374c598a8026fde60324 — bit-identical,
+300.160s, mean −20.7 dB, non-silent).
+
+**Encode:** libx264 2-pass 2300k video, preset fast, yuv420p, high@4.0, keyint 60,
++faststart (moov before mdat). Output `wizard-gang-ep01-16x9.mp4`: 91,096,579 bytes
+(86.9 MiB), 300.160s total, 1920x1080 30fps + AAC stereo.
+SHA-256: `a03ea00792aab43d8f243b3d0e12e6a3b12795fbb7706f377848472fd0b2c9e3`
+
+**QC (all passed):** full decode scan zero errors; boundary frames 107.9/108.1 and
+129.9/130.1 all distinct (no freeze/repeat); frames at t=100/106 (old tail, pre-cut),
+t=110/116/122/128 (new scene — pendants correct, Ashes grin kept, faces are black
+voids with glowing eyes, style consistent), t=132/136 (post-cut S14 dice scene) all
+viewed and approved.
+
+**Drive (canonical deliverable):**
+https://drive.google.com/file/d/11r-sGo_ECo0TlWCI1ntLOHwek1kItF0T/view
+"Wizard Gang EP01 THE SUMMIT (fix1: 1:48-2:10 replaced).mp4" — anyone-with-link reader.

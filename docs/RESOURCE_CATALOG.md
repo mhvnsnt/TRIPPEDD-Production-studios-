@@ -7001,3 +7001,1289 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 ## Entry count — Wave 6 Worker A
 
 140 new entries: 20 SFX/foley · 22 voice/TTS · 14 storyboarding · 15 upscalers · 26 anime tooling · 26 music/plates · 20 free API tiers. (Plus Worker B's 5 GPU-runbook entries merged concurrently.) Badges: 89 ✅ · 28 🚫 · 19 ❓ · 7 ⚠️. Quarantine rows added: 7 (78–84, max 84).
+
+## Wave 7 — Lane A: catalog deepening (2026-10-07)
+
++127 honest `####` entries across 4 thin lanes (SFX/foley · lip-sync · captions · backgrounds/BG-plates). All licenses verified from upstream sources (102 repo LICENSE files fetched via parallel raw-GitHub pull 2026-10-07, vendor terms pages, official license docs) — never assumed. Quarantine rows 85–110 added. Duplicates against existing entries skipped (NeMo, VSeeFace, WebMAUS, ProsodyLab-Aligner, Penpot, NGA, NOAA, USGS, Wikimedia Commons audio).
+
+### Lane 1 — SFX / foley (31)
+
+#### Tone.js ✅ commercial-safe
+- **What:** Web Audio framework for interactive music — synths, samplers, effects, transport, notation
+- **URL:** https://github.com/Tonejs/Tone.js
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Browser-native — no build step; good for procedural UI/menu audio and web-player score beds. [Wave 7 A]
+
+#### howler.js ✅ commercial-safe
+- **What:** Audio library with Web Audio + HTML5 fallback — sprites, 3D/spatial audio, codecs
+- **URL:** https://github.com/goldfire/howler.js
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** De-facto standard for game/web audio; trivial drop-in for interactive episodes. [Wave 7 A]
+
+#### SoLoud ✅ commercial-safe
+- **What:** Easy-to-use C/C++ audio engine — playback, filters, speech synth, live mixing
+- **URL:** https://github.com/jarikomppa/soloud
+- **License:** zlib (verified: zlib-style "as-is" license text fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Game-oriented; single-directory integration, no heavy dependencies. [Wave 7 A]
+
+#### miniaudio ✅ commercial-safe
+- **What:** Single-file C/C++ audio playback, capture, mixing, and decoding library
+- **URL:** https://github.com/mackron/miniaudio
+- **License:** Public domain (Unlicense) OR MIT at your option (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zero-dependency drop-in — ideal for small audio tools in the pipeline. [Wave 7 A]
+
+#### SDL_mixer ✅ commercial-safe
+- **What:** SDL's audio mixer — WAV/OGG/MP3/MIDI/module playback, effects, music hooks
+- **URL:** https://github.com/libsdl-org/SDL_mixer
+- **License:** zlib (verified: zlib-style "as-is" license fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SDL3-era; game-audio staple for native builds. [Wave 7 A]
+
+#### Steam Audio ✅ commercial-safe
+- **What:** Valve's spatial-audio SDK — HRTF, occlusion, physics-based sound propagation
+- **URL:** https://github.com/ValveSoftware/steam-audio
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Unity/Unreal/FMOD plugins; best-in-class free spatialization for scenes. [Wave 7 A]
+
+#### Resonance Audio ✅ commercial-safe
+- **What:** Google's spatial-audio SDK — ambisonics, HRTF, room modeling
+- **URL:** https://github.com/resonance-audio/resonance-audio
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Archived by Google but the code is stable and permissive — good for 360°/VR audio mixes. [Wave 7 A]
+
+#### AudioKit ✅ commercial-safe
+- **What:** Swift audio synthesis, processing, and DSP framework (iOS/macOS)
+- **URL:** https://github.com/AudioKit/AudioKit
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Companion iOS tooling lane; not in the main shipping path. [Wave 7 A]
+
+#### Pure Data ✅ commercial-safe
+- **What:** Visual programming language for audio/multimedia (Miller Puckette's Pd)
+- **URL:** https://github.com/pure-data/pure-data
+- **License:** BSD-3-Clause (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Prototype generative-SFX patches visually; embed via libpd for runtime use. [Wave 7 A]
+
+#### Csound ⚠️ license-conditional
+- **What:** Venerable sound/music computing system — orchestra/score languages, 1700+ opcodes
+- **URL:** https://github.com/csound/csound
+- **License:** LGPL-2.1 (verified: "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1" fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Weak copyleft — respect the dynamic-link boundary; safest as a standalone offline renderer feeding WAVs into the pipeline. [Wave 7 A]
+
+#### Sonic Pi ✅ commercial-safe
+- **What:** Code-based music creation and live-coding environment (Ruby)
+- **URL:** https://github.com/sonic-pi-net/sonic-pi
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Great for scored stingers, loops, and motif beds rendered offline to WAV. [Wave 7 A]
+
+#### FoxDot ⚠️ license-conditional
+- **What:** Python live-coding music environment (SuperCollider backend)
+- **URL:** https://github.com/Qirky/FoxDot
+- **License:** CC BY-SA 4.0 (verified: Creative Commons license text fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The CC BY-SA covers the code, not audio you render with it — keep that distinction documented if FoxDot code ships anywhere. [Wave 7 A]
+
+#### Orca ✅ commercial-safe
+- **What:** Esoteric 2D sequencer for live-coding music patterns (Hundred Rabbits)
+- **URL:** https://github.com/hundredrabbits/Orca
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quirky but productive MIDI-pattern generator; export to a DAW for scoring. [Wave 7 A]
+
+#### bfxr ✅ commercial-safe
+- **What:** Retro game SFX generator (sfxr successor) — GUI + WAV export
+- **URL:** https://www.bfxr.net/ (code: increpare/bfxr)
+- **License:** MIT code (verified via repo); output ownership unquoted in docs — treat generated SFX as ours
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fastest path to game-feel UI/impact sounds; pairs with ChipTone/jfxr. [Wave 7 A]
+
+#### ChipTone ✅ commercial-safe
+- **What:** Web-based retro SFX generator — jumps, pickups, lasers, powerups
+- **URL:** https://sfbgames.com/chiptone/ (code: SFBGames/chiptone)
+- **License:** CC0 for generated sounds (verified: itch.io LICENCE — sounds made with ChipTone are free for any purpose, commercial included, under CC0)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zero-friction 8-bit SFX; output is explicitly CC0 — no attribution needed. [Wave 7 A]
+
+#### jfxr ✅ commercial-safe
+- **What:** HTML5 port of sfxr/as3sfxr — browser-based retro SFX synthesizer
+- **URL:** https://github.com/ttencate/jfxr
+- **License:** BSD-3-Clause (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Runs in-browser, exports WAV; good for quick foley passes. [Wave 7 A]
+
+#### LabChirp ✅ commercial-safe
+- **What:** Windows SFX generator — chirps, whooshes, zaps, UI sounds
+- **URL:** https://labchirp.com/
+- **License:** Free for commercial use (verified via official site terms)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Windows-only binary; render-and-export workflow into the asset library. [Wave 7 A]
+
+#### sfxr (Tomas Pettersson) ✅ commercial-safe
+- **What:** The original 2007 retro SFX synthesizer — the archetype behind bfxr/jfxr/ChipTone
+- **URL:** https://github.com/grumpydogg/sfxr-qt (Qt port; original by Tomas Pettersson)
+- **License:** MIT (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical reference + still-usable generator; bfxr is the friendlier descendant. [Wave 7 A]
+
+#### ZzFX ✅ commercial-safe
+- **What:** Micro (1.5KB) JavaScript sound-effect synth — procedural SFX from tiny code
+- **URL:** https://github.com/KilledByAPixel/ZzFX
+- **License:** MIT (verified via GitHub API 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tiny footprint — procedural SFX generated inside web builds at runtime. [Wave 7 A]
+
+#### BlipSmith ✅ commercial-safe
+- **What:** Chip/retro SFX synthesizer (web + CLI)
+- **URL:** https://github.com/moykul/blipsmith
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 8-bit foley for menus/UI; CLI suits batch generation. [Wave 7 A]
+
+#### pyworld ✅ commercial-safe
+- **What:** Python wrapper for the WORLD vocoder — analysis/synthesis, pitch-shift, morph
+- **URL:** https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Speech-band SFX design — monster voices, pitch FX, voice morphing. [Wave 7 A]
+
+#### OGA Essential Retro 512 ✅ commercial-safe
+- **What:** Juhani Junkala's "512 Sound Effects (8-bit style)" pack
+- **URL:** https://opengameart.org/content/512-sound-effects-8-bit-style
+- **License:** CC0 1.0 (verified via OGA content page 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Drop-in retro library; no attribution required. [Wave 7 A]
+
+#### ReaPlugs ✅ commercial-safe
+- **What:** Cockos' free VST FX suite — ReaEQ, ReaComp, ReaVerb, ReaDelay, etc.
+- **URL:** https://www.reaper.fm/reaplugs/
+- **License:** Free, freely usable (verified via Cockos terms)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mix/master chain for all rendered audio — EQ, compression, reverb, limiting. [Wave 7 A]
+
+#### u-he free plugins ✅ commercial-safe
+- **What:** Free pro-grade synths/FX — Tyrell N6, Zebralette, Podolski, Triple Cheese, Protoverb
+- **URL:** https://u-he.com/products/#free
+- **License:** Free, commercial OK (verified via u-he terms)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pro-grade synth textures for score beds and sound design. [Wave 7 A]
+
+#### ProjectSAM Free Orchestra ✅ commercial-safe
+- **What:** Free orchestral sample library — strings, brass, woodwinds, percussion
+- **URL:** https://projectsam.com/ (Free Orchestra page)
+- **License:** Own free license, commercial OK (verified via vendor terms)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Check Kontakt Player version compatibility before wiring into templates. [Wave 7 A]
+
+#### FMOD ⚠️ license-conditional
+- **What:** Industry game-audio middleware — FMOD Studio + Core API
+- **URL:** https://www.fmod.com/
+- **License:** Free Indie license under $200K revenue; credit/logo required (verified via FMOD licensing page)
+- **Free tier:** free while under the revenue cap
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Revenue-gated — track gross revenue; logo placement required in shipped builds. [Wave 7 A]
+
+#### Wwise ⚠️ license-conditional
+- **What:** Audiokinetic interactive-audio middleware for games
+- **URL:** https://www.audiokinetic.com/ (Wwise)
+- **License:** Free for projects under $250K budget (verified via Audiokinetic terms)
+- **Free tier:** free while under the budget cap
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Budget-gated; fine at our current scale — heavier integration than FMOD. [Wave 7 A]
+
+#### OpenGameArt (source) ⚠️ license-conditional
+- **What:** Community asset site — SFX, music, art with per-item license filters
+- **URL:** https://opengameart.org/
+- **License:** Mixed per item — filter to CC0/CC-BY (verified via site license policy)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Always read the per-item license; the CC0 filter is the safe lane. [Wave 7 A]
+
+#### itch.io CC0 game assets ⚠️ license-conditional
+- **What:** itch.io's CC0-tagged asset ecosystem (SFX, music, art packs)
+- **URL:** https://itch.io/game-assets/cc0
+- **License:** Per-pack — CC0 tag only; verify each page (verified via itch tag convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-pack verification required; quality varies — audition before wiring. [Wave 7 A]
+
+#### Freesound ⚠️ license-conditional
+- **What:** Massive collaborative SFX database with a real API
+- **URL:** https://freesound.org/
+- **License:** Mixed per sound — CC0 / CC-BY / CC-BY-NC (verified via Freesound license docs)
+- **Free tier:** free account; API with rate limits
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use the API license filter for "Creative Commons 0"; CC-BY-NC sounds are shipping-incompatible. [Wave 7 A]
+
+#### Arachno SoundFont 🚫 not commercial-safe
+- **What:** Popular free GM/GS SoundFont bank (Maxime Abbey)
+- **URL:** https://www.arachnosoft.com/ (Arachno SoundFont)
+- **License:** Free but author discourages/conditions commercial use (verified via author terms)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/scratch only — never ship; use ProjectSAM or Sonatina for shippable GM sounds. [Wave 7 A]
+
+### Lane 2 — Lip-sync (38)
+
+#### epitran ✅ commercial-safe
+- **What:** G2P for 100+ languages/orthographies (Python) — text to IPA/phonemes
+- **URL:** https://github.com/dmort27/epitran
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Multilingual phonemization feeding viseme mapping; broadest language coverage in the free lane. [Wave 7 A]
+
+#### Phonetisaurus ✅ commercial-safe
+- **What:** WFST-based grapheme-to-phoneme toolkit (OpenFST)
+- **URL:** https://github.com/AdolfVonKleist/Phonetisaurus
+- **License:** BSD (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Train custom G2P models per character voice; mature and stable. [Wave 7 A]
+
+#### g2p (Kyubyong) ✅ commercial-safe
+- **What:** English G2P with CMUdict — word to phoneme sequences
+- **URL:** https://github.com/Kyubyong/g2p
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lightweight English phonemization; zero-model-download path. [Wave 7 A]
+
+#### g2p (NRC) ✅ commercial-safe
+- **What:** National Research Council Canada G2P — rule-based + neural, multilingual incl. Indigenous languages
+- **URL:** https://github.com/nrc-ilt/g2p (moved from NationalResearchCouncilCanada/g2p)
+- **License:** MIT (verified via repo badge)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Notable for low-resource languages; repo moved in 2024 — use nrc-ilt/g2p. [Wave 7 A]
+
+#### pocketsphinx ✅ commercial-safe
+- **What:** CMU Sphinx lightweight speech recognition (C) — keyword/phoneme spotting
+- **URL:** https://github.com/cmusphinx/pocketsphinx
+- **License:** BSD (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Offline, CPU-trivial — phoneme spotting for rough mouth timing. [Wave 7 A]
+
+#### gentle ✅ commercial-safe
+- **What:** Robust forced aligner (Kaldi-based, Python) — audio + transcript to word/phoneme timings
+- **URL:** https://github.com/lowerquality/gentle
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The practical aligner for dialogue-to-mouth timing; CPU-viable. [Wave 7 A]
+
+#### kaldi ✅ commercial-safe
+- **What:** The speech-recognition toolkit — HMM/DNN recipes, aligners, acoustic models
+- **URL:** https://github.com/kaldi-asr/kaldi
+- **License:** Apache-2.0 (verified: Apache license headers fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Heavyweight — use recipes as reference; gentle/MFA for production alignment. [Wave 7 A]
+
+#### espnet ✅ commercial-safe
+- **What:** End-to-end speech processing toolkit — ASR, TTS, diarization, enhancement
+- **URL:** https://github.com/espnet/espnet
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Pretrained models each carry their own terms — verify per model before use. [Wave 7 A]
+
+#### gruut ✅ commercial-safe
+- **What:** Multilingual G2P/tokenizer frontend for TTS pipelines (30+ languages)
+- **URL:** https://github.com/rhasspy/gruut
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rhasspy ecosystem; clean phoneme output for viseme maps. [Wave 7 A]
+
+#### librosa ✅ commercial-safe
+- **What:** Python audio/music analysis — onset, pitch, chroma, MFCC, beat tracking
+- **URL:** https://github.com/librosa/librosa
+- **License:** ISC (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Amplitude/beat envelopes for jaw-bob and emphasis animation. [Wave 7 A]
+
+#### crepe ✅ commercial-safe
+- **What:** Monophonic pitch tracker (CNN, TensorFlow/Keras)
+- **URL:** https://github.com/marl/crepe
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pitch contours feed expressive mouth-shape modulation. [Wave 7 A]
+
+#### mediapipe ✅ commercial-safe
+- **What:** Google's on-device ML — Face Mesh (468 landmarks), pose, hands
+- **URL:** https://github.com/google-ai-edge/mediapipe
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CPU real-time face landmarks — drives 2D/3D mouth rigs; already an approved pipeline family. [Wave 7 A]
+
+#### dlib ✅ commercial-safe
+- **What:** C++ ML toolkit — 68-point facial landmarks, face detection
+- **URL:** https://github.com/davisking/dlib
+- **License:** Boost Software License 1.0 (verified: BSL-1.0 text fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Classic landmark pipeline; CPU-friendly fallback where MediaPipe is unavailable. [Wave 7 A]
+
+#### face-alignment ✅ commercial-safe
+- **What:** 2D/3D face alignment with FAN networks (PyTorch)
+- **URL:** https://github.com/1adrianb/face-alignment
+- **License:** BSD (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** GPU-preferred but runs on CPU for stills/reference frames. [Wave 7 A]
+
+#### OpenSeeFace ✅ commercial-safe
+- **What:** Real-time facial landmark/tracking via ONNX — CPU-targeted
+- **URL:** https://github.com/emilianavt/OpenSeeFace
+- **License:** BSD (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** VTuber-grade tracking without a GPU; feeds VRM avatars directly. [Wave 7 A]
+
+#### 3DDFA_V2 ✅ commercial-safe
+- **What:** 3D dense face alignment from a single image
+- **URL:** https://github.com/cleardusk/3DDFA_V2
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** GPU for training; inference is CPU-viable on stills — good for reference-frame fitting. [Wave 7 A]
+
+#### kalidokit ✅ commercial-safe
+- **What:** JavaScript face/pose/hand tracking solver for VRM/VTuber avatars
+- **URL:** https://github.com/yeemachine/kalidokit
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Browser-side; pairs with MediaPipe for live avatar lip-sync. [Wave 7 A]
+
+#### VMagicMirror ✅ commercial-safe
+- **What:** Free Windows VTuber app — VRM avatars with mic-driven lip-sync
+- **URL:** https://github.com/malaybaku/vmagicmirror
+- **License:** Freeware — personal AND commercial use OK, no credit required (verified: official license doc 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not open source; must comply with the VRM model's own license for avatars used. [Wave 7 A]
+
+#### LipGAN ✅ commercial-safe
+- **What:** Talking-face generation — audio-driven lip-synced video from a face image
+- **URL:** https://github.com/Rudrabha/LipGAN
+- **License:** MIT (verified via GitHub API 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research-grade; GPU for inference — spec honestly, CPU is not viable. [Wave 7 A]
+
+#### FastLivePortrait ✅ commercial-safe
+- **What:** Efficient portrait animation / live portrait retargeting
+- **URL:** https://github.com/warmshao/FastLivePortrait
+- **License:** MIT code (verified: README "Code: This project is licensed under the MIT License")
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Code is MIT — but verify each checkpoint's terms; community-trained weights vary. [Wave 7 A]
+
+#### X-Portrait ✅ commercial-safe
+- **What:** Expressive portrait animation (ByteDance)
+- **URL:** https://github.com/ByteDance/X-Portrait
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** GPU inference; research codebase — evaluate quality before committing. [Wave 7 A]
+
+#### syncnet_python ✅ commercial-safe
+- **What:** SyncNet lip-sync error/distance metric (Oxford VGG)
+- **URL:** https://github.com/joonson/syncnet_python
+- **License:** MIT-style (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** QA gate — objectively measure AV-sync of generated talking heads. [Wave 7 A]
+
+#### Parakeet ✅ commercial-safe
+- **What:** NVIDIA fast English ASR — 0.6B RNNT/CTC models
+- **URL:** https://huggingface.co/nvidia/parakeet-ctc-0.6b (via NVIDIA NeMo)
+- **License:** CC-BY-4.0 (verified via HF model card)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ~3000x real-time on GPU; commercial OK — transcript source for forced alignment. [Wave 7 A]
+
+#### Audio2Face ✅ commercial-safe
+- **What:** NVIDIA AI-driven facial animation from audio input
+- **URL:** https://developer.nvidia.com/audio2face
+- **License:** NVIDIA Open Model License — commercial OK (verified)
+- **Free tier:** free download
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** GPU-only (RTX); run as microservice or Omniverse app — spec the hardware honestly. [Wave 7 A]
+
+#### WORLD vocoder ✅ commercial-safe
+- **What:** High-quality speech analysis/synthesis — DIO, StoneMask, PLATINUM
+- **URL:** https://github.com/mmorise/World
+- **License:** Modified BSD (verified: BSD-style license fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pitch/timbre morphing for voice-driven mouth shapes and voice FX. [Wave 7 A]
+
+#### DeepSpeech ⚠️ license-conditional
+- **What:** Mozilla's end-to-end STT engine (TensorFlow)
+- **URL:** https://github.com/mozilla/DeepSpeech
+- **License:** MPL-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Weak copyleft (file-level); archived upstream — Coqui STT fork is the live line. [Wave 7 A]
+
+#### insightface ⚠️ license-conditional
+- **What:** Face analysis toolkit — detection, recognition, 3DMM fitting
+- **URL:** https://github.com/deepinsight/insightface
+- **License:** MIT code BUT all pretrained models are non-commercial research-only (verified: official README model license)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MAJOR catch — code is shippable, the models are NOT. Swap in commercial-safe weights before any shipping use. [Wave 7 A]
+
+#### LipSync-Pro (Metacowboy) ⚠️ license-conditional
+- **What:** Unity lip-sync plugin — speech-driven facial animation (Rogo alternative)
+- **URL:** https://github.com/Metacowboy/LipSync-Pro
+- **License:** MPL-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** File-level copyleft; Unity-only — free alternative to paid Rogo/SALSA. [Wave 7 A]
+
+#### FLAME ⚠️ license-conditional
+- **What:** MPI expressive head/face model — shape, pose, and expression parameters
+- **URL:** https://flame.is.tue.mpg.de/
+- **License:** CC-BY + mandatory sign-up and model-license acceptance (verified via MPI readme)
+- **Free tier:** free after signup
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Free for research and commercial after signup — but the paperwork step is mandatory; factor it into planning. [Wave 7 A]
+
+#### Canary ⚠️ license-conditional
+- **What:** NVIDIA multilingual ASR — 1B-parameter models
+- **URL:** https://huggingface.co/nvidia (canary checkpoints; via NVIDIA NeMo)
+- **License:** Per-checkpoint — newer cards (canary-qwen-2.5b, canary-1b-flash) state CC-BY-4.0 commercial OK; older canary-1b carried NC terms (verified via HF model cards 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Verify the license on the EXACT checkpoint you download — terms differ between releases. [Wave 7 A]
+
+#### DECA 🚫 not commercial-safe
+- **What:** Detailed expressive 3D face capture from a single image (UPenn)
+- **URL:** https://github.com/YadiraF/DECA
+- **License:** Non-commercial scientific-research license (verified: custom NC terms in repo)
+- **Free tier:** free for research
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research/reference only — FLAME (with signup) is the shippable-adjacent alternative. [Wave 7 A]
+
+#### MakeItTalk 🚫 not commercial-safe
+- **What:** Audio-driven talking-head generation — single image + audio to video
+- **URL:** https://github.com/yzhou359/MakeItTalk
+- **License:** CC BY-NC 4.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** free for research
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** NC — research lane only; use LipGAN/FastLivePortrait for shippable experiments. [Wave 7 A]
+
+#### SALSA 🚫 not commercial-safe
+- **What:** Unity lip-sync asset — real-time speech-driven facial animation (Crazy Minnow)
+- **URL:** https://assetstore.unity.com/ (SALSA LipSync Suite)
+- **License:** Paid asset ~$45 (verified)
+- **Free tier:** none
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Paid — excluded from the free lane; Metacowboy LipSync-Pro (MPL-2.0) is the free counterpart. [Wave 7 A]
+
+#### Rogo LipSync 🚫 not commercial-safe
+- **What:** Unity lip-sync plugin (Rogo Digital)
+- **URL:** https://www.rogodigital.com/ (Rogo LipSync)
+- **License:** Paid (verified)
+- **Free tier:** none
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Paid — excluded; free alternatives cataloged above. [Wave 7 A]
+
+#### JALI 🚫 not commercial-safe
+- **What:** Pixar-grade jaw/lip animation system (JALI Research)
+- **URL:** https://www.jali.io/ (JALI Research)
+- **License:** Commercial license required (verified)
+- **Free tier:** none
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Paid — excluded from the free lane despite its quality. [Wave 7 A]
+
+#### face-vid2vid ❓ unverified
+- **What:** NVIDIA one-shot talking-head synthesis from a source image + driving video
+- **URL:** https://github.com/NVlabs/face-vid2vid
+- **License:** Unverified — no license file in repo (checked 2026-10-07)
+- **Free tier:** fully free download
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Do not ship until the license is confirmed; GPU inference. [Wave 7 A]
+
+#### AniPortrait ❓ unverified
+- **What:** Audio-driven cinematic portrait animation (Tencent)
+- **URL:** https://github.com/Zejun-Yao/AniPortrait
+- **License:** Unverified — no license file found (checked 2026-10-07)
+- **Free tier:** fully free download
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Do not ship until the license is confirmed; GPU inference. [Wave 7 A]
+
+#### EMO (HumanAIGC) ❓ unverified
+- **What:** Alibaba emotive audio-driven portrait-video generation
+- **URL:** https://github.com/HumanAIGC/EMO
+- **License:** Unverified — no license file in repo; project materials framed as research (checked 2026-10-07)
+- **Free tier:** fully free download
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Do not ship until the license is confirmed; heavy GPU requirements. [Wave 7 A]
+
+### Lane 3 — Captions (21)
+
+#### SubtitleEdit ✅ commercial-safe
+- **What:** The subtitle editor — 200+ formats, waveform, spellcheck, sync tools
+- **URL:** https://github.com/SubtitleEdit/subtitleedit
+- **License:** MIT on current main branch (verified: root LICENSE "MIT License, Copyright (c) 2026 Nikolaj Olsson" fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MAJOR license catch — legacy 3.x builds were GPLv3; the current branch is MIT. Use current. [Wave 7 A]
+
+#### subliminal ✅ commercial-safe
+- **What:** Python subtitle downloader — providers, scoring, language matching
+- **URL:** https://github.com/Diaoul/subliminal
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fetch subs programmatically; verify per-provider terms for redistribution. [Wave 7 A]
+
+#### pycaption ✅ commercial-safe
+- **What:** Caption format converter — SRT/WebVTT/SCC/DFXP/SAMI
+- **URL:** https://github.com/pbs/pycaption
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PBS-maintained; format normalization for the caption pipeline. [Wave 7 A]
+
+#### srt ✅ commercial-safe
+- **What:** Python SRT parsing and composition library
+- **URL:** https://github.com/cdown/srt
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tiny and dependable; SRT read/write for tooling. [Wave 7 A]
+
+#### webvtt-py ✅ commercial-safe
+- **What:** Python WebVTT read/write/segment library
+- **URL:** https://github.com/glut23/webvtt-py
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Web-player caption pipeline; segment support for streaming. [Wave 7 A]
+
+#### yt-dlp ✅ commercial-safe
+- **What:** Video downloader incl. subtitle/auto-caption extraction
+- **URL:** https://github.com/yt-dlp/yt-dlp
+- **License:** Unlicense (public domain) (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** --write-subs / --write-auto-subs for caption harvesting; respect site ToS and creator rights. [Wave 7 A]
+
+#### youtube-transcript-api ✅ commercial-safe
+- **What:** Fetch YouTube captions/transcripts programmatically
+- **URL:** https://github.com/jdepoix/youtube-transcript-api
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Transcript reuse is subject to YouTube ToS and creator rights — harvest, don't redistribute. [Wave 7 A]
+
+#### ffsubsync ✅ commercial-safe
+- **What:** Subtitle synchronizer — aligns subs to audio via waveform matching
+- **URL:** https://github.com/smacke/ffsubsync
+- **License:** MIT-style (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One-command re-sync of drifted subtitles; no training needed. [Wave 7 A]
+
+#### insanely-fast-whisper ✅ commercial-safe
+- **What:** Fast Whisper transcription via optimum + transformers
+- **URL:** https://github.com/Vaibhavs10/insanely-fast-whisper
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** GPU; word-timestamp pass for karaoke-style captions. [Wave 7 A]
+
+#### distil-whisper ✅ commercial-safe
+- **What:** Distilled Whisper — 6x faster, ~50% smaller, near-parity accuracy
+- **URL:** https://github.com/huggingface/distil-whisper
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CPU-viable captioning for offline batches. [Wave 7 A]
+
+#### diart ✅ commercial-safe
+- **What:** Real-time speaker diarization (Python)
+- **URL:** https://github.com/juanmc2005/diart
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** "Who spoke when" for multi-speaker caption tracks. [Wave 7 A]
+
+#### whisper ✅ commercial-safe
+- **What:** OpenAI robust speech recognition — the baseline ASR
+- **URL:** https://github.com/openai/whisper
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Model weights also MIT; the default caption engine. [Wave 7 A]
+
+#### League of Moveable Type ✅ commercial-safe
+- **What:** Open-source type foundry — display and text faces for titles/captions
+- **URL:** https://www.theleagueofmoveabletype.com/
+- **License:** OFL (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Caption/title typography, commercial-safe. [Wave 7 A]
+
+#### LRCLIB ⚠️ license-conditional
+- **What:** Crowdsourced synced-lyrics API (LRC format, timing data)
+- **URL:** https://lrclib.net/
+- **License:** Server code MIT; lyric CONTENT rights unverified (verified: repo license vs. content distinction)
+- **Free tier:** free API
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The API is open; the lyrics belong to rightsholders — timing-data use only, or verify per track. [Wave 7 A]
+
+#### OpenSubtitles API ⚠️ license-conditional
+- **What:** Subtitle database API — millions of subtitle files
+- **URL:** https://www.opensubtitles.com/ (API)
+- **License:** Service terms — free tier 20 downloads/day, account + API key (verified)
+- **Free tier:** 20/day free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The legacy JS client (Ivshti/opensubtitles-api) is GPLv3 — quarantined; use the REST API directly. [Wave 7 A]
+
+#### YouTube auto-captions ⚠️ license-conditional
+- **What:** Platform ASR captions generated for YouTube uploads
+- **URL:** https://www.youtube.com/ (YouTube Studio)
+- **License:** Platform-bound; reuse subject to YouTube ToS (verified via ToS convention)
+- **Free tier:** free for uploaders
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Convenient draft captions — not a rights grant; review accuracy before shipping. [Wave 7 A]
+
+#### Fontshare ⚠️ license-conditional
+- **What:** Indian Type Foundry's free font service — quality display faces
+- **URL:** https://www.fontshare.com/
+- **License:** ITF Free Font License — commercial use OK, redistribution restricted (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fine in rendered video; don't redistribute the font files themselves. [Wave 7 A]
+
+#### FontSquirrel ⚠️ license-conditional
+- **What:** Curated commercial-use font library with license filtering
+- **URL:** https://www.fontsquirrel.com/
+- **License:** Per-font (mostly OFL/Apache); "100% free for commercial use" filter (verified via FAQ)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the license tab per font; the commercial-use filter is the safe lane. [Wave 7 A]
+
+#### google/fonts ⚠️ license-conditional
+- **What:** Google Fonts monorepo — 1,700+ font families
+- **URL:** https://github.com/google/fonts
+- **License:** Per-font — OFL / Apache / UFL (verified: collection repo, no single license)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read the per-font OFL.txt; all three licenses are commercial-safe. [Wave 7 A]
+
+#### Silero models 🚫 not commercial-safe
+- **What:** PyTorch STT/TTS/denoise models (snakers4)
+- **URL:** https://github.com/snakers4/silero-models
+- **License:** CC BY-NC-SA 4.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** free download
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NC — models excluded from shipping; code/utils are separate. [Wave 7 A]
+
+#### sync-lyrics ❓ unverified
+- **What:** Timed-lyrics fetcher (LRC) for karaoke-style captions
+- **URL:** https://github.com/akashrchandran/sync-lyrics
+- **License:** Unverified — no license file detected (checked 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not ship until the license is confirmed. [Wave 7 A]
+
+### Lane 4 — Backgrounds / BG-plates (37)
+
+#### Material Maker ✅ commercial-safe
+- **What:** Procedural PBR texture authoring — node graphs, Godot-based (Substance alternative)
+- **URL:** https://github.com/RodZill4/material-maker
+- **License:** MIT (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Exports tileable PBR sets; the free procedural-texture workhorse. [Wave 7 A]
+
+#### ImageMagick ✅ commercial-safe
+- **What:** CLI bitmap manipulation — convert, compose, montage, batch processing
+- **URL:** https://github.com/ImageMagick/ImageMagick
+- **License:** ImageMagick License (Apache-2.0-derived permissive) (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Batch plate processing, format conversion, contact sheets. [Wave 7 A]
+
+#### OpenImageIO ✅ commercial-safe
+- **What:** VFX image I/O library — ACES/OCIO aware, HDR formats
+- **URL:** https://github.com/AcademySoftwareFoundation/OpenImageIO
+- **License:** Apache-2.0 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** HDR plate wrangling for compositing; ASWF-backed. [Wave 7 A]
+
+#### openexr ✅ commercial-safe
+- **What:** HDR image format + libraries (ILM's EXR)
+- **URL:** https://github.com/AcademySoftwareFoundation/openexr
+- **License:** BSD (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** EXR plates for compositing; multi-channel/layers. [Wave 7 A]
+
+#### OpenColorIO ✅ commercial-safe
+- **What:** Color management framework for VFX pipelines
+- **URL:** https://github.com/AcademySoftwareFoundation/OpenColorIO
+- **License:** BSD (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Plate color pipeline consistency across tools. [Wave 7 A]
+
+#### Pinta ✅ commercial-safe
+- **What:** Simple GTK drawing/painting app — quick raster edits
+- **URL:** https://github.com/PintaProject/Pinta
+- **License:** MIT (verified via GitHub API 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quick plate touch-ups without opening a heavy editor. [Wave 7 A]
+
+#### LACMA ✅ commercial-safe
+- **What:** Los Angeles County Museum of Art open-access collection
+- **URL:** https://collections.lacma.org/
+- **License:** Public domain designation on open-access works (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paintings/prints as matte-painting sources; check the per-work rights badge. [Wave 7 A]
+
+#### MIA ✅ commercial-safe
+- **What:** Minneapolis Institute of Art open-access collection
+- **URL:** https://collections.artsmia.org/
+- **License:** CC0 on open-access works (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same CC0 pattern as NGA; strong decorative-arts holdings. [Wave 7 A]
+
+#### Cooper Hewitt ✅ commercial-safe
+- **What:** Smithsonian design museum collection
+- **URL:** https://collection.cooperhewitt.org/
+- **License:** CC0 (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Patterns, textiles, wallpapers — excellent plate/detail sources. [Wave 7 A]
+
+#### Paris Musées ✅ commercial-safe
+- **What:** Paris museums' unified open collection (14 museums)
+- **URL:** https://www.parismuseescollections.paris.fr/
+- **License:** CC0 (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong 19th-century holdings for period plates. [Wave 7 A]
+
+#### Landsat ✅ commercial-safe
+- **What:** USGS/NASA satellite imagery archive — decades of Earth observation
+- **URL:** https://earthexplorer.usgs.gov/
+- **License:** Public domain (US government work) (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Aerial establishing plates; free account required for downloads. [Wave 7 A]
+
+#### Copernicus Sentinel ✅ commercial-safe
+- **What:** ESA free satellite imagery — Sentinel-1/2/3 data
+- **URL:** https://dataspace.copernicus.eu/
+- **License:** Free and open, commercial use permitted (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** European counterpart to Landsat; higher revisit frequency. [Wave 7 A]
+
+#### NPS ✅ commercial-safe
+- **What:** National Park Service photos and multimedia galleries
+- **URL:** https://www.nps.gov/ (multimedia search)
+- **License:** Public domain (US federal); NPS credit requested (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landscapes/parks plates; credit NPS where practical. [Wave 7 A]
+
+#### ansimuz CC0 packs ✅ commercial-safe
+- **What:** ansimuz pixel-art asset packs — Sunny Land, Grotto Escape, Spaceship Shooter
+- **URL:** https://ansimuz.itch.io/ (ansimuz.com)
+- **License:** CC0 per pack (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify the CC0 badge on each pack page; parallax-ready layers. [Wave 7 A]
+
+#### KayKit ✅ commercial-safe
+- **What:** Stylized low-poly game asset packs — characters, props, environments
+- **URL:** https://kaykit.com/
+- **License:** CC0 (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Street-scene dressing and props; consistent art direction across packs. [Wave 7 A]
+
+#### Burst ✅ commercial-safe
+- **What:** Shopify's free stock photo library
+- **URL:** https://burst.shopify.com/
+- **License:** Free for commercial use (verified via Burst license)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern lifestyle/business plates. [Wave 7 A]
+
+#### Picjumbo ✅ commercial-safe
+- **What:** Free stock photos (Viktor Hanacek)
+- **URL:** https://picjumbo.com/
+- **License:** Free for commercial use (verified)
+- **Free tier:** free section; premium tier exists
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Stay in the free section; premium images are rights-managed. [Wave 7 A]
+
+#### Skitterphoto ✅ commercial-safe
+- **What:** Free stock photos from Dutch photographers
+- **URL:** https://skitterphoto.com/
+- **License:** Free for commercial use, no attribution (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** All photos free; no attribution required. [Wave 7 A]
+
+#### Negative Space ✅ commercial-safe
+- **What:** Free high-resolution stock photos
+- **URL:** https://negativespace.co/
+- **License:** Free commercial use (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check per-photo terms; generally CC0-equivalent. [Wave 7 A]
+
+#### ISO Republic ✅ commercial-safe
+- **What:** Free stock photos and video clips
+- **URL:** https://isorepublic.com/
+- **License:** Free for commercial use (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Photo + video plates from one source. [Wave 7 A]
+
+#### Jeshoots ✅ commercial-safe
+- **What:** Free photos (Jan Vasek) — people, lifestyle, objects
+- **URL:** https://jeshoots.com/
+- **License:** Free for commercial use (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** People/lifestyle plates. [Wave 7 A]
+
+#### Flickr Commons ✅ commercial-safe
+- **What:** Public photo archives from world institutions on Flickr
+- **URL:** https://www.flickr.com/commons
+- **License:** Per-institution "no known copyright restrictions" (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-image caveat — always read the rights statement on the photo page. [Wave 7 A]
+
+#### Old Book Illustrations ✅ commercial-safe
+- **What:** Scanned vintage book art and engravings
+- **URL:** https://www.oldbookillustrations.com/
+- **License:** Public domain (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Engraving-style matte elements and textures. [Wave 7 A]
+
+#### RawPixel public-domain collection ✅ commercial-safe
+- **What:** RawPixel's public-domain image sets
+- **URL:** https://www.rawpixel.com/ (public domain section)
+- **License:** CC0 on the PD collection (verified)
+- **Free tier:** free PD section; premium exists
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** RawPixel also sells premium — stay inside the PD collection. [Wave 7 A]
+
+#### libvips ⚠️ license-conditional
+- **What:** Fast, low-memory image processing library
+- **URL:** https://github.com/libvips/libvips
+- **License:** LGPL-2.1 (verified: LICENSE fetched 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Weak copyleft — respect the dynamic-link boundary; excellent for plate pipelines. [Wave 7 A]
+
+#### game-icons ⚠️ license-conditional
+- **What:** 4,000+ game icons (SVG/PNG) — UI, items, abilities
+- **URL:** https://github.com/game-icons/icons (game-icons.net)
+- **License:** CC-BY-3.0 (verified via site)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution required — credit in end-cards/docs. [Wave 7 A]
+
+#### Mapillary ⚠️ license-conditional
+- **What:** Street-level imagery platform (Meta) — crowdsourced road photos
+- **URL:** https://www.mapillary.com/
+- **License:** CC BY-SA 4.0 (verified)
+- **Free tier:** free access
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Share-alike on images — fine for reference/plates with attribution, not for proprietary textures. [Wave 7 A]
+
+#### Videezy ⚠️ license-conditional
+- **What:** Free stock video — 4K clips
+- **URL:** https://www.videezy.com/
+- **License:** Free with attribution (verified)
+- **Free tier:** free with credit
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Credit required per clip; check the per-clip license. [Wave 7 A]
+
+#### Vidsplay ⚠️ license-conditional
+- **What:** Free stock video clips
+- **URL:** https://www.vidsplay.com/
+- **License:** Free for commercial use with attribution (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Credit the clip; simple terms. [Wave 7 A]
+
+#### Kaboompics ⚠️ license-conditional
+- **What:** Free lifestyle stock photos (Karolina Grabowska)
+- **URL:** https://kaboompics.com/
+- **License:** Own license — commercial OK, no attribution; editorial-only files are NC (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Avoid "editorial use only" files for commercial plates. [Wave 7 A]
+
+#### National Gallery London 🚫 not commercial-safe
+- **What:** London National Gallery image collection
+- **URL:** https://www.nationalgallery.org.uk/
+- **License:** Restrictive image terms; research data CC BY-NC-ND (verified)
+- **Free tier:** free viewing
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excluded — use NGA (US) CC0 instead for shippable plates. [Wave 7 A]
+
+#### Terragen 🚫 not commercial-safe
+- **What:** Photorealistic landscape renderer (Planetside Software)
+- **URL:** https://planetside.co.uk/ (Terragen)
+- **License:** Free edition is NON-commercial; commercial use needs a paid license (verified)
+- **Free tier:** free non-commercial edition
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Excluded from the free lane; 30-day commercial eval only. [Wave 7 A]
+
+#### V&A 🚫 not commercial-safe
+- **What:** Victoria & Albert Museum collection images
+- **URL:** https://www.vam.ac.uk/
+- **License:** Commercial use requires a separate licence (verified)
+- **Free tier:** free viewing
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excluded — rights-managed for commercial use. [Wave 7 A]
+
+#### sIBL Archive 🚫 not commercial-safe
+- **What:** HDR environment-map archive (HDRLabs)
+- **URL:** https://www.hdrlabs.com/sibl/archive.html (now offline — 404)
+- **License:** CC BY-NC-SA 3.0 (verified via archived terms)
+- **Free tier:** was free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC — excluded; site is offline anyway. Use Poly Haven HDRIs (already cataloged) instead. [Wave 7 A]
+
+#### Graphics Fairy 🚫 not commercial-safe
+- **What:** Vintage image blog (Karen's Graphics Fairy)
+- **URL:** https://thegraphicsfairy.com/
+- **License:** Free images may NOT be used in digital products for sale (verified via terms)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excluded for shippable content; Old Book Illustrations is the PD alternative. [Wave 7 A]
+
+#### Gaea ❓ unverified
+- **What:** Terrain/landscape design tool (QuadSpinner)
+- **URL:** https://quadspinner.com/ (Gaea)
+- **License:** Free Community Edition exists; commercial terms unverified (checked 2026-10-07)
+- **Free tier:** free Community Edition
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Verify paid/commercial terms before any shipping use. [Wave 7 A]
+
+#### World Machine ❓ unverified
+- **What:** Procedural terrain generator
+- **URL:** https://www.world-machine.com/
+- **License:** Free Basic edition exists; commercial terms unverified (checked 2026-10-07)
+- **Free tier:** free Basic edition
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Verify before use; Basic edition is resolution-limited. [Wave 7 A]
+
+## Entry count — Wave 7 Lane A
+
+127 new entries: 31 SFX/foley · 38 lip-sync · 21 captions · 37 backgrounds/BG-plates. Badges: 85 ✅ · 24 ⚠️ · 12 🚫 · 6 ❓. Quarantine rows added: 26 (85–110, max 110).

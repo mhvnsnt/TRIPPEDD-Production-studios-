@@ -9,7 +9,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 + 9 Wave 4 + 10 Wave 5 A2 + 2 Wave 5 A3 + 7 Wave 6 A = 84)
+## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 + 9 Wave 4 + 10 Wave 5 A2 + 2 Wave 5 A3 + 7 Wave 6 A + 26 Wave 7 A = 110)
 
 | # | Name | License | Lane | Repo | Allowed use | Audit status |
 |---|------|---------|------|------|-------------|--------------|
@@ -150,3 +150,29 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 
 - No new quarantine rows this wave (max stays at 77). Reads done: nari-labs/Dia (Apache-2.0 license file, README research/educational-intent disclaimer — verbatim quotes + verdict in tools/voice/DIA_COMMERCIAL_READ.md; badge stays ❓ needs-owner-review), microsoft/VibeVoice (MIT code license, model research-only per README + 1.5B model card — full read in tools/voice/VIBEVOICE_COMMERCIAL_READ.md; badge stays 🚫 research-only), OVRLipSync (Oculus SDK License — EULA re-cross-checked via 4 published license mirrors, §2.1 for-charge clause confirmed; no login attempted; staging steps + verdict in tools/lipsync/OVRLIPSYNC_STAGING.md; badge stays ⚠️ commercial-OK-per-license-text / VERIFY-AUDIO-VARIANT-BEFORE-SHIP).
 - NOT quarantined: none of the three is GPL/AGPL. Dia/VibeVoice are permissively licensed; their gates are vendor research-intent terms (documented in the read docs, not copyleft doctrine). OVRLipSync is a proprietary Meta EULA (not copyleft); its gate is the audio-variant "Oculus Approved Products" clause (needs-lawyer) — binary stays local/gitignored until the in-zip license text is owner-read.
+| 85 | essentia (MTG) | AGPL-3.0 (verified: LICENSE fetched 2026-10-07) | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 86 | G'MIC (GreycLab) | CeCILL-2.1 (verified: COPYING fetched 2026-10-07) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 87 | Natron | GPL-2.0 (verified: LICENSE.txt fetched 2026-10-07) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 88 | Yoshimi | GPL-2.0 (verified: LICENSE fetched 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 89 | OBS Studio | GPL-2.0 (verified: LICENSE fetched 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 90 | VLC (VideoLAN) | GPL-2.0 (verified: LICENSE fetched 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 91 | RawTherapee | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 92 | Parselmouth | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 93 | aubio | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 94 | pysrt | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 95 | darktable | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 96 | BlenderGIS | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 97 | alass | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 98 | Bazarr | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 99 | Gaupol | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 100 | SuperCollider | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 101 | TidalCycles | GPL-3.0 (verified: LICENSE fetched 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 102 | VCV Rack | GPL-3.0 (verified: licenses doc fetched 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 103 | TAL-NoiseMaker | GPL-2.0 (verified via GPL-licensed forks 2026-10-07; root LICENSE unfetchable) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 104 | SPPAS (brnoliveira/sppas) | AGPL-3.0 (verified: current upstream is AGPL — older docs said GPLv3; SourceForge terms fetched 2026-10-07) | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 105 | FAVE-align (JoFrhwld) | GPL-3.0 (verified: new-fave README badge + docs 2026-10-07) | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 106 | Jubler | AGPL-3.0 (verified: teras/Jubler README 'Licensed under the GNU Affero General Public License v3', 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 107 | Gnome Subtitles | GPL-2.0-or-later (verified: RPM package metadata 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 108 | opensubtitles-api (Ivshti legacy JS client) | GPLv3 (verified: README 2026-10-07) — the OpenSubtitles REST API service itself is a separate ⚠️ entry | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 109 | CCExtractor | GPL-2.0 (verified: GitHub API spdx 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 110 | LMMS | GPL-2.0 (verified: GitHub API spdx 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |

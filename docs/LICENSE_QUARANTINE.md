@@ -9,7 +9,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (198 rows · 184 distinct projects — append-only manifest; see duplicate mapping below)
+## Quarantined items (200 rows · 186 distinct projects — append-only manifest; see duplicate mapping below)
 
 > Wave 17 Lane C coordinator merge (2026-10-07): +15 rows (170–184) from Lane A, of which 3 are DUPLICATES of existing rows (170→122 Furnace, 171→124 MilkyTracker, 172→125 Schism Tracker — marked SUPERSEDED; Lane A's dedup scan missed them). Row 169 Subtitle Edit DELISTED (relicensed MIT) per the Lane C spot-check. Lane B's Gaupol row collided on number 170 with Lane A's Furnace — renumbered to **185** per the append-only renumber rule (same-day collision, no cross-references existed yet) and marked SUPERSEDED by row 99 (same project; Lane B's dedup scan missed row 99). Distinct: 160 → 159 (delist) → 171 (+12 new) → 171 (Gaupol dup adds 0). Counts: AGPL 23 · GPL 139 · LGPL-2.1 3 · LGPL-3.0 4 · MPL-2.0 1 · GPLv3+/MPLv2+ 1 · CeCILL-2.1 1 · ODbL-1.0 1 · CC BY-SA 1 · CC BY-NC-ND 1 · municipal/state rights-restricted 10.
 
@@ -49,16 +49,16 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 
 | # | Name | License | Lane | Repo | Allowed use | Audit status |
 |---|------|---------|------|------|-------------|--------------|
-| 1 | aeneas | AGPL-3.0 | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 1 | aeneas | AGPL-3.0 (verified Wave 19 Lane B, 2026-10-07: upstream now readbeyond/aeneas — GitHub API spdx_id AGPL-3.0; README: AGPL v3) | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 2 | aeneas | AGPL-3.0 (verified via upstream README 'the GNU Affero General Public License Version 3') — same project as row 1 (separate lane entry; see dedup mapping) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 3 | AnimeEffects | GPL-3.0 | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 4 | AUTOMATIC1111 SD WebUI | AGPL-3.0 | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 5 | ComfyUI | GPL-3.0 | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 6 | Enve | GPL-3.0 | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 3 | AnimeEffects | GPL-3.0 (verified Wave 19 Lane B, 2026-10-07: upstream moved hidefuku/AnimeEffects → AnimeEffectsDevs/AnimeEffects — GitHub API spdx_id GPL-3.0) | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 4 | AUTOMATIC1111 SD WebUI | AGPL-3.0 (verified Wave 19 Lane B, 2026-10-07: GitHub API spdx_id AUTOMATIC1111/stable-diffusion-webui) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 5 | ComfyUI | GPL-3.0 (verified Wave 19 Lane B, 2026-10-07: org renamed comfyanonymous/ComfyUI → Comfy-Org/ComfyUI — GitHub API spdx_id GPL-3.0) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 6 | Enve | GPL-3.0 (verified Wave 19 Lane B, 2026-10-07: MaurycyLiebner/enve → active continuation Hope2333/enve — GitHub API spdx_id GPL-3.0 on both; README "licensed under the GPL3 License") | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 7 | eSpeak-NG | GPL-3.0-or-later (verified via README License Information + COPYING) | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 8 | Flowblade | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 9 | FlowFrames | GPL-3.0 (verified) | upscale | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 10 | fSpy | GPL-3.0 | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 10 | fSpy | GPL-3.0 (verified Wave 19 Lane B, 2026-10-07: org renamed stuffmatic → perarnia/fSpy — GitHub API spdx_id GPL-3.0) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 11 | Glaxnimate | GPL-3.0-or-later | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 12 | Krita | GPL-3.0 | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 13 | LosslessCut | GPL-2.0-only (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
@@ -224,7 +224,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 120 | Style-Bert-VITS2 (litagin/style-bert-vits2) | AGPL-3.0 (verified 2026-10-07: upstream GitHub sources; re-checked Wave 13 Lane D, 2026-10-07 — canonical repo litagin/style-bert-vits2 now 404s (deleted/moved), AGPL-3.0 lineage confirmed via tegnike/Style-Bert-VITS2-API + litagin02/Style-Bert-VITS2-Editor, quarantine standing unchanged) — strong copyleft code; model outputs follow the standard AGPL-output interpretation but the code never ships | voice/tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 121 | AivisSpeech (Aivis-Project/AivisSpeech) | LGPL-3.0 (verified 2026-10-07: upstream policy.md) — LGPL-doctrine question still PENDING OWNER VERDICT (see row 63 note); stays quarantined meanwhile | voice/tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 122 | Furnace (tildearrow/furnace) | GPL-2.0-or-later (verified: repo README "open-source under GPLv2 or later/GPLv3", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 123 | Dn-FamiTracker (AlbenBustamante/Dn-FamiTracker — repo renamed 2026; was alnicode/dn-famitracker, corrected Wave 15 Lane B, 2026-10-07) | GPL-2.0-or-later (re-verified Wave 15 Lane B, 2026-10-07: README "The application and the source code are distributed under the GNU GPL 2 license or any later version") — note: j0cc fork lineage has per-component variants (MIT-0 / GPLv2 driver), but the application stays quarantined | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 123 | Dn-FamiTracker (AlbenBustamante/Dn-FamiTracker — repo renamed 2026; was alnicode/dn-famitracker, corrected Wave 15 Lane B, 2026-10-07) | GPL-2.0-or-later (re-verified Wave 15 Lane B, 2026-10-07: README "The application and the source code are distributed under the GNU GPL 2 license or any later version") — note: j0cc fork lineage has per-component variants (MIT-0 / GPLv2 driver), but the application stays quarantined (Wave 19 Lane B audit, 2026-10-07: `gumball2415/j0cc-famitracker` → renamed/transferred to `Dn-Programming-Core-Management/Dn-FamiTracker` — server-side redirect confirmed; Lane A's "j0CC-FamiTracker" flag is this lineage's PRE-RENAME identity, NOT a new project — no duplicate row added. License re-verified from the AlbenBustamante/Dn-FamiTracker README: "GNU GPL 2 license or any later version" + GPLv3-only FDS sound-emulation dependency (shipped binary effectively GPLv3) — row classification and quarantine standing unchanged) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 124 | MilkyTracker (milkytracker/MilkyTracker) | GPL-3.0-or-later (verified: license infobox "GPL-3.0-or-later", 2026-10-07) — note: the MilkyPlay playback library alone is BSD-3-Clause and could be used separately; the tracker application stays quarantined | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 125 | Schism Tracker (schismtracker/schismtracker) | GPL-2.0 (verified: GitHub repo license tag GPL-2.0 + man page "Licensed under the GNU GPL", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 126 | Hydrogen (hydrogen-music/hydrogen) | GPL-2.0-or-later (verified: upstream README "Hydrogen is distributed under GPLv2+", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
@@ -447,6 +447,8 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 196 | Av1an | GPL-3.0 (verified: GitHub API spdx_id rust-av/Av1an, 2026-10-07; moved from master-of-zen/Av1an) — chunked parallel AV1 encoding framework | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
 | 197 | VisualSubSync | GPL-2.0 (verified: GitHub API spdx_id Red5goahead/VisualSubSync-Enhanced, 2026-10-07) — waveform-based subtitle editor | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
 | 198 | xy-VSFilter | GPL-2.0 (verified: GitHub API spdx_id Cyberbeing/xy-VSFilter "Official xy-VSFilter Repository", 2026-10-07) — maintained VSFilter fork, ASS/SSA renderer | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 199 | mml2vgm (rjungemann) | GPL-3.0 (verified: GitHub API spdx_id rjungemann/mml2vgm + raw LICENSE.txt "GNU GENERAL PUBLIC LICENSE Version 3", 2026-10-07 — Lane A flag #3) — Rust MML→VGM chiptune toolchain | trackers | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 200 | TinyVGM (SudoMaker) | AGPL-3.0 (verified: GitHub API spdx_id SudoMaker/TinyVGM + raw LICENSE "GNU AFFERO GENERAL PUBLIC LICENSE Version 3", 2026-10-07 — Lane A flag #4) — tiny VGM playback/encoding tool | trackers | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
 
 ## Notes from Wave-18 Lane A quarantine append (2026-10-07)
 
@@ -474,3 +476,36 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Result: 11 confirmed, 1 corrected (174 repo reference; classification unchanged).** Zero delists, zero new rows from this audit. Header counts unchanged: 198 rows · 184 distinct.
 - **Row 169 (Subtitle Edit) dep-tree audit:** SKIPPED — not a shipping candidate. Repo-wide grep for `subtitleedit|subtitle edit` found zero references in any pipeline path, tooling, or doc outside quarantine/catalog records. Subtitle Edit (SubtitleEdit/subtitleedit, MIT since the 2026-02/03 Avalonia relicense, older 4.x tags still GPL-3.0 — pin accordingly) is catalog/record-only; no dep tree ships it, so no transitive GPL/AGPL contamination path exists. If a shipping use is ever proposed, audit BEFORE wiring.
 - **Speaches Docker:** still deferred — no container runtime on the VM (no docker/podman/nerdctl/crictl binaries; no /var/run/docker.sock), checked 2026-10-07.
+
+## Wave 19 Lane B quarantine audit (2026-10-07)
+
+- **Rows 186–198 fresh upstream spot-check (GitHub API spdx_id, raw license fetches, SourceForge project license fields — never assumed):**
+  - 186 Zrythm → CONFIRMED (raw LICENSES/LicenseRef-ZrythmLicense.txt re-fetched 2026-10-07: "GNU Affero General Public License (GNU AGPL)... version 3... or (at your option) any later version, with the additional terms below" — Section 7 trademark terms; API still NOASSERTION).
+  - 187 CheeseTracker → CONFIRMED (SourceForge project page: "GNU General Public License version 2.0 (GPLv2)").
+  - 188 Rosegarden → CONFIRMED (API spdx_id nengxu/rosegarden GPL-2.0).
+  - 189 IINA → CONFIRMED (API spdx_id iina/iina GPL-3.0).
+  - 190 SMPlayer → CONFIRMED (API spdx_id smplayer-dev/smplayer GPL-2.0).
+  - 191 MPC-HC → CONFIRMED (API spdx_id mpc-hc/mpc-hc GPL-3.0).
+  - 192 MPC-BE → CONFIRMED (SourceForge project page: "GNU General Public License version 3.0 (GPLv3)").
+  - 193 Celluloid → CONFIRMED (API spdx_id celluloid-player/celluloid GPL-3.0).
+  - 194 VideoSubFinder → CONFIRMED (API spdx_id SWHL/VideoSubFinder GPL-2.0).
+  - 195 SubDownloader → CONFIRMED (API spdx_id subdownloader/subdownloader GPL-3.0; beatfreaker/subdownloader namesake note stands).
+  - 196 Av1an → CONFIRMED (API spdx_id rust-av/Av1an GPL-3.0; master-of-zen → rust-av move stands).
+  - 197 VisualSubSync → CONFIRMED (API spdx_id Red5goahead/VisualSubSync-Enhanced GPL-2.0).
+  - 198 xy-VSFilter → CONFIRMED (API spdx_id Cyberbeing/xy-VSFilter GPL-2.0).
+  - **Result: 13/13 confirmed.** Zero delists, zero corrections, zero supersedes in this block.
+- **Six oldest never-audited rows verified (all PENDING with no prior "verified" note — GitHub API + repo-identity tracing, 2026-10-07):**
+  - 1 aeneas → CONFIRMED (upstream moved to readbeyond/aeneas — API spdx_id AGPL-3.0; README: AGPL v3). In-cell verified note added.
+  - 3 AnimeEffects → CONFIRMED (upstream moved hidefuku/AnimeEffects → AnimeEffectsDevs/AnimeEffects — API spdx_id GPL-3.0). In-cell verified note added.
+  - 4 AUTOMATIC1111 SD WebUI → CONFIRMED (API spdx_id AUTOMATIC1111/stable-diffusion-webui AGPL-3.0). In-cell verified note added.
+  - 5 ComfyUI → CONFIRMED (org renamed comfyanonymous/ComfyUI → Comfy-Org/ComfyUI — API spdx_id GPL-3.0). In-cell verified note added.
+  - 6 Enve → CONFIRMED (MaurycyLiebner/enve → active continuation Hope2333/enve — API spdx_id GPL-3.0 on both; README "licensed under the GPL3 License"). In-cell verified note added.
+  - 10 fSpy → CONFIRMED (org renamed stuffmatic → perarnia/fSpy — API spdx_id GPL-3.0). In-cell verified note added.
+  - **Result: 6/6 confirmed — all still correctly quarantined; five repo identities traced through renames/moves, none relicensed.**
+- **Lane A's 4 Wave-19 flags (docs/wave19/lane-a-quarantine-flags.md) — PRE-ADD dedup found 2 DUPLICATES:**
+  - Flag #1 "0CC-FamiTracker" = **row 174** (already quarantined, GPL-2.0). No new row — Lane A's dedup scan missed the existing row.
+  - Flag #2 "j0CC-FamiTracker" = **row 123 lineage** (gumball2415/j0cc-famitracker → renamed/transferred to Dn-Programming-Core-Management/Dn-FamiTracker; server-side redirect confirmed 2026-10-07 — same codebase, pre-rename identity). No new row. Row 123 audit note extended with the rename chain + GPL-2.0-or-later / GPLv3-only-FDS-dependency re-verification.
+  - Flag #3 mml2vgm (rjungemann) → **NEW row 199** (GPL-3.0 — API spdx_id + raw LICENSE.txt "GNU GENERAL PUBLIC LICENSE Version 3").
+  - Flag #4 TinyVGM (SudoMaker) → **NEW row 200** (AGPL-3.0 — API spdx_id + raw LICENSE "GNU AFFERO GENERAL PUBLIC LICENSE Version 3").
+- **Dedup lesson (echo of Wave 17 Lane C):** Lane A's dedup scan checked names but not existing rows for the same forks/lineages. Future lanes: grep the manifest AND follow repo rename redirects before flagging.
+- **Header counts refreshed:** 200 rows · 186 distinct (184 + 2 new). Families: AGPL 25 (+1) · GPL 152 (+1) · LGPL-2.1 3 · LGPL-3.0 4 · MPL-2.0 1 · GPLv3+/MPLv2+ 1 · CeCILL-2.1 1 · ODbL-1.0 1 · CC BY-SA 1 · CC BY-NC-ND 1 · municipal/state rights-restricted 10. `grep -c '^| [0-9]'` = 200.

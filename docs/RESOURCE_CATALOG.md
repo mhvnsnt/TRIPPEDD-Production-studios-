@@ -18928,8 +18928,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** Self-hosted — free, no limits
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Natural renderer for the OpenScore Lieder MusicXML files pulled above — OSMD reads MusicXML directly where VexFlow needs conversion. [Wave 18 Lane A]
+- **Status:** wired
+- **Notes:** Natural renderer for the OpenScore Lieder MusicXML files pulled above — OSMD reads MusicXML directly where VexFlow needs conversion. WIRED: `tools/wave18_laneC/osmd/osmd_render.cjs` headless-renders Lane A's OpenScore Beethoven .mxl to SVG (page1.png visually verified) → `tools/wave18_laneC/proofs/wave18_osmd/`; needs npm `canvas` + jsdom geometry stubs. [Wave 18 Lane A] [WIRED Wave 18 Lane C]
 
 #### KernScores (CCARH / Stanford) ❓ Humdrum **kern score corpus, terms unverified this pass
 - **What:** Thousands of scores in Humdrum **kern format from the Center for Computer Assisted Research in the Humanities (Stanford) — Bach chorales, Mozart piano sonatas, etc.
@@ -19240,8 +19240,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** Self-hosted — free, no limits
 - **Repo lane:** trippedd (music/trackers)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Clean-licensed alternative to the quarantined libgme (row 184) for module playback in tools. [Wave 18 Lane A]
+- **Status:** wired
+- **Notes:** Clean-licensed alternative to the quarantined libgme (row 184) for module playback in tools. WIRED: built libdumb.a (cmake, no Allegro); `tools/wave18_laneC/dumb_mod2wav/mod2wav.c` renders a synthetic ProTracker MOD to WAV (non-silent, RMS 674) → `tools/wave18_laneC/proofs/wave18_dumb/`. [Wave 18 Lane A] [WIRED Wave 18 Lane C]
 
 #### VGMTrans ✅ commercial-safe (Zlib, GitHub API verified 2026-10-07)
 - **What:** Converts proprietary sequenced videogame music (N64/PS1/PS2-era formats) to MIDI/DLS/SoundFont — the game-music transcription tool.
@@ -19755,8 +19755,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** Free, no limits
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Clean-licensed PGS tooling — complements the quarantined Sup2Sub-class utilities. [Wave 18 Lane A]
+- **Status:** wired
+- **Notes:** Clean-licensed PGS tooling — complements the quarantined Sup2Sub-class utilities. WIRED: compiled 107 sources with javac (Maven proxy-blocked; macify compile-shim); synthetic PGS .sup → VobSub SUB/IDX + BDN XML/PNG (PNG visually verified) → `tools/wave18_laneC/proofs/wave18_bdsup2sub/`. No SRT export (no OCR, per README). [Wave 18 Lane A] [WIRED Wave 18 Lane C]
 
 #### SubtitleCreator ❓ freeware, grant unverified this pass
 - **What:** DVD subtitle authoring tool (SUP creation).
@@ -19865,8 +19865,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** Free, no limits
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** ISC-licensed MP4 muxing for caption-track packaging without the Bento4/GPAC license baggage. [Wave 18 Lane A]
+- **Status:** wired
+- **Notes:** ISC-licensed MP4 muxing for caption-track packaging without the Bento4/GPAC license baggage. WIRED: built remuxer/boxdumper; `tools/wave18_laneC/lsmash/smoke_remux.sh` remuxes a captioned MP4 (A/V intact) → `tools/wave18_laneC/proofs/wave18_lsmash/`; honest limit: remuxer CLI drops the tx3g subtitle track. [Wave 18 Lane A] [WIRED Wave 18 Lane C]
 
 #### BD Rebuilder ❓ freeware (jdobbs), grant unverified this pass
 - **What:** Blu-ray backup/rebuild tool preserving subtitle tracks.

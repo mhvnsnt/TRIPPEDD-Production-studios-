@@ -8,7 +8,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Tool use ≠ code reuse:** running a GPL application as a standalone tool (e.g. opening Krita to paint) does not infect our pipeline — output artwork remains ours per the Krita/GIMP GPL FAQ doctrine. The quarantine targets *code integration*, not *tool usage*.
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 
-## Quarantined items (27 + 23 Wave 2 = 50)
+## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 = 56)
 
 | # | Name | License | Lane | Repo | Allowed use | Audit status |
 |---|------|---------|------|------|-------------|--------------|
@@ -63,6 +63,12 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 48 | VidCutter | GPL-3.0 (Wave 2, verified via https://raw.githubusercontent.com/ozmartian/vidcutter/master/LICENSE) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 49 | whisper-timestamped | AGPL-3.0 (Wave 2, verified via https://raw.githubusercontent.com/linto-ai/whisper-timestamped/master/LICENSE) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 50 | Wick Editor | GPL-3.0 (Wave 2, verified via https://github.com/blackjaguar0w0-lang/wick-editor-animate (README: 'Wick Editor is under the GNU v3 Public License')) | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 51 | Goo Engine (Dillon Goo's Blender fork) | GPL-3.0 (Wave 3, inherits Blender GPL — gradientgamer-xd/goo-engine README: 'Blender as a whole is licensed under the GNU General Public License, Version 3') | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 52 | Blender-StellarToon | GPL-3.0 (Wave 3, verified via repo README badge) | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 53 | 2D-Cel-Toon-Shader-v2-Plus (Godot) | GPL-3.0 (Wave 3, verified via GitHub repo metadata) | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 54 | manga-image-translator | GPL-3.0 (Wave 3, verified via upstream repo LICENSE) | anime-tooling | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 55 | comic-text-detector | GPL-3.0 (Wave 3, via manga-image-translator dependency) | anime-tooling | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 56 | libre-manga-translator | AGPL-3.0-or-later (Wave 3, verified via upstream technical.md) | anime-tooling | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 ## Notes from Wave-1 research
 
 - Mimic3 is AGPL-3.0 (not Apache-2.0 as commonly assumed) — quarantined; use Kokoro or Piper for wired TTS.
@@ -73,6 +79,12 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - Shotcut, Olive, Flowblade, LosslessCut, OpenShot are GPL; Video2X and FlowFrames are AGPL — quarantined; Pitivi is LGPL-2.1 and stays off this list.
 - eSpeak-NG and RHVoice are GPL — quarantined; note RHVoice Lab's prebuilt *voices* are CC-BY-NC-ND — never ship those voices regardless.
 - Piper CORRECTION 2026-10-07: the pip-installable `piper-tts` 1.8.0 is GPL-3.0-or-later per its own PyPI metadata (OHF-voice/piper1-gpl) — quarantined. Wired only as a separate local process, never linked. The archived rhasspy/piper MIT version is not what pip installs; do not treat any `pip install piper-tts` as MIT.
+## Notes from Wave-3 research
+
+- Wave 3 added 6 quarantined items (total 56): Goo Engine, Blender-StellarToon, 2D-Cel-Toon-Shader-v2-Plus, manga-image-translator, comic-text-detector (all GPL-3.0), libre-manga-translator (AGPL-3.0-or-later) — all anime/2D tooling, study-only.
+- NOT quarantined (verified Wave 3): nijigenerate + Inochi Creator are BSD-2-Clause (the donation nagscreen is a prompt, not a license change); Wan 2.2 code AND weights are Apache-2.0; InvokeAI is Apache-2.0 (models run inside it carry their own licenses — SD/SDXL Stability Community License is non-commercial); sherpa-onnx is Apache-2.0; mss is MIT.
+- Catalog correction Wave 3: aeneas was wrongly badged ✅ commercial-safe in two catalog lines — it is AGPL-3.0, quarantine was already correct; headers fixed.
+
 ## Notes from Wave-2 research
 
 - Wave 2 added 23 quarantined items (total 50): whisper-timestamped is AGPL-3.0 (not MIT as assumed); Upscayl is AGPL-3.0; Kitsu is AGPL-3.0; Kdenlive/Avidemux/Cinelerra-GG/LiVES/HandBrake/VidCutter/chaiNNer join the GPL NLE/finishing quarantine; Wick Editor, LibreSprite, Inkscape, GIMP, Blender Grease Pencil/VSE, StoryPencil, StoryToolkitAI, Allosaurus, Praat, SubtitleComposer, Seed-VC, Piper (OHF-Voice), SubtitleComposer are GPL — standalone tool use only.

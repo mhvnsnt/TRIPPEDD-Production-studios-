@@ -12,19 +12,19 @@ Generated 2026-10-07 from `/tmp/hunter_{a,b,c}.json` (3 research workers, licens
 
 | # | Category | Entries |
 |---|----------|---------|
-| 1 | 2D animation & cartoon rigging / puppet tools | 16 (+19 Wave 2) |
-| 2 | Storyboarding / animatic tools | 6 (+13 Wave 2) |
-| 3 | Lip-sync tools | 7 (+7 Wave 2) |
-| 4 | Background / plate generation | 10 (+14 Wave 2) |
-| 5 | TTS engines (free/open) | 8 (+6 Wave 2) |
-| 6 | Voice cloning / conversion (free/open) | 4 (+10 Wave 2) |
-| 7 | SFX libraries (public domain / CC0 only) | 6 (+4 Wave 2) |
-| 8 | Music libraries (CC0 / public-domain / CC-BY only) | 7 (+13 Wave 2) |
-| 9 | Auto-captioning / subtitles | 7 (+8 Wave 2) |
-| 10 | Image-to-video / video generation (open weights + free tiers) | 20 (+19 Wave 2) |
-| 11 | Compositing / editing / assembly | 10 (+11 Wave 2) |
-| 12 | Upscalers / frame interpolation | 9 (+5 Wave 2) |
-| | **TOTAL** | **110 + 129 = 239** |
+| 1 | 2D animation & cartoon rigging / puppet tools | 16 (+19 Wave 2)  (+31 Wave 3) |
+| 2 | Storyboarding / animatic tools | 6 (+13 Wave 2)  |
+| 3 | Lip-sync tools | 7 (+7 Wave 2)  (+13 Wave 3) |
+| 4 | Background / plate generation | 10 (+14 Wave 2)  (+21 Wave 3) |
+| 5 | TTS engines (free/open) | 8 (+6 Wave 2)  (+17 Wave 3) |
+| 6 | Voice cloning / conversion (free/open) | 4 (+10 Wave 2)  |
+| 7 | SFX libraries (public domain / CC0 only) | 6 (+4 Wave 2)  (+27 Wave 3) |
+| 8 | Music libraries (CC0 / public-domain / CC-BY only) | 7 (+13 Wave 2)  (+26 Wave 3) |
+| 9 | Auto-captioning / subtitles | 7 (+8 Wave 2)  (+1 Wave 3) |
+| 10 | Image-to-video / video generation (open weights + free tiers) | 20 (+19 Wave 2)  (+2 Wave 3) |
+| 11 | Compositing / editing / assembly | 10 (+11 Wave 2)  (+1 Wave 3) |
+| 12 | Upscalers / frame interpolation | 9 (+5 Wave 2)  |
+| | **TOTAL** | **110 + 129 + 139 = 378** |
 
 Already wired in these repos (not re-listed here): FFmpeg/FFprobe, OpenCV, PySceneDetect, Tesseract, faster-whisper, OpenTimelineIO, Blender, Kdenlive/MLT, Natron, OpenColorIO, OpenAssetIO, OpenCue, plus tools/video_pipeline (auto_caption.py, concept_batch.py, promo_assemble.py, sfx.py, voiceover.py) in both repos.
 
@@ -309,7 +309,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** gpl.txt ships in repo; Debian metadata says GPL-2. Exports .pgo timing files readable by Aseprite/Pixelorama scripts. Manual-correction companion to Rhubarb's auto pass.
 
-#### aeneas ✅ commercial-safe
+#### aeneas 🚫 AGPL-3.0 — quarantine-only (corrected Wave 3: was wrongly badged ✅)
 - **What:** DTW word-level audio<->text sync, 30+ languages, no ASR needed
 - **URL:** https://github.com/readbeyond/aeneas/
 - **License:** AGPL-3.0 (verified)
@@ -761,7 +761,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** wiring-wave-1
 - **Notes:** One-command 'stable-ts audio.mp3 -o out.srt' with reliable word boundaries. Sits on OpenAI whisper (MIT) + optional Silero VAD (MIT).
 
-#### aeneas ✅ commercial-safe
+#### aeneas 🚫 AGPL-3.0 — quarantine-only (corrected Wave 3: was wrongly badged ✅)
 - **What:** Forced aligner: sync a known script to its narration audio, output fragment timestamps
 - **URL:** https://github.com/readbeyond/aeneas
 - **License:** AGPL-3.0 (verified via upstream README 'the GNU Affero General Public License Version 3') (verified)
@@ -2529,6 +2529,246 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 #### PanelForge ✅ — re-verified 2026-10-07
 - **License:** Proprietary (free-forever tier) (verified via https://www.panel-forge.com/ (Free: 'No Sign-up & Use Forever' — up to 100 panels/project, 1080p, H.264 export, PSD/PDF/Premiere/Resolve export; crawled 1h before check))
 - **Notes:** DEEP-VERIFY 2026-10-07: free-forever claim CONFIRMED at official pricing page. Duplicate of Wave-1 entry — re-verification only.
+
+## Wave 3 additions (2026-10-07)
+
+139 new rows from 3 workers (catalog researcher: 128; voice/transcription: 7 rows incl. 3 documented-blocked; heavy video-gen/puppet: 5). Licenses verified at upstream sources, never assumed. Plus 1 catalog correction (aeneas ✅ → 🚫 AGPL-3.0, applied inline Wave 3).
+
+### Puppet rigs + video-gen (Worker C) — 5
+
+Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
+(primary source), never guessed.
+
+## 1. 2D animation & cartoon rigging / puppet tools
+
+#### nijigenerate v1.0.0-beta2 (Linux prebuilt) — RUN-PROVEN ✅ commercial-safe
+- **What:** Prebuilt Linux x86_64 editor for the nijilive puppet format; RUN-PROVEN on this box (launched under Xvfb + D-Bus, full editor UI screenshot-verified 2026-10-07)
+- **URL:** https://github.com/nijigenerate/nijigenerate
+- **License:** BSD-2-Clause (verified via GitHub API `license.spdx_id` — primary source; stronger than Wave 2's alternativeTo/deepwiki citations)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5 (prebuilt, no D toolchain needed)
+- **Status:** WIRED — run-proven. Proof: `tools/puppet/PROOFS.md` + `tools/puppet/proofs/nijigenerate-xvfb2-proof.png`
+- **Notes:** Headless recipe needs Xvfb AND a D-Bus session (crashes without dbus-launch); XDG_RUNTIME_DIR must be set. Use for ALL new puppet rigging. [Wave 3]
+
+#### Inochi Creator v0.8.6 (Linux prebuilt) — RUN-PROVEN ✅ commercial-safe
+- **What:** Legacy Inochi2D rigging application, prebuilt Linux x86_64; RUN-PROVEN on this box (launched under Xvfb + D-Bus, editor opens 2026-10-07)
+- **URL:** https://github.com/Inochi2D/inochi-creator
+- **License:** BSD-2-Clause (verified via GitHub API `license.spdx_id` — primary source)
+- **Free tier:** fully open (code); shows a donation nagscreen on first run ("buy a copy today") — donation prompt only, code stays BSD-2
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** WIRED — run-proven. Proof: `tools/puppet/PROOFS.md` + `tools/puppet/proofs/inochi-creator-xvfb-proof.png`
+- **Notes:** Upstream slow (last release 2024-09-18); nijigenerate is the active line — prefer nijigenerate for new rigs. [Wave 3]
+
+## 10. Image-to-video / video generation
+
+#### Wan 2.2 TI2V-5B — weight accounting + license re-verify ✅ commercial-safe
+- **What:** Full weight-set accounting from live HF API: 3 diffusion shards (9.83 + 10.00 + 0.18 GB) + VAE (2.82 GB) + umt5-xxl T5 (~11 GB) ≈ **34 GB total**; Apache-2.0 re-verified from live model card + upstream LICENSE.txt (fetched 2026-10-07)
+- **URL:** https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B
+- **License:** Apache-2.0 ✅ (code AND weights)
+- **Repo lane:** both (image-to-video-/-video-gen)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5 (GPU box with ≥40 GB disk)
+- **Status:** BLOCKED-HONEST on this sandbox (no CUDA, 7 GB free disk) — `tools/video/wave3/PROOFS_WAVE3.md` is the honest partial; diffusers import path re-verified (`WanImageToVideoPipeline` imports clean, diffusers 0.35.1). Real few-frame I2V test belongs on a GPU worker.
+- **Notes:** Evidence files (README, config.json, safetensors index, license text) in `tools/video/wave3/`. [Wave 3]
+
+#### InvokeAI — CPU-only pip install + real generation ✅ commercial-safe
+- **What:** Full `pip install invokeai` (6.14.2) with CPU-only torch (`--extra-index-url https://download.pytorch.org/whl/cpu`); server booted, API live, SD1.5 model installed, REAL 512×512 text-to-image generation completed on CPU (~6 min for 10 steps)
+- **URL:** https://github.com/invoke-ai/InvokeAI
+- **License:** Apache-2.0 ✅ (verified via GitHub API `spdx_id` + PyPI classifier, 2026-10-07)
+- **Repo lane:** both
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** WIRED — generation-proven. Proof: `tools/invokeai/PROOFS.md` + `tools/invokeai/proof-smoke.png` (cartoon wizard, matches prompt)
+- **Notes:** KEY GOTCHAS: (1) default `pip install invokeai` pulls CUDA torch (multi-GB nvidia wheels) — use the PyTorch CPU index on CPU boxes. (2) pip unpacks big wheels into TMPDIR — /tmp is a 512 MB tmpfs here, so `TMPDIR` must point at the big volume. (3) The server inherits the sandbox's `no_proxy`; strip IPv6 literals or httpx dies with `Invalid port: ':1]'` (see ~/TOOLS.md). (4) `invokeai.yaml` needs `schema_version: "4.0.3"`; no `--port` CLI flag. [Wave 3]
+
+## 11. Compositing / editing / assembly (tooling)
+
+#### mss (Python screenshot) ✅ commercial-safe
+- **What:** Cross-platform screenshot library; used to capture Xvfb virtual-display proofs of the puppet editors headlessly
+- **URL:** https://github.com/BoboTiG/python-mss
+- **License:** MIT ✅ (verified via PyPI metadata 2026-10-07)
+- **Repo lane:** trippedd (proofing/QC tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5 (`pip install mss`)
+- **Status:** WIRED — used for all Wave 3 GUI proofs
+- **Notes:** `mss.mss()` is deprecated in 10.x; use `mss.MSS(display=':99')`. [Wave 3]
+
+## Technique note (not a resource, for the wiring crews)
+- **Headless GUI proof pattern:** `Xvfb :99` + `dbus-daemon --session` + `mss` screenshot = how to verify any Linux GUI app on a headless box. Documented in `tools/puppet/README.md`.
+
+### Voice / transcription (Worker B) — 7 rows
+
+| Name | URL | License badge | What it does | Repo lane | Free-tier limits | Impact/Difficulty |
+|------|-----|---------------|--------------|-----------|------------------|-------------------|
+| sherpa-onnx | https://github.com/k2-fsa/sherpa-onnx | Apache-2.0 ✅ (verified at upstream LICENSE) | ONNX-runtime TTS/ASR/VAD toolkit, streaming-capable, offline. Used here for Matcha TTS. | trippedd-studio `tools/voice/sherpa-tts/` (WIRED, real proof) | None — fully local, no key, no account | High / Low — pip install + curl-fetched ONNX models |
+| Matcha-TTS LJSpeech voice (csukuangfj/matcha-icefall-en_US-ljspeech) | https://huggingface.co/csukuangfj/matcha-icefall-en_US-ljspeech | ❓ UNKNOWN (no license statement on the model card; training data is public-domain LJSpeech) | Single-female-English neural voice for sherpa-onnx Matcha | trippedd-studio `tools/voice/sherpa-tts/models/` | None — local files | High / Low — prototype-only until owner clears the voice |
+| Vocos vocoder (vocos-22khz-univ.onnx) | https://github.com/k2-fsa/sherpa-onnx/releases/tag/vocoder-models | MIT ✅ (upstream gemelo-ai/vocos LICENSE, Charactr Inc.) | Universal neural vocoder; required as the separate vocoder for the Matcha checkpoint above | trippedd-studio `tools/voice/sherpa-tts/models/` | None — local files | Medium / Low |
+| WhisperX (proof completed) | https://github.com/m-bain/whisperX | BSD-2-Clause ✅ | Word-level ASR + wav2vec2 alignment. Wave 2 wired the venv/CLI; Wave 3 completed the missing end-to-end proof (9 word cues, 0.03–3.61 s, on real speech; tiny-model accuracy 8/9 words). | trippedd-studio `tools/captions/` (PROOFS_WAVE3.md) | None — local | High / Medium — models must be curl-seeded into the HF cache (httpx stalls under the egress proxy); nltk punkt_tab also via curl |
+
+## Attempted but blocked (documented, not wired)
+
+| Name | URL | License badge | Blocker |
+|------|-----|---------------|---------|
+| Coqui TTS / XTTS v2 (code) | https://github.com/coqui-ai/TTS | MPL-2.0 (code) ✅ / XTTS-v2 weights CPML 🚫 NC | `pip install TTS` fails on this sandbox: every released TTS version requires Python <3.12, sandbox is 3.12-only; Coqui shut down Jan 2024 so no fix is coming. XTTS v2 weights are non-commercial-only regardless. |
+| Montreal Forced Aligner | https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner | MIT ✅ | `montreal-forced-aligner` installs but is broken on 3.12: it needs `kalpy`, which has no 3.12 wheels on PyPI (`No matching distribution found`). phoneme-alignment lane stays with Rhubarb (wired) / Gentle (Docker path). |
+| edge-tts | https://github.com/rany2/edge-tts | MIT ✅ (verify) | Synthesis still blocked Wave 3: `WSServerHandshakeError: 101, 'Invalid connection header'` on wss://speech.platform.bing.com — sandbox egress proxy kills the WebSocket upgrade. Replaced by sherpa-tts offline. |
+
+## Catalog correction (existing entry is wrong)
+
+- `docs/RESOURCE_CATALOG.md` lists **aeneas** as "Apache-2.0 ✅ commercial-safe" in one TTS-tools line. Upstream README (readbeyond/aeneas, verified 2026-10-07) says **AGPL-3.0** ("released under the terms of the GNU Affero General Public License Version 3"). The separate quarantine entries (AGPL 🚫) are correct — the ✅ line must be fixed by the coordinator.
+
+### Thin-lane research (Worker A) — 128
+
+### SFX libraries — Wave 3 (+27)
+
+| Name | URL | License (badge) | What it does (1-2 lines) | Repo lane | Free-tier limits | Impact / Difficulty |
+|---|---|---|---|---|---|---|
+| ZapSplat | https://www.zapsplat.com | ✅ Standard License — free commercial use with attribution | 160k+ free SFX + music, strong cartoon/game categories (boings, zaps, whooshes); searchable + packs. | trippedd (sfx) | Free account; MP3 free, WAV behind paywall; 3 downloads per 10 min. | 5 / 2 |
+| SoundBible | https://soundbible.com | ✅ mixed — use "Royalty Free"/PD/CC-BY items only | Thousands of free WAV/MP3 SFX; each sound labeled PD, royalty-free, or CC-BY. Cartoon + comedy categories. | trippedd (sfx) | Fully free, no login. | 4 / 1 |
+| FreeSFX (freesfx.co.uk) | https://www.freesfx.co.uk | ✅ EULA — free commercial + broadcast, credit required | 4,500+ catalogued SFX + 850 music tracks; comedy/cartoon categories. Must credit freesfx.co.uk; no standalone redistribution. | trippedd (sfx) | Fully free. | 4 / 1 |
+| PacDV | http://www.pacdv.com/sounds/ | ✅ royalty-free — free for productions, no resale | Long-running royalty-free SFX (interfaces, machines, comedy, voices); WAV+MP3. Attribution optional. | trippedd (sfx) | Fully free, no login. | 4 / 1 |
+| Partners In Rhyme (PIR free SFX) | https://www.partnersinrhyme.com | ✅ royalty-free for PIR-created categories; ⚠️ "personal use only" categories excluded | Free WAV SFX incl. dedicated Cartoon Accents (boings, zips, crashes), weird/comedy sounds. Use only PIR-created categories. | trippedd (sfx) | Fully free. | 4 / 1 |
+| SoundImage.org (Eric Matyas) | https://soundimage.org | ✅ custom royalty-free license, attribution required, commercial OK | Thousands of original SFX + music (Ogg loops, MP3) by one composer; cartoon/comedy pages. Credit "Music/SFX by Eric Matyas, soundimage.org". | trippedd (music+sfx) | Fully free. | 4 / 1 |
+| 99Sounds | https://99sounds.org | ✅ 100% royalty-free, commercial + non-commercial | Indie label of free designer SFX packs (cinematic, sci-fi, retro 8-bit, city, nature); 24-bit WAV. No redistribution as libraries. | trippedd (sfx) | Fully free (pay-what-you-want). | 4 / 1 |
+| Orange Free Sounds | https://www.orangefreesounds.com | ✅ CC-BY 4.0 per sound, commercial OK with attribution | Large CC-BY SFX library (animals, horror, comedy, cartoon); each page states its CC-BY-4.0 license. | trippedd (sfx) | Fully free, no login. | 4 / 1 |
+| Little Robot Sound Factory | https://www.littlerobotsoundfactory.com | ✅ CC-BY (per Freesound postings) with attribution | Bulk 8-bit/game SFX libraries (jumps, shoots, UI, jingles); source sounds are CC-BY on Freesound — check per-sound. | trippedd (sfx) | Fully free. | 4 / 1 |
+| Videvo (SFX) | https://www.videvo.net | ✅ Videvo Attribution License or CC-BY 3.0 per clip, commercial OK with credit | 180k+ free SFX + music clips; per-clip license filter. Premium removes attribution. | trippedd (sfx) | Free tier; attribution required on free clips. | 4 / 1 |
+| Kenney audio packs | https://kenney.nl/assets?q=audio | ✅ CC0 1.0 Universal, no attribution | Game-audio packs (UI, RPG, impacts, sci-fi, digital); OGG. Same CC0 terms as all Kenney assets. | trippedd (sfx) | Fully free, no signup. | 4 / 1 |
+| SampleSwap | https://sampleswap.org | ❓ per-sound CC (many BY-NC) — filter commercial-safe | Community sample/loop/SFX archive; each item shows its CC variant. Use only by/by-sa items for commercial. | trippedd (sfx) | Fully free. | 3 / 2 |
+| Looperman (loops) | https://www.looperman.com | ✅ loops royalty-free commercial + non-commercial (acapellas need permission) | Huge user-uploaded loop/SFX library; loops cleared for commercial productions, cannot resell as loops. | trippedd (sfx+music) | Fully free. | 4 / 1 |
+| Bfxr (bfxr2) | https://www.bfxr.net | ✅ tool Apache 2.0 / MIT (increpare/bfxr2) — generated sounds are yours | Browser chiptune SFX synthesizer (sfxr lineage): generate original 8-bit bleeps, boings, zaps, explosions; export WAV. | trippedd (sfx) | Fully free, runs in browser. | 4 / 1 |
+| ChipTone (SFBGames) | https://sfbgames.itch.io/chiptone | ✅ generated sounds CC0 per author (Tom Vian) | Free chiptune SFX generator with sampler + sequencer; author grants CC0 on all generated sounds, commercial OK. | trippedd (sfx) | Fully free, browser + desktop. | 4 / 1 |
+| jsfxr | https://github.com/mneubrand/jsfxr | ✅ Apache 2.0 | Embeddable JS sfxr port — synthesize retro SFX procedurally at runtime or export; 2.5KB minified. | trippedd (sfx) | Fully free. | 3 / 2 |
+| LabChirp | https://www.labbed.net/software/labchirp/ | ✅ freeware — created sounds yours, commercial OK | Precision chiptune SFX synthesizer (8 channels, envelopes, mutator, batch export); manual grants commercial use of generated sounds. | trippedd (sfx) | Fully free (Windows). | 4 / 1 |
+| MusicRadar SampleRadar | https://www.musicradar.com/news/sampleradar-essential-synth-samples | ✅ royalty-free, no redistribution | 70k+ free pro samples/loops/hits (incl. cartoon/comedy FX packs); royalty-free for productions, cannot redistribute raw. | trippedd (sfx+music) | Fully free. | 4 / 1 |
+| NPS Sound Gallery | https://www.nps.gov/subjects/sound/gallery.htm | ✅ public domain (US gov), credit NPS requested | Natural + human-made ambience from US national parks (thunderstorms, streams, crowds, wildlife); PD, download without limit. | trippedd (sfx) | Fully free, public domain. | 3 / 1 |
+| SoundGator | https://www.soundgator.com | ✅ free — use in projects, no attribution; ⚠️ no standalone resale, no AI-training use | Growing free SFX library (MP3+WAV); no signup, no attribution. Cannot post as standalone "sound effect videos". | trippedd (sfx) | Fully free, no signup. | 3 / 1 |
+| BOOM Library free packs | https://www.boomlibrary.com | ✅ royalty-free EULA covers free download packs, commercial OK | Pro-grade free SFX packs; full media license (sync, broadcast, games) incl. free packs. No standalone redistribution. | trippedd (sfx) | Fully free packs. | 4 / 1 |
+| Airborne Sound (free SFX) | https://www.airbornesound.com/sound-effects-library/free-sound-effects/ | ✅ free downloads under Airborne EULA — use in projects incl. commercial | 3GB+ free pro field recordings (crowds, trains, buttons, construction, weapons); 96/24 WAV. No redistribution. | trippedd (sfx) | Fully free. | 4 / 1 |
+| GameSounds.xyz | https://gamesounds.xyz | ❓ aggregates CC0/CC-BY/royalty-free game audio — verify per item | Curated directory of royalty-free/PD game music + SFX (Sonniss, Kenney, community packs). Check per-item license. | trippedd (sfx+music) | Fully free. | 3 / 1 |
+| Free To Use Sounds | https://www.freetousesounds.com | ❓ license agreement allows personal + commercial per FAQ — verify per release | Field-recording collective (city, nature, ambience); FAQ states commercial OK under license agreement. Verify each release. | trippedd (sfx) | Mixed free/paid releases. | 3 / 1 |
+| YouTube Audio Library (SFX) | https://www.youtube.com/audiolibrary | ❓ free for productions; check per-item attribution flag | YouTube's built-in free SFX + music library; most items free with no attribution, some require credit. | trippedd (sfx+music) | Free (YouTube account). | 4 / 1 |
+| FlashKit SoundFX | http://www.flashkit.com/soundfx/ | ❓ per-file license ("Freeware" = use as you please incl. commercial) — check each file | Legacy archive of thousands of SFX/loops; per-file usage flags. Freeware-tagged files OK for commercial per guidelines. | trippedd (sfx) | Fully free. | 3 / 2 |
+| Cymatics free packs | https://cymatics.fm/pages/free-download-vault | ✅ 100% royalty-free, no redistribution | Free EDM/cinematic sample packs (drums, FX, vocals, MIDI); royalty-free for placements/sync/beats. | trippedd (sfx+music) | Free vault (email signup). | 3 / 1 |
+
+### Music libraries (CC0 / PD / CC-BY) — Wave 3 (+26)
+| Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
+| Loyalty Freak Music | https://www.loyaltyfreakmusic.com | ✅ CC0 (per-track CC0 dedication) | Dedicated CC0 music archive (Komiku, Monplaisir, Soft And Furious, etc.); chippy/upbeat loops ideal for cartoon scoring, zero attribution required. | trippedd (music) | Fully free. | 5 / 1 |
+| Monplaisir (via Loyalty Freak) | https://www.loyaltyfreakmusic.com | ✅ CC0 | Retro chiptune 8-bit music; classic video-game-flavored tracks — good game/animation energy for cartoon sequences. | trippedd (music) | Fully free. | 4 / 1 |
+| Kai Engel | https://freemusicarchive.org/music/Kai_Engel/ | ✅ CC-BY (per FMA; attribute) | Rich acoustic/electronic composer catalog; cinematic, emotional beds for score underscoring. | trippedd (music) | Free; attribute. | 4 / 1 |
+| Lee Rosevere | https://freemusicarchive.org/music/lee-rosevere/ | ✅ CC-BY (use FMA CC-BY releases; some Bandcamp albums all-rights-reserved) | Prolific ambient/chill/electronic instrumentalist; huge catalog of score-safe tracks with credit. | trippedd (music) | Free; attribute; check per album. | 4 / 1 |
+| Jahzzar | https://freemusicarchive.org/music/Jahzzar/ | ✅ CC BY-SA 4.0 (commercial OK w/ attribution + share-alike; FMA flags YT incompat.) | High-energy electronic/rock; dramatic action tracks. Note: share-alike on derivatives; FMA notes YouTube risk — confirm before platform distribution. | trippedd (music) | Free; BY-SA. | 4 / 2 |
+| Silverman Sound Studios (Shane Ivers) | https://www.silvermansound.com | ✅ CC BY 4.0 free tier (attribute; WAV/stems = paid Pro) | Composer catalog with dedicated cartoon/circus/comedy categories ("Clowning Around"); orchestral + novelty score beds for funny scenes. | trippedd (music) | Free MP3 w/ credit; Pro WAVs paid. | 5 / 1 |
+| StreamBeats (Harris Heller) | https://www.streambeats.com | ✅ free, no attribution required (DMCA-safe) | 1,500+ original tracks (lofi, synthwave, rock, EDM); usable in monetized videos; zero credit required. | trippedd (music) | Fully free. | 4 / 1 |
+| NoCopyrightSounds (NCS) | https://ncs.io | ❓ free for creators per usage policy (YouTube/TikTok/Twitch OK w/ attribution); check policy for other platforms | Major copyright-free EDM label; high-energy tracks for action/intro sequences. Restriction: no "music is the primary focus" use; confirm platform scope via usage policy. | trippedd (music) | Free; attribution; platform-scoped. | 4 / 2 |
+| White Bat Audio (Karl Casey) | https://whitebataudio.com | ✅ free incl. monetized w/ credit ("Music by Karl Casey @ White Bat Audio") | Darksynth/synthwave/metal/electronic; action + villain + chase energy. Cannot redistribute music as standalone product. | trippedd (music) | Free; attribution required. | 4 / 1 |
+| Ross Bugden | https://www.youtube.com/@rossbugden | ✅ CC-BY 4.0 (attribute; dispute Content ID claims; no Content-ID registration) | Epic/trailer/dramatic orchestral music; free incl. commercial with credit. | trippedd (music) | Free; attribute. | 4 / 1 |
+| Lakey Inspired | https://www.youtube.com/channel/UCOmy8wuTpC95lefU5d1dt2Q | ✅ CC BY-SA 3.0 (commercial OK w/ credit) | Vlog lofi/hip-hop; laid-back scene music. Credit in description. | trippedd (music) | Free; BY-SA. | 3 / 1 |
+| Joakim Karud | https://joakimkarud.com | ✅ CC BY-SA 3.0 for YouTube w/ credit; contact artist for non-YouTube projects | Chill electronic/hip-hop; bright cartoon-friendly grooves. Artist asks to be contacted for non-YouTube uses. | trippedd (music) | Free on YT w/ credit; ask otherwise. | 3 / 1 |
+| Nicolai Heidlas | https://twitter.com/NHeidlas | ✅ CC BY-SA 3.0 (commercial OK w/ credit) | Upbeat/electronic/folk-hybrid; sunny positive background beds. | trippedd (music) | Free; BY-SA. | 3 / 1 |
+| Ghostrifter Official | https://soundcloud.com/ghostrifter-official | ✅ CC BY-SA 4.0 / BY-SA 3.0 / BY-ND 3.0 per track (free incl. monetized w/ credit) | Phonk/wave/synthwave/lofi; night-city and chase vibes for cartoon sequences. | trippedd (music) | Free; check per-track variant. | 4 / 1 |
+| Birocratic | http://birocratic.com/license | ❓ artist grants free video use w/ credit + one-time download; current site sells downloads (singles ≤$1) — verify before use | Chill-hop/jazz-hop beats ("Tony's Belated Breakfast"); vlog-style comedy scene music. | trippedd (music) | ❓ may be paid downloads now. | 3 / 2 |
+| IMSLP (Petrucci Music Library) | https://imslp.org | ✅ public-domain scores (PD in Canada; verify per-work for US/EU) | 769,000+ PD classical scores + 92,000 recordings; orchestral score beds you can arrange/record yourself. | trippedd (music) | Free (subscription optional). | 5 / 2 |
+| Mutopia Project | https://www.mutopiaproject.org | ✅ public domain / CC (free to download, modify, perform, record) | 2,100+ LilyPond-typeset PD classical pieces (PDF + MIDI + source); render your own MIDI performances for score beds. | trippedd (music) | Fully free. | 4 / 2 |
+| CPDL (Choral Public Domain Library) | https://www.cpdl.org | ✅ PD works + CPDL license (allows copy/distribute/perform/record, incl. for a fee) | Choral/vocal classical archive; check each edition's license (some modern editions under other CC variants). | trippedd (music) | Fully free. | 3 / 2 |
+| Open Goldberg Variations | https://opengoldbergvariations.org | ✅ CC0 (score + Kimiko Ishizaka studio recording) | Definitive PD Bach recording (85 min) + open MuseScore score; royalty-free classical piano for any scene. | trippedd (music) | Fully free. | 4 / 1 |
+| Well-Tempered Clavier (OpenWTC) | https://www.welltemperedclavier.org | ✅ public domain (Kimiko Ishizaka recording + score, Kickstarter-funded) | Bach WTC Book 1, free PD piano recording + score; elegant score beds. | trippedd (music) | Fully free. | 4 / 1 |
+| Kunst der Fuge | https://www.kunstderfuge.com | ❓ "free, legal" classical MIDI; some reports of 5-file limit for non-paying members — verify | 19,300+ classical MIDI files (largest net collection); MIDI for custom orchestral/electronic re-renders. | trippedd (music) | Free w/ possible download cap. | 3 / 2 |
+| Red Hot Jazz Archive | https://syncopatedtimes.com/red-hot-jazz-archive/ | ✅ public-domain archive (MP3s hosted via Archive.org/French servers; verify per recording) | Pre-1930 jazz & ragtime recordings (Duke Ellington pseudonym bands etc.); authentic period score beds for vintage cartoon scenes. | trippedd (music) | Fully free; verify date. | 4 / 2 |
+| Great 78 Project (Internet Archive) | https://archive.org/details/georgeblood | ❓ 400k+ digitized 78rpm; pre-1923 recordings PD (Music Modernization Act); post-1923 may be copyrighted (project sued/settled 2025) — verify date | Huge vintage music archive; PD pre-1923 jazz/blues/folk for period scoring. Check recording date before use. | trippedd (music) | Free; verify per-recording date. | 4 / 3 |
+| Battle of the Bits | https://battleofthebits.com | ❓ per-entry license (compo entries generally free reuse; verify each) | Chiptune battle community; thousands of chip-music entries (Famicom, Game Boy, SID) for cartoon game/retro energy. | trippedd (music) | Free; check entry license. | 4 / 2 |
+| Ubiktune | https://ubiktune.com | ❓ chiptune netlabel; many free digital albums, some paid — verify per release | Quality chiptune albums (virt, coda, Danimal Cannon); 8-bit score material. | trippedd (music) | Mixed free/paid. | 4 / 2 |
+
+### Anime-specific tooling — Wave 3 (+18)
+| Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
+| MToon | https://github.com/Santarh/MToon | ✅ MIT (verified on repo page) | VRM-standard toon shader w/ Unity Global Illumination; anime cel look for 3D characters. | trippedd (anime tools) | Fully free/open. | 5 / 2 |
+| lilToon | https://github.com/lilxyzw/lilToon | ✅ MIT (verified on repo page) | Feature-rich avatar toon shader (Unity); widely-adopted cel look w/ outline, matcap, emission options. | trippedd (anime tools) | Fully free/open. | 5 / 2 |
+| URP Toon Lit Shader Example (NiloCat) | https://github.com/ColinLeung-NiloCat/UnityURPToonLitShaderExample | ✅ MIT | Minimal readable URP toon-lit + outline shader; learn/customize your own cel shader. | trippedd (anime tools) | Fully free/open. | 4 / 3 |
+| Unity Toon Shader (com.unity.toonshader) | https://github.com/Unity-Technologies/com.unity.toonshader | ❓ Unity Companion License (source); Unity-chan assets under Unity-Chan License — verify | Official Unity toon shader package (HDRP/URP); cel shading + outline built for Unity's render pipelines. | trippedd (anime tools) | Free; license terms apply. | 4 / 2 |
+| UTS2 (UnityChanToonShaderVer2) | https://github.com/unity3d-jp/UnityChanToonShaderVer2_Project | ❓ Unity-Chan License 2.0 — verify before shipping | Production-proven anime toon shader (used on Unity-chan); tessellation, outline, stylized lighting. | trippedd (anime tools) | Free; check license. | 4 / 2 |
+| OpenSeeFace | https://github.com/emilianavt/OpenSeeFace | ✅ BSD-2-Clause (verified via forks' docs) | CPU real-time facial landmark tracking w/ Unity integration; drives VRM/Live2D faces from webcam. | trippedd (anime tools) | Fully free/open. | 4 / 2 |
+| VSeeFace | https://www.vseeface.icu/ | ✅ freeware (commercial OK per official terms; no modification, no false authorship) | Free VRM 0.x VTuber app w/ built-in face tracking; record reference performances for cartoon characters. | trippedd (anime tools) | Free; closed source. | 4 / 1 |
+| UniVRM | https://github.com/vrm-c/UniVRM | ✅ MIT | Standard VRM import/export for Unity (VRM 1.0 + glTF 2.0); anime avatar pipeline in Unity. | trippedd (anime tools) | Fully free/open. | 4 / 2 |
+| three-vrm | https://github.com/pixiv/three-vrm | ✅ MIT | VRM on Three.js; render anime avatars in the browser. | trippedd (anime tools) | Fully free/open. | 4 / 2 |
+| VRoid Studio | https://vroid.com/en/studio | ✅ free; commercial use of created models OK per pixiv ToS Art. 11–13 (base meshes remain pixiv copyright; not CC0) | Free anime character creator exporting VRM 0.x/1.0; fast cartoon character authoring. | trippedd (anime tools) | Free desktop/iPad. | 5 / 1 |
+| nanoem | https://github.com/hkrn/nanoem | ✅ MIT + MPL-2.0 (dual, per README) | Cross-platform MMD-compatible player/editor (macOS/Windows/Linux); anime-style 3D animation tool. | trippedd (anime tools) | Fully free/open. | 4 / 2 |
+| MMD (MikuMikuDance) | https://sites.google.com/view/vpvp/ | ✅ freeware (HiguchiM; output videos usable) | The classic free anime 3D animation engine (PMD/PMX); huge community motion/model library. Windows only. | trippedd (anime tools) | Free; Windows. | 4 / 2 |
+| PmxEditor | https://mmdfr.fr/tools/pmxeditor/ | ❓ free for personal use; commercial use requires studying creator's Japanese terms — verify | Deep PMX/PMD model editor (textures, joints, accessories); standard MMD model-prep tool. | trippedd (anime tools) | Free; personal-use clear. | 3 / 2 |
+| popone | https://github.com/tinatsu-nomy/popone | ✅ 0BSD (no attribution required) | 3D viewer + converter for VRM/FBX/PMX/PMD/OBJ; quick model inspection and format conversion. | trippedd (anime tools) | Fully free/open. | 3 / 1 |
+| Mixamo | https://www.mixamo.com | ✅ free w/ free Adobe ID; royalty-free personal/commercial/nonprofit (no raw-file redistribution) | 2,500+ mocap animations + auto-rigger; instant character animation for cartoon characters. | trippedd (anime tools) | Free; Adobe account. | 5 / 1 |
+| Style2Paints (lllyasviel) | https://github.com/lllyasviel/style2paints | ✅ Apache-2.0 code (verified on repo); colorized output fully yours incl. commercial | AI lineart colorization w/ layered PSD output (flats, gradients, shading); anime coloring accelerator. | trippedd (anime tools) | Free; models proprietary. | 5 / 2 |
+| waifu2x | https://github.com/nagadomi/waifu2x | ✅ MIT | CNN super-resolution + denoise for anime-style art; upscale lineart/backgrounds. | trippedd (anime tools) | Fully free/open. | 4 / 2 |
+| Anime4K | https://github.com/bloc97/Anime4K | ✅ MIT | Real-time high-quality anime video upscaler (GLSL shaders); temporally coherent lineart upscale. | trippedd (anime tools) | Fully free/open. | 4 / 2 |
+| manga-ocr | https://github.com/kha-white/manga-ocr | ✅ Apache-2.0 (code + weights) | Japanese manga OCR (vertical text, furigana); text extraction for manga assets/localization. | trippedd (anime tools) | Fully free/open. | 3 / 3 |
+| DeepDanbooru | https://github.com/KichangKim/DeepDanbooru | ✅ MIT | Anime image tag estimation (Danbooru tags); auto-tag reference art for asset organization. | trippedd (anime tools) | Fully free/open. | 3 / 3 |
+| Sakugabooru | https://www.sakugabooru.com | ❓ reference database; clips are copyrighted footage — STUDY REFERENCE ONLY, never ship clips | Community sakuga archive w/ animator tags (smears, impact frames, effects); study motion timing/technique. | trippedd (anime tools) | Free browsing. | 4 / 1 |
+| FireAlpaca | https://firealpaca.com | ✅ freeware (free for personal + commercial use per ToS; no software redistribution) | Lightweight manga/anime-focused paint app; clean UI, no watermark on output. | trippedd (anime tools) | Free; closed source. | 4 / 1 |
+| MediBang Paint | https://medibangpaint.com | ✅ free (freemium; output commercially usable) | Manga-first paint app w/ 1000+ free brushes, screentones, panel tools, cloud sync. | trippedd (anime tools) | Free; some premium features. | 4 / 1 |
+
+### Background / plate generation — Wave 3 (+21)
+| Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
+| Met Open Access | https://www.metmuseum.org/art/collection | ✅ CC0 1.0 (492,000+ PD-artwork images; keyless API `collectionapi.metmuseum.org`, gate on `isPublicDomain: true`) | Huge CC0 archive of paintings/prints/photos — period backgrounds, texture plates, matte-painting source. | trippedd (bg plates) | Free, no key; 80 req/s ceiling. | 5 / 2 |
+| Rijksmuseum Rijksstudio | https://www.rijksmuseum.nl/en/rijksstudio | ✅ CC0 1.0 / Public Domain Mark (per official Information & Data Policy §3.7; 709,000+ works, keyless API `data.rijksmuseum.nl`) | Hi-res PD Dutch Golden Age art, landscapes, objects — BG reference and matte plates. | trippedd (bg plates) | Free, keyless API. | 5 / 2 |
+| Art Institute of Chicago Open Access | https://www.artic.edu/open-access | ✅ CC0 1.0 (`is_public_domain` API flag; keyless API `api.artic.edu/api/v1`) | 44,000+ CC0 artworks incl. Seurat/Monet landscapes; IIIF hi-res downloads for plates. | trippedd (bg plates) | Free, 60 req/min. | 4 / 2 |
+| Cleveland Museum of Art Open Access | https://openaccess-api.clevelandart.org | ✅ CC0 (`share_license_status == "CC0"`; keyless API; 41,000+ works w/ images, print-res + TIFF) | Keyless CC0 API w/ per-record license flags — reliable machine-gated PD art sourcing. | trippedd (bg plates) | Free, no key. | 4 / 2 |
+| National Gallery of Art (NGA) Images | https://www.nga.gov/collection-search.html | ✅ PD (open-access works: free for any use incl. commercial; 53,000 hi-res images also CC0 on Wikimedia Commons) | US federal art museum's PD image repository — landscapes, architecture, portraits for plates. | trippedd (bg plates) | Free; registration needed for reproduction-size. | 4 / 1 |
+| SMK Open (Statens Museum for Kunst) | https://www.smk.dk/en/article/smk-open/ | ❓ API reports Public Domain Mark 1.0 (functionally CC0); keyless `api.smk.dk/api/v1` — verify | Danish national gallery open collection (European/Nordic art) w/ keyless PD-flagged API. | trippedd (bg plates) | Free, keyless. | 3 / 2 |
+| NYPL Digital Collections | https://digitalcollections.nypl.org | ✅ PD (~500,000 PD items; "no permission needed, no known restrictions") | Historic NYC photos, maps, illustrations, posters — period BG plates for street/city scenes. | trippedd (bg plates) | Free; watch per-item rights label. | 5 / 1 |
+| NOAA Digital Library (photo library) | https://www.noaa.gov/noaa-collections/photo-library | ✅ PD (federal images "in the public domain and cannot be copyrighted"; credit requested) | Skies, seas, storms, aerial/coastal imagery for BG plates and sky references. | trippedd (bg plates) | Free; third-party video footage excepted. | 4 / 1 |
+| USGS Multimedia Gallery | https://www.usgs.gov/multimedia-gallery | ✅ PD (USGS-authored imagery public domain; verify per-image credit) | Landscapes, geology, volcanoes, aerials — natural BG plates. | trippedd (bg plates) | Free. | 3 / 1 |
+| Biodiversity Heritage Library (Flickr) | https://www.flickr.com/photos/biodivlibrary/ | ✅ PD (most images PD; check per-item license) | 150,000+ PD botanical/zoological plates — nature detail, foliage references, vintage nature plates. | trippedd (bg plates) | Free; no account needed for download. | 4 / 1 |
+| Internet Archive Book Images | https://www.flickr.com/photos/internetarchivebookimages/ | ✅ PD (2.6M+ images from pre-1922 books; all public domain) | Largest PD illustration pool: engravings, diagrams, maps — BG texture/reference at scale. | trippedd (bg plates) | Free. | 5 / 2 |
+| Old Book Illustrations | https://www.oldbookillustrations.com | ✅ PD (illustrations "considered public domain in most countries"; text content is CC BY-NC-SA — avoid copying text) | 3,150+ restored PD book illustrations (Verne/Poe/Rackham era) — searchable vintage art for plates. | trippedd (bg plates) | Free. | 4 / 1 |
+| Poly Haven | https://polyhaven.com | ✅ CC0 1.0 (HDRIs, PBR textures, models; no account needed) | Photoreal CC0 HDRI skies + PBR textures for BG plates, environment lighting, stylized-toon base plates. | trippedd (bg plates) | Free, no key; API is non-commercial (download files directly). | 5 / 1 |
+| AmbientCG | https://ambientcg.com | ✅ CC0 1.0 (2,000+ PBR materials, 418 HDRIs; bundling explicitly allowed) | CC0 PBR texture sets + HDRI skies — ground/rock/wood surfaces for BG art. | trippedd (bg plates) | Free; direct downloads. | 5 / 1 |
+| 3DTextures.me | https://3dtextures.me | ✅ CC0 (PBR sets ≤4K) | Secondary CC0 PBR texture source for BG surfaces. | trippedd (bg plates) | Free. | 3 / 1 |
+| Texture Ninja | https://textureninja.com | ✅ CC0 (photo textures) | CC0 photo textures for calibration/albedo reference and BG detail. | trippedd (bg plates) | Free. | 3 / 1 |
+| CraftPix freebies | https://craftpix.net/freebies/ | ✅ royalty-free personal + commercial (Freebie Products license; no redistribution of loose source files) | Ready parallax layered 2D backgrounds (city, sky, clouds), tilesets — cartoon-style plates w/ layered PNGs. | trippedd (bg plates) | Free account; source files not redistributable. | 5 / 1 |
+| Openverse | https://openverse.org | ❓ aggregator of CC/PD images w/ license filters (run by WordPress) — verify per-image | Filtered CC0/PD image search across sources — BG reference discovery. | trippedd (bg plates) | Free. | 3 / 1 |
+| Watabou procedural generators | https://watabou.itch.io | ✅ free incl. commercial use of generated output (author: "copy, modify, include in your commercial projects"; attribution appreciated, not required) | Browser-based medieval city/village/region/dungeon map generators — instant city-layout BG plates. | trippedd (bg tools) | Free, browser. | 4 / 1 |
+| HTerrain (Zylann godot_heightmap_plugin) | https://github.com/Zylann/godot_heightmap_plugin | ✅ MIT (LICENSE.md inside `addons/zylann.hterrain`) | Godot heightmap terrain w/ sculpting, texture painting, LOD, noise-based procedural generation — 3D BG bases. | trippedd (bg tools) | Fully free/open. | 4 / 3 |
+
+### TTS engines — Wave 3 (+13)
+| Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
+| Dia (Nari Labs) | https://github.com/nari-labs/dia | ✅ Apache-2.0 | 1.6B text-to-dialogue model: two-speaker conversations w/ emotion tags, laughter, nonverbals in one pass; in HF Transformers. | god-molecule (voices) | GPU ~10GB VRAM; English only. | 5 / 3 |
+| Zonos (Zyphra) | https://github.com/Zyphra/Zonos | ✅ Apache-2.0 (v0.1); note ZONOS2 is MIT | Expressive open TTS trained on 200k+ hrs: 5-second zero-shot voice cloning, emotion control, multilingual (EN/JA/ZH/FR/DE). | god-molecule (voices) | Heavy model; GPU needed. | 5 / 3 |
+| Parler-TTS (HF) | https://github.com/huggingface/parler-tts | ✅ Apache-2.0 (code, weights, data — fully open) | Describe the voice in natural language ("a calm female narrator") and get matching speech; Expresso variant adds emotions. | god-molecule (voices) | GPU; mini 880M or large 2.3B. | 5 / 3 |
+| CosyVoice 3.0 (FunAudioLLM) | https://github.com/FunAudioLLM/CosyVoice | ✅ Apache-2.0 | Streaming multilingual zero-shot voice cloning (9 languages + 18 Chinese dialects); emotion/speed/volume instruct mode; 150ms latency. | god-molecule (voices) | 0.5B consumer-GPU friendly. | 5 / 3 |
+| Orpheus-TTS (Canopy Labs) | https://github.com/canopyai/Orpheus-TTS | ✅ Apache-2.0 (note: built on Llama-3.2 — Llama 3.2 Community License also applies) | Steerable LLM-TTS (3B) w/ inline emotion tags, zero-shot cloning, ~200ms streaming latency; GGUF/llama.cpp supported. | god-molecule (voices) | GPU 10-12GB VRAM; English. | 4 / 3 |
+| Sesame CSM-1B | https://huggingface.co/sesame/csm-1b | ✅ Apache-2.0 (per HF card; code: SesameAILabs/csm) | Conversational speech model w/ context: maintains dialogue flow and adapts tone/pacing from prior utterances; in Transformers. | god-molecule (voices) | CUDA GPU; English. | 4 / 3 |
+| VibeVoice (Microsoft) | https://github.com/microsoft/VibeVoice | ✅ MIT | Long-form multi-speaker TTS up to 90 min w/ 4 speakers; streaming realtime 0.5B variant (~300ms first audio). | god-molecule (voices) | Heavier models; GPU. | 5 / 3 |
+| OuteTTS 1.0 | https://github.com/edwko/OuteTTS | ✅ Apache-2.0 (use the OuteTTS-1.0-0.6B checkpoint — the 1B variant is CC-BY-NC-SA, non-commercial) | Lightweight LLM-TTS w/ voice cloning and GGUF/ONNX exports; 0.6B checkpoint is fully commercial-safe. | god-molecule (voices) | CPU-viable w/ quant. | 4 / 3 |
+| KittenTTS | https://github.com/KittenML/KittenTTS | ✅ Apache-2.0 | SOTA-quality TTS under 25MB: 8 voices, runs on CPU, no GPU needed — ideal for cheap batch voice generation. | god-molecule (voices) | English; research-quality small. | 4 / 2 |
+| PaddleSpeech | https://github.com/PaddlePaddle/PaddleSpeech | ✅ Apache-2.0 | Full speech toolkit: streaming TTS w/ text frontend, voice cloning, ASR, punctuation restoration; production-grade CLI. | god-molecule (voices) | CPU-capable; setup effort. | 4 / 3 |
+| F5-TTS | https://github.com/SWivid/F5-TTS | 🚫 code MIT but pretrained weights CC BY-NC 4.0 (trained on Emilia) — research/internal use only | Flow-matching zero-shot voice cloner (natural prosody, multilingual community models); Gradio app + CLI + Docker. | god-molecule (voices) | NC weights block monetized use. | 5 / 2 |
+| Spark-TTS | https://github.com/SparkAudio/Spark-TTS | 🚫 code Apache-2.0 but official 0.5B weights re-licensed CC BY-NC-SA 4.0 — research/internal use only | LLM-based bilingual EN/ZH TTS w/ voice control (gender, pitch, speed) and zero-shot cloning; Unity/ONNX ports exist. | god-molecule (voices) | NC weights block monetized use. | 4 / 2 |
+
+### Lip-sync tools — Wave 3 (+12)
+| Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
+| EchoMimicV3 (Ant Group) | https://github.com/antgroup/echomimic_v3 | ✅ Apache-2.0 | Half-body + full-body audio-driven animation: lip-sync, expression, gesture; multi-turn multi-character dialogue. | god-molecule (lip-sync) | Heavy GPU; 14B-class. | 5 / 4 |
+| AniPortrait | https://github.com/Zejun-Yang/AniPortrait | ✅ Apache-2.0 (verified on repo page) | Audio-to-video portrait animation: extract facial motion/pose from audio, re-render stylized portrait frames. | god-molecule (lip-sync) | GPU; stylized look. | 4 / 3 |
+| OVRLipSync (Oculus) | https://github.com/viniciushelder/ovrlipsync-ue5 | ✅ Oculus SDK License (permits personal + commercial use) | Realtime viseme extraction from voice (15+ visemes) — UE/Unity plugins; drive 2D cutout mouths or 3D rigs live. | god-molecule (lip-sync) | Free; plugin integration. | 5 / 2 |
+| StyleTalk | https://github.com/FuxiVirtualHuman/styletalk | ✅ MIT (verified on repo page) | One-shot talking head w/ controllable speaking style — clone a reference clip's expression/style onto new audio. | god-molecule (lip-sync) | GPU; single image input. | 4 / 3 |
+| ARTalk | https://github.com/xg-chu/ARTalk | ✅ MIT | Realtime streaming audio→3D head animation (autoregressive); <100ms latency — live talking heads. | god-molecule (lip-sync) | GPU; 3D pipeline. | 4 / 3 |
+| SyncTalk | https://github.com/ZiqiaoPeng/SyncTalk | ❓ LICENSE file exists but content not confirmed (SPDX NOASSERTION) | NeRF-based lip-sync: reconstruct a 3D talking head from a short video, drive with new audio. | god-molecule (lip-sync) | Heavy training per identity. | 4 / 4 |
+| EchoMimicV2 (Ant Group) | https://github.com/antgroup/echomimic_v2 | ❓ series READMEs state Apache-2.0 but repo license page not directly opened — verify before shipping | Reference-image audio-driven half-body animation w/ hand/pose guidance (V2 line, lighter than V3). | god-molecule (lip-sync) | GPU; hand artifacts. | 4 / 3 |
+| Wan2.2-S2V (Alibaba) | https://github.com/Wan-Video/Wan2.2 | ✅ Apache-2.0 (repo LICENSE.txt; HF model card Apache-2.0, generated content belongs to user) | Speech-to-video: portrait + audio → cinematic 480p/720p talking avatar w/ lip-sync, pose/text control. | god-molecule (lip-sync) | ~80GB VRAM self-host; heavy. | 5 / 4 |
+| LiveTalk-Unity | https://github.com/genesisinteractive/LiveTalk-Unity | ❓ package claims MIT but builds on LivePortrait (catalog flags upstream custom license) — verify before shipping | Unity package: LivePortrait + MuseTalk ported to ONNX/CoreML — realtime talking-head generation on-device. | god-molecule (lip-sync) | Unity 6000+, 32GB RAM rec., ~15GB models. | 5 / 3 |
+| Ditto (Ant Group) | https://github.com/antgroup/ditto-talkinghead | ✅ Apache-2.0 (repo LICENSE) | Motion-space diffusion for controllable REALTIME talking-head synthesis — streamable avatar w/ expression control. | god-molecule (lip-sync) | GPU; realtime-focused. | 5 / 3 |
+| TalkingHead (met4citizen) | https://github.com/met4citizen/TalkingHead | ❓ license not confirmed on upstream page — verify before shipping | Browser JS class: real-time viseme lip-sync on Ready Player Me / full-body GLB avatars (Three.js); pairs w/ HeadTTS (Kokoro, free, phoneme timestamps). | god-molecule (lip-sync) | Needs viseme blendshapes; free TTS via HeadTTS. | 4 / 2 |
+
+### Misc animation production — Wave 3 (+11)
+| Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
+| OpenToonz | https://github.com/opentoonz/opentoonz | ✅ Modified BSD (repo README: \"may be used or changed freely for business or personal use\") | Ghibli's production 2D software: vector+bitmap, onion-skin, Xsheet, effects, scan/cleanup — full anime pipeline app. | trippedd (animation) | Fully free; steep learning curve. | 5 / 4 |
+| Storyboarder (Wonder Unit) | https://github.com/wonderunit/storyboarder | ❓ custom non-standard license (\"thoughts on free and open source\" + exceptions: no charging, attribution required) — not OSI; verify before shipping | Fast storyboard drawing w/ shot structure, dialogue/timing, onion-skin overlays, animatic export. | trippedd (pre-prod) | Free app; license caveat. | 4 / 1 |
+| OpenCue | https://github.com/AcademySoftwareFoundation/OpenCue | ✅ Apache-2.0 (ASWF) | Render-queue manager from Sony Imageworks: distribute frame renders across machines, monitor jobs, dependencies. | trippedd (render farm) | Self-hosted; Docker sandbox. | 4 / 4 |
+| OpenTimelineIO | https://github.com/AcademySoftwareFoundation/OpenTimelineIO | ✅ Apache-2.0 (ASWF) | Editorial timeline interchange: read/write EDL/CMX3600/FCPXML/OTIO — cut assembly, conform, episode timeline I/O. | trippedd (editorial) | Free; Python/C++. | 4 / 2 |
+| OpenColorIO | https://github.com/AcademySoftwareFoundation/OpenColorIO | ✅ BSD-3-Clause (license badge on repo) | Industry color management (ACES, LUTs): consistent color across compositing, grading, and export stages. | trippedd (color) | Free; config setup. | 4 / 3 |
+| OpenEXR | https://github.com/AcademySoftwareFoundation/openexr | ✅ BSD-3-Clause (repo README) | HDR image format + libs for deep-compositing plates: 32-bit float frames, multi-channel EXR for comp pipeline. | trippedd (pipeline) | Free. | 3 / 2 |
+| Lottie (airbnb) | https://github.com/airbnb/lottie-android | ✅ Apache-2.0 (lottie-ios / lottie-android repos) | Render After Effects vector animations natively in realtime (Android/iOS/Web) — motion-graphics overlays, UI animation. | trippedd (motion gfx) | Free; huge .json animation ecosystem. | 4 / 2 |
+| ThorVG | https://github.com/thorvg/thorvg | ✅ MIT (Linux Foundation project) | Lightweight C++ vector graphics engine: SVG + Lottie rendering on CPU/GPU — embeddable animation renderer. | trippedd (render) | Free; 170KB minimal. | 4 / 3 |
+| Pixelorama | https://github.com/Orama-Interactive/Pixelorama | ✅ MIT (repo README: \"licensed under the MIT license\") | Godot-based pixel-art multitool: sprites, tiles, animation timeline, onion skinning, palette management, sprite-sheet export. | trippedd (pixel art) | Free; all platforms + web. | 4 / 2 |
+| libpag (Tencent) | https://github.com/Tencent/libpag | ✅ Apache-2.0 (repo LICENSE.txt) | Realtime renderer for PAG (Portable Animated Graphics): AE-animated sequences w/ smaller files than video — animated stickers/overlays. | trippedd (motion gfx) | Free; PAG exporter plugin for AE. | 4 / 2 |
+| Lospec Palette List | https://lospec.com/palette-list | ❓ no site-wide license grant (footer ToS covers site/store only; most palettes list no license) — filter `tag/cc0` for commercial-safe | Curated pixel-art color palettes (hardware + artist) w/ download in any format — color-script/palette reference. | trippedd (color) | Free; verify per-palette terms. | 3 / 1 |
 
 ## Appendix — methodology
 

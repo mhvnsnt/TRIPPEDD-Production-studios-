@@ -8290,3 +8290,496 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 ## Entry count — Wave 7 Lane A
 
 127 new entries: 31 SFX/foley · 38 lip-sync · 21 captions · 37 backgrounds/BG-plates. Badges: 85 ✅ · 24 ⚠️ · 12 🚫 · 6 ❓. Quarantine rows added: 26 (85–110, max 110).
+
+## Wave 8 — Lane A: catalog deepening (2026-10-07)
+
+### SFX/foley
+
+#### PacDV ✅ commercial-safe
+- **What:** Free SFX library (miscellaneous sounds category)
+- **URL:** http://www.pacdv.com/sounds/miscellaneous_sounds.html
+- **License:** Free for use in productions; no resale or redistribution (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No attribution required. Solid everyday-foley source. [Wave 8 A]
+
+#### SoundGator ✅ commercial-safe
+- **What:** Free SFX library for media production
+- **URL:** https://www.soundgator.com/content/license/
+- **License:** Free for films/videos/apps/games; no standalone redistribution (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NOT for AI training per license terms. Fine for shipping SFX. [Wave 8 A]
+
+#### WavSource ⚠️ license-conditional
+- **What:** SFX collection (wavsource.com)
+- **URL:** https://www.wavsource.com/ads/bulk_cd.htm
+- **License:** Bulk download is paid; provenance murky (verified)
+- **Free tier:** partial free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-item rights before shipping anything from here. [Wave 8 A]
+
+#### Soundimage.org (Eric Matyas) ⚠️ license-conditional
+- **What:** SFX + music by Eric Matyas
+- **URL:** http://soundimage.org/
+- **License:** Attribution required; commercial use OK (verified)
+- **Free tier:** fully free with attribution
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Credit "Eric Matyas / soundimage.org". [Wave 8 A]
+
+#### Pianobook (sample library) ⚠️ license-conditional
+- **What:** Community sample instruments library (pianobook.co.uk)
+- **URL:** https://www.pianobook.co.uk/terms-conditions/
+- **License:** Community license; use in commercial compositions OK; no resale/redistribution (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Instruments usable in scored music; samples themselves can't be resold. [Wave 8 A]
+
+#### Philharmonia Orchestra sound samples ⚠️ license-conditional
+- **What:** Free orchestral instrument samples (Philharmonia Orchestra)
+- **URL:** https://philharmonia.co.uk/resources/sound-samples/
+- **License:** CC BY-SA 3.0 (share-alike) (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Share-alike copyleft on the samples themselves — attribute and don't strip the license. [Wave 8 A]
+
+#### Legowelt free samples ❓ unverified
+- **What:** Free sample packs from Dutch producer Legowelt
+- **URL:** http://www.xs4all.nl/~awolfe/samples.html
+- **License:** No clear license stated (checked 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Via forum post; uncertain licensing — treat as audition-only until terms confirmed. [Wave 8 A]
+
+#### Looperman ✅ commercial-safe
+- **What:** Royalty-free loops and samples community
+- **URL:** https://www.looperman.com/loops?when=4&page=14
+- **License:** Royalty-free for commercial and non-commercial use; acapellas excluded (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Exclude the acapella section (different terms). [Wave 8 A]
+
+#### MusicRadar SampleRadar ✅ commercial-safe
+- **What:** Free sample packs from MusicRadar (SampleRadar series)
+- **URL:** https://www.musicradar.com/news/sampleradar-funk-soul-guitar-samples
+- **License:** Royalty-free; no redistribution (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Example pack linked; whole SampleRadar archive follows the same terms. [Wave 8 A]
+
+#### Bedroom Producers Blog ⚠️ license-conditional
+- **What:** Free instrument/sample directory (bedroomproducersblog.com)
+- **URL:** https://bedroomproducersblog.com/2022/02/03/free-vst-instruments/
+- **License:** Directory; per-item licenses apply (verified)
+- **Free tier:** free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check each plugin/sample's own license before shipping. [Wave 8 A]
+
+#### KVR Audio ⚠️ license-conditional
+- **What:** Audio plugin database and deals
+- **URL:** https://www.kvraudio.com/deals.php
+- **License:** Per-plugin licenses (verified)
+- **Free tier:** free listings
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for finding free-tier VSTs; verify each plugin's commercial terms. [Wave 8 A]
+
+#### Freesound API (Terms of Use) 🚫 not commercial-safe
+- **What:** Freesound developer API (distinct from the Freesound library entry — this is the API's own ToS)
+- **URL:** https://freesound.org/docs/api/terms_of_use.html
+- **License:** Free for non-commercial only; commercial use requires a UPF agreement (verified)
+- **Free tier:** free non-commercial API
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Do not ship commercial SFX sourced through the API without the paid UPF agreement. [Wave 8 A]
+
+#### UCS (Universal Category System) ✅ commercial-safe
+- **What:** Public-domain SFX metadata taxonomy + tools (jmrsound/ucs-tools)
+- **URL:** https://github.com/jmrsound/ucs-tools
+- **License:** Public domain taxonomy (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Standardize all SFX filenames/metadata on UCS categories. [Wave 8 A]
+
+#### USC / Sunset Editorial SFX library ✅ commercial-safe
+- **What:** USC student SFX library released by Craig Smith (Sunset Editorial), mirrored on Internet Archive
+- **URL:** https://blog.freesound.org/?p=1515&cpage=1
+- **License:** CC0 (released on Freesound for USC, 2023) (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Large, cleanly-recorded foley/ambience collection; also covered at blog.archive.org (Crash Bark Boom, 2023). [Wave 8 A]
+
+#### SoundsCrate ❓ unverified
+- **What:** SFX library (SoundsCrate)
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** unknown
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Terms not found; verify before any use. [Wave 8 A]
+
+#### Free To Use Sounds ✅ commercial-safe
+- **What:** Field-recording SFX library (freetousesounds.com), all-in-one bundle
+- **URL:** http://www.freetousesounds.com/all-in-one-bundle
+- **License:** Royalty-free for commercial and non-commercial use (verified)
+- **Free tier:** fully free bundle
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Great ambience/field-recording textures. [Wave 8 A]
+
+#### BGMZip ❓ unverified
+- **What:** AI SFX mobile app (BGMZip)
+- **URL:** https://www.appbrain.com/app/bgmzip-ai-sound-effects/com.bgmzipapp
+- **License:** Terms unclear (checked 2026-10-07)
+- **Free tier:** unknown
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** AI-generated SFX provenance uncertain — verify ownership terms before use. [Wave 8 A]
+
+#### MediaCollege ✅ commercial-safe
+- **What:** Free SFX downloads (mediacollege.com)
+- **URL:** http://www.mediacollege.com/downloads/sound-effects/
+- **License:** Full Permission SFX: commercial use OK, no sale/redistribution; some clips public domain (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Solid bread-and-butter SFX. [Wave 8 A]
+
+#### YouTube Audio Library ⚠️ license-conditional
+- **What:** YouTube's own free music/SFX library
+- **URL:** https://hellothematic.com/youtube-audio-library/
+- **License:** Per-track license; safe on YouTube, off-platform use murky (verified)
+- **Free tier:** fully free (YouTube account)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check each track's license badge; don't assume off-YouTube clearance. [Wave 8 A]
+
+#### Salamisound 🚫 not commercial-safe
+- **What:** Free SFX site (salamisound.com)
+- **URL:** http://www.salamisound.com/info1
+- **License:** Non-commercial only (verified)
+- **Free tier:** free non-commercial
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/audition only — do not ship. [Wave 8 A]
+
+#### Faust ✅ commercial-safe
+- **What:** Functional audio DSP programming language (GRAME)
+- **URL:** https://en.wikipedia.org/wiki/FAUST_(programming_language)
+- **License:** GPL compiler; generated DSP code belongs to the author (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Per house convention (Faust/Krita precedent): GPL tool, original generated audio is ours. [Wave 8 A]
+
+#### STK (Synthesis ToolKit) 🚫 not commercial-safe
+- **What:** C++ audio synthesis toolkit (CCRMA/Stanford, Perry Cook)
+- **URL:** http://en.wikipedia.org/wiki/Synthesis_Toolkit
+- **License:** Freely available for noncommercial use per CCRMA; patent caveats noted (verified)
+- **Free tier:** free non-commercial
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research/R&D only — not for shippable product audio. [Wave 8 A]
+
+#### Maximilian ✅ commercial-safe
+- **What:** C++ audio synthesis library (micknoise/Maximilian)
+- **URL:** https://github.com/micknoise/Maximilian
+- **License:** MIT (verified via upstream README)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** OpenFrameworks-friendly; good for procedural SFX in tools. [Wave 8 A]
+
+#### Gamma ✅ commercial-safe
+- **What:** C++ audio synthesis library (lanceputnam/gamma)
+- **URL:** https://github.com/lanceputnam/gamma
+- **License:** Permissive license per upstream README (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** AlloSystem-family DSP building blocks. [Wave 8 A]
+
+#### sndkit ✅ commercial-safe
+- **What:** Small C audio DSP toolkit (paulbatchelor/sndkit)
+- **URL:** https://github.com/paulbatchelor/sndkit
+- **License:** Dual MIT/Unlicense upstream (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Pairs with Soundpipe/Sporth ecosystem. [Wave 8 A]
+
+#### RTcmix ⚠️ license-conditional
+- **What:** Real-time music/synthesis language (rtcmix/rtcmix)
+- **URL:** https://github.com/rtcmix/rtcmix/blob/HEAD/src/pd/README.md
+- **License:** Conflicting: GPL per Linux Journal vs Apache-2.0 cited for the GitHub tree (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Resolve the license conflict upstream before shipping anything built on it. [Wave 8 A]
+
+#### Nyquist ✅ commercial-safe
+- **What:** Sound synthesis/composition language (Roger Dannenberg, CMU)
+- **URL:** https://www.cs.cmu.edu/~music/icm/software.html
+- **License:** Commercial use allowed per Dannenberg (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lisp-based; strong for composed/ambient beds. [Wave 8 A]
+
+#### iPlug2 ✅ commercial-safe
+- **What:** C++ audio plugin framework (tomdol/iplug2)
+- **URL:** https://github.com/tomdol/iplug2
+- **License:** Zlib-like liberal license; closed-source use OK (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** For building custom SFX/processing plugins (VST3/AU/AAX). [Wave 8 A]
+
+#### DPF (DISTRHO Plugin Framework) ✅ commercial-safe
+- **What:** C++ audio plugin framework (DISTRHO)
+- **URL:** https://distrho.github.io/DPF/DistrhoPlugin_8hpp_source.html
+- **License:** ISC license verified in upstream source header (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** LV2/VST2/VST3/JACK targets; permissive ISC. [Wave 8 A]
+
+#### JUCE ⚠️ license-conditional
+- **What:** C++ audio application/plugin framework
+- **URL:** https://github.com/danielraffel/griddy-midi-effect-plugin/blob/HEAD/installer/THIRD_PARTY_LICENSES.md
+- **License:** Dual GPLv3 (AGPLv3 for JUCE 8) / commercial; closed-source needs a paid license (verified)
+- **Free tier:** free under GPL/AGPL terms
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Only for GPL-compatible or paid-license work; prefer iPlug2/DPF for closed tools. [Wave 8 A]
+
+#### Demucs ✅ commercial-safe
+- **What:** AI music/source separation (Meta/Facebook Research)
+- **URL:** https://github.com/iggue/facebookresearch-demucs
+- **License:** MIT (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Stem separation for dialogue cleanup and remix-safe SFX extraction. [Wave 8 A]
+
+#### Spleeter ✅ commercial-safe
+- **What:** AI source separation (Deezer)
+- **URL:** https://github.com/deezer/spleeter
+- **License:** MIT (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lighter-weight alternative to Demucs for vocal/accompaniment splits. [Wave 8 A]
+
+#### AudioSR ✅ commercial-safe
+- **What:** Audio super-resolution / bandwidth extension (ONNX port)
+- **URL:** https://github.com/tvararu/zp-voicemod/blob/HEAD/src/zpvoice/_vendor/audiosr/README.md
+- **License:** MIT (verified)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Upsample lo-fi archival SFX to usable quality. [Wave 8 A]
+
+#### TangoFlux 🚫 not commercial-safe
+- **What:** Text-to-audio diffusion model (declare-lab)
+- **URL:** https://github.com/declare-lab/tangoflux/blob/HEAD/README.md
+- **License:** Non-commercial research-only; Stability AI Community License (verified)
+- **Free tier:** free research use
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** R&D/demo only — outputs are not cleared for commercial release. [Wave 8 A]
+
+#### jsfxr ✅ commercial-safe
+- **What:** Browser port of DrPetter's sfxr — 8-bit retro SFX generator (chr15m/jsfxr)
+- **URL:** https://github.com/chr15m/jsfxr
+- **License:** The Unlicense (public domain) verified via repo (verified 2026-10-07)
+- **Free tier:** fully free (app at sfxr.me)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sounds you generate are your own output; permalink encodes the full parameter set. [Wave 8 A]
+
+#### NPS Natural Sounds (Sound Gallery) ✅ commercial-safe
+- **What:** National Park Service natural/historical sound clips (birds, geysers, weather, wildlife)
+- **URL:** https://www.nps.gov/subjects/sound/gallery.htm
+- **License:** Public domain; "may be downloaded and used without limitation" (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Park-specific libraries too (Yellowstone, Rocky Mountain). Credit NPS where appropriate. [Wave 8 A]
+
+#### Conserve the Sound ❓ unverified
+- **What:** Online museum of vanishing/endangered sounds (dial phones, typewriters, 56k modems, Walkmans)
+- **URL:** https://www.chunderksen.com/conserve-the-sound
+- **License:** No reuse license stated (checked 2026-10-07)
+- **Free tier:** free to browse/listen
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference goldmine for period-piece foley; do not sample without rights clearance. [Wave 8 A]
+
+#### RadioEchoes (Old Time Radio) ❓ unverified
+- **What:** 128k+ old-time-radio episodes, free streaming/download (radioechoes.com)
+- **URL:** https://radioechoes.com/
+- **License:** Free to play/download; copyright status varies per show (checked 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rich period dialogue/ambience; verify PD status per series before shipping. [Wave 8 A]
+
+#### NOAA SanctSound ✅ commercial-safe
+- **What:** NOAA/Navy underwater soundscape portal — 300 TB from 7 national marine sanctuaries
+- **URL:** https://sanctuaries.noaa.gov/science/monitoring/sound/
+- **License:** CC0/public (data.gov metadata lists CC0) (verified 2026-10-07)
+- **Free tier:** fully free; bulk download via NCEI Passive Acoustic Archive
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Whale song, reef ambience, ocean beds — unmatched underwater foley source. [Wave 8 A]
+
+#### NARA audio recordings ✅ commercial-safe
+- **What:** U.S. National Archives digitized audio (Supreme Court oral arguments, presidential tapes, radio addresses)
+- **URL:** https://www.archives.gov/developer/national-archives-catalog-dataset
+- **License:** U.S. federal records — public domain (verified 2026-10-07)
+- **Free tier:** fully free; MP3 delivery via catalog.archives.gov
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Supreme Court recordings (1955–2020) fully digitized; period dialogue and archival texture. [Wave 8 A]
+
+#### dr_libs ✅ commercial-safe
+- **What:** Public-domain single-file audio decoding libraries for C/C++ (dr_flac, dr_mp3, dr_wav)
+- **URL:** https://github.com/dqhplhzz2008/dr_libs
+- **License:** Public domain (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Drop-in decoders for the SFX pipeline; pairs with stb_vorbis (also PD). [Wave 8 A]
+
+#### OpenAL Soft ✅ commercial-safe
+- **What:** Cross-platform software 3D audio API implementation (kcat/openal-soft)
+- **URL:** https://github.com/kcat/openal-soft/blob/master/README.md
+- **License:** LGPL (2.0-or-later) per upstream README (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial-safe when dynamically linked; EFX reverb/occlusion for game-feel audio. [Wave 8 A]
+
+#### uisfx (UI SFX library) ✅ commercial-safe
+- **What:** Procedurally generated UI sound pack — 12 packs, deterministic recipes (romainsimon/uisfx)
+- **URL:** https://github.com/romainsimon/uisfx/blob/main/README.md
+- **License:** MIT code; audio library dedicated CC0 1.0 (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CC0 UI sounds + MIT generator — regenerate to taste from recipes. [Wave 8 A]
+
+#### DOVA-SYNDROME / OpenTracks ⚠️ license-conditional
+- **What:** Japanese free BGM + SFX library (now OpenTracks; dova-s.jp)
+- **URL:** https://dova-s.jp/EN/_contents/license/
+- **License:** Per-composer license; site terms allow commercial use generally — check each track (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SFX section is solid for game/video stingers; read the per-track license badge. [Wave 8 A]
+
+#### Soundeffect-Lab ❓ unverified
+- **What:** Japanese free SFX site (soundeffect-lab.info)
+- **URL:** https://soundeffect-lab.info/
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Widely used by Japanese creators; confirm terms (Japanese) before shipping. [Wave 8 A]
+
+#### SoundPacks.com ⚠️ license-conditional
+- **What:** Free sample/drum-kit/loop pack directory
+- **URL:** https://soundpacks.com/free-sound-packs/
+- **License:** Free packs; per-pack producer licenses vary (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check each pack's own license note before shipping. [Wave 8 A]
+
+#### GarageBand Apple Loops ⚠️ license-conditional
+- **What:** Loops bundled with GarageBand/Logic (Apple)
+- **URL:** https://support.apple.com/en-lamr/102034
+- **License:** Royalty-free per Apple SLA for original compositions; loops may not be redistributed standalone or repackaged (verified 2026-10-07)
+- **Free tier:** bundled with GarageBand/Logic
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Usable inside finished compositions; never ship the loops as a library. [Wave 8 A]
+
+#### Internet Archive Community Audio ⚠️ license-conditional
+- **What:** Community-uploaded audio on Internet Archive (music, spoken word, field recordings)
+- **URL:** https://archive.org/details/nightmail128k
+- **License:** Per-item; many items carry Public Domain Mark 1.0 (linked example is PD Mark 1.0) (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter by "Public Domain Mark 1.0" for shippable material; verify each item. [Wave 8 A]
+
+#### USFWS wildlife sound clips ✅ commercial-safe
+- **What:** U.S. Fish & Wildlife Service bird/wildlife sound clips (National Digital Library; IA mirror)
+- **URL:** https://archive.org/details/IndigoBunting
+- **License:** Public domain — "may be used without prior permission" (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** U.S. government work = PD; credit USFWS where possible. [Wave 8 A]

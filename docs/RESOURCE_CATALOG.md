@@ -20073,3 +20073,173 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** PHI is a nonprofit research institute; the grant is clearly free-access but the license text needs a read before commercial reuse. [Wave 19 Lane A]
+
+#### U.S. Marine Band ("The President's Own") ✅ federal PD recordings + free scores
+- **What:** The oldest US service band — free MP3 downloads (Complete Marches of John Philip Sousa Vols 1–3, John Williams anniversary albums), streaming video, and free PDFs of edited march parts/scores.
+- **URL:** http://www.marineband.marines.mil/News/Article/1307780/marine-band-educational-resources/
+- **License:** ✅ US federal work — recordings are public domain; per-item COMPOSITION caution: PD recordings of copyrighted compositions (e.g., the John Williams albums) do not clear the underlying work — Sousa marches/anthems are the fully-safe zone.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The per-item composition caution applies to every band entry in this pocket. [Wave 19 Lane A]
+
+#### U.S. Army Band "Pershing's Own" ✅ federal PD
+- **What:** The Army's premier band — concerts, chamber recitals, ceremonial music; DVIDS explicitly marks its video releases PUBLIC DOMAIN.
+- **URL:** https://usarmyband.com
+- **License:** ✅ US federal work — PD recordings (DVIDS "PUBLIC DOMAIN" marking verified); per-item composition caution as above.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Note: the band's audition PDFs carry a "strictly for auditions only" disclaimer — audition excerpts are NOT covered by the PD grant; do not reuse those. [Wave 19 Lane A]
+
+#### U.S. Navy Band ✅ federal PD
+- **What:** The Navy's premier musical organization (since 1925) — concert band, Sea Chanters chorus, Commodores jazz ensemble, Country Current.
+- **URL:** https://www.navyband.navy.mil
+- **License:** ✅ US federal work — PD recordings; per-item composition caution as above.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### U.S. Navy Band — National Anthems (Internet Archive) ✅ PD anthem collection
+- **What:** Community-mirrored collection of all national-anthem recordings from the Navy Band's website (as of May 2023, incl. removed/replaced versions) — MP3s 128–320 kbps.
+- **URL:** https://archive.org/details/us-navy-band-national-anthems-public-domain
+- **License:** ✅ US federal PD recordings; anthems are overwhelmingly PD-age compositions or state works — per-item note.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful global-anthem SFX bed; distinct from the Navy Band homepage entry above. [Wave 19 Lane A]
+
+#### USAF Public-Domain-Music collection ✅ designated PD subset
+- **What:** The Air Force bands' designated public-domain music page — recordings the USAF itself represents as public domain (e.g., USAF Academy Band Stellar Brass tracks mirrored on Wikimedia Commons with USAF PD representation).
+- **URL:** https://www.music.af.mil/Multimedia/Music/Public-Domain-Music/
+- **License:** ✅ Designated PD by the USAF; per-item composition caution.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the restricted Band Recordings Archive (⚠️ entry below). [Wave 19 Lane A]
+
+#### USAF Band Recordings Archive ⚠️ restricted to USAF activities
+- **What:** The master archive of USAF Band (Washington DC), USAF Academy Band, and Heritage of America Band recordings.
+- **URL:** https://www.music.af.mil/Multimedia/AF-Recordings/Band-Recordings-Archive/
+- **License:** ⚠️ NOT for sale and NOT freely reusable — site disclaimer restricts use to "radio and public service broadcasting, recruiting, educational activities, troop morale and retention ... only within the scope of these Department of the Air Force activities." Do not use for commercial production.
+- **Free tier:** Stream/download within the restriction
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest-negative-adjacent ⚠️: cataloged so nobody mistakes the archive for the PD subset. [Wave 19 Lane A]
+
+#### DVIDS (Defense Visual Information Distribution Service) ✅ PD-marked DoD media hub
+- **What:** The Pentagon's official media hub — thousands of military-band performances, ceremonies, and B-roll explicitly marked PUBLIC DOMAIN (video, audio, images, news) with high-res downloads.
+- **URL:** https://www.dvidshub.net/video/809307/us-army-band-pershings-own-annual-1812-overture-concert
+- **License:** ✅ Items marked PUBLIC DOMAIN (US federal works) — check the per-item marking; a minority carry distribution restrictions.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Best single source for PD military-band video + audio; entry URL is an example PD-marked band video. [Wave 19 Lane A]
+
+#### U.S. Army Field Band — Perspectives ✅ free jazz-education scores + recordings
+- **What:** The Jazz Ambassadors' "Perspectives: Resources for Jazz Education" — original sheet music for jazz ensemble (middle-school to professional), downloadable recordings, discographies, pro-tips videos, promo material; all free.
+- **URL:** https://www.armyfieldband.com/perspectives
+- **License:** ✅ US federal work — free resources; per-item composition caution for any non-original charts.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Note: the band's audition PDFs carry a "strictly for auditions only" disclaimer — audition excerpts are NOT covered by the PD grant. [Wave 19 Lane A]
+
+#### U.S. Coast Guard Band ✅ federal PD recordings
+- **What:** The Coast Guard's premier band (est. 1925) — CD recordings for public relations/educational/morale purposes, incl. the American Composers Series (Fuchs, Turner).
+- **URL:** https://www.uscg.mil/Community/Band/Recordings/
+- **License:** ✅ US federal work — PD recordings; per-item composition caution (contemporary-composer albums are copyrighted compositions despite PD recordings).
+- **Free tier:** Free (contact Band Admin for CDs)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Pently ✅ zlib — scalable NES music engine
+- **What:** Damian Yerrick's NES music engine — supports NES playback (with SFX) and NSF output; score in a compact text format, converts FamiTracker modules via ft2pently.
+- **URL:** https://github.com/pinobatch/pently
+- **License:** ✅ zlib License (verified 2026-10-07 via repo page license field + README "Pently is free software, under the zlib License")
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The clean-license NES driver — pairs with the MIT FamiStudio Sound Engine (already cataloged). [Wave 19 Lane A]
+
+#### sakuramml-rust ⚠️ MML/ABC→MIDI compiler (custom license)
+- **What:** kujirahand's Rust port of the classic Japanese "Sakura" MML compiler (award-winning 2001 text-music tool, taught in Japanese high-school IT textbooks) — MML/ABC to MIDI, macOS/Windows/Linux/WebAssembly; Japanese-language note names supported.
+- **URL:** https://github.com/kujirahand/sakuramml-rust
+- **License:** ⚠️ Custom license (per crates.io/lib.rs) — verify before commercial use.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The sibling picosakura-rust (MML player, SoundFont-based, MML→WAV) is a future-lane candidate once its license is pinned. [Wave 19 Lane A]
+
+#### kPMML ✅ MIT — MML-like compiler + renderer
+- **What:** kinkinkijkin's MML-like code compiler and generated-audio renderer (.NET/Mono + ffmpeg).
+- **URL:** https://github.Com/kinkinkijkin/kPMML
+- **License:** ✅ MIT (verified 2026-10-07 via README "kPMML is licensed under the MIT License")
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### PMDWin ❓ custom Japanese project license — PC-98 PMD FM driver
+- **What:** Windows port of KAJA's Professional Music Driver (PMD) — the classic Japanese PC-98 FM (YM2208/YM2608) MML music driver; cross-platform fork PMDWin-X bundles fmgen, Nuked OPL-Mod (LGPL-2.1), emu2149 (MIT), MAME parts (BSD-3-Clause).
+- **URL:** https://github.com/leadrdrk/pmdwin-x
+- **License:** ❓ Licensed under the "PMDWin project license" (original Japanese text in PMDWinS.txt) — custom, not OSI-standard; terms unverified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The MML format spec itself is documented at the Video Game Music Preservation Foundation (see VGMPF MML wiki entry). [Wave 19 Lane A]
+
+#### AdPlug ⚠️ LGPL-2.1 — AdLib/OPL2 format replayer library
+- **What:** Cross-platform C++ library + player frontends that replay dozens of AdLib/OPL2-era chiptune formats (IMF, ROL, CMF, D00, RAD, DRO...) directly from original files via OPL2/OPL3 emulation.
+- **URL:** https://adplug.github.io/
+- **License:** ⚠️ LGPL-2.1 (per adplug.github.io license page, pkgsrc, MacPorts) — PENDING owner LGPL verdict per doctrine; note the site's dual-license wrinkle: binaries 1.6–1.8.2 embed MAME-licensed emulator files whose MAME clause restricts commercial use without author authorization.
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use libopenmpt (BSD, already cataloged) or Game_Music_Emu paths where the LGPL verdict blocks; this entry documents the LGPL-flagged option. [Wave 19 Lane A]
+
+#### FamiTone2 ❓ Shiru's NES sound engine — terms unverified
+- **What:** Shiru's widely-used NES sound engine (FamiTracker-export plugin, SFX support) — the historical reference driver behind many NES homebrew music stacks.
+- **URL:** https://web.archive.org/web/20260917023640/http://shiru.untergrund.net/software.shtml (Shiru's software page, archived; canonical home shiru.untergrund.net)
+- **License:** ❓ Free download with source included; reuse terms not verified this pass — read before commercial use.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Superseded in practice by Pently (zlib) and the FamiStudio Sound Engine (MIT) above. [Wave 19 Lane A]
+
+#### NSF2VGM ❓ Shiru's FamiTracker-NSF → VGM converter
+- **What:** Command-line tool converting FamiTracker-produced NSF files into VGM register dumps (v1.61+) — source included; bridges NES music into VGM tooling.
+- **URL:** https://web.archive.org/web/20260917023640/http://shiru.untergrund.net/software.shtml (Shiru's software page, archived)
+- **License:** ❓ Source included; reuse terms not verified this pass.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### VGMPF — MML wiki ✅ chiptune text-music reference
+- **What:** Video Game Music Preservation Foundation's Music Macro Language wiki — the field guide to MML dialects (BASIC PLAY, MMML, MuSICA, MSXMusic Editor, NSD.Lib, NRTDRV, OFGS...) with official links and format notes.
+- **URL:** https://vgmpf.com/Wiki/index.php?title=MML
+- **License:** ✅ Informational reference (wiki).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Source of several pocket-4 leads; NSD.Lib, NRTDRV, OFGS, MSXMusic Editor are future-lane candidates pending license checks. [Wave 19 Lane A]

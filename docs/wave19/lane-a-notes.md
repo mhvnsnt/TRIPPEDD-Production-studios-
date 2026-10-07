@@ -12,3 +12,16 @@ These count as diligence, not as catalog entries. [Wave 19 Lane A]
 - **Music Treasures Consortium vs. existing Morgan entry**: the existing "Morgan Library — music manuscripts ❓" entry stays; the new MTC entry is the consortium portal layer, distinct scope. [Wave 19 Lane A]
 
 ## Honest negatives — Pocket 2 (composer-society editions)
+
+## Honest negatives — Pocket 3 (military-band PD recordings)
+
+- **UK Royal Marines Band Service / other UK service bands**: EXCLUDED — UK Crown copyright (sound recordings © Crown, 50 years from release; reuse needs licensing). US-federal-PD doctrine does NOT extend to UK bands. [Wave 19 Lane A]
+- **Australian Defence Force bands**: EXCLUDED — Australian Crown copyright (50 years). Same reasoning. [Wave 19 Lane A]
+- **West Point Band / U.S. Army Old Guard Fife and Drum Corps**: not verified this pass (no upstream terms pinned) — future-lane candidates; likely federal PD but unconfirmed. [Wave 19 Lane A]
+
+## Honest negatives — Pocket 4 (MML/chiptune tools)
+
+- **MUCOM88 (Yuzo Koshiro)**: EXCLUDED — CC BY-NC-SA 4.0 (original version; NC-only = straight no-go). The mucomsx fork inherits the NC license. [Wave 19 Lane A]
+- **ft2pently (pinobatch)**: FamiTracker→Pently converter referenced by Pently's README, but the GitHub URL 404s this pass — license unverified; future lane. [Wave 19 Lane A]
+- **picosakura-rust (kujirahand)**: MML player/SoundFont renderer, license not pinned this pass — future lane with sakuramml-rust. [Wave 19 Lane A]
+- **FamiTracker original / Dn-FamiTracker / Furnace / MilkyTracker / Schism Tracker**: already quarantined (rows 122–125) — no new rows. [Wave 19 Lane A]

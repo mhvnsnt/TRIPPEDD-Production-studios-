@@ -21603,3 +21603,253 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Credit line requested ("[Portal]/Austrian National Library"). [Wave 21 Lane A]
+
+#### PXL-BOT 🚫
+- **What:** Chiptune netlabel focused on chiptune artists (e.g. Trey Frey release before The Base Bit recordings); free download releases from its own site
+- **URL:** https://pxl-bot.com
+- **License:** 🚫 CC BY-NC-ND 3.0 — label's own About page states all releases carry this license (verified 2026-10-07)
+- **Free tier:** free downloads of all releases
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC-ND terms = research lane only; not commercial-safe. Strong chip-candidate pool for reference listening. [Wave 21 Lane B]
+
+#### Enough Records 🚫
+- **What:** Long-running netlabel (scene.org hosts) with chip/demoscene-adjacent electronic; mix of license terms across catalog
+- **URL:** http://enoughrecords.scene.org
+- **License:** 🚫 label's own statement via CC wiki Case Studies: 90% of catalog CC BY-NC-SA, some CC BY-NC-ND, a few public domain (verified 2026-10-07)
+- **Free tier:** free download of all releases
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC family across nearly whole catalog — research lane only. Check per-release before any reuse. [Wave 21 Lane B]
+
+#### blocSonic 🚫
+- **What:** 550+ release netlabel (electronic/hip-hop/everything including chip-adjacent beats); multi-format free zip downloads (FLAC/OGG/MP3)
+- **URL:** https://blocsonic.com
+- **License:** 🚫 own resources page: "Current releases are CC BY-NC-SA 4.0, some older ones CC BY-NC-ND 4.0, and each release page names its own" (verified 2026-10-07)
+- **Free tier:** free downloads (FLAC/OGG/MP3) of whole catalog
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wired-up for research reference (release list + sample MP3). NC terms = not commercial-safe. [Wave 21 Lane B]
+
+#### rec72 ❓
+- **What:** Netlabel distributing free chiptune/tracker music via own site and netlabel aggregators
+- **URL:** http://rec72.net
+- **License:** ❓ "All media is licensed under Creative Commons" per FMA label statement; exact CC variant mixed/unconfirmed per release (one track cited CC BY by White Market Podcast) (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Verify per-release CC variant before reuse; NC-family entries are research-only. [Wave 21 Lane B]
+
+#### Test Tube ❓
+- **What:** Netlabel (monocromatica.com) with electronic/experimental releases; release pages cite Creative Commons licensing
+- **URL:** http://www.monocromatica.com/netlabel/
+- **License:** ❓ releases say "licensed under a Creative Commons License" — variant unconfirmed per release (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Verify CC variant per release; NC-family entries are research-only. [Wave 21 Lane B]
+
+#### Section 27 ❓
+- **What:** Netlabel (section27netlabel.blogspot.com) with free electronic releases
+- **URL:** https://section27netlabel.blogspot.com
+- **License:** ❓ free releases; license terms unconfirmed (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** License unverified — treat as research-only until terms confirmed per release. [Wave 21 Lane B]
+
+#### Soisloscerdos ❓
+- **What:** Electronic music netlabel (Bandcamp portal) publishing free downloads
+- **URL:** https://soisloscerdos.bandcamp.com
+- **License:** ❓ RA listing: "Electronic music Netlabel. Audio materials published under free licenses. Sharing without money involved and attribution to author… Free Download!" — exact terms unconfirmed (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** License unverified — research-only until terms confirmed per release. [Wave 21 Lane B]
+
+#### ChipMusic.org ❓
+- **What:** Live chiptune community portal (forums, release board) with per-release free downloads
+- **URL:** https://chipmusic.org
+- **License:** ❓ per-release licensing varies (community-posted; verify each) (verified 2026-10-07)
+- **Free tier:** free downloads via release threads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Primary discovery source for the chip scene; every reuse must be checked against the release's own license. [Wave 21 Lane B]
+
+#### Pterodactyl Squad ❓
+- **What:** Chip/dark-synth collective netlabel with free downloads from own site (e.g. "F13" Halloween comp)
+- **URL:** https://ptesquad.com
+- **License:** ❓ free downloads; no explicit license statement found on site (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No license statement on own site — research-only until terms confirmed. [Wave 21 Lane B]
+
+#### GameChops ✅
+- **What:** Video-game-music netlabel (remixes/covers) publishing original VGM-adjacent tracks with Creative Commons licensing
+- **URL:** https://gamechops.com
+- **License:** ✅ own site: "We license the compositions… release everything Creative Commons — so streamers, creators, and fans can use our music freely" (verified 2026-10-07; CC variant unspecified per release — verify)
+- **Free tier:** free streaming and downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wired-up for research reference (release list + sample MP3). Verify CC variant per release before any commercial use. [Wave 21 Lane B]
+
+#### Kittenrock ❓
+- **What:** UK chiptune netlabel with per-release "Download Link" free releases (e.g. 8trx.ch releases covered on their blog)
+- **URL:** http://kittenrock.co.uk
+- **License:** ❓ per-release free downloads; no license statement found on site (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No license statement on own site — research-only until terms confirmed. [Wave 21 Lane B]
+
+#### Monotonik ❓
+- **What:** Long-running (since 1996) netlabel for non-commercially distributed electronic/chip music; currently dormant
+- **URL:** http://mono211.com/st-00/chip.html
+- **License:** ❓ label's own about text (via sonicsquirrel): CC non-commercial distribution since May 1996 — exact variant unconfirmed (verified 2026-10-07)
+- **Free tier:** free downloads (when site served; own chip URL 404 on 2026-10-07)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dormant; own chip page 404s as of 2026-10-07. Historical NC-family claims = research-only. [Wave 21 Lane B]
+
+#### Datafruits ❓
+- **What:** Netradio + netlabel (datafruits.fm) active in 2026 with chiptune/experimental electronic; Storenvy merch store, radio listings
+- **URL:** https://datafruits.fm
+- **License:** ❓ license terms unclear (verified 2026-10-07)
+- **Free tier:** free streams/downloads per release
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Active community; verify per-release license before reuse. [Wave 21 Lane B]
+
+#### Cheapbeats ❓
+- **What:** Tokyo chiptune-event label, active 2025–2026 (This Week in Chiptune coverage); original domain expired 2022, current incarnation on Bandcamp
+- **URL:** https://cheapbeatsmusic.bandcamp.com
+- **License:** ❓ free downloads; licensing unconfirmed (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Original cheapbeats.net domain expired 2022-06-12. Research-only until terms confirmed. [Wave 21 Lane B]
+
+#### Subvert.fm ❓
+- **What:** Member-owned marketplace platform (launched 2026-05-12) hosting per-release chiptune/music drops (e.g. cabbage drop)
+- **URL:** https://subvert.fm
+- **License:** ❓ per-release licensing (e.g. CC BY-NC-SA on a cabbage drop release page) — not a netlabel itself (verified 2026-10-07)
+- **Free tier:** free drops available (e.g. Spring Enterprises free release)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Platform, not label — license lives on each release page. NC-family entries are research-only. [Wave 21 Lane B]
+
+#### Zenapolæ 🚫
+- **What:** Netlabel (zenapolae.com) distributing downloads under Creative Commons NC terms
+- **URL:** https://zenapolae.com/about.php
+- **License:** 🚫 own about page: "We release all the downloads using the Creative Commons Attribution-Noncommercial International License" (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC BY-NC — research lane only; not commercial-safe. [Wave 21 Lane B]
+
+#### Chiptunes = WIN ❓
+- **What:** International chiptune collective (since 2011) releasing free multi-artist compilations (Chiptunes = WIN volumes, Bundle of WIN, HalloWIN)
+- **URL:** https://chiptuneswin.com
+- **License:** ❓ free/name-your-price Bandcamp downloads; license terms unconfirmed (verified 2026-10-07)
+- **Free tier:** free downloads of all comps (https://chiptuneswin.bandcamp.com)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deep comp catalog; streaming-usage page exists at chiptuneswin.com/streaming — check before reuse. [Wave 21 Lane B]
+
+#### CalmDownKidder Records ❓
+- **What:** UK chiptune netlabel (Liverpool); famous for the 101-track "Micro Music For Micro People" compilation; name-your-price downloads
+- **URL:** https://calmdownkidder.bandcamp.com
+- **License:** ❓ free/name-your-price downloads; license terms unconfirmed (verified 2026-10-07)
+- **Free tier:** free (name your price) downloads incl. HQ FLAC
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historic chip catalog (CDK001+); research-only until per-release terms confirmed. [Wave 21 Lane B]
+
+#### Jahtari 🚫
+- **What:** Netlabel (founded 2004, Leipzig) for "Digital Laptop Reggae" — 8-bit-influenced dub/reggae with demoscene roots; free downloads plus vinyl
+- **URL:** https://jahtari.org
+- **License:** 🚫 releases listed on the sonicsquirrel netlabel index as CC by-nc-nd / by-nc (label-supplied data); free downloads confirmed on own site/Bandcamp (verified 2026-10-07)
+- **Free tier:** free downloads (Bandcamp: https://jahtari.bandcamp.com)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC family per label-supplied index data — research lane only; not commercial-safe. [Wave 21 Lane B]
+
+#### TinyWaves ❓
+- **What:** Chiptune/VGM-remix netlabel (tinywaves.us) releasing singles and compilations (e.g. Zelda Remixed, Donkey Kong Remixed, Tiny Waves Volume One)
+- **URL:** https://www.tinywaves.us
+- **License:** ❓ releases via Bandcamp/streaming; license terms unconfirmed (verified 2026-10-07)
+- **Free tier:** streaming; downloads per release
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** VGM remixes may carry additional publisher constraints — research-only until terms confirmed. [Wave 21 Lane B]
+
+#### Data Airlines ❓
+- **What:** Dubmood's chip label (DATA001+, run from France/Sweden); grew out of demo/crackscene; free digital releases plus physical (vinyl/cassette)
+- **URL:** https://dataairlines.bandcamp.com
+- **License:** ❓ digital free/streaming per release; licensing terms unconfirmed (verified 2026-10-07)
+- **Free tier:** free digital downloads/streaming on many releases
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Own site dataairlines.net per Discogs. Physical editions are paid — free digital only. Verify terms per release. [Wave 21 Lane B]
+
+#### The Base Bit Recordings ❓
+- **What:** Chiptune netlabel co-founded by Trey Frey; LSDj/Game Boy-focused releases (e.g. IAYD "I Am Your Destruction", Trey Frey "Refresh")
+- **URL:** https://thebasebitrecs.bandcamp.com
+- **License:** ❓ free downloads via Bandcamp; license terms unconfirmed (verified 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Referenced by This Week in Chiptune/What Happened to Chiptune. Research-only until terms confirmed. [Wave 21 Lane B]
+
+#### Telefuture ❓
+- **What:** Netlabel (telefuturenow.com) for retrofuture/synthwave/chip-adjacent electronic (Makeup and Vanity Set, Dead Astronauts, Monomer)
+- **URL:** https://telefuturenow.com
+- **License:** ❓ billed as a netlabel by This Week in Chiptune; license terms unconfirmed (verified 2026-10-07)
+- **Free tier:** streaming; downloads per release
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Catalog also on paid storefronts — verify free/licensed status per release before reuse. [Wave 21 Lane B]
+
+#### MAGIC YUME Records ❓
+- **What:** Chip/kawaii-electronic netlabel (LSDj/Game Boy chiptunes, e.g. Shoujo Kiss "Shoujo Eyes 2"); free Bandcamp downloads
+- **URL:** https://magicyumerecords.bandcamp.com
+- **License:** ❓ "The compilations are both free to download on Bandcamp" per This Week in Chiptune; license terms unconfirmed (verified 2026-10-07)
+- **Free tier:** free downloads of comps/albums
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research-only until terms confirmed per release. [Wave 21 Lane B]
+
+#### KEYGENMUSiC (keygenmusic) ❓
+- **What:** Demoscene keygen/crack-music archive portal — tracker chiptunes (.mod/.xm/.s3m/.it) ripped from keygens/cracktros; online player + downloadable packs
+- **URL:** https://keygenmusic.tk
+- **License:** ❓ "No keygens here. Just the music." per the site; per-track licensing unknown/unconfirmed (verified 2026-10-07)
+- **Free tier:** free streaming and download packs (keygenmusic.net)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Player changelog active 2026-09-29 (β19). Demoscene-adjacent portal, not a netlabel operator. Research-only until per-track terms confirmed. [Wave 21 Lane B]

@@ -389,5 +389,21 @@ Badge key: ✅ = commercial-safe (verified) · 🚫 = not commercial-safe (NC/pl
 - **Notes:** Discovery tool only; per-sound clearance at the hosting site is mandatory. [Wave 5]
 
 #### Tabletop Audio ❓ unverified
-- **What:** 200+ profession
-...[truncated 1876 chars]
+- **What:** 200+ professionally designed RPG ambience tracks (fantasy, sci-fi, horror, historical) with a live mixer and offline save
+- **URL:** https://tabletopaudio.com/
+- **License:** ❓ NOT verified upstream — no license/terms text found on the site during research (verified 2026-10-07); do not redistribute or ship without written clearance
+- **Free tier:** free streaming in browser; offline save of individual tracks
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Reference/ambience inspiration only until terms are confirmed; read their terms before any wire-up. [Wave 5]
+
+#### NASA Voyager — "Symphonies of the Planets" (unofficial album masters) ❓ unverified
+- **What:** Voyager plasma-wave recordings of planetary magnetospheres (Jupiter, Saturn, Uranus, Neptune, Io, etc.)
+- **URL:** https://archive.org/details/VoyagerRecordings-SymphoniesOfThePlanets15CompleteRecordings
+- **License:** ❓ MIXED — the underlying Voyager plasma-wave DATA is NASA public domain, but these are commercial CD album masters (LaserLight 1992 / Brain-Mind Research releases) uploaded by a third party; the album mastering is NOT cleanly PD (verified 2026-10-07)
+- **Free tier:** free downloads on the item page
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** UNWIRED
+- **Notes:** Do NOT ship from this item; for clean PD space audio use NASA-published sources instead. Kept as a research lead only. [Wave 5]

@@ -17963,3 +17963,924 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 ## Entry count — Wave 16
 
 97 new `####` entries appended (33 SFX long-tail · 28 verified-PD archives · 26 caption packaging tools · 10 coordinator PD music/score archives) → **1753 total** honest entries (1656 before this wave). GPL/AGPL copyleft flags for quarantine (17 new rows): SoX, Sonic Visualiser, Rubber Band Library, TarsosDSP, ChucK, Csound (Lane A); OpenStreetMap ODbL (Lane B); pysrt, alass + 8 more caption tools (Lane C). Quarantine audit: rows 146–159 spot-checked (11 confirmed, MediaConch relicensing event documented, 3 duplicates mapped), 10 older rows re-verified, LGPL doctrine still pending owner verdict. Wired: soundbible_pull.py (3 CC-BY sounds, SHA-256 manifest), 2 BG-plate pulls with contact sheets, 7 caption tools with proofs. [Wave 16]
+
+## Wave 17 Lane A — PD music/score long tail + chiptune/retro trackers (2026-10-07)
+
+### PD music / score long tail
+
+#### LiederNet Archive ❓ art-song texts archive, terms unverified this pass
+- **What:** Long-running archive of art-song and choral texts with translations (lieder.net) — the standard reference for vocal repertoire texts.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Most texts are public-domain poetry, but the site's compilation/translation terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Texts only, not recordings — useful for vocal-score metadata, not as audio. Verify terms before bulk use. [Wave 17 Lane A]
+
+#### Lester S. Levy Sheet Music Collection (Johns Hopkins) ⚠️ per-item status — 1780–1980 span
+- **What:** 29,000+ pieces of American popular sheet music (1780–1980), digitized by the Johns Hopkins Sheridan Libraries; strong in military, circus, and minstrelsy material.
+- **URL:** levysheetmusic.mse.jhu.edu (seen in upstream-adjacent records; treat as unverified-verbatim until opened).
+- **License:** ⚠️ The span reaches 1980, so only pre-1929 items are safely US-PD; later items need per-item checks. A third-party ZIM request labels the collection "Public domain" — that is not JHU's own grant.
+- **Free tier:** Free browsing.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to pre-1929 items for PD score art/reference. [Wave 17 Lane A]
+
+#### Duke University — Historic American Sheet Music ❓ terms unverified this pass
+- **What:** Duke Libraries digital collection of 19th/early-20th-century American sheet music scans.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Assumed PD-era material; Duke's per-item rights statements not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-item rights before shipping use. [Wave 17 Lane A]
+
+#### Sibley Music Library — Digital Scores Collection (U. Rochester) ❓ terms unverified this pass
+- **What:** Eastman School of Music's Sibley Library digitized scores — PD-era classical scans.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ PD-era scans presumed; per-item terms not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-item rights before shipping use. [Wave 17 Lane A]
+
+#### UCSB Cylinder Audio Archive ⚠️ transfers are CC-BY-NC 2.5 — the recordings are PD-era, the MP3s are not
+- **What:** 15,000+ digitized wax-cylinder recordings (late 1800s–early 1900s): popular songs, vaudeville, classical, operatic, spoken word; 650+ vernacular "home recordings" on the National Recording Registry.
+- **URL:** https://www.library.ucsb.edu/special-collections/performing-arts/cylinders
+- **License:** ⚠️ The underlying performances are PD-era, but UCSB's MP3 transfers are © UC Regents and licensed CC-BY-NC 2.5 (per the archive's licensing page) — NC bars commercial use of the downloads.
+- **Free tier:** Free download/streaming.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/research only for commercial pipelines unless re-transfers are made from PD sources. The NC applies to UCSB's files, not to the underlying PD performances. [Wave 17 Lane A]
+
+#### DAHR — Discography of American Historical Recordings (UCSB) ⚠️ streaming noncommercial; PD items downloadable
+- **What:** 440,000+ master recordings from the 78-rpm era documented with artist bios and discographical detail; built with NEH funding and the Dust-to-Digital Foundation.
+- **URL:** No verbatim archive URL captured this pass — locate via search; facts verified via https://news.ucsb.edu/2025/022193/vast-collection-historic-american-music-released-ucsb-library-partnership-dust-digital
+- **License:** ⚠️ Free streaming is for noncommercial purposes; recordings in the public domain are available for free download per UCSB's open-access mission — per-recording status must be checked.
+- **Free tier:** Free.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Best used as a PD-recording discovery index; confirm each item's download grant before ingest. [Wave 17 Lane A]
+
+#### Bach Digital ❓ Bach manuscript scans, terms unverified this pass
+- **What:** Scholarly portal for J.S. Bach sources (bach-digital.de): manuscript scans, watermarks, work catalog data.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Bach's works are PD; the site's scan/usage terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference-grade for Bach score work; verify scan terms before reuse. [Wave 17 Lane A]
+
+#### Beethoven-Haus Bonn — digital archive ❓ terms unverified this pass
+- **What:** Beethoven-Haus Bonn's digital archive of Beethoven manuscripts, letters, and first editions.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Beethoven's works are PD; the archive's image-use terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify image terms before shipping use. [Wave 17 Lane A]
+
+#### MDZ — Munich Digitization Center music holdings ❓ terms unverified this pass
+- **What:** Bayerische Staatsbibliothek's digitization portal (daten.digitale-sammlungen.de) with deep PD-era music manuscript/score scans.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ PD-era scans presumed; per-item rights not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-item rights before shipping use. [Wave 17 Lane A]
+
+#### Sheet Music Consortium (UCLA-hosted) ❓ meta-search over PD sheet-music collections
+- **What:** Meta-search across member institutions' sheet-music digital collections (UCLA-hosted).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Aggregator only — each member collection's terms govern; nothing verified this pass.
+- **Free tier:** Free search (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful discovery layer for the Levy/Duke/Sibley-class collections above; always verify at the source collection. [Wave 17 Lane A]
+
+#### Library of Congress — Music for the Nation: American Sheet Music ⚠️ per-item rights statements govern
+- **What:** LoC digital collection of American sheet music (African-American, Civil War, temperance, etc.).
+- **URL:** No verbatim collection URL captured this pass — locate via search; rights framework verified at https://www.loc.gov/legal/security-copyright-and-privacy/understanding-copyright/
+- **License:** ⚠️ LoC marks each item with a "Rights and Access"/"Rights Advisory" statement; only items tagged "public domain" or "no known copyright restrictions" are freely usable — never assume the collection headline covers every item.
+- **Free tier:** Free.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same gating discipline as the image side: the file page's rights statement governs. [Wave 17 Lane A]
+
+#### Kai Engel ⚠️ per-track CC terms on Free Music Archive — no blanket grant
+- **What:** Neoclassical/ambient composer (Anton Fedchenkov); large free catalog on the Free Music Archive; his own video descriptions point to FMA for "free music and types of CC licenses."
+- **URL:** https://freemusicarchive.org/music/Kai_Engel/Deathless_The_Renaissance
+- **License:** ⚠️ Per-track: FMA album pages state "licensed under: Please check individual tracks for their respective licensing info" — some tracks CC-BY, others NC. No blanket commercial grant.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to CC-BY tracks only for production; keep a per-track license log. [Wave 17 Lane A]
+
+#### Zapsplat ❓ free-tier terms unverified this pass
+- **What:** Large SFX/music library with a free tier (attribution-required) and paid tiers.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Described as free with attribution on the free tier; the current license text was not read this pass.
+- **Free tier:** Free tier exists (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read the live license before any use; free-tier attribution must be honored. [Wave 17 Lane A]
+
+#### Pixabay Music ⚠️ Pixabay Content License — not public domain, not CC0
+- **What:** Pixabay's music section (pixabay.com/music).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Covered by Pixabay's own Content License, not CC0 and not public domain; verify the current terms before shipping (allowed uses have changed historically).
+- **Free tier:** Free downloads (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not file Pixabay tracks as PD/CC0 in any manifest. [Wave 17 Lane A]
+
+#### IN Harmony: Sheet Music from Indiana ❓ terms unverified this pass
+- **What:** Indiana University sheet-music digital collection (19th/early-20th century).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ PD-era material presumed; terms not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use. [Wave 17 Lane A]
+
+#### Templeton Digital Sheet Music Collection (Mississippi State) ❓ terms unverified this pass
+- **What:** Mississippi State University's digitized sheet-music collection.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use. [Wave 17 Lane A]
+
+#### DIAMM — Digital Image Archive of Medieval Music ⚠️ academic per-item terms
+- **What:** Oxford-hosted image archive of medieval music manuscripts.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Academic resource; image reuse is per-item/restricted — verify before any production use.
+- **Free tier:** Free viewing (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference value; not a bulk-ingest source. [Wave 17 Lane A]
+
+#### Cantus Database ❓ chant melody database, terms unverified this pass
+- **What:** Database of Latin ecclesiastical chant melodies (cantusdatabase.org) for musicological research.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Chant melodies are PD-era; the database's terms were not verified this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use. [Wave 17 Lane A]
+
+#### Alan Lomax Archive / Association for Cultural Equity ⚠️ per-item terms
+- **What:** Field recordings and documentation from Alan Lomax's folk-music collecting (American, Caribbean, European).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Per-item rights; some material streams free while commercial/download rights are restricted — verify each item.
+- **Free tier:** Free streaming (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not a bulk-ingest source; verify per item. [Wave 17 Lane A]
+
+#### Werner Icking Music Archive (WIMA) ❓ early PD sheet-music archive, terms unverified this pass
+- **What:** One of the earliest public-domain sheet-music archives on the web (listed alongside CPDL/Mutopia in reference works); site responded HTTP 200 this pass.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ Presented as a PD archive, but the current terms were not read this pass.
+- **Free tier:** Free access (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify the live terms before shipping use; do not bulk-ingest on reputation alone. [Wave 17 Lane A]
+
+### Chiptune / retro module archives
+
+#### The Mod Archive ⚠️ per-module license — filter by uploader-stated PD/CC only
+- **What:** The module-file library since 1996 (MOD/XM/IT/S3M and 40+ formats); anyone can upload; charts, reviews, ratings, and browse-by-license.
+- **URL:** https://en.wikipedia.org/wiki/Mod_Archive (verification source for the content-license statement); archive at modarchive.org
+- **License:** ⚠️ "Public domain or Creative Commons licenses, if mentioned by the uploader" — unmarked modules default to all-rights-reserved. The site's Module Copyright help pages govern; never bulk-scrape.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with libxmp (this wave, ✅ MIT) for in-engine playback: filter the Archive to PD/CC-marked modules, log per-module licenses. [Wave 17 Lane A]
+
+#### OverClocked ReMix ⚠️ artist-retained rights — site bars for-profit distribution
+- **What:** The video-game music arrangement community (ocremix.org); thousands of free ReMixes.
+- **URL:** https://ocremix.org/wiki/index.php?title=Content_Policy&diff=next&oldid=1766
+- **License:** ⚠️ Per the submission agreement: artists grant OC ReMix a non-exclusive sub-licensable license and retain ownership; the agreement "explicitly prohibits OverClocked ReMix from distributing submitted materials for for-profit endeavors." No blanket commercial grant — each track's artist terms govern.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/inspiration only for commercial pipelines unless the individual artist grants it. [Wave 17 Lane A]
+
+#### Battle of the Bits ⚠️ per-entry CC terms — check each entry
+- **What:** Chiptune/bytebeat compos (battleofthebits.org) with downloadable entries across chip formats.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Entries carry per-entry Creative Commons terms; check each entry's license — no blanket grant.
+- **Free tier:** Free downloads (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to CC-BY/CC0 entries for production use. [Wave 17 Lane A]
+
+#### High Voltage SID Collection (HVSC) ⚠️ noncommercial distribution — terms not re-verified this pass
+- **What:** The definitive Commodore 64 SID music archive (tens of thousands of tunes).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ Distributed for noncommercial use per HVSC documentation; the live terms were not re-verified this pass — verify before any use.
+- **Free tier:** Free downloads (per historical record).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference only for commercial pipelines; do not ship HVSC tunes in a commercial build. [Wave 17 Lane A]
+
+### Chiptune / retro trackers and music tools — clean licenses, upstream-verified
+
+#### FamiStudio ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** NES/Famicom music editor with piano-roll UI; exports NSF and ROM-ready data. The clean-license Famitracker-class tool.
+- **URL:** https://github.com/BleuBleu/FamiStudio
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest clean Famicom-music path in the lane. Proof: tools/music/evidence_wave17_laneA/license_manifest.json. [Wave 17 Lane A]
+
+#### BeepBox ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Browser-based chiptune sketchpad by John Nesky; exports WAV/MIDI/JSON.
+- **URL:** https://github.com/johnnesky/beepbox
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fast chiptune prototyping; JSON song format is pipeline-friendly. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### JummBox ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** BeepBox fork with extended instruments and song structure.
+- **URL:** https://github.com/jummbus/jummbox
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prefer over BeepBox when longer arrangements are needed. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### klystrack ✅ commercial-safe (MIT, raw LICENSE fetched 2026-10-07)
+- **What:** Chiptune tracker by kometbomb (Tero Lindeman); C64/NES-style composition.
+- **URL:** https://github.com/kometbomb/klystrack
+- **License:** ✅ MIT — GitHub API returned NOASSERTION, so the raw LICENSE was fetched 2026-10-07: MIT grant text ("Permission is hereby granted, free of charge…"). Saved at tools/music/evidence_wave17_laneA/licenses/kometbomb_klystrack_LICENSE.txt.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Proof: license_manifest.json + saved LICENSE. [Wave 17 Lane A]
+
+#### FastTracker II clone (8bitbubsy/ft2-clone) ✅ commercial-safe (BSD-3-Clause, API verified 2026-10-07)
+- **What:** Highly accurate open-source clone of FastTracker II by Olav Sørensen (8bitbubsy).
+- **URL:** https://github.com/8bitbubsy/ft2-clone
+- **License:** ✅ BSD-3-Clause — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean XM authoring path without touching abandonware FT2 binaries. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### ProTracker 2 clone (8bitbubsy/pt2-clone) ✅ commercial-safe (BSD-3-Clause, API verified 2026-10-07)
+- **What:** Highly accurate open-source clone of ProTracker 2.3D (Amiga) by 8bitbubsy.
+- **URL:** https://github.com/8bitbubsy/pt2-clone
+- **License:** ✅ BSD-3-Clause — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean MOD authoring path. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### TIC-80 ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Fantasy computer (nesbox) with a built-in chiptune tracker, sprite/map editors, and Lua/JS/Moon/Wren scripting.
+- **URL:** https://github.com/nesbox/TIC-80
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Chiptune prototyping inside a shippable fantasy console; music format is code-readable. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### GB Studio ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Game Boy game maker (chrismaltby) with a built-in music editor; exports real GB ROMs.
+- **URL:** https://github.com/chrismaltby/gb-studio
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with hUGETracker for a fully clean Game Boy audio chain. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### hUGETracker ✅ commercial-safe (public-domain dedication, README verified 2026-10-07)
+- **What:** Game Boy music tracker + hUGEDriver sound driver by SuperDisk.
+- **URL:** https://github.com/SuperDisk/hUGETracker
+- **License:** ✅ Public-domain dedication — no LICENSE file in the repo; the upstream README.md states "hUGETracker and hUGEDriver are dedicated to the public domain" (read 2026-10-07).
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cleanest-license Game Boy tracker found. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### libxmp ✅ commercial-safe (MIT, upstream README verified 2026-10-07)
+- **What:** Extended Module Player library — plays 90+ tracker module formats (MOD/XM/IT/S3M…).
+- **URL:** https://github.com/libxmp/libxmp
+- **License:** ✅ MIT — GitHub API license field null, so the upstream README was read 2026-10-07: MIT grant text ("Permission is hereby granted, free of charge, to any person obtaining a…").
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The in-engine playback counterpart to The Mod Archive (⚠️, this wave): load PD/CC-marked modules only. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### music21 ✅ commercial-safe (BSD-3-Clause, API verified 2026-10-07)
+- **What:** Python toolkit for computational musicology (MIT's cuthbertLab): score analysis, corpus studies, algorithmic composition, MusicXML/MIDI I/O.
+- **URL:** https://github.com/cuthbertLab/music21
+- **License:** ✅ BSD-3-Clause — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest score-side pipeline tool in the lane (analysis + generation over PD corpora like Mutopia). Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### pretty_midi ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Python MIDI utility (craffel): load/manipulate/synthesize MIDI with a clean API.
+- **URL:** https://github.com/craffel/pretty-midi
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with music21/mido for the MIDI side of the scoring pipeline. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### mido ✅ commercial-safe (MIT, GitHub API spdx verified 2026-10-07)
+- **What:** Python MIDI I/O library: ports, messages, MIDI files, SysEx.
+- **URL:** https://github.com/mido/mido
+- **License:** ✅ MIT — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### partitura ✅ commercial-safe (Apache-2.0, GitHub API spdx verified 2026-10-07)
+- **What:** Python toolkit (CPJKU) for symbolic music: scores, MIDI, and expressive performance data in one model.
+- **URL:** https://github.com/CPJKU/partitura
+- **License:** ✅ Apache-2.0 — verified via GitHub API spdx_id 2026-10-07.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bridges score engraving and performance rendering in the pipeline. Proof: license_manifest.json. [Wave 17 Lane A]
+
+#### Musagi (DrPetter) ✅ commercial-safe (MIT, license.txt fetched 2026-10-07)
+- **What:** Music sequencer + synthesizer by the sfxr author (DrPetter).
+- **URL:** https://github.com/DrPetter/musagi
+- **License:** ✅ MIT — GitHub API returned NOASSERTION; license.txt fetched 2026-10-07 attaches the MIT license ("Do what you wish with the enclosed source…"). Saved at tools/music/evidence_wave17_laneA/licenses/DrPetter_musagi_license.txt.txt.
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Proof: license_manifest.json + saved license.txt. [Wave 17 Lane A]
+
+#### bfxr (increpare) ✅ commercial-safe (Apache-2.0, upstream README verified 2026-10-07)
+- **What:** Flash-era retro sound-effect synthesizer (the bfxr.net tool), source by increpare.
+- **URL:** https://github.com/increpare/bfxr
+- **License:** ✅ Apache-2.0 — GitHub API license field null; the upstream readme.MD states "license: http://www.apache.org/licenses/LICENSE-2.0.html" (read 2026-10-07).
+- **Free tier:** Free and open source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean-license chiptune SFX synth; complements the already-cataloged sfxr/jsfxr. Proof: license_manifest.json. [Wave 17 Lane A]
+
+### Documented negatives — proprietary, abandonware, or unverifiable trackers
+
+#### DefleMask 🚫 do-not-use — now paid/closed-source, plus a GPL dispute on record
+- **What:** Multi-system chiptune tracker (Genesis/Mega Drive, SMS, Game Boy, NES, C64, PC Engine…).
+- **URL:** https://gbatemp.net/threads/deflemask-tracker-is-no-longer-free.588313/
+- **License:** 🚫 Proprietary closed-source; formerly free, now paid on all platforms including PC, and the legacy free version's availability is not guaranteed. A CSDb thread documents a GPL dispute (use of GPL reSID code without a source release).
+- **Free tier:** None (paid).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Do not build on DefleMask. Clean alternatives: FamiStudio (MIT), Furnace (quarantine, GPL), klystrack (MIT). [Wave 17 Lane A]
+
+#### SunVox ⚠️ proprietary studio app; engine library separately free for commercial use
+- **What:** Modular synthesizer + pattern-based tracker by Alexander Zolotov (NightRadio); desktop/mobile.
+- **URL:** https://warmplace.ru/soft/sunvox/sunvox_lib.php · https://en.wikipedia.org/wiki/SunVox
+- **License:** ⚠️ The SunVox Modular Music Creation Studio app is proprietary (desktop free download; iOS/Android paid). The SunVox ENGINE LIBRARY is stated BSD 3-Clause / free for commercial use by the developer ("You can freely use it in your own products (even commercial ones). But don't forget to read the license file") — but GitHub API returned license:null for warmplace/sunvox, so read the bundled license file before any use. Never treat the studio app as open-source.
+- **Free tier:** Studio app free on desktop; paid on mobile.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Engine library is the only shippable part, and only after reading its license file. [Wave 17 Lane A]
+
+#### NSFPlay (bbbradsmith fork) ⚠️ no formal license — maintainer presumption only, not a grant
+- **What:** Maintained fork of the NES Sound Format player (NSFPlay/NSFPlug by Brezza), with CLI render-to-WAV utilities.
+- **URL:** https://github.com/bbbradsmith/nsfplay
+- **License:** ⚠️ No LICENSE file. The readme.txt says the maintainer "presumed based on text comments and readme files in the original code that it is distributed freely" and "You may reuse this code without restriction" — a presumption about the original author's intent, not a verified grant. Do not ship code from this repo without resolving the license.
+- **Free tier:** Free binaries/source.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative: popularity ≠ license. NSF playback alternatives: libgme (quarantine row 184, LGPL-2.1) or clean-room reimplementation. [Wave 17 Lane A]
+
+#### Little Sound DJ (LSDJ) 🚫 proprietary paid software
+- **What:** The classic Game Boy music sequencer by Johan Kotlinski — cartridge/ROM software.
+- **License:** 🚫 Proprietary commercial software (paid). No open-source grant; no public source repository.
+- **Free tier:** None.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Cultural reference only. Clean Game Boy alternatives: hUGETracker (PD), GB Studio (MIT). [Wave 17 Lane A]
+
+#### Arkos Tracker 2 ❓ no public source found; license unverified this pass
+- **What:** Z80/AY-3-8910 tracker for Amstrad CPC / ZX Spectrum / MSX by Arkos (Julien Névo).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ No official source repository found on GitHub (only third-party ports such as ggnkua/Arkos-Tracker-2-ST); license terms not verified against the official site this pass.
+- **Free tier:** Unknown.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Do not vendor third-party ports as if they were upstream. [Wave 17 Lane A]
+
+#### Skale Tracker 🚫 abandonware — no traceable license grant
+- **What:** Windows FastTracker-II-style tracker from the 2000s.
+- **License:** 🚫 Abandoned; no maintained upstream, no license grant traceable. Binaries float on mirror sites with no terms.
+- **Free tier:** None (abandoned).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Use ft2-clone (BSD-3-Clause, this wave) instead. [Wave 17 Lane A]
+
+#### NerdTracker II 🚫 abandonware — no traceable license grant
+- **What:** DOS tracker for composing NES music.
+- **License:** 🚫 Abandoned; no maintained upstream, no license grant traceable.
+- **Free tier:** None (abandoned).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Use FamiStudio (MIT, this wave) instead. [Wave 17 Lane A]
+
+#### Nanoloop 🚫 proprietary commercial software
+- **What:** Chiptune step-sequencer (Game Boy cartridge, iOS, Android).
+- **License:** 🚫 Proprietary commercial software. No open grant.
+- **Free tier:** None.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Reference only. [Wave 17 Lane A]
+
+#### Bosca Ceoil ❓ license unverified this pass
+- **What:** Simple chiptune creation tool associated with Terry Cavanagh.
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ❓ No upstream license verification completed this pass — verify before any use.
+- **Free tier:** Unknown.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify before shipping use. [Wave 17 Lane A]
+
+#### Musescore.com ⚠️ proprietary score-sharing site — not covered by the desktop app's GPL grant
+- **What:** The score-sharing website (musescore.com), distinct from MuseScore Studio desktop (GPL-3.0 — quarantine row 177 this wave).
+- **URL:** No verbatim upstream URL verified this pass — locate via search before use.
+- **License:** ⚠️ The site's terms are proprietary: user-uploaded scores carry per-score restrictions and the site's own terms of use. The desktop application's GPL grant does NOT cover site content — never conflate the two.
+- **Free tier:** Freemium site.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: "MuseScore is open source" is true of the app, false of the website's score library. [Wave 17 Lane A]
+
+## Entry count — Wave 17 Lane A
+
+50 new `####` entries appended (20 PD music/score long-tail · 4 chiptune module archives · 16 clean-license trackers/music tools · 10 documented negatives) → **1803 total** honest entries (1753 before this wave). 15 new quarantine rows (170–184): 12 GPL-family trackers/score tools + Verovio LGPL-3.0 + libgme LGPL-2.1 (both LGPL: doctrine still pending owner verdict). Wired: wave17_laneA_verify_licenses.py (30 upstream license checks, license_manifest.json + 6 saved raw license texts) and wave17_laneA_pd_pull.py (3 PD audio pulls with SHA-256 + ffprobe: 2 Wikimedia Commons PD recordings, 1 Mutopia MIDI with MThd verified; 1 honest failure — Open Music Archive homepage exposes no direct audio links). Dedup: 15 planned candidates (Scott Buckley, filmmusic.io, Silverman, Purple Planet, Bensound, Fesliyan, Mixkit, Open Music Archive, Gallica, CPDL, ChipTone, sfxr, RFXGEN, National Jukebox, Jeskola Buzz) were already cataloged — skipped, replaced with fresh entries. [Wave 17 Lane A]
+## Wave 17 — Lane B (caption burn-in SaaS alternatives · caption packaging/delivery · subtitle burn-in renderers · diarization-adjacent) — 39 entries
+
+### A. Burn-in SaaS alternatives — NEW services (free tiers + honest ToS, researched 2026-10-07)
+
+#### Happy Scribe — AI transcription/subtitling/translation suite ⚠️ license-conditional
+- **What:** Browser-based AI transcription, subtitle generation (SRT/VTT export), translation across 100+ languages, plus optional human proofreading; meeting-notes tier is free unlimited.
+- **URL:** https://www.happyscribe.com/
+- **License:** Proprietary SaaS terms (not open-source).
+- **Free tier:** 10-minute free trial of full AI transcription/subtitling/translation; unlimited meeting recordings with 45-min cap per recording. Paid Basic $17/mo (120 min/mo, no watermark on video exports).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ToS caveats: trial minutes are one-shot (not recurring); the commercial-use grant for trial-tier outputs was not verified against the live ToS — confirm before publishing trial-generated captions. Meeting-notes free tier is the genuinely free part. [Wave 17 Lane B]
+
+#### Clipchamp (Microsoft) — free 1080p editor with auto-captions, no watermark ⚠️ license-conditional
+- **What:** Microsoft's browser/desktop video editor with AI auto-captioning in 80+ languages; captions can be burned into MP4 exports or downloaded.
+- **URL:** https://www.microsoft.com/en-us/microsoft-365/clipchamp
+- **License:** Proprietary (Microsoft terms).
+- **Free tier:** Unlimited exports at 1080p with NO watermark on the free plan (verified across multiple 2026 sources); premium stock/4K/brand-kit behind Microsoft 365. Videos containing Pro-only assets still get watermarked.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The most generous free burn-in tier found this wave — but "no watermark" is not a commercial-rights grant: verify the Microsoft Services Agreement for client-work use, and note free-tier stock assets may carry their own restrictions. [Wave 17 Lane B]
+
+#### Filmora (Wondershare) — free tier watermarks ALL exports, no commercial license 🚫 do-not-use (free tier)
+- **What:** Desktop timeline editor with AI auto-caption/dynamic captions and subtitle burn-in.
+- **URL:** https://filmora.wondershare.com/
+- **License:** Proprietary.
+- **Free tier:** Full editor is free to try but EVERY export carries a Filmora watermark and the free tier grants no commercial-use license (per Wondershare's own FAQ and multiple 2026 reviews).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: the free tier is a trial, not a publishing path — unusable for any released content. Paid plans remove the watermark and add the commercial grant. Listed so nobody mistakes "free download" for "free publishing." [Wave 17 Lane B]
+
+#### Headliner — audiogram/caption video maker, Forever Free ⚠️ license-conditional
+- **What:** Podcast-audio → captioned social video (audiograms, clip-and-caption) with automatic captions and 1080p export.
+- **URL:** https://www.headliner.app/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Forever Free = 5 videos/mo + 10 min transcription/mo. Per Headliner's own help center, a "Made With Headliner" watermark appears after a free user exports 1 video per month (Basic: after 10); unlimited watermarked videos allowed.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The watermark threshold (1 clean export/mo) is the real free-tier shape — plan around it. Good for promo audiograms, not for episode caption pipelines at volume. [Wave 17 Lane B]
+
+#### Checksub — AI subtitle/translate/dub platform, 1-hour free trial ⚠️ license-conditional
+- **What:** Upload video → AI-generated subtitles with styling/animation templates and karaoke options; burn-in export or SRT/VTT; 200+ translation languages; AI dubbing add-on.
+- **URL:** https://www.checksub.com/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Free trial = credits for 1 hour of video, no credit card (per Checksub's own FAQ); paid from €18/mo (Junior, 2 h/mo).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trial is genuinely full-featured (all features testable while credits last) — good for evaluating AI dubbing quality before committing. Credits debit per language generated. [Wave 17 Lane B]
+
+#### Subly — open/closed caption SaaS ⚠️ license-conditional
+- **What:** Browser caption editor: auto-generate open or closed captions, timeline retiming, SRT upload, preview-synced editing.
+- **URL:** https://getsubly.com/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Free trial + limited free version; paid ≈ $17/mo (multiple 2026 comparison sources agree).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Accessibility-positioned (open/closed caption distinction is first-class). Free tier details were thin in secondary sources — verify current limits on the live pricing page before depending on it. [Wave 17 Lane B]
+
+#### Fliki — text-to-video with animated captions ⚠️ license-conditional
+- **What:** Script/idea → video with AI voiceover, stock/AI visuals, and animated captions; exports 9:16/1:1/16:9.
+- **URL:** https://fliki.ai/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 3 credits/mo (= 3 min video), 720p, watermarked (per Fliki's own FAQ). Paid from $28/mo (Standard, 180 min, 1080p, no watermark).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ToS caveat (vendor's own FAQ): "Commercial use of the finished Short requires a paid plan" — free-tier outputs are evaluation-only. Built-in music/stock is royalty-free but the commercial grant is paywalled. [Wave 17 Lane B]
+
+#### ElevenLabs Scribe — STT API with diarization + word timestamps ⚠️ license-conditional
+- **What:** Speech-to-text API (Scribe v2): 99 languages, speaker diarization, audio-event tagging, entity detection, word/character timestamps — the API path to caption data without running Whisper locally.
+- **URL:** https://elevenlabs.io/speech-to-text
+- **License:** Proprietary API terms.
+- **Free tier:** 10,000 credits/mo on the free plan; STT costs 330 credits/min → roughly 30 min/mo of transcription by the vendor's own published rates (secondary sources disagree: one claims ~4.5 h/mo on older pricing — treat as ~0.5–4 h, verify live).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diarization + word timestamps in one API call is exactly the caption-pipeline input; the credit pool is shared across ALL ElevenLabs products (TTS/dubbing/music spend the same credits), so caption budgets shrink in mixed-use months. [Wave 17 Lane B]
+
+#### TikTok auto-captions — platform-native, free, no watermark ✅ commercial-safe (platform-locked)
+- **What:** TikTok generates editable auto-captions on upload (multiple languages; English + others per TikTok's rollout), toggleable by viewers.
+- **URL:** In-app feature (tiktok.com).
+- **License:** Platform feature — no extra license; captions apply to your own uploads.
+- **Free tier:** Fully free, unlimited, no watermark.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest scope: this is NOT burn-in — captions live in TikTok's player only and don't export with the video file. Useful as a zero-cost accessibility layer for TikTok distribution, not as a caption-production tool. Accuracy ~80–85% per third-party guides — always review before publishing. [Wave 17 Lane B]
+
+#### Amara — nonprofit community captioning ✅ commercial-safe
+- **What:** 501(c)(3) nonprofit platform (Participatory Culture Foundation) for subtitling/captioning public YouTube/Vimeo videos collaboratively; editor + SRT/DFXP/SBV/WebVTT/TXT/SSA export.
+- **URL:** https://amara.org/
+- **License:** Platform is proprietary (was AGPL, closed-sourced Jan 2020 per Wikipedia) but the public subtitling workspace is free to use; you keep your subtitle files.
+- **Free tier:** Free public workspace — subtitle any public video URL, collaborate, export all standard formats. Private workspace = paid (Amara On Demand).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The only nonprofit in this lane — no watermark games, no credit metering on the public side. Constraint: public workspace means public videos; don't route unreleased episode cuts through it. [Wave 17 Lane B]
+
+#### Transkriptor — 90-min trial, SRT export ⚠️ license-conditional
+- **What:** Upload-based AI transcription (100+ languages) with speaker labels, timestamps, sentiment; exports DOC/PDF/SRT/TXT.
+- **URL:** https://transkriptor.com/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 90-minute free trial (one-time; some secondary sources describe 30 min/day — vendor page says 90 min trial, verify live). Lite $9.99/mo (300 min).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Privacy plus (vendor states it does not train models on user data — rare explicit claim in this lane). No real-time transcription — pre-recorded files only. [Wave 17 Lane B]
+
+#### BigVU — teleprompter; auto-captions NOT on free tier ⚠️ license-conditional (honest negative)
+- **What:** Teleprompter + scripted-video recorder with auto-caption styling on paid tiers.
+- **URL:** https://bigvu.tv/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Teleprompter + 9-min recordings free, but exports carry a BIGVU watermark AND automatic captions are locked behind paid tiers (Starter ≈ $12–19/mo). Per one 2026 review, AI-generated B-roll defaults into a shared community content bank.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listed as an honest negative for THIS lane: it looks like a caption tool but the free tier doesn't caption. Useful only as a free teleprompter. [Wave 17 Lane B]
+
+#### Klap — AI clipper with auto-captions, 1-video trial ⚠️ license-conditional
+- **What:** Long-form → short-form AI clipper: auto-reframe, virality scoring, auto-captions in 52 languages, brand styling.
+- **URL:** https://klap.app/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Trial = 1 video (15 min of source), no credit card; no recurring free plan. Paid from $29/mo (10 uploads, 100 clips).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trial is enough to test caption quality on one episode segment, not to run a pipeline. Clip allowance counts generated clips (not publishable ones) — budget for rejects. [Wave 17 Lane B]
+
+#### Loom — free transcription on all plans; caption download paywalled ⚠️ license-conditional
+- **What:** Async screen/personal video recorder with automatic transcription (50+ languages) and closed captions in-player.
+- **URL:** https://www.loom.com/
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Auto-transcription on ALL plans incl. free (25 videos, 5-min recordings, 720p); downloadable captions (SRT/VTT) only on Business+ ($15–18/user/mo). Captions don't survive MP4 download on free.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The free tier is a transcript viewer, not a caption source — the SRT export is the paywalled step. Fine for internal review notes; not a burn-in path. [Wave 17 Lane B]
+
+### B. ToS audits — free-tier terms verified for existing ❓ SaaS entries (2026-10-07)
+
+#### VEED — free-tier ToS audit ⚠️ license-conditional
+- **What:** Browser editor with auto-subtitles (SRT/VTT/TXT export or MP4 burn-in up to 4K on paid).
+- **URL:** https://www.veed.io/ (audits https://www.veed.io/ FAQ + 2026 pricing reviews)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Watermark on EVERY export, 720p, export length capped (~10 min); auto-subtitles on short videos included. Paid from ~$9–12/mo removes watermark.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ToS read: VEED's own FAQ says you retain rights to videos you create and may use them commercially (paid plans carry the explicit commercial license). FLAG: one secondary source (therundown.ai) alleges VEED's terms grant a model-improvement license over Free-tier uploads — NOT verified against the live ToS; treat as unconfirmed and re-check veed.io/terms before uploading sensitive material on the free plan. Resolves the Wave 12 ❓ entry with terms. [Wave 17 Lane B]
+
+#### Kapwing — free-tier audit ⚠️ license-conditional
+- **What:** Collaborative browser editor with auto-subtitler and subtitle burn-in.
+- **URL:** https://www.kapwing.com/ (audited via 2026 pricing reviews of kapwing.com/pricing)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Watermarked exports, 720p, export cap ~4–7 min, ~10 min auto-subtitling/mo, ~30 min exports/mo, projects stored only ~2–3 days. Pro $16/mo annual ($24 monthly).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The 2–3-day project retention is the sleeper constraint — free-tier projects evaporate if you don't export promptly. No free trial of paid plans and no refunds on subscriptions per Kapwing's FAQ. Resolves the Wave 12 ❓ entry with terms. [Wave 17 Lane B]
+
+#### Descript — free-tier audit ⚠️ license-conditional
+- **What:** Text-based audio/video editor (edit the transcript, media follows) with caption generation and burn-in export.
+- **URL:** https://www.descript.com/ (audited via 2026 pricing reviews)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 1 hour transcription/mo, 720p watermarked video exports. Paid from $16/mo (Hobbyist: 10 h, watermark-free 1080p).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The 1-hr/mo transcription allowance is the binding constraint for caption work — one 5-min episode segment eats a twelfth of the monthly budget. Education/nonprofit plan $5/user/mo exists. Content-ownership clause not re-verified this pass — check descript.com/terms before client work. Resolves the Wave 9 A ✅ entry's free-tier specifics. [Wave 17 Lane B]
+
+#### CapCut — ToS audit: perpetual content license ⚠️ license-conditional (strong caveat)
+- **What:** ByteDance's free editor (desktop/mobile/web) with auto-captions and burn-in export.
+- **URL:** https://www.capcut.com/ (audited: capcut.com Creator Terms + socialrails.com 2026 pricing/ToS guide + securityonline.info on the June 2025 ToS update)
+- **License:** Proprietary (ByteDance terms).
+- **Free tier:** Free with generous editing; some effects/templates paywalled; export limits on free.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** STRONG CAVEAT (verified across the Creator Terms text and multiple 2026 analyses): CapCut's ToS grants ByteDance an unconditional, irrevocable, non-exclusive, royalty-free, fully transferable (incl. sublicensable), perpetual, worldwide license to ALL content you upload/create — free AND paid users alike. Separately, the materials license grants NO rights to built-in sound recordings/musical works — CapCut stock music in a commercial video is the most common licensing landmine. NEVER cut NDA/client/unreleased material in CapCut. Resolves the Wave 6 ❓ entry with terms. [Wave 17 Lane B]
+
+### C. Caption packaging / delivery tools
+
+#### Comcast caption-inspector — CEA-608/708 reference decoder ✅ commercial-safe
+- **What:** Reference decoder/inspector for Closed Captions (CEA-608/708): parses caption data out of video streams for broadcast caption QC.
+- **URL:** https://github.com/Comcast/caption-inspector
+- **License:** Apache-2.0 (verified 2026-10-07 via https://raw.githubusercontent.com/Comcast/caption-inspector/master/LICENSE — Apache text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The missing broadcast-caption QC piece: pairs with libcaption (encoder side, already cataloged) — encode with libcaption, verify with caption-inspector. [Wave 17 Lane B]
+
+#### EBU-TT Live toolkit — live subtitle distribution ✅ commercial-safe
+- **What:** EBU's reference toolkit for EBU-TT Live (EBU-TT-D) live subtitling: carriage over WebSocket, timing model, document handling.
+- **URL:** https://github.com/ebu/ebu-tt-live-toolkit
+- **License:** BSD-3-Clause (verified 2026-10-07 via https://raw.githubusercontent.com/ebu/ebu-tt-live-toolkit/master/LICENCE.txt — BSD text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Niche but standards-clean: the EBU's own live-captioning profile. Relevant if the studio ever does live-captioned streams; otherwise a reference implementation. [Wave 17 Lane B]
+
+#### dash.js — DASH reference player with caption rendering ✅ commercial-safe
+- **What:** DASH Industry Forum's reference DASH player: renders caption/subtitle tracks (TTML, WebVTT, CEA-608/708 via embedded SEI) in-browser.
+- **URL:** https://github.com/Dash-Industry-Forum/dash.js
+- **License:** BSD (verified 2026-10-07 via https://raw.githubusercontent.com/Dash-Industry-Forum/dash.js/development/LICENSE.md — "dash.js BSD License Agreement"; GitHub API reports NOASSERTION so the file is the source of truth)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Delivery-side caption verification: play back shaka-packager/GPAC-packaged DASH with caption tracks and confirm they render. Complements hls.js (already cataloged) on the DASH side. [Wave 17 Lane B]
+
+#### shaka-player — DASH/HLS player with WebVTT/TTML captions ✅ commercial-safe
+- **What:** Google's (now Shaka Project's) adaptive media player: caption/subtitle track selection and rendering for DASH + HLS (WebVTT, TTML).
+- **URL:- **URL:** https://github.com/shaka-project/shaka-player
+- **License:** Apache-2.0 (verified 2026-10-07 via https://raw.githubusercontent.com/shaka-project/shaka-player/main/LICENSE — Apache text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The player half of the shaka-packager pipeline (packager already cataloged Wave 14): package caption tracks with shaka-packager, verify playback here. [Wave 17 Lane B]
+
+#### vtt.js (Mozilla) — WebVTT parser/renderer ✅ commercial-safe
+- **What:** Mozilla's WebVTT parser + renderer: parse .vtt cues and render them over HTML5 video; the reference implementation browsers converged on.
+- **URL:** https://github.com/mozilla/vtt.js
+- **License:** Apache-2.0 (verified 2026-10-07 via https://raw.githubusercontent.com/mozilla/vtt.js/master/LICENSE — Apache text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Packaging-side caption sanity: parse the VTT files the pipeline emits (webvtt-py output, pycaption output) with the reference parser before shipping them to players. [Wave 17 Lane B]
+
+#### Gaupol — subtitle editor 🚫 GPL-3.0 — FLAG for quarantine
+- **What:** Desktop editor for text-based subtitle files (SRT, SSA/ASS, MicroDVD, etc.): timing, spell-check, batch conversion.
+- **URL:** https://github.com/otsaloma/gaupol
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id) — quarantine row 185 (renumbered from 170 by the Wave 17 coordinator — collision with Lane A Furnace row 170)
+- **Free tier:** Self-hosted — free under GPL-3.0 terms
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GPL-3.0 — standalone QC station only, never linked into shipping code. Listed so the lane's editor coverage is honest about which tools are quarantined. [Wave 17 Lane B]
+
+### D. Subtitle burn-in renderers
+
+#### ffmpeg-python (kkroening) — fluent FFmpeg bindings for scripted burn-in ✅ commercial-safe — WIRED
+- **What:** Pythonic FFmpeg wrapper: build filtergraphs (drawtext caption overlays, subtitles filter, concat) in code instead of hand-writing CLI strings.
+- **URL:** https://github.com/kkroening/ffmpeg-python
+- **License:** Apache-2.0 (verified 2026-10-07 via https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/LICENSE — Apache text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired
+- **Notes:** WIRED: `tools/captions/ffmpeg_python_burnin.py` burns karaoke-style word-highlight captions via drawtext onto a generated test clip → `proofs/wave17_ffmpeg_python_burnin/` (output mp4 + extracted frame, real render). The scripted alternative to hand-rolled ffmpeg CLI in promo_assemble.py. [Wave 17 Lane B]
+
+#### whisper.cpp (ggml-org) — MIT on-device ASR for burn-in pipelines ✅ commercial-safe
+- **What:** Whisper ported to C/C++ (ggml): runs the full Whisper model family on CPU with tiny memory footprint; SRT/VTT output; the backend behind noScribe/whisper-web.
+- **URL:** https://github.com/ggml-org/whisper.cpp
+- **License:** MIT (verified 2026-10-07 via GitHub API spdx_id + raw LICENSE "MIT License, Copyright (c) 2023-2026 The")
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CANONICAL REPO MOVED: ggerganov/whisper.cpp → ggml-org/whisper.cpp (GitHub returns Moved Permanently; update any old links). The low-resource caption source for burn-in pipelines where faster-whisper is overkill; CoreML/Metal acceleration on Apple Silicon. [Wave 17 Lane B]
+
+#### insanely-fast-whisper — Apache-2.0 batch ASR ✅ commercial-safe
+- **What:** Batch Whisper inference CLI (optimum + transformers): ~10x faster than openai/whisper on GPU, SRT/VTT/JSON output — the throughput path for captioning episode backlogs.
+- **URL:** https://github.com/Vaibhavs10/insanely-fast-whisper
+- **License:** Apache-2.0 (verified 2026-10-07 via GitHub API spdx_id)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Canonical owner is Vaibhavs10 (not VAIBHAVSRI — case-sensitive; the all-caps URL 404s). Batch-first design: feed it a directory of episode audio, get timestamped transcripts for the burn-in stage. [Wave 17 Lane B]
+
+#### WhisperKit (argmax) — MIT on-device Apple transcription ✅ commercial-safe
+- **What:** On-device Whisper for Apple Silicon (Swift): CoreML-optimized, streaming-capable transcription with word timestamps; no server, no API key.
+- **URL:** https://github.com/argmaxinc/whisperkit
+- **License:** MIT (verified 2026-10-07 via https://raw.githubusercontent.com/argmaxinc/whisperkit/main/LICENSE — MIT text verbatim)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Apple-side caption source: caption on a Mac Studio/iPhone with no cloud round-trip and no per-minute billing. Word timestamps feed karaoke burn-in directly. [Wave 17 Lane B]
+
+#### XMedia Recode — freeware transcoder with subtitle burn-in ⚠️ proprietary-freeware
+- **What:** Windows all-in-one converter: import/extract/convert/burn subtitles (SRT, ASS, SSA), batch queue, GPU encoding, 200+ device profiles.
+- **URL:** https://www.xmedia-recode.de/en/ (license: author's German license text via portablefreeware.com translation)
+- **License:** Proprietary freeware — author's license: use is free in private AND commercial settings; commercial distribution/redistribution needs the author's express permission. NOT open-source.
+- **Free tier:** Fully free (Windows-only).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The free HandBrake-adjacent burn-in station for Windows operators who need a GUI: external SRT → burned MP4 without touching a filtergraph. Closed-source but the author's own terms permit commercial use of the tool itself. [Wave 17 Lane B]
+
+### E. Diarization-adjacent tools
+
+#### auditok — MIT audio activity detection ✅ commercial-safe — WIRED
+- **What:** Energy-based audio segmentation: splits recordings into speech-active regions (VAD) with tunable thresholds; pure Python + numpy.
+- **URL:** https://github.com/amsehili/auditok
+- **License:** MIT (verified 2026-10-07 via https://raw.githubusercontent.com/amsehili/auditok/master/LICENSE — MIT text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired
+- **Notes:** WIRED: `tools/captions/auditok_vad_srt.py` runs auditok VAD over a generated speech-like test signal and emits an SRT scaffold of speech regions → `proofs/wave17_auditok/` (real segmentation output). The cheap pre-pass before ASR: only transcribe regions with speech, and the regions themselves become caption-cue boundaries. Zero ML dependencies — runs anywhere numpy runs. [Wave 17 Lane B]
+
+#### Silero VAD (standalone) — MIT neural VAD ✅ commercial-safe
+- **What:** Pre-trained enterprise-grade neural voice activity detector (30ms+ chunks, <1ms CPU inference); PyTorch + ONNX builds.
+- **URL:** https://github.com/snakers4/silero-vad
+- **License:** MIT (verified 2026-10-07 via https://raw.githubusercontent.com/snakers4/silero-vad/master/LICENSE — plain MIT, no carve-outs; README states "Published under permissive license (MIT) … zero strings attached"; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SCOPED CORRECTION of the Wave 7 A "Silero models 🚫" entry: that block covers snakers4/silero-models (STT/TTS models, CC BY-NC-SA 4.0). The STANDALONE silero-vad package is MIT-licensed including its model — safe for commercial caption pipelines. (README badge alt-text confusingly reads "CC BY-NC 4.0" but links the MIT LICENSE file; the file governs.) The accuracy upgrade over auditok's energy detector for noisy episode audio. [Wave 17 Lane B]
+
+#### inaSpeechSegmenter — MIT speech segmentation ✅ commercial-safe
+- **What:** CNN-based audio segmentation: speech/music/noise/silence classification plus speaker-homogeneous segmentation and gender detection; trained on broadcast data.
+- **URL:** https://github.com/ina-foss/inaSpeechSegmenter
+- **License:** MIT (verified 2026-10-07 via https://raw.githubusercontent.com/ina-foss/inaSpeechSegmenter/master/LICENSE — MIT text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** License surprise: commonly assumed GPL, actually MIT — no quarantine needed. Gender detection gives a crude two-speaker split for dialogue scenes without a full diarization stack; music/noise labels help skip non-speech caption regions. [Wave 17 Lane B]
+
+#### SpectralCluster (wq2012) — Google's diarization clustering ✅ commercial-safe
+- **What:** Python re-implementation of the (constrained) spectral clustering algorithm behind Google's UIS-RNN diarization pipeline: embeddings in, speaker labels out.
+- **URL:** https://github.com/wq2012/SpectralCluster
+- **License:** Apache-2.0 (verified 2026-10-07 via https://raw.githubusercontent.com/wq2012/SpectralCluster/master/LICENSE — Apache text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The clustering half of embedding-based diarization without the pyannote HF-gated models: pair with any speaker-embedding extractor (Resemblyzer, WeSpeaker) → speaker-homogeneous caption cues. Author wq2012 is the Google researcher behind the original method. [Wave 17 Lane B]
+
+#### dscore (nryant) — diarization scoring toolkit ✅ commercial-safe
+- **What:** Reference diarization metrics: DER (diarization error rate), JER, with RTTM I/O and collar/forgiveness options — the NIST-style scoring harness.
+- **URL:** https://github.com/nryant/dscore
+- **License:** BSD-2-Clause (verified 2026-10-07 via https://raw.githubusercontent.com/nryant/dscore/master/LICENSE — BSD text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The QC yardstick for any diarization experiment: score pyannote/diart/whisper-diarization outputs against hand-labeled episode RTTMs before trusting speaker labels in captions. [Wave 17 Lane B]
+
+#### meeteval (fgnt) — meeting transcription eval toolkit ✅ commercial-safe — WIRED
+- **What:** Evaluation toolkit for meeting transcription: WER variants, tcpWER, ORC-WER, DER-style metrics over multi-speaker hypotheses; pure Python.
+- **URL:** https://github.com/fgnt/meeteval
+- **License:** MIT (verified 2026-10-07 via https://raw.githubusercontent.com/fgnt/meeteval/master/LICENSE — MIT text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired
+- **Notes:** WIRED: `tools/captions/meeteval_demo.py` scores a synthetic reference/hypothesis pair (one substitution + one timing shift injected) with tcpWER → `proofs/wave17_meeteval/` (real metric output). The caption-QC gate: quantify how much a caption revision actually changed before accepting it. [Wave 17 Lane B]
+
+#### pyannote-metrics — diarization metrics ✅ commercial-safe
+- **What:** The pyannote project's metric library: DER, identification/detection error rates, purity/coverage, mounted on pyannote.core timelines.
+- **URL:** https://github.com/pyannote/pyannote-metrics
+- **License:** MIT (verified 2026-10-07 via https://raw.githubusercontent.com/pyannote/pyannote-metrics/develop/LICENSE — MIT text verbatim; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with pyannote.audio (already cataloged): evaluate diarization pipelines in the same timeline objects the pipeline already produces. dscore is the NIST-flavored alternative; this is the pyannote-native one. [Wave 17 Lane B]
+
+#### whisper-diarization — license RESOLVED: BSD-2-Clause ✅ commercial-safe
+- **What:** Whisper ASR + NeMo speaker diarization pipeline — who-spoke-when transcripts for multi-speaker captioning (resolves the Wave 9 A ❓ entry).
+- **URL:** https://github.com/MahmoudAshraf97/whisper-diarization
+- **License:** BSD-2-Clause (verified 2026-10-07 via https://raw.githubusercontent.com/MahmoudAshraf97/whisper-diarization/main/LICENSE — "BSD 2-Clause License, Copyright (c) 2023, Mahmoud Ashraf"; GitHub API spdx_id agrees)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The Wave 9 A entry sat ❓ unverified ("repo carries a license badge but the license text was not confirmed") — the LICENSE file exists and is BSD-2-Clause. Clears the strongest diarization-for-captions pipeline for wiring in a future wave. [Wave 17 Lane B]
+
+### F. Honest negatives / scam flags
+
+#### "Cracked" XMedia Recode GitHub repos — license-laundering 🚫 do-not-use
+- **What:** GitHub repos advertising "XMedia Recode Crack / unlock toolkit / premium features" with MIT License badges on repackaged proprietary freeware (e.g. github.com/skiez121/xmedia-recode-unlock-toolkit, github.com/kuruustupilav/xmedia-recode-v359-cracked-build).
+- **URL:** Search "xmedia recode crack github" — examples above (do NOT download or run).
+- **License:** Claimed "MIT" on the repo page; XMedia Recode itself is proprietary freeware — the MIT claim cannot cover the repackaged binary. License laundering.
+- **Free tier:** N/A — piracy vector.
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Evidence: the repos' own READMEs describe circumventing the author's licensing ("disable Windows Defender … licensing modifications") while wearing an MIT badge that the actual vendor never granted. Pattern to watch for across ALL freeware in this lane: a GitHub "crack" repo with a permissive license badge is not a license grant. Download XMedia Recode only from xmedia-recode.de. [Wave 17 Lane B]
+
+#### "Subtitles" desktop app (Adware.Subtitles) — adware posing as a subtitle tool 🚫 do-not-use
+- **What:** A desktop application called "Subtitles" distributed via deceptive sites, classified by malware researchers as adware (detection name Adware.Subtitles).
+- **URL:** https://howtofix.guide/subtitles-application-adware/ (researcher write-up; do NOT download the app)
+- **License:** N/A — malware.
+- **Free tier:** N/A.
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Evidence: researcher analysis documents intrusive/deceptive ads, browser data-tracking (URLs, cookies, credentials), and downstream malware risk. This is the shape of the scam in the subtitle-tool space: "free subtitle app" downloads that monetize via adware. Corollary hygiene: get subtitle tools from their canonical repos/sites only, and treat bundled "subtitle downloader" freeware as hostile until proven otherwise. (Related: OpenSubtitles.org forum threads document malvertising redirects to scam/virus sites from the subtitle-download ecosystem — same trust lesson.) [Wave 17 Lane B]
+
+---
+
+## Entry count — Wave 17 (Lane B)
+
+39 new `####` entries appended (14 burn-in SaaS alternatives · 4 SaaS ToS audits · 6 caption packaging/delivery tools · 5 subtitle burn-in renderers · 8 diarization-adjacent tools · 2 scam/honest-negative flags) → **1792 total** honest entries (1753 before this wave). Licenses verified at upstream sources (GitHub API spdx_id + raw LICENSE/LICENCE files, vendor ToS/FAQ pages, EBU/author license texts) — never assumed. Notable corrections: Silero VAD standalone is MIT (the Wave 7 A 🚫 block covers only snakers4/silero-models); inaSpeechSegmenter is MIT not GPL (no quarantine); whisper-diarization's ❓ resolved to BSD-2-Clause; whisper.cpp's canonical repo moved ggerganov → ggml-org; insanely-fast-whisper's canonical owner is Vaibhavs10 (case-sensitive). Quarantine: +1 row (170: Gaupol GPL-3.0). Wired with real proofs: auditok VAD→SRT (`tools/captions/auditok_vad_srt.py` → `proofs/wave17_auditok/`), ffmpeg-python drawtext burn-in (`tools/captions/ffmpeg_python_burnin.py` → `proofs/wave17_ffmpeg_python_burnin/`), meeteval tcpWER demo (`tools/captions/meeteval_demo.py` → `proofs/wave17_meeteval/`). [Wave 17 Lane B]
+
+---
+
+## Entry count — Wave 17 (coordinator merge, 2026-10-07)
+
+89 new `####` entries appended (50 Lane A: PD music/score long tail + chiptune trackers · 39 Lane B: caption burn-in SaaS alternatives + packaging/burn-in renderers + diarization-adjacent + scam flags) → **1842 total** honest entries (1753 before this wave). Quarantine: rows 170–184 (Lane A, 12 new distinct + 3 superseded dups of 122/124/125) · row 185 (Lane B Gaupol, renumbered 170→185 on collision, superseded by row 99) · row 169 Subtitle Edit DELISTED (relicensed MIT upstream, verified in the Lane C spot-check). 185 rows · 171 distinct projects. LGPL doctrine still pending owner verdict; Speaches Docker smoke-test still deferred (no container runtime on the VM). [Wave 17 coordinator: Lane C]

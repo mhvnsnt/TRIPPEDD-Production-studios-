@@ -103,3 +103,18 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 63 | marytts | LGPL-3.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 64 | Fooocus | GPL-3.0 | background | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 65 | SoftVC-VITS (so-vits-svc) | AGPL-3.0 | voice-cloning | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 66 | Surge XT | GPL-3.0 | synth | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 67 | Dexed | GPL-3.0 | synth | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 68 | Helm | GPL-3.0 | synth | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 69 | Odin 2 | GPL-3.0 | synth | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 70 | ZynAddSubFX | GPL-2.0-or-later | synth | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 71 | LMMS | GPL-2.0 | daw | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 72 | Ardour | GPL-2.0 | daw | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 73 | Audacity | GPL-2.0-or-later | audio editor | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 74 | CHOW Tape Model (chowdsp) | GPL-3.0 | plugin | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 75 | Dragonfly Reverb | GPL-3.0 | plugin | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+
+## Notes from Wave-5 A2 research
+
+- Wave 5 A2 added 10 quarantined music/plugin items (total 75): Surge XT, Dexed, Helm, Odin 2 (all GPL-3.0 synths); ZynAddSubFX (GPL-2.0-or-later); LMMS, Ardour, Audacity (GPL DAWs/editor); CHOW Tape Model, Dragonfly Reverb (GPL-3.0 plugins). Free-proprietary alternatives (Vital free tier, Valhalla Supermassive, TDR tools) stay usable; only source-code integration is barred.
+- NOT quarantined: Vital (free Basic tier — binary use OK; only its GPLv3 source is off-limits), Airwindows (MIT), FluidR3 (MIT), VSCO2 CE (CC0), Salamander Grand (CC-BY 3.0).

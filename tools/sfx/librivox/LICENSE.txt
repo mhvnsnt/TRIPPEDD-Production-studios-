@@ -1,0 +1,9 @@
+LibriVox recordings are in the PUBLIC DOMAIN.
+
+Source: https://wiki.librivox.org/index.php?title=Copyright_and_Public_Domain (verified 2026-10-07)
+
+Summary of the upstream terms:
+- Anyone can use LibriVox audio files however they wish.
+- Uses explicitly accepted include: profit, remixing into other projects,
+  commercial educational projects, AI model training.
+- No credit to the individual reader/writer/creator or to LibriVox is required.

@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 111 rows · 105 distinct projects (reconciled Wave 9 Lane B, 2026-10-07):** license families — AGPL 22 rows · GPL 86 rows (incl. the RHVoice GPL-3.0 combo) · LGPL-3.0 1 row (marytts — SCOPE NOTE: delist recommendation pending owner verdict, stays quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 10 · lip-sync 9 · TTS 8 · anime tooling 8 · SFX 6 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-9 Lane B audit: Yoshimi GPL-2.0 → GPL-2.0-or-later (COPYING foreword); VCV Rack GPL-3.0 → GPL-3.0-or-later (LICENSE.md; narrow Sec-7 non-commercial plugin exception noted, quarantine stands); RawTherapee upstream moved Beep6581 → RawTherapee org; OBS Studio / VLC / darktable / Bazarr / TidalCycles licenses confirmed as claimed; no new GPL/AGPL items found. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
+- **Quarantined (copyleft) — 117 rows · 111 distinct projects (reconciled Wave 10 Lane B, 2026-10-07):** license families — AGPL 20 rows · GPL 95 rows (incl. -or-later/-only variants) · LGPL-3.0 1 row (marytts — SCOPE NOTE: delist recommendation pending owner verdict, stays quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 11 · lip-sync 9 · TTS 8 · anime tooling 8 · SFX 7 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
 
 - **Non-commercial / research-only — research lane only, never shipped (Wave-1 list, 17):** Spine (Esoteric Software) (Proprietary commercial (trial = evaluation only)); PureRef (Proprietary; free Personal license (non-commercial)); Wav2Lip (Custom non-commercial (personal/research only)); Coqui XTTS v2 (CPML 1.0 (Coqui Public Model License) on the XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)); Bark (suno-ai) (MIT code BUT README states model is CC-BY 4.0 NC due to EnCodec neural-codec backend (verified via README text quoted in forks)); BBC Sound Effects Archive (RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music press + BBC terms)); Stable Video Diffusion (Stability AI Community License (non-commercial)); LTX-Video (Apache-2.0 (code) + LTX Open Weights / Community License (weights)); HunyuanVideo (Tencent Hunyuan Community License Agreement (custom, verified)); SkyReels-V2 (Skywork Community License (custom, verified)); Pika (free tier) (Pika Terms of Service (proprietary)); Runway (free tier) (Runway Terms of Use (proprietary)); Luma (free tier) (Luma Terms (proprietary)); Hailuo AI / MiniMax (free tier) (MiniMax Terms (proprietary)); Kling AI (free tier) (Kling Terms (proprietary)); Pixverse (free tier) (Pixverse Terms (proprietary)); LTX Studio (free tier) (LTX Studio Terms (proprietary)) Later waves added more NC/research-gated items (not in the original 17 — documented in the wave notes): Spark-TTS + F5-TTS NC weights; IndexTTS (bilibili Model Use License); SUPIR, StableSR, CodeFormer, Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license); PlayHT/PlayAI (shut down 2025-12-31); Dia/VibeVoice (permissive licenses but vendor research-intent terms — see docs/VOICE_COMMERCIAL_USE_WAVE5.md).
 
@@ -8497,12 +8497,12 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 #### Faust ✅ commercial-safe
 - **What:** Functional audio DSP programming language (GRAME)
 - **URL:** https://en.wikipedia.org/wiki/FAUST_(programming_language)
-- **License:** GPL compiler; generated DSP code belongs to the author (verified)
+- **License:** LGPL-2.1-or-later — RELICENSED upstream (grame-cncm/faust root COPYING.txt is the LGPL-2.1 text with a 'FAUST compiler, Version 2.90.4' header; older versions were GPL-2.0; corrected 2026-10-07); generated DSP code belongs to its author
 - **Free tier:** fully free
 - **Repo lane:** trippedd (sfx)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Per house convention (Faust/Krita precedent): GPL tool, original generated audio is ours. [Wave 8 A]
+- **Notes:** Per house convention (Krita/GIMP tool-use doctrine): LGPL tool — original generated audio is ours; dynamic-link only, no static embedding. See the weak-copyleft watchlist in docs/LICENSE_QUARANTINE.md Scope (pending owner verdict). [Wave 8 A; corrected Wave 10 B]
 
 #### STK (Synthesis ToolKit) 🚫 not commercial-safe
 - **What:** C++ audio synthesis toolkit (CCRMA/Stanford, Perry Cook)
@@ -8544,15 +8544,15 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Status:** not-started
 - **Notes:** Pairs with Soundpipe/Sporth ecosystem. [Wave 8 A]
 
-#### RTcmix ⚠️ license-conditional
+#### RTcmix ✅ commercial-safe
 - **What:** Real-time music/synthesis language (rtcmix/rtcmix)
 - **URL:** https://github.com/rtcmix/rtcmix/blob/HEAD/src/pd/README.md
-- **License:** Conflicting: GPL per Linux Journal vs Apache-2.0 cited for the GitHub tree (verified 2026-10-07)
+- **License:** Apache-2.0 (CONFLICT RESOLVED 2026-10-07: canonical repo moved rtcmix/rtcmix → RTcmix/RTcmix; root LICENSE + LICENSE.md are the Apache-2.0 text; the old Linux Journal GPL claim is stale)
 - **Free tier:** fully free
 - **Repo lane:** trippedd (sfx)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
-- **Notes:** Resolve the license conflict upstream before shipping anything built on it. [Wave 8 A]
+- **Notes:** No copyleft — the Apache-2.0 root LICENSE settles the old GPL attribution; safe to wire. [Wave 8 A; conflict resolved Wave 10 B]
 
 #### Nyquist ✅ commercial-safe
 - **What:** Sound synthesis/composition language (Roger Dannenberg, CMU)
@@ -8584,15 +8584,15 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Status:** not-started
 - **Notes:** LV2/VST2/VST3/JACK targets; permissive ISC. [Wave 8 A]
 
-#### JUCE ⚠️ license-conditional
+#### JUCE 🚫 quarantined (GPL/AGPL)
 - **What:** C++ audio application/plugin framework
 - **URL:** https://github.com/danielraffel/griddy-midi-effect-plugin/blob/HEAD/installer/THIRD_PARTY_LICENSES.md
-- **License:** Dual GPLv3 (AGPLv3 for JUCE 8) / commercial; closed-source needs a paid license (verified)
+- **License:** Dual GPLv3 (AGPLv3 for JUCE 8) / commercial; closed-source needs a paid license (verified; see quarantine row 116)
 - **Free tier:** free under GPL/AGPL terms
 - **Repo lane:** trippedd (sfx)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
-- **Status:** not-started
-- **Notes:** Only for GPL-compatible or paid-license work; prefer iPlug2/DPF for closed tools. [Wave 8 A]
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** Quarantine row 116 — code integration barred; audit path is the paid commercial license. Only for GPL-compatible or paid-license work; prefer iPlug2/DPF for closed tools. [Wave 8 A; quarantined Wave 10 B]
 
 #### Demucs ✅ commercial-safe
 - **What:** AI music/source separation (Meta/Facebook Research)
@@ -8712,7 +8712,7 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Repo lane:** trippedd (sfx)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Commercial-safe when dynamically linked; EFX reverb/occlusion for game-feel audio. [Wave 8 A]
+- **Notes:** Commercial-safe when dynamically linked; EFX reverb/occlusion for game-feel audio. Weak-copyleft watchlist — see docs/LICENSE_QUARANTINE.md Scope (LGPL-2.0-or-later; pending owner verdict). [Wave 8 A; watchlisted Wave 10 B]
 
 #### uisfx (UI SFX library) ✅ commercial-safe
 - **What:** Procedurally generated UI sound pack — 12 packs, deterministic recipes (romainsimon/uisfx)
@@ -9335,25 +9335,25 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Status:** not-started
 - **Notes:** Verify the site's license terms before shipping any clip. [Wave 8 A]
 
-#### VapourSynth ❓ unverified
+#### VapourSynth ✅ commercial-safe
 - **What:** Open-source Python-scripted video processing framework (frameserver successor to AviSynth)
 - **URL:** https://pypi.org/project/VapourSynth/80/
-- **License:** Unverified core license — plugin ecosystem suggests GPL/LGPL-family; check the repo LICENSE before shipping (checked 2026-10-07)
+- **License:** LGPL-2.1 (verified 2026-10-07 via GitHub API spdx_id, vapoursynth/vapoursynth); plugin ecosystem carries its own licenses — check per plugin before wiring
 - **Free tier:** fully free
 - **Repo lane:** trippedd (backgrounds)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Programmatic plate processing/denoise/upscale pipelines; verify license per build. [Wave 8 A]
+- **Notes:** Programmatic plate processing/denoise/upscale pipelines; wire as dynamically-linked framework only (weak-copyleft watchlist — see docs/LICENSE_QUARANTINE.md Scope; pending owner verdict). [Wave 8 A; verified Wave 10 B]
 
 #### AviSynth+ ✅ commercial-safe
 - **What:** Open-source scriptable frameserver for video post-production (non-linear editing without temp files)
 - **URL:** https://en.wikipedia.org/wiki/AviSynth
-- **License:** GNU GPL (open source); as a tool, rendered output is yours — do not redistribute modified tool binaries without source (verified 2026-10-07)
+- **License:** GPL-2.0-or-later (verified 2026-10-07 via upstream license.rst + avisynth.h header) — narrow C-interface exception: independent modules via avisynth.h may ship under their own terms with Avisynth source copy; as a tool, rendered output is yours — do not redistribute modified tool binaries without source
 - **Free tier:** fully free
 - **Repo lane:** trippedd (backgrounds)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Script-driven batch processing of plate footage; plugins carry their own licenses. [Wave 8 A]
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** Quarantine row 117 — the C-interface exception covers plugin linking only; core integration stays quarantined. Script-driven batch processing of plate footage; plugins carry their own licenses. [Wave 8 A; quarantined Wave 10 B]
 
 #### Project Dogwaffle (free 1.2) ✅ commercial-safe
 - **What:** Freeware raster paint + frame-animation editor (particle brushes, keyframer, batch processor)

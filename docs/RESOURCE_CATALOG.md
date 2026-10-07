@@ -13952,3 +13952,1139 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 ## Entry count — Wave 12
 
 116 new `####` entries appended (29 per-uploader SFX · 46 BG-plate video sources · 41 captions) → **1352 total** honest entries (1236 before this wave). Quarantine rows 122–125 added (Furnace GPL-2.0-or-later, Dn-FamiTracker GPL-2.0-or-later, MilkyTracker GPL-3.0-or-later, Schism Tracker GPL-2.0 — chiptune trackers, standalone-tool/research only). Wired: tools/sfx/cartoon_sfx_kit (12-WAV kit via existing donor sfx.py, manifest SHA-256s), tools/sfx/normalize_pack (pack manifest normalizer, 100-file proof), tools/bg-plates pull_plate donor reuse (TubeBacks 8s + Open Beelden 81s proofs), tools/captions/ttconv_tool.py (SRT/VTT roundtrip proof), tools/captions/faster_whisper_tool.py (8/8 words on ground truth). Honest non-deliveries: Kenney direct-download script (no verifiable URLs), Mixkit scripted pulls (Cloudflare-blocked), faster-whisper PyAV path broken w/ PyAV 19 (stdlib-numpy workaround), 13 BG-plate entries honestly ❓. Lane A flag resolved: manifest rows 120–121 (Style-Bert-VITS2, AivisSpeech) confirmed present — no gap, no collision. [Wave 12 coordinator merge]
+
+## Wave 13 — SFX long tail (Lane A)
+
+#### inchadney — Scottish field recordist, CC0 nature/ambience portfolio ✅ commercial-safe
+- **What:** Long-running Scottish field recordist (20+ years on Freesound) uploading binaural/stereo nature soundscapes — streams, coastlines, birdsong, weather, harbors. Large CC0 portfolio in Freesound's standard formats (WAV/FLAC/OGG/MP3).
+- **URL:** https://freesound.org/people/inchadney/ (terms: Freesound per-sound license badges + license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter: username:"inchadney" + license:"Creative Commons 0" returned results; license:"Attribution Noncommercial" returned "No results", 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Prime ambience-bed source for outdoor scenes; binaural recordings give a wide stereo image. Filter to CC0 on each download. [Wave 13 Lane A]
+
+#### zabuhailo — CC0 foley & field recordings ✅ commercial-safe
+- **What:** Recordist uploading raw CC0 foley and field recordings — door/lock sequences, thunderstorms, household objects, street ambience. Multi-page CC0 portfolio, WAV/OGG.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22zabuhailo%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Good everyday-foley source; descriptions note recorder and date, useful for matching perspectives. [Wave 13 Lane A]
+
+#### josefpres — CC0 music loops & piano motifs, 2025's #7 uploader ✅ commercial-safe
+- **What:** Prolific uploader (Freesound's #7 contributor by sound count in 2025 with 731 uploads) of CC0 piano harmonies, hand-drum loops, and band-style motifs, many organized in combinable packs. 43+ pages of CC0 results.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22josefpres%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Loops are tempo-labeled and designed to combine — quick stinger/transition beds; confirm each pull is SFX-usable rather than a full music loop. [Wave 13 Lane A]
+
+#### rutgermuller — CC0 experimental field recordings ✅ commercial-safe
+- **What:** Dutch sound artist uploading playful CC0 experiments — sirens, rain/hail on plastic roofs, plastic-foil textures, glitched percussion, dentist-chair recordings. 4+ pages, stereo WAV.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22rutgermuller%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Offbeat textures for sci-fi/horror design; recording notes document the gear chain (iPhone up to Zoom H2). [Wave 13 Lane A]
+
+#### newagesoup — CC0 synth SFX & foley (Serum/Reaper builds) ✅ commercial-safe
+- **What:** Sound designer uploading CC0 Serum/Reaper-built SFX — digital whooshes, GUI/HUD blips, kicks, risers — plus foley (graham-cracker footsteps, singing bowl). 4 pages of CC0 results.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22newagesoup%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Directly game-ready UI/transition SFX; pairs well with the already-cataloged Kenney UI packs. [Wave 13 Lane A]
+
+#### NenadSimic — CC0 UI/game blips ✅ commercial-safe
+- **What:** Small CC0 portfolio of game-ready UI sounds — in-game ticking selection buttons, drum-and-bass loops. A handful of sounds, WAV.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22NenadSimic%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tiny but clean UI one-shots; grab the button ticks for menu work. [Wave 13 Lane A]
+
+#### Erokia — CC0 designed SFX & loops ✅ commercial-safe
+- **What:** Designer uploading CC0 VST-crafted SFX and loops — FL Studio-built impacts, stretched textures, field-sourced oddities. Small but characterful portfolio.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Erokia%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cited as inspiration by other CC0 designers; check per-sound descriptions for remix chains. [Wave 13 Lane A]
+
+#### SoundsExciting — CC0 Chicago field recordings ✅ commercial-safe
+- **What:** Chicago-based recordist with 3+ pages of CC0 field recordings — crowds, storms, foghorns, trains, parties, synth drones. Sony PCM-D50 recordings.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22SoundsExciting%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong crowd/urban ambience source for street scenes; long takes suit looping. [Wave 13 Lane A]
+
+#### yonts — CC0 Tel Aviv field recordings ✅ commercial-safe
+- **What:** Tel Aviv recordist uploading CC0 city-park ambiences and urban field recordings. Modest portfolio, WAV.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22yonts%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Middle-Eastern urban ambience flavor not covered elsewhere in the catalog. [Wave 13 Lane A]
+
+#### spiceprogram — CC0 percussive one-shots ✅ commercial-safe
+- **What:** Minimal CC0 portfolio of percussive one-shots built in Ableton Live (Tension/Tiny Tonal Drums presets). Single-digit sound count.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22spiceprogram%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Thin catalog entry — useful only as a couple of clean percussive hits. [Wave 13 Lane A]
+
+#### sphion — CC0 Danish field recordings ✅ commercial-safe
+- **What:** Danish recordist's CC0 portfolio — beach winds, paper tearing, city parks, a Danish air-raid siren test. Small set of clean recordings.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22sphion%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Niche Nordic ambience; the air-siren test recording is a rare find. [Wave 13 Lane A]
+
+#### Fission9 — CC0 foley & designed SFX ✅ commercial-safe
+- **What:** Recordist/designer with 2+ pages of CC0 foley and designed sounds — footsteps on stone, splashes, thunder, lava-like boiled-chemical drones, inventory cloth rustles. Zoom H4n Pro + Audacity.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Fission9%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Explicitly game-useful descriptions (footsteps separated by 250ms of silence); strong foley pick. [Wave 13 Lane A]
+
+#### Erdie — CC0 household foley ✅ commercial-safe
+- **What:** Small CC0 foley set — aerosol cream sprays, washing/drying machines — recorded on MBHO 603 + RME and Zoom H1. Minimal portfolio.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Erdie%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pro-grade mic chain on mundane objects; good spray/mechanical textures. [Wave 13 Lane A]
+
+#### CVLTIV8R — CC0 sci-fi/creature SFX, 2025's #1 uploader ✅ commercial-safe
+- **What:** Freesound's most prolific 2025 contributor (5,943 sounds) — vast CC0 portfolio of sci-fi SFX: plasma bursts, alien vocals, glitch weapons, spacecraft whirs, plus field-recorded birdsong. 14+ pages of CC0, Reaper/VST-designed.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22CVLTIV8R%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Highest-volume new CC0 SFX source found this wave; descriptions document the design chain (own samples + processing). [Wave 13 Lane A]
+
+#### looplicator — CC0 industrial/ambient loops ✅ commercial-safe
+- **What:** 2025's #2 uploader (3,214 sounds) — CC0 industrial/ambient/drum/horror loops (80–176 BPM) exported from the looplicator web DAW, plus Industraumatic Project tracks. 9+ pages.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22looplicator%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Loop-focused; BPM-labeled for cutting beds and transitions. Uploader notes AI was NOT used in creation. [Wave 13 Lane A]
+
+#### sensingtheforest — CC0 Alice Holt Forest soundscapes ✅ commercial-safe
+- **What:** 2025's #3 uploader (3,135 sounds) — continuous CC0 woodland soundscape recordings from Alice Holt Forest, UK (Raspberry Pi streamers, Dendrophone installation captures). Long-duration nature beds.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22sensingtheforest%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Enormous single-location ambience library; geotagged packs suit systematic forest/night beds. [Wave 13 Lane A]
+
+#### Sadiquecat — CC0 foley, impulse responses & field recordings ✅ commercial-safe
+- **What:** 2025's #5 uploader (1,850 sounds) — CC0 impulse responses, censor beeps, binaural door thumps, airplane cabins, St. Peter's Square ambience. 8+ pages, technically documented.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Sadiquecat%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The IR collection is gold for convolution reverb; recording notes are unusually rigorous. [Wave 13 Lane A]
+
+#### tim.kahn — CC0 synth experiments ✅ commercial-safe
+- **What:** Long-time contributor (2025 top-10 by uploaded hours) of CC0 synth experiments — Thor/FM feedback loops, bass drones, flute-mangled textures. Small, characterful set.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22tim.kahn%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Abstract synth beds for transitions; lo-fi charm, check levels before use. [Wave 13 Lane A]
+
+#### JW_Audio — CC0 96kHz field recordings & designed SFX ✅ commercial-safe
+- **What:** 2025 top-20 uploader (598 sounds) — CC0 96kHz/32-bit field recordings (UK towns, nature reserves, rain, traffic) plus designed SFX (rifle shots via Krotos Weaponiser, synth whooshes). 3+ pages.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22JW_Audio%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** High sample-rate masters give pitch-shifting headroom; detailed gear notes per recording. [Wave 13 Lane A]
+
+#### bassimat — CC0 drones, glitches & EMF captures ✅ commercial-safe
+- **What:** 2025 top-20 uploader (325 sounds) — CC0 deep drones, granular pads, glitch rains, electromagnetic-field captures, Dolomites field recordings. 12+ pages.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22bassimat%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dark-ambient gold for Wizard Gang interstitials; the EMF textures are genuinely unusual. [Wave 13 Lane A]
+
+#### Cat-Fox_Alex — CC0 synth SFX & foley ✅ commercial-safe
+- **What:** 2025 top-20 uploader (576 sounds) — CC0 Vital/Serum synth SFX, wavetables, foley, and remixes of other CC0 sounds. 24+ pages, high output.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Cat-Fox_Alex%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Huge volume; some uploads remix other Freesound users' CC0 sounds — CC0 needs no attribution, but spot-check remix chains anyway. [Wave 13 Lane A]
+
+#### AudioPapkin — CC0 pro field recordings ✅ commercial-safe
+- **What:** 2025 top-20 uploader (269 sounds) — CC0 field recordings shot on Tascam Portacapture X8 + RØDE NTG5, raw with light Reaper edits; self-recorded designed SFX built from own field samples. 52 pages of results.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22AudioPapkin%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pro mic chain, consistent quality; the designed-from-own-recordings claim simplifies clearance. [Wave 13 Lane A]
+
+#### Dreadwolf910 — CC0 foley & impact layers ✅ commercial-safe
+- **What:** 2025 top-20 uploader (221 sounds) — CC0 foley built for impact layering: buckets struck every way, raw trims for stacking. 36 pages of results.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Dreadwolf910%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Purpose-built layering fodder for fight-scene impacts; grab in bulk. [Wave 13 Lane A]
+
+#### DiscordantScraps — CC0 radio-scan textures ✅ commercial-safe
+- **What:** Small CC0 set of software-defined-radio scans — electronic noise sweeps captured from a public websdr receiver, suited to cutting/processing into backgrounds.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22DiscordantScraps%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Niche SDR texture source; verify no intelligible broadcast content in takes before use. [Wave 13 Lane A]
+
+#### kevp888 — CC0 stereo-technique field recordings ✅ commercial-safe
+- **What:** Small CC0 set of A/B stereo microphone technique comparisons (XY vs ORTF) recorded from a balcony on a RØDE NT4. Educational and usable ambience.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22kevp888%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Thin portfolio; the XY/ORTF pairs are handy for testing stereo imaging in-engine. [Wave 13 Lane A]
+
+#### SieuAmThanh — CC0 Vietnamese street recordings ✅ commercial-safe
+- **What:** 2025 top-20 uploader (202 sounds) — CC0 iPhone-captured Vietnamese street life: markets, truck horns, crowds, kitchens, prayer gatherings. 33 pages.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22SieuAmThanh%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rare Southeast-Asian urban ambience; phone-mic fidelity — best for background beds, not foreground. [Wave 13 Lane A]
+
+#### Logicogonist — CC0 drum/percussion SFX builds ✅ commercial-safe
+- **What:** 2025 top-20 uploader (336 sounds) — CC0 drum and percussion constructions: pitched cymbals, stereophonized kicks, helicopter merges. 2+ pages, process-documented.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Logicogonist%22+license%3A%22Creative+Commons+0%22 (terms: Freesound license search filter)
+- **License:** CC0 1.0 (verified via Freesound license filter, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** GOTCHA — several uploads disclose AI-generated sources (poppop.ai, ElevenLabs generators); the uploader still releases them CC0, but flag the AI provenance against the no-AI-training pipeline rule. [Wave 13 Lane A]
+
+## Freesound.org — individual CC-BY uploaders (attribution required)
+
+#### dobroide — CC-BY Spanish field recordings, explicit commercial grant ✅ commercial-safe
+- **What:** 21-year Freesound veteran (51 pages of CC-BY results) recording Spanish soundscapes — creeks, reverberant halls, doors, wildlife — on Clippy XLR + Sound Devices Mixpre-3. Stereo WAV.
+- **URL:** https://freesound.org/people/dobroide/ (terms: uploader's profile license statement + Freesound license filter)
+- **License:** CC-BY (verified via profile: "You are granted permission to use any of the files uploaded by me, even for commercial use. It is only required that you mention somewhere that your work includes some Creative Commons licensed samples taken from Freesound.org created by dobroide"; license filter confirms Attribution set with NC empty, 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Explicit commercial-use grant on the profile removes ambiguity; keep the one-line credit per the uploader's wording. [Wave 13 Lane A]
+
+#### felix.blume — CC-BY world field recordings (Félix Blume) ✅ commercial-safe
+- **What:** Sound artist Félix Blume's CC-BY portfolio — binaural/MS world soundscapes: Mexico City, Patagonia wildlife, Kiev nights, Peru plazas. Sennheiser MKH rigs into Sound Devices 744T.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22felix.blume%22+license%3A%22Attribution%22 (terms: Freesound license search filter)
+- **License:** CC-BY (verified via Freesound license filter: Attribution returned results, NC filter empty, 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cinematic-grade world ambience; attribution to Félix Blume required per sound used. [Wave 13 Lane A]
+
+#### Robinhood76 — CC-BY nature & instrument recordings ✅ commercial-safe
+- **What:** Long-running CC-BY uploader of nature recordings plus bass/guitar loops and radio voice drops. Modest portfolio.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Robinhood76%22+license%3A%22Attribution%22 (terms: Freesound license search filter)
+- **License:** CC-BY (verified via Freesound license filter: Attribution returned results, NC filter empty, 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mixed bag (nature + music loops); attribution required — filter to the nature SFX, leave the loops for the music lane. [Wave 13 Lane A]
+
+#### CGEffex — CC-BY foley & sound design ✅ commercial-safe
+- **What:** 16-year Freesound designer with a CC-BY portfolio of foley and designed SFX; profile carries explicit CC BY 3.0 attribution instructions (name, copyright/license notice, title).
+- **URL:** https://freesound.org/people/CGEffex/ (terms: uploader's profile license statement)
+- **License:** CC-BY 3.0 (verified via profile: "Most of my samples here are licensed under the Creative Commons Attribution license" with the attribution format specified, 2026-10-07; NC filter returned "No results")
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Follow his exact credit format (name + license notice + title); he also offers custom sound-design work on request. [Wave 13 Lane A]
+
+#### Glaneur de sons — CC-BY French/US field recordings ✅ commercial-safe
+- **What:** French recordist's CC-BY portfolio — sword-swing whooshes, balloon booms, elevators, storms, music boxes, Dordogne pond life. 2+ pages, France + USA.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22Glaneur+de+sons%22+license%3A%22Attribution%22 (terms: Freesound license search filter)
+- **License:** CC-BY (verified via Freesound license filter: Attribution returned results, NC filter empty, 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The whoosh/swing set is directly fight-scene useful; attribution required. [Wave 13 Lane A]
+
+#### yondercomputer — CC-BY synthesized instrument one-shots ✅ commercial-safe
+- **What:** 2025 top-20 uploader (624 sounds) of CC-BY synthesized instrument samples — basses, plucks, leads, cinematic hits — organized in 48-sample packs (WHYBASS, MEOWBASS, CINEMABASS...).
+- **URL:** https://freesound.org/people/yondercomputer/ (terms: Freesound license search filter on the uploader's portfolio)
+- **License:** CC-BY (verified via Freesound license filter: Attribution returned results; CC0 and NC filters returned "No results", 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pack-organized by instrument — efficient bulk pulls; attribution to yondercomputer required. [Wave 13 Lane A]
+
+#### EtherAudio — CC-BY tracker/chiptune SFX ✅ commercial-safe
+- **What:** 2025 top-10 contributor by uploaded hours (98h) — CC-BY OpenMPT-crafted chiptune SFX and loops. 12+ pages.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22EtherAudio%22+license%3A%22Attribution%22 (terms: Freesound license search filter)
+- **License:** CC-BY (verified via Freesound license filter: Attribution returned results; CC0 and NC filters returned "No results", 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** GOTCHA — the uploader asks "do not feed my sounds to AI" on uploads; honor that alongside the attribution requirement. Retro-game SFX flavor. [Wave 13 Lane A]
+
+#### BobVoldar — CC-BY thunderstorm field recordings ✅ commercial-safe
+- **What:** 2025 top-20 contributor by uploaded hours — CC-BY long-form thunderstorm/nature recordings from a condo deck (Zoom H6 Essential), some 90+ minutes. 2+ pages.
+- **URL:** https://freesound.org/search/?q=&f=username%3A%22BobVoldar%22+license%3A%22Attribution%22 (terms: Freesound license search filter)
+- **License:** CC-BY (verified via Freesound license filter: Attribution returned results; CC0 and NC filters returned "No results", 2026-10-07)
+- **Free tier:** all sounds free to download (free Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Epic-length storm beds for weather scenes; trim and loop the long takes. Attribution required. [Wave 13 Lane A]
+
+## Niche collections & individual creator sites
+
+#### PDSounds.org backup — 635 public-domain recordings ✅ commercial-safe
+- **What:** Community backup (pdsounds.tuxfamily.org, maintained by Iwan Gabovitch) of the 635 copyright-free recordings submitted to pdsounds.org before its 2009 shutdown — field recordings, effects, collages in a single 7z archive.
+- **URL:** http://pdsounds.tuxfamily.org (terms: the backup site's Terms of use + the original pdsounds.org Help page)
+- **License:** Public domain (per pdsounds.org Help terms: "If you record for pdsounds, you must agree to release the audio files you make into the public domain... use them for education, use them to create art, use them for commercial purposes too - there are no copyrights, no strings attached to the files"; verified via the backup site and the Wikimedia Commons file record quoting those terms, 2026-10-07)
+- **Free tier:** full archive free download (7z; open with 7-Zip, edit with Audacity)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The archive is frozen at March 2009 and the original site is dead — treat as a static historical haul, not a living library. [Wave 13 Lane A]
+
+#### University of Iowa Electronic Music Studios — anechoic instrument samples ✅ commercial-safe
+- **What:** Lawrence Fritts' Musical Instrument Samples database — 22–30 orchestral instruments recorded note-by-note in an anechoic chamber at pp/mf/ff dynamics; pre-2011 at 16/44.1 via Neumann KM84, post-2011 at 24/96 Decca Tree. Cited in 270+ research papers.
+- **URL:** http://theremin.music.uiowa.edu/MIS.html (terms: the MIS page's usage statement)
+- **License:** Explicit unrestricted grant — "Since 1997, these recordings have been freely available on this website and may be downloaded and used for any projects, without restrictions" (verified on theremin.music.uiowa.edu, 2026-10-07)
+- **Free tier:** all samples free download (individual AIFFs plus zipped sets)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Instrument samples rather than SFX, but the clean anechoic recordings are ideal raw material for designed impacts, whooshes, and stingers. [Wave 13 Lane A]
+
+#### Ovani Sound — royalty-free SFX starter pack ✅ commercial-safe
+- **What:** Indie game-audio studio (ovanisound.com) offering a free Sound FX Starter Pack Vol. 1 — 144 metadata-tagged SFX across 12 categories (cinematic, horror, magic, medieval, retro, sci-fi, UI), 44.1kHz/16-bit, 100% human-made.
+- **URL:** https://gamedev.tv/assets/game-audio-sampler (terms: Ovani Sound FAQ license section, also mirrored on the product page)
+- **License:** Royalty-free incl. commercial (per Ovani Sound FAQ: "Can I use the content in commercial or paid products? Yes. The license covers both personal and commercial use... For Sound FX and Music packs, credit is appreciated but not required"; no resale/redistribution of raw files; verified 2026-10-07)
+- **Free tier:** free starter pack (144 SFX); paid packs beyond it
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Metadata-tagged files drop straight into a game-audio pipeline; commercial use explicitly covered, credit optional. [Wave 13 Lane A]
+
+#### Whale Songs, Whale Sound Effects (archive.org / cl0udn0te) — CC0 ✅ commercial-safe
+- **What:** Individual uploader's Archive.org collection of whale songs and underwater SFX (17 MB), gathered from copyright-free sources (pixabay, soundbible, archive.org, nps.gov, noaa.gov) for reuse in projects.
+- **URL:** https://archive.org/details/whale-songs-whale-sound-effects (terms: the item's Usage metadata field + uploader description)
+- **License:** CC0 1.0 Universal (per Internet Archive item metadata "Usage: CC0 1.0 Universal"; uploader states "all files are copyright free and no attribution required"; verified 2026-10-07)
+- **Free tier:** free download/stream, no account needed
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Niche underwater/creature source; secondhand curation, so spot-check provenance on anything foregrounded. [Wave 13 Lane A]
+
+#### Kitchen Sounds (archive.org / peacefl0wer) — public-domain foley ✅ commercial-safe
+- **What:** Individual uploader's Archive.org kitchen-foley collection — food prep, sinks, utensils, cooking sounds — curated from public-domain sources.
+- **URL:** https://archive.org/details/kitchen-sounds (terms: uploader's description on the item page)
+- **License:** Public domain (per uploader peacefl0wer's item-page statement: "all files are public domain - royalty free - no attribution required sound effects from pixabay.com, soundbible.com, archive.org"; verified 2026-10-07)
+- **Free tier:** free download/stream, no account needed
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Everyday foley niche; provenance is the uploader's claim over re-uploaded sources — fine for beds, verify before foreground use. [Wave 13 Lane A]
+
+## Wave 13 — Archival BG-plates (Lane B)
+
+#### LOC Panoramic Photographs — turn-of-the-century wide city/landscape panoramas ✅
+- **What:** ~4,000 panoramic photographs, 1851–1991, mostly U.S. city skylines, main streets, harbors, and landscapes; many scanned from original large-format negatives at high resolution (multi-thousand-pixel TIFFs available).
+- **URL:** https://www.loc.gov/pictures/collection/pan (rights: per-item "Rights Info: No known restrictions on publication" on loc.gov item records)
+- **License:** Public Domain (per-item LOC advisory; verified 2026-10-07)
+- **Free tier:** free download, no account; JPEG + TIFF per item
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wide-plate gold for establishing shots — early-1900s downtowns, waterfronts, main streets stitch into era BGs or matte-painting base plates. [Wave 13 Lane B]
+
+#### LOC FSA-OWI Color Photographs — 1939–44 America in Kodachrome ✅
+- **What:** ~1,600 rare color transparencies shot by FSA/OWI photographers (Delano, Wolcott, Parks, Vachon) documenting rural life, factories, railroads, and WWII mobilization; LOC states the collection contents are in the public domain.
+- **URL:** https://www.loc.gov/collections/fsa-owi-color-photographs/ (rights: loc.gov item page — "The contents of the Library of Congress Farm Security Administration/Office of War Information Color Photographs are in the public domain and are free to use and reuse")
+- **License:** Public Domain (verified on loc.gov item record, 2026-10-07)
+- **Free tier:** free download, no account; high-res TIFF/JPEG per item
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** One of the few PD color archives of Depression/WWII-era America — street scenes, signage, storefronts, vehicles; perfect era-BG reference and texture plates. [Wave 13 Lane B]
+
+#### LOC FSA-OWI Black-and-White Negatives — 171,000 Depression-era frames ✅
+- **What:** The full ~171,000-negative FSA-OWI file (1935–44) by Evans, Lange, Shahn, Rothstein, Parks and others; the definitive U.S. government photo record of the era, all digitized and browsable.
+- **URL:** http://www.loc.gov/rr/print/res/071_fsab.html (rights: "No known restrictions on images made by the U.S. government; images copied from other sources may be restricted")
+- **License:** Public Domain, U.S. government works (per-item advisory on loc.gov; verified 2026-10-07)
+- **Free tier:** free download, no account; JPEG + TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Massive rural/urban scene library — barns, main streets, diners, gas stations; B&W plates for noir BGs, rotoscope reference, or colorization pipelines. Check per-item advisory for third-party-sourced frames. [Wave 13 Lane B]
+
+#### LOC Detroit Publishing Company Collection — Photochrom city views, 1885–1930 ✅
+- **What:** ~28,200 glass negatives, transparencies, and color photolithograph prints of U.S. (and some Latin American) cityscapes, streets, architecture, resorts, and industry; includes early color Photochrom process prints.
+- **URL:** https://loc.gov/collections/detroit-publishing-company/about-this-collection/ (rights: per-item LOC advisory "No known restrictions on publication")
+- **License:** Public Domain (per-item LOC advisory; verified 2026-10-07)
+- **Free tier:** free download, no account; JPEG + TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Colorized-era city plates — streets, theaters, waterfronts with period advertising; strong era reference for AshLane-style urban brawler BGs. [Wave 13 Lane B]
+
+#### LOC George Grantham Bain Collection (Bain News Service) — early news-photo archive ✅
+- **What:** ~40,000 glass negatives from one of America's first news picture agencies (1910s–1920s): city events, sports, ships, streets, public figures, disasters.
+- **URL:** https://www.loc.gov/rr/print/res/274_bain.html (rights: per-item LOC advisory "Rights Info: No known restrictions on publication"; Flickr Commons pilot used only images with no known copyright restrictions)
+- **License:** Public Domain (per-item LOC advisory; verified 2026-10-07)
+- **Free tier:** free download, no account; JPEG + TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 1910s–20s urban life plates — parades, crowds, waterfronts; good crowd/reference and era BG material. [Wave 13 Lane B]
+
+#### LOC Gottscho-Schleisner Collection — American architecture 1896–1970 ✅
+- **What:** ~29,000 negatives and color transparencies online (of 45,000+ items) by architectural photographers Samuel Gottscho and William Schleisner: houses, gardens, skyscrapers, interiors, and the 1939 New York World's Fair.
+- **URL:** https://www.loc.gov/collections/gottscho-schleisner/about-this-collection/ (rights: LOC res page 104_gott.html states collection is public domain; per-item "Rights Advisory: No known restrictions on publication")
+- **License:** Public Domain (verified via LOC rights page + per-item advisory, 2026-10-07)
+- **Free tier:** free download, no account; JPEG + TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Premier architectural BG reference — building facades, lobbies, interiors, gardens; World's Fair plates for deco/futurist BGs. [Wave 13 Lane B]
+
+#### LOC Carol M. Highsmith Archive — modern all-50-states photo survey ✅
+- **What:** 70,000+ photographs (growing toward 100,000) documenting every U.S. state since 1980: landmarks, main streets, roadside America, landscapes; Highsmith dedicated the rights to the American people.
+- **URL:** https://www.loc.gov/pictures/collection/highsm/?loclr=thrloc (rights: LOC — "Her generosity in dedicating the rights to the American people for copyright free access"; items marked "no known restrictions on publication")
+- **License:** Public Domain (photographer PD dedication; verified on loc.gov, 2026-10-07)
+- **Free tier:** free download, no account; high-res TIFF/JPEG; GIS map browser
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Highest-volume modern PD photo archive in the lane — diners, motels, main streets, skylines; contemporary BG plates and texture scans. [Wave 13 Lane B]
+
+#### LOC G. Eric and Edith Matson Photograph Collection — Middle East 1898–1946 ✅
+- **What:** ~22,000 negatives, prints, and transparencies from the American Colony Photo Department in Jerusalem: Holy Land cities, villages, landscapes, and early aerial views.
+- **URL:** https://www.loc.gov/pictures/item/mpc2010007584/PP/ (example record; rights: per-item LOC advisory "No known restrictions on publication"; collection browsable via LOC Prints & Photographs)
+- **License:** Public Domain (per-item LOC advisory; verified 2026-10-07)
+- **Free tier:** free download, no account; JPEG + TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Exotic/desert/Mediterranean BG plates — stone towns, deserts, early aerials; niche but strong for period or travel-sequence BGs. [Wave 13 Lane B]
+
+#### LOC Prokudin-Gorskii Collection — color Russia 1905–1915 ✅
+- **What:** ~2,600 color images (composited from glass-plate color separations) of the Russian Empire: villages, churches, railroads, factories, portraits — among the earliest color photography anywhere.
+- **URL:** https://www.loc.gov/pictures/item/2002706200/ (rights: LOC item page — "Rights Advisory: No known restrictions on publication")
+- **License:** Public Domain (verified on loc.gov item record, 2026-10-07)
+- **Free tier:** free download, no account; JPEG + TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Unique early-color European plates — villages, onion domes, rivers; distinctive palette for period or stylized BGs. [Wave 13 Lane B]
+
+#### LOC HABS/HAER/HALS (Built in America) — measured architecture archive ✅
+- **What:** 500,000+ items documenting 40,000+ historic structures: large-format b&w/color photographs, measured architectural drawings, and written reports (1933–present).
+- **URL:** https://www.loc.gov/pictures/item/2009632512/ (rights: LOC guide record — "Rights Advisory: No known restrictions on publication"; NPS releases contributor works as public domain per HABS copyright-release form)
+- **License:** Public Domain (verified on loc.gov guide record, 2026-10-07)
+- **Free tier:** free download, no account; high-res TIFF/JPEG; drawings as scans
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Measured drawings + large-format photos = BG plates AND modeling reference (elevations, floor plans) for period buildings, bridges, industrial sites. [Wave 13 Lane B]
+
+#### Photogrammar (Yale) — FSA-OWI visual search interface ✅
+- **What:** Web platform organizing the full 170,000-image FSA-OWI archive with interactive county map, treemap by 1942 subject classification, color-space picker, and metadata dashboard; same underlying PD images as LOC.
+- **URL:** https://photogrammar.yale.edu/ (rights: images are LOC FSA-OWI — "Happily, the majority of the images are in the public domain," per American Archivist review; check per-item LOC advisory)
+- **License:** Public Domain (underlying images; verified via LOC rights, 2026-10-07)
+- **Free tier:** free browsing, no account; downloads link back to LOC files
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Best discovery layer for FSA-OWI — search by county/photographer/subject to pull era-consistent BG plate sets instead of one-off downloads. [Wave 13 Lane B]
+
+#### EPA Documerica (NARA) — 1970s America in color ✅
+- **What:** 15,000+ digitized images (of 22,000 selected) from EPA's 1971–77 documentary project: pollution, suburbs, small towns, industry, highways — a 1970s mirror of the FSA project; photographers waived copyright.
+- **URL:** https://www.archives.gov/research/environment/documerica-topics (rights: NARA catalog — "Access Restrictions: Unrestricted / Use Restrictions: Unrestricted"; EPA confirms photographers waived copyright into public domain)
+- **License:** Public Domain (verified via NARA catalog record + EPA history page, 2026-10-07)
+- **Free tier:** free download, no account (NARA Catalog); high-res available
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 1970s color plates — gas stations, strip malls, smoggy skylines, small-town main streets; ideal gritty-era BG source. [Wave 13 Lane B]
+
+#### USACE Digital Library — Corps of Engineers photo/document archive ✅
+- **What:** CONTENTdm digital library of U.S. Army Corps of Engineers material: dam/bridge/waterway construction photos, district histories, maps, and publications, contributed across all USACE districts.
+- **URL:** http://cdm16021.contentdm.oclc.org/cdm/ (rights: Public Domain Review — "States they claim no rights on the material"; USACE is a federal agency)
+- **License:** Public Domain (federal agency; verified via PDR rights note, 2026-10-07)
+- **Free tier:** free download, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Industrial/civil-engineering BG plates — dams, locks, bridges, construction; strong infrastructure and riverside reference. [Wave 13 Lane B]
+
+#### USFWS National Digital Library — public-domain wildlife imagery ✅
+- **What:** The U.S. Fish and Wildlife Service's official digital media library: selected wildlife, habitat, refuge, and historic-conservation images, audio, and video; external contributors sign copyright-release agreements dedicating work to PD.
+- **URL:** https://www.fws.gov/program/national-conservation-training-center/resources/knowledge-resources/ (rights: FWS — "The National Digital Library… is the premier source for public domain wildlife images… Public domain imagery is free to use, reuse, and share in any capacity")
+- **License:** Public Domain (verified on fws.gov, 2026-10-07)
+- **Free tier:** free download, no account (digitalmedia.fws.gov)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Nature/wilderness BG plates and texture scans — wetlands, forests, deserts, wildlife; natural-environment reference for outdoor BGs. [Wave 13 Lane B]
+
+#### Naval History and Heritage Command — U.S. Navy photo archive ✅
+- **What:** NHHC's photo collections plus released Navy imagery (ships, shipyards, naval stations, ceremonies, historic naval photography); official Navy photos are cleared as public domain on release.
+- **URL:** https://www.navsea.navy.mil/Home/Team-Ships/Media-Gallery/PhotoGallery/igphoto/2002151169/ (example; rights: "This photograph is considered public domain and has been cleared for release" — standard for U.S. Navy-produced imagery; browse NHHC collections at history.navy.mil)
+- **License:** Public Domain (U.S. Navy works; verified via navsea.navy.mil gallery page, 2026-10-07)
+- **Free tier:** free download, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Naval/harbor BG plates — ships, docks, shipyards, waterfront ceremony shots; strong for port and maritime BGs. [Wave 13 Lane B]
+
+#### BLM My Public Lands (Flickr) — federal lands photography ✅
+- **What:** The Bureau of Land Management's official Flickr stream: thousands of photos of national conservation lands, deserts, canyons, wild horses, historic trails — all shot by BLM staff.
+- **URL:** https://www.flickr.com/photos/mypubliclands/sets/ (rights: "Photos taken by BLM employees are in the public domain, but the bureau asks anyone who publishes them to give proper credit")
+- **License:** Public Domain (federal employee works; verified via DOI/BLM statements, 2026-10-07)
+- **Free tier:** free download, no account (Flickr sizes)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Desert/canyon/western-landscape BG plates — Monument-Valley-style vistas, badlands, wild west terrain; natural sky/terrain reference. [Wave 13 Lane B]
+
+#### NASA Visible Earth — satellite and astronaut Earth imagery ✅
+- **What:** NASA Goddard's curated catalog of Earth imagery: Blue Marble composites, astronaut photography, MODIS/VIIRS satellite views, natural-hazard and city-light images; many at very high resolution.
+- **URL:** https://visibleearth.nasa.gov/collection/1484/blue-marble (rights: NASA media guidelines — "NASA content… generally are not subject to copyright in the United States"; check per-image page for third-party credit)
+- **License:** Public Domain (verified via nasa.gov media usage guidelines, 2026-10-07)
+- **Free tier:** free download, no account; high-res JPEG/TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Aerial/space BG plates and cloud/terrain textures — city-lights night plates, storm systems, deserts from orbit; matte-painting and sky-box source. [Wave 13 Lane B]
+
+#### Yale Center for British Art — 69,000+ open-access images ✅
+- **What:** 69,000+ high-resolution images of public-domain works (Turner, Blake, Rowlandson, Constable landscapes/prints) released under Yale's university-wide open-access policy — free with no application, authorization, or fees.
+- **URL:** https://www.diglib.org/yale-center-for-british-art-releases-thousands-of-public-domain-images/ (announcement; rights: "anyone may use the Center's digital images of public domain material without any application, authorization, or fees due to the Center or to Yale" — search the Center's online collection catalog)
+- **License:** Public Domain (works) / open access (verified via DLF/Yale announcements, 2026-10-07)
+- **Free tier:** free download, no account; print + screen sizes
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Landscape/seascape painting reference for stylized BGs — Turner skies, rural England; mood/palette reference for painted-BG pipelines. [Wave 13 Lane B]
+
+#### U.S. National Archives on Flickr Commons — federal photo sets ✅
+- **What:** NARA's official Flickr Commons stream: Historical Photographs and Documerica collections with crowd-sourced tagging; all marked "no known copyright restrictions."
+- **URL:** http://www.archives.gov/social-media/flickr-faqs.html (rights: NARA FAQ — "All of the U.S. National Archives' images that are part of The Flickr Commons are marked 'no known copyright restrictions'… Their use restriction status in our online catalog is 'unrestricted.' Therefore, no written permission is required to use them")
+- **License:** Public Domain (verified on archives.gov FAQ, 2026-10-07)
+- **Free tier:** free download/view, no account (flickr.com/usnationalarchives)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Browsable federal photo plates with community captions — easiest discovery path into NARA stills for BG use. [Wave 13 Lane B]
+
+#### NASA on The Commons (Flickr) — historic NASA photography ✅
+- **What:** NASA's official Flickr Commons account: thousands of historic photos and videos — launches, facilities, astronauts, early space program, plus JPL "Visions of the Future" travel posters.
+- **URL:** https://www.flickr.com/people/nasacommons/ (rights: "No known copyright restrictions, as posted under individual images"; NASA works are PD by statute)
+- **License:** Public Domain (verified via account rights statement, 2026-10-07)
+- **Free tier:** free download/view, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro-space/tech BG plates — launch pads, mission control, 1960s facilities; the Visions of the Future posters are ready-made stylized BG art. [Wave 13 Lane B]
+
+#### Seattle Municipal Archives — city-government photo archive ✅
+- **What:** Seattle's official digital collections: Engineering Dept. negatives (incl. Denny Hill regrade), City Light, 1962 World's Fair slides, Pike Place Market, neighborhood surveys — 1880s–present.
+- **URL:** https://archives.seattle.gov/digital-collections/index.php/Detail/objects/27278 (example record — Denny Hill Regrade; rights: "Photographs created by the City of Seattle are public record and do not require permission for use; please cite Courtesy of the Seattle Municipal Archives")
+- **License:** Public Domain (city public records; verified on archives.seattle.gov, 2026-10-07)
+- **Free tier:** free download (web sizes), no account; hi-res TIFF via $8/scan request
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** City-street BG plates across a century — regrade construction, markets, waterfronts; model municipal archive for pulling consistent street-plate sets. [Wave 13 Lane B]
+
+#### LOC Geography & Map Division — 1M+ maps, atlases, panoramas ✅
+- **What:** Over a million digitized maps: Sanborn fire-insurance maps, county land-ownership maps, panoramic/bird's-eye city views, real-estate atlases, military maps, nautical charts.
+- **URL:** https://www.loc.gov/research-centers/geography-and-map/collections/digital-collections (rights: loc.gov — "The content of the Library of Congress Geography and Map Division digitized collections is free to use and reuse unless a Rights Advisory statement is present that indicates otherwise")
+- **License:** Public Domain / free to use and reuse (verified on loc.gov, 2026-10-07)
+- **Free tier:** free download, no account; IIIF + high-res TIFF
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Panoramic bird's-eye city views are direct BG plates; maps themselves work as wall/ground textures and era set-dressing in period BGs. [Wave 13 Lane B]
+
+#### LOC Sanborn Maps Collection — building-level city plans ✅
+- **What:** Thousands of large-scale Sanborn fire-insurance maps of U.S. cities/towns (1867–1970), showing individual building footprints, materials, and uses block by block.
+- **URL:** https://www.loc.gov/collections/sanborn-maps/about-this-collection/rights-and-access/ (rights: loc.gov — "The content of the Library of Congress online Sanborn Maps Collection is in the public domain and is free to use and reuse")
+- **License:** Public Domain (verified on loc.gov rights page, 2026-10-07)
+- **Free tier:** free download, no account; IIIF + high-res
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference layer rather than plates — accurate block layouts for building period city BGs and matte-painting layouts. [Wave 13 Lane B]
+
+#### Massachusetts Historical Society — high-resolution PD images ✅
+- **What:** Downloadable high-res images from MHS collections (colonial–19th century New England: portraits, maps, street scenes, manuscripts); MHS does not restrict use of PD items.
+- **URL:** https://www.masshist.org/library/high-resolution-images (rights: MHS — "The MHS does not restrict the use of images of items in the public domain or of items for which it holds copyright")
+- **License:** Public Domain (per-item; verified on masshist.org, 2026-10-07)
+- **Free tier:** free download as ZIP sets, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Colonial/early-American BG reference — Boston street scenes, period maps, interiors; check each item's PD status before use. [Wave 13 Lane B]
+
+#### Boston Public Library on Flickr Commons — 769+ PD sets ✅
+- **What:** BPL's official Flickr Commons stream (joined 2024): cartes de visite, Tichnor Brothers postcards, Civil War portraits, book illustrations — all "no known copyright restrictions."
+- **URL:** https://commons.flickr.org/members/bpldigital/ (rights: BPL — "Our images within The Commons have no known copyright restrictions")
+- **License:** Public Domain (verified on commons.flickr.org, 2026-10-07)
+- **Free tier:** free download/view, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Postcard-era city views and street scenes — Tichnor linen postcards make stylized/colorful period BG plates. [Wave 13 Lane B]
+
+#### LOC Chronicling America — historic U.S. newspapers ✅
+- **What:** Millions of digitized newspaper pages (1789–1963) from all states; LOC states newspapers published 95+ years ago are public domain in their entirety.
+- **URL:** https://www.loc.gov/collections/chronicling-america/about-this-collection/rights-and-access/ (rights: loc.gov — "The Library of Congress believes that the newspapers in Chronicling America are in the public domain or have no known copyright restrictions")
+- **License:** Public Domain (verified on loc.gov rights page, 2026-10-07)
+- **Free tier:** free download, no account; page images + OCR
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Front-page/masthead/ad textures for period BGs — newsprint walls, era typography, illustrated ads; watch for post-1930 third-party content caveat. [Wave 13 Lane B]
+
+---
+
+## Rights-mixed aggregators (verify per item before use)
+
+#### Gallica (BnF) — 10M+ French/European digitized documents ❓
+- **What:** Bibliothèque nationale de France's digital library: ~1.8M images, 196k maps, plus prints, posters, manuscripts; filterable by "Droits: domaine public."
+- **URL:** https://en.wikipedia.org/wiki/Gallica (overview; use gallica.bnf.fr with the "domaine public" rights filter)
+- **License:** ❓ Mixed — per-item "Droits: domaine public" marks exist, but BnF's terms historically restricted commercial reuse of some PD holdings; verify current CGU per item (checked 2026-10-07)
+- **Free tier:** free download/view, no account; IIIF image API
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** European/colonial-era plates and maps unmatched elsewhere — but per-item rights check is mandatory, and commercial terms need re-verification. [Wave 13 Lane B]
+
+#### OldNYC — map-browsable historic NYC photos ❓
+- **What:** Dan Vanderkam's map interface over NYPL's "Photographic Views of New York City, 1870s–1970s" (Milstein Division, mostly Percy Loomis Sperr's 1920s–40s documentation); click a map dot for street-level history.
+- **URL:** https://laughingsquid.com/oldnyc-historic-city-photos-from-the-new-york-public-library-plotted-onto-google-maps/ (background; the site's own FAQ notes: "The Library retains the copyright for many of these images")
+- **License:** ❓ Mixed — NYPL retains copyright on many Sperr images; use NYPL Digital Collections' public-domain filter and download from NYPL directly (checked 2026-10-07)
+- **Free tier:** free browsing; download from NYPL (PD items free)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Best NYC street-plate discovery UI anywhere — but treat it as a finder, pull actual files from NYPL's PD-filtered collection. [Wave 13 Lane B]
+
+#### Shorpy — curated vintage-photo blog ❓
+- **What:** Long-running blog posting digitally enhanced early-20th-century photos sourced from LOC/NARA (D.C. street survey, Detroit Publishing, Bain, etc.) with detailed captions.
+- **URL:** https://www.shorpy.com/node?page=4 (rights: no reuse statement on site; underlying originals are LOC/NARA PD, but Shorpy's enhanced versions carry no clear license and images embed hidden watermarks)
+- **License:** ❓ Unverified — underlying sources are PD, but Shorpy asserts no clear reuse terms for its restored versions (checked 2026-10-07)
+- **Free tier:** free viewing; no bulk download
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excellent research/reference browsing (captions identify exact LOC/NARA originals) — always pull the original from LOC/NARA rather than Shorpy's version. [Wave 13 Lane B]
+
+#### Digital Commonwealth — Massachusetts cultural-heritage aggregator ❓
+- **What:** Portal aggregating digitized collections from MA libraries/archives/museums (prints, photos, postcards, maps); each item carries its own Terms of Use.
+- **URL:** https://www.digitalcommonwealth.org/search/commonwealth-oai:5712p575k (example item; rights: per-item "Terms of Use" — many marked "Public Domain… free of known restrictions under copyright law," others restricted)
+- **License:** ❓ Mixed per item — filter to items with explicit "Public Domain" terms (verified per-item statements exist, 2026-10-07)
+- **Free tier:** free download/view, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** New England street/town plates from dozens of small archives — good for regional BGs, but per-item rights check is mandatory. [Wave 13 Lane B]
+
+#### Calisphere — UC's 2M+ California digital collections ❓
+- **What:** Gateway to 2M+ images/texts from 300+ California institutions (all UC campuses + state archives): 1906 earthquake photos, early Hollywood, missions, Gold Rush towns, aerials.
+- **URL:** http://uctechnews.ucop.edu/calisphere-your-gateway-to-californias-remarkable-digital-collections/ (overview; browse at calisphere.org)
+- **License:** ❓ Mixed per item — UC Berkeley's policy allows republication of PD images without permission, but rights vary by contributing institution (checked 2026-10-07)
+- **Free tier:** free download/view, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest California plate source — 1906 SF, early LA/Hollywood, missions; per-item rights check required. [Wave 13 Lane B]
+
+#### Portal to Texas History (UNT) — Texas/regional archive ❓
+- **What:** UNT Libraries' portal of Texas history: photos, maps, newspapers, city directories from hundreds of Texas partners.
+- **URL:** https://library.unt.edu/assets/documents/departments/digital-libraries/digital-projects-unit/partners/rights/agreement-digital-rights.pdf (rights: contributor agreement — "reproduction of Portal to Texas History materials for publication, broadcast, or commercial use requires my/our written permission, unless we have assigned these rights to the UNT Libraries")
+- **License:** ❓ Mixed per item — many items PD, but default contributor terms require written permission for commercial use (checked 2026-10-07)
+- **Free tier:** free download/view, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Texas/Southwest plates (oil towns, border, ranches) — only pull items with explicit PD/rights-assigned status. [Wave 13 Lane B]
+
+#### DigitalNC — North Carolina Digital Heritage Center ❓
+- **What:** Statewide NC digitization program (UNC + State Library): photos, newspapers, yearbooks, county histories from hundreds of small NC institutions.
+- **URL:** https://www.digitalnc.org/about/services/participate/ (rights: "Each item that is published on DigitalNC.org includes a rights statement" — status varies per item/partner)
+- **License:** ❓ Mixed per item — filter to items with explicit public-domain rights statements (checked 2026-10-07)
+- **Free tier:** free download/view, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Small-town South plates — main streets, mills, tobacco towns; valuable regional BG source with per-item rights check. [Wave 13 Lane B]
+
+#### NYC Landmarks Preservation Commission Designation Photo Collection ❓
+- **What:** 55+ years of LPC designation photography: 35mm b&w/color, medium/large format, and digital photos of 37,500+ NYC landmarked buildings, searchable by address/architect/style/materials.
+- **URL:** https://www.nyc.gov/site/lpc/about/pr2022/lpc-launches-digital-archive-of-designation-photos.page (rights: "All photos can be downloaded from the archive at no cost. Any reproduction of archive photos must credit the New York City Landmarks Preservation Commission" — copyright status not stated)
+- **License:** ❓ Unverified — free download with credit requirement, but no explicit PD/CC statement (checked 2026-10-07)
+- **Free tier:** free download, no account (nyclandmarks.lunaimaging.com)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Building-level NYC plates with architect/style metadata — strong for accurate period facades; confirm rights before production use. [Wave 13 Lane B]
+
+---
+
+## Wave 13 — Caption SaaS alternatives (Lane C)
+
+#### Fireflies.ai — meeting bot with unlimited free transcription ❓ unverified
+- **What:** AI meeting assistant that joins Zoom/Google Meet/Teams calls, records, transcribes (100+ languages), and generates summaries, action items, and searchable transcripts; also takes audio/video uploads and has a public API.
+- **URL:** https://fireflies.ai (terms: https://fireflies.ai/blog/fireflies-pricing-which-plan-is-right-for-you)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Fireflies pricing blog; ToS page not checked)
+- **Free tier:** Unlimited transcription, 400 min storage per team, 20 one-time AI credits, limited integrations; Pro $10/seat/mo annual
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Most generous free *meeting* transcription found (uncapped meetings) — but it's a meeting bot, not a caption-file tool; SRT/export path needs checking before any caption use. Storage cap (400 min/team) is the real constraint. [Wave 13 Lane C]
+
+#### Lemonfox.ai — EU Whisper large-v3 STT API, first month free ❓ unverified
+- **What:** Developer STT API on Whisper large-v3: 100+ languages, speaker diarization, speech-to-text translation, immediate data deletion, EU-based processing; also TTS + image APIs.
+- **URL:** https://lemonfox.ai (terms: https://www.aitechsuite.com/tools/14983)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via aitechsuite FAQ; official pricing page not fetched)
+- **Free tier:** First month free for new users; then from $5/mo (10M credits ≈ 30 h transcription); extra credits $0.50/1M
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Trial-only free access (not a recurring free tier). Privacy angle (immediate deletion, EU processing) is its differentiator vs Gladia/Deepgram free credits. [Wave 13 Lane C]
+
+#### Rask AI — video translation/dubbing with auto-subtitles, trial only ❓ unverified
+- **What:** AI video localization: auto-transcription, subtitle translation in 130+ languages, voice cloning, multispeaker lip-sync, SRT download on paid tiers, dubbing API.
+- **URL:** https://www.rask.ai (terms: https://www.techraisal.com/blog/rask-ai-review-2026/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via techraisal hands-on review; official pricing page not fetched)
+- **Free tier:** Free trial — 3 included minutes, no credit card; NO exports on trial (no video, audio, or subtitle file). Creator from $60/mo (25 min)
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Notes:** Trial is evaluation-only — no SRT export without paying, so it produces zero usable caption assets for free. Listed so no sibling lane wastes time on it. Lip-sync is the relevant benchmark if we ever dub Wizard Gang. [Wave 13 Lane C]
+
+#### Castmagic — podcast audio → transcripts + content assets, trial only ❓ unverified
+- **What:** AI podcast post-production: transcripts, show notes, timestamps, highlights, quotes, social posts from audio/video uploads; speaker ID, timestamping, 60+ languages on higher tiers.
+- **URL:** https://www.castmagic.io (terms: https://www.grabon.in/castmagic-coupons/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via grabon pricing FAQ; official pricing page not fetched)
+- **Free tier:** Free trial only (older sources: 30 min transcription/week on trial; current trial size unclear), no credit card; no permanent free version. Hobby from $39/mo (300 min/mo)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** No SRT/caption-file export documented on trial — evaluate transcript export formats before any use. Rising Star adds API for automation. [Wave 13 Lane C]
+
+#### Podcastle — browser podcast studio with text-based editing ❓ unverified
+- **What:** All-in-one browser podcast studio: multitrack remote recording, automatic transcription, text-based audio editing, Magic Dust audio cleanup, 7,000+ music/SFX tracks, 4K video recording.
+- **URL:** https://podcastle.ai (terms: https://podcastpontifications.com/helpful-info/async-podcastle-pricing/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via podcastpontifications pricing breakdown; official pricing page not fetched)
+- **Free tier:** Free plan — unlimited audio recording (MP3 160kbps); transcription limited to 1 hour LIFETIME (not monthly); video exports watermarked 720p. Essentials from $11.99/mo (10 h transcription/mo)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The lifetime (not monthly) transcription cap is the gotcha — 1 hour total, then it's gone. Text-based editing is the Descript-parallel worth knowing. No public API. [Wave 13 Lane C]
+
+#### Riverside.fm — studio recording with AI transcripts + styled captions ❓ unverified
+- **What:** Remote studio recording (local 4K video / WAV per guest), automatic AI transcription in 100+ languages (SRT/TXT download), text-based editor, caption styling/positioning, Magic Clips for social cutdowns.
+- **URL:** https://riverside.fm (terms: https://riverside.fm/blog/best-transcription-software-for-mac)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Riverside blog; official pricing page not fetched)
+- **Free tier:** Free plan — 2 h multitrack recording/mo, 720p, Riverside watermark; built-in AI transcription is paid (Pro $24/mo). Separate free online transcription tool exists on riverside.fm with its own limits.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Caption styling (font/position) + transcript→caption workflow is directly relevant to episode masters; free tier watermark makes it draft-only. [Wave 13 Lane C]
+
+#### StreamYard — browser live studio, AI captioned clips on free ❓ unverified
+- **What:** Browser-based live-streaming studio (multistream, guests, overlays); AI clips turn recordings into captioned vertical clips; transcript downloads on higher tiers.
+- **URL:** https://streamyard.com (terms: https://www.learningrevolution.net/streamyard-vs-zoom/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via learningrevolution comparison; official pricing page not fetched)
+- **Free tier:** Free plan — 20 h streaming/mo, 720p, StreamYard watermark, 1 destination; 2 AI clips/mo (captioned vertical clips); full transcript download only on Advanced plan
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not a transcription tool — the only caption value is 2 AI-generated captioned clips/mo. Transcript is paywalled. Marginal for caption pipeline; listed for completeness. [Wave 13 Lane C]
+
+#### Tactiq — bot-free Chrome-extension live transcription ❓ unverified
+- **What:** Chrome extension that captures live captions inside Google Meet / Zoom / Teams without sending a bot into the call; 60+ languages, AI summaries, action items, exports to Google Docs/Notion/Slack/HubSpot.
+- **URL:** https://tactiq.io (terms: https://tactiq.io/learn/google-meet-alternatives — official)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Tactiq page; free tier: 10 transcripts/mo, 5 AI credits/mo, no credit card)
+- **Free tier:** 10 meeting transcripts/mo, 5 AI summary credits/mo, live captions, Google Docs & Notion exports. Pro $8/user/mo annual (unlimited transcripts)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Transcript-only capture — no audio/video recording, so nothing to caption from. Useful as a live-transcript reference tool; SOC-2 Type II, no training on meeting data. [Wave 13 Lane C]
+
+#### ScriptMe — production-oriented transcription/subtitling with SRT/VTT export ❓ unverified
+- **What:** AI transcription + subtitle editor aimed at film/TV production (ScriptMe AB, Sweden): 30+ languages, styled subtitle editing, SRT/VTT/burned-in export, API, enterprise collaboration.
+- **URL:** https://scriptme.io (terms: https://www.capterra.in/software/1064367/scriptme)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via Capterra; official pricing page not fetched)
+- **Free tier:** Free version + free trial available (exact free minutes unclear); paid from $45/mo (pay-as-you-go $29/h)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Production pedigree (timecoding, subtitle styling) is the interesting bit; free-tier size needs confirming on scriptme.io/pricing before planning any use. [Wave 13 Lane C]
+
+#### Vocalmatic — 30-min free transcription; reliability reports are dire ❓ unverified
+- **What:** Simple upload-a-file AI transcription (mp3/flac/wav/mp4/mov/ogg/webm), email-delivered transcripts with an editor, subtitle support, API; founded 2017, Canada.
+- **URL:** https://vocalmatic.com (terms: https://sourceforge.net/software/compare/Smart-Scribe-vs-Vocalmatic/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via sourceforge comparison; official pricing page not fetched)
+- **Free tier:** 30 minutes of complimentary automatic transcription; then ~$15/h pay-as-you-go
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ HONESTY FLAG: multiple recent user reviews call the service broken/scam-adjacent — uploads stuck "pending" forever, no support response, while payments process fine. Do NOT route caption work here; listed only so nobody rediscovers it. [Wave 13 Lane C]
+
+#### Pictory — AI video builder; transcript/subtitle export free only during trial ❓ unverified
+- **What:** Script/URL/audio/PPT → captioned video builder with stock library (Getty/Storyblocks), ElevenLabs voices, text-based editing, AI highlight clips; transcript generator exports subtitles as SRT/VTT ZIP or burned-in.
+- **URL:** https://pictory.ai (terms: https://pictory.ai/blog/transcript-generator — official)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Pictory blog; official pricing page not fetched)
+- **Free tier:** No permanent free plan — 14-day trial: 3 video projects, watermarked exports; transcript generator free during trial (files up to 5 GB / 180 min). Starter from $25–29/mo
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Trial-only — the 180-min transcript allowance is the usable bit, but watermarked video and no recurring free tier make it a one-shot. [Wave 13 Lane C]
+
+#### Zubtitle — social auto-captions, free-forever 2 videos/mo ❓ unverified
+- **What:** Focused auto-caption tool for talking-head/social video: AI subtitles in 60+ languages, styled burned-in captions, supertitles/progress bar/logo, crop/resize for Reels/Shorts/TikTok, SRT + TXT download per video.
+- **URL:** https://zubtitle.com (terms: https://seektool.ai/ai/zubtitle-com)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via seektool pricing; official pricing page not fetched)
+- **Free tier:** "Bootstrapper" free forever — 2 videos/mo, 720p, Zubtitle watermark, SRT download included. Guru from $19/mo (10 videos)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the few caption-first tools with a real recurring free tier AND SRT download on free. Watermark on video exports — but SRT is what the caption lane needs. [Wave 13 Lane C]
+
+#### Vizard — AI clipper with animated captions, 60 credits/mo free ❓ unverified
+- **What:** Long-video → viral-clips engine: AI highlight detection, auto-captions in 30+ languages, caption translation to 100+ languages, speaker detection, auto-reframe 9:16, REST API on paid tiers.
+- **URL:** https://vizard.ai (terms: https://appscribed.com/software/vizard-ai-video-editing-review/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via appscribed review; official pricing page not fetched)
+- **Free tier:** 60 credits/mo (~60 min input), 1 GB files, 720p, 10-min export cap, 3-day storage, watermarked, 1 social account. Creator from ~$14.50/mo annual
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free tier is a trial in practice (watermark + 3-day storage). Caption translation (not dubbing) is the useful feature; no caption-file export documented — check before use. [Wave 13 Lane C]
+
+#### Temi — Rev's pay-as-you-go transcription, 45-min free trial ❓ unverified
+- **What:** Lean AI transcription by Rev: fast single-engine transcription, filler-word removal, speaker ID, text editor; exports Word/PDF/SRT/VTT/TXT; mobile apps; developer API. English-only.
+- **URL:** https://www.temi.com (terms: https://speakai.co/alternatives/speak-ai-vs-temi-a-more-useful-temi-alternative/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via speakai comparison; official pricing page not fetched)
+- **Free tier:** One 45-minute transcript free (trial); then $0.25/min pay-as-you-go, no subscription, no minimum
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Trial-only. SRT/VTT export is included (unlike some trial tiers), so the single free transcript is actually usable as a caption source. English-only is the limit. [Wave 13 Lane C]
+
+#### Simon Says — transcription/subtitling with NLE integrations ❓ unverified
+- **What:** Production transcription + translation in 100 languages with direct export into Adobe Premiere, Final Cut Pro, DaVinci Resolve, and Avid (timecoded transcripts, visual subtitle editor, speaker separation, collaborative web editor).
+- **URL:** https://www.simonsaysai.com (terms: https://aitools.inc/tools/simon-says-ai)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via aitools.inc; official pricing page not fetched)
+- **Free tier:** Free trial (older reviews: 30-min credit for new users; current size unclear); pay-as-you-go from $15; Creator $16/mo (2 h credit/mo)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The NLE-native export (Premiere/FCP/DaVinci/Avid) is the standout — unique in this wave for an edit-pipeline fit. Trial size needs confirming; Capterra rating is weak (1.6/5) — trial before trust. [Wave 13 Lane C]
+
+#### Grain — video-first meeting notetaker, generous free tier ❓ unverified
+- **What:** Video-first AI notetaker: bot joins Zoom/Meet/Teams, records video, transcribes with speaker labels, AI summaries with chapters/action items, shareable video clips from transcript moments, CRM sync, 25-language transcription.
+- **URL:** https://grain.com (terms: https://grain.com/blog/best-meeting-transcription-software — official)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Grain blog; official pricing page not fetched)
+- **Free tier:** Free plan — unlimited AI meeting notes/recordings (one Notetaker seat); some reviewers report a 5-recording cap — confirm live. Starter from $19/user/mo
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Transcript→shareable-clip workflow is adjacent to caption cutdowns. AssemblyAI speech models under the hood (already catalogued). Conflicting free-cap reports — verify before relying on it. [Wave 13 Lane C]
+
+#### Fathom — unlimited free recording + transcription, AI summaries capped ❓ unverified
+- **What:** AI meeting notetaker: bot joins Zoom/Meet/Teams, unlimited recording and transcription (38 languages, auto-detect), AI summaries in ~30s, clickable highlights linked to video moments, Ask Fathom search, clip cutting, desktop app + Chrome extension.
+- **URL:** https://fathom.video (terms: https://get-alfred.ai/blog/fathom-pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via get-alfred pricing review; official pricing page not fetched)
+- **Free tier:** Unlimited recordings, unlimited transcription, unlimited storage; advanced AI summaries capped at 5 calls/mo (basic chronological template after). Premium $16/user/mo annual
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest free tier in the meeting category (unlimited recording AND transcription at $0). 38-language transcription with auto-detect is genuinely useful; transcripts link to video timestamps — closest thing to a free caption-timing source here. [Wave 13 Lane C]
+
+#### tl;dv — unlimited free recording/transcription, AI notes lifetime-capped ❓ unverified
+- **What:** Meeting recorder/transcriber (Zoom/Meet/Teams, 30+ languages): timestamped highlights, shareable clips, searchable library; bot or bot-free desktop capture.
+- **URL:** https://tldv.io (terms: https://curatahub.com/blog/tldv-pricing-explained)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via curatahub pricing review; official pricing page not fetched)
+- **Free tier:** Unlimited recordings + transcripts; AI notes capped at 10 LIFETIME (not monthly), 10 Ask AI queries lifetime, recordings deleted after 3 months, 5 file uploads total. Pro from $18/user/mo annual
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The lifetime (not monthly) AI-note cap and 90-day recording deletion are the gotchas — treat free as a recorder, not an archive. Clip-and-share is the caption-adjacent feature. [Wave 13 Lane C]
+
+#### Granola — bot-free AI notepad, free Basic with 30-day history ❓ unverified
+- **What:** Meeting notepad that captures system audio on-device (no bot joins the call), merges your typed notes with the transcript into structured AI notes; AI chat across meetings, templates, shared folders; macOS/Windows/iOS/Android.
+- **URL:** https://www.granola.ai (terms: https://scored.tools/blog/granola-review-2026/ — figures sourced from granola.ai/pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via scored.tools review of official pricing; official pricing page not fetched)
+- **Free tier:** Basic free — AI meeting notes, AI chat, templates, shared folders, multi-language; only last 30 days of history visible (some reviews report a 25-meeting lifetime cap — confirm live). Business $14/user/mo
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-bot capture is the differentiator; conflicting free-cap reports (30-day history vs 25-meeting lifetime) — verify on granola.ai/pricing. Notepad-first, not a caption tool. [Wave 13 Lane C]
+
+#### Read AI — meeting AI with 5 free meetings/mo ❓ unverified
+- **What:** Meeting assistant unifying meetings, email, and messaging into a searchable knowledge graph: real-time transcription, AI summaries, meeting coach, topic readouts; 20+ languages; iOS app for in-person capture.
+- **URL:** https://www.read.ai (terms: https://www.saasworthy.com/product/read-ai-transcription/pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via saasworthy pricing; official pricing page not fetched)
+- **Free tier:** 5 meetings/mo with full AI summaries, real-time transcription, notes, unlimited enterprise search, meeting coach; no credit card. Pro $15/user/mo (unlimited transcripts)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Thin free allowance (5 meetings/mo). Included because the cross-meeting search is a novel reference pattern; not a caption pipeline tool. [Wave 13 Lane C]
+
+#### Fellow — AI meeting notes, 5 free notes lifetime/user ❓ unverified
+- **What:** Meeting management + AI assistant: agendas, recording (bot or botless desktop capture), transcription in 90+ languages, AI summaries with chapters, action items, transcript redaction, 50+ integrations (Salesforce/HubSpot/Zapier), API; SOC 2 Type II.
+- **URL:** https://fellow.ai (terms: https://www.fellow.ai/pricing?ref=saaspo.com — official)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Fellow pricing page)
+- **Free tier:** 5 AI notes + 5 AI recordings LIFETIME per user, audio/video uploads, AI transcription/summary/action items. Team $7/user/mo annual
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lifetime (not monthly) caps make this evaluation-only. Transcript redaction + 90+ languages are the notable features; security posture is the best in this wave. [Wave 13 Lane C]
+
+#### Circleback — unlimited free meeting transcription, 30-day history ❓ unverified
+- **What:** Meeting notetaker (bot or bot-free desktop app): speaker-labeled transcripts, AI notes, action items, transcript search, mobile + Apple Watch recording, Slack/Linear integrations, API/MCP/CLI access; 100+ languages.
+- **URL:** https://circleback.ai (terms: https://techcrunch.com/2026/08/31/meeting-notetaker-circleback-adds-a-free-tier-to-attract-more-customers/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via TechCrunch, Aug 2026; official pricing page not fetched)
+- **Free tier:** Unlimited meetings + transcription, AI notes, action items, Ask Circleback, 30-day meeting/recording history, limited API/MCP/CLI. Pro from $15/user/mo annual
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free tier launched Aug 2026 (TechCrunch-confirmed) — generous and current. API + MCP + CLI on free is unusual and worth noting for automation experiments. [Wave 13 Lane C]
+
+#### Avoma — meeting/revenue intelligence; free plan status CONFLICTED ❓ unverified
+- **What:** AI meeting assistant for revenue teams: recording, real-time transcription (50+ languages), AI notes, conversation intelligence, deal boards, coaching scorecards, CRM sync (Salesforce/HubSpot), dialer integrations.
+- **URL:** https://www.avoma.com (terms: https://meetgeek.ai/blog/avoma-review and https://www.ricavi.ai/blog/avoma-pricing-2026 — conflict noted)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via two review sources; official pricing page not fetched)
+- **Free tier:** CONFLICT: ricavi.ai reports a free Starter plan (AI notes, basic transcription, 20 meetings/mo cap); meetgeek.ai (Aug 2026) reports NO free plan, only an unrestricted 14-day trial. Do not rely on either — check avoma.com/pricing live.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Conflict between sources is itself the finding — treat as trial-only until verified at source. Revenue-intelligence focus, not caption-relevant anyway. [Wave 13 Lane C]
+
+#### Mem — AI note workspace; meeting transcription in beta on paid ❓ unverified
+- **What:** AI note-taking workspace with semantic auto-organization: capture by voice/during calls/web, Mem Chat over your notes, meeting briefs (beta) that record, transcribe, and summarize calls; desktop apps capture system audio.
+- **URL:** https://mem.ai (terms: https://nubiapage.com/mem-ai-review-2026-pricing-app-alternatives-free-plan/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via nubiapage review; official pricing page not fetched)
+- **Free tier:** 25 notes/mo + 25 AI chat messages/mo, basic search. Meeting record/transcribe/summarize ("meeting briefs") is a Pro beta feature (~$12–15/mo)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Marginal for captions — transcription is paywalled in beta. Included for the lane-candidate-pool sweep; deprioritize. [Wave 13 Lane C]
+
+#### Sembly — meeting AI with free Personal plan ❓ unverified
+- **What:** AI meeting assistant: records/transcribes meetings (~94% claimed accuracy), auto meeting minutes, summaries with action items, sentiment analysis, CRM integrations, Glance/briefing features.
+- **URL:** https://sembly.ai (terms: https://www.fahimai.com/sembly-vs-mem-ai)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via fahimai comparison; official pricing page not fetched)
+- **Free tier:** Free Personal plan; Professional $10/mo, Team $20/user/mo (paid unlocks sentiment analysis, CRM integration)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** "Sembly" grep hits in the catalog were all "AssemblyAI" substrings — no standalone Sembly entry existed. Free Personal plan details are thin in sources; verify live before use. [Wave 13 Lane C]
+
+#### SubtitleBee — caption-first subtitler; free tier disables downloads ❓ unverified
+- **What:** Online subtitle generator: upload video/URL → AI subtitles (claimed 95% on clear speech), editor, burned-in styled subtitles, SRT/ASS/VTT/TXT export, subtitle translation in 100+ languages, supertitles/progress bar/logo, crop/resize for Shorts/Reels.
+- **URL:** https://subtitlebee.com (terms: https://subtitlebee.com/pricing — official)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official SubtitleBee pricing page)
+- **Free tier:** 1 video up to 10 min to try the editor — DOWNLOADS DISABLED on free (no SRT/file export until paid). Starter from $19/mo (240 min/mo, watermark-free)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only URL-cited (in Kapwing's entry), never given a full entry — hence included. The no-downloads-on-free rule makes the free tier evaluation-only; the minute-metered paid plans are the honest comparison point vs Kapwing. [Wave 13 Lane C]
+
+#### EasySub — auto-subtitles, 30-min free + free translation forever ❓ unverified
+- **What:** Web auto-subtitle generator: 150+ languages, timeline editor (timing/text/position/split), SRT/ASS/TXT download, subtitle translation, YouTube-URL import, no-upload-limit positioning for long videos.
+- **URL:** https://www.easysub.com (terms: https://aivideotoolspro.com/detail/easyssub)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via aivideotoolspro; official pricing page not fetched)
+- **Free tier:** 30 min free transcription (some sources say 15 min — confirm live); SRT download included on free; subtitle translation free forever. Pay-as-you-go ~$0.10–0.20/min after
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Stronger than SubtitleBee's free tier (SRT download works on free). Free-translation-forever is a real differentiator for multilingual caption variants. Has an API. [Wave 13 Lane C]
+
+#### Zencastr — podcast recorder, free tier includes unlimited transcription (reports conflict) ❓ unverified
+- **What:** Browser podcast recording: local 16-bit 48k WAV per guest, 4K video, separate tracks, searchable multilingual transcripts, AI editing, hosting/distribution.
+- **URL:** https://zencastr.com (terms: https://pixelpulseservices.com/zencastr-review-2025/)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via pixelpulse review of official pricing; official pricing page not fetched)
+- **Free tier:** "Vibecastr" free — CONFLICT: Sept-2026 review reports unlimited recording + unlimited transcription hours; other reviews report 8 h/mo, 2 guests. Confirm live. Paid from $24/mo
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** If the unlimited-transcription reading is current, this is a strong free caption source for dialogue-heavy content. Verify before planning. [Wave 13 Lane C]
+
+#### invideo — AI video builder; free tier has NO commercial rights 🚫 NC-or-quarantine
+- **What:** Prompt → video platform: script, 16M+ stock library, AI voiceover (50+ languages), auto-subtitles, transitions; subtitles editable and exported with final file on all tiers.
+- **URL:** https://invideo.io (terms: https://max-productive.ai/ai-tools/invideo-ai/)
+- **License:** Proprietary SaaS — free plan EXPLICITLY excludes commercial usage rights (verified 2026-10-07 via max-productive review)
+- **Free tier:** ~10 AI generation min/week, 4 video exports/week, watermarked, NO commercial usage rights. Plus from $28/mo removes watermark + grants commercial rights
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 🚫 Free tier is evaluation-only by license — watermarked exports cannot legally be used for business/monetized purposes. Only paid tiers are pipeline-relevant. Listed as the wave's clearest NC case. [Wave 13 Lane C]
+
+#### Aiko — Sindre Sorhus on-device Whisper transcription (iOS/macOS) ❓ unverified
+- **What:** Native Swift/SwiftUI transcription app: on-device Whisper (100 languages), audio+video files, sentence-segmented transcripts, export to JSON/CSV/subtitles, Shortcuts automation; no live transcription, no in-app editing, no diarization.
+- **URL:** https://sindresorhus.com/aiko (terms: https://www.saashub.com/compare-otter-ai-vs-aiko)
+- **License:** Proprietary (closed-source App Store app) — terms unverified (verified 2026-10-07 via saashub/HN references; App Store page not checked)
+- **Free tier:** CONFLICT: HN describes a free App Store app; dataconomy reports paid from $20/mo; slashdot reports a free 14-day TestFlight trial. Confirm on the App Store listing.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not open-source despite appearing in open-source tool lists — do not file it as one. On-device privacy is the draw; MacWhisper (already catalogued) is the fuller-featured sibling from the same developer. [Wave 13 Lane C]
+
+#### GoTranscript — human+AI transcription; small free trial ❓ unverified
+- **What:** Transcription service with human (99.4% claimed, from $0.84/min) and AI ($0.06–0.10/min) tiers; 40–50+ languages; exports TXT/DOCX/PDF + SRT/VTT/SCC/DFXP subtitle formats; timestamps, speaker labels, verbatim options.
+- **URL:** https://gotranscript.com (terms: https://www.thinkingineducating.com/is-gotranscript-a-reliable-choice-for-your-transcription-needs-2/ and http://gotranscript.com/en/blog/the-most-affordable-transcription-services-for-audio-and-video — official)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via review + official GoTranscript blog; official pricing page not fetched)
+- **Free tier:** Free trial only — CONFLICT: 30 min free automated transcription (review) vs 5-min trial (official blog) vs 10-min business trial (coupon page). Confirm live.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pro subtitle formats (SCC/DFXP) are the broadcast-relevant bit; human tier exists for legally load-bearing accuracy. Trial size is genuinely unclear — verify, don't quote a number. [Wave 13 Lane C]
+
+#### Cockatoo — fast transcription with working free tier ❓ unverified
+- **What:** Drag-and-drop audio/video transcription (90+ languages): in-browser editor, real-time transcription option, export SRT/DOCX/PDF/TXT, secure encrypted handling; aimed at interviews, lectures, meetings, documentary producers.
+- **URL:** https://cockatoo.ai (terms: https://www.toolify.ai/compare/cockatoo-vs-shots-maker)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via toolify comparison; official pricing page not fetched)
+- **Free tier:** Free — 2–3 uploads/mo, 20–30 min max transcript length (sources differ), 90+ languages, SRT export included. Pro from ~$12–15/mo
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Small but genuinely usable free tier with SRT export — comparable to EasySub's. Paid-plan pricing varies across sources ($12–29/mo) — confirm live. [Wave 13 Lane C]
+
+---
+
+## Self-hosted caption tools (licenses verified from repo LICENSE / README)
+
+#### jhj0517/Whisper-WebUI — Gradio subtitle workbench on Whisper ✅ commercial-safe
+- **What:** Gradio web UI for easy subtitling: switchable backends (openai/whisper, faster-whisper default, insanely-fast-whisper); subtitles from files, YouTube, microphone; SRT/WebVTT/TXT output; NLLB/DeepL text translation; Silero VAD; pyannote speaker diarization (needs HF token + terms acceptance); UVR vocal separation; REST API backend; Docker + Pinokio installers.
+- **URL:** https://github.com/jhj0517/Whisper-WebUI (terms: repo README + LICENSE)
+- **License:** Apache-2.0 (verified 2026-10-07 via GitHub repo license metadata: "Apache License 2.0")
+- **Free tier:** Self-hosted — free, no limits (GPU recommended; CUDA 12+ for NVIDIA)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest self-hosted caption workbench found this wave (2,890 stars, 1,447 commits): VAD + diarization + translation in one UI, plus a REST API for pipeline wiring. Known gotcha: Docker build fragility (setuptools/pkg_resources issue reported upstream). [Wave 13 Lane C]
+
+#### aadnk/whisper-webui — faster-whisper Gradio UI + CLI ❓ unverified
+- **What:** Lightweight faster-whisper web UI (Gradio) + CLI: parallel CPU/GPU transcription, Silero VAD options, YouTube/file/URL input, config-file driven; deployed as a Hugging Face Space.
+- **URL:** https://huggingface.co/spaces/aadnk/faster-whisper-webui (terms: https://huggingface.co/spaces/aadnk/whisper-webui/blob/main/README.md)
+- **License:** Apache-2.0 per Space metadata (verified 2026-10-07 via HF Space README frontmatter `license: apache-2.0`; repo LICENSE file not separately fetched — hence ❓)
+- **Free tier:** Self-hosted — free, no limits; HF Space demo usable without install
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The "whisper-webui"/"faster-whisper-webui" slot the brief asked to check — no catalog entry existed, so it's covered here. Lighter than jhj0517's (no diarization/translation UI); pick jhj0517 for features, aadnk for speed/simplicity. [Wave 13 Lane C]
+
+#### sherpa-onnx (k2-fsa) — streaming/offline ASR runtime, Apache-2.0 ✅ commercial-safe
+- **What:** ONNX-based speech runtime: streaming + non-streaming ASR, TTS, Silero VAD, keyword spotting, speaker ID/diarization; C++/Python/Swift/Kotlin bindings, iOS/Android/desktop; runs SenseVoice, Paraformer, Whisper, Parakeet models.
+- **URL:** https://github.com/k2-fsa/sherpa-onnx (terms: repo LICENSE)
+- **License:** Apache-2.0 (verified 2026-10-07 via repo LICENSE; multiple downstream THIRD_PARTY_NOTICES confirm)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** License nuance (honest): runtime is Apache-2.0, but prebuilt TTS binaries embed eSpeak-NG (GPL-3.0) for phonemization — ASR-only caption use avoids the GPL path entirely. Streaming ASR makes it the candidate for live-caption experiments. [Wave 13 Lane C]
+
+#### FunASR (modelscope) — Alibaba production ASR toolkit ✅ commercial-safe
+- **What:** Industrial ASR toolkit (Alibaba DAMO/Speech Lab, 16k+ stars): Paraformer/Conformer models, VAD → ASR → punctuation → diarization pipeline, streaming + offline, WebSocket/REST/gRPC servers, Docker one-command deploy, ONNX edge runtime, SenseVoice multilingual models.
+- **URL:** https://github.com/modelscope/FunASR (terms: repo README + LICENSE)
+- **License:** Apache-2.0 code (verified 2026-10-07 via repo; linuxlinks + production-ML references); model weights under FunASR Model License v1.1 — commercial use OK with attribution to Alibaba/FunAudioLLM
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Attribution requirement on the model weights is the only commercial-use condition — keep the attribution in any derived artifacts. Full VAD+ASR+punct+diarization in one Docker image is the fastest path to a self-hosted caption server. Already partially referenced via auto-subtitle-translate (FunASR-based) but never given its own entry. [Wave 13 Lane C]
+
+#### OpenWhispr — open-source local-first Whisper dictation + meeting transcription ✅ commercial-safe
+- **What:** Privacy-first cross-platform (macOS/Windows/Linux) voice-to-text: hotkey dictation, local Whisper/Parakeet/Orukeet models (audio never leaves device), meeting recording + transcription + notes, speaker identification, BYOK cloud fallback, webhooks/API for pipeline integration.
+- **URL:** https://github.com/OpenWhispr/openwhispr (terms: repo README + LICENSE)
+- **License:** MIT (verified 2026-10-07 via raw LICENSE fetch: "MIT License, Copyright (c) 2024 OpenWhispr Team")
+- **Free tier:** Self-hosted/open — free, no limits; local transcription free, cloud is BYOK (pay providers directly, ~$0–5/mo typical)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Chosen over "Whispering" (license unpinable) — OpenWhispr is the verified-MIT local-first alternative to MacWhisper/WisprFlow/Granola. Webhooks + API make it wireable into the caption pipeline; meeting transcription covers the dialogue-capture case. [Wave 13 Lane C]
+
+---
+
+## Entry count — Wave 13
+
+111 new `####` entries appended (40 per-uploader SFX · 34 archival BG-plates · 37 caption SaaS/self-hosted) → **1463 total** honest entries (1352 before this wave). Quarantine rows 126–129 added (Hydrogen GPL-2.0-or-later, Tenacity GPL-2.0-or-later, faster-whisper-generate-srt-subtitles GPL-3.0, ETH E-Pics CC BY-SA 4.0 share-alike reference-only). Wired: tools/captions/caption_qa.py (subtitle QC defect gate, stdlib-only, real smoke proofs on clean/defective/real-pipeline SRTs). Audit: Lane D 10-row upstream spot-check 10/10 confirmed, no license changes. [Wave 13 coordinator merge]

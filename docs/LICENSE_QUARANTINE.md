@@ -9,7 +9,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (125 rows · 119 distinct projects — append-only manifest; see duplicate mapping below)
+## Quarantined items (129 rows · 123 distinct projects — append-only manifest; see duplicate mapping below)
 
 ## Row-number convention + duplicate mapping (Wave 8 Lane B, 2026-10-07)
 
@@ -217,6 +217,10 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 123 | Dn-FamiTracker (alnicode/dn-famitracker) | GPL-2.0-or-later (verified: repo README "distributed under the GNU GPL 2 license or any later version", 2026-10-07) — note: j0cc fork lineage has per-component variants (MIT-0 / GPLv2 driver), but the application stays quarantined | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 124 | MilkyTracker (milkytracker/MilkyTracker) | GPL-3.0-or-later (verified: license infobox "GPL-3.0-or-later", 2026-10-07) — note: the MilkyPlay playback library alone is BSD-3-Clause and could be used separately; the tracker application stays quarantined | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 125 | Schism Tracker (schismtracker/schismtracker) | GPL-2.0 (verified: GitHub repo license tag GPL-2.0 + man page "Licensed under the GNU GPL", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 126 | Hydrogen (hydrogen-music/hydrogen) | GPL-2.0-or-later (verified: upstream README "Hydrogen is distributed under GPLv2+", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 127 | Tenacity (tenacityteam/tenacity) | GPL-2.0-or-later (verified: upstream README GPL v2 "or (at your option) any later version", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 128 | faster-whisper-generate-srt-subtitles (YounessMoustaouda/faster-whisper-generate-srt-subtitles) | GPL-3.0 (verified: GitHub repo license metadata, 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 129 | ETH Library E-Pics Image Archive | CC BY-SA 4.0 per item (verified: Wikimedia Commons file rights statement, 2026-10-07) — share-alike propagates to derivative BGs; NOT GPL/AGPL family; reference-only, legal review before any ingestion | backgrounds | trippedd | reference only — do not ingest plates into shipping assets without legal review | PENDING |
 
 ## Notes from Wave-8 Lane B quarantine reconciliation (Worker B, 2026-10-07)
 
@@ -281,6 +285,11 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **+4 rows (122–125):** Furnace (GPL-2.0-or-later), Dn-FamiTracker (GPL-2.0-or-later), MilkyTracker (GPL-3.0-or-later), Schism Tracker (GPL-2.0) — chiptune/retro trackers found in the SFX lane; all verified upstream; standalone-tool/research only, never wired into shipping paths. Dedup-checked clean.
 - **Lane A flag resolved:** rows 120–121 (Style-Bert-VITS2, AivisSpeech) confirmed present in the manifest table — the worker's "table ends at 119" was a miscount; no gap, no collision.
 - **Header counts refreshed:** 125 rows · 119 distinct (AGPL 22 · GPL 100 · LGPL-3.0 2 · CeCILL-2.1 1).
+
+## Notes from Wave-13 quarantine append (coordinator merge, 2026-10-07)
+
+- **+4 rows (126–129):** Hydrogen (GPL-2.0-or-later), Tenacity (GPL-2.0-or-later), faster-whisper-generate-srt-subtitles (GPL-3.0), ETH Library E-Pics (CC BY-SA 4.0 per item — share-alike, NOT GPL/AGPL family; reference-only, legal review before any plate ingestion). All verified upstream; standalone-tool/research only, never wired into shipping paths. Dedup-checked clean.
+- **Header counts refreshed:** 129 rows · 123 distinct (AGPL 22 · GPL 103 · LGPL-3.0 2 · CeCILL-2.1 1 · CC BY-SA 1).
 
 ## Notes from Wave-13 quarantine audit (Lane D, 2026-10-07)
 

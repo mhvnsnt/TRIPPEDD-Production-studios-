@@ -41,3 +41,23 @@ transcription exactly matches the spoken line
 Hash (sha256):
 
 - `proofs/stable_ts_test.srt`: `a4983efb937290ada7fcada9c98ee3f1731954c494489d75455e84ab58a1bd94`
+
+## WhisperX (WIRED — install verified; first-run transcription deferred)
+
+WhisperX 3.8.6 (BSD-2-Clause, verified at upstream LICENSE), installed in the
+isolated venv `~/venvs/whisperx` (torch 2.14.1+cpu). System pip cannot install
+it (Debian PyYAML 6.0.1 uninstall conflict) — always use the venv.
+
+Smoke tests (2026-10-07):
+- `~/venvs/whisperx/bin/python -c "import whisperx"` — OK (`WHISPERX_OK`).
+- `~/venvs/whisperx/bin/whisperx --help` — OK, full CLI surface present.
+
+Limitation (honest): the first transcription run downloads the Whisper model
+(~75MB tiny) + wav2vec2 alignment model (~360MB English) from HuggingFace.
+That download tripped a runtime approval gate in this sandbox, so the
+end-to-end word-level transcription proof is DEFERRED to a workstation run.
+`tools/captions/whisperx_tool.py` is the ready wiring script (word-level SRT).
+
+Why it matters: word-level forced alignment fixes faster-whisper's
+utterance-level timestamps ("can be inaccurate by several seconds") —
+karaoke-style per-word timing for the show's comedy captions.

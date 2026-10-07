@@ -149,7 +149,7 @@ Per the owner's music direction (2026-10-06): intro/promo music does **not** hav
 
 - Hollow — Super Dragon cadence; mostly the silent type (owner 2026-10-07 — he hasn't heard Super Dragon's real voice; probably findable online)
 - Static — Enzo Amore (fast-talking Jersey braggadocio; genuine clone — stock Piper retired, owner rejected it as a random British stock voice)
-- Cipher — **feral 2026 Lio Rush** (owner 2026-10-07) — crazy/feral energy; dialogue style from Bannon's Cipher material; speaks at the trick bet
+- Cipher — **feral 2026 Lio Rush "Blackheart"** (owner 2026-10-07) — voice: zoned out, spaced out, controlled by an unseen being, manic and feral, somewhat comedic; whisper-to-shriek, single-word loops, third-person "he", "WE" plural; dialogue from `bannon_dialogue.json` feral Cipher/Blackheart set (generic `character_lines.json` speed-freak set REJECTED); 2026 interview/promo/match footage being gathered as likeness/expression/pose reference for Cipher card creation (cipher-refs/)
 - Echo — Shotzi Blackheart
 - Sombra Negra — Damian Priest (speaks — H3 and future lines)
 - Kiko — Keiji Mutoh / Great Muta

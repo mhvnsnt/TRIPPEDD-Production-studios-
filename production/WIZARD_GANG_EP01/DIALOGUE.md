@@ -55,7 +55,7 @@ Static narrates THROUGH the whole montage — the motor-mouth never stops. Smash
 | L14 | 3:08 | STATIC (bridge) | READY | "This is a CLASSIFIED exchange! …It's mozzarella sticks. It's a classified mozzarella stick exchange." | DRAFT |
 | L15 | 3:16 | STATIC (parking garage) | READY | "Secure location! Nobody knows we're here! Foldin' chairs, baby — that's how you know it's official." | DRAFT |
 | L16 | 3:24 | STATIC (skate park) | READY | "Cipher, do NOT— he's gonna do it. He's gonna eat concrete. SOMEBODY FILM THIS." | DRAFT |
-| C1 | 3:26 | CIPHER (taking the bet; feral 2026 Lio Rush — line style from Bannon's Cipher material, DRAFT) | READY (style pull in progress) | "BET. Watch THIS." | DRAFT |
+| C1 | 3:26 | CIPHER (taking the bet; feral 2026 Lio Rush — authentic Bannon Cipher line) | READY | "Blink and you'll miss me!" | DRAFT |
 | L17 | 3:33 | STATIC (studio; mic feedback) | READY | "Is this thing on? Ladies and gentlemen, welcome to the COUNCIL CAST, episode one — I'm your host, the main event—" | DRAFT |
 | L18 | 3:42 | STATIC (carnival) | READY | "Sombra. My man. You won the bear. You look TERRIFIED of the bear. …He's keepin' the bear." | DRAFT |
 | L19 | 3:52 | STATIC (grill flare) | READY | "Everything's fine! The grill's fine! We're fine! Somebody get the— it's FINE." | DRAFT |

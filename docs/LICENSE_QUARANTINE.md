@@ -59,22 +59,22 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 8 | Flowblade | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 9 | FlowFrames | GPL-3.0 (verified) | upscale | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 10 | fSpy | GPL-3.0 (verified Wave 19 Lane B, 2026-10-07: org renamed stuffmatic → perarnia/fSpy — GitHub API spdx_id GPL-3.0) | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 11 | Glaxnimate | GPL-3.0-or-later | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 12 | Krita | GPL-3.0 | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 11 | Glaxnimate | GPL-3.0-or-later (verified Wave 20 Lane C, 2026-10-07: upstream is mbasaglia/glaxnimate — master COPYING references LICENSES/GPL-3.0-or-later.txt) | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 12 | Krita | GPL-3.0 (verified Wave 20 Lane C, 2026-10-07: GitHub API spdx_id KDE/krita = GPL-3.0; raw COPYING = GPL v3 29 June 2007 text) | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 13 | LosslessCut | GPL-2.0-only (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 14 | Mimic 3 | AGPL-3.0 (verified via upstream README 'available under the AGPL v3 license') | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 15 | MyPaint | GPL-2.0-or-later (app); ISC (libmypaint brush engine) | backgrounds | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 15 | MyPaint | GPL-2.0-or-later (app); ISC (libmypaint brush engine) (verified Wave 20 Lane C, 2026-10-07: upstream Licenses.md — "licensed under the terms of the GNU Public License, version 2.0 or later" app-wide; `brushlib/` under ISC; API spdx_id mypaint/mypaint = GPL-2.0) | backgrounds | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 16 | Olive | GPL-3.0 (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 17 | OpenShot | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 18 | Papagayo-NG | GPL-2.0 | lipsync | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 19 | Pencil2D | GPL-2.0-only | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 18 | Papagayo-NG | GPL-2.0 (verified Wave 20 Lane C, 2026-10-07: upstream morevnaproject-org/papagayo-ng — gpl.txt = "GNU GENERAL PUBLIC LICENSE Version 2, June 1991"; API spdx NOASSERTION, README points at gpl.txt) | lipsync | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 19 | Pencil2D | GPL-2.0-only (verified Wave 20 Lane C, 2026-10-07: GitHub API spdx_id pencil2d/pencil = GPL-2.0; raw LICENSE.TXT = GPL v2 June 1991 text) | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 20 | piper-tts | GPL-3.0-or-later (verified from PyPI metadata, 2026-10-07) | tts | god-molecule | separate local process only — never linked into shipping code | PENDING |
 | 21 | Power Sequencer | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 22 | RHVoice | GPL-2.0 engine (lib LGPL-2.1-or-later but MAGE dep pushes combo to GPL-3.0) (verified via upstream README license section); RHVoice Lab VOICES are CC-BY-NC-ND 4.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 23 | Shotcut | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 24 | so-vits-svc | AGPL-3.0 (verified via LICENSE badge in upstream README; was incorrectly assumed MIT) | voice-clone | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 25 | Synfig Studio | GPL-3.0 | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 26 | TupiTube | GPL-2.0-or-later | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 25 | Synfig Studio | GPL-3.0 (verified Wave 20 Lane C, 2026-10-07: GitHub API spdx_id synfig/synfig = GPL-3.0; raw LICENSE = GPL v3 29 June 2007 text) | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 26 | TupiTube | GPL-2.0-or-later → precision note Wave 20 Lane C, 2026-10-07: original upstream xtingray/tupitube 404s (repo gone from GitHub; account xtingray still exists) — live evidence is SourceForge project tupi2d ("GNU General Public License version 2.0 (GPLv2)") and fork e7appew/tupitube.desk (API spdx_id GPL-2.0, COPYING = GPL v2 June 1991 text). "Or-later" clause NOT confirmed by current upstream evidence — recorded as GPL-2.0-family. Still correctly quarantined (quarantine classification unchanged). | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 27 | Video2X | AGPL-3.0 (verified) | upscale | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 
 | 28 | Allosaurus | GPL-3.0 (Wave 2, verified via https://github.com/dd-ching/vmatch/blob/HEAD/docs/research/research-align-pron.md ('echogarden and allosaurus are GPL-3.0'); https://github.com/OpenVoiceOS/ovos-audio2ipa-plugin-allosaurus ('Allosaurus is GPL')) | lipsync | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
@@ -131,7 +131,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 
 - Wave 2 added 23 quarantined items (total 50): whisper-timestamped is AGPL-3.0 (not MIT as assumed); Upscayl is AGPL-3.0; Kitsu is AGPL-3.0; Kdenlive/Avidemux/Cinelerra-GG/LiVES/HandBrake/VidCutter/chaiNNer join the GPL NLE/finishing quarantine; Wick Editor, LibreSprite, Inkscape, GIMP, Blender Grease Pencil/VSE, StoryPencil, StoryToolkitAI, Allosaurus, Praat, SubtitleComposer, Seed-VC, Piper (OHF-Voice), SubtitleComposer are GPL — standalone tool use only.
 - NOT quarantined: FFmpeg default build is LGPL-2.1-or-later (stays off this list per Wave-1 convention); OpenGameArt is a mixed per-asset content library (CC0/CC-BY/CC-BY-SA/OGA-BY/GPL per asset) — per-asset license check required, kept as ❓ in the catalog.
-| 57 | ChatTTS | AGPL-3.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 57 | ChatTTS | AGPL-3.0 (verified Wave 20 Lane C, 2026-10-07: GitHub API spdx_id 2noise/ChatTTS = AGPL-3.0; raw LICENSE = "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007") | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 58 | Seed-VC | GPL-3.0 — SUPERSEDED by row 43 (same upstream project Plachtaa/seed-vc; duplicate row — see dedup mapping) | voice-cloning | both | standalone tool use / research only — never linked or wired into shipping paths | SUPERSEDED — see row 43 |
 | 59 | DiffSVC | AGPL-3.0 | voice-cloning | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 60 | Trelby | GPL-2.0 | storyboarding | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
@@ -447,8 +447,8 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 196 | Av1an | GPL-3.0 (verified: GitHub API spdx_id rust-av/Av1an, 2026-10-07; moved from master-of-zen/Av1an) — chunked parallel AV1 encoding framework | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
 | 197 | VisualSubSync | GPL-2.0 (verified: GitHub API spdx_id Red5goahead/VisualSubSync-Enhanced, 2026-10-07) — waveform-based subtitle editor | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
 | 198 | xy-VSFilter | GPL-2.0 (verified: GitHub API spdx_id Cyberbeing/xy-VSFilter "Official xy-VSFilter Repository", 2026-10-07) — maintained VSFilter fork, ASS/SSA renderer | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
-| 199 | mml2vgm (rjungemann) | GPL-3.0 (verified: GitHub API spdx_id rjungemann/mml2vgm + raw LICENSE.txt "GNU GENERAL PUBLIC LICENSE Version 3", 2026-10-07 — Lane A flag #3) — Rust MML→VGM chiptune toolchain | trackers | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
-| 200 | TinyVGM (SudoMaker) | AGPL-3.0 (verified: GitHub API spdx_id SudoMaker/TinyVGM + raw LICENSE "GNU AFFERO GENERAL PUBLIC LICENSE Version 3", 2026-10-07 — Lane A flag #4) — tiny VGM playback/encoding tool | trackers | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 199 | mml2vgm (rjungemann) | GPL-3.0 (re-verified Wave 20 Lane C, 2026-10-07: GitHub API spdx_id rjungemann/mml2vgm = GPL-3.0; Wave 19 raw LICENSE.txt = "GNU GENERAL PUBLIC LICENSE Version 3") — Rust MML→VGM chiptune toolchain | trackers | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 200 | TinyVGM (SudoMaker) | AGPL-3.0 (re-verified Wave 20 Lane C, 2026-10-07: GitHub API spdx_id SudoMaker/TinyVGM = AGPL-3.0; Wave 19 raw LICENSE = "GNU AFFERO GENERAL PUBLIC LICENSE Version 3") — tiny VGM playback/encoding tool | trackers | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
 
 ## Notes from Wave-18 Lane A quarantine append (2026-10-07)
 
@@ -509,3 +509,24 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
   - Flag #4 TinyVGM (SudoMaker) → **NEW row 200** (AGPL-3.0 — API spdx_id + raw LICENSE "GNU AFFERO GENERAL PUBLIC LICENSE Version 3").
 - **Dedup lesson (echo of Wave 17 Lane C):** Lane A's dedup scan checked names but not existing rows for the same forks/lineages. Future lanes: grep the manifest AND follow repo rename redirects before flagging.
 - **Header counts refreshed:** 200 rows · 186 distinct (184 + 2 new). Families: AGPL 25 (+1) · GPL 152 (+1) · LGPL-2.1 3 · LGPL-3.0 4 · MPL-2.0 1 · GPLv3+/MPLv2+ 1 · CeCILL-2.1 1 · ODbL-1.0 1 · CC BY-SA 1 · CC BY-NC-ND 1 · municipal/state rights-restricted 10. `grep -c '^| [0-9]'` = 200.
+
+## Notes from Wave-20 Lane C quarantine spot-check (2026-10-07)
+
+- **Fresh 10-row upstream spot-check (GitHub API spdx_id + raw license fetches — never assumed):**
+  - 199 mml2vgm → CONFIRMED (GitHub API spdx_id rjungemann/mml2vgm = GPL-3.0; Wave 19 raw LICENSE.txt corroborated).
+  - 200 TinyVGM → CONFIRMED (GitHub API spdx_id SudoMaker/TinyVGM = AGPL-3.0; Wave 19 raw LICENSE corroborated).
+  - 11 Glaxnimate → CONFIRMED (upstream identity traced: repo is mbasaglia/glaxnimate — master COPYING = pointer to LICENSES/GPL-3.0-or-later.txt; API spdx NOASSERTION but text file decisive).
+  - 12 Krita → CONFIRMED (API spdx_id KDE/krita = GPL-3.0; raw COPYING = GPL v3 29 June 2007 text).
+  - 15 MyPaint → CONFIRMED (upstream Licenses.md: app = "GNU Public License, version 2.0 or later"; `brushlib/` = ISC; API spdx_id mypaint/mypaint = GPL-2.0).
+  - 18 Papagayo-NG → CONFIRMED (upstream morevnaproject-org/papagayo-ng — ships gpl.txt = "GNU GENERAL PUBLIC LICENSE Version 2, June 1991"; README's "user license" pointer stands).
+  - 19 Pencil2D → CONFIRMED (API spdx_id pencil2d/pencil = GPL-2.0; raw LICENSE.TXT = GPL v2 June 1991 text).
+  - 25 Synfig Studio → CONFIRMED (API spdx_id synfig/synfig = GPL-3.0; raw LICENSE = GPL v3 29 June 2007 text).
+  - 26 TupiTube → CONFIRMED as GPL-2.0-family, still quarantined — WITH PRECISION NOTE: original upstream xtingray/tupitube returns GitHub 404 (repo gone; xtingray account still exists). Live evidence: SourceForge project tupi2d lists "GNU General Public License version 2.0 (GPLv2)"; fork e7appew/tupitube.desk has API spdx_id GPL-2.0 and COPYING = GPL v2 June 1991 text; fork utopianlabco/tupi likewise GPL-2.0. The row's "or-later" clause is NOT confirmed by any current upstream evidence — downgraded to GPL-2.0-family in the cell. No relicense (no evidence of any license change), no delist; quarantine classification unchanged.
+  - 57 ChatTTS → CONFIRMED (API spdx_id 2noise/ChatTTS = AGPL-3.0; raw LICENSE = "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007").
+  - **Result: 9/10 confirmed as claimed, 1 precision note (row 26 version-family, quarantine unchanged). Zero relicenses, zero duplicates, zero delists.**
+- **Relicense watch:** none found in this block (Waves 10/16/17 each caught real relicenses; this block is clean).
+- **Header counts unchanged:** 200 rows · 186 distinct. `grep -c '^| [0-9]'` = 200.
+- **Speaches Docker smoke-test:** still DEFERRED — no container runtime on this VM (no docker/podman/nerdctl/crictl binaries; no /var/run/docker.sock), re-checked 2026-10-07.
+- **VGMTrans build attempt:** DEFERRED — no Qt dev libraries (pkg-config: no Qt5Core, no Qt6Core), checked 2026-10-07.
+- **LGPL doctrine:** still PENDING OWNER VERDICT (re-checked 2026-10-07 — no ruling on record; manifest + prior wave notes carry no owner decision). Rows 63 (marytts), 121 (AivisSpeech), 154 (GPAC), 165 (Csound), 183 (Verovio), 184 (libgme) stay quarantined. Weak-copyleft watchlist unchanged (Faust LGPL-2.1-or-later · OpenAL Soft LGPL-2.0-or-later · VapourSynth LGPL-2.1). Per standing rule, this lane does not decide the doctrine.
+- **Foreign-directive scan:** reviewed ~/workspace/trippedd-studio/AGENTS.md (production contract) — no injected "autonomous / no-permission" directive block found; nothing to ignore this wave.

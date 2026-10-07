@@ -21293,11 +21293,11 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** The only permissively-licensed native TTML parser found outside the Python/JS stacks — useful if caption parsing ever needs to live in a Go microservice. [Wave 20 Lane B]
 
-#### bbc/subtitles-generator ❓ license-undeclared
+#### bbc/subtitles-generator ✅ commercial-safe
 - **What:** BBC News Labs' node module for generating subtitles from time-coded word lists — exports TTML (incl. Premiere-flavoured), iTT (Apple), SRT, VTT, CSV, and pre-segmented text. Directly relevant to turning Whisper word-timestamps into delivery-ready caption files.
 - **URL:** https://github.com/bbc/subtitles-generator
-- **License:** ❓ NO license declared — GitHub API returns license: null; no LICENSE file in repo (verified 2026-10-07). Default is all-rights-reserved: do NOT use until BBC adds a license.
-- **Free tier:** Unknown
+- **License:** ✅ MIT (license RESOLVED Wave 21 Lane D, 2026-10-07: GitHub API returns license: null and no LICENSE file exists, but the repo's own package.json declares "license": "MIT" (@bbc/subtitles-generator) — Wave 20 Lane B's ❓ corrected)
+- **Free tier:** N/A
 - **Repo lane:** trippedd (captions)
 - **Status:** not-started
 - **Notes:** Honest ❓: the functionality is exactly what the pipeline wants (Whisper words → TTML/SRT/VTT), but undeclared-license code is unusable. Watch for a license addition; ttconv + stable_ts_captions cover the gap meanwhile. [Wave 20 Lane B]
@@ -22103,3 +22103,255 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Usable lane = pre-1956 published recordings (EU 70-year phonogram term) or licensed engagement. [Wave 21 Lane C]
+
+<!-- WAVE 21 LANE D — EBU-TT Live / IMSC tooling depth (+25) -->
+
+#### TSDuck — MPEG-TS toolkit with subtitle/teletext + SCTE tooling ✅ commercial-safe
+- **What:** Full MPEG transport-stream toolkit: `teletext` plugin extracts Teletext subtitles to SRT, `zap --subtitles-pid` / `filter --subtitles` for subtitle-PID analysis and filtering, SCTE-35 splice inject/analyze, MPEG/DVB/ATSC/SCTE descriptor support. The open-source broadcast caption-inserter/analyzer lane.
+- **URL:** https://github.com/tsduck/tsduck
+- **License:** ✅ BSD-2-Clause — GitHub API spdx_id tsduck/tsduck (verified 2026-10-07); README states "distributed under the terms of the Simplified BSD License"
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Verified from upstream README + CHANGELOG: teletext→SRT extraction plugin exists, SCTE-35 splice inject/analyze exists. For broadcast caption deliverables (TS with subtitle PIDs) this is the first tool to reach for. [Wave 21 Lane D]
+
+#### imscHRM — IMSC Hypothetical Render Model validator ✅ commercial-safe
+- **What:** Pure-Python CLI + library (`pip install imschrm`) validating IMSC documents against the IMSC Hypothetical Render Model (W3C), which constrains document complexity (render-time proxy per subtitle). Built on ttconv; demo at hrm.sandflow.com.
+- **URL:** https://github.com/sandflow/imscHRM
+- **License:** ✅ BSD-2-Clause — GitHub API spdx_id sandflow/imscHRM (verified 2026-10-07)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The IMSC-specific QC gate the catalog was missing: ttconv converts, imscHRM validates complexity. Candidate for wire-up alongside ttconv. [Wave 21 Lane D]
+
+#### bbc/ttml-validator — TTML QC vs BBC Subtitle Guidelines / DAPT profiles ✅ commercial-safe
+- **What:** Python TTML validator checking documents against constraint sets (BBC Subtitle Guidelines, DAPT profiles of TTML2). The profile-aware QC complement to schema validation.
+- **URL:** https://github.com/bbc/ttml-validator
+- **License:** ✅ BSD-3-Clause — repo LICENSE.md carries SPDX-FileCopyrightText © 2026 BBC + SPDX-License-Identifier: BSD-3-Clause (verified 2026-10-07; GitHub API returns NOASSERTION so the file is the source of truth)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Feed any IMSC/TTML output through this after imscHRM: one checks complexity, the other checks style-guide conformance. [Wave 21 Lane D]
+
+#### Timed Text Toolkit (skynav/ttt) — Java TTML renderer + validator ✅ commercial-safe
+- **What:** Java library/tooling implementing IMSC rendering and validation (cited on the W3C IMSC implementation page as "an open source library that implements IMSC1 rendering and validation"). The JVM-side counterpart to imscJS.
+- **URL:** https://github.com/skynav/ttt
+- **License:** ✅ BSD-2-Clause — GitHub API spdx_id skynav/ttt (verified 2026-10-07)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Cross-implementation check: render the same IMSC doc in imscJS and ttt to catch renderer-specific defects before delivery. [Wave 21 Lane D]
+
+#### imsc-rosetta — practical IMSC subtitle format spec + qualification app ✅ commercial-safe
+- **What:** A constrained, fully IMSC/TTML-compliant practical subtitle file format (one div per subtitle, strict timing/region rules) plus a qualification app for validating Rosetta files. Bridges hand-authored IMSC and real-world delivery.
+- **URL:** https://github.com/imsc-rosetta/imsc-rosetta-specification
+- **License:** ✅ W3C Document License — repo LICENSE.MD states all documents licensed under the W3C Document License (verified 2026-10-07); spec text, not code
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Useful authoring discipline: if the studio writes IMSC by hand/template, Rosetta's constraints are a sane subset to target. [Wave 21 Lane D]
+
+#### w3c/imsc-tests — IMSC reference test suite ✅ commercial-safe
+- **What:** W3C's IMSC test suite: reference IMSC1 documents plus exemplar PNG renderings. The ground truth for "does my IMSC render correctly."
+- **URL:** https://github.com/w3c/imsc-tests
+- **License:** ✅ dual W3C Test Suite License + W3C 3-clause BSD — repo LICENSE.md (verified 2026-10-07); licensee's choice
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use as regression fixtures for any IMSC work: convert/render, diff against exemplars. [Wave 21 Lane D]
+
+#### w3c/imsc-hrm-tests — IMSC-HRM pass/fail test suite ✅ commercial-safe
+- **What:** W3C test suite for the IMSC Hypothetical Render Model: pass/ directory (conforms) and fail/ directory (does not conform), each doc annotated with the HRM feature tested.
+- **URL:** https://github.com/w3c/imsc-hrm-tests
+- **License:** ✅ dual W3C Test Suite License + W3C 3-clause BSD — repo LICENSE.md (verified 2026-10-07)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with imscHRM (the validator) — run the validator over pass/ and fail/ and confirm it agrees. Pairs with the w3c/imsc-hrm spec repo. [Wave 21 Lane D]
+
+#### w3c/imsc-hrm — IMSC Hypothetical Render Model spec ✅ commercial-safe
+- **What:** The W3C IMSC-HRM specification repo: the complexity model that constrains IMSC document render time (split out of IMSC 1.3 into its own Recommendation track).
+- **URL:** https://github.com/w3c/imsc-hrm
+- **License:** ✅ W3C Document License — repo LICENSE.md (verified 2026-10-07); spec text, not code
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference for what imscHRM enforces; the open implementation is sandflow/imscHRM (cataloged this wave). [Wave 21 Lane D]
+
+#### giubot/live-subtitles — broadcast live-caption pipeline (SRT in → OBS/YouTube out) ✅ commercial-safe
+- **What:** Self-hosted live-caption system: takes SRT audio from a broadcast encoder (or mic/file), transcribes + translates (EN/ES + 7 more), and serves live captions to audiences via QR-code phone view, projector display, transparent OBS/vMix overlays, and YouTube closed captions. Exports WebVTT/SRT/transcripts.
+- **URL:** https://github.com/giubot/live-subtitles
+- **License:** ✅ Apache-2.0 — GitHub API spdx_id giubot/live-subtitles (verified 2026-10-07)
+- **Free tier:** N/A (self-hosted; bring your own STT/translation backend)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The strongest open-source "broadcast caption inserter" found this wave: purpose-built for pushing live captions into OBS streams. Exact fit for live-captioned studio streams. [Wave 21 Lane D]
+
+#### martinx/livesubtitles — on-device real-time captions (macOS) ✅ commercial-safe
+- **What:** macOS menu-bar app: real-time English subtitles for anything playing on the Mac, on-device (Apple Silicon Neural Engine), free and open source.
+- **URL:** https://github.com/martinx/livesubtitles
+- **License:** ✅ MIT — GitHub API spdx_id martinx/livesubtitles (verified 2026-10-07)
+- **Free tier:** Free, self-hosted
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference implementation for low-latency on-device live captions; useful pattern for captioning review sessions without cloud APIs. [Wave 21 Lane D]
+
+#### Live-Translate (senoldogann) — live subtitle overlay with translation ✅ commercial-safe
+- **What:** Desktop overlay app: live subtitles with translation pinned over meetings/movies/streams; local Whisper mode or Azure Speech + DeepL cloud mode; click-through glassmorphism overlay, transcript history.
+- **URL:** https://github.com/senoldogann/Live-Translate
+- **License:** ✅ MIT — GitHub API spdx_id senoldogann/Live-Translate (verified 2026-10-07)
+- **Free tier:** Free; local mode self-hosted, cloud mode uses paid Azure/DeepL keys
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Local-Whisper mode is the pipeline-safe path (no cloud spend); the Azure/DeepL path is pay-per-use. [Wave 21 Lane D]
+
+#### v2s (franklioxygen) — menu-bar live bilingual subtitles (macOS) ✅ commercial-safe
+- **What:** macOS menu-bar app: live bilingual subtitles from mic or per-app audio, on-device transcription via Apple Speech frameworks + on-device translation; overlay styling controls.
+- **URL:** https://github.com/franklioxygen/v2s
+- **License:** ✅ MIT — repo README "## License: MIT" (verified 2026-10-07; GitHub API returns license: null so README is the source of truth)
+- **Free tier:** Free, on-device
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Apple-frameworks-only (macOS 12+); reference for zero-infrastructure live caption UX. [Wave 21 Lane D]
+
+#### ATSC A/343 "Captions and Subtitles" (2026-04) ✅ free reference docs
+- **What:** The ATSC 3.0 caption standard: selects W3C IMSC1 (Text + Image profiles) as the caption technology, superset-compatible with DECE CFF-TT and EBU-TT-D. Free PDF from atsc.org.
+- **URL:** https://www.atsc.org/wp-content/uploads/2026/04/A343-2026-04-Captions-and-Subtitles.pdf
+- **License:** ✅ free reference docs — published gratis by ATSC (verified 2026-10-07)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The answer to "what do ATSC 3.0 captions look like": IMSC1. Any IMSC tooling in the catalog (ttconv, imscJS, imscHRM) is ATSC 3.0 caption tooling by extension. [Wave 21 Lane D]
+
+#### asdcplib — IMSC-in-MXF (IMF timed-text) wrapping ✅ commercial-safe
+- **What:** Reference implementation for wrapping IMSC timed-text tracks in MXF (SMPTE ST 377-1) per IMF (ST 2067-2) — the cinema/mastering-side caption carriage cited on the W3C IMSC implementation page.
+- **URL:** https://github.com/cinecert/asdcplib
+- **License:** ✅ BSD-3-Clause-style — raw COPYING is the classic 3-clause BSD text ("Redistribution and use in source and binary forms…", © John Hurst 2003-2012; verified 2026-10-07; GitHub API returns NOASSERTION so the file is the source of truth)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Niche but unique in the catalog: the only IMSC→MXF bridge found. Relevant only if IMF/DCP caption deliverables ever come up. [Wave 21 Lane D]
+
+#### DVB BlueBook A174 / ETSI EN 303 560 — DVB TTML subtitling systems ✅ free reference docs
+- **What:** DVB's TTML subtitling spec: PES-payload carriage of (optionally gzipped) TTML documents in broadcast transport streams, PTS synchronization, segmentation into ≤5s standalone documents, TTML subtitling descriptor. Supports EBU-TT-D, IMSC1.0.1, and a DVB conformance point.
+- **URL:** https://www.dvb.org/standards
+- **License:** ✅ free reference docs — BlueBook published gratis by DVB (verified 2026-10-07)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The broadcast-TS counterpart to ATSC A/343: this is how TTML rides a DVB multiplex. TSDuck (cataloged this wave) is the tool that manipulates such streams. [Wave 21 Lane D]
+
+#### Netflix Timed Text Style Guides ✅ free reference docs
+- **What:** Netflix's public timed-text QC bible: per-language style guides plus General Requirements (duration 5/6s–7s, ≤2 lines, 20 CPS adult / 17 CPS children, line-break rules, template delivery in TTML). The de-facto acceptance criteria streaming QC is measured against.
+- **URL:** https://partnerhelp.netflixstudios.com/hc/en-us/sections/115001001812-Timed-Text-Style-Guides
+- **License:** ✅ free reference docs — publicly published by Netflix (verified 2026-10-07)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Turn these into automated QC rules alongside bbc/ttml-validator: CPS checks, duration floors, line counts. Template files must be TTML — IMSC-adjacent by delivery. [Wave 21 Lane D]
+
+#### ttml2srt (yuppity) — TTML → SRT converter ✅ commercial-safe
+- **What:** Minimal converter: TTML/XML/DFXP subtitles → SRT. The upstream original that Paco8's ttml2ssa (already cataloged) was based on.
+- **URL:** https://github.com/yuppity/ttml2srt
+- **License:** ✅ Unlicense (public-domain dedication) — GitHub API spdx_id yuppity/ttml2srt (verified 2026-10-07)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lighter than ttconv for the single TTML→SRT job; Unlicense keeps it pipeline-safe. [Wave 21 Lane D]
+
+#### gst-ttml-subtitles (BBC, archived) — GStreamer EBU-TT-D pipeline ⚠️ license-conditional
+- **What:** BBC R&D's GStreamer elements for parsing and rendering EBU-TT-D (TTML) subtitles inside GStreamer pipelines — the BBC's own EBU-TT-D playback implementation, now archived.
+- **URL:** https://github.com/BBC-archive/gst-ttml-subtitles
+- **License:** ⚠️ LGPL-2.1 — GitHub API spdx_id on the archived repo (verified 2026-10-07); weak-copyleft gate — link/import only, never vendor; owner LGPL doctrine still pending verdict
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Archived upstream — treat as reference/pattern, not a dependency. Pair with GStreamer's own caption plugins (cataloged this wave). [Wave 21 Lane D]
+
+#### GStreamer caption/subtitle plugins (closedcaption, dvbsubenc, dvbsuboverlay) ⚠️ license-conditional
+- **What:** GStreamer's broadcast-caption elements: `closedcaption` plugin (CEA-608/708 muxing — cea608mux/cea708mux, combiner) for caption encode/decode in pipelines, plus `dvbsubenc`/`dvbsuboverlay` for DVB bitmap-subtitle encode/render. Verified present in the GStreamer monorepo (subprojects/gst-plugins-bad/gst/).
+- **URL:** https://github.com/GStreamer/gstreamer
+- **License:** ⚠️ LGPL-2.1 — raw LICENSE is the LGPL-2.1 text (verified 2026-10-07; GitHub API returns NOASSERTION so the file is the source of truth); weak-copyleft gate — link only, never vendor; owner LGPL doctrine still pending verdict
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The open-source CEA-608/708 mux path for broadcast pipelines (encode generated captions into a TS) and the DVB subtitle path (dvbsubenc). Complements TSDuck (TS-level) at the elementary-stream level. [Wave 21 Lane D]
+
+#### easy-ott-subtitles — DASH/HLS manifest manipulator injecting auto subtitle tracks ⚠️ license-conditional
+- **What:** Python server that rewrites DASH/HLS origin manifests on the fly, adding auto-generated subtitle tracks (Google Cloud Translation + Speech-to-Text) without touching the origin stream — VoD and live OTT.
+- **URL:** https://github.com/leopard888/easy-ott-subtitles
+- **License:** ⚠️ MIT code (GitHub API spdx_id, verified 2026-10-07) BUT the live pipeline requires Google Cloud STT/Translation service-account keys — pay-per-use APIs, so the *running* cost is per-use terms, not free
+- **Free tier:** Google Cloud free tier only; otherwise pay-per-use
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Architecturally interesting (manifest injection without re-packaging) but the Google-dependency makes it a pattern reference, not a deploy target — a self-hosted STT swap (whisper.cpp/faster-whisper) would be needed first. [Wave 21 Lane D]
+
+#### open-subs/opensubs — local auto-subtitle studio 🚫 AGPL-3.0 — quarantine-only
+- **What:** Open-source VEED/Kapwing alternative: transcribe/translate/style/burn subtitles fully locally (browser WASM, desktop, CLI); video never leaves the machine.
+- **URL:** https://github.com/open-subs/opensubs
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-07 via GitHub API spdx_id open-subs/opensubs) — QUARANTINE row 201; research lane only, never linked or wired into shipping paths
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** QUARANTINED (AGPL-3.0)
+- **Notes:** Functionally overlaps the pipeline's own caption tooling; the AGPL license keeps it reference-only. [Wave 21 Lane D]
+
+#### ProjectX — DVB demux incl. subtitle/teletext streams 🚫 GPL-2.0 — quarantine-only
+- **What:** Classic DVB demultiplexer: splits transport streams into video/audio/subtitle/teletext components; the long-standing open tool for extracting DVB bitmap subtitles from recordings.
+- **URL:** https://sourceforge.net/projects/project-x/
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via SourceForge project page "GNU General Public License version 2.0 (GPLv2)") — QUARANTINE row 202; standalone-tool use only, never linked into shipping code
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** QUARANTINED (GPL-2.0)
+- **Notes:** DVB subtitle extraction reference; TSDuck (BSD, cataloged this wave) is the license-clean alternative for TS work. [Wave 21 Lane D]
+
+#### CasparCG Server — broadcast graphics/caption playout 🚫 GPL-3.0 — quarantine-only
+- **What:** Open-source broadcast graphics and video playout server (templates, lower-thirds, tickers) — the open caption/graphic inserter used in live broadcast chains.
+- **URL:** https://github.com/CasparCG/server
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id CasparCG/server) — QUARANTINE row 203; standalone-tool use only, never linked into shipping code
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** QUARANTINED (GPL-3.0)
+- **Notes:** The broadcast-caption-inserter archetype; giubot/live-subtitles (Apache-2.0, this wave) is the license-clean alternative for OBS-side caption overlay. [Wave 21 Lane D]
+
+#### dvbsnoop — DVB stream analyzer (subtitle descriptors) 🚫 GPL-2.0 — quarantine-only
+- **What:** DVB/MPEG-TS stream analyzer: decodes PSI/SI tables and descriptors including subtitle/teletext descriptor details — the classic "what subtitle streams are in this multiplex" inspector.
+- **URL:** https://github.com/a4tunado/dvbsnoop (mirror; upstream: dvbsnoop.sourceforge.net)
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id on mirrors a4tunado/dvbsnoop, cotdp/dvbsnoop, Duckbox-Developers/dvbsnoop — all GPL-2.0) — QUARANTINE row 204; standalone-tool use only, never linked into shipping code
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** QUARANTINED (GPL-2.0)
+- **Notes:** Analysis-only; TSDuck (BSD, this wave) covers the same inspection ground license-clean. [Wave 21 Lane D]
+
+#### SMPTE RP 2052-10 / RP 2052-11 — CEA-608/708 → SMPTE-TT conversion mappings ❓ unverifiable
+- **What:** The SMPTE Recommended Practices defining the normative mappings from CEA-608 (RP 2052-10) and CEA-708 (RP 2052-11) caption data into SMPTE-TT — the standards-blessed 608/708↔TTML bridge (cited in ATSC A/343).
+- **URL:** https://www.smpte.org (standards store; RPs are paywalled)
+- **License:** ❓ SMPTE standards documents are paywalled — no license/terms verifiable from a free source (verified 2026-10-07); the mappings are normative but not freely implementable from the text
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest ❓: the bridge exists as a standard, but without the paywalled text the practical path stays ttconv (SCC↔TTML) + libcaption (608/708 encode/decode). [Wave 21 Lane D]

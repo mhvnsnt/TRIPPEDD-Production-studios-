@@ -314,5 +314,14 @@ The original Worker B died in a daemon restart after committing `a0d835f`. This 
 ### LICENSE_QUARANTINE — no new rows (max stays 65)
 Nothing in the four Wave 5 B specs is copyleft: Wan2.2 code + weights Apache-2.0; Zonos Apache-2.0; Dia Apache-2.0; VibeVoice code MIT; Dia2 Apache-2.0. Zonos' eSpeak-NG phonemization dependency (GPL-3.0) is already covered by quarantine row 7 (standalone-binary-use doctrine). Matches sibling Worker D's Wave 5 finding ("no new rows this wave").
 
-### Sandbox CPU attempt — Zonos hybrid 0.6B (~3 s line)
-Result recorded below when the run completes. Setup: venv + torch/torchaudio CPU wheels, repo cloned from `github.com/Zyphra/Zonos`, `pip install -e .` deps, espeak-ng present (`/usr/bin/espeak-ng`, v1.51). Sandbox facts: no GPU, 7 GB RAM (~4 GB available, no swap), 4.8 GB free disk. Per the anti-fake rule: if the attempt OOMs or times out, the failure is the documented result — no audio artifact will be fabricated.
+### Sandbox CPU attempt — Zonos transformer 1B on CPU (~3 s line) — RESULT: infeasible in this sandbox (documented, no audio fabricated)
+
+**Environment (measured):** no GPU (`torch 2.8.0+cpu`, `cuda: False`); 7 GB RAM (~5 GB available at run time, **no swap**); disk 96–98% full; espeak-ng 1.51 present at `/usr/bin/espeak-ng`.
+
+**Setup completed:** venv + torch/torchaudio CPU wheels; cloned `github.com/Zyphra/Zonos`; `pip install -e . --no-deps` + manual deps (English path). Two environment quirks hit and were worked around: (1) `sudachidict-full`'s build downloads the binary Sudachi dictionary into tmp — `/tmp` here is a 512 MB tmpfs, so the build failed with `ENOSPC`; fixed with `TMPDIR` pointed at the workspace. (2) This env's `huggingface_hub` renamed the CLI: `huggingface-cli` is deprecated/non-functional, `hf` is the working command. phonemizer + espeak-ng backend verified working.
+
+**Hybrid 0.6B — not attempted (hard blocker):** the repo's own `pyproject.toml` states *"mamba-ssm is required to run hybrid models"*, and mamba-ssm's selective-scan kernels are CUDA-only — there is no CPU inference path for the hybrid backbone. This is a code-level blocker, not a resource one.
+
+**Transformer 1B — attempted, OOM-killed:** weights downloaded via `curl -C -` from the resolve URL, size-verified at **3,248,848,864 B** (this is also where the 1.62 GB catalog figure was proven wrong — corrected in both docs). `Zonos.from_local` loads the backbone as bf16 (~1.6 GB) **but first materializes it in fp32 (~3.25 GB) and then casts** — the transient fp32+bf16 coexistence plus DAC/speaker-encoder overhead exceeded available RAM and the kernel OOM-killed the process (**exit 137, SIGKILL**) during `from_local`, before conditioning or any audio generation. No audio artifact was produced, and none was fabricated.
+
+**Conclusion:** CPU synthesis is infeasible in this sandbox — hybrid is CUDA-kernel-blocked, transformer is RAM-blocked (no swap, fp32-init transient), and the 3.25 GB weights barely fit the 98%-full disk. The GPU-worker path stands: Zonos needs a real GPU (6 GB+ VRAM per upstream) and that remains the honest route to the first real voice sample. The attempt consumed no fake artifacts; the venv, weights, and logs were deleted afterward to restore disk.

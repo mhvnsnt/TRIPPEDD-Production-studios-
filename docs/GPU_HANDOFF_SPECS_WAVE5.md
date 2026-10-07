@@ -249,7 +249,7 @@ python generate.py --task ti2v-5B --size 1280*720 \
 | Wan2.2-S2V-14B | **~16.3 GB safetensors** (HF metadata `safetensors.total` = 16,295,755,609 B) + VAE/audio-encoder files — budget ~20 GB | HF API, verified 2026-10-07 |
 | Wan2.2-I2V-A14B | ~16–20 GB (same MoE family as S2V; exact figure not pulled — confirm with `du -sh` after download) | estimate, labeled |
 | Wan2.2-TI2V-5B | ~10–12 GB (5 B dense + high-compression VAE; HF safetensors total not returned by API) | estimate, labeled |
-| Zonos-v0.1-hybrid | **1.65 GB** (HF: 1,651,820,416 B — ⚠️ API figure; the transformer sibling's API figure was proven wrong, re-verify via HTTP HEAD) | HF API, 2026-10-07 |
+| Zonos-v0.1-hybrid | **~3.3 GB — corrected 2026-10-07** (HTTP HEAD `Content-Length: 3,303,692,816`; the HF API's 1,651,820,416 B figure was ~2× wrong) | direct resolve URL, replacement worker B |
 | Zonos-v0.1-transformer | **~3.25 GB — corrected 2026-10-07** (HTTP HEAD `Content-Length: 3,248,848,864`; the HF API's 1,624,411,136 B figure does NOT match the served file) | direct resolve URL, replacement worker B |
 | Dia-1.6B-0626 | **1.61 GB** (HF: 1,611,160,576 B) + Descript Audio Codec (downloaded on first run) | HF API, verified 2026-10-07 |
 | Dia2-2B | ~4 GB + Mimi tokenizer (2 B bf16; first CLI run downloads weights) | estimate from param count, labeled |

@@ -28,7 +28,7 @@ Only genuinely NEW or materially CHANGED items are listed. Already-catalogued (W
 
 #### Verified model download sizes (HF API `safetensors.total`, 2026-10-07)
 - Wan-AI/Wan2.2-S2V-14B: **16,295,755,609 B (~16.3 GB)** + VAE/audio-encoder files
-- Zyphra/Zonos-v0.1-hybrid: **1,651,820,416 B (~1.65 GB)** — ⚠️ API figure only; the transformer sibling's API figure was wrong (see correction below); re-verify via HTTP HEAD before budgeting disk
+- Zyphra/Zonos-v0.1-hybrid: **1,651,820,416 B (~1.65 GB)** — ⚠️ SUPERSEDED: direct HTTP HEAD on `model.safetensors` (2026-10-07) returns **Content-Length: 3,303,692,816 (~3.3 GB)**. Both Zonos `safetensors.total` API figures were ~2× wrong. Budget **3.5 GB** per Zonos checkpoint.
 - Zyphra/Zonos-v0.1-transformer: **1,624,411,136 B (~1.62 GB)** — ⚠️ SUPERSEDED: direct HTTP HEAD on `model.safetensors` (2026-10-07, replacement worker B sandbox) returns **Content-Length: 3,248,848,864 (~3.25 GB)**. The `safetensors.total` API figure does not match the served file. Budget **3.5 GB** for the transformer weights, not 1.6 GB. (The hybrid figure above is likewise suspect — treat as unverified.)
 - microsoft/VibeVoice-Realtime-0.5B: **1,017,626,722 B (~1.02 GB)**
 - nari-labs/Dia-1.6B-0626: **1,611,160,576 B (~1.61 GB)** + Descript Audio Codec on first run

@@ -179,7 +179,7 @@ separate stem afterward.
 
 There was no ~50-second format spec in the repo (the standing short contract is the 10–20s network ident). This spec is authored here from the ident contract + the entrance-kit evidence gates + the owner's standing ~50s promo length:
 
-- **Runtime:** ~5 minutes per episode — web-short standard (owner pick 2026-10-07). The ~50s cut is the TikTok/shorts version, NOT the episode length.
+- **Runtime:** ~5 minutes per episode — web-short standard (owner pick 2026-10-07). Structure: the 50s pilot quadruples as the ad, the first commercial, the first super-short, AND the show intro/cold open; ~4:10 of show fills the rest. The standalone 50s cut is the TikTok/shorts version.
 - **Aspect ratios:** 16:9 primary (series / YouTube / TV), 9:16 secondary (TikTok cutdown), 1:1 for social cards. The pilot ships both; the series is framed for horizontal first.
 - **Structure:** cold open on the world (Hollows night) → council reveal sequence (robe colors one by one) → Narrator direct-address → "WIZARD GANG" title card → TRIPPEDD network ident card.
 - **Title cards:** canon-locked text only ("WIZARD GANG", "TRIPPEDD"). No placeholder, no "not in canon" text. Treatment: **wavy trippy effect** — LSD-like without the colors, Adult Swim-esque (owner-locked 2026-10-07, from the pilot cards). This is the signature ident treatment for both the Wizard Gang show and the TRIPPEDD network.

@@ -2,33 +2,19 @@
 
 Reference stills rendered 2026-10-07 via Blender 4.0.2 headless
 (EEVEE, neutral gray background, front view, full body in frame).
-No owner anchor image was supplied for Cipher in this task — likeness notes below are
-observed from the GLB only. Do NOT treat them as owner-locked.
 
-## Observed likeness (from `CIPHER_feral_v2.glb`)
-- **Face/head:** bald, heavy brow, wide feral grin showing teeth. No face paint.
-- **Build:** heavy, powerfully muscular.
-- **Signature features:** extensive tattoos — large moth on the chest, full arm sleeves,
-  script/text tattoo across the abdomen.
+Owner 2026-10-07: Cipher = 3 attires besides the robed version. Based on Lio Rush's 2026 Blackheart.
 
-## Attire inventory (GLB -> render)
-| GLB file | Render | Status |
-|---|---|---|
-| `CIPHER_feral_v2.glb` | `cipher-feral-v2-front.png` | RENDERED — feral crouch pose, black trunks, black knee pads, black boots, black wrist tape |
-| `CIPHER_feral.glb` | — | **RENDER FAILED** (see below) |
-| `CIPHER_rigged.glb` (alt) | — | **RENDER FAILED** (see below) |
+## Attire inventory
+| # | Attire | GLB / source | Render | Notes |
+|---|---|---|---|---|
+| 1 | **Feral** | `CIPHER_feral_v2.glb` | `cipher-feral-v2-front.png` | Bald, heavy brow, wide feral grin, extensive tattoos (moth chest, arm sleeves, abdomen script). Feral crouch pose. Black trunks, knee pads, boots, wrist tape. |
+| 2 | **Minion** | `CIPHER_minion_repaired.glb` | `cipher-minion-front.png` | White/black face paint, styled hair, tattooed torso/arms, heart pendant, black patterned tights, wrist tape. |
+| 3 | **Base Blackheart** | `CIPHER_repaired.glb` | `cipher-base-front.png` | Bald, manic grin w/ dark mouth (Blackheart liquid), tattooed torso/arms, black trunks, knee pads, boots w/ emblem. |
+| 4 | **Card suit** (owner-supplied, locked) | — | `cipher-attire-cardsuit.png` | Bald Black man, gold grill, nose ring; black leather jacket + pants covered in playing-card faces; layered gold chains; gold bracelets/rings. |
 
-Per the brief, feral is the canon look for the show; `CIPHER_rigged.glb` was to be the alt.
-Only the v2 feral could be rendered.
+Note: owner said 3 attires besides robed; 4 are filed (3 GLB + cardsuit). Owner to confirm which 3, or keep all 4.
 
 ## Defects / gaps
-- **RENDER FAILURE — `CIPHER_feral.glb`:** Blender 4.0.2's glTF importer rejects it:
-  `RuntimeError: Error: Extension EXT_meshopt_compression is not available on this addon version`.
-  Fallbacks attempted: gltf-transform CLI 4.5.1 (no geometry-decompress command),
-  repo donor search (only a vendored JS meshopt decoder, no decompress script).
-  A correct decompress script needs per-attribute filter metadata — flagged as follow-up work,
-  not attempted, to avoid shipping a corrupt decode.
-- **RENDER FAILURE — `CIPHER_rigged.glb`:** same EXT_meshopt_compression failure.
-- **Gap:** with both v1 feral and the rigged alt unrenderable, there is no alt-attire
-  reference for Cipher. The canon feral (v2) is covered.
-- Rendered GLB faces +X in Blender space (camera side `+x`), consistent with the others.
+- **RENDER FAILURE — `CIPHER_feral.glb`, `CIPHER_rigged.glb`:** Blender 4.0.2 rejects EXT_meshopt_compression. No decompress path available. Not needed — v2 feral covers the feral look.
+- Rendered GLBs face +X in Blender space (camera side `+x`).

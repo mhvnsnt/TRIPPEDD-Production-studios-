@@ -16,8 +16,8 @@ Owner anchors: `onyx-glb-blackhair.png` (Attire 1), `onyx-glb-greenhair.png` (At
 |---|---|---|---|
 | `ONYX_corset_repaired.glb` | `onyx-corset-front.png` | **Attire 1** (blackhair anchor) | MATCH |
 | `ONYX.glb` | `onyx-base-front.png` | **Attire 2** (greenhair anchor) | MATCH |
-| `ONYX_street_repaired.glb` | `onyx-street-front.png` | none (unconfirmed) | UNLOCKED look |
-| `ONYX_straightjacket_repaired.glb` | `onyx-straightjacket-front.png` | none (unconfirmed) | UNLOCKED look |
+| `ONYX_street_repaired.glb` | `onyx-street-front.png` | **Street** | LOCKED (owner 2026-10-07) |
+| `ONYX_straightjacket_repaired.glb` | `onyx-straightjacket-front.png` | **Straightjacket** | LOCKED (owner 2026-10-07) |
 
 ### Attire 1 — `ONYX_corset_repaired.glb` — MATCHES `onyx-glb-blackhair.png`
 - Hair: black, voluminous wavy/curly with the two side coils framing the face. Matches.
@@ -39,18 +39,16 @@ Owner anchors: `onyx-glb-blackhair.png` (Attire 1), `onyx-glb-greenhair.png` (At
   shorts; the GLB renders printed thigh-high/shin coverage in the same print — near match,
   same print family. Build matches (full-figured).
 
-### Street — `ONYX_street_repaired.glb` — UNLOCKED (no owner anchor)
+### Street — `ONYX_street_repaired.glb` — LOCKED (owner 2026-10-07)
 - Neon green hair (same as Attire 2) + same white clown face paint — identity reads as Onyx.
 - Outfit: black/white striped graphic sweatshirt (skull print), baggy dark cargo jeans with
   black cross prints and vertical text print, black crossbody bag, black/white sneakers.
-- **Status:** owner has NOT locked this as an Onyx attire. Do not use in EP02 until confirmed.
 
-### Straightjacket — `ONYX_straightjacket_repaired.glb` — UNLOCKED (no owner anchor)
+### Straightjacket — `ONYX_straightjacket_repaired.glb` — LOCKED (owner 2026-10-07)
 - Dark hood/hair covering the head, white clown face with black diamond/teardrop eye markings,
   black nose, black smile — face reads as Onyx.
 - Outfit: black vinyl buckled straitjacket-style top (asymmetric buckles), pleated black mini
   skirt, neon-yellow web-pattern stockings, chunky black platform boots.
-- **Status:** owner has NOT locked this as an Onyx attire. Do not use in EP02 until confirmed.
 
 ## Defects / gaps
 - Non-repaired variants (`ONYX_corset.glb`, `ONYX_straightjacket.glb`, `ONYX_street.glb`) exist
@@ -59,3 +57,7 @@ Owner anchors: `onyx-glb-blackhair.png` (Attire 1), `onyx-glb-greenhair.png` (At
 - GLBs contain a low-poly `Icosphere` proxy mesh (42 verts) that inflates auto-framing;
   the render script ignores meshes under 500 verts for framing.
 - No GLB contradicts the locked face. The two owner anchors are both covered 1:1 by GLBs.
+
+## Alt attire — "Bomber" (owner-supplied 2026-10-07, locked)
+- onyx-attire-bomber.png
+- Green hair, white clown face paint; black/green bomber jacket, layered gold chains, black jumpsuit.

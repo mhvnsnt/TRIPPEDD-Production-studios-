@@ -20,7 +20,9 @@ observed from the GLBs only. Do NOT treat them as owner-locked.
 variants preferred per brief.
 
 ## Defects / gaps
-- **Possible proprietary brand text:** the alt's black arm sleeve carries white script text
-  resembling "Supreme". Per the owner's strip-proprietary-logos rule, **owner call needed**
-  on whether to keep, paint over, or replace it before EP02 use.
+- **Sleeve logo — PENDING OWNER DECISION (owner 2026-10-07):** the alt's black arm sleeve carries white script text resembling "Supreme". DO NOT strip or change it yet — owner wants to see it first and may have it changed to "STATIC" or "SAWFT". Documented, awaiting his call.
 - No render failures. Both GLBs face +X in Blender space (camera side `+x`).
+
+## Alt attire — "Tactical" (owner-supplied 2026-10-07, locked)
+- static-attire-tactical.png
+- Bleached blond hair, dark beard; black leather jacket with BLUE ELECTRIC accents, black tee, tactical belt/holsters, knee pads, fingerless gloves, black boots.

@@ -47,7 +47,7 @@ a CUDA card.
 
 | File(s) in `Wan-AI/Wan2.2-TI2V-5B` | Size (2026-10-07, HTTP HEAD) |
 |---|---|
-| `diffusion_pytorch_model-00001..3-of-00003.safetensors` | 9.83 + 10.0 + ~9.99 = **29.83 GB** |
+| `diffusion_pytorch_model-00001..3-of-00003.safetensors` | 9.83 + 10.0 + 0.18 = **19.99 GB** (re-measured 2026-10-07: shard-3 is only 178,558,176 B, not ~9.99 GB — the earlier per-shard figure was wrong; **the 34.2 GB total stands**) |
 | `models_t5_umt5-xxl-enc-bf16.pth` | **11.36 GB** |
 | `Wan2.2_VAE.pth` | 2.82 GB |
 | config/json/misc | small |

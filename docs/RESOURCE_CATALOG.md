@@ -28,6 +28,8 @@ Generated 2026-10-07 from `/tmp/hunter_{a,b,c}.json` (3 research workers, licens
 
 **Wave 5 (2026-10-07):** +141 honest `####` entries → **507 total** (canonical count = `####` headings). Breakdown: 39 SFX/foley/CC0-voice (A1) · 53 music/free-plugins (A2) · 44 BG-plates/anime-tooling (A3) · 2 TTS (Dia2, ZONOS2 — B) · 3 nijilive rigs (Onyx, Echo, Kiko — C). Plus 4 license/badge updates to existing entries (OVRLipSync, Zonos, Dia, VibeVoice), the Wan-AI→Wan-Video org correction, verified model download sizes, and the nijigenerate headless setup-wizard bypass. Quarantine: rows 66–77 added (max 77).
 
+**Wave 6 (2026-10-07, Worker A):** +143 honest `####` entries → **655 total** (canonical count = `####` headings; includes Worker B's 5 GPU-runbook entries merged concurrently). Lanes: 20 SFX/foley · 22 voice/TTS · 14 storyboarding · 15 upscalers · 26 anime tooling · 26 music/plates · 20 free API tiers. Licenses verified from upstream sources (GitHub LICENSE files fetched 2026-10-07, vendor pages, license audits) — key corrections: ADetailer is AGPL-3.0 (not MIT), Spark-TTS is Apache-2.0 (not NC), MimicMotion is Apache-2.0, Real-CUGAN upstream is MIT (not NC), SadTalker dropped its NC restriction (now Apache-2.0), Fesliyan commercial needs a donation, PlayHT/PlayAI shut down Dec 2025. Quarantine: rows 78–84 added (max 84).
+
 Already wired in these repos (not re-listed here): FFmpeg/FFprobe, OpenCV, PySceneDetect, Tesseract, faster-whisper, OpenTimelineIO, Blender, Kdenlive/MLT, Natron, OpenColorIO, OpenAssetIO, OpenCue, plus tools/video_pipeline (auto_caption.py, concept_batch.py, promo_assemble.py, sfx.py, voiceover.py) in both repos.
 
 ## Top-10 wire-up priority
@@ -6882,4 +6884,4 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 
 ## Entry count — Wave 6 Worker A
 
-140 new entries: 20 SFX/foley · 22 voice/TTS · 14 storyboarding · 15 upscalers · 26 anime tooling · 26 music/plates · 20 free API tiers. (Plus Worker B's 5 GPU-runbook entries merged concurrently.) Badges: 88 ✅ · 28 🚫 · 18 ❓ · 6 ⚠️. Quarantine rows added: 7 (78–84, max 84).
+140 new entries: 20 SFX/foley · 22 voice/TTS · 14 storyboarding · 15 upscalers · 26 anime tooling · 26 music/plates · 20 free API tiers. (Plus Worker B's 5 GPU-runbook entries merged concurrently.) Badges: 89 ✅ · 28 🚫 · 19 ❓ · 7 ⚠️. Quarantine rows added: 7 (78–84, max 84).

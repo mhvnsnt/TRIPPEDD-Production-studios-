@@ -21301,3 +21301,305 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Repo lane:** trippedd (captions)
 - **Status:** not-started
 - **Notes:** Honest ❓: the functionality is exactly what the pipeline wants (Whisper words → TTML/SRT/VTT), but undeclared-license code is unusable. Watch for a license addition; ttconv + stable_ts_captions cover the gap meanwhile. [Wave 20 Lane B]
+
+<!-- WAVE 21 LANE A — national-library digitizations with per-item rights (+30) -->
+
+#### NB digital / Bokhylla (National Library of Norway) ⚠️
+- **What:** National Library of Norway's digital library — books (incl. ~250k 20th-c. titles via the Bokhylla/Kopinor collective licence), newspapers, photos, manuscripts, 740k+ hours of radio, 310k hours of TV, 7k films, records, tapes.
+- **URL:** https://www.nb.no/en/
+- **License:** ⚠️ Mixed per-item — the library's own guidance: "Anybody in the world can read and download works that are not covered by copyright"; copyrighted material is streaming-only, "It is not permitted to download or redistribute the material", and 20th-century books require a Norwegian IP address under the Kopinor agreement (verified 2026-10-07).
+- **Free tier:** Free access; download only for out-of-copyright items.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Pre-1900 books/newspapers are the PD-safe pull slice; 20th-c. books are streaming-only, Norwegian IP. [Wave 21 Lane A]
+
+#### Digi.kansalliskirjasto.fi (National Library of Finland) ⚠️
+- **What:** NLF's digitized newspaper/journal/ephemera portal — ~12.8M pages, Finnish and Swedish, from 1771, with full-text search.
+- **URL:** https://digi.kansalliskirjasto.fi/
+- **License:** ⚠️ Mixed per-item — the open web collection covers 1771–1929 (PD era); of ~12.8M pages "about 7.36 million pages are freely available" on the web, the copyright-restricted remainder is usable only at six legal-deposit libraries (NLF research paper, CEUR-WS; verified 2026-10-07).
+- **Free tier:** Free web access for the open slice.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ~50% free web use per NLF's own availability doc; PD-era newspaper plates and typography. [Wave 21 Lane A]
+
+#### Mediastream (Royal Danish Library) ⚠️
+- **What:** KB's streaming service for the Danish broadcast archives — flow-TV-era radio/TV, video commercials, DR archive material.
+- **URL:** https://www.kb.dk/en (Mediestream service)
+- **License:** ⚠️ Per-item/restricted — the library makes Danish digital heritage available "to the extent allowed by copyright legislation"; Danish students and researchers get radio/TV/commercials access; no public API for archived video; streamed items cannot be downloaded (MediaKultur/KB; verified 2026-10-07).
+- **Free tier:** Streaming access for eligible users; no downloads.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research/reference value mostly; the commercial-safe slice is PD-age material (e.g. Illustreret Tidende 1859–1924), where rights lapse 70y p.m.a. [Wave 21 Lane A]
+
+#### KB Digitalt (National Library of Sweden) ⚠️
+- **What:** KB's unified portal for digitized pictures and texts — posters, manuscripts, maps, landscapes, portraits, drawings, postcards, 11th century to today; includes the 59k-image medieval manuscript project.
+- **URL:** https://www.kb.se/eng/loans-and-services/search-services/kb-digitalt.html
+- **License:** ⚠️ Per-item — KB states: "Most objects in KB Digitalt are copyright-free, which means you can use them however you like"; items marked "Begränsad åtkomst" (Limited Access) "are not copyright-free. You may not use these without securing the rights yourself" (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** KB's on-demand digitization of non-copyright Swedish material is published under the Creative Commons Public Domain Mark. [Wave 21 Lane A]
+
+#### National Diet Library Digital Collections (Japan) ⚠️
+- **What:** NDL's dl.ndl.go.jp collections — rare books, Edo-period texts, 1.06M+ out-of-print books, 840k periodical issues, 140k doctoral dissertations, 20k rare books.
+- **URL:** https://dl.ndl.go.jp/en/
+- **License:** ⚠️ Per-item "Use" metadata field — 満了 (copyright expiration) = public domain; 許諾 (author permission) or 裁定 (government orphan-works ruling) = not PD; NDL's own originals are under a CC-BY-compatible open licence; the ~2M-item DCTI slice requires Japan residency + registration (verified 2026-10-07).
+- **Free tier:** Free for the "Available without login" PD slice.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Filter item records by Use=満了 (expiration) for the PD slice; pre-Meiji woodblock and manuscript plates. [Wave 21 Lane A]
+
+#### National Library of Korea — Digitized resources ⚠️
+- **What:** NLK digital collections — 430k+ digitized items: copyright-free old and rare books, plus publications older than 5 years.
+- **URL:** https://www.nl.go.kr/EN/contents/EN50200000000.do
+- **License:** ⚠️ Per-item — "Full-texts digitized by the National Library of Korea for which their copyrights have expired or their use has been approved can be used by anyone free of charge"; other copyrighted materials incur fees under Copyright Act Article 31 via partner libraries (verified 2026-10-07).
+- **Free tier:** Free for expired-copyright/approved items.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Copyrighted slice viewable only at designated partner-library PCs; confirm item status before any pull. [Wave 21 Lane A]
+
+#### Deutsche Digitale Bibliothek ⚠️
+- **What:** Germany's national cultural-heritage aggregator — tens of millions of objects from 4,700+ institutions: books, texts, archives, photos, sculptures, music, film, sheet music, paintings, manuscripts.
+- **URL:** https://www.deutsche-digitale-bibliothek.de/?lang=en
+- **License:** ⚠️ Per-object rights field + "Legal status" search filter — DDB instructs: rights info is "found in the caption directly below the image"; for freely reusable select the "Public Domain Mark 1.0 Universal" and "CC0 1.0 Universal" filters; NoC and CC-BY tiers carry conditions (verified 2026-10-07).
+- **Free tier:** Free, no registration.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest one-stop PD filter in Europe — but per-object check is mandatory; some items list only "Eigentumsrechte" (ownership), not a licence. [Wave 21 Lane A]
+
+#### Deutsches Zeitungsportal (DDB newspaper sub-portal) ⚠️
+- **What:** DDB's historic-newspaper portal (German National Library + SLUB Dresden + Berlin State Library) — digitized newspapers 1671–1950.
+- **URL:** https://www.deutsche-digitale-bibliothek.de/content/die-deutsche-digitale-bibliothek-startet-das-deutsche-zeitungsportal-mit-zentralem-zugang-zu-historischen-zeitungen-von-1671-bis-1950?lang=en
+- **License:** ⚠️ Inherits DDB per-object rights statements; pre-1900 titles generally PDM/CC0 — verify each title's Legal status field (verified 2026-10-07).
+- **Free tier:** Free, no registration.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Period typography and newsprint plates for German/European period pieces. [Wave 21 Lane A]
+
+#### Delpher (KB, National Library of the Netherlands) ⚠️
+- **What:** KB's archive of 100M+ pages — newspapers, books, journals, radio news bulletins.
+- **URL:** https://www.delpher.nl
+- **License:** ⚠️ Per-period — KB's own datasheet: newspapers published more than 140 years ago "are considered part of the public domain... free to use by anyone for any purpose, conforming to the Creative Commons Public Domain Mark"; newer titles may be copyright-protected (KB secures licences for non-commercial research provision); metadata is CC0 (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** KB's 140-year threshold is stricter than 70y p.m.a.; the European database right can still protect recent whole issues — age-check each pull. [Wave 21 Lane A]
+
+#### ANNO — AustriaN Newspapers Online (Austrian National Library) ⚠️
+- **What:** ÖNB's historic newspaper portal — Austrian press digitization with full-text search.
+- **URL:** https://anno.ac.at (ÖNB service; terms at onb.ac.at/en/use)
+- **License:** ⚠️ Per-item — ÖNB "Use" terms: the library "does not assert any copyright user rights of its own" to online content and "expressly agrees to the subsequent use of this content in the resolution retrievable from the web"; scans by cooperation partner Google are non-commercial only for a limited period; users must clear third-party rights individually (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Picture credit requested (title, date, "[Portal]/Austrian National Library"). [Wave 21 Lane A]
+
+#### KBR Belgica (Royal Library of Belgium) ❓
+- **What:** KBR's digital library — manuscripts, incunabula, early prints, historic newspapers and magazines.
+- **URL:** https://www.kbr.be/en/
+- **License:** ❓ Unverifiable — the KBR–Google Books deal books "are no longer subject to copyright" per Google's partner manager (2022), but no per-item rights statement could be verified on the portal's own pages; in-copyright Belgian items need publisher clearance (checked 2026-10-07).
+- **Free tier:** Free viewing.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research/reference until per-item rights are verified in-browser. [Wave 21 Lane A]
+
+#### Ktiv — International Collection of Digitized Hebrew Manuscripts (NLI Israel) ⚠️
+- **What:** National Library of Israel's Ktiv portal — Hebrew manuscripts (NLI preserves 95% of the world's Hebrew manuscripts), kettubot, book bindings, genizah fragments.
+- **URL:** https://www.nli.org.il/en/discover/manuscripts/hebrew-manuscripts
+- **License:** ⚠️ Per-item — every catalogue record carries its own terms of use; the viewer exposes the allowed options (Share/Download/Embed), and "If the download option does not appear, this means the item is restricted by copyright or terms of use"; a © panel states per-item permissions (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use the "Available outside NLI" filter for the remotely accessible slice. [Wave 21 Lane A]
+
+#### Historical Jewish Press / JPress (NLI Israel + Tel Aviv University) ⚠️
+- **What:** 9M-page historic Jewish newspaper archive — press in Hebrew, Yiddish, Ladino, English and more.
+- **URL:** https://www.nli.org.il/en/discover/newspapers/jpress
+- **License:** ⚠️ Per-newspaper — NLI's JPress terms: "The applicable terms of use for each newspaper are displayed on the newspaper's page by clicking 'Usage Options – Further Information'"; some titles prohibit copying while others are "freely available for copying and use"; systematic bulk copying is prohibited (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PD-era titles usable; verify each title's Usage Options before pulling. [Wave 21 Lane A]
+
+#### Kramerius (National Library of the Czech Republic) ⚠️
+- **What:** NL ČR's digital library — 8M+ scanned pages of Czech monographs and periodicals, 19th–20th century.
+- **URL:** https://kramerius.nkp.cz/kramerius/Welcome.do?lang=en
+- **License:** ⚠️ Per-document — NL ČR rules: free on the Internet only "when it is 70 years from the death of all authors... and 50 years from the date of publication"; copyrighted works "may only be displayed on the NL CR premises"; automated downloading can get access suspended (verified 2026-10-07).
+- **Free tier:** Free for public (PD) documents.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Out-of-Commerce works are restricted remote read-only; the 19th-century PD slice is the pull-safe one. [Wave 21 Lane A]
+
+#### Manuscriptorium (National Library of the Czech Republic) ⚠️
+- **What:** NL ČR's written-cultural-heritage portal — manuscripts, incunabula, early prints, maps up to 1800, from institutions across the EU.
+- **URL:** https://www.manuscriptorium.com/
+- **License:** ⚠️ Per-document — same NL ČR annex-8 rules as Kramerius; "works that are not subject to copyright protection... are accessible without restriction", and the pre-1800 Manuscriptorium holdings are "freely accessible online" (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Medieval/Renaissance manuscript and map plates — almost entirely PD-age. [Wave 21 Lane A]
+
+#### DIGAR (National Library of Estonia) ⚠️
+- **What:** NL Estonia's digital archive — books, journals, maps, sheet music, posters, art, e-publications, each record with its own "Terms of use".
+- **URL:** https://www.digar.ee/
+- **License:** ⚠️ Per-item Terms of use on every record — "If the copyright term has expired, the work can be used without any restrictions"; CC0 works free unconditionally; copyrighted works personal/teaching/research only, publishing needs rights-holder authorization; orphan works commercial use prohibited (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Exemplary per-item rights expression — copy the record's stated terms into the pull log. [Wave 21 Lane A]
+
+#### NLS Map Images (National Library of Scotland) ⚠️
+- **What:** NLS's 200k+ historic map image viewer — Ordnance Survey series, town plans, military maps, georeferenced layers.
+- **URL:** https://maps.nls.uk/
+- **License:** ⚠️ Per-image "Re-use licence" shown in the viewer (e.g. CC-BY with 'Reproduced with the permission of the National Library of Scotland' credit) — but "some images may not be re-used for certain purposes, such as commercial re-use"; third-party backdrops (Bing/OS/OSM) and BL-marked maps excluded (verified 2026-10-07).
+- **Free tier:** Free viewing; hi-res commercial use may need licensing.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Historic OS map tiles under CC-BY 3.0 also available via maps.nls.uk/projects/api/ — period map plates. [Wave 21 Lane A]
+
+#### Hungaricana (Hungarian national collections portal) ❓
+- **What:** Hungarian public-collection aggregator (National Széchényi Library, Parliamentary Library, Budapest City Archives, Arcanum) — ~5M images, 7M OCR pages of maps, photos, newspapers, manuscripts.
+- **URL:** https://hungaricana.hu/en/
+- **License:** ❓ Unverifiable — scale verified via a government digitization strategy document, but no per-item rights statement or portal-level reuse terms could be confirmed on its own pages; assume Hungarian copyright applies per item (checked 2026-10-07).
+- **Free tier:** Free viewing.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research/reference until terms are verified in-browser. [Wave 21 Lane A]
+
+#### NLI Catalogue (National Library of Ireland) ⚠️
+- **What:** catalogue.nli.ie — NLI's digital manuscripts, prints, and photographs with per-record rights notes.
+- **URL:** https://catalogue.nli.ie/
+- **License:** ⚠️ Per-item — records carry explicit notes, e.g. "This item is under copyright. The digital images may only be viewed via the online catalogue in the National Library Reading Rooms"; re-use needs NLI written permission, possibly with a fee (verified 2026-10-07).
+- **Free tier:** Free viewing.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Verify each record's rights note; PD-age items usable with acknowledgement. [Wave 21 Lane A]
+
+#### NLB Singapore — Digital Reproduction Services 🚫
+- **What:** National Library Board Singapore's reproduction service — digitized books, maps, photographs from Singapore/Malaya.
+- **URL:** https://www.nlb.gov.sg/main/services/Reference-and-Research-Services/Digital-Reproduction-Services
+- **License:** 🚫 Rights-restricted — NLB's own terms: "You agree to use the content only for the specific purposes as declared. You will not distribute or reuse the materials except with written permission from NLB" (verified 2026-10-07).
+- **Free tier:** N/A — permission-gated, declared-purpose-only.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listed for honest completeness — do NOT wire into production; reuse is permission-gated and declared-purpose-only. [Wave 21 Lane A]
+
+#### e-Helvetica (Swiss National Library) ⚠️
+- **What:** e-Helvetica Access — entry portal to the NL's digital collections: born-digital books/journals, theses, official publications, digitized prints; plus the Swiss Poster Collection and Swiss National Sound Archives metadata.
+- **URL:** https://www.e-Helvetica.nb.admin.ch/pages/main.jsf?lang=en
+- **License:** ⚠️ Per-item access category — the publisher chooses "Freely accessible" (unrestricted full-text on the Internet) or "Access limited" (reading-room only); reproduction (saving/printing) "not possible" even for freely accessible items per the NL FAQ (verified 2026-10-07).
+- **Free tier:** Free viewing.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** View-only for most items — the Swiss Poster Collection (tourism/exhibition posters, 19th c.–present) is the visual highlight. [Wave 21 Lane A]
+
+#### Trove API v3 (National Library of Australia) ⚠️
+- **What:** Programmatic access to Trove — newspapers (pre-1955 PD slice), pictures, maps, books, with a per-category "Rights" filter ("in or out of copyright, or if there is a creative commons licence").
+- **URL:** https://api.trove.nla.gov.au/v3/ (docs: trove.nla.gov.au/about/who-we-are/trove-api)
+- **License:** ⚠️ Content per-item via the rights facet; API terms: free key, 200 req/min, keys expire after 12 months; commercial API use needs NLA approval (verified 2026-10-07).
+- **Free tier:** Free key.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Only API in this wave with rights filtering built into search — wire-up needs a (free) key; smoke test deferred until keyed. [Wave 21 Lane A]
+
+#### Gallica / BnF APIs (OAI-PMH, SRU, IIIF, api.bnf.fr) ✅
+- **What:** BnF's machine interfaces over Gallica — OAI-PMH (oai.bnf.fr), Gallica Document API (gallica.bnf.fr/services/OAIRecord?ark=), IIIF Presentation manifests (gallica.bnf.fr/iiif/ark:/12148/.../manifest.json), api.bnf.fr.
+- **URL:** https://gallica.bnf.fr/ (API docs via BnF developer documentation)
+- **License:** ✅ Keyless, no registration; metadata freely reusable; object rights remain per-item (Gallica "Droits" field) — API access itself is unrestricted (verified 2026-10-07).
+- **Free tier:** Fully free, no key.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SMOKE-TESTED this wave (tools/wave21_nl_api_probe.py) — live IIIF manifest fetched (HTTP 200); per-item rights expressed via the manifest `license` field → Gallica CGU. Caveat: server-side curl got a 403 bot-block, urllib with a normal UA worked; oai.bnf.fr unreachable from this host. [Wave 21 Lane A]
+
+#### NDL Search API (National Diet Library, Japan) ⚠️
+- **What:** NDL's SRU/OpenSearch/OAI-PMH/Thumbnail APIs over NDL Search — digital-contents metadata carries per-item "Rights (production)" (pdm) and "Access Restrictions" fields.
+- **URL:** https://ndlsearch.ndl.go.jp/en/help/api/
+- **License:** ⚠️ Content per-item (pdm vs restricted); API terms: commercial companies must apply; individuals/non-profits using metadata non-commercially need no application; no key (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SMOKE-TESTED this wave (tools/wave21_nl_api_probe.py) — live OpenSearch response saved. Full OAI-PMH bulk dumps also published (ndlsearch.ndl.go.jp/files/oaipmhAllData/). [Wave 21 Lane A]
+
+#### NDL Digital Collections IIIF Image API ⚠️
+- **What:** NDL's IIIF Image API for dl.ndl.go.jp items — manifest.json per item ID, tile delivery, plus a thumbnail service.
+- **URL:** https://www.dl.ndl.go.jp/api/iiif/ (e.g. .../api/iiif/{itemId}/manifest.json)
+- **License:** ⚠️ Image reuse follows the item's own rights (pdm / 満了 vs restricted); API access itself free, no key (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use only for items whose metadata shows Rights=pdm / 満了; non-login items are the pull-safe slice. [Wave 21 Lane A]
+
+#### DDB API v2 (Deutsche Digitale Bibliothek) ⚠️
+- **What:** REST/Solr API over DDB — search, item view, EDM record, binaries list, IIIF manifest; tens of millions of objects from ~500 institutions.
+- **URL:** https://api.deutsche-digitale-bibliothek.de/2 (docs: api.deutsche-digitale-bibliothek.de/doku)
+- **License:** ⚠️ API metadata is CC0 (no attribution); object media carry per-object rights; v1 read routes are public, v2 read routes documented as keyless (verified 2026-10-07).
+- **Free tier:** Free, no key (v2 read routes).
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PARTIAL smoke test this wave — /2/version returned 200 (API 7.5), but /2/search?q= returned 404, so the search route shape is unverified; wire-up deferred to the ddb CLI (maschinenlesbar-org/deutsche-digitale-bibliothek-cli) per its docs. [Wave 21 Lane A]
+
+#### Finna API (National Library of Finland) ⚠️
+- **What:** Public REST API (api.finna.fi) over Finna — Finnish archives, libraries, and museums; records carry per-item usage-rights (CC licences, Rights Statements).
+- **URL:** https://www.finna.fi/Content/help-api?lng=en-gb
+- **License:** ⚠️ Per-record usageRights; API publicly accessible per the Finnish Ministry of Education and Culture; user is responsible for respecting copyright (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SMOKE-TESTED this wave (tools/wave21_nl_api_probe.py) — live response shows per-record `imageRights` (e.g. CC BY 4.0); best machine-readable per-item rights in the Nordic set. [Wave 21 Lane A]
+
+#### data.bnf.fr — SPARQL/RDF endpoint ❓
+- **What:** BnF's linked-data platform — RDF/XML per resource (e.g. .../rdf.xml), SPARQL endpoint, FRBR-clustered links to Gallica documents.
+- **URL:** https://data.bnf.fr/
+- **License:** ❓ Unverifiable — endpoint and RDF dumps confirmed live via BnF DH documentation, but the dataset licence terms could not be verified on the portal's own pages (checked 2026-10-07); rights for linked Gallica items remain per-item regardless.
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest ❓ — metadata-only use until licence terms are confirmed. [Wave 21 Lane A]
+
+#### BL Mechanical Curator — programmatic access layer ✅
+- **What:** The API/tooling side of the BL's 1M public-domain book illustrations (distinct from the content entries already in the catalog): Flickr API over the Commons account, PD-licenced metadata manifests on GitHub, IIIF via the BL Universal Viewer.
+- **URL:** https://www.flickr.com/photos/britishlibrary/
+- **License:** ✅ Per-item Flickr Commons marking "no known copyright restrictions"; BL: images "released them back into the Public Domain... for anyone to use, remix and repurpose"; manifests on GitHub under a public-domain licence (verified 2026-10-07).
+- **Free tier:** Free; Flickr API needs a (free) key.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Individual images are addressable via the Flickr API — suitable for bulk plate pulls. [Wave 21 Lane A]
+
+#### ÖNB Digital Collections (Austrian National Library — beyond ANNO) ⚠️
+- **What:** ÖNB's digitized prints, maps, photographs, and special collections — distinct from the ANNO newspaper portal.
+- **URL:** https://www.onb.ac.at/en/use (rights terms; collections via ÖNB digital)
+- **License:** ⚠️ Same ÖNB "Use" terms as ANNO: the library "does not assert any copyright user rights of its own" and agrees to subsequent use "in the resolution retrievable from the web"; Google-partner scans non-commercial only for a limited period; third-party rights cleared by the user (verified 2026-10-07).
+- **Free tier:** Free.
+- **Repo lane:** trippedd (archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Credit line requested ("[Portal]/Austrian National Library"). [Wave 21 Lane A]

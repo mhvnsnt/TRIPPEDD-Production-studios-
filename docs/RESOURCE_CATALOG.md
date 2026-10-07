@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 119 rows · 113 distinct projects (reconciled Wave 11 Lane C, 2026-10-07):** license families — AGPL 21 rows · GPL 96 rows (incl. -or-later/-only variants) · LGPL-3.0 1 row (marytts — SCOPE NOTE: delist recommendation pending owner verdict, stays quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 11 · lip-sync 9 · TTS 8 · anime tooling 8 · SFX 7 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
+- **Quarantined (copyleft) — 121 rows · 115 distinct projects (rows 120–121 appended Wave 11 Lane A, 2026-10-07):** license families — AGPL 22 rows · GPL 96 rows (incl. -or-later/-only variants) · LGPL-3.0 2 rows (marytts + AivisSpeech — SCOPE NOTE: delist recommendation pending owner verdict, both stay quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 11 · lip-sync 9 · TTS 10 · anime tooling 8 · SFX 7 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
 
 - **Non-commercial / research-only — research lane only, never shipped (Wave-1 list, 17):** Spine (Esoteric Software) (Proprietary commercial (trial = evaluation only)); PureRef (Proprietary; free Personal license (non-commercial)); Wav2Lip (Custom non-commercial (personal/research only)); Coqui XTTS v2 (CPML 1.0 (Coqui Public Model License) on the XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)); Bark (suno-ai) (MIT code BUT README states model is CC-BY 4.0 NC due to EnCodec neural-codec backend (verified via README text quoted in forks)); BBC Sound Effects Archive (RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music press + BBC terms)); Stable Video Diffusion (Stability AI Community License (non-commercial)); LTX-Video (Apache-2.0 (code) + LTX Open Weights / Community License (weights)); HunyuanVideo (Tencent Hunyuan Community License Agreement (custom, verified)); SkyReels-V2 (Skywork Community License (custom, verified)); Pika (free tier) (Pika Terms of Service (proprietary)); Runway (free tier) (Runway Terms of Use (proprietary)); Luma (free tier) (Luma Terms (proprietary)); Hailuo AI / MiniMax (free tier) (MiniMax Terms (proprietary)); Kling AI (free tier) (Kling Terms (proprietary)); Pixverse (free tier) (Pixverse Terms (proprietary)); LTX Studio (free tier) (LTX Studio Terms (proprietary)) Later waves added more NC/research-gated items (not in the original 17 — documented in the wave notes): Spark-TTS + F5-TTS NC weights; IndexTTS (bilibili Model Use License); SUPIR, StableSR, CodeFormer, Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license); PlayHT/PlayAI (shut down 2025-12-31); Dia/VibeVoice (permissive licenses but vendor research-intent terms — see docs/VOICE_COMMERCIAL_USE_WAVE5.md).
 
@@ -11730,3 +11730,1027 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started · **QUARANTINED (GPL)**
 - **Notes:** Translated caption files are yours; the tool code never ships. [Wave 11 Lane C]
+
+## Wave 11 — Lane A: catalog deepening (SFX · BG-plate video · anime models)
+
+*Appended 2026-10-07. Every license verified from the upstream source (HF model-record license field via API, vendor license/terms pages, or Freesound sound-page badges) — never assumed. Badges: ✅ commercial-safe · 🚫 not commercial-safe · ❓ unverified · ⚠️ license-conditional.*
+
+### Anime / cartoon generation models (clean licenses only: Apache-2.0 / MIT / CC0 / CC-BY)
+
+#### SeeSee21/Z-Anime ✅ commercial-safe
+- **What:** Anime-style text-to-image checkpoint built on Tongyi-MAI Z-Image — the current Apache-2.0 anime base
+- **URL:** https://huggingface.co/SeeSee21/Z-Anime
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: `license:apache-2.0`)
+- **Free tier:** fully open weights (diffusers + GGUF + fp8 variants)
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 492 likes, strongest community anime checkpoint on a fully commercial-safe base. First-choice anime T2I base for key art and style frames. [Wave 11 Lane A]
+
+#### Tongyi-MAI/Z-Image ✅ commercial-safe
+- **What:** Alibaba Tongyi text-to-image foundation model (6.1B) — base under Z-Anime and the Z-Image anime LoRA family
+- **URL:** https://huggingface.co/Tongyi-MAI/Z-Image
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: cardData `license: apache-2.0`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The permissive base that makes the whole Z-Image anime ecosystem commercial-safe. [Wave 11 Lane A]
+
+#### Tongyi-MAI/Z-Image-Turbo ✅ commercial-safe
+- **What:** Distilled few-step variant of Z-Image (8-step capable) — fast anime iteration
+- **URL:** https://huggingface.co/Tongyi-MAI/Z-Image-Turbo
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: cardData `license: apache-2.0`)
+- **Free tier:** fully open weights (5,418 likes — the community's favorite fast anime base)
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Turbo-distilled = near-realtime anime previews for storyboarding and style iteration. [Wave 11 Lane A]
+
+#### black-forest-labs/FLUX.2-klein-4B ✅ commercial-safe
+- **What:** FLUX.2 Klein 4B — small Apache-2.0 FLUX model with image-editing pipeline, anime-capable via LoRAs
+- **URL:** https://huggingface.co/black-forest-labs/FLUX.2-klein-4B
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: cardData `license: apache-2.0`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 4B size runs on modest GPUs; base for the koni_animestyle LoRA below. [Wave 11 Lane A]
+
+#### pranavajay/AnimeSai ✅ commercial-safe
+- **What:** SDXL-based anime text-to-image checkpoint
+- **URL:** https://huggingface.co/pranavajay/AnimeSai
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: `license:apache-2.0`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SDXL-pipeline anime option for existing SDXL tooling. [Wave 11 Lane A]
+
+#### deepghs/animefull-latest ✅ commercial-safe
+- **What:** Anime text-to-image model (SD pipeline) from the deepghs anime tooling family
+- **URL:** https://huggingface.co/deepghs/animefull-latest
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Same org as the anime_face_detection / anime_classification ONNX models — consistent anime-domain tooling family. [Wave 11 Lane A]
+
+#### prithivMLmods/Qwen-Image-Edit-2511-Anime ✅ commercial-safe
+- **What:** Anime-style LoRA for Qwen-Image-Edit-2511 — anime img2img/editing on a fully permissive chain
+- **URL:** https://huggingface.co/prithivMLmods/Qwen-Image-Edit-2511-Anime
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Qwen-Image-Edit-2511 is Apache-2.0
+- **Free tier:** fully open weights (4,216 downloads)
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Anime restyle/editing of plates and frames — commercial-safe end to end. [Wave 11 Lane A]
+
+#### flymy-ai/qwen-image-anime-irl-lora ✅ commercial-safe
+- **What:** Anime↔real style-transfer LoRA for Qwen-Image
+- **URL:** https://huggingface.co/flymy-ai/qwen-image-anime-irl-lora
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Qwen-Image is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bidirectional anime/real transfer — plate-to-anime conversion path. [Wave 11 Lane A]
+
+#### alfredplpl/qwen-image-modern-anime-lora ✅ commercial-safe
+- **What:** Modern-anime style LoRA for Qwen-Image
+- **URL:** https://huggingface.co/alfredplpl/qwen-image-modern-anime-lora
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Qwen-Image is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Contemporary anime look on the Apache-2.0 Qwen base. [Wave 11 Lane A]
+
+#### prithivMLmods/Qwen-Image-Anime-LoRA ✅ commercial-safe
+- **What:** Anime style LoRA for Qwen-Image (text-to-image)
+- **URL:** https://huggingface.co/prithivMLmods/Qwen-Image-Anime-LoRA
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Qwen-Image is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with Qwen-Image's strong text rendering — anime title cards with accurate lettering. [Wave 11 Lane A]
+
+#### suayptalha/Anime-Otaku-Qwen-Image ✅ commercial-safe
+- **What:** Otaku/anime style LoRA for Qwen-Image
+- **URL:** https://huggingface.co/suayptalha/Anime-Otaku-Qwen-Image
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Qwen-Image is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Alternate anime style flavor on the same safe base. [Wave 11 Lane A]
+
+#### Hyperccino/Qwen-Edit-2511-Anime-to-Photoreal-v1.1 ✅ commercial-safe
+- **What:** Anime→photoreal LoRA for Qwen-Image-Edit-2511
+- **URL:** https://huggingface.co/Hyperccino/Qwen-Edit-2511-Anime-to-Photoreal-v1.1
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reverse direction — anime frames to photoreal plates for compositing reference. [Wave 11 Lane A]
+
+#### autoweeb/Qwen-Image-Edit-2509-Photo-to-Anime ✅ commercial-safe
+- **What:** Photo→anime LoRA for Qwen-Image-Edit-2509 (51k downloads)
+- **URL:** https://huggingface.co/autoweeb/Qwen-Image-Edit-2509-Photo-to-Anime
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`); base Qwen-Image-Edit is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Highest-traction photo→anime LoRA on a permissive chain — BG plate anime-ification. [Wave 11 Lane A]
+
+#### strangerzonehf/Anime-Z ✅ commercial-safe
+- **What:** Anime style LoRA for Z-Image-Turbo
+- **URL:** https://huggingface.co/strangerzonehf/Anime-Z
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Z-Image-Turbo is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fast-turbo anime style — pairs with Z-Image-Turbo for quick iteration. [Wave 11 Lane A]
+
+#### Haruka041/z-image-anime-lora ✅ commercial-safe
+- **What:** Anime LoRA for Z-Image-Turbo
+- **URL:** https://huggingface.co/Haruka041/z-image-anime-lora
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Alternate Z-Image anime flavor. [Wave 11 Lane A]
+
+#### alfredplpl/z-image-modern-anime-lora ✅ commercial-safe
+- **What:** Modern-anime LoRA for Z-Image (base, non-turbo)
+- **URL:** https://huggingface.co/alfredplpl/z-image-modern-anime-lora
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Z-Image is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Modern anime look on the full-quality Z-Image base. [Wave 11 Lane A]
+
+#### reverentelusarca/elusarca-anime-style-lora-z-image-turbo ✅ commercial-safe
+- **What:** Anime style LoRA for Z-Image-Turbo
+- **URL:** https://huggingface.co/reverentelusarca/elusarca-anime-style-lora-z-image-turbo
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Another Z-Turbo anime flavor for style A/B testing. [Wave 11 Lane A]
+
+#### SakikoLab/Anime-Image-Purifier-Kontext-LoRA-v2 ✅ commercial-safe
+- **What:** Anime image-purifier/cleanup LoRA (Kontext-style img2img)
+- **URL:** https://huggingface.co/SakikoLab/Anime-Image-Purifier-Kontext-LoRA-v2
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cleanup pass for AI anime frames — artifact reduction before compositing. [Wave 11 Lane A]
+
+#### Sawata97/flux2_4b_koni_animestyle ✅ commercial-safe
+- **What:** Anime style LoRA for FLUX.2-klein-4B
+- **URL:** https://huggingface.co/Sawata97/flux2_4b_koni_animestyle
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base FLUX.2-klein-4B is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Anime style on the small Apache-2.0 FLUX.2 model — low-VRAM anime gen. [Wave 11 Lane A]
+
+#### WarmBloodAban/Klein_AnimeHDupscaling ✅ commercial-safe
+- **What:** Anime HD-upscaling LoRA for FLUX.2-Klein-9B
+- **URL:** https://huggingface.co/WarmBloodAban/Klein_AnimeHDupscaling
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diffusion-based anime upscaling alternative to Real-ESRGAN — detail synthesis rather than just sharpening. [Wave 11 Lane A]
+
+#### strangerzonehf/Flux-Animeo-v1-LoRA ⚠️ license-conditional
+- **What:** Anime style LoRA for FLUX.1 (1,707 downloads)
+- **URL:** https://huggingface.co/strangerzonehf/Flux-Animeo-v1-LoRA
+- **License:** ⚠️ CONDITIONAL — LoRA itself is Apache-2.0 (verified 2026-10-07 via HF API), BUT its declared base is FLUX.1-dev (non-commercial weights). Commercial-safe ONLY when applied to FLUX.1-schnell (Apache-2.0).
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The LoRA license doesn't override the base model's license — pair with schnell or don't ship. [Wave 11 Lane A]
+
+#### DaNS2025/Z-Anime_8-steps.GGUF ✅ commercial-safe
+- **What:** GGUF quant of Z-Anime (8-step) for llama.cpp/ComfyUI-GGUF workflows
+- **URL:** https://huggingface.co/DaNS2025/Z-Anime_8-steps.GGUF
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Z-Anime is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CPU/low-VRAM anime generation path via GGUF. [Wave 11 Lane A]
+
+#### raingart/AnimixV9XL_AnimeTV-GGUF ❓ unverified
+- **What:** GGUF quant of an Animix V9 XL anime checkpoint (Pony Diffusion V6 family)
+- **URL:** https://huggingface.co/raingart/AnimixV9XL_AnimeTV-GGUF
+- **License:** ❓ UNVERIFIED — derived from Pony-Diffusion-V6-XL, whose license field could not be read (upstream returned 401 on the model record 2026-10-07). Do NOT use commercially until the base license is resolved.
+- **Free tier:** open weights, license unclear
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Honest hold: the Pony V6 license question blocks this whole family. [Wave 11 Lane A]
+
+#### aidealab/AnimeGen-T2V ✅ commercial-safe
+- **What:** Anime text-to-video model (DiT, Wan2.2-based) — purpose-built anime video generation
+- **URL:** https://huggingface.co/aidealab/AnimeGen-T2V
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Wan2.2 is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The only purpose-built anime T2V model on a fully commercial-safe chain — direct fit for anime cutaways and interstitials. [Wave 11 Lane A]
+
+#### aidealab/AnimeGen-I2V ✅ commercial-safe
+- **What:** Anime image-to-video model (Wan2.2-based, 10k+ downloads)
+- **URL:** https://huggingface.co/aidealab/AnimeGen-I2V
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base Wan2.2 is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Animate stills and key art into anime motion — 10,844 downloads, the traction leader in anime I2V. [Wave 11 Lane A]
+
+#### rhymes-ai/Allegro ✅ commercial-safe
+- **What:** Text-to-video DiT model (2.8B) — anime-capable, fully permissive
+- **URL:** https://huggingface.co/rhymes-ai/Allegro
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: cardData `license: apache-2.0`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Smaller than Wan (2.8B) — more reachable for local anime video tests. [Wave 11 Lane A]
+
+#### Wan-AI/Wan2.1-T2V-14B ✅ commercial-safe
+- **What:** Wan 2.1 text-to-video 14B — top open video model, anime-capable
+- **URL:** https://huggingface.co/Wan-AI/Wan2.1-T2V-14B
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: cardData `license: apache-2.0`)
+- **Free tier:** fully open weights (1,570 likes)
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** The Apache-2.0 video backbone under AnimeGen and most anime video LoRAs — 14B needs serious GPU, 1.3B sibling exists for testing. [Wave 11 Lane A]
+
+#### trojblue/HunyuanVideo-lora-AnimeShots 🚫 not commercial-safe
+- **What:** Anime-shots LoRA for HunyuanVideo — HONEST NEGATIVE
+- **URL:** https://huggingface.co/trojblue/HunyuanVideo-lora-AnimeShots
+- **License:** 🚫 LoRA is MIT (verified 2026-10-07 via HF API) BUT the base is tencent/HunyuanVideo (Tencent Hunyuan Community License — research-gated per catalog doctrine). MIT LoRA on an NC base = not shippable.
+- **Free tier:** open weights, base restricted
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Textbook base-license trap: the adapter's license never overrides the base. Research lane only. [Wave 11 Lane A]
+
+#### ippanorc/animetic_light 🚫 not commercial-safe
+- **What:** Anime-style tuner on FramePackI2V_HY — HONEST NEGATIVE
+- **URL:** https://huggingface.co/ippanorc/animetic_light
+- **License:** 🚫 Adapter is Apache-2.0 (verified 2026-10-07 via HF API) BUT base is lllyasviel/FramePackI2V_HY (HunyuanVideo weights — community license, research-gated). Not shippable.
+- **Free tier:** open weights, base restricted
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Same base-license trap as the HunyuanVideo LoRA above. [Wave 11 Lane A]
+
+#### Anzhc/Z-Image_Anime_VAE ✅ commercial-safe
+- **What:** Anime-tuned VAE for Z-Image-Turbo
+- **URL:** https://huggingface.co/Anzhc/Z-Image_Anime_VAE
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Anime-tuned decoder = cleaner cel lines and flatter color fields on Z-Image anime gens. [Wave 11 Lane A]
+
+#### Anzhc/Qwen2D-Anime-VAE ✅ commercial-safe
+- **What:** Anime-tuned VAE (Qwen2D family, 6k downloads)
+- **URL:** https://huggingface.co/Anzhc/Qwen2D-Anime-VAE
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Drop-in anime VAE swap for sharper line art. [Wave 11 Lane A]
+
+#### Eugeoter/sdxl-vae-anime-alpha-67500 ✅ commercial-safe
+- **What:** Anime-tuned SDXL VAE
+- **URL:** https://huggingface.co/Eugeoter/sdxl-vae-anime-alpha-67500
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** For the SDXL anime pipeline (AnimeSai etc.) — better anime color/line decoding. [Wave 11 Lane A]
+
+#### madebyollin/taesd ✅ commercial-safe
+- **What:** Tiny AutoEncoder for Stable Diffusion — realtime latent preview decoder
+- **URL:** https://huggingface.co/madebyollin/taesd
+- **License:** MIT (verified 2026-10-07 via HF API model record: cardData `license: mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Realtime SD/SDXL anime previews during generation — speeds up art-direction iteration enormously. [Wave 11 Lane A]
+
+#### madebyollin/taef1 ✅ commercial-safe
+- **What:** Tiny AutoEncoder for FLUX — realtime latent preview decoder
+- **URL:** https://huggingface.co/madebyollin/taef1
+- **License:** MIT (verified 2026-10-07 via HF API model record: cardData `license: mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** FLUX-side equivalent of taesd — live previews for FLUX.2 anime gens. [Wave 11 Lane A]
+
+#### CabalResearch/Flux2VAE-Anime-Decoder-Tune ✅ commercial-safe
+- **What:** Anime-tuned decoder for the FLUX.2 VAE
+- **URL:** https://huggingface.co/CabalResearch/Flux2VAE-Anime-Decoder-Tune
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Anime decoder tuning for the FLUX.2 chain. [Wave 11 Lane A]
+
+#### xinsir/anime-painter ✅ commercial-safe
+- **What:** Anime painter ControlNet (scribble-conditioned SDXL) — sketch-to-anime-painting
+- **URL:** https://huggingface.co/xinsir/anime-painter
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record: `license:apache-2.0`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Storyboard sketch → painted anime frame with structural control — direct storyboard-to-frame path. [Wave 11 Lane A]
+
+#### kadirnar/AnimeSR_v2 ✅ commercial-safe
+- **What:** Anime super-resolution research model (weights)
+- **URL:** https://huggingface.co/kadirnar/AnimeSR_v2
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Caution: the repo's pipeline tags look mislabeled (says object-detection; arxiv tag is the AnimeSR paper) — verify the actual weights before wiring. Listed for completeness. [Wave 11 Lane A]
+
+#### saltacc/anime-ai-detect ✅ commercial-safe
+- **What:** Classifier distinguishing AI-generated anime images from hand-drawn ones
+- **URL:** https://huggingface.co/saltacc/anime-ai-detect
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Slop-checking gate: scores whether a frame reads as AI-generated — feeds the AI_SLOP_CHECKLIST pipeline. [Wave 11 Lane A]
+
+#### legekka/AI-Anime-Image-Detector-ViT ✅ commercial-safe
+- **What:** ViT-based AI-vs-human anime art detector
+- **URL:** https://huggingface.co/legekka/AI-Anime-Image-Detector-ViT
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Second opinion for the slop gate — ensemble with anime-ai-detect. [Wave 11 Lane A]
+
+#### deepghs/anime_face_detection ✅ commercial-safe
+- **What:** ONNX anime face detector (deepghs anime tooling family)
+- **URL:** https://huggingface.co/deepghs/anime_face_detection
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Character face localization for recolor, lip-sync region masks, and expression analysis — ONNX = easy wiring. [Wave 11 Lane A]
+
+#### deepghs/anime_classification ✅ commercial-safe
+- **What:** ONNX anime image classifier (deepghs family)
+- **URL:** https://huggingface.co/deepghs/anime_classification
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Auto-tagging anime frames for asset organization. [Wave 11 Lane A]
+
+#### deepghs/anime_censor_detection ✅ commercial-safe
+- **What:** ONNX anime content-safety detector (deepghs family)
+- **URL:** https://huggingface.co/deepghs/anime_censor_detection
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Content-safety gate for generated frames before they reach any pipeline — cheap insurance. [Wave 11 Lane A]
+
+#### DOFOFFICIAL/animeGender-dvgg-0.8 ✅ commercial-safe
+- **What:** Anime character gender classifier (ONNX/tf-keras)
+- **URL:** https://huggingface.co/DOFOFFICIAL/animeGender-dvgg-0.8
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Niche metadata tagger for character asset pipelines. [Wave 11 Lane A]
+
+#### aki-0421/clip-anime-patch400-10k-v1 ✅ commercial-safe
+- **What:** Anime-tuned CLIP-style embedding model (sentence-transformers compatible)
+- **URL:** https://huggingface.co/aki-0421/clip-anime-patch400-10k-v1
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Anime-domain text↔image retrieval — search the frame/asset library by description. [Wave 11 Lane A]
+
+#### Andres77872/SmolVLM-500M-anime-caption-v0.2 ✅ commercial-safe
+- **What:** 500M vision-language model fine-tuned for anime captioning
+- **URL:** https://huggingface.co/Andres77872/SmolVLM-500M-anime-caption-v0.2
+- **License:** Apache-2.0 (verified 2026-10-07 via HF API model record); base SmolVLM is Apache-2.0
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Auto-caption anime frames for dataset prep and accessibility descriptions — tiny enough for CPU. [Wave 11 Lane A]
+
+#### dreMaz/AnimeMangaInpainting ✅ commercial-safe
+- **What:** Anime/manga inpainting model — repair and edit anime line art
+- **URL:** https://huggingface.co/dreMaz/AnimeMangaInpainting
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fix defects in generated anime frames (hands, artifacts) with domain-tuned inpainting. [Wave 11 Lane A]
+
+#### dreMaz/AnimeInstanceSegmentation ✅ commercial-safe
+- **What:** Anime instance segmentation — per-character masks in multi-character frames
+- **URL:** https://huggingface.co/dreMaz/AnimeInstanceSegmentation
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Per-character masks for compositing, recolor, and dialogue-driven highlighting. [Wave 11 Lane A]
+
+#### akiyamasho/AnimeBackgroundGAN-Shinkai ✅ commercial-safe
+- **What:** PyTorch GAN for Shinkai-style anime background conversion
+- **URL:** https://huggingface.co/akiyamasho/AnimeBackgroundGAN-Shinkai
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Photo plate → luminous anime BG. "Shinkai" is a style descriptor, no IP content in the weights. [Wave 11 Lane A]
+
+#### akiyamasho/AnimeBackgroundGAN-Miyazaki ✅ commercial-safe
+- **What:** PyTorch GAN for Miyazaki/Ghibli-style anime background conversion
+- **URL:** https://huggingface.co/akiyamasho/AnimeBackgroundGAN-Miyazaki
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Painterly BG style option; style descriptor only, no IP content. [Wave 11 Lane A]
+
+#### akiyamasho/AnimeBackgroundGAN-Hosoda ✅ commercial-safe
+- **What:** PyTorch GAN for Hosoda-style anime background conversion
+- **URL:** https://huggingface.co/akiyamasho/AnimeBackgroundGAN-Hosoda
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Third BG style in the family — style A/B/C testing for episodes. [Wave 11 Lane A]
+
+#### sd-concepts-library/anime-background-style-v2 ✅ commercial-safe
+- **What:** SD textual-inversion concept: anime background style
+- **URL:** https://huggingface.co/sd-concepts-library/anime-background-style-v2
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lightweight style token for anime BGs on any SD1.5 pipeline. [Wave 11 Lane A]
+
+#### sd-concepts-library/80s-anime-ai ✅ commercial-safe
+- **What:** SD textual-inversion concept: 1980s anime aesthetic
+- **URL:** https://huggingface.co/sd-concepts-library/80s-anime-ai
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro cel look for flashback sequences. [Wave 11 Lane A]
+
+#### sd-concepts-library/hanfu-anime-style ✅ commercial-safe
+- **What:** SD textual-inversion concept: hanfu-styled anime aesthetic
+- **URL:** https://huggingface.co/sd-concepts-library/hanfu-anime-style
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period-costume anime flavor token. [Wave 11 Lane A]
+
+#### sd-concepts-library/anime-girl ✅ commercial-safe
+- **What:** SD textual-inversion concept: anime girl character token
+- **URL:** https://huggingface.co/sd-concepts-library/anime-girl
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Character-consistency token experiments. [Wave 11 Lane A]
+
+#### litagin/anime-whisper ✅ commercial-safe
+- **What:** Whisper fine-tuned on anime/galgame Japanese speech (50k downloads)
+- **URL:** https://huggingface.co/litagin/anime-whisper
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`); base kotoba-whisper is permissive
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Anime-domain Japanese ASR — transcribes energetic/emotional anime speech far better than base Whisper. Subtitle and VA-take transcription. [Wave 11 Lane A]
+
+#### phasefield-audio/Irodori-TTS-v4.1-Anime ✅ commercial-safe
+- **What:** Anime-style text-to-speech model
+- **URL:** https://huggingface.co/phasefield-audio/Irodori-TTS-v4.1-Anime
+- **License:** MIT (verified 2026-10-07 via HF API model record: `license:mit`)
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Purpose-built anime TTS on an MIT license — scratch VO and animatic dialogue before final voice sessions. [Wave 11 Lane A]
+
+#### OpenJTalk ✅ commercial-safe
+- **What:** Japanese text-to-speech system (HMM-based) — the open JP TTS workhorse
+- **URL:** http://open-jtalk.sourceforge.net/
+- **License:** Modified BSD (verified 2026-10-07 via pyopenjtalk README + piper-plus THIRD-PARTY-LICENSES.md: "Open JTalk: Modified BSD license")
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Robotic but bulletproof JP TTS + best-in-class JP grapheme-to-phoneme for any anime voice pipeline. pyopenjtalk (MIT) is the Python binding. [Wave 11 Lane A]
+
+#### vumichien/AnimeGANv2_Shinkai 🚫 not commercial-safe
+- **What:** ONNX export of the AnimeGANv2 Shinkai model claiming Apache-2.0 — HONEST NEGATIVE
+- **URL:** https://huggingface.co/vumichien/AnimeGANv2_Shinkai
+- **License:** 🚫 The uploader tagged `license:apache-2.0` (verified 2026-10-07 via HF API) BUT AnimeGANv2's upstream author license is non-commercial (catalog entries: AnimeGANv2/v3 🚫). A re-upload cannot relicense the weights — treat as NC.
+- **Free tier:** open weights, NC encumbered
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** License-laundering pattern to watch for: the tag on the re-upload is not the license on the weights. Research lane only. [Wave 11 Lane A]
+
+#### cagliostrolab/animagine-xl-4.0 ⚠️ license-conditional
+- **What:** Animagine XL 4.0 — the most popular anime SDXL checkpoint (375k downloads), documented here as a CONDITIONAL
+- **URL:** https://huggingface.co/cagliostrolab/animagine-xl-4.0
+- **License:** ⚠️ `license:openrail++` (verified 2026-10-07 via HF API model record: cardData `license: openrail++`). Outside this lane's Apache-2.0/MIT/CC0/CC-BY allowlist — use requires accepting the OpenRAIL++ use restrictions, so it is NOT counted as commercial-safe here.
+- **Free tier:** fully open weights
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Included so nobody wires it assuming it's permissive — the most-downloaded anime model on HF sits outside the allowlist. [Wave 11 Lane A]
+
+#### Civitai — commercial-use anime model search workflow ✅ commercial-safe
+- **What:** Workflow: use Civitai's model API `allowCommercialUse` flag + creator license notes to filter anime checkpoints/LoRAs, then confirm the base-model license chain before download
+- **URL:** https://civitai.com/
+- **License:** Varies per model — the workflow's rule: allowCommercialUse=true AND base model in the Apache-2.0/MIT/CC0/CC-BY allowlist, else skip
+- **Free tier:** free (Civitai account for downloads)
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Civitai hosts the anime models HF doesn't (Counterfeit, Anything, MeinaMix families) but most lack clean license fields — this workflow is the honest way to mine it. [Wave 11 Lane A]
+
+### SFX deepening — per-uploader packs, bundle years, libraries
+
+#### Sonniss — GDC 2026 Game Audio Bundle ✅ commercial-safe
+- **What:** The 2026 annual Sonniss GDC bundle — professional multi-GB SFX (weapons, vehicles, ambiences, foley)
+- **URL:** https://gdc.sonniss.com/
+- **License:** Proprietary royalty-free — free for personal/commercial projects, no attribution (verified 2026-10-07 via thegiwi/sonniss-gdc-html-viewer README: "The latest 2026 GDC bundle is available here: https://gdc.sonniss.com/")
+- **Free tier:** fully free (direct/torrent/Drive)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** New for 2026 — the full archive is now ~231GB / 7,000+ WAVs. 2024+ license tweak stands: not for AI-model training. [Wave 11 Lane A]
+
+#### Sonniss — #GameAudioGDC Bundle Part 2 ✅ commercial-safe
+- **What:** 16GB+ follow-up bundle of SFX from top sound recordists/designers
+- **URL:** https://rekkerd.org/sonniss-releases-the-gameaudiogdc-bundle-part-2/
+- **License:** Royalty-free, commercial use, no attribution (verified 2026-10-07 via Rekkerd: "Use them personally or commercially without attribution. Everything is royalty free.")
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct release from the annual GDC bundles — grab it alongside the main archive. [Wave 11 Lane A]
+
+#### Sonniss GDC bundles — license deep read ✅ commercial-safe
+- **What:** License-read entry: the actual GDC bundle EULA terms that matter for production
+- **URL:** https://sonniss.com/gameaudiogdc/
+- **License:** Custom EULA — commercial use, no attribution, unlimited projects; PROHIBITED: standalone resale/redistribution, AI/ML training (verified 2026-10-07 via TMHSDigital/Free-Game-Dev-Assets catalog audit 2026-08-24: "personal and commercial projects without attribution"; "expressly prohibited… for the purpose of training artificial intelligence technologies")
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** The two gotchas: (1) sounds can't be re-hosted or sold standalone — fine inside episodes; (2) the no-AI-training clause rules out using the bundle as TTS/SFX-model training data. [Wave 11 Lane A]
+
+#### straget — Freesound CC0 field recordings ✅ commercial-safe
+- **What:** Swedish field recordist (Samuel Strågefors) — rain, waves, thunder, waterfalls, birdsong; Zoom F4/Sennheiser MKE 600
+- **URL:** https://freesound.org/people/straget/
+- **License:** CC0 (verified 2026-10-07: CC0 badge on sound pages e.g. freesound.org/people/straget/sounds/414921/, /403762/, /412308/; commenters confirm "publishing under CC-0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Top-tier nature ambience beds — rain/water/thunder for outdoor scenes and transitions. [Wave 11 Lane A]
+
+#### Timbre — Freesound CC0 SFX ✅ commercial-safe
+- **What:** 3,300+ sound experiments, UI, loops, remixes — Freesound veteran
+- **URL:** https://freesound.org/people/Timbre/sounds/730404/
+- **License:** CC0 (verified 2026-10-07: CC0 badge on sound pages e.g. /730404/, /265418/, /415344/, /691933/; uploader is publicly anti-restriction)
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Huge CC0 corpus — UI, whooshes, experimental beds. Verify the badge per download (remixes of others' sounds inherit their licenses). [Wave 11 Lane A]
+
+#### Jalastram — Freesound CC0 SFX + cartoon music ✅ commercial-safe
+- **What:** 8-bit game SFX, UI jumps, snares, plus "Comedy Music Samples" — cartoon/comedy scoring
+- **URL:** https://freesound.org/people/jalastram/sounds/386649/
+- **License:** CC0 (verified 2026-10-07: CC0 badge on sound pages e.g. /530921/, /746358/, /457925/, /386649/, /666974/; downstream THIRD_PARTY_NOTICES confirm CC0 1.0)
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Comedy Music Samples series is directly useful for the cartoon series' comedic scoring — CC0, no clearance needed. [Wave 11 Lane A]
+
+#### plasterbrain — Freesound CC0 cartoon/anime/game SFX ✅ commercial-safe
+- **What:** Anime lasers, cartoon pinches, 8-bit falls, cute anime jumps, UI hovers — made for cartoons and games
+- **URL:** https://freesound.org/people/plasterbrain/sounds/399094/
+- **License:** CC0 (verified 2026-10-07: CC0 badge on sound pages e.g. /464907/, /395504/, /399094/, /397353/, /396196/ — "Cartoon Pinch" alone has 12k downloads)
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Purpose-built cartoon SFX on CC0 — arguably the single best Freesound uploader for this series' sound design. [Wave 11 Lane A]
+
+#### kyles — Freesound CC0 field recordings ✅ commercial-safe
+- **What:** Travel field recordings — Uganda coffee plantations, Havana traffic, high-school crowds, basketball foley, rain
+- **URL:** https://freesound.org/people/kyles/sounds/407042/
+- **License:** CC0 (verified 2026-10-07: CC0 badge on sound pages e.g. /407042/, /450722/, /452627/, /453605/, /51784/; downstream CREDITS confirm CC0)
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Urban/crowd/nature ambience with real-world texture — street scenes and backgrounds. [Wave 11 Lane A]
+
+#### juskiddink — Freesound SFX (CC-BY attribution) ✅ commercial-safe
+- **What:** Long-time Freesound recordist — nature, objects, foley
+- **URL:** https://freesound.org/people/juskiddink/sounds/78955/
+- **License:** CC-BY (Attribution) — commercial-safe WITH credit (verified 2026-10-07 via downstream attribution lists: "Aspen tree in strong wind.wav by juskiddink — License: Attribution"; "Flock of seagulls by juskiddink — License: Attribution"). NOT CC0 — do not file as CC0.
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bake the attribution into the credits roll; otherwise a clean commercial-safe source. [Wave 11 Lane A]
+
+#### newlocknew — Freesound (MIXED licenses) ❓ unverified
+- **What:** Cinematic impacts, UI clicks, industrial SFX — HONEST MIXED-LICENSE WARNING
+- **URL:** https://FreeSound.org/people/newlocknew/packs/43242/
+- **License:** ❓ MIXED — CC0 on some uploads (Food & Drink pack, DSGNImpt impacts, UI clicks) but CC-BY 4.0 on others (blaster shots) and even CC-BY-NC 4.0 on some (campfire recording) — verified 2026-10-07 via sound pages + downstream credit lists. NEVER bulk-assume.
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the badge on EVERY download from this uploader — the catalog's standing rule (per-file license check) exists for exactly this case. [Wave 11 Lane A]
+
+#### Kenney — Music Loops ✅ commercial-safe
+- **What:** Background music loops for games — full CC0 music beds
+- **URL:** https://kenney.nl/assets/music-loops
+- **License:** CC0 (verified 2026-10-07 via multiple downstream CREDITS files: "Kenney Music Loops (kenney_music-loops) — License: Creative Commons Zero v1.0 (CC0)")
+- **Free tier:** fully free (direct zip)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The missing Kenney audio piece — loops to sit under the jingles and SFX packs already cataloged. [Wave 11 Lane A]
+
+#### Kenney — Casino Audio ✅ commercial-safe
+- **What:** 50 casino-themed sounds (slots, chips, cards, coins)
+- **URL:** https://kenney.nl/assets/casino-audio
+- **License:** CC0 (verified 2026-10-07 via downstream asset guide: "Casino Audio — https://kenney.nl/assets/casino-audio — License: CC0 — 50 casino-themed sounds")
+- **Free tier:** fully free (direct zip)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Coins/chips/cards — game-show and reward-moment SFX. [Wave 11 Lane A]
+
+#### SoundBible ✅ commercial-safe
+- **What:** Long-running free SFX library (Mike Koenig / Koenig Media) — WAV + MP3
+- **URL:** https://soundbible.com/
+- **License:** Per-sound: royalty-free section = CC/PD works, commercial OK; many sounds CC-BY 3.0 (verified 2026-10-07 via downstream credits: "Cargo Plane Cabin Ambiance — License: Attribution 3.0 — Recorded by Mike Koenig"; SourceForge: "royalty-free sounds can be used for commercial uses")
+- **Free tier:** fully free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check each sound's license badge — CC-BY 3.0 needs a credit line, PD/CC0 needs nothing. [Wave 11 Lane A]
+
+#### SoundJay ✅ commercial-safe
+- **What:** Large categorized SFX library (mechanical, human, nature, cartoon) — WAV + MP3
+- **URL:** http://www.soundjay.com/tos.html
+- **License:** Proprietary — free of charge, royalty-free, commercial AND non-commercial OK (verified 2026-10-07 via SoundJay Terms of Use). Restrictions: no redistribution, no standalone use, no AI-model training, no sound-library apps.
+- **Free tier:** fully free (no account)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The no-AI-training clause mirrors Sonniss — fine for episode sound design, not for training data. [Wave 11 Lane A]
+
+#### freesfx.co.uk ✅ commercial-safe
+- **What:** 4,500+ SFX + 850 music tracks, fully catalogued, new sounds monthly
+- **URL:** http://www.freesfx.co.uk/Page/5/Terms-and-Conditions
+- **License:** Proprietary — free for commercial/broadcast/multimedia, ATTRIBUTION required (credit freesfx.co.uk with URL) (verified 2026-10-07 via Terms page + EULA). No standalone redistribution; sounds must be mixed into a production.
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution is the price — one credit line buys 4,500 SFX. [Wave 11 Lane A]
+
+#### Cymatics — free sample packs ✅ commercial-safe
+- **What:** Rotating free packs (drums, 808s, melodies, FX, vocals, MIDI) — 100% royalty-free
+- **URL:** https://cymatics.fm/pages/cymatics-15-packs
+- **License:** Proprietary — 100% royalty-free, commercial use OK, keep 100% of earnings (verified 2026-10-07 via cymatics.fm: "Every sample is ready… 100% Royalty Free"; license agreement: "You may use any sample/melody for your own personal project or commercial projects"). No redistribution/repackaging.
+- **Free tier:** free (email for download)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern trap/EDM/phonk drums and melodies — theme-music and hype-cut raw material. [Wave 11 Lane A]
+
+#### Splice Sounds ⚠️ license-conditional
+- **What:** Industry-standard sample/loop/one-shot/MIDI catalog
+- **URL:** https://splice.com/sounds
+- **License:** ⚠️ 100% royalty-free incl. commercial (verified 2026-10-07 via splice.com FAQ) BUT downloads require a paid subscription (credits); the free tier is a limited rotating selection. Commercial-safe only for sounds actually licensed to you.
+- **Free tier:** limited free selection; full catalog is paid
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Keep the license documentation Splice provides per download — it doubles as clearance paperwork. [Wave 11 Lane A]
+
+#### Apple Loops ✅ commercial-safe
+- **What:** The loop library bundled with Logic Pro / GarageBand / MainStage — thousands of royalty-free loops
+- **URL:** https://producersociety.com/apple-loops-royalty-legal/
+- **License:** Royalty-free for original compositions incl. commercial (verified 2026-10-07 via Apple SLA quoted in multiple sources: "on a royalty-free basis, to create your own original music compositions or audio projects"). Loops may NOT be distributed standalone or repackaged as samples.
+- **Free tier:** bundled with Apple music apps (Mac)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mac-only lane — but the loops are cleared for commercial release, which most bundled libraries aren't. [Wave 11 Lane A]
+
+#### Adobe Audition SFX ✅ commercial-safe
+- **What:** 12,000+ categorized SFX (incl. 250+ cartoon/comic, 450+ firearms, ambiences, foley) bundled with Audition CC
+- **URL:** https://www.adobe.com/products/audition/offers/AdobeAuditionDLCSFX.html
+- **License:** Royalty-free; use/modify/distribute embedded in productions incl. commercial and games (verified 2026-10-07 via Adobe: "thousands of uncompressed, royalty-free audio sound effects"; community license read: OK "embedded in your product… including selling it"). No standalone distribution.
+- **Free tier:** bundled with Audition (Creative Cloud subscription)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The cartoon SFX category alone (83MB) is worth the entry — slapstick, honks, pops cleared for commercial use. [Wave 11 Lane A]
+
+#### BOOM Library — Free Cinematic Series ✅ commercial-safe
+- **What:** 667 pro cinematic SFX (impacts, braams, risers, horror, trailers) in 96kHz/24-bit — 2GB+ free
+- **URL:** https://www.boomlibrary.com/sound-effects/free-sounds-cinematic-series/
+- **License:** Royalty-free, "no usage restrictions" (verified 2026-10-07 via boomlibrary.com: "in 96kHz/24-bit, royalty-free, with no usage restrictions")
+- **Free tier:** fully free (email for download)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trailer-grade impacts and braams at zero cost — the highest-quality free SFX in this wave. [Wave 11 Lane A]
+
+#### qubodup — Two Simple Game Music Loops (OGA) ✅ commercial-safe
+- **What:** CC0 menu + level music loops by qubodup (Freesound CC0 veteran)
+- **URL:** https://opengameart.org/content/two-simple-game-music-loops
+- **License:** CC0 (verified 2026-10-07 via downstream LICENSES.md: "gameplay-music.ogg is the CC0 levelmusicloop-tigrun.ogg by qubodup from OpenGameArt")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Proven in shipped games — menu/gameplay loop pair, zero clearance risk. [Wave 11 Lane A]
+
+#### farfadet46 — Bubbles Pop (OGA) ✅ commercial-safe
+- **What:** CC0 bubble-pop SFX
+- **URL:** https://opengameart.org/content/bubbles-pop
+- **License:** CC0 (verified 2026-10-07 via downstream LICENSES.md: "the archived CC0 'bubbles pop' sound by farfadet46 from OpenGameArt")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** UI/pop accent — small but proven in a shipped build. [Wave 11 Lane A]
+
+#### Vrymaa — Night Crickets 02 (Freesound) ✅ commercial-safe
+- **What:** Night crickets ambience bed
+- **URL:** https://freesound.org/people/Vrymaa/sounds/805466/
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS.md: "Night Crickets 02 — Author: Vrymaa — License: Creative Commons 0 (Public Domain)")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Night-exterior ambience bed. [Wave 11 Lane A]
+
+#### Tom_Kaszuba — River Flowing (Freesound) ✅ commercial-safe
+- **What:** River/water flowing field recording
+- **URL:** https://freesound.org/s/660262/
+- **License:** CC0 (verified 2026-10-07 via downstream credits: "River flowing sound by Tom_Kaszuba — License: Creative Commons 0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Water ambience for outdoor scenes. [Wave 11 Lane A]
+
+#### vekoN — Wildfire Sound (Freesound) ✅ commercial-safe
+- **What:** Wildfire/large-fire sound bed
+- **URL:** https://freesound.org/s/537530/
+- **License:** CC0 (verified 2026-10-07 via downstream credits: "Wildfire sound by vekoN — License: Creative Commons 0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fire/disaster beds for action sequences. [Wave 11 Lane A]
+
+#### m1a2t3z4 — Window Breaking (Freesound) ✅ commercial-safe
+- **What:** Stone crashing through window — high-impact break SFX (15.8k downloads)
+- **URL:** https://freesound.org/people/m1a2t3z4/sounds/112213/
+- **License:** CC0 (verified 2026-10-07 via sound page badge: "Creative Commons 0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fight-scene glass breaks. [Wave 11 Lane A]
+
+#### wjoojoo — Lake LBJ Paddling (Freesound) ✅ commercial-safe
+- **What:** Underwater contact-mic paddling — unusual water texture
+- **URL:** https://FreeSound.org/people/wjoojoo/sounds/197753/
+- **License:** CC0 (verified 2026-10-07 via sound page badge: "Creative Commons 0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Underwater/contact-mic texture — distinctive water movement bed. [Wave 11 Lane A]
+
+#### Jofae — Chime Notification (Freesound) ✅ commercial-safe
+- **What:** Short chime notification tone
+- **URL:** https://freesound.org/people/Jofae/sounds/380482/
+- **License:** CC0 (verified 2026-10-07 via downstream THIRD_PARTY_NOTICES.md: "Chime Notification by Jofae — License: Creative Commons 0 (CC0 1.0 Universal)")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** UI notification chime, proven in a shipped app. [Wave 11 Lane A]
+
+#### bruno.auzet — field recordings (Freesound) ✅ commercial-safe
+- **What:** French field recordist — tree felling, barn owl night atmospheres (Schoeps/ZOOM F3, 96kHz)
+- **URL:** https://freesound.org/people/bruno.auzet/sounds/670300/
+- **License:** CC0 (verified 2026-10-07 via sound page badges: "Creative Commons 0" on /670300/, /688942/)
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** High-fidelity nature atmospheres — 96kHz gives pitch-shifting headroom for creature/vocal design. [Wave 11 Lane A]
+
+#### ScenarioPlanet — Damaged Reel-to-Reel Tape (Freesound) ✅ commercial-safe
+- **What:** Damaged reel-to-reel tape played at 3.75 IPS — lo-fi clicking texture
+- **URL:** https://freesound.org/people/ScenarioPlanet/sounds/785679/
+- **License:** CC0 (verified 2026-10-07 via sound page badge: "Creative Commons 0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lo-fi/flashback texture — period transitions and memory sequences. [Wave 11 Lane A]
+
+### BG-plate video sources
+
+#### Dareful — free 4K stock video (CC-BY 4.0) ✅ commercial-safe
+- **What:** Curated 4K/HD cinematic stock footage (travel, nature, urban) shot by Joel Holland (VideoBlocks founder)
+- **URL:** https://dareful.com/about-dareful-completely-free-4k-stock-video/
+- **License:** CC-BY 4.0 — free for commercial use WITH attribution (verified 2026-10-07 via dareful.com/about: "governed by the Creative Commons Attribution 4.0 International License… you can use our video clips any way you want, even commercially")
+- **Free tier:** fully free, no account, unlimited downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** StockFootageforFree.com merged into Dareful (same about page) — one entry covers both. Attribution goes in credits. [Wave 11 Lane A]
+
+#### Mazwai ❓ unverified (legacy)
+- **What:** Former curated free-stock-video site (cinematic, filmmaker-shot clips)
+- **URL:** https://mazwai.com/
+- **License:** ❓ UNVERIFIED — historically CC-BY 3.0 / public-domain mix, but current status is disputed: mazwai.com reportedly redirects to Freepik (jimcarter.me, 2026), while roundups describe Dareful as its rebrand (colorlib, 2026). Do NOT rely on legacy Mazwai links.
+- **Free tier:** n/a (legacy)
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Honest negative: use Dareful instead; treat any mazwai.com link as dead until proven otherwise. [Wave 11 Lane A]
+
+#### Mixkit — free stock video + license read ✅ commercial-safe
+- **What:** Envato-owned curated free stock video (HD/4K, no watermark, no signup) + music/SFX/AE templates
+- **URL:** https://mixkit.co/free-stock-video/couple-relaxing-on-a-couch-with-suitcases-nearby-101730/
+- **License:** Mixkit Stock Video Free License — free for commercial/personal, no attribution; SOME clips carry a Restricted License — check per clip (verified 2026-10-07 via mixkit.co clip pages: "Free Download… for commercial or personal use, under the Mixkit Stock Video Free License"; colorlib 2026: "some carry a Restricted License, so check the license on each clip"). Mixkit User Terms: 18+, no mass download/scraping.
+- **Free tier:** fully free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fills the ❓ on the existing Mixkit entry — video side now verified. Scripted pulls are Cloudflare-blocked; download via browser. [Wave 11 Lane A]
+
+#### Videvo (now Magnific Videos) — free video clips + license read ✅ commercial-safe
+- **What:** 300k+ free/paid stock video, motion graphics, music, SFX — now served as Magnific Videos (ex-Freepik video)
+- **URL:** https://www.videvo.net/
+- **License:** Per-clip: Royalty-Free (no attribution) OR Videvo Attribution License OR CC-BY 3.0 — all allow commercial use WITH the stated attribution where required (verified 2026-10-07 via alternativeto/videvo: "Most content is licensed under… Royalty-Free and our own Videvo Attribution License… The Videvo Attribution License allows for unlimited use… but you must credit the artist"; colorlib 2026: videvo.net now redirects to Magnific)
+- **Free tier:** free clips (account for downloads); premium = paid
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fills the ❓ on the existing Videvo entry. Filter for fully-free clips; read the license badge on every download — motion graphics templates are the rare find here. [Wave 11 Lane A]
+
+#### Vidsplay — free HD/4K stock video (attribution) ✅ commercial-safe
+- **What:** 500+ free HD/4K clips (nature, aerials, city, food) — simple no-account downloads
+- **URL:** https://www.vidsplay.com/lake-aerial-landscape/
+- **License:** Free for commercial/personal WITH attribution — visible credit link to Vidsplay.com required (verified 2026-10-07 via vidsplay.com clip pages: "All footage from Vidsplay is free to use for any personal or commercial purposes with attribution"; colorlib 2026: "requires a visible credit link to Vidsplay.com")
+- **Free tier:** fully free, no account
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired
+- **Notes:** Wired 2026-10-07: tools/bg-plates/vidsplay_pull.py pulls a clip page, extracts the download URL + license terms, downloads, ffprobes, and writes proof JSON (binary stays in /tmp, never committed). [Wave 11 Lane A]
+
+#### Life of Vids — free stock video ✅ commercial-safe
+- **What:** Curated free stock footage by Leeroy (Vimeo-distributed) — scenic, lifestyle, artistic clips
+- **URL:** https://www.lifeofvids.com/
+- **License:** Free for personal AND commercial, no attribution required; do NOT repost/redistribute the collection (verified 2026-10-07 via develop_cafe mirror of site terms: "Do what ever you want with them (commercial and personal use), but don't repost or distribute our videos FOR DOWNLOAD"; alternativeto: "No copyright restrictions (personal & commercial)")
+- **Free tier:** fully free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Artistic B-roll with a no-attribution grant — rare combination. [Wave 11 Lane A]
+
+#### CuteStockFootage — free VFX/stock video (CC-BY 4.0) ✅ commercial-safe
+- **What:** Free overlays, light leaks, film burns, backgrounds, particles, aerials (1080p/4K) — VFX-plate specialty
+- **URL:** https://cutestockfootage.com/terms-and-conditions/
+- **License:** CC-BY 4.0 — commercial OK with credit/link to cutestockfootage.com (verified 2026-10-07 via terms page: "licensed under a Creative Commons Attribution 4.0 International License… allowed to use this material in your commercial or non-commercial projects")
+- **Free tier:** fully free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Light leaks, film burns, and particle overlays are exactly what cartoon compositing needs — note the site reportedly migrated to iNeedFx.com, verify the live URL before use. [Wave 11 Lane A]
+
+#### Videezy — free stock video (attribution) ✅ commercial-safe
+- **What:** Eezy-network stock video (HD/4K), motion graphics, AE templates — millions of clips
+- **URL:** https://www.Videezy.com/signups/join_premium
+- **License:** Standard = free for personal/educational/editorial/commercial WITH attribution; Pro (credits) = no attribution (verified 2026-10-07 via videezy.com FAQ: "Videezy Standard content is free content… for personal, educational, editorial, and commercial use with attribution")
+- **Free tier:** free standard library (account); pro is credits-based
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution-required on the free tier — plan credits accordingly; the AE templates are the differentiator. [Wave 11 Lane A]
+
+#### Distill (wedistill.io) ❓ unverified
+- **What:** Former curated free-HD-stock-video site (10 new videos every 10 days)
+- **URL:** https://wedistill.io/
+- **License:** ❓ UNVERIFIED — reported CC0 ("Videos are licensed under the Creative Commons Zero license" per 2026 directory listings) BUT the domain now appears repurposed as an AI-content platform. Verify the live site before any use.
+- **Free tier:** unknown (legacy)
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Honest hold — do not download from wedistill.io until its current ownership/terms are confirmed. [Wave 11 Lane A]
+
+#### XStockVideo ❓ unverified
+- **What:** Free HD stock footage site (hundreds of clips)
+- **URL:** https://xstockvideo.com/
+- **License:** ❓ UNVERIFIED — reported "Download Free Quality HD stock footage" (2026 directory listing); no license page read. Verify terms before use.
+- **Free tier:** reported free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Candidate only — needs a license-page read before any download. [Wave 11 Lane A]
+
+#### Movietools.info ❓ unverified
+- **What:** Free HD video loops, backgrounds, virtual studios — no account
+- **URL:** https://movietools.info/
+- **License:** ❓ UNVERIFIED — reported "You may also use our loops in your Monetized Videos" (2026 directory listing); full terms not read. Verify before use.
+- **Free tier:** reported free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Looping backgrounds are directly useful for plates — but the license needs a proper read first. [Wave 11 Lane A]
+
+## Entry count — Wave 11 Lane A
+
+101 new `####` entries appended (60 anime/cartoon generation models · 30 SFX deepening · 11 BG-plate video) → **1236 total** honest entries (1135 before this wave: 1106 Wave-10 + 29 Wave-11-Lane-C quarantine-reconciliation entries). Quarantine rows 120–121 added (Style-Bert-VITS2 AGPL-3.0, AivisSpeech LGPL-3.0). Wired: tools/anime-models/hf_license_audit.py (HF license-tag audit, proof-verified), tools/bg-plates/vidsplay_pull.py (Vidsplay clip pull + ffprobe, proof-verified), tools/sfx/freesound_cc0_ledger.py (Freesound license-badge ledger, proof-verified). Mixkit scripted pulls are Cloudflare-blocked (documented, not faked).

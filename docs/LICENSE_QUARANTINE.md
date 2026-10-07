@@ -9,7 +9,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (119 rows · 113 distinct projects — append-only manifest; see duplicate mapping below)
+## Quarantined items (121 rows · 115 distinct projects — append-only manifest; see duplicate mapping below)
 
 ## Row-number convention + duplicate mapping (Wave 8 Lane B, 2026-10-07)
 
@@ -211,6 +211,8 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 117 | AviSynth+ (avisynth/avisynthplus; was AviSynth/AviSynthPlus) | GPL-2.0-or-later (verified: upstream license.rst + avisynth.h header 'either version 2 ... or (at your option) any later version', 2026-10-07) — carries a narrow C-interface exception (independent modules via avisynth.h may ship under their own terms + AviSynth source copy); exception covers plugin linking only, core integration stays quarantined | backgrounds | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 118 | MB-Lab (animate1978/MB-Lab) | GPL-3.0 (verified: repo license.txt 'All python files released in the ManuelbastioniLAB package, are released under GNU General Public License 3', 2026-10-07) | anime tooling | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 119 | MakeHuman app (makehumancommunity/makehuman) | AGPL-3.0 (verified: repo LICENSE.CODE.md = AGPL v3 text, 2026-10-07) — code only; the community ASSETS are CC0 (LICENSE.ASSETS.md) and separately cataloged commercial-safe | anime tooling | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 120 | Style-Bert-VITS2 (litagin/style-bert-vits2) | AGPL-3.0 (verified 2026-10-07: upstream GitHub sources) — strong copyleft code; model outputs follow the standard AGPL-output interpretation but the code never ships | voice/tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 121 | AivisSpeech (Aivis-Project/AivisSpeech) | LGPL-3.0 (verified 2026-10-07: upstream policy.md) — LGPL-doctrine question still PENDING OWNER VERDICT (see row 63 note); stays quarantined meanwhile | voice/tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 
 ## Notes from Wave-8 Lane B quarantine reconciliation (Worker B, 2026-10-07)
 
@@ -264,3 +266,8 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Duplicate scan:** rows 112–119 checked against the manifest — no new duplicates (5 duplicate groups unchanged).
 - **LGPL doctrine:** no owner ruling found — searched ~/MEMORY.md + 2026-10-07/2026-10-06 memory notes; the Wave-8 recommendation (delist row 63 marytts to weak-copyleft watchlist) remains PENDING OWNER VERDICT. Row 63 stays quarantined. The question persists.
 - **Counts after this wave:** 119 rows · 113 distinct projects (no new rows appended — this wave was audit-only).
+
+## Notes from Wave-11 Lane A quarantine append (2026-10-07)
+
+- **+2 rows (120–121):** Style-Bert-VITS2 (AGPL-3.0) and AivisSpeech (LGPL-3.0) — both verified upstream; standalone-tool/research lane only, never wired into shipping paths. TAL-NoiseMaker was already quarantined (row 103, GPL-2.0) — no duplicate row added.
+- **Header counts refreshed:** 121 rows · 115 distinct (AGPL 22 · GPL 96 · LGPL-3.0 2 · CeCILL-2.1 1); catalog "License red flags" section updated to match (TTS category 8 → 10).

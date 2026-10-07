@@ -9364,3 +9364,1023 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Do not redistribute the bundled brushes/textures; artwork you paint is yours. [Wave 8 A]
+
+#### Qwen3-TTS (QwenLM/Alibaba) ✅ commercial-safe
+- **What:** Multilingual streaming TTS model family with 3-second voice cloning and description-based voice control (10 languages, dual-track LM architecture)
+- **URL:** https://github.com/QwenLM/Qwen3-TTS/raw/refs/heads/main/assets/Qwen3_TTS.pdf
+- **License:** Apache 2.0 — tokenizers and models released under Apache 2.0 per the official technical report (verified 2026-10-07)
+- **Free tier:** fully free (open weights)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strong dub/voice-design candidate; ~3.9GB per model. Voice-clone consent is a legal requirement in many jurisdictions — clone only owned/authorized voices. [Wave 9 A]
+
+#### GLM-4-Voice (Zhipu/THUDM) ✅ commercial-safe
+- **What:** End-to-end spoken chatbot / speech-to-speech model with real-time voice conversation, emotion, intonation and dialect control (Chinese + English)
+- **URL:** https://arxiv.org/pdf/2412.02612
+- **License:** Apache 2.0 (verified 2026-10-07)
+- **Free tier:** fully free (open weights)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Upstream repo THUDM/GLM-4-Voice; HF zai-org/glm-4-voice-9b. Native speech-to-speech beats cascades for <500ms latency budgets. [Wave 9 A]
+
+#### Kimi-Audio (Moonshot AI) ⚠️ license-conditional
+- **What:** 7B open audio foundation model — audio understanding, generation and conversation (13M+ hours training)
+- **URL:** https://github.com/0xSojalSec/free-voice-clone
+- **License:** Code MIT/Apache-2.0 mix — CHECK WEIGHTS before commercial use (verified 2026-10-07)
+- **Free tier:** fully free (open weights)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Moonshot's Modified MIT variant adds an attribution trigger at 100M MAU / $20M monthly revenue — fine at our scale, flag before any mass deployment. Upstream: MoonshotAI/Kimi-Audio. [Wave 9 A]
+
+#### VALL-E-X (Plachtaa) ✅ commercial-safe
+- **What:** Open-source implementation of Microsoft's VALL-E X zero-shot cross-lingual TTS (3-second prompt cloning)
+- **URL:** https://github.com/Plachtaa/VALL-E-X
+- **License:** MIT License (verified 2026-10-07 — repo README: "VALL-E X is licensed under the MIT License")
+- **Free tier:** fully free
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Older (2023) but tiny and simple to run; keep total prompt+output under ~22s for acceptable quality. [Wave 9 A]
+
+#### MaskGCT (Amphion) ✅ commercial-safe
+- **What:** Zero-shot TTS with masked generative codec transformer — fully non-autoregressive, strong SIM-O/WER on LibriSpeech and SeedTTS benchmarks
+- **URL:** https://github.com/open-mmlab/Amphion/blob/main/models/tts/maskgct/README.md
+- **License:** MIT (Amphion toolkit license; verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** NAR architecture = fast parallel synthesis; good research baseline for the dub pipeline. [Wave 9 A]
+
+#### MOSS-TTS (OpenMOSS) ✅ commercial-safe
+- **What:** Open model family for long-form speech, dialogue synthesis, voice design, sound effects and real-time streaming TTS (incl. 100M-param CPU-friendly Nano)
+- **URL:** https://github.com/OpenMOSS/MOSS-TTS
+- **License:** Apache-2.0 — code AND weights, no acceptance gate (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Nano variant runs realtime on a 4-core CPU, 20 languages, 48kHz — best "runs on a fanless laptop" pick. Companion OpenMOSS/MOSS-TTS-Nano. [Wave 9 A]
+
+#### LongCat-AudioDiT (Meituan) ✅ commercial-safe
+- **What:** 1B/3.5B diffusion-transformer TTS with SOTA voice-cloning scores on the Seed benchmark (surpasses several closed models)
+- **URL:** https://github.com/shimomurakei/longcat-audiodit
+- **License:** MIT (verified 2026-10-07 — upstream meituan-longcat/LongCat-AudioDiT LICENSE badge)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Upstream canonical repo is meituan-longcat/LongCat-AudioDiT; community forks mirror it. [Wave 9 A]
+
+#### Step-Audio (StepFun) ✅ commercial-safe
+- **What:** Speech-to-speech model family (Step-Audio-Chat, 2-mini, R1.1, EditX) — any-to-any voice with zero-shot cloning and editable delivery
+- **URL:** https://intelligibberish.com/articles/ai-voice-text-to-speech-tools-compared/
+- **License:** Apache-2.0 (verified 2026-10-07)
+- **Free tier:** fully free (open weights)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Step-Audio-EditX rated among the top permissively-licensed open TTS models (Aug 2026 leaderboard). [Wave 9 A]
+
+#### MiMo-Audio (Xiaomi) ✅ commercial-safe
+- **What:** 7B audio language model by Xiaomi — few-shot audio understanding with SOTA zero-shot voice cloning
+- **URL:** https://github.com/0xSojalSec/free-voice-clone
+- **License:** Apache-2.0 (verified 2026-10-07)
+- **Free tier:** fully free (open weights)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Few-shot learner framing — useful where only seconds of reference audio exist. [Wave 9 A]
+
+#### Voxtral TTS (Mistral) 🚫 NC-or-quarantine
+- **What:** Mistral's 4B open-weight TTS — 9 languages, 3-second voice cloning, 70ms latency for realtime voice agents
+- **URL:** https://medium.com/@shubhamnv2/voxtral-tts-vs-elevenlabs-benchmarks-pricing-and-what-open-source-voice-ai-means-for-the-22b-d498bd057814
+- **License:** Weights CC-BY-NC-4.0 — FREE FOR NON-COMMERCIAL USE ONLY; commercial deployment needs Mistral's paid API or enterprise license (verified 2026-10-07)
+- **Free tier:** free weights (non-commercial)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Top quality but NC weights — research/reference only unless we pay. Do NOT ship its voices in commercial builds. [Wave 9 A]
+
+#### Cartesia API (Sonic models) ✅ commercial-safe
+- **What:** Real-time TTS / voice-agent API (Sonic models) with instant voice cloning
+- **URL:** https://dev.to/stimlau/6-best-elevenlabs-alternatives-in-2026-verified-with-pricing-3m4l
+- **License:** Proprietary API terms — output licensed for commercial use on paid tiers (verified 2026-10-07)
+- **Free tier:** 20K credits/month free
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best real-time latency pick for interactive voice agents; rated 4.4/5 overall in Oct 2026 comparison. [Wave 9 A]
+
+#### Hume AI (EVI) ✅ commercial-safe
+- **What:** Empathic Voice Interface API — expressive TTS with emotion understanding for conversational agents
+- **URL:** https://speechify.ai/blog/tts-api-concurrency-and-rate-limits-2026
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** free tier ($0 plan, 15 req/min)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Emotion-aware delivery is the differentiator — good for narrative/dialogue prototyping. [Wave 9 A]
+
+#### Murf AI ⚠️ license-conditional
+- **What:** Scripted video/e-learning voiceover studio — 120+ voices, AI dubbing, voice cloning (enterprise)
+- **URL:** https://www.fahimai.com/murf-vs-speechify
+- **License:** Proprietary — free version is TESTING ONLY: no downloads, no commercial use; commercial rights require Creator+ (verified 2026-10-07)
+- **Free tier:** 10 min voice generation, watermarked
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Evaluate voices here, but nothing free-tier may ship in commercial work. [Wave 9 A]
+
+#### WellSaid Labs ⚠️ license-conditional
+- **What:** Consistent English brand-narration TTS with custom brand voices
+- **URL:** https://www.fahimai.com/murf-ai-vs-wellsaid-labs
+- **License:** Proprietary — trial only (3 download min/mo); commercial use requires paid plan (verified 2026-10-07)
+- **Free tier:** trial (3 min/mo)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Brand-voice consistency is the selling point; trial is evaluation-only. [Wave 9 A]
+
+#### Speechify Studio ⚠️ license-conditional
+- **What:** TTS + AI dubbing platform; API with published concurrency limits
+- **URL:** https://speechify.ai/blog/tts-api-concurrency-and-rate-limits-2026
+- **License:** Proprietary — free plan covers 10 basic voices; commercial/production needs paid API (verified 2026-10-07)
+- **Free tier:** free plan (3 concurrent requests)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Built-in video dubbing is handy for short-form; no self-serve voice cloning. [Wave 9 A]
+
+#### Retell AI ✅ commercial-safe
+- **What:** Voice-agent infrastructure (assemble-your-own pipeline: voice + LLM + telephony) for phone/chat agents
+- **URL:** https://www.getmacha.com/blog/retell-ai-complete-guide
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** $10 free credits + 20 free concurrent calls (trial)
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Real-world production cost runs $0.13–$0.31/min — trial is for prototyping the agent flow, not volume. [Wave 9 A]
+
+#### Vapi ✅ commercial-safe
+- **What:** Developer-first voice AI platform — same assemble-your-own-pipeline model as Retell (phone + embedded chat)
+- **URL:** https://www.getmacha.com/blog/vapi-ai-pricing-explained
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** $5 free credits, $0/mo to start
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Core plan $29/mo; compare against Retell with our real call volume before committing. [Wave 9 A]
+
+#### Smallest.ai ✅ commercial-safe
+- **What:** Low-latency realtime TTS API (Waves) + AI voice agents (Atoms) — <100ms API latency, 30+ languages, 5-second voice cloning
+- **URL:** https://slashdot.org/software/comparison/Canonical-AI-vs-smallest.ai/
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** free trial + free version
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sub-100ms latency is the standout — worth benchmarking against Cartesia for realtime agents. [Wave 9 A]
+
+#### Azure AI Speech (F0) ✅ commercial-safe
+- **What:** Microsoft cloud TTS — neural + custom neural voices, SSML, voice tuning
+- **URL:** https://github.com/MicrosoftDocs/azure-ai-docs/blob/main/articles/ai-services/speech-service/speech-services-quotas-and-limits.md
+- **License:** Proprietary cloud terms — output is yours to use commercially (verified 2026-10-07)
+- **Free tier:** F0 free tier — 5M standard chars/mo (12 mo); 20 transactions/60s
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Custom Neural Voice trains on minutes of data — cheapest path to a proprietary character voice. [Wave 9 A]
+
+#### Google Cloud Text-to-Speech ✅ commercial-safe
+- **What:** Google cloud TTS — Standard, WaveNet and Chirp 3 HD voices, SSML, pitch/rate control
+- **URL:** https://yetiai.com/google-cloud-text-to-speech-review-best-for-developers/
+- **License:** Proprietary cloud terms — output is yours to use commercially (verified 2026-10-07)
+- **Free tier:** 1M characters/month free
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with existing Google workflows; Chirp 3 HD streaming allows 100 concurrent sessions per project. [Wave 9 A]
+
+#### Amazon Polly ✅ commercial-safe
+- **What:** AWS neural/generative TTS — lexicons, SSML, expressive voices
+- **URL:** https://dev.to/voice_developer/voice-ai-platforms-for-startups-cost-vs-quality-breakdown-ego
+- **License:** Proprietary cloud terms — output is yours to use commercially (verified 2026-10-07)
+- **Free tier:** 5M characters/month free for 12 months
+- **Repo lane:** trippedd (voice cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Generative voices allow 26 concurrent SynthesizeSpeech requests per account. [Wave 9 A]
+
+#### Oculus Lipsync SDK (Meta) ✅ commercial-safe
+- **What:** Realtime phoneme/viseme lip-sync SDK for Unity/Unreal — syncs 3D character mouths to pre-recorded audio or live mic input
+- **URL:** https://developers.meta.com/horizon/downloads/package/oculus-lipsync-unity/
+- **License:** Oculus SDK License — allows personal AND commercial use (verified 2026-10-07)
+- **Free tier:** fully free SDK
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Battle-tested realtime path for game characters; phoneme stream can also drive 2D mouth-swap rigs. [Wave 9 A]
+
+#### Sync Labs (sync.so) ⚠️ license-conditional
+- **What:** API-first lip-sync platform — REST/SDK, phoneme timing data + cloud render, up to 4K, active speaker detection, voice cloning
+- **URL:** https://sync.so/pricing?utm_source=email&utm_medium=loops&utm_campaign=credits+exhausted&utm_term=hobbyist&utm_content=learn-about-pricing&ref=https%3A%2F%2Fsync.so%2Fpricing&dub_id=zqk9SSXWhm9XUzJG
+- **License:** Proprietary — usage-based ($0.05/sec), no free tier found; Hobbyist $5/mo (verified 2026-10-07)
+- **Free tier:** none confirmed — paid from first use
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** /analyze endpoint returns phoneme timings to feed our own animation engine — best API option for dub pipelines if budget allows. [Wave 9 A]
+
+#### D-ID ⚠️ license-conditional
+- **What:** API-first talking-avatar platform — photo-to-video, real-time streaming avatars, 119 languages
+- **URL:** https://www.fahimai.com/heygen-vs-d-id
+- **License:** Proprietary — 14-day trial only, watermarked; Lite from $4.70/mo (verified 2026-10-07)
+- **Free tier:** 14-day trial (3–5 min)
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cheapest entry for API-driven avatars; trial is evaluation-only. [Wave 9 A]
+
+#### HeyGen ✅ commercial-safe
+- **What:** Talking-avatar video platform — 175+ language dubbing, templates, built-in editor, LiveAvatar interactive API
+- **URL:** https://dev.to/stimlau/6-best-heygen-alternatives-in-2026-tested-with-pricing-55fi
+- **License:** Proprietary — free plan output is usable (watermarked); check per-project terms (verified 2026-10-07)
+- **Free tier:** 3 videos/month (up to 1 min, watermarked); LiveAvatar free 10 credits/mo
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best avatar realism in the free tier; dubbing feature is directly useful for multilingual promo cuts. [Wave 9 A]
+
+#### Hedra ⚠️ license-conditional
+- **What:** Character-3 talking-character generator — lip-sync from one photo, audio-to-video with lip-sync strength control, anime-realism styles
+- **URL:** https://medium.com/@hizainasif/how-to-use-hedra-ai-to-create-realistic-talking-characters-in-2026-complete-guide-8b6b9f919e66
+- **License:** Proprietary — small one-time credit grant (20 credits ≈ 60–90s); Basic $20/mo (verified 2026-10-07)
+- **Free tier:** one-time ~20 credits
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Anime Realism style preset is relevant to the Wizard Gang cartoon tests; spend free credits on one character test. [Wave 9 A]
+
+#### Synthesia ✅ commercial-safe
+- **What:** Business avatar video platform — 200+ avatars, 140+ languages, collaboration features
+- **URL:** https://dev.to/stimlau/6-best-heygen-alternatives-in-2026-tested-with-pricing-55fi
+- **License:** Proprietary — free Basic plan output usable (watermarked, a few min/mo) (verified 2026-10-07)
+- **Free tier:** Basic free (watermarked)
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** L&D/governance-grade output; less useful for character work than Hedra/HeyGen. [Wave 9 A]
+
+#### Colossyan ✅ commercial-safe
+- **What:** Training-video avatar platform with SCORM support and quizzes
+- **URL:** https://dev.to/stimlau/6-best-heygen-alternatives-in-2026-tested-with-pricing-55fi
+- **License:** Proprietary — free Starter plan (20 NEO min/mo) (verified 2026-10-07)
+- **Free tier:** Starter free (20 min/mo)
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Generous free minutes; niche fit — tutorial/explainer content only. [Wave 9 A]
+
+#### Viggle ✅ commercial-safe
+- **What:** Character-motion/meme video generator — animate characters from images with lip-sync
+- **URL:** https://dev.to/stimlau/6-best-heygen-alternatives-in-2026-tested-with-pricing-55fi
+- **License:** Proprietary — free plan 5 videos/day (verified 2026-10-07)
+- **Free tier:** 5 free videos/day
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Meme/character motion, not presenters — fun testbed for stylized character lip-sync. [Wave 9 A]
+
+#### whisper-diarization ❓ unverified
+- **What:** Whisper ASR + NeMo speaker diarization pipeline — who-spoke-when transcripts for multi-speaker captioning
+- **URL:** https://github.com/MahmoudAshraf97/whisper-diarization
+- **License:** Unverified — repo carries a license badge but the license text was not confirmed (checked 2026-10-07)
+- **Free tier:** fully free (code)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diarization is the missing piece for dialogue-heavy captioning — verify license before wiring. [Wave 9 A]
+
+#### AssemblyAI ✅ commercial-safe
+- **What:** Speech AI API — accurate STT with speaker ID, sentiment, PII redaction; SOC 2 Type 2
+- **URL:** https://yetiai.com/assemblyai-review-best-for-transcription/
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** $5 free credits (pay-as-you-go $0.015/sec)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** API-first (needs code); best accuracy-per-dollar for batch captioning at volume. [Wave 9 A]
+
+#### Rev AI ⚠️ license-conditional
+- **What:** AI + human transcription — legal-grade reviewed transcripts, depositions, evidence files
+- **URL:** https://otter.ai/blog/best-automatic-transcription-tools?0db891cc_page=5&7bd4a6f3_page=2
+- **License:** Proprietary — free tier is 1 transcript only, then paid (verified 2026-10-07)
+- **Free tier:** 1 free transcript
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Human-review option is the differentiator for legal/compliance transcripts; overkill for routine captions. [Wave 9 A]
+
+#### Trint ⚠️ license-conditional
+- **What:** Newsroom-grade transcript editing and story building from audio/video
+- **URL:** https://dev.to/stimlau/best-ai-transcription-tool-in-2026-6-tested-for-accuracy-and-price-4b5d
+- **License:** Proprietary — 7-day trial, NO free plan; Starter $52/seat/mo (verified 2026-10-07)
+- **Free tier:** 7-day trial only
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trial is evaluation-only; story-building UX is the draw for interview content. [Wave 9 A]
+
+#### HappyScribe ⚠️ license-conditional
+- **What:** Transcription + subtitles in 60+ languages with optional human proofreading
+- **URL:** https://dev.to/stimlau/best-ai-transcription-tool-in-2026-6-tested-for-accuracy-and-price-4b5d
+- **License:** Proprietary — 10-min AI trial, unlimited recordings; Basic $8.50/mo (verified 2026-10-07)
+- **Free tier:** 10-min AI trial
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Human proofreading from $2.00/min is the quality escape hatch. [Wave 9 A]
+
+#### Descript ✅ commercial-safe
+- **What:** Transcribe-then-edit-audio/video-by-text — AI noise removal, filler-word removal, eye-contact correction
+- **URL:** https://dev.to/stimlau/best-ai-transcription-tool-in-2026-6-tested-for-accuracy-and-price-4b5d
+- **License:** Proprietary — free plan output usable (watermarked) (verified 2026-10-07)
+- **Free tier:** 1 media hr/mo, watermarked
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Text-based editing is the fastest way to rough-cut dialogue before caption export. [Wave 9 A]
+
+#### Otter.ai ✅ commercial-safe
+- **What:** Live meeting transcription with in-call editing, AI chat across meeting history, MCP server
+- **URL:** https://dev.to/stimlau/best-ai-transcription-tool-in-2026-6-tested-for-accuracy-and-price-4b5d
+- **License:** Proprietary — free plan output usable (verified 2026-10-07)
+- **Free tier:** 300 min/mo
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Meeting-capture oriented; useful for transcribing review/feedback sessions, not production captioning. [Wave 9 A]
+
+#### auto_subtitle (m1guelpf) ✅ commercial-safe
+- **What:** CLI that auto-generates and burns subtitles into video via ffmpeg + Whisper
+- **URL:** https://github.com/m1guelpf/auto-subtitle
+- **License:** MIT (verified 2026-10-07 — GitHub license field + README)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** `auto_subtitle video.mp4 --task translate` gives English subs from any language — simplest batch caption path. [Wave 9 A]
+
+#### yt-whisper (m1guelpf) ✅ commercial-safe
+- **What:** Generate VTT subtitle files for any YouTube video via yt-dlp + Whisper
+- **URL:** https://github.com/m1guelpf/yt-whisper
+- **License:** MIT (verified 2026-10-07 — GitHub license field + README)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference-research tool — pull subs from reference videos for style/timing study. Respect video owners' rights. [Wave 9 A]
+
+#### whisperer (hclivess) ✅ commercial-safe
+- **What:** Batch subtitle-generator GUI (PySide6) — Whisper via faster-whisper or whisper.cpp, VAD-snapped cue timing, subtitle resync
+- **URL:** https://github.com/hclivess/whisperer
+- **License:** MIT (verified 2026-10-07 — README)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GUI alternative to CLI captioning with a Sync tab for fixing drifted subs — good operator tool. [Wave 9 A]
+
+#### auto-subs (tmoroney) ⚠️ license-conditional
+- **What:** DaVinci Resolve-integrated auto-subtitle system (Lua server + Fusion macros) with Whisper + forced alignment
+- **URL:** https://github.com/tmoroney/auto-subs/blob/main/README.md
+- **License:** Code MIT, BUT optional MMS forced-alignment weights are CC-BY-NC-4.0 — non-commercial weights (verified 2026-10-07)
+- **Free tier:** fully free (code)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Word-level alignment is the prize; skip the NC weights for commercial work or replace the aligner. [Wave 9 A]
+
+#### subtitle (innovatorved) ✅ commercial-safe
+- **What:** Python subtitle-generation library — WhisperCpp transcriber + model manager, SRT output, Python API
+- **URL:** https://github.com/innovatorved/subtitle
+- **License:** MIT (verified 2026-10-07 — README)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean embeddable alternative to CLIs for wiring captioning into our own pipeline scripts. [Wave 9 A]
+
+#### Sonix ⚠️ license-conditional
+- **What:** Multilingual file transcription with custom dictionaries, speaker voiceprints, PII redaction (medical/legal strength)
+- **URL:** https://otter.ai/blog/best-automatic-transcription-tools?0db891cc_page=5&7bd4a6f3_page=2
+- **License:** Proprietary — pay-as-you-go $10/hr, no standing free tier (verified 2026-10-07)
+- **Free tier:** none (pay-as-you-go)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Custom dictionaries help domain jargon; pay-per-use keeps it cheap for one-off jobs. [Wave 9 A]
+
+#### Notta ✅ commercial-safe
+- **What:** Multilingual transcription (58 languages) with the most generous free tier in its class
+- **URL:** https://dev.to/stimlau/best-ai-transcription-tool-in-2026-6-tested-for-accuracy-and-price-4b5d
+- **License:** Proprietary — free plan output usable (verified 2026-10-07)
+- **Free tier:** 120 min/mo free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best free-tier pick for multilingual caption drafts. [Wave 9 A]
+
+#### oTranscribe ✅ commercial-safe
+- **What:** Free browser-based manual transcription — no signup, audio never leaves the computer, autosave, Markdown/Google Docs export
+- **URL:** https://anarlog.so/blog/free-transcription-software/
+- **License:** MIT, open source (verified 2026-10-07)
+- **Free tier:** fully free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No ASR — you type while it handles pause/rewind/timestamps. Privacy-first fallback when cloud is off the table. [Wave 9 A]
+
+#### MacWhisper ⚠️ license-conditional
+- **What:** Native Mac app wrapping local Whisper models — normal GUI over the terminal workflow
+- **URL:** https://anarlog.so/blog/free-transcription-software/
+- **License:** Proprietary — Mac-only, partly paid (verified 2026-10-07)
+- **Free tier:** free version with paid upgrades
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mac-only; whisperer covers the same ground cross-platform for free. [Wave 9 A]
+
+#### Subtitle Edit (Nikse) ⚠️ license-conditional
+- **What:** Full subtitle editor — 200+ formats, sync/adjust/repair, OCR for VobSub/Blu-ray subs, translation helpers (Windows/macOS/Linux)
+- **URL:** https://github.com/SubtitleEdit/subtitleedit
+- **License:** CONFLICTING ATTRIBUTIONS — GitHub repo metadata says MIT, third-party listings say GNU GPLv3; READ THE REPO LICENSE FILE before use (checked 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Most capable free subtitle editor; resolve the license conflict before any code integration — standalone tool use is fine either way. [Wave 9 A]
+
+#### Animation Desk (Kdan Mobile) ✅ commercial-safe
+- **What:** 2D animation app (Windows/Mac/iOS/Android) — frame-by-frame drawing, onion skin, built for cartoons and animatics
+- **URL:** https://slashdot.org/software/comparison/Animation-Desk-vs-Storyboard-Pro/
+- **License:** Proprietary — free version available (verified 2026-10-07)
+- **Free tier:** free version
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quick hand-drawn animatic boards on tablet; export and assemble in the NLE. [Wave 9 A]
+
+#### Stop Motion Studio ⚠️ license-conditional
+- **What:** Stop-motion capture app (iOS/Android/desktop) — onion skin, frame editor, direct video export
+- **URL:** https://Slashdot.org/software/comparison/Explaindio-vs-Stop-Motion-Studio/
+- **License:** Proprietary — $4.99 one-time; conflicting "free version" claims in listings (verified 2026-10-07)
+- **Free tier:** conflicting — assume paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for previz via pose-to-pose stop-motion of maquettes; verify current pricing before buying. [Wave 9 A]
+
+#### Toon Boom Storyboard Pro ⚠️ license-conditional
+- **What:** Industry-standard storyboarding — drawing tools, script import, animatic timeline, collaboration
+- **URL:** https://slashdot.org/software/comparison/Animation-Desk-vs-Storyboard-Pro/
+- **License:** Proprietary — 21-day trial; subscription after (verified 2026-10-07)
+- **Free tier:** 21-day trial
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The reference tool for board-driven animatics; trial is enough to evaluate the workflow against Storyboarder. [Wave 9 A]
+
+#### Express Animate (NCH) ⚠️ license-conditional
+- **What:** Motion-graphics/animation compositor — add animated text/effects over video and boards
+- **URL:** https://Sourceforge.net/software/compare/Animation-Desk-vs-Express-Animate/
+- **License:** Proprietary — free version available (non-commercial terms typical of NCH free tiers — verify) (verified 2026-10-07)
+- **Free tier:** free version
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cheap motion pass over static boards for animatic timing tests. [Wave 9 A]
+
+#### stylized-components (cortiz2894) ✅ commercial-safe
+- **What:** Reusable anime-inspired real-time rendering systems for the web — custom GLSL water, stylized grass, Three.js/React Three Fiber components
+- **URL:** https://github.com/cortiz2894/stylized-components
+- **License:** MIT (verified 2026-10-07 — GitHub license field)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Drop-in anime look for web players/pages — no baked textures, all procedural. [Wave 9 A]
+
+#### three-anime-style (xymeow) ✅ commercial-safe
+- **What:** Anime-style rendering for Three.js — three-tone cel shading, hand-drawn outlines, painted scenery, film texture; ships an AI-agent skill
+- **URL:** https://github.com/xymeow/three-anime-style
+- **License:** MIT (verified 2026-10-07 — GitHub license field)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Directly relevant to the Wizard Gang cartoon look — test against our character renders. [Wave 9 A]
+
+#### Anime Alchemist (tigerabrodi) ✅ commercial-safe
+- **What:** Free/open-source tool for creating anime characters and animations (React + Convex + Tailwind, Replicate-backed generation)
+- **URL:** https://github.com/tigerabrodi/animealchemist
+- **License:** MIT (verified 2026-10-07 — README)
+- **Free tier:** fully free (code; bring your own Replicate API key)
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference architecture for an anime character-generator front end; generation costs are on your API key. [Wave 9 A]
+
+#### MoeFlow (freedomofkeima) ✅ commercial-safe
+- **What:** Anime character recognition website — TensorFlow-based, anime face detection via nagadomi/animeface
+- **URL:** https://github.com/freedomofkeima/MoeFlow
+- **License:** MIT (verified 2026-10-07 — README; face-recognition feature by nagadomi, images belong to creators)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Old stack (TF 1.4) — value is the anime-face detection pipeline pattern, not the code. [Wave 9 A]
+
+#### MikuMikuMixed (importantimport) ✅ commercial-safe
+- **What:** Experimental WebXR MMD viewer — play MMD (PMD/PMX + VMD) content in the browser with WebXR
+- **URL:** https://github.Com/importantimport/mikumikumixed
+- **License:** MIT (verified 2026-10-07 — README)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Browser-native MMD playback could power web previz of dance/fight mocap on anime rigs. [Wave 9 A]
+
+#### Animaze ✅ commercial-safe
+- **What:** VTuber avatar software (ex-FaceRig) — 78pt face tracking, Leap Motion/Tobii support, VRM import
+- **URL:** https://gist.github.com/emilianavt/cbf4d6de6f7fb01a42d4cce922795794?permalink_comment_id=4723065
+- **License:** Proprietary — free tier available (various fees for extras) (verified 2026-10-07)
+- **Free tier:** free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Successor to FaceRig; free tier is enough to test avatar-driven performance capture. [Wave 9 A]
+
+#### PrprLive ✅ commercial-safe
+- **What:** 2D VTuber program — face tracking for Live2D-style models, no iPhone required
+- **URL:** https://gist.github.com/emilianavt/cbf4d6de6f7fb01a42d4cce922795794?permalink_comment_id=4723065
+- **License:** Proprietary — free, $9.99 DLC for extras (verified 2026-10-07)
+- **Free tier:** free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2D-model counterpart to the 3D VTuber apps — relevant if the cartoon goes 2D-rigged. [Wave 9 A]
+
+#### Warudo ✅ commercial-safe
+- **What:** Free VTuber software — MediaPipe/OpenSeeFace tracking, VMC protocol, VRM + WarudoMod models
+- **URL:** https://gist.github.com/emilianavt/cbf4d6de6f7fb01a42d4cce922795794?permalink_comment_id=4723065
+- **License:** Proprietary — free (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fully free with multi-sender VMC — best free 3D VTuber testbed alongside VSeeFace. [Wave 9 A]
+
+#### Kalidoface 3D ✅ commercial-safe
+- **What:** Free browser-based VTuber app — MediaPipe face tracking, VRM models, no install, no account
+- **URL:** https://gist.github.com/emilianavt/cbf4d6de6f7fb01a42d4cce922795794?permalink_comment_id=4723065
+- **License:** Proprietary — free (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zero-install test rig for VRM character performance — handy for quick mocap sanity checks. [Wave 9 A]
+
+#### Waidayo ✅ commercial-safe
+- **What:** Free iPhone VTuber app — ARKit face tracking, VRM models, gaze + eyebrow tracking
+- **URL:** https://gist.github.com/emilianavt/cbf4d6de6f7fb01a42d4cce922795794?permalink_comment_id=4723065
+- **License:** Proprietary — free (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** iPhone ARKit tracking is the cheapest quality face-capture available — pairs with VRM exports. [Wave 9 A]
+
+#### Waifu Diffusion ⚠️ license-conditional
+- **What:** Anime-styled latent text-to-image diffusion model (Stable Diffusion fine-tune on Danbooru)
+- **URL:** https://huggingface.co/hakurei/waifu-diffusion-v1-4
+- **License:** CreativeML OpenRAIL-M — use restrictions apply; commercial use allowed only with license terms passed to users (verified 2026-10-07)
+- **Free tier:** fully free (open weights)
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** RAIL is not OSI-open — read the use restrictions before shipping anything generated with it. [Wave 9 A]
+
+#### Style2Paints ❓ unverified
+- **What:** AI sketch colorization — paints anime sketches from a style reference image (V3/V4/V5)
+- **URL:** https://github.com/lllyasviel/style2paints/blob/master/V3/README.md
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** fully free (code + models)
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Classic anime colorization pipeline; verify license before integrating. [Wave 9 A]
+
+#### MMD-OpenGL ❓ unverified
+- **What:** OpenGL-based MMD player — reads PMX models + VMD motion, camera paths, facial blending, skinning
+- **URL:** https://github.com/GelzoneXUnsas/MMD-OpenGL
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference implementation for MMD-format playback outside the MMD app. [Wave 9 A]
+
+#### The Great 78 Project (Internet Archive) 🚫 NC-or-quarantine
+- **What:** 400,000+ digitized 78rpm records (1880–1960) — historical recordings, MP3 + 24-bit FLAC downloads
+- **URL:** https://en.wikipedia.org/wiki/The_Great_78_Project
+- **License:** DISPUTED — major labels (Sony/UMG/Concord) sued the Internet Archive over this collection; confidential settlement 2025; NOT safe for commercial use (verified 2026-10-07)
+- **Free tier:** free streaming/download
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. Do NOT ship any Great 78 audio in commercial work — rights are actively contested. [Wave 9 A]
+
+#### Scott Holmes Music 🚫 NC-or-quarantine
+- **What:** Royalty-free background music library (cinematic, corporate, acoustic, electronic) for creators
+- **URL:** https://scottholmesmusic.com/royalty-free-music/page/11/
+- **License:** FREE CC license is NON-COMMERCIAL ONLY — no monetization, ads, fundraising or commercial broadcast without a paid Standard License (verified 2026-10-07)
+- **Free tier:** free CC (non-commercial)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The free tier is a trap for monetized content — buy the Standard License before any commercial use. [Wave 9 A]
+
+#### AIVA ⚠️ license-conditional
+- **What:** AI composition platform — editable style-driven instrumentals
+- **URL:** https://www.thegeeksclub.com/best-ai-music-tools-for-youtube-shorts-in-2026/
+- **License:** Proprietary — free output is NON-COMMERCIAL (verified 2026-10-07)
+- **Free tier:** 3 downloads/month free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Editable scores are the draw (arrangement control AI beds don't give); commercial needs paid. [Wave 9 A]
+
+#### Boomy ⚠️ license-conditional
+- **What:** AI song maker — generate + release to Spotify/Apple Music/40+ platforms, vocal layering
+- **URL:** https://www.thegeeksclub.com/best-ai-music-tools-for-youtube-shorts-in-2026/
+- **License:** Proprietary — free plan is PERSONAL ONLY; Boomy retains ownership, commercial use needs Pro (verified 2026-10-07)
+- **Free tier:** 25 song saves/mo, 1 release/mo (personal)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fast song sketches; nothing free-tier may be monetized. [Wave 9 A]
+
+#### Mubert ⚠️ license-conditional
+- **What:** Generative royalty-free background music — Render (tracks), Studio (edit), API (realtime generation for apps/games)
+- **URL:** https://www.thegeeksclub.com/best-ai-music-tools-for-youtube-shorts-in-2026/
+- **License:** Proprietary — Ambassador free plan is NON-COMMERCIAL; commercial/monetized use starts at Pro with license certificates (verified 2026-10-07)
+- **Free tier:** 25 generations + 5 downloads/mo (non-commercial)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mubert API is the interesting piece (realtime generative music for games); Render tracks can't go on Spotify or Content ID. [Wave 9 A]
+
+#### Eleven Music ⚠️ license-conditional
+- **What:** ElevenLabs' AI music model — detailed vocal/instrumental edits
+- **URL:** https://www.thegeeksclub.com/best-ai-music-tools-for-youtube-shorts-in-2026/
+- **License:** Proprietary — commercial rights vary by plan (verified 2026-10-07)
+- **Free tier:** 10,000 credits/month free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same vendor as the voice stack — worth testing if we standardize on ElevenLabs. [Wave 9 A]
+
+#### Loudly ⚠️ license-conditional
+- **What:** AI music generation with fast remix-to-publish and social distribution
+- **URL:** https://www.thegeeksclub.com/best-ai-music-tools-for-youtube-shorts-in-2026/
+- **License:** Proprietary — free 30-second tracks; paid licensing depends on plan (verified 2026-10-07)
+- **Free tier:** free 30-sec generations
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Remix workflow is the differentiator; check plan terms before publishing. [Wave 9 A]
+
+#### Soundverse ⚠️ license-conditional
+- **What:** AI beat maker — instrumental beds with stem export for dialogue ducking
+- **URL:** https://www.thegeeksclub.com/best-ai-music-tools-for-youtube-shorts-in-2026/
+- **License:** Proprietary — commercial licenses on Creator & Pro plans (verified 2026-10-07)
+- **Free tier:** 1,000 signup tokens
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Stems matter for our mixes (ducking under dialogue) — test stem quality on the free tokens. [Wave 9 A]
+
+#### Treblo ⚠️ license-conditional
+- **What:** Mobile-first AI music generation with versioning
+- **URL:** https://www.thegeeksclub.com/best-ai-music-tools-for-youtube-shorts-in-2026/
+- **License:** Proprietary — consumer vs API terms differ; check before commercial use (verified 2026-10-07)
+- **Free tier:** unlimited consumer songs (free plan)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mobile sketching only; verify which tier covers our use before shipping anything. [Wave 9 A]
+
+#### audiohub ⚠️ license-conditional
+- **What:** Royalty-free music tracks — one free MP3 download per day, usable in commercial videos/podcasts with copyright notice
+- **URL:** https://audiohub.com/free-royalty-free-music/2
+- **License:** Proprietary free license — commercial use allowed WITH attribution/copyright notice; only the free-section tracks are free (verified 2026-10-07)
+- **Free tier:** 1 free track/day
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Slow-drip a BGM library one track a day; keep the attribution text with each file. [Wave 9 A]
+
+#### Beachfront B-Roll ✅ commercial-safe
+- **What:** Free HD stock video footage, timelapses and animated backgrounds for personal and commercial use
+- **URL:** https://technofizi.net/sitelike/mazwai.com
+- **License:** Royalty-free, free to download for personal and commercial use (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Timelapse + animated-background plates are directly useful for title/transition backplates. [Wave 9 A]
+
+#### Motion Places ✅ commercial-safe
+- **What:** Curated free stock footage — free HD downloads (4K clips $99)
+- **URL:** https://technofizi.net/sitelike/mazwai.com
+- **License:** Free HD downloads for projects (verified 2026-10-07)
+- **Free tier:** free HD; 4K paid
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Curated (small) library — quality over quantity for hero plates. [Wave 9 A]
+
+#### AllTheFreeStock ❓ unverified
+- **What:** Curated directory of free stock photos, audio and video across the web
+- **URL:** https://technofizi.net/sitelike/mazwai.com
+- **License:** Aggregator — each linked asset carries its own license; verify per item (checked 2026-10-07)
+- **Free tier:** free directory
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery tool, not a source — always check the license on the destination site. [Wave 9 A]
+
+#### Sonilo SFX ✅ commercial-safe
+- **What:** 3,400+ AI-generated sound effects in 66 categories — WAV + MP3, no account, no Content ID registrations
+- **URL:** https://sonilo.com/blog/comparisons/pixabay-music-sound-effects-alternatives-2026
+- **License:** Free for commercial use — personal, commercial, monetized videos, ads, client work, apps, games, no revenue cap, no credit (verified 2026-10-07)
+- **Free tier:** fully free (SFX library)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Note: Sonilo's MUSIC library is non-commercial on free — this entry is SFX only. [Wave 9 A]
+
+#### BandLab Sounds ✅ commercial-safe
+- **What:** 10,000+ royalty-free loops, samples and one-shots in WAV — packs by pro sound designers, new sounds weekly
+- **URL:** https://help.bandlab.com/hc/en-us/articles/360018942593-BandLab-Sounds
+- **License:** Royalty-free, unlimited, completely free to use — no caps, no subscription (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Requires free BandLab account for downloads; samples are music-oriented (loops/one-shots) — great for score beds. [Wave 9 A]
+
+#### Soundly ✅ commercial-safe
+- **What:** Sound-design app — smart search over local + cloud SFX, Final Cut/Premiere/Resolve/CapCut integration
+- **URL:** https://www.creativefieldrecording.com/2021/09/29/soundly-sound-browsing-app-updates/
+- **License:** Proprietary — free plan includes 3,000-sound cloud library (verified 2026-10-07)
+- **Free tier:** free plan (3,000 cloud SFX, 2,500 local files)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The workflow tool for the SFX lane — search-first sound design instead of folder spelunking. [Wave 9 A]
+
+#### Audio Design Desk ✅ commercial-safe
+- **What:** Sound-to-picture DAW — 20,000 sounds (SFX, montages, production music), built for editors/foley artists
+- **URL:** https://www.mixonline.com/technology/reviews/audio-design-desk-1-2
+- **License:** Proprietary — free version with 2,500 sounds (verified 2026-10-07)
+- **Free tier:** free version (2,500 sounds, 16 tracks)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free tier grants personal-use rights; higher tiers unlock internet/commercial licenses — check tier before shipping. [Wave 9 A]
+
+#### Ghosthack ⚠️ license-conditional
+- **What:** Sample packs, vocals, presets, MIDI and loops (cinematic, EDM, trap, hip-hop) — runs free-pack promotions
+- **URL:** https://www.youtube.com/watch?v=GGTmn1kGaI8
+- **License:** Proprietary — free packs are royalty-free per promotion; VERIFY PER PACK (verified 2026-10-07)
+- **Free tier:** periodic free packs (e.g. 20-pack holiday drops)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cinematic packs are the prize for trailer work; keep the license PDF from each downloaded pack. [Wave 9 A]
+
+#### Freesoundslibrary.com ❓ unverified
+- **What:** Large SFX collection for video clips, games, commercials, apps — "free to use"
+- **URL:** https://technofizi.net/sitelike/freesoundslibrary.com
+- **License:** Unverified — site claims "free to use" but full terms not confirmed (checked 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping any clip; prefer Freesound proper with explicit CC licenses. [Wave 9 A]
+
+#### FreeSoundeffects.com ❓ unverified
+- **What:** Free sound-effects download site with category browsing
+- **URL:** https://technofizi.net/sitelike/freesoundeffects.com
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms per clip before use. [Wave 9 A]
+
+#### MyNoise ❓ unverified
+- **What:** Customizable background noise/soundscape generator (donation-supported)
+- **URL:** https://www.Makeuseof.Com/how-to-create-sound-library-for-free/
+- **License:** Unverified — personal-use orientation; commercial terms not confirmed (checked 2026-10-07)
+- **Free tier:** free listening
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Great ambience reference generator; do not record-and-ship without confirming terms. [Wave 9 A]
+
+#### Ambient Mixer ❓ unverified
+- **What:** Browser-based ambient soundscape mixer with community presets
+- **URL:** https://www.Makeuseof.Com/how-to-create-sound-library-for-free/
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** free tier
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ambience sketching tool; verify terms before capturing output for production. [Wave 9 A]
+
+#### SoundEffects+ ❓ unverified
+- **What:** Free sound-effects downloads for media productions
+- **URL:** https://technofizi.net/sitelike/freesoundslibrary.com
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms per clip before use. [Wave 9 A]
+
+#### Together AI ⚠️ license-conditional
+- **What:** Inference API for 200+ open models (Llama, Qwen, DeepSeek) — OpenAI-compatible
+- **URL:** https://github.com/vhmns14/free-ai-api-tiers
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** $1 signup credit (no card); older promos were $25 — verify current offer
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One key for every open model family — best single API for model-switching experiments. [Wave 9 A]
+
+#### Fireworks AI ⚠️ license-conditional
+- **What:** Fast LLM + image inference API for open models
+- **URL:** https://github.com/vhmns14/free-ai-api-tiers
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** $1 free credits (no card)
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Speed-optimized inference; small credit grant is enough for eval runs. [Wave 9 A]
+
+#### Mistral AI (La Plateforme) ✅ commercial-safe
+- **What:** Mistral's API platform — Small/Medium/Large, Codestral, Pixtral; EU-hosted option
+- **URL:** https://github.com/Fahimh007/Free_API_list-
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** free experiment tier (1 req/sec, 500K tokens/min, 1B tokens/mo) + Codestral 30 RPM
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Most generous standing free tier of the frontier labs — good default for agent/R&D calls. [Wave 9 A]
+
+#### DeepSeek ⚠️ license-conditional
+- **What:** DeepSeek V3/R1/Coder API — near-frontier reasoning at the lowest price in class
+- **URL:** https://github.com/Fahimh007/Free_API_list-
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** ~5–10M signup tokens (30 days), then pay-as-you-go
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Promo tokens expire — treat as an eval window, not a free tier. [Wave 9 A]
+
+#### Cerebras ✅ commercial-safe
+- **What:** High-speed inference API (1,400–2,600 tok/sec) for open models incl. Qwen3 235B
+- **URL:** https://gist.github.com/GodozOF/e1545d40596babe419d4e5eb74794c7e
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** $5 free credits on signup; free tier with published limits
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fastest inference in class — use for latency-sensitive agent loops. [Wave 9 A]
+
+#### SambaNova Cloud ✅ commercial-safe
+- **What:** Fast inference for big open models (Llama 3.1 405B at 10 RPM)
+- **URL:** http://dev.to/kondasviktor/free-ai-api-keys-for-vibe-coding-2026-1fd6
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** free eval tier (no card)
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the few free ways to run 405B-class models. [Wave 9 A]
+
+#### NVIDIA NIM ✅ commercial-safe
+- **What:** Hosted NIM endpoints — 100+ models (Llama, DeepSeek-R1, Nemotron, Gemma), no daily token cap on some tiers
+- **URL:** https://github.com/vhmns14/free-ai-api-tiers
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** 1,000 free credits (no card)
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Huge model variety in one place — good for A/B testing model families. [Wave 9 A]
+
+#### Cohere ✅ commercial-safe
+- **What:** Command R+, Embed v4, Rerank API — strong for RAG pipelines
+- **URL:** https://github.com/Fahimh007/Free_API_list-
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** free tier — 20 RPM, 1,000 calls/month (no card)
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Embed + Rerank free tier is the cheapest way to prototype retrieval quality. [Wave 9 A]
+
+#### Jina AI ✅ commercial-safe
+- **What:** Reader (URL → LLM-ready markdown), Search, and embeddings APIs with official MCP server
+- **URL:** https://github.com/eater2/ai_agents_api_library
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** Reader keyless at 20 RPM forever; free key → 500 RPM + 10M one-time tokens
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** r.jina.ai is the backbone of our research fetching — keyless tier means no signup friction. [Wave 9 A]
+
+#### Tavily ✅ commercial-safe
+- **What:** Agent-first web search + extraction API (LangChain-native)
+- **URL:** https://github.com/idoy12/awesome-free-ai-apis
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** 1,000 credits/month (no card)
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Search + page extraction in one call — built for the research-agent loop. [Wave 9 A]
+
+#### Brave Search API ✅ commercial-safe
+- **What:** Independent web/image/video/news search index with LLM Context + Answers endpoints and official MCP server
+- **URL:** https://github.com/eater2/ai_agents_api_library
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** $5/month credits (~1,000 searches); card required at signup as anti-fraud
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Non-Google index gives different coverage — pair with Tavily for breadth. [Wave 9 A]
+
+#### Serper ⚠️ license-conditional
+- **What:** Google SERP API — titles/URLs/snippets, LangChain-integrated
+- **URL:** https://sourceforge.net/articles/best-web-search-apis-to-integrate-for-ai-agents/
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** 2,500 queries ONE-TIME (not recurring)
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One-time grant — spend it on a defined eval, not casual queries. [Wave 9 A]
+
+#### SiliconFlow ✅ commercial-safe
+- **What:** Free limited inference for open models (Qwen, DeepSeek, etc.)
+- **URL:** https://github.com/vhmns14/free-ai-api-tiers
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** free limited inference (no card)
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Extra free inference head for Qwen/DeepSeek overflow. [Wave 9 A]
+
+#### Z.AI (GLM) ✅ commercial-safe
+- **What:** Zhipu GLM API — several models flagged "Limited-time Free" ($0 in/out)
+- **URL:** https://gist.github.com/GodozOF/e1545d40596babe419d4e5eb74794c7e
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** limited-time free models
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Limited-time" means it can vanish — use for evals, don't build on it. [Wave 9 A]
+
+#### Nebius AI Studio ⚠️ license-conditional
+- **What:** Cloud inference studio with new-account free credits
+- **URL:** https://github.com/krishnamr2026/open_llm_api
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** free credits for new accounts
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Credit grant is one-time — fine for a single eval sprint. [Wave 9 A]
+
+#### Novita AI ⚠️ license-conditional
+- **What:** Inference API with trial credits for open models
+- **URL:** https://github.com/krishnamr2026/open_llm_api
+- **License:** Proprietary API terms (verified 2026-10-07)
+- **Free tier:** trial credits
+- **Repo lane:** trippedd (api tiers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Another trial-credit head for model evals. [Wave 9 A]

@@ -9,7 +9,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (111 rows · 105 distinct projects — append-only manifest; see duplicate mapping below)
+## Quarantined items (115 rows · 109 distinct projects — append-only manifest; see duplicate mapping below)
 
 ## Row-number convention + duplicate mapping (Wave 8 Lane B, 2026-10-07)
 
@@ -197,6 +197,10 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 108 | opensubtitles-api (Ivshti legacy JS client) | GPL-3.0-or-later (CORRECTED Wave 8 Lane B, 2026-10-07: README 'either version 3 of the License, or (at your option) any later version' — was pinned GPLv3) — the OpenSubtitles REST API service itself is a separate ⚠️ entry | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 109 | CCExtractor | GPL-2.0 (verified: GitHub API spdx 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 110 | LMMS | GPL-2.0 — SUPERSEDED by row 71 (same upstream project LMMS/lmms; duplicate row — see dedup mapping) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | SUPERSEDED — see row 71 |
+| 112 | WhisperSubTranslate (Blue-B) | GPL-3.0 (verified: repo README 'License — GPL-3.0', 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 113 | Subtitle Workshop (dekked/subtitleworkshop) | GNU/GPL 3 (verified: repo README 'released under the GNU/GPL 3 license', 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 114 | whisper-subs (ashlcx, Jellyfin plugin) | GPL-3.0 (verified: CLAUDE.md 'License is GPL-3.0', 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 115 | jev-subtitle-translator (geeklinkdev) | GPL-3.0-or-later (verified: CONTRIBUTING.md 'accepted under the repository license, GPL-3.0-or-later', 2026-10-07) | captions | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 111 | DEDUP NOTE — piper-tts / Piper (OHF-Voice) | GPL-3.0-or-later (see rows 20/41) | tts | — | n/a — mapping record, not a project | DEDUPED — rows 20 + 41 same upstream lineage (PyPI piper-tts 1.8.0 → github.com/OHF-voice/piper1-gpl); row 41 superseded by row 20 |
 
 ## Notes from Wave-8 Lane B quarantine reconciliation (Worker B, 2026-10-07)
@@ -227,3 +231,9 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Piper dedup (rows 20/41) — DUPLICATES, merged:** PyPI `piper-tts` 1.8.0 metadata (homepage = github.com/OHF-voice/piper1-gpl, author "The Home Assistant Authors", license GPL-3.0-or-later) proves the pip package IS the OHF-Voice/piper1-gpl repo — one project, two rows. Row 41 marked SUPERSEDED by row 20 (append-only — nothing renumbered); dedup-note row 111 appended as the mapping record. Catalog: the Wave-2 "Piper (OHF-Voice) ✅ commercial-safe" entry reframed to the doctrine-compliant ✅ standalone-tool-use framing with cross-reference to the canonical 🚫 entry and quarantine row 20.
 - **Counts after this wave:** 111 rows · 105 distinct projects (5 duplicate groups: aeneas 1/2 · Seed-VC 43/58 · so-vits-svc 24/65 · LMMS 71/110 · Piper 20/41). Row 111 is a dedup-note mapping record, not a project.
 - **No NEW GPL/AGPL items found** in this re-sweep — nothing appended beyond the dedup-note row 111.
+
+## Notes from Wave-9 Lane A catalog deepening (Worker A, 2026-10-07)
+
+- **4 NEW GPL rows appended (rows 112–115), all captions lane:** 112 WhisperSubTranslate (Blue-B) GPL-3.0 · 113 Subtitle Workshop (dekked/subtitleworkshop) GNU/GPL 3 · 114 whisper-subs (ashlcx Jellyfin plugin) GPL-3.0 · 115 jev-subtitle-translator (geeklinkdev) GPL-3.0-or-later. Each verified against an upstream source (repo README / CLAUDE.md / CONTRIBUTING.md) — never assumed. No duplicates with existing rows (dedupe grep clean).
+- **Near-miss, NOT quarantined:** Subtitle Edit (Nikse) shows CONFLICTING attributions — GitHub repo metadata says MIT, third-party listings say GNU GPLv3. Catalog entry carries ⚠️ license-conditional with explicit instruction to read the repo LICENSE file before any code integration; no quarantine row until the conflict resolves.
+- **Counts after this wave:** 115 rows · 109 distinct projects (duplicate groups unchanged: aeneas 1/2 · Seed-VC 43/58 · so-vits-svc 24/65 · LMMS 71/110 · Piper 20/41; row 111 is a dedup-note mapping record, not a project).

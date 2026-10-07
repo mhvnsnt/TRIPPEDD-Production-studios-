@@ -226,6 +226,7 @@ The editorial system must preserve both identities — a Wizard Gang segment ins
 
 Wizard Gang can be built from whatever visual material the studio has available:
 
+- **Series style refs (owner-supplied 2026-10-07, canon):** `assets/wizard-gang-style-refs/cartoonier/` (16 base-style group shots — the locked series look) and `assets/wizard-gang-style-refs/detailed/` (10 painterly shots for select moments, incl. the single sanctioned cross-faction summit wink). See the dir's README.md.
 - the 8 existing robed renders (`~/workspace/ashlane-art/shadow-wizard-gang/`) as reference/staging key art
 - canon GLB character models once the Forge3D rig-handoff lands (robed GLBs are a production requirement — the renders are images, not models)
 - real mocap, retargeted (see `production/WIZARD_GANG_SHORT_01/MOCAP_PLAN.md`)

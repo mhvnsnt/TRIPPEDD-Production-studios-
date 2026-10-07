@@ -8,7 +8,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Tool use ≠ code reuse:** running a GPL application as a standalone tool (e.g. opening Krita to paint) does not infect our pipeline — output artwork remains ours per the Krita/GIMP GPL FAQ doctrine. The quarantine targets *code integration*, not *tool usage*.
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 
-## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 + 9 Wave 4 + 10 Wave 5 A2 + 2 Wave 5 A3 = 77)
+## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 + 9 Wave 4 + 10 Wave 5 A2 + 2 Wave 5 A3 + 7 Wave 6 A = 84)
 
 | # | Name | License | Lane | Repo | Allowed use | Audit status |
 |---|------|---------|------|------|-------------|--------------|
@@ -115,6 +115,20 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 75 | Dragonfly Reverb | GPL-3.0 | plugin | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 76 | RobustVideoMatting | GPL-3.0 (Wave 5 A3, verified via upstream LICENSE) | video matting | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 77 | mmd_tools (MMD-Blender/blender_mmd_tools) | GPL-3.0 (Wave 5 A3, verified via GitHub license badge + README) | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 78 | APISR (Kiteretsu77/APISR) | GPL-3.0 (Wave 6 A, verified: root LICENSE fetched 2026-10-07 + README 'released under the GPL 3.0 license') | upscale/anime-tooling | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 79 | ADetailer (Bing-su/adetailer) | AGPL-3.0 (Wave 6 A, verified: root LICENSE.md is the AGPL-3.0 text, fetched 2026-10-07 — NOT MIT as previously assumed) | anime-tooling | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 80 | ComfyUI-Manager (ltdrdata/ComfyUI-Manager) | AGPL-3.0 (Wave 6 A, verified: root LICENSE.txt fetched 2026-10-07) | anime-tooling | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 81 | ComfyUI-Impact-Pack (ltdrdata/ComfyUI-Impact-Pack) | AGPL-3.0 (Wave 6 A, verified: root LICENSE.txt fetched 2026-10-07) | anime-tooling | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 82 | ComfyUI-VideoHelperSuite (Kosinkadink/ComfyUI-VideoHelperSuite) | AGPL-3.0 (Wave 6 A, verified: root LICENSE fetched 2026-10-07) | anime-tooling | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 83 | stable-diffusion-webui-forge (lllyasviel) | AGPL-3.0 (Wave 6 A, verified: root LICENSE.txt fetched 2026-10-07) | backgrounds | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 84 | OneTrainer (Nerogar/OneTrainer) | AGPL-3.0 (Wave 6 A, verified: root LICENSE.txt fetched 2026-10-07) | anime-tooling | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+
+## Notes from Wave-6 research (Worker A, 2026-10-07)
+
+- Wave 6 A added 7 quarantine rows (total 84). Key correction: ADetailer is AGPL-3.0 (root LICENSE.md is the AGPL text) — NOT MIT as the task brief assumed; quarantined immediately.
+- ComfyUI ecosystem split verified per-repo: ComfyUI-Manager, ComfyUI-Impact-Pack, ComfyUI-VideoHelperSuite are AGPL-3.0 (quarantined); ComfyUI-AnimateDiff-Evolved is Apache-2.0 code and ComfyUI-Frame-Interpolation is MIT code and comfyui_controlnet_aux is Apache-2.0 code — those three stay OUT of quarantine as code (they run inside the GPL-quarantined ComfyUI host, which is fine for standalone tool use).
+- NOT quarantined (verified Wave 6 A): ai-toolkit (Ostris) is MIT (not AGPL as assumed); Real-CUGAN upstream is MIT (not NC); StyleTTS 2 is MIT (not CC-BY-NC-ND); F5-TTS is MIT (not CC-BY-NC); GPT-SoVITS is MIT; SadTalker is now Apache-2.0 (NC restriction removed upstream); MagicAnimate is BSD-3-Clause; ToonCrafter is Apache-2.0; MimicMotion is Apache-2.0; VALL-E X (Plachtaa) is MIT; FOMM is MIT.
+- Custom non-commercial (NOT copyleft — research lane, no quarantine row needed): SUPIR, StableSR, CodeFormer (S-Lab-style NC), Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license), IndexTTS-2.5 weights (bilibili Model Use License).
 
 ## Notes from Wave-5 A2 research
 

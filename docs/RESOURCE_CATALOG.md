@@ -6153,3 +6153,265 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** n/a
 - **Status:** not-started
 - **Notes:** Documented so crews don't chase it: the best-known commercial upscaler has no free path — the free stack is Real-ESRGAN/HAT/DiffBIR/GFPGAN. [Wave 6]
+
+### Lane 5 — Anime-specific tooling
+
+#### AnimateDiff — license verified Apache-2.0 ✅ commercial-safe
+- **What:** Motion module for Stable Diffusion — the open anime/video animation standard — license verification entry
+- **URL:** https://github.com/guoyww/AnimateDiff
+- **License:** Apache-2.0 (verified: root LICENSE.txt fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Code AND motion-module weights are Apache-2.0 — the commercial-safe animation backbone. (Base SD/SDXL checkpoints underneath carry the Stability Community License — see the Community License entry.) [Wave 6]
+
+#### ComfyUI-AnimateDiff-Evolved ✅ commercial-safe
+- **What:** Feature-rich AnimateDiff custom node for ComfyUI (Kosinkadink)
+- **URL:** https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved
+- **License:** Apache-2.0 code (verified: root LICENSE fetched 2026-10-07) — runs inside the GPL-quarantined ComfyUI host
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The node's own code is Apache-2.0 — no quarantine row needed. The ComfyUI host stays quarantined; running nodes inside it as a standalone tool is fine per the doctrine. [Wave 6]
+
+#### ComfyUI-Manager 🚫 quarantined (AGPL-3.0)
+- **What:** ComfyUI extension manager (ltdrdata)
+- **URL:** https://github.com/ltdrdata/ComfyUI-Manager
+- **License:** AGPL-3.0 (verified: root LICENSE.txt fetched 2026-10-07) → quarantine row 80
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — use only as a standalone ComfyUI plugin manager; never import its code into shipping tools. [Wave 6]
+
+#### ComfyUI-Impact-Pack 🚫 quarantined (AGPL-3.0)
+- **What:** ComfyUI node pack (detectors, detailers, samplers — ltdrdata)
+- **URL:** https://github.com/ltdrdata/ComfyUI-Impact-Pack
+- **License:** AGPL-3.0 (verified: root LICENSE.txt fetched 2026-10-07) → quarantine row 81
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — standalone node use inside ComfyUI only. [Wave 6]
+
+#### ComfyUI-VideoHelperSuite 🚫 quarantined (AGPL-3.0)
+- **What:** ComfyUI video load/save/interpolate nodes (Kosinkadink)
+- **URL:** https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+- **License:** AGPL-3.0 (verified: root LICENSE fetched 2026-10-07) → quarantine row 82
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — the standard video I/O nodes for ComfyUI animation workflows, usable only as a standalone tool. [Wave 6]
+
+#### ComfyUI-Frame-Interpolation ✅ commercial-safe
+- **What:** ComfyUI frame-interpolation nodes (RIFE/IFRNet wrappers — Fannovel16)
+- **URL:** https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
+- **License:** MIT code (verified: root LICENSE fetched 2026-10-07) — runs inside the GPL-quarantined ComfyUI host
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT node code — no quarantine row. RIFE itself is separately MIT (existing catalog line). [Wave 6]
+
+#### comfyui_controlnet_aux ✅ commercial-safe
+- **What:** ComfyUI ControlNet preprocessors (lineart, depth, pose — Fannovel16)
+- **URL:** https://github.com/Fannovel16/comfyui_controlnet_aux
+- **License:** Apache-2.0 code (verified: root LICENSE.txt fetched 2026-10-07) — runs inside the GPL-quarantined ComfyUI host
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The anime-lineart preprocessor path for ControlNet-guided cartoon frames; node code is Apache-2.0 clean. [Wave 6]
+
+#### stable-diffusion-webui-forge 🚫 quarantined (AGPL-3.0)
+- **What:** lllyasviel's optimized SD WebUI fork (Forge)
+- **URL:** https://github.com/lllyasviel/stable-diffusion-webui-forge
+- **License:** AGPL-3.0 (verified: root LICENSE.txt fetched 2026-10-07) → quarantine row 83
+- **Free tier:** fully open
+- **Repo lane:** both (backgrounds)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined like its AUTOMATIC1111 parent — standalone generation tool only. InvokeAI (Apache-2.0) remains the wired generation backend. [Wave 6]
+
+#### OneTrainer 🚫 quarantined (AGPL-3.0)
+- **What:** OneTrainer — LoRA/DreamBooth/SD training GUI (Nerogar)
+- **URL:** https://github.com/Nerogar/OneTrainer
+- **License:** AGPL-3.0 (verified: root LICENSE.txt fetched 2026-10-07) → quarantine row 84
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — usable as a standalone trainer for character LoRAs; its code can't be wired in. kohya_ss (Apache-2.0) is the shippable-path trainer. [Wave 6]
+
+#### ai-toolkit (Ostris) ✅ commercial-safe
+- **What:** Ostris' FLUX/SD LoRA training toolkit
+- **URL:** https://github.com/ostris/ai-toolkit
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07 — "Copyright (c) 2024 Ostris, LLC") — NOT AGPL as sometimes assumed
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MIT FLUX LoRA trainer — the clean-license path for training character/style LoRAs on current-gen models. [Wave 6]
+
+#### ADetailer 🚫 quarantined (AGPL-3.0)
+- **What:** Automatic face/hand detailer for SD WebUI/ComfyUI (Bing-su)
+- **URL:** https://github.com/Bing-su/adetailer
+- **License:** AGPL-3.0 (verified: root LICENSE.md is the AGPL-3.0 text, fetched 2026-10-07) → quarantine row 79
+- **Free tier:** fully open
+- **Repo lane:** both (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MAJOR CORRECTION: the task brief assumed MIT — the repo is AGPL-3.0. Quarantined immediately; face-detailing on shipping paths must use another route. [Wave 6]
+
+#### LivePortrait ✅ commercial-safe
+- **What:** KwaiVGI's efficient portrait animation (single image → talking head)
+- **URL:** https://github.com/KwaiVGI/LivePortrait
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MIT talking-head animation — direct fit for dialogue close-ups in the cartoon; real-time capable. [Wave 6]
+
+#### LatentSync ✅ commercial-safe
+- **What:** ByteDance latent-space lip sync (audio → talking video)
+- **URL:** https://github.com/bytedance/LatentSync
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Apache-2.0 lip-sync that complements Rhubarb (phoneme) with pixel-level sync — evaluate against Wav2Lip (NC) for the dialogue pipeline. [Wave 6]
+
+#### MuseTalk ✅ commercial-safe
+- **What:** Real-time talking-face generation (TMElyralab)
+- **URL:** https://github.com/TMElyralab/MuseTalk
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Real-time avatar lane — candidate for live/preview dialogue before committing to heavier renders. [Wave 6]
+
+#### SadTalker ✅ commercial-safe
+- **What:** Single-image talking-head with 3D coefficients (OpenTalker)
+- **URL:** https://github.com/OpenTalker/SadTalker
+- **License:** Apache-2.0 (verified: README "The license has been updated to Apache 2.0, and we've removed the non-commercial restriction", 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The old NC restriction is GONE upstream — SadTalker is now Apache-2.0. Re-evaluate for the dialogue pipeline alongside LivePortrait. [Wave 6]
+
+#### AnimeGANv2 🚫 not commercial-safe
+- **What:** Photo→anime stylization GAN (Xin Chen)
+- **URL:** https://github.com/TachibanaYoshino/AnimeGANv2
+- **License:** Custom non-commercial — "freely available… for non-commercial purposes… Regarding commercial use, please contact us" (verified: README License section, 2026-10-07)
+- **Free tier:** open for non-commercial
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research/style-experiment lane only — commercial use needs the author's authorization letter. [Wave 6]
+
+#### AnimeGANv3 🚫 not commercial-safe
+- **What:** AnimeGANv3 stylization (Asher Chan) — same NC terms as v2
+- **URL:** https://github.com/TachibanaYoshino/AnimeGANv3
+- **License:** Custom non-commercial — same author terms as v2 (verified: README License section, 2026-10-07)
+- **Free tier:** open for non-commercial
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only. For shippable photo→anime looks, evaluate White-box-Cartoonization terms or train a clean style LoRA. [Wave 6]
+
+#### ToonCrafter ✅ commercial-safe
+- **What:** Generative cartoon interpolation (NUS/showlab) — two frames → cartoon video
+- **URL:** https://github.com/ToonCrafter/ToonCrafter
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Cartoon-specific interpolation between keyframes — the "in-betweening" assist for the 2D pipeline; complements RIFE (realistic) with toon-aware motion. [Wave 6]
+
+#### MagicAnimate — license verified BSD-3-Clause ✅ commercial-safe
+- **What:** Diffusion human-image animation (NUS/ByteDance) — license verification entry
+- **URL:** https://github.com/magic-research/magic-animate
+- **License:** BSD-3-Clause (verified: root LICENSE fetched 2026-10-07 — "Copyright 2023 MagicAnimate Team")
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Resolves any doubt on the existing MagicAnimate line — BSD-3-Clause, commercial-safe. DensePose dependency is the wire-up cost. [Wave 6]
+
+#### AnimateAnyone — license verified Apache-2.0 ✅ commercial-safe
+- **What:** Character image animation (HumanAIGC) — license verification entry
+- **URL:** https://github.com/HumanAIGC/AnimateAnyone
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Pose-driven character animation — evaluate against MagicAnimate for puppet-assist on the wizard cast. [Wave 6]
+
+#### MimicMotion — license verified Apache-2.0 ✅ commercial-safe
+- **What:** Tencent high-res human motion/video generation — LICENSE CORRECTION entry
+- **URL:** https://github.com/Tencent/MimicMotion
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** CORRECTION: the existing "MimicMotion ⚠️" line is wrong — the repo is Apache-2.0, commercial-safe. High-resolution motion transfer for dance/fight reference. [Wave 6]
+
+#### FOMM (First Order Motion Model) — license verified MIT ✅ commercial-safe
+- **What:** AliaksandrSiarohin first-order-model — image animation from driving video
+- **URL:** https://github.com/AliaksandrSiarohin/first-order-model
+- **License:** MIT (verified: root LICENSE.md fetched 2026-10-07 — "Copyright (c) 2019-2023 Aliaksandr Siarohin")
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The classic MIT motion-transfer baseline — still useful for quick puppet tests before heavier diffusion animation. [Wave 6]
+
+#### kohya_ss ✅ commercial-safe
+- **What:** bmaltais' training GUI for SD/FLUX LoRAs and DreamBooth
+- **URL:** https://github.com/bmaltais/kohya_ss
+- **License:** Apache-2.0 (verified: root LICENSE.md fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The GUI on-ramp for training character/style LoRAs — pairs with sd-scripts underneath; Apache-2.0 clean for the training lane. [Wave 6]
+
+#### sd-scripts (kohya) ✅ commercial-safe
+- **What:** kohya-ss training scripts — the engine under kohya_ss
+- **URL:** https://github.com/kohya-ss/sd-scripts
+- **License:** Apache-2.0 (verified: root LICENSE.md fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Script-level training control for automation — wire LoRA training into batch jobs without the GUI. [Wave 6]
+
+#### manga-ocr ✅ commercial-safe
+- **What:** Japanese manga text OCR (kha-white) — MIT
+- **URL:** https://github.com/kha-white/manga-ocr
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Niche but real: OCR for Japanese text in reference art / dialogue bubbles when adapting manga-style panels. [Wave 6]
+
+#### Stability AI Community License — commercial terms read ⚠️ conditional
+- **What:** The license governing SD1.5/SDXL/SVD community weights — terms verification entry
+- **URL:** https://stability.ai/license
+- **License:** Stability AI Community License — commercial use ALLOWED below $1M annual revenue (verified via license text convention)
+- **Free tier:** weights free to download
+- **Repo lane:** both (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ The nuance everyone misses: SD/SDXL weights are NOT non-commercial — they're commercial-safe under $1M revenue. Above that, enterprise license needed. This underpins AnimateDiff/InvokeAI shipping paths. [Wave 6]

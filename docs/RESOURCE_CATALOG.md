@@ -20252,7 +20252,7 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** ToS audit pocket: free download ≠ commercial-safe. Score reference / non-commercial play only; also has a commercial sublabel (Kahvi Commercial) — don't confuse the two. [Wave 19 Lane A]
+- **Notes:** ToS audit pocket: free download ≠ commercial-safe. Score reference / non-commercial play only; also has a commercial sublabel (Kahvi Commercial) — don't confuse the two. UPDATE 2026-10-07 (Wave 20 Lane A): full-collection audit of 267 audio items found **69 marked CC BY 1.0** (commercial-safe) in label-owner archive.org uploads (uploader nik@kahvi.org) — spot-checked kahvi014 (Vae — Mistral), kahvi015 (Esem — Outburst), kahvi018 (Jean Nine — Cramshafter), kahvi020 (DiE — 2D Life), kahvi032 (Xhale — Fall Sounds Like), kahvi052 (Pinza — Alternaton), kahvi071 (Aquaboogie — Intensive Care). Verify the licenseurl on each item page before use — the rest of the catalog stays NC/BY-SA. [Wave 19 Lane A]
 
 #### 8bitpeoples ❓ chip-music netlabel — license unverified
 - **What:** Pioneering US chiptune collective (est. 1999) — nullsleep, Bit Shifter, Trash80, GOTO80, Lo-Bat, x|k and more; archive.org + Free Music Archive mirrors.
@@ -20492,7 +20492,7 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Sub-labels: Anonymous Archives, [Esc.] Laboratory. The PD-tagged minority is worth cherry-picking per release. [Wave 19 Lane A]
+- **Notes:** Sub-labels: Anonymous Archives, [Esc.] Laboratory. The PD-tagged minority is worth cherry-picking per release. UPDATE 2026-10-07 (Wave 20 Lane A): label's own CC case-study statement confirms "others are public domain" — audit archive.org enoughrecords items for licenseurl=publicdomain marks and pull only those; everything else stays NC. [Wave 19 Lane A]
 
 #### 2063music ⚠️ NC — German "future music" netlabel (est. 1999)
 - **What:** Netlabel founded 1999 by 020200 — eclectic electronic/dub/ambient; plain-HTML site, releases mirrored on archive.org.
@@ -21013,3 +21013,163 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Key diligence backing for the netlabel ToS-audit pattern: "free download" usually means NC. [Wave 19 Lane A]
+
+#### Biodiversity Heritage Library (BHL) — 55M+ pages natural-history literature ⚠️ per-item check
+- **What:** World's largest open-access natural-history digital library (Smithsonian + NHM London + Kew + 100s of institutions): 55M+ pages, 150k+ PD illustrations via Flickr (flickr.com/biodivlibrary), high-res page/book downloads, no account.
+- **URL:** https://www.biodiversitylibrary.org (rights: Harvard BHL guide — "BHL does not hold copyright on any content"; statuses: "Public Domain", "No known copyright", "In copyright, digitized with permission" (usually CC BY-NC-SA 4.0); "All BHL metadata is licensed CC0"; Illinois guide — "Most images in the BHL Flickr collection are in the Public Domain")
+- **License:** ⚠️ Per-item check REQUIRED — most pre-1929 scans PD, "digitized with permission" items are CC BY-NC-SA. Use only items marked Public Domain / No known copyright.
+- **Free tier:** Free; high-res JPEG/PDF per page or whole book
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Antique botanical/zoological plates = unmatched period texture/matte-painting source. Cite holding institution per their attribution format. [Wave 20 Lane A]
+
+#### HathiTrust Digital Library — 19M+ digitized volumes, Full View = PD/open ⚠️ per-item check
+- **What:** 19M+ digitized books/journals from major research libraries (Google, Internet Archive, member scans). "Full View" items readable/downloadable by anyone; "Limited (search-only)" items are in-copyright.
+- **URL:** https://www.hathitrust.org/the-collection/ (rights: "Anyone can read titles available to them in the public domain or by open access licensing"; "Other items are open to read and/or download because they are in the public domain... or licensed as open access (both are listed as Full View)")
+- **License:** ⚠️ Per-item check — use only "Full View" items (PD or CC/open-access). Full-volume PDF download may need a member-institution login; page-level access is open.
+- **Free tier:** Free reading; download features vary by login
+- **Repo lane:** trippedd (backgrounds/research)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Period typography, engravings, and reference material at scale — filter to Full View before pulling. [Wave 20 Lane A]
+
+#### British Library Mechanical Curator — 1M+ PD book illustrations ✅ commercial-safe
+- **What:** 1M+ images machine-extracted from 65,000 out-of-copyright BL books (16th–19th c.), released to Flickr Commons: engravings, maps, decorative borders, early photos, ephemera.
+- **URL:** https://www.flickr.com/photos/britishlibrary/ (rights: BL statement via PetaPixel — "The release of these collections into the public domain represent the Library's desire to improve knowledge of and about them"; Wikimedia Commons marks them "free of known restrictions under copyright law, including all related and neighboring rights")
+- **License:** ✅ Public domain (BL's own release; out-of-copyright source books)
+- **Free tier:** Free; Flickr download + Wikimedia Commons mirrors
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Antique illustration/texture goldmine; metadata is thin (crowd-tagged) — search by subject, verify the source book date. [Wave 20 Lane A]
+
+#### Austrian National Library (ONB) / ANNO — 21M+ newspaper pages ⚠️ per-item check
+- **What:** ANNO = ONB's virtual newspaper reading room: 21M+ Austrian newspaper/magazine pages (1568–1948), free open access; ONB also publishes digitized holdings broadly online.
+- **URL:** https://anno.onb.ac.at/ (rights: onb.ac.at/en/use — "The Austrian National Library... does not assert any copyright user rights of its own to this content... expressly agrees to the subsequent use of this content in the resolution retrievable from the web"; caveat: Google-partner scans "may be used for a limited period of time and only for non-commercial purposes"; "the user must clarify any existing third-party rights... individually")
+- **License:** ⚠️ Per-item check — ONB's own scans are reuse-cleared; Google-cooperation scans are NC time-limited; third-party rights stay the user's responsibility.
+- **Free tier:** Free viewing/download at web resolution
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Period newspaper texture/typography for European scenes — prefer pre-1900 issues for PD safety. [Wave 20 Lane A]
+
+#### Biblioteca Digital Hispánica (BNE, Spain) — 200k+ PD titles ✅ CC-BY for PD images
+- **What:** National Library of Spain's digital library: 200k+ public-domain titles (books, prints, maps, photos) + 72M newspaper/magazine pages; PD images explicitly licensed for reuse.
+- **URL:** https://bdh.bne.es/ (rights: BNE reproduction rules — "Public use of BNE reproductions is free and does not require prior authorisation. Images in the public domain found on the bne.es/ website and accessible in the BNE's digital catalogues... are subject to a Creative Commons Attribution 4.0 International or equivalent licence"; "irrespective of whether the use is noncommercial public, commercial or academic")
+- **License:** ✅ CC BY 4.0 for public-domain images (attribution: "Image taken from the holdings of the Biblioteca Nacional de España")
+- **Free tier:** Free; no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the clearest national-library commercial-use grants found this wave — Spanish/colonial-era plates, maps, and prints. Credit line required. [Wave 20 Lane A]
+
+#### Library of Congress — Free to Use and Reuse sets ✅ commercial-safe
+- **What:** LOC's curated portal of digital-collection items "free to use and reuse": themed sets (Civil War drawings, baseball cards, advertising food, architecture...) drawn from millions of digitized items.
+- **URL:** https://www.loc.gov/free-to-use/ (rights: "This page features items from the Library's digital collections that are free to use and reuse. The Library believes that this content is either in the public domain, has no known copyright, or has been cleared by the copyright owner for public use"; plus LOC legal page — works by LOC employees "are also available for worldwide use and reuse under CC0 1.0 Universal")
+- **License:** ✅ PD / no-known-copyright / owner-cleared per the portal; CC0 for LOC-employee works
+- **Free tier:** Free; high-res downloads, JSON API (loc.gov)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The safe on-ramp to LOC's millions of items — pull ONLY from Free-to-Use sets or items whose own Rights & Access statement clears reuse; outside the portal, check per-item. Keyless loc.gov JSON API available for wiring. [Wave 20 Lane A]
+
+#### Bavarian State Library (BSB) Image Archive / MDZ ⚠️ per-item check
+- **What:** BSB's Bildarchiv (portraits, views, photographic archives) + Munich Digitization Center (MDZ, digitale-sammlungen.de): manuscripts, early prints, maps, photos from one of Europe's largest libraries.
+- **URL:** https://www.bsb-muenchen.de/en/collections/images/use-and-service/ (rights: "Copyright-free images can be downloaded directly and free of charge from the portal"; "The use of the images is subject to authorisation and usually subject to a fee" for copyrighted ones — license request via portal)
+- **License:** ⚠️ Per-item check — copyright-free images are free direct downloads; copyrighted images need a (usually paid) license request.
+- **Free tier:** Free for copyright-free images; fees for licensed ones
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong German/European historical plates — use the portal's copyright-free filter only. [Wave 20 Lane A]
+
+#### Genetic Trance (Ukraine) — 600+ releases, CC0 ✅ commercial-safe
+- **What:** Ukrainian experimental netlabel (est. ~2008, M_x_G): 600+ releases — dark ambient, drone, noise, witch house, field recordings; MP3/WAV/FLAC via archive.org, all label-owner uploads.
+- **URL:** https://archive.org/details/01_20220719_20220719_2300 (label discography index; release pages e.g. https://archive.org/details/GT585 — rights: item metadata licenseurl "http://creativecommons.org/publicdomain/zero/1.0/", uploader alexios@ukr.net (label operator))
+- **License:** ✅ 583 clean-licensed of 921 audio items in full-collection audit 2026-10-07 (566 CC0 + 6 PDM + 11 CC-BY; spot-checked GT585, GTI013, GT270, gt358, gt529) — audit tool: tools/music/wave20_laneA_netlabel_audit.py, proof in tools/music/evidence_wave20_laneA/
+- **Free tier:** Free downloads, no account
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Largest clean-licensed netlabel find this wave — CC0 drone/ambient/noise is direct horror/tension scoring material. Verify the licenseurl on each release page before pulling (a few releases carry other licenses). [Wave 20 Lane A]
+
+#### Treetrunk (Thomas Park / mystified) — generative PD catalog ❓ per-release check
+- **What:** Netlabel of generative musician Thomas Park (aka mystified/DJ_Iterate): 800+ releases of Python-generative ambient/dub/glitch, all label-owner uploads on archive.org.
+- **URL:** https://archive.org/details/treetrunk (collection; release pages e.g. https://archive.org/details/OverEasy — rights: "Usage: Public Domain Mark 1.0", uploader mystifiedthomas@gmail.com (the label operator himself))
+- **License:** ❓ Per-release check — 530 clean of 821 audio items in full-collection audit 2026-10-07 (428 PDM + 102 CC-BY; PDM finds: K_Sigma_Don, OverEasy, ambsphere, ProbableMusic, bohemiansonata); BUT 207 NC + 80 BY-SA/BY-ND items share the catalog, and Eno-derived works (MusicForAirportsInDub, InTheBushOfDub) are NOT clean — pull only items whose own page shows PDM or plain CC-BY.
+- **Free tier:** Free downloads (often 24-bit FLAC + MP3 + OGG)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PDM marks are made by the artist himself = strong provenance; generative ambient is ideal underscore. Hard rule: PDM/CC-BY marks only, never the Eno/Bryne-derived items. [Wave 20 Lane A]
+
+#### noisecollector — lo-fi oddities, CC-BY ✅ commercial-safe
+- **What:** Long-running outsider/lo-fi netlabel: dozens of releases (lo-fi rock, spoken oddities, synth experiments); label-owner uploads on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Anoisecollector (release pages e.g. https://archive.org/details/Fancy_Pants_1 — rights: licenseurl "http://creativecommons.org/licenses/by/3.0/", uploader noisecollector@gmail.com)
+- **License:** ✅ 180 clean of 354 audio items (179 CC BY 3.0 + 1 BY 2.5) in full-collection audit 2026-10-07 (spot-checked Fancy_Pants_1, Eclecticity, technae, pluggo, cliff); 145 BY-SA/BY-ND items need per-release review before any adaptation.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quirky lo-fi character music — comedy-scene scoring. Attribution required per CC-BY. [Wave 20 Lane A]
+
+#### oloil — Japanese experimental, CC-BY 4.0 ✅ commercial-safe
+- **What:** Japanese experimental netlabel: noise, harsh ambient, and underground releases with Japanese-titled catalog; label-owner uploads on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Aoloil (release pages e.g. https://archive.org/details/Katatitokai — rights: licenseurl "https://creativecommons.org/licenses/by/4.0/", uploader ktktkk@gmail.com)
+- **License:** ✅ 513 clean of 522 audio items (370 CC BY 4.0 + 87 BY 3.0 + 56 BY 2.1) in full-collection audit 2026-10-07 (spot-checked Katatitokai, KnK_KTTSK, GingahaSutekinaZetuboukuiki, ControlledBlueLava)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC-BY 4.0 (latest version, international) — cleanest license version in the long tail. Harsh-noise end of the spectrum; audition before scoring use. [Wave 20 Lane A]
+
+#### r-archives (Mikel R. Nieto) — field recordings, Public Domain Mark ❓ per-release check
+- **What:** Sound-artist Mikel R. Nieto's R-Archives: 100+ field-recording and sound-art releases (Barcelona, Basque country, industrial sites); artist's own uploads on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Ar-archives (release pages e.g. https://archive.org/details/r-archives-033 — rights: licenseurl "https://creativecommons.org/publicdomain/mark/1.0/", uploader mikelrnieto@gmail.com (the artist))
+- **License:** ✅/❓ 61 of 62 audio items marked Public Domain Mark 1.0 in full-collection audit 2026-10-07 (spot-checked r-archives-033, r-archives-069-1, r-archives-005); PDM is "no known copyright" rather than a license — strong here since the artist himself applies it to his own recordings.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Field recordings double as SFX beds — industrial, natural, and urban ambiences with artist-applied PDM marks. [Wave 20 Lane A]
+
+#### deepxrec / Shoki (Mr.Dee, Russia) — CC-BY electronic ✅ commercial-safe
+- **What:** Russian electronic netlabel (Shoki series + Prak/Sho subseries): deep techno, dub, ambient from Mr.Dee, Olympic Smoker, Razxca and others; label uploads on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Adeepxrec (release pages e.g. https://archive.org/details/shoki013a — rights: licenseurl "http://creativecommons.org/licenses/by/3.0/", uploader dimonu@uralweb.ru)
+- **License:** ✅ 61 clean of 599 audio items (all CC BY 3.0) in full-collection audit 2026-10-07 (spot-checked shoki013a, shoki018, shoki024, prak008, sho-s07) — BUT 524 items are NC: this is a mostly-NC label, cherry-pick the CC-BY items only.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean-licensed deep techno/dub — nightclub/street-scene scoring. Attribution required. [Wave 20 Lane A]
+
+#### hazard_records (Spain) — experimental, CC0 ✅ commercial-safe
+- **What:** Spanish experimental netlabel (Javier Piñango / ankitoner): noise, electroacoustic, and conceptual releases (hr001–hr102+); label uploads on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Ahazard_records (release pages e.g. https://archive.org/details/hr097 — rights: licenseurl "http://creativecommons.org/publicdomain/zero/1.0/", uploader at@ankitoner.com (label operator))
+- **License:** ✅ 38 clean of 103 audio items (31 CC0 + 7 PDM) in full-collection audit 2026-10-07 (spot-checked hr097, hr078, hr091, hr095, hr099, hr101)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 experimental/noise — no attribution needed. (Distinct from the French "HAZARD RECORDS" on Bandcamp — verify you are on the Spanish netlabel's archive.org collection.) [Wave 20 Lane A]
+
+#### kraimusic (Krai) — CC-BY ✅ commercial-safe
+- **What:** Small netlabel (Krai): electronic releases; label-owner uploads on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Akraimusic (release pages e.g. https://archive.org/details/trK-2 — rights: licenseurl "http://creativecommons.org/licenses/by/3.0/", uploader onlyrealkrai@gmail.com)
+- **License:** ✅ 60 clean of 168 audio items (36 CC BY 4.0 + 24 BY 3.0) in full-collection audit 2026-10-07 (spot-checked trK-2, trK-4, pun-pun-hop); 71 NC items excluded.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Small but clean — long-tail filler for scoring variety. [Wave 20 Lane A]
+
+#### ozkye-sound-netlabel (Italy) — CC-BY/CC0 ✅ commercial-safe
+- **What:** Italian sound-art netlabel (Ozkye Sound): "Arte nel rumore" series and live recordings; label uploads on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Aozkye-sound-netlabel (release pages: https://archive.org/details/oz034 [CC-BY 3.0], https://archive.org/details/oz039 [CC0]; uploader ozkyesound@yahoo.it)
+- **License:** ✅ 9 clean of 106 audio items (5 CC0 + 2 PDM + 2 CC BY 3.0) in full-collection audit 2026-10-07 (spot-checked oz034, oz039); 74 NC items excluded.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Italian sound-art long tail — clean dual-license finds. [Wave 20 Lane A]

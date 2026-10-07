@@ -2778,7 +2778,7 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** WIRED-PARTIAL — lean --no-deps install, `from dia.model import Dia` OK; generation blocked (6.44GB fp32 weights; upstream GPU-only, CPU support "coming soon"). Lane: `tools/voice/dia/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
-- **Notes:** Dialogue-native TTS is ideal for multi-character cartoon scenes. Audition/R&D/animatics OK; cast primary voices on Zonos until owner rules on the research-intent language [Wave 5]
+- **Notes:** Dialogue-native TTS is ideal for multi-character cartoon scenes. Audition/R&D/animatics OK; cast primary voices on Zonos until owner rules on the research-intent language [Wave 5]. **Wave 6 re-verified live (2026-10-07, commit 876125e): README disclaimer + Apache-2.0 terms unchanged; badge stands. Full read: `tools/voice/DIA_COMMERCIAL_READ.md`**
 
 #### Orpheus-TTS ✅
 - **What:** Expressive 3B text-to-speech with emotion and style tags
@@ -2808,7 +2808,7 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** WIRED-PARTIAL — repo cloned, modeling code present; generation blocked (5.41GB/2.04GB weights vs free disk). Lane: `tools/voice/vibevoice/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
-- **Notes:** 🚫 RESEARCH-ONLY — scratch/evaluation only, never in monetized episodes. CASTING KILLER: VibeVoice-Realtime-0.5B removes the acoustic tokenizer to PREVENT voice cloning by design, embeds an audible AI disclaimer + watermark in every output. Not a casting engine [Wave 5]
+- **Notes:** 🚫 RESEARCH-ONLY — scratch/evaluation only, never in monetized episodes. CASTING KILLER: VibeVoice-Realtime-0.5B removes the acoustic tokenizer to PREVENT voice cloning by design, embeds an audible AI disclaimer + watermark in every output. Not a casting engine [Wave 5]. **Wave 6 re-verified live (2026-10-07, commit 1541f59 + 1.5B model card): research-only designation + MIT-vs-intent analysis unchanged; badge stands. Full read: `tools/voice/VIBEVOICE_COMMERCIAL_READ.md`**
 
 #### F5-TTS 🚫
 - **What:** Flow-matching non-autoregressive TTS, fast high-quality zero-shot cloning
@@ -3914,7 +3914,7 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Repo lane:** trippedd (lip-sync)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5 (native integration)
 - **Status:** WIRED-PARTIAL — SDK download requires Meta login (owner action: sign in → download → unzip → stage `LibOVRLipSync/<platform>/libovrlipsync.*` + `Include/OVRLipSync.h` into `tools/lipsync/ovr-lipsync/sdk/`). Exact owner steps + integration paths in lane README. Do NOT commit binary to git until audio-3.3 license text is read. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
-- **Notes:** Lowest-latency viseme path for game-engine characters. §2.1 "Oculus Approved Products" clause needs an owner read of the audio-3.3 variant before shipping inside desktop pipeline tools [Wave 5]
+- **Notes:** Lowest-latency viseme path for game-engine characters. §2.1 "Oculus Approved Products" clause needs an owner read of the audio-3.3 variant before shipping inside desktop pipeline tools [Wave 5]. **Wave 6 (2026-10-07): no login attempted; EULA re-cross-checked via 4 published license mirrors (operative clauses consistent with Wave 5 §2.1 for-charge read); canonical developer.oculus.com/licenses/ page HTTP 403 from sandbox + downloads page login-gated → in-zip audio-variant text remains the final authority. Full staging + EULA doc: `tools/lipsync/OVRLIPSYNC_STAGING.md`. Badge stands: commercial-OK-per-license-text / VERIFY-AUDIO-VARIANT-BEFORE-SHIP**
 
 #### Ashes nijilive rig proof (Wave 4, god-molecule) ✅ commercial-safe
 - **What:** First real character rig on the nijigenerate/Inochi2D toolchain: Ashes (scarlet robe, grill smile) as a 15-part / 24-param nijilive rig with posed proof renders

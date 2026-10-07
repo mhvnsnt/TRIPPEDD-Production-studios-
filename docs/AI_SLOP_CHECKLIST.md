@@ -22,6 +22,7 @@
 ## Framing & composition
 - [ ] **S10 — No cropped heads/feet.** Full figures with headroom/footroom in every frame. Outpaint, never center-crop, when reframing aspect ratios. *Seed: 16:9 v1 cropped 4 shots; rebuilt as v2 (2026-10-07).*
 - [ ] **S11 — Robe colors locked.** Ashes scarlet · Onyx green · Theory purple · Cipher yellow · Echo pink · Static deep blue · Hollow orange · Sombra black/purple trim · Kiko white fur. No drift.
+- [ ] **S17 — No repeated scenes, no frozen segments.** Every story beat gets a NEW visual — never replay the same shot 2+ times with tiny variations, never hold a freeze frame where motion belongs. *Seed: EP01 1:48–2:10 replayed the BBQ lineup 3–4x then froze; replaced with new scene (owner critique #1, 2026-10-07).*
 
 ## Canon guards
 - [ ] **S12 — The two winks stay unstated.** The 5-of-9 overlap (Cipher/Echo/Onyx/Static/Hollow = five robed figures) and Ashes-as-Narrator are visible, NEVER explained on screen.

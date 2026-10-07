@@ -152,8 +152,13 @@
 **STATIC:**
 > "Cipher, do NOT— he's gonna do it. He's gonna eat concrete. SOMEBODY FILM THIS."
 
-**CIPHER** (feral Blackheart, taking the bet — authentic fragments from his Bannon dialogue):
-> "He sees you watching! No no no — the cuts! Stronger and stronger and stronger!"
+**CIPHER** (feral Blackheart, taking the bet — owner's directed patter):
+> "I bet I can. Bet bet bet, I bet I can do it, I know I can. He knows. He sees you. The rain!"
+
+*He eats concrete. Grabs his head, manic smile spreading, writhing on the ground holding his knee.*
+
+**CIPHER:**
+> "Aaaw man, he knowsss... he knowsss. Cuts... cuttsssss."
 
 ### S23 — STUDIO (3:32–3:41)
 
@@ -221,9 +226,9 @@
 ## LINE TALLY
 
 - **STATIC (READY — Enzo clone pipeline exists):** 25 lines (P1–P2 + L1–L23). The main voice in the episode mix.
-- **CIPHER (READY — style pull in progress):** 1 line (C1, the trick bet — feral 2026 Lio Rush).
+- **CIPHER (READY — owner's directed feral patter):** 2 lines (C1 the bet — "I bet I can. Bet bet bet...", C2 the fail — "he knowsss... cuttsssss" + writhing).
 - **SOMBRA (Damian Priest likeness):** 1 line (H3 — speaks; voice work after owner script approval).
 - **NARRATOR (PENDING — Bill $aber clone not yet landed):** 2 lines (N1, N2). Voice-only; no figure.
 - **HELD (scripted, visual-only this episode):** 3 lines — H1 ONYX, H2 ASHES, H4 KIKO.
-- **Total: 32 numbered lines. ALL DRAFT — owner approves every one before any voice work.**
+- **Total: 33 numbered lines. ALL DRAFT — owner approves every one before any voice work.**
 - **Not written (deliberate):** THEORY, ECHO, HOLLOW — speaking style unknown or no voice found; written around, never invented.

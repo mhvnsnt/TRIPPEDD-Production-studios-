@@ -8,7 +8,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Tool use ≠ code reuse:** running a GPL application as a standalone tool (e.g. opening Krita to paint) does not infect our pipeline — output artwork remains ours per the Krita/GIMP GPL FAQ doctrine. The quarantine targets *code integration*, not *tool usage*.
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 
-## Quarantined items (26)
+## Quarantined items (27)
 
 | # | Name | License | Lane | Repo | Allowed use | Audit status |
 |---|------|---------|------|------|-------------|--------------|
@@ -31,13 +31,14 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 17 | OpenShot | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 18 | Papagayo-NG | GPL-2.0 | lipsync | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 19 | Pencil2D | GPL-2.0-only | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 20 | Power Sequencer | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 21 | RHVoice | GPL-2.0 engine (lib LGPL-2.1-or-later but MAGE dep pushes combo to GPL-3.0) (verified via upstream README license section); RHVoice Lab VOICES are CC-BY-NC-ND 4.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 22 | Shotcut | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 23 | so-vits-svc | AGPL-3.0 (verified via LICENSE badge in upstream README; was incorrectly assumed MIT) | voice-clone | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 24 | Synfig Studio | GPL-3.0 | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 25 | TupiTube | GPL-2.0-or-later | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
-| 26 | Video2X | AGPL-3.0 (verified) | upscale | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 20 | piper-tts | GPL-3.0-or-later (verified from PyPI metadata, 2026-10-07) | tts | god-molecule | separate local process only — never linked into shipping code | PENDING |
+| 21 | Power Sequencer | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 22 | RHVoice | GPL-2.0 engine (lib LGPL-2.1-or-later but MAGE dep pushes combo to GPL-3.0) (verified via upstream README license section); RHVoice Lab VOICES are CC-BY-NC-ND 4.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 23 | Shotcut | GPL-3.0-or-later (verified) | compositing | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 24 | so-vits-svc | AGPL-3.0 (verified via LICENSE badge in upstream README; was incorrectly assumed MIT) | voice-clone | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 25 | Synfig Studio | GPL-3.0 | 2d-animation | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 26 | TupiTube | GPL-2.0-or-later | 2d-animation | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 27 | Video2X | AGPL-3.0 (verified) | upscale | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 
 ## Notes from Wave-1 research
 
@@ -48,4 +49,4 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - Papagayo-NG is GPL — quarantined; Rhubarb Lip Sync (MIT) is the wired lip-sync path.
 - Shotcut, Olive, Flowblade, LosslessCut, OpenShot are GPL; Video2X and FlowFrames are AGPL — quarantined; Pitivi is LGPL-2.1 and stays off this list.
 - eSpeak-NG and RHVoice are GPL — quarantined; note RHVoice Lab's prebuilt *voices* are CC-BY-NC-ND — never ship those voices regardless.
-- Piper: pin the archived `rhasspy/piper` (MIT); active development moved to `OHF-Voice/piper1-gpl` (GPL) — do not upgrade across that line.
+- Piper CORRECTION 2026-10-07: the pip-installable `piper-tts` 1.8.0 is GPL-3.0-or-later per its own PyPI metadata (OHF-voice/piper1-gpl) — quarantined. Wired only as a separate local process, never linked. The archived rhasspy/piper MIT version is not what pip installs; do not treat any `pip install piper-tts` as MIT.

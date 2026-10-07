@@ -151,3 +151,13 @@ per character in `tools/voice/zonos/` so takes are reproducible.
 documented); hybrid = CUDA-kernel-blocked (mamba-ssm has no CPU path).
 Import/install wiring on a CPU box is proven; synthesis needs a CUDA card with
 6 GB+ VRAM.
+
+## Wave 10 re-verification (2026-10-07 — sandbox still GPU-less)
+
+- Weight sizes re-verified byte-identical via HF API + HTTP HEAD on resolve
+  URLs: transformer `model.safetensors` = **3,248,848,864 B** (unchanged);
+  hybrid = **3,303,692,816 B** (unchanged).
+- Upstream repo frozen since 2025-03-05 (HEAD `bc40d98`); the packaging bug is
+  STILL present — `pyproject.toml` has `include = ["zonos"]` with no `zonos.*`,
+  so the shallow-clone + patch workaround in the handoff remains required.
+- Nothing else in this runbook changed.

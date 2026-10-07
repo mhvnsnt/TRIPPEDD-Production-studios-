@@ -49,8 +49,10 @@ use; the research-only verdict covers the whole lane.
 
 | Artifact | Size |
 |---|---|
-| `microsoft/VibeVoice-Realtime-0.5B` (HF, ungated, `license:mit`) | **~1.02 GB** (HF API figure, Wave 5 catalog note — plausible for a 0.5B model; treat as approximate) |
-| repo clone + venv + torch | ~4 GB |
+| `microsoft/VibeVoice-Realtime-0.5B` (HF, ungated, `license:mit`) | **2.04 GB** (`model.safetensors`, verified 2026-10-07, Wave 10) — ⚠️ the HF API's ~1.02 GB figure was **~2× under-reported**, the same metadata pattern seen with Zonos/Dia. Do not budget 1 GB. |
+| repo clone + venv + torch | ~4–5 GB |
+
+> **Disk floor (corrected 2026-10-07):** budget **~6–7 GB** (was "~5 GB").
 
 ## Clone + install recipe
 
@@ -73,6 +75,10 @@ supported research paths, in order:
 
 1. **The upstream demo notebook** — `demo/vibevoice_realtime_colab.ipynb`
    (follow it on the GPU box; it is the only upstream-blessed path to audio).
+2. **`demo/vibevoice_realtime_demo.py`** (added upstream by 2026-10-07, Wave 10
+   check) — a non-Colab realtime demo script in the same repo; try this if the
+   notebook environment fights you. Verify its args against the repo at runtime
+   — it was not executed in this sandbox.
 2. Community third-party integrations (e.g. Esperanto's `vibevoice` provider) —
    Wave 4 documented the state of a clean clone in
    `tools/voice/PROOFS_WAVE4_TTS.md`; re-verify before relying on any of them.
@@ -109,3 +115,14 @@ TTS inference at real-time quality. More importantly, the **90-minute
 level** — plan the series' ensemble-dialogue lane around Zonos (casting) and
 Dia (dialogue scenes), with VibeVoice strictly as an R&D curiosity until
 upstream's intent changes.
+
+## Wave 10 re-verification (2026-10-07 — sandbox still GPU-less)
+
+- Weight size CORRECTED: `microsoft/VibeVoice-Realtime-0.5B` = **2.04 GB**
+  (`model.safetensors`), not ~1.02 GB — the HF API figure was ~2× under-reported.
+  Disk floor raised to ~6–7 GB.
+- Repo tree still has NO restored TTS code (2025-09-05 removal stands); the
+  research-only README intent is verbatim unchanged.
+- New upstream artifact: `demo/vibevoice_realtime_demo.py` — a non-Colab
+  realtime demo script, listed as alternative path #2 above (unexecuted in this
+  sandbox).

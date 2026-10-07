@@ -132,3 +132,10 @@ python generate.py --task ti2v-5B --size 1280*720 \
 
 I2V generation entirely. Weight staging, the diffusers import proof, and prompt
 design all work on a CPU box — the 5B DiT's diffusion sampling does not.
+
+## Wave 10 re-verification (2026-10-07 — sandbox still GPU-less)
+
+- `Wan-AI/Wan2.2-TI2V-5B` re-verified via recursive HF file list:
+  **34,203,123,497 B = 34.2 GB** (unchanged). Per-file sizes match the table
+  above (DiT shards 9.83 / 10.0 / 0.18 GB; T5 11.36 GB; VAE 2.82 GB).
+- Nothing else in this runbook changed.

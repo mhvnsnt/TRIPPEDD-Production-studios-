@@ -20243,3 +20243,83 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Source of several pocket-4 leads; NSD.Lib, NRTDRV, OFGS, MSXMusic Editor are future-lane candidates pending license checks. [Wave 19 Lane A]
+
+#### Kahvi Collective ⚠️ NC-only — Finland/Helsinki netlabel (demoscene)
+- **What:** Long-running (est. 1998) demoscene netlabel — 400+ releases (ambient, IDM, downtempo) from 100+ artists; MP3/OGG downloads via kahvi.org, Scene.org FTP, Bandcamp, archive.org.
+- **URL:** http://www.kahvi.org/
+- **License:** ⚠️ Creative Commons Attribution-NonCommercial-NoDerivatives (verified 2026-10-07 via multiple third-party sources incl. paperblog profile; FMA mirrors show CC BY-NC-SA) — no commercial use, no derivatives.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ToS audit pocket: free download ≠ commercial-safe. Score reference / non-commercial play only; also has a commercial sublabel (Kahvi Commercial) — don't confuse the two. [Wave 19 Lane A]
+
+#### 8bitpeoples ❓ chip-music netlabel — license unverified
+- **What:** Pioneering US chiptune collective (est. 1999) — nullsleep, Bit Shifter, Trash80, GOTO80, Lo-Bat, x|k and more; archive.org + Free Music Archive mirrors.
+- **URL:** https://netlabelguide.com/netlabel/8bitpeoples
+- **License:** ❓ "no license specifyed yet. you must not use any of the provided material before you have checked the labels website" (sonicsquirrel label registry, verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ToS audit pocket: treat all 8bp releases as all-rights-reserved until each item's page is checked. [Wave 19 Lane A]
+
+#### Monotonik ⚠️ NC — pioneering IDM netlabel
+- **What:** Net.music label since May 1996 (founded by h0l) — 300+ tracks of IDM-ish electronics from Lackluster, Bogdan Raczynski (Rephlex), BrothomStates (Warp), Proem (Merck) and more; MP3 and tracker .mod files.
+- **URL:** http://sonicsquirrel.net/detail/label/monotonik/231/rpage/2/apage/8
+- **License:** ⚠️ "freely downloadable and distributable under a Creative Commons license that allows free non-commercial distribution" (label statement via sonicsquirrel registry, verified 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Sister breakbeat sublabel Mono211. The included .mod tracker files are a bonus format for the music lane. [Wave 19 Lane A]
+
+#### Ektoplazm ⚠️ NC-only — world's largest free psytrance portal
+- **What:** Free music distribution portal + psytrance netlabel founded 2001 by DJ Basilisk — tens of millions of downloads, MP3/FLAC/WAV releases across psytrance, techno, downtempo.
+- **URL:** https://www.patreon.com/ektoplazm/about
+- **License:** ⚠️ Releases are "under a Creative Commons license for noncommercial usage" (label site copy, verified 2026-10-07 via multiple Ektoplazm release pages).
+- **Free tier:** Free downloads (MP3/FLAC/WAV)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ToS audit pocket: CC-for-noncommercial only — massive scale does not clear commercial use. [Wave 19 Lane A]
+
+#### phonoCAKE ⚠️ NC — electronica netlabel
+- **What:** Electronica netlabel (est. 2008) with active release schedule through at least 2025 — electro, dub, glitch, IDM from Modul, ETI, Madstyle and more.
+- **URL:** http://sonicsquirrel.net/detail/label/phonocake/624/rpage/7/apage/2
+- **License:** ⚠️ Releases tagged CC BY-NC-ND / BY-NC-SA per release (verified 2026-10-07 via sonicsquirrel release index) — all NC, check ND vs SA per release.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Related labels per registry: Bump_Foot, Jahtari, Enough Records, Fuselab — good lead list for future audits. [Wave 19 Lane A]
+
+#### Acroplane ⚠️ CC (terms unverified) — Belfast electronica netlabel
+- **What:** Belfast free electronica netlabel — voted Netlabel of the Year 2009 (Phlow/Nettare) and 2 years running by Japan's Music Forest.
+- **URL:** https://blend-corp.com/post/319632245/acroplane-netlabel-of-the-year-2009
+- **License:** ⚠️ Published under Creative Commons per Phlow Magazine coverage (verified 2026-10-07); exact CC variant per release not pinned — assume NC until checked.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 19 Lane A]
+
+#### Dusted Wax Kingdom ⚠️ NC-only — Varna, Bulgaria downtempo netlabel
+- **What:** Bulgarian netlabel (Varna) — blunted downtempo beats, abstract hip-hop, trip-hop, lo-fi chilled grooves; 380+ releases (DWK series), MP3 only.
+- **URL:** https://dustedwax.org/
+- **License:** ⚠️ Explicit upstream statement: "free to listen, free to download and free to use in non-commercial way under the terms of Creative Commons" (dustedwax.org intro, crawled 2026-10-07).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ToS audit pocket: one of the clearest NC statements in the scene — perfect example of why "free netlabel" ≠ commercial-safe. [Wave 19 Lane A]
+
+#### Bump Foot ❓ Japan non-profit netlabel — license unverified
+- **What:** Non-profit Japanese netlabel (est. 2005, Tatsu Suzuki) — two branches (Bump side: techno/house; Foot side: ambient/IDM); 400+ releases, highest non-Japanese artist count of any Japanese netlabel.
+- **URL:** https://dirty.radio/episodes/1mc-no-40-bumpfoot/
+- **License:** ❓ Non-profit, free releases; specific per-release license terms not verified this pass.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Sibling Japanese labels from the same scene (Maltine, Bunkai-Kei, Trekkie Trax, ALTEMA, MarginalRec.) are future-lane audit candidates. [Wave 19 Lane A]

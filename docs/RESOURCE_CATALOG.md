@@ -6001,3 +6001,155 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** n/a
 - **Status:** not-started
 - **Notes:** Documented so wiring crews don't waste time: the two industry-standard boarding tools have no usable free tier — use PanelForge/Storyboarder/Boords instead. [Wave 6]
+
+### Lane 4 — Upscalers / restoration
+
+#### HAT (Hybrid Attention Transformer) ✅ commercial-safe
+- **What:** SOTA transformer image SR (XPixelGroup) — beats SwinIR on classic SR benchmarks
+- **URL:** https://github.com/XPixelGroup/HAT
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The quality upgrade path from SwinIR for hero stills — heavier, but Apache-2.0 clean. Pre-trained models on HF. [Wave 6]
+
+#### SUPIR 🚫 not commercial-safe
+- **What:** Diffusion-based photo-realistic restoration/upscaling (SDXL prior) — license verification
+- **URL:** https://github.com/Fanghua-Yu/SUPIR
+- **License:** Custom "Non-Commercial Use Only Declaration" in README (verified via upstream README text 2026-10-07) — "made available for use, reproduction, and distribution strictly for non-commercial purposes"
+- **Free tier:** open for non-commercial
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — the NC declaration is explicit and survives the Apache-style open-source grant. Never run episode frames through SUPIR for shipping. [Wave 6]
+
+#### DiffBIR ✅ commercial-safe
+- **What:** Blind image restoration with diffusion prior (XPixelGroup) — handles real-world degradations
+- **URL:** https://github.com/XPixelGroup/DiffBIR
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The commercial-safe answer to SUPIR/SeeSR-class diffusion restoration — same job, Apache-2.0 license. [Wave 6]
+
+#### StableSR 🚫 not commercial-safe
+- **What:** Diffusion-based SR via Stable Diffusion prior — license verification
+- **URL:** https://github.com/IceClear/StableSR
+- **License:** Custom non-commercial (verified: root LICENSE.txt fetched 2026-10-07 — S-Lab-style research license)
+- **Free tier:** open for non-commercial
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only. Use DiffBIR (Apache-2.0) for the same diffusion-restoration job on shipping paths. [Wave 6]
+
+#### Real-CUGAN (bilibili/ailab upstream) — MIT verified ✅ commercial-safe
+- **What:** Bilibili AI Lab's anime-specialist upscaler — UPSTREAM license verification
+- **URL:** https://github.com/bilibili/ailab/tree/main/Real-CUGAN
+- **License:** MIT (verified: upstream Real-CUGAN/LICENSE fetched 2026-10-07 — "Copyright (c) 2022 bilibili")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CORRECTION of the old NC suspicion — upstream is plain MIT. 2x/3x/4x SE models are the fastest anime upscalers per quality point; nihui's ncnn-Vulkan ports inherit the MIT terms. [Wave 6]
+
+#### CodeFormer 🚫 not commercial-safe
+- **What:** Transformer face restoration (VQGAN codebook) — license verification
+- **URL:** https://github.com/sczhou/CodeFormer
+- **License:** Custom non-commercial (verified: root LICENSE fetched 2026-10-07 — S-Lab research license)
+- **Free tier:** open for non-commercial
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — face-restoration for character close-ups must use GFPGAN (Apache-2.0) instead on shipping paths. [Wave 6]
+
+#### GFPGAN ✅ commercial-safe
+- **What:** Tencent ARC face restoration (GAN prior) — the commercial-safe face fixer
+- **URL:** https://github.com/TencentARC/GFPGAN
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Face-restoration lane for upscaled cartoon frames — Apache-2.0 where CodeFormer is NC. v1.4 model is the standard pick. [Wave 6]
+
+#### waifu2x-converter-cpp ✅ commercial-safe
+- **What:** Fast waifu2x converter (C++/OpenCV/OpenCL/CUDA) by DeadSix27
+- **URL:** https://github.com/DeadSix27/waifu2x-converter-cpp
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CLI-friendly waifu2x with OpenCL/CUDA backends — scriptable batch upscaling that fits the FFmpeg pipeline better than the GUI forks. [Wave 6]
+
+#### Real-ESRGAN x4plus_anime_6B — weights license read ✅ commercial-safe
+- **What:** The anime-tuned 6-block Real-ESRGAN model — weights-license verification (complements the existing Real-ESRGAN line)
+- **URL:** https://github.com/xinntao/Real-ESRGAN
+- **License:** BSD-3-Clause project; weights released under the same project terms (verified via repo)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The 6B anime model is the quality pick over the faster animevideov3 for hero frames; license is clean for shipping. [Wave 6]
+
+#### Real-ESRGAN animevideov3 — weights license read ✅ commercial-safe
+- **What:** The fast anime-video Real-ESRGAN variant (tiny 1.3MB fp16) — weights-license verification
+- **URL:** https://github.com/xinntao/Real-ESRGAN
+- **License:** BSD-3-Clause project; weights released under the same project terms (verified via repo)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Speed pick for full-episode passes — the tiny model runs in real time on modest GPUs; pair with RIFE for the upscale+interpolate chain. [Wave 6]
+
+#### OpenCV dnn_superres ✅ commercial-safe
+- **What:** OpenCV's DNN super-resolution module (FSRCNN/ESPCN/LapSRN/EDSR models)
+- **URL:** https://github.com/opencv/opencv_contrib (dnn_superres module)
+- **License:** Apache-2.0 (OpenCV license — verified via project license)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zero-new-dependency upscaling — OpenCV is already in the pipeline, so dnn_superres is the lightest wire-up for 2x/3x/4x stills. [Wave 6]
+
+#### EDVR ✅ commercial-safe
+- **What:** Video restoration with deformable convolutions (NTU/XPixelGroup) — multi-frame SR/deblur
+- **URL:** https://github.com/xinntao/EDVR
+- **License:** Apache-2.0 (verified: README "This project is released under the Apache 2.0 license", 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Multi-frame video SR — research-grade wire-up, but Apache-2.0 clean for the deblur/SR lane when single-frame models smear motion. [Wave 6]
+
+#### APISR 🚫 quarantined (GPL-3.0)
+- **What:** Anime Production-oriented Image SR — quality anime upscaler, GPL code
+- **URL:** https://github.com/Kiteretsu77/APISR
+- **License:** GPL-3.0 (verified: root LICENSE fetched 2026-10-07 + README "released under the GPL 3.0 license") → quarantine row 78
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Good anime SR quality, but GPL-3.0 code — quarantined per standing rules; standalone research use only until audit. Use Real-CUGAN (MIT) for shipping anime upscales. [Wave 6]
+
+#### Upscayl — AGPL-3.0 verified 🚫 quarantined
+- **What:** Popular upscaling GUI app — license verification entry (complements the existing Upscayl ❓ line + quarantine row 47)
+- **URL:** https://github.com/upscayl/upscayl
+- **License:** AGPL-3.0 (verified via upstream LICENSE) → quarantine row 47 (already listed)
+- **Free tier:** free app
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the existing ❓: Upscayl IS AGPL-3.0. Fine as a desktop tool for one-off upscales; its code can never be wired into the pipeline. [Wave 6]
+
+#### Topaz Video AI — paid-only honest negative 🚫 not commercial-safe
+- **What:** Topaz Video AI / Gigapixel — NO free tier (honest negative entry)
+- **URL:** https://www.topazlabs.com/
+- **License:** Proprietary commercial — no free tier (verified via vendor pricing)
+- **Free tier:** none (paid only)
+- **Repo lane:** trippedd (upscale)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** n/a
+- **Status:** not-started
+- **Notes:** Documented so crews don't chase it: the best-known commercial upscaler has no free path — the free stack is Real-ESRGAN/HAT/DiffBIR/GFPGAN. [Wave 6]

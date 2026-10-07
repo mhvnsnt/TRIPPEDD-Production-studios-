@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 117 rows · 111 distinct projects (reconciled Wave 10 Lane B, 2026-10-07):** license families — AGPL 20 rows · GPL 95 rows (incl. -or-later/-only variants) · LGPL-3.0 1 row (marytts — SCOPE NOTE: delist recommendation pending owner verdict, stays quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 11 · lip-sync 9 · TTS 8 · anime tooling 8 · SFX 7 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
+- **Quarantined (copyleft) — 119 rows · 113 distinct projects (reconciled Wave 11 Lane C, 2026-10-07):** license families — AGPL 21 rows · GPL 96 rows (incl. -or-later/-only variants) · LGPL-3.0 1 row (marytts — SCOPE NOTE: delist recommendation pending owner verdict, stays quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 11 · lip-sync 9 · TTS 8 · anime tooling 8 · SFX 7 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
 
 - **Non-commercial / research-only — research lane only, never shipped (Wave-1 list, 17):** Spine (Esoteric Software) (Proprietary commercial (trial = evaluation only)); PureRef (Proprietary; free Personal license (non-commercial)); Wav2Lip (Custom non-commercial (personal/research only)); Coqui XTTS v2 (CPML 1.0 (Coqui Public Model License) on the XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)); Bark (suno-ai) (MIT code BUT README states model is CC-BY 4.0 NC due to EnCodec neural-codec backend (verified via README text quoted in forks)); BBC Sound Effects Archive (RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music press + BBC terms)); Stable Video Diffusion (Stability AI Community License (non-commercial)); LTX-Video (Apache-2.0 (code) + LTX Open Weights / Community License (weights)); HunyuanVideo (Tencent Hunyuan Community License Agreement (custom, verified)); SkyReels-V2 (Skywork Community License (custom, verified)); Pika (free tier) (Pika Terms of Service (proprietary)); Runway (free tier) (Runway Terms of Use (proprietary)); Luma (free tier) (Luma Terms (proprietary)); Hailuo AI / MiniMax (free tier) (MiniMax Terms (proprietary)); Kling AI (free tier) (Kling Terms (proprietary)); Pixverse (free tier) (Pixverse Terms (proprietary)); LTX Studio (free tier) (LTX Studio Terms (proprietary)) Later waves added more NC/research-gated items (not in the original 17 — documented in the wave notes): Spark-TTS + F5-TTS NC weights; IndexTTS (bilibili Model Use License); SUPIR, StableSR, CodeFormer, Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license); PlayHT/PlayAI (shut down 2025-12-31); Dia/VibeVoice (permissive licenses but vendor research-intent terms — see docs/VOICE_COMMERCIAL_USE_WAVE5.md).
 
@@ -9345,7 +9345,7 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Status:** not-started
 - **Notes:** Programmatic plate processing/denoise/upscale pipelines; wire as dynamically-linked framework only (weak-copyleft watchlist — see docs/LICENSE_QUARANTINE.md Scope; pending owner verdict). [Wave 8 A; verified Wave 10 B]
 
-#### AviSynth+ ✅ commercial-safe
+#### AviSynth+ — standalone tool use ✅ commercial-safe
 - **What:** Open-source scriptable frameserver for video post-production (non-linear editing without temp files)
 - **URL:** https://en.wikipedia.org/wiki/AviSynth
 - **License:** GPL-2.0-or-later (verified 2026-10-07 via upstream license.rst + avisynth.h header) — narrow C-interface exception: independent modules via avisynth.h may ship under their own terms with Avisynth source copy; as a tool, rendered output is yours — do not redistribute modified tool binaries without source
@@ -10934,22 +10934,22 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 #### MB-Lab 🚫 not commercial-safe (QUARANTINED)
 - **What:** Parametric human-model generator addon for Blender (successor of ManuelbastioniLAB)
 - **URL:** https://github.com/animate1978/MB-Lab
-- **License:** GPL-3.0 (verified 2026-10-07 via repo license.txt) — QUARANTINE row 116
+- **License:** GPL-3.0 (verified 2026-10-07 via repo license.txt) — QUARANTINE row 118
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (anime tooling)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started · **QUARANTINED (GPL)**
-- **Notes:** 🚫 GPL-3.0 code — research lane only, never wired into shipping paths. See docs/LICENSE_QUARANTINE.md row 116. [Wave 10 Lane A]
+- **Notes:** 🚫 GPL-3.0 code — research lane only, never wired into shipping paths. See docs/LICENSE_QUARANTINE.md row 118. [Wave 10 Lane A; row ref corrected Wave 11 Lane C]
 
 #### MakeHuman app 🚫 not commercial-safe (QUARANTINED)
 - **What:** Parametric 3D humanoid modeler application
 - **URL:** https://github.com/makehumancommunity/makehuman
-- **License:** AGPL-3.0 (code — verified 2026-10-07 via LICENSE.CODE.md) — QUARANTINE row 117
+- **License:** AGPL-3.0 (code — verified 2026-10-07 via LICENSE.CODE.md) — QUARANTINE row 119
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (anime tooling)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started · **QUARANTINED (AGPL)**
-- **Notes:** 🚫 AGPL-3.0 code — research lane only. Its CC0 *assets* are separately cataloged as commercial-safe. See docs/LICENSE_QUARANTINE.md row 117. [Wave 10 Lane A]
+- **Notes:** 🚫 AGPL-3.0 code — research lane only. Its CC0 *assets* are separately cataloged as commercial-safe. See docs/LICENSE_QUARANTINE.md row 119. [Wave 10 Lane A; row ref corrected Wave 11 Lane C]
 
 #### VRoid Hub ❓ unverified
 - **What:** pixiv's sharing platform for VRoid/VRM avatar models
@@ -11436,3 +11436,297 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 ## Entry count — Wave 10 Lane A
 
 99 new `####` entries appended (15 BG plates · 16 storyboarding/animatic · 36 anime VRM/MMD · 32 per-uploader CC0 packs) → **1101 total** honest entries. Quarantine rows 118–119 added (MB-Lab GPL-3.0, MakeHuman app AGPL-3.0). Wired: tools/vrm/blender_vrm_smoke/ (VRM-Addon-for-Blender headless smoke test, proof-verified), tools/bg-plates/pull_plate.py (Prelinger plate pull, proof-verified), tools/storyboard/animatic.py (CSV→animatic assembler, proof-verified).
+
+## Entry count — Wave 11 Lane C (quarantine audit)
+
+29 new `####` entries appended — reconciliation-gap fill: every quarantine row 85–115 now has a dedicated catalog entry (rows 85–110 were manifest-only since Wave 7 A; rows 112–115 manifest-only since Wave 9 A). All licenses re-verified against upstream sources 2026-10-07 (GitHub API spdx_id / raw LICENSE / README license section). Badge fixes this wave: AviSynth+ header corrected to the standalone-tool-use convention (already carried the QUARANTINED flag); MB-Lab catalog row refs 116 → 118; MakeHuman app catalog row refs 117 → 119. Manifest correction: row 104 canonical repo is brigitte-bigi/sppas (brigittebigi/sppas 404s — identity corrected, license AGPL-3.0-or-later confirmed). → **1135 total** honest entries.
+
+#### essentia (MTG) — standalone tool use ✅ commercial-safe
+- **What:** C++/Python audio analysis + music information retrieval library (spectral, tonal, rhythmic descriptors)
+- **URL:** https://github.com/MTG/essentia
+- **License:** AGPL-3.0 (verified: upstream README license badge, 2026-10-07) — QUARANTINE row 85
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started · **QUARANTINED (AGPL)**
+- **Notes:** Code integration barred; standalone analysis binaries for lip-sync research only. Commercial license available from MTG-UPF (the audit path). [Wave 11 Lane C]
+
+#### G'MIC (GreycLab) — standalone tool use ✅ commercial-safe
+- **What:** Full-featured open-source image processing framework (filters, inpainting, denoise, artistic effects)
+- **URL:** https://gmic.eu
+- **License:** CeCILL-2.1 (verified: gmic.eu + gmic 3.2.5 release notes, 2026-10-07) — QUARANTINE row 86
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (strong copyleft)**
+- **Notes:** CeCILL-2.1 is French GPL-compatible STRONG copyleft — kept quarantined regardless of GPL/AGPL letter. Tool use only (gmic CLI/Qt filter pipeline); generated images are yours. [Wave 11 Lane C]
+
+#### Natron — standalone tool use ✅ commercial-safe
+- **What:** Open-source node-based compositing application (After Effects-class keying, tracking, rotoscoping)
+- **URL:** https://github.com/NatronGitHub/Natron
+- **License:** GPL-2.0 (verified: upstream LICENSE.txt fetched 2026-10-07; GitHub license field) — QUARANTINE row 87
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Code never integrated; rendered plates are yours per the standalone-tool-use doctrine. [Wave 11 Lane C]
+
+#### Yoshimi — standalone tool use ✅ commercial-safe
+- **What:** Linux softsynth (ZynAddSubFX fork — additive/subtractive/FM/wavetable/pad synthesis)
+- **URL:** https://github.com/Yoshimi/yoshimi
+- **License:** GPL-2.0-or-later (verified: COPYING foreword "Version 2, or (at your option) any later version", 2026-10-07) — QUARANTINE row 88
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Render synth stems to WAV offline; never link the engine into shipping code. [Wave 11 Lane C]
+
+#### OBS Studio — standalone tool use ✅ commercial-safe
+- **What:** Free open-source live-streaming + screen-recording suite (compositing, chroma key, scenes)
+- **URL:** https://github.com/obsproject/obs-studio
+- **License:** GPL-2.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-2.0) — QUARANTINE row 89
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Capture/record tool only; recorded footage is yours. [Wave 11 Lane C]
+
+#### VLC (VideoLAN) — standalone tool use ✅ commercial-safe
+- **What:** Open-source cross-platform multimedia player (plays everything; stream capture, transcoding)
+- **URL:** https://github.com/videolan/vlc
+- **License:** GPL-2.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-2.0) — QUARANTINE row 90
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Preview/convert footage with the app; libVLC embedding stays out of shipping builds. [Wave 11 Lane C]
+
+#### RawTherapee — standalone tool use ✅ commercial-safe
+- **What:** Open-source RAW photo developer (denoise, color grading, batch processing for plate cleanup)
+- **URL:** https://github.com/RawTherapee/RawTherapee
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 91
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Processed plates are yours; the app code is never integrated. Upstream moved Beep6581/RawTherapee → RawTherapee/RawTherapee (Wave 9 B). [Wave 11 Lane C]
+
+#### Parselmouth — standalone tool use ✅ commercial-safe
+- **What:** Python interface to Praat (phonetic analysis — formants, pitch, intensity for lip-sync alignment research)
+- **URL:** https://github.com/YannickJadoul/Parselmouth
+- **License:** GPL-3.0-or-later (verified: upstream README "released under the GNU General Public License, version 3 or later", 2026-10-07; GitHub API GPL-3.0) — QUARANTINE row 92
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Research-lane analysis only; wire lip sync via MIT Rhubarb instead. [Wave 11 Lane C]
+
+#### aubio — standalone tool use ✅ commercial-safe
+- **What:** C library for audio labeling (onset detection, pitch tracking, beat tracking; Python bindings)
+- **URL:** https://github.com/aubio/aubio
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 93
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Use the standalone binaries for analysis; never link the library into shipping code. [Wave 11 Lane C]
+
+#### pysrt — standalone tool use ✅ commercial-safe
+- **What:** Python library for SRT subtitle parsing/editing (retiming, resyncing caption files)
+- **URL:** https://github.com/byroot/pysrt
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GNU GPL per PyPI) — QUARANTINE row 94
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Script caption work offline as a standalone tool; its code never ships in our tooling. [Wave 11 Lane C]
+
+#### darktable — standalone tool use ✅ commercial-safe
+- **What:** Open-source photography workflow app + RAW developer (alternative to Lightroom for plate grading)
+- **URL:** https://github.com/darktable-org/darktable
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 95
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Graded plates are yours; the app code is never integrated. [Wave 11 Lane C]
+
+#### BlenderGIS — standalone tool use ✅ commercial-safe
+- **What:** Blender addon — GIS data import (georeferenced terrain, basemaps) for environment plates
+- **URL:** https://github.com/domlysz/BlenderGIS
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub license field) — QUARANTINE row 96
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Runs inside GPL Blender (already quarantined); terrain meshes you pull are your own data — the addon code never ships. [Wave 11 Lane C]
+
+#### alass — standalone tool use ✅ commercial-safe
+- **What:** CLI tool — automatic subtitle resync via audio waveform alignment
+- **URL:** https://github.com/kaegi/alass
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 97
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Resynced subtitle files are yours; the tool binary never ships with our code. [Wave 11 Lane C]
+
+#### Bazarr — standalone tool use ✅ commercial-safe
+- **What:** Companion app to Sonarr/Radarr — automatic subtitle download + management for media libraries
+- **URL:** https://github.com/morpheus65535/bazarr
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 98
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Media-library management only; research/reference lane. [Wave 11 Lane C]
+
+#### Gaupol — standalone tool use ✅ commercial-safe
+- **What:** Subtitle editor for text-based formats (translation workflow, timing, spell-check)
+- **URL:** https://github.com/otsaloma/gaupol
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GPL headers + COPYING; GitHub API spdx_id GPL-3.0) — QUARANTINE row 99
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Edited subtitle files are yours; the editor code never ships. [Wave 11 Lane C]
+
+#### SuperCollider — standalone tool use ✅ commercial-safe
+- **What:** Platform for audio synthesis + algorithmic composition (server/client, live coding, UGens)
+- **URL:** https://github.com/supercollider/supercollider
+- **License:** GPL-3.0-or-later (verified: upstream README license section "version 3 … or (at your option) any later version", 2026-10-07) — QUARANTINE row 100
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Render audio to WAV offline (FoxDot entry already documents the SuperCollider backend). Audio you render is yours — do not distribute the server code. [Wave 11 Lane C]
+
+#### TidalCycles — standalone tool use ✅ commercial-safe
+- **What:** Live-coding environment for musical pattern (algorithmic composition on the SuperCollider backend)
+- **URL:** https://github.com/tidalcycles/Tidal
+- **License:** GPL-3.0 (verified: upstream LICENSE fetched 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 101
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Generative music beds rendered offline; performances recorded are yours. [Wave 11 Lane C]
+
+#### VCV Rack — standalone tool use ✅ commercial-safe
+- **What:** Open-source virtual Eurorack modular synthesizer (virtual modules, patch cables, VST plugin)
+- **URL:** https://github.com/VCVRack/Rack
+- **License:** GPL-3.0-or-later (verified: upstream LICENSE.md "either version 3 of the License, or (at your option) any later version", 2026-10-07) — QUARANTINE row 102
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** License carries a narrow Section-7 Non-Commercial Plugin License Exception (free plugins may link regardless of license) — exception does NOT cover shipped integrations, so quarantine stands. Record synth stems offline. [Wave 11 Lane C]
+
+#### TAL-NoiseMaker — standalone tool use ✅ commercial-safe
+- **What:** Virtual analog synthesizer (TAL; free classic-subtractive synth plugin)
+- **URL:** https://tal-software.com/products/tal-noisemaker
+- **License:** GPL-2.0 (verified: DISTRHO-Ports vendored source + schwung-noisemaker/ykchorus attributions, 2026-10-07 — root LICENSE unfetchable, forks are the source of truth) — QUARANTINE row 103
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Use the plugin binary; rendered audio is yours. Never redistribute modified builds without source. [Wave 11 Lane C]
+
+#### SPPAS — standalone tool use ✅ commercial-safe
+- **What:** Automatic annotation + analysis of audio/video speech recordings (forced alignment, phonetization)
+- **URL:** https://github.com/brigitte-bigi/sppas
+- **License:** AGPL-3.0-or-later (verified: upstream README "- License: AGPL-3.0-or-later", 2026-10-07) — QUARANTINE row 104
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (AGPL)**
+- **Notes:** Canonical upstream is brigitte-bigi/sppas (hyphen; brnoliveira/sppas is a fork; older v4.x docs were GPL-3.0 — version split documented). Standalone annotation runs only; never serve it. [Wave 11 Lane C]
+
+#### FAVE-align — standalone tool use ✅ commercial-safe
+- **What:** Forced Alignment + Vowel Extraction (FAVE) — Penn-style phonetic forced aligner for speech research
+- **URL:** https://github.com/Forced-Alignment-and-Vowel-Extraction/new-fave
+- **License:** GPL-3.0 (verified: upstream README "License: GPL v3" badge, 2026-10-07) — QUARANTINE row 105
+- **Free tier:** fully free
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Canonical repo moved JoFrhwld/new-fave → Forced-Alignment-and-Vowel-Extraction/new-fave (Wave 8 B). Research lane only. [Wave 11 Lane C]
+
+#### Jubler — standalone tool use ✅ commercial-safe
+- **What:** Subtitle editor (Java; supports most text-based subtitle formats, spell-check, translation mode)
+- **URL:** https://github.com/teras/Jubler
+- **License:** AGPL-3.0 (verified: upstream README "Licensed under the GNU Affero General Public License v3", 2026-10-07; relicensed GPL-2.0 → AGPL-3.0 in 2025) — QUARANTINE row 106
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (AGPL)**
+- **Notes:** Edited subtitle files are yours; the app code never ships. [Wave 11 Lane C]
+
+#### Gnome Subtitles — standalone tool use ✅ commercial-safe
+- **What:** Subtitle editor for the GNOME desktop (timing, translation, video preview)
+- **URL:** https://github.com/GNOME/gnome-subtitles
+- **License:** GPL-2.0-or-later (verified: RPM package metadata, 2026-10-07; GitHub API spdx_id GPL-2.0) — QUARANTINE row 107
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Edited subtitle files are yours; the editor code never ships. [Wave 11 Lane C]
+
+#### opensubtitles-api (Ivshti legacy JS client) — standalone tool use ✅ commercial-safe
+- **What:** Legacy JavaScript client for the OpenSubtitles API (subtitle search/download automation)
+- **URL:** https://github.com/Ivshti/opensubtitles-api
+- **License:** GPL-3.0-or-later (verified: upstream README "either version 3 of the License, or (at your option) any later version", 2026-10-07) — QUARANTINE row 108
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** The client code is GPL; the OpenSubtitles REST API SERVICE itself is a separate ⚠️ entry — service terms apply to usage. [Wave 11 Lane C]
+
+#### CCExtractor — standalone tool use ✅ commercial-safe
+- **What:** Fast closed-caption extractor (broadcast/stream subtitle extraction from video files)
+- **URL:** https://github.com/CCExtractor/ccextractor
+- **License:** GPL-2.0 (verified: upstream README "GNU General Public License version 2.0"; GitHub API spdx_id GPL-2.0, 2026-10-07) — QUARANTINE row 109
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Extracted caption files are yours; the binary never ships with our code. [Wave 11 Lane C]
+
+#### WhisperSubTranslate (Blue-B) — standalone tool use ✅ commercial-safe
+- **What:** Whisper-based subtitle translation GUI (translate + resync caption tracks)
+- **URL:** https://github.com/Blue-B/WhisperSubTranslate
+- **License:** GPL-3.0 (verified: upstream README "## License — GPL-3.0", 2026-10-07) — QUARANTINE row 112
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Translated caption files are yours; the app code never ships. External translation APIs (DeepL/OpenAI/Gemini) carry their own terms. [Wave 11 Lane C]
+
+#### Subtitle Workshop (dekked) — standalone tool use ✅ commercial-safe
+- **What:** Subtitle editor/creator/converter (long-running Windows subtitle tool, open-sourced)
+- **URL:** https://github.com/dekked/subtitleworkshop
+- **License:** GNU/GPL 3 (verified: upstream README.rst "Subtitle Workshop and SubtitleAPI source code are both released under the GNU/GPL 3 license"; root gpl-3.0.txt, 2026-10-07) — QUARANTINE row 113
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Edited subtitle files are yours; the editor code never ships. [Wave 11 Lane C]
+
+#### whisper-subs (ashlcx, Jellyfin plugin) — standalone tool use ✅ commercial-safe
+- **What:** Jellyfin plugin — Whisper-based subtitle generation for media libraries
+- **URL:** https://github.com/ashlcx/whisper-subs
+- **License:** GPL-3.0 (verified: upstream CLAUDE.md "License is GPL-3.0", 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 114
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Generated subtitle files are yours; the plugin code never ships. [Wave 11 Lane C]
+
+#### jev-subtitle-translator (geeklinkdev) — standalone tool use ✅ commercial-safe
+- **What:** Subtitle translation utility (batch translate caption files)
+- **URL:** https://github.com/geeklinkdev/jev-subtitle-translator
+- **License:** GPL-3.0-or-later (verified: upstream CONTRIBUTING.md "accepted under the repository license, GPL-3.0-or-later", 2026-10-07; GitHub API spdx_id GPL-3.0) — QUARANTINE row 115
+- **Free tier:** fully free
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** Translated caption files are yours; the tool code never ships. [Wave 11 Lane C]

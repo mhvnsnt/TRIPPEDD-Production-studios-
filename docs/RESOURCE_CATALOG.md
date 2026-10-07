@@ -2669,7 +2669,7 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 | Red Hot Jazz Archive | https://syncopatedtimes.com/red-hot-jazz-archive/ | ✅ public-domain archive (MP3s hosted via Archive.org/French servers; verify per recording) | Pre-1930 jazz & ragtime recordings (Duke Ellington pseudonym bands etc.); authentic period score beds for vintage cartoon scenes. | trippedd (music) | Fully free; verify date. | 4 / 2 |
 | Great 78 Project (Internet Archive) | https://archive.org/details/georgeblood | ❓ 400k+ digitized 78rpm; pre-1923 recordings PD (Music Modernization Act); post-1923 may be copyrighted (project sued/settled 2025) — verify date | Huge vintage music archive; PD pre-1923 jazz/blues/folk for period scoring. Check recording date before use. | trippedd (music) | Free; verify per-recording date. | 4 / 3 |
 | Battle of the Bits | https://battleofthebits.com | ❓ per-entry license (compo entries generally free reuse; verify each) | Chiptune battle community; thousands of chip-music entries (Famicom, Game Boy, SID) for cartoon game/retro energy. | trippedd (music) | Free; check entry license. | 4 / 2 |
-| Ubiktune | https://ubiktune.com | ❓ chiptune netlabel; many free digital albums, some paid — verify per release | Quality chiptune albums (virt, coda, Danimal Cannon); 8-bit score material. | trippedd (music) | Mixed free/paid. | 4 / 2 |
+| Ubiktune | https://ubiktune.com | ❓ chiptune netlabel; site JS-heavy, no blanket license statement found (2026-10-07); many releases on Bandcamp — verify per release | Quality chiptune albums (virt, coda, Danimal Cannon); 8-bit score material. | trippedd (music) | Mixed free/paid. | 4 / 2 |
 
 ### Anime-specific tooling — Wave 3 (+18)
 | Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
@@ -4389,10 +4389,10 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Status:** UNWIRED
 - **Notes:** Corporate/motivational bed music — fits production interstitials, UI menus, sponsor bumpers. Do NOT re-upload tracks to Spotify/etc. as your own (license forbids). Confirm the CC-BY 4.0 badge on each track page before shipping. [Wave 5]
 
-#### Netlabels.org ❓ unverified (per-release check)
+#### Netlabels.org ⚠️ directory — per-release CC check (many NC)
 - **What:** Directory/archive of CC netlabels — thousands of free electronic/experimental releases, many mirrored on archive.org
 - **URL:** https://netlabels.org/
-- **License:** Per-release CC licenses (verified via netlabels.org/music + release pages, 2026-10-07); many releases are CC-BY-NC — check EACH release
+- **License:** ⚠️ Per-release CC licenses (re-verified 2026-10-07 via netlabels.org/music + release pages) — many releases are CC-BY-NC; check EACH release — check EACH release
 - **Free tier:** free downloads
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
@@ -20254,10 +20254,10 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** ToS audit pocket: free download ≠ commercial-safe. Score reference / non-commercial play only; also has a commercial sublabel (Kahvi Commercial) — don't confuse the two. UPDATE 2026-10-07 (Wave 20 Lane A): full-collection audit of 267 audio items found **69 marked CC BY 1.0** (commercial-safe) in label-owner archive.org uploads (uploader nik@kahvi.org) — spot-checked kahvi014 (Vae — Mistral), kahvi015 (Esem — Outburst), kahvi018 (Jean Nine — Cramshafter), kahvi020 (DiE — 2D Life), kahvi032 (Xhale — Fall Sounds Like), kahvi052 (Pinza — Alternaton), kahvi071 (Aquaboogie — Intensive Care). Verify the licenseurl on each item page before use — the rest of the catalog stays NC/BY-SA. [Wave 19 Lane A]
 
-#### 8bitpeoples ❓ chip-music netlabel — license unverified
+#### 8bitpeoples ⚠️ license-conditional — own site now a commercial store
 - **What:** Pioneering US chiptune collective (est. 1999) — nullsleep, Bit Shifter, Trash80, GOTO80, Lo-Bat, x|k and more; archive.org + Free Music Archive mirrors.
 - **URL:** https://netlabelguide.com/netlabel/8bitpeoples
-- **License:** ❓ "no license specifyed yet. you must not use any of the provided material before you have checked the labels website" (sonicsquirrel label registry, verified 2026-10-07).
+- **License:** ⚠️ Label's own site (8bitpeoples.com, checked 2026-10-07) is now a commercial store (paid CDs/vinyl/digital) with no blanket license — the free-netlabel era is over. Old free releases survive on archive.org/FMA: verify per item.
 - **Free tier:** Free downloads
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
@@ -20314,10 +20314,10 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** ToS audit pocket: one of the clearest NC statements in the scene — perfect example of why "free netlabel" ≠ commercial-safe. [Wave 19 Lane A]
 
-#### Bump Foot ❓ Japan non-profit netlabel — license unverified
+#### Bump Foot ⚠️ NC — CC BY-NC-SA per the label's own about page
 - **What:** Non-profit Japanese netlabel (est. 2005, Tatsu Suzuki) — two branches (Bump side: techno/house; Foot side: ambient/IDM); 400+ releases, highest non-Japanese artist count of any Japanese netlabel.
 - **URL:** https://dirty.radio/episodes/1mc-no-40-bumpfoot/
-- **License:** ❓ Non-profit, free releases; specific per-release license terms not verified this pass.
+- **License:** ⚠️ CC BY-NC-SA: "All releases on this site are available exclusively through free downloads under a Creative Commons license. Attribution-Noncommercial-Share Alike" (bumpfoot.net/about.html, label's own page, verified 2026-10-07).
 - **Free tier:** Free downloads
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
@@ -20604,30 +20604,30 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### Trekkie Trax ❓ Japan dance netlabel — terms unverified
+#### Trekkie Trax ⚠️ now a commercial label — no reuse grant
 - **What:** Tokyo netlabel born from the Akihabara "Under 20" party — juke house, 2-step, brostep, grime-influenced dub; international attention via block.fm (2014).
 - **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
-- **License:** ❓ License terms not verified this pass.
-- **Free tier:** Free releases
+- **License:** ⚠️ Evolved from netlabel to commercial label: physical CDs in Japanese stores, paid Bandcamp/Traxsource releases, JASRAC-registered (compilation TRC-007 'The Best 2016-2017', rights society R-17A0731) — no free-reuse grant; treat as all-rights-reserved (verified 2026-10-07).
+- **Free tier:** Paid releases
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### ALTEMA Records ❓ Japan netlabel — terms unverified
+#### ALTEMA Records ❓ Japan netlabel — still unverifiable (own site 403s)
 - **What:** Japanese netlabel — brostep, IDM, tracks sampling 1990s computer-program sounds; heavy anime-cover-art aesthetic.
 - **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
-- **License:** ❓ License terms not verified this pass.
+- **License:** ❓ Own site (altemarecords.jp) returns 403 as of 2026-10-07 — no license statement reachable; nothing in registries either. Still unverifiable.
 - **Free tier:** Free releases
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** [Wave 19 Lane A]
+- **Notes:** [Wave 19 Lane A] [Wave 22 Lane A ToS audit]
 
-#### MarginalRec. ❓ Tokyo netlabel — terms unverified
+#### MarginalRec. ❓ Tokyo netlabel — still unverifiable
 - **What:** Tokyo netlabel — J-pop remixes to floor fillers to headphone electronica; known for the Another Weekender live nightclub events (streamed online).
 - **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
-- **License:** ❓ License terms not verified this pass (note: releases include remixes of popular J-pop songs — underlying clearance risk).
+- **License:** ❓ Label's Bandcamp page (checked 2026-10-07) carries no blanket license statement — per-release check required (note: releases include remixes of popular J-pop songs — underlying clearance risk). Still unverifiable as a label. [Wave 22 Lane A ToS audit]
 - **Free tier:** Free releases
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
@@ -20694,27 +20694,27 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### Chipmusic.org ❓ chip-music community + releases — terms unverified
+#### Chipmusic.org ❓ chip-music community — still unverifiable (login-gated)
 - **What:** Long-running chip-music community hub (forums, releases, radio) from the late-2000s chip revival.
 - **URL:** https://en.wikipedia.org/wiki/Netlabels_in_Japan
-- **License:** ❓ Community uploads; terms not verified this pass.
+- **License:** ❓ Community release board is login-gated; no blanket license statement on public pages (chipmusic.org checked 2026-10-07). Per-release check required. [Wave 22 Lane A ToS audit]
 - **Free tier:** Free
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### illmatikvibes ❓ netlabel — license unspecified
+#### illmatikvibes ❓ netlabel — still unverifiable (dead)
 - **What:** Netlabel with electronic/experimental releases (phortran, Nick Cramer, Project 65, Plowve).
 - **URL:** http://sonicsquirrel.net/detail/label/illmatikvibes/155/rpage/3/apage/3
-- **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
+- **License:** ❓ "no license specifyed yet" (sonicsquirrel registry); label dead — netlabellist marks it dead with no CC flag (checked 2026-10-07). Still unverifiable. [Wave 22 Lane A ToS audit]
 - **Free tier:** Free downloads
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### binkcrsh ❓ netlabel — license unspecified
+#### binkcrsh ❓ netlabel — still unverifiable
 - **What:** Netlabel (c67.org/binkcrsh) with electronic releases (mykidsister, can'o'lard, forlon, kdp).
 - **URL:** http://sonicsquirrel.net/detail/label/binkcrsh/45/apage/2/rpage/1
 - **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
@@ -20724,7 +20724,7 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### floppyswop ❓ netlabel — license unspecified
+#### floppyswop ❓ netlabel — still unverifiable
 - **What:** Netlabel (floppyswop.co.uk) with electronic/chip-adjacent releases (Factro, mikrosopht, The Hardliner, Jotal).
 - **URL:** http://sonicsquirrel.net/detail/label/floppyswop/125/apage/4/rpage/3
 - **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
@@ -20744,10 +20744,10 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### Kreislauf ❓ German ambient/electro netlabel — license unverified
+#### Kreislauf ❓ German ambient/electro netlabel — still unverifiable (site dead)
 - **What:** German netlabel and radio show (Hamburg) — ambient, electro, techno; founded 2001 by Andreas Buttweiler and Dirk Hartmann.
 - **URL:** https://en.wikipedia.org/wiki/Kreislauf
-- **License:** ❓ No license statement found this pass.
+- **License:** ❓ Label site (kreislauf.org) now redirects to an archive.org offshoot page — dead; releases archived on archive.org — check per-item license (checked 2026-10-07). [Wave 22 Lane A ToS audit]
 - **Free tier:** Free downloads (kreislauf.org)
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
@@ -20794,10 +20794,10 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### hippocamp ❓ netlabel — license unspecified
+#### hippocamp ⚠️ CC-flagged (netlabellist) — per-release check
 - **What:** Netlabel (hippocamp.net) with electronic releases (William Fields, Testrack, dncn, mudlogger).
 - **URL:** http://sonicsquirrel.net/detail/label/hippocamp/148
-- **License:** ❓ No license stated on the sonicsquirrel registry page (verified 2026-10-07).
+- **License:** ⚠️ Netlabellist (clongclongmoo.org/labels, checked 2026-10-07) flags hippocamp as CC-licensed but dead — per-release check required before reuse. [Wave 22 Lane A ToS audit]
 - **Free tier:** Free downloads
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
@@ -20814,17 +20814,17 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### ogredung ❓ netlabel — license unspecified
+#### ogredung ⚠️ NC-ND — CC BY-ND-NC 1.0 on release pages
 - **What:** Netlabel (ogredung.org) — electronic (Kkoto, makunouchi bento, Line Noise, Talk Show Host).
 - **URL:** http://sonicsquirrel.net/detail/label/ogredung/260/rpage/1/apage/2
-- **License:** ❓ No license stated on the sonicsquirrel registry page (verified 2026-10-07).
+- **License:** ⚠️ CC BY-ND-NC 1.0 per release pages (e.g. od061 'Cucina Vagabonda', od063 Vizion 'Ai' on netlabelarchive.org, checked 2026-10-07) — no commercial use, no derivatives. [Wave 22 Lane A ToS audit]
 - **Free tier:** Free downloads
 - **Repo lane:** trippedd (music/scoring)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** [Wave 19 Lane A]
 
-#### chiptune (netlabel) ❓ chiptune netlabel — license unspecified
+#### chiptune (netlabel) ❓ chiptune netlabel — still unverifiable
 - **What:** Chiptune netlabel (chiptune.com) — chip releases (Storm, TAO, YMCK, zabutom); related to 8bitpeoples/monotonik/Petite&Jolie.
 - **URL:** http://sonicsquirrel.net/detail/label/chiptune/67/apage/4/rpage/1
 - **License:** ❓ "no license specifyed yet — you must not use any of the provided material before you have checked the labels website for license information" (sonicsquirrel registry; verified 2026-10-07).
@@ -21654,40 +21654,40 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** Verify CC variant per release; NC-family entries are research-only. [Wave 21 Lane B]
 
-#### Section 27 ❓
-- **What:** Netlabel (section27netlabel.blogspot.com) with free electronic releases
+#### Section 27 ❓ (blogspot deleted — still unverifiable)
+- **What:** Netlabel (section27netlabel.blogspot.com — blog DELETED, 404 as of 2026-10-07) with free electronic releases
 - **URL:** https://section27netlabel.blogspot.com
-- **License:** ❓ free releases; license terms unconfirmed (verified 2026-10-07)
+- **License:** ❓ Blog deleted ('Blog not found', 2026-10-07); releases survive on FMA — check per release (the FMA 'Sectioned v50' release is CC BY-NC-ND 3.0 per the other Section 27 entry). Still unverifiable as a label. [Wave 22 Lane A ToS audit]
 - **Free tier:** free downloads
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** License unverified — treat as research-only until terms confirmed per release. [Wave 21 Lane B]
 
-#### Soisloscerdos ❓
+#### Soisloscerdos ⚠️ NC — CC non-commercial per label's own Bandcamp bio
 - **What:** Electronic music netlabel (Bandcamp portal) publishing free downloads
 - **URL:** https://soisloscerdos.bandcamp.com
-- **License:** ❓ RA listing: "Electronic music Netlabel. Audio materials published under free licenses. Sharing without money involved and attribution to author… Free Download!" — exact terms unconfirmed (verified 2026-10-07)
+- **License:** ⚠️ CC non-commercial + attribution: label's own Bandcamp bio says 'Audio materials published under free licenses… Creative Commons, de uso no comercial con reconocimiento al autor' (soisloscerdos.bandcamp.com, checked 2026-10-07). [Wave 22 Lane A ToS audit]
 - **Free tier:** free downloads
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** License unverified — research-only until terms confirmed per release. [Wave 21 Lane B]
 
-#### ChipMusic.org ❓
+#### ChipMusic.org ❓ (login-gated community — still unverifiable)
 - **What:** Live chiptune community portal (forums, release board) with per-release free downloads
 - **URL:** https://chipmusic.org
-- **License:** ❓ per-release licensing varies (community-posted; verify each) (verified 2026-10-07)
+- **License:** ❓ Release board login-gated; no blanket license statement on public pages (chipmusic.org checked 2026-10-07). Per-release check required. [Wave 22 Lane A ToS audit]
 - **Free tier:** free downloads via release threads
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** Primary discovery source for the chip scene; every reuse must be checked against the release's own license. [Wave 21 Lane B]
 
-#### Pterodactyl Squad ❓
+#### Pterodactyl Squad ❓ (no license statement found — still unverifiable)
 - **What:** Chip/dark-synth collective netlabel with free downloads from own site (e.g. "F13" Halloween comp)
 - **URL:** https://ptesquad.com
-- **License:** ❓ free downloads; no explicit license statement found on site (verified 2026-10-07)
+- **License:** ❓ No license statement on ptesquad.com or the label's Bandcamp page (ptesquad.bandcamp.com, checked 2026-10-07) — per-release check required. Still unverifiable. [Wave 22 Lane A ToS audit]
 - **Free tier:** free downloads
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
@@ -21744,10 +21744,10 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** Original cheapbeats.net domain expired 2022-06-12. Research-only until terms confirmed. [Wave 21 Lane B]
 
-#### Subvert.fm ❓
+#### Subvert.fm ⚠️ platform — per-release licensing
 - **What:** Member-owned marketplace platform (launched 2026-05-12) hosting per-release chiptune/music drops (e.g. cabbage drop)
 - **URL:** https://subvert.fm
-- **License:** ❓ per-release licensing (e.g. CC BY-NC-SA on a cabbage drop release page) — not a netlabel itself (verified 2026-10-07)
+- **License:** ⚠️ Platform, not a label — per-release licensing (e.g. CC BY-NC-SA on a cabbage drop release page); terms page carries no blanket grant (checked 2026-10-07). NC-family releases are research-only. [Wave 22 Lane A ToS audit]
 - **Free tier:** free drops available (e.g. Spring Enterprises free release)
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
@@ -21824,10 +21824,10 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** Referenced by This Week in Chiptune/What Happened to Chiptune. Research-only until terms confirmed. [Wave 21 Lane B]
 
-#### Telefuture ❓
+#### Telefuture ❓ (site dead — still unverifiable)
 - **What:** Netlabel (telefuturenow.com) for retrofuture/synthwave/chip-adjacent electronic (Makeup and Vanity Set, Dead Astronauts, Monomer)
 - **URL:** https://telefuturenow.com
-- **License:** ❓ billed as a netlabel by This Week in Chiptune; license terms unconfirmed (verified 2026-10-07)
+- **License:** ❓ telefuturenow.com dead (no response, 2026-10-07); catalog also on paid storefronts — verify free/licensed status per release. Still unverifiable. [Wave 22 Lane A ToS audit]
 - **Free tier:** streaming; downloads per release
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
@@ -21844,10 +21844,10 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** Research-only until terms confirmed per release. [Wave 21 Lane B]
 
-#### KEYGENMUSiC (keygenmusic) ❓
+#### KEYGENMUSiC (keygenmusic) ❓ (player site, not a label — still unverifiable)
 - **What:** Demoscene keygen/crack-music archive portal — tracker chiptunes (.mod/.xm/.s3m/.it) ripped from keygens/cracktros; online player + downloadable packs
 - **URL:** https://keygenmusic.tk
-- **License:** ❓ "No keygens here. Just the music." per the site; per-track licensing unknown/unconfirmed (verified 2026-10-07)
+- **License:** ❓ keygenmusic.tk is a tracker-music player site ('No keygens here. Just the music.'), not a label; no license statement anywhere on it (checked 2026-10-07). Still unverifiable. [Wave 22 Lane A ToS audit]
 - **Free tier:** free streaming and download packs (keygenmusic.net)
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
@@ -22405,3 +22405,1043 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Archived-era reference: EBU-TT visual-editing pattern for oXygen users. Active-path work stays on bbc/ttml-validator + ttconv (cataloged). [Wave 21 watchdog completion]
+### National-library digitization & OCR tooling — Wave 22 (+28)
+
+#### Tesseract OCR ✅ commercial-safe
+- **What:** The industry-standard open-source OCR engine (HP/Google heritage) — 100+ languages, LSTM models, hOCR/ALTO/PDF output; the backbone of most library digitization pipelines
+- **URL:** https://github.com/tesseract-ocr/tesseract
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id tesseract-ocr/tesseract)
+- **Free tier:** N/A (`apt install tesseract-ocr` / pip)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pair with OCRmyPDF for searchable-PDF production; tessdata_fast models for speed, tessdata_best for accuracy. [Wave 22 Lane A]
+
+#### OCRmyPDF ✅ commercial-safe
+- **What:** Adds an OCR text layer to scanned PDFs (Tesseract under the hood) — deskew, clean, PDF/A output; the standard "make this scan searchable" tool for library digitization
+- **URL:** https://github.com/ocrmypdf/OCRmyPDF
+- **License:** ✅ MPL-2.0 (verified 2026-10-07: GitHub API spdx_id ocrmypdf/OCRmyPDF)
+- **Free tier:** N/A (`pip install ocrmypdf`)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MPL-2.0 is file-level copyleft — fine as a standalone CLI step, don't embed its source files into proprietary code. [Wave 22 Lane A]
+
+#### Kraken ✅ commercial-safe
+- **What:** Modern OCR/HTR engine for historical documents — trainable recognition for early prints and handwriting; powers many national-library HTR pipelines
+- **URL:** https://github.com/mittagessen/kraken
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id mittagessen/kraken)
+- **Free tier:** N/A (`pip install kraken`)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Best pick when Tesseract fails on historical typefaces; ships pretrained models for early-modern print. [Wave 22 Lane A]
+
+#### OCR-D ✅ commercial-safe
+- **What:** German national-library OCR workflow framework (DFG-funded) — modular processors for binarization, layout analysis, OCR, and TEI/ALTO output; the reference digitization pipeline for historical prints
+- **URL:** https://github.com/OCR-D/core
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id OCR-D/core)
+- **Free tier:** N/A (pip / Docker)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Heavier than Tesseract alone, but the workflow standard for mass historical-print digitization (used by German research libraries). [Wave 22 Lane A]
+
+#### OCRopus (ocropy) ✅ commercial-safe
+- **What:** Classic Python OCR toolkit (Google/TMBDev) — LSTM line recognizer lineage that fed into Tesseract 4; still useful for custom training experiments on odd scripts
+- **URL:** https://github.com/tmbdev/ocropy
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id tmbdev/ocropy)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dormant upstream (archived era) but permissively licensed and instructive; prefer Kraken for new HTR work. [Wave 22 Lane A]
+
+#### OCR4all ✅ commercial-safe
+- **What:** Web-app OCR workflow for historical prints (U. Würzburg) — wraps Calamari/OCRopus/Tesseract in a guided UI for non-technical digitization staff
+- **URL:** https://github.com/OCR4all/OCR4all
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id OCR4all/OCR4all)
+- **Free tier:** N/A (Docker)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Good route when OCR needs a human-in-the-loop UI rather than a batch CLI. [Wave 22 Lane A]
+
+#### tesseract.js ✅ commercial-safe
+- **What:** WebAssembly port of Tesseract — run OCR entirely in the browser or Node; powers client-side scan-to-text without a server round-trip
+- **URL:** https://github.com/naptha/tesseract.js
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id naptha/tesseract.js)
+- **Free tier:** N/A (npm)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Candidate for any browser-based digitization/upload UI — no backend OCR service needed. [Wave 22 Lane A]
+
+#### EasyOCR ✅ commercial-safe
+- **What:** Ready-to-use neural OCR with 80+ languages (PyTorch) — CRAFT detection + CRNN recognition; strong on scene text and mixed-language scans
+- **URL:** https://github.com/JaidedAI/easyocr
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id JaidedAI/easyocr)
+- **Free tier:** N/A (`pip install easyocr`)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Downloads models on first run (~100MB cache) — fine for tooling, don't vendor into repos. [Wave 22 Lane A]
+
+#### PaddleOCR ✅ commercial-safe
+- **What:** Baidu's multilingual OCR toolkit — text detection, recognition, table structure, and layout analysis; strong on CJK and document-understanding tasks
+- **URL:** https://github.com/PaddlePaddle/PaddleOCR
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id PaddlePaddle/PaddleOCR)
+- **Free tier:** N/A (pip / PaddlePaddle)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PP-Structure extracts tables + layout from scans — pairs with Camelot/Tabula for tabular data recovery. [Wave 22 Lane A]
+
+#### doctr ✅ commercial-safe
+- **What:** Mindee's document-OCR library — end-to-end detection + recognition with a clean PyTorch API; built for production document pipelines
+- **URL:** https://github.com/mindee/doctr
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id mindee/doctr)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Good middle ground between Tesseract (classic) and PaddleOCR (heavy) for scripted digitization. [Wave 22 Lane A]
+
+#### Donut ✅ commercial-safe
+- **What:** Naver Clova's OCR-free document understanding transformer — reads documents end-to-end without a separate OCR step (receipts, forms, tickets)
+- **URL:** https://github.com/clovaai/donut
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id clovaai/donut)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-grade; useful when layout is too broken for classic OCR pipelines. [Wave 22 Lane A]
+
+#### olmOCR ✅ commercial-safe
+- **What:** AllenAI's open-source document-OCR pipeline — high-throughput PDF-to-text for building training corpora from digitized books
+- **URL:** https://github.com/allenai/olmocr
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id allenai/olmocr)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Built for million-page-scale corpus building (the pipeline behind OLMo's training data) — overkill for single scans, right-sized for archive-scale work. [Wave 22 Lane A]
+
+#### MMOCR ✅ commercial-safe
+- **What:** OpenMMLab's comprehensive text-detection/recognition toolbox — 14+ algorithms in one framework for OCR research and benchmarking
+- **URL:** https://github.com/open-mmlab/mmocr
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id open-mmlab/mmocr)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Benchmark harness for comparing OCR models on our own scan samples before committing to one engine. [Wave 22 Lane A]
+
+#### RapidOCR ✅ commercial-safe
+- **What:** Lightweight ONNX-based OCR (PaddleOCR models, no Paddle dependency) — fast CPU inference for scripted digitization
+- **URL:** https://github.com/RapidAI/RapidOCR
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id RapidAI/RapidOCR)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The quick-win OCR when PaddleOCR's full install is too heavy. [Wave 22 Lane A]
+
+#### Surya ✅ commercial-safe
+- **What:** Datalab's document-OCR toolkit — line-level detection/recognition in 90+ languages plus layout analysis and reading-order detection
+- **URL:** https://github.com/datalab-to/surya
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id datalab-to/surya)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reading-order detection is the differentiator — multi-column historical layouts come out in the right sequence. [Wave 22 Lane A]
+
+#### scikit-image ✅ commercial-safe
+- **What:** Python image-processing library (NumPy/SciPy ecosystem) — the scriptable workhorse for scan cleanup: thresholding, denoising, deskew measurement
+- **URL:** https://github.com/scikit-image/scikit-image
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07: LICENSE.txt in repo states BSD-3-Clause)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use for pre-OCR cleanup stages before handing off to Tesseract/Kraken. [Wave 22 Lane A]
+
+#### pyvips ✅ commercial-safe
+- **What:** Python binding for libvips — streaming, low-memory image processing for huge scans (newspaper broadsheets, maps) that choke PIL/OpenCV
+- **URL:** https://github.com/libvips/pyvips
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id libvips/pyvips)
+- **Free tier:** N/A (pip; needs libvips)
+- **Repo lane:** trippedd (digitization/OCR)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** libvips itself is LGPL — fine as a system dependency, don't statically link it into shipped binaries. [Wave 22 Lane A]
+
+#### Cantaloupe ✅ commercial-safe
+- **What:** Feature-rich IIIF image server (Java) — dynamic tiling, rotation, format conversion for digitized collections; the standard self-hosted IIIF endpoint
+- **URL:** https://github.com/cantaloupe-project/cantaloupe
+- **License:** ✅ NCSA Open Source License (verified 2026-10-07: LICENSE.txt in repo, develop branch)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** If we ever serve our own scan collections, this is the IIIF server to stand up. [Wave 22 Lane A]
+
+#### Loris ✅ commercial-safe
+- **What:** Python IIIF image server (W3C/IIIF Image API 2.x/3.x) — simpler alternative to Cantaloupe for serving digitized images with deep-zoom
+- **URL:** https://github.com/loris-imageserver/loris
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07: LICENSE-Loris.txt carries the BSD 3-clause text)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lighter than Cantaloupe; good for small archive pilots. [Wave 22 Lane A]
+
+#### Mirador ✅ commercial-safe
+- **What:** Configurable IIIF viewer (JS) — multi-window comparison of digitized manuscripts/maps; the viewer most national libraries embed
+- **URL:** https://github.com/ProjectMirador/mirador
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id ProjectMirador/mirador)
+- **Free tier:** N/A (npm)
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Drop-in viewer for any IIIF manifest (Gallica, LOC, NLS) — comparison mode is ideal for before/after restoration review. [Wave 22 Lane A]
+
+#### Universal Viewer ✅ commercial-safe
+- **What:** IIIF viewer for books, maps, audio, and video (used by the British Library, NLS) — embeddable, accessibility-focused
+- **URL:** https://github.com/universalviewer/universalviewer
+- **License:** ✅ MIT (verified 2026-10-07: LICENSE.txt in repo, dev branch)
+- **Free tier:** N/A (npm)
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Handles AV + 3D as well as images — broader than Mirador if the collection mixes media. [Wave 22 Lane A]
+
+#### biiif ✅ commercial-safe
+- **What:** Static IIIF generator — build IIIF Presentation manifests from a folder of images + metadata, no server needed
+- **URL:** https://github.com/IIIF-Commons/biiif
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id IIIF-Commons/biiif)
+- **Free tier:** N/A (npm)
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fastest route to a IIIF-presentable scan set: folder in, manifest out, host on any static host. [Wave 22 Lane A]
+
+#### node-iiif (Samvera) ✅ commercial-safe
+- **What:** Node.js IIIF Image API processor — on-the-fly resize/crop/tile for image servers; the engine behind several Samvera repository stacks
+- **URL:** https://github.com/samvera/node-iiif (npm package `iiif-processor`)
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: npm registry license field for iiif-processor)
+- **Free tier:** N/A (npm)
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Embeddable alternative to running a full IIIF server when you only need image-API transforms. [Wave 22 Lane A]
+
+#### RAIS ✅ commercial-safe
+- **What:** University of Oregon's IIIF image server (Go) — S3-native, Docker-ready, built for library digital collections at scale
+- **URL:** https://github.com/uoregon-libraries/rais-image-server
+- **License:** ✅ CC0-1.0 (verified 2026-10-07: GitHub API spdx_id uoregon-libraries/rais-image-server)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** CC0 dedication is the most permissive server option here; Go binary deploys as a single file. [Wave 22 Lane A]
+
+#### Annona ✅ commercial-safe
+- **What:** IIIF annotation studio (NCSU Libraries) — create and publish W3C Web Annotations against IIIF manifests; story-building over digitized collections
+- **URL:** https://github.com/NCSU-Libraries/annona
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id NCSU-Libraries/annona)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization/IIIF)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Annotation layer for IIIF collections — useful for marking up reference plates and map details. [Wave 22 Lane A]
+
+#### Recogito 2 ✅ commercial-safe
+- **What:** Pelagios' semantic annotation platform for texts and maps — link digitized material to gazetteers (Pleiades, GeoNames); the scholarly standard for geo-annotating collections
+- **URL:** https://github.com/pelagios/recogito2
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id pelagios/recogito2)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (digitization/annotation)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Geo-tagging pipeline for map/plate collections — annotations export as open data. [Wave 22 Lane A]
+
+#### OpenRefine ✅ commercial-safe
+- **What:** Data-cleaning workbench for messy catalog metadata — faceted transforms, reconciliation against Wikidata/VIAF; the librarian's ETL tool
+- **URL:** https://github.com/OpenRefine/OpenRefine
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07: GitHub API spdx_id OpenRefine/OpenRefine)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (digitization/metadata)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reconcile any harvested catalog metadata against Wikidata/VIAF before ingesting. [Wave 22 Lane A]
+
+#### JabRef ✅ commercial-safe
+- **What:** Bibliography manager (Java) — BibTeX/BibLaTeX reference handling for research notes backing the catalog's provenance claims
+- **URL:** https://github.com/JabRef/jabref
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id JabRef/jabref)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Keeps the citation trail behind license/rights research auditable. [Wave 22 Lane A]
+### Open-source audio restoration & processing — Wave 22 (+16)
+
+#### torchaudio ✅ commercial-safe
+- **What:** PyTorch's audio I/O and processing library — GPU-accelerated resampling, spectrograms, and audio models
+- **URL:** https://github.com/pytorch/audio
+- **License:** ✅ BSD-2-Clause (verified 2026-10-07: GitHub API spdx_id pytorch/audio)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with Demucs/Asteroid pipelines for GPU batch audio processing. [Wave 22 Lane A]
+
+#### noisereduce ✅ commercial-safe
+- **What:** Spectral-gating noise reduction in pure Python — clean hiss/hum from field recordings and digitized 78s with a few lines of code
+- **URL:** https://github.com/timsainb/noisereduce
+- **License:** ✅ MIT (verified 2026-10-07: LICENSE file in repo, master branch; PyPI also lists MIT)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio/restoration)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The quick-win denoiser for archive audio — stationary-noise profile, no training, no GPU. [Wave 22 Lane A]
+
+#### audiomentations ✅ commercial-safe
+- **What:** Audio augmentation library — pitch shift, time stretch, noise/reverb injection for training robust audio models
+- **URL:** https://github.com/iver56/audiomentations
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id iver56/audiomentations)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for stress-testing restoration chains against degraded variants. [Wave 22 Lane A]
+
+#### Open-Unmix ✅ commercial-safe
+- **What:** SigSep's open music-separation reference (PyTorch) — the reproducible baseline behind the SiSEC separation campaigns
+- **URL:** https://github.com/sigsep/open-unmix-pytorch
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id sigsep/open-unmix-pytorch)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio/restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research baseline; prefer Demucs/Spleeter for production separation. [Wave 22 Lane A]
+
+#### Asteroid ✅ commercial-safe
+- **What:** PyTorch audio source-separation toolkit — recipes for speech/music separation, enhancement, and dereverberation
+- **URL:** https://github.com/asteroid-team/asteroid
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id asteroid-team/asteroid)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio/restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Includes speech-enhancement recipes — the training/eval harness if we ever fine-tune a denoiser. [Wave 22 Lane A]
+
+#### nussl ✅ commercial-safe
+- **What:** Northwestern's audio source-separation library — modular separation/benchmarking with music and speech recipes
+- **URL:** https://github.com/nussl/nussl
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id nussl/nussl)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio/restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong evaluation tooling (BSS metrics) for comparing separation outputs objectively. [Wave 22 Lane A]
+
+
+
+#### pyrubberband ✅ commercial-safe
+- **What:** Python wrapper for Rubber Band time-stretching/pitch-shifting — the highest-quality open time-stretch, scriptable
+- **URL:** https://github.com/bmcfee/pyrubberband
+- **License:** ✅ ISC (verified 2026-10-07: GitHub API spdx_id bmcfee/pyrubberband)
+- **Free tier:** N/A (pip; needs rubberband binary)
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Note: the Rubber Band library itself is GPL-2.0 (quarantine row) — the wrapper is ISC, but using it shells to the GPL binary; keep as a standalone tool step, never link the library into shipped code. [Wave 22 Lane A]
+
+#### resampy ✅ commercial-safe
+- **What:** Efficient sample-rate conversion (Kaiser-windowed sinc) — the resampling behind librosa; scriptable and dependency-light
+- **URL:** https://github.com/bmcfee/resampy
+- **License:** ✅ ISC (verified 2026-10-07: GitHub API spdx_id bmcfee/resampy)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Standardize archive audio sample rates before any restoration chain. [Wave 22 Lane A]
+
+#### RNNoise ✅ commercial-safe
+- **What:** Xiph's RNN-based noise suppression — real-time speech denoising from a tiny neural model; the engine inside many denoisers
+- **URL:** https://github.com/xiph/rnnoise
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07: GitHub API spdx_id xiph/rnnoise)
+- **Free tier:** N/A (C; training in Torch)
+- **Repo lane:** trippedd (audio/restoration)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Real-time capable — candidate for live dialogue cleanup, not just offline restoration. [Wave 22 Lane A]
+
+#### DeepFilterNet ✅ commercial-safe
+- **What:** Deep-learning noise reduction for full-band speech — real-time capable, beats classic spectral gating on non-stationary noise
+- **URL:** https://github.com/Rikorose/DeepFilterNet
+- **License:** ✅ MIT/Apache-2.0 dual (verified 2026-10-07: README license section — dual-licensed MIT or Apache-2.0)
+- **Free tier:** N/A (Rust + PyTorch)
+- **Repo lane:** trippedd (audio/restoration)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Step up from noisereduce when noise is non-stationary (crowds, wind, room tone shifts). [Wave 22 Lane A]
+
+#### PaddleSpeech ✅ commercial-safe
+- **What:** Baidu's all-in-one speech toolkit — ASR, TTS, text analysis, and audio classification; production-grade Chinese/English speech pipelines
+- **URL:** https://github.com/PaddlePaddle/PaddleSpeech
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: GitHub API spdx_id PaddlePaddle/PaddleSpeech)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (audio/speech)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Heaviest option here; reach for it when the pipeline needs ASR+TTS in one stack. [Wave 22 Lane A]
+
+### PDF table & text extraction — Wave 22 (+4)
+
+#### Camelot ✅ commercial-safe
+- **What:** Python PDF table extraction — lattice/stream methods to pull tables out of digitized reports and catalogs as DataFrames
+- **URL:** https://github.com/camelot-dev/camelot
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id camelot-dev/camelot)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (digitization/extraction)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with OCRmyPDF output — extract tabular data from scanned library catalogs. [Wave 22 Lane A]
+
+#### Tabula ✅ commercial-safe
+- **What:** Java-based PDF table extractor with a simple UI — the journalist-standard tool for liberating tables from PDFs
+- **URL:** https://github.com/tabulapdf/tabula
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id tabulapdf/tabula)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization/extraction)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GUI route when table extraction needs a human to draw the selection boxes. [Wave 22 Lane A]
+
+#### pdfplumber ✅ commercial-safe
+- **What:** Python PDF text/table extraction with visual debugging — per-character positioning for precise text recovery from digitized PDFs
+- **URL:** https://github.com/jsvine/pdfplumber
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id jsvine/pdfplumber)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (digitization/extraction)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best-in-class for debugging extraction against the visual page — `.to_image()` overlays show exactly what was captured. [Wave 22 Lane A]
+
+#### pdfminer.six ✅ commercial-safe
+- **What:** Pure-Python PDF text extraction and layout analysis — the low-level engine behind many PDF-to-text pipelines
+- **URL:** https://github.com/pdfminer/pdfminer.six
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id pdfminer/pdfminer.six)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (digitization/extraction)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reach past pdfplumber when you need raw layout objects rather than convenience wrappers. [Wave 22 Lane A]
+### EBU-TT Live reference implementations — Wave 22 (+5)
+
+#### EBU-TT XSD schema family (ebu org) ⚠️ mixed — two BSD-3, two unlicensed
+- **What:** The machine-readable EBU-TT schema set: ebu-tt (Part 1), ebu-tt-xsd, ebu-tt-m-xsd (metadata mapping), ebu-tt-3-xsd (Live) — the normative XSDs any EBU-TT implementation validates against
+- **URL:** https://github.com/ebu/ebu-tt / https://github.com/ebu/ebu-tt-xsd / https://github.com/ebu/ebu-tt-m-xsd / https://github.com/ebu/ebu-tt-3-xsd
+- **License:** ⚠️ Mixed: ebu-tt-xsd and ebu-tt-m-xsd are BSD-3-Clause (verified 2026-10-07: GitHub API spdx_id); ebu-tt and ebu-tt-3-xsd carry NO license assertion — schemas themselves are informative publications of the EBU spec family, but reuse the unlicensed repos only for validation, not redistribution
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use these XSDs to validate ttconv/imscJS output before treating it as broadcast-grade EBU-TT. [Wave 22 Lane A]
+
+#### imsced (IRT) ✅ commercial-safe
+- **What:** IRT's web-based IMSC subtitle editor (Vue) — author and preview IMSC/EBU-TT-D documents in the browser against the IMSC spec
+- **URL:** https://github.com/IRT-Open-Source/imsced
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id IRT-Open-Source/imsced)
+- **Free tier:** N/A (self-hosted web app)
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** From the same IRT team behind the SCF conversion framework already in the catalog — consistent broadcast-subtitle lineage. [Wave 22 Lane A]
+
+#### xcf_suite_ttml (IRT) ✅ commercial-safe
+- **What:** IRT's XSLT transform suite for TTML — profile, validate, and convert TTML documents (the XSLT companion to the SCF framework)
+- **URL:** https://github.com/IRT-Open-Source/xcf_suite_ttml
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id IRT-Open-Source/xcf_suite_ttml)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** XSLT transforms run anywhere (even in-browser) — handy for EBU-TT-D profiling without a Python dependency. [Wave 22 Lane A]
+
+#### benchmarkstt (EBU) ✅ commercial-safe
+- **What:** EBU's open AI benchmarking toolkit for speech-to-text services — score ASR engines on accuracy/latency for live-subtitling workflows
+- **URL:** https://github.com/ebu/benchmarkstt
+- **License:** ✅ MIT (verified 2026-10-07: GitHub API spdx_id ebu/benchmarkstt)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions/live-STT)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** EBU-TT Live needs a live caption source — this is how you objectively pick the STT engine (Whisper/faster-whisper/Vosk/sherpa) feeding it. [Wave 22 Lane A]
+
+#### dash.js EBU-TT-D subtitling branch (EBU) ✅ commercial-safe
+- **What:** EBU's fork of dash.js with EBU-TT-D subtitle rendering in HTML/CSS overlay — the reference DASH player integration for EBU-TT-D (later merged upstream)
+- **URL:** https://github.com/ebu/dash.js/tree/ebu-subtitling-dev
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07: LICENSE.md on the repo's master branch opens with the BSD license grant; same license family as upstream dash.js)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference implementation for rendering EBU-TT-D in a DASH web player — relevant if episodes ever ship with broadcast-style caption tracks. [Wave 22 Lane A]
+
+### National-library catalog APIs & open data — Wave 22 (+26)
+
+#### DigitalNZ API ⚠️ metadata-open, per-item rights
+- **What:** Aggregated NZ cultural-heritage metadata API — millions of items from Aotearoa institutions (titles, descriptions, dates, creators) + pointers to partner items
+- **URL:** https://digitalnz.org/developers
+- **License:** ⚠️ "The API is free and open for anyone to use" for metadata; the API returns pointers/thumbnails to partner items — item reuse governed by each content partner (verified 2026-10-07 via the official Developers page; see Developer API Terms of Use)
+- **Free tier:** Free, no key mentioned
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Metadata-only aggregation — great discovery index, but every reuse decision happens on the partner's own rights statement. [Wave 22 Lane A]
+
+#### NLS Data Foundry ✅ CC0 open datasets
+- **What:** National Library of Scotland's open-data publishing platform — digitised collections with METS/ALTO, image files, plain text, MARCXML/Dublin Core metadata, and map/spatial data
+- **URL:** https://data.nls.uk/data/
+- **License:** ✅ Datasets released under Creative Commons CC0 (verified 2026-10-07: dataset analyses cite "License: Creative Commons CC-0"; one dataset dual CC0 + OGL-UK-3.0) — confirm per-dataset page
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (digitization/corpora)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Full OCR text + ALTO for digitised collections — a ready-made historical-text corpus with clean licensing. [Wave 22 Lane A]
+
+#### NLS Historic Maps API ✅ CC-BY 3.0
+- **What:** National Library of Scotland's historic-map tile/API service (maps.nls.uk) — georeferenced OS and military maps as embeddable layers
+- **URL:** https://maps.nls.uk/projects/api/
+- **License:** ✅ CC BY 3.0 Unported (verified 2026-10-07: "Licence and terms of use" on the official API page — embed, display, derive, with attribution to NLS)
+- **Free tier:** Free (MapTiler Cloud key for tiles)
+- **Repo lane:** trippedd (bg plates/maps)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Attribution required — "National Library of Scotland" + link, in the work's documentation for derivatives. [Wave 22 Lane A]
+
+#### BNE datos.bne.es ⚠️ linked open data — verify per dataset
+- **What:** Biblioteca Nacional de España's Linked Open Data portal — SPARQL/RDF over BNE collections and authority data
+- **URL:** https://datos.bne.es/inicio.html
+- **License:** ⚠️ Published as Linked Open Data (verified 2026-10-07: portal describes itself as LOD publication); BNE's legal notice governs reuse — verify per dataset before production use
+- **Free tier:** Free
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Authority-data reconciliation (Spanish names/subjects) is the main win; media rights stay per-item. [Wave 22 Lane A]
+
+#### DDB API ⚠️ CC0 metadata, per-object media rights
+- **What:** Deutsche Digitale Bibliothek API — 40M+ objects from ~500 German museums, archives, libraries (books, images, audio, video) via REST/JSON+XML (EDM)
+- **URL:** https://api.deutsche-digitale-bibliothek.de
+- **License:** ⚠️ v2 read routes public, no key; metadata CC0 (no attribution required); object *media* carry per-object rights (verified 2026-10-07 via API docs and DDB's own "all object pages indicate how you may reuse an object")
+- **Free tier:** Free, keyless (v2 reads)
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The metadata layer is the safe part — treat every media file as rights-reserved until its object page says otherwise. [Wave 22 Lane A]
+
+#### LOC JSON API ⚠️ keyless, per-item rights statements
+- **What:** Library of Congress JSON/YAML API over loc.gov — collections metadata plus IIIF image services, full-text OCR services, and A/V streaming microservices
+- **URL:** https://www.loc.gov/apis/
+- **License:** ⚠️ API public and keyless (verified 2026-10-07: official API docs); rights live on each item's rights statement — the API exposes them, it doesn't waive them
+- **Free tier:** Free, keyless
+- **Repo lane:** trippedd (digitization/discovery)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Includes IIIF + OCR-text endpoints — programmatic access to one of the world's largest digitization programs. Filter by rights statement before reuse. [Wave 22 Lane A]
+
+#### NDL Search API ⚠️ application required, per-provider licensing
+- **What:** National Diet Library of Japan's federated search API (NDL Search) — books, articles, digitized materials across Japanese institutions
+- **URL:** https://ndlsearch.ndl.go.jp/en/help/api
+- **License:** ⚠️ Use requires an application form (commercial orgs included); metadata licensing varies per providing institution — "check the list of API-providing databases to see whether the metadata you want to use is licensed" (verified 2026-10-07)
+- **Free tier:** Application-based
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Discovery index for Japanese material; the NDL Digital Collections entry's download prohibition still applies to the content itself. [Wave 22 Lane A]
+
+#### KBR (Royal Library of Belgium) ❓ no public API terms found
+- **What:** Belgium's national library — BelgicaPress newspaper portal, opac.kbr.be catalogue, digitized collections
+- **URL:** https://www.kbr.be/en
+- **License:** ❓ No public API or developer terms found (checked 2026-10-07); BelgicaPress portal exists but carries no blanket reuse grant visible — verify per item
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-only until KBR publishes API/open-data terms. [Wave 22 Lane A]
+
+#### Google Books API ⚠️ ToS-gated, no commercial use without permission
+- **What:** Google's Books API family — volume search, metadata, and Embedded Viewer for book content
+- **URL:** https://developers.google.com/books
+- **License:** ⚠️ Governed by Google's API Terms of Service (developers.google.com/books/terms): not a replacement for commercial services; no commercial use without Google's written permission; metadata may be cached but not redistributed in bulk; 1,000 req/day unauthenticated (verified 2026-10-07)
+- **Free tier:** 1,000 requests/day/IP without key
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Metadata lookup only for our purposes — never a content source; prefer Open Library/LOC for anything reused. [Wave 22 Lane A]
+
+#### Open Library API ⚠️ free, mission-scoped usage guidelines
+- **What:** Internet Archive's Open Library APIs — book/author search, covers, works/editions, reading logs; monthly bulk data dumps
+- **URL:** https://openlibrary.org/developers/api
+- **License:** ⚠️ Free keyless API with usage guidelines (verified 2026-10-07: "not intended to serve as a data backend for high-traffic commercial services"; identify with User-Agent+email; bulk via dumps) — metadata dumps are openly downloadable; covers via IA have their own terms
+- **Free tier:** Free (1 req/s default, 3 req/s identified)
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use dumps for bulk work, API for human-scale lookup — and respect the volunteer-funded infrastructure. [Wave 22 Lane A]
+
+#### BHL API ⚠️ key required, per-item rights
+- **What:** Biodiversity Heritage Library API v3 — 59M+ pages of biodiversity literature (15th–21st c.), taxonomic name indexing, full-text search
+- **URL:** https://www.biodiversitylibrary.org/api3
+- **License:** ⚠️ API key required (free, from getapikey.aspx) (verified 2026-10-07: BHL's own API announcements); content is open-access literature but partners have also contributed in-copyright material with permission — check per-item rights
+- **Free tier:** Free key
+- **Repo lane:** trippedd (digitization/corpora)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Vintage natural-history plates are the prize here — but "open access" ≠ public domain on every item. [Wave 22 Lane A]
+
+#### Papers Past (National Library of NZ) ⚠️ freely available, mostly pre-1950
+- **What:** NLNZ's digitized newspaper/magazine archive — millions of searchable articles for local history and genealogy
+- **URL:** https://paperspast.natlib.govt.nz
+- **License:** ⚠️ "New Zealand's freely available online research tool" (verified 2026-10-07: official About page); overwhelmingly pre-1950 newspapers (out of copyright under NZ's life+50 term) — confirm per-title rights before reuse
+- **Free tier:** Free
+- **Repo lane:** trippedd (digitization/corpora)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong period-text source for Australasia; no public API — harvest via the site's own interfaces within their terms. [Wave 22 Lane A]
+
+#### TNA Discovery API ⚠️ OGL v3.0 for catalogue content
+- **What:** The National Archives (UK) Discovery catalogue API — 32M+ descriptions of records across 2,500+ archives
+- **URL:** https://www.nationalarchives.gov.uk/developer/
+- **License:** ⚠️ nationalarchives.gov.uk content under the Open Government Licence v3.0 "except where otherwise stated" (verified 2026-10-07: site footer on the developer pages); digitized record images carry their own terms
+- **Free tier:** Free
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Catalogue metadata under OGL is the safe layer; treat record images as per-item. [Wave 22 Lane A]
+
+#### Canadiana ⚠️ public-domain focus, per-item check
+- **What:** Canadian documentary-heritage digitization (CRKN) — 60M+ pages of books, newspapers, government documents, focused on public-domain printed materials
+- **URL:** https://www.canadiana.ca
+- **License:** ⚠️ "Worked to digitize Canadian heritage with a focus mainly on public domain printed materials" (verified 2026-10-07: Internet Archive's access-to-knowledge writeup); Heritage Project exclusivity windows have rolled back to open access — verify per collection
+- **Free tier:** Free
+- **Repo lane:** trippedd (digitization/corpora)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** One of the best PD Canadiana sources; still check each collection's stated terms. [Wave 22 Lane A]
+
+#### David Rumsey Map Collection ⚠️ CC-licensed downloads, per-item copyright
+- **What:** 150,000+ digitized historical maps (16th–21st c.) — the premier open map collection for period cartography
+- **URL:** https://www.davidrumsey.com
+- **License:** ⚠️ "By downloading any images from this site, you agree to the terms of that [Creative Commons] license" (verified 2026-10-07: davidrumsey.com/about); users must satisfy copyright holders unless materials are PD — confirm the CC variant and per-map rights
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg plates/maps)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify the exact CC variant on download — the site gates downloads behind license acceptance for a reason. [Wave 22 Lane A]
+
+#### VIAF ✅ ODC-BY
+- **What:** OCLC's Virtual International Authority File — 37 agencies in 29 countries' authority data linked into cluster records; the reconciliation backbone for names across national libraries
+- **URL:** https://www.oclc.org/developer/api/oclc-apis/viaf.en.html
+- **License:** ✅ "VIAF data is available under the Open Data Commons Attribution License (ODC-BY)" (verified 2026-10-07: OCLC Developer Network); attribution: "contains information from VIAF… made available under the ODC Attribution License"
+- **Free tier:** Free API
+- **Repo lane:** trippedd (research/metadata)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with OpenRefine for reconciling harvested catalog metadata — attribution line required in derivatives. [Wave 22 Lane A]
+
+#### WorldCat Search API ⚠️ WSKey required, ODC-BY linked data
+- **What:** OCLC's WorldCat search API + linked-data views — the global union catalogue as an API
+- **URL:** https://www.oclc.org/developer/api/oclc-apis/worldcat-search.en.html
+- **License:** ⚠️ API requires WSKey + agreement; WorldCat.org linked data (incl. downloadable datasets) under ODC-BY with community norms (verified 2026-10-07: OCLC data-licensing docs); OCLC identifiers themselves are public domain
+- **Free tier:** Key-gated
+- **Repo lane:** trippedd (research/metadata)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Use the ODC-BY linked-data dumps where possible instead of the keyed API. [Wave 22 Lane A]
+
+#### Wikidata ✅ CC0 structured data
+- **What:** The structured-data backbone behind Wikipedia — 100M+ items (people, places, works) with a keyless JSON API and SPARQL endpoint
+- **URL:** https://www.wikidata.org
+- **License:** ✅ "All structured data from the main, Property, Lexeme, and EntitySchema namespaces is available under CC0" (verified 2026-10-07: Wikidata:Copyright page); text namespaces are CC BY-SA
+- **Free tier:** Free, keyless
+- **Repo lane:** trippedd (research/metadata)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The reconciliation target for OpenRefine/VIAF workflows — CC0 means no attribution friction on the structured data. [Wave 22 Lane A]
+
+#### KB Sweden — LIBRIS ⚠️ national union catalogue, per-record terms
+- **What:** Sweden's national library union catalogue (libris.kb.se) — authority data and bibliographic records for Swedish collections
+- **URL:** https://libris.kb.se
+- **License:** ⚠️ LIBRIS data is published for reuse by KB; no blanket commercial-use statement found on the public pages (checked 2026-10-07) — verify per-record/per-dataset terms before production use
+- **Free tier:** Free
+- **Repo lane:** trippedd (research/metadata)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Authority reconciliation for Swedish names/subjects; KB's open-data pages are the source of truth per dataset. [Wave 22 Lane A]
+
+#### Royal Danish Library (KB Denmark) ❓ terms unverified this pass
+- **What:** Denmark's national library — digital collections, historic newspapers, manuscripts (kb.dk)
+- **URL:** https://www.kb.dk/en
+- **License:** ❓ No clear open-data/API reuse terms found on public pages (checked 2026-10-07) — verify per collection
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-only until KB publishes reuse terms. [Wave 22 Lane A]
+
+#### National Library of Wales ⚠️ per-collection rights
+- **What:** Wales' national library — digital gallery of maps, photographs, manuscripts with IIIF delivery
+- **URL:** https://www.library.wales/discover/digital-gallery
+- **License:** ⚠️ Free browsing; no blanket reuse grant found on the digital-gallery pages (checked 2026-10-07) — verify per-item rights statements
+- **Free tier:** Free
+- **Repo lane:** trippedd (bg plates/research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** IIIF endpoints make harvesting easy — which is exactly why the per-item rights check matters. [Wave 22 Lane A]
+
+#### BNP — Biblioteca Nacional de Portugal ⚠️ per-item rights
+- **What:** Portugal's national library — Biblioteca Nacional Digital with digitized books, maps, iconography
+- **URL:** https://www.bnportugal.gov.pt
+- **License:** ⚠️ No blanket reuse grant found on public pages (checked 2026-10-07) — verify per-item rights before reuse
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research source for Portuguese-language material; rights stay per item. [Wave 22 Lane A]
+
+#### National Library of Norway — API ⚠️ keyless, per-item rights
+- **What:** NB Norway's API (api.nb.no, live 2026-10-07) over the national digital collection — books, newspapers, photographs, and the digitized-audio holdings
+- **URL:** https://api.nb.no
+- **License:** ⚠️ API reachable and public (verified 2026-10-07); item rights per the NLN rights regime — rightscleared/PD items stream openly, everything else is on-premises (see the National Library of Norway entry's TONO/1958 note)
+- **Free tier:** Free
+- **Repo lane:** trippedd (research/discovery)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Programmatic route to the same 63,000-album audio holdings — filter by rights statement before any reuse. [Wave 22 Lane A]
+
+#### NLB Singapore ❓ terms unverified this pass
+- **What:** National Library Board Singapore — eResources portal, digitized newspapers (NewspaperSG), BookSG
+- **URL:** https://www.nlb.gov.sg
+- **License:** ❓ No clear blanket reuse terms found on public pages (checked 2026-10-07) — verify per resource
+- **Free tier:** Free browsing (some resources Singapore-only)
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-only; several NLB resources are geo-restricted regardless of rights. [Wave 22 Lane A]
+
+#### National Library of Greece ❓ terms unverified this pass
+- **What:** Greece's national library — digital collections of manuscripts, newspapers, maps (nlg.gr)
+- **URL:** https://www.nlg.gr
+- **License:** ❓ No clear reuse terms found on public pages (checked 2026-10-07) — verify per collection
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-only until NLG publishes reuse terms. [Wave 22 Lane A]
+
+#### National Library of Ireland ⚠️ IIIF delivery, per-item rights
+- **What:** NLI's digital collections — photographs, manuscripts, prints with IIIF image delivery and catalogue APIs
+- **URL:** https://www.nli.ie/en/udlist/digital-resources.aspx (live 2026-10-07)
+- **License:** ⚠️ IIIF delivery confirmed via the digital-resources pages; no blanket reuse grant found (checked 2026-10-07) — verify per-item rights statements
+- **Free tier:** Free
+- **Repo lane:** trippedd (bg plates/research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong Irish photography holdings for period reference — rights stay per item. [Wave 22 Lane A]
+
+#### OpenAlex ✅ CC0 scholarly metadata
+- **What:** Open scholarly metadata graph — 300M+ works, authors, sources, institutions, topics; keyless REST API + SPARQL-like OQL
+- **URL:** https://docs.openalex.org/how-to-use-the-api
+- **License:** ✅ "All data is CC0 — no license worries, ever" (verified 2026-10-07: official API reference); free to start, no key (free key raises quota 10x)
+- **Free tier:** Free keyless; free key for higher quota
+- **Repo lane:** trippedd (research/metadata)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 makes this the cleanest scholarly-metadata source in the catalog — use it before Google Books for anything reused. [Wave 22 Lane A]
+
+#### Unpaywall ⚠️ free, email-gated — data license unstated on API page
+- **What:** Open database of 57M+ free scholarly articles — DOI lookup for OA locations, harvested from 50,000+ publishers/repositories
+- **URL:** https://unpaywall.org/products/api
+- **License:** ⚠️ "The REST API gives anyone free, programmatic access"; email required as URL parameter; 100,000 calls/day (verified 2026-10-07: official API page) — data license not stated there, verify before bulk reuse
+- **Free tier:** 100k calls/day with email
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OA-location lookup only — the articles themselves carry their publishers' licenses. [Wave 22 Lane A]
+### Military-band recordings, new jurisdictions — Wave 22 (+27)
+
+#### Koninklijke Militaire Kapel "Johan Willem Friso" (NL) ⚠️ rights-reserved
+- **What:** The Royal Netherlands Army's premier military band — ceremonial and concert recordings via defensie.nl
+- **URL:** https://www.defensie.nl/onderwerpen/muziek
+- **License:** ⚠️ No reuse grant on Dutch MoD properties (checked 2026-10-07); the Netherlands has no government-work PD carve-out for music — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Banda Musicale dell'Esercito Italiano (IT) ⚠️ rights-reserved
+- **What:** The Italian Army's official band — state ceremonies, concerts; recordings via esercito.it
+- **URL:** https://www.esercito.it
+- **License:** ⚠️ No reuse grant found on official Esercito properties (checked 2026-10-07); Italian law has no military-music PD carve-out — assume rights-reserved
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Unidad de Música de la Guardia Real (ES) ⚠️ rights-reserved
+- **What:** The Spanish Royal Guard's music unit — Spain's senior military band for state ceremony
+- **URL:** https://www.defensa.gob.es/guardiareal/
+- **License:** ⚠️ No reuse grant on Spanish MoD/Guardia Real properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Orkiestra Reprezentacyjna Wojska Polskiego (PL) ⚠️ rights-reserved
+- **What:** The Representative Orchestra of the Polish Armed Forces — Poland's premier military band (concert + ceremonial)
+- **URL:** https://www.wojsko-polskie.pl
+- **License:** ⚠️ No reuse grant on Polish Armed Forces properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Gardemusik Wien (AT) ⚠️ rights-reserved
+- **What:** The Austrian Armed Forces' Guards Band (Vienna) — the Bundesheer's representative wind orchestra; recordings via bundesheer.at
+- **URL:** https://www.bundesheer.at
+- **License:** ⚠️ No reuse grant on Bundesheer properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Koninklijke Muziekkapel van de Gidsen (BE) ⚠️ rights-reserved
+- **What:** The Royal Band of the Belgian Guides — Belgium's senior military band (est. 1832)
+- **URL:** https://www.mil.be
+- **License:** ⚠️ "© 2025, Ministerie van Defensie" on mil.be (verified 2026-10-07) — all rights reserved, no reuse grant
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Livgardets dragonmusikkår (SE) ⚠️ rights-reserved
+- **What:** The Swedish Life Guards' Dragoon Band (mounted) — one of Sweden's three professional military bands; recordings via forsvarsmakten.se
+- **URL:** https://www.forsvarsmakten.se
+- **License:** ⚠️ No reuse grant on Swedish Armed Forces properties (checked 2026-10-07); the Nordic klassikerskyddet doctrine also counsels respectful use — assume rights-reserved
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Den Kongelige Livgardes Musikkorps (DK) ⚠️ rights-reserved
+- **What:** The Royal Danish Life Guards' band — Denmark's premier military band; recordings via forsvaret.dk
+- **URL:** https://www.forsvaret.dk
+- **License:** ⚠️ No reuse grant on Danish Defence properties (checked 2026-10-07); Danish Copyright Act §9 covers official documents, not music (see the Danish statute entry) — assume rights-reserved
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Banda Sinfónica do Exército Português (PT) ⚠️ rights-reserved
+- **What:** The Portuguese Army's symphonic band — concert and ceremonial recordings via exercito.pt
+- **URL:** https://www.exercito.pt
+- **License:** ⚠️ No reuse grant on Portuguese Army properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Irish Defence Forces bands — School of Music (IE) ⚠️ rights-reserved
+- **What:** The Defence Forces' military bands (Nos. 1, 2, 4 Bands + HQ) under the School of Music, Curragh — recordings via military.ie
+- **URL:** https://www.military.ie
+- **License:** ⚠️ No reuse grant on Defence Forces properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Swiss Armed Forces bands — Militärspiel (CH) ⚠️ rights-reserved
+- **What:** Switzerland's militia military bands (25+ formations incl. the Swiss Army Central Band) — recordings via vtg.admin.ch
+- **URL:** https://www.vtg.admin.ch
+- **License:** ⚠️ No reuse grant on DDPS/VTG properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### NZ Army Band + RNZAF Band (NZ) ⚠️ rights-reserved
+- **What:** New Zealand's service bands — the NZ Army Band and the Royal NZ Air Force Band; recordings via nzdf.mil.nz
+- **URL:** https://www.nzdf.mil.nz
+- **License:** ⚠️ No reuse grant on NZDF properties (checked 2026-10-07); NZ Crown copyright applies — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### IDF Orchestra (IL) ⚠️ rights-reserved
+- **What:** The Israel Defense Forces Orchestra — Israel's national military band for state ceremonies; recordings via idf.il
+- **URL:** https://www.idf.il
+- **License:** ⚠️ No reuse grant on IDF properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Turkish Armed Forces bands + Mehter (TR) ⚠️ rights-reserved
+- **What:** Turkey's service bands plus the Mehter (Janissary) historical band — the world's oldest military-band tradition; recordings via tsk.tr
+- **URL:** https://www.tsk.tr
+- **License:** ⚠️ No reuse grant on Turkish Armed Forces properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The Mehter repertoire itself is centuries old, but MODERN recordings of it are rights-reserved — date-PD 78rpm Mehter recordings (if any surface on Commons) are the only safe lane. [Wave 22 Lane A]
+
+#### SANDF bands (ZA) ⚠️ rights-reserved
+- **What:** South African National Defence Force bands (Army, Navy, Air Force, Medical Service) — recordings via dod.mil.za
+- **URL:** https://www.dod.mil.za
+- **License:** ⚠️ No reuse grant on SANDF properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Royal Thai Armed Forces bands (TH) ⚠️ rights-reserved
+- **What:** Thailand's service bands (Army, Navy, Air Force) — ceremonial music incl. royal anthems; recordings via official RTARF channels
+- **URL:** https://www.rtarf.mi.th
+- **License:** ⚠️ No reuse grant on RTARF properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Brazilian Armed Forces bands (BR) ⚠️ rights-reserved
+- **What:** Brazil's service bands (Exército, Marinha, Aeronáutica — incl. the Corpo de Fuzileiros Navais band) — recordings via defesabr channels
+- **URL:** https://www.gov.br/defesa
+- **License:** ⚠️ No reuse grant on Brazilian Defence properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Chilean military bands (CL) ⚠️ rights-reserved
+- **What:** Chile's service bands (Ejército, Armada, Fuerza Aérea) — cueca and march repertoire; recordings via official channels
+- **URL:** https://www.defensa.cl
+- **License:** ⚠️ No reuse grant on Chilean Defence properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Mexican military bands (MX) ⚠️ rights-reserved
+- **What:** Mexico's service bands (SEDENA Army/Air Force bands, SEMAR Navy bands) — marches and ceremonial music
+- **URL:** https://www.gob.mx/sedena
+- **License:** ⚠️ No reuse grant on SEDENA/SEMAR properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Hellenic military bands (GR) ⚠️ rights-reserved
+- **What:** Greece's service bands (Army, Navy, Air Force) — recordings via the Hellenic MOD
+- **URL:** https://www.mod.mil.gr
+- **License:** ⚠️ No reuse grant on Hellenic MOD properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Czech military bands — Ústřední hudba AČR (CZ) ⚠️ rights-reserved
+- **What:** The Central Band of the Czech Armed Forces (plus Castle Guard Band) — recordings via army.cz
+- **URL:** https://www.army.cz
+- **License:** ⚠️ No reuse grant on Czech MoD properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Hungarian military bands (HU) ⚠️ rights-reserved
+- **What:** Hungary's service bands (incl. the HDF Central Band, Budapest Garrison) — recordings via honvedelem.hu
+- **URL:** https://honvedelem.hu
+- **License:** ⚠️ No reuse grant on Hungarian Defence properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Malaysian Armed Forces bands (MY) ⚠️ rights-reserved
+- **What:** Malaysia's service bands (ATM — Army, Navy, Air Force central bands) — recordings via mafhq.mil.my
+- **URL:** https://www.mafhq.mil.my
+- **License:** ⚠️ No reuse grant on MAF properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### TNI military bands (ID) ⚠️ rights-reserved
+- **What:** Indonesian National Armed Forces bands (Army, Navy, Air Force corps music) — recordings via tni.mil.id
+- **URL:** https://tni.mil.id
+- **License:** ⚠️ No reuse grant on TNI properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Philippine military bands (PH) ⚠️ rights-reserved
+- **What:** The Philippines' service bands (AFP — Army, Navy, Air Force) — marches and ceremonial music
+- **URL:** https://www.afp.mil.ph
+- **License:** ⚠️ No reuse grant on AFP properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Pakistan Armed Forces bands (PK) ⚠️ rights-reserved
+- **What:** Pakistan's service bands (Army, Navy, PAF) — recordings via ispr.gov.pk
+- **URL:** https://www.ispr.gov.pk
+- **License:** ⚠️ No reuse grant on ISPR/Armed Forces properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+#### Estonian Defence Forces Orchestra (EE) ⚠️ rights-reserved
+- **What:** The Kaitseväe orkester — Estonia's professional military band; recordings via mil.ee
+- **URL:** https://mil.ee
+- **License:** ⚠️ No reuse grant on Estonian Defence Forces properties (checked 2026-10-07) — assume rights-reserved, verify before reuse
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 22 Lane A]

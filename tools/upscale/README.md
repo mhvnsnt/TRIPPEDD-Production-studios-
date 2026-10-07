@@ -16,8 +16,17 @@ python3 realesrgan_upscale.py crop.png -o crop_4x.png --model RealESRGAN_x4plus 
 python3 realesrgan_upscale.py "frames/*.png" -o upscaled/ --glob
 ```
 
-Weights live in `tools/upscale/weights/` (git-ignored cache; re-downloads
-automatically). Keep crops small on CPU — upscale a 256px crop, not a 4K frame.
+Weights live in `tools/upscale/weights/` (committed, 18MB; re-downloads
+automatically if absent). Keep crops small on CPU — upscale a 256px crop,
+not a 4K frame.
+
+Install note (2026-10-07): install with
+`pip install --no-deps --no-build-isolation realesrgan basicsr` —
+the stock install pulls a 5GB CUDA torch. Pre-install CPU torch from the
+PyTorch CPU index first, then add `opencv-python-headless`, `scipy`,
+and CPU `torchvision`. basicsr 1.4.2 needs a venv-local shim
+(`torchvision/transforms/functional_tensor.py`) because it imports the
+`rgb_to_grayscale` location removed in torchvision ≥0.18.
 
 ## RIFE (frame interpolation)
 

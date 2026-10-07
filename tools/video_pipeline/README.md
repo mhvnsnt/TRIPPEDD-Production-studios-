@@ -12,6 +12,20 @@ reproducible from a shot list + script. No more one-off renders.
 | `sfx.py` (12-recipe SFX kit) | `python3 sfx.py --all -d sfx/` |
 | `auto_caption.py` (faster-whisper word timestamps) | `python3 auto_caption.py vo.wav -o caps.srt --model-dir ~/workspace/tmp/fw-tiny` |
 | `concept_batch.py` (Pollinations storyboards, no key) | `python3 concept_batch.py prompts.txt -d boards/` |
+| `moviepy_assemble.py` (assembly API + smoke test) | `python3 moviepy_assemble.py -o proofs/moviepy_test.mp4` |
+
+## `moviepy_assemble.py` — minimal assembly API
+
+Reusable MoviePy 2.x helpers plus a 3-second smoke test:
+
+- `make_color_clip(color, duration, size, fps)` — solid-color VideoClip
+- `make_title_card(title, sub, size, ...)` — PIL title card → numpy array
+  (no ImageMagick dependency)
+- `assemble(clips, title_cards, size, fps, crossfade, out)` — concatenate
+  with crossfades, write H.264 MP4
+
+Smoke test: 2 generated color clips (1.0s each) + 1 title card (1.0s) →
+`proofs/moviepy_test.mp4` (3.0s @ 640×360, 24fps). See `PROOFS.md`.
 
 ## Studio workflow
 

@@ -6,7 +6,24 @@ Produced 2026-10-07. Working title only; show name NOT locked.
 |---|---|---|---|
 | `wizard-gang-pilot-9x16.mp4` | 50.0s | 1080x1920 h264+aac | `661b1d9f83bf96aa4e9c01a2effff97706277c017d9742f61137f487ba41122f` |
 | `wizard-gang-pilot-16x9.mp4` | 50.0s | 1920x1080 h264+aac | `fb7d3dd3b33b458fc67dc63687bcf028b8df0be437c74e4ae1ce77a0e52f` |
+| `wizard-gang-pilot-16x9-v2.mp4` | 50.0s | 1920x1080 h264+aac | `29a5e07151575dbe2991c5638e7e2040305d514030291a2724db2c2da0f63c5b` |
 | `audio/soundscape_50s.wav` | 50.0s | 44.1kHz stereo | built by `audio/build_soundscape.py` |
+
+## v2 16:9 expanded reframe (owner 2026-10-07: v1 16:9 felt cropped)
+v1's 16:9 center-cropped the portrait/square shot sources (02-ashes 672x1344,
+04-echo 960x960, 05-static-cipher 1152x768, 07-sombra 768x1152), clipping
+heads/feet. v2 rebuilds those 4 shots at true expanded 16:9: each source still
+outpainted to 2048x1152 in the locked cartoonier style (owner's refs as anchors;
+characters pixel-faithful, background extended, no new characters/text), then
+re-animated via image-animation. The 5 full-height v1 shots (01/03/06/08a/08b)
+and the title cards are reused VERBATIM from v1 (owner loves the wavy trippy
+card treatment). Same shot timing, same soundscape mix. Assembly:
+`assemble_v2.py` (ffmpeg: fit new shots, concat reuse+new segments, mux audio).
+New finals: `shots/shot02-ashes-v2.mp4`, `shots/shot04-echo-v2.mp4`,
+`shots/shot05-static-cipher-v2.mp4`, `shots/shot07-sombra-v2.mp4` (+ 16:9
+intermediate stills in `shots/`). Superseded: v1 `wizard-gang-pilot-16x9.mp4`
+kept for reference; the failed first ashes animation (hallucinated POLICE sign,
+caught in QC) was discarded and never shipped. 9:16 master untouched.
 
 ## Source chain (per shot)
 All 9 stills: generated in-session via `media.generate_image` in the owner's

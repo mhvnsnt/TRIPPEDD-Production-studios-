@@ -22355,3 +22355,53 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Honest ❓: the bridge exists as a standard, but without the paywalled text the practical path stays ttconv (SCC↔TTML) + libcaption (608/708 encode/decode). [Wave 21 Lane D]
+
+#### Pouët.net — demoscene portal/index (est. 2000) ❓ per-production rights
+- **What:** The long-running demoscene directory: index of productions (demos, intros, diskmags, wild), groups, parties, boards, with popularity ratings and comments; hosted with hardware/bandwidth from the scene.org crew. Verifiably active: prod comments dated 2026-05 (checked 2026-10-07).
+- **URL:** https://www.pouet.net/
+- **License:** ❓ per-production rights — pouet.net is an *index*, not a host; download links point to scene.org/archive.org/group sites, each with its own terms; no blanket license statement found upstream
+- **Free tier:** Free (community, non-commercial site)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5 (reading/reference)
+- **Status:** not-started
+- **Notes:** The canonical way to discover demoscene music/visuals beyond archive.org mirrors — the Lane-B netlabel pocket's directory complement. Pair with scene.org (files) and CSDb (C64) entries this wave for the three-legged demoscene research stool. [Wave 21 watchdog completion]
+
+#### scene.org — The International Scene Organization file archive (est. 1996) ❓ per-file rights
+- **What:** The non-profit, largest demoscene file repository (founded 1996 as ftp.fm.org by Jaakko "Mellow-D" Manninen; scene.org since 1997). Files archive actively serving: files.scene.org index crawled 2026-10 with decades of demos, intros, music compilations (e.g. Fading Twilight Atari collection, Amiga demo DVDs). Scene.org Awards 2003–2012 documented the canon years.
+- **URL:** https://www.scene.org/
+- **License:** ❓ per-file rights — uploads come from the releasing groups/authors; no blanket redistribution license published on the archive; check each file's NFO
+- **Free tier:** Free (non-profit)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5 (reading/reference)
+- **Status:** not-started
+- **Notes:** Explicitly closes the Wave-21 thin pocket "demoscene netlabel operators beyond archive.org mirrors": most Lane-B netlabels already mirror here, so this is the primary source. files.scene.org hosts per-release NFOs that often carry the only surviving rights statements. [Wave 21 watchdog completion]
+
+#### CSDb — Commodore 64 Scene Database (csdb.dk) ❓ per-release rights
+- **What:** Community database of everything C64-scene: demos, music (SID), graphics, groups, sceners, plus the old classic games; new 2026 releases indexed and active (checked 2026-10-07). The single best-organized C64 production index outside the games-focused Lemon64.
+- **URL:** https://csdb.dk/
+- **License:** ❓ per-release rights — release pages carry individual terms; some hosted material is commercial-era games (rights caution); treat as per-release check like pouet.net
+- **Free tier:** Free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5 (reading/reference)
+- **Status:** not-started
+- **Notes:** C64-specific complement to the pouet.net + scene.org entries: SID-music research (chip-music menu tracks, retro SFX beds) starts here. Cross-references groups on pouet.net and demozoo. [Wave 21 watchdog completion]
+
+#### SceneSat — demoscene/chiptune radio (est. 2004, Stockholm) ❓ stream terms
+- **What:** Non-profit, volunteer-run internet radio broadcasting demoscene music 24/7 (chiptune, 8-bit, tracker music, netlabel releases, game remixes); also streams demoparty coverage, interviews, and publishes free-to-listen/download compilations with exclusive demoscene-artist tracks. Site relaunched 2026 ("We... Are... BACK!"), crawled 2026-10-03 — active.
+- **URL:** https://scenesat.com/
+- **License:** ❓ stream terms — broadcast is free-to-listen; compilations are free-to-download but per-track artist terms; NOT a blanket music license — verify per track before any production use
+- **Free tier:** Free (non-commercial radio)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5 (reading/reference)
+- **Status:** not-started
+- **Notes:** Reference/radio-discovery source, not a sample library: use for genre research (what demoscene IDM/chip sounds like) and to surface artists/labels already in the catalog. The SceneSat Radio Awards are a curation signal. [Wave 21 watchdog completion]
+
+#### ebu-tt oXygen framework (pavanpalli/ebu-tt) — oXygen XML Editor EBU-TT support ✅ commercial-safe
+- **What:** oXygen XML Editor framework for EBU-TT: associates the EBU-TT XSD + a CSS so oXygen validates and visually edits EBU-TT documents (also usable via the oXygen WebApp with the sample docs). Archived-era (2015) but the framework mechanism is still how oXygen-based subtitle tooling hooks specs.
+- **URL:** https://github.com/pavanpalli/ebu-tt
+- **License:** ✅ Apache-2.0 (verified 2026-10-07: repo README states "The project is licensed for use under the Apache License 2.0", © 2015 Syncro Soft SRL)
+- **Free tier:** N/A (open source; oXygen itself is commercial — the framework files are free)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Archived-era reference: EBU-TT visual-editing pattern for oXygen users. Active-path work stays on bbc/ttml-validator + ttconv (cataloged). [Wave 21 watchdog completion]

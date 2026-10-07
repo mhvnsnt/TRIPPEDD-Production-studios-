@@ -30,6 +30,8 @@ Generated 2026-10-07 from `/tmp/hunter_{a,b,c}.json` (3 research workers, licens
 
 **Wave 6 (2026-10-07, Worker A):** +143 honest `####` entries → **655 total** (canonical count = `####` headings; includes Worker B's 5 GPU-runbook entries merged concurrently). Lanes: 20 SFX/foley · 22 voice/TTS · 14 storyboarding · 15 upscalers · 26 anime tooling · 26 music/plates · 20 free API tiers. Licenses verified from upstream sources (GitHub LICENSE files fetched 2026-10-07, vendor pages, license audits) — key corrections: ADetailer is AGPL-3.0 (not MIT), Spark-TTS is Apache-2.0 (not NC), MimicMotion is Apache-2.0, Real-CUGAN upstream is MIT (not NC), SadTalker dropped its NC restriction (now Apache-2.0), Fesliyan commercial needs a donation, PlayHT/PlayAI shut down Dec 2025. Quarantine: rows 78–84 added (max 84).
 
+**Wave 7 (2026-10-07, Lane D quarantine audit):** +11 `####` entries → **666 total**. No new quarantine rows (max stays 84). Added the missing catalog entries for Wave-3 rows 51–56 and Wave-4 rows 57/59/62/63/64 (reconciliation gap — those rows had no catalog entry). 57 upstream license/terms spot-checks: 53 confirmed, 4 corrections (ComfyUI-Manager/-Impact-Pack/-VideoHelperSuite are GPL-3.0 not AGPL-3.0; IndexTTS is bilibili Model Use License not Apache-2.0). 11 stale ❓ badges fixed; stale SadTalker/LivePortrait 🚫 lines updated to ✅ (both relicensed permissive upstream).
+
 Already wired in these repos (not re-listed here): FFmpeg/FFprobe, OpenCV, PySceneDetect, Tesseract, faster-whisper, OpenTimelineIO, Blender, Kdenlive/MLT, Natron, OpenColorIO, OpenAssetIO, OpenCue, plus tools/video_pipeline (auto_caption.py, concept_batch.py, promo_assemble.py, sfx.py, voiceover.py) in both repos.
 
 ## Top-10 wire-up priority
@@ -1868,15 +1870,15 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** Repo page + README both state Apache 2.0 (GitHub repo details badge: 'Apache License 2.0'). Slow generation (autoregressive+diffusion); newer 'ultra_fast' presets improve speed. Voice customization guide included for tuning cast voices. [Wave 2]
 
-#### IndexTTS ❓ unverified
+#### IndexTTS ⚠️ conditional
 - **What:** bilibili's industrial-grade TTS (IndexTTS2) — strong zero-shot cloning; aimed at production pipelines.
 - **URL:** https://github.com/index-tts/index-tts
-- **License:** bilibili Model Use License Agreement (custom) (verified via https://raw.githubusercontent.com/index-tts/index-tts/main/LICENSE)
+- **License:** bilibili Model Use License Agreement (custom) (verified via https://raw.githubusercontent.com/index-tts/index-tts/main/LICENSE + README License section, re-confirmed Wave 7)
 - **Free tier:** Free under custom terms with usage-scale thresholds
 - **Repo lane:** both (voice-cloning)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Verified 2026-10-07: NOT MIT — custom bilibili license with restrictions (separate license required at >100M MAU or >RMB 1B revenue; PRC governing law; prohibits improving other AI models). Usable at our scale but read the terms before shipping; keep isolated from commercial pipeline until reviewed. [Wave 2]
+- **Notes:** Verified 2026-10-07: NOT MIT — custom bilibili license with restrictions (separate license required at >100M MAU or >RMB 1B revenue; PRC governing law; prohibits improving other AI models). Usable at our scale but read the terms before shipping; keep isolated from commercial pipeline until reviewed. Badge corrected Wave 7: ❓→⚠️ (license was already verified; see canonical entry 'IndexTTS (index-tts/index-tts) — license verified ⚠️ conditional'). [Wave 2]
 
 ### SFX libraries (public domain / CC0 only) — Wave 2 (+4)
 
@@ -2074,7 +2076,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** Reference implementation; prefer faster-whisper or WhisperX for production caption timing. Timestamps are segment-level only — not word-accurate. [Wave 2]
 
-#### whisper-timestamped ❓ unverified
+#### whisper-timestamped 🚫 not commercial-safe (quarantined)
 - **What:** Whisper extension producing word-level timestamps with confidence scores, disfluency detection, and VAD options; CLI + Python.
 - **URL:** https://github.com/linto-ai/whisper-timestamped
 - **License:** AGPL-3.0 (verified via https://raw.githubusercontent.com/linto-ai/whisper-timestamped/master/LICENSE)
@@ -2114,7 +2116,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** Operator-friendly caption tool for non-technical crew; exports SRT/VTT/TXT. Good stopgap before a scripted pipeline is wired. [Wave 2]
 
-#### SubtitleComposer ❓ unverified
+#### SubtitleComposer ✅ commercial-safe
 - **What:** KDE text-based subtitle editor: SRT/SSA/ASS, VobSub/PGS OCR, ffmpeg demux, waveform editing, translations, scripting.
 - **URL:** https://github.com/maxrd2/subtitlecomposer
 - **License:** GPL-2.0-or-later (verified via https://raw.githubusercontent.com/maxrd2/subtitlecomposer/master/LICENSE)
@@ -2166,15 +2168,15 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** Apache-2.0 (not GPL despite lllyasviel's Fooocus being GPL-3.0). Key for long promo sequences on limited VRAM. [Wave 2]
 
-#### LivePortrait 🚫 not commercial-safe
+#### LivePortrait ✅ commercial-safe
 - **What:** Kuaishou's efficient portrait animation — brings still portraits to life with driving video or audio; very fast inference.
 - **URL:** https://github.com/KwaiVGI/LivePortrait
-- **License:** Kuaishou/KlingAIResearch custom license (GitHub: Other/NOASSERTION) (verified via https://api.github.com/repos/KwaiVGI/LivePortrait (redirects to KlingAIResearch/LivePortrait; license.key: other, spdx_id: NOASSERTION))
+- **License:** MIT (CORRECTED Wave 7: root LICENSE fetched 2026-10-07 — "MIT License, Copyright (c) 2024 Kuaishou Visual Generation and Interaction Center"; upstream relicensed from the old custom terms)
 - **Free tier:** Free, self-hosted.
 - **Repo lane:** god-molecule (image-to-video)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Custom license (research-leaning). Great tech for character promo animation; keep in quarantine pending license review. [Wave 2]
+- **Notes:** CORRECTED Wave 7: the old research-leaning custom license is GONE upstream — LivePortrait is now MIT. See also the canonical Wave-6 entry 'LivePortrait ✅ commercial-safe'. [Wave 2]
 
 #### Hallo2 ✅ commercial-safe
 - **What:** ICLR 2025 long-duration, high-resolution audio-driven portrait image animation (Fudan). Talking-head videos from a single image + audio.
@@ -2246,15 +2248,15 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** MIT is the most permissive option here; efficient 10s generation. [Wave 2]
 
-#### SadTalker 🚫 not commercial-safe
+#### SadTalker ✅ commercial-safe
 - **What:** CVPR 2023 audio-driven single-image talking-face animation via 3D motion coefficients — animate a character portrait from voice audio.
 - **URL:** https://github.com/OpenTalker/SadTalker
-- **License:** Custom license (GitHub: Other/NOASSERTION) (verified via https://api.github.com/repos/OpenTalker/SadTalker (license.key: other, spdx_id: NOASSERTION))
+- **License:** Apache-2.0 (CORRECTED Wave 7: root LICENSE fetched 2026-10-07 — "SadTalker is licensed under the Apache 2.0 License"; upstream removed the old NC restriction)
 - **Free tier:** Free, self-hosted.
 - **Repo lane:** god-molecule (image-to-video)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Research-oriented custom license; do not ship commercially without review. Hallo2 (MIT) is the safer talking-head path. [Wave 2]
+- **Notes:** CORRECTED Wave 7: the old custom/NC license is GONE upstream — SadTalker is now Apache-2.0. See also the canonical Wave-6 entry 'SadTalker ✅ commercial-safe'. Hallo2 (MIT) remains an alternative talking-head path. [Wave 2]
 
 #### Wan2GP 🚫 not commercial-safe
 - **What:** 'AI video for the GPU poor' — Gradio UI running Wan 2.1/2.2, Hunyuan, LTX-2.x, Flux, Qwen-Image on low-VRAM GPUs.
@@ -2338,7 +2340,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** Default build is LGPL-2.1+ (safe for dynamic linking). WARNING: passing --enable-gpl or linking GPL libs (libx264/x265 etc.) flips the binary to GPL — keep a known LGPL build for anything shipped. Subtitle burn-in (subtitles filter), concat, loudnorm, thumbnail extraction all live here. [Wave 2]
 
-#### Kdenlive ❓ unverified
+#### Kdenlive ✅ commercial-safe
 - **What:** Full multi-track NLE (KDE): proxy editing, keyframed effects, titler, scopes; MLT backend shared with Shotcut.
 - **URL:** https://github.com/KDE/kdenlive
 - **License:** GPL-3.0 (verified via https://raw.githubusercontent.com/KDE/kdenlive/master/COPYING)
@@ -2348,7 +2350,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** GPL-QUARANTINE: standalone edit bay only — do not link its code into game builds. Strongest free NLE for promo assembly; auto-caption via Vosk/Whisper plugins. [Wave 2]
 
-#### Blender VSE ❓ unverified
+#### Blender VSE ✅ commercial-safe
 - **What:** Blender's built-in Video Sequence Editor: timeline editing, compositing, and color grading inside the same app as the 3D work.
 - **URL:** https://www.blender.org
 - **License:** GPL-3.0-or-later (binary distributions); source GPL-2.0-or-later (verified via https://www.blender.org/about/license/)
@@ -2388,7 +2390,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** The glue for a multi-tool pipeline: generate an edit decision in code, open it in Kdenlive/Resolve, round-trip back. ASWF-backed (Pixar/Netflix/DreamWorks lineage). [Wave 2]
 
-#### Avidemux ❓ unverified
+#### Avidemux ✅ commercial-safe
 - **What:** Fast linear video editor: cutting, filtering, encoding; great for trim/concat/transcode jobs without a full NLE.
 - **URL:** https://github.com/mean00/avidemux2
 - **License:** GPL-2.0 (verified via https://raw.githubusercontent.com/mean00/avidemux2/master/COPYING)
@@ -2398,7 +2400,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** GPL-QUARANTINE: standalone utility only. Ideal for fast lossless-ish cuts and batch filter/encode passes in the finishing pipeline. [Wave 2]
 
-#### Cinelerra-GG Infinity ❓ unverified
+#### Cinelerra-GG Infinity ✅ commercial-safe
 - **What:** Pro-grade Linux NLE/compositor: nested sequences, motion tracking, 8K, HDR; monthly releases.
 - **URL:** https://www.cinelerra-gg.org
 - **License:** GPL-2.0-or-later (verified via https://git.cinelerra-gg.org?p=goodguy/cinelerra.git;a=blob;f=cinelerra-5.1/doc/Features5.pdf;h=8efdf113fe110cf0bfa6423a1494b8c74a9cf130)
@@ -2408,7 +2410,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** GPL-QUARANTINE. Official manual 'D. Licenses' states: codebase GPLv2+ (icons CC-BY-4.0, some plugins CeCILL/BSD/PD). Upstream git is git.cinelerra-gg.org (goodguy/cinelerra); site is cinelerra-gg.org. Linux-only, steeper learning curve than Kdenlive. [Wave 2]
 
-#### HandBrake ❓ unverified
+#### HandBrake ✅ commercial-safe
 - **What:** Batch video transcoder with presets: H.264/H.265/VP9/AV1, chapter markers, subtitle passthrough.
 - **URL:** https://github.com/HandBrake/HandBrake
 - **License:** GPL-2.0 (verified via https://raw.githubusercontent.com/HandBrake/HandBrake/master/LICENSE)
@@ -2418,7 +2420,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** GPL-QUARANTINE: standalone transcode station only. Compiled builds are GPLv2; fdk-aac builds are non-redistributable (upstream disables it by default). Use for delivery encodes (web previews, archive masters). [Wave 2]
 
-#### VidCutter ❓ unverified
+#### VidCutter ✅ commercial-safe
 - **What:** Simple Qt app for fast lossless-ish cutting/joining of clips; EDL project files.
 - **URL:** https://github.com/ozmartian/vidcutter
 - **License:** GPL-3.0 (verified via https://raw.githubusercontent.com/ozmartian/vidcutter/master/LICENSE)
@@ -2428,7 +2430,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** GPL-QUARANTINE: standalone use only. Fastest path to chop long recordings into selects without re-encoding (SmartCut). [Wave 2]
 
-#### LiVES ❓ unverified
+#### LiVES ✅ commercial-safe
 - **What:** Video editor + VJ tool: real-time effects, multitrack timeline, RFX scriptable effects framework.
 - **URL:** https://github.com/salsaman/LiVES
 - **License:** GPL-3.0 (verified via https://raw.githubusercontent.com/salsaman/LiVES/master/COPYING)
@@ -2470,7 +2472,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** CAUTION: upstream LICENSE lists third-party components with non-commercial terms — StyleGAN2 code under the NVIDIA license (non-commercial use limitation) and DFDNet under CC-BY-NC-SA 4.0. Core GFPGAN code is Apache-2.0, but commercial use of the full pipeline needs a license audit of those components. [Wave 2]
 
-#### chaiNNer ❓ unverified
+#### chaiNNer ✅ commercial-safe
 - **What:** Node-based image-processing GUI chaining upscalers (Real-ESRGAN, SwinIR, etc.), NCNN/PyTorch backends.
 - **URL:** https://github.com/chaiNNer-org/chaiNNer
 - **License:** GPL-3.0 (verified via https://raw.githubusercontent.com/chaiNNer-org/chaiNNer/main/LICENSE)
@@ -2480,7 +2482,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** GPL-QUARANTINE: standalone use only. Best no-code workbench for experimenting with upscale chains on key art before scripting the winners. [Wave 2]
 
-#### Upscayl ❓ unverified
+#### Upscayl — standalone tool use ✅ commercial-safe
 - **What:** Cross-platform desktop upscaler app (Linux/macOS/Windows) with Real-ESRGAN models and batch mode.
 - **URL:** https://github.com/upscayl/upscayl
 - **License:** AGPL-3.0 (verified via https://raw.githubusercontent.com/upscayl/upscayl/main/LICENSE)
@@ -2488,7 +2490,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Repo lane:** trippedd (upscalers)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
-- **Notes:** AGPL-QUARANTINE: desktop use only, do not embed/serve. Easiest one-click upscale for quick promo stills; scripted Real-ESRGAN is better for batch pipelines. [Wave 2]
+- **Notes:** AGPL-QUARANTINE: desktop use only, do not embed/serve. Easiest one-click upscale for quick promo stills; scripted Real-ESRGAN is better for batch pipelines. Badge corrected Wave 7: ❓→✅ standalone-tool-use (license was already verified AGPL-3.0, quarantine row 47); canonical quarantine entry is 'Upscayl — AGPL-3.0 verified 🚫 quarantined'. [Wave 2]
 
 ### Deep-verification confirmations (Wave 2 re-checks of Wave-1 entries)
 
@@ -2976,7 +2978,7 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 
 #### CosyVoice ✅
 - **What:** Multilingual zero-shot voice cloning TTS with natural conversation styles
-- **URL:** https://github.com/FunAudioLLM/CosyVoice
+- **URL:** https://github.com/QwenAudio/CosyVoice (repo moved from FunAudioLLM, 2026)
 - **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
 - **Free tier:** fully open
 - **Repo lane:** both (voice-cloning)
@@ -5762,15 +5764,15 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Status:** not-started
 - **Notes:** Microsoft published the paper only — this is the de-facto open implementation. Cross-lingual cloning is the unique value (one voice, three languages). [Wave 6]
 
-#### IndexTTS (index-tts/index-tts) — code license verified ✅ commercial-safe
+#### IndexTTS (index-tts/index-tts) — license verified ⚠️ conditional
 - **What:** Industrial zero-shot TTS (Conformer + GPT-2 + BigVGAN) — license verification entry for the existing IndexTTS lines
 - **URL:** https://github.com/index-tts/index-tts
-- **License:** Apache-2.0 for code AND 1.x checkpoints (verified via third-party license audits 2026-10-07; correct repo is index-tts/index-tts, not IndexTeam/IndexTTS)
+- **License:** bilibili Model Use License Agreement (custom — CORRECTED Wave 7: root LICENSE + README '📄 License' section fetched 2026-10-07 say 'This project is released under the bilibili Model Use License Agreement'; the Apache-2.0 claim was wrong)
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Resolves the existing ❓/⚠️ entries: the code is Apache-2.0. BUT see next entry — 2.5 weights changed terms. [Wave 6]
+- **Notes:** CORRECTED Wave 7: code AND weights are under the bilibili Model Use License (not Apache-2.0). Usable below the 100M MAU / ¥1B-revenue thresholds; bans using output to improve other AI models; PRC governing law. Read the terms before shipping. See next entry for the 2.5 weights. [Wave 6]
 
 #### IndexTTS 2.5 weights — bilibili Model Use License 🚫 not commercial-safe
 - **What:** IndexTTS-2.5 checkpoints — custom vendor license, NOT open source
@@ -5780,7 +5782,7 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Code is Apache-2.0 but the 2.5 weights are not — research lane only until the bilibili license is fully read. Use 1.5 weights (Apache-2.0) for shipping paths. [Wave 6]
+- **Notes:** Code is under the same bilibili Model Use License (CORRECTED Wave 7 — not Apache-2.0); the 2.5 weights are additionally download-gated with click-through accept — research lane only until the license is fully read. Do not assume any IndexTTS checkpoint is Apache-2.0. [Wave 6]
 
 #### edge-tts ⚠️ conditional
 - **What:** Python wrapper for Microsoft Edge's online TTS voices (hundreds of voices, no key)
@@ -6178,30 +6180,30 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Status:** not-started
 - **Notes:** The node's own code is Apache-2.0 — no quarantine row needed. The ComfyUI host stays quarantined; running nodes inside it as a standalone tool is fine per the doctrine. [Wave 6]
 
-#### ComfyUI-Manager 🚫 quarantined (AGPL-3.0)
+#### ComfyUI-Manager 🚫 quarantined (GPL-3.0)
 - **What:** ComfyUI extension manager (ltdrdata)
-- **URL:** https://github.com/ltdrdata/ComfyUI-Manager
-- **License:** AGPL-3.0 (verified: root LICENSE.txt fetched 2026-10-07) → quarantine row 80
+- **URL:** https://github.com/Comfy-Org/ComfyUI-Manager (repo moved from ltdrdata, 2026)
+- **License:** GPL-3.0 (CORRECTED Wave 7: NOT AGPL-3.0 — root LICENSE.txt is the GPL-3.0 text; GitHub API spdx_id GPL-3.0, 2026-10-07) → quarantine row 80
 - **Free tier:** fully open
 - **Repo lane:** trippedd (anime-tooling)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Quarantined — use only as a standalone ComfyUI plugin manager; never import its code into shipping tools. [Wave 6]
 
-#### ComfyUI-Impact-Pack 🚫 quarantined (AGPL-3.0)
+#### ComfyUI-Impact-Pack 🚫 quarantined (GPL-3.0)
 - **What:** ComfyUI node pack (detectors, detailers, samplers — ltdrdata)
 - **URL:** https://github.com/ltdrdata/ComfyUI-Impact-Pack
-- **License:** AGPL-3.0 (verified: root LICENSE.txt fetched 2026-10-07) → quarantine row 81
+- **License:** GPL-3.0 (CORRECTED Wave 7: NOT AGPL-3.0 — root LICENSE.txt is the GPL-3.0 text; GitHub API spdx_id GPL-3.0, 2026-10-07) → quarantine row 81
 - **Free tier:** fully open
 - **Repo lane:** trippedd (anime-tooling)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Quarantined — standalone node use inside ComfyUI only. [Wave 6]
 
-#### ComfyUI-VideoHelperSuite 🚫 quarantined (AGPL-3.0)
+#### ComfyUI-VideoHelperSuite 🚫 quarantined (GPL-3.0)
 - **What:** ComfyUI video load/save/interpolate nodes (Kosinkadink)
 - **URL:** https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
-- **License:** AGPL-3.0 (verified: root LICENSE fetched 2026-10-07) → quarantine row 82
+- **License:** GPL-3.0 (CORRECTED Wave 7: NOT AGPL-3.0 — root LICENSE is the GPL-3.0 text; GitHub API spdx_id GPL-3.0, 2026-10-07) → quarantine row 82
 - **Free tier:** fully open
 - **Repo lane:** trippedd (anime-tooling)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
@@ -6881,6 +6883,120 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Episode thumbnails, title cards, and social promo cuts — free plan covers commercial use of your own designs; avoid Pro stock elements unless licensed. [Wave 6]
+
+## Wave 7 — quarantine-row catalog catch-up (Lane D, 2026-10-07)
+
+Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap found by the Wave-7 audit). Added here with correct badges; all licenses re-verified from upstream 2026-10-07.
+
+#### ChatTTS 🚫 not commercial-safe (quarantined)
+- **What:** Open-source conversational TTS (2noise) — dialogue-style speech synthesis, trained on 100k+ hours of Chinese/English dialogue
+- **URL:** https://github.com/2noise/ChatTTS
+- **License:** AGPL-3.0 (verified: root LICENSE fetched 2026-10-07 — GNU AFFERO GENERAL PUBLIC LICENSE Version 3) → quarantine row 57
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** AGPL → research lane only — never wired into shipping paths. Use Kokoro-82M (Apache-2.0) or Zonos for shippable TTS. [Wave 7]
+
+#### DiffSVC 🚫 not commercial-safe (quarantined)
+- **What:** Diffusion-based singing voice conversion (prophesier) — the diffusion SVC lineage behind so-vits-svc's diffusion decoder
+- **URL:** https://github.com/prophesier/diff-svc
+- **License:** AGPL-3.0 (verified via GitHub API spdx_id AGPL-3.0, 2026-10-07) → quarantine row 59
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** AGPL → research lane only. so-vits-svc (row 24) is the more maintained sibling; both quarantined. [Wave 7]
+
+#### phonemizer 🚫 not commercial-safe (quarantined)
+- **What:** bootphon's G2P front-end library (espeak/festival backends) — the phonemizer under many neural TTS pipelines
+- **URL:** https://github.com/bootphon/phonemizer
+- **License:** GPL-3.0 (verified: root LICENSE fetched 2026-10-07 — GNU GENERAL PUBLIC LICENSE Version 3) → quarantine row 62
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-3.0 Python library — importing it into shipping code is a GPL event. Use only as a standalone preprocessing step (separate process), never as a pip dep of shipped tools. [Wave 7]
+
+#### marytts 🚫 not commercial-safe (quarantined)
+- **What:** Multilingual Java TTS server (MaryTTS) — HMM/unit-selection voices, MaryXML pipeline
+- **URL:** https://github.com/marytts/marytts
+- **License:** LGPL-3.0 (verified: root LICENSE.md "MaryTTS Software User Agreement" is the LGPL-3.0 text, fetched 2026-10-07) → quarantine row 63
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** SCOPE NOTE (Wave 7): LGPL is weak copyleft — Wave-1 convention kept LGPL Pitivi OFF the quarantine list. Row 63 quarantines marytts pending an audit decision on LGPL scope; until then, treat as quarantined. [Wave 7]
+
+#### Fooocus — standalone tool use ✅ commercial-safe
+- **What:** lllyasviel's Gradio image-generation UI (Stable Diffusion) — one-click prompt-to-image for BG plates and key art
+- **URL:** https://github.com/lllyasviel/Fooocus
+- **License:** GPL-3.0 (verified: root LICENSE fetched 2026-10-07 — GNU GENERAL PUBLIC LICENSE Version 3); TOOL USE is commercial-safe per the quarantine doctrine → quarantine row 64
+- **Free tier:** fully open app
+- **Repo lane:** both (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-3.0 app — fine as a standalone generation tool (output images are ours); its code is never integrated into shipping tools. InvokeAI (Apache-2.0) is the permissive-backend alternative. [Wave 7]
+
+#### Goo Engine — standalone tool use ✅ commercial-safe
+- **What:** Dillon Goo's Blender fork (NPR/toon-rendering build) — anime-style rendering inside Blender
+- **URL:** https://github.com/gradientgamer-xd/goo-engine
+- **License:** GPL-3.0 (verified: root COPYING is the Blender GPL text, fetched 2026-10-07 — inherits Blender's GPL); TOOL USE is commercial-safe per the quarantine doctrine → quarantine row 51
+- **Free tier:** fully open build
+- **Repo lane:** both (2d-animation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** Blender-fork app — renders made with it are ours; never integrate its code into shipping tools. [Wave 7]
+
+#### Blender-StellarToon 🚫 not commercial-safe (quarantined)
+- **What:** StellarToon NPR/toon-shader addon for Blender (festivities)
+- **URL:** https://github.com/festivities/Blender-StellarToon
+- **License:** GPL-3.0 (verified via GitHub API spdx_id GPL-3.0, 2026-10-07) → quarantine row 52
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL Blender addon — use inside Blender only; never ship its code in pipeline tools. [Wave 7]
+
+#### 2D-Cel-Toon-Shader-v2-Plus 🚫 not commercial-safe (quarantined)
+- **What:** Cel/toon shader pack for Godot 3.x (mightymochi)
+- **URL:** https://github.com/mightymochi/2D-Cel-Toon-Shader-v2-Plus-Godot-3.x
+- **License:** GPL-3.0 (verified via GitHub API spdx_id GPL-3.0, 2026-10-07) → quarantine row 53
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL shader code — reference/research only; never wired into shipping builds. [Wave 7]
+
+#### manga-image-translator 🚫 not commercial-safe (quarantined)
+- **What:** One-click manga/comic translation pipeline (detection + OCR + inpaint + MT) — web UI + CLI
+- **URL:** https://github.com/zyddnys/manga-image-translator (upstream moved from zhaohanh, 2026)
+- **License:** GPL-3.0 (verified via GitHub API spdx_id GPL-3.0, 2026-10-07) → quarantine row 54
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-3.0 codebase — research lane only; never linked or served from shipping paths. Its comic-text-detector dependency is separately quarantined (row 55). [Wave 7]
+
+#### comic-text-detector 🚫 not commercial-safe (quarantined)
+- **What:** Comic/manga text detection models (dmMaze) — text-block detector used by manga-image-translator
+- **URL:** https://github.com/dmMaze/comic-text-detector
+- **License:** GPL-3.0 (verified via GitHub API spdx_id GPL-3.0, 2026-10-07) → quarantine row 55
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-3.0 detection code — quarantined via the manga-image-translator dependency chain. [Wave 7]
+
+#### libre-manga-translator 🚫 not commercial-safe (quarantined)
+- **What:** Browser-extension manga translator (Svelte 5 + WXT) — local OCR/translation pipeline
+- **URL:** https://github.com/mrdhnto/libre-manga-translator
+- **License:** AGPL-3.0 (verified: README license badge "License-AGPL-3.0", fetched 2026-10-07; see LICENSE appendix + docs/technical.md per-model table) → quarantine row 56
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime-tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** AGPL-3.0 — research lane only. Note: its per-model table (docs/technical.md) lists weight licenses separately — check before any use. [Wave 7]
 
 ## Entry count — Wave 6 Worker A
 

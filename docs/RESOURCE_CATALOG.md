@@ -8783,3 +8783,584 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** U.S. government work = PD; credit USFWS where possible. [Wave 8 A]
+### BG-plates / backgrounds
+
+#### Stokpic ✅ commercial-safe
+- **What:** Free stock photo library (stokpic.com) — personal and commercial use, no redistribution
+- **URL:** http://stokpic.com/
+- **License:** Free for personal/commercial use, no redistribution (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Good for matte-painting source photos; never redistribute the files themselves. [Wave 8 A]
+
+#### PublicDomainArchive ✅ commercial-safe
+- **What:** Curated CC0 stock photo archive (publicdomainarchive.com)
+- **URL:** https://publicdomainarchive.com/free-stock-photos.html
+- **License:** CC0 1.0, no attribution required (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Vintage + modern PD photos; safe matte-painting base plates. [Wave 8 A]
+
+#### Morguefile ✅ commercial-safe
+- **What:** Free stock photo archive (morguefile.com) with its own Free License
+- **URL:** https://morguefile.com/license
+- **License:** MorgueFile Free License — commercial OK, no attribution required, but no standalone unaltered use (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paint over / composite the photos rather than shipping them as-is. [Wave 8 A]
+
+#### Foodiesfeed ✅ commercial-safe
+- **What:** CC0 food photography library
+- **URL:** https://www.foodiesfeed.com/
+- **License:** CC0 1.0 food photos (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prop/table dressing plates for commercial spots; zero friction license. [Wave 8 A]
+
+#### Pikwizard ✅ commercial-safe
+- **What:** Free stock photo library (Free/CC0 tiers) — personal and commercial OK, no redistribution/sale, NOT for AI training
+- **URL:** https://Pikwizard.com/most-popular/deep-forest-photos/
+- **License:** Free personal/commercial use, no redistribution or resale; explicitly not for AI training (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Solid nature/landscape plates; keep AI-training exclusion in mind for model pipelines. [Wave 8 A]
+
+#### Hubble / ESA-Hubble archive ✅ commercial-safe
+- **What:** NASA/STScI Hubble Space Telescope image archive (PD) + ESA/Hubble portal (post-2009 material CC BY 4.0)
+- **URL:** https://commons.wikimedia.org/wiki/Template:PD-Hubble
+- **License:** NASA Hubble material is public domain (credit NASA/STScI/ESA requested); post-2009 ESA/Hubble material is CC BY 4.0 (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the per-image credit block; CC BY items need attribution. [Wave 8 A]
+
+#### JWST (James Webb) imagery ✅ commercial-safe
+- **What:** NASA/STScI-released James Webb science images and press archive
+- **URL:** https://science.nasa.gov/mission/webb/for-the-media/
+- **License:** NASA-released science images are public domain; check per-image credit (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deep-space plates and environment backdrops; respect credit lines. [Wave 8 A]
+
+#### Chandra X-ray Observatory imagery ✅ commercial-safe
+- **What:** NASA Chandra X-ray imagery (DVIDS mirror pages mark releases PUBLIC DOMAIN)
+- **URL:** https://www.dvidshub.net/image/844918/chandra-x-ray-observatory-image-crab-nebula
+- **License:** NASA material is public domain (DVIDS releases marked PUBLIC DOMAIN) (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Crab Nebula et al — good cosmic plate material. [Wave 8 A]
+
+#### ESA (esa.int) imagery 🚫 not commercial-safe
+- **What:** European Space Agency image/video library on esa.int
+- **URL:** http://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website
+- **License:** Commercial use requires separate written ESA authorization — NOT commercial-safe by default (verified 2026-10-07)
+- **Free tier:** free for personal/editorial with terms
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Some images CC BY-SA 3.0 IGO; ESA/Hubble portal is CC BY 4.0 — use those instead. [Wave 8 A]
+
+#### APOD (Astronomy Picture of the Day) ⚠️ license-conditional
+- **What:** NASA APOD daily astronomy image archive
+- **URL:** http://science.nasa.gov/apod/apod-about/
+- **License:** Mixed — NASA images are public domain, others are copyrighted by the credited owner (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the credit line on each image before shipping. [Wave 8 A]
+
+#### Natural Earth ✅ commercial-safe
+- **What:** Free vector/raster map dataset (naturalearthdata.com) for globe/terrain plates
+- **URL:** https://github.com/karthikrshet/worldmap-ai/blob/HEAD/docs/DATA_SOURCES.md
+- **License:** Public domain per Natural Earth terms of use (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Base map vectors for animated globes and map graphics. [Wave 8 A]
+
+#### Blue Marble Next Generation (NASA) ✅ commercial-safe
+- **What:** NASA true-color Earth composites (500 m, monthly 2004) — free for educators, scientists, museums, businesses, public
+- **URL:** https://earthobservatory.nasa.gov/features/BlueMarble/BlueMarble_history.php
+- **License:** Public domain (NASA); credit "NASA Earth Observatory" requested (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Downloads up to 21,600 px across; classic planet-plate texture. [Wave 8 A]
+
+#### NASA Worldview ✅ commercial-safe
+- **What:** Near-real-time daily global satellite imagery browser (1,000+ layers); NASA data openly available without restriction
+- **URL:** https://www.earthdata.nasa.gov/learn/webinars/explore-entire-earth-every-day-satellite-imagery-from-nasa-worldview
+- **License:** NASA data openly available without restriction (Earthdata Login needed for some downloads) (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fresh Earth plates on demand; partner (ESA/NOAA) layers keep their own terms. [Wave 8 A]
+
+#### NASA GIBS (Global Imagery Browse Services) ✅ commercial-safe
+- **What:** Web-service satellite imagery tiles (WMTS) powering Worldview; NASA-led mission data is CC0/PD
+- **URL:** https://github.com/slashie/gods-eye-view/blob/HEAD/DATA_SOURCES.md
+- **License:** Public domain (NASA-led missions CC0); attribution requested, not required (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tiles are fine for compositing; OSM-derived layers keep ODbL. [Wave 8 A]
+
+#### NASA Earth Observatory ✅ commercial-safe
+- **What:** NASA Earth-observation feature imagery (earthobservatory.nasa.gov)
+- **URL:** https://www.nasa.gov/nasa-brand-center/images-and-media/
+- **License:** Freely available for re-publication/re-use, including commercial purposes, except where copyright is indicated (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Skip any image flagged as third-party copyrighted; credit NASA. [Wave 8 A]
+
+#### Copernicus Browser (Sentinel Hub / EO Browser) ⚠️ license-conditional
+- **What:** Free Sentinel satellite imagery browser (successor to Sentinel Hub EO Browser, shut down Feb 2025)
+- **URL:** https://www.sentinel-hub.com/explore/eobrowser/
+- **License:** Data exported from EO Browser usable under CC BY 4.0 — attribution required; per-collection terms apply (verified 2026-10-07)
+- **Free tier:** free tier: 10,000 PUs + 12 TB transfer/month on Copernicus Data Space
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Sentinel-2 10 m plates; attribute Sentinel Hub + collection. [Wave 8 A]
+
+#### USGS EarthExplorer ✅ commercial-safe
+- **What:** USGS Landsat/Sentinel/MODIS/NAIP satellite + aerial imagery archive (free downloads)
+- **URL:** https://www.usgs.gov/faqs/how-do-i-search-and-download-landsat-collection-2-data-products
+- **License:** Public domain (Landsat no-cost open data since 2008; check rare restricted datasets) (verified 2026-10-07)
+- **Free tier:** fully free (free USGS account for downloads)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Multi-decade Earth texture archive; PD is the default. [Wave 8 A]
+
+#### NARA Catalog (images) ✅ commercial-safe
+- **What:** National Archives online catalog — >99% of its ~4M+ images are U.S. government works in the public domain
+- **URL:** https://github.com/swapnachalla-nara/catalog-api-test
+- **License:** Public domain (government works); check per-record Use Restrictions for rare copyrighted donations (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Historic landscape/city plates; free keyless Catalog API. [Wave 8 A]
+
+#### Obama White House Flickr ✅ commercial-safe
+- **What:** Official Obama White House Flickr stream (Pete Souza et al.) — re-designated "United States Government Work"
+- **URL:** http://www.dmlp.org/blog/2009/white-house-drops-license-restrictions-photos-flickr-stream-now-public-domain
+- **License:** Public domain (U.S. government works, 17 U.S.C. § 105); ignore copycat "copyright claims" (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from generic "Flickr Commons" entry — this is the WH photostream, now PD. [Wave 8 A]
+
+#### Harvard Art Museums 🚫 not commercial-safe
+- **What:** Harvard Art Museums image API/collection
+- **URL:** https://harvardartmuseums.org/image-resources
+- **License:** Site encourages personal/noncommercial use; API terms forbid copying images to own servers and storage beyond 2 weeks — NOT commercial-safe (verified 2026-10-07)
+- **Free tier:** free API (key-gated)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fine for reference/mood boards, not for shipping plates. [Wave 8 A]
+
+#### DPLA (Digital Public Library of America) ⚠️ license-conditional
+- **What:** Portal over 50M+ library/archive items (metadata CC0; item rights per-item: CC BY 3.0, PD, etc.)
+- **URL:** https://libguides.lehman.edu/az/digital-public-library-of-america-dpla
+- **License:** Mixed per-item rights — filter for public domain before shipping (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rich historic plate source; always read the item's rights field. [Wave 8 A]
+
+#### Europeana ⚠️ license-conditional
+- **What:** European cultural-heritage aggregator (metadata CC0; items carry per-item rights statements)
+- **URL:** https://github.com/europeana/europeanalicensingframework/blob/HEAD/api-terms-of-use.md
+- **License:** Mixed — use only items with CC0 or Public Domain Mark rights statements; metadata CC0 (verified 2026-10-07)
+- **Free tier:** free API key
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Query with reusability filters; ignore InC/NoC items. [Wave 8 A]
+
+#### Trove / NLA ⚠️ license-conditional
+- **What:** National Library of Australia's Trove archive (newspapers pre-1955, pictures, photos)
+- **URL:** https://www.library.gov.au/learn/adults/lifelong-learning/film-television-and-media
+- **License:** Per-item; out-of-copyright items (pre-1955 Australian material) are free to publish with citation (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Vintage Australia plates; commercial API use needs NLA approval. [Wave 8 A]
+
+#### NOAA Photo Library ✅ commercial-safe
+- **What:** NOAA Digital Photo Library — ocean, weather, ship, and coastline photography
+- **URL:** http://www.noaa.gov/noaa-collections/photo-library
+- **License:** Public domain unless noted in credit/caption; credit NOAA + photographer (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ocean/storm plates; NOAA emblem use is restricted, photos are not. [Wave 8 A]
+
+#### NPS photos (National Park Service) ⚠️ license-conditional
+- **What:** NPS Digital Image Index — thousands of scenic park photos
+- **URL:** https://home.nps.gov/media/photo/view.htm?id=D36DF12C-1DD8-B71B-0BD54C5A73B01A6C&utm_source=Photo&utm_medium=website&utm_campaign=experience_more
+- **License:** Credited-to-NPS without © = public domain; images with © or third-party credit are NOT PD — check each (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ansel Adams NPS-era work is PD; landscape-plate goldmine. [Wave 8 A]
+
+#### USFWS National Digital Library / FWS Media Library ✅ commercial-safe
+- **What:** U.S. Fish & Wildlife Service photo, video, audio, and document library
+- **URL:** https://www.fws.gov/library/collections/fws-behind-lens
+- **License:** Public domain — "free to use, reuse, and share in any capacity" (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wildlife/nature plates; credit USFWS as requested. [Wave 8 A]
+
+#### DVIDS (Defense Visual Information Distribution Service) ⚠️ license-conditional
+- **What:** U.S. military public photo/video archive (DMA)
+- **URL:** http://www.dvidshub.net/about/copyright
+- **License:** Public information/PD, but with restrictions: no implied DoW endorsement, commercial users must show the non-endorsement disclaimer and obscure military markings (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Military hardware/action plates; follow the disclaimer rule on commercial work. [Wave 8 A]
+
+#### Getty Museum Open Content ✅ commercial-safe
+- **What:** J. Paul Getty Museum — 88k+ high-res artwork images released under CC0
+- **URL:** https://copyrightsociety.org/getty-museum-releases-88k-images-of-artworks-with-cc0/
+- **License:** CC0 1.0 (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter the collection search by Open Content; painting/texture plates. [Wave 8 A]
+
+#### Rijksmuseum ✅ commercial-safe
+- **What:** Dutch national museum — ~600k–700k PD digitized works via keyless Linked Art/IIIF API
+- **URL:** https://github.com/huytieu/cog-second-brain/blob/HEAD/skills/museum-art/references/rijksmuseum.md
+- **License:** CC0 / Public Domain Mark for the vast majority; some CC BY or restricted — check per object (verified 2026-10-07)
+- **Free tier:** fully free (no API key on new data.rijksmuseum.nl API)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dutch Golden Age plates and textures; attribution requested, not required. [Wave 8 A]
+
+#### Wellcome Collection ✅ commercial-safe
+- **What:** Wellcome's medical-history image collection (~250k items) — keyless Catalogue API + IIIF
+- **URL:** https://github.com/cfpramod/open-museum-mcp/commit/022430dba4ad84a4313525920d7f0714014cf308
+- **License:** Per-item; filter for CC0/Public Domain Mark (CC BY items exist — check the license field) (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Esoteric/medical plates; use workType=k + CC0/PDM filters. [Wave 8 A]
+
+#### Cleveland Museum of Art (Open Access) ✅ commercial-safe
+- **What:** Cleveland Museum of Art open-access API — 41k+ CC0 works with images, incl. archival TIFFs
+- **URL:** https://github.com/huytieu/cog-second-brain/blob/HEAD/skills/museum-art/SKILL.md
+- **License:** CC0 (filter share_license_status == "CC0") (verified 2026-10-07)
+- **Free tier:** fully free (keyless)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Print-res 3400px JPEGs; no attribution required. [Wave 8 A]
+
+#### Art Institute of Chicago ✅ commercial-safe
+- **What:** AIC open-access images — 50k+ CC0 images, keyless public API with IIIF
+- **URL:** https://www.artic.edu/open-access/open-access-images
+- **License:** CC0 1.0 (images); metadata CC0, descriptions CC BY 4.0 (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Enforce is_public_domain=true at the record level. [Wave 8 A]
+
+#### SMK (National Gallery of Denmark) ✅ commercial-safe
+- **What:** SMK Open — ~39k public-domain artworks from Denmark's national gallery
+- **URL:** http://commons.wikimedia.org/wiki/Commons:SMK_-_Statens_Museum_for_Kunst
+- **License:** Public Domain Mark / CC0 for expired-copyright works (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 700 years of Western art; Nordic/European plate source. [Wave 8 A]
+
+#### National Gallery of Art (DC) open data ✅ commercial-safe
+- **What:** NGA open data + IIIF images — ~45k–60k PD images, bulk CSV, no key
+- **URL:** https://github.com/huytieu/cog-second-brain/blob/HEAD/skills/museum-art/references/_synthesis.md
+- **License:** CC0 dataset; per-image openaccess flag gates rights (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Filter published_images.csv for openaccess=1 before pulling. [Wave 8 A]
+
+#### NASA EPIC / DSCOVR ✅ commercial-safe
+- **What:** DSCOVR EPIC Earth imagery (L1 full-disk daily images of Earth)
+- **URL:** https://epic.gsfc.nasa.gov/about
+- **License:** Freely available for re-production or re-use, including commercial purposes; credit NASA EPIC Team requested (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Full-disk Earth plates, updated daily; EPIC API for pulls. [Wave 8 A]
+
+#### Quixel Megascans (Fab free tier) ⚠️ license-conditional
+- **What:** Quixel photogrammetry surfaces/models on Fab — full library went paid end of 2024; ~1,500 free starter assets + Megaplants remain free
+- **URL:** https://quixel.com/license
+- **License:** Fab Standard License (commercial use in packaged projects OK; no resale/redistribution of raw assets) (verified 2026-10-07)
+- **Free tier:** ~1,500 free assets + all Megaplants; rest paid
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** No longer "all free" — check the price badge per asset; Epic account required. [Wave 8 A]
+
+#### TurboSquid (free models) ⚠️ license-conditional
+- **What:** TurboSquid free 3D model section — royalty-free stock models
+- **URL:** https://poletoparis.com/how-do-i-get-a-free-turbosquid-model/
+- **License:** Royalty-free (commercial use in projects OK); Editorial-license items are non-commercial; models may not be easily unpackable from shipped games (verified 2026-10-07)
+- **Free tier:** free model section; paid catalog separate
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Check each model's license type; avoid Editorial SKUs. [Wave 8 A]
+
+#### CGTrader (free models) ⚠️ license-conditional
+- **What:** CGTrader free 3D model section — per-model licenses (royalty-free, CC, Editorial)
+- **URL:** https://www.cgtrader.com/free-3d-models/interior/bedroom/simple-king-size-bed
+- **License:** Per-model — royalty-free and CC models are commercial-safe; Editorial/private-use models are not (verified 2026-10-07)
+- **Free tier:** free model section; paid catalog separate
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free account for downloads; filter out Editorial licenses. [Wave 8 A]
+
+#### Godot Asset Library ✅ commercial-safe
+- **What:** In-engine Godot asset repository (addons, tools, textures, 3D)
+- **URL:** https://docs.godotengine.org/en/stable/community/asset_library/what_is_assetlib.html
+- **License:** All assets free of charge under open-source licenses (MIT, GPL, Boost); check per asset (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GPL-licensed assets fine for shipped content; note "Proprietary (see LICENSE)" submissions exist. [Wave 8 A]
+
+#### ProductionCrate (free tier) ✅ commercial-safe
+- **What:** VFX stock elements, motion graphics, 3D models, music + SFX library — free tier: 5 downloads/day, up to 2K
+- **URL:** https://www.productioncrate.com/?ps_partner_key=cG01NDAz&ps_xid=JtouCTBLmrCOq1&gsxid=JtouCTBLmrCOq1&gspk=cG01NDAz
+- **License:** Free license allows commercial use in created media (films, YouTube, client work) (verified 2026-10-07)
+- **Free tier:** free account; 5 downloads/day; 4K/Pro tier paid
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Smoke/fire/dust overlays and VFX starter packs are plate-compositing staples. [Wave 8 A]
+
+#### Vecteezy (free tier) ⚠️ license-conditional
+- **What:** Free vectors, photos, video backgrounds (sister sites Videezy, Brusheezy)
+- **URL:** https://www.usetools.design/tools/vecteezy
+- **License:** Free tier allows personal + commercial use WITH attribution required on every use; no attribution = paid Pro (verified 2026-10-07)
+- **Free tier:** free forever, standard resolution; Pro paid
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution requirement kills it for clean client deliverables — credit the author or go Pro. [Wave 8 A]
+
+#### Sketchfab (free downloadable models) ⚠️ license-conditional
+- **What:** Sketchfab free/downloadable 3D models (Epic-owned; incl. CC0 cultural-heritage collection)
+- **URL:** https://help.sketchfab.com/en/articles/16152217-downloading-3d-models
+- **License:** Per-model: Standard License (commercial OK, no standalone resale) or CC (check NC/ND/SA traps) (verified 2026-10-07)
+- **Free tier:** free downloadables; Store paid models separate
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Never inherit a license from search results — open the model's license tab. [Wave 8 A]
+
+#### BlenderKit / Blendkit ⚠️ license-conditional
+- **What:** In-Blender (and Godot/Maya) asset library — 10k+ models, materials, HDRIs, brushes
+- **URL:** https://github.com/tmhsdigital/free-game-dev-assets/blob/HEAD/catalog/3d/blenderkit.md
+- **License:** Two grants: CC0 and Royalty-Free; RF allows commercial use but BANS resale of the asset as an asset — filter CC0 for zero friction (verified 2026-10-07)
+- **Free tier:** free plan; Full plan paid
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Free" ≠ CC0 here — check the license badge on each asset. [Wave 8 A]
+
+#### OpenGameArt ⚠️ license-conditional
+- **What:** Community game-art repository (textures, 2D/3D, backgrounds) — NC/ND clauses banned site-wide
+- **URL:** https://en.wikipedia.org/wiki/OpenGameArt.org
+- **License:** Free licenses only: CC0, CC BY, CC BY-SA, OGA-BY, GPL/LGPL; filter CC0 for zero-friction commercial use (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Texture packs galore; respect BY attribution where the license requires it. [Wave 8 A]
+
+#### ShareTextures ⚠️ license-conditional
+- **What:** Free seamless PBR textures + photogrammetry models/atlases (1,600+ textures, up to 4K)
+- **URL:** https://www.sharetextures.com/p/license
+- **License:** "Custom CC0" — personal/commercial OK, no attribution, BUT no redistribution on other sites/collections/plugins; CC0 only applies to direct downloads (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ship inside your game/film, never republish the library; prefer ambientCG/Poly Haven for pure CC0. [Wave 8 A]
+
+#### freepbr ⚠️ license-conditional
+- **What:** Free PBR texture site — free for games, but the grant lives on the About page, not a CC0 badge
+- **URL:** https://github.com/tmhsdigital/free-game-dev-assets/blob/HEAD/catalog/3d/README.md
+- **License:** Custom free-for-games grant; NOT stock CC0 — read the About page terms first (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Usable but terms-fragile; prefer the six true-CC0 texture sources when redistribution matters. [Wave 8 A]
+
+#### NoEmotion HDRs 🚫 not commercial-safe
+- **What:** 150 free HDR skyboxes (Prague/Swiss Alps, 15k×7.5k px) — terms are CC BY-ND
+- **URL:** http://noemotionhdrs.net.usitestat.com
+- **License:** CC BY-ND (Attribution + NoDerivatives) — cannot distribute modified material (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ND clause blocks VFX compositing of the HDRIs themselves — reference only. [Wave 8 A]
+
+#### hdri-hub.com (free HDRI samples) ✅ commercial-safe
+- **What:** Free HDRI/EXR environment samples (up to 10240×5120)
+- **URL:** https://www.hdri-hub.com/shop/free-samples/free-hdri-downloads
+- **License:** Free commercial license — "use in client work, renders, and animations without restrictions" (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean skybox/HDRI source for Blender/C4D lighting work. [Wave 8 A]
+
+#### OpenTopography ✅ commercial-safe
+- **What:** NSF-backed lidar + global DEM portal (SRTM, ALOS, Copernicus GLO-30/90, USGS 3DEP)
+- **URL:** https://github.com/tmhsdigital/free-game-dev-assets/blob/HEAD/catalog/environment/opentopography.md
+- **License:** Data free of copyright restrictions for commercial + non-commercial use; some datasets carry CC BY 4.0 — cite the dataset (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Real terrain heightmaps for 3D backgrounds; commercial API embedding needs an Enterprise key. [Wave 8 A]
+
+#### OpenTopoMap ⚠️ license-conditional
+- **What:** Free topographic map tiles rendered from OSM + SRTM data
+- **URL:** https://github.com/jalal1/tareek-vis/blob/HEAD/THIRD_PARTY_LICENSES.md
+- **License:** Cartography CC BY-SA 3.0, underlying data ODbL — attribution required; share-alike applies to adapted tiles (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribute © OpenStreetMap contributors + © OpenTopoMap; arrange high-volume use with maintainers. [Wave 8 A]
+
+#### Artbreeder ✅ commercial-safe
+- **What:** AI image breeding platform (faces, landscapes, anime) — all images CC0
+- **URL:** https://www.artbreeder.com/support
+- **License:** CC0 1.0 — all images public domain, commercial use allowed (verified 2026-10-07)
+- **Free tier:** free plan (monthly credits); private mode paid
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Concept-art and matte-painting starting points; free-tier images are public by default. [Wave 8 A]
+
+#### Skybox AI (Blockade Labs) ⚠️ license-conditional
+- **What:** AI 360° skybox/environment generator for games/VR
+- **URL:** http://rebusfarm.net/news/blockade-labs-skybox-ai-0-7-released
+- **License:** Free accounts: 15 skyboxes/month, exports watermarked under CC-BY — full commercial licensing requires a paid plan (verified 2026-10-07)
+- **Free tier:** free tier (watermarked, CC-BY)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free tier = prototyping only; budget a paid plan before shipping generated skyboxes. [Wave 8 A]
+
+#### IgniteMotion ✅ commercial-safe
+- **What:** Free HD motion backgrounds / video loops (MP4/MOV) — space, particles, abstract
+- **URL:** https://www.ignitemotion.com/
+- **License:** Free for commercial or personal use (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ready-made animated backplates; verify terms on the download page per clip. [Wave 8 A]
+
+#### AA VFX ⚠️ license-conditional
+- **What:** YouTube channel with free 4K/8K motion backgrounds, VJ loops, overlay effects (300k+ subs)
+- **URL:** https://www.youtube.com/watch?v=zgg1xGSGw0s
+- **License:** Free to use but attribution REQUIRED — "MUST ADD attribution to our YouTube channel: Motion Backgrounds by #AAvfx / @aavfx" (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Credit + hyperlink with every use; licensing advice on the channel leans on fair use — treat as attribution-required. [Wave 8 A]
+
+#### Monzoom ❓ unverified
+- **What:** Free 4K/HD motion video assets — video backgrounds, background loops, VJ loops (monzoom.com)
+- **URL:** https://technofizi.net/sitelike/motionbolt.com
+- **License:** Unverified (checked 2026-10-07)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify the site's license terms before shipping any clip. [Wave 8 A]
+
+#### VapourSynth ❓ unverified
+- **What:** Open-source Python-scripted video processing framework (frameserver successor to AviSynth)
+- **URL:** https://pypi.org/project/VapourSynth/80/
+- **License:** Unverified core license — plugin ecosystem suggests GPL/LGPL-family; check the repo LICENSE before shipping (checked 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Programmatic plate processing/denoise/upscale pipelines; verify license per build. [Wave 8 A]
+
+#### AviSynth+ ✅ commercial-safe
+- **What:** Open-source scriptable frameserver for video post-production (non-linear editing without temp files)
+- **URL:** https://en.wikipedia.org/wiki/AviSynth
+- **License:** GNU GPL (open source); as a tool, rendered output is yours — do not redistribute modified tool binaries without source (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Script-driven batch processing of plate footage; plugins carry their own licenses. [Wave 8 A]
+
+#### Project Dogwaffle (free 1.2) ✅ commercial-safe
+- **What:** Freeware raster paint + frame-animation editor (particle brushes, keyframer, batch processor)
+- **URL:** http://www.thebest3d.com/eula/
+- **License:** Proprietary freeware; EULA explicitly allows selling artwork created with it commercially (verified 2026-10-07)
+- **Free tier:** free 1.2; PD Pro paid
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not redistribute the bundled brushes/textures; artwork you paint is yours. [Wave 8 A]

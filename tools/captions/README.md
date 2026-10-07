@@ -29,9 +29,7 @@ python3 pysubs2_tool.py --demo -o demo.srt                  # 3-line demo SRT
 
 ## License notes
 
-- stable-ts: **GPL-3.0** — runs as a separate local process, never linked
-  into shipping code. Stays quarantined per the program's
-  `docs/LICENSE_QUARANTINE.md` until a license audit clears it (owner law).
+- stable-ts: MIT — safe to prototype and ship.
 - pysubs2: MIT — safe to prototype and ship.
 
 ## Proof

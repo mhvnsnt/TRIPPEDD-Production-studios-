@@ -1,7 +1,7 @@
 # TRIPPEDD lipsync — Rhubarb Lip Sync (binary, keyless, local)
 
-Rhubarb Lip Sync 1.14.0 (GPL-3.0 — used as a standalone CLI tool, never
-linked into shipping code; see program `docs/LICENSE_QUARANTINE.md`).
+Rhubarb Lip Sync 1.14.0 (MIT — per the bundled LICENSE.md; output mouth
+cues belong to us outright).
 Automatic lip-sync mouth cues from a WAV: outputs mouth shapes over time
 for 2D/cartoon puppet rigs (Preston Blair mouth set: A B C D E F G H X).
 

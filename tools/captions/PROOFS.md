@@ -21,8 +21,7 @@ Hashes (sha256):
 
 ## stable-ts (WIRED)
 
-stable-ts 2.19.1 (**GPL-3.0** — standalone local process, quarantined per
-program `docs/LICENSE_QUARANTINE.md`) + openai-whisper 20250625 + CPU torch.
+stable-ts 2.19.1 (MIT) + openai-whisper 20250625 + CPU torch.
 
 Install note: `pip install --no-deps --no-build-isolation stable-ts`;
 CPU `torchaudio` from the PyTorch CPU index; `openai-whisper` (its CUDA

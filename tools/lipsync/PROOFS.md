@@ -1,7 +1,7 @@
 # PROOFS — rhubarb-lip-sync
 
-Date: 2026-10-07. Rhubarb Lip Sync 1.14.0 (GPL-3.0 — standalone CLI tool,
-never linked into shipping code; see program docs/LICENSE_QUARANTINE.md).
+Date: 2026-10-07. Rhubarb Lip Sync 1.14.0 (MIT — verified in the release's
+bundled LICENSE.md).
 
 ## Install
 

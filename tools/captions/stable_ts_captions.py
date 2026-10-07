@@ -9,9 +9,9 @@ Usage:
     python3 stable_ts_captions.py vo.wav -o caps.srt
     python3 stable_ts_captions.py vo.wav -o caps.srt --model base --language en
 
-NOTE (license): stable-ts is GPL-3.0. Runs as a separate local process —
-never linked into shipping code — and stays quarantined per
-docs/LICENSE_QUARANTINE.md until a license audit clears it (owner law).
+NOTE (license): stable-ts is MIT — safe to prototype and ship.
+(Quarantine not required; the program's docs/LICENSE_QUARANTINE.md
+tracks GPL/AGPL items only.)
 """
 import argparse
 import sys

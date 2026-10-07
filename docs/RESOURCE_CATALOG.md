@@ -5374,3 +5374,60 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Notes:** 9 parts, 18 params (all bound), 2 physics, 10 anims. Proof renders: neutral, head-turn. NO blink: the robed card's face is pure black void (max V=90; the "sparkly white glints" live on the group-art Kiko, a different source — not composited, would invent canon). Documented in RIG_PROOF_WAVE5.md [Wave 5]
 
 ## Process note (applies to all three rigs)
+
+## Wave 6 — GPU handoff runbooks (Worker B, 2026-10-07)
+
+Five spec-only runbooks for the heavy synthesis targets (prior waves wired
+CPU-provable tools; these need a GPU box). Each runbook states hardware floor,
+disk floor, exact download/test commands, expected artifacts, verification
+steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
+
+#### Wan2.2-S2V-14B (GPU runbook) ✅ commercial-safe
+- **What:** Apache-2.0 speech-to-video (reference portrait + driving audio → lip-synced cinematic performance); talking-head engine for wizard dialogue scenes
+- **URL:** https://huggingface.co/Wan-AI/Wan2.2-S2V-14B (code: github.com/Wan-Video/Wan2.2)
+- **License:** Apache-2.0 (verified) (verified)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (lipsync)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 4/5 (needs 80GB-class GPU)
+- **Status:** not-started
+- **Notes:** GPU runbook available at `tools/lipsync/WAN22_S2V_GPU_RUNBOOK.md`. CORRECTED this wave: weights are ~49 GB (HTTP HEAD), not the ~28 GB earlier notes said; VRAM floor ≥80 GB single-GPU (ComfyUI ~32 GB community path); NO diffusers S2V pipeline class verified — use upstream `generate.py`. Test: one wizard still + 5 s speech WAV → 5 s clip [Wave 6]
+
+#### Zonos v0.1 (GPU runbook) ✅ commercial-safe
+- **What:** Zyphra zero-shot TTS (1.2B, 44 kHz, speaker embedding + emotion/rate/pitch conditioning); primary voice-casting engine (Static/Enzo-style recipe documented)
+- **URL:** https://github.com/Zyphra/Zonos (weights: Zyphra/Zonos-v0.1-transformer, Zyphra/Zonos-v0.1-hybrid)
+- **License:** Apache-2.0 (verified) (verified)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5 (GPU box only)
+- **Status:** not-started
+- **Notes:** GPU runbook available at `tools/voice/ZONOS_GPU_RUNBOOK.md`. Weights CORRECTED: transformer ~3.25 GB / hybrid ~3.3 GB (HTTP HEAD; HF API was ~2x wrong). CPU path DEFINITIVELY INFEASIBLE — OOM exit 137 documented (docs/GPU_HANDOFF_SPECS_WAVE5.md); hybrid additionally CUDA-kernel-blocked (mamba-ssm). Reference audio must be owner-supplied/consented [Wave 6]
+
+#### Dia 1.6B (GPU runbook) ❓ needs-owner-review
+- **What:** nari-labs two-speaker text-to-dialogue TTS ([S1]/[S2], non-verbals, 5–10 s audio-prompt cloning); dialogue-scene lane
+- **URL:** https://github.com/nari-labs/dia (weights: nari-labs/Dia-1.6B-0626)
+- **License:** Apache-2.0 (verified) (verified)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5 (GPU-only, no CPU path upstream)
+- **Status:** not-started
+- **Notes:** GPU runbook available at `tools/voice/DIA_GPU_RUNBOOK.md`. Weights: full snapshot 19.33 GB, unique ≈ 6.44 GB (repo carries the same 1.6B checkpoint in 3 containers); VRAM ~4.4 GB @ bf16. Worker D legal read: ✅ by license, ❓ needs-owner-review by stated research intent — R&D/animatics OK, owner must approve before monetized shipping [Wave 6]
+
+#### VibeVoice (GPU runbook) 🚫 research-only
+- **What:** Microsoft Research long-form multi-speaker TTS framework; only Realtime-0.5B (streaming) still obtainable — upstream removed the TTS code 2025-09-05
+- **URL:** https://github.com/microsoft/VibeVoice (weights: microsoft/VibeVoice-Realtime-0.5B)
+- **License:** MIT (verified) (verified)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts, research lane only)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5 (no official TTS inference script; demo-notebook path only)
+- **Status:** not-started
+- **Notes:** GPU runbook available at `tools/voice/VIBEVOICE_GPU_RUNBOOK.md`. Worker D verdict: 🚫 research-only — embedded audible AI disclaimer makes finished-episode use infeasible; the 90-min/4-speaker variant cannot be recovered from upstream at all (code-availability blocker) [Wave 6]
+
+#### Wan 2.2 TI2V-5B (GPU runbook) ✅ commercial-safe
+- **What:** Alibaba's 5B dense image/text-to-video model (4×16×16 VAE); the consumer-GPU still→shot workhorse (5 s 720p@24fps in <9 min, upstream)
+- **URL:** https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B (code: github.com/Wan-Video/Wan2.2)
+- **License:** Apache-2.0 (verified) (verified)
+- **Free tier:** fully open
+- **Repo lane:** both (video-gen)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** GPU runbook available at `tools/generative_stack/WAN22_I2V_GPU_RUNBOOK.md`. Weights 34.2 GB verified (HTTP HEAD); disk floor ≥40 GB; CUDA required; diffusers 0.35.1 import path already proven in this repo (tools/generative_stack/WAN22_WIRING.md). Test: one wizard still → 49-frame (2 s) clip [Wave 6]

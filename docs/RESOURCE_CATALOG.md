@@ -2760,27 +2760,27 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 #### Zonos ✅
 - **What:** Zyphra AI open zero-shot TTS with eSpeak phonemization and audio-prefix voice cloning
 - **URL:** https://github.com/ZyphraAI/Zonos
-- **License:** Apache-2.0 (verified via GitHub API license endpoint) — NOTE: built on Llama-3.2, so the Llama 3.2 Community License also applies (2026-10-07)
-- **Free tier:** fully open
-- **Repo lane:** god-molecule (tts)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Strongest open zero-shot TTS candidate for Wizard Gang character voices. DEPENDENCY NOTE: uses eSpeak phonemization — eSpeak-NG is GPL-3.0 (quarantine row 7); use the eSpeak binary as a standalone tool per the quarantine doctrine, never link the library [Wave 4]
-
-#### Dia ✅
-- **What:** 1.6B text-to-dialogue model with two-speaker turn-taking and emotion tags
-- **URL:** https://github.com/nari-labs/Dia
 - **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
+- **Status:** WIRED-PARTIAL — pip-installed (torch CPU), import verified after fixing a real upstream packaging bug (pyproject drops zonos/backbone subpackage; one-line local patch); espeak-ng installed; generation blocked (3.25GB weights vs ~1.4GB free disk). Lane: `tools/voice/zonos/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
+- **Notes:** Strongest open zero-shot TTS candidate for Wizard Gang character voices. DEPENDENCY NOTE: uses eSpeak phonemization — eSpeak-NG is GPL-3.0 (quarantine row 7); use the eSpeak binary as a standalone tool per the quarantine doctrine, never link the library [Wave 4]
+
+#### Dia ⚠️
+- **What:** 1.6B text-to-dialogue model with two-speaker turn-taking and emotion tags
+- **URL:** https://github.com/nari-labs/Dia
+- **License:** Apache-2.0 BUT upstream README: "intended for research and educational use" — identity misuse / deceptive content strictly forbidden. Commercial use needs a legal read (2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** WIRED-PARTIAL — lean --no-deps install, `from dia.model import Dia` OK; generation blocked (6.44GB fp32 weights; upstream GPU-only, CPU support "coming soon"). Lane: `tools/voice/dia/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
 - **Notes:** Dialogue-native TTS is ideal for multi-character cartoon scenes [Wave 4]
 
 #### Orpheus-TTS ✅
 - **What:** Expressive 3B text-to-speech with emotion and style tags
 - **URL:** https://github.com/canopyai/Orpheus-TTS
-- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **License:** Apache-2.0 (verified via GitHub API) — NOTE: built on Llama-3.2, so the Llama 3.2 Community License also applies (2026-10-07)
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
@@ -2797,14 +2797,14 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Status:** not-started
 - **Notes:** Bilingual option if any episode needs non-English dialogue [Wave 4]
 
-#### VibeVoice ✅
+#### VibeVoice ⚠️
 - **What:** Long-form multi-speaker podcast-style TTS (up to ~90 min continuous)
 - **URL:** https://github.com/microsoft/VibeVoice
-- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **License:** MIT BUT upstream (2025-09-05): "intended for research and development purposes only", TTS code was removed after misuse (partially restored since). Research/scratch only — never load-bearing without further testing (2026-10-07)
 - **Free tier:** fully open
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
+- **Status:** WIRED-PARTIAL — repo cloned, modeling code present; no file-inference demo upstream; generation blocked (5.41GB/2.04GB weights vs free disk). Lane: `tools/voice/vibevoice/`. Proof: `tools/voice/PROOFS_WAVE4_TTS.md`
 - **Notes:** Multi-speaker long-form fits full episode narration passes [Wave 4]
 
 #### F5-TTS 🚫

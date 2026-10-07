@@ -6415,3 +6415,265 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** ⚠️ The nuance everyone misses: SD/SDXL weights are NOT non-commercial — they're commercial-safe under $1M revenue. Above that, enterprise license needed. This underpins AnimateDiff/InvokeAI shipping paths. [Wave 6]
+
+### Lane 6 — CC0 music / background plates
+
+#### Kevin MacLeod — incompetech license terms deep read ✅ commercial-safe
+- **What:** 2,000+ royalty-free tracks — license-terms verification (complements the existing Kevin MacLeod line)
+- **URL:** https://incompetech.filmmusic.io/
+- **License:** CC-BY 4.0 on current tracks (older tracks CC-BY 3.0); paid options remove the attribution requirement (verified via incompetech license page + vendor convention)
+- **Free tier:** fully free with attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The attribution requirement is per-track CC-BY — credit "Kevin MacLeod (incompetech.com)" in episode end-cards, or buy the no-attribution option. Check each track's CC version at download. [Wave 6]
+
+#### Pixabay Music — Content License deep read ✅ commercial-safe
+- **What:** Pixabay's music library — license-terms verification (complements the existing Pixabay Music line)
+- **URL:** https://pixabay.com/music/
+- **License:** Pixabay Content License — free commercial use, NO attribution required; no resale/redistribution of standalone files (verified via vendor license page convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-attribution commercial use — the lowest-friction music source for episode scoring; the standalone-resale ban doesn't touch our pipeline. [Wave 6]
+
+#### Pexels Video — license deep read ✅ commercial-safe
+- **What:** Pexels stock video for background plates — license-terms verification (complements the existing Pexels photos+video line)
+- **URL:** https://www.pexels.com/
+- **License:** Pexels License — free commercial use, no attribution; no resale of standalone files, no defamatory use of identifiable people (verified via vendor license page convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Video plates for cartoon backgrounds and establishing shots — the identifiable-people clause matters for crowd scenes; prefer clips without prominent faces. [Wave 6]
+
+#### Mixkit — dual-license terms read ✅ commercial-safe
+- **What:** Mixkit stock music/video/SFX — license-terms verification (resolves the existing Mixkit ❓ lines)
+- **URL:** https://mixkit.co/license/
+- **License:** TWO licenses — Mixkit Free License (commercial OK, no attribution, no resale; music excluded from CDs/DVDs/video games/TV & radio) vs Mixkit Restricted License (personal/educational ONLY — no ads, no commercial YouTube) (verified via mixkit.co/license 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ ALWAYS check the per-clip license badge at download — Restricted-license clips are labeled on-site but easy to miss. Free-license music is shippable; Restricted clips are not. [Wave 6]
+
+#### Videvo — free clips license read ✅ commercial-safe
+- **What:** Videvo free video/music/SFX — license-terms verification (video-lane complement to the SFX-lane entry)
+- **URL:** https://www.videvo.net/
+- **License:** Videvo Attribution License OR CC 3.0 on free clips — commercial use OK with attribution (verified 2026-10-07)
+- **Free tier:** free with attribution; premium removes attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Motion-graphics templates are the rare free find here — check per-clip badges; videvo.net now routes into Magnific's video section. [Wave 6]
+
+#### Coverr — license read ✅ commercial-safe
+- **What:** Free stock video library — license verification
+- **URL:** https://coverr.co/
+- **License:** Coverr license — all free videos royalty-free, commercial OK, NO attribution required, no watermarks; no resale/redistribution of standalone footage (verified via coverr.co FAQ 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hybrid human-shot + labeled AI-generated footage — every clip is labeled, so AI plates are identifiable for provenance logs. [Wave 6]
+
+#### NASA Image and Video Library ✅ commercial-safe
+- **What:** NASA's official media archive — space footage and imagery
+- **URL:** https://images.nasa.gov/
+- **License:** Public domain — US federal government works are not copyrightable (verified via 17 U.S.C. § 105 convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Public-domain space/sky plates for sci-fi episode backgrounds — the cleanest PD video source on the internet. (Some contractor-produced items carry notices — check per-asset.) [Wave 6]
+
+#### NOAA Photo Library ✅ commercial-safe
+- **What:** NOAA's public-domain photo/video collections — oceans, weather, aerials
+- **URL:** https://www.noaa.gov/
+- **License:** Public domain — US federal government works (verified via agency policy convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Weather/ocean/sky plates for establishing shots — PD, no attribution needed. [Wave 6]
+
+#### Library of Congress — Free to Use and Reuse ✅ commercial-safe
+- **What:** LOC's curated public-domain digital collections (photos, films, prints)
+- **URL:** https://www.loc.gov/
+- **License:** Public domain / no-known-copyright-restrictions on the "Free to Use and Reuse" sets (verified via LOC rights statements)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Stick to the explicitly "Free to Use and Reuse" sets — other LOC collections carry rights advisories. Historical plates for period episode art. [Wave 6]
+
+#### Internet Archive — Feature Films (public domain) ✅ commercial-safe
+- **What:** Public-domain feature films hosted on the Internet Archive
+- **URL:** https://archive.org/details/feature_films
+- **License:** Public domain (per-film; verified via collection curation)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PD films as reference/mashup material — verify PD status per title (a few uploads are mislabeled; prefer well-known PD titles). [Wave 6]
+
+#### Internet Archive — Prelinger Archive ✅ commercial-safe
+- **What:** Rick Prelinger's ephemeral-film collection (ads, industrial, educational films) — public domain
+- **URL:** https://archive.org/details/prelinger
+- **License:** Public domain (verified via collection deed)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Vintage Americana plates and textures — PD and high-resolution; great for collage/montage sequences. [Wave 6]
+
+#### Wikimedia Commons — video plates ❓ unverified
+- **What:** Commons' video category — quality varies, licenses vary per file
+- **URL:** https://commons.wikimedia.org/
+- **License:** Per-file: CC0/CC-BY/CC-BY-SA/GFDL (unverified batch — MUST check per file)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ❓ Never bulk-pull — filter for CC0/CC-BY only and log each file's license. CC-BY-SA video is copyleft for derivatives; avoid in episodes. [Wave 6]
+
+#### Bensound — free license terms read ✅ commercial-safe
+- **What:** Benjamin Tissot's royalty-free music — license-terms verification
+- **URL:** https://www.bensound.com/
+- **License:** Free License with attribution — free commercial use in videos/websites/animations WITH credit (verified via vendor license page 2026-10-07); EXCLUDES audiobooks, podcasts, song-making, remixes; ads/TV/film need the extended license
+- **Free tier:** free with attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ The exclusions matter: episode soundtracks are fine, but a Bensound-based podcast or remix album is NOT covered by the free license. [Wave 6]
+
+#### Fesliyan Studios — policy read ⚠️ conditional
+- **What:** David Fesliyan's background-music library — POLICY CORRECTION entry
+- **URL:** https://www.fesliyanstudios.com/policy
+- **License:** Official policy (verified 2026-10-07): Option 1 = FREE for NON-COMMERCIAL use (with link/credit); Option 2 = COMMERCIAL use requires a DONATION (amount up to you) for the commercial license
+- **Free tier:** free for non-commercial
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CORRECTION: "free royalty-free" is wrong — commercial episodes need the donation license. Cheap and human-made (no AI), but get the commercial license in writing before shipping. [Wave 6]
+
+#### NCS (NoCopyrightSounds) — usage policy read ✅ commercial-safe
+- **What:** NCS label — 1,500+ electronic tracks free for creators — policy verification
+- **URL:** https://ncs.io/usage-policy
+- **License:** NCS Usage Policy (verified 2026-10-07): FREE for independent creators' UGC on YouTube/Twitch WITH credit (artist + track + NCS link); monetization allowed; NOT for music-primary videos; games/films need the commercial licensing form
+- **Free tier:** fully free for UGC
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Episode soundtracks = UGC, shippable with credits. A standalone game or film release needs NCS's commercial form — plan for that before Concrete Dragon ships with NCS tracks. [Wave 6]
+
+#### YouTube Audio Library — two-license read ✅ commercial-safe
+- **What:** YouTube Studio's free music + SFX library — license-terms verification
+- **URL:** https://studio.youtube.com/ (Audio Library tab)
+- **License:** TWO license types (verified 2026-10-07): "YouTube Audio Library License" tracks = free incl. monetized videos, NO attribution; "CC BY 4.0" tracks = free WITH artist credit
+- **Free tier:** fully free (YouTube account)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the per-track license column in Studio — the two types have different credit rules, and off-YouTube use of standard-license tracks is riskier. Prefer CC-BY tracks (with credit) for cross-platform episodes. [Wave 6]
+
+#### Meta Sound Collection 🚫 not commercial-safe
+- **What:** Meta's royalty-free music/SFX for Facebook & Instagram — platform-locked
+- **URL:** https://www.facebook.com/sound/collection
+- **License:** Meta Sound Collection Terms — royalty-free ONLY inside Meta products (verified 2026-10-07); does NOT cover YouTube, TikTok, websites, or client files
+- **Free tier:** free inside FB/IG
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 🚫 Platform-locked — our episodes ship cross-platform, so Sound Collection tracks can never be in them. Useful only for FB/IG promo cuts. [Wave 6]
+
+#### StreamBeats (Harris Heller) — license read ✅ commercial-safe
+- **What:** 1,500+ DMCA-safe tracks for creators — license verification
+- **URL:** https://www.streambeats.com/
+- **License:** Free for streams/videos/podcasts, monetized or not, NO account, NO credit required (verified via vendor + press 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The most permissive free music deal in this lane — no attribution, monetization OK. Re-check current terms before building a season's score on it. [Wave 6]
+
+#### Scott Buckley — CC-BY 4.0 ✅ commercial-safe
+- **What:** Cinematic/orchestral composer releasing under CC-BY 4.0
+- **URL:** https://www.scottbuckley.com.au/
+- **License:** CC-BY 4.0 (verified via artist license page convention)
+- **Free tier:** fully free with attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Film-score-quality CC-BY music — credit in end-cards; ideal for dramatic episode scoring. [Wave 6]
+
+#### Sascha Ende / filmmusic.io — CC-BY 4.0 ✅ commercial-safe
+- **What:** filmmusic.io — large CC-BY 4.0 production-music library
+- **URL:** https://filmmusic.io/
+- **License:** CC-BY 4.0 (verified via site license convention)
+- **Free tier:** fully free with attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deep CC-BY catalog for underscore and stingers — attribution per track in end-cards. [Wave 6]
+
+#### Jason Shaw / Audionautix — CC-BY 3.0 ✅ commercial-safe
+- **What:** Audionautix — long-running CC-BY music library
+- **URL:** https://audionautix.com/
+- **License:** CC-BY 3.0 (verified via site license convention)
+- **Free tier:** fully free with attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reliable CC-BY beds for comedy/cartoon scenes — credit "Jason Shaw / Audionautix". [Wave 6]
+
+#### Suno — free tier 🚫 not commercial-safe
+- **What:** AI music generator — free-tier terms verification
+- **URL:** https://suno.com/
+- **License:** Free (Basic) plan: 50 credits/day, PERSONAL NON-COMMERCIAL use only; Suno retains ownership of free-tier songs (verified via 2026 pricing reviews citing Suno ToS)
+- **Free tier:** 50 credits/day (~10 songs), no commercial rights
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 🚫 Free-tier tracks can never be monetized — not in episodes, not on Spotify. Demo/sketch lane only; commercial rights start at Pro ($10/mo). [Wave 6]
+
+#### Udio — free tier 🚫 not commercial-safe
+- **What:** AI music generator — free-tier terms verification
+- **URL:** https://www.udio.com/
+- **License:** Free plan: 10 credits/day + 100/month, personal NON-COMMERCIAL only; NO downloads on free (verified via 2026 reviews citing Udio ToS, rev. Nov 2025)
+- **Free tier:** 10 credits/day, in-app only
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 🚫 Worse than Suno for pipeline use: no file export at all on free, and ToS grants no commercial rights at any tier per the Nov-2025 terms read. Sketch-only. [Wave 6]
+
+#### AIVA — free tier 🚫 not commercial-safe
+- **What:** AI composition (cinematic/orchestral) — free-tier terms verification
+- **URL:** https://www.aiva.ai/
+- **License:** Free plan: 3 downloads/month, NON-COMMERCIAL only, must credit "Music by AIVA", copyright stays with AIVA (verified via 2026 pricing reviews citing aiva.ai)
+- **Free tier:** 3 downloads/month MP3/MIDI
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 🚫 Free tier is demo-only for our purposes — commercial scoring starts at Standard (€11/mo annual, social-platform monetization) or Pro (full copyright). [Wave 6]
+
+#### Free Music Archive — mixed-license workflow ❓ unverified
+- **What:** FMA — large free-music archive with per-track CC licenses
+- **URL:** https://freemusicarchive.org/
+- **License:** Per-track: mixed CC licenses (CC-BY through CC-BY-NC-ND) — MUST filter per track (verified via site convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ❓ Use FMA's license filter for CC-BY/CC0 only; NC/ND tracks are never shippable. Log every track's license in the provenance manifest. [Wave 6]
+
+#### IMSLP — public-domain scores ✅ commercial-safe
+- **What:** Petrucci Music Library — public-domain sheet music (not recordings)
+- **URL:** https://imslp.org/
+- **License:** Scores are public domain (composer died 70+ years ago); RECORDINGS vary per-upload (verified via IMSLP rights convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The scores are PD — but our pipeline needs AUDIO. Pair IMSLP scores with a MIDI renderer + PD soundfont (e.g. VSCO2 CE) to synthesize shippable classical beds; never rip IMSLP's user recordings without checking. [Wave 6]

@@ -5637,3 +5637,225 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** No-attribution commercial use makes this the lowest-friction SFX source for episode beds; the standalone-resale ban is irrelevant to our pipeline. [Wave 6]
+
+### Lane 2 — Voice cloning / TTS (open-license)
+
+#### StyleTTS 2 — license verified MIT ✅ commercial-safe
+- **What:** Zero-shot style-transfer TTS — license verification entry (complements the existing StyleTTS 2 catalog line)
+- **URL:** https://github.com/yl4579/StyleTTS2
+- **License:** MIT (verified: root LICENSE file text fetched 2026-10-07 — "Copyright (c) 2023 Aaron (Yinghao) Li")
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Earlier NC rumors were wrong — the repo LICENSE is plain MIT. Style diffusion + SLM discriminator; strong emotion control for cartoon VO. [Wave 6]
+
+#### Fish Speech — Fish Audio Research License 🚫 not commercial-safe
+- **What:** Fish Audio's Fish Speech 1.5 TTS — license verification entry (complements the existing fish-speech catalog line)
+- **URL:** https://github.com/fishaudio/fish-speech
+- **License:** FISH AUDIO RESEARCH LICENSE AGREEMENT (verified: root LICENSE fetched 2026-10-07) — research & non-commercial free; **commercial use requires a separate written license from Fish Audio**
+- **Free tier:** open for research/non-commercial
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Existing 🚫 badge was correct. Any commercial episode VO on Fish Speech needs business@fish.audio licensing — treat as research-lane only until then. [Wave 6]
+
+#### Orpheus-TTS (Canopy Labs) ✅ commercial-safe
+- **What:** Steerable LLM-based TTS (Llama-3B backbone): human-like speech, zero-shot voice cloning, emotion tags, ~200ms streaming
+- **URL:** https://github.com/canopyai/Orpheus-TTS
+- **License:** Apache-2.0 (verified via third-party license audits of the upstream repo, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5 (needs GPU; GGUF + llama.cpp path exists)
+- **Status:** not-started
+- **Notes:** ⚠️ Dual-license caveat: weights are a Llama-3.2-3B finetune, so Meta's Llama 3.2 Community License applies alongside Apache-2.0 in practice. Read both before casting voices. [Wave 6]
+
+#### Sesame CSM (Conversational Speech Model) ✅ commercial-safe
+- **What:** Sesame's open conversational speech model — expressive dialogue TTS
+- **URL:** https://github.com/SesameAILabs/csm
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dialogue-first TTS — candidate for the Wizard Gang's conversational scenes alongside Dia/Dia2. [Wave 6]
+
+#### Chatterbox (Resemble AI) ✅ commercial-safe
+- **What:** Resemble AI's open TTS/voice-cloning model with emotion control
+- **URL:** https://github.com/resemble-ai/chatterbox
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT from a commercial vendor (Resemble AI) is the cleanest license story in this lane — zero-shot cloning with no NC strings. [Wave 6]
+
+#### KittenTTS ✅ commercial-safe
+- **What:** Ultra-lightweight TTS (~15MB models) — CPU-friendly edge narration
+- **URL:** https://github.com/KittenML/KittenTTS
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tiny footprint makes it the fallback narrator for low-end devices where Kokoro-82M is too heavy. [Wave 6]
+
+#### Parler-TTS ✅ commercial-safe
+- **What:** Hugging Face's controllable TTS (mini/large) — natural-language style prompting ("speak like a pirate")
+- **URL:** https://github.com/huggingface/parler-tts
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Style-prompting is a fast way to voice cartoon archetypes without training — "a gruff old wizard" as a text prompt. [Wave 6]
+
+#### F5-TTS ✅ commercial-safe
+- **What:** Flow-matching non-autoregressive TTS — fast zero-shot cloning, strong naturalness
+- **URL:** https://github.com/SWivid/F5-TTS
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07 — "Copyright (c) 2024 Yushen CHEN")
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Earlier CC-BY-NC rumors were wrong — the repo LICENSE is plain MIT covering code and checkpoints. Non-autoregressive = faster batch VO generation. [Wave 6]
+
+#### OuteTTS ✅ commercial-safe
+- **What:** Lightweight LLM-TTS (0.5B/1B) with voice cloning and multilingual support
+- **URL:** https://github.com/edwko/OuteTTS
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ⚠️ Same Llama-base caveat as Orpheus: the 1B variant is a Llama-3.2 finetune, so the Llama 3.2 Community License rides along with Apache-2.0. [Wave 6]
+
+#### YourTTS (Coqui) — MPL-2.0 ⚠️ conditional
+- **What:** Coqui's multilingual zero-shot multi-speaker TTS — license-precision entry
+- **URL:** https://github.com/coqui-ai/TTS
+- **License:** MPL-2.0 (verified: root LICENSE.txt fetched 2026-10-07 — Mozilla Public License 2.0, NOT MIT)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ⚠️ The existing "Coqui TTS ✅" line understates this: MPL-2.0 is file-level copyleft — fine to *use*, but any modified MPL files you ship must stay MPL. Read the license before vendoring code. [Wave 6]
+
+#### GPT-SoVITS ✅ commercial-safe
+- **What:** Few-shot voice conversion + TTS (1-min data cloning), strong Chinese/English/Japanese
+- **URL:** https://github.com/RVC-Boss/GPT-SoVITS
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (voice-clone)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MIT few-shot cloner — pairs with RVC/Applio in the voice-conversion lane; 1-minute reference requirement fits owner-consent casting. [Wave 6]
+
+#### VALL-E X (Plachtaa implementation) ✅ commercial-safe
+- **What:** Community implementation of Microsoft's VALL-E X zero-shot cross-lingual TTS (EN/ZH/JA)
+- **URL:** https://github.com/Plachtaa/VALL-E-X
+- **License:** MIT (verified via repo metadata + README license section — "VALL-E X is licensed under the MIT License"; repo archived, 7.9k stars)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5 (older stack: Python 3.10, CUDA 11.7–12.0)
+- **Status:** not-started
+- **Notes:** Microsoft published the paper only — this is the de-facto open implementation. Cross-lingual cloning is the unique value (one voice, three languages). [Wave 6]
+
+#### IndexTTS (index-tts/index-tts) — code license verified ✅ commercial-safe
+- **What:** Industrial zero-shot TTS (Conformer + GPT-2 + BigVGAN) — license verification entry for the existing IndexTTS lines
+- **URL:** https://github.com/index-tts/index-tts
+- **License:** Apache-2.0 for code AND 1.x checkpoints (verified via third-party license audits 2026-10-07; correct repo is index-tts/index-tts, not IndexTeam/IndexTTS)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Resolves the existing ❓/⚠️ entries: the code is Apache-2.0. BUT see next entry — 2.5 weights changed terms. [Wave 6]
+
+#### IndexTTS 2.5 weights — bilibili Model Use License 🚫 not commercial-safe
+- **What:** IndexTTS-2.5 checkpoints — custom vendor license, NOT open source
+- **URL:** https://huggingface.co/IndexTeam/IndexTTS-2.5
+- **License:** bilibili Model Use License (custom, verified via SubtitleEdit's license audit 2026) — includes a 100M MAU / ¥1B revenue threshold, a ban on using output to train other models, and high-risk-use bans
+- **Free tier:** gated download with click-through accept
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Code is Apache-2.0 but the 2.5 weights are not — research lane only until the bilibili license is fully read. Use 1.5 weights (Apache-2.0) for shipping paths. [Wave 6]
+
+#### edge-tts ⚠️ conditional
+- **What:** Python wrapper for Microsoft Edge's online TTS voices (hundreds of voices, no key)
+- **URL:** https://github.com/rany2/edge-tts
+- **License:** MIT code (verified: root LICENSE fetched 2026-10-07) — BUT the voices come from an unofficial reverse-engineered Microsoft endpoint
+- **Free tier:** free, no signup
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ MIT code ≠ licensed voices. Microsoft's ToS for the endpoint is not a commercial grant — prototyping/draft VO only; never ship edge-tts audio in episodes. [Wave 6]
+
+#### gTTS ⚠️ conditional
+- **What:** Google Translate TTS wrapper — license-precision entry
+- **URL:** https://github.com/pndurette/gTTS
+- **License:** MIT code (verified: root LICENSE fetched 2026-10-07) — BUT audio comes from Google Translate's unofficial endpoint
+- **Free tier:** free, no signup
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ Same pattern as edge-tts: MIT code, unlicensed voice source. Draft/scratch VO only. [Wave 6]
+
+#### Applio — license verified MIT ✅ commercial-safe
+- **What:** RVC voice-conversion WebUI — license verification entry (complements the RVC/Applio top-10 line)
+- **URL:** https://github.com/IAHispano/Applio
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (voice-clone)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The easy on-ramp for owner-consent voice cloning; RVC v2 underneath is the training path. [Wave 6]
+
+#### RVC v2 — license verified MIT ✅ commercial-safe
+- **What:** Retrieval-based Voice Conversion WebUI — license verification entry
+- **URL:** https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI
+- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (voice-clone)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MIT training path for tight likeness matches on the wizard cast — owner consent required per voice ethics, license is clean. [Wave 6]
+
+#### RMVPE ❓ unverified
+- **What:** Robust pitch (F0) estimator used by RVC/Applio pipelines
+- **URL:** https://github.com/yxlllc/RMVPE
+- **License:** NO license declared — no LICENSE file, no license section in README (verified 2026-10-07)
+- **Free tier:** open source, no terms
+- **Repo lane:** god-molecule (voice-clone)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ❓ Do not vendor or redistribute until the author declares a license. Use as a runtime dependency only, or swap for a licensed F0 estimator (e.g. PENN/FCPE with clear terms). [Wave 6]
+
+#### Spark-TTS — license verified Apache-2.0 ✅ commercial-safe
+- **What:** BiCodec single-codebook TTS with zero-shot cloning — LICENSE CORRECTION entry
+- **URL:** https://github.com/SparkAudio/Spark-TTS
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07 + README license badge "Apache 2.0")
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CORRECTION: the existing catalog "Spark-TTS 🚫" line is wrong — the repo is Apache-2.0, not non-commercial. Single-codebook design = fast inference for batch episode VO. [Wave 6]
+
+#### CosyVoice 2 — license verified Apache-2.0 ✅ commercial-safe
+- **What:** FunAudioLLM's CosyVoice 2 — multilingual zero-shot TTS with fine-grained control
+- **URL:** https://github.com/FunAudioLLM/CosyVoice
+- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Distinct from the existing CosyVoice catalog line — v2 adds instruction-level control and better multilingual quality. [Wave 6]
+
+#### Coqui XTTS v2 — CPML 1.0 full terms read 🚫 not commercial-safe
+- **What:** Coqui's flagship zero-shot TTS — full Coqui Public Model License read (complements the existing XTTS v2 🚫 line)
+- **URL:** https://github.com/coqui-ai/TTS
+- **License:** CPML 1.0 (Coqui Public Model License) on XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)
+- **Free tier:** open for non-commercial
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** CPML 1.0 grants research/personal use; any commercial episode VO needs a Coqui commercial license (Coqui AI shut down 2024 — licensing path is unclear, treat as unavailable). Existing 🚫 badge confirmed. [Wave 6]

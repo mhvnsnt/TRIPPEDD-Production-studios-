@@ -21853,3 +21853,253 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Player changelog active 2026-09-29 (β19). Demoscene-adjacent portal, not a netlabel operator. Research-only until per-track terms confirmed. [Wave 21 Lane B]
+
+#### Swedish Armed Forces Music Corps (Försvarsmusiken) ⚠️
+- **What:** Heads all Swedish Armed Forces bands — Royal Swedish Army Band, Life Guards' Dragoon Music Corps, Royal Swedish Navy Band (Karlskrona) plus 25 Home Guard bands; organized 2010, serves Royal Court/Armed Forces/Government (Director: Roger Lodin since 2015)
+- **URL:** https://en.wikipedia.org/wiki/Swedish_Armed_Forces_Music_Corps
+- **License:** ⚠️ No Swedish government-work PD provision covers recordings — §9 of the Copyright Act (1962:729) expressly retains copyright in "musical works" even inside official documents (verified 2026-10-07 via WIPO Lex). Modern band recordings are commercial label products (see Proprius entry below). Official site reuse terms not verified
+- **Free tier:** N/A (no free licensed audio identified)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Usable lane = date-PD pre-1956 published recordings (EU 70-year phonogram term) or licensed engagement; verify per recording. [Wave 21 Lane C]
+
+#### Swedish Copyright Act (1962:729) §9 ⚠️
+- **What:** Statute entry — the "government works" exclusion in Swedish copyright law
+- **URL:** https://www.wipo.int/wipolex/en/text/580486
+- **License:** ⚠️ "Copyright does not subsist in 1. laws and other regulations, 2. decisions by public authorities, 3. reports by Swedish public authorities, 4. official translations of texts mentioned under 1.-3. Copyright subsists, however, in works of the following kinds when they form part of a document mentioned in the first Paragraph: ... 3. musical works..." (verified 2026-10-07). Military-band recordings are NOT covered — do not treat Swedish military audio as PD by default
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### Royal Swedish Army Band — commercial discography (Proprius, 1985) 🚫
+- **What:** "Under Blågul Fana — Regimental March Music in Sweden" (The Band of the Royal Swedish Army/Arméns Musikpluton), recorded 10–11 Dec 1984, released 1985 on commercial label Proprius (PROP 9945, gatefold LP) — incl. marches by Viktor Widqvist, Per Grundström, Sam Rydberg
+- **URL:** https://www.discogs.com/release/2780561-The-Band-Of-The-Royal-Swedish-Army-Arm%C3%A9ns-Musikpluton-Under-Bl%C3%A5gul-Fana-Regimental-March-Music-In-
+- **License:** 🚫 Commercial label release — all rights reserved; proof that modern Swedish army-band recordings are label-controlled products, not government-PD (verified 2026-10-07 via Discogs release page)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Reference discography for identifying Swedish military-band recordings in the wild — most circulating rips derive from label releases. [Wave 21 Lane C]
+
+#### Norwegian Armed Forces Music (Forsvarets musikk) ⚠️
+- **What:** Department overseeing all Norwegian military bands — Staff Band (FSMK, Oslo, est. 1818), Royal Norwegian Navy Band, Norwegian Air Force Band, H.M. King's Guard Band, Army bands (Northern/Western Norway); organizes the Norwegian Military Tattoo
+- **URL:** https://en.wikipedia.org/wiki/Forsvarets_musikk
+- **License:** ⚠️ No Norwegian government-work PD provision covers recordings — åndsverkloven §9 covers only acts/orders/decisions/official documents (verified 2026-10-07 via WIPO Lex); commercial releases exist (FSMK albums on Qobuz under the "Forsvarets Musikk" label). Site reuse terms not verified — per-recording check required
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Usable lane = pre-1956 published recordings (EU 70-year phonogram term) or licensed engagement. [Wave 21 Lane C]
+
+#### Forsvarets stabsmusikkorps — commercial releases 🚫
+- **What:** Staff Band of the Norwegian Armed Forces (FSMK, 39 full-time musicians) — albums sold commercially (Qobuz hi-res) under label "Forsvarets Musikk", incl. collaborations with Angelina Jordan, Ole Kristian Ruud; labels also Norsk Noteservice, Universal Music AS, 2L
+- **URL:** https://www.qobuz.com/au-en/interpreter/forsvarets-stabsmusikkorps/2475482
+- **License:** 🚫 Commercial retail releases — all rights reserved; confirms Norwegian military-band recordings are marketed as label product, not PD (verified 2026-10-07 via Qobuz artist page)
+- **Free tier:** streaming previews only
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Do not rip retail streams; use only as a discography reference. [Wave 21 Lane C]
+
+#### Norwegian Copyright Act (åndsverkloven, 2018) §9 ⚠️
+- **What:** Statute entry — the "public documents" exclusion in Norwegian copyright law
+- **URL:** https://www.wipo.int/wipolex/en/text/464711
+- **License:** ⚠️ "9.-(1) Acts, administrative orders, legal decisions and similar official documents are not subject to copyright. (2) The provision of subsection (1) shall not apply to works appearing as independent contributions in the documents mentioned in subsection (1)." (verified 2026-10-07). Musical works/recordings are NOT covered — do not treat Norwegian military audio as PD by default
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### National Library of Norway — online music library (nb.no) ⚠️
+- **What:** NB Norway's digitized audio: 63,000 albums, 2,600 EPs, 27,000 singles, 12,400 78rpm records, 530,000+ tracks — Norwegian recordings 1901–2025; national discography + historic 78s (incl. NRK's 9,000-record 78 collection)
+- **URL:** https://www.nb.no
+- **License:** ⚠️ Per-item rights: "Recordings that are rightscleared or public domain can also be accessed online outside the NLN premises" — everything else is on-premises/listening-station only; published recordings up to 1958 stream openly only by TONO collective agreement (streaming, not a reuse license) (verified 2026-10-07 via UiO/NLN presentation). Public archive ≠ public domain
+- **Free tier:** free streaming of rightscleared/≤1958 recordings
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strong research source for date-PD Norwegian military-band 78s — verify each item's rights statement before any reuse. [Wave 21 Lane C]
+
+#### Norwegian Military Tattoo ⚠️
+- **What:** Norway's largest indoor military-music spectacle (Oslo Spektrum, biannual since 1994, 800+ performers), organized by Forsvarets musikk; NRK1 is official TV partner; international bands incl. ROK Armed Forces Traditional Daechwita Band, US Army Field Band, Staff Band of the Bundeswehr
+- **URL:** https://en.wikipedia.org/wiki/Norwegian_Military_Tattoo
+- **License:** ⚠️ Live performances and NRK1 broadcast footage are rights-reserved; no reuse grant identified (verified 2026-10-07). Event recordings circulate on YouTube under standard license
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Footage source only with broadcaster/performer licence; useful as a discovery index for participating bands. [Wave 21 Lane C]
+
+#### Danish Copyright Act (Consolidated Act 1144/2014) §9 ⚠️
+- **What:** Statute entry — the "public documents" exclusion in Danish copyright law
+- **URL:** https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Denmark
+- **License:** ⚠️ Quoting 1144/2014 Art. 9: "Acts, administrative orders, legal decisions and similar official documents are not subject to copyright. This does not apply to works appearing as independent contributions in these documents." (verified 2026-10-07). Musical works/recordings are NOT covered — Danish military-band audio is not PD by default
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### Finnish Copyright Act (404/1961) §9 ⚠️
+- **What:** Statute entry — the official-documents exclusion in Finnish copyright law
+- **URL:** https://mycourses.aalto.fi/pluginfile.php/2201108/mod_folder/content/0/Cupore%20-%20Copyright%20Law.pdf?forcedownload=1
+- **License:** ⚠️ "Section 9 of the Copyright Act lists the works which are exempted from protection. These include laws and decrees and other official documents made or commissioned by public authorities or other public bodies." (verified 2026-10-07). Musical works/recordings are NOT covered — Finnish military-band audio is not PD by default
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### Nordic "Protection of Classics" (klassikerskyddet) ⚠️
+- **What:** Nordic copyright-law provision (SE/NO/DK/FI) making it "forbidden to treat a work of art in a manner which violates cultural interests after the death of the author" — applies even where copyright "is no longer in force or has never existed, that is, material in the public domain"; cases exist in Norway, Denmark, and Finland
+- **URL:** https://en.wikipedia.org/wiki/Protection_of_Classics
+- **License:** ⚠️ Even a date-PD Nordic military march used in a way deemed to violate cultural interests can draw an injunction — PD status is not the end of the diligence (verified 2026-10-07)
+- **Free tier:** N/A (legal doctrine)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pipeline rule: Nordic PD music is fine for respectful use; avoid degrading/mocking treatments of culturally significant works. [Wave 21 Lane C]
+
+#### JGSDF Central Band — official YouTube channel 🚫
+- **What:** 陸上自衛隊中央音楽隊 — the Japan Ground Self-Defense Force Central Band's official channel: regular concert recordings (e.g. Regular Concert No. 176), symphonic-band repertoire; sister bands (MSDF/ASDF) also publish officially
+- **URL:** https://www.youtube.com/channel/UCoPGl67mcoU11Ktf6hHRrYA
+- **License:** 🚫 Official channel uploads sit under the standard YouTube license — no download/reuse grant; mod.go.jp properties carry "All rights reserved" notices (verified 2026-10-07 via channel crawl + MOD site footers). Japan Copyright Act Art. 13 covers only laws/notices/judgments, not music
+- **Free tier:** free streaming
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only — do not rip; fan reuploads are not a rights source either. [Wave 21 Lane C]
+
+#### Japan Copyright Act (Act No. 48 of 1970) Art. 13 ⚠️
+- **What:** Statute entry — works not subject to copyright under Japanese law (official English translation)
+- **URL:** https://www.japaneselawtranslation.go.jp/en/laws/download/2506/09/s45Aa000480304en5.0_h21A73.pdf
+- **License:** ⚠️ "Article 13: The following works are not subject to the rights provided for in this Chapter: (i) the Constitution and other laws and regulations; (ii) notifications, instructions, circular notices, and other similar materials issued by a national or local government agency...; (iii) judgments, decisions, orders, and decrees of the courts...; (iv) translations and compilations of [those] materials..." (verified 2026-10-07). JSDF band recordings are NOT covered
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### Imperial Japanese military-band recordings on Wikimedia Commons ✅
+- **What:** Period Imperial Japanese Army/Navy band recordings hosted on Commons with explicit Public Domain marks, e.g. File:Kimi ga Yo 1930.ogg — Kimigayo performed 1930 by the Toyama Army School Military Band (90.4 s Ogg); File:01 軍艦行進曲.ogg — 1941 Imperial Japanese Navy Band "Warship March"; File:Yuki+No+Shingun.ogg — Toyama Army School Military Band from 78rpm Columbia Regal 68643
+- **URL:** https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Japan
+- **License:** ✅ PD — Kimigayo 1930: Commons "Public domain" mark; recording PD in Japan/EU (70 yrs from publication, expired end of 2000) and in the US (URAA-restored 95-yr term from 1930 expired end of 2025; PD from 2026-01-01); composition (ancient lyrics, Eckert arr.) long PD (verified 2026-10-07). Real file pulled + SHA-256'd — see wire-up proof
+- **Free tier:** free download (Ogg)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired-verified
+- **Notes:** Wire-up: tools/wave21_lane_c/proofs/kimigayo_1930_proof.txt (SHA-256 83de438f0ba5e9fbf8aa239260fde7d3e7d6b41f67a0644c4fde3ca16349954b, 1470108 bytes, 90.4 s). CAUTION: 1941 Navy Band recording is NOT yet US-PD (95-yr term runs to end of 2036) — check each file's date. [Wave 21 Lane C]
+
+#### NDL Digital Collections / Music & Audio-Visual Materials Room ⚠️
+- **What:** National Diet Library of Japan: digitized holdings + Music/AV Materials Room (scores, manuscripts, recordings); NDL provides some original content under CC BY-compatible terms and expired-copyright digitizations without restriction, but music manuscripts are restricted
+- **URL:** https://www.ndl.go.jp/en/tokyo/music/manuscript
+- **License:** ⚠️ "Permission is required to use music manuscripts and documents. Permission is limited to research and study purposes only." Downloading/storing NDL Digital Collections data is prohibited (verified 2026-10-07 via NDL + UTokyo library guide). Public archive ≠ public domain — per-item rights
+- **Free tier:** on-site/reading-room access; some expired-copyright items unrestricted
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research source for dating Japanese military music; reuse only where an explicit PD/CC mark is shown per item. [Wave 21 Lane C]
+
+#### ROK Armed Forces bands (MND / Defense Media Agency) ⚠️
+- **What:** Republic of Korea military bands (Army/Navy/Air Force/Marine Corps; Traditional Daechwita Band) — releases via MND/DEMA (국방홍보원) official channels; ROK Army band joined the 2026 Virginia International Tattoo performing "Arirang"
+- **URL:** https://www.koreajoongangdaily.com/korea/armys-military-band-to-join-largest-us-military-music-festival/12714031
+- **License:** ⚠️ Official MND/DEMA uploads sit under standard platform licenses (no reuse grant); one documented re-uploader notes they obtained permission from the MND/Army YouTube channels before reuse — treat official releases as permission-required. Korean Copyright Act Art. 7 covers only laws/notices/judgments, not music (verified 2026-10-07)
+- **Free tier:** free streaming
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Usable lane = date-PD pre-1956 published recordings (Korean phonogram term 70 yrs) or licensed engagement; verify per recording. [Wave 21 Lane C]
+
+#### Korean Copyright Act Art. 7 (Works Not Protected) ⚠️
+- **What:** Statute entry — works excluded from protection under Korean law
+- **URL:** https://www.wipo.int/wipolex/en/legislation/details/16953
+- **License:** ⚠️ "Article 7 (Works Not Protected): No work which falls under any of the following subparagraphs shall be protected under this Act: 1. Constitution, Acts, treaties, decrees, and municipal ordinances and rules; 2. Bulletins, public notifications, directives and others similar thereto which are issued by the central or local government; 3. Judgments, decisions, orders, or adjudications of courts...; 4. Compilations or translations of [those] works..." (verified 2026-10-07). Military-band recordings are NOT covered
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### National Library of Korea — digital collections ⚠️
+- **What:** NLK digital collections (nl.go.kr) — performance recordings (e.g. 1970s pansori sessions), popular-music originals with audio streaming, sheet music; 430,000 digitized items (150k copyright-free / 280k copyrighted per NLK's own reporting)
+- **URL:** https://nl.go.kr/EN/contents/EN32901000000.do
+- **License:** ⚠️ Per-item rights; audio disclosure is curated/edited ("portions that can be disclosed to the public were selected"); exhibition items carry item-level marks (e.g. BY-NC-ND-type "출처표시 + 상업적 이용금지 + 변경금지") (verified 2026-10-07). Public archive ≠ public domain
+- **Free tier:** free streaming of disclosed items
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research source for Korean military-music history; verify each item's mark before reuse. [Wave 21 Lane C]
+
+#### Singapore Armed Forces bands ⚠️
+- **What:** SAF bands (SAF Central Band; Music & Drama Company) under MINDEF Singapore — ceremonial/parade music, national-day performances
+- **URL:** https://www.mindef.gov.sg
+- **License:** ⚠️ Assume rights-reserved: Singapore has no government-work PD carve-out for music — government works get Publish + 70 years under the Copyright Act 2021; MINDEF site terms not individually verified 2026-10-07, so verify before any reuse
+- **Free tier:** free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** SAF band recordings on streaming platforms are commercial releases — do not rip. [Wave 21 Lane C]
+
+#### Singapore Copyright Act 2021 — government works 🚫
+- **What:** Statute entry — Singapore keeps full copyright in government works with a long term
+- **URL:** https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Singapore
+- **License:** 🚫 Government works: "Publish + 70 years", terms run to year end (verified 2026-10-07 via Commons copyright-rules page; corroborated by the Copyright Act 2021 overview). Modern SAF band recordings are rights-reserved for decades — there is no Singapore equivalent of US federal PD
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### PLA Central Military Band + China Military Online 🚫
+- **What:** Central Military Band of the PLA (中国人民解放军军乐团, est. 1952, 400+ musicians) — state-ceremony music; PLA media portal China Military Online (eng.chinamil.com.cn, authorized by the Central Military Commission, sponsored by the PLA News Media Center) publishes texts/photos/audio/video
+- **URL:** https://en.wikipedia.org/wiki/Central_Military_Band_of_the_People%27s_Liberation_Army_of_China
+- **License:** 🚫 No reuse grant anywhere on PLA/MND properties — China Military Online's About page describes itself as the official English-language military news site with no open licence; PRC Copyright Law Art. 5 covers only laws/official documents, not music (verified 2026-10-07). Verify terms carefully remains the rule — treat as all-rights-reserved
+- **Free tier:** free streaming/reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Portal: http://eng.chinamil.com.cn/2025xb/A_251455/index.html (About Us). Listening/reference only. [Wave 21 Lane C]
+
+#### PRC Copyright Law (2020) Art. 5 ⚠️
+- **What:** Statute entry — exclusions from copyright under Chinese law
+- **URL:** https://en.wikisource.org/wiki/Copyright_Law_of_the_People%27s_Republic_of_China_(2020)
+- **License:** ⚠️ "Article 5: This Law shall not apply to: (1) laws and regulations, resolutions, decisions and orders of State organs, other documents of a legislative, administrative or judicial nature and the official translations thereof; (2) mere information about facts or happenings; and (3) calendars, numerical tables and forms of general use, and formulas." (verified 2026-10-07). PLA band recordings are NOT covered
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### Indian Armed Forces bands ⚠️
+- **What:** Indian Army/Navy/Air Force bands — Republic Day/Beating Retreat ceremonies; Indian Army actively asserts IPR (e.g. obtained IPR/copyright in its camouflage uniform design, PIB 2023); MoD publishes formal terms & conditions for its web properties
+- **URL:** https://mod.gov.in/dod/sites/default/files/terms180618.pdf
+- **License:** ⚠️ Government-work regime: §17(d) makes the government first owner, 60-year term (§22/§28); Indian Army asserts copyright defensively (PIB: "The copyright of the design is with Indian Army... can file a legal suit against any design infringement"). §52(1)(za) exempts live performance of music "in the course of any bona fide religious ceremony or an official ceremony held by the Central Government" — that covers the PERFORMANCE, not reuse of the RECORDING (verified 2026-10-07)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Ceremony recordings circulate on YouTube under standard licence — listening/reference only; date-PD (pre-1966 published) recordings are the only unlicensed lane. [Wave 21 Lane C]
+
+#### Indian Copyright Act §17(d) / §28 / §52(1)(za) ⚠️
+- **What:** Statute entry — the three provisions that matter for Indian military music: government ownership, term, and the ceremony-performance exemption
+- **URL:** https://www.cabkgoyal.com/section-52-the-copyright-act-1957/
+- **License:** ⚠️ "§52(1)(za): the performance of a literary, dramatic or musical work or the communication to the public of such work or of a sound recording in the course of any bona fide religious ceremony or an official ceremony held by the Central Government or the State Government or any local authority." (verified 2026-10-07). Exempts the live ceremonial performance — does NOT place the recording in the public domain; §17(d) government ownership + 60-year term (§28) still applies
+- **Free tier:** N/A (statute)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excerpt saved in tools/wave21_lane_c/proofs/statute_excerpts.txt. [Wave 21 Lane C]
+
+#### Finnish Guards Band (Kaartin soittokunta) ⚠️
+- **What:** Premier band of the Finnish Defence Forces (est. Parola 1 April 1819; oldest of six FDF bands; Representative Band of the President of Finland; 42 musicians; 100+ events/year); official portal sotilasmusiikki.fi covers all six bands; commercial discographies exist (e.g. Finnish Air Force Band albums Air Play 1980 → Landscape Portraits of Finland 2019)
+- **URL:** https://en.wikipedia.org/wiki/Guards_Band
+- **License:** ⚠️ No Finnish government-work PD provision covers recordings — 404/1961 §9 covers only laws/decrees/official documents (verified 2026-10-07); bands release commercial albums; official-site reuse terms not verified — per-recording check required
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Usable lane = pre-1956 published recordings (EU 70-year phonogram term) or licensed engagement. [Wave 21 Lane C]

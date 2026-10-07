@@ -3912,3 +3912,13 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5 (native integration)
 - **Status:** WIRED-PARTIAL — SDK download requires Meta login (owner action: sign in → download → stage into `tools/lipsync/ovr-lipsync/sdk/`). Integration paths documented in lane README. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
 - **Notes:** Lowest-latency viseme path for game-engine characters; EULA must be read before shipping use [Wave 4]
+
+#### Ashes nijilive rig proof (Wave 4, god-molecule) ✅ commercial-safe
+- **What:** First real character rig on the nijigenerate/Inochi2D toolchain: Ashes (scarlet robe, grill smile) as a 15-part / 24-param nijilive rig with posed proof renders
+- **URL:** local — god-molecule-studio `tools/puppet/wizard-rig-proof/`
+- **License:** BSD-2-Clause (nijigenerate toolchain); rig art derived from owner-approved style refs
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (2d-animation-&-cartoon-r)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** WIRED — `Ashes.inp` structurally validated; 9 layered PNG parts + manifest; 4 posed renders (neutral, blink, head-turn+mouth-open, comparison); RIG_PROOF.md with exact recipe. Honest gap: nijigenerate setup-wizard not dismissible headless via xdotool — editor-screenshot step replaced by structural validation
+- **Notes:** Proves the puppet pipeline can carry the 9 council members; recipe is repeatable for the other 8 [Wave 4]

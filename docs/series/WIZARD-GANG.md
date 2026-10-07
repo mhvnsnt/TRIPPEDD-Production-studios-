@@ -157,6 +157,8 @@ Per the owner's music direction (2026-10-06): intro/promo music does **not** hav
 
 Rule: AI voices must be TIGHTER — closer matches to the real people they're based on (owner 2026-10-06).
 
+**Dialogue (owner 2026-10-07):** the show has voices and dialogue WHEN NECESSARY — it is a talk-driven comedy, not a silent reel. The pilot keeps dialogue sparse against the reveal spine, with comedic beats where the tone demands (council banter, the meeting, the 9th-seat reveal). Every pilot line goes to the owner for approval before final mix. A character with no ready AI voice does not speak — never a placeholder or wrong-likeness voice.
+
 ## Format spec — the Wizard Gang short
 
 There was no ~50-second format spec in the repo (the standing short contract is the 10–20s network ident). This spec is authored here from the ident contract + the entrance-kit evidence gates + the owner's standing ~50s promo length:

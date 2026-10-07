@@ -59,8 +59,8 @@ def main():
     while i < num_f:
         sss = int(i * 0.04 * 16000)
         chunk = speech_pad[sss:sss + split_len].reshape(1, -1)
-        enc = hub.run(None, {"input_values": chunk})[0]          # [1, T, 1024]
-        valid = enc[0][-sum(chunksize[1:]) * 2: -chunksize[2] * 2]
+        enc = hub.run(None, {"input_values": chunk})[0]          # [T, 1024] @ ~50 Hz
+        valid = enc[-sum(chunksize[1:]) * 2: -chunksize[2] * 2]  # 10 frames
         valid_feat = valid.reshape(chunksize[1], 2, 1024).mean(1)  # [5, 1024]
         res.append(valid_feat)
         i += chunksize[1]
@@ -84,18 +84,48 @@ def main():
     print("      cond:", cond.shape, flush=True)
 
     print("[4/4] lmdm diffusion sampling (%d steps, 80-frame window)" % args.steps, flush=True)
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "upstream"))
-    from core.models.lmdm import LMDM
-    lmdm = LMDM(model_path=args.lmdm, device="cpu",
-                motion_feat_dim=265, audio_feat_dim=1103, seq_frames=80)
-    lmdm.setup(args.steps)
-    seq_frames = 80
+    # Torch-free numpy port of upstream core/models/lmdm.py (_init_np/_setup_np/
+    # _one_step/_call_np for model_type == "onnx"). No behavior change.
+    import onnxruntime as ort
+    lmdm_sess = ort.InferenceSession(args.lmdm, providers=["CPUExecutionProvider"])
+
+    def make_beta(n_timestep, cosine_s=8e-3):
+        timesteps = (np.arange(n_timestep + 1, dtype=np.float64) / n_timestep + cosine_s)
+        alphas = timesteps / (1 + cosine_s) * np.pi / 2
+        alphas = np.cos(alphas) ** 2
+        alphas = alphas / alphas[0]
+        betas = 1 - alphas[1:] / alphas[:-1]
+        return np.clip(betas, 0, 0.999).astype(np.float64)
+
+    n_timestep, seq_frames, motion_dim = 1000, 80, 265
+    betas = make_beta(n_timestep)
+    alphas_cumprod = np.cumprod(1.0 - betas)
+    times = list(reversed(np.linspace(-1, n_timestep - 1, args.steps + 1).astype(int).tolist()))
+    time_pairs = list(zip(times[:-1], times[1:]))
+    eta = 1
+
     aud = cond[None, :seq_frames]
     if aud.shape[1] < seq_frames:                        # pad short clips
         aud = np.concatenate([aud, np.tile(aud[:, -1:], (1, seq_frames - aud.shape[1], 1))], 1)
-    kp_cond = np.zeros((1, 265), dtype=np.float32)       # neutral source-face condition
+    aud = aud.astype(np.float32)
+    cond_frame = np.zeros((1, motion_dim), dtype=np.float32)  # neutral source-face condition
+
+    rng = np.random.default_rng(0)
+    x = rng.standard_normal((1, seq_frames, motion_dim), dtype=np.float32)
     t0 = time.time()
-    motion = lmdm(kp_cond, aud.astype(np.float32), args.steps)   # (1, 80, 265)
+    for step_i, (t_cur, time_next) in enumerate(time_pairs):
+        time_cond = np.full((1,), t_cur, dtype=np.int64)
+        pred_noise, x_start = lmdm_sess.run(
+            None, {"x": x, "cond_frame": cond_frame, "cond": aud, "time_cond": time_cond})
+        if time_next < 0:
+            x = x_start
+            continue
+        alpha, alpha_next = float(alphas_cumprod[t_cur]), float(alphas_cumprod[time_next])
+        sigma = eta * np.sqrt((1 - alpha / alpha_next) * (1 - alpha_next) / (1 - alpha))
+        c = np.sqrt(1 - alpha_next - sigma ** 2)
+        noise = rng.standard_normal((1, seq_frames, motion_dim), dtype=np.float32)
+        x = (x_start * np.sqrt(alpha_next) + c * pred_noise + sigma * noise).astype(np.float32)
+    motion = x
     print("      diffusion done in %.1fs" % (time.time() - t0), flush=True)
 
     np.save(args.out, motion)

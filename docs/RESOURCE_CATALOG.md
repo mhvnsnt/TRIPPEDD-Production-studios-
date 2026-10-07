@@ -3894,7 +3894,7 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Repo lane:** trippedd (lip-sync)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5 (needs GPU box: ~28GB bf16 weights, 1xH100-class for 720p)
 - **Status:** WIRED — BLOCKED-HONEST on this sandbox (no CUDA, 4.3GB free disk). Lane: `tools/lipsync/wan2p2-s2v/`. GPU handoff spec in lane README. Proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`
-- **Notes:** First-party talking-head video gen for the 9 council members once a GPU worker exists [Wave 4]. ORG CORRECTION [Wave 5]: upstream moved `Wan-AI` → `Wan-Video` (github.com/Wan-Video/Wan2.2; old Wan-AI URLs 404 — HF weights stay under `Wan-AI/`). Verified download sizes (HF API, 2026-10-07): S2V-14B 16.3 GB, Zonos 1.65/1.62 GB, Dia 1.61 GB, VibeVoice-Realtime 1.02 GB — all ungated.
+- **Notes:** First-party talking-head video gen for the 9 council members once a GPU worker exists [Wave 4]. ORG CORRECTION [Wave 5]: upstream moved `Wan-AI` → `Wan-Video` (github.com/Wan-Video/Wan2.2; old Wan-AI URLs 404 — HF weights stay under `Wan-AI/`). Verified download sizes: S2V-14B 16.3 GB (HF API), Dia 1.61 GB (HF API), VibeVoice-Realtime 1.02 GB (HF API) — all ungated; Zonos CORRECTED 2026-10-07 via HTTP HEAD: transformer ~3.25 GB (3,248,848,864 B), hybrid ~3.3 GB (3,303,692,816 B) — the HF API safetensors.total figures (1.62/1.65 GB) were ~2x wrong. GPU workers: budget disk accordingly.
 
 #### Ditto (talking-head) ✅ commercial-safe
 - **What:** AntGroup realtime talking-head: audio-driven facial motion via diffusion (ONNX models)

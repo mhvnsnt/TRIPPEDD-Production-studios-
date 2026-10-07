@@ -1,0 +1,48 @@
+{
+  "artist": "Mike Koenig",
+  "license": "https://creativecommons.org/licenses/by/3.0/",
+  "pulled": [
+    {
+      "soundbible_id": "1542",
+      "name": "Air-Horn",
+      "artist": "Mike Koenig",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "page_url": "https://soundbible.com/1542-Air-Horn.html",
+      "download_url": "https://soundbible.com/grab.php?id=1542&type=mp3",
+      "local_file": "soundbible-1542-Air-Horn.mp3",
+      "sha256": "61343f51a9384c273f77baf986bb000cfbc87705e1105103ddb53a9c633498b5",
+      "bytes": 42683,
+      "duration_s": 2.101565,
+      "file_type": "MPEG ADTS, layer III, v1, 128 kbps, 44.1 kHz, JntStereo",
+      "pulled_at": "2026-10-07T20:34:39+00:00"
+    },
+    {
+      "soundbible_id": "128",
+      "name": "Metal-Gong",
+      "artist": "Mike Koenig",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "page_url": "https://soundbible.com/128-Metal-Gong.html",
+      "download_url": "https://soundbible.com/grab.php?id=128&type=mp3",
+      "local_file": "soundbible-128-Metal-Gong.mp3",
+      "sha256": "183471d73c66e95a0cc9521130220d0b3f55a36a42e1eec837b6b9630f00ca14",
+      "bytes": 87030,
+      "duration_s": 6.166463,
+      "file_type": "MPEG ADTS, layer III, v1, 128 kbps, 44.1 kHz, JntStereo",
+      "pulled_at": "2026-10-07T20:34:40+00:00"
+    },
+    {
+      "soundbible_id": "558",
+      "name": "Ambulance",
+      "artist": "Mike Koenig",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "page_url": "https://soundbible.com/558-Ambulance.html",
+      "download_url": "https://soundbible.com/grab.php?id=558&type=mp3",
+      "local_file": "soundbible-558-Ambulance.mp3",
+      "sha256": "33af9c30a90f7ab42af3d74d57e414400d43afb8463051b6bd0616698df8d0e9",
+      "bytes": 105743,
+      "duration_s": 5.841293,
+      "file_type": "MPEG ADTS, layer III, v1, 128 kbps, 44.1 kHz, JntStereo",
+      "pulled_at": "2026-10-07T20:34:41+00:00"
+    }
+  ]
+}

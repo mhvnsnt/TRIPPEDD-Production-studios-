@@ -133,7 +133,7 @@ The Narrator is **Ashes (Buffalo Bill) in the PURPLE robe, ONLY when outside the
 - He breaks the 4th wall **ONLY at story-progression moments** — never constant commentary.
 - Voice: **AI-performed Bill $aber voice** (owner confirmed 2026-10-06 — NOT owner-recorded). XTTS v2 clone in progress. Until the clone lands, the Narrator appears in direct-address visual beats **without spoken lines** — never placeholder voice, never synthetic filler.
 - **Comedic nod (owner 2026-10-07):** purple-robe Ashes being the Narrator is another wink like the 5-of-9 overlap — the same robe, never explicitly stated to players. The audience is never told.
-- **Pilot hold (owner 2026-10-07):** the owner has not shown Ashes' purple version yet, so **the Narrator does NOT appear in the pilot**. SHORT_01 ends on the 9th-seat reveal → title cards. The Narrator's direct-address debut is held for a later episode.
+- **Cartoon series rule (owner 2026-10-07):** the Narrator is VOICE ONLY in the Wizard Gang cartoon until the owner says otherwise. No purple-robed figure appears on screen at all. His Bill $aber AI voice may narrate / voice-over; the figure stays out.
 
 ## Sound and music direction
 
@@ -177,8 +177,8 @@ separate stem afterward.
 
 There was no ~50-second format spec in the repo (the standing short contract is the 10–20s network ident). This spec is authored here from the ident contract + the entrance-kit evidence gates + the owner's standing ~50s promo length:
 
-- **Runtime:** ~50 seconds.
-- **Aspect ratios:** 9:16 primary (shorts/distribution), 16:9 secondary, 1:1 for social cards. Thumbnail/still per shot.
+- **Runtime:** episode length TBD — owner picks the short-episode standard (see below). The ~50s cut is the TikTok/shorts version, NOT the episode length.
+- **Aspect ratios:** 16:9 primary (series / YouTube / TV), 9:16 secondary (TikTok cutdown), 1:1 for social cards. The pilot ships both; the series is framed for horizontal first.
 - **Structure:** cold open on the world (Hollows night) → council reveal sequence (robe colors one by one) → Narrator direct-address → "WIZARD GANG" title card → TRIPPEDD network ident card.
 - **Title cards:** canon-locked text only ("WIZARD GANG", "TRIPPEDD"). No placeholder, no "not in canon" text.
 - **Evidence gates (from UNIVERSAL_ENTRANCE_VIDEO_KIT.md):** the intended game/build was actually rendered; intended character assets actually loaded at runtime; rig/skin/deformation evidence clean; every move/effect shown exists in that build or is explicitly marked production-only; no other game's branding/UI/arena/character data leaked; no placeholder canon data; audio checked; source build, model, timeline, and output hashes recorded. UNKNOWN stays UNKNOWN.

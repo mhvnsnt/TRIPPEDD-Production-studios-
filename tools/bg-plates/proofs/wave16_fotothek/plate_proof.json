@@ -1,0 +1,16 @@
+{
+  "tool": "pull_plate.py (Wave 10 Lane A)",
+  "title": "Leipzig, Deutsche Buecherei (Paul Wolff, ca. 1925/1933)",
+  "source": "Deutsche Fotothek / SLUB Dresden via Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fotothek_df_hauptkatalog_0050627_Leipzig,_Deutsche_B%C3%BCcherei.jpg",
+  "license": "CC BY-SA 3.0 Germany",
+  "license_proof": "https://commons.wikimedia.org/wiki/File:Fotothek_df_hauptkatalog_0050627_Leipzig,_Deutsche_B%C3%BCcherei.jpg",
+  "file": "Fotothek_df_hauptkatalog_0050627_Leipzig,_Deutsche_B%C3%BCcherei.jpg",
+  "sha256": "baa82db0ba63a1e16c9db33cc7d5237f84e5c53e59c12a7ffe9676f7807248ec",
+  "bytes": 815443,
+  "duration_s": 0.04,
+  "width": 1107,
+  "height": 1600,
+  "codec": "mjpeg",
+  "fps": "25/1"
+}

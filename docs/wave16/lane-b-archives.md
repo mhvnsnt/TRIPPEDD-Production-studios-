@@ -281,10 +281,12 @@ Per lane instructions, candidates are listed here — `docs/LICENSE_QUARANTINE.m
 
 ## Wire-up
 
-- **Plate 1 (Deutsche Fotothek, CC BY-SA 3.0):** `tools/bg-plates/proofs/wave16_fotothek/` — Leipzig Deutsche Bücherei, ca. 1925/1933 (Paul Wolff), via Wikimedia Commons. ffprobe-verified + contact sheet.
-- **Plate 2 (Nationalmuseum Sweden, Public Domain):** `tools/bg-plates/proofs/wave16_nationalmuseum/` — PD painting plate via Wikimedia Commons. ffprobe-verified + contact sheet.
+- **Plate 1 (Deutsche Fotothek, CC BY-SA 3.0 Germany):** `tools/bg-plates/proofs/wave16_fotothek/` — Leipzig Deutsche Bücherei facade, Paul Wolff, ca. 1925/1933 (1107×1600, 815,443 bytes, sha256 `baa82db0…7807248ec`). ffprobe-verified; contact sheet visually verified (curved historicist facade, domed tower, cobblestone street, period lampposts).
+- **Plate 2 (Nationalmuseum Sweden, Public Domain):** `tools/bg-plates/proofs/wave16_nationalmuseum/` — Gerda Tirén, *A Mother* (1884), NM 7501 (901×1000, 215,632 bytes, sha256 `63380b47…1557fd8ca6f`). ffprobe-verified; contact sheet visually verified (woman in white blouse/red headscarf/coral necklace, "Gerda Rydberg Paris 1884" signature).
 
-*Proofs:* `plate_proof.json` (sha256, dimensions, codec, license + license-proof URL) and `plate_contact_sheet.png` (visually verified) per plate. Plate binaries live in `proofs/<name>/plates/` and are NOT committed.
+*Proofs:* `plate_proof.json` (sha256, dimensions, codec, license + license-proof URL) and `plate_contact_sheet.png` per plate. Plate binaries live in `proofs/<name>/plates/` and are NOT committed (removed before commit; re-pullable from the recorded source URLs).
+
+**Puller bug found (honest):** `pull_plate.py` crashes at the contact-sheet tiling step for still images (`hstack` exit 254 — thumbs are fine, the tile filter fails). Download + ffprobe + proof JSON all work. Contact sheets for these two plates were built manually with ffmpeg (full frame + 3 zoom crops, 2×2 grid). Recommend a lane-A/tooling fix: pad thumbs to uniform even dimensions before stacking.
 
 ---
 

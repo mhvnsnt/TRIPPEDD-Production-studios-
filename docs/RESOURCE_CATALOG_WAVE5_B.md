@@ -36,3 +36,18 @@ Only genuinely NEW or materially CHANGED items are listed. Already-catalogued (W
 
 #### Upstream org correction (applies to Wan2.2-S2V + Wan 2.2 entries)
 - The Wan org moved from `Wan-AI` to `Wan-Video`. Correct code repo is **https://github.com/Wan-Video/Wan2.2** (GitHub API: `spdx_id: Apache-2.0`); `github.com/Wan-AI/Wan2.2-S2V` returns **HTTP 404**. Weights remain under the `Wan-AI` HF org. Any doc/command still pointing at `Wan-AI/Wan2.2*` GitHub paths is stale [Wave 5]
+
+#### ZONOS2 ✅ commercial-safe
+- **What:** Zyphra's follow-up zero-shot TTS model — separate model from Zonos v0.1 (do not conflate the two in casting). Verified existence + license this wave.
+- **URL:** https://huggingface.co/Zyphra/ZONOS2
+- **License:** Apache-2.0 (verified: HF model card frontmatter `license:apache-2.0`, public, ungated, 2026-10-07). ⚠️ discrepancy note: a sibling Wave 5 read reported the vendor repo tracks MIT third-party components in a NOTICE dir — both candidate licenses are permissive, but read the repo LICENSE text in full before casting.
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5 (unknown API surface vs Zonos v0.1 — untested)
+- **Status:** not-started
+- **Notes:** 2.3k HF downloads, 149 likes (2026-10-07); last card update 2026-06-22. CPU feasibility untested; Zonos v0.1 remains the primary casting candidate until ZONOS2's voice quality is evaluated [Wave 5]
+
+## Status / license updates to existing entries (verify at merge)
+
+#### Dia — badge alignment: Wave 5 B spec §2b read ✅ → operative ❓ (per VOICE_COMMERCIAL_USE_WAVE5.md legal read)
+- The underlying license documents are clean Apache-2.0 (repo LICENSE + `nari-labs/Dia-1.6B-0626` card — re-verified 2026-10-07); nothing copyleft. The ❓ comes from the vendor README's research-intent framing ("intended for research and educational use"; "To accelerate research…"), which the sibling legal read treats as a genuine ambiguity requiring an explicit owner call before Dia voices ship in monetized episodes. Audition/R&D/animatics are fine. Merge to the stricter badge [Wave 5]

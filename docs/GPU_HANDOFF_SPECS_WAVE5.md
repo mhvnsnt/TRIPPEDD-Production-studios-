@@ -17,6 +17,7 @@ Wan2.2-S2V-14B (Alibaba Tongyi Lab) turns a **reference portrait + driving audio
 - **Paper:** https://huggingface.co/papers/2508.18621 · **Project page:** https://humanaigc.github.io/wan-s2v-webpage
 - **License:** ✅ **Apache-2.0 commercial-safe** — verified three ways: GitHub API reports `spdx_id: Apache-2.0` for `Wan-Video/Wan2.2`; the HF model card frontmatter says `license: apache-2.0`; the README usage section is the official Apache-2.0 release. Code + weights both Apache-2.0.
 - **Release status:** FULLY RELEASED and usable. The upstream README todo list is all checked: inference code ✅, S2V-14B checkpoints ✅, ComfyUI integration ✅, Diffusers integration ✅ (2026-08-26 announcement). Free HF and ModelScope Gradio demos exist if the worker wants a zero-install smoke test first.
+- **Example assets verified present in the repo** (2026-10-07, via GitHub tree API): `generate.py`, `requirements.txt`, `examples/i2v_input.JPG`, `examples/talk.wav`, `examples/pose.png`, `examples/sing.MP3`, `examples/pose.mp4` — the README commands reference real files, not placeholders.
 
 ### VRAM requirements (verified)
 | Path | Requirement | Source |
@@ -286,3 +287,22 @@ git clone https://github.com/nari-labs/dia2.git && cd dia2 && uv sync
 3. Test artifact produced: video (S2V/I2V) or wav (TTS) with `ffprobe`-verified streams.
 4. Spot-check frames/audio opened and eyeballed — "rendered" is not "verified".
 5. Report: GPU model, peak VRAM, wall-clock time, exact command, artifact path + SHA-256, anomalies (drift, identity slip, mis-sync).
+
+---
+
+## Addendum — Wave 5 B replacement worker (2026-10-07)
+
+The original Worker B died in a daemon restart after committing `a0d835f`. This addendum completes the one unfinished item (the Zonos CPU sandbox attempt, left "pending") and aligns the voice-license badges with the sibling worker's Wave 5 legal read. Existing sections above were not rewritten — corrections land here.
+
+### License-verdict alignment (sibling worker D, `docs/VOICE_COMMERCIAL_USE_WAVE5.md`, verbatim upstream evidence)
+- **Zonos ✅ commercial-safe** — unchanged. Sibling's full legal read confirms Apache-2.0 with no research rider (eSpeak-NG GPL-3.0 phonemizer dep stays on quarantine row 7 under the standalone-binary-use doctrine).
+- **Dia ❓ needs-owner-review — CORRECTION to §2b above.** §2b read the *license documents* (repo LICENSE file + `nari-labs/Dia-1.6B-0626` card) as clean Apache-2.0 and badged it ✅. The sibling worker's Wave 5 legal read found operative README framing: *"intended for research and educational use"*, *"To accelerate research, we are providing access to pretrained model checkpoints and inference code"*, plus a strict forbidden-uses list (identity misuse, deceptive content, illegal use). Apache-2.0 legally permits commercial use; the README is a strong vendor-intent signal, not a license restriction — genuine ambiguity, so per the standing conservative rule the operative badge is ❓. **Practical effect for the GPU worker: Dia is fine for audition/R&D, animatics, and dialogue-iteration; the owner must make an explicit call before Dia voices ship in monetized episodes.** The coordinator merges to the stricter badge.
+- **VibeVoice 🚫 research-only** — unchanged. Sibling confirms: MIT code license but Microsoft designates the model research-only, VibeVoice-TTS code pulled 2025-09-05 after misuse, and every Realtime output carries an embedded audible AI disclaimer + imperceptible watermark.
+- **Org rename confirmed:** `ZyphraAI` → `Zyphra`. `github.com/Zyphra/Zonos` verified live 2026-10-07 (GitHub API: `spdx_id: Apache-2.0`, default branch `main`); old `ZyphraAI/Zonos` links 404. §2a already points at the new org.
+- **ZONOS2 (new evidence this wave):** HF model `Zyphra/ZONOS2` card frontmatter says `license: apache-2.0`, public, ungated (verified 2026-10-07 via HF API; card last modified 2026-06-22). Note: the sibling read reported the vendor repo tracks MIT third-party components in a NOTICE dir — both candidate licenses are permissive, but a full repo license read is recommended before casting. Catalogued in the Wave 5 B appendix as ✅ with the discrepancy documented.
+
+### LICENSE_QUARANTINE — no new rows (max stays 65)
+Nothing in the four Wave 5 B specs is copyleft: Wan2.2 code + weights Apache-2.0; Zonos Apache-2.0; Dia Apache-2.0; VibeVoice code MIT; Dia2 Apache-2.0. Zonos' eSpeak-NG phonemization dependency (GPL-3.0) is already covered by quarantine row 7 (standalone-binary-use doctrine). Matches sibling Worker D's Wave 5 finding ("no new rows this wave").
+
+### Sandbox CPU attempt — Zonos hybrid 0.6B (~3 s line)
+Result recorded below when the run completes. Setup: venv + torch/torchaudio CPU wheels, repo cloned from `github.com/Zyphra/Zonos`, `pip install -e .` deps, espeak-ng present (`/usr/bin/espeak-ng`, v1.51). Sandbox facts: no GPU, 7 GB RAM (~4 GB available, no swap), 4.8 GB free disk. Per the anti-fake rule: if the attempt OOMs or times out, the failure is the documented result — no audio artifact will be fabricated.

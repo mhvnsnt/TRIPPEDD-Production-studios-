@@ -113,8 +113,18 @@ torchaudio.save("sample.wav", wavs[0], model.autoencoder.sampling_rate)
 - **Upstream benchmark (cite):** real-time factor ~2× on RTX 4090 (README "Features").
 - **Verify:** `ffprobe sample.wav` → 44.1 kHz PCM; listen to first 3 s; check the speaker sample's identity carries over; report RTF on the worker's card.
 
-#### Sandbox attempt (honest result — pending)
-Attempted in this sandbox: CPU-only synthesis of a ~3 s line with Zonos-v0.1-hybrid. Environment facts: no GPU; espeak-ng present (`/usr/bin/espeak-ng`, v1.51); PEP 668 blocked system pip so a venv was used; torch CPU wheel install in progress. ~7 GB total RAM, ~2 GB free — marginal for a 0.6B bf16 model (~1.2 GB weights + activations). Result recorded below when the run finishes. **If it OOMs or times out, that is the documented outcome — no audio artifact will be fabricated.**
+#### Sandbox attempt (honest result — 2026-10-07)
+**Outcome: NOT COMPLETED — synthesis blocked; no audio artifact produced (and none fabricated).** Genuine attempt log:
+
+1. Environment: no GPU (`nvidia-smi` absent), ~7 GB RAM (~2 GB free), no torch preinstalled.
+2. `espeak-ng` present (v1.51) — Zonos's system dependency satisfied.
+3. PEP 668 blocked system pip → used a venv. First attempt ran in `/tmp` (512 MB tmpfs) and failed with `ENOSPC` during the torch CPU wheel install — moved to workspace disk (6.7 GB free) and succeeded: **torch 2.14.1+cpu, torchaudio 2.11.0+cpu installed.**
+4. `huggingface_hub` downloads crashed with `httpx.InvalidURL: Invalid port: ':1]'` — the sandbox's documented `no_proxy` IPv6-literal quirk (see `~/TOOLS.md`); fixed by stripping `::` entries from `no_proxy`/`NO_PROXY` per the standing note. Download then started.
+5. `git clone --depth 1 Zyphra/Zonos` + `pip install -e .` succeeded (zonos-0.1.0, incl. phonemizer, transformers, DAC deps). `from zonos.model import Zonos` → **import OK** (the Wave-4-reported pyproject packaging bug did not reproduce — fixed upstream).
+6. `Zonos.from_pretrained("Zyphra/Zonos-v0.1-hybrid", device="cpu")` began downloading 1.65 GB of weights; reached **256 MB / 1.65 GB** when the sandbox host restarted mid-download, killing the process (no checkpoint survived; HF cache resumes).
+7. **Feasibility verdict: NOT feasible in this sandbox.** Even if the download completed, 2 GB free RAM vs 1.65 GB fp32 weights + torch/CPU overhead makes OOM near-certain; upstream README only sanctions CPU "provided there is enough free RAM" — this sandbox does not have it. The GPU-worker path (§2a commands) is the supported route.
+
+**Blockers (numbers):** RAM ~2 GB free (need ≈2.5 GB+ headroom); link ~1 MB/s (1.65 GB ≈ 25+ min download); no CUDA.
 
 ### 2b. Dia (nari-labs) — ✅ Apache-2.0 commercial-safe
 

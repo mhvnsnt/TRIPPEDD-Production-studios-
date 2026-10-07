@@ -9,7 +9,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (145 rows · 139 distinct projects — append-only manifest; see duplicate mapping below)
+## Quarantined items (159 rows · 153 distinct projects — append-only manifest; see duplicate mapping below)
 
 ## Row-number convention + duplicate mapping (Wave 8 Lane B, 2026-10-07)
 
@@ -238,6 +238,21 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 144 | pyvideotrans (jianchang512) | GPL-3.0 (verified: GitHub API spdx_id, 2026-10-07) — video dubbing + subtitle translation suite | captions | trippedd | standalone-tool use only — never linked into shipping code; VideoLingo (Apache-2.0) is the permissive alternative | PENDING |
 | 145 | Bento4 | Dual GPL-2.0-or-later / commercial (CORRECTED Wave 15 Lane B, 2026-10-07: was pinned GPL-2.0 — source headers (axiomatic-systems/Bento4) say "either version 2, or (at your option) any later version"; bento4.com/about confirms the dual-license model with a paid non-GPL commercial tier. Quarantine unaffected — still copyleft) — MP4/DASH/HLS SDK with subtitle muxing | captions | trippedd | standalone-tool use only under GPL — never linked into shipping code without the paid commercial license; ffmpeg covers the same muxing | PENDING |
 
+| 146 | subsai (absadiki) | GPL-3.0 (verified: GitHub API spdx_id, 2026-10-07) — subtitle generation/translation toolkit on Whisper | captions | trippedd | standalone-tool use only — never imported into shipping code | PENDING |
+| 147 | noScribe (kaixxx) | GPL-3.0 (verified: GitHub API spdx_id, 2026-10-07) — audio transcription app | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 148 | dsnote / Speech Note (mkiol) | MPL-2.0 (verified: repo LICENSE file, 2026-10-07) — Linux STT/TTS/translate app | captions | trippedd | weak copyleft — file-level; quarantined conservatively pending LGPL/MPL doctrine verdict | PENDING |
+| 149 | Subtitld (subtitld) | GPL-3.0 (verified: GitHub API spdx_id, 2026-10-07) — subtitle editor | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 150 | Penguin-Subtitle-Player (carsonip) | GPL-3.0 (verified: repo LICENSE file, 2026-10-07) — standalone subtitle player | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 151 | MediaConch (MediaArea) | GPLv3+ / MPLv2+ (verified: mediaarea.net License.html, 2026-10-07) — media policy checker | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 152 | lossless-cut (mifi) | GPL-2.0 (verified: GitHub API spdx_id, 2026-10-07) — lossless video trimmer | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 153 | MeGUI | GPLv2 (verified: SourceForge project page, 2026-10-07) — video encoding frontend | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 154 | GPAC / MP4Box (gpac) | LGPL-2.1 (verified: GitHub API spdx_id, 2026-10-07) — multimedia framework | captions | trippedd | weak copyleft — quarantined conservatively pending LGPL doctrine verdict | PENDING |
+| 155 | MKVToolNix | GPL v2 (verified: official site README, 2026-10-07) — Matroska toolkit | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 156 | VidCoder (RandomEngy) | GPL-2.0 (verified: GitHub API spdx_id, 2026-10-07) — video transcoder | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 157 | mpv (mpv-player) | GPLv2+ (verified: repo Copyright file, 2026-10-07; GitHub spdx NOASSERTION — license stated in-repo) — media player | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 158 | VLC (videolan) | GPL-2.0 (verified: GitHub API spdx_id, 2026-10-07) — media player | captions | trippedd | standalone-tool use only — never linked into shipping code | PENDING |
+| 159 | Bazarr (morpheus65535) | GPL-3.0 (verified: GitHub API spdx_id, 2026-10-07) — subtitle manager for media servers | captions | trippedd | standalone-tool use only — never linked into shipping code; network-adjacent use needs AGPL-style audit (it is GPL-3.0, not AGPL) | PENDING |
+
 ## Notes from Wave-8 Lane B quarantine reconciliation (Worker B, 2026-10-07)
 
 - **Cross-audit of rows 85–110 (26 rows, added by the Wave 7 A catalog lane):** every claimed license was re-checked against an upstream source (README license section / release notes / package metadata / third-party license attributions — never assumed). Result: 19 confirmed as claimed, 6 license-string refinements, 1 upstream-identity correction, 1 new duplicate found. **No row was wrong enough to change quarantine standing** — all 26 are copyleft and stay quarantined.
@@ -335,3 +350,9 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Duplicate scan (full manifest, normalized-name + first-word grouping):** no NEW duplicates. Only the 5 documented groups collide: aeneas 1/2 (two-lane entries, same project) · Seed-VC 43/58 (superseded) · so-vits-svc 24/65 (superseded — display names differ) · LMMS 71/110 (superseded) · Piper 20/41 (superseded — display names differ). Blenders (30/31) and NYCs (130/131) share first words but are distinct projects. Counts unchanged: 145 rows · 139 distinct projects.
 - **LGPL doctrine:** still PENDING OWNER VERDICT (no ruling found — re-checked memory 2026-10-07). Rows 63 (marytts, LGPL-3.0) and 121 (AivisSpeech, LGPL-3.0) stay quarantined. Weak-copyleft watchlist unchanged (Faust LGPL-2.1-or-later · OpenAL Soft LGPL-2.0-or-later · VapourSynth LGPL-2.1).
 - **Lane A handoff:** no Wave-15 Lane A catalog commit was present at audit time (no docs/catalog_wave15_laneA.md, no Wave-15 commits on origin main) — new-candidate sweep ran with nothing to check. If Lane A commits GPL/AGPL finds after this audit, they land in the Wave-16 lane.
+
+## Notes from Wave-15 coordinator quarantine append (2026-10-07)
+
+- **+14 rows (146–159):** Lane A's 14 caption/packaging copyleft flags, committed after Lane B's audit closed — appended here by the coordinator so Wave 15 closes clean: subsai GPL-3.0 · noScribe GPL-3.0 · dsnote/MPL-2.0 · Subtitld GPL-3.0 · Penguin-Subtitle-Player GPL-3.0 · MediaConch GPLv3+/MPLv2+ · lossless-cut GPL-2.0 · MeGUI GPLv2 · GPAC/LGPL-2.1 · MKVToolNix GPL v2 · VidCoder GPL-2.0 · mpv GPLv2+ · VLC GPL-2.0 · Bazarr GPL-3.0. 9 of 14 re-verified via GitHub API spdx_id by the coordinator (subsai, noScribe, subtitld, lossless-cut, gpac, mpv, bazarr, VidCoder, vlc — all match Lane A's claims); mpv's spdx is NOASSERTION but its in-repo Copyright file states GPLv2+. Remaining 5 verified by Lane A from repo LICENSE files / official sites.
+- **Weak copyleft:** dsnote (MPL-2.0) and GPAC (LGPL-2.1) quarantined conservatively alongside the existing LGPL-3.0 rows (63 marytts, 121 AivisSpeech) — LGPL/MPL doctrine still PENDING OWNER VERDICT.
+- **Header counts refreshed:** 159 rows · 153 distinct (AGPL 23 · GPL 118 · LGPL-2.1 1 · LGPL-3.0 2 · MPL-2.0 1 · GPLv3+/MPLv2+ 1 · CeCILL-2.1 1 · CC BY-SA 1 · CC BY-NC-ND 1 · municipal/state rights-restricted 10). No new duplicates (normalized-name scan).

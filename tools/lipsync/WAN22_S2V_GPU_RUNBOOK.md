@@ -122,3 +122,17 @@ demos upstream host can validate the input pairing before the 49 GB download.
 S2V inference entirely. The ~49 GB weights and the CLI wiring can be staged on
 a CPU box, but generation itself needs an 80 GB-class card (or ~32 GB via the
 community ComfyUI path). No CPU fallback exists upstream.
+
+## Wave 10 re-verification (2026-10-07 — sandbox still GPU-less)
+
+- Full snapshot re-verified via recursive HF file list: **49,148,820,007 B =
+  49.15 GB** (unchanged from the 49.14 GB figure); the `wav2vec2` subfolder is
+  present with identical sizes (`pytorch_model.bin` 1.26 GB, `lm.binary` 0.86 GB,
+  both redundant 1.26 GB containers); required unique set still ≈ 46.6 GB.
+- Upstream `generate.py` untouched since 2025-09-19; the Sep 2026 commit
+  (TalkVerse community work) is README-only — the `--task s2v-14B` CLI shape
+  in this runbook stands.
+- diffusers at main (v0.41.0 released 2026-10-06) STILL ships no S2V pipeline
+  class (`src/diffusers/pipelines/wan/` = t2v / i2v / v2v / animate / vace
+  only) — the "do NOT invent `from diffusers import WanS2VPipeline`" warning
+  stands.

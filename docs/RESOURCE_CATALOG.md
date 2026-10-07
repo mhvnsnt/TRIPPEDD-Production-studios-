@@ -10384,3 +10384,53 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Another trial-credit head for model evals. [Wave 9 A]
+
+#### Lightning AI Studio — free tier ❓ unverified
+- **What:** Cloud dev workspace (VS Code in browser) with free monthly GPU credits
+- **URL:** https://lightning.ai/
+- **License:** Platform ToS (account + phone verification required; ❓ free-credit figures vary across 2026 community guides — verify at signup)
+- **Free tier:** community guides report ~75 h/mo T4 16GB (or ~15 credits ≈ 15–22 h T4); L4/L40 options burn credits faster; environment persists between sessions
+- **Repo lane:** trippedd (gpu)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The persistent-environment alternative to Colab: weights/tools survive session restarts, so Zonos/Wan22 staging can live there. ❓ Verification wait can be 2–3 days without a .edu/corporate email. Good Zonos (6GB VRAM floor) and Dia candidate; NOT enough VRAM for S2V-14B official path. [Wave 10 D]
+
+#### Paperspace Gradient (DigitalOcean) — free tier ❓ unverified
+- **What:** Gradient notebooks with a $0 free tier (M4000-class GPU, limited hours)
+- **URL:** https://www.paperspace.com/pricing
+- **License:** Platform ToS — official pricing lists a Free $0 tier ("FREE GPU"); Pro $8/mo unlocks faster free GPUs (verified via vendor pricing page 2026-10-07)
+- **Free tier:** $0 tier with free GPU (M4000-class); Pro $8/mo for faster free GPUs
+- **Repo lane:** trippedd (gpu)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ❓ Paperspace merged into DigitalOcean — new AI customers are steered to DigitalOcean GPU Droplets; community reports say free machines are rarely available in practice. Verify free-tier availability before depending on it. Fine for Zonos/Dia smoke tests if available; not a render path. [Wave 10 D]
+
+#### RunPod — trial credits ⚠️ license-conditional
+- **What:** Cheap per-hour GPU pods + serverless; entry via referral/sign-up credit bonus, not a recurring free tier
+- **URL:** https://www.runpod.io/
+- **License:** Proprietary API terms; credits only — no free tier in any meaningful sense (verified via 2026 pricing guides)
+- **Free tier:** no standing free tier; new users get a referral bonus ($5–$500 weighted random non-EU / $5 fixed EU) when loading first $10 via referral link; Startup Program offers $1,000 one-time credits to accepted startups
+- **Repo lane:** trippedd (gpu)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ⚠️ Cheapest paid path if free quotas exhaust: Community Cloud RTX 4090 ≈ $0.22–0.27/hr — a $5–10 credit bonus buys ~15–40 h of 4090, enough for a full Zonos voice-cast batch and short S2V tests. Also the natural paid home for the S2V 80GB-class cards (H100 ≈ $2.89/hr Secure Cloud). Budget-tier paid lane only. [Wave 10 D]
+
+#### Hugging Face ZeroGPU — free tier ❓ unverified
+- **What:** Dynamic shared-GPU pool (A100-class) for Gradio Spaces — free accounts can host up to 2 ZeroGPU Spaces
+- **URL:** https://huggingface.co/docs/hub/spaces-zerogpu
+- **License:** Platform ToS — free personal accounts in good standing (verified email, account 30+ days old) may host up to 2 ZeroGPU Spaces; daily visitor quota ~5 min free (verified via 2026 community skill docs; cross-check with HF pricing at wire-up)
+- **Free tier:** shared GPU bursts (<120 s/call), Gradio-only, PyTorch-first
+- **Repo lane:** trippedd (gpu)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ❓ Burst-only — good for interactive voice/vision demos (a Gradio Zonos demo Space), NOT for batch renders or long S2V jobs (quota caps per call). Complements, doesn't replace, Kaggle/Modal/Colab. [Wave 10 D]
+
+#### SageMaker Studio Lab — free tier ❓ unverified
+- **What:** AWS's free ML notebooks — T4 GPU, persistent storage
+- **URL:** https://studiolab.sagemaker.aws/
+- **License:** Platform ToS (account approval required — request-based access)
+- **Free tier:** T4 GPU, 4 h/session, ~8 h/day, 15 GB persistent storage (per 2026 free-compute guides — verify at signup)
+- **Repo lane:** trippedd (gpu)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ❓ Approval-gated and approval can be slow, but once in it's a stable T4 workbench with persistent storage — a reasonable Colab alternative for Zonos/Dia GPU validation runs. [Wave 10 D]

@@ -120,3 +120,11 @@ be added soon" — no timeline). The install/import wiring can be prepared on a
 CPU box, but synthesis cannot be attempted, even slowly, until a CUDA card
 exists. Do not report a CPU attempt as "blocked but tried" — it is
 unsupported by design.
+
+## Wave 10 re-verification (2026-10-07 — sandbox still GPU-less)
+
+- `nari-labs/Dia-1.6B-0626` re-verified: **19,334,302,562 B = 19.33 GB** total
+  (unchanged); the safetensors shards are 4.99 + 1.45 GB — the table's combined
+  "6.44 GB" figure for the pair stands.
+- The 2025-11-19 Dia2 announcements are already covered in the license note
+  above — no new API drift for the Dia-1.6B path.

@@ -119,3 +119,51 @@ Honest defects / limitations (no fakes):
 2. **Karaoke SRT word tokens carry leading spaces** (whisper convention: " The",
    " Council") — the highlight join shows double spaces. Cosmetic; text is intact.
 3. tiny model only smoke-tested; base/small/medium untested on CPU here.
+
+## Wave 13 Lane D (2026-10-07) — caption_qa.py (WIRED)
+
+Self-written, stdlib-only QC defect gate for caption files — runs before
+burn-in. Catches: overlap / zero-negative duration / empty text / malformed
+cue (ERROR, exit 1); flash cue <1s / lingering cue >7s / reading speed
+>20 chars-sec / line >42 chars (WARNING, exit 0); dead-air gap >10s (INFO).
+JSON report via `--json -o`.
+
+Smoke tests (system python3, no venv, no pip):
+
+    python3 caption_qa.py --demo-clean -o proofs/caption_qa_clean.srt
+    python3 caption_qa.py --demo-defects -o proofs/caption_qa_defects.srt
+    python3 caption_qa.py proofs/caption_qa_clean.srt --json -o proofs/caption_qa_clean.json
+    python3 caption_qa.py proofs/caption_qa_defects.srt --json -o proofs/caption_qa_defects.json
+
+Result: clean demo = 3 cues, 0 errors, 0 warnings (exit 0). Defects demo =
+3 errors (cue 2 overlap, cue 4 empty text, cue 5 zero duration — exit 1) +
+4 warnings (cue 2 42.0 chars/sec, cue 3 flash 0.40s, cue 3 145.0 chars/sec,
+cue 3 58-char long line) + 1 info (11.0s dead-air gap before cue 6). Every
+seeded defect was caught; no false positives on the clean file.
+
+Real-pipeline proof (not synthetic): the Wave-12 faster-whisper karaoke SRT
+`proofs/faster_whisper_test.srt` (8 word-level cues, 8/8 words correct per
+Wave-12 proofs):
+
+    python3 caption_qa.py proofs/faster_whisper_test.srt --json -o proofs/caption_qa_realrun.json
+
+Result: 0 errors (exit 0), 11 warnings — every one of the 8 per-word karaoke
+cues is a flash cue (<1s; shortest is 0.08s for cue 7 "it") and 3 cues exceed
+20 chars/sec (cue 2 21.9, cue 7 25.0, cue 8 21.4). Honest finding: the
+per-word karaoke SRT style produces cues that are technically valid but
+below broadcast readability thresholds — for burn-in, merge words into
+phrase-level cues or relax the flash/CPS thresholds for karaoke mode. The
+tool does its job: it surfaced a real QC signal on real pipeline output.
+
+Hashes (sha256):
+
+- `proofs/caption_qa_clean.srt`: `c71801dba0f08c02ea9beea4cd15e5668d31a96402a511a4b58a91f74c4a12a4`
+- `proofs/caption_qa_defects.srt`: `dcfe2f7ebf82763b7ed63576e6759b319758fa3f8b7b41a31c4bc09eb81e9b9a`
+- `proofs/caption_qa_clean.json`: `218cab6bf5ee929b5768759444b236236288d0b6a31eb87d299c6061db04f973`
+- `proofs/caption_qa_defects.json`: `89d14fa55be6ffcf5f98d8c9cfa323d8caf863166604b22adc96c0b62205844d`
+- `proofs/caption_qa_realrun.json`: `2d8a23b978c20f2925aff022b5ae5cc6f9cbc034f46a153ee298e4526a27d1d5`
+
+Limitation (honest): SRT-only (no ASS/VTT parsing — use ttconv for
+conversion first); karaoke-per-word SRTs trip the flash/CPS warnings by
+design (thresholds tuned for phrase-level broadcast captions, not
+karaoke mode — a `--karaoke` relax flag is a possible follow-up).

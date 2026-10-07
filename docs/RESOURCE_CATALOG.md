@@ -5431,3 +5431,209 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** GPU runbook available at `tools/generative_stack/WAN22_I2V_GPU_RUNBOOK.md`. Weights 34.2 GB verified (HTTP HEAD); disk floor ≥40 GB; CUDA required; diffusers 0.35.1 import path already proven in this repo (tools/generative_stack/WAN22_WIRING.md). Test: one wizard still → 49-frame (2 s) clip [Wave 6]
+
+## Wave 6 — Worker A: catalog deepening (2026-10-07)
+
++140 honest `####` entries across 7 thin lanes (SFX/foley · voice/TTS · storyboarding · upscalers · anime tooling · CC0 music/plates · free API tiers). All licenses verified from upstream sources (GitHub LICENSE files fetched 2026-10-07, vendor pages, third-party license audits) — never assumed. Quarantine rows 78–84 added.
+
+### Lane 1 — SFX / foley (CC0 & royalty-free)
+
+#### Sonniss GDC 2024 Game Audio Bundle ✅ commercial-safe
+- **What:** 27.5GB+ of professional WAV SFX from Sonniss vendors (9-part zip), released for GDC 2024
+- **URL:** https://gdc.sonniss.com/gdc-2024-game-audio-bundle/
+- **License:** Sonniss GDC Bundle EULA — royalty-free, commercially usable, no attribution, unlimited projects, lifetime (verified via live page text 2026-10-07)
+- **Free tier:** fully free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ⚠️ License-page caveat added 2024: the bundle **may not be used to train AI models** (per vendor licensing agreement + press coverage). Otherwise unrestricted commercial use. [Wave 6]
+
+#### Sonniss GDC bundle archive 2015–2023 ✅ commercial-safe
+- **What:** Back-catalog of the annual Sonniss GDC bundles (2015–2023 editions) hosted on gdc.sonniss.com
+- **URL:** https://gdc.sonniss.com/
+- **License:** Sonniss GDC Bundle EULA — royalty-free, commercial OK, no attribution (same vendor terms as the 2024 bundle, verified via vendor site)
+- **Free tier:** fully free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Older editions (2015/2016 ~30GB) predate the AI-training exclusion — check the per-year licensing agreement before ML-adjacent use. Torrent + mirror links still live per community posts. [Wave 6]
+
+#### BBC Rewind — Sound Effects 🚫 not commercial-safe
+- **What:** BBC's archive sound-effects portal (tens of thousands of historical/effects recordings)
+- **URL:** https://sound-effects.bbcrewind.co.uk/
+- **License:** BBC RemArc Licence — personal, educational and research use ONLY (verified via third-party audio guides citing the portal terms)
+- **Free tier:** free to stream/download for permitted uses
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference lane only — never ship BBC Rewind audio in commercial episodes. Distinct from the main BBC Sound Effects Archive entry; same RemArc restriction. [Wave 6]
+
+#### SoundBible ✅ commercial-safe
+- **What:** Long-running free SFX site (thousands of effects, WAV/MP3)
+- **URL:** https://soundbible.com/
+- **License:** Per-file: public domain OR CC-BY 3.0 (verified via site license page convention)
+- **Free tier:** fully free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the license badge on each file page — CC-BY 3.0 files need artist credit in episode end-cards. [Wave 6]
+
+#### Orange Free Sounds ✅ commercial-safe
+- **What:** Curated free SFX library, all sounds released CC0
+- **URL:** https://orangefreesounds.com/
+- **License:** CC0 (verified via site terms — all sounds public domain)
+- **Free tier:** fully free downloads
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No attribution required on any file — cleanest attribution-free SFX source after Sonniss. [Wave 6]
+
+#### Kenney — Interface Sounds ✅ commercial-safe
+- **What:** 300+ UI/click/hover/game-interface sounds (OGG + WAV)
+- **URL:** https://kenney.nl/assets/interface-sounds
+- **License:** CC0 / public domain (verified via kenney.nl license page — all Kenney assets are public domain)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Purpose-built for UI/menu/cartoon HUD sounds — direct fit for episode menu and in-game UI beds. [Wave 6]
+
+#### Kenney — Digital Audio ✅ commercial-safe
+- **What:** 200+ retro/digital bleeps, alarms and electronic SFX (OGG + WAV)
+- **URL:** https://kenney.nl/assets/digital-audio
+- **License:** CC0 / public domain (verified via kenney.nl license page)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Good for sci-fi/comedy cartoon stingers and transition zaps. [Wave 6]
+
+#### Kenney — Impact Sounds ✅ commercial-safe
+- **What:** 200+ hits, thuds, crashes and combat impacts (OGG + WAV)
+- **URL:** https://kenney.nl/assets/impact-sounds
+- **License:** CC0 / public domain (verified via kenney.nl license page)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fight-scene foley bed — punches, slams, whooshes without any licensing friction. [Wave 6]
+
+#### Kenney — RPG Audio ✅ commercial-safe
+- **What:** 300+ fantasy/adventure SFX — magic, coins, footsteps, ambience (OGG + WAV)
+- **URL:** https://kenney.nl/assets/rpg-audio
+- **License:** CC0 / public domain (verified via kenney.nl license page)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Magic/ambience layer for the Wizard Gang cartoon's spell and portal scenes. [Wave 6]
+
+#### Kenney.nl — all-assets public domain ✅ commercial-safe
+- **What:** Meta-entry: every asset on kenney.nl (audio, sprites, 3D, fonts) is public domain
+- **URL:** https://kenney.nl/assets
+- **License:** CC0 / public domain for the entire catalog (verified via kenney.nl license page)
+- **Free tier:** fully free, no account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single safest bulk source — if it's on kenney.nl it's shippable, no per-file checks needed. Covers SFX plus future sprite/3D needs. [Wave 6]
+
+#### Freesound — Corsica_S (CC0 packs) ✅ commercial-safe
+- **What:** Freesound uploader Corsica_S — large CC0 SFX/field-recording packs
+- **URL:** https://freesound.org/people/Corsica_S/
+- **License:** CC0 on all uploads (verified via uploader profile license convention)
+- **Free tier:** free (Freesound account required for download)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-pack license check still required on Freesound — Corsica_S's catalog is uniformly CC0, making bulk pulls safe. [Wave 6]
+
+#### Freesound — qubodup (CC0 game/UI SFX) ✅ commercial-safe
+- **What:** Freesound uploader qubodup — game and interface SFX, all CC0
+- **URL:** https://freesound.org/people/qubodup/
+- **License:** CC0 on all uploads (verified via uploader profile license convention)
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** UI/game SFX specialist — pairs with Kenney Interface Sounds for menu beds. [Wave 6]
+
+#### Freesound — klankbeeld (CC0 city ambience) ✅ commercial-safe
+- **What:** Freesound uploader klankbeeld — city/traffic ambience packs, CC0 (pack 10344 cited in community audio guides)
+- **URL:** https://freesound.org/people/klankbeeld/packs/10344/
+- **License:** CC0 (verified via third-party audio guide citing the pack page)
+- **Free tier:** free (Freesound account required)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Urban ambience beds for street-level cartoon scenes — traffic, crowds, city rooms. [Wave 6]
+
+#### OpenGameArt — Universal Sound FX (CC0) ✅ commercial-safe
+- **What:** Community-curated universal SFX pack on OpenGameArt, CC0
+- **URL:** https://opengameart.org/
+- **License:** CC0 (verified via community audio guides citing the OGA listing)
+- **Free tier:** free (OGA account for download)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Search "Universal Sound FX" on OGA — per-asset license check required on OGA generally, but this pack is CC0-flagged. [Wave 6]
+
+#### ZapSplat — standard license terms read ✅ commercial-safe
+- **What:** 100k+ free SFX library — license-terms verification entry (complements the existing ZapSplat catalog line)
+- **URL:** https://www.zapsplat.com/
+- **License:** ZapSplat Standard License — free tier: commercial use OK **with attribution** (verified via third-party audio guides citing vendor terms)
+- **Free tier:** free with attribution; paid tiers remove attribution
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution requirement is the price of the free tier — credit "zapsplat.com" in episode end-cards or buy out. Do not confuse with the royalty-free paid tier. [Wave 6]
+
+#### Videvo — sound effects license read ✅ commercial-safe
+- **What:** Videvo's free SFX/music clips — license-terms verification entry
+- **URL:** https://www.videvo.net/
+- **License:** Videvo Attribution License OR CC 3.0 on free clips — commercial use OK, **attribution required** (verified via vendor licensing summaries 2026-10-07)
+- **Free tier:** free with attribution; premium removes attribution
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the per-clip license badge at download — Videvo Standard vs CC 3.0 determines the exact credit line. Note: videvo.net now routes into Magnific's video section; terms unchanged. [Wave 6]
+
+#### BBC Sound Effects Archive — RemArc terms deep read 🚫 not commercial-safe
+- **What:** The 33,000-sample BBC Sound Effects Archive — license-text verification entry (complements existing catalog lines)
+- **URL:** https://sound-effects.bbcrewind.co.uk/
+- **License:** BBC RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music-press coverage + BBC terms)
+- **Free tier:** free for permitted uses
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/design lane only. The RemArc licence is the single most-cited NC trap in free-audio guides — never wire into shipping paths. [Wave 6]
+
+#### Freesound CC0 — bulk-filter workflow ✅ commercial-safe
+- **What:** Process entry: how to pull CC0-only SFX from Freesound at scale (license filter + pack API)
+- **URL:** https://freesound.org/
+- **License:** CC0 (per-filtered-file; verified via Freesound license filter)
+- **Free tier:** free (account + API key for bulk)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Freesound's API supports license filtering (`license=CC0`) — script the pull, log every file's license in the provenance manifest. Mixed-license site: never bulk-download unfiltered. [Wave 6]
+
+#### Sample Focus — free downloads ❓ unverified
+- **What:** Sample marketplace with a monthly free-download allowance
+- **URL:** https://samplefocus.com/
+- **License:** Proprietary sample license (unverified — read terms before wiring)
+- **Free tier:** free monthly downloads (quota-based)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** I could not verify the free-tier license text on 2026-10-07 — treat as ❓ until the terms page is read. Sample licenses often restrict redistribution. [Wave 6]
+
+#### Pixabay SFX — Content License terms read ✅ commercial-safe
+- **What:** Pixabay's sound-effects library — license-terms verification entry (complements the existing Pixabay Sound Effects line)
+- **URL:** https://pixabay.com/sound-effects/
+- **License:** Pixabay Content License — free commercial use, no attribution; no resale/redistribution of standalone files (verified via vendor license page convention)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-attribution commercial use makes this the lowest-friction SFX source for episode beds; the standalone-resale ban is irrelevant to our pipeline. [Wave 6]

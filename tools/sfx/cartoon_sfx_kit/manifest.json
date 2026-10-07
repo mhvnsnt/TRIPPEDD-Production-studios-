@@ -1,0 +1,101 @@
+{
+  "generator": "tools/video_pipeline/sfx.py (donor, clean-room, PD algorithms)",
+  "kit": {
+    "bell.wav": {
+      "sha256": "71f35c4d848a435f7c99dcbda93a0954cbeee92e136c67a27a0af57547bda918",
+      "duration_s": 0.8,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.0
+    },
+    "blip.wav": {
+      "sha256": "5fb8adb34d23e3350c9306c4cf71a6d1435d79cac84c894a577d2f6d2d81a5d7",
+      "duration_s": 0.12,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.01
+    },
+    "crowd.wav": {
+      "sha256": "2743360d000156d6d04c49d5d2d02d3806bc6b12cee5991098a5f683db3464a4",
+      "duration_s": 2.5,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.92
+    },
+    "explode.wav": {
+      "sha256": "0caf39ab98a80b02a6c917968cf6f689705b2214538f35f8a0ce18e5758217fe",
+      "duration_s": 1.1,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.0
+    },
+    "fall.wav": {
+      "sha256": "9756faf679802a4a331f626f543890869f5ac81c87608da7517ad385e7c1bdf8",
+      "duration_s": 1.0,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.11
+    },
+    "gunshot.wav": {
+      "sha256": "2b08ce451f2ff76d2967a0b8fda2c71b18aa06c0fe118fe64dbc31706f53486f",
+      "duration_s": 0.3,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.0
+    },
+    "hit.wav": {
+      "sha256": "1ed88862617b06e57da544aca5f14eaa2cb682d43f966ff4605a52e5bd336d43",
+      "duration_s": 0.25,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.0
+    },
+    "ko.wav": {
+      "sha256": "8ab3754c7531449a1780468901ae2711808ca41524393839e7920d7b20ff2669",
+      "duration_s": 0.9,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.0
+    },
+    "pickup.wav": {
+      "sha256": "a650a60d8efe9645953dc8df0efd455368c39ad392848e9326044b755a74b33e",
+      "duration_s": 0.18,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.0
+    },
+    "riser.wav": {
+      "sha256": "baef9e30fcc9e47d36d07dca26047e858ef50252f78d9d155483556336e2b880",
+      "duration_s": 1.2,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.28
+    },
+    "thud.wav": {
+      "sha256": "10862957aeff871e1542fed97db7816c9fe56e408a64b11e183fd7d1c87e568f",
+      "duration_s": 0.35,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.09
+    },
+    "whoosh.wav": {
+      "sha256": "650304c68ec6b91b0f54c570e7a08155c6800cdb4857c8ba487114b639a0447f",
+      "duration_s": 0.6,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bits": 16,
+      "peak_dbfs": -0.0
+    }
+  }
+}

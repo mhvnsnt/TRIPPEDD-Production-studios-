@@ -9,7 +9,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 - **Catalog badges:** a catalog entry for a quarantined item carries either 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing and a **QUARANTINED (GPL/AGPL)** status flag (the ✅ covers tool use/output only — the code stays quarantined). ❓ is reserved for licenses genuinely not yet verified — never on an entry whose license line already says "(verified)".
 
-## Quarantined items (121 rows · 115 distinct projects — append-only manifest; see duplicate mapping below)
+## Quarantined items (125 rows · 119 distinct projects — append-only manifest; see duplicate mapping below)
 
 ## Row-number convention + duplicate mapping (Wave 8 Lane B, 2026-10-07)
 
@@ -213,6 +213,10 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 | 119 | MakeHuman app (makehumancommunity/makehuman) | AGPL-3.0 (verified: repo LICENSE.CODE.md = AGPL v3 text, 2026-10-07) — code only; the community ASSETS are CC0 (LICENSE.ASSETS.md) and separately cataloged commercial-safe | anime tooling | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 120 | Style-Bert-VITS2 (litagin/style-bert-vits2) | AGPL-3.0 (verified 2026-10-07: upstream GitHub sources) — strong copyleft code; model outputs follow the standard AGPL-output interpretation but the code never ships | voice/tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 | 121 | AivisSpeech (Aivis-Project/AivisSpeech) | LGPL-3.0 (verified 2026-10-07: upstream policy.md) — LGPL-doctrine question still PENDING OWNER VERDICT (see row 63 note); stays quarantined meanwhile | voice/tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 122 | Furnace (tildearrow/furnace) | GPL-2.0-or-later (verified: repo README "open-source under GPLv2 or later/GPLv3", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 123 | Dn-FamiTracker (alnicode/dn-famitracker) | GPL-2.0-or-later (verified: repo README "distributed under the GNU GPL 2 license or any later version", 2026-10-07) — note: j0cc fork lineage has per-component variants (MIT-0 / GPLv2 driver), but the application stays quarantined | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 124 | MilkyTracker (milkytracker/MilkyTracker) | GPL-3.0-or-later (verified: license infobox "GPL-3.0-or-later", 2026-10-07) — note: the MilkyPlay playback library alone is BSD-3-Clause and could be used separately; the tracker application stays quarantined | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 125 | Schism Tracker (schismtracker/schismtracker) | GPL-2.0 (verified: GitHub repo license tag GPL-2.0 + man page "Licensed under the GNU GPL", 2026-10-07) | sfx | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
 
 ## Notes from Wave-8 Lane B quarantine reconciliation (Worker B, 2026-10-07)
 
@@ -271,3 +275,9 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 
 - **+2 rows (120–121):** Style-Bert-VITS2 (AGPL-3.0) and AivisSpeech (LGPL-3.0) — both verified upstream; standalone-tool/research lane only, never wired into shipping paths. TAL-NoiseMaker was already quarantined (row 103, GPL-2.0) — no duplicate row added.
 - **Header counts refreshed:** 121 rows · 115 distinct (AGPL 22 · GPL 96 · LGPL-3.0 2 · CeCILL-2.1 1); catalog "License red flags" section updated to match (TTS category 8 → 10).
+
+## Notes from Wave-12 quarantine append (coordinator merge, 2026-10-07)
+
+- **+4 rows (122–125):** Furnace (GPL-2.0-or-later), Dn-FamiTracker (GPL-2.0-or-later), MilkyTracker (GPL-3.0-or-later), Schism Tracker (GPL-2.0) — chiptune/retro trackers found in the SFX lane; all verified upstream; standalone-tool/research only, never wired into shipping paths. Dedup-checked clean.
+- **Lane A flag resolved:** rows 120–121 (Style-Bert-VITS2, AivisSpeech) confirmed present in the manifest table — the worker's "table ends at 119" was a miscount; no gap, no collision.
+- **Header counts refreshed:** 125 rows · 119 distinct (AGPL 22 · GPL 100 · LGPL-3.0 2 · CeCILL-2.1 1).

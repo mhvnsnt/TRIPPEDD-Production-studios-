@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 121 rows · 115 distinct projects (rows 120–121 appended Wave 11 Lane A, 2026-10-07):** license families — AGPL 22 rows · GPL 96 rows (incl. -or-later/-only variants) · LGPL-3.0 2 rows (marytts + AivisSpeech — SCOPE NOTE: delist recommendation pending owner verdict, both stay quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 11 · lip-sync 9 · TTS 10 · anime tooling 8 · SFX 7 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
+- **Quarantined (copyleft) — 125 rows · 119 distinct projects (rows 122–125 appended Wave 12, 2026-10-07):** license families — AGPL 22 rows · GPL 100 rows (incl. -or-later/-only variants) · LGPL-3.0 2 rows (marytts + AivisSpeech — SCOPE NOTE: delist recommendation pending owner verdict, both stay quarantined meanwhile) · CeCILL-2.1 1 row (G’MIC — French GPL-compatible strong copyleft, stays quarantined). Top categories: 2D animation 16 · captions 13 · compositing 13 · backgrounds 11 · SFX 11 · lip-sync 9 · TTS 10 · anime tooling 8 · synths 5 · storyboard 5 · voice cloning 5 · upscalers 5 · DAWs 2 · plugins 2. Five duplicate groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
 
 - **Non-commercial / research-only — research lane only, never shipped (Wave-1 list, 17):** Spine (Esoteric Software) (Proprietary commercial (trial = evaluation only)); PureRef (Proprietary; free Personal license (non-commercial)); Wav2Lip (Custom non-commercial (personal/research only)); Coqui XTTS v2 (CPML 1.0 (Coqui Public Model License) on the XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)); Bark (suno-ai) (MIT code BUT README states model is CC-BY 4.0 NC due to EnCodec neural-codec backend (verified via README text quoted in forks)); BBC Sound Effects Archive (RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music press + BBC terms)); Stable Video Diffusion (Stability AI Community License (non-commercial)); LTX-Video (Apache-2.0 (code) + LTX Open Weights / Community License (weights)); HunyuanVideo (Tencent Hunyuan Community License Agreement (custom, verified)); SkyReels-V2 (Skywork Community License (custom, verified)); Pika (free tier) (Pika Terms of Service (proprietary)); Runway (free tier) (Runway Terms of Use (proprietary)); Luma (free tier) (Luma Terms (proprietary)); Hailuo AI / MiniMax (free tier) (MiniMax Terms (proprietary)); Kling AI (free tier) (Kling Terms (proprietary)); Pixverse (free tier) (Pixverse Terms (proprietary)); LTX Studio (free tier) (LTX Studio Terms (proprietary)) Later waves added more NC/research-gated items (not in the original 17 — documented in the wave notes): Spark-TTS + F5-TTS NC weights; IndexTTS (bilibili Model Use License); SUPIR, StableSR, CodeFormer, Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license); PlayHT/PlayAI (shut down 2025-12-31); Dia/VibeVoice (permissive licenses but vendor research-intent terms — see docs/VOICE_COMMERCIAL_USE_WAVE5.md).
 
@@ -12754,3 +12754,1201 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 ## Entry count — Wave 11 Lane A
 
 101 new `####` entries appended (60 anime/cartoon generation models · 30 SFX deepening · 11 BG-plate video) → **1236 total** honest entries (1135 before this wave: 1106 Wave-10 + 29 Wave-11-Lane-C quarantine-reconciliation entries). Quarantine rows 120–121 added (Style-Bert-VITS2 AGPL-3.0, AivisSpeech LGPL-3.0). Wired: tools/anime-models/hf_license_audit.py (HF license-tag audit, proof-verified), tools/bg-plates/vidsplay_pull.py (Vidsplay clip pull + ffprobe, proof-verified), tools/sfx/freesound_cc0_ledger.py (Freesound license-badge ledger, proof-verified). Mixkit scripted pulls are Cloudflare-blocked (documented, not faked).
+
+---
+
+## Wave 12 — Lane A (per-uploader SFX) — 29 entries
+
+#### Kenney — Voiceover Pack ✅ commercial-safe
+- **What:** 80+ cartoon voiceover clips (grunts, cheers, battle cries, phrases) drawn in Kenney's game-asset style, bundled as a named Kenney audio pack.
+- **URL:** https://kenney.nl/assets/voiceover-pack
+- **License:** CC0 1.0 — full commercial use, no attribution (verified 2026-10-07 via kenney.nl license page: "All assets are licensed under Creative Commons CC0")
+- **Free tier:** entire pack free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Direct character-vocal source for the cartoon (yells, taunts, reactions) — fills the voiceover gap Kenney's earlier music/UI packs left. [Wave 12 Lane A]
+
+#### Kenney — Voiceover Pack (Fighter) ✅ commercial-safe
+- **What:** Companion pack of fighter-style voice shouts and combat vocalizations, matching the Voiceover Pack above.
+- **URL:** https://kenney.nl/assets/voiceover-pack-fighter
+- **License:** CC0 1.0 — full commercial use, no attribution (verified 2026-10-07 via kenney.nl license page: "All assets are licensed under Creative Commons CC0")
+- **Free tier:** entire pack free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fight-scene vocal beds for the cartoon (impacts, exertion, KOs) with zero rights friction. [Wave 12 Lane A]
+
+#### BOOM Library — free sounds terms read ✅ commercial-safe
+- **What:** BOOM Library's gratis download packs and individual free sounds (distinct from Wave 11's Free Cinematic Series entry — this is the general free-tier terms read).
+- **URL:** https://www.boomlibrary.com/terms-conditions-regular/
+- **License:** BOOM free-sounds royalty-free license — commercial use allowed (verified 2026-10-07 via terms page: free download packs and individual free sounds may be used in "commercial and non-commercial projects … royalty-free")
+- **Free tier:** rotating free packs + individual free sounds
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pro-grade cinematic SFX (whooshes, impacts) cleared for commercial cartoon use — keep the terms-page PDF with any pulled pack. [Wave 12 Lane A]
+
+#### OrangeFreeSounds ✅ commercial-safe
+- **What:** Large free SFX site; every sound carries an individual CC license badge (spot-checked: rain/falling sound page).
+- **URL:** https://orangefreesounds.com/rain-falling-sound/
+- **License:** CC-BY 4.0 per sound — commercial use with attribution (verified 2026-10-07 via sound page license badge: "CC-BY 4.0")
+- **Free tier:** all sounds free; attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Weather/ambience beds for cartoon scenes; batch a per-sound license ledger at pull time since badges are per-sound. [Wave 12 Lane A]
+
+#### Dustyroom — Casual Game Sounds ✅ commercial-safe
+- **What:** Free casual-game SFX bundle from Dustyroom (UI clicks, pickups, cartoon pops) aimed at game jams.
+- **URL:** https://dustyroom.com/free-casual-game-sounds/
+- **License:** CC0 1.0 — commercial use, no attribution (verified 2026-10-07 via pack page license statement: "released under CC0")
+- **Free tier:** full bundle free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lightweight cartoon UI/game SFX with no attribution bookkeeping — good menu/HUD layer for the cartoon's game segments. [Wave 12 Lane A]
+
+#### rubberduck — additional CC0 SFX packs (OGA) ✅ commercial-safe
+- **What:** Further rubberduck CC0 packs on OpenGameArt beyond the three already cataloged (50 sci-fi, 30 loops, 100 #2): "30 weird CC0 SFX" (series starter), "60 CC0 sci-fi SFX", "50 CC0 retro/synth SFX".
+- **URL:** https://opengameart.org/content/30-weird-cc0-sfx?destination=node%2F87852
+- **License:** CC0 1.0 per pack page (verified 2026-10-07 via OGA page: "License(s): CC0")
+- **Free tier:** all packs free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quirky retro/weird one-shots that suit cartoon slapstick; dedup carefully per pack — the three sibling packs already live in the catalog. [Wave 12 Lane A]
+
+#### TheBlackSword — Die for the Empire SFX ⚠️ license-conditional
+- **What:** OpenGameArt SFX pack: lasers, bombs, explosions, bullets.
+- **URL:** https://opengameart.org/content/die-for-the-empire-sound-effects-lasers-bombs-explosions-bullets
+- **License:** CC-BY-SA 3.0 — commercial use allowed, attribution + share-alike required (verified 2026-10-07 via OGA page: "License(s): CC-BY-SA 3.0")
+- **Free tier:** full pack free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ Share-alike is the catch: any adapted/derived SFX built on these must stay CC-BY-SA — quarantine from the proprietary SFX chain; fine for research and reference builds only. [Wave 12 Lane A]
+
+#### bfxr2 ✅ commercial-safe
+- **What:** Modern rewrite of the classic bfxr retro-SFX synthesizer (increpare's repo); GUI + synthesis of 8-bit-style one-shots.
+- **URL:** https://github.com/increpare/bfxr2
+- **License:** MIT (code) — free commercial use (verified 2026-10-07 via repo: MIT license)
+- **Free tier:** fully open source
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest caveat: the repo license covers the CODE; upstream doesn't explicitly state the output-ownership clause — treat generated sounds as tool output (standard doctrine) and note the gap in any PROOFS file. [Wave 12 Lane A]
+
+#### RFXGEN ✅ commercial-safe
+- **What:** raysan5's retro SFX generator (raylib-family) with CLI batch conversion — generate whole SFX banks from the command line.
+- **URL:** https://github.com/raysan5/rfxgen/blob/HEAD/README.md
+- **License:** zlib/libpng — permissive, commercial use allowed (verified 2026-10-07 via repo README license section)
+- **Free tier:** fully open source
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The CLI batch mode is the pipeline hook — script a preset list and render hundreds of cartoon one-shots unattended. [Wave 12 Lane A]
+
+#### OpenMPT ✅ commercial-safe
+- **What:** Open-source music tracker (Windows/Wine) plus libopenmpt, a library that renders MOD/XM/S3M/IT tracker music to PCM — the pro route to chiptune SFX/music.
+- **URL:** https://github.com/OpenMPT/openmpt/blob/master/README.md
+- **License:** BSD-3-Clause (verified 2026-10-07 via repo README: "The OpenMPT/libopenmpt project is distributed under the BSD-3-Clause License")
+- **Free tier:** fully open source
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** BSD (not GPL like the chiptune trackers in quarantine) — the only tracker here safe to link against; libopenmpt can render retro SFX stems in-pipeline. [Wave 12 Lane A]
+
+#### Ghosthack — free packs license terms read ✅ commercial-safe
+- **What:** Ghosthack's free sample/SFX packs (a named free tier on a commercial sample label's site) — deepening the existing ⚠️ Ghosthack catalog entry with the actual FAQ terms.
+- **URL:** https://www.ghosthack.de/faq/
+- **License:** 100% royalty-free (free packs) — commercial use allowed; AI-training and re-upload forbidden (verified 2026-10-07 via FAQ: free sounds are "100% royalty-free" with AI-training/upload restrictions)
+- **Free tier:** free packs; paid catalog separate
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Terms-read upgrades the old ⚠️ entry to ✅ with one guardrail: never feed these into AI voice/music training or re-upload them raw. [Wave 12 Lane A]
+
+#### Loopmasters — free packs ✅ commercial-safe
+- **What:** Loopmasters' free sample-pack tier (spot-checked: the "Echoes" Trap pack product page marks its free version).
+- **URL:** https://www.loopmasters.com/genres/94-Trap/products/16948-Echoes
+- **License:** 100% royalty-free — commercial use allowed (verified 2026-10-07 via free-pack terms: "100% royalty-free")
+- **Free tier:** rotating free packs; paid packs separate
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Needs an account to download; music-loop heavy but the free packs include transition/riser SFX useful for cartoon scene changes. [Wave 12 Lane A]
+
+#### Krotos — free SFX ✅ commercial-safe
+- **What:** Krotos's free sound-effects tier: monthly free packs plus a "Big Bundle" of free SFX.
+- **URL:** https://krotos.studio/free-sound-effects
+- **License:** royalty-free — commercial use allowed (verified 2026-10-07 via page: free packs are royalty-free)
+- **Free tier:** monthly free packs + Big Bundle free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Designed-sound quality freebies from a pro SFX house — good whoosh/impact layer; check each pack's readme for per-pack terms at pull time. [Wave 12 Lane A]
+
+#### SFX Cellar ✅ commercial-safe
+- **What:** Free SFX library (10k+ sounds) run by accusonus — searchable web library with free downloads.
+- **URL:** https://get.alternative.to/sfx-cellar/overview
+- **License:** royalty-free — commercial use allowed (verified 2026-10-07 via overview/terms: sounds are royalty-free)
+- **Free tier:** free tier library; higher tiers paid
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Breadth play — 10k+ searchable sounds for foley gaps (doors, crowds, city beds) the CC0 packs don't cover. [Wave 12 Lane A]
+
+#### SoundDino ✅ commercial-safe
+- **What:** Free SFX library with a "no signup, commercial OK, no attribution" free license; MP3 downloads, hand-organized SFX categories (its music side is disclosed AI-composed).
+- **URL:** https://sounddino.com/
+- **License:** free license — commercial use, no attribution required (verified 2026-10-07 via license page: free for commercial use, no credit required)
+- **Free tier:** free; no signup
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fast no-friction source for everyday foley; prefer its SFX over its music (music is AI-composed — disclosed, but keep music sourcing to the dedicated music lanes). [Wave 12 Lane A]
+
+#### jorickhoofd — Freesound SFX ✅ commercial-safe
+- **What:** Freesound uploader with a large SFX library (spot-checked sound page).
+- **URL:** https://freesound.org/people/jorickhoofd/sounds/179314/
+- **License:** CC-BY (Attribution) — commercial use with credit (verified 2026-10-07 via sound page badge: "Attribution")
+- **Free tier:** all sounds free; Freesound account needed to download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Attribution is the only cost — maintain a credit line per sound in the pack manifest; spot-check each sound's badge (Freesound uploaders can mix licenses). [Wave 12 Lane A]
+
+#### Breviceps — Freesound SFX ✅ commercial-safe
+- **What:** Freesound uploader whose sounds are consistently CC0 — animals, UI blips, cartoon effects (spot-checked: "Blip Wave", "Chicken clucking", "Cartoon Wobble").
+- **URL:** https://freesound.org/people/Breviceps/sounds/456803/
+- **License:** CC0 1.0 — public domain, no attribution (verified 2026-10-07 via uploader's own statement on every sound: "As always: My sounds are Public Domain (CC0) and for everyone to use.")
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rare all-CC0 Freesound uploader with exactly the cartoon-ish material this lane wants (blips, wobbles, animal sounds) — priority pull target. [Wave 12 Lane A]
+
+#### j1987 — Freesound SFX ✅ commercial-safe
+- **What:** Freesound uploader with an all-public-domain library.
+- **URL:** https://freesound.org/people/j1987/
+- **License:** CC0 1.0 — public domain (verified 2026-10-07 via uploader profile: "All sounds hosted on my Freesound account is public domain")
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Profile-level PD dedication makes this a bulk-safe source — still spot-check the badge on any sound before shipping it in a pack. [Wave 12 Lane A]
+
+#### pfranzen — Freesound SFX ✅ commercial-safe
+- **What:** Freesound uploader, overwhelmingly CC0 (one BY outlier found in sampling).
+- **URL:** https://freesound.org/people/pfranzen/sounds/528807/
+- **License:** CC0 1.0 per sound — public domain (verified 2026-10-07 via sound page badge: "Creative Commons 0"); one Attribution outlier exists — check each badge
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** One known BY outlier means the pull script must read per-sound badges, not assume the uploader — the Wave-11 Freesound ledger tool fits here. [Wave 12 Lane A]
+
+#### Sirkoto51 — Anime SFX pack ✅ commercial-safe
+- **What:** Freesound "Anime SFX" pack: anime-style fight/encounter/ambience music loops (FL Studio / Garageband compositions).
+- **URL:** https://freesound.org/people/Sirkoto51/packs/20699/
+- **License:** CC-BY 4.0 (Attribution) — commercial use with credit (verified 2026-10-07 via sound page: "Attribution 4.0 — You are free to share … and to remix … as long as you credit the author")
+- **Free tier:** full pack free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Battle-scene loops with a cartoon/anime energy matching the series tone; keep the pack's per-sound credit list with the files. [Wave 12 Lane A]
+
+#### reinsamba — Freesound SFX ✅ commercial-safe
+- **What:** Long-standing Freesound field-recordist (cityscapes, nature, zoo, human sounds) — newer sounds are CC-BY 4.0.
+- **URL:** https://freesound.org/people/reinsamba/sounds/244965/
+- **License:** CC-BY 4.0 (Attribution) on current sounds — commercial use with credit (verified 2026-10-07 via sound page badge: "Attribution 4.0")
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ⚠️ Legacy caveat: the uploader's pre-2009 sounds carry the old Freesound Sampling+ license (NC) — only pull sounds badged Attribution 4.0 / CC0; see the Sampling+ license-read entry below. [Wave 12 Lane A]
+
+#### HerbertBoland — Freesound SFX 🚫 NC-or-quarantine
+- **What:** Freesound uploader with an extensive SFX library — license-verified as non-commercial.
+- **URL:** https://freesound.org/people/HerbertBoland/sounds/33637/
+- **License:** CC-BY-NC 4.0 — non-commercial only (verified 2026-10-07 via sound page badge: "Attribution NonCommercial 4.0")
+- **Free tier:** all sounds free for non-commercial use
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 🚫 Recorded for completeness so nobody assumes "Freesound = free for commercial" — do NOT pull into the commercial SFX chain. [Wave 12 Lane A]
+
+#### FoolBoyMedia — Freesound SFX ❓ unverified (mixed-license uploader)
+- **What:** Freesound uploader with a large library spanning three different licenses per sound (spot-checked).
+- **URL:** https://freesound.org/people/FoolBoyMedia/sounds/352666/
+- **License:** MIXED — CC0 / CC-BY 4.0 / CC-BY-NC 4.0 depending on the sound (verified 2026-10-07 via per-sound badges across sampled sounds)
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ❓ Use only with per-sound badge reads (the Wave-11 Freesound ledger tool); CC-BY-NC sounds are 🚫 — never batch-pull this uploader blind. [Wave 12 Lane A]
+
+#### thanvannispen — Freesound SFX ❓ unverified (mixed-license uploader)
+- **What:** Freesound uploader with mixed CC0 / Attribution badges per sound (spot-checked).
+- **URL:** https://freesound.org/people/thanvannispen/sounds/162180/
+- **License:** MIXED — CC0 / Attribution per sound (verified 2026-10-07 via per-sound badges across sampled sounds)
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ❓ Per-sound badge check mandatory before any commercial use; safe sounds are pullable with attribution where required. [Wave 12 Lane A]
+
+#### Kyster — Freesound SFX ❓ unverified (mixed-license uploader)
+- **What:** Freesound uploader with mixed CC0 / Attribution 4.0 badges per sound (spot-checked on profile).
+- **URL:** https://freesound.org/people/Kyster/
+- **License:** MIXED — CC0 / Attribution 4.0 per sound (verified 2026-10-07 via per-sound badges across sampled sounds)
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ❓ Same handling as the other mixed uploaders: ledger the badge per download, credit CC-BY sounds, skip anything NC. [Wave 12 Lane A]
+
+#### Lubini — Freesound SFX ❓ unverified (mixed-license uploader)
+- **What:** Freesound uploader with mixed CC0 / Attribution 4.0 badges per sound (spot-checked).
+- **URL:** https://FreeSound.org/people/Lubini/sounds/352847/
+- **License:** MIXED — CC0 / Attribution 4.0 per sound (verified 2026-10-07 via per-sound badges across sampled sounds)
+- **Free tier:** all sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ❓ Per-sound badge ledger required; the CC0 sounds are the clean pull. [Wave 12 Lane A]
+
+#### Sonniss — GDC yearly archive (2015–2024) ✅ commercial-safe
+- **What:** Community-maintained index of Sonniss's yearly GDC audio bundles (2015–2024) — thousands of royalty-free SFX, distinct from Wave 11's 2026-only entry.
+- **URL:** https://github.com/0kk470/sonniss_gdc_list
+- **License:** royalty-free — commercial use, no attribution required; 2024+ bundles add a no-AI-training clause (verified 2026-10-07 via the list repo's license notes: royalty-free for commercial and non-commercial use)
+- **Free tier:** all yearly bundles free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The single largest verified royalty-free SFX corpus in this lane — year-bundles vary in content; respect the 2024 no-AI-training clause (no model training on these files). [Wave 12 Lane A]
+
+#### Freesound — CC0-filter search workflow ✅ commercial-safe
+- **What:** Standing workflow entry (Wave-11 Civitai-workflow precedent): use Freesound's license filters to restrict searches to CC0, then ledger per-sound badges with the tools/sfx license-ledger script.
+- **URL:** https://freesound.org/help/faq/#licenses
+- **License:** CC0 1.0 (filtered results) — commercial use, no attribution (verified 2026-10-07 via Freesound license FAQ: CC0 sounds may be used "even for commercial purposes, all without the need of asking permission")
+- **Free tier:** all CC0 sounds free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The repeatable safe path for all future Freesound pulls in this lane — filter first, badge-ledger every download, never trust uploader-level assumptions (this wave reversed several). [Wave 12 Lane A]
+
+#### Freesound — Sampling+ legacy license warning 🚫 NC-or-quarantine
+- **What:** License-read entry: Freesound's pre-2009 default was the Creative Commons Sampling Plus 1.0 license; old uploads (e.g. reinsamba's early sounds) stay Sampling+ unless the uploader relicensed them.
+- **URL:** http://en.wikipedia.org/wiki/Freesound
+- **License:** CC Sampling+ 1.0 — non-commercial for unmodified distribution; commercial use of unmodified samples is NOT allowed (verified 2026-10-07 via the Freesound licensing summary: older samples remain Sampling Plus unless relicensed, and Sampling Plus does not allow unmodified samples to be distributed commercially)
+- **Free tier:** n/a — license warning
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 🚫 The trap to avoid across this whole lane: a CC-BY badge on a 2006 upload means nothing — always read the badge on the CURRENT sound page and treat Sampling+ sounds as NC. [Wave 12 Lane A]
+
+---
+
+## Wave 12 — Lane B (BG-plate video sources) — 46 entries
+
+#### OpenFootage — panorama/timelapse/smoke archive ⚠️
+- **What:** Long-running archive of panoramas, timelapses, textures, 3D scans and smoke/fire footage aimed at editors and VFX artists.
+- **URL:** https://openfootage.net/
+- **License:** Mixed per-clip — some lowres clips CC-BY 4.0, some CC-BY-NC-ND 4.0, larger sizes paid royalty-free (verified 2026-10-07 via openfootage.net: check each clip's license before use)
+- **Free tier:** Low-res downloads free with attribution
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Smoke/fire/timelapse plates are exactly the cartoon's composite-backdrop material; per-clip license check is cheap. [Wave 12 Lane B]
+
+#### EUscreen — European broadcast archives 🚫
+- **What:** Portal to tens of thousands of European broadcast archive clips. Streaming-only: no downloads, no reuse.
+- **URL:** https://www.euscreen.eu/
+- **License:** Not downloadable/reusable (verified 2026-10-07 via dspace.library.uu.nl thesis: "videos are not available for download or reuse — streaming portal only")
+- **Free tier:** View-only research portal
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Included as an honest negative — reference viewing only; NOT a plate source. [Wave 12 Lane B]
+
+#### British Pathé — newsreel archive 🚫
+- **What:** 85,000+ historic newsreel/film clips (1896–1984). Licensing-only; no free downloads.
+- **URL:** https://www.britishpathe.com/
+- **License:** Licensing-only (verified 2026-10-07 via YouTube descriptions: "FOR LICENSING ENQUIRIES VISIT britishpathe.com")
+- **Free tier:** None for production use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — a reference archive only; don't build pulls against it. [Wave 12 Lane B]
+
+#### Public Domain Torrents — PD feature films ✅
+- **What:** Curated collection of public-domain feature films in DivX/Xvid/AVI; everything verified as public domain.
+- **URL:** https://www.publicdomaintorrents.info
+- **License:** Public Domain — "All content is verified to be in the public domain" (verified 2026-10-07 via torrust.com)
+- **Free tier:** Full films free via torrent/download
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Classic films are grain-texture gold for the cartoon's vintage cutaways; frame grabs and plate scans from PD features need no clearance. [Wave 12 Lane B]
+
+#### Open Video Project — UNC digital-library project ❓
+- **What:** University of North Carolina digital-video library research project (1998–) with digitized historical segments.
+- **URL:** https://www.openvideoproject.org/
+- **License:** Unverified — legacy academic project; current download availability unclear (verified 2026-10-07)
+- **Free tier:** Unknown / legacy
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** May be dormant; worth one check for historical city plates, but don't plan around it. [Wave 12 Lane B]
+
+#### FedFlix — U.S. federal films on the Internet Archive ✅
+- **What:** Federal government film collection hosted on the Internet Archive — atomic-age PSAs, NASA, military and educational films.
+- **URL:** https://archive.org/details/FedFlix
+- **License:** Public Domain — "All of the FedFlix films are in the public domain so feel free to reuse and remix them as you desire" (verified 2026-10-07 via palomar.edu)
+- **Free tier:** Everything downloadable in multiple formats
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Top-tier archival plate source for the cartoon — era-correct Americana, cities, crowds, military hardware; IA direct downloads make wire-up trivial. [Wave 12 Lane B]
+
+#### Media Burn Archive — Chicago video archive 🚫
+- **What:** Independent video archive (Tom Weinberg) documenting Chicago culture and independent media.
+- **URL:** https://mediaburn.org/footage-licensing/
+- **License:** All use licensed — "All videos in the Media Burn archive require a license to use in your project" (verified 2026-10-07 via mediaburn.org)
+- **Free tier:** View-only
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — great reference, but licensing-only; no plate pulls. [Wave 12 Lane B]
+
+#### Critical Past — stock/history footage library 🚫
+- **What:** Millions of historical footage clips, royalty-free pricing per download.
+- **URL:** https://www.criticalpast.com/
+- **License:** Free to view; downloads are paid (verified 2026-10-07 via thewindowsclub.com/makeuseof.com)
+- **Free tier:** Watermarked previews only
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — usable only if budget opens up; not a free plate source. [Wave 12 Lane B]
+
+#### Periscope Film — WWII-era stock footage 🚫
+- **What:** Military and historical footage library (WWII onward), HD scans.
+- **URL:** https://www.periscopefilm.com/
+- **License:** Licensing-only — "available for licensing in 24p HD and 2k" (verified 2026-10-07 via YouTube descriptions)
+- **Free tier:** None
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — archive reference only for the cartoon's period pieces. [Wave 12 Lane B]
+
+#### A/V Geeks — educational film archive ⚠️
+- **What:** Skip Elsheimer's archive of 16mm educational films; many uploads are public-domain prints on archive.org/YouTube, while the business also sells stock footage.
+- **URL:** https://www.avgeeks.com/
+- **License:** Mixed — PD uploads exist but the business sells stock footage; check per-film rights (verified 2026-10-07)
+- **Free tier:** Free streaming of many films; download rights vary
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Skip's PD-verified uploads are fine for plates; anything from the for-sale catalog needs a license. [Wave 12 Lane B]
+
+#### U.S. National Archives Catalog (video) ⚠️
+- **What:** NARA's motion-picture holdings in the online Catalog; some series unrestricted and downloadable, some restricted.
+- **URL:** https://www.archives.gov/research/motion-pictures/permissions
+- **License:** Varies per series — "use of these records is at your own risk"; e.g. March of Time releases restricted (verified 2026-10-07 via archives.gov)
+- **Free tier:** Many reels freely downloadable
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong source for historical American plates — war, cities, government footage; check each series' rights flag before pulling. [Wave 12 Lane B]
+
+#### Public Domain Movies ⚠️
+- **What:** Public-domain feature streaming/download site (publicdomainmovies.net); the .info variant is a paywalled subscription service — don't confuse the two.
+- **URL:** https://publicdomainmovies.net
+- **License:** Public Domain claimed per title on .net; verify per-title (verified 2026-10-07)
+- **Free tier:** Free streaming; downloads vary
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cross-check any title against IA/Wikimedia before compositing — PD claims on aggregators aren't always reliable. [Wave 12 Lane B]
+
+#### Open Culture — curated PD film collections ✅
+- **What:** Curator of the best public-domain films online — hundreds of features, noir, westerns, silent classics with archive.org links.
+- **URL:** https://www.openculture.com/archive
+- **License:** Public Domain — "All of these films, and many hundreds more, are in the public domain and free to view online" (verified 2026-10-07 via openculture.com)
+- **Free tier:** Full films free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery layer for PD plate material — links straight into Internet Archive downloads; pair with FedFlix for bulk harvesting. [Wave 12 Lane B]
+
+#### The Public Domain Review — curated PD collections ✅
+- **What:** Scholarly curator of public-domain films and media; e.g. the Universal Newsreels (1929–1967) put into the public domain.
+- **URL:** https://publicdomainreview.org/collections/source/universal-city-studios/
+- **License:** Public Domain — "Universal City Studios put newsreels (Universal Newsreels) — produced from 1929 to 1967 — into the public domain" (verified 2026-10-07 via publicdomainreview.org)
+- **Free tier:** Free collections with source links
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Newsreels are ideal period crowd/street plates for the cartoon's Hollows flashback sequences. [Wave 12 Lane B]
+
+#### WikiFlix — PD film aggregator ✅
+- **What:** Netflix-style browse of 4,000+ public-domain films aggregated from Wikimedia Commons, the Internet Archive and YouTube.
+- **URL:** https://wikiflix.example.net (verified 2026-10-07 via TechCrunch: "free to share and distribute"; https://techcrunch.com/2025/12/16/wikiflix-shows-us-what-netflix-would-have-been-like-100-years-ago/)
+- **License:** Public Domain (aggregated from PD sources)
+- **Free tier:** Full catalog browsable; downloads via source sites
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Discovery UI for PD features — find a film here, pull the file from the Internet Archive. [Wave 12 Lane B]
+
+#### Archive Watch — IA public-domain browser app ✅
+- **What:** Open-source app (~32k titles) for browsing the Internet Archive's public-domain moving-image collection.
+- **URL:** https://github.com/bhwilkoff/archive-watch
+- **License:** Public Domain — browses "The Internet Archive's public-domain moving-image collection" (verified 2026-10-07 via github.com/bhwilkoff/archive-watch)
+- **Free tier:** Full app + collection free; code is open source
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Discovery tool for the PD plate pipeline — surfaces titles the raw IA search buries; fork or adapt its listing logic for batch pulls. [Wave 12 Lane B]
+
+#### CERN Document Server — video ⚠️
+- **What:** CERN's video archive (lectures, lab footage, particle-detector material); many videos under CERN copyright with clickthrough conditions, some CC-BY-4.0.
+- **URL:** https://copyright.web.cern.ch/
+- **License:** Mixed — CERN copyright with conditions of use on most CDS videos; some CC-BY-4.0 (verified 2026-10-07 via copyright.web.cern.ch)
+- **Free tier:** Free streaming; reuse terms vary per video
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Niche sci-fi texture material for the cartoon's lab/tech scenes — but check each video's license badge before compositing. [Wave 12 Lane B]
+
+#### BFI (British Film Institute) — archive footage 🚫
+- **What:** BFI archive footage sales and BFI Player streaming.
+- **URL:** https://www.bfi.org.uk/
+- **License:** Licensed sales — archive footage is licensed per T&Cs; Player streaming is view-only (verified 2026-10-07)
+- **Free tier:** View-only
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — reference only; no free plate reuse. [Wave 12 Lane B]
+
+#### C-SPAN — public-affairs video 🚫
+- **What:** Decades of U.S. public-affairs coverage (Congress, hearings, events).
+- **URL:** https://www.c-span.org/
+- **License:** Non-commercial only — "allows for attributed non-commercial copying, sharing, and posting" (verified 2026-10-07 via 2007 policy)
+- **Free tier:** Free streaming/download for non-commercial use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** NC clause kills commercial cartoon use — quarantined from production; reference/documentary use only. [Wave 12 Lane B]
+
+#### NFSA (National Film and Sound Archive of Australia) ❓
+- **What:** Australia's audiovisual archive; reuse via licensing; Take Three initiative limited to Australian students/emerging filmmakers.
+- **URL:** https://www.nfsa.gov.au/
+- **License:** Licensing-based; reuse requires permission (verified 2026-10-07)
+- **Free tier:** View-only
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Not a free plate source — included so nobody mistakes it for one. [Wave 12 Lane B]
+
+#### Classic Cinema Online — PD film aggregator ❓
+- **What:** YouTube-embedded classic-film streaming aggregator claiming public-domain catalog.
+- **URL:** https://classiccinemaonline.com/
+- **License:** Unverified — operator legitimacy questioned (verified 2026-10-07 via mobileread.com)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Discovery only — never pull plates from here; verify any title against the Internet Archive first. [Wave 12 Lane B]
+
+#### Open Beelden — Dutch audiovisual archive ✅
+- **What:** Netherlands Institute for Sound and Vision open archive — historical, nature and amateur footage with direct MP4/OGV downloads and an OAI-PMH API. **Smoke-tested this wave.**
+- **URL:** https://openbeelden.nl/api.en
+- **License:** CC or Public Domain per item — "All items on Open Images are available under a Creative Commons license or are in the public domain"; sample clip: "You are free to remix, tweak, and build upon this work even for commercial purposes, as long as the author or licensor is credited, and new works are licensed under identical terms" (verified 2026-10-07 via openbeelden.nl)
+- **Free tier:** Full downloads in multiple resolutions
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired (proofs/wave12_openbeelden)
+- **Notes:** Strongest archival find of the lane — 81.16 s test pull verified with ffprobe; per-item license check required (some are BY-SA, so derivatives carry share-alike); OAI-PMH API enables batch harvesting. [Wave 12 Lane B]
+
+## VFX plates & overlay specialists
+
+#### ActionVFX — free VFX elements ✅
+- **What:** Professional VFX element library (explosions, smoke, fire, debris, muzzle flashes); 650+ free elements plus 500+ practice-footage clips free in 2K with a free account.
+- **URL:** https://www.actionvfx.com/license
+- **License:** Royalty-free — "All free assets are royalty-free and cleared for commercial use" (verified 2026-10-07 via https://www.actionvfx.com/faq)
+- **Free tier:** 650+ free elements + 500+ practice clips (2K) with free account
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Premier VFX-plate source for the cartoon's action beats — free elements are production-grade; free account required for download. [Wave 12 Lane B]
+
+#### FilmCrux — VFX asset platform ❓
+- **What:** Membership platform for VFX assets and practice footage; a free tier exists.
+- **URL:** https://www.filmcrux.com/
+- **License:** Unverified — free tier confirmed by saturation.io ("free tier offers access to a substantial collection of audio and visual assets... without licensing headaches") but official license terms not read (verified 2026-10-07)
+- **Free tier:** Free tier with asset access
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Promising but unverified — read the actual license page before any pull; treat as research-only until then. [Wave 12 Lane B]
+
+#### RocketStock — AE templates & free packs ⚠️
+- **What:** After Effects template/effects shop with free asset packs; owned by the Video Copilot-adjacent Shutterstock-adjacent ecosystem of paid packs.
+- **URL:** https://www.rocketstock.com/
+- **License:** Royalty-free for purchased videos per their license; free-pack license terms need per-download check (verified 2026-10-07)
+- **Free tier:** Free packs available (no signup per No Film School)
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Free packs are the only in-scope material — check each pack's included license file before use. [Wave 12 Lane B]
+
+#### Video Copilot — VFX tutorials & packs ❓
+- **What:** Andrew Kramer's VFX tutorial/effects shop; no verifiable current free tier with a clear commercial license — "free download" results are piracy sites.
+- **URL:** https://www.videocopilot.net/
+- **License:** Unverified for any free tier (verified 2026-10-07)
+- **Free tier:** Tutorials free; asset packs paid
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest entry — tutorials are useful, but there is no verified free plate source here; do not pull "free" packs from third-party sites. [Wave 12 Lane B]
+
+#### BigFilms (MakeBigFilms) — free effects ❓
+- **What:** Effects shop with a "Free Effects" section; "A license agreement for their elements could not be found" (filmmaker.tools).
+- **URL:** https://makebigfilms.com/
+- **License:** Unverified — no license agreement locatable (verified 2026-10-07)
+- **Free tier:** "Free Effects" section exists
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Don't use until a license page exists — no terms means no clearance. [Wave 12 Lane B]
+
+#### Gorilla Grain — film grain/overlays ❓
+- **What:** Film-grain and texture overlay shop; official free-sample status unverified — "free download" results are crack/piracy sites.
+- **URL:** https://gorillagrain.com/
+- **License:** Unverified (verified 2026-10-07)
+- **Free tier:** None confirmed
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — grain textures would be perfect for the cartoon's film look, but there is no verified free tier; do not pirate. [Wave 12 Lane B]
+
+#### Rampant Design — free 4K effects ✅
+- **What:** Effects studio giving away hundreds of free 4K effects (light leaks, glitches, transitions, film damage) via 4KFree.com.
+- **URL:** https://www.rampantdesigntools.com/
+- **License:** Commercial-safe — "All of our 4K style effects can be used in any video production" (co-founder Stefanie Mullen, verified 2026-10-07 via postperspective.com/rampant-offering-hundreds-free-4k-effects/)
+- **Free tier:** Hundreds of free 4K effects
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free 4K overlays are exactly the cartoon's finish-pass material — grain, light leaks, transitions; grab the 4KFree pack before it changes. [Wave 12 Lane B]
+
+## Green-screen & loop plates
+
+#### GreenScreen Animals — animal green-screen library 🚫
+- **What:** Green-screen animal footage library.
+- **URL:** https://greenscreenanimals.com/faq/
+- **License:** Paid licensing only — free low-res comps are previews (verified 2026-10-07 via greenscreenanimals.com/faq/)
+- **Free tier:** Preview comps only
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — paid-only; don't pull previews into production. [Wave 12 Lane B]
+
+#### BestGreenScreen — YouTube green-screen channel ❓
+- **What:** YouTube channel publishing "free green screen — free use" clips.
+- **URL:** https://www.youtube.com/@BestGreenScreen
+- **License:** Unverified — channel claims free use but no formal license page exists (verified 2026-10-07)
+- **Free tier:** All uploads downloadable via YouTube
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Channel descriptions aren't licenses — usable only after per-video license confirmation; treat as a leads list, not a source. [Wave 12 Lane B]
+
+#### TubeBacks — motion-background loops ✅
+- **What:** Motion-background and loop library (incl. a green-screen category) with direct MP4 preview URLs and a plain-English royalty-free license. **Smoke-tested this wave.**
+- **URL:** https://www.tubebacks.com/license
+- **License:** Royalty-free — "Anything you download is yours to use with unlimited distribution for production. Use your downloads anywhere, anyhow and as many times as you want for personal and commercial projects" (verified 2026-10-07 via https://www.tubebacks.com/stock-video/purple-and-orange-helix-loop-video-hd-8895.html)
+- **Free tier:** Free preview-section downloads; paid library for full catalog
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired (proofs/wave12_tubebacks)
+- **Notes:** Strongest new find of the lane — 8.0 s ripples-loop test pull verified with ffprobe; direct MP4 URLs mean trivial wire-up; green-screen category is a chroma-plate shortcut for the cartoon. [Wave 12 Lane B]
+
+## Timelapse / sky / city-night specialists
+
+#### Timestorm Films — extreme-weather footage 🚫
+- **What:** Storm-chasing stock library (tornadoes, lightning, supercells); also on Filmsupply.
+- **URL:** https://timestormfilms.net/stock
+- **License:** Paid licensing library (verified 2026-10-07)
+- **Free tier:** None
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — the cartoon's storm scenes need storm plates, but these are paid; use Dustin Farrell alternatives below instead. [Wave 12 Lane B]
+
+#### RawFilm — 5K/8K test clips ⚠️
+- **What:** High-end stock library; free account gets free 5K/8K test clips plus a free collection; full library is subscription.
+- **URL:** https://raw.film/pricing
+- **License:** Royalty-free per-clip-per-project for paid clips; free clips under their free terms — verify per download (verified 2026-10-07)
+- **Free tier:** Free 5K/8K test clips + free collection
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Free test clips are the only in-scope material — 8K city-night plates would be ideal for the Hollows setting if any free ones fit. [Wave 12 Lane B]
+
+#### Earth Uncut TV — nature stock ❓
+- **What:** Nature/wildlife stock site currently in "Coming Soon" state.
+- **URL:** https://earthuncut.tv/
+- **License:** Unverified — no license info published (verified 2026-10-07)
+- **Free tier:** None available
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Watch-list only — recheck when the site launches; nothing to pull today. [Wave 12 Lane B]
+
+#### Dustin Farrell — timelapse cinematography 🚫
+- **What:** Renowned timelapse cinematographer (landscapes, cityscapes, skies).
+- **URL:** https://dustin-farrell.com/
+- **License:** Rights-managed licensing — "available to license on a rights managed basis... NOT available for Creative Commons license" (verified 2026-10-07)
+- **Free tier:** None
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — reference-grade skies, but every frame is rights-managed; do not pull. [Wave 12 Lane B]
+
+#### MotionElements — weekly free downloads ✅
+- **What:** Stock marketplace with 5 free downloads per week, royalty-free.
+- **URL:** https://www.motionelements.com/free/stock-footage?ref=7087gnmuz
+- **License:** Royalty-free — "safe for use worldwide for all types of personal and commercial projects. Download once, use forever" (verified 2026-10-07)
+- **Free tier:** 5 free downloads/week (free account)
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Steady drip-feed of commercial-safe plates — 5/week compounds fast for the cartoon's B-roll needs; free account required. [Wave 12 Lane B]
+
+#### Mitch Martinez — free 4K RED footage ✅
+- **What:** Director of photography giving away 1,500+ 4K clips shot on RED cameras across 35 categories (aerial, nature, city, fire, timelapse); used by HBO, Nike, Sin City 2, Mockingjay.
+- **URL:** https://www.makeuseof.com/tag/download-free-royalty-free-4k-ultra-hd-stock-videos/
+- **License:** Free for commercial use — "posted an online catalogue of stock UltraHD video, shot by him across the USA and completely free for commercial use" (verified 2026-10-07 via displaydaily.com)
+- **Free tier:** All 1,500+ clips free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Premier free 4K plate source — city aerials and skies are exactly the Hollows establishing-shot material; check mitchmartinez.com is still serving downloads. [Wave 12 Lane B]
+
+#### Iris32 — Frederick Tschernutter 4K footage ✅
+- **What:** Thousands of free 4K clips shot on RED One/Epic by cinematographer Frederick Tschernutter.
+- **URL:** https://www.makeuseof.com/tag/download-free-royalty-free-4k-ultra-hd-stock-videos/
+- **License:** Creative Commons 4.0 — "decided to give all that footage to the world to use for free with the aforementioned Creative Commons 4.0 license" (verified 2026-10-07 via makeuseof.com)
+- **Free tier:** Thousands of clips free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Attribution required per CC 4.0 — budget a credit line; download flow runs through YouTube descriptions + Iris32 validation codes. [Wave 12 Lane B]
+
+## Community & aggregator sources
+
+#### Vimeo free-stock groups ⚠️
+- **What:** Community groups (e.g. vimeo.com/groups/freehd) where creators post free-to-use HD clips; licenses set per video by uploaders.
+- **URL:** https://vimeo.com/groups/freehd
+- **License:** Varies per video — e.g. "all clips you find in this group I give away for free use in your productions" but most uploads carry no stated license (verified 2026-10-07)
+- **Free tier:** All group uploads downloadable
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lead-source only — confirm each clip's license with the uploader before compositing; no blanket clearance. [Wave 12 Lane B]
+
+#### Clipstill — free cinemagraphs ✅
+- **What:** Free cinemagraph library (living-photo loops) — subtle animated backgrounds.
+- **URL:** https://colorlib.com/wp/best-free-stock-video-sites/
+- **License:** Free for commercial use with attribution — "free for commercial use as long as you credit Clipstill with a link" (verified 2026-10-07 via colorlib.com)
+- **Free tier:** Full cinemagraph library free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cinemagraphs make great ambient background plates for dialogue scenes — subtle motion behind static characters; budget the credit link. [Wave 12 Lane B]
+
+#### Flixel — cinemagraph platform 🚫
+- **What:** Cinemagraph creation platform; Flixel Stock is paid licensing via a Shutterstock partnership.
+- **URL:** https://www.flixel.com/
+- **License:** Paid licensing; no free commercial library (verified 2026-10-07)
+- **Free tier:** None for production
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — use Clipstill instead for free cinemagraphs. [Wave 12 Lane B]
+
+#### Orange HD — free HD footage 🚫
+- **What:** Small library of HD clips (animals, slow motion, timelapse, Christmas) — non-commercial only.
+- **URL:** https://www.animaker.com/hub/free-stock-video-footage-sites/
+- **License:** CC NonCommercial 4.0 — "you can modify and use the videos for your personal projects with attribution... but you're not allowed to use the videos in commercial projects" (verified 2026-10-07 via animaker.com)
+- **Free tier:** Full library free for non-commercial use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** NC kills cartoon use — quarantined from production; listed so nobody grabs it by mistake. [Wave 12 Lane B]
+
+#### Clip Canvas — free-footage section ❓
+- **What:** Oslo-based royalty-free stock marketplace with a free-footage section (landscape/cityscape clips, MP4 downloads).
+- **URL:** http://www.clipcanvas.com/free-footage
+- **License:** Unverified for the free section — main catalog is royalty-free marketplace; per-clip free terms not read (verified 2026-10-07)
+- **Free tier:** Free-footage section exists
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-only until the free section's terms are read — the paid catalog is out of scope. [Wave 12 Lane B]
+
+#### Tanuri Experiment — abstract loops ❓
+- **What:** Experimental animation/abstract loop clips listed on free-footage roundups; sources disagree on terms (CC BY 3.0 per one roundup, no-attribution commercial per another).
+- **URL:** https://www.blackchipcollective.com/2017/05/17/pretty-much-every-totally-free-piece-of-stock-footage-and-motion-asset-you-could-ever-want/
+- **License:** Unverified — conflicting secondary claims (verified 2026-10-07)
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Abstract loops would suit the cartoon's dream sequences, but the license conflict must be resolved from the primary source first. [Wave 12 Lane B]
+
+#### Artgrid — cinematic stock (honest negative) 🚫
+- **What:** Subscription stock platform from Artlist (cinematic 4K–8K/RAW footage, lifetime license after download).
+- **URL:** https://www.usetools.design/tools/artgrid
+- **License:** Subscription-only — "Free tier: No" (verified 2026-10-07 via usetools.design, auto-checked 2026-08-08)
+- **Free tier:** None — explore-only free start
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — excellent footage, zero free tier; only in scope if a paid subscription ever opens. [Wave 12 Lane B]
+
+---
+
+**Quarantine:** none — no GPL/AGPL copyleft tools found in this lane (all
+entries are footage sources/licenses, not software).
+**Wire-ups:** 2 — `tools/bg-plates/PROOFS.md`
+(wave12_tubebacks, wave12_openbeelden), reusing the existing `pull_plate.py`
+donor per the repo's DONOR FIRST law.
+
+---
+
+## Wave 12 — Lane C (captions) — 41 entries
+
+#### openai/whisper (reference implementation) — the original Whisper model+CLI ✅ commercial-safe
+- **What:** OpenAI's reference ASR implementation (CLI + Python): transcription/translation to SRT/VTT/TXT/TSV/JSON, word-level via `--word_timestamps True`. Everything downstream (faster-whisper, WhisperX, whisper.cpp) derives from it.
+- **URL:** https://github.com/openai/whisper
+- **License:** MIT — commercial-safe (verified 2026-10-07 via upstream README: "Whisper's code and model weights are released under the MIT License.")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The canonical baseline every captions tool is measured against; MIT code AND weights makes it the fallback when a fine-tuned model turns out NC. [Wave 12 Lane C]
+
+#### WhisperLive (Collabora) — near-real-time streaming transcription server ✅ commercial-safe
+- **What:** WebSocket-based real-time Whisper transcription (mic or file), faster-whisper backend, optional TensorRT-LLM; ~2s latency. For live-captioned streams and recording-room monitoring.
+- **URL:** https://github.com/collabora/whisperlive
+- **License:** MIT — commercial-safe (verified 2026-10-07 via ecosyste.ms project record: "License: mit"; downstream NOTICE file confirms "Collabora WhisperLive … License: MIT")
+- **Free tier:** N/A (self-hosted; `pip install whisper-live`)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Live captions for TRIPPEDD streams/recordings; last upstream push Sep 2024 (stable, lightly maintained) — treat as feature-frozen. [Wave 12 Lane C]
+
+#### whisper_streaming (UFAL) — real-time Whisper with LocalAgreement policy ✅ commercial-safe
+- **What:** Charles University's streaming Whisper: processes audio in chunks, commits words only when N consecutive hypotheses agree; real-time simulation from file, FastAPI/WebSocket server, mic mode, Silero VAD.
+- **URL:** https://github.com/ufal/whisper_streaming
+- **License:** MIT — commercial-safe (verified 2026-10-07 via GitHub repo metadata: "License: MIT License (MIT)")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-grade streaming alternative to WhisperLive with a published commit policy (IJCNLP-AACL 2023 paper); good for live voiceover-booth captioning experiments. [Wave 12 Lane C]
+
+#### whisper-jax — 70x-faster JAX Whisper for TPU/GPU batch captioning ✅ commercial-safe
+- **What:** HuggingFace's optimized JAX/Flax Whisper pipeline (pmap data-parallel, bfloat16); transcribes ~30 min audio in ~30 s on TPU. Best for bulk captioning of episode archives.
+- **URL:** https://github.com/sanchit-gandhi/whisper-jax
+- **License:** Apache-2.0 (code) / MIT (OpenAI weights) — commercial-safe (verified 2026-10-07 via maintainer answer on upstream issue: "the OpenAI Whisper code, model, and weights were released under MIT license, and this repository is covered by an Apache 2.0 license.")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Batch-captioning engine for back-catalog episodes when GPU/TPU is available; pairs with the wire-up smoke test pattern (faster-whisper on CPU). [Wave 12 Lane C]
+
+#### whisperer (hclivess) — PySide6 batch subtitle GUI on faster-whisper/whisper.cpp ✅ commercial-safe
+- **What:** Desktop GUI for batch subtitle generation (transcribe + resync existing subs via SubSync model + VAD-snapped cue timing, hold-after-speech, min-gap rules); self-test runs real speech end-to-end.
+- **URL:** https://github.com/hclivess/whisperer
+- **License:** MIT — commercial-safe (verified 2026-10-07 via upstream README: "## License / MIT")
+- **Free tier:** N/A (desktop app)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Non-technical subtitle QC station for producers; the resync path (shift/speed-correct drifted subs) fills a gap the current pipeline lacks. [Wave 12 Lane C]
+
+#### Open-Lyrics (openlrc) — faster-whisper → translated/polished .lrc via LLM ❓ unverified
+- **What:** Python library + PyPI package: faster-whisper transcription with loudness-norm/noise-suppression pre-processing to cut hallucinations, then LLM (OpenAI/Anthropic) context-aware translation/polish into .lrc.
+- **URL:** https://github.com/zh-plus/Open-Lyrics
+- **License:** PyPI license badge exists but unread (2026-10-07 — PyPI blocked by client challenge in sandbox); NOT verified — treat as ❓ until read
+- **Free tier:** N/A (self-hosted; LLM calls are paid)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** LRC lyric files for musical segments; verify license from the GitHub LICENSE file before any wire-up. [Wave 12 Lane C]
+
+#### Moonshine (Useful Sensors) — tiny edge ASR, MIT even for non-English ✅ commercial-safe
+- **What:** 27M–61M param streaming ASR family (tiny/base/streaming sizes), purpose-built for CPU/edge real-time English transcription; word-timestamps mode in the MLX CLI.
+- **URL:** https://github.com/usefulsensors/moonshine
+- **License:** MIT — commercial-safe (verified 2026-10-07 via moonshine-js README: "The code in this repo and the English-language Moonshine speech to text model it uses are released under the MIT license." + 2026-08 upstream license commit: "MIT is the default in every language and at every size" for streaming models)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** On-device captioning for field shoots / low-power render nodes where Whisper-large is overkill; streaming models are the safe MIT ones (legacy non-streaming non-English models stay Community-licensed — check per-checkpoint). [Wave 12 Lane C]
+
+#### kashi — word-level karaoke lyric pipeline (server + overlay) ✅ commercial-safe
+- **What:** Self-hostable FastAPI pipeline producing word-by-word karaoke timings (CTC forced alignment anchored to lrclib stamps, line-QA rescue path), plus Electron overlay and Chrome extension for desktop lyric display.
+- **URL:** https://github.com/csermet/kashi
+- **License:** MIT — commercial-safe (verified 2026-10-07 via README badge: "License: MIT")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Closest thing to a turnkey "karaoke pipeline" found in the wild — its own research docs are a goldmine on aligner licensing traps (CTC+MMS aligner is CC-BY-NC; Qwen3-ForcedAligner is the Apache-safe singing alternative). Word-karaoke overlays for musical episode segments. [Wave 12 Lane C]
+
+#### SOFA — Singing-Oriented Forced Aligner ✅ commercial-safe
+- **What:** Forced aligner trained specifically on singing voice (beats MFA on sung data, easier install, faster inference); phoneme-level output in TextGrid/HTK/trans, ONNX inference path.
+- **URL:** https://github.com/qiuqiao/SOFA
+- **License:** MIT — commercial-safe (verified 2026-10-07 via GitHub repo metadata: "License: MIT License (MIT)")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The honest answer to "forced-alignment for singing": speech aligners fail on melisma/vibrato; SOFA is trained for it. Caveat: checkpoints ship via discussion threads (verify each checkpoint's license before production use); Chinese-first, needs own G2P for English/Japanese. [Wave 12 Lane C]
+
+#### Qwen3-ForcedAligner-0.6B — Apache-2.0 neural forced aligner, singing-capable ✅ commercial-safe
+- **What:** Alibaba Qwen's non-autoregressive LLM-based forced aligner: audio+text → per-word timestamps, 11 languages, 80 ms resolution, up to 5 min audio; officially noted as supporting singing over backing music.
+- **URL:** https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B
+- **License:** Apache-2.0 (code AND weights) — commercial-safe (verified 2026-10-07 via Qwen3-ASR technical report: "we release these models under the Apache 2.0 license.")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Strongest captions-lane find of Wave 12: commercial-safe where WhisperX's alignment models are CC-BY-NC. Single prefill pass = fast. Prime candidate for a future word-timing lane wire-up (0.6B ≈ 1.3 GB). [Wave 12 Lane C]
+
+#### DSAlign (Mozilla) — archived DeepSpeech forced aligner ✅ commercial-safe
+- **What:** Mozilla's DeepSpeech-based forced alignment tool (prepare → align → export JSON), catalog-file batching; FactSquared fork can align from a transcript directly without re-transcribing.
+- **URL:** http://github.com/mozilla/DSAlign
+- **License:** MPL-2.0 — commercial-safe with weak-copyleft audit gate (verified 2026-10-07 via GitHub repo metadata: "License: Mozilla Public License 2.0 (MPL-2.0)")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Dead since 2019; requires the long-dead DeepSpeech stack (no py3.12 path). Reference/archaeology value only — do not wire. Listed so nobody rediscovers it. [Wave 12 Lane C]
+
+#### subaligner — DNN subtitle synchronization + transcription + translation ✅ commercial-safe
+- **What:** CLI suite: single/dual-stage subtitle↔video sync, transcribe mode (whisper backends) with `--word_time_codes` JSON output, translative alignment, batch + `subaligner_convert`; supports SRT/TTML/VTT/ASS/STL/SCC/SBV and more.
+- **URL:** https://github.com/baxtree/subaligner (canonical; verified fork mirror https://github.com/linuxmahara/subaligner)
+- **License:** MIT — commercial-safe (verified 2026-10-07 via GitHub repo metadata: "License: MIT License (MIT)")
+- **Free tier:** N/A (self-hosted; `pip install subaligner`)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest caveat: the `stretch` (forced-alignment) extra installs a patched **aeneas (AGPL, quarantined upstream)** on py3.12 — use only the DNN/transcribe/convert paths in commercial work. Strong wire-up candidate for sync-after-edit drift correction. [Wave 12 Lane C]
+
+#### webrtcvad — zero-dependency GMM voice activity detection ✅ commercial-safe
+- **What:** Python bindings for WebRTC's GMM VAD (10/20/30 ms frames, 4 aggressiveness modes); the standard pre-gate for caption chunking, silence-trim, and speech-gated resync.
+- **URL:** https://github.com/wiseman/py-webrtcvad (py3.12 wheels via webrtcvad-wheels fork)
+- **License:** MIT (Python wrapper) + BSD (WebRTC core) — commercial-safe (verified 2026-10-07 via downstream THIRD_PARTY notices: "The Python wrapper uses the MIT license; the bundled WebRTC implementation has its own BSD notice.")
+- **Free tier:** N/A (`pip install webrtcvad-wheels`)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No model weights, no network — cheapest VAD in the lane; pair with faster-whisper chunking or whisper.cpp for robust cue segmentation. Original wiseman package lacks py3.12 wheels — use the webrtcvad-wheels fork. [Wave 12 Lane C]
+
+#### CrisperWhisper — verbatim/disfluency-preserving Whisper with 30 ms word timing 🚫 NC-or-quarantine
+- **What:** Nyra's controllable Whisper fork: verbatim mode preserves fillers/stutters/laughter ("[um] so we we need to"), ~30 ms word-boundary error, hallucination-repair; code is clean but the weights are not.
+- **URL:** https://github.com/nyrahealth/CrisperWhisper
+- **License:** MIT (inference code) / **Nyra Health Non-Commercial Research License (model weights)** — NOT commercial-safe (verified 2026-10-07 via upstream README: "The inference code in this repository is MIT-licensed … The model weights are not MIT … free for research and other non-commercial use; any commercial use requires a commercial license.")
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research reference only — the verbatim+word-timing combo is exactly what cartoon dialogue captions want, but the NC weights kill it for production. Commercial-license terms available from Nyra if ever needed. [Wave 12 Lane C]
+
+#### PyonFX — Python karaoke-effects (KFX) library for ASS ✅ commercial-safe
+- **What:** Python library for generating karaoke effects and complex ASS typesetting (per-syllable transforms, gradients, fbf effects); docs + examples on ReadTheDocs.
+- **URL:** https://github.com/CoffeeStraw/PyonFX
+- **License:** LGPL-3.0 — commercial-safe under weak-copyleft audit gate (verified 2026-10-07 via upstream README: "This project is licensed under the LGPL v3.0 License"); pip-import/dynamic-link use is fine, do not vendor or fork-and-close
+- **Free tier:** N/A (`pip install pyonfx`)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Programmatic karaoke styling for episode title cards and musical numbers — the pipeline complement to kashi's timing output (kashi times it, PyonFX styles it). [Wave 12 Lane C]
+
+#### Aegisub-Motion — motion-tracked subtitles plugin for Aegisub ❓ unverified
+- **What:** Aegisub automation script (MoonScript) that parses motion-tracking data (Blender/Mocha) and applies it to selected subtitle lines — subtitles that stick to moving objects.
+- **URL:** https://github.com/TypesettingTools/Aegisub-Motion
+- **License:** NOT verified — GitHub reports "License: Other (NOASSERTION)"; a LICENSE file exists but its text was not read (2026-10-07). Do not wire until read.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tracked-signage / diegetic-text captions (labels that follow characters/props) — read the LICENSE file first; sibling TypesettingTools scripts are MIT, but that's not verification. [Wave 12 Lane C]
+
+#### Kite-Aegisub-Scripts — maintained Aegisub automation pack ✅ commercial-safe
+- **What:** 22 scripts + 12 modules via DependencyControl: KFX generators (Alecto), AutoMask/AutoBlur, motion (Moka Motion), QC/timing helpers (Wave2json, Snapshoter), PNG→ASS, glyph tools — actively maintained (2026).
+- **URL:** https://github.com/kiterowx/kite-aegisub-scripts
+- **License:** MIT — commercial-safe (verified 2026-10-07 via upstream README: "MIT. See LICENSE.")
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The living answer to "aegisub-lua plugins": install via Aegisub DependencyControl feed; covers the karaoke/typesetting automation the lane asked for without touching unverified repos. [Wave 12 Lane C]
+
+#### aegisub-upgraded — Aegisub fork with LLM subtitling features ❓ unverified
+- **What:** Community fork (base: arch1t3cht/Aegisub) adding LLM-powered subtitling: translate, condense, proofread, rephrase with provider-agnostic client (Anthropic/OpenAI/Ollama/llama.cpp) — Aegisub as an AI subtitle workbench.
+- **URL:** https://github.com/pq-cybarg/aegisub-upgraded
+- **License:** NOT verified on the fork page (2026-10-07); upstream base is BSD-3-Clause and the fork's license table confirms the base lineage. Verify fork LICENSE before use.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Interesting bridge between the manual Aegisub workflow and LLM caption QA; license check is the gating item. [Wave 12 Lane C]
+
+#### YTSubConverter — ASS → YouTube styled subtitles (SRV3/YTT) ✅ commercial-safe
+- **What:** Converts .ass (incl. karaoke `{\k}` timing, colors, positioning, ruby/vertical text) into YouTube's SRV3/YTT format — the only way to get styled/karaoke captions on YouTube uploads.
+- **URL:** https://github.com/arcusmaximus/YTSubConverter
+- **License:** MIT — commercial-safe (verified 2026-10-07 via GitHub repo metadata: "License: MIT License (MIT)")
+- **Free tier:** N/A (desktop builds for Win/Mac/Linux)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Publish path for the karaoke lane: Aegisub/PyonFX-styled ASS → YTT upload keeps styling on YouTube instead of flattening to plain SRT. [Wave 12 Lane C]
+
+#### shortsmith — karaoke-captioned vertical shorts, no API key ✅ commercial-safe
+- **What:** Voiceover → captioned vertical short: karaoke word-highlight captions, stock B-roll, Ken Burns stills; Whisper-class STT, runs without any API key.
+- **URL:** https://github.com/yo-seb/shortsmith
+- **License:** MIT — commercial-safe (verified 2026-10-07 via GitHub repo metadata: "License: MIT License (MIT)")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Promo-clip generator pattern: feed episode dialogue, get a karaoke-captioned vertical short — useful for social cutdowns, not for episode masters. [Wave 12 Lane C]
+
+#### ttconv (sandflow) — broadcast timed-text converter (SCC/STL/TTML/SRT/VTT) ✅ commercial-safe
+- **What:** Pure-Python library + CLI (`tt convert`) mapping any timed-text format through a canonical TTML2/IMSC model; the broadcast-standard answer to format conversion (incl. EBU STL and CTA-608 SCC).
+- **URL:** https://github.com/sandflow/ttconv
+- **License:** BSD-2-Clause — commercial-safe (verified 2026-10-07 via GitHub repo metadata: "License: BSD 2-Clause "Simplified" License (BSD-2-Clause)")
+- **Free tier:** N/A (`pip install ttconv`)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** WIRED in Wave 12 (see tools/captions/ttconv_tool.py + PROOFS.md) — SRT↔VTT↔TTML round-trip smoke-tested on real files. The STL/SCC support matters for broadcast deliverables. [Wave 12 Lane C]
+
+#### ttml2ssa — Netflix/HBO-style TTML → SRT/SSA converter ✅ commercial-safe
+- **What:** Converts TTML/XML/DFXP/VTT/SRT subtitles as served by streaming platforms into SRT or SSA/ASS (incl. Kodi addon); handles the platform subtitle dumps yt-dlp pulls.
+- **URL:** https://github.com/Paco8/ttml2ssa
+- **License:** LGPL-2.1 — commercial-safe under weak-copyleft audit gate (verified 2026-10-07 via upstream README: "License: LGPL-2.1"); pip-import use, do not vendor
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to ttconv for streaming-platform subtitle files; pairs with youtube-transcript-api / yt-dlp caption downloads for reference-caption ingestion. [Wave 12 Lane C]
+
+#### SCF (IRT Subtitling Conversion Framework) — EBU broadcast subtitle transforms ✅ commercial-safe
+- **What:** Institut für Rundfunktechnik's XSLT/Python pipeline for EBU STL ↔ EBU-TT conversions (STLXML2EBU-TT, EBU-TT-D profiling, split-blocks); the European broadcast house standard.
+- **URL:** https://github.com/IRT-Open-Source/scf
+- **License:** Apache-2.0 — commercial-safe (verified 2026-10-07 via upstream README: 'subject to the "Apache 2.0 license"')
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Only relevant if episodes ever need EBU-TT-D broadcast deliverables; dormant since ~2020 but the formats haven't changed. [Wave 12 Lane C]
+
+#### aTrain — offline transcription GUI with diarization (research-grade) ✅ commercial-safe
+- **What:** University-built desktop app (Flathub/MS Store + pip): faster-whisper transcription + pyannote speaker detection, fully offline/GDPR-safe, MAXQDA/ATLAS.ti-compatible exports.
+- **URL:** https://github.com/aTrainTranscription/aTrain
+- **License:** MIT (adapted — citation request) — commercial-safe (verified 2026-10-07 via project paper: "aTrain is published under an adaptation of the MIT license, where we ask users to cite this paper when using aTrain for academic or other publications.")
+- **Free tier:** N/A (free desktop app)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Speaker-labeled transcript station for interview/BTS material; note the bundled pyannote weights carry their own (NC-history) terms — check per-model before commercial diarization use. [Wave 12 Lane C]
+
+#### CaptionSubsGenerator — Whisper + GPT caption script ✅ commercial-safe
+- **What:** Small focused script: Whisper transcribe/translate (tiny/small/turbo) → .srt, GPT translation for non-English targets; CLI prompts for language + model.
+- **URL:** https://github.com/betoxf/CaptionSubsGenerator
+- **License:** MIT — commercial-safe (verified 2026-10-07 via upstream README: "This project is licensed under the MIT License.")
+- **Free tier:** N/A (self-hosted; GPT translation is paid API)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Thin glue, but the Whisper→GPT-translate→SRT pattern is exactly the multilingual-caption recipe; kept as a reference implementation. [Wave 12 Lane C]
+
+#### auto-subtitle-translate — FunASR/Whisper auto-subtitling CLI ✅ commercial-safe
+- **What:** One-command video → translated subtitles: FunASR (default) or Whisper backend, subtitle overlay or SRT-only output, Google-Translate backend option.
+- **URL:** https://github.com/e2720pjk/auto-subtitle-translate
+- **License:** MIT — commercial-safe (verified 2026-10-07 via upstream README: "This project is licensed under the MIT License.")
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** FunASR backend is the differentiator (strong on CJK); multilingual caption drafts for international cuts. [Wave 12 Lane C]
+
+#### whisper-lrc — Go CLI: audio/YouTube → synced LRC/SRT ✅ commercial-safe
+- **What:** Single-binary Go tool extracting synchronized lyrics via the Whisper API: local files, direct URLs, YouTube (yt-dlp), outputs LRC + SRT, batch mode.
+- **URL:** https://github.com/BBleae/whisper-lrc
+- **License:** MIT — commercial-safe (verified 2026-10-07 via README badge: "License: MIT")
+- **Free tier:** N/A (requires OpenAI API key — paid Whisper API)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lyric-file generation for musical numbers; requires a paid OpenAI key (no local model path), so it's a convenience tool, not pipeline infrastructure. [Wave 12 Lane C]
+
+#### TEN VAD — 300KB neural VAD, Apache + vendor conditions ❓ unverified
+- **What:** Agora's tiny neural VAD (306 KB lib / 332 KB ONNX, 10–16 ms frames); vendor claims better precision-recall than Silero/WebRTC and faster speech-to-silence detection; ships inside sherpa-onnx.
+- **URL:** https://github.com/TEN-framework/ten-vad (also: `ten-vad` pip)
+- **License:** Apache-2.0 WITH extra Agora conditions — NOT verified commercial-safe (verified 2026-10-07 via third-party research notes quoting the license: "You may not Deploy the ten-vad in a way that competes with Agora's offerings…" and deploy "solely for your benefit and the benefit of your direct End Users" — "Not OSI-clean; a problem for an open source fork that others redistribute.")
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Technically excellent but legally awkward: the non-compete clause is the opposite of a clean OSS license. Prefer webrtcvad (simple) or Silero (MIT) unless legal clears it. [Wave 12 Lane C]
+
+---
+
+## B. SaaS / free-tier caption services (terms verified 2026-10-07)
+
+Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited source; commercial-safety of outputs depends on the plan's ToS (watermarks, usage rights). None of these are wired — they are evaluation references.
+
+#### Maestra — AI subtitle/translation/dubbing suite ❓ unverified
+- **What:** Browser-based subtitle generation + translation (125+ languages) + dubbing; exports SRT/VTT/SCC/STL/CAP/TXT/TTML/SBV; live caption sessions.
+- **URL:** https://maestra.ai (terms: maestra.ai pricing page)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via aitools.fyi: "Free trial with 1-minute processing before signup; no credit card required to start"; maestra.ai: "Free trial; Pay-As-You-Go from $12/60 credits; Basic plan $39/month")
+- **Free tier:** ~1 minute of video before signup required; then pay-as-you-go
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The format-export breadth (SCC/STL/TTML) is its edge over CapCut-style tools; free tier is a demo, not a workflow. [Wave 12 Lane C]
+
+#### VEED — browser editor with auto-subtitles ❓ unverified
+- **What:** Drag-and-drop browser video editor; auto-subtitle generation in 100+ languages, brand kits, translation/dubbing on paid tiers.
+- **URL:** https://www.veed.io (terms: veed.io/pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via pricing trackers: "Free $0: watermark, 720p, 10-min cap, limited subtitles")
+- **Free tier:** Free plan — watermarked exports, 720p, 10-min videos, ~30 min auto-subtitles/month
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Usable for quick caption drafts/prototypes; watermarked output is unusable for published episodes. [Wave 12 Lane C]
+
+#### Clideo — lightweight browser subtitle generator ❓ unverified
+- **What:** Simple browser tools incl. auto subtitle generator (100+ languages), subtitle editor, burn-in with templates, SRT/TXT download.
+- **URL:** https://clideo.com/auto-subtitle-generator (terms: clideo.com + help.clideo.com)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via clideo.com FAQ: "Free version is limited in terms of file size and the number of generated subtitles"; free exports carry Clideo watermark, Pro from ~$9/mo removes it)
+- **Free tier:** Free plan — watermark on video exports, file-size and subtitle-count limits; subtitle-file (SRT/TXT) download available
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cheapest paid tier of the browser tools; fine for one-off caption jobs, not a pipeline. [Wave 12 Lane C]
+
+#### Flixier — cloud editor with transcript-based editing ❓ unverified
+- **What:** Browser editor with auto-subtitles, edit-by-transcript, AI translation/dubbing, team collaboration; cloud rendering.
+- **URL:** https://flixier.com (terms: flixier.com/help/pricing-plans-explained)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via flixier.com: "Free Plan … 720p resolution with up to 10 minutes of export time … Exports will include a Flixier watermark")
+- **Free tier:** Free plan — 500 AI credits, 10 min exports/month, 5 min subtitles/month, 720p, watermark
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Edit-by-transcript is the Descript-like workflow worth knowing; free tier is evaluation-only. [Wave 12 Lane C]
+
+#### Zeemo — caption-first AI subtitling with API ❓ unverified
+- **What:** Subtitle-focused tool: auto captions in 95 languages, translation in 110+, dynamic visual effects, transcript→timestamp syncing; offers an API.
+- **URL:** https://zeemo.ai (terms: zeemo.ai pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via toolify.ai: "Free $0/month: 120 credits/year, Subtitle video length up to 1 minute, 720P export"; Pro from ~$9.17/mo)
+- **Free tier:** Free plan — 120 credits/year, ≤1-min subtitle videos, 720p export
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The API offering makes it the most pipeline-plausible SaaS here (captions-as-a-service fallback); free tier is tiny. [Wave 12 Lane C]
+
+#### Submagic — viral-short caption styles ❓ unverified
+- **What:** Short-form caption tool: AI auto-captions in 48 languages, trendy templates, auto-emojis, B-roll, magic clips; text-based editing.
+- **URL:** https://www.submagic.co (terms: submagic.co pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via aialleyway review: trial grants credits but "Exporting is paywalled entirely"; other trackers: "Trial: Free – 3 videos/month (watermarked)")
+- **Free tier:** Free trial — ~3 watermarked videos; exports paywalled on trial per independent review
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Style reference for short-form caption aesthetics (the "Hormozi/MrBeast" look); not a production path — trial can't even export. [Wave 12 Lane C]
+
+#### Captions (captions.ai) — mobile-first AI caption editor ❓ unverified
+- **What:** AI video editor built around captions: ASR captions (28 languages, ~93–99% claimed accuracy), styling/brand kits, AI dubbing, eye-contact correction.
+- **URL:** https://www.captions.ai/pricing (terms: captions.ai pricing page)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via therundown.ai: "Free … Basic traditional editing and a limited set of media and caption tools without generative AI credits"; Pro from $9.99/mo)
+- **Free tier:** Free plan — basic editing + limited caption tools, no generative AI credits (some sources: 200 lifetime credits)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mobile-first; relevant as the style benchmark for on-phone caption workflows, not for episode masters. [Wave 12 Lane C]
+
+#### OpusClip — AI clipper with animated captions ❓ unverified
+- **What:** Long-video → viral-clips engine with animated AI captions (97%+ claimed accuracy, 20+ languages), virality scoring, auto-reframe, scheduler.
+- **URL:** https://www.opus.pro (terms: opus.pro pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via eesel.ai/castmagic.io: "Free $0: 60 minutes … Watermarked videos, auto-reframing, auto-captions, no editing, clips exportable for 3 days")
+- **Free tier:** Free plan — 60 processing credits/month, watermarked, no editing, 3-day export window
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Caption-quality reference for short-form cutdowns (its animated caption styles are the genre standard); the aialleyway billing-complaint trail is worth reading before any paid use. [Wave 12 Lane C]
+
+#### Speechmatics — STT API with generous free tier ❓ unverified
+- **What:** Enterprise STT API: batch + real-time transcription, 55+ languages, built-in diarization and custom dictionary; on-prem/on-device options.
+- **URL:** https://www.speechmatics.com (terms: speechmatics.com pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via g2.com: "Free — $0 / 480 Minutes of Audio Free Per Month")
+- **Free tier:** 480 minutes (8 hours) of STT free per month, no credit card required; pay-as-you-go after
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Most generous free STT tier found (8 h/mo recurring) with diarization included — the plausible paid-API fallback if local ASR ever bottlenecks. [Wave 12 Lane C]
+
+#### Gladia — STT API with €50 no-expiry credits ❓ unverified
+- **What:** Speech-to-text API (async + real-time streaming): 100+ languages, word-level timestamps, speaker diarization, code-switching, sentiment/translation bundled in base price.
+- **URL:** https://www.gladia.io/pricing (terms: gladia.io pricing page)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via gladia.io: "sign up and get 50€ in free credits, a one-time grant with no monthly reset … roughly 80+ hours of pre-recorded transcription")
+- **Free tier:** €50 one-time free credits, no expiry (~80+ h async transcription at Starter rates)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact: 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Model-training opt-out is a paid-tier behavior ("Free tier data may be used for training") — never run unreleased episode audio through the free tier. [Wave 12 Lane C]
+
+#### Rev — transcription/caption service, ADA-compliant captions ❓ unverified
+- **What:** Established transcription platform: AI transcription + human-verified 99% option, ADA/FCC-compliant captioning, interactive caption editor, Zoom/YouTube integrations, Rev.ai API.
+- **URL:** https://www.rev.com/lp/subscription-plans/transcription (terms: rev.com pricing page)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via rev.com official pricing page: Free plan "45 AI transcription & caption minutes/month · 1 user", English only)
+- **Free tier:** 45 AI transcription/caption minutes/month, English only, 1 user
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The compliance angle (ADA/FCC captions) is its differentiator for published episodes; human-verified tier exists when accuracy is legally load-bearing. Free tier is English-only. [Wave 12 Lane C]
+
+#### Kapwing — browser editor, auto-subtitles on credit system ❓ unverified
+- **What:** Browser video editor with auto-subtitles (75+ languages), subtitle translation, Smart Cut, collaborative workspace; credit-metered AI features.
+- **URL:** https://www.kapwing.com (terms: kapwing.com pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via subtitlebee.com: "Free version restricts exports to 4-minute videos; 10 minutes/month auto-captioning limit on free tier; Watermark on all free exports")
+- **Free tier:** 10 credits (~10 min auto-subtitling/month), 4-min 720p exports with watermark
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Credit math (1 min video ≈ 1 credit for transcription) is the planning gotcha; fine for quick drafts, not a pipeline. [Wave 12 Lane C]
+
+#### TurboScribe — Whisper large-v3 batch transcription, generous free tier ❓ unverified
+- **What:** Lean batch transcription service (Whisper large-v3): 98+ languages, 134-language translation, speaker recognition, SRT/DOCX/TXT export; no live-meeting support.
+- **URL:** https://turboscribe.ai (terms: turboscribe.ai pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS (verified 2026-10-07 via opentools.ai: "The free tier allows three files per day, each up to 30 minutes")
+- **Free tier:** 3 files/day, 30 min each, all export formats + speaker recognition included
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Most generous free batch tier found — a credible no-cost draft-caption source for short clips; no public API (per aiquiks.com), so it's manual-upload only. [Wave 12 Lane C]
+
+## Entry count — Wave 12
+
+116 new `####` entries appended (29 per-uploader SFX · 46 BG-plate video sources · 41 captions) → **1352 total** honest entries (1236 before this wave). Quarantine rows 122–125 added (Furnace GPL-2.0-or-later, Dn-FamiTracker GPL-2.0-or-later, MilkyTracker GPL-3.0-or-later, Schism Tracker GPL-2.0 — chiptune trackers, standalone-tool/research only). Wired: tools/sfx/cartoon_sfx_kit (12-WAV kit via existing donor sfx.py, manifest SHA-256s), tools/sfx/normalize_pack (pack manifest normalizer, 100-file proof), tools/bg-plates pull_plate donor reuse (TubeBacks 8s + Open Beelden 81s proofs), tools/captions/ttconv_tool.py (SRT/VTT roundtrip proof), tools/captions/faster_whisper_tool.py (8/8 words on ground truth). Honest non-deliveries: Kenney direct-download script (no verifiable URLs), Mixkit scripted pulls (Cloudflare-blocked), faster-whisper PyAV path broken w/ PyAV 19 (stdlib-numpy workaround), 13 BG-plate entries honestly ❓. Lane A flag resolved: manifest rows 120–121 (Style-Bert-VITS2, AivisSpeech) confirmed present — no gap, no collision. [Wave 12 coordinator merge]

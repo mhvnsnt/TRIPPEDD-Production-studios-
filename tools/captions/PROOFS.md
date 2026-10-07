@@ -61,3 +61,61 @@ end-to-end word-level transcription proof is DEFERRED to a workstation run.
 Why it matters: word-level forced alignment fixes faster-whisper's
 utterance-level timestamps ("can be inaccurate by several seconds") —
 karaoke-style per-word timing for the show's comedy captions.
+
+## Wave 12 Lane C (2026-10-07)
+
+Environment: isolated venv `~/venvs/wave12-captions` (python 3.12). System pip is
+PEP-668 externally-managed — always run via the venv.
+
+### ttconv (WIRED)
+
+sandflow/ttconv (BSD-2-Clause, verified via GitHub license metadata), pure Python.
+
+Smoke tests:
+
+    ~/venvs/wave12-captions/bin/python ttconv_tool.py --demo
+    ~/venvs/wave12-captions/bin/python ttconv_tool.py proofs/pysubs2_demo.srt -o proofs/ttconv_demo.vtt --itype SRT --otype VTT
+    ~/venvs/wave12-captions/bin/python ttconv_tool.py proofs/pysubs2_demo.srt -o proofs/ttconv_demo.ttml --itype SRT --otype TTML
+
+Result: `--demo` = SRT→VTT→SRT roundtrip, 3/3 cue texts byte-identical.
+Real artifacts: `proofs/ttconv_demo.vtt` (valid WEBVTT, 3 cues), `proofs/ttconv_demo.ttml`
+(valid IMSC TTML, 3 `<p>` cues, timings preserved) — both converted from the real
+`proofs/pysubs2_demo.srt`. Read and verified by eye.
+
+Hashes (sha256):
+
+- `proofs/ttconv_demo.vtt`: `a5dfc89265cfe9cac71a7b5ed425eeb3815ea0ed61ca652412710ae8ea4649ad`
+- `proofs/ttconv_demo.ttml`: `5b1cc8d270628d1330f291d6e97cb17955c3e0ecb991d8c1ebb7d2eb0d6541b8`
+
+### faster-whisper (WIRED)
+
+faster-whisper 1.2.1 (MIT) + CTranslate2 4.8.2, CPU int8, tiny model (~75MB,
+downloaded from HuggingFace on first run — no approval gate tripped this run;
+strip IPv6 literals from no_proxy/NO_PROXY before huggingface_hub use, see TOOLS.md).
+
+Smoke test (input: the 3.05s Piper TTS proof WAV, ground-truth line
+"The council does not explain itself. It declares.", ffmpeg-resampled to 16kHz mono):
+
+    ~/venvs/wave12-captions/bin/python faster_whisper_tool.py /tmp/piper_16k.wav -o proofs/faster_whisper_test.srt --model tiny --wav16
+    ~/venvs/wave12-captions/bin/python faster_whisper_tool.py /tmp/piper_16k.wav -o proofs/faster_whisper_karaoke.srt --model tiny --wav16 --karaoke
+
+Result: `proofs/faster_whisper_test.srt` — 1 segment, **8/8 words correct**,
+word-level timings 0.00s–2.74s, language en p=1.00. `proofs/faster_whisper_karaoke.srt`
+— same 8 words as karaoke-style cues (current word green-highlighted).
+
+Hashes (sha256):
+
+- `proofs/faster_whisper_test.srt`: `c165672dbe997388ea1b2f71204ae206237b282b9841e2ca59aa8435afa8dd23`
+- `proofs/faster_whisper_karaoke.srt`: `57d6c7de99771a3db10e1a7ecfc42b8707a8b651a1510c40ae368e7c95e09aa7`
+
+Honest defects / limitations (no fakes):
+
+1. **PyAV incompatibility (worked around, not fixed):** faster-whisper 1.2.1's
+   `decode_audio` passes `metadata_errors=` to `av.open()`, which PyAV 19.0.1
+   rejects (`TypeError`). Workaround: `--wav16` reads 16kHz mono WAV via stdlib
+   `wave` and passes a float32 numpy array straight to `model.transcribe`.
+   Pinning pyav to an older version was attempted but PyPI was unreachable at
+   that moment. Non-WAV inputs (mp3/m4a) are NOT covered until the PyAV pin is resolved.
+2. **Karaoke SRT word tokens carry leading spaces** (whisper convention: " The",
+   " Council") — the highlight join shows double spaces. Cosmetic; text is intact.
+3. tiny model only smoke-tested; base/small/medium untested on CPU here.

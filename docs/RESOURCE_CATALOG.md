@@ -18884,3 +18884,1032 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 ## Entry count — Wave 17 (coordinator merge, 2026-10-07)
 
 89 new `####` entries appended (50 Lane A: PD music/score long tail + chiptune trackers · 39 Lane B: caption burn-in SaaS alternatives + packaging/burn-in renderers + diarization-adjacent + scam flags) → **1842 total** honest entries (1753 before this wave). Quarantine: rows 170–184 (Lane A, 12 new distinct + 3 superseded dups of 122/124/125) · row 185 (Lane B Gaupol, renumbered 170→185 on collision, superseded by row 99) · row 169 Subtitle Edit DELISTED (relicensed MIT upstream, verified in the Lane C spot-check). 185 rows · 171 distinct projects. LGPL doctrine still pending owner verdict; Speaches Docker smoke-test still deferred (no container runtime on the VM). [Wave 17 coordinator: Lane C]
+
+---
+
+## Wave 18 — Lane A (PD score archives · retro-tracker ecosystem · caption packaging long tail) — 110 entries (2026-10-07)
+
+### A. PD score archives / notation — deeper public-domain sheet-music & score archives (34)
+
+#### OpenScore Lieder Corpus ✅ commercial-safe (CC0-1.0, GitHub API spdx verified 2026-10-07)
+- **What:** ~1,200 19th-century art songs (100+ composers) as MusicXML/MEI — the flagship OpenScore CC0 corpus; proof pull used Beethoven Op.48 No.1 "Bitten".
+- **URL:** https://github.com/OpenScore/Lieder
+- **License:** CC0-1.0 (verified 2026-10-07 via GitHub API spdx_id OpenScore/Lieder + repo COPYING)
+- **Free tier:** Full corpus free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** wired
+- **Notes:** WIRED: `tools/wave18_laneA/openscore_pull.py` downloads one CC0 .mxl and parses it with stdlib only → `tools/wave18_laneA/proofs/wave18_openscore/report.json` (2 parts · 92 measures · 527 notes · creators include Beethoven/Gellert). [Wave 18 Lane A]
+
+#### VexFlow ✅ commercial-safe (MIT, raw LICENSE verified 2026-10-07)
+- **What:** JS library for rendering music notation + guitar tablature in browsers/node — the standard open notation renderer.
+- **URL:** https://github.com/0xfe/vexflow
+- **License:** MIT (verified 2026-10-07 via raw LICENSE on master — "Copyright (c) 2010 Mohit Muthanna Cheppudira", MIT grant text; GitHub API returned NOASSERTION so the file was read directly)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** wired
+- **Notes:** WIRED: `tools/wave18_laneA/vexflow_render.cjs` renders an 8-note C-major scale to SVG via jsdom → `tools/wave18_laneA/proofs/wave18_vexflow/output.svg` (9,583 bytes, 8 stavenote groups). Caveat: VexFlow **5.0.0's CJS build dumps its own source to stdout under Node 24** — proof pinned to **4.2.2** (`npm install vexflow@4.2.2`), which renders cleanly; also requires `global.document` set before require. Needs `npm install vexflow jsdom`. [Wave 18 Lane A]
+
+#### abcjs ✅ commercial-safe (MIT, raw LICENSE.md verified 2026-10-07)
+- **What:** JS library for parsing/rendering ABC music notation — the bridge between folk-tune archives (Pocket A tune DBs) and rendered notation.
+- **URL:** https://github.com/paulrosen/abcjs
+- **License:** MIT (verified 2026-10-07 via raw LICENSE.md — "Copyright (c) 2009-2026 Paul Rosen and Gregory Dyke", MIT grant text; GitHub API returned NOASSERTION so the file was read directly)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** wired
+- **Notes:** WIRED: `tools/wave18_laneA/abcjs_render.cjs` renders a Cooley's Reel fragment to SVG via jsdom → `tools/wave18_laneA/proofs/wave18_abcjs/output.svg` (35,535 bytes, title embedded). Needs `npm install abcjs jsdom`. [Wave 18 Lane A]
+
+#### OpenSheetMusicDisplay ✅ commercial-safe (BSD-3-Clause, GitHub API verified 2026-10-07)
+- **What:** MusicXML → browser/headless sheet-music renderer (used by OpenScore tooling) — complements VexFlow for MusicXML-native corpora.
+- **URL:** https://github.com/opensheetmusicdisplay/opensheetmusicdisplay
+- **License:** BSD-3-Clause (verified 2026-10-07 via GitHub API spdx_id opensheetmusicdisplay/opensheetmusicdisplay)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Natural renderer for the OpenScore Lieder MusicXML files pulled above — OSMD reads MusicXML directly where VexFlow needs conversion. [Wave 18 Lane A]
+
+#### KernScores (CCARH / Stanford) ❓ Humdrum **kern score corpus, terms unverified this pass
+- **What:** Thousands of scores in Humdrum **kern format from the Center for Computer Assisted Research in the Humanities (Stanford) — Bach chorales, Mozart piano sonatas, etc.
+- **URL:** Canonical domain not re-verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass; the corpus mixes editions with different provenance.
+- **Free tier:** Free access (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with music21 (already cataloged ✅) which reads **kern natively — strong MIR/score-analysis pipeline. Verify per-corpus terms before bulk ingestion. [Wave 18 Lane A]
+
+#### Polona (Polish National Library) ⚠️ per-item rights
+- **What:** Poland's national digital library — massive sheet-music holdings (Chopin-era onward), high-res scans.
+- **URL:** https://www.polona.pl/ (HTTP 200, 2026-10-07)
+- **License:** ⚠️ Per-item rights statements — PD items mixed with in-copyright; filter by the item-level "public domain" label.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strongest Eastern-European PD score source found this wave; complements the NIFC Chopin entry below. [Wave 18 Lane A]
+
+#### Biblioteca Digital Hispánica (BNE, Spain) ⚠️ per-item rights
+- **What:** Spanish National Library digital collections — historic Spanish sheet music and manuscripts.
+- **URL:** https://bdh.bne.es/ (bot-blocked 403 on fetch 2026-10-07 — site live, verify in browser)
+- **License:** ⚠️ Per-item rights; many pre-1929 items PD, later items restricted.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### ÖNB Digital / ANNO (Austrian National Library) ❓ terms unverified this pass
+- **What:** Austrian National Library digital holdings (ANNO historic press + digital collections) — Viennese classical-era scores and periodicals.
+- **URL:** https://www.anno.ac.at/ (fetch failed 000 this pass — verify before use)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free access (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Mozarteum — Digital Mozart Edition / NMA ❓ terms unverified this pass
+- **What:** Salzburg Mozarteum's digital Neue Mozart-Ausgabe — the scholarly complete Mozart edition online.
+- **URL:** https://dme.mozarteum.at/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass (the print NMA is Bärenreiter; digital terms need checking).
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### NIFC — Chopin Institute digital collections ❓ terms unverified this pass
+- **What:** Narodowy Instytut Fryderyka Chopina — Chopin manuscripts, first editions, and iconography.
+- **URL:** https://chopin.nifc.pl/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with Polona for Polish PD score coverage. [Wave 18 Lane A]
+
+#### NY Philharmonic — Leon Levy Digital Archives ❓ terms unverified this pass
+- **What:** 1.3M+ pages of NY Phil history — marked scores, parts, and programs from 1842 onward.
+- **URL:** https://archives.nyphil.org/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Marked orchestral parts are rare — useful for period-performance reference. [Wave 18 Lane A]
+
+#### Juilliard Manuscript Collection ❓ terms unverified this pass
+- **What:** Juilliard's digitized music manuscripts (Beethoven, Mozart, etc.).
+- **URL:** https://www.juilliard.edu/ (bot-blocked 403 on fetch 2026-10-07 — locate the manuscript subsite via search)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Bodleian — Broadside Ballads ❓ terms unverified this pass
+- **What:** Oxford Bodleian's 30,000+ broadside ballads — song sheets with tunes, 16th–20th century.
+- **URL:** https://ballads.bodleian.ox.ac.uk/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with EBBA (UCSB) below — the two great broadside-ballad archives. [Wave 18 Lane A]
+
+#### VWML / Full English (EFDSS) ❓ terms unverified this pass
+- **What:** Vaughan Williams Memorial Library — the English Folk Dance and Song Society archive, incl. the "Full English" digitization.
+- **URL:** https://www.vwml.org/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Roud Folk Song Index lives here — canonical folk-song reference. [Wave 18 Lane A]
+
+#### Hymnary.org ❓ hymn texts/tunes database, terms unverified this pass
+- **What:** The standard hymnology database — hymn texts, tunes, and publication histories.
+- **URL:** https://hymnary.org/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass; texts span PD to in-copyright.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Cyber Hymnal ❓ PD-hymn claim, not re-verified this pass
+- **What:** Long-running hymn site claiming public-domain hymns with MIDI and scores (hymntime.com).
+- **URL:** http://www.hymntime.com/tch/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Site states PD hymns; not re-verified this pass.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Traditional Tune Archive (tunearch.org) ❓ terms unverified this pass
+- **What:** The former Fiddler's Companion — encyclopedic index of traditional fiddle tunes with ABC notation and histories.
+- **URL:** https://tunearch.org/ (bot-blocked 403 on fetch 2026-10-07 — site live, verify in browser)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ABC transcriptions pair directly with the abcjs entry above. [Wave 18 Lane A]
+
+#### The Session ⚠️ per-tune rights
+- **What:** The living Irish-traditional tune database — tens of thousands of tunes/settings with ABC, member discussions.
+- **URL:** https://thesession.org/ (HTTP 200, 2026-10-07)
+- **License:** ⚠️ Per-tune/setting rights — traditional material is PD but arrangements carry uploader-stated terms; check each entry.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best source of session-ready Irish trad ABC; abcjs renders it directly. [Wave 18 Lane A]
+
+#### abcnotation.com ❓ ABC tune archive, terms unverified this pass
+- **What:** Long-running ABC notation tune archive and format reference.
+- **URL:** https://abcnotation.com/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### JC's ABC Tune Finder ❓ terms unverified this pass
+- **What:** John Chambers' ABC tune search index (MIT-hosted) — the classic folk-tune finder.
+- **URL:** https://trillian.mit.edu/~jc/music/abc/findtune.html (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### The Mudcat Café ⚠️ per-post rights
+- **What:** Decades-old folk/blues song database and forum — lyrics, chords, tune histories.
+- **URL:** https://mudcat.org/ (connection failed 000 on fetch 2026-10-07 — verify before use)
+- **License:** ⚠️ Per-post rights — user-contributed material with mixed provenance.
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Parlor Songs ❓ PD sheet-music claim, not re-verified this pass
+- **What:** Parlor-era (19th-century American) sheet music scans with MIDI renditions (parlorsongs.com).
+- **URL:** https://www.parlorsongs.com/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Claims PD material; not re-verified this pass.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Project Gutenberg — sheet music holdings ⚠️ PD in the US only
+- **What:** PG's small but real sheet-music holdings — fully proofread, PD in the US.
+- **URL:** https://www.gutenberg.org/ (HTTP 200, 2026-10-07)
+- **License:** ⚠️ Public domain in the US; non-US users must check local copyright terms.
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### MusicBrainz ✅ commercial-safe (CC0 metadata)
+- **What:** The open music encyclopedia — CC0 release/work metadata (not scores, but the canonical score-adjacent reference for cataloging PD repertoire).
+- **URL:** https://musicbrainz.org/ (HTTP 200, 2026-10-07)
+- **License:** ✅ CC0 1.0 (project's stated data license)
+- **Free tier:** Free, no limits (API rate-limited politely)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use to cross-reference PD score corpora (OpenScore, KernScores) with authoritative work metadata. [Wave 18 Lane A]
+
+#### IPAM — International Piano Archives at Maryland ❓ terms unverified this pass
+- **What:** University of Maryland's piano archive — recordings, scores, and papers of great pianists.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Morgan Library — music manuscripts ❓ terms unverified this pass
+- **What:** The Morgan Library & Museum's music manuscript holdings (autographs, first editions).
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### National Library of Scotland — music collections ❓ terms unverified this pass
+- **What:** NLS digitized music — Scottish traditional and classical holdings.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### EBBA — English Broadside Ballad Archive (UCSB) ❓ terms unverified this pass
+- **What:** UC Santa Barbara's broadside-ballad archive with facsimiles and recordings.
+- **URL:** https://ebba.english.ucsb.edu/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free browsing (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the Bodleian ballads entry above. [Wave 18 Lane A]
+
+#### Tobar an Dualchais ❓ terms unverified this pass
+- **What:** Scotland's folk-song/audio archive (Kist o Riches) — Gaelic and Scots field recordings.
+- **URL:** https://www.tobarandualchais.co.uk/ (bot-blocked 403 on fetch 2026-10-07 — site live, verify in browser)
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free streaming (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Perfessor Bill Edwards — ragtime sheet music ❓ PD claim, not re-verified this pass
+- **What:** Long-running ragtime site with PD sheet-music scans and histories.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Claims PD ragtime scans; not re-verified this pass.
+- **Free tier:** Free (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Free-scores.com ⚠️ per-score license badges
+- **What:** Large sheet-music sharing site with per-score license badges (PD through copyrighted).
+- **URL:** https://www.free-scores.com/ (HTTP 200, 2026-10-07)
+- **License:** ⚠️ Per-score badges — filter to PD/CC0/CC-BY items only; many scores are fully copyrighted.
+- **Free tier:** Free browsing; some downloads account-gated
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Usable only with strict per-score filtering — the badge is the license, not the site. [Wave 18 Lane A]
+
+#### Schumann Portal (Robert-Schumann-Haus Zwickau) ❓ terms unverified this pass
+- **What:** Zwickau's Schumann research center — manuscripts, letters, and scores.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Internet Archive — Sheet Music collection ⚠️ per-item rights
+- **What:** IA's dedicated sheet-music collection — scans from many contributing libraries.
+- **URL:** https://archive.org/details/sheetmusic (canonical; verify before use)
+- **License:** ⚠️ Per-item rights — IA hosts both PD and in-copyright scans; check each item's metadata.
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bulk-downloadable via IA APIs — the highest-volume PD score source in this pocket once filtered. [Wave 18 Lane A]
+
+#### Musipedia ❓ melody-search engine, terms unverified this pass
+- **What:** Melody search by contour/keyboard/pitch — indexes public-domain melodies.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Free (per historical record)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for identifying PD tunes from hum/contour queries. [Wave 18 Lane A]
+
+### B. Retro-tracker ecosystem — clean-licensed chiptune trackers, mods, archives & tooling (40)
+
+#### DUMB (Dynamic Universal Music Bibliotheque) ✅ commercial-safe (custom permissive, raw LICENSE verified 2026-10-07)
+- **What:** C library for module/tracker-based music playback (IT/XM/S3M/MOD) — the classic game-audio module player.
+- **URL:** https://github.com/kode54/dumb
+- **License:** ✅ Custom permissive (verified 2026-10-07 via raw LICENSE — "Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely"; zlib-style grant)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Clean-licensed alternative to the quarantined libgme (row 184) for module playback in tools. [Wave 18 Lane A]
+
+#### VGMTrans ✅ commercial-safe (Zlib, GitHub API verified 2026-10-07)
+- **What:** Converts proprietary sequenced videogame music (N64/PS1/PS2-era formats) to MIDI/DLS/SoundFont — the game-music transcription tool.
+- **URL:** https://github.com/vgmtrans/vgmtrans
+- **License:** ✅ Zlib (verified 2026-10-07 via GitHub API spdx_id vgmtrans/vgmtrans)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Transcription output is a new arrangement of (usually copyrighted) game music — the tool is clean, the output's rights follow the source composition. [Wave 18 Lane A]
+
+#### WASM-4 ✅ commercial-safe (ISC, GitHub API verified 2026-10-07)
+- **What:** WebAssembly fantasy console with a built-in tracker-style music system — retro game + chiptune in one open stack.
+- **URL:** https://github.com/aduros/wasm4
+- **License:** ✅ ISC (verified 2026-10-07 via GitHub API spdx_id aduros/wasm4)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### LIKO-12 ✅ commercial-safe (MIT, GitHub API verified 2026-10-07)
+- **What:** Open-source fantasy computer (PICO-8-like) with sprite/map/sound editors — chiptune-friendly.
+- **URL:** https://github.com/LIKO-12/LIKO-12
+- **License:** ✅ MIT (verified 2026-10-07 via GitHub API search result LIKO-12/LIKO-12)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The clean-licensed answer to PICO-8 (below, commercial). [Wave 18 Lane A]
+
+#### Pixel Vision 8 ⚠️ commercial-safe with caveats (MS-PL, GitHub API verified 2026-10-07)
+- **What:** Fantasy console for teaching retro game dev, with chiptune music tools.
+- **URL:** https://github.com/PixelVision8/PixelVision8
+- **License:** ⚠️ MS-PL — Microsoft Public License (verified 2026-10-07 via GitHub API spdx_id PixelVision8/PixelVision8); OSI-approved permissive, commercial use allowed, but patent-termination and MS-specific terms apply — read the license before shipping.
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### HivelyTracker ✅ commercial-safe (BSD-3-Clause, GitHub API verified 2026-10-07)
+- **What:** AHX-based chip music tracker (Amiga-style) — modern, maintained, open source.
+- **URL:** https://github.com/pete-gordon/hivelytracker
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07 via GitHub API spdx_id pete-gordon/hivelytracker)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** One of the few fully permissive native chip trackers — strong candidate for chiptune production. [Wave 18 Lane A]
+
+#### UltraBox ✅ commercial-safe (MIT, GitHub API verified 2026-10-07)
+- **What:** BeepBox → JummBox lineage online chiptune DAW; the canonical repo is ultrabox_typescript.
+- **URL:** https://github.com/ultraabox/ultrabox_typescript (app: https://ultraabox.github.io)
+- **License:** ✅ MIT (verified 2026-10-07 via GitHub API spdx_id ultraabox/ultrabox_typescript; sibling ourbox also MIT)
+- **Free tier:** Free web app + self-hostable
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Slarmoo's Box ✅ commercial-safe (MIT, GitHub API verified 2026-10-07)
+- **What:** UltraBox mod advancing BeepBox capabilities (mod of a mod of JummBox of BeepBox) — actively developed online synth.
+- **URL:** https://github.com/slarmoo/slarmoosbox
+- **License:** ✅ MIT (verified 2026-10-07 via GitHub API spdx_id slarmoo/slarmoosbox)
+- **Free tier:** Free web app + self-hostable
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### Radium 🚫 GPL-2.0 — QUARANTINED (row 175 exists; catalog entry added for discoverability)
+- **What:** Next-generation graphical tracker/DAW hybrid (kmatheussen).
+- **URL:** https://github.com/kmatheussen/radium
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id kmatheussen/radium; quarantine row 175 already exists — no new row)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only — never linked into shipping code (quarantine row 175). [Wave 18 Lane A]
+
+#### BambooTracker 🚫 GPL-2.0-or-later — QUARANTINED (row 173 exists)
+- **What:** YM2608 (OPNA) FM tracker — PC-98-era chip music.
+- **URL:** https://github.com/BambooTracker/BambooTracker
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-07 via GitHub API spdx_id + README badge; quarantine row 173 already exists — no new row)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 173). [Wave 18 Lane A]
+
+#### Frescobaldi 🚫 GPL-2.0 — QUARANTINED (row 179 exists)
+- **What:** LilyPond score editor — the practical frontend for the quarantined LilyPond toolchain.
+- **URL:** https://github.com/frescobaldi/frescobaldi
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id frescobaldi/frescobaldi; quarantine row 179 already exists — no new row)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 179). [Wave 18 Lane A]
+
+#### Denemo 🚫 GPL-3.0 — QUARANTINED (row 180 exists)
+- **What:** GNU music notation editor (LilyPond frontend).
+- **URL:** https://github.com/denemo/denemo
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id denemo/denemo; quarantine row 180 already exists — no new row)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 180). [Wave 18 Lane A]
+
+#### Hydrogen 🚫 GPL-2.0-or-later — QUARANTINED (row 126 exists)
+- **What:** Advanced drum machine (Linux/macOS/Windows) — pattern-based rhythm programming.
+- **URL:** https://github.com/hydrogen-music/hydrogen
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-07 via GitHub API spdx_id hydrogen-music/hydrogen; quarantine row 126 already exists — no new row)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 126). Drum patterns rendered to audio are output, not code — but the code stays quarantined. [Wave 18 Lane A]
+
+#### GoatTracker 🚫 GPL-2.0 — QUARANTINED (row 176 exists; canonical repo gone)
+- **What:** C64 SID music editor by Cadaver — the definitive SID composer tool.
+- **URL:** Canonical repo cadaver/goattracker returns 404 (2026-10-07); independent forks (leafo/goattracker2, robcowell/goattracker, jansalleine/gt2fork) carry GPL-2.0
+- **License:** 🚫 GPL-2.0 (verified via leafo/goattracker2 mirror COPYING per quarantine row 176 — row already exists, no new row; upstream grant unrecoverable from the dead canonical repo)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 176). HVSC (already cataloged ⚠️) is the SID tune source; GoatTracker is the editor. [Wave 18 Lane A]
+
+#### Zrythm 🚫 AGPL-3.0 — QUARANTINE row 186 (new)
+- **What:** Highly automated DAW with tracker-friendly workflows.
+- **URL:** https://github.com/zrythm/zrythm
+- **License:** 🚫 AGPL-3.0 with trademark terms (verified 2026-10-07 via raw LICENSES/LicenseRef-ZrythmLicense.txt — "GNU Affero General Public License... version 3" + Section 7 trademark terms)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only — never linked into shipping code (quarantine row 186). [Wave 18 Lane A]
+
+#### CheeseTracker 🚫 GPLv2 — QUARANTINE row 187 (new)
+- **What:** Classic Unix sample tracker (IT/XM-style).
+- **URL:** https://sourceforge.net/projects/cheesetracker/
+- **License:** 🚫 GPLv2 (verified 2026-10-07 via SourceForge project page — "GNU General Public License version 2.0 (GPLv2)")
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 187). [Wave 18 Lane A]
+
+#### Rosegarden 🚫 GPL-2.0 — QUARANTINE row 188 (new)
+- **What:** MIDI/audio sequencer and notation editor for Linux.
+- **URL:** Canonical at rosegardenmusic.com; mirrors nengxu/rosegarden and tedfelix/rosegarden-official agree on GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id on both mirrors)
+- **License:** 🚫 GPL-2.0 (mirrors agree; upstream rosegardenmusic.com not re-fetched this pass — treat as GPL-2.0 per mirrors)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** quarantined-research-only
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 188). [Wave 18 Lane A]
+
+#### Mucom88 🚫 no-go — CC BY-NC-SA 4.0 (noncommercial share-alike)
+- **What:** OpenMucom88 — PC-88 FM music driver/MML toolchain revival.
+- **URL:** https://github.com/onitama/mucom88
+- **License:** 🚫 CC BY-NC-SA 4.0 (verified 2026-10-07 via raw LICENSE — "Attribution-NonCommercial-ShareAlike 4.0 International")
+- **Free tier:** Free for noncommercial use
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** 🚫 Evidence: the repo's own LICENSE file is CC BY-NC-SA 4.0 — noncommercial only, share-alike. Do not use for commercial production. (Not quarantined — quarantine is for copyleft code; NC is a straight no-go.) [Wave 18 Lane A]
+
+#### PICO-8 🚫 do-not-use — commercial proprietary (Lexaloffle)
+- **What:** The famous fantasy console with built-in tracker — commercial, closed source.
+- **URL:** https://www.lexaloffle.com/pico-8.php (canonical; verify before use)
+- **License:** 🚫 Proprietary commercial license (paid; no redistribution grant)
+- **Free tier:** None — paid license
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** 🚫 Evidence: Lexaloffle sells PICO-8 as a commercial product; no open-source grant exists. Use LIKO-12 or WASM-4 (both cataloged ✅ above) instead. [Wave 18 Lane A]
+
+#### Impulse Tracker ⚠️ freeware — no redistributable open grant
+- **What:** Jeffrey Lim's legendary DOS tracker (IT format) — freeware since the 2.14/2.15 releases.
+- **URL:** Canonical site long gone — locate via search before use
+- **License:** ⚠️ Freeware (free to download/use per the author's release); no open-source or redistribution grant found — treat as use-only, not shippable.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** Schism Tracker (quarantined, row 125/172) is the open IT-compatible clone. [Wave 18 Lane A]
+
+#### Scream Tracker 3 ⚠️ freeware — no redistributable open grant
+- **What:** Future Crew's DOS tracker (S3M format) — the format half the module world still plays.
+- **URL:** Canonical site long gone — locate via search before use
+- **License:** ⚠️ Freeware; no open-source or redistribution grant found.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** DUMB (cataloged ✅ above) plays S3M under a clean license. [Wave 18 Lane A]
+
+#### OctaMED 🚫 do-not-use — commercial (RBF Software)
+- **What:** The classic Amiga MED/OctaMED tracker — now a commercial product.
+- **URL:** Canonical at RBF Software — locate via search before use
+- **License:** 🚫 Proprietary commercial — paid, no open grant.
+- **Free tier:** None
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** 🚫 Evidence: RBF Software sells OctaMED commercially. Historical MED files play in open players; the tracker itself is not usable. [Wave 18 Lane A]
+
+#### MSSIAH 🚫 do-not-use — commercial cartridge
+- **What:** MIDI sequencer/synth cartridge for the Commodore 64 — commercial hardware/software product.
+- **URL:** Canonical site — locate via search before use
+- **License:** 🚫 Proprietary commercial.
+- **Free tier:** None
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### Prophet64 🚫 do-not-use — commercial cartridge
+- **What:** C64 music cartridge (MSSIAH-adjacent) — commercial.
+- **URL:** Canonical site — locate via search before use
+- **License:** 🚫 Proprietary commercial.
+- **Free tier:** None
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### SidTracker64 🚫 do-not-use — commercial iOS app
+- **What:** SID chip tracker for iOS — paid App Store product.
+- **URL:** App Store — locate via search before use
+- **License:** 🚫 Proprietary commercial.
+- **Free tier:** None
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### Vortex Tracker II ⚠️ freeware — no redistributable open grant
+- **What:** AY-3-8910/YM2149 tracker by Sergey Bulba (AlCo) — ZX Spectrum chip music standard.
+- **URL:** Canonical site — locate via search before use
+- **License:** ⚠️ Freeware; no open-source or redistribution grant found.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** Arkos Tracker 2 (cataloged ❓) covers similar AY ground. [Wave 18 Lane A]
+
+#### Pretracker ❓ C64 tracker, editor license unverified this pass
+- **What:** Commodore 64 tracker; open-source Pretracker *replayers* exist (chrisly42/PretrackerRaspberryCasket, RetrovertApp/playback-pretracker) but the editor's own grant was not verified.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Unverified this pass — a replayer being open does not license the editor.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### SID-Wizard ⚠️ freeware — no redistributable open grant
+- **What:** C64 SID editor by Hermit — modern SID composition tool.
+- **URL:** Canonical site — locate via search before use (forks: anarkiwi/sid-wizard; driver automation: anarkiwi/sidwizard-driver, Apache-2.0)
+- **License:** ⚠️ Freeware; no open-source or redistribution grant found for the editor itself.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### Cynthcart ❓ license unverified — no license file found
+- **What:** Paul Slocum's C64 synthesizer cartridge program (2006) — chiptune performance instrument.
+- **URL:** https://github.com/PaulSlocum/cynthcart
+- **License:** ❓ No LICENSE/COPYING file found at the repo root (checked 2026-10-07); GitHub API spdx_id NOASSERTION. Not verified.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### PPMCK (Pico Pi MCK) ⚠️ freeware — no redistributable open grant
+- **What:** Hally's NES music driver + MML compiler (PPMCK) — the classic Famicom chiptune toolchain.
+- **URL:** Canonical site — locate via search before use
+- **License:** ⚠️ Freeware; no open-source or redistribution grant found.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dn-FamiTracker (cataloged) is the cleaner-licensed NES path. [Wave 18 Lane A]
+
+#### TFM Music Maker ⚠️ freeware (Shiru) — grant unverified this pass
+- **What:** Shiru's Yamaha YM2612 (Genesis) FM tracker — the standard free Genesis chiptune tool.
+- **URL:** Canonical at Shiru's site — locate via search before use (TFI format converters: alexras/ym2612patch2json)
+- **License:** ⚠️ Freeware per the author's distribution; formal grant text not verified this pass.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### VOPM ⚠️ freeware VST — no redistributable open grant
+- **What:** Sam's YM2151 (OPM) FM VST emulation — the arcade-FM sound in a plugin.
+- **URL:** Canonical site — locate via search before use
+- **License:** ⚠️ Freeware; no open-source or redistribution grant found.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### YMCK Magical 8bit Plug ⚠️ freeware — commercial-use terms unverified this pass
+- **What:** YMCK's beloved Famicom/PSG chiptune VST.
+- **URL:** Canonical at YMCK's site — locate via search before use
+- **License:** ⚠️ Freeware; whether the grant covers commercial production was not verified this pass — check YMCK's terms before shipping anything made with it.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### Tweakbench Triforce ⚠️ freeware — no redistributable open grant
+- **What:** Tweakbench's NES-style chiptune VST (2A03 emulation).
+- **URL:** Canonical at Tweakbench — locate via search before use
+- **License:** ⚠️ Freeware; no open-source or redistribution grant found.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### Matt Montag NES VST ⚠️ freeware — grant unverified this pass
+- **What:** Matt Montag's NES chiptune VST — another 2A03-flavored plugin.
+- **URL:** Canonical site — locate via search before use
+- **License:** ⚠️ Freeware; grant text not verified this pass.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** [Wave 18 Lane A]
+
+#### SoundTracker (Unix) ❓ believed GPL, not re-verified this pass
+- **What:** Michael Krause's Unix sample tracker (XM-style) — one of the early Linux trackers.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Believed GPL from historical record; NOT re-verified this pass — do not treat as confirmed.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/trackers)
+- **Notes:** Distinct from the unrelated "SoundTracker" Spotify web apps found in the dedup scan. [Wave 18 Lane A]
+
+#### Amiga Music Preservation (AMP) ⚠️ per-module rights
+- **What:** Curated Amiga game/demo music archive with replay info (amp.dascene.net).
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ⚠️ Per-module rights — the archive hosts rips of commercial game music; treat every module as rights-restricted unless the author released it.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/research only for commercial game music; original scene compositions vary by author. [Wave 18 Lane A]
+
+#### Modland ❓ module archive, terms unverified this pass
+- **What:** Long-running FTP-era module archive (MOD/XM/IT/S3M and exotics).
+- **URL:** https://modland.com/ (canonical; verify before use)
+- **License:** ❓ Terms not verified this pass; modules carry mixed provenance.
+- **Free tier:** Free downloads (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to author-released modules only — same discipline as The Mod Archive (already cataloged ⚠️). [Wave 18 Lane A]
+
+#### DeepSID ❓ C64 SID tune archive, terms unverified this pass
+- **What:** Web-playable C64 SID collection (HVSC-derived) with a modern player.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass; HVSC itself is noncommercial-distribution (already cataloged ⚠️).
+- **Free tier:** Free streaming (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### demozoo ⚠️ per-production rights
+- **What:** The demoscene production database — prods, music, and graphics with author credits.
+- **URL:** https://demozoo.org/ (canonical; verify before use)
+- **License:** ⚠️ Per-production rights — authors retain rights; the database is a catalog, not a grant.
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best discovery index for clean-licensed scene music — but each prod's rights must be checked individually. [Wave 18 Lane A]
+
+### C. Caption packaging long tail — players, muxers, encoders & subtitle tooling beyond format converters (36)
+
+#### AndroidX Media3 (ExoPlayer) ✅ commercial-safe (Apache-2.0, GitHub API verified 2026-10-07)
+- **What:** Google's Android media stack — ExoPlayer lives here now (google/ExoPlayer deprecated 2024-04-03; all development moved to androidx/media). Full WebVTT/TTML/CEA-608 caption support.
+- **URL:** https://github.com/androidx/media
+- **License:** ✅ Apache-2.0 (verified 2026-10-07 via GitHub API spdx_id androidx/media)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The Android caption-playback reference — pairs with the cataloged dash.js / shaka-player / hls.js web players. Migration note: google/ExoPlayer is deprecated; use androidx/media. [Wave 18 Lane A]
+
+#### Clappr ✅ commercial-safe (BSD-3-Clause, GitHub API verified 2026-10-07)
+- **What:** Extensible plugin-oriented HTML5 media player with caption/subtitle plugin support.
+- **URL:** https://github.com/clappr/clappr
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07 via GitHub API spdx_id clappr/clappr)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### rx-player ✅ commercial-safe (Apache-2.0, GitHub API verified 2026-10-07)
+- **What:** Canal+'s DASH/Smooth HTML5 video player with subtitle support — a production-grade packager-player from a broadcaster.
+- **URL:** https://github.com/canalplus/rx-player
+- **License:** ✅ Apache-2.0 (verified 2026-10-07 via GitHub API spdx_id canalplus/rx-player)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### MediaElement.js ✅ commercial-safe (MIT, GitHub API verified 2026-10-07)
+- **What:** HTML5 audio/video player with caption-track support (MP4/WebM/MP3 + HLS/Dash).
+- **URL:** https://github.com/mediaelement/mediaelement
+- **License:** ✅ MIT (verified 2026-10-07 via GitHub API spdx_id mediaelement/mediaelement)
+- **Free tier:** Self-hosted — free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 18 Lane A]
+
+#### IINA 🚫 GPL-3.0 — QUARANTINE row 189 (new)
+- **What:** Modern macOS video player with full subtitle rendering (ASS/SRT/VTT).
+- **URL:** https://github.com/iina/iina
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id iina/iina)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 189) — useful as a subtitle-rendering reference player, never linked. [Wave 18 Lane A]
+
+#### SMPlayer 🚫 GPL-2.0 — QUARANTINE row 190 (new)
+- **What:** Qt media player (mpv/mplayer frontend) with deep subtitle controls.
+- **URL:** https://github.com/smplayer-dev/smplayer
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id smplayer-dev/smplayer)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 190). [Wave 18 Lane A]
+
+#### MPC-HC 🚫 GPL-3.0 — QUARANTINE row 191 (new)
+- **What:** Media Player Classic Home Cinema — the classic DirectShow player with VSFilter-family subtitle rendering.
+- **URL:** https://github.com/mpc-hc/mpc-hc
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id mpc-hc/mpc-hc)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 191). [Wave 18 Lane A]
+
+#### MPC-BE 🚫 GPLv3 — QUARANTINE row 192 (new)
+- **What:** Media Player Classic Black Edition — MPC-HC fork with subtitle enhancements.
+- **URL:** https://sourceforge.net/projects/mpcbe/
+- **License:** 🚫 GPLv3 (verified 2026-10-07 via SourceForge project page — "GNU General Public License version 3.0 (GPLv3)")
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 192). [Wave 18 Lane A]
+
+#### Celluloid 🚫 GPL-3.0 — QUARANTINE row 193 (new)
+- **What:** GTK mpv frontend (formerly GNOME MPV) with subtitle track controls.
+- **URL:** https://github.com/celluloid-player/celluloid
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id celluloid-player/celluloid)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 193). [Wave 18 Lane A]
+
+#### Haruna ❓ KDE player, license not confirmed this pass
+- **What:** KDE's Qt/QML mpv-based video player with subtitle support.
+- **URL:** https://github.com/KDE/haruna (GitHub API spdx_id returned None 2026-10-07; invent.kde.org COPYING fetch failed)
+- **License:** ❓ Not confirmed this pass — KDE projects are typically GPL-2.0+, but the license file was not retrieved; treat as quarantine-class until verified.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### MPlayer ❓ historically GPL-2.0, not re-verified this pass
+- **What:** The classic Unix movie player — subtitle rendering via mencoder/mplayer filters; ancestor of mpv.
+- **URL:** https://mplayerhq.hu/ (HTTP 200, 2026-10-07)
+- **License:** ❓ Historically GPL-2.0 per the project, but the license text was not re-fetched this pass — not confirmed.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** mpv (already cataloged 🚫 GPLv2+) is the maintained descendant. [Wave 18 Lane A]
+
+#### QMPlay2 ⚠️ LGPL-3.0 — doctrine pending owner verdict (no new quarantine row per LGPL rule)
+- **What:** Qt video/audio player with subtitle support.
+- **URL:** https://github.com/zaps166/QMPlay2
+- **License:** ⚠️ LGPL-3.0 (verified 2026-10-07 via GitHub API spdx_id zaps166/QMPlay2) — **LGPL: doctrine pending owner verdict** (same class as quarantine rows 63/154/165/183/184)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Standalone-tool use only until the owner rules on LGPL. [Wave 18 Lane A]
+
+#### FastFlix ✅ commercial-safe (MIT, GitHub API verified 2026-10-07)
+- **What:** Free GUI for H.264/HEVC/AV1 encoding (hardware + software) with subtitle burn-in/track options — the clean-licensed HandBrake-adjacent encoder GUI.
+- **URL:** https://github.com/cdgriffith/FastFlix
+- **License:** ✅ MIT (verified 2026-10-07 via GitHub API spdx_id cdgriffith/FastFlix)
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The MIT answer to the quarantined HandBrake/x264-class encoder GUIs for subtitle burn-in workflows. [Wave 18 Lane A]
+
+#### Shutter Encoder ⚠️ freeware — no open-source grant found
+- **What:** Popular free transcoder/converter with subtitle burn-in and rewrap features.
+- **URL:** https://www.shutterencoder.com/ (canonical; verify before use)
+- **License:** ⚠️ Freeware (free to use); no open-source or redistribution grant found — use-only, not shippable.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### VirtualDub2 ❓ believed GPL, not re-verified this pass
+- **What:** VirtualDub fork with subtitle filter support and modern format handling.
+- **URL:** SourceForge project — locate via search before use
+- **License:** ❓ Believed GPL (VirtualDub lineage); NOT re-verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** Avidemux (already cataloged) covers similar subtitle-filter ground. [Wave 18 Lane A]
+
+#### AviUtl ❓ Japanese freeware NLE, grant unverified this pass
+- **What:** Japanese freeware non-linear editor with a plugin ecosystem incl. subtitle plugins.
+- **URL:** Canonical at spring-fragrance.mints.ne.jp/aviutl (unverified-verbatim — locate via search)
+- **License:** ❓ Freeware; grant text not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### VideoSubFinder 🚫 GPL-2.0 — QUARANTINE row 194 (new)
+- **What:** Finds hardcoded subtitles via frame differencing — hardsub extraction to images/SRT.
+- **URL:** https://github.com/SWHL/VideoSubFinder
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id SWHL/VideoSubFinder)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 194) — pairs with Subtitle Edit's OCR for hardsub recovery. [Wave 18 Lane A]
+
+#### BDSup2Sub ✅ commercial-safe (Apache-2.0, GitHub API verified 2026-10-07)
+- **What:** Blu-ray/DVD subtitle (SUP/PGS) editor and converter — the PGS→SRT/VobSub bridge.
+- **URL:** https://github.com/mjuhasz/BDSup2Sub (C++/Qt port: amichaelt/BDSup2SubPlusPlus, also Apache-2.0)
+- **License:** ✅ Apache-2.0 (verified 2026-10-07 via GitHub API spdx_id mjuhasz/BDSup2Sub)
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean-licensed PGS tooling — complements the quarantined Sup2Sub-class utilities. [Wave 18 Lane A]
+
+#### SubtitleCreator ❓ freeware, grant unverified this pass
+- **What:** DVD subtitle authoring tool (SUP creation).
+- **URL:** Canonical at videohelp/software pages — locate via search before use
+- **License:** ❓ Freeware; grant text not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### SubDownloader 🚫 GPL-3.0 — QUARANTINE row 195 (new)
+- **What:** Automatic subtitle downloader/uploader (OpenSubtitles etc.).
+- **URL:** https://github.com/subdownloader/subdownloader (note: beatfreaker/subdownloader is an unrelated MIT project with the same name)
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id subdownloader/subdownloader)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 195). Name collision warning documented — the MIT namesake is a different, smaller project. [Wave 18 Lane A]
+
+#### FFMS2 ⚠️ commercial-safe with caveats (MIT source / GPL binaries)
+- **What:** FFmpeg-based frame-accurate source library + AviSynth/VapourSynth plugin — the standard frame server for subtitle-timing workflows.
+- **URL:** https://github.com/FFMS/ffms2
+- **License:** ⚠️ MIT source, GPL binaries (verified 2026-10-07 via raw COPYING — "The FFMS2 source is licensed under the MIT license, but its binaries are licensed under the GPL because GPL components of FFmpeg are used")
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Source use is MIT-clean; distributing built binaries pulls FFmpeg's GPL — build from source with LGPL FFmpeg for the clean path. [Wave 18 Lane A]
+
+#### Haivision SRT ⚠️ MPL-2.0 — FLAG (same class as row 99-era MPL entries)
+- **What:** Secure Reliable Transport — the open-source low-latency streaming protocol (srt-live-transmit etc.) used for live caption/data carriage.
+- **URL:** https://github.com/Haivision/srt
+- **License:** ⚠️ MPL-2.0 (verified 2026-10-07 via GitHub API spdx_id Haivision/srt) — file-level copyleft; same treatment class as the dsnote MPL-2.0 flag
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Protocol/tool use is fine; linking the library into shipping code needs the MPL file-level-copyleft review. [Wave 18 Lane A]
+
+#### MakeMKV ⚠️ proprietary freeware (beta key)
+- **What:** Blu-ray/DVD → MKV remuxer preserving subtitle tracks — the standard PGS extraction path.
+- **URL:** https://www.makemkv.com/ (canonical; verify before use)
+- **License:** ⚠️ Proprietary freeware — free while in beta (rolling beta keys); no open grant, no redistribution right.
+- **Free tier:** Free during beta
+- **Repo lane:** trippedd (captions)
+- **Notes:** Use-only for subtitle-track extraction; output MKV/subtitle tracks' rights follow the source disc. [Wave 18 Lane A]
+
+#### eac3to ❓ freeware (madshi), grant unverified this pass
+- **What:** Audio/subtitle demuxing and conversion Swiss-army tool (EVO/VOB/Blu-ray).
+- **URL:** Canonical at madshi's site / videohelp — locate via search before use
+- **License:** ❓ Freeware; grant text not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### Av1an 🚫 GPL-3.0 — QUARANTINE row 196 (new)
+- **What:** Fast AV1 encoding framework (chunked/parallel) with subtitle burn-in scripting hooks.
+- **URL:** https://github.com/rust-av/Av1an (moved from master-of-zen/Av1an — verified 2026-10-07 via GitHub search)
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API spdx_id rust-av/Av1an)
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 196). FastFlix (MIT, above) is the clean-licensed GUI alternative. [Wave 18 Lane A]
+
+#### Subtitle Horse ❓ online subtitle editor, status unverified this pass
+- **What:** Browser-based subtitle editor (subtitle-horse.com) — no GitHub repo found in the 2026-10-07 search.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Unverified — may be defunct; do not rely on it.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (captions)
+- **Notes:** Listed for completeness of the online-editor long tail; verify aliveness before any use. [Wave 18 Lane A]
+
+#### srt2ass ❓ small conversion utils, unverified this pass
+- **What:** Family of tiny SRT→ASS converter scripts/utilities on GitHub — no single canonical project verified.
+- **URL:** No canonical URL verified this pass — locate via search before use.
+- **License:** ❓ Per-utility; unverified.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (captions)
+- **Notes:** pycaption (already cataloged ✅) covers SRT→ASS conversion under a verified license — prefer it. [Wave 18 Lane A]
+
+#### SubMux ❓ subtitle muxer, unverified this pass
+- **What:** Small subtitle muxing utility — no canonical repo verified.
+- **URL:** No canonical URL verified this pass — locate via search before use.
+- **License:** ❓ Unverified.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (captions)
+- **Notes:** MKVToolNix (already cataloged 🚫 GPL) and tsMuxer (already cataloged ✅) cover muxing under known licenses. [Wave 18 Lane A]
+
+#### gMKVExtractGUI ❓ MKV extraction GUI, unverified this pass
+- **What:** GUI frontend for MKVExtract — subtitle/chapter track extraction.
+- **URL:** No canonical URL verified this pass — locate via search before use.
+- **License:** ❓ Unverified.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### ChapterEditor ❓ MKV/MP4 chapter editor, unverified this pass
+- **What:** Chapter editor for MKV/MP4 (chapter + tag editing adjacent to subtitle packaging).
+- **URL:** No canonical URL verified this pass — locate via search before use (LEONSC2024/ChapterEditor is a personal fork, not canonical).
+- **License:** ❓ Unverified.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### L-SMASH ✅ commercial-safe (ISC, GitHub API verified 2026-10-07)
+- **What:** MP4/MOV muxer library (official l-smash repo) — the clean-licensed MP4 mux core under L-SMASH Works.
+- **URL:** https://github.com/l-smash/l-smash
+- **License:** ✅ ISC (verified 2026-10-07 via GitHub API spdx_id l-smash/l-smash)
+- **Free tier:** Free, no limits
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** ISC-licensed MP4 muxing for caption-track packaging without the Bento4/GPAC license baggage. [Wave 18 Lane A]
+
+#### BD Rebuilder ❓ freeware (jdobbs), grant unverified this pass
+- **What:** Blu-ray backup/rebuild tool preserving subtitle tracks.
+- **URL:** Canonical at videohelp/jdobbs — locate via search before use
+- **License:** ❓ Freeware; grant text not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### multiAVCHD ❓ freeware, grant unverified this pass
+- **What:** AVCHD/Blu-ray authoring tool with subtitle support.
+- **URL:** Canonical at multiavchd.deanbg.com (unverified-verbatim — locate via search)
+- **License:** ❓ Freeware; grant text not verified this pass.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+#### VisualSubSync 🚫 GPL-2.0 — QUARANTINE row 197 (new)
+- **What:** Subtitle editor with waveform/spectrogram timing (enhanced fork: Red5goahead/VisualSubSync-Enhanced).
+- **URL:** https://github.com/Red5goahead/VisualSubSync-Enhanced (upstream SVN: svn.code.sf.net/p/visualsubsync/code/trunk)
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id Red5goahead/VisualSubSync-Enhanced)
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 197). [Wave 18 Lane A]
+
+#### xy-VSFilter 🚫 GPL-2.0 — QUARANTINE row 198 (new)
+- **What:** Maintained VSFilter fork — ASS/SSA subtitle renderer for DirectShow players.
+- **URL:** https://github.com/Cyberbeing/xy-VSFilter
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API spdx_id Cyberbeing/xy-VSFilter — "Official xy-VSFilter Repository")
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** 🚫 Standalone-tool/research use only (quarantine row 198). libass (already cataloged ✅ ISC) is the clean-licensed renderer. [Wave 18 Lane A]
+
+#### VSFilter (original, gabest) ❓ upstream grant not re-verified this pass
+- **What:** The original DirectShow subtitle filter behind a decade of fansub playback.
+- **URL:** No canonical URL verified this pass — locate via search before use.
+- **License:** ❓ Upstream grant not re-verified this pass; the maintained xy-VSFilter fork above is GPL-2.0.
+- **Free tier:** Free
+- **Repo lane:** trippedd (captions)
+- **Notes:** [Wave 18 Lane A]
+
+---
+
+## Entry count — Wave 18 (Lane A, 2026-10-07)
+
+110 new `####` entries appended (34 PD score archives/notation · 40 retro-tracker ecosystem · 36 caption packaging long tail) → **1952 total** honest entries (1842 before this wave). Licenses verified at upstream sources (GitHub API spdx_id + raw LICENSE/COPYING/README fetches, SourceForge project license fields, site fetches for archive homepages) — never assumed; ❓/⚠️ used honestly where upstream terms could not be pinned this pass. Dedup: every candidate grepped against the catalog (name + alternates) BEFORE appending — caught that Radium/BambooTracker/Frescobaldi/Denemo/Hydrogen/GoatTracker were already quarantined (rows 175/173/179/180/126/176), so they got catalog entries with 🚫 badges but no duplicate quarantine rows; caught BambooTracker-already-quarantined before writing its entry. Quarantine: +13 rows (186–198: Zrythm AGPL-3.0 · CheeseTracker GPLv2 · Rosegarden GPL-2.0 · IINA GPL-3.0 · SMPlayer GPL-2.0 · MPC-HC GPL-3.0 · MPC-BE GPLv3 · Celluloid GPL-3.0 · VideoSubFinder GPL-2.0 · SubDownloader GPL-3.0 · Av1an GPL-3.0 · VisualSubSync GPL-2.0 · xy-VSFilter GPL-2.0) → 198 rows · 184 distinct. Not quarantined by doctrine: Mucom88 CC BY-NC-SA (straight 🚫 no-go); QMPlay2 LGPL-3.0 + Haivision SRT MPL-2.0 flagged ⚠️ pending owner LGPL/MPL verdict; FFMS2 ⚠️ MIT-source/GPL-binary with clean build path. Wired with real proofs: VexFlow 4.2.2 SVG render (`tools/wave18_laneA/vexflow_render.cjs` → `proofs/wave18_vexflow/output.svg`; note: VexFlow 5.0.0's CJS build dumps source under Node 24 — pinned to 4.2.2), abcjs ABC→SVG (`tools/wave18_laneA/abcjs_render.cjs` → `proofs/wave18_abcjs/output.svg`), OpenScore CC0 .mxl pull+parse (`tools/wave18_laneA/openscore_pull.py` → `proofs/wave18_openscore/report.json`: Beethoven Op.48/1, 2 parts, 92 measures, 527 notes). OpenScore canonical repo moved (OpenScore/scores 404) → openscore/lieder (CC0-1.0). ExoPlayer canonical moved (google/ExoPlayer deprecated) → androidx/media (Apache-2.0). Av1an moved master-of-zen → rust-av (GPL-3.0). [Wave 18 Lane A]

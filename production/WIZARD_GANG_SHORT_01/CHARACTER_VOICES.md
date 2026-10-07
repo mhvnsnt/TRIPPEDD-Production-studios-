@@ -93,9 +93,9 @@
 
 **Brutal Fist persona:** UNKNOWN (no persona data — see Brutal Fist note above).
 
-**Voice target + speaking style:** **Lio Rush** (`WIZARD-GANG.md` line 150) — confirmed basis for Cipher (owner correction 2026-10-05; `~/memory/people/lio-rush.md`). No further speaking-style notes exist in any source — beyond the likeness lock, mark speaking style UNKNOWN. Comedy framing: Cipher is the unpredictable one — the wizard most likely to derail the plan by doing something nobody (including him) saw coming.
+**Voice target + speaking style:** **Lio Rush's 2026 "Blackheart" persona** (owner lock 2026-10-07; `WIZARD-GANG.md` voice cast) — feral, zoned out, spaced out, sounds controlled by an unseen being; manic and feral, somewhat comedic; whisper-to-shriek delivery (Gollum-like); loops single words ("bet bet bet", "cuts cuts cuts", "no no no"); third-person entity "he" ("he sees you", "he knows", "he's listening"); first-person plural "WE" ("WE are obsessed"); catchphrase shape "The Rain! The rain...cuts...deep!". **DIALOGUE SOURCE LAW:** ONLY `bannon-video-pipe/repo/assets/dialogue/bannon_dialogue.json` feral Cipher/Blackheart sets (`cipher` + `cipher_01`) are authorized — the old `character_lines.json` "speedster" set is REJECTED (owner 2026-10-07). Comedy framing: Cipher is the unpredictable one — the wizard most likely to derail the plan by doing something nobody (including him) saw coming.
 
-**Conflicts for owner:** None found — the sources agree (unpredictable wild card in all three canons). Note: non-determinism is a game-mechanics trait; how it reads as *personality* in a talk-driven comedy (impulsive? chaotic? easily distracted?) is the coordinator's call, not canon.
+**Conflicts for owner:** None found — the sources agree (unpredictable wild card in all three canons). RESOLVED 2026-10-07: the personality reads as feral Blackheart (paranoid, erratic, manic) per owner lock — no longer the coordinator's call.
 
 ---
 

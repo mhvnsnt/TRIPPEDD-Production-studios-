@@ -108,3 +108,9 @@ Owner reported freezing on one frame past 1:56 on his phone. Root cause: stage-2
 choke on. Fix: full clean re-encode (libx264 veryfast, crf 21, yuv420p, high@4.0,
 keyint 60, aac 160k, +faststart). Verified: 300.16s, faststart, clean full decode,
 frame at t=116 intact. Old concat master kept as wizard-gang-ep01-16x9-concat.mp4.
+
+## Canonical delivery (2026-10-07)
+The fixed-playback master lives on Google Drive (file exceeds GitHub's 100MB blob
+limit, so the repo keeps scripts/storyboards/provenance + the concat master only):
+https://drive.google.com/file/d/1LEPIQ6iDJ4cZwf7EcKldlxu2JZn81dV6/view
+"Wizard Gang EP01 THE SUMMIT (fixed playback).mp4" — 300.16s, 16:9, clean re-encode.

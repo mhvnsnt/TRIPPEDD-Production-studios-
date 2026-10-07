@@ -10433,4 +10433,1006 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Repo lane:** trippedd (gpu)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** ❓ Approval-gated and approval can be slow, but once in it's a stable T4 workbench with persistent storage — a reasonable Colab alternative for Zonos/Dia GPU validation runs. [Wave 10 D]
+- **Notes:** ❓ Approval-gated and approval can be slow, but once in it's a stable T4 workbench with persistent storage — a reasonable Colab alternative for Zonos/Dia GPU validation runs. [Wave 10 D]## Wave 10 — Lane A: catalog deepening (2026-10-07)
+
+### BG plates (background plates for animation/compositing)
+
+#### Ignite Motion ✅ commercial-safe
+- **What:** Free looping motion backgrounds (tech, space, abstract, nature, holiday) in MP4/MOV HD — built for compositing behind animation
+- **URL:** https://www.ignitemotion.com/
+- **License:** Proprietary royalty-free — "free motion backgrounds, free for commercial or personal use" (site tagline, verified 2026-10-07 via third-party mirrors of the live site)
+- **Free tier:** fully free, no registration
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Small curated library (~68 clips) — best as animated BG loops for title cards and transitions. [Wave 10 Lane A]
+
+#### Vidsplay ✅ commercial-safe
+- **What:** 500+ free HD stock video clips (nature, city, aerials, backgrounds), 4K on newer clips
+- **URL:** https://www.vidsplay.com/
+- **License:** Proprietary free license — free for personal AND commercial use with a visible credit link to Vidsplay.com (verified 2026-10-07 via https://www.vidsplay.com/terms/)
+- **Free tier:** fully free, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution is mandatory (site/video credits/description) — bake the credit into the deliverable's credit roll. No redistribution as-is. [Wave 10 Lane A]
+
+#### Monzoom ✅ commercial-safe
+- **What:** Free 4K/HD motion backgrounds and VJ loops (space, particles, abstract, music) — loopable, per-clip pages state license
+- **URL:** https://www.monzoom.com/
+- **License:** Royalty Free License — "use it for all your commercial and private video editing projects" (verified 2026-10-07 via per-clip pages, e.g. monzoom.com/stock-video/space-video-background-loop-0005-8556.html)
+- **Free tier:** free clips section, no account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Purpose-built loopable BG plates — strong fit for animated-series backgrounds and stream overlays. [Wave 10 Lane A]
+
+#### CuteStockFootage ✅ commercial-safe
+- **What:** Free stock footage, VFX overlays, light leaks, green-screen clips and SFX by a single creator (Michal) — 1080p/4K
+- **URL:** https://cutestockfootage.com/
+- **License:** CC-BY 4.0 (verified 2026-10-07 via https://cutestockfootage.com/terms-and-conditions/)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC-BY means credit cutestockfootage.com in the deliverable. Overlays/light-leaks are directly compositing-useful. [Wave 10 Lane A]
+
+#### Pond5 Public Domain Project ✅ commercial-safe
+- **What:** ~80,000 free public-domain stock clips, photos, audio and 3D models (historic/ephemeral footage) from the Pond5 marketplace
+- **URL:** https://www.pond5.com/ (search "public domain")
+- **License:** Public Domain (verified 2026-10-07 via Pond5 announcement + OpenGLAM Open Collections listing)
+- **Free tier:** free with a free Pond5 account
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historic footage goldmine for period plates and texture references; many clips are silent (plan SFX separately). [Wave 10 Lane A]
+
+#### NOAA Digital Collections ✅ commercial-safe
+- **What:** US federal ocean/atmosphere imagery and video (storms, oceans, wildlife, satellites) from noaa.gov
+- **URL:** https://www.noaa.gov/noaa-collections/photo-library
+- **License:** Public domain (US federal work) — images PD unless captioned otherwise; credit NOAA + photographer (verified 2026-10-07 via noaa.gov usage guidance)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Caveat: NOAA *videos* often embed third-party footage — check per-item credits; stills are the safe lane. [Wave 10 Lane A]
+
+#### Mazwai 🚫 not commercial-safe
+- **What:** (Former) curated free HD stock-video library — HONEST NEGATIVE, do not use
+- **URL:** https://mazwai.com/ (dead)
+- **License:** N/A — site discontinued
+- **Free tier:** none
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** HONEST NEGATIVE: as of 2026-08 mazwai.com redirects to Freepik/Magnific (paid AI suite); the free CC-BY/CC0 library is gone. Any "Mazwai" download link found elsewhere is suspect. [Wave 10 Lane A]
+
+#### Library of Congress — National Screening Room ✅ commercial-safe
+- **What:** LoC National Audio-Visual Conservation Center's public streaming collection of historic films (early cinema, newsreels, home movies)
+- **URL:** https://www.loc.gov/programs/national-screening-room/
+- **License:** Public domain / no known copyright restrictions on most items (verified 2026-10-07 via LoC program pages + Filmora/Wondershare roundup)
+- **Free tier:** fully free streaming; download per-item
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period-accurate plates and reference; check per-item rights statements (a minority are rights-restricted). [Wave 10 Lane A]
+
+#### USGS Multimedia Gallery ✅ commercial-safe
+- **What:** US Geological Survey photos, video and audio (landscapes, wildlife, natural hazards, water)
+- **URL:** https://www.usgs.gov/media
+- **License:** Public domain (US federal work) unless otherwise noted on the item (verified 2026-10-07 via USGS public-domain policy, corroborated by SIL community guidance)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landscape/environment plates with scientific-grade provenance; always check the item caption for exceptions. [Wave 10 Lane A]
+
+#### MovieTools.info ❓ unverified
+- **What:** Free looping video backgrounds, 3D motion loops and virtual-studio plates
+- **URL:** https://movietools.info/
+- **License:** ❓ UNVERIFIED — license terms page not readable 2026-10-07; read before wiring
+- **Free tier:** free downloads advertised
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cited as a free motion-loop source (chinakingkong/make-video-skill sourcing guide); license text still to verify. [Wave 10 Lane A]
+
+#### Downloops ✅ commercial-safe
+- **What:** Royalty-free seamless video loops / motion backgrounds by Michael Schneider (VJ loops, ambient backgrounds)
+- **URL:** https://www.downloops.com/
+- **License:** Royalty-free video loops (verified 2026-10-07 via third-party attribution: "downloops.com offers Michael Schneider's royalty-free video loops aka motion backgrounds" — technofizi.net)
+- **Free tier:** free loop collection
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Seamless-loop guarantee matters for animated BGs — verify the item-level license text on first pull. [Wave 10 Lane A]
+
+#### FootageCrate ⚠️ license-conditional
+- **What:** VFX stock elements (explosions, smoke, overlays, transitions) with a free tier; paid library beyond
+- **URL:** https://footagecrate.com/
+- **License:** Proprietary — free tier has daily limits and per-item license terms (verified 2026-10-07 via chinakingkong/make-video-skill sourcing guide: "check free limits and license")
+- **Free tier:** limited free downloads
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for VFX plates (fire/smoke/particles) but the free tier is throttled — read each item's license before compositing. [Wave 10 Lane A]
+
+#### Detonation Films ❓ unverified
+- **What:** Practical-effects stock footage (explosions, pyro, gunfire, atmosphere) — long-running free-clip library
+- **URL:** https://www.detonationfilms.com/
+- **License:** ❓ UNVERIFIED — terms page not readable 2026-10-07; community reports (BlenderNation 2007) say most clips are free
+- **Free tier:** free clips advertised
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Real-pyro plates would beat CG fire for the action beats — but do not ship anything from here until the license text is read. [Wave 10 Lane A]
+
+#### Free-video-footage.com ❓ unverified
+- **What:** Free video backgrounds and loops for commercial and personal use (per site tagline)
+- **URL:** https://www.free-video-footage.com/
+- **License:** ❓ UNVERIFIED — "free for commercial and personal use" is the site's claim (via technofizi.net sitelike listing); terms page not read 2026-10-07
+- **Free tier:** free downloads advertised
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Candidate BG-loop source; verify terms before first production pull. [Wave 10 Lane A]
+
+#### Internet Archive — Feature Films ✅ commercial-safe
+- **What:** Public-domain feature films on archive.org (sci-fi, horror, noir classics) — usable as plate/reference libraries
+- **URL:** https://archive.org/details/feature_films
+- **License:** Public Domain (collection-level; per-item PD markings) (verified 2026-10-07 via archive.org collection metadata)
+- **Free tier:** fully free, direct MP4 downloads
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Full PD films = unlimited reference plates and texture/atmosphere sampling; confirm the PD mark on the specific item before use. [Wave 10 Lane A]
+
+### Storyboarding / animatic tools
+
+#### TACTIC (Southpaw) ✅ commercial-safe
+- **What:** Open-source production tracking: shots, assets, review playlists with frame-accurate notes, schedules, workflow automation
+- **URL:** https://github.com/Southpaw-TACTIC/TACTIC
+- **License:** MIT (verified 2026-10-07 via repo LICENSE file content)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** MIT-licensed ftrack/ShotGrid alternative — storyboard and animatic review without the AGPL strings Kitsu carries. [Wave 10 Lane A]
+
+#### Blender — Grease Pencil storyboard workflow ✅ commercial-safe
+- **What:** Blender's Grease Pencil as a storyboard/animatic tool: draw panels in 3D space, timeline + VSE for timed animatics
+- **URL:** https://www.blender.org/
+- **License:** GPL-3.0 (standalone-tool use — drawing in Blender does not infect the pipeline; verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Already in the stack for 3D — reuse it for boarding and feed panels straight into tools/storyboard/animatic.py. [Wave 10 Lane A]
+
+#### ShotPro ⚠️ license-conditional
+- **What:** iOS previz/storyboard app: 3D sets, characters, cameras, shot lists, storyboard export
+- **URL:** https://www.shotproapp.com/
+- **License:** Proprietary — paid app (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid previz option; listed for landscape completeness — free alternatives (PanelForge, Storyboarder) cover the same lane. [Wave 10 Lane A]
+
+#### FrameForge 3D Studio ⚠️ license-conditional
+- **What:** Desktop previz/storyboarding with virtual cameras, actors, sets and shot-by-shot storyboards
+- **URL:** https://www.frameforge.com/
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid (demo available)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The classic indie previz tool; paid-only so it's a reference point, not a pipeline pick. [Wave 10 Lane A]
+
+#### CineTracer ⚠️ license-conditional
+- **What:** Unreal-Engine-based real-time previz: block scenes with real cameras, lenses and lighting
+- **URL:** https://cinetracer.com/
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** RT previz reference; the free lane is Blender + Grease Pencil instead. [Wave 10 Lane A]
+
+#### Previs Pro ⚠️ license-conditional
+- **What:** Camera previz + shot designer app (iOS): lenses, blocking, storyboards, shot lists
+- **URL:** https://www.previspro.com/
+- **License:** Proprietary — paid subscription (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Subscription previz; landscape entry only. [Wave 10 Lane A]
+
+#### Shot Designer (Hollywood Camera Work) ⚠️ license-conditional
+- **What:** Camera-diagramming / shot-blocking app: floor plans, camera setups, shot lists, animatic export
+- **URL:** https://www.hollywoodcamerawork.com/shot-designer.html
+- **License:** Proprietary — paid app (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best-in-class camera blocking diagrams; paid. Free story: draw diagrams in Krita/Blender and time them in animatic.py. [Wave 10 Lane A]
+
+#### RoughAnimator ⚠️ license-conditional
+- **What:** Hand-drawn frame-by-frame animation app (desktop + tablet) with onion skinning, timeline and animatic export
+- **URL:** https://www.roughanimator.com/
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rough-animation/animatic sketching; paid. Free lane: Krita animation timeline + animatic.py. [Wave 10 Lane A]
+
+#### Animation Desk ⚠️ license-conditional
+- **What:** Frame-by-frame animation sketching app (iOS/Android/Windows) with onion skin, layers and video export
+- **URL:** https://www.kdanmobile.com/en/animation-desk
+- **License:** Proprietary — free tier exists, paid unlocks full features (verified 2026-10-07; confirm current free-tier terms before use)
+- **Free tier:** free tier
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quick gestural animatics on tablet; verify what the current free tier watermarks/limits. [Wave 10 Lane A]
+
+#### Callipeg ⚠️ license-conditional
+- **What:** iPad 2D animation studio: timeline, onion skin, brush engine, 4K export
+- **URL:** https://www.callipeg.com/
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** iPad animation reference; paid-only. [Wave 10 Lane A]
+
+#### Procreate Dreams ⚠️ license-conditional
+- **What:** iPad animation app: performative timeline, flipbook, onion skin, 4K export
+- **URL:** https://procreate.com/dreams
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid iPad animation; landscape entry. [Wave 10 Lane A]
+
+#### ToonSquid ⚠️ license-conditional
+- **What:** iPad vector/raster 2D animation with rigging-lite features
+- **URL:** https://www.toonsquid.com/
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid iPad 2D animation; landscape entry. [Wave 10 Lane A]
+
+#### Celtx ⚠️ license-conditional
+- **What:** Scriptwriting + pre-production suite: script, shot lists, storyboards, schedules, call sheets
+- **URL:** https://www.celtx.com/
+- **License:** Proprietary — free tier exists alongside paid plans (verified 2026-10-07; confirm current free-tier limits)
+- **Free tier:** free tier
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Script-to-storyboard-to-shot-list in one place; the free tier covers small productions — verify limits before committing the pipeline to it. [Wave 10 Lane A]
+
+#### ftrack ⚠️ license-conditional
+- **What:** Studio production tracking + review: shot status, playlists, client review links, integrations
+- **URL:** https://www.ftrack.com/
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid (trial available)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The commercial reference for review pipelines; the free answer is TACTIC (MIT) above. [Wave 10 Lane A]
+
+#### Wipster ⚠️ license-conditional
+- **What:** Video review and approval: share cuts, frame-accurate comments, version stacks
+- **URL:** https://www.wipster.io/
+- **License:** Proprietary — paid (verified 2026-10-07)
+- **Free tier:** paid (trial available)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Animatic/cut review SaaS; paid. Free review path: SyncSketch (already cataloged) or frame.io-adjacent self-host. [Wave 10 Lane A]
+
+#### Frame.io (Adobe) ⚠️ license-conditional
+- **What:** Cloud video review/collaboration: timecoded comments, versioning, Premiere/Resolve integrations
+- **URL:** https://www.frame.io/
+- **License:** Proprietary — paid plans, limited free tier (verified 2026-10-07)
+- **Free tier:** limited free tier
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Industry-standard review; the limited free tier is fine for animatic rounds — confirm current caps. [Wave 10 Lane A]
+
+### Anime VRM/MMD pipeline
+
+#### nanoem ✅ commercial-safe
+- **What:** Open MMD (MikuMikuDance) player/editor: PMD/PMX models, VMD motion, MME-style effects, model editing
+- **URL:** https://github.com/hkrn/nanoem
+- **License:** MIT (nanoem core, LICENSE.MIT) + MPL-2.0 (emapp/win32/macos/glfw/sapp shells) — verified 2026-10-07 via repo README license section
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The open MMD workstation — import MMD motions for anime reference, retarget to VRM/Blender rigs. MPL-2.0 is file-level copyleft: fine to use/host, check before embedding code. [Wave 10 Lane A]
+
+#### Saba (benikabocha) ✅ commercial-safe
+- **What:** Open-source MMD viewer/renderer: PMX/PMD + VMD playback with bullet physics, C++/OpenGL
+- **URL:** https://github.com/benikabocha/saba
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lightweight MMD playback for reference and previz; pairs with nanoem for the open MMD stack. [Wave 10 Lane A]
+
+#### VRM4U ✅ commercial-safe
+- **What:** VRM loader/importer plugin for Unreal Engine 4 (VRM0/VRM1)
+- **URL:** https://github.com/ruyo/VRM4U
+- **License:** MIT (verified 2026-10-07 via repo LICENSE file text)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The UE path for VRM characters; combine with VMC4UE for live mocap-driven anime characters in-engine. [Wave 10 Lane A]
+
+#### VRM Add-on for Blender ✅ commercial-safe
+- **What:** Full VRM 0.x/1.0 import/export for Blender: humanoid rig mapping, spring bones, MToon materials, license metadata
+- **URL:** https://github.com/saturday06/VRM-Addon-for-Blender
+- **License:** MIT OR GPL-3.0-or-later (dual — CHOOSE MIT for commercial safety; verified 2026-10-07 via LICENSE_MAIN.txt in the release zip; GitHub API spdx_id MIT)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** wired (Wave 10 Lane A)
+- **Notes:** **WIRED:** tools/vrm/blender_vrm_smoke/ — headless Blender 4.0.2 smoke test: addon enabled, three-vrm sample VRM imported (167-bone armature, 5 meshes), thumbnail rendered and visually verified. This is the VRM↔Blender bridge for the anime pipeline. [Wave 10 Lane A]
+
+#### EVMC4U (EasyVirtualMotionCaptureForUnity) ✅ commercial-safe
+- **What:** Unity package receiving VMC-protocol mocap (bones, blendshapes, camera) to drive VRM avatars in real time
+- **URL:** https://github.com/gpsnmeajp/EasyVirtualMotionCaptureForUnity
+- **License:** MIT (verified 2026-10-07 via multiple downstream attributions; repo renamed from EVMC4U)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference VMC receiver — the protocol's own author's implementation; pair with VSeeFace or VirtualMotionCapture as the sender. [Wave 10 Lane A]
+
+#### VMC4UE ✅ commercial-safe
+- **What:** Unreal Engine plugin receiving VMC-protocol motion data (companion to VRM4U)
+- **URL:** https://github.com/HAL9HARUKU/VMC4UE
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** UE-side VMC receiver; the mocap-driven anime character path for Unreal. [Wave 10 Lane A]
+
+#### VRMPlaybackClient ✅ commercial-safe
+- **What:** Windows app: capture VRM motion over VMC protocol and play it back into any VMC player (VSeeFace etc.)
+- **URL:** https://github.com/kevinjycui/VRMPlaybackClient
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Record-once, replay-anywhere VMC motion — useful for capturing performance takes for the anime cast. [Wave 10 Lane A]
+
+#### TalkingHead (met4citizen) ✅ commercial-safe
+- **What:** JavaScript class for real-time lip-sync on Ready Player Me full-body GLB avatars in the browser (visemes + Mixamo FBX support)
+- **URL:** https://github.com/met4citizen/TalkingHead
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Browser-native talking-avatar + lip-sync — strong fit for web animatics and interactive character previews. (Example assets carry their own licenses — RPM avatars are CC BY-NC; swap in clean models.) [Wave 10 Lane A]
+
+#### vrm-viewer (tk256ailab) ✅ commercial-safe
+- **What:** Web-based VRM viewer with VRMA (VRM Animation) support: drag-drop .vrm/.vrma, playback controls, pose tab with bone sliders
+- **URL:** https://github.com/tk256ailab/vrm-viewer
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Zero-install VRM/VRMA inspection and posing in the browser — quick model QA before Blender import. [Wave 10 Lane A]
+
+#### three.js MMDLoader ✅ commercial-safe
+- **What:** three.js example loaders for MMD: MMDLoader (PMD/PMX) + MMDAnimationHelper (VMD motion, physics, audio sync)
+- **URL:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm/loaders
+- **License:** MIT (three.js is MIT — verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Play MMD models/motions directly in the web pipeline (viewers, animatic previews) — no conversion step. [Wave 10 Lane A]
+
+#### Mixamo (Adobe) ✅ commercial-safe
+- **What:** Free auto-rigger + 2,000+ mocap animation library for humanoid characters (FBX export)
+- **URL:** https://www.mixamo.com/
+- **License:** Proprietary royalty-free — free with Adobe ID; characters/animations usable royalty-free in personal, commercial and non-profit projects incl. films and games; raw files may not be redistributed standalone (verified 2026-10-07 via https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html)
+- **Free tier:** free with Adobe ID (no CC subscription)
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The fastest anime-character motion source: rig any humanoid in ~1 min, retarget 2k+ clips. Keep originals out of public git; ship baked results. [Wave 10 Lane A]
+
+#### VSeeFace ✅ commercial-safe
+- **What:** Free face + hand tracking VRM/VSFAvatar puppeteering app for VTuber-style performance capture
+- **URL:** https://www.vseeface.icu/
+- **License:** Proprietary freeware — free for commercial AND non-commercial use; do not modify or claim as your own (verified 2026-10-07 via vseeface.icu terms)
+- **Free tier:** fully free, no paid tier
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Webcam/iPhone performance capture for anime characters; speaks VMC protocol to Unity/UE receivers. [Wave 10 Lane A]
+
+#### MakeHuman — community CC0 assets ✅ commercial-safe
+- **What:** Parametric human-body generator; the community asset library (models, clothes, targets) is CC0
+- **URL:** http://www.makehumancommunity.org/
+- **License:** CC0 1.0 (assets — verified 2026-10-07 via LICENSE.ASSETS.md in makehumancommunity/makehuman); the APP itself is AGPL-3.0 (quarantined, see row 117)
+- **Free tier:** fully free
+- **Repo lane:** god-molecule (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use the CC0 *assets* freely; run the AGPL *app* only as a standalone tool, never wire its code. [Wave 10 Lane A]
+
+#### Poly Pizza ✅ commercial-safe
+- **What:** 10,000+ free low-poly 3D models with direct GLB download + API (props, characters, environments)
+- **URL:** https://poly.pizza/
+- **License:** Per-model CC0 or CC-BY (verified 2026-10-07 via multiple third-party license guides + site filter)
+- **Free tier:** free; API needs free account key
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fast prop/environment sourcing for anime scenes — check the per-model license badge (CC0 vs CC-BY) before shipping. [Wave 10 Lane A]
+
+#### MikuMikuEffect (MME) ✅ commercial-safe
+- **What:** Shader/effect plugin framework for MikuMikuDance (post-effects, lighting, materials)
+- **URL:** https://learnmmd.com/downloads/ (MME v037 EN)
+- **License:** Proprietary freeware (verified 2026-10-07 via LearnMMD distribution; no license text published — read the bundled readme)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The MMD look lives in MME effects — essential for faithful MMD-style anime renders. [Wave 10 Lane A]
+
+#### VRM Posing Desktop ⚠️ license-conditional
+- **What:** Steam app for posing VRM 1.0 models (turntable posing, screenshot/export workflows)
+- **URL:** https://store.steampowered.com/app/1895630/VRM_Posing_Desktop/
+- **License:** Proprietary — paid Steam app by ELVNEKO (verified 2026-10-07)
+- **Free tier:** paid
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid posing reference; the free path is vrm-viewer (MIT) + Blender. [Wave 10 Lane A]
+
+#### Cats Blender Plugin ⚠️ license-conditional
+- **What:** Blender addon: import/optimize MMD, XNALara, Mixamo, DAZ, Rigify models (decimation, visemes, bone fixes) for VRChat/VRM workflows
+- **URL:** https://github.com/absolute-quantum/cats-blender-plugin
+- **License:** CONFLICT — original repo MIT (per ecosyste.ms) vs maintained continuation teamneoneko/Cats-Blender-Plugin GPL-3.0 (archived). Verified 2026-10-07; NO quarantine row until the conflict resolves (Subtitle Edit precedent)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Read the LICENSE file of the exact fork/version before any code integration; standalone tool use is unaffected by the dispute. [Wave 10 Lane A]
+
+#### PMX Editor ⚠️ license-conditional
+- **What:** The standard MMD model editor: edit PMX/PMD models (bones, morphs, materials, physics), create models from scratch
+- **URL:** https://learnmmd.com/downloads/ (PMXE 0254f EN via LearnMMD)
+- **License:** Proprietary freeware with a usage clause you must agree to (verified 2026-10-07 via utaforum/learnmmd documentation of the clause)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read the usage clause before use; the indispensable tool for fixing MMD models before Blender/VRM conversion. [Wave 10 Lane A]
+
+#### MB-Lab 🚫 not commercial-safe (QUARANTINED)
+- **What:** Parametric human-model generator addon for Blender (successor of ManuelbastioniLAB)
+- **URL:** https://github.com/animate1978/MB-Lab
+- **License:** GPL-3.0 (verified 2026-10-07 via repo license.txt) — QUARANTINE row 116
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL)**
+- **Notes:** 🚫 GPL-3.0 code — research lane only, never wired into shipping paths. See docs/LICENSE_QUARANTINE.md row 116. [Wave 10 Lane A]
+
+#### MakeHuman app 🚫 not commercial-safe (QUARANTINED)
+- **What:** Parametric 3D humanoid modeler application
+- **URL:** https://github.com/makehumancommunity/makehuman
+- **License:** AGPL-3.0 (code — verified 2026-10-07 via LICENSE.CODE.md) — QUARANTINE row 117
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (AGPL)**
+- **Notes:** 🚫 AGPL-3.0 code — research lane only. Its CC0 *assets* are separately cataloged as commercial-safe. See docs/LICENSE_QUARANTINE.md row 117. [Wave 10 Lane A]
+
+#### VRoid Hub ❓ unverified
+- **What:** pixiv's sharing platform for VRoid/VRM avatar models
+- **URL:** https://hub.vroid.com/
+- **License:** ❓ UNVERIFIED — per-model licenses set by each uploader; no blanket commercial grant
+- **Free tier:** free to browse; model terms vary
+- **Repo lane:** god-molecule (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the license badge on EACH model page before downloading — never assume. [Wave 10 Lane A]
+
+#### BOOTH 3D models ❓ unverified
+- **What:** pixiv's marketplace for 3D models (VRM, MMD models, motions, textures)
+- **URL:** https://booth.pm/
+- **License:** ❓ UNVERIFIED — per-item terms set by each seller; free and paid items mixed
+- **Free tier:** per-item
+- **Repo lane:** god-molecule (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read each item's terms of use (many prohibit redistribution/commercial use); the go-to source for MMD motions and VRM outfits. [Wave 10 Lane A]
+
+#### glTF Sample Models ⚠️ license-conditional
+- **What:** KhronosGroup's official glTF sample model repository (test/reference models incl. characters)
+- **URL:** https://github.com/KhronosGroup/glTF-Sample-Models
+- **License:** Per-model — each model's README states its license; Khronos recommends CC-BY 4.0 or CC0 (verified 2026-10-07 via repo README)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read the per-model README before use — the repo itself grants no blanket license. [Wave 10 Lane A]
+
+#### Ready Player Me ⚠️ license-conditional
+- **What:** Avatar creation platform + developer SDK (half/full-body game-ready avatars)
+- **URL:** https://readyplayer.me/
+- **License:** Proprietary — example avatars CC BY-NC 4.0 (non-commercial); commercial apps/games require RPM developer signup (verified 2026-10-07 via met4citizen/TalkingHead license notes)
+- **Free tier:** free avatar creation; commercial use gated
+- **Repo lane:** god-molecule (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fine for non-commercial prototyping; sign the developer agreement before any commercial avatar ships. [Wave 10 Lane A]
+
+#### VirtualMotionCapture ✅ commercial-safe
+- **What:** VR mocap app: drive VRM avatars from VR hardware, stream via VMC protocol
+- **URL:** https://github.com/sh-akira/VirtualMotionCapture
+- **License:** MIT (verified 2026-10-07 via GitHub API license field, double-checked)
+- **Free tier:** fully open (repo); Steam build is paid
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The original VMC sender; repo code is MIT — use the repo build, not the paid Steam build, for the free pipeline. [Wave 10 Lane A]
+
+#### MikuMikuMoving (MMM) ✅ commercial-safe
+- **What:** MMD-compatible 3D animation suite by MoggProject (successor/alternative to MikuMikuDance): subtitles, MP3 audio, own effect system
+- **URL:** https://learnmmd.com/downloads/ (MikuMikuMoving_v1292 via LearnMMD; README notes redistribution allowed)
+- **License:** Proprietary freeware (verified 2026-10-07 via LearnMMD distribution notes)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reads the same PMD/PMX/VMD files as MMD with extra features (in-frame subtitles, MP3) — a second free MMD-compatible renderer. [Wave 10 Lane A]
+
+#### 3tene ⚠️ license-conditional
+- **What:** VTuber avatar studio: face/hand tracking, VRM support, live streaming overlays
+- **URL:** https://3tene.com/
+- **License:** Proprietary — free version exists; PRO is paid (verified 2026-10-07)
+- **Free tier:** free version
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Confirm what the free version watermarks/limits before production use; VSeeFace is the fully-free alternative. [Wave 10 Lane A]
+
+#### Source Filmmaker ✅ commercial-safe
+- **What:** Valve's free 3D animation/machinima suite (Source engine): posing, animating, lighting, rendering
+- **URL:** https://store.steampowered.com/app/1840/Source_Filmmaker/
+- **License:** Proprietary — free via Steam (verified 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MMD-adjacent machinima pipeline; free but Source-engine-locked — useful for action reference, not the anime style. [Wave 10 Lane A]
+
+#### MocapForAll ⚠️ license-conditional
+- **What:** Webcam-based mocap app exporting to VMC marionette targets (VSeeFace, EVMC4U, VMC4UE, VMC4B, VMC)
+- **URL:** https://akiya-research-institute.github.io/mocapforall-manual/
+- **License:** Proprietary — paid app (verified 2026-10-07 via akiya-research-institute docs)
+- **Free tier:** paid
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Paid webcam mocap with broad VMC compatibility; free path is VSeeFace + iPhone apps. [Wave 10 Lane A]
+
+#### Sketchfab — downloadable CC0/CC-BY filter ⚠️ license-conditional
+- **What:** The largest 3D model library; filter Downloadable + CC0/CC-BY for safe models
+- **URL:** https://sketchfab.com/search?q=&type=models&downloadable=true
+- **License:** Per-model (verified 2026-10-07) — ONLY use models explicitly marked CC0 or CC-BY; everything else is off-limits
+- **Free tier:** free account for downloads
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Set the license filter BEFORE browsing; record the item URL + exact license per asset (see wrg32786/aigent-design-system asset protocol). [Wave 10 Lane A]
+
+#### UniGLTF ✅ commercial-safe
+- **What:** glTF 2.0 import/export library for Unity (the foundation under UniVRM)
+- **URL:** https://github.com/ousttrue/UniGLTF
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Underpins the Unity VRM toolchain; useful standalone for glTF pipeline work in Unity. [Wave 10 Lane A]
+
+#### godot-vrm ✅ commercial-safe
+- **What:** VRM 0.x/1.0 importer addon for Godot Engine
+- **URL:** https://github.com/V-Sekai/godot-vrm
+- **License:** MIT (code — verified 2026-10-07 via repo LICENSE file); sample .vrm models carry their own license (see vrm_samples/LICENSE_SAMPLES.txt)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The Godot path for VRM characters — pairs with the Godot XR VMC Tracker for mocap. [Wave 10 Lane A]
+
+#### VMC Protocol (Virtual Motion Capture Protocol) ✅ commercial-safe
+- **What:** The open OSC-based protocol for streaming mocap (bones, blendshapes, camera, lights) between VTuber apps
+- **URL:** https://protocol.vmc.info/
+- **License:** MIT (verified 2026-10-07 — the official spec page states "プロトコルはMITライセンスです" / the protocol is MIT licensed)
+- **Free tier:** fully open spec
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The glue of the whole VRM mocap stack (EVMC4U, VMC4UE, VMC4B, VSeeFace, VirtualMotionCapture all speak it) — implement or adopt freely. [Wave 10 Lane A]
+
+#### VMC4B — Blender VMC receiver ❓ unverified
+- **What:** Blender addon receiving VMC-protocol motion to drive armatures in Blender (by tonimono, via BOOTH)
+- **URL:** https://tonimono.booth.pm/
+- **License:** ❓ UNVERIFIED — BOOTH per-item terms; not read 2026-10-07
+- **Free tier:** per-item
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Would close the mocap→Blender loop for the anime pipeline — read the BOOTH item terms before wiring. [Wave 10 Lane A]
+
+#### Warudo ⚠️ license-conditional
+- **What:** Modular VTuber/live-animation studio (Steam): VRM avatars, tracking, OBS integration, plugins
+- **URL:** https://store.steampowered.com/app/2284420/Warudo/
+- **License:** Proprietary — free for personal use; commercial terms not itemized on the public page (verified 2026-10-07 via tech-insider.org 2026 comparison)
+- **Free tier:** free base app
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Powerful staging tool for anime performance capture; confirm commercial terms with the vendor before client work. [Wave 10 Lane A]
+
+#### VTube Studio ⚠️ license-conditional
+- **What:** Live2D/VRM VTuber tracking app (Steam/iOS/Android) with Spout/OBS output
+- **URL:** https://store.steampowered.com/app/1325860/VTube_Studio/
+- **License:** Proprietary — Steam base free with watermark on tracking preview; $14.99 one-time DLC removes it (verified 2026-10-07 via tech-insider.org 2026 comparison)
+- **Free tier:** free with watermark
+- **Repo lane:** trippedd (anime tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Live2D-focused; the watermark makes the free tier previz-only. VRM path exists but VSeeFace is the free 3D pick. [Wave 10 Lane A]
+
+### Per-uploader CC0 music/SFX packs
+
+#### qubodup — Freesound CC0 packs ✅ commercial-safe
+- **What:** Prolific Freesound uploader (military sounds pack, machine sounds, foley) — sounds individually marked CC0
+- **URL:** https://freesound.org/people/qubodup/packs/46368/ (packs index: https://freesound.org/people/qubodup/packs/)
+- **License:** CC0 (verified 2026-10-07 — sound pages state "Creative Commons 0"; e.g. AK-47, Door Squeaks, Car Honk pages)
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the license badge on each sound (profile mixes CC0 and CC-BY) — filter for CC0 only. [Wave 10 Lane A]
+
+#### bart — "CC0 Audio - Uploader: bart" (OGA collection) ✅ commercial-safe
+- **What:** OpenGameArt curator collection of bart's CC0 audio: heartbeat sounds, ice spells, foley
+- **URL:** https://opengameart.org/content/heartbeat-sounds ; https://opengameart.org/content/ice-spells
+- **License:** CC0 (verified 2026-10-07 via OGA submission License(s) fields + downstream CREDITS attributions)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** bart is one of OGA's most prolific CC0 contributors — mine the whole collection, not just these two. [Wave 10 Lane A]
+
+#### artisticdude — RPG Sound Pack (OGA) ✅ commercial-safe
+- **What:** Classic RPG SFX pack (UI, combat, magic, footsteps) for game/film use
+- **URL:** https://opengameart.org/content/rpg-sound-pack
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "artisticdude: RPG Sound Pack — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bread-and-butter game SFX, zero license friction. [Wave 10 Lane A]
+
+#### AntumDeluge — Fire Crackling (OGA) ✅ commercial-safe
+- **What:** Fire crackling loop SFX
+- **URL:** https://opengameart.org/content/fire-crackling
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "AntumDeluge: Fire Crackling — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean fire loop for campfire/torch scenes. [Wave 10 Lane A]
+
+#### HaelDB — Rat Sewer (OGA) ✅ commercial-safe
+- **What:** Ominous sewer ambience with water droplets (dark fantasy loop)
+- **URL:** https://opengameart.org/content/rat-sewer
+- **License:** CC0 (dual-listed OGA-BY 3.0/CC0 — usable under CC0; verified 2026-10-07 via OGA page + downstream CREDITS)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dual-licensed — take the CC0 grant, no attribution needed. [Wave 10 Lane A]
+
+#### josepharaoh99 — CC0 Cinematic Music (OGA collection) ✅ commercial-safe
+- **What:** Curated OGA collection: 44 CC0 cinematic/orchestral tracks
+- **URL:** https://opengameart.org/collections (search "CC0 - Cinematic Music" by josepharaoh99)
+- **License:** CC0 (verified 2026-10-07 via OGA collection listing)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of four CC0 music collections by the same curator — the fastest route to scored scenes. [Wave 10 Lane A]
+
+#### josepharaoh99 — CC0 Upbeat/Electronic Music (OGA collection) ✅ commercial-safe
+- **What:** Curated OGA collection: 60 CC0 upbeat/electronic tracks
+- **URL:** https://opengameart.org/collections (search "CC0 - Upbeat / Electronic Music" by josepharaoh99)
+- **License:** CC0 (verified 2026-10-07 via OGA collection listing)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Comedy/action scoring without licensing overhead. [Wave 10 Lane A]
+
+#### josepharaoh99 — CC0 Calm/Relaxing Music (OGA collection) ✅ commercial-safe
+- **What:** Curated OGA collection: 115 CC0 calm/relaxing tracks
+- **URL:** https://opengameart.org/collections (search "CC0 - Calm / Relaxing Music" by josepharaoh99)
+- **License:** CC0 (verified 2026-10-07 via OGA collection listing)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dialogue-bed and ambient scoring pool. [Wave 10 Lane A]
+
+#### josepharaoh99 — CC0 Retro Music (OGA collection) ✅ commercial-safe
+- **What:** Curated OGA collection: 124 CC0 retro/chiptune tracks
+- **URL:** https://opengameart.org/collections (search "CC0 - Retro Music" by josepharaoh99)
+- **License:** CC0 (verified 2026-10-07 via OGA collection listing)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro-game scoring for flashback/gag sequences. [Wave 10 Lane A]
+
+#### RandomMind — Medieval Music Collection (OGA) ✅ commercial-safe
+- **What:** Medieval/fantasy music collection for games and film
+- **URL:** https://opengameart.org/users/randommind
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "RandomMind: Medieval music collection on OpenGameArt — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tavern/castle scoring for the fantasy beats. [Wave 10 Lane A]
+
+#### Écrivain — Icy Heights (OGA) ✅ commercial-safe
+- **What:** Wind loop ambience (icy heights)
+- **URL:** https://opengameart.org/content/icy-heights
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "Écrivain — Icy Heights (wind.ogg) — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean wind loop for exterior/height scenes. [Wave 10 Lane A]
+
+#### Joth — Black Diamond (OGA) ✅ commercial-safe
+- **What:** 143 BPM looping background music track
+- **URL:** https://opengameart.org/content/black-diamond
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "Joth — Black Diamond — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Seamless-looping BGM — drop straight under dialogue scenes. [Wave 10 Lane A]
+
+#### TinyWorlds — Happy Adventure Loop (OGA) ✅ commercial-safe
+- **What:** Cheerful looping adventure tune (autotracker + Audacity)
+- **URL:** https://opengameart.org/content/happy-adventure-loop
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "TinyWorlds — Happy tune — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Upbeat loop for montages and comedy beats. [Wave 10 Lane A]
+
+#### celestialghost8 — Summer Sunday (OGA) ✅ commercial-safe
+- **What:** Famitracker/VRC6 chiptune composition
+- **URL:** https://opengameart.org/content/summer-sunday
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "celestialghost8 — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chiptune scoring with real Famitracker texture. [Wave 10 Lane A]
+
+#### yd — space music tracks (OGA) ✅ commercial-safe
+- **What:** Atmospheric space background tracks (My Very Own Dead Ship, Observing The Star, Out There) incl. LMMS project files
+- **URL:** https://opengameart.org/content/background-space-track
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS quoting the OGA submission's License(s): CC0 field, corroborated by 2 independent repos)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** LMMS project zips included — remixable stems, not just renders. [Wave 10 Lane A]
+
+#### JaggedStone — Loopable Dungeon Ambience (OGA) ✅ commercial-safe
+- **What:** Loopable dungeon ambience loop
+- **URL:** https://opengameart.org/content/loopable-dungeon-ambience
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "dungeon_ambient_1.ogg — JaggedStone — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dungeon/cave atmosphere bed. [Wave 10 Lane A]
+
+#### Zane Little Music — Flowerbed Fields Loop (OGA) ✅ commercial-safe
+- **What:** Cute looping adventure-game BGM
+- **URL:** https://opengameart.org/content/flowerbed-fields-loop
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "Zane Little Music — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Light adventure scoring. [Wave 10 Lane A]
+
+#### Pro Sensory (Alex McCulloch) — Talking Cute Chiptune (OGA) ✅ commercial-safe
+- **What:** Cute chiptune loop
+- **URL:** https://opengameart.org/content/talking-cute-chiptune
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "Pro Sensory (Alex McCulloch) — CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Author asks for a name credit though CC0 doesn't require it — cheap goodwill, keep it. [Wave 10 Lane A]
+
+#### skrjablin — Slow Melancholic Theme C64 Style (OGA) ✅ commercial-safe
+- **What:** Commodore SID-chip chiptune (Goat Tracker), loopable
+- **URL:** https://opengameart.org/content/slow-melancholic-theme-c64-style
+- **License:** CC0 (dual CC-BY 3.0/CC0 — usable under CC0; verified 2026-10-07 via downstream CREDITS)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dual-licensed — take the CC0 grant. [Wave 10 Lane A]
+
+#### Juhani Junkala (SubspaceAudio) — 5 Chiptunes (Action) (OGA) ✅ commercial-safe
+- **What:** Five seamlessly-looping chiptune tracks (title, levels, ending) — complete mini-soundtrack
+- **URL:** https://opengameart.org/content/5-chiptunes-action
+- **License:** CC0 (verified 2026-10-07 via OGA submission License(s): CC0 + bundled INFO.txt restating CC0, per tmhsdigital provenance notes)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Note: only these 5 are CC0 — his larger 400-track itch.io pack is paid with separate terms. [Wave 10 Lane A]
+
+#### Juhani Junkala (SubspaceAudio) — 512 Sound Effects 8-bit (OGA) ✅ commercial-safe
+- **What:** 512 retro 8-bit SFX (the essential retro game SFX collection)
+- **URL:** https://opengameart.org/content/512-sound-effects-8-bit-style
+- **License:** CC0 (verified 2026-10-07 via OGA submission License(s): CC0, per bevytris CREDITS)
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The definitive free 8-bit SFX set — UI bleeps, jumps, coins, explosions. [Wave 10 Lane A]
+
+#### InspectorJ — Freesound SFX packs ✅ commercial-safe
+- **What:** High-quality recorded SFX packs (Party Pack, dripping, smashing, ambiences) — Zoom H6/Rode NTG2 recordings
+- **URL:** https://freesound.org/people/InspectorJ/packs/
+- **License:** CC-BY-style — "not in the public domain, please attribute/credit" (verified 2026-10-07 via sound pages, e.g. freesound.org/people/InspectorJ/sounds/484266/)
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commercial-safe WITH attribution ("[sound]" by InspectorJ (www.jshaw.co.uk) of Freesound.org) — bake into credits. [Wave 10 Lane A]
+
+#### Soniss — GDC Audio Bundles (annual) ✅ commercial-safe
+- **What:** Annual 10–30GB+ professional SFX bundles (2015–2024, 150GB+ total): weapons, vehicles, ambiences, foley
+- **URL:** https://sonniss.com/ and https://gdc.sonniss.com/
+- **License:** Proprietary royalty-free — free for commercial use, no attribution, unlimited projects (verified 2026-10-07 via GameFromScratch + Medium 2024 coverage of the license)
+- **Free tier:** fully free (direct/torrent/Drive)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The single biggest free pro-SFX haul on the internet. 2024 license tweak: not for AI-model training. [Wave 10 Lane A]
+
+#### ZapSplat ✅ commercial-safe
+- **What:** 160,000+ free SFX + 750 themed packs + 1,000 royalty-free music tracks (MP3 free tier)
+- **URL:** https://www.zapsplat.com/
+- **License:** Proprietary Standard License — free with basic account, commercial use OK, ATTRIBUTION required (verified 2026-10-07 via zapsplat.com license terms)
+- **Free tier:** free basic account (MP3; WAV is premium)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution required on the free tier ("Sound effects obtained from https://www.zapsplat.com") — plan credits accordingly. [Wave 10 Lane A]
+
+#### NoCopyrightSounds (NCS) ✅ commercial-safe
+- **What:** 1,500+ track electronic music label; free downloads for creators
+- **URL:** https://ncs.io/ (usage policy: https://ncs.io/usage-policy)
+- **License:** Proprietary usage policy — free for independent creators/UGC (incl. monetized) WITH artist+track credit; brands need a partnership deal (verified 2026-10-07 via ncs.io usage policy)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Credit block goes in the video description; not for music-as-primary-focus videos. [Wave 10 Lane A]
+
+#### Looperman ✅ commercial-safe
+- **What:** Community loop/sample library (drums, melodies, vocals) — royalty-free loops for commercial and non-commercial use
+- **URL:** https://www.looperman.com/
+- **License:** Royalty-free loops per uploader terms (verified 2026-10-07 via looperman.com loop pages: "free for your commercial and non-commercial use on a royalty free basis")
+- **Free tier:** free (login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the per-loop license (acapellas need written permission; loops are royalty-free). Can't resell loops as loops. [Wave 10 Lane A]
+
+#### ERH (Freesound) 🚫 not commercial-safe
+- **What:** Long-time Freesound uploader (synth/atmospheric sounds) — HONEST NEGATIVE for commercial use
+- **URL:** https://freesound.org/people/ERH/
+- **License:** Custom non-commercial — "free to use for non-commercial purposes as long as credit to ERH at freesound is given; for commercial use contact me" (verified 2026-10-07 via profile page)
+- **Free tier:** free for non-commercial
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** 🚫 NON-COMMERCIAL per uploader terms — research/reference lane only, never in shipped episodes. [Wave 10 Lane A]
+
+#### Spring Spring — CC0 music (OGA) ✅ commercial-safe
+- **What:** OGA uploader with CC0 music tracks (dungeon/atmosphere scoring)
+- **URL:** https://opengameart.org/ (search uploader "Spring Spring")
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "Dungeon music | RandomMind, JaggedStone, yd, Paul Wortmann, HaelDB, TinyWorlds, Spring Spring… — CC0 1.0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atmosphere scoring; verify the CC0 badge on the specific submission before use. [Wave 10 Lane A]
+
+#### LookIMadeAThing — Sci-fi Ambient Drone (Freesound) ✅ commercial-safe
+- **What:** Sci-fi ambient drone SFX
+- **URL:** https://freesound.org/people/LookIMadeAThing/sounds/534018/
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "Sci-fi Ambient Drone | LookIMadeAThing | CC0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify the CC0 badge on the sound page before downloading (Freesound serves the full WAV behind login). [Wave 10 Lane A]
+
+#### pryanic — dark sci-fi ambient drone (Freesound) ✅ commercial-safe
+- **What:** Dark sci-fi ambient heavy bass drone (3+ min)
+- **URL:** https://freesound.org/people/pryanic/sounds/777335/
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "DSGNDron_Dark sci-fi ambient heavy bass drone 006 by pryanic — CC0")
+- **Free tier:** free with Freesound account
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Long-form tension drone; verify the CC0 badge on the page. [Wave 10 Lane A]
+
+#### FGResources — CC0 Background Ambience (OGA) ✅ commercial-safe
+- **What:** CC0 background ambience loop
+- **URL:** https://opengameart.org/content/cc0-background-ambience
+- **License:** CC0 (verified 2026-10-07 via downstream CREDITS: "Forest_Ambience_0.mp3 | FGResources | CC0")
+- **Free tier:** free (OGA login for downloads)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Forest ambience bed. [Wave 10 Lane A]
+
+#### Wikimedia Commons — audio ❓ unverified
+- **What:** Aggregator of freely-licensed audio (field recordings, music, spoken word) — per-file licenses
+- **URL:** https://commons.wikimedia.org/
+- **License:** ❓ UNVERIFIED — per-file (CC0/CC-BY/CC-BY-SA common); MUST check each file's license page
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Never bulk-assume — the file page's license badge is the authority for every download. [Wave 10 Lane A]
+
+## Entry count — Wave 10 Lane A
+
+99 new `####` entries appended (15 BG plates · 16 storyboarding/animatic · 36 anime VRM/MMD · 32 per-uploader CC0 packs) → **1101 total** honest entries. Quarantine rows 118–119 added (MB-Lab GPL-3.0, MakeHuman app AGPL-3.0). Wired: tools/vrm/blender_vrm_smoke/ (VRM-Addon-for-Blender headless smoke test, proof-verified), tools/bg-plates/pull_plate.py (Prelinger plate pull, proof-verified), tools/storyboard/animatic.py (CSV→animatic assembler, proof-verified).

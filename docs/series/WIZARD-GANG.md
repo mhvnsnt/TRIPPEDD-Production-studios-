@@ -131,7 +131,8 @@ The Narrator is **Ashes (Buffalo Bill) in the PURPLE robe, ONLY when outside the
 - He exists **OUTSIDE the fiction**. He talks to the PLAYER, never to the characters.
 - He breaks the 4th wall **ONLY at story-progression moments** — never constant commentary.
 - Voice: **AI-performed Bill $aber voice** (owner confirmed 2026-10-06 — NOT owner-recorded). XTTS v2 clone in progress. Until the clone lands, the Narrator appears in direct-address visual beats **without spoken lines** — never placeholder voice, never synthetic filler.
-- In SHORT 01, the Narrator's cameo is the sanctioned story-progression beat: the council's public reveal to the viewer. That reveal IS the story-progression moment.
+- **Comedic nod (owner 2026-10-07):** purple-robe Ashes being the Narrator is another wink like the 5-of-9 overlap — the same robe, never explicitly stated to players. The audience is never told.
+- **Pilot hold (owner 2026-10-07):** the owner has not shown Ashes' purple version yet, so **the Narrator does NOT appear in the pilot**. SHORT_01 ends on the 9th-seat reveal → title cards. The Narrator's direct-address debut is held for a later episode.
 
 ## Sound and music direction
 

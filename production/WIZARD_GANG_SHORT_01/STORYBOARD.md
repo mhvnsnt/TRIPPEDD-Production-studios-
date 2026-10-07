@@ -86,15 +86,21 @@ Legend for each shot: `CAM` camera · `LIGHT` lighting · `ACT` action (characte
 - **MOCAP:** Seated-to-standing reveal; real mocap, retargeted.
 - **ASSET:** `swmg-kiko-white.webp` (canon-compliant; white furry hooded robe, black face, eye glints, gold "KIKO" pendant, dragon tights — matches the owner-approved robed card art).
 
-## SHOT 9 — "THE NARRATOR" (0:42–0:50, ~8s)
+## SHOT 9 — "TITLE CARDS" (0:42–0:50, ~8s)
 
-- **CAM:** Slow push-in to close-up on the face. He looks **straight at the viewer** — at the player, not at any character.
-- **LIGHT:** Spotlight narrows to the face. The void-black hood interior; two sparkly white eye glints; the diamond-grill smile catches one glint of light.
-- **ACT:** The Narrator — Ashes in the purple robe, outside the fiction. His sanctioned 4th-wall beat: the council's public reveal is a story-progression moment. No spoken line yet — the Bill $aber AI voice clone is still in progress; when it lands, he speaks in it. His eyes do the work for now.
-- **CARD:** "WIZARD GANG" (hard cut, white on black, hold 1.5s) → "TRIPPEDD" network ident card (hold 1.5s). Canon-locked text only.
-- **AUD:** Music cuts on the direct address. Silence except his chains. Then the network ident sting.
-- **MOCAP:** Direct-address head turn + hold. Real mocap; never procedural.
-- **ASSET:** **No existing render matches the owner design** (purple robe, void-black face, eye glints, diamond-grill smile, blonde braids, gold chains). **GATE: new render required**, owner-approved brief: purple robe with gold trim, full arm reach, void-white version + night version. The existing `swmg-purple.webp` maps to Theory's robe (long black hair under hood), not the Narrator — never use it for this shot.
+- **CAM:** Hard cut to black from Shot 8.
+- **LIGHT:** n/a.
+- **ACT:** "WIZARD GANG" (hard cut, white on black, hold 2s) → "TRIPPEDD" network ident card (hold 2s) → hold on black, chains fade. Canon-locked text only.
+- **CARD:** "WIZARD GANG" → "TRIPPEDD".
+- **AUD:** Music cuts on the hard cut. Silence except fading chains. Then the network ident sting.
+- **MOCAP:** None.
+- **ASSET:** None — typography only.
+
+---
+
+## HELD — "THE NARRATOR" (not in pilot)
+
+**Owner hold 2026-10-07:** Ashes' purple version hasn't been shown yet, so the Narrator does not appear in the pilot. His direct-address debut (slow push-in to close-up, void-black hood, sparkly eye glints, diamond-grill smile catching light, looking straight at the viewer) is held for a later episode, once the owner locks the purple-robe design. When it lands: purple robe with gold trim, full arm reach, void-white version + night version. The existing `swmg-purple.webp` maps to Theory's robe (long black hair under hood), not the Narrator — never use it for this beat.
 
 ---
 

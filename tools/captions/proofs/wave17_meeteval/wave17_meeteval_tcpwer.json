@@ -1,0 +1,7 @@
+{
+  "metric": "tcpWER (time-constrained minimum-permutation WER)",
+  "reference_words": 7,
+  "errors": 1,
+  "error_rate": 0.14285714285714285,
+  "hypothesis": "1 substitution + 1 timing shift vs reference"
+}

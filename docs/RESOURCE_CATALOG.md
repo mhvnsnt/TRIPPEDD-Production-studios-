@@ -19913,3 +19913,163 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 ## Entry count — Wave 18 (Lane A, 2026-10-07)
 
 110 new `####` entries appended (34 PD score archives/notation · 40 retro-tracker ecosystem · 36 caption packaging long tail) → **1952 total** honest entries (1842 before this wave). Licenses verified at upstream sources (GitHub API spdx_id + raw LICENSE/COPYING/README fetches, SourceForge project license fields, site fetches for archive homepages) — never assumed; ❓/⚠️ used honestly where upstream terms could not be pinned this pass. Dedup: every candidate grepped against the catalog (name + alternates) BEFORE appending — caught that Radium/BambooTracker/Frescobaldi/Denemo/Hydrogen/GoatTracker were already quarantined (rows 175/173/179/180/126/176), so they got catalog entries with 🚫 badges but no duplicate quarantine rows; caught BambooTracker-already-quarantined before writing its entry. Quarantine: +13 rows (186–198: Zrythm AGPL-3.0 · CheeseTracker GPLv2 · Rosegarden GPL-2.0 · IINA GPL-3.0 · SMPlayer GPL-2.0 · MPC-HC GPL-3.0 · MPC-BE GPLv3 · Celluloid GPL-3.0 · VideoSubFinder GPL-2.0 · SubDownloader GPL-3.0 · Av1an GPL-3.0 · VisualSubSync GPL-2.0 · xy-VSFilter GPL-2.0) → 198 rows · 184 distinct. Not quarantined by doctrine: Mucom88 CC BY-NC-SA (straight 🚫 no-go); QMPlay2 LGPL-3.0 + Haivision SRT MPL-2.0 flagged ⚠️ pending owner LGPL/MPL verdict; FFMS2 ⚠️ MIT-source/GPL-binary with clean build path. Wired with real proofs: VexFlow 4.2.2 SVG render (`tools/wave18_laneA/vexflow_render.cjs` → `proofs/wave18_vexflow/output.svg`; note: VexFlow 5.0.0's CJS build dumps source under Node 24 — pinned to 4.2.2), abcjs ABC→SVG (`tools/wave18_laneA/abcjs_render.cjs` → `proofs/wave18_abcjs/output.svg`), OpenScore CC0 .mxl pull+parse (`tools/wave18_laneA/openscore_pull.py` → `proofs/wave18_openscore/report.json`: Beethoven Op.48/1, 2 parts, 92 measures, 527 notes). OpenScore canonical repo moved (OpenScore/scores 404) → openscore/lieder (CC0-1.0). ExoPlayer canonical moved (google/ExoPlayer deprecated) → androidx/media (Apache-2.0). Av1an moved master-of-zen → rust-av (GPL-3.0). [Wave 18 Lane A]
+
+#### Harvard Loeb — Digital Scores and Libretti ✅ PD-age first editions/manuscripts, free online
+- **What:** Harvard's Eda Kuhn Loeb Music Library digitizes rare/unique scores and libretti — manuscripts, first and early editions from the 17th to early 20th century (Bach family, Mozart, Schubert, 19th-c. opera sets, Second Viennese School).
+- **URL:** https://library.harvard.edu/collections/digital-scores-and-libretti
+- **License:** ✅ PD-age primary sources (17th–early-20th c. manuscripts/first editions); online access provided worldwide — per-item rights note applies for 20th-c. items.
+- **Free tier:** Free browsing/download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the already-cataloged Music Treasures Consortium (MTC entry below links out to this collection too). [Wave 19 Lane A]
+
+#### BSB MDZ — Digitale Sammlungen (music) ✅ copyright-free music digitizations
+- **What:** Munich Digitization Center's music portal at the Bavarian State Library — complete 19th-c. complete-works editions (Beethoven, Schubert, Schumann, etc.), early Wagner prints, ~1,400 music manuscripts (Distler, M. Haydn, Mahler, Reger, Rheinberger holographs); copyright-free items also mirrored at IMSLP.
+- **URL:** https://www.bsb-muenchen.de/en/collections/music/about-the-collection/
+- **License:** ✅ Copyright-free under German law (composers dead 70+ years); restricted-access items are in-house only and excluded.
+- **Free tier:** Free; digitization-on-demand (DoD) for undigitized copyright-free works
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verified via BSB music-department page + published digitization survey (thefreelibrary). [Wave 19 Lane A]
+
+#### bavarikon — Musical Treasures of the Bayerische Staatsbibliothek ✅ free worldwide access
+- **What:** Bavaria's state cultural portal — curated "Musical Treasures" selection: autograph manuscripts (Haydn, Mozart, Beethoven, Schubert, Mahler), Renaissance choir books (Rore Codex, Alamire), Buxheim Organ Book, Petrucci Frottole, Attaingnant Chansons.
+- **URL:** https://www.bavarikon.de/object/bav:BSB-CMS-0000000000001774?lang=en
+- **License:** ✅ Portal provides worldwide free access to digitized cultural assets — per-item rights note (most music items are PD-age; check item-level rights for 20th-c. holdings).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the BSB MDZ entry above (bavarikon is the curated exhibition layer; MDZ is the mass-digitization layer). [Wave 19 Lane A]
+
+#### e-manuscripta ✅ free download, IIIF-enabled Swiss manuscript portal
+- **What:** Portal for digitized manuscript material from Swiss libraries/archives (Zentralbibliothek Zürich, Basel UB, ETH Library, Swiss National Library) — includes sheet music among text manuscripts, correspondence, maps. Free online use, PDF downloads, IIIF manifests on every title.
+- **URL:** https://www.zb.uzh.ch/en/services/die-plattformen-e-rara-und-e-manuscripta
+- **License:** ✅ High-quality digitized documents free of charge online or as PDF download (per ZB Zürich platform page); manuscripts are historical/PD-age — per-item rights note.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** IIIF manifests make batch/facsimile reuse straightforward. [Wave 19 Lane A]
+
+#### e-rara ✅ Swiss digitized rare-prints portal (ZB Zürich platform)
+- **What:** Sister platform to e-manuscripta for digitized rare printed editions (incunabula onward) from Swiss libraries — strong in early music prints alongside books and maps.
+- **URL:** https://www.zb.uzh.ch/en/services/die-plattformen-e-rara-und-e-manuscripta (ZB Zürich platform overview covering e-rara and e-manuscripta)
+- **License:** ✅ Free online access/download of digitized rare prints (ZB Zürich platform page); early-print items are PD-age — per-item rights note.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from e-manuscripta above (prints vs. manuscripts). [Wave 19 Lane A]
+
+#### Düben Collection Database Catalogue ⚠️ permission-before-publication
+- **What:** Uppsala University Dept. of Musicology database — ~2,300 17th/early-18th-c. musical manuscripts (+150 prints), metadata + scanned facsimiles; only surviving copies of 100+ Buxtehude works.
+- **URL:** https://catmus.musik.uu.se/en/dubendatabasen
+- **License:** ⚠️ Manuscripts are 17th-c. (PD content) and facsimiles are freely searchable/viewable, but the project asks users to contact Uppsala University Library regarding permissions/publication of reproductions — clear before commercial reuse.
+- **Free tier:** Free search/view
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** "Eighteenth-Century Music in Swedish Libraries" database on the same host (catmus.musik.uu.se) is a separate companion resource — future lane candidate. [Wave 19 Lane A]
+
+#### UNT — Jean-Baptiste Lully Collection ✅ full-text 17th-c. edition scans
+- **What:** University of North Texas Music Library multimedia thematic catalog — ~30 rare 17th/18th-c. operas/ballets by Lully (many 1st editions printed by Christophe Ballard under Louis XIV's privilège); scores scanned, full-text versions of all volumes online.
+- **URL:** https://library.unt.edu/music/collections/lully/
+- **License:** ✅ 17th-c. first/second editions (composer d. 1687) — PD; full-text PDFs served openly via UNT Digital Library.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** UNT's Virtual Music Rare Book Room (parent collection) not separately cataloged this wave. [Wave 19 Lane A]
+
+#### MIT Lewis — Inventions of Note ✅ PD American popular sheet music 1890–1920
+- **What:** MIT Lewis Music Library collection — ~50 pieces of American popular songs/piano pieces about inventions (automobile, airship, telephone), mostly 1890–1920, scanned to PDF with some audio performances by MIT faculty.
+- **URL:** https://dome.mit.edu/handle/1721.3/188939
+- **License:** ✅ Items published 75+ years ago, public domain (per MIT News/Library); US-published popular songs.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period cover art is a bonus asset for vintage-poster aesthetics. [Wave 19 Lane A]
+
+#### SLUB Dresden — Digital Collections ✅ 75% CC-BY-SA per DDB
+- **What:** Saxon State and University Library Dresden digital collections — ~138,000 digitized volumes including ~3,000 mostly-manuscript music works from the Dresden Hofkapelle (18th/19th c.), plus the Deutsche Fotothek's shellac-record audio.
+- **URL:** https://www.deutsche-digitale-bibliothek.de/content/saechsische-landesbibliothek-staats-und-universitaetsbibliothek-dresden?lang=en
+- **License:** ✅ 75% of SLUB digital collections available under CC-BY-SA (per Deutsche Digitale Bibliothek) — per-item rights note for the remainder.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Entry URL is the DDB institution page (rights summary); the music department is at slub-dresden.de. [Wave 19 Lane A]
+
+#### Music Treasures Consortium (LOC-hosted) ⚠️ per-holding-library rights
+- **What:** Library of Congress-hosted portal — single point of access to digitized music manuscripts and first/early editions from the British Library, Harvard Loeb, Juilliard, LOC, the Morgan, and NYPL (16th–20th c.; Bach, Mozart, Wagner, Debussy, Schoenberg, Stravinsky).
+- **URL:** www.loc.gov/musictreasures (portal URL per the Morgan's 2011-03-15 press release)
+- **License:** ⚠️ Items range 16th–20th c.; rights live with each custodial archive — verify per-item before reuse (20th-c. manuscripts may be in-copyright).
+- **Free tier:** Free search/browse/view
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the already-cataloged Morgan music-manuscripts entry (which is ❓ terms-unverified) — the Morgan press release reveals its Music Manuscripts Online allows download only for noncommercial use → logged as an honest negative in lane-a-notes.md. [Wave 19 Lane A]
+
+#### pypolona ✅ MIT — Polona API search/download tool
+- **What:** Adam Twardoch's Python CLI/GUI (PyInstaller builds) that searches polona.pl via its JSON API and downloads all page images + searchable PDFs of publications — batch pipeline for the Polish National Library's 3M+ object digital library.
+- **URL:** https://github.com/twardoch/pypolona/blob/HEAD/README.md
+- **License:** ✅ MIT (verified 2026-10-07 via README license section; © 2020 Adam Twardoch)
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with the already-cataloged Polona entry (Wave 18 Lane A) — this is the tooling layer, not the portal. Polona itself grants free use incl. commercial per BN. [Wave 19 Lane A]
+
+#### Schubert Online (Austrian Academy of Sciences) ✅ free autograph/first-edition images
+- **What:** ÖAW digital repository — 500+ Schubert music manuscripts and 600+ first/early editions as free high-quality digital images (the public face of the Neue Schubert-Ausgabe research program; "Schubert Digital" handles philological descriptions).
+- **URL:** www.schubert-online.at (portal URL per IAML/University of Otago guides)
+- **License:** ✅ Free online access to digital images of autographs + first/early editions (Schubert d. 1828 — PD); per-item rights note.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The printed Neue Schubert-Ausgabe volumes themselves are Bärenreiter commercial (logged as negative in lane-a-notes.md) — this entry is the free image repository, not the printed critical edition. [Wave 19 Lane A]
+
+#### Carl Nielsen Edition (CNU) — Royal Danish Library ✅ free score downloads
+- **What:** The complete critical Carl Nielsen Edition (1994–2009, Danish government commission) — all scores (operas Maskarade, Saul and David, Aladdin, symphonies, songs) available as free PDF downloads at the Danish Royal Library, which owns most of Nielsen's manuscripts.
+- **URL:** www.kb.dk (Danish Royal Library; edition download page per thefreelibrary/Wikipedia citations)
+- **License:** ✅ Scores freely downloadable (Nielsen d. 1931 — works PD); per-item rights note for the edition's editorial content.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Government-commissioned complete edition given away free — rare for a 20th-c. composer edition. [Wave 19 Lane A]
+
+#### Brahms Portal (Brahms-Institut, Lübeck) ✅ open-access, FAIR
+- **What:** Lübeck University of Music's Brahms archive online (live 2025-08-01) — 10,000+ digitized items: autograph scores, letters, photographs, first editions, thematically linked to Brahms works, plus musicologist-written contextual texts.
+- **URL:** https://www.brahms-institut.de/index.php/en/allgemeines
+- **License:** ✅ All content open-access under FAIR principles (Findable, Accessible, Interoperable, Reusable) per the launch announcement — per-item rights note for 19th-c. materials.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fresh (August 2025) — largest private Brahms collection worldwide, now online. [Wave 19 Lane A]
+
+#### Bach-Archiv Leipzig — Digital Collections ❓ open license, unspecified
+- **What:** Leipzig Bach Archive portal (launched 2020) — digital access to the archive's historical collections and permanent loans: St. Thomas Choir manuscripts, Peters Music Library, Breitkopf & Härtel publishing-house materials; high-res images downloadable.
+- **URL:** https://digitalesammlungen.bach-leipzig.de/
+- **License:** ❓ RISM reports high-resolution images "downloaded and reused under an open license" — exact license (CC variant / Public Domain Mark) not pinned this pass; verify per item before commercial reuse.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from Bach Digital (CC BY-NC 4.0 — logged as negative): this is the Archive's own collections portal. [Wave 19 Lane A]
+
+#### C.P.E. Bach: The Complete Works (Packard Humanities Institute) ❓ free performing-material downloads
+- **What:** PHI critical edition (115 vols planned) of Carl Philipp Emanuel Bach's works — performing material for chamber, orchestral, and choral music downloadable free of charge; work database searchable by Wotquenne/Helm numbers.
+- **URL:** http://www.cpebach.org
+- **License:** ❓ Downloads free of charge per the edition's site/Wikipedia; reuse terms (esp. commercial) not verified this pass — confirm before use.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PHI is a nonprofit research institute; the grant is clearly free-access but the license text needs a read before commercial reuse. [Wave 19 Lane A]

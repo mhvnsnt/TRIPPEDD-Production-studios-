@@ -8,7 +8,7 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - **Tool use ≠ code reuse:** running a GPL application as a standalone tool (e.g. opening Krita to paint) does not infect our pipeline — output artwork remains ours per the Krita/GIMP GPL FAQ doctrine. The quarantine targets *code integration*, not *tool usage*.
 - **Audit path:** an item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. The audit note goes in the table below.
 
-## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 = 56)
+## Quarantined items (27 + 23 Wave 2 + 6 Wave 3 + 9 Wave 4 = 65)
 
 | # | Name | License | Lane | Repo | Allowed use | Audit status |
 |---|------|---------|------|------|-------------|--------------|
@@ -89,3 +89,12 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 
 - Wave 2 added 23 quarantined items (total 50): whisper-timestamped is AGPL-3.0 (not MIT as assumed); Upscayl is AGPL-3.0; Kitsu is AGPL-3.0; Kdenlive/Avidemux/Cinelerra-GG/LiVES/HandBrake/VidCutter/chaiNNer join the GPL NLE/finishing quarantine; Wick Editor, LibreSprite, Inkscape, GIMP, Blender Grease Pencil/VSE, StoryPencil, StoryToolkitAI, Allosaurus, Praat, SubtitleComposer, Seed-VC, Piper (OHF-Voice), SubtitleComposer are GPL — standalone tool use only.
 - NOT quarantined: FFmpeg default build is LGPL-2.1-or-later (stays off this list per Wave-1 convention); OpenGameArt is a mixed per-asset content library (CC0/CC-BY/CC-BY-SA/OGA-BY/GPL per asset) — per-asset license check required, kept as ❓ in the catalog.
+| 57 | ChatTTS | AGPL-3.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 58 | Seed-VC | GPL-3.0 | voice-cloning | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 59 | DiffSVC | AGPL-3.0 | voice-cloning | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 60 | Trelby | GPL-2.0 | storyboarding | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 61 | KITScenarist | GPL-3.0 | storyboarding | trippedd | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 62 | phonemizer | GPL-3.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 63 | marytts | LGPL-3.0 | tts | god-molecule | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 64 | Fooocus | GPL-3.0 | background | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |
+| 65 | SoftVC-VITS (so-vits-svc) | AGPL-3.0 | voice-cloning | both | standalone tool use / research only — never linked or wired into shipping paths | PENDING |

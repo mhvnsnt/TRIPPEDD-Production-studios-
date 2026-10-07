@@ -247,16 +247,6 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** Free-tier limits per official boords.com blog. Script and board live in one product; one-click animatic. Browser SaaS — nothing to wire locally.
 
-#### Wonder Unit Storyboarder ❓ unverified
-- **What:** Draw-boards-fast storyboarding with animatic export
-- **URL:** https://github.com/wonderunit/storyboarder/blob/master/README.md
-- **License:** ISC (package.json) + custom Wonder Unit license statement (verified)
-- **Free tier:** fully open
-- **Repo lane:** trippedd (storyboard)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** License is NON-STANDARD: no root LICENSE file; package.json says ISC but the linked 'thoughts on free and open source' page adds custom exceptions (don't charge for it, mandatory attribution, CLA). Commercial-safety AMBIGUOUS — prefer StoryBoom/PanelForge for shipping. kawakoshi/storyboarder-modern is an actively maintained 2026 fork.
-
 #### Plot (theplot.io) ❓ unverified
 - **What:** Web storyboarding with drawing pane and collaboration
 - **URL:** https://www.saasworthy.com/product/plot-software/pricing
@@ -565,7 +555,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** KEY voice-clone path: 10-60 min clean audio per character gives near-indistinguishable timbre; prosody comes from the donor performance. Pretrained base models (HuBERT/RMVPE) have their own upstream terms. Clone only voices with owner consent.
 
-#### so-vits-svc ✅ commercial-safe
+#### so-vits-svc 🚫 QUARANTINED (AGPL-3.0)
 - **What:** Singing voice conversion (SoftVC VITS) — character singing voices / musical numbers
 - **URL:** https://github.com/svc-develop-team/so-vits-svc
 - **License:** AGPL-3.0 (verified via LICENSE badge in upstream README; was incorrectly assumed MIT) (verified)
@@ -2622,18 +2612,13 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 
 | Name | URL | License (badge) | What it does (1-2 lines) | Repo lane | Free-tier limits | Impact / Difficulty |
 |---|---|---|---|---|---|---|
-| ZapSplat | https://www.zapsplat.com | ✅ Standard License — free commercial use with attribution | 160k+ free SFX + music, strong cartoon/game categories (boings, zaps, whooshes); searchable + packs. | trippedd (sfx) | Free account; MP3 free, WAV behind paywall; 3 downloads per 10 min. | 5 / 2 |
-| SoundBible | https://soundbible.com | ✅ mixed — use "Royalty Free"/PD/CC-BY items only | Thousands of free WAV/MP3 SFX; each sound labeled PD, royalty-free, or CC-BY. Cartoon + comedy categories. | trippedd (sfx) | Fully free, no login. | 4 / 1 |
 | FreeSFX (freesfx.co.uk) | https://www.freesfx.co.uk | ✅ EULA — free commercial + broadcast, credit required | 4,500+ catalogued SFX + 850 music tracks; comedy/cartoon categories. Must credit freesfx.co.uk; no standalone redistribution. | trippedd (sfx) | Fully free. | 4 / 1 |
 | PacDV | http://www.pacdv.com/sounds/ | ✅ royalty-free — free for productions, no resale | Long-running royalty-free SFX (interfaces, machines, comedy, voices); WAV+MP3. Attribution optional. | trippedd (sfx) | Fully free, no login. | 4 / 1 |
-| Partners In Rhyme (PIR free SFX) | https://www.partnersinrhyme.com | ✅ royalty-free for PIR-created categories; ⚠️ "personal use only" categories excluded | Free WAV SFX incl. dedicated Cartoon Accents (boings, zips, crashes), weird/comedy sounds. Use only PIR-created categories. | trippedd (sfx) | Fully free. | 4 / 1 |
 | SoundImage.org (Eric Matyas) | https://soundimage.org | ✅ custom royalty-free license, attribution required, commercial OK | Thousands of original SFX + music (Ogg loops, MP3) by one composer; cartoon/comedy pages. Credit "Music/SFX by Eric Matyas, soundimage.org". | trippedd (music+sfx) | Fully free. | 4 / 1 |
-| 99Sounds | https://99sounds.org | ✅ 100% royalty-free, commercial + non-commercial | Indie label of free designer SFX packs (cinematic, sci-fi, retro 8-bit, city, nature); 24-bit WAV. No redistribution as libraries. | trippedd (sfx) | Fully free (pay-what-you-want). | 4 / 1 |
 | Orange Free Sounds | https://www.orangefreesounds.com | ✅ CC-BY 4.0 per sound, commercial OK with attribution | Large CC-BY SFX library (animals, horror, comedy, cartoon); each page states its CC-BY-4.0 license. | trippedd (sfx) | Fully free, no login. | 4 / 1 |
 | Little Robot Sound Factory | https://www.littlerobotsoundfactory.com | ✅ CC-BY (per Freesound postings) with attribution | Bulk 8-bit/game SFX libraries (jumps, shoots, UI, jingles); source sounds are CC-BY on Freesound — check per-sound. | trippedd (sfx) | Fully free. | 4 / 1 |
 | Videvo (SFX) | https://www.videvo.net | ✅ Videvo Attribution License or CC-BY 3.0 per clip, commercial OK with credit | 180k+ free SFX + music clips; per-clip license filter. Premium removes attribution. | trippedd (sfx) | Free tier; attribution required on free clips. | 4 / 1 |
 | Kenney audio packs | https://kenney.nl/assets?q=audio | ✅ CC0 1.0 Universal, no attribution | Game-audio packs (UI, RPG, impacts, sci-fi, digital); OGG. Same CC0 terms as all Kenney assets. | trippedd (sfx) | Fully free, no signup. | 4 / 1 |
-| SampleSwap | https://sampleswap.org | ❓ per-sound CC (many BY-NC) — filter commercial-safe | Community sample/loop/SFX archive; each item shows its CC variant. Use only by/by-sa items for commercial. | trippedd (sfx) | Fully free. | 3 / 2 |
 | Looperman (loops) | https://www.looperman.com | ✅ loops royalty-free commercial + non-commercial (acapellas need permission) | Huge user-uploaded loop/SFX library; loops cleared for commercial productions, cannot resell as loops. | trippedd (sfx+music) | Fully free. | 4 / 1 |
 | Bfxr (bfxr2) | https://www.bfxr.net | ✅ tool Apache 2.0 / MIT (increpare/bfxr2) — generated sounds are yours | Browser chiptune SFX synthesizer (sfxr lineage): generate original 8-bit bleeps, boings, zaps, explosions; export WAV. | trippedd (sfx) | Fully free, runs in browser. | 4 / 1 |
 | ChipTone (SFBGames) | https://sfbgames.itch.io/chiptone | ✅ generated sounds CC0 per author (Tom Vian) | Free chiptune SFX generator with sampler + sequencer; author grants CC0 on all generated sounds, commercial OK. | trippedd (sfx) | Fully free, browser + desktop. | 4 / 1 |
@@ -2648,7 +2633,6 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 | Free To Use Sounds | https://www.freetousesounds.com | ❓ license agreement allows personal + commercial per FAQ — verify per release | Field-recording collective (city, nature, ambience); FAQ states commercial OK under license agreement. Verify each release. | trippedd (sfx) | Mixed free/paid releases. | 3 / 1 |
 | YouTube Audio Library (SFX) | https://www.youtube.com/audiolibrary | ❓ free for productions; check per-item attribution flag | YouTube's built-in free SFX + music library; most items free with no attribution, some require credit. | trippedd (sfx+music) | Free (YouTube account). | 4 / 1 |
 | FlashKit SoundFX | http://www.flashkit.com/soundfx/ | ❓ per-file license ("Freeware" = use as you please incl. commercial) — check each file | Legacy archive of thousands of SFX/loops; per-file usage flags. Freeware-tagged files OK for commercial per guidelines. | trippedd (sfx) | Fully free. | 3 / 2 |
-| Cymatics free packs | https://cymatics.fm/pages/free-download-vault | ✅ 100% royalty-free, no redistribution | Free EDM/cinematic sample packs (drums, FX, vocals, MIDI); royalty-free for placements/sync/beats. | trippedd (sfx+music) | Free vault (email signup). | 3 / 1 |
 
 ### Music libraries (CC0 / PD / CC-BY) — Wave 3 (+26)
 | Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
@@ -2658,7 +2642,6 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 | Lee Rosevere | https://freemusicarchive.org/music/lee-rosevere/ | ✅ CC-BY (use FMA CC-BY releases; some Bandcamp albums all-rights-reserved) | Prolific ambient/chill/electronic instrumentalist; huge catalog of score-safe tracks with credit. | trippedd (music) | Free; attribute; check per album. | 4 / 1 |
 | Jahzzar | https://freemusicarchive.org/music/Jahzzar/ | ✅ CC BY-SA 4.0 (commercial OK w/ attribution + share-alike; FMA flags YT incompat.) | High-energy electronic/rock; dramatic action tracks. Note: share-alike on derivatives; FMA notes YouTube risk — confirm before platform distribution. | trippedd (music) | Free; BY-SA. | 4 / 2 |
 | Silverman Sound Studios (Shane Ivers) | https://www.silvermansound.com | ✅ CC BY 4.0 free tier (attribute; WAV/stems = paid Pro) | Composer catalog with dedicated cartoon/circus/comedy categories ("Clowning Around"); orchestral + novelty score beds for funny scenes. | trippedd (music) | Free MP3 w/ credit; Pro WAVs paid. | 5 / 1 |
-| StreamBeats (Harris Heller) | https://www.streambeats.com | ✅ free, no attribution required (DMCA-safe) | 1,500+ original tracks (lofi, synthwave, rock, EDM); usable in monetized videos; zero credit required. | trippedd (music) | Fully free. | 4 / 1 |
 | NoCopyrightSounds (NCS) | https://ncs.io | ❓ free for creators per usage policy (YouTube/TikTok/Twitch OK w/ attribution); check policy for other platforms | Major copyright-free EDM label; high-energy tracks for action/intro sequences. Restriction: no "music is the primary focus" use; confirm platform scope via usage policy. | trippedd (music) | Free; attribution; platform-scoped. | 4 / 2 |
 | White Bat Audio (Karl Casey) | https://whitebataudio.com | ✅ free incl. monetized w/ credit ("Music by Karl Casey @ White Bat Audio") | Darksynth/synthwave/metal/electronic; action + villain + chase energy. Cannot redistribute music as standalone product. | trippedd (music) | Free; attribution required. | 4 / 1 |
 | Ross Bugden | https://www.youtube.com/@rossbugden | ✅ CC-BY 4.0 (attribute; dispute Content ID claims; no Content-ID registration) | Epic/trailer/dramatic orchestral music; free incl. commercial with credit. | trippedd (music) | Free; attribute. | 4 / 1 |
@@ -2729,18 +2712,9 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 
 ### TTS engines — Wave 3 (+13)
 | Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
-| Dia (Nari Labs) | https://github.com/nari-labs/dia | ✅ Apache-2.0 | 1.6B text-to-dialogue model: two-speaker conversations w/ emotion tags, laughter, nonverbals in one pass; in HF Transformers. | god-molecule (voices) | GPU ~10GB VRAM; English only. | 5 / 3 |
-| Zonos (Zyphra) | https://github.com/Zyphra/Zonos | ✅ Apache-2.0 (v0.1); note ZONOS2 is MIT | Expressive open TTS trained on 200k+ hrs: 5-second zero-shot voice cloning, emotion control, multilingual (EN/JA/ZH/FR/DE). | god-molecule (voices) | Heavy model; GPU needed. | 5 / 3 |
-| Parler-TTS (HF) | https://github.com/huggingface/parler-tts | ✅ Apache-2.0 (code, weights, data — fully open) | Describe the voice in natural language ("a calm female narrator") and get matching speech; Expresso variant adds emotions. | god-molecule (voices) | GPU; mini 880M or large 2.3B. | 5 / 3 |
-| CosyVoice 3.0 (FunAudioLLM) | https://github.com/FunAudioLLM/CosyVoice | ✅ Apache-2.0 | Streaming multilingual zero-shot voice cloning (9 languages + 18 Chinese dialects); emotion/speed/volume instruct mode; 150ms latency. | god-molecule (voices) | 0.5B consumer-GPU friendly. | 5 / 3 |
-| Orpheus-TTS (Canopy Labs) | https://github.com/canopyai/Orpheus-TTS | ✅ Apache-2.0 (note: built on Llama-3.2 — Llama 3.2 Community License also applies) | Steerable LLM-TTS (3B) w/ inline emotion tags, zero-shot cloning, ~200ms streaming latency; GGUF/llama.cpp supported. | god-molecule (voices) | GPU 10-12GB VRAM; English. | 4 / 3 |
 | Sesame CSM-1B | https://huggingface.co/sesame/csm-1b | ✅ Apache-2.0 (per HF card; code: SesameAILabs/csm) | Conversational speech model w/ context: maintains dialogue flow and adapts tone/pacing from prior utterances; in Transformers. | god-molecule (voices) | CUDA GPU; English. | 4 / 3 |
-| VibeVoice (Microsoft) | https://github.com/microsoft/VibeVoice | ✅ MIT | Long-form multi-speaker TTS up to 90 min w/ 4 speakers; streaming realtime 0.5B variant (~300ms first audio). | god-molecule (voices) | Heavier models; GPU. | 5 / 3 |
 | OuteTTS 1.0 | https://github.com/edwko/OuteTTS | ✅ Apache-2.0 (use the OuteTTS-1.0-0.6B checkpoint — the 1B variant is CC-BY-NC-SA, non-commercial) | Lightweight LLM-TTS w/ voice cloning and GGUF/ONNX exports; 0.6B checkpoint is fully commercial-safe. | god-molecule (voices) | CPU-viable w/ quant. | 4 / 3 |
-| KittenTTS | https://github.com/KittenML/KittenTTS | ✅ Apache-2.0 | SOTA-quality TTS under 25MB: 8 voices, runs on CPU, no GPU needed — ideal for cheap batch voice generation. | god-molecule (voices) | English; research-quality small. | 4 / 2 |
 | PaddleSpeech | https://github.com/PaddlePaddle/PaddleSpeech | ✅ Apache-2.0 | Full speech toolkit: streaming TTS w/ text frontend, voice cloning, ASR, punctuation restoration; production-grade CLI. | god-molecule (voices) | CPU-capable; setup effort. | 4 / 3 |
-| F5-TTS | https://github.com/SWivid/F5-TTS | 🚫 code MIT but pretrained weights CC BY-NC 4.0 (trained on Emilia) — research/internal use only | Flow-matching zero-shot voice cloner (natural prosody, multilingual community models); Gradio app + CLI + Docker. | god-molecule (voices) | NC weights block monetized use. | 5 / 2 |
-| Spark-TTS | https://github.com/SparkAudio/Spark-TTS | 🚫 code Apache-2.0 but official 0.5B weights re-licensed CC BY-NC-SA 4.0 — research/internal use only | LLM-based bilingual EN/ZH TTS w/ voice control (gender, pitch, speed) and zero-shot cloning; Unity/ONNX ports exist. | god-molecule (voices) | NC weights block monetized use. | 4 / 2 |
 
 ### Lip-sync tools — Wave 3 (+12)
 | Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
@@ -2759,7 +2733,6 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 ### Misc animation production — Wave 3 (+11)
 | Name | URL | License (badge) | What it does (1-2 lines) | Repo lane (trippedd/god-molecule) | Free-tier limits | Impact 1-5 / Difficulty 1-5 |
 | OpenToonz | https://github.com/opentoonz/opentoonz | ✅ Modified BSD (repo README: \"may be used or changed freely for business or personal use\") | Ghibli's production 2D software: vector+bitmap, onion-skin, Xsheet, effects, scan/cleanup — full anime pipeline app. | trippedd (animation) | Fully free; steep learning curve. | 5 / 4 |
-| Storyboarder (Wonder Unit) | https://github.com/wonderunit/storyboarder | ❓ custom non-standard license (\"thoughts on free and open source\" + exceptions: no charging, attribution required) — not OSI; verify before shipping | Fast storyboard drawing w/ shot structure, dialogue/timing, onion-skin overlays, animatic export. | trippedd (pre-prod) | Free app; license caveat. | 4 / 1 |
 | OpenCue | https://github.com/AcademySoftwareFoundation/OpenCue | ✅ Apache-2.0 (ASWF) | Render-queue manager from Sony Imageworks: distribute frame renders across machines, monitor jobs, dependencies. | trippedd (render farm) | Self-hosted; Docker sandbox. | 4 / 4 |
 | OpenTimelineIO | https://github.com/AcademySoftwareFoundation/OpenTimelineIO | ✅ Apache-2.0 (ASWF) | Editorial timeline interchange: read/write EDL/CMX3600/FCPXML/OTIO — cut assembly, conform, episode timeline I/O. | trippedd (editorial) | Free; Python/C++. | 4 / 2 |
 | OpenColorIO | https://github.com/AcademySoftwareFoundation/OpenColorIO | ✅ BSD-3-Clause (license badge on repo) | Industry color management (ACES, LUTs): consistent color across compositing, grading, and export stages. | trippedd (color) | Free; config setup. | 4 / 3 |
@@ -2777,3 +2750,1135 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - GPL/AGPL code is quarantined per owner law: never linked or wired into shipping paths; standalone tool *use* (e.g. running Krita) is distinct from code reuse — output artwork remains ours per the Krita/GIMP GPL FAQ doctrine. See docs/LICENSE_QUARANTINE.md.
 - Wave 2 targets: Wan 2.2, RVC/Applio, DragonBones, PanelForge, InvokeAI, WhisperX, Inochi2D, plus filling any lanes that need depth (music, backgrounds).
 - Wave 2 (2026-10-07): 4 hunter workers, 170 entries researched, 129 new appended (41 already in Wave 1 → deep-verification confirmations instead). 7 priority targets independently re-verified at upstream (Wan 2.2 Apache-2.0, InvokeAI Apache-2.0, WhisperX BSD-2-Clause, RVC MIT, Applio MIT, DragonBones MIT runtimes, PanelForge free-forever). edge-tts synthesis retest: still sandbox-blocked (wss timeout), documented in tools/voice/PROOFS.md.
+
+## Wave 4 additions (2026-10-07)
+
+111 new entries from Worker D (catalog deepening: voice cloning, storyboarding, lip-sync, TTS, SFX, music, upscalers, backgrounds, image-to-video). Every license verified from the upstream source (GitHub API license endpoint, raw LICENSE fetch, or official license page), never assumed. 18 Wave-3 table rows superseded by richer #### entries in this section (removed at merge); 3 license corrections applied at merge: Spark-TTS and F5-TTS re-badged 🚫 (NC weights), Orpheus-TTS Llama-3.2 caveat added, Zonos eSpeak-GPL dependency noted. so-vits-svc catalog badge corrected ✅ → 🚫 (AGPL-3.0, quarantine row 66).
+
+## god-molecule (tts) — 21 entries
+
+#### Zonos ✅
+- **What:** Zyphra AI open zero-shot TTS with eSpeak phonemization and audio-prefix voice cloning
+- **URL:** https://github.com/ZyphraAI/Zonos
+- **License:** Apache-2.0 (verified via GitHub API license endpoint) — NOTE: built on Llama-3.2, so the Llama 3.2 Community License also applies (2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strongest open zero-shot TTS candidate for Wizard Gang character voices. DEPENDENCY NOTE: uses eSpeak phonemization — eSpeak-NG is GPL-3.0 (quarantine row 7); use the eSpeak binary as a standalone tool per the quarantine doctrine, never link the library [Wave 4]
+
+#### Dia ✅
+- **What:** 1.6B text-to-dialogue model with two-speaker turn-taking and emotion tags
+- **URL:** https://github.com/nari-labs/Dia
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dialogue-native TTS is ideal for multi-character cartoon scenes [Wave 4]
+
+#### Orpheus-TTS ✅
+- **What:** Expressive 3B text-to-speech with emotion and style tags
+- **URL:** https://github.com/canopyai/Orpheus-TTS
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cheap expressive TTS for rapid line iteration before final takes [Wave 4]
+
+#### Spark-TTS 🚫
+- **What:** Bilingual EN/ZH zero-shot TTS with fine-grained voice control
+- **URL:** https://github.com/SparkAudio/Spark-TTS
+- **License:** Apache-2.0 (code only, verified via GitHub API) BUT official 0.5B weights re-licensed CC BY-NC-SA 4.0 — NOT commercial-safe; research/internal use only (2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Bilingual option if any episode needs non-English dialogue [Wave 4]
+
+#### VibeVoice ✅
+- **What:** Long-form multi-speaker podcast-style TTS (up to ~90 min continuous)
+- **URL:** https://github.com/microsoft/VibeVoice
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Multi-speaker long-form fits full episode narration passes [Wave 4]
+
+#### F5-TTS 🚫
+- **What:** Flow-matching non-autoregressive TTS, fast high-quality zero-shot cloning
+- **URL:** https://github.com/SWivid/F5-TTS
+- **License:** MIT (code only, verified via GitHub API) BUT pretrained weights CC BY-NC 4.0 (trained on Emilia) — NOT commercial-safe; research/internal use only (2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fast inference makes it the best loop-speed TTS for line iteration [Wave 4]
+
+#### Parler-TTS ✅
+- **What:** Style-prompted TTS (v3 multilingual); describe the voice in plain text
+- **URL:** https://github.com/huggingface/parler-tts
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Natural-language voice direction ("gruff old brawler") without reference audio [Wave 4]
+
+#### Sesame CSM ✅
+- **What:** Conversational speech model with context-aware dialogue generation
+- **URL:** https://github.com/SesameAILabs/csm
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Context-aware delivery for back-and-forth character banter [Wave 4]
+
+#### VITS ✅
+- **What:** End-to-end TTS baseline (conditional VAE + adversarial training)
+- **URL:** https://github.com/jaywalnut310/vits
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reliable classic baseline if newer models prove unstable [Wave 4]
+
+#### Matcha-TTS ✅
+- **What:** Fast non-autoregressive TTS with optimal-transport conditional flow matching
+- **URL:** https://github.com/shivammehta25/Matcha-TTS
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Low-latency TTS for live preview / in-app voice features [Wave 4]
+
+#### SpeechT5 ✅
+- **What:** Unified pre-training framework for text and speech (TTS + ASR)
+- **URL:** https://github.com/microsoft/SpeechT5
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Unified speech model useful for TTS + subtitle/ASR alignment research [Wave 4]
+
+#### Amphion ✅
+- **What:** Open audio/speech/music generation toolkit (TTS, VC, vocoders, singing)
+- **URL:** https://github.com/open-mmlab/Amphion
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** One toolkit covering TTS, voice conversion and vocoders for the audio lane [Wave 4]
+
+#### VoxCPM ✅
+- **What:** Real-time streaming TTS optimized for low-latency dialogue
+- **URL:** https://github.com/OpenBMB/VoxCPM
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Streaming TTS for interactive / live-voiced applications [Wave 4]
+
+#### dots.tts ✅
+- **What:** SOTA multilingual TTS from RedNote (high naturalness, multi-language)
+- **URL:** https://github.com/rednote-hilab/dots.tts
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Fresh multilingual contender for diverse cast voices [Wave 4]
+
+#### KittenTTS ✅
+- **What:** Tiny 25MB CPU-only TTS, runs anywhere with no GPU
+- **URL:** https://github.com/KittenML/KittenTTS
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Near-zero-cost placeholder VO during edit; swap in neural TTS at final [Wave 4]
+
+#### Higgs Audio ⚠️
+- **What:** Boson AI TTS with expressive generation; code is open but v2/v3 weights are research/NC
+- **URL:** https://github.com/boson-ai/higgs-audio
+- **License:** Apache-2.0 (code only) + Boson community/research non-commercial weight licenses (verified via GitHub API license endpoint + model card, 2026-10-07)
+- **Free tier:** fully open code; weights restricted to research/non-commercial
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research-only voice quality reference; cannot ship weight-generated audio commercially [Wave 4]
+
+#### OpenJTalk ✅
+- **What:** Japanese HMM-based text-to-speech engine (Modified BSD)
+- **URL:** https://github.com/r9y9/open_jtalk/blob/1.10/src/COPYING
+- **License:** Modified BSD (verified via pyopenjtalk README license section + OpenJTalk COPYING, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive Japanese TTS option for anime-styled segments or JP dubs [Wave 4]
+
+#### Festival ✅
+- **What:** General multi-lingual speech synthesis framework (C++, Scheme API)
+- **URL:** https://github.com/rommix0/festival
+- **License:** X11-style permissive license (verified via repo README COPYING section: commercial use allowed, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Battle-tested embeddable engine for offline narration tools [Wave 4]
+
+#### Flite ✅
+- **What:** Small fast run-time TTS engine (festival-lite), ideal for embedded use
+- **URL:** https://github.com/festvox/flite
+- **License:** BSD-3-Clause (verified via SUSE Package Hub listing; Fedora lists MIT, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tiny footprint TTS for in-game or on-device voice without GPU [Wave 4]
+
+#### PicoTTS ✅
+- **What:** SVOX Pico text-to-speech engine from Android AOSP, lightweight offline
+- **URL:** https://github.com/ihuguet/picotts
+- **License:** Apache-2.0 (verified via repo README "License Apache-2.0 (see pico_resources/NOTICE)", 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ultra-light offline TTS for mobile builds and placeholder VO [Wave 4]
+
+#### Bark ⚠️
+- **What:** Suno transformer text-to-audio; expressive multilingual speech plus laughs, sighs, music and SFX
+- **URL:** https://github.com/suno-ai/bark
+- **License:** MIT code (verified via GitHub repo license field) — but model card states research-purposes-only intent and some README variants cite CC-BY-NC; treat as restricted
+- **Free tier:** fully open code; model use restricted by card intent
+- **Repo lane:** god-molecule (tts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Non-verbal vocalizations (laughs, gasps) are gold for cartoon acting — verify license per use [Wave 4]
+
+## both (voice-cloning) — 10 entries
+
+#### CosyVoice ✅
+- **What:** Multilingual zero-shot voice cloning TTS with natural conversation styles
+- **URL:** https://github.com/FunAudioLLM/CosyVoice
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Prime candidate for the Enzo-Amore-based Static voice clone pipeline [Wave 4]
+
+#### FireRedTTS ✅
+- **What:** Foundation text-to-speech with zero-shot voice cloning (FunAudioLLM)
+- **URL:** https://github.com/FunAudioLLM/FireRedTTS
+- **License:** MPL-2.0 (verified via GitHub API license endpoint, 2026-10-07) — weak copyleft, file-level; check linking posture before embedding
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Alternative zero-shot cloner if CosyVoice underperforms on character voices [Wave 4]
+
+#### MegaTTS3 ✅
+- **What:** ByteDance sparse-alignment TTS for accent-intelligent zero-shot cloning
+- **URL:** https://github.com/ByteDance/MegaTTS3
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Accent-faithful cloning matters for wrestler-persona character voices [Wave 4]
+
+#### VoiceCraft ⚠️
+- **What:** Zero-shot speech editing and TTS via neural codec language modeling
+- **URL:** https://github.com/jasonppy/VoiceCraft
+- **License:** CC-BY-NC-SA 4.0 (verified via GitHub API license endpoint, 2026-10-07) — non-commercial only
+- **Free tier:** fully open code; NC use only
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Speech-editing superpower for fixing flubbed lines without re-records — research/internal only [Wave 4]
+
+#### HierSpeech++ ✅
+- **What:** Hierarchical speech synthesis for zero-shot TTS and voice conversion
+- **URL:** https://github.com/sh-lee-prml/HierSpeechpp
+- **License:** MIT (verified via arXiv 2311.12454 repository statement "Code: https://github.com/sh-lee-prml/HierSpeechpp" + MIT badge, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Zero-shot VC research option for cross-lingual character voices [Wave 4]
+
+#### VALL-E X ✅
+- **What:** Cross-lingual neural codec language model for zero-shot voice cloning
+- **URL:** https://github.com/Plachtaa/VALL-E-X
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07) — repo is archived/unmaintained
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Cross-lingual cloning reference; archived so prefer CosyVoice/MegaTTS3 first [Wave 4]
+
+#### DDSP-SVC ✅
+- **What:** Real-time end-to-end singing voice conversion via differentiable DSP
+- **URL:** https://github.com/yxlllc/DDSP-SVC
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Singing-voice conversion for theme songs and musical episode moments [Wave 4]
+
+#### FreeVC ✅
+- **What:** High-quality end-to-end text-free one-shot voice conversion
+- **URL:** https://github.com/OlaWod/FreeVC
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Text-free VC lets one recorded take wear multiple character voices [Wave 4]
+
+#### IndexTTS ⚠️
+- **What:** Industrial-grade zero-shot TTS/voice cloning with punctuation control and character voices
+- **URL:** https://github.com/index-tts/index-tts
+- **License:** Custom bilibili Model Use License (verified via repo README acknowledgements + license note; GitHub API license NOASSERTION, 2026-10-07) — usage-threshold + AI-use disclosure clauses
+- **Free tier:** fully open code; model governed by custom use license
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strong industrial cloner but custom license needs legal read before shipping use [Wave 4]
+
+#### Coqui TTS (XTTS) ✅
+- **What:** Open TTS toolkit with XTTS v2 zero-shot multilingual voice cloning (17 languages)
+- **URL:** https://github.com/coqui-ai/TTS
+- **License:** MPL-2.0 (verified via multiple sources incl. Hugging Face repo card; company shut Dec 2023, community fork idiap/coqui-ai-TTS active, 2026-10-07) — weak copyleft; pretrained weights under CPML
+- **Free tier:** fully open
+- **Repo lane:** both (voice-cloning)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mature cloning toolkit with big model zoo; MPL is file-level so pipeline-safe with care [Wave 4]
+
+## both (lip-sync-tools) — 8 entries
+
+#### VideoReTalking ✅
+- **What:** High-quality talking-head video editing (lip-sync + expression + identity)
+- **URL:** https://github.com/OpenTalker/VideoReTalking
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Fixes mouth shapes on rendered character footage — key for dialogue scenes [Wave 4]
+
+#### Hallo ✅
+- **What:** Hierarchical audio-driven visual synthesis for portrait animation
+- **URL:** https://github.com/fudan-generative-vision/hallo
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Long-duration portrait animation from audio for talking-head cutaways [Wave 4]
+
+#### EchoMimic ✅
+- **What:** Realistic audio-driven portrait animation with editable landmarks
+- **URL:** https://github.com/BadToBest/EchoMimic
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Landmark-editable animation gives art control over character expressions [Wave 4]
+
+#### V-Express ⚠️
+- **What:** Portrait video generation with progressive training and conditional dropout
+- **URL:** https://github.com/tencent-ailab/V-Express
+- **License:** NOASSERTION — no LICENSE file in repo (verified via GitHub API license endpoint, 2026-10-07); research-only intent
+- **Free tier:** research use only
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Experimentation only until Tencent publishes license terms [Wave 4]
+
+#### SpeechBrain ✅
+- **What:** Speech toolkit with ASR, diarization and forced alignment building blocks
+- **URL:** https://github.com/speechbrain/speechbrain
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Forced alignment + diarization power auto subtitle timing and multi-speaker splits [Wave 4]
+
+#### pyannote.audio ✅
+- **What:** Speaker diarization and segmentation toolkit
+- **URL:** https://github.com/pyannote/pyannote-audio
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Who-spoke-when segmentation for multi-character dialogue editing [Wave 4]
+
+#### DreamTalk ✅
+- **What:** Expressive talking-head generation with diffusion-based style control
+- **URL:** https://github.com/ali-vilab/dreamtalk
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Style-controllable expressive heads for dramatic dialogue beats [Wave 4]
+
+#### MuseTalk ✅
+- **What:** Real-time high-quality lip-sync via latent-space inpainting (30fps+ on GPU)
+- **URL:** https://github.com/TMElyralab/MuseTalk
+- **License:** MIT (verified via aireiter review: "the repository licenses its code under the MIT license"; dependency weights carry own terms, 2026-10-07)
+- **Free tier:** fully open code; bundled weights under their own terms
+- **Repo lane:** both (lip-sync-tools)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Real-time lip-sync is the fastest path to dialogue-ready character footage [Wave 4]
+
+## trippedd (storyboarding) — 11 entries
+
+#### tldraw ⚠️
+- **What:** Infinite-canvas whiteboard SDK, great for visual storyboarding boards
+- **URL:** https://github.com/tldraw/tldraw
+- **License:** Custom tldraw license (verified via GitHub API license endpoint, 2026-10-07) — not a standard OSS license, check terms
+- **Free tier:** fully open code; license terms apply
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Could power an in-house web storyboarding tool for the show [Wave 4]
+
+#### draw.io ✅
+- **What:** Free diagramming with storyboard/frame-flow templates
+- **URL:** https://github.com/jgraph/drawio
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zero-cost flow/beat boards for episode structure planning [Wave 4]
+
+#### LibreOffice Draw ✅
+- **What:** Free vector graphics editor in LibreOffice suite, good for panel layout
+- **URL:** https://en.wikipedia.org/wiki/LibreOffice_Draw
+- **License:** MPL-2.0 (verified via Wikipedia infobox license field, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free desktop vector tool for storyboard panels and title cards [Wave 4]
+
+#### WriterDuet ⚠️
+- **What:** Collaborative screenwriting with real-time co-editing and revision tracking
+- **URL:** https://en.wikipedia.org/wiki/WriterDuet
+- **License:** Proprietary free plan (verified via Wikipedia infobox; free plan limited to 3 projects, 2026-10-07)
+- **Free tier:** free plan: up to 3 projects; paid from $9.99/mo
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Real-time co-writing for episode scripts before boards [Wave 4]
+
+#### Arc Studio ⚠️
+- **What:** Modern screenwriting app with outlining, beat boards and collaboration
+- **URL:** https://www.arcstudiopro.com/pricing
+- **License:** Proprietary free plan (verified via official pricing page: 2 scripts, watermarked PDF export free; from $69/year, 2026-10-07)
+- **Free tier:** free plan: 2 scripts, watermarked PDF export; paid from $69/year
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Beat-board outlining maps directly onto episode story structure [Wave 4]
+
+#### DubScript ⚠️
+- **What:** Free Android screenplay editor with Fountain support and PDF export
+- **URL:** https://www.dubscript.com
+- **License:** Proprietary freeware (verified via official site/app listing: all features enabled, ad-supported with subscription to remove ads/watermark, 2026-10-07)
+- **Free tier:** fully free (ad-supported; subscription removes ads/watermark)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Write and revise scripts on the phone between sessions [Wave 4]
+
+#### Dramatify ⚠️
+- **What:** Production management with storyboards, call sheets, stripboards and scheduling
+- **URL:** https://dramatify.com/press
+- **License:** Proprietary free version (verified via official press page: free version + 30-day trial; crew free read-only; plans from €9/seat/mo, 2026-10-07)
+- **Free tier:** free version available; paid plans from €9/seat/mo
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Full production paperwork (call sheets, stripboards) when shoots scale up [Wave 4]
+
+#### FlipaClip ⚠️
+- **What:** Mobile 2D animation studio for hand-drawn animatics and motion tests
+- **URL:** https://play.google.com/store/apps/details/FlipaClip:+Create+2D+Animation?id=com.vblast.flipaclip
+- **License:** Proprietary free tier (verified via Play listing + feature comparisons: 3 layers free, watermarked exports; Plus from $5.99, 2026-10-07)
+- **Free tier:** free: 3 layers, watermarked exports; Plus from $5.99
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quick hand-drawn animatics to test timing before committing render time [Wave 4]
+
+#### Film Grab ⚠️
+- **What:** 100k+ hand-picked film stills library for cinematography reference
+- **URL:** https://www.patreon.com/filmgrab/about
+- **License:** Fair-use reference collection — no commercial grant (verified via curator's Patreon: "completely free resource"; creator states images presented under fair use for education/reference, 2026-10-07)
+- **Free tier:** free to browse/reference (Patreon-supported)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Shot-composition reference for boarding cinematic scenes; reference only, not assets [Wave 4]
+
+#### DramaQueen FREE ⚠️
+- **What:** Free lifetime basic screenwriting software (no project or duration limits)
+- **URL:** https://dramaqueen.info/dramaqueen-free-lifetime-en/
+- **License:** Proprietary freeware (verified via official DramaQueen FREE page, 2026-10-07)
+- **Free tier:** free lifetime basic version
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-limits free screenwriting for episode scripts and treatments [Wave 4]
+
+#### Storyboarder ⚠️
+- **What:** Wonder Unit's free desktop storyboarding app (panels, timing, dialogue)
+- **URL:** https://wonderunit.com/software/storyboarder/
+- **License:** Custom Wonder Unit EULA — NOASSERTION on SPDX (verified via fork license notes + EULA draft wiki; author advocates "free and open source" but no standard license file, 2026-10-07)
+- **Free tier:** free desktop app (project appears archived; active community forks)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Purpose-built boarding app; verify fork activity before adopting [Wave 4]
+
+## trippedd (sfx) — 10 entries
+
+#### Kenney (Audio packs) ✅
+- **What:** Thousands of CC0 game-ready SFX (UI, casino, RPG, sci-fi packs)
+- **URL:** https://kenney.nl/assets/casino-audio
+- **License:** CC0 (verified via Kenney site license page, 2026-10-07)
+- **Free tier:** fully free, no attribution required
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 means zero clearance risk — bulk-download UI and action SFX now [Wave 4]
+
+#### Zapsplat ⚠️
+- **What:** Huge SFX/music library with a generous free tier
+- **URL:** https://www.zapsplat.com/license-type/standard-license/
+- **License:** Zapsplat Standard License (verified via official license page: free tier requires attribution, 2026-10-07)
+- **Free tier:** free tier with attribution; paid removes credit requirement
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Breadth of library is unmatched; track attribution credits per episode [Wave 4]
+
+#### SoundBible ⚠️
+- **What:** Community SFX library with per-sound license labels
+- **URL:** http://soundbible.com/about.php
+- **License:** Mixed per-sound licenses (verified via official about page, 2026-10-07) — check each sound
+- **Free tier:** free downloads; license varies by sound
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Good one-off finds; license-check each sound before use [Wave 4]
+
+#### 99Sounds ✅
+- **What:** Curated royalty-free sound design packs (sci-fi, cinematic, foley)
+- **URL:** https://99sounds.org/sci-fi-sounds/
+- **License:** Royalty-free (verified via 99Sounds terms, 2026-10-07)
+- **Free tier:** fully free packs
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cinematic sci-fi packs suit the God-Molecule aesthetic [Wave 4]
+
+#### SampleSwap ⚠️
+- **What:** Remix-friendly loops and samples with commercial-use filters
+- **URL:** https://sampleswap.org/remix-this-track/index.php?pick=1736128490&commercial
+- **License:** Per-track license terms (verified via SampleSwap commercial-use page, 2026-10-07) — filter to commercial-safe tracks
+- **Free tier:** free downloads; commercial use per-track terms
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Remix-ready loops for stingers and transitions; mind per-track terms [Wave 4]
+
+#### Cymatics ✅
+- **What:** Free download vault of samples, loops and SFX packs (royalty-free incl. placements)
+- **URL:** https://cymatics.fm/pages/free-download-vault
+- **License:** Royalty-free incl. placements (verified via Cymatics free download terms, 2026-10-07)
+- **Free tier:** free packs via vault
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern sample quality for hype cuts and trailers [Wave 4]
+
+#### freesfx.co.uk ✅
+- **What:** Large free SFX archive, commercial use allowed with credit
+- **URL:** http://www.freesfx.co.uk/Page/5/Terms-and-Conditions
+- **License:** Free for commercial use with credit (verified via official terms page, 2026-10-07)
+- **Free tier:** free with attribution
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deep archive for hard-to-find foley; keep credit list [Wave 4]
+
+#### Partners In Rhyme ✅
+- **What:** Free royalty-free music loops and sound effects library
+- **URL:** http://www.partnersinrhyme.com/pir/free_music_loops.shtml
+- **License:** Free royalty-free (verified via site terms, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Long-running free library for background loops and ambience [Wave 4]
+
+#### SoundJay ✅
+- **What:** Free royalty-free ambient sounds and SFX collection
+- **URL:** https://www.soundjay.com/ambient-sounds.html
+- **License:** Free royalty-free (verified via SoundJay terms, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ambient beds for scene atmosphere, zero clearance friction [Wave 4]
+
+#### Sonniss GDC Audio Bundle ✅
+- **What:** Annual GDC bundle of thousands of royalty-free game audio files from top designers
+- **URL:** https://sonniss.com/gameaudiogdc/
+- **License:** Royalty-free, no-AI-training restriction (verified via Sonniss GDC terms, 2026-10-07)
+- **Free tier:** fully free annual bundle
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Highest-value single SFX haul available — pro quality, no clearance risk [Wave 4]
+
+## trippedd (music) — 14 entries
+
+#### Riffusion ✅
+- **What:** Real-time music generation via stable diffusion on spectrograms (hobby fork of riffusion/riffusion)
+- **URL:** https://github.com/mzhyui/riffusion-hobby
+- **License:** MIT (verified via MIT license badge on repo README, 2026-10-07) — fork is unmaintained mirror of riffusion/riffusion
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Spectrogram-diffusion music gen; MIT code but fork is unmaintained — evaluate stability [Wave 4]
+
+#### AudioLDM ⚠️
+- **What:** Text-to-audio/music generation with latent diffusion
+- **URL:** https://github.com/haoheliu/AudioLDM
+- **License:** NOASSERTION / research-NC upstream terms (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** research use
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research reference for text-to-music; not for shipped audio [Wave 4]
+
+#### ACE-Step ✅
+- **What:** Open music generation foundation model (song structure, vocals + accompaniment)
+- **URL:** https://github.com/ace-step/ACE-Step
+- **License:** Apache-2.0 code (verified via GitHub API license endpoint, 2026-10-07); model weights under separate terms — check per weight
+- **Free tier:** fully open code; weights per their terms
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Full-song generation candidate for original episode score beds [Wave 4]
+
+#### YuE ✅
+- **What:** Open full-song generation with lyrics following (multilingual vocals)
+- **URL:** https://github.com/m-a-p/YuE
+- **License:** Apache-2.0 code (verified via GitHub API license endpoint, 2026-10-07); weights under separate terms — check per weight
+- **Free tier:** fully open code; weights per their terms
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Lyrics-following songs could produce original character themes [Wave 4]
+
+#### audiocraft ✅
+- **What:** Meta's audio/music generation research code (MusicGen, AudioGen, EnCodec)
+- **URL:** https://github.com/facebookresearch/audiocraft
+- **License:** MIT code (verified via GitHub API license endpoint, 2026-10-07); MusicGen weights CC-BY-NC — research only for those weights
+- **Free tier:** fully open code; NC weights restricted
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strong research base; keep NC-weighted outputs out of shipped audio [Wave 4]
+
+#### DiffSinger ✅
+- **What:** Diffusion-based singing voice synthesis system (SVS, not conversion)
+- **URL:** https://github.com/MoonInTheRiver/DiffSinger
+- **License:** MIT (verified via raw LICENSE fetch from repo master, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Synthesize sung vocals for original songs — pairs with DDSP-SVC conversion [Wave 4]
+
+#### MusicLDM ⚠️
+- **What:** Text-to-music generation via latent diffusion (updated fork of haoheliu/musicldm)
+- **URL:** https://github.com/99percentgod/musicldm
+- **License:** CC BY-NC-SA (verified via repo README "MusicLDM is licensed under the CC BY-NC-SA license", 2026-10-07)
+- **Free tier:** fully open code; NC outputs only
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Text-to-music research option; non-commercial only [Wave 4]
+
+#### Chosic ✅
+- **What:** Curated directory of CC-licensed music with download links
+- **URL:** https://www.chosic.com/download-audio/
+- **License:** CC licenses per track (verified via Chosic download page, 2026-10-07)
+- **Free tier:** free; attribution per track license
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fastest route to licensed background tracks with clear per-track terms [Wave 4]
+
+#### StreamBeats ✅
+- **What:** Harris Heller's DMCA-safe music catalog for creators
+- **URL:** https://streambeats.com/about/
+- **License:** Creator-safe license (verified via StreamBeats about page, 2026-10-07)
+- **Free tier:** free to use for creators
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DMCA-safe by design — good for YouTube-distributed episodes [Wave 4]
+
+#### Fesliyan Studios ⚠️
+- **What:** Free background music for personal/non-commercial use with credit; commercial needs donation
+- **URL:** https://fesliyanstudios.com/policy
+- **License:** Free NC with credit (verified via official policy page, 2026-10-07) — commercial requires donation/license
+- **Free tier:** free for non-commercial with credit
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Non-commercial only — fine for internal cuts, not for monetized episodes [Wave 4]
+
+#### Mobygratis ⚠️
+- **What:** Moby's free music for non-commercial/de minimis creative use
+- **URL:** https://support.mobygratis.com/article/25-can-i-use-mobygratis-music-for-commercial-purposes
+- **License:** Non-commercial / de minimis terms (verified via official support article, 2026-10-07)
+- **Free tier:** free for qualifying non-commercial use
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** High-profile tracks but strict NC terms — read the article before any use [Wave 4]
+
+#### Jamendo ⚠️
+- **What:** Large indie music catalog; free downloads are personal-use only
+- **URL:** https://www.jamendo.com
+- **License:** Personal-use free downloads (verified via Jamendo terms, 2026-10-07); commercial use needs Jamendo Licensing
+- **Free tier:** free personal downloads; commercial via paid licensing
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery source only — free tier is not commercial-safe [Wave 4]
+
+#### Audionautix ✅
+- **What:** Jason Shaw's CC-BY 4.0 music library (attribution required)
+- **URL:** https://audionautix.com/creative-commons-music
+- **License:** CC BY 4.0 (verified via Audionautix creative-commons page, 2026-10-07)
+- **Free tier:** free with attribution
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reliable CC-BY catalog; keep attribution list per episode [Wave 4]
+
+#### Open Music Archive ✅
+- **What:** Public-domain (UK) out-of-copyright recordings and sheet music
+- **URL:** http://www.openmusicarchive.org/
+- **License:** Public domain (verified via Open Music Archive about page, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD recordings for period/atmospheric moments with zero clearance [Wave 4]
+
+## trippedd (upscalers) — 12 entries
+
+#### CAIN ✅
+- **What:** Channel-attention video frame interpolation network
+- **URL:** https://github.com/myungsub/CAIN
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lightweight VFI option for smoothing low-fps animation passes [Wave 4]
+
+#### Super-SloMo ✅
+- **What:** Classic high-quality slow-motion frame interpolation (archived reference)
+- **URL:** https://github.com/avinashpaliwal/Super-SloMo
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07) — archived
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Benchmark-quality slow-mo; archived so prefer RIFE/FILM for new work [Wave 4]
+
+#### EMA-VFI ✅
+- **What:** Efficient video frame interpolation with multi-scale attention
+- **URL:** https://github.com/MCG-NJU/EMA-VFI
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Efficient VFI for batch-processing episode footage [Wave 4]
+
+#### RealBasicVSR ✅
+- **What:** Real-world video super-resolution with basicVSR++ backbone
+- **URL:** https://github.com/ckkelvinchan/RealBasicVSR
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Real-world VSR for cleaning compressed or noisy footage [Wave 4]
+
+#### FLAVR ✅
+- **What:** Flow-agnostic video representations for interpolation and SR
+- **URL:** https://github.com/tarun005/FLAVR
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Single model for both interpolation and super-resolution [Wave 4]
+
+#### DiffBIR ✅
+- **What:** Diffusion-based blind image restoration (denoise/deblur/upscale)
+- **URL:** https://github.com/XPixelGroup/DiffBIR
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diffusion restoration rescues degraded frames that classic SR can't [Wave 4]
+
+#### Restormer ✅
+- **What:** Efficient transformer for high-res image restoration tasks
+- **URL:** https://github.com/swz30/Restormer
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** General restoration workhorse for stills and keyframes [Wave 4]
+
+#### DAIN ✅
+- **What:** Depth-aware video frame interpolation
+- **URL:** https://github.com/baowenbo/DAIN
+- **License:** MIT (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Depth-aware interpolation reduces occlusion artifacts in motion shots [Wave 4]
+
+#### AdaCoF ✅
+- **What:** Adaptive collaboration of flows for video frame interpolation
+- **URL:** https://github.com/HyeongminLEE/AdaCoF-pytorch
+- **License:** MIT (verified via raw LICENSE fetch from repo master, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Adaptive warping handles complex motion better than fixed-kernel VFI [Wave 4]
+
+#### XVFI ⚠️
+- **What:** 4K extreme video frame interpolation network
+- **URL:** https://github.com/jihyongoh/xvfi
+- **License:** Research-and-education-only (verified via LDMVFI arXiv license table, 2026-10-07) — not commercial-safe
+- **Free tier:** research/education only
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** 4K-capable VFI for research passes only; not for shipped footage [Wave 4]
+
+#### RIFE ✅
+- **What:** Real-time intermediate flow estimation for video frame interpolation
+- **URL:** https://github.com/hzwer/ECCV2022-RIFE
+- **License:** MIT (verified via multiple third-party license notices citing RIFE's MIT license, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The practical VFI standard — fast, good quality, easy to wire into the render pipeline [Wave 4]
+
+#### FILM ✅
+- **What:** Google's frame interpolation for large motion (single unified model)
+- **URL:** https://github.com/google-research/frame-interpolation
+- **License:** Apache-2.0 (verified via GitHub repo license field, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (upscalers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Best open option for large-motion shots where RIFE struggles [Wave 4]
+
+## both (background) — 14 entries
+
+#### FLUX.1 ✅
+- **What:** Black Forest Labs image generation family (schnell/dev/pro model line)
+- **URL:** https://github.com/black-forest-labs/flux
+- **License:** Apache-2.0 code (verified via GitHub API license endpoint, 2026-10-07); schnell weights Apache-2.0, dev weights non-commercial
+- **Free tier:** fully open code; weights per variant terms
+- **Repo lane:** both (background)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Current open image-gen quality bar for backgrounds and key art [Wave 4]
+
+#### PixArt-Sigma ✅
+- **What:** High-resolution text-to-image diffusion (up to 4K)
+- **URL:** https://github.com/PixArt-alpha/PixArt-Sigma
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** 4K-native generation for detailed establishing shots [Wave 4]
+
+#### Kolors ✅
+- **What:** Kwai text-to-image model with strong photorealism
+- **URL:** https://github.com/Kwai-Kolors/Kolors
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Photoreal plate option for live-action-style backgrounds [Wave 4]
+
+#### Kandinsky 3 ✅
+- **What:** Sber text-to-image with strong style and composition control
+- **URL:** https://github.com/ai-forever/Kandinsky-3
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Stylized generation for branded show aesthetics [Wave 4]
+
+#### Qwen-Image ✅
+- **What:** Alibaba multimodal image generation with strong text rendering
+- **URL:** https://github.com/QwenLM/Qwen-Image
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Accurate in-image text for signage and title backgrounds [Wave 4]
+
+#### StockSnap ✅
+- **What:** Large CC0 stock photo library, trending-curated
+- **URL:** https://stocksnap.io/search/photo/sort/trending/desc
+- **License:** CC0 (verified via StockSnap license page, 2026-10-07)
+- **Free tier:** fully free, no attribution required
+- **Repo lane:** both (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 photo plates with zero clearance risk for backgrounds [Wave 4]
+
+#### Gratisography ✅
+- **What:** Quirky high-res free photos under the Gratisography License (CC0-like)
+- **URL:** https://gratisography.com/about-website/
+- **License:** Gratisography License — free personal and commercial use (verified via official about page, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** both (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinctive stylized photos for offbeat scene dressing [Wave 4]
+
+#### SplitShire ✅
+- **What:** Free CC0 stock photos and videos from Daniel Nanescu
+- **URL:** http://www.splitshire.com/about/
+- **License:** CC0 (verified via SplitShire about page, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** both (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 photos + video clips for plates and cutaway footage [Wave 4]
+
+#### New Old Stock ✅
+- **What:** Public-domain vintage photos from institutional archives
+- **URL:** http://nos.twnsnd.co/rights-and-usage
+- **License:** Public domain (verified via rights-and-usage page, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** both (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD vintage imagery for flashback and period scenes [Wave 4]
+
+#### TextureCan ✅
+- **What:** Free CC0 PBR textures for 3D work
+- **URL:** https://www.texturecan.com/terms/
+- **License:** CC0 (verified via TextureCan terms page, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** both (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 PBR textures for the 3D environment pipeline [Wave 4]
+
+#### ShareTextures ⚠️
+- **What:** Free PBR texture library under a custom CC0-based license
+- **URL:** https://www.sharetextures.com/p/license
+- **License:** Custom CC0-based license (verified via official license page, 2026-10-07) — read the page before redistribution
+- **Free tier:** fully free
+- **Repo lane:** both (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Large PBR library; custom license needs a read before shipping assets [Wave 4]
+
+#### Quaternius ✅
+- **What:** CC0 pixel-art asset packs (characters, tiles, props)
+- **URL:** https://quaternius.com/
+- **License:** CC0 (verified via Quaternius site license statement, 2026-10-07)
+- **Free tier:** fully free
+- **Repo lane:** both (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 pixel assets for retro-styled segments and UI [Wave 4]
+
+#### InvokeAI ✅
+- **What:** Local Stable Diffusion / FLUX studio with node-based workflows
+- **URL:** https://github.com/invoke-ai/InvokeAI
+- **License:** Apache-2.0 (verified via GitHub repo license field, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The local generation workstation for all background/plate work [Wave 4]
+
+#### ControlNet ✅
+- **What:** Conditional control (pose, depth, edges) for diffusion image generation
+- **URL:** https://github.com/lllyasviel/ControlNet
+- **License:** Apache-2.0 (verified via repo LICENSE, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** both (background)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Pose/depth control keeps generated backgrounds consistent with 3D blocking [Wave 4]
+
+## trippedd (image-to-video) — 11 entries
+
+#### Wan 2.1 ✅
+- **What:** Open video generation model (text-to-video and image-to-video)
+- **URL:** https://github.com/Wan-Video/Wan2.1
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Leading open video model — the image-to-video workhorse candidate [Wave 4]
+
+#### Open-Sora ✅
+- **What:** Open-source Sora-class video generation (HPC-AI Tech)
+- **URL:** https://github.com/hpcaitech/Open-Sora
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Full training pipeline open — research path for custom show models [Wave 4]
+
+#### Allegro ✅
+- **What:** Open text-to-video with high motion quality (Rhymes AI)
+- **URL:** https://github.com/rhymes-ai/Allegro
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Strong motion quality for action-scene generation [Wave 4]
+
+#### ToonCrafter ✅
+- **What:** Generative cartoon interpolation (turn two drawings into animation)
+- **URL:** https://github.com/Doubiiu/ToonCrafter
+- **License:** Apache-2.0 (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Keyframe-to-animation for the cartoon look — huge for episode 1 style [Wave 4]
+
+#### MimicMotion ⚠️
+- **What:** High-quality human motion video generation (Tencent)
+- **URL:** https://github.com/tencent-ailab/MimicMotion
+- **License:** NOASSERTION — no declared license; research-intent terms (verified via GitHub API license endpoint, 2026-10-07)
+- **Free tier:** research use
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Motion quality reference only until Tencent clarifies terms [Wave 4]
+
+#### DynamiCrafter ⚠️
+- **What:** Open-domain image-to-video diffusion (animate stills with text prompts)
+- **URL:** https://github.com/Doubiiu/DynamiCrafter
+- **License:** Research / personal / non-commercial only (verified via Hugging Face model card "for RESEARCH purposes... personal/research/non-commercial purposes", 2026-10-07)
+- **Free tier:** research and non-commercial use only
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Stills-to-video for pre-vis; not for shipped footage [Wave 4]
+
+#### i2vgen-xl ⚠️
+- **What:** High-definition cascaded image-to-video generation (ali-vilab/VGen)
+- **URL:** https://github.com/ali-vilab/VGen
+- **License:** NOASSERTION — no declared license upstream (verified via GitHub API license endpoint, 2026-10-07); downstream projects describe related weights as MIT — unconfirmed
+- **Free tier:** unclear — treat as research
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** HD image-to-video research option; license ambiguity blocks shipping use [Wave 4]
+
+#### MagicAnimate ✅
+- **What:** Temporally consistent human image animation with dense motion modeling
+- **URL:** https://github.com/magic-research/magic-animate
+- **License:** BSD-3-Clause (verified via ecosyste.ms license data + fork READMEs, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Animate character stills with dance/motion sequences for music moments [Wave 4]
+
+#### AnimateAnyone ✅
+- **What:** Pose-driven consistent character video generation
+- **URL:** https://github.com/HumanAIGC/AnimateAnyone
+- **License:** Apache-2.0 (verified via GitHub repo license field, 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Drive character art with pose sequences — mocap-to-cartoon pathway [Wave 4]
+
+#### LTX-Video ✅
+- **What:** Lightricks real-time DiT video generation (fast, high quality)
+- **URL:** https://github.com/Lightricks/LTX-Video
+- **License:** Apache-2.0 code (verified via GitHub repo license field, 2026-10-07); model weights under Lightricks LTX-Video license — check terms
+- **Free tier:** fully open code; weights per Lightricks terms
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Real-time speed enables interactive iteration on video shots [Wave 4]
+
+#### Mochi-1 ✅
+- **What:** Genmo open video generation model (high-fidelity motion)
+- **URL:** https://github.com/genmoai/mochi
+- **License:** Apache-2.0 (verified via diffusers docs + Genmo README "released under a permissive Apache 2.0 license", 2026-10-07)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (image-to-video)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Fully permissive high-quality video gen — strong shipping candidate [Wave 4]

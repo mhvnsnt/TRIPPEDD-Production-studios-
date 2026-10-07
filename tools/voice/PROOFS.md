@@ -40,3 +40,7 @@ synthesis stream. No `edge_tts_test.mp3` was produced (a 0-byte file from
 the failed run was deleted, not kept). Re-run the README command on an
 unrestricted network to complete the smoke test. The scratch-VO caveat
 in `README.md` (unofficial endpoint, throttling risk) stands regardless.
+
+## Wave-2 retry (2026-10-07): STILL BLOCKED
+
+Retried with the documented workaround (`edge-tts --proxy "$https_proxy"`), edge-tts 7.2.8 fresh-installed. Result: identical `aiohttp.client_exceptions.SocketTimeoutError: Timeout on reading data from socket` on the wss handshake to `speech.platform.bing.com`; output file 0 bytes. The sandbox egress proxy still completes plain HTTPS but not the WebSocket upgrade. Conclusion unchanged: edge-tts synthesis is not usable from this sandbox; retry only on an open network (local machine, CI runner, or VPS). The proxy env-var workaround is necessary but not sufficient here.

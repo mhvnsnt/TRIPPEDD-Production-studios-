@@ -79,6 +79,11 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 - Shotcut, Olive, Flowblade, LosslessCut, OpenShot are GPL; Video2X and FlowFrames are AGPL — quarantined; Pitivi is LGPL-2.1 and stays off this list.
 - eSpeak-NG and RHVoice are GPL — quarantined; note RHVoice Lab's prebuilt *voices* are CC-BY-NC-ND — never ship those voices regardless.
 - Piper CORRECTION 2026-10-07: the pip-installable `piper-tts` 1.8.0 is GPL-3.0-or-later per its own PyPI metadata (OHF-voice/piper1-gpl) — quarantined. Wired only as a separate local process, never linked. The archived rhasspy/piper MIT version is not what pip installs; do not treat any `pip install piper-tts` as MIT.
+## Notes from Wave-5 research (Worker D, 2026-10-07)
+
+- No new quarantine rows this wave (max stays at 65). Reads done: nari-labs/Dia (Apache-2.0), microsoft/VibeVoice (MIT code license — but research-only model designation), Zyphra/Zonos (Apache-2.0; org renamed ZyphraAI → Zyphra; ZONOS2 is a separate MIT model), Oculus SDK License (proprietary EULA — NOT copyleft; commercial use expressly permitted per §2.1).
+- Zonos' eSpeak-NG phonemization dependency (GPL-3.0, quarantine row 7) is already covered; standalone-binary-use doctrine stands. Dia/VibeVoice are permissively licensed (no copyleft) but gated by vendor research-intent terms — documented in docs/VOICE_COMMERCIAL_USE_WAVE5.md, not here.
+
 ## Notes from Wave-3 research
 
 - Wave 3 added 6 quarantined items (total 56): Goo Engine, Blender-StellarToon, 2D-Cel-Toon-Shader-v2-Plus, manga-image-translator, comic-text-detector (all GPL-3.0), libre-manga-translator (AGPL-3.0-or-later) — all anime/2D tooling, study-only.

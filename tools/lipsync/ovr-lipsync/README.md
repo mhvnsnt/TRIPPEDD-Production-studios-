@@ -10,13 +10,72 @@ where a Python diffusion pipeline is overkill.
 - Upstream: Meta for Developers → Downloads → **Oculus Lipsync SDK**
   (`https://developers.meta.com/vr/downloads/package/oculus-lipsync-sdk/`)
 - License: **Oculus SDK License** (proprietary Meta EULA — NOT OSI-approved).
-  Every mirror of the plugin (aerovfx/ovrlipsync-ue5, metyatech/ovrlipsync,
-  viniciushelder/ovrlipsync-ue5, avatarsdk sample, Shiyatzu) states it
-  *"allows for personal and commercial use"*. The canonical license text at
-  `developer.oculus.com/licenses/...` returned **HTTP 403** from this sandbox,
-  so the primary source is UNVERIFIED here — the owner (or a GPU/network
-  worker) must read the actual EULA before commercial ship. Badge:
-  **commercial-OK-per-mirrors / proprietary-EULA-verify-before-ship**.
+
+## EULA READ — Wave 5 (2026-10-07)
+
+The actual Oculus SDK License Agreement **v3.5 text was read this wave** from an
+independent full-text mirror (scancode LicenseDB, `oculus-sdk-3.5`;
+canonical `developer.oculus.com/licenses/audio-3.3/` still returns HTTP 403
+from this sandbox — the lipsync package's exact variant text remains
+owner-read at download time). Commercial-use verdict from the license itself:
+
+- §2.1 (REDISTRIBUTION): *"You may sublicense and redistribute the source,
+  binary, or object code of the Oculus SDK in whole for no charge **or as part
+  of a for-charge piece of Developer Content**"* — commercial ("for-charge")
+  use is **expressly permitted**, with conditions:
+  (a) the SDK must be redistributed **in its entirety** (no cherry-picking the
+  `.so`/`.dll` out alone for redistribution — shipping it *inside* our
+  Developer Content binary is the allowed form);
+  (b) Developer Content using the SDK may only be used with **Oculus Approved
+  Products** and must not interface with unauthorized commercial headsets /
+  hardware;
+  (c) must ship the copyright notice *"Copyright © Facebook Technologies, LLC
+  and its affiliates. All rights reserved."* and a copy of the License itself.
+- §1.1: grant covers making "engines, tools, applications, content, games and
+  demos" ("Developer Content") incorporating the SDK; §1.2: **you retain all
+  rights to your Developer Content** — no obligation to share source with
+  Meta/Oculus.
+- §1.4: NO decompile / reverse-engineer / disassemble the SDK, and no use of
+  Oculus trade names/trademarks to endorse products (§6).
+
+CAVEATS (keep badge honest):
+1. The mirror text is the general v3.5 SDK license; the lipsync download page
+   points at the **audio-3.3 license variant** — owner MUST read the license
+   file shipped inside the downloaded zip before any commercial ship.
+2. The "Oculus Approved Products" clause (§2.1) is the sharpest restriction:
+   confirm OVRLipSync usage in a desktop pipeline tool (not targeting Oculus
+   hardware) is acceptable under the audio-variant text — the viseme library
+   itself is platform-agnostic (Win/Mac/Linux/Android .so/.dll/.dylib ship in
+   the same package).
+3. Do NOT commit the SDK binary to git until the audio-3.3 license text is
+   read; staging dir is `.gitignore`d already (`sdk/` + `__pycache__/`).
+
+Badge after Wave 5: **commercial-OK-per-license-text (§2.1 for-charge clause)
+— VERIFY-AUDIO-3.3-VARIANT-BEFORE-SHIP** (upgraded from
+"commercial-OK-per-mirrors"; the mirror consensus of 8 independent plugin
+mirrors — avatarsdk ×2, viniciushelder/ovrlipsync-ue5, gotzawal, metyatech,
+sgeraldes, brandonkanaday92-spec, Shiyatzu — uniformly states "allows for
+personal and commercial use").
+
+## OWNER DOWNLOAD STEPS (exact — Wave 5)
+
+No agent login is attempted. Owner does this in ~5 minutes:
+
+1. Go to `https://developers.meta.com/vr/downloads/package/oculus-lipsync-sdk/`
+   and **sign in** with your Meta developer account.
+2. Download the **Oculus Lipsync SDK** zip (choose the Unity *or* Native
+   package — Native is what the pipeline needs; Unity/Unreal plugin folders
+   come in the same zip).
+3. Unzip. You will see `OculusLipsyncSDK/` containing `LibOVRLipSync/`
+   (platform natives), `Include/OVRLipSync.h`, `Unity/`, `Unreal/`, and the
+   **license text file** — READ THAT FILE FIRST (audio-variant terms).
+4. Stage into this lane: copy `LibOVRLipSync/<platform>/libovrlipsync.*`
+   (e.g. `Linux/libovrlipsync.so` for the pipeline box) + `Include/OVRLipSync.h`
+   into `tools/lipsync/ovr-lipsync/sdk/`. **Do not `git add` the binary** —
+   `.gitignore` keeps it local until the audio-3.3 license is read.
+5. Hand back to an agent: wire the C API (signatures above), feed the test
+   WAV, record the viseme stream, assert non-silent visemes during speech
+   frames (proof: `tools/lipsync/PROOFS_WAVE4_LIPSYNC.md`).
 
 ## Status
 

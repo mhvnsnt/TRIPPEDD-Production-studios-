@@ -22479,8 +22479,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** N/A (pip)
 - **Repo lane:** trippedd (audio/restoration)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** The quick-win denoiser for archive audio — stationary-noise profile, no training, no GPU. [Wave 22 Lane A]
+- **Status:** WIRED — run-proven (Wave 52 Lane C)
+- **Notes:** The quick-win denoiser for archive audio — stationary-noise profile, no training, no GPU. [Wave 22 Lane A] Proof: tools/wave52_lane_c/wire_audio_mastering.py + proofs/audio_mastering/ — Wave 51 Kokoro VO with calibrated -40 dBFS white-noise control: silence-region noise floor suppressed -27.0 dB, speech-region corr(denoised,clean)=0.98; clean VO with silence-derived noise profile is a safe no-op (RMS delta -1.1%, corr 0.99979). NEGATIVE CONTROL: stationary mode with no noise profile removed 70.6% of clean-VO RMS — production rule: never run blind, always profile from silence/room tone. Byte-deterministic. [Wave 52 Lane C]
 
 #### audiomentations ✅ commercial-safe
 - **What:** Audio augmentation library — pitch shift, time stretch, noise/reverb injection for training robust audio models
@@ -46380,3 +46380,23 @@ Pocket 1: PD cartoon/film-music long tail (24). Pocket 2: non-European demoparti
 - ⚠️ per-item caution: 28 (8 research-only AI models with no public release, 4 commercial AI video SaaS, Zeroscope NC, ModelScope NC-ND, Flax EULA, 4 commercial OTR vendors, Aminet mixed licenses, Renoise paid)
 - 🚫 quarantined: 1 (row 476, Tiled GPL-2.0-or-later → manifest only, never shipping entries)
 - Zero post-hoc duplicates: every candidate pre-grepped (title + URL + same-resource check) against the full catalog and quarantine manifest before appending; one post-hoc duplicate caught and removed (BeepBox — same-resource/different-URL miss in pre-append sweep); `grep -c '^####'` = 4,541 exact
+
+## Wave 52 Lane C — wired tools (2026-10-08)
+
+Lane C wired 2 permissive-licensed audio tools with real proofs, extending the Wave 51 text->VO->lip-sync pipeline with a denoise + loudness-mastering stage. No new quarantine rows.
+
+#### pyloudnorm ✅ commercial-safe
+- **What:** ITU-R BS.1770 loudness normalization in pure Python — normalize VO/music to broadcast/podcast LUFS targets (two-pass: loudness gain + true-peak limit)
+- **URL:** https://github.com/csteinmetz1/pyloudnorm
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** N/A (pip)
+- **Repo lane:** trippedd (audio/mastering)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** WIRED — run-proven (Wave 52 Lane C)
+- **Notes:** Proof: tools/wave52_lane_c/wire_audio_mastering.py + proofs/audio_mastering/ — Wave 51 Kokoro VO (7.825 s, 24 kHz mono) mastered to -16.0 LUFS stereo podcast (ebur128-measured -17.0 LUFS after -1.0 dBTP true-peak limiting via ffmpeg alimiter) and -24.0 LUFS mono broadcast (-23.9 LUFS, peak -4.3 dBFS); ffmpeg ebur128 cross-check agrees with pyloudnorm's meter to 0.12 LU; byte-deterministic. Production rules: compute loudness gain on the FINAL channel layout (dual-mono stereo reads +3 LU vs mono under BS.1770); peak-limit in float domain before PCM16 quantization (linear attenuation can't un-clip). [Wave 52 Lane C]
+
+### Wave 52 Lane C summary (2026-10-08)
+- New #### entries: 1 (pyloudnorm); 1 status flip not-started -> WIRED (noisereduce)
+- Catalog: 4,541 -> 4,542 honest entries (`grep -c '^####'`)
+- Quarantine: unchanged (no GPL code linked/imported; ffmpeg used only as external binary)
+- Honest findings: noisereduce blind stationary mode destroys program audio (70.6% RMS loss — documented negative control); global SNR-vs-pristine rejected as a denoise metric (segmental metrics used); linear peak attenuation rejected (can't un-clip PCM16 rail)

@@ -761,16 +761,6 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** wiring-wave-1
 - **Notes:** One-command 'stable-ts audio.mp3 -o out.srt' with reliable word boundaries. Sits on OpenAI whisper (MIT) + optional Silero VAD (MIT).
 
-#### aeneas 🚫 AGPL-3.0 — quarantine-only (corrected Wave 3: was wrongly badged ✅)
-- **What:** Forced aligner: sync a known script to its narration audio, output fragment timestamps
-- **URL:** https://github.com/readbeyond/aeneas
-- **License:** AGPL-3.0 (verified via upstream README 'the GNU Affero General Public License Version 3') (verified)
-- **Free tier:** fully open
-- **Repo lane:** trippedd (captions)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
-- **Notes:** QUARANTINE (AGPL). Different job than Whisper: when you HAVE the script (episode dialogue scripts exist!), aeneas gives exact line timings for caption/dub sync.
-
 #### autosub ✅ commercial-safe
 - **What:** Legacy CLI auto-subtitler (Google Speech API based)
 - **URL:** https://github.com/agermanidis/autosub
@@ -4430,16 +4420,6 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Status:** UNWIRED
 - **Notes:** Contradictory terms between posts and FAQ = badge ❓. Only use for non-monetized cuts unless a purchased license is on file. Do not rely on "free" posts alone. [Wave 5]
 
-#### Meta Sound Collection 🚫 not commercial-safe
-- **What:** Meta's built-in music/SFX library inside Creator Studio (Facebook/Instagram publishing)
-- **URL:** https://www.facebook.com/sound/collection/terms
-- **License:** Sound Collection Terms (verified verbatim, last modified March 16, 2022): "license to use the SC Audio Content for commercial or non-commercial purposes in content you create, upload, and distribute on the Meta Company Products ... only. You may not ... otherwise use the SC Audio Content separately from the Meta Company Products." — 2026-10-07
-- **Free tier:** free within Meta products
-- **Repo lane:** trippedd (music)
-- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
-- **Status:** UNWIRED
-- **Notes:** 🚫 NOT game-safe: rights do not travel off Meta platforms (YouTube uploads can trigger mutes/blocks). Only usable for episodes distributed natively on Facebook/Instagram. Included as a warning entry. [Wave 5]
-
 #### Spinningmerkaba 🚫 not commercial-safe
 - **What:** Electronic/ambient instrumentals (often suggested as royalty-free)
 - **URL:** https://freemusicarchive.org/music/spinningmerkaba/
@@ -5496,46 +5476,6 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Status:** not-started
 - **Notes:** No attribution required on any file — cleanest attribution-free SFX source after Sonniss. [Wave 6]
 
-#### Kenney — Interface Sounds ✅ commercial-safe
-- **What:** 300+ UI/click/hover/game-interface sounds (OGG + WAV)
-- **URL:** https://kenney.nl/assets/interface-sounds
-- **License:** CC0 / public domain (verified via kenney.nl license page — all Kenney assets are public domain)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (sfx)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Purpose-built for UI/menu/cartoon HUD sounds — direct fit for episode menu and in-game UI beds. [Wave 6]
-
-#### Kenney — Digital Audio ✅ commercial-safe
-- **What:** 200+ retro/digital bleeps, alarms and electronic SFX (OGG + WAV)
-- **URL:** https://kenney.nl/assets/digital-audio
-- **License:** CC0 / public domain (verified via kenney.nl license page)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (sfx)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Good for sci-fi/comedy cartoon stingers and transition zaps. [Wave 6]
-
-#### Kenney — Impact Sounds ✅ commercial-safe
-- **What:** 200+ hits, thuds, crashes and combat impacts (OGG + WAV)
-- **URL:** https://kenney.nl/assets/impact-sounds
-- **License:** CC0 / public domain (verified via kenney.nl license page)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (sfx)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Fight-scene foley bed — punches, slams, whooshes without any licensing friction. [Wave 6]
-
-#### Kenney — RPG Audio ✅ commercial-safe
-- **What:** 300+ fantasy/adventure SFX — magic, coins, footsteps, ambience (OGG + WAV)
-- **URL:** https://kenney.nl/assets/rpg-audio
-- **License:** CC0 / public domain (verified via kenney.nl license page)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (sfx)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Magic/ambience layer for the Wizard Gang cartoon's spell and portal scenes. [Wave 6]
-
 #### Kenney.nl — all-assets public domain ✅ commercial-safe
 - **What:** Meta-entry: every asset on kenney.nl (audio, sprites, 3D, fonts) is public domain
 - **URL:** https://kenney.nl/assets
@@ -5688,16 +5628,6 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Status:** not-started
 - **Notes:** Dialogue-first TTS — candidate for the Wizard Gang's conversational scenes alongside Dia/Dia2. [Wave 6]
 
-#### Chatterbox (Resemble AI) ✅ commercial-safe
-- **What:** Resemble AI's open TTS/voice-cloning model with emotion control
-- **URL:** https://github.com/resemble-ai/chatterbox
-- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
-- **Free tier:** fully open
-- **Repo lane:** god-molecule (tts)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** MIT from a commercial vendor (Resemble AI) is the cleanest license story in this lane — zero-shot cloning with no NC strings. [Wave 6]
-
 #### KittenTTS ✅ commercial-safe
 - **What:** Ultra-lightweight TTS (~15MB models) — CPU-friendly edge narration
 - **URL:** https://github.com/KittenML/KittenTTS
@@ -5747,16 +5677,6 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** ⚠️ The existing "Coqui TTS ✅" line understates this: MPL-2.0 is file-level copyleft — fine to *use*, but any modified MPL files you ship must stay MPL. Read the license before vendoring code. [Wave 6]
-
-#### GPT-SoVITS ✅ commercial-safe
-- **What:** Few-shot voice conversion + TTS (1-min data cloning), strong Chinese/English/Japanese
-- **URL:** https://github.com/RVC-Boss/GPT-SoVITS
-- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
-- **Free tier:** fully open
-- **Repo lane:** god-molecule (voice-clone)
-- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** MIT few-shot cloner — pairs with RVC/Applio in the voice-conversion lane; 1-minute reference requirement fits owner-consent casting. [Wave 6]
 
 #### VALL-E X (Plachtaa implementation) ✅ commercial-safe
 - **What:** Community implementation of Microsoft's VALL-E X zero-shot cross-lingual TTS (EN/ZH/JA)
@@ -6062,16 +5982,6 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Status:** not-started
 - **Notes:** CORRECTION of the old NC suspicion — upstream is plain MIT. 2x/3x/4x SE models are the fastest anime upscalers per quality point; nihui's ncnn-Vulkan ports inherit the MIT terms. [Wave 6]
 
-#### CodeFormer 🚫 not commercial-safe
-- **What:** Transformer face restoration (VQGAN codebook) — license verification
-- **URL:** https://github.com/sczhou/CodeFormer
-- **License:** Custom non-commercial (verified: root LICENSE fetched 2026-10-07 — S-Lab research license)
-- **Free tier:** open for non-commercial
-- **Repo lane:** trippedd (upscale)
-- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Research lane only — face-restoration for character close-ups must use GFPGAN (Apache-2.0) instead on shipping paths. [Wave 6]
-
 #### GFPGAN ✅ commercial-safe
 - **What:** Tencent ARC face restoration (GAN prior) — the commercial-safe face fixer
 - **URL:** https://github.com/TencentARC/GFPGAN
@@ -6274,46 +6184,6 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Status:** not-started
 - **Notes:** MAJOR CORRECTION: the task brief assumed MIT — the repo is AGPL-3.0. Quarantined immediately; face-detailing on shipping paths must use another route. [Wave 6]
 
-#### LivePortrait ✅ commercial-safe
-- **What:** KwaiVGI's efficient portrait animation (single image → talking head)
-- **URL:** https://github.com/KwaiVGI/LivePortrait
-- **License:** MIT (verified: root LICENSE fetched 2026-10-07)
-- **Free tier:** fully open
-- **Repo lane:** god-molecule (anime-tooling)
-- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** MIT talking-head animation — direct fit for dialogue close-ups in the cartoon; real-time capable. [Wave 6]
-
-#### LatentSync ✅ commercial-safe
-- **What:** ByteDance latent-space lip sync (audio → talking video)
-- **URL:** https://github.com/bytedance/LatentSync
-- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
-- **Free tier:** fully open
-- **Repo lane:** god-molecule (anime-tooling)
-- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Apache-2.0 lip-sync that complements Rhubarb (phoneme) with pixel-level sync — evaluate against Wav2Lip (NC) for the dialogue pipeline. [Wave 6]
-
-#### MuseTalk ✅ commercial-safe
-- **What:** Real-time talking-face generation (TMElyralab)
-- **URL:** https://github.com/TMElyralab/MuseTalk
-- **License:** Apache-2.0 (verified: root LICENSE fetched 2026-10-07)
-- **Free tier:** fully open
-- **Repo lane:** god-molecule (anime-tooling)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Real-time avatar lane — candidate for live/preview dialogue before committing to heavier renders. [Wave 6]
-
-#### SadTalker ✅ commercial-safe
-- **What:** Single-image talking-head with 3D coefficients (OpenTalker)
-- **URL:** https://github.com/OpenTalker/SadTalker
-- **License:** Apache-2.0 (verified: README "The license has been updated to Apache 2.0, and we've removed the non-commercial restriction", 2026-10-07)
-- **Free tier:** fully open
-- **Repo lane:** god-molecule (anime-tooling)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** The old NC restriction is GONE upstream — SadTalker is now Apache-2.0. Re-evaluate for the dialogue pipeline alongside LivePortrait. [Wave 6]
-
 #### AnimeGANv2 🚫 not commercial-safe
 - **What:** Photo→anime stylization GAN (Xin Chen)
 - **URL:** https://github.com/TachibanaYoshino/AnimeGANv2
@@ -6486,36 +6356,6 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Status:** not-started
 - **Notes:** Hybrid human-shot + labeled AI-generated footage — every clip is labeled, so AI plates are identifiable for provenance logs. [Wave 6]
 
-#### NASA Image and Video Library ✅ commercial-safe
-- **What:** NASA's official media archive — space footage and imagery
-- **URL:** https://images.nasa.gov/
-- **License:** Public domain — US federal government works are not copyrightable (verified via 17 U.S.C. § 105 convention)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (music)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Public-domain space/sky plates for sci-fi episode backgrounds — the cleanest PD video source on the internet. (Some contractor-produced items carry notices — check per-asset.) [Wave 6]
-
-#### NOAA Photo Library ✅ commercial-safe
-- **What:** NOAA's public-domain photo/video collections — oceans, weather, aerials
-- **URL:** https://www.noaa.gov/
-- **License:** Public domain — US federal government works (verified via agency policy convention)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (music)
-- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Weather/ocean/sky plates for establishing shots — PD, no attribution needed. [Wave 6]
-
-#### Library of Congress — Free to Use and Reuse ✅ commercial-safe
-- **What:** LOC's curated public-domain digital collections (photos, films, prints)
-- **URL:** https://www.loc.gov/
-- **License:** Public domain / no-known-copyright-restrictions on the "Free to Use and Reuse" sets (verified via LOC rights statements)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (music)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Stick to the explicitly "Free to Use and Reuse" sets — other LOC collections carry rights advisories. Historical plates for period episode art. [Wave 6]
-
 #### Internet Archive — Feature Films (public domain) ✅ commercial-safe
 - **What:** Public-domain feature films hosted on the Internet Archive
 - **URL:** https://archive.org/details/feature_films
@@ -6585,16 +6425,6 @@ steps, and what stays blocked without a GPU. Nothing in them was run on a GPU.
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Check the per-track license column in Studio — the two types have different credit rules, and off-YouTube use of standard-license tracks is riskier. Prefer CC-BY tracks (with credit) for cross-platform episodes. [Wave 6]
-
-#### Meta Sound Collection 🚫 not commercial-safe
-- **What:** Meta's royalty-free music/SFX for Facebook & Instagram — platform-locked
-- **URL:** https://www.facebook.com/sound/collection
-- **License:** Meta Sound Collection Terms — royalty-free ONLY inside Meta products (verified 2026-10-07); does NOT cover YouTube, TikTok, websites, or client files
-- **Free tier:** free inside FB/IG
-- **Repo lane:** trippedd (music)
-- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** 🚫 Platform-locked — our episodes ship cross-platform, so Sound Collection tracks can never be in them. Useful only for FB/IG promo cuts. [Wave 6]
 
 #### StreamBeats (Harris Heller) — license read ✅ commercial-safe
 - **What:** 1,500+ DMCA-safe tracks for creators — license verification
@@ -9016,16 +8846,6 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Status:** not-started
 - **Notes:** Vintage Australia plates; commercial API use needs NLA approval. [Wave 8 A]
 
-#### NOAA Photo Library ✅ commercial-safe
-- **What:** NOAA Digital Photo Library — ocean, weather, ship, and coastline photography
-- **URL:** http://www.noaa.gov/noaa-collections/photo-library
-- **License:** Public domain unless noted in credit/caption; credit NOAA + photographer (verified 2026-10-07)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (backgrounds)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Ocean/storm plates; NOAA emblem use is restricted, photos are not. [Wave 8 A]
-
 #### NPS photos (National Park Service) ⚠️ license-conditional
 - **What:** NPS Digital Image Index — thousands of scenic park photos
 - **URL:** https://home.nps.gov/media/photo/view.htm?id=D36DF12C-1DD8-B71B-0BD54C5A73B01A6C&utm_source=Photo&utm_medium=website&utm_campaign=experience_more
@@ -9095,16 +8915,6 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Print-res 3400px JPEGs; no attribution required. [Wave 8 A]
-
-#### Art Institute of Chicago ✅ commercial-safe
-- **What:** AIC open-access images — 50k+ CC0 images, keyless public API with IIIF
-- **URL:** https://www.artic.edu/open-access/open-access-images
-- **License:** CC0 1.0 (images); metadata CC0, descriptions CC BY 4.0 (verified 2026-10-07)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (backgrounds)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Enforce is_public_domain=true at the record level. [Wave 8 A]
 
 #### SMK (National Gallery of Denmark) ✅ commercial-safe
 - **What:** SMK Open — ~39k public-domain artworks from Denmark's national gallery
@@ -10518,16 +10328,6 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Status:** not-started
 - **Notes:** Period-accurate plates and reference; check per-item rights statements (a minority are rights-restricted). [Wave 10 Lane A]
 
-#### USGS Multimedia Gallery ✅ commercial-safe
-- **What:** US Geological Survey photos, video and audio (landscapes, wildlife, natural hazards, water)
-- **URL:** https://www.usgs.gov/media
-- **License:** Public domain (US federal work) unless otherwise noted on the item (verified 2026-10-07 via USGS public-domain policy, corroborated by SIL community guidance)
-- **Free tier:** fully free
-- **Repo lane:** trippedd (backgrounds)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Landscape/environment plates with scientific-grade provenance; always check the item caption for exceptions. [Wave 10 Lane A]
-
 #### MovieTools.info ❓ unverified
 - **What:** Free looping video backgrounds, 3D motion loops and virtual-studio plates
 - **URL:** https://movietools.info/
@@ -10861,16 +10661,6 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** The fastest anime-character motion source: rig any humanoid in ~1 min, retarget 2k+ clips. Keep originals out of public git; ship baked results. [Wave 10 Lane A]
-
-#### VSeeFace ✅ commercial-safe
-- **What:** Free face + hand tracking VRM/VSFAvatar puppeteering app for VTuber-style performance capture
-- **URL:** https://www.vseeface.icu/
-- **License:** Proprietary freeware — free for commercial AND non-commercial use; do not modify or claim as your own (verified 2026-10-07 via vseeface.icu terms)
-- **Free tier:** fully free, no paid tier
-- **Repo lane:** trippedd (anime tooling)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Webcam/iPhone performance capture for anime characters; speaks VMC protocol to Unity/UE receivers. [Wave 10 Lane A]
 
 #### MakeHuman — community CC0 assets ✅ commercial-safe
 - **What:** Parametric human-body generator; the community asset library (models, clothes, targets) is CC0
@@ -11363,16 +11153,6 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Credit block goes in the video description; not for music-as-primary-focus videos. [Wave 10 Lane A]
-
-#### Looperman ✅ commercial-safe
-- **What:** Community loop/sample library (drums, melodies, vocals) — royalty-free loops for commercial and non-commercial use
-- **URL:** https://www.looperman.com/
-- **License:** Royalty-free loops per uploader terms (verified 2026-10-07 via looperman.com loop pages: "free for your commercial and non-commercial use on a royalty free basis")
-- **Free tier:** free (login for downloads)
-- **Repo lane:** trippedd (music)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Check the per-loop license (acapellas need written permission; loops are royalty-free). Can't resell loops as loops. [Wave 10 Lane A]
 
 #### ERH (Freesound) 🚫 not commercial-safe
 - **What:** Long-time Freesound uploader (synth/atmospheric sounds) — HONEST NEGATIVE for commercial use
@@ -12459,16 +12239,6 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Coins/chips/cards — game-show and reward-moment SFX. [Wave 11 Lane A]
-
-#### SoundBible ✅ commercial-safe
-- **What:** Long-running free SFX library (Mike Koenig / Koenig Media) — WAV + MP3
-- **URL:** https://soundbible.com/
-- **License:** Per-sound: royalty-free section = CC/PD works, commercial OK; many sounds CC-BY 3.0 (verified 2026-10-07 via downstream credits: "Cargo Plane Cabin Ambiance — License: Attribution 3.0 — Recorded by Mike Koenig"; SourceForge: "royalty-free sounds can be used for commercial uses")
-- **Free tier:** fully free downloads
-- **Repo lane:** trippedd (sfx)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Check each sound's license badge — CC-BY 3.0 needs a credit line, PD/CC0 needs nothing. [Wave 11 Lane A]
 
 #### SoundJay ✅ commercial-safe
 - **What:** Large categorized SFX library (mechanical, human, nature, cartoon) — WAV + MP3
@@ -38469,16 +38239,6 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** MIT grant stated in README; API detection gap noted honestly. [Wave 44 Lane A]
 
-#### WhisperX ✅ commercial-safe
-- **What:** m-bain/whisperx — Whisper with word-level timestamps and speaker diarization; feeds karaoke-style caption burn-in
-- **URL:** https://github.com/m-bain/whisperx
-- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
-- **Free tier:** free OSS
-- **Repo lane:** trippedd (pipeline)
-- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Word timestamps make styled/word-highlight burn-in possible; the transcription engine behind several auto-subtitle CLIs. [Wave 44 Lane A]
-
 #### pyannote-audio ✅ commercial-safe
 - **What:** pyannote/pyannote-audio — neural speaker-diarization toolkit; labels "who spoke when" for captioned video
 - **URL:** https://github.com/pyannote/pyannote-audio
@@ -38508,16 +38268,6 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Research-grade ASR for caption pipelines. [Wave 44 Lane A]
-
-#### sherpa-onnx ✅ commercial-safe
-- **What:** k2-fsa/sherpa-onnx — ONNX-runtime speech recognition (streaming + offline ASR) for caption generation
-- **URL:** https://github.com/k2-fsa/sherpa-onnx
-- **License:** Apache-2.0 (verified 2026-10-08 via raw LICENSE fetch)
-- **Free tier:** free OSS
-- **Repo lane:** trippedd (pipeline)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Deployable ONNX ASR runtime; good fit for offline caption-burn workers. [Wave 44 Lane A]
 
 #### FFmpeg subtitles-filter burn-in recipe ⚠️ license-caveat workflow
 - **What:** FFmpeg `subtitles` video-filter burn-in recipe — hardcodes SRT/ASS/VTT into video via libass (`-vf subtitles=file.srt`)
@@ -38780,16 +38530,6 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** Cycle-accurate GB APU implementation doubles as executable audio documentation. [Wave 44 Lane A]
-
-#### SDL_mixer ✅ commercial-safe
-- **What:** libsdl-org/SDL_mixer — audio mixer library (module music via bundled decoders, WAV/OGG/MP3/FLAC playback) used by countless players
-- **URL:** https://github.com/libsdl-org/SDL_mixer
-- **License:** Zlib (verified 2026-10-08 via GitHub API spdx_id; active, pushed 2026-09-29)
-- **Free tier:** free OSS
-- **Repo lane:** trippedd (pipeline)
-- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Permissive audio backend for tracker/module players. [Wave 44 Lane A]
 
 #### Epic Megagames MASI / PSM format ❓ unverified
 - **What:** Epic Megagames MASI (PSM) — Epic's tracker music format (Unreal-era), listed in the ArchiveTeam format indexes

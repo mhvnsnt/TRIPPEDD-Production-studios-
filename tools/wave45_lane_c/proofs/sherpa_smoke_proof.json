@@ -1,0 +1,12 @@
+{
+  "tool": "sherpa-onnx",
+  "tool_license": "Apache-2.0",
+  "tool_license_url": "https://github.com/k2-fsa/sherpa-onnx/blob/master/LICENSE",
+  "model": "sherpa-onnx-whisper-tiny.en (int8)",
+  "model_url": "https://huggingface.co/csukuangfj/sherpa-onnx-whisper-tiny.en",
+  "fixture": "fixtures/fixture.wav",
+  "fixture_duration_s": 8.43,
+  "transcript": "The quick roundfoc jump over the lazy log. This is a test on the speech recognition pipeline. Speaker 1 says the low.",
+  "transcript_words": 22,
+  "elapsed_s": 2.54
+}

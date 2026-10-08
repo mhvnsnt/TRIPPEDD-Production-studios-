@@ -986,15 +986,15 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** wiring-wave-1
 - **Notes:** Top wire-up candidate for compositing: MIT, pip-installable, the natural layer between FFmpeg filtergraphs and full NLEs. v2 API (with_* methods). Memory-hungry on long timelines — chunk renders.
 
-#### LosslessCut ✅ commercial-safe
+#### LosslessCut 🚫 copyleft — QUARANTINED (standalone-tool use only)
 - **What:** Ultra-fast lossless trim/cut/merge of video+audio via stream copy (FFmpeg GUI + CLI)
 - **URL:** https://github.com/mifi/lossless-cut
 - **License:** GPL-2.0-only (verified) (verified)
 - **Free tier:** fully open
 - **Repo lane:** trippedd (compositing)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
-- **Notes:** GPL-2.0 → quarantine. QC lane star: frame-accurate smart-cut, segment CSV import/export for batch EDL-style cutting, chapter/track editing. Perfect for rough-cut QC passes without re-encode.
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)** — quarantine row 13 (docs/LICENSE_QUARANTINE.md)
+- **Notes:** GPL-2.0 → quarantine. (Badge corrected Wave 54 Lane B, 2026-10-08: prior "✅ commercial-safe" badge contradicted the GPL-2.0-only license — mifi/lossless-cut raw LICENSE = GPL v2 June 1991 text, API spdx_id GPL-2.0; re-fetched 2026-10-08. Standalone use only, never linked.) QC lane star: frame-accurate smart-cut, segment CSV import/export for batch EDL-style cutting, chapter/track editing. Perfect for rough-cut QC passes without re-encode.
 
 #### auto-editor ✅ commercial-safe
 - **What:** CLI that auto-cuts silence/dead space via audio/motion analysis; exports to Premiere/Resolve/Shotcut/Kdenlive timelines
@@ -2385,15 +2385,15 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Status:** not-started
 - **Notes:** The glue for a multi-tool pipeline: generate an edit decision in code, open it in Kdenlive/Resolve, round-trip back. ASWF-backed (Pixar/Netflix/DreamWorks lineage). [Wave 2]
 
-#### Avidemux ✅ commercial-safe
+#### Avidemux 🚫 copyleft — QUARANTINED (standalone-tool use only)
 - **What:** Fast linear video editor: cutting, filtering, encoding; great for trim/concat/transcode jobs without a full NLE.
 - **URL:** https://github.com/mean00/avidemux2
 - **License:** GPL-2.0 (verified via https://raw.githubusercontent.com/mean00/avidemux2/master/COPYING)
 - **Free tier:** Fully free/open-source.
 - **Repo lane:** trippedd (compositing)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
-- **Notes:** GPL-QUARANTINE: standalone utility only. Ideal for fast lossless-ish cuts and batch filter/encode passes in the finishing pipeline. [Wave 2]
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)** — quarantine row 29 (docs/LICENSE_QUARANTINE.md)
+- **Notes:** GPL-QUARANTINE: standalone utility only. (Badge corrected Wave 54 Lane B, 2026-10-08: prior "✅ commercial-safe" badge contradicted the GPL-2.0 license — mean00/avidemux2 raw COPYING = GPL v2 June 1991 text (18,010 bytes), re-fetched 2026-10-08; API NOASSERTION = detection gap.) Ideal for fast lossless-ish cuts and batch filter/encode passes in the finishing pipeline. [Wave 2]
 
 #### Cinelerra-GG Infinity ✅ commercial-safe
 - **What:** Pro-grade Linux NLE/compositor: nested sequences, motion tracking, 8K, HDR; monthly releases.
@@ -16727,7 +16727,7 @@ Badge key: ✅ commercial-safe · 🚫 NC-or-quarantine (GPL/AGPL/NC — quarant
 #### StaxRip — encoding GUI with subtitle hardcoding ✅ commercial-safe
 - **What:** Windows encoding GUI: x264/x265/AV1 with subtitle track handling and hard-burn options.
 - **URL:** https://github.com/staxrip/staxrip (terms: LICENSE file in repo)
-- **License:** MIT (verified 2026-10-07 via GitHub API)
+- **License:** MIT (verified 2026-10-07 via GitHub API; re-verified Wave 54 Lane B, 2026-10-08: raw https://raw.githubusercontent.com/staxrip/staxrip/master/License.txt = full MIT text, 1,081 bytes, "Copyright (C) 2002-2026 StaxRip Authors"; API spdx_id MIT — the Wave-53 GPL flag was a false positive for StaxRip)
 - **Free tier:** Free, self-hosted (open source)
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5

@@ -28588,7 +28588,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 #### Kaltura 🚫 AGPL-3.0 — QUARANTINED (row 264)
 - **What:** Kaltura — open-source video platform (Community Edition): video management, publishing, caption/subtitle support, live streaming.
 - **URL:** https://kaltura.com/
-- **License:** AGPL-3.0 (verified 2026-10-07 via kaltura/server GitHub README: "All code in this project is released under the AGPLv3 license") — quarantine row 264
+- **License:** AGPL-3.0 (verified 2026-10-07 via kaltura/server GitHub README: "All code in this project is released under the AGPLv3 license"; URL-refresh Wave 55 Lane B 2026-10-08: canonical repo moved kaltura/server → kaltura-community/server, verified live, not archived, pushed 2024-05-17, GitHub API spdx_id AGPL-3.0 — https://github.com/kaltura-community/server) — quarantine row 264
 - **Free tier:** Self-hosted CE — free under AGPL-3.0 terms; hosted SaaS is paid
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5

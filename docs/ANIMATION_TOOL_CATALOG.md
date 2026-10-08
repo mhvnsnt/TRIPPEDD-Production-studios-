@@ -4033,3 +4033,61 @@ Monocular depth estimation, image/video segmentation & matting, layer decomposit
 - **Lane note:** Wave 4 Lane B: the video-depth backbone; Small tier keeps it commercial-safe.
 
 <!-- end lane B wave 4 batch 1: monocular depth (8 entries) -->
+
+#### DepthCrafter ⚠️ non-commercial — research/academic only
+- **What:** Diffusion-based video depth — generates temporally consistent long depth sequences for open-world videos (CVPR 2025 Highlight) by jointly denoising a whole frame window.
+- **URL:** https://github.com/Tencent/DepthCrafter
+- **License:** Tencent custom non-commercial license (verified 2026-10-08: upstream LICENSE quoted — "You agree to use the DepthCrafter only for academic, research and education purposes, and refrain from using it for any commercial or production purposes under any circumstances."). Also built on Stable Video Diffusion XT (Stability AI Non-Commercial Community License). **Verify per use; no commercial/production use.**
+- **Use:** the quality reference for flicker-free video depth on moving plates; informs what the commercial-safe video-depth stack (VDA-Small) must beat.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; no Tencent code/weights enter commercial paths.
+
+#### ChronoDepth ✅
+- **What:** Temporally consistent video depth from video diffusion priors (CVPR 2025) — sliding-window diffusion inference over clips; MIT-licensed research code.
+- **URL:** https://github.com/jiahao-shao1/ChronoDepth
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)"). Caveat: the default inference config pulls `stabilityai/stable-video-diffusion-img2vid-xt` (Stability AI Non-Commercial Community License) — swap the base before any commercial use.
+- **Use:** research baseline for diffusion-consistent video depth; technique reference for stabilizing depth across parallax shot frames.
+- **Lane note:** Wave 4 Lane B: the MIT research reference for how diffusion priors kill depth flicker.
+
+#### DistDepth ⚠️ non-commercial — CC-BY-NC
+- **What:** Distilled monocular indoor depth (CVPR 2022) — distills a DPT "expert" into a practical indoor depth model; ships depth-aware AR demo effects (virtual object insertion, object dragging).
+- **URL:** https://github.com/ennioennio/distdepth
+- **License:** CC-BY-NC (verified 2026-10-08: upstream README "## License — DistDepth is CC-BY-NC licensed, as found in the LICENSE file"). **Non-commercial only.**
+- **Use:** indoor-plate depth reference; AR insertion demos as a preview technique for placing parallax cutouts.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; indoor-depth distillation technique reference.
+
+#### LeReS ⚠️ non-commercial — Adobe Research license
+- **What:** Learning to Recover 3D Scene Shape from a single image (CVPR 2021) — affine-invariant depth + point-cloud reconstruction; part of the AdelaiDepth toolbox.
+- **URL:** https://github.com/aim-uofa/AdelaiDepth/
+- **License:** non-commercial license from Adobe Research (verified 2026-10-08: upstream LeReS README "## License — This project is under a non-commercial license from Adobe Research. See the LICENSE file for details."). Other AdelaiDepth projects are 2-clause BSD non-commercial. **Verify per use.**
+- **Use:** scene-shape reconstruction reference for single-image 3D; technique reference for point-cloud-backed parallax.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; Adobe NC terms block commercial use.
+
+#### CREStereo ✅
+- **What:** Practical stereo matching via cascaded recurrent network with adaptive correlation (CVPR 2022, Megvii) — robust real-world stereo depth from image pairs.
+- **URL:** https://github.com/megvii-research/CREStereo
+- **License:** Apache-2.0 (verified 2026-10-08: downstream README license audit — "[RAFT-Stereo](https://github.com/princeton-vl/RAFT-Stereo) is licensed under the MIT license, [LoFTR](https://github.com/zju3dv/LoFTR) and [CREStereo](https://github.com/megvii-research/CREStereo) are licensed under the Apache 2.0 license").
+- **Use:** stereo-pair depth for dual-camera plates; fallback depth source when monocular estimators disagree.
+- **Lane note:** Wave 4 Lane B: the permissive stereo-depth option alongside RAFT-Stereo.
+
+#### RAFT-Stereo ✅
+- **What:** Recurrent All-Pairs Field Transforms for stereo matching (Princeton) — iterative disparity refinement from all-pairs correlations; strong cross-dataset generalization.
+- **URL:** https://github.com/princeton-vl/RAFT-Stereo
+- **License:** MIT (verified 2026-10-08: third-party build metadata — "Target license: MIT (declared in `princeton-vl/RAFT-Stereo`)"; downstream READMEs concur).
+- **Use:** stereo depth from plate pairs for true-baseline parallax; calibration target for monocular depth scale.
+- **Lane note:** Wave 4 Lane B: the MIT stereo baseline — real baseline beats monocular guessing for two-view plates.
+
+#### IGEV-Stereo ✅
+- **What:** Iterative Geometry Encoding Volume for stereo matching (CVPR 2023 / TPAMI 2025) — combined geometry+context cost volume with ConvGRU updates; #1 on KITTI 2015/2012 reflective; faster than RAFT-Stereo; includes IGEV-MVS for multi-view.
+- **URL:** https://github.com/gangweiX/IGEV
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)").
+- **Use:** high-accuracy stereo disparity for multi-view parallax plates; the stereo upgrade path from RAFT-Stereo.
+- **Lane note:** Wave 4 Lane B: the accurate-and-fast MIT stereo matcher for multi-view 2.5D.
+
+#### UniDepth ⚠️ non-commercial — CC-BY-NC 4.0
+- **What:** Universal monocular metric depth (CVPR 2024 + V2 2025, ETH Zürich) — metric depth in meters + camera intrinsics + per-pixel 3D point map + confidence from one RGB image, no camera metadata needed.
+- **URL:** https://github.com/lpiccinelli-eth/UniDepth
+- **License:** CC-BY-NC 4.0 (verified 2026-10-08: downstream license audits — "Upstream code (lpiccinelli-eth/UniDepth) | CC BY-NC 4.0 — non-commercial"; "The License of the models is Attribution-NonCommercial 4.0 International"). **Non-commercial only.**
+- **Use:** intrinsics-free metric reconstruction reference; technique reference for camera-solved parallax.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; MoGe is the commercial-safe alternative.
+
+<!-- end lane B wave 4 batch 2: stereo + NC depth (8 entries) -->

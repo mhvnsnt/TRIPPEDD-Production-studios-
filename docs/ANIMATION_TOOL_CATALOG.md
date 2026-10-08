@@ -586,7 +586,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Open-source node-based compositor (Nuke-class): keying, rotoscope, paint, tracking, OFX plugins — the comp stage for animated plates.
 - **URL:** https://github.com/NatronGitHub/Natron
 - **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 21 — standalone-app use only; never linked/embedded in shipping builds.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 44 — standalone-app use only; never linked/embedded in shipping builds.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### Natron — standalone tool use` (line 11464) — same license posture; this entry is the animation-catalog pocket.
 - **Repo lane:** trippedd-studio (compositing/post pocket)
@@ -596,7 +596,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Blender's built-in node compositor (cryptomatte, vector blur, glare, keying) — comp without leaving the 3D package; compositor nodes scriptable via Python for batch episode passes.
 - **URL:** https://github.com/blender/blender
 - **License:** GPL — binaries distributed as GPL-3.0; source default GPL-2.0-or-later (verified 2026-10-07 via https://www.blender.org/about/license/); rendered output is ours, the app stays GPL.
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 22 — standalone-app use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 58 — standalone-app use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md covers Blender Grease Pencil (line 1206), Blender VSE (line 2356), BlenderKit (line 9208) — no compositor pocket entry; no conflict.
 - **Repo lane:** trippedd-studio (compositing/post pocket)
@@ -606,7 +606,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** GREYC's Magic for Image Computing — 500+ CLI/GIMP filters: denoise, inpaint, stylize, film grain, repair — batch post passes over frame sequences.
 - **URL:** https://github.com/GreycLab/gmic
 - **License:** CeCILL (GPL-compatible copyleft) (verified 2026-10-07 via repo COPYING raw)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 23 — standalone/CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 59 — standalone/CLI use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### G'MIC (GreycLab) — standalone tool use` (line 11454) — same posture; animation-pocket entry.
 - **Repo lane:** trippedd-studio (compositing/post pocket)
@@ -650,7 +650,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Scriptable frameserver (Python) for video post: filtering, resampling, format conversion between render and encode; the modern AviSynth successor.
 - **URL:** https://github.com/vapoursynth/vapoursynth
 - **License:** LGPL-2.1 (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 24 — frameserver/CLI use only; LGPL linking rules apply if ever embedded.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 60 — frameserver/CLI use only; LGPL linking rules apply if ever embedded.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### VapourSynth` (line 9338) — animation-pocket entry.
 - **Repo lane:** trippedd-studio (compositing/post pocket)
@@ -660,7 +660,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Classic frameserving script environment for frame-accurate post chains (deinterlace, IVTC, denoising) on Windows pipelines.
 - **URL:** https://github.com/AviSynth/AviSynthPlus
 - **License:** GPL-2.0 (verified 2026-10-07 via distrib/gpl-*.txt license texts in repo)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 25 — standalone/script use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 61 — standalone/script use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### AviSynth+ — standalone tool use` (line 9348) — same posture; animation-pocket entry.
 - **Repo lane:** trippedd-studio (compositing/post pocket)
@@ -1258,7 +1258,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Multitrack audio editor: record/cleanup/de-noise/de-reverb/level SFX and dialogue stems; Paulstretch for risers; macro batch chains.
 - **URL:** https://github.com/audacity/audacity
 - **License:** GPL-3.0 (verified 2026-10-07 via repo LICENSE.txt raw — NOTE: current Audacity is GPLv3, not GPLv2)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 30 — standalone-app use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 56 — standalone-app use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### Audacity` (line 4846, QUARANTINED) — consistent; animation-pocket entry.
 - **Repo lane:** trippedd-studio (sound-design pocket)
@@ -1306,7 +1306,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Live-coding pattern language (Haskell/SuperCollider) for generative techno/breakbeat beds — algorithmic score layers rendered to stems.
 - **URL:** https://github.com/tidalcycles/Tidal
 - **License:** GPL-3.0 (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 26 — standalone use; rendered audio stems are ours, the tool stays GPL.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 62 — standalone use; rendered audio stems are ours, the tool stays GPL.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### TidalCycles — standalone tool use` (line 11604) — same posture; animation-pocket entry.
 - **Repo lane:** trippedd-studio (music pocket)
@@ -1325,7 +1325,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Lightweight MIDI sequencer/editor (score/keyboard/guitar/drum/controller views) — compose and edit MIDI beds without a full DAW.
 - **URL:** https://ariamaestosa.github.io/ariamaestosa/docs/index.html
 - **License:** GPL-3.0 (Guix package record: "GPL 3+") (verified 2026-10-07 via https://packages.guix.gnu.org/packages/aria-maestosa/1.4.13/)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 27 — standalone-app use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 63 — standalone-app use only.
 - **Free tier:** fully open
 - **Repo lane:** trippedd-studio (music pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
@@ -1334,7 +1334,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Full DAW (piano roll, beat/bassline editor, built-in synths/samples) — compose episode beds and stingers in-house.
 - **URL:** https://github.com/LMMS/lmms
 - **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 28 — standalone-app use only; rendered stems are ours.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 64 — standalone-app use only; rendered stems are ours.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### LMMS` (line 4826, QUARANTINED) — consistent; animation-pocket entry.
 - **Repo lane:** trippedd-studio (music pocket)
@@ -1344,7 +1344,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Pro-grade DAW (multitrack record/edit/mix, video timeline sync) — final music+dialogue+SFX mix stage.
 - **URL:** https://github.com/Ardour/ardour
 - **License:** GPL-2.0 (verified 2026-10-07 via repo COPYING raw)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 29 — standalone-app use only; mixed masters are ours.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 65 — standalone-app use only; mixed masters are ours.
 - **Free tier:** source fully open (binaries pay-what-you-want)
 - **Dedup:** RESOURCE_CATALOG.md `#### Ardour` (line 4836, QUARANTINED) — consistent; animation-pocket entry.
 - **Repo lane:** trippedd-studio (music pocket)
@@ -1354,7 +1354,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Modern automated DAW (chord assistance, automation-first workflow) — alternative mix/compose seat to Ardour/LMMS.
 - **URL:** https://github.com/zrythm/zrythm
 - **License:** AGPL-3.0-or-later (verified 2026-10-07 via AUR package record + dev-team CLAUDE.md) — strictest licence in this pull.
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 40 — standalone-app use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 75 — standalone-app use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### Zrythm` (line 19378, AGPL-3.0 / quarantine row 186) — consistent; animation-pocket entry.
 - **Repo lane:** trippedd-studio (music pocket)
@@ -1432,7 +1432,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Batch video transcoder (H.264/H.265/VP9/AV1) with presets — episode masters → platform renditions; queue + CLI.
 - **URL:** https://github.com/HandBrake/HandBrake
 - **License:** GPL-2.0 (verified 2026-10-07 via repo LICENSE raw)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 31 — standalone-app/CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 66 — standalone-app/CLI use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### HandBrake` (line 2416) — animation-pocket entry.
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
@@ -1442,7 +1442,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** The encode backbone: image-sequence→video, loudnorm, concat, thumbnails, chapter injection, format ladders — scripted delivery pipelines.
 - **URL:** https://github.com/FFmpeg/FFmpeg
 - **License:** LGPL-2.1 base; some builds/components are GPL (verified 2026-10-07 via COPYING.LGPLv2.1 raw)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 32 — CLI/binary use only; never link GPL builds into shipping code.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 67 — CLI/binary use only; never link GPL builds into shipping code.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### FFmpeg` (line 2336) + `#### ffmpeg-python` (line 18728) — animation-pocket entry for the delivery role.
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
@@ -1452,7 +1452,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Broadcast loudness compliance: FFmpeg `loudnorm` (dual-pass EBU R128) for masters; `r128gain` for batch file loudness normalization before assembly.
 - **URL:** https://github.com/desbma/r128gain
 - **License:** r128gain: LGPL-2.1 (verified 2026-10-07 via GitHub API); loudnorm ships inside FFmpeg (see FFmpeg entry)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) rows 32 (loudnorm/FFmpeg) and 33 (r128gain) — CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) rows 67 (loudnorm/FFmpeg) and 68 (r128gain) — CLI use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md loudnorm hit — animation-pocket entry.
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
@@ -1468,7 +1468,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Fast video thumbnailer — poster frames and preview strips for episode pages and contact sheets.
 - **URL:** https://github.com/dirkvdb/ffmpegthumbnailer
 - **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 35 — CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 70 — CLI use only.
 - **Free tier:** fully open
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
@@ -1477,7 +1477,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** MP4 chapter + tag manipulation: `mp4chaps` imports chapter tracks into episode MP4s for platform chapter markers.
 - **URL:** https://github.com/enzo1982/mp4v2
 - **License:** MPL-1.1 (verified 2026-10-07 via repo COPYING raw)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 36 — CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 71 — CLI use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### 23. mp4v2 / mp4chaps (enzo1982)` (line 17838) — animation-pocket entry.
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
@@ -1487,7 +1487,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** MP4/M4V metadata + chapter editor (CLI) — set titles, artwork, chapter XML on delivered episode files without re-encoding.
 - **URL:** https://github.com/wez/atomicparsley
 - **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 39 — CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 74 — CLI use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md mentions AtomicParsley — animation-pocket entry.
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
@@ -1506,7 +1506,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** BAVC audiovisual QC analyzer — bitstream graphs, vectorscope, loudness, dropout detection over episode masters; the "does the file actually survive" gate.
 - **URL:** https://github.com/bavc/qctools
 - **License:** GPL-3.0 (verified 2026-10-07 via repo License.html)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 37 — standalone-app use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 72 — standalone-app use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md mentions QCTools — animation-pocket entry.
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
@@ -1516,7 +1516,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Matroska muxing/inspection (mkvmerge/mkvinfo/mkvextract/mkvpropedit) — multi-audio/subtitle masters, chapter templates, archival mezzanine files.
 - **URL:** https://mkvtoolnix.download/
 - **License:** GPL-2.0 (verified 2026-10-07 via Wikipedia licence field + mirror README "This code comes under the GPL v2")
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 38 — CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 73 — CLI use only.
 - **Free tier:** fully open
 - **Dedup:** RESOURCE_CATALOG.md `#### MKVToolNix — mkvmerge subtitle muxing` (line 17044, flagged GPL) — consistent; animation-pocket entry.
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
@@ -1526,7 +1526,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** FFmpeg GUI Swiss-army knife (transcode, lossless cut, loudness analysis/normalization, subtitle burn-in, batch queues) — the operator-friendly encode seat.
 - **URL:** https://github.com/paulpacifico/shutter-encoder
 - **License:** GPL-3.0 (verified 2026-10-07 via GitHub license field) — CORRECTION: RESOURCE_CATALOG.md `#### Shutter Encoder` (line 19721) says "freeware — no open-source grant found"; upstream repo declares GPL-3.0, so it IS open source and quarantined here.
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 34 — standalone-app use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 69 — standalone-app use only.
 - **Free tier:** fully open
 - **Repo lane:** trippedd-studio (encode/delivery pocket)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
@@ -1579,7 +1579,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** Read/write EXIF/IPTC/XMP metadata on images and video — stamp episode/version metadata, verify deliverable tags.
 - **URL:** https://github.com/exiftool/exiftool
 - **License:** GPL-3.0 per GitHub (upstream dual Artistic/GPL) (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 41 — CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 76 — CLI use only.
 - **Free tier:** fully open
 - **Repo lane:** trippedd-studio (utilities pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
@@ -1588,7 +1588,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **What:** GIF assembler/optimizer (CLI): build looping GIFs from frames, interlace, crop, optimize — the classic loop-deliverable tool.
 - **URL:** https://github.com/kohler/gifsicle
 - **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 42 — CLI use only.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 77 — CLI use only.
 - **Free tier:** fully open
 - **Repo lane:** trippedd-studio (utilities pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5

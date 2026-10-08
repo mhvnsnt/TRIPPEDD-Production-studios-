@@ -1,0 +1,24 @@
+{
+ "static_voice_test_16k": {
+  "file": "tools/lipsync/proofs/wave2/whisperx_upgrade/static_voice_test_16k.wav",
+  "duration_s": 12.934,
+  "params": "threshold=0.5 min_speech=100ms min_silence=500ms pad=100ms",
+  "segments": [
+   {
+    "start_s": 0.0,
+    "end_s": 12.934
+   }
+  ]
+ },
+ "rhubarb_speech_3s": {
+  "file": "tools/lipsync/proofs/rhubarb_speech_3s.wav",
+  "duration_s": 3.053,
+  "params": "threshold=0.5 min_speech=100ms min_silence=500ms pad=100ms",
+  "segments": [
+   {
+    "start_s": 0.124,
+    "end_s": 3.053
+   }
+  ]
+ }
+}

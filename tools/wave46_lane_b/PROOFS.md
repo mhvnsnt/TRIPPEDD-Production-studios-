@@ -91,3 +91,47 @@ license-family changes. One precision fix (row 174 upstream reference), one dedu
 - **404 rows · 379 distinct** (404 − 23 dead/superseded markers − 1 aeneas rows-1+2 − 1 Furnace rows-122+271 dup). Was 404 · 380 before this cycle; row-403 dedup is the only change.
 - This cycle made zero row additions/removals, zero delists, zero relicenses, zero license-family changes.
 - LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined; this lane does not decide it.
+
+---
+
+# PART 2 — TOOL WIRING: silero-vad VAD (CPU smoke test, 2026-10-08)
+
+**VERDICT: WIRED — ran end-to-end on CPU with a real audio file.**
+
+- Tool: silero-vad v6 (Apache-2.0) via the ONNX model **bundled in the installed
+  faster-whisper 1.2.1 wheel** (`faster_whisper/assets/silero_vad_v6.onnx`), run
+  with onnxruntime 1.30.0 CPUExecutionProvider. No torch, no GPU, **no model
+  download performed — no weights enter the repo** (model lives in the pip
+  site-packages wheel, sha256 recorded in the meta artifact).
+- Input: `tools/lipsync/proofs/wave2/whisperx_upgrade/static_voice_test_16k.wav`
+  (pre-existing repo speech test asset, read-only) — 12.93 s, mono 16-bit 16 kHz,
+  sha256 `ae8acb2fecfe03fec261387100e833a902e076613178d4594d905f154b6d0ced`.
+- Run 1 (`wire_silero_vad.py`, defaults): decoded 12.93 s in 0.04 s; VAD inference
+  0.08 s on CPU (**166x realtime**); 1 speech segment 0.000 s → 12.934 s —
+  correct for a dense speech file.
+- Run 2 (tighter params: threshold 0.5, min_speech 100 ms, min_silence 500 ms,
+  pad 100 ms) on both the Static file and
+  `tools/lipsync/proofs/rhubarb_speech_3s.wav` (3.05 s): Static → 1 segment
+  0.00–12.93 s; rhubarb → 1 segment 0.12–3.05 s (leading 0.12 s silence correctly
+  trimmed). Honest output — both files are continuous speech.
+- Artifacts (all in `tools/wave46_lane_b/`, checksums in `SHA256SUMS`, verified `sha256sum -c`):
+  `wire_silero_vad.py` · `vad_smoke.log` (console capture) · `vad_timestamps.json`
+  · `vad_timestamps_tight.json` · `vad_proof_meta.json` (versions, params, sha256s, verdict).
+- Why silero-vad instead of WhisperX: WhisperX needs torch + transformers +
+  wav2vec2 alignment weights (~hundreds of MB) with no GPU on this VM and 9.2 GB
+  disk free — the task explicitly permits "another permissive diarization/VAD
+  tool (e.g. silero-vad, Apache-2.0)" and a CPU smoke test on a real audio file.
+  WhisperX remains unattempted here; it is not claimed as wired.
+- Speaches Docker: re-checked 2026-10-08 — still no container runtime
+  (no docker/podman/nerdctl/crictl). VGMTrans: re-checked — still no Qt dev libs.
+  Both remain environment-blocked, not attempted.
+
+## Tool-wiring artifacts (SHA256SUMS)
+```
+3981d818ca25cb313aa0c7d0c59f0c54274b75f251bcceeb5930bc074b57d6c3  wire_silero_vad.py
+928737487910d5dc738637fa5420168f33fd835337d09ec66791572dc5ff84dc  vad_smoke.log
+029a418884ff0038e127b693b7ea9d95a3ee55edb11c1c7ba592382e4f5f74ae  vad_timestamps.json
+b160325a3d4ffeb9eef6d9d8fbb71e63fd006757f8d18ae640ac6ba70071b129  vad_timestamps_tight.json
+56eb0af3b8d571c14ed38dc8bfdf8bf28652a68ef4954c6698cc782514d9ea29  vad_proof_meta.json
+```
+All verified `OK` via `sha256sum -c SHA256SUMS`.

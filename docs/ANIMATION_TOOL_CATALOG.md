@@ -218,7 +218,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 #### BeatNet ✅
 - **What:** CRNN + particle filtering for online joint beat, downbeat and meter tracking (ISMIR 2021, Heydari et al.).
 - **URL:** https://github.com/mjhydri/BeatNet
-- **License:** MIT (verified 2026-10-08: third-party CREDITS attribution lists BeatNet as MIT).
+- **License:** CC-BY-4.0 (corrected 2026-10-08: repo LICENSE file is CC-BY-4.0 text; third-party CREDITS claiming MIT is wrong).
 - **Use:** beat+downbeat+meter in one pass for music-bed timing; good dialogue-to-music sync reference. See also Beat This! (CPJKU, MIT code AND weights) as a newer MIT alternative.
 
 #### BeatRoot 🚫 GPL — research/reference only (quarantine row 55)

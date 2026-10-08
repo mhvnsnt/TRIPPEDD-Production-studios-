@@ -54291,3 +54291,1201 @@ Round 7 is per-show per-episode deep dives on landmark single episodes (9 shows 
 - New #### entries: 103 (P1: 34 retro homebrew SDK docs round 4 — 3 MIT + 3 CC BY 4.0 + 24 unverified + 4 quarantined (GPL/LGPL/mixed) · P2: 15 landmark musicdisk deep dives round 2 — all unverified (NC-not-declared honest negatives) · P3: 54 PD radio-drama round 7 per-episode deep dives — 9 PD/CC0 + 45 unverified)
 - Quarantine rows added: 4 (rows 573–576: BitJag/atari_jaguar_240p_test_suite GPL-2.0+, theRemovers/rmvlib LGPL-2.1, pce-devel/huc mixed w/ GPL components, BitJag/ubuntu-rmvlib-install-scripts GPL-3.0; zero supersedes/delists; next row 577)
 - Honest negatives: dciabrin/ngdevkit + andwn/marsdev (already catalogued/quarantined — dropped by pre-append dedup); xminusone19550424nocontact001 (already catalogued Wave 55); harmlesslion.com/software/skunkboard (404); archaicpixels.com (HTTP 500); pce-devel/pceas (404 — pceas ships inside the huc repo); demozoo.org/charts/ (404 — no musicdisk charts page, pouët toplist used instead)
+
+
+## Wave 59 Lane A — catalog deepening (2026-10-08)
+
+### Wave 59 Lane A — Pocket 1: retro homebrew SDK docs round 5 (35)
+
+Round 5 fills the PC-98/PC-88, 3DO, CD-i, ColecoVision, Sega Saturn dev-docs, MAME-dev docs, libretro-core docs, and Dreamcast SDK pockets left untouched by rounds 1–4 (round 4 covered PCE/TG-16, Neo Geo, 32X/Mega-CD, Jaguar). All archive.org items verified 2026-10-08 via metadata API (HTTP 200, open access, title/file-count match); doc-site pages verified HTTP 200 via curl. Licenses: per-item — 2 carry PD marks (✅), libretro docs are MIT via the libretro/docs repo (✅), non-CC0 scans and license-silent sites stay ❓ per Wave 57 precedent. No GPL code items this pocket (docs-only), zero quarantine rows. Pre-append dedup: 0 dupes (title + URL greps against the catalog).
+
+#### PC-9801 Programmer's Bible ❓ scan license unverified
+- **What:** "PC-9801 Programmer's Bible" — community PC-9801 programming reference (archive.org item PC9801Bible; 12 files / 2 docs).
+- **URL:** https://archive.org/details/PC9801Bible
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 12 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Core PC-98 homebrew programming reference — pairs with the Technical Data Book and GDC Technical Book below. [Wave 59 Lane A]
+
+
+#### PC-98 EGC Manual (public-domain mark) ✅ PD
+- **What:** "The パブリック ドメイン マニュアル of エンハンスト グラフィック チャーシュー Ver 0.55" — PC-98 EGC (Enhanced Graphic Charger) manual, explicitly public-domain labeled (19 files / 2 docs).
+- **URL:** https://archive.org/details/egcm-055
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match; item licenseurl is a public-domain mark — https://creativecommons.org/publicdomain/mark/1.0/)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** EGC graphics-chip programming detail for PC-98 homebrew — rare PD-marked hardware doc. [Wave 59 Lane A]
+
+
+#### PC-9801 Graphics Analytical Manual (1984) ❓ scan license unverified
+- **What:** "PC 9801 Graphics Analytical Manual (PC-9801/E/F/M グラフィクス: 解析マニュアル 第3卷)" (1984) — third volume of the PC-9801 graphics analysis manual series (15 files / 2 docs).
+- **URL:** https://archive.org/details/pc-9801-graphics-analytical-manual-pc-9801-e-f-m
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, date 1984; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Japanese-language; deep E/F/M-model graphics internals. [Wave 59 Lane A]
+
+
+#### PC-9801 Technical Data Book CD-ROM (PDF) ❓ scan license unverified
+- **What:** "PC-9801 Technical Data Book CD-ROM (PDF Versions)" (unofficial) — scanned NEC PC-9801 technical data book set (71 files / 12 PDFs).
+- **URL:** https://archive.org/details/bi_20240423
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 71 files / 12 PDFs; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The broadest PC-9801 hardware reference in one item — first stop for PC-98 homebrew bring-up. [Wave 59 Lane A]
+
+
+#### GDC Technical Book — NEC PC-9801 Programming (Hoshino) ❓ scan license unverified
+- **What:** "GDCテクニカルブック GDC Technical Book" (Hoshino Shinji) — NEC PC-9801 programming guide focused on the GDC graphics display controller (15 files / 2 docs).
+- **URL:** https://archive.org/details/gdc-gdc-technical-book-PC98
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 15 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Japanese-language; GDC-specific programming companion to the Programmer's Bible. [Wave 59 Lane A]
+
+
+#### NEC PC-8801FH Programmer's Guide ❓ scan license unverified
+- **What:** "NEC Personal Computer PC-8801FH Programmer's Guide" — official NEC programmer's guide for the PC-8801FH (16 files / PDF + EPUB + OCR text).
+- **URL:** https://archive.org/details/nec-personal-computer-pc-8801-fh-programmers-guide
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 16 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Official NEC PC-88 programming reference; bridges the PC-88/PC-98 pocket. [Wave 59 Lane A]
+
+
+#### NEC PC-8801 N88-BASIC Reference Manual (JP) ❓ scan license unverified
+- **What:** "NEC PC-8801FX-MH N88-Basic 日本語Basic Reference Manual" — Japanese N88-BASIC language reference for the PC-8801 (17 files / PDF + EPUB + OCR text).
+- **URL:** https://archive.org/details/nec-pc-8801-fx-mh-n-88-basic-basic-reference-manual
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 17 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Japanese-language; official BASIC reference for PC-88 rapid prototyping. [Wave 59 Lane A]
+
+
+#### Panasonic 3DO M2 V2.7 Developer Reference Documents ❓ scan license unverified
+- **What:** "Panasonic 3DO M2 V2.7 Developer Reference Documents" — developer reference document set for the 3DO M2 hardware (29 files / 8 docs).
+- **URL:** https://archive.org/details/Panasonic3DOM2DeveloperReferenceDocuments
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 29 files / 8 docs; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** First 3DO entry in the catalog — M2-era dev reference; M2 never shipped commercially, so this is the primary hardware doc. [Wave 59 Lane A]
+
+
+#### Addison-Wesley / Philips IMS — The CD-I Design Handbook (1992) ❓ scan license unverified
+- **What:** "The CD-I Design Handbook" (Addison-Wesley / Philips IMS, 1992) — CD-i title design handbook (15 files / 2 docs).
+- **URL:** https://archive.org/details/addison-wesley-the-cd-i-design-handbook
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, date 1992; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Philips-published CD-i design reference — the design-side companion to the technical manuals below. [Wave 59 Lane A]
+
+
+#### Microware — Discovering CD-I (1991) ❓ scan license unverified
+- **What:** "Discovering CD-I" (Microware, 1991) — CD-i development introduction from Microware (OS-9/CD-RTOS vendor) (15 files / 2 docs).
+- **URL:** https://archive.org/details/microware-discovering-cd-i
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, date 1991; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OS-vendor perspective on CD-i title development; pairs with the Philips design handbook. [Wave 59 Lane A]
+
+
+#### McGraw-Hill — CD-I Designer's Guide (Philips CD-i, 1992) ❓ scan license unverified
+- **What:** "CD-I Designers Guide" (McGraw-Hill / Philips CD-i, 1992) — designer-oriented CD-i title guide (16 files / 2 docs).
+- **URL:** https://archive.org/details/mc-graw-hill-cd-i-designers-guide
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, date 1992; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Design-pattern reference for CD-i interactive titles. [Wave 59 Lane A]
+
+
+#### Philips CD-i Technical Info — Pointing Devices (1990) ❓ scan license unverified
+- **What:** "Philips CD-i — Technical Info — Pointing Devices" (1990-08) — CD-i pointing-device hardware technical info (13 files / 2 docs).
+- **URL:** https://archive.org/details/philips_cdi_pointing_devices
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, date 1990-08; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Input-device hardware detail for CD-i homebrew. [Wave 59 Lane A]
+
+
+#### Addison-Wesley — Introducing CD-I (Philips IMS, 1992, OCR) ❓ scan license unverified
+- **What:** "Introducing CD-I" (Addison-Wesley / Philips IMS, 1992, OCR'd) — introductory CD-i overview with searchable OCR text (38 files / 6 docs).
+- **URL:** https://archive.org/details/addison-wesley-introducing-cd-i-philips-ims-ocr
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, date 1992; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OCR'd edition — the only searchable CD-i intro in this pocket. [Wave 59 Lane A]
+
+
+#### Sony/Philips — Compact Disc Recordable Systems spec (Orange Book, 1990) ❓ scan license unverified
+- **What:** "Sony/Philips — Compact Disc — Recordable Compact Disc Systems" (Part I CD-MO / Part II CD-WO, 1990-11) — the Orange Book recordable-CD system description (40 files / 6 docs).
+- **URL:** https://archive.org/details/sony-philips-compact-disc-recordable-compact-disc-systems-part-i-cd-mo-part-ii-c
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, date 1990-11; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Orange Book spec — the disc-format foundation under CD-i and photo-CD homebrew. [Wave 59 Lane A]
+
+
+#### COLECO ColecoVision Programmer's Guide Rev 5 (1982) ✅ PD
+- **What:** "COLECO ColecoVision Programmers Guide Revision 5" (1982-11-30) — official Coleco programmer's guide for the ColecoVision (16 files / PDF + OCR text).
+- **URL:** https://archive.org/details/colecovision-programmers-guide-revision-5
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, date 1982-11-30; item licenseurl is a public-domain mark — https://creativecommons.org/publicdomain/mark/1.0/)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Official 1982 programmer's guide with a PD mark — first ColecoVision entry in the catalog; covers TMS9918 VDP programming shared with MSX/SG-1000. [Wave 59 Lane A]
+#### Sega Saturn Technical Bulletin #51 ❓ scan license unverified
+- **What:** "Sega Saturn Technical Bulletin #51" — Sega's developer technical bulletin for Saturn (15 files / 2 docs).
+- **URL:** https://archive.org/details/manualzilla-id-5929933
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 15 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Developer-bulletin series — errata and hardware notes aimed at licensed Saturn developers. [Wave 59 Lane A]
+
+
+#### Various Sega Saturn/Genesis technical documents ❓ scan license unverified
+- **What:** "Various Sega Saturn/Genesis technical documents" — collected Sega technical document bundle covering Saturn and Genesis (86 files / 17 docs).
+- **URL:** https://archive.org/details/237-r-1
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 86 files / 17 docs; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Largest Saturn doc bundle in this pocket — triage the 17 documents against Yaul/Jo Engine needs. [Wave 59 Lane A]
+
+
+#### Sega Saturn Serial Transmission Test Program + Serial Server ❓ scan license unverified
+- **What:** "Serial Transmission Test Program + Serial Server (Sega Saturn)" — Sega Saturn serial-link test program with manuals (11 files; manuals in serial-transmission-manuals.zip).
+- **URL:** https://archive.org/details/serial-transmission-test-program-manual
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 11 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dev-hardware artifact — serial link test program plus manual; relevant to Saturn homebrew debugging setups. [Wave 59 Lane A]
+
+
+#### Sega Saturn Technical information (manualzilla) ❓ scan license unverified
+- **What:** "Sega Saturn Technical information" — Sega Saturn technical document (15 files / 2 docs).
+- **URL:** https://archive.org/details/manualzilla-id-7444955
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 15 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** General Saturn technical info; cross-check against the 237-r-1 bundle for overlap. [Wave 59 Lane A]
+
+
+#### Sega Saturn Target Box Technical information ❓ scan license unverified
+- **What:** "Sega Saturn Taget Box Technical information" — technical info for the Saturn Target Box dev hardware (15 files / 2 docs; note: a second archive.org item, manualzilla-id-7409891, carries the same title — near-duplicate, this item kept).
+- **URL:** https://archive.org/details/manualzz-id-1101529
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 15 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Target Box dev-kit docs — kept one of the two same-titled uploads; the other is documented as a dupe, not catalogued. [Wave 59 Lane A]
+
+
+#### External Specifications (Sega Saturn — CD) ❓ scan license unverified
+- **What:** "External Specifications (Sega Saturn — CD)" — Saturn CD subsystem external specifications (11 files).
+- **URL:** https://archive.org/details/external-specifications-saturn
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 11 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CD-block specs — needed for Saturn homebrew that streams data off disc. [Wave 59 Lane A]
+
+
+#### Hitachi SH Series Cross Assembler User's Manual (1994, Saturn-era) ❓ scan license unverified
+- **What:** "Hitachi SH Series Cross Assembler User's Manual" (Feb 18, 1994, Sega Saturn context) — the official SH cross-assembler manual (14 files / 2 docs).
+- **URL:** https://archive.org/details/hitachi-sh-series-cross-assembler-users-manual
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 14 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The SH-2 toolchain manual — pairs with the SH7604/SH-1/SH-2 programming manuals from Wave 58 for Saturn/32X assembly work. [Wave 59 Lane A]
+
+
+#### Sega of America — Introduction to Saturn Game Development ❓ scan license unverified
+- **What:** "Sega of America Introduction to Saturn Game Development" — Sega of America's intro guide to Saturn game development (15 files / 2 docs).
+- **URL:** https://archive.org/details/manualzilla-id-5658448
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 15 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Onboarding-style guide — the friendliest entry point in the Saturn pocket before the hardware manuals. [Wave 59 Lane A]
+
+
+#### Sega Saturn Boot ROM v0.8 Floppy Disk Information (1994) ❓ scan license unverified
+- **What:** "Boot ROM ver. 0.8 Floppy Disk Information (Mar 23rd 1994) (Sega Saturn)" — Saturn boot-ROM floppy information (15 files / 2 docs).
+- **URL:** https://archive.org/details/saturn-boot-rom-information
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 15 files; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Early boot-ROM documentation — niche but relevant to Saturn IPL/homebrew boot research. [Wave 59 Lane A]
+
+
+#### Sega Saturn SGL Reference — Structure Reference ❓ scan license unverified
+- **What:** "Sega Saturn SGL Reference Structure Reference" — Sega Graphics Library structure reference for Saturn (16 files / 3 docs).
+- **URL:** https://archive.org/details/sega-saturn-sgl-reference-structure-reference
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, title match, 16 files / 3 docs; no licenseurl)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SGL data-structure reference — the API companion to Yaul for Saturn graphics homebrew. [Wave 59 Lane A]
+
+
+#### MAME Documentation (docs.mamedev.org) ❓ site license unverified
+- **What:** MAME developer/user documentation site — compiling, configuration, Lua scripting, technical specs (Sphinx, version 0.289).
+- **URL:** https://docs.mamedev.org/
+- **License:** ❓ site license unverified (verified 2026-10-08: site live HTTP 200; the MAME project is GPL-2.0-or-later per docs.mamedev.org/license.html — docs carry no separate license grant)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MAME-dev docs hub; per-page entries below. Docs-only — no code pulled, so no quarantine row. [Wave 59 Lane A]
+
+
+#### MAME Lua Scripting Interface docs ❓ site license unverified
+- **What:** MAME Lua scripting interface reference (luascript section) — ref-core, ref-devices, ref-memory, ref-input, ref-render, ref-debugger pages.
+- **URL:** https://docs.mamedev.org/luascript/index.html
+- **License:** ❓ site license unverified (verified 2026-10-08: page live HTTP 200; MAME project GPL-2.0-or-later, no separate doc grant)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The automation surface for MAME-driven tooling — Lua plugins, debugger scripting, memory hooks. [Wave 59 Lane A]
+
+
+#### MAME Contributing / new-driver guide ❓ site license unverified
+- **What:** MAME "Contributing to MAME" section — driver-writing conventions, C++ style, softlist contribution guide.
+- **URL:** https://docs.mamedev.org/contributing/index.html
+- **License:** ❓ site license unverified (verified 2026-10-08: page live HTTP 200; MAME project GPL-2.0-or-later, no separate doc grant)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Driver-authoring conventions — the on-ramp for contributing new emulated hardware to MAME. [Wave 59 Lane A]
+
+
+#### MAME Technical Specifications ❓ site license unverified
+- **What:** MAME technical specifications section — device/memory/ROM/sound interfaces, input system, layout files, object finders, DRC-adjacent CPU docs.
+- **URL:** https://docs.mamedev.org/techspecs/index.html
+- **License:** ❓ site license unverified (verified 2026-10-08: page live HTTP 200; MAME project GPL-2.0-or-later, no separate doc grant)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Core device-architecture docs — the deepest MAME internals reference in this pocket. [Wave 59 Lane A]
+
+
+#### MAME — Compiling MAME (initial setup) ❓ site license unverified
+- **What:** MAME "Compiling MAME" guide — build requirements, per-OS setup, build targets.
+- **URL:** https://docs.mamedev.org/initialsetup/compilingmame.html
+- **License:** ❓ site license unverified (verified 2026-10-08: page live HTTP 200; MAME project GPL-2.0-or-later, no separate doc grant)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Build docs only — no MAME code is pulled into this catalog; see quarantine policy for the engine itself. [Wave 59 Lane A]
+
+
+#### libretro / RetroArch official documentation ✅ MIT
+- **What:** Official RetroArch/libretro documentation site (docs.libretro.com) — user + developer docs, MkDocs, 435 sitemap pages.
+- **URL:** https://docs.libretro.com/
+- **License:** ✅ MIT (verified 2026-10-08: site live HTTP 200; upstream libretro/docs repo — GitHub API spdx_id MIT)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Docs hub for the libretro-core pocket; per-page dev entries below. [Wave 59 Lane A]
+
+
+#### libretro API overview (development/libretro-overview) ✅ MIT
+- **What:** libretro API overview page — the libretro.h contract explained for core developers.
+- **URL:** https://docs.libretro.com/development/libretro-overview/
+- **License:** ✅ MIT (verified 2026-10-08: page live HTTP 200; upstream libretro/docs repo — GitHub API spdx_id MIT)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the catalogued libretro/libretro-common (libretro.h) entry — prose overview of the header contract. [Wave 59 Lane A]
+
+
+#### Developing libretro cores guide ✅ MIT
+- **What:** "Developing Cores" guide — core lifecycle, environment callbacks, dynamic rate control, OpenGL cores.
+- **URL:** https://docs.libretro.com/development/cores/developing-cores/
+- **License:** ✅ MIT (verified 2026-10-08: page live HTTP 200; upstream libretro/docs repo — GitHub API spdx_id MIT)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The practical core-authoring guide — pairs with the API overview for new core work. [Wave 59 Lane A]
+
+
+#### libretro shader spec overview (slang/GLSL/Cg) ✅ MIT
+- **What:** Shader development overview — slang/GLSL/Cg shader specs, content-aware shaders, lookup textures.
+- **URL:** https://docs.libretro.com/development/shader/shader-overview/
+- **License:** ✅ MIT (verified 2026-10-08: page live HTTP 200; upstream libretro/docs repo — GitHub API spdx_id MIT)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Shader-stack docs for libretro cores — CRT/AA shader work references these specs. [Wave 59 Lane A]
+
+
+#### DreamSDK — Dreamcast homebrew SDK site ❓ site terms unverified
+- **What:** DreamSDK — Windows-based Dreamcast homebrew SDK toolchain/site (KallistiOS-based toolchain installer).
+- **URL:** https://dreamsdk.org/
+- **License:** ❓ site terms unverified (verified 2026-10-08: site live HTTP 200; redistribution terms not confirmed)
+- **Free tier:** Free to read/download
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Windows on-ramp for Dreamcast homebrew; complements the catalogued KallistiOS entry. [Wave 59 Lane A]
+### Wave 59 Lane A — Pocket 2: landmark musicdisk deep dives round 3 (18)
+
+Round 3 continues the landmark-musicdisk pocket below rounds 1–2's pouët all-time top-25 (#1–#10 round 1, #11–#25 round 2). Ranking source: pouët's musicdisk toplist ("top of the trumpets", toplist.php?type=musicdisk — fetched live 2026-10-08; top-10 confirmed: chipmusicdisk #1, Planet Hively, blz's whispers, BitJam Vol. 1.1, Minidisk, Variform Remixed, fr-028, chipdisk #3, Rebellion, Tracked In Time). Demozoo publishes no musicdisk charts page (/charts/ verified 404 in Wave 58), so pouët's toplist is the ranking source and demozoo is the verified prod-page host. Every prod page below was verified LIVE on demozoo via browser fetch on 2026-10-08 (title + group + musicdisk-type match; direct curl is Cloudflare-blocked, HTTP 403). Honest drops this round (failures documented, no entries): "knight chips" — demozoo types it "Chip Music Pack", not musicdisk; "Knight Chips 3" — musicdisk type not confirmable on the demozoo record; "FUN Chipdisk #1" — demozoo prod 80166 is titled "Crazy Chippie Compile" (title mismatch); "Chipdisk 1: Jam on the tape" — demozoo types it Demo, not musicdisk. No license statements on any scene prod record — all ❓, with NC-not-declared honest negatives (nothing on the records declares non-commercial restriction). Pre-append dedup: 0 dupes.
+
+#### chipmusicdisk #2 — Rebels (Jan 2002) ❓ license unverified
+- **What:** "chipmusicdisk #2" — Rebels Windows musicdisk (January 2002); sequel to the #1-ranked chipmusicdisk #1.
+- **URL:** https://demozoo.org/productions/8234/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Series bridge between #1 and #3 — the 2001–2002 Rebels chipdisk run in full. [Wave 59 Lane A]
+
+
+#### Planet Hively — IRiS + Up Rough (Mar 2008) ❓ license unverified
+- **What:** "Planet Hively" — Illi Recentes ImperatoreS + Up Rough musicdisk (March 2008); runs on 18 platforms (Acorn, Amiga, Falcon, Dreamcast, Wii, PSP, …).
+- **URL:** https://demozoo.org/productions/10104/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match, musicdisk type; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The most-ported musicdisk in the pocket — 18-platform release study. [Wave 59 Lane A]
+
+
+#### BitJam Vol. 1.1: Solaris — BitFellas (Aug 2007) ❓ license unverified
+- **What:** "Bitjam Vol. 1: Solaris" — BitFellas Windows musicdisk (August 2007); 3rd in the Evoke 2007 Wild compo.
+- **URL:** https://demozoo.org/productions/8441/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Competition-placed BitFellas musicdisk; compare with the BitJam Remix Compo disks. [Wave 59 Lane A]
+
+
+#### Tracked In Time — Brainstorm (2009) ❓ license unverified
+- **What:** "Tracked In Time" — Brainstorm musicdisk (2009); ST-01 tracker-tune collection (Buzzer, JazzCat, Serpent, Xerxes, …).
+- **URL:** https://demozoo.org/productions/97295/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** pouët toplist top-10 anchor (verified on the 2026-10-08 fetch) — ST-chip focused tracklist. [Wave 59 Lane A]
+
+
+#### chipdisk #3 — Razor 1911 (Apr 2003) ❓ license unverified
+- **What:** "chipdisk #3" — Razor 1911 Windows musicdisk (April 2003); .mo3-format tunes (mp3-encoded instruments).
+- **URL:** https://demozoo.org/productions/182069/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** pouët toplist top-10 anchor — the mo3 format note is a format-study detail for tracked-music pipelines. [Wave 59 Lane A]
+
+
+#### Chipdisk 4 - The Essentials — Razor 1911 (Nov 2004) ❓ license unverified
+- **What:** "Chipdisk 4 - The Essentials" — Razor 1911 Windows musicdisk (November 2004); Dubmood/zabutom/JosSs-heavy tracklist.
+- **URL:** https://demozoo.org/productions/182071/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Successor to chipdisk #3 — the 2003→2004 Razor 1911 chipdisk arc. [Wave 59 Lane A]
+
+
+#### Chipdisk #2 — Direct From Stars + Lockless (Jan 2004) ❓ license unverified
+- **What:** "Chipdisk #2" — Direct From Stars + Lockless Windows musicdisk (January 2004); scene.org + artscene.textfiles.com downloads.
+- **URL:** https://demozoo.org/productions/182223/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match, musicdisk type; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DFS/Lockless chipdisk line — pairs with the LHS Chipdisk #1 entry below. [Wave 59 Lane A]
+
+
+#### Chip Chop Special — Desire ❓ license unverified
+- **What:** "Chip Chop Special" — Desire Amiga musicdisk (pouet: "ChipChop Special Edition"); packed into 1993-era packs (Subconscious Terror 21, Simply the Best 46, …).
+- **URL:** https://demozoo.org/productions/163517/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-90s Desire special — the pack-distribution trail documents the era's musicdisk circulation. [Wave 59 Lane A]
+
+
+#### Chip Chop 1 — Desire (1993) ❓ license unverified
+- **What:** "Chip Chop 1" — Desire Amiga musicdisk (1993; pouet: "ChipChop #1"); 116,668-byte PowerPacker 4.0 single file, guest gfx by Dwel/Alcatraz.
+- **URL:** https://demozoo.org/productions/36812/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Series origin — the 1993 ChipChop run predates the covered 2015/2024 editions by two decades. [Wave 59 Lane A]
+
+
+#### Chip Chop 2 — Desire (1993) ❓ license unverified
+- **What:** "Chip Chop 2" — Desire Amiga musicdisk (1993; pouet: "ChipChop #2"); Mel O'Dee, Heatbeat, Legend, Virgill tunes.
+- **URL:** https://demozoo.org/productions/136479/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Second in the 1993 ChipChop run — Desire's early-90s Amiga chip line. [Wave 59 Lane A]
+
+
+#### Music Dream I — Phenomena (1991) ❓ license unverified
+- **What:** "Music Dream I" — Phenomena Amiga musicdisk (1991); Twins-coded, 20+ tunes (Starter, Terrano, Mobfers, …).
+- **URL:** https://demozoo.org/productions/69705/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prequel to the covered Music Dream II — the Phenomena musicdisk series start. [Wave 59 Lane A]
+
+
+#### In Memoriam of EVS — 20th Century Composers (Dec 2006) ❓ license unverified
+- **What:** "In Memoriam of EVS" (pouet: "20CC CHIPDISK In MEMORIAM OF EVS") — 20th Century Composers Windows musicdisk (December 2006).
+- **URL:** https://demozoo.org/productions/199520/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match, musicdisk type; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Memorial disk — the tribute-musicdisk subgenre within the chipdisk line. [Wave 59 Lane A]
+
+
+#### tjc chipdisk #3 — TJC (Apr 2006) ❓ license unverified
+- **What:** "tjc chipdisk #3" — TJC musicdisk (April 2006; Linux/macOS/Windows); dual-tagged Musicdisk + Chip Music Pack.
+- **URL:** https://demozoo.org/productions/175743/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match, musicdisk type; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cross-platform (Linux/macOS/Windows) chipdisk — the multi-OS branch of the chipdisk line. [Wave 59 Lane A]
+
+
+#### WHiTECHiPDiSK #1 — WHiTEWiNDOW (Apr 2010) ❓ license unverified
+- **What:** "WHiTECHiPDiSK #1" — WHiTEWiNDOW Windows musicdisk (April 2010); scene.org download.
+- **URL:** https://demozoo.org/productions/199570/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match, musicdisk type; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2010-era chipdisk — the WHiTECHiPDiSK series start. [Wave 59 Lane A]
+
+
+#### Chipdisc — Razor 1911 (2002) ❓ license unverified
+- **What:** "Chipdisc" (pouet: "Razor 1911 Chipdisk1") — Razor 1911 Windows musicdisk (2002); Dubmood/JosSs/Zalza-heavy tracklist.
+- **URL:** https://demozoo.org/productions/155806/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2002 Razor 1911 chipdisk — predates the chipdisk #3/#4 line. [Wave 59 Lane A]
+
+
+#### Adhoc Chipdisk — Adhoc (Dec 2006) ❓ license unverified
+- **What:** "Adhoc Chipdisk" — Adhoc musicdisk (December 2006; Linux/Windows); =8th in the Dreamhack 2006 Wild compo.
+- **URL:** https://demozoo.org/productions/83440/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match, musicdisk type; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Party-placed chipdisk — Dreamhack 2006 wild-compo entry. [Wave 59 Lane A]
+
+
+#### Funky chipdisk v1 (Nov 2005) ❓ license unverified
+- **What:** "Funky chipdisk v1" — Windows musicdisk (November 2005); Virgill music, scene.org download + NFO.
+- **URL:** https://demozoo.org/productions/8986/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match, musicdisk type; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-musician chipdisk (Virgill) — the solo-artist end of the chipdisk spectrum. [Wave 59 Lane A]
+
+
+#### LHS Chipdisk #1 — Direct From Stars (2003) ❓ license unverified
+- **What:** "LHS Chipdisk #1" — Direct From Stars Windows musicdisk (2003); LHS music, Minz code/gfx.
+- **URL:** https://demozoo.org/productions/177184/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DFS chipdisk line companion to the Chipdisk #2 entry above. [Wave 59 Lane A]
+### Wave 59 Lane A — Pocket 3: PD radio-drama round 8 — per-episode deep dives (54)
+
+50 Jack Benny Program single episodes + 4 Lone Ranger single episodes. Staged in /tmp as p3_final54.json (54 items) + p3_jb_verified.json (50 items) by the staging lane — the jb file is a strict subset of the 54 (all 50 overlap ids), so the union is 54. The /tmp staging files were lost to ephemeral cleanup mid-lane; all 54 items were RE-VERIFIED live against the archive.org metadata API by this lane (HTTP 200, title match, 2 audio files each — matches the staging claims). Pre-append dedup against existing catalog OTR entries (title + URL greps): 0 dupes. Badge discipline per the Wave 59 uniformity ruling (see wave summary): Jack Benny = ✅ on established show-level PD precedent with the licenseurl-absent fact stated honestly; Lone Ranger = ⚠️ rights-caution kept (2 carry per-item PD marks, noted — caution is about character rights, not the broadcast recording).
+
+#### Jacks Violin Is Returned — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jacks Violin Is Returned" — The Jack Benny Program (1937-02-28); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBenny19370228247JacksViolinIsReturned
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### The Train Porter — The Jack Benny Program (OTR) ✅ PD
+- **What:** "The Train Porter" — The Jack Benny Program (1937-03-28); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBenny19370328TheTrainPorter
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack Tells How He Saved Fred Allen's Life — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack Tells How He Saved Fred Allen's Life" — The Jack Benny Program (1939-01-22); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBenny19390122JackTellsHowHeSavedFredAllensLife
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack Waits To See A Movie Director — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack Waits To See A Movie Director" — The Jack Benny Program (1940-11-17); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBenny19401117JackWaitsToSeeAMovieDirector
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Robert Taylor Plays Cello — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Robert Taylor Plays Cello" — The Jack Benny Program (1938-02-13); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBenny380213RobertTaylorPlaysCello
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack Dreams He Is A Turkey — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack Dreams He Is A Turkey" — The Jack Benny Program (1943-11-21); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBenny431121JackDreamsHeIsATurkey
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### The Horn Blows At Midnight — The Jack Benny Program (OTR) ✅ PD
+- **What:** "The Horn Blows At Midnight" — The Jack Benny Program (1949-02-20); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBenny490220TheHornBlowsAtMidnight
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Ah Wilderness — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Ah Wilderness" — The Jack Benny Program (1936-04-12); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram360412215AhWilderness
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Money Ain't Everything — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Money Ain't Everything" — The Jack Benny Program (1936-12-06); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram361206MoneyAintEverything
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Buck Benny Rides Again Twelve — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Buck Benny Rides Again Twelve" — The Jack Benny Program (1937-02-21); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram370221BuckBennyRidesAgainTwelve
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Guests Burns And Allen — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Guests Burns And Allen" — The Jack Benny Program (1937-04-11); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram370411GuestsBurnsAndAllen
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack Buys The Maxwell — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack Buys The Maxwell" — The Jack Benny Program (1937-10-24); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram371024JackBuysTheMaxwell
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Lost Horizon — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Lost Horizon" — The Jack Benny Program (1937-11-21); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram371121LostHorizon
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### A Yank At Oxford — The Jack Benny Program (OTR) ✅ PD
+- **What:** "A Yank At Oxford" — The Jack Benny Program (1938-04-10); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram380410AYankAtOxford
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Beverly Hills Home Under Construction — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Beverly Hills Home Under Construction" — The Jack Benny Program (1938-05-01); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram380501BeverlyHillsHomeUnderConstruction
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### 38 10 30 Jack Throws A Halloween Party — The Jack Benny Program (OTR) ✅ PD
+- **What:** "38 10 30 Jack Throws A Halloween Party" — The Jack Benny Program (1938-10-30); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram381030381030JackThrowsAHalloweenParty
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack's Screen Guild Theater Performance — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack's Screen Guild Theater Performance" — The Jack Benny Program (1939-01-15); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram390115JacksScreenGuildTheaterPerformance
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Guest Ed Sullivan — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Guest Ed Sullivan" — The Jack Benny Program (1939-03-26); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram390326GuestEdSullivan
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Seventh Anniversary Show — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Seventh Anniversary Show" — The Jack Benny Program (1939-04-30); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram390430SeventhAnniversaryShow
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### The Halloween Masquerade Party — The Jack Benny Program (OTR) ✅ PD
+- **What:** "The Halloween Masquerade Party" — The Jack Benny Program (1939-10-29); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram391029TheHalloweenMasqueradeParty
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Golden Boy — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Golden Boy" — The Jack Benny Program (1940-01-07); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram400107GoldenBoy
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Gracie Allen For President — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Gracie Allen For President" — The Jack Benny Program (1940-03-03); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram400303GracieAllenForPresident
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Clown Hall Tonight — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Clown Hall Tonight" — The Jack Benny Program (1940-05-05); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram400505ClownHallTonight
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack's Halloween Party — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack's Halloween Party" — The Jack Benny Program (1940-11-03); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram401103JacksHalloweenParty
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Father Time Rides Again — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Father Time Rides Again" — The Jack Benny Program (1940-12-29); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram401229FatherTimeRidesAgain
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Murder At The Racquet Club — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Murder At The Racquet Club" — The Jack Benny Program (1941-03-09); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram410309MurderAtTheRacquetClub
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Returning To Hollywood — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Returning To Hollywood" — The Jack Benny Program (1941-10-19); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram411019ReturningToHollywood
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Dr Jekyl And Mr Hyde Part One — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Dr Jekyl And Mr Hyde Part One" — The Jack Benny Program (1941-11-30); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram411130DrJekylAndMrHydePartOne
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### How Jack Spent His Birthday — The Jack Benny Program (OTR) ✅ PD
+- **What:** "How Jack Spent His Birthday" — The Jack Benny Program (1942-02-15); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram420215HowJackSpentHisBirthday
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Phil Becomes A Father — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Phil Becomes A Father" — The Jack Benny Program (1942-05-24); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram420524PhilBecomesAFather
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### New Years Eve Skit — The Jack Benny Program (OTR) ✅ PD
+- **What:** "New Years Eve Skit" — The Jack Benny Program (1942-12-27); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram421227NewYearsEveSkit
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Host George Burns And Gracie Allen — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Host George Burns And Gracie Allen" — The Jack Benny Program (1943-03-07); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram430307HostGeorgeBurnsAndGracieAllen
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack Pretends He Is Going To Brazil — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack Pretends He Is Going To Brazil" — The Jack Benny Program (1943-10-31); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram431031JackPretendsHeIsGoingToBrazil
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack Has A Pet Camel — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack Has A Pet Camel" — The Jack Benny Program (1944-01-09); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram440109JackHasAPetCamel
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### From March Field — The Jack Benny Program (OTR) ✅ PD
+- **What:** "From March Field" — The Jack Benny Program (1944-02-13); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram440213FromMarchField
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Final Grape Nuts Flakes Sponsored Show — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Final Grape Nuts Flakes Sponsored Show" — The Jack Benny Program (1944-06-04); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram440604FinalGrapeNutsFlakesSponsoredShow
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### How Jack And The Gang Spent Thanksgiving — The Jack Benny Program (OTR) ✅ PD
+- **What:** "How Jack And The Gang Spent Thanksgiving" — The Jack Benny Program (1944-11-26); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram441126HowJackAndTheGangSpentThanksgiving
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack Resolves To Be Friends With Fred Allen — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack Resolves To Be Friends With Fred Allen" — The Jack Benny Program (1944-12-31); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram441231JackResolvesToBeFriendsWithFredAllen
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### I Stand Condemned — The Jack Benny Program (OTR) ✅ PD
+- **What:** "I Stand Condemned" — The Jack Benny Program (1946-03-24); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram460324IStandCondemned
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack And Mary Walk To The Studio — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack And Mary Walk To The Studio" — The Jack Benny Program (1946-10-13); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram461013JackAndMaryWalkToTheStudio
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack's Birthday Party With Isaac Stern — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack's Birthday Party With Isaac Stern" — The Jack Benny Program (1947-02-16); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram470216JacksBirthdayPartyWithIsaacStern
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Turkey Trial Dream — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Turkey Trial Dream" — The Jack Benny Program (1947-11-30); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram471130TurkeyTrialDream
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Sorry, Wrong Number — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Sorry, Wrong Number" — The Jack Benny Program (1948-10-17); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram481017SorryWrongNumber
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack's Birthday Is Tomorrow — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack's Birthday Is Tomorrow" — The Jack Benny Program (1949-02-13); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram490213JacksBirthdayIsTomorrow
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Sagebrush Soap Contest — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Sagebrush Soap Contest" — The Jack Benny Program (1950-03-12); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram500312SagebrushSoapContest
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Mother's Day Gags — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Mother's Day Gags" — The Jack Benny Program (1950-05-14); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram500514MothersDayGags
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Douglas Fairbanks, Jr — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Douglas Fairbanks, Jr" — The Jack Benny Program (1951-01-28); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram510128DouglasFairbanksJr
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### George Burns Sings Jack's Song — The Jack Benny Program (OTR) ✅ PD
+- **What:** "George Burns Sings Jack's Song" — The Jack Benny Program (1952-01-20); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram520120GeorgeBurnsSingsJacksSong
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Jack's 39th Birthday Again — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Jack's 39th Birthday Again" — The Jack Benny Program (1954-02-14); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram540214Jacks39thBirthdayAgain
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Surprise Party For Jack — The Jack Benny Program (OTR) ✅ PD
+- **What:** "Surprise Party For Jack" — The Jack Benny Program (1955-02-13); single-episode deep dive.
+- **URL:** https://archive.org/details/JackBennyProgram550213SurprisePartyForJack
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent per the catalogued "The Jack Benny Program (OTR)" entry and Wave 54 era entries; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### Lone Ranger (LoneRanger_497) — The Lone Ranger (OTR) ⚠️ rights-caution
+- **What:** "Lone Ranger" — The Lone Ranger episode (archive.org item LoneRanger_497); single-episode deep dive.
+- **URL:** https://archive.org/details/LoneRanger_497
+- **License:** ⚠️ Rights-caution (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl on the item — per the standing Lone Ranger precedent: character is an actively held trademark and later episodes were renewed, per-episode check required; study only, do not ship audio or character references without clearance)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### A Bullet For Tonto — The Lone Ranger (OTR) ⚠️ rights-caution
+- **What:** "A Bullet For Tonto" — The Lone Ranger; single-episode deep dive.
+- **URL:** https://archive.org/details/TheLoneRanger-ABulletForTonto
+- **License:** ⚠️ Rights-caution (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a public-domain mark — http://creativecommons.org/licenses/publicdomain/ — per the standing Lone Ranger precedent: character is an actively held trademark and later episodes were renewed, per-episode check required; study only, do not ship audio or character references without clearance)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### The Cave of Terror — The Lone Ranger (OTR) ⚠️ rights-caution
+- **What:** "The Cave of Terror" — The Lone Ranger; single-episode deep dive.
+- **URL:** https://archive.org/details/TheLoneRanger-TheCaveOfTerror
+- **License:** ⚠️ Rights-caution (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl on the item — per the standing Lone Ranger precedent: character is an actively held trademark and later episodes were renewed, per-episode check required; study only, do not ship audio or character references without clearance)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+#### The Origins of the Lone Ranger — The Lone Ranger (OTR) ⚠️ rights-caution
+- **What:** "The Origins Of The Lone Ranger" — documentary on the Lone Ranger origins (item metadata date 2025-04-26 is the upload date, not the broadcast); single-episode deep dive.
+- **URL:** https://archive.org/details/the-origins-of-the-lone-ranger.t-01
+- **License:** ⚠️ Rights-caution (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a public-domain mark — https://creativecommons.org/publicdomain/zero/1.0/ — per the standing Lone Ranger precedent: character is an actively held trademark and later episodes were renewed, per-episode check required; study only, do not ship audio or character references without clearance)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 8 per-episode deep dive; see lane report for the badge-discipline ruling. [Wave 59 Lane A]
+
+
+### Wave 59 Lane A summary (2026-10-08)
+
+- New #### entries: 107 (P1: 35 retro homebrew SDK docs round 5 — PC-98/PC-88, 3DO M2, CD-i, ColecoVision, Saturn dev docs, MAME-dev docs, libretro-core docs, DreamSDK · P2: 18 landmark musicdisks round 3 · P3: 54 PD radio-drama round 8 — 50 Jack Benny + 4 Lone Ranger per-episode deep dives)
+- Badge summary: ✅ permissive/PD 56 (6 P1: 2 PD-marked scans + 4 MIT libretro docs · 50 P3 Jack Benny on established show-level PD precedent) · ⚠️ caution 4 (4 P3 Lone Ranger — rights-caution kept) · ❓ unverified 47 (29 P1 scans/sites + 18 P2 musicdisks) · 🚫 quarantined 0 (docs-only pocket — no GPL code items)
+- Quarantine rows added: 0 — docs/LICENSE_QUARANTINE.md untouched this lane.
+- Duplicates rejected: P2 honest drops — "knight chips" (demozoo types it Chip Music Pack, not musicdisk), "Knight Chips 3" (musicdisk type not confirmable on demozoo record), "FUN Chipdisk #1" (demozoo prod 80166 is titled "Crazy Chippie Compile" — title mismatch), "Chipdisk 1: Jam on the tape" (demozoo types it Demo); P1 dupe dropped — manualzilla-id-7409891 (same-titled Saturn Target Box doc as manualzz-id-1101529, kept one). Pre-append dedup greps (title + URL/domain) found 0 additional dupes.
+- Catalog count: 5,294 → 5,401 honest #### entries (+107 Lane A).
+
+**OTR badge-discipline ruling (Wave 59, required uniformity review):** The staged P3 items carried licenseurl on only 2 of 54 items. Wave 55's rule ("underlying broadcast PD" → ✅) and Wave 58's per-item-mark rule (licenseurl → ✅, absent → ❓) are both superseded by this standing rule: a show with an established ✅ PD status documented in the catalog (per-show entry with named PD precedent) may carry ✅ on per-episode items WITH the established-PD note AND the item-level licenseurl-absent fact stated honestly — no assumed PD. Everything else is a ❓ diligence record. Shows flagged ⚠️ rights-caution in prior waves (Lone Ranger, Green Hornet, The Shadow) keep their caution regardless of per-item PD marks, because the caution is about character rights, not the broadcast recording. Applied: the 50 Jack Benny episodes = ✅ (established precedent: catalogued "The Jack Benny Program (OTR)" ✅ PD — "uploader-labeled PD; radio episodes widely treated as PD" — plus Wave 54 ✅ era entries on "underlying US radio broadcasts"); the 4 Lone Ranger episodes = ⚠️ rights-caution (standing precedent: character actively trademarked, later episodes renewed, per-episode check required — the 2 per-item PD marks are noted but do not lift the caution). No item was assumed PD without precedent; no Lone Ranger item was badged ✅.
+
+**P2 ranking-source disclosure:** pouët's musicdisk toplist ("top of the trumpets", toplist.php?type=musicdisk, fetched live 2026-10-08; top-10 confirmed on the page) is the ranking source — demozoo publishes no charts page (/charts/ verified 404, per Wave 58). Round 3 covers the long-tail tier below rounds 1–2's #1–#25; every prod page verified LIVE on demozoo via browser fetch (direct curl Cloudflare-blocked, HTTP 403). Demozoo record types were checked per item: 4 candidates dropped for type/title mismatches (documented above).

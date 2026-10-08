@@ -4143,3 +4143,127 @@ source of mouth-timing truth for spot-checking aligner output.
 <!-- end lane D wave 4 batch 3: photo/audio-restoration + archival QC (8 entries) -->
 <!-- end lane D wave 4 batch 2: deblur/colorize/faces (8 entries) -->
 <!-- end lane D wave 4 batch 1: restoration SR/deblur (8 entries) -->
+
+## Cartoon mouth-swap / viseme performance systems
+
+#### Inochi2D ✅
+- **What:** Open-source 2D puppet animation suite — rig 2D characters with parameterized mouth/eye/head motion and drive them live from webcam face tracking.
+- **URL:** https://github.com/Inochi2D/inochi-creator
+- **License:** BSD-2-Clause (verified 2026-10-08: official FAQ + ecosyste.ms repository metadata).
+- **Use:** build 2D cartoon mouth-swap puppets whose mouths are performed live or from recorded tracking instead of frame-by-frame lip-sync.
+- **Lane note:** Wave 4 Lane D: the flagship open-source 2D mouth-swap performance tool — puppet visemes, not phoneme extraction.
+
+#### three-vrm ✅
+- **What:** pixiv's three.js runtime for VRM avatars; VRMExpressionManager drives preset expressions including the aa/ih/ou/ee/oh lip-sync blendshapes.
+- **URL:** https://github.com/pixiv/three-vrm
+- **License:** MIT (verified 2026-10-08: upstream LICENSE cited by multiple downstream projects; consistent with npm package metadata).
+- **Use:** drive a VRM avatar's mouth blendshapes in-browser from audio amplitude or face-tracking input for web-based talking-character scenes.
+- **Lane note:** Wave 4 Lane D: the web-side mouth-swap driver — standard VRM viseme presets (aa/ih/ou/ee/oh) every VRM model carries.
+
+#### UniVRM ✅
+- **What:** The VRM Consortium's official VRM (glTF-based avatar format) implementation for Unity — import/export plus runtime blendshape/expression proxy control.
+- **URL:** https://github.com/vrm-c/UniVRM
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and README License section).
+- **Use:** drive avatar mouth blendshapes inside Unity from audio or tracking for real-time talking-character performance capture.
+- **Lane note:** Wave 4 Lane D: the Unity-side counterpart to three-vrm — official VRM mouth/expression driver for engine-based performance.
+
+#### StyleHEAT ✅
+- **What:** One-shot high-resolution editable talking-face generation via a pretrained StyleGAN — drive a single portrait with video motion or audio (SadTalker module).
+- **URL:** https://github.com/OpenTalker/StyleHEAT
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file; project moved from FeiiYin/StyleHEAT to OpenTalker).
+- **Use:** generate audio-driven talking-head performance from a single character portrait for stylized talking shots.
+- **Lane note:** Wave 4 Lane D: one-shot audio-driven head performance — portrait in, speaking performance out.
+
+#### FaceFormer ✅
+- **What:** Transformer that autoregressively synthesizes realistic 3D facial-motion sequences (accurate lip movements) from raw audio + a neutral 3D face mesh.
+- **URL:** https://github.com/EvelynFan/FaceFormer
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** generate 3D mouth/face performance curves from dialogue audio, then retarget onto a character rig's blendshapes.
+- **Lane note:** Wave 4 Lane D: audio → 3D facial motion curves — a viseme driver for mesh-based characters rather than a 2D sprite swapper.
+
+#### CodeTalker ✅
+- **What:** Speech-driven 3D facial animation via a discrete motion codebook prior — raw audio + neutral face template in, vivid 3D facial motion with accurate lips out.
+- **URL:** https://github.com/Doubiiu/CodeTalker
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** audio-driven 3D face performance for dialogue shots; ships a Colab demo for quick voice-to-face-motion tests.
+- **Lane note:** Wave 4 Lane D: codebook-prior viseme synthesis — pairs with FaceFormer as the 3D audio-to-face-motion tier.
+
+#### GeneFace ✅
+- **What:** Generalized high-fidelity audio-driven 3D talking-face synthesis (ICLR 2023) — NeRF-based renderer driven by pitch-aware audio-to-motion landmarks.
+- **URL:** https://github.com/yerfor/GeneFace
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** synthesize talking-head video from a target person video + new dialogue audio; real-time-capable RAD-NeRF renderer.
+- **Lane note:** Wave 4 Lane D: the NeRF talking-head performance system — same authors' GeneFace++ also released upstream.
+
+#### LatentSync ⚠️ Apache-2.0 code, weight/model chain — verify per use
+- **What:** Audio-conditioned latent diffusion that re-syncs the mouth region of existing video to new audio, preserving identity and context.
+- **URL:** https://github.com/bytedance/LatentSync
+- **License:** Apache-2.0 for the code (verified 2026-10-08: repo metadata "License: Apache License 2.0") BUT model weights are OpenRAIL++ and the pipeline requires InsightFace (non-commercial) — **verify per use**.
+- **Use:** re-perform mouth motion on existing footage to match a new dialogue take without re-animating.
+- **Lane note:** Wave 4 Lane D: diffusion mouth-swap on real footage — the honest ⚠️ is the weight chain, not the code.
+
+#### InfiniteTalk ⚠️ Apache-2.0 code, base-model weight terms — verify per use
+- **What:** Unlimited-length audio-driven talking-video generation — sparse-frame video dubbing that syncs lips, head, body, and expressions (image- or video-to-video).
+- **URL:** https://github.com/MeiGen-AI/InfiniteTalk
+- **License:** Apache-2.0 for the code (verified 2026-10-08: upstream LICENSE.txt + repo metadata) BUT built on Wan2.1-I2V base weights under the WAN license — **verify weight terms per use**.
+- **Use:** full-performance dubbing of talking shots to new dialogue audio; streaming mode for long segments.
+- **Lane note:** Wave 4 Lane D: whole-body audio-driven performance, not just lips — code is clean, the base-model license needs a check.
+
+<!-- end lane D wave 4 batch 4: mouthswap part 1 (9 entries; Kalidokit dropped — already in catalog) -->
+#### Hallo2 ⚠️ MIT code, non-commercial dependency chain — verify per use
+- **What:** Long-duration, high-resolution audio-driven portrait animation (ICLR 2025) — image + English audio in, minutes-long talking performance out.
+- **URL:** https://github.com/fudan-generative-vision/hallo2
+- **License:** MIT for the code (verified 2026-10-08: repo metadata + LICENSE file) BUT inference downloads InsightFace models (non-commercial) and SD1.5 weights, and the optional CodeFormer video-SR feature is under S-Lab License 1.0 per the repo README — **verify per use**.
+- **Use:** long-form talking-head performance from a single portrait + dialogue audio; built-in face/background upsampling pass.
+- **Lane note:** Wave 4 Lane D: the long-duration audio-driven performer — honest ⚠️ for the bundled model licenses.
+
+#### X-Portrait ⚠️ Apache-2.0 code, SD-derived weights — verify per use
+- **What:** Expressive portrait animation with hierarchical motion attention (SIGGRAPH 2024) — transfer head pose and detailed facial expression from a driving video onto a reference portrait.
+- **URL:** https://github.com/bytedance/X-Portrait
+- **License:** Apache-2.0 for the code (verified 2026-10-08: repo metadata + LICENSE.txt) BUT checkpoints are SD1.5-derived — **check CreativeML OpenRAIL-M terms per use**.
+- **Use:** video-driven face performance transfer — perform the mouth/face on camera, transfer it onto the character portrait.
+- **Lane note:** Wave 4 Lane D: performance-transfer rather than audio-driven — the puppeteer's own face becomes the mouth-swap source.
+
+#### DECA ⚠️ non-commercial scientific research only
+- **What:** Detailed Expression Capture and Animation (SIGGRAPH 2021) — reconstructs an animatable detailed 3D face (FLAME-based) with disentangled expression parameters from in-the-wild images.
+- **URL:** https://github.com/YadiraF/DECA
+- **License:** "This code and model are available for non-commercial scientific research purposes" (verified 2026-10-08: upstream README License section) — ⚠️.
+- **Use:** capture expression/mouth parameters from reference footage to drive character-face animation in research/pipeline prototyping.
+- **Lane note:** Wave 4 Lane D: expression-capture tier for viseme performance — NC terms keep it research-side only.
+
+#### EMOCA ⚠️ non-commercial scientific research only
+- **What:** Emotion-driven monocular face capture and animation (CVPR 2022) — reconstructs 3D faces with emotion-detailed expressions, built on DECA.
+- **URL:** https://github.com/radekd91/emoca
+- **License:** "available for non-commercial scientific research purposes" (verified 2026-10-08: upstream README License section) — ⚠️.
+- **Use:** emotion-aware facial performance capture; expression coefficients feed mouth/face animation in non-commercial pipeline work.
+- **Lane note:** Wave 4 Lane D: EMOCA's expression detail is the viseme-quality upgrade over plain landmark tracking — NC-licensed.
+
+#### LIA ⚠️ CC BY-NC 4.0
+- **What:** Latent Image Animator — animates images via latent-space navigation (ICLR 2022); driving-video motion transferred onto a source portrait.
+- **URL:** https://github.com/wyhsirius/LIA
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: third-party THIRD_PARTY_NOTICES citing the upstream license text) — ⚠️.
+- **Use:** video-driven portrait performance for previz and non-commercial talking-character tests.
+- **Lane note:** Wave 4 Lane D: lightweight latent-space performance transfer — NC keeps it out of commercial shots.
+
+#### PersonaLive ⚠️ Apache-2.0 code, academic-research-only disclaimer
+- **What:** Real-time, streamable diffusion framework for expressive portrait image animation (CVPR 2026) — infinite-length portrait performance with online inference and webcam mode.
+- **URL:** https://github.com/GVCLab/PersonaLive
+- **License:** Apache-2.0 per repo metadata BUT README disclaimer states "This project is released for academic research only" (verified 2026-10-08: upstream README) — **verify per use**.
+- **Use:** live-streamed talking-character performance from a portrait; research reference for real-time mouth-swap pipelines.
+- **Lane note:** Wave 4 Lane D: the live-performance end of the spectrum — real-time webcam-driven portrait animation.
+
+#### PIRender ⚠️ CC BY-NC 4.0
+- **What:** Controllable portrait image generation via semantic neural rendering (ICCV 2021) — drive face motion with disentangled 3DMM parameters, including audio-driven facial reenactment.
+- **URL:** https://github.com/RenYurui/PIRender
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: upstream LICENSE.md) — ⚠️.
+- **Use:** 3DMM-parameter mouth/face performance and audio-driven reenactment for non-commercial talking-head work.
+- **Lane note:** Wave 4 Lane D: 3DMM-coefficient puppet controls — intuitive expression parameters rather than audio black-box.
+
+#### EmoTalk ⚠️ CC BY-NC 4.0
+- **What:** Speech-driven emotional disentanglement for 3D face animation (ICCV 2023) — audio with different emotions in, realistic 3D facial animation with matching emotional expression out; renders via Blender.
+- **URL:** https://github.com/psyai-net/EmoTalk_release
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: README License section; "For commercial licensing, please contact fanzhaoxin@psyai.net") — ⚠️.
+- **Use:** emotion-aware 3D mouth/face performance from dialogue audio; Blender render path fits existing 3D tooling.
+- **Lane note:** Wave 4 Lane D: the emotional-expression tier of audio-driven 3D viseme performance — NC-licensed.
+
+<!-- end lane D wave 4 batch 5: mouthswap part 2 (8 entries) — section complete -->

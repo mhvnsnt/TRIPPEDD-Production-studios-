@@ -29429,11 +29429,11 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Notes:** Wave 29 Lane B deferred the BUILD (no Qt dev libraries) — the license is clear, so the catalog entry stands and a future lane can attempt the build again. No quarantine row needed (zlib is permissive). [Wave 30 Lane A]
 - **Wave 30 Lane C (2026-10-08):** Qt build environment re-checked — STILL absent (no qtbase5-dev/qt6-base-dev, no qmake/qmake6; compilers cmake/g++/make present). Build remains deferred, matching 10+ prior waves. [Wave 30 Lane C]
 
-## Wave 31 — Lane A (catalog deepening: PD score-archive regional deep-dives · demoscene music-disk archives · caption SaaS ToS completion · tracker-format tool implementations) — 32 entries (2026-10-08)
+## Wave 31 — Lane A (catalog deepening: PD score-archive regional deep-dives · demoscene music-disk archives · caption SaaS ToS completion · tracker-format tool implementations) — 31 entries (2026-10-08)
 
-- Previous honest count: 2,862 → new honest count: 2,894
+- Previous honest count: 2,862 → new honest count: 2,893
 - Quarantine rows added: 6 (rows 265–270 — Adlib Tracker II, gbsplay, sc68, psgplay, vgmtools, ProTrackR2); max 270 · 247 distinct. LGPL finds (Nuked-OPL3, ZXTune, FluidSynth, libOPNMIDI) cataloged as ⚠️ with no new quarantine rows per the standing LGPL rule (doctrine still pending owner verdict).
-- Batches: 6 PD score-archive regional deep-dives · 7 demoscene music-disk archives · 0 caption SaaS ToS completion (badge-flip pass on verified entries, no new rows) · 19 tracker-format tool implementations
+- Batches: 6 PD score-archive regional deep-dives · 6 demoscene music-disk archives · 0 caption SaaS ToS completion (badge-flip pass on verified entries, no new rows) · 19 tracker-format tool implementations
 - Dedup: every candidate name + repo URL grepped against docs/RESOURCE_CATALOG.md and docs/LICENSE_QUARANTINE.md before inclusion. Skipped as already cataloged: ÖNB/ANNO music (5 entries), DAHR general + label splits, National Library of Norway music, NLS music, KBR Belgica, NDL Digital Collections, Red Hot Jazz Archive, Alan Lomax Archive/ACE, Global Jukebox, LOC National Jukebox, UCSB Cylinder Audio Archive, Sousa Archives (UIUC). libsidplayfp mapped to existing quarantine row 258 (no new row).
 
 ### Pocket 1 — PD score-archive regional deep-dives (6 entries)
@@ -29497,3 +29497,65 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Held as a ❓ finding aid for a future verification lane; the Renaissance cancioneiros are the long-term target. [Wave 31 Lane A]
+
+### Pocket 2 — Demoscene music-disk archives (6 entries)
+
+#### ZX-Art (zxart.ee) ⚠️ per-production rights
+- **What:** ZX Spectrum demoscene archive — music collections, music disks, art packs, and demoscene productions; entries carry "Legal status: No information" per-production flags.
+- **URL:** https://zxart.ee/eng/music/
+- **License:** ⚠️ Per-production rights — the archive does not assert a blanket license; each production's rights belong to its authors. Verify per item before reuse.
+- **Free tier:** Free browsing + downloads of hosted productions
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Scene-music reference and period-correct ZX chiptune vibes; the production metadata (authors, parties) doubles as a credit graph for clearance research. [Wave 31 Lane A]
+
+#### Spectrum Computing ⚠️ takedown-policy archive
+- **What:** ZXDB-based ZX Spectrum software archive — games, utilities, and music-related software with covertape/music-disk coverage; rights-holder takedown policy ("We will remove anything... if the rights holder asks").
+- **URL:** https://spectrumcomputing.co.uk
+- **License:** ⚠️ Takedown-policy archive — hosts files under a notice-and-takedown regime, not a license grant. Reference use is safe; redistributing binaries needs rights-holder clearance.
+- **Free tier:** Free browsing + downloads
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane for ZX music-disk provenance and publisher/rights-holder identification before any clearance attempt. [Wave 31 Lane A]
+
+#### Generation MSX ✅ info-only database
+- **What:** MSX software database (community project since 1998) — info pages for MSX games, music cartridges, and demoscene music disks; database only, no downloads hosted.
+- **URL:** https://generation-msx.nl/about-us
+- **License:** ✅ Info-only — a metadata database with no hosted binaries, so there is nothing to infringe; safe as a research/reference source.
+- **Free tier:** Free database access
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX music-disk and SCC/FM-PAC cartridge discography research; pairs with the MSX tracker tools in Pocket 4. [Wave 31 Lane A]
+
+#### Dwelling of Duels 🚫 derivative covers of copyrighted game music
+- **What:** 23-year-running monthly video-game-music cover competition — 6,480 songs in the archive (duelists arrange one game tune per month; listener voting decides winners). Hosted at dwellingofduels.net.
+- **URL:** https://www.dwellingofduels.net
+- **License:** 🚫 Derivative works — every entry is an arrangement of copyrighted game music; the site grants no commercial license. Not commercial-safe for production use.
+- **Free tier:** Free streaming/downloads of contest entries
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cataloged as a 🚫 reference so nobody wires it: listen for arrangement inspiration only, never sample or reuse. [Wave 31 Lane A]
+
+#### zxmusicfm ✅ MIT (code) · ⚠️ per-track music rights
+- **What:** ZX Spectrum AY-chipmusic radio/player (github.com/pinebit/zxmusicfm) — streams chiptunes from ZX-Art's music collection via a web player; code is MIT.
+- **URL:** https://github.com/pinebit/zxmusicfm
+- **License:** ✅ MIT for the player code (verified via GitHub API 2026-10-08). ⚠️ The streamed music itself belongs to its composers — per-track rights, not covered by the MIT grant.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The player architecture (ZX-Art API → AY emulation in browser) is a reusable pattern for a studio chiptune jukebox; use only with cleared tracks. [Wave 31 Lane A]
+
+#### VGM Preservation Foundation Wiki ✅ documentation
+- **What:** The VGMPF wiki (vgmpf.com) — format documentation for VGM, PSF, USF, GSF, 2SF, SNSF and related ripped game-music formats, plus a directory of rip archives (psf.joshw.info, Zophar's Domain mirrors, etc.).
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=PSF
+- **License:** ✅ Documentation — the wiki itself is reference material; the rip archives it lists (psf.joshw.info et al.) are 🚫 unlicensed game rips and must never be wired as content sources.
+- **Free tier:** Free documentation
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The PSF/USF/GSF format specs are the authoritative reference for any future ripped-format playback tooling; treat every linked download mirror as rip-risk. [Wave 31 Lane A]

@@ -1,0 +1,25 @@
+{
+  "row": 61,
+  "name": "KITScenarist",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "dimkanovikov/KITScenarist",
+  "api": {
+    "full_name": "dimkanovikov/KITScenarist",
+    "archived": true,
+    "pushed_at": "2023-08-01T04:02:43Z",
+    "stargazers_count": 350,
+    "default_branch": "develop",
+    "owner": "dimkanovikov",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 35115
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

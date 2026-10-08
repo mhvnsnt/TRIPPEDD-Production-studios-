@@ -1,0 +1,25 @@
+{
+  "row": 211,
+  "name": "Internet Archive BookReader",
+  "claimed": "AGPL-3.0",
+  "kind": "github",
+  "ref": "internetarchive/bookreader",
+  "api": {
+    "full_name": "internetarchive/bookreader",
+    "archived": false,
+    "pushed_at": "2026-10-07T20:28:01Z",
+    "stargazers_count": 1180,
+    "default_branch": "master",
+    "owner": "internetarchive",
+    "spdx_id": "AGPL-3.0",
+    "license_name": "GNU Affero General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 34520
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

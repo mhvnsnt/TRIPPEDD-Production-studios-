@@ -31496,3 +31496,142 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Honest thinness: the article is an acknowledged stub (signatures + game list only). VGMPF's HMP page has more technical detail but same unverified wiki terms. Doc-only. [Wave 35 Lane A]
+
+#### PT3 format spec — deater.net "Readme Pt3" ❓ terms-undeclared
+- **What:** Vince Weaver's "The PT3 Format" writeup (deater.net) — full English field spec for Vortex Tracker II / Pro Tracker 3 .pt3 modules (ZX Spectrum AY-3-8910): 13-byte "ProTracker 3." magic, header/pointer tables, pattern list, sample/ornament decoding. Reverse-engineered against AY_Emul output.
+- **URL:** http://www.deater.net/weave/vmwprod/pt3_player/README_pt3.txt
+- **License:** ❓ No license stated on the document (verified 2026-10-08 via web search/fetch).
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; distinct from the existing Vortex Tracker II software entry (that covers the tracker, this covers the file format). [Wave 35 Lane A]
+
+#### ST-Sound YM format doc — "YM File Operations" ⚠️ format-freeware, doc-terms-undeclared
+- **What:** "YM File Operations" (jtalbert.xyz, PDF) — documents Arnaud Carré's ST-Sound YM register-dump format (YM1–YM6, 16-byte frames at 50Hz) for the YM2149/AY-3-8910. The document states the YM format is freeware per its author ("everybody can use, read or produce YM files").
+- **URL:** https://jtalbert.xyz/Downloads/YM_File_Operations.pdf
+- **License:** ⚠️ Format declared freeware by the author (Arnaud Carré) per the document; the PDF itself carries no license statement.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Strongest license story of the wave's format docs (author-declared freeware for the format itself). [Wave 35 Lane A]
+
+#### Future Composer v1.x module — Just Solve wiki ❓ wiki-terms-unverified
+- **What:** ArchiveTeam "Just Solve the File Format Problem" page for Future Composer v1.x modules (.fc/.fc13/.fc14/.smod) — aggregates the "Future Composer 1.0–1.3 & 1.4 format info" links plus creation/playback software and sample files.
+- **URL:** http://justsolve.archiveteam.org/wiki/Future_Composer_v1.x_module
+- **License:** ❓ ArchiveTeam wiki terms unverified this pass.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-aggregator entry (consistent with the existing RASTER/Imago Orpheus Just Solve entries). Doc-only. [Wave 35 Lane A]
+
+#### ADL (Westwood) format documentation (VGMPF wiki) ❓ wiki-doc
+- **What:** VGMPF wiki "ADL (Westwood)" — Westwood Studios' OPL2 music format (Eye of the Beholder, Dune II, Kyrandia, Lands of Lore): ROL songs converted into a single file holding audio + instrument definitions together.
+- **URL:** https://vgmpf.com/Wiki/index.php?title=ADL_(Westwood)
+- **License:** ❓ wiki-doc (matches the existing NSFE/SSF/S98 VGMPF wiki entries' badging).
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### Hugi — PC demoscene diskmag ❓ per-contributor rights
+- **What:** Hugi (hugi.scene.org) — one of the longest-running PC demoscene/underground diskmags (since 1996; German/English/Russian). Every issue ships with graphics and background music; Hugi SE #4 (Function 2012) is explicitly a "music disk and diskmag in one" with 32 tunes from recent issues.
+- **URL:** https://hugi.scene.org/
+- **License:** ❓ Per-contributor rights, demoscene freeware — no reuse grant found.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Disk-magazine audio long tail: issues are music sources only for listening/reference, never for pipeline pulls. [Wave 35 Lane A]
+
+#### Vandalism News — C64 diskmag ⚠️ per-contributor rights
+- **What:** Vandalism News (vandalism.news) — C64 diskmag by Vandalism News Staff / Onslaught / Offence / Wrath Designs; issue #70 released 2020. Each issue credits working scene musicians (Drax, Jeroen Tel, Stinsen, Laxity, Vincenzo…), making the series a browsable long tail of C64 scene music.
+- **URL:** https://vandalism.news
+- **License:** ⚠️ Per-contributor rights — music belongs to the credited sceners; no reuse grant.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/listen only. [Wave 35 Lane A]
+
+#### ST News — Atari ST diskmag ❓ per-issue rights
+- **What:** ST NEWS — Atari ST disk magazine (1986–1996, Richard Karsmakers) with configurable background music. Archived on the scene.org mirror and in Demozoo's Atari diskmag collection.
+- **URL:** https://archive.scene.org/pub/mirrors/flerp/.s/scene.atari/diskmag.atari/STN/st_n111.txt (scene.org mirror, final issue); archive index: http://demozoo.org/productions/?platform=9&production_type=5
+- **License:** ❓ Per-issue rights, no reuse grant found.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Disk-magazine audio long tail (Atari ST). Reference/listen only. [Wave 35 Lane A]
+
+#### Scene World Magazine — C64 diskmag, still publishing ❓ per-contributor rights
+- **What:** Scene World Magazine (SWO) — C64 disk magazine published regularly since February 2001 (NTSC + PAL), all-volunteer ~20-person staff, two issues/year plus podcasts and video interviews with scene/industry figures.
+- **URL:** https://sceneworld.org
+- **License:** ❓ Per-contributor rights — no reuse grant found.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The rare still-active diskmag; audio long tail via its podcast/interview archive. Reference/listen only. [Wave 35 Lane A]
+
+#### Sex'n'Crime — C64 diskmag (1989–1990) ❓ historical
+- **What:** Sex'n'Crime — C64 demoscene diskmag published 1989–1990 by Amok (a Genesis Project label), mainly edited by anonymous writer OMG; its successor was titled Propaganda.
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under S)
+- **License:** ❓ No live homepage found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: exists as a cited historical title; no verified download source this pass. [Wave 35 Lane A]
+
+#### Propaganda — C64 diskmag ❓ historical
+- **What:** Propaganda — C64 diskmag, the successor title to Sex'n'Crime (per Wikipedia's List of disk magazines).
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under P)
+- **License:** ❓ No live homepage found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: cited successor title; no verified download source this pass. [Wave 35 Lane A]
+
+#### Maggie — Atari ST diskmag ❓ per-contributor rights
+- **What:** Maggie — Atari ST diskzine (1990s–2000s; anniversary release shown at the ST News 2015 party). Listed among the still-published Atari mags on AtariForumWiki; Demozoo holds a near-complete archive of Atari ST/STe mags.
+- **URL:** via https://temlib.org/AtariForumWiki/index.php/Diskmags_on_the_Atari_platform ; archive index: http://demozoo.org/productions/?platform=9&production_type=5
+- **License:** ❓ Per-contributor rights — no reuse grant found.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Disk-magazine audio long tail (Atari ST). Reference/listen only. [Wave 35 Lane A]
+
+#### RAW — Amiga diskmag ❓ historical
+- **What:** RAW — Amiga diskmag (listed in Wikipedia's List of disk magazines under R). No live homepage or verified issue archive found this pass.
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under R)
+- **License:** ❓ No live source found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: title verified to exist, archive not verified. [Wave 35 Lane A]
+
+#### Jurassic Pack — Amiga diskmag ❓ historical
+- **What:** Jurassic Pack — Amiga diskmag (listed in Wikipedia's List of disk magazines under J). No live homepage or verified issue archive found this pass.
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under J)
+- **License:** ❓ No live source found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: title verified to exist, archive not verified. [Wave 35 Lane A]
+
+---
+
+## Wave 35 Lane A summary
+- **Added:** 26 honest entries (17 retro-tracker/DOS-era music format-doc strays: 13 ModdingWiki docs — IMF/CMF/MUS-DMX/XMI/DRO/OP2/SBI/EMIDI/TMB/BNK/IBK/ROL/HMP — plus deater.net PT3 spec, ST-Sound YM format doc, Just Solve Future Composer page, VGMPF ADL-Westwood page; 9 disk-magazine audio long-tail entries: Hugi, Vandalism News, ST News, Scene World, Sex'n'Crime, Propaganda, Maggie, RAW, Jurassic Pack).
+- **Honest drops (failures documented, no entries):** Sidologie (not a scene musicdisk series — it's a commercial C64Audio vinyl project); KeygenJukebox (site dead; near-duplicate of the existing KEYGENMUSiC entry); TFMX format doc (could not verify Asle's standalone spec this pass); SAP format spec, HES format doc, AY format doc, Soiled musicdisk series (no verifiable doc/archive URL found this pass); VGMPF wiki hub (near-duplicate of the existing NSFE/SSF/S98 VGMPF wiki-doc entries); PT3 Just Solve aggregator (near-duplicate of the deater PT3 spec entry).
+- **Already audited by prior waves — skipped to avoid duplicates:** UADE, ZXTune, libopenmpt, XM, S3M, PSF, VGM, PSID/SID, NSF, .fur, 669/STM/FAR/ULT/MTM, DMF/AMF/DSM/GDM/PTM/OKT, libxmp, OpenMPT wiki, ITTECH.TXT, SPC700, SNDH, 2SF/GSF, MED/OctaMED, AHX, ProTracker MOD, KSS, 8bitpeoples, Kahvi, Monotonik, phonoCAKE, Acroplane, Dusted Wax, Enough, 2063music, Section 27, Clinical Archives, Tokyo Dawn, 12rec, Aaahh, Maltine, Bunkai-Kei, ALTEMA, MarginalRec, Kikapu, Zymogen, Newgrounds, Da! Heard-It, SectionZ, Protodome, Noisechannel, A Bit of Chiptune, Demovibes, CalmDownKidder, Base Bit, MAGIC YUME, Vulpiano, D-Trash, TimeSlave, Black Screen, Curaga, Candy Mind, Scarlet Moon, Bleepstreet, Pterodactyl Squad, GameChops, Cheapbeats, Chiptunes = WIN, Data Airlines, Ubiktune, Brave Wave, Materia Collective, Data Discs, Open Cubic Player, StSound/sndh-player/NostalgicPlayer.
+- **Key finding:** the DOS-era OPL/MIDI format-doc world is concentrated on ModdingWiki, whose content license is only an informal admin "public domain" claim (User_talk:Malvineous, 2020) — usable as read-only reference, not as licensed text to copy (the EMIDI page even embeds an Apogee "All Rights Reserved" notice). The diskmag long tail is uniformly per-contributor demoscene freeware with no reuse grants — listen/reference only. Best license story of the wave: the ST-Sound YM register-dump format, explicitly declared freeware by its author Arnaud Carré.
+- **Canonical count:** 3055 → 3081 `####` headings.

@@ -1,0 +1,25 @@
+{
+  "row": 60,
+  "name": "Trelby",
+  "claimed": "GPL-2.0",
+  "kind": "github",
+  "ref": "trelby/trelby",
+  "api": {
+    "full_name": "trelby/trelby",
+    "archived": false,
+    "pushed_at": "2025-10-21T15:56:32Z",
+    "stargazers_count": 349,
+    "default_branch": "master",
+    "owner": "trelby",
+    "spdx_id": "GPL-2.0",
+    "license_name": "GNU General Public License v2.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 15122
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

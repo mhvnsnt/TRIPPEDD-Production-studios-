@@ -28875,3 +28875,157 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - Previous honest count: 2,736 → new honest count: 2,802
 - Quarantine rows added: 1 (row 264 — Kaltura, AGPL-3.0)
 - Tools wired: 0 (documented above)
+
+#### Duke University — Historic American Sheet Music ✅ commercial-safe (per-item "No Copyright – United States" marks)
+- **What:** Duke's Rubenstein Library digital collection — 3,000+ digitized American sheet-music pieces (popular + classical), published 1850–1920.
+- **URL:** https://repository.duke.edu/dc/hasm
+- **License:** ✅ Item pages carry explicit "Rights: Free Re-Use / No Copyright - United States" marks (verified 2026-10-07 on multiple item records). Verify the mark per item before wiring.
+- **Free tier:** Free to browse; full-res JPG downloads offered per item
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period-correct PD Americana for cartoon scoring/props. IIIF-style manifests exposed per item. [Wave 30 Lane A]
+#### Traditional Ballad Index (Fresno State) ⚠️ educational index, traditional texts
+- **What:** Long-running annotated index of traditional English-language ballads (Roud/Child numbers, commentary, source lists), hosted by Fresno State folklore.
+- **URL:** http://fresnostate.edu/folklore/BalladIndexArticles.html
+- **License:** ⚠️ No reuse license stated on the index (verified 2026-10-07 via web search). The ballad texts themselves are traditional/PD folk material; the annotations are the site's. Use texts, don't scrape commentary.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NOTE: hosted at Fresno State (not Fullerton) — earlier memory corrected this pass. Finding aid for PD folk lyrics usable in lyrics/dialogue research. [Wave 30 Lane A]
+#### Online 78 rpm Discographical Project ✅ free factual discography
+- **What:** Community-built web database of 78 rpm records in numerical order by record company (pre-LP era discography).
+- **URL:** http://www.78discography.com
+- **License:** ✅ Free to access; factual discographic data (not copyrightable expression). Full dataset mirrored on Internet Archive (archive.org/details/78discographyCom4192017, verified 2026-10-07).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane: date/label attribution for period music cues. Pairs with Great 78 Project audio. [Wave 30 Lane A]
+#### ARChive of Contemporary Music (ARC) ⚠️ research-only, not a download source
+- **What:** NYC-founded archive of 300,000+ catalogued popular-music recordings (1950–present) plus books, press kits, sheet music; B. George's collection, now moving to Ridgefield CT.
+- **URL:** https://arcmusic.org/
+- **License:** ⚠️ Collection NOT open to the public (verified 2026-10-07: research queries answered by staff; on-site access by appointment only; new public listening spaces planned, not open yet).
+- **Free tier:** Research queries answered case-by-case
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — no bulk/download access. Honest negative for direct wiring; useful as a citation source for music-history research. [Wave 30 Lane A]
+#### Fitzwilliam Museum — online collections ❓ digitized music holdings, terms unverified
+- **What:** Cambridge's Fitzwilliam Museum online object database — includes important music manuscripts (Handel autographs, keyboard sources like the Fitzwilliam Virginal Book milieu), partially digitized (700+ described objects).
+- **URL:** https://data.fitzmuseum.cam.ac.uk (verify before use)
+- **License:** ❓ No reuse license found on verification pass (2026-10-07). Third-party review notes images are small (~720px long side) and not full-cover browse. Treat as research-only until terms confirmed.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane: catalogue-level discovery of Handel/keyboard manuscripts; do not pull images for production without written permission. [Wave 30 Lane A]
+#### Sousa Archives and Center for American Music (UIUC) ⚠️ per-item rights
+- **What:** University of Illinois archive holding the world's largest collection of John Philip Sousa original compositions/arrangements, plus Clarke/Harding/Partch papers and the Association of Concert Bands archives.
+- **URL:** https://www.library.illinois.edu/sousa
+- **License:** ⚠️ UIUC rights statement (verified 2026-10-07): "In most cases, the University of Illinois does not hold the copyright… provision of a reproduction does not constitute permission to publish, perform, or exhibit." Sousa's own pre-1932 works are PD-age but arrangements/editions need per-item checks.
+- **Free tier:** Finding aids + some digital objects free
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** March/brass-band source research (fits wrestling-promo brass aesthetics). Per-item clearance required. [Wave 30 Lane A]
+#### Wikimedia Commons — sheet-music categories ⚠️ per-file license marks
+- **What:** Commons categories aggregating scanned sheet music (e.g., Category:Sheet music) — thousands of PD scans with per-file license templates.
+- **URL:** https://commons.wikimedia.org/wiki/Category:Sheet_music (verify before use)
+- **License:** ⚠️ Per-file: most scans carry PD-old / PD-US marks, but each file must be checked — modern editions/typesets on Commons can be under CC or non-free-deleted. Never assume the category is uniformly PD.
+- **Free tier:** Free; API + bulk download via dumps
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Highest-volume PD score source after IMSLP; wire-up must filter on license templates (PD-old/PD-US only). [Wave 30 Lane A]
+#### Stiftung Händel-Haus Halle ❓ research-visit resource, no open digital portal found
+- **What:** Handel's birth-house museum in Halle — one of the world's largest Handel library collections (manuscripts, Halle music history, historical instruments).
+- **URL:** https://haendelhaus.de/en/
+- **License:** ❓ No open digital-scores portal found on verification pass (2026-10-07 — site covers visits, exhibitions, and the library's existence, not downloadable scans). Treat as research-visit resource.
+- **Free tier:** On-site library by arrangement
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative for digital pull — included so wiring crews don't go hunting. For PD Handel scores use IMSLP's Chrysander edition (already cataloged). [Wave 30 Lane A]
+#### Musica Disciplina ✅ open-access musicology journal
+- **What:** Peer-reviewed journal of the American Institute of Musicology — medieval/Renaissance music studies, fully open access online.
+- **URL:** https://www.corpusmusicae.com/musica-disciplina (verify before use)
+- **License:** ✅ Open access (journal site states free online availability). Articles are scholarship, not scores — research lane.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Source-critical background for period-music cues in historical cartoon segments. [Wave 30 Lane A]
+#### Journal of Seventeenth-Century Music ✅ open-access journal
+- **What:** Open-access peer-reviewed journal of the Society for Seventeenth-Century Music (JSCM) — Baroque performance practice and source studies.
+- **URL:** https://sscm-jscm.org/ (verify before use)
+- **License:** ✅ Open access, free online. Scholarship, not scores — research lane.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Performance-practice research for Baroque scoring. [Wave 30 Lane A]
+#### Music Theory Online ✅ open-access journal (SMT)
+- **What:** Open-access peer-reviewed journal of the Society for Music Theory — analysis that can inform adaptive-scoring and motif work.
+- **URL:** https://mtosmt.org/ (verify before use)
+- **License:** ✅ Open access, free online (SMT). Scholarship — research lane.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Theory background for scoring systems; not a score source. [Wave 30 Lane A]
+#### Empirical Musicology Review ✅ open-access journal
+- **What:** Open-access peer-reviewed journal (Ohio State) — empirical/systematic musicology, including music perception studies useful for scoring-to-picture.
+- **URL:** https://emusicology.org/ (verify before use)
+- **License:** ✅ Open access, free online. Scholarship — research lane.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Perception/timing research applicable to cartoon cue timing. [Wave 30 Lane A]
+#### Indiana University — Cook Music Library digital scores ❓ terms unverified this pass
+- **What:** IU Jacobs School of Music's Cook Music Library — digital score collections portal (variations/digital music library holdings).
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** University special-collection tail; verify terms before any pull. [Wave 30 Lane A]
+#### UMD — Special Collections in Performing Arts (SCPA) ❓ terms unverified this pass
+- **What:** University of Maryland's SCPA — performing-arts special collections (scores, papers, AV) with online finding aids and some digital objects.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** University special-collection tail; verify terms before any pull. [Wave 30 Lane A]
+#### Royal Academy of Music — collections online ❓ terms unverified this pass
+- **What:** London RAM museum/library online collections — instruments and music manuscripts with catalogue records.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/research)
+- **Status:** not-started
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Notes:** Verify terms before any pull. [Wave 30 Lane A]
+#### Conservatoire de Paris — Médiathèque Hector Berlioz ❓ terms unverified this pass
+- **What:** Paris Conservatoire's media library — digitized scores and archives with online catalogue.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before any pull. [Wave 30 Lane A]
+#### BBC Proms Archive ⚠️ BBC terms (personal/research use)
+- **What:** BBC's searchable archive of every Proms performance since 1895 — programmes, works, performers (metadata, not audio).
+- **URL:** https://www.bbc.co.uk/proms/archive (verify before use)
+- **License:** ⚠️ BBC content terms default to personal/non-commercial use; archive is metadata/programmes, useful for repertoire research only.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music/research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Repertoire/programming research; no downloadable scores or cleared audio. [Wave 30 Lane A]

@@ -4036,3 +4036,40 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 4 Lane A: purpose-built cartoon bounce generator — stiffness/bounces params are literally squash-stretch knobs.
 
 <!-- end lane A wave 4 batch 1: spring/tween engines (9 entries) -->
+
+#### bezier-easing ✅
+- **What:** Tiny cubic-bezier easing implementation (CSS `transition-timing-function` equivalent) with Newton-Raphson/dichotomic fast lookup — the easing curve evaluator used by React Native, lottie-web, and Velocity.
+- **URL:** https://github.com/gre/bezier-easing
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — MIT License").
+- **Use:** evaluate custom overshoot/anticipation curves for squash-stretch tweens anywhere a tween engine needs a curve — embed the 60-line evaluator in Blender/Python tooling for cartoon timing curves.
+- **Lane note:** Wave 4 Lane A: the canonical cartoon-ease evaluator — anticipation/overshoot curves ARE squash-stretch timing.
+
+#### Vivus ✅
+- **What:** Lightweight dependency-free JS library that animates SVGs as if drawn live — stroke-dashoffset draw-on with delayed/sync/oneByOne/scenario timing modes and custom path timing functions (EASE_OUT_BOUNCE included).
+- **URL:** https://github.com/maxwellito/vivus
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** draw-on animation for cartoon title cards, speed lines, and hand-drawn FX overlays in web promos; bounce timing function gives stroke-drawn squash-and-stretch feel.
+- **Lane note:** Wave 4 Lane A: procedural stroke-draw secondary FX with a built-in bounce ease — 2D cartoon linework in motion.
+
+#### flubber ✅
+- **What:** Shape-interpolation library for smooth morphs between arbitrary 2D shapes — `interpolate`/`toCircle`/`toRect`/`separate`/`combine` return t∈[0,1] interpolators on SVG path strings or point rings; handles topology mismatches without inversion jumps.
+- **URL:** https://github.com/veltman/flubber
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "### License — MIT License").
+- **Use:** morph 2D cartoon blobs/limbs/mouths between key shapes with a spring driver on t — true 2D squash-and-stretch morphing for SVG puppet parts and impact splats.
+- **Lane note:** Wave 4 Lane A: smooth arbitrary-shape morphing is the 2D equivalent of squash-and-stretch volume preservation.
+
+#### Rough.js ✅
+- **What:** Small graphics library that renders hand-drawn, sketchy primitives (lines, curves, arcs, polygons, circles, SVG paths) on Canvas and SVG — seeded, wobbly linework generation.
+- **URL:** https://github.com/rough-stuff/rough
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field).
+- **Use:** generate wobbling "boiling line" cartoon linework — re-seed per frame for hand-drawn jitter on web-drawn FX, titles, and sketch-style puppet overlays.
+- **Lane note:** Wave 4 Lane A: seeded sketchy-line generation is procedural cartoon wobble — line boil as secondary motion.
+
+#### d3-interpolate-path ✅
+- **What:** Zero-dependency SVG `<path>` interpolator that handles mismatched point counts — extends both paths to equal point counts then lerps, with De Casteljau bezier handling and command-array API for canvas/WebGL.
+- **URL:** https://github.com/pbeshai/d3-interpolate-path
+- **License:** BSD-3-Clause (verified 2026-10-08: GitHub repo page License field).
+- **Use:** morph SVG puppet parts (arms, tails, squash blobs) between keyed path poses without topology matching; command-array API drives canvas/WebGL 2D puppet renderers.
+- **Lane note:** Wave 4 Lane A: mismatched-topology path morphing = robust 2D squash-stretch on hand-drawn parts.
+
+<!-- end lane A wave 4 batch 2: easing + shape morph (5 entries) -->

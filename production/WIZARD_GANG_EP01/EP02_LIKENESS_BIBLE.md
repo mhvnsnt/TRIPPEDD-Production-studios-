@@ -118,7 +118,7 @@ mid-scene · build changing (she is full-figured, never slimmed).
 | | |
 |---|---|
 | Robe | DEEP PURPLE, gold celestial embroidery (moons, stars, runes) on hood/collar/cuffs · gold THEORY pendant + crescent-moon/compass charms · black void face, eye glints |
-| Identity anchor (robed) | `theory-attire-4/theory-attire4-robed.png` ⚠️ **PENDING owner visual approval** (filed 2026-10-07, no explicit yes yet — do not treat robed Theory as fully locked until he rules) |
+| Identity anchor (robed) | `theory-attire-4/theory-attire4-robed.png` — **APPROVED owner 2026-10-07** (replaces the old chibi-style robed Theory; the blurred shoulder-patch text is accurate to her likeness) |
 | Unrobed anchor (face) | `theory-unrobed/theory-face-front.png` + `theory-face-34.png` — the face and the blue-purple cat-ear headpiece are law |
 
 **Likeness:** Black woman, ~20s, warm brown skin. Medium-length dark locs past the
@@ -191,7 +191,7 @@ shots · the dark mouth/Blackheart-liquid reading as "dirty" instead of intentio
 | | |
 |---|---|
 | Robe | PINK · ECHO pendant · black void face, eye glints |
-| Identity anchor (face) | `echo/echo-attire-pinkjacket.png` — **face reference = Shotzi Blackheart** (owner 2026-10-07). The GLB render's smeared/scream face is SUPERSEDED — never use it for faces. |
+| Identity anchor (face) | `echo/echo-attire-pinkjacket.png` — **face reference = Shotzi Blackheart** (owner 2026-10-07). Echo has THREE canon face variants — the possessed black-mist-mouth GLB face, the clean Shotzi face, and the pink-jacket clean face. See below. |
 | Identity anchor (body) | Same file — long green hair, tattoo sleeves, choker. |
 
 **Likeness:** Shotzi Blackheart face. Long straight GREEN hair. Athletic build. Full
@@ -206,15 +206,9 @@ Speaking style UNKNOWN — visual-only until owner locks a voice.
    COVERED in patches, worn open with NO shirt (tattooed torso visible, hair coverage);
    black cargo pants with patches; black boots. → `echo/echo-attire-pinkjacket.png`
 
-**GLB anchor:** `~/workspace/bannon-repair/out/ECHO_repaired.glb` — **DEFECT (face).**
-The GLB's face (smeared scream makeup) does NOT match the card (Shotzi Blackheart).
-This is exactly the defect the owner's GLB rule targets: the GLB, card, and attire
-refs must describe ONE person, and on the face they don't. **Ruling: the GLB body
-may be used as a body/pose donor ONLY; the face must always come from the card.
-Never render the GLB face as-is. THE CARD WINS.**
+**GLB anchor:** `~/workspace/bannon-repair/out/ECHO_repaired.glb` — **FACE VARIANTS, not defect (owner 2026-10-07).** Echo's GLB face (the possessed-looking black-mist mouth) is CANON VARIANT 1. The card's clean Shotzi face is CANON VARIANT 2. The pink-jacket clean face is CANON VARIANT 3. Face variance between these three is INTENTIONAL — never flag it as drift. GLB body is a valid body/pose donor.
 
-**Drift hazards:** the old smeared-scream face resurfacing (it is banned) · green hair
-turning black/brown · tattoos vanishing on the pink-jacket attire.
+**Drift hazards:** green hair turning black/brown · tattoos vanishing on the pink-jacket attire · using a face that is NONE of the three canon variants.
 
 ---
 
@@ -245,10 +239,7 @@ Muscular, tattooed torso and arms. Same head/face on every attire — consistent
 
 Non-repaired `STATIC.glb` / `STATIC_alt.glb` are SUPERSEDED — never use them.
 
-**⚠️ PENDING owner decision — sleeve logo:** the alt's black arm sleeve carries white
-script resembling "Supreme". DO NOT strip or change it yet — owner decides: keep, or
-replace with "STATIC" or "SAWFT" (his lean: SAWFT). Every alt-attire shot keeps the
-current logo until he rules.
+**Sleeve logo — RESOLVED (owner 2026-10-07):** the alt's black arm sleeve carries **"S.A.W.F.T."** in white script (owner: "Perfect"). The old "Supreme"-style script is retired — never regenerate it. Alt-attire reference: `static/static-alt-sawft-preview.webp`.
 
 **Drift hazards:** beard thinning/disappearing · hair darkening · the sleeve logo
 morphing into gibberish script.
@@ -354,7 +345,7 @@ shots · unmasked face gaining paint.
 | Theory | Owner GLB screenshots (attires 1–2) | MATCH |
 | Cipher | feral_v2 / minion_repaired / repaired | MATCH × 3 |
 | Cipher | `CIPHER_feral.glb`, `CIPHER_rigged.glb` | DEFECT — render failure (meshopt), unverifiable, banned |
-| Echo | `ECHO_repaired.glb` | **DEFECT (face)** — smeared scream face vs Shotzi card; body donor only, card wins on face |
+| Echo | `ECHO_repaired.glb` | **3 canon face variants** — possessed black-mist-mouth (GLB), clean Shotzi (card), pink-jacket clean; variance between them is intentional, not drift |
 | Hollow | `HOLLOW_repaired.glb` | MATCH |
 | Sombra Negra | `SOMBRA_NEGRA.glb` | MATCH (tassels intentional; -Y orientation flagged) |
 | Static | `STATIC_repaired.glb`, `STATIC_alt_repaired.glb` | MATCH × 2 |
@@ -362,15 +353,10 @@ shots · unmasked face gaining paint.
 
 ## Bible gaps (flagged, not hidden)
 
-1. **Theory's robed card** (`theory-attire4-robed.png`) — pending owner's visual approval.
-   Robed-Theory shots must match it exactly once approved; until then, robed Theory
-   follows the show-canon description (purple robe, gold embroidery, THEORY pendant,
-   void face).
-2. **Static's alt sleeve logo** — pending owner decision (keep / "STATIC" / "SAWFT").
-3. **Kiko has no GLB** — generation anchors are 2D cards only.
-4. **Echo's GLB face is a defect** — body donor only; face always from the card.
-5. **Cipher's feral/rigged GLBs are banned** — unverifiable render failures.
-6. **Ashes' .glb bytes aren't in-repo** — screenshots are the filed GLB evidence.
+1. **Kiko has no GLB** — generation anchors are 2D cards only.
+2. **Cipher's feral/rigged GLBs are banned** — unverifiable render failures.
+3. **Ashes' .glb bytes aren't in-repo** — screenshots are the filed GLB evidence.
+4. **Card-suit Cipher has no GLB** — the owner-supplied image is the anchor.
 
 ## Card → shot binding (see EP02_IDENTITY_PROTOCOL.md)
 

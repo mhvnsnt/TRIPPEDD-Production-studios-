@@ -80,7 +80,7 @@ per beat, Adult Swim pacing. The rooftop BBQ is the hub; cut back between beats.
 | 22-1 | S22 SKATE PARK | 3:23–3:32 | Cipher (unrobed C1) + Static | L16 STATIC: "SOMEBODY FILM THIS." → C1 CIPHER (feral): "I bet I can. Bet bet bet..." → C2: "Aaaw man, he knowsss..." | Skateboard roll; concrete slam; feral vocal FX. |
 | 23-1 | S23 STUDIO | 3:32–3:41 | Static at mic | L17 STATIC: "Is this thing on?..." | Mic-feedback squeal (SFX, not a flub). |
 | 24-1 | S24 CARNIVAL | 3:41–3:51 | Sombra (robed) wins plushie, stone-faced | L18 STATIC: "Sombra. My man. You won the bear..." | Ring-toss clatter; carnival bed. |
-| 25-1 🖌️ | S25 GRILL | 3:51–3:57 | Grill flare → burning building → cover-up | L19 STATIC: "Everything's fine!..." | Flare whoosh; fire roar; hard cut back to sizzle. Cutaway NEVER acknowledged. |
+| 25-1 🖌️ | S25 GRILL | 3:51–3:57 | Cipher (unrobed, feral/base) front-center at grill flare → burning building → cover-up | C3 CIPHER: "Everything's fine!..." (Lio Rush "it's fine" gag) | Flare whoosh; fire roar; hard cut back to sizzle. Cutaway NEVER acknowledged. |
 | 26-1 🖌️ | S26 PIER | 3:57–4:05 | Kiko (unrobed K, masked) alone on foggy pier | L20 STATIC (V.O.): "And the ghost STILL ain't here..." → H4 KIKO (HELD, visual): "The theater is empty. Encore anyway." | Foghorn; water lap; theatrical reverb on H4 staging. |
 
 ---

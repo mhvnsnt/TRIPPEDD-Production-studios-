@@ -13,3 +13,7 @@ Owner request: the purple hooded robe outfit from the chibi robed render, on the
 ## Reference views (character-refs/theory-attire-4/)
 - theory-attire4-robed.png — full body T-pose, white void (this render)
 - theory-robed-chibi-ref.jpg — owner's original chibi robed reference
+
+## APPROVED — owner 2026-10-07
+- Owner call: the blurred shoulder-patch text ("painted gang" near a logo) is ACCURATE to her likeness across her other robe images — it stays.
+- This replaces the old chibi-style robed Theory. Locked as her robed look for the show.

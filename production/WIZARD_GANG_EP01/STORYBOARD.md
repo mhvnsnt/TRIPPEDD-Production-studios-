@@ -138,7 +138,7 @@ Static narrates THROUGH the whole montage (the motor-mouth never stops). Each be
 - **PAYOFF:** Echo's arcade plushie (S15) and Sombra's hourly-rate stone face (S13) collide — the episode's best silent image.
 
 ### S25 — THE GRILL INCIDENT (3:51–3:57, 6s)
-- **ACT:** Back at the BBQ — the grill flares out of control. Hard cut to the burning building (dramatic painterly beat). Hard cut back — everyone acting casual, burgers fine. (Static: L19 — "Everything's fine!")
+- **ACT:** Back at the BBQ — the grill flares out of control. Hard cut to the burning building (dramatic painterly beat) — CIPHER front and center, frantic. Hard cut back — everyone acting casual, burgers fine. (Cipher: C3 — the Lio Rush "it's fine" gag.)
 - **ASSET:** `detailed/Painterly 5 - burning building.webp` (the flare) + `cartoonier/Group 13 - rooftop BBQ.webp` (the cover-up).
 - **COMEDY LAW:** the cutaway is never acknowledged.
 

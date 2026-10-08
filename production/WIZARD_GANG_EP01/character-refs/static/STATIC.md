@@ -26,3 +26,7 @@ variants preferred per brief.
 ## Alt attire — "Tactical" (owner-supplied 2026-10-07, locked)
 - static-attire-tactical.png
 - Bleached blond hair, dark beard; black leather jacket with BLUE ELECTRIC accents, black tee, tactical belt/holsters, knee pads, fingerless gloves, black boots.
+
+## Sleeve logo — RESOLVED (owner 2026-10-07)
+- "S.A.W.F.T." in white script on the black arm sleeve. Owner: "Perfect."
+- Locked: `static-alt-sawft-preview.webp` is the canon alt attire. The "Supreme"-script version is retired.

@@ -4084,5 +4084,62 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Use:** high-res face restoration reference for research; 1024-color head doubles as a face colorizer.
 - **Lane note:** Wave 4 Lane D: the high-res face restorer — honest ⚠️, academic/non-commercial only.
 
+#### Bringing-Old-Photos-Back-to-Life ✅
+- **What:** Microsoft's old-photo restoration (CVPR 2020 oral) — scratch/dust detection and removal, face enhancement, and global restoration in one pipeline.
+- **URL:** https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life
+- **License:** MIT (verified 2026-10-08: third-party notices of an old-photo restoration platform — "License: MIT License (full text in `LICENSE-Bringing-Old-Photos-Back-to-Life`)").
+- **Use:** scratch/dust removal and face enhancement on scanned archival photo plates before plate ingest.
+- **Lane note:** Wave 4 Lane D: the dedicated old-photo damage-repair tool — scratches, fading, and faces in one MIT package.
+
+#### DeepRemaster ⚠️ non-commercial (CC BY-NC-SA 4.0) — verify per use
+- **What:** Temporal source-reference attention networks for comprehensive video enhancement (SIGGRAPH Asia 2019) — removes film noise, improves contrast/sharpness, and colorizes from manually colored reference frames.
+- **URL:** https://github.com/junjiey66/siggraphasia2019_remastering
+- **License:** CC BY-NC-SA 4.0 (verified 2026-10-08: upstream README License section — "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License").
+- **Use:** reference-guided remaster of vintage footage — research/non-commercial pass; informs in-house heuristics.
+- **Lane note:** Wave 4 Lane D: the canonical vintage-video remastering paper implementation — honest ⚠️ for its NC terms.
+
+#### SpeexDSP ✅
+- **What:** Xiph's DSP library — spectral-subtraction noise suppression, multi-channel acoustic echo cancellation, voice activity detection, and high-quality resampling.
+- **URL:** https://github.com/xiph/speexdsp
+- **License:** BSD (verified 2026-10-08: multiple vendoring projects record "SpeexDSP (Xiph) — BSD license"; BSD-3-Clause per vendored COPYING).
+- **Use:** lightweight noise suppression + resampling for archival dialogue stems and field recordings.
+- **Lane note:** Wave 4 Lane D: the permissive DSP toolkit for dialogue-stem cleanup — no neural weights required.
+
+#### Open-Unmix ✅
+- **What:** Reference implementation for music source separation (UMX) — separates vocals, drums, bass, and "other" from a mix with pretrained PyTorch models.
+- **URL:** https://github.com/sigsep/open-unmix-pytorch
+- **License:** MIT (verified 2026-10-08: upstream README "### License — MIT").
+- **Use:** isolate vocals from archival music beds and mixed stems to recover clean dialogue.
+- **Lane note:** Wave 4 Lane D: MIT source-separation for dialogue extraction — the permissive alternative to proprietary stem splitters.
+
+#### Ultimate Vocal Remover (UVR) ✅
+- **What:** Vocal remover GUI bundling MDX-Net, Demucs, and VR-architecture models for vocal/instrumental separation with a large public model zoo.
+- **URL:** https://github.com/Anjok07/ultimatevocalremovergui
+- **License:** MIT (verified 2026-10-08: upstream README "The Ultimate Vocal Remover GUI code is MIT-licensed"; models under MIT terms with attribution to UVR and its developers).
+- **Use:** extract clean vocal/dialogue stems from archival mixes — the practical workbench for dialogue recovery.
+- **Lane note:** Wave 4 Lane D: the dialogue-stem extraction workbench — MIT code, models usable with attribution.
+
+#### vocal-remover (tsurumeso) ✅
+- **What:** The original VR-architecture vocal remover — lightweight neural vocal/instrumental separation that UVR later built on.
+- **URL:** https://github.com/tsurumeso/vocal-remover
+- **License:** MIT (verified 2026-10-08: audited third-party notices — "License: MIT, copyright 2019 tsurumeso").
+- **Use:** scriptable vocal extraction for batch dialogue-stem cleanup.
+- **Lane note:** Wave 4 Lane D: the original lightweight vocal separator — pairs with UVR for the audio-cleanup lane.
+
+#### BWF MetaEdit ✅
+- **What:** MediaArea tool that embeds, validates, and exports metadata in Broadcast WAVE Format (BWF) files; supports the FADGI Broadcast WAVE Metadata Embedding Guidelines.
+- **URL:** https://github.com/mediaarea/bwfmetaedit
+- **License:** Public domain (verified 2026-10-08: upstream README — "[Public domain](https://mediaarea.net/BWFMetaEdit/License) for the code developed by us").
+- **Use:** validate and embed preservation metadata in archival audio deliverables — the BWF QC step.
+- **Lane note:** Wave 4 Lane D: archival-audio metadata QC — public domain, from the FADGI-funded preservation toolchain.
+
+#### OpenEXR ✅
+- **What:** The motion-picture industry's HDR image storage format — specification + reference implementation for lossless/compressed high-bit-depth archival frames.
+- **URL:** https://github.com/AcademySoftwareFoundation/openexr
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "OpenEXR is released under the BSD-3-Clause license"; ASWF project page concurs).
+- **Use:** archival master container for restored plates — HDR, multi-channel, lossless plate storage.
+- **Lane note:** Wave 4 Lane D: the archival container for restored footage masters — industry-standard, permissively licensed.
+
+<!-- end lane D wave 4 batch 3: photo/audio-restoration + archival QC (8 entries) -->
 <!-- end lane D wave 4 batch 2: deblur/colorize/faces (8 entries) -->
 <!-- end lane D wave 4 batch 1: restoration SR/deblur (8 entries) -->

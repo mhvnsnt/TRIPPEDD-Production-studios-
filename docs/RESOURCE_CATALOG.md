@@ -286,8 +286,8 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Free tier:** fully open
 - **Repo lane:** both (lipsync)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
-- **Status:** wiring-wave-1
-- **Notes:** MIT confirmed by multiple audits AND the author (MIT covers code + mouth-shape images). Integrates with OpenToonz/Moho/Spine. Keep the res/ folder next to the binary. #1 lipsync wire-up.
+- **Status:** WIRED — run-proven (Wave 51 Lane C)
+- **Notes:** MIT confirmed by multiple audits AND the author (MIT covers code + mouth-shape images). Integrates with OpenToonz/Moho/Spine. Keep the res/ folder next to the binary. #1 lipsync wire-up. Proof: tools/wave51_lane_c/wire_rhubarb_lipsync.py + proofs/rhubarb_lipsync/ — real 7.825 s Kokoro VO WAV -> 47 mouth-shape events, all 9 shapes, 81% speech coverage, byte-deterministic across runs (v1.14.0, PocketSphinx + dialog file).
 
 #### Montreal Forced Aligner ✅ commercial-safe
 - **What:** Kaldi-based phoneme forced aligner — whisper-driven alternative
@@ -460,8 +460,8 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Free tier:** fully open, offline
 - **Repo lane:** god-molecule (tts)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
-- **Status:** wiring-wave-1
-- **Notes:** Best all-round free local TTS for cartoon character VO. pip install kokoro. espeak-ng is only a G2P dep (not linked into the model weights).
+- **Status:** WIRED — run-proven (Wave 51 Lane C)
+- **Notes:** Best all-round free local TTS for cartoon character VO. pip install kokoro. espeak-ng is only a G2P dep (not linked into the model weights). Proof: tools/wave51_lane_c/wire_kokoro_tts.py + proofs/kokoro_tts/ — real 7.825 s VO WAV (24 kHz mono, RMS 0.0511, -25.21 LUFS, seed-pinned byte-reproducible; unseeded runs are stochastic by design, max|diff| ~0.09-0.25, documented as production rule).
 
 #### Piper 🚫 quarantined (GPL)
 - **What:** Fast local neural TTS (VITS), CLI/stdin->WAV, ships as tiny ONNX voice models
@@ -1719,8 +1719,8 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Free tier:** Fully free
 - **Repo lane:** trippedd (tts-engines-(free)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Standard Apache-2.0 LICENSE. One of the best quality-per-compute TTS options in 2026; multiple voices, no GPU needed. Recommended baseline for Wizard Gang dialogue lines. [Wave 2]
+- **Status:** WIRED — run-proven (Wave 51 Lane C; same proof as §5 entry)
+- **Notes:** Standard Apache-2.0 LICENSE. One of the best quality-per-compute TTS options in 2026; multiple voices, no GPU needed. Recommended baseline for Wizard Gang dialogue lines. Proof: tools/wave51_lane_c/wire_kokoro_tts.py + proofs/kokoro_tts/ (7.825 s VO WAV, seed-pinned byte-reproducible). [Wave 2]
 
 #### Coqui TTS ✅ commercial-safe
 - **What:** The kitchen-sink TTS toolkit: 1100+ pretrained models, 40+ languages, XTTS fine-tuning hooks. MPL-2.0 code (note: XTTS v2 *models* are CPML/non-commercial — use other models for shipped products).

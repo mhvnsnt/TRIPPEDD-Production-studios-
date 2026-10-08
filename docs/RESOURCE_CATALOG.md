@@ -39870,3 +39870,1011 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** No-signup friction makes it good for quick scratch VO passes. [Wave 45 coordinator top-up]
+
+## Wave 46 Lane A — catalog deepening (+100)
+
+### Pocket 1 — PD film-archive tail (30 entries)
+
+#### National Film Preservation Foundation (NFPF) — Online Screening Room ⚠️ per-film rights
+- **What:** Congressionally chartered nonprofit preserving American "orphan" films; 350+ preserved films stream free in its Online Screening Room (silents, Eames films, avant-garde, home movies, newsreels).
+- **URL:** https://www.filmpreservation.org/
+- **License:** ⚠️ Per-film rights — NFPF grant terms require public access, but reuse terms are not blanket; many titles are orphan/PD, some are rights-held (verified 2026-10-08 via filmpreservation.org: "More than 350 films are available to stream for free"; grant requires films be "made available for education and shared with the public")
+- **Free tier:** Free streaming of all screening-room titles
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong vintage-plate source (silent-era streets, Americana); confirm each title's rights flag before compositing — orphan ≠ PD. [Wave 46 Lane A]
+
+#### Internet Archive — Community Video ⚠️ per-item rights
+- **What:** IA's user-uploaded video collection — millions of items spanning PD films, home movies, ephemera, and in-copyright uploads.
+- **URL:** https://archive.org/details/opensource_movies
+- **License:** ⚠️ Per-item — rights metadata varies per upload; PD and CC items sit next to in-copyright ones (verified 2026-10-08 via archive.org collection structure)
+- **Free tier:** Everything downloadable in multiple formats
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bulk-harvest lane: filter by license metadata (PD/CC) before pulling; pair with the Archive Watch browser app already cataloged. [Wave 46 Lane A]
+
+#### Internet Archive — Open Source Movies ✅ commercial-safe (CC-BY)
+- **What:** IA collection hosting the Blender Foundation open movies (Big Buck Bunny, Sintel, Tears of Steel, Elephants Dream, Cosmos Laundromat, Spring) in full quality.
+- **URL:** https://archive.org/details/opensource_movies
+- **License:** CC-BY (Blender open movies are CC-BY licensed; verified 2026-10-08 via Blender Foundation open-movie program + IA collection)
+- **Free tier:** Full films + assets free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference gold for the cartoon pipeline — finished open films with published production files; study the staging/lighting, not just the frames. Attribution required. [Wave 46 Lane A]
+
+#### Sita Sings the Blues (Nina Paley) ✅ CC0
+- **What:** Nina Paley's 82-minute animated feature (Ramayana + autobiography, 1920s jazz) — she moved it from CC-BY-SA to CC0 (public domain dedication) on 2013-01-18.
+- **URL:** https://archive.org/details/Sita_Sings_the_Blues
+- **License:** CC0 1.0 (verified 2026-10-08 via Paley's own blog announcement, corroborated by Wikipedia and the archive-watch rights audit)
+- **Free tier:** Full film free at all resolutions incl. HD
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark free-culture animated feature — style/timing reference for the series. CAVEAT: the embedded Annette Hanshaw 1920s recordings remain under copyright — the film's music tracks are NOT cleared even though the film is CC0. [Wave 46 Lane A]
+
+#### Folkstreams 🚫 view-only (filmmaker permission)
+- **What:** Tom Davenport's nonprofit streaming site for American folklife documentaries (1960s–2010s ethnographic films: blues, crafts, ballad singers, Hmong refugees).
+- **URL:** https://www.folkstreams.net/
+- **License:** 🚫 All rights reserved by filmmakers — "streaming with the permission of the filmmakers" (verified 2026-10-08 via filmcomment.com: free to watch, no reuse grant)
+- **Free tier:** Free streaming only
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — reference viewing only; period Americana texture research, no plate pulls without filmmaker permission. [Wave 46 Lane A]
+
+#### American Archive of Public Broadcasting (AAPB) 🚫 per-item, research-only
+- **What:** GBH + Library of Congress archive of 50+ years of American public radio/TV (tens of thousands of programs).
+- **URL:** https://americanarchive.org/
+- **License:** 🚫 Per-item rights; typical item terms: "provided for educational and research purposes only. No publication, further reproduction, or reuse of copies, beyond fair use, may be made without the express written permission of the copyright owner" (verified 2026-10-08 via americanarchive.org item records)
+- **Free tier:** Free streaming of many items (some geo-restricted)
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — deep reference archive for period research, but nothing here is cleared for compositing. [Wave 46 Lane A]
+
+#### World Bank — video / Open Knowledge Repository ⚠️ CC-BY default, per-video check
+- **What:** World Bank development footage, interviews, and project documentaries; the Bank's 2012 Open Access Policy defaults knowledge products to CC-BY.
+- **URL:** https://www.worldbank.org/ / https://www.youtube.com/@WorldBank
+- **License:** ⚠️ CC-BY default on knowledge products (verified 2026-10-08 via Creative Commons announcement of the Bank's Open Access Policy), but per-video license must be confirmed — some videos carry standard YouTube terms
+- **Free tier:** Free streaming; CC-BY items downloadable/reusable with attribution
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Global-south city/crowd plates potential; check each video's license badge — do not assume the CC-BY default covers YouTube uploads. [Wave 46 Lane A]
+
+#### UN Audiovisual Library 🚫 permission-gated
+- **What:** UN Multimedia's archive of General Assembly, Security Council, and UN agency footage.
+- **URL:** https://www.unmultimedia.org/avlibrary/
+- **License:** 🚫 "UN audio and video files may be used to further the aims and work of the United Nations"; licensing page requires written agreement for further use (verified 2026-10-08 via unmultimedia.org licensing page as cited in the youtube-dl issue tracker)
+- **Free tier:** Free streaming/download for viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — the "further the aims of the UN" grant does not cover a commercial cartoon; reference only. [Wave 46 Lane A]
+
+#### ESA Multimedia Gallery 🚫 videos view-only
+- **What:** European Space Agency's image/video portal (launches, ISS, deep-space renders).
+- **URL:** https://www.esa.int/ESA_Multimedia/
+- **License:** 🚫 Videos: "use of ESA video images in streaming and downloadable format is limited to direct viewing and/or file storage on a single computer… Forwarding of files or streams to other computers, or use on any non-ESA Web is prohibited" (verified 2026-10-08 via esa.int copyright notice)
+- **Free tier:** Free viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative for ESA-direct video; stills have a separate educational/informational grant. Use the ESA/Hubble CC-BY entry instead for space plates. [Wave 46 Lane A]
+
+#### ESA/Hubble — image/video archive ✅ commercial-safe (CC-BY 4.0)
+- **What:** ESA/Hubble Space Telescope outreach archive — nebulae, galaxies, launch and astronomy footage.
+- **URL:** https://esahubble.org/
+- **License:** CC-BY 4.0 — "ESA/Hubble images, videos and web texts are released under the Creative Commons Attribution 4.0 International license and may on a non-exclusive basis be reproduced without fee provided they are clearly and visibly credited" (verified 2026-10-08 via esahubble.org copyright page)
+- **Free tier:** Full archive free with credit line
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The usable ESA lane — cosmic background plates for the cartoon's space/cosmic sequences; keep the "ESA/Hubble" credit visible. [Wave 46 Lane A]
+
+#### British Council Film Collection ⚠️ per-film CC, non-commercial framing
+- **What:** 120 short documentaries made by the British Council in the 1940s (Britain at work/play/war), preserved by the BFI and digitized with Google funding.
+- **URL:** https://film.britishcouncil.org/
+- **License:** ⚠️ Per-film Creative Commons license noted on each film page ("view, download and to play with"), but collection descriptions frame use as "non-commercial research and educational purposes" (verified 2026-10-08 via British Council channel descriptions and film.britishcouncil.org)
+- **Free tier:** Free viewing/download per film page
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 1940s Britain street/industry plates; read each film's CC badge before compositing — the NC framing means commercial cartoon use needs per-film clearance. [Wave 46 Lane A]
+
+#### WPA Film Library 🚫 commercial licensing
+- **What:** 30+ year stock-footage house (world history, pop culture, politics, music collections incl. WNET's Soul! and NET Journal, British Pathé holdings).
+- **URL:** https://www.wpafilmlibrary.com/
+- **License:** 🚫 Commercial licensing only — for-profit footage library, sales@wpafilmlibrary.com (verified 2026-10-08 via Crunchbase profile + footage.net partner listing)
+- **Free tier:** None for production use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — deep archive, but every clip is a paid license; reference only. [Wave 46 Lane A]
+
+#### Huntley Film Archives 🚫 commercial licensing
+- **What:** One of the UK's largest independent film libraries — 80,000+ titles (1895–present), social-history documentaries, newsreels, advertising.
+- **URL:** https://www.huntleyarchives.com/
+- **License:** 🚫 Commercial licensing — "one of the largest commercial film libraries in the United Kingdom… licenses items to broadcasters and film-production companies" (verified 2026-10-08 via movingimagearchivenews.org + huntleyarchives.com)
+- **Free tier:** None for production use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 46 Lane A]
+
+#### Storyblocks 🚫 commercial subscription
+- **What:** Subscription stock library (video, audio, images) — the former Videoblocks.
+- **URL:** https://www.storyblocks.com/
+- **License:** 🚫 Commercial subscription license (verified 2026-10-08 via storyblocks.com — paid plans only, no free production tier)
+- **Free tier:** None for production use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — usable only if budget opens up. [Wave 46 Lane A]
+
+#### Dissolve 🚫 commercial licensing
+- **What:** Curated HD/4K stock footage house (dissolve.com).
+- **URL:** https://dissolve.com/
+- **License:** 🚫 Commercial per-clip/credit licensing (verified 2026-10-08 via dissolve.com — paid licensing, no free tier)
+- **Free tier:** Watermarked comps only
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 46 Lane A]
+
+#### AP Archive 🚫 commercial licensing
+- **What:** Associated Press film/video archive — 70+ years of news footage.
+- **URL:** https://www.aparchive.com/
+- **License:** 🚫 Commercial licensing only (verified 2026-10-08 via aparchive.com — licensing business, no free production use)
+- **Free tier:** None for production use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — newsreel reference only. [Wave 46 Lane A]
+
+#### INA.fr (Institut national de l'audiovisuel) 🚫 commercial licensing
+- **What:** France's national audiovisual archive — 2.5M+ hours of French broadcast history plus 27M-hour legal-deposit collection.
+- **URL:** https://www.ina.fr/
+- **License:** 🚫 "INA holds commercial use rights on this entire collection" for professional use; legal-deposit collection is academic-use only (verified 2026-10-08 via reference-global.com INA analysis)
+- **Free tier:** Free streaming excerpts; reuse is licensed
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — French broadcast reference only. [Wave 46 Lane A]
+
+#### Footage Farm 🚫 commercial stock licensing
+- **What:** Stock-footage licensing company (footagefarm.com) — historical and contemporary clips for production use.
+- **URL:** https://footagefarm.com/
+- **License:** 🚫 Commercial licensing — stock footage sold per clip/license; no free production tier (verified 2026-10-08 via footagefarm.com: "Stock Footage" licensing business)
+- **Free tier:** None for production use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — reference only; listed for completeness alongside WPA/Huntley as a paid footage house. [Wave 46 Lane A]
+
+#### IWM Collections (Imperial War Museums) 🚫 commercial licensing
+- **What:** Britain's war-history collections — film, photos, documents (WWI onward).
+- **URL:** https://www.iwm.org.uk/collections
+- **License:** 🚫 Commercial licensing for reuse (verified 2026-10-08 via iwm.org.uk — collections licensing is a paid service)
+- **Free tier:** Free research viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — military-history plate reference only; FedFlix/NARA cover the PD side of this material. [Wave 46 Lane A]
+
+#### UCLA Film & Television Archive 🚫 licensed
+- **What:** Major US moving-image archive (studio-era Hollywood, TV news, Hearst/Paramount newsreels).
+- **URL:** https://www.cinema.ucla.edu/
+- **License:** 🚫 Licensed access — reuse requires license; research viewing only (verified 2026-10-08 via cinema.ucla.edu)
+- **Free tier:** Research viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — Hollywood-history reference only. [Wave 46 Lane A]
+
+#### BBC Rewind (archive video portal) 🚫 view-only
+- **What:** BBC archive project surfacing digitized regional/national broadcast history (video). Distinct from the separately cataloged BBC Rewind — Sound Effects library entry.
+- **URL:** https://www.bbc.co.uk/rewind
+- **License:** 🚫 View-only — BBC archive streaming with no reuse grant (verified 2026-10-08 via bbc.co.uk/rewind — streaming portal, rights reserved)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — reference viewing only. [Wave 46 Lane A]
+
+#### Chicago Film Archives ⚠️ per-film licensing (nonprofit)
+- **What:** Nonprofit regional archive — 25,000+ items of Midwest 20th-century film (industrial, home movies, docs).
+- **URL:** https://chicagofilmarchives.org/archival-stock-footage-library
+- **License:** ⚠️ Per-film licensing — nonprofit, but "not all of the films in our collections are available for licensing"; license inquiry required (verified 2026-10-08 via chicagofilmarchives.org)
+- **Free tier:** Online catalog browsing; screenings
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Midwest Americana plates exist here but each needs a license quote — research lane unless budget opens. [Wave 46 Lane A]
+
+#### Northeast Historic Film ⚠️ per-film rights
+- **What:** Regional archive for northern New England (1890s–present amateur/professional film).
+- **URL:** https://oldfilm.org/
+- **License:** ⚠️ Per-film rights — mixed holdings; some PD, most rights-held; check per title (verified 2026-10-08 via oldfilm.org collection policies)
+- **Free tier:** Online streaming of select titles
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** New England period plates; per-title rights check before pulling. [Wave 46 Lane A]
+
+#### Ngā Taonga Sound & Vision ⚠️ per-item rights
+- **What:** New Zealand's national audiovisual archive (film, TV, radio back to the 1890s).
+- **URL:** https://www.ngataonga.org.nz/
+- **License:** ⚠️ Per-item rights — mixed PD/in-copyright; reuse terms stated per title (verified 2026-10-08 via ngataonga.org.nz)
+- **Free tier:** Free streaming of many titles
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Useful for non-US period texture; per-title check mandatory. [Wave 46 Lane A]
+
+#### Internet Archive — Classic TV ⚠️ per-item rights
+- **What:** IA's classic-television collection — kinescopes, early broadcasts, commercials; many PD, some rights-held.
+- **URL:** https://archive.org/details/classic_tv
+- **License:** ⚠️ Per-item — IA marks rights per upload; PD items (pre-1960s kinescopes mostly) sit beside in-copyright ones (verified 2026-10-08 via archive.org)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 1950s TV texture plates; filter to PD-marked items only. [Wave 46 Lane A]
+
+#### Internet Archive — Ephemeral Films ⚠️ per-item (many PD)
+- **What:** IA's ephemeral-film holdings — educational, industrial, advertising, and sponsored films (many Prelinger-adjacent).
+- **URL:** https://archive.org/details/ephemeral_film
+- **License:** ⚠️ Per-item; the bulk are public-domain sponsored/educational films (verified 2026-10-08 via archive.org collection)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with FedFlix/Prelinger for mid-century Americana plates; confirm PD mark per item. [Wave 46 Lane A]
+
+#### Reuters Screenocean 🚫 commercial licensing
+- **What:** Reuters historical news archive (screenocean.com) — 20th-century news footage.
+- **URL:** https://www.reutersscreenocean.com/
+- **License:** 🚫 Commercial licensing only (verified 2026-10-08 via reutersscreenocean.com — paid licensing platform)
+- **Free tier:** None for production use
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative — newsreel reference only. [Wave 46 Lane A]
+
+#### Footage.net ⚠️ marketplace aggregator
+- **What:** Search/screening platform aggregating stock-footage libraries (WPA is a long-standing content partner).
+- **URL:** https://footage.net/
+- **License:** ⚠️ Marketplace — each clip carries its source library's license/price (verified 2026-10-08 via footage.net + WPA partnership coverage)
+- **Free tier:** Search and watermarked screening
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Discovery layer for licensed footage — useful for shot research; nothing free to pull. [Wave 46 Lane A]
+
+#### White House YouTube archive ✅ commercial-safe (PD federal works)
+- **What:** White House video channel archive — addresses, briefings, events (Obama-era onward).
+- **URL:** https://www.youtube.com/@WhiteHouse
+- **License:** Public Domain — US federal government works (17 U.S.C. §105); White House video is PD (verified 2026-10-08 via whitehouse.gov copyright policy: federal works not subject to copyright)
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD political/ceremonial footage; pairs with the Obama White House Flickr entry. Exclude any third-party/copyrighted inserts. [Wave 46 Lane A]
+
+#### U.S. House floor video (Congress.gov) ✅ commercial-safe (PD federal works)
+- **What:** Live/archived video of House (and Senate) floor proceedings via Congress.gov and house.gov.
+- **URL:** https://www.congress.gov/ / https://live.house.gov/
+- **License:** Public Domain — federal legislative proceedings, US government works (verified 2026-10-08 via house.gov — House video is a public record of proceedings)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PD civic/government texture; C-SPAN's own camera feeds are separately rights-held (see existing C-SPAN 🚫 entry) — use only the official House/Senate feeds. [Wave 46 Lane A]
+
+### Pocket 2 — chiptune label deep-dives round 2 (30 entries)
+
+#### Da! Heard It Records ⚠️ CC (variant unpinned) — Paris chiptune/electro netlabel
+- **What:** Paris netlabel since 2006 — chiptune, electro-trash, breakcore, toypop (Computer Truck, Goto80, Ben et Béné, Buskerdroid's LSDJ EPs); ~30+ D!HR catalog numbers.
+- **URL:** https://dahearditrecords.bandcamp.com/
+- **License:** ⚠️ Creative Commons per the label's own press releases ("albums are distributed under a Creative Commons licence, encouraging sharing and reuse") — variant unpinned; verify per release (verified 2026-10-08 via daheardit-records.net press kit + Bandcamp)
+- **Free tier:** Name-your-price / free downloads on Bandcamp
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The most usable French chip netlabel found — CC-stated catalog, but pin the variant per release before scoring use. [Wave 46 Lane A]
+
+#### Chiptunes = WIN (ChipWIN) ⚠️ charity compilations, paid
+- **What:** Annual chiptune mega-compilations (Vol. 1–8+) founded by Brandon "President Hoodie" Hood — 50+ artists per volume; proceeds to charity (Groupees bundles, Bandcamp).
+- **URL:** https://chiptuneswin.bandcamp.com/
+- **License:** ⚠️ Paid charity releases — no open license found; per-release all-rights-reserved assumed (verified 2026-10-08 via archive.org Groupees bundle booklet + Bandcamp)
+- **Free tier:** Paid (charity)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference/A&R only — the volumes are a who's-who of the 2010s chip scene (Kubbi, Auxcide, Jredd, Cheapshot); nothing cleared for use. [Wave 46 Lane A]
+
+#### Catskull Records ⚠️ commercial chiptune label
+- **What:** Chiptune label + hardware outfit (Catskull Electronics: GenMDM Genesis MIDI interface) — releases incl. the YM2017 Sega Genesis cartridge comp (with Yetee Records), Abandoned on Fire's Dungeon Crawler.
+- **URL:** https://catskullrecords.com/
+- **License:** ⚠️ Commercial label — vinyl/cartridge releases sold, no open license (verified 2026-10-08 via Shuga Records/Discogs YM2017 listing + chipmusic.org release threads)
+- **Free tier:** Paid releases
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference only; the GenMDM hardware is separately interesting for authentic Genesis FM capture if the studio ever records real hardware. [Wave 46 Lane A]
+
+#### Shuga Records ⚠️ commercial chiptune vinyl retailer/label
+- **What:** US retailer/label specializing in chiptune and VGM vinyl (carried the Catskull/Yetee YM2017 Genesis comp; broad chiptune tag catalog).
+- **URL:** https://www.shugarecords.com/collections/all/Chiptune
+- **License:** ⚠️ Commercial — retail label, all rights reserved (verified 2026-10-08 via shugarecords.com)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Discovery only — maps which chip releases got physical editions. [Wave 46 Lane A]
+
+#### Kittenrock — rights audit ❓ still unverifiable
+- **What:** Follow-up to the Wave 23 ❓ entry (line 21711) — Kittenrock chiptune label.
+- **URL:** n/a (site not locatable this pass)
+- **License:** ❓ No license statement locatable (verified 2026-10-08 — no live label site found; prior ❓ stands)
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative — re-checked, still no verifiable terms; do not source from here. Kept so no sibling lane re-audits it. [Wave 46 Lane A]
+
+#### Chippanze — rights audit ❓ still unverifiable
+- **What:** Follow-up to the Wave 43 ❓ entry (line 37940) — Chippanze chip label.
+- **URL:** n/a (site not locatable this pass)
+- **License:** ❓ No license statement locatable (verified 2026-10-08 — prior ❓ stands)
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative — re-checked, still no verifiable terms. [Wave 46 Lane A]
+
+#### CalmDownKidder Records — rights audit ❓ still unverifiable
+- **What:** Follow-up to the Wave 23 ❓ entry (line 21781) — CalmDownKidder chiptune label.
+- **URL:** n/a (site not locatable this pass)
+- **License:** ❓ No license statement locatable (verified 2026-10-08 — prior ❓ stands)
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative — re-checked, still no verifiable terms. [Wave 46 Lane A]
+
+#### Toytronic ⚠️ commercial electronica label (chip-adjacent)
+- **What:** Late-90s/00s electronica/IDM label (Gimmik, Multiplex, Abfahrt Hinwil) — tracker-rooted melodic electronics, Skam-adjacent.
+- **URL:** https://clone.nl/all/label/toytronic
+- **License:** ⚠️ Commercial label — vinyl/digital sold via Clone/Traxsource, no open license (verified 2026-10-08 via clone.nl + traxsource.com label pages)
+- **Free tier:** Paid
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference only — chip-adjacent via tracker lineage, not a chiptune label proper. [Wave 46 Lane A]
+
+#### Ghost Ramp 🚫 commercial (Anamanaguchi's label)
+- **What:** Record label run by chiptune band Anamanaguchi.
+- **URL:** https://ghostramp.com/
+- **License:** 🚫 Commercial label — releases sold, all rights reserved (verified 2026-10-08 via ghostramp.com)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative — the biggest chip-band label is fully commercial. [Wave 46 Lane A]
+
+#### Tigerbeat6 🚫 commercial (Kid606's label)
+- **What:** Kid606's long-running electronic label — glitch, breakcore, chip-adjacent electronics.
+- **URL:** https://tigerbeat6.bandcamp.com/
+- **License:** 🚫 Commercial label, all rights reserved (verified 2026-10-08 via Bandcamp)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative — chip-adjacent catalog, fully commercial. [Wave 46 Lane A]
+
+#### Orange Milk Records ⚠️ commercial (chip-adjacent cassette label)
+- **What:** Boutique cassette/digital label (Seth Graham, Keith Rankin) — vapor, electronic, chip-adjacent experimental.
+- **URL:** https://orangemilkrecords.com/
+- **License:** ⚠️ Commercial label — releases sold; no blanket open license (verified 2026-10-08 via orangemilkrecords.com)
+- **Free tier:** Streaming previews
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference/A&R only — the closest thing to a current chip-adjacent physical label. [Wave 46 Lane A]
+
+#### Hausu Mountain ⚠️ commercial (chip-adjacent)
+- **What:** Chicago cassette/digital label — noise, electronic, chip-adjacent underground.
+- **URL:** https://hausumountain.com/
+- **License:** ⚠️ Commercial label — releases sold; no open license (verified 2026-10-08 via hausumountain.com)
+- **Free tier:** Streaming previews
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference only. [Wave 46 Lane A]
+
+#### MAGFest (Music and Gaming Festival) ⚠️ event, per-artist rights
+- **What:** Annual music-and-gaming festival (National Harbor) — the largest chiptune/VGM live gathering; chip artists' main stage.
+- **URL:** https://magfest.org/
+- **License:** ⚠️ Event — performances are per-artist rights; no blanket license (verified 2026-10-08 via magfest.org)
+- **Free tier:** Ticketed event
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Community/sourcing lane — where to meet chip artists for commissioned original work; recordings are not cleared. [Wave 46 Lane A]
+
+#### Blip Festival ⚠️ defunct (2006–2012), per-artist rights
+- **What:** The landmark NYC chiptune festival (2006–2012, 8bitpeoples + The Tank) — defined the late-2000s chip scene.
+- **URL:** https://web.archive.org/web/2012/http://blipfestival.org/
+- **License:** ⚠️ Defunct event — archival footage/recordings are per-artist rights (verified 2026-10-08 via archived blipfestival.org)
+- **Free tier:** Archive viewing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Historical reference — the Blip lineups are an A&R map of the classic chip era. [Wave 46 Lane A]
+
+#### Square Sounds ⚠️ chip festival (Tokyo/Melbourne), per-artist rights
+- **What:** International chiptune festival (Tokyo + Melbourne editions) — LSDJ/Game Boy scene showcase.
+- **URL:** https://squaresounds.com/
+- **License:** ⚠️ Event — per-artist rights (verified 2026-10-08 via squaresounds.com)
+- **Free tier:** Ticketed event
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Sourcing contact point for the Tokyo chip scene. [Wave 46 Lane A]
+
+#### Pulsewave ⚠️ NYC chip event series, per-artist rights
+- **What:** Long-running New York chiptune event series/showcase.
+- **URL:** https://pulsewave.nyc/
+- **License:** ⚠️ Event — per-artist rights (verified 2026-10-08 via pulsewave.nyc)
+- **Free tier:** Ticketed events
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Community lane — NYC chip scene contact point. [Wave 46 Lane A]
+
+#### Superbyte ⚠️ UK chip festival, per-artist rights
+- **What:** UK chiptune/demoscene festival (Manchester).
+- **URL:** https://superbyte.fm/
+- **License:** ⚠️ Event — per-artist rights (verified 2026-10-08 via superbyte.fm)
+- **Free tier:** Ticketed event
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Community lane — UK/EU chip scene contact point. [Wave 46 Lane A]
+
+#### chipwiki.ru ❓ Russian chiptune wiki, terms unverified
+- **What:** Russian-language chiptune wiki (artists, hardware, trackers) — cited as a scene reference.
+- **URL:** https://chipwiki.ru/
+- **License:** ❓ Wiki content license not verified this pass (verified 2026-10-08 — site reachable, no license statement located)
+- **Free tier:** Free reading
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research reference for Eastern-European chip scene history; do not copy text into shipping docs until license is pinned. [Wave 46 Lane A]
+
+#### DistroKid 🚫 commercial distributor
+- **What:** Flat-fee music distributor to Spotify/Apple/etc. — the default indie distributor.
+- **URL:** https://distrokid.com/
+- **License:** 🚫 Commercial service — paid plans, no free tier (verified 2026-10-08 via distrokid.com pricing)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane if the studio ever ships original chip music commercially — not a sourcing lane. [Wave 46 Lane A]
+
+#### TuneCore 🚫 commercial distributor
+- **What:** Per-release/annual-fee music distributor (Believe-owned).
+- **URL:** https://www.tunecore.com/
+- **License:** 🚫 Commercial service — paid plans (verified 2026-10-08 via tunecore.com pricing)
+- **Free tier:** None meaningful
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane only. [Wave 46 Lane A]
+
+#### CD Baby 🚫 commercial distributor
+- **What:** Long-running indie distributor + publishing admin.
+- **URL:** https://cdbaby.com/
+- **License:** 🚫 Commercial service — per-release fees (verified 2026-10-08 via cdbaby.com pricing)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane only. [Wave 46 Lane A]
+
+#### Amuse 🚫 commercial distributor
+- **What:** Mobile-first free-ish distributor (premium tiers paid).
+- **URL:** https://www.amuse.io/
+- **License:** 🚫 Commercial/freemium — free tier is limited/slow, paid tiers for real use (verified 2026-10-08 via amuse.io pricing)
+- **Free tier:** Limited free tier
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane only. [Wave 46 Lane A]
+
+#### RouteNote ⚠️ distributor with genuine free tier
+- **What:** Distributor with a free tier (revenue-share) plus premium paid tier.
+- **URL:** https://routenote.com/
+- **License:** ⚠️ Commercial service — free tier takes a revenue cut; terms per plan (verified 2026-10-08 via routenote.com pricing)
+- **Free tier:** Free (85% royalties) tier exists
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The only distributor here with a genuine $0 entry point — relevant if the studio ships soundtrack music. [Wave 46 Lane A]
+
+#### Ditto Music 🚫 commercial distributor
+- **What:** UK-based distributor, annual-fee unlimited releases.
+- **URL:** https://dittomusic.com/
+- **License:** 🚫 Commercial service — paid plans (verified 2026-10-08 via dittomusic.com pricing)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane only. [Wave 46 Lane A]
+
+#### UnitedMasters 🚫 commercial distributor
+- **What:** Distributor with brand-partnership angle (Apple-backed).
+- **URL:** https://unitedmasters.com/
+- **License:** 🚫 Commercial service — paid tiers (verified 2026-10-08 via unitedmasters.com pricing)
+- **Free tier:** None meaningful
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane only. [Wave 46 Lane A]
+
+#### LANDR Distribution 🚫 commercial distributor
+- **What:** Distributor bundled with LANDR's mastering/AI tools.
+- **URL:** https://www.landr.com/
+- **License:** 🚫 Commercial service — paid plans (verified 2026-10-08 via landr.com pricing)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane only. [Wave 46 Lane A]
+
+#### Symphonic Distribution 🚫 commercial distributor
+- **What:** Distributor/label-services for independents (application-based).
+- **URL:** https://symphonic.com/
+- **License:** 🚫 Commercial service — revenue-share/fee plans (verified 2026-10-08 via symphonic.com)
+- **Free tier:** None
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution lane only. [Wave 46 Lane A]
+
+#### Too Lost ❓ distributor, terms unverified
+- **What:** Newer distributor (too.fm) marketing free/fast distribution.
+- **URL:** https://www.toolost.com/
+- **License:** ❓ Terms not verified this pass (verified 2026-10-08 — marketing claims of free distribution, pricing/terms unclear)
+- **Free tier:** Claimed free tier
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not use until terms are pinned — "free distributor" claims need a pricing-page read. [Wave 46 Lane A]
+
+#### SoundOn (TikTok) ⚠️ distributor, platform-tied terms
+- **What:** TikTok's own music distributor (free, keeps 100% royalties per marketing).
+- **URL:** https://www.soundon.global/
+- **License:** ⚠️ Platform-tied — free distribution but bound to TikTok's terms; read before use (verified 2026-10-08 via soundon.global)
+- **Free tier:** Free distribution claimed
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Potentially the cheapest path to ship soundtrack music — but TikTok's terms apply; legal read required first. [Wave 46 Lane A]
+
+#### Horus Music ❓ distributor, terms unverified
+- **What:** UK distributor (horusmusic.global).
+- **URL:** https://www.horusmusic.global/
+- **License:** ❓ Terms not verified this pass (verified 2026-10-08)
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listed for completeness — verify terms before any use. [Wave 46 Lane A]
+
+### Pocket 3 — retro sound-chip hardware docs (40 entries)
+
+#### bitsavers.org ⚠️ manufacturer-doc preservation archive, no explicit grant
+- **What:** Volunteer-run archive (since 1997) of tens of thousands of scanned computer/electronics manuals and databooks — including General Instrument, TI, and Yamaha databooks covering sound chips; mirrored on the Internet Archive (23,000+ docs).
+- **URL:** http://bitsavers.org/
+- **License:** ⚠️ No explicit reuse grant — preservation archive; the scanned manuals themselves carry their manufacturers' copyrights (verified 2026-10-08 via blog.archive.org Bitsavers profile: volunteer preservation effort, no license statement)
+- **Free tier:** Free reading/download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The primary source for AY/SN/Yamaha databook scans below — read-only reference; do not redistribute the scans themselves. [Wave 46 Lane A]
+
+#### General Instrument AY-3-8910/8912 datasheets ❓ manufacturer doc, community mirror
+- **What:** GI's original datasheets for the AY-3-8910/8912 PSG (ZX Spectrum, Amstrad CPC, Atari ST's YM2149 cousin) — register maps, envelope shapes, I/O ports.
+- **URL:** http://bitsavers.org/components/generalInstrument/_dataBooks/ (mirror path; locate the AY databook)
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08 via bitsavers component archive structure)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The AY bible for PSG music-engine work; pairs with the MIT emu2149/emu76489 emulators below. [Wave 46 Lane A]
+
+#### Yamaha YM2149 datasheet ❓ manufacturer doc, community mirror
+- **What:** Yamaha's YM2149F SSG datasheet (Atari ST, ZX Spectrum 128) — AY-compatible PSG with Yamaha's envelope/timing specifics.
+- **URL:** via bitsavers.org Yamaha databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer document, community mirror — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** YM2149 vs AY-3-8910 differences matter for ST-accurate playback — read both. [Wave 46 Lane A]
+
+#### Yamaha YM2151 (OPM) datasheet ❓ manufacturer doc, community mirror
+- **What:** Yamaha's YM2151 OPM 8-channel FM datasheet (arcade: Sega OutRun, Gradius; Sharp X68000) — the 4-operator FM chip that defined arcade sound.
+- **URL:** via bitsavers.org Yamaha databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer document, community mirror — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with ymfm (already cataloged, BSD-3-Clause) for OPM emulation; the arcade-FM reference. [Wave 46 Lane A]
+
+#### Yamaha YM2203 (OPN) datasheet ❓ manufacturer doc, community mirror
+- **What:** Yamaha's YM2203 OPN datasheet — 3-channel FM + SSG (PC-88/PC-98, arcade).
+- **URL:** via bitsavers.org Yamaha databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer document, community mirror — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PC-98 FM music reference; pairs with the PMD/PC-98 entries already cataloged. [Wave 46 Lane A]
+
+#### Yamaha YM2608 (OPNA) datasheet ❓ manufacturer doc, community mirror
+- **What:** Yamaha's YM2608 OPNA datasheet — 6-channel FM + SSG + ADPCM (PC-98 gold standard for doujin/game music).
+- **URL:** via bitsavers.org Yamaha databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer document, community mirror — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The PC-98 sound bible; pairs with Nuked-OPN2 (quarantined LGPL row 416) and ymfm. [Wave 46 Lane A]
+
+#### Yamaha YM2413 (OPLL) datasheet ❓ manufacturer doc, community mirror
+- **What:** Yamaha's YM2413 OPLL cost-reduced FM datasheet (MSX-MUSIC, Master System FM unit, arcade) — 9 melodic + 5 rhythm channels with fixed instruments.
+- **URL:** via bitsavers.org Yamaha databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer document, community mirror — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the MIT EMU2413 emulator below — doc + permissive emulator together. [Wave 46 Lane A]
+
+#### Yamaha YM3812/YMF262 (OPL2/OPL3) datasheets ❓ manufacturer docs, community mirrors
+- **What:** Yamaha's OPL2 (AdLib/Sound Blaster) and OPL3 (Sound Blaster 16) datasheets — the PC DOS-game FM standards.
+- **URL:** via bitsavers.org Yamaha databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer documents, community mirrors — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS-game FM reference; pairs with ymfm (BSD-3-Clause, already cataloged). Nuked-OPL3 is already cataloged as LGPL. [Wave 46 Lane A]
+
+#### TI SN76489AN datasheet ❓ manufacturer doc, community mirror
+- **What:** Texas Instruments' SN76489AN "Digital Complex Sound Generator" datasheet (SMS, Genesis PSG, BBC Micro, ColecoVision) — 3 square + 1 noise channels.
+- **URL:** http://bitsavers.org/components/ti/_dataBooks/ (mirror path; locate the SN76489 databook)
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08 via bitsavers TI archive)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Sega 8-bit PSG bible; pairs with the MIT emu76489 emulator below. [Wave 46 Lane A]
+
+#### Philips SAA1099 datasheet ❓ manufacturer doc, community mirror
+- **What:** Philips' SAA1099 6-voice PSG datasheet (SAM Coupé, Creative Music System/Game Blaster) — stereo 6-channel square/noise.
+- **URL:** via bitsavers.org Philips databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer document, community mirror — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Niche but complete PSG reference for the CMS/Game Blaster sound path. [Wave 46 Lane A]
+
+#### NEC HuC6280 (TurboGrafx-16 PSG) docs ❓ community docs
+- **What:** HuC6280 6-channel wavetable PSG documentation (TurboGrafx-16/PC Engine) — waveform RAM + LFO per channel.
+- **URL:** via community mirrors (Mednafen source docs, PCE dev wikis); locate via search before use
+- **License:** ❓ Community documentation — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The one major PSG family with no prior catalog coverage — wavetable-synth reference for chip leads. [Wave 46 Lane A]
+
+#### MOS 6560/6561 VIC datasheet ❓ manufacturer doc, community mirror
+- **What:** MOS Technology's VIC (Video Interface Chip) datasheet — covers the VIC-20's 4-voice sound (3 square + noise), the SID's predecessor.
+- **URL:** via bitsavers.org MOS/Commodore databooks / community mirrors; locate via search before use
+- **License:** ❓ Manufacturer document, community mirror — no explicit license (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Completes the Commodore sound-chip doc set (SID already cataloged). [Wave 46 Lane A]
+
+#### Atari POKEY C012294 datasheet scan ⚠️ manufacturer doc, community mirror
+- **What:** Scanned Atari POKEY datasheet (4-channel 8-bit, distortion modes, keyboard scan) — the Atari 8-bit sound reference beyond the Wikipedia summary already cataloged.
+- **URL:** via atariarchives.org / community mirrors; locate via search before use
+- **License:** ⚠️ Manufacturer document, community scan — Atari Corp. copyright; no reuse grant (verified 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read-only reference; the existing POKEY Wikipedia entry covers the feature summary, this is the register-level doc. [Wave 46 Lane A]
+
+#### visual6502.org — chip die shots 🚫 NC (CC BY-NC-SA 3.0)
+- **What:** Decapped/photographed die shots of classic chips (6502, Z80, RP2A03 NES CPU/APU, RP2C02 PPU, GTIA) — transistor-level visual reference.
+- **URL:** http://visual6502.org/
+- **License:** 🚫 CC BY-NC-SA 3.0 — die geometry/traces attributed as CC BY-NC-SA per downstream license audits (verified 2026-10-08 via third-party license notices citing visual6502.org + Quietust)
+- **Free tier:** Free viewing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Non-commercial only — visual reference for chip-architecture understanding; the RP2A03 shots show the NES APU silicon. Do not use in commercial deliverables. [Wave 46 Lane A]
+
+#### ares ✅ commercial-safe (ISC)
+- **What:** ares-emulator/ares — accuracy-focused multi-system emulator (NES, SNES, GB/GBC/GBA, Genesis, PCE, PS1, N64…) with readable, well-structured APU/sound-chip implementations.
+- **URL:** https://github.com/ares-emulator/ares
+- **License:** ISC — "Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee" (verified 2026-10-08 via raw LICENSE fetch)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The standout find of this wave — a permissive-licensed, accuracy-focused multi-system emulator; its APU cores double as executable sound-chip documentation. Successor lineage: higan/bsnes (both GPL, quarantined). [Wave 46 Lane A]
+
+#### CLK (TomHarte) ✅ commercial-safe (MIT)
+- **What:** TomHarte/CLK — cycle-accurate retro-computer emulator (Apple II, C64, ZX Spectrum, Amstrad, MSX, Atari 8-bit…) with clean-room audio implementations.
+- **URL:** https://github.com/TomHarte/CLK
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MIT-licensed cycle-accurate audio for 8-bit micros — a second permissive reference alongside ares. [Wave 46 Lane A]
+
+#### binjgb ✅ commercial-safe (MIT)
+- **What:** binji/binjgb — lightweight Game Boy emulator (DMG/CGB) with a readable APU implementation.
+- **URL:** https://github.com/binji/binjgb
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Small, readable GB APU reference — easier to study than SameBoy's full-accuracy core. [Wave 46 Lane A]
+
+#### Peanut-GB ✅ commercial-safe (MIT)
+- **What:** deltabeard/Peanut-GB — single-header C99 Game Boy (DMG) emulator library, speed-focused, with GB APU emulation (minigb_apu).
+- **URL:** https://github.com/deltabeard/Peanut-GB
+- **License:** MIT — "This project is licensed under the MIT License" (verified 2026-10-08 via upstream README; GitHub API license field null = detection gap, README is authoritative)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Single-header = trivially embeddable GB sound reference; active (pushed 2026-09-21). [Wave 46 Lane A]
+
+#### emu2149 ✅ commercial-safe (MIT)
+- **What:** digital-sound-antiques/emu2149 — YM2149/AY PSG emulator in C by Mitsutaka Okazaki.
+- **URL:** https://github.com/digital-sound-antiques/emu2149
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive YM2149 core — the clean alternative to GPL PSG emulators; used by BambooTracker and KSS players. [Wave 46 Lane A]
+
+#### emu2413 (EMU2413) ✅ commercial-safe (MIT)
+- **What:** digital-sound-antiques/emu2413 — YM2413 (OPLL) FM emulator in C by Mitsutaka Okazaki.
+- **URL:** https://github.com/digital-sound-antiques/emu2413
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive OPLL core — pairs with the YM2413 datasheet entry above. [Wave 46 Lane A]
+
+#### emu76489 ✅ commercial-safe (MIT)
+- **What:** digital-sound-antiques/emu76489 — SN76489 PSG emulator in C by Mitsutaka Okazaki.
+- **URL:** https://github.com/digital-sound-antiques/emu76489
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive SN76489 core — pairs with the TI datasheet entry above. [Wave 46 Lane A]
+
+#### emu2212 ✅ commercial-safe (MIT)
+- **What:** digital-sound-antiques/emu2212 — YM2212 (OPN variant) FM emulator in C by Mitsutaka Okazaki.
+- **URL:** https://github.com/digital-sound-antiques/emu2212
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive OPN-family core from the same trusted author. [Wave 46 Lane A]
+
+#### emu-rs/snes-apu ✅ commercial-safe (BSD-2-Clause)
+- **What:** emu-rs/snes-apu — SNES SPC700 APU emulator in Rust.
+- **URL:** https://github.com/emu-rs/snes-apu
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive SPC700 core — the clean alternative to LGPL snes_spc (already quarantined row 245-ish); pairs with the SPC700 doc entries already cataloged. [Wave 46 Lane A]
+
+#### SkyEmu ✅ commercial-safe (MIT)
+- **What:** skylersaleh/SkyEmu — Game Boy / GBA / Nintendo DS emulator (C) with clean-room audio implementation; low-level, readable codebase.
+- **URL:** https://github.com/skylersaleh/SkyEmu
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id MIT)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive multi-system handheld emulator — GBA audio reference alongside the GB cores; replaces the ym2149-rs slot (already cataloged upstream). [Wave 46 Lane A]
+
+#### Snes9x 🚫 custom non-commercial license
+- **What:** snes9xgit/snes9x — the classic portable SNES emulator (SPC700/DSP audio path).
+- **URL:** https://github.com/snes9xgit/snes9x
+- **License:** 🚫 Custom non-commercial — "Permission to use, copy, modify and/or distribute Snes9x in both binary and source form, for non-commercial purposes, is hereby granted… Snes9x is freeware for PERSONAL USE only. Commercial users should seek permission" (verified 2026-10-08 via upstream LICENSE)
+- **Free tier:** Free for personal use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference only — the NC clause rules out any commercial pipeline use; prefer ares (ISC) for SNES audio study. [Wave 46 Lane A]
+
+#### Genesis Plus GX 🚫 custom non-commercial license
+- **What:** ekeeke/Genesis-Plus-GX — accuracy-focused Sega 8/16-bit emulator (YM2612 + SN76489 audio path).
+- **URL:** https://github.com/ekeeke/Genesis-Plus-GX
+- **License:** 🚫 Custom non-commercial — "Redistributions may not be sold, nor may they be used in a commercial product or activity" (verified 2026-10-08 via upstream LICENSE.txt)
+- **Free tier:** Free for non-commercial use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference only — NC clause; prefer ares/ymfm for Genesis audio study. [Wave 46 Lane A]
+
+#### VICE 🚫 GPL-2.0 — QUARANTINED (new row 405)
+- **What:** Versatile Commodore Emulator — C64/C128/VIC-20/PET/Plus4 with cycle-accurate SID (6581/8580) emulation; the SID audio reference implementation.
+- **URL:** https://vice-emu.sourceforge.io/
+- **License:** 🚫 GPL-2.0 — "GNU General Public License version 2.0 (GPLv2)" (verified 2026-10-08 via SourceForge project page)
+- **Free tier:** Free software
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 405. [Wave 46 Lane A]
+
+#### Stella 🚫 GPL-2.0 — QUARANTINED (new row 406)
+- **What:** stella-emu/stella — Atari 2600 emulator with TIA sound implementation (2-channel distorted square waves).
+- **URL:** https://github.com/stella-emu/stella
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 406. [Wave 46 Lane A]
+
+#### Atari800 🚫 GPL-2.0 — QUARANTINED (new row 407)
+- **What:** atari800/atari800 — Atari 8-bit/5200 emulator with POKEY audio implementation.
+- **URL:** https://github.com/atari800/atari800
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 407. [Wave 46 Lane A]
+
+#### Hatari 🚫 GPL-2.0-or-later — QUARANTINED (new row 408)
+- **What:** Atari ST/STE/TT/Falcon emulator with YM2149 PSG + DMA/Microwire audio implementation.
+- **URL:** https://hatari.tuxfamily.org/
+- **License:** 🚫 GPLv2+ — "License: GPLv2+" (verified 2026-10-08 via FreshPorts + Wikipedia)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 408. [Wave 46 Lane A]
+
+#### Mednafen 🚫 GPL-2.0-or-later — QUARANTINED (new row 409)
+- **What:** Multi-system emulator (NES, SNES, GB/GBA, PCE, Saturn, PS1, SMS/Genesis…) — original high-accuracy APU cores incl. PCE HuC6280 and PS1 SPU.
+- **URL:** https://mednafen.github.io/
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via Wikipedia + SourceForge project page)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 409. [Wave 46 Lane A]
+
+#### MAME 🚫 GPL-2.0-or-later — QUARANTINED (new row 410)
+- **What:** mamedev/mame — arcade/machine emulator; the largest collection of FM/PSG chip implementations (YM2151, YM2612, OKI ADPCM, etc.).
+- **URL:** https://github.com/mamedev/mame
+- **License:** 🚫 GPL — "MAME as a whole is made available under the terms of the GNU General Public License" (verified 2026-10-08 via raw COPYING fetch; individual files may carry less-restrictive licenses)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — the deepest chip-implementation corpus in existence, but GPL; study behavior, never copy code. QUARANTINE row 410. [Wave 46 Lane A]
+
+#### Gambatte 🚫 GPL-2.0 — QUARANTINED (new row 411)
+- **What:** sinamas/gambatte — accuracy-focused Game Boy/Color emulator; cycle-accurate GB APU.
+- **URL:** https://github.com/sinamas/gambatte
+- **License:** 🚫 GPL-2.0 — "under the terms of the GNU General Public License version 2" (verified 2026-10-08 via upstream README)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — prefer SameBoy/Peanut-GB (MIT) for GB audio work. QUARANTINE row 411. [Wave 46 Lane A]
+
+#### Mesen 🚫 GPL-3.0 — QUARANTINED (new row 412)
+- **What:** SourMesen/Mesen (+ Mesen2) — cycle-accurate NES/PCE/GB/SNES emulator with a noted-accurate NES APU implementation.
+- **URL:** https://github.com/SourMesen/Mesen
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 412. [Wave 46 Lane A]
+
+#### Nestopia 🚫 GPL-2.0 — QUARANTINED (new row 413)
+- **What:** rdanbrook/nestopia — cycle-accurate NES emulator (Undead/UE lineage) with precise APU.
+- **URL:** https://github.com/rdanbrook/nestopia
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 413. [Wave 46 Lane A]
+
+#### FCEUX 🚫 GPL-2.0 — QUARANTINED (new row 414)
+- **What:** TASVideos/fceux — NES emulator/debugger (TAS tooling) with full APU emulation.
+- **URL:** https://github.com/TASVideos/fceux
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 414. [Wave 46 Lane A]
+
+#### mGBA 🚫 MPL-2.0 — QUARANTINED (new row 415)
+- **What:** mgba-emu/mgba — Game Boy Advance emulator with GB/GBC support and documented audio cores.
+- **URL:** https://github.com/mgba-emu/mgba
+- **License:** 🚫 MPL-2.0 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, quarantined per standing weak-copyleft convention pending owner verdict
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 415. [Wave 46 Lane A]
+
+#### Nuked-OPN2 🚫 LGPL-2.1 — QUARANTINED (new row 416)
+- **What:** nukeykt/Nuked-OPN2 — cycle-accurate Yamaha YM2612/3438 (OPN2) emulator.
+- **URL:** https://github.com/nukeykt/Nuked-OPN2
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The reference-accurate OPN2 core — research lane only; prefer ymfm (BSD-3-Clause) for shipping paths. QUARANTINE row 416. [Wave 46 Lane A]
+
+#### BizHawk 🚫 contains GPL — QUARANTINED (new row 417)
+- **What:** TASVideos/BizHawk — multi-system emulator (NES, SNES, Genesis, GB/GBA, PCE, Saturn…) used by the TAS community; deep APU/sound-core coverage across systems.
+- **URL:** https://github.com/TASVideos/BizHawk
+- **License:** 🚫 Contains GPL — upstream LICENSE states the repo "should be considered an illegal combination of several incompatible GPL licenses" (BizHawk team's original C# work is MIT, but embedded emulation cores are GPL-family) (verified 2026-10-08 via upstream license file)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. Replaces the BambooTracker slot (already quarantined as row 173 upstream). QUARANTINE row 417. [Wave 46 Lane A]
+
+#### DOSBox Staging 🚫 GPL-2.0-or-later — QUARANTINED (new row 418)
+- **What:** dosbox-staging/dosbox-staging — modern DOSBox fork with OPL (YM3812/YMF262) emulation for DOS-game FM audio.
+- **URL:** https://github.com/dosbox-staging/dosbox-staging
+- **License:** 🚫 GPL-2.0-or-later — "all works derived from the DOSBox project carry… the GNU General Public License version 2 or later" (verified 2026-10-08 via upstream LICENSE)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 418. [Wave 46 Lane A]

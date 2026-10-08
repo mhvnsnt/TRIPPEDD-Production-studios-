@@ -31366,3 +31366,133 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Key finding:** caption SaaS is almost entirely paid-only (only Cielo24's 120 free minutes and the unverified Symbl.ai API tier offer anything free); the demoscene musicdisk world runs on freeware players with no open-source grants, except the MIT-licensed StSound/sndh-player/NostalgicPlayer trio; commercial VGM labels (Laced, Mondo, Ship to Shore, Yetee, iam8bit) are uniformly all-rights-reserved, and even "free download" chiptune covers (Pixel Mixers) carry no reuse grant.
 - **Quarantine rows added:** 1 (Open Cubic Player — GPL; row 272).
 - **Tools wired:** tools/wave34_lane_a/musicdisk_license_audit.py (demozoo API v1 musicdisk query + StSound/sndh-player MIT LICENSE fetch), tools/wave34_lane_a/caption_tos_probe.py (pricing/ToS page snapshots for the 10 audited caption SaaS) — proofs in tools/wave34_lane_a/PROOFS.md + SHA256SUMS.
+
+#### ModdingWiki — IMF Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "IMF Format" article — full spec of the id Software Music Format: raw OPL2 register-stream music (Type-0/Type-1), timing speeds, channel-0 reservation rule, unofficial tag data. The music format of Wolfenstein 3-D, Commander Keen 4-6, Duke Nukem II, Monster Bash, Hocus Pocus and other early-90s id/Apogee titles.
+- **URL:** http://moddingwiki.shikadi.net/wiki/IMF
+- **License:** ❓ Wiki-claimed public domain (admin Malvineous on User_talk:Malvineous, 2020) — informal statement, no formal license page found; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only reference for any future OPL/DOS-era music work; no code or audio pulled. Same informal license caveat applies to all ModdingWiki doc entries this wave. [Wave 35 Lane A]
+
+#### ModdingWiki — CMF Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "CMF Format" article — Creative Music File spec: Creative Labs' cut-down MIDI (one track) with embedded OPL instruments, CTMF magic, title/artist/remarks tags. Used by Jill of the Jungle, Xargon, Kiloblaster, Solar Winds, Traffic Department 2192.
+- **URL:** https://moddingwiki.shikadi.net/wiki/CMF_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — MUS (DMX) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "MUS Format" article — Paul Radek's DMX audio-library MIDI variant ("MUS"+0x1A signature), a compact near-MIDI bytecode. The music format of Doom, Doom II, Heretic, Hexen, Strife, Raptor, Chex Quest.
+- **URL:** https://moddingwiki.shikadi.net/wiki/MUS_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Companion VGMPF "MUS (DMX)" page exists but ModdingWiki has the fuller field-level spec. [Wave 35 Lane A]
+
+#### ModdingWiki — XMI Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "XMI_Format" article — Miles Sound System Extended MIDI: multi-song MIDI container with XMIDI controller extensions (used by Dune-era and many mid-90s DOS titles). Original XMIDI spec ships in Miles AIL2 docs; this is the community field spec.
+- **URL:** https://moddingwiki.shikadi.net/wiki/XMI_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — DRO (DOSBox Raw OPL) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "DRO_Format" article — DOSBox Raw OPL capture format: logged OPL register writes with delay coding (DRO v1/v2), the OPL-side equivalent of VGM-style logging for DOS games.
+- **URL:** https://moddingwiki.shikadi.net/wiki/DRO_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — OP2 Bank Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "OP2_Bank_Format" article — DMX OPL2 instrument bank ("#OPL_II#" magic, 128 melodic + 47 percussion instruments, 36 bytes each). This is the GENMIDI lump format inside Doom-engine WADs.
+- **URL:** https://moddingwiki.shikadi.net/wiki/OP2_Bank_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Pairs with the MUS (DMX) entry. [Wave 35 Lane A]
+
+#### ModdingWiki — SBI Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "SBI_Format" article — Sound Blaster Instrument: Creative Labs' 50-byte single-instrument file ("SBI"+0x1A), importable into CMF songs and IBK banks.
+- **URL:** http://www.shikadi.net/moddingwiki/SBI_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — Apogee Expanded MIDI (EMIDI) doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "Apogee Expanded MIDI" article — the EMIDI API v1.1 specification (Lee Jackson / Jim Dosè, 1997): expanded MIDI with per-track instrument designation (CC 110), dynamic looping and on-the-fly instrument inclusion. Used by Duke Nukem 3D, Shadow Warrior, Blood (Apogee Sound System).
+- **URL:** https://moddingwiki.shikadi.net/wiki/Apogee_Expanded_MIDI
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified. Note the spec text itself carries "Copyright (c) 1995,1997 Apogee Software Ltd. All Rights Reserved."
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. The embedded Apogee copyright notice means this spec text is the least safe of the ModdingWiki docs to copy — read, don't lift. [Wave 35 Lane A]
+
+#### ModdingWiki — Apogee Sound System Timbre (TMB) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "TMB_Format" article (redirects from TMB Format) — Apogee Sound System timbre bank: 256 13-byte OPL/MIDI instrument entries (128 melodic + 128 percussion), no header. Used by Duke Nukem 3D, Blood, Shadow Warrior; directly based on IBK (first 12 bytes identical).
+- **URL:** http://moddingwiki.shikadi.net/wiki/TMB_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Pairs with the EMIDI entry. [Wave 35 Lane A]
+
+#### ModdingWiki — AdLib Instrument Bank (BNK) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "AdLib Instrument Bank Format" article — the BNK format created by Ad Lib Inc. for Visual Composer 1.5 (1989), designed to pair with ROL songs; also documents the altered "Version 0.0" HMI variant used with HMP/HMI music (Witchaven, Dark Legions).
+- **URL:** https://moddingwiki.shikadi.net/wiki/BNK_Format_(Ad_Lib)
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — IBK Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "IBK_Format" article — SoundBlaster Instrument Bank: "IBK"+0x1A signature, 128 16-byte OPL2/OPL3 instruments + 8-char names. The GM-compatible OPL bank format (SBTimbre, OPL3 Bank Editor).
+- **URL:** https://moddingwiki.shikadi.net/wiki/IBK_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — ROL Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "ROL_Format" article — Ad Lib Inc.'s ROL piano-roll music format (AdLib Visual Composer, 1987; best-known version 0.4, "\roll\default" signature), paired with INS/BNK instruments. ROL songs were converted to IMF for id titles and to ADL for Westwood games.
+- **URL:** http://www.shikadi.net/moddingwiki/ROL_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — Human Machine Interfaces MIDI (HMP/HMI) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "Human Machine Interfaces MIDI Format" article (stub) — the HMP/HMI MIDI-like formats (HMIMIDIP / HMIMIDIP013195 / HMI-MIDISONG061595 signatures) used by Descent, Abuse, Dark Legions, Witchaven I/II, Magic Carpet.
+- **URL:** https://moddingwiki.shikadi.net/wiki/Human_Machine_Interfaces_MIDI_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: the article is an acknowledged stub (signatures + game list only). VGMPF's HMP page has more technical detail but same unverified wiki terms. Doc-only. [Wave 35 Lane A]

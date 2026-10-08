@@ -31851,3 +31851,186 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Re-verification cycle 6:** 10/10 rows confirmed (83 stable-diffusion-webui-forge, 84 OneTrainer, 86 G'MIC, 91 RawTherapee, 94 pysrt, 103 TAL-NoiseMaker, 105 FAVE-align, 120 Style-Bert-VITS2, 165 Csound, 167 DCP-o-matic) — zero relicensing, zero delists; 1 repo-move drift (row 103 falkTX/DISTRHO-Ports → DISTRHO/DISTRHO-Ports); drift watch clean (Helm, telxcc, MKVToolNix).
 - **Quarantine rows:** +2 this wave (row 273 SubsAI GPL-3.0; row 272 Open Cubic Player landed in Wave 34 Lane A). Header: 273 rows · 250 distinct.
 - **Key findings:** DOS-era OPL/MIDI format docs concentrate on ModdingWiki (informal public-domain claim only — reference, not copy); demoscene diskmag long tail uniformly freeware, no reuse grants; caption-adjacent space = paid CART/freemium, paid-API engines behind open clients (LiveTranscribe, NVIDIA Riva), or GPL-quarantined (SubsAI)/license-murky (wav2vec2); ARR netlabels hold all-rights-reserved without exception, even defunct ones; "free download" ≠ license.
+## Wave 36 Lane A — new entries (2026-10-08)
+
+### Angle 1 — demoscene musicdisk / tiny-intro / shader long tail (open-licensed)
+
+#### fr_public (Farbrausch) ✅ BSD / public-domain (per-project)
+- **What:** Farbrausch's public source release — demo tools and demo sources 2001–2011, released raw from old hard drives/SVN: includes the fr-041 "debris" demo source and data, the .werkkzeug tool family, and the V2 synthesizer system.
+- **URL:** https://github.com/dbremner/fr_public
+- **License:** ✅ BSD license or public domain, stated per project (verified 2026-10-08: upstream README — "All of this is released either under a BSD license or put in the public domain (stated per project)"; GitHub API spdx NOASSERTION = detection gap, README text governs).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The highest-value open demoscene source drop for reference: procedural demo tooling plus the debris demo itself (Breakpoint 2007 winner, 177k exe). Check the per-project license file before reuse. [Wave 36 Lane A]
+
+#### apEx-public (Conspiracy) 🚫 CC-NC — research/reference only
+- **What:** Conspiracy's apEx demotool source ("Another Programming EXperiment") — the tool and engine behind their 2014–2023 releases, including project files for Clean Slate, Vessel, Supermode, Offscreen Colonies, Universal Sequence, Darkness Lay Your Eyes Upon Me, and more (Phoenix 64k engine, MVX synth library, CoRE2).
+- **URL:** https://github.com/ConspiracyHu/apEx-public
+- **License:** 🚫 CC-NC (verified 2026-10-08: upstream README License section — "we found that the CC-NC license is the closest to what we have in mind"; released to satisfy curiosity and learning, explicitly not for the commercial space; GitHub API NOASSERTION = detection gap).
+- **Free tier:** Free for non-commercial use
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** NC means research/reference only — study the 64k engine and synth architecture, never ship. [Wave 36 Lane A]
+
+#### Elevated source (RGBA/TBC) 🚫 CC BY-NC-SA 3.0 — research/reference only
+- **What:** Full source of "Elevated" by Rgba & TBC — the legendary 4066-byte 4k intro (Breakpoint 2009 winner): x86 assembly, procedural x87 synth graph, five shader passes, packed timeline.
+- **URL:** https://files.scene.org/view/resources/code/sources/rgba_tbc_elevated_source.zip
+- **License:** 🚫 CC BY-NC-SA 3.0 (verified 2026-10-08: third-party port README quotes the original license; the scene.org zip ships a license.txt).
+- **Free tier:** Free for non-commercial use
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The canonical 4k-intro reference; NC bars commercial reuse of the code or techniques derived from it. [Wave 36 Lane A]
+
+#### demoports/rgba_tbc_elevated — Elevated WebGL port ❓ license undeclared
+- **What:** Source-faithful JavaScript/WebGL2/Web Audio port of Elevated — preserves the packed timeline, shared x86 random stream, procedural synth graph, and five shader passes; runs in the browser.
+- **URL:** https://github.com/demoports/rgba_tbc_elevated/blob/HEAD/README.md
+- **License:** ❓ No license declared on the port repo (verified 2026-10-08: GitHub API NOASSERTION); the original is CC BY-NC-SA 3.0 — assume the same restrictions until the porter states otherwise.
+- **Free tier:** Free to view/run
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Useful as a runnable reference of the Elevated technique stack without a Windows toolchain. [Wave 36 Lane A]
+
+#### 4klang (gopher-atz fork) ✅ MIT
+- **What:** 4klang — the modular software synthesizer for 4k intros (VSTi plugin, synth core, example songs/instruments, C/ASM export for linking into tiny executables).
+- **URL:** https://github.com/gopher-atz/4klang/blob/master/readme.txt
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT on gopher-atz/4klang). Note: the original hzdgopher/4klang readme grants "free to use in your 4k intros if you give proper credits" (custom terms) — this fork's MIT file is the cleaner grant.
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (demoscene/music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The canonical 4k synth; pair with Sointu for the maintained lineage. [Wave 36 Lane A]
+
+#### Sointu (vsariola/sointu) ✅ MIT
+- **What:** Sointu — maintained 4klang fork targeting 386/amd64/WebAssembly; the tools run on Windows, Mac, Linux, and in the browser (in4k org).
+- **URL:** https://github.com/vsariola/sointu/blob/HEAD/README.md
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; README "Distributed under the MIT License").
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (demoscene/music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The maintained 4klang lineage — sibling forks (lestahl, petersalomonsen, in4k) are all MIT; the README lists real 4k intros shipped with it (Roadtrip, Physics Girl St., Xorverse, Night Ride). [Wave 36 Lane A]
+
+#### pouet.net ❓ per-production rights
+- **What:** Pouët.net — the demoscene prod database: demos, intros, musicdisks, wild entries, with download links, screenshots, comments, and party results.
+- **URL:** https://www.pouet.net/prod.php?which=52938
+- **License:** ❓ Per-production rights — the database is browsable; each prod's license is whatever its authors granted (most prods carry no explicit license = all rights reserved by default).
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The index for finding open-licensed prods (the URL above is the Elevated prod page, used as an example) — always verify the license on the individual prod page; never assume. [Wave 36 Lane A]
+
+#### Shadertoy 🚫 CC BY-NC-SA 3.0 default — research/reference only
+- **What:** Shadertoy — the shader-sharing playground: thousands of GLSL demos, many with audio-reactive music examples; the default per-shader license is CC BY-NC-SA 3.0.
+- **URL:** via third-party license audits (e.g. https://github.com/elix22/sokol.net/blob/HEAD/examples/ShaderToyApp/LICENSE.md)
+- **License:** 🚫 CC BY-NC-SA 3.0 default per shader (verified 2026-10-08 via multiple third-party license audits — "default ShaderToy license when no explicit license is specified"); individual shaders may carry other licenses — check each shader page.
+- **Free tier:** Free to view/run
+- **Repo lane:** trippedd (demoscene/shaders)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC default bars commercial reuse of shaders; check the individual shader page for overrides before lifting technique. [Wave 36 Lane A]
+
+#### the-library-of-shaders ✅ CC0
+- **What:** The Library of Shaders — community shader library with explanations aimed at teaching shader development (ShaderToy-style uniforms documented).
+- **URL:** https://github.com/the-library-of-shaders/the-library-of-shaders.github.io
+- **License:** ✅ CC0 (verified 2026-10-08: contribution rules — "You agree that your code and articles are licensed Creative Commons Zero, and require no credit for developers to use them").
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (demoscene/shaders)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The commercial-safe Shadertoy alternative for learning shader technique. [Wave 36 Lane A]
+
+#### glsl-sandbox (mrdoob) ✅ MIT
+- **What:** GLSL Sandbox — mrdoob's pioneering WebGL fragment-shader playground (the tool that inspired Shadertoy).
+- **URL:** https://github.com/mrdoob/glsl-sandbox (verified 2026-10-08 via GitHub API)
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (demoscene/shaders)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The sandbox code is MIT; shaders posted on the live site are per-author — don't conflate the two. [Wave 36 Lane A]
+
+#### vertexshaderart (greggman) ✅ BSD-3-Clause
+- **What:** VertexShaderArt — greggman's vertex-shader art playground: tweak geometry with GLSL vertex shaders in the browser.
+- **URL:** https://github.com/greggman/vertexshaderart (verified 2026-10-08 via GitHub API)
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08: GitHub API spdx_id BSD-3-Clause).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (demoscene/shaders)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with glsl-sandbox as the fragment/vertex shader reference pair. [Wave 36 Lane A]
+
+#### openjs1k (dohliam/openjs1k) ✅ MIT (project; per-entry licenses retained)
+- **What:** openjs1k — curated collection of freely-licensed js1k entries (1k JavaScript demos); each entry ships with its license file, and the project itself is MIT.
+- **URL:** https://github.com/dohliam/openjs1k/blob/HEAD/README.md
+- **License:** ✅ MIT for the project; individual entries retain their original licenses (verified 2026-10-08: README — "The project itself is released under the MIT License... Individual entries retain their original license"; the majority of licensed entries are MIT).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The only js1k subset safe to reuse — check the per-entry license file (someentry_license.txt) before lifting code. [Wave 36 Lane A]
+
+#### js1k.com ❓ per-entry rights
+- **What:** js1k — the 1k JavaScript demo competition (annual); entries are viewable with source on the site.
+- **URL:** http://js1k.com/
+- **License:** ❓ Per-entry rights — the organizer does not require licenses; authors may publish a license in their description or retroactively (verified 2026-10-08 via the organizer's statement: "people agree allowing me to use their submission on the site... If people want to publish the original source code or a license they are free to do so").
+- **Free tier:** Free to view
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use openjs1k for the reusable subset; treat js1k.com itself as browse/learn-only. [Wave 36 Lane A]
+
+#### dwitter ❓ no license located
+- **What:** dwitter.net — social network for 140-character JavaScript demos (canvas code golf); thousands of tiny generative-visual demos.
+- **URL:** https://www.dwitter.net/
+- **License:** ❓ No license statement located this pass for posted demos.
+- **Free tier:** Free to view
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Browse/learn only until a license is located — do not lift demo code. [Wave 36 Lane A]
+
+#### js13kGames ❓ per-entry rights
+- **What:** js13kGames — the 13k JavaScript game competition; entries ship as single-file HTML games, many with public source repos.
+- **URL:** https://js13kgames.com/
+- **License:** ❓ Per-entry rights — licenses vary by entry: MIT (e.g. ScriptFox13k, jewelsback), none, or all-rights-reserved (verified 2026-10-08 via entry-repo survey).
+- **Free tier:** Free to play/view
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Many entries are MIT — check the individual entry repo before reuse; no blanket grant. [Wave 36 Lane A]
+
+#### sizecoding.org ❓ wiki terms unverified
+- **What:** SizeCoding — the tiny-intro wiki: 256-byte/1k/4k techniques with annotated release code (e.g. HellMood's "Memories" 256-byte megademo, Linux ELF sizecoding, MIDI music in 256 bytes).
+- **URL:** http://www.sizecoding.org/wiki/Memories
+- **License:** ❓ Wiki terms unverified this pass; release code shown is per-author.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The technique reference for sizecoded visuals and audio; treat posted code as per-author rights. [Wave 36 Lane A]
+
+#### ModArchive ⚠️ per-module license (redistribution-only default)
+- **What:** The Mod Archive (modarchive.org) — tracker-module library since 1996 (MOD, XM, S3M, IT, AHX, MED, STM, MTM, 669, AMF, DBM, DMF, FAR, ULT, GDM, J2B, MDL, OKT, HVL and more), with an online player, charts, reviews, and a member artist directory.
+- **URL:** https://modarchive.org/
+- **License:** ⚠️ Per-module: "Mod Archive Distribution license" (redistribution-only grant — download and redistribute unmodified); Public Domain or Creative Commons where the uploader states it (verified 2026-10-08 via Wikipedia infobox + per-module license fields).
+- **Free tier:** Free to browse/download
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modules are listening/reference sources — the Distribution license is not a reuse grant; filter by uploader-declared PD/CC for anything beyond reference. [Wave 36 Lane A]
+
+#### INFU's ChipMusic Resources ⚠️ per-pack licenses
+- **What:** INFU's ChipMusic Resources (Internet Archive) — chipmusic sample/resource packs for trackers; each pack carries its own described license.
+- **URL:** https://archive.org/details/ChipmusicResources
+- **License:** ⚠️ Per-pack licenses, described per pack (verified 2026-10-08 via the archive.org item page — "Each pack has it's own license described").
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check the license note on each pack before use — the honest pattern for sample-pack reuse. [Wave 36 Lane A]

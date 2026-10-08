@@ -3969,3 +3969,70 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 3 Lane C: included for awareness with the honest badge; no Ubisoft code/data enters commercial paths.
 
 <!-- end lane C wave 3: audio-driven animation retiming (9 entries; 2 GPL-family rows → quarantine 104–105) -->
+
+## Procedural secondary animation (spring / jiggle / squash-stretch)
+
+#### Rebound ✅
+- **What:** Java library that models spring dynamics for animations — stiffness/damping/friction spring models driven by a physics stepper; the classic reference spring engine (also has a JS port).
+- **URL:** https://github.com/facebookarchive/rebound
+- **License:** BSD (verified 2026-10-08: GitHub repo page README "## License — BSD License" section; repo archived).
+- **Use:** reference spring integrator for secondary-motion prototypes — hair/cape/belly bounce driven by damped springs; port the stepper into JS/Blender tooling for procedural jiggle on cartoon characters.
+- **Lane note:** Wave 4 Lane A: the original Facebook spring-physics animation library — ground truth for spring secondary motion.
+
+#### dynamics.js ✅
+- **What:** JavaScript library for physics-based animations — spring, bounce, gravity, forceWithGravity, and bezier dynamics types on DOM/SVG/plain objects with frequency/friction/bounciness parameters.
+- **URL:** https://github.com/michaelvillar/dynamics.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page README "## License — The MIT License (MIT)").
+- **Use:** spring/bounce-driven UI and 2D-puppet motion in web-based cartoon tooling — overshoot and settle on squash-stretch hits without hand-keying the settle.
+- **Lane note:** Wave 4 Lane A: pure spring/bounce/gravity tween types map directly to cartoon squash-and-stretch and overshoot.
+
+#### react-spring ✅
+- **What:** Spring-physics-first cross-platform animation library (React DOM + react-three-fiber) — declarative/interactive animations defaulting to real spring physics with stiffness/damping/tension configs.
+- **URL:** https://github.com/pmndrs/react-spring
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** spring-driven motion in React-based production tools (animatics previewers, rigging dashboards) and @react-spring/three for secondary-motion tests on 3D puppet proxies.
+- **Lane note:** Wave 4 Lane A: spring-physics-first; react-three-fiber target makes it the web-to-3D spring bridge for the pipeline.
+
+#### react-motion ✅
+- **What:** Spring-based React animation library — the original stiffness/damping `spring()` helper with `<Motion>`, `<StaggeredMotion>`, and `<TransitionMotion>` components; natural interrupted-animation handling.
+- **URL:** https://github.com/chenglou/react-motion
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** staggered spring chains on multi-part 2D puppets (limbs trailing the torso like drag/follow-through) in web animatic tooling.
+- **Lane note:** Wave 4 Lane A: react-spring's predecessor — StaggeredMotion is literally overlapping action on UI elements.
+
+#### Motion (Framer Motion) ✅
+- **What:** Modern animation library for React, JS, and Vue with a hybrid engine — springs, inertia, gestures, layout transitions, scroll-linked effects, and timelines; the renamed continuation of Framer Motion.
+- **URL:** https://github.com/motiondivision/motion
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — Motion is MIT licensed"; core library MIT — the paid Motion+ extras are separate).
+- **Use:** spring/inertia-driven motion tests for 2D puppet rigs in web tooling; gesture + timeline APIs for previz of overlapping-action beats.
+- **Lane note:** Wave 4 Lane A: the catalog already holds Remotion — this is the distinct spring/gesture twin; the spring solver lineage fits the pocket.
+
+#### Velocity.js ✅
+- **What:** Accelerated JavaScript animation engine — fast, feature-rich standalone alternative to jQuery animate, with spring/easing motion, color/unit interpolation, and UI pack presets.
+- **URL:** https://github.com/julianshapiro/velocity
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — MIT License").
+- **Use:** high-performance DOM/CSS secondary motion in web-based cartoon previz — squash-stretch punches on UI cards/titles and title-card bounce-ins.
+- **Lane note:** Wave 4 Lane A: battle-tested motion engine; the UI-pack spring presets are canned squash-and-stretch recipes.
+
+#### KUTE.js ✅
+- **What:** JavaScript animation engine (18 components) — transforms, colors, SVG stroke drawing, path morphing (svgMorph implements D3/flubber-style shape interpolation), text write-up, scroll tweening.
+- **URL:** https://github.com/thednp/kute.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** SVG path morphing = 2D squash-and-stretch on cartoon shapes — morph a limb/blob between keyframes, stroke-drawn speed lines, morphing mouth shapes driven by spring tweens.
+- **Lane note:** Wave 4 Lane A: the SVG-morph + draw-stroke components are 2D cartoon secondary motion primitives.
+
+#### Shifty ✅
+- **What:** Minimal TypeScript tweening engine optimized for performance and low overhead — Promise-based tween lifecycle with extensibility hooks, designed to be embedded in higher-level tools.
+- **URL:** https://github.com/jeremyckahn/shifty
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE-MIT file; README "## License — MIT license").
+- **Use:** embed as the tween core inside Node-based animation tooling — drive bone/param interpolation for programmatic 2D puppet tests with spring-style easings.
+- **Lane note:** Wave 4 Lane A: the embeddable tween engine — a spring-physics addon rides on top of its render-hook lifecycle.
+
+#### Bounce.js ✅
+- **What:** Tool + JS library for generating CSS3 keyframe animations — chainable scale/rotate/translate/skew components with bounce/sway/hardbounce/hardsway easings and stiffness/bounces parameters.
+- **URL:** https://github.com/tictail/bounce.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** generate baked squash-and-stretch keyframes (splat, sway) for web cartoon overlays and title cards; the visual editor is a fast way to design cartoon impact bounces.
+- **Lane note:** Wave 4 Lane A: purpose-built cartoon bounce generator — stiffness/bounces params are literally squash-stretch knobs.
+
+<!-- end lane A wave 4 batch 1: spring/tween engines (9 entries) -->

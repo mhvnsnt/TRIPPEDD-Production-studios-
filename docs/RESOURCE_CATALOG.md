@@ -29559,3 +29559,195 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** The PSF/USF/GSF format specs are the authoritative reference for any future ripped-format playback tooling; treat every linked download mirror as rip-risk. [Wave 31 Lane A]
+
+### Pocket 4 — Tracker-format tool implementations (19 entries)
+
+#### ayumi ✅ MIT (verified upstream)
+- **What:** YM2149/AY-3-8910 sound-chip emulator in portable C (true-grue/ayumi) — a single `ayumi.c`/`ayumi.h` pair that renders the classic Atari ST / ZX Spectrum PSG to audio; tiny enough to embed in any tool.
+- **URL:** https://github.com/true-grue/ayumi
+- **License:** ✅ MIT (verified via GitHub API 2026-10-08; repo not archived)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** STRONGEST POCKET-4 WIRING CANDIDATE — compile the two files, render a test tone to WAV, byte-verify. Pairs with psgplay (quarantine 268) and sc68 (quarantine 267) as the commercial-safe playback path for Atari ST chiptune assets. [Wave 31 Lane A]
+
+#### libopenmpt ✅ BSD-3-Clause (verified upstream)
+- **What:** Cross-platform C/C++ module playback library — renders MOD, S3M, XM, IT, MPTM and dozens of tracker formats to PCM; the library behind OpenMPT (distinct from the OpenMPT Windows app already cataloged).
+- **URL:** https://lib.openmpt.org/
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08: upstream README — "libopenmpt is a BSD-3-clause-licensed, cross-platform C++ and C module playback library")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The commercial-safe answer to every tracker-format playback need — covers the formats that xmp-cli (quarantine 256) and UADE (quarantine 257) handle, without the GPL. [Wave 31 Lane A]
+
+#### openmpt123 ✅ BSD-3-Clause (verified upstream)
+- **What:** Command-line tracker-module player bundled with libopenmpt — renders module files to audio devices or WAV from the terminal.
+- **URL:** https://lib.openmpt.org/ (openmpt123 ships with the libopenmpt distribution)
+- **License:** ✅ BSD-3-Clause (same source tree as libopenmpt, verified 2026-10-08)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Standalone-tool lane for batch-rendering module archives (HVSC, Mod Archive finds) to WAV for scoring beds. [Wave 31 Lane A]
+
+#### Echo ✅ zlib (verified upstream)
+- **What:** Sik's Sega Genesis/Mega Drive sound engine (github.com/sikthehedgehog/Echo) — Z80 + 68k driver that plays tracker-style sequences through the YM2612 + SN76496; the homebrew scene's standard music driver.
+- **URL:** https://github.com/sikthehedgehog/Echo
+- **License:** ✅ zlib (verified via GitHub API 2026-10-08; repo not archived)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive Genesis music driver for original chiptune scoring — write sequences in a tracker, ship the driver; no Sega IP involved when the music is original. [Wave 31 Lane A]
+
+#### ym2149-rs ✅ MIT (verified upstream)
+- **What:** Rust emulator of the AY-3-8910/YM2149 PSG (github.com/turbohz/ym2149-rs) — cycle-level chip emulation as a Rust crate.
+- **URL:** https://github.com/turbohz/ym2149-rs
+- **License:** ✅ MIT (verified via GitHub API 2026-10-08; repo not archived)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rust-side AY emulation for pipeline tooling (batch chiptune rendering in Rust build scripts); the C ayumi remains the simplest embed. [Wave 31 Lane A]
+
+#### ym2149 (Go) ✅ MIT (verified upstream)
+- **What:** Go emulator of the AY-3-8910/YM2149 PSG (github.com/jenska/ym2149) — chip emulation in pure Go.
+- **URL:** https://github.com/jenska/ym2149
+- **License:** ✅ MIT (verified via GitHub API 2026-10-08; repo not archived)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Go-side AY emulation for server/tooling lanes; same chip family as ayumi and ym2149-rs — pick the language that matches the pipeline. [Wave 31 Lane A]
+
+#### ymfm ✅ BSD-3-Clause (verified upstream)
+- **What:** Aaron Giles's Yamaha FM sound-chip emulator family (github.com/aaronsgiles/ymfm) — cycle-accurate OPM (YM2151), OPN (YM2203/2608), OPL (YM3812/YM3526), OPZ (YM2414) and more in portable C++; the engine behind MAME's FM audio.
+- **URL:** https://github.com/aaronsgiles/ymfm
+- **License:** ✅ BSD-3-Clause (verified via GitHub API 2026-10-08)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** STRONG WIRING CANDIDATE — build the OPM/OPL core, render a test FM patch to WAV, byte-verify. The commercial-safe FM synthesis path (vs Nuked-OPL3 LGPL, quarantine-adjacent). Arcade-authentic FM beds for cartoon scoring. [Wave 31 Lane A]
+
+#### ADLplug ✅ BSL-1.0 (verified upstream)
+- **What:** FM chip synthesizer plugin (github.com/jpcima/ADLplug) — OPL3-based VST/LV2 instrument using the ADLMIDI bank set; play Yamaha FM patches from a DAW.
+- **URL:** https://github.com/jpcima/ADLplug
+- **License:** ✅ BSL-1.0 / Boost Software License (verified via GitHub API 2026-10-08) — permissive, commercial-safe.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DAW-side FM instrument for original chiptune scoring — the permissive counterpart to the GPL tracker ecosystem; no copyleft in the instrument chain. [Wave 31 Lane A]
+
+#### Nuked-OPL3 ⚠️ LGPL-2.1-or-later (no quarantine row per LGPL rule)
+- **What:** Cycle-accurate Yamaha OPL3 emulator (github.com/nukeykt/Nuked-OPL3) — the reference OPL3 core used by DOSBox forks and AdPlug-family projects; ships multiple third-party NOTICES.
+- **URL:** https://github.com/nukeykt/Nuked-OPL3
+- **License:** ⚠️ LGPL-2.1-or-later (verified via GitHub API 2026-10-08) — no quarantine row per the standing LGPL rule (libmikmod precedent; doctrine pending owner verdict).
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Accuracy reference for OPL3 work; prefer ymfm (BSD) for anything linked into pipeline code. [Wave 31 Lane A]
+
+#### ZXTune ⚠️ LGPL-2.1 (no quarantine row per LGPL rule)
+- **What:** Chiptune module player library (libzxtune) — plays ZX Spectrum (AY), Amiga, Atari ST and PC chiptune formats; the engine behind the ZXTune player app.
+- **URL:** https://github.com/exoticorn/libzxtune
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08: libzxtune README — "available under the terms of the GNU Lesser General Public License version 2.1") — no quarantine row per the standing LGPL rule.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Broadest single-library chiptune format coverage found this wave; ayumi/libopenmpt remain the permissive picks. [Wave 31 Lane A]
+
+#### FluidSynth ⚠️ LGPL-2.1-or-later (no quarantine row per LGPL rule)
+- **What:** Software SoundFont synthesizer (github.com/FluidSynth/fluidsynth) — renders MIDI via SF2/SF3 soundfonts; the standard open-source General MIDI renderer.
+- **URL:** https://github.com/FluidSynth/fluidsynth
+- **License:** ⚠️ LGPL-2.1-or-later (verified via GitHub API 2026-10-08) — no quarantine row per the standing LGPL rule.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The MIDI-render lane for PD score archives (Pocket 1): scores → MIDI → FluidSynth + a PD soundfont = temp score beds. Dynamic-link or separate-process use only. [Wave 31 Lane A]
+
+#### libOPNMIDI ⚠️ LGPL-3.0 (no quarantine row per LGPL rule)
+- **What:** Yamaha YM2612/OPN2 MIDI synthesizer library (github.com/Wohlstand/libOPNMIDI) — renders MIDI files through an emulated Genesis FM chip; ships a large instrument bank collection.
+- **URL:** https://github.com/Wohlstand/libOPNMIDI
+- **License:** ⚠️ LGPL-3.0 (verified via GitHub API 2026-10-08 — notably LGPL, not GPL as with most Wohlstand projects) — no quarantine row per the standing LGPL rule.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MIDI-in → Genesis-FM-out in one library: turn PD scores into authentic 16-bit-era FM beds. The Echo engine (zlib, above) is the permissive alternative for original compositions. [Wave 31 Lane A]
+
+#### Adlib Tracker II 🚫 GPL-3.0-or-later → QUARANTINE ROW 265
+- **What:** The classic DOS OPL2/OPL3 FM tracker (Adlib Tracker II) — official sources mirrored at github.com/ijsf/at2; compose FM music in the authentic DOS tracker UI.
+- **URL:** https://github.com/ijsf/at2
+- **License:** 🚫 GPL-3.0-or-later (verified 2026-10-08: fork README of the official sources — "source codes are distributed under the GNU GPL 3+ license"; GitHub API returned no license — detection gap). QUARANTINED — research/standalone-tool use only, never wired.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** QUARANTINED (GPL/AGPL)
+- **Notes:** Compose in AT2 as a standalone tool (output music is yours per the GPL tool-use doctrine); render via ymfm/ADLplug (permissive) instead of GPL code. [Wave 31 Lane A]
+
+#### gbsplay 🚫 GPL-1.0-or-later → QUARANTINE ROW 266
+- **What:** Game Boy Sound (GBS) player (github.com/mmitch/gbsplay) — plays .gbs Game Boy music rips; long-running open-source project.
+- **URL:** https://github.com/mmitch/gbsplay
+- **License:** 🚫 GPL-1.0-or-later (verified 2026-10-08: upstream README — "GNU GPL version 1... or any later version"; GitHub API returned NOASSERTION — detection gap). QUARANTINED — research/standalone-tool use only, never wired.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** QUARANTINED (GPL/AGPL)
+- **Notes:** GBS rips are game-music derivatives in any case (🚫 content); the player is GPL on top — double reason to keep it research-only. [Wave 31 Lane A]
+
+#### sc68 🚫 GPL-2.0-or-later → QUARANTINE ROW 267
+- **What:** Atari ST .sc68 music player (sc68.atari.org) — plays the sc68 format's 68000-code music rips with cycle-level replay.
+- **URL:** http://sc68.atari.org
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via third-party license audit; upstream re-verify before any use). QUARANTINED — research/standalone-tool use only, never wired.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** QUARANTINED (GPL/AGPL)
+- **Notes:** For Atari ST chiptune playback prefer ayumi (MIT, above) + psgplay-format files; sc68 stays research-only. [Wave 31 Lane A]
+
+#### psgplay 🚫 GPL-2.0 → QUARANTINE ROW 268
+- **What:** Atari ST SNDH/PSG music player (github.com/frno7/psgplay) — plays Atari ST chiptune files including the SNDH archive format.
+- **URL:** https://github.com/frno7/psgplay
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via third-party license audit; upstream re-verify before any use). QUARANTINED — research/standalone-tool use only, never wired.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** QUARANTINED (GPL/AGPL)
+- **Notes:** Pairs with ayumi (MIT) as the permissive PSG playback alternative; the player itself stays quarantined. [Wave 31 Lane A]
+
+#### vgmtools 🚫 GPL-2.0 → QUARANTINE ROW 269
+- **What:** VGM utility suite (github.com/vgmrips/vgmtools) — vgm2mid, vgm trim/loop tools, and other Video Game Music format converters from the VGMrips project.
+- **URL:** https://github.com/vgmrips/vgmtools
+- **License:** 🚫 GPL-2.0 (verified via GitHub API 2026-10-08). QUARANTINED — research/standalone-tool use only, never wired.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** QUARANTINED (GPL/AGPL)
+- **Notes:** vgm2mid as a standalone conversion step is the useful lane (MIDI out is data, not GPL code); never link the suite into pipeline code. [Wave 31 Lane A]
+
+#### ProTrackR2 🚫 GPL-3.0-or-later → QUARANTINE ROW 270
+- **What:** R package for manipulating and playing ProTracker modules (CRAN: ProTrackR2) — reads/writes classic Amiga MOD files, edits samples/patterns, plays back from R.
+- **URL:** https://rdrr.io/cran/ProTrackR2/man/ProTrackR2.html
+- **License:** 🚫 GPL-3.0-or-later (verified 2026-10-08: CRAN lists "License GPL (>= 3)"). QUARANTINED — research/standalone-tool use only, never wired.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** QUARANTINED (GPL/AGPL)
+- **Notes:** The only MOD read/write/manipulation library found this wave — useful as a standalone batch-conversion step (MOD → WAV stems); libopenmpt (BSD) remains the wired playback path. [Wave 31 Lane A]
+
+#### libsidplayfp → see quarantine row 258 (no new row)
+- **What:** C64 SID playback library (github.com/libsidplayfp) — the reSIDfp-based library behind the sidplayfp player; same org/license family as the quarantined sidplayfp.
+- **URL:** https://github.com/libsidplayfp/libsidplayfp
+- **License:** 🚫 GPL-2.0-or-later (covered by EXISTING quarantine row 258 — sidplayfp, verified Wave 27 Lane A). No new row per the no-duplicate rule.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** QUARANTINED (GPL/AGPL)
+- **Notes:** Library counterpart to the row-258 player; both stay research-only. [Wave 31 Lane A]

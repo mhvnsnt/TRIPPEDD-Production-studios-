@@ -1,0 +1,2423 @@
+{
+  "generated_at": "2026-10-08T00:53:55.595389+00:00",
+  "lane": "Wave 25 Lane C",
+  "source": "Internet Archive advancedsearch (Great 78 / collection:georgeblood)",
+  "pd_rule": "pre-1923 recordings PD per MMA (conservative through-1925 slice per Lane A)",
+  "collection_numFound": 187021,
+  "rows_scanned": 300,
+  "pd_items_found": 300,
+  "unparseable_dates_excluded": 0,
+  "composition_caveat": "Recording PD does not imply composition PD.",
+  "items": [
+    {
+      "identifier": "78_hosanna-in-the-highest_haydn-quartette_gbia0362657a",
+      "title": "Hosanna In The Highest",
+      "date": "1898-01-01T00:00:00Z",
+      "year": 1898,
+      "creator": "Haydn Quartette",
+      "details_url": "https://archive.org/details/78_hosanna-in-the-highest_haydn-quartette_gbia0362657a"
+    },
+    {
+      "identifier": "78_ise-gwine-back-to-dixie_mr-s-h-dudley_gbia0362665a",
+      "title": "I'se Gwine Back To Dixie",
+      "date": "1898-06-10T00:00:00Z",
+      "year": 1898,
+      "creator": "Mr. S. H. Dudley",
+      "details_url": "https://archive.org/details/78_ise-gwine-back-to-dixie_mr-s-h-dudley_gbia0362665a"
+    },
+    {
+      "identifier": "78_lincolns-speech-at-gettysburg_mr-w-f-hooley_gbia0362658a",
+      "title": "Lincoln's Speech At Gettysburg",
+      "date": "1898-10-21T00:00:00Z",
+      "year": 1898,
+      "creator": "Mr. W. F. Hooley",
+      "details_url": "https://archive.org/details/78_lincolns-speech-at-gettysburg_mr-w-f-hooley_gbia0362658a"
+    },
+    {
+      "identifier": "78_the-girl-i-left-behind-me_mr-john-terrell_gbia0362662a",
+      "title": "THE GIRL I LEFT BEHIND ME",
+      "date": "1898-11-22T00:00:00Z",
+      "year": 1898,
+      "creator": "Mr. John Terrell",
+      "details_url": "https://archive.org/details/78_the-girl-i-left-behind-me_mr-john-terrell_gbia0362662a"
+    },
+    {
+      "identifier": "78_ive-waited-honey_harry-macdonough_gbia0362647a",
+      "title": "I've Waited Honey",
+      "date": "1899-01-01T00:00:00Z",
+      "year": 1899,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_ive-waited-honey_harry-macdonough_gbia0362647a"
+    },
+    {
+      "identifier": "78_green-fields-of-virginia_mr-a-c-campbell_gbia0362664a",
+      "title": "Green Fields Of Virginia",
+      "date": "1899-03-22T00:00:00Z",
+      "year": 1899,
+      "creator": "Mr. A. C. Campbell",
+      "details_url": "https://archive.org/details/78_green-fields-of-virginia_mr-a-c-campbell_gbia0362664a"
+    },
+    {
+      "identifier": "78_the-irish-swell-waltz_the-metropolitan-orchestra_gbia0362660a",
+      "title": "The Irish Swell Waltz",
+      "date": "1899-03-29T00:00:00Z",
+      "year": 1899,
+      "creator": "The Metropolitan Orchestra",
+      "details_url": "https://archive.org/details/78_the-irish-swell-waltz_the-metropolitan-orchestra_gbia0362660a"
+    },
+    {
+      "identifier": "78_what-is-dat-coons-game_mr-len-spencer_gbia0362666a",
+      "title": "What Is Dat Coons Game",
+      "date": "1899-04-15T00:00:00Z",
+      "year": 1899,
+      "creator": "Mr. Len Spencer",
+      "details_url": "https://archive.org/details/78_what-is-dat-coons-game_mr-len-spencer_gbia0362666a"
+    },
+    {
+      "identifier": "78_hello-ma-baby_mr-len-spencer_gbia0362667a",
+      "title": "Hello Ma Baby",
+      "date": "1899-04-15T00:00:00Z",
+      "year": 1899,
+      "creator": "Mr. Len Spencer",
+      "details_url": "https://archive.org/details/78_hello-ma-baby_mr-len-spencer_gbia0362667a"
+    },
+    {
+      "identifier": "78_whistling-rufus_the-members-of-sousas-band_gbia0362644a",
+      "title": "Whistling Rufus",
+      "date": "1899-06-06T00:00:00Z",
+      "year": 1899,
+      "creator": "The Members of Sousa's Band",
+      "details_url": "https://archive.org/details/78_whistling-rufus_the-members-of-sousas-band_gbia0362644a"
+    },
+    {
+      "identifier": "78_soldiers-in-the-park_sousas-band_gbia0362650a",
+      "title": "Soldiers In The Park",
+      "date": "1899-06-07T00:00:00Z",
+      "year": 1899,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_soldiers-in-the-park_sousas-band_gbia0362650a"
+    },
+    {
+      "identifier": "78_mother-hubbard-march_sousas-band_gbia0362645a",
+      "title": "Mother Hubbard March",
+      "date": "1899-06-08T00:00:00Z",
+      "year": 1899,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_mother-hubbard-march_sousas-band_gbia0362645a"
+    },
+    {
+      "identifier": "78_mother-goose-rhymes_len-spencer_gbia0362651a",
+      "title": "Mother Goose Rhymes",
+      "date": "1899-08-04T00:00:00Z",
+      "year": 1899,
+      "creator": "Len Spencer",
+      "details_url": "https://archive.org/details/78_mother-goose-rhymes_len-spencer_gbia0362651a"
+    },
+    {
+      "identifier": "78_one-night-in-june_harry-macdonough_gbia0362652a",
+      "title": "One Night In June",
+      "date": "1899-10-07T00:00:00Z",
+      "year": 1899,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_one-night-in-june_harry-macdonough_gbia0362652a"
+    },
+    {
+      "identifier": "78_my-hannah-lady_arthur-collins_gbia0362646a",
+      "title": "My Hannah Lady",
+      "date": "1899-11-25T00:00:00Z",
+      "year": 1899,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_my-hannah-lady_arthur-collins_gbia0362646a"
+    },
+    {
+      "identifier": "78_id-leave-my-happy-home-for-you_arthur-collins_gbia0362649a",
+      "title": "I'd Leave My Happy Home For You",
+      "date": "1899-11-25T00:00:00Z",
+      "year": 1899,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_id-leave-my-happy-home-for-you_arthur-collins_gbia0362649a"
+    },
+    {
+      "identifier": "78_take-the-name-of-jesus-with-you_harrison-and-anthony_gbia0018315a",
+      "title": "Take the Name of Jesus With You",
+      "date": "1900-01-01T00:00:00Z",
+      "year": 1900,
+      "creator": "Harrison and Anthony",
+      "details_url": "https://archive.org/details/78_take-the-name-of-jesus-with-you_harrison-and-anthony_gbia0018315a"
+    },
+    {
+      "identifier": "78_mosquito-parade_gbia0350412a",
+      "title": "MOSQUITO PARADE",
+      "date": "1900-01-01T00:00:00Z",
+      "year": 1900,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_mosquito-parade_gbia0350412a"
+    },
+    {
+      "identifier": "78_wie-ein-grssen-opus-18_ernestine-schumann-heink-adolf-mehrkens_gbia0262452a",
+      "title": "Wie ein Gr\u00fcssen (Opus 18)",
+      "date": "1900-01-01T00:00:00Z",
+      "year": 1900,
+      "creator": "ERNESTINE SCHUMANN-HEINK",
+      "details_url": "https://archive.org/details/78_wie-ein-grssen-opus-18_ernestine-schumann-heink-adolf-mehrkens_gbia0262452a"
+    },
+    {
+      "identifier": "78_long-long-ago_mr-frank-s-mazziolli_gbia0300263a",
+      "title": "Long Long Ago",
+      "date": "1900-01-01T00:00:00Z",
+      "year": 1900,
+      "creator": "Mr. Frank S. Mazziolli",
+      "details_url": "https://archive.org/details/78_long-long-ago_mr-frank-s-mazziolli_gbia0300263a"
+    },
+    {
+      "identifier": "78_la-stella-del-nord-act-i_rosalia-chalia-meyerbeer_gbia0262452b",
+      "title": "La Stella del Nord (Act I)",
+      "date": "1900-01-01T00:00:00Z",
+      "year": 1900,
+      "creator": "ROSALIA CHALIA",
+      "details_url": "https://archive.org/details/78_la-stella-del-nord-act-i_rosalia-chalia-meyerbeer_gbia0262452b"
+    },
+    {
+      "identifier": "78_youre-talking-rag-time_arthur-collins_gbia0362648a",
+      "title": "You're Talking Rag-Time",
+      "date": "1900-01-13T00:00:00Z",
+      "year": 1900,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_youre-talking-rag-time_arthur-collins_gbia0362648a"
+    },
+    {
+      "identifier": "78_little-old-new-york-medley_the-metropolitan-orchestra_gbia0362656a",
+      "title": "Little Old New York Medley",
+      "date": "1900-01-16T00:00:00Z",
+      "year": 1900,
+      "creator": "The Metropolitan Orchestra",
+      "details_url": "https://archive.org/details/78_little-old-new-york-medley_the-metropolitan-orchestra_gbia0362656a"
+    },
+    {
+      "identifier": "78_you-told-me-you-had-money-in-the-bank_arthur-collins_gbia0362654a",
+      "title": "You Told Me You Had Money In The Bank",
+      "date": "1900-01-27T00:00:00Z",
+      "year": 1900,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_you-told-me-you-had-money-in-the-bank_arthur-collins_gbia0362654a"
+    },
+    {
+      "identifier": "78_the-blue-and-the-gray_arthur-collins_gbia0362659a",
+      "title": "The Blue And The Gray",
+      "date": "1900-03-10T00:00:00Z",
+      "year": 1900,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_the-blue-and-the-gray_arthur-collins_gbia0362659a"
+    },
+    {
+      "identifier": "78_when-the-moon-shines-bright-on-charlie-chaplin_mr-herbert-payne_gbia3035912a",
+      "title": "When the moon shines bright on Charlie Chaplin",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Mr. Herbert Payne",
+      "details_url": "https://archive.org/details/78_when-the-moon-shines-bright-on-charlie-chaplin_mr-herbert-payne_gbia3035912a"
+    },
+    {
+      "identifier": "78_el-miserere-_gbia0014553a",
+      "title": "El Miserere",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_el-miserere-_gbia0014553a"
+    },
+    {
+      "identifier": "78_dixie_standard-band_gbia0014516a",
+      "title": "Dixie",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Standard Band",
+      "details_url": "https://archive.org/details/78_dixie_standard-band_gbia0014516a"
+    },
+    {
+      "identifier": "78_steamboat-leaving-wharf_haydn-quartet_gbia0437685a",
+      "title": "Steamboat Leaving Wharf",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_steamboat-leaving-wharf_haydn-quartet_gbia0437685a"
+    },
+    {
+      "identifier": "78_serenade-softly-through-the-night-is-calling_john-mccormack-fritz-kreisler-vinc_gbia0289871a",
+      "title": "Serenade - \"Softly Through the Night is Calling\"",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "John McCormack",
+      "details_url": "https://archive.org/details/78_serenade-softly-through-the-night-is-calling_john-mccormack-fritz-kreisler-vinc_gbia0289871a"
+    },
+    {
+      "identifier": "78_heimweh_mr-frank-mazziotta_gbia0301859a",
+      "title": "HEIMWEH",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "MR. FRANK MAZZIOTTA",
+      "details_url": "https://archive.org/details/78_heimweh_mr-frank-mazziotta_gbia0301859a"
+    },
+    {
+      "identifier": "78_my-dreams_john-mccormack-weatherly-tosti_gbia0464205b",
+      "title": "My Dreams",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "John McCormack",
+      "details_url": "https://archive.org/details/78_my-dreams_john-mccormack-weatherly-tosti_gbia0464205b"
+    },
+    {
+      "identifier": "78_the-honey-suckle-and-the-bee_arthur-collins_gbia0301202a",
+      "title": "THE HONEY SUCKLE AND THE BEE",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "ARTHUR COLLINS",
+      "details_url": "https://archive.org/details/78_the-honey-suckle-and-the-bee_arthur-collins_gbia0301202a"
+    },
+    {
+      "identifier": "78_quit-that-tickling-me_silas-leachman_gbia0426288a",
+      "title": "Quit That Tickling Me",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Silas Leachman",
+      "details_url": "https://archive.org/details/78_quit-that-tickling-me_silas-leachman_gbia0426288a"
+    },
+    {
+      "identifier": "78_in-the-village-tavern_standard-band_gbia0289434b",
+      "title": "IN THE VILLAGE TAVERN",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Standard Band",
+      "details_url": "https://archive.org/details/78_in-the-village-tavern_standard-band_gbia0289434b"
+    },
+    {
+      "identifier": "78_dear-liberace_ruth-wallis-the-frank-coviello-orchestra_gbia0388459a",
+      "title": "DEAR LIBERACE",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "RUTH WALLIS",
+      "details_url": "https://archive.org/details/78_dear-liberace_ruth-wallis-the-frank-coviello-orchestra_gbia0388459a"
+    },
+    {
+      "identifier": "78_the-pharaohs-daughter-in-law_ruth-wallis-the-frank-coviello-orchestra_gbia0388459b",
+      "title": "The Pharaoh's Daughter-in-Law",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "RUTH WALLIS",
+      "details_url": "https://archive.org/details/78_the-pharaohs-daughter-in-law_ruth-wallis-the-frank-coviello-orchestra_gbia0388459b"
+    },
+    {
+      "identifier": "78_while-the-leaves-came-drifting-down_gbia0302541a",
+      "title": "While the Leaves Came Drifting Down",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_while-the-leaves-came-drifting-down_gbia0302541a"
+    },
+    {
+      "identifier": "78_comin-thro-the-rye_gbia0043165a",
+      "title": "Comin' Thro' the Rye",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_comin-thro-the-rye_gbia0043165a"
+    },
+    {
+      "identifier": "78_the-girl-i-should-have-married-long-ago_harry-macdonough_gbia0381299a",
+      "title": "The Girl I Should Have Married Long Ago",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_the-girl-i-should-have-married-long-ago_harry-macdonough_gbia0381299a"
+    },
+    {
+      "identifier": "78_minne-ha-ha_j-w-myers_gbia0381446a",
+      "title": "Minne-ha-ha",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "J. W. Myers",
+      "details_url": "https://archive.org/details/78_minne-ha-ha_j-w-myers_gbia0381446a"
+    },
+    {
+      "identifier": "78_umbrella-dance_gbia0014517b",
+      "title": "Umbrella Dance",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_umbrella-dance_gbia0014517b"
+    },
+    {
+      "identifier": "78_a-rag-time-skedaddle_gbia0302537a",
+      "title": "A Rag Time Skedaddle",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_a-rag-time-skedaddle_gbia0302537a"
+    },
+    {
+      "identifier": "78_in-einem-khlen-grunde_emil-muench_gbia0479024a",
+      "title": "In einem K\u00fchlen Grunde",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Emil Muench",
+      "details_url": "https://archive.org/details/78_in-einem-khlen-grunde_emil-muench_gbia0479024a"
+    },
+    {
+      "identifier": "78_when-the-kiltre-lads-come-home_mr-herbert-payne-belloc-wright_gbia3035912b",
+      "title": "When the kiltre lads come home",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Mr. Herbert Payne",
+      "details_url": "https://archive.org/details/78_when-the-kiltre-lads-come-home_mr-herbert-payne-belloc-wright_gbia3035912b"
+    },
+    {
+      "identifier": "78_dixie-queen-march_gbia0018314a",
+      "title": "Dixie Queen March",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_dixie-queen-march_gbia0018314a"
+    },
+    {
+      "identifier": "78_while-the-band-is-playing-dixie_harry-macdonough_gbia0479039a",
+      "title": "While the Band is Playing Dixie",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_while-the-band-is-playing-dixie_harry-macdonough_gbia0479039a"
+    },
+    {
+      "identifier": "78_evening-chimes-in-the-mountains_standard-band_gbia0014516b",
+      "title": "Evening Chimes in the Mountains",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Standard Band",
+      "details_url": "https://archive.org/details/78_evening-chimes-in-the-mountains_standard-band_gbia0014516b"
+    },
+    {
+      "identifier": "78_king-edward-vii-march_gbia0014517a",
+      "title": "King Edward VII March",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_king-edward-vii-march_gbia0014517a"
+    },
+    {
+      "identifier": "78_uncle-josh-and-the-lightning-rod-agent_gbia0300266a",
+      "title": "Uncle Josh and the Lightning Rod Agent",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_uncle-josh-and-the-lightning-rod-agent_gbia0300266a"
+    },
+    {
+      "identifier": "78_backyard-conversation-between-two-jealous-irish-washerwomen_gbia0534025a",
+      "title": "Backyard Conversation Between Two Jealous Irish Washerwomen",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_backyard-conversation-between-two-jealous-irish-washerwomen_gbia0534025a"
+    },
+    {
+      "identifier": "78_annie-laurie_haydn-quartet_gbia0300280a",
+      "title": "ANNIE LAURIE",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "HAYDN QUARTET",
+      "details_url": "https://archive.org/details/78_annie-laurie_haydn-quartet_gbia0300280a"
+    },
+    {
+      "identifier": "78_el-capitan-march_victor-herberts-band_gbia0300256a",
+      "title": "EL CAPITAN MARCH",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "VICTOR HERBERT'S BAND",
+      "details_url": "https://archive.org/details/78_el-capitan-march_victor-herberts-band_gbia0300256a"
+    },
+    {
+      "identifier": "78_the-warblers_standard-band_gbia0289434a",
+      "title": "THE WARBLERS",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Standard Band",
+      "details_url": "https://archive.org/details/78_the-warblers_standard-band_gbia0289434a"
+    },
+    {
+      "identifier": "78_a-picture-no-artist-can-paint_j-w-myers_gbia0072979a",
+      "title": "A Picture No Artist Can Paint",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "J. W. Myers",
+      "details_url": "https://archive.org/details/78_a-picture-no-artist-can-paint_j-w-myers_gbia0072979a"
+    },
+    {
+      "identifier": "78_bring-back-my-bonnie-to-me_haydn-quartet_gbia0426292a",
+      "title": "Bring Back My Bonnie To Me",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_bring-back-my-bonnie-to-me_haydn-quartet_gbia0426292a"
+    },
+    {
+      "identifier": "78_serenade-softly-through-the-night-is-calling_john-mccormack-fritz-kreisler-vincen_gbia0181409a",
+      "title": "Serenade-\"Softly Through the Night is Calling\"",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "John McCormack",
+      "details_url": "https://archive.org/details/78_serenade-softly-through-the-night-is-calling_john-mccormack-fritz-kreisler-vincen_gbia0181409a"
+    },
+    {
+      "identifier": "78_turkey-in-de-straw_billy-golden_gbia0253305a",
+      "title": "Turkey In De Straw",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Billy Golden",
+      "details_url": "https://archive.org/details/78_turkey-in-de-straw_billy-golden_gbia0253305a"
+    },
+    {
+      "identifier": "78_dream-of-the-ocean-waltz_gbia0018314b",
+      "title": "Dream of the Ocean Waltz",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_dream-of-the-ocean-waltz_gbia0018314b"
+    },
+    {
+      "identifier": "78_my-dreams_john-mccormack-weatherly-tosti_gbia0188874b",
+      "title": "My Dreams",
+      "date": "1901-01-01T00:00:00Z",
+      "year": 1901,
+      "creator": "John McCormack",
+      "details_url": "https://archive.org/details/78_my-dreams_john-mccormack-weatherly-tosti_gbia0188874b"
+    },
+    {
+      "identifier": "78_the-holy-city_gbia0014555a",
+      "title": "The Holy City",
+      "date": "1901-10-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_the-holy-city_gbia0014555a"
+    },
+    {
+      "identifier": "78_the-jolly-coppersmith_gbia0014554a",
+      "title": "The Jolly Coppersmith",
+      "date": "1901-10-01T00:00:00Z",
+      "year": 1901,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_the-jolly-coppersmith_gbia0014554a"
+    },
+    {
+      "identifier": "78_the-arkansaw-traveler_len-spencer_gbia0479035a",
+      "title": "The Arkansaw Traveler",
+      "date": "1901-11-01T00:00:00Z",
+      "year": 1901,
+      "creator": "Len Spencer",
+      "details_url": "https://archive.org/details/78_the-arkansaw-traveler_len-spencer_gbia0479035a"
+    },
+    {
+      "identifier": "78_in-the-good-old-summer-time_harry-macdonough_gbia0437693a",
+      "title": "In the Good Old Summer Time",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_in-the-good-old-summer-time_harry-macdonough_gbia0437693a"
+    },
+    {
+      "identifier": "78_hear-dem-bells_silas-leachman_gbia0479037a",
+      "title": "Hear Dem Bells",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Silas Leachman",
+      "details_url": "https://archive.org/details/78_hear-dem-bells_silas-leachman_gbia0479037a"
+    },
+    {
+      "identifier": "78_fare-thee-well-molly-darling_haydn-quartet_gbia0467500a",
+      "title": "Fare Thee Well Molly Darling",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_fare-thee-well-molly-darling_haydn-quartet_gbia0467500a"
+    },
+    {
+      "identifier": "78_o-lola-cai-di-latti-la-cammisa-siciliana-oh-lola-white-as-the-flowers-of-the_gbia0077656b",
+      "title": "O Lola, Ch'ai di Latti la Cammisa (Oh Lola, white as the flowers of the briar)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_o-lola-cai-di-latti-la-cammisa-siciliana-oh-lola-white-as-the-flowers-of-the_gbia0077656b"
+    },
+    {
+      "identifier": "78_vesti-la-giubba-on-with-the-motley_enrico-caruso-leoncavallo_gbia0077656a",
+      "title": "Vesti la Giubba (On with the Motley)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_vesti-la-giubba-on-with-the-motley_enrico-caruso-leoncavallo_gbia0077656a"
+    },
+    {
+      "identifier": "78_yachting_will-evans-lowe-evans_gbia3036773a",
+      "title": "YACHTING",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Will Evans",
+      "details_url": "https://archive.org/details/78_yachting_will-evans-lowe-evans_gbia3036773a"
+    },
+    {
+      "identifier": "78_nobody-knows-and-nobody-seems-to-care_mr-herbert-payne-berlin_gbia3044156b",
+      "title": "Nobody knows and nobody seems to care",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Mr. Herbert Payne",
+      "details_url": "https://archive.org/details/78_nobody-knows-and-nobody-seems-to-care_mr-herbert-payne-berlin_gbia3044156b"
+    },
+    {
+      "identifier": "78_on-a-sunday-afternoon_harry-macdonough_gbia0341183a",
+      "title": "On A Sunday Afternoon",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_on-a-sunday-afternoon_harry-macdonough_gbia0341183a"
+    },
+    {
+      "identifier": "78_moonlight-on-the-lake_haydn-quartet_gbia0319103a",
+      "title": "Moonlight on the Lake",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_moonlight-on-the-lake_haydn-quartet_gbia0319103a"
+    },
+    {
+      "identifier": "78_uncle-josh-weathersby-at-the-opera_cal-stewart_gbia0479038a",
+      "title": "Uncle Josh Weathersby At The Opera",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Cal Stewart",
+      "details_url": "https://archive.org/details/78_uncle-josh-weathersby-at-the-opera_cal-stewart_gbia0479038a"
+    },
+    {
+      "identifier": "78_the-night-alarm_metropolitan-orchestra_gbia0426291a",
+      "title": "The Night Alarm",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Metropolitan Orchestra",
+      "details_url": "https://archive.org/details/78_the-night-alarm_metropolitan-orchestra_gbia0426291a"
+    },
+    {
+      "identifier": "78_a-soldiers-dream_walter-b-rogers_gbia0319108a",
+      "title": "A Soldier's Dream",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Walter B. Rogers",
+      "details_url": "https://archive.org/details/78_a-soldiers-dream_walter-b-rogers_gbia0319108a"
+    },
+    {
+      "identifier": "78_william-tell-overture_climax-band_gbia0378971a",
+      "title": "William Tell, Overture",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Climax Band",
+      "details_url": "https://archive.org/details/78_william-tell-overture_climax-band_gbia0378971a"
+    },
+    {
+      "identifier": "78_imperial-edward-coronation-march_gbia0454240a",
+      "title": "Imperial Edward Coronation March",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_imperial-edward-coronation-march_gbia0454240a"
+    },
+    {
+      "identifier": "78_swanee_mr-herbert-payne-gershwin_gbia3044156a",
+      "title": "Swanee",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Mr. Herbert Payne",
+      "details_url": "https://archive.org/details/78_swanee_mr-herbert-payne-gershwin_gbia3044156a"
+    },
+    {
+      "identifier": "78_e-lucevan-le-stelle-the-stars-were-shining_enrico-caruso-illica-boito-puccini_gbia0077658a",
+      "title": "E Lucevan Le Stelle (The stars were shining)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_e-lucevan-le-stelle-the-stars-were-shining_enrico-caruso-illica-boito-puccini_gbia0077658a"
+    },
+    {
+      "identifier": "78_moskowski-serenade_climax-band_gbia0307211a",
+      "title": "Moskowski Serenade",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "CLIMAX BAND",
+      "details_url": "https://archive.org/details/78_moskowski-serenade_climax-band_gbia0307211a"
+    },
+    {
+      "identifier": "78_barber-of-seville-overture_climax-band-rossini_gbia0307212a",
+      "title": "Barber of Seville \"Overture\"",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "CLIMAX BAND",
+      "details_url": "https://archive.org/details/78_barber-of-seville-overture_climax-band-rossini_gbia0307212a"
+    },
+    {
+      "identifier": "78_where-the-black-eyed-susans-grow_will-strong-r-a-whiting_gbia0538153a",
+      "title": "Where the black-eyed Susans grow",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Will Strong",
+      "details_url": "https://archive.org/details/78_where-the-black-eyed-susans-grow_will-strong-r-a-whiting_gbia0538153a"
+    },
+    {
+      "identifier": "78_vous-qui-faites-lendormie-caterina-while-you-play-at-sleeping-mephistopheles_gbia0077674b",
+      "title": "Vous Qui Faites L'endormie (Caterina, While You Play at Sleeping)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Pol Plancon",
+      "details_url": "https://archive.org/details/78_vous-qui-faites-lendormie-caterina-while-you-play-at-sleeping-mephistopheles_gbia0077674b"
+    },
+    {
+      "identifier": "78_the-blue-danube-waltz_metropolitan-orchestra_gbia0388473a",
+      "title": "The Blue Danube Waltz",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Metropolitan Orchestra",
+      "details_url": "https://archive.org/details/78_the-blue-danube-waltz_metropolitan-orchestra_gbia0388473a"
+    },
+    {
+      "identifier": "78_over-the-waves-waltz_orchestra_gbia0298950a",
+      "title": "OVER THE WAVES WALTZ",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Orchestra",
+      "details_url": "https://archive.org/details/78_over-the-waves-waltz_orchestra_gbia0298950a"
+    },
+    {
+      "identifier": "78_the-presidents-march_climax-band_gbia0395062a",
+      "title": "The President's March",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "CLIMAX BAND",
+      "details_url": "https://archive.org/details/78_the-presidents-march_climax-band_gbia0395062a"
+    },
+    {
+      "identifier": "78_barney-ohea_gbia0319134a",
+      "title": "BARNEY O'HEA",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_barney-ohea_gbia0319134a"
+    },
+    {
+      "identifier": "78_vals-serenata-chaine-de-valses_george-copeland-joachim-nin_gbia0552408a",
+      "title": "VALS SERENATA (Chaine de Valses)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "George Copeland",
+      "details_url": "https://archive.org/details/78_vals-serenata-chaine-de-valses_george-copeland-joachim-nin_gbia0552408a"
+    },
+    {
+      "identifier": "78_cielo-e-mar-heaven-and-ocean_enrico-caruso-boito-ponchielli_gbia0077658b",
+      "title": "Cielo e Mar! (Heaven and Ocean!)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_cielo-e-mar-heaven-and-ocean_enrico-caruso-boito-ponchielli_gbia0077658b"
+    },
+    {
+      "identifier": "78_nellie-was-a-lady_haydn-quartet_gbia0467056a",
+      "title": "Nellie Was a Lady",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_nellie-was-a-lady_haydn-quartet_gbia0467056a"
+    },
+    {
+      "identifier": "78_kathleen-mavourneen_gbia3013937a",
+      "title": "Kathleen Mavourneen",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_kathleen-mavourneen_gbia3013937a"
+    },
+    {
+      "identifier": "78_a-southern-maid-part-i_black-diamonds-band-fraser-simpson_gbia3044159a",
+      "title": "A Southern Maid-Part I",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Black Diamonds Band",
+      "details_url": "https://archive.org/details/78_a-southern-maid-part-i_black-diamonds-band-fraser-simpson_gbia3044159a"
+    },
+    {
+      "identifier": "78_the-warblers_sousas-band_gbia0437698a",
+      "title": "The Warblers",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_the-warblers_sousas-band_gbia0437698a"
+    },
+    {
+      "identifier": "78_mattinata_enrico-caruso-leoncavallo_gbia0077689a",
+      "title": "Mattinata",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_mattinata_enrico-caruso-leoncavallo_gbia0077689a"
+    },
+    {
+      "identifier": "78_nearer-my-god-to-thee_gbia0307065a",
+      "title": "Nearer My God to Thee",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_nearer-my-god-to-thee_gbia0307065a"
+    },
+    {
+      "identifier": "78_non-tamo-piu_enrico-caruso-denza_gbia0077654a",
+      "title": "Non T'Amo Piu",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_non-tamo-piu_enrico-caruso-denza_gbia0077654a"
+    },
+    {
+      "identifier": "78_pussy-cat-rag-kitty-kitty-kitty-kitty_gbia0319134b",
+      "title": "PUSSY CAT RAG (Kitty, Kitty, Kitty, Kitty)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_pussy-cat-rag-kitty-kitty-kitty-kitty_gbia0319134b"
+    },
+    {
+      "identifier": "78_down-where-the-swannee-river-flows_will-strong-von-tilzer_gbia0538153b",
+      "title": "Down where the Swannee river flows",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Will Strong",
+      "details_url": "https://archive.org/details/78_down-where-the-swannee-river-flows_will-strong-von-tilzer_gbia0538153b"
+    },
+    {
+      "identifier": "78_no-non-chiuder-gli-occhi-vaghi-close-not-those-dreamy-eyes_enrico-caruso-illica_gbia0077649",
+      "title": "Studenti, Udite (Students, Hear Me!); No, Non Chiuder Gli Occhi Vaghi (Close not those dreamy eyes)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_no-non-chiuder-gli-occhi-vaghi-close-not-those-dreamy-eyes_enrico-caruso-illica_gbia0077649"
+    },
+    {
+      "identifier": "78_wedding-march_mendelsson_gbia0046373a",
+      "title": "Wedding March",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Mendelsson",
+      "details_url": "https://archive.org/details/78_wedding-march_mendelsson_gbia0046373a"
+    },
+    {
+      "identifier": "78_uncle-josh-weathersby-in-a-department-store_cal-stewart_gbia0426289a",
+      "title": "Uncle Josh Weathersby In A Department Store",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Cal Stewart",
+      "details_url": "https://archive.org/details/78_uncle-josh-weathersby-in-a-department-store_cal-stewart_gbia0426289a"
+    },
+    {
+      "identifier": "78_on-miami-shore_black-diamonds-band-jacobi_gbia3044158a",
+      "title": "On Miami Shore",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Black Diamonds Band",
+      "details_url": "https://archive.org/details/78_on-miami-shore_black-diamonds-band-jacobi_gbia3044158a"
+    },
+    {
+      "identifier": "78_the-treasures-of-the-sea-are-buried-deep_j-w-myers_gbia0549053a",
+      "title": "The Treasures Of The Sea Are Buried Deep",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "J. W. Myers",
+      "details_url": "https://archive.org/details/78_the-treasures-of-the-sea-are-buried-deep_j-w-myers_gbia0549053a"
+    },
+    {
+      "identifier": "78_down-on-the-old-camp-ground_dinwiddie-colored-quartet_gbia0509863a",
+      "title": "Down on the Old Camp Ground",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Dinwiddie Colored Quartet",
+      "details_url": "https://archive.org/details/78_down-on-the-old-camp-ground_dinwiddie-colored-quartet_gbia0509863a"
+    },
+    {
+      "identifier": "78_amor-ti-vieta-di-non-amar-love-doth-forbid-you-not-to-love_enrico-caruso-colautti_gbia0077689b",
+      "title": "Amor Ti Vieta di Non Amar (Love doth forbid you not to love)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_amor-ti-vieta-di-non-amar-love-doth-forbid-you-not-to-love_enrico-caruso-colautti_gbia0077689b"
+    },
+    {
+      "identifier": "78_my-country-tis-of-thee_victor-chorus-and-metropolitan-orchestra_gbia0319120a",
+      "title": "My Country 'Tis of Thee",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Victor Chorus and Metropolitan Orchestra",
+      "details_url": "https://archive.org/details/78_my-country-tis-of-thee_victor-chorus-and-metropolitan-orchestra_gbia0319120a"
+    },
+    {
+      "identifier": "78_knight-in-armour_will-evans-lowe-evans_gbia3036773b",
+      "title": "(K)night in Armour",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Will Evans",
+      "details_url": "https://archive.org/details/78_knight-in-armour_will-evans-lowe-evans_gbia3036773b"
+    },
+    {
+      "identifier": "78_i-got-mine_collins-natus_gbia0425450a",
+      "title": "I Got Mine",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Collins & Natus",
+      "details_url": "https://archive.org/details/78_i-got-mine_collins-natus_gbia0425450a"
+    },
+    {
+      "identifier": "78_in-the-realm-of-the-waltz_sousas-band_gbia0368304a",
+      "title": "In the Realm of the Waltz",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_in-the-realm-of-the-waltz_sousas-band_gbia0368304a"
+    },
+    {
+      "identifier": "78_con-clancys-christening_len-spencer_gbia0479034a",
+      "title": "Con Clancy's Christening",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Len Spencer",
+      "details_url": "https://archive.org/details/78_con-clancys-christening_len-spencer_gbia0479034a"
+    },
+    {
+      "identifier": "78_i-hates-to-get-up-early-in-the-morn_dan-w-quinn_gbia0388464a",
+      "title": "I Hates to Get Up Early in the Morn",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Dan. W. Quinn",
+      "details_url": "https://archive.org/details/78_i-hates-to-get-up-early-in-the-morn_dan-w-quinn_gbia0388464a"
+    },
+    {
+      "identifier": "78_eva_harry-macdonough_gbia0072779a",
+      "title": "Eva",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_eva_harry-macdonough_gbia0072779a"
+    },
+    {
+      "identifier": "78_soldiers-farewell_gbia0305114a",
+      "title": "Soldier's Farewell",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_soldiers-farewell_gbia0305114a"
+    },
+    {
+      "identifier": "78_unconquered_mr-j-pidoux-pidoux_gbia3044160a",
+      "title": "Unconquered",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Mr. J. Pidoux",
+      "details_url": "https://archive.org/details/78_unconquered_mr-j-pidoux-pidoux_gbia3044160a"
+    },
+    {
+      "identifier": "78_creole-belles_sousas-band_gbia0437697a",
+      "title": "Creole Belles",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_creole-belles_sousas-band_gbia0437697a"
+    },
+    {
+      "identifier": "78_broken-blossoms_black-diamonds-band-tonbridge_gbia3044158b",
+      "title": "Broken Blossoms",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Black Diamonds Band",
+      "details_url": "https://archive.org/details/78_broken-blossoms_black-diamonds-band-tonbridge_gbia3044158b"
+    },
+    {
+      "identifier": "78_el-capitan-march_sousas-band_gbia0479040a",
+      "title": "El Capitan March",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_el-capitan-march_sousas-band_gbia0479040a"
+    },
+    {
+      "identifier": "78_sono-un-demonio-buono-i-am-a-kindly-demon_g-mario-sammarco-zangarini-goliscian_gbia0077674a",
+      "title": "Sono Un Demonio Buono (I Am a Kindly Demon)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "G. Mario Sammarco",
+      "details_url": "https://archive.org/details/78_sono-un-demonio-buono-i-am-a-kindly-demon_g-mario-sammarco-zangarini-goliscian_gbia0077674a"
+    },
+    {
+      "identifier": "78_giunto-sul-passo-estremo-nearing-the-extreme-limit_boito-enrico-caruso_gbia0077671",
+      "title": "Dai Campi, Dai Prati (From the Fields, From the Grove); Giunto Sul Passo Estremo (Nearing the extreme limit)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_giunto-sul-passo-estremo-nearing-the-extreme-limit_boito-enrico-caruso_gbia0077671"
+    },
+    {
+      "identifier": "78_whoa-bill_gbia0302552a",
+      "title": "WHOA BILL",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_whoa-bill_gbia0302552a"
+    },
+    {
+      "identifier": "78_tulip-time_messrs-parker-and-coltham-stamper_gbia3044157b",
+      "title": "Tulip-time",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Messrs. Parker and Coltham",
+      "details_url": "https://archive.org/details/78_tulip-time_messrs-parker-and-coltham-stamper_gbia3044157b"
+    },
+    {
+      "identifier": "78_hand-in-hand-again_messrs-parker-and-coltham-whiting_gbia3044157a",
+      "title": "Hand in hand again",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Messrs. Parker and Coltham",
+      "details_url": "https://archive.org/details/78_hand-in-hand-again_messrs-parker-and-coltham-whiting_gbia3044157a"
+    },
+    {
+      "identifier": "78_amor-ti-vieta-di-non-amar-love-doth-forbid-yyou-not-to-love_clautti-giordano-enri_gbia0077686b",
+      "title": "Amor Ti Vieta Di Non Amar (Love Doth Forbid you not to love)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Clautti",
+      "details_url": "https://archive.org/details/78_amor-ti-vieta-di-non-amar-love-doth-forbid-yyou-not-to-love_clautti-giordano-enri_gbia0077686b"
+    },
+    {
+      "identifier": "78_sacro-monte-cinq-danses-gitaras_george-copeland-j-turina_gbia0552408b",
+      "title": "SACRO-MONTE (Cinq danses gitaras)",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "George Copeland",
+      "details_url": "https://archive.org/details/78_sacro-monte-cinq-danses-gitaras_george-copeland-j-turina_gbia0552408b"
+    },
+    {
+      "identifier": "78_peaceland-selection-ii_black-diamonds-band-stoddon_gbia0539318b",
+      "title": "Peaceland-Selection II",
+      "date": "1902-01-01T00:00:00Z",
+      "year": 1902,
+      "creator": "Black Diamonds Band",
+      "details_url": "https://archive.org/details/78_peaceland-selection-ii_black-diamonds-band-stoddon_gbia0539318b"
+    },
+    {
+      "identifier": "78_down-where-the-cotton-blossoms-grow_harry-macdonough_gbia0040412a",
+      "title": "Down Where the Cotton Blossoms Grow",
+      "date": "1902-10-28T00:00:00Z",
+      "year": 1902,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_down-where-the-cotton-blossoms-grow_harry-macdonough_gbia0040412a"
+    },
+    {
+      "identifier": "78_the-willow-song_gbia0033674a",
+      "title": "The Willow Song",
+      "date": "1902-11-25T00:00:00Z",
+      "year": 1902,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_the-willow-song_gbia0033674a"
+    },
+    {
+      "identifier": "78_casey-as-an-insurance-agent_russell-hunting_gbia0371725a",
+      "title": "Casey as an Insurance Agent",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Russell Hunting",
+      "details_url": "https://archive.org/details/78_casey-as-an-insurance-agent_russell-hunting_gbia0371725a"
+    },
+    {
+      "identifier": "78_o-gesang-von-paris_leo-slezak-charpentier-chor-der-kk-hofoper-wien_gbia0077687a",
+      "title": "O Gesang von Paris",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Leo Slezak",
+      "details_url": "https://archive.org/details/78_o-gesang-von-paris_leo-slezak-charpentier-chor-der-kk-hofoper-wien_gbia0077687a"
+    },
+    {
+      "identifier": "78_old-black-joe_haydn-quartet_gbia0072980a",
+      "title": "Old Black Joe",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_old-black-joe_haydn-quartet_gbia0072980a"
+    },
+    {
+      "identifier": "78_la-samaritaine_sarah-bernhardt-rostand_gbia0077790b",
+      "title": "La Samaritaine",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Sarah Bernhardt",
+      "details_url": "https://archive.org/details/78_la-samaritaine_sarah-bernhardt-rostand_gbia0077790b"
+    },
+    {
+      "identifier": "78_angels-ever-bright-and-fair_emma-albani-hndel-william-h-seltsam_gbia0187608a",
+      "title": "Angels Ever Bright and Fair",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "EMMA ALBANI",
+      "details_url": "https://archive.org/details/78_angels-ever-bright-and-fair_emma-albani-hndel-william-h-seltsam_gbia0187608a"
+    },
+    {
+      "identifier": "78_jack-tar-march_victor-herbers-band_gbia0079550a",
+      "title": "Jack Tar March",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Victor Herber's Band",
+      "details_url": "https://archive.org/details/78_jack-tar-march_victor-herbers-band_gbia0079550a"
+    },
+    {
+      "identifier": "78_otello-morte-dotello-death-of-otello-act-4_francesco-tamagno-verdi_gbia0153070a",
+      "title": "Otello-Morte d'Otello (Death of Otello) (Act 4)",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_otello-morte-dotello-death-of-otello-act-4_francesco-tamagno-verdi_gbia0153070a"
+    },
+    {
+      "identifier": "78_phedre_sarah-bernhardt-racine_gbia0077790a",
+      "title": "Phedre",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Sarah Bernhardt",
+      "details_url": "https://archive.org/details/78_phedre_sarah-bernhardt-racine_gbia0077790a"
+    },
+    {
+      "identifier": "78_a-meeting-of-the-school-directors_cal-stewart_gbia0376147a",
+      "title": "A Meeting of the School Directors",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Cal Stewart",
+      "details_url": "https://archive.org/details/78_a-meeting-of-the-school-directors_cal-stewart_gbia0376147a"
+    },
+    {
+      "identifier": "78_daisy-donohue_arthur-pryor-and-band_gbia0388477a",
+      "title": "Daisy Donohue",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Arthur Pryor and Band",
+      "details_url": "https://archive.org/details/78_daisy-donohue_arthur-pryor-and-band_gbia0388477a"
+    },
+    {
+      "identifier": "78_lohengrin-selection_sousas-band_gbia0253306a",
+      "title": "Lohengrin Selection",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_lohengrin-selection_sousas-band_gbia0253306a"
+    },
+    {
+      "identifier": "78_guglielmo-tell-o-muto-asil-william-tell-oh-blessed-abode_francesco-tamagno-r_gbia0077621a",
+      "title": "Guglielmo Tell - O muto asil (William Tell - Oh, Blessed Abode)",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_guglielmo-tell-o-muto-asil-william-tell-oh-blessed-abode_francesco-tamagno-r_gbia0077621a"
+    },
+    {
+      "identifier": "78_la-boheme-mi-chiamano-mimi-act-1_cesira-ferrani-puccini_gbia0267927a",
+      "title": "La Boheme - Mi chiamano Mimi (Act 1)",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "CESIRA FERRANI",
+      "details_url": "https://archive.org/details/78_la-boheme-mi-chiamano-mimi-act-1_cesira-ferrani-puccini_gbia0267927a"
+    },
+    {
+      "identifier": "78_die-sonne-strahlt_leo-slezak-fr-weidemann-elise-elizza-grete-forst-hermine-kittel_gbia0077687b",
+      "title": "Die Sonne Strahlt",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Leo Slezak",
+      "details_url": "https://archive.org/details/78_die-sonne-strahlt_leo-slezak-fr-weidemann-elise-elizza-grete-forst-hermine-kittel_gbia0077687b"
+    },
+    {
+      "identifier": "78_sopra-berta-lamor-mio_francesco-tamagno-meyerbeer_gbia0077708b",
+      "title": "Sopra Berta L'Amor Mio",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_sopra-berta-lamor-mio_francesco-tamagno-meyerbeer_gbia0077708b"
+    },
+    {
+      "identifier": "78_ora-e-per-sempre-addio-atto-2o_francesco-tamagno-verdi_gbia0196184b",
+      "title": "\"ORA E PER SEMPRE ADDIO...\" - Atto 2.o",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "FRANCESCO TAMAGNO",
+      "details_url": "https://archive.org/details/78_ora-e-per-sempre-addio-atto-2o_francesco-tamagno-verdi_gbia0196184b"
+    },
+    {
+      "identifier": "78_imperial-edward-march_sousas-band_gbia0057815a",
+      "title": "Imperial Edward March",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Sousa's Band",
+      "details_url": "https://archive.org/details/78_imperial-edward-march_sousas-band_gbia0057815a"
+    },
+    {
+      "identifier": "78_deserto-sulla-terra_francesco-tamagno-verdi-tamagno_gbia0077707b",
+      "title": "Deserto sulla terra",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_deserto-sulla-terra_francesco-tamagno-verdi-tamagno_gbia0077707b"
+    },
+    {
+      "identifier": "78_dixieland-march__gbia0005042a",
+      "title": "Dixieland March",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_dixieland-march__gbia0005042a"
+    },
+    {
+      "identifier": "78_what-would-the-neighbors-say_collins-harlan_gbia0381275a",
+      "title": "What Would the Neighbors Say?",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Collins & Harlan",
+      "details_url": "https://archive.org/details/78_what-would-the-neighbors-say_collins-harlan_gbia0381275a"
+    },
+    {
+      "identifier": "78_down-the-line-with-molly_mr-arthur-collins_gbia0301204a",
+      "title": "DOWN THE LINE WITH MOLLY",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "MR. ARTHUR COLLINS",
+      "details_url": "https://archive.org/details/78_down-the-line-with-molly_mr-arthur-collins_gbia0301204a"
+    },
+    {
+      "identifier": "78_bells-of-st-malo_gbia0171871a",
+      "title": "BELLS OF ST. MALO",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_bells-of-st-malo_gbia0171871a"
+    },
+    {
+      "identifier": "78_two-rubes-in-an-eating-house_stanley-and-harlan-f-c-stanley_gbia0299906a",
+      "title": "TWO RUBES IN AN EATING HOUSE",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "STANLEY and HARLAN",
+      "details_url": "https://archive.org/details/78_two-rubes-in-an-eating-house_stanley-and-harlan-f-c-stanley_gbia0299906a"
+    },
+    {
+      "identifier": "78_the-palms_harry-macdonough_gbia0072976a",
+      "title": "The Palms",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_the-palms_harry-macdonough_gbia0072976a"
+    },
+    {
+      "identifier": "78_spirit-of-76_nat-g-drum-and-fife-corps_gbia0301223a",
+      "title": "Spirit of '76.",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Nat. G. Drum and Fife Corps.",
+      "details_url": "https://archive.org/details/78_spirit-of-76_nat-g-drum-and-fife-corps_gbia0301223a"
+    },
+    {
+      "identifier": "78_lili_zelie-de-lussan-guetary_gbia0077653a",
+      "title": "Lili",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Zelie de Lussan",
+      "details_url": "https://archive.org/details/78_lili_zelie-de-lussan-guetary_gbia0077653a"
+    },
+    {
+      "identifier": "78_esultate-lorgoglio-musulmano-sepolto_francesco-tamagno-verdi_gbia0077715a",
+      "title": "Esultate! L'Orgoglio Musulmano Sepolto E In Mar",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_esultate-lorgoglio-musulmano-sepolto_francesco-tamagno-verdi_gbia0077715a"
+    },
+    {
+      "identifier": "78_navajo_gbia0014552a",
+      "title": "Navajo",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_navajo_gbia0014552a"
+    },
+    {
+      "identifier": "78_little-dolly-day-dream_mr-eugene-stratton_gbia0038984a",
+      "title": "Little Dolly Day-Dream",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Mr. Eugene Stratton",
+      "details_url": "https://archive.org/details/78_little-dolly-day-dream_mr-eugene-stratton_gbia0038984a"
+    },
+    {
+      "identifier": "78_deserto-sulla-terra-atto-1-il-trovatore_francesco-tamagno-verdi_gbia0196184a",
+      "title": "DESERTO SULLA TERRA... - Atto 1. IL TROVATORE",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "FRANCESCO TAMAGNO",
+      "details_url": "https://archive.org/details/78_deserto-sulla-terra-atto-1-il-trovatore_francesco-tamagno-verdi_gbia0196184a"
+    },
+    {
+      "identifier": "78_im-a-jonah-man_arthur-collins_gbia0209821a",
+      "title": "I'm a Jonah Man",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_im-a-jonah-man_arthur-collins_gbia0209821a"
+    },
+    {
+      "identifier": "78_sleighride-party_invincible-male-quartette_gbia0301244a",
+      "title": "Sleighride Party",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Invincible Male Quartette",
+      "details_url": "https://archive.org/details/78_sleighride-party_invincible-male-quartette_gbia0301244a"
+    },
+    {
+      "identifier": "78_bedelia_arthur-collins_gbia0393679a",
+      "title": "Bedelia",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_bedelia_arthur-collins_gbia0393679a"
+    },
+    {
+      "identifier": "78_ora-e-per-sempre-addio-sante-memorie_francesco-tamagno-verdi_gbia0077707a",
+      "title": "Ora E Per Sempre Addio, Sante Memorie",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_ora-e-per-sempre-addio-sante-memorie_francesco-tamagno-verdi_gbia0077707a"
+    },
+    {
+      "identifier": "78_jim-lawsons-hoss-trade-with-deacon-witherspoon_cal-stewart_gbia0437694a",
+      "title": "Jim Lawson's Hoss Trade with Deacon Witherspoon",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Cal Stewart",
+      "details_url": "https://archive.org/details/78_jim-lawsons-hoss-trade-with-deacon-witherspoon_cal-stewart_gbia0437694a"
+    },
+    {
+      "identifier": "78_otelloora-e-per-sempre-addio-and-now-forever-farewell_francesco-tamagno-verdi_gbia0478581a",
+      "title": "Otello\u2013Ora e per sempre addio (And Now, Forever Farewell!)",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_otelloora-e-per-sempre-addio-and-now-forever-farewell_francesco-tamagno-verdi_gbia0478581a"
+    },
+    {
+      "identifier": "78_stump-speech-on-love_george-graham_gbia0202554a",
+      "title": "Stump Speech on Love",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "George Graham",
+      "details_url": "https://archive.org/details/78_stump-speech-on-love_george-graham_gbia0202554a"
+    },
+    {
+      "identifier": "78_bedelia_arthur-collins_gbia0388475a",
+      "title": "Bedelia",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_bedelia_arthur-collins_gbia0388475a"
+    },
+    {
+      "identifier": "78_figli-miel-varrestate_francesco-tamagno-saint-saens_gbia0077713a",
+      "title": "Figli Miel, V'Arrestate",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_figli-miel-varrestate_francesco-tamagno-saint-saens_gbia0077713a"
+    },
+    {
+      "identifier": "78_my-bonnie-rose_harmony-quartette_gbia0307207b",
+      "title": "MY BONNIE ROSE",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Harmony Quartette",
+      "details_url": "https://archive.org/details/78_my-bonnie-rose_harmony-quartette_gbia0307207b"
+    },
+    {
+      "identifier": "78_re-del-cielo-inno_francesco-tamagno-meyerbeer_gbia0077708a",
+      "title": "Re Del Cielo (Inno)",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_re-del-cielo-inno_francesco-tamagno-meyerbeer_gbia0077708a"
+    },
+    {
+      "identifier": "78_star-spangled-banner_zon-o-phone-concert-band_gbia0307101a",
+      "title": "Star Spangled Banner",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Zon-o-phone Concert Band",
+      "details_url": "https://archive.org/details/78_star-spangled-banner_zon-o-phone-concert-band_gbia0307101a"
+    },
+    {
+      "identifier": "78_la-paloma_zelie-de-lussan-yradier_gbia0077653b",
+      "title": "La Paloma",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Zelie de Lussan",
+      "details_url": "https://archive.org/details/78_la-paloma_zelie-de-lussan-yradier_gbia0077653b"
+    },
+    {
+      "identifier": "78_mississippi-bubble_hagers-orchestra_gbia0301240a",
+      "title": "Mississippi Bubble",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Hager's Orchestra",
+      "details_url": "https://archive.org/details/78_mississippi-bubble_hagers-orchestra_gbia0301240a"
+    },
+    {
+      "identifier": "78_woman_george-graham_gbia0378322a",
+      "title": "Woman",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "George Graham",
+      "details_url": "https://archive.org/details/78_woman_george-graham_gbia0378322a"
+    },
+    {
+      "identifier": "78_when-the-cows-are-coming-home_fred-rose_gbia0079577a",
+      "title": "When the Cows are Coming Home",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Fred Rose",
+      "details_url": "https://archive.org/details/78_when-the-cows-are-coming-home_fred-rose_gbia0079577a"
+    },
+    {
+      "identifier": "78_uncle-josh-invites-city-folks-to-visit-him-on-his-farm_cal-stewart-stewart_gbia0299906b",
+      "title": "UNCLE JOSH INVITES CITY FOLKS TO VISIT HIM ON HIS FARM",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "CAL STEWART",
+      "details_url": "https://archive.org/details/78_uncle-josh-invites-city-folks-to-visit-him-on-his-farm_cal-stewart-stewart_gbia0299906b"
+    },
+    {
+      "identifier": "78_a-lucky-duck_parke-hunter_gbia0467514a",
+      "title": "A Lucky Duck",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Parke Hunter",
+      "details_url": "https://archive.org/details/78_a-lucky-duck_parke-hunter_gbia0467514a"
+    },
+    {
+      "identifier": "78_none-legible_hagers-orchestra_gbia0362642a",
+      "title": "None legible",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Hager's Orchestra.",
+      "details_url": "https://archive.org/details/78_none-legible_hagers-orchestra_gbia0362642a"
+    },
+    {
+      "identifier": "78_in-the-village-by-the-sea_byron-g-harlan_gbia0467516a",
+      "title": "In the Village by the Sea",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Byron G. Harlan",
+      "details_url": "https://archive.org/details/78_in-the-village-by-the-sea_byron-g-harlan_gbia0467516a"
+    },
+    {
+      "identifier": "78_farmyard-medley_invincible-male-quartette_gbia0366482a",
+      "title": "Farmyard Medley.",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Invincible Male Quartette.",
+      "details_url": "https://archive.org/details/78_farmyard-medley_invincible-male-quartette_gbia0366482a"
+    },
+    {
+      "identifier": "78_niun-mi-tema-morte-dotello_francesco-tamagno-verdi_gbia0077715b",
+      "title": "Niun Mi Tema (Morte D'Otello)",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_niun-mi-tema-morte-dotello_francesco-tamagno-verdi_gbia0077715b"
+    },
+    {
+      "identifier": "78_il-profeta-sopra-berta-lamor-mio_francesco-tamagno-meyerbeer_gbia0077622a",
+      "title": "Il Profeta - Sopra Berta L'Amor Mio",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_il-profeta-sopra-berta-lamor-mio_francesco-tamagno-meyerbeer_gbia0077622a"
+    },
+    {
+      "identifier": "78_two-rubes-in-an-eating-house_stanley-and-harlan_gbia0474448a",
+      "title": "TWO RUBES IN AN EATING HOUSE",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "STANLEY and HARLAN",
+      "details_url": "https://archive.org/details/78_two-rubes-in-an-eating-house_stanley-and-harlan_gbia0474448a"
+    },
+    {
+      "identifier": "78_vronique-strophes-de-la-lettre_charles-gilbert-messager_gbia0187301a",
+      "title": "V\u00e9ronique-Strophes de La Lettre",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Charles Gilbert",
+      "details_url": "https://archive.org/details/78_vronique-strophes-de-la-lettre_charles-gilbert-messager_gbia0187301a"
+    },
+    {
+      "identifier": "78_camp-meeting-jubilee_the-invincible-male-quartet_gbia0393678a",
+      "title": "Camp Meeting Jubilee",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "The Invincible Male Quartet",
+      "details_url": "https://archive.org/details/78_camp-meeting-jubilee_the-invincible-male-quartet_gbia0393678a"
+    },
+    {
+      "identifier": "78_by-the-sycomore-tree-medley_gbia0014509a",
+      "title": "BY THE SYCAMORE TREE MEDLEY",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_by-the-sycomore-tree-medley_gbia0014509a"
+    },
+    {
+      "identifier": "78_guillaume-tell-sois-immobile_jean-note-rossini_gbia0187301b",
+      "title": "Guillaume Tell-Sois immobile",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "JEAN NOTE",
+      "details_url": "https://archive.org/details/78_guillaume-tell-sois-immobile_jean-note-rossini_gbia0187301b"
+    },
+    {
+      "identifier": "78_three-little-owls-and-the-naughty-little-mice_cal-stewart_gbia0479032a",
+      "title": "Three Little Owls And The Naughty Little Mice",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Cal Stewart",
+      "details_url": "https://archive.org/details/78_three-little-owls-and-the-naughty-little-mice_cal-stewart_gbia0479032a"
+    },
+    {
+      "identifier": "78_boston-commandry_zon-o-phone-orchestra_gbia0307036a",
+      "title": "Boston Commandry",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Zon-o-phone Orchestra",
+      "details_url": "https://archive.org/details/78_boston-commandry_zon-o-phone-orchestra_gbia0307036a"
+    },
+    {
+      "identifier": "78_what-would-the-neighbors-say_collins-harlan_gbia0319105a",
+      "title": "What Would the Neighbors Say?",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Collins & Harlan",
+      "details_url": "https://archive.org/details/78_what-would-the-neighbors-say_collins-harlan_gbia0319105a"
+    },
+    {
+      "identifier": "78_goo-goo-eyes-parody_frank-wilson_gbia0437690a",
+      "title": "Goo Goo Eyes Parody",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Frank Wilson",
+      "details_url": "https://archive.org/details/78_goo-goo-eyes-parody_frank-wilson_gbia0437690a"
+    },
+    {
+      "identifier": "78_quand-nos-jours-seteindront-comme-une-chaste-flamme_francesco-tamagno-massenet_gbia0077713b",
+      "title": "Quand Nos Jours S'Eteindront Comme Une Chaste Flamme",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Francesco Tamagno",
+      "details_url": "https://archive.org/details/78_quand-nos-jours-seteindront-comme-une-chaste-flamme_francesco-tamagno-massenet_gbia0077713b"
+    },
+    {
+      "identifier": "78_sing-me-a-song-of-a-lad-is-gone_louise-homer-homer_gbia0055663a",
+      "title": "Sing Me a Song of a Lad That Is Gone",
+      "date": "1903-01-01T00:00:00Z",
+      "year": 1903,
+      "creator": "Louise Homer",
+      "details_url": "https://archive.org/details/78_sing-me-a-song-of-a-lad-is-gone_louise-homer-homer_gbia0055663a"
+    },
+    {
+      "identifier": "78_in-the-sweet-bye-and-bye_haydn-quartet_gbia0044652a",
+      "title": "In the Sweet Bye and Bye",
+      "date": "1903-05-06T00:00:00Z",
+      "year": 1903,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_in-the-sweet-bye-and-bye_haydn-quartet_gbia0044652a"
+    },
+    {
+      "identifier": "78_uncle-josh-and-aunt-nancy-visit-new-york_cal-stewart_gbia0381445a",
+      "title": "Uncle Josh and Aunt Nancy Visit New York",
+      "date": "1903-05-22T00:00:00Z",
+      "year": 1903,
+      "creator": "Cal Stewart",
+      "details_url": "https://archive.org/details/78_uncle-josh-and-aunt-nancy-visit-new-york_cal-stewart_gbia0381445a"
+    },
+    {
+      "identifier": "78_star-of-bethelhem_gbia0014508a",
+      "title": "Star of Bethelhem",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_star-of-bethelhem_gbia0014508a"
+    },
+    {
+      "identifier": "78_waltz-medley_charles-p-lowe_gbia0334678a",
+      "title": "Waltz Medley",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Charles P. Lowe",
+      "details_url": "https://archive.org/details/78_waltz-medley_charles-p-lowe_gbia0334678a"
+    },
+    {
+      "identifier": "78_oh-damore-messaggera_maria-galvany-gounod-zaffira_gbia0077676b",
+      "title": "Oh d'Amore Messaggera",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Maria Galvany",
+      "details_url": "https://archive.org/details/78_oh-damore-messaggera_maria-galvany-gounod-zaffira_gbia0077676b"
+    },
+    {
+      "identifier": "78_i-need-thee-every-hour_h-burr_gbia0424780a",
+      "title": "I NEED THEE EVERY HOUR",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "H. BURR",
+      "details_url": "https://archive.org/details/78_i-need-thee-every-hour_h-burr_gbia0424780a"
+    },
+    {
+      "identifier": "78_blue-danube-waltz_gbia0297660a",
+      "title": "BLUE DANUBE WALTZ",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_blue-danube-waltz_gbia0297660a"
+    },
+    {
+      "identifier": "78_im-wearing-my-heart-away-for-you_james-reed_gbia0479440a",
+      "title": "I'm Wearing My Heart Away for You",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "James Reed",
+      "details_url": "https://archive.org/details/78_im-wearing-my-heart-away-for-you_james-reed_gbia0479440a"
+    },
+    {
+      "identifier": "78_skaters-waltz_hagers-orchestra_gbia0393675a",
+      "title": "Skaters' Waltz",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Hager's Orchestra",
+      "details_url": "https://archive.org/details/78_skaters-waltz_hagers-orchestra_gbia0393675a"
+    },
+    {
+      "identifier": "78_officer-of-the-day-march_arthur-pryors-band_gbia0388479a",
+      "title": "Officer of the Day March",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_officer-of-the-day-march_arthur-pryors-band_gbia0388479a"
+    },
+    {
+      "identifier": "78_any-rags-schottische_arthur-pryors-band_gbia0341196a",
+      "title": "Any Rags Schottische",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_any-rags-schottische_arthur-pryors-band_gbia0341196a"
+    },
+    {
+      "identifier": "78_unter-den-linden_arthur-pryors-band_gbia0468625a",
+      "title": "Unter den Linden",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_unter-den-linden_arthur-pryors-band_gbia0468625a"
+    },
+    {
+      "identifier": "78_the-bridge_haydn-quartet_gbia0388465a",
+      "title": "The Bridge",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_the-bridge_haydn-quartet_gbia0388465a"
+    },
+    {
+      "identifier": "78_my-old-kentucky-home_gbia0018320b",
+      "title": "My Old Kentucky Home",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_my-old-kentucky-home_gbia0018320b"
+    },
+    {
+      "identifier": "78_overture-to-william-tell-finale_gbia0313668a",
+      "title": "OVERTURE TO WILLIAM TELL (Finale)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_overture-to-william-tell-finale_gbia0313668a"
+    },
+    {
+      "identifier": "78_turkey-in-the-straw_silas-leachman_gbia0479036a",
+      "title": "Turkey in the Straw",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Silas Leachman",
+      "details_url": "https://archive.org/details/78_turkey-in-the-straw_silas-leachman_gbia0479036a"
+    },
+    {
+      "identifier": "78_mr-black-man_arthur-pryors-band_gbia0319106a",
+      "title": "Mr. Black Man",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_mr-black-man_arthur-pryors-band_gbia0319106a"
+    },
+    {
+      "identifier": "78_mattinata_enrico-caruso-leoncavallo_gbia0077801a",
+      "title": "Mattinata",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_mattinata_enrico-caruso-leoncavallo_gbia0077801a"
+    },
+    {
+      "identifier": "78_down-at-the-baby-store_byron-g-harlan_gbia0532744a",
+      "title": "Down at the Baby Store",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Byron G. Harlan",
+      "details_url": "https://archive.org/details/78_down-at-the-baby-store_byron-g-harlan_gbia0532744a"
+    },
+    {
+      "identifier": "78_grand-march-from-lafricaine_garde-republicaine-band-meyerbeer_gbia0298895a",
+      "title": "GRAND MARCH FROM \"L'AFRICAINE\"",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "GARDE REPUBLICAINE BAND",
+      "details_url": "https://archive.org/details/78_grand-march-from-lafricaine_garde-republicaine-band-meyerbeer_gbia0298895a"
+    },
+    {
+      "identifier": "78_american-eagle-march_standard-band_gbia0297948a",
+      "title": "AMERICAN EAGLE MARCH",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Standard Band",
+      "details_url": "https://archive.org/details/78_american-eagle-march_standard-band_gbia0297948a"
+    },
+    {
+      "identifier": "78_all-or-none_hagers-orchestra_gbia0276965a",
+      "title": "All or None",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Hager's Orchestra",
+      "details_url": "https://archive.org/details/78_all-or-none_hagers-orchestra_gbia0276965a"
+    },
+    {
+      "identifier": "78_la-vergine-degli-angeli_celestina-boninsegna-forza-del-destino-verdi_gbia0285516a",
+      "title": "LA VERGINE DEGLI ANGELI",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "CELESTINA BONINSEGNA",
+      "details_url": "https://archive.org/details/78_la-vergine-degli-angeli_celestina-boninsegna-forza-del-destino-verdi_gbia0285516a"
+    },
+    {
+      "identifier": "78_good-bye-my-lady-love_harry-macdonough_gbia0437686a",
+      "title": "Good Bye My Lady Love",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_good-bye-my-lady-love_harry-macdonough_gbia0437686a"
+    },
+    {
+      "identifier": "78_mr-wilson_h-tally_gbia0307026a",
+      "title": "MR. WILSON",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "H. TALLY",
+      "details_url": "https://archive.org/details/78_mr-wilson_h-tally_gbia0307026a"
+    },
+    {
+      "identifier": "78_darkie-tickle_spencer_gbia0425169a",
+      "title": "DARKIE TICKLE",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "SPENCER",
+      "details_url": "https://archive.org/details/78_darkie-tickle_spencer_gbia0425169a"
+    },
+    {
+      "identifier": "78_conciliator-march_arthur-pryors-band_gbia0314026a",
+      "title": "Conciliator March",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_conciliator-march_arthur-pryors-band_gbia0314026a"
+    },
+    {
+      "identifier": "78_hunting-scenes_gbia0447273a",
+      "title": "HUNTING SCENES",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_hunting-scenes_gbia0447273a"
+    },
+    {
+      "identifier": "78_ave-maria_johanna-gadski-bach-gounod_gbia0366694a",
+      "title": "Ave Maria",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Johanna Gadski",
+      "details_url": "https://archive.org/details/78_ave-maria_johanna-gadski-bach-gounod_gbia0366694a"
+    },
+    {
+      "identifier": "78_im-just-barely-living-dats-all_gbia0307039a",
+      "title": "I'm Just Barely Living Dat's All",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_im-just-barely-living-dats-all_gbia0307039a"
+    },
+    {
+      "identifier": "78_in-quelle-trine-morbide-in-these-soft-silken-curtains_celestina-boninsegna-puccin_gbia0077676a",
+      "title": "In Quelle Trine Morbide (In these soft silken curtains)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Celestina Boninsegna",
+      "details_url": "https://archive.org/details/78_in-quelle-trine-morbide-in-these-soft-silken-curtains_celestina-boninsegna-puccin_gbia0077676a"
+    },
+    {
+      "identifier": "78_jerusalem_j-f-harrison_gbia0451714a",
+      "title": "Jerusalem",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "J. F. Harrison",
+      "details_url": "https://archive.org/details/78_jerusalem_j-f-harrison_gbia0451714a"
+    },
+    {
+      "identifier": "78_big-indian-chief_collins_gbia0424779a",
+      "title": "BIG INDIAN CHIEF",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "COLLINS",
+      "details_url": "https://archive.org/details/78_big-indian-chief_collins_gbia0424779a"
+    },
+    {
+      "identifier": "78_the-jolly-coppersmith_gbia0447272a",
+      "title": "THE JOLLY COPPERSMITH",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_the-jolly-coppersmith_gbia0447272a"
+    },
+    {
+      "identifier": "78_the-mocking-bird_miss-morgan--mr.-stanley_gbia0004217a",
+      "title": "The Mocking Bird",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Miss Morgan & Mr. Stanley",
+      "details_url": "https://archive.org/details/78_the-mocking-bird_miss-morgan--mr.-stanley_gbia0004217a"
+    },
+    {
+      "identifier": "78_slavonic-cradle-song_maud-powell-neruda_gbia0482567a",
+      "title": "Slavonic Cradle Song",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Maud Powell",
+      "details_url": "https://archive.org/details/78_slavonic-cradle-song_maud-powell-neruda_gbia0482567a"
+    },
+    {
+      "identifier": "78_mr-black-man_arthur-pryors-band_gbia0479028a",
+      "title": "Mr. Black Man",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_mr-black-man_arthur-pryors-band_gbia0479028a"
+    },
+    {
+      "identifier": "78_none-listed_robin-adair_gbia0299458a",
+      "title": "None listed",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "ROBIN ADAIR",
+      "details_url": "https://archive.org/details/78_none-listed_robin-adair_gbia0299458a"
+    },
+    {
+      "identifier": "78_always-in-the-way_joseph-natus_gbia0537289a",
+      "title": "Always in the Way",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Joseph Natus",
+      "details_url": "https://archive.org/details/78_always-in-the-way_joseph-natus_gbia0537289a"
+    },
+    {
+      "identifier": "78_my-dixie-lou_collins_gbia0424774a",
+      "title": "MY DIXIE LOU",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "COLLINS",
+      "details_url": "https://archive.org/details/78_my-dixie-lou_collins_gbia0424774a"
+    },
+    {
+      "identifier": "78_vesti-la-giubba_enrico-caruso-leoncavallo_gbia0077801b",
+      "title": "Vesti La Giubba",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_vesti-la-giubba_enrico-caruso-leoncavallo_gbia0077801b"
+    },
+    {
+      "identifier": "78_overture-to-william-tell-finale_gbia0276207a",
+      "title": "OVERTURE TO WILLIAM TELL (Finale)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_overture-to-william-tell-finale_gbia0276207a"
+    },
+    {
+      "identifier": "78_navajo_arthur-pryor_gbia0319104a",
+      "title": "Navajo",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor",
+      "details_url": "https://archive.org/details/78_navajo_arthur-pryor_gbia0319104a"
+    },
+    {
+      "identifier": "78_im-wearing-my-heart-away-for-you_james-reed_gbia0313681a",
+      "title": "I'm Wearing My Heart Away for You",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "James Reed",
+      "details_url": "https://archive.org/details/78_im-wearing-my-heart-away-for-you_james-reed_gbia0313681a"
+    },
+    {
+      "identifier": "78_little-doilie-driftwood_harlan_gbia0426427a",
+      "title": "LITTLE DOILIE DRIFTWOOD",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "HARLAN",
+      "details_url": "https://archive.org/details/78_little-doilie-driftwood_harlan_gbia0426427a"
+    },
+    {
+      "identifier": "78_questa-o-quella-mid-the-fair-throng_enrico-caruso-verdi_gbia7036073b",
+      "title": "Questa o quella ('Mid the Fair Throng)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_questa-o-quella-mid-the-fair-throng_enrico-caruso-verdi_gbia7036073b"
+    },
+    {
+      "identifier": "78_reuben-haskins-sleighride-party_spencer-orch_gbia0424775a",
+      "title": "REUBEN HASKIN'S SLEIGHRIDE PARTY",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "SPENCER & ORCH.",
+      "details_url": "https://archive.org/details/78_reuben-haskins-sleighride-party_spencer-orch_gbia0424775a"
+    },
+    {
+      "identifier": "78_rigolettola-donna-mobile-woman-is-fickle_enrico-caruso-verdi_gbia0478576a",
+      "title": "Rigoletto\u2013La donna \u00e8 mobile (Woman is Fickle)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_rigolettola-donna-mobile-woman-is-fickle_enrico-caruso-verdi_gbia0478576a"
+    },
+    {
+      "identifier": "78_toscae-lucevan-le-stelle-the-stars-were-shining_enrico-caruso-puccini_gbia0478587a",
+      "title": "Tosca\u2013E lucevan le stelle (The Stars Were Shining)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_toscae-lucevan-le-stelle-the-stars-were-shining_enrico-caruso-puccini_gbia0478587a"
+    },
+    {
+      "identifier": "78_thats-what-the-brass-band-played_billy-murray_gbia0010414a",
+      "title": "That's What the Brass Band Played",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Billy Murray",
+      "details_url": "https://archive.org/details/78_thats-what-the-brass-band-played_billy-murray_gbia0010414a"
+    },
+    {
+      "identifier": "78_the-gondolier_hagers-orchestra_gbia0362640a",
+      "title": "The Gondolier.",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Hager's Orchestra.",
+      "details_url": "https://archive.org/details/78_the-gondolier_hagers-orchestra_gbia0362640a"
+    },
+    {
+      "identifier": "78_under-the-anheuser-bush_collins-harlan_gbia0424764a",
+      "title": "UNDER THE ANHEUSER BUSH",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "COLLINS & HARLAN",
+      "details_url": "https://archive.org/details/78_under-the-anheuser-bush_collins-harlan_gbia0424764a"
+    },
+    {
+      "identifier": "78_when-the-trees-are-white-with-blossoms_gbia0018320a",
+      "title": "When The Trees Are White With Blossoms",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_when-the-trees-are-white-with-blossoms_gbia0018320a"
+    },
+    {
+      "identifier": "78_sobre-las-olas-waltz-over-the-waves-waltz_dance-orchestra-rosas_gbia0297572a",
+      "title": "Sobre las Olas Waltz (Over the Waves Waltz)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Dance Orchestra",
+      "details_url": "https://archive.org/details/78_sobre-las-olas-waltz-over-the-waves-waltz_dance-orchestra-rosas_gbia0297572a"
+    },
+    {
+      "identifier": "78_true-to-the-flag_regimental-band-of-the-republic_gbia0301503a",
+      "title": "True to the Flag.",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Regimental Band of the Republic.",
+      "details_url": "https://archive.org/details/78_true-to-the-flag_regimental-band-of-the-republic_gbia0301503a"
+    },
+    {
+      "identifier": "78_in-old-madrid_mr-arthur-gray_gbia3034493a",
+      "title": "In Old Madrid",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Mr. Arthur Gray",
+      "details_url": "https://archive.org/details/78_in-old-madrid_mr-arthur-gray_gbia3034493a"
+    },
+    {
+      "identifier": "78_none-listed_gbia0299459a",
+      "title": "None listed",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_none-listed_gbia0299459a"
+    },
+    {
+      "identifier": "78_aloha-oe-farewell-to-thee_royal-hawaiian-troubadours_gbia0301530a",
+      "title": "ALOHA OE. (Farewell to Thee.)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Royal Hawaiian Troubadours.",
+      "details_url": "https://archive.org/details/78_aloha-oe-farewell-to-thee_royal-hawaiian-troubadours_gbia0301530a"
+    },
+    {
+      "identifier": "78_damor-sullali-rosee_celestina-boninsegna-travatore-verdi_gbia0285516b",
+      "title": "D'AMOR SULL'ALI ROSEE",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "CELESTINA BONINSEGNA",
+      "details_url": "https://archive.org/details/78_damor-sullali-rosee_celestina-boninsegna-travatore-verdi_gbia0285516b"
+    },
+    {
+      "identifier": "78_if-i-were-only-you_harry-tally_gbia0301203a",
+      "title": "If I Were Only You",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Harry Tally",
+      "details_url": "https://archive.org/details/78_if-i-were-only-you_harry-tally_gbia0301203a"
+    },
+    {
+      "identifier": "78_bye-bye-ma-honey_billy-golden_gbia0393677a",
+      "title": "Bye Bye Ma Honey",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Billy Golden",
+      "details_url": "https://archive.org/details/78_bye-bye-ma-honey_billy-golden_gbia0393677a"
+    },
+    {
+      "identifier": "78_im-just-barely-living-dats-all_gbia0306519a",
+      "title": "I'm Just Barely Living Dat's All",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_im-just-barely-living-dats-all_gbia0306519a"
+    },
+    {
+      "identifier": "78_love-of-the-nightingale_gbia0300571a",
+      "title": "LOVE OF THE NIGHTINGALE.",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_love-of-the-nightingale_gbia0300571a"
+    },
+    {
+      "identifier": "78_general-hard-tack_dan-w-quinn_gbia0319126a",
+      "title": "General Hard Tack",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Dan W. Quinn",
+      "details_url": "https://archive.org/details/78_general-hard-tack_dan-w-quinn_gbia0319126a"
+    },
+    {
+      "identifier": "78_blue-bird-polka_frank-mazziotta-bousqe_gbia0388480a",
+      "title": "Blue Bird Polka",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Frank Mazziotta",
+      "details_url": "https://archive.org/details/78_blue-bird-polka_frank-mazziotta-bousqe_gbia0388480a"
+    },
+    {
+      "identifier": "78_conciliator-march_arthur-pryors-band_gbia0388478a",
+      "title": "Conciliator March",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_conciliator-march_arthur-pryors-band_gbia0388478a"
+    },
+    {
+      "identifier": "78_quartet-from-rigoletto_royal-marine-band-of-italy_gbia0298476a",
+      "title": "Quartet from Rigoletto",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Royal Marine Band of Italy",
+      "details_url": "https://archive.org/details/78_quartet-from-rigoletto_royal-marine-band-of-italy_gbia0298476a"
+    },
+    {
+      "identifier": "78_les-anges-plernent_nella-melba-1859-1931-bemberg-william-h-seltsam_gbia0187608b",
+      "title": "Les Anges Plernent",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "NELLA MELBA (1859-1931)",
+      "details_url": "https://archive.org/details/78_les-anges-plernent_nella-melba-1859-1931-bemberg-william-h-seltsam_gbia0187608b"
+    },
+    {
+      "identifier": "78_little-beauty-mazurka_gbia0302803a",
+      "title": "LITTLE BEAUTY MAZURKA",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_little-beauty-mazurka_gbia0302803a"
+    },
+    {
+      "identifier": "78_save-it-for-me_billy-murray_gbia0532726a",
+      "title": "Save it For Me",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Billy Murray",
+      "details_url": "https://archive.org/details/78_save-it-for-me_billy-murray_gbia0532726a"
+    },
+    {
+      "identifier": "78_general-hardtack-on-guard_murray_gbia0424776a",
+      "title": "GENERAL HARDTACK ON GUARD",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "MURRAY",
+      "details_url": "https://archive.org/details/78_general-hardtack-on-guard_murray_gbia0424776a"
+    },
+    {
+      "identifier": "78_blue-bell_h-burr_gbia0424778a",
+      "title": "BLUE BELL",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "H. BURR",
+      "details_url": "https://archive.org/details/78_blue-bell_h-burr_gbia0424778a"
+    },
+    {
+      "identifier": "78_la-czarina-mazurka_gbia0298908a",
+      "title": "LA CZARINA MAZURKA",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_la-czarina-mazurka_gbia0298908a"
+    },
+    {
+      "identifier": "78_my-little-canoe_gbia0307071a",
+      "title": "MY LITTLE CANOE",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_my-little-canoe_gbia0307071a"
+    },
+    {
+      "identifier": "78_keep-off-the-grass_regimental-band-of-the-republic_gbia0302809a",
+      "title": "Keep off the Grass",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Regimental Band of the Republic",
+      "details_url": "https://archive.org/details/78_keep-off-the-grass_regimental-band-of-the-republic_gbia0302809a"
+    },
+    {
+      "identifier": "78_uncle-sammy-march_dance-orchestra-holzman_gbia0419402a",
+      "title": "Uncle Sammy March",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Dance Orchestra",
+      "details_url": "https://archive.org/details/78_uncle-sammy-march_dance-orchestra-holzman_gbia0419402a"
+    },
+    {
+      "identifier": "78_scissors-to-grind_arthur-collins_gbia0479022a",
+      "title": "Scissors to Grind",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Collins",
+      "details_url": "https://archive.org/details/78_scissors-to-grind_arthur-collins_gbia0479022a"
+    },
+    {
+      "identifier": "78_old-folks-at-home-suwanee-river_haydn-quartet-foster_gbia0381444a",
+      "title": "Old Folks at Home (Suwanee River)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_old-folks-at-home-suwanee-river_haydn-quartet-foster_gbia0381444a"
+    },
+    {
+      "identifier": "78_reuben-haskins-ride-on-a-cyclone-auto_gbia0476675a",
+      "title": "REUBEN HASKIN'S RIDE ON A CYCLONE AUTO",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_reuben-haskins-ride-on-a-cyclone-auto_gbia0476675a"
+    },
+    {
+      "identifier": "78_rigolettoquesta-o-quella-mid-the-fair-throng_enrico-caruso-verdi_gbia0519670b",
+      "title": "Rigoletto\u2013Questa o quella ('Mid the Fair Throng)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_rigolettoquesta-o-quella-mid-the-fair-throng_enrico-caruso-verdi_gbia0519670b"
+    },
+    {
+      "identifier": "78_1863-medley_zon-o-phone-concert-band_gbia0276961a",
+      "title": "1863 Medley",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Zon-o-phone Concert Band",
+      "details_url": "https://archive.org/details/78_1863-medley_zon-o-phone-concert-band_gbia0276961a"
+    },
+    {
+      "identifier": "78_war-songs_walter-b-rogers_gbia0377414a",
+      "title": "War Songs",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Walter B. Rogers",
+      "details_url": "https://archive.org/details/78_war-songs_walter-b-rogers_gbia0377414a"
+    },
+    {
+      "identifier": "78_du-dulich-mir-imherzen_favor_gbia0424773a",
+      "title": "DU DULICH MIR IMHERZEN",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "FAVOR",
+      "details_url": "https://archive.org/details/78_du-dulich-mir-imherzen_favor_gbia0424773a"
+    },
+    {
+      "identifier": "78_rigolettola-donna-mobile-woman-is-fickle_enrico-caruso-verdi_gbia0519670a",
+      "title": "Rigoletto\u2013La donna \u00e8 mobile (Woman is Fickle)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_rigolettola-donna-mobile-woman-is-fickle_enrico-caruso-verdi_gbia0519670a"
+    },
+    {
+      "identifier": "78_where-is-my-boy-to-night_haydn-quartet_gbia0437696a",
+      "title": "Where is My Boy To-Night",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Haydn Quartet",
+      "details_url": "https://archive.org/details/78_where-is-my-boy-to-night_haydn-quartet_gbia0437696a"
+    },
+    {
+      "identifier": "78_always-in-the-way_h-tally_gbia0424777a",
+      "title": "ALWAYS IN THE WAY",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "H. TALLY",
+      "details_url": "https://archive.org/details/78_always-in-the-way_h-tally_gbia0424777a"
+    },
+    {
+      "identifier": "78_ise-gwine-back-to-dixie_standard-quartette_gbia0381671a",
+      "title": "I'SE GWINE BACK TO DIXIE",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Standard Quartette",
+      "details_url": "https://archive.org/details/78_ise-gwine-back-to-dixie_standard-quartette_gbia0381671a"
+    },
+    {
+      "identifier": "78_sylvia-scherzo_frank-mazziotta_gbia0299874a",
+      "title": "Sylvia Scherzo",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Frank Mazziotta",
+      "details_url": "https://archive.org/details/78_sylvia-scherzo_frank-mazziotta_gbia0299874a"
+    },
+    {
+      "identifier": "78_white-raven_gbia0299462a",
+      "title": "WHITE RAVEN",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_white-raven_gbia0299462a"
+    },
+    {
+      "identifier": "78_elisir-damore-una-furtiva-lagrima-down-her-cheek-a-pearly-tear_enrico-caruso-d_gbia0283866a",
+      "title": "Elisir d'amore - Una furtiva lagrima (Down Her Cheek a Pearly Tear)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_elisir-damore-una-furtiva-lagrima-down-her-cheek-a-pearly-tear_enrico-caruso-d_gbia0283866a"
+    },
+    {
+      "identifier": "78_marche-des-mousquetaires_the-national-band-of-france_gbia0273013a",
+      "title": "Marche des Mousquetaires",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "The National Band of France",
+      "details_url": "https://archive.org/details/78_marche-des-mousquetaires_the-national-band-of-france_gbia0273013a"
+    },
+    {
+      "identifier": "78_sweetest-girl-in-dixie_harlan_gbia0425171a",
+      "title": "SWEETEST GIRL IN DIXIE",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "HARLAN",
+      "details_url": "https://archive.org/details/78_sweetest-girl-in-dixie_harlan_gbia0425171a"
+    },
+    {
+      "identifier": "78_blue-danube-waltz_gbia0300616a",
+      "title": "BLUE DANUBE WALTZ",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_blue-danube-waltz_gbia0300616a"
+    },
+    {
+      "identifier": "78_azampa-overture_gbia0299463a",
+      "title": "AZAMPA OVERTURE",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_azampa-overture_gbia0299463a"
+    },
+    {
+      "identifier": "78_nazareth_f-c-stanley_gbia0068960a",
+      "title": "Nazareth",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "F. C. Stanley",
+      "details_url": "https://archive.org/details/78_nazareth_f-c-stanley_gbia0068960a"
+    },
+    {
+      "identifier": "78_light-cavalry-overture_gbia0424756a",
+      "title": "LIGHT CAVALRY OVERTURE",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_light-cavalry-overture_gbia0424756a"
+    },
+    {
+      "identifier": "78_our-national-airs_leonard-g-spencer-pryors-orchestra_gbia0341188a",
+      "title": "Our National Airs",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Leonard G. Spencer & Pryor's Orchestra",
+      "details_url": "https://archive.org/details/78_our-national-airs_leonard-g-spencer-pryors-orchestra_gbia0341188a"
+    },
+    {
+      "identifier": "78_pansy-faces_harry-macdonough_gbia0328162a",
+      "title": "Pansy Faces",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Harry Macdonough",
+      "details_url": "https://archive.org/details/78_pansy-faces_harry-macdonough_gbia0328162a"
+    },
+    {
+      "identifier": "78_ye-boston-tea-party-march_arthur-pryors-band_gbia0080884a",
+      "title": "Ye Boston Tea Party March",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Arthur Pryor's Band",
+      "details_url": "https://archive.org/details/78_ye-boston-tea-party-march_arthur-pryors-band_gbia0080884a"
+    },
+    {
+      "identifier": "78_teasing_h-tally_gbia0299461a",
+      "title": "TEASING",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "H. TALLY",
+      "details_url": "https://archive.org/details/78_teasing_h-tally_gbia0299461a"
+    },
+    {
+      "identifier": "78_roma_gbia0298883a",
+      "title": "ROMA",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_roma_gbia0298883a"
+    },
+    {
+      "identifier": "78_schottische-from-yankee-consul_dance-orchestra_gbia0044837a",
+      "title": "Schottische",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Dance Orchestra",
+      "details_url": "https://archive.org/details/78_schottische-from-yankee-consul_dance-orchestra_gbia0044837a"
+    },
+    {
+      "identifier": "78_beautys-eyes_mr-arthur-gray_gbia3034493b",
+      "title": "Beauty's Eyes",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Mr. Arthur Gray",
+      "details_url": "https://archive.org/details/78_beautys-eyes_mr-arthur-gray_gbia3034493b"
+    },
+    {
+      "identifier": "78_prince-of-pilsen_gbia0299460a",
+      "title": "PRINCE OF PILSEN",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_prince-of-pilsen_gbia0299460a"
+    },
+    {
+      "identifier": "78_una-furtiva-lagrima-down-her-pale-cheek_enrico-caruso-romani-donizetti_gbia0077703a",
+      "title": "Una Furtiva Lagrima (Down her pale cheek)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_una-furtiva-lagrima-down-her-pale-cheek_enrico-caruso-romani-donizetti_gbia0077703a"
+    },
+    {
+      "identifier": "78_stephanie-gavotte_gbia0300569a",
+      "title": "STEPHANIE GAVOTTE.",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_stephanie-gavotte_gbia0300569a"
+    },
+    {
+      "identifier": "78_manon-il-sogno-the-dream_enrico-caruso-massenet_gbia0153074a",
+      "title": "Manon-Il sogno (The Dream)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_manon-il-sogno-the-dream_enrico-caruso-massenet_gbia0153074a"
+    },
+    {
+      "identifier": "78_peggy-from-paris_gbia0300567a",
+      "title": "PEGGY FROM PARIS.",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": null,
+      "details_url": "https://archive.org/details/78_peggy-from-paris_gbia0300567a"
+    },
+    {
+      "identifier": "78_la-donna-mobile-woman-is-fickle_enrico-caruso-verdi_gbia7036073a",
+      "title": "La donna \u00e8 mobile (Woman is Fickle)",
+      "date": "1904-01-01T00:00:00Z",
+      "year": 1904,
+      "creator": "Enrico Caruso",
+      "details_url": "https://archive.org/details/78_la-donna-mobile-woman-is-fickle_enrico-caruso-verdi_gbia7036073a"
+    }
+  ],
+  "smoke_download": {
+    "identifier": "78_hosanna-in-the-highest_haydn-quartette_gbia0362657a",
+    "file": "Hosanna In The Highest - Haydn Quartette.mp3",
+    "bytes": 2752595,
+    "sha256": "7211a4acc98354d83da27df46e1131215b4a341f61d32673664c28b7fb488615",
+    "ffprobe_duration_s": 107.77075,
+    "download_url": "https://archive.org/download/78_hosanna-in-the-highest_haydn-quartette_gbia0362657a/Hosanna%20In%20The%20Highest%20-%20Haydn%20Quartette.mp3",
+    "binary_committed": false,
+    "note": "Binary verified then deleted; hash retained as proof."
+  }
+}

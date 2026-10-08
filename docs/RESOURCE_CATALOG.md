@@ -43980,3 +43980,337 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - Corrections mid-wave: 4 pocket-3 diligence entries (BitCurator, MDQC, ADCTest, DVCapture) initially got constructed URLs — fixed to "unresolved this pass" rather than guess; pocket-2 URL set grew to 38 then trimmed to 35 via pre-grep dedup (BotB/KEYGENMUSiC/VGMusic); pocket-1 gained 2 backups (Henry Reed LOC, IU Latin American Music Center) after IN Harmony/BSB-MDZ dedup drops
 - Zero post-hoc duplicates: every candidate pre-grepped against the full catalog before appending; `grep -c '^####'` = 4,332 exactly
 - Merge hazard note: ~20 exact-title duplicate #### rows exist from EARLIER waves (Art Institute of Chicago, Chatterbox, CodeFormer, GPT-SoVITS, Kenney ×4, LatentSync, LOC Free to Use, LivePortrait, Looperman, Meta Sound Collection, MuseTalk, NASA, NOAA, SDL_mixer, SadTalker, SoundBible, USGS) — none added by Wave 49; flagged for coordinator cleanup
+
+
+### Wave 49 Lane A2 (2026-10-08) — PD cartoon music/score · demoscene long tail · open video-archive tooling
+
+#### Ub Iwerks — Flip the Frog: Fiddlesticks (1930) ✅ public domain
+- **What:** Ub Iwerks' Flip the Frog debut short *Fiddlesticks* (1930) — first individual sound cartoon photographed in color; early Carl Stalling cartoon score (pre-Warner Bros.).
+- **URL:** https://archive.org/details/FLIP_FROG-FIDDLESTICKS
+- **License:** ✅ Public domain (1930 work; entered US PD 2026-01-01 per en.wikipedia.org/wiki/Fiddlesticks_(1930_film)) (verified 2026-10-08)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Score study reference for early synchronized cartoon music; archive.org item carries no explicit license tag — PD rests on the 1930 publication date. [Wave 49 Lane A2]
+
+#### Fleischer — Popeye the Sailor debut (1933) ✅ Public Domain Mark 1.0
+- **What:** Fleischer Studios' *Popeye the Sailor* (1933-07-14) debut short (Betty Boop cameo) — PD-licensed Fleischer cartoon music/score reference.
+- **URL:** https://archive.org/details/popeye-the-sailor-1933_202405
+- **License:** ✅ Public Domain Mark 1.0 (per archive.org item page) (verified 2026-10-08)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early Fleischer synchronized-score study; per-item — other Popeye shorts are "partially public domain." [Wave 49 Lane A2]
+
+#### Fleischer — Betty Boop PD shorts (More Pep 1936) ✅ public domain
+- **What:** PD Fleischer *Betty Boop* shorts on the Internet Archive (e.g. *More Pep*, 1936; ~22 PD Boop shorts hosted per Alchetron/Betty Boop research summary).
+- **URL:** https://archive.org/details/Betty_Boop_More_Pep_1936
+- **License:** ✅ Public domain (item marked "Public Domain" on archive.org) (verified 2026-10-08)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Caveat: Betty Boop CHARACTER/trademark rights are disputed (King Features / Fleischer Studios); short-by-short PD status only — verify per title. [Wave 49 Lane A2]
+
+#### Van Beuren Studios — Aesop's Fables collection (1921–1936) ⚠️ per-item PD
+- **What:** "All Van Beuren Cartoons! (1921–1936)" archive.org item — Aesop's Fables/Sound Fables shorts plus Van Beuren Tom & Jerry (1931–33) series; early Gene Rodemich synchronized scores.
+- **URL:** https://archive.org/details/all-van-beuren-cartoons-1921-1936
+- **License:** ⚠️ Per-item PD — community consensus holds the Aesop's Fables shorts PD (non-renewed); item page carries no uniform license tag (verified 2026-10-08)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-sound-era cartoon music reference (Rodemich arrangements, e.g. Anvil Chorus in Spring Antics); verify each short's renewal status before reuse. [Wave 49 Lane A2]
+
+#### Terrytoons — 1930s shorts collection ⚠️ per-item PD
+- **What:** "All 30s Terrytoon Cartoons" archive.org item — early Terrytoons (Paul Terry, 1930–33) shorts, music-heavy rubber-hose era.
+- **URL:** https://archive.org/details/All-30s-Terrytoon-Cartoons
+- **License:** ⚠️ Per-item PD — every Terrytoons short from 1930 entered US PD as of 2026; post-1930 titles need per-title renewal checks (verified 2026-10-08)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item page has no uniform license tag; score/soundtrack study only until per-title status confirmed. [Wave 49 Lane A2]
+
+#### Ub Iwerks — ComiColor Cartoons complete collection (1933–36) ⚠️ per-item PD
+- **What:** Complete 25-short ComiColor collection (Ub Iwerks' Cinecolor fairy-tale series; Carl Stalling / Art Turkisher scores, Iwerks multiplane work).
+- **URL:** https://archive.org/details/ub-iwerks-comicolor-classics-the-complete-collection-1933-36
+- **License:** ⚠️ Per-item PD — all 1934–36 shorts except *Little Black Sambo* are PD (per Wikipedia ComiColor article; 1933 titles need checks) (verified 2026-10-08)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Stalling scored ComiColors before his Warner Bros. move — useful early-cartoon-score corpus; verify per title. [Wave 49 Lane A2]
+
+#### Public Domain Movies — Ub Iwerks subject page ❓ diligence record
+- **What:** publicdomainmovie.net Iwerks subject page — catalog of Ub Iwerks PD cartoons (Flip the Frog, ComiColor seasons shorts, Laugh-O-Gram era).
+- **URL:** https://publicdomainmovie.net/subject/iwerks
+- **License:** ❓ License unverified this pass — aggregator; per-title PD claims (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — discovery index only; cross-check titles against archive.org items above before reuse. [Wave 49 Lane A2]
+
+#### Public Domain Movies — Aesop's Fables tag page ❓ diligence record
+- **What:** publicdomainmovies.info Aesop's Fables tag — PD short catalog for Van Beuren's series (The Last Mail, The Bully's End, etc.).
+- **URL:** https://publicdomainmovies.info/tag/aesops-fables/
+- **License:** ❓ License unverified this pass — aggregator; per-title PD claims (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — pairs with the Van Beuren archive.org item; verify per title. [Wave 49 Lane A2]
+
+#### Wikipedia — List of animated films in the public domain in the US ✅ reference
+- **What:** Wikipedia's PD animated-films list — per-studio/per-title PD status reference (Disney 1930-and-before, Terrytoons 1930, Fleischer partials, ComiColor asterisks, Ted Eshbaugh, Toby the Pup).
+- **URL:** https://en.wikipedia.org/wiki/List_of_animated_films_in_the_public_domain_in_the_United_States
+- **License:** ✅ CC-BY-SA 3.0 (Wikipedia text license) (verified 2026-10-08)
+- **Free tier:** Free reference
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical per-title PD determination aid for the pocket-1 archives above — use it to gate every reuse decision. [Wave 49 Lane A2]
+
+#### UW–Madison Mills Music Library — Sheet Music & Scores Online ✅ free directory
+- **What:** Mills Music Library's curated page of free sheet-music/score sites (IMSLP, Choral Public Domain Library, Mutopia, Sheet Music Consortium incl. Mills holdings).
+- **URL:** https://www.library.wisc.edu/music/research-help/sheet-music-scores-online/
+- **License:** ✅ Free directory of free sites (verified 2026-10-08)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery hub for PD-score sources beyond the Lane-A university collections; per-site licenses govern. [Wave 49 Lane A2]
+
+#### Nordlicht demoparty ❓ diligence record
+- **What:** Nordlicht — Bremen, Germany demoparty (2012–), first pure demoscene party in Bremen since Siliconvention 1997 (per Wikipedia Demo party list).
+- **URL:** https://en.wikipedia.org/wiki/Demo_party
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — resolve official party site / Demozoo page in a later wave; verify per-entry rights. [Wave 49 Lane A2]
+
+#### Flashparty demoparty ❓ diligence record
+- **What:** Flashparty — Buenos Aires, Argentina demoparty (1998–2001, 2003–2005, 2007, 2018–), first demoparty in Latin America (per Wikipedia Demo party list).
+- **URL:** https://en.wikipedia.org/wiki/Demo_party
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Latin-American scene anchor; resolve official site/Demozoo page later; verify per-entry rights. [Wave 49 Lane A2]
+
+#### Lost Party demoparty ❓ diligence record
+- **What:** Lost Party — summer 8-bit demo party, Licheń Stary, Poland (2019–), tracked-music compos (per demoparty.net Amstrad CPC platform listing).
+- **URL:** https://www.demoparty.net/platform/amstrad-cpc
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — 8-bit/CPC-focused; verify per-entry rights. [Wave 49 Lane A2]
+
+#### Kindergarden demoparty ❓ diligence record
+- **What:** Kindergarden — Haga, Norway demoparty (1994–2014), once the oldest pure demoparty in the world; not held since 2014 (per Wikipedia Demo party list).
+- **URL:** https://en.wikipedia.org/wiki/Demo_party
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — historical party (dead since 2014); entries live on in scene archives (Pouët/Demozoo). [Wave 49 Lane A2]
+
+#### Underground Conference demoparty ❓ diligence record
+- **What:** Underground Conference — hardcore open-air demoscene event, Binger Wald, Germany (UC7 2006 documented) — wild/boozing compos culture.
+- **URL:** https://www.demoparty.net/underground-conference/underground-conference-7
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — historic open-air party; verify per-entry rights. [Wave 49 Lane A2]
+
+#### Deadline (Berlin) demoparty ❓ diligence record
+- **What:** Deadline — Berlin demoparty (2014–2026+, ORWOhaus), fantasy-console-friendly compos, remote entries, live coding sessions.
+- **URL:** https://www.demoparty.net/deadline-berlin
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — active Berlin party; verify per-entry rights. [Wave 49 Lane A2]
+
+#### Shadow Party demoparty ❓ diligence record
+- **What:** Shadow Party — new retro/demo gathering, Aubervilliers, France (2026 edition), Amiga→ZX Spectrum hardware focus (per demoparty.net Amstrad CPC platform listing).
+- **URL:** https://www.demoparty.net/platform/amstrad-cpc
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — new 2026 party; verify per-entry rights. [Wave 49 Lane A2]
+
+#### Dataairlines (chipmusic netlabel) ❓ diligence record
+- **What:** Dataairlines (Data-Airlines) — chipmusic netlabel run by Dubmood (Kalle Jonsson); prolific 8-bit music catalog.
+- **URL:** https://www.everand.com/podcast/704203902/Dubmood-In-this-episode-we-speak-to-Kalle-Jonsson-aka-Dubmood-Dubmood-is-the-owner-of-the-netlabel-Data-Airlines-and-a-prolific-musician-with-roots
+- **License:** ❓ License unverified this pass — netlabel releases free; per-release terms unverified (verified 2026-10-08)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — chiptune back-catalog source for reference/listening; verify per-release license before any reuse. [Wave 49 Lane A2]
+
+#### SID-Wizard (C64 music editor) ✅ open source
+- **What:** SID-Wizard — native C64 music tracker by Hermit (Mihaly Horvath); GoatTracker-like editing, 50 instruments, raster-optimized player.
+- **URL:** https://csdb.dk/getinternalfile.php/110444/creating_chip_tunes_with_sid-wizard_first_edition.pdf
+- **License:** ✅ Open source — author states "open source project from the very 1st release" (CSDb SID-Wizard manual, Hermit) (verified 2026-10-08)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** URL is the tutorial manual (upstream release lives on CSDb); tracker-engine study candidate for chip-music pipeline. [Wave 49 Lane A2]
+
+#### Jogeir Liljedahl (Amiga composer) ❓ diligence record
+- **What:** Jogeir Liljedahl — Amiga ProTracker composer (Out of Silence, Keys to Imagination, Crystal Rain); demoscene music long tail.
+- **URL:** https://www.youtube.com/watch?v=oBfHnyxdPJ0
+- **License:** ❓ License unverified this pass — MODs by author, distribution terms unverified (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listening/reference only; modules on ModArchive/AMP; verify per-tune rights. [Wave 49 Lane A2]
+
+#### 4mat (Matt Simmonds) ❓ diligence record
+- **What:** 4mat (Matt Simmonds) — veteran chip musician (Decades album; Plogue chipsynth C64 launch demo, 2023, CSDb release).
+- **URL:** https://csdb.dk/release/?id=237511
+- **License:** ❓ License unverified this pass — commercial catalog on Bandcamp plus scene releases; per-release terms unverified (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — reference/listening; SIDLab tool at 4mat.itch.io/sidlab; verify per-release license before any reuse. [Wave 49 Lane A2]
+
+#### RAWcooked ✅ BSD-2-Clause
+- **What:** RAWcooked (MediaArea) — encodes RAW audio-visual data into Matroska (FFV1 video + FLAC audio); reversibility-checked archival ingest tool.
+- **URL:** https://github.com/MediaArea/RAWcooked
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via upstream README; alternate open-source licenses also offered)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Commercial caveat: MediaArea sells paid "license additions" for extra file formats beyond the default DPX/PCM set — default tool itself is BSD. [Wave 49 Lane A2]
+
+#### Bagger ✅ Public Domain
+- **What:** Bagger (Library of Congress) — GUI tool producing BagIt transfer packages for digital-preservation ingest workflows.
+- **URL:** https://github.com/LibraryOfCongress/bagger
+- **License:** ✅ Public Domain (badge on upstream repo; verified 2026-10-08)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** LOC notes it is "reviewing next steps for the future of Bagger" — treat as maintenance-mode; bagit-java sibling is the code library. [Wave 49 Lane A2]
+
+#### Heritrix 3 ✅ Apache-2.0
+- **What:** Heritrix 3 (Internet Archive) — open-source, extensible, web-scale archival-quality web crawler (WARC output; BrowserProcessor for JS-heavy pages).
+- **URL:** https://github.com/internetarchive/heritrix3/blob/HEAD/README.md
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream README; some individual files under other licenses — see LICENSE.txt)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Companion to pywb/warcio lane entries; crawl politeness (robots.txt wildcards per RFC 9309) now supported. [Wave 49 Lane A2]
+
+#### warcio ✅ Apache-2.0
+- **What:** warcio (Webrecorder) — streaming WARC/ARC IO library + CLI (index, recompress, check, extract); canonical record-compressed WARC tooling.
+- **URL:** https://pypi.org/project/warcio/
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via PyPI project page)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Python staple of the web-archive pipeline; pip-installable, pairs with pywb replay. [Wave 49 Lane A2]
+
+#### veraPDF 🚫 GPL-3.0-or-MPL-2.0 dual (quarantine)
+- **What:** veraPDF (Open Preservation Foundation / PDF Association) — open-source PDF/A validator for all ISO 19005 parts/conformance levels.
+- **URL:** https://www.digitalmeetsculture.net/article/verapdf-1-0-released/?upm_export=pdf
+- **License:** 🚫 GPL-3.0-or-MPL-2.0 dual, recipient's choice (verified 2026-10-08 via third-party license notice + OPF release) — quarantine row 465
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL arm triggers copyleft — standalone study only, never wired into shipping paths. [Wave 49 Lane A2]
+
+#### ReplayWeb.page 🚫 AGPLv3 (quarantine)
+- **What:** ReplayWeb.page (Webrecorder) — browser-based WARC/WACZ replay viewer (service-worker rendering of archived pages).
+- **URL:** https://Github.Com/webrecorder/replayweb.page/blob/main/README.md
+- **License:** 🚫 AGPLv3 (verified 2026-10-08 via upstream README) — quarantine row 466
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: AGPL-3.0 — standalone study only, never wired into shipping paths. [Wave 49 Lane A2]
+
+#### DV Analyzer 🚫 GPLv3+ (quarantine)
+- **What:** DV Analyzer (AVPreserve/MediaArea) — DV tape-to-file migration QC: error concealment, DIF incoherency, STTS fluctuation detection.
+- **URL:** https://mediaarea.net/DVAnalyzer
+- **License:** 🚫 GPLv3+ for MediaArea-developed code (verified 2026-10-08 via upstream license page) — quarantine row 467
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-3.0-or-later — standalone study only, never wired into shipping paths. [Wave 49 Lane A2]
+
+#### BWF MetaEdit ❓ diligence record
+- **What:** BWF MetaEdit (MediaArea) — view/edit Broadcast-Wave (BWAV) metadata, export iXML/CSV lists; batch via CSV round-trip workaround.
+- **URL:** https://www.creativefieldrecording.com/2014/06/17/an-introduction-to-sound-fx-metadata-apps-2-comparing-apps/
+- **License:** ❓ License unverified this pass — described as "free, open source" by Creative Field Recording; upstream license text not confirmed (verified 2026-10-08)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — resolve MediaArea license text in a later wave; not reuse-cleared. [Wave 49 Lane A2]
+
+#### PRONOM ❓ diligence record
+- **What:** PRONOM (The National Archives, UK) — technical registry of file formats, software, and preservation metadata.
+- **URL:** unresolved this pass (no verbatim upstream URL from tool results — do not guess; known project: TNA PRONOM format registry)
+- **License:** ❓ License unverified this pass — registry; per-record data under UK Open Government Licence (unconfirmed) (verified 2026-10-08)
+- **Free tier:** Free registry
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — pairs with Siegfried/DROID lane entries; resolve URL + license text in a later wave. [Wave 49 Lane A2]
+
+#### MRV2 ❓ diligence record
+- **What:** mrv2/vmrv2 (ggarra13) — open-source VFX/animation review players (OpenGL/Vulkan backends; OpenEXR layer switching, OTIO, HDR).
+- **URL:** https://github.com/ggarra13/mrv2/blob/HEAD/src/docs/RELEASE.md
+- **License:** ❓ License unverified this pass — claims open source; binaries are donationware with paid feature unlocks (annotations/Python/editing locked without donation) (verified 2026-10-08)
+- **Free tier:** Free binaries (feature-limited)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — verify source license text before any reuse; donationware binary model conflicts with clean open-source study use. [Wave 49 Lane A2]
+
+#### Dain-App ✅ MIT
+- **What:** Dain-App — Depth-Aware Video Frame Interpolation GUI/CLI (DAIN model); frame-interpolation for archival footage restoration experiments.
+- **URL:** https://github.com/BurguerJohn/Dain-App
+- **License:** ✅ MIT (verified 2026-10-08 via repo README license section pointing to upstream HeylonNHP/Dain-App LICENSE)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Community fork (upstream HeylonNHP/Dain-App archived); training code noted broken — inference GUI/CLI works; verify against upstream LICENSE on pull. [Wave 49 Lane A2]
+
+### Wave 49 Lane A2 summary (2026-10-08)
+- New #### entries: 32 (Pocket 1: 10 PD cartoon music/score archives · Pocket 2: 11 retro-tracker demoscene long tail · Pocket 3: 11 open video-archive tooling)
+- Catalog: 4,306 → 4,338 honest entries (wave target 4,336+ met)
+- Quarantine: rows 465–467 appended (veraPDF GPL-3.0-or-MPL-2.0 dual, ReplayWeb.page AGPLv3, DV Analyzer GPLv3+)
+- Honest negatives: 8 (Syntax Party — true duplicate of row 33166 caught by pre-grep; MXFixer — commercial Metaglue product, not open source; Artcade — no verbatim upstream URL; Mutopia — already in catalog; IASA — already in catalog; lsmash — license text unverified, no verbatim URL; Indiana University Cook Music Library — no verbatim upstream URL; dav1d — license text unverified this pass)
+- ❓ diligence records: 15 (P1: 2 publicdomainmovie aggregators · P2: 10 parties/labels/artists incl. Dataairlines · P3: 3 BWF MetaEdit/PRONOM/MRV2)
+- ✅ commercial-safe: 11 (P1: 5 — Fiddlesticks, Popeye, More Pep, Wikipedia PD list, Mills directory; P2: 1 SID-Wizard; P3: 5 — RAWcooked, Bagger, Heritrix, warcio, Dain-App)
+- ⚠️ per-item PD caution: 3 (Van Beuren, Terrytoons, ComiColor archive.org items — verify per title)
+- 🚫 quarantined: 3 (veraPDF, ReplayWeb.page, DV Analyzer)
+- Zero post-hoc duplicates: every candidate pre-grepped against the full catalog before appending; `grep -c '^####'` = 4,338 exact

@@ -15776,6 +15776,7 @@ Badge key: ✅ commercial-safe · 🚫 NC-or-quarantine (GPL/AGPL/NC — quarant
 - **Status:** not-started
 - **Notes:** STRONGEST WIRE-UP CANDIDATE (see report): one container covers caption generation (STT), speaker labels (diarization), and dubbing VO (TTS) — the whole speech lane. Dependency trap: diarization uses pyannote models that require a gated (free) HuggingFace token — code is MIT, model access is gated. [Wave 14 Lane C]
 - **Wave 15 (2026-10-07):** Docker smoke-test STILL DEFERRED — no container runtime in sandbox (no docker/podman/nerdctl/crictl, no docker.sock). Retest when a Docker-capable environment is available. [Wave 15 Lane C]
+- **Wave 30 Lane C (2026-10-08):** container runtime re-checked — STILL absent (no docker/podman/nerdctl binaries, docker service inactive). Smoke test remains deferred. [Wave 30 Lane C]
 
 #### wyoming-faster-whisper — Wyoming-protocol faster-whisper STT server ✅ commercial-safe
 - **What:** faster-whisper exposed over the Wyoming protocol (Home Assistant's voice-assistant IPC): sentence-level streaming transcription as a local service. Docker image available.
@@ -28304,8 +28305,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Free tier:** Free streaming access; dataset downloadable
 - **Repo lane:** trippedd (music)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
+- **Status:** wired
 - **Notes:** The downloadable dataset (song-level style features) is the commercial-safe layer; treat field recordings as reference/streaming-only. [Wave 29 Lane A]
+- **Wave 30 Lane C (2026-10-08):** WIRED — canonical data DOI located and verified: 10.5281/zenodo.4898406 ("The Global Jukebox: Cantometrics", v0.1-alpha, 3,293,252 bytes; md5 2a814fd801b87ab561247b8b0f6184e6 matches Zenodo API record). Wiring script `tools/wave30_lane_c/wire_global_jukebox.py` (downloads from DOI, verifies md5+SHA-256, parses CSVs; hard gates PASS: 6,043 raw/songs rows, 37 Cantometric variables, 5,779 coded songs) + `tools/wave30_lane_c/PROOFS.md` with full evidence. [Wave 30 Lane C]
 
 #### Carl-Maria-von-Weber-Gesamtausgabe (WeGA) — digital edition ⚠️ texts-only open
 - **What:** The academy critical edition of Weber (Akademie der Wissenschaften und der Literatur Mainz): digital edition of letters, diaries, writings, bibliography, with an open API and data packages (Zenodo DOI).
@@ -29425,3 +29427,4 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Wave 29 Lane B deferred the BUILD (no Qt dev libraries) — the license is clear, so the catalog entry stands and a future lane can attempt the build again. No quarantine row needed (zlib is permissive). [Wave 30 Lane A]
+- **Wave 30 Lane C (2026-10-08):** Qt build environment re-checked — STILL absent (no qtbase5-dev/qt6-base-dev, no qmake/qmake6; compilers cmake/g++/make present). Build remains deferred, matching 10+ prior waves. [Wave 30 Lane C]

@@ -29751,3 +29751,105 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** QUARANTINED (GPL/AGPL)
 - **Notes:** Library counterpart to the row-258 player; both stay research-only. [Wave 31 Lane A]
+
+### C. ToS audits — Wave 32 Lane A: caption/transcription SaaS ❓ resolution (2026-10-08)
+
+#### Clideo — free-tier ToS audit ⚠️ license-conditional
+- **What:** Browser subtitle generator (100+ languages, SRT/TXT export, burn-in templates) — the cheapest paid tier of the browser tools.
+- **URL:** https://clideo.com/auto-subtitle-generator (audited via clideo.com FAQ + 2026 pricing reviews)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Watermark on EVERY exported video; free subtitle generation limited in file size and number of generated subtitles; projects stored ~24 hours; Pro from ~$9/mo ($6/mo annual per VEED's comparison) removes watermark.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry. Subtitle-FILE (SRT/TXT) download is the usable free output; burned-in video exports carry the watermark. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Zeemo — free-tier ToS audit ⚠️ license-conditional
+- **What:** Caption-first AI subtitling (95 languages, API offered) — the most pipeline-plausible SaaS of the set.
+- **URL:** https://zeemo.ai (audited via ailab.mobi review, pricing verified September 2026)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 120 credits/YEAR, subtitle videos ≤1 minute, 720p export, 200 MB file limit, project files deleted after 3 days. Pro from ~$8–9.17/mo (3,600 credits/year).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry. 120 credits/year is ~2 hours of captioning TOTAL per year — a demo, not a workflow. API remains the interesting paid-lane feature. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Submagic — free-tier ToS audit ⚠️ license-conditional
+- **What:** Short-form caption tool (48 languages, trendy templates, B-roll) — the "Hormozi/MrBeast" style benchmark.
+- **URL:** https://www.submagic.co (audited via aialleyway.com pricing + review, read live 2026-09-13)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** NO free plan — trial only (15 credits, no card), and exporting is paywalled ENTIRELY on the trial: the trial shows finished videos in-editor but delivers zero exportable files. Paid from ~$14–19/mo (plans in flux: Starter/Growth/Business per Oct 2026 trackers).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry. A trial that cannot deliver a file cannot validate publish-quality output — evaluation requires a paid month. Style reference only. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Captions (captions.ai) — free-tier ToS audit ⚠️ license-conditional
+- **What:** Mobile-first AI video editor built around captions (28 languages, eye-contact correction, AI dubbing).
+- **URL:** https://www.captions.ai/pricing (audited via therundown.ai + eesel.ai, Oct 2026)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Free plan = basic trimming/transitions + ONE caption template, NO generative AI credits. 2026 restructure: the old $9.99 Pro is gone; paid entry is now Max at $24.99/mo (500 AI credits/mo); Frontier tiers $69.99–279.99/mo.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry. The free tier is a caption-template demo, not a captioning workflow — auto-captioning effectively requires paid. Mobile-only pipeline anyway. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### OpusClip — free-tier ToS audit ⚠️ license-conditional
+- **What:** Long-video → viral-clips engine with animated AI captions (20+ languages), virality scoring, auto-reframe.
+- **URL:** https://www.opus.pro (audited via multilogin.com review, verified 2026-10-01, + castmagic.io pricing guide)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Free $0 = 60 credits/month (1 credit ≈ 1 min source video), watermarked exports, 1080p, NO editing, clips exportable for only 3 days. Starter $15/mo (150 min, no watermark); Pro $29/mo ($14.50/mo annual, 300 min/mo).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry. 60 min/month of watermarked, 3-day-expiry clips = evaluation only; the caption styles remain the genre benchmark for short-form cutdowns. FLAG from yourtechcompass review: ToS warns account termination may destroy associated content — never the sole copy of anything. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Speechmatics — free-tier ToS audit ⚠️ license-conditional
+- **What:** Enterprise STT API (batch + real-time, 55+ languages, diarization, custom dictionary); on-prem options.
+- **URL:** https://www.speechmatics.com (audited via g2.com pricing, provider-supplied, Jul 2026 + slashdot comparison)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 480 minutes of audio FREE PER MONTH recurring (split ~240 batch + 240 real-time per comparison sources); pay-as-you-go after (~$0.005–0.012/min). No card required to start.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry — and it CONFIRMS the generous 8 h/mo recurring free tier (not a one-time grant). Most generous recurring free STT tier found, with diarization. The plausible paid-API fallback if local ASR bottlenecks. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Rev — free-tier ToS audit ⚠️ license-conditional
+- **What:** Established transcription platform: AI transcription + 99%-guaranteed human-verified option, ADA/FCC-compliant captioning, Rev.ai API.
+- **URL:** https://www.rev.com/pricing (audited via rev.com's OWN pricing page, crawled 2026-09)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 45 AI transcription & caption minutes/month, English ONLY, 1 user. AI from $0.25/min; human-verified captions ~$1.50–1.99/min; Essentials subscription $25.49/seat/mo (5,000 AI min/mo).
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry — rev.com itself publishes the 45-min/month free tier. The compliance angle (ADA/FCC) is its differentiator; human-verified tier when accuracy is legally load-bearing. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### TurboScribe — free-tier ToS audit ⚠️ license-conditional
+- **What:** Lean batch transcription (Whisper large-v3): 98+ languages, 134-language translation, speaker recognition, SRT/DOCX/TXT export.
+- **URL:** https://turboscribe.ai (audited via opentools.ai review, Sep 2026 + thetoolsverse pricing)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 3 transcriptions/day, 30 minutes each, one file at a time, lower priority — ALL export formats + speaker recognition included on free. Unlimited $10/mo annual ($20 month-to-month); 10h/5GB files, 50 simultaneous uploads.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 12 ❓ entry — the 3×30-min/day free tier is real and unusually generous for batch work. GOTCHA: no public API (confirmed across sources) — manual upload only, so it's a human-operated draft source, not a pipeline step. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Aiko — ToS/license audit ⚠️ license-conditional (paid app, no free tier)
+- **What:** Sindre Sorhus on-device Whisper transcription (iOS/macOS/visionOS); fully offline — nothing leaves the device.
+- **URL:** https://sindresorhus.com/aiko (audited via developer's own page + AppAgg, 2026)
+- **License:** Proprietary commercial app.
+- **Free tier:** NONE — $24 one-time purchase (App Store). No subscription, no free tier, no trial published.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Corrects the Wave 12 ❓ entry: this is NOT a freemium SaaS — it's a $24 paid app. Privacy-positive (on-device Whisper, no cloud), but manual phone-app use only; not a pipeline path. Badge set to ⚠️ (proprietary paid), not ✅ — there is no free/commercial-use grant to verify. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Audext — free-tier ToS audit ⚠️ license-conditional
+- **What:** Browser transcription with in-built editor (speaker identification, timestamping, 18 languages).
+- **URL:** https://audext.com (audited via dontpayfull FAQ + techimply pricing profile, 2026)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** 30 free trial minutes (7-day window per current trackers; older sources cite 10 min — trial size drifts, treat as ~10–30). Then pay-as-you-go $12/hour or $30/mo subscription (2h included, +$5/hr). No credit card for trial.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Confirms the Wave 17 Lane B ❓ entry. Trial-only free access — a one-shot evaluation, not a recurring draft source. In-editor workflow is its edge over raw SRT exporters. Resolves the ❓ with terms. [Wave 32 Lane A]

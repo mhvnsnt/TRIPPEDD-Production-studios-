@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-08",
+  "tools": {
+    "zx0": {
+      "upstream": "https://github.com/einar-saukas/ZX0",
+      "commit": "ecde3a2ae05061fe06469ed46df81a33b7de7d86",
+      "version": "v2.2",
+      "license": "BSD-3-Clause (Einar Saukas, 2021)",
+      "build": "gcc -O2 -o zx0 zx0.c optimize.c compress.c memory.c ; gcc -O2 -o dzx0 dzx0.c (Makefile targets owcc, not installed)"
+    },
+    "lzsa": {
+      "upstream": "https://github.com/emmanuel-marty/lzsa",
+      "commit": "15ee2dfe118eeb8f7683ca44f64821c3a61ca1e5",
+      "version": "v1.4.1",
+      "license": "Zlib license (matchfinder.c CC0)",
+      "build": "make CC=gcc (Makefile defaults to clang)"
+    }
+  },
+  "fixture": {
+    "file": "fixture.bin",
+    "bytes": 23240,
+    "sha256": "7788eb950cab3617b77fe49fc21421e0fda1ae00ac86abdee40a5f2025de1c1e"
+  },
+  "roundtrips": [
+    {
+      "tool": "zx0+dzx0",
+      "compressed": 4085,
+      "decompressed_bytes": 23240,
+      "decompressed_sha256": "7788eb950cab3617b77fe49fc21421e0fda1ae00ac86abdee40a5f2025de1c1e",
+      "byte_identical": true
+    },
+    {
+      "tool": "lzsa format 1",
+      "compressed": 4085,
+      "decompressed_bytes": 23240,
+      "decompressed_sha256": "7788eb950cab3617b77fe49fc21421e0fda1ae00ac86abdee40a5f2025de1c1e",
+      "byte_identical": true
+    },
+    {
+      "tool": "lzsa format 2",
+      "compressed": 4086,
+      "decompressed_bytes": 23240,
+      "decompressed_sha256": "7788eb950cab3617b77fe49fc21421e0fda1ae00ac86abdee40a5f2025de1c1e",
+      "byte_identical": true
+    }
+  ],
+  "pass": true
+}

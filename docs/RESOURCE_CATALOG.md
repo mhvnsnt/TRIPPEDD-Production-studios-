@@ -32390,3 +32390,439 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Doc-only; Amiga game-music format reference. [Wave 36 Lane A]
+
+### Angle 4 — retro-tracker format player docs + playback libs
+
+#### BoomSPC (c4nvm/BoomSPC) ✅ MIT
+- **What:** BoomSPC — modern SNES SPC player/tracker (2026): spc2wav, spcdump, parsecheck, edittest tools plus an editor; vendors blargg's snes_spc (LGPL-2.1, statically linked) with full provenance notes.
+- **URL:** https://github.com/c4nvm/boomspc (verified 2026-10-08 via GitHub API)
+- **License:** ✅ MIT for BoomSPC's own code (verified 2026-10-08: GitHub API spdx_id MIT; README credits third-party parts: snes_spc LGPL-2.1, Dear ImGui MIT, SDL2 zlib, stb_image public domain, fonts CC-BY/CC-BY-SA, akao/capcom drivers checked against loveemu's MIT akaospc/capspc).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The honest-provenance model for vendored copyleft: own code MIT, snes_spc stays LGPL-quarantined (row 276) — never link the LGPL part into closed builds. [Wave 36 Lane A]
+
+#### loveemu akaospc/capspc ❓ MIT per downstream audit — upstream re-verify
+- **What:** loveemu's akaospc/capspc — SPC player drivers for Akao and Capcom SNES sound drivers (referenced by BoomSPC's driver research).
+- **URL:** via github.com/loveemu (locate akaospc/capspc before use)
+- **License:** ❓ Reported MIT by a downstream audit (verified 2026-10-08: BoomSPC README — "the akao and capcom drivers were checked against loveemu's akaospc and capspc (mit)"); GitHub API returned NOASSERTION this pass — re-verify upstream before reuse.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Driver research reference only until the upstream license is pinned. [Wave 36 Lane A]
+
+#### Nosefart ❓ no license located
+- **What:** Nosefart — Matt Conte's classic NES sound-format (NSF) player (DOS/Windows era); the early reference NSF player.
+- **URL:** https://sourceforge.net/projects/nosefart/files/8.%20MS-DOS%20nosefart%20binaries/1.92/
+- **License:** ❓ No license statement located this pass (SourceForge project page checked 2026-10-08).
+- **Free tier:** Free download
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Historical reference only — no reuse grant; prefer libgme (row 184) or NSFPlay for NSF playback. [Wave 36 Lane A]
+
+#### ProWizard ❓ source-available, license unverified
+- **What:** ProWizard — the classic Amiga packed-module ripper/converter (converts dozens of packed/protected module formats back to ProTracker MOD); "ProWizard for PC" is cross-platform with source available.
+- **URL:** via the Just Solve wiki (http://justsolve.archiveteam.org/wiki/Game_Music_Creator lists "Prowizard for PC (cross-platform, source available)")
+- **License:** ❓ Source-available; no license statement located this pass.
+- **Free tier:** Free to use
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Ripping reference — source-available is not a reuse grant; do not redistribute. [Wave 36 Lane A]
+
+
+#### SPC700 opcode table (SNESDev wiki) ✅ CC0
+- **What:** The SPC700 CPU opcode table on the SNESDev wiki (the Sony SPC700 instruction set used by SNES music drivers).
+- **URL:** via the SNESDev wiki (locate the SPC700 page before citing)
+- **License:** ✅ CC0 (verified 2026-10-08: third-party provenance note quotes "the spc700 opcode table comes from the snesdev wiki (cc0)").
+- **Free tier:** Free to read/reuse
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the SPC format doc — the instruction reference for SPC driver research. [Wave 36 Lane A]
+
+#### snes_spc (blargg) 🚫 LGPL-2.1 — QUARANTINED (row 276)
+- **What:** snes_spc — Shay Green's (blargg) SNES SPC-700 APU + S-DSP emulator library: full SPC emulator, cycle-accurate DSP option, SPC file load/play/save, voice muting, tempo adjustment; C/C++ portable.
+- **URL:** https://github.com/blarggs-audio-libraries/snes_spc
+- **License:** LGPL-2.1 (verified 2026-10-08: blargg's audio-libraries page — "licensed under the GNU Lesser General Public License (LGPL)"; fork READMEs pin "LGPL 2.1 (see license.txt)").
+- **Free tier:** Fully free/open-source.
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** LGPL-QUARANTINE: LGPL-2.1 — do NOT link into closed builds (see the BoomSPC entry for the honest vendoring pattern); standalone SPC-player use is fine. Quarantine row 276. [Wave 36 Lane A]
+
+#### NSF format documentation ❓ widely-mirrored tech doc
+- **What:** The NES Sound Format (NSF) specification — NES/Famicom ripped-music format: header layout, bankswitching, expansion-audio flags, play routine contract.
+- **URL:** Canonical URL not verified this pass — the Nesdev wiki NSF page is the usual reference; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; pairs with the Nosefart/NSFPlay/libgme player entries. [Wave 36 Lane A]
+
+
+#### GBS format documentation ❓ widely-mirrored tech doc
+- **What:** The Game Boy Sound (GBS) format specification — Game Boy ripped-music format: header, timer/modulo, stack and audio register handling.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 36 Lane A]
+
+#### GYM format documentation ❓ widely-mirrored tech doc
+- **What:** The GYM format specification — Sega Genesis/Mega Drive logged-music format: YM2612 and SN76496 register-write log with frame timing.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the log-format predecessor to VGM (which is already cataloged). [Wave 36 Lane A]
+
+#### QSF format documentation ❓ widely-mirrored tech doc
+- **What:** The QSF (Q-Sound Format) specification — Capcom Q-Sound arcade sequenced-music format (PSF-family).
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; companion to the existing PSF/2SF/GSF/SSF/USF doc entries. [Wave 36 Lane A]
+
+#### DSF format documentation ❓ widely-mirrored tech doc
+- **What:** The DSF (Dreamcast Sound Format) specification — Dreamcast sequenced-music format: ARM program + AICA sample data (PSF-family).
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; companion to the existing PSF/2SF/GSF/SSF/USF doc entries. [Wave 36 Lane A]
+
+#### SNSF format documentation ❓ widely-mirrored tech doc
+- **What:** The SNSF (Super Nintendo Sound Format) specification — SNES sequenced-music format: SPC700 driver program plus BRR sample data (PSF-family).
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; distinct from the SPC dump format (see the SNESDev SPC doc entries). [Wave 36 Lane A]
+
+#### SMPS format documentation ❓ widely-mirrored tech doc
+- **What:** The SMPS (68k) format documentation — Sega Genesis SMPS music-driver data ("Sonic Music Processing System", the Sonic the Hedgehog series driver): sequence, voice, and DAC-sample layout.
+- **URL:** Canonical URL not verified this pass — the Sonic Retro wiki SMPS pages are the usual reference; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; Genesis driver-music reference. [Wave 36 Lane A]
+
+#### AHX format documentation ❓ widely-mirrored tech doc
+- **What:** The AHX (Abyss' Highest Experience) format documentation — Amiga synth-tracker format: synth patches, sequences, and the replayer contract.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; companion to the HVL (HivelyTracker) entry below. [Wave 36 Lane A]
+
+#### TFMX format documentation ❓ widely-mirrored tech doc
+- **What:** The TFMX (The Final Musicsystem EXtended) format documentation — Chris Huelsbeck's Amiga/Atari ST music format: 7-voice layout, macro system, and player notes.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the Huelsbeck driver-music reference. [Wave 36 Lane A]
+
+#### DBM (DigiBooster Pro) format documentation ❓ widely-mirrored tech doc
+- **What:** The DBM (DigiBooster Pro) format documentation — Amiga DigiBooster tracker module: instruments, envelopes, and pattern layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### MDL (DigiTracker) format documentation ❓ widely-mirrored tech doc
+- **What:** The MDL (DigiTracker) format documentation — PC DigiTracker module: patterns, instruments, and envelopes.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### UMX (Unreal Music) format documentation ❓ widely-mirrored tech doc
+- **What:** The UMX (Unreal Music) format documentation — Unreal Engine music container: wraps S3M/XM/IT/MOD modules with engine package headers.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the container is the documented part — the wrapped modules are the known MOD/XM/S3M/IT formats. [Wave 36 Lane A]
+
+#### HSC (HSC-Tracker) format documentation ❓ widely-mirrored tech doc
+- **What:** The HSC (HSC-Tracker) format documentation — AdLib OPL2 tracker format: instrument and pattern layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; AdLib-era companion to the RAD entry. [Wave 36 Lane A]
+
+#### RAD (Reality ADlib Tracker) format documentation ❓ widely-mirrored tech doc
+- **What:** The RAD (Reality ADlib Tracker) format documentation — AdLib OPL2/OPL3 tracker format: instruments and song layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; AdLib-era companion to the HSC entry. [Wave 36 Lane A]
+
+#### KSS format documentation ❓ widely-mirrored tech doc
+- **What:** The KSS (KSSX) format documentation — MSX/Z80-system ripped-music format: header, memory map, and player contract.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; MSX music reference (libgme plays KSS — quarantine row 184). [Wave 36 Lane A]
+
+#### HES format documentation ❓ widely-mirrored tech doc
+- **What:** The HES format documentation — PC-Engine/TurboGrafx-16 ripped-music format: header and HuC6280 player contract.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; PC-Engine music reference (libgme plays HES — quarantine row 184). [Wave 36 Lane A]
+
+#### AY (ZX Spectrum) format documentation ❓ widely-mirrored tech doc
+- **What:** The AY format documentation — ZX Spectrum AY-3-8910 ripped-music format: header, register dumps, and player contract.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; ZX Spectrum music reference (libgme plays AY — quarantine row 184). [Wave 36 Lane A]
+
+#### SAP (Atari) format documentation ❓ widely-mirrored tech doc
+- **What:** The SAP format documentation — Atari 8-bit POKEY ripped-music format (type R and others): header, 6502 player contract, and POKEY register notes.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; Atari 8-bit music reference (ASAP plays SAP — quarantine row 259). [Wave 36 Lane A]
+
+#### RMT (Raster Music Tracker) format documentation ❓ widely-mirrored tech doc
+- **What:** The RMT (Raster Music Tracker) format documentation — Atari 8-bit tracker format: instruments, song lines, and the RMT player contract.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; Atari 8-bit tracker reference. [Wave 36 Lane A]
+
+#### DW (David Whittaker) format documentation ❓ widely-mirrored tech doc
+- **What:** The DW (David Whittaker) format documentation — Amiga packed-music format used across Whittaker's game soundtracks: unpacking and replay notes.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; game-music ripper reference. [Wave 36 Lane A]
+
+#### P61 (The Player 6.1) format documentation ❓ widely-mirrored tech doc
+- **What:** The P61 (The Player 6.1) format documentation — Amiga The Player packed-music format (Photon/Scoopex): structure and replay notes.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; game-music ripper reference. [Wave 36 Lane A]
+
+#### NoiseTracker format documentation ❓ widely-mirrored tech doc
+- **What:** The NoiseTracker format documentation — the original Amiga Soundtracker-clone format (the 4-channel MOD ancestor): pattern and sample layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; companion to the existing ProTracker MOD doc entry — the format MOD grew out of. [Wave 36 Lane A]
+
+#### SoundTracker (Ultimate Soundtracker) format documentation ❓ widely-mirrored tech doc
+- **What:** The Ultimate Soundtracker format documentation — Karsten Obarski's original Amiga format (the first MOD): 15-sample layout and pattern encoding.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the historical root of the MOD family — see also the M15 entry. [Wave 36 Lane A]
+
+#### Startrekker format documentation ❓ widely-mirrored tech doc
+- **What:** The Startrekker format documentation — Amiga Startrekker tracker module: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; Amiga tracker reference. [Wave 36 Lane A]
+
+#### CMC (Chaos Music Composer) format documentation ❓ widely-mirrored tech doc
+- **What:** The CMC (Chaos Music Composer) format documentation — Atari ST tracker format: instrument and pattern layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; Atari ST tracker reference. [Wave 36 Lane A]
+
+#### M15 (Ultimate Soundtracker) format documentation ❓ widely-mirrored tech doc
+- **What:** The M15 format documentation — the 15-instrument Ultimate Soundtracker module variant: header, sample table, and pattern layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; companion to the SoundTracker entry — the 15-sample MOD root. [Wave 36 Lane A]
+
+#### WOW format documentation ❓ widely-mirrored tech doc
+- **What:** The WOW packed-module format documentation — scene packed-module variant: unpacking and structure notes.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; packed-module ripper reference. [Wave 36 Lane A]
+
+#### PSM format documentation ❓ widely-mirrored tech doc
+- **What:** The PSM (ProTracker Studio / Epic Megagames) format documentation — module format with instruments and pattern effects.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; PC tracker reference. [Wave 36 Lane A]
+
+
+#### SFX (SoundFX) format documentation ❓ widely-mirrored tech doc
+- **What:** The SFX (SoundFX 1.3/2.0) format documentation — Amiga SoundFX tracker module: instruments and pattern layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; Amiga tracker reference. [Wave 36 Lane A]
+
+
+#### AMS format documentation ❓ widely-mirrored tech doc
+- **What:** The AMS module format documentation — tracker module format: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. Distinct from the DSMI-family DSM format (already cataloged). [Wave 36 Lane A]
+
+#### DSym format documentation ❓ widely-mirrored tech doc
+- **What:** The DSym module format documentation — tracker module format: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### FMT format documentation ❓ widely-mirrored tech doc
+- **What:** The FMT module format documentation — tracker module format: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### MT2 (MadTracker 2) format documentation ❓ widely-mirrored tech doc
+- **What:** The MT2 (MadTracker 2) format documentation — MadTracker 2 module: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### PLM format documentation ❓ widely-mirrored tech doc
+- **What:** The PLM module format documentation — tracker module format: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### STX format documentation ❓ widely-mirrored tech doc
+- **What:** The STX module format documentation — tracker module format: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### SymMOD format documentation ❓ widely-mirrored tech doc
+- **What:** The SymMOD module format documentation — tracker module format: patterns, instruments, and effects layout.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]
+
+#### MO3 format documentation ❓ widely-mirrored tech doc
+- **What:** The MO3 format documentation — compressed module container: wraps MOD/XM/S3M/IT with MP3/Ogg-compressed samples; decoder contract.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; listed in the Mod Archive's supported-format set. [Wave 36 Lane A]

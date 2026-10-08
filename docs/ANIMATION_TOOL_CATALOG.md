@@ -2817,3 +2817,73 @@ source of mouth-timing truth for spot-checking aligner output.
 - **License:** custom license — free of charge, **no redistribution** (verified — upstream README: "you must register at the website and download it from there"); Microsoft holds copyright. **Verify per use.**
 - **Use:** HVite forced alignment as a methodological reference; historical baseline for any new aligner evaluation.
 - **Lane note:** Wave 2 Lane B: awareness entry; the no-redistribution term rules out pipeline distribution.
+
+## Audio-driven animation retiming (motion synced to voice delivery)
+<!-- tools whose output retimes/syncs/regenerates animation to match a voice track:
+     audio-driven mouth regeneration, subtitle/beat retiming to dialogue,
+     streaming word timestamps, speech activity gating, co-speech gestures -->
+
+#### MuseTalk ✅
+- **What:** Real-time audio-driven lip synchronization — regenerates the lower-face/mouth region of each video frame to match the driving speech via single-step latent-space inpainting (UNet conditioned on whisper-tiny audio features). ~30 fps on GPU, no denoising loop.
+- **URL:** https://github.com/TMElyralab/MuseTalk
+- **License:** MIT (verified 2026-10-08: upstream-linked attributions from multiple downstream integrations — xocialize/musetalk-mlx-swift "MIT-licensed, commercial-OK", skyphusion vivijure-musetalk "redistributes MuseTalk (MIT, TMElyralab)", genesisinteractive/LiveTalk-Unity "MuseTalk — MIT License").
+- **Use:** finish pass on dialogue shots — feed the approved line + character plate, get mouth motion regenerated to the actual voice delivery (replaces manual mouth-swap retiming on close-ups).
+- **Lane note:** Wave 3 Lane C: the strongest open-source "retime animation to voice" tool found; models keep their own permissive licenses.
+
+#### EchoMimic ✅
+- **What:** Audio-driven portrait animation through editable landmark conditioning (Ant Group, AAAI 2025); V1 = portrait, V2 = semi-body human animation, V3 = 1.3B unified multi-modal/multi-task animation.
+- **URL:** https://github.com/antgroup/echomimic_v3
+- **License:** Apache-2.0 (verified 2026-10-08: official antgroup/echomimic_v3 README § License — "The models in this repository are licensed under the Apache 2.0 License"; independent third-party license tables concur).
+- **Use:** dialogue performance generation from a still plate + voice line; landmark-conditioning makes the mouth/hand motion follow the actual delivery.
+- **Lane note:** Wave 3 Lane C: series entry (V1–V3 lineage); license verified on the current official repo.
+
+#### ffsubsync ✅
+- **What:** Language-agnostic automatic synchronization of subtitles with video — discretizes audio + subtitle into 10 ms windows, detects speech activity (WebRTC VAD or auditok), and aligns the two binary strings; also syncs a bad SRT against a good reference SRT.
+- **URL:** https://github.com/smacke/ffsubsync
+- **License:** MIT (verified 2026-10-08: upstream README license badge "License: MIT"; independent agent-skill audit "ships under the MIT license").
+- **Use:** retime dialogue subtitle/caption files to the final voice mix (`ffs video.mp4 -i unsynced.srt -o synced.srt`) — the timed-text retiming slot in the animatic pipeline.
+- **Lane note:** Wave 3 Lane C: complements subaligner/whisper-lrc with pure drift correction (no ASR needed).
+
+#### sherpa-onnx ✅
+- **What:** Next-gen Kaldi speech toolkit runtime — streaming/non-streaming ASR with word timestamps, VAD, keyword spotting, diarization; ships Python/JS/WASM/C++/mobile bindings, ~1.13.x active.
+- **URL:** https://github.com/k2-fsa/sherpa-onnx
+- **License:** Apache-2.0 (verified 2026-10-08: upstream LICENSE, cited by multiple downstream THIRD_PARTY_NOTICES with pinned-version links). Caveat: the prebuilt TTS runtime embeds eSpeak NG (GPL-3.0-or-later) — ASR/alignment use does not pull it in; download upstream archives, don't republish.
+- **Use:** live/low-latency word timestamps for the lip-sync ingest path; WASM build enables in-browser timing tools.
+- **Lane note:** Wave 3 Lane C: the Apache-licensed streaming counterpart to Vosk/whisper.cpp.
+
+#### SpeechBrain ✅
+- **What:** All-in-one PyTorch speech toolkit with CTC-segmentation alignment utilities and forced-alignment recipes (plus k2 aligner bindings) — word/phone timings from audio + transcript without a separate aligner install.
+- **URL:** https://github.com/speechbrain/speechbrain
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README — "SpeechBrain is released under the Apache License, version 2.0").
+- **Use:** alternative alignment backend for the whisper_align_to_timeline pipeline (CTC segmentation path); research glue for alignment experiments.
+- **Lane note:** Wave 3 Lane C: listed as the framework-grade alignment option; third-party research notes confirm CTC-alignment utilities.
+
+#### Prosodylab-Aligner ✅
+- **What:** HTK-based forced aligner for laboratory speech (Gorman & Wagner, 2011) — word/phone-level alignment of audio to transcript via classic HMM pipeline; small, scriptable, Python interface forks maintained.
+- **URL:** https://github.com/kylebgorman/prosodylab-aligner
+- **License:** MIT (verified 2026-10-08: upstream README "## License — The MIT License"). Caveat: it shells out to HTK (custom no-redistribution license — already cataloged as ⚠️) and SoX (GPL-2.0, quarantined) — the scripts are MIT, the dependencies are not.
+- **Use:** lightweight offline forced alignment for mouth-timing on clean studio VO; calibration reference against neural aligners.
+- **Lane note:** Wave 3 Lane C: scripts safe, dependency chain flagged — matches the catalog's pyrubberband/Rubber-Band split convention.
+
+#### auditok ✅
+- **What:** Lightweight audio activity detection + segmentation (Python) — splits audio streams into events by energy thresholding with duration/silence rules; CLI + API; optional WebRTC frame-level validator; no models required, numpy-only core.
+- **URL:** https://github.com/amsehili/auditok
+- **License:** MIT (verified 2026-10-08: upstream docs "## License — MIT.").
+- **Use:** find "where the speech is" in a dialogue stem — speech/silence event boundaries drive mouth rest-vs-open gating and retime animation segments to pause structure (`auditok fix-pauses` normalizes breaths).
+- **Lane note:** Wave 3 Lane C: the ffsubsync `--vad=auditok` backend; model-free VAD for the ingest path.
+
+#### silero-vad ✅
+- **What:** Pre-trained enterprise-grade voice activity detector (~2 MB ONNX) — `get_speech_timestamps` returns speech boundaries at 8/16 kHz; 6000+ language training, robust in noisy/far-field audio.
+- **URL:** https://github.com/snakers4/silero-vad
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)"; independent third-party notices concur).
+- **Use:** neural speech/silence segmentation for dialogue stems — cleaner event boundaries than energy VAD on music-bed dialogue; feeds the lip-sync pipeline's rest-pose gating.
+- **Lane note:** Wave 3 Lane C: the neural VAD counterpart to auditok; already a faster-whisper ecosystem dependency.
+
+#### ZeroEGGS ⚠️ non-commercial — research only
+- **What:** Zero-shot example-based gesture generation from speech (Ubisoft La Forge, 2023) — generates full-body co-speech gestures (BVH/FBX) from an audio track + a short style example; the canonical "animate the body to the voice" research system.
+- **URL:** https://github.com/ubisoft/ubisoft-laforge-zeroeggs
+- **License:** custom Ubisoft terms — **NOT licensed for commercial use** (verified 2026-10-08: official retarget README — "licensed under the same terms as the original dataset. This means this data is NOT licensed for commercial use"). **Verify per use.**
+- **Use:** research-only reference for how gesture timing follows prosody; informs in-house gesture-retiming heuristics without touching the assets.
+- **Lane note:** Wave 3 Lane C: included for awareness with the honest badge; no Ubisoft code/data enters commercial paths.
+
+<!-- end lane C wave 3: audio-driven animation retiming (9 entries; 2 GPL-family rows → quarantine 104–105) -->

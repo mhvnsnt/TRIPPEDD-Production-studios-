@@ -35998,3 +35998,273 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** 6500-family datasheets incl. SID; community archive, no blanket grant. [Wave 39 Lane A]
+
+#### Liquidsoap 🚫 GPL-2.0 — QUARANTINED (row 356)
+- **What:** Liquidsoap — scriptable audio/video stream generation language (Savonet); the playout engine behind LibreTime/Airtime-style radio automation
+- **URL:** https://github.com/savonet/liquidsoap
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on savonet/liquidsoap)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Radio-automation scripting deep tail; copyleft — standalone/reference use only. QUARANTINE row 356. [Wave 40 Lane A]
+
+#### IsadoraAir 🚫 AGPL-3.0 — QUARANTINED (row 357)
+- **What:** IsadoraAir — Django-based radio automation for community LPFM: library, scheduling, dual-deck playback, remote DJ over WebRTC, streaming, RDS, monitoring, royalty reporting, voice tracks, FX carts
+- **URL:** https://github.com/celltech161/isadoraair
+- **License:** AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on celltech161/isadoraair)
+- **Free tier:** free/open-source (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Newest open radio-automation stack (active, updated 2026-10); network copyleft — never hosted/wired. QUARANTINE row 357. [Wave 40 Lane A]
+
+#### EAS Station (KR8MER/eas-station) 🚫 AGPL-3.0 — QUARANTINED (row 358)
+- **What:** EAS Station — open software-defined Emergency Alert System platform: CAP-to-broadcast pipeline, FCC Part-11 SAME audio encoding, GPS-disciplined clock, PostGIS geofencing, tamper-evident audit ledger (lab/research use only, not FCC-certified)
+- **URL:** https://github.com/KR8MER/eas-station
+- **License:** AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on KR8MER/eas-station)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** EAS deep tail; research/reference only — generating valid SAME headers has legal constraints (see repo legal section). QUARANTINE row 358. [Wave 40 Lane A]
+
+#### eas-tools (wagwan-piffting-blud/eas-tools) 🚫 GPL-3.0 — QUARANTINED (row 359)
+- **What:** eas-tools — browser-based EAS/SAME toolkit: real-time decoder, SAME header encoder, text-crawl generator, audio splicer, phoneme converter, video/audio muxer; fully client-side, works offline
+- **URL:** https://github.com/wagwan-piffting-blud/eas-tools
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on wagwan-piffting-blud/eas-tools)
+- **Free tier:** free/open-source (also hosted at eas.tools)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** EAS encoder/decoder deep tail; lab/testing/hobbyist use only per upstream legal notice. QUARANTINE row 359. [Wave 40 Lane A]
+
+#### EAS.js (globaleas/EAS.js) 🚫 GPL-3.0 — QUARANTINED (row 360)
+- **What:** EAS.js — community open-source JavaScript library for SAME/EAS header decoding (npm: easjs): event, issuer, locations, timing, sender breakdown
+- **URL:** https://github.com/globaleas/EAS.js
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on globaleas/EAS.js)
+- **Free tier:** free/open-source (npm install easjs)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SAME decode library deep tail; copyleft — never linked into shipping code. QUARANTINE row 360. [Wave 40 Lane A]
+
+#### eas-samemon (jhonjrd/eas-samemon) ✅ commercial-safe
+- **What:** eas-samemon — real-time EAS/SAME emergency-alert monitor for North America (US/CA/MX) via RTL-SDR; 100% native Python receive-only pipeline, SASMEX + Home Assistant webhook support
+- **URL:** https://github.com/jhonjrd/eas-samemon
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on jhonjrd/eas-samemon)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** EAS deep tail; passive receive-only decoder — research/hobbyist use per upstream legal disclaimer. [Wave 40 Lane A]
+
+#### dsame (cuppa-joe/dsame) ✅ commercial-safe
+- **What:** dsame — Python SAME (Specific Area Message Encoding) header parser library by Joseph W. Metcalf; the alertparser base reused by eas-samemon
+- **URL:** https://github.com/cuppa-joe/dsame
+- **License:** ISC (verified 2026-10-08 via GitHub API spdx_id on cuppa-joe/dsame)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SAME parse-library deep tail; permissive license. [Wave 40 Lane A]
+
+#### multimon-ng 🚫 GPL-2.0 — QUARANTINED (row 361)
+- **What:** multimon-ng — digital radio transmission decoder (EliasOenal fork): decodes EAS/SAME plus POCSAG, FLEX, APRS, MORSE and other modes from audio/SDR input
+- **URL:** https://github.com/EliasOenal/multimon-ng
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on EliasOenal/multimon-ng)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** EAS/SAME decode deep tail; copyleft — standalone tool use only. QUARANTINE row 361. [Wave 40 Lane A]
+
+#### scte35 (rafaelcaricio/scte35) ✅ commercial-safe
+- **What:** scte35 — Rust library + CLI for creating and parsing SCTE-35 digital-program-insertion cue messages (splice_insert, time_signal, CRC validation)
+- **URL:** https://github.com/rafaelcaricio/scte35
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on rafaelcaricio/scte35)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SCTE-35 deep tail; ad-insertion cueing for broadcast/streaming. [Wave 40 Lane A]
+
+#### vmix-scte35-detector ✅ commercial-safe
+- **What:** vmix-scte35-detector — pure-Go real-time SCTE-35 splice-command detector (splice_insert/splice_null, cue-out/cue-in, duration auto-return) that triggers vMix via local HTTP API; includes SRT/UDP ingest relay + operator GUI
+- **URL:** https://github.com/dgalact/vmix-scte35-detector
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on dgalact/vmix-scte35-detector)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** SCTE-35 ad-break automation deep tail; vMix-oriented. [Wave 40 Lane A]
+
+#### scte35-scheduler ❓ unverified
+- **What:** scte35-scheduler — web app for scheduling SCTE-35 markers for live-stream ad insertion (OBS + Flussonic oriented); cron-based injection, Prisma/SQLite or PostgreSQL storage, Docker support
+- **URL:** https://github.com/shihan84/scte35-scheduler
+- **License:** unverified — no license file in repo (verified 2026-10-08 via GitHub API: license null, no LICENSE/COPYING found)
+- **Free tier:** free to use (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** SCTE-35 scheduling deep tail; no license grant found — treat as unlicensed until upstream declares. [Wave 40 Lane A]
+
+#### video-scte35-platform ❓ unverified
+- **What:** video-scte35-platform — AI-powered SCTE-35 marker insertion: YOLOv8/baseline splice-opportunity detection, SCTE-35 payload generator (splice_insert/time_signal, MPEG-2 CRC), HLS manifest patcher (EXT-X-DATERANGE), multi-protocol output
+- **URL:** https://github.com/ainatunde/video-scte35-platform
+- **License:** unverified — no license file in repo (verified 2026-10-08 via GitHub API: license null, no LICENSE/COPYING found)
+- **Free tier:** free to use (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** SCTE-35 deep tail; no license grant found — research only until upstream declares. [Wave 40 Lane A]
+
+#### DVBlast 🚫 GPL-2.0 — QUARANTINED (row 362)
+- **What:** DVBlast — VideoLAN DVB demux streaming app: tunes a Linux DVB device, places PID filters, configures CAM, demultiplexes to multiple RTP outputs; core of a custom IRD/CID
+- **URL:** https://github.com/videolan/dvblast
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on videolan/dvblast)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** DVB playout/IRD deep tail; copyleft — standalone tool use only. QUARANTINE row 362. [Wave 40 Lane A]
+
+#### MuMuDVB 🚫 GPL-2.0 — QUARANTINED (row 363)
+- **What:** MuMuDVB — multicast DVB streaming: redistributes a DVB source (satellite/terrestrial/cable/ATSC) over IP as multicast/unicast/HTTP per-channel streams, with autoconfiguration
+- **URL:** https://github.com/braice/MuMuDVB
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on braice/MuMuDVB)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** DVB headend deep tail; copyleft — standalone tool use only. QUARANTINE row 363. [Wave 40 Lane A]
+
+#### VDR (Video Disk Recorder) 🚫 GPL-2.0 — QUARANTINED (row 364)
+- **What:** VDR — Klaus Schmidinger's Linux Video Disk Recorder: receive/record/playback DVB broadcasts on PC hardware, plugin architecture (MP3/DVD plugins), SVDRP control protocol
+- **URL:** https://github.com/vdr-projects/vdr (mirror of official git.tvdr.de)
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on vdr-projects/vdr; Wikipedia infobox lists GPL)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** DVB DVR/playout deep tail; upstream is git.tvdr.de (mirror used for API verification). QUARANTINE row 364. [Wave 40 Lane A]
+
+#### Astra-4 (Cesbo) 🚫 GPL-3.0 — QUARANTINED (row 365)
+- **What:** Astra-4 — archived open-source version of Cesbo Astra: digital TV broadcasting software (DVB/ISDB-T ingest, MPEG-TS demux/filter/remap, DVB-CI descrambling, SRT/SP RTSP outputs), Lua-scripted headend logic
+- **URL:** https://github.com/cesbo/astra-4 (archived; current commercial docs at github.com/cesbo/help)
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on cesbo/astra-4)
+- **Free tier:** free/open-source (archived open version; current Astra is commercial)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** IPTV/DVB headend deep tail; archived — use as reference; copyleft. QUARANTINE row 365. [Wave 40 Lane A]
+
+#### ODR-DabMux 🚫 GPL-3.0 — QUARANTINED (row 366)
+- **What:** ODR-DabMux — Open Digital Radio DAB multiplexer: builds DAB ensembles from encoded audio + service signalling (fork of CRC-DabMux), with remote control and stats
+- **URL:** https://github.com/opendigitalradio/ODR-DabMux
+- **License:** GPL-3.0 (verified 2026-10-08 via raw COPYING = GPL v3 text in opendigitalradio/ODR-DabMux)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** DAB broadcast-chain deep tail; copyleft — standalone tool use only. QUARANTINE row 366. [Wave 40 Lane A]
+
+#### ODR-AudioEnc ✅ commercial-safe
+- **What:** ODR-AudioEnc — Open Digital Radio DAB/DAB+ audio encoder toolchain (part of the ODR broadcast chain alongside ODR-DabMux)
+- **URL:** https://github.com/opendigitalradio/ODR-AudioEnc
+- **License:** Apache-2.0 (verified 2026-10-08 via ODR-AudioEnc README: "code for odr-audioenc in src/ licensed under the Apache Licence v2.0")
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** DAB encoding deep tail; permissive license stated in README (no root LICENSE file). [Wave 40 Lane A]
+
+#### Superdesk (Sourcefabric) 🚫 AGPL-3.0 — QUARANTINED (row 367)
+- **What:** Superdesk — Sourcefabric's open-source newsroom CMS: story-centric editorial planning, rundown management, ingest/wire handling for TV/radio/web newsrooms (distinct from NRK's Sofie, already cataloged)
+- **URL:** https://github.com/superdesk/superdesk
+- **License:** AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on superdesk/superdesk)
+- **Free tier:** free/open-source (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Newsroom/production deep tail; network copyleft — never hosted/wired. QUARANTINE row 367. [Wave 40 Lane A]
+
+#### Newscoop 🚫 GPL-3.0 — QUARANTINED (row 368)
+- **What:** Newscoop — Sourcefabric's open-source CMS for newsrooms (sister project to Airtime/Superdesk): multi-journalist publishing workflow for broadcast-adjacent newsrooms
+- **URL:** https://github.com/sourcefabric/Newscoop
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on sourcefabric/Newscoop)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Newsroom CMS deep tail; copyleft — standalone/reference use only. QUARANTINE row 368. [Wave 40 Lane A]
+
+#### Icecast 🚫 GPL-2.0 — QUARANTINED (row 369)
+- **What:** Icecast — Xiph's open streaming media server (Icecast-Server): Ogg/Opus/MP3/WebM broadcast streaming, mount-point relays, the open counterpart to SHOUTcast
+- **URL:** https://github.com/xiph/Icecast-Server
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on xiph/Icecast-Server)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Streaming-server deep tail (BUTT/AltaCast clients already cataloged; this is the server). QUARANTINE row 369. [Wave 40 Lane A]
+
+#### DVBInspector 🚫 GPL-3.0 — QUARANTINED (row 370)
+- **What:** DVBInspector — Java DVB/transport-stream analyzer: PSI/SI table decode, section/descriptor inspection for broadcast stream debugging
+- **URL:** https://github.com/EricBerendsen/dvbinspector
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on EricBerendsen/dvbinspector)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** DVB analysis deep tail; copyleft — standalone tool use only. QUARANTINE row 370. [Wave 40 Lane A]
+
+#### XMLTV 🚫 GPL-2.0 — QUARANTINED (row 371)
+- **What:** XMLTV — grabber/scraper suite producing XMLTV-format EPG listings (incl. tv_grab_dvb which dumps DVB EPG info to XMLTV); scheduling-data feed for broadcast tooling
+- **URL:** https://github.com/XMLTV/xmltv
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on XMLTV/xmltv)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Broadcast scheduling-data deep tail; copyleft — standalone tool use only. QUARANTINE row 371. [Wave 40 Lane A]
+
+#### OpenCaster 🚫 GPL-2.0 — QUARANTINED (row 372)
+- **What:** OpenCaster — Avalpa's open MPEG-TS multiplexer/playout toolkit: TS packet manipulation, PSI/SI table generation, data-broadcast playout utilities (EBU "Home Brew IPTV Head-end" reference toolchain)
+- **URL:** https://github.com/aventuri/opencaster (fork nexgenta/opencaster also exists)
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on aventuri/opencaster)
+- **Free tier:** free/open-source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** TS playout deep tail; copyleft — standalone tool use only. QUARANTINE row 372. [Wave 40 Lane A]
+
+#### BSI Natural Log ⚠️ proprietary — traffic/billing
+- **What:** Natural Log (Broadcast Software International) — radio traffic & billing: order/customer management, spot scheduling, log templates, copy manager with affidavits, QuickBooks invoice export
+- **URL:** https://www.bsiusa.com/product/scheduling/natural-log/
+- **License:** proprietary commercial (verified 2026-10-08 via bsiusa.com product page; network version licensed per station)
+- **Free tier:** none (paid)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Traffic/billing sub-pocket is proprietary-only (no open-source equivalent found this wave); reference/research only. [Wave 40 Lane A]
+
+#### NextKast NextTraffic ⚠️ proprietary — traffic/billing
+- **What:** NextTraffic (NextKast) — built-in traffic & billing for NextKast OnAir: order entry to proof-of-play and invoicing, patent-pending Traffic Tag System embedding scheduling/billing data in each commercial file
+- **URL:** https://news.radio-online.com/articles/n48535/NextKast-Launches-Built-In-Traffic-Billing-System
+- **License:** proprietary commercial (verified 2026-10-08 via radio-online.com launch coverage)
+- **Free tier:** none (paid module)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Traffic/billing sub-pocket is proprietary-only; reference/research only. [Wave 40 Lane A]
+
+#### AxelTech RAM-COMM ⚠️ proprietary — traffic/billing
+- **What:** RAM-COMM Radio (Axel Technology) — radio sales/traffic/billing suite: client/order management, sales-rep commissions, on-air traffic schedules, on-air certification, invoice generation, sales analysis; 20+ years in development
+- **URL:** https://www.axeltechnology.com/ram-comm-radio/
+- **License:** proprietary commercial (verified 2026-10-08 via axeltechnology.com product page)
+- **Free tier:** none (paid)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Traffic/billing sub-pocket is proprietary-only; reference/research only. [Wave 40 Lane A]

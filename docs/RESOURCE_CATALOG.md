@@ -42772,3 +42772,433 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Research lane only — POKEY format spec lives inside a GPL codebase; read, don't lift. QUARANTINE row 259 (existing). [Wave 48 Lane A]
+
+### Pocket 3 — open film-restoration tooling (42 entries)
+
+#### Bringing Old Photos Back to Life ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** microsoft/Bringing-Old-Photos-Back-to-Life — CVPR 2020 oral: deep restoration of old photos (defects, scratches, fading) via triplet-domain translation.
+- **URL:** https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2023-10-26)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Scratch/dust/defect removal + color restoration in one pipeline — the closest open equivalent to commercial photo-restoration suites. [Wave 48 Lane A]
+
+#### DeepRemaster ⚠️ CC-BY-NC-SA-4.0 — non-commercial
+- **What:** DeepRemaster (Iizuka & Simo-Serra, SIGGRAPH Asia 2019) — semi-automatic remastering of vintage video: film-noise removal, contrast/sharpness, reference-based colorization.
+- **URL:** https://github.com/pepe-77777/old_deepremaster
+- **License:** ⚠️ CC-BY-NC-SA-4.0 — non-commercial, share-alike (verified 2026-10-08 via repo README license section)
+- **Free tier:** free for non-commercial use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane — the temporal source-reference attention approach is the study target; NC license bars shipping use. [Wave 48 Lane A]
+
+#### ProPainter ⚠️ NTU S-Lab 1.0 — non-commercial
+- **What:** sczhou/ProPainter (ICCV 2023) — video inpainting via improved propagation + transformers; state-of-the-art scratch/dirt/object removal.
+- **URL:** https://github.com/sczhou/ProPainter
+- **License:** ⚠️ NTU S-Lab License 1.0 — "strictly for non-commercial purposes" (verified 2026-10-08 via repo README license section)
+- **Free tier:** free for non-commercial use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane — the propagation architecture is the inpainting study target; NC license bars shipping use. [Wave 48 Lane A]
+
+#### E2FGVI ⚠️ CC-BY-NC-4.0 — non-commercial
+- **What:** MCG-NKU/E2FGVI — "Towards An End-to-End Framework for Flow-Guided Video Inpainting": fast video inpainting for dirt/scratch/watermark removal.
+- **URL:** https://github.com/MCG-NKU/E2FGVI
+- **License:** ⚠️ CC-BY-NC-4.0 — "for Non-commercial use only" (verified 2026-10-08 via repo README license section; pushed 2023-04-07)
+- **Free tier:** free for non-commercial use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane — flow-guided inpainting is faster than ProPainter at some quality cost; NC license bars shipping use. [Wave 48 Lane A]
+
+#### fmtconv ✅ commercial-safe (WTFPL, GitHub API verified 2026-10-08)
+- **What:** EleonoreMizo/fmtconv — format conversion tools for VapourSynth and AviSynth+ (bit-depth, colorspace, chroma resampling).
+- **URL:** https://github.com/EleonoreMizo/fmtconv
+- **License:** ✅ WTFPL (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The colorspace/bit-depth plumbing underneath every restoration chain — WTFPL-clean for pipeline use. [Wave 48 Lane A]
+
+#### BagIt (RFC 8493) ✅ open standard
+- **What:** The BagIt File Packaging Format (RFC 8493) — LoC/IETF standard for packaging digital-preservation transfers with manifests and checksums.
+- **URL:** https://datatracker.ietf.org/doc/html/rfc8493
+- **License:** ✅ IETF open standard — free to implement (verified 2026-10-08 via datatracker.ietf.org, HTTP 200)
+- **Free tier:** Free spec
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Preservation-packaging standard — any restored asset leaving the pipeline should ship as a BagIt bag with checksums. [Wave 48 Lane A]
+
+#### FADGI (Federal Agencies Digital Guidelines Initiative) ✅ US federal PD
+- **What:** FADGI — US federal digitization guidelines: still-image and AV digitization targets, QC metrics, and conformance levels.
+- **URL:** https://www.digitizationguidelines.gov
+- **License:** ✅ US federal public domain (verified 2026-10-08 via digitizationguidelines.gov, HTTP 200)
+- **Free tier:** Free guidelines
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The QC bar for restoration deliverables — FADGI star ratings define what "archival quality" means. [Wave 48 Lane A]
+
+#### AV Artifact Atlas ✅ commercial-safe (MIT, verified 2026-10-08)
+- **What:** bavc/avaa — BAVC's Audiovisual Artifact Atlas: community-built visual glossary of video/audio errors and anomalies (head clogs, dropouts, TBC errors…).
+- **URL:** https://github.com/bavc/avaa
+- **License:** ✅ MIT (verified 2026-10-08 via repo README "MIT. See LICENSE")
+- **Free tier:** free OSS; live atlas at bavc.github.io/avaa
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Defect-identification bible — use it to name what QCTools flags before deciding the repair chain. [Wave 48 Lane A]
+
+#### Gyroflow 🚫 GPL-3.0 — QUARANTINED (new row 444)
+- **What:** gyroflow/gyroflow — video stabilization using gyroscope data (modern, cross-platform).
+- **URL:** https://github.com/gyroflow/gyroflow
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-08)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — gyro-based stabilization algorithms are the study target; never linked. QUARANTINE row 444. [Wave 48 Lane A]
+
+#### QCTools 🚫 GPL-3.0 — QUARANTINED (new row 445)
+- **What:** bavc/qctools — Quality Control Tools for Video Preservation: signal graphs, artifact detection, and QC reporting for archival video.
+- **URL:** https://github.com/bavc/qctools
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via License.html "QCTools is licensed under a GPLv3 License")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the archival QC workflow (what to measure, which graphs matter) is the study target; never linked. QUARANTINE row 445. [Wave 48 Lane A]
+
+#### Archivematica 🚫 AGPL-3.0 — QUARANTINED (new row 446)
+- **What:** artefactual/archivematica — open-source digital preservation system (ingest, normalization, AIP/DIP packaging).
+- **URL:** https://github.com/artefactual/archivematica
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-08)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the preservation-workflow model (micro-services pipeline); never deployed as a network service. QUARANTINE row 446. [Wave 48 Lane A]
+
+#### JHOVE 🚫 LGPL-2.1 — QUARANTINED (new row 447)
+- **What:** openpreserve/jhove — JSTOR/Harvard Object Validation Environment: file-format validation and characterization.
+- **URL:** https://github.com/openpreserve/jhove
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via LICENSE raw "Lesser General Public License ... version 2.1") — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — format-validation rules for archival deliverables; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 447. [Wave 48 Lane A]
+
+#### DCP-o-matic 🚫 GPL-2.0 — QUARANTINED (new row 448)
+- **What:** cth103/dcpomatic — open-source DCP (Digital Cinema Package) creation tool.
+- **URL:** https://github.com/cth103/dcpomatic
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-05)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — DCP packaging knowledge for cinema deliverables; never linked. QUARANTINE row 448. [Wave 48 Lane A]
+
+#### vid.stab 🚫 LGPL-2.1-or-later — QUARANTINED (new row 449)
+- **What:** georgmartius/vid.stab — video stabilization library (the deshake engine behind transcode/ffmpeg-era stabilization).
+- **URL:** https://github.com/georgmartius/vid.stab
+- **License:** 🚫 LGPL-2.1-or-later (verified 2026-10-08 via README "GNU Lesser General Public License, version 2.1 or later") — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the transform-smoothing algorithms; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 449. [Wave 48 Lane A]
+
+#### Deshaker 🚫 GPL-2.0 — QUARANTINED (new row 450)
+- **What:** gu-t/Deshaker — Gunnar Thalin's Deshaker: VirtualDub video-stabilizer plugin (open-sourced 2022).
+- **URL:** https://github.com/gu-t/Deshaker
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; author page guthspot.se confirms open-source since 2022)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the classic rolling-shutter/des shake correction approach; never linked. QUARANTINE row 450. [Wave 48 Lane A]
+
+#### CinePaint 🚫 GPL-2.0 — QUARANTINED (row 311 exists)
+- **What:** CinePaint — deep-bit (up to 32-bit float) film paint/retouch tool, the Glasgow fork of GIMP built for motion-picture restoration.
+- **URL:** https://sourceforge.net/projects/cinepaint/
+- **License:** 🚫 GPL-2.0 — quarantined (row 311 exists, verified Wave 38 Lane A via SourceForge license field)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — frame-by-frame dust/scratch paint workflow is the study target; never linked. QUARANTINE row 311 (existing). [Wave 48 Lane A]
+
+#### MSU Denoiser ⚠️ freeware — no redistributable open grant
+- **What:** MSU Denoiser — Moscow State University Graphics & Media Lab's free VirtualDub/AviSynth noise-reduction filter.
+- **URL:** https://www.compression.ru/video/denoiser/index_en.html
+- **License:** ⚠️ Freeware — free download from MSU; no open-source grant stated (verified 2026-10-08 via compression.ru, HTTP 200 with browser UA)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Grain-management reference — MSU's filters are quality benchmarks for temporal denoising; binaries free, not redistributable as source. [Wave 48 Lane A]
+
+#### MSU Deflicker ⚠️ freeware — no redistributable open grant
+- **What:** MSU Deflicker — MSU Graphics & Media Lab's free flicker-removal filter for digitized film/video.
+- **URL:** https://www.compression.ru/video/deflicker/index_en.html
+- **License:** ⚠️ Freeware — free download from MSU; no open-source grant stated (verified 2026-10-08 via compression.ru, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Flicker-removal reference for aged-film transfers; binaries free, not redistributable as source. [Wave 48 Lane A]
+
+#### Neat Video 🚫 honest negative (commercial)
+- **What:** Neat Video — commercial noise-reduction plugin (Premiere/Resolve/Final Cut/OFX).
+- **URL:** https://www.neatvideo.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via neatvideo.com)
+- **Free tier:** Paid; limited demo
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative — the quality bar for temporal denoising, but closed; open alternatives: MSU Denoiser, KNLMeansCL, BM3D. [Wave 48 Lane A]
+
+#### RE:Vision Effects 🚫 honest negative (commercial)
+- **What:** RE:Vision Effects — commercial restoration/VFX plugins (DE:Noise, RE:Fill, FieldsKit deinterlacer).
+- **URL:** https://www.revisionfx.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via revisionfx.com, HTTP 200)
+- **Free tier:** Paid; watermarked demos
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative — FieldsKit/DE:Noise define the commercial deinterlace/denoise bar; open alternatives: QTGMC, SMDegrain. [Wave 48 Lane A]
+
+#### Digital Vision (Phoenix/Nucoda) 🚫 honest negative (commercial)
+- **What:** Digital Vision — commercial film-restoration suite (Phoenix) and Nucoda color/finishing platform.
+- **URL:** https://www.digitalvision.se
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via digitalvision.se, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — the industry restoration pipeline reference; open alternatives: QCTools + AviSynth/VapourSynth chains. [Wave 48 Lane A]
+
+#### PFClean 🚫 honest negative (commercial)
+- **What:** The Pixel Farm's PFClean — commercial film restoration/cleanup suite (dust/scratch, grain, stabilization).
+- **URL:** https://www.thepixelfarm.co.uk
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via thepixelfarm.co.uk, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — the dust-busting workflow reference; open alternatives: RemoveDirt/DeSpot/DeScratch chains. [Wave 48 Lane A]
+
+#### Diamant (HS-ART) 🚫 honest negative (commercial)
+- **What:** HS-ART Diamant — commercial film restoration software (dust/scratch removal, stabilization, color).
+- **URL:** https://www.hs-art.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via hs-art.com, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — Diamant's automated dust maps are the feature to replicate openly. [Wave 48 Lane A]
+
+#### MTI Film CORTEX 🚫 honest negative (commercial)
+- **What:** MTI Film CORTEX — commercial dailies/restoration platform with automated dirt-removal.
+- **URL:** https://www.mtifilm.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via mtifilm.com, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — listed so the "CORTEX dirt removal" reference isn't mistaken for open tooling. [Wave 48 Lane A]
+
+#### Doom9 forums ✅ community
+- **What:** Doom9 — the long-running video-encoding/restoration forum; home of AviSynth development, QTGMC, and filter research.
+- **URL:** https://forum.doom9.org
+- **License:** ✅ Community — forum posts per-author; filter licenses vary (verified 2026-10-08 via forum.doom9.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Restoration knowledge base — where every AviSynth/VapourSynth restoration filter is developed and documented. [Wave 48 Lane A]
+
+#### AMIA (Association of Moving Image Archivists) ✅ org
+- **What:** AMIA — professional association for AV archiving; standards, conferences, and preservation resources.
+- **URL:** https://www.amianet.org
+- **License:** ✅ Organization site (verified 2026-10-08 via amianet.org, HTTP 200)
+- **Free tier:** Free resources; paid membership
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Practice authority — AMIA guidance defines professional restoration/preservation workflows. [Wave 48 Lane A]
+
+#### PrestoCentre ✅ community
+- **What:** PrestoCentre — AV preservation community of practice (competence centres, webinars, QA knowledge).
+- **URL:** https://www.prestocentre.org
+- **License:** ✅ Community (verified 2026-10-08 via prestocentre.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** European preservation community — QC and restoration practice exchange. [Wave 48 Lane A]
+
+#### Digital FAQ ✅ guides (bot-walled this pass)
+- **What:** Digital FAQ (digitalfaq.com) — long-running restoration guides (VHS transfer, deinterlacing, QTGMC workflows).
+- **URL:** https://www.digitalfaq.com
+- **License:** ✅ Guides — site-copyrighted how-tos (verified 2026-10-08; site bot-walls automated fetch — HTTP 403 — resource confirmed)
+- **Free tier:** Free guides; forum
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Practitioner guides for capture-to-restore chains — the "lordsmurf" deinterlacing guides are canonical. [Wave 48 Lane A]
+
+#### AviSynth wiki ✅ docs (intermittent 507 this pass)
+- **What:** The AviSynth wiki — documentation for every AviSynth/AviSynth+ filter, including the restoration plugin catalog.
+- **URL:** http://avisynth.nl
+- **License:** ✅ Docs — per-wiki terms (verified 2026-10-08 via search-confirmed pages; direct fetch returned intermittent HTTP 507)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter-catalog authority — QTGMC, TIVTC, DeSpot, and the whole restoration plugin family are documented here. [Wave 48 Lane A]
+
+#### IASA guidelines ✅ standards
+- **What:** IASA (International Association of Sound and Audiovisual Archives) — TC-03/TC-04/TC-06 preservation standards for audio and video.
+- **URL:** https://www.iasa-web.org
+- **License:** ✅ Standards — freely readable (verified 2026-10-08 via iasa-web.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Standards lane — IASA-TC 06 governs video preservation targets and QC. [Wave 48 Lane A]
+
+#### Open Preservation Foundation ✅ org
+- **What:** OPF — nonprofit sustaining open preservation tools (JHOVE, veraPDF) and knowledge.
+- **URL:** https://openpreservation.org
+- **License:** ✅ Organization site (verified 2026-10-08 via openpreservation.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tool-sustainability lane — OPF stewards the validation tooling this pocket quarantines (JHOVE). [Wave 48 Lane A]
+
+#### QTGMC ❓ no license stated on AviSynth wiki
+- **What:** QTGMC — the reference-quality AviSynth deinterlacer (motion-compensated, presets from Draft to Placebo, noise processing, source-match).
+- **URL:** http://avisynth.nl/index.php/QTGMC
+- **License:** ❓ No license stated on the AviSynth wiki (License field blank; verified 2026-10-08 via wiki page)
+- **Free tier:** Free script download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the deinterlacing quality bar, but no license grant on record; treat as all-rights-reserved until the authors state terms. [Wave 48 Lane A]
+
+#### TIVTC ❓ license unverified this pass
+- **What:** TIVTC — tritical's AviSynth inverse-telecine plugin (field matching + decimation for 3:2 pulldown removal).
+- **URL:** http://avisynth.nl/index.php/TIVTC
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — canonical IVTC; verify license before any code reuse. [Wave 48 Lane A]
+
+#### NNEDI3 ❓ license unverified this pass
+- **What:** NNEDI3 — tritical's neural-network edge-directed interpolation (deinterlacing/upsampling kernel used inside QTGMC).
+- **URL:** http://avisynth.nl/index.php/NNEDI3
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the intra-field interpolation reference; verify license before any code reuse. [Wave 48 Lane A]
+
+#### DeSpot ❓ license unverified this pass
+- **What:** DeSpot — AviSynth spot/dirt-removal plugin for film transfers.
+- **URL:** http://avisynth.nl/index.php/DeSpot
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — spot-removal approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+#### DeScratch ❓ license unverified this pass
+- **What:** DeScratch — AviSynth vertical-scratch removal plugin for film scans.
+- **URL:** http://avisynth.nl/index.php/DeScratch
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — scratch-removal approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+#### KNLMeansCL ❓ license unverified this pass
+- **What:** KNLMeansCL — OpenCL non-local-means denoiser for AviSynth/VapourSynth (grain management).
+- **URL:** http://avisynth.nl/index.php/KNLMeansCL
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — GPU NL-means denoising reference; verify license before any code reuse. [Wave 48 Lane A]
+
+#### BM3D (VapourSynth) ❓ license unverified this pass
+- **What:** VapourSynth BM3D — block-matching 3D collaborative-filtering denoiser plugin.
+- **URL:** https://github.com/WolframRhodium/VapourSynth-BM3DCUDA
+- **License:** ❓ License unverified this pass (verified 2026-10-08 via GitHub repo existence only)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Diligence record — BM3D remains a denoising quality reference; verify license before any code reuse. [Wave 48 Lane A]
+
+#### DFTTest ❓ license unverified this pass
+- **What:** DFTTest — AviSynth frequency-domain (DCT) temporal denoiser.
+- **URL:** http://avisynth.nl/index.php/DFTTest
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — frequency-domain denoise approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+#### SMDegrain ❓ license unverified this pass
+- **What:** SMDegrain — AviSynth motion-compensated degraining script (Dogway).
+- **URL:** http://avisynth.nl/index.php/SMDegrain
+- **License:** ❓ License unverified this pass — widely-mirrored script (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — motion-compensated degrain recipe; verify license before any code reuse. [Wave 48 Lane A]
+
+#### MCTemporalDenoise ❓ license unverified this pass
+- **What:** MCTemporalDenoise — AviSynth multi-stage motion-compensated temporal denoiser script.
+- **URL:** http://avisynth.nl/index.php/MCTemporalDenoise
+- **License:** ❓ License unverified this pass — widely-mirrored script (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the classic "very high" denoise recipe; verify license before any code reuse. [Wave 48 Lane A]
+
+#### RemoveDirt ❓ license unverified this pass
+- **What:** RemoveDirt — AviSynth dirt-removal plugin family for film transfers.
+- **URL:** http://avisynth.nl/index.php/RemoveDirt
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — dirt-removal approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+### Wave 48 Lane A summary (2026-10-08)
+- New #### entries: 100 (Pocket 1: 27 PD animation/cartoon archives · Pocket 2: 31 chip-tracker long tail · Pocket 3: 42 film-restoration tooling)
+- Catalog: 4,130 → 4,230 honest entries (wave target met exactly)
+- Quarantine: rows 438–451 appended (14 new rows, all distinct, zero supersedes/delists)
+- Honest negatives: 11 (Undercrank, NFB, BFI, Neat Video, RE:Vision, Digital Vision, PFClean, Diamant, MTI CORTEX + 2 site-unreachable ❓ diligence records counted separately)
+- ❓ diligence records: 20 (license unverified — flagged for future waves, never assumed)
+- Zero post-hoc duplicates: every candidate pre-grepped against the full catalog before appending

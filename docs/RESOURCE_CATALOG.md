@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 271 rows · 248 distinct projects (Wave 32 Lane A: +1 row 271 Furnace GPL; Wave 31 Lane A: +6 rows 265–270 retro-tracker GPL/AGPL (Adlib Tracker II, gbsplay GPL-1.0-or-later, sc68, psgplay, vgmtools, ProTrackR2); Wave 29 Lane A: +1 row 264 Kaltura AGPL-3.0; Wave 28 Lane A: +1 row 263 audapolis AGPL-3.0; Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 34 rows · GPL 193 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. LGPL doctrine still pending owner verdict. Wave-26 Lane C spot-check (2026-10-08): 10/10 confirmed on never-audited rows (2 aeneas, 9 FlowFrames, 17 OpenShot, 20 piper-tts, 36 Inkscape, 50 Wick Editor, 67 Dexed, 80 ComfyUI-Manager, 126 Hydrogen, 131 NYC Parks Photo Archive) — zero relicensing events. Wave-26 Lane A: +12 rows 239–250 (retro-tracker GPL/AGPL). Wave-26 Lane B: +5 rows 251–255 (caption/karaoke GPL; renumbered from 239–243 at merge to resolve Lane A/B collision). Counts refreshed: 255 rows · 232 distinct. LGPL doctrine still pending owner verdict. Wave-28 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (63 marytts LGPL-3.0 facts-only, 66 Surge XT GPL-3.0, 75 Dragonfly Reverb GPL-3.0, 8 Flowblade GPL-3.0-or-later, 16 Olive GPL-3.0 with canonical upstream corrected to olive-editor/olive, 21 Power Sequencer GPL-3.0-or-later, 29 Avidemux GPL-2.0, 32 chaiNNer GPL-3.0, 39 LibreSprite GPL-2.0, 40 LiVES GPL-3.0) — zero relicensing events, zero delists, zero supersedes. Counts unchanged: 255 rows · 232 distinct. Wave-28 Lane A: +1 row 263 audapolis AGPL-3.0. Counts refreshed: 263 rows · 254 distinct. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag. Wave-29 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (26 TupiTube GPL-2.0-family, 72 Ardour, 73 Audacity, 80 ComfyUI-Manager, 88 Yoshimi, 92 Parselmouth, 102 VCV Rack, 104 SPPAS, 155 MKVToolNix, 236 telxcc) — zero relicensing events, zero delists, zero supersedes; 1 repo-moved path update (row 155 MKVToolNix: GitHub mbunkus/mkvtoolnix 404s → canonical now codeberg.org/mbunkus/mkvtoolnix); row 236 telxcc now archived upstream. Counts refreshed: 264 rows · 241 distinct (Wave 31 Lane A refresh: 270 rows · 247 distinct; Wave 32 Lane A refresh: 271 rows · 248 distinct; re-verified by direct count Wave 34 Lane B, 2026-10-08 — header counts correct). Wave-34 Lane B re-verification cycle (2026-10-08): 10/10 confirmed (rows 48 VidCutter, 49 whisper-timestamped, 52 Blender-StellarToon, 53 2D-Cel-Toon-Shader-v2-Plus, 54 manga-image-translator, 56 libre-manga-translator, 76 RobustVideoMatting, 77 mmd_tools, 78 APISR, 79 ADetailer) — zero relicensing events; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text unchanged). LGPL doctrine still pending owner verdict.
+- **Quarantined (copyleft) — 273 rows · 250 distinct projects (Wave 35 Lane B: +1 row 273 SubsAI GPL; Wave 34 Lane A: +1 row 272 Open Cubic Player GPL; Wave 32 Lane A: +1 row 271 Furnace GPL; Wave 31 Lane A: +6 rows 265–270 retro-tracker GPL/AGPL (Adlib Tracker II, gbsplay GPL-1.0-or-later, sc68, psgplay, vgmtools, ProTrackR2); Wave 29 Lane A: +1 row 264 Kaltura AGPL-3.0; Wave 28 Lane A: +1 row 263 audapolis AGPL-3.0; Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 34 rows · GPL 195 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. LGPL doctrine still pending owner verdict. Wave-26 Lane C spot-check (2026-10-08): 10/10 confirmed on never-audited rows (2 aeneas, 9 FlowFrames, 17 OpenShot, 20 piper-tts, 36 Inkscape, 50 Wick Editor, 67 Dexed, 80 ComfyUI-Manager, 126 Hydrogen, 131 NYC Parks Photo Archive) — zero relicensing events. Wave-26 Lane A: +12 rows 239–250 (retro-tracker GPL/AGPL). Wave-26 Lane B: +5 rows 251–255 (caption/karaoke GPL; renumbered from 239–243 at merge to resolve Lane A/B collision). Counts refreshed: 255 rows · 232 distinct. LGPL doctrine still pending owner verdict. Wave-28 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (63 marytts LGPL-3.0 facts-only, 66 Surge XT GPL-3.0, 75 Dragonfly Reverb GPL-3.0, 8 Flowblade GPL-3.0-or-later, 16 Olive GPL-3.0 with canonical upstream corrected to olive-editor/olive, 21 Power Sequencer GPL-3.0-or-later, 29 Avidemux GPL-2.0, 32 chaiNNer GPL-3.0, 39 LibreSprite GPL-2.0, 40 LiVES GPL-3.0) — zero relicensing events, zero delists, zero supersedes. Counts unchanged: 255 rows · 232 distinct. Wave-28 Lane A: +1 row 263 audapolis AGPL-3.0. Counts refreshed: 263 rows · 254 distinct. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag. Wave-29 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (26 TupiTube GPL-2.0-family, 72 Ardour, 73 Audacity, 80 ComfyUI-Manager, 88 Yoshimi, 92 Parselmouth, 102 VCV Rack, 104 SPPAS, 155 MKVToolNix, 236 telxcc) — zero relicensing events, zero delists, zero supersedes; 1 repo-moved path update (row 155 MKVToolNix: GitHub mbunkus/mkvtoolnix 404s → canonical now codeberg.org/mbunkus/mkvtoolnix); row 236 telxcc now archived upstream. Counts refreshed: 264 rows · 241 distinct (Wave 31 Lane A refresh: 270 rows · 247 distinct; Wave 32 Lane A refresh: 271 rows · 248 distinct; re-verified by direct count Wave 34 Lane B, 2026-10-08 — header counts correct). Wave-34 Lane B re-verification cycle (2026-10-08): 10/10 confirmed (rows 48 VidCutter, 49 whisper-timestamped, 52 Blender-StellarToon, 53 2D-Cel-Toon-Shader-v2-Plus, 54 manga-image-translator, 56 libre-manga-translator, 76 RobustVideoMatting, 77 mmd_tools, 78 APISR, 79 ADetailer) — zero relicensing events; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text unchanged). LGPL doctrine still pending owner verdict.
 
 - **Non-commercial / research-only — research lane only, never shipped (Wave-1 list, 17):** Spine (Esoteric Software) (Proprietary commercial (trial = evaluation only)); PureRef (Proprietary; free Personal license (non-commercial)); Wav2Lip (Custom non-commercial (personal/research only)); Coqui XTTS v2 (CPML 1.0 (Coqui Public Model License) on the XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)); Bark (suno-ai) (MIT code BUT README states model is CC-BY 4.0 NC due to EnCodec neural-codec backend (verified via README text quoted in forks)); BBC Sound Effects Archive (RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music press + BBC terms)); Stable Video Diffusion (Stability AI Community License (non-commercial)); LTX-Video (Apache-2.0 (code) + LTX Open Weights / Community License (weights)); HunyuanVideo (Tencent Hunyuan Community License Agreement (custom, verified)); SkyReels-V2 (Skywork Community License (custom, verified)); Pika (free tier) (Pika Terms of Service (proprietary)); Runway (free tier) (Runway Terms of Use (proprietary)); Luma (free tier) (Luma Terms (proprietary)); Hailuo AI / MiniMax (free tier) (MiniMax Terms (proprietary)); Kling AI (free tier) (Kling Terms (proprietary)); Pixverse (free tier) (Pixverse Terms (proprietary)); LTX Studio (free tier) (LTX Studio Terms (proprietary)) Later waves added more NC/research-gated items (not in the original 17 — documented in the wave notes): Spark-TTS + F5-TTS NC weights; IndexTTS (bilibili Model Use License); SUPIR, StableSR, CodeFormer, Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license); PlayHT/PlayAI (shut down 2025-12-31); Dia/VibeVoice (permissive licenses but vendor research-intent terms — see docs/VOICE_COMMERCIAL_USE_WAVE5.md).
 
@@ -31366,3 +31366,488 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Key finding:** caption SaaS is almost entirely paid-only (only Cielo24's 120 free minutes and the unverified Symbl.ai API tier offer anything free); the demoscene musicdisk world runs on freeware players with no open-source grants, except the MIT-licensed StSound/sndh-player/NostalgicPlayer trio; commercial VGM labels (Laced, Mondo, Ship to Shore, Yetee, iam8bit) are uniformly all-rights-reserved, and even "free download" chiptune covers (Pixel Mixers) carry no reuse grant.
 - **Quarantine rows added:** 1 (Open Cubic Player — GPL; row 272).
 - **Tools wired:** tools/wave34_lane_a/musicdisk_license_audit.py (demozoo API v1 musicdisk query + StSound/sndh-player MIT LICENSE fetch), tools/wave34_lane_a/caption_tos_probe.py (pricing/ToS page snapshots for the 10 audited caption SaaS) — proofs in tools/wave34_lane_a/PROOFS.md + SHA256SUMS.
+
+#### ModdingWiki — IMF Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "IMF Format" article — full spec of the id Software Music Format: raw OPL2 register-stream music (Type-0/Type-1), timing speeds, channel-0 reservation rule, unofficial tag data. The music format of Wolfenstein 3-D, Commander Keen 4-6, Duke Nukem II, Monster Bash, Hocus Pocus and other early-90s id/Apogee titles.
+- **URL:** http://moddingwiki.shikadi.net/wiki/IMF
+- **License:** ❓ Wiki-claimed public domain (admin Malvineous on User_talk:Malvineous, 2020) — informal statement, no formal license page found; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only reference for any future OPL/DOS-era music work; no code or audio pulled. Same informal license caveat applies to all ModdingWiki doc entries this wave. [Wave 35 Lane A]
+
+#### ModdingWiki — CMF Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "CMF Format" article — Creative Music File spec: Creative Labs' cut-down MIDI (one track) with embedded OPL instruments, CTMF magic, title/artist/remarks tags. Used by Jill of the Jungle, Xargon, Kiloblaster, Solar Winds, Traffic Department 2192.
+- **URL:** https://moddingwiki.shikadi.net/wiki/CMF_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — MUS (DMX) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "MUS Format" article — Paul Radek's DMX audio-library MIDI variant ("MUS"+0x1A signature), a compact near-MIDI bytecode. The music format of Doom, Doom II, Heretic, Hexen, Strife, Raptor, Chex Quest.
+- **URL:** https://moddingwiki.shikadi.net/wiki/MUS_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Companion VGMPF "MUS (DMX)" page exists but ModdingWiki has the fuller field-level spec. [Wave 35 Lane A]
+
+#### ModdingWiki — XMI Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "XMI_Format" article — Miles Sound System Extended MIDI: multi-song MIDI container with XMIDI controller extensions (used by Dune-era and many mid-90s DOS titles). Original XMIDI spec ships in Miles AIL2 docs; this is the community field spec.
+- **URL:** https://moddingwiki.shikadi.net/wiki/XMI_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — DRO (DOSBox Raw OPL) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "DRO_Format" article — DOSBox Raw OPL capture format: logged OPL register writes with delay coding (DRO v1/v2), the OPL-side equivalent of VGM-style logging for DOS games.
+- **URL:** https://moddingwiki.shikadi.net/wiki/DRO_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — OP2 Bank Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "OP2_Bank_Format" article — DMX OPL2 instrument bank ("#OPL_II#" magic, 128 melodic + 47 percussion instruments, 36 bytes each). This is the GENMIDI lump format inside Doom-engine WADs.
+- **URL:** https://moddingwiki.shikadi.net/wiki/OP2_Bank_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Pairs with the MUS (DMX) entry. [Wave 35 Lane A]
+
+#### ModdingWiki — SBI Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "SBI_Format" article — Sound Blaster Instrument: Creative Labs' 50-byte single-instrument file ("SBI"+0x1A), importable into CMF songs and IBK banks.
+- **URL:** http://www.shikadi.net/moddingwiki/SBI_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — Apogee Expanded MIDI (EMIDI) doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "Apogee Expanded MIDI" article — the EMIDI API v1.1 specification (Lee Jackson / Jim Dosè, 1997): expanded MIDI with per-track instrument designation (CC 110), dynamic looping and on-the-fly instrument inclusion. Used by Duke Nukem 3D, Shadow Warrior, Blood (Apogee Sound System).
+- **URL:** https://moddingwiki.shikadi.net/wiki/Apogee_Expanded_MIDI
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified. Note the spec text itself carries "Copyright (c) 1995,1997 Apogee Software Ltd. All Rights Reserved."
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. The embedded Apogee copyright notice means this spec text is the least safe of the ModdingWiki docs to copy — read, don't lift. [Wave 35 Lane A]
+
+#### ModdingWiki — Apogee Sound System Timbre (TMB) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "TMB_Format" article (redirects from TMB Format) — Apogee Sound System timbre bank: 256 13-byte OPL/MIDI instrument entries (128 melodic + 128 percussion), no header. Used by Duke Nukem 3D, Blood, Shadow Warrior; directly based on IBK (first 12 bytes identical).
+- **URL:** http://moddingwiki.shikadi.net/wiki/TMB_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Pairs with the EMIDI entry. [Wave 35 Lane A]
+
+#### ModdingWiki — AdLib Instrument Bank (BNK) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "AdLib Instrument Bank Format" article — the BNK format created by Ad Lib Inc. for Visual Composer 1.5 (1989), designed to pair with ROL songs; also documents the altered "Version 0.0" HMI variant used with HMP/HMI music (Witchaven, Dark Legions).
+- **URL:** https://moddingwiki.shikadi.net/wiki/BNK_Format_(Ad_Lib)
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — IBK Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "IBK_Format" article — SoundBlaster Instrument Bank: "IBK"+0x1A signature, 128 16-byte OPL2/OPL3 instruments + 8-char names. The GM-compatible OPL bank format (SBTimbre, OPL3 Bank Editor).
+- **URL:** https://moddingwiki.shikadi.net/wiki/IBK_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — ROL Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "ROL_Format" article — Ad Lib Inc.'s ROL piano-roll music format (AdLib Visual Composer, 1987; best-known version 0.4, "\roll\default" signature), paired with INS/BNK instruments. ROL songs were converted to IMF for id titles and to ADL for Westwood games.
+- **URL:** http://www.shikadi.net/moddingwiki/ROL_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### ModdingWiki — Human Machine Interfaces MIDI (HMP/HMI) Format doc ❓ wiki-terms-unverified
+- **What:** ModdingWiki "Human Machine Interfaces MIDI Format" article (stub) — the HMP/HMI MIDI-like formats (HMIMIDIP / HMIMIDIP013195 / HMI-MIDISONG061595 signatures) used by Descent, Abuse, Dark Legions, Witchaven I/II, Magic Carpet.
+- **URL:** https://moddingwiki.shikadi.net/wiki/Human_Machine_Interfaces_MIDI_Format
+- **License:** ❓ Wiki-claimed public domain (informal admin statement) — no formal license page; treat as unverified.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: the article is an acknowledged stub (signatures + game list only). VGMPF's HMP page has more technical detail but same unverified wiki terms. Doc-only. [Wave 35 Lane A]
+
+#### PT3 format spec — deater.net "Readme Pt3" ❓ terms-undeclared
+- **What:** Vince Weaver's "The PT3 Format" writeup (deater.net) — full English field spec for Vortex Tracker II / Pro Tracker 3 .pt3 modules (ZX Spectrum AY-3-8910): 13-byte "ProTracker 3." magic, header/pointer tables, pattern list, sample/ornament decoding. Reverse-engineered against AY_Emul output.
+- **URL:** http://www.deater.net/weave/vmwprod/pt3_player/README_pt3.txt
+- **License:** ❓ No license stated on the document (verified 2026-10-08 via web search/fetch).
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; distinct from the existing Vortex Tracker II software entry (that covers the tracker, this covers the file format). [Wave 35 Lane A]
+
+#### ST-Sound YM format doc — "YM File Operations" ⚠️ format-freeware, doc-terms-undeclared
+- **What:** "YM File Operations" (jtalbert.xyz, PDF) — documents Arnaud Carré's ST-Sound YM register-dump format (YM1–YM6, 16-byte frames at 50Hz) for the YM2149/AY-3-8910. The document states the YM format is freeware per its author ("everybody can use, read or produce YM files").
+- **URL:** https://jtalbert.xyz/Downloads/YM_File_Operations.pdf
+- **License:** ⚠️ Format declared freeware by the author (Arnaud Carré) per the document; the PDF itself carries no license statement.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. Strongest license story of the wave's format docs (author-declared freeware for the format itself). [Wave 35 Lane A]
+
+#### Future Composer v1.x module — Just Solve wiki ❓ wiki-terms-unverified
+- **What:** ArchiveTeam "Just Solve the File Format Problem" page for Future Composer v1.x modules (.fc/.fc13/.fc14/.smod) — aggregates the "Future Composer 1.0–1.3 & 1.4 format info" links plus creation/playback software and sample files.
+- **URL:** http://justsolve.archiveteam.org/wiki/Future_Composer_v1.x_module
+- **License:** ❓ ArchiveTeam wiki terms unverified this pass.
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-aggregator entry (consistent with the existing RASTER/Imago Orpheus Just Solve entries). Doc-only. [Wave 35 Lane A]
+
+#### ADL (Westwood) format documentation (VGMPF wiki) ❓ wiki-doc
+- **What:** VGMPF wiki "ADL (Westwood)" — Westwood Studios' OPL2 music format (Eye of the Beholder, Dune II, Kyrandia, Lands of Lore): ROL songs converted into a single file holding audio + instrument definitions together.
+- **URL:** https://vgmpf.com/Wiki/index.php?title=ADL_(Westwood)
+- **License:** ❓ wiki-doc (matches the existing NSFE/SSF/S98 VGMPF wiki entries' badging).
+- **Free tier:** N/A (reference doc)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 35 Lane A]
+
+#### Hugi — PC demoscene diskmag ❓ per-contributor rights
+- **What:** Hugi (hugi.scene.org) — one of the longest-running PC demoscene/underground diskmags (since 1996; German/English/Russian). Every issue ships with graphics and background music; Hugi SE #4 (Function 2012) is explicitly a "music disk and diskmag in one" with 32 tunes from recent issues.
+- **URL:** https://hugi.scene.org/
+- **License:** ❓ Per-contributor rights, demoscene freeware — no reuse grant found.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Disk-magazine audio long tail: issues are music sources only for listening/reference, never for pipeline pulls. [Wave 35 Lane A]
+
+#### Vandalism News — C64 diskmag ⚠️ per-contributor rights
+- **What:** Vandalism News (vandalism.news) — C64 diskmag by Vandalism News Staff / Onslaught / Offence / Wrath Designs; issue #70 released 2020. Each issue credits working scene musicians (Drax, Jeroen Tel, Stinsen, Laxity, Vincenzo…), making the series a browsable long tail of C64 scene music.
+- **URL:** https://vandalism.news
+- **License:** ⚠️ Per-contributor rights — music belongs to the credited sceners; no reuse grant.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/listen only. [Wave 35 Lane A]
+
+#### ST News — Atari ST diskmag ❓ per-issue rights
+- **What:** ST NEWS — Atari ST disk magazine (1986–1996, Richard Karsmakers) with configurable background music. Archived on the scene.org mirror and in Demozoo's Atari diskmag collection.
+- **URL:** https://archive.scene.org/pub/mirrors/flerp/.s/scene.atari/diskmag.atari/STN/st_n111.txt (scene.org mirror, final issue); archive index: http://demozoo.org/productions/?platform=9&production_type=5
+- **License:** ❓ Per-issue rights, no reuse grant found.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Disk-magazine audio long tail (Atari ST). Reference/listen only. [Wave 35 Lane A]
+
+#### Scene World Magazine — C64 diskmag, still publishing ❓ per-contributor rights
+- **What:** Scene World Magazine (SWO) — C64 disk magazine published regularly since February 2001 (NTSC + PAL), all-volunteer ~20-person staff, two issues/year plus podcasts and video interviews with scene/industry figures.
+- **URL:** https://sceneworld.org
+- **License:** ❓ Per-contributor rights — no reuse grant found.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The rare still-active diskmag; audio long tail via its podcast/interview archive. Reference/listen only. [Wave 35 Lane A]
+
+#### Sex'n'Crime — C64 diskmag (1989–1990) ❓ historical
+- **What:** Sex'n'Crime — C64 demoscene diskmag published 1989–1990 by Amok (a Genesis Project label), mainly edited by anonymous writer OMG; its successor was titled Propaganda.
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under S)
+- **License:** ❓ No live homepage found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: exists as a cited historical title; no verified download source this pass. [Wave 35 Lane A]
+
+#### Propaganda — C64 diskmag ❓ historical
+- **What:** Propaganda — C64 diskmag, the successor title to Sex'n'Crime (per Wikipedia's List of disk magazines).
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under P)
+- **License:** ❓ No live homepage found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: cited successor title; no verified download source this pass. [Wave 35 Lane A]
+
+#### Maggie — Atari ST diskmag ❓ per-contributor rights
+- **What:** Maggie — Atari ST diskzine (1990s–2000s; anniversary release shown at the ST News 2015 party). Listed among the still-published Atari mags on AtariForumWiki; Demozoo holds a near-complete archive of Atari ST/STe mags.
+- **URL:** via https://temlib.org/AtariForumWiki/index.php/Diskmags_on_the_Atari_platform ; archive index: http://demozoo.org/productions/?platform=9&production_type=5
+- **License:** ❓ Per-contributor rights — no reuse grant found.
+- **Free tier:** Free downloads (demoscene freeware)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Disk-magazine audio long tail (Atari ST). Reference/listen only. [Wave 35 Lane A]
+
+#### RAW — Amiga diskmag ❓ historical
+- **What:** RAW — Amiga diskmag (listed in Wikipedia's List of disk magazines under R). No live homepage or verified issue archive found this pass.
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under R)
+- **License:** ❓ No live source found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: title verified to exist, archive not verified. [Wave 35 Lane A]
+
+#### Jurassic Pack — Amiga diskmag ❓ historical
+- **What:** Jurassic Pack — Amiga diskmag (listed in Wikipedia's List of disk magazines under J). No live homepage or verified issue archive found this pass.
+- **URL:** via https://en.wikipedia.org/wiki/List_of_disk_magazines (listed under J)
+- **License:** ❓ No live source found this pass — historical reference only.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thinness: title verified to exist, archive not verified. [Wave 35 Lane A]
+
+---
+
+## Wave 35 Lane A summary
+- **Added:** 26 honest entries (17 retro-tracker/DOS-era music format-doc strays: 13 ModdingWiki docs — IMF/CMF/MUS-DMX/XMI/DRO/OP2/SBI/EMIDI/TMB/BNK/IBK/ROL/HMP — plus deater.net PT3 spec, ST-Sound YM format doc, Just Solve Future Composer page, VGMPF ADL-Westwood page; 9 disk-magazine audio long-tail entries: Hugi, Vandalism News, ST News, Scene World, Sex'n'Crime, Propaganda, Maggie, RAW, Jurassic Pack).
+- **Honest drops (failures documented, no entries):** Sidologie (not a scene musicdisk series — it's a commercial C64Audio vinyl project); KeygenJukebox (site dead; near-duplicate of the existing KEYGENMUSiC entry); TFMX format doc (could not verify Asle's standalone spec this pass); SAP format spec, HES format doc, AY format doc, Soiled musicdisk series (no verifiable doc/archive URL found this pass); VGMPF wiki hub (near-duplicate of the existing NSFE/SSF/S98 VGMPF wiki-doc entries); PT3 Just Solve aggregator (near-duplicate of the deater PT3 spec entry).
+- **Already audited by prior waves — skipped to avoid duplicates:** UADE, ZXTune, libopenmpt, XM, S3M, PSF, VGM, PSID/SID, NSF, .fur, 669/STM/FAR/ULT/MTM, DMF/AMF/DSM/GDM/PTM/OKT, libxmp, OpenMPT wiki, ITTECH.TXT, SPC700, SNDH, 2SF/GSF, MED/OctaMED, AHX, ProTracker MOD, KSS, 8bitpeoples, Kahvi, Monotonik, phonoCAKE, Acroplane, Dusted Wax, Enough, 2063music, Section 27, Clinical Archives, Tokyo Dawn, 12rec, Aaahh, Maltine, Bunkai-Kei, ALTEMA, MarginalRec, Kikapu, Zymogen, Newgrounds, Da! Heard-It, SectionZ, Protodome, Noisechannel, A Bit of Chiptune, Demovibes, CalmDownKidder, Base Bit, MAGIC YUME, Vulpiano, D-Trash, TimeSlave, Black Screen, Curaga, Candy Mind, Scarlet Moon, Bleepstreet, Pterodactyl Squad, GameChops, Cheapbeats, Chiptunes = WIN, Data Airlines, Ubiktune, Brave Wave, Materia Collective, Data Discs, Open Cubic Player, StSound/sndh-player/NostalgicPlayer.
+- **Key finding:** the DOS-era OPL/MIDI format-doc world is concentrated on ModdingWiki, whose content license is only an informal admin "public domain" claim (User_talk:Malvineous, 2020) — usable as read-only reference, not as licensed text to copy (the EMIDI page even embeds an Apogee "All Rights Reserved" notice). The diskmag long tail is uniformly per-contributor demoscene freeware with no reuse grants — listen/reference only. Best license story of the wave: the ST-Sound YM register-dump format, explicitly declared freeware by its author Arnaud Carré.
+- **Canonical count:** 3055 → 3081 `####` headings.
+#### StreamText — CART/ASR captioning service audit 🚫 commercial-ARR
+- **What:** StreamText (streamtext.net) — professional live-captioning platform: human CART writers + AI/ASR captioning (Google V1 API Standard model without data logging), cloud caption encoding for RTMP streams.
+- **URL:** https://streamtext.net/ (pricing verified 2026-10-08 via support.streamtext.net)
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via web search).
+- **Free tier:** None — ASR is $0.27/min from 05/01/2025 (ASR writer $0.25/min + $0.02/min audio connection); human CART is a separate paid service; "we do not record or use your audio or content for AI training" is a privacy note, not a license grant.
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid per-minute captioning service; no free tier to pull into the pipeline. Useful only as a paid vendor reference. [Wave 35 Lane B]
+
+#### Restream Studio captions — feature audit 🚫 commercial-ARR
+- **What:** Restream (multistreaming platform) — Studio browser-studio offers on-screen captions among its stream features; also ships an audio-to-text transcription tool.
+- **URL:** restream.io (pricing verified 2026-10-08 via 2026 review comparisons)
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via web search).
+- **Free tier:** Free-forever plan (2 channels, 720p, Restream branding); paid tiers Standard $16/mo, Professional $39/mo, Business $199/mo (annual billing, 2026 figures).
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Captions are a Studio feature of a paid/freemium streaming product, not a captioning API or asset — nothing to pull. [Wave 35 Lane B]
+
+#### LiveTranscribe speech engine (Google) — open-client/paid-engine audit ⚠️ mixed
+- **What:** google/live-transcribe-speech-engine — Android client libraries for Google's Cloud Speech API, the engine behind Google's Live Transcribe accessibility app (real-time captioning for deaf/hard-of-hearing users).
+- **URL:** https://github.com/google/live-transcribe-speech-engine
+- **License:** ⚠️ Apache-2.0 (client libraries only — verified 2026-10-08 via ecosyste.ms + Wikipedia; repo pushed 2022-07-20, stale); the actual transcription runs on Google's paid Cloud Speech-to-Text API (billing-enabled API key required).
+- **Free tier:** App is free on Play Store; the open-sourced engine plumbing is NOT a standalone offline engine — it streams mic audio to the paid Cloud API.
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The Apache-2.0 code is real but it is only the client — wiring it means paying Google's STT API. Offline mode needs the full Play Store app, not this repo. [Wave 35 Lane B]
+
+#### CrowdSurf — human-transcription marketplace audit 🚫 commercial-ARR
+- **What:** CrowdSurf — on-demand human transcription and captioning service for online media (accessibility for deaf/hard-of-hearing viewers); fulfilled by freelancers via Work Market ($0.03–$0.20 per media minute).
+- **URL:** crowdsurf.com (buyer side) / crowdsurfwork.com (freelancer side) — verified 2026-10-08 via web search
+- **License:** 🚫 Commercial proprietary service (verified 2026-10-08 via web search).
+- **Free tier:** None — it is a paid human-captioning vendor.
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Human service, not software — not a caption source for the pipeline; only relevant as a paid-vendor benchmark. [Wave 35 Lane B]
+
+#### SubsAI (absadiki/subsai) — Whisper subtitle tool 🚫 not commercial-safe (quarantined)
+- **What:** SubsAI — subtitle generation tool (Web-UI + CLI + Python package) powered by OpenAI's Whisper and variants; 1,678 stars.
+- **URL:** https://github.com/absadiki/subsai
+- **License:** GPL-3.0 (verified 2026-10-08: GitHub API spdx_id = GPL-3.0; raw LICENSE = GPL v3 29 June 2007 text; repo live, not archived, pushed 2026-04-20)
+- **Free tier:** Fully free/open-source.
+- **Repo lane:** trippedd (auto-captioning)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-QUARANTINE: GPL-3.0 — do NOT embed in closed builds; safe as a standalone caption-generation step (outputs SRT). Quarantine row 273. [Wave 35 Lane B]
+
+#### Adobe Premiere Pro speech-to-text — built-in captioning audit 🚫 commercial-ARR
+- **What:** Premiere Pro's Speech to Text (Adobe Sensei) — auto-transcription → caption track workflow built into Premiere Pro since v15.4/2022; exports SRT/TXT/XML or burned-in subtitles.
+- **URL:** adobe.com/products/premiere (feature verified 2026-10-08 via web search)
+- **License:** 🚫 Commercial proprietary — requires a Premiere Pro / Creative Cloud subscription; no extra per-minute cost beyond the subscription (verified 2026-10-08 via web search).
+- **Free tier:** None persistent — Creative Cloud 7-day trial only.
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful only if the project already rents Creative Cloud; nothing free or open to wire into the pipeline. [Wave 35 Lane B]
+
+#### Streamlabs auto subtitles — freemium audit 🚫 commercial-ARR
+- **What:** Streamlabs (streamlabs.com) — streaming/creator suite (Desktop, Talk Studio, Video Editor, Podcast Editor, Cross Clip) with auto-subtitle features for videos and podcast text-based editing.
+- **URL:** streamlabs.com (pricing verified 2026-10-08 via web search)
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via web search).
+- **Free tier:** Free Starter plan; Ultra is $27/mo (sources also show $15.75/mo annual promos — tier mapping for auto-subtitles not verified to a specific plan).
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Auto-subtitles are a feature of a freemium creator product, not an API or asset — nothing to pull into the pipeline. [Wave 35 Lane B]
+
+#### NVIDIA Riva — proprietary speech-AI SDK audit 🚫 proprietary-SDK
+- **What:** NVIDIA Riva — speech-AI SDK (ASR/TTS/NMT): pre-trained models via NGC, self-hosted Docker deployment, or cloud inference on build.nvidia.com (now rebranded under "Nemotron Speech" / Riva NIM).
+- **URL:** developer.nvidia.com/riva (terms verified 2026-10-08 via web search)
+- **License:** 🚫 Proprietary NVIDIA SDK license (verified 2026-10-08: "LICENSE AGREEMENT FOR NVIDIA SOFTWARE DEVELOPMENT KITS" — NOT Apache-2.0; the Apache-2.0 grant covers NVIDIA's newer Nemotron Speech agent skill, not the Riva SDK itself). Self-hosted deployment requires an NVIDIA AI Enterprise license; cloud inference requires an API key.
+- **Free tier:** None usable — x86_64 + NVIDIA GPU required; model checkpoints carry NVIDIA Open Model License / OpenMDW-1.1 / CC-BY-4.0 per-card (none Apache-2.0).
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Do not treat Riva as open-source — the SDK terms are proprietary and checkpoints are per-card licensed. No free lane for the pipeline. [Wave 35 Lane B]
+
+#### wav2vec2 (Meta) — checkpoint-license caution ❓ unverified
+- **What:** wav2vec2 — Meta's self-supervised speech-representation framework (facebookresearch/fairseq example); basis for many ASR fine-tunes (facebook/wav2vec2-large-960h, XLS-R, MMS).
+- **URL:** https://github.com/facebookresearch/fairseq
+- **License:** ❓ Mixed — fairseq code is MIT (verified 2026-10-08: GitHub API spdx_id = MIT; repo owner-archived by Meta, pushed 2025-09-30), BUT pretrained checkpoints on Hugging Face carry per-card licenses that were NOT verified this pass.
+- **Free tier:** Code is free/open; checkpoints are "check each card".
+- **Repo lane:** trippedd (auto-captioning)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Do not assume the checkpoints are MIT — verify the specific HF card's license before any captioning use. [Wave 35 Lane B]
+
+#### AutoSubtitles (autosubtitles.com) — freemium captioning skill audit 🚫 commercial-ARR
+- **What:** AutoSubtitles — agent skill + service that captions a local video (audio uploaded, video stays local, captions burned in locally in Chrome); skill repo is MIT, the service is freemium.
+- **URL:** autosubtitles.com (terms verified 2026-10-08 via github.com/autosubtitles/skills SKILL.md)
+- **License:** 🚫 Commercial proprietary service (skill code MIT — verified 2026-10-08 via web search).
+- **Free tier:** Free plan = AutoSubtitles watermark, 720p max, 10-minute video limit, NO SRT/VTT subtitle files; Pro (license key) removes watermark, adds 4K, unlimited length, subtitle files.
+- **Repo lane:** trippedd (captioning)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The MIT skill is just a client for their paid service — the free tier cannot produce subtitle files, so it is not a caption source for the pipeline. [Wave 35 Lane B]
+
+#### 8static — chiptune event series audit (not a label)
+- **What:** 8static (8static.com) — Philadelphia monthly chiptune event series (PhilaMOCA and other venues, running since ~2009) plus an annual 8static Festival; workshops + live chip-music shows.
+- **URL:** 8static.com (verified 2026-10-08 via web search)
+- **License:** N/A (event series — no music releases, no catalog)
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not a record label — there is nothing to license or pull. Kept as an honest audit so nobody mistakes the event series for a music catalog. [Wave 35 Lane B]
+
+#### Dream Catalogue — post-vaporwave label audit 🚫 commercial-ARR
+- **What:** Dream Catalogue — UK electronic label founded 2014 by HKE (Hong Kong Express); home of 2814 (Birth of a New Day), t e l e p a t h, Hong Kong Express; sub-labels Pyramids, TKX, Eternal Fortune.
+- **URL:** via Dream Catalogue Bandcamp storefront (verified 2026-10-08 via vaporwave.wiki release pages)
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via web search — Bandcamp paid downloads + cassette pressings, no reuse grant).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid catalog; no reuse rights implied. [Wave 35 Lane B]
+
+#### Girlfriend Records — synthwave/vaporwave label audit 🚫 commercial-ARR
+- **What:** Girlfriend Records (girlfriendrecords.bandcamp.com) — San Jose, California label; electronic/synthwave/outrun/vaporwave/French Touch since 2010; started by Sferro, now run by Johnatron.
+- **URL:** https://girlfriendrecords.bandcamp.com/
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via Bandcamp release pages — every release marked "all rights reserved").
+- **Free tier:** Streaming only (Bandcamp).
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commercial label; stream to reference, never pull into the pipeline. [Wave 35 Lane B]
+
+#### Seikomart — Japan vaporwave label audit 🚫 commercial-ARR
+- **What:** Seikomart (seikomart.bandcamp.com) — Japan vaporwave "craft konbini" label since 2015; hand-dubbed limited cassettes (many sold out).
+- **URL:** https://seikomart.bandcamp.com/
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via Bandcamp release pages — every release marked "all rights reserved").
+- **Free tier:** Streaming only (Bandcamp).
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commercial label; no reuse grant. [Wave 35 Lane B]
+
+#### SuperSweep — VGM publisher/label audit 🚫 commercial-ARR
+- **What:** SuperSweep — Shinji Hosoe's (Ridge Racer, Street Fighter EX) music production and publishing company (est. 2000) + Sweep Record label (SRIN catalog); publishes/distributes game soundtracks for NBGI, Taito, Idea Factory, Basiscape, noisycroak, and its Game Music Discovery retro series.
+- **URL:** SuperSweep / Sweep Record (verified 2026-10-08 via vgmonline.net + Wikipedia)
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via web search).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commercial VGM publisher; licensed pressings only, no reuse grant. [Wave 35 Lane B]
+
+#### Kitty on Fire Records — chiptune/breakcore label audit 🚫 commercial-ARR
+- **What:** Kitty on Fire Records (kittyonfirerecords.bandcamp.com) — Vancouver, BC label; chiptune/breakcore/glitch/digi-punk ("Sad Laptops, Breakcore, Chiptune, Cuttie Violence, Experimental, Glitch, Rave, Digi-Punk").
+- **URL:** https://kittyonfirerecords.bandcamp.com/
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via Bandcamp release pages — every release marked "all rights reserved").
+- **Free tier:** Streaming only (Bandcamp).
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commercial label; no reuse grant. [Wave 35 Lane B]
+
+#### Scitron Digital Contents — defunct VGM label audit 🚫 commercial-ARR (defunct)
+- **What:** Scitron Digital Contents, Inc. — Japanese VGM record label (est. 1986 as Scitron & Art; joint Pony Canyon/Scitron label 1988–1999, one of the first labels dedicated to video game music); own Scitron Digital Content label from 1999; acquired by Happinet 2004, absorbed 2006.
+- **URL:** via Discogs label page + segaretro.org (verified 2026-10-08 via web search)
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via web search); label is DEFUNCT since 2006 — back-catalog rights sit with Happinet.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Defunct label — no live licensor to clear against; treat all Scitron-era VGM as ARR. [Wave 35 Lane B]
+
+#### Fangamer — licensed VGM merch audit 🚫 commercial-ARR
+- **What:** Fangamer (fangamer.com) — video-game merchandise company selling licensed VGM soundtracks (Mondo partnership pressings: Castlevania SotN, Metal Gear Solid 2; also Undertale, Hades, Hollow Knight OSTs).
+- **URL:** https://www.fangamer.com/
+- **License:** 🚫 Commercial all-rights-reserved licensed merch (verified 2026-10-08 via web search — product pages carry "©Konami Digital Entertainment — manufactured by Fangamer under license" and "©Toby Fox ... All rights reserved").
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Licensed merch channel; no music reuse rights implied. [Wave 35 Lane B]
+
+#### Elemental 95 — defunct vaporwave netlabel audit 🚫 commercial-ARR (defunct)
+- **What:** Elemental 95 — vaporwave netlabel (~ELT001–ELT091+ catalog, 2015–2023); removed its entire Bandcamp discography and shut down in 2023.
+- **URL:** via vaporwave.wiki release pages (verified 2026-10-08 via web search)
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via vaporwave.wiki — releases documented as paid/all-rights-reserved; some republished by other labels like FOTOSHOPPE CO. and Arctic Contact after the 2023 shutdown).
+- **Free tier:** N/A (label closed)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Defunct — "free download" compilations were removed with the label; rights now scattered across the republishing labels. [Wave 35 Lane B]
+
+#### No Problema Tapes — vaporwave label audit 🚫 commercial-ARR
+- **What:** No Problema Tapes (noproblematapes.bandcamp.com) — Chile-based vaporwave record label since 2013; NOP-### catalog (NOP-893 released 2026 — active); cassette + digital.
+- **URL:** https://noproblematapes.bandcamp.com/
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via Bandcamp — no reuse grant found on any release; ARR by default).
+- **Free tier:** Streaming only (Bandcamp) + occasional free download codes.
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Active commercial label; no reuse grant. [Wave 35 Lane B]
+
+---
+
+## Wave 35 Lane B summary
+- **Added:** 20 honest entries (10 caption-adjacent audits: StreamText, Restream Studio captions, LiveTranscribe engine, CrowdSurf, SubsAI, Adobe Premiere speech-to-text, Streamlabs auto subtitles, NVIDIA Riva, wav2vec2, AutoSubtitles; 10 ARR-label netlabel audits: 8static, Dream Catalogue, Girlfriend Records, Seikomart, SuperSweep, Kitty on Fire Records, Scitron Digital Contents, Fangamer, Elemental 95, No Problema Tapes). Honest count now 3075 `####` headings.
+- **Re-verification cycle 6 (docs/LICENSE_QUARANTINE.md):** 10/10 confirmed (rows 83 stable-diffusion-webui-forge, 84 OneTrainer, 86 G'MIC, 91 RawTherapee, 94 pysrt, 103 TAL-NoiseMaker, 105 FAVE-align, 120 Style-Bert-VITS2, 165 Csound, 167 DCP-o-matic) — zero relicensing events, zero delists, zero supersedes; 1 repo-move drift (row 103: falkTX/DISTRHO-Ports → DISTRHO/DISTRHO-Ports); drift watch clean (Helm still archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg mbunkus). Tool: tools/wave35_lane_b/audit_row_w35.py; proofs in tools/wave35_lane_b/proofs_row*/ (PROOFS.md + SHA256SUMS).
+- **Honest drops (failures documented, no entries):** Data Fable (could not verify a "Data Fable" chiptune label — search inconclusive); 2D Cloud (could not verify the Toronto chiptune label this pass).
+- **Already audited by prior waves — skipped to avoid duplicates:** the full Wave 34 caption-SaaS skip list (Reduct.video, 2short.ai, VEED, Clideo, Flixier, Zeemo, Submagic, Captions.ai, OpusClip, Rev, Maestra, TurboScribe, Audext, Kapwing, YouTube auto-captions, AssemblyAI, Trint, HappyScribe, Descript, Otter.ai, Sonix, Notta, Speechmatics, Fireflies.ai, Castmagic, Riverside.fm, Vizard, Temi, Simon Says, tl;dv, GoTranscript, quso.ai, Podsqueeze, Swell AI, CaptionMax, CaptionHub, Aegisub, Jubler, Subtitle Horse, SubtitleNEXT, FAB Subtitler, MovieCaptioner, Aiko, Deepgram, AWS Transcribe, Nova AI, Web Captioner) + the wave12 lane-c skip list (WhisperX, whisper.cpp, faster-whisper, openai/whisper, whisper-timestamped, SubtitleEdit, SubtitleComposer, pycaption, Gnome Subtitles, Subtitle Workshop, Vosk, etc.) + the Wave 34 netlabel skip list (8bitpeoples, Kahvi, Monotonik, GameChops, Brave Wave, Data Discs, etc.) + Wave 34 Lane A entries (iam8bit, Pixel Mixers, Ship to Shore PhonoCo, A Shell in the Pit, Yetee Records, Laced Records, Mondo, Business Casual) + caption tools covered elsewhere (CapCut, Headliner, Zubtitle, StreamYard, Parakeet, 3Play Media, Verbit, Scribie, Cielo24, Symbl.ai, Ai-Media, DaVinci Resolve speech-to-text, Amara, EasySub, Subly, WhisperS2T, Closed Caption Creator, Gladia, Picovoice, DeepSpeech, Coqui STT).
+- **Key finding:** the remaining caption-adjacent space is (a) paid CART/freemium SaaS with no free lane, (b) open clients whose engines are paid APIs (LiveTranscribe, NVIDIA Riva), or (c) genuinely open tools that are GPL-quarantined (SubsAI) or checkpoint-license-murky (wav2vec2). On the netlabel side, the ARR pattern holds without exception — even defunct/closed labels (Scitron, Elemental 95) keep their catalogs all-rights-reserved, and "free download" ≠ license.
+- **Quarantine rows added:** 1 (row 273 SubsAI — GPL-3.0; header counts refreshed: 273 rows · 250 distinct; catalog red-flags section synced).
+- **Tools wired:** tools/wave35_lane_b/audit_row_w35.py (cycle-6 verifier, REPO_MAP extended from the wave34 tool) — proofs in tools/wave35_lane_b/PROOFS.md + SHA256SUMS.
+
+## Wave 35 summary (2026-10-08)
+- **Added:** 46 honest entries → **3101 total** (`####` headings): Lane A 26 (17 retro-tracker/DOS-era format-doc strays — 13 ModdingWiki docs + PT3/ST-Sound YM/FutureComposer/ADL-Westwood — + 9 diskmag-audio long-tail entries) · Lane B 20 (10 caption-adjacent audits + 10 ARR-label netlabel audits).
+- **Re-verification cycle 6:** 10/10 rows confirmed (83 stable-diffusion-webui-forge, 84 OneTrainer, 86 G'MIC, 91 RawTherapee, 94 pysrt, 103 TAL-NoiseMaker, 105 FAVE-align, 120 Style-Bert-VITS2, 165 Csound, 167 DCP-o-matic) — zero relicensing, zero delists; 1 repo-move drift (row 103 falkTX/DISTRHO-Ports → DISTRHO/DISTRHO-Ports); drift watch clean (Helm, telxcc, MKVToolNix).
+- **Quarantine rows:** +2 this wave (row 273 SubsAI GPL-3.0; row 272 Open Cubic Player landed in Wave 34 Lane A). Header: 273 rows · 250 distinct.
+- **Key findings:** DOS-era OPL/MIDI format docs concentrate on ModdingWiki (informal public-domain claim only — reference, not copy); demoscene diskmag long tail uniformly freeware, no reuse grants; caption-adjacent space = paid CART/freemium, paid-API engines behind open clients (LiveTranscribe, NVIDIA Riva), or GPL-quarantined (SubsAI)/license-murky (wav2vec2); ARR netlabels hold all-rights-reserved without exception, even defunct ones; "free download" ≠ license.

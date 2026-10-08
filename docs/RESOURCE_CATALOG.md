@@ -49707,3 +49707,277 @@ Regional labels, events, and scene hubs. Every URL verified live this pass via H
 - License notes: 20 of 21 Suspense OTRR items carry an item-level CC BY-NC-ND 4.0 tag (uploader transfer packaging, not broadcast copyright — noted per entry; 1949 item has no tag); The Shadow inherits show-level rights caution; jhead is public domain per the author's official site; PhotoDemon is BSD per README (GitHub API NOASSERTION = detection gap); GraphicsMagick is MIT-style per official Copyright.html; Hugin GPL-2.0-or-later verified via official site license text
 - Coordinator flags (not fixed — lane boundary): none new; prior-wave flags stand
 - Zero post-hoc duplicates: every candidate pre-grepped (title + URL) against the full catalog and quarantine manifest before appending; 4 pre-append rejections logged above
+
+## Wave 55 — Lane A: catalog deepening (2026-10-08)
+
+### P1 — PD radio-drama round 4: per-show per-episode deep dives (27 entries)
+
+#### OTRR_Dragnet_Singles (OTR) ✅ PD
+- **What:** OTRR certified "Dragnet — Single Episodes": 344 audio files covering the 1949–1957 radio run (Jack Webb as Sgt. Joe Friday).
+- **URL:** https://archive.org/details/OTRR_Dragnet_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-SA 3.0 US uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 344 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Full-series singles set; pair with the per-season structure for era-targeted pulls. [Wave 55 Lane A]
+
+#### Dragnet (OTR) — "The Big Set Up" (1951-07-12) ✅ PD
+- **What:** Single-episode deep dive: Dragnet 51-07-12 "The Big Set Up" — mid-run Jack Webb procedural, representative of the show's documentary-style narration.
+- **URL:** https://archive.org/details/Dragnet510712TheBigSetUp
+- **License:** ✅ Public domain (underlying 1951 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Episode-level reference for terse procedural dialogue pacing. [Wave 55 Lane A]
+
+#### OTRR_Whistler_Singles (OTR) ✅ PD
+- **What:** OTRR certified "The Whistler — Single Episodes": 502 audio files across the 1942–1955 CBS run (the ironic narrator-observer mystery anthology).
+- **URL:** https://archive.org/details/OTRR_Whistler_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-ND 3.0 uploader-packaging tag; verified 2026-10-08: metadata API HTTP 200, title match, 502 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Largest single-show Whistler set on the Archive; complements the quarterly Signal-era slices below. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1946 Q4 Signal-Oil era ✅ PD
+- **What:** "The Whistler — 1946 October to December Signal series": 22 audio files from the Signal Oil sponsorship era (the show's best-remembered sponsor block).
+- **URL:** https://archive.org/details/Whistler1946OctobertoDecember
+- **License:** ✅ Public domain (underlying 1946 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 22 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly era slice; sponsor-era targeting for period-authentic ad reads. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1947 Q2 Signal-Oil era ✅ PD
+- **What:** "The Whistler — 1947 April to June Signal series": 26 audio files, tail of the Signal Oil era.
+- **URL:** https://archive.org/details/Whistler47ApriltoJune
+- **License:** ✅ Public domain (underlying 1947 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 26 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly era slice. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1949 Q2 ✅ PD
+- **What:** "The Whistler — 1949 April to June Signal series": 54 audio files (largest of the quarterly batches).
+- **URL:** https://archive.org/details/Whistler1949ApriltoJune
+- **License:** ✅ Public domain (underlying 1949 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 54 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly slice; highest file count of the four quarter batches. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1951 Q3 ✅ PD
+- **What:** "The Whistler — 1951 July to September Signal series": 22 audio files from the show's final-decade stretch.
+- **URL:** https://archive.org/details/Whistler1951JulytoSeptember
+- **License:** ✅ Public domain (underlying 1951 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 22 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly slice. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — "Avarice" (1942-11-29) ✅ PD
+- **What:** Single-episode deep dive: The Whistler 42-11-29 "Avarice" — first-season episode from the show's 1942 debut year.
+- **URL:** https://archive.org/details/TheWhistler421129Avarice
+- **License:** ✅ Public domain (underlying 1942 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-format reference — the Whistler persona still settling in. [Wave 55 Lane A]
+
+#### BDP_QuietPlease — Quiet, Please full collection (OTR) ✅ PD
+- **What:** "Ron Bowser–John Dunning Project — Quiet, Please": 180 audio files of Wyllis Cooper's 1947–1949 Mutual fantasy/horror anthology.
+- **URL:** https://archive.org/details/BDP_QuietPlease
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 180 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Near-complete series run; quiet-horror dialogue reference. [Wave 55 Lane A]
+
+#### Fibber McGee and Molly (OTR) — "Dinner Is Not Served" (1937-12-06) ✅ PD
+- **What:** Single-episode deep dive: 37-12-06 "Dinner Is Not Served" — Depression-era domestic comedy at the show's peak popularity.
+- **URL:** https://archive.org/details/FibberMcGeeAndMolly371206DinnerIsNotServed
+- **License:** ✅ Public domain (underlying 1937 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pre-war era reference for running-gag ensemble comedy. [Wave 55 Lane A]
+
+#### Fibber McGee and Molly (OTR) — "Fight With Gildersleeve" (1940-05-14) ✅ PD
+- **What:** Single-episode deep dive: 40-05-14 "Fight With Gildersleeve" — Fibber vs. Throckmorton P. Gildersleeve, the feud that spun off Gildersleeve's own show.
+- **URL:** https://archive.org/details/FibberMcGeeAndMolly400514FightWithGildersleeve
+- **License:** ✅ Public domain (underlying 1940 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Character-feud episode; useful for two-hander comic argument timing. [Wave 55 Lane A]
+
+#### Fibber McGee and Molly (OTR) — "Putting Up A Porch Swing" (1944-06-13) ✅ PD
+- **What:** Single-episode deep dive: 44-06-13 "Putting Up A Porch Swing" — wartime-era episode (one week after D-Day).
+- **URL:** https://archive.org/details/FibberMcGeeAndMolly440613PuttingUpAPorchSwing
+- **License:** ✅ Public domain (underlying 1944 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wartime home-front comedy reference. [Wave 55 Lane A]
+
+#### Lights Out (OTR) — "Little Old Lady" (1937-11-17) ✅ PD
+- **What:** Single-episode deep dive: Lights Out 37-11-17 "Little Old Lady" — Arch Oboler's Chicago-era horror at its most infamous.
+- **URL:** https://archive.org/details/v3t3gvjtd3cnayf1cntoyzudiql0mwht75yl26rs
+- **License:** ✅ Public domain (underlying 1937 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark horror-radio episode; sound-design reference for dread build. [Wave 55 Lane A]
+
+#### Lights Out (OTR) — "The Word" (1943-09-14) ✅ PD
+- **What:** Single-episode deep dive: Lights Out "The Word" (9-14-43) — Oboler's Coast-to-Coast era episode.
+- **URL:** https://archive.org/details/wliiqxnxnpzjdiya23eowshygmbbgol4xzdg0bom
+- **License:** ✅ Public domain (underlying 1943 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mid-war Oboler; compare against the 1937 Chicago style. [Wave 55 Lane A]
+
+#### Dimension X (OTR) — "Pebble In The Sky" (1951-06-17) ✅ PD
+- **What:** Single-episode deep dive: Dimension X 6-17-51 "Pebble In The Sky" — Isaac Asimov adaptation from the show's 1951 season.
+- **URL:** https://archive.org/details/0husokuyfn99a3vavvpths1oqliwrgnvkwtfly1r
+- **License:** ✅ Public domain (underlying 1951 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Big-idea SF adaptation; novel-to-radio compression reference. [Wave 55 Lane A]
+
+#### X Minus One (OTR) — #001 "No Contact" series premiere (1955-04-24) ✅ PD
+- **What:** Single-episode deep dive: X Minus One 1955-04-24 "No Contact" (episode 001) — the series premiere of NBC's hard-SF successor to Dimension X.
+- **URL:** https://archive.org/details/xminusone19550424nocontact001
+- **License:** ✅ Public domain (underlying 1955 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Premiere-episode craft reference (pilot that had to sell the format). [Wave 55 Lane A]
+
+#### Inner Sanctum (OTR) — "The Dream" lost episode (Orson Welles) ✅ PD
+- **What:** Single-episode deep dive: Inner Sanctum "The Dream" — lost episode starring Orson Welles; item carries an explicit public-domain mark.
+- **URL:** https://archive.org/details/inner-sanctum-mystery-the-dream-starring-orson-welles
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, item licenseurl = Creative Commons Public Domain Mark 1.0, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cleanest-licensed Inner Sanctum item found (explicit PD mark); Welles-era horror hosting. [Wave 55 Lane A]
+
+#### innersanctum collection (OTR) ✅ PD
+- **What:** "innersanctum" — small 3-file Inner Sanctum collection (thin but the only multi-episode set located this pass).
+- **URL:** https://archive.org/details/innersanctum
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 3 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thin entry — 3 files; use the Welles "The Dream" item as the primary Inner Sanctum reference. [Wave 55 Lane A]
+
+#### OTRR_Lux_Radio_Theatre_Season_02_Singles ⚠️ rights-caution
+- **What:** OTRR certified "Lux Radio Theatre — Single Episodes — Season 02": 6 audio files (1936–37 season, Cecil B. DeMille hosting).
+- **URL:** https://archive.org/details/OTRR_Lux_Radio_Theatre_Season_02_Singles
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 6 audio files; item carries CC BY-NC-ND 4.0 uploader tag)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; DeMille-era prestige-radio format. [Wave 55 Lane A]
+
+#### OTRR_Lux_Radio_Theatre_Season_06_Singles ⚠️ rights-caution
+- **What:** OTRR certified "Lux Radio Theatre — Single Episodes — Season 06": 46 audio files (1940–41 season).
+- **URL:** https://archive.org/details/OTRR_Lux_Radio_Theatre_Season_06_Singles
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 46 audio files; item carries CC BY-NC-ND 4.0 uploader tag)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; wartime Hollywood-star adaptations. [Wave 55 Lane A]
+
+#### OTRR_Lux_Radio_Theatre_Season_21_Singles ⚠️ rights-caution
+- **What:** OTRR certified "Lux Radio Theatre — Single Episodes — Season 21": 31 audio files (1954–55 season, the show's final year).
+- **URL:** https://archive.org/details/OTRR_Lux_Radio_Theatre_Season_21_Singles
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 31 audio files; item carries CC BY-NC-ND 4.0 uploader tag)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; final-season format before the 1955 close. [Wave 55 Lane A]
+
+#### Lux Radio Theatre (OTR) — "The Day the Earth Stood Still" (1954) ⚠️ rights-caution
+- **What:** Single-episode deep dive: Lux Radio Theatre's 1954 adaptation of "The Day the Earth Stood Still" (Michael Rennie film, radio-condensed).
+- **URL:** https://archive.org/details/xkepd3qctwrbw4oqe4g9dgzoagiknwg2ej7o2kib
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; film-to-radio adaptation craft. [Wave 55 Lane A]
+
+#### Lux Radio Theatre (OTR) — "1984" starring Vincent Price (1949) ⚠️ rights-caution
+- **What:** Single-episode deep dive: Lux's 1949 "1984" (Orwell) starring Vincent Price — prestige-radio dystopia adaptation.
+- **URL:** https://archive.org/details/GorgeOrwells1984luxRadioTheartre
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; hour-long novel compression reference. [Wave 55 Lane A]
+
+#### OTRR_CBS_Radio_Workshop_Singles (OTR) ✅ PD
+- **What:** OTRR certified "CBS Radio Workshop — Single Episodes": 86 audio files of the 1956–57 experimental drama series.
+- **URL:** https://archive.org/details/OTRR_CBS_Radio_Workshop_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries CC BY-NC-ND 3.0 uploader-packaging tag; verified 2026-10-08: metadata API HTTP 200, title match, 86 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Experimental-format anthology; sound-experiment episodes included. [Wave 55 Lane A]
+
+#### CBS Radio Workshop — 86-episode collection (OTR) ✅ PD
+- **What:** "CBS Radio Workshop — 86 episodes of the CBS Radio Workshop": alternate full-run collection (1956–57).
+- **URL:** https://archive.org/details/cbs-radio-workshop-1956-10-05-36-roughing-it
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 86 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Second full-run source; cross-check audio quality against the OTRR set. [Wave 55 Lane A]
+
+#### CBS Radio Workshop (OTR) — "Light Ship" (1957-04-28) ✅ PD
+- **What:** Single-episode deep dive: CBS Radio Workshop "Light Ship" (4-28-57) — late-run experimental episode.
+- **URL:** https://archive.org/details/4utn4yc0hoez3lqvqi8f4atphrt8mqjnnxtltblo
+- **License:** ✅ Public domain (underlying 1957 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Experimental-drama reference. [Wave 55 Lane A]
+
+#### Escape (OTR) — "Three Skeleton Key" (1950-03-17) ✅ PD
+- **What:** Single-episode deep dive: Escape 50-03-17 "Three Skeleton Key" — the show's most famous episode (shipwrecked men vs. rats).
+- **URL:** https://archive.org/details/500317EscapeThreeSkeletonKey
+- **License:** ✅ Public domain (underlying 1950 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical suspense-radio episode; tension-escalation masterclass. [Wave 55 Lane A]

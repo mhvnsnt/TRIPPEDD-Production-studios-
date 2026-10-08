@@ -29029,3 +29029,139 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Repertoire/programming research; no downloadable scores or cleared audio. [Wave 30 Lane A]
+
+#### Pterodactyl Squad — rights audit ⚠️ commercial label, no open license
+- **What:** License audit of the existing ❓ entry (UK chip/hip-hop label, catalog codes PTE001–PTE058+, e.g. "Baby Pterodactyl" comp, Discogs-verified).
+- **URL:** https://pterodactylsquad.bandcamp.com (verify before use)
+- **License:** ⚠️ No open license statement found on second verification pass (2026-10-07, web search + Discogs). Releases sold commercially (Bandcamp/Discogs marketplace). Treat as commercial label — contact for sync licensing.
+- **Free tier:** Streaming previews only
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades the ❓ to ⚠️ commercial — do not pull tracks without a license. [Wave 30 Lane A]
+#### Data Airlines — rights audit ❓ still no terms found
+- **What:** License audit of the existing ❓ entry (French synthwave/chipsynth label, Bandcamp storefront).
+- **URL:** https://dataairlines.bandcamp.com (verify before use)
+- **License:** ❓ No label-wide license terms found on second verification pass (2026-10-07). Releases sold commercially on Bandcamp; per-release CC marks possible but unverified — check each release page.
+- **Free tier:** Streaming previews only
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Remains ❓ — per-release verification required. [Wave 30 Lane A]
+#### Bosca Ceoil Blue — rights audit ✅ MIT (upgrade path for the ❓ entry)
+- **What:** License audit of the existing ❓ Bosca Ceoil entry. Bosca Ceoil Blue (Yuri Sizov) is the maintained Godot port of Terry Cavanagh's archived Adobe-AIR original — beginner-friendly chiptune pattern sequencer, WAV/MIDI/XM export.
+- **URL:** https://github.com/YuriSizov/boscaceoil-blue
+- **License:** ✅ MIT (verified 2026-10-07: Blue's LICENSE is MIT; it also carries the original Bosca Ceoil BSD-style notice for reimplemented code). Author states music made with it is usable commercially.
+- **Free tier:** Fully free and open source
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Upgrades the ❓ Bosca Ceoil entry to ✅ — the Blue port is the one to wire (original is archived, macOS/Adobe-AIR broken). [Wave 30 Lane A]
+#### Bleepstreet Records ⚠️ commercial label, no open license
+- **What:** Defunct chiptune-adjacent label/store (Sabrepulse "Close To Me" single sold via Bleep Street Records, 2011 press).
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ⚠️ Commercial single/album sales; no open or CC license found (verified 2026-10-07). Historical entry only.
+- **Free tier:** None found
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not pull audio. Included so crews don't mistake it for a netlabel. [Wave 30 Lane A]
+#### Candy Mind Records 🚫 NC-ND per release (research lane)
+- **What:** Swedish netlabel (2004–2007, electro/IDM with chip overlap), archived at the Netlabel Archive (34 labels / 1,269 releases).
+- **URL:** https://netlabelarchive.org/ (label archive index)
+- **License:** 🚫 Releases carry CC BY-NC-ND 2.5 per-release marks (verified 2026-10-07 on CANDY031 Suntra – Mr. Blister). NC + ND = not commercial-safe, not adaptable — research lane only.
+- **Free tier:** Free downloads of archived releases
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Textbook NC-ND case: free to hear, not usable in productions. [Wave 30 Lane A]
+#### The Netlabel Archive ⚠️ per-release licenses (meta-resource)
+- **What:** netlabelarchive.org — preservation archive for defunct netlabels (34 labels, 1,269 releases: Monotonik, Candy Mind, DarkWingDuck, File Freakout, CatchyNameRecords…).
+- **URL:** https://netlabelarchive.org/
+- **License:** ⚠️ Per-release CC marks (mostly NC variants). The archive preserves license metadata per release — filter before any use.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Discovery layer for defunct-label research; every pull needs per-release license check. [Wave 30 Lane A]
+#### A Bit of Chiptune ❓ indie label + community, terms unverified
+- **What:** "Unapologetically digital" social space + indie label (chiptune, digital fusion, micromusic) — community showcases, cover-album calls.
+- **URL:** https://abitofchiptune.com/ (verify before use)
+- **License:** ❓ No label-wide license terms verified this pass (2026-10-07; site reachable via web archive snapshot).
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Community discovery; verify per-release terms before pulling. [Wave 30 Lane A]
+#### 8-Bit Collective — Internet Archive fan compilation ⚠️ per-artist rights
+- **What:** "The Best of 8 Bit Collective (2006–2011)" — fan compilation on Internet Archive of top-rated tracks from the 8 Bit Collective community site (launched 2005, went down 2011).
+- **URL:** https://archive.org/details/Best_of_8_Bit_Collective-2006-2011
+- **License:** ⚠️ Fan compilation — per-artist rights retained; no blanket license (verified 2026-10-07 via IA item page). Listening/reference only.
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical reference for the 2005–2011 chip scene; not a cleared source. [Wave 30 Lane A]
+#### Chiptunes=WIN ❓ terms unverified (site blocked verification)
+- **What:** Long-running chiptune community/label (Brandon "President Hoodie" Hood) — annual mega-compilations (Vol. 8+), "Bundle of WIN", free Bandcamp downloads.
+- **URL:** https://chiptuneswin.com
+- **License:** ❓ Unverifiable this pass (verified 2026-10-07): site returned HTTP 403 to the verification fetch. Compilations are free downloads but per-artist rights presumably retained — confirm before use.
+- **Free tier:** Free compilation downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** High-value free compilations if per-artist terms check out — needs a live-browser verification pass. [Wave 30 Lane A]
+#### ChipNomad ✅ open-source chiptune tracker
+- **What:** Open-source chiptune tracker by Megus for handheld consoles (Anbernic/TrimUI/Miyoo/PortMaster) + desktop (Win/macOS/Linux/Steam Deck/Android); AY-3-8910/YM2149F now, SID/OPL2/OPN2 planned; LSDJ/M8-inspired.
+- **URL:** https://github.com/Megus/chipnomad-tracker
+- **License:** ✅ Open source (verified 2026-10-07: repo carries MIT license files; forks like ChooChooTracker are MIT). Promo-album terms: authors retain all rights to their music.
+- **Free tier:** Fully free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Modern maintained tracker for authentic chip composition — strong wiring candidate for original cartoon scoring. [Wave 30 Lane A]
+#### Bit Shifter (Joshua Davis) — operator deep-dive ❓ per-release terms
+- **What:** NYC chipstyle pioneer (Blip Festival co-organizer); "The Information Chase" (2006) and catalog via 8bitpeoples.
+- **URL:** http://www.8bitpeoples.com/discography (verify before use)
+- **License:** ❓ Free downloads historically via 8bitpeoples; no artist-level blanket license statement verified this pass (2026-10-07). Check per-release marks.
+- **Free tier:** Free downloads (8bitpeoples)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference artist for Game-Boy-driven scoring aesthetics. [Wave 30 Lane A]
+#### Nullsleep — operator deep-dive ❓ terms unverified
+- **What:** Foundational US chiptune artist (8bitpeoples co-founder milieu); Game Boy / NES-driven catalog.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ No artist-level license statement verified this pass (2026-10-07).
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Included for catalog completeness of the 8bitpeoples core roster; verify before any pull. [Wave 30 Lane A]
+#### Trash80 — operator deep-dive ⚠️ commercial operator
+- **What:** Chip artist (trash80.bandcamp.com — "Theia" EP etc.) and maker of the Dirtywave M8 tracker (commercial hardware).
+- **URL:** https://trash80.bandcamp.com (verify before use)
+- **License:** ⚠️ Commercial operator: music sold on Bandcamp, hardware sold commercially; no open license found (verified 2026-10-07).
+- **Free tier:** Streaming previews
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not pull tracks; M8 tracker itself is commercial hardware. [Wave 30 Lane A]
+#### HVSC — rights audit ⚠️ freeware hobby project, per-tune composer rights
+- **What:** License audit of HVSC coverage. The High Voltage SID Collection (hvsc.c64.org, update #80+, 2023) — 50,000+ C64 SID tunes, volunteer-ripped.
+- **URL:** https://hvsc.c64.org/
+- **License:** ⚠️ "Freeware hobby project," "100% non-profitable" (verified 2026-10-07 on hvsc.c64.org support page) — but individual SID tunes remain their composers' property; no blanket commercial license. Emulation/reference use only.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Audit result: invaluable SID reference corpus, NOT a cleared music source. Pairs with SOASC= recording project. [Wave 30 Lane A]
+#### GOTO80 — operator deep-dive ❓ terms unverified this pass
+- **What:** Swedish chip artist (Anders Carlsson) — 8bitpeoples-era catalog, micromusic scene veteran.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify before any pull. [Wave 30 Lane A]

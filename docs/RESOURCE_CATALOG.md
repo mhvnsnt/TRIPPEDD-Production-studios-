@@ -34920,3 +34920,1081 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Honest drops (failures documented, no entries):** Puli render manager (no canonical repo located); MixItUp current source (only stale 2017 MIT fork found); WarmUpTill Advanced Scene Switcher new location (repo gone from old path); Flamenco (Blender Gitea, license not verified this pass); Filmulator (repo 404s); CinePaint kept as quarantine row instead (GPLv2 via SourceForge); OpenDenoise wrong path (canonical is RenderKit/oidn); YafaRay (repo 404s); WavCaps (license not verified); RIST/librist (lives on VideoLAN GitLab, not verifiable this pass); Monibuca (repo 404s); srt-live-server (repo 404s); OpenCaster (repo 404s); StreamControl license (no grant detected — kept as ❓ entry instead); WebCG license (no license file — kept as ❓ entry instead); Cerealbox/couchblip/Reality Engine/Monomate netlabels (unverifiable this pass); VoiceBank-DEMAND, WavCaps, Speech Commands (data terms not verified this pass).
 - **Quarantine rows added:** 39 (rows 295–333: ExifTool GPL-3.0, QPrompt-Teleprompter GPL-3.0, OpenDCP GPL-3.0, Redmine GPL-2.0, OpenProject GPL-3.0, Leantime AGPL-3.0, Airtime AGPL-3.0, Taiga MPL-2.0, ART GPL-3.0, mrViewer GPL-2.0, ArgyllCMS AGPL-3.0, DisplayCAL GPL-3.0, LuminanceHDR GPL-2.0, x265 GPL-2.0, Aqsis GPL-2.0, PhotoFlow GPL-3.0, CinePaint GPL-2.0, VDO.Ninja AGPL-3.0, obs-websocket GPL-2.0, DistroAV GPL-2.0, StreamFX GPL-2.0, obs-move-transition GPL-2.0, obs-source-record GPL-2.0, LibreTime AGPL-3.0, ffplayout GPL-3.0, Xibo AGPL-3.0, Firebot GPL-3.0, Twitchat GPL-3.0, Imaginary Teleprompter GPL-3.0, Transparent-Twitch-Chat-Overlay GPL-3.0, tvheadend GPL-3.0, MythTV GPL-2.0, Jellyfin GPL-2.0, Kodi GPL-2.0-or-later, OvenMediaEngine AGPL-3.0, Janus GPL-3.0, voctoweb GPL-3.0, voctopublish GPL-3.0, VoxForge GPL). Header counts refreshed: 333 rows · 310 distinct.
 - **Key findings:** the ASWF/Pixar/Intel VFX stack is overwhelmingly permissive (Apache-2.0/BSD dominate; the trademark-clause-modified Apache variants are honestly flagged); the AYON Fair-Source license change is the single most important commercial-safety catch (looks like the open ftrack alternative, isn't, for the server); the broadcast OSS space splits into a healthy MIT/Apache/ISC streaming-server + WebRTC layer (SRS, ZLMediaKit, MediaMTX, LiveKit, mediasoup, pion) and a GPL/AGPL application layer (OBS plugins, playout, signage, chat bots — 21 quarantine rows); the speech-dataset space rewards direct verification (Zenodo/OpenSLR APIs corrected three third-party claims this wave); the chiptune netlabel pocket is exhausted.
+
+## Wave 39 Lane A — new entries (2026-10-08)
+
+### Pocket 1: PD voice/SFX archive deep tail (voice corpora, SFX archives, historical speech)
+
+#### Hi-Fi TTS ✅ commercial-safe
+- **What:** Hi-Fi TTS — high-fidelity multi-speaker TTS corpus (292h, 10 speakers, 44.1kHz)
+- **URL:** http://www.openslr.org/109/
+- **License:** CC BY 4.0 (verified 2026-10-08 via OpenSLR resource page openslr.org/109)
+- **Free tier:** free download (OpenSLR)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean studio TTS data; strong donor for voice-synthesis lanes. [Wave 39 Lane A]
+
+#### CMU ARCTIC ⚠️ NC or attribution
+- **What:** CMU ARCTIC — single-speaker TTS databases (7 voices, phonetically balanced US English)
+- **URL:** http://www.festvox.org/cmu_arctic/
+- **License:** research-only license (verified 2026-10-08 via festvox.org cmu_arctic license terms — not for commercial use)
+- **Free tier:** free for research
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Classic unit-selection/parametric TTS donor; check terms before any product voice. [Wave 39 Lane A]
+
+#### CREMA-D ⚠️ NC or attribution
+- **What:** CREMA-D — Crowd-Sourced Emotional Multimodal Actors Dataset (7,442 clips, 91 actors, 6 emotions)
+- **URL:** https://github.com/CheyneyComputerScience/CREMA-D
+- **License:** research-only (verified 2026-10-08 via project page; GitHub API returns NOASSERTION — the project page's research-use terms are the source of truth)
+- **Free tier:** free for research
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Emotion-labeled speech+video; research-only, do not ship in commercial products. [Wave 39 Lane A]
+
+#### RAVDESS 🚫 copyleft
+- **What:** RAVDESS — Ryerson Audio-Visual Database of Emotional Speech and Song (24 actors, speech+song)
+- **URL:** https://zenodo.org/records/1188976
+- **License:** CC BY-NC-SA 4.0 (verified 2026-10-08 via Zenodo record 1188976 license field)
+- **Free tier:** free for non-commercial
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** QUARANTINED
+- **Notes:** NC-SA: cannot ship in commercial products. QUARANTINED — see LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### SAVEE ⚠️ NC or attribution
+- **What:** SAVEE — Surrey Audio-Visual Expressed Emotion database (4 male speakers, 7 emotions)
+- **URL:** https://kahlan.eps.surrey.ac.uk/savee/
+- **License:** research use, no open license grant (verified 2026-10-08 via savee download page terms)
+- **Free tier:** free for research
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Small acted-emotion set; research-only terms. [Wave 39 Lane A]
+
+#### IEMOCAP ⚠️ NC or attribution
+- **What:** IEMOCAP — USC Interactive Emotional Dyadic Motion Capture (12h, acted+improvised dyads)
+- **URL:** https://sail.usc.edu/iemocap/
+- **License:** research agreement required (verified 2026-10-08 via SAIL IEMOCAP release terms — signed agreement, no commercial use)
+- **Free tier:** free for research (agreement)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Gold-standard dyadic emotion corpus; agreement-gated. [Wave 39 Lane A]
+
+#### VoxCeleb ⚠️ NC or attribution
+- **What:** VoxCeleb — large-scale speaker recognition corpus (YouTube-sourced celebrity speech, 1M+ utterances)
+- **URL:** https://www.robots.ox.ac.uk/~vgg/data/voxceleb/
+- **License:** research terms (verified 2026-10-08 via VGG data page — research-only; audio sourced from YouTube)
+- **Free tier:** free for research
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Speaker-ID/verification donor; YouTube provenance = commercial risk. [Wave 39 Lane A]
+
+#### AudioCaps ⚠️ NC or attribution
+- **What:** AudioCaps — 4,892 audio clips with human captions (AudioSet subset, captioning benchmark)
+- **URL:** https://audiocaps.github.io/
+- **License:** captions CC BY 4.0; audio via YouTube (verified 2026-10-08 via audiocaps.github.io — audio must be re-downloaded from YouTube, platform terms apply)
+- **Free tier:** free (captions); audio self-sourced
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Audio-captioning benchmark; audio provenance is YouTube. [Wave 39 Lane A]
+
+#### ESD Emotional Speech Database ✅ commercial-safe
+- **What:** ESD — Emotional Speech Database (10 native English/Chinese speakers, 5 emotions, 29h)
+- **URL:** https://github.com/HLTSingapore/Emotional-Speech-Data
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on HLTSingapore/Emotional-Speech-Data)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT-licensed emotional TTS/VC corpus — rare commercial-safe emotion data. [Wave 39 Lane A]
+
+#### TESS ⚠️ NC or attribution
+- **What:** TESS — Toronto Emotional Speech Set (2 actresses, 2,800 stimuli, 7 emotions)
+- **URL:** https://tspace.library.utoronto.ca/handle/1807/24487
+- **License:** CC BY-NC-ND 4.0 (verified 2026-10-08 via Dataverse mirror record license field)
+- **Free tier:** free for non-commercial
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clean acted-emotion speech; NC-ND blocks commercial and derivatives. [Wave 39 Lane A]
+
+#### Berlin EMO-DB ❓ unverified
+- **What:** Berlin EMO-DB — acted emotional speech (10 speakers, 7 emotions, German)
+- **URL:** http://emodb.bilderbar.info/index-1280.html
+- **License:** unverified — no formal license agreement found (verified 2026-10-08 via EmoDB 2.0 paper, which notes the absence of a formal license)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Classic emotion corpus; treat as research-only until terms confirmed. [Wave 39 Lane A]
+
+#### AMI Meeting Corpus ✅ commercial-safe
+- **What:** AMI Meeting Corpus — 100h of multi-party meeting recordings (audio+video+transcripts)
+- **URL:** http://groups.inf.ed.ac.uk/ami/download/
+- **License:** CC BY 4.0 (verified 2026-10-08 via official AMI download/license page)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diarization/ASR donor; CC BY = attribution only. [Wave 39 Lane A]
+
+#### OpenSLR Resource Hub ⚠️ NC or attribution
+- **What:** OpenSLR — hub hosting speech/language corpora and recognition software mirrors
+- **URL:** http://www.openslr.org/resources.php
+- **License:** per-resource licenses (verified 2026-10-08 via openslr.org — the hub grants no blanket license; each resource carries its own)
+- **Free tier:** varies per resource
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Index, not a corpus; always check the individual resource license. [Wave 39 Lane A]
+
+#### Versilian VSCO-2 CE ✅ commercial-safe
+- **What:** VSCO-2 Community Edition — open orchestral sample library (3,000+ samples, full orchestra)
+- **URL:** https://github.com/sgossner/VSCO-2-CE
+- **License:** CC0 (verified 2026-10-08 via versilstudios.net/vsco-2.html and the sgossner/VSCO-2-CE GitHub repo)
+- **Free tier:** fully open (CC0)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CC0 orchestral samples — score/mockup lane without clearance risk. [Wave 39 Lane A]
+
+#### First Sounds ✅ commercial-safe
+- **What:** First Sounds — earliest audio recordings (pre-1860 phonautograms, e.g. Au Clair de la Lune 1860)
+- **URL:** https://www.firstsounds.org/
+- **License:** CC BY (verified 2026-10-08 via firstsounds.org — project releases restorations under CC BY)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical-speech donor; public-domain-era source material. [Wave 39 Lane A]
+
+#### CSS10 ✅ commercial-safe
+- **What:** CSS10 — single-speaker TTS dataset (Chinese, 10h, studio quality)
+- **URL:** https://github.com/Kyubyong/css10
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on Kyubyong/css10)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Single-speaker TTS donor; Apache-2.0 is commercial-safe. [Wave 39 Lane A]
+
+#### Fluent Speech Commands ⚠️ NC or attribution
+- **What:** Fluent Speech Commands — 30,043 smart-home command utterances from 97 speakers (SLU benchmark)
+- **URL:** https://fluent.ai/fluent-speech-commands/
+- **License:** CC BY-NC-ND 4.0, academic research only (verified 2026-10-08 via fluent.ai dataset page — 'strictly for academic research only', no commercial use)
+- **Free tier:** free for academic research
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SLU/intent benchmark; NC-ND + academic-only = no product use. [Wave 39 Lane A]
+
+#### LibriTTS-R ✅ commercial-safe
+- **What:** LibriTTS-R — restored LibriTTS (245h, sound-restoration model applied, TTS-ready)
+- **URL:** http://www.openslr.org/141/
+- **License:** CC BY 4.0 (verified 2026-10-08 via OpenSLR resource page openslr.org/141)
+- **Free tier:** free download (OpenSLR)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cleaned TTS corpus; CC BY = attribution only. [Wave 39 Lane A]
+
+#### WHAM! ⚠️ NC or attribution
+- **What:** WHAM! — noisy speech separation benchmark (wsj0-mix with real ambient noise)
+- **URL:** https://wham.whisper.ai/
+- **License:** CC per the WHAM! paper, variant unspecified (verified 2026-10-08 via wham.whisper.ai and the paper's licensing note)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Speech-separation benchmark; pin down the CC variant before product use. [Wave 39 Lane A]
+
+#### Bigcat Instruments ⚠️ NC or attribution
+- **What:** Bigcat Instruments — free orchestral/choir/piano VSTs (Sonatina, VSCO-2, City Piano, etc.)
+- **URL:** https://bigcatinstruments.blogspot.com/
+- **License:** varies per instrument: Sonatina-based instruments under CC Sampling Plus 1.0; City Piano explicitly public domain (verified 2026-10-08 via KVR product page and rekkerd.org release note)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Check per-instrument terms; City Piano is the cleanest (public domain). [Wave 39 Lane A]
+
+#### Rhinospike ❓ unverified
+- **What:** Rhinospike — language-learner recording exchange (native speakers record requested texts)
+- **URL:** https://rhinospike.com/
+- **License:** unverified — credit-based exchange with no open license found (verified 2026-10-08 via rhinospike.com and community write-ups; no license grant located)
+- **Free tier:** free (credit system)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Spoken-language donor for learning content; no commercial grant — verify before use. [Wave 39 Lane A]
+
+#### Gallica Audio ⚠️ NC or attribution
+- **What:** Gallica — BnF digital library audio (52,004 historical audio recordings, scores, speech)
+- **URL:** https://gallica.bnf.fr/
+- **License:** per-item rights (verified 2026-10-08 via gallica.bnf.fr — rights vary per document; many historical items are public domain, marked per-record)
+- **Free tier:** free access
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Deep historical-audio tail; check the rights statement on each item. [Wave 39 Lane A]
+
+#### Analogue Drums Free ⚠️ NC or attribution
+- **What:** Analogue Drums — tape-recorded drum sample kits (Big Mono free kit, vintage Ludwig/Rogers)
+- **URL:** https://www.analoguedrums.com/
+- **License:** royalty-free for music use, no redistribution (verified 2026-10-08 via analoguedrums.com and KVR forum release notes; free Big Mono kit discontinued 2025 per official legacy page)
+- **Free tier:** free kit (registration)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Organic tape drum samples; legacy free kit may be gone — commercial kits are paid. [Wave 39 Lane A]
+
+### Pocket 2: Open game-engine audio middleware (codecs, engines, DSP, plugin APIs)
+
+#### stb_vorbis ✅ commercial-safe
+- **What:** stb_vorbis — single-file public-domain Ogg Vorbis decoder (part of stb)
+- **URL:** https://github.com/nothings/stb
+- **License:** Public Domain (Unlicense) (verified 2026-10-08 via GitHub repo nothings/stb LICENSE / header)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Drop-in Vorbis decode for game audio. [Wave 39 Lane A]
+
+#### minimp3 ✅ commercial-safe
+- **What:** minimp3 — single-file public-domain MP3 decoder
+- **URL:** https://github.com/lieff/minimp3
+- **License:** CC0-1.0 (verified 2026-10-08 via GitHub API spdx_id on lieff/minimp3)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Drop-in MP3 decode for game audio. [Wave 39 Lane A]
+
+#### SFML Audio ✅ commercial-safe
+- **What:** SFML Audio — sf::Sound/sf::Music module of the Simple and Fast Multimedia Library
+- **URL:** https://github.com/SFML/SFML
+- **License:** zlib/libpng (verified 2026-10-08 via GitHub API spdx_id on SFML/SFML)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Game-audio playback/spatialization; pairs with SFML windowing. [Wave 39 Lane A]
+
+#### sfizz ✅ commercial-safe
+- **What:** sfizz — SFZ sampler (library + LV2/VST3/AU plugins)
+- **URL:** https://github.com/sfztools/sfizz
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id on sfztools/sfizz; note: repo ARCHIVED 2025-03-17)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** SFZ instrument playback; archived = no upstream fixes. [Wave 39 Lane A]
+
+#### SFZero ✅ commercial-safe
+- **What:** SFZero — JUCE SFZ soundfont player (sampler voice engine)
+- **URL:** https://github.com/stevefolta/SFZero
+- **License:** MIT (verified 2026-10-08 via canonical repo stevefolta/SFZero LICENSE (stevebaird/SFZero 404s))
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lightweight SFZ voice engine for JUCE apps. [Wave 39 Lane A]
+
+#### AudioFile ✅ commercial-safe
+- **What:** AudioFile — single-header C++ audio file reader/writer (WAV/AIFF)
+- **URL:** https://github.com/adamstark/AudioFile
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on adamstark/AudioFile)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Header-only WAV/AIFF I/O for tools. [Wave 39 Lane A]
+
+#### PipeWire ✅ commercial-safe
+- **What:** PipeWire — Linux audio/video server (PulseAudio/JACK/ALSA compatible)
+- **URL:** https://gitlab.freedesktop.org/pipewire/pipewire
+- **License:** MIT (verified 2026-10-08 via raw COPYING in the freedesktop.org repo)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Modern Linux audio routing target. [Wave 39 Lane A]
+
+#### Oboe ✅ commercial-safe
+- **What:** Oboe — Google's C++ library for low-latency Android audio (AAudio/OpenSL ES)
+- **URL:** https://github.com/google/oboe
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on google/oboe)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Android low-latency path for game audio. [Wave 39 Lane A]
+
+#### SoundJS ✅ commercial-safe
+- **What:** SoundJS — CreateJS Web Audio API abstraction (HTML5 game audio)
+- **URL:** https://github.com/CreateJS/SoundJS
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on CreateJS/SoundJS)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Web game audio with WebAudio fallback chain. [Wave 39 Lane A]
+
+#### Teeworlds ✅ commercial-safe
+- **What:** Teeworlds — retro multiplayer shooter; self-contained game audio engine (zlib)
+- **URL:** https://github.com/teeworlds/teeworlds
+- **License:** zlib (verified 2026-10-08 via raw license.txt in teeworlds/teeworlds)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference game-audio mixer implementation. [Wave 39 Lane A]
+
+#### DDNet ✅ commercial-safe
+- **What:** DDNet — Teeworlds mod; maintained game client with its audio subsystem (zlib)
+- **URL:** https://github.com/ddnet/ddnet
+- **License:** zlib (verified 2026-10-08 via raw license.txt in ddnet/ddnet)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Actively maintained fork of the Teeworlds audio path. [Wave 39 Lane A]
+
+#### Cube 2 Sauerbraten ✅ commercial-safe
+- **What:** Cube 2: Sauerbraten — FPS engine with its own OpenAL-based audio system
+- **URL:** https://sourceforge.net/projects/sauerbraten/
+- **License:** zlib/libpng (verified 2026-10-08 via SourceForge project page license field 'zlib/libpng License' (no official GitHub))
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** FPS-engine audio reference; SourceForge is canonical. [Wave 39 Lane A]
+
+#### Urho3D ✅ commercial-safe
+- **What:** Urho3D — cross-platform game engine (audio subsystem: positional/ambient, Ogg/WAV)
+- **URL:** https://github.com/urho3d/Urho3D
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on urho3d/Urho3D; note: repo ARCHIVED)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Full engine audio pipeline; archived = frozen. [Wave 39 Lane A]
+
+#### Torque3D ✅ commercial-safe
+- **What:** Torque3D — open-source game engine (SFX system, OpenAL)
+- **URL:** https://github.com/TorqueGameEngines/Torque3D
+- **License:** MIT (verified 2026-10-08 via raw LICENSE.md in TorqueGameEngines/Torque3D)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Engine-grade SFX/ambience system. [Wave 39 Lane A]
+
+#### Bevy ✅ commercial-safe
+- **What:** Bevy audio — data-driven Rust game engine audio (kira-based playback)
+- **URL:** https://github.com/bevyengine/bevy
+- **License:** MIT/Apache-2.0 (dual) (verified 2026-10-08 via GitHub API on bevyengine/bevy (dual MIT/Apache-2.0))
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Rust game-audio path for engine work. [Wave 39 Lane A]
+
+#### Fyrox ✅ commercial-safe
+- **What:** Fyrox audio — Rust game engine with HRTF/spatial audio support
+- **URL:** https://github.com/FyroxEngine/Fyrox
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on FyroxEngine/Fyrox)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Rust engine audio with spatial features. [Wave 39 Lane A]
+
+#### ggez ✅ commercial-safe
+- **What:** ggez audio — Rust 2D game framework (rodio-backed audio)
+- **URL:** https://github.com/ggez/ggez
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on ggez/ggez)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lightweight 2D game audio. [Wave 39 Lane A]
+
+#### macroquad ✅ commercial-safe
+- **What:** macroquad audio — Rust game framework (quad-audio backend)
+- **URL:** https://github.com/not-fl3/macroquad
+- **License:** MIT/Apache-2.0 (dual) (verified 2026-10-08 via GitHub API on not-fl3/macroquad (dual MIT/Apache-2.0))
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Minimal Rust game audio. [Wave 39 Lane A]
+
+#### RenPy ✅ commercial-safe
+- **What:** Ren'Py audio — visual-novel engine audio (music/SFX/voice channels)
+- **URL:** https://github.com/renpy/renpy
+- **License:** MIT (verified 2026-10-08 via README.rst license section in renpy/renpy)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dialogue/voice-channel model for narrative games. [Wave 39 Lane A]
+
+#### GDevelop ✅ commercial-safe
+- **What:** GDevelop audio — no-code game engine audio events (Howler-based)
+- **URL:** https://github.com/4ian/GDevelop
+- **License:** MIT (verified 2026-10-08 via raw LICENSE.md in 4ian/GDevelop)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Event-driven game audio for no-code builds. [Wave 39 Lane A]
+
+#### WavPack ✅ commercial-safe
+- **What:** WavPack — hybrid lossless/lossy audio codec (5.1, DSD, correction files)
+- **URL:** https://github.com/dbry/WavPack
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id on dbry/WavPack)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lossless game-audio mastering codec. [Wave 39 Lane A]
+
+#### FLAC ✅ commercial-safe
+- **What:** FLAC — Free Lossless Audio Codec (reference encoder/decoder)
+- **URL:** https://github.com/xiph/flac
+- **License:** Xiph BSD (verified 2026-10-08 via GitHub API spdx_id on xiph/flac)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lossless SFX/music storage. [Wave 39 Lane A]
+
+#### libopus ✅ commercial-safe
+- **What:** Opus — low-latency interactive audio codec (VoIP + game voice chat)
+- **URL:** https://github.com/xiph/opus
+- **License:** Xiph BSD (verified 2026-10-08 via GitHub API spdx_id on xiph/opus)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Voice-chat codec for multiplayer. [Wave 39 Lane A]
+
+#### libvorbis ✅ commercial-safe
+- **What:** Vorbis — open lossy audio codec (game music/SFX staple)
+- **URL:** https://github.com/xiph/vorbis
+- **License:** Xiph BSD (verified 2026-10-08 via GitHub API spdx_id on xiph/vorbis)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Compressed game-audio workhorse. [Wave 39 Lane A]
+
+#### libogg ✅ commercial-safe
+- **What:** Ogg — container/bitstream library underpinning Vorbis/Opus/Theora
+- **URL:** https://github.com/xiph/ogg
+- **License:** Xiph BSD (verified 2026-10-08 via GitHub API spdx_id on xiph/ogg)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Container layer for Vorbis/Opus assets. [Wave 39 Lane A]
+
+#### libmysofa ✅ commercial-safe
+- **What:** libmysofa — SOFA/HRTF spatial-audio file reader (AES69)
+- **URL:** https://github.com/hoene/libmysofa
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id on hoene/libmysofa)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** HRTF data for 3D game audio. [Wave 39 Lane A]
+
+#### KissFFT ✅ commercial-safe
+- **What:** KissFFT — small mixed-radix FFT library
+- **URL:** https://github.com/mborgerding/kissfft
+- **License:** BSD-3-Clause (verified 2026-10-08 via raw LICENSE in mborgerding/kissfft)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** FFT for analyzers/visualizers. [Wave 39 Lane A]
+
+#### PFFFT ✅ commercial-safe
+- **What:** PFFFT — fast FFT (Julien Pommier), SSE/NEON
+- **URL:** https://github.com/hayguen/pffft
+- **License:** BSD-like (verified 2026-10-08 via README license section in hayguen/pffft)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SIMD FFT for real-time audio. [Wave 39 Lane A]
+
+#### VkFFT ✅ commercial-safe
+- **What:** VkFFT — GPU FFT via Vulkan/CUDA/HIP/OpenCL
+- **URL:** https://github.com/DTolm/VkFFT
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on DTolm/VkFFT)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** GPU-accelerated spectral processing. [Wave 39 Lane A]
+
+#### FFTS ✅ commercial-safe
+- **What:** FFTS — fast SIMD FFT (Anthony Blake)
+- **URL:** https://github.com/anthonix/ffts
+- **License:** BSD (verified 2026-10-08 via raw COPYRIGHT file in anthonix/ffts)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fast FFT for audio tooling. [Wave 39 Lane A]
+
+#### clFFT ✅ commercial-safe
+- **What:** clFFT — OpenCL FFT library (AMD)
+- **URL:** https://github.com/clMathLibraries/clFFT
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on clMathLibraries/clFFT)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** OpenCL FFT path. [Wave 39 Lane A]
+
+#### CMSIS-DSP ✅ commercial-safe
+- **What:** CMSIS-DSP — ARM Cortex-M DSP library (FFT, filters, matrix)
+- **URL:** https://github.com/ARM-software/CMSIS-DSP
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on ARM-software/CMSIS-DSP)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Embedded audio-DSP for handheld builds. [Wave 39 Lane A]
+
+#### LV2 ✅ commercial-safe
+- **What:** LV2 — open audio plugin standard (spec + headers)
+- **URL:** https://gitlab.com/lv2/lv2
+- **License:** ISC (spec) (verified 2026-10-08 via raw COPYING in the lv2/lv2 repo)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Open plugin standard for game/DAW audio. [Wave 39 Lane A]
+
+#### Novocaine ✅ commercial-safe
+- **What:** Novocaine — high-performance iOS/macOS audio (Alex Wiltschko)
+- **URL:** https://github.com/alexbw/novocaine
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on alexbw/novocaine)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** iOS/macOS low-level audio I/O. [Wave 39 Lane A]
+
+#### sndio ✅ commercial-safe
+- **What:** sndio — OpenBSD small audio/MIDI framework
+- **URL:** http://www.sndio.org/
+- **License:** ISC (verified 2026-10-08 via LICENSE in the sndio tarball)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Minimal audio server for BSD/Linux. [Wave 39 Lane A]
+
+#### tinywav ✅ commercial-safe
+- **What:** tinywav — tiny C WAV reader/writer
+- **URL:** https://github.com/mhroth/tinywav
+- **License:** ISC (verified 2026-10-08 via GitHub API spdx_id on mhroth/tinywav (ISC, not MIT))
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Minimal WAV I/O for tools. [Wave 39 Lane A]
+
+#### pixi-sound ✅ commercial-safe
+- **What:** pixi-sound — WebAudio sound manager for PixiJS games
+- **URL:** https://github.com/pixijs/sound
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on pixijs/sound)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Web game audio for PixiJS. [Wave 39 Lane A]
+
+#### LOVE ✅ commercial-safe
+- **What:** LÖVE audio — 2D Lua game framework (OpenAL-backed audio)
+- **URL:** https://github.com/love2d/love
+- **License:** zlib (verified 2026-10-08 via raw license.txt in love2d/love)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Lua game-audio scripting. [Wave 39 Lane A]
+
+#### pyglet ✅ commercial-safe
+- **What:** pyglet audio — Python multimedia (OpenAL/DirectSound media player)
+- **URL:** https://github.com/pyglet/pyglet
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id on pyglet/pyglet)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Python game-audio for prototypes. [Wave 39 Lane A]
+
+#### CLAP ✅ commercial-safe
+- **What:** CLAP — CLever Audio Plugin API (open plugin standard)
+- **URL:** https://github.com/free-audio/clap
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on free-audio/clap)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Modern open plugin API. [Wave 39 Lane A]
+
+#### Speex ✅ commercial-safe
+- **What:** Speex — open speech codec (narrowband/wideband)
+- **URL:** https://github.com/xiph/speex
+- **License:** Xiph BSD (verified 2026-10-08 via GitHub API spdx_id on xiph/speex)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Speech codec for voice pipelines. [Wave 39 Lane A]
+
+#### Opusfile ✅ commercial-safe
+- **What:** opusfile — high-level Opus file/stream decoding API
+- **URL:** https://github.com/xiph/opusfile
+- **License:** Xiph BSD (verified 2026-10-08 via GitHub API spdx_id on xiph/opusfile)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Simple Opus playback API. [Wave 39 Lane A]
+
+#### NVorbis ✅ commercial-safe
+- **What:** NVorbis — pure-C# Vorbis decoder (no native deps)
+- **URL:** https://github.com/NVorbis/NVorbis
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on NVorbis/NVorbis)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** .NET game-audio Vorbis decode. [Wave 39 Lane A]
+
+#### SPTK ✅ commercial-safe
+- **What:** SPTK — Speech Signal Processing Toolkit (voice synthesis/analysis)
+- **URL:** https://github.com/sp-nitech/SPTK
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on sp-nitech/SPTK)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Speech-synthesis research toolkit. [Wave 39 Lane A]
+
+#### Snips ✅ commercial-safe
+- **What:** Snips NLU — on-device voice-assistant NLU (Rust/Python)
+- **URL:** https://github.com/snipsco/snips-nlu
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on snipsco/snips-nlu)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** On-device intent parsing for voice UI. [Wave 39 Lane A]
+
+#### AAudio ✅ commercial-safe
+- **What:** AAudio — Android NDK low-latency audio API (AOSP)
+- **URL:** https://developer.android.com/ndk/guides/audio/aaudio/aaudio
+- **License:** Apache-2.0 (AOSP) (verified 2026-10-08 via AOSP source licensing (NDK page silent on license; AOSP = Apache-2.0))
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Native Android pro-audio path. [Wave 39 Lane A]
+
+#### VST3 SDK ✅ commercial-safe
+- **What:** VST3 SDK — Steinberg plugin SDK (now MIT-licensed)
+- **URL:** https://github.com/steinbergmedia/vst3sdk
+- **License:** MIT (verified 2026-10-08 via raw LICENSE.txt in steinbergmedia/vst3sdk (© 2026 Steinberg; relicensed GPL→MIT))
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** VST3 plugin dev; NOT copyleft despite old reputation. [Wave 39 Lane A]
+
+#### irrKlang ⚠️ NC or attribution
+- **What:** irrKlang — 2D/3D game audio engine (Ambiera)
+- **URL:** https://www.ambiera.com/irrklang/
+- **License:** proprietary: free for non-commercial; paid pro license (verified 2026-10-08 via GitHub n/a; ambiera.com/irrklang licensing page)
+- **Free tier:** free non-commercial
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 3D game audio; commercial use needs the paid pro license. [Wave 39 Lane A]
+
+#### BASS ⚠️ NC or attribution
+- **What:** BASS — Un4seen audio library (Windows/macOS/Linux/mobile)
+- **URL:** https://www.un4seen.com/
+- **License:** proprietary: free for non-commercial; paid commercial license (verified 2026-10-08 via un4seen.com licensing page)
+- **Free tier:** free non-commercial
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mature game-audio lib; commercial use needs a paid license. [Wave 39 Lane A]
+
+#### libsndfile 🚫 copyleft
+- **What:** libsndfile — C library for reading/writing audio files
+- **URL:** https://github.com/libsndfile/libsndfile
+- **License:** LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id on libsndfile/libsndfile)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — audio file I/O; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### mpg123 🚫 copyleft
+- **What:** mpg123 — fast MP3 decoder/player
+- **URL:** https://sourceforge.net/projects/mpg123/
+- **License:** LGPLv2 (verified 2026-10-08 via SourceForge project license metadata)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — MP3 decode; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### libmad 🚫 copyleft
+- **What:** libmad — integer MPEG audio decoder (Underbit)
+- **URL:** https://www.underbit.com/products/mad/
+- **License:** GPL-2.0 (verified 2026-10-08 via underbit.com MAD license page)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — MP3 decode; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### FAAD2 🚫 copyleft
+- **What:** FAAD2 — open AAC decoder
+- **URL:** https://github.com/knik0/faad2
+- **License:** GPL-2.0 (verified 2026-10-08 via raw COPYING in knik0/faad2)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — AAC decode; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### LADSPA 🚫 copyleft
+- **What:** LADSPA — Linux Audio Developer's Simple Plugin API
+- **URL:** https://www.ladspa.org/
+- **License:** LGPL (verified 2026-10-08 via ladspa.org license page)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — plugin standard; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### JACK2 🚫 copyleft
+- **What:** JACK2 — JACK Audio Connection Kit (low-latency server)
+- **URL:** https://github.com/jackaudio/jack2
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on jackaudio/jack2)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — pro-audio routing; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### HISE 🚫 copyleft
+- **What:** HISE — open-source sampler/virtual-instrument framework
+- **URL:** https://github.com/christophhart/HISE
+- **License:** GPL-3.0 (verified 2026-10-08 via README license section in christophhart/HISE)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — sampler framework; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### ChucK 🚫 copyleft
+- **What:** ChucK — strongly-timed audio programming language
+- **URL:** https://github.com/ccrma/chuck
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on ccrma/chuck)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — audio language; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### pygame 🚫 copyleft
+- **What:** pygame — Python game library (SDL audio/mixer)
+- **URL:** https://github.com/pygame/pygame
+- **License:** LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id on pygame/pygame)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — game audio; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### munt 🚫 copyleft
+- **What:** munt — Roland MT-32/CM-32L emulator
+- **URL:** https://github.com/munt/munt
+- **License:** LGPL-2.1 (verified 2026-10-08 via COPYING.LESSER.txt in munt/munt)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — MIDI synth emu; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### zita-resampler 🚫 copyleft
+- **What:** zita-resampler — C++ resampling library (Fons Adriaensen)
+- **URL:** https://kokkinizita.linuxaudio.org/linuxaudio/zita-resampler/resampler.html
+- **License:** GPL-3+ (verified 2026-10-08 via Debian copyright file for zita-resampler)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — resampling; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### zita-convolver 🚫 copyleft
+- **What:** zita-convolver — fast partitioned convolution engine
+- **URL:** https://kokkinizita.linuxaudio.org/linuxaudio/zita-convolver/resampler.html
+- **License:** GPL-3+ (verified 2026-10-08 via Debian copyright file for zita-convolver)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — convolution reverb; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### KFR 🚫 copyleft
+- **What:** KFR — fast DSP/audio framework (C++)
+- **URL:** https://github.com/kfrlib/kfr
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id on kfrlib/kfr)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — DSP framework; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### FFTW 🚫 copyleft
+- **What:** FFTW — fastest Fourier transform in the West
+- **URL:** http://www.fftw.org/
+- **License:** GPL (verified 2026-10-08 via fftw.org license page)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — FFT; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### LAME 🚫 copyleft
+- **What:** LAME — MP3 encoder
+- **URL:** http://lame.sourceforge.net/
+- **License:** LGPL (verified 2026-10-08 via lame.sourceforge.net license page)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — MP3 encode; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### TiMidity++ 🚫 copyleft
+- **What:** TiMidity++ — software MIDI synthesizer
+- **URL:** http://timidity.sourceforge.net/
+- **License:** GPL-2.0 (verified 2026-10-08 via COPYING in the TiMidity++ tarball)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — MIDI synth; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### Audiere 🚫 copyleft
+- **What:** Audiere — high-level audio API (Chad Austin)
+- **URL:** http://audiere.sourceforge.net/
+- **License:** LGPL (verified 2026-10-08 via audiere.sourceforge.net license page)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — audio API; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### DSSI 🚫 copyleft
+- **What:** DSSI — Disposable Soft Synth Interface (plugin API)
+- **URL:** http://dssi.sourceforge.net/
+- **License:** LGPL (verified 2026-10-08 via dssi.sourceforge.net license page)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — plugin API; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### PulseAudio 🚫 copyleft
+- **What:** PulseAudio — Linux sound server
+- **URL:** https://gitlab.freedesktop.org/pulseaudio/pulseaudio
+- **License:** LGPL-2.1 (verified 2026-10-08 via COPYING in the freedesktop.org repo)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — sound server; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### alsa-lib 🚫 copyleft
+- **What:** alsa-lib — ALSA userspace library (Linux audio)
+- **URL:** https://github.com/alsa-project/alsa-lib
+- **License:** LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id on alsa-project/alsa-lib)
+- **Free tier:** fully open (copyleft)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** QUARANTINED
+- **Notes:** QUARANTINED — audio API; never wired into shipping paths. See LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+### Pocket 3: Retro demo-tool documentation (chip docs, format specs, tracker/wiki archives)
+
+#### NESdev Wiki ⚠️ NC or attribution
+- **What:** NESdev Wiki — community NES/Famicom development wiki (APU, mappers, hardware reference)
+- **URL:** https://www.nesdev.org/wiki/Nesdev_Wiki
+- **License:** per-wiki terms, no formal license stated (verified 2026-10-08 via nesdev.org — no license grant found on-site)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical NES audio/hardware reference; respect per-page terms. [Wave 39 Lane A]
+
+#### Lode's Computer Graphics Tutorial ⚠️ NC or attribution
+- **What:** Lode's Computer Graphics Tutorial — raycasting/voxel OpenGL-era tutorial series (demoscene-adjacent)
+- **URL:** https://lodev.org/cgtutor/
+- **License:** article text © all rights reserved (no copying without permission); source code (QuickCG + examples) BSD-3-Clause (verified 2026-10-08 via lodev.org/cgtutor/legal.html)
+- **Free tier:** free to read; code BSD
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Text is NOT open; only the example code is BSD. [Wave 39 Lane A]
+
+#### NeHe Tutorials ❓ unverified
+- **What:** NeHe OpenGL tutorials — legacy game/demo graphics tutorials (archived on GameDev.net)
+- **URL:** https://nehe.gamedev.net/
+- **License:** unverified — no explicit license on the archive (verified 2026-10-08 via nehe.gamedev.net; original free-use grant not restated)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historic demo-coding tutorials; treat text as all-rights-reserved until confirmed. [Wave 39 Lane A]
+
+#### Sega Retro 🚫 copyleft
+- **What:** Sega Retro — Sega hardware/software wiki (YM2612, SCSP, VGM deep-dives)
+- **URL:** https://segaretro.org/
+- **License:** GFDL-1.2 (verified 2026-10-08 via segaretro.org MediaWiki API rightsinfo)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** QUARANTINED
+- **Notes:** GFDL share-alike docs. QUARANTINED — see LICENSE_QUARANTINE.md. [Wave 39 Lane A]
+
+#### PSF Format Docs ❓ unverified
+- **What:** PSF Format Docs — Neill Corlett's Portable Sound Format spec (PSF1/PSF2/miniPSF/PSFlib)
+- **URL:** http://justsolve.archiveteam.org/wiki/Portable_Sound_Format
+- **License:** unverified — no explicit license (spec publicly documented 2003; original neillcorlett.com/psf/ 404s verified 2026-10-08; Archive Team mirror)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use the Archive Team mirror; original host is gone. [Wave 39 Lane A]
+
+#### VGM Specification ❓ unverified
+- **What:** VGM Specification — Video Game Music format spec (sample-accurate sound-chip logging)
+- **URL:** https://github.com/wally869/vgm_parser/blob/HEAD/docs/vgm_specs.md
+- **License:** unverified — freely published, no explicit license (canonical vgmrips.net wiki blocks bots verified 2026-10-08; this GitHub mirror used)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Core retro-audio format doc; mirror since the wiki is bot-walled. [Wave 39 Lane A]
+
+#### Flipcode Archives ❓ unverified
+- **What:** Flipcode Archives — reader-submitted game-dev articles/tutorials (Developer Toolbox, Q&A)
+- **URL:** https://flipcode.com/archives/
+- **License:** unverified — 'available publicly, completely free' to read; no reuse license stated (verified 2026-10-08 via flipcode.com/archives/)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Timeless game-dev reference; free to read ≠ free to reuse. [Wave 39 Lane A]
+
+#### VGM Music Maker ⚠️ NC or attribution
+- **What:** VGM Music Maker — Shiru's Sega Genesis/Mega Drive tracker (6 FM + 4 PSG channels)
+- **URL:** https://chipmusic.org/forums/topic/4509/vgm-music-maker-a-sega-genesis-tracker/
+- **License:** freeware by Shiru, not open source (verified 2026-10-08 via ChipMusic release thread; shiru8bit.com unreachable verified 2026-10-08)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Genesis chiptune tracker; freeware terms, no source. [Wave 39 Lane A]
+
+#### SID Chip Documentation ❓ unverified
+- **What:** SID Chip Documentation — MOS 6581/8580 Sound Interface Device datasheet (hosted scan)
+- **URL:** http://www.waitingforfriday.com/index.php/Commodore_SID_6581_Datasheet
+- **License:** unverified — original Commodore datasheet, hosted scan, no explicit license (verified 2026-10-08 via waitingforfriday.com)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The SID bible; scan of Commodore's original doc. [Wave 39 Lane A]
+
+#### POKEY Documentation ⚠️ NC or attribution
+- **What:** POKEY Documentation — Atari POKEY (C012294) sound/keyboard chip reference
+- **URL:** https://en.wikipedia.org/wiki/POKEY
+- **License:** CC BY-SA (Wikipedia) (verified 2026-10-08 via en.wikipedia.org/wiki/POKEY; atariarchives.org behind human-verification verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** POKEY feature/part-number reference; share-alike text. [Wave 39 Lane A]
+
+#### YM2612 Documentation ❓ unverified
+- **What:** YM2612 Documentation — Yamaha OPN2 FM chip manual (Genesis/Mega Drive sound)
+- **URL:** https://github.com/Wohlstand/OPN2BankEditor/raw/refs/heads/master/Specifications/YM2612.pdf
+- **License:** unverified — Yamaha manual mirrored in OPN2BankEditor repo, no explicit license (verified 2026-10-08 via GitHub)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** FM register bible for Genesis audio; mirrored Yamaha doc. [Wave 39 Lane A]
+
+#### RP2A03 Reference ⚠️ NC or attribution
+- **What:** RP2A03 Reference — NES APU hardware reference (5 channels, registers $4000–$4017)
+- **URL:** https://www.nesdev.org/wiki/APU
+- **License:** per-wiki terms, no formal license stated (verified 2026-10-08 via nesdev.org — no license grant found on-site)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NES audio programming reference; respect per-page terms. [Wave 39 Lane A]
+
+#### textfiles.com ❓ unverified
+- **What:** textfiles.com — Jason Scott's BBS-era textfile archive (incl. AUDIO section, demoscene docs)
+- **URL:** http://www.textfiles.com/
+- **License:** unverified — per-file rights, no blanket license (verified 2026-10-08 via textfiles.com)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical demoscene/BBS audio docs; check per-file provenance. [Wave 39 Lane A]
+
+#### AtariArchives.org ❓ unverified
+- **What:** AtariArchives.org — scanned Atari technical books (De Re Atari, Mapping the Atari, etc.)
+- **URL:** https://www.atariarchives.org/
+- **License:** unverified — human-verification wall verified 2026-10-08; scanned books, per-book rights
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari sound-hardware books; verify per-book rights before reuse. [Wave 39 Lane A]
+
+#### 6502.org ❓ unverified
+- **What:** 6502.org — 6502 documents archive (datasheets, app notes, hardware manuals)
+- **URL:** https://6502.org/
+- **License:** unverified — community-contributed archive, no explicit license (verified 2026-10-08 via 6502.org)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 6500-family datasheets incl. SID; community archive, no blanket grant. [Wave 39 Lane A]

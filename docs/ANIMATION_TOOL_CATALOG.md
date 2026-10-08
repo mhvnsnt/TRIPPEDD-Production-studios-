@@ -102,6 +102,92 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** BSD-3-Clause (verified 2026-10-08: CMU Sphinx org repo listing shows BSD-3-Clause).
 - **Use:** fast, tiny-footprint G2P for dictionary extension; good where g2p-seq2seq's TensorFlow weight is too heavy.
 
+#### DSAlign ⚠️ MPL-2.0 — also in RESOURCE_CATALOG (quarantine row 21)
+- **What:** Mozilla's archived DeepSpeech forced aligner — text↔audio alignment via CTC; useful for line-level dialogue timing.
+- **URL:** http://github.com/mozilla/DSAlign
+- **License:** MPL-2.0 (verified via GitHub repo metadata). **QUARANTINED per lane rule** — weak copyleft (file-level); RESOURCE_CATALOG treats as commercial-safe with an audit gate.
+- **Use:** line-level dialogue timing; archived upstream — Coqui STT fork is the live line.
+
+#### Festival ✅ — also in RESOURCE_CATALOG
+- **What:** Edinburgh speech-synthesis system; its lexicon/phonemizer components give script→phone conversion for alignment.
+- **URL:** https://github.com/rommix0/festival
+- **License:** X11-style permissive (verified via repo README COPYING section: commercial use allowed).
+- **Use:** phonemizer backend option; heavyweight but proven.
+
+#### MaryTTS 🚫 LGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 22)
+- **What:** Multilingual TTS with explicit phoneme output — a G2P/phoneme source for many languages.
+- **URL:** https://github.com/marytts/marytts
+- **License:** LGPL-3.0 (verified: root LICENSE.md is the LGPL-3.0 text). **QUARANTINED** — weak copyleft; scope note pending owner verdict (matches LICENSE_QUARANTINE.md doctrine).
+- **Use:** phoneme strings for non-English dialogue; standalone-service use only.
+
+#### NVIDIA Audio2Face ⚠️ proprietary — also in RESOURCE_CATALOG
+- **What:** NVIDIA AI-driven facial animation from audio input — audio → full face/lip animation, including blendshape output.
+- **URL:** https://developer.nvidia.com/audio2face
+- **License:** Proprietary NVIDIA license (NOT OSI open source). RESOURCE_CATALOG Wave 7 A records "NVIDIA Open Model License — commercial OK (verified)" — VERIFY PER USE against current NVIDIA terms. Honest badge: ⚠️.
+- **Use:** run as microservice or Omniverse app; RTX GPU only — spec the hardware honestly. Fallback path stays Rhubarb (MIT) + phoneme aligners.
+
+#### LivePortrait ✅ — also in RESOURCE_CATALOG
+- **What:** One-shot portrait animation — drives a still portrait from audio/video; usable for talking-head cards and animatic previz.
+- **URL:** https://github.com/KwaiVGI/LivePortrait
+- **License:** MIT (verified: upstream relicensed from old custom terms to MIT — Wave 7 correction, root LICENSE fetched).
+- **Use:** animatic talking-head previz; NOT the main lip-sync path (2D mouth-shape pipeline is commercial-safe and controllable).
+
+#### SadTalker ✅ — also in RESOURCE_CATALOG
+- **What:** Audio-driven single-image talking-face generation (3DMM + rendering).
+- **URL:** https://github.com/OpenTalker/SadTalker
+- **License:** Apache-2.0 (verified: upstream removed the old NC restriction — Wave 7 correction, root LICENSE fetched).
+- **Use:** talking-head previz / dialogue placeholder renders; heavyweight vs. mouth-swap sprites.
+
+#### Wav2Lip 🚫 NC/research only — also in RESOURCE_CATALOG (honest exclusion)
+- **What:** GAN talking-face video lip sync — listed so nobody mistakes the MIT-claiming forks for commercial-safe.
+- **URL:** https://github.com/Rudrabha/Wav2Lip
+- **License:** Custom non-commercial (personal/research only) — verified via official README. Commercial HD model via Sync Labs (paid).
+- **Use:** research lane only. The 2D mouth-shape pipeline (Rhubarb) is the commercial path.
+
+#### PC-AVS ✅
+- **What:** Pose-Controllable Audio-Visual System (CVPR 2021) — talking-face generation with implicit modularized audio-visual representation; pose code disentangled from mouth shape and identity.
+- **URL:** https://github.com/amitmaity0/talking-face_pc-avs
+- **License:** CC-BY-4.0 (verified 2026-10-08: official README "The usage of this software is under CC-BY-4.0" — canonical repo Hangz-nju-cuhk/Talking-Face_PC-AVS). Commercial OK with attribution.
+- **Use:** talking-head dubbing research/previz where pose control matters; pretrained demo scripts ship in repo.
+
+#### DINet ❓ unverified — no license file upstream
+- **What:** Deformation Inpainting Network (AAAI 2023) — realistic face visual dubbing on high-resolution video; coarse-to-fine GAN for mouth-region inpainting synced to audio.
+- **URL:** https://github.com/MRzzm/DINet
+- **License:** ❓ UNVERIFIED — no LICENSE file in upstream repo (direct fetch 2026-10-08); README asserts no license terms. Treat as all-rights-reserved: research/evaluation only, do not wire until the authors clarify.
+- **Use:** high-res dubbing experiments only. Honest negative: unusable in production without a license grant.
+
+#### ctc-segmentation ✅ — also in RESOURCE_CATALOG
+- **What:** RNN phoneme-level forced alignment, extendable to any ASR incl. whisper.
+- **URL:** https://github.com/lumaku/ctc-segmentation
+- **License:** Apache-2.0 (verified).
+- **Use:** lightweight alternative to MFA for phoneme timings from whisper-class models; CLI + Python lib.
+
+#### uLipSync ✅ — also in RESOURCE_CATALOG
+- **What:** Real-time MFCC audio → blendshape lip sync (Unity; portable algorithm).
+- **URL:** https://github.com/hecomi/uLipSync
+- **License:** MIT (verified via multiple license audits).
+- **Use:** real-time oriented; useful for puppet preview rigs and offline bake of blendshape curves.
+
+#### Viseme mapping tables ✅ (technique reference)
+- **What:** Phoneme→viseme mapping tables — the lookup that turns phoneme timelines into mouth shapes. Common sets: Rhubarb's extended Preston Blair set, OVRLipSync 15-viseme set, CMUdict→viseme converters.
+- **URL:** n/a (technique; tables live in Rhubarb res/, OVRLipSync SDK docs, Preston Blair's "Cartoon Animation").
+- **License:** n/a — technique. Own-authored mappings are fine; do NOT copy proprietary table artwork verbatim.
+- **Use:** the final hop in every lip-sync chain: phonemes (Rhubarb/MFA/g2p-en) → visemes → mouth sprites/shape keys. Keep the studio's canonical mapping table versioned with the rig.
+
+#### Preston Blair viseme sets ✅ (technique reference)
+- **What:** The classic Preston Blair phonetic mouth charts (A/I, E, O, U, C-D-G-K-N-R-S-T-X-Y-Z, F-V, L, M-B-P, rest) from "Cartoon Animation" — the cartoon-industry standard mouth breakdown Rhubarb's set extends.
+- **URL:** n/a (technique; documented in Preston Blair's "Cartoon Animation", Walter Foster).
+- **License:** n/a — technique/reference (the book is copyrighted; the phonetic breakdown concept is industry-standard practice).
+- **Use:** baseline mouth-sprite sets for 2D characters; Rhubarb's extended set is the machine-readable upgrade.
+
+#### 12-principle mouth charts ✅ (technique reference)
+- **What:** Mouth-shape charts derived from Disney's 12 principles of animation (squash & stretch, anticipation, staging applied to dialogue) — the animation-timing layer on top of phoneme accuracy.
+- **URL:** n/a (technique; Frank Thomas & Ollie Johnston, "The Illusion of Life").
+- **License:** n/a — technique.
+- **Use:** dialogue animation timing: phoneme accuracy gets the mouth right, the 12 principles make it act. Pair with Rhubarb timelines + viseme tables.
+
+<!-- end lane A1: lip-sync / phoneme / viseme (29 entries) -->
+
 ## Dialogue-to-animation / beat timing
 <!-- dialogue timing, beat matching, animatic timing -->
 

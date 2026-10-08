@@ -42186,3 +42186,1019 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Honest negative — the adaptive-music/pooling feature set is the reference for what to build open, but the asset itself is closed and Unity-only. [Wave 47 Lane A]
+
+## Wave 48 Lane A — new entries (2026-10-08)
+
+### Pocket 1 — PD animation/cartoon archive tail (27 entries)
+
+#### Internet Archive — Classic Cartoons collection ✅ per-item PD
+- **What:** Curated IA collection of classic-era cartoons (Fleischer, Van Beuren, Ub Iwerks, Terrytoons-era PD titles and silent cartoons).
+- **URL:** https://archive.org/details/classic_cartoons
+- **License:** ✅ Per-item public domain — pre-1930 and non-renewed titles; verify each item's date (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Direct PD cartoon plate source — Betty Boop/Fleischer-era and silent-cartoon restorations live here. Cross-check PD status per title (some uploads are mislabeled). [Wave 48 Lane A]
+
+#### Internet Archive — Vintage Cartoons collection ✅ per-item PD
+- **What:** Second IA curated vintage-cartoon collection — overlaps Classic Cartoons but carries distinct uploads (early sound-era shorts, Aesop's Fables-era material).
+- **URL:** https://archive.org/details/vintage_cartoons
+- **License:** ✅ Per-item public domain — verify each item (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup against classic_cartoons before pulling — meaningful overlap between the two collections. [Wave 48 Lane A]
+
+#### Internet Archive — Silent Films collection ✅ per-item PD
+- **What:** IA's silent-film collection — thousands of pre-1930 silents including early animation (Edison, Bray, and silent cartoon shorts).
+- **URL:** https://archive.org/details/silent_films
+- **License:** ✅ Per-item public domain — US pre-1930 silents; verify each item (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-animation hunting ground — search within for Bray, Edison, and silent cartoon series. [Wave 48 Lane A]
+
+#### A/V Geeks (Internet Archive) ✅ per-item PD/educational
+- **What:** Skip Elsheimer's A/V Geeks collection of 16mm educational films on IA — includes animated educational shorts and Prelinger-style animation reels.
+- **URL:** https://archive.org/details/avgeeks
+- **License:** ✅ Per-item — largely public-domain educational/industrial films (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prelinger-style animation reels live here — sponsored/educational animation with clean PD status. [Wave 48 Lane A]
+
+#### Internet Archive — Unsorted Animation ⚠️ per-item rights
+- **What:** Large unsorted IA animation bucket (~578 items) — mixed PD, fan uploads, and modern indie animation.
+- **URL:** https://archive.org/details/animation_unsorted
+- **License:** ⚠️ Per-item rights — NOT a PD collection; verify every item before use (verified 2026-10-08 via archive.org metadata search, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — useful for discovering PD items misfiled outside curated collections, but rights must be checked per item. [Wave 48 Lane A]
+
+#### Internet Archive — Universal Newsreels ✅ US federal PD
+- **What:** Universal Newsreel releases 1929–1967 (NARA-sourced) — newsreel footage with animated title cards and period interstitial graphics.
+- **URL:** https://archive.org/details/universal_newsreels
+- **License:** ✅ Public domain — NARA holdings released to the public domain (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period title-card/interstitial graphics reference — newsreel opens are a goldmine for 1930s–60s motion-graphics grammar. [Wave 48 Lane A]
+
+#### U.S. National Archives — Motion Pictures ✅ US federal PD
+- **What:** NARA's motion-picture holdings portal — federal films, newsreels, and animation produced for the US government, all public domain.
+- **URL:** https://www.archives.gov/research/motion-pictures
+- **License:** ✅ Public domain — US federal works (verified 2026-10-08 via archives.gov, HTTP 200)
+- **Free tier:** Free research access; some reels digitized online
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Includes WWII-era animated training films (Disney/UPA-adjacent government work) — clean PD status by statute. [Wave 48 Lane A]
+
+#### Library of Congress — National Screening Room ✅ US federal PD
+- **What:** LoC's streaming room for public-domain films from its paper-print and early-cinema holdings, including early animation.
+- **URL:** https://www.loc.gov/programs/national-screening-room/
+- **License:** ✅ Public domain — LoC federal holdings (verified 2026-10-08; site bot-walls automated fetch — HTTP 403 — resource confirmed via LoC)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paper-print era animation (1890s–1910s) — earliest American animation on record, all PD. [Wave 48 Lane A]
+
+#### Library of Congress — National Film Registry essays ✅ US federal PD
+- **What:** LoC's National Film Registry — scholarly essays on each inducted film; the essays themselves are federal PD text (the films are NOT PD by induction).
+- **URL:** https://www.loc.gov/programs/national-film-preservation-board/film-registry/
+- **License:** ✅ Essays are US federal PD; ⚠️ Registry induction confers no PD status on the films (verified 2026-10-08; site bot-walls automated fetch — HTTP 403 — resource confirmed via LoC)
+- **Free tier:** Free essays
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Metadata lane — use essays to date and identify PD animation titles, never as a PD grant for the films. [Wave 48 Lane A]
+
+#### Cartoon Research ✅ reference (metadata)
+- **What:** Jerry Beck / Cartoon Research site — PD-cartoon identification, studio histories, and "which cartoons are public domain" research articles.
+- **URL:** https://cartoonresearch.com
+- **License:** ✅ Reference — articles are site-copyrighted; PD-status research is factual (verified 2026-10-08 via cartoonresearch.com, HTTP 200)
+- **Free tier:** Free articles
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The go-to PD-cartoon identification desk — use before pulling any Fleischer/Terrytoons/Van Beuren title to confirm PD status. [Wave 48 Lane A]
+
+#### Big Cartoon Database ✅ reference (metadata)
+- **What:** The Big Cartoon Database (BCDB) — episode-level metadata for theatrical cartoons: studios, dates, credits, and copyright-renewal clues.
+- **URL:** https://www.bcdb.com
+- **License:** ✅ Reference database — metadata is factual; site text copyrighted (verified 2026-10-08 via bcdb.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Date/studio metadata feeds the PD determination (pre-1930 or non-renewed = PD candidates). [Wave 48 Lane A]
+
+#### Don Markstein's Toonopedia ✅ reference (metadata)
+- **What:** Don Markstein's Toonopedia — encyclopedia of toons and TV animation with character/studio histories.
+- **URL:** https://www.toonopedia.com
+- **License:** ✅ Reference — site-copyrighted text, factual metadata (verified 2026-10-08 via toonopedia.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Character/studio provenance for PD-era toons — useful for labeling plates correctly. [Wave 48 Lane A]
+
+#### Internet Animation Database ✅ reference (metadata)
+- **What:** The Internet Animation Database (IAD) — searchable cartoon episode database with studio/date metadata.
+- **URL:** https://www.intanibase.com
+- **License:** ✅ Reference database (verified 2026-10-08 via intanibase.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Episode-level dates for PD determination on theatrical shorts. [Wave 48 Lane A]
+
+#### Silent Era ✅ reference (metadata)
+- **What:** Silent Era (silentera.com) — progressive silent-film database with survival/archive-location data.
+- **URL:** https://www.silentera.com
+- **License:** ✅ Reference database (verified 2026-10-08 via silentera.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Silent-cartoon survival data — which archives hold prints of Bray/Edison-era animation. [Wave 48 Lane A]
+
+#### Animation Resources ✅ reference (archive)
+- **What:** Animation Resources Inc. — nonprofit reference archive for classic cartooning: streaming rare animation, e-books, and oral histories for members.
+- **URL:** https://animationresources.org
+- **License:** ⚠️ Reference archive — membership-based streaming; not a PD grant (verified 2026-10-08 via animationresources.org, HTTP 200)
+- **Free tier:** Free articles; membership for full archive
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane — draftsmanship and timing reference for the cartoon pipeline; do not pull plates from member streams. [Wave 48 Lane A]
+
+#### Duke Center for the Study of the Public Domain ✅ research
+- **What:** Duke Law's Center for the Study of the Public Domain — public-domain research, Public Domain Day lists, and copyright scholarship.
+- **URL:** https://web.law.duke.edu/cspd/
+- **License:** ✅ Research — scholarship freely readable (verified 2026-10-08 via web.law.duke.edu, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD-date authority — use their Public Domain Day research to confirm when cartoon copyrights expire. [Wave 48 Lane A]
+
+#### National Film Preservation Foundation ✅ org + PD guide
+- **What:** NFPF — federal-chartered nonprofit funding film preservation; publishes the Film Preservation Guide and streams preserved films (incl. cartoons).
+- **URL:** https://www.filmpreservation.org
+- **License:** ✅ The Film Preservation Guide is a federal-funded PD resource; streamed films are rights-cleared for viewing, verify per-title for reuse (verified 2026-10-08 via filmpreservation.org, HTTP 200)
+- **Free tier:** Free guide + streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Film Preservation Guide is the standard reference for restoration practice — pairs with this wave's Pocket 3 tooling. [Wave 48 Lane A]
+
+#### Undercrank Productions 🚫 honest negative (commercial PD label)
+- **What:** Ben Model's Undercrank Productions — commercial DVD/streaming label for restored silent films with new scores.
+- **URL:** https://www.undercrankproductions.com
+- **License:** 🚫 Commercial — restored editions and new scores are copyrighted products (verified 2026-10-08 via undercrankproductions.com, HTTP 200)
+- **Free tier:** Paid products
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative — the restorations are reference-quality, but buying a disc does not buy PD rights to the underlying film; source PD prints elsewhere. [Wave 48 Lane A]
+
+#### ASIFA International ✅ org
+- **What:** ASIFA (Association Internationale du Film d'Animation) — UNESCO-recognized international animation association; festival and archive network.
+- **URL:** https://asifa.net
+- **License:** ✅ Organization site (verified 2026-10-08 via asifa.net, HTTP 200)
+- **Free tier:** Free site; membership for programs
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Network lane — ASIFA chapters hold regional animation archives; useful for non-US PD animation leads. [Wave 48 Lane A]
+
+#### Golden Age Cartoons ✅ community
+- **What:** Golden Age Cartoons — long-running classic-animation fan community and news site with PD/restoration discussion.
+- **URL:** https://www.goldenagecartoons.com
+- **License:** ✅ Community — forum/news; verify any media per-item (verified 2026-10-08 via goldenagecartoons.com, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Community intel on which PD cartoons have good transfers and where the best prints circulate. [Wave 48 Lane A]
+
+#### National Film Board of Canada 🚫 honest negative (not PD)
+- **What:** NFB — Canada's public film producer with ~14,000 films streaming free, including historic animation (McLaren et al.).
+- **URL:** https://www.nfb.ca
+- **License:** 🚫 Not public domain — NFB retains copyright; free streaming is not a reuse grant; commercial/derivative use requires licensing (verified 2026-10-08 via nfb.ca, HTTP 200)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative — the classic NFB animation canon (McLaren) is rights-reserved; do not treat "free to watch" as PD. [Wave 48 Lane A]
+
+#### British Film Institute 🚫 honest negative (not PD)
+- **What:** BFI — UK national film archive with BFI Player streaming of historic British animation.
+- **URL:** https://www.bfi.org.uk
+- **License:** 🚫 Not public domain — BFI/archive rights reserved; streaming is not a reuse grant (verified 2026-10-08 via bfi.org.uk, HTTP 200)
+- **Free tier:** Free + paid streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative — listed so nobody mistakes BFI archive access for PD status. [Wave 48 Lane A]
+
+#### Wikipedia — List of films in the public domain in the United States ⚠️ per-wiki terms
+- **What:** Wikipedia's curated list of PD films in the US, with copyright-expiry reasoning per title.
+- **URL:** https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States
+- **License:** ⚠️ CC-BY-SA per Wikipedia terms — the list is a research aid, not legal advice (verified 2026-10-08 via en.wikipedia.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Starting-point checklist for PD cartoon candidates — independently verify each title before pulling plates. [Wave 48 Lane A]
+
+#### Thunderbean Animation ❓ site unreachable this pass
+- **What:** Steve Stanchfield's Thunderbean Animation — boutique restorer of PD cartoons (Fleischer, Van Beuren, silent-era) on Blu-ray.
+- **URL:** https://www.thunderbean.com
+- **License:** ❓ Site unreachable 2026-10-08 (connection failed) — historically a commercial restoration label; not a PD grant
+- **Free tier:** Paid discs
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — Thunderbean's restorations set the quality bar for PD cartoon transfers, but the label is commercial; re-verify if the site returns. [Wave 48 Lane A]
+
+#### ASIFA-Hollywood Animation Archive ❓ site unreachable this pass
+- **What:** ASIFA-Hollywood Animation Archive — research archive of animation art and history materials.
+- **URL:** https://www.animationarchive.org
+- **License:** ❓ Site unreachable 2026-10-08 (connection failed) — historically a members/research archive, not a PD grant
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — re-verify if the site returns; do not treat archive access as PD status. [Wave 48 Lane A]
+
+#### Wikimedia Commons — Animations category ⚠️ per-file license check
+- **What:** Wikimedia Commons animation category — community-uploaded animated GIFs/WebMs, many PD or freely licensed.
+- **URL:** https://commons.wikimedia.org/wiki/Category:Animations
+- **License:** ⚠️ Per-file — check each file's license tag; PD-old and CC files mixed with non-commercial ones (verified 2026-10-08 via commons.wikimedia.org, HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for PD animation loops and early-cinema clips — filter by license tag before pulling. [Wave 48 Lane A]
+
+#### UbuWeb — Film ⚠️ per-item rights
+- **What:** UbuWeb's film section — avant-garde and historic film/video hosted with artist permission.
+- **URL:** http://www.ubu.com/film/
+- **License:** ⚠️ Per-item — artist-permission hosting, not a PD grant; verify each work (verified 2026-10-08 via ubu.com, HTTP 200)
+- **Free tier:** Free streaming/downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Avant-garde animation reference — permission-hosted, so treat as view-only research unless the item is independently PD. [Wave 48 Lane A]
+
+### Pocket 2 — chip-music tracker long tail (31 entries)
+
+#### Uxn ✅ commercial-safe (MIT, sourcehut verified 2026-10-08)
+- **What:** 100r's Uxn — stack-machine fantasy computer with a built-in tracker-style music workflow (varvara ecosystem).
+- **URL:** https://git.sr.ht/~rabbits/uxn
+- **License:** ✅ MIT (verified 2026-10-08 via sourcehut repo tree listing MIT license)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Fantasy-console chip composition target — tiny ROMs, tracker-native workflow; study the varvara audio device for minimal chip-synth design. [Wave 48 Lane A]
+
+#### GB Studio ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** chrismaltby/gb-studio — drag-and-drop retro game creator for Game Boy; includes a built-in chiptune music editor (hUGETracker lineage).
+- **URL:** https://github.com/chrismaltby/gb-studio
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-04)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The GB music editor is the approachable end of the tracker spectrum — study its UX for onboarding non-tracker musicians. [Wave 48 Lane A]
+
+#### GBT Player ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** AntonioND/gbt-player — music player library for the GB/GBC/GBA PSG audio channels (pairs with GBT Player tracker format).
+- **URL:** https://github.com/AntonioND/gbt-player
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-06)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference GB PSG replayer implementation — clean-room readable, MIT-clean for study. [Wave 48 Lane A]
+
+#### SGDK ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** Stephane-D/SGDK — open Sega Mega Drive dev kit shipping the XGM/XGM2 sound drivers (tracker-adjacent composition toolchain).
+- **URL:** https://github.com/Stephane-D/SGDK
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-01)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** XGM2 driver is the modern Genesis music path — study its tracker-to-driver pipeline for YM2612 composition UX. [Wave 48 Lane A]
+
+#### bfxr ✅ commercial-safe (Apache-2.0, README verified 2026-10-08)
+- **What:** increpare/bfxr — Flash/AIR port of sfxr: the classic retro SFX generator (pickup/coin, laser, explosion presets).
+- **URL:** https://github.com/increpare/bfxr
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via readme.MD "license: http://www.apache.org/licenses/LICENSE-2.0.html")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chip-SFX generation reference — the 7-generator-function model is the fastest path to placeholder retro SFX. [Wave 48 Lane A]
+
+#### sfxr (al_sfxr) ✅ commercial-safe (MIT, README verified 2026-10-08)
+- **What:** leiradel/al_sfxr — header-only C library port of DrPetter's sfxr sound-effect synthesizer.
+- **URL:** https://github.com/leiradel/al_sfxr
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub README carrying the MIT license text, © 2007 Tomas Pettersson / 2020 Andre Leiradella)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Embeddable chip-SFX synth — header-only, MIT-clean, drop-in for procedural retro SFX. [Wave 48 Lane A]
+
+#### jsfxr ✅ commercial-safe (Unlicense, GitHub API verified 2026-10-08)
+- **What:** chr15m/jsfxr — JavaScript port of sfxr; browser-based retro sound-effect generator (sfxr.me).
+- **URL:** https://github.com/chr15m/jsfxr
+- **License:** ✅ Unlicense (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-05-05)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Web-native chip-SFX generation — useful reference for in-browser SFX tooling. [Wave 48 Lane A]
+
+#### NSFPlay ✅ commercial-safe (permissive author grant, verified 2026-10-08)
+- **What:** Brad Smith's NSFPlay — full-featured open-source NSF/NSFE player (standalone + Winamp plugin), all NES expansion chips, WAV logger, debugger.
+- **URL:** https://bbbradsmith.github.io/nsfplay/
+- **License:** ✅ Permissive — author's notice: "You may reuse this code without restriction" (verified 2026-10-08 via rainwarrior fork README restating Brad Smith's grant)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference NES audio emulation — the most accurate NSF playback path; study the expansion-chip implementations. [Wave 48 Lane A]
+
+#### MaxYMiser ⚠️ freeware — no redistributable open grant
+- **What:** gwEm's MaxYMiser — the actively-developed Atari ST YM2149 chip tracker (FastTracker II-style editing, full MIDI).
+- **URL:** http://www.preromanbritain.com/maxymiser/
+- **License:** ⚠️ Freeware — "maxYMiser is free" per the author's site; no open-source grant stated (verified 2026-10-08 via preromanbritain.com, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Study the FT2-style editing UX on real YM hardware constraints; binaries are free but not redistributable as source. [Wave 48 Lane A]
+
+#### DigiBooster ⚠️ freeware — no redistributable open grant
+- **What:** DigiBooster 3 — Amiga-origin tracker (ProTracker lineage → software multi-channel mixing), still maintained.
+- **URL:** http://www.digibooster.de
+- **License:** ⚠️ Freeware — "kostenlos!" per the official site; no open-source grant stated (verified 2026-10-08 via digibooster.de, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Amiga tracker-evolution study — the DBM0 module format docs on-site are worth reading alongside the tool. [Wave 48 Lane A]
+
+#### RMT (Raster Music Tracker) ⚠️ freeware — no redistributable open grant
+- **What:** Raster's RMT — cross-platform tool for making Atari XL/XE POKEY music on PC, with Raster's own mature music routine.
+- **URL:** http://raster.infos.cz/atari/rmt/rmt.htm
+- **License:** ⚠️ Freeware — freely downloadable from the author's site; no formal license grant found (verified 2026-10-08 via raster.infos.cz, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** POKEY composition reference — note the GPL-3.0 Qt6 RITMO port (quarantine row 441) as the open-source lineage. [Wave 48 Lane A]
+
+#### Open Cubic Player ⚠️ freeware — no redistributable open grant
+- **What:** Open Cubic Player — veteran module player for Linux/Unix/DOS/Windows (MOD/S3M/XM/IT and dozens of formats).
+- **URL:** https://www.cubic.org/player/
+- **License:** ⚠️ Freeware — freely downloadable; no license grant stated on site (verified 2026-10-08 via cubic.org, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Format-coverage reference for module playback testing; prefer libopenmpt for anything linked. [Wave 48 Lane A]
+
+#### PlayerPRO ⚠️ open-source listing, license file unverified
+- **What:** PlayerPRO — classic Mac music composer/sound editor (SoundTracker) for MOD/S3M/XM/IT, now cross-platform via SourceForge.
+- **URL:** https://sourceforge.net/projects/playerpro/
+- **License:** ⚠️ Listed under SourceForge "Open Source Software"; specific license file not verified this pass (verified 2026-10-08 via sourceforge.net, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mac tracker-history study — verify the actual license file before any code reuse. [Wave 48 Lane A]
+
+#### game-music-emu 🚫 LGPL-2.1 — QUARANTINED (new row 438)
+- **What:** libgme/game-music-emu — Blargg's video game music emulation library (NSF, SPC, VGM, GBS, HES, AY, KSS, SAP and more).
+- **URL:** https://github.com/libgme/game-music-emu
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-09-08) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the definitive multi-format chip emulation core; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 438. [Wave 48 Lane A]
+
+#### Odin2 🚫 GPL-3.0 — QUARANTINED (new row 439)
+- **What:** TheWaveWarden/odin2 — Odin 2 open-source synthesizer plugin (24-voice, modular-style).
+- **URL:** https://github.com/TheWaveWarden/odin2
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via LICENSE raw "distributed under the GNU GPLv3"; pushed 2025-09-07)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the voice architecture and modulation matrix; never linked. QUARANTINE row 439. [Wave 48 Lane A]
+
+#### NitroTracker 🚫 GPL-3.0 — QUARANTINED (new row 440)
+- **What:** NitrousTracker/nitroustracker — FastTracker II-style XM tracker for Nintendo DS/DSi (0xtob's NitroTracker lineage, actively maintained fork).
+- **URL:** https://github.com/NitrousTracker/nitroustracker
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via README "NitrousTracker: GNU General Public License v3"; original GPL-3.0 per CDM)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — the only serious handheld-stylus tracker UX case study; never linked. QUARANTINE row 440. [Wave 48 Lane A]
+
+#### RITMO Music Tracker 🚫 GPL-3.0 — QUARANTINED (new row 441)
+- **What:** gianlucarenzi/RITMO-Music-Tracker — Qt6 cross-platform port of RMT, the Atari XL/XE POKEY music tracker.
+- **URL:** https://github.com/gianlucarenzi/RITMO-Music-Tracker
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-05)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — modern open-source POKEY tracker implementation; never linked. QUARANTINE row 441. [Wave 48 Lane A]
+
+#### MadTracker3 🚫 LGPL-2.0 — QUARANTINED (new row 442)
+- **What:** MadTracker-FOSS/MadTracker3 — open continuation of the MadTracker tracker-sequencer (VST/ASIO/ReWire lineage).
+- **URL:** https://github.com/MadTracker-FOSS/MadTracker3
+- **License:** 🚫 LGPL-2.0 (verified 2026-10-08 via project README "MadTracker is released under the GNU LGPLv2"; GitHub API NOASSERTION) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the tracker+VST hybrid architecture; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 442. [Wave 48 Lane A]
+
+#### NotSo Fatso 🚫 GPL-2.0-or-later — QUARANTINED (new row 443)
+- **What:** NotSo Fatso — Winamp NSF/NSFE input plugin with high-accuracy NES APU and all 6 expansion-chip emulation.
+- **URL:** https://www.zophar.net/utilities/nsf/notso-fatso.html
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via xmplay_gamemusic_plugin README: "the combined plugin is GPLv2+ because NotSo Fatso is GPL-2+")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — expansion-chip emulation accuracy reference; never linked. QUARANTINE row 443. [Wave 48 Lane A]
+
+#### Furnace Tracker 🚫 GPL-3.0 — QUARANTINED (row 271 exists)
+- **What:** tildearrow/furnace — Furnace: multi-system chiptune tracker (dozens of sound chips, .fur format).
+- **URL:** https://github.com/tildearrow/furnace
+- **License:** 🚫 GPL-3.0 — quarantined (row 271 exists; the catalog already carries the .fur format-docs entry)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — the broadest chip-coverage tracker in existence; study its per-chip abstraction, never link. QUARANTINE row 271 (existing). [Wave 48 Lane A]
+
+#### TriloTracker ❓ no license file found in repo
+- **What:** cornelisser/TriloTracker — MSX/SMS music tracker for PSG+SCC, PSG+FM, and PSG+FM chip combos.
+- **URL:** https://github.com/cornelisser/TriloTracker
+- **License:** ❓ No LICENSE file in repo (GitHub API license null; pushed 2026-05-27) — grant unverified this pass
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — promising MSX/SMS tracker but no license grant on record; treat as all-rights-reserved until verified. [Wave 48 Lane A]
+
+#### SNESMod ❓ no license file found in repo
+- **What:** mukunda-/snesmod — SNES audio library: Impulse Tracker music + sound-effect streaming on the SPC700.
+- **URL:** https://github.com/mukunda-/snesmod
+- **License:** ❓ No LICENSE file in repo (GitHub API license null; pushed 2025-02-01) — grant unverified this pass
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the canonical IT→SNES path, but no license grant on record; verify before reuse. [Wave 48 Lane A]
+
+#### PPMCK ❓ official site unreachable this pass
+- **What:** PPMCK — MML (Music Macro Language) compiler kit for NES/Famicom music.
+- **URL:** http://ppmck.mmlclub.net
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — historically freeware, unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — MML composition path for NES; re-verify if the site returns. [Wave 48 Lane A]
+
+#### OctaMED Soundstudio ❓ official site unreachable this pass
+- **What:** OctaMED Soundstudio — the classic Amiga MED-line tracker (successor to OctaMED).
+- **URL:** https://www.octamed.co.uk
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — historically freeware, unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — key Amiga tracker lineage gap; re-verify if the site returns. [Wave 48 Lane A]
+
+#### Soundtrakker 128 ❓ official site unreachable this pass
+- **What:** Soundtrakker 128 — BSC's Amstrad CPC tracker.
+- **URL:** http://www.soundtrakker.org
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — historically freeware, unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — CPC tracker gap; re-verify if the site returns. [Wave 48 Lane A]
+
+#### SID Factory II ❓ official site unreachable this pass
+- **What:** SID Factory II — modern Windows-based C64 SID composition tool.
+- **URL:** https://www.sidfactory2.com
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — grant unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — notable modern SID tool; re-verify if the site returns. [Wave 48 Lane A]
+
+#### NSF format documentation (NESDev wiki) ⚠️ per-wiki terms
+- **What:** NESDev wiki's NSF page — the NES Sound Format technical specification.
+- **URL:** https://www.nesdev.org/wiki/NSF
+- **License:** ⚠️ Per-wiki terms — technical doc, no blanket reuse grant (verified 2026-10-08 via nesdev.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical NSF spec reference — pair with NSFPlay for an NSF playback study path. [Wave 48 Lane A]
+
+#### VGM file format specification (SMS Power) ❓ terms unverified
+- **What:** SMS Power's VGM file-format documentation — the Video Game Music format spec.
+- **URL:** https://www.smspower.org/Music/VGMFileFormat
+- **License:** ❓ Terms unverified — widely-mirrored tech doc (verified 2026-10-08 via smspower.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical VGM spec — the logging-format complement to tracker formats. [Wave 48 Lane A]
+
+#### SMPS format documentation (Sonic Retro) ⚠️ per-wiki terms
+- **What:** Sonic Retro wiki's SMPS page — Sega's SMPS sound-driver format (Genesis-era tracker-adjacent).
+- **URL:** https://info.sonicretro.org/SMPS
+- **License:** ⚠️ Per-wiki terms — technical doc, no blanket reuse grant (verified 2026-10-08 via info.sonicretro.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genesis driver-format reference — complements the SGDK/XGM2 entry for the Sega music path. [Wave 48 Lane A]
+
+#### SID file format specification (HVSC) ❓ terms unverified
+- **What:** HVSC's SID_file_format.txt — the PlaySID/SID file format specification.
+- **URL:** https://www.hvsc.c64.org/download/C64Music/DOCUMENTS/SID_file_format.txt
+- **License:** ❓ Terms unverified — widely-mirrored tech doc (verified 2026-10-08 via hvsc.c64.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical SID container spec — pairs with the HVSC collection entry. [Wave 48 Lane A]
+
+#### SAP format documentation (ASAP docs) 🚫 GPL-2.0 — quarantined (row 259 exists)
+- **What:** SAP (Atari SAP Music Archive) format docs, shipped with ASAP (Another Slight Atari Player).
+- **URL:** https://github.com/grayscale/asap
+- **License:** 🚫 GPL-2.0 — quarantined (row 259 exists; catalog already carries the ASAP entry)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane only — POKEY format spec lives inside a GPL codebase; read, don't lift. QUARANTINE row 259 (existing). [Wave 48 Lane A]
+
+### Pocket 3 — open film-restoration tooling (42 entries)
+
+#### Bringing Old Photos Back to Life ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** microsoft/Bringing-Old-Photos-Back-to-Life — CVPR 2020 oral: deep restoration of old photos (defects, scratches, fading) via triplet-domain translation.
+- **URL:** https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2023-10-26)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Scratch/dust/defect removal + color restoration in one pipeline — the closest open equivalent to commercial photo-restoration suites. [Wave 48 Lane A]
+
+#### DeepRemaster ⚠️ CC-BY-NC-SA-4.0 — non-commercial
+- **What:** DeepRemaster (Iizuka & Simo-Serra, SIGGRAPH Asia 2019) — semi-automatic remastering of vintage video: film-noise removal, contrast/sharpness, reference-based colorization.
+- **URL:** https://github.com/pepe-77777/old_deepremaster
+- **License:** ⚠️ CC-BY-NC-SA-4.0 — non-commercial, share-alike (verified 2026-10-08 via repo README license section)
+- **Free tier:** free for non-commercial use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane — the temporal source-reference attention approach is the study target; NC license bars shipping use. [Wave 48 Lane A]
+
+#### ProPainter ⚠️ NTU S-Lab 1.0 — non-commercial
+- **What:** sczhou/ProPainter (ICCV 2023) — video inpainting via improved propagation + transformers; state-of-the-art scratch/dirt/object removal.
+- **URL:** https://github.com/sczhou/ProPainter
+- **License:** ⚠️ NTU S-Lab License 1.0 — "strictly for non-commercial purposes" (verified 2026-10-08 via repo README license section)
+- **Free tier:** free for non-commercial use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane — the propagation architecture is the inpainting study target; NC license bars shipping use. [Wave 48 Lane A]
+
+#### E2FGVI ⚠️ CC-BY-NC-4.0 — non-commercial
+- **What:** MCG-NKU/E2FGVI — "Towards An End-to-End Framework for Flow-Guided Video Inpainting": fast video inpainting for dirt/scratch/watermark removal.
+- **URL:** https://github.com/MCG-NKU/E2FGVI
+- **License:** ⚠️ CC-BY-NC-4.0 — "for Non-commercial use only" (verified 2026-10-08 via repo README license section; pushed 2023-04-07)
+- **Free tier:** free for non-commercial use
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane — flow-guided inpainting is faster than ProPainter at some quality cost; NC license bars shipping use. [Wave 48 Lane A]
+
+#### fmtconv ✅ commercial-safe (WTFPL, GitHub API verified 2026-10-08)
+- **What:** EleonoreMizo/fmtconv — format conversion tools for VapourSynth and AviSynth+ (bit-depth, colorspace, chroma resampling).
+- **URL:** https://github.com/EleonoreMizo/fmtconv
+- **License:** ✅ WTFPL (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The colorspace/bit-depth plumbing underneath every restoration chain — WTFPL-clean for pipeline use. [Wave 48 Lane A]
+
+#### BagIt (RFC 8493) ✅ open standard
+- **What:** The BagIt File Packaging Format (RFC 8493) — LoC/IETF standard for packaging digital-preservation transfers with manifests and checksums.
+- **URL:** https://datatracker.ietf.org/doc/html/rfc8493
+- **License:** ✅ IETF open standard — free to implement (verified 2026-10-08 via datatracker.ietf.org, HTTP 200)
+- **Free tier:** Free spec
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Preservation-packaging standard — any restored asset leaving the pipeline should ship as a BagIt bag with checksums. [Wave 48 Lane A]
+
+#### FADGI (Federal Agencies Digital Guidelines Initiative) ✅ US federal PD
+- **What:** FADGI — US federal digitization guidelines: still-image and AV digitization targets, QC metrics, and conformance levels.
+- **URL:** https://www.digitizationguidelines.gov
+- **License:** ✅ US federal public domain (verified 2026-10-08 via digitizationguidelines.gov, HTTP 200)
+- **Free tier:** Free guidelines
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The QC bar for restoration deliverables — FADGI star ratings define what "archival quality" means. [Wave 48 Lane A]
+
+#### AV Artifact Atlas ✅ commercial-safe (MIT, verified 2026-10-08)
+- **What:** bavc/avaa — BAVC's Audiovisual Artifact Atlas: community-built visual glossary of video/audio errors and anomalies (head clogs, dropouts, TBC errors…).
+- **URL:** https://github.com/bavc/avaa
+- **License:** ✅ MIT (verified 2026-10-08 via repo README "MIT. See LICENSE")
+- **Free tier:** free OSS; live atlas at bavc.github.io/avaa
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Defect-identification bible — use it to name what QCTools flags before deciding the repair chain. [Wave 48 Lane A]
+
+#### Gyroflow 🚫 GPL-3.0 — QUARANTINED (new row 444)
+- **What:** gyroflow/gyroflow — video stabilization using gyroscope data (modern, cross-platform).
+- **URL:** https://github.com/gyroflow/gyroflow
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-08)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — gyro-based stabilization algorithms are the study target; never linked. QUARANTINE row 444. [Wave 48 Lane A]
+
+#### QCTools 🚫 GPL-3.0 — QUARANTINED (new row 445)
+- **What:** bavc/qctools — Quality Control Tools for Video Preservation: signal graphs, artifact detection, and QC reporting for archival video.
+- **URL:** https://github.com/bavc/qctools
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via License.html "QCTools is licensed under a GPLv3 License")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the archival QC workflow (what to measure, which graphs matter) is the study target; never linked. QUARANTINE row 445. [Wave 48 Lane A]
+
+#### Archivematica 🚫 AGPL-3.0 — QUARANTINED (new row 446)
+- **What:** artefactual/archivematica — open-source digital preservation system (ingest, normalization, AIP/DIP packaging).
+- **URL:** https://github.com/artefactual/archivematica
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-08)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the preservation-workflow model (micro-services pipeline); never deployed as a network service. QUARANTINE row 446. [Wave 48 Lane A]
+
+#### JHOVE 🚫 LGPL-2.1 — QUARANTINED (new row 447)
+- **What:** openpreserve/jhove — JSTOR/Harvard Object Validation Environment: file-format validation and characterization.
+- **URL:** https://github.com/openpreserve/jhove
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via LICENSE raw "Lesser General Public License ... version 2.1") — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — format-validation rules for archival deliverables; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 447. [Wave 48 Lane A]
+
+#### DCP-o-matic 🚫 GPL-2.0 — QUARANTINED (new row 448)
+- **What:** cth103/dcpomatic — open-source DCP (Digital Cinema Package) creation tool.
+- **URL:** https://github.com/cth103/dcpomatic
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-05)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — DCP packaging knowledge for cinema deliverables; never linked. QUARANTINE row 448. [Wave 48 Lane A]
+
+#### vid.stab 🚫 LGPL-2.1-or-later — QUARANTINED (new row 449)
+- **What:** georgmartius/vid.stab — video stabilization library (the deshake engine behind transcode/ffmpeg-era stabilization).
+- **URL:** https://github.com/georgmartius/vid.stab
+- **License:** 🚫 LGPL-2.1-or-later (verified 2026-10-08 via README "GNU Lesser General Public License, version 2.1 or later") — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the transform-smoothing algorithms; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 449. [Wave 48 Lane A]
+
+#### Deshaker 🚫 GPL-2.0 — QUARANTINED (new row 450)
+- **What:** gu-t/Deshaker — Gunnar Thalin's Deshaker: VirtualDub video-stabilizer plugin (open-sourced 2022).
+- **URL:** https://github.com/gu-t/Deshaker
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; author page guthspot.se confirms open-source since 2022)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the classic rolling-shutter/des shake correction approach; never linked. QUARANTINE row 450. [Wave 48 Lane A]
+
+#### CinePaint 🚫 GPL-2.0 — QUARANTINED (row 311 exists)
+- **What:** CinePaint — deep-bit (up to 32-bit float) film paint/retouch tool, the Glasgow fork of GIMP built for motion-picture restoration.
+- **URL:** https://sourceforge.net/projects/cinepaint/
+- **License:** 🚫 GPL-2.0 — quarantined (row 311 exists, verified Wave 38 Lane A via SourceForge license field)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — frame-by-frame dust/scratch paint workflow is the study target; never linked. QUARANTINE row 311 (existing). [Wave 48 Lane A]
+
+#### MSU Denoiser ⚠️ freeware — no redistributable open grant
+- **What:** MSU Denoiser — Moscow State University Graphics & Media Lab's free VirtualDub/AviSynth noise-reduction filter.
+- **URL:** https://www.compression.ru/video/denoiser/index_en.html
+- **License:** ⚠️ Freeware — free download from MSU; no open-source grant stated (verified 2026-10-08 via compression.ru, HTTP 200 with browser UA)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Grain-management reference — MSU's filters are quality benchmarks for temporal denoising; binaries free, not redistributable as source. [Wave 48 Lane A]
+
+#### MSU Deflicker ⚠️ freeware — no redistributable open grant
+- **What:** MSU Deflicker — MSU Graphics & Media Lab's free flicker-removal filter for digitized film/video.
+- **URL:** https://www.compression.ru/video/deflicker/index_en.html
+- **License:** ⚠️ Freeware — free download from MSU; no open-source grant stated (verified 2026-10-08 via compression.ru, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Flicker-removal reference for aged-film transfers; binaries free, not redistributable as source. [Wave 48 Lane A]
+
+#### Neat Video 🚫 honest negative (commercial)
+- **What:** Neat Video — commercial noise-reduction plugin (Premiere/Resolve/Final Cut/OFX).
+- **URL:** https://www.neatvideo.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via neatvideo.com)
+- **Free tier:** Paid; limited demo
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative — the quality bar for temporal denoising, but closed; open alternatives: MSU Denoiser, KNLMeansCL, BM3D. [Wave 48 Lane A]
+
+#### RE:Vision Effects 🚫 honest negative (commercial)
+- **What:** RE:Vision Effects — commercial restoration/VFX plugins (DE:Noise, RE:Fill, FieldsKit deinterlacer).
+- **URL:** https://www.revisionfx.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via revisionfx.com, HTTP 200)
+- **Free tier:** Paid; watermarked demos
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative — FieldsKit/DE:Noise define the commercial deinterlace/denoise bar; open alternatives: QTGMC, SMDegrain. [Wave 48 Lane A]
+
+#### Digital Vision (Phoenix/Nucoda) 🚫 honest negative (commercial)
+- **What:** Digital Vision — commercial film-restoration suite (Phoenix) and Nucoda color/finishing platform.
+- **URL:** https://www.digitalvision.se
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via digitalvision.se, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — the industry restoration pipeline reference; open alternatives: QCTools + AviSynth/VapourSynth chains. [Wave 48 Lane A]
+
+#### PFClean 🚫 honest negative (commercial)
+- **What:** The Pixel Farm's PFClean — commercial film restoration/cleanup suite (dust/scratch, grain, stabilization).
+- **URL:** https://www.thepixelfarm.co.uk
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via thepixelfarm.co.uk, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — the dust-busting workflow reference; open alternatives: RemoveDirt/DeSpot/DeScratch chains. [Wave 48 Lane A]
+
+#### Diamant (HS-ART) 🚫 honest negative (commercial)
+- **What:** HS-ART Diamant — commercial film restoration software (dust/scratch removal, stabilization, color).
+- **URL:** https://www.hs-art.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via hs-art.com, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — Diamant's automated dust maps are the feature to replicate openly. [Wave 48 Lane A]
+
+#### MTI Film CORTEX 🚫 honest negative (commercial)
+- **What:** MTI Film CORTEX — commercial dailies/restoration platform with automated dirt-removal.
+- **URL:** https://www.mtifilm.com
+- **License:** 🚫 Commercial proprietary (verified 2026-10-08 via mtifilm.com, HTTP 200)
+- **Free tier:** Enterprise licensing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — listed so the "CORTEX dirt removal" reference isn't mistaken for open tooling. [Wave 48 Lane A]
+
+#### Doom9 forums ✅ community
+- **What:** Doom9 — the long-running video-encoding/restoration forum; home of AviSynth development, QTGMC, and filter research.
+- **URL:** https://forum.doom9.org
+- **License:** ✅ Community — forum posts per-author; filter licenses vary (verified 2026-10-08 via forum.doom9.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Restoration knowledge base — where every AviSynth/VapourSynth restoration filter is developed and documented. [Wave 48 Lane A]
+
+#### AMIA (Association of Moving Image Archivists) ✅ org
+- **What:** AMIA — professional association for AV archiving; standards, conferences, and preservation resources.
+- **URL:** https://www.amianet.org
+- **License:** ✅ Organization site (verified 2026-10-08 via amianet.org, HTTP 200)
+- **Free tier:** Free resources; paid membership
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Practice authority — AMIA guidance defines professional restoration/preservation workflows. [Wave 48 Lane A]
+
+#### PrestoCentre ✅ community
+- **What:** PrestoCentre — AV preservation community of practice (competence centres, webinars, QA knowledge).
+- **URL:** https://www.prestocentre.org
+- **License:** ✅ Community (verified 2026-10-08 via prestocentre.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** European preservation community — QC and restoration practice exchange. [Wave 48 Lane A]
+
+#### Digital FAQ ✅ guides (bot-walled this pass)
+- **What:** Digital FAQ (digitalfaq.com) — long-running restoration guides (VHS transfer, deinterlacing, QTGMC workflows).
+- **URL:** https://www.digitalfaq.com
+- **License:** ✅ Guides — site-copyrighted how-tos (verified 2026-10-08; site bot-walls automated fetch — HTTP 403 — resource confirmed)
+- **Free tier:** Free guides; forum
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Practitioner guides for capture-to-restore chains — the "lordsmurf" deinterlacing guides are canonical. [Wave 48 Lane A]
+
+#### AviSynth wiki ✅ docs (intermittent 507 this pass)
+- **What:** The AviSynth wiki — documentation for every AviSynth/AviSynth+ filter, including the restoration plugin catalog.
+- **URL:** http://avisynth.nl
+- **License:** ✅ Docs — per-wiki terms (verified 2026-10-08 via search-confirmed pages; direct fetch returned intermittent HTTP 507)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter-catalog authority — QTGMC, TIVTC, DeSpot, and the whole restoration plugin family are documented here. [Wave 48 Lane A]
+
+#### IASA guidelines ✅ standards
+- **What:** IASA (International Association of Sound and Audiovisual Archives) — TC-03/TC-04/TC-06 preservation standards for audio and video.
+- **URL:** https://www.iasa-web.org
+- **License:** ✅ Standards — freely readable (verified 2026-10-08 via iasa-web.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Standards lane — IASA-TC 06 governs video preservation targets and QC. [Wave 48 Lane A]
+
+#### Open Preservation Foundation ✅ org
+- **What:** OPF — nonprofit sustaining open preservation tools (JHOVE, veraPDF) and knowledge.
+- **URL:** https://openpreservation.org
+- **License:** ✅ Organization site (verified 2026-10-08 via openpreservation.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tool-sustainability lane — OPF stewards the validation tooling this pocket quarantines (JHOVE). [Wave 48 Lane A]
+
+#### QTGMC ❓ no license stated on AviSynth wiki
+- **What:** QTGMC — the reference-quality AviSynth deinterlacer (motion-compensated, presets from Draft to Placebo, noise processing, source-match).
+- **URL:** http://avisynth.nl/index.php/QTGMC
+- **License:** ❓ No license stated on the AviSynth wiki (License field blank; verified 2026-10-08 via wiki page)
+- **Free tier:** Free script download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the deinterlacing quality bar, but no license grant on record; treat as all-rights-reserved until the authors state terms. [Wave 48 Lane A]
+
+#### TIVTC ❓ license unverified this pass
+- **What:** TIVTC — tritical's AviSynth inverse-telecine plugin (field matching + decimation for 3:2 pulldown removal).
+- **URL:** http://avisynth.nl/index.php/TIVTC
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — canonical IVTC; verify license before any code reuse. [Wave 48 Lane A]
+
+#### NNEDI3 ❓ license unverified this pass
+- **What:** NNEDI3 — tritical's neural-network edge-directed interpolation (deinterlacing/upsampling kernel used inside QTGMC).
+- **URL:** http://avisynth.nl/index.php/NNEDI3
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the intra-field interpolation reference; verify license before any code reuse. [Wave 48 Lane A]
+
+#### DeSpot ❓ license unverified this pass
+- **What:** DeSpot — AviSynth spot/dirt-removal plugin for film transfers.
+- **URL:** http://avisynth.nl/index.php/DeSpot
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — spot-removal approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+#### DeScratch ❓ license unverified this pass
+- **What:** DeScratch — AviSynth vertical-scratch removal plugin for film scans.
+- **URL:** http://avisynth.nl/index.php/DeScratch
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — scratch-removal approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+#### KNLMeansCL ❓ license unverified this pass
+- **What:** KNLMeansCL — OpenCL non-local-means denoiser for AviSynth/VapourSynth (grain management).
+- **URL:** http://avisynth.nl/index.php/KNLMeansCL
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — GPU NL-means denoising reference; verify license before any code reuse. [Wave 48 Lane A]
+
+#### BM3D (VapourSynth) ❓ license unverified this pass
+- **What:** VapourSynth BM3D — block-matching 3D collaborative-filtering denoiser plugin.
+- **URL:** https://github.com/WolframRhodium/VapourSynth-BM3DCUDA
+- **License:** ❓ License unverified this pass (verified 2026-10-08 via GitHub repo existence only)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Diligence record — BM3D remains a denoising quality reference; verify license before any code reuse. [Wave 48 Lane A]
+
+#### DFTTest ❓ license unverified this pass
+- **What:** DFTTest — AviSynth frequency-domain (DCT) temporal denoiser.
+- **URL:** http://avisynth.nl/index.php/DFTTest
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — frequency-domain denoise approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+#### SMDegrain ❓ license unverified this pass
+- **What:** SMDegrain — AviSynth motion-compensated degraining script (Dogway).
+- **URL:** http://avisynth.nl/index.php/SMDegrain
+- **License:** ❓ License unverified this pass — widely-mirrored script (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — motion-compensated degrain recipe; verify license before any code reuse. [Wave 48 Lane A]
+
+#### MCTemporalDenoise ❓ license unverified this pass
+- **What:** MCTemporalDenoise — AviSynth multi-stage motion-compensated temporal denoiser script.
+- **URL:** http://avisynth.nl/index.php/MCTemporalDenoise
+- **License:** ❓ License unverified this pass — widely-mirrored script (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the classic "very high" denoise recipe; verify license before any code reuse. [Wave 48 Lane A]
+
+#### RemoveDirt ❓ license unverified this pass
+- **What:** RemoveDirt — AviSynth dirt-removal plugin family for film transfers.
+- **URL:** http://avisynth.nl/index.php/RemoveDirt
+- **License:** ❓ License unverified this pass — widely-mirrored plugin (verified 2026-10-08 via AviSynth wiki reference)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — dirt-removal approach study; verify license before any code reuse. [Wave 48 Lane A]
+
+### Wave 48 Lane A summary (2026-10-08)
+- New #### entries: 100 (Pocket 1: 27 PD animation/cartoon archives · Pocket 2: 31 chip-tracker long tail · Pocket 3: 42 film-restoration tooling)
+- Catalog: 4,130 → 4,230 honest entries (wave target met exactly)
+- Quarantine: rows 438–451 appended (14 new rows, all distinct, zero supersedes/delists)
+- Honest negatives: 11 (Undercrank, NFB, BFI, Neat Video, RE:Vision, Digital Vision, PFClean, Diamant, MTI CORTEX + 2 site-unreachable ❓ diligence records counted separately)
+- ❓ diligence records: 20 (license unverified — flagged for future waves, never assumed)
+- Zero post-hoc duplicates: every candidate pre-grepped against the full catalog before appending

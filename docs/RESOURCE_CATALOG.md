@@ -34358,3 +34358,295 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** The broadcast/streaming framework everything else plugs into; use as a standalone framework, don't link into shipping code until the LGPL doctrine resolves. [Wave 38 Lane A]
+
+### Pocket 2: Broadcast/streaming graphics OSS (lower-thirds, scoreboards, live graphics engines, NDI tooling)
+
+#### NodeCG ✅ commercial-safe
+- **What:** NodeCG — broadcast graphics framework (HTML/CSS/JS overlays with a dashboard control panel; powers Games Done Quick's broadcast graphics)
+- **URL:** https://github.com/nodecg/nodecg
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on nodecg/nodecg)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The open answer to Vizrt/XPression for lower-thirds and live graphics; bundles replicate across dashboard and output. [Wave 38 Lane A]
+
+#### Sofie ✅ commercial-safe
+- **What:** Sofie — NRK's open broadcast automation/superdesk system (rundowns, playout control, graphics triggering)
+- **URL:** https://github.com/Sofie-Automation/sofie-core
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on Sofie-Automation/sofie-core; note: repo moved from nrkno/sofie-core — redirect confirmed)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Full newsroom automation; companion SuperConductor is the playout gateway. Heavyweight — the honest broadcast-automation tail entry. [Wave 38 Lane A]
+
+#### Concerto ✅ commercial-safe
+- **What:** Concerto — open-source digital signage platform (screens, feeds, graphics scheduling)
+- **URL:** https://github.com/concerto/concerto
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on concerto/concerto)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The permissive digital-signage answer (vs quarantined Xibo/Anthias this wave). [Wave 38 Lane A]
+
+#### ndi-python (buresu) ✅ commercial-safe
+- **What:** ndi-python — Python bindings for the NewTek NDI SDK (send/receive NDI video frames from Python)
+- **URL:** https://github.com/buresu/ndi-python
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on buresu/ndi-python)
+- **Free tier:** fully open (requires NewTek's proprietary NDI runtime/SDK underneath — the bindings are MIT, the runtime is not)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest framing: MIT bindings, but NDI itself needs NewTek's runtime. The NDI tooling tail entry. [Wave 38 Lane A]
+
+#### RL-Broadcast-Overlay ✅ commercial-safe
+- **What:** RL-Broadcast-Overlay — real-time Rocket League broadcast overlay (live scoreboard, boost meters, goal banners, series score) fed by the RL Stats API, OBS browser-source ready
+- **URL:** https://github.com/Codaea/RL-Broadcast-Overlay
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on Codaea/RL-Broadcast-Overlay)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** EAC-compatible replacement for the old BakkesMod/SOS broadcast workflow; a working template for game-score overlays. [Wave 38 Lane A]
+
+#### Sawdizzle/scoreboard ✅ commercial-safe
+- **What:** Broadcast Scoreboard — phone-controlled scoreboard overlay for live-streamed youth sports (transparent OBS browser source, no build step)
+- **URL:** https://github.com/Sawdizzle/scoreboard
+- **License:** MIT (verified 2026-10-08 via repo LICENSE file per project metadata)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dead-simple scoreboard pattern: control page + overlay page. Good template for fight-score bugs. [Wave 38 Lane A]
+
+#### browser-scoreboard-overlay ⚠️ license-conditional (custom grant, no OSI license)
+- **What:** browser-scoreboard-overlay — lightweight OBS scoreboard overlay for esports (player names/scores, keyboard shortcuts, custom background upload)
+- **URL:** https://github.com/Cellohh/browser-scoreboard-overlay
+- **License:** ⚠️ Custom grant — README states "Free to use for personal and tournament broadcasts" with no standard open-source license file. Not OSI; read before commercial use.
+- **Free tier:** free to use per the README grant
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful pattern reference; the license is a sentence, not a grant — verify with the author before shipping. [Wave 38 Lane A]
+
+#### twitch-chatbox ✅ commercial-safe
+- **What:** twitch-chatbox — custom Twitch chat theme overlay for live broadcasts (no backend, no API keys for read-only chat)
+- **URL:** https://github.com/Amdan808/twitch-chatbox
+- **License:** MIT (verified 2026-10-08 via project README "MIT License — feel free to use, modify, and share")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zero-backend chat overlay; drop-in for stream chat graphics. [Wave 38 Lane A]
+
+#### twitchTTS ✅ commercial-safe
+- **What:** twitchTTS — Twitch tool that reads/highlights highlighted chat messages (TTS overlay for streams)
+- **URL:** https://github.com/Vuurvos1/twitchTTS
+- **License:** MIT (verified 2026-10-08 via project README "license by MIT")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Chat-to-speech overlay; pairs with the TTS lane for live shows. [Wave 38 Lane A]
+
+#### twitch-chat-cli ✅ commercial-safe
+- **What:** twitch-chat-cli — read/post Twitch chat from the terminal (Go, single binary)
+- **URL:** https://github.com/martinbjeldbak/twitch-chat-cli
+- **License:** MIT (verified 2026-10-08 via project README "released under the MIT license")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CLI chat plumbing for broadcast automation scripts. [Wave 38 Lane A]
+
+#### twitch-task-list-overlay ✅ commercial-safe
+- **What:** twitch-task-list-overlay — interactive task-list overlay for Twitch streams with StreamElements integration
+- **URL:** https://github.com/exoclb/twitch-task-list-overlay
+- **License:** MIT (verified 2026-10-08 via project README "licensed under the MIT License")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Task/progress overlay widget; StreamElements-compatible. [Wave 38 Lane A]
+
+#### twitchbar ✅ commercial-safe
+- **What:** twitchbar — Python tray/CLI app for Twitch stream session stats, alerts, and notifications (EventSub + Helix)
+- **URL:** https://github.com/Artod/twitchbar
+- **License:** MIT (verified 2026-10-08 via project README "License: MIT")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Actively maintained (2026); session-state plumbing for stream productions. [Wave 38 Lane A]
+
+#### ghost-chat ❓ unverified (non-standard joke license)
+- **What:** ghost-chat — transparent chat overlay for streamers (Twitch, YouTube, Kick in one always-on-top window)
+- **URL:** https://github.com/Enubia/ghost-chat
+- **License:** ❓ "DON'T BE A DICK PUBLIC LICENSE" v1.2 (verified 2026-10-08 via raw LICENSE.md; GitHub API NOASSERTION). A joke license with unclear commercial terms — do NOT treat as commercial-safe; read before any use.
+- **Free tier:** free download
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest ❓: popular overlay, unserious license. Prefer the MIT chat overlays above for anything shippable. [Wave 38 Lane A]
+
+#### WebCG ❓ unverified (no license file)
+- **What:** WebCG — framework for generating dynamic HTML templates for CasparCG broadcast graphics
+- **URL:** https://github.com/warrior1724/webCG
+- **License:** ❓ No license file found (verified 2026-10-08: GitHub API license None; no LICENSE on main or master). No grant = no commercial use; read/ask before wiring.
+- **Free tier:** source-visible
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Fills the CasparCG-HTML-template gap next to the quarantined CasparCG Server entry; license must be resolved first. [Wave 38 Lane A]
+
+#### StreamControl ❓ unverified (no license detected)
+- **What:** StreamControl — the classic tournament stream-control app (player names/scores → HTML overlays for OBS)
+- **URL:** https://github.com/MiggL/StreamControl (maintained fork of the farpnut original)
+- **License:** ❓ No license detected (verified 2026-10-08: GitHub API NOASSERTION on the MiggL fork; README 404s on master). No grant = no commercial use.
+- **Free tier:** free download
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The FGC tournament standard, but license-unresolved — prefer the MIT scoreboard entries above. [Wave 38 Lane A]
+
+#### SRS (ossrs/srs) ✅ commercial-safe
+- **What:** SRS — Simple Realtime Server: RTMP/HLS/WebRTC/SRT streaming server (origin + edge)
+- **URL:** https://github.com/ossrs/srs
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on ossrs/srs)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The MIT streaming-server workhorse; RTMP ingest → HLS/WebRTC out for live shows. [Wave 38 Lane A]
+
+#### ZLMediaKit ✅ commercial-safe
+- **What:** ZLMediaKit — high-performance C++ streaming media server (RTSP/RTMP/HLS/HTTP-FLV/WebRTC)
+- **URL:** https://github.com/ZLMediaKit/ZLMediaKit
+- **License:** MIT (verified 2026-10-08 via raw LICENSE: "MIT License, Copyright (c) 2016-present The ZLMediaKit project authors"; GitHub API NOASSERTION = detection gap; note: repo moved from xia-chu/ZLMediaKit — redirect confirmed)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** C++ alternative to SRS where latency/throughput matters. [Wave 38 Lane A]
+
+#### MediaMTX ✅ commercial-safe
+- **What:** MediaMTX — real-time media server/router (RTSP, RTMP, HLS, WebRTC, SRT)
+- **URL:** https://github.com/bluenviron/mediamtx
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on bluenviron/mediamtx)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Single-binary Go media router; the simplest self-hosted restream path. [Wave 38 Lane A]
+
+#### LiveGo ✅ commercial-safe
+- **What:** LiveGo — simple RTMP streaming server in Go (publish → HLS/HTTP-FLV)
+- **URL:** https://github.com/gwuhaolin/livego
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on gwuhaolin/livego)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Minimal RTMP server; good enough for internal stream tests. [Wave 38 Lane A]
+
+#### Node-Media-Server ✅ commercial-safe
+- **What:** Node-Media-Server — Node.js RTMP/HTTP-FLV/WebSocket-FLV streaming server
+- **URL:** https://github.com/illuspas/Node-Media-Server
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on illuspas/Node-Media-Server)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Node-based streaming server; handy when the control plane is already Node. [Wave 38 Lane A]
+
+#### nginx-rtmp-module ✅ commercial-safe
+- **What:** nginx-rtmp-module — RTMP/HLS streaming module for nginx (the classic self-hosted stream stack)
+- **URL:** https://github.com/arut/nginx-rtmp-module
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id on arut/nginx-rtmp-module)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** RTMP ingest on nginx; the old reliable. [Wave 38 Lane A]
+
+#### Jitsi Meet ✅ commercial-safe
+- **What:** Jitsi Meet — open video-conferencing (WebRTC SFU + client); usable as a remote-guest pipeline for broadcasts
+- **URL:** https://github.com/jitsi/jitsi-meet
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on jitsi/jitsi-meet)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Remote-guest video for live shows without a proprietary call platform. [Wave 38 Lane A]
+
+#### LiveKit ✅ commercial-safe
+- **What:** LiveKit — open WebRTC SFU for real-time audio/video (rooms, ingress/egress, recording)
+- **URL:** https://github.com/livekit/livekit
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on livekit/livekit)
+- **Free tier:** fully open (self-hosted; vendor cloud paid)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Modern WebRTC backbone for interactive live graphics/shows; egress to RTMP for broadcast. [Wave 38 Lane A]
+
+#### mediasoup ✅ commercial-safe
+- **What:** mediasoup — WebRTC SFU library (Node.js + C++ worker) for building custom real-time media routers
+- **URL:** https://github.com/versatica/mediasoup
+- **License:** ISC (verified 2026-10-08 via GitHub API spdx_id on versatica/mediasoup)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Library-level WebRTC SFU for custom broadcast plumbing. [Wave 38 Lane A]
+
+#### pion/webrtc ✅ commercial-safe
+- **What:** Pion WebRTC — pure-Go WebRTC implementation (no CGO)
+- **URL:** https://github.com/pion/webrtc
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on pion/webrtc)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Go-native WebRTC for custom ingest/egress tooling. [Wave 38 Lane A]
+
+#### voctomix ✅ commercial-safe (MIT meta repo; sibling C3VOC tools are GPL — see quarantine)
+- **What:** voctomix — C3VOC's software vision mixer setup (conference/broadcast video mixing glue)
+- **URL:** https://github.com/voc/voctomix
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on voc/voctomix)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest framing: this repo is MIT, but the wider C3VOC toolchain it orchestrates includes GPL components — voctoweb and voctopublish are GPL-3.0 (quarantined this wave). [Wave 38 Lane A]
+
+#### LiveSplit ✅ commercial-safe
+- **What:** LiveSplit — speedrun timer with broadcast-ready layouts (splits, comparisons, OBS integration)
+- **URL:** https://github.com/LiveSplit/LiveSplit
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on LiveSplit/LiveSplit)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The timer-overlay standard for live speedrun/event broadcasts; layout system is reusable for countdown graphics. [Wave 38 Lane A]
+
+#### Harfeur/TwitchAlerts 🚫 not commercial-safe (CC-BY-NC-SA 4.0)
+- **What:** TwitchAlerts — self-hostable Twitch alert bot (follows/subs/donations → on-stream alerts)
+- **URL:** https://github.com/Harfeur/TwitchAlerts
+- **License:** 🚫 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (verified 2026-10-08 via project README: "can't use the bot as a commercial purpose"). Research/personal use only.
+- **Free tier:** free (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NC bars any commercial stream use — documented as the honest negative next to the MIT alert/overlay options. [Wave 38 Lane A]
+
+#### Owncast ✅ commercial-safe
+- **What:** Owncast — self-hosted live-streaming server + chat (Twitch alternative you run yourself)
+- **URL:** https://github.com/owncast/owncast
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id on owncast/owncast)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Full streaming site in one Go binary (video + chat + fediverse hooks); the sovereign live channel. [Wave 38 Lane A]

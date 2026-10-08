@@ -391,6 +391,99 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 ## Compositing / post
 <!-- comp, color, effects for animation -->
 
+#### Natron ⚠️ license-restricted (quarantined)
+- **What:** Open-source node-based compositor (Nuke-class): keying, rotoscope, paint, tracking, OFX plugins — the comp stage for animated plates.
+- **URL:** https://github.com/NatronGitHub/Natron
+- **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 21 — standalone-app use only; never linked/embedded in shipping builds.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### Natron — standalone tool use` (line 11464) — same license posture; this entry is the animation-catalog pocket.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### Blender Compositor ⚠️ license-restricted (quarantined)
+- **What:** Blender's built-in node compositor (cryptomatte, vector blur, glare, keying) — comp without leaving the 3D package; compositor nodes scriptable via Python for batch episode passes.
+- **URL:** https://github.com/blender/blender
+- **License:** GPL — binaries distributed as GPL-3.0; source default GPL-2.0-or-later (verified 2026-10-07 via https://www.blender.org/about/license/); rendered output is ours, the app stays GPL.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 22 — standalone-app use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md covers Blender Grease Pencil (line 1206), Blender VSE (line 2356), BlenderKit (line 9208) — no compositor pocket entry; no conflict.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### G'MIC ⚠️ license-restricted (quarantined)
+- **What:** GREYC's Magic for Image Computing — 500+ CLI/GIMP filters: denoise, inpaint, stylize, film grain, repair — batch post passes over frame sequences.
+- **URL:** https://github.com/GreycLab/gmic
+- **License:** CeCILL (GPL-compatible copyleft) (verified 2026-10-07 via repo COPYING raw)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 23 — standalone/CLI use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### G'MIC (GreycLab) — standalone tool use` (line 11454) — same posture; animation-pocket entry.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### ImageMagick ✅ commercial-safe
+- **What:** Batch image-sequence workhorse: convert/resize/montage/morph/annotate over PNG frames, contact sheets, title-card batching, APNG/GIF prep.
+- **URL:** https://github.com/ImageMagick/ImageMagick
+- **License:** ImageMagick License — permissive; upstream grants commercial use, redistribution, and linking against differently-licensed code (verified 2026-10-07 via repo LICENSE raw)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### ImageMagick` (line 7930) — same verdict; animation-pocket entry.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### apngasm ✅ commercial-safe
+- **What:** Assembles PNG frame sequences into animated APNG (lossless, alpha) — the sticker/loop deliverable format for episode interstitials.
+- **URL:** https://github.com/apngasm/apngasm
+- **License:** zlib (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### libwebp animation tools ✅ commercial-safe
+- **What:** `img2webp`, `gif2webp`, `cwebp`/`dwebp`, `anim_diff`/`anim_dump` — lossy/lossless animated WebP from frame sequences; far smaller than GIF for web interstitials.
+- **URL:** https://github.com/webmproject/libwebp
+- **License:** BSD-3-Clause (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### rembg ⚠️ check-model-license
+- **What:** AI background removal (u2net/isnet/birefnet/sam sessions) — green-screen-free plate extraction for comp; CLI + Python.
+- **URL:** https://github.com/danielgatis/rembg
+- **License:** MIT code (verified 2026-10-07 via GitHub API); MODEL WEIGHTS carry their own licenses independent of the code (per https://pypi.org/project/rembg/2.0.85/) — e.g. bria-rmbg weights are CC BY-NC 4.0 (non-commercial). Verify the chosen session's weights before commercial use.
+- **Free tier:** fully open (code); weights per-model terms
+- **Dedup:** RESOURCE_CATALOG.md covers rembg — animation-pocket entry with the weights warning spelled out.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### VapourSynth ⚠️ license-restricted (quarantined)
+- **What:** Scriptable frameserver (Python) for video post: filtering, resampling, format conversion between render and encode; the modern AviSynth successor.
+- **URL:** https://github.com/vapoursynth/vapoursynth
+- **License:** LGPL-2.1 (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 24 — frameserver/CLI use only; LGPL linking rules apply if ever embedded.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### VapourSynth` (line 9338) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### AviSynth+ ⚠️ license-restricted (quarantined)
+- **What:** Classic frameserving script environment for frame-accurate post chains (deinterlace, IVTC, denoising) on Windows pipelines.
+- **URL:** https://github.com/AviSynth/AviSynthPlus
+- **License:** GPL-2.0 (verified 2026-10-07 via distrib/gpl-*.txt license texts in repo)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 25 — standalone/script use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### AviSynth+ — standalone tool use` (line 9348) — same posture; animation-pocket entry.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### OpenColorIO ✅ commercial-safe
+- **What:** Academy color-management standard (ACES/OCIO configs) — consistent color from render through comp to delivery; supported by Blender, Natron, Resolve.
+- **URL:** https://github.com/AcademySoftwareFoundation/OpenColorIO
+- **License:** BSD-3-Clause (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### OpenColorIO` (line 7960) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
 
 ## Transitions
 <!-- wipe / smash-cut / fade / dissolve libraries, transition effect packs, Adult Swim-style hard-cut tooling -->

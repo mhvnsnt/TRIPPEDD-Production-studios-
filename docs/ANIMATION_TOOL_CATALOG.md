@@ -456,6 +456,129 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 ## Storyboarding / animatics / previz
 <!-- boards, timing sheets, scene assembly -->
 
+#### Storyboarder (Wonder Unit) ⚠️
+- **What:** Free desktop storyboarding app (panels, timing, dialogue) purpose-built for boarding
+- **URL:** https://wonderunit.com/software/storyboarder/
+- **License:** NON-STANDARD — no root LICENSE file; package.json declares nothing; app ships a proprietary end-user EULA (verified Wave 6 in RESOURCE_CATALOG.md; author advocates "free and open source" but no standard terms)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ Use ONLY as a drawing tool (draw boards, export); do NOT wire its source into the pipeline until Wonder Unit declares terms. Dedup: RESOURCE_CATALOG.md "Storyboarder ⚠️" + "Storyboarder (Wonder Unit) — license deep read ❓". [Wave 1 Lane A3]
+
+#### KITScenarist ✅ — standalone tool use
+- **What:** Screenwriting + pre-production suite (cards, characters, locations, breakdowns) — predecessor of Story Architect
+- **URL:** https://kitscenarist.ru/ (source: https://github.com/dimkanovikov/KITScenarist)
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 61)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 22 — standalone-tool use only; never linked/wired into shipping paths
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md KITScenarist entry + LICENSE_QUARANTINE.md row 61. [Wave 1 Lane A3]
+
+#### Trelby ✅ — standalone tool use
+- **What:** Minimalist screenplay editor; `.trelby` format imports into Story Architect and KITScenarist
+- **URL:** https://github.com/trelby/trelby
+- **License:** GPL-2.0 (LICENSE_QUARANTINE.md row 60 — GitHub API spdx_id)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 23 — standalone-tool use only; never linked/wired into shipping paths
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Trelby — standalone tool use ✅". [Wave 1 Lane A3]
+
+#### Story Architect (STARC) ✅ — standalone tool use
+- **What:** KITScenarist successor — writing IDE for screenplays, TV series, novels, comics; mind maps, timelines, series plans, screenplay breakdowns; imports Fountain, FDX, DOCX, ODT, PDF, Celtx, Trelby, KITScenarist
+- **URL:** https://starc.app/ (source: https://github.com/story-apps/starc)
+- **License:** GPL-3.0 (verified 2026-10-08: README License-GPL-v3 badge; linuxlinks.com + medevel.com listings) — NOTE: nixpkgs flags the package "unfree" because some paid-version features are proprietary; the free build is GPL-3.0
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 24 — standalone-tool use only; never linked/wired into shipping paths
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Active development (repo live 2026-10-08). Series bible + per-episode scripts fit the Wizard Gang pipeline. [Wave 1 Lane A3]
+
+#### Fountain (markup + open parsers) ✅
+- **What:** Plain-text screenplay markup language; open parser implementations feed board/animatic/shot-list tooling
+- **URL:** https://fountain.io (reference parser: https://github.com/nyousefi/Fountain)
+- **License:** MIT (verified 2026-10-08: nyousefi/Fountain README — "Released under an MIT license")
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Format itself is an open spec; scripts stay plain text — the natural upstream for screenplain/afterwriting-labs entries below. [Wave 1 Lane A3]
+
+#### afterwriting-labs ✅
+- **What:** Post-processing for Fountain screenplays — Fountain→PDF conversion, page counts, action/dialogue time, location distribution, script pulse, character stats
+- **URL:** https://github.com/ifrost/afterwriting-labs
+- **License:** MIT (verified 2026-10-08: README License-MIT badge)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Stats feed animatic timing estimates (dialogue time per scene → board duration). [Wave 1 Lane A3]
+
+#### Screenplain ✅
+- **What:** Screenplay parser (Fountain/Final Draft/plain) → structured output; feeds shot-list generators and animatic timing
+- **URL:** https://github.com/vilcans/screenplain
+- **License:** MIT (verified 2026-10-08: GitHub API spdx_id = MIT)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Concrete open implementation of the "shot-list generator" pocket — parse script → per-scene structured data → shot lists. [Wave 1 Lane A3]
+
+#### BeatBoard ❓ unverified
+- **What:** Could not locate a verifiable "BeatBoard" storyboarding product — HONEST NEGATIVE
+- **URL:** https://beatboard.com (HTTP 200 but no extractable content, 2026-10-08); https://www.beatboard.co (same)
+- **License:** ❓ unverifiable — no pricing, terms, or product page locatable; name collides with "Beat" (GPL-3.0 macOS screenwriting app, per nofilmschool 2026) and "StoryBoard Quick" (paid, PowerProduction)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** — 
+- **Status:** blocked — do not plan pipeline work on BeatBoard until a live product page is read
+- **Notes:** ❓ Recorded so the name is not re-researched blind. If the owner meant "Beat" (beat-app.fi screenwriting app), that is a separate GPL-3.0 tool. [Wave 1 Lane A3]
+
+#### FFmpeg concat animatic assembly ✅
+- **What:** Assemble board stills + timing file into a timed animatic MP4 — concat demuxer for fixed holds, zoompan for Ken Burns moves, adelay/amix for scratch dialogue
+- **URL:** https://ffmpeg.org
+- **License:** Build-dependent (LGPL-2.1+ or GPL-2.1+); used as CLI subprocess — no linking
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: FFmpeg/FFprobe already wired in both repos (RESOURCE_CATALOG.md "Already wired" list). No quarantine row — repo precedent treats FFmpeg CLI as wired infrastructure. [Wave 1 Lane A3]
+
+#### Boords ✅ (SaaS — free tier verified)
+- **What:** Script → storyboard → animatic with client review links, in one browser product
+- **URL:** https://www.boords.com/
+- **License:** Proprietary SaaS (freemium) — free tier permits commercial client work per vendor terms (verified in RESOURCE_CATALOG.md)
+- **Free tier:** 3 active scripts; 250 AI images/mo (solo); paid from ~$9–19/mo
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SaaS badge — browser tool, nothing to wire locally. Dedup: RESOURCE_CATALOG.md "Boords ✅" + "Boords — free tier terms read ✅". [Wave 1 Lane A3]
+
+#### Plot (theplot.io) ❓ unverified (SaaS)
+- **What:** AI-assisted storyboarding web app
+- **URL:** https://www.theplot.io/
+- **License:** Proprietary — pricing sources still conflict (trial-only vs free-forever); could not resolve 2026-10-07
+- **Free tier:** disputed — treat as trial-only until proven otherwise
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** blocked — do not plan pipeline work on Plot until its pricing page is read live
+- **Notes:** SaaS badge. Dedup: RESOURCE_CATALOG.md "Plot (theplot.io) ❓" + "Plot (theplot.io) — 2026 pricing re-verified ❓". [Wave 1 Lane A3]
+
+#### Storyboard Fountain ✅
+- **What:** Minimal open-source storyboard app — draw stick-figure panels from a screenplay in the fastest possible way; ideal thumbnailing before committing to full panels
+- **URL:** https://github.com/setpixel/storyboard-fountain
+- **License:** MIT (verified via Open Hub license analysis in RESOURCE_CATALOG.md)
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Storyboard Fountain ✅". [Wave 1 Lane A3]
+
+#### Blender Grease Pencil storyboarding + VSE animatic ✅ — standalone tool use
+- **What:** Draw boards directly in Grease Pencil (3D-space storyboards with real camera lenses), cut timed animatics in the Video Sequence Editor — zero-cost previz lane
+- **URL:** https://www.blender.org
+- **License:** GPL-3.0 — standalone tool use (artwork produced is not affected)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 21 (Blender suite) — standalone-tool use only; never linked/wired into shipping paths
+- **Repo lane:** trippedd (storyboarding)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: Blender "already wired in these repos" (RESOURCE_CATALOG.md). Camera-accurate previz beats flat boards for episode planning. [Wave 1 Lane A3]
+
 ## Compositing / post
 <!-- comp, color, effects for animation -->
 
@@ -619,14 +742,417 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 ## Background / plate art
 <!-- background painting tools, matte painting, plate generation, parallax layers -->
 
+#### Krita ✅ — standalone tool use
+- **What:** Full digital-painting studio — background painting, matte painting, textured plates
+- **URL:** https://krita.org (source: https://github.com/KDE/krita)
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 12 — GitHub API spdx_id)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 25 — standalone-tool use only; paintings produced are not affected
+- **Repo lane:** god-molecule (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Krita ✅"; cross-pocket: also in this file's 2D animation section (frame-by-frame timeline angle). Brush engines + wrap-around mode suit looping BG plates. [Wave 1 Lane A3]
+
+#### GIMP ✅ — standalone tool use
+- **What:** Raster editor for plate cleanup, matte painting, texture prep, channel packing
+- **URL:** https://www.gimp.org (source: https://github.com/GNOME/gimp)
+- **License:** GPL-3.0-or-later (LICENSE_QUARANTINE.md row 34)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 26 — standalone-tool use only; images produced are not affected
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "GIMP ✅". [Wave 1 Lane A3]
+
+#### MyPaint ✅ — standalone tool use
+- **What:** Distraction-free natural-media painting — fast BG sketching and painterly plates
+- **URL:** https://mypaint.org (source: https://github.com/mypaint/mypaint)
+- **License:** GPL-2.0-or-later (app); ISC (libmypaint brush engine) (LICENSE_QUARANTINE.md row 15 — upstream Licenses.md)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 27 — standalone-tool use only
+- **Repo lane:** god-molecule (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "MyPaint ✅"; cross-pocket: also in this file's 2D animation section (libmypaint brush-engine angle). Brush engine is ISC if ever needed as a library — verify per-file before reuse. [Wave 1 Lane A3]
+
+#### Inkscape ✅ — standalone tool use
+- **What:** Vector art for stylized flat backgrounds, BG shape layers, parallax cutout assets
+- **URL:** https://inkscape.org (canonical source: https://gitlab.com/inkscape/inkscape)
+- **License:** GPL-2.0-or-later (source); GPL-3.0-or-later (binaries) (LICENSE_QUARANTINE.md row 36)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 28 — standalone-tool use only; files exported from Inkscape are owned by their creators
+- **Repo lane:** both (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Inkscape ✅". SVG layers map 1:1 to parallax depth planes. [Wave 1 Lane A3]
+
+#### Material Maker ✅
+- **What:** Procedural PBR texture/material authoring — generate tileable BG textures, grunge, and surface detail without painting
+- **URL:** https://github.com/RodZill4/material-maker
+- **License:** MIT (verified 2026-10-08: GitHub API spdx_id = MIT)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Material Maker ✅". Exports feed Krita/GIMP/Blender plate work. [Wave 1 Lane A3]
+
+#### JSPlacement ⚠️ (proprietary freeware — output terms verified)
+- **What:** Pseudo-random 8K displacement/color/normal map generator (Electron) — sci-fi paneling, tech textures, abstract BG detail
+- **URL:** https://windmillart.net (via https://alternativeto.net/software/jsplacement/about/)
+- **License:** Proprietary and Free (AlternativeTo) — NOT open source. Output terms (via STYLY guide): maps may be used commercially and non-commercially, but selling/redistributing the maps themselves is prohibited
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ⚠️ Verify-per-use: freeware, not OSI-licensed. 8192px PNG output; custom sprites + normal-map export. [Wave 1 Lane A3]
+
+#### MiDaS ✅
+- **What:** Monocular depth estimation — single painted plate → depth map → 2.5D parallax layers and camera-projection geometry
+- **URL:** https://github.com/isl-org/MiDaS
+- **License:** MIT (verified 2026-10-08: GitHub API spdx_id = MIT)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Turns any flat BG painting into multiplane parallax without manual layer cutting. Model weights ship under the same MIT terms. [Wave 1 Lane A3]
+
+#### Blender procedural BG (A.N.T. Landscape / Geometry Nodes) ✅ — standalone tool use
+- **What:** Procedural skies, terrain, clouds, and environments for plate generation — render once, reuse as painted-plate base
+- **URL:** https://www.blender.org
+- **License:** GPL-3.0 — standalone tool use
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 21 (Blender suite) — standalone-tool use only
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** A.N.T. Landscape ships with Blender; Geometry Nodes setups are user data, not GPL code. [Wave 1 Lane A3]
+
+#### David Revoy CC0 brush packs ✅
+- **What:** Matte-painting and concept-art brush kits released CC0 — drop-in brushes for Krita/GIMP BG work
+- **URL:** https://www.davidrevoy.com
+- **License:** CC0 (public domain dedication — artist's stated terms on davidrevoy.com)
+- **Repo lane:** god-molecule (backgrounds)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ✅ Fully commercial-safe including redistribution. Pairs with the Krita/GIMP entries above. [Wave 1 Lane A3]
+
+#### Blender camera-projection matte painting ✅ — standalone tool use
+- **What:** Technique — project painted plates onto proxy geometry for parallax camera moves; the classic matte-painting shot without a 3D build
+- **URL:** https://www.blender.org
+- **License:** GPL-3.0 — standalone tool use (technique; no code wired)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 21 (Blender suite)
+- **Repo lane:** trippedd (backgrounds)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Pairs with MiDaS depth maps above — depth → proxy mesh → projected paint. [Wave 1 Lane A3]
+
 ## Color grading
 <!-- grading for animation, LUT tools, color management -->
+
+#### OpenColorIO ✅
+- **What:** Industry-standard color management — consistent color from paint to comp to delivery across tools
+- **URL:** https://opencolorio.org (source: https://github.com/AcademySoftwareFoundation/OpenColorIO)
+- **License:** Apache-2.0 (Academy Software Foundation project)
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dedup: OpenColorIO already wired in both repos (RESOURCE_CATALOG.md "Already wired" list). Natron + Blender both speak OCIO — one config for the whole show. [Wave 1 Lane A3]
+
+#### OCIO LUT tools (ocioconvert / ociobakelut) ✅
+- **What:** Bake and convert LUTs between shows and tools; validate color pipelines end-to-end
+- **URL:** https://opencolorio.org (ships with OpenColorIO)
+- **License:** Apache-2.0 (same as OpenColorIO)
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The "LUT utilities" pocket — concrete open tooling rather than a technique. Part of the OCIO family above. [Wave 1 Lane A3]
+
+#### Colour-Science ✅
+- **What:** Python color-science toolkit — LUT analysis, colorspace math, chromatic adaptation, grading research
+- **URL:** https://www.colour-science.org (source: https://github.com/colour-science/colour-science)
+- **License:** BSD-3-Clause (verified 2026-10-08: colour-science.org links its license to opensource.org/licenses/BSD-3-Clause)
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Scriptable grading math (e.g. derive show LUTs, verify round-trips) that complements OCIO's runtime role. [Wave 1 Lane A3]
+
+#### DisplayCAL ✅ — standalone tool use
+- **What:** Display calibration and profiling — so grades are judged on a truthful monitor, not a guess
+- **URL:** https://displaycal.net (source: https://github.com/eoyilmaz/displaycal-py3)
+- **License:** GPL-3.0 (verified 2026-10-08: GitHub API spdx_id = GPL-3.0)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 29 — standalone-tool use only
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Calibration is the unglamorous half of grading — wrong monitor = wrong show. [Wave 1 Lane A3]
+
+#### G'MIC ✅ — standalone tool use
+- **What:** 1000+ image filters incl. film emulation, grade presets, and artistic treatments — usable on stills and sequences via CLI
+- **URL:** https://gmic.eu (source: https://github.com/GreycLab/gmic)
+- **License:** CeCILL-2.1 — French GPL-compatible strong copyleft (LICENSE_QUARANTINE.md row 86)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 30 — standalone-tool use only; not GPL/AGPL-family but kept quarantined as GPL-compatible strong copyleft
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "G'MIC (GreycLab) — standalone tool use ✅". CLI batch grading for style-frame exploration. [Wave 1 Lane A3]
+
+#### Blender compositor color nodes ✅ — standalone tool use
+- **What:** Node-based grading on rendered sequences — curves, ASC-CDL, filmic/ACES via OCIO, masks and tracking
+- **URL:** https://www.blender.org
+- **License:** GPL-3.0 — standalone tool use
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 21 (Blender suite)
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Grade where the render already lives — no round-trip to another app. [Wave 1 Lane A3]
+
+#### darktable ✅ — standalone tool use
+- **What:** Raw/still photo grading — grade painted plates, style frames, and reference stills with a full photographic toolset
+- **URL:** https://github.com/darktable-org/darktable
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 95 — LICENSE fetched 2026-10-07)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 31 — standalone-tool use only
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "darktable — standalone tool use ✅". [Wave 1 Lane A3]
+
+#### RawTherapee ✅ — standalone tool use
+- **What:** Raw/still grading alternative — second opinion tool for plate and style-frame grades
+- **URL:** https://github.com/RawTherapee/RawTherapee
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 91 — LICENSE fetched 2026-10-07)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 32 — standalone-tool use only
+- **Repo lane:** trippedd (color)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "RawTherapee — standalone tool use ✅". Different demosaic/color engine from darktable — useful cross-check. [Wave 1 Lane A3]
 
 ## Editing / NLE
 <!-- editors, timeline assembly, EDL -->
 
+#### Shotcut ✅ — standalone tool use
+- **What:** Cross-platform NLE for episode assembly — timeline editing, filters, transitions
+- **URL:** https://www.shotcut.org (source: https://github.com/mltframework/shotcut)
+- **License:** GPL-3.0-or-later (LICENSE_QUARANTINE.md row 23 — GitHub API spdx_id = GPL-3.0; raw COPYING has "any later version" clause)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 33 — standalone-tool use only; never linked/wired into shipping paths
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Shotcut ✅". MLT-based like Kdenlive — EDLs interchange. [Wave 1 Lane A3]
+
+#### Kdenlive ✅ — standalone tool use
+- **What:** Full NLE for episode assembly — multitrack timeline, effects, titler, proxy workflow
+- **URL:** https://kdenlive.org (source: https://github.com/KDE/kdenlive)
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 37 — GitHub API spdx_id; raw COPYING = GPL v3 text)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 34 — standalone-tool use only (Kdenlive/MLT already wired as subprocess lane)
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Kdenlive ✅" + "already wired" list. Python scripting enables pipeline driving. [Wave 1 Lane A3]
+
+#### Olive ✅ — standalone tool use
+- **What:** Modern NLE (0.2 rewrite) — node-based compositing meets timeline editing
+- **URL:** https://www.olivevideoeditor.org (source: https://github.com/olive-editor/olive)
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 16 — canonical upstream olive-editor/olive; old OliveTeam/olive path 404s)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 35 — standalone-tool use only
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Olive ✅". Node comp inside the editor suits title/graphic composites. [Wave 1 Lane A3]
+
+#### Flowblade ✅ — standalone tool use
+- **What:** Linux NLE with film-style insert editing — fast assembly cutting
+- **URL:** https://jliljebl.github.io/flowblade/ (source: https://github.com/jliljebl/flowblade)
+- **License:** GPL-3.0-or-later (LICENSE_QUARANTINE.md row 8 — root LICENSE + per-file "or any later version" header)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 36 — standalone-tool use only
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Flowblade ✅". [Wave 1 Lane A3]
+
+#### Pitivi ✅ — standalone tool use
+- **What:** GNOME NLE — simple timeline assembly with GStreamer backend
+- **URL:** https://pitivi.org (source: https://github.com/pitivi/pitivi)
+- **License:** LGPL-2.1 (verified via LICENSE_QUARANTINE.md line-154 note: "Pitivi is LGPL-2.1 and stays off this list" — rowed here instead)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 37 — weak copyleft, kept quarantined per pending LGPL doctrine; standalone-tool use only
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Pitivi ✅". [Wave 1 Lane A3]
+
+#### LosslessCut ✅ — standalone tool use
+- **What:** Lossless video cutter — trim/extract episode segments and dailies without re-encoding
+- **URL:** https://github.com/mifi/lossless-cut
+- **License:** GPL-2.0-only (LICENSE_QUARANTINE.md row 13 — verified)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 38 — standalone-tool use only
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "LosslessCut ✅". FFmpeg-powered; fastest path to cut selects for review. [Wave 1 Lane A3]
+
+#### Avidemux ✅ — standalone tool use
+- **What:** Simple video editor — cutting, filtering, encoding jobs for episode deliverables
+- **URL:** https://github.com/mean00/avidemux2
+- **License:** GPL-2.0 (LICENSE_QUARANTINE.md row 29 — raw COPYING = GPL v2 text)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 39 — standalone-tool use only
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Avidemux ✅". [Wave 1 Lane A3]
+
+#### Cinelerra-GG Infinity ✅ — standalone tool use
+- **What:** Veteran pro NLE — deep compositing timeline for complex episode assemblies
+- **URL:** https://www.cinelerra-gg.org (source: https://git.cinelerra-gg.org)
+- **License:** GPL-2.0-or-later (LICENSE_QUARANTINE.md row 33 — official manual appendix: "Cinelerra-GG codebase is licensed GPLv2+")
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 40 — standalone-tool use only
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Cinelerra-GG Infinity ✅". Steep learning curve; unmatched depth for free. [Wave 1 Lane A3]
+
+#### VidCutter ✅ — standalone tool use
+- **What:** Simple media cutter/joiner — quick trims of renders and dailies
+- **URL:** https://github.com/ozmartian/vidcutter
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 48 — raw LICENSE)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 41 — standalone-tool use only
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "VidCutter ✅". [Wave 1 Lane A3]
+
+#### OpenTimelineIO ✅
+- **What:** Editorial timeline interchange — read/write timelines, EDLs, and OTIO between NLEs, scripts, and pipeline tools
+- **URL:** https://opentimeline.io (source: https://github.com/AcademySoftwareFoundation/OpenTimelineIO)
+- **License:** Apache-2.0 (Academy Software Foundation project)
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dedup: OpenTimelineIO already wired in both repos (RESOURCE_CATALOG.md "Already wired" list + "OpenTimelineIO ✅"). The glue between every NLE above. [Wave 1 Lane A3]
+
+#### Blender VSE ✅ — standalone tool use
+- **What:** Video Sequence Editor — cut episode assemblies, sound-synced edits, and animatics where the 3D already lives
+- **URL:** https://www.blender.org
+- **License:** GPL-3.0 — standalone tool use
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 21 (Blender suite)
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: Blender "already wired in these repos" (RESOURCE_CATALOG.md). Edit against live .blend scenes — no export round-trip. [Wave 1 Lane A3]
+
+#### EDL / CMX3600 tooling ✅
+- **What:** Edit Decision List interchange — OTIO's EDL adapters read/write CMX3600 EDLs for conform between any NLEs above and the pipeline
+- **URL:** https://opentimeline.io (adapters ship with OpenTimelineIO)
+- **License:** Apache-2.0 (OTIO); the CMX3600 EDL format itself is a spec — no license applies to the format
+- **Repo lane:** trippedd (editing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: see OpenTimelineIO entry above + RESOURCE_CATALOG.md "OpenTimelineIO ✅". Conform path: cut in Shotcut/Kdenlive → EDL → pipeline assembly. [Wave 1 Lane A3]
+
 ## Title cards / motion graphics
 <!-- title design, kinetic type, motion-graphics generators, wavy/trippy treatments -->
+
+#### Lottie (lottie-web) ✅
+- **What:** Render After Effects-style vector animations natively — web, promo, and title-plate motion graphics
+- **URL:** https://github.com/airbnb/lottie-web
+- **License:** MIT (verified 2026-10-08: GitHub API spdx_id = MIT)
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Lottie"; cross-pocket: also in this file's 2D animation section ("Lottie / bodymovin" angle). Note in that catalog pairs Lottie export with already-wired Kdenlive/MLT for animated titles. [Wave 1 Lane A3]
+
+#### Bodymovin ✅
+- **What:** After Effects → Lottie/JSON exporter — bridge for title animators working in AE; output plays in lottie-web above
+- **URL:** https://github.com/airbnb/lottie-web (the bodymovin/bodymovin repo MOVED here — GitHub API 301 → repositories/31085130 = airbnb/lottie-web)
+- **License:** MIT (same repo as Lottie — GitHub API spdx_id = MIT, verified 2026-10-08)
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: see Lottie entry above (same codebase now); cross-pocket: also in this file's 2D animation section. Lets AE-based title artists feed the open pipeline. [Wave 1 Lane A3]
+
+#### GSAP ⚠️ (free-for-commercial, NOT OSI open source)
+- **What:** JavaScript tween/animation engine — kinetic type, SVG animation, scroll-driven title sequences
+- **URL:** https://gsap.com (standard license: https://gsap.com/standard-license)
+- **License:** Proprietary — GreenSock Standard "No-Charge" License; 100% FREE including all bonus plugins (SplitText, MorphSVG, etc.) since Webflow's acquisition — free for commercial use, but NOT MIT/Apache/GPL or any OSI license (verified 2026-10-08 via gsap.com README + third-party THIRD-PARTY-NOTICES analysis)
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ⚠️ Verify-per-use: read the Standard License before vendoring — permitted uses exclude building a Webflow-competing no-code animation builder; do not strip its license header. Cross-pocket: also in this file's 2D animation section. [Wave 1 Lane A3]
+
+#### Motion Canvas ✅
+- **What:** TypeScript programmatic motion graphics — code-driven title sequences, version-controlled like source
+- **URL:** https://github.com/motion-canvas/motion-canvas
+- **License:** MIT (verified 2026-10-08: GitHub API spdx_id = MIT)
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Titles as code = repeatable episode slates and A/B variants from the same script. [Wave 1 Lane A3]
+
+#### Manim Community ✅
+- **What:** Math-animation engine reused for precise kinetic-type builds — programmatic, frame-accurate text animation
+- **URL:** https://github.com/ManimCommunity/manim
+- **License:** MIT (verified 2026-10-08: GitHub API spdx_id = MIT)
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Overkill for simple slates; unmatched for exact, repeatable type choreography. Cross-pocket: also in this file's 2D animation section ("Manim" + "ManimGL" entries). [Wave 1 Lane A3]
+
+#### Glaxnimate ✅ — standalone tool use
+- **What:** Vector 2D animation with Lottie/SVG export — draw and animate title graphics, export for Kdenlive/MLT or web
+- **URL:** https://glaxnimate.mattbas.org/ (source: https://github.com/mbasaglia/glaxnimate)
+- **License:** GPL-3.0-or-later (LICENSE_QUARANTINE.md row 11 — COPYING references LICENSES/GPL-3.0-or-later.txt)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 42 — standalone-tool use only; Lottie/SVG output is user data
+- **Repo lane:** both (motion graphics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Glaxnimate ✅" (+ LICENSE_QUARANTINE row 11); cross-pocket: also in this file's 2D animation section (vector motion-graphics angle). Open-source answer to vector title animation. [Wave 1 Lane A3]
+
+#### Enve ✅ — standalone tool use
+- **What:** 2D animation / motion-graphics compositor — flexible timeline for title design and animated graphics
+- **URL:** https://github.com/MaurycyLiebner/enve (active continuation: https://github.com/hope2333/enve)
+- **License:** GPL-3.0 (LICENSE_QUARANTINE.md row 6 — GitHub API spdx_id = GPL-3.0 on both repos; README "licensed under the GPL3 License")
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 43 — standalone-tool use only
+- **Repo lane:** god-molecule (motion graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Enve ✅" (+ WAVE5_A3 + LICENSE_QUARANTINE row 6); cross-pocket: also in this file's 2D animation section (vector+raster 2D angle). [Wave 1 Lane A3]
+
+#### Blender text FX / kinetic type ✅ — standalone tool use
+- **What:** 3D title cards and kinetic typography — text-on-curve, drivers, Geometry Nodes type treatments, bevel/extrude depth
+- **URL:** https://www.blender.org
+- **License:** GPL-3.0 — standalone tool use
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 21 (Blender suite)
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Full-depth 3D titles without leaving the suite the show is built in. [Wave 1 Lane A3]
+
+#### Natron text nodes ✅ — standalone tool use
+- **What:** Node-based text compositing — title cards comped over plates with full transform/grade control
+- **URL:** https://natrongithub.github.io (source: https://github.com/NatronGitHub/Natron)
+- **License:** GPL-2.0 (LICENSE_QUARANTINE.md row 87 — LICENSE.txt fetched 2026-10-07)
+- **Quarantine:** docs/ANIMATION_QUARANTINE.md row 44 — standalone-tool use only
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md Natron entry + "already wired" list; LICENSE_QUARANTINE row 87. OCIO-managed text comps. [Wave 1 Lane A3]
+
+#### ImageMagick title batching ✅
+- **What:** Batch-generate title cards and episode slates (caption/label/drawtext) across whole seasons from scripts
+- **URL:** https://github.com/ImageMagick/ImageMagick
+- **License:** ImageMagick License (Apache-2.0-compatible)
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedup: RESOURCE_CATALOG.md "ImageMagick ✅". One command per slate × 50 episodes = done. [Wave 1 Lane A3]
+
+#### FFmpeg drawtext + wave/distortion text ✅
+- **What:** Wavy/trippy text effects — drawtext with geq/wave/vibrato filters for distorted title treatments, rendered straight into plates
+- **URL:** https://ffmpeg.org
+- **License:** Build-dependent (LGPL-2.1+ or GPL-2.1+); CLI subprocess use
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Dedup: FFmpeg already wired in both repos. The Adult Swim-style wavy-text treatment, scriptable. [Wave 1 Lane A3]
+
+#### Title-safe guides ✅
+- **What:** SMPTE RP 27.3 action/title-safe overlays — keep titles inside safe areas across 16:9, 9:16, and 1:1 deliverables
+- **URL:** technique entry (overlays generated locally; SMPTE RP 27.3 is the published standard)
+- **License:** N/A — technique; no code or asset license applies
+- **Repo lane:** trippedd (motion graphics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Generate the safe-area PNGs once (Blender/ImageMagick), reuse on every title comp. [Wave 1 Lane A3]
 
 ## Sound design / SFX libraries
 <!-- foley, SFX libraries, synth SFX, whooshes/impacts -->

@@ -28190,3 +28190,688 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Record-then-transcribe leg with SRT/VTT export; bot-free recording option. [Wave 28 Lane A]
+
+## Wave 29 — Lane A (held-back pockets: score archives · chiptune/tracker ecosystem · caption packaging) — 66 entries (2026-10-07)
+
+### A. Score archives — license audits of held-back institutions (3)
+
+#### Schumann Portal (Robert-Schumann-Haus Zwickau) — rights audit ❓ unverified
+- **What:** License audit of the existing ❓ entry (Schumann Portal — Zwickau's Schumann research center: manuscripts, letters, scores).
+- **URL:** https://www.schumann-portal.de/
+- **License:** No blanket reuse license found on the portal (verified 2026-10-07 via web search of schumann-portal.de and the Robert-Schumann-Haus pages). Exhibition images are marked "© Robert-Schumann-Haus Zwickau" (e.g., the 2019 Clara Schumann exhibition catalogue PDF). The manuscripts themselves are 19th-century (PD-age), but the institution publishes no open-access statement — treat scans as per-item permission.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference use; contact the Haus (schumannhaus@zwickau.de) before reusing any scan commercially. Pairs with the Schumann-Briefdatenbank entry below. [Wave 29 Lane A]
+
+#### NY Philharmonic — Leon Levy Digital Archives — rights audit ⚠️ per-item terms
+- **What:** License audit of the existing ❓ entry (1.3M+ pages: marked scores, parts, programs from 1842 onward).
+- **URL:** https://archives.nyphil.org/
+- **License:** Per-item, verified 2026-10-07: the Archives' About page states documents are for study and research purposes only; materials still in copyright require publisher permission for reproduction/performance; reproduction of conductors' markings requires permission from the Philharmonic. Counterweight: the 2026 rebuild added a simplified request process for downloading eligible materials including public-domain scores and parts, and the performance-history dataset is on GitHub under a Creative Commons Public Domain license.
+- **Free tier:** Free to browse; PD scores/parts downloadable via request
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Marked orchestral scores/parts (many PD-age) are the prize — use the download-request flow and keep the permission receipts. Conductors' markings are a separate rights layer. [Wave 29 Lane A]
+
+#### Morgan Library & Museum — music manuscripts — rights audit ⚠️ NC-default
+- **What:** License audit of the existing ❓ entry (music manuscript holdings: autographs, first editions; "Music Manuscripts Online" = 700 MSS as full facsimiles).
+- **URL:** https://www.themorgan.org/
+- **License:** Verified 2026-10-07 via the Morgan's own Terms and Conditions page (themorgan.org/terms-and-conditions): site content is for personal, educational, noncommercial use only; anyone wishing to publish or make commercial use must contact the Department of Imaging and Rights; downloadable low-resolution images are NC-only and the Morgan "will not grant permission for the reproduction or commercial use of these low resolution downloadable images." High-resolution copies for publication/commercial use require a paid request.
+- **Free tier:** Free to browse/download low-res for NC use
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Even PD-age manuscripts (Mozart, Mahler autographs) sit behind the NC-default site terms — research/reference only unless Imaging & Rights clears commercial use. [Wave 29 Lane A]
+
+### B. Score archives — new finds (19)
+
+#### Ceolas — Celtic Music Archive ❓ unverified
+- **What:** One of the oldest Celtic music sites on the web (Stanford-linked, 1990s): several hundred traditional tunes in abc, MIDI, PostScript, and bagpipe.tex formats, plus tunebooks in Acrobat format and an index of printed tune sources.
+- **URL:** https://ceolas.org/tunes/
+- **License:** No explicit license statement found on the site (verified 2026-10-07). Tunes are traditional (PD-age melodies), but transcriptions/arrangements carry no stated reuse grant.
+- **Free tier:** Free access, no login
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong source of PD-age Celtic melodic material for folk-scoring; verify per-tune terms before commercial reuse. Long-dormant but still serving. [Wave 29 Lane A]
+
+#### Brahms-Portal (Brahms-Institut, Lübeck) ✅ open-access, FAIR
+- **What:** New digital portal (launched 2025-08-01) of the Brahms-Institut: ~20,000 semantically linked datasets from ~10,000 objects — photographs, letters, and music manuscripts — plus scholarly work texts on Brahms' complete oeuvre.
+- **URL:** https://www.brahms-portal.de
+- **License:** Open access under FAIR principles per the institute's launch reporting (verified 2026-10-07; distinct from the earlier Brahms Portal entry which pointed at the institute homepage). Note: the Deutsche Grammophon audio excerpts embedded in the portal are licensed content, not reusable.
+- **Free tier:** Free access, no login
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Manuscript scans (PD-age Brahms sources) are the commercial-safe layer; treat DG audio as reference-only. Complements the institute's Brahms-Briefwechsel-Verzeichnis (10,800 letters). [Wave 29 Lane A]
+
+#### Schumann-Briefdatenbank ❓ unverified
+- **What:** The online letter database of the Robert-Schumann-Forschungsstelle (Düsseldorf/Zwickau): searchable correspondence of Robert and Clara Schumann with dates, senders, recipients, and full letter texts.
+- **URL:** https://sbd.schumannportal.de/
+- **License:** No reuse terms found on the database (verified 2026-10-07). Note: the print Schumann-Briefedition (Verlag Dohr) is a commercial product — its edited texts are NOT free to reuse; the database is the free-access leg.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Letters themselves are 19th-century (PD-age); scholarly annotations/edition apparatus are the rights-encumbered layer. Research/reference use. [Wave 29 Lane A]
+
+#### Liszt Ferenc Memorial Museum and Research Centre — digital archive ❓ unverified
+- **What:** Budapest's Liszt museum/research centre: 4,000–5,000 collection items (Liszt's original manuscripts, letters, annotated library catalogue, scores, graphics) described in Hungarian and English with digital photos/scans, no login required.
+- **URL:** https://lisztmuseum.hu/news/digital-archive-119831
+- **License:** No explicit reuse license stated on the archive pages (verified 2026-10-07). Manuscripts are 19th-century (PD-age), but no open-access grant is published.
+- **Free tier:** Free access, no login
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference use; per-item permission needed for commercial reuse of scans. Collection database at catalogue.lisztmuseum.hu. [Wave 29 Lane A]
+
+#### Vaughan Williams Memorial Library (EFDSS) ❓ unverified
+- **What:** The library/archive of the English Folk Dance and Song Society (Cecil Sharp House, London): VWML Online hosts the Roud Folk Song and Broadside Indexes, the integrated Full English archive (58,000+ documents from 12 major folk collections — Sharp, Grainger, Vaughan Williams, Kidson), Take 6, and the Folk Song Subject Index.
+- **URL:** https://www.vwml.org/
+- **License:** No blanket reuse license found (verified 2026-10-07). The Full English was Heritage-Lottery-funded as public access ("getting this music back to the people"), but no formal open license is published; collector manuscripts are 19th/early-20th-century (mostly PD-age).
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The single richest English folk-song manuscript source online; verify per-item terms before commercial reuse of any specific manuscript image. [Wave 29 Lane A]
+
+#### e-codices — Virtual Manuscript Library of Switzerland ⚠️ per-item PD marks
+- **What:** 1,300+ fully digitized Swiss manuscripts with scholarly descriptions, DOIs, and IIIF manifests — including the St. Gall music manuscripts (Cod. Sang. 359, c. 920/930, the oldest complete surviving music manuscript) and medieval music treatises (Marchettus of Padua, Johannes de Muris).
+- **URL:** https://www.e-codices.ch/
+- **License:** Per-item Rights labels (verified 2026-10-07): many manuscripts carry an explicit PUBLIC_DOMAIN mark on their images (e.g., Solothurn Cod. S 555); other rights per each manuscript description and the site Terms of Use.
+- **Free tier:** Free access, IIIF manifests included
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Filter to PUBLIC_DOMAIN-marked items for commercial-safe use; IIIF makes compliant image reuse technically clean. Chant/neume source material for period scoring. [Wave 29 Lane A]
+
+#### Royal College of Music — Museum online catalogue ❓ unverified
+- **What:** RCM Museum's online catalogue: ~45,000 items being digitized — instruments, paintings, photographs, engravings, plus manuscript music, prints, letters, and concert programmes (Mozart, Elgar holdings among them), each with high-quality images.
+- **URL:** http://t4.rcm.ac.uk/museum/projects/
+- **License:** No explicit reuse license found (verified 2026-10-07); catalogue is a discovery tool with images shown for research.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/discovery use; contact the RCM for image reuse. Iconography (portraits/engravings) may be more reusable than manuscript scans — verify per item. [Wave 29 Lane A]
+
+#### Global Jukebox (Alan Lomax / Association for Cultural Equity) ⚠️ stream-mostly
+- **What:** Alan Lomax's "global jukebox" realized: 6,000+ traditional songs from 1,200 cultures with the Cantometrics performance-style database; free access for all, plus education sections and playlists.
+- **URL:** http://theglobaljukebox.org
+- **License:** Free access verified 2026-10-07; the underlying 5,776-song Cantometric dataset was released for public download (PLOS ONE, Nov 2022, open-access). Recordings themselves are mostly stream-only (free downloads limited to released samplers); commercial reuse of recordings needs ACE clearance.
+- **Free tier:** Free streaming access; dataset downloadable
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The downloadable dataset (song-level style features) is the commercial-safe layer; treat field recordings as reference/streaming-only. [Wave 29 Lane A]
+
+#### Carl-Maria-von-Weber-Gesamtausgabe (WeGA) — digital edition ⚠️ texts-only open
+- **What:** The academy critical edition of Weber (Akademie der Wissenschaften und der Literatur Mainz): digital edition of letters, diaries, writings, bibliography, with an open API and data packages (Zenodo DOI).
+- **URL:** https://www.weber-gesamtausgabe.de/de/Index
+- **License:** The digital edition covers TEXT parts only — explicitly "ausschließlich der Notentexte" (verified 2026-10-07). The music itself appears in Schott print volumes (commercial). WeGA-WebApp source is on GitHub (Edirom).
+- **Free tier:** Free access; API available
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest framing: a superb open text/letter corpus for research, NOT a score source — scores are Schott commercial. [Wave 29 Lane A]
+
+#### Joseph Haydn-Institut Köln ❓ research institute
+- **What:** The scholarly institute behind the "Joseph Haydn Werke" critical edition (Cologne): source research, authenticity verification, and the Hoboken-Verzeichnis tradition.
+- **URL:** http://www.haydninstitut.de
+- **License:** No open score portal (verified 2026-10-07); the "Joseph Haydn Werke" edition is published in print by Henle (commercial). Institute output is research literature.
+- **Free tier:** N/A (research institution)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/catalogue value only (work lists, source studies) — not a score source. Included so the lane's composer-institute coverage is honest about which ones gate their scores commercially. [Wave 29 Lane A]
+
+#### Mendelssohn-Haus Leipzig — digital library ❓ unverified
+- **What:** Mendelssohn's last residence (museum) with a digital library of digitized first and early editions from its collection.
+- **URL:** https://www.mendelssohn-stiftung.de/en/felix
+- **License:** No reuse terms stated on the digital library (verified 2026-10-07). First/early editions are 19th-century (PD-age), but no open-access grant is published.
+- **Free tier:** Free to view online
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference use; verify before reusing scans commercially. [Wave 29 Lane A]
+
+#### Istituto Nazionale di Studi Verdiani ⚠️ license-conditional
+- **What:** Parma's Verdi research institute: the "Studi Verdiani" digital collection (22 journal issues + 38 monograph/conference volumes, incl. the Epistolario verdiano correspondence volumes) in searchable PDF.
+- **URL:** https://www.torrossa.com/en/publishers/istituto-nazionale-di-studi-verdiani.html
+- **License:** Conditional (verified 2026-10-07): the 2013 launch announcement offered the digital collection with permissions for printing, copying, and pasting (downloads expiring after five days); current availability is via Torrossa as paid PDFs. Per-item check.
+- **Free tier:** Discovery free; PDFs currently paid via Torrossa
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Scholarly Verdi literature, not scores; the free-with-copy-permission window appears to have closed — treat as paid unless the institute re-opens access. [Wave 29 Lane A]
+
+#### Internationale Gustav Mahler Gesellschaft — Mahler online / Kulturpool ⚠️ per-item
+- **What:** Vienna's Mahler society: the "Mahler online" research platform (public beta since Sept 2025) plus 50,000+ digitized archive pages surfaced through Austria's Kulturpool aggregator, some marked Public Domain.
+- **URL:** http://www.gustav-mahler.org
+- **License:** Per-item (verified 2026-10-07): Kulturpool items carry their own rights marks (Public Domain where marked — reusable); the IGMG's own archive digitizations are explicitly NOT open access ("im Archiv der IGMG zu Forschungszwecken eingesehen werden" — research viewing in the archive only). The critical edition (NKG) is print-commercial via the original publishers.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter Kulturpool to Public-Domain-marked items for commercial-safe use; everything else is research-only. [Wave 29 Lane A]
+
+#### Anton Bruckner Institut Linz (ABIL) / bruckneronline ❓ unverified
+- **What:** Linz Bruckner research institute: 16,000-entry online database on Bruckner's life and work; the "bruckneronline" project (Austrian National Library music collection) digitizing Bruckner autographs; plus the digital WAB work catalogue with notation incipits.
+- **URL:** https://db.musicaustria.at/node/33274
+- **License:** No reuse terms verified for the database or bruckneronline scans (verified 2026-10-07).
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference use; Bruckner died 1896 (PD-age sources) but no open-access grant found — verify per item. [Wave 29 Lane A]
+
+#### Max-Reger-Institut / Reger-Werkausgabe online portal ⚠️ hybrid-edition
+- **What:** Karlsruhe's Reger institute: the Reger-Werkausgabe hybrid edition — print scores (Carus) paired with a browser-based online portal (reger-werkausgabe.de) carrying source images, Edirom-annotated comparisons, and an encyclopedic work-history/biography section; plus the maxreger.info research portal.
+- **URL:** https://www.carus-verlag.com/produkte/editionsreihen/reger-digitale-editionen/
+- **License:** Hybrid (verified 2026-10-07): print scores are commercial (Carus); digital portal content terms not verified — treat as research-only until confirmed.
+- **Free tier:** Portal browsable; scores paid
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Source images and work-history data are the potentially reusable layer; the edition's scores themselves are commercial. [Wave 29 Lane A]
+
+#### Richard-Strauss-Institut Garmisch-Partenkirchen ❓ unverified
+- **What:** Garmisch's Strauss competence centre: archive, specialist library, and museum on Richard Strauss; connected to the "Richard Strauss Werke · Kritische Ausgabe" (RSW) critical edition (Bavarian Academy of Sciences).
+- **URL:** http://richard-strauss-institut.de/de/institut/
+- **License:** No open digital score portal found (verified 2026-10-07); archive/library are on-site research resources; the RSW critical edition is Schott print-commercial.
+- **Free tier:** N/A (on-site research)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference value only (catalogues, source studies) — not a score source. Strauss manuscripts also appear at the Bavarian State Library. [Wave 29 Lane A]
+
+#### Fondazione Rossini (Pesaro) ❓ unverified
+- **What:** Pesaro's Rossini foundation: critical-edition workshop, "Lettere e Documenti" correspondence series, library, and the Museo Nazionale Rossini / Casa Rossini (which has digitized autograph scores viewable on on-site touchscreens).
+- **URL:** https://www.fondazionerossini.org/
+- **License:** No open web portal for manuscript scans found (verified 2026-10-07); digitizations are on-site (Casa Rossini touchscreens). The critical edition is print-commercial.
+- **Free tier:** N/A (on-site)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference value; not a score source. Included for honest composer-institute coverage. [Wave 29 Lane A]
+
+#### Emmanuel Music — Bach cantata notes & translations ⚠️ notes-copyrighted
+- **What:** Boston's Emmanuel Music (Craig Smith's ensemble): per-cantata scholarly notes and text/translation pages for the complete Bach cantata cycle, plus livestreamed performances.
+- **URL:** https://www.emmanuelmusic.org/
+- **License:** The cantata notes are marked ©Craig Smith / contributors (verified 2026-10-07) — read-online reference, not reusable text. The cantata texts/translations themselves are of PD-age works.
+- **Free tier:** Free to read online
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Superb program-note research for any Bach-based scoring; do not lift note text. Translations useful for caption/libretto reference. [Wave 29 Lane A]
+
+#### Bach Cantatas Website (Aryeh Oron) ⚠️ educational-only scores
+- **What:** The long-running Bach Cantatas Website (est. 2000): per-work discographies, texts and translations, articles, performer biographies, and a scores index (vocal/piano reductions, BGA scores, chorales, MuseScore files).
+- **URL:** https://www.bach-cantatas.com/
+- **License:** The scores index carries an explicit warning (verified 2026-10-07): score files are "for educational purposes only. Any distribution or commercial use of these files & examples is absolutely forbidden." Discographies/texts are community reference.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/discography goldmine; the scores themselves are NOT pipeline-usable. Use for research, then source PD scores from IMSLP/Mutopia. [Wave 29 Lane A]
+
+### C. Chiptune / retro-tracker ecosystem (22)
+
+#### Lemon64 ⚠️ per-item rights
+- **What:** The long-running Commodore 64 community portal (lemon64.com): game database, forums, and scene discussion — the social hub of the C64 scene alongside CSDb.
+- **URL:** https://www.lemon64.com/
+- **License:** Per-item (verified 2026-10-07): the database/forums are community content, but hosted game downloads are commercial-era titles whose rights are uncleared — research/discovery OK, downloads are not a cleared source.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use for scene research and SID-music discovery; do not pull game binaries into the pipeline. Music discussion often surfaces author-released tunes. [Wave 29 Lane A]
+
+#### Chiptune.com ❓ historical netlabel, status unverified
+- **What:** Early chiptune netlabel site (chip releases: Storm, TAO, YMCK, zabutom), related to the 8bitpeoples/monotonik/Petite&Jolie milieu.
+- **URL:** https://www.chiptune.com/
+- **License:** Unverifiable this pass (verified 2026-10-07): domain did not resolve from this environment; no terms page reachable. Historical entry only.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Kept as a historical pointer; verify liveness and per-release terms before any use. [Wave 29 Lane A]
+
+#### RKO — Remix.Kwed.Org ⚠️ remix-culture, NOT cleared
+- **What:** The C64 remix institution (est. 2002): thousands of fan remixes of Commodore 64 SID tunes, with forums, album art, and a long-running remix64 community.
+- **URL:** https://remix.kwed.org/
+- **License:** Remix-culture (verified 2026-10-07 via the site's own front page): "The music available on Remix.Kwed.Org is based on SID tunes that are still under copyright by the artist who created the original tunes." Fan remixes are NOT cleared for commercial reuse by the site's existence or ToS.
+- **Free tier:** Free streaming/downloads for listening
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The honest rule for the whole remix pocket: a remixer's upload does not transfer the original composer's rights. Reference/listening and arrangement study only; license originals directly for any commercial use. [Wave 29 Lane A]
+
+#### Chipflip ❓ netlabel, per-release terms unclear
+- **What:** Swedish chip-music netlabel (chipflip.wordpress.com): free MP3 releases (e.g., Hardhat's Game-Boy-Advance techno album "Toolboxing").
+- **URL:** https://chipflip.wordpress.com/
+- **License:** No license terms found (verified 2026-10-07); releases were free downloads, but no blanket reuse grant. Appears dormant.
+- **Free tier:** Free MP3 downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-release verification needed; contact artists for reuse. [Wave 29 Lane A]
+
+#### Ubiktune ⚠️ per-release terms
+- **What:** Chiptune record label since 2006 (virt, coda, Danimal Cannon): progressive/jazz/fusion-flavored chip music; many releases also on Bandcamp.
+- **URL:** https://ubiktune.com/
+- **License:** Per-release (verified 2026-10-07): free downloads offered, but no blanket license statement found on the JS-heavy site — verify each release (Bandcamp pages carry their own terms).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** High-quality original chip material (not remixes) — the most pipeline-promising netlabel in this pocket once per-release terms check out. [Wave 29 Lane A]
+
+#### scene.hu ❓ Hungarian demoscene portal
+- **What:** The Hungarian demoscene portal and community (forums, productions, party info).
+- **URL:** https://www.scene.hu/
+- **License:** Per-production rights (verified 2026-10-07 via awesome-demoscene listing): community portal, no blanket license; liveness could not be confirmed from this environment (DNS-blocked).
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/community value; per-production rights checks apply. [Wave 29 Lane A]
+
+#### scenecity.site ❓ demoscene streaming + chat
+- **What:** Demoscene streaming and chat platform (live sets, scene radio-style streams).
+- **URL:** https://scenecity.site/
+- **License:** No reuse grant (verified 2026-10-07): streaming/chat platform; live (HTTP 200); per-production rights.
+- **Free tier:** Free to watch/chat
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Community/discovery only; streams are not a reusable music source. [Wave 29 Lane A]
+
+#### C64Audio.com ⚠️ commercial store
+- **What:** Commercial store selling C64 SID remix albums (Shopify storefront), run from the C64 remix scene.
+- **URL:** https://c64audio.com/
+- **License:** Commercial (verified 2026-10-07): paid albums; licensing is handled store-side with remix artists. NOT a free resource.
+- **Free tier:** None (paid store)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest placement: a licensing path for C64-remix-style material, not a free source. Buying an album does not automatically grant sync rights — check per-release. [Wave 29 Lane A]
+
+#### Slengpung ⚠️ per-release terms
+- **What:** Amiga-focused netlabel (Slengpung Recordings): free downloadable releases from the Amiga/tracker scene.
+- **URL:** https://www.slengpung.com/
+- **License:** Per-release (verified 2026-10-07): free downloads, no blanket license statement found on the JS-heavy site.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-release terms before reuse. [Wave 29 Lane A]
+
+#### Micromusic.net ⚠️ per-release terms
+- **What:** Long-running chip netlabel and community (micromusic.net): free releases from the 8-bit/electro scene.
+- **URL:** https://micromusic.net/
+- **License:** Per-release (verified 2026-10-07): free downloads, no blanket license statement found.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-release terms before reuse. [Wave 29 Lane A]
+
+#### Kohina ❓ stream-only radio
+- **What:** Finnish demoscene radio (kohina.com): scene music streams.
+- **URL:** https://kohina.com/
+- **License:** Stream-only (verified 2026-10-07): radio stream, no download/reuse grant.
+- **Free tier:** Free stream
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/listening only — like Nectarine and SceneSat, a stream is not a source. [Wave 29 Lane A]
+
+#### C64.com ❓ portal, per-item rights
+- **What:** Commodore 64 resource portal: games, emulators, history, community forums.
+- **URL:** https://www.c64.com/
+- **License:** Per-item (verified 2026-10-07): liveness could not be confirmed from this environment (DNS-blocked); game downloads are commercial-era titles — rights uncleared.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery value only; same rights discipline as Lemon64. [Wave 29 Lane A]
+
+#### Ready64 ❓ Italian C64 portal
+- **What:** Italian Commodore 64 portal (ready64.org): scene news, productions, community.
+- **URL:** https://ready64.org/
+- **License:** Unverified (verified 2026-10-07): blocks bots (HTTP 403), likely alive; no terms checked.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Community/discovery only. [Wave 29 Lane A]
+
+#### AmigaRemix ⚠️ remix-culture, NOT cleared
+- **What:** Amiga game-music remix site (amigaremix.com): fan remixes of classic Amiga game tunes.
+- **URL:** https://amigaremix.com/
+- **License:** Remix-culture (verified 2026-10-07): fan remixes of copyrighted game music — same honest rule as RKO: NOT cleared for commercial reuse.
+- **Free tier:** Free listening/downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arrangement-study and reference only. [Wave 29 Lane A]
+
+#### VGMrips 🚫 not commercial-safe
+- **What:** Archive of VGM-format rips (Sega/Master System/Genesis etc.) — direct rips of copyrighted game music data.
+- **URL:** https://vgmrips.net/
+- **License:** Not cleared (verified 2026-10-07): rips of in-copyright game soundtracks; no license. Research/reference only.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest 🚫: useful for format/chip study (VGM is a clean chip-music research format), never for shipping audio. [Wave 29 Lane A]
+
+#### KHInsider 🚫 not commercial-safe
+- **What:** Video-game-music MP3 download archive (khinsider.com): soundtracks from commercial games.
+- **URL:** https://khinsider.com/
+- **License:** Not cleared (verified 2026-10-07): copyrighted game soundtracks offered as MP3 downloads; no license. Research/reference only.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest 🚫: reference listening only — never a source for shipped audio. [Wave 29 Lane A]
+
+#### Brave Wave Productions ⚠️ commercial licensed label
+- **What:** Record label producing licensed video-game-music albums (Street Fighter, Ninja Gaiden etc. tribute/arrangement releases) with proper licensing.
+- **URL:** https://bravewave.net/
+- **License:** Commercial (verified 2026-10-07): licensed label — albums are paid; licensing is the label's business, not a free grant.
+- **Free tier:** None (paid label)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The honest commercial path for VGM-style material: properly licensed, but you pay. Included so the lane shows the paid alternative next to the free netlabels. [Wave 29 Lane A]
+
+#### Materia Collective ⚠️ commercial label
+- **What:** Video-game-music label/community (Materia Collective): licensed arrangement albums and covers.
+- **URL:** https://materiacollective.com/
+- **License:** Commercial (verified 2026-10-07): paid releases; not a free resource.
+- **Free tier:** None (paid label)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Licensing path, not a free source. [Wave 29 Lane A]
+
+#### Scarlet Moon Records ⚠️ commercial label
+- **What:** Video-game-music record label (Scarlet Moon Productions): licensed VGM arrangement albums.
+- **URL:** https://scarletmoonproductions.com/
+- **License:** Commercial (verified 2026-10-07): paid releases; not a free resource.
+- **Free tier:** None (paid label)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Licensing path, not a free source. [Wave 29 Lane A]
+
+#### Chiptune.ru ❓ terms unverified
+- **What:** Russian chiptune portal/community (chiptune.ru).
+- **URL:** http://chiptune.ru/
+- **License:** Unverified (verified 2026-10-07): alive over HTTP; no terms checked (language barrier + JS).
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery only until terms are verified. [Wave 29 Lane A]
+
+#### SDCompo ❓ competition site, status unverified
+- **What:** Demoscene music competition site (SDCompo): tracked-music compos with entries and results.
+- **URL:** https://www.sdcompo.com/
+- **License:** Unverifiable this pass (verified 2026-10-07): domain did not resolve from this environment; compo entries typically carry per-entry terms (cf. Battle of the Bits).
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** If revived/reachable, treat like Battle of the Bits: per-entry CC terms, check each entry. [Wave 29 Lane A]
+
+#### Trax in Space ❓ module archive, status unverified
+- **What:** Tracker-module archive (traxinspace.org): downloadable .mod/.xm/.it files.
+- **URL:** http://traxinspace.org/
+- **License:** Unverifiable this pass (verified 2026-10-07): domain did not resolve from this environment. Module archives generally carry per-module uploader terms (cf. Mod Archive, Modland).
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** If reachable, apply the Mod Archive discipline: filter to uploader-stated PD/CC modules only. [Wave 29 Lane A]
+
+### D. Caption packaging — SaaS free-tier ToS audits (22)
+
+#### Deciphr ❓ unverified
+- **What:** Deciphr (deciphr.ai) — podcaster-focused AI platform: transcripts, show notes, summaries, audiograms, video reels, and social captions from audio/video uploads or URLs.
+- **URL:** https://deciphr.ai/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free tier confirmed (from $0/mo; paid from ~$3.25/mo annual); sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong transcript+repurposing leg for podcast/long-form caption workflows; audit the ToS for commercial-use rights before pipeline use. [Wave 29 Lane A]
+
+#### Vsub ❓ unverified
+- **What:** Vsub (vsub.io) — AI video-caption/faceless-video generator: auto-captions with animated emojis, AI voices, Reddit-story/Roblox templates.
+- **URL:** https://vsub.io/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Conflicting third-party reports (some say 10 free videos/mo, others paid-only from $19–29/mo); sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Treat as paid-until-proven-otherwise; verify the current free tier on the live pricing page before relying on it. [Wave 29 Lane A]
+
+#### Subscene ⚠️ derivative-work subtitles
+- **What:** Subscene (subscene.com) — community subtitle download site: user-uploaded subtitles for films/TV in many languages.
+- **URL:** https://www.subscene.com/
+- **License:** Derivative works (verified 2026-10-07): subtitles of copyrighted films are derivative works; the site hosts user uploads with no commercial clearance and no per-subtitle license.
+- **Free tier:** Free downloads
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/timing-study only — never ship downloaded subtitles. Useful for subtitle-format research (SRT/MicroDVD variants in the wild). [Wave 29 Lane A]
+
+#### SendShort — free-tier ToS audit ⚠️ trial-not-tier
+- **What:** Audit of the existing ❓ SendShort entry (sendshort.ai) — AI short-form video repurposing with auto-captions.
+- **URL:** https://sendshort.ai/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** "Free" = 3 one-time videos total (NOT monthly recurring), watermarked, no credit card; paid from $15/mo. Sign-in required. Commercial-use terms per ToS unverified.
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest correction: the free plan is a one-time trial, not a usable free tier — evaluate and move on, or pay. Caption-export (SRT) is on paid tiers. [Wave 29 Lane A]
+
+#### DivXLand Media Subtitler ⚠️ freeware-closed
+- **What:** DivXLand Media Subtitler — long-running freeware Windows subtitle creator/editor (SRT, SSA/ASS, etc.).
+- **URL:** https://www.divxland.org/
+- **License:** Freeware, closed-source (verified 2026-10-07): free to use, not open-source; no copyleft issue, but no source audit possible.
+- **Free tier:** Freeware — free, no limits
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Standalone QC/authoring station only; pairs with the open-source editors (Aegisub, SubtitleComposer) already cataloged. [Wave 29 Lane A]
+
+#### TranscribeMe ⚠️ paid human transcription
+- **What:** TranscribeMe — human transcription service (crowd workforce) with AI-assisted tiers.
+- **URL:** https://www.transcribeme.com/
+- **License:** Proprietary service (verified 2026-10-07)
+- **Free tier:** None usable (paid per-minute human service)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest placement: a paid accuracy backstop for difficult audio, not a free pipeline component. [Wave 29 Lane A]
+
+#### Taption ❓ unverified
+- **What:** Taption (taption.com) — AI transcription/subtitling/translation: 40+ transcription languages, 50+ translation languages, speaker labels, editable timeline, exports to MP4 (burned-in), SRT, VTT, PDF, TXT.
+- **URL:** https://www.taption.com/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Freemium — free for videos under 1 minute; paid from ~$12/mo; sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The sub-1-minute free allowance suits Shorts/Reels caption spot-checks; SRT/VTT export is the pipeline-relevant feature. [Wave 29 Lane A]
+
+#### Opus Clip ❓ unverified
+- **What:** Opus Clip (opus.pro) — AI long-to-short clipping with animated captions, virality scoring, and social scheduling.
+- **URL:** https://www.opus.pro/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free 60 credits/mo (~60 min source video), 1080p, watermarked, clips expire after 3 days, no editor; sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best-in-class moment detection per 2026 reviews, but the free tier is a trial (expiring clips) — evaluate, don't depend. [Wave 29 Lane A]
+
+#### Auphonic ⚠️ STT-is-paid
+- **What:** Auphonic (auphonic.com) — audio post-production web service: leveling, loudness normalization (EBU R128), noise/reverb reduction, multitrack; Whisper-based speech-to-text and shownotes on paid tiers.
+- **URL:** https://auphonic.com/help/web/pricing_faq.html
+- **License:** Proprietary SaaS (verified 2026-10-07 via official pricing FAQ)
+- **Free tier:** Free 2 hrs/mo, no credit card — but speech-to-text/shownotes are PAID-only; free tier covers basic audio algorithms (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest catch: the free tier is an audio-cleanup tool, not a transcription tool — the caption leg starts at paid. Still valuable as a pre-transcription cleanup stage. [Wave 29 Lane A]
+
+#### Eightify ❓ unverified
+- **What:** Eightify — YouTube video summarizer (browser extension + app): AI summaries with timestamps from video transcripts.
+- **URL:** https://eightify.app/
+- **License:** Proprietary SaaS (verified 2026-10-07; blocks bots, likely alive)
+- **Free tier:** Freemium (limited free summaries); sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Transcript-skimming leg for research; not a caption producer. [Wave 29 Lane A]
+
+#### Glasp ❓ unverified
+- **What:** Glasp — social web highlighter with YouTube transcript/summary features: captures video transcripts for note-taking.
+- **URL:** https://glasp.co/
+- **License:** Proprietary SaaS (verified 2026-10-07; blocks bots, likely alive)
+- **Free tier:** Free; sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Transcript-access leg for research workflows; verify ToS before any bulk transcript extraction. [Wave 29 Lane A]
+
+#### SquadCast ⚠️ paid recording
+- **What:** SquadCast (now part of Descript) — remote podcast/video recording studio with AI transcripts and styled captions.
+- **URL:** https://squadcast.fm/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** None usable (paid plans; absorbed into Descript's lineup)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid recording leg; Descript (already cataloged) is the surviving product surface. [Wave 29 Lane A]
+
+#### CaptionMax ⚠️ paid human captioning
+- **What:** CaptionMax — human captioning/description service (broadcast captioning, offline/online).
+- **URL:** http://captionmax.com/
+- **License:** Proprietary service (verified 2026-10-07; HTTP-only site)
+- **Free tier:** None (paid service)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid accuracy/compliance backstop (cf. 3Play Media, Verbit, VITAC already cataloged). [Wave 29 Lane A]
+
+#### Transcriptive (Digital Anarchy) ⚠️ paid plugin
+- **What:** Transcriptive — Premiere Pro panel plugin for AI transcription/subtitling inside the NLE (by Digital Anarchy).
+- **URL:** https://digitalanarchy.com/
+- **License:** Proprietary plugin (verified 2026-10-07)
+- **Free tier:** None usable (paid plugin)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NLE-native caption leg for Premiere-based finishing; paid. [Wave 29 Lane A]
+
+#### NotebookLM ❓ unverified
+- **What:** Google's NotebookLM — AI research notebook: ingests audio/video/text, generates summaries, timelines, and Audio Overviews; transcript-grounded Q&A.
+- **URL:** https://notebooklm.google.com/
+- **License:** Proprietary Google service (verified 2026-10-07)
+- **Free tier:** Free with Google account (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong transcript-analysis leg for long-form content research; not a caption exporter — pair with a real caption tool for the SRT/VTT leg. [Wave 29 Lane A]
+
+#### Wavve ❓ unverified
+- **What:** Wavve (wavve.co) — audiogram/short-form video creator: waveform animations, captions, and templates for turning audio into social video.
+- **URL:** https://www.wavve.co/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Freemium (limited free plan); sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Caption-adjacent packaging leg (audiograms with captions); cf. Headliner (already cataloged). [Wave 29 Lane A]
+
+#### Wispr Flow ❓ unverified
+- **What:** Wispr Flow — AI dictation app (voice-to-text with auto-edits) for desktop/mobile.
+- **URL:** https://wisprflow.ai/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free tier available; sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dictation-first, not a caption producer — included for the voice-input leg (cf. Superwhisper, MacWhisper). [Wave 29 Lane A]
+
+#### Panopto ⚠️ enterprise
+- **What:** Panopto — enterprise video management platform (lecture capture, searchable video, auto-captions) for education/enterprise.
+- **URL:** https://www.panopto.com/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** None for production use (institutional licensing)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Included for completeness of the caption-platform map (cf. YuJa, Kaltura); no free path. [Wave 29 Lane A]
+
+#### Kaltura 🚫 AGPL-3.0 — QUARANTINED (row 264)
+- **What:** Kaltura — open-source video platform (Community Edition): video management, publishing, caption/subtitle support, live streaming.
+- **URL:** https://kaltura.com/
+- **License:** AGPL-3.0 (verified 2026-10-07 via kaltura/server GitHub README: "All code in this project is released under the AGPLv3 license") — quarantine row 264
+- **Free tier:** Self-hosted CE — free under AGPL-3.0 terms; hosted SaaS is paid
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** AGPL-3.0 — standalone/research use only, never wired into shipping paths. Listed so the lane's platform coverage is honest about which one is quarantined. [Wave 29 Lane A]
+
+#### YuJa ⚠️ enterprise
+- **What:** YuJa — enterprise video platform (lecture capture, auto-captioning, video CMS) for education.
+- **URL:** https://www.yuja.com/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** None for production use (institutional licensing)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Included for completeness of the caption-platform map; no free path. [Wave 29 Lane A]
+
+#### Repurpose.io ❓ unverified
+- **What:** Repurpose.io — content-repurposing automation: turns podcasts/videos into captioned clips and auto-publishes across platforms.
+- **URL:** https://repurpose.io/
+- **License:** Proprietary SaaS (verified 2026-10-07; blocks bots, likely alive)
+- **Free tier:** Trial/paid model; sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distribution-automation leg; caption quality depends on the upstream transcription. [Wave 29 Lane A]
+
+#### Claap ❓ unverified
+- **What:** Claap — async video messaging with AI transcription/summaries (meeting-recap style captions and notes).
+- **URL:** https://claap.io/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free tier available; sign-in required (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Meeting-caption leg; cf. tl;dv, Fathom, Fireflies (already cataloged). [Wave 29 Lane A]
+
+## Honest negatives — Wave 29 Lane A (not entries — diligence record)
+- **Jean Sibelius Works (critical edition):** checked, excluded as a score source — the edition is a Breitkopf commercial print series (National Library of Finland / Sibelius Society), not open; kept out of entries, noted here.
+- **Schumann-Briefedition (print):** checked, excluded — commercial Verlag Dohr print edition; the free Schumann-Briefdatenbank is cataloged instead.
+- **GameChops:** considered for the tracker pocket, excluded as redundant — licensed VGM remix label (commercial), same lane position as Brave Wave/Materia Collective/Scarlet Moon.
+- **pouët.net:** not a new entry — already covered within the CSDb entry (Wave 21).
+- **YTSummary / Airgram:** dropped from the caption slate — domains unresolvable from this environment; replaced with Wavve and Repurpose.io (both liveness-verified).
+- **Vowel / Rewatch:** checked, excluded — both meeting-AI products are dead/shut down.
+- **No tools wired this wave:** the pockets are archives, community portals, and SaaS ToS audits — none expose a packageable CLI/API that survives the smoke-test rule; wiring would have meant fake artifacts. Documented honestly instead.
+
+## Entry count — Wave 29 Lane A
+- New `####` entries: 66 (3 score audits + 19 score finds + 22 tracker + 22 caption)
+- Previous honest count: 2,736 → new honest count: 2,802
+- Quarantine rows added: 1 (row 264 — Kaltura, AGPL-3.0)
+- Tools wired: 0 (documented above)

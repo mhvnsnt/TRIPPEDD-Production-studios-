@@ -27840,3 +27840,353 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Added as Offeo replacement (Offeo's caption feature unverified); dedicated caption SaaS. [Wave 27 Lane A]
+
+#### Essen Folksong Collection 🚫 not commercial-safe
+- **What:** The Essen Folksong Collection (EsAC) — ~10,000 European folk songs in Essen/**kern format, the standard MIR folk-melody corpus.
+- **URL:** Zenodo dataset record — locate via search ("Essen Folksong Collection" Zenodo) before use (canonical URL not re-verified this pass).
+- **License:** 🚫 CC BY-NC-SA 3.0 on the derived Zenodo dataset (license file downloaded and verified 2026-10-07); raw EsAC **kern via KernScores/CCARH is research-only — NC either way.
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research/prototype only — NC blocks commercial pipeline use. Pairs with music21 (already cataloged ✅) which reads **kern natively. [Wave 28 Lane A]
+
+#### Southern Harmony ✅ commercial-safe
+- **What:** "The Southern Harmony, and Musical Companion" (William Walker, 1835; revised editions 1840s–1854) — landmark American shape-note tunebook; Internet Archive scans.
+- **URL:** https://archive.org — search title "Southern Harmony" 1835/1854 editions (item IDs not re-verified this pass).
+- **License:** ✅ Public domain (1835/1854 publication; pre-1929).
+- **Free tier:** Free scans/downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD shape-note source for period-authentic hymnody/melodies. [Wave 28 Lane A]
+
+#### Christian Harmony ✅ commercial-safe
+- **What:** "The Christian Harmony" (William Walker, 1866; revised 1873) — seven-shape successor to Southern Harmony; IA scans.
+- **URL:** https://archive.org — search title "Christian Harmony" 1866/1873 editions (item IDs not re-verified this pass).
+- **License:** ✅ Public domain (1866/1873 publication; pre-1929).
+- **Free tier:** Free scans/downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD companion to Southern Harmony; seven-shape notation period source. [Wave 28 Lane A]
+
+#### New Harp of Columbia ✅ commercial-safe
+- **What:** "New Harp of Columbia" (M. L. Swan, 1867) — East Tennessee shape-note tunebook; IA scans.
+- **URL:** https://archive.org — search title "New Harp of Columbia" 1867 (item IDs not re-verified this pass).
+- **License:** ✅ Public domain (1867 publication; pre-1929).
+- **Free tier:** Free scans/downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Regional PD tunebook; Tennessee/Ozark melodic vocabulary. [Wave 28 Lane A]
+
+#### Shenandoah Harmony ⚠️ license-conditional
+- **What:** "The Shenandoah Harmony" (2013) — modern four-shape tunebook continuing the Shenandoah Valley shape-note tradition; free online viewer plus hymnary.org tune index.
+- **URL:** Official site — locate via search before use (canonical URL not re-verified this pass).
+- **License:** ⚠️ 2013 modern publication — book in copyright; melodies drawn from PD-era sources; verify per-song before reuse (verified 2026-10-07).
+- **Free tier:** Free online viewer; hymnary.org tune index
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use the hymnary index for discovery, then confirm PD status per song against the 19th-c. sources above. [Wave 28 Lane A]
+
+#### Mainly Norfolk ❓ unverified
+- **What:** Mainly Norfolk: English Folk and Other Good Music — long-running English folk-song archive with lyrics, notes, and discographies.
+- **URL:** https://mainlynorfolk.info/ (canonical; verify before use).
+- **License:** ❓ Site terms not verified this pass (checked 2026-10-07: terms page not located).
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference use until terms verified; English folk-song variant research. [Wave 28 Lane A]
+
+#### Max Hunter Folk Song Collection ❓ unverified
+- **What:** Missouri State University's Max Hunter Folk Song Collection — 1,500+ Ozark field recordings (1950s–1970s) with transcripts, hosted by MSU Libraries.
+- **URL:** Hosted by Missouri State University Libraries — locate via search before use (canonical URL not re-verified this pass).
+- **License:** ❓ University-hosted field recordings; per-item terms not verified this pass (checked 2026-10-07).
+- **Free tier:** Free streaming/access
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ozark folk-song field recordings; confirm per-item terms before any reuse beyond research listening. [Wave 28 Lane A]
+
+#### NZ Folk Song ⚠️ license-conditional
+- **What:** NZ Folk Song (folksong.org.nz) — New Zealand folk-song archive: lyrics, sheet music, and recordings of Kiwi traditional songs.
+- **URL:** https://www.folksong.org.nz/ (canonical; verify before use).
+- **License:** ⚠️ Per-song rights statements — some material private or noncommercial-only; verify per item (verified 2026-10-07).
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter by per-song rights label; only clearly PD/licensed items enter the pipeline. [Wave 28 Lane A]
+
+#### ZX Tunes ❓ terms unverified this pass
+- **What:** ZX Tunes — ZX Spectrum music archive (AY-chip tunes) from the Speccy demoscene/tracker scene.
+- **URL:** https://zxtunes.com/ (canonical; verify before use).
+- **License:** ❓ Site terms not verified this pass; tunes carry mixed provenance (checked 2026-10-07).
+- **Free tier:** Free browsing/downloads (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** AY-chip complement to the C64/SID archives; filter to author-released tunes only. [Wave 28 Lane A]
+
+#### Bitfellas ❓ terms unverified this pass
+- **What:** Bitfellas — demoscene crew/portal with a long-running chiptune/tracker music collection and scene releases.
+- **URL:** https://bitfellas.org/ (canonical; verify before use).
+- **License:** ❓ Site terms not verified this pass (checked 2026-10-07).
+- **Free tier:** Free browsing/downloads (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Crew archive; verify per-release terms before pipeline use. [Wave 28 Lane A]
+
+#### BitJam ❓ terms unverified this pass
+- **What:** BitJam — long-running chiptune/tracker music podcast and archive.
+- **URL:** Canonical domain not re-verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass (checked 2026-10-07).
+- **Free tier:** Free listening (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/research source for chiptune artists; not a sample library. [Wave 28 Lane A]
+
+#### SNDH ❓ terms unverified this pass
+- **What:** SNDH Archive (sndh.atari.org) — the Atari ST/YM2149 chiptune archive in SNDH format, thousands of rips and originals.
+- **URL:** https://sndh.atari.org/ (canonical; verify before use).
+- **License:** ❓ Terms not verified this pass; files carry mixed provenance (checked 2026-10-07).
+- **Free tier:** Free downloads (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** YM-chip counterpart to SID archives; check per-file provenance before reuse. [Wave 28 Lane A]
+
+#### SNESmusic.org ❓ terms unverified this pass
+- **What:** SNESmusic.org — Super Nintendo SPC700 music archive (game rips in SPC format) with composer credits.
+- **URL:** https://snesmusic.org/ (canonical; verify before use).
+- **License:** ❓ Terms not verified this pass; SPC rips of commercial games — rights caution (checked 2026-10-07).
+- **Free tier:** Free downloads (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/listening only for commercial game rips; original compositions (if flagged) need per-item checks. [Wave 28 Lane A]
+
+#### Sounds of SceneSat ❓ terms unverified this pass
+- **What:** Sounds of SceneSat — demoscene music archive operated alongside the SceneSat radio crew (distinct from the SceneSat radio stream entry).
+- **URL:** Canonical domain not re-verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass (checked 2026-10-07).
+- **Free tier:** Free browsing/downloads (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the existing "SceneSat — demoscene/chiptune radio" entry (the 24/7 stream); this is the download archive leg. Verify per-release terms. [Wave 28 Lane A]
+
+#### Revision demoparty ❓ terms unverified this pass
+- **What:** Revision — the annual Easter demoscene party (Saarbrücken); releases, compos, and winning-entries archive.
+- **URL:** https://revision-party.net/ (canonical; verify before use).
+- **License:** ❓ Per-production rights — authors retain rights; the party archive is a catalog/host, not a grant (checked 2026-10-07).
+- **Free tier:** Free browsing/downloads (per historical record)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same per-production discipline as the demozoo/pouët.net entries: check each prod's rights individually. [Wave 28 Lane A]
+
+#### demoparty.net ❓ terms unverified this pass
+- **What:** demoparty.net — demoscene party calendar and events index (dates, locations, results links).
+- **URL:** https://demoparty.net/ (canonical; verify before use).
+- **License:** ❓ Terms not verified this pass (checked 2026-10-07).
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Planning/discovery reference (party calendar), not a music source — use to track where new releases surface. [Wave 28 Lane A]
+
+#### demoscene.info ❓ terms unverified this pass
+- **What:** demoscene.info — demoscene knowledge base / scene wiki and links hub.
+- **URL:** https://demoscene.info/ (canonical; verify before use).
+- **License:** ❓ Terms not verified this pass (checked 2026-10-07).
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Orientation/discovery reference for the scene ecosystem; pair with the demozoo + pouët.net entries. [Wave 28 Lane A]
+
+#### AtariMania ⚠️ license-conditional
+- **What:** AtariMania — Atari 8-bit/ST/2600/7800 software database and archive with ROM dumps, scans, and docs.
+- **URL:** https://www.atarimania.com/ (canonical; verify before use).
+- **License:** ⚠️ ROM dumps are rights-restricted — commercial-era software; database/metadata is reference, dumps need per-title permission checks (verified 2026-10-07).
+- **Free tier:** Free browsing; downloads per site policy
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use for Atari music/tech research (POKEY docs, game credits); do not pull ROMs into the pipeline. [Wave 28 Lane A]
+
+#### Atari Legend 🚫 not commercial-safe
+- **What:** Atari Legend — Atari ST community portal and software/music archive.
+- **URL:** https://www.atarilegend.com/ (canonical; verify before use).
+- **License:** 🚫 CC BY-NC-SA 4.0 stated on the upstream homepage (verified 2026-10-07) — NC, no commercial use.
+- **Free tier:** Free browsing/downloads
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC license blocks commercial pipeline use; research/reference only. [Wave 28 Lane A]
+
+#### World of Spectrum ⚠️ license-conditional
+- **What:** World of Spectrum — the ZX Spectrum preservation archive: games database, magazines, books, inlay scans, and per-entry permission tracking.
+- **URL:** https://worldofspectrum.org/ (canonical; verify before use).
+- **License:** ⚠️ Per-item distribution permissions — the archive's own permission pages state some content lacks explicit permission; filter by the per-entry permission flag (verified 2026-10-07).
+- **Free tier:** Free browsing/downloads (per site policy)
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Preservation reference; only permission-flagged items are pipeline-eligible. [Wave 28 Lane A]
+
+#### Hall of Light ⚠️ per-item rights
+- **What:** Hall of Light — the Amiga games database (abime.net): per-game entries with License flags (Commercial/PD/Freeware), credits, screenshots.
+- **URL:** https://amiga.abime.net/ (canonical; verify before use).
+- **License:** ⚠️ Database is © HOL TEAM; per-game License flags (Commercial vs PD/Freeware) must be checked per entry (verified 2026-10-07).
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga-side complement to the AtariMania/World of Spectrum entries; filter to PD/Freeware-flagged entries only. [Wave 28 Lane A]
+
+#### GameBase64 ⚠️ per-item rights
+- **What:** GameBase64 (GB64.COM) — "document ALL Commodore 64 gameware before it's too late": 25,000+ C64 games database with SID music, screenshots, reviews, articles.
+- **URL:** http://www.gamebase64.com/
+- **License:** ⚠️ The database and its data are © the GameBase64 team (reuse prohibited without written permission per upstream notice); game content per-title rights — commercial-era software (verified 2026-10-07).
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (music/trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 discovery/credits research (SID musician attribution); do not scrape the database or pull game binaries. [Wave 28 Lane A]
+
+#### Cleanvoice AI ❓ unverified
+- **What:** Cleanvoice AI — AI podcast/video audio cleanup plus transcription with caption/SRT export; free trial (30 min per vendor reporting).
+- **URL:** https://cleanvoice.ai/ (canonical; verify before use).
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial 30 min (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cleanup + transcription combo; SRT export makes it caption-usable. [Wave 28 Lane A]
+
+#### Podsqueeze ❓ unverified
+- **What:** Podsqueeze — AI podcast repurposing: transcripts, show notes, clips, audiograms; free tier 50 min/mo per vendor reporting.
+- **URL:** https://podsqueeze.com/ (canonical; verify before use).
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free 50 min/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Transcript-first repurposing stack; verify clip licensing for commercial use. [Wave 28 Lane A]
+
+#### Swell AI ❓ unverified
+- **What:** Swell AI — podcast/article AI content platform with transcription and clip generation; Hobby plan $0/mo (1 upload) per vendor reporting.
+- **URL:** https://swellai.com/ (canonical; verify before use).
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Hobby $0/mo, 1 upload (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Thin free tier — evaluate-only; confirm ToS before any production dependency. [Wave 28 Lane A]
+
+#### Picovoice Leopard ❓ unverified
+- **What:** Picovoice Leopard — on-device speech-to-text engine (Free Tier) with word-level timestamps; SDK/API for transcription pipelines.
+- **URL:** https://picovoice.ai/ (canonical; verify before use).
+- **License:** Proprietary SDK/SaaS (verified 2026-10-07)
+- **Free tier:** Free Tier for on-device STT (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** On-device STT = no audio leaves the machine (privacy angle); strong offline caption pipeline leg if ToS allows commercial use. [Wave 28 Lane A]
+
+#### Sieve ❓ unverified
+- **What:** Sieve — pluggable video AI APIs (speech transcription, dubbing, lip-sync, object detection); free starter tier per vendor reporting.
+- **URL:** https://sieve.ai/ (canonical; verify before use).
+- **License:** Proprietary SaaS/API (verified 2026-10-07)
+- **Free tier:** Free starter tier (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** API-first; transcription + dubbing + lip-sync in one stack — evaluate for automated caption/dub pipeline. [Wave 28 Lane A]
+
+#### Speechnotes ❓ unverified
+- **What:** Speechnotes — free browser dictation notepad plus pay-as-you-go ($0.10/min) file transcription with SRT/VTT caption export, diarization, API.
+- **URL:** https://speechnotes.co
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free dictation notepad (no account); transcription $0.10/min pay-as-you-go (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SRT/VTT export makes the cheap transcription leg caption-usable; API + Zapier hooks. [Wave 28 Lane A]
+
+#### Dictanote ❓ unverified
+- **What:** Dictanote — notes app with built-in voice typing (50+ languages); free plan $0 forever, 60 min dictation/day.
+- **URL:** https://dictanote.co
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free $0 forever (60 min dictation/day, 50 notes) (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dictation-first (not file transcription); useful for voice-drafted scripts/show notes rather than caption files. [Wave 28 Lane A]
+
+#### SpeechText.AI ❓ unverified
+- **What:** SpeechText.AI — domain-specific AI transcription (legal/medical models), subtitle generation, API; free trial (~15 min) then pay-as-you-go.
+- **URL:** https://speechtext.ai
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial ~15 min; pay-as-you-go from $10 (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Domain models useful for technical/deposition-style content; subtitle export confirmed by vendor docs. [Wave 28 Lane A]
+
+#### Adobe Podcast ❓ unverified
+- **What:** Adobe Podcast (podcast.adobe.com) — Enhance Speech AI cleanup, Mic Check, and Studio remote recording with transcription; free tier with free Adobe account.
+- **URL:** https://podcast.adobe.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free tier (Enhance Speech 30-min files, 1 hr/day; Studio limits) (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Enhance Speech is the standout free leg (dialog cleanup before captioning); Studio transcription feeds caption workflows. [Wave 28 Lane A]
+
+#### Supernormal ❓ unverified
+- **What:** Supernormal — AI meeting notetaker (no bot joins); free plan $0/mo, 15 credits/mo (5/day).
+- **URL:** https://supernormal.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free $0/mo, 15 monthly credits (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Meeting-notes leg rather than caption files; thin free tier — evaluate-only. [Wave 28 Lane A]
+
+#### DownSub ❓ unverified
+- **What:** DownSub — free online subtitle downloader: extracts SRT/VTT/TXT captions from YouTube, Viki, Viu, WeTV and 50+ video sites; no account.
+- **URL:** https://downsub.com/
+- **License:** Proprietary web service (verified 2026-10-07)
+- **Free tier:** Free, no account (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only pull captions from videos you own or are licensed to reuse — downloader convenience doesn't grant rights. [Wave 28 Lane A]
+
+#### YT to Text ❓ unverified
+- **What:** YT to Text (yttotext.com) — free YouTube transcript workspace: searchable timestamped transcripts, SRT/VTT/TXT/DOCX/PDF export; free 3 transcripts/device/day, no account.
+- **URL:** https://yttotext.com/
+- **License:** Proprietary web service (verified 2026-10-07)
+- **Free tier:** Free 3 transcripts/device/day (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Transcript-workspace (searchable, clickable timestamps) vs DownSub's download-first approach; same reuse-rights discipline applies. [Wave 28 Lane A]
+
+#### ScreenApp ❓ unverified
+- **What:** ScreenApp — screen/meeting recorder with AI transcription, speaker diarization, SRT/VTT export; free plan (2 transcriptions up to 45 min each, 3 uploads).
+- **URL:** https://screenapp.io
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free (2 transcriptions, 45-min cap) (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Record-then-transcribe leg with SRT/VTT export; bot-free recording option. [Wave 28 Lane A]

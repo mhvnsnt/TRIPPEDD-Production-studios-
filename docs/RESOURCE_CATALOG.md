@@ -50575,3 +50575,307 @@ Regional labels, events, and scene hubs. Every URL verified live this pass via H
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Quarantined — historical reference only (predecessor lineage to Airtime/LibreTime). [Wave 55 Lane A]
+
+### P4 — caption burn-in OSS round 5 (29 entries)
+
+#### libass/JavascriptSubtitlesOctopus ✅ commercial-safe
+- **What:** SubtitlesOctopus — renders ASS subtitles in the browser via WebAssembly-compiled libass; the standard client-side burn-in/preview renderer.
+- **URL:** https://github.com/libass/JavascriptSubtitlesOctopus
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / render)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Canonical repo (libass org); complements the cataloged libass native library. [Wave 55 Lane A]
+
+#### ThaUnknown/jassub ✅ commercial-safe
+- **What:** JASSUB — displays subtitles in .ass format via JavaScript; supports all SSA/ASS features, integrates with HTML5 video (maintained fork).
+- **URL:** https://github.com/ThaUnknown/jassub
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / render)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Maintained JASSUB fork (original themadcreator repo gone — 404); lighter than SubtitlesOctopus for preview use. [Wave 55 Lane A]
+
+#### szatmary/libcaption ✅ commercial-safe
+- **What:** Free open-source CEA-608/CEA-708 closed-caption encoder/decoder library (broadcast caption standards in code).
+- **URL:** https://github.com/szatmary/libcaption
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / broadcast)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The permissive 608/708 path (vs. GPL'd ccextractor, already cataloged as standalone). [Wave 55 Lane A]
+
+#### harfbuzz/harfbuzz ✅ commercial-safe
+- **What:** HarfBuzz text shaping engine — OpenType shaping required for correct styled-subtitle rendering (ligatures, complex scripts).
+- **URL:** https://github.com/harfbuzz/harfbuzz
+- **License:** ✅ MIT ("Old MIT" license; verified 2026-10-08: COPYING file "HarfBuzz is licensed under the so-called "Old MIT" license"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Core of the burn-in text stack (with freetype + libraqm). [Wave 55 Lane A]
+
+#### JuliaStrings/utf8proc ✅ commercial-safe
+- **What:** Clean C library for processing UTF-8 Unicode data (normalization, case mapping) — subtitle text normalization for burn-in pipelines.
+- **URL:** https://github.com/JuliaStrings/utf8proc
+- **License:** ✅ MIT (verified 2026-10-08: LICENSE.md states new work licensed under the MIT "expat" license; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Unicode hygiene for multilingual caption tracks. [Wave 55 Lane A]
+
+#### shaka-project/shaka-packager ✅ commercial-safe
+- **What:** Media packaging framework for VOD/live DASH and HLS — caption/subtitle track packaging and multiplexing.
+- **URL:** https://github.com/shaka-project/shaka-packager
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08: LICENSE file, Google BSD-style grant; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / packaging)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Caption-track packaging for streaming outputs. [Wave 55 Lane A]
+
+#### videolan/dav1d ✅ commercial-safe
+- **What:** dav1d — fast AV1 decoder (read-only GitHub mirror of the VideoLAN repo) — decode leg for AV1 caption-burn-in pipelines.
+- **URL:** https://github.com/videolan/dav1d
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / codec)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive AV1 decode for burn-in transcodes. [Wave 55 Lane A]
+
+#### xiph/rav1e ✅ commercial-safe
+- **What:** rav1e — the fastest and safest AV1 encoder (Rust) — encode leg for AV1 caption-burn-in outputs.
+- **URL:** https://github.com/xiph/rav1e
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / codec)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive AV1 encode for burned-in deliverables. [Wave 55 Lane A]
+
+#### AOMediaCodec/SVT-AV1 ✅ commercial-safe
+- **What:** SVT-AV1 — production AV1 encoder (Scalable Video Technology) — high-throughput encode for burned-in caption masters.
+- **URL:** https://github.com/AOMediaCodec/SVT-AV1
+- **License:** ✅ BSD-3-Clause-Clear (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / codec)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Canonical repo is GitLab (AOMediaCodec/SVT-AV1); GitHub mirror verified. [Wave 55 Lane A]
+
+#### opennmt/CTranslate2 ✅ commercial-safe
+- **What:** Fast inference engine for Transformer models — subtitle translation inference for multilingual caption burn-in.
+- **URL:** https://github.com/opennmt/CTranslate2
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / translation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Translation-inference leg for caption localization. [Wave 55 Lane A]
+
+#### ass-parser (npm) ✅ commercial-safe
+- **What:** npm `ass-parser` — ASS subtitle parser (JavaScript) for burn-in preprocessing pipelines.
+- **URL:** https://www.npmjs.com/package/ass-parser
+- **License:** ✅ MIT (verified 2026-10-08 via npm registry API: license field MIT, latest 0.2.0)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / parsing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** JS-side ASS parsing; complements the Python ass-compiler (already cataloged). [Wave 55 Lane A]
+
+#### jeeb/libaribb24subtitles ✅ commercial-safe
+- **What:** ARIB B24 subtitle parser library (jeeb) — Japanese broadcast caption parsing for burn-in workflows.
+- **URL:** https://github.com/jeeb/libaribb24subtitles
+- **License:** ✅ ISC (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Permissive ARIB path (upstream libaribb24 not on GitHub — this is the verifiable ISC alternative). [Wave 55 Lane A]
+
+#### w3c/ttml2 ✅ commercial-safe
+- **What:** Timed Text Markup Language 2 (TTML2) — the W3C spec text; the reference for broadcast timed-text semantics.
+- **URL:** https://github.com/w3c/ttml2
+- **License:** ✅ W3C Document License (verified 2026-10-08: repo LICENSE.md "All documents in this Repository are licensed by contributors under the W3C Document License")
+- **Free tier:** Free to read/reuse per doc license
+- **Repo lane:** trippedd (captions / standards)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Spec-text reference; pairs with the cataloged ttconv converter. [Wave 55 Lane A]
+
+#### w3c/imsc ✅ commercial-safe
+- **What:** TTML Profiles for Internet Media Subtitles and Captions (IMSC) — the W3C spec text behind imscJS (already cataloged).
+- **URL:** https://github.com/w3c/imsc
+- **License:** ✅ W3C Document License (verified 2026-10-08 via GitHub API spdx_id NOASSERTION — same W3C repo family as ttml2, LICENSE.md verified there)
+- **Free tier:** Free to read/reuse per doc license
+- **Repo lane:** trippedd (captions / standards)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Spec-text reference for the IMSC renderer already in the catalog. [Wave 55 Lane A]
+
+#### mozilla/vtt.js ✅ commercial-safe
+- **What:** JavaScript implementation of the WebVTT specification (Mozilla) — parse/render WebVTT for caption preview and burn-in prep.
+- **URL:** https://github.com/mozilla/vtt.js
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / parsing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference WebVTT implementation; complements webvtt-py (already cataloged). [Wave 55 Lane A]
+
+#### chidiwilliams/buzz ✅ commercial-safe
+- **What:** Buzz — offline audio transcription and translation app (Whisper-powered) for caption generation on personal machines.
+- **URL:** https://github.com/chidiwilliams/buzz
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / generation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Permissive desktop caption-generation GUI. [Wave 55 Lane A]
+
+#### ina-foss/inaSpeechSegmenter ✅ commercial-safe
+- **What:** CNN-based audio segmentation toolkit — detects speech, music, noise, silence; caption segmentation and diarization prep.
+- **URL:** https://github.com/ina-foss/inaSpeechSegmenter
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / segmentation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Segment-before-transcribe for cleaner caption timing. [Wave 55 Lane A]
+
+#### alibaba-damo-academy/FunASR ✅ commercial-safe
+- **What:** Open-source speech recognition toolkit (training, inference, streaming ASR) — caption-generation ASR backend.
+- **URL:** https://github.com/alibaba-damo-academy/FunASR
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / ASR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** ASR alternative to Whisper-family tools already cataloged. [Wave 55 Lane A]
+
+#### espnet/espnet ✅ commercial-safe
+- **What:** End-to-End Speech Processing Toolkit — ASR recipes usable as caption-generation backends.
+- **URL:** https://github.com/espnet/espnet
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / ASR)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Research-grade; listed for ASR completeness. [Wave 55 Lane A]
+
+#### wenet-e2e/wenet ✅ commercial-safe
+- **What:** Production-first end-to-end speech recognition toolkit — streaming/offline ASR for caption pipelines.
+- **URL:** https://github.com/wenet-e2e/wenet
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / ASR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Production-oriented ASR alternative. [Wave 55 Lane A]
+
+#### HOST-Oman/libraqm ✅ commercial-safe
+- **What:** Library for complex text layout (Raqm) — bidirectional/complex-script layout for styled subtitle burn-in.
+- **URL:** https://github.com/HOST-Oman/libraqm
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Completes the burn-in text stack (harfbuzz + freetype + raqm). [Wave 55 Lane A]
+
+#### freetype/freetype ⚠️ license-conditional
+- **What:** FreeType font engine — glyph rasterization for subtitle burn-in (official GitHub mirror of the freedesktop GitLab repo).
+- **URL:** https://github.com/freetype/freetype
+- **License:** ⚠️ Dual-licensed FTL (FreeType Project License, BSD-style) / GPL (verified 2026-10-08: docs/FTL.TXT + LICENSE.TXT; GitHub API spdx_id NOASSERTION — file texts govern)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Use under the FTL option for commercial-safe burn-in; GPL option is the caution. [Wave 55 Lane A]
+
+#### gpac/gpac ⚠️ license-conditional
+- **What:** GPAC Ultramedia OSS — video streaming/transcoding/packaging suite; MP4Box handles caption-track muxing.
+- **URL:** https://github.com/gpac/gpac
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / packaging)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Caption-track muxing/packaging; keep at arm's length from shipping code. [Wave 55 Lane A]
+
+#### fribidi/fribidi ⚠️ license-conditional
+- **What:** GNU FriBidi — bidirectional text layout library for styled subtitle burn-in.
+- **URL:** https://github.com/fribidi/fribidi
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bidi handling for RTL caption tracks. [Wave 55 Lane A]
+
+#### GNOME/pango ⚠️ license-conditional
+- **What:** Pango — text layout and rendering library (GitHub read-only mirror of the GNOME GitLab repo) for styled caption composition.
+- **URL:** https://github.com/GNOME/pango
+- **License:** ⚠️ LGPL-2.0 (verified 2026-10-08: COPYING "GNU LIBRARY GENERAL PUBLIC LICENSE Version 2"; GitHub API spdx_id NOASSERTION — file text governs) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Full text-layout option where harfbuzz+raqm is too low-level. [Wave 55 Lane A]
+
+#### snakers4/silero-models 🚫 NC — not commercial-safe
+- **What:** Silero Models — pre-trained speech models (STT/TTS) usable for caption segmentation pipelines.
+- **URL:** https://github.com/snakers4/silero-models
+- **License:** 🚫 CC BY-NC-SA 4.0 (verified 2026-10-08: LICENSE file "Attribution-NonCommercial-ShareAlike 4.0 International"; GitHub API spdx_id NOASSERTION — file text governs) — noncommercial, research lane only
+- **Free tier:** Free for noncommercial use
+- **Repo lane:** trippedd (captions / models)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative for commercial use — NC license; research/reference only. [Wave 55 Lane A]
+
+#### absadiki/subsai 🚫 GPL-3.0 — QUARANTINED (row 555)
+- **What:** SubsAI — subtitle generation tool (Web-UI + CLI + Python package) powered by Whisper.
+- **URL:** https://github.com/absadiki/subsai
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / generation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### Cyberbeing/xy-VSFilter 🚫 GPL-2.0 — QUARANTINED (row 556)
+- **What:** xy-VSFilter — VSFilter subtitle renderer fork (ASS/SSA rendering).
+- **URL:** https://github.com/Cyberbeing/xy-VSFilter
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / render)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### mean00/avidemux2 🚫 GPL-2.0 — QUARANTINED (row 557)
+- **What:** Avidemux2 — simple video editor with subtitle burn-in filters.
+- **URL:** https://github.com/mean00/avidemux2
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: COPYING "GNU GENERAL PUBLIC LICENSE Version 2"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / burn-in)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+
+### Wave 55 Lane A summary (2026-10-08)
+- New #### entries: 115 (P1: 27 PD radio-drama round 4 — Dragnet/Whistler OTRR singles sets + 4 Whistler quarterly Signal-era slices + 8 single-episode deep dives + BDP Quiet Please + 3 Lux season singles + 2 Lux star-vehicle episodes + CBS Radio Workshop set/collection/single + Escape "Three Skeleton Key" + Inner Sanctum Welles lost-episode/collection · P2: 29 sound-chip docs round 3 — 5 bitsavers Yamaha (YMF289B/YMF715x/YM3012/YM3014B/YMZ284) + 12 archive.org scans (AY-3-8913, Amiga HRM, GB CPU Manual, De Re Atari, C64 PRG, Mapping the Atari, N64 manual, Atari ST Internals, MSX TDB, C128 guide, Apple IIGS HR, BBC AUG) + 2 SNESDev CC0 wiki (S-DSP, S-SMP) + 10 NESdev wiki (6 APU channel pages + 4 expansion-audio) · P3: 30 broadcast-automation tail — 8 permissive + 3 LGPL/MPL caution + 1 unverified (darkice) + 18 GPL/AGPL quarantined · P4: 29 caption burn-in round 5 — 21 permissive + 4 LGPL/FTL caution + 1 NC honest-negative + 3 GPL quarantined)
+- Catalog: 4,865 → 4,980 honest entries (wave target 4,970+ met; `grep -c '^####'` to confirm)
+- Quarantine: rows 537–557 appended (21 distinct: 16 GPL + 5 AGPL; zero supersedes/delists)
+- Honest negatives: darkice.org unreachable (000) — entry kept as ❓ not quarantined (license never assumed); playitlive.com unreachable (000) — dropped; bitsavers.org directory browsing 403 — used archive.org bitsavers collection instead; icecast/ezstream + icecast/ices 404 on GitHub (moved off-GitHub) — dropped; podlibre/castopod found after initial 404 (correct org); funkwhale + fontconfig + mkvtoolnix GitHub 404s (off-GitHub canonicals) — dropped; Mockingboard_Developers_Toolkit is a .dsk disk image not a doc — dropped; OTRR_Certified_Lux_Radio_Theatre has 0 audio files — dropped; silero-models is CC BY-NC-SA 4.0 — cataloged as 🚫 NC honest negative, not quarantined
+- Dedup rejections (pre-append title+URL grep): 37 — bitsavers YM2203/YM2413/Y8950/YMZ280B/YMF262 scans (cataloged), YM2149/YM2151 bitsavers (Wave 47 dupes), GBATEK, Pan Docs Audio, NESdev FDS_audio, libebur128, Jitsi Meet, LiveKit, mediasoup, pion/webrtc, Mopidy, Koel, AntennaPod (row 291), Airtime (row 485), Superdesk (row 367), stable-ts, sherpa-onnx, Vosk, NeMo, Coqui STT, SpeechBrain, pyannote.audio, DeepSpeech, CCExtractor, webrtcvad, node-webvtt, ass-compiler
+- Badge summary: ✅ permissive/PD 68 · ⚠️ caution 21 (5 Lux radio + 10 NESdev wiki + r128gain/SRT/BBB + freetype/GPAC/fribidi/pango) · ❓ unverified 14 (12 P2 manufacturer/book scans + darkice + AY-3-8913 counted in P2 scans) · 🚫 quarantined 21 (rows 537–557) + 1 NC (silero-models)
+- License notes: item-level CC BY-NC(-ND/-SA) uploader tags on OTRR sets are transfer packaging, not broadcast copyright (noted per entry); Inner Sanctum "The Dream" carries an explicit CC Public Domain Mark 1.0; SNESDev wiki footer states CC0 Public Domain (verified directly); Pan Docs is CC0-1.0 per GitHub API (entry dropped as dupe — already cataloged); GitHub API NOASSERTION cases resolved via raw LICENSE/COPYING text (harfbuzz, utf8proc, shaka-packager, mixxx, tenacity, ecasound, ardour, avidemux2, pango, w3c/imsc via ttml2 family)
+- Coordinator flags (not fixed — lane boundary): AzuraCast quarantine row 290 re-verified this pass as AGPL-3.0 via GitHub API (prior wave correct); CCExtractor cataloged ✅ standalone by an earlier wave (GPL-2.0) — left as-is per lane boundary; SubtitleEdit/SubtileComposer badge inconsistencies from prior waves left untouched
+- Zero post-hoc duplicates: every candidate pre-grepped (title + URL) against the full catalog and quarantine manifest before appending; 37 pre-append rejections logged above

@@ -4187,3 +4187,60 @@ glTF-focused animation players, runtimes, compressors, converters, and retargeti
 - **Lane note:** Wave 4 Lane C: the header-only glTF workhorse — fastest route to animated-GLB I/O in small tools.
 
 <!-- end lane C wave 4 batch 3: gltf tooling/compression 21-30 (10 entries; 0 GPL) -->
+#### FBX2glTF ✅
+- **What:** Command-line converter from FBX to glTF — bakes skeletons, skins, and animation clips into spec-compliant glTF output.
+- **URL:** https://github.com/facebookincubator/FBX2glTF
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "## License — FBX2glTF is licensed under the 3-clause BSD license").
+- **Use:** the FBX→glTF on-ramp for animated characters — convert mocap/DCC exports with animation intact before optimization.
+- **Lane note:** Wave 4 Lane C: the canonical FBX animation importer for glTF pipelines — BSD-clean.
+
+#### CesiumGS gltf-pipeline + obj2gltf ✅
+- **What:** Node.js content-pipeline tools for glTF — glTF↔GLB conversion, buffer/texture embedding, Draco compression, glTF 1.0→2.0 upgrades (gltf-pipeline); OBJ→glTF/GLB conversion with PBR material mapping (obj2gltf).
+- **URL:** https://github.com/CesiumGS/gltf-pipeline
+- **License:** Apache-2.0 (verified 2026-10-08: gltf-pipeline README license-apache badge → upstream LICENSE.md; obj2gltf is the sibling CesiumGS tool under the same org terms).
+- **Use:** normalize incoming models to animated GLBs — convert OBJ sources, embed buffers, Draco-compress before the validator gate.
+- **Lane note:** Wave 4 Lane C: the Cesium model-ingest pair — format normalization ahead of animation compression.
+
+#### usd_from_gltf (Google) ❓ license unconfirmed
+- **What:** C++ library, CLI, and USD import plugin converting glTF/GLB (rigid and skinned animation, Draco meshes, PBR materials) to USDA/USDZ for AR Quick Look.
+- **URL:** https://github.com/google/usd_from_gltf
+- **License:** ❓ (verified 2026-10-08: upstream README retrievable but no license statement confirmed in available sources; Google notes it is "not an officially supported Google product" — verify before depending on it).
+- **Use:** convert animated GLBs to USDZ for iOS AR delivery; preview glTF animation inside USDView via the import plugin.
+- **Lane note:** Wave 4 Lane C: the glTF→USD bridge for animation — honest badge until its license is pinned down.
+
+#### Ozz Animation ✅
+- **What:** Open-source C++ skeletal animation library and toolset — runtime sampling, blending layers, IK, and offline animation optimization/compression tools.
+- **URL:** https://github.com/guillaumeblanc/ozz-animation
+- **License:** MIT (verified 2026-10-08: upstream README — "distributed under the MIT License (MIT)").
+- **Use:** sample and blend glTF-imported animation clips in native runtimes; offline tools compress tracks before glTF export.
+- **Lane note:** Wave 4 Lane C: the runtime skeletal-animation engine that pairs with glTF loaders — sampling, blending, and track optimization.
+
+#### ACL (Animation Compression Library) ✅
+- **What:** Header-only C++ library for high-ratio skeletal animation compression — uniformly-sampled, key-reduction, and spline algorithms with a fast decompression runtime.
+- **URL:** https://github.com/nfrechette/acl
+- **License:** MIT (verified 2026-10-08: nfrechette/acl README — "This project uses the MIT license").
+- **Use:** compress animation clips at authoring time beyond what glTF quantization alone achieves; decompress at runtime in native players.
+- **Lane note:** Wave 4 Lane C: the animation-track compressor — complements meshopt by targeting the clip data itself.
+
+#### three-vrm ✅
+- **What:** pixiv's three.js VRM loader — renders VRM humanoid avatars (a glTF extension: VRoid/VRM 0.x/1.0) with spring-bone secondary animation and humanoid retargeting.
+- **URL:** https://github.com/pixiv/three-vrm
+- **License:** MIT (verified 2026-10-08: independent licensing table — "@pixiv/three-vrm 3.5.5 | MIT | registry.npmjs.org").
+- **Use:** play VRM avatar animation in web pipelines; VRM humanoid bone mapping gives cross-character retargeting for free.
+- **Lane note:** Wave 4 Lane C: the web VRM runtime — glTF-extension avatars with built-in humanoid retargeting and spring bones.
+
+#### UniVRM ✅
+- **What:** glTF-based VRM format implementation for Unity — imports/exports VRM 0.x/1.0 and glTF 2.0 (UniGLTF), with humanoid rig mapping, spring bones, and first-person/look-at components.
+- **URL:** https://github.com/vrm-c/UniVRM
+- **License:** MIT (verified 2026-10-08: upstream README "## License — MIT License (./LICENSE.txt)"; includes UniGLTF glTF import/export).
+- **Use:** author VRM avatars with retargetable humanoid rigs in Unity, export to glTF/VRM for web playback; spring-bone secondary motion ships with the format.
+- **Lane note:** Wave 4 Lane C: the Unity-side VRM/glTF implementation — humanoid retargeting standard for avatar pipelines.
+
+#### mGear ✅
+- **What:** Rigging and animation framework for Autodesk Maya — Shifter modular rig builder, C++ solvers, synoptic pickers, and mocap HumanIK mapping tools; v5 drops PyMEL.
+- **URL:** https://github.com/mgear-dev/mgear
+- **License:** MIT (verified 2026-10-08: upstream README — "MGEAR is under the terms of the MIT License").
+- **Use:** build production character rigs in Maya whose skeletons/skins export cleanly to glTF; Shifter biped templates standardize joint layouts for retargeting.
+- **Lane note:** Wave 4 Lane C: the DCC rigging framework that feeds glTF — standardized rigs make downstream retargeting deterministic.
+
+<!-- end lane C wave 4 batch 4: converters/animation interop 31-38 (8 entries; 0 GPL; quarantine rows 167-168) -->

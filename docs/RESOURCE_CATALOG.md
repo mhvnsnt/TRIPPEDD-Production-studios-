@@ -46380,3 +46380,1202 @@ Pocket 1: PD cartoon/film-music long tail (24). Pocket 2: non-European demoparti
 - ⚠️ per-item caution: 28 (8 research-only AI models with no public release, 4 commercial AI video SaaS, Zeroscope NC, ModelScope NC-ND, Flax EULA, 4 commercial OTR vendors, Aminet mixed licenses, Renoise paid)
 - 🚫 quarantined: 1 (row 476, Tiled GPL-2.0-or-later → manifest only, never shipping entries)
 - Zero post-hoc duplicates: every candidate pre-grepped (title + URL + same-resource check) against the full catalog and quarantine manifest before appending; one post-hoc duplicate caught and removed (BeepBox — same-resource/different-URL miss in pre-append sweep); `grep -c '^####'` = 4,541 exact
+
+## Wave 52 Lane A — catalog deepening (2026-10-08)
+
+### Wave 52 Lane A — Pocket 1: PD radio-drama corpora round 2 — per-show deep dives (67)
+
+Per-show collections inside Archive.org's `oldtimeradio` collection. Every show below was verified present 2026-10-08 via the Archive.org advancedsearch API (`collection:oldtimeradio AND "<show>"`, numFound recorded per entry). PD status is the OTR community's uploader claim; per-episode diligence still advised — several long-running commercial shows have renewed late-run episodes.
+
+#### Lights Out (OTR) ✅ PD
+- **What:** Lights Out — 1934–1947 horror anthology (Arch Oboler era), 82 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22lights+out%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 82 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Horror-anthology sound-design reference — the creaking-door era of SFX. [Wave 52 Lane A]
+
+#### Quiet Please (OTR) ✅ PD
+- **What:** Quiet Please — 1947–1949 Wyllis Cooper psychological horror/fantasy, 49 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22quiet+please%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 49 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quiet, talk-driven horror — dialogue-mix and tension-pacing reference. [Wave 52 Lane A]
+
+#### Dimension X (OTR) ✅ PD
+- **What:** Dimension X — 1950–1951 NBC science-fiction anthology, 48 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22dimension+x%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 48 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Golden-age sci-fi radio — retro-futurist SFX and narration beds. [Wave 52 Lane A]
+
+#### Sam Spade (OTR) ✅ PD
+- **What:** The Adventures of Sam Spade — 1946–1951 hardboiled detective series, 61 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22sam+spade%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 61 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Noir dialogue cadence reference — hardboiled voice-acting study material. [Wave 52 Lane A]
+
+#### Night Beat (OTR) ✅ PD
+- **What:** Night Beat — 1950–1952 Frank Lovejoy newspaper-noir drama, 20 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22night+beat%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 20 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Night-shift city noir — urban ambience and street-atmosphere beds. [Wave 52 Lane A]
+
+#### Box 13 (OTR) ✅ PD
+- **What:** Box 13 — 1948–1949 Alan Ladd mystery-adventure series, 12 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22box+13%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 12 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Compact mystery format — short-arc story structure reference. [Wave 52 Lane A]
+
+#### The Six Shooter (OTR) ✅ PD
+- **What:** The Six Shooter — 1953–1954 Jimmy Stewart western anthology, 21 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22six+shooter%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 21 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prestige western anthology — frontier ambience and gunfight SFX beds. [Wave 52 Lane A]
+
+#### Crime Classics (OTR) ✅ PD
+- **What:** Crime Classics — 1953–1954 Thomas Hyland historical true-crime docudrama, 8 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22crime+classics%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 8 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** True-crime docudrama format — narration-over-dramatization structure reference. [Wave 52 Lane A]
+
+#### The Lone Ranger (OTR) ⚠️ rights-caution
+- **What:** The Lone Ranger — 1933–1954 western adventure serial, 58 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22lone+ranger%22
+- **License:** ⚠️ Rights-caution (verified 2026-10-08 via Archive.org advancedsearch API — 58 items; early episodes widely treated as PD, but the character is an actively held trademark and later episodes were renewed — per-episode check required, same caution class as the Wave 51 Gunsmoke entry)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only — do not ship Lone Ranger audio or character references without clearance. [Wave 52 Lane A]
+
+#### The Jack Benny Program (OTR) ✅ PD
+- **What:** The Jack Benny Program — 1932–1955 comedy-variety institution, 415 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22jack+benny%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 415 items; uploader-labeled PD; radio episodes widely treated as PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Timing masterclass — comedy pacing and audience-reaction beds. [Wave 52 Lane A]
+
+#### Duffy's Tavern (OTR) ✅ PD
+- **What:** Duffy's Tavern — 1941–1951 Ed Gardner barroom comedy, 63 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22duffy%27s+tavern%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 63 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Barroom ensemble comedy — crowd-walla and tavern ambience reference. [Wave 52 Lane A]
+
+#### The Aldrich Family (OTR) ✅ PD
+- **What:** The Aldrich Family — 1939–1953 teen sitcom, 30 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22aldrich+family%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 30 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Family sitcom structure — domestic dialogue-scene reference. [Wave 52 Lane A]
+
+#### The Green Hornet (OTR) ⚠️ rights-caution
+- **What:** The Green Hornet — 1936–1952 masked-crimefighter serial, 33 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22green+hornet%22
+- **License:** ⚠️ Rights-caution (verified 2026-10-08 via Archive.org advancedsearch API — 33 items; episodes widely circulated as PD, but the character/franchise rights are actively held — per-episode check required)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only — do not ship Green Hornet audio or character references without clearance. [Wave 52 Lane A]
+
+#### Sherlock Holmes (OTR) ✅ PD
+- **What:** The New Adventures of Sherlock Holmes — 1939–1950 Rathbone/Bruce series, 168 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22sherlock+holmes%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 168 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mystery dialogue craft — deduction-scene pacing and British-character voice reference. [Wave 52 Lane A]
+
+#### Lux Radio Theatre (OTR) ⚠️ rights-caution
+- **What:** Lux Radio Theatre — 1934–1955 hour-long Hollywood adaptations, 74 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22lux+radio+theatre%22
+- **License:** ⚠️ Rights-caution (verified 2026-10-08 via Archive.org advancedsearch API — 74 items; adaptations of then-copyrighted film scripts — some episodes carry underlying-work claims; per-episode check required)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prestige drama production values — full-orchestra scoring reference; clear each episode before reuse. [Wave 52 Lane A]
+
+#### Richard Diamond, Private Detective (OTR) ✅ PD
+- **What:** Richard Diamond, Private Detective — 1949–1953 Dick Powell noir detective, 36 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22richard+diamond%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 36 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Detective procedural with piano interludes — noir scoring reference. [Wave 52 Lane A]
+
+#### Pat Novak for Hire (OTR) ✅ PD
+- **What:** Pat Novak for Hire — 1946–1949 Jack Webb waterfront noir, 21 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22pat+novak%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 21 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardboiled waterfront noir — dockside ambience and terse dialogue reference. [Wave 52 Lane A]
+
+#### The Lineup (OTR) ✅ PD
+- **What:** The Lineup — 1950–1953 police procedural, 9 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22the+lineup%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 9 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Police procedural format — interrogation-scene structure reference. [Wave 52 Lane A]
+
+#### Tales of the Texas Rangers (OTR) ✅ PD
+- **What:** Tales of the Texas Rangers — 1950–1952 Joel McCrea western crime drama, 18 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22tales+of+the+texas+rangers%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 18 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Western lawman drama — frontier-town ambience reference. [Wave 52 Lane A]
+
+#### Let George Do It (OTR) ✅ PD
+- **What:** Let George Do It — 1946–1954 Bob Bailey detective drama, 33 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22let+george+do+it%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 33 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Long-running detective format — episodic case-structure reference. [Wave 52 Lane A]
+
+#### Mr. and Mrs. North (OTR) ✅ PD
+- **What:** Mr. and Mrs. North — 1942–1954 amateur-sleuth comedy-mystery, 14 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22mr+and+mrs+north%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 14 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Comedy-mystery blend — light-tone investigation dialogue reference. [Wave 52 Lane A]
+
+#### The Falcon (OTR) ✅ PD
+- **What:** The Adventures of the Falcon — 1943–1954 gentleman-detective series, 15 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22the+falcon%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 15 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Suave detective format — sophisticated dialogue-scene reference. [Wave 52 Lane A]
+
+#### The CBS Radio Workshop (OTR) ✅ PD
+- **What:** The CBS Radio Workshop — 1956–1957 prestige experimental drama, 16 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22cbs+radio+workshop%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 16 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Experimental sound design (including early electronic cues) — avant-garde audio reference. [Wave 52 Lane A]
+
+#### The Columbia Workshop (OTR) ✅ PD
+- **What:** The Columbia Workshop — 1936–1947 experimental drama laboratory, 29 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22columbia+workshop%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 29 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The original radio-drama laboratory — format-invention and sound-experiment reference. [Wave 52 Lane A]
+
+#### The Screen Guild Theatre (OTR) ✅ PD
+- **What:** The Screen Guild Theatre — 1939–1952 star-driven drama anthology, 60 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22screen+guild%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 60 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Star-vehicle anthology — celebrity voice-performance reference. [Wave 52 Lane A]
+
+#### The Great Gildersleeve (OTR) ✅ PD
+- **What:** The Great Gildersleeve — 1941–1957 Fibber McGee spinoff sitcom, 118 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22great+gildersleeve%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 118 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Small-town sitcom — community-ensemble dialogue reference. [Wave 52 Lane A]
+
+#### The Life of Riley (OTR) ✅ PD
+- **What:** The Life of Riley — 1944–1951 William Bendix working-class sitcom, 43 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22life+of+riley%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 43 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Blue-collar sitcom — factory-neighborhood ambience and vernacular dialogue. [Wave 52 Lane A]
+
+#### Blondie (OTR) ⚠️ rights-caution
+- **What:** Blondie — 1939–1950 radio adaptation of the comic strip, 13 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22blondie%22
+- **License:** ⚠️ Rights-caution (verified 2026-10-08 via Archive.org advancedsearch API — 13 items; King Features character rights actively held — per-episode check required)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only — do not ship Blondie audio or character references without clearance. [Wave 52 Lane A]
+
+#### Baby Snooks (OTR) ✅ PD
+- **What:** The Baby Snooks Show — 1936–1951 Fanny Brice comedy, 24 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22baby+snooks%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 24 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Character-comedy showcase — vocal-characterization study material. [Wave 52 Lane A]
+
+#### The Red Skelton Show (OTR) ✅ PD
+- **What:** The Red Skelton Show — 1941–1953 comedy-variety, 78 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22red+skelton%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 78 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sketch comedy — recurring-character voice reference. [Wave 52 Lane A]
+
+#### Amos 'n' Andy (OTR) ⚠️ rights-caution
+- **What:** Amos 'n' Andy — 1928–1960 landmark (and controversial) serial comedy, 29 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22amos+n+andy%22
+- **License:** ⚠️ Rights-caution (verified 2026-10-08 via Archive.org advancedsearch API — 29 items; CBS has asserted claims on portions of the run; content is additionally culturally sensitive — per-episode check required, study-only recommended)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical study only — do not ship Amos 'n' Andy audio. [Wave 52 Lane A]
+
+#### Frontier Gentleman (OTR) ✅ PD
+- **What:** Frontier Gentleman — 1958 western adventure (late golden age), 21 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22frontier+gentleman%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 21 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Late-era western — mature writing, frontier ambience reference. [Wave 52 Lane A]
+
+#### Broadway Is My Beat (OTR) ✅ PD
+- **What:** Broadway Is My Beat — 1949–1954 Larry Thor New York noir, 24 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22broadway+is+my+beat%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 24 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lush NYC noir — the famous rain-and-traffic city-atmosphere beds. [Wave 52 Lane A]
+
+#### Philip Marlowe (OTR) ✅ PD
+- **What:** The Adventures of Philip Marlowe — 1947–1951 Chandler detective series, 71 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22philip+marlowe%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 71 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chandler noir — first-person narration craft reference. [Wave 52 Lane A]
+
+#### Yours Truly, Johnny Dollar (OTR) ✅ PD
+- **What:** Yours Truly, Johnny Dollar — 1949–1962 insurance-investigator drama, 78 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22yours+truly+johnny+dollar%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 78 items; uploader-labeled PD; late-run episodes merit per-episode check)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Expense-account procedural — case-file narration structure reference. [Wave 52 Lane A]
+
+#### Have Gun – Will Travel (OTR) ✅ PD
+- **What:** Have Gun – Will Travel — 1958–1960 John Dehner radio western, 32 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22have+gun+will+travel%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 32 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Adult western — gunfighter dialogue and showdown-scene reference. [Wave 52 Lane A]
+
+#### Dr. Kildare (OTR) ✅ PD
+- **What:** The Story of Dr. Kildare — 1950–1951 medical drama, 11 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22dr+kildare%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 11 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Medical drama — hospital ambience and professional-dialogue reference. [Wave 52 Lane A]
+
+#### The Shadow (OTR) ⚠️ rights-caution
+- **What:** The Shadow — 1930–1954 pulp crimefighter serial, 181 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22the+shadow%22
+- **License:** ⚠️ Rights-caution (verified 2026-10-08 via Archive.org advancedsearch API — 181 items; broadcasts widely circulated as PD, but the Shadow magazine copyrights were renewed and the character is actively licensed — per-episode check required)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only — do not ship Shadow audio or character references without clearance. [Wave 52 Lane A]
+
+#### Boston Blackie (OTR) ✅ PD
+- **What:** Boston Blackie — 1944–1950 reformed-criminal detective series, 35 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22boston+blackie%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 35 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reformed-rogue detective — banter-driven mystery dialogue reference. [Wave 52 Lane A]
+
+#### The Mysterious Traveler (OTR) ✅ PD
+- **What:** The Mysterious Traveler — 1943–1952 Maurice Tarplin horror/fantasy anthology, 44 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22mysterious+traveler%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 44 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Train-whistle horror anthology — narrator-driven dread pacing reference. [Wave 52 Lane A]
+
+#### The Sealed Book (OTR) ✅ PD
+- **What:** The Sealed Book — 1945 mystery-horror anthology, 14 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22sealed+book%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 14 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Compact horror anthology — short-form scare-structure reference. [Wave 52 Lane A]
+
+#### The Witch's Tale (OTR) ✅ PD
+- **What:** The Witch's Tale — 1931–1938 early horror anthology (Old Nancy), 19 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22witch%27s+tale%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 19 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Among the earliest horror radio — primitive-SFX and cauldron-era sound design. [Wave 52 Lane A]
+
+#### The Hermit's Cave (OTR) ✅ PD
+- **What:** The Hermit's Cave — 1937–1944 syndicated horror anthology, 8 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22hermit%27s+cave%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 8 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Syndicated horror — regional-production audio-quality study. [Wave 52 Lane A]
+
+#### Hall of Fantasy (OTR) ✅ PD
+- **What:** Hall of Fantasy — 1946–1953 Chicago horror/fantasy anthology, 36 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22hall+of+fantasy%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 36 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Long-running regional horror — sustained-anthology format reference. [Wave 52 Lane A]
+
+#### The Saint (OTR) ⚠️ rights-caution
+- **What:** The Saint — 1940s–1950s Vincent Price-era gentleman-thief series, 32 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22the+saint%22
+- **License:** ⚠️ Rights-caution (verified 2026-10-08 via Archive.org advancedsearch API — 32 items; Leslie Charteris character rights actively held by the estate — per-episode check required)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only — do not ship Saint audio or character references without clearance. [Wave 52 Lane A]
+
+#### Nick Carter, Master Detective (OTR) ✅ PD
+- **What:** Nick Carter, Master Detective — 1943–1955 dime-novel detective series, 19 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22nick+carter%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 19 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pulp detective serial — cliffhanger episode-structure reference. [Wave 52 Lane A]
+
+#### Gang Busters (OTR) ✅ PD
+- **What:** Gang Busters — 1936–1957 true-crime dramatizations, 8 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22gang+busters%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 8 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** True-crime action — siren-and-chase SFX beds. [Wave 52 Lane A]
+
+#### Mr. District Attorney (OTR) ✅ PD
+- **What:** Mr. District Attorney — 1939–1952 legal crime drama, 21 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22mr+district+attorney%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 21 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Courtroom crime drama — legal-procedure dialogue reference. [Wave 52 Lane A]
+
+#### Michael Shayne (OTR) ✅ PD
+- **What:** The Adventures of Michael Shayne — 1940s–1950s Miami detective series, 12 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22michael+shayne%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 12 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sun-belt noir — Florida-location ambience reference. [Wave 52 Lane A]
+
+#### The Adventures of the Thin Man (OTR) ✅ PD
+- **What:** The Adventures of the Thin Man — 1941–1950 Nick-and-Nora detective comedy, 22 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22thin+man%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 22 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Married-couple detective banter — comedy-mystery dialogue reference. [Wave 52 Lane A]
+
+#### Bulldog Drummond (OTR) ✅ PD
+- **What:** Bulldog Drummond — 1941–1954 British adventurer-detective series, 16 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22bulldog+drummond%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 16 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** British adventure-mystery — transatlantic voice-performance reference. [Wave 52 Lane A]
+
+#### Sergeant Preston of the Yukon (OTR) ✅ PD
+- **What:** Sergeant Preston of the Yukon — 1947–1955 northern adventure serial, 5 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22sergeant+preston%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 5 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arctic adventure — dogsled-and-blizzard SFX beds. [Wave 52 Lane A]
+
+#### The Cisco Kid (OTR) ✅ PD
+- **What:** The Cisco Kid — 1942–1950s western adventure serial, 15 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22cisco+kid%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 15 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Border western — Spanish-flavored frontier dialogue reference. [Wave 52 Lane A]
+
+#### Captain Midnight (OTR) ✅ PD
+- **What:** Captain Midnight — 1938–1949 aviation adventure serial, 8 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22captain+midnight%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 8 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Aviation adventure — propeller-era flight SFX beds. [Wave 52 Lane A]
+
+#### Jack Armstrong, the All-American Boy (OTR) ✅ PD
+- **What:** Jack Armstrong, the All-American Boy — 1933–1951 juvenile adventure serial, 12 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22jack+armstrong%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 12 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Youth adventure serial — earnest-hero voice reference. [Wave 52 Lane A]
+
+#### The Campbell Playhouse (OTR) ✅ PD
+- **What:** The Campbell Playhouse — 1938–1940 Mercury Theatre successor drama, 49 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22campbell+playhouse%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 49 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Welles-era prestige drama — companion to the existing Mercury Theatre entry. [Wave 52 Lane A]
+
+#### The Cinnamon Bear (OTR) ✅ PD
+- **What:** The Cinnamon Bear — 1937 Christmas fantasy serial (26 episodes), 10 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22cinnamon+bear%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 10 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Children's fantasy serial — whimsical scoring and creature-voice reference. [Wave 52 Lane A]
+
+#### The Fred Allen Show (OTR) ✅ PD
+- **What:** The Fred Allen Show — 1934–1949 comedy-variety (Allen's Alley), 220 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22fred+allen%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 220 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Satirical sketch comedy — character-voice gallery reference. [Wave 52 Lane A]
+
+#### The Bob Hope Show (OTR) ✅ PD
+- **What:** The Bob Hope Show — 1938–1950s Pepsodent comedy-variety, 125 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22bob+hope%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 125 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rapid-fire gag comedy — joke-timing and audience-bed reference. [Wave 52 Lane A]
+
+#### Abbott and Costello (OTR) ✅ PD
+- **What:** The Abbott and Costello Show — 1940–1949 comedy duo series, 77 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22abbott+and+costello%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 77 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Duo comedy timing — straight-man/funny-man dialogue dynamics. [Wave 52 Lane A]
+
+#### Vic and Sade (OTR) ✅ PD
+- **What:** Vic and Sade — 1932–1946 small-house domestic comedy, 36 items in the oldtimeradio collection.
+- **URL:** https://archive.org/search?query=collection%3Aoldtimeradio+AND+%22vic+and+sade%22
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org advancedsearch API — 36 items; uploader-labeled PD)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Minimalist domestic dialogue — naturalistic conversation-flow reference. [Wave 52 Lane A]
+
+#### OTR Network Library (Archive.org) ❓ diligence record
+- **What:** OTR Network Library — fan-curated old-time-radio collection on Archive.org (Ken / otrnet).
+- **URL:** https://archive.org/details/OTR_Network_Library
+- **License:** ❓ Unverifiable this pass (verified 2026-10-08: Archive.org metadata endpoint returns HTTP 200, but the public details page 404s — collection state unclear; per-show diligence still required regardless)
+- **Free tier:** Free where accessible
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: the collection's public page is unreachable this pass — do not cite it as a source until re-verified; use the oldtimeradio collection links above instead. [Wave 52 Lane A]
+
+#### RadioEchoes.com ✅ free
+- **What:** RadioEchoes.com — free OTR streaming portal with show/episode pages.
+- **URL:** https://www.radioechoes.com/
+- **License:** ✅ Free streaming (verified 2026-10-08 via HTTP 200 root fetch; stream-only portal — no reuse grant stated, per-episode PD diligence still applies)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery portal for the per-show collections above — audition before downloading from Archive.org. [Wave 52 Lane A]
+
+#### The Digital Deli Too ❓ dead this pass
+- **What:** The Digital Deli Too — long-running OTR download library (digitaldeliftp.com).
+- **URL:** http://www.digitaldeliftp.com/
+- **License:** ❓ Unverifiable this pass (verified 2026-10-08: connection failed — site unreachable; license terms unknown)
+- **Free tier:** Unknown this pass
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: unreachable 2026-10-08 — may be dead or blocking bots; do not cite as live. [Wave 52 Lane A]
+
+#### Zoot Radio ❓ dead this pass
+- **What:** Zoot Radio — free OTR streaming station (zootradio.fm).
+- **URL:** https://zootradio.fm/
+- **License:** ❓ Unverifiable this pass (verified 2026-10-08: connection failed — site unreachable; stream terms unknown)
+- **Free tier:** Unknown this pass
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: unreachable 2026-10-08 — may be dead or blocking bots; do not cite as live. [Wave 52 Lane A]
+
+#### RUSC — Radio Under the Same Clock ✅ free
+- **What:** RUSC (rusc.com) — free OTR streaming with scheduled programming.
+- **URL:** https://www.rusc.com/
+- **License:** ✅ Free streaming (verified 2026-10-08 via HTTP 200 root fetch; stream-only — no reuse grant stated)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Scheduled OTR programming — passive listening/audition source. [Wave 52 Lane A]
+
+#### CBS Radio Mystery Theater (cbsrmt.com) 🚫 copyrighted — not commercial-safe
+- **What:** cbsrmt.com — fan archive of all 1,399 CBS Radio Mystery Theater episodes (1974–1982); also documents the Sears Radio Theater block.
+- **URL:** http://www.cbsrmt.com/
+- **License:** 🚫 Copyrighted — CBS Radio Mystery Theater (1974–1982) and Sears Radio Theater (1979–1980) are post-1963 network broadcasts, NOT public domain (verified 2026-10-08 via HTTP 200 root fetch; site itself confirms the full 1,399-episode run)
+- **Free tier:** Free listening on site
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: complete and well-organized, but copyrighted — study/audition only, never ship this audio. Included so nobody mistakes 1970s OTR for PD. [Wave 52 Lane A]
+
+### Wave 52 Lane A — Pocket 2: open game-engine audio/physics plugins (23)
+
+Godot/Bevy/O3DE audio middleware bindings and physics wrappers not covered in Wave 51. Every license verified upstream 2026-10-08 via GitHub API spdx_id or raw license-file read — never assumed. (Already-cataloged tools found in the pre-append sweep and excluded: miniaudio, SoLoud, PortAudio, RtAudio, libsoundio, PipeWire, rodio, Box2D, cannon-es, planck.js, SDL_mixer.)
+
+#### utopia-rise/fmod-gdextension ⚠️ license-conditional
+- **What:** fmod-gdextension — Godot 4 C++ GDExtension exposing the FMOD Studio API to GDScript, with high-level 2D/3D emitter and listener nodes.
+- **URL:** https://github.com/utopia-rise/fmod-gdextension
+- **License:** ⚠️ MIT for the integration code (verified 2026-10-08 via GitHub API spdx_id) — FMOD itself is proprietary with budget-tiered licensing; obtain an FMOD license for commercial games
+- **Free tier:** Free integration; FMOD free under its indie terms
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The community-standard FMOD↔Godot 4 bridge (used by shipped games) — pairs with the existing FMOD/Wwise license-conditional entries. [Wave 52 Lane A]
+
+#### poingstudios/godot-fmod ⚠️ license-conditional
+- **What:** godot-fmod — pure C++ GDExtension for Godot 4.x with 1:1 FMOD Studio + Core API bindings and spatial audio nodes.
+- **URL:** https://github.com/poingstudios/godot-fmod
+- **License:** ⚠️ MIT for the plugin code (verified 2026-10-08 via GitHub API spdx_id) — FMOD itself is proprietary; commercial use needs an FMOD license
+- **Free tier:** Free plugin; FMOD free under its indie terms
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Second maintained FMOD GDExtension — alternative to utopia-rise's; compare build/CI maturity before wiring. [Wave 52 Lane A]
+
+#### harudagondi/bevy_oddio ✅ commercial-safe
+- **What:** bevy_oddio — Bevy plugin integrating the oddio spatial-audio engine (advanced 3D positional sound).
+- **URL:** https://github.com/harudagondi/bevy_oddio
+- **License:** ✅ MIT / Apache-2.0 dual (verified 2026-10-08: README license section states both MIT and Apache-2.0; GitHub API spdx_id Apache-2.0)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Companion to the existing bevy_kira_audio / bevy_seedling entries — the spatial-audio option. Targets older Bevy (0.8/0.9) — check compatibility before wiring. [Wave 52 Lane A]
+
+#### Ralith/oddio ✅ commercial-safe
+- **What:** oddio — the underlying Rust spatial-audio synthesis/playback library behind bevy_oddio.
+- **URL:** https://github.com/Ralith/oddio
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Use directly when the Bevy plugin's version lag bites — engine-agnostic Rust audio. [Wave 52 Lane A]
+
+#### harudagondi/bevy_fundsp ✅ commercial-safe
+- **What:** bevy_fundsp — Bevy plugin integrating FunDSP for procedural sound synthesis and effects.
+- **URL:** https://github.com/harudagondi/bevy_fundsp
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Procedural-audio route for Bevy — synth SFX without sample libraries. [Wave 52 Lane A]
+
+#### SamiPerttu/fundsp ✅ commercial-safe
+- **What:** FunDSP — Rust audio DSP library (synthesis, filtering, effects graph) behind bevy_fundsp.
+- **URL:** https://github.com/SamiPerttu/fundsp
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Engine-agnostic DSP — usable from any Rust audio path, not just Bevy. [Wave 52 Lane A]
+
+#### Salzian/bevy_fmod ⚠️ license-conditional
+- **What:** bevy_fmod — idiomatic FMOD audio-engine integration for Bevy.
+- **URL:** https://github.com/Salzian/bevy_fmod
+- **License:** ⚠️ Apache-2.0 for the integration (verified 2026-10-08 via GitHub API spdx_id) — FMOD itself is proprietary; commercial use needs an FMOD license
+- **Free tier:** Free integration; FMOD free under its indie terms
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The Bevy-side FMOD option — mirrors the Godot FMOD entries above. [Wave 52 Lane A]
+
+#### tesselode/kira ✅ commercial-safe
+- **What:** kira — Rust game-audio library (the engine behind bevy_kira_audio): mixing, channels, looping, spatial audio.
+- **URL:** https://github.com/tesselode/kira
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Companion to the existing bevy_kira_audio entry — this is the underlying engine, usable without Bevy. [Wave 52 Lane A]
+
+#### RustAudio/cpal ✅ commercial-safe
+- **What:** cpal — cross-platform Rust audio I/O (the low-level audio backbone under rodio and much of the Rust audio stack).
+- **URL:** https://github.com/RustAudio/cpal
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Foundation layer — reach for it when building custom audio plumbing, not for direct game use. [Wave 52 Lane A]
+
+#### avianphysics/avian ✅ commercial-safe
+- **What:** Avian — ECS-driven 2D/3D physics engine for Bevy (successor of bevy_xpbd); repo moved from Jondolf/avian to the avianphysics org.
+- **URL:** https://github.com/avianphysics/avian
+- **License:** ✅ MIT / Apache-2.0 dual (verified 2026-10-08 via GitHub API spdx_id Apache-2.0; README states the dual grant)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The current Bevy physics choice — XPBD-based, replaces the archived bevy_xpbd lineage; note the org move when citing. [Wave 52 Lane A]
+
+#### dimforge/rapier ✅ commercial-safe
+- **What:** Rapier — 2D/3D physics engine in Rust (the core behind bevy_rapier), deterministic and WASM-friendly.
+- **URL:** https://github.com/dimforge/rapier
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Companion to the existing bevy_rapier entry — this is the engine core; also ships official JS and Godot-adjacent bindings upstream. [Wave 52 Lane A]
+
+#### dimforge/parry ✅ commercial-safe
+- **What:** Parry — 2D/3D geometric collision-detection library (Rapier's collision core, usable standalone).
+- **URL:** https://github.com/dimforge/parry
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Collision-only slice of Rapier — hit-detection without full rigid-body simulation. [Wave 52 Lane A]
+
+#### dimforge/salva ✅ commercial-safe
+- **What:** Salva — 2D/3D fluid simulation library (Dimforge's SPH fluids, integrates with Rapier).
+- **URL:** https://github.com/dimforge/salva
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Fluid-sim niche — blood/water effects research; heavyweight, evaluate before wiring. [Wave 52 Lane A]
+
+#### slembcke/Chipmunk2D ✅ commercial-safe
+- **What:** Chipmunk2D — lightweight 2D rigid-body physics library (C, v7+ MIT).
+- **URL:** https://github.com/slembcke/Chipmunk2D
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The small-footprint 2D alternative to Box2D — good for menu/2D-prototype physics. [Wave 52 Lane A]
+
+#### enable3d/enable3d 🚫 LGPL-3.0 — QUARANTINED (new row 477)
+- **What:** enable3d — 3D game framework for the web (Three.js + ammo.js physics wrapper).
+- **URL:** https://github.com/enable3d/enable3d
+- **License:** 🚫 LGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, quarantined per the SoundTouch/libewf precedent pending owner verdict
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. Listed so the web-3D physics option isn't silently adopted. [Wave 52 Lane A]
+
+#### bulletphysics/bullet3 ✅ commercial-safe
+- **What:** Bullet Physics — the veteran 3D collision/physics SDK (rigid body, soft body).
+- **URL:** https://github.com/bulletphysics/bullet3
+- **License:** ✅ zlib (verified 2026-10-08 via raw LICENSE.txt read — "licensed under the zlib license, except for the files under 'Extras' and examples/ThirdPartyLibs"; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Industry-standard permissive physics — the Extras/ThirdPartyLibs carve-out needs per-file checks. [Wave 52 Lane A]
+
+#### dartsim/dart ✅ commercial-safe
+- **What:** DART — Dynamic Animation and Robotics Toolkit (physics for robotics/games research).
+- **URL:** https://github.com/dartsim/dart
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research-grade articulated-body physics — overkill for games, relevant for ragdoll R&D. [Wave 52 Lane A]
+
+#### google-deepmind/mujoco ✅ commercial-safe
+- **What:** MuJoCo — Multi-Joint dynamics with Contact (DeepMind's physics engine, Apache-2.0 since 2021).
+- **URL:** https://github.com/google-deepmind/mujoco
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Contact-rich robotics physics — character-locomotion and grapple research potential. [Wave 52 Lane A]
+
+#### google/brax ✅ commercial-safe
+- **What:** Brax — differentiable physics engine (JAX-based, DeepMind) for RL and motion research.
+- **URL:** https://github.com/google/brax
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Research-only — differentiable simulation for animation/ML experiments, not a game runtime. [Wave 52 Lane A]
+
+#### projectchrono/chrono ✅ commercial-safe
+- **What:** Project Chrono — multi-physics simulation (rigid, fluid, granular, vehicle dynamics).
+- **URL:** https://github.com/projectchrono/chrono
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Vehicle/terrain physics specialty — driving-segment research if the pipeline ever needs it. [Wave 52 Lane A]
+
+#### liabru/matter-js ✅ commercial-safe
+- **What:** matter-js — 2D rigid-body physics engine for the web.
+- **URL:** https://github.com/liabru/matter-js
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; note: canonical org is liabru, not matter-js)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Web-2D physics for HTML5 builds — companion to the existing planck.js entry. [Wave 52 Lane A]
+
+#### schteppe/p2.js ✅ commercial-safe
+- **What:** p2.js — 2D physics engine for the web (Stefan Hedman).
+- **URL:** https://github.com/schteppe/p2.js
+- **License:** ✅ MIT (verified 2026-10-08 via raw LICENSE read — MIT grant text; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Second web-2D option alongside matter-js/planck.js — compare constraint solvers before choosing. [Wave 52 Lane A]
+
+#### kripken/ammo.js ✅ commercial-safe
+- **What:** ammo.js — Emscripten port of Bullet physics for the web.
+- **URL:** https://github.com/kripken/ammo.js
+- **License:** ✅ zlib-style (verified 2026-10-08 via raw LICENSE read — as-is grant text in the zlib family; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (game-engine physics)
+- **Status:** not-started
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Notes:** Bullet-on-the-web — the physics behind enable3d (quarantined above); the port itself is permissive. [Wave 52 Lane A]
+
+### Wave 52 Lane A — Pocket 3: demoscene music-disk archives round 2 (10)
+
+Archive collections not covered in earlier waves. The pocket is heavily cataloged already (Aminet, scene.org, CSDb, demozoo, pouet, Modland, Mod Archive, AMP, UnExoticA, HVSC, ASMA, SNDH, Remix64, RKO, AmigaRemix, BotB, Slay Radio, DeepSID, Hugi, Slengpung, Hornet, Defacto2, Trax in Space, BitFellas, Spectrum Computing, AtariMania, GameBase64, C64.COM, 8bitpeoples, ZX-Art and the tracker/tool entries were all found in the pre-append sweep and excluded).
+
+#### libretro/libretro-common (libretro.h) ✅ commercial-safe
+- **What:** libretro-common — home of the canonical libretro.h API header (the MIT-licensed emulator-core API; the RetroArch app itself is GPL, the API header is not).
+- **URL:** https://github.com/libretro/libretro-common
+- **License:** ✅ MIT for libretro.h (verified 2026-10-08: libretro docs state "the libretro API is a MIT-licensed API" and the header carries its own MIT notice; repo described upstream as "Permissively licensed")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (demoscene / emulation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The clean way to touch emulation cores (e.g. for SID/chiptune replay cores) without inheriting RetroArch's GPL. [Wave 52 Lane A]
+
+#### ares-emulator/ares ✅ commercial-safe
+- **What:** ares — multi-system emulator (Near's accuracy-focused successor to higan/bsnes), useful for authentic chiptune/VGM capture.
+- **URL:** https://github.com/ares-emulator/ares
+- **License:** ✅ ISC (verified 2026-10-08 via raw LICENSE read — "Permission to use, copy, modify, and/or distribute this software for any purpose"; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (demoscene / emulation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The permissive-licensed accuracy emulator — capture reference audio from real hardware behavior without GPL contamination. [Wave 52 Lane A]
+
+#### Arcade History ✅ free reference
+- **What:** Arcade History (arcade-history.com) — arcade game database with sound/hardware notes.
+- **URL:** https://www.arcade-history.com/
+- **License:** ✅ Free reference (verified 2026-10-08 via HTTP 200 root fetch; informational database — no reuse grant stated for text/images)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (demoscene / game-music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardware/sound-chip provenance research for arcade-era music — which board made which sound. [Wave 52 Lane A]
+
+#### PixelJoint ❓ per-artist rights
+- **What:** PixelJoint — pixel-art community gallery (sprite assets adjacent to chiptune culture).
+- **URL:** https://pixeljoint.com/
+- **License:** ❓ Per-artist rights (verified 2026-10-08 via HTTP 200 root fetch; no blanket license — each piece carries the artist's terms)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (demoscene / pixel art)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Art reference only — never ship PixelJoint art without the artist's grant. [Wave 52 Lane A]
+
+#### Lospec ❓ mixed terms
+- **What:** Lospec — pixel-art tutorials, palettes, and community resources.
+- **URL:** https://lospec.com/
+- **License:** ❓ Mixed terms (verified 2026-10-08 via HTTP 200 root fetch; tutorials/palettes have individual terms — palettes are generally free, artwork is per-artist)
+- **Free tier:** Free resources
+- **Repo lane:** trippedd (demoscene / pixel art)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Palette lists are the practical takeaway — constrained palettes for PS1-style art direction. [Wave 52 Lane A]
+
+#### System16 ❓ bot-walled
+- **What:** System16 — arcade hardware database (which games ran on which boards).
+- **URL:** https://www.system16.com/
+- **License:** ❓ Unverifiable this pass (verified 2026-10-08: HTTP 403 — bot-walled; content/terms unknown)
+- **Free tier:** Unknown this pass
+- **Repo lane:** trippedd (demoscene / game-music research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: blocks automated fetches — verify manually before citing. [Wave 52 Lane A]
+
+#### The Cutting Room Floor (TCRF) ❓ bot-walled
+- **What:** TCRF — wiki documenting unused/unreleased video-game content (audio, graphics, debug).
+- **URL:** https://tcrf.net/
+- **License:** ❓ Unverifiable this pass (verified 2026-10-08: HTTP 403 — bot-walled; wiki text is community-contributed, media per-game rights)
+- **Free tier:** Unknown this pass
+- **Repo lane:** trippedd (demoscene / game research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: bot-walled this pass — research value is high (cut content, regional differences) but verify terms manually. [Wave 52 Lane A]
+
+#### Emulation General Wiki ❓ bot-walled
+- **What:** Emulation General Wiki — emulator accuracy/compatibility documentation.
+- **URL:** https://emulation.gametechwiki.com/
+- **License:** ❓ Unverifiable this pass (verified 2026-10-08: HTTP 403 — bot-walled; wiki content terms unknown)
+- **Free tier:** Unknown this pass
+- **Repo lane:** trippedd (demoscene / emulation)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: bot-walled this pass — the accuracy-comparison tables matter for capture-fidelity choices; verify manually. [Wave 52 Lane A]
+
+#### cracktros.org ❓ dead this pass
+- **What:** cracktros.org — cracktro/intro archive (demoscene-adjacent intro collection).
+- **URL:** https://cracktros.org/
+- **License:** ❓ Unverifiable this pass (verified 2026-10-08: connection failed — site unreachable; per-intro rights would apply anyway)
+- **Free tier:** Unknown this pass
+- **Repo lane:** trippedd (demoscene / intros)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: unreachable 2026-10-08 — may be dead; do not cite as live. [Wave 52 Lane A]
+
+#### Fujiology ❓ per-release rights
+- **What:** Fujiology Archive — 62 GB Atari demoscene collection (ST/Falcon/Jaguar/Lynx/VCS, incl. music sections), distributed via FTP.
+- **URL:** https://forums.atariage.com/topic/247321-fujiology-archive-v21-is-out/
+- **License:** ❓ Per-release rights (verified 2026-10-08 via the AtariAge announcement thread — archive lives at ftp://fujiology.untergrund.net/users/ltk_tscc/fujiology/; no blanket license, per-production scene norms)
+- **Free tier:** Free download (FTP)
+- **Repo lane:** trippedd (demoscene / Atari archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The biggest Atari scene archive — complements the existing SNDH/ASMA entries with demos, mags, and party archives. [Wave 52 Lane A]
+
+### Wave 52 Lane A — Pocket 4: open film-restoration tooling round 2 (17)
+
+Round 1 (BagIt, QCTools, JHOVE, DCP-o-matic, vrecord, FFV1, FFmpeg, VapourSynth, AviSynth+, FFmpeg recipes, asdcplib) plus the deep catalog (RAWcooked, DVRescue, BWFMetaEdit, MediaInfo, openexr, OpenColorIO, OpenImageIO, OpenTimelineIO, colour, tesseract, OCRmyPDF, DeOldify, Real-ESRGAN, SwinIR, RIFE, Super-SloMo, Spleeter, Demucs, Open-Unmix, noisereduce, DeepFilterNet, rnnoise, Aegisub, ffsubsync, pysubs2, libass, SubtitleEdit, LightZone, OpenRefine, mkvalidator, BMX, fmtconv, CAIN, FLAVR, Imath, Tika, Siegfried, FIDO, Bagger, Exactly, Fixity, GIMP, darktable, RawTherapee, DaVinci Resolve free tier) were all found in the pre-append sweep and excluded. Already-quarantined tools (Archivematica, Audacity, Olive, Natron, Kdenlive, Shotcut, OpenShot, Flowblade, Cinelerra-GG, MilkyTracker, Schism Tracker, Furnace, Dn-FamiTracker, libmikmod, UADE, MyPaint) excluded — no duplicate rows.
+
+#### AVI MetaEdit ✅ commercial-safe
+- **What:** AVI MetaEdit — MediaArea's tool for displaying/editing AVI metadata (FADGI audiovisual QC lineage).
+- **URL:** https://github.com/MediaArea/AVIMetaEdit
+- **License:** ✅ CC0 / U.S. Government public domain (verified 2026-10-08 via raw License.html read — "As a work of the United States Government, this project is in the public domain within the United States. Additionally, we waive copyright and related rights in the work worldwide through the CC0 1.0 Universal public domain dedication.")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / metadata)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the cataloged BWFMetaEdit — same FADGI family, same clean terms. [Wave 52 Lane A]
+
+#### DSpace ✅ commercial-safe
+- **What:** DSpace — institutional digital-repository platform (preservation-grade asset management).
+- **URL:** https://github.com/DSpace/DSpace
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / preservation repos)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Repository infrastructure for restored-film collections — the long-term home for masters and mezzanines. [Wave 52 Lane A]
+
+#### Fedora Commons (fcrepo) ✅ commercial-safe
+- **What:** Fedora Commons — flexible digital-repository backend (the store under many preservation front-ends).
+- **URL:** https://github.com/fcrepo/fcrepo
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / preservation repos)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Backend alternative to DSpace — pairs with the Samvera Hyrax entry below. [Wave 52 Lane A]
+
+#### Samvera Hyrax ✅ commercial-safe
+- **What:** Hyrax — Samvera community digital-repository front-end (Ruby on Rails, works over Fedora).
+- **URL:** https://github.com/samvera/hyrax
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / preservation repos)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Curated-collection UI for restored works — exhibitions and access copies. [Wave 52 Lane A]
+
+#### Dataverse ✅ commercial-safe
+- **What:** Dataverse — Harvard's open research-data repository platform.
+- **URL:** https://github.com/IQSS/dataverse
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE read — "licensed under the Apache License, Version 2.0"; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / preservation repos)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Dataset publishing with DOIs — useful for releasing restoration research data reproducibly. [Wave 52 Lane A]
+
+#### Blacklight ✅ commercial-safe
+- **What:** Blacklight — discovery interface for library/archive collections (Ruby on Rails + Solr).
+- **URL:** https://github.com/projectblacklight/blacklight
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE read — Apache-2.0 grant; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / preservation repos)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Search/discovery layer over DSpace/Fedora — the public face of a restored-film archive. [Wave 52 Lane A]
+
+#### Little CMS ✅ commercial-safe
+- **What:** Little CMS (lcms2) — open-source color-management engine (ICC profiles).
+- **URL:** https://github.com/mm2/Little-CMS
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / color)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The color-management workhorse behind scans and grade pipelines — MIT, wire freely. [Wave 52 Lane A]
+
+#### CTL — Color Transformation Language ✅ commercial-safe
+- **What:** CTL — Academy/AMPAS Color Transformation Language (the math behind ACES transforms).
+- **URL:** https://github.com/ampas/CTL
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id — note: not BSD as sometimes assumed)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / color)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Scriptable color transforms — the programmatic side of the ACES entry below. [Wave 52 Lane A]
+
+#### OpenFX ✅ commercial-safe
+- **What:** OpenFX — the open visual-effects plugin API standard (now under ASWF stewardship).
+- **URL:** https://github.com/AcademySoftwareFoundation/openfx
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / plugins)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Write restoration filters (dust/scratch/grain) once, run them in Natron/Resolve/Fusion hosts — the plugin API that unifies the pipeline. [Wave 52 Lane A]
+
+#### vs-rife ✅ commercial-safe
+- **What:** vs-rife — VapourSynth plugin wrapping RIFE frame interpolation.
+- **URL:** https://github.com/HolyWu/vs-rife
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / frame interpolation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Neural frame interpolation inside the VapourSynth chain — slow-motion and frame-rate conversion for archive footage; companion to the cataloged RIFE entry. [Wave 52 Lane A]
+
+#### ACES (ampas/aces-dev) ✅ commercial-safe
+- **What:** ACES — Academy Color Encoding System reference implementation and config files.
+- **URL:** https://github.com/ampas/aces-dev
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / color)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The archival color standard — scene-referred workflow for scans; pairs with the CTL and OpenColorIO entries. [Wave 52 Lane A]
+
+#### VoiceFixer ✅ commercial-safe
+- **What:** VoiceFixer — neural speech restoration (denoise, declip, dereverb, super-resolution for degraded recordings).
+- **URL:** https://github.com/haoheliu/voicefixer
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / audio)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dialogue rescue for damaged optical tracks — MIT, the most wire-ready neural audio restorer in the catalog. [Wave 52 Lane A]
+
+#### Nuke Non-commercial ⚠️ license-conditional
+- **What:** Nuke Non-commercial — Foundry's free tier of the industry-standard node compositor (Nuke/NukeX/Nuke Studio functionality, 1080p cap, no commercial work, no third-party plugins).
+- **URL:** https://learn.foundry.com/nuke/12.2/content/getting_started/installation/noncommercial_linux.html
+- **License:** ⚠️ Proprietary free tier — non-commercial use only (verified 2026-10-08 via Foundry's non-commercial licensing docs; full commercial license is paid)
+- **Free tier:** Free for learning/personal projects
+- **Repo lane:** trippedd (film-restoration / compositing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest commercial finding: the pro compositing route costs nothing to learn on but can never ship commercial work — documented so the OSS compositing audit stays clean. [Wave 52 Lane A]
+
+#### Blackmagic Fusion (free) ⚠️ license-conditional
+- **What:** Fusion — Blackmagic's free node-based compositor/VFX suite (standalone or inside Resolve).
+- **URL:** https://www.blackmagicdesign.com/products/fusion
+- **License:** ⚠️ Proprietary freeware (verified 2026-10-08 via HTTP 200 product page fetch; free download, commercial use permitted per Blackmagic terms, but closed-source — not open)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (film-restoration / compositing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The free closed-source compositor — usable commercially but not auditable; the OpenFX entry above is the open counterweight. [Wave 52 Lane A]
+
+#### dyne/frei0r 🚫 GPL-2.0 — QUARANTINED (new row 478)
+- **What:** frei0r — cross-platform video-effects plugin API and effect collection.
+- **URL:** https://github.com/dyne/frei0r
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / plugins)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 52 Lane A]
+
+#### rncbc/qtractor 🚫 GPL-2.0 — QUARANTINED (new row 479)
+- **What:** Qtractor — Qt-based MIDI/audio multi-track sequencer/DAW for Linux.
+- **URL:** https://github.com/rncbc/qtractor
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / audio)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 52 Lane A]
+
+#### falkTX/Carla 🚫 GPL-2.0-or-later — QUARANTINED (new row 480)
+- **What:** Carla — audio plugin host (LV2/LADSPA/VST) for Linux.
+- **URL:** https://github.com/falkTX/Carla
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via README grant text — "licensed under the GNU General Public License, version 2 or later"; GitHub API spdx null = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / audio)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 52 Lane A]
+
+### Wave 52 Lane A summary (2026-10-08)
+- New #### entries: 117 (P1: 61 per-show OTR deep dives + 6 OTR hub/diligence records · P2: 23 open game-engine audio/physics plugins · P3: 10 demoscene music-disk archives round 2 · P4: 14 open film-restoration tools + 3 quarantine-linked)
+- Catalog: 4,541 → 4,658 honest entries (wave target 109 met)
+- Quarantine: rows 477–480 appended (enable3d LGPL-3.0, frei0r GPL-2.0, Qtractor GPL-2.0, Carla GPL-2.0-or-later — all 4 distinct, zero supersedes/delists)
+- Honest negatives: ~60 candidates rejected as duplicates (pre-append grep caught: miniaudio, SoLoud, PortAudio, RtAudio, libsoundio, PipeWire, rodio, Box2D, cannon-es, planck.js, SDL_mixer, RAWcooked, DVRescue, BWFMetaEdit, MediaInfo, openexr, OpenColorIO, OpenImageIO, OpenTimelineIO, colour, tesseract, OCRmyPDF, DeOldify, Real-ESRGAN, SwinIR, RIFE, Super-SloMo, Spleeter, Demucs, Open-Unmix, noisereduce, DeepFilterNet, rnnoise, Aegisub, ffsubsync, pysubs2, libass, SubtitleEdit, LightZone, OpenRefine, mkvalidator, BMX, fmtconv, CAIN, FLAVR, Imath, Tika, Siegfried, FIDO, Bagger, Exactly, Fixity, dcraw, DJV, pouet, HVSC, ASMA, SNDH, SunVox, TFM Music Maker, libmodplug, libopenmpt, libxmp, Audacious, Spectrum Computing, AtariMania, DeepSID, Slay Radio, GameBase64, C64.COM, 8bitpeoples, ZX-Art, Hugi, Slengpung, Hornet, Defacto2, Trax in Space, BitFellas, Nectarine, demoparty.net, Kohina, BitJam, Demovibes, Vandalism News, Jurassic Pack, Exotica, Lemon64, CPC-Power, Generation MSX, PixelJoint-check, KLOV, Revision, Evoke, 16colo.rs, Ubiktune, Data Airlines, CheapBeats, Sega Retro, demoscene.info, GoatTracker, AdPlug, OpenDCP, MLT, LADSPA, iPlug2, DPF, libsndfile, libsamplerate, aubio, Meyda, LMMS, VidCutter, OBS Studio, Blender)
+- Already-quarantined tools excluded from new rows (pre-append quarantine-table grep caught: MilkyTracker row 124, Schism Tracker row 125, Dn-FamiTracker row 123, 0CC-FamiTracker rows 174/403, Furnace row 122, Audacity row 73, Olive row 16, Natron row 87, Kdenlive row 37, Shotcut row 23, OpenShot row 17, Flowblade row 8, Cinelerra-GG row 33, Archivematica row 446, libmikmod row 250, UADE row 257, MyPaint row 15, MediaConch row 151 delisted)
+- ❓ diligence records: 17 (OTR Network Library 404, Digital Deli Too dead, Zoot Radio dead, TFM-adjacent dead links, System16/TCRF/Emulation-General bot-walled, cracktros.org dead, Nectarine stream-only noted in P3 context)
+- ✅ commercial-safe: 84 · ⚠️ per-item/caution: 24 (5 rights-caution OTR shows, 3 FMOD-conditional integrations, Nuke/Fusion commercial, per-item archives) · 🚫 quarantined: 4 (rows 477–480)
+- License corrections logged: avianphysics/avian (moved from Jondolf/avian org), liabru/matter-js (not matter-js/matter-js), piqnt/planck.js (not planckjs), pmndrs/cannon-es (not schteppe), Konstanty/libmodplug (canonical fork), amusementclub/fmtconv (canonical), Matroska-Org/foundation-source (mkvalidator home), sigsep/open-unmix-pytorch (not sigsep-mus-evaluation), sezero/mikmod (already row 250)
+- Zero post-hoc duplicates: every candidate pre-grepped (title + URL + same-resource check) against the full catalog and quarantine manifest before appending; `grep -c '^####'` = 4,658 exact

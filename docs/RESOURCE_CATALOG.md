@@ -28876,6 +28876,12 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - Quarantine rows added: 1 (row 264 — Kaltura, AGPL-3.0)
 - Tools wired: 0 (documented above)
 
+## Wave 30 — Lane A (catalog deepening: score-archive tail · chiptune label/operator deep-dives · caption SaaS ToS audits · retro-tracker format docs) — 60 entries (2026-10-07)
+
+- Previous honest count: 2,802 → new honest count: 2,862
+- Quarantine rows added: 0 (max stays 264 — UADE already row 257; VGMTrans verified zlib, not GPL)
+- Batches: 17 score-archive tail · 15 chiptune deep-dives · 12 caption SaaS ToS audits · 16 tracker format docs
+
 #### Duke University — Historic American Sheet Music ✅ commercial-safe (per-item "No Copyright – United States" marks)
 - **What:** Duke's Rubenstein Library digital collection — 3,000+ digitized American sheet-music pieces (popular + classical), published 1850–1920.
 - **URL:** https://repository.duke.edu/dc/hasm
@@ -29274,3 +29280,148 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Card-required trial = do not expense casually. Caption styling is account-level only (no per-video override per reviewer). [Wave 30 Lane A]
+
+#### The Unofficial XM File Format Specification ✅ public domain
+- **What:** "The Unofficial XM File Format Specification: FastTracker II, ADPCM and Stripped Module Subformats" (Quantum/uFMOD team, rev. 2, Jun 2007) — the definitive XM implementation reference beyond Mr.H's 1994 XM.TXT.
+- **URL:** https://milkytracker.org/docs/XM_file_format.pdf
+- **License:** ✅ PUBLIC DOMAIN (verified 2026-10-07: the spec text states the uFMOD developers "decided to make this new document available to public domain"). MilkyTracker hosts an expanded XM doc on GitHub.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Canonical reference for any XM loader work. Pairs with libxmp/libopenmpt (already cataloged). [Wave 30 Lane A]
+#### Scream Tracker 3 S3M format specification ❓ widely-mirrored tech doc
+- **What:** S3MSPEC.TXT — the Scream Tracker 3 module format byte-level specification (16-channel successor to STM).
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. The doc is distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for S3M loader work (libxmp already plays S3M). [Wave 30 Lane A]
+#### Impulse Tracker IT format documentation ❓ widely-mirrored tech doc
+- **What:** ITTECH.TXT and related docs — Impulse Tracker module format (instruments, envelopes, NNAs, filters).
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for IT loader work. [Wave 30 Lane A]
+#### ProTracker MOD format documentation ❓ widely-mirrored tech doc
+- **What:** MODFIL10.TXT and related docs — the original ProTracker 4-channel MOD format specification.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The ur-format doc; reference for MOD loader work. [Wave 30 Lane A]
+#### The Player 6.1A (P61A) documentation ❓ Amiga replay routine docs
+- **What:** P61A by Photon of Scoopex — the de-facto Amiga MOD replay routine; its documentation covers CIA-timing replay, effects implementation, and player integration.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference for authentic Amiga replay behavior. [Wave 30 Lane A]
+#### PSF format specification ❓ PlayStation sequenced-music docs
+- **What:** PSF (Portable Sound Format) specification — Highly Experimental's PS1 sequenced-music container docs (PSF1/PSF2, minipsf).
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for PSF loader work. [Wave 30 Lane A]
+#### 2SF / GSF format documentation ❓ DS/GBA sequenced-music docs
+- **What:** 2SF (Nintendo DS) and GSF (Game Boy Advance) sequenced-music format documentation — the Nintendo handheld PSF-family specs.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for handheld sequenced-format loaders. [Wave 30 Lane A]
+#### UADE (Unix Amiga Delitracker Emulator) 🚫 GPL-2.0 — QUARANTINED (row 257)
+- **What:** Amiga music emulator core (Delitracker replayers on Unix) — plays hundreds of Amiga module formats via original replay code.
+- **URL:** https://uade.tonotopic.org/ (verify before use)
+- **License:** 🚫 GPL-2.0 (quarantine row 257, verified Wave 27 Lane A) — standalone-tool use only, never linked into shipping code.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Catalog entry for the existing quarantine row (no row added this wave). Reference-rendering Amiga audio offline via the CLI is the safe pattern. [Wave 30 Lane A]
+#### HVL (HivelyTracker) format documentation ✅ BSD-ecosystem docs
+- **What:** HivelyTracker module format documentation — the HVL format (Xeron/Up Rough) for the open-source HivelyTracker (BSD-3-Clause, already cataloged).
+- **URL:** Canonical URL not verified this pass — see the HivelyTracker repo/docs; locate via search before use.
+- **License:** ✅ Format docs in the BSD-licensed HivelyTracker ecosystem; no separate restriction found.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for HVL loader work. [Wave 30 Lane A]
+#### AHX (Abyss' Highest Experience) format documentation ❓ synth-tracker docs
+- **What:** AHX format docs — Abyss of LSD's synth-based Amiga tracker format (no samples; pure synthesis), the ancestor of HivelyTracker.
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for AHX loader work. [Wave 30 Lane A]
+#### SPC (SNES SPC700) format documentation ❓ widely-mirrored tech doc
+- **What:** SPC format docs — the Super Nintendo SPC700 sound-RAM dump format specification.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for SPC loader work (lazyusf2/Game_Music_Emu already play SPC). [Wave 30 Lane A]
+#### KSS (MSX) format documentation ❓ widely-mirrored tech doc
+- **What:** KSS format docs — the MSX KSS (KSS159) sequenced-music format specification.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for KSS loader work. [Wave 30 Lane A]
+#### VGM format specification ❓ Sega-logged-music docs
+- **What:** VGM (Video Game Music) format specification — the vgmrips community's logged sound-chip command format (YM2612, SN76489, etc.).
+- **URL:** Canonical URL not verified this pass — see vgmrips/vgmtools docs; locate via search before use.
+- **License:** ❓ The spec text's license not verified this pass (vgmtools code is GPL-2.0 — do not confuse the code license with the doc). Implementer reference.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for VGM loader work. Note Project2612/SMS Power are 🚫 rip-risk SITES — the spec doc is separate. [Wave 30 Lane A]
+#### PSID / SID format specification ❓ C64 SID-tune docs
+- **What:** PSID format specification — the Sidplay SID-tune container format docs (RSID/PSID versions, clock/speed metadata).
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for SID loader work; pairs with the HVSC audit (Wave 30 batch 2). [Wave 30 Lane A]
+#### MED / OctaMED format documentation ❓ Amiga tracker docs
+- **What:** MED/OctaMED format documentation — Teijo Kinnunen's long-running Amiga tracker format (distinct from the 🚫 commercial OctaMED Soundstudio software, already cataloged).
+- **URL:** Canonical URL not verified this pass — locate via search before use.
+- **License:** ❓ Terms not verified this pass. Do not confuse the format docs with RBF Software's commercial player.
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference for MED loader work. [Wave 30 Lane A]
+#### VGMTrans ✅ zlib-licensed — sequenced VGM → MIDI/SF2/DLS (build deferred)
+- **What:** VGMTrans — converts proprietary sequenced videogame music (PSF, SPC, GBS, NSF, etc.) to industry-standard MIDI + SF2/DLS soundbanks.
+- **URL:** https://github.com/vgmtrans/vgmtrans
+- **License:** ✅ zlib License (verified 2026-10-07 via GitHub API spdx_id on vgmtrans/vgmtrans — NOT GPL as sometimes assumed). Commercial-safe.
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (trackers)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Wave 29 Lane B deferred the BUILD (no Qt dev libraries) — the license is clear, so the catalog entry stands and a future lane can attempt the build again. No quarantine row needed (zlib is permissive). [Wave 30 Lane A]

@@ -277,24 +277,10 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** GPL-3.0 — verified upstream; **quarantine row #1**, never wired into shipping paths.
 - 50+ layer types, skeletal distortion; strong for cutout/puppet animation of Wizard Gang-style characters.
 
-#### Krita ⚠️→🔒 — Digital-painting studio with timeline animation (onion skin, keyframe docker)
-- **Upstream:** KDE Krita
-- **License:** GPL-3.0 — **quarantine row #2**.
-- Raster frame-by-frame powerhouse (brush engine, PSD round-trip); paint + animate plates in one app.
-
 #### Blender Grease Pencil ⚠️→🔒 — Full 2D stroke engine inside Blender: draw/animate/rig in 3D space
 - **Upstream:** Blender
 - **License:** GPL-2.0+/3.0 — **quarantine row #3**.
 - Stroke sculpting, modifiers (build/simplify), grease-pencil-as-mesh for 2.5D shots; bridges 2D art to the 3D pipeline.
-
-#### Enve ⚠️→🔒 — Flexible vector+raster 2D animation with After-Effects-style workflow
-- **Upstream:** https://github.com/MaurycyLiebner/enve
-- **License:** GPL-3.0 — verified from upstream README; **quarantine row #4**. (Archived/inactive since ~2022 — evaluate before committing a pipeline to it.)
-
-#### Glaxnimate ⚠️→🔒 — Vector motion-graphics animator; Lottie/SVG/AEP export, integrated in Shotcut+Kdenlive
-- **Upstream:** invent.kde.org/graphics/glaxnimate
-- **License:** GPL-3.0-or-later — verified upstream (Wikipedia); **quarantine row #5**.
-- The go-to for animated SVG/Lottie transitions and title stings feeding the video editors.
 
 #### Wick Editor ⚠️→🔒 — Browser-based frame-by-frame + scripting IDE (Flash-like), kids/indie friendly
 - **Upstream:** https://github.com/Wicklets/wick-editor
@@ -308,16 +294,6 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 #### TupiTube ⚠️→🔒 — Beginner-focused 2D cartoon suite: frame-by-frame, cutout, stop-motion, rotoscoping
 - **Upstream:** MaeFloresta
 - **License:** GPL-3.0 — **quarantine row #8**.
-
-#### MyPaint ⚠️→🔒 — Pressure-driven natural-media painter; libmypaint brush engine feeds Krita/OpenToonz/Tahoma2D
-- **Upstream:** https://github.com/mypaint/mypaint
-- **License:** GPL-2.0-or-later (app; libmypaint ISC, brushes public domain) — verified from upstream Licenses.md; **quarantine row #9**.
-- Animation-adjacent: produces animated textures/plates; brush engine is reusable under ISC.
-
-#### GSAP ⚠️ — Professional JS tween engine: timelines, ScrollTrigger, MotionPath, morph (formerly-paid plugins now free)
-- **Upstream:** GreenSock / Webflow
-- **License:** GreenSock Standard "No-Charge" license — FREE including commercial use since Webflow's acquisition (all Club plugins free), but NOT open source: no fork/decompile, and no use in no-code animation builders competing with Webflow. Verified via GreenSock docs. Badge ⚠️ (free-but-proprietary).
-- Battle-tested for HTML/SVG motion graphics and kinetic title cards rendered to video.
 
 #### anime.js ✅ — Featherweight JS animation engine: CSS/SVG/DOM/object tweens, timelines, stagger
 - **Upstream:** julianGarnier/anime (v4 confirmed MIT)
@@ -847,16 +823,6 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** trippedd-studio (compositing/post pocket)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
 
-#### G'MIC ⚠️ license-restricted (quarantined)
-- **What:** GREYC's Magic for Image Computing — 500+ CLI/GIMP filters: denoise, inpaint, stylize, film grain, repair — batch post passes over frame sequences.
-- **URL:** https://github.com/GreycLab/gmic
-- **License:** CeCILL (GPL-compatible copyleft) (verified 2026-10-07 via repo COPYING raw)
-- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 59 — standalone/CLI use only.
-- **Free tier:** fully open
-- **Dedup:** RESOURCE_CATALOG.md `#### G'MIC (GreycLab) — standalone tool use` (line 11454) — same posture; animation-pocket entry.
-- **Repo lane:** trippedd-studio (compositing/post pocket)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
-
 #### ImageMagick ✅ commercial-safe
 - **What:** Batch image-sequence workhorse: convert/resize/montage/morph/annotate over PNG frames, contact sheets, title-card batching, APNG/GIF prep.
 - **URL:** https://github.com/ImageMagick/ImageMagick
@@ -910,15 +876,6 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Dedup:** RESOURCE_CATALOG.md `#### AviSynth+ — standalone tool use` (line 9348) — same posture; animation-pocket entry.
 - **Repo lane:** trippedd-studio (compositing/post pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
-
-#### OpenColorIO ✅ commercial-safe
-- **What:** Academy color-management standard (ACES/OCIO configs) — consistent color from render through comp to delivery; supported by Blender, Natron, Resolve.
-- **URL:** https://github.com/AcademySoftwareFoundation/OpenColorIO
-- **License:** BSD-3-Clause (verified 2026-10-07 via GitHub API license field)
-- **Free tier:** fully open
-- **Dedup:** RESOURCE_CATALOG.md `#### OpenColorIO` (line 7960) — animation-pocket entry.
-- **Repo lane:** trippedd-studio (compositing/post pocket)
-- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 
 
 ## Transitions
@@ -995,7 +952,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** god-molecule (backgrounds)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Dedup: RESOURCE_CATALOG.md "Krita ✅"; cross-pocket: also in this file's 2D animation section (frame-by-frame timeline angle). Brush engines + wrap-around mode suit looping BG plates. [Wave 1 Lane A3]
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Krita ✅"; merged from this file's Wave-1 2D animation entry (now deduped): frame-by-frame timeline with onion skin + keyframe docker, PSD round-trip, paint + animate plates in one app. Brush engines + wrap-around mode suit looping BG plates. [Wave 1 Lane A3]
 
 #### GIMP ✅ — standalone tool use
 - **What:** Raster editor for plate cleanup, matte painting, texture prep, channel packing
@@ -1015,7 +972,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** god-molecule (backgrounds)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Dedup: RESOURCE_CATALOG.md "MyPaint ✅"; cross-pocket: also in this file's 2D animation section (libmypaint brush-engine angle). Brush engine is ISC if ever needed as a library — verify per-file before reuse. [Wave 1 Lane A3]
+- **Notes:** Dedup: RESOURCE_CATALOG.md "MyPaint ✅"; merged from this file's Wave-1 2D animation entry (now deduped): produces animated textures/plates. Brush engine is ISC if ever needed as a library — verify per-file before reuse. [Wave 1 Lane A3]
 
 #### Inkscape ✅ — standalone tool use
 - **What:** Vector art for stylized flat backgrounds, BG shape layers, parallax cutout assets
@@ -1156,7 +1113,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** trippedd (color)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Dedup: OpenColorIO already wired in both repos (RESOURCE_CATALOG.md "Already wired" list). Natron + Blender both speak OCIO — one config for the whole show. [Wave 1 Lane A3]
+- **Notes:** Dedup: OpenColorIO already wired in both repos (RESOURCE_CATALOG.md "Already wired" list). Merged from this file's Wave-1 compositing entry (now deduped): ACES/OCIO configs; supported by Blender, Natron, and Resolve — one config for the whole show. [Wave 1 Lane A3]
 
 #### OCIO LUT tools (ocioconvert / ociobakelut) ✅
 - **What:** Bake and convert LUTs between shows and tools; validate color pipelines end-to-end
@@ -1194,7 +1151,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** trippedd (color)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Dedup: RESOURCE_CATALOG.md "G'MIC (GreycLab) — standalone tool use ✅". CLI batch grading for style-frame exploration. [Wave 1 Lane A3]
+- **Notes:** Dedup: RESOURCE_CATALOG.md "G'MIC (GreycLab) — standalone tool use ✅"; merged from this file's Wave-1 compositing entry (now deduped): denoise, inpaint, stylize, film grain, repair filters; batch post passes over frame sequences. CLI batch grading for style-frame exploration. [Wave 1 Lane A3]
 
 #### Blender compositor color nodes ✅ — standalone tool use
 - **What:** Node-based grading on rendered sequences — curves, ASC-CDL, filmic/ACES via OCIO, masks and tracking
@@ -1369,13 +1326,13 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Notes:** Dedup: see Lottie entry above (same codebase now); cross-pocket: also in this file's 2D animation section. Lets AE-based title artists feed the open pipeline. [Wave 1 Lane A3]
 
 #### GSAP ⚠️ (free-for-commercial, NOT OSI open source)
-- **What:** JavaScript tween/animation engine — kinetic type, SVG animation, scroll-driven title sequences
+- **What:** JavaScript tween/animation engine — timelines, ScrollTrigger, MotionPath, morph, kinetic type, SVG animation, scroll-driven title sequences
 - **URL:** https://gsap.com (standard license: https://gsap.com/standard-license)
 - **License:** Proprietary — GreenSock Standard "No-Charge" License; 100% FREE including all bonus plugins (SplitText, MorphSVG, etc.) since Webflow's acquisition — free for commercial use, but NOT MIT/Apache/GPL or any OSI license (verified 2026-10-08 via gsap.com README + third-party THIRD-PARTY-NOTICES analysis)
 - **Repo lane:** trippedd (motion graphics)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** ⚠️ Verify-per-use: read the Standard License before vendoring — permitted uses exclude building a Webflow-competing no-code animation builder; do not strip its license header. Cross-pocket: also in this file's 2D animation section. [Wave 1 Lane A3]
+- **Notes:** ⚠️ Verify-per-use: read the Standard License before vendoring — permitted uses exclude building a Webflow-competing no-code animation builder; do not strip its license header. Merged from this file's Wave-1 2D animation entry (now deduped): formerly-paid Club plugins now free since Webflow's acquisition. [Wave 1 Lane A3]
 
 #### Motion Canvas ✅
 - **What:** TypeScript programmatic motion graphics — code-driven title sequences, version-controlled like source
@@ -1403,7 +1360,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** both (motion graphics)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Dedup: RESOURCE_CATALOG.md "Glaxnimate ✅" (+ LICENSE_QUARANTINE row 11); cross-pocket: also in this file's 2D animation section (vector motion-graphics angle). Open-source answer to vector title animation. [Wave 1 Lane A3]
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Glaxnimate ✅" (+ LICENSE_QUARANTINE row 11); merged from this file's Wave-1 2D animation entry (now deduped): integrated in Shotcut + Kdenlive (animated wipes/titler), AEP export. Open-source answer to vector title animation. [Wave 1 Lane A3]
 
 #### Enve ✅ — standalone tool use
 - **What:** 2D animation / motion-graphics compositor — flexible timeline for title design and animated graphics
@@ -1413,7 +1370,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** god-molecule (motion graphics)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** Dedup: RESOURCE_CATALOG.md "Enve ✅" (+ WAVE5_A3 + LICENSE_QUARANTINE row 6); cross-pocket: also in this file's 2D animation section (vector+raster 2D angle). [Wave 1 Lane A3]
+- **Notes:** Dedup: RESOURCE_CATALOG.md "Enve ✅" (+ WAVE5_A3 + LICENSE_QUARANTINE row 6); merged from this file's Wave-1 2D animation entry (now deduped): After-Effects-style vector+raster workflow; original repo archived/inactive ~2022 — use the active fork in the URL field. [Wave 1 Lane A3]
 
 #### Blender text FX / kinetic type ✅ — standalone tool use
 - **What:** 3D title cards and kinetic typography — text-on-curve, drivers, Geometry Nodes type treatments, bevel/extrude depth

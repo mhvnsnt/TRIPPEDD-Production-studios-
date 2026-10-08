@@ -147,6 +147,67 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 ## Frame interpolation / inbetweening
 <!-- optical flow, AI interpolation -->
 
+#### RIFE ✅ — Real-Time Intermediate Flow Estimation: fast neural frame interpolation, widely deployed
+- **Upstream:** hzwer/Practical-RIFE
+- **License:** MIT — verified from upstream and multiple license audits; ✅.
+- CPU/GPU/NCNN-Vulkan variants; the default modern choice for 24→60fps upconversion and slow-motion.
+
+#### RIFE-ncnn-vulkan ✅ — RIFE via Tencent's NCNN + Vulkan: cross-platform GPU inference incl. mobile
+- **Upstream:** nihui/rife-ncnn-vulkan
+- **License:** MIT (app) + BSD-3 (NCNN runtime) — ✅.
+- Headless CLI for batch interpolating episode plates where CUDA/PyTorch isn't available.
+
+#### FILM ✅ — Frame Interpolation for Large Motion (Google Research): unified single-network, no separate flow/depth nets
+- **Upstream:** https://github.com/google-research/frame-interpolation
+- **License:** Apache-2.0 — verified from GitHub repo record; ✅.
+- Excels at large-displacement cartoon motion — directly relevant to stylized 2D/3D character animation.
+
+#### DAIN ✅ — Depth-Aware Video Frame Interpolation: explicit occlusion handling via depth cue
+- **Upstream:** baowenbo/DAIN
+- **License:** MIT — verified from upstream LICENSE/README pointer; ✅.
+- Quality pick for complex occlusion-heavy shots (fights, crowds); heavier than RIFE.
+
+#### AnimeInterp ✅ — Deep animation-video interpolation tuned for anime/cartoon frames
+- **Upstream:** lisiyao21/AnimeInterp (CVPR 2021)
+- **License:** MIT — verified from upstream README license section; ✅.
+- Trained on animation data specifically — best-fit model family for inbetweening hand-drawn footage.
+
+#### Super SloMo ✅ — CNN-based arbitrary-time slow motion (Jiang et al.): visible-flow + occlusion masks
+- **Upstream:** avinashpaliwal/Super-SloMo
+- **License:** MIT — verified from upstream LICENSE file; ✅. Pretrained weights carry the paper's research provenance — check weight terms if redistributing models.
+- Variable-speed ramps for dramatic entrances and impact beats.
+
+#### Butterflow ✅ — CLI motion-interpolated slow motion using OpenCL optical flow; ffmpeg-friendly
+- **Upstream:** github.com/luxter77/butterflow (Dthpham lineage)
+- **License:** MIT — verified from upstream README; ✅.
+- Lightweight, scriptable alternative to the deep-learning models for gentle speed ramps.
+
+#### SloMoVideo ⚠️→🔒 — Desktop slow-motion app: time curves, motion blur, timelapse repair
+- **Upstream:** https://github.com/slowmoVideo/slowmoVideo (Simon A. Eugster)
+- **License:** GPL-3.0 — verified from GitHub repo record; **quarantine row #10**.
+- GUI workflow for artists; CLI pipeline should prefer Butterflow/RIFE instead.
+
+#### FFmpeg minterpolate ⚠️→🔒 — Built-in frame interpolation filter (blend/bilateral/mci modes); no model weights
+- **Upstream:** ffmpeg.org
+- **License:** LGPL-2.1-or-later on default builds (GPL if built --enable-gpl) — verified; **quarantine row #11**.
+- Zero-dependency fallback: `ffmpeg -i in.mp4 -vf minterpolate=fps=60 out.mp4` works everywhere FFmpeg does.
+
+#### OpenCV DISOpticalFlow ✅ — Dense Inverse Search optical flow; fast CPU classic algorithm
+- **Upstream:** opencv/opencv (contrib video module)
+- **License:** Apache-2.0 — verified; ✅.
+- Flow-field engine for custom inbetweening scripts, morph previews, and motion analysis without GPU.
+
+#### RAFT ✅ — Recurrent All-Pairs Field Transforms: gold-standard dense optical flow network
+- **Upstream:** princeton-vl/RAFT
+- **License:** BSD-3-Clause — verified from multiple THIRD_PARTY notices citing the upstream LICENSE; ✅.
+- Accuracy-first flow for research-grade inbetweening and motion-vector passes feeding comp.
+
+#### PWC-Net ⚠️ — Pyramid/Warping/Cost-volume optical flow CNN (NVIDIA); influential lightweight architecture
+- **Upstream:** https://github.com/NVlabs/PWC-Net
+- **License:** CC BY-NC-SA 4.0 — verified from upstream README; NON-COMMERCIAL. Badge ⚠️ — research/reference use only, never in revenue paths.
+
+<!-- end lane A2: frame interpolation / inbetweening (12 entries) -->
+
 ## Storyboarding / animatics / previz
 <!-- boards, timing sheets, scene assembly -->
 
@@ -156,6 +217,66 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 
 ## Transitions
 <!-- wipe / smash-cut / fade / dissolve libraries, transition effect packs, Adult Swim-style hard-cut tooling -->
+
+#### FFmpeg xfade ⚠️→🔒 — Transition filter with 50+ built-in types + custom expressions/CSS easings/GLSL ports
+- **Upstream:** ffmpeg.org
+- **License:** LGPL-2.1-or-later on default builds (GPL if built --enable-gpl) — verified; **quarantine row #12**.
+- Scriptable cut/dissolve/wipe factory for batch-rendering episode transitions: `-filter_complex xfade=transition=fade:duration=0.5`.
+
+#### gl-transitions ✅ — The open collection of GLSL transitions: hundreds of shader wipes/dissolves
+- **Upstream:** gl-transitions/gl-transitions (gaerx lineage)
+- **License:** MIT — verified: open-collection terms require MIT attached to each transition; ✅.
+- Render any transition to video offline (FFmpeg xfade GLSL ports, or shadertoy-style baking); ISF conversions exist for VJ/editor hosts.
+
+#### Natron transition nodes ⚠️→🔒 — Node-graph transition setups: wipes, dissolves, glitch/smash cuts composited in Natron
+- **Upstream:** natron.fr
+- **License:** GPL-2.0-or-later — **quarantine row #13**.
+- AE-style node compositing for custom transition shots rendered to plates.
+
+#### Blender VSE transitions ⚠️→🔒 — Sequencer wipes, dissolves, Gamma/Alpha-Over crosses; fully keyframable
+- **Upstream:** blender.org
+- **License:** GPL-2.0+/3.0 — **quarantine row #14**.
+- In-pipeline transitions on the same machine that renders the episode — no round-trip.
+
+#### PySceneDetect ✅ — Content-aware scene-cut/transition detection; split files at cuts via FFmpeg
+- **Upstream:** Breakthrough/PySceneDetect
+- **License:** BSD-3-Clause — verified from PyPI/GitHub metadata; ✅.
+- Detects existing hard cuts and fades for conforming, re-editing, and transition-point analysis in animatics.
+
+#### Auto-Editor ⚠️ — Silence/motion-driven automatic editor; cuts dead space, exports timelines
+- **Upstream:** https://github.com/WyattBlue/auto-editor
+- **License:** Unlicense (public domain) for the repo source — verified; BUT current releases use the "FOSSIL" model: unlicensed renders capped at 3200x1800 (SD for multi-source), license key required above; desktop GUI is proprietary. Badge ⚠️ — read current terms at auto-editor.com before relying on it.
+- Useful for auto-rough-cutting animatic/dialogue passes; transition points become explicit cutlists.
+
+#### OpenShot transitions ⚠️→🔒 — 400+ transition presets (wipes, fades, stylized) in the OpenShot editor
+- **Upstream:** openshot.org
+- **License:** GPL-3.0 — verified from upstream copyright header; **quarantine row #15**.
+- Quick previz of transition feels before rebuilding the chosen one in the shipping pipeline.
+
+#### Shotcut transitions ⚠️→🔒 — Mix/dissolve/wipe/cut transitions on the MLT engine; keyframable
+- **Upstream:** shotcut.org
+- **License:** GPL-3.0-or-later — verified; **quarantine row #16**.
+
+#### MLT transitions ⚠️→🔒 — The underlying luma/mix/wipe transition services powering Kdenlive + Shotcut; melt CLI scriptable
+- **Upstream:** https://www.mltframework.org
+- **License:** LGPL-2.1 (framework; melt CLI app is GPL-2) — verified from upstream copyright policy; **quarantine row #17**.
+- Headless, XML-serializable transition pipeline: agents can generate melt project files programmatically.
+
+#### Kdenlive transitions ⚠️→🔒 — Full transition set incl. Glaxnimate-integrated animated wipes; titler + effects stack
+- **Upstream:** https://github.com/KDE/kdenlive
+- **License:** GPL-3.0 — verified from GitHub repo record; **quarantine row #18**.
+
+#### Frei0r ⚠️→🔒 — Minimalistic video-plugin API + 100+ plugins: filters, mixers, generators incl. transition FX
+- **Upstream:** frei0r.dyne.org
+- **License:** GPL (GPLv2) — verified; **quarantine row #19**.
+- Cross-host plugin library — one transition implementation usable from MLT/Shotcut/Kdenlive/FFmpeg hosts.
+
+#### Movit ⚠️→🔒 — High-performance GPU (GLSL) video effects library: realtime transitions, blur, deinterlace, color
+- **Upstream:** movit.sesse.net
+- **License:** GPL-2.0-or-later — verified from upstream README; **quarantine row #20**.
+- Realtime transition preview engine; use for fast iteration, not shipping binaries.
+
+<!-- end lane A2: transitions (12 entries) -->
 
 ## Background / plate art
 <!-- background painting tools, matte painting, plate generation, parallax layers -->

@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 576 rows · 550 distinct projects (Wave 41 Lane A: +10 rows 379–388; Wave 40 Lane A: +23 rows 356–378 (17 broadcast-automation deep tail, Kainote GPL-3.0, PgcEdit GPL, xmodits/CheeseCutter/TIATracker/komposter); Wave 39 Lane A: +22 rows 334–355 audio libs (libsndfile, JACK2, ChucK, KFR, FAAD2, HISE, pygame, munt, alsa-lib, LADSPA, mpg123, libmad, LAME, Audiere, TiMidity++, FFTW, zita-resampler, zita-convolver, DSSI, PulseAudio, RAVDESS, Sega Retro); Wave 38 Lane A: +39 rows 295–333 broadcast/media GPL stack; Wave 37 Lane A: +16 rows 279–294 retro-devkit GPL stack; Wave 36 Lane A: +5 rows 274–278 PyKaraoke LGPL-2.0 / Lyriks GPL-3.0 / snes_spc LGPL-2.1 / OpenKJ GPL-3.0 / Capture2Text GPL-3.0; Wave 35 Lane B: +1 row 273 SubsAI GPL; Wave 34 Lane A: +1 row 272 Open Cubic Player GPL; Wave 32 Lane A: +1 row 271 Furnace GPL; Wave 31 Lane A: +6 rows 265–270 retro-tracker GPL/AGPL (Adlib Tracker II, gbsplay GPL-1.0-or-later, sc68, psgplay, vgmtools, ProTrackR2); Wave 29 Lane A: +1 row 264 Kaltura AGPL-3.0; Wave 28 Lane A: +1 row 263 audapolis AGPL-3.0; Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 34 rows · GPL 195 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-26 Lane C spot-check (2026-10-08): 10/10 confirmed on never-audited rows (2 aeneas, 9 FlowFrames, 17 OpenShot, 20 piper-tts, 36 Inkscape, 50 Wick Editor, 67 Dexed, 80 ComfyUI-Manager, 126 Hydrogen, 131 NYC Parks Photo Archive) — zero relicensing events. Wave-26 Lane A: +12 rows 239–250 (retro-tracker GPL/AGPL). Wave-26 Lane B: +5 rows 251–255 (caption/karaoke GPL; renumbered from 239–243 at merge to resolve Lane A/B collision). Counts refreshed: 255 rows · 232 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-28 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (63 marytts LGPL-3.0 facts-only, 66 Surge XT GPL-3.0, 75 Dragonfly Reverb GPL-3.0, 8 Flowblade GPL-3.0-or-later, 16 Olive GPL-3.0 with canonical upstream corrected to olive-editor/olive, 21 Power Sequencer GPL-3.0-or-later, 29 Avidemux GPL-2.0, 32 chaiNNer GPL-3.0, 39 LibreSprite GPL-2.0, 40 LiVES GPL-3.0) — zero relicensing events, zero delists, zero supersedes. Counts unchanged: 255 rows · 232 distinct. Wave-28 Lane A: +1 row 263 audapolis AGPL-3.0. Counts refreshed: 263 rows · 254 distinct. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag. Wave-29 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (26 TupiTube GPL-2.0-family, 72 Ardour, 73 Audacity, 80 ComfyUI-Manager, 88 Yoshimi, 92 Parselmouth, 102 VCV Rack, 104 SPPAS, 155 MKVToolNix, 236 telxcc) — zero relicensing events, zero delists, zero supersedes; 1 repo-moved path update (row 155 MKVToolNix: GitHub mbunkus/mkvtoolnix 404s → canonical now codeberg.org/mbunkus/mkvtoolnix); row 236 telxcc now archived upstream. Counts refreshed: 264 rows · 241 distinct (Wave 31 Lane A refresh: 270 rows · 247 distinct; Wave 32 Lane A refresh: 271 rows · 248 distinct; re-verified by direct count Wave 34 Lane B, 2026-10-08 — header counts correct). Wave-34 Lane B re-verification cycle (2026-10-08): 10/10 confirmed (rows 48 VidCutter, 49 whisper-timestamped, 52 Blender-StellarToon, 53 2D-Cel-Toon-Shader-v2-Plus, 54 manga-image-translator, 56 libre-manga-translator, 76 RobustVideoMatting, 77 mmd_tools, 78 APISR, 79 ADetailer) — zero relicensing events; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text unchanged). Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-43 Lane B re-verification cycle 14 (2026-10-08): 19/19 confirmed — cycle-11 gap closed (rows 61, 168, 199, 200, 208, 211, 212, 213, 214 re-run fresh and stamped into the table; row 123 covered by Wave 42), next-10 rows 134–143 verified; zero relicenses, zero delists, zero supersedes; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text byte-identical). Counts synced: 393 rows · 369 distinct (manifest canonical). **Wave 43 coordinator post-merge: 394 rows · 370 distinct** (Lane A appended row 394 mdxtools GPL-3.0 after Lane B's sync). Wave 44 Lane A refresh: 400 rows · 376 distinct (+6 rows 395–400). Wave 45 coordinator refresh: 404 rows · 380 distinct (+4 rows 401–404). Wave 46 coordinator refresh: 418 rows · 393 distinct (+14 rows 405–418). Wave 47 coordinator refresh: 437 rows · 412 distinct (+19 rows 419–437). Wave 48 coordinator refresh: 451 rows · 426 distinct (+14 rows 438–451). Counts refreshed by independent recount Wave 49 Lane B, 2026-10-08: 451 row numbers present, no gaps; 23 dead/superseded markers per standing convention (rows 33, 111, 174, 234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Wave 49 coordinator refresh: 467 rows · 442 distinct (+16 rows 452–467; independent direct recount: 467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Catalog dedupe: 26 legacy duplicate #### entries removed (24 titles, all true same-URL dupes — incl. WhisperX ×3); honest count 4,332 → 4,306 before Lane A2 top-up. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 Lane B (2026-10-08): quarantine manifest independently recounted — 467 rows · 442 distinct (467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; counts UNCHANGED). Re-verification cycle 21: rows 207, 209, 210, 221, 222, 223, 227, 229, 230, 231 — 10/10 confirmed, zero relicenses, zero delists. Drift watch clean (Helm/telxcc/MKVToolNix/SubDownloader/Seed-VC/so-vits-svc/DISTRHO-Ports/Praat/Olive/dsnote all stable). LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 coordinator refresh (2026-10-08): 475 rows · 450 distinct (475 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; Lane A appended rows 468–475: CherryMusic, Airsonic, Gerbera, Madsonic, ReadyMedia/MiniDLNA, Universal Media Server, rtmpdump, Erlyvideo — all 8 distinct, zero supersedes/delists). Catalog: 4,338 → 4,438 honest #### entries (+100 Lane A; target 4,440+ MISSED by 2 — honest shortfall, Wave 51 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave50_lane_c/wire_caption_burnin.py (ffmpeg ASS burn-in, pixel-verified) + wire_pd_score.py (archive.org PD score fetch, byte-exact). LGPL doctrine still PENDING OWNER VERDICT. Wave 51 coordinator refresh (2026-10-08): 476 rows · 451 distinct (476 row numbers present, no gaps; Lane A appended row 476 Tiled GPL-2.0-or-later; Lane B re-verification cycle 22: rows 206, 225, 232, 233, 235, 237, 238, 239, 240, 241 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 206 ScanTailor now owner-archived upstream — license unaffected; drift watch 7/7 clean: Helm/telxcc/MB-Lab/SubDownloader still archived, MKVToolNix Codeberg-canonical, uzu/tidal active. Catalog: 4,438 → 4,541 honest #### entries (+103 Lane A; target 4,540+ met). Lane C wired 2 permissive tools with real proofs: tools/wave51_lane_c/ — Kokoro TTS (Apache-2.0, 9/9 checks PASS: 7.825s seeded VO take, -25.21 LUFS) + Rhubarb Lip Sync (MIT, 47 mouth events, 11/11 checks PASS, byte-identical TSV determinism). LGPL doctrine still PENDING OWNER VERDICT. Wave 52 coordinator refresh (2026-10-08): 480 rows · 455 distinct (480 row numbers present, no gaps; Lane A appended rows 477–480: enable3d LGPL-3.0, frei0r GPL-2.0, Qtractor GPL-2.0, Carla GPL-2.0-or-later — all 4 distinct, zero supersedes/delists; Lane B re-verification cycle 23: rows 234, 242–250 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 243 Strudel now owner-archived upstream — license unaffected; row 245 Cmajor canonical moved SoundStacks/cmajor → cmajor-lang/cmajor; drift watch 7/7 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix Codeberg-canonical, uzu/tidal active). Catalog: 4,541 → 4,658 honest #### entries (+117 Lane A incl. 61 OTR per-show deep dives, +1 Lane C pyloudnorm; GFPGAN Wave 2 ❓/Wave 6 ✅ duplicate merged by coordinator — kept the richer Wave 2 entry, folded v1.4 detail). Lane C wired 2 permissive tools with real proofs: tools/wave52_lane_c/ — noisereduce 3.0.3 (MIT, −27 dB noise-floor suppression on seeded fixture, safe no-op on clean VO) + pyloudnorm (MIT, ITU-R BS.1770; podcast master −17.0 LUFS / broadcast master −23.9 LUFS, ebur128 cross-check 0.12 LU, byte-deterministic). Flag for Wave 53: row 151 MediaConch discrepancy (delisted on BSD-2-Clause relicense, but SourceCode/License.html now reads GPLv3+/MPLv2+ — possible upstream relicense reversal; recommend re-verification). LGPL doctrine still PENDING OWNER VERDICT. Wave 53 coordinator refresh (2026-10-08): 530 rows · 505 distinct (530 row numbers present, no gaps; Lane A appended rows 481–530: 50 new rows, all live, zero supersedes/delists; 23 dead/superseded markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; row 249 literal-pipe repaired by coordinator. Lane B re-verification cycle 24: rows 155, 251–259 — 10/10 CONFIRMED, zero relicenses, zero delists; row 253 subSync now owner-archived upstream (license unaffected); repo-location notes: row 257 UADE canonical = gitlab.com/uade-music-player/uade, row 259 ASAP canonical = SourceForge asap/code (no official GitHub repo); drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix COPYING byte-identical 18,092 B, uzu/tidal LICENSE byte-identical 35,106 B). MediaConch row 151 discrepancy RESOLVED: NO relicense reversal — canonical MediaArea/MediaConch_SourceCode root LICENSE = BSD-2-Clause; the GPLv3+/MPLv2+ text lives only in the stale abandoned MediaArea/MediaConch repo (PREFORMA-era file, pushed 2021-09-29); DELISTED status stands, row note extended. Catalog: 4,658 → 4,762 honest #### entries (+104 Lane A; target 4,760+ met). Lane C wired 2 permissive tools with real proofs: tools/wave53_lane_c/ — faster-whisper subtitle stage (MIT, WER 0.0 vs ground truth on the real Wave-52 mastered VO WAV, SRT mux round-trip byte-equal, 11/11 checks PASS) + OpenImageIO HDR plate QC (Apache-2.0, EXR half-float round-trip max abs error 2.43e-04, 7/7 checks PASS). Wave 54 coordinator refresh (2026-10-08): 536 rows · 511 distinct (536 row numbers present, no gaps; Lane A appended rows 531–536: OpenDCP GPL-3.0, x264 GPL-2.0, x265 GPL-2.0, vhs-decode GPL-3.0, Hugin GPL-2.0-or-later, kinograph_machine GPL-3.0 — all 6 distinct, zero supersedes/delists; row 267 precision-corrected GPL-2.0-or-later → GPL-3.0-or-later (quarantine treatment unchanged). Lane B re-verification cycle 25: rows 260–270 — 10/10 CONFIRMED (9 clean + row 267 correction), zero relicenses, zero delists, zero supersedes; row 263 audapolis canonical moved audapolis/audapolis → bugbakery/audapolis (live); row 264 Kaltura canonical moved kaltura/server → kaltura-community/server (live). GPL audit RESOLVED: LosslessCut (GPL-2.0) + Avidemux (GPL-2.0) flags VALID — catalog badges corrected to quarantined-standalone; StaxRip flag FALSE POSITIVE — MIT verified, ✅ stands. Drift watch clean. Catalog: 4,762 → 4,865 honest #### entries (+103 Lane A; target 4,870+ MISSED by 5 — honest shortfall, Wave 55 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave54_lane_c/ — pycaption 2.3.13 (Apache-2.0, caption format normalization, 18/18 checks PASS) + srt 3.5.3 (MIT, SRT parse/compose/retime, 10/10 checks PASS). LGPL doctrine still PENDING OWNER VERDICT.) Wave 57 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (zero new rows; cycle 28: rows 291–300 10/10 confirmed; repo-move note 294 OpenBroadcaster; drift watch 7/7 clean). Catalog: 5,090 → 5,191 honest #### entries (+101 Lane A: retro homebrew SDK docs round 3 — Atari ST/Falcon, Amiga, X68000/FM Towns; landmark musicdisks pouët/demozoo; PD radio-drama round 6; target 5,190+ met). Lane C wired 2 permissive tools with real proofs: tools/wave57_lane_c/ — SpectralCluster (Apache-2.0, embed→cluster: ECAPA 192-dim 4-segment fixture clustered [0,1,0,1] deterministic) + pyannote-metrics (MIT, DER=0.0000 / JER=0.0000, 9/9 checks PASS) — full measured diarization stage closed; entries flipped WIRED — run-proven. LGPL doctrine still PENDING OWNER VERDICT. Wave 55 coordinator refresh (2026-10-08, missed on catalog): quarantine 557 rows · 532 distinct (+21 rows 537–557; Lane B re-verification cycle 26: rows 271–280 — 10/10 CONFIRMED, zero relicenses; row 272 Open Cubic Player precision-corrected to GPL-2.0; drift watch 10/10 clean; Kaltura/audapolis canonical-path updates). Catalog: 4,865 → 4,980 honest #### entries (+115 Lane A; target 4,970+ met). Lane C wired resampy (ISC, 24→48 kHz SRC, 130.77 dB SNR, honest round-trip caveat documented) + audiomentations (MIT, degradation-stress stage, seeded deterministic). Wave 56 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (+15 rows 558–572; row 464 ArchiveBox DELISTED — upstream relicensed GPL-3.0-only → MIT live 2026-10-08, catalog badge corrected to ✅; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Lane B re-verification cycle 27: rows 281–290 — 10/10 CONFIRMED, zero relicenses, zero delists; 4 GitHub API NOASSERTION gaps resolved by direct license-text reads; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 4,980 → 5,090 honest #### entries (+110 Lane A: PD radio-drama round 5, homebrew SDK docs round 2, video-archive tooling round 2, musicdisk archives round 2; target 5,080+ met). Lane C wired 2 permissive tools with real proofs in tools/wave56_lane_c/: DeepFilterNet (dual MIT/Apache-2.0 deep-NN speech denoiser — 6/7 checks PASS: +5.9 dB stationary / +4.4 dB non-stationary on the real Kokoro VO fixture, clean no-op, byte-deterministic; 1 honest relative-gate FAIL documented) + SpeechBrain ECAPA-TDNN speaker embeddings (Apache-2.0 — 6/6 checks PASS, intra/inter cosine margin +0.1483, byte-deterministic; diarization "who spoke when" stage). Pipeline now: text→VO→lip-sync→denoise+master→subtitles→normalize→SRC→**deep denoise + speaker embeddings**. Wave 58 coordinator refresh (2026-10-08): 576 rows · 550 distinct (576 row numbers present, no gaps; Lane A appended rows 573–576: BitJag atari 240p test suite GPL-2.0+, rmvlib LGPL-2.1, pce-devel/huc mixed (contains GPL components), BitJag install scripts GPL-3.0 — all 4 live, zero supersedes/delists; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Lane B re-verification cycle 29: rows 301–310 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 5,191 → 5,294 honest #### entries (+103 Lane A: SDK docs round 4 — PCE/TG-16, Neo Geo, 32X, Jaguar; landmark musicdisks pouet toplist #11–#25; PD radio-drama round 7 — 54 single-episode deep dives; target 5,290+ met). Lane C first REAL-VOICE diarization test with proof in tools/wave58_lane_c/: 3 Kokoro voices dialogue (ECAPA-TDNN 192-dim, 1.5s/0.25s windows → SpectralCluster → pyannote-metrics): DER 0.4084 / JER 0.5478 @collar 0.0; forced k=3 → DER 0.3359; auto-k merges the two female voices (embeddings contain all 3 voices, count selection is the failure); window-level DER ~0.34 is structural, next lane: VAD-boundary refinement. Flag for Wave 59: Lane A P3 single-episode badge discipline differs from Wave-55 single-episode 'underlying broadcast PD' reasoning — uniformity review requested. LGPL doctrine still PENDING OWNER VERDICT.) **Wave 59 coordinator refresh (2026-10-08): 576 rows · 550 distinct** (576 row numbers present, no gaps — independent direct recount; 24 dead/superseded/delisted markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; zero new rows this wave. Lane B re-verification cycle 30: rows 311–320 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row annotations stamped re-verified; drift watch 11/11 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical; OpenBroadcaster canonical path intact). Catalog: 5,294 → 5,401 honest #### entries (+107 Lane A: SDK docs round 5 — 35 arcade/homebrew console SDK docs, 18 landmark musicdisks (pouët toplist), 54 PD radio-drama round 8 single-episode deep dives; target 5,400+ met). OTR badge-discipline ruling (Lane A, documented in Wave 59 wave note): show-established-✅PD + stated licenseurl-absent diligence rule; Lone Ranger keeps ⚠️ caution (character rights, not broadcast). Lane C wired VAD-boundary diarization refinement with real proofs in tools/wave59_lane_c/: two independent implementations — webrtcvad-tuned (DER 0.4084 → 0.3416, JER 0.5478 → 0.5051, 11/13 checks PASS, torch-free) + silero-vad variant (tuned DER 0.4020 ~flat, forced-k=3 → DER 0.0941 confirming A/C female-voice merge is the embedding-side problem); dominant error is A↔C female-voice confusion (~12.2s of 13.4s), boundary methods cannot fix it. LGPL doctrine still PENDING OWNER VERDICT.)
+- **Quarantined (copyleft) — 577 rows · 551 distinct projects (Wave 60 Lane A: +1 row 577 moqucu/jzintv GPL-2.0 Intellivision devkit) (Wave 41 Lane A: +10 rows 379–388; Wave 40 Lane A: +23 rows 356–378 (17 broadcast-automation deep tail, Kainote GPL-3.0, PgcEdit GPL, xmodits/CheeseCutter/TIATracker/komposter); Wave 39 Lane A: +22 rows 334–355 audio libs (libsndfile, JACK2, ChucK, KFR, FAAD2, HISE, pygame, munt, alsa-lib, LADSPA, mpg123, libmad, LAME, Audiere, TiMidity++, FFTW, zita-resampler, zita-convolver, DSSI, PulseAudio, RAVDESS, Sega Retro); Wave 38 Lane A: +39 rows 295–333 broadcast/media GPL stack; Wave 37 Lane A: +16 rows 279–294 retro-devkit GPL stack; Wave 36 Lane A: +5 rows 274–278 PyKaraoke LGPL-2.0 / Lyriks GPL-3.0 / snes_spc LGPL-2.1 / OpenKJ GPL-3.0 / Capture2Text GPL-3.0; Wave 35 Lane B: +1 row 273 SubsAI GPL; Wave 34 Lane A: +1 row 272 Open Cubic Player GPL; Wave 32 Lane A: +1 row 271 Furnace GPL; Wave 31 Lane A: +6 rows 265–270 retro-tracker GPL/AGPL (Adlib Tracker II, gbsplay GPL-1.0-or-later, sc68, psgplay, vgmtools, ProTrackR2); Wave 29 Lane A: +1 row 264 Kaltura AGPL-3.0; Wave 28 Lane A: +1 row 263 audapolis AGPL-3.0; Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 34 rows · GPL 195 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-26 Lane C spot-check (2026-10-08): 10/10 confirmed on never-audited rows (2 aeneas, 9 FlowFrames, 17 OpenShot, 20 piper-tts, 36 Inkscape, 50 Wick Editor, 67 Dexed, 80 ComfyUI-Manager, 126 Hydrogen, 131 NYC Parks Photo Archive) — zero relicensing events. Wave-26 Lane A: +12 rows 239–250 (retro-tracker GPL/AGPL). Wave-26 Lane B: +5 rows 251–255 (caption/karaoke GPL; renumbered from 239–243 at merge to resolve Lane A/B collision). Counts refreshed: 255 rows · 232 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-28 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (63 marytts LGPL-3.0 facts-only, 66 Surge XT GPL-3.0, 75 Dragonfly Reverb GPL-3.0, 8 Flowblade GPL-3.0-or-later, 16 Olive GPL-3.0 with canonical upstream corrected to olive-editor/olive, 21 Power Sequencer GPL-3.0-or-later, 29 Avidemux GPL-2.0, 32 chaiNNer GPL-3.0, 39 LibreSprite GPL-2.0, 40 LiVES GPL-3.0) — zero relicensing events, zero delists, zero supersedes. Counts unchanged: 255 rows · 232 distinct. Wave-28 Lane A: +1 row 263 audapolis AGPL-3.0. Counts refreshed: 263 rows · 254 distinct. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag. Wave-29 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (26 TupiTube GPL-2.0-family, 72 Ardour, 73 Audacity, 80 ComfyUI-Manager, 88 Yoshimi, 92 Parselmouth, 102 VCV Rack, 104 SPPAS, 155 MKVToolNix, 236 telxcc) — zero relicensing events, zero delists, zero supersedes; 1 repo-moved path update (row 155 MKVToolNix: GitHub mbunkus/mkvtoolnix 404s → canonical now codeberg.org/mbunkus/mkvtoolnix); row 236 telxcc now archived upstream. Counts refreshed: 264 rows · 241 distinct (Wave 31 Lane A refresh: 270 rows · 247 distinct; Wave 32 Lane A refresh: 271 rows · 248 distinct; re-verified by direct count Wave 34 Lane B, 2026-10-08 — header counts correct). Wave-34 Lane B re-verification cycle (2026-10-08): 10/10 confirmed (rows 48 VidCutter, 49 whisper-timestamped, 52 Blender-StellarToon, 53 2D-Cel-Toon-Shader-v2-Plus, 54 manga-image-translator, 56 libre-manga-translator, 76 RobustVideoMatting, 77 mmd_tools, 78 APISR, 79 ADetailer) — zero relicensing events; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text unchanged). Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-43 Lane B re-verification cycle 14 (2026-10-08): 19/19 confirmed — cycle-11 gap closed (rows 61, 168, 199, 200, 208, 211, 212, 213, 214 re-run fresh and stamped into the table; row 123 covered by Wave 42), next-10 rows 134–143 verified; zero relicenses, zero delists, zero supersedes; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text byte-identical). Counts synced: 393 rows · 369 distinct (manifest canonical). **Wave 43 coordinator post-merge: 394 rows · 370 distinct** (Lane A appended row 394 mdxtools GPL-3.0 after Lane B's sync). Wave 44 Lane A refresh: 400 rows · 376 distinct (+6 rows 395–400). Wave 45 coordinator refresh: 404 rows · 380 distinct (+4 rows 401–404). Wave 46 coordinator refresh: 418 rows · 393 distinct (+14 rows 405–418). Wave 47 coordinator refresh: 437 rows · 412 distinct (+19 rows 419–437). Wave 48 coordinator refresh: 451 rows · 426 distinct (+14 rows 438–451). Counts refreshed by independent recount Wave 49 Lane B, 2026-10-08: 451 row numbers present, no gaps; 23 dead/superseded markers per standing convention (rows 33, 111, 174, 234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Wave 49 coordinator refresh: 467 rows · 442 distinct (+16 rows 452–467; independent direct recount: 467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Catalog dedupe: 26 legacy duplicate #### entries removed (24 titles, all true same-URL dupes — incl. WhisperX ×3); honest count 4,332 → 4,306 before Lane A2 top-up. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 Lane B (2026-10-08): quarantine manifest independently recounted — 467 rows · 442 distinct (467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; counts UNCHANGED). Re-verification cycle 21: rows 207, 209, 210, 221, 222, 223, 227, 229, 230, 231 — 10/10 confirmed, zero relicenses, zero delists. Drift watch clean (Helm/telxcc/MKVToolNix/SubDownloader/Seed-VC/so-vits-svc/DISTRHO-Ports/Praat/Olive/dsnote all stable). LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 coordinator refresh (2026-10-08): 475 rows · 450 distinct (475 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; Lane A appended rows 468–475: CherryMusic, Airsonic, Gerbera, Madsonic, ReadyMedia/MiniDLNA, Universal Media Server, rtmpdump, Erlyvideo — all 8 distinct, zero supersedes/delists). Catalog: 4,338 → 4,438 honest #### entries (+100 Lane A; target 4,440+ MISSED by 2 — honest shortfall, Wave 51 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave50_lane_c/wire_caption_burnin.py (ffmpeg ASS burn-in, pixel-verified) + wire_pd_score.py (archive.org PD score fetch, byte-exact). LGPL doctrine still PENDING OWNER VERDICT. Wave 51 coordinator refresh (2026-10-08): 476 rows · 451 distinct (476 row numbers present, no gaps; Lane A appended row 476 Tiled GPL-2.0-or-later; Lane B re-verification cycle 22: rows 206, 225, 232, 233, 235, 237, 238, 239, 240, 241 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 206 ScanTailor now owner-archived upstream — license unaffected; drift watch 7/7 clean: Helm/telxcc/MB-Lab/SubDownloader still archived, MKVToolNix Codeberg-canonical, uzu/tidal active. Catalog: 4,438 → 4,541 honest #### entries (+103 Lane A; target 4,540+ met). Lane C wired 2 permissive tools with real proofs: tools/wave51_lane_c/ — Kokoro TTS (Apache-2.0, 9/9 checks PASS: 7.825s seeded VO take, -25.21 LUFS) + Rhubarb Lip Sync (MIT, 47 mouth events, 11/11 checks PASS, byte-identical TSV determinism). LGPL doctrine still PENDING OWNER VERDICT. Wave 52 coordinator refresh (2026-10-08): 480 rows · 455 distinct (480 row numbers present, no gaps; Lane A appended rows 477–480: enable3d LGPL-3.0, frei0r GPL-2.0, Qtractor GPL-2.0, Carla GPL-2.0-or-later — all 4 distinct, zero supersedes/delists; Lane B re-verification cycle 23: rows 234, 242–250 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 243 Strudel now owner-archived upstream — license unaffected; row 245 Cmajor canonical moved SoundStacks/cmajor → cmajor-lang/cmajor; drift watch 7/7 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix Codeberg-canonical, uzu/tidal active). Catalog: 4,541 → 4,658 honest #### entries (+117 Lane A incl. 61 OTR per-show deep dives, +1 Lane C pyloudnorm; GFPGAN Wave 2 ❓/Wave 6 ✅ duplicate merged by coordinator — kept the richer Wave 2 entry, folded v1.4 detail). Lane C wired 2 permissive tools with real proofs: tools/wave52_lane_c/ — noisereduce 3.0.3 (MIT, −27 dB noise-floor suppression on seeded fixture, safe no-op on clean VO) + pyloudnorm (MIT, ITU-R BS.1770; podcast master −17.0 LUFS / broadcast master −23.9 LUFS, ebur128 cross-check 0.12 LU, byte-deterministic). Flag for Wave 53: row 151 MediaConch discrepancy (delisted on BSD-2-Clause relicense, but SourceCode/License.html now reads GPLv3+/MPLv2+ — possible upstream relicense reversal; recommend re-verification). LGPL doctrine still PENDING OWNER VERDICT. Wave 53 coordinator refresh (2026-10-08): 530 rows · 505 distinct (530 row numbers present, no gaps; Lane A appended rows 481–530: 50 new rows, all live, zero supersedes/delists; 23 dead/superseded markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; row 249 literal-pipe repaired by coordinator. Lane B re-verification cycle 24: rows 155, 251–259 — 10/10 CONFIRMED, zero relicenses, zero delists; row 253 subSync now owner-archived upstream (license unaffected); repo-location notes: row 257 UADE canonical = gitlab.com/uade-music-player/uade, row 259 ASAP canonical = SourceForge asap/code (no official GitHub repo); drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix COPYING byte-identical 18,092 B, uzu/tidal LICENSE byte-identical 35,106 B). MediaConch row 151 discrepancy RESOLVED: NO relicense reversal — canonical MediaArea/MediaConch_SourceCode root LICENSE = BSD-2-Clause; the GPLv3+/MPLv2+ text lives only in the stale abandoned MediaArea/MediaConch repo (PREFORMA-era file, pushed 2021-09-29); DELISTED status stands, row note extended. Catalog: 4,658 → 4,762 honest #### entries (+104 Lane A; target 4,760+ met). Lane C wired 2 permissive tools with real proofs: tools/wave53_lane_c/ — faster-whisper subtitle stage (MIT, WER 0.0 vs ground truth on the real Wave-52 mastered VO WAV, SRT mux round-trip byte-equal, 11/11 checks PASS) + OpenImageIO HDR plate QC (Apache-2.0, EXR half-float round-trip max abs error 2.43e-04, 7/7 checks PASS). Wave 54 coordinator refresh (2026-10-08): 536 rows · 511 distinct (536 row numbers present, no gaps; Lane A appended rows 531–536: OpenDCP GPL-3.0, x264 GPL-2.0, x265 GPL-2.0, vhs-decode GPL-3.0, Hugin GPL-2.0-or-later, kinograph_machine GPL-3.0 — all 6 distinct, zero supersedes/delists; row 267 precision-corrected GPL-2.0-or-later → GPL-3.0-or-later (quarantine treatment unchanged). Lane B re-verification cycle 25: rows 260–270 — 10/10 CONFIRMED (9 clean + row 267 correction), zero relicenses, zero delists, zero supersedes; row 263 audapolis canonical moved audapolis/audapolis → bugbakery/audapolis (live); row 264 Kaltura canonical moved kaltura/server → kaltura-community/server (live). GPL audit RESOLVED: LosslessCut (GPL-2.0) + Avidemux (GPL-2.0) flags VALID — catalog badges corrected to quarantined-standalone; StaxRip flag FALSE POSITIVE — MIT verified, ✅ stands. Drift watch clean. Catalog: 4,762 → 4,865 honest #### entries (+103 Lane A; target 4,870+ MISSED by 5 — honest shortfall, Wave 55 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave54_lane_c/ — pycaption 2.3.13 (Apache-2.0, caption format normalization, 18/18 checks PASS) + srt 3.5.3 (MIT, SRT parse/compose/retime, 10/10 checks PASS). LGPL doctrine still PENDING OWNER VERDICT.) Wave 57 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (zero new rows; cycle 28: rows 291–300 10/10 confirmed; repo-move note 294 OpenBroadcaster; drift watch 7/7 clean). Catalog: 5,090 → 5,191 honest #### entries (+101 Lane A: retro homebrew SDK docs round 3 — Atari ST/Falcon, Amiga, X68000/FM Towns; landmark musicdisks pouët/demozoo; PD radio-drama round 6; target 5,190+ met). Lane C wired 2 permissive tools with real proofs: tools/wave57_lane_c/ — SpectralCluster (Apache-2.0, embed→cluster: ECAPA 192-dim 4-segment fixture clustered [0,1,0,1] deterministic) + pyannote-metrics (MIT, DER=0.0000 / JER=0.0000, 9/9 checks PASS) — full measured diarization stage closed; entries flipped WIRED — run-proven. LGPL doctrine still PENDING OWNER VERDICT. Wave 55 coordinator refresh (2026-10-08, missed on catalog): quarantine 557 rows · 532 distinct (+21 rows 537–557; Lane B re-verification cycle 26: rows 271–280 — 10/10 CONFIRMED, zero relicenses; row 272 Open Cubic Player precision-corrected to GPL-2.0; drift watch 10/10 clean; Kaltura/audapolis canonical-path updates). Catalog: 4,865 → 4,980 honest #### entries (+115 Lane A; target 4,970+ met). Lane C wired resampy (ISC, 24→48 kHz SRC, 130.77 dB SNR, honest round-trip caveat documented) + audiomentations (MIT, degradation-stress stage, seeded deterministic). Wave 56 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (+15 rows 558–572; row 464 ArchiveBox DELISTED — upstream relicensed GPL-3.0-only → MIT live 2026-10-08, catalog badge corrected to ✅; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Lane B re-verification cycle 27: rows 281–290 — 10/10 CONFIRMED, zero relicenses, zero delists; 4 GitHub API NOASSERTION gaps resolved by direct license-text reads; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 4,980 → 5,090 honest #### entries (+110 Lane A: PD radio-drama round 5, homebrew SDK docs round 2, video-archive tooling round 2, musicdisk archives round 2; target 5,080+ met). Lane C wired 2 permissive tools with real proofs in tools/wave56_lane_c/: DeepFilterNet (dual MIT/Apache-2.0 deep-NN speech denoiser — 6/7 checks PASS: +5.9 dB stationary / +4.4 dB non-stationary on the real Kokoro VO fixture, clean no-op, byte-deterministic; 1 honest relative-gate FAIL documented) + SpeechBrain ECAPA-TDNN speaker embeddings (Apache-2.0 — 6/6 checks PASS, intra/inter cosine margin +0.1483, byte-deterministic; diarization "who spoke when" stage). Pipeline now: text→VO→lip-sync→denoise+master→subtitles→normalize→SRC→**deep denoise + speaker embeddings**. Wave 58 coordinator refresh (2026-10-08): 576 rows · 550 distinct (576 row numbers present, no gaps; Lane A appended rows 573–576: BitJag atari 240p test suite GPL-2.0+, rmvlib LGPL-2.1, pce-devel/huc mixed (contains GPL components), BitJag install scripts GPL-3.0 — all 4 live, zero supersedes/delists; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Lane B re-verification cycle 29: rows 301–310 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 5,191 → 5,294 honest #### entries (+103 Lane A: SDK docs round 4 — PCE/TG-16, Neo Geo, 32X, Jaguar; landmark musicdisks pouet toplist #11–#25; PD radio-drama round 7 — 54 single-episode deep dives; target 5,290+ met). Lane C first REAL-VOICE diarization test with proof in tools/wave58_lane_c/: 3 Kokoro voices dialogue (ECAPA-TDNN 192-dim, 1.5s/0.25s windows → SpectralCluster → pyannote-metrics): DER 0.4084 / JER 0.5478 @collar 0.0; forced k=3 → DER 0.3359; auto-k merges the two female voices (embeddings contain all 3 voices, count selection is the failure); window-level DER ~0.34 is structural, next lane: VAD-boundary refinement. Flag for Wave 59: Lane A P3 single-episode badge discipline differs from Wave-55 single-episode 'underlying broadcast PD' reasoning — uniformity review requested. LGPL doctrine still PENDING OWNER VERDICT.) **Wave 59 coordinator refresh (2026-10-08): 576 rows · 550 distinct** (576 row numbers present, no gaps — independent direct recount; 24 dead/superseded/delisted markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; zero new rows this wave. Lane B re-verification cycle 30: rows 311–320 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row annotations stamped re-verified; drift watch 11/11 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical; OpenBroadcaster canonical path intact). Catalog: 5,294 → 5,401 honest #### entries (+107 Lane A: SDK docs round 5 — 35 arcade/homebrew console SDK docs, 18 landmark musicdisks (pouët toplist), 54 PD radio-drama round 8 single-episode deep dives; target 5,400+ met). OTR badge-discipline ruling (Lane A, documented in Wave 59 wave note): show-established-✅PD + stated licenseurl-absent diligence rule; Lone Ranger keeps ⚠️ caution (character rights, not broadcast). Lane C wired VAD-boundary diarization refinement with real proofs in tools/wave59_lane_c/: two independent implementations — webrtcvad-tuned (DER 0.4084 → 0.3416, JER 0.5478 → 0.5051, 11/13 checks PASS, torch-free) + silero-vad variant (tuned DER 0.4020 ~flat, forced-k=3 → DER 0.0941 confirming A/C female-voice merge is the embedding-side problem); dominant error is A↔C female-voice confusion (~12.2s of 13.4s), boundary methods cannot fix it. LGPL doctrine still PENDING OWNER VERDICT.)
 
 
 
@@ -55489,3 +55489,642 @@ Round 3 continues the landmark-musicdisk pocket below rounds 1–2's pouët all-
 **OTR badge-discipline ruling (Wave 59, required uniformity review):** The staged P3 items carried licenseurl on only 2 of 54 items. Wave 55's rule ("underlying broadcast PD" → ✅) and Wave 58's per-item-mark rule (licenseurl → ✅, absent → ❓) are both superseded by this standing rule: a show with an established ✅ PD status documented in the catalog (per-show entry with named PD precedent) may carry ✅ on per-episode items WITH the established-PD note AND the item-level licenseurl-absent fact stated honestly — no assumed PD. Everything else is a ❓ diligence record. Shows flagged ⚠️ rights-caution in prior waves (Lone Ranger, Green Hornet, The Shadow) keep their caution regardless of per-item PD marks, because the caution is about character rights, not the broadcast recording. Applied: the 50 Jack Benny episodes = ✅ (established precedent: catalogued "The Jack Benny Program (OTR)" ✅ PD — "uploader-labeled PD; radio episodes widely treated as PD" — plus Wave 54 ✅ era entries on "underlying US radio broadcasts"); the 4 Lone Ranger episodes = ⚠️ rights-caution (standing precedent: character actively trademarked, later episodes renewed, per-episode check required — the 2 per-item PD marks are noted but do not lift the caution). No item was assumed PD without precedent; no Lone Ranger item was badged ✅.
 
 **P2 ranking-source disclosure:** pouët's musicdisk toplist ("top of the trumpets", toplist.php?type=musicdisk, fetched live 2026-10-08; top-10 confirmed on the page) is the ranking source — demozoo publishes no charts page (/charts/ verified 404, per Wave 58). Round 3 covers the long-tail tier below rounds 1–2's #1–#25; every prod page verified LIVE on demozoo via browser fetch (direct curl Cloudflare-blocked, HTTP 403). Demozoo record types were checked per item: 4 candidates dropped for type/title mismatches (documented above).
+### Wave 60 Lane A summary (2026-10-08)
+
+- New #### entries: 103 (P1: 35 SDK docs round 6 — arcade system docs (CPS-2/Neo Geo/JAMMA/manufacturer manuals), console homebrew SDKs (jzIntv, libctru, wut, nxdk, amiga-bootcamp), homebrew dev-doc sites/scans (Virtual Boy, Lynx, MSX, Sega CD, C64 PRG, MSX Handbook, Stella Guide), 16 emulator dev-docs wikis · P2: 17 landmark musicdisks round 4 (pouët vote-sorted tier below round 3) · P3: 51 PD radio-drama round 9 single-episode deep dives — 6 Boston Blackie, 6 Richard Diamond, 3 Pat Novak, 6 Sherlock Holmes, 6 Dark Fantasy, 6 Lights Out, 6 Quiet Please, 6 Dimension X, 6 Night Beat)
+- Badge summary: ✅ 54 (3 P1 permissive: wut Zlib, nxdk multi-permissive, amiga-bootcamp MIT · 51 P3 established-PD show episodes) · ⚠️ 8 (P1 manufacturer-doc scans: MVS Service Manual, Major Havok, Toobin', Zarzon, Neo-Geo Dev Manual, C64 PRG, MSX Handbook, Stella Guide) · ❓ 40 (23 P1 sites/wikis/docs incl. 16 emulator dev-docs + libctru · 17 P2 musicdisks) · 🚫 quarantined 1 (P1 jzIntv GPL-2.0 → quarantine row 577)
+- Quarantine rows added: 1 — row 577: moqucu/jzintv GPL-2.0 (Intellivision emulator+devkit; GitHub API spdx None, raw LICENSE = GPL v2 text). Emulator dev-docs entries are DOCUMENTATION ONLY (❓) — upstream code licenses noted honestly, not quarantined. Header refreshed: 577 rows · 551 distinct.
+- Duplicates rejected: P1 — MSX Resource Center (direct dupe of line 36063, same URL) dropped, replaced with Skyline docs; P2 honest drops (7): "Twisted Chipster #1" (Chip Music Pack), "Any Color" (64K Intro), "TiTAN Chipdisk #1" (Chip Music Pack), "Hugi #36" (Diskmag), "Echofied 6581" (pouët/demozoo group+date mismatch: Razor 1911 Jun 2003 vs Maniacs of Noise 2010-05-02), "Static Chaos" (Demo), "Chipdisk 1" Beepdealers (Chip Music Pack); pre-round dedup removed Back to the Sources / The Alliance / Mus1k / chipdisk #3 / Chipdisk 4 / chipmusicdisk #2 / Preschool #2 (already in rounds 1–3). P3: 13 access-restricted Boxcars711/pod items excluded (private=true audio); multi-episode collections excluded; Pat Novak ships 3 not 6 (four targeted hunts: clean singles genuinely scarce).
+- Catalog count: 5,401 → 5,504 honest #### entries (+103 Lane A; target 5,500+ met).
+
+**P2 ranking-source disclosure:** pouët's musicdisk prodlist sorted by thumb-up votes (prodlist.php?type[]=musicdisk&order=thumbup, fetched live 2026-10-08 — the toplist page renders only top 10, so the vote-sorted prodlist is the ranking source for the long tail). Round 4 covers the next vote tier below round 3. Every prod page verified LIVE on demozoo via API v1 on 2026-10-08 (title + group + Musicdisk-type match; pouët prod IDs cross-linked from pouët pages). Demozoo record types checked per item.
+
+### Wave 60 Lane A — Pocket 1: SDK docs round 6 (35)
+
+Round 6 pushes the SDK-docs pocket into the arcade/homebrew deep tail: arcade system hardware docs (CPS-2/Neo Geo/JAMMA/manufacturer service manuals), console homebrew SDKs/toolchains (Intellivision, 3DS, Wii U, Xbox, Amiga CD32), homebrew dev-doc sites and scanned references (Virtual Boy, Lynx, MSX, Sega CD, C64, Atari 2600), and emulator developer documentation (wikis and docs for 15 active emulators). Every URL below was verified live on 2026-10-08 (HTTP 200 or archive.org metadata API). GitHub repos: license verified via GitHub API spdx_id, then raw LICENSE text when NOASSERTION. Emulator wiki/docs entries are catalogued as DOCUMENTATION only (❓ docs carry no license grant — MAME-documentation precedent); the upstream code license is noted honestly and is NOT quarantined (the code itself is not catalogued here). jzIntv's repo IS the devkit (code+docs) and is GPL-2.0 → quarantined at row 577. Pre-append dedup: 0 dupes.
+
+#### CPS2Shock — CPS-2 Hardware Documentation ❓ license unverified
+- **What:** CPS2Shock — community documentation hub for Capcom CPS-2 arcade hardware (emulation/dev reference).
+- **URL:** https://cps2shock.emu-france.info/
+- **License:** ❓ license unverified (verified live HTTP 200, 2026-10-08; no license statement on site)
+- **Free tier:** Free access
+
+#### NeoGeoDev Wiki ❓ license unverified
+- **What:** NeoGeoDev Wiki — Neo Geo homebrew/development wiki (hardware docs, SDK references).
+- **URL:** https://wiki.neogeodev.org/
+- **License:** ❓ license unverified (verified live HTTP 200, 2026-10-08; no license statement on site)
+- **Free tier:** Free access
+
+#### JAMMA Pinout Reference (PDF) ❓ license unverified
+- **What:** JAMMA pinout reference PDF — arcade cabinet wiring standard for board swapping/dev.
+- **URL:** https://files.arcaniac.com/PDF/Pinouts/Pinout-JAMMA.pdf
+- **License:** ❓ license unverified (verified live HTTP 200, 2026-10-08; reference document, no license statement)
+- **Free tier:** Free PDF
+
+#### Neo Geo MVS Service Manual (SNK) ⚠️ manufacturer-doc scan
+- **What:** Neo Geo MVS Service Manual — SNK arcade board service documentation (scanned).
+- **URL:** https://archive.org/details/arcademanual_neogeo_mv1fz_manual
+- **License:** ⚠️ manufacturer-doc scan (verified 2026-10-08: archive.org item live, 13 files, no license grant; SNK-authored)
+- **Free tier:** Free download
+
+#### Major Havok Arcade Manual (Atari) ⚠️ manufacturer-doc scan
+- **What:** Arcade Game Manual: Major Havok by Atari — operator/service manual (scanned).
+- **URL:** https://archive.org/details/ArcadeGameManualMajor-havoc-tg252
+- **License:** ⚠️ manufacturer-doc scan (verified 2026-10-08: archive.org item live, 14 files, no license grant; Atari-authored)
+- **Free tier:** Free download
+
+#### Toobin' Arcade Manual (Atari Games) ⚠️ manufacturer-doc scan
+- **What:** Arcade Game Manual: Toobin' by Atari Games — operator/service manual (scanned).
+- **URL:** https://archive.org/details/ArcadeGameManualToobin
+- **License:** ⚠️ manufacturer-doc scan (verified 2026-10-08: archive.org item live, 14 files, no license grant; Atari Games-authored)
+- **Free tier:** Free download
+
+#### Zarzon Arcade Manual (Taito) ⚠️ manufacturer-doc scan
+- **What:** Arcade Game Manual: Zarzon by Taito — operator/service manual (scanned).
+- **URL:** https://archive.org/details/ArcadeGameManualZarzon
+- **License:** ⚠️ manufacturer-doc scan (verified 2026-10-08: archive.org item live, 14 files, no license grant; Taito-authored)
+- **Free tier:** Free download
+
+#### Neo-Geo Development Manual ⚠️ manufacturer-doc scan
+- **What:** Neo-Geo Development Manual — SNK developer documentation for Neo Geo (scanned).
+- **URL:** https://archive.org/details/Neo-Geo_Development_Manual
+- **License:** ⚠️ manufacturer-doc scan (verified 2026-10-08: archive.org item live, 13 files, no license grant; SNK-authored)
+- **Free tier:** Free download
+
+#### jzIntv — Intellivision Emulator & Development Kit (quarantined: GPL-2.0)
+- **What:** jzIntv — Joe Zbiciak's Intellivision emulator AND development kit (assembler, debugger, docs). The repo IS the SDK.
+- **URL:** https://github.com/moqucu/jzintv
+- **License:** GPL-2.0 (verified 2026-10-08: GitHub API spdx None; raw LICENSE text confirms "GNU GENERAL PUBLIC LICENSE Version 2") → LICENSE_QUARANTINE row 577
+- **Free tier:** Free (GPL-2.0)
+
+#### devkitPro libctru — 3DS Homebrew Library ❓ license unverified
+- **What:** libctru — devkitPro's homebrew library for Nintendo 3DS (ctrulib).
+- **URL:** https://github.com/devkitPro/libctru
+- **License:** ❓ license unverified (verified 2026-10-08: GitHub API spdx_id None; no LICENSE file in repo root; no license section in README)
+- **Free tier:** Free access
+
+#### devkitPro wut — Wii U Toolchain ✅ Zlib
+- **What:** wut — devkitPro's Wii U toolchain (headers, libraries, tools).
+- **URL:** https://github.com/devkitPro/wut
+- **License:** ✅ Zlib (verified 2026-10-08: GitHub API spdx_id "Zlib")
+- **Free tier:** Free (Zlib)
+
+#### nxdk — Xbox Development Kit ✅ multi-license permissive
+- **What:** nxdk — open-source Xbox (original) development kit by the xboxdev team.
+- **URL:** https://github.com/xboxdev/nxdk
+- **License:** ✅ multi-license permissive (verified 2026-10-08: GitHub API spdx None; repo REUSE LICENSES/ dir carries Apache-2.0, CC0-1.0, MIT, NCSA texts — permissive only, no copyleft)
+- **Free tier:** Free (permissive)
+
+#### amiga-bootcamp — Amiga/CD32 Knowledge Base ✅ MIT
+- **What:** amiga-bootcamp — Amiga homebrew knowledge base incl. CD32/Akiko references (docs + examples).
+- **URL:** https://github.com/walkero-gr/amiga-bootcamp
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id "MIT")
+- **Free tier:** Free (MIT)
+
+#### Planet Virtual Boy ❓ license unverified
+- **What:** Planet Virtual Boy — Virtual Boy homebrew/development hub (docs, tools, releases).
+- **URL:** https://www.virtual-boy.com/
+- **License:** ❓ license unverified (verified live HTTP 200, 2026-10-08; no license statement on site)
+- **Free tier:** Free access
+
+#### Programming the Atari Lynx (book) ❓ license unverified
+- **What:** "Programming the Atari Lynx" — free online book on Lynx homebrew development.
+- **URL:** http://book.atarilynx.dev/
+- **License:** ❓ license unverified (verified live HTTP 200, 2026-10-08; no license statement on site)
+- **Free tier:** Free access
+
+#### Sega Retro: Sega CD ❓ license unverified
+- **What:** Sega Retro — Sega CD hardware/software documentation (wiki).
+- **URL:** https://segaretro.org/Sega_CD
+- **License:** ❓ license unverified (verified live HTTP 200, 2026-10-08; wiki content, no per-page license statement checked)
+- **Free tier:** Free access
+
+#### Skyline — Switch Emulator Repository & Docs ❓ docs; code license unverified
+- **What:** Skyline — Nintendo Switch emulator repository with developer documentation.
+- **URL:** https://github.com/skyline-emu/skyline
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; repo carries no LICENSE file and README has no license section — code license unverified; docs carry no license grant; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### Commodore 64 Programmer's Reference Guide ⚠️ manufacturer-doc scan
+- **What:** Commodore 64 Programmer's Reference Guide — Commodore's official C64 programming reference (scanned).
+- **URL:** https://archive.org/details/c64-programmer-ref
+- **License:** ⚠️ manufacturer-doc scan (verified 2026-10-08: archive.org item live, 21 files, no license grant; Commodore-authored)
+- **Free tier:** Free download
+
+#### MSX Technical Handbook (Sony) ⚠️ manufacturer-doc scan
+- **What:** MSX Technical Handbook by Sony — official MSX hardware technical reference (scanned).
+- **URL:** https://archive.org/details/MSXTechnicalHandbookBySony
+- **License:** ⚠️ manufacturer-doc scan (verified 2026-10-08: archive.org item live, 10 files, no license grant; Sony-authored)
+- **Free tier:** Free download
+
+#### Stella Programmer's Guide (Atari 2600) ⚠️ manufacturer-doc, fan-mirrored
+- **What:** Stella Programmer's Guide by Steve Wright (1979) — the canonical Atari 2600 programming guide, HTML mirror.
+- **URL:** https://alienbill.com/2600/101/docs/stella.html
+- **License:** ⚠️ manufacturer-doc, fan-mirrored (verified live HTTP 200, 2026-10-08; Atari-authored 1979; mirrored on fan site, no license grant)
+- **Free tier:** Free access
+
+#### DuckStation Wiki ❓ docs; code CC BY-NC-ND 4.0 (noted, not quarantined)
+- **What:** DuckStation developer wiki — PS1 emulator internals/development documentation.
+- **URL:** https://github.com/stenzek/duckstation/wiki
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE license per GitHub API: CC BY-NC-ND 4.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### Flycast Developer Docs ❓ docs; code GPL-2.0 (noted, not quarantined)
+- **What:** Flycast docs/ — Dreamcast/Naomi/Atomiswave emulator developer documentation.
+- **URL:** https://github.com/flyinghead/flycast/tree/master/docs
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### Dolphin Wiki ❓ docs; code GPL-2.0+ (noted, not quarantined)
+- **What:** Dolphin Emulator wiki — GameCube/Wii emulator development documentation.
+- **URL:** https://wiki.dolphin-emu.org/
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0+ per LICENSE text — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### PCSX2 Developer Resources ❓ docs; code GPL-3.0 (noted, not quarantined)
+- **What:** PCSX2 — PS2 emulator site with developer documentation and resources.
+- **URL:** https://pcsx2.net/
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-3.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### RPCS3 Wiki ❓ docs; code GPL-2.0 (noted, not quarantined)
+- **What:** RPCS3 wiki — PS3 emulator development and compatibility documentation.
+- **URL:** https://wiki.rpcs3.net/
+- **License:** ❓ docs license unverified (verified live via text fetch, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### melonDS Wiki ❓ docs; code GPL-3.0 (noted, not quarantined)
+- **What:** melonDS wiki — Nintendo DS emulator development documentation.
+- **URL:** https://github.com/melonDS-emu/melonDS/wiki
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-3.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### PPSSPP Wiki ❓ docs; code GPL-2.0+ (noted, not quarantined)
+- **What:** PPSSPP wiki — PSP emulator development documentation.
+- **URL:** https://github.com/hrydgard/ppsspp/wiki
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0+ per LICENSE text — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### bsnes Repository & Docs ❓ docs; code GPL-3.0 (noted, not quarantined)
+- **What:** bsnes — SNES emulator repository with developer documentation.
+- **URL:** https://github.com/bsnes-emu/bsnes
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-3.0 per LICENSE text — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### xemu Documentation ❓ docs; code GPL-2.0 (noted, not quarantined)
+- **What:** xemu docs — original Xbox emulator developer documentation.
+- **URL:** https://xemu.app/docs/
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0 per LICENSE text — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### Vita3K Wiki ❓ docs; code GPL-2.0 (noted, not quarantined)
+- **What:** Vita3K wiki — PS Vita emulator development documentation.
+- **URL:** https://github.com/Vita3K/Vita3K/wiki
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### DeSmuME ❓ docs; code GPL-2.0 (noted, not quarantined)
+- **What:** DeSmuME — Nintendo DS emulator site with developer documentation.
+- **URL:** https://desmume.org/
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### Cemu Wiki ❓ docs; code MPL-2.0 (noted, not quarantined)
+- **What:** Cemu wiki — Wii U emulator development documentation.
+- **URL:** https://wiki.cemu.info/
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: MPL-2.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### Azahar ❓ docs; code GPL-3.0 (noted, not quarantined)
+- **What:** Azahar — Nintendo 3DS emulator site with developer documentation.
+- **URL:** https://azahar-emu.org/
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-3.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### ShadPS4 Wiki ❓ docs; code GPL-2.0 (noted, not quarantined)
+- **What:** ShadPS4 wiki — PS4 emulator development documentation.
+- **URL:** https://github.com/shadps4-emu/shadPS4/wiki
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-2.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+#### Panda3DS Repository & Docs ❓ docs; code GPL-3.0 (noted, not quarantined)
+- **What:** Panda3DS — Nintendo 3DS emulator repository with developer documentation.
+- **URL:** https://github.com/wheremyfoodat/Panda3DS
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE: GPL-3.0 — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+
+### Wave 60 Lane A — Pocket 2: landmark musicdisk deep dives round 4 (17)
+
+Round 4 continues the landmark-musicdisk pocket below rounds 1–3's coverage. Ranking source: pouët's musicdisk prodlist sorted by thumb-up votes (fetched live 2026-10-08 via prodlist.php?type[]=musicdisk&order=thumbup — the "top of the trumpets" toplist page renders only the top 10, so the vote-sorted prodlist is the ranking source for the long tail; demozoo publishes no charts page). Round 4 covers the next vote tier below round 3's long-tail set. Every prod page below was verified LIVE on demozoo via the demozoo API v1 on 2026-10-08 (title + group + Musicdisk-type match; pouët prod IDs cross-linked from pouët prod pages). Honest drops this round (failures documented, no entries): "Twisted Chipster #1" — demozoo types it "Chip Music Pack", not Musicdisk; "Any Color" — demozoo types it "64K Intro", not Musicdisk; "TiTAN Chipdisk #1" — demozoo types it "Chip Music Pack", not Musicdisk; "Hugi #36 - Jukebox Delight" — demozoo types it "Diskmag", not Musicdisk; "Echofied 6581" — group/date mismatch between pouët (Razor 1911, Jun 2003) and demozoo (Maniacs of Noise, 2010-05-02), unresolvable; "Static Chaos" — demozoo types it Demo; "Chipdisk 1" (Beepdealers) — demozoo types it "Chip Music Pack". Pre-round dedup also removed "Back to the sources" (NightRadio), "The Alliance" (Rebels+Titan), "Mus1k" (Orb), "chipdisk #3" (Razor 1911), "Chipdisk 4 - The Essentials" (Razor 1911), "chipmusicdisk #2" (Rebels), "Preschool #2" (Abyss) — all already catalogued in rounds 1–3. No license statements on any scene prod record — all ❓, with NC-not-declared honest negatives (nothing on the records declares non-commercial restriction). Pre-append dedup: 0 dupes.
+
+#### Cheesy Listening — Alcatraz + Offence + Rebels (Feb 2022) ❓ license unverified
+- **What:** "Cheesy Listening" — Alcatraz/Offence/Rebels Amiga OCS/ECS musicdisk (Feb 2022), 93 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/305249/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 90905 cross-linked)
+- **Free tier:** Free download
+
+#### AmigAtari — Oxygene (Apr 2020) ❓ license unverified
+- **What:** "AmigAtari" — Oxygene Amiga OCS/ECS musicdisk (Apr 2020), 3rd at Revision Online 2020 Wild, 90 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/277237/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 85276 cross-linked)
+- **Free tier:** Free download
+
+#### BitJam Remix Competition 1 — BitFellas (Aug 2008) ❓ license unverified
+- **What:** "BitJam Remix Competition 1" (pouët: "BitJam RMX 001") — BitFellas Windows musicdisk (Aug 2008), 1st at Evoke 2008 Wild, 90 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/37944/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 51219 cross-linked)
+- **Free tier:** Free download
+
+#### Emerald Box — Conspiracy (May 2004) ❓ license unverified
+- **What:** "Emerald Box" — Conspiracy Windows musicdisk (May 2004), 90 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/59645/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 12258 cross-linked)
+- **Free tier:** Free download
+
+#### Stuck Somewhere in Time — Titan + Up Rough + iNSANE (Nov 2014) ❓ license unverified
+- **What:** "Stuck Somewhere in Time" — Titan/Up Rough/iNSANE multi-platform (Amiga/Browser/Megadrive) musicdisk (Nov 2014), 1st at Compusphere 2014 Wild, 83 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/127445/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 64438 cross-linked)
+- **Free tier:** Free download
+
+#### TECKNiCS — CoolPHat (Sep 2005) ❓ license unverified
+- **What:** "TECKNiCS" — CoolPHat Windows musicdisk (Sep 2005), 82 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/163570/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 18883 cross-linked)
+- **Free tier:** Free download
+
+#### warptYMe — YM Rockerz (Aug 2006) ❓ license unverified
+- **What:** "warptYMe" — YM Rockerz Atari ST/E musicdisk (Aug 2006), 5th at Evoke 2006 Wild, 81 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/8155/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 25855 cross-linked)
+- **Free tier:** Free download
+
+#### Sound of the Untergrund — UKScene Allstars (Apr 2008) ❓ license unverified
+- **What:** "Sound of the Untergrund" — UKScene Allstars Windows musicdisk (Apr 2008), 77 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/10167/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 50212 cross-linked)
+- **Free tier:** Free download
+
+#### 8-Bit Jungle — Unstable Label (Sep 2011) ❓ license unverified
+- **What:** "8-Bit Jungle" — Unstable Label Amiga OCS/ECS musicdisk (Sep 2011), 2nd at Sunrise 2011 Oldskool Demo, 76 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/21372/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 57727 cross-linked)
+- **Free tier:** Free download
+
+#### Chillosophy 3: Fly With Xerxes — Brainstorm (Jan 2008) ❓ license unverified
+- **What:** "Chillosophy 3: Fly With Xerxes" (pouët: "Chillosophy 3") — Brainstorm Windows musicdisk (Jan 2008), 76 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/199535/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 47547 cross-linked)
+- **Free tier:** Free download
+
+#### reTracked #1 — reTracked Team (Apr 2006) ❓ license unverified
+- **What:** "reTracked #1" — reTracked Team Windows musicdisk (Apr 2006), 76 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/199504/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 24448 cross-linked)
+- **Free tier:** Free download
+
+#### Seven — YM Rockerz (Apr 2011) ❓ license unverified
+- **What:** "Seven" — YM Rockerz Atari ST/E musicdisk (Apr 2011), 75 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/60210/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 56810 cross-linked)
+- **Free tier:** Free download
+
+#### Jailhouse Voices — Alcatraz (Sep 2008) ❓ license unverified
+- **What:** "Jailhouse Voices" — Alcatraz Windows musicdisk (Sep 2008), 4th at Function 2008 Wild, 73 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/10280/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 51760 cross-linked)
+- **Free tier:** Free download
+
+#### 0913 — Live! (Dec 2014) ❓ license unverified
+- **What:** "0913" — Live! Atari ST/E musicdisk (Dec 2014), 4th at Silly Venture 2k14 Wild, 71 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/128034/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 64496 cross-linked)
+- **Free tier:** Free download
+
+#### ZX-TRUE Chipdisk! — Critical Mass (Apr 2005) ❓ license unverified
+- **What:** "ZX-TRUE Chipdisk!" (pouët: "Zx-True") — Critical Mass Windows musicdisk (Apr 2005), 70 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/199400/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 16808 cross-linked)
+- **Free tier:** Free download
+
+#### Chillosophy — Brainstorm (Nov 2006) ❓ license unverified
+- **What:** "Chillosophy" — Brainstorm Windows musicdisk (Nov 2006), 69 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/97300/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 26982 cross-linked)
+- **Free tier:** Free download
+
+#### Panda-Monium Music Disk 7 — CoolPHat (Apr 2007) ❓ license unverified
+- **What:** "Panda-Monium Music Disk 7" — CoolPHat Windows musicdisk (Apr 2007, Breakpoint 2007), 57 pouët thumb-ups.
+- **URL:** https://demozoo.org/productions/193493/
+- **License:** ❓ license unverified (verified 2026-10-08: demozoo API v1 live; title/group/Musicdisk-type match; no license statement on record; pouët prod 30221 cross-linked)
+- **Free tier:** Free download
+
+### Wave 60 Lane A — Pocket 3: PD radio-drama round 9 (51)
+
+Round 9 continues the per-show per-episode deep dives below rounds 7–8's coverage. All 9 shows carry established ✅ PD show-level entries (Boston Blackie, Richard Diamond/Private Detective, Pat Novak for Hire, Sherlock Holmes w/ Rathbone+Bruce, Dark Fantasy, Lights Out, Quiet Please, Dimension X, Night Beat) — per Wave 59 ruling, single-episode items from an established-PD show carry ✅ WITH the established-PD note AND the item-level licenseurl-absent fact stated honestly. Pat Novak ships 3 (not 6): four targeted archive.org hunts confirmed clean single-episode Pat Novak uploads are genuinely scarce — remaining candidates were access-restricted Boxcars711 pods (private=true audio), multi-episode collections (24–77 files), or cross-show podcast episodes; documented honestly rather than padded. Every item below was verified via the archive.org metadata API on 2026-10-08 (live, not access-restricted, single-episode: ≤3 audio files, <60 files total). Access-restricted Boxcars711/pod items (13) were excluded as honest negatives — their audio files are private=true. Multi-episode collections (400+ files) excluded as non-singles. Pre-append dedup (title + URL vs catalog incl. round 7/8 lists): 0 dupes.
+
+#### Boston Blackie — "Murder At The Movies" (Dec 13, 1945) ✅ established-PD show entry
+- **What:** "Murder At The Movies" — Boston Blackie episode (Dec 13, 1945), single-episode audio.
+- **URL:** https://archive.org/details/BostonBlackie451213MurderAtTheMovies
+- **License:** ✅ PD (established-PD show-level entry for Boston Blackie; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Boston Blackie — "The Worthington Pearls" (Jul 9, 1945) ✅ established-PD show entry
+- **What:** "The Worthington Pearls" — Boston Blackie episode (Jul 9, 1945), single-episode audio.
+- **URL:** https://archive.org/details/BostonBlackie450709TheWorthingtonPearls
+- **License:** ✅ PD (established-PD show-level entry for Boston Blackie; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Boston Blackie — "Hypnotic Murder" (Aug 6, 1945) ✅ established-PD show entry
+- **What:** "Hypnotic Murder" — Boston Blackie episode (Aug 6, 1945), single-episode audio.
+- **URL:** https://archive.org/details/BostonBlackie450806HypnoticMurder
+- **License:** ✅ PD (established-PD show-level entry for Boston Blackie; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 10 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Boston Blackie — "Uncle Bill Blaines Legacy" (May 16, 1945) ✅ established-PD show entry
+- **What:** "Uncle Bill Blaines Legacy" — Boston Blackie episode (May 16, 1945), single-episode audio.
+- **URL:** https://archive.org/details/BostonBlackie450516UncleBillBlainesLegacy
+- **License:** ✅ PD (established-PD show-level entry for Boston Blackie; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Boston Blackie — "Murdered Show Dog Owner" (Oct 8, 1946) ✅ established-PD show entry
+- **What:** "Murdered Show Dog Owner" — Boston Blackie episode (Oct 8, 1946), single-episode audio.
+- **URL:** https://archive.org/details/BostonBlackie461008MurderedShowDogOwner
+- **License:** ✅ PD (established-PD show-level entry for Boston Blackie; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Boston Blackie — "Farady Is Shot" (Oct 22, 1946) ✅ established-PD show entry
+- **What:** "Farady Is Shot" — Boston Blackie episode (Oct 22, 1946), single-episode audio.
+- **URL:** https://archive.org/details/BostonBlackie461022FaradyIsShot
+- **License:** ✅ PD (established-PD show-level entry for Boston Blackie; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Richard Diamond, Private Detective — "The Tom Waxman Bombing Case" (Jun 26, 1949) ✅ established-PD show entry
+- **What:** "The Tom Waxman Bombing Case" — Richard Diamond, Private Detective episode (Jun 26, 1949), single-episode audio.
+- **URL:** https://archive.org/details/RichardDiamondPrivateDetective490626TheTomWaxmanBombingCase
+- **License:** ✅ PD (established-PD show-level entry for Richard Diamond/Private Detective; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Richard Diamond, Private Detective — "Dead Mans Letter" (Nov 8, 1950) ✅ established-PD show entry
+- **What:** "Dead Mans Letter" — Richard Diamond, Private Detective episode (Nov 8, 1950), single-episode audio.
+- **URL:** https://archive.org/details/RichardDiamondPrivateDetective501108DeadMansLetter
+- **License:** ✅ PD (established-PD show-level entry for Richard Diamond/Private Detective; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Richard Diamond, Private Detective — "The Jewel Thief" (Feb 19, 1950) ✅ established-PD show entry
+- **What:** "The Jewel Thief" — Richard Diamond episode (Feb 19, 1950), single-episode audio.
+- **URL:** https://archive.org/details/6c7sog6wbbcfyr8d8bqunlbimxcapda9oaruzqeu
+- **License:** ✅ PD (established-PD show-level entry for Richard Diamond/Private Detective; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Richard Diamond, Private Detective — "Rene Bennet Protection" ✅ established-PD show entry
+- **What:** "Rene Bennet Protection" — Richard Diamond, Private Detective episode, single-episode audio.
+- **URL:** https://archive.org/details/ba5gxkghuqbxhjmwe3f7fy6grelw2xhe0ywzsn3v
+- **License:** ✅ PD (established-PD show-level entry for Richard Diamond/Private Detective; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Richard Diamond — "The Bogus Bill Case" ✅ established-PD show entry
+- **What:** "The Bogus Bill Case" (a/k/a "Newspaper Boy") — Richard Diamond episode, single-episode audio.
+- **URL:** https://archive.org/details/jtwbqc1trzjzwjojucfuocd8alzwmfsqqu41uchu
+- **License:** ✅ PD (established-PD show-level entry for Richard Diamond/Private Detective; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Richard Diamond — "The Man Who Hated Women" (Jul 16, 1949) ✅ established-PD show entry
+- **What:** "The Man Who Hated Women" — Richard Diamond episode (Jul 16, 1949), single-episode audio.
+- **URL:** https://archive.org/details/RichardDiamond_938
+- **License:** ✅ PD (established-PD show-level entry for Richard Diamond/Private Detective; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 7 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Sherlock Holmes — "Haunting Of Sherlock Holmes" (May 20, 1946) ✅ established-PD show entry
+- **What:** "Haunting Of Sherlock Holmes" — Sherlock Holmes (Rathbone/Bruce) episode (May 20, 1946), single-episode audio.
+- **URL:** https://archive.org/details/SherlockHolmes19460520HauntingOfSherlockHolmes
+- **License:** ✅ PD (established-PD show-level entry for Sherlock Holmes w/ Rathbone+Bruce; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Sherlock Holmes — "The Adventure Of London Tower" (Dec 12, 1948) ✅ established-PD show entry
+- **What:** "The Adventure Of London Tower" — Sherlock Holmes episode (Dec 12, 1948), single-episode audio.
+- **URL:** https://archive.org/details/SherlockHolmes1948-12-12TheAdventureOfLondonTower
+- **License:** ✅ PD (established-PD show-level entry for Sherlock Holmes w/ Rathbone+Bruce; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Sherlock Holmes — "Girl With Gazelle" (Mar 25, 1946) ✅ established-PD show entry
+- **What:** "Girl With Gazelle" — Sherlock Holmes episode (Mar 25, 1946), single-episode audio.
+- **URL:** https://archive.org/details/SherlockHolmes460325GirlWithGazelle
+- **License:** ✅ PD (established-PD show-level entry for Sherlock Holmes w/ Rathbone+Bruce; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Sherlock Holmes — "Disappearing Scientists" (Apr 8, 1946) ✅ established-PD show entry
+- **What:** "Disappearing Scientists" — Sherlock Holmes episode (Apr 8, 1946), single-episode audio.
+- **URL:** https://archive.org/details/SherlockHolmes460408DisappearingScientists
+- **License:** ✅ PD (established-PD show-level entry for Sherlock Holmes w/ Rathbone+Bruce; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### New Adventures Of Sherlock Holmes — "Problem Of Thor Bridge" (Oct 1, 1945) ✅ established-PD show entry
+- **What:** "Problem Of Thor Bridge" — New Adventures Of Sherlock Holmes episode (Oct 1, 1945), single-episode audio.
+- **URL:** https://archive.org/details/NewAdventuresOfSherlockHolmes451001ProblemOfThorBridge
+- **License:** ✅ PD (established-PD show-level entry for Sherlock Holmes w/ Rathbone+Bruce; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Sherlock Holmes — "The Speckled Band" (Dec 19, 1948) ✅ established-PD show entry
+- **What:** "The Speckled Band" — Sherlock Holmes episode (Dec 19, 1948), single-episode audio.
+- **URL:** https://archive.org/details/SherlockHolmes1948-12-19TheSpeckledBand
+- **License:** ✅ PD (established-PD show-level entry for Sherlock Holmes w/ Rathbone+Bruce; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dark Fantasy — "The Demon Tree" (Dec 5, 1941) ✅ established-PD show entry
+- **What:** "The Demon Tree" — Dark Fantasy episode (Dec 5, 1941), single-episode audio.
+- **URL:** https://archive.org/details/DarkFantasy411205TheDemonTree
+- **License:** ✅ PD (established-PD show-level entry for Dark Fantasy; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dark Fantasy — "The Sea Phantom" (Feb 6, 1942) ✅ established-PD show entry
+- **What:** "The Sea Phantom" — Dark Fantasy episode (Feb 6, 1942), single-episode audio.
+- **URL:** https://archive.org/details/DarkFantasy420206TheSeaPhantom
+- **License:** ✅ PD (established-PD show-level entry for Dark Fantasy; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dark Fantasy — "The Man Who Came Back" (Nov 14, 1941) ✅ established-PD show entry
+- **What:** "The Man Who Came Back" — Dark Fantasy episode (Nov 14, 1941), single-episode audio.
+- **URL:** https://archive.org/details/DarkFantasy411114TheManWhoCameBack
+- **License:** ✅ PD (established-PD show-level entry for Dark Fantasy; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 10 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dark Fantasy — "Thing From Sea" (Nov 28, 1941) ✅ established-PD show entry
+- **What:** "Thing From Sea" — Dark Fantasy episode (Nov 28, 1941), single-episode audio.
+- **URL:** https://archive.org/details/ignc3w7ie45p3m1djs1gjeiwf8jzya1yiyp7u1ck
+- **License:** ✅ PD (established-PD show-level entry for Dark Fantasy; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dark Fantasy — "A Delicate Case Of Murder" (Feb 20, 1942) ✅ established-PD show entry
+- **What:** "A Delicate Case Of Murder" — Dark Fantasy episode (Feb 20, 1942), single-episode audio.
+- **URL:** https://archive.org/details/DarkFantasy420220ADelicateCaseOfMurder
+- **License:** ✅ PD (established-PD show-level entry for Dark Fantasy; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dark Fantasy — "The Thing From The Darkness" (Apr 3, 1942) ✅ established-PD show entry
+- **What:** "The Thing From The Darkness" — Dark Fantasy episode (Apr 3, 1942), single-episode audio.
+- **URL:** https://archive.org/details/DarkFantasy420403TheThingFromTheDarkness
+- **License:** ✅ PD (established-PD show-level entry for Dark Fantasy; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Lights Out — "Money, Money, Money" (Mar 30, 1943) ✅ established-PD show entry
+- **What:** "Money, Money, Money" — Lights Out episode (Mar 30, 1943), single-episode audio.
+- **URL:** https://archive.org/details/LightsOut19430330Money_Money_Money
+- **License:** ✅ PD (established-PD show-level entry for Lights Out; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Lights Out — "The Author And The Thing" (Sep 28, 1943) ✅ established-PD show entry
+- **What:** "The Author And The Thing" — Lights Out episode (Sep 28, 1943), single-episode audio.
+- **URL:** https://archive.org/details/LightsOut430928TheAuthorAndTheThing
+- **License:** ✅ PD (established-PD show-level entry for Lights Out; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Lights Out — "Revolt Of The Worms" (Oct 13, 1942) ✅ established-PD show entry
+- **What:** "Revolt Of The Worms" — Lights Out episode (Oct 13, 1942), single-episode audio.
+- **URL:** https://archive.org/details/LightsOut421013RevoltOfTheWorms
+- **License:** ✅ PD (established-PD show-level entry for Lights Out; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Lights Out — "Poltergeist" (Oct 20, 1942) ✅ established-PD show entry
+- **What:** "Poltergeist" — Lights Out episode (Oct 20, 1942), single-episode audio.
+- **URL:** https://archive.org/details/LightsOutPoltergeist10201942
+- **License:** ✅ PD (established-PD show-level entry for Lights Out; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Lights Out — "Mister Maggs" (Dec 1, 1942) ✅ established-PD show entry
+- **What:** "Mister Maggs" — Lights Out episode (Dec 1, 1942), single-episode audio.
+- **URL:** https://archive.org/details/LightsOut421201MisterMaggs
+- **License:** ✅ PD (established-PD show-level entry for Lights Out; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Lights Out — "Ghost On The Newsreel Negative" ✅ established-PD show entry
+- **What:** "Ghost On The Newsreel Negative" — Lights Out episode, single-episode audio.
+- **URL:** https://archive.org/details/LightsOut-GhostOnTheNewsreelNegative
+- **License:** ✅ PD (established-PD show-level entry for Lights Out; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Quiet Please — "Very Unimportant Person" (Dec 5, 1948) ✅ established-PD show entry
+- **What:** "Very Unimportant Person" — Quiet Please episode (Dec 5, 1948), single-episode audio.
+- **URL:** https://archive.org/details/QuietPlease481205VeryUnimportantPerson
+- **License:** ✅ PD (established-PD show-level entry for Quiet Please; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Quiet Please — "Whence Came You?" (Feb 16, 1948) ✅ established-PD show entry
+- **What:** "Whence Came You?" — Quiet Please episode (Feb 16, 1948), single-episode audio.
+- **URL:** https://archive.org/details/QuietPleaseWhenceCameYou02161948
+- **License:** ✅ PD (established-PD show-level entry for Quiet Please; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Quiet Please — "Don't Tell Me About Halloween" (Oct 27, 1947) ✅ established-PD show entry
+- **What:** "Don't Tell Me About Halloween" — Quiet Please episode (Oct 27, 1947), single-episode audio.
+- **URL:** https://archive.org/details/QuietPlease471027DontTellMeAboutHalloween
+- **License:** ✅ PD (established-PD show-level entry for Quiet Please; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Quiet Please — "Some People Don't Die" (Dec 8, 1947) ✅ established-PD show entry
+- **What:** "Some People Don't Die" — Quiet Please episode (Dec 8, 1947), single-episode audio.
+- **URL:** https://archive.org/details/QuietPlease471208SomePeopleDontDie
+- **License:** ✅ PD (established-PD show-level entry for Quiet Please; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Quiet Please — "There Are Shadows Here" (May 10, 1948) ✅ established-PD show entry
+- **What:** "There Are Shadows Here" — Quiet Please episode (May 10, 1948), single-episode audio.
+- **URL:** https://archive.org/details/QuietPlease480510ThereAreShadowsHere
+- **License:** ✅ PD (established-PD show-level entry for Quiet Please; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Quiet Please — "The Thing On The Fourble Board" (Aug 9, 1948) ✅ established-PD show entry
+- **What:** "The Thing On The Fourble Board" — Quiet Please episode (Aug 9, 1948), single-episode audio.
+- **URL:** https://archive.org/details/QuietPlease480809TheThingOnTheFourbleBoard
+- **License:** ✅ PD (established-PD show-level entry for Quiet Please; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dimension X — "With Folded Hands" (Apr 15, 1950) ✅ established-PD show entry
+- **What:** "With Folded Hands" — Dimension X episode (Apr 15, 1950), single-episode audio.
+- **URL:** https://archive.org/details/DimensionX500415WithFoldedHands
+- **License:** ✅ PD (established-PD show-level entry for Dimension X; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dimension X — "Destination Moon" (Jun 24, 1950) ✅ established-PD show entry
+- **What:** "Destination Moon" — Dimension X episode (Jun 24, 1950), single-episode audio.
+- **URL:** https://archive.org/details/DimensionX500624DestinationMoon
+- **License:** ✅ PD (established-PD show-level entry for Dimension X; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dimension X — "Report On Barnhouse Effect" (Apr 22, 1950) ✅ established-PD show entry
+- **What:** "Report On Barnhouse Effect" — Dimension X episode (Apr 22, 1950), single-episode audio.
+- **URL:** https://archive.org/details/DimensionX19500422ReportOnBarnhouseEffect
+- **License:** ✅ PD (established-PD show-level entry for Dimension X; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dimension X — "The Lost Race" (May 20, 1950) ✅ established-PD show entry
+- **What:** "The Lost Race" — Dimension X episode (May 20, 1950), single-episode audio.
+- **URL:** https://archive.org/details/DimensionX500520TheLostRace
+- **License:** ✅ PD (established-PD show-level entry for Dimension X; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dimension X — "Untitled Story" (Aug 23, 1951) ✅ established-PD show entry
+- **What:** "Untitled Story" — Dimension X episode (Aug 23, 1951), single-episode audio.
+- **URL:** https://archive.org/details/DimensionX510823UntitledStory
+- **License:** ✅ PD (established-PD show-level entry for Dimension X; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Dimension X — "The Parade" (Aug 25, 1950) ✅ established-PD show entry
+- **What:** "The Parade" — Dimension X episode (Aug 25, 1950), single-episode audio.
+- **URL:** https://archive.org/details/DimensionX500825TheParade
+- **License:** ✅ PD (established-PD show-level entry for Dimension X; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Night Beat — "The Hunter Becomes The Hunted" (Sep 11, 1950) ✅ established-PD show entry
+- **What:** "The Hunter Becomes The Hunted" — Night Beat episode (Sep 11, 1950), single-episode audio.
+- **URL:** https://archive.org/details/NightBeat500911TheHunterBecomesTheHunted
+- **License:** ✅ PD (established-PD show-level entry for Night Beat; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Night Beat — "The Girl in the Park" (Feb 27, 1950) ✅ established-PD show entry
+- **What:** "The Girl in the Park" — Night Beat episode (Feb 27, 1950), single-episode audio.
+- **URL:** https://archive.org/details/ob59pmqqrk4ycbregvt9jqogtme1zru4gee2vkue
+- **License:** ✅ PD (established-PD show-level entry for Night Beat; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Night Beat — "Zero" ✅ established-PD show entry
+- **What:** "Zero" (Nightbeat-001) — Night Beat episode, single-episode audio.
+- **URL:** https://archive.org/details/zjvl6ouhijespy7hnyqo8dyvqrogael6nyvn5kqo
+- **License:** ✅ PD (established-PD show-level entry for Night Beat; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Night Beat — "I Know Your Secret" (Apr 10, 1950) ✅ established-PD show entry
+- **What:** "I Know Your Secret" — Night Beat episode (Apr 10, 1950), single-episode audio.
+- **URL:** https://archive.org/details/eqwslpfvo66fmdclyo7vn7lbxgloukeqtf6teq3z
+- **License:** ✅ PD (established-PD show-level entry for Night Beat; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Night Beat — "Gus Reed, The Juvenile Gangster" ✅ established-PD show entry
+- **What:** "Gus Reed, The Juvenile Gangster" — Night Beat episode, single-episode audio.
+- **URL:** https://archive.org/details/kpwlprhueix7qbcvfmjqlo2zlvjflldxrtguw96o
+- **License:** ✅ PD (established-PD show-level entry for Night Beat; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Night Beat — "Tong War" ✅ established-PD show entry
+- **What:** "Tong War" — Night Beat episode, single-episode audio.
+- **URL:** https://archive.org/details/9epkqkuso8axkhy3hxqz1lvjoulvok5edds7vewd
+- **License:** ✅ PD (established-PD show-level entry for Night Beat; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Pat Novak For Hire — "Rita Malloy" (May 1, 1949) ✅ established-PD show entry
+- **What:** "Rita Malloy" — Pat Novak For Hire episode (May 1, 1949), single-episode audio.
+- **URL:** https://archive.org/details/sjbhmdkh1bvobeh1j6eybvg96i0kwsgjvihmrnrn
+- **License:** ✅ PD (established-PD show-level entry for Pat Novak for Hire; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Pat Novak For Hire — "Killing in a Church" ✅ established-PD show entry
+- **What:** "Killing in a Church" (Father Lahey/Joe Feldman) — Pat Novak For Hire episode, single-episode audio.
+- **URL:** https://archive.org/details/nhvrro5fnh9xsb30kupgnzwcksrlps2cjt52bo2j
+- **License:** ✅ PD (established-PD show-level entry for Pat Novak for Hire; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+
+#### Pat Novak For Hire — "Fleet Lady" (Mar 6, 1949) ✅ established-PD show entry
+- **What:** "Fleet Lady" — Pat Novak For Hire episode (Mar 6, 1949), single-episode audio.
+- **URL:** https://archive.org/details/oazciyrstmdngvtclu8toqww0recol1svbzmmdww
+- **License:** ✅ PD (established-PD show-level entry for Pat Novak for Hire; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming

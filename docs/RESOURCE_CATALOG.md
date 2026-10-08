@@ -7783,8 +7783,8 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Free tier:** fully free
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** One-command re-sync of drifted subtitles; no training needed. [Wave 7 A]
+- **Status:** wired (Wave 37 Lane B)
+- **Notes:** One-command re-sync of drifted subtitles; no training needed. [Wave 7 A] Wired Wave 37 Lane B: real proof tools/wave37_lane_b/ — espeak-ng ground-truth timings, +3000ms-shifted SRT recovered to 0.0ms MAE.
 
 #### insanely-fast-whisper ✅ commercial-safe
 - **What:** Fast Whisper transcription via optimum + transformers
@@ -32075,8 +32075,8 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Free tier:** Free/open
 - **Repo lane:** trippedd (captions/karaoke)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Newer web-native alternative to Karaoke Mugen for hosted karaoke sessions. [Wave 36 Lane A]
+- **Status:** wired (Wave 37 Lane B)
+- **Notes:** Newer web-native alternative to Karaoke Mugen for hosted karaoke sessions. [Wave 36 Lane A] Wired Wave 37 Lane B: real proof tools/wave37_lane_b/ — real FastAPI/WebSocket backend driven under uvicorn, full karaoke session (room create, host+client joins, 2 song enqueues, queue advance), 8/8 protocol checks pass.
 
 #### nomadkaraoke/karaoke-generator ❓ license undeclared (archived)
 - **What:** karaoke-generator — pipeline attempting to fully automate the creation of karaoke music videos; archived 2025 (successor project: karaoke-gen).

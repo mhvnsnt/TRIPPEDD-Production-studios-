@@ -1,0 +1,34 @@
+{
+  "tool": "libxmp",
+  "tool_version": "4.6.0 (libxmp4_4.6.0-2_amd64.deb, Ubuntu noble universe)",
+  "tool_license": "MIT (catalog: upstream README verified 2026-10-07)",
+  "input": {
+    "url": "https://raw.githubusercontent.com/cmatsuoka/libxmp/master/test-dev/data/Gaffeltruck.mod",
+    "path": "Gaffeltruck.mod",
+    "bytes": 196092,
+    "magic_1080": "FEST",
+    "real_upstream_test_file": true
+  },
+  "render": {
+    "sample_rate": 44100,
+    "channels": 2,
+    "bits": 16,
+    "frames": 1323008,
+    "duration_s": 30.0,
+    "render_cap_s": 30,
+    "play_buffer_end_rc": 0,
+    "module_total_time_ms": 220800
+  },
+  "measured": {
+    "peak": 28612,
+    "rms": 5777.88,
+    "nonzero_samples": 2618459,
+    "total_samples": 2646016
+  },
+  "wav": {
+    "path": "gaffeltruck_libxmp.wav",
+    "bytes": 5292076,
+    "header_verified": true
+  },
+  "ran": "2026-10-08"
+}

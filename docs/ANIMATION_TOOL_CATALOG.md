@@ -1600,3 +1600,288 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Dedup:** 2D-animation lane covers OpenToonz Xsheet (RESOURCE_CATALOG.md line 97: OpenToonz, BSD-3-Clause)
 - **Repo lane:** trippedd-studio (utilities pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+## Motion capture / pose estimation / rotoscoping
+
+Wave-2 Lane A pocket: markerless mocap, pose estimation, mocap cleanup, and rotoscoping aids. Licences verified upstream 2026-10-08; GPL/AGPL/MPL-family → [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) rows 78+. NC/research-only tools are documented as 🚫 honest exclusions.
+
+#### MediaPipe ✅ — Google's cross-platform pose/hand/face landmark stack
+- **What:** Real-time 2D/3D pose, hand, and face-mesh landmarks (BlazePose/PoseLandmarker) on CPU; the cheapest markerless-mocap front-end for rotoscope/reference capture.
+- **URL:** https://github.com/google-ai-edge/mediapipe
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** extract joint trajectories from reference footage → retarget onto character rigs; BlazePose covered here (no separate entry).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### MMPose ✅ — OpenMMLab pose-estimation toolbox (RTMPose, whole-body, hand/face)
+- **What:** 2D/3D pose estimation benchmark + pre-trained models (RTMPose real-time, whole-body 133-keypoint); the pose counterpart to MMDetection/MMCV.
+- **URL:** https://github.com/open-mmlab/mmpose
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** high-accuracy pose extraction for mocap reference; RTMPose for near-real-time capture passes.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### SLEAP ✅ — multi-animal/multi-person pose tracking framework
+- **What:** Deep-learning pose tracking with a GUI for labelling; strong temporal tracking, works on people as well as animals.
+- **URL:** https://github.com/talmolab/sleap
+- **License:** BSD-3-Clause-Clear (verified 2026-10-08 via GitHub API license field)
+- **Use:** track performers across shots for consistent joint tracks; label custom character-motion datasets.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Detectron2 Keypoint R-CNN ✅ — Meta's detection platform with keypoint heads
+- **What:** Production-grade object detection/segmentation/keypoint platform; Keypoint R-CNN gives 17-joint COCO poses with mature training recipes.
+- **URL:** https://github.com/facebookresearch/detectron2
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** robust multi-person pose in crowded reference footage; baseline for custom character-pose models.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### trt_pose ✅ — NVIDIA TensorRT-accelerated real-time pose estimation
+- **What:** Real-time human pose estimation optimized for Jetson via TensorRT; lightweight enough for live capture rigs.
+- **URL:** https://github.com/NVIDIA-AI-IOT/trt_pose
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** live mocap preview on NVIDIA hardware; cheap real-time pose feed for previs.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### DWPose ✅ — whole-body pose estimation via two-stage distillation (ControlNet's pose backbone)
+- **What:** ICCV 2023 whole-body pose estimator (body+face+hands+feet); the pose model behind ControlNet's OpenPose pipeline — strong on hands.
+- **URL:** https://github.com/IDEA-Research/DWPose
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** hand-accurate pose extraction for gesture-heavy acting reference; better hands than most 2D pose nets.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### ROMP ✅ — monocular one-stage regression of multiple 3D people
+- **What:** Single-image multi-person 3D mesh recovery (SMPL) with 3D positions; no per-person crop needed.
+- **URL:** https://github.com/Arthur151/ROMP
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** 3D body meshes from single-camera reference for blocking out character motion in 3D.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### HybrIK ✅ — hybrid analytical-neural inverse kinematics for 3D pose
+- **What:** 3D human pose via learned twist + analytical IK; produces skeleton-ready joint angles rather than raw keypoints.
+- **URL:** https://github.com/Jeff-sjtu/HybrIK
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** joint-angle output maps more directly onto character rigs than 2D keypoints; mocap-to-rig bridge.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### MotionBERT ✅ — unified 3D motion representation (pose + mesh + action)
+- **What:** ICCV 2023 transformer that lifts 2D pose sequences to 3D motion; handles noisy/occluded inputs well.
+- **URL:** https://github.com/Walter0807/MotionBERT
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** 2D-to-3D motion lifting for reference footage; denoises shaky pose tracks into smooth character motion.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### 4D-Humans (HMR 2.0) ✅ — transformer-based 3D human reconstruction + tracking
+- **What:** Reconstructs and tracks 3D humans (SMPL) from video with a transformer; strong temporal consistency for mocap.
+- **URL:** https://github.com/shubham-goel/4D-Humans
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** video → temporally-consistent 3D body meshes for character motion reference.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### mmhuman3d ✅ — OpenMMLab 3D human parametric-model toolbox
+- **What:** Unified framework for SMPL/SMPL-X parametric human models: fitting, evaluation, and data pipelines.
+- **URL:** https://github.com/open-mmlab/mmhuman3d
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** fit parametric bodies to pose estimates → standard skeleton output for rig retargeting.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+
+#### PaddleDetection keypoint ✅ — PaddlePaddle detection toolkit with keypoint models
+- **What:** Apache-2.0 detection/keypoint toolkit with high-accuracy human keypoint models and deployment tooling (Paddle Inference).
+- **URL:** https://github.com/PaddlePaddle/PaddleDetection
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** alternative pose front-end with strong deployment story; keypoint detection branch for reference capture.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### SAM (Segment Anything) ✅ — promptable image segmentation for rotoscope masks
+- **What:** Meta's promptable segmentation: click/box/text → masks; the fastest way to generate per-frame rotoscope masks from a seed frame.
+- **URL:** https://github.com/facebookresearch/segment-anything
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** seed rotoscope masks for characters/props; feed into video mask propagation (SAM2/XMem/Cutie).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### SAM 2 ✅ — video mask propagation for rotoscoping
+- **What:** SAM's video successor: prompt once, propagate masks across the whole shot with temporal consistency — a rotoscope engine.
+- **URL:** https://github.com/facebookresearch/sam2
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** full-shot character/props mattes from a single prompted frame; rotoscope plate cleanup.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### XMem ✅ — long-term video object segmentation (Atkinson-Shiffrin memory)
+- **What:** ECCV 2022 video object segmentation with long-term memory; holds masks across occlusions and long shots.
+- **URL:** https://github.com/hkchengrex/XMem
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** rotoscope mask tracking where SAM2 drifts; long takes with re-appearing characters.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Cutie ✅ — video object segmentation that puts the object back
+- **What:** CVPR 2024 highlight VOS with object-level memory; strong on small/fast objects that other trackers lose.
+- **URL:** https://github.com/hkchengrex/Cutie
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** roto masks for small props/fast hands; pairs with SAM seeds.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Anipose ✅ — multi-view markerless 3D pose triangulation
+- **What:** Triangulates 2D poses from multiple calibrated cameras into 3D skeletons; the cheap multi-cam mocap stage.
+- **URL:** https://github.com/lambdaloop/anipose
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** 3D capture from 2–6 commodity cameras; calibrate → track → export 3D joint trajectories for retargeting.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### DeepPoseKit ✅ — fast, user-friendly pose-estimation toolkit
+- **What:** Pose-estimation toolkit emphasizing fast inference and easy labelling workflows.
+- **URL:** https://github.com/jgraving/DeepPoseKit
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** quick custom pose models for non-human or stylized character reference tracking.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### GMFlow ✅ — global-matching optical flow (CVPR 2022 Oral)
+- **What:** Optical flow via global matching instead of coarse-to-fine; robust on large motions that break classic flow.
+- **URL:** https://github.com/haofeixu/gmflow
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** dense motion fields for rotoscope mask propagation and flow-guided inbetweening prep.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### DeAOT ✅ — hierarchical propagation for video object segmentation
+- **What:** Decoupled visual/object propagation for VOS (AOT family); efficient multi-object mask tracking.
+- **URL:** https://github.com/z-x-yang/AOT
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** multi-character rotoscope mask tracking across shots; efficient propagation backbone.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### MoveNet ✅ — lightning-fast on-device pose (TensorFlow Hub)
+- **What:** Ultra-light pose model (Lightning/Thunder variants) for mobile and browser; single-pose real-time on CPU.
+- **URL:** https://tfhub.dev (MoveNet model pages; TF Hub standard licence)
+- **License:** Apache-2.0 (TensorFlow Hub models publish under Apache-2.0 — verify on the model page before wiring)
+- **Use:** browser/PWA-side pose capture for the Concrete Dragon / AshLane PWA pipeline; on-device reference capture.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### PoseNet ✅ — classic browser pose estimation (tfjs-models)
+- **What:** The original in-browser pose estimator (single/multiple poses) via TensorFlow.js; runs anywhere WebGL runs.
+- **URL:** https://github.com/tensorflow/tfjs-models
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** in-browser pose capture widgets; legacy but dependency-light reference pose feed.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### three.js BVHLoader ✅ — BVH mocap import for the web/Three.js pipeline
+- **What:** Official three.js example loader for Biovision Hierarchy (.bvh) mocap files → THREE.AnimationClip, plus SkeletonHelper retargeting utilities.
+- **URL:** https://github.com/mrdoob/three.js (examples/jsm/loaders/BVHLoader.js)
+- **License:** MIT (verified 2026-10-08 via GitHub API license field — three.js)
+- **Use:** load mocap takes directly into the Three.js/Concrete Dragon pipeline; retarget BVH onto game characters.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### EasyMocap ⚠️ PRL-1.0 (registration required for project use)
+- **What:** ZJU "make human motion capture easier": multi-view mocap, SMPL fitting, camera calibration tooling.
+- **URL:** https://github.com/zju3dv/EasyMocap
+- **License:** Project Registration License (PRL) v1.0 (verified 2026-10-08 via repo LICENSE raw: research/educational/personal use free without registration; ANY project use — commercial or not — requires registration via their form BEFORE use).
+- **Use:** multi-view mocap stage only after registration is filed; otherwise use Anipose (BSD-2-Clause) instead.
+- **Free tier:** open with registration condition
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+
+#### ThreeDPoseUnityBarracuda ⚠️ no licence file in repo
+- **What:** Unity Barracuda sample running 3D pose estimation in-engine (Unity-side mocap demo).
+- **URL:** https://github.com/digital-standard/ThreeDPoseUnityBarracuda
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty, no LICENSE found). No rights granted; do not reuse code until licensed.
+- **Use:** reference architecture only (how to run pose nets in Unity Barracuda); reimplement under own code.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+
+#### OpenPose 🚫 non-commercial research only — honest exclusion
+- **What:** CMU's classic real-time multi-person keypoint library (body/face/hands/feet) — historically the standard 2D pose engine.
+- **URL:** https://github.com/CMU-Perceptual-Computing-Lab/openpose
+- **License:** "ACADEMIC OR NON-PROFIT ORGANIZATION NONCOMMERCIAL RESEARCH USE ONLY" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use MediaPipe/MMPose/DWPose instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### AlphaPose 🚫 non-commercial research only — honest exclusion
+- **What:** Real-time accurate full-body multi-person pose estimation + tracking system (SJTU MVIG).
+- **URL:** https://github.com/MVIG-SJTU/AlphaPose
+- **License:** "ACADEMIC OR NON-PROFIT ORGANIZATION NONCOMMERCIAL RESEARCH USE ONLY" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use MMPose/DWPose instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### VIBE 🚫 non-commercial scientific research only — honest exclusion
+- **What:** CVPR 2020 video inference for human body pose/shape (3D mesh from video) — influential 3D mocap baseline.
+- **URL:** https://github.com/mkocabas/VIBE
+- **License:** "Software Copyright License for non-commercial scientific research purposes" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use ROMP/HybrIK/MotionBERT/4D-Humans instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### ExPose 🚫 non-commercial scientific research only — honest exclusion
+- **What:** Expressive 3D pose+shape regression (body+hands+face, SMPL-X) from a single image.
+- **URL:** https://github.com/vchoutas/expose
+- **License:** "Software Copyright License for non-commercial scientific research purposes" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use DWPose+ROMP instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### GVHMR 🚫 educational/research/non-profit only — honest exclusion
+- **What:** World-grounded human motion recovery with gravity-view coordinates (ZJU) — strong global-trajectory 3D mocap.
+- **URL:** https://github.com/zju3dv/GVHMR
+- **License:** "Permission to use, copy, modify and distribute this software and its documentation for educational, research and non-profit purposes only… prohibited for commercial use" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use 4D-Humans/MotionBERT instead.
+- **Free tier:** non-commercial only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### ProPainter 🚫 NTU S-Lab 1.0 non-commercial — honest exclusion
+- **What:** ICCV 2023 video inpainting (object removal, completion, outpainting) with flow propagation + transformers — the roto-cleanup state of the art.
+- **URL:** https://github.com/sczhou/ProPainter
+- **License:** NTU S-Lab License 1.0 — "strictly for non-commercial purposes" (verified 2026-10-08 via upstream README license section). NOT commercial-safe. **EXCLUDED** — use SAM2/XMem inpainting-adjacent workflows or licensed tools instead.
+- **Free tier:** non-commercial only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### Plask 🚫 proprietary commercial — honest exclusion
+- **What:** Web-based AI motion capture (video → 3D animation) with a freemium SaaS model; popular for quick mocap without suits.
+- **URL:** https://www.plask.ai
+- **License:** Proprietary commercial (no open-source licence grant; free tier exists but output/use is governed by their ToS). **EXCLUDED** from the FOSS pipeline — use MediaPipe/Anipose/Rokoko-free alternatives instead.
+- **Free tier:** freemium (proprietary)
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a

@@ -1,0 +1,26 @@
+{
+  "row": 208,
+  "name": "unpaper",
+  "claimed": "GPL-2.0-only",
+  "kind": "github",
+  "ref": "unpaper/unpaper",
+  "api": {
+    "full_name": "unpaper/unpaper",
+    "archived": false,
+    "pushed_at": "2024-07-11T20:44:57Z",
+    "stargazers_count": 1206,
+    "default_branch": "main",
+    "owner": "unpaper",
+    "spdx_id": null,
+    "license_name": null
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "README.md",
+    "branch": "master",
+    "bytes": 3263
+  },
+  "text_grant": false,
+  "readme_fallback": true,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

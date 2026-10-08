@@ -30361,3 +30361,291 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** trippedd (chiptune/formats)
 - **Status:** not-started
 - **Notes:** Honest negative: checked, still no verifiable grant. [Wave 32 Lane A]
+
+#### Deepgram — audit $200 one-time credit, not a recurring free tier ⚠️ burnable credit
+- **What:** Deepgram voice AI platform (STT/TTS) with hosted APIs and pre-recorded + streaming endpoints.
+- **URL:** https://deepgram.com/
+- **License:** ⚠️ Proprietary SaaS. Free tier verified 2026-10-08 via web search: **$200 one-time credit, no card required** — a burnable credit grant, not a recurring free tier. Commercial use of API output while credit lasts is allowed under their ToS; pricing page confirms pay-as-you-go after credits.
+- **Free tier:** $200 one-time credit (no recurring free plan)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Resolves the Deepgram ❓. Use the credit for a one-time bulk transcription pass; do NOT build a recurring pipeline on it — provision TurboScribe or YouTube Studio ASR for the durable free path. [Wave 33 Lane A]
+
+#### Rev — audit free 45 AI minutes/month, English-only, thin tier ⚠️ license-conditional
+- **What:** Rev transcription/captioning service (human + AI), ADA-compliant captions.
+- **URL:** https://www.rev.com/
+- **License:** ⚠️ Proprietary SaaS. Free tier verified 2026-10-08 via web search: **45 minutes of AI transcription/captions per month, English only** — a genuinely free but thin tier; human services and non-English AI are paid. Caption output usable commercially under their ToS.
+- **Free tier:** 45 AI min/mo free (English only)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the Rev ❓. Thin tier — good for short-form caption verification, not bulk work. [Wave 33 Lane A]
+
+#### AWS Transcribe — audit 60 min/mo free for 12 months only ⚠️ time-boxed
+- **What:** Amazon's managed speech-to-text service, part of AWS.
+- **URL:** https://aws.amazon.com/transcribe/pricing/
+- **License:** ⚠️ Proprietary cloud service. Free tier verified 2026-10-08 via web search: **60 minutes/month free for the first 12 months only** (some docs note new accounts may instead receive a $200 credit grant). After the window, standard per-minute pricing applies. Resolves the two duplicate AWS Transcribe ❓ entries.
+- **Free tier:** 60 min/mo for 12 months (time-boxed, not perpetual)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Resolves both AWS Transcribe ❓ entries. Only useful as a 12-month bootstrap; opt out of human-review/training data sharing in console settings per their data-privacy terms. [Wave 33 Lane A]
+
+#### Nova AI — audit free plan with 30 subtitle min + 20-min watermarked exports ⚠️ license-conditional
+- **What:** Nova AI online video editor with auto-subtitles (wearenova.ai).
+- **URL:** https://wearenova.ai/
+- **License:** ⚠️ Proprietary SaaS. Free plan verified 2026-10-08 via web search: **30 subtitle minutes + 20 minutes of watermarked video exports** on the free plan. Commercial use of exports allowed per ToS, but watermark limits shipping use.
+- **Free tier:** 30 subtitle min; 20-min watermarked exports
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the Nova AI ❓. Fine for caption generation; burn-in exports are watermarked — export SRT and render elsewhere. [Wave 33 Lane A]
+
+#### CaptionHub — audit NO free plan, custom/enterprise pricing only 🚫 no-free-tier
+- **What:** CaptionHub broadcast captioning/subtitling SaaS (captionhub.com).
+- **URL:** https://captionhub.com/
+- **License:** 🚫 Proprietary SaaS, **no free plan** — vendor FAQ (via Saasworthy) explicitly says "CaptionHub does not offer a free plan"; pricing is custom/£40+/mo with trial only. Resolves the CaptionHub ❓ as an honest negative.
+- **Free tier:** None (trial only)
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Do not pipeline on CaptionHub; nothing free to consume. [Wave 33 Lane A]
+
+#### Web Captioner → Maestra captioner — audit original site SHUT DOWN; Maestra replacement is free unlimited live captioning ⚠️ live-only
+- **What:** Web Captioner (webcaptioner.com) — the well-known free browser live-captioning tool.
+- **URL:** https://live.maestra.ai/captioner (Maestra's replacement; original webcaptioner.com is shut down)
+- **License:** ⚠️ The **original webcaptioner.com is SHUT DOWN**; Maestra (which acquired Web Captioner) hosts a live replacement at live.maestra.ai/captioner — verified 2026-10-08 via web search as **free, unlimited live captioning, no account required**. It is LIVE captioning only (mic input); it does NOT burn captions into files.
+- **Free tier:** Free unlimited live captioning (no account)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the Web Captioner ❓ with a correction: never link the dead webcaptioner.com. Live-only — for file captions use TurboScribe or Subtitle Horse. [Wave 33 Lane A]
+
+#### Aiko — audit $24 one-time purchase, NOT free; on-device Whisper with SRT export ⚠️ paid-app
+- **What:** Aiko — on-device audio transcription app (macOS) by Sindre Sorhus, Whisper-based.
+- **URL:** https://sindresorhus.com/aiko
+- **License:** ⚠️ Paid app: the developer's own page states **$24 one-time purchase** (third-party "free" claims are stale). No recurring cost; on-device Whisper; SRT export. Resolves the Aiko ❓.
+- **Free tier:** None (paid $24 one-time)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not free — listed for completeness. For the free on-device path use faster-whisper via the local-voice skill instead. [Wave 33 Lane A]
+
+#### Subtitle Horse — audit genuine free tier, no registration ✅ commercial-safe
+- **What:** Subtitle Horse (subtitle-horse.com) — browser-based subtitle editor (SRT/TimedText/WebVTT).
+- **URL:** https://subtitle-horse.com/
+- **License:** ✅ Free version with **no registration**; exports SRT, TimedText, WebVTT (verified 2026-10-08 via web search). Resolves the Subtitle Horse ❓ — the most genuinely free caption-file tool in this lane.
+- **Free tier:** Free, no registration
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Recommended free path for manual caption correction and SRT export after TurboScribe/Rev ASR. [Wave 33 Lane A]
+
+#### SubtitleNEXT — audit paid pro software, trial only 🚫 no-free-tier
+- **What:** SubtitleNEXT — professional subtitling software (subtitlenext.com).
+- **URL:** https://subtitlenext.com/
+- **License:** 🚫 Paid pro software: Novice €350 / Explorer €900 / Expert €2950, or Vlogger rental €280/mo; trial only. No free tier. Resolves the SubtitleNEXT ❓ as an honest negative.
+- **Free tier:** None (trial only)
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Broadcast-grade tool; nothing free to consume. Skip. [Wave 33 Lane A]
+
+#### FAB Subtitler — audit paid broadcast software, no free tier; crack/warez repos ignored 🚫 no-free-tier
+- **What:** FAB Subtitler — broadcast subtitling software (FAB Media).
+- **URL:** via fab-media vendor channels
+- **License:** 🚫 Paid broadcast software; no free tier found (verified 2026-10-08 via web search). Search results are polluted with crack/warez repos falsely claiming "MIT" — those are pirate repos, NOT the vendor, and were ignored. Resolves the FAB Subtitler ❓ as an honest negative.
+- **Free tier:** None
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Do not touch the "MIT-licensed FAB" repos — piracy bait. [Wave 33 Lane A]
+
+#### MovieCaptioner — audit paid ~$99.95, 14-day trial 🚫 no-free-tier
+- **What:** MovieCaptioner — desktop captioning software by SynchriMedia.
+- **URL:** https://www.synchrimedia.com/
+- **License:** 🚫 Paid (~$99.95), 14-day trial only (verified 2026-10-08 via web search). No free tier. Resolves the MovieCaptioner ❓ as an honest negative.
+- **Free tier:** None (14-day trial)
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Skip for the free pipeline. [Wave 33 Lane A]
+
+#### community-captioner — audit README declares CC BY-SA 4.0; v2 is CC BY-NC-SA 4.0 ⚠️ share-alike, v2 noncommercial
+- **What:** community-captioner — open-source community captioning tool (GitHub: amateurmenace/community-captioner).
+- **URL:** https://github.com/amateurmenace/community-captioner
+- **License:** ⚠️ The README now **declares CC BY-SA 4.0** (verified 2026-10-08 via web search) — share-alike is unusual for code and must be kept isolated from proprietary codebases. **v2 is CC BY-NC-SA 4.0** = 🚫 non-commercial. Resolves the community-captioner ❓.
+- **Free tier:** Free / open source
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use only for reference/inspiration; do not vendor the code into shipping builds without share-alike compliance, and never use v2 in commercial work. [Wave 33 Lane A]
+
+#### Newgrounds Audio Portal — audit default license CC BY-NC-SA 3.0 on older uploads, per-track terms now 🚫 noncommercial-default
+- **What:** Newgrounds Audio Portal (newgrounds.com/audio) — massive user-uploaded music archive, chip/EDM-heavy.
+- **URL:** https://www.newgrounds.com/audio
+- **License:** 🚫 Older uploads default to **CC BY-NC-SA 3.0**; current uploads carry **per-track license badges** that vary (verified 2026-10-08 via web search). Treat the portal as non-commercial by default — per-track check required before any use.
+- **Free tier:** Free streaming/downloads per track
+- **Repo lane:** trippedd (chiptune/music sourcing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do NOT treat "free download" as commercial-safe here; check each track's license badge. [Wave 33 Lane A]
+
+#### Da! Heard-It Records — audit CC BY-NC-ND 4.0, free downloads 🚫 noncommercial
+- **What:** Da! Heard-It Records — chiptune/8-bit-leaning netlabel active since 2006 (dahearditrecords.bandcamp.com).
+- **URL:** https://dahearditrecords.bandcamp.com/
+- **License:** 🚫 **CC BY-NC-ND 4.0** verified on Bandcamp release pages (verified 2026-10-08 via web search). Free downloads, but non-commercial and no-derivatives — not shippable.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune)
+- **Status:** not-started
+- **Notes:** Great listening/reference resource for chiptune A&R, but the NC-ND terms block shipping in commercial builds. [Wave 33 Lane A]
+
+#### SectionZ — audit CC-licensed electronic music community, per-track CC variants ⚠️ per-track-terms
+- **What:** SectionZ — long-running CC-licensed electronic music community (650+ CC tracks per a 2006 Creative Commons feature).
+- **URL:** via sectionz.com community channels
+- **License:** ⚠️ Community releases under **per-track Creative Commons variants** (verified 2026-10-08 via web search); verify each track's CC badge — BY/BY-SA are commercial-safe, BY-NC variants are not.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune/electronic sourcing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-track license check mandatory. [Wave 33 Lane A]
+
+#### Protodome — audit free name-your-price downloads, license undeclared ⚠️ ask-before-shipping
+- **What:** Protodome (Blake Troise) — UK chiptune artist, Bandcamp (protodome.bandcamp.com).
+- **URL:** https://protodome.bandcamp.com/
+- **License:** ⚠️ Bandcamp **name-your-price ("Enter £0.00 for free download")** but **no license field set** on the releases (verified 2026-10-08 via web search). Free download ≠ grant: ask the artist before commercial use.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong chiptune reference artist; contact for sync terms before shipping. [Wave 33 Lane A]
+
+#### Noisechannel (NoiChan) — audit chiptune netlabel, free name-your-price releases, license undeclared ⚠️ ask-before-shipping
+- **What:** Noisechannel / NoiChan — chiptune community netlabel (noisechannel.bandcamp.com), e.g. NC072 "Triforce Tunes (2nd Level)" compilation.
+- **URL:** https://noisechannel.bandcamp.com/
+- **License:** ⚠️ Releases are **name-your-price** with a **blank license field** on Bandcamp (verified 2026-10-08 via web search). Free download ≠ grant; per-release terms undeclared.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask artists/label before commercial use. [Wave 33 Lane A]
+
+#### A Bit of Chiptune — audit social-space + indie chiptune label, terms unverified ⚠️ community-label
+- **What:** A Bit of Chiptune — social-space and indie label for "unapologetically digital" music (chiptune, digital fusion, micromusic); monthly showcases, community submissions.
+- **URL:** https://abitofchiptune.com/
+- **License:** ⚠️ Indie/community label model; no blanket CC or commercial-use grant found (verified 2026-10-08 via web search). Resolves the earlier A Bit of Chiptune ❓ — per-release/artist terms apply.
+- **Free tier:** Free streams/showcases
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Great A&R channel for chiptune collaborators; license per artist. [Wave 33 Lane A]
+
+#### Demovibes — audit free demoscene music mixtapes, per-track licensing ⚠️ per-track-terms
+- **What:** Demovibes — curated mixtape series of "the finest demoscene music" (demovibes.org), also archived on scene.org and mirrored via CVGM (cvgm.net/demovibes).
+- **URL:** https://www.demovibes.org/
+- **License:** ⚠️ Mixtapes are **free to download legally**, but constituent tracks carry **per-artist terms** — demoscene artists retain rights unless they state otherwise (verified 2026-10-08 via web search). Treat mixes as reference/listening, not as a reuse pool.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune/demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excellent taste/reference source for chip production; clear each track's artist terms before reuse. [Wave 33 Lane A]
+
+#### 8bit.fm — audit chiptune streaming radio, no reuse grant ⚠️ streaming-only
+- **What:** 8bit.fm — chiptune internet radio stream (http://8bit.fm/main.pls), 128kbps MP3.
+- **URL:** http://8bit.fm/main.pls
+- **License:** ⚠️ Streaming radio only; **no download or reuse grant** for the music played (verified 2026-10-08 via web search). Listening/research use only.
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference listening for chiptune styles; do not rip for production. [Wave 33 Lane A]
+
+#### Chiptune Radio / Chiptune Jukebox (Pirillo) — audit free procedural NES music generator with WAV/MIDI export ⚠️ output-license-undeclared
+- **What:** Chiptune Radio (arcade.pirillo.com/chiptune-radio.html) — free browser-based procedural 8-bit music generator (NES 2A03 emulation); sister app Chiptune Jukebox generates endless albums. WAV (with smpl loop chunks for Unity/Godot), stems, and MIDI export.
+- **URL:** https://arcade.pirillo.com/chiptune-radio.html
+- **License:** ⚠️ Free to use with **no account, no limits, no watermarks** (verified 2026-10-08 via web search), but the **license of generated output is not stated** on the page. Generated loops are procedurally composed (nothing sampled), which is favorable, but get written terms before shipping in a commercial product.
+- **Free tier:** Fully free, unlimited export
+- **Repo lane:** trippedd (chiptune/generative music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong candidate for placeholder/temp game music (seamless loops with loop-point metadata); verify output license before production use. [Wave 33 Lane A]
+
+#### Geometric Lullaby — audit vaporwave label, free NYOP downloads, all-rights-reserved ⚠️ not-commercial-safe
+- **What:** Geometric Lullaby — prolific vaporwave/slushwave label (geometriclullaby.bandcamp.com), 100+ catalog numbers, free-or-purchase downloads.
+- **URL:** https://geometriclullaby.bandcamp.com/
+- **License:** ⚠️ Downloads are **name-your-price/free**, but no CC statement — Bandcamp default **all rights reserved** (verified 2026-10-08 via web search). Vaporwave is sample-heavy (plunderphonics) — not commercial-safe.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (vaporwave/adjacent sourcing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listening/reference only; never ship these tracks. [Wave 33 Lane A]
+
+#### Business Casual — audit vaporwave internet label est. 2013, free NYOP, all rights reserved ⚠️ not-commercial-safe
+- **What:** business casual — vaporwave internet music label (businesscasual87.bandcamp.com), 500+ back-catalog releases, weekly Friday releases.
+- **URL:** https://businesscasual87.bandcamp.com/
+- **License:** ⚠️ Releases are **free/name-your-price**, but pages state **"all rights reserved"** (verified 2026-10-08 via web search). Not a free-culture label.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (vaporwave/adjacent sourcing)
+- **Status:** not-started
+- **Notes:** Reference only; not shippable. [Wave 33 Lane A]
+
+#### My Pet Flamingo — audit commercial label, TimeSlave sublabel 🚫 not-free
+- **What:** My Pet Flamingo — synthwave/vaporwave label, sublabel of TimeSlave Recordings.
+- **URL:** via mypetflamingo.co.uk / Bandcamp
+- **License:** 🚫 Commercial label (verified 2026-10-08 via web search); all-rights-reserved, paid releases. Not a free-culture source.
+- **Free tier:** None
+- **Repo lane:** trippedd (synthwave reference)
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 33 Lane A]
+
+#### TimeSlave Recordings — audit commercial UK synthwave label 🚫 not-free
+- **What:** TimeSlave Recordings — UK synthwave label (timeslaves.bandcamp.com).
+- **URL:** https://timeslaves.bandcamp.com/
+- **License:** 🚫 Commercial; all-rights-reserved (verified 2026-10-08 via web search). Nothing free to consume.
+- **Free tier:** None
+- **Repo lane:** trippedd (synthwave reference)
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 33 Lane A]
+
+#### Tiny Waves — audit VGM remix albums (Nintendo derivatives), all-rights-reserved 🚫 derivative-risk
+- **What:** Tiny Waves — VGM remix album project (chip-adjacent remixes of Nintendo music).
+- **URL:** via tinywaves Bandcamp channels
+- **License:** 🚫 All-rights-reserved; releases are **derivatives of Nintendo compositions** (verified 2026-10-08 via web search). Double risk: no free-culture grant AND underlying copyrighted compositions.
+- **Free tier:** Free streams
+- **Repo lane:** trippedd (chiptune)
+- **Status:** not-started
+- **Notes:** Never ship; textbook example of why "free chiptune download" ≠ usable. [Wave 33 Lane A]
+
+#### Halley Labs — audit Lapfox Trax imprint, all rights reserved 🚫 not-free
+- **What:** Halley Labs — electronic music imprint associated with Lapfox Trax (halleylabs.com).
+- **URL:** https://halleylabs.com/
+- **License:** 🚫 **"All rights reserved"** on Bandcamp (verified 2026-10-08 via web search). Commercial label.
+- **Free tier:** None
+- **Repo lane:** trippedd (electronic reference)
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 33 Lane A]
+
+#### Black Screen Records — audit commercial VGM soundtrack label 🚫 not-free
+- **What:** Black Screen Records — Cologne-based VGM soundtrack label/distributor (blackscreenrecords.bandcamp.com).
+- **URL:** https://blackscreenrecords.bandcamp.com/
+- **License:** 🚫 Commercial label/distributor; all-rights-reserved (verified 2026-10-08 via web search). Nothing free to consume.
+- **Free tier:** None
+- **Repo lane:** trippedd (VGM reference)
+- **Status:** not-started
+- **Notes:** Honest negative. [Wave 33 Lane A]
+
+#### Data Discs — audit commercial VGM label, SEGA-licensed 🚫 not-free
+- **What:** Data Discs — London VGM label (datadiscs.bandcamp.com), officially SEGA-licensed vinyl/CD releases.
+- **URL:** https://datadiscs.bandcamp.com/
+- **License:** 🚫 Commercial; **"all rights reserved"** on Bandcamp (verified 2026-10-08 via web search). One free/pay-what-you-want Zelda-inspired release exists, but the underlying compositions are © Nintendo — unusable.
+- **Free tier:** None (one PWYW exception, still encumbered)
+- **Repo lane:** trippedd (VGM reference)
+- **Status:** not-started
+- **Notes:** Honest negative. [Wave 33 Lane A]
+
+#### Curaga Records — audit commercial VGM lo-fi remix label 🚫 not-free
+- **What:** Curaga Records — VGM lo-fi remix label, commercial vinyl/CD releases.
+- **URL:** via curagarecords channels
+- **License:** 🚫 Commercial; derivatives of copyrighted VGM (verified 2026-10-08 via web search). Nothing free to consume.
+- **Free tier:** None
+- **Repo lane:** trippedd (VGM reference)
+- **Status:** not-started
+- **Notes:** Honest negative. [Wave 33 Lane A]
+

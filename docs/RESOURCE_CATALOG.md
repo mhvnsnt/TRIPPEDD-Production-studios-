@@ -2058,8 +2058,8 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Free tier:** Fully free/open-source.
 - **Repo lane:** trippedd (auto-captioning)
 - **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Best default whisper backend for the caption pipeline; powers WhisperX. Word timestamps available but less accurate than WhisperX's forced-alignment pass. [Wave 2]
+- **Status:** WIRED — run-proven
+- **Notes:** Best default whisper backend for the caption pipeline; powers WhisperX. Word timestamps available but less accurate than WhisperX's forced-alignment pass. [Wave 2] Proof: tools/wave53_lane_c/wire_subtitle_stage.py — Wave 52 mastered podcast VO (7.825 s) transcribed with whisper-tiny (1.0.3, av 12.3.0 pin): WER 0.0 vs known line, 22 word timings in-bounds, SRT+VTT emitted, mov_text track muxed into MP4 deliverable and byte-equal on extract; deterministic. [Wave 53 Lane C]
 
 #### OpenAI Whisper ✅ commercial-safe
 - **What:** Reference Whisper implementation (PyTorch) — 99-language transcription/translation, the baseline all others build on.
@@ -7766,8 +7766,8 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Free tier:** fully free
 - **Repo lane:** trippedd (backgrounds)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** HDR plate wrangling for compositing; ASWF-backed. [Wave 7 A]
+- **Status:** WIRED — run-proven
+- **Notes:** HDR plate wrangling for compositing; ASWF-backed. [Wave 7 A] Proof: tools/wave53_lane_c/wire_oiio_plate.py — real 640x360 pipeline frame -> EXR half (zip) round-trip max abs error 2.43e-04, metadata attributes byte-equal, OIIO pixel-stats vs numpy agree 9.6e-05, byte-identical determinism; JPEG-q95 lossy control measured (0.998) not gated. [Wave 53 Lane C]
 
 #### openexr ✅ commercial-safe
 - **What:** HDR image format + libraries (ILM's EXR)

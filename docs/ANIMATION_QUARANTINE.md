@@ -49,11 +49,16 @@ Convention matches [LICENSE_QUARANTINE.md](LICENSE_QUARANTINE.md).
 | 42 | Glaxnimate | https://glaxnimate.mattbas.org/ (source: github.com/mbasaglia/glaxnimate) | GPL-3.0-or-later (verified via docs/LICENSE_QUARANTINE.md row 11 — COPYING references LICENSES/GPL-3.0-or-later.txt) | 2026-10-08 Wave 1 Lane A3 (prior art: LICENSE_QUARANTINE row 11) | dedup: LICENSE_QUARANTINE.md row 11 — standalone-tool use only |
 | 43 | Enve | https://github.com/MaurycyLiebner/enve (active continuation: github.com/hope2333/enve) | GPL-3.0 (verified via docs/LICENSE_QUARANTINE.md row 6 — GitHub API spdx_id = GPL-3.0 on both repos; README "licensed under the GPL3 License") | 2026-10-08 Wave 1 Lane A3 (prior art: LICENSE_QUARANTINE row 6) | dedup: LICENSE_QUARANTINE.md row 6 — standalone-tool use only |
 | 44 | Natron | https://natrongithub.github.io (source: github.com/NatronGitHub/Natron) | GPL-2.0 (verified via docs/LICENSE_QUARANTINE.md row 87 — LICENSE.txt fetched 2026-10-07) | 2026-10-08 Wave 1 Lane A3 (prior art: LICENSE_QUARANTINE row 87) | dedup: LICENSE_QUARANTINE.md row 87 — standalone-tool use only; Natron already wired in both repos per RESOURCE_CATALOG.md |
-| 21 | Papagayo-NG | github.com/morevnaproject-org/papagayo-ng | GPL-2.0 | 2026-10-08 | Manual phoneme-breakdown lip-sync GUI. Wave 1 Lane A1. Awareness only. |
-| 22 | aeneas | github.com/readbeyond/aeneas | AGPL-3.0 | 2026-10-08 | DTW word-level audio-text sync. Wave 1 Lane A1. Awareness only. |
-| 23 | Allosaurus | github.com/xinjli/allosaurus | GPL-3.0 | 2026-10-08 | Universal phone recognizer. CORRECTED: assumed permissive, verified GPL-3.0. Wave 1 Lane A1. Awareness only. |
-| 24 | Parselmouth | github.com/YannickJadoul/Parselmouth | GPL-3.0-or-later | 2026-10-08 | Praat Python bindings (pitch/formant analysis). Wave 1 Lane A1. Awareness only. |
-| 25 | eSpeak / eSpeak-NG | github.com/espeak-ng/espeak-ng | GPL-3.0-or-later | 2026-10-08 | Formant TTS + phoneme translator. Row covers the lineage (original eSpeak + maintained fork). Wave 1 Lane A1. Awareness only. |
-| 26 | phonemizer | github.com/bootphon/phonemizer | GPL-3.0 | 2026-10-08 | Text-to-phoneme multi-backend front-end. Wave 1 Lane A1. Awareness only. |
-| 27 | MaryTTS | github.com/marytts/marytts | LGPL-3.0 | 2026-10-08 | Multilingual TTS w/ phoneme output. Weak copyleft — scope note pending owner verdict (matches LICENSE_QUARANTINE.md doctrine). Wave 1 Lane A1. |
-| 28 | DSAlign | github.com/mozilla/DSAlign | MPL-2.0 | 2026-10-08 | Archived Mozilla forced aligner. Weak copyleft (file-level); RESOURCE_CATALOG treats as commercial-safe with audit gate. Wave 1 Lane A1. |
+| 45 | Papagayo-NG | github.com/morevnaproject-org/papagayo-ng | GPL-2.0 | 2026-10-08 | Manual phoneme-breakdown lip-sync GUI. Wave 1 Lane A1. Awareness only. |
+| 46 | aeneas | github.com/readbeyond/aeneas | AGPL-3.0 | 2026-10-08 | DTW word-level audio-text sync. Wave 1 Lane A1. Awareness only. |
+| 47 | Allosaurus | github.com/xinjli/allosaurus | GPL-3.0 | 2026-10-08 | Universal phone recognizer. CORRECTED: assumed permissive, verified GPL-3.0. Wave 1 Lane A1. Awareness only. |
+| 48 | Parselmouth | github.com/YannickJadoul/Parselmouth | GPL-3.0-or-later | 2026-10-08 | Praat Python bindings (pitch/formant analysis). Wave 1 Lane A1. Awareness only. |
+| 49 | eSpeak / eSpeak-NG | github.com/espeak-ng/espeak-ng | GPL-3.0-or-later | 2026-10-08 | Formant TTS + phoneme translator. Row covers the lineage (original eSpeak + maintained fork). Wave 1 Lane A1. Awareness only. |
+| 50 | phonemizer | github.com/bootphon/phonemizer | GPL-3.0 | 2026-10-08 | Text-to-phoneme multi-backend front-end. Wave 1 Lane A1. Awareness only. |
+| 51 | MaryTTS | github.com/marytts/marytts | LGPL-3.0 | 2026-10-08 | Multilingual TTS w/ phoneme output. Weak copyleft — scope note pending owner verdict (matches LICENSE_QUARANTINE.md doctrine). Wave 1 Lane A1. |
+| 52 | DSAlign | github.com/mozilla/DSAlign | MPL-2.0 | 2026-10-08 | Archived Mozilla forced aligner. Weak copyleft (file-level); RESOURCE_CATALOG treats as commercial-safe with audit gate. Wave 1 Lane A1. |
+| 53 | aubio | github.com/aubio/aubio | GPL-3.0 | 2026-10-08 | Onset/pitch/beat tracking library. Wave 1 Lane A1. Awareness only. |
+| 54 | essentia | github.com/MTG/essentia | AGPL-3.0 | 2026-10-08 | MTG audio analysis library. Commercial license available from MTG. Wave 1 Lane A1. Awareness only. |
+| 55 | BeatRoot | eecs.qmul.ac.uk/~simond/beatroot | GPL (family) | 2026-10-08 | Classic beat tracker (Dixon, MIREX 2006). Version not pinned in available sources. Wave 1 Lane A1. Awareness only. |
+| 56 | Audacity | audacityteam.org | GPL-3.0 | 2026-10-08 | Label-track timing workflow (Sound Finder/Silence Finder). Wave 1 Lane A1. Awareness only. |
+| 57 | SoX | sourceforge.net/projects/sox | GPL-2.0-or-later (CLI; libsox LGPL-2.1-or-later) | 2026-10-08 | Audio Swiss-army knife. Upstream stalled 14.4.2 (2015); sox_ng is the maintained fork. Wave 1 Lane A1. Awareness only. |

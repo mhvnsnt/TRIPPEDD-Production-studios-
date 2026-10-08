@@ -102,3 +102,9 @@ Convention matches [LICENSE_QUARANTINE.md](LICENSE_QUARANTINE.md).
 | 95 | RobustVideoMatting | github.com/PeterL1n/RobustVideoMatting | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Real-time video matting. Awareness only — use MIT BackgroundMattingV2 instead. |
 | 96 | HandBrake | github.com/HandBrake/HandBrake | GPL-2.0 | 2026-10-08 (repo COPYING + README: "GNU General Public License (GPL) Version 2") | Lane A W2. Video transcoder; vertical encode presets. Standalone-app use only. |
 | 97 | VidCutter | github.com/ozmartian/vidcutter | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Simple video cutter/joiner for Shorts clipping. Standalone-app use only. |
+| 98 | whisper-timestamped | github.com/linto-ai/whisper-timestamped | AGPL-3.0 | 2026-10-08 (GitHub API; commonly mislabeled MIT — it is NOT) | Lane B W2. Whisper word-timestamp wrapper. Awareness only. |
+| 99 | Rubber Band Library | github.com/breakfastquay/rubberband | GPL-2.0 | 2026-10-08 (Lane B W2) | Audio time-stretch/pitch-shift for dialogue-to-beat fitting. Awareness only. |
+| 100 | SoundTouch | github.com/voipbin/soundtouch (codeberg) | LGPL-2.1 | 2026-10-08 (Lane B W2) | Tempo/pitch/rate processing. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 101 | Mimic 3 | github.com/MycroftAI/mimic3 | AGPL-3.0 | 2026-10-08 (Lane B W2; commonly mislabeled Apache — it is NOT) | Neural TTS with duration output. Awareness only. |
+| 102 | RHVoice | github.com/RHVoice/RHVoice | GPL-2.0 | 2026-10-08 (Lane B W2) | Multilingual TTS. Awareness only. |
+| 103 | SPPAS | github.com/brigittebigi/sppas | AGPL-3.0 | 2026-10-08 (Lane B W2; commonly mislabeled GPL — it is AGPL) | Speech annotation/phonetization. Awareness only. |

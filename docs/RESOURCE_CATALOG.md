@@ -18577,8 +18577,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** Self-hosted — free, no limits
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** The clustering half of embedding-based diarization without the pyannote HF-gated models: pair with any speaker-embedding extractor (Resemblyzer, WeSpeaker) → speaker-homogeneous caption cues. Author wq2012 is the Google researcher behind the original method. [Wave 17 Lane B]
+- **Status:** WIRED — run-proven (Wave 57 Lane C, 2026-10-08)
+- **Notes:** The clustering half of embedding-based diarization without the pyannote HF-gated models: pair with any speaker-embedding extractor (Resemblyzer, WeSpeaker) → speaker-homogeneous caption cues. Author wq2012 is the Google researcher behind the original method. Wired 2026-10-08 on Wave-56 ECAPA embeddings: 2 clusters, DER 0.0, JER 0.0 — see tools/wave57_lane_c/PROOFS.md. [Wave 17 Lane B]
 
 #### dscore (nryant) — diarization scoring toolkit ✅ commercial-safe
 - **What:** Reference diarization metrics: DER (diarization error rate), JER, with RTTM I/O and collar/forgiveness options — the NIST-style scoring harness.
@@ -18607,8 +18607,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** Self-hosted — free, no limits
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
-- **Notes:** Pairs with pyannote.audio (already cataloged): evaluate diarization pipelines in the same timeline objects the pipeline already produces. dscore is the NIST-flavored alternative; this is the pyannote-native one. [Wave 17 Lane B]
+- **Status:** WIRED — run-proven (Wave 57 Lane C, 2026-10-08)
+- **Notes:** Pairs with pyannote.audio (already cataloged): evaluate diarization pipelines in the same timeline objects the pipeline already produces. dscore is the NIST-flavored alternative; this is the pyannote-native one. Wired 2026-10-08: scored SpectralCluster output on Wave-56 embeddings → DER 0.0, JER 0.0 — see tools/wave57_lane_c/PROOFS.md. [Wave 17 Lane B]
 
 #### whisper-diarization — license RESOLVED: BSD-2-Clause ✅ commercial-safe
 - **What:** Whisper ASR + NeMo speaker diarization pipeline — who-spoke-when transcripts for multi-speaker captioning (resolves the Wave 9 A ❓ entry).

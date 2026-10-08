@@ -1083,6 +1083,69 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Status:** not-started
 - **Notes:** Pairs with MiDaS depth maps above — depth → proxy mesh → projected paint. [Wave 1 Lane A3]
 
+#### particles.js ✅ — lightweight JS particle backgrounds
+- **What:** Lightweight JavaScript library for particle backgrounds (snow, stars, embers, confetti) — the classic animated web/canvas backdrop.
+- **URL:** https://github.com/VincentGarreau/particles.js
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** animated particle plates behind title cards and menu backgrounds; capture via timecut for video plates.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### tsParticles ✅ — highly customizable particle effects engine (particles.js successor)
+- **What:** The maintained successor to particles.js: emitters, absorbers, interactivity, presets, framework components.
+- **URL:** https://github.com/tsparticles/tsparticles
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** richer animated background plates (fire, magic, rain) for cartoon scenes and title sequences.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### vanta.js ✅ — animated 3D backgrounds for the web
+- **What:** Animated 3D backgrounds (waves, clouds, topology, birds) built on three.js — drop-in animated backdrops.
+- **URL:** https://github.com/tengbao/vanta
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** 3D animated sky/atmosphere plates for title cards and interstitials; capture to video via timecut.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### geo_pattern ✅ — generative geometric background images
+- **What:** Generate beautiful geometric background patterns from a string seed — deterministic, infinite variations.
+- **URL:** https://github.com/jasonlong/geo_pattern
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** stylized pattern plates for motion-graphics backgrounds and lower-thirds.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+
+#### Pixelorama ✅ — MIT-licensed pixel-art / sprite plate editor
+- **What:** Full pixel-art editor: animation timeline, layers, palette tools — for hand-drawn sprite plates and tiles.
+- **URL:** https://github.com/Orama-Interactive/Pixelorama
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** paint pixel-art background plates and animated sprite tiles; the MIT alternative to GPL sprite editors.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### Piskel ✅ — web-based pixel-art / sprite editor (Apache-2.0)
+- **What:** Simple web-based spriting and pixel-art tool with animation preview — runs in the browser, exports sprite sheets and GIFs.
+- **URL:** https://github.com/piskelapp/piskel
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** quick pixel-art plates and animated sprite mockups without installing anything.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+
+#### Poly Haven ✅ — CC0 HDRIs, textures, and 3D models (public domain plates)
+- **What:** High-quality HDRIs, PBR textures, and models, all CC0 — skies, environments, and surfaces free for any use including commercial.
+- **URL:** https://polyhaven.com
+- **License:** CC0 1.0 Universal — public domain (verified 2026-10-08 via polyhaven.com/license: "All assets… are licensed as CC0… You can use our assets for any purpose, including commercial work")
+- **Use:** HDRI skies and environment plates for cartoon backgrounds; PBR textures for 3D plate integration.
+- **Free tier:** fully open (donation-supported)
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
 ## Color grading
 <!-- grading for animation, LUT tools, color management -->
 

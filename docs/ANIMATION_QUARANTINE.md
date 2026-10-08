@@ -82,3 +82,23 @@ Convention matches [LICENSE_QUARANTINE.md](LICENSE_QUARANTINE.md).
 | 75 | Zrythm | https://github.com/zrythm/zrythm | AGPL-3.0-or-later | 2026-10-07 (AUR package record; dev-team CLAUDE.md) | Lane A4. Strictest licence in this pull. Standalone-app use only |
 | 76 | ExifTool | https://github.com/exiftool/exiftool | GPL-3.0 (upstream dual Artistic/GPL) | 2026-10-07 (GitHub API license field) | Lane A4. Metadata CLI use only |
 | 77 | gifsicle | https://github.com/kohler/gifsicle | GPL-2.0 | 2026-10-07 (GitHub API license field) | Lane A4. GIF assemble/optimize CLI use only |
+| 78 | DeepLabCut | github.com/DeepLabCut/DeepLabCut | LGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Markerless pose estimation. Library — never link into shipping paths. |
+| 79 | Ultralytics YOLO (pose) | github.com/ultralytics/ultralytics | AGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. YOLOv8/YOLO11 pose models. Awareness only until audit. |
+| 80 | OpenPifPaf | github.com/openpifpaf/openpifpaf | AGPL-3.0 | 2026-10-08 (repo LICENSE raw: "GNU AGPLv3 or later") | Lane A W2. Composite-field pose estimation. Awareness only until audit. |
+| 81 | EISAI anime interpolator | github.com/ShuhongChen/eisai-anime-interpolator | AGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Perceptual 2D-animation interpolation (SoftsplatLite + DTM). Awareness only. |
+| 82 | Squirrel-RIFE (SVFI) | github.com/Justin62628/Squirrel-RIFE | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. RIFE-based interpolation app. Awareness only. |
+| 83 | LosslessCut | github.com/mifi/lossless-cut | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Lossless video/audio cutting. Standalone-app use only. |
+| 84 | Lightspark | github.com/lightspark/lightspark | LGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Open-source Flash player. Awareness only. |
+| 85 | gifski | github.com/ImageOptim/gifski | AGPL | 2026-10-08 (repo license text: "GNU AFFERO GENERAL PUBLIC LICENSE") | Lane A W2. High-quality GIF encoder. CLI use only. |
+| 86 | vid.stab | github.com/georgmartius/vid.stab | LGPL-2.1 | 2026-10-08 (repo COPYING.LESSER text: "GNU Lesser General Public License, version 2.1") | Lane A W2. Video stabilization library. Never link into shipping paths. |
+| 87 | p5.js | github.com/processing/p5.js | LGPL-2.1 | 2026-10-08 (GitHub API license field) | Lane A W2. Creative-coding background/animation sketches. Awareness only. |
+| 88 | trianglify | github.com/qrohlf/trianglify | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Triangle-art background generator. Awareness only. |
+| 89 | LibreSprite | github.com/LibreSprite/LibreSprite | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Animated sprite editor (Aseprite GPLv2 fork). Standalone-app use only. |
+| 90 | G'MIC-Qt | github.com/GreycLab/gmic-qt | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. 500+ image filters for GIMP/Krita. Plugin/standalone use only. |
+| 91 | Rigify (Blender) | blender.org (ships with Blender) | GPL (Blender source GPL-2.0-or-later per blender.org/about/license) | 2026-10-08 (blender.org license page) | Lane A W2. Auto-rigging addon. Blender-internal use only; scripts that use bpy are GPL. |
+| 92 | swftools | github.com/swftools/swftools | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W2. SWF editing/generation utilities. CLI use only. |
+| 93 | JPEXS Free Flash Decompiler | github.com/jindrapetrik/jpexs-decompiler | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. SWF decompiler/editor. Standalone-app use only. |
+| 94 | fSpy | github.com/perarnia/fSpy | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Still-image camera matching for plate integration. Standalone-app use only. |
+| 95 | RobustVideoMatting | github.com/PeterL1n/RobustVideoMatting | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Real-time video matting. Awareness only — use MIT BackgroundMattingV2 instead. |
+| 96 | HandBrake | github.com/HandBrake/HandBrake | GPL-2.0 | 2026-10-08 (repo COPYING + README: "GNU General Public License (GPL) Version 2") | Lane A W2. Video transcoder; vertical encode presets. Standalone-app use only. |
+| 97 | VidCutter | github.com/ozmartian/vidcutter | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W2. Simple video cutter/joiner for Shorts clipping. Standalone-app use only. |

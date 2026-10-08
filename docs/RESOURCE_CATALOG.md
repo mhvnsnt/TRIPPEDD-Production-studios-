@@ -29428,3 +29428,72 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Wave 29 Lane B deferred the BUILD (no Qt dev libraries) — the license is clear, so the catalog entry stands and a future lane can attempt the build again. No quarantine row needed (zlib is permissive). [Wave 30 Lane A]
 - **Wave 30 Lane C (2026-10-08):** Qt build environment re-checked — STILL absent (no qtbase5-dev/qt6-base-dev, no qmake/qmake6; compilers cmake/g++/make present). Build remains deferred, matching 10+ prior waves. [Wave 30 Lane C]
+
+## Wave 31 — Lane A (catalog deepening: PD score-archive regional deep-dives · demoscene music-disk archives · caption SaaS ToS completion · tracker-format tool implementations) — 32 entries (2026-10-08)
+
+- Previous honest count: 2,862 → new honest count: 2,894
+- Quarantine rows added: 6 (rows 265–270 — Adlib Tracker II, gbsplay, sc68, psgplay, vgmtools, ProTrackR2); max 270 · 247 distinct. LGPL finds (Nuked-OPL3, ZXTune, FluidSynth, libOPNMIDI) cataloged as ⚠️ with no new quarantine rows per the standing LGPL rule (doctrine still pending owner verdict).
+- Batches: 6 PD score-archive regional deep-dives · 7 demoscene music-disk archives · 0 caption SaaS ToS completion (badge-flip pass on verified entries, no new rows) · 19 tracker-format tool implementations
+- Dedup: every candidate name + repo URL grepped against docs/RESOURCE_CATALOG.md and docs/LICENSE_QUARANTINE.md before inclusion. Skipped as already cataloged: ÖNB/ANNO music (5 entries), DAHR general + label splits, National Library of Norway music, NLS music, KBR Belgica, NDL Digital Collections, Red Hot Jazz Archive, Alan Lomax Archive/ACE, Global Jukebox, LOC National Jukebox, UCSB Cylinder Audio Archive, Sousa Archives (UIUC). libsidplayfp mapped to existing quarantine row 258 (no new row).
+
+### Pocket 1 — PD score-archive regional deep-dives (6 entries)
+
+#### Hogan Jazz Archive (Tulane University) ⚠️ per-item rights
+- **What:** William Ransom Hogan Archive of New Orleans Music and New Orleans Jazz — 2,000+ reels of jazz oral-history interviews (1948–1997, "the largest collection of jazz oral history extant"), digitized photography collection, 40,000+ sound recordings (LPs/45s/78s/cylinders), and the Giuseppe Ferrata Score Collection (digitized scores by the Italian concert pianist/Tulane faculty member).
+- **URL:** https://library.tulane.edu/node/203 (digitized selections via Tulane University Digital Library)
+- **License:** ⚠️ Per-item rights — digitized oral histories/photos/scores stream via TUDL; commercial reuse needs per-item clearance. Research/reference use is the safe lane.
+- **Free tier:** Free streaming of digitized oral histories + photo collections
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period jazz voices for documentary-style VO research and 1920s–40s New Orleans score beds; the Ferrata scores are the directly usable PD-adjacent notation slice (verify per score). [Wave 31 Lane A]
+
+#### Institute of Jazz Studies (Rutgers University–Newark) ⚠️ per-item rights
+- **What:** The world's largest jazz archive (founded 1952): 100,000+ sound recordings (CDs/LPs/78s), 6,000 books, 30,000+ photographs, jazz oral histories, and musician papers/scores (Mary Lou Williams, Count Basie, Benny Goodman collections). IJS Digital Collections portal (ijsresearch.libraries.rutgers.edu) gives public digital access to selected collections.
+- **URL:** https://ijsresearch.libraries.rutgers.edu/ (IJS Digital Collections research portal)
+- **License:** ⚠️ Per-item rights — digital portal is public, but recordings/photos/scores carry per-item restrictions; verify before any reuse beyond research.
+- **Free tier:** Free public search + streaming of digitized selections
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the Hogan Archive (complementary coasts/eras); the Mary Lou Williams scores and oral histories are the highest-value research targets. [Wave 31 Lane A]
+
+#### Memoria Chilena (Biblioteca Nacional de Chile) ⚠️ per-item rights
+- **What:** The National Library of Chile's digital library portal — digitized cultural-heritage holdings including sheet music ("partituras"); Chilean scores surface via Wikimedia Commons with Memoria Chilena as source (e.g., 1914 print "Recuerdos" by Amelia Solar de Claro, 161 pages).
+- **URL:** https://www.memoriachilena.gob.cl/602/w3-article-620841.html (example digitized score item; portal: memoriachilena.gob.cl — browse "partituras")
+- **License:** ⚠️ Per-item rights — national-library digitizations; PD-age Chilean prints are the safe slice, verify per item.
+- **Free tier:** Free browsing of digitized items
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Latin-American score source beyond the Brazil/Argentina coverage in earlier waves; 19th-century Chilean salon music fits period cartoon scoring. [Wave 31 Lane A]
+
+#### SESC Partituras (Brazil) ⚠️ per-score composer rights
+- **What:** SESC (Serviço Social do Comércio) free score portal — ~1,300 scores by 150+ Brazilian composers as free PDF downloads, many with MP3/MIDI realizations; spans classical and popular (Brazil draws the line loosely), from Alberto Nepomuceno and Alexandre Levy to contemporary chamber composers.
+- **URL:** https://www.thefreelibrary.com/SESC+Partituras-a0426901916 (Notes-journal review documenting the portal; canonical portal URL not verified this pass — locate via search before use)
+- **License:** ⚠️ Per-score composer rights — free PDF download ≠ commercial grant; PD-era composers (Nepomuceno, Levy, Anacleto de Medeiros) are the safe slice, contemporary works need composer clearance.
+- **Free tier:** Free PDF score downloads + MP3/MIDI where offered
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strongest Brazilian score source found to date; the Levy string quartets and Nepomuceno chamber works are performance-ready PD. [Wave 31 Lane A]
+
+#### Universidad de Chile — Archivo Bello, Sección Partituras ⚠️ per-item rights
+- **What:** The Andrés Bello Archive's sheet-music section (University of Chile) — three historic collections (Pereira Salas, Edwards, and university holdings) fully catalogued, with selective digitization of the highest national-value pieces and an open-access catalogue raisonné (PDF) plus download links for digitized works.
+- **URL:** https://www.thefreelibrary.com/Recently+catalogued+music+archives+and+fonds+in+Santiago%2C+Chile%3A+a...-a0450695314 (Fontes article documenting the project; portal: archivobello.uchile.cl/partituras per the article)
+- **License:** ⚠️ Per-item rights — university archive digitizations; 19th-century Chilean prints are the PD-adjacent slice.
+- **Free tier:** Free open-access catalogue + digitized-work downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements Memoria Chilena (different institutional holdings); the published catalogue raisonné doubles as a research bibliography. [Wave 31 Lane A]
+
+#### Biblioteca Nacional de Portugal — Music Collection ❓ digital terms unverified
+- **What:** Portugal's national library music collection — 50,000+ items from the 12th to the 20th centuries (printed/manuscript scores, librettos, periodicals, personal archives); includes the Cancioneiro de Lisboa (1530–1550 Renaissance songbook, 72 folios).
+- **URL:** https://en.wikipedia.org/wiki/Biblioteca_Nacional_de_Portugal (collection facts; digital portal bndigital — score-download terms not verified this pass)
+- **License:** ❓ Digital reuse terms not verified this pass — the physical collection's importance is established, but per-item digital rights need a verification pass before wiring.
+- **Free tier:** Unknown (catalogue browsing confirmed)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Held as a ❓ finding aid for a future verification lane; the Renaissance cancioneiros are the long-term target. [Wave 31 Lane A]

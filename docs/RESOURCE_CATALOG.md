@@ -42186,3 +42186,277 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Honest negative — the adaptive-music/pooling feature set is the reference for what to build open, but the asset itself is closed and Unity-only. [Wave 47 Lane A]
+
+## Wave 48 Lane A — new entries (2026-10-08)
+
+### Pocket 1 — PD animation/cartoon archive tail (27 entries)
+
+#### Internet Archive — Classic Cartoons collection ✅ per-item PD
+- **What:** Curated IA collection of classic-era cartoons (Fleischer, Van Beuren, Ub Iwerks, Terrytoons-era PD titles and silent cartoons).
+- **URL:** https://archive.org/details/classic_cartoons
+- **License:** ✅ Per-item public domain — pre-1930 and non-renewed titles; verify each item's date (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Direct PD cartoon plate source — Betty Boop/Fleischer-era and silent-cartoon restorations live here. Cross-check PD status per title (some uploads are mislabeled). [Wave 48 Lane A]
+
+#### Internet Archive — Vintage Cartoons collection ✅ per-item PD
+- **What:** Second IA curated vintage-cartoon collection — overlaps Classic Cartoons but carries distinct uploads (early sound-era shorts, Aesop's Fables-era material).
+- **URL:** https://archive.org/details/vintage_cartoons
+- **License:** ✅ Per-item public domain — verify each item (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedup against classic_cartoons before pulling — meaningful overlap between the two collections. [Wave 48 Lane A]
+
+#### Internet Archive — Silent Films collection ✅ per-item PD
+- **What:** IA's silent-film collection — thousands of pre-1930 silents including early animation (Edison, Bray, and silent cartoon shorts).
+- **URL:** https://archive.org/details/silent_films
+- **License:** ✅ Per-item public domain — US pre-1930 silents; verify each item (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-animation hunting ground — search within for Bray, Edison, and silent cartoon series. [Wave 48 Lane A]
+
+#### A/V Geeks (Internet Archive) ✅ per-item PD/educational
+- **What:** Skip Elsheimer's A/V Geeks collection of 16mm educational films on IA — includes animated educational shorts and Prelinger-style animation reels.
+- **URL:** https://archive.org/details/avgeeks
+- **License:** ✅ Per-item — largely public-domain educational/industrial films (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prelinger-style animation reels live here — sponsored/educational animation with clean PD status. [Wave 48 Lane A]
+
+#### Internet Archive — Unsorted Animation ⚠️ per-item rights
+- **What:** Large unsorted IA animation bucket (~578 items) — mixed PD, fan uploads, and modern indie animation.
+- **URL:** https://archive.org/details/animation_unsorted
+- **License:** ⚠️ Per-item rights — NOT a PD collection; verify every item before use (verified 2026-10-08 via archive.org metadata search, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — useful for discovering PD items misfiled outside curated collections, but rights must be checked per item. [Wave 48 Lane A]
+
+#### Internet Archive — Universal Newsreels ✅ US federal PD
+- **What:** Universal Newsreel releases 1929–1967 (NARA-sourced) — newsreel footage with animated title cards and period interstitial graphics.
+- **URL:** https://archive.org/details/universal_newsreels
+- **License:** ✅ Public domain — NARA holdings released to the public domain (verified 2026-10-08 via archive.org, HTTP 200)
+- **Free tier:** Free streaming + downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period title-card/interstitial graphics reference — newsreel opens are a goldmine for 1930s–60s motion-graphics grammar. [Wave 48 Lane A]
+
+#### U.S. National Archives — Motion Pictures ✅ US federal PD
+- **What:** NARA's motion-picture holdings portal — federal films, newsreels, and animation produced for the US government, all public domain.
+- **URL:** https://www.archives.gov/research/motion-pictures
+- **License:** ✅ Public domain — US federal works (verified 2026-10-08 via archives.gov, HTTP 200)
+- **Free tier:** Free research access; some reels digitized online
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Includes WWII-era animated training films (Disney/UPA-adjacent government work) — clean PD status by statute. [Wave 48 Lane A]
+
+#### Library of Congress — National Screening Room ✅ US federal PD
+- **What:** LoC's streaming room for public-domain films from its paper-print and early-cinema holdings, including early animation.
+- **URL:** https://www.loc.gov/programs/national-screening-room/
+- **License:** ✅ Public domain — LoC federal holdings (verified 2026-10-08; site bot-walls automated fetch — HTTP 403 — resource confirmed via LoC)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paper-print era animation (1890s–1910s) — earliest American animation on record, all PD. [Wave 48 Lane A]
+
+#### Library of Congress — National Film Registry essays ✅ US federal PD
+- **What:** LoC's National Film Registry — scholarly essays on each inducted film; the essays themselves are federal PD text (the films are NOT PD by induction).
+- **URL:** https://www.loc.gov/programs/national-film-preservation-board/film-registry/
+- **License:** ✅ Essays are US federal PD; ⚠️ Registry induction confers no PD status on the films (verified 2026-10-08; site bot-walls automated fetch — HTTP 403 — resource confirmed via LoC)
+- **Free tier:** Free essays
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Metadata lane — use essays to date and identify PD animation titles, never as a PD grant for the films. [Wave 48 Lane A]
+
+#### Cartoon Research ✅ reference (metadata)
+- **What:** Jerry Beck / Cartoon Research site — PD-cartoon identification, studio histories, and "which cartoons are public domain" research articles.
+- **URL:** https://cartoonresearch.com
+- **License:** ✅ Reference — articles are site-copyrighted; PD-status research is factual (verified 2026-10-08 via cartoonresearch.com, HTTP 200)
+- **Free tier:** Free articles
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The go-to PD-cartoon identification desk — use before pulling any Fleischer/Terrytoons/Van Beuren title to confirm PD status. [Wave 48 Lane A]
+
+#### Big Cartoon Database ✅ reference (metadata)
+- **What:** The Big Cartoon Database (BCDB) — episode-level metadata for theatrical cartoons: studios, dates, credits, and copyright-renewal clues.
+- **URL:** https://www.bcdb.com
+- **License:** ✅ Reference database — metadata is factual; site text copyrighted (verified 2026-10-08 via bcdb.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Date/studio metadata feeds the PD determination (pre-1930 or non-renewed = PD candidates). [Wave 48 Lane A]
+
+#### Don Markstein's Toonopedia ✅ reference (metadata)
+- **What:** Don Markstein's Toonopedia — encyclopedia of toons and TV animation with character/studio histories.
+- **URL:** https://www.toonopedia.com
+- **License:** ✅ Reference — site-copyrighted text, factual metadata (verified 2026-10-08 via toonopedia.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Character/studio provenance for PD-era toons — useful for labeling plates correctly. [Wave 48 Lane A]
+
+#### Internet Animation Database ✅ reference (metadata)
+- **What:** The Internet Animation Database (IAD) — searchable cartoon episode database with studio/date metadata.
+- **URL:** https://www.intanibase.com
+- **License:** ✅ Reference database (verified 2026-10-08 via intanibase.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Episode-level dates for PD determination on theatrical shorts. [Wave 48 Lane A]
+
+#### Silent Era ✅ reference (metadata)
+- **What:** Silent Era (silentera.com) — progressive silent-film database with survival/archive-location data.
+- **URL:** https://www.silentera.com
+- **License:** ✅ Reference database (verified 2026-10-08 via silentera.com, HTTP 200)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Silent-cartoon survival data — which archives hold prints of Bray/Edison-era animation. [Wave 48 Lane A]
+
+#### Animation Resources ✅ reference (archive)
+- **What:** Animation Resources Inc. — nonprofit reference archive for classic cartooning: streaming rare animation, e-books, and oral histories for members.
+- **URL:** https://animationresources.org
+- **License:** ⚠️ Reference archive — membership-based streaming; not a PD grant (verified 2026-10-08 via animationresources.org, HTTP 200)
+- **Free tier:** Free articles; membership for full archive
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane — draftsmanship and timing reference for the cartoon pipeline; do not pull plates from member streams. [Wave 48 Lane A]
+
+#### Duke Center for the Study of the Public Domain ✅ research
+- **What:** Duke Law's Center for the Study of the Public Domain — public-domain research, Public Domain Day lists, and copyright scholarship.
+- **URL:** https://web.law.duke.edu/cspd/
+- **License:** ✅ Research — scholarship freely readable (verified 2026-10-08 via web.law.duke.edu, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD-date authority — use their Public Domain Day research to confirm when cartoon copyrights expire. [Wave 48 Lane A]
+
+#### National Film Preservation Foundation ✅ org + PD guide
+- **What:** NFPF — federal-chartered nonprofit funding film preservation; publishes the Film Preservation Guide and streams preserved films (incl. cartoons).
+- **URL:** https://www.filmpreservation.org
+- **License:** ✅ The Film Preservation Guide is a federal-funded PD resource; streamed films are rights-cleared for viewing, verify per-title for reuse (verified 2026-10-08 via filmpreservation.org, HTTP 200)
+- **Free tier:** Free guide + streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Film Preservation Guide is the standard reference for restoration practice — pairs with this wave's Pocket 3 tooling. [Wave 48 Lane A]
+
+#### Undercrank Productions 🚫 honest negative (commercial PD label)
+- **What:** Ben Model's Undercrank Productions — commercial DVD/streaming label for restored silent films with new scores.
+- **URL:** https://www.undercrankproductions.com
+- **License:** 🚫 Commercial — restored editions and new scores are copyrighted products (verified 2026-10-08 via undercrankproductions.com, HTTP 200)
+- **Free tier:** Paid products
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative — the restorations are reference-quality, but buying a disc does not buy PD rights to the underlying film; source PD prints elsewhere. [Wave 48 Lane A]
+
+#### ASIFA International ✅ org
+- **What:** ASIFA (Association Internationale du Film d'Animation) — UNESCO-recognized international animation association; festival and archive network.
+- **URL:** https://asifa.net
+- **License:** ✅ Organization site (verified 2026-10-08 via asifa.net, HTTP 200)
+- **Free tier:** Free site; membership for programs
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Network lane — ASIFA chapters hold regional animation archives; useful for non-US PD animation leads. [Wave 48 Lane A]
+
+#### Golden Age Cartoons ✅ community
+- **What:** Golden Age Cartoons — long-running classic-animation fan community and news site with PD/restoration discussion.
+- **URL:** https://www.goldenagecartoons.com
+- **License:** ✅ Community — forum/news; verify any media per-item (verified 2026-10-08 via goldenagecartoons.com, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Community intel on which PD cartoons have good transfers and where the best prints circulate. [Wave 48 Lane A]
+
+#### National Film Board of Canada 🚫 honest negative (not PD)
+- **What:** NFB — Canada's public film producer with ~14,000 films streaming free, including historic animation (McLaren et al.).
+- **URL:** https://www.nfb.ca
+- **License:** 🚫 Not public domain — NFB retains copyright; free streaming is not a reuse grant; commercial/derivative use requires licensing (verified 2026-10-08 via nfb.ca, HTTP 200)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative — the classic NFB animation canon (McLaren) is rights-reserved; do not treat "free to watch" as PD. [Wave 48 Lane A]
+
+#### British Film Institute 🚫 honest negative (not PD)
+- **What:** BFI — UK national film archive with BFI Player streaming of historic British animation.
+- **URL:** https://www.bfi.org.uk
+- **License:** 🚫 Not public domain — BFI/archive rights reserved; streaming is not a reuse grant (verified 2026-10-08 via bfi.org.uk, HTTP 200)
+- **Free tier:** Free + paid streaming
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative — listed so nobody mistakes BFI archive access for PD status. [Wave 48 Lane A]
+
+#### Wikipedia — List of films in the public domain in the United States ⚠️ per-wiki terms
+- **What:** Wikipedia's curated list of PD films in the US, with copyright-expiry reasoning per title.
+- **URL:** https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States
+- **License:** ⚠️ CC-BY-SA per Wikipedia terms — the list is a research aid, not legal advice (verified 2026-10-08 via en.wikipedia.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Starting-point checklist for PD cartoon candidates — independently verify each title before pulling plates. [Wave 48 Lane A]
+
+#### Thunderbean Animation ❓ site unreachable this pass
+- **What:** Steve Stanchfield's Thunderbean Animation — boutique restorer of PD cartoons (Fleischer, Van Beuren, silent-era) on Blu-ray.
+- **URL:** https://www.thunderbean.com
+- **License:** ❓ Site unreachable 2026-10-08 (connection failed) — historically a commercial restoration label; not a PD grant
+- **Free tier:** Paid discs
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — Thunderbean's restorations set the quality bar for PD cartoon transfers, but the label is commercial; re-verify if the site returns. [Wave 48 Lane A]
+
+#### ASIFA-Hollywood Animation Archive ❓ site unreachable this pass
+- **What:** ASIFA-Hollywood Animation Archive — research archive of animation art and history materials.
+- **URL:** https://www.animationarchive.org
+- **License:** ❓ Site unreachable 2026-10-08 (connection failed) — historically a members/research archive, not a PD grant
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — re-verify if the site returns; do not treat archive access as PD status. [Wave 48 Lane A]
+
+#### Wikimedia Commons — Animations category ⚠️ per-file license check
+- **What:** Wikimedia Commons animation category — community-uploaded animated GIFs/WebMs, many PD or freely licensed.
+- **URL:** https://commons.wikimedia.org/wiki/Category:Animations
+- **License:** ⚠️ Per-file — check each file's license tag; PD-old and CC files mixed with non-commercial ones (verified 2026-10-08 via commons.wikimedia.org, HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for PD animation loops and early-cinema clips — filter by license tag before pulling. [Wave 48 Lane A]
+
+#### UbuWeb — Film ⚠️ per-item rights
+- **What:** UbuWeb's film section — avant-garde and historic film/video hosted with artist permission.
+- **URL:** http://www.ubu.com/film/
+- **License:** ⚠️ Per-item — artist-permission hosting, not a PD grant; verify each work (verified 2026-10-08 via ubu.com, HTTP 200)
+- **Free tier:** Free streaming/downloads
+- **Repo lane:** trippedd (background)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Avant-garde animation reference — permission-hosted, so treat as view-only research unless the item is independently PD. [Wave 48 Lane A]

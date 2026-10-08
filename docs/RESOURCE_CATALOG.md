@@ -32286,3 +32286,107 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started · **QUARANTINED (GPL/AGPL)**
 - **Notes:** GPL-QUARANTINE: GPL-3.0 — do NOT embed in closed builds; safe as a standalone OCR step (outputs text). Note: an unrelated MIT rewrite exists (paivikero/capture2text) — do not conflate with the GSam original. Quarantine row 278. [Wave 36 Lane A]
+
+### Angle 3 — chiptune-netlabel deep tail (free/CC releases)
+
+#### Comfort Stand Recordings ⚠️ CC — defunct netlabel, per-release check
+- **What:** Comfort Stand Recordings — community-driven netlabel (2000s) where all releases were free with artwork and liner notes; praised by Creative Commons as a model CC netlabel.
+- **URL:** via the Internet Archive's netlabels collection (comfortstand.com is defunct; locate releases via archive.org)
+- **License:** ⚠️ Creative Commons (verified 2026-10-08: Creative Commons' own 2006 netlabel article spotlights Comfort Stand as a CC-licensed netlabel); per-release CC variant unverified — check each release.
+- **Free tier:** Free downloads (archived)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Defunct label — releases survive on the Internet Archive; verify the CC variant per release before reuse. [Wave 36 Lane A]
+
+#### Sutemos ⚠️ CC (via Free Music Archive) — Lithuanian IDM netlabel
+- **What:** Sutemos — subjective IDM e-zine and netlabel from Lithuania (electronic/experimental); catalog mirrored on the Free Music Archive.
+- **URL:** https://freemusicarchive.org/label/Sutemos/
+- **License:** ⚠️ Creative Commons via FMA (verified 2026-10-08: FMA hosts the label's albums); per-track CC variant — check each track's license badge on FMA.
+- **Free tier:** Free streaming/download (FMA)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use only tracks whose FMA page shows a reuse-compatible CC license. [Wave 36 Lane A]
+
+#### Lowtoy — Argentine chipmusic netlabel audit 🚫 commercial-ARR
+- **What:** Lowtoy — Argentine chipmusic netlabel (lowtoy.com / lowtoy.bandcamp.com): 8-bit, circuit bending, Game Boy/NES/C64 compilations (e.g. the "Chip.ar" VA comp, Neuroflip's AHX "Beatzombie").
+- **URL:** https://lowtoy.bandcamp.com/album/chip-ar-8bit
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via Bandcamp — "Descargar gratis" free download offered, but no reuse grant found on any release; ARR by default).
+- **Free tier:** Free downloads (Bandcamp)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free download ≠ license — the Wave 35 pattern holds; no reuse rights implied. [Wave 36 Lane A]
+
+#### Starfrosch ⚠️ CC — Swiss netlabel/blog, per-release check
+- **What:** Starfrosch — Swiss electronic-music netlabel, blog, and podcast (est. 2004): chillout/downtempo/ambient plus a CC-music discovery platform.
+- **URL:** http://sonicsquirrel.net/detail/label/Starfrosch/1529
+- **License:** ⚠️ Creative Commons (verified 2026-10-08: sonicsquirrel.net label page — "We focus on something between music, fun and technology, mostly Creative Commons"); per-release CC variant unverified.
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Label-level CC claim only — verify the variant per release before reuse. [Wave 36 Lane A]
+
+### Extras — competition/community + spec docs + ARR audits
+
+#### WeeklyBeats ❓ per-entry rights — weekly music competition
+- **What:** WeeklyBeats (weeklybeats.com) — the long-running weekly music competition: one track per week, all genres; large back-catalog of entries.
+- **URL:** via weeklybeats.com (locate before use)
+- **License:** ❓ Per-entry rights — no blanket license located this pass; each track is the artist's own.
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listening/reference source only; contact artists for reuse. [Wave 36 Lane A]
+
+#### 3GPP Timed Text spec doc ❓ terms unverified
+- **What:** 3GPP Timed Text — the mobile timed-text format (3GPP TS 26.245): format description for reading/writing 3GPP timed-text tracks.
+- **URL:** via 3gpp.org (TS 26.245 — locate before citing)
+- **License:** ❓ 3GPP spec terms; reference only.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the ancestor of MP4 timed-text tracks. [Wave 36 Lane A]
+
+#### QuickTime TeXML doc ❓ terms unverified
+- **What:** TeXML — Apple's XML interchange format for QuickTime text tracks: format description for reading/writing TeXML caption files.
+- **URL:** via Apple developer documentation (locate before citing)
+- **License:** ❓ Apple documentation terms; reference only.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the XML side-door into QuickTime text tracks. [Wave 36 Lane A]
+
+#### Epidemic Sound — subscription-license audit 🚫 commercial-ARR
+- **What:** Epidemic Sound — subscription music/SFX library for creators (Creator/Pro/Business/Enterprise tiers); catalog owned outright by the company.
+- **URL:** via third-party licensing writeups (e.g. https://soundcy.com/article/does-epidemic-sound-have-copyright)
+- **License:** 🚫 Commercial all-rights-reserved, subscription license only (verified 2026-10-08 via web search — "Epidemic Sound owns the copyright to all music and sound effects in their catalog"; not Creative Commons; no free reuse lane).
+- **Free tier:** 30-day trial only (paid service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid subscription only — no free-lane reuse; documented so wiring crews don't reach for it. [Wave 36 Lane A]
+
+#### Artlist — subscription-license audit 🚫 commercial-ARR
+- **What:** Artlist — subscription music/SFX/footage library ("Unlimited License" while subscribed); commercial use requires Pro/Max tiers.
+- **URL:** via third-party licensing writeups (e.g. https://www.cchound.com/artlist/artlist-subscription-plans-and-pricing/)
+- **License:** 🚫 Commercial all-rights-reserved, subscription license only (verified 2026-10-08 via web search — no free tier; paid plans only).
+- **Free tier:** None (paid only)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paid subscription only — no free-lane reuse; documented so wiring crews don't reach for it. [Wave 36 Lane A]
+
+#### Game Music Creator (.gmc) format doc ❓ terms unverified
+- **What:** Game Music Creator — the .gmc module format (Andreas Tadic, used in Commodore Amiga games): format documentation via the Just Solve wiki (also lists playback via XMP/UADE and ripping via ProWizard).
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_Music_Creator
+- **License:** ❓ Wiki terms unverified; the wiki also cites the "Amiga MOD Packers Described" textfile series.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; Amiga game-music format reference. [Wave 36 Lane A]

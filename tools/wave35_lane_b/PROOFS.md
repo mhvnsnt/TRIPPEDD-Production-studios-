@@ -38,4 +38,4 @@ doesn't cover the claim (row 86 CeCILL-2.1, row 165 LGPL-2.1).
 - Row 103: the only row with a canonical-path change this cycle (org transfer).
   The GPL-2.0-family classification is unaffected.
 - Proofs per row live in `proofs_row<nn>/` (api.json + fetched license text);
-  SHA256SUMS covers all 24 files in this directory (23/23 verified).
+  SHA256SUMS covers all 26 files in this directory (26/26 verified).

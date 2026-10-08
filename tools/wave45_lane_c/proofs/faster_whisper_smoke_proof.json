@@ -1,0 +1,28 @@
+{
+  "tool": "faster-whisper",
+  "tool_license": "MIT",
+  "tool_license_url": "https://github.com/SYSTRAN/faster-whisper/blob/master/LICENSE",
+  "model": "tiny.en (ctranslate2 converted)",
+  "fixture": "fixtures/fixture.wav",
+  "detected_language": "en",
+  "detected_language_probability": 1,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.32,
+      "text": " The quick round fox jump over the lazy log."
+    },
+    {
+      "start": 3.32,
+      "end": 6.56,
+      "text": " This is a test on the speech recognition pipeline."
+    },
+    {
+      "start": 6.56,
+      "end": 8.2,
+      "text": " Speak at one sense below."
+    }
+  ],
+  "full_text": "The quick round fox jump over the lazy log.  This is a test on the speech recognition pipeline.  Speak at one sense below.",
+  "elapsed_s": 2.2
+}

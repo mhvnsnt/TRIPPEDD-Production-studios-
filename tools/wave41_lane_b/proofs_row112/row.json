@@ -1,0 +1,25 @@
+{
+  "row": 112,
+  "name": "WhisperSubTranslate",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "Blue-B/WhisperSubTranslate",
+  "api": {
+    "full_name": "Blue-B/WhisperSubTranslate",
+    "archived": false,
+    "pushed_at": "2026-10-04T16:59:46Z",
+    "stargazers_count": 777,
+    "default_branch": "main",
+    "owner": "Blue-B",
+    "spdx_id": "NOASSERTION",
+    "license_name": "Other"
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "README.md",
+    "branch": "master",
+    "bytes": 17329
+  },
+  "text_grant": false,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

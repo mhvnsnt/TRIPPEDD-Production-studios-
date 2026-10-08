@@ -36448,3 +36448,102 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** CPC discovery long tail; directory only. [Wave 40 Lane A]
+#### Kainote 🚫
+- **What:** Kainote — Windows subtitle editor supporting ASS/SSA/SRT with a translation-assistant workflow, karaoke timing, and automation scripting
+- **URL:** https://github.com/bjakja/Kainote
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Copyleft — research lane only, never wired into shipping code. Quarantined as LICENSE_QUARANTINE.md row 373. [Wave 40 Lane A]
+#### PgcEdit 🚫
+- **What:** PgcEdit — DVD IFO and menu editor for modifying navigation commands and parameters of authored DVD structures, with a PGC trace function for learning DVD internals
+- **URL:** https://download.videohelp.com/r0lz/pgcedit/
+- **License:** GPL (verified 2026-10-08 via official homepage: "PgcEdit is free and open source (GPL license)")
+- **Free tier:** free and open source (v9+ shows a nag screen unless a donation is made)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Copyleft — research lane only, never wired into shipping code. Quarantined as LICENSE_QUARANTINE.md row 374. [Wave 40 Lane A]
+#### DVDSubEdit ❓
+- **What:** DVDSubEdit — tool for editing DVD subtitle bitmaps (SUP subpictures) directly against the VOB: reposition, recolor, adjust transparency and timing without re-authoring
+- **URL:** https://github.com/amichaelt/DVDSubEdit
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — the repo ships no LICENSE file, so reuse terms are unknown. [Wave 40 Lane A]
+#### WebCaptioner source code (swseiuop/webcaptioner) ✅
+- **What:** WebCaptioner source code — the MIT-licensed open-source release of the WebCaptioner live-captioning app's codebase (distinct from the webcaptioner.com service entry already cataloged under Wave 33 Lane A; this is the code, not the hosted service)
+- **URL:** https://github.com/swseiuop/webcaptioner
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source (original service was free, no signup)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Original service offline since 2023; the released source is MIT. Successor webcaptioner.online is a separate derivative — verify its terms independently. [Wave 40 Lane A]
+#### Dotsub ⚠️
+- **What:** Dotsub — browser-based SaaS platform for captioning and translating online video into 500+ languages, via crowdsourcing, in-house teams, or professional linguists
+- **URL:** https://dotsub.com
+- **License:** proprietary SaaS (verified 2026-10-08 via company profiles — founded 2007, New York; no open-source license published)
+- **Free tier:** Dotsub Basic free tier available
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Proprietary platform — any integration subject to Dotsub terms of service. [Wave 40 Lane A]
+#### ShanaEncoder ⚠️
+- **What:** ShanaEncoder — free Windows FFmpeg frontend for batch video/audio conversion with subtitle burn-in, subtitle flip/rotate, and device-specific presets
+- **URL:** https://sourceforge.net/projects/shanaencoder/
+- **License:** license claims conflict across mirrors — LGPL (SoftLookup), GPL (TechWarrant), Proprietary (AlternativeTo); no single upstream statement verified (checked 2026-10-08)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** License genuinely conflicted across distribution mirrors — verify against the actual distributed binary before any use. [Wave 40 Lane A]
+#### SubDB ❓
+- **What:** SubDB — hash-based subtitle database and API (thesubdb.com); search and download subtitles keyed by video-file hash (MD5 of first+last 64KB)
+- **URL:** http://thesubdb.com/api/
+- **License:** API terms not published as an open-source license — genuinely unverified (checked 2026-10-08)
+- **Free tier:** free API (User-Agent header required)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** API is live and documented; no license/terms page verified. Hash-function samples at github.com/subdb/hash. [Wave 40 Lane A]
+#### Addic7ed ❓
+- **What:** Addic7ed — community subtitle database for TV series (addic7ed.com): multilingual, release-version-tagged (BLURAY / WEB-DL / HDTV), collaboratively translated
+- **URL:** https://www.addic7ed.com/
+- **License:** no published license or API terms — genuinely unverified (checked 2026-10-08)
+- **Free tier:** free downloads (account required for some features)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Community database; unofficial APIs exist (addic7ed-api on npm) but the site itself publishes no license. [Wave 40 Lane A]
+#### Podnapisi ⚠️
+- **What:** Podnapisi — Slovenian-based subtitle database (podnapisi.net) with 2M+ subtitles for movies and TV series; official Kodi subtitle addon available
+- **URL:** https://www.podnapisi.net/
+- **License:** proprietary, free product (verified 2026-10-08 via AlternativeTo listing: "Proprietary and Free product")
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Proprietary free service — use subject to the site's terms. [Wave 40 Lane A]
+#### VobBlanker ⚠️
+- **What:** VobBlanker — jsoto's DVD editing tool that blanks, replaces, cuts, and strips PGCs or individual cells in unprotected DVD backups without re-encoding
+- **URL:** http://download.videohelp.com/jsoto/vobblanker.htm
+- **License:** freeware, no open-source license published (verified 2026-10-08 via author's homepage — no license statement found)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Classic DVD-era tool; freeware, not open source. [Wave 40 Lane A]
+#### PgcDemux ✅
+- **What:** PgcDemux — jsoto's DVD demuxer; splits a DVD PGC/VID/CELL into elementary streams (m2v video, ac3/wav/dts/mpa audio, sup subtitles) with GUI and command-line support
+- **URL:** https://download.videohelp.com/jsoto/dvdtools.htm
+- **License:** LGPL (verified 2026-10-08 via source package PgcDemux_1205_src shipping Rights\lgpl.txt, per CodeBus mirror listing)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** LGPL confirmed via the source distribution's Rights folder. [Wave 40 Lane A]

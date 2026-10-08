@@ -53147,3 +53147,1147 @@ Round 6 fills genre gaps left by rounds 1–5: westerns, mystery/crime, kids' ad
 ### Wave 57 Lane A summary (2026-10-08)
 - New #### entries: 101 (P1: 41 retro homebrew SDK docs round 3 — 2 permissive (CC0 RKRM v1.3, MIT x68000-dev-guide) + 39 unverified scans/sites · P2: 10 landmark musicdisk deep dives — all unverified · P3: 50 PD radio-drama round 6 — 27 PD/CC0/public-domain incl. 3 OTRR NC-packaging sets per Wave 56 precedent + 23 unverified)
 - Quarantine rows added: 0 (no GPL/AGPL/weak-copyleft found; next row still 573)
+
+### Wave 58 Lane A — Pocket 1: retro homebrew SDK docs round 4 (34)
+
+Round 4 targets the nearly untouched PC Engine/TG-16, Neo Geo, Sega 32X/Mega-CD, and Atari Jaguar homebrew SDK/docs pockets: HuC/HuCC (mixed-license — quarantined), PCEAS tooling, NEC/Hudson hardware manuals, the NeoGeo Development Wiki + freem's programming guide + Frog Feast source, Sega's official 32X/Mega-CD doc sets and SH manuals, the Jaguar SDK environment (rmvlib toolchain, RMAC/RLN, official Atari dev files), and community docs (SpritesMind, ChibiAkumas, Chris Covell). GitHub licenses verified via API or license-file text on 2026-10-08 (MIT = catalog; GPL/LGPL/mixed = quarantine rows 573–576); non-CC0 scans and license-silent sites stay ❓ per Wave 57 precedent. Pre-append dedup dropped 2 dupes: dciabrin/ngdevkit (already QUARANTINED row 289) and andwn/marsdev (already catalogued, Wave 37 Lane A).
+
+#### pce-devel/huc (HuC/HuCC) 🚫 mixed/GPL components — QUARANTINED (row 575)
+- **What:** HuC/HuCC — the PC Engine/TG-16 C compiler + PCEAS assembler (MagicKit lineage, SuperGrafx support, 470-case test suite).
+- **URL:** https://github.com/pce-devel/huc
+- **License:** 🚫 QUARANTINED (verified 2026-10-08: upstream LICENSE text — MagicKit freeware, Hecht additions BSD, but TGEmu emulator + GCC-derived test cases are GPL; core legal status "next to impossible to make an exact statement" per upstream)
+- **Free tier:** Source available
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Standalone tool use only — never link GPL components into shipping code. [Wave 58 Lane A]
+
+
+#### undisbeliever/wiz ✅ commercial-safe
+- **What:** wiz — multi-target assembler (6502, 65c02, huc6280, 65816, spc700, z80, GB) with .pce (TG-16/PCE) output format.
+- **URL:** https://github.com/undisbeliever/wiz
+- **License:** ✅ MIT (verified 2026-10-08: license.md text "released under an MIT license", Andrew G. Crowell 2019)
+- **Free tier:** Fully open
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Modern alternative assembler for PCE homebrew alongside PCEAS. [Wave 58 Lane A]
+
+
+#### stove-panini/vim-pceas ✅ commercial-safe
+- **What:** vim-pceas — Vim syntax highlighting for PCEAS, the PC Engine assembler bundled with HuC.
+- **URL:** https://github.com/stove-panini/vim-pceas
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id)
+- **Free tier:** Fully open
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Editor support for the PCEAS dialect used by HuC projects. [Wave 58 Lane A]
+
+
+#### pce-devel/mednafenPceDev ❓ license unverified
+- **What:** mednafenPceDev — managed Mednafen git repo with fixes for the PCE developer community (PCE debugging/emulation).
+- **URL:** https://github.com/pce-devel/mednafenPceDev
+- **License:** ❓ unverified (verified 2026-10-08: GitHub API no license field; Mednafen-derived, upstream Mednafen is GPL — not assumed here)
+- **Free tier:** Source available
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PCE-dev-focused Mednafen fork; license needs upstream confirmation before integration. [Wave 58 Lane A]
+
+
+#### pce-devel/PCE_Controller_Info ❓ license unverified
+- **What:** PCE_Controller_Info — PC Engine controller signalling documentation (2-button/6-button protocols, SEL/CLR timing, sample code).
+- **URL:** https://github.com/pce-devel/PCE_Controller_Info
+- **License:** ❓ unverified (verified 2026-10-08: GitHub API no license field)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Input-hardware reference for PCE homebrew; read-and-learn only until licensed. [Wave 58 Lane A]
+
+
+#### PC Engine Developer Documentation (archive.org PCEDev) ❓ scan license unverified
+- **What:** "PC Engine Developer Documentation" — 10 NEC/Hudson hardware manuals: HuC6280 HW/SW/PSG manuals, HuC6260 video color encoder, HuC6270 VDC, Hu7 CD System BIOS/PSG-driver/software manuals, HuC62 system outline + tech notes.
+- **URL:** https://archive.org/details/PCEDev
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, open access, 10 PDFs; no licenseurl — official NEC/Hudson docs, scan license not stated)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The canonical PCE hardware-manual set for homebrew; pair with the HuC entries. [Wave 58 Lane A]
+
+
+#### HuC6280 Software Manual (BlockoS mirror) ❓ scan license unverified
+- **What:** NEC "HuC6280 — CMOS 8-bit Microprocessor Software Manual" — full instruction-set reference (mirrored by PCE dev BlockoS).
+- **URL:** http://www.blockos.org/releases/pcengine/documentation/HuC6280%20-%20CMOS%208-bit%20Microprocessor%20Software%20Manual.pdf
+- **License:** ❓ unverified (verified 2026-10-08: URL live; official NEC manual scan, no license statement)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CPU bible for PCE assembler work; complements the archive.org PCEDev set. [Wave 58 Lane A]
+
+
+#### ChibiAkumas PC Engine tutorials ❓ license unverified
+- **What:** ChibiAkumas 6502 "PC Engine" lesson series — HuC6280 assembly: hardware sprites, joypad reading, tilemaps, sample .asm files.
+- **URL:** https://www.chibiakumas.com/6502/pcengine.php?theme=
+- **License:** ❓ unverified (verified 2026-10-08: page live; no license statement on site)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Beginner-friendly PCE asm path; code samples downloadable per lesson. [Wave 58 Lane A]
+
+
+#### Chris Covell PCE ASM tutorials ❓ license unverified
+- **What:** Chris Covell's "PC-Engine/Turbografx Assembly Programming Tutorials" support page — 6 video episodes (hardware overview, sound, tooling, HuC6280 ISA, VDC/interrupts, VRAM graphics) with downloadable ASM source zips.
+- **URL:** http://chrismcovell.com/PCEdev/
+- **License:** ❓ unverified (verified 2026-10-08: page live; © Chris Covell 2016–2018, no reuse license stated)
+- **Free tier:** Free to read/watch
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The classic video-course companion for PCE asm; references Tomaitheous's PCEAS2 and old MagicKit. [Wave 58 Lane A]
+
+
+#### MagicKit (original HuC distribution site) ❓ license unverified
+- **What:** MagicKit download page — the original HuC/MagicKit PCE dev system distribution site (predecessor of the pce-devel/huc toolchain).
+- **URL:** http://www.magicengine.com/mkit/download.html
+- **License:** ❓ unverified (verified 2026-10-08: HTTP 200; MagicKit sources carry a freeware statement per the huc LICENSE — not verified on this page itself)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Historical toolchain reference; superseded by pce-devel/huc for new work. [Wave 58 Lane A]
+
+
+#### PC Engine / TurboGrafx-16 Architecture (copetti.org) ✅ commercial-safe
+- **What:** Rodrigo Copetti's "PC Engine / TurboGrafx-16 Architecture" — full hardware deep dive (CPU, VDC, VCE, PSG, memory map) in the Architecture of Consoles series.
+- **URL:** https://www.copetti.org/writings/consoles/pc-engine/
+- **License:** ✅ CC BY 4.0 (verified 2026-10-08: site license page "Creative Commons Attribution 4.0 International License"; attribution required)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best single modern PCE hardware writeup; cites NEC manuals and MagicKit. [Wave 58 Lane A]
+
+
+#### PC Engine HuCard/chip pinouts (nfggames) ❓ license unverified
+- **What:** Detailed pinouts for the PC Engine chip set (Hu6260, Hu6270, Hu6280) — hardware-level dev notes for PCE/TG-16/SuperGrafx.
+- **URL:** https://nfggames.com/forum2/index.php?topic=1570.0
+- **License:** ❓ unverified (verified 2026-10-08: HTTP 200; forum post, no license stated)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardware-electrical reference; useful for flash-cart and expansion-port work. [Wave 58 Lane A]
+
+
+#### NeoGeo Development Wiki ❓ license unverified
+- **What:** The NeoGeo Development Wiki — 574 pages covering every technical aspect of SNK NeoGeo hardware/software (AES, MVS, CD, CDZ) for homebrew development and repair.
+- **URL:** https://wiki.neogeodev.org/index.php?title=Main_Page&direction=next&oldid=2691
+- **License:** ❓ unverified (verified 2026-10-08: wiki live; no content license statement found)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The primary Neo Geo homebrew knowledge base; read-and-learn only until licensed. [Wave 58 Lane A]
+
+
+#### NeoGeo Development Wiki: Development tools ❓ license unverified
+- **What:** Wiki "Development tools" page — the 68k assembler/compiler/disassembler table (AS, vasm, JAS, Maccer, SNASM68K, NeoDev kit, IRA, unidasm) with download links.
+- **URL:** https://wiki.neogeodev.org/index.php?title=Development_tools
+- **License:** ❓ unverified (verified 2026-10-08: page live; no license statement)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Toolchain shopping list for Neo Geo homebrew, incl. the original NeoDev001.zip. [Wave 58 Lane A]
+
+
+#### NeoGeo Development Wiki: Project skeleton ❓ license unverified
+- **What:** Wiki "Project skeleton" — minimal 68k boot code for Neo Geo AES/MVS carts and Neo Geo CD (recognition codes, headers, entry points).
+- **URL:** https://wiki.neogeodev.org/index.php?title=Project_skeleton
+- **License:** ❓ unverified (verified 2026-10-08: page live; no license statement)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Start-any-Neo-Geo-project-here code; covers both cart and CD boot paths. [Wave 58 Lane A]
+
+
+#### NeoGeo Development Wiki: programming cheatsheet ❓ license unverified
+- **What:** Wiki "NeoGeo programming cheatsheet" — ROM header, 68k vector table, interrupts, memory-mapped registers, BIOS system-ROM call table (shared/MVS-only/CD-only).
+- **URL:** https://wiki.neogeodev.org/index.php?title=NeoGeo_programming_cheatsheet
+- **License:** ❓ unverified (verified 2026-10-08: page live; no license statement)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quick-reference companion to the full wiki; BIOS call table is the money page. [Wave 58 Lane A]
+
+
+#### NeoGeo Development Wiki: NGH number registry ❓ license unverified
+- **What:** Wiki "NGH number" page — the homebrew NGH (game ID) registry: free ranges plus assigned numbers for unlicensed/homebrew games (NG:DEV, Bitmap Bureau, NeoBitz, tcdev, etc.).
+- **URL:** https://wiki.neogeodev.org/index.php/NGH_number
+- **License:** ❓ unverified (verified 2026-10-08: page live; no license statement)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Required reading before assigning a game ID to any Neo Geo homebrew release. [Wave 58 Lane A]
+
+
+#### Neo-Geo Programming Guide (AJ/freem) ❓ license unverified
+- **What:** "Neo-Geo Programming Guide" by AJ/freem (2014–2015) — a full book-style guide to Neo Geo homebrew, sourced from the dev wiki.
+- **URL:** https://ajworld.net/neogeodev/neoguide/?p=10
+- **License:** ❓ unverified (verified 2026-10-08: page live; "not authorized or licensed by SNK Playmore", no reuse license stated)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Structured alternative to wiki-diving; points to Frog Feast source as a real-world example. [Wave 58 Lane A]
+
+
+#### Frog Feast Neo Geo source code ❓ license unverified
+- **What:** Frog Feast source (Charles Doty/RasterSoft) — full Neo Geo MVS source for the homebrew Frog Feast, incl. NeoDev libraries/linker scripts usage notes.
+- **URL:** http://frogfeast.rastersoft.net/Source.html
+- **License:** ❓ unverified (verified 2026-10-08: HTTP 200; no license statement on the page)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Real shipped Neo Geo homebrew source — the canonical "learn from a real game" donor. [Wave 58 Lane A]
+
+
+#### sega-32x-fmv ✅ commercial-safe
+- **What:** sega-32x-fmv — bootable Sega CD + 32X full-motion video player (Cinepak + 22.05 kHz PCM, async CD-to-framebuffer path); independent homebrew research project.
+- **URL:** https://github.com/paulomanrique/sega-32x-fmv
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id)
+- **Free tier:** Fully open
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Advanced 32X sample: SH-2 DMA, DREQ FIFO, CD streaming — study before writing 32X media code. [Wave 58 Lane A]
+
+
+#### 32X official documentation (Sega Retro) ✅ commercial-safe
+- **What:** Sega Retro "32X official documentation" hub — the leaked/official Sega 32X developer documentation set (hardware, SH-2, VDP).
+- **URL:** https://segaretro.org/32X_official_documentation
+- **License:** ✅ CC BY 4.0 (verified 2026-10-08: Sega Retro:Copyrights page — site content CC BY 4.0; attribution required)
+- **Free tier:** Free to read/download
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The official 32X doc set; pair with the SH manuals below and marsdev. [Wave 58 Lane A]
+
+
+#### Mega-CD official documentation (Sega Retro) ✅ commercial-safe
+- **What:** Sega Retro "Mega-CD official documentation" hub — official Sega Mega-CD developer docs (needed for CD+32X work like sega-32x-fmv).
+- **URL:** https://segaretro.org/Mega-CD_official_documentation
+- **License:** ✅ CC BY 4.0 (verified 2026-10-08: Sega Retro:Copyrights page — site content CC BY 4.0; attribution required)
+- **Free tier:** Free to read/download
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CD-side companion to the 32X docs; ECMA-130 also linked from the hub. [Wave 58 Lane A]
+
+
+#### SH7604 Hardware Manual ❓ scan license unverified
+- **What:** Renesas/Hitachi SH7604 hardware manual (PDF) — the SH-2 CPU at the heart of the 32X (mirrored on Sega Retro).
+- **URL:** https://segaretro.org/images/2/2c/SH7604_Hardware_Manual.pdf
+- **License:** ❓ unverified (verified 2026-10-08: URL live; official manufacturer doc, no license statement)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SH-2 instruction/architecture reference for 32X slave/master CPU code. [Wave 58 Lane A]
+
+
+#### SH-1/SH-2 programming manual ❓ scan license unverified
+- **What:** Hitachi SH-1/SH-2 programming manual (h12p0.pdf) — CPU programming reference for the 32X's SH-2 pair.
+- **URL:** https://antime.kapsi.fi/sega/files/h12p0.pdf
+- **License:** ❓ unverified (verified 2026-10-08: HTTP 200; official manufacturer doc, no license statement)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Programming-model companion to the SH7604 hardware manual. [Wave 58 Lane A]
+
+
+#### SpritesMind Sega dev forum ❓ license unverified
+- **What:** SpritesMind.Net forum (gendev) — the active Sega homebrew development forum (37k+ posts; SGDK, Mega CD, 32X, hardware subforums; active Oct 2026).
+- **URL:** https://gendev.spritesmind.net/forum/
+- **License:** ❓ unverified (verified 2026-10-08: forum live via browser fetch, 3043 topics; user posts, no site license stated)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Living Sega-dev community; 32X threads referenced by emulator READMEs as doc sources. [Wave 58 Lane A]
+
+
+#### cubanismo/jaguar-sdk ❓ license unverified
+- **What:** jaguar-sdk — "a complete SDK environment for the Atari Jaguar" (GCC/m68k toolchain build, GDB+JRISC support, samples, Docker image).
+- **URL:** https://github.com/cubanismo/jaguar-sdk
+- **License:** ❓ unverified (verified 2026-10-08: GitHub API no license field; component licenses vary — verify per-component before use)
+- **Free tier:** Source available
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The canonical modern Jaguar dev environment; pair with the rmvlib entries below. [Wave 58 Lane A]
+
+
+#### BitJag/atari_jaguar_240p_test_suite 🚫 GPL-2.0+ — QUARANTINED (row 573)
+- **What:** Atari Jaguar 240p Test Suite — bare-metal Jaguar homebrew (calibration patterns, hardware probes) built on the rmvlib toolchain; documents the full native SDK install.
+- **URL:** https://github.com/BitJag/atari_jaguar_240p_test_suite
+- **License:** 🚫 QUARANTINED (verified 2026-10-08: README declares "GNU General Public License … either version 2 … or (at your option) any later version"; GitHub API spdx null — README governs)
+- **Free tier:** Source available
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Standalone tool use only — never link into shipping code. Best documented rmvlib-toolchain consumer. [Wave 58 Lane A]
+
+
+#### BitJag/ubuntu-rmvlib-install-scripts 🚫 GPL-3.0 — QUARANTINED (row 576)
+- **What:** ubuntu-rmvlib-install-scripts — automated setup scripts for the Jaguar rmvlib development environment on Ubuntu.
+- **URL:** https://github.com/BitJag/ubuntu-rmvlib-install-scripts
+- **License:** 🚫 QUARANTINED (verified 2026-10-08: GitHub API spdx_id GPL-3.0)
+- **Free tier:** Source available
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Standalone tool use only — never link into shipping code. [Wave 58 Lane A]
+
+
+#### theRemovers/rmvlib 🚫 LGPL-2.1 — QUARANTINED (row 574)
+- **What:** rmvlib — the Removers' C library (rmvlib + jlibc) for Atari Jaguar homebrew; the standard libc for Jaguar dev.
+- **URL:** https://github.com/theRemovers/rmvlib
+- **License:** 🚫 QUARANTINED (verified 2026-10-08: GitHub API spdx_id LGPL-2.1; weak copyleft stays quarantined per pending owner ruling)
+- **Free tier:** Source available
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Standalone tool use only — never linked into shipping code. [Wave 58 Lane A]
+
+
+#### jagware.org Jaguar dev links ❓ license unverified
+- **What:** jagware.org "Useful files, tools and links for Jaguar development" — curated hub: emulators, BJL, encryption tools, Atari Museum files, Underground docs.
+- **URL:** http://www.jagware.org/index.php?/topic/836-useful-files-tools-and-links-for-jaguar-development/
+- **License:** ❓ unverified (verified 2026-10-08: page live; link aggregator, no license stated)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best single Jaguar-dev link index; several targets are historical/dead — verify before use. [Wave 58 Lane A]
+
+
+#### JTRM — Jaguar Technical Reference Manual (AtariAge thread) ❓ license unverified
+- **What:** AtariAge "JTRM - The Jaguar Technical Reference Manual" thread — Stephen Moss's draft JTRM (advanced-controller rewrite, developer focus-group feedback).
+- **URL:** https://forums.atariage.com/topic/294037-jtrm-the-jaguar-technical-reference-manual/
+- **License:** ❓ unverified (verified 2026-10-08: thread live; draft doc "not for distribution" at release — no reuse license)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Community TRM effort; marked draft — treat specs as provisional. [Wave 58 Lane A]
+
+
+#### Atari Museum Jaguar dev files ❓ license unverified
+- **What:** Atari Museum Jaguar section file archive — JagCD BIOS source, VLM sources, cartridge/CD encryption files, Jaguar 2 GPU data, Panther files, 2600-emulator-for-Jag source.
+- **URL:** http://atarimuseum.ctrl-alt-rees.com/videogames/consoles/jaguar/jagmenu/jagfiles.htm
+- **License:** ❓ unverified (verified 2026-10-08: HTTP 200; "used at your own risk", no reuse license stated)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Primary-source Atari dev artifacts (incl. 10th-anniversary encryption file release). [Wave 58 Lane A]
+
+
+#### RMAC/RLN official site ❓ license unverified
+- **What:** rmac.is-slick.com — official site for RMAC (macro assembler) and RLN (linker), the standard 68k/JRISC toolchain for Atari Jaguar development.
+- **URL:** http://rmac.is-slick.com/
+- **License:** ❓ unverified (verified 2026-10-08: site live (rmac 2.5.2 / rln 1.7.7, Jun 2026); no license statement found on site)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Required toolchain piece for the rmvlib/Jaguar SDK path; license needs author confirmation. [Wave 58 Lane A]
+
+
+#### m68k-atari-mint cross-tools (crossmint) ❓ license unverified
+- **What:** crossmint — Tho-otto's m68k-atari-mint GCC cross-compiler build scripts (used for Jaguar homebrew C compilation).
+- **URL:** https://tho-otto.de/crossmint.php
+- **License:** ❓ unverified (verified 2026-10-08: site live; "with respect to their own licenses" — scripts' own license unstated; built GNU tools are GPL)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (retro homebrew SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Standalone toolchain-builder; treat built compilers as GPL-covered tools. [Wave 58 Lane A]
+
+### Wave 58 Lane A — Pocket 2: landmark musicdisk deep dives round 2 (15)
+
+Round 2 continues pouët's all-time musicdisk toplist (fetched live 2026-10-08 — positions #11–#25; round 1 covered #1–#10). Demozoo publishes no musicdisk charts page (/charts/ verified 404), so pouët's toplist is the ranking source and demozoo is the verified prod-page host. Every prod page verified live on demozoo via browser fetch (direct curl is Cloudflare-blocked). No license statements on any scene prod record — all ❓, with NC-not-declared honest negatives (nothing on the records declares non-commercial restriction).
+
+#### Bacteria — Crusaders (1990) ❓ license unverified
+- **What:** "Bacteria" — Crusaders Amiga musicdisk (1990); pouet all-time musicdisk toplist #11.
+- **URL:** https://demozoo.org/productions/84098/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-90s Crusaders chip collection (Dr. Awesome, Fleshbrain); classic Amiga musicdisk study piece. [Wave 58 Lane A]
+
+
+#### Preschool #2 — Abyss ❓ license unverified
+- **What:** "Preschool #2" — Abyss Amiga musicdisk; pouet all-time musicdisk toplist #12.
+- **URL:** https://demozoo.org/productions/198322/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Abyss 2019-era pack (Pink, Maniacs of Noise, Planet Jazz tracks); packed in Crap Box -9. [Wave 58 Lane A]
+
+
+#### Preschool #1 — Abyss ❓ license unverified
+- **What:** "Preschool #1" — Abyss Amiga musicdisk; pouet all-time musicdisk toplist #13.
+- **URL:** https://demozoo.org/productions/194884/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** First Abyss Preschool volume (2018-era tracks); companion to Preschool #2. [Wave 58 Lane A]
+
+
+#### Turmoil — Sanity (1991) ❓ license unverified
+- **What:** "Turmoil" — Sanity Amiga musicdisk (1991); pouet all-time musicdisk toplist #14.
+- **URL:** https://demozoo.org/productions/1929/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bit Arts (Dec 1991) soundtrack; Sanity's early musicdisk work. [Wave 58 Lane A]
+
+
+#### Music Dream II — Phenomena (1991) ❓ license unverified
+- **What:** "Music Dream II" — Phenomena Amiga musicdisk (1991); pouet all-time musicdisk toplist #15.
+- **URL:** https://demozoo.org/productions/69706/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Firefox/Tip soundtrack (May 1991); Phenomena's follow-up musicdisk. [Wave 58 Lane A]
+
+
+#### Uncle Tom Sonix — Scoopex ❓ license unverified
+- **What:** "Uncle Tom Sonix" — Scoopex Amiga musicdisk; pouet all-time musicdisk toplist #16.
+- **URL:** https://demozoo.org/productions/30550/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Uncle Tom single-musician showcase (Mar 2012 tracks); demo-typed musicdisk. [Wave 58 Lane A]
+
+
+#### ChipChop 17 — Desire (2024) ❓ license unverified
+- **What:** "Chip Chop 17" — Desire Amiga musicdisk (2024); pouet all-time musicdisk toplist #17.
+- **URL:** https://demozoo.org/productions/342314/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ~70 contributing musicians (Mar 2024); the modern flagship Amiga chip-music pack. [Wave 58 Lane A]
+
+
+#### Mel O Dee's — Resistance (2021) ❓ license unverified
+- **What:** "Mel O Dee's" — Resistance musicdisk (2021), released for both Amiga OCS/ECS and Atari Jaguar; pouet all-time musicdisk toplist #18.
+- **URL:** https://demozoo.org/productions/299142/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cross-platform musicdisk (Jaguar port by Axi0maT/4pLaY); 2nd at Xenium 2021 wild compo. [Wave 58 Lane A]
+
+
+#### Mirror — Andromeda (1992) ❓ license unverified
+- **What:** "Mirror" — Andromeda Amiga musicdisk (1992); pouet all-time musicdisk toplist #19.
+- **URL:** https://demozoo.org/productions/66433/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 3rd Best Music Disk at Brain Degenerator #6; Lizard/Lord Interface/Mr. Man soundtrack. [Wave 58 Lane A]
+
+
+#### Coolism — Depth (2009) ❓ license unverified
+- **What:** "Coolism" — Depth Amiga musicdisk (2009); pouet all-time musicdisk toplist #20.
+- **URL:** https://demozoo.org/productions/240846/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Curt Cool solo-musician disk (Jun 2009); tagged chip music pack on demozoo. [Wave 58 Lane A]
+
+
+#### ChipChop 16 — Desire (2015) ❓ license unverified
+- **What:** "Chip Chop 16" — Desire Amiga musicdisk (2015); pouet all-time musicdisk toplist #21.
+- **URL:** https://demozoo.org/productions/136103/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Predecessor to ChipChop 17 (Apr–May 2015 tracks); Desire's long-running chip series. [Wave 58 Lane A]
+
+
+#### His Master's Noise — Kaktus + Mahoney (1991) ❓ license unverified
+- **What:** "His Master's Noise" — Kaktus + Mahoney Amiga musicdisk (1991); pouet all-time musicdisk toplist #22.
+- **URL:** https://demozoo.org/productions/83040/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Huge 1991 tracklist (Mahoney, Xerxes, Zeb, Glue Master, Panda, Yogi); code by Kaktus. [Wave 58 Lane A]
+
+
+#### Chiperia Issue #3 — The Chiperia Project (2015) ❓ license unverified
+- **What:** "Chiperia Issue #3" — The Chiperia Project Amiga musicdisk (2015); pouet all-time musicdisk toplist #23.
+- **URL:** https://demozoo.org/productions/145033/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chiperia magazine-disk series (Sep 2015 tracks); packed in Crap Box -27. [Wave 58 Lane A]
+
+
+#### Chiperia #6 — The Chiperia Project (2016) ❓ license unverified
+- **What:** "Chiperia #6" — The Chiperia Project Amiga musicdisk (2016); pouet all-time musicdisk toplist #24.
+- **URL:** https://demozoo.org/productions/164054/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Later Chiperia volume (Oct 2016 tracks; incl. 4-Mat, Goto80); packed in Tuff Stuff 58. [Wave 58 Lane A]
+
+
+#### Knight Chips II — The Electronic Knights (2024) ❓ license unverified
+- **What:** "Knight Chips II" — The Electronic Knights Amiga musicdisk (2024); pouet all-time musicdisk toplist #25.
+- **URL:** https://demozoo.org/productions/336618/
+- **License:** ❓ unverified (verified 2026-10-08: demozoo prod page live, title/group match; no license statement on the record — NC not declared, honest negative)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2024 TEK chip pack (Curt Cool, Tecon, ok3anos code); packed in QuicPac 1 / Crap Box 24. [Wave 58 Lane A]
+
+### Wave 58 Lane A — Pocket 3: PD radio-drama round 7 — per-episode deep dives (54)
+
+Round 7 is per-show per-episode deep dives on landmark single episodes (9 shows × 6 episodes). Each entry links a distinct single-episode archive.org item — different URLs from the collection-level items catalogued in rounds 1–6 — verified via the metadata API (HTTP 200, title match, open access, audio files present) on 2026-10-08. ✅ PD/CC0 only where the item itself carries a PD/CC0/public-domain licenseurl; everything else stays ❓ per Wave 57 precedent (PD status of the underlying broadcast not confirmed on the item).
+
+#### Sorry, Wrong Number — Suspense (OTR) ❓ license unverified
+- **What:** "Sorry, Wrong Number" — Suspense (1943-05-25) — Agnes Moorehead's landmark one-woman episode; single-episode deep dive.
+- **URL:** https://archive.org/details/Suspense430525SorryWrongNumberWestCoast
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Hitch-Hiker — Suspense (OTR) ❓ license unverified
+- **What:** "The Hitch-Hiker" — Suspense (1942-09-02) — Orson Welles's famous hitchhiker episode; single-episode deep dive.
+- **URL:** https://archive.org/details/SuspenseTheHitchHiker09021942
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Frankenstein — Suspense (OTR) ❓ license unverified
+- **What:** "Frankenstein" — Suspense (1952-11-03); single-episode deep dive.
+- **URL:** https://archive.org/details/Suspense11352Frankenstein
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Pit and the Pendulum — Suspense (OTR) ❓ license unverified
+- **What:** "The Pit and the Pendulum" — Suspense (1947-11-28); single-episode deep dive.
+- **URL:** https://archive.org/details/Suspense471128ThePitAndThePendulum
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Dunwich Horror — Suspense (OTR) ❓ license unverified
+- **What:** "The Dunwich Horror" — Suspense (1945-11-01) — Ronald Colman stars in the Lovecraft adaptation; single-episode deep dive.
+- **URL:** https://archive.org/details/SuspenseDunwichHorrorWithRonaldColman110145
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### August Heat — Suspense (OTR) ❓ license unverified
+- **What:** "August Heat" — Suspense — Ronald Colman stars; single-episode deep dive.
+- **URL:** https://archive.org/details/suspenseAugustHeatStarringRonaldColman
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Death House Rescue — The Shadow (OTR) ❓ license unverified
+- **What:** "Death House Rescue" — The Shadow (1937-09-26) — the Blue Coal series premiere; single-episode deep dive.
+- **URL:** https://archive.org/details/TheShadow19370926DeathhouseRescue
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Three Ghosts — The Shadow (OTR) ❓ license unverified
+- **What:** "The Three Ghosts" — The Shadow (1937-10-31) — Halloween-night broadcast; single-episode deep dive.
+- **URL:** https://archive.org/details/TheShadow371031TheThreeGhosts
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Black Abbot — The Shadow (OTR) ❓ license unverified
+- **What:** "The Black Abbot" — The Shadow (1938-10-02); single-episode deep dive.
+- **URL:** https://archive.org/details/TheShadow381002TheBlackAbbot
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Gibbering Things — The Shadow (OTR) ❓ license unverified
+- **What:** "The Gibbering Things" — The Shadow (1943-09-26); single-episode deep dive.
+- **URL:** https://archive.org/details/TheShadowTheGibberingThings09261943
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Joey's Christmas Story — The Shadow (OTR) ❓ license unverified
+- **What:** "Joey's Christmas Story" — The Shadow (1940-12-22) — Christmas episode; single-episode deep dive.
+- **URL:** https://archive.org/details/TheShadow401222JoeysChristmasStory
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Temple Bells of Neban — The Shadow (OTR) ❓ license unverified
+- **What:** "The Temple Bells of Neban" — The Shadow (1937-10-24); single-episode deep dive.
+- **URL:** https://archive.org/details/TheShadow371024TheTempleBellsOfNeban
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+#### Death Has a Thirst — The Whistler (OTR) ❓ license unverified
+- **What:** "Death Has a Thirst" — The Whistler (1943-05-08); single-episode deep dive.
+- **URL:** https://archive.org/details/TheWhistler430508DeathHasAThirst
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### House of Fear — The Whistler (OTR) ❓ license unverified
+- **What:** "House of Fear" — The Whistler (1943-06-19); single-episode deep dive.
+- **URL:** https://archive.org/details/TheWhistler430619HouseOfFear
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Strange Sisters — The Whistler (OTR) ❓ license unverified
+- **What:** "The Strange Sisters" — The Whistler (1946-01-28); single-episode deep dive.
+- **URL:** https://archive.org/details/TheWhistler460128TheStrangeSisters
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### A Brief Pause for Murder — The Whistler (OTR) ❓ license unverified
+- **What:** "A Brief Pause for Murder" — The Whistler (1946-09-11); single-episode deep dive.
+- **URL:** https://archive.org/details/TheWhistler460911ABriefPauseForMurder
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Apparition — The Whistler (OTR) ❓ license unverified
+- **What:** "Apparition" — The Whistler (1942-11-15); single-episode deep dive.
+- **URL:** https://archive.org/details/TheWhistler421115Apparition
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Delayed Christmas Present — The Whistler (OTR) ❓ license unverified
+- **What:** "Delayed Christmas Present" — The Whistler (1948-12-26) — Christmas episode; single-episode deep dive.
+- **URL:** https://archive.org/details/TheWhistler481226DelayedChristmasPresent
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Tell-Tale Heart — Inner Sanctum (OTR) ❓ license unverified
+- **What:** "The Tell-Tale Heart" — Inner Sanctum (1941-08-03) — the series premiere broadcast; single-episode deep dive.
+- **URL:** https://archive.org/details/InnerSanctum410803TheTellTaleHeart
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Corridor of Doom — Inner Sanctum (OTR) ❓ license unverified
+- **What:** "Corridor of Doom" — Inner Sanctum (1945-10-23) — Boris Karloff stars; single-episode deep dive.
+- **URL:** https://archive.org/details/InnerSanctum451023CorridorOfDoomBorisKarloff
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Wailing Wall — Inner Sanctum (OTR) ❓ license unverified
+- **What:** "The Wailing Wall" — Inner Sanctum (1945-11-06) — Boris Karloff stars; single-episode deep dive.
+- **URL:** https://archive.org/details/InnerSanctum451106TheWailingWallWithBorisKarloff
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Corpse for Halloween — Inner Sanctum (OTR) ❓ license unverified
+- **What:** "Corpse for Halloween" — Inner Sanctum (1949-10-31) — Halloween-night broadcast; single-episode deep dive.
+- **URL:** https://archive.org/details/InnerSanctum491031CorpseForHalloween
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Black Sea Gull — Inner Sanctum (OTR) ❓ license unverified
+- **What:** "The Black Sea Gull" — Inner Sanctum (1943-03-07); single-episode deep dive.
+- **URL:** https://archive.org/details/InnerSanctum430307TheBlackSeaGull
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Skeleton Bay — Inner Sanctum (OTR) ❓ license unverified
+- **What:** "Skeleton Bay" — Inner Sanctum (1946-02-05); single-episode deep dive.
+- **URL:** https://archive.org/details/InnerSanctumMysteries460205SkeletonBay
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+#### Leiningen Versus the Ants — Escape (OTR) ❓ license unverified
+- **What:** "Leiningen Versus the Ants" — Escape (1948-01-14) — the classic Carl Stephenson jungle survival episode; single-episode deep dive.
+- **URL:** https://archive.org/details/Escape480114LeiningenVsTheAnts
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Fall of the House of Usher — Escape (OTR) ❓ license unverified
+- **What:** "The Fall of the House of Usher" — Escape (1947-10-22) — Poe adaptation; single-episode deep dive.
+- **URL:** https://archive.org/details/Escape471022TheFallOfTheHouseOfUsher
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Casting the Runes — Escape (OTR) ❓ license unverified
+- **What:** "Casting the Runes" — Escape (1947-11-19) — M.R. James adaptation; single-episode deep dive.
+- **URL:** https://archive.org/details/Escape471119CastingTheRunes
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Most Dangerous Game — Escape (OTR) ❓ license unverified
+- **What:** "The Most Dangerous Game" — Escape (1947-10-01) — Richard Connell adaptation; single-episode deep dive.
+- **URL:** https://archive.org/details/Escape471001TheMostDangerousGame
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### A Shipment of Mute — Escape (OTR) ❓ license unverified
+- **What:** "A Shipment of Mute" — Escape (1947-10-15) — Rudyard Kipling adaptation; single-episode deep dive.
+- **URL:** https://archive.org/details/Escape471015AShipmentOfMuteFate
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Scarlet Plague — Escape (OTR) ❓ license unverified
+- **What:** "The Scarlet Plague" — Escape (1954-04-08) — Jack London adaptation; single-episode deep dive.
+- **URL:** https://archive.org/details/Escape540408ScarletPlague
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Requiem — X Minus One (OTR) ❓ license unverified
+- **What:** "Requiem" — X Minus One (1955-10-27); single-episode deep dive.
+- **URL:** https://archive.org/details/XMinusOne551027Requiem
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Parade — X Minus One (OTR) ❓ license unverified
+- **What:** "The Parade" — X Minus One (1955-05-01) — episode 002; single-episode deep dive.
+- **URL:** https://archive.org/details/xminusone19550501theparade002
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Mars Is Heaven — X Minus One (OTR) ❓ license unverified
+- **What:** "Mars Is Heaven" — X Minus One (1955-05-08) — Ray Bradbury's "The Third Expedition" (episode 003); single-episode deep dive.
+- **URL:** https://archive.org/details/xminusone19550508marsisheaven003
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Knock — X Minus One (OTR) ❓ license unverified
+- **What:** "Knock" — X Minus One (1955-05-22) — Fredric Brown adaptation; single-episode deep dive.
+- **URL:** https://archive.org/details/XMinusOne550522Knock
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Universe — X Minus One (OTR) ❓ license unverified
+- **What:** "Universe" — X Minus One (1955-05-15) — Robert A. Heinlein's generation-ship story; single-episode deep dive.
+- **URL:** https://archive.org/details/XMinusOne550515Universe
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Defenders — X Minus One (OTR) ✅ PD
+- **What:** "The Defenders" — X Minus One (1956-05-22) — Philip K. Dick adaptation (episode 052); single-episode deep dive.
+- **URL:** https://archive.org/details/XMinusOne560522052TheDefenders
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a public-domain mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+#### Double Indemnity Matter — Yours Truly, Johnny Dollar (OTR) ✅ PD
+- **What:** "Double Indemnity Matter" — Yours Truly, Johnny Dollar; single-episode deep dive.
+- **URL:** https://archive.org/details/yours-truly-johnny-dollar.-double-indemnity-matter.t-01
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a CC0 public-domain dedication)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Shayne Bombing Matter — Yours Truly, Johnny Dollar (OTR) ❓ license unverified
+- **What:** "The Shayne Bombing Matter" — Yours Truly, Johnny Dollar (1953-07-14); single-episode deep dive.
+- **URL:** https://archive.org/details/YoursTrulyJohnnyDollar530714TheShayneBombingMatter
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Todd Matter (Ep 2) — Yours Truly, Johnny Dollar (OTR) ✅ PD
+- **What:** "The Todd Matter" episode 2 — Yours Truly, Johnny Dollar (1956-01-10); single-episode deep dive.
+- **URL:** https://archive.org/details/YoursTrulyJohnnyDollar56-01-10TheToddMatter-Episode2
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a CC0 public-domain dedication)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Tod Matter (Ep 1) — Yours Truly, Johnny Dollar (OTR) ✅ PD
+- **What:** "The Tod Matter" episode 1 — Yours Truly, Johnny Dollar; single-episode deep dive.
+- **URL:** https://archive.org/details/YoursTrulyJohnnyDollar-TheTodMatterEpisode1
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a CC0 public-domain dedication)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Ricardo Amerigo Matter (Program 1) — Yours Truly, Johnny Dollar (OTR) ✅ PD
+- **What:** "The Ricardo Amerigo Matter" program 1 — Yours Truly, Johnny Dollar (1956-01-16); single-episode deep dive.
+- **URL:** https://archive.org/details/OursTrulyJohnnyDollar.January161956.Program1.CbsNet.theRicardo
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a CC0 public-domain dedication)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Ricardo Amerigo Matter (Ep 4) — Yours Truly, Johnny Dollar (OTR) ✅ PD
+- **What:** "The Ricardo Amerigo Matter" episode 4 — Yours Truly, Johnny Dollar; single-episode deep dive.
+- **URL:** https://archive.org/details/YoursTrulyJohnnyDollarTheRicardoAmerigoMatter-Episode4
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a CC0 public-domain dedication)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Britt Ponsett's Christmas Carol — The Six Shooter (OTR) ❓ license unverified
+- **What:** "Britt Ponsett's Christmas Carol" — The Six Shooter (1953-12-20) — the landmark Christmas episode; single-episode deep dive.
+- **URL:** https://archive.org/details/TheSixShooter531220BrittPonsettsChristmasCarol
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Stampede — The Six Shooter (OTR) ❓ license unverified
+- **What:** "The Stampede" — The Six Shooter (episode 003, 1953-10-04); single-episode deep dive.
+- **URL:** https://archive.org/details/SIXS003TheSixShooterep03TheStampede10045330m64kbps
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Helen Bricker — The Six Shooter (OTR) ❓ license unverified
+- **What:** "Helen Bricker" — The Six Shooter (1954-01-24); single-episode deep dive.
+- **URL:** https://archive.org/details/TheSixShooter540124HelenBricker
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Silver Buckle — The Six Shooter (OTR) ❓ license unverified
+- **What:** "The Silver Buckle" — The Six Shooter (1954-01-17); single-episode deep dive.
+- **URL:** https://archive.org/details/TheSixShooter540117TheSilverBuckle
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Johnny Springer — The Six Shooter (OTR) ❓ license unverified
+- **What:** "Johnny Springer" — The Six Shooter (1954-04-22); single-episode deep dive.
+- **URL:** https://archive.org/details/TheSixShooter540422JohnnySpringer
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Trail to Sunset — The Six Shooter (OTR) ❓ license unverified
+- **What:** "Trail to Sunset" — The Six Shooter (1954-01-31); single-episode deep dive.
+- **URL:** https://archive.org/details/TheSixShooter540131TrailToSunset
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+#### Contraband Liquor — The Lone Ranger (OTR) ✅ PD
+- **What:** "Contraband Liquor" — The Lone Ranger (1938-02-07); single-episode deep dive.
+- **URL:** https://archive.org/details/TheLoneRanger38-02-07ContrabandLiquor
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a public-domain mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### When the Blind See — The Lone Ranger (OTR) ✅ PD
+- **What:** "When the Blind See" — The Lone Ranger (1938-07-04); single-episode deep dive.
+- **URL:** https://archive.org/details/LoneRanger-38-07-04-WhenTheBlindSee
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a public-domain mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Three Christmas Trees — The Lone Ranger (OTR) ❓ license unverified
+- **What:** "Three Christmas Trees" — The Lone Ranger (1949-12-26) — Christmas episode; single-episode deep dive.
+- **URL:** https://archive.org/details/TheLoneRanger19491226ThreeChristmasTrees
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### Train Wreck Plot — The Lone Ranger (OTR) ❓ license unverified
+- **What:** "Train Wreck Plot" — The Lone Ranger (1938-04-29); single-episode deep dive.
+- **URL:** https://archive.org/details/TheLoneRanger380429TrainWreckPlot
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Secret Land — The Lone Ranger (OTR) ✅ PD
+- **What:** "The Secret Land" — The Lone Ranger (1938-07-01); single-episode deep dive.
+- **URL:** https://archive.org/details/LoneRanger-38-07-01-TheSecretLand
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item licenseurl is a public-domain mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+#### The Great Bend Settlement — The Lone Ranger (OTR) ❓ license unverified
+- **What:** "The Great Bend Settlement" — The Lone Ranger (1951-10-29); single-episode deep dive.
+- **URL:** https://archive.org/details/LRGreatBendJHMC
+- **License:** ❓ unverified (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; no licenseurl — PD status of the broadcast not confirmed on the item)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 7 per-episode deep dive; see lane report for verification method. [Wave 58 Lane A]
+
+
+### Wave 58 Lane A summary (2026-10-08)
+- New #### entries: 103 (P1: 34 retro homebrew SDK docs round 4 — 3 MIT + 3 CC BY 4.0 + 24 unverified + 4 quarantined (GPL/LGPL/mixed) · P2: 15 landmark musicdisk deep dives round 2 — all unverified (NC-not-declared honest negatives) · P3: 54 PD radio-drama round 7 per-episode deep dives — 9 PD/CC0 + 45 unverified)
+- Quarantine rows added: 4 (rows 573–576: BitJag/atari_jaguar_240p_test_suite GPL-2.0+, theRemovers/rmvlib LGPL-2.1, pce-devel/huc mixed w/ GPL components, BitJag/ubuntu-rmvlib-install-scripts GPL-3.0; zero supersedes/delists; next row 577)
+- Honest negatives: dciabrin/ngdevkit + andwn/marsdev (already catalogued/quarantined — dropped by pre-append dedup); xminusone19550424nocontact001 (already catalogued Wave 55); harmlesslion.com/software/skunkboard (404); archaicpixels.com (HTTP 500); pce-devel/pceas (404 — pceas ships inside the huc repo); demozoo.org/charts/ (404 — no musicdisk charts page, pouët toplist used instead)

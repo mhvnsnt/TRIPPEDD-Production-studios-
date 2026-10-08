@@ -40878,3 +40878,387 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** Research lane only — standalone tool use; never linked. QUARANTINE row 418. [Wave 46 Lane A]
+
+## Wave 47 Lane A — catalog deepening (+109)
+
+### Pocket 1 — PD film-archive tail round 2 (38 entries)
+
+#### Media History Digital Library ✅ PD (scans of public-domain print)
+- **What:** Searchable archive of millions of pages of classic film magazines, pressbooks, and theater trade papers (Photoplay, Variety, Motion Picture News…) via its Lantern search platform.
+- **URL:** https://mediahistoryproject.org
+- **License:** ✅ Public-domain print scans — the underlying magazines are pre-copyright-renewal trade press; scans are free to reuse (verified 2026-10-08 via mediahistoryproject.org: open-access Lantern search, free downloads)
+- **Free tier:** Full page images + OCR text, free
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Period-texture gold for the cartoon pipeline — 1920s–40s ad layouts, theater cards, and trade-paper graphics are all PD print. Pair with Lantern full-text search for era slang/typography. [Wave 47 Lane A]
+
+#### Women Film Pioneers Project ⚠️ reference (research database)
+- **What:** Columbia University research database profiling women filmmakers of the silent era — biographies, filmographies, and archival holdings locations.
+- **URL:** https://wfpp.columbia.edu
+- **License:** ⚠️ Reference database — scholarship text is site-copyrighted; it points to archives rather than hosting PD footage itself (verified 2026-10-08 via wfpp.columbia.edu)
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane — use it to locate which archives hold specific silent-era women's films before pulling plates. [Wave 47 Lane A]
+
+#### Thanhouser Company Film Preservation ✅ PD (pre-1930 silents)
+- **What:** Preservation site for the Thanhouser Company (1909–1918, New Rochelle) — streams surviving Thanhouser silent films with scholarly notes.
+- **URL:** https://www.thanhouser.org
+- **License:** ✅ PD — pre-1930 US silent films; site streams them freely (verified 2026-10-08 via thanhouser.org: free filmography with streaming titles, HTTP 200)
+- **Free tier:** Free streaming + filmography
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Early-1910s American street/interior plates; download path is stream-capture — confirm per-title file availability before planning pulls. [Wave 47 Lane A]
+
+#### Library of Congress — Paper Print Collection ✅ PD (LOC)
+- **What:** LOC's paper-print copyright-deposit collection — ~3,000 early motion pictures (1894–1915, Edison, Biograph…) preserved as paper rolls and re-photographed to film.
+- **URL:** https://www.loc.gov/programs/motion-picture-broadcasting-recorded-sound/
+- **License:** ✅ PD — pre-1916 US films; LOC makes paper-print restorations available (verified 2026-10-08 via loc.gov program pages)
+- **Free tier:** Free reference/study access; many titles digitized
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The deepest well of 1890s–1900s American actuality footage (street scenes, vaudeville, early narrative). Distinct from the Edison collection already cataloged — this is the copyright-deposit route. [Wave 47 Lane A]
+
+#### The Public Domain Review — Film ✅ PD (curated)
+- **What:** Curated selections of public-domain films with scholarly essays — silent features, early animation, avant-garde, and documentaries.
+- **URL:** https://publicdomainreview.org/collection/
+- **License:** ✅ PD — every item is vetted as public domain by the editors (verified 2026-10-08 via publicdomainreview.org collection pages, HTTP 200)
+- **Free tier:** Free streaming + downloads where offered
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pre-vetted PD — the rights homework is done for you. Smaller than IA but every title is cleared; good first-pull list. [Wave 47 Lane A]
+
+#### Open Culture — 1,150 Free Movies Online ⚠️ per-film rights
+- **What:** Long-running curated list of free/streamable films — PD classics, Criterion-adjacent arthouse, and Creative Commons releases.
+- **URL:** https://www.openculture.com/freemoviesonline
+- **License:** ⚠️ Per-film — list mixes PD titles with rights-held free streams; each entry must be checked (verified 2026-10-08 via openculture.com, HTTP 200)
+- **Free tier:** Free streaming links
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery lane only — use it to find titles, then verify each film's PD status at the source before compositing. [Wave 47 Lane A]
+
+#### South Side Home Movie Project ⚠️ per-film rights
+- **What:** University of Chicago archive digitizing 16mm/8mm home movies of Chicago's South Side — everyday Black life from the mid-20th century.
+- **URL:** https://sshmp.uchicago.edu
+- **License:** ⚠️ Per-film — donor agreements vary; streaming is free but reuse terms are per-collection (verified 2026-10-08 via sshmp.uchicago.edu, HTTP 200)
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rare mid-century Black neighborhood texture (street life, storefronts, family gatherings). Contact the project for reuse terms per reel — do not assume PD. [Wave 47 Lane A]
+
+#### Walter J. Brown Media Archives (UGA) ⚠️ per-item rights
+- **What:** University of Georgia's broadcast archive — 5M+ feet of newsfilm, Peabody Awards collection entries, and Georgia political footage.
+- **URL:** https://www.libs.uga.edu/media
+- **License:** ⚠️ Per-item — UGA holds the physical media; copyright stays with creators/donors unless stated (verified 2026-10-08 via libs.uga.edu/media)
+- **Free tier:** Free on-site/online reference; licensing for reuse
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Deep Georgia/South newsfilm — relevant to the owner's Dooly County/Georgia plates. Rights clearance is per-item; budget time for it. [Wave 47 Lane A]
+
+#### IU Media Digitization and Preservation Initiative (MDPI) ⚠️ per-item rights
+- **What:** Indiana University's mass-digitization program — 280,000+ audio/video/film objects digitized and described, many streamable.
+- **URL:** https://mdpi.iu.edu
+- **License:** ⚠️ Per-item — digitization ≠ rights clearance; item pages carry rights statements (verified 2026-10-08 via mdpi.iu.edu, HTTP 200)
+- **Free tier:** Free streaming of cleared items
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bulk digitization with solid metadata — filter by rights statement before pulling. [Wave 47 Lane A]
+
+#### IU Libraries Film Archive ⚠️ per-item rights
+- **What:** Indiana University's archival film holdings — educational films, avant-garde, and the David Bradley collection, much of it digitized via MDPI.
+- **URL:** https://libraries.indiana.edu/film-archive
+- **License:** ⚠️ Per-item — rights statements on item pages; orphan-film holdings flagged (verified 2026-10-08 via libraries.indiana.edu)
+- **Free tier:** Free reference streaming where cleared
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Companion to MDPI — check here for the curated archival-film subset. [Wave 47 Lane A]
+
+#### Wisconsin Center for Film and Theater Research ⚠️ per-item rights
+- **What:** WCFTR (UW-Madison) — 15,000+ films plus the Kirk Douglas, United Artists, and RKO-related paper collections; strong Warner Bros. holdings.
+- **URL:** https://wcftr.commarts.wisc.edu
+- **License:** ⚠️ Per-item — research archive; screening copies circulate but commercial reuse needs clearance (verified 2026-10-08 via wcftr.commarts.wisc.edu)
+- **Free tier:** Free on-site research
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference-heavy (scripts, stills, pressbooks as well as film) — the paper side is the PD-friendly part. [Wave 47 Lane A]
+
+#### George Eastman Museum ⚠️ per-item rights
+- **What:** Rochester's photography/film museum — 28,000+ film titles, the Technicolor collections, and the Stills, Posters & Paper archive.
+- **URL:** https://www.eastman.org
+- **License:** ⚠️ Per-item — museum holds prints; reuse is licensed per title (verified 2026-10-08 via eastman.org; curl 403 is bot protection, site live)
+- **Free tier:** Free gallery/museum reference
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Technicolor-era color reference and the stills/poster archive for period graphic texture; film reuse is licensed, not free. [Wave 47 Lane A]
+
+#### Silent Era ⚠️ reference (research database)
+- **What:** Long-running silent-film database — release info, survival status, and archive holdings for thousands of silent features and shorts.
+- **URL:** https://www.silentera.com
+- **License:** ⚠️ Reference database — no footage hosted; points to holding archives (verified 2026-10-08 via silentera.com, HTTP 200)
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use the survival/holdings data to decide which silent titles are actually retrievable before planning plate pulls. [Wave 47 Lane A]
+
+#### Silent Film Still Archive ✅ PD (stills)
+- **What:** Collector-run archive of silent-era film stills — portraits, lobby cards, and production photos, organized by star and studio.
+- **URL:** https://www.silentfilmstillarchive.com
+- **License:** ✅ PD stills — pre-1930 publicity/production photographs (verified 2026-10-08 via silentfilmstillarchive.com, HTTP 200)
+- **Free tier:** Free browsing/saving of stills
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Costume/makeup/hair reference for period character design — stills are the PD-safe route when the films themselves are rights-murky. [Wave 47 Lane A]
+
+#### EYE Filmmuseum ⚠️ per-film rights
+- **What:** Netherlands' national film museum — the Desmet Collection (1907–1916 distribution archive), Bits & Pieces compilations, and 50,000+ titles.
+- **URL:** https://www.eyefilm.nl
+- **License:** ⚠️ Per-film — Desmet-era titles are largely PD but EYE licenses reuse per title; check the collection database (verified 2026-10-08 via eyefilm.nl, HTTP 200)
+- **Free tier:** Free collection-database browsing; streaming programs vary
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The Desmet Collection is the European counterpart to the LOC paper prints — 1910s hand-colored and tinted material. Per-title clearance required. [Wave 47 Lane A]
+
+#### Deutsche Kinemathek ⚠️ per-film rights
+- **What:** Berlin's film museum/archive — German silent and Weimar-era holdings, Marlene Dietrich collection, and extensive digitization programs.
+- **URL:** https://www.deutsche-kinemathek.de
+- **License:** ⚠️ Per-film — archive holdings with per-title reuse licensing (verified 2026-10-08 via deutsche-kinemathek.de, HTTP 200)
+- **Free tier:** Free collection browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Weimar-era Berlin street/expressionist texture; rights are per-title and German terms differ from US PD — verify before compositing. [Wave 47 Lane A]
+
+#### Cineteca di Bologna ⚠️ per-film rights
+- **What:** Bologna's film archive — world-class restoration lab (L'Immagine Ritrovata) and the Chaplin/Keaton restoration programs.
+- **URL:** https://www.cinetecadibologna.it
+- **License:** ⚠️ Per-film — restorations carry fresh rights; underlying PD status varies by title (verified 2026-10-08 via cinetecadibologna.it, HTTP 200)
+- **Free tier:** Free catalog browsing; festival screenings ticketed
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Restoration-reference lane — study their Chaplin/Keaton grades for the cartoon's silent-era sequences, but the restored masters are NOT free plates. [Wave 47 Lane A]
+
+#### Fondazione Cineteca Italiana ⚠️ per-film rights
+- **What:** Milan's film archive — Italian silent cinema, futurist films, and early documentary holdings.
+- **URL:** https://www.cinetecamilano.it
+- **License:** ⚠️ Per-film — per-title licensing via the foundation (verified 2026-10-08 via cinetecamilano.it, HTTP 200)
+- **Free tier:** Free catalog browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Italian silent/futurist texture; pair with Cineteca di Bologna for the Italian lane. [Wave 47 Lane A]
+
+#### Czech National Film Archive (NFA) ⚠️ per-film rights
+- **What:** Prague's NFA — Czech silent and avant-garde holdings, digitization programs, and the Karlovy Vary-adjacent collections.
+- **URL:** https://nfa.cz
+- **License:** ⚠️ Per-film — Czech copyright terms apply; per-title licensing (verified 2026-10-08 via nfa.cz, HTTP 200)
+- **Free tier:** Free catalog browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Czech silent/avant-garde texture; EU copyright terms (life+70) differ from US — verify per title. [Wave 47 Lane A]
+
+#### National Film Archive of Japan (NFAJ) ⚠️ per-film rights
+- **What:** Tokyo's NFAJ (formerly National Film Center) — 19,000+ Japanese and foreign films, library of film literature, regular classic screenings.
+- **URL:** https://www.nfaj.go.jp/
+- **License:** ⚠️ Per-film — Japanese copyright terms; archive access is research/screening based (verified 2026-10-08 via nfaj.go.jp — note: cfa.go.jp is NOT the archive's domain)
+- **Free tier:** Free library access; screenings ticketed
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Japanese silent/early-sound texture (benshi-era). Rights are the hard part — research lane, not a plate source. [Wave 47 Lane A]
+
+#### Korean Film Archive (KOFA) ⚠️ per-film rights
+- **What:** Korean Film Archive — Korean cinema from the 1910s onward, digitization programs, and the YouTube-accessible classic-film streams.
+- **URL:** https://www.koreafilm.or.kr
+- **License:** ⚠️ Per-film — Korean copyright terms; some classics stream free but reuse needs clearance (verified 2026-10-08 via koreafilm.or.kr, HTTP 200)
+- **Free tier:** Free streaming of selected classics
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Korean period texture; the free-streamed classics are viewing reference, not cleared plates. [Wave 47 Lane A]
+
+#### Israel Film Archive (Jerusalem Cinematheque) ⚠️ per-film rights
+- **What:** Jerusalem Cinematheque's archive — Israeli cinema, newsreels, and the Nathan Axelrod collection of early local actualities.
+- **URL:** https://jfc.org.il
+- **License:** ⚠️ Per-film — per-title terms; Israeli copyright applies (verified 2026-10-08 via jfc.org.il, HTTP 200)
+- **Free tier:** Free catalog browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Early Middle-East actuality texture (Axelrod newsreels); research lane. [Wave 47 Lane A]
+
+#### MACE (Media Archive for Central England) ⚠️ per-film rights
+- **What:** MACE — 80,000+ hours of film/video from England's Midlands (ITV regions, home movies, industry).
+- **URL:** https://www.macearchive.org
+- **License:** ⚠️ Per-film — per-title licensing; many titles viewable free online (verified 2026-10-08 via macearchive.org; curl 403 is bot protection, site live)
+- **Free tier:** Free online viewing of cleared titles
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Postwar British street/industry texture; the free-view titles are reference, reuse is licensed per title. [Wave 47 Lane A]
+
+#### East Anglian Film Archive ⚠️ per-film rights
+- **What:** EAFA (Norwich) — 100+ years of East Anglian film: farming, seaside, wartime, and home movies.
+- **URL:** https://www.eafa.org.uk
+- **License:** ⚠️ Per-film — free online viewing; commercial reuse licensed per title (verified 2026-10-08 via eafa.org.uk, HTTP 200)
+- **Free tier:** Free online viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rural/coastal British texture; reference viewing is free, plates need licensing. [Wave 47 Lane A]
+
+#### London's Screen Archives ⚠️ per-film rights
+- **What:** Partnership network of London's borough film archives — local actuality, civic films, and home movies across the capital.
+- **URL:** https://www.londonsscreenarchives.org.uk
+- **License:** ⚠️ Per-film — borough collections with per-title terms (verified 2026-10-08 via londonsscreenarchives.org.uk, HTTP 200)
+- **Free tier:** Free online viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Hyperlocal London texture (street markets, docklands, housing estates) — strong for period city plates if cleared per title. [Wave 47 Lane A]
+
+#### Northern Ireland Screen — Digital Film Archive ⚠️ per-film rights
+- **What:** NI Screen's digital archive — 100 years of Northern Irish film: newsreels, Troubles-era actuality, industry, and home movies.
+- **URL:** https://www.digitalfilmarchive.net
+- **License:** ⚠️ Per-film — free viewing; reuse licensed per title (verified 2026-10-08 via digitalfilmarchive.net, HTTP 200)
+- **Free tier:** Free online viewing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 20th-century Belfast/Derry texture; Troubles-era material needs extra sensitivity review beyond rights. [Wave 47 Lane A]
+
+#### Irish Film Institute Archive ⚠️ per-film rights
+- **What:** IFI's archive — Irish features, amateur film, newsreels, and the Tiernan MacBride collection.
+- **URL:** https://ifi.ie
+- **License:** ⚠️ Per-film — IFI Player streams free; commercial reuse licensed (verified 2026-10-08 via ifi.ie, HTTP 200)
+- **Free tier:** Free IFI Player streaming (Ireland/selected worldwide)
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Irish street/country texture; Player streams are viewing reference, not cleared plates. [Wave 47 Lane A]
+
+#### Filmarchiv Austria ⚠️ per-film rights
+- **What:** Austria's film archive — Austrian silent film, newsreels, and the Viennese avant-garde holdings.
+- **URL:** https://filmarchiv.at
+- **License:** ⚠️ Per-film — Austrian/EU copyright terms; per-title licensing (verified 2026-10-08 via filmarchiv.at, HTTP 200)
+- **Free tier:** Free catalog browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Viennese silent-era texture; research lane. [Wave 47 Lane A]
+
+#### Cinémathèque suisse ⚠️ per-film rights
+- **What:** Swiss film archive (Lausanne/Penthaz) — Swiss cinema, newsreels, and international silent holdings.
+- **URL:** https://www.cinematheque.ch
+- **License:** ⚠️ Per-film — Swiss copyright terms; per-title access (verified 2026-10-08 via cinematheque.ch, HTTP 200)
+- **Free tier:** Free catalog browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Swiss/European silent texture; research lane. [Wave 47 Lane A]
+
+#### Cinematek (Belgium) ⚠️ per-film rights
+- **What:** Brussels' Cinematek — Belgian cinema, the Desmet-adjacent early holdings, and avant-garde programs.
+- **URL:** https://www.cinematek.be
+- **License:** ⚠️ Per-film — Belgian/EU terms; per-title licensing (verified 2026-10-08 via cinematek.be, HTTP 200)
+- **Free tier:** Free catalog browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Belgian silent/avant-garde texture; pairs with EYE Filmmuseum for the Low Countries lane. [Wave 47 Lane A]
+
+#### Cinémathèque française ⚠️ per-film rights
+- **What:** Paris' Cinémathèque — the Henri Langlois-founded archive; Méliès, French silent, and New Wave holdings.
+- **URL:** https://www.cinematheque.fr
+- **License:** ⚠️ Per-film — French/EU terms; the archive is screening/research oriented (verified 2026-10-08 via cinematheque.fr, HTTP 200)
+- **Free tier:** Free catalog browsing
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** French silent/New Wave texture; the Méliès holdings are the PD-adjacent bright spot — verify per title. [Wave 47 Lane A]
+
+#### Orphan Film Symposium ⚠️ reference (event/research)
+- **What:** NYU's biennial Orphan Film Symposium — screenings and scholarship on neglected/orphan films; proceedings and program notes published.
+- **URL:** https://www.nyu.edu/orphanfilm
+- **License:** ⚠️ Reference — event site; films discussed are orphan/PD-adjacent but rights are per-title (verified 2026-10-08 via nyu.edu/orphanfilm)
+- **Free tier:** Free program notes/proceedings excerpts
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery lane for orphan-film titles worth chasing into PD archives; the symposium's "orphan" framing is exactly the rights problem to solve per title. [Wave 47 Lane A]
+
+#### Victorian Cinema ⚠️ reference (research site)
+- **What:** Luke McKernan's Victorian-cinema research site — Who's Who of Victorian Cinema, early film tech histories, and archive pointers.
+- **URL:** https://www.victorian-cinema.net
+- **License:** ⚠️ Reference — scholarship site; no footage hosted (verified 2026-10-08 via victorian-cinema.net; curl 403 is bot protection, site live)
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pre-1900 cinema context — use the Who's Who to identify which pioneers' films survive and where. [Wave 47 Lane A]
+
+#### The Bioscope ⚠️ reference (research blog)
+- **What:** The Bioscope — silent/early-cinema research blog with archive news, digitization announcements, and lost-film tracking.
+- **URL:** https://thebioscope.net
+- **License:** ⚠️ Reference — blog; no footage hosted (verified 2026-10-08 via thebioscope.net, HTTP 200)
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** News feed for the archive world — watch it for new silent-era digitization drops worth pulling. [Wave 47 Lane A]
+
+#### Monoskop ⚠️ rights-mixed (media-art wiki/logbook)
+- **What:** Monoskop — wiki/logbook of media art, theory, and avant-garde film/video with extensive bibliographies and some hosted media.
+- **URL:** https://monoskop.org
+- **License:** ⚠️ Rights-mixed — wiki text is freely shared; hosted media carries per-item terms (verified 2026-10-08 via monoskop.org, HTTP 200)
+- **Free tier:** Free browsing/downloads where offered
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Avant-garde film/video research lane — the bibliographies are the real value; verify media rights per item. [Wave 47 Lane A]
+
+#### UbuWeb ⚠️ permissioned (not PD)
+- **What:** UbuWeb — long-running archive of avant-garde film, video, sound poetry, and artists' media, hosted on a fair-use/permission basis.
+- **URL:** https://ubu.com
+- **License:** ⚠️ Permissioned — UbuWeb explicitly does NOT claim PD; works are hosted with artist permission or fair-use framing (verified 2026-10-08 via ubu.com, HTTP 200)
+- **Free tier:** Free streaming/downloads
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest framing: avant-garde reference gold, but NOT a PD plate source — permission/fair-use hosting does not transfer reuse rights. [Wave 47 Lane A]
+
+#### Gaumont-Pathé Archives 🚫 honest negative (paid footage house)
+- **What:** Gaumont-Pathé's commercial archive — 100+ years of French newsreels and features, licensed per clip.
+- **URL:** https://www.gparchives.com
+- **License:** 🚫 Paid — every clip is a paid license; nothing cleared for free reuse (verified 2026-10-08 via gparchives.com, HTTP 200)
+- **Free tier:** Free low-res preview
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — deep French newsreel reference, but every plate costs money; reference only unless budget opens up. [Wave 47 Lane A]
+
+#### NFB (National Film Board of Canada) 🚫 honest negative (rights-held)
+- **What:** NFB/ONF — 14,000+ Canadian films, many streaming free on nfb.ca, including animation classics and documentaries.
+- **URL:** https://www.nfb.ca
+- **License:** 🚫 Rights-held — free streaming is not a reuse grant; NFB retains copyright on its catalog (verified 2026-10-08 via nfb.ca, HTTP 200)
+- **Free tier:** Free streaming of most titles
+- **Repo lane:** trippedd (bg-plates)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative — superb viewing reference (McLaren animation timing studies for the cartoon pipeline), but nothing cleared for compositing. [Wave 47 Lane A]

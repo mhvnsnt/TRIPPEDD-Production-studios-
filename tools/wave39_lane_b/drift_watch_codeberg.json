@@ -1,0 +1,24 @@
+{
+  "mkvtoolnix_page": 200,
+  "mkvtoolnix_copying": {
+    "bytes": 18092,
+    "gpl2": true
+  },
+  "mkvtoolnix_api": {
+    "owner": "mbunkus",
+    "archived": false,
+    "default_branch": "main"
+  },
+  "uzu_tidal_page": 200,
+  "uzu_tidal_license": {
+    "bytes": 35106,
+    "gpl3": true
+  },
+  "uzu_tidal_api": {
+    "owner": "uzu",
+    "archived": false,
+    "default_branch": "main",
+    "pushed_at": null,
+    "stars": 281
+  }
+}

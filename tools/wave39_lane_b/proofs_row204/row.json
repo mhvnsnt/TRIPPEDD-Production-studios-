@@ -1,0 +1,28 @@
+{
+  "row": 204,
+  "name": "dvbsnoop",
+  "claimed": "GPL-2.0",
+  "kind": "github-mirrors",
+  "ref": "a4tunado/dvbsnoop;cotdp/dvbsnoop;Duckbox-Developers/dvbsnoop",
+  "mirrors": [
+    {
+      "repo": "a4tunado/dvbsnoop",
+      "archived": false,
+      "pushed_at": "2012-07-09T07:59:17Z",
+      "spdx_id": "GPL-2.0"
+    },
+    {
+      "repo": "cotdp/dvbsnoop",
+      "archived": false,
+      "pushed_at": "2026-10-07T16:30:56Z",
+      "spdx_id": "GPL-2.0"
+    },
+    {
+      "repo": "Duckbox-Developers/dvbsnoop",
+      "archived": false,
+      "pushed_at": "2024-12-13T16:35:10Z",
+      "spdx_id": "GPL-2.0"
+    }
+  ],
+  "mechanical_verdict": "CONFIRMED (mirrors agree)"
+}

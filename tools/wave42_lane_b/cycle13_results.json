@@ -1,0 +1,178 @@
+{
+  "checked_at": "2026-10-08T09:45:57.006731+00:00",
+  "results": {
+    "row123_dn-famitracker": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "AlbenBustamante",
+      "license_spdx": "NOASSERTION",
+      "license_key": "other",
+      "pushed_at": "2022-07-16T11:45:44Z",
+      "default_branch": "master"
+    },
+    "row123_dn-famitracker_alt": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "Dn-Programming-Core-Management",
+      "license_spdx": "NOASSERTION",
+      "license_key": "other",
+      "pushed_at": "2026-09-23T13:39:32Z",
+      "default_branch": "main"
+    },
+    "row124_milkytracker": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "milkytracker",
+      "license_spdx": "NOASSERTION",
+      "license_key": "other",
+      "pushed_at": "2026-09-10T08:26:43Z",
+      "default_branch": "master"
+    },
+    "row125_schismtracker": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "schismtracker",
+      "license_spdx": "GPL-2.0",
+      "license_key": "gpl-2.0",
+      "pushed_at": "2026-10-01T19:35:31Z",
+      "default_branch": "master"
+    },
+    "row126_hydrogen": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "hydrogen-music",
+      "license_spdx": "GPL-2.0",
+      "license_key": "gpl-2.0",
+      "pushed_at": "2026-10-07T19:37:58Z",
+      "default_branch": "main"
+    },
+    "row127_tenacity": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "tenacityteam",
+      "license_spdx": "NOASSERTION",
+      "license_key": "other",
+      "pushed_at": "2026-10-07T17:42:11Z",
+      "default_branch": "main"
+    },
+    "row128_faster-whisper-subs": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "YounessMoustaouda",
+      "license_spdx": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "pushed_at": "2023-11-08T20:41:44Z",
+      "default_branch": "main"
+    },
+    "row68_helm": {
+      "http": 200,
+      "live": true,
+      "archived": true,
+      "owner": "mtytel",
+      "license_spdx": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "pushed_at": "2022-09-24T04:23:20Z",
+      "default_branch": "master"
+    },
+    "row236_telxcc": {
+      "http": 200,
+      "live": true,
+      "archived": true,
+      "owner": "kanongil",
+      "license_spdx": "NOASSERTION",
+      "license_key": "other",
+      "pushed_at": "2025-09-20T11:29:10Z",
+      "default_branch": "master"
+    },
+    "row118_mblab": {
+      "http": 200,
+      "live": true,
+      "archived": true,
+      "owner": "animate1978",
+      "license_spdx": "NOASSERTION",
+      "license_key": "other",
+      "pushed_at": "2024-07-21T02:46:17Z",
+      "default_branch": "master"
+    },
+    "row101_tidal": {
+      "http": 403,
+      "live": false
+    },
+    "row155_mkvtoolnix": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "mbunkus",
+      "pushed_at": "2026-09-28T21:52:58+02:00"
+    },
+    "row101_tidal_codeberg": {
+      "http": 200,
+      "live": true,
+      "archived": false,
+      "owner": "uzu",
+      "pushed_at": "2026-07-02T08:30:35+02:00"
+    },
+    "row123_dn-famitracker_README": {
+      "http": 200,
+      "license_markers": [
+        "gpl v3",
+        "mit",
+        "or any later version"
+      ],
+      "head": "<img src=\"docs/dn logo.svg\">  Dn-Famitracker is a fork of 0CC-FamiTracker that incorporates numerous fixes and features. The meaning of the name \"Dn\" is \"Derivative n\", which alludes to this fork being the nth derivative of the original FamiTracker program.  ## Notable additions  - DPCM sample bit o"
+    },
+    "row124_milkytracker_LICENSE": {
+      "http": 404
+    },
+    "row125_schismtracker_COPYING": {
+      "http": 200,
+      "license_markers": [
+        "free software foundation",
+        "mit"
+      ],
+      "head": "\t\t    GNU GENERAL PUBLIC LICENSE \t\t       Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.      59 Temple Place, Suite 330, Boston, MA  02111-1307  USA  Everyone is permitted to copy and distribute verbatim copies  of this license document, but changing it is not allowe"
+    },
+    "row126_hydrogen_LICENSE": {
+      "http": 404
+    },
+    "row127_tenacity_COPYING": {
+      "http": 404
+    },
+    "row128_faster-whisper_README": {
+      "http": 200,
+      "license_markers": [],
+      "head": "# faster-whisper-generate-srt-subtitles Generate subtitles srt file from an audio/video file. It uses the faster-whisper library, which is much faster than the OpenAI original one It can also translate it to english. The model \"large-v2\" has the best quality, while \"medium\" is a good compromise betw"
+    },
+    "row129_epics": {
+      "http": 200,
+      "live": true,
+      "len": 5998,
+      "sample": "<!DOCTYPE html>\r <!--[if IE 6]>\r <html id=\"ie6\" lang=\"de-CH\">\r <![endif]-->\r <!--[if IE 7]>\r <html id=\"ie7\" lang=\"de-CH\">\r <![endif]-->\r <!--[if IE 8]>\r <html id=\"ie8\" lang=\"de-CH\">\r <![endif]-->\r <!-"
+    },
+    "row130_nyc_archives": {
+      "http": 404,
+      "live": false,
+      "len": 0,
+      "sample": null
+    },
+    "row131_nyc_parks": {
+      "http": 403,
+      "live": false,
+      "len": 0,
+      "sample": null
+    },
+    "row132_wsdot_flickr": {
+      "http": 200,
+      "live": true,
+      "len": 6000,
+      "sample": "<!DOCTYPE html> <html xmlns:cc=\"http://creativecommons.org/ns#\" lang=\"en-us\" class=\"no-js fluid html-profile-page-view scrolling-layout  \"> <head> \t<script src=\"https://cmp.osano.com/7gziei6ofI/24d43a"
+    }
+  }
+}

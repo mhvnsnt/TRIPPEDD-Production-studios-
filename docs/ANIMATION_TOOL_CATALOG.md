@@ -2130,3 +2130,314 @@ Wave-2 Lane A pocket: markerless mocap, pose estimation, mocap cleanup, and roto
 - **Free tier:** freemium (proprietary)
 - **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
 - **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+## Vertical-format / short-form delivery
+
+Wave-2 Lane A pocket: 9:16 / Shorts / Reels / TikTok pipeline — auto-reframe, silence cutting, caption burn-in, portrait matting, and vertical capture. Licences verified upstream 2026-10-08.
+
+#### MediaPipe AutoFlip ✅ — Google's intelligent video reframing (landscape → 9:16)
+- **What:** Saliency-based automatic reframing: detects important content and crops/pans to any target aspect ratio (9:16, 1:1, 4:3) with smoothed camera paths.
+- **URL:** https://github.com/google-ai-edge/mediapipe (mediapipe/examples/desktop/autoflip)
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field — same repo as MediaPipe)
+- **Use:** the vertical-cut engine: 16:9 episode masters → 9:16 Shorts/Reels/TikTok with subject tracking, no manual keyframing.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+
+#### jumpcutter ✅ — automatic silence/jump-cut editor
+- **What:** Cary Khosravi's auto-editor: cuts silences and dead air from talking-head/promo footage; the classic jump-cut automation.
+- **URL:** https://github.com/carykh/jumpcutter
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** tighten vertical promo cuts; strip dead air before caption burn-in.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### autosub ✅ — CLI auto-subtitle generation (unmaintained but functional)
+- **What:** Command-line utility that auto-generates SRT subtitles from audio via speech recognition.
+- **URL:** https://github.com/agermanidis/autosub
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** first-pass subtitles for vertical cuts; feed SRT into burn-in (FFmpeg subtitles filter).
+- **Note:** upstream marks it NO LONGER MAINTAINED — prefer stable-ts/WhisperX (covered Wave 1) for new work.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### ffmpeg-normalize ✅ — EBU R128 / RMS / peak loudness normalization
+- **What:** Batch audio normalization with two-pass EBU R128; keeps Shorts/Reels audio at platform loudness.
+- **URL:** https://github.com/slhck/ffmpeg-normalize
+- **License:** MIT (verified 2026-10-08 via repo LICENSE.md raw — MIT text)
+- **Use:** normalize episode clips to -14 LUFS for vertical platforms before final encode.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### smartcrop.js ✅ — content-aware image cropping
+- **What:** Content-aware crop: finds the most interesting region (faces, detail, saturation) for any target aspect — the still-image sibling of AutoFlip.
+- **URL:** https://github.com/jwagner/smartcrop.js
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** 9:16 thumbnails/posters from episode frames; face-aware vertical crop for title cards.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### Subtitle Edit ✅ — full subtitle authoring station (the .NET app)
+- **What:** Complete subtitle editor: 300+ formats, waveform, auto-translate, timing tools, burn-in export; distinct from Aegisub/pysubs2 (covered Wave 1).
+- **URL:** https://github.com/SubtitleEdit/subtitleedit
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** author vertical captions with karaoke/positioning, export ASS for FFmpeg burn-in on 9:16 cuts.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### timecut ✅ — record JS/web animations to smooth MP4 (title-card capture)
+- **What:** Node.js tool that captures web pages with JavaScript animations at virtual high fps and encodes to MP4 via FFmpeg.
+- **URL:** https://github.com/tungs/timecut
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** render animated HTML/CSS/JS title cards and motion graphics to video for vertical cuts — no screen recording needed.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### video-editing-skill ✅ — Bash+FFmpeg+Whisper short-form pipeline (trim/jumpcut/Hormozi captions)
+- **What:** OpenClaw/Claude-compatible skill: pure Bash + FFmpeg + Whisper — trim, jump cut, Hormozi/standard/minimal caption burn-in, text overlay, speed change.
+- **URL:** https://github.com/6missedcalls/video-editing-skill
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** end-to-end vertical pipeline in one script set: trim → jumpcut → caption → speed; the Shorts factory.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### FFCreator ✅ — Node.js programmatic video creation library
+- **What:** Fast video processing/creation library on Node.js: scenes, transitions, text/image/video layers rendered to MP4.
+- **URL:** https://github.com/tnfe/FFCreator
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** code-driven vertical title cards, countdowns, and templated Shorts intros; pairs with timecut capture.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### rembg ✅ — background removal for images (portrait-mode vertical plates)
+- **What:** U²-Net-based background removal CLI/library; clean subject cutouts for blurred-background vertical composites.
+- **URL:** https://github.com/danielgatis/rembg
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** cut out characters for 9:16 layouts; blurred-plate background + sharp subject foreground composites.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### BackgroundMattingV2 ✅ — real-time high-resolution background matting
+- **What:** Real-time portrait matting (no green screen) at high resolution; video-native subject isolation.
+- **URL:** https://github.com/PeterL1n/BackgroundMattingV2
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** video subject mattes for vertical reframe composites; cleaner edges than rembg on footage.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Kap ✅ — open-source screen recorder (MIT)
+- **What:** Web-technology screen recorder with GIF/MP4/WebM export, plugins, and region capture.
+- **URL:** https://github.com/wulkano/kap
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** capture gameplay/animation playback for vertical teaser clips; quick social captures.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### ScreenToGif ✅ — screen region → GIF/video recorder and editor
+- **What:** Record a screen region, edit frames, and save as GIF or video; frame-level editor built in.
+- **URL:** https://github.com/NickeManarin/ScreenToGif
+- **License:** MS-PL (Microsoft Public License, OSI-approved permissive — verified 2026-10-08 via GitHub API license field)
+- **Use:** looping GIF teasers and short vertical clips from animation playback; frame editor for cleanup.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### mediapipe-autoflip-docker ⚠️ no licence file in repo
+- **What:** Docker wrapper that builds MediaPipe AutoFlip from source and exposes a one-command 9:16 reframe (`docker run … input.mp4 output_9x16.mp4 9:16`).
+- **URL:** https://github.com/thornxyz/mediapipe-autoflip-docker
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). The underlying AutoFlip is Apache-2.0, but the wrapper grants nothing — verify before reuse.
+- **Use:** fastest path to running AutoFlip without a Bazel build; reimplement the Dockerfile if licensing stays unclear.
+- **Free tier:** n/a — unlicensed wrapper
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### OpusClip 🚫 proprietary SaaS — honest exclusion
+- **What:** AI clip-factory SaaS: long video → viral Shorts with auto-captions and reframing; the commercial reference for the vertical pipeline.
+- **URL:** https://www.opus.pro
+- **License:** Proprietary commercial SaaS (no open-source licence grant). **EXCLUDED** — replicate with AutoFlip + WhisperX + video-editing-skill instead.
+- **Free tier:** freemium (proprietary)
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### CapCut 🚫 proprietary freeware — honest exclusion
+- **What:** ByteDance's free editor with auto-captions, templates, and direct TikTok publishing — the dominant Shorts editor.
+- **URL:** https://www.capcut.com
+- **License:** Proprietary freeware (no open-source licence grant; ToS-governed). **EXCLUDED** from the FOSS pipeline — use the FFmpeg script stack (jumpcutter, video-editing-skill) instead.
+- **Free tier:** free (proprietary)
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+## Animation formats / conversion / playback
+
+Wave-2 Lane A pocket: animation file formats and the tools that read, write, convert, and play them — dotLottie, Lottie runtimes, Rive, Spine-alternatives, SWF/Flash, animated image formats, sprite packing. Licences verified upstream 2026-10-08.
+
+#### dotlottie-web ✅ — official LottieFiles Lottie + dotLottie web player (Rust+WASM)
+- **What:** High-performance web player for Lottie JSON and .lottie archives: Rust+WASM core, ThorVG renderer, Canvas2D/WebGL2/WebGPU backends, theming + state machines.
+- **URL:** https://github.com/LottieFiles/dotlottie-web
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** play episode motion-graphics and character animations on web/PWA surfaces; React/Vue/Svelte/Solid/WebComponent SDKs.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### dotlottie-rs ✅ — Rust dotLottie engine (native players, bindings)
+- **What:** The shared Rust core behind LottieFiles' players: bindings for Android, iOS, Web (WASM), C/C++; dotLottie v2 (theming, state machines, audio).
+- **URL:** https://github.com/LottieFiles/dotlottie-rs
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** native playback of .lottie animation packs in games/apps; single engine across platforms.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### lottie-android ✅ — Airbnb's native Android (and cross-platform) Lottie renderer
+- **What:** Render After Effects animations natively on Android/iOS/Web/React Native — the original Lottie runtime.
+- **URL:** https://github.com/airbnb/lottie-android
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** native mobile playback of title-card and UI animations exported from After Effects.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### lottie-ios ✅ — Airbnb's native iOS Lottie renderer
+- **What:** iOS library to natively render After Effects vector animations (Swift/Obj-C).
+- **URL:** https://github.com/airbnb/lottie-ios
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** iOS-side animation playback; pairs with lottie-android for mobile parity.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### lottie-web ✅ — Airbnb's web Lottie player (bodymovin runtime)
+- **What:** Render After Effects animations natively on the web — the canonical bodymovin/Lottie web runtime.
+- **URL:** https://github.com/airbnb/lottie-web
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** web/PWA animation playback; the baseline player dotlottie-web supersedes for new work.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### ThorVG ✅ — production C++ vector graphics engine (SVG + Lottie)
+- **What:** Lightweight vector graphics engine with broad Lottie feature coverage; the renderer inside dotlottie-web.
+- **URL:** https://github.com/thorvg/thorvg
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** embed Lottie/SVG rendering in native tools and game engines without a browser.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### rive-runtime ✅ — Rive's low-level C++ runtime + renderer (MIT)
+- **What:** Rive's official low-level runtime: state machines, skeletal rigs, vector tweening with code-driven inputs — real-time interactive animation.
+- **URL:** https://github.com/rive-app/rive-runtime
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** interactive character/UI animation in games and apps; the FOSS-friendly Rive path (cf. the Rive ⚠️ entry in the 2D lane — this is the runtime half).
+- **Free tier:** fully open (Rive editor has its own terms)
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Ruffle ✅ — Flash Player emulator in Rust (MIT/Apache-2.0)
+- **What:** Drop-in Flash (SWF) player/emulator written in Rust; plays legacy SWF animation content on modern platforms.
+- **URL:** https://github.com/ruffle-rs/ruffle
+- **License:** MIT OR Apache-2.0 (verified 2026-10-08 via upstream README license section)
+- **Use:** recover and replay legacy Flash-era animation assets; SWF → modern pipeline bridge.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### libavif (avifenc) ✅ — AVIF encode/decode incl. animated AVIF
+- **What:** Reference AVIF library + `avifenc`/`avifdec` apps; AVIF supports animated sequences at far better compression than GIF.
+- **URL:** https://github.com/AOMediaCodec/libavif
+- **License:** BSD-2-Clause (verified 2026-10-08 via repo LICENSE text — BSD-style redistribution grant)
+- **Use:** animated-AVIF deliverables for web; high-quality short loops smaller than GIF/WebP.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### libjxl ✅ — JPEG XL reference implementation (animated JXL)
+- **What:** JPEG XL codec; the format supports animation sequences with excellent quality/size — a next-gen animated-image path.
+- **URL:** https://github.com/libjxl/libjxl
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** animated-JXL masters and web deliverables; lossless animation sequences.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### Glue ✅ — CLI CSS sprite generator
+- **What:** Simple command-line tool to generate CSS sprites from image sets — the classic sprite-sheet path for web animation.
+- **URL:** https://github.com/jorgebastida/glue
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** sprite-sheet generation for web/PWA character animation.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+
+#### PAG (libpag) ✅ — Tencent's Portable Animated Graphics renderer
+- **What:** Official rendering library for PAG files — AE-like animations (vector + bitmap + text) with a compact binary format and multi-platform SDKs.
+- **URL:** https://github.com/Tencent/libpag
+- **License:** Apache-2.0 (verified 2026-10-08 via repo README license badge + LICENSE.txt reference)
+- **Use:** alternative to Lottie for complex AE animations with broader effect support; mobile + web SDKs.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### Skottie ✅ — Skia's Lottie animation player
+- **What:** Skia's built-in Lottie module: renders Lottie animations on Skia's CPU/GPU canvas — the engine behind Chrome/Android vector animation.
+- **URL:** https://skia.org/docs/user/modules/skottie/
+- **License:** BSD-3-Clause (Skia is BSD-3-Clause per skia.org — verify on the site before wiring)
+- **Use:** embed Lottie playback anywhere Skia runs (custom tools, game engines, Flutter-adjacent pipelines).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### SVGAPlayer ✅ — AE/Animate CC animation player (Lottie-like, Apache-2.0)
+- **What:** Renders After Effects / Animate CC (Flash) animations natively on Android, iOS, and Web — SVGA format, similar role to Lottie.
+- **URL:** https://github.com/yyued/SVGAPlayer-Android
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** alternative vector-animation runtime where SVGA tooling fits better than Lottie.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### oxipng ✅ — multithreaded PNG optimizer (Rust)
+- **What:** Lossless PNG optimization, multithreaded; squeezes sprite/plate PNGs without quality loss.
+- **URL:** https://github.com/oxipng/oxipng
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** optimize animation frame PNGs, sprite sheets, and plate art before packaging.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### rlottie ⚠️ mostly MIT, some parts under different licences
+- **What:** Samsung's platform-independent standalone Lottie player library (C++); embedded in many apps.
+- **URL:** https://github.com/Samsung/rlottie
+- **License:** ⚠️ Mixed — "rlottie basically comes with MIT license (licenses/COPYING.MIT) but some parts of shared code are covered by different licenses" (verified 2026-10-08 via repo README Licensing section). Audit `licenses/` per folder before embedding.
+- **Use:** C++ Lottie embedding where ThorVG doesn't fit; verify the mixed parts first.
+- **Free tier:** open with per-folder audit
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+
+#### spine-runtimes 🚫 commercial licence required — honest exclusion
+- **What:** Official 2D skeletal-animation runtimes for Spine (Esoteric Software): bone rigs, meshes, IK — the industry-standard 2D skeletal format.
+- **URL:** https://github.com/EsotericSoftware/spine-runtimes
+- **License:** 🚫 Spine Runtimes License Agreement — "users of your software must have their own Spine license"; distribution without a Spine licence requires buying one (verified 2026-10-08 via upstream README license section). NOT FOSS. **EXCLUDED** — use DragonBones (covered Wave 1, MIT runtime) or Rive instead.
+- **Free tier:** none (paid editor + runtime licence terms)
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### TexturePacker 🚫 proprietary commercial — honest exclusion
+- **What:** The industry-standard sprite-sheet/atlas packer (CodeAndWeb) — GUI + CLI, all export formats.
+- **URL:** https://www.codeandweb.com/texturepacker
+- **License:** Proprietary commercial (paid licence; no open-source grant). **EXCLUDED** — use FreeTexturePacker (covered Wave 1, MIT) or Glue instead.
+- **Free tier:** trial (proprietary)
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a

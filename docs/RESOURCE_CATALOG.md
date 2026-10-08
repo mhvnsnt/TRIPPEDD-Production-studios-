@@ -49707,3 +49707,1175 @@ Regional labels, events, and scene hubs. Every URL verified live this pass via H
 - License notes: 20 of 21 Suspense OTRR items carry an item-level CC BY-NC-ND 4.0 tag (uploader transfer packaging, not broadcast copyright — noted per entry; 1949 item has no tag); The Shadow inherits show-level rights caution; jhead is public domain per the author's official site; PhotoDemon is BSD per README (GitHub API NOASSERTION = detection gap); GraphicsMagick is MIT-style per official Copyright.html; Hugin GPL-2.0-or-later verified via official site license text
 - Coordinator flags (not fixed — lane boundary): none new; prior-wave flags stand
 - Zero post-hoc duplicates: every candidate pre-grepped (title + URL) against the full catalog and quarantine manifest before appending; 4 pre-append rejections logged above
+
+## Wave 55 — Lane A: catalog deepening (2026-10-08)
+
+### P1 — PD radio-drama round 4: per-show per-episode deep dives (27 entries)
+
+#### OTRR_Dragnet_Singles (OTR) ✅ PD
+- **What:** OTRR certified "Dragnet — Single Episodes": 344 audio files covering the 1949–1957 radio run (Jack Webb as Sgt. Joe Friday).
+- **URL:** https://archive.org/details/OTRR_Dragnet_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-SA 3.0 US uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 344 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Full-series singles set; pair with the per-season structure for era-targeted pulls. [Wave 55 Lane A]
+
+#### Dragnet (OTR) — "The Big Set Up" (1951-07-12) ✅ PD
+- **What:** Single-episode deep dive: Dragnet 51-07-12 "The Big Set Up" — mid-run Jack Webb procedural, representative of the show's documentary-style narration.
+- **URL:** https://archive.org/details/Dragnet510712TheBigSetUp
+- **License:** ✅ Public domain (underlying 1951 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Episode-level reference for terse procedural dialogue pacing. [Wave 55 Lane A]
+
+#### OTRR_Whistler_Singles (OTR) ✅ PD
+- **What:** OTRR certified "The Whistler — Single Episodes": 502 audio files across the 1942–1955 CBS run (the ironic narrator-observer mystery anthology).
+- **URL:** https://archive.org/details/OTRR_Whistler_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-ND 3.0 uploader-packaging tag; verified 2026-10-08: metadata API HTTP 200, title match, 502 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Largest single-show Whistler set on the Archive; complements the quarterly Signal-era slices below. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1946 Q4 Signal-Oil era ✅ PD
+- **What:** "The Whistler — 1946 October to December Signal series": 22 audio files from the Signal Oil sponsorship era (the show's best-remembered sponsor block).
+- **URL:** https://archive.org/details/Whistler1946OctobertoDecember
+- **License:** ✅ Public domain (underlying 1946 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 22 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly era slice; sponsor-era targeting for period-authentic ad reads. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1947 Q2 Signal-Oil era ✅ PD
+- **What:** "The Whistler — 1947 April to June Signal series": 26 audio files, tail of the Signal Oil era.
+- **URL:** https://archive.org/details/Whistler47ApriltoJune
+- **License:** ✅ Public domain (underlying 1947 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 26 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly era slice. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1949 Q2 ✅ PD
+- **What:** "The Whistler — 1949 April to June Signal series": 54 audio files (largest of the quarterly batches).
+- **URL:** https://archive.org/details/Whistler1949ApriltoJune
+- **License:** ✅ Public domain (underlying 1949 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 54 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly slice; highest file count of the four quarter batches. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — 1951 Q3 ✅ PD
+- **What:** "The Whistler — 1951 July to September Signal series": 22 audio files from the show's final-decade stretch.
+- **URL:** https://archive.org/details/Whistler1951JulytoSeptember
+- **License:** ✅ Public domain (underlying 1951 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 22 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarterly slice. [Wave 55 Lane A]
+
+#### The Whistler (OTR) — "Avarice" (1942-11-29) ✅ PD
+- **What:** Single-episode deep dive: The Whistler 42-11-29 "Avarice" — first-season episode from the show's 1942 debut year.
+- **URL:** https://archive.org/details/TheWhistler421129Avarice
+- **License:** ✅ Public domain (underlying 1942 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-format reference — the Whistler persona still settling in. [Wave 55 Lane A]
+
+#### BDP_QuietPlease — Quiet, Please full collection (OTR) ✅ PD
+- **What:** "Ron Bowser–John Dunning Project — Quiet, Please": 180 audio files of Wyllis Cooper's 1947–1949 Mutual fantasy/horror anthology.
+- **URL:** https://archive.org/details/BDP_QuietPlease
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 180 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Near-complete series run; quiet-horror dialogue reference. [Wave 55 Lane A]
+
+#### Fibber McGee and Molly (OTR) — "Dinner Is Not Served" (1937-12-06) ✅ PD
+- **What:** Single-episode deep dive: 37-12-06 "Dinner Is Not Served" — Depression-era domestic comedy at the show's peak popularity.
+- **URL:** https://archive.org/details/FibberMcGeeAndMolly371206DinnerIsNotServed
+- **License:** ✅ Public domain (underlying 1937 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pre-war era reference for running-gag ensemble comedy. [Wave 55 Lane A]
+
+#### Fibber McGee and Molly (OTR) — "Fight With Gildersleeve" (1940-05-14) ✅ PD
+- **What:** Single-episode deep dive: 40-05-14 "Fight With Gildersleeve" — Fibber vs. Throckmorton P. Gildersleeve, the feud that spun off Gildersleeve's own show.
+- **URL:** https://archive.org/details/FibberMcGeeAndMolly400514FightWithGildersleeve
+- **License:** ✅ Public domain (underlying 1940 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Character-feud episode; useful for two-hander comic argument timing. [Wave 55 Lane A]
+
+#### Fibber McGee and Molly (OTR) — "Putting Up A Porch Swing" (1944-06-13) ✅ PD
+- **What:** Single-episode deep dive: 44-06-13 "Putting Up A Porch Swing" — wartime-era episode (one week after D-Day).
+- **URL:** https://archive.org/details/FibberMcGeeAndMolly440613PuttingUpAPorchSwing
+- **License:** ✅ Public domain (underlying 1944 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wartime home-front comedy reference. [Wave 55 Lane A]
+
+#### Lights Out (OTR) — "Little Old Lady" (1937-11-17) ✅ PD
+- **What:** Single-episode deep dive: Lights Out 37-11-17 "Little Old Lady" — Arch Oboler's Chicago-era horror at its most infamous.
+- **URL:** https://archive.org/details/v3t3gvjtd3cnayf1cntoyzudiql0mwht75yl26rs
+- **License:** ✅ Public domain (underlying 1937 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark horror-radio episode; sound-design reference for dread build. [Wave 55 Lane A]
+
+#### Lights Out (OTR) — "The Word" (1943-09-14) ✅ PD
+- **What:** Single-episode deep dive: Lights Out "The Word" (9-14-43) — Oboler's Coast-to-Coast era episode.
+- **URL:** https://archive.org/details/wliiqxnxnpzjdiya23eowshygmbbgol4xzdg0bom
+- **License:** ✅ Public domain (underlying 1943 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mid-war Oboler; compare against the 1937 Chicago style. [Wave 55 Lane A]
+
+#### Dimension X (OTR) — "Pebble In The Sky" (1951-06-17) ✅ PD
+- **What:** Single-episode deep dive: Dimension X 6-17-51 "Pebble In The Sky" — Isaac Asimov adaptation from the show's 1951 season.
+- **URL:** https://archive.org/details/0husokuyfn99a3vavvpths1oqliwrgnvkwtfly1r
+- **License:** ✅ Public domain (underlying 1951 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Big-idea SF adaptation; novel-to-radio compression reference. [Wave 55 Lane A]
+
+#### X Minus One (OTR) — #001 "No Contact" series premiere (1955-04-24) ✅ PD
+- **What:** Single-episode deep dive: X Minus One 1955-04-24 "No Contact" (episode 001) — the series premiere of NBC's hard-SF successor to Dimension X.
+- **URL:** https://archive.org/details/xminusone19550424nocontact001
+- **License:** ✅ Public domain (underlying 1955 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Premiere-episode craft reference (pilot that had to sell the format). [Wave 55 Lane A]
+
+#### Inner Sanctum (OTR) — "The Dream" lost episode (Orson Welles) ✅ PD
+- **What:** Single-episode deep dive: Inner Sanctum "The Dream" — lost episode starring Orson Welles; item carries an explicit public-domain mark.
+- **URL:** https://archive.org/details/inner-sanctum-mystery-the-dream-starring-orson-welles
+- **License:** ✅ Public domain (verified 2026-10-08: metadata API HTTP 200, title match, item licenseurl = Creative Commons Public Domain Mark 1.0, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cleanest-licensed Inner Sanctum item found (explicit PD mark); Welles-era horror hosting. [Wave 55 Lane A]
+
+#### innersanctum collection (OTR) ✅ PD
+- **What:** "innersanctum" — small 3-file Inner Sanctum collection (thin but the only multi-episode set located this pass).
+- **URL:** https://archive.org/details/innersanctum
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 3 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest thin entry — 3 files; use the Welles "The Dream" item as the primary Inner Sanctum reference. [Wave 55 Lane A]
+
+#### OTRR_Lux_Radio_Theatre_Season_02_Singles ⚠️ rights-caution
+- **What:** OTRR certified "Lux Radio Theatre — Single Episodes — Season 02": 6 audio files (1936–37 season, Cecil B. DeMille hosting).
+- **URL:** https://archive.org/details/OTRR_Lux_Radio_Theatre_Season_02_Singles
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 6 audio files; item carries CC BY-NC-ND 4.0 uploader tag)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; DeMille-era prestige-radio format. [Wave 55 Lane A]
+
+#### OTRR_Lux_Radio_Theatre_Season_06_Singles ⚠️ rights-caution
+- **What:** OTRR certified "Lux Radio Theatre — Single Episodes — Season 06": 46 audio files (1940–41 season).
+- **URL:** https://archive.org/details/OTRR_Lux_Radio_Theatre_Season_06_Singles
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 46 audio files; item carries CC BY-NC-ND 4.0 uploader tag)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; wartime Hollywood-star adaptations. [Wave 55 Lane A]
+
+#### OTRR_Lux_Radio_Theatre_Season_21_Singles ⚠️ rights-caution
+- **What:** OTRR certified "Lux Radio Theatre — Single Episodes — Season 21": 31 audio files (1954–55 season, the show's final year).
+- **URL:** https://archive.org/details/OTRR_Lux_Radio_Theatre_Season_21_Singles
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 31 audio files; item carries CC BY-NC-ND 4.0 uploader tag)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; final-season format before the 1955 close. [Wave 55 Lane A]
+
+#### Lux Radio Theatre (OTR) — "The Day the Earth Stood Still" (1954) ⚠️ rights-caution
+- **What:** Single-episode deep dive: Lux Radio Theatre's 1954 adaptation of "The Day the Earth Stood Still" (Michael Rennie film, radio-condensed).
+- **URL:** https://archive.org/details/xkepd3qctwrbw4oqe4g9dgzoagiknwg2ej7o2kib
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; film-to-radio adaptation craft. [Wave 55 Lane A]
+
+#### Lux Radio Theatre (OTR) — "1984" starring Vincent Price (1949) ⚠️ rights-caution
+- **What:** Single-episode deep dive: Lux's 1949 "1984" (Orwell) starring Vincent Price — prestige-radio dystopia adaptation.
+- **URL:** https://archive.org/details/GorgeOrwells1984luxRadioTheartre
+- **License:** ⚠️ Rights-caution — inherits the show-level Lux caution (verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only; hour-long novel compression reference. [Wave 55 Lane A]
+
+#### OTRR_CBS_Radio_Workshop_Singles (OTR) ✅ PD
+- **What:** OTRR certified "CBS Radio Workshop — Single Episodes": 86 audio files of the 1956–57 experimental drama series.
+- **URL:** https://archive.org/details/OTRR_CBS_Radio_Workshop_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries CC BY-NC-ND 3.0 uploader-packaging tag; verified 2026-10-08: metadata API HTTP 200, title match, 86 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Experimental-format anthology; sound-experiment episodes included. [Wave 55 Lane A]
+
+#### CBS Radio Workshop — 86-episode collection (OTR) ✅ PD
+- **What:** "CBS Radio Workshop — 86 episodes of the CBS Radio Workshop": alternate full-run collection (1956–57).
+- **URL:** https://archive.org/details/cbs-radio-workshop-1956-10-05-36-roughing-it
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 86 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Second full-run source; cross-check audio quality against the OTRR set. [Wave 55 Lane A]
+
+#### CBS Radio Workshop (OTR) — "Light Ship" (1957-04-28) ✅ PD
+- **What:** Single-episode deep dive: CBS Radio Workshop "Light Ship" (4-28-57) — late-run experimental episode.
+- **URL:** https://archive.org/details/4utn4yc0hoez3lqvqi8f4atphrt8mqjnnxtltblo
+- **License:** ✅ Public domain (underlying 1957 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Experimental-drama reference. [Wave 55 Lane A]
+
+#### Escape (OTR) — "Three Skeleton Key" (1950-03-17) ✅ PD
+- **What:** Single-episode deep dive: Escape 50-03-17 "Three Skeleton Key" — the show's most famous episode (shipwrecked men vs. rats).
+- **URL:** https://archive.org/details/500317EscapeThreeSkeletonKey
+- **License:** ✅ Public domain (underlying 1950 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical suspense-radio episode; tension-escalation masterclass. [Wave 55 Lane A]
+
+### P2 — sound-chip hardware docs round 3 (28 entries)
+
+#### Yamaha YMF289B (OPL3-L) datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YMF289B datasheet (OPL3-L low-power FM synthesis chip) — register maps and electrical specs for the late-era OPL3 variant.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMF2_3564181
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, identifier + title "components :: yamaha :: YMF289B 199412" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the cataloged YMF262 (OPL3) scan — different chip revision. [Wave 55 Lane A]
+
+#### Yamaha YMF715x register description — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YMF715x register description (1997) — FM synthesis register-level programming reference for the YMF715 series.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMF7ion199707_261038
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YMF715x Register Description 199707" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Register-description doc rather than full datasheet — programming-focused. [Wave 55 Lane A]
+
+#### Yamaha YM3012 DAC datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YM3012 datasheet (1992) — the floating-point DAC paired with the YM2151 OPM FM chip (Sega arcade / X68000 sound chain).
+- **URL:** https://archive.org/details/bitsavers_yamahaYM30_1684942
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YM3012 199204" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion-chip doc — completes the YM2151 + YM3012 FM output chain. [Wave 55 Lane A]
+
+#### Yamaha YM3014B DAC datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YM3014B datasheet (1994) — DAC for the later FM chip generations.
+- **URL:** https://archive.org/details/bitsavers_yamahaYM30_1804527
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YM3014B 199403" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DAC-chain reference. [Wave 55 Lane A]
+
+#### Yamaha YMZ284 (SSG) datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YMZ284 datasheet (1994) — SSG (Software-controlled Sound Generator, AY-3-8910-compatible) LSI.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMZ2_3024318
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YMZ284 199411" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Yamaha's AY-compatible PSG — cross-reference with the cataloged GI AY-3-8910/8912 datasheets. [Wave 55 Lane A]
+
+#### GI AY-3-8913 datasheet ❓ manufacturer doc, community mirror
+- **What:** General Instrument AY-3-8913 Data Sheet v2 — the 28-pin cost-reduced PSG variant (distinct from the cataloged 8910/8912 datasheets).
+- **URL:** https://archive.org/details/AY-3-8913_Data_Sheet_v2
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title "IC Datasheet: AY-3-8913 Data Sheet v2" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The missing third variant of the AY-3-891x family; pinout differs from 8910/8912. [Wave 55 Lane A]
+
+#### Commodore Amiga Hardware Reference Manual (Paula audio) ❓ manufacturer doc, community mirror
+- **What:** Commodore Amiga Hardware Reference Manual (600dpi OCR scan) — the Paula (8364) audio chapter: 4-channel 8-bit PCM DMA, audio periods/volumes, disk-DMA audio tricks.
+- **URL:** https://archive.org/details/commodore-amiga-hardware-reference-manual-600dpiocr
+- **License:** ❓ Manufacturer document (Commodore), community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical Paula reference; read the audio/DMA chapters, not the whole manual. [Wave 55 Lane A]
+
+#### Game Boy CPU Manual v1.01 (sound chapter) ❓ manufacturer doc, community mirror
+- **What:** Game Boy CPU Manual v1.01 (Marc Rawer) — Sharp LR35902 sound chapter: 4 channels (pulse ×2, wave, noise), NR10–NR52 registers, envelope/sweep tables.
+- **URL:** https://archive.org/details/gbcpuman_v1.01
+- **License:** ❓ Manufacturer-derived document, community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements the CC0 Pan Docs audio page; this is the register-level original. [Wave 55 Lane A]
+
+#### De Re Atari (POKEY sound) ❓ manufacturer doc, community mirror
+- **What:** "De Re Atari" (1982, Atari) — the Atari 8-bit technical reference; POKEY (CO12294) chapter covers 4-channel square-wave + noise audio, keyboard scan, and timers.
+- **URL:** https://archive.org/details/ataribooks-de-re-atari
+- **License:** ❓ Manufacturer document (Atari), community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title "De Re Atari (1982)(Atari)" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The POKEY bible; read chapters on sound/serial. [Wave 55 Lane A]
+
+#### Commodore 64 Programmer's Reference Guide (SID chapter) ❓ manufacturer doc, community mirror
+- **What:** Commodore 64 Programmer's Reference Guide (1983, Commodore) — MOS 6581 SID chapter: 3 voices, ADSR, filters, ring mod/sync, register map $D400–$D41C.
+- **URL:** https://archive.org/details/Commodore_64_Programmers_Reference_Guide_1983_Commodore
+- **License:** ❓ Manufacturer document (Commodore), community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the cataloged standalone 6581 datasheet — this is the programmer-facing SID guide. [Wave 55 Lane A]
+
+#### Mapping the Atari (POKEY register map) ❓ community doc
+- **What:** "Mapping the Atari" (Ian Chadwick) — memory-mapped register bible for Atari 8-bit; POKEY registers ($D200–$D20F) with bit-level audio descriptions.
+- **URL:** https://archive.org/details/ataribooks-mapping-the-atari
+- **License:** ❓ Community technical document, scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Register-lookup companion to De Re Atari. [Wave 55 Lane A]
+
+#### Nintendo Ultra-64 Programming Manual (RSP audio) ❓ manufacturer doc, community mirror
+- **What:** Nintendo Ultra-64 Programming Manual + addendums (SGI/Nintendo) — RSP audio microcode chapter: the N64's software-driven audio pipeline (tasks, ABI, sample synthesis).
+- **URL:** https://archive.org/details/Nintendo_Ultra64_Programming_Manual
+- **License:** ❓ Manufacturer document (Nintendo/SGI), community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Only mainstream doc set for a fully software-synth console audio path. [Wave 55 Lane A]
+
+#### Atari ST Internals (YM2149 sound) ❓ book scan, community mirror
+- **What:** "Atari ST Internals" (Abacus #2, 3rd edition, 1986) — YM2149 (AY-3-8910-compatible) sound chapter: 3-voice PSG programming on the ST.
+- **URL:** https://archive.org/details/Atari_ST_Internals_Abacus_2_3rd_edition_1986
+- **License:** ❓ Published book, community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ST-specific PSG practice (digidrums, SID-voice techniques). [Wave 55 Lane A]
+
+#### MSX Technical Data Book (PSG + OPLL) ❓ manufacturer doc, community mirror
+- **What:** MSX Technical Data Book — MSX sound hardware: AY-3-8910 PSG baseline plus MSX-Audio/MSX-Music (Y8950/YM2413 OPLL) cartridge specs.
+- **URL:** https://archive.org/details/MSXTechnicalDataBook
+- **License:** ❓ Manufacturer-derived document, community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cross-reference with the cataloged YM2413 bitsavers scan. [Wave 55 Lane A]
+
+#### Commodore 128 Reference Guide for Programmers (SID chapter) ❓ manufacturer doc, community mirror
+- **What:** Commodore 128 Reference Guide for Programmers — SID programming chapter for the C128's 6581/8580 (C64 mode + C128 mode audio notes).
+- **URL:** https://archive.org/details/commodore-128-reference-guide-for-programmers
+- **License:** ❓ Manufacturer-derived document, community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the C64 PRG entry; notes C128-specific audio behavior. [Wave 55 Lane A]
+
+#### Apple IIGS Hardware Reference (Ensoniq DOC) ❓ manufacturer doc, community mirror
+- **What:** Apple IIGS Hardware Reference — Ensoniq 5503 Digital Oscillator Chip chapter: 32-voice wavetable/DOC synthesis, the only mainstream Ensoniq-DOC programming doc.
+- **URL:** https://archive.org/details/Apple_IIgs_Hardware_Reference
+- **License:** ❓ Manufacturer document (Apple), community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wavetable-synth reference unlike any PSG/FM doc in the catalog. [Wave 55 Lane A]
+
+#### BBC Micro Advanced User Guide (SN76489) ❓ book scan, community mirror
+- **What:** BBC Micro Advanced User Guide — SN76489 sound chapter: 3 square + noise channel programming via the BBC Micro's sound system.
+- **URL:** https://archive.org/details/bbc-micro-advanced-user-guide
+- **License:** ❓ Published book, community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SN76489 practice reference (also applies to Master System/Game Gear/ColecoVision sound). [Wave 55 Lane A]
+
+#### S-DSP reference (SNESDev wiki) ✅ CC0
+- **What:** SNESDev wiki S-DSP page — Sony S-DSP audio DSP reference: 8 voices, BRR samples, echo/reverb, FIR filter, register map.
+- **URL:** https://snes.nesdev.org/wiki/S-DSP
+- **License:** ✅ CC0 (verified 2026-10-08: wiki footer states "CC0 Public Domain"; page HTTP 200)
+- **Free tier:** Free to read/reuse
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the cataloged SPC700 opcode table (same CC0 wiki) — CPU + DSP complete. [Wave 55 Lane A]
+
+#### S-SMP reference (SNESDev wiki) ✅ CC0
+- **What:** SNESDev wiki S-SMP page — the SPC700-based sound CPU core reference (distinct from the opcode-table page already cataloged).
+- **URL:** https://snes.nesdev.org/wiki/S-SMP
+- **License:** ✅ CC0 (verified 2026-10-08: wiki footer states "CC0 Public Domain"; page HTTP 200)
+- **Free tier:** Free to read/reuse
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Architecture companion to the opcode table. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Pulse ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Pulse page — Ricoh 2A03 pulse channels 1–2: duty cycles, sweep units, length counters, register maps.
+- **URL:** https://www.nesdev.org/wiki/APU_Pulse
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive; distinct from the cataloged top-level APU page. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Triangle ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Triangle page — 2A03 triangle channel: linear counter, ultra-sonic step behavior, register map.
+- **URL:** https://www.nesdev.org/wiki/APU_Triangle
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Noise ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Noise page — 2A03 noise channel: LFSR modes, period table, register map.
+- **URL:** https://www.nesdev.org/wiki/APU_Noise
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU DMC ⚠️ per-wiki terms
+- **What:** NESDev wiki APU DMC page — 2A03 delta-modulation channel: sample playback, DMA, DPCM format details.
+- **URL:** https://www.nesdev.org/wiki/APU_DMC
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Frame Counter ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Frame Counter page — 2A03 frame sequencer: 4-step/5-step modes, IRQ behavior, envelope/length clocking.
+- **URL:** https://www.nesdev.org/wiki/APU_Frame_Counter
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Timing-sequencer deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Mixer ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Mixer page — 2A03 output mixing: nonlinear channel mixing, lookup tables, expansion-audio mixing notes.
+- **URL:** https://www.nesdev.org/wiki/APU_Mixer
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mixer deep dive; pairs with the expansion-audio pages below. [Wave 55 Lane A]
+
+#### NESdev Wiki — VRC7 audio ⚠️ per-wiki terms
+- **What:** NESDev wiki VRC7 audio page — Konami VRC7 (YM2413-derived) expansion audio: 6 FM channels, patch set, register map.
+- **URL:** https://www.nesdev.org/wiki/VRC7_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Lagrange Point chip; cross-reference with the YM2413 bitsavers scan. [Wave 55 Lane A]
+
+#### NESdev Wiki — Namco 163 audio ⚠️ per-wiki terms
+- **What:** NESDev wiki Namco 163 audio page — Namco 163 expansion audio: 8 wavetable channels, wave RAM, register map.
+- **URL:** https://www.nesdev.org/wiki/Namco_163_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wavetable expansion reference. [Wave 55 Lane A]
+
+#### NESdev Wiki — MMC5 audio ⚠️ per-wiki terms
+- **What:** NESDev wiki MMC5 audio page — Nintendo MMC5 expansion audio: 2 pulse channels + PCM, ExRAM sound registers.
+- **URL:** https://www.nesdev.org/wiki/MMC5_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Expansion-audio deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — Sunsoft 5B audio ⚠️ per-wiki terms
+- **What:** NESDev wiki Sunsoft 5B audio page — Sunsoft 5B (AY-3-8910-derived) expansion audio: 3 PSG channels, envelope behavior.
+- **URL:** https://www.nesdev.org/wiki/Sunsoft_5B_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cross-reference with the GI AY-3-8910/8912/8913 datasheet entries. [Wave 55 Lane A]
+
+### P3 — open broadcast-automation tail (30 entries)
+
+#### beets ✅ commercial-safe
+- **What:** beetbox/beets — music library manager and MusicBrainz tagger (autotagging, duplicate handling, playlist automation for broadcast libraries).
+- **URL:** https://github.com/beetbox/beets
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / library automation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Library-hygiene automation for station music pools. [Wave 55 Lane A]
+
+#### kurento/kurento ✅ commercial-safe
+- **What:** Kurento WebRTC Media Server — media-server toolkit (transcoding, mixing, recording) for broadcast contribution pipelines.
+- **URL:** https://github.com/kurento/kurento
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Contribution/mixing leg for live broadcast chains. [Wave 55 Lane A]
+
+#### arut/nginx-rtmp-module ✅ commercial-safe
+- **What:** NGINX-based media streaming server module (RTMP ingest, HLS/DASH relay) — the classic self-hosted live-ingest workhorse.
+- **URL:** https://github.com/arut/nginx-rtmp-module
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Ingest tier for station streaming; pair with a permissive player. [Wave 55 Lane A]
+
+#### gwuhaolin/livego ✅ commercial-safe
+- **What:** Live video streaming server in Go (RTMP/HLS/HTTP-FLV) — lightweight self-hosted live server.
+- **URL:** https://github.com/gwuhaolin/livego
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Go alternative to nginx-rtmp for live ingest. [Wave 55 Lane A]
+
+#### illuspas/Node-Media-Server ✅ commercial-safe
+- **What:** Node.js implementation of an RTMP/HTTP-FLV media server — JS-native live ingest for Node broadcast stacks.
+- **URL:** https://github.com/illuspas/Node-Media-Server
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Node-native ingest option. [Wave 55 Lane A]
+
+#### Red5/red5-server ✅ commercial-safe
+- **What:** Red5 Server core — open-source media server (RTMP/WebRTC streaming) for broadcast distribution.
+- **URL:** https://github.com/Red5/red5-server
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Full media-server option; heavier than livego/nginx-rtmp. [Wave 55 Lane A]
+
+#### pion/ion-sfu ✅ commercial-safe
+- **What:** Pure-Go WebRTC SFU (Selective Forwarding Unit) — fan-out leg for low-latency broadcast contribution.
+- **URL:** https://github.com/pion/ion-sfu
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Pairs with the cataloged pion/webrtc stack. [Wave 55 Lane A]
+
+#### Moonbase59/loudgain ✅ commercial-safe
+- **What:** ReplayGain 2.0 loudness normalizer based on EBU R128 / ITU-R BS.1770 — broadcast loudness compliance tagging for music libraries.
+- **URL:** https://github.com/Moonbase59/loudgain
+- **License:** ✅ BSD-style (verified 2026-10-08: COPYING file — redistribution with/without modification permitted, retain copyright)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / loudness)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Loudness-normalize station libraries before playout; complements libebur128 (already cataloged). [Wave 55 Lane A]
+
+#### desbma/r128gain ⚠️ license-conditional
+- **What:** Fast audio loudness scanner & tagger (ReplayGain v2 / R128) — archived upstream.
+- **URL:** https://github.com/desbma/r128gain
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id; repo archived) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / loudness)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Archived — prefer loudgain (BSD) for new wiring; keep for R128 scan workflows. [Wave 55 Lane A]
+
+#### Haivision/srt ⚠️ license-conditional
+- **What:** Secure, Reliable, Transport (SRT) protocol — broadcast contribution transport for lossy networks.
+- **URL:** https://github.com/Haivision/srt
+- **License:** ⚠️ MPL-2.0 (verified 2026-10-08 via GitHub API spdx_id) — file-level copyleft; link with care
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / contribution)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The standard open contribution protocol; MPL means keep it at arm's length from shipping code. [Wave 55 Lane A]
+
+#### bigbluebutton/bigbluebutton ⚠️ license-conditional
+- **What:** Complete web conferencing system (virtual classes) — LGPL-licensed broadcast-adjacent live production platform.
+- **URL:** https://github.com/bigbluebutton/bigbluebutton
+- **License:** ⚠️ LGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / live production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Heavy lift; listed for live-remote-production completeness. [Wave 55 Lane A]
+
+#### rafael2k/darkice ❓ unverified
+- **What:** DarkIce — live audio streamer; records from an audio interface and encodes to Icecast/Shoutcast servers.
+- **URL:** https://github.com/rafael2k/darkice
+- **License:** ❓ Unverified (verified 2026-10-08: GitHub API spdx_id NONE — no LICENSE/COPYING in repo root; darkice.org unreachable this pass — license NOT assumed)
+- **Free tier:** Free and open source (claimed)
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — read the license from a release tarball before any use. [Wave 55 Lane A]
+
+#### mixxxdj/mixxx 🚫 GPL-2.0-or-later — QUARANTINED (row 537)
+- **What:** Mixxx — free DJ software for live mixes (broadcast performance / live-assist desk).
+- **URL:** https://github.com/mixxxdj/mixxx
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08: LICENSE file "either version 2 of the License, or (at your option) any later version")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / performance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only, never linked into shipping paths. [Wave 55 Lane A]
+
+#### meetecho/janus-gateway 🚫 GPL-3.0 — QUARANTINED (row 538)
+- **What:** Janus WebRTC Server — general-purpose WebRTC gateway for broadcast contribution.
+- **URL:** https://github.com/meetecho/janus-gateway
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### navidrome/navidrome 🚫 GPL-3.0 — QUARANTINED (row 539)
+- **What:** Navidrome — personal music streaming server (Subsonic-compatible).
+- **URL:** https://github.com/navidrome/navidrome
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### ampache/ampache 🚫 AGPL-3.0 — QUARANTINED (row 540)
+- **What:** Ampache — web audio/video streaming application + file manager.
+- **URL:** https://github.com/ampache/ampache
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### jellyfin/jellyfin 🚫 GPL-2.0 — QUARANTINED (row 541)
+- **What:** Jellyfin — free-software media system server backend & API.
+- **URL:** https://github.com/jellyfin/jellyfin
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### badaix/snapcast 🚫 GPL-3.0 — QUARANTINED (row 542)
+- **What:** Snapcast — synchronous multiroom audio player (broadcast distribution to synced endpoints).
+- **URL:** https://github.com/badaix/snapcast
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### MusicPlayerDaemon/MPD 🚫 GPL-2.0 — QUARANTINED (row 543)
+- **What:** Music Player Daemon — headless music server (the classic automation backend).
+- **URL:** https://github.com/MusicPlayerDaemon/MPD
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### tenacityteam/tenacity 🚫 GPL-2.0 — QUARANTINED (row 544)
+- **What:** Tenacity — Audacity-fork audio editor (broadcast production/editing).
+- **URL:** https://github.com/tenacityteam/tenacity
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: LICENSE.txt "distributed under the terms of the GNU GPL Version 2")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### metabrainz/picard 🚫 GPL-2.0 — QUARANTINED (row 545)
+- **What:** Picard — cross-platform music tagger powered by the MusicBrainz database.
+- **URL:** https://github.com/metabrainz/picard
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / library)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### ChristopheJacquet/PiFmRds 🚫 GPL-3.0 — QUARANTINED (row 546)
+- **What:** PiFmRds — FM-RDS transmitter using the Raspberry Pi's PWM (micro-broadcast hardware).
+- **URL:** https://github.com/ChristopheJacquet/PiFmRds
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / transmission)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — build/use yourself; check local transmission law before airing. [Wave 55 Lane A]
+
+#### IDJC — Internet DJ Console 🚫 GPL-2.0 — QUARANTINED (row 547)
+- **What:** IDJC — internet radio DJ console / live broadcast desk (playout + streaming + VoIP call-in).
+- **URL:** https://idjc.sourceforge.io/
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: SourceForge project page states "General Public License version 2.0 (GPLv2)")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only; canonical lives on SourceForge (GitHub mirrors unofficial). [Wave 55 Lane A]
+
+#### AirenSoft/OvenMediaEngine 🚫 AGPL-3.0 — QUARANTINED (row 548)
+- **What:** OvenMediaEngine — sub-second-latency live streaming server.
+- **URL:** https://github.com/AirenSoft/OvenMediaEngine
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### gpodder/gpodder 🚫 GPL-3.0 — QUARANTINED (row 549)
+- **What:** gPodder — podcast client with subscription/download automation.
+- **URL:** https://github.com/gpodder/gpodder
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### jackaudio/jack2 🚫 GPL-2.0 — QUARANTINED (row 550)
+- **What:** JACK2 — the JACK audio connection kit (pro-audio low-latency routing between broadcast tools).
+- **URL:** https://github.com/jackaudio/jack2
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / routing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### kaivehmanen/ecasound 🚫 GPL-2.0 — QUARANTINED (row 551)
+- **What:** Ecasound — multitrack-capable audio recorder and effect processor (CLI automation-friendly).
+- **URL:** https://github.com/kaivehmanen/ecasound
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: COPYING references "GNU General Public License (see the file 'COPYING.GPL')")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### Ardour/ardour 🚫 GPL-2.0 — QUARANTINED (row 552)
+- **What:** Ardour — professional digital audio workstation (broadcast production/mixing).
+- **URL:** https://github.com/Ardour/ardour
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: COPYING "GNU GENERAL PUBLIC LICENSE Version 2, June 1991")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### podlibre/castopod 🚫 AGPL-3.0 — QUARANTINED (row 553)
+- **What:** Castopod — open-source podcast hosting platform (publishing automation for broadcasters).
+- **URL:** https://github.com/podlibre/castopod
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### Campcaster 🚫 GPL-2.0 — QUARANTINED (row 554)
+- **What:** Campcaster — legacy open-source radio broadcast automation suite (2009-era, inactive upstream).
+- **URL:** https://sourceforge.net/projects/campcaster/
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: SourceForge project page states "General Public License version 2.0 (GPLv2)")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / automation)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — historical reference only (predecessor lineage to Airtime/LibreTime). [Wave 55 Lane A]
+
+### P4 — caption burn-in OSS round 5 (29 entries)
+
+#### libass/JavascriptSubtitlesOctopus ✅ commercial-safe
+- **What:** SubtitlesOctopus — renders ASS subtitles in the browser via WebAssembly-compiled libass; the standard client-side burn-in/preview renderer.
+- **URL:** https://github.com/libass/JavascriptSubtitlesOctopus
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / render)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Canonical repo (libass org); complements the cataloged libass native library. [Wave 55 Lane A]
+
+#### ThaUnknown/jassub ✅ commercial-safe
+- **What:** JASSUB — displays subtitles in .ass format via JavaScript; supports all SSA/ASS features, integrates with HTML5 video (maintained fork).
+- **URL:** https://github.com/ThaUnknown/jassub
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / render)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Maintained JASSUB fork (original themadcreator repo gone — 404); lighter than SubtitlesOctopus for preview use. [Wave 55 Lane A]
+
+#### szatmary/libcaption ✅ commercial-safe
+- **What:** Free open-source CEA-608/CEA-708 closed-caption encoder/decoder library (broadcast caption standards in code).
+- **URL:** https://github.com/szatmary/libcaption
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / broadcast)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The permissive 608/708 path (vs. GPL'd ccextractor, already cataloged as standalone). [Wave 55 Lane A]
+
+#### harfbuzz/harfbuzz ✅ commercial-safe
+- **What:** HarfBuzz text shaping engine — OpenType shaping required for correct styled-subtitle rendering (ligatures, complex scripts).
+- **URL:** https://github.com/harfbuzz/harfbuzz
+- **License:** ✅ MIT ("Old MIT" license; verified 2026-10-08: COPYING file "HarfBuzz is licensed under the so-called "Old MIT" license"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Core of the burn-in text stack (with freetype + libraqm). [Wave 55 Lane A]
+
+#### JuliaStrings/utf8proc ✅ commercial-safe
+- **What:** Clean C library for processing UTF-8 Unicode data (normalization, case mapping) — subtitle text normalization for burn-in pipelines.
+- **URL:** https://github.com/JuliaStrings/utf8proc
+- **License:** ✅ MIT (verified 2026-10-08: LICENSE.md states new work licensed under the MIT "expat" license; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Unicode hygiene for multilingual caption tracks. [Wave 55 Lane A]
+
+#### shaka-project/shaka-packager ✅ commercial-safe
+- **What:** Media packaging framework for VOD/live DASH and HLS — caption/subtitle track packaging and multiplexing.
+- **URL:** https://github.com/shaka-project/shaka-packager
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08: LICENSE file, Google BSD-style grant; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / packaging)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Caption-track packaging for streaming outputs. [Wave 55 Lane A]
+
+#### videolan/dav1d ✅ commercial-safe
+- **What:** dav1d — fast AV1 decoder (read-only GitHub mirror of the VideoLAN repo) — decode leg for AV1 caption-burn-in pipelines.
+- **URL:** https://github.com/videolan/dav1d
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / codec)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive AV1 decode for burn-in transcodes. [Wave 55 Lane A]
+
+#### xiph/rav1e ✅ commercial-safe
+- **What:** rav1e — the fastest and safest AV1 encoder (Rust) — encode leg for AV1 caption-burn-in outputs.
+- **URL:** https://github.com/xiph/rav1e
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / codec)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive AV1 encode for burned-in deliverables. [Wave 55 Lane A]
+
+#### AOMediaCodec/SVT-AV1 ✅ commercial-safe
+- **What:** SVT-AV1 — production AV1 encoder (Scalable Video Technology) — high-throughput encode for burned-in caption masters.
+- **URL:** https://github.com/AOMediaCodec/SVT-AV1
+- **License:** ✅ BSD-3-Clause-Clear (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / codec)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Canonical repo is GitLab (AOMediaCodec/SVT-AV1); GitHub mirror verified. [Wave 55 Lane A]
+
+#### opennmt/CTranslate2 ✅ commercial-safe
+- **What:** Fast inference engine for Transformer models — subtitle translation inference for multilingual caption burn-in.
+- **URL:** https://github.com/opennmt/CTranslate2
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / translation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Translation-inference leg for caption localization. [Wave 55 Lane A]
+
+#### ass-parser (npm) ✅ commercial-safe
+- **What:** npm `ass-parser` — ASS subtitle parser (JavaScript) for burn-in preprocessing pipelines.
+- **URL:** https://www.npmjs.com/package/ass-parser
+- **License:** ✅ MIT (verified 2026-10-08 via npm registry API: license field MIT, latest 0.2.0)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / parsing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** JS-side ASS parsing; complements the Python ass-compiler (already cataloged). [Wave 55 Lane A]
+
+#### jeeb/libaribb24subtitles ✅ commercial-safe
+- **What:** ARIB B24 subtitle parser library (jeeb) — Japanese broadcast caption parsing for burn-in workflows.
+- **URL:** https://github.com/jeeb/libaribb24subtitles
+- **License:** ✅ ISC (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Permissive ARIB path (upstream libaribb24 not on GitHub — this is the verifiable ISC alternative). [Wave 55 Lane A]
+
+#### w3c/ttml2 ✅ commercial-safe
+- **What:** Timed Text Markup Language 2 (TTML2) — the W3C spec text; the reference for broadcast timed-text semantics.
+- **URL:** https://github.com/w3c/ttml2
+- **License:** ✅ W3C Document License (verified 2026-10-08: repo LICENSE.md "All documents in this Repository are licensed by contributors under the W3C Document License")
+- **Free tier:** Free to read/reuse per doc license
+- **Repo lane:** trippedd (captions / standards)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Spec-text reference; pairs with the cataloged ttconv converter. [Wave 55 Lane A]
+
+#### w3c/imsc ✅ commercial-safe
+- **What:** TTML Profiles for Internet Media Subtitles and Captions (IMSC) — the W3C spec text behind imscJS (already cataloged).
+- **URL:** https://github.com/w3c/imsc
+- **License:** ✅ W3C Document License (verified 2026-10-08 via GitHub API spdx_id NOASSERTION — same W3C repo family as ttml2, LICENSE.md verified there)
+- **Free tier:** Free to read/reuse per doc license
+- **Repo lane:** trippedd (captions / standards)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Spec-text reference for the IMSC renderer already in the catalog. [Wave 55 Lane A]
+
+#### mozilla/vtt.js ✅ commercial-safe
+- **What:** JavaScript implementation of the WebVTT specification (Mozilla) — parse/render WebVTT for caption preview and burn-in prep.
+- **URL:** https://github.com/mozilla/vtt.js
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / parsing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference WebVTT implementation; complements webvtt-py (already cataloged). [Wave 55 Lane A]
+
+#### chidiwilliams/buzz ✅ commercial-safe
+- **What:** Buzz — offline audio transcription and translation app (Whisper-powered) for caption generation on personal machines.
+- **URL:** https://github.com/chidiwilliams/buzz
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / generation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Permissive desktop caption-generation GUI. [Wave 55 Lane A]
+
+#### ina-foss/inaSpeechSegmenter ✅ commercial-safe
+- **What:** CNN-based audio segmentation toolkit — detects speech, music, noise, silence; caption segmentation and diarization prep.
+- **URL:** https://github.com/ina-foss/inaSpeechSegmenter
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / segmentation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Segment-before-transcribe for cleaner caption timing. [Wave 55 Lane A]
+
+#### alibaba-damo-academy/FunASR ✅ commercial-safe
+- **What:** Open-source speech recognition toolkit (training, inference, streaming ASR) — caption-generation ASR backend.
+- **URL:** https://github.com/alibaba-damo-academy/FunASR
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / ASR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** ASR alternative to Whisper-family tools already cataloged. [Wave 55 Lane A]
+
+#### espnet/espnet ✅ commercial-safe
+- **What:** End-to-End Speech Processing Toolkit — ASR recipes usable as caption-generation backends.
+- **URL:** https://github.com/espnet/espnet
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / ASR)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Research-grade; listed for ASR completeness. [Wave 55 Lane A]
+
+#### wenet-e2e/wenet ✅ commercial-safe
+- **What:** Production-first end-to-end speech recognition toolkit — streaming/offline ASR for caption pipelines.
+- **URL:** https://github.com/wenet-e2e/wenet
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / ASR)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Production-oriented ASR alternative. [Wave 55 Lane A]
+
+#### HOST-Oman/libraqm ✅ commercial-safe
+- **What:** Library for complex text layout (Raqm) — bidirectional/complex-script layout for styled subtitle burn-in.
+- **URL:** https://github.com/HOST-Oman/libraqm
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Completes the burn-in text stack (harfbuzz + freetype + raqm). [Wave 55 Lane A]
+
+#### freetype/freetype ⚠️ license-conditional
+- **What:** FreeType font engine — glyph rasterization for subtitle burn-in (official GitHub mirror of the freedesktop GitLab repo).
+- **URL:** https://github.com/freetype/freetype
+- **License:** ⚠️ Dual-licensed FTL (FreeType Project License, BSD-style) / GPL (verified 2026-10-08: docs/FTL.TXT + LICENSE.TXT; GitHub API spdx_id NOASSERTION — file texts govern)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Use under the FTL option for commercial-safe burn-in; GPL option is the caution. [Wave 55 Lane A]
+
+#### gpac/gpac ⚠️ license-conditional
+- **What:** GPAC Ultramedia OSS — video streaming/transcoding/packaging suite; MP4Box handles caption-track muxing.
+- **URL:** https://github.com/gpac/gpac
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / packaging)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Caption-track muxing/packaging; keep at arm's length from shipping code. [Wave 55 Lane A]
+
+#### fribidi/fribidi ⚠️ license-conditional
+- **What:** GNU FriBidi — bidirectional text layout library for styled subtitle burn-in.
+- **URL:** https://github.com/fribidi/fribidi
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bidi handling for RTL caption tracks. [Wave 55 Lane A]
+
+#### GNOME/pango ⚠️ license-conditional
+- **What:** Pango — text layout and rendering library (GitHub read-only mirror of the GNOME GitLab repo) for styled caption composition.
+- **URL:** https://github.com/GNOME/pango
+- **License:** ⚠️ LGPL-2.0 (verified 2026-10-08: COPYING "GNU LIBRARY GENERAL PUBLIC LICENSE Version 2"; GitHub API spdx_id NOASSERTION — file text governs) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / text stack)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Full text-layout option where harfbuzz+raqm is too low-level. [Wave 55 Lane A]
+
+#### snakers4/silero-models 🚫 NC — not commercial-safe
+- **What:** Silero Models — pre-trained speech models (STT/TTS) usable for caption segmentation pipelines.
+- **URL:** https://github.com/snakers4/silero-models
+- **License:** 🚫 CC BY-NC-SA 4.0 (verified 2026-10-08: LICENSE file "Attribution-NonCommercial-ShareAlike 4.0 International"; GitHub API spdx_id NOASSERTION — file text governs) — noncommercial, research lane only
+- **Free tier:** Free for noncommercial use
+- **Repo lane:** trippedd (captions / models)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative for commercial use — NC license; research/reference only. [Wave 55 Lane A]
+
+#### absadiki/subsai 🚫 GPL-3.0 — QUARANTINED (row 555)
+- **What:** SubsAI — subtitle generation tool (Web-UI + CLI + Python package) powered by Whisper.
+- **URL:** https://github.com/absadiki/subsai
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / generation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### Cyberbeing/xy-VSFilter 🚫 GPL-2.0 — QUARANTINED (row 556)
+- **What:** xy-VSFilter — VSFilter subtitle renderer fork (ASS/SSA rendering).
+- **URL:** https://github.com/Cyberbeing/xy-VSFilter
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / render)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### mean00/avidemux2 🚫 GPL-2.0 — QUARANTINED (row 557)
+- **What:** Avidemux2 — simple video editor with subtitle burn-in filters.
+- **URL:** https://github.com/mean00/avidemux2
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: COPYING "GNU GENERAL PUBLIC LICENSE Version 2"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (captions / burn-in)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+
+### Wave 55 Lane A summary (2026-10-08)
+- New #### entries: 115 (P1: 27 PD radio-drama round 4 — Dragnet/Whistler OTRR singles sets + 4 Whistler quarterly Signal-era slices + 8 single-episode deep dives + BDP Quiet Please + 3 Lux season singles + 2 Lux star-vehicle episodes + CBS Radio Workshop set/collection/single + Escape "Three Skeleton Key" + Inner Sanctum Welles lost-episode/collection · P2: 29 sound-chip docs round 3 — 5 bitsavers Yamaha (YMF289B/YMF715x/YM3012/YM3014B/YMZ284) + 12 archive.org scans (AY-3-8913, Amiga HRM, GB CPU Manual, De Re Atari, C64 PRG, Mapping the Atari, N64 manual, Atari ST Internals, MSX TDB, C128 guide, Apple IIGS HR, BBC AUG) + 2 SNESDev CC0 wiki (S-DSP, S-SMP) + 10 NESdev wiki (6 APU channel pages + 4 expansion-audio) · P3: 30 broadcast-automation tail — 8 permissive + 3 LGPL/MPL caution + 1 unverified (darkice) + 18 GPL/AGPL quarantined · P4: 29 caption burn-in round 5 — 21 permissive + 4 LGPL/FTL caution + 1 NC honest-negative + 3 GPL quarantined)
+- Catalog: 4,865 → 4,980 honest entries (wave target 4,970+ met; `grep -c '^####'` to confirm)
+- Quarantine: rows 537–557 appended (21 distinct: 16 GPL + 5 AGPL; zero supersedes/delists)
+- Honest negatives: darkice.org unreachable (000) — entry kept as ❓ not quarantined (license never assumed); playitlive.com unreachable (000) — dropped; bitsavers.org directory browsing 403 — used archive.org bitsavers collection instead; icecast/ezstream + icecast/ices 404 on GitHub (moved off-GitHub) — dropped; podlibre/castopod found after initial 404 (correct org); funkwhale + fontconfig + mkvtoolnix GitHub 404s (off-GitHub canonicals) — dropped; Mockingboard_Developers_Toolkit is a .dsk disk image not a doc — dropped; OTRR_Certified_Lux_Radio_Theatre has 0 audio files — dropped; silero-models is CC BY-NC-SA 4.0 — cataloged as 🚫 NC honest negative, not quarantined
+- Dedup rejections (pre-append title+URL grep): 37 — bitsavers YM2203/YM2413/Y8950/YMZ280B/YMF262 scans (cataloged), YM2149/YM2151 bitsavers (Wave 47 dupes), GBATEK, Pan Docs Audio, NESdev FDS_audio, libebur128, Jitsi Meet, LiveKit, mediasoup, pion/webrtc, Mopidy, Koel, AntennaPod (row 291), Airtime (row 485), Superdesk (row 367), stable-ts, sherpa-onnx, Vosk, NeMo, Coqui STT, SpeechBrain, pyannote.audio, DeepSpeech, CCExtractor, webrtcvad, node-webvtt, ass-compiler
+- Badge summary: ✅ permissive/PD 68 · ⚠️ caution 21 (5 Lux radio + 10 NESdev wiki + r128gain/SRT/BBB + freetype/GPAC/fribidi/pango) · ❓ unverified 14 (12 P2 manufacturer/book scans + darkice + AY-3-8913 counted in P2 scans) · 🚫 quarantined 21 (rows 537–557) + 1 NC (silero-models)
+- License notes: item-level CC BY-NC(-ND/-SA) uploader tags on OTRR sets are transfer packaging, not broadcast copyright (noted per entry); Inner Sanctum "The Dream" carries an explicit CC Public Domain Mark 1.0; SNESDev wiki footer states CC0 Public Domain (verified directly); Pan Docs is CC0-1.0 per GitHub API (entry dropped as dupe — already cataloged); GitHub API NOASSERTION cases resolved via raw LICENSE/COPYING text (harfbuzz, utf8proc, shaka-packager, mixxx, tenacity, ecasound, ardour, avidemux2, pango, w3c/imsc via ttml2 family)
+- Coordinator flags (not fixed — lane boundary): AzuraCast quarantine row 290 re-verified this pass as AGPL-3.0 via GitHub API (prior wave correct); CCExtractor cataloged ✅ standalone by an earlier wave (GPL-2.0) — left as-is per lane boundary; SubtitleEdit/SubtileComposer badge inconsistencies from prior waves left untouched
+- Zero post-hoc duplicates: every candidate pre-grepped (title + URL) against the full catalog and quarantine manifest before appending; 37 pre-append rejections logged above

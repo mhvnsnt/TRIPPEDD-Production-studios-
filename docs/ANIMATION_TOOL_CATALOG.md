@@ -18,13 +18,13 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Use:** produces .tsv/.xml mouth timelines → drive mouth shape keys or 2D mouth-swap sprites. Integrates with OpenToonz/Moho/Spine. Keep the res/ folder next to the binary.
 - **Lane note:** full entry in RESOURCE_CATALOG.md § "Lip-sync tools"; pointer entry here. Wave-1 wire-up target.
 
-#### papagayo-ng 🚫 GPL-2.0 — also in RESOURCE_CATALOG (quarantine row 1)
+#### papagayo-ng 🚫 GPL-2.0 — also in RESOURCE_CATALOG (quarantine row 45)
 - **What:** Manual phoneme-breakdown lip-sync GUI with multi-language dictionaries; exports .pgo timing files readable by Aseprite/Pixelorama scripts.
 - **URL:** https://github.com/morevnaproject-org/papagayo-ng
 - **License:** GPL-2.0 (verified — gpl.txt ships in repo; Debian metadata says GPL-2). **QUARANTINED** — never wired into shipping paths.
 - **Use:** manual-correction companion to Rhubarb's auto pass. Standalone-program use only.
 
-#### aeneas 🚫 AGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 2)
+#### aeneas 🚫 AGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 46)
 - **What:** DTW word-level audio↔text sync, 30+ languages, no ASR needed; also does subtitle/line timing.
 - **URL:** https://github.com/readbeyond/aeneas/
 - **License:** AGPL-3.0 (verified — upstream README states GNU Affero GPL v3). **QUARANTINED** — never in shipping paths.
@@ -54,7 +54,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** MIT (verified via upstream LICENSE).
 - **Use:** phoneme timings for lip-sync; Docker path for the heavier Kaldi dependency.
 
-#### Allosaurus 🚫 GPL-3.0 — also in RESOURCE_CATALOG (quarantine row 3)
+#### Allosaurus 🚫 GPL-3.0 — also in RESOURCE_CATALOG (quarantine row 47)
 - **What:** Universal phone recognizer — phoneme-level transcription across many languages without a pronunciation dictionary.
 - **URL:** https://github.com/xinjli/allosaurus
 - **License:** GPL-3.0 (verified via research citations — 'echogarden and allosaurus are GPL-3.0'). **QUARANTINED** — assumed permissive was WRONG; corrected here.
@@ -66,19 +66,19 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** Apache-2.0 (verified 2026-10-08: fairseq/fairseq2 code+models released under Apache 2.0; facebook/wav2vec2-base-960h card lists Apache-2.0).
 - **Use:** modern phoneme-extraction backbone for lip-sync; drives viseme mapping tables below. GPU optional, CPU workable for short clips.
 
-#### Parselmouth 🚫 GPL-3.0-or-later — also in RESOURCE_CATALOG (quarantine row 4)
+#### Parselmouth 🚫 GPL-3.0-or-later — also in RESOURCE_CATALOG (quarantine row 48)
 - **What:** Python bindings for Praat — pitch, formant, intensity, voice-quality analysis from speech.
 - **URL:** https://github.com/YannickJadoul/Parselmouth
 - **License:** GPL-3.0-or-later (verified: upstream README + GitHub API GPL-3.0). **QUARANTINED** — standalone-tool use only.
 - **Use:** vowel/formant detection for mouth openness mapping; syllable-nucleus detection for beat-timing dialogue.
 
-#### eSpeak / eSpeak-NG 🚫 GPL-3.0-or-later — also in RESOURCE_CATALOG (quarantine row 5)
+#### eSpeak / eSpeak-NG 🚫 GPL-3.0-or-later — also in RESOURCE_CATALOG (quarantine row 49)
 - **What:** Compact formant TTS + phoneme translator; espeak-ng is the maintained fork. The `--phonemes` mode turns any script line into an IPA/phoneme string.
 - **URL:** https://github.com/espeak-ng/espeak-ng
 - **License:** GPL-3.0-or-later (verified via README License Information + COPYING). **QUARANTINED** — standalone-program use only (e.g. generate phoneme strings, keep the GPL process boundary).
 - **Use:** offline phoneme strings for viseme tables; NEVER link the library into shipping code.
 
-#### phonemizer 🚫 GPL-3.0 — also in RESOURCE_CATALOG (quarantine row 6)
+#### phonemizer 🚫 GPL-3.0 — also in RESOURCE_CATALOG (quarantine row 50)
 - **What:** Text→phoneme with multiple backends (espeak-ng, festival, segments); the standard G2P front-end for TTS/alignment pipelines.
 - **URL:** https://github.com/bootphon/phonemizer
 - **License:** GPL-3.0 (verified: root LICENSE is GPL v3). **QUARANTINED**.
@@ -102,7 +102,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** BSD-3-Clause (verified 2026-10-08: CMU Sphinx org repo listing shows BSD-3-Clause).
 - **Use:** fast, tiny-footprint G2P for dictionary extension; good where g2p-seq2seq's TensorFlow weight is too heavy.
 
-#### DSAlign ⚠️ MPL-2.0 — also in RESOURCE_CATALOG (quarantine row 45)
+#### DSAlign ⚠️ MPL-2.0 — also in RESOURCE_CATALOG (quarantine row 52)
 - **What:** Mozilla's archived DeepSpeech forced aligner — text↔audio alignment via CTC; useful for line-level dialogue timing.
 - **URL:** http://github.com/mozilla/DSAlign
 - **License:** MPL-2.0 (verified via GitHub repo metadata). **QUARANTINED per lane rule** — weak copyleft (file-level); RESOURCE_CATALOG treats as commercial-safe with an audit gate.
@@ -114,7 +114,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** X11-style permissive (verified via repo README COPYING section: commercial use allowed).
 - **Use:** phonemizer backend option; heavyweight but proven.
 
-#### MaryTTS 🚫 LGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 46)
+#### MaryTTS 🚫 LGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 51)
 - **What:** Multilingual TTS with explicit phoneme output — a G2P/phoneme source for many languages.
 - **URL:** https://github.com/marytts/marytts
 - **License:** LGPL-3.0 (verified: root LICENSE.md is the LGPL-3.0 text). **QUARANTINED** — weak copyleft; scope note pending owner verdict (matches LICENSE_QUARANTINE.md doctrine).

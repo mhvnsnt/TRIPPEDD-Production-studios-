@@ -741,6 +741,99 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 ## Music beds / scoring
 <!-- royalty-free/PD music, generative music, stems, beat tools for scoring -->
 
+#### Musopen ⚠️ per-recording-license
+- **What:** Public-domain classical recordings + sheet music (Beethoven/Kickstarter Czech Philharmonic sets on archive.org) — orchestral beds for trailers/title cards.
+- **URL:** https://github.com/tmhsdigital/free-game-dev-assets/blob/HEAD/catalog/audio/musopen.md
+- **License:** PER-RECORDING: Public Domain Mark or CC variants (incl. BY-NC-SA on some) — plus a site ToS "non-commercial transitory viewing" clause on downloads; Musopen does not warrant PD status (verified 2026-10-07 via musopen.org/tos + per-recording licence icons). Verify EACH recording; prefer PD-Mark/CC0.
+- **Free tier:** free tier (5 downloads/day); $55/yr unlimited lossless
+- **Dedup:** RESOURCE_CATALOG.md `#### Musopen` (lines 691, 17884) — animation-pocket entry with the per-recording rule spelled out.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### Free Music Archive ⚠️ per-track-license
+- **What:** Curated CC music library (now Tribe of Noise) — genre-searchable beds, stingers, loops for episodes.
+- **URL:** http://en.wikipedia.org/wiki/Free_Music_Archive
+- **License:** VARIES PER TRACK (CC-BY / CC-BY-SA / CC-BY-NC / PD) — check the licence icon on each track; NC/ND tracks excluded from commercial paths (verified 2026-10-07 via FMA content-licence record)
+- **Free tier:** free download
+- **Dedup:** RESOURCE_CATALOG.md `#### Free Music Archive` (lines 1980, 6668, 17934) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### Magenta ✅ commercial-safe
+- **What:** Google's ML music/audio models (MusicVAE, DDSP, MusicFX) + JS/TF libs — generative beds, style transfer, score mockups.
+- **URL:** https://github.com/magenta/magenta
+- **License:** Apache-2.0 (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open (local); some demos hosted
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Tone.js ✅ commercial-safe
+- **What:** Web Audio framework for interactive/generative music — schedule stingers, ducking beds, and adaptive score layers in web players and episode interactives.
+- **URL:** https://github.com/Tonejs/Tone.js
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### Tone.js` (line 7014) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### TidalCycles ⚠️ license-restricted (quarantined)
+- **What:** Live-coding pattern language (Haskell/SuperCollider) for generative techno/breakbeat beds — algorithmic score layers rendered to stems.
+- **URL:** https://github.com/tidalcycles/Tidal
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 26 — standalone use; rendered audio stems are ours, the tool stays GPL.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### TidalCycles — standalone tool use` (line 11604) — same posture; animation-pocket entry.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+
+#### Sonic Pi ✅ commercial-safe
+- **What:** Code-based music creation/synth (Ruby DSL + SuperCollider) — live-coded beds, metronome-accurate timing, MIDI/OSC sync for animatics.
+- **URL:** https://github.com/sonic-pi-net/sonic-pi
+- **License:** MIT (verified 2026-10-07 via repo LICENSE.md raw)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### Sonic Pi` (line 7114) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Aria Maestosa ⚠️ license-restricted (quarantined)
+- **What:** Lightweight MIDI sequencer/editor (score/keyboard/guitar/drum/controller views) — compose and edit MIDI beds without a full DAW.
+- **URL:** https://ariamaestosa.github.io/ariamaestosa/docs/index.html
+- **License:** GPL-3.0 (Guix package record: "GPL 3+") (verified 2026-10-07 via https://packages.guix.gnu.org/packages/aria-maestosa/1.4.13/)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 27 — standalone-app use only.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### LMMS ⚠️ license-restricted (quarantined)
+- **What:** Full DAW (piano roll, beat/bassline editor, built-in synths/samples) — compose episode beds and stingers in-house.
+- **URL:** https://github.com/LMMS/lmms
+- **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 28 — standalone-app use only; rendered stems are ours.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### LMMS` (line 4826, QUARANTINED) — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### Ardour ⚠️ license-restricted (quarantined)
+- **What:** Pro-grade DAW (multitrack record/edit/mix, video timeline sync) — final music+dialogue+SFX mix stage.
+- **URL:** https://github.com/Ardour/ardour
+- **License:** GPL-2.0 (verified 2026-10-07 via repo COPYING raw)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 29 — standalone-app use only; mixed masters are ours.
+- **Free tier:** source fully open (binaries pay-what-you-want)
+- **Dedup:** RESOURCE_CATALOG.md `#### Ardour` (line 4836, QUARANTINED) — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+
+#### Zrythm ⚠️ license-restricted (quarantined)
+- **What:** Modern automated DAW (chord assistance, automation-first workflow) — alternative mix/compose seat to Ardour/LMMS.
+- **URL:** https://github.com/zrythm/zrythm
+- **License:** AGPL-3.0-or-later (verified 2026-10-07 via AUR package record + dev-team CLAUDE.md) — strictest licence in this pull.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 40 — standalone-app use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### Zrythm` (line 19378, AGPL-3.0 / quarantine row 186) — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (music pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
 ## Dialogue editing
 <!-- cleanup, de-noise, de-reverb, leveling, breath control for dialogue stems -->
 
@@ -808,6 +901,109 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 
 ## Final encode / delivery
 <!-- mastering, loudness, format ladders (16:9/9:16/1:1), platform delivery specs -->
+
+#### HandBrake ⚠️ license-restricted (quarantined)
+- **What:** Batch video transcoder (H.264/H.265/VP9/AV1) with presets — episode masters → platform renditions; queue + CLI.
+- **URL:** https://github.com/HandBrake/HandBrake
+- **License:** GPL-2.0 (verified 2026-10-07 via repo LICENSE raw)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 31 — standalone-app/CLI use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### HandBrake` (line 2416) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+
+#### FFmpeg ⚠️ license-restricted (quarantined)
+- **What:** The encode backbone: image-sequence→video, loudnorm, concat, thumbnails, chapter injection, format ladders — scripted delivery pipelines.
+- **URL:** https://github.com/FFmpeg/FFmpeg
+- **License:** LGPL-2.1 base; some builds/components are GPL (verified 2026-10-07 via COPYING.LGPLv2.1 raw)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 32 — CLI/binary use only; never link GPL builds into shipping code.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### FFmpeg` (line 2336) + `#### ffmpeg-python` (line 18728) — animation-pocket entry for the delivery role.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### EBU R128 loudness (loudnorm + r128gain) ⚠️ license-restricted (quarantined)
+- **What:** Broadcast loudness compliance: FFmpeg `loudnorm` (dual-pass EBU R128) for masters; `r128gain` for batch file loudness normalization before assembly.
+- **URL:** https://github.com/desbma/r128gain
+- **License:** r128gain: LGPL-2.1 (verified 2026-10-07 via GitHub API); loudnorm ships inside FFmpeg (see FFmpeg entry)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) rows 32 (loudnorm/FFmpeg) and 33 (r128gain) — CLI use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md loudnorm hit — animation-pocket entry.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### Format-ladder delivery matrix ✅ process
+- **What:** Not software — the delivery spec itself: 16:9 master (1080p/4K), 9:16 vertical, 1:1 square, 4:5, plus thumbnail/chapter variants; implemented as FFmpeg preset scripts per platform (YouTube, TikTok, IG, web embed).
+- **License:** N/A — internal process document (no third-party licence)
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### ffmpegthumbnailer ⚠️ license-restricted (quarantined)
+- **What:** Fast video thumbnailer — poster frames and preview strips for episode pages and contact sheets.
+- **URL:** https://github.com/dirkvdb/ffmpegthumbnailer
+- **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 35 — CLI use only.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### mp4v2 / mp4chaps ⚠️ license-restricted (quarantined)
+- **What:** MP4 chapter + tag manipulation: `mp4chaps` imports chapter tracks into episode MP4s for platform chapter markers.
+- **URL:** https://github.com/enzo1982/mp4v2
+- **License:** MPL-1.1 (verified 2026-10-07 via repo COPYING raw)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 36 — CLI use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### 23. mp4v2 / mp4chaps (enzo1982)` (line 17838) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### AtomicParsley ⚠️ license-restricted (quarantined)
+- **What:** MP4/M4V metadata + chapter editor (CLI) — set titles, artwork, chapter XML on delivered episode files without re-encoding.
+- **URL:** https://github.com/wez/atomicparsley
+- **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 39 — CLI use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md mentions AtomicParsley — animation-pocket entry.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### MediaInfo ✅ commercial-safe
+- **What:** Technical metadata inspector (codec, bitrate, HDR, subtitle streams, chapters) — delivery QC gate: verify every master matches the format ladder before publish.
+- **URL:** https://github.com/MediaArea/MediaInfo
+- **License:** BSD-2-Clause (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### MediaInfo` (line 16924) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+
+#### QCTools ⚠️ license-restricted (quarantined)
+- **What:** BAVC audiovisual QC analyzer — bitstream graphs, vectorscope, loudness, dropout detection over episode masters; the "does the file actually survive" gate.
+- **URL:** https://github.com/bavc/qctools
+- **License:** GPL-3.0 (verified 2026-10-07 via repo License.html)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 37 — standalone-app use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md mentions QCTools — animation-pocket entry.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+
+#### MKVToolNix ⚠️ license-restricted (quarantined)
+- **What:** Matroska muxing/inspection (mkvmerge/mkvinfo/mkvextract/mkvpropedit) — multi-audio/subtitle masters, chapter templates, archival mezzanine files.
+- **URL:** https://mkvtoolnix.download/
+- **License:** GPL-2.0 (verified 2026-10-07 via Wikipedia licence field + mirror README "This code comes under the GPL v2")
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 38 — CLI use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### MKVToolNix — mkvmerge subtitle muxing` (line 17044, flagged GPL) — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### Shutter Encoder ⚠️ license-restricted (quarantined)
+- **What:** FFmpeg GUI Swiss-army knife (transcode, lossless cut, loudness analysis/normalization, subtitle burn-in, batch queues) — the operator-friendly encode seat.
+- **URL:** https://github.com/paulpacifico/shutter-encoder
+- **License:** GPL-3.0 (verified 2026-10-07 via GitHub license field) — CORRECTION: RESOURCE_CATALOG.md `#### Shutter Encoder` (line 19721) says "freeware — no open-source grant found"; upstream repo declares GPL-3.0, so it IS open source and quarantined here.
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 34 — standalone-app use only.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (encode/delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 
 ## Utilities
 <!-- format converters, batch tools, misc animation helpers -->

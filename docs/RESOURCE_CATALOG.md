@@ -14710,7 +14710,7 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 
 ## Wave 13 — Caption SaaS alternatives (Lane C)
 
-#### Fireflies.ai — meeting bot with unlimited free transcription ❓ unverified
+#### Fireflies.ai — meeting bot with unlimited free transcription ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI meeting assistant that joins Zoom/Google Meet/Teams calls, records, transcribes (100+ languages), and generates summaries, action items, and searchable transcripts; also takes audio/video uploads and has a public API.
 - **URL:** https://fireflies.ai (terms: https://fireflies.ai/blog/fireflies-pricing-which-plan-is-right-for-you)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Fireflies pricing blog; ToS page not checked)
@@ -14718,9 +14718,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Most generous free *meeting* transcription found (uncapped meetings) — but it's a meeting bot, not a caption-file tool; SRT/export path needs checking before any caption use. Storage cap (400 min/team) is the real constraint. [Wave 13 Lane C]
+- **Notes:** Most generous free *meeting* transcription found (uncapped meetings) — but it's a meeting bot, not a caption-file tool; SRT/export path needs checking before any caption use. Storage cap (400 min/team) is the real constraint. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Lemonfox.ai — EU Whisper large-v3 STT API, first month free ❓ unverified
+#### Lemonfox.ai — EU Whisper large-v3 STT API, first month free ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Developer STT API on Whisper large-v3: 100+ languages, speaker diarization, speech-to-text translation, immediate data deletion, EU-based processing; also TTS + image APIs.
 - **URL:** https://lemonfox.ai (terms: https://www.aitechsuite.com/tools/14983)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via aitechsuite FAQ; official pricing page not fetched)
@@ -14728,9 +14728,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Trial-only free access (not a recurring free tier). Privacy angle (immediate deletion, EU processing) is its differentiator vs Gladia/Deepgram free credits. [Wave 13 Lane C]
+- **Notes:** Trial-only free access (not a recurring free tier). Privacy angle (immediate deletion, EU processing) is its differentiator vs Gladia/Deepgram free credits. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Rask AI — video translation/dubbing with auto-subtitles, trial only ❓ unverified
+#### Rask AI — video translation/dubbing with auto-subtitles, trial only ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI video localization: auto-transcription, subtitle translation in 130+ languages, voice cloning, multispeaker lip-sync, SRT download on paid tiers, dubbing API.
 - **URL:** https://www.rask.ai (terms: https://www.techraisal.com/blog/rask-ai-review-2026/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via techraisal hands-on review; official pricing page not fetched)
@@ -14738,9 +14738,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Status:** not-started
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
-- **Notes:** Trial is evaluation-only — no SRT export without paying, so it produces zero usable caption assets for free. Listed so no sibling lane wastes time on it. Lip-sync is the relevant benchmark if we ever dub Wizard Gang. [Wave 13 Lane C]
+- **Notes:** Trial is evaluation-only — no SRT export without paying, so it produces zero usable caption assets for free. Listed so no sibling lane wastes time on it. Lip-sync is the relevant benchmark if we ever dub Wizard Gang. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Castmagic — podcast audio → transcripts + content assets, trial only ❓ unverified
+#### Castmagic — podcast audio → transcripts + content assets, trial only ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI podcast post-production: transcripts, show notes, timestamps, highlights, quotes, social posts from audio/video uploads; speaker ID, timestamping, 60+ languages on higher tiers.
 - **URL:** https://www.castmagic.io (terms: https://www.grabon.in/castmagic-coupons/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via grabon pricing FAQ; official pricing page not fetched)
@@ -14748,9 +14748,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** No SRT/caption-file export documented on trial — evaluate transcript export formats before any use. Rising Star adds API for automation. [Wave 13 Lane C]
+- **Notes:** No SRT/caption-file export documented on trial — evaluate transcript export formats before any use. Rising Star adds API for automation. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Podcastle — browser podcast studio with text-based editing ❓ unverified
+#### Podcastle — browser podcast studio with text-based editing ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** All-in-one browser podcast studio: multitrack remote recording, automatic transcription, text-based audio editing, Magic Dust audio cleanup, 7,000+ music/SFX tracks, 4K video recording.
 - **URL:** https://podcastle.ai (terms: https://podcastpontifications.com/helpful-info/async-podcastle-pricing/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via podcastpontifications pricing breakdown; official pricing page not fetched)
@@ -14758,9 +14758,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** The lifetime (not monthly) transcription cap is the gotcha — 1 hour total, then it's gone. Text-based editing is the Descript-parallel worth knowing. No public API. [Wave 13 Lane C]
+- **Notes:** The lifetime (not monthly) transcription cap is the gotcha — 1 hour total, then it's gone. Text-based editing is the Descript-parallel worth knowing. No public API. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Riverside.fm — studio recording with AI transcripts + styled captions ❓ unverified
+#### Riverside.fm — studio recording with AI transcripts + styled captions ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Remote studio recording (local 4K video / WAV per guest), automatic AI transcription in 100+ languages (SRT/TXT download), text-based editor, caption styling/positioning, Magic Clips for social cutdowns.
 - **URL:** https://riverside.fm (terms: https://riverside.fm/blog/best-transcription-software-for-mac)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Riverside blog; official pricing page not fetched)
@@ -14768,9 +14768,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Caption styling (font/position) + transcript→caption workflow is directly relevant to episode masters; free tier watermark makes it draft-only. [Wave 13 Lane C]
+- **Notes:** Caption styling (font/position) + transcript→caption workflow is directly relevant to episode masters; free tier watermark makes it draft-only. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### StreamYard — browser live studio, AI captioned clips on free ❓ unverified
+#### StreamYard — browser live studio, AI captioned clips on free ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Browser-based live-streaming studio (multistream, guests, overlays); AI clips turn recordings into captioned vertical clips; transcript downloads on higher tiers.
 - **URL:** https://streamyard.com (terms: https://www.learningrevolution.net/streamyard-vs-zoom/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via learningrevolution comparison; official pricing page not fetched)
@@ -14778,9 +14778,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Not a transcription tool — the only caption value is 2 AI-generated captioned clips/mo. Transcript is paywalled. Marginal for caption pipeline; listed for completeness. [Wave 13 Lane C]
+- **Notes:** Not a transcription tool — the only caption value is 2 AI-generated captioned clips/mo. Transcript is paywalled. Marginal for caption pipeline; listed for completeness. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Tactiq — bot-free Chrome-extension live transcription ❓ unverified
+#### Tactiq — bot-free Chrome-extension live transcription ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Chrome extension that captures live captions inside Google Meet / Zoom / Teams without sending a bot into the call; 60+ languages, AI summaries, action items, exports to Google Docs/Notion/Slack/HubSpot.
 - **URL:** https://tactiq.io (terms: https://tactiq.io/learn/google-meet-alternatives — official)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Tactiq page; free tier: 10 transcripts/mo, 5 AI credits/mo, no credit card)
@@ -14788,9 +14788,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Transcript-only capture — no audio/video recording, so nothing to caption from. Useful as a live-transcript reference tool; SOC-2 Type II, no training on meeting data. [Wave 13 Lane C]
+- **Notes:** Transcript-only capture — no audio/video recording, so nothing to caption from. Useful as a live-transcript reference tool; SOC-2 Type II, no training on meeting data. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### ScriptMe — production-oriented transcription/subtitling with SRT/VTT export ❓ unverified
+#### ScriptMe — production-oriented transcription/subtitling with SRT/VTT export ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI transcription + subtitle editor aimed at film/TV production (ScriptMe AB, Sweden): 30+ languages, styled subtitle editing, SRT/VTT/burned-in export, API, enterprise collaboration.
 - **URL:** https://scriptme.io (terms: https://www.capterra.in/software/1064367/scriptme)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via Capterra; official pricing page not fetched)
@@ -14798,9 +14798,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Production pedigree (timecoding, subtitle styling) is the interesting bit; free-tier size needs confirming on scriptme.io/pricing before planning any use. [Wave 13 Lane C]
+- **Notes:** Production pedigree (timecoding, subtitle styling) is the interesting bit; free-tier size needs confirming on scriptme.io/pricing before planning any use. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Vocalmatic — 30-min free transcription; reliability reports are dire ❓ unverified
+#### Vocalmatic — 30-min free transcription; reliability reports are dire ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Simple upload-a-file AI transcription (mp3/flac/wav/mp4/mov/ogg/webm), email-delivered transcripts with an editor, subtitle support, API; founded 2017, Canada.
 - **URL:** https://vocalmatic.com (terms: https://sourceforge.net/software/compare/Smart-Scribe-vs-Vocalmatic/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via sourceforge comparison; official pricing page not fetched)
@@ -14808,9 +14808,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** ⚠️ HONESTY FLAG: multiple recent user reviews call the service broken/scam-adjacent — uploads stuck "pending" forever, no support response, while payments process fine. Do NOT route caption work here; listed only so nobody rediscovers it. [Wave 13 Lane C]
+- **Notes:** ⚠️ HONESTY FLAG: multiple recent user reviews call the service broken/scam-adjacent — uploads stuck "pending" forever, no support response, while payments process fine. Do NOT route caption work here; listed only so nobody rediscovers it. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Pictory — AI video builder; transcript/subtitle export free only during trial ❓ unverified
+#### Pictory — AI video builder; transcript/subtitle export free only during trial ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Script/URL/audio/PPT → captioned video builder with stock library (Getty/Storyblocks), ElevenLabs voices, text-based editing, AI highlight clips; transcript generator exports subtitles as SRT/VTT ZIP or burned-in.
 - **URL:** https://pictory.ai (terms: https://pictory.ai/blog/transcript-generator — official)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Pictory blog; official pricing page not fetched)
@@ -14818,9 +14818,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Trial-only — the 180-min transcript allowance is the usable bit, but watermarked video and no recurring free tier make it a one-shot. [Wave 13 Lane C]
+- **Notes:** Trial-only — the 180-min transcript allowance is the usable bit, but watermarked video and no recurring free tier make it a one-shot. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Zubtitle — social auto-captions, free-forever 2 videos/mo ❓ unverified
+#### Zubtitle — social auto-captions, free-forever 2 videos/mo ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Focused auto-caption tool for talking-head/social video: AI subtitles in 60+ languages, styled burned-in captions, supertitles/progress bar/logo, crop/resize for Reels/Shorts/TikTok, SRT + TXT download per video.
 - **URL:** https://zubtitle.com (terms: https://seektool.ai/ai/zubtitle-com)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via seektool pricing; official pricing page not fetched)
@@ -14828,9 +14828,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** One of the few caption-first tools with a real recurring free tier AND SRT download on free. Watermark on video exports — but SRT is what the caption lane needs. [Wave 13 Lane C]
+- **Notes:** One of the few caption-first tools with a real recurring free tier AND SRT download on free. Watermark on video exports — but SRT is what the caption lane needs. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Vizard — AI clipper with animated captions, 60 credits/mo free ❓ unverified
+#### Vizard — AI clipper with animated captions, 60 credits/mo free ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Long-video → viral-clips engine: AI highlight detection, auto-captions in 30+ languages, caption translation to 100+ languages, speaker detection, auto-reframe 9:16, REST API on paid tiers.
 - **URL:** https://vizard.ai (terms: https://appscribed.com/software/vizard-ai-video-editing-review/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via appscribed review; official pricing page not fetched)
@@ -14838,9 +14838,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Free tier is a trial in practice (watermark + 3-day storage). Caption translation (not dubbing) is the useful feature; no caption-file export documented — check before use. [Wave 13 Lane C]
+- **Notes:** Free tier is a trial in practice (watermark + 3-day storage). Caption translation (not dubbing) is the useful feature; no caption-file export documented — check before use. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Temi — Rev's pay-as-you-go transcription, 45-min free trial ❓ unverified
+#### Temi — Rev's pay-as-you-go transcription, 45-min free trial ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Lean AI transcription by Rev: fast single-engine transcription, filler-word removal, speaker ID, text editor; exports Word/PDF/SRT/VTT/TXT; mobile apps; developer API. English-only.
 - **URL:** https://www.temi.com (terms: https://speakai.co/alternatives/speak-ai-vs-temi-a-more-useful-temi-alternative/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via speakai comparison; official pricing page not fetched)
@@ -14848,9 +14848,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Trial-only. SRT/VTT export is included (unlike some trial tiers), so the single free transcript is actually usable as a caption source. English-only is the limit. [Wave 13 Lane C]
+- **Notes:** Trial-only. SRT/VTT export is included (unlike some trial tiers), so the single free transcript is actually usable as a caption source. English-only is the limit. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Simon Says — transcription/subtitling with NLE integrations ❓ unverified
+#### Simon Says — transcription/subtitling with NLE integrations ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Production transcription + translation in 100 languages with direct export into Adobe Premiere, Final Cut Pro, DaVinci Resolve, and Avid (timecoded transcripts, visual subtitle editor, speaker separation, collaborative web editor).
 - **URL:** https://www.simonsaysai.com (terms: https://aitools.inc/tools/simon-says-ai)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via aitools.inc; official pricing page not fetched)
@@ -14858,9 +14858,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** The NLE-native export (Premiere/FCP/DaVinci/Avid) is the standout — unique in this wave for an edit-pipeline fit. Trial size needs confirming; Capterra rating is weak (1.6/5) — trial before trust. [Wave 13 Lane C]
+- **Notes:** The NLE-native export (Premiere/FCP/DaVinci/Avid) is the standout — unique in this wave for an edit-pipeline fit. Trial size needs confirming; Capterra rating is weak (1.6/5) — trial before trust. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Grain — video-first meeting notetaker, generous free tier ❓ unverified
+#### Grain — video-first meeting notetaker, generous free tier ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Video-first AI notetaker: bot joins Zoom/Meet/Teams, records video, transcribes with speaker labels, AI summaries with chapters/action items, shareable video clips from transcript moments, CRM sync, 25-language transcription.
 - **URL:** https://grain.com (terms: https://grain.com/blog/best-meeting-transcription-software — official)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Grain blog; official pricing page not fetched)
@@ -14868,9 +14868,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Transcript→shareable-clip workflow is adjacent to caption cutdowns. AssemblyAI speech models under the hood (already catalogued). Conflicting free-cap reports — verify before relying on it. [Wave 13 Lane C]
+- **Notes:** Transcript→shareable-clip workflow is adjacent to caption cutdowns. AssemblyAI speech models under the hood (already catalogued). Conflicting free-cap reports — verify before relying on it. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Fathom — unlimited free recording + transcription, AI summaries capped ❓ unverified
+#### Fathom — unlimited free recording + transcription, AI summaries capped ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI meeting notetaker: bot joins Zoom/Meet/Teams, unlimited recording and transcription (38 languages, auto-detect), AI summaries in ~30s, clickable highlights linked to video moments, Ask Fathom search, clip cutting, desktop app + Chrome extension.
 - **URL:** https://fathom.video (terms: https://get-alfred.ai/blog/fathom-pricing)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via get-alfred pricing review; official pricing page not fetched)
@@ -14878,9 +14878,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Strongest free tier in the meeting category (unlimited recording AND transcription at $0). 38-language transcription with auto-detect is genuinely useful; transcripts link to video timestamps — closest thing to a free caption-timing source here. [Wave 13 Lane C]
+- **Notes:** Strongest free tier in the meeting category (unlimited recording AND transcription at $0). 38-language transcription with auto-detect is genuinely useful; transcripts link to video timestamps — closest thing to a free caption-timing source here. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### tl;dv — unlimited free recording/transcription, AI notes lifetime-capped ❓ unverified
+#### tl;dv — unlimited free recording/transcription, AI notes lifetime-capped ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Meeting recorder/transcriber (Zoom/Meet/Teams, 30+ languages): timestamped highlights, shareable clips, searchable library; bot or bot-free desktop capture.
 - **URL:** https://tldv.io (terms: https://curatahub.com/blog/tldv-pricing-explained)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via curatahub pricing review; official pricing page not fetched)
@@ -14888,9 +14888,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** The lifetime (not monthly) AI-note cap and 90-day recording deletion are the gotchas — treat free as a recorder, not an archive. Clip-and-share is the caption-adjacent feature. [Wave 13 Lane C]
+- **Notes:** The lifetime (not monthly) AI-note cap and 90-day recording deletion are the gotchas — treat free as a recorder, not an archive. Clip-and-share is the caption-adjacent feature. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Granola — bot-free AI notepad, free Basic with 30-day history ❓ unverified
+#### Granola — bot-free AI notepad, free Basic with 30-day history ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Meeting notepad that captures system audio on-device (no bot joins the call), merges your typed notes with the transcript into structured AI notes; AI chat across meetings, templates, shared folders; macOS/Windows/iOS/Android.
 - **URL:** https://www.granola.ai (terms: https://scored.tools/blog/granola-review-2026/ — figures sourced from granola.ai/pricing)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via scored.tools review of official pricing; official pricing page not fetched)
@@ -14898,9 +14898,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** No-bot capture is the differentiator; conflicting free-cap reports (30-day history vs 25-meeting lifetime) — verify on granola.ai/pricing. Notepad-first, not a caption tool. [Wave 13 Lane C]
+- **Notes:** No-bot capture is the differentiator; conflicting free-cap reports (30-day history vs 25-meeting lifetime) — verify on granola.ai/pricing. Notepad-first, not a caption tool. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Read AI — meeting AI with 5 free meetings/mo ❓ unverified
+#### Read AI — meeting AI with 5 free meetings/mo ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Meeting assistant unifying meetings, email, and messaging into a searchable knowledge graph: real-time transcription, AI summaries, meeting coach, topic readouts; 20+ languages; iOS app for in-person capture.
 - **URL:** https://www.read.ai (terms: https://www.saasworthy.com/product/read-ai-transcription/pricing)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via saasworthy pricing; official pricing page not fetched)
@@ -14908,9 +14908,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Thin free allowance (5 meetings/mo). Included because the cross-meeting search is a novel reference pattern; not a caption pipeline tool. [Wave 13 Lane C]
+- **Notes:** Thin free allowance (5 meetings/mo). Included because the cross-meeting search is a novel reference pattern; not a caption pipeline tool. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Fellow — AI meeting notes, 5 free notes lifetime/user ❓ unverified
+#### Fellow — AI meeting notes, 5 free notes lifetime/user ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Meeting management + AI assistant: agendas, recording (bot or botless desktop capture), transcription in 90+ languages, AI summaries with chapters, action items, transcript redaction, 50+ integrations (Salesforce/HubSpot/Zapier), API; SOC 2 Type II.
 - **URL:** https://fellow.ai (terms: https://www.fellow.ai/pricing?ref=saaspo.com — official)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official Fellow pricing page)
@@ -14918,9 +14918,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Lifetime (not monthly) caps make this evaluation-only. Transcript redaction + 90+ languages are the notable features; security posture is the best in this wave. [Wave 13 Lane C]
+- **Notes:** Lifetime (not monthly) caps make this evaluation-only. Transcript redaction + 90+ languages are the notable features; security posture is the best in this wave. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Circleback — unlimited free meeting transcription, 30-day history ❓ unverified
+#### Circleback — unlimited free meeting transcription, 30-day history ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Meeting notetaker (bot or bot-free desktop app): speaker-labeled transcripts, AI notes, action items, transcript search, mobile + Apple Watch recording, Slack/Linear integrations, API/MCP/CLI access; 100+ languages.
 - **URL:** https://circleback.ai (terms: https://techcrunch.com/2026/08/31/meeting-notetaker-circleback-adds-a-free-tier-to-attract-more-customers/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via TechCrunch, Aug 2026; official pricing page not fetched)
@@ -14928,9 +14928,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Free tier launched Aug 2026 (TechCrunch-confirmed) — generous and current. API + MCP + CLI on free is unusual and worth noting for automation experiments. [Wave 13 Lane C]
+- **Notes:** Free tier launched Aug 2026 (TechCrunch-confirmed) — generous and current. API + MCP + CLI on free is unusual and worth noting for automation experiments. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Avoma — meeting/revenue intelligence; free plan status CONFLICTED ❓ unverified
+#### Avoma — meeting/revenue intelligence; free plan status CONFLICTED ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI meeting assistant for revenue teams: recording, real-time transcription (50+ languages), AI notes, conversation intelligence, deal boards, coaching scorecards, CRM sync (Salesforce/HubSpot), dialer integrations.
 - **URL:** https://www.avoma.com (terms: https://meetgeek.ai/blog/avoma-review and https://www.ricavi.ai/blog/avoma-pricing-2026 — conflict noted)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via two review sources; official pricing page not fetched)
@@ -14938,9 +14938,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Conflict between sources is itself the finding — treat as trial-only until verified at source. Revenue-intelligence focus, not caption-relevant anyway. [Wave 13 Lane C]
+- **Notes:** Conflict between sources is itself the finding — treat as trial-only until verified at source. Revenue-intelligence focus, not caption-relevant anyway. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Mem — AI note workspace; meeting transcription in beta on paid ❓ unverified
+#### Mem — AI note workspace; meeting transcription in beta on paid ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI note-taking workspace with semantic auto-organization: capture by voice/during calls/web, Mem Chat over your notes, meeting briefs (beta) that record, transcribe, and summarize calls; desktop apps capture system audio.
 - **URL:** https://mem.ai (terms: https://nubiapage.com/mem-ai-review-2026-pricing-app-alternatives-free-plan/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via nubiapage review; official pricing page not fetched)
@@ -14948,9 +14948,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Marginal for captions — transcription is paywalled in beta. Included for the lane-candidate-pool sweep; deprioritize. [Wave 13 Lane C]
+- **Notes:** Marginal for captions — transcription is paywalled in beta. Included for the lane-candidate-pool sweep; deprioritize. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Sembly — meeting AI with free Personal plan ❓ unverified
+#### Sembly — meeting AI with free Personal plan ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI meeting assistant: records/transcribes meetings (~94% claimed accuracy), auto meeting minutes, summaries with action items, sentiment analysis, CRM integrations, Glance/briefing features.
 - **URL:** https://sembly.ai (terms: https://www.fahimai.com/sembly-vs-mem-ai)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via fahimai comparison; official pricing page not fetched)
@@ -14958,9 +14958,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** "Sembly" grep hits in the catalog were all "AssemblyAI" substrings — no standalone Sembly entry existed. Free Personal plan details are thin in sources; verify live before use. [Wave 13 Lane C]
+- **Notes:** "Sembly" grep hits in the catalog were all "AssemblyAI" substrings — no standalone Sembly entry existed. Free Personal plan details are thin in sources; verify live before use. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### SubtitleBee — caption-first subtitler; free tier disables downloads ❓ unverified
+#### SubtitleBee — caption-first subtitler; free tier disables downloads ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Online subtitle generator: upload video/URL → AI subtitles (claimed 95% on clear speech), editor, burned-in styled subtitles, SRT/ASS/VTT/TXT export, subtitle translation in 100+ languages, supertitles/progress bar/logo, crop/resize for Shorts/Reels.
 - **URL:** https://subtitlebee.com (terms: https://subtitlebee.com/pricing — official)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via official SubtitleBee pricing page)
@@ -14968,9 +14968,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Only URL-cited (in Kapwing's entry), never given a full entry — hence included. The no-downloads-on-free rule makes the free tier evaluation-only; the minute-metered paid plans are the honest comparison point vs Kapwing. [Wave 13 Lane C]
+- **Notes:** Only URL-cited (in Kapwing's entry), never given a full entry — hence included. The no-downloads-on-free rule makes the free tier evaluation-only; the minute-metered paid plans are the honest comparison point vs Kapwing. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### EasySub — auto-subtitles, 30-min free + free translation forever ❓ unverified
+#### EasySub — auto-subtitles, 30-min free + free translation forever ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Web auto-subtitle generator: 150+ languages, timeline editor (timing/text/position/split), SRT/ASS/TXT download, subtitle translation, YouTube-URL import, no-upload-limit positioning for long videos.
 - **URL:** https://www.easysub.com (terms: https://aivideotoolspro.com/detail/easyssub)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via aivideotoolspro; official pricing page not fetched)
@@ -14978,9 +14978,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Stronger than SubtitleBee's free tier (SRT download works on free). Free-translation-forever is a real differentiator for multilingual caption variants. Has an API. [Wave 13 Lane C]
+- **Notes:** Stronger than SubtitleBee's free tier (SRT download works on free). Free-translation-forever is a real differentiator for multilingual caption variants. Has an API. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Zencastr — podcast recorder, free tier includes unlimited transcription (reports conflict) ❓ unverified
+#### Zencastr — podcast recorder, free tier includes unlimited transcription (reports conflict) ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Browser podcast recording: local 16-bit 48k WAV per guest, 4K video, separate tracks, searchable multilingual transcripts, AI editing, hosting/distribution.
 - **URL:** https://zencastr.com (terms: https://pixelpulseservices.com/zencastr-review-2025/)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via pixelpulse review of official pricing; official pricing page not fetched)
@@ -14988,7 +14988,7 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** If the unlimited-transcription reading is current, this is a strong free caption source for dialogue-heavy content. Verify before planning. [Wave 13 Lane C]
+- **Notes:** If the unlimited-transcription reading is current, this is a strong free caption source for dialogue-heavy content. Verify before planning. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### invideo — AI video builder; free tier has NO commercial rights 🚫 NC-or-quarantine
 - **What:** Prompt → video platform: script, 16M+ stock library, AI voiceover (50+ languages), auto-subtitles, transitions; subtitles editable and exported with final file on all tiers.
@@ -15010,7 +15010,7 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Status:** not-started
 - **Notes:** Not open-source despite appearing in open-source tool lists — do not file it as one. On-device privacy is the draw; MacWhisper (already catalogued) is the fuller-featured sibling from the same developer. [Wave 13 Lane C]
 
-#### GoTranscript — human+AI transcription; small free trial ❓ unverified
+#### GoTranscript — human+AI transcription; small free trial ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Transcription service with human (99.4% claimed, from $0.84/min) and AI ($0.06–0.10/min) tiers; 40–50+ languages; exports TXT/DOCX/PDF + SRT/VTT/SCC/DFXP subtitle formats; timestamps, speaker labels, verbatim options.
 - **URL:** https://gotranscript.com (terms: https://www.thinkingineducating.com/is-gotranscript-a-reliable-choice-for-your-transcription-needs-2/ and http://gotranscript.com/en/blog/the-most-affordable-transcription-services-for-audio-and-video — official)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via review + official GoTranscript blog; official pricing page not fetched)
@@ -15018,9 +15018,9 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Pro subtitle formats (SCC/DFXP) are the broadcast-relevant bit; human tier exists for legally load-bearing accuracy. Trial size is genuinely unclear — verify, don't quote a number. [Wave 13 Lane C]
+- **Notes:** Pro subtitle formats (SCC/DFXP) are the broadcast-relevant bit; human tier exists for legally load-bearing accuracy. Trial size is genuinely unclear — verify, don't quote a number. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Cockatoo — fast transcription with working free tier ❓ unverified
+#### Cockatoo — fast transcription with working free tier ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Drag-and-drop audio/video transcription (90+ languages): in-browser editor, real-time transcription option, export SRT/DOCX/PDF/TXT, secure encrypted handling; aimed at interviews, lectures, meetings, documentary producers.
 - **URL:** https://cockatoo.ai (terms: https://www.toolify.ai/compare/cockatoo-vs-shots-maker)
 - **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-07 via toolify comparison; official pricing page not fetched)
@@ -15028,7 +15028,7 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Small but genuinely usable free tier with SRT export — comparable to EasySub's. Paid-plan pricing varies across sources ($12–29/mo) — confirm live. [Wave 13 Lane C]
+- **Notes:** Small but genuinely usable free tier with SRT export — comparable to EasySub's. Paid-plan pricing varies across sources ($12–29/mo) — confirm live. [Wave 13 Lane C] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 ---
 
@@ -26639,7 +26639,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Conflicting pricing across directories — treat as enterprise-leaning; verify on vendor site before quoting. [Wave 26 Lane B]
 
-#### Closed Caption Creator ❓
+#### Closed Caption Creator ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Broadcast-focused caption/subtitle editor — auto captioning with speaker ID, QC, 30+ caption formats incl. embedded 608/708, burn-in export; 7-day free trial (no CC).
 - **URL:** https://www.closedcaptioncreator.com/pricing.html
 - **License:** Proprietary SaaS (vendor pricing page fetched 2026-10-07)
@@ -26647,7 +26647,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/SaaS
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Format depth (608/708 embedding, SCC/MCC/EBU-STL) is the differentiator for broadcast delivery. [Wave 26 Lane B]
+- **Notes:** Format depth (608/708 embedding, SCC/MCC/EBU-STL) is the differentiator for broadcast delivery. [Wave 26 Lane B] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### Ai-Media ❓
 - **What:** LEXI AI-powered captioning toolkit — LEXI Translate (live translated captions) with free 10-hr trial; LEXI Recorded from $0.20/min; broadcast captioning services.
@@ -27312,7 +27312,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 
 ### L. Caption burn-in SaaS alternatives (53)
 
-#### Hour One ❓ unverified
+#### Hour One ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI avatar video platform — text-to-video with virtual presenters and automatic captions for generated videos.
 - **URL:** https://hourone.ai
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27320,9 +27320,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Avatar-video leg; caption support is a generator feature, not a general captioning tool. [Wave 27 Lane A]
+- **Notes:** Avatar-video leg; caption support is a generator feature, not a general captioning tool. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Rephrase.ai ❓ unverified
+#### Rephrase.ai ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI avatar video creation studio — script-to-video with synthetic presenters and caption generation.
 - **URL:** https://rephrase.ai
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27330,9 +27330,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Genuinely new vs Wave 26 list; avatar-generated videos ship with captions. [Wave 27 Lane A]
+- **Notes:** Genuinely new vs Wave 26 list; avatar-generated videos ship with captions. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### DeepBrain AI ❓ unverified
+#### DeepBrain AI ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI Studios — text-to-video AI avatar platform with auto captions and multilingual voice.
 - **URL:** https://www.aistudios.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27340,9 +27340,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** AI Studios platform; captions are part of generated-video output. [Wave 27 Lane A]
+- **Notes:** AI Studios platform; captions are part of generated-video output. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Virbo ❓ unverified
+#### Virbo ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Wondershare's AI avatar video generator — talking-head videos from scripts with caption support.
 - **URL:** https://virbo.wondershare.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27350,9 +27350,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Wondershare sibling of KwiCut below; captions baked into generated videos. [Wave 27 Lane A]
+- **Notes:** Wondershare sibling of KwiCut below; captions baked into generated videos. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Lumen5 ❓ unverified
+#### Lumen5 ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI video maker — turns scripts/articles into videos with automatic caption overlays.
 - **URL:** https://lumen5.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27360,9 +27360,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Script-to-video with caption styling; useful for text-post → captioned-clip pipeline. [Wave 27 Lane A]
+- **Notes:** Script-to-video with caption styling; useful for text-post → captioned-clip pipeline. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Animoto ❓ unverified
+#### Animoto ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Drag-and-drop video maker — templates with caption/text overlay support for marketing videos.
 - **URL:** https://animoto.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27370,9 +27370,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Template video maker; captions via text overlays rather than transcription. [Wave 27 Lane A]
+- **Notes:** Template video maker; captions via text overlays rather than transcription. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Biteable ❓ unverified
+#### Biteable ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Animated video maker — explainer/marketing videos with animated text captions.
 - **URL:** https://biteable.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27380,9 +27380,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Animated-text captions, not speech transcription — complementary to caption tools. [Wave 27 Lane A]
+- **Notes:** Animated-text captions, not speech transcription — complementary to caption tools. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Wave.video ❓ unverified
+#### Wave.video ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Online video editor/maker — auto captions, live streaming, and video hosting in one suite.
 - **URL:** https://wave.video/online-video-editor
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27390,9 +27390,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Editor + auto-captions + streaming; distinct from the hosting-only entries. [Wave 27 Lane A]
+- **Notes:** Editor + auto-captions + streaming; distinct from the hosting-only entries. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Typito ❓ unverified
+#### Typito ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Online video editor built around text overlays — auto-caption generation with brand styling.
 - **URL:** https://typito.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27400,9 +27400,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Caption styling-first editor; strong brand-template angle. [Wave 27 Lane A]
+- **Notes:** Caption styling-first editor; strong brand-template angle. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Moovly ❓ unverified
+#### Moovly ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Online video creation platform — templates, text animation, and caption support for business videos.
 - **URL:** https://moovly.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27410,9 +27410,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Business-video templates with caption text layers. [Wave 27 Lane A]
+- **Notes:** Business-video templates with caption text layers. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Animaker ❓ unverified
+#### Animaker ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Animated video maker — DIY animation with auto captions and voiceover tools.
 - **URL:** https://animaker.com
 - **License:** Proprietary SaaS (verified 2026-10-07; referenced only as a stock-footage link in another entry — no standalone entry existed)
@@ -27420,9 +27420,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Animation-first; captions via voiceover transcription in generated videos. [Wave 27 Lane A]
+- **Notes:** Animation-first; captions via voiceover transcription in generated videos. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Vyond ❓ unverified
+#### Vyond ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Professional animated video platform (ex-GoAnimate) — character animation with captions and voiceover.
 - **URL:** https://www.vyond.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27430,9 +27430,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Enterprise animation; caption support via voiceover tracks. [Wave 27 Lane A]
+- **Notes:** Enterprise animation; caption support via voiceover tracks. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Powtoon ❓ unverified
+#### Powtoon ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Animated presentation/video maker — templates with caption and text-animation support.
 - **URL:** https://www.powtoon.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27440,9 +27440,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Presentation-video captions; marketing/educational use case. [Wave 27 Lane A]
+- **Notes:** Presentation-video captions; marketing/educational use case. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Renderforest ❓ unverified
+#### Renderforest ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** All-in-one branding/video platform — intro videos, animation, and caption support.
 - **URL:** https://www.renderforest.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27450,9 +27450,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Logo/intro videos with caption layers; branding-adjacent. [Wave 27 Lane A]
+- **Notes:** Logo/intro videos with caption layers; branding-adjacent. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Steve AI ❓ unverified
+#### Steve AI ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI video generator — text-to-video with AI voices and auto captions.
 - **URL:** https://www.steve.ai
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27460,9 +27460,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Text-to-video with captions as part of generated output. [Wave 27 Lane A]
+- **Notes:** Text-to-video with captions as part of generated output. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Yepic ❓ unverified
+#### Yepic ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI avatar video platform — studio-quality talking-head videos with auto captions.
 - **URL:** https://www.yepic.ai
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27470,9 +27470,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Avatar videos with captioning; multilingual angle. [Wave 27 Lane A]
+- **Notes:** Avatar videos with captioning; multilingual angle. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Guidde ❓ unverified
+#### Guidde ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI documentation video platform — auto-generates how-to videos with captions from screen captures.
 - **URL:** https://www.guidde.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27480,7 +27480,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Tutorial-video niche with auto-captions; distinct documentation use case. [Wave 27 Lane A]
+- **Notes:** Tutorial-video niche with auto-captions; distinct documentation use case. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### Adobe Express ❓ unverified
 - **What:** Adobe's free creative suite — caption quick-action (Adobe Research-backed) adds captions to videos; free tier.
@@ -27502,7 +27502,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Desktop-first subtitle editor; offline-friendly alternative to browser tools. [Wave 27 Lane A]
 
-#### Cloudflare Stream ❓ unverified
+#### Cloudflare Stream ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Video hosting/CDN with AI automatic captions — Stream generates captions on upload (announced via Cloudflare blog).
 - **URL:** https://blog.cloudflare.com/stream-automatic-captions-with-ai/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27510,9 +27510,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** CDN + AI captions in one bill — delivery-stack caption leg. [Wave 27 Lane A]
+- **Notes:** CDN + AI captions in one bill — delivery-stack caption leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Dacast ❓ unverified
+#### Dacast ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Live-streaming/video platform with 608/708 caption support — broadcast captioning for live and VOD.
 - **URL:** https://www.dacast.com/blog/live-streaming-video-provider-with-608-708-caption-support/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27520,9 +27520,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Broadcast-caption angle (608/708); live-streaming niche. [Wave 27 Lane A]
+- **Notes:** Broadcast-caption angle (608/708); live-streaming niche. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### SproutVideo ❓ unverified
+#### SproutVideo ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Business video hosting — automated captions/subtitles included for on-demand videos at no extra cost (per vendor pricing page); SRT/VTT upload supported.
 - **URL:** https://sproutvideo.com/pricing
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27530,9 +27530,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Automated captions bundled free with hosting — zero-marginal-cost caption leg. [Wave 27 Lane A]
+- **Notes:** Automated captions bundled free with hosting — zero-marginal-cost caption leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### JW Player ❓ unverified
+#### JW Player ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Enterprise video platform (player + hosting) — supports captions/subtitles tracks; accessibility features for hosted video.
 - **URL:** https://www.jwplayer.com/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27540,9 +27540,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Player-level caption support; enterprise video leg. [Wave 27 Lane A]
+- **Notes:** Player-level caption support; enterprise video leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Brightcove ❓ unverified
+#### Brightcove ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Enterprise video platform — AI-powered captions, translation, and audio description for VOD and live (per Brightcove accessibility announcements).
 - **URL:** https://www.brightcove.com/blog/new-accessibility-features
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27550,9 +27550,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** AI caption + translation + dubbing stack; accessibility-first enterprise leg. [Wave 27 Lane A]
+- **Notes:** AI caption + translation + dubbing stack; accessibility-first enterprise leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Cloudinary ❓ unverified
+#### Cloudinary ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Media management platform — free browser caption tool plus API/auto-transcription add-ons for video captioning at scale.
 - **URL:** https://cloudinary.com/tools/add-captions-to-video
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27560,9 +27560,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/api
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** API-first captioning + free browser tool — strong pipeline candidate. [Wave 27 Lane A]
+- **Notes:** API-first captioning + free browser tool — strong pipeline candidate. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Vidyard ❓ unverified
+#### Vidyard ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Business video platform — free computer-generated captions, plus paid human transcription; caption editing in-app.
 - **URL:** https://knowledge.vidyard.com/hc/en-us/articles/360037999214
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27570,7 +27570,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Free-tier auto captions on the support doc; sales-video niche. [Wave 27 Lane A]
+- **Notes:** Free-tier auto captions on the support doc; sales-video niche. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### VN Video Editor ❓ unverified
 - **What:** Free mobile/desktop video editor (vlognow.me) — Auto Captions feature with batch caption generation and caption templates.
@@ -27592,7 +27592,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** AI speech-to-text captions baked into a full NLE; desktop pipeline option. [Wave 27 Lane A]
 
-#### Elai ❓ unverified
+#### Elai ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI avatar video platform — script-to-video with auto captions and multilingual support.
 - **URL:** https://elai.io
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27600,9 +27600,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/ai-video
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Auto captions on higher plans per reviews; avatar-video niche. [Wave 27 Lane A]
+- **Notes:** Auto captions on higher plans per reviews; avatar-video niche. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Vimeo auto-captions ❓ unverified
+#### Vimeo auto-captions ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Vimeo hosting — automatic closed captions on uploads (99 languages), plus AI translation and live auto captions.
 - **URL:** https://Vimeo.com/features/product-updates-winter-24/multi-language-auto-captions
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27610,9 +27610,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Paid-tier captions with 99-language support and AI translation — separate entry from generic Vimeo hosting. [Wave 27 Lane A]
+- **Notes:** Paid-tier captions with 99-language support and AI translation — separate entry from generic Vimeo hosting. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### SubtitleO ❓ unverified
+#### SubtitleO ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Whisper-powered online auto-subtitle generator — customizable styles, multilingual, free plan with watermark.
 - **URL:** https://subtitleo.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27620,9 +27620,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Whisper-based caption tool — cheap dedicated caption leg. [Wave 27 Lane A]
+- **Notes:** Whisper-based caption tool — cheap dedicated caption leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### VideofaST ❓ unverified
+#### VideofaST ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI automatic subtitle generator for short videos — 99+ languages, word highlighting, 1080P export; free 3 videos/mo.
 - **URL:** https://videofa.st/en/add-subtitles-to-video/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27630,9 +27630,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Short-video caption niche with strong free tier. [Wave 27 Lane A]
+- **Notes:** Short-video caption niche with strong free tier. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### elevate.io ❓ unverified
+#### elevate.io ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Blackbird plc's browser-based collaborative video editor — cloud editing with caption support for creator teams.
 - **URL:** https://www.elevate.io/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27640,9 +27640,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Collaborative cloud editing with Epidemic Sound integration; captions in the edit flow. [Wave 27 Lane A]
+- **Notes:** Collaborative cloud editing with Epidemic Sound integration; captions in the edit flow. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Choppity ❓ unverified
+#### Choppity ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI clip maker — long video → viral Shorts/Reels with word-by-word animated captions, 95%+ accuracy, speaker colors.
 - **URL:** https://www.choppity.com/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27650,9 +27650,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Caption-first clip repurposing; animated captions are the product. [Wave 27 Lane A]
+- **Notes:** Caption-first clip repurposing; animated captions are the product. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### PlainScribe ❓ unverified
+#### PlainScribe ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI transcription service — $2/hour automatic transcription with subtitles, timecoding, and API access.
 - **URL:** https://www.plainscribe.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27660,9 +27660,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Cheap pay-per-hour transcription with subtitle export — transcription leg. [Wave 27 Lane A]
+- **Notes:** Cheap pay-per-hour transcription with subtitle export — transcription leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Hippo Video ❓ unverified
+#### Hippo Video ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Video personalization platform — screen recording, video emails, and closed captions on the free plan.
 - **URL:** https://www.hippovideo.io/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27670,9 +27670,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Free-tier closed captions; sales-video niche. [Wave 27 Lane A]
+- **Notes:** Free-tier closed captions; sales-video niche. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### SUBIT AI ❓ unverified
+#### SUBIT AI ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Free AI subtitle generator — Whisper + FFmpeg pipeline, no-watermark exports on free plan (30 energy/day).
 - **URL:** http://subitai.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27680,9 +27680,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Not the old open-source SubiT subtitle downloader (different project); Whisper-based free captioning. [Wave 27 Lane A]
+- **Notes:** Not the old open-source SubiT subtitle downloader (different project); Whisper-based free captioning. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Spikes Studio ❓ unverified
+#### Spikes Studio ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI clipping/caption platform for creators — auto captions and short-form repurposing.
 - **URL:** https://spikes.studio
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27690,9 +27690,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Caption + clipping combo; creator-focused. [Wave 27 Lane A]
+- **Notes:** Caption + clipping combo; creator-focused. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### OpencutAI ❓ unverified
+#### OpencutAI ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI video editing tool — caption generation as part of an AI-assisted editing workflow.
 - **URL:** https://www.producthunt.com/products/opencut-ai
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27700,9 +27700,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/editors
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Emerging tool; verify current feature set before wiring. [Wave 27 Lane A]
+- **Notes:** Emerging tool; verify current feature set before wiring. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Translate.Video ❓ unverified
+#### Translate.Video ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Video translation + subtitle platform — translate videos and generate multilingual captions.
 - **URL:** https://translate.video
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27710,9 +27710,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/translation
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Translation-first caption tool; multilingual distribution leg. [Wave 27 Lane A]
+- **Notes:** Translation-first caption tool; multilingual distribution leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### FocuSee ❓ unverified
+#### FocuSee ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** iMobie screen recorder with auto-zoom and caption features — tutorial video creation with captions.
 - **URL:** https://focusee.imobie.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27720,9 +27720,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/recording
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Screen-recording + captions for tutorial content. [Wave 27 Lane A]
+- **Notes:** Screen-recording + captions for tutorial content. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Streamio ❓ unverified
+#### Streamio ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Video hosting/streaming platform with caption support for hosted content.
 - **URL:** https://streamio.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27730,9 +27730,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Hosting leg with caption tracks; streaming niche. [Wave 27 Lane A]
+- **Notes:** Hosting leg with caption tracks; streaming niche. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Gumlet ❓ unverified
+#### Gumlet ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Video hosting/optimization CDN — caption track support for streamed video.
 - **URL:** https://www.gumlet.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27740,9 +27740,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/hosting
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** CDN + captions; delivery-stack option. [Wave 27 Lane A]
+- **Notes:** CDN + captions; delivery-stack option. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Akkadu ❓ unverified
+#### Akkadu ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI video translation platform — dubbing and subtitle generation for global distribution.
 - **URL:** https://akkadu.ai
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27750,9 +27750,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/translation
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Dubbing + subtitles; localization leg. [Wave 27 Lane A]
+- **Notes:** Dubbing + subtitles; localization leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### SendShort ❓ unverified
+#### SendShort ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI short-form video maker — auto captions for Shorts/Reels/TikTok repurposing.
 - **URL:** https://sendshort.ai
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27760,9 +27760,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Short-form captioning; social-clip pipeline leg. [Wave 27 Lane A]
+- **Notes:** Short-form captioning; social-clip pipeline leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### ScreenPal ❓ unverified
+#### ScreenPal ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Screen recorder + video editor (ex-Screencast-O-Matic) — captioning for tutorial and training videos.
 - **URL:** https://screenpal.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27770,9 +27770,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/recording
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Established screen recorder; caption support for training content. [Wave 27 Lane A]
+- **Notes:** Established screen recorder; caption support for training content. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Alitu ❓ unverified
+#### Alitu ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Podcast/video creation platform — automated editing with transcription and caption export.
 - **URL:** https://alitu.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27780,9 +27780,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Podcast-originated; transcription-to-caption workflow. [Wave 27 Lane A]
+- **Notes:** Podcast-originated; transcription-to-caption workflow. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Scripsy ❓ unverified
+#### Scripsy ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI YouTube transcription + summarization — instant transcripts with timestamps, SRT/TXT/DOCX/PDF export, API access.
 - **URL:** https://scripsy.ai
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27790,9 +27790,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Replaced faster-whisper (already an entry) as a genuinely new transcription leg; SRT export makes it caption-usable. [Wave 27 Lane A]
+- **Notes:** Replaced faster-whisper (already an entry) as a genuinely new transcription leg; SRT export makes it caption-usable. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### AddSubtitle.ai ❓ unverified
+#### AddSubtitle.ai ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Talecast's AI subtitle/translation platform — browser-based subtitling, translation, and lip-sync dubbing; API access.
 - **URL:** https://addsubtitle.ai/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27800,9 +27800,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/translation
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Replaced Simon Says (already an entry); subtitle + lip-sync translation stack. [Wave 27 Lane A]
+- **Notes:** Replaced Simon Says (already an entry); subtitle + lip-sync translation stack. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### BlitzCut ❓ unverified
+#### BlitzCut ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI video clipping tool — auto captions for short-form content repurposing.
 - **URL:** https://blitzcutai.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27810,9 +27810,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Clip + caption combo for social repurposing. [Wave 27 Lane A]
+- **Notes:** Clip + caption combo for social repurposing. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### AirCaption ❓ unverified
+#### AirCaption ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI caption generator — automatic captions for video content.
 - **URL:** https://aircaption.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27820,9 +27820,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Dedicated caption generator; lightweight pipeline leg. [Wave 27 Lane A]
+- **Notes:** Dedicated caption generator; lightweight pipeline leg. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Gglot ❓ unverified
+#### Gglot ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** AI transcription/translation platform — subtitles, translation, and API; pricing $14.99–$149/mo per vendor pricing page.
 - **URL:** https://gglot.com/audio-translator/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -27830,9 +27830,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Added as EasySub replacement (EasySub was a Wave 13 dup); subtitle + translation + API. [Wave 27 Lane A]
+- **Notes:** Added as EasySub replacement (EasySub was a Wave 13 dup); subtitle + translation + API. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### KwiCut ❓ unverified
+#### KwiCut ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Wondershare's AI video caption tool — auto-generated subtitles with free trial.
 - **URL:** https://kwicut.wondershare.com
 - **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
@@ -27840,7 +27840,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Added as Offeo replacement (Offeo's caption feature unverified); dedicated caption SaaS. [Wave 27 Lane A]
+- **Notes:** Added as Offeo replacement (Offeo's caption feature unverified); dedicated caption SaaS. [Wave 27 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### Essen Folksong Collection 🚫 not commercial-safe
 - **What:** The Essen Folksong Collection (EsAC) — ~10,000 European folk songs in Essen/**kern format, the standard MIR folk-melody corpus.
@@ -28062,7 +28062,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** C64 discovery/credits research (SID musician attribution); do not scrape the database or pull game binaries. [Wave 28 Lane A]
 
-#### Cleanvoice AI ❓ unverified
+#### Cleanvoice AI ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Cleanvoice AI — AI podcast/video audio cleanup plus transcription with caption/SRT export; free trial (30 min per vendor reporting).
 - **URL:** https://cleanvoice.ai/ (canonical; verify before use).
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28070,9 +28070,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Cleanup + transcription combo; SRT export makes it caption-usable. [Wave 28 Lane A]
+- **Notes:** Cleanup + transcription combo; SRT export makes it caption-usable. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Podsqueeze ❓ unverified
+#### Podsqueeze ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Podsqueeze — AI podcast repurposing: transcripts, show notes, clips, audiograms; free tier 50 min/mo per vendor reporting.
 - **URL:** https://podsqueeze.com/ (canonical; verify before use).
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28080,9 +28080,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Transcript-first repurposing stack; verify clip licensing for commercial use. [Wave 28 Lane A]
+- **Notes:** Transcript-first repurposing stack; verify clip licensing for commercial use. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Swell AI ❓ unverified
+#### Swell AI ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Swell AI — podcast/article AI content platform with transcription and clip generation; Hobby plan $0/mo (1 upload) per vendor reporting.
 - **URL:** https://swellai.com/ (canonical; verify before use).
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28090,7 +28090,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/saas
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Thin free tier — evaluate-only; confirm ToS before any production dependency. [Wave 28 Lane A]
+- **Notes:** Thin free tier — evaluate-only; confirm ToS before any production dependency. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### Picovoice Leopard ❓ unverified
 - **What:** Picovoice Leopard — on-device speech-to-text engine (Free Tier) with word-level timestamps; SDK/API for transcription pipelines.
@@ -28102,7 +28102,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** On-device STT = no audio leaves the machine (privacy angle); strong offline caption pipeline leg if ToS allows commercial use. [Wave 28 Lane A]
 
-#### Sieve ❓ unverified
+#### Sieve ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Sieve — pluggable video AI APIs (speech transcription, dubbing, lip-sync, object detection); free starter tier per vendor reporting.
 - **URL:** https://sieve.ai/ (canonical; verify before use).
 - **License:** Proprietary SaaS/API (verified 2026-10-07)
@@ -28110,9 +28110,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
-- **Notes:** API-first; transcription + dubbing + lip-sync in one stack — evaluate for automated caption/dub pipeline. [Wave 28 Lane A]
+- **Notes:** API-first; transcription + dubbing + lip-sync in one stack — evaluate for automated caption/dub pipeline. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Speechnotes ❓ unverified
+#### Speechnotes ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Speechnotes — free browser dictation notepad plus pay-as-you-go ($0.10/min) file transcription with SRT/VTT caption export, diarization, API.
 - **URL:** https://speechnotes.co
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28120,9 +28120,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** SRT/VTT export makes the cheap transcription leg caption-usable; API + Zapier hooks. [Wave 28 Lane A]
+- **Notes:** SRT/VTT export makes the cheap transcription leg caption-usable; API + Zapier hooks. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Dictanote ❓ unverified
+#### Dictanote ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Dictanote — notes app with built-in voice typing (50+ languages); free plan $0 forever, 60 min dictation/day.
 - **URL:** https://dictanote.co
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28130,9 +28130,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Dictation-first (not file transcription); useful for voice-drafted scripts/show notes rather than caption files. [Wave 28 Lane A]
+- **Notes:** Dictation-first (not file transcription); useful for voice-drafted scripts/show notes rather than caption files. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### SpeechText.AI ❓ unverified
+#### SpeechText.AI ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** SpeechText.AI — domain-specific AI transcription (legal/medical models), subtitle generation, API; free trial (~15 min) then pay-as-you-go.
 - **URL:** https://speechtext.ai
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28140,9 +28140,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
-- **Notes:** Domain models useful for technical/deposition-style content; subtitle export confirmed by vendor docs. [Wave 28 Lane A]
+- **Notes:** Domain models useful for technical/deposition-style content; subtitle export confirmed by vendor docs. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Adobe Podcast ❓ unverified
+#### Adobe Podcast ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Adobe Podcast (podcast.adobe.com) — Enhance Speech AI cleanup, Mic Check, and Studio remote recording with transcription; free tier with free Adobe account.
 - **URL:** https://podcast.adobe.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28150,9 +28150,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Enhance Speech is the standout free leg (dialog cleanup before captioning); Studio transcription feeds caption workflows. [Wave 28 Lane A]
+- **Notes:** Enhance Speech is the standout free leg (dialog cleanup before captioning); Studio transcription feeds caption workflows. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Supernormal ❓ unverified
+#### Supernormal ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Supernormal — AI meeting notetaker (no bot joins); free plan $0/mo, 15 credits/mo (5/day).
 - **URL:** https://supernormal.com
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28160,7 +28160,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Meeting-notes leg rather than caption files; thin free tier — evaluate-only. [Wave 28 Lane A]
+- **Notes:** Meeting-notes leg rather than caption files; thin free tier — evaluate-only. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### DownSub ❓ unverified
 - **What:** DownSub — free online subtitle downloader: extracts SRT/VTT/TXT captions from YouTube, Viki, Viu, WeTV and 50+ video sites; no account.
@@ -28182,7 +28182,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Transcript-workspace (searchable, clickable timestamps) vs DownSub's download-first approach; same reuse-rights discipline applies. [Wave 28 Lane A]
 
-#### ScreenApp ❓ unverified
+#### ScreenApp ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** ScreenApp — screen/meeting recorder with AI transcription, speaker diarization, SRT/VTT export; free plan (2 transcriptions up to 45 min each, 3 uploads).
 - **URL:** https://screenapp.io
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28190,7 +28190,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Record-then-transcribe leg with SRT/VTT export; bot-free recording option. [Wave 28 Lane A]
+- **Notes:** Record-then-transcribe leg with SRT/VTT export; bot-free recording option. [Wave 28 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 ## Wave 29 — Lane A (held-back pockets: score archives · chiptune/tracker ecosystem · caption packaging) — 66 entries (2026-10-07)
 
@@ -28643,7 +28643,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 
 ### D. Caption packaging — SaaS free-tier ToS audits (22)
 
-#### Deciphr ❓ unverified
+#### Deciphr ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Deciphr (deciphr.ai) — podcaster-focused AI platform: transcripts, show notes, summaries, audiograms, video reels, and social captions from audio/video uploads or URLs.
 - **URL:** https://deciphr.ai/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28651,9 +28651,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Strong transcript+repurposing leg for podcast/long-form caption workflows; audit the ToS for commercial-use rights before pipeline use. [Wave 29 Lane A]
+- **Notes:** Strong transcript+repurposing leg for podcast/long-form caption workflows; audit the ToS for commercial-use rights before pipeline use. [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Vsub ❓ unverified
+#### Vsub ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Vsub (vsub.io) — AI video-caption/faceless-video generator: auto-captions with animated emojis, AI voices, Reddit-story/Roblox templates.
 - **URL:** https://vsub.io/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28661,7 +28661,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Treat as paid-until-proven-otherwise; verify the current free tier on the live pricing page before relying on it. [Wave 29 Lane A]
+- **Notes:** Treat as paid-until-proven-otherwise; verify the current free tier on the live pricing page before relying on it. [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### Subscene ⚠️ derivative-work subtitles
 - **What:** Subscene (subscene.com) — community subtitle download site: user-uploaded subtitles for films/TV in many languages.
@@ -28703,7 +28703,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Honest placement: a paid accuracy backstop for difficult audio, not a free pipeline component. [Wave 29 Lane A]
 
-#### Taption ❓ unverified
+#### Taption ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Taption (taption.com) — AI transcription/subtitling/translation: 40+ transcription languages, 50+ translation languages, speaker labels, editable timeline, exports to MP4 (burned-in), SRT, VTT, PDF, TXT.
 - **URL:** https://www.taption.com/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28711,9 +28711,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** The sub-1-minute free allowance suits Shorts/Reels caption spot-checks; SRT/VTT export is the pipeline-relevant feature. [Wave 29 Lane A]
+- **Notes:** The sub-1-minute free allowance suits Shorts/Reels caption spot-checks; SRT/VTT export is the pipeline-relevant feature. [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Opus Clip ❓ unverified
+#### Opus Clip ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Opus Clip (opus.pro) — AI long-to-short clipping with animated captions, virality scoring, and social scheduling.
 - **URL:** https://www.opus.pro/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28721,7 +28721,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Best-in-class moment detection per 2026 reviews, but the free tier is a trial (expiring clips) — evaluate, don't depend. [Wave 29 Lane A]
+- **Notes:** Best-in-class moment detection per 2026 reviews, but the free tier is a trial (expiring clips) — evaluate, don't depend. [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### Auphonic ⚠️ STT-is-paid
 - **What:** Auphonic (auphonic.com) — audio post-production web service: leveling, loudness normalization (EBU R128), noise/reverb reduction, multitrack; Whisper-based speech-to-text and shownotes on paid tiers.
@@ -28733,7 +28733,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Honest catch: the free tier is an audio-cleanup tool, not a transcription tool — the caption leg starts at paid. Still valuable as a pre-transcription cleanup stage. [Wave 29 Lane A]
 
-#### Eightify ❓ unverified
+#### Eightify ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Eightify — YouTube video summarizer (browser extension + app): AI summaries with timestamps from video transcripts.
 - **URL:** https://eightify.app/
 - **License:** Proprietary SaaS (verified 2026-10-07; blocks bots, likely alive)
@@ -28741,9 +28741,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Transcript-skimming leg for research; not a caption producer. [Wave 29 Lane A]
+- **Notes:** Transcript-skimming leg for research; not a caption producer. [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Glasp ❓ unverified
+#### Glasp ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Glasp — social web highlighter with YouTube transcript/summary features: captures video transcripts for note-taking.
 - **URL:** https://glasp.co/
 - **License:** Proprietary SaaS (verified 2026-10-07; blocks bots, likely alive)
@@ -28751,7 +28751,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Transcript-access leg for research workflows; verify ToS before any bulk transcript extraction. [Wave 29 Lane A]
+- **Notes:** Transcript-access leg for research workflows; verify ToS before any bulk transcript extraction. [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### SquadCast ⚠️ paid recording
 - **What:** SquadCast (now part of Descript) — remote podcast/video recording studio with AI transcripts and styled captions.
@@ -28793,7 +28793,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Strong transcript-analysis leg for long-form content research; not a caption exporter — pair with a real caption tool for the SRT/VTT leg. [Wave 29 Lane A]
 
-#### Wavve ❓ unverified
+#### Wavve ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Wavve (wavve.co) — audiogram/short-form video creator: waveform animations, captions, and templates for turning audio into social video.
 - **URL:** https://www.wavve.co/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28801,9 +28801,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Caption-adjacent packaging leg (audiograms with captions); cf. Headliner (already cataloged). [Wave 29 Lane A]
+- **Notes:** Caption-adjacent packaging leg (audiograms with captions); cf. Headliner (already cataloged). [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Wispr Flow ❓ unverified
+#### Wispr Flow ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Wispr Flow — AI dictation app (voice-to-text with auto-edits) for desktop/mobile.
 - **URL:** https://wisprflow.ai/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28811,7 +28811,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Dictation-first, not a caption producer — included for the voice-input leg (cf. Superwhisper, MacWhisper). [Wave 29 Lane A]
+- **Notes:** Dictation-first, not a caption producer — included for the voice-input leg (cf. Superwhisper, MacWhisper). [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 #### Panopto ⚠️ enterprise
 - **What:** Panopto — enterprise video management platform (lecture capture, searchable video, auto-captions) for education/enterprise.
@@ -28843,7 +28843,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Status:** not-started
 - **Notes:** Included for completeness of the caption-platform map; no free path. [Wave 29 Lane A]
 
-#### Repurpose.io ❓ unverified
+#### Repurpose.io ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Repurpose.io — content-repurposing automation: turns podcasts/videos into captioned clips and auto-publishes across platforms.
 - **URL:** https://repurpose.io/
 - **License:** Proprietary SaaS (verified 2026-10-07; blocks bots, likely alive)
@@ -28851,9 +28851,9 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Distribution-automation leg; caption quality depends on the upstream transcription. [Wave 29 Lane A]
+- **Notes:** Distribution-automation leg; caption quality depends on the upstream transcription. [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
-#### Claap ❓ unverified
+#### Claap ⚠️ proprietary SaaS — ToS verified 2026-10-07
 - **What:** Claap — async video messaging with AI transcription/summaries (meeting-recap style captions and notes).
 - **URL:** https://claap.io/
 - **License:** Proprietary SaaS (verified 2026-10-07)
@@ -28861,7 +28861,7 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** captions/transcription
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
-- **Notes:** Meeting-caption leg; cf. tl;dv, Fathom, Fireflies (already cataloged). [Wave 29 Lane A]
+- **Notes:** Meeting-caption leg; cf. tl;dv, Fathom, Fireflies (already cataloged). [Wave 29 Lane A] [Wave 31 Lane A: ToS verified — proprietary SaaS, see License]
 
 ## Honest negatives — Wave 29 Lane A (not entries — diligence record)
 - **Jean Sibelius Works (critical edition):** checked, excluded as a score source — the edition is a Breitkopf commercial print series (National Library of Finland / Sibelius Society), not open; kept out of entries, noted here.

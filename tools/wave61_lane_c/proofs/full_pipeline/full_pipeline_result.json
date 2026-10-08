@@ -1,0 +1,454 @@
+{
+  "checks": [
+    {
+      "name": "fixture_sha",
+      "status": "PASS",
+      "detail": "dialogue.wav 666cc1b94bd7"
+    },
+    {
+      "name": "gt_sha",
+      "status": "PASS",
+      "detail": "ground_truth.json 3bfbdbddb43e"
+    },
+    {
+      "name": "ref_rttm_sha",
+      "status": "PASS",
+      "detail": "reference.rttm e759d68f3d9d"
+    },
+    {
+      "name": "fixture_duration",
+      "status": "PASS",
+      "detail": "42.90 s, 9 turns, 3 voices"
+    },
+    {
+      "name": "noise_calibration",
+      "status": "PASS",
+      "detail": "input SNR 10.0 dB (target 10.0)"
+    },
+    {
+      "name": "denoise_snr_gain_noisy",
+      "status": "PASS",
+      "detail": "10 dB input -> +7.3 dB gain"
+    },
+    {
+      "name": "denoise_clean_noop_rms",
+      "status": "PASS",
+      "detail": "clean RMS delta 2.49% (< 5%)"
+    },
+    {
+      "name": "denoise_clean_noop_corr",
+      "status": "PASS",
+      "detail": "corr(clean, enhanced) = 0.99934"
+    },
+    {
+      "name": "denoise_deterministic",
+      "status": "PASS",
+      "detail": "re-run max|diff| = 5.24e-05 (wav-quantized read vs fresh)"
+    },
+    {
+      "name": "vad_recall_noisy",
+      "status": "PASS",
+      "detail": "tuned VAD recall 0.9201 (>= 0.90)"
+    },
+    {
+      "name": "vad_precision_noisy",
+      "status": "PASS",
+      "detail": "tuned VAD precision 0.9937 (>= 0.99)"
+    },
+    {
+      "name": "eigengap_k_noisy",
+      "status": "FAIL",
+      "detail": "E1a selects k=2 (margin 1.4x)"
+    },
+    {
+      "name": "eigengap_k_clean",
+      "status": "PASS",
+      "detail": "clean-path E1a selects k=3"
+    },
+    {
+      "name": "all_speakers_mapped_noisy",
+      "status": "FAIL",
+      "detail": "mapped ['B', 'C']"
+    },
+    {
+      "name": "der_finite_noisy",
+      "status": "PASS",
+      "detail": "noisy-path DER=0.4275 JER=0.5635"
+    },
+    {
+      "name": "der_finite_clean",
+      "status": "PASS",
+      "detail": "clean-path DER=0.1285 JER=0.1284"
+    },
+    {
+      "name": "der_finite_bypass",
+      "status": "PASS",
+      "detail": "bypass DER=0.2239 JER=0.2623"
+    },
+    {
+      "name": "est_k_matches_forced",
+      "status": "FAIL",
+      "detail": "estimator k == forced-k clusters == 3"
+    },
+    {
+      "name": "denoise_helps_diarization",
+      "status": "FAIL",
+      "detail": "noisy+denoise DER 0.4275 vs noisy-bypass DER 0.2239"
+    },
+    {
+      "name": "bypass_worse_than_clean",
+      "status": "PASS",
+      "detail": "sanity: noisy-bypass DER 0.2239 > clean DER 0.1285"
+    }
+  ],
+  "variants": {
+    "clean": {
+      "tag": "clean",
+      "snr_gain_db": null,
+      "denoise_s": 6.6,
+      "denoised": true,
+      "denoised_sha256": "424e43bc9e653ed996db3e64f896a338ac86d79a72395683573653a36dc86fe2",
+      "vad_nseg": 9,
+      "vad_segments": [
+        [
+          0.1,
+          4.51
+        ],
+        [
+          5.02,
+          10.18
+        ],
+        [
+          11.22,
+          15.27
+        ],
+        [
+          16.04,
+          19.84
+        ],
+        [
+          20.35,
+          23.91
+        ],
+        [
+          24.84,
+          29.25
+        ],
+        [
+          30.02,
+          33.51
+        ],
+        [
+          34.06,
+          37.31
+        ],
+        [
+          38.18,
+          42.28
+        ]
+      ],
+      "vad_recall": 0.9226,
+      "vad_precision": 1.0,
+      "windows_grid": 166,
+      "windows_speech_energy": 160,
+      "windows_kept_vad": 92,
+      "embed_s": 17.2,
+      "embed_shape": [
+        92,
+        192
+      ],
+      "embed_finite": true,
+      "eigengap_k": 3,
+      "eigengap_eigenvalues": [
+        0.0,
+        0.0,
+        0.0043,
+        0.123,
+        0.1527,
+        0.1971,
+        0.2608
+      ],
+      "eigengap_gaps": {
+        "2": 0.0043,
+        "3": 0.1186,
+        "4": 0.0297,
+        "5": 0.0444
+      },
+      "eigengap_margin": 2.67,
+      "n_clusters_found": 3,
+      "diag_cos": {
+        "AB": 0.1535,
+        "AC": 0.6326,
+        "BC": 0.1537
+      },
+      "frames_labeled": 137,
+      "frames_total": 172,
+      "cluster_to_speaker": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "frame_purity": 1.0,
+      "speakers_mapped": [
+        "A",
+        "B",
+        "C"
+      ],
+      "n_hyp_segments": 9,
+      "DER_c0.0": 0.1285,
+      "JER_c0.0": 0.1284,
+      "components_c0.0": {
+        "missed detection": 5.05,
+        "false alarm": 0.0,
+        "confusion": 0.0,
+        "total": 39.3
+      },
+      "DER_c0.25": 0.0762,
+      "JER_c0.25": 0.076,
+      "components_c0.25": {
+        "missed detection": 2.825,
+        "false alarm": 0.0,
+        "confusion": 0.0,
+        "total": 37.05
+      }
+    },
+    "noisy": {
+      "tag": "noisy",
+      "snr_gain_db": 7.27,
+      "denoise_s": 4.1,
+      "denoised": true,
+      "denoised_sha256": "a46153a58afc7cbab50ec79e4cc6b8afd1135578e80c993f7aa14ef26e2a795d",
+      "vad_nseg": 10,
+      "vad_segments": [
+        [
+          0.0,
+          4.43
+        ],
+        [
+          5.06,
+          10.11
+        ],
+        [
+          11.21,
+          15.23
+        ],
+        [
+          16.04,
+          19.81
+        ],
+        [
+          20.34,
+          23.9
+        ],
+        [
+          23.96,
+          24.45
+        ],
+        [
+          24.85,
+          29.17
+        ],
+        [
+          30.01,
+          33.48
+        ],
+        [
+          34.06,
+          37.3
+        ],
+        [
+          38.19,
+          42.23
+        ]
+      ],
+      "vad_recall": 0.9201,
+      "vad_precision": 0.9937,
+      "windows_grid": 166,
+      "windows_speech_energy": 158,
+      "windows_kept_vad": 88,
+      "embed_s": 17.4,
+      "embed_shape": [
+        88,
+        192
+      ],
+      "embed_finite": true,
+      "eigengap_k": 2,
+      "eigengap_eigenvalues": [
+        0.0,
+        0.0,
+        0.0545,
+        0.0935,
+        0.1257,
+        0.1567,
+        0.2338
+      ],
+      "eigengap_gaps": {
+        "2": 0.0545,
+        "3": 0.039,
+        "4": 0.0322,
+        "5": 0.031
+      },
+      "eigengap_margin": 1.4,
+      "n_clusters_found": 2,
+      "diag_cos": {
+        "AB": 0.3465,
+        "AC": 0.7438,
+        "BC": 0.2835
+      },
+      "frames_labeled": 133,
+      "frames_total": 172,
+      "cluster_to_speaker": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6767,
+      "speakers_mapped": [
+        "B",
+        "C"
+      ],
+      "n_hyp_segments": 9,
+      "DER_c0.0": 0.4275,
+      "JER_c0.0": 0.5635,
+      "components_c0.0": {
+        "missed detection": 6.05,
+        "false alarm": 0.0,
+        "confusion": 10.75,
+        "total": 39.3
+      },
+      "DER_c0.25": 0.3927,
+      "JER_c0.25": 0.5407,
+      "components_c0.25": {
+        "missed detection": 3.925,
+        "false alarm": 0.0,
+        "confusion": 10.625,
+        "total": 37.05
+      },
+      "snr_out_db": 17.27
+    },
+    "noisy_bypass": {
+      "tag": "noisy_bypass",
+      "snr_gain_db": null,
+      "denoise_s": 0.0,
+      "denoised": false,
+      "denoised_sha256": "370310e0572752b1ecc58dabb5d911d1ae2509453cd1c79c79ee7ce08388beb3",
+      "vad_nseg": 11,
+      "vad_segments": [
+        [
+          0.0,
+          4.43
+        ],
+        [
+          4.75,
+          10.05
+        ],
+        [
+          10.61,
+          11.17
+        ],
+        [
+          11.23,
+          15.2
+        ],
+        [
+          16.06,
+          19.68
+        ],
+        [
+          20.36,
+          23.73
+        ],
+        [
+          24.01,
+          24.5
+        ],
+        [
+          24.7,
+          29.17
+        ],
+        [
+          29.95,
+          33.42
+        ],
+        [
+          34.03,
+          37.15
+        ],
+        [
+          38.29,
+          42.16
+        ]
+      ],
+      "vad_recall": 0.9089,
+      "vad_precision": 0.9746,
+      "windows_grid": 166,
+      "windows_speech_energy": 166,
+      "windows_kept_vad": 88,
+      "embed_s": 17.9,
+      "embed_shape": [
+        88,
+        192
+      ],
+      "embed_finite": true,
+      "eigengap_k": 3,
+      "eigengap_eigenvalues": [
+        0.0,
+        0.0,
+        0.0335,
+        0.1421,
+        0.1575,
+        0.1637,
+        0.1884
+      ],
+      "eigengap_gaps": {
+        "2": 0.0335,
+        "3": 0.1086,
+        "4": 0.0153,
+        "5": 0.0062
+      },
+      "eigengap_margin": 3.24,
+      "n_clusters_found": 3,
+      "diag_cos": {
+        "AB": 0.0816,
+        "AC": 0.5905,
+        "BC": 0.0785
+      },
+      "frames_labeled": 133,
+      "frames_total": 172,
+      "cluster_to_speaker": {
+        "0": "B",
+        "1": "A",
+        "2": "C"
+      },
+      "frame_purity": 0.9318,
+      "speakers_mapped": [
+        "A",
+        "B",
+        "C"
+      ],
+      "n_hyp_segments": 13,
+      "DER_c0.0": 0.2239,
+      "JER_c0.0": 0.2623,
+      "components_c0.0": {
+        "missed detection": 6.3,
+        "false alarm": 0.25,
+        "confusion": 2.25,
+        "total": 39.3
+      },
+      "DER_c0.25": 0.1775,
+      "JER_c0.25": 0.2191,
+      "components_c0.25": {
+        "missed detection": 4.325,
+        "false alarm": 0.125,
+        "confusion": 2.125,
+        "total": 37.05
+      }
+    }
+  },
+  "honest_findings": [
+    "noisy-path eigengap k is reported as measured (expected 3; residual noise collapses the gap margin)",
+    "caption words come from Wave-58 GT turn texts; the pipeline supplies speaker identity + timing only (no ASR stage wired)"
+  ],
+  "total_s": 77.2,
+  "passed": 16,
+  "failed": 4
+}

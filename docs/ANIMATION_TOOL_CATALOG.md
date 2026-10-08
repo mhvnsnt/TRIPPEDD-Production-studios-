@@ -4248,3 +4248,277 @@ Monocular depth estimation, image/video segmentation & matting, layer decomposit
 - **Lane note:** Wave 4 Lane B: the MIT atlas representation — video → editable layers with temporal consistency built in.
 
 <!-- end lane B wave 4: 2.5D parallax (37 entries; 4 GPL-family rows → quarantine 167-170) -->
+## glTF animation runtime / interop
+
+glTF-focused animation players, runtimes, compressors, converters, and retargeting tooling. Covers what the earlier `## Animation formats / conversion / playback` section does not: the glTF-specific runtime stack (loaders, validators, mesh/animation compression, USD↔glTF bridges) and the skeletal-animation libraries that feed glTF pipelines.
+
+#### Khronos glTF-Sample-Viewer ✅
+- **What:** Official Khronos WebGL reference viewer for glTF 2.0 — PBR rendering, skeletal animation playback, skinning/morph targets, extension conformance checks.
+- **URL:** https://github.com/KhronosGroup/glTF-Sample-Viewer
+- **License:** Apache-2.0 (verified 2026-10-08: GitHub license metadata via ecosyste.ms index — apache-2.0, LICENSE.md present in repo root).
+- **Use:** reference runtime for playing back skinned/morph animation tracks exactly per spec; conformance baseline before shipping animated GLBs.
+- **Lane note:** Wave 4 Lane C: the canonical glTF animation runtime the whole pocket is measured against.
+
+#### Google model-viewer ✅
+- **What:** `<model-viewer>` web component for embedding interactive 3D (glTF/GLB) with AR support — animation clips, camera controls, annotations.
+- **URL:** https://github.com/google/model-viewer
+- **License:** Apache-2.0 (verified 2026-10-08: upstream LICENSE; npm README "## License — Apache License Version 2.0, Copyright © 2018 Google"; cited by multiple downstream notices).
+- **Use:** zero-build animated-GLB playback and QA on product/marketing pages; auto-rotate + animation-name control for asset review.
+- **Lane note:** Wave 4 Lane C: the drop-in web runtime for animated glTF delivery — no engine needed.
+
+#### three-gltf-viewer (Don McCurdy) ✅
+- **What:** Lightweight drag-and-drop three.js preview for glTF 2.0 models — inspects materials, lighting, and animation playback; ships as web + Electron desktop app.
+- **URL:** https://github.com/donmccurdy/three-gltf-viewer
+- **License:** MIT (verified 2026-10-08: GitHub repo license field "MIT License (MIT)" via multiple ecosystem mirrors; upstream LICENSE file).
+- **Use:** quick animation debugging (play/pause clips, wireframe, skinning visualization) before routing assets into the promo pipeline.
+- **Lane note:** Wave 4 Lane C: the animator's quick-look glTF player — animation testing without an engine.
+
+#### Babylon.js ✅
+- **What:** Full WebGL/WebGPU 3D engine with first-class glTF loader, animation groups, skeletons, morph targets, and retargeting utilities; ships the Babylon Sandbox viewer.
+- **URL:** https://github.com/BabylonJS/Babylon.js
+- **License:** Apache-2.0 (verified 2026-10-08: upstream license.md — Apache License 2.0; Wikipedia + multiple downstream THIRD_PARTY_NOTICES concur. Note: Havok physics runtime ships under its own terms).
+- **Use:** interactive runtime for animated glTF characters (animation groups, blend, additive layers); Sandbox as the shareable animation-review link.
+- **Lane note:** Wave 4 Lane C: engine-grade glTF animation runtime alternative to three.js, with built-in animation blending.
+
+#### Google Filament ✅
+- **What:** Real-time PBR rendering engine (C++, Android/iOS/Web) with `gltfio`, a dedicated glTF 2.0 loader supporting skinned and morph-target animation.
+- **URL:** https://github.com/google/filament
+- **License:** Apache-2.0 (verified 2026-10-08: Maven Central POM metadata "The Apache Software License, Version 2.0" for com.google.android.filament:gltfio-android; upstream LICENSE).
+- **Use:** native mobile/embedded playback of animated GLBs with filmic PBR — the runtime behind Android 3D model viewers.
+- **Lane note:** Wave 4 Lane C: the native-side glTF animation runtime — gltfio is the loader contract to test against.
+
+#### PlayCanvas ✅
+- **What:** WebGL/WebGPU game engine (MIT) with native glTF/GLB import, skeletal animation, animation blending trees, and a browser editor.
+- **URL:** https://github.com/playcanvas/engine
+- **License:** MIT (verified 2026-10-08: upstream README — "The PlayCanvas Engine is released under the MIT license"; official docs concur).
+- **Use:** web-native engine playback of animated glTF characters; editor timeline for blocking entrance-kit-style animation passes.
+- **Lane note:** Wave 4 Lane C: the lightweight open web engine for animated glTF — MIT-clean alternative for browser playback.
+
+#### A-Frame ✅
+- **What:** Entity-component HTML framework over three.js for WebXR scenes; glTF models (with animations) load via declarative `<a-gltf-model>` / gltf-model components.
+- **URL:** https://github.com/aframevr/aframe
+- **License:** MIT (verified 2026-10-08: GitHub repo license field "MIT License (MIT)"; Wikipedia concurs).
+- **Use:** rapid WebXR staging of animated characters — declare scene, drop GLB, trigger animation clips from components.
+- **Lane note:** Wave 4 Lane C: HTML-declarative glTF animation playback for AR/VR staging without engine code.
+
+#### AR.js ✅
+- **What:** Web-based AR library (marker, image, and location tracking) that renders glTF/GLB models — including animated ones — through three.js and A-Frame integrations.
+- **URL:** https://github.com/AR-js-org/AR.js
+- **License:** MIT (verified 2026-10-08: GitHub repo license field "MIT License (MIT)" for AR-js-org/AR.js).
+- **Use:** AR placement of animated glTF characters (entrance-kit characters on a real stage); marker-triggered animation playback.
+- **Lane note:** Wave 4 Lane C: the AR delivery path for animated glTF — marker/image tracking around animated models.
+
+#### O3DE (Open 3D Engine) ✅
+- **What:** AAA-capable open 3D engine (ex-Amazon Lumberyard) with glTF import, EMotion FX animation system, blend trees, and retargeting.
+- **URL:** https://github.com/o3de/o3de
+- **License:** Apache-2.0 OR MIT at the licensee's option (verified 2026-10-08: upstream LICENSE.txt — default Apache-2.0, may elect MIT; contributions under both).
+- **Use:** full engine runtime for glTF characters with professional animation graphs; Asset Processor bakes glTF into engine animation assets.
+- **Lane note:** Wave 4 Lane C: the heavyweight open glTF runtime — EMotion FX animation stack with dual permissive licensing.
+
+#### Stride ✅
+- **What:** C# cross-platform game engine (ex-Xenko) with glTF import and a node-based animation system (clips, blending, procedural layers).
+- **URL:** https://github.com/stride3d/stride
+- **License:** MIT (verified 2026-10-08: upstream README — "Stride is covered by the MIT License"; relicensed from GPLv3 at Xenko 3.0, 2018).
+- **Use:** .NET-side runtime for animated glTF characters; animation composition via the editor's animation assets.
+- **Lane note:** Wave 4 Lane C: the C#/.NET glTF animation runtime — MIT-clean since the 2018 relicense.
+
+<!-- end lane C wave 4 batch 1: gltf runtimes 1-10 (10 entries; 0 GPL) -->
+#### Urho3D ✅
+- **What:** Lightweight cross-platform C++ 2D/3D game engine with model/animation import, skeletal blending, and animation state machines.
+- **URL:** https://github.com/urho3d/Urho3D
+- **License:** MIT (verified 2026-10-08: upstream README — "released under the MIT license", License.txt).
+- **Use:** embeddable native runtime for animated characters on desktop/mobile; small footprint for companion preview tools.
+- **Lane note:** Wave 4 Lane C: the featherweight native engine — animated model playback where a full AAA engine is overkill.
+
+#### OGRE (Object-Oriented Graphics Rendering Engine) ✅
+- **What:** Scene-oriented C++ 3D rendering engine with skeletal animation, animation blending, and Assimp-backed mesh/animation import for development tooling.
+- **URL:** https://github.com/OGRECave/ogre
+- **License:** MIT (verified 2026-10-08: upstream docs — "The OGRE rendering engine itself is licensed under the MIT License"; LGPL only before v1.7).
+- **Use:** renderer for custom animation tooling (turntables, batch renders of animated GLB batches via Assimp import).
+- **Lane note:** Wave 4 Lane C: the classic scene-graph renderer — animation playback substrate for in-house QC tools.
+
+#### Panda3D ✅
+- **What:** Python/C++ game engine (Disney/CMU origin) with graphics, audio, collision, and an Actor/AnimControl animation system.
+- **URL:** https://github.com/panda3d/panda3d
+- **License:** BSD-3-Clause / revised BSD (verified 2026-10-08: upstream README — "licensed under the Modified BSD License"; Wikipedia + OpenHub concur).
+- **Use:** Python-driven runtime for animated characters; rapid prototyping of animation state logic in the pipeline's scripting layer.
+- **Lane note:** Wave 4 Lane C: the Python-first engine — scriptable animated-character runtime for tooling and prototypes.
+
+#### panda3d-gltf ✅
+- **What:** glTF utilities for Panda3D — Python file loader adding native glTF/GLB support (including animation data) to Panda3D's Loader classes, plus `gltf2bam` CLI and a `gltf-viewer`.
+- **URL:** https://github.com/dualword/panda3d-gltf
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "## License — [B3D 3-Clause]" i.e. BSD-3-Clause).
+- **Use:** get animated GLBs into Panda3D (`skip_animations` flag controls animation conversion; `gltf2bam` bakes them for the engine).
+- **Lane note:** Wave 4 Lane C: the Panda3D↔glTF animation bridge — the loader that carries animation tracks into the engine.
+
+#### Cocos Creator ✅
+- **What:** Cross-platform 2D/3D game engine with an animation editor, skeletal/morph animation clips, and glTF asset import for web and native targets.
+- **URL:** https://github.com/cocos/cocos-engine
+- **License:** MIT (engine) (verified 2026-10-08: upstream cocos-engine README — "written in JavaScript and licensed under MIT"; the editor builds on the same framework).
+- **Use:** web/mobile runtime for animated glTF characters; built-in animation editor for blocking and retiming clips.
+- **Lane note:** Wave 4 Lane C: the mobile-first glTF animation runtime — MIT engine with an integrated animation editor.
+
+#### Defold ⚠️ source-available, not OSI open source — verify per use
+- **What:** Lua-scripted cross-platform game engine (King/Defold Foundation) that imports 3D models, skeletons, and animations as glTF 2.0 (`.gltf`/`.glb`) with a visual animation editor.
+- **URL:** https://github.com/defold/defold
+- **License:** Defold License 1.0 (verified 2026-10-08: defold.com/license — derived from Apache-2.0 with an added condition: you may not "sell or otherwise commercialise the Work or Derivative Works as a Game Engine Product"; games made with it are unrestricted; not OSI-approved).
+- **Use:** ship animated glTF characters in lightweight 2D/3D games; editor bakes glTF skeletons/animations into Defold collections.
+- **Lane note:** Wave 4 Lane C: glTF-native engine import path — honest badge because the engine itself is source-available, not permissively licensed.
+
+#### react-360 ❓ license unconfirmed — archived
+- **What:** Facebook's archived framework for interactive 360/VR experiences in the browser (React + three.js); v2.0 added glTF support including animations and custom shaders.
+- **URL:** https://github.com/facebookarchive/react-360
+- **License:** ❓ (verified 2026-10-08: archived by owner Dec 15, 2020, read-only; no upstream LICENSE text retrievable in available sources — Facebook's other archived projects moved to MIT, but react-360 itself is unconfirmed. Treat as research reference, not a dependency).
+- **Use:** historical reference for React-driven glTF animation playback patterns in 360/VR contexts.
+- **Lane note:** Wave 4 Lane C: included for lineage (React + three.js glTF animation) with the honest badge — archived and unlicensed-verified.
+
+#### gltfjsx (pmndrs) ✅
+- **What:** CLI that turns GLTFs into declarative JSX components (`npx gltfjsx model.gltf`) — plots nodes/materials/animations as React Three Fiber components, with `--transform` (Draco, prune, resize) and `--bones` declarative bone layouts.
+- **URL:** https://github.com/pmndrs/gltfjsx
+- **License:** MIT (verified 2026-10-08: GitHub license metadata via awesomeopensource index — mit).
+- **Use:** convert animated GLBs into editable R3F components — wire animation clips, bones, and materials directly into React code for web players.
+- **Lane note:** Wave 4 Lane C: the glTF→React bridge for animated models — declarative bones make animation wiring trivial.
+
+#### ViroReact ✅
+- **What:** React Native AR/VR platform (ViroMedia → community → ReactVision) rendering animated 3D objects (incl. glTF-era formats) on ARKit/ARCore/Meta headsets.
+- **URL:** https://github.com/ViroCommunity/viro
+- **License:** MIT (verified 2026-10-08: viromedia org repo listing — "ViroReact: AR and VR using React Native — MIT License"; community fork carries it forward).
+- **Use:** ship animated characters to mobile AR via React Native; drive glTF animation clips from JS scene logic.
+- **Lane note:** Wave 4 Lane C: the React Native AR/VR delivery path — MIT-licensed runtime for animated characters on phones and headsets.
+
+#### CesiumJS ✅
+- **What:** WebGL globe/maps library with a full glTF 2.0 model pipeline — loads animated models (articulations, skins, node animations) for geospatial visualization.
+- **URL:** https://github.com/CesiumGS/cesium
+- **License:** Apache-2.0 (verified 2026-10-08: @cesium/engine README — "Apache 2.0. CesiumJS is free for both commercial and non-commercial use").
+- **Use:** place animated glTF characters in real-world geospatial scenes; model animation API drives per-model clip playback.
+- **Lane note:** Wave 4 Lane C: the geospatial glTF runtime — animated models in WGS84 context, Apache-clean.
+
+<!-- end lane C wave 4 batch 2: gltf runtimes 11-20 (10 entries; 0 GPL) -->
+#### glTF-Transform ✅
+- **What:** glTF 2.0 SDK for JavaScript/TypeScript (Node + Web) — read, edit, write, optimize, and compress glTF assets via scripting API and CLI (`@gltf-transform/functions` incl. animation resampling/quantization).
+- **URL:** https://github.com/donmccurdy/glTF-Transform
+- **License:** MIT (verified 2026-10-08: GitHub license field "MIT License (MIT)"; upstream README license badge + LICENSE.md).
+- **Use:** the workhorse of the delivery pipeline — compress skinned animation tracks (quantize/resample), dedupe, Draco/meshopt, and validate before shipping GLBs.
+- **Lane note:** Wave 4 Lane C: the central glTF animation optimization SDK — every animated GLB passes through it.
+
+#### meshoptimizer + gltfpack ✅
+- **What:** GPU mesh optimization library (vertex cache, overdraw, simplification, quantization) plus `gltfpack`, the CLI that automatically optimizes glTF files — incl. animation track quantization.
+- **URL:** https://github.com/zeux/meshoptimizer
+- **License:** MIT (verified 2026-10-08: upstream LICENSE.md — MIT, Copyright Arseny Kapoulkine; gltf/ README "under the terms of MIT License").
+- **Use:** shrink animated GLBs for web delivery — quantize animation samplers, simplify skinned meshes, emit EXT_meshopt_compression output.
+- **Lane note:** Wave 4 Lane C: the mesh+animation compressor behind KHR_meshopt_compression — size wins for animated web delivery.
+
+#### Khronos glTF-Validator ✅
+- **What:** Official Khronos conformance validator for glTF 2.0 — checks JSON schema, accessor/buffer integrity, skinning, and animation track correctness (CLI, Node, web).
+- **URL:** https://github.com/KhronosGroup/glTF-Validator
+- **License:** Apache-2.0 (verified 2026-10-08: multiple independent licensing tables list Apache-2.0 for KhronosGroup/glTF-Validator; official Khronos tool).
+- **Use:** gate every animated GLB in CI — catches malformed animation samplers, bad skinning weights, and spec violations before render.
+- **Lane note:** Wave 4 Lane C: the conformance gate for the whole animation pipeline — fail fast on broken animation data.
+
+#### KTX-Software ✅
+- **What:** Khronos KTX texture container library and CLI tools (`ktx create/convert/encode`) — produces KTX2 with Basis Universal / UASTC supercompression for glTF's `KHR_texture_basisu`.
+- **URL:** https://github.com/KhronosGroup/KTX-Software
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README carries SPDX-License-Identifier: Apache-2.0; Unity needle-mirror THIRD PARTY NOTICES concur. Caveat: the optional Ericsson ETC decoder source file is proprietary — disabled by default, never enable it).
+- **Use:** bake animated characters' textures into KTX2/BasisU so the GLB + textures stay GPU-ready and small on web/mobile.
+- **Lane note:** Wave 4 Lane C: the texture side of animated-GLB delivery — KTX2 is what makes BasisU textures work in glTF.
+
+#### Basis Universal ✅
+- **What:** Binomial's supercompressed GPU texture codec — transcodes once, deploys to ETC1/2, BC1-7, ASTC, PVRTC on any GPU; the codec behind glTF `KHR_texture_basisu`.
+- **URL:** https://github.com/BinomialLLC/basis_universal
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "License/Legal" section — reference encoder/transcoder under Apache 2.0 LICENSE; trademark notice applies).
+- **Use:** encode animated-character texture sets to BasisU for cross-GPU delivery inside compressed GLBs.
+- **Lane note:** Wave 4 Lane C: the codec that makes one texture set work on every GPU the animated model plays on.
+
+#### Draco ✅
+- **What:** Google's 3D mesh/point-cloud compression library (with JS/WASM decoders) — the codec behind glTF `KHR_draco_mesh_compression`.
+- **URL:** https://github.com/google/draco
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "## License — Apache License 2.0" linking the LICENSE file).
+- **Use:** Draco-compress animated character geometry inside GLBs; decoders ship with three.js/Babylon for runtime playback.
+- **Lane note:** Wave 4 Lane C: the geometry compressor for animated glTF — pairs with meshopt as the two sanctioned mesh codecs.
+
+#### pygltflib ✅
+- **What:** Python library for reading, writing, and managing glTF/glTF 2.0 objects — dataclass-style access to scenes, nodes, skins, and animation channels/samplers.
+- **URL:** https://github.com/KhronosGroup/pygltflib
+- **License:** MIT (verified 2026-10-08: conda-forge feedstock records "Package license: MIT"; now KhronosGroup-maintained).
+- **Use:** Python-side surgery on animation tracks — rewrite samplers, rename clips, batch-fix skins across a character roster.
+- **Lane note:** Wave 4 Lane C: the Python scalpel for glTF animation data — scriptable track edits the JS SDKs don't cover.
+
+#### fastgltf ✅
+- **What:** Modern C++17 glTF parser/loader — fast GLB parsing, extension handling, and buffer-source policies for runtime asset staging.
+- **URL:** https://github.com/spnda/fastgltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "fastgltf (spnda) — safe-donor — MIT").
+- **Use:** drop-in fast loader for native tools that ingest animated GLBs (previews, converters, QC harnesses).
+- **Lane note:** Wave 4 Lane C: the speed-first native glTF loader — ingest path for animation tooling in C++.
+
+#### cgltf ✅
+- **What:** Single-file C99 glTF 2.0 parser and writer — dependency-free, trivially vendored into any C/C++ codebase.
+- **URL:** https://github.com/jkuhlmann/cgltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "cgltf (jkuhlmann) — safe-donor — MIT").
+- **Use:** embed glTF animation parsing directly in native tools (rig repair, batch retarget) with zero dependencies.
+- **Lane note:** Wave 4 Lane C: the zero-dependency glTF reader/writer — animation data access from a single C file.
+
+#### tinygltf ✅
+- **What:** Header-only C++ glTF 2.0 loader/saver (v3 is a C mainline) — tiny footprint for tools and prototypes that need glTF in/out.
+- **URL:** https://github.com/syoyo/tinygltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "tinygltf (syoyo) — safe-donor — MIT"; upstream "Licensed under MIT license").
+- **Use:** quick native prototypes that read animated GLBs and write modified copies (test fixtures, format experiments).
+- **Lane note:** Wave 4 Lane C: the header-only glTF workhorse — fastest route to animated-GLB I/O in small tools.
+
+<!-- end lane C wave 4 batch 3: gltf tooling/compression 21-30 (10 entries; 0 GPL) -->
+#### FBX2glTF ✅
+- **What:** Command-line converter from FBX to glTF — bakes skeletons, skins, and animation clips into spec-compliant glTF output.
+- **URL:** https://github.com/facebookincubator/FBX2glTF
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "## License — FBX2glTF is licensed under the 3-clause BSD license").
+- **Use:** the FBX→glTF on-ramp for animated characters — convert mocap/DCC exports with animation intact before optimization.
+- **Lane note:** Wave 4 Lane C: the canonical FBX animation importer for glTF pipelines — BSD-clean.
+
+#### CesiumGS gltf-pipeline + obj2gltf ✅
+- **What:** Node.js content-pipeline tools for glTF — glTF↔GLB conversion, buffer/texture embedding, Draco compression, glTF 1.0→2.0 upgrades (gltf-pipeline); OBJ→glTF/GLB conversion with PBR material mapping (obj2gltf).
+- **URL:** https://github.com/CesiumGS/gltf-pipeline
+- **License:** Apache-2.0 (verified 2026-10-08: gltf-pipeline README license-apache badge → upstream LICENSE.md; obj2gltf is the sibling CesiumGS tool under the same org terms).
+- **Use:** normalize incoming models to animated GLBs — convert OBJ sources, embed buffers, Draco-compress before the validator gate.
+- **Lane note:** Wave 4 Lane C: the Cesium model-ingest pair — format normalization ahead of animation compression.
+
+#### usd_from_gltf (Google) ❓ license unconfirmed
+- **What:** C++ library, CLI, and USD import plugin converting glTF/GLB (rigid and skinned animation, Draco meshes, PBR materials) to USDA/USDZ for AR Quick Look.
+- **URL:** https://github.com/google/usd_from_gltf
+- **License:** ❓ (verified 2026-10-08: upstream README retrievable but no license statement confirmed in available sources; Google notes it is "not an officially supported Google product" — verify before depending on it).
+- **Use:** convert animated GLBs to USDZ for iOS AR delivery; preview glTF animation inside USDView via the import plugin.
+- **Lane note:** Wave 4 Lane C: the glTF→USD bridge for animation — honest badge until its license is pinned down.
+
+#### Ozz Animation ✅
+- **What:** Open-source C++ skeletal animation library and toolset — runtime sampling, blending layers, IK, and offline animation optimization/compression tools.
+- **URL:** https://github.com/guillaumeblanc/ozz-animation
+- **License:** MIT (verified 2026-10-08: upstream README — "distributed under the MIT License (MIT)").
+- **Use:** sample and blend glTF-imported animation clips in native runtimes; offline tools compress tracks before glTF export.
+- **Lane note:** Wave 4 Lane C: the runtime skeletal-animation engine that pairs with glTF loaders — sampling, blending, and track optimization.
+
+#### ACL (Animation Compression Library) ✅
+- **What:** Header-only C++ library for high-ratio skeletal animation compression — uniformly-sampled, key-reduction, and spline algorithms with a fast decompression runtime.
+- **URL:** https://github.com/nfrechette/acl
+- **License:** MIT (verified 2026-10-08: nfrechette/acl README — "This project uses the MIT license").
+- **Use:** compress animation clips at authoring time beyond what glTF quantization alone achieves; decompress at runtime in native players.
+- **Lane note:** Wave 4 Lane C: the animation-track compressor — complements meshopt by targeting the clip data itself.
+
+#### three-vrm ✅
+- **What:** pixiv's three.js VRM loader — renders VRM humanoid avatars (a glTF extension: VRoid/VRM 0.x/1.0) with spring-bone secondary animation and humanoid retargeting.
+- **URL:** https://github.com/pixiv/three-vrm
+- **License:** MIT (verified 2026-10-08: independent licensing table — "@pixiv/three-vrm 3.5.5 | MIT | registry.npmjs.org").
+- **Use:** play VRM avatar animation in web pipelines; VRM humanoid bone mapping gives cross-character retargeting for free.
+- **Lane note:** Wave 4 Lane C: the web VRM runtime — glTF-extension avatars with built-in humanoid retargeting and spring bones.
+
+#### UniVRM ✅
+- **What:** glTF-based VRM format implementation for Unity — imports/exports VRM 0.x/1.0 and glTF 2.0 (UniGLTF), with humanoid rig mapping, spring bones, and first-person/look-at components.
+- **URL:** https://github.com/vrm-c/UniVRM
+- **License:** MIT (verified 2026-10-08: upstream README "## License — MIT License (./LICENSE.txt)"; includes UniGLTF glTF import/export).
+- **Use:** author VRM avatars with retargetable humanoid rigs in Unity, export to glTF/VRM for web playback; spring-bone secondary motion ships with the format.
+- **Lane note:** Wave 4 Lane C: the Unity-side VRM/glTF implementation — humanoid retargeting standard for avatar pipelines.
+
+#### mGear ✅
+- **What:** Rigging and animation framework for Autodesk Maya — Shifter modular rig builder, C++ solvers, synoptic pickers, and mocap HumanIK mapping tools; v5 drops PyMEL.
+- **URL:** https://github.com/mgear-dev/mgear
+- **License:** MIT (verified 2026-10-08: upstream README — "MGEAR is under the terms of the MIT License").
+- **Use:** build production character rigs in Maya whose skeletons/skins export cleanly to glTF; Shifter biped templates standardize joint layouts for retargeting.
+- **Lane note:** Wave 4 Lane C: the DCC rigging framework that feeds glTF — standardized rigs make downstream retargeting deterministic.
+
+<!-- end lane C wave 4 batch 4: converters/animation interop 31-38 (8 entries; 0 GPL; quarantine rows 171-172) -->

@@ -4238,3 +4238,5 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 4 Lane A: the rigging framework where secondary-motion controls get authored before baking.
 
 <!-- end lane A wave 4 batch 4: advanced sim + rig secondary motion (11 entries) -->
+
+<!-- end lane A wave 4: secondary animation (37 entries; 7 GPL-family rows → quarantine 167–173) -->

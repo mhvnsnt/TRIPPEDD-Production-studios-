@@ -1,0 +1,3 @@
+# Lane-local scratch: venv + pip tmp + anything disposable (never committed).
+.venv/
+.scratch/

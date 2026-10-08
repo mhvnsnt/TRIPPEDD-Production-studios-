@@ -49981,3 +49981,295 @@ Regional labels, events, and scene hubs. Every URL verified live this pass via H
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Canonical suspense-radio episode; tension-escalation masterclass. [Wave 55 Lane A]
+
+### P2 — sound-chip hardware docs round 3 (28 entries)
+
+#### Yamaha YMF289B (OPL3-L) datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YMF289B datasheet (OPL3-L low-power FM synthesis chip) — register maps and electrical specs for the late-era OPL3 variant.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMF2_3564181
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, identifier + title "components :: yamaha :: YMF289B 199412" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the cataloged YMF262 (OPL3) scan — different chip revision. [Wave 55 Lane A]
+
+#### Yamaha YMF715x register description — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YMF715x register description (1997) — FM synthesis register-level programming reference for the YMF715 series.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMF7ion199707_261038
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YMF715x Register Description 199707" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Register-description doc rather than full datasheet — programming-focused. [Wave 55 Lane A]
+
+#### Yamaha YM3012 DAC datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YM3012 datasheet (1992) — the floating-point DAC paired with the YM2151 OPM FM chip (Sega arcade / X68000 sound chain).
+- **URL:** https://archive.org/details/bitsavers_yamahaYM30_1684942
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YM3012 199204" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion-chip doc — completes the YM2151 + YM3012 FM output chain. [Wave 55 Lane A]
+
+#### Yamaha YM3014B DAC datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YM3014B datasheet (1994) — DAC for the later FM chip generations.
+- **URL:** https://archive.org/details/bitsavers_yamahaYM30_1804527
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YM3014B 199403" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DAC-chain reference. [Wave 55 Lane A]
+
+#### Yamaha YMZ284 (SSG) datasheet — bitsavers ❓ manufacturer doc, community mirror
+- **What:** Yamaha YMZ284 datasheet (1994) — SSG (Software-controlled Sound Generator, AY-3-8910-compatible) LSI.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMZ2_3024318
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: archive.org bitsavers collection, title "components :: yamaha :: YMZ284 199411" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Yamaha's AY-compatible PSG — cross-reference with the cataloged GI AY-3-8910/8912 datasheets. [Wave 55 Lane A]
+
+#### GI AY-3-8913 datasheet ❓ manufacturer doc, community mirror
+- **What:** General Instrument AY-3-8913 Data Sheet v2 — the 28-pin cost-reduced PSG variant (distinct from the cataloged 8910/8912 datasheets).
+- **URL:** https://archive.org/details/AY-3-8913_Data_Sheet_v2
+- **License:** ❓ Manufacturer document, community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title "IC Datasheet: AY-3-8913 Data Sheet v2" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The missing third variant of the AY-3-891x family; pinout differs from 8910/8912. [Wave 55 Lane A]
+
+#### Commodore Amiga Hardware Reference Manual (Paula audio) ❓ manufacturer doc, community mirror
+- **What:** Commodore Amiga Hardware Reference Manual (600dpi OCR scan) — the Paula (8364) audio chapter: 4-channel 8-bit PCM DMA, audio periods/volumes, disk-DMA audio tricks.
+- **URL:** https://archive.org/details/commodore-amiga-hardware-reference-manual-600dpiocr
+- **License:** ❓ Manufacturer document (Commodore), community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical Paula reference; read the audio/DMA chapters, not the whole manual. [Wave 55 Lane A]
+
+#### Game Boy CPU Manual v1.01 (sound chapter) ❓ manufacturer doc, community mirror
+- **What:** Game Boy CPU Manual v1.01 (Marc Rawer) — Sharp LR35902 sound chapter: 4 channels (pulse ×2, wave, noise), NR10–NR52 registers, envelope/sweep tables.
+- **URL:** https://archive.org/details/gbcpuman_v1.01
+- **License:** ❓ Manufacturer-derived document, community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements the CC0 Pan Docs audio page; this is the register-level original. [Wave 55 Lane A]
+
+#### De Re Atari (POKEY sound) ❓ manufacturer doc, community mirror
+- **What:** "De Re Atari" (1982, Atari) — the Atari 8-bit technical reference; POKEY (CO12294) chapter covers 4-channel square-wave + noise audio, keyboard scan, and timers.
+- **URL:** https://archive.org/details/ataribooks-de-re-atari
+- **License:** ❓ Manufacturer document (Atari), community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title "De Re Atari (1982)(Atari)" match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The POKEY bible; read chapters on sound/serial. [Wave 55 Lane A]
+
+#### Commodore 64 Programmer's Reference Guide (SID chapter) ❓ manufacturer doc, community mirror
+- **What:** Commodore 64 Programmer's Reference Guide (1983, Commodore) — MOS 6581 SID chapter: 3 voices, ADSR, filters, ring mod/sync, register map $D400–$D41C.
+- **URL:** https://archive.org/details/Commodore_64_Programmers_Reference_Guide_1983_Commodore
+- **License:** ❓ Manufacturer document (Commodore), community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the cataloged standalone 6581 datasheet — this is the programmer-facing SID guide. [Wave 55 Lane A]
+
+#### Mapping the Atari (POKEY register map) ❓ community doc
+- **What:** "Mapping the Atari" (Ian Chadwick) — memory-mapped register bible for Atari 8-bit; POKEY registers ($D200–$D20F) with bit-level audio descriptions.
+- **URL:** https://archive.org/details/ataribooks-mapping-the-atari
+- **License:** ❓ Community technical document, scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Register-lookup companion to De Re Atari. [Wave 55 Lane A]
+
+#### Nintendo Ultra-64 Programming Manual (RSP audio) ❓ manufacturer doc, community mirror
+- **What:** Nintendo Ultra-64 Programming Manual + addendums (SGI/Nintendo) — RSP audio microcode chapter: the N64's software-driven audio pipeline (tasks, ABI, sample synthesis).
+- **URL:** https://archive.org/details/Nintendo_Ultra64_Programming_Manual
+- **License:** ❓ Manufacturer document (Nintendo/SGI), community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Only mainstream doc set for a fully software-synth console audio path. [Wave 55 Lane A]
+
+#### Atari ST Internals (YM2149 sound) ❓ book scan, community mirror
+- **What:** "Atari ST Internals" (Abacus #2, 3rd edition, 1986) — YM2149 (AY-3-8910-compatible) sound chapter: 3-voice PSG programming on the ST.
+- **URL:** https://archive.org/details/Atari_ST_Internals_Abacus_2_3rd_edition_1986
+- **License:** ❓ Published book, community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ST-specific PSG practice (digidrums, SID-voice techniques). [Wave 55 Lane A]
+
+#### MSX Technical Data Book (PSG + OPLL) ❓ manufacturer doc, community mirror
+- **What:** MSX Technical Data Book — MSX sound hardware: AY-3-8910 PSG baseline plus MSX-Audio/MSX-Music (Y8950/YM2413 OPLL) cartridge specs.
+- **URL:** https://archive.org/details/MSXTechnicalDataBook
+- **License:** ❓ Manufacturer-derived document, community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cross-reference with the cataloged YM2413 bitsavers scan. [Wave 55 Lane A]
+
+#### Commodore 128 Reference Guide for Programmers (SID chapter) ❓ manufacturer doc, community mirror
+- **What:** Commodore 128 Reference Guide for Programmers — SID programming chapter for the C128's 6581/8580 (C64 mode + C128 mode audio notes).
+- **URL:** https://archive.org/details/commodore-128-reference-guide-for-programmers
+- **License:** ❓ Manufacturer-derived document, community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the C64 PRG entry; notes C128-specific audio behavior. [Wave 55 Lane A]
+
+#### Apple IIGS Hardware Reference (Ensoniq DOC) ❓ manufacturer doc, community mirror
+- **What:** Apple IIGS Hardware Reference — Ensoniq 5503 Digital Oscillator Chip chapter: 32-voice wavetable/DOC synthesis, the only mainstream Ensoniq-DOC programming doc.
+- **URL:** https://archive.org/details/Apple_IIgs_Hardware_Reference
+- **License:** ❓ Manufacturer document (Apple), community mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wavetable-synth reference unlike any PSG/FM doc in the catalog. [Wave 55 Lane A]
+
+#### BBC Micro Advanced User Guide (SN76489) ❓ book scan, community mirror
+- **What:** BBC Micro Advanced User Guide — SN76489 sound chapter: 3 square + noise channel programming via the BBC Micro's sound system.
+- **URL:** https://archive.org/details/bbc-micro-advanced-user-guide
+- **License:** ❓ Published book, community-scanned mirror — no explicit license (verified 2026-10-08: metadata API HTTP 200, title match)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SN76489 practice reference (also applies to Master System/Game Gear/ColecoVision sound). [Wave 55 Lane A]
+
+#### S-DSP reference (SNESDev wiki) ✅ CC0
+- **What:** SNESDev wiki S-DSP page — Sony S-DSP audio DSP reference: 8 voices, BRR samples, echo/reverb, FIR filter, register map.
+- **URL:** https://snes.nesdev.org/wiki/S-DSP
+- **License:** ✅ CC0 (verified 2026-10-08: wiki footer states "CC0 Public Domain"; page HTTP 200)
+- **Free tier:** Free to read/reuse
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the cataloged SPC700 opcode table (same CC0 wiki) — CPU + DSP complete. [Wave 55 Lane A]
+
+#### S-SMP reference (SNESDev wiki) ✅ CC0
+- **What:** SNESDev wiki S-SMP page — the SPC700-based sound CPU core reference (distinct from the opcode-table page already cataloged).
+- **URL:** https://snes.nesdev.org/wiki/S-SMP
+- **License:** ✅ CC0 (verified 2026-10-08: wiki footer states "CC0 Public Domain"; page HTTP 200)
+- **Free tier:** Free to read/reuse
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Architecture companion to the opcode table. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Pulse ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Pulse page — Ricoh 2A03 pulse channels 1–2: duty cycles, sweep units, length counters, register maps.
+- **URL:** https://www.nesdev.org/wiki/APU_Pulse
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive; distinct from the cataloged top-level APU page. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Triangle ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Triangle page — 2A03 triangle channel: linear counter, ultra-sonic step behavior, register map.
+- **URL:** https://www.nesdev.org/wiki/APU_Triangle
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Noise ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Noise page — 2A03 noise channel: LFSR modes, period table, register map.
+- **URL:** https://www.nesdev.org/wiki/APU_Noise
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU DMC ⚠️ per-wiki terms
+- **What:** NESDev wiki APU DMC page — 2A03 delta-modulation channel: sample playback, DMA, DPCM format details.
+- **URL:** https://www.nesdev.org/wiki/APU_DMC
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Channel-level deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Frame Counter ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Frame Counter page — 2A03 frame sequencer: 4-step/5-step modes, IRQ behavior, envelope/length clocking.
+- **URL:** https://www.nesdev.org/wiki/APU_Frame_Counter
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Timing-sequencer deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — APU Mixer ⚠️ per-wiki terms
+- **What:** NESDev wiki APU Mixer page — 2A03 output mixing: nonlinear channel mixing, lookup tables, expansion-audio mixing notes.
+- **URL:** https://www.nesdev.org/wiki/APU_Mixer
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mixer deep dive; pairs with the expansion-audio pages below. [Wave 55 Lane A]
+
+#### NESdev Wiki — VRC7 audio ⚠️ per-wiki terms
+- **What:** NESDev wiki VRC7 audio page — Konami VRC7 (YM2413-derived) expansion audio: 6 FM channels, patch set, register map.
+- **URL:** https://www.nesdev.org/wiki/VRC7_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Lagrange Point chip; cross-reference with the YM2413 bitsavers scan. [Wave 55 Lane A]
+
+#### NESdev Wiki — Namco 163 audio ⚠️ per-wiki terms
+- **What:** NESDev wiki Namco 163 audio page — Namco 163 expansion audio: 8 wavetable channels, wave RAM, register map.
+- **URL:** https://www.nesdev.org/wiki/Namco_163_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wavetable expansion reference. [Wave 55 Lane A]
+
+#### NESdev Wiki — MMC5 audio ⚠️ per-wiki terms
+- **What:** NESDev wiki MMC5 audio page — Nintendo MMC5 expansion audio: 2 pulse channels + PCM, ExRAM sound registers.
+- **URL:** https://www.nesdev.org/wiki/MMC5_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Expansion-audio deep dive. [Wave 55 Lane A]
+
+#### NESdev Wiki — Sunsoft 5B audio ⚠️ per-wiki terms
+- **What:** NESDev wiki Sunsoft 5B audio page — Sunsoft 5B (AY-3-8910-derived) expansion audio: 3 PSG channels, envelope behavior.
+- **URL:** https://www.nesdev.org/wiki/Sunsoft_5B_audio
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant; verified 2026-10-08: page HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cross-reference with the GI AY-3-8910/8912/8913 datasheet entries. [Wave 55 Lane A]

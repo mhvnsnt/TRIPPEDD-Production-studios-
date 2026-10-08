@@ -43202,3 +43202,1041 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - Honest negatives: 11 (Undercrank, NFB, BFI, Neat Video, RE:Vision, Digital Vision, PFClean, Diamant, MTI CORTEX + 2 site-unreachable ❓ diligence records counted separately)
 - ❓ diligence records: 20 (license unverified — flagged for future waves, never assumed)
 - Zero post-hoc duplicates: every candidate pre-grepped against the full catalog before appending
+
+### Wave 49 Lane A — Pocket 1: PD cartoon music/score archives (30)
+
+#### African American Sheet Music (Brown) ❓ license unverified this pass
+- **What:** Brown University Library collection of African-American sheet music (historic popular/folk repertoire).
+- **URL:** http://library.brown.edu/cds/sheetmusic/afam//index.html
+- **License:** ❓ License unverified this pass — university library digital collection; content is PD-era sheet music but site terms not verified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — cartoon scoring source (historic American popular tunes); verify site terms before reuse. [Wave 49 Lane A]
+
+#### UNC 19th-Century American Sheet Music ❓ license unverified this pass
+- **What:** University of North Carolina "19th-Century American Sheet Music" digital collection.
+- **URL:** http://www.lib.unc.edu/dc/sheetmusic/
+- **License:** ❓ License unverified this pass — university digital collection; content is PD-era but site terms not verified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — 19th-century song/march source material for cartoon scoring; verify terms. [Wave 49 Lane A]
+
+#### 19th-Century California Sheet Music ❓ license unverified this pass
+- **What:** UC Berkeley "19th-Century California Sheet Music" research collection (NEH-funded directory page).
+- **URL:** http://people.ischool.berkeley.edu/~mkduggan/neh.html
+- **License:** ❓ License unverified this pass — research collection directory; content PD-era, terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Gold Rush-era California sheet music; verify terms before reuse. [Wave 49 Lane A]
+
+#### Alabama Sheet Music Collection ❓ license unverified this pass
+- **What:** University of Alabama Acumen digital collection of Alabama-published/printed sheet music.
+- **URL:** http://acumen.lib.ua.edu/u0004_0000003
+- **License:** ❓ License unverified this pass — university archive digital collection; content PD-era, terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Southern sheet music for cartoon scoring; verify terms. [Wave 49 Lane A]
+
+#### Confederate Imprints Sheet Music ❓ license unverified this pass
+- **What:** University of Alabama Acumen "Confederate Imprints" sheet music collection (Civil War-era Southern prints).
+- **URL:** http://acumen.lib.ua.edu/u0004_0000001
+- **License:** ❓ License unverified this pass — university archive; content PD-era, terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Civil War-era marches/songs; verify terms. [Wave 49 Lane A]
+
+#### Wade Hall Collection of American Sheet Music ❓ license unverified this pass
+- **What:** University of Alabama Acumen "Wade Hall Collection" of American sheet music (popular 19th/early-20th c.).
+- **URL:** http://acumen.lib.ua.edu/u0004_0000002
+- **License:** ❓ License unverified this pass — university archive; content largely PD-era, terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — broad popular-sheet-music source; verify terms. [Wave 49 Lane A]
+
+#### FAU American Popular Print Music ❓ license unverified this pass
+- **What:** Florida Atlantic University "American Popular Print Music" special collections page (printed sheet music holdings).
+- **URL:** http://www.library.fau.edu/depts/spc/spc/printmusic_appm.htm
+- **License:** ❓ License unverified this pass — university special collections; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — popular print music holdings for cartoon scoring; verify terms. [Wave 49 Lane A]
+
+#### Ashford Sheet Music Collection (UW) ❓ license unverified this pass
+- **What:** University of Washington "Ashford Sheet Music Collection" (historic American sheet music database).
+- **URL:** http://db.lib.washington.edu/sheetmusic/
+- **License:** ❓ License unverified this pass — university library database; content PD-era, terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — searchable historic sheet music; verify terms. [Wave 49 Lane A]
+
+#### Archive of Popular American Music (UCLA) ❓ license unverified this pass
+- **What:** UCLA "Archive of Popular American Music" digital library (popular song sheet music holdings).
+- **URL:** http://digital.library.ucla.edu/apam/
+- **License:** ❓ License unverified this pass — university digital library; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — popular American song archive; verify terms. [Wave 49 Lane A]
+
+#### Foster Hall / Center for American Music (Pitt) ❓ license unverified this pass
+- **What:** University of Pittsburgh Center for American Music / Foster Hall collection (Stephen Foster + American music holdings).
+- **URL:** http://www.pitt.edu/~amerimus/cam1.htm
+- **License:** ❓ License unverified this pass — university center; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Stephen Foster-era American music; verify terms. [Wave 49 Lane A]
+
+#### Colonial Music Institute ❓ license unverified this pass
+- **What:** Colonial Music Institute resource/essay archive (colonial-era American music documentation and scores).
+- **URL:** http://www.colonialmusic.org/Resource/DHessay.htm
+- **License:** ❓ License unverified this pass — institute resource site; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — colonial-period music for historical cartoon scoring; verify terms. [Wave 49 Lane A]
+
+#### Center for Black Music Research ❓ license unverified this pass
+- **What:** Center for Black Music Research (Chicago) — research center for Black music traditions, collections and resources.
+- **URL:** http://www.cbmr.org/
+- **License:** ❓ License unverified this pass — research center site; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Black American music research; verify terms before reuse. [Wave 49 Lane A]
+
+#### Center for Popular Music (MTSU) ❓ license unverified this pass
+- **What:** Middle Tennessee State University Center for Popular Music — research center for American vernacular/popular music.
+- **URL:** http://popmusic.mtsu.edu/
+- **License:** ❓ License unverified this pass — university research center; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — American vernacular music research; verify terms. [Wave 49 Lane A]
+
+#### American Music Research Center (Colorado) ❓ license unverified this pass
+- **What:** University of Colorado American Music Research Center — archives of American music (jazz, popular, folk).
+- **URL:** http://music.colorado.edu/departments/amrc/
+- **License:** ❓ License unverified this pass — university research center; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — American music archives; verify terms. [Wave 49 Lane A]
+
+#### American Music Institute (Michigan) ❓ license unverified this pass
+- **What:** American Music Institute (University of Michigan) — early-American music research and publication site.
+- **URL:** http://www-personal.umich.edu/~claguem/ami/
+- **License:** ❓ License unverified this pass — institute site; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — early-American music scores/publications; verify terms. [Wave 49 Lane A]
+
+#### Wisconsin Music Archives ❓ license unverified this pass
+- **What:** University of Wisconsin "Wisconsin Music Archives" — state/regional music archive holdings.
+- **URL:** http://music.library.wisc.edu/wma/
+- **License:** ❓ License unverified this pass — university music library archive; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — regional American music holdings; verify terms. [Wave 49 Lane A]
+
+#### Iowa Digital Library Historic Sheet Music ❓ license unverified this pass
+- **What:** University of Iowa Digital Library "Historic Sheet Music" CONTENTdm collection.
+- **URL:** http://digital.lib.uiowa.edu/cdm/search/collection/sheetmusic
+- **License:** ❓ License unverified this pass — university digital library; content PD-era, terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — searchable historic sheet music scans; verify terms. [Wave 49 Lane A]
+
+#### Pittsburgh Sheet Music Collection ❓ license unverified this pass
+- **What:** Carnegie Library of Pittsburgh "Pittsburgh Sheet Music Collection" (regional sheet music digitization).
+- **URL:** http://www.carnegielibrary.org/research/music/pittsburgh/sheetmusic/
+- **License:** ❓ License unverified this pass — public library digital collection; content PD-era, terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Pittsburgh-published sheet music; verify terms. [Wave 49 Lane A]
+
+#### Colorado Digital Sheet Music ❓ license unverified this pass
+- **What:** University of Colorado "Colorado Digital Sheet Music" browsing collection.
+- **URL:** http://libcudl.colorado.edu/sheetmusic/browse.asp?
+- **License:** ❓ License unverified this pass — university digital library; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — browseable historic sheet music; verify terms. [Wave 49 Lane A]
+
+#### Early American Secular Music index ❓ license unverified this pass
+- **What:** "Early American Secular Music" tune index (colonial dancing resource; tune references for early American dance music).
+- **URL:** http://www.colonialdancing.org/Easmes/Index.htm
+- **License:** ❓ License unverified this pass — community index site; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — early-American tune index for cartoon scoring; verify terms. [Wave 49 Lane A]
+
+#### Hymn Tune Index ❓ license unverified this pass
+- **What:** University of Illinois "Hymn Tune Index" — scholarly index of hymn tunes (sources, concordances).
+- **URL:** http://hymntune.library.uiuc.edu/default.asp
+- **License:** ❓ License unverified this pass — university research index; terms unverified (verified 2026-10-08 via commonplace.online music-link directory)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — hymn-tune concordance for sacred cartoon cues; verify terms. [Wave 49 Lane A]
+
+#### American Ballroom Companion ✅ PD (LOC)
+- **What:** Library of Congress American Memory "American Ballroom Companion" — dance instruction + music (1490s–1920).
+- **URL:** http://memory.loc.gov/ammem/dihtml/dihome.html
+- **License:** ✅ Public domain per LOC — American Memory presentation; per-item rights notes may apply (verified 2026-10-08 via commonplace.online music-link directory + LOC policy)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — historic dance music/tunes; filter to PD-marked items. [Wave 49 Lane A]
+
+#### America Singing: Nineteenth-Century Song Sheets ✅ PD (LOC)
+- **What:** Library of Congress American Memory "America Singing: Nineteenth-Century Song Sheets" — illustrated song-sheet collection.
+- **URL:** http://memory.loc.gov/ammem/amsshtml/amsshome.html
+- **License:** ✅ Public domain per LOC — American Memory presentation; per-item rights notes may apply (verified 2026-10-08 via commonplace.online music-link directory + LOC policy)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — 19th-century popular song sheets; filter to PD-marked items. [Wave 49 Lane A]
+
+#### American Variety Stage ✅ PD (LOC)
+- **What:** Library of Congress American Memory "American Variety Stage: Vaudeville and Popular Entertainment 1870–1920."
+- **URL:** http://memory.loc.gov/ammem/vshtml/vshome.html
+- **License:** ✅ Public domain per LOC — American Memory presentation; per-item rights notes may apply (verified 2026-10-08 via commonplace.online music-link directory + LOC policy)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — vaudeville/popular-entertainment music; filter to PD-marked items. [Wave 49 Lane A]
+
+#### Band Music from the Civil War Era ✅ PD (LOC)
+- **What:** Library of Congress American Memory "Band Music from the Civil War Era" — brass-band sheet music and recordings.
+- **URL:** http://memory.loc.gov/ammem/cwmhtml/cwmhome.html
+- **License:** ✅ Public domain per LOC — American Memory presentation; per-item rights notes may apply (verified 2026-10-08 via commonplace.online music-link directory + LOC policy)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — Civil War brass-band marches; filter to PD-marked items. [Wave 49 Lane A]
+
+#### Civil War Sheet Music Collection ✅ PD (LOC)
+- **What:** Library of Congress "Civil War Sheet Music Collection" (diglib/ihas) — digitized Civil War-era sheet music.
+- **URL:** http://lcweb2.loc.gov/diglib/ihas/html/civilwar/civilwar-home.html
+- **License:** ✅ Public domain per LOC — LOC digital presentation; per-item rights notes may apply (verified 2026-10-08 via commonplace.online music-link directory + LOC policy)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — Civil War sheet music scans; filter to PD-marked items. [Wave 49 Lane A]
+
+#### African-American Band Music & Recordings ✅ PD (LOC)
+- **What:** Library of Congress "African-American Band Music & Recordings, 1889–1922" (Stokes collection, diglib/ihas).
+- **URL:** http://lcweb2.loc.gov/diglib/ihas/html/stocks/stocks-home.html
+- **License:** ✅ Public domain per LOC — LOC digital presentation; per-item rights notes may apply (verified 2026-10-08 via commonplace.online music-link directory + LOC policy)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — early African-American band music/recordings; filter to PD-marked items. [Wave 49 Lane A]
+
+#### American Choral Music ✅ PD (LOC)
+- **What:** Library of Congress "American Choral Music" (diglib/ihas) — historic American choral sheet music collection.
+- **URL:** http://memory.loc.gov/diglib/ihas/html/choralmusic/choralmusic-home.html
+- **License:** ✅ Public domain per LOC — LOC digital presentation; per-item rights notes may apply (verified 2026-10-08 via commonplace.online music-link directory + LOC policy)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — historic choral sheet music; filter to PD-marked items. [Wave 49 Lane A]
+
+#### Fiddle Tunes of the Old Frontier: The Henry Reed Collection ✅ PD (LOC)
+- **What:** Library of Congress American Folklife Center "Fiddle Tunes of the Old Frontier" — 184 recordings + 69 musical transcriptions of Henry Reed's Appalachian fiddle tunes (recorded 1966–67 by Alan Jabbour).
+- **URL:** https://www.loc.gov/collections/henry-reed-fiddle-tunes/
+- **License:** ✅ Public domain per LOC — traditional tunes, LOC digital presentation; field recordings courtesy of collector (verified 2026-10-08 via loc.gov collection page)
+- **Free tier:** Free online access (recordings + transcriptions)
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cartoon scoring source — Appalachian fiddle repertoire with transcriptions; pocket-1 backup (replaced dup IN Harmony). [Wave 49 Lane A]
+
+#### Latin American Music Center (IU) ❓ license unverified this pass
+- **What:** Indiana University Latin American Music Center — one of the largest archives of 20th-century Latin American art music (rare manuscripts, published scores, colonial music anthologies, recordings, special collections).
+- **URL:** https://music.indiana.edu/degrees-programs/centers-institutes/lamc.html
+- **License:** ❓ License unverified this pass — archive collection; unpublished manuscripts carry per-item rights (verified 2026-10-08 via music.indiana.edu collection page)
+- **Free tier:** Free online collection descriptions; scores circulate via library/ILL
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — Latin American art-music archive for cartoon scoring; verify per-item rights. Pocket-1 backup (replaced dup BSB/MDZ). [Wave 49 Lane A]
+
+### Wave 49 Lane A — Pocket 2: retro-tracker demoscene long tail (35)
+
+#### Docsnyderspage ❓ license unverified this pass
+- **What:** Docsnyderspage — C64 cracker intros recoded for the web (sitelike archive of crack-intros).
+- **URL:** https://www.docsnyderspage.com/groups/e/excess
+- **License:** ❓ License unverified this pass — fan archive; intro code/music rights remain with authors (verified 2026-10-08 via site description)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — web-recreated crack-intro music (replaced dead Flashtro); verify per-intro rights. [Wave 49 Lane A]
+
+#### intros.c64.org ❓ license unverified this pass
+- **What:** intros.c64.org — C64 intro/cracktro archive and community.
+- **URL:** https://intros.c64.org
+- **License:** ❓ License unverified this pass — fan archive; rights remain with authors (verified 2026-10-08 via YouTube channel descriptions)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — cracktro/intro music history; verify per-entry rights. [Wave 49 Lane A]
+
+#### ArtCity (bitfellas) ❓ license unverified this pass
+- **What:** ArtCity — Bitfellas demoscene art archive (pixel/gfx tag collections; demo-adjacent art repo).
+- **URL:** http://artcity.bitfellas.org/index.php?a=tag&id=5&p=0
+- **License:** ❓ License unverified this pass — community art archive; rights remain with artists; bitfellas.org reported flaky/dead in 2022 (verified 2026-10-08 via pouët comment text)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — demoscene art alongside music releases; liveness uncertain, check via Wayback. [Wave 49 Lane A]
+
+#### BitWorld (Kestra/BitWorld Janeway) ❓ license unverified this pass
+- **What:** BitWorld — "world's biggest archive of Amiga demoscene information"; dataset donated to Demozoo.
+- **URL:** https://demozoo.org/news/307/
+- **License:** ❓ License unverified this pass — community archive; rights remain with authors (verified 2026-10-08 via Demozoo news post)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Amiga demoscene info/music archive; verify per-entry rights. [Wave 49 Lane A]
+
+#### C64.sk ❓ license unverified this pass
+- **What:** C64.sk — Commodore 64 news portal (scene news, releases, music).
+- **URL:** http://c64.sk/
+- **License:** ❓ License unverified this pass — news portal; rights remain with authors (verified 2026-10-08 via awesome-c64 READMEs)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — C64 scene news/releases tracker; verify per-item rights. [Wave 49 Lane A]
+
+#### Outline demoparty ❓ license unverified this pass
+- **What:** Outline — demoparty listing (Netherlands; music compos featured).
+- **URL:** https://www.demoparty.net/outline/outline-2027
+- **License:** ❓ License unverified this pass — party listing; compo entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — active demoparty with tracked-music compos. [Wave 49 Lane A]
+
+#### DiHalt demoparty ❓ license unverified this pass
+- **What:** DiHalt — demoparty listing (Russian scene; tracked-music/chip compos).
+- **URL:** https://www.demoparty.net/dihalt
+- **License:** ❓ License unverified this pass — party listing; compo entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — demoparty compo music source. [Wave 49 Lane A]
+
+#### Artfield demoparty ❓ license unverified this pass
+- **What:** Artfield — demoparty listing (art+music compos).
+- **URL:** https://www.demoparty.net/artfield
+- **License:** ❓ License unverified this pass — party listing; compo entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — demoparty compo music source. [Wave 49 Lane A]
+
+#### Multimatograf demoparty ❓ license unverified this pass
+- **What:** Multimatograf — demoparty listing (multimedia/demofilm + music).
+- **URL:** https://www.demoparty.net/multimatograf/multimatograf-2024
+- **License:** ❓ License unverified this pass — party listing; entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — multimedia demoscene party with music compos. [Wave 49 Lane A]
+
+#### Silly Venture demoparty ❓ license unverified this pass
+- **What:** Silly Venture — Polish demoparty (confirmed as a demoparty on Wikipedia's Demo party article; tracked-music compos).
+- **URL:** https://en.wikipedia.org/wiki/Demo_party
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — resolve official party site in a later wave; verify per-entry rights. [Wave 49 Lane A]
+
+#### TRSAC demoparty ❓ license unverified this pass
+- **What:** TRSAC — demoparty listing (music compos).
+- **URL:** https://www.demoparty.net/trsac
+- **License:** ❓ License unverified this pass — party listing; compo entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — demoparty compo music source. [Wave 49 Lane A]
+
+#### Simulaatio demoparty ❓ license unverified this pass
+- **What:** Simulaatio — demoparty listing (Finnish scene; tracked music compos).
+- **URL:** https://www.demoparty.net/simulaatio/simulaatio-4
+- **License:** ❓ License unverified this pass — party listing; compo entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Finnish demoparty compo music. [Wave 49 Lane A]
+
+#### DreamHack ❓ license unverified this pass
+- **What:** DreamHack — large LAN/demoparty-festival lineage event (demoscene presence, music compos).
+- **URL:** https://dreamhack.com/stockholm/?ref=vgtimes.ru
+- **License:** ❓ License unverified this pass — event site; compo entries by authors (verified 2026-10-08 via search result)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — big-event scene music/compo archive. [Wave 49 Lane A]
+
+#### The Ultimate Meeting (TUM) ❓ license unverified this pass
+- **What:** The Ultimate Meeting — German demoparty (official 2012 archive site).
+- **URL:** https://2012.tum-party.net
+- **License:** ❓ License unverified this pass — party archive; compo entries by authors (verified 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — TUM demoparty archive; verify per-entry rights. [Wave 49 Lane A]
+
+#### Moleman 2 — The Art of the Algorithms ❓ license unverified this pass
+- **What:** Moleman 2 — demoscene documentary film ("The Art of the Algorithms"), not a party.
+- **URL:** www.molemanfilm.com
+- **License:** ❓ License unverified this pass — documentary; rights remain with filmmakers/subjects (verified 2026-10-08)
+- **Free tier:** Film info online
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — demoscene culture documentary; music rights per-film. [Wave 49 Lane A]
+
+#### Alternative Party demoparty ❓ license unverified this pass
+- **What:** Alternative Party — Finnish demoparty (alternative/art demoscene; music compos).
+- **URL:** https://en.wikipedia.org/wiki/Alternative_Party_(demoparty)
+- **License:** ❓ License unverified this pass — party reference; compo entries by authors (verified 2026-10-08 via Wikipedia)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — resolve official party site in a later wave; verify per-entry rights. [Wave 49 Lane A]
+
+#### Demobit demoparty ❓ license unverified this pass
+- **What:** Demobit — demoparty listing (Slovak scene; tracked-music compos).
+- **URL:** https://www.demoparty.net/demobit/demobit-2019
+- **License:** ❓ License unverified this pass — party listing; compo entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — demoparty compo music source. [Wave 49 Lane A]
+
+#### Riverwash demoparty ❓ license unverified this pass
+- **What:** Riverwash — demoparty listing (music compos).
+- **URL:** https://www.demoparty.net/riverwash/riverwash-8
+- **License:** ❓ License unverified this pass — party listing; compo entries by authors (verified 2026-10-08 via demoparty.net)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — demoparty compo music source. [Wave 49 Lane A]
+
+#### Imphobia (demogroup) ❓ license unverified this pass
+- **What:** Imphobia — demogroup; co-organizer of the Wired demoparty (1995/1996); artifacts archived on Defacto2.
+- **URL:** https://defacto2.net/g/imphobia
+- **License:** ❓ License unverified this pass — group artifacts; rights remain with authors (verified 2026-10-08 via defacto2.net)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — demogroup music/intro archive; verify per-artifact rights. [Wave 49 Lane A]
+
+#### VGMix Archive ❓ license unverified this pass
+- **What:** VGMix Archive — video game music remix archive (fan remixes/arrangements).
+- **URL:** http://vgmixarchive.com/
+- **License:** ❓ License unverified this pass — fan remix archive; underlying game music rights remain with publishers (verified 2026-10-08)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — remix-only reference; underlying game music NOT cleared for reuse. [Wave 49 Lane A]
+
+#### The OneUps ❓ license unverified this pass
+- **What:** The OneUps — video game cover band (funk/jazz arrangements of game music).
+- **URL:** https://en.wikipedia.org/wiki/The_OneUps
+- **License:** ❓ License unverified this pass — cover band; underlying compositions by game publishers (verified 2026-10-08)
+- **Free tier:** Free info page
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — reference for arrangement style only; covers not reuse-cleared. [Wave 49 Lane A]
+
+#### 88bit ❓ license unverified this pass
+- **What:** 88bit — Rob Kovacs' note-for-note NES piano arrangements project.
+- **URL:** https://88bitmusic.com/
+- **License:** ❓ License unverified this pass — arrangement project; underlying compositions by publishers (verified 2026-10-08)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — arrangement reference; not reuse-cleared. [Wave 49 Lane A]
+
+#### Critical Hit ❓ license unverified this pass
+- **What:** Critical Hit — video game music tribute band headed by WoW composer Jason Hayes (original arrangements).
+- **URL:** http://criticalhitband.com/
+- **License:** ❓ License unverified this pass — tribute arrangements; underlying compositions by publishers (verified 2026-10-08 via YouTube descriptions)
+- **Free tier:** Free online info
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — arrangement reference; not reuse-cleared. [Wave 49 Lane A]
+
+#### Powerglove ❓ license unverified this pass
+- **What:** Powerglove — American instrumental power-metal video game cover band.
+- **URL:** https://en.wikipedia.org/wiki/Powerglove_(band)
+- **License:** ❓ License unverified this pass — cover band; underlying compositions by publishers (verified 2026-10-08)
+- **Free tier:** Free info page
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — VGM-metal reference; covers not reuse-cleared. [Wave 49 Lane A]
+
+#### 8-Bit Big Band ❓ license unverified this pass
+- **What:** The 8-Bit Big Band — Charlie Rosen's Grammy-winning jazz/pops orchestra arranging video game music.
+- **URL:** https://www.the8bitbigband.com
+- **License:** ❓ License unverified this pass — arrangement orchestra; underlying compositions by publishers (verified 2026-10-08 via YouTube description)
+- **Free tier:** Free online info; albums on streaming/Bandcamp
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — arrangement reference; not reuse-cleared. [Wave 49 Lane A]
+
+#### Chipzel ❓ license unverified this pass
+- **What:** Chipzel (Niamh Houston) — Game Boy chiptune composer (Super Hexagon, Dicey Dungeons soundtracks).
+- **URL:** https://en.wikipedia.org/wiki/Chipzel
+- **License:** ❓ License unverified this pass — artist page; original works, rights remain with artist (verified 2026-10-08)
+- **Free tier:** Free info page
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — chiptune composition reference; original works, contact artist for licensing. [Wave 49 Lane A]
+
+#### Fearofdark ❓ license unverified this pass
+- **What:** Fearofdark (Stephen Hemstritch-Johnston) — UK chiptune/tracker musician (.xm tracks; free album downloads).
+- **URL:** http://fearofdark.bandcamp.com/album/exit-plan
+- **License:** ❓ License unverified this pass — original works, rights remain with artist; tracks/source .xm files free (£0) (verified 2026-10-08 via chipmusic.org)
+- **Free tier:** Free downloads (name-your-price £0)
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — tracker .xm source files available; verify per-album rights with artist. [Wave 49 Lane A]
+
+#### Shirobon ❓ license unverified this pass
+- **What:** Shirobon — London chiptune/electronic musician (Game Boy LSDJ + Serum packs).
+- **URL:** https://shirobon.bandcamp.com/album/rebirth
+- **License:** ❓ License unverified this pass — original works, "all rights reserved"; rights remain with artist (verified 2026-10-08 via Bandcamp)
+- **Free tier:** Free streaming on Bandcamp
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — chiptune artist reference; contact artist for licensing. [Wave 49 Lane A]
+
+#### Yuzo Koshiro ❓ license unverified this pass
+- **What:** Yuzo Koshiro — legendary video game composer (Streets of Rage, ActRaiser); president of Ancient Corp (ancient.co.jp).
+- **URL:** https://en.wikipedia.org/wiki/Yuzo_Koshiro
+- **License:** ❓ License unverified this pass — commercial game composer; rights remain with publishers (verified 2026-10-08)
+- **Free tier:** Free info page
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — compositional reference only; no reuse. [Wave 49 Lane A]
+
+#### Back in Time Live ❓ license unverified this pass
+- **What:** Back in Time Live — C64/Amiga retro-computer music concert series (Bergen, Norway).
+- **URL:** https://backintime.no/
+- **License:** ❓ License unverified this pass — concert event; performed works by original composers (verified 2026-10-08 via YouTube description)
+- **Free tier:** Free info page
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — SID-scene concert culture reference; performance recordings rights per-artist. [Wave 49 Lane A]
+
+#### PRESS PLAY ON TAPE ❓ license unverified this pass
+- **What:** PRESS PLAY ON TAPE (PPOT) — Danish six-piece rock band reviving Commodore 64 game tunes live.
+- **URL:** https://pressplayontape.com/
+- **License:** ❓ License unverified this pass — cover band; underlying C64 tunes by original composers/publishers (verified 2026-10-08 via YouTube description)
+- **Free tier:** Free online info
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — C64-tune revival band reference; not reuse-cleared. [Wave 49 Lane A]
+
+#### RPGFan Music Reviews ❓ license unverified this pass
+- **What:** RPGFan "Music Reviews" — long-running RPG/video-game soundtrack review archive (review database 2000s–present).
+- **URL:** https://www.rpgfan.com/music/
+- **License:** ❓ License unverified this pass — review text by RPGFan staff; soundtrack rights remain with publishers (verified 2026-10-08)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — soundtrack research/review index; not a music source. [Wave 49 Lane A]
+
+#### Galbadia Hotel ❓ license unverified this pass
+- **What:** Galbadia Hotel (gh.ffshrine.org) — long-running video game music site (MP3s, piano scores, MIDIs).
+- **URL:** http://gh.ffshrine.org/
+- **License:** ❓ License unverified this pass — gray-area: hosts game-music MP3s/scores without clear publisher grants (verified 2026-10-08 via forum references)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — reference only; game music NOT cleared for reuse (unauthorized rips). [Wave 49 Lane A]
+
+#### Blue Laguna ❓ license unverified this pass
+- **What:** Blue Laguna (bluelaguna.net) — classic RPG music/OST direct-download archive (likely dead).
+- **URL:** http://bluelaguna.net/
+- **License:** ❓ License unverified this pass — gray-area: unauthorized OST downloads; site appears dead (verified 2026-10-08 via forum references)
+- **Free tier:** Historically free downloads
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — reference only; unauthorized rips, likely dead; check Wayback. [Wave 49 Lane A]
+
+#### Video Games Live ❓ license unverified this pass
+- **What:** Video Games Live — worldwide video game music orchestral concert series (Tallarico/Wall, 500+ shows).
+- **URL:** https://www.videogameslive.com/
+- **License:** ❓ License unverified this pass — concert series; performed arrangements by publishers' licenses (verified 2026-10-08 via Wikipedia)
+- **Free tier:** Free info page
+- **Repo lane:** trippedd (music/scene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — orchestral VGM culture reference; not reuse-cleared. [Wave 49 Lane A]
+
+### Wave 49 Lane A — Pocket 3: open video-archive tooling (37)
+
+#### vrecord ✅ commercial-safe
+- **What:** vrecord — AMIA Open Source video capture/preservation toolkit (FFmpeg-based capture workflows, open-source).
+- **URL:** https://github.com/amiaopensource/vrecord
+- **License:** ✅ CC-BY-4.0 (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Capture-side tooling for archive ingest; license cleared for shipping-path use. [Wave 49 Lane A]
+
+#### Fixity ✅ commercial-safe
+- **What:** Fixity — AVPreserve/WeAreAVP fixity-checking and file-monitoring tool for digital preservation.
+- **URL:** https://github.com/WeAreAVP/fixity
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fixity monitoring for archive storage; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### Siegfried ✅ commercial-safe
+- **What:** Siegfried — PRONOM-based file format identification tool (DROID signature files).
+- **URL:** https://github.com/richardlehane/siegfried
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Format-ID step for archive ingest; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### FIDO ✅ commercial-safe
+- **What:** FIDO (Format Identification for Digital Objects) — Open Preservation Foundation format identification tool.
+- **URL:** https://github.com/openpreserve/fido
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Format-ID for archive ingest; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### Greaseweazle ✅ commercial-safe
+- **What:** Greaseweazle — floppy-disk reading/writing tool (Keir Fraser) for disk-image preservation.
+- **URL:** https://github.com/keirf/greaseweazle
+- **License:** ✅ Unlicense / public domain (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Floppy-disk imaging for retro archive media; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### FlashFloppy ✅ commercial-safe
+- **What:** FlashFloppy — floppy-disk emulator firmware (Keir Fraser) for Gotek-style drives.
+- **URL:** https://github.com/keirf/FlashFloppy
+- **License:** ✅ Public domain / MIT / BSD mix (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Floppy emulation for retro media access; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### BMX (BBC) ✅ commercial-safe
+- **What:** BMX — BBC's MXF file creation/reading library and tools (broadcast archive MXF).
+- **URL:** https://github.com/bbc/bmx
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MXF tooling for broadcast-archive pipelines; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### LTFS ✅ commercial-safe
+- **What:** LTFS (Linear Tape File System) — open tape file-system implementation for LTO archive storage.
+- **URL:** https://github.com/lineartapefilesystem/ltfs
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Tape-archive storage layer; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### Apache Tika ✅ commercial-safe
+- **What:** Apache Tika — content analysis/metadata extraction toolkit (file characterization).
+- **URL:** https://github.com/apache/tika/
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Metadata extraction for archive ingest; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### FFV1 (open standard) ✅ commercial-safe
+- **What:** FFV1 — lossless video codec standardized as IETF RFC 9043 (archival video codec).
+- **URL:** https://www.rfc-editor.org/info/rfc9043
+- **License:** ✅ Open standard (IETF RFC 9043; implementations under open licenses) — commercial-safe
+- **Free tier:** Free standard
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference archival lossless codec for preservation masters. [Wave 49 Lane A]
+
+#### PBCore ✅ commercial-safe
+- **What:** PBCore — public broadcasting metadata dictionary / XML schema (AV metadata standard).
+- **URL:** https://raw.githubusercontent.com/PBCore-AV-Metadata/PBCore_2.1/master/pbcore-2.1.xsd
+- **License:** ✅ Open standard — free of charge, no license restriction on use (verified 2026-10-08 via upstream)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** AV metadata schema for archive cataloging; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### EBUCore ✅ commercial-safe
+- **What:** EBUCore — EBU audiovisual metadata specification (broadcast archive metadata).
+- **URL:** https://tech.ebu.ch/files/live/sites/tech/files/shared/events/opensource13/presentations/05%20-%20EBU-SDK.pdf
+- **License:** ✅ CC-licensed per tech.ebu.ch (verified 2026-10-08) — commercial-safe
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Broadcast metadata standard reference; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### AMWA NMOS ✅ commercial-safe
+- **What:** AMWA NMOS — Networked Media Open Specifications (IP media interoperability; C++ implementation nmos-cpp).
+- **URL:** https://github.com/s13n/nmos-cpp
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** IP-media/networked archive workflows; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### AS-11 (DPP) ✅ commercial-safe
+- **What:** AS-11 — DPP broadcast delivery specification (open spec for file-based broadcast delivery).
+- **URL:** https://www.thedpp.com/tech/
+- **License:** ✅ Open specification (verified 2026-10-08 via thedpp.com) — commercial-safe
+- **Free tier:** Free spec
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Broadcast delivery spec reference for archive output formats. [Wave 49 Lane A]
+
+#### DataLad ✅ commercial-safe
+- **What:** DataLad — data versioning/distribution tool (git-annex-based dataset management).
+- **URL:** https://github.com/datalad/datalad/
+- **License:** ✅ MIT (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dataset versioning for archive collections; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### warcit ✅ commercial-safe
+- **What:** warcit — WARC/ARC web-archive file creation tool (Python).
+- **URL:** https://pypi.org/project/warcit/
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Web-archive (WARC) creation for web archiving; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### ArchivesSpace ✅ commercial-safe
+- **What:** ArchivesSpace — archives information management application (open-source archives CMS).
+- **URL:** https://github.com/archivesspace/archivesspace
+- **License:** ✅ ECL-2.0 (Educational Community License 2.0; verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Archival description/management system; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### DVRescue ✅ commercial-safe
+- **What:** DVRescue — DV tape digitization/preservation tool (MediaArea).
+- **URL:** http://mediaarea.net/DVRescue
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via mediaarea.net) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** DV tape transfer for archive ingest; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### Exactly ✅ commercial-safe
+- **What:** Exactly — digital transfer/accessioning tool for archives (UK National Archives lineage, Galabs fork).
+- **URL:** https://github.com/galabs/uk-exactly
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream repo) — commercial-safe
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Accession/transfer workflow for archives; cleared for shipping-path use. [Wave 49 Lane A]
+
+#### Guymager 🚫 GPL-2.0 (quarantine)
+- **What:** Guymager — forensic disk-imaging tool (Qt GUI for dd imaging).
+- **URL:** https://guymager.sourceforge.io/
+- **License:** 🚫 GPLv2 (verified 2026-10-08 via upstream) — quarantine row 452
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-2.0 — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### dcfldd 🚫 GPL-2.0+ (quarantine)
+- **What:** dcfldd — enhanced dd for forensics/security (hashing, split output).
+- **URL:** https://github.com/resurrecting-open-source-projects/dcfldd
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via upstream repo) — quarantine row 453
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-2.0+ — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### ddrescue 🚫 GPL-2.0+ (quarantine)
+- **What:** GNU ddrescue — data-recovery tool that copies data from failing drives.
+- **URL:** https://www.gnu.org/software/ddrescue/ddrescue.html
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via gnu.org) — quarantine row 454
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-2.0+ — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### OpenCBM 🚫 GPLv2 (quarantine)
+- **What:** OpenCBM — open Commodore Business Machine cable/drive access library.
+- **URL:** https://github.com/OpenCBM/OpenCBM
+- **License:** 🚫 GPLv2 (verified 2026-10-08 via upstream repo) — quarantine row 455
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPLv2 — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### libewf / libyal 🚫 LGPL-3.0+ (quarantine)
+- **What:** libewf — library for reading/writing Expert Witness (EnCase) forensic image format (Joachim Metz / libyal).
+- **URL:** https://github.com/libyal/libewf
+- **License:** 🚫 LGPL-3.0-or-later (verified 2026-10-08 via upstream repo) — quarantine row 456
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined: LGPL-3.0+ (weak-copyleft row, pending owner verdict) — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### bulk_extractor 🚫 GPL-3.0+ (quarantine)
+- **What:** bulk_extractor — digital forensics feature-extraction tool (Simson Garfinkel lineage).
+- **URL:** https://github.com/simsong/bulk_extractor
+- **License:** 🚫 GPL-3.0-or-later (verified 2026-10-08 via upstream repo) — quarantine row 457
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-3.0+ — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### xjadeo 🚫 GPL-2.0+ (quarantine)
+- **What:** xjadeo — video playback/monitoring tool synced to JACK transport (for film scoring/review).
+- **URL:** http://xjadeo.sourceforge.net/main.html
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via upstream) — quarantine row 458
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-2.0+ — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### dvdauthor 🚫 GPL (quarantine)
+- **What:** dvdauthor — DVD authoring toolset (DVD-Video filesystem creation).
+- **URL:** https://sourceforge.net/projects/dvdauthor
+- **License:** 🚫 GPL (verified 2026-10-08 via upstream) — quarantine row 459
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### Ingex 🚫 GPL (quarantine)
+- **What:** Ingex — BBC tapeless ingest/archive system (SDI capture, MXF).
+- **URL:** https://en.wikipedia.org/wiki/Ingex
+- **License:** 🚫 GPL per Wikipedia (verified 2026-10-08) — quarantine row 460
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### Emularity 🚫 GPL-3.0+ (quarantine)
+- **What:** Emularity — browser-based emulation framework (Internet Archive in-browser emulation).
+- **URL:** https://github.com/db48x/emularity
+- **License:** 🚫 GPL-3.0-or-later (verified 2026-10-08 via upstream repo) — quarantine row 461
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-3.0+ — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### Browsertrix 🚫 AGPLv3 (quarantine)
+- **What:** Browsertrix — high-fidelity web crawling/archiving (Webrecorder).
+- **URL:** https://github.com/webrecorder/browsertrix
+- **License:** 🚫 AGPLv3 (verified 2026-10-08 via upstream repo) — quarantine row 462
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined: AGPLv3 — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### pywb 🚫 GPL-3.0 (quarantine)
+- **What:** pywb — Python web-archiving replay toolkit (Webrecorder).
+- **URL:** https://github.com/webrecorder/pywb
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via upstream repo) — quarantine row 463
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-3.0 — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### ArchiveBox 🚫 GPL-3.0-only (quarantine)
+- **What:** ArchiveBox — self-hosted web archiving ("internet archive in a box").
+- **URL:** https://github.com/ArchiveBox/ArchiveBox/blob/dev/LICENSE
+- **License:** 🚫 GPL-3.0-only (verified 2026-10-08 via upstream LICENSE) — quarantine row 464
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined: GPL-3.0-only — standalone study only, never wired into shipping paths. [Wave 49 Lane A]
+
+#### BitCurator ❓ diligence record
+- **What:** BitCurator — digital forensics environment for libraries/archives (Ubuntu-based distro; docs CC-BY-4.0, code licenses vary by component).
+- **URL:** unresolved this pass (no verbatim upstream URL from tool results — do not guess; known project name: BitCurator)
+- **License:** ❓ License unverified this pass — docs CC-BY-4.0; component code licenses vary (verified 2026-10-08)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — forensics distro for archives; verify component licenses before any reuse. [Wave 49 Lane A]
+
+#### MDQC ❓ diligence record
+- **What:** MDQC (Media Digital Quality Control) — AVP/WeAreAVP media quality-control tooling reference.
+- **URL:** unresolved this pass (no verbatim upstream URL from tool results — do not guess; see WeAreAVP/Fixity org for context)
+- **License:** ❓ License unverified this pass — AVP calls it free/open source; no license text found upstream (verified 2026-10-08)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — resolve license text in a later wave; not reuse-cleared. [Wave 49 Lane A]
+
+#### ADCTest ❓ diligence record
+- **What:** ADCTest — AVPreserve/LOC FADGI analog-digital transfer test chart reference (2017).
+- **URL:** unresolved this pass (no verbatim upstream URL from tool results — do not guess; FADGI/LOC digitization-guidelines context)
+- **License:** ❓ License unverified this pass — FADGI guideline artifact; no license stated (verified 2026-10-08)
+- **Free tier:** Free reference
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — transfer-test reference; not a code dependency. [Wave 49 Lane A]
+
+#### DVCapture ❓ diligence record
+- **What:** DVCapture — DV capture tooling reference (no license stated upstream).
+- **URL:** unresolved this pass (no verbatim upstream URL from tool results — do not guess)
+- **License:** ❓ License unverified this pass — no license stated (verified 2026-10-08)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — resolve license text in a later wave; not reuse-cleared. [Wave 49 Lane A]
+
+#### COPTR registry ❓ diligence record
+- **What:** COPTR (Community Owned digital Preservation Tool Registry) — community registry of digital-preservation tools.
+- **URL:** https://Coptr.Digipres.Org/
+- **License:** ❓ License unverified this pass — registry; per-tool licenses vary (verified 2026-10-08)
+- **Free tier:** Free registry
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — tool-discovery registry for future waves; per-tool licenses vary. [Wave 49 Lane A]
+
+### Wave 49 Lane A summary (2026-10-08)
+- New #### entries: 102 (Pocket 1: 30 PD cartoon music/score archives · Pocket 2: 35 retro-tracker demoscene long tail · Pocket 3: 37 open video-archive tooling)
+- Catalog: 4,230 → 4,332 honest entries (wave target 4,330+ met)
+- Quarantine: rows 452–464 appended (13 new rows, all distinct, zero supersedes/delists)
+- Honest negatives: 13 (Flashtro dead Flash site; Chudah's Corner closed 2007; IN Harmony / MDZ-BSB / Battle of the Bits / KEYGENMUSiC / VGMusic.com — true duplicates caught by pre-grep; LiveCapture, lsdvd, SAMdisk, CollectiveAccess, Islandora, LOCKSS — dropped from pocket 3)
+- ❓ diligence records: 61 (P1: 21 university/community archives + 1 LOC PD-era · P2: 35 demoscene/tracker/chip artists/parties · P3: 5 BitCurator/MDQC/ADCTest/DVCapture/COPTR)
+- ✅ commercial-safe: 28 (P1: 9 LOC American Memory / Folklife PD collections · P3: 19 verified open licenses/standards)
+- 🚫 quarantined: 13 (Guymager GPLv2, dcfldd GPL-2.0+, ddrescue GPL-2.0+, OpenCBM GPLv2, libewf LGPL-3.0+, bulk_extractor GPL-3.0+, xjadeo GPL-2.0+, dvdauthor GPL, Ingex GPL, Emularity GPL-3.0+, Browsertrix AGPLv3, pywb GPL-3.0, ArchiveBox GPL-3.0-only)
+- Corrections mid-wave: 4 pocket-3 diligence entries (BitCurator, MDQC, ADCTest, DVCapture) initially got constructed URLs — fixed to "unresolved this pass" rather than guess; pocket-2 URL set grew to 38 then trimmed to 35 via pre-grep dedup (BotB/KEYGENMUSiC/VGMusic); pocket-1 gained 2 backups (Henry Reed LOC, IU Latin American Music Center) after IN Harmony/BSB-MDZ dedup drops
+- Zero post-hoc duplicates: every candidate pre-grepped against the full catalog before appending; `grep -c '^####'` = 4,332 exactly
+- Merge hazard note: ~20 exact-title duplicate #### rows exist from EARLIER waves (Art Institute of Chicago, Chatterbox, CodeFormer, GPT-SoVITS, Kenney ×4, LatentSync, LOC Free to Use, LivePortrait, Looperman, Meta Sound Collection, MuseTalk, NASA, NOAA, SDL_mixer, SadTalker, SoundBible, USGS) — none added by Wave 49; flagged for coordinator cleanup

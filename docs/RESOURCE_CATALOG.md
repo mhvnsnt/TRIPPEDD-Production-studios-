@@ -30907,3 +30907,462 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Already audited by prior waves — skipped to avoid duplicates:** VEED, Clideo, Zeemo, Submagic, Captions.ai, OpusClip, TurboScribe, Audext, Kapwing, YouTube auto-captions, Traditional Tune Archive.
 - **Key finding:** the free-culture chiptune label landscape is overwhelmingly all-rights-reserved or NC — true CC commercial-safe chiptune labels are rare; the PD score-archive tail was far richer (OperaGlass's explicit PD statement and Beethoven-Haus's 9,990 free documents are the standouts).
 - **Quarantine rows added:** 0 (no GPL/AGPL/LGPL encountered).
+#### VITAC — free-tier ToS audit 🚫 no-free-tier
+- **What:** VITAC (vitac.com) — US broadcast captioning vendor (live captioning, offline subtitles, audio description) serving TV networks and enterprise clients.
+- **URL:** https://www.vitac.com/
+- **License:** 🚫 **No free tier** — enterprise/broadcast sales model with pricing "upon request"; no free version offered (verified 2026-10-08 via web search; softwareworld.co confirms no free version). Resolves the VITAC ❓.
+- **Free tier:** None.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Enterprise-only; not usable as a captioning source for the pipeline. [Wave 34 Lane A]
+
+#### Ai-Media — free-trial ToS audit ⚠️ trial-conditional
+- **What:** Ai-Media (ai-media.tv) — live captioning, translation and subtitling platform (LEXI automatic captions, EEG encoder hardware).
+- **URL:** https://www.ai-media.tv/
+- **License:** ⚠️ **Trial-conditional**: LEXI Translate offers a "free 10 hour trial" per the vendor page; the full platform is enterprise/quote-priced (verified 2026-10-08 via web search). Resolves the Ai-Media ❓.
+- **Free tier:** 10-hour trial of LEXI Translate.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Trial could caption a bounded batch of episodes, but terms of the trial (commercial use of trial output) need a direct read before relying on it. [Wave 34 Lane A]
+
+#### OOONA — free-tier ToS audit 🚫 no-free-tier
+- **What:** OOONA (ooona.net) — cloud-based professional subtitling, dubbing and localization toolkit (OOONA Agent, Create, Translate Pro).
+- **URL:** https://www.ooona.net/
+- **License:** 🚫 **No free version** — freelancer plans start around €29/mo; paid-only professional tooling (verified 2026-10-08 via web search). Resolves the OOONA ❓.
+- **Free tier:** None.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pro subtitling suite, not a free caption source. [Wave 34 Lane A]
+
+#### EZTitles — free-tier ToS audit 🚫 no-free-tier
+- **What:** EZTitles (eztitles.com) — professional desktop subtitling software (EZTitles One / Pro / Ultimate).
+- **URL:** https://www.eztitles.com/
+- **License:** 🚫 **Paid desktop licenses only** — €30/week (One), €80–100/mo subscription, €1,720+ lifetime purchase (verified 2026-10-08 via web search). No free tier. Resolves the EZTitles ❓.
+- **Free tier:** None.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Buy-to-own pro tool; nothing free to pull. [Wave 34 Lane A]
+
+#### Verbit — free-trial ToS audit ⚠️ trial-conditional
+- **What:** Verbit (verbit.ai) — AI transcription and captioning with human review, aimed at education/enterprise.
+- **URL:** https://verbit.ai/
+- **License:** ⚠️ **Trial-conditional**: 5-day free trial offered; self-serve plans from $29/mo ($24/mo annual) (verified 2026-10-08 via web search; theaireports.com). Resolves the Verbit ❓.
+- **Free tier:** 5-day free trial.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Trial window is short; verify whether trial output may be used commercially before any pipeline use. [Wave 34 Lane A]
+
+#### Cielo24 — free-tier ToS audit ⚠️ free-minutes
+- **What:** Cielo24 (cielo24.com) — video transcription, captioning and video-intelligence platform with self-serve plans.
+- **URL:** https://www.cielo24.com/plans
+- **License:** ⚠️ **Free-minutes tier**: 120 free minutes of mechanical transcription on signup (verified 2026-10-08 via web search; cielo24.zendesk.com); beyond that, paid self-serve plans. Resolves the Cielo24 ❓.
+- **Free tier:** 120 free mechanical-transcription minutes on signup.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The 120 free minutes are genuinely usable for a pilot batch; verify the current signup terms (minutes may be mechanical-only, human review costs extra). [Wave 34 Lane A]
+
+#### Scribie — free-credit ToS audit ⚠️ credit-conditional
+- **What:** Scribie (scribie.com) — pay-as-you-go transcription service ($0.80/min) with a free-trial claim on some coupon sites.
+- **URL:** https://scribie.com/
+- **License:** ⚠️ **Credit-conditional**: $10 signup credit reported (verified 2026-10-08 via web search; grabon.in); no standing free tier — third-party claims conflict (sonix.ai comparison states Scribie offers no free trial), noted honestly. Resolves the Scribie ❓.
+- **Free tier:** $10 signup credit (third-party reported).
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Conflicting sources on the free trial — verify directly with Scribie before budgeting the credit. [Wave 34 Lane A]
+
+#### GetMunch — free-tier ToS audit 🚫 no-free-tier
+- **What:** GetMunch (getmunch.com) — AI video repurposing platform (long-form → short clips) with auto-captioning.
+- **URL:** https://www.getmunch.com/
+- **License:** 🚫 **No general free tier** — paid from $49/mo; vendor FAQ mentions only a "limited free trial to selected locales" (verified 2026-10-08 via web search).
+- **Free tier:** Limited locale-restricted trial only.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not a free caption source; the locale-restricted trial is not something to build on. [Wave 34 Lane A]
+
+#### Symbl.ai — free-tier ToS audit ⚠️ api-free-tier
+- **What:** Symbl.ai — conversation-intelligence APIs: real-time transcription, topic/sentiment extraction, action-item detection.
+- **URL:** https://symbl.ai/
+- **License:** ⚠️ **API free tier (third-party reported)**: ~1,000 minutes/mo + 10k words/mo free per aitools.fyi (verified 2026-10-08 via web search) — **upstream re-verify** on symbl.ai pricing before use.
+- **Free tier:** ~1,000 min/mo + 10k words/mo (third-party reported, unverified upstream).
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** If the free tier holds, the transcription API could feed the caption pipeline; the grant must be confirmed on Symbl's own pricing page first. [Wave 34 Lane A]
+
+#### 3Play Media — free-tier ToS audit 🚫 no-free-tier
+- **What:** 3Play Media (3playmedia.com) — captioning, transcription, audio description and accessibility services for enterprise/education.
+- **URL:** https://www.3playmedia.com/
+- **License:** 🚫 **No free version or trial** per G2 reviews; quote-based pricing (verified 2026-10-08 via web search). Resolves the 3Play Media ❓.
+- **Free tier:** None.
+- **Repo lane:** trippedd (caption pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Enterprise accessibility vendor; nothing free to pull. [Wave 34 Lane A]
+
+#### CSDb — "C64 Music Collection" release-type browse ❓ per-release rights
+- **What:** The CSDb (csdb.dk) release-type browse for the "C64 Music Collection" — the Commodore 64 Scene Database's curated music-release view; a musicdisk discovery path deep-dive (distinct from the main CSDb archive entry).
+- **URL:** https://csdb.dk/ (release-type browse: C64 Music Collection)
+- **License:** ❓ Per-release rights — CSDb hosts scene productions whose rights vary by release; no blanket grant (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery lens only — treat every musicdisk found here as per-production rights until the release page says otherwise. [Wave 34 Lane A]
+
+#### demozoo — Musicdisk production type + API v1 ❓ per-production rights
+- **What:** demozoo.org's "Musicdisk" production-type browse (one of 57 production types) plus the public API v1 for querying musicdisk productions programmatically — the discovery path for demoscene musicdisks.
+- **URL:** https://demozoo.org/productions/tagged/musicdisk/ (browse); API v1 documented on demozoo.org
+- **License:** ❓ Per-production rights — demozoo is a metadata index; downloads link out to scene archives (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wired by tools/wave34_lane_a/musicdisk_license_audit.py — queries API v1 for Musicdisk productions and saves the JSON as proof. [Wave 34 Lane A]
+
+#### archive.scene.org — music-disk mirror directories ❓ per-file rights
+- **What:** archive.scene.org mirror tree — directories such as /mirrors/ftp_klosz_art_pl/stuff/music disks/ hosting scene musicdisk files mirrored from classic FTP archives.
+- **URL:** https://archive.scene.org/ (mirror tree browse)
+- **License:** ❓ Per-file rights — a mirror of scene FTP archives; individual files carry their own (usually unstated) terms (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful bulk-discovery mirror; every file needs its own rights check. [Wave 34 Lane A]
+
+#### Atari Mania — "Music / Speech" demo genre ❓ per-production rights
+- **What:** Atari Mania (atarimania.com) demo database — the "Music / Speech" genre view covering musicdisk productions (AAC MegaMusic Disk #I, Zikdisk series, Ultravox Demo, Track Mania II), with database entries and downloads.
+- **URL:** https://www.atarimania.com/
+- **License:** ❓ Per-production rights — the database documents productions; downloads are per-production (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST/8-bit musicdisk discovery; pair with per-production rights checks. [Wave 34 Lane A]
+
+#### C64.CH — C64 demo portal musicdisk entries ❓ per-production rights
+- **What:** C64.CH (c64.ch) — C64 demo portal with 13,711 demos, musicdisk entries (Avalon Music Disk, Digi-Disk One) and in-browser emulation.
+- **URL:** https://c64.ch/
+- **License:** ❓ Per-production rights — portal entries document scene productions; no blanket reuse grant (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NEW discovery this wave — a large, well-organized C64 musicdisk source; browser emulation helps auditioning. [Wave 34 Lane A]
+
+#### DeliPlayer ❓ freeware-proprietary (standalone tool)
+- **What:** DeliPlayer — Wolfgang Vorberger & Stefan Kunath's Windows player for ~200 Amiga music formats; the reference Amiga-format auditioning tool of the 2000s (site dead since ~2006–08, last release v2.5).
+- **URL:** via Aminet / scene archives (original site offline)
+- **License:** ❓ Freeware, proprietary — no open-source grant found (verified 2026-10-08 via web research). Standalone-tool use only; never wired into shipping code.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audition Amiga musicdisks with it; do not redistribute or integrate the binary. [Wave 34 Lane A]
+
+#### XMPlay ❓ freeware-proprietary (standalone tool)
+- **What:** XMPlay — Un4seen (Ian Luck) modular tracker music player with a plugin architecture (AHX/HVL, Delix, 64th Note, in_vgmstream plugins extend it to Amiga/retro formats).
+- **URL:** https://www.un4seen.com/xmplay.html
+- **License:** ❓ Freeware, proprietary — no open-source grant found (verified 2026-10-08 via web research). Standalone-tool use only.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Plugin stack makes it the most flexible freeware musicdisk auditioning tool on Windows. [Wave 34 Lane A]
+
+#### AY_Emul ❓ freeware (standalone tool)
+- **What:** AY_Emul — Sergey Bulba's player for AY-3-8910/12 + YM2149 music (ZX Spectrum / Atari ST chiptunes); hosted at bulba.untergrund.net.
+- **URL:** http://bulba.untergrund.net/ (AY_Emul page)
+- **License:** ❓ Distributed as freeware; no explicit license statement found on the author's pages (verified 2026-10-08 via web research). Standalone-tool use only.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** AY-chip musicdisk auditioning; treat as no-redistribution until a license surfaces. [Wave 34 Lane A]
+
+#### EaglePlayer 2.07 (Aminet) ❓ amiga-freeware (standalone tool)
+- **What:** EaglePlayer 2.07 — classic Amiga multi-format music player (the "eagleplayer" engine family), archived on Aminet.
+- **URL:** via Aminet (mods/play — EaglePlayer 2.07 archive)
+- **License:** ❓ Amiga freeware; no open-source grant found (verified 2026-10-08 via web research). Standalone-tool use only.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Runs on Amiga/emulator; use for auditioning Amiga musicdisks in their native player context. [Wave 34 Lane A]
+
+#### DeliTracker II 2.34 (Aminet) ❓ amiga-freeware (standalone tool)
+- **What:** DeliTracker II 2.34 — classic Amiga module player with wide format support, archived on Aminet (distinct from the Windows DeliPlayer above).
+- **URL:** via Aminet (DeliTracker II 2.34 archive)
+- **License:** ❓ Amiga freeware; no open-source grant found (verified 2026-10-08 via web research). Standalone-tool use only.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Native-Amiga auditioning companion to DeliPlayer/UADE research. [Wave 34 Lane A]
+
+#### HippoPlayer 2.66 (Aminet) ❓ amiga-freeware (standalone tool)
+- **What:** HippoPlayer 2.66 — classic lightweight Amiga module player, archived on Aminet.
+- **URL:** via Aminet (HippoPlayer 2.66 archive)
+- **License:** ❓ Amiga freeware; no open-source grant found (verified 2026-10-08 via web research). Standalone-tool use only.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Third leg of the Aminet Amiga-player trio; same freeware caveats. [Wave 34 Lane A]
+
+#### StSound ✅ MIT (upstream LICENSE)
+- **What:** StSound (github.com/arnaud-carre/StSound) — Atari ST YM2149/SNDH replay library in portable C.
+- **URL:** https://github.com/arnaud-carre/StSound
+- **License:** ✅ MIT — LICENSE file present in the upstream repo (verified 2026-10-08 via web research; confirmed by the text quoted in sndh-player issue #24).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wired by tools/wave34_lane_a/musicdisk_license_audit.py — fetches the upstream LICENSE raw file and saves it as proof. [Wave 34 Lane A]
+
+#### sndh-player ✅ MIT (upstream LICENSE)
+- **What:** sndh-player — SNDH (Atari ST) music player built on StSound; its LICENSE file was added in v1.01.
+- **URL:** https://github.com/arnaud-carre/sndh-player
+- **License:** ✅ MIT — LICENSE added in v1.01 (verified 2026-10-08 via web research). Note: the sibling AtariAudio library has NO LICENSE file (issue #24 open) — not cataloged separately.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wired by tools/wave34_lane_a/musicdisk_license_audit.py — fetches the upstream LICENSE raw file and saves it as proof. [Wave 34 Lane A]
+
+#### NostalgicPlayer ✅ MIT (upstream LICENSE)
+- **What:** NostalgicPlayer (neumatho/nostalgicplayer) — C# module player for Windows supporting 200+ Amiga/PC module formats, with a Format_Descriptions documentation directory and a module collection at nostalgicplayer.dk.
+- **URL:** https://github.com/neumatho/nostalgicplayer
+- **License:** ✅ MIT per the upstream LICENSE file (verified 2026-10-08 via GitHub repo page). Caveat: some bundled 3rd-party agents are GPL-2 (libTfmxAudioDecoder, ReSIDfp, SidPlayFp) — use the MIT core only; those agents stay quarantined.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Format_Descriptions directory doubles as a format-doc reference for the long-tail tracker formats. [Wave 34 Lane A]
+
+#### amiga_exotic_players ❓ license-ambiguous (standalone reference)
+- **What:** vtlmks/amiga_exotic_players — single-header C99 ports of NostalgicPlayer's Amiga module replayers (40+ exotic formats: TFMX, AHX, OctaMED, Hippel, Future Composer, SoundMon…) sharing a 32-channel virtual Paula mixer.
+- **URL:** https://github.com/vtlmks/amiga_exotic_players
+- **License:** ❓ License ambiguous — the README claims MIT (reproducing the upstream NostalgicPlayer copyright notice), but GitHub's license scan returns NOASSERTION and the LICENSE file body was not verified this pass (verified 2026-10-08). Treat as unverified; do not integrate.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music research)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Useful as a format-implementation reference for exotic Amiga formats; license must be resolved before any use. [Wave 34 Lane A]
+
+#### ModLand FTP format_documentation collection ❓ author-attributed docs
+- **What:** ftp://ftp.modland.com/pub/documents/format_documentation/ — the ModLand FTP's live collection of tracker-format technical documents, e.g. "Brian Postma SoundMon v1.1 (.bp).txt", "Polytracker v2.03 (.ptm).txt", "FastTracker 2 v2.04 (.xm).html", "Composer 669, Unis 669 (.669).txt".
+- **URL:** ftp://ftp.modland.com/pub/documents/format_documentation/ (FTP listing)
+- **License:** ❓ Author-attributed community docs; no explicit reuse license stated (verified live 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Aggregate doc source for the obscure-format long tail; treat each doc's terms individually. [Wave 34 Lane A]
+
+#### J2B format documentation ❓ community reverse-engineering doc
+- **What:** J2B (Jazz Jackrabbit 2 music) format documentation — community reverse-engineering article (jazz2online.com, articleID=288) describing the Galaxy Music System format and its MUSE/Digital Dreams compression.
+- **URL:** https://www.jazz2online.com/ (J2B format article, articleID=288)
+- **License:** ❓ Community reverse-engineering doc; no explicit license stated (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Key doc for the .j2b format also supported by Xmp/NostalgicPlayer. [Wave 34 Lane A]
+
+#### uFMOD XM format specification ✅ public domain
+- **What:** The uFMOD team's XM format specification — the technical specification document for the FastTracker II XM module format as published by the uFMOD authors. (Distinct from the uFMOD player, already cataloged as freeware.)
+- **URL:** via the uFMOD author's pages / flatassembler board statement
+- **License:** ✅ Public domain — the uFMOD team stated the spec document is public domain (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** A genuinely PD XM spec — safe to quote and build from in format tooling. [Wave 34 Lane A]
+
+#### NSFE format documentation (VGMPF wiki) ❓ wiki-doc
+- **What:** VGMPF wiki NSFE page — Nintendo Sound Format Extended: an NSF wrapper adding metadata/tags (titles, artists, timing), playlists and volume control (vgmpf.com NSFE page; related spec at slickproductions.org/nsfe.php).
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=NSFE
+- **License:** ❓ Community wiki documentation; no explicit license stated on the doc (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The NSFE metadata model is the useful part for cataloging NES rips. [Wave 34 Lane A]
+
+#### USF format documentation (HCS USF Central) ❓ community spec
+- **What:** Nintendo Ultra64 Sound Format (USF) — format by Adam Gashlin holding N64 sound-generating code; documented via HCS USF Central (hcs64.com/usf); a PSF sub-format.
+- **URL:** http://www.hcs64.com/usf (USF Central)
+- **License:** ❓ Community spec doc; no explicit license stated (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the already-cataloged lazyusf2 USF player entry (the player, not the spec). [Wave 34 Lane A]
+
+#### SSF format documentation (VGMPF wiki) ❓ wiki-doc
+- **What:** VGMPF wiki SSF page — Sega Saturn Sound Format: a PSF sub-format storing audio ripped from Saturn game ROMs (.ssf with shared .ssflib data).
+- **URL:** http://www.vgmpf.com/Wiki/index.php?title=SSF
+- **License:** ❓ Community wiki documentation; no explicit license stated (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Covers the Saturn leg of the PSF sub-format family (PSF1/PSF2 already cataloged). [Wave 34 Lane A]
+
+#### S98 format documentation (VGMPF wiki) ❓ wiki-doc
+- **What:** VGMPF wiki S98 page — Sound 98 (S98v3): an instruction-log format for Yamaha sound chips (YM3526/YM2151/YM2203/YM2608) in Japanese PCs (PC-6001/6601/8801/9801, X1, FM-7/FM Towns), released c. 2004.
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=S98
+- **License:** ❓ Community wiki documentation; no explicit license stated (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The PC-98 FM-logging format; useful reference for the Touhou/PC-98 music research thread. [Wave 34 Lane A]
+
+#### RMT module file format documentation ❓ community doc
+- **What:** RASTER Music Tracker (.rmt) module file format documentation — maintained alongside the RMT ports (gianlucarenzi/RASTER-Music-Tracker links the current RMT Module File Format documentation and discussion); the format is also described on Just Solve the File Format Problem.
+- **URL:** https://github.com/gianlucarenzi/RASTER-Music-Tracker (docs links); http://justsolve.archiveteam.org/wiki/RASTER_Music_Tracker_module
+- **License:** ❓ Community documentation; no explicit license stated (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari POKEY tracker format doc; complements the RMT player mentions elsewhere in the catalog. [Wave 34 Lane A]
+
+#### DBM0 format specification (digibooster.de) ❓ vendor spec, no reuse grant
+- **What:** "DigiBooster 3: DBM0 Format Specification" — the OFFICIAL vendor specification for the DigiBooster Pro DBM0 chunk-based module format (chunks NAME/INFO/VENV/PENV/SONG/INST/PATT/SMPL).
+- **URL:** http://www.digibooster.de/en/format.php
+- **License:** ❓ Official vendor specification; no explicit reuse/redistribution license stated on the spec page (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rare case of an official Amiga-tracker format spec; read freely, but do not republish the text without permission. [Wave 34 Lane A]
+
+#### DTM (Digital Tracker) format documentation ❓ third-party descriptions
+- **What:** Digital Tracker Module (.dtm) — Frontier Software's 1994 Atari Falcon tracker format, MOD-derived with up to 32 channels; documented via the fileinfo.com DTM format page, the demozoo DTM tag page, and the NostalgicPlayer format matrix.
+- **URL:** https://fileinfo.com/extension/dtm; https://demozoo.org/productions/tagged/dtm/
+- **License:** ❓ No vendor-published spec found; third-party descriptions only (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not confuse with Dolphin's .dtm TAS-movie files — same extension, unrelated format. [Wave 34 Lane A]
+
+#### MultimediaWiki — obscure format documentation hub ❓ wiki-doc
+- **What:** MultimediaWiki (wiki.multimedia.cx) — the FFmpeg/MPlayer community wiki documenting dozens of obscure audio/video container and codec formats; an aggregate reference for long-tail format docs (e.g. its NSF page documents the .nsfe extended-metadata variant).
+- **URL:** https://wiki.multimedia.cx/
+- **License:** ❓ Community wiki documentation; no explicit license stated (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** First stop for any format not covered by VGMPF or the ModLand doc collection. [Wave 34 Lane A]
+
+#### Imago Orpheus IMF v1.00 format specification ❓ community-mirrored vendor spec
+- **What:** "IMAGO Orpheus Module Format (IMF) Version 1.00" — the file format specification for Lutz Roeder's DOS tracker Imago Orpheus (.imf), mirrored via Just Solve the File Format Problem; the byte-level doc also ships in libxmp as docs/formats/imf10.txt.
+- **URL:** http://justsolve.archiveteam.org/wiki/Imago_Orpheus_module
+- **License:** ❓ Community mirror of the vendor spec; no explicit reuse license stated (verified 2026-10-08 via web research).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Note: this IMF (Imago Orpheus) is unrelated to id Software's IMF (id Music Format) — different format, same acronym. [Wave 34 Lane A]
+
+#### Laced Records — VGM soundtrack label audit 🚫 commercial-ARR
+- **What:** Laced Records (lacedrecords.com) — UK video game soundtrack label, est. 2015, part of Keywords Studios; 300+ official releases (Silent Hill, Resident Evil, Halo, Metal Gear Solid, The Legend of Zelda: Breath of the Wild…).
+- **URL:** https://www.lacedrecords.com/
+- **License:** 🚫 Commercial all-rights-reserved label — releases are licensed commercial products (verified 2026-10-08 via web search).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/audition only — nothing here is licensable for the pipeline. [Wave 34 Lane A]
+
+#### Mondo — soundtrack label audit 🚫 commercial-ARR
+- **What:** Mondo — soundtrack label (Death Waltz Recording Company merged into Mondo in 2015); licensed OST vinyl pressings (Castlevania, Streets of Rage 2, Death Stranding…).
+- **URL:** https://mondoshop.com/ (Mondo store)
+- **License:** 🚫 Commercial all-rights-reserved label (verified 2026-10-08 via web search).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Collectors' label; no reuse grant. [Wave 34 Lane A]
+
+#### Hyperduck Soundworks — game-music duo audit 🚫 commercial-ARR
+- **What:** Hyperduck Soundworks — Northern Ireland composer duo (Chris Geehan, Dan Byrne-McCullough); scores for Dust: An Elysian Tail and Cosmic Star Heroine; soundtracks sold on Bandcamp ($8.07) and on vinyl via Ship to Shore PhonoCo.
+- **URL:** via Bandcamp / hyperduck.net (composer site)
+- **License:** 🚫 Commercial all-rights-reserved — paid soundtrack sales, no free-culture grant (verified 2026-10-08 via web search).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Buy-and-listen only; do not rip for the pipeline. [Wave 34 Lane A]
+
+#### iam8bit — VGM merchandise/label audit 🚫 commercial-ARR
+- **What:** iam8bit (iam8bit.com) — video game merchandise and collectibles company producing licensed VGM vinyl; releases carry notices such as "© 2026, Playstack and D-CELL Games, all rights reserved".
+- **URL:** https://www.iam8bit.com/
+- **License:** 🚫 Commercial all-rights-reserved (verified 2026-10-08 via web search).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Licensed merch channel; no music reuse rights implied. [Wave 34 Lane A]
+
+#### Pixel Mixers — VGM cover collective audit 🚫 derivative-ARR
+- **What:** Pixel Mixers (pixel-mixers.com) — collective releasing free and charity albums of video game music covers; free albums hosted on archive.org/details/pixel-mixers.
+- **URL:** https://pixel-mixers.com/
+- **License:** 🚫 Derivative works of copyrighted OSTs — free to stream/download, but the underlying compositions are all-rights-reserved and the covers carry no reuse grant (verified 2026-10-08 via web search).
+- **Free tier:** Free streaming/downloads (listening only).
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Free download" ≠ free license — the arrangements are covers of ARR compositions; unusable in the pipeline. [Wave 34 Lane A]
+
+#### Ship to Shore PhonoCo — VGM vinyl label audit 🚫 commercial-ARR
+- **What:** Ship to Shore PhonoCo — VGM vinyl label pressing licensed game soundtracks (Suikoden II STS-193, Contra ReBirth STS-182 — licensed from Konami/Capcom); also pressed the Cosmic Star Heroine OST (Hyperduck Soundworks).
+- **URL:** via shiptoshoremedia.com (label store)
+- **License:** 🚫 Commercial all-rights-reserved licensed label (verified 2026-10-08 via web search).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Licensed pressings only; no reuse grant. [Wave 34 Lane A]
+
+#### A Shell in the Pit — game-audio studio audit 🚫 commercial-ARR
+- **What:** A Shell in the Pit (ashellinthepit.com) — Canadian game-audio studio founded by Gordon McGladdery (Rogue Legacy, Full Metal Furies, Sneaky Sasquatch, Rogue Legacy 2…); 38 releases on Bandcamp.
+- **URL:** https://ashellinthepit.bandcamp.com/
+- **License:** 🚫 Bandcamp tracks marked "all rights reserved"; paid downloads and a $3.99/mo subscription (verified 2026-10-08 via web search).
+- **Free tier:** Streaming only (Bandcamp).
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commercial studio catalog; stream to reference, never pull into the pipeline. [Wave 34 Lane A]
+
+#### Yetee Records — VGM vinyl label audit 🚫 commercial-ARR
+- **What:** Yetee Records — VGM vinyl imprint of The Yetee (video-game merch company, est. 2011, Aurora IL), co-founded 2014 with the company's owners; presses licensed indie-game soundtracks (Bandcamp Daily label profile).
+- **URL:** https://theyetee.com/ (Yetee Records section)
+- **License:** 🚫 Commercial all-rights-reserved label (verified 2026-10-08 via web search).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (music licensing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Licensed VGM pressings; no reuse grant. [Wave 34 Lane A]
+
+---
+
+## Wave 34 Lane A summary
+- **Added:** 45 honest entries (10 caption ToS audits resolving the Wave 33 ❓ stragglers, 15 demoscene-musicdisk deep-dives, 12 tracker-format-doc long-tail entries, 8 chiptune/ARR-label honest audits).
+- **Honest drops (failures documented, no entries):** Lowbit Records (could not verify a French chiptune label by that name — search inconclusive); Power Up Audio (could not verify the game-audio studio this pass); AMP musicdisk sub-collection (covered by the existing Amiga Music Preservation entry — would be a near-miss duplicate); GYM / QSF / DSF / SNSF format docs (no standalone spec documents verified this pass — GYM has players but no spec found, QSF/DSF/SNSF are covered in aggregate by the PSF spec entry); RTM / PSM / MDL format docs (no standalone docs verified; only player support matrices found).
+- **Already audited by prior waves — skipped to avoid duplicates:** Reduct.video + 2short.ai (already have ToS-audit entries); VEED, Clideo, Flixier, Zeemo, Submagic, Captions.ai, OpusClip, Rev, Maestra, TurboScribe, Audext, Kapwing, YouTube auto-captions, AssemblyAI, Trint, HappyScribe, Descript, Otter.ai, Sonix, Notta, Speechmatics, Fireflies.ai, Castmagic, Riverside.fm, Vizard, Temi, Simon Says, tl;dv, GoTranscript, quso.ai, Podsqueeze, Swell AI, CaptionMax, CaptionHub, Aegisub, Jubler, Subtitle Horse, SubtitleNEXT, FAB Subtitler, MovieCaptioner, Aiko, Deepgram, AWS Transcribe, Nova AI, Web Captioner (caption SaaS); UADE, ZXTune, libopenmpt, libmodplug, DUMB, HivelyTracker, ASAP, foo_gep, VGMPlay, NotSo Fatso, gbsplay, sc68, psgplay, vgmtools, ProTrackR2, lazyusf2, QMMP, libmikmod, mikmod, uFMOD player (musicdisk players); XM, S3M, PSF, VGM, PSID/SID, NSF, .fur, 669/STM/FAR/ULT/MTM family, DMF/AMF/DSM/GDM/PTM/OKT, libxmp docs, OpenMPT wiki, ITTECH.TXT, SPC700, SNDH, 2SF/GSF, MED/OctaMED, AHX, ProTracker MOD, KSS (format docs); 8bitpeoples, Kahvi, Monotonik, phonoCAKE, Acroplane, Dusted Wax, Enough, 2063music, Section 27, Clinical Archives, Tokyo Dawn, 12rec, Aaahh, Maltine, Bunkai-Kei, ALTEMA, MarginalRec, Kikapu, Zymogen, Newgrounds, Da! Heard-It, SectionZ, Protodome, Noisechannel, A Bit of Chiptune, Demovibes, CalmDownKidder, Base Bit, MAGIC YUME, Vulpiano, D-Trash, TimeSlave, Black Screen, Curaga, Candy Mind, Scarlet Moon, Bleepstreet, Pterodactyl Squad, GameChops, Cheapbeats, Chiptunes = WIN, Data Airlines, Ubiktune, Brave Wave, Materia Collective, Data Discs (chiptune/ARR labels).
+- **Key finding:** caption SaaS is almost entirely paid-only (only Cielo24's 120 free minutes and the unverified Symbl.ai API tier offer anything free); the demoscene musicdisk world runs on freeware players with no open-source grants, except the MIT-licensed StSound/sndh-player/NostalgicPlayer trio; commercial VGM labels (Laced, Mondo, Ship to Shore, Yetee, iam8bit) are uniformly all-rights-reserved, and even "free download" chiptune covers (Pixel Mixers) carry no reuse grant.
+- **Quarantine rows added:** 1 (Open Cubic Player — GPL; row 272).
+- **Tools wired:** tools/wave34_lane_a/musicdisk_license_audit.py (demozoo API v1 musicdisk query + StSound/sndh-player MIT LICENSE fetch), tools/wave34_lane_a/caption_tos_probe.py (pricing/ToS page snapshots for the 10 audited caption SaaS) — proofs in tools/wave34_lane_a/PROOFS.md + SHA256SUMS.

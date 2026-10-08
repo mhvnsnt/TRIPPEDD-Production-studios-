@@ -4522,3 +4522,286 @@ glTF-focused animation players, runtimes, compressors, converters, and retargeti
 - **Lane note:** Wave 4 Lane C: the DCC rigging framework that feeds glTF — standardized rigs make downstream retargeting deterministic.
 
 <!-- end lane C wave 4 batch 4: converters/animation interop 31-38 (8 entries; 0 GPL; quarantine rows 171-172) -->
+## Archival footage restoration / upscaling
+
+#### Real-ESRGAN ✅
+- **What:** Blind real-world image/video super-resolution (RRDBNet GAN trained on synthetic degradations) with x2/x4/x4plus and anime-video weights.
+- **URL:** https://github.com/xinntao/Real-ESRGAN
+- **License:** BSD-3-Clause (verified 2026-10-08: multiple downstream third-party notices cite upstream https://github.com/xinntao/Real-ESRGAN/blob/master/LICENSE as BSD-3-Clause).
+- **Use:** upscale archival plates and scanned frames to 4K — the default workhorse SR for the restoration pass.
+- **Lane note:** Wave 4 Lane D: the canonical open-source upscaler for archival footage; ncnn-Vulkan sibling runs GPU-side.
+
+#### SwinIR ✅
+- **What:** Swin-Transformer image restoration network (super-resolution, denoising, JPEG-artifact removal) with real-world SR weights.
+- **URL:** https://github.com/JingyunLiang/SwinIR
+- **License:** Apache-2.0 (verified 2026-10-08: upstream repo license; ONNX port readme and multiple third-party notices concur).
+- **Use:** high-fidelity upscale + denoise of archival stills and grainy film frames; transformer quality where Real-ESRGAN GAN textures hallucinate.
+- **Lane note:** Wave 4 Lane D: transformer SR/denoise reference for restoration — maximum perceptual quality tier for hero frames.
+
+#### Anime4K ✅
+- **What:** Real-time CNN upscaler/restorer delivered as GLSL shaders for mpv — restore + 2x upscale chains that run at playback speed.
+- **URL:** https://github.com/bloc97/Anime4K
+- **License:** MIT (verified 2026-10-08: upstream LICENSE; widely vendored as MIT shaders).
+- **Use:** fast line-art/cartoon plate upscaling for animatics and cel-restoration previews; shader chain plugs into mpv-based review tooling.
+- **Lane note:** Wave 4 Lane D: real-time cartoon-plate restoration path — ideal for the 2D animation sources this pipeline also touches.
+
+#### waifu2x ✅
+- **What:** The original CNN image super-resolution + noise reduction for anime-style art (SRCNN-derived), with ncnn-Vulkan builds for fast GPU inference.
+- **URL:** https://github.com/nagadomi/waifu2x
+- **License:** MIT (verified 2026-10-08: upstream LICENSE, copyright nagadomi; Wikipedia infobox and downstream notices concur).
+- **Use:** denoise + 2x upscale of scanned cels, manga plates, and low-res cartoon source frames.
+- **Lane note:** Wave 4 Lane D: the classic cartoon-art restorer — pairs with Anime4K for the 2D-source restoration lane.
+
+#### Real-CUGAN ✅
+- **What:** Bilibili AI Lab's anime/real image super-resolution (UpCunet) with built-in denoise-level control, tuned for cartoon content.
+- **URL:** https://github.com/bilibili/ailab
+- **License:** MIT (verified 2026-10-08: https://github.com/bilibili/ailab/blob/main/Real-CUGAN/LICENSE is MIT, per multiple downstream notices).
+- **Use:** anime/cartoon archival footage upscaling with adjustable denoise strength — gentler on flat cel colors than GAN SR.
+- **Lane note:** Wave 4 Lane D: bilibili's cartoon-first SR — the counterpart to Real-ESRGAN for 2D animated archival sources.
+
+#### DiffBIR ✅
+- **What:** Two-stage blind image restoration — degradation-removal module + Stable-Diffusion generative prior (IRControlNet) for realistic detail regeneration; covers blind SR, face restoration, and denoising.
+- **URL:** https://github.com/XPixelGroup/DiffBIR
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "This project is released under the Apache 2.0 license"; ecosyste.ms license metadata concurs).
+- **Use:** heavy-degradation archival frames where classical SR gives up — generative detail refill for hero restoration shots.
+- **Lane note:** Wave 4 Lane D: the diffusion-restoration option for worst-case archival plates; quality-vs-fidelity control built in.
+
+#### GFPGAN ⚠️ Apache-2.0 code, non-commercial entanglement — verify per use
+- **What:** Blind face restoration with a StyleGAN2 generative facial prior (CVPR 2021); the battle-tested GAN face restorer for degraded archival faces.
+- **URL:** https://github.com/TencentARC/GFPGAN
+- **License:** Apache-2.0 for the GFPGAN code (verified 2026-10-08: upstream https://github.com/TencentARC/GFPGAN/blob/master/LICENSE) BUT its own license appendix flags bundled DFDNet-derived code as CC BY-NC-SA 4.0 and the StyleGAN2 prior under NVIDIA terms — **verify commercial clearance per use**.
+- **Use:** restore degraded faces in archival footage; fast baseline face node for restoration passes.
+- **Lane note:** Wave 4 Lane D: face-restore workhorse for archival plates — honest ⚠️ because the code license alone does not clear the bundled priors.
+
+#### Restormer ✅
+- **What:** Efficient transformer for high-resolution image restoration — one architecture with checkpoints for motion deblur, defocus deblur, denoising, and deraining.
+- **URL:** https://github.com/swz30/Restormer
+- **License:** MIT (verified 2026-10-08: upstream https://github.com/swz30/Restormer/blob/main/LICENSE.md is MIT, per multiple downstream third-party notices).
+- **Use:** deblur and denoise archival footage frames; motion-deblur checkpoint for shaky archival plates.
+- **Lane note:** Wave 4 Lane D: the deblur/denoise transformer for the restoration chain — pairs with SR stages for damaged footage.
+
+#### DeblurGAN-v2 ✅
+- **What:** GAN motion-deblurring (ICCV 2019, VITA-Group) with fast FPN-Inception generator; one forward pass deblurs a frame.
+- **URL:** https://github.com/VITA-Group/DeblurGANv2
+- **License:** BSD-style (verified 2026-10-08: upstream LICENSE reproduces BSD 2-clause redistribution terms, copyright Jun-Yan Zhu and Taesung Park, per Open Model Zoo legal info; ecosyste.ms tags it "other" so the license text was read directly).
+- **Use:** single-frame motion-deblur for shaky archival plates before the SR stage.
+- **Lane note:** Wave 4 Lane D: classical GAN deblur for the damage-repair pass — lightweight compared to transformer deblurrers.
+
+#### MPRNet ✅
+- **What:** Multi-stage progressive image restoration (CVPR 2021) — one network family with pretrained heads for deraining, denoising, and deblurring.
+- **URL:** https://github.com/swz30/MPRNet
+- **License:** MIT (verified 2026-10-08: upstream LICENSE added per maintainer reply to the "missing license file" issue; same author family as MIT-licensed Restormer).
+- **Use:** derain + denoise + deblur archival frames; the all-round damage-repair net for scratched/dusty film frames.
+- **Lane note:** Wave 4 Lane D: multi-damage restoration net — rain/scratch streaks, noise, and blur in one model family.
+
+#### FastDVDnet ✅
+- **What:** Very fast deep video denoising without flow estimation (Tassano et al.) — temporally coherent noise reduction with very low flicker, orders of magnitude faster than DVDnet.
+- **URL:** https://github.com/m-tassano/fastdvdnet
+- **License:** MIT (verified 2026-10-08: upstream README ABOUT section "Licence: MIT", Matias Tassano; downstream project links https://github.com/m-tassano/fastdvdnet/blob/master/LICENSE as MIT).
+- **Use:** temporal denoising of noisy archival video — kills grain flicker without optical flow.
+- **Lane note:** Wave 4 Lane D: the video-native denoiser for the restoration chain; pairs with Real-ESRGAN in the classic smart-upscaler pipeline.
+
+#### DeOldify ✅
+- **What:** Deep-learning colorization and restoration of old images AND video (NoGAN training; artistic/stable/video models); self-trained weights also MIT.
+- **URL:** https://github.com/jantic/DeOldify
+- **License:** MIT (verified 2026-10-08: upstream repo License metadata "MIT License (MIT)"; README: "All code in this repository is under the MIT license" and the pretrained weights are MIT too; repo archived Oct 2024 but live).
+- **Use:** colorize B&W archival footage plates; video colorizer path for entire scenes.
+- **Lane note:** Wave 4 Lane D: the canonical open colorization tool for archival footage — archived but the weights/code remain MIT.
+
+#### DDColor ✅
+- **What:** Photo-realistic image colorization via dual decoders (ICCV 2023, DAMO/Alibaba) — pixel decoder + query-based color decoder on ConvNeXt backbone.
+- **URL:** https://github.com/piddnad/DDColor
+- **License:** Apache-2.0 (verified 2026-10-08: third-party notices file of an old-photo restoration platform: "License: Apache License 2.0 (full text in ddcolor/LICENSE)").
+- **Use:** modern alternative to DeOldify for B&W archival frame colorization with fewer artifacts.
+- **Lane note:** Wave 4 Lane D: the current-generation colorizer for archival plates — pairs with DeOldify for the colorization pass.
+
+#### RestoreFormer++ ✅
+- **What:** Face restoration with a high-quality dictionary/codebook transformer — same CodeFormer family, Apache-2.0 licensed, no StyleGAN2-prior entanglement.
+- **URL:** https://github.com/wzhouxiff/RestoreFormerPlusPlus
+- **License:** Apache-2.0 (verified 2026-10-08: restoration-workflow model stack lists RestoreFormer/RestoreFormer++ as "Apache-2.0" and "commercial-safe").
+- **Use:** commercial-safe face restoration for archival faces where GFPGAN's license caveat bites.
+- **Lane note:** Wave 4 Lane D: the commercial-clean face restorer — the answer to the GFPGAN ⚠️ entanglement.
+
+#### CodeFormer ⚠️ non-commercial (S-Lab License 1.0) — verify per use
+- **What:** Transformer-based face restoration with a learned codebook prior — the most popular/controllable face restorer in the ComfyUI/ReActor ecosystem.
+- **URL:** https://github.com/sczhou/CodeFormer
+- **License:** S-Lab License 1.0 — **non-commercial only** (verified 2026-10-08: licensing survey — "CodeFormer | S-Lab License 1.0 | Non-commercial only | Explicitly requires contacting authors for commercial use").
+- **Use:** reference-quality face restoration for non-commercial archival research; inform heuristics without shipping weights.
+- **Lane note:** Wave 4 Lane D: included with the honest badge — the famous face restorer, blocked from commercial paths by its license.
+
+#### GPEN ⚠️ academic / non-commercial use only — verify per use
+- **What:** GAN Prior Embedded Network for blind face restoration in the wild (Alibaba, CVPR 2021) — 512/1024/2048 face restoration plus colorization and inpainting heads.
+- **URL:** https://github.com/yangxy/GPEN
+- **License:** custom — "© Alibaba, 2021. For academic and non-commercial use only." (verified 2026-10-08: upstream README License section, widely mirrored).
+- **Use:** high-res face restoration reference for research; 1024-color head doubles as a face colorizer.
+- **Lane note:** Wave 4 Lane D: the high-res face restorer — honest ⚠️, academic/non-commercial only.
+
+#### Bringing-Old-Photos-Back-to-Life ✅
+- **What:** Microsoft's old-photo restoration (CVPR 2020 oral) — scratch/dust detection and removal, face enhancement, and global restoration in one pipeline.
+- **URL:** https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life
+- **License:** MIT (verified 2026-10-08: third-party notices of an old-photo restoration platform — "License: MIT License (full text in `LICENSE-Bringing-Old-Photos-Back-to-Life`)").
+- **Use:** scratch/dust removal and face enhancement on scanned archival photo plates before plate ingest.
+- **Lane note:** Wave 4 Lane D: the dedicated old-photo damage-repair tool — scratches, fading, and faces in one MIT package.
+
+#### DeepRemaster ⚠️ non-commercial (CC BY-NC-SA 4.0) — verify per use
+- **What:** Temporal source-reference attention networks for comprehensive video enhancement (SIGGRAPH Asia 2019) — removes film noise, improves contrast/sharpness, and colorizes from manually colored reference frames.
+- **URL:** https://github.com/junjiey66/siggraphasia2019_remastering
+- **License:** CC BY-NC-SA 4.0 (verified 2026-10-08: upstream README License section — "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License").
+- **Use:** reference-guided remaster of vintage footage — research/non-commercial pass; informs in-house heuristics.
+- **Lane note:** Wave 4 Lane D: the canonical vintage-video remastering paper implementation — honest ⚠️ for its NC terms.
+
+#### SpeexDSP ✅
+- **What:** Xiph's DSP library — spectral-subtraction noise suppression, multi-channel acoustic echo cancellation, voice activity detection, and high-quality resampling.
+- **URL:** https://github.com/xiph/speexdsp
+- **License:** BSD (verified 2026-10-08: multiple vendoring projects record "SpeexDSP (Xiph) — BSD license"; BSD-3-Clause per vendored COPYING).
+- **Use:** lightweight noise suppression + resampling for archival dialogue stems and field recordings.
+- **Lane note:** Wave 4 Lane D: the permissive DSP toolkit for dialogue-stem cleanup — no neural weights required.
+
+#### Open-Unmix ✅
+- **What:** Reference implementation for music source separation (UMX) — separates vocals, drums, bass, and "other" from a mix with pretrained PyTorch models.
+- **URL:** https://github.com/sigsep/open-unmix-pytorch
+- **License:** MIT (verified 2026-10-08: upstream README "### License — MIT").
+- **Use:** isolate vocals from archival music beds and mixed stems to recover clean dialogue.
+- **Lane note:** Wave 4 Lane D: MIT source-separation for dialogue extraction — the permissive alternative to proprietary stem splitters.
+
+#### Ultimate Vocal Remover (UVR) ✅
+- **What:** Vocal remover GUI bundling MDX-Net, Demucs, and VR-architecture models for vocal/instrumental separation with a large public model zoo.
+- **URL:** https://github.com/Anjok07/ultimatevocalremovergui
+- **License:** MIT (verified 2026-10-08: upstream README "The Ultimate Vocal Remover GUI code is MIT-licensed"; models under MIT terms with attribution to UVR and its developers).
+- **Use:** extract clean vocal/dialogue stems from archival mixes — the practical workbench for dialogue recovery.
+- **Lane note:** Wave 4 Lane D: the dialogue-stem extraction workbench — MIT code, models usable with attribution.
+
+#### vocal-remover (tsurumeso) ✅
+- **What:** The original VR-architecture vocal remover — lightweight neural vocal/instrumental separation that UVR later built on.
+- **URL:** https://github.com/tsurumeso/vocal-remover
+- **License:** MIT (verified 2026-10-08: audited third-party notices — "License: MIT, copyright 2019 tsurumeso").
+- **Use:** scriptable vocal extraction for batch dialogue-stem cleanup.
+- **Lane note:** Wave 4 Lane D: the original lightweight vocal separator — pairs with UVR for the audio-cleanup lane.
+
+#### BWF MetaEdit ✅
+- **What:** MediaArea tool that embeds, validates, and exports metadata in Broadcast WAVE Format (BWF) files; supports the FADGI Broadcast WAVE Metadata Embedding Guidelines.
+- **URL:** https://github.com/mediaarea/bwfmetaedit
+- **License:** Public domain (verified 2026-10-08: upstream README — "[Public domain](https://mediaarea.net/BWFMetaEdit/License) for the code developed by us").
+- **Use:** validate and embed preservation metadata in archival audio deliverables — the BWF QC step.
+- **Lane note:** Wave 4 Lane D: archival-audio metadata QC — public domain, from the FADGI-funded preservation toolchain.
+
+#### OpenEXR ✅
+- **What:** The motion-picture industry's HDR image storage format — specification + reference implementation for lossless/compressed high-bit-depth archival frames.
+- **URL:** https://github.com/AcademySoftwareFoundation/openexr
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "OpenEXR is released under the BSD-3-Clause license"; ASWF project page concurs).
+- **Use:** archival master container for restored plates — HDR, multi-channel, lossless plate storage.
+- **Lane note:** Wave 4 Lane D: the archival container for restored footage masters — industry-standard, permissively licensed.
+
+<!-- end lane D wave 4 batch 3: photo/audio-restoration + archival QC (8 entries) -->
+<!-- end lane D wave 4 batch 2: deblur/colorize/faces (8 entries) -->
+<!-- end lane D wave 4 batch 1: restoration SR/deblur (8 entries) -->
+
+## Cartoon mouth-swap / viseme performance systems
+
+#### Inochi2D ✅
+- **What:** Open-source 2D puppet animation suite — rig 2D characters with parameterized mouth/eye/head motion and drive them live from webcam face tracking.
+- **URL:** https://github.com/Inochi2D/inochi-creator
+- **License:** BSD-2-Clause (verified 2026-10-08: official FAQ + ecosyste.ms repository metadata).
+- **Use:** build 2D cartoon mouth-swap puppets whose mouths are performed live or from recorded tracking instead of frame-by-frame lip-sync.
+- **Lane note:** Wave 4 Lane D: the flagship open-source 2D mouth-swap performance tool — puppet visemes, not phoneme extraction.
+
+#### StyleHEAT ✅
+- **What:** One-shot high-resolution editable talking-face generation via a pretrained StyleGAN — drive a single portrait with video motion or audio (SadTalker module).
+- **URL:** https://github.com/OpenTalker/StyleHEAT
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file; project moved from FeiiYin/StyleHEAT to OpenTalker).
+- **Use:** generate audio-driven talking-head performance from a single character portrait for stylized talking shots.
+- **Lane note:** Wave 4 Lane D: one-shot audio-driven head performance — portrait in, speaking performance out.
+
+#### FaceFormer ✅
+- **What:** Transformer that autoregressively synthesizes realistic 3D facial-motion sequences (accurate lip movements) from raw audio + a neutral 3D face mesh.
+- **URL:** https://github.com/EvelynFan/FaceFormer
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** generate 3D mouth/face performance curves from dialogue audio, then retarget onto a character rig's blendshapes.
+- **Lane note:** Wave 4 Lane D: audio → 3D facial motion curves — a viseme driver for mesh-based characters rather than a 2D sprite swapper.
+
+#### CodeTalker ✅
+- **What:** Speech-driven 3D facial animation via a discrete motion codebook prior — raw audio + neutral face template in, vivid 3D facial motion with accurate lips out.
+- **URL:** https://github.com/Doubiiu/CodeTalker
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** audio-driven 3D face performance for dialogue shots; ships a Colab demo for quick voice-to-face-motion tests.
+- **Lane note:** Wave 4 Lane D: codebook-prior viseme synthesis — pairs with FaceFormer as the 3D audio-to-face-motion tier.
+
+#### GeneFace ✅
+- **What:** Generalized high-fidelity audio-driven 3D talking-face synthesis (ICLR 2023) — NeRF-based renderer driven by pitch-aware audio-to-motion landmarks.
+- **URL:** https://github.com/yerfor/GeneFace
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** synthesize talking-head video from a target person video + new dialogue audio; real-time-capable RAD-NeRF renderer.
+- **Lane note:** Wave 4 Lane D: the NeRF talking-head performance system — same authors' GeneFace++ also released upstream.
+
+#### LatentSync ⚠️ Apache-2.0 code, weight/model chain — verify per use
+- **What:** Audio-conditioned latent diffusion that re-syncs the mouth region of existing video to new audio, preserving identity and context.
+- **URL:** https://github.com/bytedance/LatentSync
+- **License:** Apache-2.0 for the code (verified 2026-10-08: repo metadata "License: Apache License 2.0") BUT model weights are OpenRAIL++ and the pipeline requires InsightFace (non-commercial) — **verify per use**.
+- **Use:** re-perform mouth motion on existing footage to match a new dialogue take without re-animating.
+- **Lane note:** Wave 4 Lane D: diffusion mouth-swap on real footage — the honest ⚠️ is the weight chain, not the code.
+
+#### InfiniteTalk ⚠️ Apache-2.0 code, base-model weight terms — verify per use
+- **What:** Unlimited-length audio-driven talking-video generation — sparse-frame video dubbing that syncs lips, head, body, and expressions (image- or video-to-video).
+- **URL:** https://github.com/MeiGen-AI/InfiniteTalk
+- **License:** Apache-2.0 for the code (verified 2026-10-08: upstream LICENSE.txt + repo metadata) BUT built on Wan2.1-I2V base weights under the WAN license — **verify weight terms per use**.
+- **Use:** full-performance dubbing of talking shots to new dialogue audio; streaming mode for long segments.
+- **Lane note:** Wave 4 Lane D: whole-body audio-driven performance, not just lips — code is clean, the base-model license needs a check.
+
+<!-- end lane D wave 4 batch 4: mouthswap part 1 (9 entries; Kalidokit dropped — already in catalog) -->
+#### Hallo2 ⚠️ MIT code, non-commercial dependency chain — verify per use
+- **What:** Long-duration, high-resolution audio-driven portrait animation (ICLR 2025) — image + English audio in, minutes-long talking performance out.
+- **URL:** https://github.com/fudan-generative-vision/hallo2
+- **License:** MIT for the code (verified 2026-10-08: repo metadata + LICENSE file) BUT inference downloads InsightFace models (non-commercial) and SD1.5 weights, and the optional CodeFormer video-SR feature is under S-Lab License 1.0 per the repo README — **verify per use**.
+- **Use:** long-form talking-head performance from a single portrait + dialogue audio; built-in face/background upsampling pass.
+- **Lane note:** Wave 4 Lane D: the long-duration audio-driven performer — honest ⚠️ for the bundled model licenses.
+
+#### X-Portrait ⚠️ Apache-2.0 code, SD-derived weights — verify per use
+- **What:** Expressive portrait animation with hierarchical motion attention (SIGGRAPH 2024) — transfer head pose and detailed facial expression from a driving video onto a reference portrait.
+- **URL:** https://github.com/bytedance/X-Portrait
+- **License:** Apache-2.0 for the code (verified 2026-10-08: repo metadata + LICENSE.txt) BUT checkpoints are SD1.5-derived — **check CreativeML OpenRAIL-M terms per use**.
+- **Use:** video-driven face performance transfer — perform the mouth/face on camera, transfer it onto the character portrait.
+- **Lane note:** Wave 4 Lane D: performance-transfer rather than audio-driven — the puppeteer's own face becomes the mouth-swap source.
+
+#### DECA ⚠️ non-commercial scientific research only
+- **What:** Detailed Expression Capture and Animation (SIGGRAPH 2021) — reconstructs an animatable detailed 3D face (FLAME-based) with disentangled expression parameters from in-the-wild images.
+- **URL:** https://github.com/YadiraF/DECA
+- **License:** "This code and model are available for non-commercial scientific research purposes" (verified 2026-10-08: upstream README License section) — ⚠️.
+- **Use:** capture expression/mouth parameters from reference footage to drive character-face animation in research/pipeline prototyping.
+- **Lane note:** Wave 4 Lane D: expression-capture tier for viseme performance — NC terms keep it research-side only.
+
+#### EMOCA ⚠️ non-commercial scientific research only
+- **What:** Emotion-driven monocular face capture and animation (CVPR 2022) — reconstructs 3D faces with emotion-detailed expressions, built on DECA.
+- **URL:** https://github.com/radekd91/emoca
+- **License:** "available for non-commercial scientific research purposes" (verified 2026-10-08: upstream README License section) — ⚠️.
+- **Use:** emotion-aware facial performance capture; expression coefficients feed mouth/face animation in non-commercial pipeline work.
+- **Lane note:** Wave 4 Lane D: EMOCA's expression detail is the viseme-quality upgrade over plain landmark tracking — NC-licensed.
+
+#### LIA ⚠️ CC BY-NC 4.0
+- **What:** Latent Image Animator — animates images via latent-space navigation (ICLR 2022); driving-video motion transferred onto a source portrait.
+- **URL:** https://github.com/wyhsirius/LIA
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: third-party THIRD_PARTY_NOTICES citing the upstream license text) — ⚠️.
+- **Use:** video-driven portrait performance for previz and non-commercial talking-character tests.
+- **Lane note:** Wave 4 Lane D: lightweight latent-space performance transfer — NC keeps it out of commercial shots.
+
+#### PersonaLive ⚠️ Apache-2.0 code, academic-research-only disclaimer
+- **What:** Real-time, streamable diffusion framework for expressive portrait image animation (CVPR 2026) — infinite-length portrait performance with online inference and webcam mode.
+- **URL:** https://github.com/GVCLab/PersonaLive
+- **License:** Apache-2.0 per repo metadata BUT README disclaimer states "This project is released for academic research only" (verified 2026-10-08: upstream README) — **verify per use**.
+- **Use:** live-streamed talking-character performance from a portrait; research reference for real-time mouth-swap pipelines.
+- **Lane note:** Wave 4 Lane D: the live-performance end of the spectrum — real-time webcam-driven portrait animation.
+
+#### PIRender ⚠️ CC BY-NC 4.0
+- **What:** Controllable portrait image generation via semantic neural rendering (ICCV 2021) — drive face motion with disentangled 3DMM parameters, including audio-driven facial reenactment.
+- **URL:** https://github.com/RenYurui/PIRender
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: upstream LICENSE.md) — ⚠️.
+- **Use:** 3DMM-parameter mouth/face performance and audio-driven reenactment for non-commercial talking-head work.
+- **Lane note:** Wave 4 Lane D: 3DMM-coefficient puppet controls — intuitive expression parameters rather than audio black-box.
+
+#### EmoTalk ⚠️ CC BY-NC 4.0
+- **What:** Speech-driven emotional disentanglement for 3D face animation (ICCV 2023) — audio with different emotions in, realistic 3D facial animation with matching emotional expression out; renders via Blender.
+- **URL:** https://github.com/psyai-net/EmoTalk_release
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: README License section; "For commercial licensing, please contact fanzhaoxin@psyai.net") — ⚠️.
+- **Use:** emotion-aware 3D mouth/face performance from dialogue audio; Blender render path fits existing 3D tooling.
+- **Lane note:** Wave 4 Lane D: the emotional-expression tier of audio-driven 3D viseme performance — NC-licensed.
+
+<!-- end lane D wave 4 batch 5: mouthswap part 2 (8 entries) — section complete -->

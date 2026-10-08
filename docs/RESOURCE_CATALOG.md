@@ -30181,3 +30181,183 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** trippedd (music/scores)
 - **Status:** not-started
 - **Notes:** Resolves the ❓ entry with a real license (CC BY-NC-SA 3.0): research/annotation value, no commercial reuse of the archive's materials. Underlying traditional melodies remain PD as melodies. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+### F. Tracker-format docs / format-spec references — Wave 32 Lane A (2026-10-08)
+
+#### XM — Mr.H's xm.txt (FastTracker II official format doc) ❓ terms unverified
+- **What:** The canonical FastTracker II .XM format description by Mr.H (Triton) — the primary source behind every XM loader; distinct from the community "Unofficial XM File Format Specification" already cataloged as ✅ PD.
+- **URL:** widely mirrored in tracker-doc collections (scene.org archives, modland docs); no single canonical URL verified this pass
+- **License:** ❓ No explicit reuse grant found on the mirrors; authorship Mr.H/Triton.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use as the byte-level reference for .XM work; the already-cataloged unofficial spec covers the same ground under a PD grant if redistribution matters. [Wave 32 Lane A]
+
+#### NSF format specification (NESDev wiki) ⚠️ per-wiki terms
+- **What:** The community NSF (NES Sound Format) file-format document hosted on the NESDev wiki — header layout, bankswitching, metadata chunks; the reference for FamiTracker-NSF tooling.
+- **URL:** via NESDev wiki (wiki.nesdev.com); no verbatim URL verified this pass
+- **License:** ⚠️ Per-wiki terms (community documentation, no explicit PD grant).
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the existing NSFPlay ⚠️ entry and the NSF2VGM ❓ converter entry — this is the format DOC those tools implement. [Wave 32 Lane A]
+
+#### VGM format specification (SMS Power) ⚠️ per-site terms
+- **What:** The VGM (Video Game Music) format specification — the master reference for .vgm/.vgz logging format, GD3 tags, and chip command streams; maintained alongside the VGM ripping community.
+- **URL:** via smspower.org (the spec doc; note the site itself is cataloged separately as 🚫 rip-risk — the SPEC is a technical document, not a rip)
+- **License:** ⚠️ Per-site terms; no explicit PD grant on the doc.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read/use as reference; don't conflate with the site's rip archive (separately cataloged 🚫). [Wave 32 Lane A]
+
+#### Furnace — .fur format documentation ⚠️ GPL-repo docs (see quarantine row 271)
+- **What:** Format documentation for Furnace's native .fur song format + the chip-system implementation notes in the Furnace tracker repo (multi-system chiptune tracker: C64, NES, Genesis, PC Engine, arcade chips…).
+- **URL:** https://github.com/tildearrow/furnace (verified Oct 2026)
+- **License:** ⚠️ The repo is GPL-2.0-or-later (quarantine row 271) — the docs live under that roof; the .fur format facts are usable as reference, don't copy doc text verbatim into commercial products.
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** The modern reference for how a current tracker models dozens of chip systems; useful alongside the legacy format docs below. [Wave 32 Lane A]
+
+#### PC DOS tracker format docs — 669 / STM / FAR / ULT / MTM family ❓ terms unverified
+- **What:** The classic scene textfile format docs for the PC DOS tracker family: 669 (Composer 669/Unis669), STM (Scream Tracker 2), FAR (Farandole Composer), ULT (UltraTracker), MTM (MultiTracker) — the formats that bridged MOD into S3M/XM.
+- **URL:** widely mirrored in tracker-doc collections; no single canonical URL verified this pass
+- **License:** ❓ Original authorship scattered across 1990s scene docs; no explicit grants found.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One entry covers the family because the docs cross-reference each other; the Impulse Tracker II manual (archived) lists all five as supported formats. [Wave 32 Lane A]
+
+#### DSMI-era tracker format docs — DMF / AMF / DSM / GDM / PTM / OKT ❓ terms unverified
+- **What:** Format docs for the mid-90s DSMI (Digital Sound Interface Kit) tracker-format cluster: DMF (XTracker/Delusion), AMF (ASYLUM/DSMI), DSM (DSMI), GDM (General DigitalMusic), PTM (PolyTracker), OKT (Oktalyzer) — the "second wave" between S3M and IT/XM.
+- **URL:** widely mirrored in tracker-doc collections; no single canonical URL verified this pass
+- **License:** ❓ Scene-era docs; no explicit grants found.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga-origin formats (OKT) included where the PC tools adopted them; check libxmp/OpenMPT loaders for the executable ground truth. [Wave 32 Lane A]
+
+#### libxmp docs/format.txt ⚠️ version-caveat (repo current-MIT; historical tarballs GPL)
+- **What:** The format-reference docs inside the libxmp repo — per-format loading notes covering 90+ tracker/module formats (the largest single format-coverage reference in one tree).
+- **URL:** https://github.com/libxmp/libxmp (verified Oct 2026)
+- **License:** ⚠️ Version caveat: the catalog's libxmp entry verified MIT from the current upstream README (2026-10-07); pkgsrc still lists GPL-v2 for the 4.7.0 package and old SourceForge tarballs carry GPL-2.0-or-later text — VERIFY THE TARBALL YOU MIRROR, don't assume the repo HEAD terms apply to a release you vendored.
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Use the docs as the format-coverage checklist; cross-ref the existing libxmp ✅ entry. [Wave 32 Lane A]
+
+#### OpenMPT wiki — format development pages ⚠️ per-wiki terms
+- **What:** OpenMPT's developer wiki pages documenting S3M/IT/XM/MOD format internals (e.g. Development:Formats/S3M) — the most actively maintained third-party format notes, used as reference by current decoder projects.
+- **URL:** https://wiki.openmpt.org (verified via decoder-project references, Oct 2026)
+- **License:** ⚠️ Per-wiki terms; no explicit PD grant.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best current secondary source when the 1990s originals are ambiguous; OpenMPT's loaders are the executable companion. [Wave 32 Lane A]
+
+#### foo_gep (kode54) — Game Emu Player ❓ license unverified (author withdrew)
+- **What:** foobar2000 input plugin decoding AY/GBS/GYM/HES/KSS/NSF/SAP/SGC/SPC/VGM via Game_Music_Emu; the classic way to audition console rips in foobar2000.
+- **URL:** https://gitlab.com/kode54/foo_gep/ (repo, per Hydrogenaudio KB); https://www.foobar2000.org/components/author/kode54 (verified Oct 2026)
+- **License:** ❓ No license found — kode54 removed his plugin repository from his site during a 2024 community dispute (per Hydrogenaudio forum); successor is foo_input_gme by Peter Pawlowski (https://www.foobar2000.org/components/view/foo_input_gme).
+- **Free tier:** Free binary
+- **Repo lane:** trippedd (chiptune/players)
+- **Status:** not-started
+- **Notes:** Use the successor (foo_input_gme) for any new work; foo_gep itself is a ❓ legacy reference. The underlying Game_Music_Emu is separately cataloged (⚠️ LGPL-2.1, quarantined). [Wave 32 Lane A]
+
+#### VGMPlay — documented negative ⚠️ no license file (cross-ref quarantine near-miss §469)
+- **What:** VGM file player (vgmrips/vgmplay → vgmplay-legacy) — the reference VGM playback tool alongside the format spec.
+- **URL:** vgmrips/vgmplay (legacy tree); no verbatim URL verified this pass
+- **License:** ⚠️ No license file and no license text in its README — unverifiable this pass (documented in quarantine near-miss §469); NOT quarantined, cataloged here as a documented negative like NSFPlay.
+- **Free tier:** Free binary/source
+- **Repo lane:** trippedd (chiptune/players)
+- **Status:** not-started
+- **Notes:** Don't embed its code; treat as a standalone reference player only. [Wave 32 Lane A]
+
+#### ASAP (Another Slight Atari Player) ⚠️ GPL-2.0 — quarantined (row 259)
+- **What:** Atari 8-bit music player/emulator (SAP/CMS/RMT formats) — the reference Atari chiptune playback stack.
+- **URL:** upstream (cross-ref quarantine row 259)
+- **License:** ⚠️ GPL-2.0 — quarantined; see LICENSE_QUARANTINE.md row 259. Standalone-tool use only, never linked into shipping code.
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (chiptune/players)
+- **Status:** not-started
+- **Notes:** Catalog cross-ref for the quarantine row so the player is discoverable in the catalog with its quarantine status visible. [Wave 32 Lane A]
+
+#### S3M format spec — audit ⚠️ official Future Crew doc, mirrored, no explicit grant
+- **What:** "Scream Tracker 3.20 File Formats And Mixing Info" — the OFFICIAL S3M documentation by Future Crew (Psi/Sami Tammilehto), plus community mirrors (MultimediaWiki, Kaitai specs, modern decoder-project docs).
+- **URL:** archived at https://dn721907.ca.archive.org/0/items/future-music-cd-december-1995/BUDGET/SC_TRACK/TECH.pdf (Future Music CD archive; verified Oct 2026)
+- **License:** ⚠️ The doc itself opens by noting it "finally contains the OFFICIAL information" and warns of possible errors; no explicit reuse grant from Future Crew — widely mirrored with informal status.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry: use the Future Crew original as primary, OpenMPT wiki + st3play as tie-breakers for ambiguities (per current decoder-project practice). Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Impulse Tracker IT format — audit ⚠️ ITTECH.TXT by Jeffrey Lim, informal licensing
+- **What:** ITTECH.TXT — the canonical Impulse Tracker format spec by Jeffrey Lim, distributed with the IT 2.14 release; mirrored in the Schism Tracker and OpenMPT source trees.
+- **URL:** mirrored in https://github.com/schismtracker/schismtracker and https://github.com/OpenMPT/openmpt (verified via decoder-project docs, Oct 2026)
+- **License:** ⚠️ "The licensing on the document is informal at best" (per a current decoder project's notes) — no explicit grant from Lim; note Lim released the IT *source* under BSD in 2014, but the spec doc's terms remain informal.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Best long-tail tooling of any tracker format precisely because Lim shipped the spec + player source. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### SPC700 (SNES SPC) format doc — audit ❓ authorship unconfirmed
+- **What:** The widely-mirrored SPC700/SPC format documentation for SNES sound-file structure.
+- **URL:** widely mirrored in tracker-doc and SNES-dev collections; no single canonical URL verified this pass
+- **License:** ❓ Authorship and terms unconfirmed on the mirrors checked — treat as informal community doc.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Honest negative: checked, still no verifiable grant. Use alongside the SPC sections of the VGMPF wiki and emulator source. [Wave 32 Lane A]
+
+#### PSID / SID format specification — audit ❓ per-HVSC, no blanket grant
+- **What:** The PSID (PlaySID) format specification documents underpinning the HVSC C64 SID-tune archive.
+- **URL:** via HVSC documentation channels; no single canonical URL verified this pass
+- **License:** ❓ Per-HVSC documentation terms; no blanket reuse grant found.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Honest negative: checked, still no verifiable grant. Pairs with the DeepSID ❓ archive entry. [Wave 32 Lane A]
+
+#### SNDH — audit ❓ terms unverified
+- **What:** The SNDH (Atari ST chiptune) format documentation.
+- **URL:** widely mirrored in Atari ST scene-doc collections; no single canonical URL verified this pass
+- **License:** ❓ Terms unverified — authorship scattered across ST-scene docs.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Honest negative: checked, still no verifiable grant. The executable ground truth is the SNDH player sources. [Wave 32 Lane A]
+
+#### 2SF / GSF format documentation — audit ❓ terms unverified
+- **What:** Format documentation for 2SF (Nintendo DS) and GSF (Game Boy Advance) sequenced-music rips.
+- **URL:** scattered across chiptune-dev wikis; no single canonical URL verified this pass
+- **License:** ❓ Terms unverified.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Honest negative: checked, still no verifiable grant. Note the formats themselves are rip-adjacent (see the 🚫 entries for rip archives). [Wave 32 Lane A]
+
+#### MED / OctaMED format documentation — audit ❓ terms unverified
+- **What:** Format documentation for MED/OctaMED (Amiga tracker) modules.
+- **URL:** widely mirrored in Amiga-doc collections; no single canonical URL verified this pass
+- **License:** ❓ Terms unverified — note OctaMED itself is commercial (RBF Software, separately cataloged 🚫).
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Honest negative: checked, still no verifiable grant. [Wave 32 Lane A]
+
+#### AHX (Abyss' Highest Experience) format documentation — audit ❓ terms unverified
+- **What:** Format documentation for the AHX synth-tracker format (Amiga).
+- **URL:** widely mirrored in Amiga-doc collections; no single canonical URL verified this pass
+- **License:** ❓ Terms unverified.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (chiptune/formats)
+- **Status:** not-started
+- **Notes:** Honest negative: checked, still no verifiable grant. [Wave 32 Lane A]

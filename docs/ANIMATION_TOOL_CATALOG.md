@@ -4159,3 +4159,82 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 4 Lane A: the deterministic-solver engine — stable secondary takes you can re-render frame-identically.
 
 <!-- end lane A wave 4 batch 3: physics engines (12 entries) -->
+
+#### MuJoCo ✅
+- **What:** Multi-Joint dynamics with Contact — DeepMind's general-purpose physics simulator (C/C++ with C API, Python bindings, Unity plugin, WASM) for articulated structures; MJCF scene language, MJX JAX branch.
+- **URL:** https://github.com/google-deepmind/mujoco
+- **License:** Apache-2.0 (verified 2026-10-08: GitHub repo page License field + README "## License and Disclaimer — Source code is licensed under the Apache License, Version 2.0").
+- **Use:** high-fidelity offline secondary motion — tendon/spring-driven hair and soft-tissue jiggle on articulated character models via Python bindings; bake to curves.
+- **Lane note:** Wave 4 Lane A: the research-grade articulated-body engine — spring/tendon secondary dynamics with Python batch baking.
+
+#### Project Chrono ✅
+- **What:** Open-source C++ multi-physics package (Wisconsin) — rigid/flexible multibody systems, deformable bodies (FEA), granular dynamics, fluid-solid interaction; Python and C# APIs.
+- **URL:** https://github.com/projectchrono/chrono
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "Distributed under a permissive BSD license"; project FAQ "released under a BSD-3 license").
+- **Use:** deformable-body (FEA) squash on cartoon characters — compliant shells/beams for jello-style volume jiggle baked offline via the Python API.
+- **Lane note:** Wave 4 Lane A: FEA deformable bodies under BSD-3 — the continuum-mechanics route to true squash-and-stretch.
+
+#### Taichi ✅
+- **What:** Python-embedded parallel programming language (LLVM JIT → GPU/CPU) built for high-performance numerical simulation — MPM, fluids, elastic bodies, differentiable physics in a few lines of Python.
+- **URL:** https://github.com/taichi-dev/taichi
+- **License:** Apache-2.0 (verified 2026-10-08: LinuxLinks listing "License: Apache License 2.0"; AUR python-taichi "Licenses: Apache-2.0"; MIT CSAIL open-source page "Apache-2.0 license").
+- **Use:** write custom GPU cloth/soft-body/jiggle solvers in Python for cartoon secondary motion (MPM jelly, mass-spring capes) and bake the sim to animation curves.
+- **Lane note:** Wave 4 Lane A: programmable GPU physics in Python — custom squash-stretch solvers without writing CUDA.
+
+#### verlet-js ✅
+- **What:** Simple Verlet-integration physics engine in JS — particles, distance constraints, angular constraints; ships cloth and spiderweb examples from three primitives.
+- **URL:** https://github.com/subprotocol/verlet-js
+- **License:** MIT (verified 2026-10-08: upstream README "## License — You may use verlet-js under the terms of the MIT License (See LICENSE)").
+- **Use:** tiny embeddable 2D cloth/hair solver for web tooling — constraint-net capes and wobble props baked from the cloth example's primitives.
+- **Lane note:** Wave 4 Lane A: three-primitive Verlet cloth = the smallest possible jiggle backend.
+
+#### three-vrm ✅
+- **What:** VRM avatar runtime for three.js — loader, humanoid, expressions, lookAt, and (pocket-relevant) `@pixiv/three-vrm-springbone`: verlet/spring-bone dynamics for hair, skirts, and accessories.
+- **URL:** https://github.com/pixiv/three-vrm
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + ecosyste.ms "License: mit").
+- **Use:** spring-bone secondary motion on three.js character previews — drive hair/cape jiggle from animation curves in web-based rig review tools.
+- **Lane note:** Wave 4 Lane A: production spring-bone implementation (hair/skirt dynamics) in the three.js stack.
+
+#### UniVRM ✅
+- **What:** glTF-based VRM format implementation for Unity — VRM 0.x/1.0 import/export UPM packages with the canonical VRM spring-bone secondary-motion system.
+- **URL:** https://github.com/vrm-c/UniVRM
+- **License:** MIT (verified 2026-10-08: upstream README "## License — [MIT License](./LICENSE.txt)").
+- **Use:** reference spring-bone implementation for Unity-adjacent pipelines — study/tune stiffness/damping/collider setups for cartoon hair and costume jiggle.
+- **Lane note:** Wave 4 Lane A: the canonical VRM spring-bone system — the spec the whole anime-jiggle ecosystem implements.
+
+#### KawaiiPhysics ✅
+- **What:** Simple bone-physics plugin for Unreal Engine 4/5 — spring/constraint-driven secondary motion on bones (hair, skirts, accessories) with limits, colliders, XPBD bone constraints, and wind forces.
+- **URL:** https://github.com/pafuhana1213/kawaiiphysics
+- **License:** MIT (verified 2026-10-08: upstream README "## License — [MIT License](.../blob/master/LICENSE)").
+- **Use:** UE-side reference for secondary-motion tuning — XPBD bone constraints and collider limits show how to keep cartoon jiggle stable on fast moves.
+- **Lane note:** Wave 4 Lane A: UE's beloved open jiggle solver with XPBD constraints — the stability reference for spring bones.
+
+#### JigglePhysics ✅
+- **What:** Relativistic squash-and-stretch jigglebone physics for Unity — per-bone AND per-vertex squash/stretch, acceleration-based solve (elevators don't break it), animated-skeleton target poses, ScriptableObject configs.
+- **URL:** https://github.com/naelstrof/JigglePhysics
+- **License:** MIT (verified 2026-10-08: third-party notice "Jiggle Rig code developed by naelstrof under MIT License: https://github.com/naelstrof/JigglePhysics").
+- **Use:** study the per-vertex squash-and-stretch formulation for GPU-side secondary motion; acceleration-based solve is the fix for moving-platform jiggle bugs.
+- **Lane note:** Wave 4 Lane A: per-vertex squash-and-stretch is literally the pocket's namesake feature, MIT-licensed.
+
+#### godot-jigglebones ✅
+- **What:** Godot 4 editor addon bringing jigglebones — spring-driven secondary bones for hair/capes/props with editor tooling; the Godot-native answer to Dynamic Bone.
+- **URL:** https://github.com/yaelatletl/godot-jigglebones
+- **License:** MIT (verified 2026-10-08: upstream README "# License — MIT" + LICENSE file per DeepWiki).
+- **Use:** secondary motion on Godot character rigs — spring bones for cartoon hair/capes that can be baked or played live in Godot-based previz.
+- **Lane note:** Wave 4 Lane A: Godot's open jigglebone addon — the engine-native secondary-motion route.
+
+#### Ozz Animation ✅
+- **What:** Open-source C++ skeletal animation library and toolset — fast runtime sampling, blending, IK hooks, and offline processing tools for game-ready animation pipelines.
+- **URL:** https://github.com/guillaumeblanc/ozz-animation
+- **License:** MIT (verified 2026-10-08: upstream README "## License — ozz-animation ... distributed under the MIT License (MIT)").
+- **Use:** runtime layer for baked secondary motion — additive jiggle/spring clip layers blended under main animation; offline tools bake the procedural passes.
+- **Lane note:** Wave 4 Lane A: the MIT skeletal runtime that carries baked secondary-motion layers into the game.
+
+#### mGear ✅
+- **What:** Rigging/animation framework for Autodesk Maya — modules, tools, and C++ solvers for building production character rigs (v5 eliminated PyMEL deps).
+- **URL:** https://github.com/mgear-dev/mgear
+- **License:** MIT (verified 2026-10-08: upstream README "**MGEAR is under the terms of the MIT License**").
+- **Use:** build spring/secondary control layers into Maya character rigs — the rig-side half of the pipeline: jiggle controls authored in Maya, baked downstream.
+- **Lane note:** Wave 4 Lane A: the rigging framework where secondary-motion controls get authored before baking.
+
+<!-- end lane A wave 4 batch 4: advanced sim + rig secondary motion (11 entries) -->

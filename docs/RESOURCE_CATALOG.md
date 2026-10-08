@@ -34650,3 +34650,265 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Full streaming site in one Go binary (video + chat + fediverse hooks); the sovereign live channel. [Wave 38 Lane A]
+
+### Pocket 4: Public-domain voice/SFX archive tail (voice corpora, sound-event datasets, field-recording archives)
+
+#### FSD50K ⚠️ license-conditional (per-clip CC — filter to CC0/CC-BY)
+- **What:** FSD50K — 51k human-labeled sound-event clips (200 classes, ~100h) from Freesound, for sound-event research and SFX mining
+- **URL:** https://zenodo.org/records/4060432
+- **License:** ⚠️ Mixed per-clip (verified 2026-10-08 via Zenodo API license "other-at" + Zenodo page + the dataset paper: dev set = CC0 14,959 / CC-BY 20,017 / CC-BY-NC 4,616 / CC Sampling+ 1,374 — CC0+CC-BY is 84.7%). Filter to the CC0/CC-BY clips for commercial-safe use; the NC/Sampling+ clips are research-only.
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The largest openly-licensed SFX/event corpus; the per-clip license CSV is the compliance mechanism. [Wave 38 Lane A]
+
+#### UrbanSound8K 🚫 not commercial-safe (CC BY-NC)
+- **What:** UrbanSound8K — 8,732 labeled urban sound clips (10 classes: sirens, drilling, street music…) for urban sound classification
+- **URL:** https://urbansounddataset.weebly.com/urbansound8k.html
+- **License:** 🚫 CC BY-NC (verified via third-party dataset license audit; official site requires a terms agreement). Research only.
+- **Free tier:** free download (terms acceptance)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC bars commercial use — documented so nobody wires it into shipped audio. [Wave 38 Lane A]
+
+#### VCTK ✅ commercial-safe
+- **What:** VCTK — CSTR multi-speaker English speech corpus (110 speakers, ~44h) for TTS/ASR
+- **URL:** https://datashare.ed.ac.uk/handle/10283/3443
+- **License:** ✅ ODC-By 1.0 (verified via third-party dataset license audit citing the Edinburgh DataShare record). Commercial use allowed with attribution.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The standard multi-speaker TTS corpus; attribution required (ODC-By). [Wave 38 Lane A]
+
+#### MLS (Multilingual LibriSpeech) ✅ commercial-safe
+- **What:** MLS — 50k+ hours of read speech across 8 languages (LibriVox-derived), for multilingual ASR
+- **URL:** https://www.openslr.org/94/
+- **License:** ✅ CC BY 4.0 (verified via third-party dataset audit citing OpenSLR 94 + the MLS paper's public-domain-source lineage)
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The multilingual companion to LibriSpeech; attribution required. [Wave 38 Lane A]
+
+#### LibriTTS ✅ commercial-safe
+- **What:** LibriTTS — 585h of English read speech engineered for TTS (clean train/dev/test splits from LibriSpeech)
+- **URL:** https://www.openslr.org/60/
+- **License:** ✅ CC BY 4.0 (verified via third-party dataset audit citing OpenSLR 60)
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** TTS-ready LibriSpeech derivative; attribution required. [Wave 38 Lane A]
+
+#### FLEURS ✅ commercial-safe
+- **What:** FLEURS — 100+ language speech recognition dataset (read sentences, n-way parallel)
+- **URL:** https://huggingface.co/datasets/google/fleurs
+- **License:** ✅ CC BY 4.0 (verified via third-party dataset audit citing the HF dataset card + the FLEURS paper)
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The go-to multilingual eval set; attribution required. [Wave 38 Lane A]
+
+#### GigaSpeech ⚠️ license-conditional (repo Apache-2.0; audio-data terms flagged NC by third-party audit)
+- **What:** GigaSpeech — 10k hours of English speech (podcasts, audiobooks, YouTube) for large-scale ASR
+- **URL:** https://github.com/SpeechColab/GigaSpeech
+- **License:** ⚠️ MIXED SIGNALS — repo code is Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on SpeechColab/GigaSpeech), BUT a third-party dataset audit flags the audio data itself as NC-gated. Do NOT treat the audio as commercial-safe on the repo license alone; verify the data terms before pulling audio.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The honest flag of this pocket: code license ≠ data license. [Wave 38 Lane A]
+
+#### People's Speech ⚠️ license-conditional (license varies by source subset)
+- **What:** People's Speech — 30k+ hours of English speech aggregated from many sources, for ASR training
+- **URL:** https://huggingface.co/datasets/MLCommons/peoples_speech
+- **License:** ⚠️ License varies by source subset (verified via third-party dataset audit: "check the per-file metadata before reuse"). No blanket grant.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Scale is tempting; the per-subset licensing is the compliance work. [Wave 38 Lane A]
+
+#### AISHELL-1 ⚠️ license-conditional (HF apache-2.0 tag; vendor terms not directly verified)
+- **What:** AISHELL-1 — 178h of Mandarin read speech (400 speakers), the standard open Chinese ASR corpus
+- **URL:** https://www.openslr.org/33/
+- **License:** ⚠️ HuggingFace mirrors carry an apache-2.0 tag (verified via third-party audit: "Correct for AISHELL/AISHELL-1 (apache-2.0 tag)"); the vendor's own terms were not directly verified this pass — and the sibling AISHELL-3 has a documented vendor/apache contradiction (see next entry). Verify vendor terms before commercial use.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The cautionary tale of the AISHELL family: the tag says Apache-2.0, the vendor may say otherwise. [Wave 38 Lane A]
+
+#### AISHELL-3 ⚠️ license-contradiction (OpenSLR says Apache-2.0, vendor restricts commerce)
+- **What:** AISHELL-3 — 85h multi-speaker Mandarin TTS corpus
+- **URL:** https://www.openslr.org/93/
+- **License:** ⚠️ CONTRADICTION (verified via third-party audit: "OpenSLR says Apache-2.0, the vendor says '...not in the commerce, if without permission'"). Treat as NOT commercial-safe until the vendor grants permission in writing.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Documented so the Apache-2.0 tag doesn't mislead anyone — the vendor's commerce restriction wins in practice. [Wave 38 Lane A]
+
+#### GigaSpeech2 🚫 not commercial-safe (NC-gated per third-party audit)
+- **What:** GigaSpeech2 — Thai/Indonesian/Vietnamese large-scale speech corpus (follows GigaSpeech 1)
+- **URL:** https://github.com/SpeechColab/GigaSpeech
+- **License:** 🚫 NC-gated (verified via third-party dataset audit: "Both NC-gated" for GigaSpeech 1 and 2). Research only.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Non-Chinese despite the name lineage; NC bars commercial use. [Wave 38 Lane A]
+
+#### MUSAN ✅ commercial-safe
+- **What:** MUSAN — music/speech/noise corpus (~109h) for speech-robustness and augmentation work
+- **URL:** https://www.openslr.org/17/
+- **License:** ✅ CC BY 4.0 (verified 2026-10-08 directly from openslr.org/17: "License: Attribution 4.0 International (CC BY 4.0)". Note: a third-party table claimed CC0/PD — upstream wins, attribution required.)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The standard noise/music augmentation corpus; upstream CC-BY-4.0 verified over the third-party CC0 claim. [Wave 38 Lane A]
+
+#### ESC-50 🚫 not commercial-safe (CC BY-NC 3.0; ESC-10 subset is CC-BY)
+- **What:** ESC-50 — 2,000 labeled environmental recordings (50 classes) for sound classification
+- **URL:** https://github.com/karolpiczak/ESC-50
+- **License:** 🚫 CC BY-NC 3.0 for the full set (verified 2026-10-08 via raw LICENSE: "The dataset as a whole is available under the terms of the Creative Commons Attribution-NonCommercial license"; note: repo moved from karoldvl/ESC-50 — redirect confirmed). The ESC-10 subset is CC-BY 3.0 (commercial-safe with attribution).
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research-only as a whole; the 400-clip ESC-10 subset is the commercial-safe slice. [Wave 38 Lane A]
+
+#### TED-LIUM 3 🚫 not commercial-safe (CC BY-NC-ND 3.0)
+- **What:** TED-LIUM 3 — 452h of TED-talk speech with transcripts, for long-form ASR
+- **URL:** https://lium.univ-lemans.fr/en/ted-lium3/
+- **License:** 🚫 CC BY-NC-ND 3.0 (verified via third-party dataset audit). Research only; no derivatives.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NC-ND is the strictest combo — documented as the honest negative. [Wave 38 Lane A]
+
+#### Lingua Libre ⚠️ license-conditional (CC BY-SA 4.0)
+- **What:** Lingua Libre — Wikimedia France's collaborative spoken-word corpus (310+ languages, words/phrases/sentences)
+- **URL:** https://lingualibre.org/
+- **License:** ⚠️ CC BY-SA 4.0 (verified 2026-10-08 via Wikipedia: "Content license: Creative Commons Attribution-ShareAlike 4.0 International"). Share-alike applies to derivatives — fine for research/reference, conditional for shipped voice work.
+- **Free tier:** free download (via Wikimedia Commons)
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Enormous multilingual word-level corpus; the SA clause is the commercial caveat. [Wave 38 Lane A]
+
+#### Tatoeba audio ⚠️ license-conditional (per-clip; audit finds mostly no-offsite/NC)
+- **What:** Tatoeba — crowdsourced sentence-audio collection (native speakers reading sentences, many languages)
+- **URL:** https://tatoeba.org/
+- **License:** ⚠️ Per-clip, and NOT the clean CC-BY it appears to be (verified via third-party audit: for Mandarin, 98.5% of audio is "No license for offsite use" and 1.4% is CC BY-NC 4.0; sentences are CC BY 2.0 FR). Check each clip's license; most audio cannot leave the site.
+- **Free tier:** free (on-site)
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The audit finding kills the naive "Tatoeba = CC-BY" assumption — documented honestly. [Wave 38 Lane A]
+
+#### Spoken Wikipedia ⚠️ license-conditional (per-file Wikimedia Commons licenses)
+- **What:** Spoken Wikipedia — volunteer-read Wikipedia articles as audio (38GB+ corpora), via Wikimedia Commons
+- **URL:** https://commons.wikimedia.org/wiki/Category:Spoken_Wikipedia
+- **License:** ⚠️ Per-file (Wikimedia Commons licenses: CC0 / CC-BY / CC-BY-SA / GFDL / public domain — varies per recording; a third-party audit found six license variants across 130 English files). Filter per file.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Long-form read speech; the per-file license check is the work. [Wave 38 Lane A]
+
+#### Speech Accent Archive ⚠️ license-conditional (CC-licensed; variant unverified)
+- **What:** Speech Accent Archive — George Mason University's 2,900+ recordings of speakers reading the same English paragraph (200+ native languages; accent research)
+- **URL:** https://accent.gmu.edu/
+- **License:** ⚠️ Released under a Creative Commons license (verified 2026-10-08 via Creative Commons' own blog: "it is all released under a Creative Commons License"), but the specific CC variant was not confirmed this pass — verify before commercial use.
+- **Free tier:** free
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Unique same-text multi-accent data; great for accent-varied crowd VO if the variant checks out. [Wave 38 Lane A]
+
+#### radio aporee ::: maps ⚠️ license-conditional (per-recording CC)
+- **What:** radio aporee ::: maps — Udo Noll's global field-recording soundmap (tens of thousands of location recordings, 74+ days of audio)
+- **URL:** https://aporee.org/
+- **License:** ⚠️ Per-recording Creative Commons (verified 2026-10-08: the upload interface captures license metadata per contribution; Internet Archive mirrors of the radio stream are CC BY-SA 3.0). Check each recording's license.
+- **Free tier:** free streaming/download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The field-recording counterpart to Freesound; per-recording CC is the compliance model. [Wave 38 Lane A]
+
+#### AudioSet ⚠️ license-conditional (metadata CC-BY 4.0; audio via YouTube, rights vary)
+- **What:** AudioSet — Google's 2M-clip sound-event ontology + annotations (632 classes) for machine listening
+- **URL:** https://research.google.com/audioset/
+- **License:** ⚠️ Metadata is CC BY 4.0 and the ontology file is CC BY-SA 4.0 (verified via third-party paper: "AudioSet is distributed under CC BY 4.0 … as a collection of .csv metadata files"; "ontology … separately released under CC BY-SA 4.0"). The AUDIO itself lives on YouTube — rights vary per video and clips rot. The metadata is the commercial-safe part.
+- **Free tier:** free (metadata)
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Use the ontology/labels freely; treat the audio as a research-only fetch. [Wave 38 Lane A]
+
+#### Clotho ⚠️ license-conditional (per-file Freesound licenses)
+- **What:** Clotho — 5k audio-captioning clips (15–30s) with 5 human captions each, sourced from Freesound
+- **URL:** https://zenodo.org/records/4783391
+- **License:** ⚠️ Per-file Freesound licenses, "mostly CreativeCommons with attribution" (verified 2026-10-08 via the Zenodo record's license section + Zenodo API "other-at"; the metadata CSV carries each file's license link). Filter per file.
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Captioned SFX with provenance; the CSV license column is the compliance mechanism. [Wave 38 Lane A]
+
+#### TAU Urban Acoustic Scenes 🚫 not commercial-safe (other-nc)
+- **What:** TAU Urban Acoustic Scenes 2019/2020 — multi-city acoustic scene recordings (metro, park, street, tram) for scene classification
+- **URL:** https://zenodo.org/records/2589280 (2019) · https://zenodo.org/records/3670167 (2020 Mobile)
+- **License:** 🚫 Non-commercial (verified 2026-10-08 directly via Zenodo API: license "other-nc" on both records — this CORRECTS a third-party table that claimed CC-BY 4.0; upstream wins). Research only.
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The direct Zenodo check caught the third-party CC-BY claim as wrong — documented as the honest negative. [Wave 38 Lane A]
+
+#### DEMAND ✅ commercial-safe
+- **What:** DEMAND — multi-channel acoustic noise recordings (16 environments: kitchen, café, traffic…) for noise-robustness work
+- **URL:** https://doi.org/10.5281/zenodo.1227121
+- **License:** ✅ CC BY 4.0 (verified 2026-10-08 directly via Zenodo API: license "cc-by-4.0" — this CORRECTS a third-party table that claimed CC-BY-SA 3.0; upstream wins, attribution required)
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean real-world noise beds for dialogue cleanup and ambience layering. [Wave 38 Lane A]
+
+#### RIRS_NOISES ✅ commercial-safe
+- **What:** RIRS_NOISES — room impulse responses + isotropic/point-source noises (OpenSLR 28) for reverb/noise augmentation
+- **URL:** https://www.openslr.org/28/
+- **License:** ✅ Apache 2.0 (verified 2026-10-08 directly from openslr.org/28: "License: Apache 2.0")
+- **Free tier:** free download
+- **Repo lane:** trippedd (sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Convolution-reverb IRs + noise under Apache-2.0 — the clean augmentation pack. [Wave 38 Lane A]
+
+#### LibriSpeech ✅ commercial-safe
+- **What:** LibriSpeech — 1,000h of 16kHz read English speech (LibriVox audiobooks, segmented/aligned), the standard ASR corpus
+- **URL:** https://www.openslr.org/12/
+- **License:** ✅ CC BY 4.0 (verified 2026-10-08 directly from openslr.org/12: "License: CC BY 4.0")
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The foundational open speech corpus — notably absent from the catalog until this wave; attribution required. [Wave 38 Lane A]
+
+#### DNS-Challenge ⚠️ license-conditional (repo CC-BY-4.0; audio-data terms need verification)
+- **What:** Microsoft DNS Challenge — deep noise suppression challenge data (clean speech + noise, 100s of hours)
+- **URL:** https://github.com/microsoft/DNS-Challenge
+- **License:** ⚠️ Repo is CC-BY-4.0 per GitHub API spdx_id (verified 2026-10-08), but a third-party audit describes the challenge data terms as NC — code license ≠ data license (same pattern as GigaSpeech). Verify the data terms before pulling audio.
+- **Free tier:** free download
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Noise-suppression training data; the data-terms question must be resolved before use. [Wave 38 Lane A]

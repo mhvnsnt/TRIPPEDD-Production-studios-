@@ -58,3 +58,17 @@ character's mouth sprites in the animation tool.
 `proofs/lane-b/PROOFS_LANE_B.md` — Lane B real proof: Static's approved EP02 L1
 line (espeak-ng stand-in VO — documented) -> Rhubarb -> verified timeline JSON,
 SHA-256s, machine-checked coverage/sanity/viseme-set results.
+
+## Wave 2 upgrade — Whisper-class phoneme alignment (Lane B)
+
+`whisper_align_to_timeline.py` — second engine: faster-whisper (MIT) word
+timestamps + CMUdict (`pronouncing`, BSD-3) phones → viseme timeline in the
+same JSON schema, plus a `_meta.json` with words + phone segments.
+`compare_timelines.py` — side-by-side vs Rhubarb (agreement %, boundary MAE).
+`PROOFS_WAVE2_WHISPERX.md` — full proof incl. the documented approximation
+(word-internal phone splits) and honest comparison numbers.
+`make_viseme_charts.py` / `viseme_charts/` — per-character mouth-shape charts
+(Static, Cipher, Sombra Negra, Narrator) for frame-by-frame animator use.
+`docs/ANIMATION_TOOL_CATALOG_LANEB.md` — 44-entry Lane B catalog annex
+(speech→phoneme / forced-alignment / TTS-timing tools, licenses verified
+upstream; coordinator merges into the main catalog).

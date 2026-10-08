@@ -102,7 +102,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** BSD-3-Clause (verified 2026-10-08: CMU Sphinx org repo listing shows BSD-3-Clause).
 - **Use:** fast, tiny-footprint G2P for dictionary extension; good where g2p-seq2seq's TensorFlow weight is too heavy.
 
-#### DSAlign ⚠️ MPL-2.0 — also in RESOURCE_CATALOG (quarantine row 21)
+#### DSAlign ⚠️ MPL-2.0 — also in RESOURCE_CATALOG (quarantine row 45)
 - **What:** Mozilla's archived DeepSpeech forced aligner — text↔audio alignment via CTC; useful for line-level dialogue timing.
 - **URL:** http://github.com/mozilla/DSAlign
 - **License:** MPL-2.0 (verified via GitHub repo metadata). **QUARANTINED per lane rule** — weak copyleft (file-level); RESOURCE_CATALOG treats as commercial-safe with an audit gate.
@@ -114,7 +114,7 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **License:** X11-style permissive (verified via repo README COPYING section: commercial use allowed).
 - **Use:** phonemizer backend option; heavyweight but proven.
 
-#### MaryTTS 🚫 LGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 22)
+#### MaryTTS 🚫 LGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 46)
 - **What:** Multilingual TTS with explicit phoneme output — a G2P/phoneme source for many languages.
 - **URL:** https://github.com/marytts/marytts
 - **License:** LGPL-3.0 (verified: root LICENSE.md is the LGPL-3.0 text). **QUARANTINED** — weak copyleft; scope note pending owner verdict (matches LICENSE_QUARANTINE.md doctrine).
@@ -190,6 +190,74 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 
 ## Dialogue-to-animation / beat timing
 <!-- dialogue timing, beat matching, animatic timing -->
+
+#### librosa ✅ — also in RESOURCE_CATALOG
+- **What:** Python audio/music analysis — mel-spectrograms, MFCCs, onset detection, beat tracking (`librosa.beat.beat_track`), tempo estimation.
+- **URL:** https://github.com/librosa/librosa
+- **License:** ISC (verified via upstream LICENSE).
+- **Use:** beat/downbeat grids for dialogue-to-music timing; onset envelopes for mouth-movement energy; tempo maps for animatic assembly.
+
+#### aubio 🚫 GPL-3.0 — also in RESOURCE_CATALOG (quarantine row 53)
+- **What:** Onset, pitch, beat tracking and tempo — lightweight C library with Python bindings; the classic real-time onset detector.
+- **URL:** https://github.com/aubio/aubio
+- **License:** GPL-3.0 (verified: upstream LICENSE; GitHub API spdx_id GPL-3.0). **QUARANTINED** — standalone-tool use only.
+- **Use:** beat/onset extraction as a separate process; feed timings into animatic timelines via CSV/JSON, never linked.
+
+#### madmom ⚠️ BSD-3-Clause code / NC pretrained models
+- **What:** Python audio/music signal processing (JKU Linz / OFAI) — state-of-the-art RNN/CNN onset detection, beat/downbeat tracking, tempo, chords, with CLI tools.
+- **URL:** https://github.com/CPJKU/madmom
+- **License:** BSD-3-Clause for the CODE (verified 2026-10-08: multiple third-party attributions) — BUT the pretrained beat/onset MODELS are CC-BY-NC-SA-4.0. Commercial pipelines must train their own models or use the algorithms with other weights. Honest badge: ⚠️.
+- **Use:** highest-accuracy beat tracking when the NC-model restriction is acceptable (research/previz), or with self-trained models. Note: official line caps at Python 3.9; community forks (madmom-modern) cover 3.10+.
+
+#### essentia 🚫 AGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 54)
+- **What:** MTG-UPF audio analysis library (C++ core + Python bindings) — 100+ algorithms: onset detection (HFC, complex, flux), beat tracking, tempo, key.
+- **URL:** https://github.com/MTG/essentia
+- **License:** AGPL-3.0 (verified: upstream README license badge). **QUARANTINED** — commercial license available from MTG; standalone-tool use only until audit.
+- **Use:** comprehensive beat/tempo/key analysis as a separate process.
+
+#### BeatNet ✅
+- **What:** CRNN + particle filtering for online joint beat, downbeat and meter tracking (ISMIR 2021, Heydari et al.).
+- **URL:** https://github.com/mjhydri/BeatNet
+- **License:** MIT (verified 2026-10-08: third-party CREDITS attribution lists BeatNet as MIT).
+- **Use:** beat+downbeat+meter in one pass for music-bed timing; good dialogue-to-music sync reference. See also Beat This! (CPJKU, MIT code AND weights) as a newer MIT alternative.
+
+#### BeatRoot 🚫 GPL — research/reference only (quarantine row 55)
+- **What:** Classic audio beat tracking and modelling (Dixon, MIREX 2006 winner) — two-agent tempo/beat synchronisation, audio or MIDI input.
+- **URL:** http://www.eecs.qmul.ac.uk/~simond/beatroot/
+- **License:** GPL (verified 2026-10-08: DAFx paper states the code is "provided as GPL code"; version not pinned in available sources → quarantined as GPL-family). **QUARANTINED**.
+- **Use:** reference/benchmark for beat-tracking quality; standalone use only.
+
+#### pysubs2 ✅ — also in RESOURCE_CATALOG
+- **What:** Python subtitle editing (SRT/ASS/SSA/VTT) — retime, shift, merge, convert; the scriptable subtitle workhorse.
+- **URL:** https://github.com/tkarabela/pysubs2
+- **License:** MIT (verified via upstream README).
+- **Use:** subtitle-to-timing: convert script/dialogue timings into animatic timing sheets; batch-retime dialogue stems to picture.
+
+#### Audacity label tools 🚫 GPL-3.0 — pointer (quarantine row 56)
+- **What:** Audacity's label-track workflow for dialogue timing: Sound Finder / Silence Finder auto-labeling, label-track editing, label-to-file export for splitting dialogue takes.
+- **URL:** https://www.audacityteam.org
+- **License:** GPL-3.0 (verified: upstream LICENSE.txt, GPLv3). **QUARANTINED** — pointer only; Audacity is already quarantined in RESOURCE_CATALOG (row 73).
+- **Use:** interactive dialogue segmentation and label export; manual timing-correction station. Never embed the code.
+
+#### Aegisub ✅ — also in RESOURCE_CATALOG
+- **What:** Subtitle editor with precise timing controls, waveform display, karaoke templating — the timing-authoring station for dialogue.
+- **URL:** https://github.com/TypesettingTools/Aegisub
+- **License:** BSD-3-Clause (verified via Wikipedia license field + snap metadata).
+- **Use:** author/adjust dialogue timings against the animatic; karaoke timing for comedy caption beats.
+
+#### subaligner ✅ — also in RESOURCE_CATALOG
+- **What:** DNN subtitle synchronization + transcription + translation — auto-syncs subtitles to audio.
+- **URL:** https://github.com/baxtree/subaligner
+- **License:** MIT (verified via GitHub repo metadata).
+- **Use:** auto-sync dialogue subtitle files to the final mix; subtitle-to-timing for animatics.
+
+#### whisper-lrc ✅ — also in RESOURCE_CATALOG
+- **What:** Go CLI: audio/YouTube → synced LRC/SRT — one-shot synced lyric/subtitle generation.
+- **URL:** https://github.com/BBleae/whisper-lrc
+- **License:** MIT (verified via README badge).
+- **Use:** quick synced timing files from dialogue audio for animatic assembly.
+
+<!-- end lane A1: dialogue-to-animation / beat timing (11 entries) -->
 
 ## 2D animation / tweening / rigging
 <!-- puppet tools, bone rigs, tween engines -->
@@ -563,11 +631,180 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 ## Sound design / SFX libraries
 <!-- foley, SFX libraries, synth SFX, whooshes/impacts -->
 
+#### Freesound API ⚠️ non-commercial-API
+- **What:** Programmatic search/audition/download of the Freesound collaborative SFX library — scripted whoosh/impact/foley pulls by keyword, license-filtered.
+- **URL:** https://freesound.org/docs/api/terms_of_use.html
+- **License:** API free for NON-COMMERCIAL use only; commercial API use requires negotiated terms with UPF (verified 2026-10-07 via Freesound API Terms of Use). Sounds themselves carry per-file CC licenses (CC0/CC-BY/CC-BY-NC) — badge each download honestly.
+- **Free tier:** free API key (non-commercial); sounds per-license
+- **Dedup:** RESOURCE_CATALOG.md `#### Freesound API (Terms of Use)` (line 8408) + dozens of curated Freesound pack entries — this entry is the animation-catalog API pocket.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### BBC Sound Effects Archive (RemArC) 🚫 no-commercial
+- **What:** 33,000+ BBC archival SFX (1920s–present) in WAV, searchable — unmatched period/foley texture for reference and temp tracks.
+- **URL:** https://github.com/bbcarchdev/Remarc/raw/master/doc/2016.09.27_RemArc_Content%20licence_Terms%20of%20Use_final.pdf
+- **License:** RemArc licence — personal, educational, or research use ONLY; commercial use (incl. monetized video) prohibited without a paid licence via Pro Sound Effects (verified 2026-10-07 via RemArc licence terms + BBC reporting). Excluded from commercial shipping paths.
+- **Free tier:** free download (non-commercial)
+- **Dedup:** RESOURCE_CATALOG.md has `#### BBC Sound Effects Archive` (lines 629, 1888, 4292, 5608) all 🚫 — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 3/5 (reference/temp only) · **Wire-up difficulty:** 1/5
+
+#### Sonniss #GameAudioGDC bundles ✅ commercial-safe
+- **What:** Yearly pro SFX bundles (2026: 7.47 GB; archive 200+ GB): impacts, whooshes, foley, ambience, voices — the single best free commercial-grade SFX source.
+- **URL:** https://gdc.sonniss.com/
+- **License:** Royalty-free, unlimited projects, no attribution, commercial use OK (verified 2026-10-07 via https://sonniss.com/gdc-bundle-license/?disabled). Limits: no redistribution as standalone files/libraries; NO AI/ML training use.
+- **Free tier:** free download (email signup)
+- **Dedup:** RESOURCE_CATALOG.md has Sonniss entries (lines 589, 1908, 3368, 5448, 5458, 12352, 12362, 12372, 13022) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+
+#### 99Sounds ✅ commercial-safe
+- **What:** Curated free SFX/sample libraries (cinematic impacts, braams, risers, whooshes, rain) — production-ready 24-bit WAV packs.
+- **URL:** https://99sounds.org/about/
+- **License:** 100% royalty-free for commercial and non-commercial use (verified 2026-10-07 via 99sounds.org/about). No redistribution/resale as a sound library or virtual instrument.
+- **Free tier:** free download
+- **Dedup:** RESOURCE_CATALOG.md `#### 99Sounds` (line 3308) + pack entries (lines 4116, 4126) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### sfxr ✅ commercial-safe
+- **What:** DrPetter's retro SFX synthesizer — one-click pickup/coin, laser/shoot, explosion generators; WAV export. The chiptune-SFX pocket tool.
+- **URL:** https://github.com/bit69tream/sfxr-sdl2/blob/HEAD/readme.md
+- **License:** MIT — Tomas Pettersson attaches the MIT licence to sfxr ("anything goes", formalised as MIT) (verified 2026-10-07 via the sfxr-sdl2 readme quoting his licence)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### sfxr (Tomas Pettersson)` (line 7184) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### jsfxr ✅ commercial-safe (public domain)
+- **What:** Browser port of sfxr — press-and-export WAV in seconds, no install; fastest "need a blip now" path.
+- **URL:** https://github.com/grumdrig/jsfxr
+- **License:** The Unlicense (public domain) (verified 2026-10-07 via GitHub API license field; UNLICENSE file in repo root)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### jsfxr` (line 8637) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### bfxr ✅ commercial-safe
+- **What:** Increpare's sfxr fork — richer synthesis (mixer, compressor, expanded generators); WAV export.
+- **URL:** https://github.com/increpare/bfxr
+- **License:** Apache-2.0 (verified 2026-10-07 via upstream readme.MD licence line)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### bfxr (increpare)` (line 18366, Apache-2.0 upstream-verified 2026-10-07) — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### ChipTone ✅ commercial-safe (output CC0)
+- **What:** SFBGames' modern sfxr-family generator (HTML5 + Win/Mac): layered retro SFX with sampler/sequencer; WAV export.
+- **URL:** https://sfbgames.itch.io/chiptone
+- **License:** Generated sounds are CC0 — "FREE to use for any purpose, commercial or otherwise" (verified 2026-10-07 via itch.io LICENCE section). NOTE: the app's own source licence is not published — use the tool, don't redistribute the app.
+- **Free tier:** free (browser + downloads)
+- **Dedup:** RESOURCE_CATALOG.md `#### ChipTone (SFB Games)` (line 17204) — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### Chirrp ✅ commercial-safe
+- **What:** Deterministic procedural SFX (Rust): 128 seeded presets incl. whoosh, impact, laser, footstep, ambience, with stereo PCM/WAV rendering — whoosh/transition SFX generated in-pipeline, no asset files.
+- **URL:** https://github.com/steven-moss-notebook/chirrp
+- **License:** Apache-2.0 (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Zapsplat ⚠️ attribution-on-free-tier
+- **What:** 150k+ free SFX + music library with packs (foley, ambience, UI, cartoon) — MP3 on free tier, WAV on paid.
+- **URL:** https://www.zapsplat.com/sound-effect-packs/heatwave/
+- **License:** Standard licence — free-tier downloads REQUIRE attribution and are cleared for commercial productions; no redistribution of raw files (verified 2026-10-07 via zapsplat.com licence pages)
+- **Free tier:** free account (attribution required); premium removes attribution + unlocks WAV
+- **Dedup:** RESOURCE_CATALOG.md Zapsplat entries (lines 3288, 11346, 16412, 18092) — animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### OpenGameArt ⚠️ license-conditional
+- **What:** Community game-asset library with CC0 SFX/music packs (rubberduck sci-fi, klankbeeld ambience, etc.) — per-asset licensing.
+- **License:** Per-asset: CC0 / CC-BY / OGA-BY acceptable; CC-BY-SA and GPL assets EXCLUDED from commercial paths (verified via repo policy used in RESOURCE_CATALOG.md curated packs, lines 4176–4220)
+- **Free tier:** free download
+- **Dedup:** RESOURCE_CATALOG.md has extensive OGA coverage (lines 1642, 4176–4220, 7284, 9218) — no new entry needed beyond this pointer; badge each asset honestly.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### Audacity ⚠️ license-restricted (quarantined)
+- **What:** Multitrack audio editor: record/cleanup/de-noise/de-reverb/level SFX and dialogue stems; Paulstretch for risers; macro batch chains.
+- **URL:** https://github.com/audacity/audacity
+- **License:** GPL-3.0 (verified 2026-10-07 via repo LICENSE.txt raw — NOTE: current Audacity is GPLv3, not GPLv2)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 30 — standalone-app use only.
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md `#### Audacity` (line 4846, QUARANTINED) — consistent; animation-pocket entry.
+- **Repo lane:** trippedd-studio (sound-design pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+
 ## Music beds / scoring
 <!-- royalty-free/PD music, generative music, stems, beat tools for scoring -->
 
 ## Dialogue editing
 <!-- cleanup, de-noise, de-reverb, leveling, breath control for dialogue stems -->
+
+#### RNNoise ✅ — also in RESOURCE_CATALOG
+- **What:** Xiph's RNN-based noise suppression — real-time speech denoising from a tiny neural model; the engine inside many denoisers.
+- **URL:** https://github.com/xiph/rnnoise
+- **License:** BSD-3-Clause (verified: GitHub API spdx_id xiph/rnnoise).
+- **Use:** dialogue cleanup — hiss/hum removal on voice stems; real-time capable for live dialogue cleanup, not just offline restoration.
+
+#### noisereduce ✅ — also in RESOURCE_CATALOG
+- **What:** Spectral-gating noise reduction in pure Python — clean hiss/hum from field recordings with a few lines of code.
+- **URL:** https://github.com/timsainb/noisereduce
+- **License:** MIT (verified: LICENSE file in repo; PyPI also lists MIT).
+- **Use:** the quick-win denoiser for dialogue stems — stationary-noise profile, no training, no GPU.
+
+#### DeepFilterNet ✅ — also in RESOURCE_CATALOG
+- **What:** Deep-learning noise reduction for full-band speech — real-time capable, beats classic spectral gating on non-stationary noise.
+- **URL:** https://github.com/Rikorose/DeepFilterNet
+- **License:** MIT/Apache-2.0 dual (verified: README license section — dual-licensed MIT or Apache-2.0).
+- **Use:** step up from noisereduce when noise is non-stationary (crowds, wind, room tone shifts) on dialogue stems.
+
+#### FFmpeg loudnorm ✅ — also in RESOURCE_CATALOG (already wired)
+- **What:** EBU R128 loudness normalization, two-pass — the `loudnorm` filter; FFmpeg is already wired in the studio pipeline.
+- **URL:** https://github.com/FFmpeg/FFmpeg
+- **License:** LGPL-2.1-or-later (default build; verified via upstream LICENSE.md). Commercial-safe as a CLI/standalone tool.
+- **Use:** level all dialogue stems to broadcast loudness (two-pass JSON measurement → linear normalization); format ladder output (16:9/9:16/1:1) from the same chain.
+
+#### pydub ✅
+- **What:** Simple high-level audio manipulation in Python — trim, concat, convert, fade, normalize via FFmpeg; the glue for dialogue-stem batch jobs.
+- **URL:** https://github.com/jiaaro/pydub
+- **License:** MIT (verified 2026-10-08: GitHub API spdx_id MIT; README License section).
+- **Use:** batch trim/silence-strip/concat of dialogue takes; loudness normalization scripting around the FFmpeg chain.
+
+#### SoX 🚫 GPL-2.0-or-later (quarantine row 57)
+- **What:** "Swiss Army knife of sound processing" — CLI convert + 40+ effects (gain, norm, silence trim, compand, noisered, deesser chains) for dialogue stems.
+- **URL:** http://sourceforge.net/projects/sox/
+- **License:** GPL-2.0-or-later for the sox CLI (libsox is LGPL-2.1-or-later) — verified 2026-10-08 via Wikipedia license field + SourceForge listing + man page. **QUARANTINED** — standalone-process use only.
+- **Use:** silence trimming (`silence`), companding, and gain staging on dialogue stems as a separate process. NOTE: upstream stalled at 14.4.2 (2015); sox_ng is the maintained fork line.
+
+#### Demucs ✅ — also in RESOURCE_CATALOG
+- **What:** Hybrid transformer source separation — isolate the vocal stem from mixed production audio.
+- **URL:** https://github.com/iggue/facebookresearch-demucs
+- **License:** MIT (verified).
+- **Use:** rescue dialogue buried under music/SFX — extract clean vocal stems for re-editing.
+
+#### Spleeter ✅ — also in RESOURCE_CATALOG
+- **What:** Deezer's 2/4/5-stem separation (vocals/accompaniment) — fast pretrained vocal isolation.
+- **URL:** https://github.com/deezer/spleeter
+- **License:** MIT (verified).
+- **Use:** quick vocal-stem extraction from mixed dialogue recordings; lighter/faster than Demucs for rough passes.
+
+#### Breath removal ✅ (technique + tool chain)
+- **What:** Removing breaths between dialogue lines — spectral-gating the breath bands, or manual spectral-delete; the difference between amateur and broadcast dialogue.
+- **URL:** n/a (technique; implemented with the tools in this section).
+- **License:** n/a — technique. Tool pieces: noisereduce (MIT) spectral gating, FFmpeg `silenceremove`/`afftdn` (LGPL), Audacity spectral delete (GPL — quarantined, manual station only).
+- **Use:** dialogue-stem pass: gate breaths in pauses, keep natural breaths inside emotional reads (full removal sounds robotic — comedy reads keep some).
+
+#### Click removal ✅ (technique + tool chain)
+- **What:** Removing mouth clicks, pops, and digital clicks from dialogue — interpolation over detected transients.
+- **URL:** n/a (technique; implemented with the tools in this section).
+- **License:** n/a — technique. Tool pieces: FFmpeg `adeclick`/`adenoise` filters (LGPL), SoX `noisered` profiles (GPL — quarantined process), Audacity Click Removal (GPL — quarantined, manual station only).
+- **Use:** dialogue-stem pass after denoise: de-click before loudnorm so transients don't skew the measurement.
+
+<!-- end lane A1: dialogue editing (10 entries) -->
 
 ## Final encode / delivery
 <!-- mastering, loudness, format ladders (16:9/9:16/1:1), platform delivery specs -->

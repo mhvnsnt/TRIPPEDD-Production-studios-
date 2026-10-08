@@ -37362,3 +37362,393 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Standards-side SCTE-224 structs; pairs with the POIS reference server above. [Wave 41 Lane A]
+
+#### Ha22yX/sensevoice-subtitle-generator — local SenseVoice subtitle generator with SDH mode ✅ commercial-safe
+- **What:** sensevoice-subtitle-generator — Gradio web app generating timed subtitles (SRT/VTT) locally via SenseVoice + sherpa-onnx; exclusive accessibility SDH mode annotates sounds/emotions ([Applause], [Laughter]) with emotion-colored ASS output; optional ffmpeg burn-in.
+- **URL:** https://github.com/ha22yx/sensevoice-subtitle-generator
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 100% local (no API key, no network); the SDH/emotion-annotation angle is unique among OSS caption tools — directly serves the accessibility caption lane. [Wave 42 Lane A]
+
+#### quanghuybest2k2/vietsub — offline Vietnamese subtitle generator (faster-whisper + NLLB) ✅ commercial-safe
+- **What:** vietsub — PySide6 desktop app: faster-whisper offline transcription, NLLB-200 translation (EN/JA/ZH/KO/TH/ID → VI), SRT export or ffmpeg burn-in, TTS voice-over generation.
+- **URL:** https://github.com/quanghuybest2k2/vietsub
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Niche (Vietnamese-targeted) but the architecture — offline ASR + NLLB + burn-in — is a reusable template for other language pairs. [Wave 42 Lane A]
+
+#### 2025atbd/oneclick-subtitles-generator — all-in-one AI subtitle/translate/voice-clone studio ✅ commercial-safe
+- **What:** oneclick-subtitles-generator — local + hosted subtitle studio: Gemini/Parakeet transcription, context-aware translation, F5-TTS/Chatterbox voice cloning, Remotion GPU rendering, AI background music; visual timeline editor.
+- **URL:** https://github.com/2025atbd/oneclick-subtitles-generator
+- **License:** MIT (verified 2026-10-08 via README-hosted grant — "MIT License" section; GitHub API spdx null = detection gap)
+- **Free tier:** free and open source (local install ~2-3 GB); hosted Vercel tier (Gemini transcription only)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Heaviest OSS caption tool found this wave; the Remotion render path is the interesting pipeline piece. License lives in README, not a LICENSE file (cf. the unpaper Wave-40 precedent). [Wave 42 Lane A]
+
+#### Subtitles.Love — freemium auto-caption SaaS, free plan ⚠️ proprietary SaaS — terms via aggregator
+- **What:** Subtitles.Love — browser auto-caption tool: automatic captions in 20+ languages, caption text/timing editor, simple style editor, video resizing; SRT download on paid tiers.
+- **URL:** https://subtitles.love (pricing: https://www.saasworthy.com/product/subtitles-love/pricing)
+- **License:** Proprietary SaaS — commercial terms per ToS unverified (verified 2026-10-08 via Saasworthy pricing page; official pricing page not fetched)
+- **Free tier:** Free plan — 1 video, automatic captions, caption editor, 20+ languages. Light $5/mo (no watermark, 1080p, video resizing)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cheapest paid tier in the caption-SaaS long tail ($5/mo); the free plan is a trial in practice. [Wave 42 Lane A]
+
+#### AHD Subtitles Maker — freeware Windows subtitle creator ⚠️ proprietary freeware
+- **What:** AHD Subtitles Maker — lightweight free Windows program: audio transcription to text, multi-language support, subtitle preview/editing, caption synchronization; exports for Adobe Encore, DVD subtitles, Final Cut Pro.
+- **URL:** (locate via search — no canonical site confirmed 2026-10-08)
+- **License:** Proprietary freeware (verified 2026-10-08 via riverside.com closed-captioning roundup; no license text found)
+- **Free tier:** free (Windows only)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No canonical download site confirmed — get it from a trusted source only (see Wave 17 subtitle-freeware hygiene note). DVD/Encore export formats are its distinctive value. [Wave 42 Lane A]
+
+#### Savesubs — free YouTube/multi-site subtitle downloader + editor ❓ ToS unverified
+- **What:** Savesubs (savesubs.com) — paste a video URL (YouTube, Facebook, Dailymotion, Viki + more), extract caption tracks, edit timing/wording in-browser, download SRT/VTT/TXT; no account, no cap stated.
+- **URL:** https://savesubs.com
+- **License:** ❓ — proprietary web tool per AlternativeTo; ToS not fetched (verified 2026-10-08 via site FAQ + alternativeto.net)
+- **Free tier:** free, no account, no daily cap stated
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the cataloged DownSub entry (same niche); in-browser editor + translate-before-download is the differentiator. [Wave 42 Lane A]
+
+#### SubDL — community subtitle database with AI translation upsell ❓ per-upload rights
+- **What:** SubDL (subdl.com) — subtitle search/download for movies + full TV seasons; community uploads grouped by release name, free SRT download, no account; AI auto-translate behind upgrade.
+- **URL:** https://subdl.com
+- **License:** ❓ — per-upload rights (verified 2026-10-08 via site pages; no blanket grant)
+- **Free tier:** free downloads, no account
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Subtitle-download ecosystem hygiene applies (Wave 17 Lane B) — canonical site only, ad-block on. [Wave 42 Lane A]
+
+#### YIFYSubtitles — YIFY-release subtitle archive ❓ per-upload rights
+- **What:** YIFYSubtitles (yifysubtitles.org) — subtitles matched to YIFY/YTS movie releases, multi-language, free download.
+- **URL:** https://yifysubtitles.org (locate via search before use)
+- **License:** ❓ — per-upload rights (verified 2026-10-08 via aggregator listings; no blanket grant)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Release-name-matched subs (like SubDL) — useful when timing must match a specific encode. Same ecosystem hygiene as SubDL. [Wave 42 Lane A]
+
+#### SubtitleTools — free online subtitle fix/convert/sync toolkit ❓ ToS unverified
+- **What:** SubtitleTools (subtitletools.com) — no-install web toolkit: SRT/WebVTT converters, SUP→SRT and SUB/IDX→SRT OCR converters, subtitle shifters, SRT cleaner, UTF-8 fixer, subtitle merger, extract-embedded-subtitles, timed-lyrics editor; ~337k uses/30d per site counter.
+- **URL:** https://subtitletools.com
+- **License:** ❓ — free web utility; ToS not fetched (verified 2026-10-08 via site)
+- **Free tier:** free, no account
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The SUP/SUB-IDX→SRT OCR converters fill a gap in the OSS caption lane (most OSS tools only handle text formats). High-traffic, long-running site. [Wave 42 Lane A]
+
+#### Bluedot — bot-free AI meeting recorder, 5 meetings free lifetime ⚠️ proprietary SaaS — pricing verified
+- **What:** Bluedot (bluedot.me) — Chrome-extension/desktop meeting recorder that joins no bot; records, transcribes (100+ languages), summarizes with AI notes, action items, screen recorder + AI video editor (filler-word removal via transcript).
+- **URL:** https://www.bluedot.me (pricing: https://www.bluedothq.com/pricing)
+- **License:** Proprietary SaaS (verified 2026-10-08 via getvoibe.com + circleback.ai pricing roundups; official pricing page not fetched)
+- **Free tier:** 5 meetings lifetime (1 hr max each); Basic $14/mo annual (audio-only), Pro $20/mo annual (video)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bot-free capture is the differentiator vs Otter/Fireflies (both cataloged); the transcript-driven video editor overlaps the promo-kit edit lane. Free tier is a trial in practice. [Wave 42 Lane A]
+
+#### OpenSubtitles.org — subtitle download database + API ⚠️ per-upload rights, ecosystem hygiene applies
+- **What:** OpenSubtitles.org — long-running subtitle database (millions of users, daily uploads, multi-language, API available); the opensubtitles-api npm package is already cataloged/quarantined (row 108).
+- **URL:** https://www.opensubtitles.org
+- **License:** ⚠️ per-upload rights; no blanket grant (verified 2026-10-08 via aggregator listings)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cataloged here as the SITE (the API wrapper is row 108). Wave 17 Lane B hygiene applies: forum threads document malvertising redirects in this ecosystem — canonical domain only, ad-block on. [Wave 42 Lane A]
+
+#### Rainwave — volunteer VGM/chiptune radio, 5 stations ❓ stream terms
+- **What:** Rainwave (rainwave.cc) — volunteer-run internet radio (est. 2009, Canada): 5 channels (Game, OC ReMix, Covers, Chiptune, All); listener voting shapes programming; artist interviews.
+- **URL:** https://rainwave.cc
+- **License:** ❓ — stream-only; no reuse grant (verified 2026-10-08 via allradio.net + project listings)
+- **Free tier:** free stream
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The dedicated Chiptune channel is the demoscene-music discovery complement to SceneSat/Nectarine (both cataloged). Stream-only — no download/reuse. [Wave 42 Lane A]
+
+#### Nightride FM — synthwave community radio, 320kbps ❓ stream terms
+- **What:** Nightride FM (nightride.fm) — independent synthwave/retrowave community radio (est. 2018): 4 stations (synthwave, darksynth, EBM/industrial, DnB), 320kbps, live DJ sets, artist interviews, Discord/IRC community, YouTube livestreams.
+- **URL:** https://nightride.fm
+- **License:** ❓ — stream-only; no reuse grant (verified 2026-10-08 via Play Store listing + site)
+- **Free tier:** free stream, ad-free (Patreon-supported)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Synthwave is demoscene-adjacent (shared retro-synth DNA); useful as scored-temp reference, not source material. [Wave 42 Lane A]
+
+#### ThaSauce — VGM remix news portal + remix database ❓ per-track rights
+- **What:** ThaSauce (thasauce.net) — video-game-remix community: news portal, ReMix:ThaSauce database (hundreds of free MP3 remixes), Compo:ThaSauce composition competitions; MAGFest community partner.
+- **URL:** https://thasauce.net
+- **License:** ❓ — per-track rights (verified 2026-10-08 via site)
+- **Free tier:** free MP3 downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements the cataloged OC ReMix entry (same scene, smaller community); the compo system is a talent-discovery channel. [Wave 42 Lane A]
+
+#### FFShrine — video-game music download archive ❓ per-item rights
+- **What:** FFShrine (ffshrine.org) — long-running VGM download archive/forum: game soundtracks and remixes.
+- **URL:** https://ffshrine.org (verified live 2026-10-08, HTTP 200)
+- **License:** ❓ — per-item rights; no blanket grant
+- **Free tier:** free downloads (forum)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the cataloged KHInsider entry (same niche); verify per-item rights before any reuse. [Wave 42 Lane A]
+
+#### Plus/4 World — Commodore Plus/4 preservation archive ❓ per-release rights
+- **What:** Plus/4 World (plus4world.powweb.com) — passion-project archive since 1999: complete Plus/4/C16/C116 software database (games, demos, tools) with downloads, forum, high-score competition.
+- **URL:** https://plus4world.powweb.com
+- **License:** ❓ — per-release rights; preservation project (verified 2026-10-08 via Patreon + gamesthatwerent.com)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The TED-sound demo/music entries are the demoscene-music angle; the site's Digimix music-disk series is directly on-brief. [Wave 42 Lane A]
+
+#### Modizer — iOS multiformat module/chiptune player ⚠️ proprietary paid app
+- **What:** Modizer (modizer.app) — iOS/iPadOS module + chiptune player (1100+ formats: MOD/S3M/XM/IT, SID, SPC, VGM, PSF, NSF, AY, SAP…); direct Modland/HVSC/ASMA/VGMRips/Project2612/SNESmusic browsing, FTP server, visualizers, MIDI+lyrics.
+- **URL:** https://modizer.app (App Store: com.yoyofr.modizer)
+- **License:** Proprietary paid app (~$2, verified 2026-10-08 via AppRecs/appagg listings)
+- **Free tier:** none (paid app)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The iOS counterpart to the (GPL-tainted, rejected) DroidSound-E — this is the clean way to audition ModArchive/HVSC/Modland on a phone. [Wave 42 Lane A]
+
+#### ValleyBell/libvgm — modular VGM playback library ❓ license unverified
+- **What:** libvgm — modular rewrite of VGMPlay components: VGM/VGZ playback library with sound-emulation cores; the engine behind several chiptune players.
+- **URL:** https://github.com/ValleyBell/libvgm
+- **License:** ❓ — no license file or README grant found (checked 2026-10-08 via GitHub API spdx null + raw README); VGMPlay lineage suggests copyleft — treat as unverified
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-09-05). Do not integrate until license is resolved — the VGMPlay GPL lineage is a plausible taint. [Wave 42 Lane A]
+
+#### monteslu/md_lua_sdk — PICO-8-flavored Lua SDK for Sega Genesis ✅ commercial-safe
+- **What:** md_lua_sdk — write Genesis/Mega Drive games in PICO-8-style Lua; ahead-of-time compiles Lua→C→native 68000 via bundled toolchain + SGDK runtime; 80 sprites, raster effects, YM2612 music, battery saves; WASM toolchain + emulator bundled.
+- **URL:** https://github.com/monteslu/md_lua_sdk
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit/Genesis)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Third in the monteslu Lua-SDK family (GameTank, GBA); the lowest-friction Genesis on-ramp found — no 68k knowledge needed. Active (pushed 2026-09-30). [Wave 42 Lane A]
+
+#### eoinjordan/snes-studio — kid-friendly SNES homebrew game studio ✅ commercial-safe
+- **What:** snes-studio — visual SNES game studio: scene/actor/event-chain editor, native asset pipeline (4bpp tiles, BGR555 palettes, tilemaps), EmulatorJS preview; exports C + Makefile that builds a real .sfc via PVSnesLib.
+- **URL:** https://github.com/eoinjordan/snes-studio
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit/SNES)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Ships the "Poachermon" template; the asset/tilemap pipeline works without any SNES toolchain installed. Playwright E2E tests included. [Wave 42 Lane A]
+
+#### Optiroc/libSFX — Super Nintendo development framework ✅ commercial-safe
+- **What:** libSFX — SNES development framework by Optiroc (Vitor Vilela): C/assembly framework for SNES homebrew.
+- **URL:** https://github.com/Optiroc/libSFX
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit/SNES)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** From the author of the Super Mario World widescreen/MSU-1 work; active (pushed 2026-07-04). Pairs with PVSnesLib (cataloged) as the two modern SNES C frameworks. [Wave 42 Lane A]
+
+#### Sunlitspace542/SNES-MSU-1-Driver — Super NES MSU-1 audio driver ✅ commercial-safe
+- **What:** SNES-MSU-1-Driver — MSU-1 (sd2snes expansion-audio) driver for SNES homebrew: streaming PCM audio registers, data channel, NMI integration.
+- **URL:** https://github.com/Sunlitspace542/SNES-MSU-1-Driver
+- **License:** MIT (verified 2026-10-08 via raw LICENSE.md = MIT text; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit/SNES)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** LICENSE.md opens with a credit request ("Please credit me…") followed by the full MIT text — the MIT grant stands. MSU-1 is the path to CD-quality audio in SNES homebrew. [Wave 42 Lane A]
+
+#### DanielOaks/sneskit — SNES devkit (cc65-based) ❓ license unverified
+- **What:** sneskit — 2009-era SNES development kit: templates, 65816 docs, snes_rules build system; requires user-supplied cc65 toolchain + emulators (bring-your-own-kit design).
+- **URL:** https://github.com/DanielOaks/sneskit
+- **License:** ❓ — no license file or README grant found (checked 2026-10-08 via GitHub API spdx null + root listing)
+- **Free tier:** free (source-available)
+- **Repo lane:** trippedd (devkit/SNES)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Historical interest mainly (superseded by PVSnesLib/libSFX); the bundled snesmod example links it to the SNESMod driver family. [Wave 42 Lane A]
+
+#### optixx/snes-sdk — Super NES SDK bundle (tcc-65816 + wla-dx) ❓ license unverified
+- **What:** snes-sdk — SNES SDK bundle: tcc-65816 C compiler, vendored wla-dx, snesc libs, snes9x test harness; builds with a single Makefile.
+- **URL:** https://github.com/optixx/snes-sdk
+- **License:** ❓ — no license file found (checked 2026-10-08 via GitHub API spdx null + root listing); vendored wla-dx is GPL (quarantined) — treat bundle as unverified
+- **Free tier:** free (source-available)
+- **Repo lane:** trippedd (devkit/SNES)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Stale (pushed 2017); the tcc-65816 C compiler is the distinctive piece vs the assembly-first kits. [Wave 42 Lane A]
+
+#### KungFuFurby/AddMusicKFF — AddMusicK SNES sound-driver fork ❓ license unverified
+- **What:** AddMusicKFF — maintained fork of AddMusicK (Kipernal's SMW custom-music compiler/inserter): inserts N-SPC music data into SNES ROMs; the SMW Central standard toolchain, usable for homebrew N-SPC music.
+- **URL:** https://github.com/KungFuFurby/AddMusicKFF
+- **License:** ❓ — no license file or README grant found (checked 2026-10-08 via GitHub API spdx null + raw README)
+- **Free tier:** free (source-available); Windows builds at atarismwc.com
+- **Repo lane:** trippedd (devkit/SNES)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Active fork (pushed 2026-06-11). The ersanio/solar-soundtrack browser editor is a no-install way to audition the toolchain. [Wave 42 Lane A]
+
+#### ARM9/bass — byuu's multi-architecture assembler (SNES-focused fork) ❓ license unverified
+- **What:** bass — byuu's assembler (v14+) targeting 65816/SuperFX/GSU and other architectures; this ARM9 fork adds SuperFX/GSU RISC output; the assembler behind krom's (Peter Lemon) SNES assembly tutorials.
+- **URL:** https://github.com/ARM9/bass
+- **License:** ❓ — no license file or README grant found (checked 2026-10-08 via GitHub API spdx null + root listing); byuu's original carried no license file
+- **Free tier:** free (source-available)
+- **Repo lane:** trippedd (devkit/SNES)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** De-facto standard for hand-written SNES assembly tutorials; pair with the SPC700 opcode table (cataloged, CC0). [Wave 42 Lane A]
+
+#### Turboxray/PCEAS — PC Engine assembler ❓ license unverified
+- **What:** PCEAS — assembler for the PC Engine/TurboGrafx-16 HuC6280; MagicKit-lineage toolchain piece for PCE homebrew.
+- **URL:** https://github.com/Turboxray/PCEAS
+- **License:** ❓ — no license file or README grant found (checked 2026-10-08 via GitHub API spdx null)
+- **Free tier:** free (source-available)
+- **Repo lane:** trippedd (devkit/PC Engine)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Stale (pushed 2017). Complements the quarantined HuC entry (row 385) — the assembler half of the PCE toolchain. [Wave 42 Lane A]
+
+#### BasiEgaXorz — BASIC compiler for Sega Genesis ⚠️ proprietary freeware
+- **What:** BasiEgaXorz (BeX) by Joseph Norman — BASIC compiler targeting Genesis/Mega Drive (also Sega CD ISOs, 32X ROMs): PRINT/INK text, background tile graphics, sprites, joypad, palette/tile commands, PSG sound effects; aimed at beginners.
+- **URL:** http://devster.monkeeh.com/sega/basiegaxorz/ (docs; v1.37 via software.informer.com)
+- **License:** Proprietary freeware (verified 2026-10-08 via pdroms.de + Sega Retro listings; no source license)
+- **Free tier:** free (Windows)
+- **Repo lane:** trippedd (devkit/Genesis)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The SecondBASIC successor path is community-maintained; CrazyBus (the infamous homebrew) was built with BeX. [Wave 42 Lane A]
+
+#### NGBP libatsc3 — ATSC 3.0 open-source receiver library ❓ upstream unreachable, MIT forks exist
+- **What:** libatsc3 — NGBP's ATSC 3.0 library (C): parses LMT/LLS signaling, ROUTE/DASH object delivery, MMT and DASH video playback, NRT data; Android/AppleTV samples, ExoPlayer MMT plugin, STLTP/MMT pcap test captures.
+- **URL:** https://www.ngbp.org/p/atsc-30-ngbp-open-source-tools.html (upstream github.com/jjustman/libatsc3 404s via API 2026-10-08)
+- **License:** ❓ — upstream unreachable for verification; forks (junhuac/libatsc3, kansonkong/libatsc3) report MIT via GitHub API (checked 2026-10-08)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The reference ATSC 3.0 software stack (A/331 signaling layer). Upstream disappearance is a watch item — the MIT forks are the fallback. Companion pcap repos (atsc-3.0-mmt-pcaps, atsc3_stltp_pcaps) are test vectors. [Wave 42 Lane A]
+
+#### emarsden/dash-mpd-cli — Rust DASH downloader CLI ✅ commercial-safe
+- **What:** dash-mpd-cli — downloads DASH (MPEG/WebM) content from MPD manifests: XPath element dropping, token-auth query passthrough, ffmpeg/MP4Box/shaka-packager/mkvmerge helpers; Docker (ghcr.io/emarsden/dash-mpd-cli, multiarch).
+- **URL:** https://github.com/emarsden/dash-mpd-cli
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-10-06); user manual on GitHub Pages. The DASH-side companion to N_m3u8DL-RE below. [Wave 42 Lane A]
+
+#### leandromoreira/edash-packager — C++ MPEG-DASH packaging SDK ✅ commercial-safe
+- **What:** edash-packager — C++ SDK for writing MPEG-DASH packagers: demuxer (ISOBMFF/TS/IPTV/Widevine) → muxer (fragmented ISOBMFF + CENC) → MPD builder; Docker image.
+- **URL:** https://github.com/leandromoreira/edash-packager
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Stale (pushed 2015) but the cleanest BSD-licensed DASH packager SDK found — shaka-packager (cataloged) is the maintained alternative. [Wave 42 Lane A]
+
+#### nilaoda/N_m3u8DL-RE — M3U8/HLS + DASH stream downloader ✅ commercial-safe
+- **What:** N_m3u8DL-RE — cross-platform downloader for M3U8/HLS and DASH streams: multi-threaded segment fetch, decrypt (with key), mux to MP4/MKV/TS.
+- **URL:** https://github.com/nilaoda/N_m3u8DL-RE
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Very active (pushed 2026-10-08). The standard tool for archiving HLS/DASH reference streams for pipeline testing. [Wave 42 Lane A]
+
+#### bytedance/xgplayer — extensible HTML5 player with DASH support ✅ commercial-safe
+- **What:** xgplayer — ByteDance's HTML5 video player: plugin architecture, DASH/HLS/FLV playback, danmaku, thumbnails, mobile support.
+- **URL:** https://github.com/bytedance/xgplayer
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-09-30). The MIT-licensed alternative to the cataloged dash.js/shaka-player entries, from a major video platform operator. [Wave 42 Lane A]
+
+#### Dash-Industry-Forum/dash-live-source-simulator — DASH-IF live source simulator ✅ commercial-safe
+- **What:** dash-live-source-simulator — DASH-IF reference tool: simulates a live DASH source (dynamic MPD, segment timelines) for player/interop testing; livesim2 is the successor.
+- **URL:** https://github.com/Dash-Industry-Forum/dash-live-source-simulator
+- **License:** BSD (verified 2026-10-08 via raw LICENSE.md = "live-source-simulator BSD License Agreement", DASH-IF 2015-2018)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The canonical DASH interop test harness — pairs with the DASH-IF test vectors for player validation. GitHub API spdx NOASSERTION = detection gap; license confirmed via raw file. [Wave 42 Lane A]
+
+#### ultravideo/kvazaar — open-source HEVC encoder ✅ commercial-safe
+- **What:** Kvazaar — academic open-source HEVC/H.265 encoder (Ultra Video Group): the practical HEVC encode path for ATSC 3.0 (which mandates HEVC) without the x265 GPL taint (x265 is quarantined, row 295).
+- **URL:** https://github.com/ultravideo/kvazaar
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-09-30). This is the broadcast-chain answer to "how do we encode HEVC commercially" — BSD, not GPL. [Wave 42 Lane A]
+
+#### fraunhoferhhi/vvenc — Fraunhofer VVC/H.266 encoder ✅ commercial-safe
+- **What:** vvenc — Fraunhofer HHI's open-source VVC (H.266) encoder: the next-gen broadcast codec path (ATSC 3.0 successor discussions, DVB).
+- **URL:** https://github.com/fraunhoferhhi/vvenc
+- **License:** BSD-3-Clause-Clear (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-10-02). BSD-3-Clause-Clear adds an explicit patent grant — cleaner than plain BSD for codec work. [Wave 42 Lane A]
+
+#### fraunhoferhhi/vvdec — Fraunhofer VVC/H.266 decoder ✅ commercial-safe
+- **What:** vvdec — Fraunhofer HHI's open-source VVC decoder: pairs with vvenc for a complete BSD-licensed VVC chain.
+- **URL:** https://github.com/fraunhoferhhi/vvdec
+- **License:** BSD-3-Clause-Clear (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-10-07). [Wave 42 Lane A]
+
+#### streamlink/streamlink — stream extractor CLI ✅ commercial-safe
+- **What:** Streamlink — CLI that extracts streams from 100+ services and pipes them to a player: HLS/DASH/RTMP handling, plugin architecture.
+- **URL:** https://github.com/streamlink/streamlink
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-10-07). The maintained Livestreamer successor; useful for pulling reference streams into the test pipeline. [Wave 42 Lane A]
+
+#### DDVTECH/mistserver — lightweight media server (Unlicense) ✅ commercial-safe
+- **What:** MistServer — lightweight open-source media server: ingest RTSP/RTMP/SRT, serve HLS/DASH/WebRTC/HSS; controller + per-protocol workers.
+- **URL:** https://github.com/DDVTECH/mistserver (site: mistserver.com)
+- **License:** Unlicense (verified 2026-10-08 via GitHub API spdx_id) — public-domain dedication
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Active (pushed 2026-10-05). The Unlicense grant is the most permissive server option in the catalog — compare OvenMediaEngine (quarantined, AGPL). [Wave 42 Lane A]

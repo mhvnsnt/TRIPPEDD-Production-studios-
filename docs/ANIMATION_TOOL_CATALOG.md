@@ -4116,3 +4116,74 @@ glTF-focused animation players, runtimes, compressors, converters, and retargeti
 - **Lane note:** Wave 4 Lane C: the geospatial glTF runtime — animated models in WGS84 context, Apache-clean.
 
 <!-- end lane C wave 4 batch 2: gltf runtimes 11-20 (10 entries; 0 GPL) -->
+#### glTF-Transform ✅
+- **What:** glTF 2.0 SDK for JavaScript/TypeScript (Node + Web) — read, edit, write, optimize, and compress glTF assets via scripting API and CLI (`@gltf-transform/functions` incl. animation resampling/quantization).
+- **URL:** https://github.com/donmccurdy/glTF-Transform
+- **License:** MIT (verified 2026-10-08: GitHub license field "MIT License (MIT)"; upstream README license badge + LICENSE.md).
+- **Use:** the workhorse of the delivery pipeline — compress skinned animation tracks (quantize/resample), dedupe, Draco/meshopt, and validate before shipping GLBs.
+- **Lane note:** Wave 4 Lane C: the central glTF animation optimization SDK — every animated GLB passes through it.
+
+#### meshoptimizer + gltfpack ✅
+- **What:** GPU mesh optimization library (vertex cache, overdraw, simplification, quantization) plus `gltfpack`, the CLI that automatically optimizes glTF files — incl. animation track quantization.
+- **URL:** https://github.com/zeux/meshoptimizer
+- **License:** MIT (verified 2026-10-08: upstream LICENSE.md — MIT, Copyright Arseny Kapoulkine; gltf/ README "under the terms of MIT License").
+- **Use:** shrink animated GLBs for web delivery — quantize animation samplers, simplify skinned meshes, emit EXT_meshopt_compression output.
+- **Lane note:** Wave 4 Lane C: the mesh+animation compressor behind KHR_meshopt_compression — size wins for animated web delivery.
+
+#### Khronos glTF-Validator ✅
+- **What:** Official Khronos conformance validator for glTF 2.0 — checks JSON schema, accessor/buffer integrity, skinning, and animation track correctness (CLI, Node, web).
+- **URL:** https://github.com/KhronosGroup/glTF-Validator
+- **License:** Apache-2.0 (verified 2026-10-08: multiple independent licensing tables list Apache-2.0 for KhronosGroup/glTF-Validator; official Khronos tool).
+- **Use:** gate every animated GLB in CI — catches malformed animation samplers, bad skinning weights, and spec violations before render.
+- **Lane note:** Wave 4 Lane C: the conformance gate for the whole animation pipeline — fail fast on broken animation data.
+
+#### KTX-Software ✅
+- **What:** Khronos KTX texture container library and CLI tools (`ktx create/convert/encode`) — produces KTX2 with Basis Universal / UASTC supercompression for glTF's `KHR_texture_basisu`.
+- **URL:** https://github.com/KhronosGroup/KTX-Software
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README carries SPDX-License-Identifier: Apache-2.0; Unity needle-mirror THIRD PARTY NOTICES concur. Caveat: the optional Ericsson ETC decoder source file is proprietary — disabled by default, never enable it).
+- **Use:** bake animated characters' textures into KTX2/BasisU so the GLB + textures stay GPU-ready and small on web/mobile.
+- **Lane note:** Wave 4 Lane C: the texture side of animated-GLB delivery — KTX2 is what makes BasisU textures work in glTF.
+
+#### Basis Universal ✅
+- **What:** Binomial's supercompressed GPU texture codec — transcodes once, deploys to ETC1/2, BC1-7, ASTC, PVRTC on any GPU; the codec behind glTF `KHR_texture_basisu`.
+- **URL:** https://github.com/BinomialLLC/basis_universal
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "License/Legal" section — reference encoder/transcoder under Apache 2.0 LICENSE; trademark notice applies).
+- **Use:** encode animated-character texture sets to BasisU for cross-GPU delivery inside compressed GLBs.
+- **Lane note:** Wave 4 Lane C: the codec that makes one texture set work on every GPU the animated model plays on.
+
+#### Draco ✅
+- **What:** Google's 3D mesh/point-cloud compression library (with JS/WASM decoders) — the codec behind glTF `KHR_draco_mesh_compression`.
+- **URL:** https://github.com/google/draco
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "## License — Apache License 2.0" linking the LICENSE file).
+- **Use:** Draco-compress animated character geometry inside GLBs; decoders ship with three.js/Babylon for runtime playback.
+- **Lane note:** Wave 4 Lane C: the geometry compressor for animated glTF — pairs with meshopt as the two sanctioned mesh codecs.
+
+#### pygltflib ✅
+- **What:** Python library for reading, writing, and managing glTF/glTF 2.0 objects — dataclass-style access to scenes, nodes, skins, and animation channels/samplers.
+- **URL:** https://github.com/KhronosGroup/pygltflib
+- **License:** MIT (verified 2026-10-08: conda-forge feedstock records "Package license: MIT"; now KhronosGroup-maintained).
+- **Use:** Python-side surgery on animation tracks — rewrite samplers, rename clips, batch-fix skins across a character roster.
+- **Lane note:** Wave 4 Lane C: the Python scalpel for glTF animation data — scriptable track edits the JS SDKs don't cover.
+
+#### fastgltf ✅
+- **What:** Modern C++17 glTF parser/loader — fast GLB parsing, extension handling, and buffer-source policies for runtime asset staging.
+- **URL:** https://github.com/spnda/fastgltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "fastgltf (spnda) — safe-donor — MIT").
+- **Use:** drop-in fast loader for native tools that ingest animated GLBs (previews, converters, QC harnesses).
+- **Lane note:** Wave 4 Lane C: the speed-first native glTF loader — ingest path for animation tooling in C++.
+
+#### cgltf ✅
+- **What:** Single-file C99 glTF 2.0 parser and writer — dependency-free, trivially vendored into any C/C++ codebase.
+- **URL:** https://github.com/jkuhlmann/cgltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "cgltf (jkuhlmann) — safe-donor — MIT").
+- **Use:** embed glTF animation parsing directly in native tools (rig repair, batch retarget) with zero dependencies.
+- **Lane note:** Wave 4 Lane C: the zero-dependency glTF reader/writer — animation data access from a single C file.
+
+#### tinygltf ✅
+- **What:** Header-only C++ glTF 2.0 loader/saver (v3 is a C mainline) — tiny footprint for tools and prototypes that need glTF in/out.
+- **URL:** https://github.com/syoyo/tinygltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "tinygltf (syoyo) — safe-donor — MIT"; upstream "Licensed under MIT license").
+- **Use:** quick native prototypes that read animated GLBs and write modified copies (test fixtures, format experiments).
+- **Lane note:** Wave 4 Lane C: the header-only glTF workhorse — fastest route to animated-GLB I/O in small tools.
+
+<!-- end lane C wave 4 batch 3: gltf tooling/compression 21-30 (10 entries; 0 GPL) -->

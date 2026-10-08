@@ -39790,3 +39790,83 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Historical reference; ask before shipping. [Wave 45 Lane A]
+
+#### LOVO AI (Genny) ⚠️ trial-only TTS
+- **What:** LOVO AI — AI voice generator (Genny platform); 500+ voices, 100+ languages, emotion-infused voices, voice cloning, auto subtitles, online video editor.
+- **URL:** https://lovo.ai/
+- **License:** ⚠️ proprietary — free tier is a 14-day trial with 20 minutes of voice generation; paid from $24/mo (verified 2026-10-08: fahimai.com comparison reviews)
+- **Free tier:** 14-day trial, 20 min audio
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trial-only; evaluate voice quality, don't build on it. [Wave 45 coordinator top-up]
+
+#### Narakeet ⚠️ evaluation-tier TTS/video
+- **What:** Narakeet (Video Puppet Ltd, UK) — text-to-speech + script/PowerPoint/markdown-to-narrated-video; 700+ voices, 100+ languages, MP3/MP4/SRT output, API + CLI.
+- **URL:** https://www.narakeet.com/
+- **License:** ⚠️ proprietary — free tier 20 audio-minutes/month with watermarked previews (evaluation only); paid capacity credits from $6/30 min (verified 2026-10-08: aitools.fyi, smallest.ai)
+- **Free tier:** 20 min/month, watermarked
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Good for auditioning voices on our scripts; watermark blocks finished output. [Wave 45 coordinator top-up]
+
+#### TTSMaker ✅ free TTS, commercial rights
+- **What:** TTSMaker — free online text-to-speech; 600+ voices, 100+ languages, multi-voice dialogue editor, pause/speed/pitch controls, mp3/wav/ogg/aac/opus downloads.
+- **URL:** https://ttsmaker.com/
+- **License:** ✅ proprietary free tier — 20,000 characters/week free WITH 100% commercial usage rights on all generated audio (verified 2026-10-08: aipure.ai, iseoai.com, toolify.ai)
+- **Free tier:** 20,000 chars/week free, commercial use allowed
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rare free tier that grants commercial rights — useful for scratch VO and temp dialogue. [Wave 45 coordinator top-up]
+
+#### NaturalReader ⚠️ free personal-use TTS
+- **What:** NaturalReader — text-to-speech reader; 1000+ voices, 100+ languages, OCR, 20+ file formats, Chrome extension, mobile apps.
+- **URL:** https://www.naturalreaders.com/
+- **License:** ⚠️ proprietary — free version: unlimited free voices + 20 min/day premium voices for PERSONAL use; commercial use requires separate Plus/commercial license (verified 2026-10-08: toolradar.com Sep-2026 pricing check, fahimai.com)
+- **Free tier:** free version, personal use
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Personal/accessibility use only on free tier — not for shipped VO. [Wave 45 coordinator top-up]
+
+#### Listnr ⚠️ freemium TTS/podcast
+- **What:** Listnr — AI text-to-speech + podcast hosting; 1000+ voices, podcast/video generation dashboard.
+- **URL:** https://www.listnr.tech/
+- **License:** ⚠️ proprietary — free tier ~1,000 words/month; paid from $19/mo (verified 2026-10-08: fahimai.com Lovo-vs-Listnr comparison)
+- **Free tier:** ~1,000 words/month
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Thin free tier; audition-only. [Wave 45 coordinator top-up]
+
+#### ttsMP3.com ✅ free TTS, commercial OK
+- **What:** ttsMP3.com — free online text-to-speech; 28+ languages, Amazon Polly SSML support, speaker switching in-script, MP3 download, up to 3,000 chars/request.
+- **URL:** https://ttsmp3.com/
+- **License:** ✅ proprietary free tier — free with daily character limits; MP3s usable in commercial AND non-commercial projects (YouTube, apps, e-learning), no attribution required (verified 2026-10-08: ttsmp3.com/faq)
+- **Free tier:** 3,000 chars/day free, commercial use allowed
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SSML support is a plus for dialogue prosody control. [Wave 45 coordinator top-up]
+
+#### Descript ⚠️ free-plan audio/video editor
+- **What:** Descript — text-based audio/video editor (edit transcript = edit media); Overdub voice cloning, Studio Sound denoise, filler-word removal, transcription, screen recording.
+- **URL:** https://www.descript.com/
+- **License:** ⚠️ proprietary — permanent free plan: 60 media minutes/month + 100 one-time AI credits, basic Overdub access, watermarked 720p exports; paid from $24/mo (verified 2026-10-08: freetrialdeals.com, thetoolsverse.com)
+- **Free tier:** 60 media min/month free, watermarked exports
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Overdub vocabulary capped at 1,000 words on free/lower plans — fine for dialogue fix-ups, not full VO. [Wave 45 coordinator top-up]
+
+#### TTSFree (ttsfree.com) ✅ free TTS, commercial OK
+- **What:** TTSFree — free online text-to-speech; 140+ languages, 300+ AI voices, no signup required, MP3 download, audio deleted within 24h.
+- **URL:** https://ttsfree.com/
+- **License:** ✅ proprietary free tier — free service; generated audio usable for personal AND commercial purposes (videos, podcasts, ads, audiobooks) per FAQ (verified 2026-10-08: ttsfree.com FAQ)
+- **Free tier:** free, no signup, commercial use allowed
+- **Repo lane:** trippedd (voice)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-signup friction makes it good for quick scratch VO passes. [Wave 45 coordinator top-up]

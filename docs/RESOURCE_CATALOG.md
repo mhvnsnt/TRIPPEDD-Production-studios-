@@ -29853,3 +29853,33 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Confirms the Wave 17 Lane B ❓ entry. Trial-only free access — a one-shot evaluation, not a recurring draft source. In-editor workflow is its edge over raw SRT exporters. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Taja — AI clipper/SEO repurposing suite, trial-only free access ⚠️ license-conditional
+- **What:** Long-form → shorts/clips/captions/thumbnails/blog posts + cross-platform scheduling (YouTube, TikTok, Reels, X, LinkedIn, Facebook); virality scoring, keyword/SEO optimization, content calendar.
+- **URL:** https://www.taja.ai (audited via taja.ai own pricing page + outlierkit.com review, Sep–Oct 2026)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** NO free plan — 7-day free trial only (no card). Starter $19.99/mo (4 long-form videos, ≤10 shorts/video, no watermark); Professional $49.99/mo (10 videos); Teams $99.99/mo. Annual −20%.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NEW entry (not previously cataloged). Caption quality is bundled, not the product — no standalone subtitle export story; the SEO/scheduling wrapper is the product. Trial-only free access means no recurring free caption path. [Wave 32 Lane A]
+
+#### Reduct.video — free-trial ToS audit ⚠️ license-conditional
+- **What:** Text-based video/audio editing: 90+ language AI transcription, searchable highlight/label/redact workflow, burned-in or SRT caption export; SOC 2 Type II / HIPAA / GDPR posture.
+- **URL:** https://reduct.video (audited via reduct.video's own blog pricing statements, 2026)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** NO free plan — 14-day free trial with 5 hours of transcription included. Paid from $12/mo per editor (annual, Personal) / $40/mo (Professional); enterprise custom. Silence not billed.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Generous trial (5h) but no recurring free tier — a one-shot evaluation path. The compliance posture (SOC 2/HIPAA) is its differentiator for sensitive recordings. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### 2short.ai — free-tier ToS audit ⚠️ license-conditional
+- **What:** YouTube-URL → captioned 9:16 shorts: AI highlight detection, one-click animated/word-by-word captions, virality score, facial-tracking reframe. 26 caption languages.
+- **URL:** https://2short.ai (audited via appscribed.com + sendshort.ai reviews, 2026)
+- **License:** Proprietary SaaS terms.
+- **Free tier:** Starter FREE = 30 min AI analysis/month, view + export generated clips; sources disagree on watermark (appscribed: unlimited un-watermarked 1080p exports; percuity: watermarked) — verify at export before relying on it. Lite $9.90/mo (5h analysis), Pro $19.90/mo, Premium $49.90/mo.
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Genuinely useful free clipper IF the watermark-free claim holds — flag for verification before any published use. GOTCHA: relies on the video's EXISTING captions for analysis; uncaptioned source video limits it. Resolves the ❓ with terms. [Wave 32 Lane A]

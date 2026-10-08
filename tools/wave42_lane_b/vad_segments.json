@@ -1,0 +1,32 @@
+{
+  "tool": "webrtcvad",
+  "license": "MIT",
+  "aggressiveness": 2,
+  "sample_rate": 16000,
+  "frame_ms": 30,
+  "n_frames": 233,
+  "voiced_frames": 141,
+  "voiced_ratio": 0.605,
+  "segments_s": [
+    [
+      0.99,
+      3.09
+    ],
+    [
+      3.99,
+      6.12
+    ]
+  ],
+  "ground_truth_s": [
+    [
+      1.0,
+      3.0
+    ],
+    [
+      4.0,
+      6.0
+    ]
+  ],
+  "truth_segments_matched": 2,
+  "verdict": "PASS"
+}

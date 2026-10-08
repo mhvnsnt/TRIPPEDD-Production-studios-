@@ -31,3 +31,10 @@ observed from the GLB only. Do NOT treat them as owner-locked.
 - echo-attire-pinkjacket.png
 - Green hair; pink cat-ear hoodie COVERED in patches, worn open with NO shirt (tattooed torso visible); black cargo pants with patches; black boots. Hair provides coverage.
 - Face reference = Shotzi Blackheart (owner 2026-10-07).
+
+## Echo face variants (owner 2026-10-07 — ALL THREE ARE CANON, not drift)
+1. **Possessed** — black mist mouth version (from the GLB). The smeared/scream face is INTENTIONAL here.
+2. **Clean** — from the render and card arts / the show version. Shotzi Blackheart face anchor.
+3. **Pink jacket clean** — clean face, EITHER with GLB attire OR the full pink-jacket render attire (no shirt).
+
+Attire/face mixing is allowed across these three. This is the one character where face variation is intentional — do NOT flag it as S20 drift.

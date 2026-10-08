@@ -1,0 +1,5 @@
+[vost#0:0/libx264 @ 0x5866ce54eb40] Error submitting a packet to the muxer: No space left on device
+    Last message repeated 1 times
+[out#0/mp4 @ 0x5866ce4d2c40] Error muxing a packet
+[out#0/mp4 @ 0x5866ce4d2c40] Task finished with error code: -28 (No space left on device)
+[out#0/mp4 @ 0x5866ce4d2c40] Terminating thread with return code -28 (No space left on device)

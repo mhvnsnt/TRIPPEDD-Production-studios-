@@ -24,3 +24,7 @@ observed from the GLB only. Do NOT treat them as owner-locked.
 - None found in the render. Full body in frame, mask pattern crisp.
 - No alt attire GLB exists for Hollow.
 - Rendered GLB faces +X in Blender space (camera side `+x`), consistent with the others.
+
+## Alt attire — "Dragon" (owner-supplied 2026-10-07, locked — matches approved Super Dragon likeness)
+- hollow-attire-dragon.png
+- Black lucha mask with jagged white shark-tooth mouth, pointed ear protrusions, blue trim + hanging tassels; BLACK LONG-SLEEVE rashguard with blue dragon print; black kung-fu pants with blue dragon embroidery; black boots.

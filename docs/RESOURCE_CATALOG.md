@@ -7045,11 +7045,11 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 #### miniaudio ✅ commercial-safe
 - **What:** Single-file C/C++ audio playback, capture, mixing, and decoding library
 - **URL:** https://github.com/mackron/miniaudio
-- **License:** Public domain (Unlicense) OR MIT at your option (verified: LICENSE fetched 2026-10-07)
+- **License:** Public domain OR MIT-0 (verified 2026-10-08: miniaudio.h v0.11.25 header "Choice of public domain or MIT-0")
 - **Free tier:** fully free
 - **Repo lane:** trippedd (sfx)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
+- **Status:** wired (Wave 47 Lane B: `tools/wave47_lane_b/wire_miniaudio.py` — WAV decode → PCM → re-encode → decode MATCH; proofs in `tools/wave47_lane_b/proofs_miniaudio/` + PROOFS.md + SHA256SUMS)
 - **Notes:** Zero-dependency drop-in — ideal for small audio tools in the pipeline. [Wave 7 A]
 
 #### SDL_mixer ✅ commercial-safe

@@ -29165,3 +29165,112 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Verify before any pull. [Wave 30 Lane A]
+
+#### Maestra — free-tier ToS audit ⚠️ trial-not-tier
+- **What:** ToS audit of the existing ❓ entry (AI subtitle/translation/dubbing suite, 125+ languages, SRT/VTT/SCC/STL export).
+- **URL:** https://maestra.ai/
+- **License:** ⚠️ Proprietary SaaS. Free access is a TRIAL (~1 min processing before signup per third-party test; "limited credits" per vendor), not a tier (verified 2026-10-07 via maestra.ai + aitools.fyi). Paid from $39/mo. No commercial-use grant on trial outputs implied — check ToS before shipping trial-generated captions.
+- **Free tier:** Trial only (no card to start)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Useful for evaluation, not a free pipeline dependency. [Wave 30 Lane A]
+#### Flixier — free-tier ToS audit ⚠️ genuine free tier, watermarked
+- **What:** ToS audit of the existing ❓ entry (browser cloud editor, transcript-based editing, auto-subtitles).
+- **URL:** https://flixier.com/
+- **License:** ⚠️ Proprietary SaaS with a GENUINE free tier (verified 2026-10-07 on flixier.com/pricing): 10 min video export/mo, 5 min subtitles/mo, 720p, 2 GB storage, Flixier watermark. Paid from $19/mo removes watermark.
+- **Free tier:** Free forever (watermarked, capped)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Watermark makes free exports unusable for final delivery; fine for draft caption timing. [Wave 30 Lane A]
+#### Fireflies.ai — free-tier ToS audit ✅ genuine free tier (meeting-bot, not caption burn-in)
+- **What:** ToS audit of the existing ❓ entry (meeting transcription bot + summaries).
+- **URL:** https://fireflies.ai/
+- **License:** ✅ Genuine free plan (verified 2026-10-07 via fireflies.ai + scored.tools): unlimited transcription, 400 min storage/team, limited AI summaries; Pro $10/seat/mo annual. BUT it is a meeting bot — no caption burn-in / SRT-for-video workflow. Wrong tool for the caption lane.
+- **Free tier:** Free forever
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ✅-with-caveat. Honest negative for caption burn-in: use for meeting notes, not subtitle delivery. [Wave 30 Lane A]
+#### Castmagic — free-tier ToS audit ⚠️ trial-not-tier
+- **What:** ToS audit of the existing ❓ entry (podcast audio → transcripts + show notes + content assets).
+- **URL:** https://www.castmagic.io/
+- **License:** ⚠️ NO free plan (verified 2026-10-07 via castmagic.io's own comparison page + creati.ai: "Has free plan: No"). Trial only; paid from ~$19–21/mo. Podcast-content tool, not a caption burner.
+- **Free tier:** Trial only
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Not a pipeline dependency. [Wave 30 Lane A]
+#### Riverside.fm — free-tier ToS audit ⚠️ one-off free allowance, watermarked
+- **What:** ToS audit of the existing ❓ entry (studio recording + AI transcripts + styled captions/Magic Clips).
+- **URL:** https://riverside.fm/
+- **License:** ⚠️ Free plan exists but is a ONE-OFF allowance, not monthly (verified 2026-10-07 via castmagic.io pricing guide + xraise.ai): 2 hours multi-track recording total, 720p, watermark. Paid from $29/mo. Transcripts export as SRT/TXT on paid tiers.
+- **Free tier:** One-time 2 hrs (watermarked)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. "Free plan" marketing overstates it — treat as trial. [Wave 30 Lane A]
+#### StreamYard — free-tier ToS audit ⚠️ genuine free tier, watermarked + capped
+- **What:** ToS audit of the existing ❓ entry (browser live studio, AI captioned clips).
+- **URL:** https://streamyard.com/
+- **License:** ⚠️ Genuine free plan (verified 2026-10-07 via tekpon + techimply): 1 destination, 720p, StreamYard watermark, 2 hrs local recordings/mo, 6 on-screen participants, no AI features (AI clips are paid). Core $44.99/mo. Captions are a live-streaming feature, not a burn-in export workflow.
+- **Free tier:** Free forever (watermarked, capped)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Marginal for the caption lane — live captions, not file burn-in. [Wave 30 Lane A]
+#### Pictory — free-tier ToS audit ⚠️ trial-not-tier
+- **What:** ToS audit of the existing ❓ entries (AI video builder, transcript/subtitle export).
+- **URL:** https://pictory.ai/
+- **License:** ⚠️ NO free plan — 14-day free trial only (verified 2026-10-07 via freestackhq test + multiple reviews): 3 video projects, ~15 min, 720p max, watermarked, no card required. Paid from $25/mo. No refunds on paid plans — trial is the only evaluation window.
+- **Free tier:** 14-day trial only
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Confirms the Wave-29-era entry note. Not a free dependency. [Wave 30 Lane A]
+#### SubtitleBee — free-tier ToS audit ⚠️ trial-not-tier
+- **What:** ToS audit of the existing ❓ entry (caption-first subtitler).
+- **URL:** https://subtitlebee.com/
+- **License:** ⚠️ "Free" is a trial: 10 minutes, 1 video export (verified 2026-10-07 on subtitlebee.com's own comparison page). Paid from $16/mo. Confirms the existing entry's "free tier disables downloads" note.
+- **Free tier:** Trial only
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. [Wave 30 Lane A]
+#### Lumen5 — free-tier ToS audit ⚠️ genuine free tier, watermarked
+- **What:** ToS audit of the existing ❓ entry (blog-to-video with text overlays).
+- **URL:** https://lumen5.com/
+- **License:** ⚠️ Genuine free Community plan (verified 2026-10-07 via saasworthy + fahimai): 5 videos/mo, 720p, Lumen5 watermark. Paid from $19/mo removes branding.
+- **Free tier:** Free forever (watermarked, capped)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Text-overlay videos are burned-in by design, but watermark blocks final use. [Wave 30 Lane A]
+#### Animaker — free-tier ToS audit ⚠️ genuine free tier, watermarked + non-commercial
+- **What:** ToS audit of the existing ❓ entry (animated video maker with AI subtitles).
+- **URL:** https://www.animaker.com/
+- **License:** ⚠️ Genuine free plan (verified 2026-10-07 via G2 + creati.ai): 3 downloads/mo, watermarked exports, 2-min cap, manual subtitles; AI subtitles are paid. Commercial rights only from Pro ($43/mo). Free = non-commercial use.
+- **Free tier:** Free forever (watermarked, non-commercial)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Character-animation + subtitle combo is pipeline-relevant; free tier is eval-only. [Wave 30 Lane A]
+#### Vizard — free-tier ToS audit ⚠️ genuine free tier, watermarked
+- **What:** ToS audit of the existing ❓ entry (AI clipper with animated captions).
+- **URL:** https://vizard.ai/
+- **License:** ⚠️ Genuine free plan (verified 2026-10-07 via appscribed + aitoolcurator): 60 credits/mo (~60 min upload), 720p, watermark, 3-day storage, 10-min export cap. Creator ~$14.50/mo annual removes watermark.
+- **Free tier:** Free forever (watermarked, capped)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audit upgrades ❓ → ⚠️. Animated caption templates are the caption-lane value; watermark blocks delivery. [Wave 30 Lane A]
+#### Keevi ⚠️ no free plan — card-required trial
+- **What:** AI long-video → shorts clipper with 20+ language AI captions, multi-aspect export (9:16/1:1/3:4/16:9), direct social posting.
+- **URL:** https://keevi.io/
+- **License:** ⚠️ NO free plan (verified 2026-10-07: saasworthy "Does Keevi offer a free plan? No"; keevi.io/pricing). 7-day trial REQUIRES a credit card (auto-charges after). Paid from $17.40/mo.
+- **Free tier:** 7-day trial only (card required)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Card-required trial = do not expense casually. Caption styling is account-level only (no per-video override per reviewer). [Wave 30 Lane A]

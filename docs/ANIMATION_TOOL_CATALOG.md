@@ -4091,3 +4091,63 @@ Monocular depth estimation, image/video segmentation & matting, layer decomposit
 - **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; MoGe is the commercial-safe alternative.
 
 <!-- end lane B wave 4 batch 2: stereo + NC depth (8 entries) -->
+
+### Segmentation / matting for layer cutting
+
+#### HQ-SAM ✅
+- **What:** Segment Anything in High Quality (NeurIPS 2023) — adds an HQ output token to SAM/SAM2 decoders for sharper boundary detail; v2 tracks the SAM 2.1 Hiera-Large backbone.
+- **URL:** https://github.com/SysCV/sam-hq
+- **License:** Apache-2.0 (verified 2026-10-08: upstream sam-hq2 README "## License — The HQ-SAM 2, SAM 2 model checkpoints, SAM 2 demo code (front-end and back-end), and SAM 2 training code are licensed under Apache 2.0").
+- **Use:** boundary-crisp masks for cutting parallax layers — hair, fingers, torn edges where plain SAM bleeds.
+- **Lane note:** Wave 4 Lane B: the edge-quality upgrade over SAM2 for layer cutout masks.
+
+#### MobileSAM ✅
+- **What:** Lightweight SAM — replaces the 632M ViT-H encoder with a 5M TinyViT; ~12 ms/image on a single GPU, same prompt pipeline as SAM.
+- **URL:** https://github.com/ChaoningZhang/MobileSAM
+- **License:** Apache-2.0 (verified 2026-10-08: upstream app README frontmatter "license: apache-2.0" + "## License — The model is licensed under the Apache 2.0 license"; multiple downstream license audits concur).
+- **Use:** interactive mask cutting in the plate-prep tool — click/box prompts at near-interactive speed on modest GPUs.
+- **Lane note:** Wave 4 Lane B: the fast promptable cutter for interactive parallax-layer authoring.
+
+#### FastSAM ⚠️ license-lineage risk — verify per use
+- **What:** Fast Segment Anything — YOLOv8-seg-based one-pass segment-everything; real-time instance masks without the SAM two-stage pipeline.
+- **URL:** https://github.com/CASIA-IVA-Lab/FastSAM
+- **License:** upstream README claims Apache-2.0 (verified 2026-10-08: "## License — The model is licensed under the [Apache 2.0 license](LICENSE)"), BUT the model is built on YOLOv8 code/weights which are AGPL-3.0 (Ultralytics) — downstream license audits flag the AGPL lineage explicitly ("Note the AGPL-3.0 license (Ultralytics YOLOv8 lineage)"). **Do not treat as commercial-safe without a legal read.**
+- **Use:** fastest segment-everything pass for auto-layering whole plates; technique reference for real-time mask generation.
+- **Lane note:** Wave 4 Lane B: included with the honest badge — speed is real, the license lineage is not clean.
+
+#### EdgeSAM ⚠️ non-commercial — NTU S-Lab License 1.0
+- **What:** Prompt-in-the-loop distilled SAM for on-device deployment — RepViT backbone, CoreML/iOS demo app; distilled from SAM with prompt-aware training.
+- **URL:** https://github.com/chongzhou96/EdgeSAM
+- **License:** NTU S-Lab License 1.0 (verified 2026-10-08: upstream README "## License — This project is licensed under NTU S-Lab License 1.0. Redistribution and use should follow this license"). S-Lab 1.0 is strictly non-commercial. **Verify per use.**
+- **Use:** on-device mask cutting reference; distillation technique for shrinking SAM-family models into the editor.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; MobileSAM is the commercial-safe lightweight pick.
+
+#### Grounding DINO ✅
+- **What:** Open-set object detection marrying DINO with grounded pre-training (ECCV 2024) — text prompts ("person", "wrestling ring") produce boxes; the standard text→box front end for Grounded-SAM pipelines.
+- **URL:** https://github.com/IDEA-Research/GroundingDINO
+- **License:** Apache-2.0 (verified 2026-10-08: upstream maintainer answer — "Our license is Apache 2.0, which allows you to use our model weights and project within the scope of the license"; ecosyste.ms metadata "License apache-2.0").
+- **Use:** text-prompted detection → SAM/HQ-SAM mask → clean character cutouts; "find the wrestler" automation for plate layering.
+- **Lane note:** Wave 4 Lane B: the text-prompt half of the Grounded-SAM layer-cutting pipeline.
+
+#### OWL-ViT ✅
+- **What:** Google's open-vocabulary object detection (ECCV 2022, v2 NeurIPS 2023) — CLIP-backed text-prompted detection; code AND checkpoints Apache-2.0.
+- **URL:** https://github.com/google-research/scenic
+- **License:** Apache-2.0 (verified 2026-10-08: upstream scenic `projects/owl_vit` README "## License — Both the code and the model checkpoints are licensed under the Apache 2.0 license").
+- **Use:** alternative text-prompted detector for plate element discovery; runs in HF transformers for easy pipeline integration.
+- **Lane note:** Wave 4 Lane B: the Google open-vocab detector — fully commercial-clean, weights included.
+
+#### Mask2Former ✅
+- **What:** Masked-attention mask transformer for universal image segmentation (CVPR 2022) — one architecture for semantic, instance and panoptic segmentation; strong ADE20K/Cityscapes/COCO models.
+- **URL:** https://github.com/facebookresearch/Mask2Former
+- **License:** MIT (verified 2026-10-08: upstream README "## License — The majority of Mask2Former is licensed under a MIT License"; portions Swin MIT / Deformable-DETR Apache-2.0).
+- **Use:** dense semantic masks for automatic plate decomposition (sky/water/person/vehicle classes → parallax planes); panoptic masks for crowd plates.
+- **Lane note:** Wave 4 Lane B: the commercial-safe universal segmenter for auto-layering plates by class.
+
+#### OneFormer ✅
+- **What:** One transformer for universal image segmentation (CVPR 2023) — single model, single training run, task-token conditioned across semantic/instance/panoptic.
+- **URL:** https://github.com/SHI-Labs/OneFormer
+- **License:** MIT (verified 2026-10-08: upstream README "License: MIT" badge; ecosyste.ms metadata "License: mit").
+- **Use:** single-model universal segmentation for plate analysis; task-token switches between class masks and instance cutouts.
+- **Lane note:** Wave 4 Lane B: the one-model universal segmenter — fewer checkpoints to manage in the plate pipeline.
+
+<!-- end lane B wave 4 batch 3: segmentation part 1 (8 entries) -->

@@ -453,6 +453,251 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 
 <!-- end lane A2: frame interpolation / inbetweening (12 entries) -->
 
+#### EMA-VFI ✅ — inter-frame attention for efficient VFI (CVPR 2023)
+- **What:** Motion+appearance extraction via inter-frame attention; state-of-the-art on benchmarks with lighter compute than flow-heavy nets.
+- **URL:** https://github.com/MCG-NJU/EMA-VFI
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** primary neural interpolator for episode slow-mo and fps upconversion; EMA-VFI-DR variant handles repeating-pattern ("picket fence") artefacts better than RIFE.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+
+#### IFRNet ✅ — intermediate feature refine network, single-pass multi-frame (CVPR 2022)
+- **What:** Merges flow estimation + context refinement into one encoder-decoder; predicts 7 intermediates in one forward pass (30→240fps).
+- **URL:** https://github.com/ltkong218/IFRNet
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** multi-frame interpolation for slow-motion beats; fast inference, mobile-friendly.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+
+#### IFRNet-ncnn-vulkan ✅ — IFRNet as portable ncnn binaries (CPU/GPU/iGPU)
+- **What:** nihui's ncnn port of IFRNet: portable Windows/Linux/macOS executables, no CUDA/PyTorch needed.
+- **URL:** https://github.com/nihui/ifrnet-ncnn-vulkan
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** batch interpolation on machines without PyTorch; same deployment story as rife-ncnn-vulkan (covered Wave 1).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### AdaCoF ✅ — adaptive collaboration of flows (CVPR 2020)
+- **What:** Generalized warping module (kernel weights + offsets per pixel) covering most warping ops as special cases; dual-frame adversarial loss.
+- **URL:** https://github.com/HyeongminLEE/AdaCoF-pytorch
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** complex-motion interpolation where flow methods smear; strong Middlebury benchmark lineage.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### CAIN ✅ — channel attention is all you need for VFI (AAAI 2020)
+- **What:** Channel-attention interpolation network; simple, fast, strong baseline that later methods compare against.
+- **URL:** https://github.com/myungsub/CAIN
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** lightweight interpolation baseline; good speed/quality trade for batch episode work.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### BMBC ✅ — bilateral motion estimation with bilateral cost volume (ECCV 2020)
+- **What:** Bilateral motion + dynamic filters for symmetric/asymmetric motion; explicit occlusion reasoning.
+- **URL:** https://github.com/JunHeum/BMBC
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** occlusion-heavy action beats; pairs with ABME from the same author.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### ABME ✅ — asymmetric bilateral motion estimation (ICCV 2021)
+- **What:** Refines BMBC with asymmetric bilateral motion fields; top-tier on Vimeo90K/UCF101.
+- **URL:** https://github.com/JunHeum/ABME
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** high-quality interpolation for hero shots; heavier than RIFE/IFRNet but cleaner on hard motion.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### FLAVR ✅ — flow-agnostic 3D space-time conv interpolation (WACV 2023)
+- **What:** No optical flow at all: 3D space-time convolutions reason about non-linear motion/occlusions implicitly; 3× faster than prior SOTA on 8× interpolation.
+- **URL:** https://github.com/tarun005/FLAVR
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** 8× slow-motion where flow estimation fails (motion blur, deforming shapes); flow-free = fewer failure modes.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### ST-MFNet ✅ — spatio-temporal multi-flow network (CVPR 2022)
+- **What:** Multi-flow fields + 3D CNN blending for large-motion interpolation; strong on high-res inputs.
+- **URL:** https://github.com/danielism97/ST-MFNet
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** large-motion cartoon/action interpolation; complements flow-free FLAVR.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### MMagic ✅ — OpenMMLab's unified generative toolbox (BasicVSR++, EDVR, RIFE)
+- **What:** Successor to MMEditing: VSR + VFI + generation under one Apache-2.0 roof — BasicVSR++/BasicVSR/IconVSR/EDVR for restoration, plus interpolation models.
+- **URL:** https://github.com/open-mmlab/mmagic
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** one dependency for both frame interpolation AND video restoration/upscaling of episode masters.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### DAIN-ncnn-vulkan ✅ — DAIN as portable ncnn binaries
+- **What:** nihui's ncnn port of Depth-Aware Video Frame Interpolation (covered Wave 1): no-framework binaries for CPU/GPU.
+- **URL:** https://github.com/nihui/dain-ncnn-vulkan
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** DAIN-quality interpolation on machines without PyTorch; depth-aware occlusion handling in portable form.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### ToonCrafter ✅ — generative cartoon interpolation (SIGGRAPH Asia 2024)
+- **What:** Diffusion-based generative interpolation for cartoons: synthesizes genuinely new inbetween content (not just warping) for large motions.
+- **URL:** https://github.com/Doubiiu/ToonCrafter
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** cartoon shots where warping interpolators collapse (large pose changes); generative fill between keys.
+- **Free tier:** fully open (heavy GPU)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 5/5
+
+#### Sketch-guided cartoon inbetweening ✅ — TVCG 2021 (Xiaoyu Li et al.)
+- **What:** Frame synthesis guided by an intermediate sketch: artist draws the key lines, the net fills the cartoon frame — human-in-the-loop inbetweening.
+- **URL:** https://github.com/xiaoyu258/Inbetweening
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** animator-assisted inbetweening: rough sketch → full colored frame; closest to a real cartoon production workflow.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### EDEN ✅ — diffusion-based large-motion VFI (CVPR 2025)
+- **What:** Enhanced Diffusion for high-quality large-motion video frame interpolation; diffusion prior handles motions that break warping methods.
+- **URL:** https://github.com/bbldCVer/EDEN
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** extreme-motion interpolation where all warping methods fail; slow but highest ceiling.
+- **Free tier:** fully open (heavy GPU)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 5/5
+
+#### SGM-VFI ✅ — sparse global matching for large-motion VFI (CVPR 2024)
+- **What:** Sparse global matching (built on GMFlow/RAFT/EMA-VFI/RIFE/IFRNet lineage) targeting large motions efficiently.
+- **URL:** https://github.com/MCG-NJU/SGM-VFI
+- **License:** Apache-2.0 (verified 2026-10-08 via repo README license section)
+- **Use:** large-motion interpolation with EMA-VFI-family efficiency; MCG-NJU lineage pairs with EMA-VFI.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### SAFA ✅ — scale-adaptive feature aggregation for anime space-time super-resolution (WACV 2024)
+- **What:** Anime-tuned space-time video super-resolution from RIFE's author (hzwer); the anime-scene optimization RIFE v4.7+ drew from.
+- **URL:** https://github.com/hzwer/WACV2024-SAFA
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** upscale + temporally-consistent enhance of anime/cartoon frames; quality pass after interpolation.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### AnimeInbet ⚠️ no licence file in repo
+- **What:** ICCV 2023 "Deep Geometrized Cartoon Line Inbetweening": geometrizes raster line drawings into endpoint graphs and reframes inbetweening as graph fusion — built for sparse line art where raster interpolators blur.
+- **URL:** https://github.com/lisiyao21/AnimeInbet
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). Research code; no rights granted — verify with authors before any use.
+- **Use:** line-art inbetweening research reference; do not ship outputs commercially until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+
+#### SoftSplat (softmax-splatting) ⚠️ no licence file in repo
+- **What:** CVPR 2020 differentiable forward warping via softmax splatting — the splatting primitive behind EISAI's SoftsplatLite and many VFI nets.
+- **URL:** https://github.com/sniklaus/softmax-splatting
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research primitive only; reimplement or use licensed derivatives.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+
+#### SoftSplat-Full ⚠️ no licence file in repo
+- **What:** Full-model implementation of the Softmax Splatting VFI paper (JHLew) — complete trainable interpolation net.
+- **URL:** https://github.com/JHLew/SoftSplat-Full
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research reference only until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+
+#### SepConv (sepconv-slomo) ⚠️ no licence file in repo
+- **What:** Video frame interpolation via adaptive separable convolution (the SepConv paper implementation) — kernel-based, no explicit flow.
+- **URL:** https://github.com/sniklaus/sepconv-slomo
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research reference only until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+
+#### VFIformer ⚠️ no licence file in repo
+- **What:** Video frame interpolation with transformers (Video-Frame-Interpolation-Transformer) — attention-based motion modeling.
+- **URL:** https://github.com/zhshi0816/Video-Frame-Interpolation-Transformer
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research reference only until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+
+#### XVFI 🚫 research and education only — honest exclusion
+- **What:** ICCV 2021 (oral) eXtreme video frame interpolation for 4K multi-frame scenarios — sharp on high-res, large-motion.
+- **URL:** https://github.com/JihyongOh/XVFI
+- **License:** Research and education only (per LDMVFI paper Table 11, arXiv 2303.09508; no licence file in repo). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### CDFI 🚫 research use only — honest exclusion
+- **What:** Compressive Dynamic Flow Interpolation (Ding et al. 2021) — efficient VFI via dynamic flow compression.
+- **URL:** https://github.com/tding1/CDFI
+- **License:** Research use only (per LDMVFI paper Table 11, arXiv 2303.09508). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### VFFormer 🚫 research use only — honest exclusion
+- **What:** Vectorized frame former (Lu et al. 2022) — transformer VFI with vectorized attention.
+- **URL:** https://github.com/dvlab-research/VFFormer
+- **License:** Research use only (per LDMVFI paper Table 11, arXiv 2303.09508). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### GIMM-VFI 🚫 S-Lab 1.0 non-commercial — honest exclusion
+- **What:** NeurIPS 2024 generalizable implicit motion modeling for VFI (KAIST VIC Lab lineage) — implicit motion fields instead of explicit flow.
+- **URL:** https://github.com/GSeanCDAT/GIMM-VFI
+- **License:** S-Lab License 1.0 — non-commercial (verified 2026-10-08 via repo LICENSE raw: "S-Lab License 1.0, Copyright 2024 S-Lab"). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** non-commercial only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### FlowFrames 🚫 proprietary freeware — honest exclusion
+- **What:** Popular RIFE/DAIN GUI for frame interpolation (N00MKRAD, itch.io) — the user-friendly interpolation app the RIFE authors pin.
+- **URL:** https://nmkd.itch.io/flowframes
+- **License:** Proprietary freeware (no open-source licence grant). **EXCLUDED** from the FOSS pipeline — use rife-ncnn-vulkan / IFRNet-ncnn-vulkan CLIs instead.
+- **Free tier:** free download (proprietary)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### SVP (SmoothVideo Project) 🚫 proprietary commercial — honest exclusion
+- **What:** Real-time frame interpolation for video playback (SVPflow); the classic smooth-motion engine.
+- **URL:** https://www.svp-team.com
+- **License:** Proprietary commercial (paid; no open-source licence grant). **EXCLUDED** — use RIFE/IFRNet/EMA-VFI instead.
+- **Free tier:** paid trial (proprietary)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### Topaz Video AI 🚫 proprietary commercial — honest exclusion
+- **What:** Commercial video enhancement suite (interpolation + upscaling + stabilization); the paid reference for interpolation quality.
+- **URL:** https://www.topazlabs.com/topaz-video-ai
+- **License:** Proprietary commercial (paid licence; no open-source grant). **EXCLUDED** — use FLAVR/ABME/SAFA + MMagic instead.
+- **Free tier:** paid (proprietary)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
 ## Storyboarding / animatics / previz
 <!-- boards, timing sheets, scene assembly -->
 
@@ -837,6 +1082,69 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** Pairs with MiDaS depth maps above — depth → proxy mesh → projected paint. [Wave 1 Lane A3]
+
+#### particles.js ✅ — lightweight JS particle backgrounds
+- **What:** Lightweight JavaScript library for particle backgrounds (snow, stars, embers, confetti) — the classic animated web/canvas backdrop.
+- **URL:** https://github.com/VincentGarreau/particles.js
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** animated particle plates behind title cards and menu backgrounds; capture via timecut for video plates.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### tsParticles ✅ — highly customizable particle effects engine (particles.js successor)
+- **What:** The maintained successor to particles.js: emitters, absorbers, interactivity, presets, framework components.
+- **URL:** https://github.com/tsparticles/tsparticles
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** richer animated background plates (fire, magic, rain) for cartoon scenes and title sequences.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### vanta.js ✅ — animated 3D backgrounds for the web
+- **What:** Animated 3D backgrounds (waves, clouds, topology, birds) built on three.js — drop-in animated backdrops.
+- **URL:** https://github.com/tengbao/vanta
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** 3D animated sky/atmosphere plates for title cards and interstitials; capture to video via timecut.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### geo_pattern ✅ — generative geometric background images
+- **What:** Generate beautiful geometric background patterns from a string seed — deterministic, infinite variations.
+- **URL:** https://github.com/jasonlong/geo_pattern
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** stylized pattern plates for motion-graphics backgrounds and lower-thirds.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+
+#### Pixelorama ✅ — MIT-licensed pixel-art / sprite plate editor
+- **What:** Full pixel-art editor: animation timeline, layers, palette tools — for hand-drawn sprite plates and tiles.
+- **URL:** https://github.com/Orama-Interactive/Pixelorama
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** paint pixel-art background plates and animated sprite tiles; the MIT alternative to GPL sprite editors.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### Piskel ✅ — web-based pixel-art / sprite editor (Apache-2.0)
+- **What:** Simple web-based spriting and pixel-art tool with animation preview — runs in the browser, exports sprite sheets and GIFs.
+- **URL:** https://github.com/piskelapp/piskel
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** quick pixel-art plates and animated sprite mockups without installing anything.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+
+#### Poly Haven ✅ — CC0 HDRIs, textures, and 3D models (public domain plates)
+- **What:** High-quality HDRIs, PBR textures, and models, all CC0 — skies, environments, and surfaces free for any use including commercial.
+- **URL:** https://polyhaven.com
+- **License:** CC0 1.0 Universal — public domain (verified 2026-10-08 via polyhaven.com/license: "All assets… are licensed as CC0… You can use our assets for any purpose, including commercial work")
+- **Use:** HDRI skies and environment plates for cartoon backgrounds; PBR textures for 3D plate integration.
+- **Free tier:** fully open (donation-supported)
+- **Repo lane:** trippedd-studio (background-plates pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
 
 ## Color grading
 <!-- grading for animation, LUT tools, color management -->
@@ -1600,3 +1908,599 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Dedup:** 2D-animation lane covers OpenToonz Xsheet (RESOURCE_CATALOG.md line 97: OpenToonz, BSD-3-Clause)
 - **Repo lane:** trippedd-studio (utilities pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+## Motion capture / pose estimation / rotoscoping
+
+Wave-2 Lane A pocket: markerless mocap, pose estimation, mocap cleanup, and rotoscoping aids. Licences verified upstream 2026-10-08; GPL/AGPL/MPL-family → [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) rows 78+. NC/research-only tools are documented as 🚫 honest exclusions.
+
+#### MediaPipe ✅ — Google's cross-platform pose/hand/face landmark stack
+- **What:** Real-time 2D/3D pose, hand, and face-mesh landmarks (BlazePose/PoseLandmarker) on CPU; the cheapest markerless-mocap front-end for rotoscope/reference capture.
+- **URL:** https://github.com/google-ai-edge/mediapipe
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** extract joint trajectories from reference footage → retarget onto character rigs; BlazePose covered here (no separate entry).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### MMPose ✅ — OpenMMLab pose-estimation toolbox (RTMPose, whole-body, hand/face)
+- **What:** 2D/3D pose estimation benchmark + pre-trained models (RTMPose real-time, whole-body 133-keypoint); the pose counterpart to MMDetection/MMCV.
+- **URL:** https://github.com/open-mmlab/mmpose
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** high-accuracy pose extraction for mocap reference; RTMPose for near-real-time capture passes.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### SLEAP ✅ — multi-animal/multi-person pose tracking framework
+- **What:** Deep-learning pose tracking with a GUI for labelling; strong temporal tracking, works on people as well as animals.
+- **URL:** https://github.com/talmolab/sleap
+- **License:** BSD-3-Clause-Clear (verified 2026-10-08 via GitHub API license field)
+- **Use:** track performers across shots for consistent joint tracks; label custom character-motion datasets.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Detectron2 Keypoint R-CNN ✅ — Meta's detection platform with keypoint heads
+- **What:** Production-grade object detection/segmentation/keypoint platform; Keypoint R-CNN gives 17-joint COCO poses with mature training recipes.
+- **URL:** https://github.com/facebookresearch/detectron2
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** robust multi-person pose in crowded reference footage; baseline for custom character-pose models.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### trt_pose ✅ — NVIDIA TensorRT-accelerated real-time pose estimation
+- **What:** Real-time human pose estimation optimized for Jetson via TensorRT; lightweight enough for live capture rigs.
+- **URL:** https://github.com/NVIDIA-AI-IOT/trt_pose
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** live mocap preview on NVIDIA hardware; cheap real-time pose feed for previs.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### DWPose ✅ — whole-body pose estimation via two-stage distillation (ControlNet's pose backbone)
+- **What:** ICCV 2023 whole-body pose estimator (body+face+hands+feet); the pose model behind ControlNet's OpenPose pipeline — strong on hands.
+- **URL:** https://github.com/IDEA-Research/DWPose
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** hand-accurate pose extraction for gesture-heavy acting reference; better hands than most 2D pose nets.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### ROMP ✅ — monocular one-stage regression of multiple 3D people
+- **What:** Single-image multi-person 3D mesh recovery (SMPL) with 3D positions; no per-person crop needed.
+- **URL:** https://github.com/Arthur151/ROMP
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** 3D body meshes from single-camera reference for blocking out character motion in 3D.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### HybrIK ✅ — hybrid analytical-neural inverse kinematics for 3D pose
+- **What:** 3D human pose via learned twist + analytical IK; produces skeleton-ready joint angles rather than raw keypoints.
+- **URL:** https://github.com/Jeff-sjtu/HybrIK
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** joint-angle output maps more directly onto character rigs than 2D keypoints; mocap-to-rig bridge.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### MotionBERT ✅ — unified 3D motion representation (pose + mesh + action)
+- **What:** ICCV 2023 transformer that lifts 2D pose sequences to 3D motion; handles noisy/occluded inputs well.
+- **URL:** https://github.com/Walter0807/MotionBERT
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** 2D-to-3D motion lifting for reference footage; denoises shaky pose tracks into smooth character motion.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### 4D-Humans (HMR 2.0) ✅ — transformer-based 3D human reconstruction + tracking
+- **What:** Reconstructs and tracks 3D humans (SMPL) from video with a transformer; strong temporal consistency for mocap.
+- **URL:** https://github.com/shubham-goel/4D-Humans
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** video → temporally-consistent 3D body meshes for character motion reference.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### mmhuman3d ✅ — OpenMMLab 3D human parametric-model toolbox
+- **What:** Unified framework for SMPL/SMPL-X parametric human models: fitting, evaluation, and data pipelines.
+- **URL:** https://github.com/open-mmlab/mmhuman3d
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** fit parametric bodies to pose estimates → standard skeleton output for rig retargeting.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+
+#### PaddleDetection keypoint ✅ — PaddlePaddle detection toolkit with keypoint models
+- **What:** Apache-2.0 detection/keypoint toolkit with high-accuracy human keypoint models and deployment tooling (Paddle Inference).
+- **URL:** https://github.com/PaddlePaddle/PaddleDetection
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** alternative pose front-end with strong deployment story; keypoint detection branch for reference capture.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### SAM (Segment Anything) ✅ — promptable image segmentation for rotoscope masks
+- **What:** Meta's promptable segmentation: click/box/text → masks; the fastest way to generate per-frame rotoscope masks from a seed frame.
+- **URL:** https://github.com/facebookresearch/segment-anything
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** seed rotoscope masks for characters/props; feed into video mask propagation (SAM2/XMem/Cutie).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### SAM 2 ✅ — video mask propagation for rotoscoping
+- **What:** SAM's video successor: prompt once, propagate masks across the whole shot with temporal consistency — a rotoscope engine.
+- **URL:** https://github.com/facebookresearch/sam2
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** full-shot character/props mattes from a single prompted frame; rotoscope plate cleanup.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### XMem ✅ — long-term video object segmentation (Atkinson-Shiffrin memory)
+- **What:** ECCV 2022 video object segmentation with long-term memory; holds masks across occlusions and long shots.
+- **URL:** https://github.com/hkchengrex/XMem
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** rotoscope mask tracking where SAM2 drifts; long takes with re-appearing characters.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Cutie ✅ — video object segmentation that puts the object back
+- **What:** CVPR 2024 highlight VOS with object-level memory; strong on small/fast objects that other trackers lose.
+- **URL:** https://github.com/hkchengrex/Cutie
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** roto masks for small props/fast hands; pairs with SAM seeds.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Anipose ✅ — multi-view markerless 3D pose triangulation
+- **What:** Triangulates 2D poses from multiple calibrated cameras into 3D skeletons; the cheap multi-cam mocap stage.
+- **URL:** https://github.com/lambdaloop/anipose
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** 3D capture from 2–6 commodity cameras; calibrate → track → export 3D joint trajectories for retargeting.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### DeepPoseKit ✅ — fast, user-friendly pose-estimation toolkit
+- **What:** Pose-estimation toolkit emphasizing fast inference and easy labelling workflows.
+- **URL:** https://github.com/jgraving/DeepPoseKit
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** quick custom pose models for non-human or stylized character reference tracking.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### GMFlow ✅ — global-matching optical flow (CVPR 2022 Oral)
+- **What:** Optical flow via global matching instead of coarse-to-fine; robust on large motions that break classic flow.
+- **URL:** https://github.com/haofeixu/gmflow
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** dense motion fields for rotoscope mask propagation and flow-guided inbetweening prep.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### DeAOT ✅ — hierarchical propagation for video object segmentation
+- **What:** Decoupled visual/object propagation for VOS (AOT family); efficient multi-object mask tracking.
+- **URL:** https://github.com/z-x-yang/AOT
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** multi-character rotoscope mask tracking across shots; efficient propagation backbone.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### MoveNet ✅ — lightning-fast on-device pose (TensorFlow Hub)
+- **What:** Ultra-light pose model (Lightning/Thunder variants) for mobile and browser; single-pose real-time on CPU.
+- **URL:** https://tfhub.dev (MoveNet model pages; TF Hub standard licence)
+- **License:** Apache-2.0 (TensorFlow Hub models publish under Apache-2.0 — verify on the model page before wiring)
+- **Use:** browser/PWA-side pose capture for the Concrete Dragon / AshLane PWA pipeline; on-device reference capture.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### PoseNet ✅ — classic browser pose estimation (tfjs-models)
+- **What:** The original in-browser pose estimator (single/multiple poses) via TensorFlow.js; runs anywhere WebGL runs.
+- **URL:** https://github.com/tensorflow/tfjs-models
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** in-browser pose capture widgets; legacy but dependency-light reference pose feed.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### three.js BVHLoader ✅ — BVH mocap import for the web/Three.js pipeline
+- **What:** Official three.js example loader for Biovision Hierarchy (.bvh) mocap files → THREE.AnimationClip, plus SkeletonHelper retargeting utilities.
+- **URL:** https://github.com/mrdoob/three.js (examples/jsm/loaders/BVHLoader.js)
+- **License:** MIT (verified 2026-10-08 via GitHub API license field — three.js)
+- **Use:** load mocap takes directly into the Three.js/Concrete Dragon pipeline; retarget BVH onto game characters.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### EasyMocap ⚠️ PRL-1.0 (registration required for project use)
+- **What:** ZJU "make human motion capture easier": multi-view mocap, SMPL fitting, camera calibration tooling.
+- **URL:** https://github.com/zju3dv/EasyMocap
+- **License:** Project Registration License (PRL) v1.0 (verified 2026-10-08 via repo LICENSE raw: research/educational/personal use free without registration; ANY project use — commercial or not — requires registration via their form BEFORE use).
+- **Use:** multi-view mocap stage only after registration is filed; otherwise use Anipose (BSD-2-Clause) instead.
+- **Free tier:** open with registration condition
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+
+#### ThreeDPoseUnityBarracuda ⚠️ no licence file in repo
+- **What:** Unity Barracuda sample running 3D pose estimation in-engine (Unity-side mocap demo).
+- **URL:** https://github.com/digital-standard/ThreeDPoseUnityBarracuda
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty, no LICENSE found). No rights granted; do not reuse code until licensed.
+- **Use:** reference architecture only (how to run pose nets in Unity Barracuda); reimplement under own code.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+
+#### OpenPose 🚫 non-commercial research only — honest exclusion
+- **What:** CMU's classic real-time multi-person keypoint library (body/face/hands/feet) — historically the standard 2D pose engine.
+- **URL:** https://github.com/CMU-Perceptual-Computing-Lab/openpose
+- **License:** "ACADEMIC OR NON-PROFIT ORGANIZATION NONCOMMERCIAL RESEARCH USE ONLY" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use MediaPipe/MMPose/DWPose instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### AlphaPose 🚫 non-commercial research only — honest exclusion
+- **What:** Real-time accurate full-body multi-person pose estimation + tracking system (SJTU MVIG).
+- **URL:** https://github.com/MVIG-SJTU/AlphaPose
+- **License:** "ACADEMIC OR NON-PROFIT ORGANIZATION NONCOMMERCIAL RESEARCH USE ONLY" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use MMPose/DWPose instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### VIBE 🚫 non-commercial scientific research only — honest exclusion
+- **What:** CVPR 2020 video inference for human body pose/shape (3D mesh from video) — influential 3D mocap baseline.
+- **URL:** https://github.com/mkocabas/VIBE
+- **License:** "Software Copyright License for non-commercial scientific research purposes" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use ROMP/HybrIK/MotionBERT/4D-Humans instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### ExPose 🚫 non-commercial scientific research only — honest exclusion
+- **What:** Expressive 3D pose+shape regression (body+hands+face, SMPL-X) from a single image.
+- **URL:** https://github.com/vchoutas/expose
+- **License:** "Software Copyright License for non-commercial scientific research purposes" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use DWPose+ROMP instead.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### GVHMR 🚫 educational/research/non-profit only — honest exclusion
+- **What:** World-grounded human motion recovery with gravity-view coordinates (ZJU) — strong global-trajectory 3D mocap.
+- **URL:** https://github.com/zju3dv/GVHMR
+- **License:** "Permission to use, copy, modify and distribute this software and its documentation for educational, research and non-profit purposes only… prohibited for commercial use" (verified 2026-10-08 via repo LICENSE raw). NOT commercial-safe. **EXCLUDED** — use 4D-Humans/MotionBERT instead.
+- **Free tier:** non-commercial only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### ProPainter 🚫 NTU S-Lab 1.0 non-commercial — honest exclusion
+- **What:** ICCV 2023 video inpainting (object removal, completion, outpainting) with flow propagation + transformers — the roto-cleanup state of the art.
+- **URL:** https://github.com/sczhou/ProPainter
+- **License:** NTU S-Lab License 1.0 — "strictly for non-commercial purposes" (verified 2026-10-08 via upstream README license section). NOT commercial-safe. **EXCLUDED** — use SAM2/XMem inpainting-adjacent workflows or licensed tools instead.
+- **Free tier:** non-commercial only
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### Plask 🚫 proprietary commercial — honest exclusion
+- **What:** Web-based AI motion capture (video → 3D animation) with a freemium SaaS model; popular for quick mocap without suits.
+- **URL:** https://www.plask.ai
+- **License:** Proprietary commercial (no open-source licence grant; free tier exists but output/use is governed by their ToS). **EXCLUDED** from the FOSS pipeline — use MediaPipe/Anipose/Rokoko-free alternatives instead.
+- **Free tier:** freemium (proprietary)
+- **Repo lane:** trippedd-studio (mocap/rotoscope pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+## Vertical-format / short-form delivery
+
+Wave-2 Lane A pocket: 9:16 / Shorts / Reels / TikTok pipeline — auto-reframe, silence cutting, caption burn-in, portrait matting, and vertical capture. Licences verified upstream 2026-10-08.
+
+#### MediaPipe AutoFlip ✅ — Google's intelligent video reframing (landscape → 9:16)
+- **What:** Saliency-based automatic reframing: detects important content and crops/pans to any target aspect ratio (9:16, 1:1, 4:3) with smoothed camera paths.
+- **URL:** https://github.com/google-ai-edge/mediapipe (mediapipe/examples/desktop/autoflip)
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field — same repo as MediaPipe)
+- **Use:** the vertical-cut engine: 16:9 episode masters → 9:16 Shorts/Reels/TikTok with subject tracking, no manual keyframing.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+
+#### jumpcutter ✅ — automatic silence/jump-cut editor
+- **What:** Cary Khosravi's auto-editor: cuts silences and dead air from talking-head/promo footage; the classic jump-cut automation.
+- **URL:** https://github.com/carykh/jumpcutter
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** tighten vertical promo cuts; strip dead air before caption burn-in.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### autosub ✅ — CLI auto-subtitle generation (unmaintained but functional)
+- **What:** Command-line utility that auto-generates SRT subtitles from audio via speech recognition.
+- **URL:** https://github.com/agermanidis/autosub
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** first-pass subtitles for vertical cuts; feed SRT into burn-in (FFmpeg subtitles filter).
+- **Note:** upstream marks it NO LONGER MAINTAINED — prefer stable-ts/WhisperX (covered Wave 1) for new work.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### ffmpeg-normalize ✅ — EBU R128 / RMS / peak loudness normalization
+- **What:** Batch audio normalization with two-pass EBU R128; keeps Shorts/Reels audio at platform loudness.
+- **URL:** https://github.com/slhck/ffmpeg-normalize
+- **License:** MIT (verified 2026-10-08 via repo LICENSE.md raw — MIT text)
+- **Use:** normalize episode clips to -14 LUFS for vertical platforms before final encode.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### smartcrop.js ✅ — content-aware image cropping
+- **What:** Content-aware crop: finds the most interesting region (faces, detail, saturation) for any target aspect — the still-image sibling of AutoFlip.
+- **URL:** https://github.com/jwagner/smartcrop.js
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** 9:16 thumbnails/posters from episode frames; face-aware vertical crop for title cards.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### Subtitle Edit ✅ — full subtitle authoring station (the .NET app)
+- **What:** Complete subtitle editor: 300+ formats, waveform, auto-translate, timing tools, burn-in export; distinct from Aegisub/pysubs2 (covered Wave 1).
+- **URL:** https://github.com/SubtitleEdit/subtitleedit
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** author vertical captions with karaoke/positioning, export ASS for FFmpeg burn-in on 9:16 cuts.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### timecut ✅ — record JS/web animations to smooth MP4 (title-card capture)
+- **What:** Node.js tool that captures web pages with JavaScript animations at virtual high fps and encodes to MP4 via FFmpeg.
+- **URL:** https://github.com/tungs/timecut
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** render animated HTML/CSS/JS title cards and motion graphics to video for vertical cuts — no screen recording needed.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### video-editing-skill ✅ — Bash+FFmpeg+Whisper short-form pipeline (trim/jumpcut/Hormozi captions)
+- **What:** OpenClaw/Claude-compatible skill: pure Bash + FFmpeg + Whisper — trim, jump cut, Hormozi/standard/minimal caption burn-in, text overlay, speed change.
+- **URL:** https://github.com/6missedcalls/video-editing-skill
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** end-to-end vertical pipeline in one script set: trim → jumpcut → caption → speed; the Shorts factory.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+
+#### FFCreator ✅ — Node.js programmatic video creation library
+- **What:** Fast video processing/creation library on Node.js: scenes, transitions, text/image/video layers rendered to MP4.
+- **URL:** https://github.com/tnfe/FFCreator
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** code-driven vertical title cards, countdowns, and templated Shorts intros; pairs with timecut capture.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### rembg ✅ — background removal for images (portrait-mode vertical plates)
+- **What:** U²-Net-based background removal CLI/library; clean subject cutouts for blurred-background vertical composites.
+- **URL:** https://github.com/danielgatis/rembg
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** cut out characters for 9:16 layouts; blurred-plate background + sharp subject foreground composites.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### BackgroundMattingV2 ✅ — real-time high-resolution background matting
+- **What:** Real-time portrait matting (no green screen) at high resolution; video-native subject isolation.
+- **URL:** https://github.com/PeterL1n/BackgroundMattingV2
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** video subject mattes for vertical reframe composites; cleaner edges than rembg on footage.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Kap ✅ — open-source screen recorder (MIT)
+- **What:** Web-technology screen recorder with GIF/MP4/WebM export, plugins, and region capture.
+- **URL:** https://github.com/wulkano/kap
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** capture gameplay/animation playback for vertical teaser clips; quick social captures.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### ScreenToGif ✅ — screen region → GIF/video recorder and editor
+- **What:** Record a screen region, edit frames, and save as GIF or video; frame-level editor built in.
+- **URL:** https://github.com/NickeManarin/ScreenToGif
+- **License:** MS-PL (Microsoft Public License, OSI-approved permissive — verified 2026-10-08 via GitHub API license field)
+- **Use:** looping GIF teasers and short vertical clips from animation playback; frame editor for cleanup.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### mediapipe-autoflip-docker ⚠️ no licence file in repo
+- **What:** Docker wrapper that builds MediaPipe AutoFlip from source and exposes a one-command 9:16 reframe (`docker run … input.mp4 output_9x16.mp4 9:16`).
+- **URL:** https://github.com/thornxyz/mediapipe-autoflip-docker
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). The underlying AutoFlip is Apache-2.0, but the wrapper grants nothing — verify before reuse.
+- **Use:** fastest path to running AutoFlip without a Bazel build; reimplement the Dockerfile if licensing stays unclear.
+- **Free tier:** n/a — unlicensed wrapper
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### OpusClip 🚫 proprietary SaaS — honest exclusion
+- **What:** AI clip-factory SaaS: long video → viral Shorts with auto-captions and reframing; the commercial reference for the vertical pipeline.
+- **URL:** https://www.opus.pro
+- **License:** Proprietary commercial SaaS (no open-source licence grant). **EXCLUDED** — replicate with AutoFlip + WhisperX + video-editing-skill instead.
+- **Free tier:** freemium (proprietary)
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### CapCut 🚫 proprietary freeware — honest exclusion
+- **What:** ByteDance's free editor with auto-captions, templates, and direct TikTok publishing — the dominant Shorts editor.
+- **URL:** https://www.capcut.com
+- **License:** Proprietary freeware (no open-source licence grant; ToS-governed). **EXCLUDED** from the FOSS pipeline — use the FFmpeg script stack (jumpcutter, video-editing-skill) instead.
+- **Free tier:** free (proprietary)
+- **Repo lane:** trippedd-studio (vertical-delivery pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+## Animation formats / conversion / playback
+
+Wave-2 Lane A pocket: animation file formats and the tools that read, write, convert, and play them — dotLottie, Lottie runtimes, Rive, Spine-alternatives, SWF/Flash, animated image formats, sprite packing. Licences verified upstream 2026-10-08.
+
+#### dotlottie-web ✅ — official LottieFiles Lottie + dotLottie web player (Rust+WASM)
+- **What:** High-performance web player for Lottie JSON and .lottie archives: Rust+WASM core, ThorVG renderer, Canvas2D/WebGL2/WebGPU backends, theming + state machines.
+- **URL:** https://github.com/LottieFiles/dotlottie-web
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** play episode motion-graphics and character animations on web/PWA surfaces; React/Vue/Svelte/Solid/WebComponent SDKs.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### dotlottie-rs ✅ — Rust dotLottie engine (native players, bindings)
+- **What:** The shared Rust core behind LottieFiles' players: bindings for Android, iOS, Web (WASM), C/C++; dotLottie v2 (theming, state machines, audio).
+- **URL:** https://github.com/LottieFiles/dotlottie-rs
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** native playback of .lottie animation packs in games/apps; single engine across platforms.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### lottie-android ✅ — Airbnb's native Android (and cross-platform) Lottie renderer
+- **What:** Render After Effects animations natively on Android/iOS/Web/React Native — the original Lottie runtime.
+- **URL:** https://github.com/airbnb/lottie-android
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** native mobile playback of title-card and UI animations exported from After Effects.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### lottie-ios ✅ — Airbnb's native iOS Lottie renderer
+- **What:** iOS library to natively render After Effects vector animations (Swift/Obj-C).
+- **URL:** https://github.com/airbnb/lottie-ios
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** iOS-side animation playback; pairs with lottie-android for mobile parity.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### lottie-web ✅ — Airbnb's web Lottie player (bodymovin runtime)
+- **What:** Render After Effects animations natively on the web — the canonical bodymovin/Lottie web runtime.
+- **URL:** https://github.com/airbnb/lottie-web
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** web/PWA animation playback; the baseline player dotlottie-web supersedes for new work.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### ThorVG ✅ — production C++ vector graphics engine (SVG + Lottie)
+- **What:** Lightweight vector graphics engine with broad Lottie feature coverage; the renderer inside dotlottie-web.
+- **URL:** https://github.com/thorvg/thorvg
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** embed Lottie/SVG rendering in native tools and game engines without a browser.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### rive-runtime ✅ — Rive's low-level C++ runtime + renderer (MIT)
+- **What:** Rive's official low-level runtime: state machines, skeletal rigs, vector tweening with code-driven inputs — real-time interactive animation.
+- **URL:** https://github.com/rive-app/rive-runtime
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** interactive character/UI animation in games and apps; the FOSS-friendly Rive path (cf. the Rive ⚠️ entry in the 2D lane — this is the runtime half).
+- **Free tier:** fully open (Rive editor has its own terms)
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### Ruffle ✅ — Flash Player emulator in Rust (MIT/Apache-2.0)
+- **What:** Drop-in Flash (SWF) player/emulator written in Rust; plays legacy SWF animation content on modern platforms.
+- **URL:** https://github.com/ruffle-rs/ruffle
+- **License:** MIT OR Apache-2.0 (verified 2026-10-08 via upstream README license section)
+- **Use:** recover and replay legacy Flash-era animation assets; SWF → modern pipeline bridge.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### libavif (avifenc) ✅ — AVIF encode/decode incl. animated AVIF
+- **What:** Reference AVIF library + `avifenc`/`avifdec` apps; AVIF supports animated sequences at far better compression than GIF.
+- **URL:** https://github.com/AOMediaCodec/libavif
+- **License:** BSD-2-Clause (verified 2026-10-08 via repo LICENSE text — BSD-style redistribution grant)
+- **Use:** animated-AVIF deliverables for web; high-quality short loops smaller than GIF/WebP.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### libjxl ✅ — JPEG XL reference implementation (animated JXL)
+- **What:** JPEG XL codec; the format supports animation sequences with excellent quality/size — a next-gen animated-image path.
+- **URL:** https://github.com/libjxl/libjxl
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** animated-JXL masters and web deliverables; lossless animation sequences.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+
+#### Glue ✅ — CLI CSS sprite generator
+- **What:** Simple command-line tool to generate CSS sprites from image sets — the classic sprite-sheet path for web animation.
+- **URL:** https://github.com/jorgebastida/glue
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API license field)
+- **Use:** sprite-sheet generation for web/PWA character animation.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+
+#### PAG (libpag) ✅ — Tencent's Portable Animated Graphics renderer
+- **What:** Official rendering library for PAG files — AE-like animations (vector + bitmap + text) with a compact binary format and multi-platform SDKs.
+- **URL:** https://github.com/Tencent/libpag
+- **License:** Apache-2.0 (verified 2026-10-08 via repo README license badge + LICENSE.txt reference)
+- **Use:** alternative to Lottie for complex AE animations with broader effect support; mobile + web SDKs.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### Skottie ✅ — Skia's Lottie animation player
+- **What:** Skia's built-in Lottie module: renders Lottie animations on Skia's CPU/GPU canvas — the engine behind Chrome/Android vector animation.
+- **URL:** https://skia.org/docs/user/modules/skottie/
+- **License:** BSD-3-Clause (Skia is BSD-3-Clause per skia.org — verify on the site before wiring)
+- **Use:** embed Lottie playback anywhere Skia runs (custom tools, game engines, Flutter-adjacent pipelines).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### SVGAPlayer ✅ — AE/Animate CC animation player (Lottie-like, Apache-2.0)
+- **What:** Renders After Effects / Animate CC (Flash) animations natively on Android, iOS, and Web — SVGA format, similar role to Lottie.
+- **URL:** https://github.com/yyued/SVGAPlayer-Android
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** alternative vector-animation runtime where SVGA tooling fits better than Lottie.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+
+#### oxipng ✅ — multithreaded PNG optimizer (Rust)
+- **What:** Lossless PNG optimization, multithreaded; squeezes sprite/plate PNGs without quality loss.
+- **URL:** https://github.com/oxipng/oxipng
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** optimize animation frame PNGs, sprite sheets, and plate art before packaging.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### rlottie ⚠️ mostly MIT, some parts under different licences
+- **What:** Samsung's platform-independent standalone Lottie player library (C++); embedded in many apps.
+- **URL:** https://github.com/Samsung/rlottie
+- **License:** ⚠️ Mixed — "rlottie basically comes with MIT license (licenses/COPYING.MIT) but some parts of shared code are covered by different licenses" (verified 2026-10-08 via repo README Licensing section). Audit `licenses/` per folder before embedding.
+- **Use:** C++ Lottie embedding where ThorVG doesn't fit; verify the mixed parts first.
+- **Free tier:** open with per-folder audit
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+
+#### spine-runtimes 🚫 commercial licence required — honest exclusion
+- **What:** Official 2D skeletal-animation runtimes for Spine (Esoteric Software): bone rigs, meshes, IK — the industry-standard 2D skeletal format.
+- **URL:** https://github.com/EsotericSoftware/spine-runtimes
+- **License:** 🚫 Spine Runtimes License Agreement — "users of your software must have their own Spine license"; distribution without a Spine licence requires buying one (verified 2026-10-08 via upstream README license section). NOT FOSS. **EXCLUDED** — use DragonBones (covered Wave 1, MIT runtime) or Rive instead.
+- **Free tier:** none (paid editor + runtime licence terms)
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### TexturePacker 🚫 proprietary commercial — honest exclusion
+- **What:** The industry-standard sprite-sheet/atlas packer (CodeAndWeb) — GUI + CLI, all export formats.
+- **URL:** https://www.codeandweb.com/texturepacker
+- **License:** Proprietary commercial (paid licence; no open-source grant). **EXCLUDED** — use FreeTexturePacker (covered Wave 1, MIT) or Glue instead.
+- **Free tier:** trial (proprietary)
+- **Repo lane:** trippedd-studio (formats pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a

@@ -11,6 +11,97 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 ## Lip-sync / phoneme / viseme
 <!-- priority pocket: phoneme extraction, syllable/vowel detection, mouth-shape timelines -->
 
+#### Rhubarb Lip Sync ✅ — also in RESOURCE_CATALOG
+- **What:** CLI WAV → mouth-shape (viseme) timing cues via phoneme extraction; the standard open-source lip-sync engine for 2D animation.
+- **URL:** https://github.com/DanielSWolf/rhubarb-lip-sync
+- **License:** MIT (verified — RESOURCE_CATALOG "Lip-sync tools"; author-confirmed MIT covering code + mouth images).
+- **Use:** produces .tsv/.xml mouth timelines → drive mouth shape keys or 2D mouth-swap sprites. Integrates with OpenToonz/Moho/Spine. Keep the res/ folder next to the binary.
+- **Lane note:** full entry in RESOURCE_CATALOG.md § "Lip-sync tools"; pointer entry here. Wave-1 wire-up target.
+
+#### papagayo-ng 🚫 GPL-2.0 — also in RESOURCE_CATALOG (quarantine row 1)
+- **What:** Manual phoneme-breakdown lip-sync GUI with multi-language dictionaries; exports .pgo timing files readable by Aseprite/Pixelorama scripts.
+- **URL:** https://github.com/morevnaproject-org/papagayo-ng
+- **License:** GPL-2.0 (verified — gpl.txt ships in repo; Debian metadata says GPL-2). **QUARANTINED** — never wired into shipping paths.
+- **Use:** manual-correction companion to Rhubarb's auto pass. Standalone-program use only.
+
+#### aeneas 🚫 AGPL-3.0 — also in RESOURCE_CATALOG (quarantine row 2)
+- **What:** DTW word-level audio↔text sync, 30+ languages, no ASR needed; also does subtitle/line timing.
+- **URL:** https://github.com/readbeyond/aeneas/
+- **License:** AGPL-3.0 (verified — upstream README states GNU Affero GPL v3). **QUARANTINED** — never in shipping paths.
+- **Use:** coarse lip timing without running ASR; subtitle/line timing for dialogue stems. Standalone-program use only.
+
+#### WhisperX ✅ — also in RESOURCE_CATALOG
+- **What:** Whisper wrapper with forced alignment (wav2vec2) → word-level timestamps with reliable word boundaries.
+- **URL:** http://github.com/m-bain/whisperX
+- **License:** BSD-2-Clause (verified via upstream LICENSE).
+- **Use:** word-level caption timing; pairs with forced aligners (MFA/Gentle) for phoneme timings → cartoon mouth sets.
+
+#### stable-ts ✅ — also in RESOURCE_CATALOG
+- **What:** Whisper wrapper that stabilizes timestamps + emits word/sentence SRT/VTT/ASS directly (`stable-ts audio.mp3 -o out.srt`).
+- **URL:** https://github.com/jianfch/stable-ts
+- **License:** MIT (verified via upstream README License section).
+- **Use:** karaoke-style per-word timing for comedy captions; sits on OpenAI whisper (MIT) + optional Silero VAD (MIT).
+
+#### Montreal Forced Aligner ✅ — also in RESOURCE_CATALOG
+- **What:** Kaldi-based phoneme forced aligner — whisper-driven alternative; trainable to new languages.
+- **URL:** https://montrealcorpustools.github.io/Montreal-Forced-Aligner/
+- **License:** MIT (verified).
+- **Use:** whisper for words, MFA for phoneme timings → drive cartoon mouth sets. CLI.
+
+#### Gentle ✅ — also in RESOURCE_CATALOG
+- **What:** Robust Kaldi-based forced aligner (lowerquality/strob); word- and phoneme-level alignment with a friendly API/server.
+- **URL:** https://github.com/lowerquality/gentle
+- **License:** MIT (verified via upstream LICENSE).
+- **Use:** phoneme timings for lip-sync; Docker path for the heavier Kaldi dependency.
+
+#### Allosaurus 🚫 GPL-3.0 — also in RESOURCE_CATALOG (quarantine row 3)
+- **What:** Universal phone recognizer — phoneme-level transcription across many languages without a pronunciation dictionary.
+- **URL:** https://github.com/xinjli/allosaurus
+- **License:** GPL-3.0 (verified via research citations — 'echogarden and allosaurus are GPL-3.0'). **QUARANTINED** — assumed permissive was WRONG; corrected here.
+- **Use:** phoneme extraction for languages with no dictionary; standalone-program use only.
+
+#### wav2vec2-phoneme models ✅
+- **What:** Wav2Vec2 checkpoints fine-tuned for phoneme recognition (e.g. facebook/wav2vec2-base-960h, facebookresearch espeak-phoneme fine-tunes) — frame-level phoneme posteriors from raw audio.
+- **URL:** https://github.com/facebookresearch/fairseq
+- **License:** Apache-2.0 (verified 2026-10-08: fairseq/fairseq2 code+models released under Apache 2.0; facebook/wav2vec2-base-960h card lists Apache-2.0).
+- **Use:** modern phoneme-extraction backbone for lip-sync; drives viseme mapping tables below. GPU optional, CPU workable for short clips.
+
+#### Parselmouth 🚫 GPL-3.0-or-later — also in RESOURCE_CATALOG (quarantine row 4)
+- **What:** Python bindings for Praat — pitch, formant, intensity, voice-quality analysis from speech.
+- **URL:** https://github.com/YannickJadoul/Parselmouth
+- **License:** GPL-3.0-or-later (verified: upstream README + GitHub API GPL-3.0). **QUARANTINED** — standalone-tool use only.
+- **Use:** vowel/formant detection for mouth openness mapping; syllable-nucleus detection for beat-timing dialogue.
+
+#### eSpeak / eSpeak-NG 🚫 GPL-3.0-or-later — also in RESOURCE_CATALOG (quarantine row 5)
+- **What:** Compact formant TTS + phoneme translator; espeak-ng is the maintained fork. The `--phonemes` mode turns any script line into an IPA/phoneme string.
+- **URL:** https://github.com/espeak-ng/espeak-ng
+- **License:** GPL-3.0-or-later (verified via README License Information + COPYING). **QUARANTINED** — standalone-program use only (e.g. generate phoneme strings, keep the GPL process boundary).
+- **Use:** offline phoneme strings for viseme tables; NEVER link the library into shipping code.
+
+#### phonemizer 🚫 GPL-3.0 — also in RESOURCE_CATALOG (quarantine row 6)
+- **What:** Text→phoneme with multiple backends (espeak-ng, festival, segments); the standard G2P front-end for TTS/alignment pipelines.
+- **URL:** https://github.com/bootphon/phonemizer
+- **License:** GPL-3.0 (verified: root LICENSE is GPL v3). **QUARANTINED**.
+- **Use:** phonemize dialogue scripts before alignment; standalone-program use only.
+
+#### g2p-en ✅
+- **What:** English grapheme-to-phoneme: CMUdict lookup (~134k words) + neural seq2seq OOV fallback, homograph disambiguation via POS tags, number/currency expansion.
+- **URL:** https://github.com/Kyubyong/g2p
+- **License:** Apache-2.0 (verified 2026-10-08: upstream LICENSE.txt; PyPI lists Apache Software License; third-party notices cite Apache 2.0).
+- **Use:** script→phoneme conversion for viseme timelines; pip-installable, no GPU needed.
+
+#### g2p-seq2seq ✅
+- **What:** CMU Sphinx neural G2P — TensorFlow seq2seq (2-layer LSTM) grapheme→phoneme; pretrained English model trained on CMUdict; trainable to new dictionaries.
+- **URL:** https://github.com/cmusphinx/g2p-seq2seq
+- **License:** Apache-2.0 (verified 2026-10-08: upstream-adjacent Docker README states the project "shares an Apache License"; CMU Sphinx tools are BSD/Apache family).
+- **Use:** extend pronunciation dictionaries for new words; phoneme strings for mouth-chart mapping.
+
+#### Phonetisaurus ✅
+- **What:** WFST-based G2P (n-gram joint-sequence models); the classic fast dictionary-extension tool from the CMU Sphinx ecosystem.
+- **URL:** https://github.com/cmusphinx/Phonetisaurus
+- **License:** BSD-3-Clause (verified 2026-10-08: CMU Sphinx org repo listing shows BSD-3-Clause).
+- **Use:** fast, tiny-footprint G2P for dictionary extension; good where g2p-seq2seq's TensorFlow weight is too heavy.
+
 ## Dialogue-to-animation / beat timing
 <!-- dialogue timing, beat matching, animatic timing -->
 

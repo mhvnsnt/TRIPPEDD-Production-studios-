@@ -1,0 +1,714 @@
+{
+  "audio": "proofs/lane-b/static_L1_standin_raw.wav",
+  "duration_s": 8.251,
+  "transcript": "I-O! You see that fire? That's the math signal, baby! Council's in session! Everybody move like you got somewhere to be!",
+  "engine": "faster-whisper base + CMUdict",
+  "phone_boundary_method": "proportional split within real word spans (APPROXIMATION)",
+  "oov_words": [],
+  "words": [
+    {
+      "word": "I",
+      "start": 0.0,
+      "end": 0.22
+    },
+    {
+      "word": "-O!",
+      "start": 0.22,
+      "end": 0.36
+    },
+    {
+      "word": "You",
+      "start": 0.66,
+      "end": 0.82
+    },
+    {
+      "word": "see",
+      "start": 0.82,
+      "end": 1.02
+    },
+    {
+      "word": "that",
+      "start": 1.02,
+      "end": 1.24
+    },
+    {
+      "word": "fire?",
+      "start": 1.24,
+      "end": 1.68
+    },
+    {
+      "word": "That's",
+      "start": 2.12,
+      "end": 2.4
+    },
+    {
+      "word": "the",
+      "start": 2.4,
+      "end": 2.5
+    },
+    {
+      "word": "math",
+      "start": 2.5,
+      "end": 2.7
+    },
+    {
+      "word": "signal,",
+      "start": 2.7,
+      "end": 3.2
+    },
+    {
+      "word": "baby!",
+      "start": 3.46,
+      "end": 3.7
+    },
+    {
+      "word": "Council's",
+      "start": 3.96,
+      "end": 4.46
+    },
+    {
+      "word": "in",
+      "start": 4.46,
+      "end": 4.54
+    },
+    {
+      "word": "session!",
+      "start": 4.54,
+      "end": 4.92
+    },
+    {
+      "word": "Everybody",
+      "start": 5.36,
+      "end": 5.78
+    },
+    {
+      "word": "move",
+      "start": 5.78,
+      "end": 6.24
+    },
+    {
+      "word": "like",
+      "start": 6.24,
+      "end": 6.46
+    },
+    {
+      "word": "you",
+      "start": 6.46,
+      "end": 6.68
+    },
+    {
+      "word": "got",
+      "start": 6.68,
+      "end": 6.8
+    },
+    {
+      "word": "somewhere",
+      "start": 6.8,
+      "end": 7.26
+    },
+    {
+      "word": "to",
+      "start": 7.26,
+      "end": 7.52
+    },
+    {
+      "word": "be!",
+      "start": 7.52,
+      "end": 7.76
+    }
+  ],
+  "phone_segments": [
+    {
+      "t0": 0.0,
+      "t1": 0.22,
+      "phone": "AY",
+      "viseme": "A",
+      "word": "I",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 0.22,
+      "t1": 0.36,
+      "phone": "OW",
+      "viseme": "E",
+      "word": "-O!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 0.66,
+      "t1": 0.724,
+      "phone": "Y",
+      "viseme": "C",
+      "word": "You",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 0.724,
+      "t1": 0.82,
+      "phone": "UW",
+      "viseme": "D",
+      "word": "You",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 0.82,
+      "t1": 0.9,
+      "phone": "S",
+      "viseme": "C",
+      "word": "see",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 0.9,
+      "t1": 1.02,
+      "phone": "IY",
+      "viseme": "A",
+      "word": "see",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 1.02,
+      "t1": 1.0933333333333333,
+      "phone": "DH",
+      "viseme": "F",
+      "word": "that",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 1.0933333333333333,
+      "t1": 1.2033333333333331,
+      "phone": "AE",
+      "viseme": "C",
+      "word": "that",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 1.2033333333333331,
+      "t1": 1.2399999999999998,
+      "phone": "T",
+      "viseme": "C",
+      "word": "that",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 1.24,
+      "t1": 1.35,
+      "phone": "F",
+      "viseme": "G",
+      "word": "fire?",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 1.35,
+      "t1": 1.5150000000000001,
+      "phone": "AY",
+      "viseme": "A",
+      "word": "fire?",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 1.5150000000000001,
+      "t1": 1.6800000000000002,
+      "phone": "ER",
+      "viseme": "C",
+      "word": "fire?",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.12,
+      "t1": 2.19,
+      "phone": "DH",
+      "viseme": "F",
+      "word": "That's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.19,
+      "t1": 2.295,
+      "phone": "AE",
+      "viseme": "C",
+      "word": "That's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.295,
+      "t1": 2.33,
+      "phone": "T",
+      "viseme": "C",
+      "word": "That's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.33,
+      "t1": 2.4,
+      "phone": "S",
+      "viseme": "C",
+      "word": "That's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.4,
+      "t1": 2.44,
+      "phone": "DH",
+      "viseme": "F",
+      "word": "the",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.44,
+      "t1": 2.5,
+      "phone": "AH",
+      "viseme": "C",
+      "word": "the",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.5,
+      "t1": 2.5571428571428574,
+      "phone": "M",
+      "viseme": "B",
+      "word": "math",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.5571428571428574,
+      "t1": 2.6428571428571432,
+      "phone": "AE",
+      "viseme": "C",
+      "word": "math",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.6428571428571432,
+      "t1": 2.7000000000000006,
+      "phone": "TH",
+      "viseme": "F",
+      "word": "math",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.7,
+      "t1": 2.7769230769230773,
+      "phone": "S",
+      "viseme": "C",
+      "word": "signal,",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.7769230769230773,
+      "t1": 2.8923076923076927,
+      "phone": "IH",
+      "viseme": "A",
+      "word": "signal,",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.8923076923076927,
+      "t1": 2.930769230769231,
+      "phone": "G",
+      "viseme": "H",
+      "word": "signal,",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 2.930769230769231,
+      "t1": 3.007692307692308,
+      "phone": "N",
+      "viseme": "C",
+      "word": "signal,",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.007692307692308,
+      "t1": 3.1230769230769235,
+      "phone": "AH",
+      "viseme": "C",
+      "word": "signal,",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.1230769230769235,
+      "t1": 3.2000000000000006,
+      "phone": "L",
+      "viseme": "C",
+      "word": "signal,",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.46,
+      "t1": 3.49,
+      "phone": "B",
+      "viseme": "B",
+      "word": "baby!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.49,
+      "t1": 3.58,
+      "phone": "EY",
+      "viseme": "C",
+      "word": "baby!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.58,
+      "t1": 3.6100000000000003,
+      "phone": "B",
+      "viseme": "B",
+      "word": "baby!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.6100000000000003,
+      "t1": 3.7,
+      "phone": "IY",
+      "viseme": "A",
+      "word": "baby!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.96,
+      "t1": 3.993333333333333,
+      "phone": "K",
+      "viseme": "H",
+      "word": "Council's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 3.993333333333333,
+      "t1": 4.093333333333333,
+      "phone": "AW",
+      "viseme": "A",
+      "word": "Council's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.093333333333333,
+      "t1": 4.159999999999999,
+      "phone": "N",
+      "viseme": "C",
+      "word": "Council's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.159999999999999,
+      "t1": 4.226666666666666,
+      "phone": "S",
+      "viseme": "C",
+      "word": "Council's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.226666666666666,
+      "t1": 4.326666666666665,
+      "phone": "AH",
+      "viseme": "C",
+      "word": "Council's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.326666666666665,
+      "t1": 4.393333333333332,
+      "phone": "L",
+      "viseme": "C",
+      "word": "Council's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.393333333333332,
+      "t1": 4.459999999999998,
+      "phone": "Z",
+      "viseme": "C",
+      "word": "Council's",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.46,
+      "t1": 4.508,
+      "phone": "IH",
+      "viseme": "A",
+      "word": "in",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.508,
+      "t1": 4.54,
+      "phone": "N",
+      "viseme": "C",
+      "word": "in",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.54,
+      "t1": 4.6033333333333335,
+      "phone": "S",
+      "viseme": "C",
+      "word": "session!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.6033333333333335,
+      "t1": 4.698333333333333,
+      "phone": "EH",
+      "viseme": "C",
+      "word": "session!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.698333333333333,
+      "t1": 4.761666666666667,
+      "phone": "SH",
+      "viseme": "C",
+      "word": "session!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.761666666666667,
+      "t1": 4.8566666666666665,
+      "phone": "AH",
+      "viseme": "C",
+      "word": "session!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 4.8566666666666665,
+      "t1": 4.92,
+      "phone": "N",
+      "viseme": "C",
+      "word": "session!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.36,
+      "t1": 5.430000000000001,
+      "phone": "EH",
+      "viseme": "C",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.430000000000001,
+      "t1": 5.4766666666666675,
+      "phone": "V",
+      "viseme": "G",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.4766666666666675,
+      "t1": 5.523333333333334,
+      "phone": "R",
+      "viseme": "D",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.523333333333334,
+      "t1": 5.593333333333335,
+      "phone": "IY",
+      "viseme": "A",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.593333333333335,
+      "t1": 5.616666666666668,
+      "phone": "B",
+      "viseme": "B",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.616666666666668,
+      "t1": 5.686666666666668,
+      "phone": "AA",
+      "viseme": "C",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.686666666666668,
+      "t1": 5.710000000000002,
+      "phone": "D",
+      "viseme": "C",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.710000000000002,
+      "t1": 5.780000000000002,
+      "phone": "IY",
+      "viseme": "A",
+      "word": "Everybody",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.78,
+      "t1": 5.911428571428572,
+      "phone": "M",
+      "viseme": "B",
+      "word": "move",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 5.911428571428572,
+      "t1": 6.108571428571429,
+      "phone": "UW",
+      "viseme": "D",
+      "word": "move",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.108571428571429,
+      "t1": 6.240000000000001,
+      "phone": "V",
+      "viseme": "G",
+      "word": "move",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.24,
+      "t1": 6.3133333333333335,
+      "phone": "L",
+      "viseme": "C",
+      "word": "like",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.3133333333333335,
+      "t1": 6.423333333333334,
+      "phone": "AY",
+      "viseme": "A",
+      "word": "like",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.423333333333334,
+      "t1": 6.460000000000001,
+      "phone": "K",
+      "viseme": "H",
+      "word": "like",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.46,
+      "t1": 6.548,
+      "phone": "Y",
+      "viseme": "C",
+      "word": "you",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.548,
+      "t1": 6.68,
+      "phone": "UW",
+      "viseme": "D",
+      "word": "you",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.68,
+      "t1": 6.704,
+      "phone": "G",
+      "viseme": "H",
+      "word": "got",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.704,
+      "t1": 6.776,
+      "phone": "AA",
+      "viseme": "C",
+      "word": "got",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.776,
+      "t1": 6.8,
+      "phone": "T",
+      "viseme": "C",
+      "word": "got",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.8,
+      "t1": 6.865714285714286,
+      "phone": "S",
+      "viseme": "C",
+      "word": "somewhere",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.865714285714286,
+      "t1": 6.964285714285714,
+      "phone": "AH",
+      "viseme": "C",
+      "word": "somewhere",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 6.964285714285714,
+      "t1": 7.03,
+      "phone": "M",
+      "viseme": "B",
+      "word": "somewhere",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 7.03,
+      "t1": 7.095714285714286,
+      "phone": "W",
+      "viseme": "H",
+      "word": "somewhere",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 7.095714285714286,
+      "t1": 7.194285714285715,
+      "phone": "EH",
+      "viseme": "C",
+      "word": "somewhere",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 7.194285714285715,
+      "t1": 7.260000000000001,
+      "phone": "R",
+      "viseme": "D",
+      "word": "somewhere",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 7.26,
+      "t1": 7.324999999999999,
+      "phone": "T",
+      "viseme": "C",
+      "word": "to",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 7.324999999999999,
+      "t1": 7.52,
+      "phone": "UW",
+      "viseme": "D",
+      "word": "to",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 7.52,
+      "t1": 7.58,
+      "phone": "B",
+      "viseme": "B",
+      "word": "be!",
+      "approx": "proportional-split"
+    },
+    {
+      "t0": 7.58,
+      "t1": 7.76,
+      "phone": "IY",
+      "viseme": "A",
+      "word": "be!",
+      "approx": "proportional-split"
+    }
+  ]
+}

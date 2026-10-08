@@ -1042,7 +1042,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 - **Free tier:** fully open
 - **Repo lane:** trippedd (compositing)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
-- **Status:** not-started
+- **Status:** WIRED — run-proven (Wave 49 Lane C, 2026-10-08). Proof: tools/wave49_lane_c/wire_audiostretchy.py → proofs/stretch/result.json + stretched WAVs + SHA256SUMS (PROOFS.md). Pure 440 Hz sine stretched 1.5x: dur 3.073s, dominant 440.0 Hz every 1s window (no chipmunking). Silence mode: ratio=1.5, gap_ratio=1.0 → 0.5s gap held at 0.45s while tones stretched 1.5x (extent 5.023s). Known quirk: silence-mode outputs zero-padded to full-ratio buffer — trim trailing digital silence downstream. BSD-3-Clause re-verified via GitHub API spdx_id 2026-10-08.
 - **Notes:** BSD-3-Clause wrapper (C core BSD-style, pedalboard Apache-2.0). Dialogue timing lane: fit AI voice lines to animation beats without chipmunking. pip-installable.
 
 #### Flowblade ✅ commercial-safe
@@ -13661,7 +13661,7 @@ donor per the repo's DONOR FIRST law.
 - **Free tier:** N/A (`pip install webrtcvad-wheels`)
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
+- **Status:** WIRED — run-proven (Wave 49 Lane C, 2026-10-08). Proof: tools/wave49_lane_c/wire_webrtcvad.py → proofs/vad/result.json + SHA256SUMS (PROOFS.md). Synthetic 5s 16kHz ground-truth WAV (silence/voiced/silence/voiced): GT voiced regions 96.1%/100.0% frames flagged speech; collector emitted exactly 2 segments (0.900–2.820s, 3.420–4.980s) within tolerance of GT. Aggressiveness=2, 30ms frames, no model weights, no network. License re-verified upstream 2026-10-08: MIT (Python wrapper) + BSD (WebRTC core) — both permissive.
 - **Notes:** No model weights, no network — cheapest VAD in the lane; pair with faster-whisper chunking or whisper.cpp for robust cue segmentation. Original wiseman package lacks py3.12 wheels — use the webrtcvad-wheels fork. [Wave 12 Lane C]
 
 #### CrisperWhisper — verbatim/disfluency-preserving Whisper with 30 ms word timing 🚫 NC-or-quarantine

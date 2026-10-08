@@ -57092,3 +57092,1022 @@ Round 9 continues the per-show per-episode deep dives below rounds 7–8's cover
 
 ### Wave 61 Lane A summary
 96 entries appended 2026-10-08: P1 SDK docs round 7 (35 — GBA CowBite, WiiUBrew, Playdate, GC-Forever, SwitchBrew wiki, Free60 archive, ps2dev, pspdev, Denial, Stardot, dreamcast.wiki, Defence Force Oric, TIC-80 wiki, playvectrex, videopac.nl, PICO-8 wiki + official manual, Ralf Brown, PC-GPE, vitasdk.org, SAM Coupé datasheets, WSdev, Wonderful docs, Lynx dev wiki, Retro Isle Lynx, NGPC dev wiki, Enterprise guide, retroreversing Pokémon Mini, Apple II mirror, Codebase64, Pan Docs, NESdev, MSX wiki, CPCWiki, Atari Document Archive); P2 landmark musicdisk round 5 (10 — 9 ❓ + Pimp My Chips ⚠️ for commercial-pop covers; Fluid resolved via pouët comment cross-refs); P3 PD radio-drama round 10 (47 — Dragnet 6, Mysterious Traveler 6, Sealed Book 6, Box 13 6, Mercury/Campbell 5, Gunsmoke 6, Have Gun Will Travel 6, Fibber McGee 6; all archive.org metadata-verified, none access-restricted); P4 demoscene tooling deep tail (4 — apultra, Jo Engine, Werkkzeug4, GNU Rocket; all permissive, verified upstream). 9 quarantine rows (578–586) in LICENSE_QUARANTINE.md. Dedup rejections (all pre-append, noted honestly): WiiBrew, atariarchives.org, problemkaputt.de, Planet Virtual Boy (P1); RGBDS, SGDK, cc65, 4klang, Crinkler, ZX0, klystrack, libxmp, OpenMPT, vgmstream, DUMB, Pixelorama, z88dk, devkitSMS, KallistiOS, GBDK-2020, PSn00bSDK, BambooTracker, SRS, Owncast (P4 — already cataloged/quarantined by earlier lanes); Dragnet510712TheBigSetUp, MercuryTheatre19380711Dracula, MercuryTheatreOnTheAir381030WarOfTheWorlds (P3 — already cataloged). Honest gaps: 8 held musicdisks (Happy-Hardcore XMas EP 2002, Chipmusic Best Of 2001-2003, Alien Invasion, Awakening, Awakening: Part2, Sounds of the Amiga #1, Chillosophy 2, The Sound of SceneSat Volume 2) — demozoo Cloudflare-blocks direct access and search snippets don't yield production IDs; Awakening/Part2 records confirmed on demozoo + pouët prodlist (ALLien Senses, Jan/Apr 2006) but IDs unresolvable without direct access; dead-end repos (Ivanq/lzsa, Blueberry/shrinkler, einar-saukas/ZX7, cadaver/goattracker2, Tuplanolla/multipaint, danielnoethen/butt, farbrausch/farbrausch, Alcatraz/4klang, KOS-Dev/KallistiOS, RivendellOfficial/rivendell — all 404, resolved where possible via canonical repos).
+
+### Wave 62 Lane A — Pocket 1: SDK docs round 8 (32)
+
+Round 8 pushes the SDK-docs pocket into the homebrew deep tail not yet covered: PS2 tech references (ps2tek, psdevwiki, ps2dev org site), DSi/Xbox/Vita homebrew wikis (DSiBrew, XboxDevWiki, HENkaku), Altirra Hardware Reference, fantasy consoles (LowRes NX, GB Studio), open handhelds (Thumby, PicoSystem, 32blit, Gamebuino Academy, Pokitto, ESPboy, Gameduino, Uzebox), FPGA (Analogue openFPGA, MiSTer docs), Sega deep docs (SegaXtreme, Maxim SMS/GG, Big Evil Corp MD, SG-1000 spec), ColecoVision (colecovision.eu dev, CV-Tech), Channel F, Bally Astrocade, MSX-DOS 1/2, DJGPP, Spectrum Computing. Every URL verified live 2026-10-08 (HTTP 200; XboxDevWiki + Uzebox confirmed via search snippets — direct curl blocked, noted honestly). Licenses: per-item — 1 MIT (pimoroni/picosystem, GitHub API spdx_id); docs/sites stay ❓ per precedent. clockworkpi/GameShellDocs is GPL-3.0 → quarantine row 587. Honest drops (no entries): ps3devwiki.com (domain hijacked — 302s to survey-smiles.com scam redirect), liko-12.com (dead; GitHub org 404), specnext.com (unreachable), cgfm2.emuviews.com (unverifiable from this egress). Pre-append dedup: 0 dupes (title + URL greps against the catalog).
+
+#### HENkaku wiki (Vita homebrew) ❓ wiki terms unverified
+- **What:** HENkaku wiki — PlayStation Vita homebrew development wiki (HENkaku exploit, taiHEN, toolchain notes).
+- **URL:** https://wiki.henkaku.xyz/vita/Main_Page
+- **License:** ❓ wiki terms unverified (verified live HTTP 200, 2026-10-08; no license statement on page)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Vita homebrew wiki; complements the cataloged vitasdk.org. [Wave 62 Lane A]
+
+#### ps2tek (PlayStation 2 technical reference) ❓ documentation-only
+- **What:** ps2tek — PlayStation 2 hardware technical reference (EE, GS, GIF, DMAC, VIF, VU, IPU, IOP, SIF, BIOS), psi-rockin mirror.
+- **URL:** https://psi-rockin.github.io/ps2tek/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; technical reference, no license grant stated)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The PS2 counterpart to the cataloged nocash PSX-SPX. [Wave 62 Lane A]
+
+#### DSiBrew ❓ wiki terms unverified
+- **What:** DSiBrew — Nintendo DSi homebrew development wiki (hardware, exploits, file formats, toolchain).
+- **URL:** https://www.dsibrew.org/
+- **License:** ❓ wiki terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DSi pocket below the cataloged 3DBrew/DS-era docs. [Wave 62 Lane A]
+
+#### XboxDevWiki ❓ wiki terms unverified
+- **What:** XboxDevWiki — wiki documenting the original Microsoft Xbox and Sega Chihiro internals (hardware, NV2A, BIOS, NXDK/OpenXDK homebrew, emulation).
+- **URL:** https://xboxdevwiki.net/Main_Page
+- **License:** ❓ wiki terms unverified (verified 2026-10-08: live per search-engine crawl ~10 days prior; direct curl blocked from this egress — stated honestly)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Original-Xbox research wiki; complements cataloged nxdk. [Wave 62 Lane A]
+
+#### Altirra Hardware Reference Manual ❓ documentation-only
+- **What:** Altirra Hardware Reference Manual — Avery Lee's exhaustive Atari 8-bit hardware reference (ANTIC/GTIA/POKEY, 6502 interfacing).
+- **URL:** https://www.virtualdub.org/altirra.html
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; free technical manual, no license grant stated)
+- **Free tier:** Free manual
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Atari 8-bit hardware bible; pairs with cataloged AtariWiki. [Wave 62 Lane A]
+
+#### Thumby (TinyCircuits) ❓ docs terms unverified
+- **What:** Thumby — TinyCircuits' thumb-sized RP2040 open handheld; docs/tutorials for Thumby game development.
+- **URL:** https://thumby.us/
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** RP2040 micro-handheld docs. [Wave 62 Lane A]
+
+#### Analogue openFPGA developer docs ❓ docs terms unverified
+- **What:** Analogue developer docs — openFPGA core development documentation for the Analogue Pocket (FPGA handheld).
+- **URL:** https://www.analogue.co/developer
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** FPGA core-dev docs for a shipping handheld. [Wave 62 Lane A]
+
+#### GB Studio docs ❓ docs terms unverified
+- **What:** GB Studio documentation — docs for the drag-and-drop Game Boy game creator (engine, scripting, asset pipeline).
+- **URL:** https://gbstudio.dev/docs
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GB game-maker docs; complements cataloged GBDK-2020/Pan Docs. [Wave 62 Lane A]
+
+#### DJGPP documentation ❓ documentation-only
+- **What:** DJGPP documentation — the DJGPP DOS C/C++ toolchain user guide (delorie.com; DPMI, go32, libc reference).
+- **URL:** https://www.delorie.com/djgpp/doc/ug/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; free manual)
+- **Free tier:** Free manual
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS protected-mode toolchain docs; pairs with cataloged Ralf Brown/PC-GPE. [Wave 62 Lane A]
+
+#### Gameduino documentation ❓ documentation-only
+- **What:** Gameduino documentation — James Bowman's Gameduino (FPGA game shield for Arduino) Sphinx docs.
+- **URL:** https://www.excamera.com/sphinx/gameduino/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** FPGA sprite-engine shield docs. [Wave 62 Lane A]
+
+#### 32blit ❓ docs terms unverified
+- **What:** 32blit — Pimoroni's open handheld (STM32); docs/SDK for 32blit game development.
+- **URL:** https://32blit.com/
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Open-console handheld docs. [Wave 62 Lane A]
+
+#### pimoroni/picosystem ✅ commercial-safe
+- **What:** PicoSystem — Pimoroni's RP2040 handheld; libraries and examples (the SDK + docs source).
+- **URL:** https://github.com/pimoroni/picosystem
+- **License:** ✅ MIT (verified Wave 62 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT-licensed handheld SDK; sibling to 32blit. [Wave 62 Lane A]
+
+#### SegaXtreme ❓ community terms unverified
+- **What:** SegaXtreme — Sega Saturn homebrew/development community (forums, docs, toolchain pointers).
+- **URL:** https://segaxtreme.net/
+- **License:** ❓ community terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Saturn homebrew hub; complements cataloged Jo Engine. [Wave 62 Lane A]
+
+#### Maxim's Sega 8-bit docs (smspower.org/maxim) ❓ documentation-only
+- **What:** Maxim's World of Stuff — classic Sega Master System/Game Gear development documentation (VDP, PSG, memory maps).
+- **URL:** https://www.smspower.org/maxim
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; tech docs, no license grant stated)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The canonical SMS/GG dev reference. [Wave 62 Lane A]
+
+#### MiSTer documentation (MkDocs) ❓ documentation-only
+- **What:** MiSTer FPGA documentation — MkDocs site for the MiSTer project (setup, cores, ini, controller mapping).
+- **URL:** https://mister-devel.github.io/MkDocs_MiSTer/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Docs site; the MiSTer framework repo is cataloged separately. [Wave 62 Lane A]
+
+#### ps2dev.github.io ❓ site terms unverified
+- **What:** ps2dev organization site — the PS2 homebrew community's hub (ps2sdk, toolchain, gsKit, ports).
+- **URL:** https://ps2dev.github.io/
+- **License:** ❓ site terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ps2dev org hub; complements cataloged ps2sdk repo. [Wave 62 Lane A]
+
+#### libdragon documentation ❓ documentation-only
+- **What:** libdragon documentation — docs site for the open-source Nintendo 64 SDK (tutorials, API reference).
+- **URL:** https://libdragon.dev/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Docs site; the libdragon repo (Unlicense) is cataloged separately. [Wave 62 Lane A]
+
+#### PS2 Developer Wiki (psdevwiki) ❓ wiki terms unverified
+- **What:** PS2 Developer Wiki — PlayStation 2 hardware wiki (memory map, GS, IOP, SPU2, vulnerabilities).
+- **URL:** https://www.psdevwiki.com/ps2/
+- **License:** ❓ wiki terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PS2 hardware wiki; pairs with ps2tek reference. [Wave 62 Lane A]
+
+#### Big Evil Corporation Mega Drive tutorials ❓ docs terms unverified
+- **What:** Big Evil Corporation — Mega Drive/Genesis development tutorials (68k assembly, VDP, sprites, scrolling).
+- **URL:** http://www.bigevilcorporation.co.uk/
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free tutorials
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hands-on MD tutorial series. [Wave 62 Lane A]
+
+#### MSX-DOS documentation (MSX Resource Center) ❓ wiki terms unverified
+- **What:** MSX-DOS documentation — MSX Resource Center wiki pages for MSX-DOS (system calls, FCBs, environment).
+- **URL:** https://www.msx.org/wiki/MSX-DOS
+- **License:** ❓ wiki terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX-DOS 1 reference; complements cataloged MSX wiki. [Wave 62 Lane A]
+
+#### MSX-DOS 2 documentation (MSX Resource Center) ❓ wiki terms unverified
+- **What:** MSX-DOS 2 documentation — MSX Resource Center wiki pages for MSX-DOS 2 (memory mapper, extended calls).
+- **URL:** https://www.msx.org/wiki/MSX-DOS_2
+- **License:** ❓ wiki terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX-DOS 2 reference. [Wave 62 Lane A]
+
+#### ESPboy ❓ docs terms unverified
+- **What:** ESPboy — open-source ESP8266-based handheld game console; docs for ESPboy development.
+- **URL:** https://www.espboy.com/
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** WiFi handheld console docs. [Wave 62 Lane A]
+
+#### LowRes NX ❓ docs terms unverified
+- **What:** LowRes NX — fantasy console (NX = "next") with BASIC-like NX language; documentation and tutorials.
+- **URL:** https://lowresnx.inutilis.com/
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fantasy console below PICO-8/TIC-80/WASM-4 coverage. [Wave 62 Lane A]
+
+#### Gamebuino Academy ❓ docs terms unverified
+- **What:** Gamebuino Academy — official tutorials/workshops for the Gamebuino META handheld (C++, Python/MicroPython).
+- **URL:** https://gamebuino.com/academy
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free tutorials
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Academy docs; the Gamebuino-META library repo is quarantined (LGPL-3.0, row 563) — docs only here. [Wave 62 Lane A]
+
+#### Uzebox wiki ❓ wiki terms unverified
+- **What:** Uzebox wiki — documentation for the Uzebox open-source retro-minimalist AVR game console (API, video modes, getting started).
+- **URL:** https://uzebox.org/wiki/Main_Page
+- **License:** ❓ wiki terms unverified (verified 2026-10-08: live per search-engine result + uzebox/uzebox README link; direct curl Cloudflare-blocked — stated honestly)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Two-chip AVR console docs. [Wave 62 Lane A]
+
+#### Channel F programming docs (Sean Riddle) ❓ documentation-only
+- **What:** Sean Riddle's Channel F page — Fairchild Channel F programming documentation and notes.
+- **URL:** https://seanriddle.com/chanf.html
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; tech notes, no license grant stated)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** First-generation console dev notes. [Wave 62 Lane A]
+
+#### Bally Alley ❓ community terms unverified
+- **What:** Bally Alley — Bally Astrocade homebrew community (docs, tools, BASIC/assembly resources).
+- **URL:** https://ballyalley.com/
+- **License:** ❓ community terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Astrocade homebrew hub. [Wave 62 Lane A]
+
+#### ColecoVision development (colecovision.eu) ❓ docs terms unverified
+- **What:** colecovision.eu development section — ColecoVision homebrew docs (libCV C tutorial, graphics conversion/compression tools).
+- **URL:** http://www.colecovision.eu/ColecoVision/development/
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ColecoVision C-dev tutorial hub. [Wave 62 Lane A]
+
+#### Sega Game 1000 specifications (smspower.org) ❓ documentation-only
+- **What:** Sega Game 1000 (SG-1000) specifications — Omar Cornut/Zoop's SG-1000 hardware doc hosted on SMS Power.
+- **URL:** https://www.smspower.org/uploads/Development/sg1000.txt
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; tech spec text)
+- **Free tier:** Free doc
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SG-1000 hardware spec. [Wave 62 Lane A]
+
+#### ColecoVision Tech Info (Dan Boris) ❓ documentation-only
+- **What:** ColecoVision Tech Info — Dan Boris' ColecoVision technical notes (hardware, memory map) plus CV sound info.
+- **URL:** http://www.atarihq.com/danb/files/CV-Tech.txt
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; tech notes text)
+- **Free tier:** Free doc
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion CV-Sound.txt at same path. [Wave 62 Lane A]
+
+#### Pokitto ❓ docs terms unverified
+- **What:** Pokitto — DIY ARM retro-gaming handheld; official site with docs/getting-started for Pokitto development.
+- **URL:** https://www.pokitto.com/
+- **License:** ❓ docs terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free docs
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Docs hub; PokittoLib repo cataloged separately. [Wave 62 Lane A]
+
+#### Spectrum Computing ❓ archive terms unverified
+- **What:** Spectrum Computing — ZX Spectrum archive (successor to World of Spectrum): software, docs, magazine scans, preservation.
+- **URL:** https://spectrumcomputing.co.uk/
+- **License:** ❓ archive terms unverified (verified live HTTP 200, 2026-10-08)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum preservation archive. [Wave 62 Lane A]
+
+### Wave 62 Lane A — Pocket 2: landmark musicdisk deep dives round 6 (14)
+
+Round 6 continues the landmark-musicdisk pocket down pouët's vote-sorted musicdisk prodlist (prodlist.php?type[]=musicdisk&order=thumbup — fetched live 2026-10-08; page 3 of the chart, below rounds 4–5's page-2 coverage). This round RESOLVES 4 of Wave 61's 8 held musicdisks (Sounds of the Amiga #1, Awakening, Chillosophy 2, The Sound of SceneSat Volume 2 — pouët prod IDs recovered from the chart; the demozoo ID gap that blocked Wave 61 is bypassed by using pouët as the primary record). Every prod page verified LIVE on pouët 2026-10-08 (title + group + Musicdisk type via og:description). demozoo direct access remains Cloudflare-blocked (API v1 returns the challenge page) — demozoo cross-links noted where pouët shows them, not claimed as verified. No license statements on any scene prod record — all ❓, with NC-not-declared honest negatives. Honest drops: UMD 8730 (pouët dual-types it "demo / musicdisk" — ambiguous); The Her collection (Paradox — valid musicdisk, held for a later round, not a failure). Pre-append dedup: 0 dupes (pouët IDs + titles vs catalog).
+
+#### Sounds of the Amiga #1 — Triad (Jan 2009) ❓ landmark musicdisk
+- **What:** Sounds of the Amiga #1 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (C64).
+- **URL:** https://www.pouet.net/prod.php?which=52427
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Commodore 64, released in january 2009")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID recovered from chart). [Wave 62 Lane A]
+
+#### Awakening — ALLien Senses (Jan 2006) ❓ landmark musicdisk
+- **What:** Awakening — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=21390
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in january 2006")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID recovered from chart). [Wave 62 Lane A]
+
+#### The Sound of SceneSat Volume 2 — SceneSat (Revision 2011) ❓ landmark musicdisk
+- **What:** The Sound of SceneSat Volume 2 — landmark musicdisk; 4th at Revision 2011 (Windows/JavaScript).
+- **URL:** https://www.pouet.net/prod.php?which=56876
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows / JavaScript, 4th at Revision 2011")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID recovered from chart). [Wave 62 Lane A]
+
+#### Chillosophy 2 — Brainstorm (Jan 2007) ❓ landmark musicdisk
+- **What:** Chillosophy 2 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=28890
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in january 2007")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID recovered from chart); distinct from cataloged Chillosophy 3. [Wave 62 Lane A]
+
+#### Bleep and Destroy — Conspiracy (Revision 2014) ❓ landmark musicdisk
+- **What:** Bleep and Destroy — landmark musicdisk; 3rd at Revision 2014 (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=62957
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, 3rd at Revision 2014")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### razor 1911 chipdisc2 — Razor 1911 (Sep 2002) ❓ landmark musicdisk
+- **What:** razor 1911 chipdisc2 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=7600
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in september 2002")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### Amiga Demo 2 — Oxygene (Dec 2008) ❓ landmark musicdisk
+- **What:** Amiga Demo 2 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Atari STe).
+- **URL:** https://www.pouet.net/prod.php?which=52336
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Atari STe, released in december 2008")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### Scoopex'n'Chips — Scoopex (Mar 2003) ❓ landmark musicdisk
+- **What:** Scoopex'n'Chips — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=9102
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in march 2003")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### reTracked #2 — reTracked Team (Jan 2009) ❓ landmark musicdisk
+- **What:** reTracked #2 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=52465
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in january 2009")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sequel to cataloged reTracked #1. [Wave 62 Lane A]
+
+#### Tactical Transmissions — Pattern Syndicate (Deadline 2024) ❓ landmark musicdisk
+- **What:** Tactical Transmissions — landmark musicdisk; 1st at Deadline (Berlin) 2024 (Amiga OCS/ECS).
+- **URL:** https://www.pouet.net/prod.php?which=98133
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Amiga OCS/ECS, 1st at Deadline (Berlin) 2024")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### Autumn Leaf — Marsmellow (Nov 2005) ❓ landmark musicdisk
+- **What:** Autumn Leaf — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=20216
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in november 2005")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### ihyper — Backtrack (Sep 2004) ❓ landmark musicdisk
+- **What:** ihyper — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=13316
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in september 2004")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### Marine Melodies — Resistance (Evoke 2022) ❓ landmark musicdisk
+- **What:** Marine Melodies — landmark musicdisk; 8th at Evoke 2022 (Linux/Windows).
+- **URL:** https://www.pouet.net/prod.php?which=91906
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Linux / Windows, 8th at Evoke 2022")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+#### Buzzin' Off — Brainstorm (Oct 2010) ❓ landmark musicdisk
+- **What:** Buzzin' Off — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=56147
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in october 2010")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 6. [Wave 62 Lane A]
+
+### Wave 62 Lane A — Pocket 3: PD radio-drama round 11 — per-episode deep dives (48)
+
+Round 11 continues the per-show per-episode deep dives below rounds 7–10's coverage. All 8 shows carry established ✅ PD show-level entries (Suspense seasons, The Whistler, Inner Sanctum Mysteries, X Minus One, Sam Spade, The Six Shooter, Crime Classics, The Falcon) — per Wave 59 ruling, single-episode items from an established-PD show carry ✅ WITH the established-PD note AND the item-level licenseurl-absent fact stated honestly. 6 episodes each: Suspense, Whistler, Inner Sanctum, X Minus One, Sam Spade, Six Shooter, Crime Classics, Falcon. Every item verified via the archive.org metadata API on 2026-10-08 (live, not access-restricted, single-episode: ≤3 audio files, <60 files total). Honest negatives: 9 pre-append dedup rejections (SuspenseDunwichHorror, Suspense11352Frankenstein, InnerSanctum491031CorpseForHalloween, InnerSanctum410803TheTellTaleHeart, xminusone19550424nocontact001, xminusone19550501theparade002, TheSixShooter540124HelenBricker, SIXS003TheStampede, TheSixShooter540422JohnnySpringer, InnerSanctum430307TheBlackSeaGull, xminusone19550508marsisheaven003, TheWhistler421129Avarice, TheWhistler430619HouseOfFear, TheWhistler460128TheStrangeSisters, TheWhistler430508DeathHasAThirst, TheSixShooter540131TrailToSunset, TheSixShooter531220BrittPonsettsChristmasCarol — all already cataloged); 14 access-restricted exclusions (bqougkrx8qpzdp5faiqp2sahcvfcg6ad7lxoi088 Six Shooter Christmas Carol; mnu525i4i3zuio9wljw4042lflfpkosx3xvdeoos, zdbdvcx8csrxmx3zbdqnlvx1z6snsodzzkvexcri, depkhebzgrssbp6qxxckzxlxml2s8veks1awbsel, e41v9jdj4k7pdjdsxe7jlyejr7uzj8m7wscnthjv, raaayzuqwwnmtrjsrxkefbg6mtofd8ivxgqsmosr, j0dp7q4pgj9idgksykpwqlxyinn9twc9l9enscvf, ca5qjmjupacvsminjwlxj7kmgww4rsco451fncfz Crime Classics; ilyvlsqxgqmgrqkiowqt7zvacuxmtfsdq4vwuk1y, hg5fbga317vustki2vemcwd9ams57v2kqwcoy9jg, yso05woglgbudth33hpxv09h0xkhfblwwu9whiln, maunpnrzcertttskzrp1zqixx6fas10rywgjfebt, zo8gxop0vwzzyvilr9qydr1oxps2a1bak1bmcm8e, auf0zwjrblzxtynvvq9oq0flnudcipu8ljsyrljw Falcon; 50uwyrymbydkjmpdy6yzk5ymdoj16qje6kpnnsio, uyojyypud4wnnrgnxw8nw2ktm5uyfpouq6rh9hbd, xjms1nadajk8nbdzv65ialemqnyfixiqiijrzgmn Whistler; rynjvjepuk5zcmbr0vojmj1jcxnz5k2umr6qzjmf, zbe97at3sargiobsjhx0uwogg5zjrjg14sn2fcbb Six Shooter); 5 multi-file/collection exclusions (Whistler-1945_690 142 files, WhistlerHFC 51, WhistlerWBBM 51, whistler-community-church 108, WhistlerPromos 10 audio; XMinusOne55102722Requiem 8 audio; APPBLY_radioCrimeClassics_0001 209 files). WhistlerARTRecreations is a modern American Radio Theater recreation — noted honestly, not an original broadcast.
+
+#### Suspense — "The Devil's Saint" (Jan 19, 1943) ✅ established-PD show entry
+- **What:** "The Devil's Saint" — Suspense episode (Jan 19, 1943), single-episode audio.
+- **URL:** https://archive.org/details/Suspense430119TheDevilsSaint
+- **License:** ✅ PD (established-PD show-level entry for Suspense; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Suspense — "The Thirteenth Sound" (Feb 13, 1947) ✅ established-PD show entry
+- **What:** "The Thirteenth Sound" — Suspense episode (Feb 13, 1947), single-episode audio.
+- **URL:** https://archive.org/details/Suspense470213TheThirteenthSound
+- **License:** ✅ PD (established-PD show-level entry for Suspense; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Suspense — "The Dead Sleep Lightly" (Mar 30, 1943) ✅ established-PD show entry
+- **What:** "The Dead Sleep Lightly" — Suspense episode (Mar 30, 1943), single-episode audio.
+- **URL:** https://archive.org/details/Suspense430330TheDeadSleepLightly
+- **License:** ✅ PD (established-PD show-level entry for Suspense; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Suspense — "In Fear and Trembling" (Feb 16, 1943) ✅ established-PD show entry
+- **What:** "In Fear and Trembling" — Suspense episode (Feb 16, 1943), single-episode audio.
+- **URL:** https://archive.org/details/Suspense430216InFearAndTrembling
+- **License:** ✅ PD (established-PD show-level entry for Suspense; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Suspense — "T'was The Night Before Christmas" (Dec 21, 1953) ✅ established-PD show entry
+- **What:** "T'was The Night Before Christmas" — Suspense episode (Dec 21, 1953), single-episode audio.
+- **URL:** https://archive.org/details/Suspense531221TwasTheNightBeforeChristmas
+- **License:** ✅ PD (established-PD show-level entry for Suspense; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Suspense — "Ghost Hunt" (Jun 23, 1949) ✅ established-PD show entry
+- **What:** "Ghost Hunt" — Suspense episode (Jun 23, 1949), single-episode audio.
+- **URL:** https://archive.org/details/SuspenseGhostHunt6231949
+- **License:** ✅ PD (established-PD show-level entry for Suspense; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Whistler — "The Great Zantini" lost episode (Sep 8, 1948) ✅ established-PD show entry
+- **What:** "The Great Zantini" — The Whistler lost episode, restored (Sep 8, 1948), single-episode audio.
+- **URL:** https://archive.org/details/480908thewhistlerthegreatsantinilostepisoderestoredafrs38
+- **License:** ✅ PD (established-PD show-level entry for The Whistler; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 14 files, 3 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Restored lost episode. PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Whistler — American Radio Theater recreations ✅ established-PD show entry
+- **What:** The Whistler recreations by American Radio Theater — modern recreation performances, single audio set.
+- **URL:** https://archive.org/details/WhistlerARTRecreations
+- **License:** ✅ PD (established-PD show-level entry for The Whistler; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted. NOTE: modern recreation, not original broadcast — stated honestly)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern recreation, not original broadcast. PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Whistler — "The Brass Ring" ✅ established-PD show entry
+- **What:** "The Brass Ring" — The Whistler episode, single-episode audio.
+- **URL:** https://archive.org/details/ni4n8boaodz3ixugbvs0tcwtfo3edgemrdiy9z2q
+- **License:** ✅ PD (established-PD show-level entry for The Whistler; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Whistler — "Blind Impulse" ✅ established-PD show entry
+- **What:** "Blind Impulse" — The Whistler episode, single-episode audio.
+- **URL:** https://archive.org/details/q2tzxfkgthgde79czlffwjet3be7c5l5aawjobbj
+- **License:** ✅ PD (established-PD show-level entry for The Whistler; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Whistler — "The Hangtree Affair" ✅ established-PD show entry
+- **What:** "The Hangtree Affair" — The Whistler episode, single-episode audio.
+- **URL:** https://archive.org/details/gfgkrcgm2zk6yyksolrxrqullrcxo3zcubzhwydr
+- **License:** ✅ PD (established-PD show-level entry for The Whistler; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Whistler — "Little Red Book" ✅ established-PD show entry
+- **What:** "Little Red Book" — The Whistler episode, single-episode audio.
+- **URL:** https://archive.org/details/q9bpvxufhn5q7bslrtgvyzodchecekgauwdhjitn
+- **License:** ✅ PD (established-PD show-level entry for The Whistler; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Inner Sanctum — "The Man From Yesterday" (Dec 21, 1941) ✅ established-PD show entry
+- **What:** "The Man From Yesterday" — Inner Sanctum Mysteries episode (Dec 21, 1941), single-episode audio.
+- **URL:** https://archive.org/details/InnerSanctumTheManFromYesterday12211941
+- **License:** ✅ PD (established-PD show-level entry for Inner Sanctum Mysteries; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Inner Sanctum — "The Shadow of Death" (Oct 2, 1945) ✅ established-PD show entry
+- **What:** "The Shadow of Death" — Inner Sanctum Mysteries episode (Oct 2, 1945), single-episode audio.
+- **URL:** https://archive.org/details/InnerSanctum451002TheShadowOfDeath
+- **License:** ✅ PD (established-PD show-level entry for Inner Sanctum Mysteries; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Inner Sanctum — "The Skull That Walked" (Apr 15, 1944) ✅ established-PD show entry
+- **What:** "The Skull That Walked" — Inner Sanctum Mysteries episode (Apr 15, 1944), single-episode audio.
+- **URL:** https://archive.org/details/InnerSanctum440415TheSkullThatWalked
+- **License:** ✅ PD (established-PD show-level entry for Inner Sanctum Mysteries; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Inner Sanctum — "House of Doom" (Aug 9, 1948) ✅ established-PD show entry
+- **What:** "House of Doom" — Inner Sanctum Mysteries episode (Aug 9, 1948), single-episode audio.
+- **URL:** https://archive.org/details/InnerSanctum480809HouseOfDoom
+- **License:** ✅ PD (established-PD show-level entry for Inner Sanctum Mysteries; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Inner Sanctum — "No Rest for the Dead" (Aug 24, 1952) ✅ established-PD show entry
+- **What:** "No Rest for the Dead" — Inner Sanctum Mysteries episode (Aug 24, 1952), single-episode audio.
+- **URL:** https://archive.org/details/InnerSanctum520824NoRestForTheDead
+- **License:** ✅ PD (established-PD show-level entry for Inner Sanctum Mysteries; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Inner Sanctum — "Study for Murder" (May 3, 1942) ✅ established-PD show entry
+- **What:** "Study for Murder" — Inner Sanctum Mysteries episode (May 3, 1942), single-episode audio.
+- **URL:** https://archive.org/details/InnerSanctum19420503StudyForMurder
+- **License:** ✅ PD (established-PD show-level entry for Inner Sanctum Mysteries; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### X Minus One — "Knock" (May 22, 1955) ✅ established-PD show entry
+- **What:** "Knock" — X Minus One episode (May 22, 1955), single-episode audio.
+- **URL:** https://archive.org/details/XMinusOne5505225Knock
+- **License:** ✅ PD (established-PD show-level entry for X Minus One; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### X Minus One — "The Seventh Order" (May 8, 1956) ✅ established-PD show entry
+- **What:** "The Seventh Order" — X Minus One episode (May 8, 1956), single-episode audio.
+- **URL:** https://archive.org/details/XMinusOne560508050TheSeventhOrder
+- **License:** ✅ PD (established-PD show-level entry for X Minus One; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### X Minus One — "Dr. Grimshaw's Sanitorium" (Jul 14, 1955) ✅ established-PD show entry
+- **What:** "Dr. Grimshaw's Sanitorium" — X Minus One episode (Jul 14, 1955), single-episode audio.
+- **URL:** https://archive.org/details/XMinusOneDrGrimshawsSanitorium07141955
+- **License:** ✅ PD (established-PD show-level entry for X Minus One; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### X Minus One — "Bad Medicine" (Jul 10, 1956) ✅ established-PD show entry
+- **What:** "Bad Medicine" — X Minus One episode (Jul 10, 1956), single-episode audio.
+- **URL:** https://archive.org/details/XMinusOne560710BadMedicine
+- **License:** ✅ PD (established-PD show-level entry for X Minus One; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### X Minus One — "And the Moon Be Still as Bright" (Apr 22, 1955) ✅ established-PD show entry
+- **What:** "And the Moon Be Still as Bright" — X Minus One episode (Apr 22, 1955), single-episode audio.
+- **URL:** https://archive.org/details/Xminusone550422AndTheMoonBeStillAndBright
+- **License:** ✅ PD (established-PD show-level entry for X Minus One; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bradbury adaptation. PD radio-drama round 11. [Wave 62 Lane A]
+
+#### X Minus One — "Perigi's Wonderful Dolls" (Jun 5, 1955) ✅ established-PD show entry
+- **What:** "Perigi's Wonderful Dolls" — X Minus One episode (Jun 5, 1955), single-episode audio.
+- **URL:** https://archive.org/details/XMinusOne550605007PerigisWonderfulDoll
+- **License:** ✅ PD (established-PD show-level entry for X Minus One; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Sam Spade — "The Prisoner of Zenda Caper" (May 30, 1948) ✅ established-PD show entry
+- **What:** "The Prisoner of Zenda Caper" — Sam Spade episode (May 30, 1948), single-episode audio.
+- **URL:** https://archive.org/details/SamSpade480530PrisonerOfZendaCaper
+- **License:** ✅ PD (established-PD show-level entry for Sam Spade; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Sam Spade — "The Lazarus Caper" (Sep 12, 1948) ✅ established-PD show entry
+- **What:** "The Lazarus Caper" — Sam Spade episode (Sep 12, 1948), single-episode audio.
+- **URL:** https://archive.org/details/SamSpade480912TheLazarusCaper
+- **License:** ✅ PD (established-PD show-level entry for Sam Spade; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Sam Spade — "The Stopped Watch Caper" (Apr 10, 1949) ✅ established-PD show entry
+- **What:** "The Stopped Watch Caper" — Sam Spade episode (Apr 10, 1949), single-episode audio.
+- **URL:** https://archive.org/details/SamSpade490410TheStoppedWatchCaper
+- **License:** ✅ PD (established-PD show-level entry for Sam Spade; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Sam Spade — "The Dry Martini Caper" (Aug 1, 1948) ✅ established-PD show entry
+- **What:** "The Dry Martini Caper" — Sam Spade episode (Aug 1, 1948), single-episode audio.
+- **URL:** https://archive.org/details/SamSpade480801TheDryMartiniCaper
+- **License:** ✅ PD (established-PD show-level entry for Sam Spade; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 8 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Sam Spade — "The Biddle Riddle Caper" (Jan 5, 1951) ✅ established-PD show entry
+- **What:** "The Biddle Riddle Caper" — Sam Spade episode (Jan 5, 1951), single-episode audio.
+- **URL:** https://archive.org/details/SamSpade510105TheBiddleRiddleCaper
+- **License:** ✅ PD (established-PD show-level entry for Sam Spade; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 12 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Sam Spade — "The Bow Window Caper" (Nov 9, 1947) ✅ established-PD show entry
+- **What:** "The Bow Window Caper" — Sam Spade episode (Nov 9, 1947), single-episode audio.
+- **URL:** https://archive.org/details/SamSpade471109TheBowWindowCaper
+- **License:** ✅ PD (established-PD show-level entry for Sam Spade; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Six Shooter — "Six Shooter" (single) ✅ established-PD show entry
+- **What:** The Six Shooter episode, single-episode audio.
+- **URL:** https://archive.org/details/SixShooter_908
+- **License:** ✅ PD (established-PD show-level entry for The Six Shooter; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 7 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Six Shooter — "Blood Relations" (May 27, 1954) ✅ established-PD show entry
+- **What:** "Blood Relations" — The Six Shooter episode (May 27, 1954), single-episode audio.
+- **URL:** https://archive.org/details/a7azl86ehd8gcfepadd790aarbiafrpk4fmkgdx5
+- **License:** ✅ PD (established-PD show-level entry for The Six Shooter; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Six Shooter — "The Coward" ✅ established-PD show entry
+- **What:** "The Coward" — The Six Shooter episode, single-episode audio.
+- **URL:** https://archive.org/details/six-shooter-the-coward
+- **License:** ✅ PD (established-PD show-level entry for The Six Shooter; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Six Shooter — "Phil Harris" guest episode ✅ established-PD show entry
+- **What:** "The Six Shooter & Phil Harris" — The Six Shooter episode, single-episode audio.
+- **URL:** https://archive.org/details/05TheSixShooterPhilHarris
+- **License:** ✅ PD (established-PD show-level entry for The Six Shooter; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Six Shooter — Retro Radio Memories Ep 40 ✅ established-PD show entry
+- **What:** "Retro Radio Memories Episode 040 (The Six Shooter)" — The Six Shooter episode, single-episode audio.
+- **URL:** https://archive.org/details/RetroRadioMemoriesEp40TheSixShooter
+- **License:** ✅ PD (established-PD show-level entry for The Six Shooter; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 14 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Six Shooter — "Hollywood Star Playhouse" crossover ✅ established-PD show entry
+- **What:** "Hollywood Star Playhouse - The Six Shooter" — The Six Shooter episode, single-episode audio.
+- **URL:** https://archive.org/details/o9xwh9twtfzalhlbohgjtpsh9646actchkj9yx4u
+- **License:** ✅ PD (established-PD show-level entry for The Six Shooter; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Crime Classics — "The Crime of Bathsheba Spooner" (Jun 15, 1953) ✅ established-PD show entry
+- **What:** "The Crime of Bathsheba Spooner" — Crime Classics episode 1 (Jun 15, 1953), single-episode audio.
+- **URL:** https://archive.org/details/crime-classics-01-the-crime-of-bathsheba-spooner-06-15-53
+- **License:** ✅ PD (established-PD show-level entry for Crime Classics; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 10 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Crime Classics — "Mr. Thrower's Hammer" (Aug 3, 1953) ✅ established-PD show entry
+- **What:** "Mr. Thrower's Hammer" — Crime Classics episode (Aug 3, 1953), single-episode audio.
+- **URL:** https://archive.org/details/u107hjxjuy2v9lmhcvptuyn66iqm5mnh1l2vziwe
+- **License:** ✅ PD (established-PD show-level entry for Crime Classics; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Crime Classics — "A Shrapnel Body of Charles Drew Senior" ✅ established-PD show entry
+- **What:** "A Shrapnel Body of Charles Drew Senior" — Crime Classics episode, single-episode audio.
+- **URL:** https://archive.org/details/gtvpuxynxkyvikm6r9wwcqxtxhuv6ncadumh0wpg
+- **License:** ✅ PD (established-PD show-level entry for Crime Classics; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Crime Classics — AFRTS ✅ established-PD show entry
+- **What:** "Crime Classics AFRTS" — Crime Classics Armed Forces Radio transcription, single-episode audio.
+- **URL:** https://archive.org/details/crime-classics-afrts
+- **License:** ✅ PD (established-PD show-level entry for Crime Classics; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 11 files, 2 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Crime Classics — "Crime Classics and Squad Cars" ✅ established-PD show entry
+- **What:** "Crime Classics and Squad Cars" — Crime Classics episode, single-episode audio.
+- **URL:** https://archive.org/details/0dbhkqmfilfapwwcyps59afca68sbu2bvydcrbf6
+- **License:** ✅ PD (established-PD show-level entry for Crime Classics; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### Crime Classics — "Crime Classics and Mr. District Attorney" ✅ established-PD show entry
+- **What:** "Crime Classics and Mr. District Attorney" — Crime Classics episode, single-episode audio.
+- **URL:** https://archive.org/details/irobiq0rzulqdolkethtjkf371fjxdxuiwmjljmo
+- **License:** ✅ PD (established-PD show-level entry for Crime Classics; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Falcon — "The Case of the Substitute Target" (Jan 21, 1951) ✅ established-PD show entry
+- **What:** "The Case of the Substitute Target" — The Adventures of the Falcon episode (Jan 21, 1951), single-episode audio.
+- **URL:** https://archive.org/details/04fda5e0-80df-4a20-bb5c-8c09d09d6455
+- **License:** ✅ PD (established-PD show-level entry for The Falcon; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Falcon — "The Case of the Disappearing..." ✅ established-PD show entry
+- **What:** "The Case of the Disappearing..." — The Adventures of the Falcon episode, single-episode audio.
+- **URL:** https://archive.org/details/rwh27kzqrnrj9pdls2fd6rakhaa5wslzvy5blbnd
+- **License:** ✅ PD (established-PD show-level entry for The Falcon; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Falcon — "The Falcon, Widow's Gorilla" ✅ established-PD show entry
+- **What:** "The Falcon, Widow's Gorilla" — The Adventures of the Falcon episode, single-episode audio.
+- **URL:** https://archive.org/details/01hcuwn3p5nsz9jsjvqbqom2upuijnime2m1zunp
+- **License:** ✅ PD (established-PD show-level entry for The Falcon; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Falcon — "The Case of the Gangster's..." (Mar 4, 1951) ✅ established-PD show entry
+- **What:** "The Case of the Gangster's..." — The Adventures of the Falcon episode (Mar 4, 1951), single-episode audio.
+- **URL:** https://archive.org/details/ovy9mzdxd0uio3udc4dgb0abvd2ujpxw8egtmdxc
+- **License:** ✅ PD (established-PD show-level entry for The Falcon; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Falcon — "The Case of the Curious..." ✅ established-PD show entry
+- **What:** "The Case of the Curious..." — The Adventures of the Falcon episode, single-episode audio.
+- **URL:** https://archive.org/details/lqix6tfiwjc2ckwac1maspy5whdpphduijibwn78
+- **License:** ✅ PD (established-PD show-level entry for The Falcon; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+#### The Falcon — "The Case of..." (Mar 4, 1951) ✅ established-PD show entry
+- **What:** "The Case of..." — The Adventures of the Falcon episode (Mar 4, 1951), single-episode audio.
+- **URL:** https://archive.org/details/5retwrqjlnq48qcb6fyyhilheeyemuwgepwr4u95
+- **License:** ✅ PD (established-PD show-level entry for The Falcon; item-level: no licenseurl on the archive.org record — stated honestly; verified 2026-10-08: metadata live, 9 files, 1 audio, not access-restricted)
+- **Free tier:** Free download/streaming
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD radio-drama round 11. [Wave 62 Lane A]
+
+### Wave 62 Lane A — Pocket 4: open broadcast-automation round 3 (6)
+
+Round 3 continues the broadcast-automation pocket below rounds 1–2's coverage. This round targeted permissive-licensed items; the pocket is heavily covered by prior waves (Red5, MistServer, MediaMTX, Node-Media-Server, hls.js, dash.js, video.js, xgplayer, SRS, Owncast, PeerTube, AzuraCast, LibreTime, Airtime, Rivendell, OpenBroadcaster, Icecast, OBS, CasparCG, FFmpeg, GStreamer, VLC, mpv, Streamlink, Jitsi, Janus, Kurento, mediasoup, LiveKit, Pion, nginx-rtmp, Mixxx, MPD, Snapcast, Darkice, BUTT, IDJC, Liquidsoap, Mopidy, Jellyfin, Emby, Ampache, Navidrome, Koel, mStream, Airsonic, CherryMusic, Madsonic, Gerbera, UMS, MiniDLNA, Shaka Packager, livego, ZLMediaKit, TSDuck, yt-dlp, Concerto, Podlove, threefive — all dedup-checked this round). 6 new permissive items found: open web players (Fluid Player, ArtPlayer), streaming protocol libraries (joy4, m3u8, aiortc), and broadcast intercom (Mumble). Every license verified upstream 2026-10-08 (GitHub API spdx_id; raw LICENSE text for the three NOASSERTION cases). Copyleft finds → quarantine rows 587–594. Honest shortfall: 6 (not ~8) — pocket exhausted for permissive items; documented, not padded. Pre-append dedup: 0 dupes (title + URL greps).
+
+#### fluid-player/fluid-player ✅ commercial-safe
+- **What:** Fluid Player — open-source HTML5 video player (VAST/VPAID ads, HLS/DASH).
+- **URL:** https://github.com/fluid-player/fluid-player
+- **License:** ✅ MIT (verified Wave 62 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (broadcast/automation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT-licensed web player with ad support. [Wave 62 Lane A]
+
+#### zhw2590582/ArtPlayer ✅ commercial-safe
+- **What:** ArtPlayer — open-source HTML5 video player (customizable UI, plugins).
+- **URL:** https://github.com/zhw2590582/ArtPlayer
+- **License:** ✅ MIT (verified Wave 62 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (broadcast/automation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT-licensed player. [Wave 62 Lane A]
+
+#### nareix/joy4 ✅ commercial-safe
+- **What:** joy4 — Golang audio/video library and streaming server (RTMP, FLV, HLS).
+- **URL:** https://github.com/nareix/joy4
+- **License:** ✅ MIT (verified Wave 62 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (broadcast/automation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Go AV library + server. [Wave 62 Lane A]
+
+#### globocom/m3u8 ✅ commercial-safe
+- **What:** m3u8 — Python parser for HTTP Live Streaming (HLS) playlists.
+- **URL:** https://github.com/globocom/m3u8
+- **License:** ✅ MIT (verified Wave 62 Lane A, 2026-10-08: raw LICENSE — MIT License, Copyright 2012 globo.com; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (broadcast/automation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** HLS playlist parsing library. [Wave 62 Lane A]
+
+#### aiortc/aiortc ✅ commercial-safe
+- **What:** aiortc — WebRTC and ORTC implementation for Python (asyncio).
+- **URL:** https://github.com/aiortc/aiortc
+- **License:** ✅ BSD-3-Clause (verified Wave 62 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (broadcast/automation)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Python WebRTC for broadcast ingest. [Wave 62 Lane A]
+
+#### mumble-voip/mumble ✅ commercial-safe
+- **What:** Mumble — open-source, low-latency voice chat (broadcast intercom/talkback use).
+- **URL:** https://github.com/mumble-voip/mumble
+- **License:** ✅ BSD-3-Clause (verified Wave 62 Lane A, 2026-10-08: raw LICENSE — BSD 3-clause redistribution terms; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (broadcast/automation)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Low-latency voice; broadcast intercom use-case. [Wave 62 Lane A]
+
+### Wave 62 Lane A summary (2026-10-08)
+100 entries appended 2026-10-08: P1 SDK docs round 8 (32 — HENkaku Vita wiki, ps2tek, DSiBrew, XboxDevWiki, Altirra Hardware Reference, Thumby, Analogue openFPGA, GB Studio docs, DJGPP docs, Gameduino docs, 32blit, PicoSystem MIT, SegaXtreme, Maxim SMS/GG docs, MiSTer docs, ps2dev org site, libdragon docs, psdevwiki PS2, Big Evil Corp MD, MSX-DOS 1/2, ESPboy, LowRes NX, Gamebuino Academy, Uzebox wiki, Channel F docs, Bally Alley, colecovision.eu dev, SG-1000 spec, CV-Tech.txt, Pokitto, Spectrum Computing; 1 MIT, 31 docs ❓); P2 landmark musicdisk round 6 (14 — pouët chart page 3; resolved 4 of Wave 61's 8 held: Sounds of the Amiga #1, Awakening, Chillosophy 2, SceneSat Vol 2; all ❓); P3 PD radio-drama round 11 (48 — 6 each Suspense, Whistler, Inner Sanctum, X Minus One, Sam Spade, Six Shooter, Crime Classics, Falcon; all archive.org metadata-verified, all ✅ established-PD); P4 broadcast-automation round 3 (6 — Fluid Player, ArtPlayer, joy4, m3u8, aiortc, Mumble; all permissive ✅; honest shortfall vs ~8 — pocket exhausted). 8 quarantine rows (587–594) in LICENSE_QUARANTINE.md. Catalog: 5,600 → 5,700 honest #### entries (target 5,700+ met exactly). Dedup rejections (pre-append): 40+ P1 (psx-spx, psx.dev, gbatek, tonc, gbadev, gbdev.io, libnds, BlocksDS, 3dbrew, libctru, libnx, libogc, libdragon, n64.dev, 7800basic, batari, IntyBASIC, c64-wiki, Arduboy2, libretro-common, wasm4, 6502.org, segaretro, ps2dev, docs.libretro.com, PVSnesLib, nesdoug, gamebuino, pokitto, atariwiki, devkitPro wiki); 17 P3 OTR identifiers; 30+ P4 broadcast tools (incl. 8 pulled post-append when pre-append dedup was missed: red5, MistServer, MediaMTX, Node-Media-Server, hls.js, dash.js, video.js, xgplayer — removed, honest correction). Honest negatives/drops: ps3devwiki.com (domain hijacked → survey-smiles.com), liko-12.com (dead), specnext.com (unreachable), cgfm2.emuviews.com (unverifiable), UMD 8730 (dual demo/musicdisk), The Her collection (held), JackTrip (mixed MIT/GPL), go-rtmp (BSL-1.0), Ant Media (unverifiable), dvbpsi (bot-walled), VDR (unverifiable), 14 access-restricted OTR items, 5 OTR multi-file/collection exclusions.

@@ -62,3 +62,23 @@ Convention matches [LICENSE_QUARANTINE.md](LICENSE_QUARANTINE.md).
 | 55 | BeatRoot | eecs.qmul.ac.uk/~simond/beatroot | GPL (family) | 2026-10-08 | Classic beat tracker (Dixon, MIREX 2006). Version not pinned in available sources. Wave 1 Lane A1. Awareness only. |
 | 56 | Audacity | audacityteam.org | GPL-3.0 | 2026-10-08 | Label-track timing workflow (Sound Finder/Silence Finder). Wave 1 Lane A1. Awareness only. |
 | 57 | SoX | sourceforge.net/projects/sox | GPL-2.0-or-later (CLI; libsox LGPL-2.1-or-later) | 2026-10-08 | Audio Swiss-army knife. Upstream stalled 14.4.2 (2015); sox_ng is the maintained fork. Wave 1 Lane A1. Awareness only. |
+| 58 | Blender (compositor) | https://github.com/blender/blender | GPL (binaries GPL-3.0; source default GPL-2.0-or-later) | 2026-10-07 (blender.org/about/license) | Lane A4. Standalone-app use only; rendered output is ours |
+| 59 | G'MIC | https://github.com/GreycLab/gmic | CeCILL (GPL-compatible copyleft) | 2026-10-07 (repo COPYING raw) | Lane A4. CLI/GIMP/standalone use only |
+| 60 | VapourSynth | https://github.com/vapoursynth/vapoursynth | LGPL-2.1 | 2026-10-07 (GitHub API license field) | Lane A4. Frameserver/CLI use only; LGPL linking rules apply if ever embedded |
+| 61 | AviSynth+ | https://github.com/AviSynth/AviSynthPlus | GPL-2.0 | 2026-10-07 (distrib/gpl-*.txt in repo) | Lane A4. Standalone/script use only |
+| 62 | TidalCycles | https://github.com/tidalcycles/Tidal | GPL-3.0 | 2026-10-07 (GitHub API license field) | Lane A4. Standalone use; rendered audio stems are ours, tool stays GPL |
+| 63 | Aria Maestosa | https://ariamaestosa.github.io/ariamaestosa/docs/index.html | GPL-3.0 | 2026-10-07 (Guix package record: GPL 3+) | Lane A4. Standalone-app use only |
+| 64 | LMMS | https://github.com/LMMS/lmms | GPL-2.0 | 2026-10-07 (GitHub API license field) | Lane A4. Standalone-app use only; rendered stems are ours |
+| 65 | Ardour | https://github.com/Ardour/ardour | GPL-2.0 | 2026-10-07 (repo COPYING raw) | Lane A4. Standalone-app use only; mixed masters are ours |
+| 66 | HandBrake | https://github.com/HandBrake/HandBrake | GPL-2.0 | 2026-10-07 (repo LICENSE raw) | Lane A4. Standalone-app/CLI use only |
+| 67 | FFmpeg (encode backbone) | https://github.com/FFmpeg/FFmpeg | LGPL-2.1 (base; some builds/parts GPL) | 2026-10-07 (COPYING.LGPLv2.1 raw) | Lane A4. CLI/binary use only; never link GPL builds into shipping code |
+| 68 | r128gain | https://github.com/desbma/r128gain | LGPL-2.1 | 2026-10-07 (GitHub API license field) | Lane A4. Loudness CLI use only |
+| 69 | Shutter Encoder | https://github.com/paulpacifico/shutter-encoder | GPL-3.0 | 2026-10-07 (GitHub license field) | Lane A4. Standalone-app use only. (Corrects RESOURCE_CATALOG.md "freeware" note — upstream declares GPL-3.0.) |
+| 70 | ffmpegthumbnailer | https://github.com/dirkvdb/ffmpegthumbnailer | GPL-2.0 | 2026-10-07 (GitHub API license field) | Lane A4. Thumbnail CLI use only |
+| 71 | mp4v2 / mp4chaps | https://github.com/enzo1982/mp4v2 | MPL-1.1 | 2026-10-07 (repo COPYING raw) | Lane A4. Chapter/tag CLI use only |
+| 72 | QCTools | https://github.com/bavc/qctools | GPL-3.0 | 2026-10-07 (repo License.html) | Lane A4. Standalone-app use only |
+| 73 | MKVToolNix | https://mkvtoolnix.download/ | GPL-2.0 | 2026-10-07 (Wikipedia licence field; mirror README "comes under the GPL v2") | Lane A4. CLI use only |
+| 74 | AtomicParsley | https://github.com/wez/atomicparsley | GPL-2.0 | 2026-10-07 (GitHub API license field) | Lane A4. MP4 tag/chapter CLI use only |
+| 75 | Zrythm | https://github.com/zrythm/zrythm | AGPL-3.0-or-later | 2026-10-07 (AUR package record; dev-team CLAUDE.md) | Lane A4. Strictest licence in this pull. Standalone-app use only |
+| 76 | ExifTool | https://github.com/exiftool/exiftool | GPL-3.0 (upstream dual Artistic/GPL) | 2026-10-07 (GitHub API license field) | Lane A4. Metadata CLI use only |
+| 77 | gifsicle | https://github.com/kohler/gifsicle | GPL-2.0 | 2026-10-07 (GitHub API license field) | Lane A4. GIF assemble/optimize CLI use only |

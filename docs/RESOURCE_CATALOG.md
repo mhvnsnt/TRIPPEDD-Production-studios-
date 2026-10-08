@@ -36547,3 +36547,318 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** LGPL confirmed via the source distribution's Rights folder. [Wave 40 Lane A]
+#### SCTE-20 (ANSI/SCTE 20) ❓
+- **What:** SCTE-20 — "Methods for Carriage of Closed Captions and Non-Real Time Sampled Video": the cable-industry standard for carrying CEA-608 closed captions and VBI services in MPEG-2 bitstreams (current edition 2017)
+- **URL:** https://webstore.ansi.org/standards/scte/ansiscte202017
+- **License:** standards document, copyright SCTE — paid standard ($58 via ANSI store), not open-licensed; genuinely unverified for reuse (checked 2026-10-08)
+- **Free tier:** not free — purchase required for full text
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Broadcast caption-carriage standard; reference only — do not redistribute the document. [Wave 40 Lane A]
+#### defMON wiki ❓
+- **What:** defMON wiki — community documentation for the defMON C64 tracker: sync interfaces (ScannerBoy), hardware adapters, and usage guides
+- **URL:** https://defmon.vandervecken.com/doku.php?id=docs:scannerboysync
+- **License:** wiki content, no explicit license stated — genuinely unverified (checked 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Community-maintained docs for defMON hardware sync and usage. [Wave 40 Lane A]
+#### xmodits 🚫
+- **What:** xmodits — tool to rip samples from tracker modules; supports IT, XM, S3M, MOD, UMX and MPTM formats with multithreaded batch ripping and a sample previewer
+- **URL:** https://github.com/B0ney/xmodits
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Copyleft — research lane only, never wired into shipping code. Quarantined as LICENSE_QUARANTINE.md row 375. [Wave 40 Lane A]
+#### nodmod ✅
+- **What:** nodmod — Python library to read, edit, and write tracker modules (MOD, XM, S3M); pattern/note/effect/sample editing with human-readable ASCII dumps for inspection
+- **URL:** https://github.com/erodola/nodmod
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source (PyPI: nodmod)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Module dissector/manipulator library — useful for programmatic module analysis. [Wave 40 Lane A]
+#### ProTrekkr ✅
+- **What:** ProTrekkr — tracker program combining a software synthesizer with a traditional sample tracker (heavily modified NoiseTrekker 2 by Arguru); standalone replay routines for many platforms including PSP/Vita
+- **URL:** https://github.com/hitchhikr/protrekkr
+- **License:** BSD-2-Clause (verified 2026-10-08 via LICENSE file: "BSD 2-Clause License, Copyright (C) 2008-2026 Franck Charlet")
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** LICENSE file is BSD-2-Clause (README's "FREEWARE" text is outdated boilerplate). Ships standalone replay routines — player internals. [Wave 40 Lane A]
+#### midi2mod ❓
+- **What:** midi2mod — utility to convert MIDI files to MOD audio format
+- **URL:** https://github.com/GermanAizek/midi2mod
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no LICENSE file in repo. [Wave 40 Lane A]
+#### CheeseCutter 🚫
+- **What:** CheeseCutter — tracker program for composing music for the C64 SID chip using the reSID engine; packed files play on real C64 hardware (Debian-packaged)
+- **URL:** https://github.com/theyamo/CheeseCutter
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Copyleft — research lane only, never wired into shipping code. Quarantined as LICENSE_QUARANTINE.md row 376. EXTended fork at github.com/ventti/cheesecutter (also GPL-2.0). [Wave 40 Lane A]
+#### Aodix ✅
+- **What:** Aodix — Arguru's music sequencer/tracker for Windows combining tracker and sequencer paradigms with modular VST wiring; source published with permission from Arguru's collaborator after his 2007 passing (archive repo)
+- **URL:** https://github.com/arguru-archive/aodix
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Historical tracker/sequencer; source released with permission. Enhanced fork at github.com/vanjac/aodix-enhanced. [Wave 40 Lane A]
+#### aodix-repair ✅
+- **What:** aodix-repair — reverse-engineering project documenting the Aodix .adx file format on its wiki, plus patched executables fixing VST corruption bugs
+- **URL:** https://github.com/vanjac/aodix-repair
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The wiki documents the .adx file format — genuine format documentation. [Wave 40 Lane A]
+#### pydefmon ✅
+- **What:** pydefmon — pure-Python reader, writer, and player for defMON C64 tracker tunes; ships docs/format.md, the canonical reference for the defMON .prg file format and runtime RAM layout
+- **URL:** https://github.com/anarkiwi/pydefmon
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source (PyPI: pydefmon)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Includes the authoritative defMON format doc; playback verified byte-exact against sidplayfp oracle. [Wave 40 Lane A]
+#### TIATracker 🚫
+- **What:** TIATracker — music tracker for Atari VCS 2600 with a new sound routine; ADSR envelopes, 7 melodic + 15 percussion instruments, size-optimized configurable replayer with richly documented source including data-structure specs
+- **URL:** https://github.com/steux/tiatracker
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; FreeBSD port confirms GPLv2)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Copyleft — research lane only, never wired into shipping code. Quarantined as LICENSE_QUARANTINE.md row 377. Original at bitbucket.org/kylearan/tiatracker. [Wave 40 Lane A]
+#### komposter 🚫
+- **What:** komposter — lightweight music composing system for 4K/64K intros; modular virtual-analog synth with pattern sequencer, ships x86 assembly player source and a nasm converter
+- **URL:** https://github.com/jhalme/komposter
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source (Debian-packaged)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Copyleft — research lane only, never wired into shipping code. Quarantined as LICENSE_QUARANTINE.md row 378. [Wave 40 Lane A]
+#### pysidtracker ✅
+- **What:** pysidtracker — Python base library for SID tracker tools (shared foundation for pydefmon); SID file container handling and register-write APIs
+- **URL:** https://github.com/anarkiwi/pysidtracker
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Shared base for anarkiwi's SID toolchain (pydefmon, etc.). [Wave 40 Lane A]
+#### sidtrace ❓
+- **What:** sidtrace — SID trace oracle used to verify cycle-exact SID playback (referenced by pydefmon's test suite as the sidplayfp comparison oracle)
+- **URL:** https://github.com/anarkiwi/sidtrace
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no LICENSE file in repo. Test/oracle tool. [Wave 40 Lane A]
+#### undefmon ❓
+- **What:** undefmon — reverse-engineered defMON (described as "reverse engineered defMON" by the author); reassembly of the defMON tracker for format analysis
+- **URL:** https://github.com/anarkiwi/undefmon
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no LICENSE file. Reverse-engineering resource; cited by the playroutine-anatomy doc. [Wave 40 Lane A]
+#### defmonv ✅
+- **What:** defmonv — patched defMON C64 tracker acting as a MIDI clock master (sends MIDI clock/start/stop over the Vessel interface, replacing ScannerBoy sync)
+- **URL:** https://github.com/anarkiwi/defmonv
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Hardware-adjacent tracker mod; part of anarkiwi's Vessel MIDI ecosystem. [Wave 40 Lane A]
+#### pce-tracker-converter ✅
+- **What:** pce-tracker-converter — converts MOD/XM/S3M tracker modules into Furnace Tracker PC Engine (.fur) files targeting the HuC6280 wavetable chip, with sample classification and effect mapping
+- **URL:** https://github.com/newsdee/pce-tracker-converter
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Module-to-chiptune converter with documented format translation logic. [Wave 40 Lane A]
+#### sonic2mod ❓
+- **What:** sonic2mod — converts Sonic the Hedgehog 1 SMPS assembly music files (Sega Megadrive) to MOD format, with an SMPS analyzer component and FM/PSG synthesis
+- **URL:** https://github.com/djyt/sonic2mod
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no LICENSE file. Ships a converter, analyzer, and renderer (sonic2mod-analyze, sonic2wav). [Wave 40 Lane A]
+#### oxideav-mod ✅
+- **What:** oxideav-mod — pure-Rust Amiga MOD tracker module decoder (decode-only by design); parses ProTracker/SoundTracker headers, patterns, and samples including 15-sample Ultimate SoundTracker layout
+- **URL:** https://github.com/oxideav/oxideav-mod
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Module dissector/decoder with documented format-tag channel map. [Wave 40 Lane A]
+#### modplayers ❓
+- **What:** modplayers — command-line Amiga ProTracker MOD player implemented in three languages (Python, Go, Rust) with per-language mod_parser modules, plus a browser UI for visual playback
+- **URL:** https://github.com/colinbeales/modplayers
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no LICENSE file. Tri-language MOD parsers useful for format study. [Wave 40 Lane A]
+#### YMX ❓
+- **What:** YMX — specification of a streaming YM chiptune format for the Atari ST (68000); a four-repository family: the spec document, a player, and the two tune-file formats, with AI-authorship disclosure
+- **URL:** https://github.com/odipar/ymx
+- **License:** custom "YMX License" (not SPDX-recognized; verified 2026-10-08 via GitHub API NOASSERTION and LICENSE file header) — terms unverified
+- **Free tier:** spec published
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Format specification document; custom license terms — read LICENSE before use. Code moved to YMXR repo. [Wave 40 Lane A]
+#### mcs-convert ✅
+- **What:** mcs-convert — player, viewer, and reverse-engineered format spec for Will Harvey's Music Construction Set (IBM-PC, 1984); imports NES (.nsf), Vortex Tracker (.pt3), and MCS songs into a neutral tracker, exports to .MCS, DOS .COM players, or WAV
+- **URL:** https://github.com/chjmartin2/mcs-convert
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Byte-exact reverse-engineered format spec — genuine format documentation. [Wave 40 Lane A]
+#### fmconv ❓
+- **What:** fmconv — converts 50+ retro music formats to .FM9 for FM-90s chiptune players; supports MIDI, XMI, MUS, RAD, IMF, DRO and more, with FM instrument banks, loop detection, and VGM/VGZ output
+- **URL:** https://github.com/aarontodd82/fmconv
+- **License:** license file present but not SPDX-recognized ("fmconv - Game Music to VGM Converter, Copyright (C) 2025 Aaron Todd"; verified 2026-10-08 via GitHub API NOASSERTION) — terms unverified
+- **Free tier:** source published
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Terms unverified — read the license file before use. Ships an FM9 extraction/inspection tool (docs/FM9_EXTRACT.md). [Wave 40 Lane A]
+#### bitphase ✅
+- **What:** bitphase — modern web-based chiptune tracker for retro sound chips (AY-8910 via ayumi); ships format documentation in docs/ (e.g. TMR spec) and a .btp project format with CLI export
+- **URL:** https://github.com/ruguevara/bitphase
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Web tracker with in-repo format docs. [Wave 40 Lane A]
+#### sid2midi-public ❓
+- **What:** sid2midi-public — converts SID tunes to MIDI by running them on a cycle-exact C64 emulated in pure Python (NMOS 6510, VICE CIA/VIC-II ports, reSIDfp); captures SID register writes into Standard MIDI Files
+- **URL:** https://github.com/djayuffe/sid2midi-public
+- **License:** no SPDX-recognized license (verified 2026-10-08 via GitHub API NOASSERTION) — genuinely unverified; note residfp.py is marked GPL-2.0-or-later in-repo
+- **Free tier:** source published
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified top-level license; the bundled reSIDfp port is GPL-2.0-or-later per in-repo notice — treat as research-only. [Wave 40 Lane A]
+#### sidm2conv ❓
+- **What:** sidm2conv — SID to SID Factory II converter; analyzes SID files and extracts music data with automatic player-driver selection, interactive HTML docs, trace visualization, and 1,900+ unit tests
+- **URL:** https://github.com/michaeltroelsen/sidm2conv
+- **License:** no SPDX-recognized license (verified 2026-10-08 via GitHub API NOASSERTION) — genuinely unverified
+- **Free tier:** source published
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Experimental reverse-engineering tool; genuinely unverified license. [Wave 40 Lane A]
+#### untracker ✅
+- **What:** untracker — renders individual stems from tracker module files (MOD, XM, IT, S3M, etc.) using libopenmpt; per-channel stem extraction to WAV/FLAC/Vorbis/Opus
+- **URL:** https://github.com/kassoulet/untracker
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Module dissector via stem rendering — useful for analyzing module structure. [Wave 40 Lane A]
+#### trackmeister ✅
+- **What:** trackmeister — MOD/XM/IT/etc. player in fullscreen mode designed for tracked-music compos at demoparties; ReplayGain 2.0 loudness analyzer, INI-configurable, single executable
+- **URL:** https://github.com/kajott/trackmeister
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Demoparty compo player with loudness analysis. [Wave 40 Lane A]
+#### modbox ✅
+- **What:** modbox — classic tracker music (MOD/S3M/XM/IT) in the browser with a FastTracker-style visualizer; 100% Go compiled to WebAssembly, built on gotracker/playback
+- **URL:** https://github.com/richardwooding/modbox
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source (live demo on GitHub Pages)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Browser-based module visualizer/player. [Wave 40 Lane A]
+#### cmod-video ❓
+- **What:** cmod-video — tracker music visualizer/player and offline renderer for MOD/XM/IT/S3M; polished pattern view, waveforms, scopes, FFT/VU, MKV export (AV1+FLAC), EBU R-128 loudness normalization
+- **URL:** https://github.com/jllodra/cmod-video
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no LICENSE file in repo. [Wave 40 Lane A]
+#### gil-adb/modplayer ❓
+- **What:** gil-adb/modplayer — module music player written in Rust with terminal and WebAssembly backends; supports XM, MOD, S3M, STM, and IT (WIP) with precomputed Amiga/Linear period tables
+- **URL:** https://github.com/gil-adb/modplayer
+- **License:** no license file in repository (verified 2026-10-08 via GitHub API spdx_id NONE) — genuinely unverified
+- **Free tier:** source published, no license stated
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no LICENSE file in repo. [Wave 40 Lane A]
+#### VultureTracker ✅
+- **What:** VultureTracker — YAML-to-Impulse-Tracker compiler; write tracker music as readable YAML and compile to real .it modules, with SONG_FORMAT.md as the complete format reference and MOD/S3M/XM import
+- **URL:** https://github.com/shadoh420/vulturetracker
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Ships a complete song-format spec (SONG_FORMAT.md) — genuine format documentation. [Wave 40 Lane A]
+#### gotracker/playback ❓
+- **What:** gotracker/playback — Go library that renders tracker modules tick by tick for playback; powers modbox's visualizer with per-channel amplitude buffers and order/row position
+- **URL:** https://github.com/gotracker/playback
+- **License:** no SPDX-recognized license (verified 2026-10-08 via GitHub API NOASSERTION) — genuinely unverified
+- **Free tier:** source published
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Genuinely unverified — no recognized license. Player internals library. [Wave 40 Lane A]
+#### quasilyte/xm ✅
+- **What:** quasilyte/xm — Go library for XM music format support in Ebitengine games; includes the xm/xmfile package for parsing XM files standalone, producing 16-bit PCM streams
+- **URL:** https://github.com/quasilyte/xm
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** XM dissector/parser library for Go game development. [Wave 40 Lane A]
+#### deity-informant ✅
+- **What:** deity-informant — "Anatomy of C64 playroutines": a field guide for decompiler writers; nine players reverse-engineered to the byte (Hubbard, Galway, Follin, Walker, JCH, GoatTracker 2, SID Wizard, defMON, Blackbird) with annotated disassemblies and SID-write logs
+- **URL:** https://github.com/anarkiwi/deity-informant
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Premier player-internals documentation — docs/playroutine-anatomy.md is self-contained. [Wave 40 Lane A]

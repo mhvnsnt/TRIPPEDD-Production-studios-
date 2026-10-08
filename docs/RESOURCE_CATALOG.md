@@ -41694,3 +41694,495 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** Research lane only — standalone study; never linked. Three classic chips behind one Wishbone API — useful register-map cross-check. QUARANTINE row 427. [Wave 47 Lane A]
+
+### Pocket 3 — open game-audio middleware tail (37 entries + 10 quarantine pointers + 2 honest negatives)
+
+#### Euterpea ✅ commercial-safe (Zlib)
+- **What:** Euterpea/Euterpea — Haskell library for computer music: algorithmic composition, MIDI, and audio synthesis in a functional DSL.
+- **URL:** https://github.com/Euterpea/Euterpea
+- **License:** Zlib — "zlib License" (verified 2026-10-08 via GitHub API spdx_id Zlib)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Generative-music lane — the Haskell DSL is the cleanest algorithmic-composition model in the catalog; use for adaptive-score prototyping. [Wave 47 Lane A]
+
+#### TinySoundFont ✅ commercial-safe (MIT)
+- **What:** schellingb/TinySoundFont — single-header SoundFont2 (.sf2) synthesizer: tiny MIDI synth for games.
+- **URL:** https://github.com/schellingb/TinySoundFont
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-07-19, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Drop-in MIDI synth lane — one header + one SoundFont gives full GM music playback; ideal for menu/adaptive music without a middleware license. [Wave 47 Lane A]
+
+#### cubeb ✅ commercial-safe (ISC)
+- **What:** mozilla/cubeb — Mozilla's cross-platform audio backend (Firefox's audio layer): low-latency output on Windows/macOS/Linux/Android/iOS.
+- **URL:** https://github.com/mozilla/cubeb
+- **License:** ISC (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-09-16, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Audio-backend lane — the battle-tested output layer beneath Firefox; pair with miniaudio or use standalone for engine audio output. [Wave 47 Lane A]
+
+#### libsoundio ✅ commercial-safe (MIT)
+- **What:** andrewrk/libsoundio — C library for cross-platform real-time audio input/output with a clean callback API.
+- **URL:** https://github.com/andrewrk/libsoundio
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2025-01-13)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Backend alternative to cubeb/PortAudio — small, well-documented, MIT. [Wave 47 Lane A]
+
+#### Stride ✅ commercial-safe (MIT)
+- **What:** stride3d/stride — open-source C# game engine (ex-Xenko) with a full audio engine: 3D positional audio, effects, streaming.
+- **URL:** https://github.com/stride3d/stride
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-08, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Engine-audio reference lane — study Stride's 3D audio graph design for the AshLane audio architecture; full engine, not just middleware. [Wave 47 Lane A]
+
+#### Solar2D ✅ commercial-safe (MIT)
+- **What:** coronalabs/corona — Solar2D (ex-Corona SDK) 2D game engine with OpenAL-based audio: channels, fading, and streaming.
+- **URL:** https://github.com/coronalabs/corona
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-06, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mobile-2D audio lane — the OpenAL audio layer is a clean study model for lightweight game SFX/music mixing. [Wave 47 Lane A]
+
+#### nCine ✅ commercial-safe (MIT)
+- **What:** nCine/nCine — 2D game engine with an OpenAL audio backend: positional audio, streaming, and effects.
+- **URL:** https://github.com/nCine/nCine
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-03, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight-engine audio lane — small readable OpenAL integration for 2D game audio. [Wave 47 Lane A]
+
+#### Pizzicato ✅ commercial-safe (MIT)
+- **What:** alemangui/pizzicato — Pizzicato.js: Web Audio library for sounds, effects, and groups with a simple API.
+- **URL:** https://github.com/alemangui/pizzicato
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2025-07-09)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Web-audio lane — the effects/groups model maps well to adaptive game music on the web/PWA builds (AshLanev2 is a GitHub Pages PWA). [Wave 47 Lane A]
+
+#### Scribbletune ✅ commercial-safe (MIT)
+- **What:** scribbletune/scribbletune — JavaScript library for generating musical patterns, rhythms, and MIDI from code.
+- **URL:** https://github.com/scribbletune/scribbletune
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-08-20, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Generative-music lane — pattern-based MIDI generation for adaptive scores; pairs with Tone.js already cataloged. [Wave 47 Lane A]
+
+#### isobar ✅ commercial-safe (MIT)
+- **What:** ideoforms/isobar — Python library for algorithmic MIDI composition: pattern timelines, chance operations, and generative sequences.
+- **URL:** https://github.com/ideoforms/isobar
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-09-06, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Adaptive-music lane — the timeline/pattern model is directly usable for generating adaptive game-music MIDI offline. [Wave 47 Lane A]
+
+#### libsamplerate ✅ commercial-safe (BSD-2-Clause)
+- **What:** libsndfile/libsamplerate — Secret Rabbit Code sample-rate converter: high-quality SRC for game audio pipelines.
+- **URL:** https://github.com/libsndfile/libsamplerate
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-08-13, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pipeline DSP lane — the correct way to resample SFX/music assets at build time; BSD so it ships anywhere. [Wave 47 Lane A]
+
+#### Magenta ✅ commercial-safe (Apache-2.0)
+- **What:** magenta/magenta — Google's generative-music ML: MusicVAE, MelodyRNN, DrumsRNN, and the GANSynth models for music/SFX generation.
+- **URL:** https://github.com/magenta/magenta
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id; repo archived 2026-01, models stable)
+- **Free tier:** free OSS (models + code)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Generative-music lane — offline generation of adaptive-score material and SFX beds; archived but the models check out. Note MusicGen/AudioCraft are NC — Magenta is the commercial-safe generative route. [Wave 47 Lane A]
+
+#### Magenta.js ✅ commercial-safe (Apache-2.0)
+- **What:** magenta/magenta-js — browser builds of Magenta's music models: run MelodyRNN/MusicVAE in-page for interactive music.
+- **URL:** https://github.com/magenta/magenta-js
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-06-22)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Interactive-music lane — in-browser generative music fits the PWA builds; generate adaptive motifs client-side. [Wave 47 Lane A]
+
+#### RVC WebUI ✅ commercial-safe (MIT)
+- **What:** RVC-Project/Retrieval-based-Voice-Conversion-WebUI — retrieval-based voice conversion: train/convert singing and speech voices locally.
+- **URL:** https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-08-04)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Voice lane — voice conversion for NPC barks and announcer lines; MIT means the pipeline can ship it. Voice-model training data rights are the user's responsibility. [Wave 47 Lane A]
+
+#### FastTracker II clone ✅ commercial-safe (BSD-3-Clause)
+- **What:** 8bitbubsy/ft2-clone — Olav Sørensen's accurate FastTracker II clone: the real XM replay engine, not an approximation.
+- **URL:** https://github.com/8bitbubsy/ft2-clone
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-08, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tracker-replay lane — the reference XM playback implementation; study its mixer for game tracker-music playback. [Wave 47 Lane A]
+
+#### Meyda ✅ commercial-safe (MIT)
+- **What:** meyda/meyda — Web Audio feature extraction: MFCC, chroma, spectral features in real time in the browser.
+- **URL:** https://github.com/meyda/meyda
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2024-07-15)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Audio-analysis lane — real-time beat/onset/chroma detection for music-reactive game systems and adaptive-audio triggers. [Wave 47 Lane A]
+
+#### librosa ✅ commercial-safe (ISC)
+- **What:** librosa/librosa — Python audio analysis: beat tracking, chroma, source separation hooks, and feature extraction for ML pipelines.
+- **URL:** https://github.com/librosa/librosa
+- **License:** ISC (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-06, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Offline-analysis lane — analyze music/SFX corpora for adaptive-audio tagging; the Python counterpart to Meyda. [Wave 47 Lane A]
+
+#### pyroomacoustics ✅ commercial-safe (MIT)
+- **What:** LCAV/pyroomacoustics — Python room-acoustics simulation: reverberation, beamforming, and microphone-array modeling.
+- **URL:** https://github.com/LCAV/pyroomacoustics
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-07-17)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reverb-research lane — simulate room impulse responses for game-space convolution reverb design; MIT ships. [Wave 47 Lane A]
+
+#### LabSound ✅ commercial-safe (BSD-2/3 mix)
+- **What:** LabSound/LabSound — WebAudio-derived C++ audio engine with all LGPL/GPL purged; graph-based DSP, spatialization, and synthesis.
+- **URL:** https://github.com/LabSound/LabSound
+- **License:** BSD-2-Clause/BSD-3-Clause mix — "purged all LGPL and GPL code in order to make the engine as permissively licensable as possible" (verified 2026-10-08 via upstream LICENSE + COPYING)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Standout find — a WebAudio-class audio graph in C++ with the copyleft deliberately removed. Candidate engine-audio core for game builds. [Wave 47 Lane A]
+
+#### Cinder ✅ commercial-safe (BSD)
+- **What:** cinder/Cinder — C++ creative-coding framework with a full audio API: I/O, DSP graph, and effects.
+- **URL:** https://github.com/cinder/Cinder
+- **License:** BSD-style — "Redistribution and use in source and binary forms… are permitted" (verified 2026-10-08 via upstream COPYING)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Creative-audio lane — the audio subsystem is a clean study model for engine audio graphs; BSD ships. [Wave 47 Lane A]
+
+#### DSPFilters ✅ commercial-safe (MIT)
+- **What:** vinniefalco/DSPFilters — C++ DSP filter library: Butterworth, Chebyshev, Elliptic, and Legendre designs with a clean API.
+- **URL:** https://github.com/vinniefalco/DSPFilters
+- **License:** MIT — "provided under the MIT license and is therefore fully compatible with proprietary usage" (verified 2026-10-08 via upstream README)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** DSP lane — game-audio EQ/filter effects (low-pass sweeps, wah, radio-voice) from a tiny MIT dependency. [Wave 47 Lane A]
+
+#### The Amazing Audio Engine ✅ commercial-safe (zlib)
+- **What:** theamazingaudioengine/TheAmazingAudioEngine — Michael Tyson's iOS/macOS modular audio engine: routing, effects, and I/O.
+- **URL:** https://github.com/theamazingaudioengine/TheAmazingAudioEngine
+- **License:** zlib-style — "This software is provided 'as-is'…" (verified 2026-10-08 via upstream License.txt)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Mobile-audio lane — the iOS audio-session/routing model is the reference for shipping game audio on iPhones; zlib ships. [Wave 47 Lane A]
+
+#### PipeWire ✅ commercial-safe (MIT)
+- **What:** PipeWire/pipewire — Linux audio/video server: low-latency pro-audio routing with a clean client API.
+- **URL:** https://github.com/PipeWire/pipewire
+- **License:** MIT — "All PipeWire source files are licensed under the MIT License" (verified 2026-10-08 via upstream LICENSE)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Linux-audio lane — the modern Linux audio target; game builds on Linux should speak PipeWire natively. [Wave 47 Lane A]
+
+#### olcPixelGameEngine ✅ commercial-safe (OLC-3)
+- **What:** OneLoneCoder/olcPixelGameEngine — javidx9's single-header game engine with a built-in procedural audio system (synths, samples, noise).
+- **URL:** https://github.com/OneLoneCoder/olcPixelGameEngine
+- **License:** OLC-3 — custom permissive: redistribution permitted with attribution (verified 2026-10-08 via olcPixelGameEngine.h header "License (OLC-3)")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Procedural-audio lane — the built-in synth SFX model (no assets needed) is worth studying for lightweight game audio. [Wave 47 Lane A]
+
+#### Defold ✅ commercial-safe (Defold License 1.0)
+- **What:** defold/defold — King-origin game engine with a capable audio system: 3D sound, streaming, and live-update; source fully open.
+- **URL:** https://github.com/defold/defold
+- **License:** Defold License 1.0 — permissive Apache-style terms (verified 2026-10-08 via upstream LICENSE.txt: "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Engine-audio lane — Defold's sound component design (gains, panning, streaming) is a clean reference for 2D/3D game audio architecture. [Wave 47 Lane A]
+
+#### Panda3D ✅ commercial-safe (BSD)
+- **What:** panda3d/panda3d — Disney/CMU game engine with an OpenAL/FMOD-pluggable audio system: 3D positional audio and music streaming.
+- **URL:** https://github.com/panda3d/panda3d
+- **License:** BSD-style — "Redistribution and use in source and binary forms…" (verified 2026-10-08 via upstream LICENSE header; Modified BSD per project docs)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Engine-audio lane — the audio-manager abstraction (swap OpenAL/FMOD backends) is the pattern to copy for engine audio. [Wave 47 Lane A]
+
+#### Tremor ✅ commercial-safe (BSD)
+- **What:** Xiph's Tremor — integer-only Ogg Vorbis decoder for low-power/embedded targets (the game-console Vorbis path).
+- **URL:** https://gitlab.xiph.org/xiph/tremor
+- **License:** BSD — "Redistribution and use in source and binary forms… are permitted" (verified 2026-10-08 via upstream COPYING on gitlab.xiph.org; canonical home — the xiph/tremor GitHub mirror is gone)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Codec lane — integer Vorbis decoding for music streaming on constrained targets; BSD ships anywhere. [Wave 47 Lane A]
+
+#### WDL ✅ commercial-safe (zlib-style)
+- **What:** justinfrankel/WDL — Cockos' WDL library: audio DSP, resampling, EEL2 scripting, and the LICE drawing lib (the REAPER codebase's shared core).
+- **URL:** https://github.com/justinfrankel/WDL
+- **License:** zlib-style — Cockos WDL License: "Permission is granted to anyone to use this software for any purpose, including commercial applications" (verified 2026-10-08 via cockos.com/wdl; official GitHub mirror justinfrankel/WDL)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** DSP-lane heavyweight — WDL's resampler and FFT are the pro-audio-grade primitives behind REAPER; pull the DSP pieces, not the GUI. [Wave 47 Lane A]
+
+#### Extempore ✅ commercial-safe (BSD-3-Clause)
+- **What:** digego/extempore — cyber-physical live-coding environment (Scheme + xtlang) for real-time audio DSP and music performance.
+- **URL:** https://github.com/digego/extempore
+- **License:** BSD-3-Clause — license text in README (verified 2026-10-08 via upstream README; Wikipedia corroborates BSD 3-clause)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Live-coding lane — the xtlang DSP model shows how to hot-swap audio code at runtime; research value for interactive-music systems. [Wave 47 Lane A]
+
+#### JFugue ✅ commercial-safe (Apache-2.0)
+- **What:** dmkoelle/jfugue — Java API for music programming: compose with string notation ("C D E F G A B"), MIDI out, music theory helpers.
+- **URL:** https://github.com/dmkoelle/jfugue
+- **License:** Apache-2.0 — "The JFugue source code is licensed under the Apache License version 2.0" (verified 2026-10-08 via upstream README; Wikipedia corroborates)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Composition-API lane — the string-notation pattern language is a nice model for data-driven adaptive music stingers. [Wave 47 Lane A]
+
+#### cocos2d-x ✅ commercial-safe (MIT)
+- **What:** cocos2d/cocos2d-x — cross-platform C++ game framework with SimpleAudioEngine: background music + effects with per-platform backends.
+- **URL:** https://github.com/cocos2d/cocos2d-x
+- **License:** MIT — "Open Source Commercial Friendly (MIT)" (verified 2026-10-08 via upstream README; Wikipedia corroborates)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mobile-audio lane — SimpleAudioEngine is the minimal viable game-audio API; study its shape before building AshLane's. [Wave 47 Lane A]
+
+#### Gideros ✅ commercial-safe (MIT)
+- **What:** gideros/gideros — Lua 2D game framework with a plugin audio system: channels, streaming, and 3D-ish positioning.
+- **URL:** https://github.com/gideros/gideros
+- **License:** MIT (verified 2026-10-08 via Open Hub license analysis of gideros/gideros)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lua-audio lane — the plugin audio architecture shows how to keep game audio modular. [Wave 47 Lane A]
+
+#### cAudio ✅ commercial-safe (zlib)
+- **What:** R4stl1n/cAudio — 3D audio engine built on OpenAL: positional audio, WAV/OGG, and a C++ API.
+- **URL:** https://github.com/R4stl1n/cAudio
+- **License:** zlib (verified 2026-10-08 via GitHub API spdx_id Zlib; Fedora spec corroborates "License: zlib"; pushed 2022-01-24)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 3D-audio lane — the freedom-respecting irrKlang alternative; zlib means it ships in commercial games. [Wave 47 Lane A]
+
+#### jar_xm ✅ commercial-safe (public domain)
+- **What:** kd7tck/jar — jar_xm.h/jar_mod.h: single-header public-domain XM/MOD module players (the "jar" decoder family).
+- **URL:** https://github.com/kd7tck/jar
+- **License:** Public domain — "jar_xm.h - v0.01 - public domain - Joshua Reisenauer, MAR 2016" (verified 2026-10-08 via raw jar_xm.h header; repo pushed 2025-12-04, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tracker-music lane — single-header XM playback, public domain: the cheapest possible adaptive tracker-music path for game builds. [Wave 47 Lane A]
+
+#### Irrlicht ✅ commercial-safe (zlib/libpng)
+- **What:** Irrlicht Engine — C++ 3D engine with an OpenAL-based audio driver (irrKlang was its commercial sibling; the engine's own audio path is open).
+- **URL:** https://irrlicht.sourceforge.io/
+- **License:** zlib/libpng — "The license of the Irrlicht Engine is based on the zlib/libpng license" (verified 2026-10-08 via upstream readme §5; canonical home is SourceForge — no official GitHub org)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Engine-audio lane — the zlib-licensed OpenAL audio driver is the study target, not the whole engine. [Wave 47 Lane A]
+
+#### Project Acoustics ⚠️ CC-BY-4.0 (archived upstream)
+- **What:** microsoft/ProjectAcoustics — Microsoft's wave-based acoustic simulation: physically-based reverb/occlusion baking for game spaces.
+- **URL:** https://github.com/microsoft/ProjectAcoustics
+- **License:** ⚠️ CC-BY-4.0 — repo LICENSE is Attribution 4.0 International (verified 2026-10-08 via GitHub API spdx_id + raw LICENSE); repo archived 2022-11
+- **Free tier:** free OSS (archived)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest framing: CC-BY on code is unusual — attribution required, and the archived status means no upstream support. Study the wave-baking approach for reverb design; verify the code grant with counsel before shipping use. [Wave 47 Lane A]
+
+#### EarSketch ⚠️ free platform (closed source)
+- **What:** Georgia Tech's EarSketch — free browser DAW + Python/JS code editor for composing with a 4,000-sample library (Young Guru / Richard Devine sounds).
+- **URL:** https://earsketch.gatech.edu
+- **License:** ⚠️ Free educational platform, closed source — Georgia Tech Research Corporation license; no source repo (verified 2026-10-08 via earsketch.gatech.edu, HTTP 200; Wikipedia: "Content license: Georgia Tech Research Corporation license")
+- **Free tier:** Free to use in browser
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative-adjacent — the code-composition pedagogy is worth studying for interactive-music UX, but nothing here ships; sample reuse rights are GTRC-held. [Wave 47 Lane A]
+
+#### Sardine 🚫 GPL-3.0 — QUARANTINED (new row 428)
+- **What:** Bubobubobubobubo/sardine — Python live-coding music environment (SuperCollider backend), modern take on the FoxDot pattern system.
+- **URL:** https://github.com/Bubobubobubobubo/sardine
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2025-05-19)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the pattern language for adaptive-music ideas; never linked. QUARANTINE row 428. [Wave 47 Lane A]
+
+#### Flocking 🚫 GPL-2.0 — QUARANTINED (new row 429)
+- **What:** colinbdclark/Flocking — Web Audio synthesis framework: unit generators, synths, and scheduling in the browser.
+- **URL:** https://github.com/colinbdclark/Flocking
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-09-18, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the ugen/synth architecture is a good study model for web audio engines; never linked. QUARANTINE row 429. [Wave 47 Lane A]
+
+#### GStreamer 🚫 LGPL-2.1 — QUARANTINED (new row 430)
+- **What:** GStreamer/gstreamer — cross-platform multimedia pipeline framework (audio/video graphs, plugins, bindings).
+- **URL:** https://github.com/GStreamer/gstreamer
+- **License:** 🚫 LGPL-2.1 — "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1" (verified 2026-10-08 via upstream LICENSE; pushed 2026-10-08, active) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — the pipeline/graph architecture is the reference for media graphs; never linked (weak-copyleft rows stay quarantined pending owner verdict). QUARANTINE row 430. [Wave 47 Lane A]
+
+#### PulseAudio 🚫 LGPL — QUARANTINED (new row 431)
+- **What:** pulseaudio/pulseaudio — Linux sound server: per-app mixing, network audio, and the API most Linux game audio targets.
+- **URL:** https://github.com/pulseaudio/pulseaudio
+- **License:** 🚫 LGPL — "licensed under the GNU Lesser General Public License" (verified 2026-10-08 via upstream LICENSE) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — understand the server model, but target PipeWire (MIT, cataloged above) for shipping paths. QUARANTINE row 431. [Wave 47 Lane A]
+
+#### ossia score 🚫 GPL-3.0 — QUARANTINED (new row 432)
+- **What:** OSSIA/score — interactive sequencer for audio-visual shows: timeline scenarios, OSC/MIDI mappings, and intermedia automation.
+- **URL:** https://github.com/OSSIA/score
+- **License:** 🚫 GPL-3.0 — LICENSE.txt contains the GPL v3 text (verified 2026-10-08 via raw LICENSE.txt fetch; pushed 2026-10-08, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — the interactive-timeline/scenario model is the best study reference for adaptive-music show control; never linked. QUARANTINE row 432. [Wave 47 Lane A]
+
+#### Renardo 🚫 GPL-3.0 — QUARANTINED (new row 433)
+- **What:** leo-io/renardo — modernized FoxDot fork: Python live-coding music environment (SuperCollider/REAPER/Ableton/MIDI backends, web UI).
+- **URL:** https://github.com/leo-io/renardo
+- **License:** 🚫 GPL-3.0 — pyproject declares `license = {text = "GPL-3.0"}` (verified 2026-10-08 via raw pyproject.toml; pushed 2026-07-02, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the multi-backend pattern system for adaptive-music ideas; never linked. QUARANTINE row 433. [Wave 47 Lane A]
+
+#### SCAMP 🚫 GPL-3.0 — QUARANTINED (new row 434)
+- **What:** MarcTheSpark/scamp — Suite for Computer-Assisted Music in Python: flexible musical-time management, FluidSynth/MIDI/OSC playback, MusicXML/LilyPond export.
+- **URL:** https://github.com/MarcTheSpark/scamp
+- **License:** 🚫 GPL-3.0 — "SCAMP is… a GPL3.0-Licensed Open-Source Library" (verified 2026-10-08 via author's site marcevanstein.com; GitHub is a mirror of git.sr.ht)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — the clock/tempo-curve system is the study target for adaptive-score timing; never linked. QUARANTINE row 434. [Wave 47 Lane A]
+
+#### IEM Plugin Suite 🚫 GPL-3.0 — QUARANTINED (new row 435)
+- **What:** tu-studio/IEMPluginSuite — Institute of Electronic Music and Acoustics' Ambisonic plugin suite: encoders, decoders, binaural tools up to 7th order.
+- **URL:** https://github.com/tu-studio/IEMPluginSuite
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2024-06-04)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — the Ambisonic encode/decode math is the study target for 3D game audio; never linked. QUARANTINE row 435. [Wave 47 Lane A]
+
+#### SoundTouch 🚫 LGPL-2.1 — QUARANTINED (new row 436)
+- **What:** SoundTouch — Olli Parviainen's time-stretch/pitch-shift audio processing library (the classic tempo/pitch DSP).
+- **URL:** http://www.surina.net/soundtouch
+- **License:** 🚫 LGPL-2.1 — "Released under the GNU Lesser General Public License (LGPL) v2.1" (verified 2026-10-08 via downstream soundtouch.net README restating the upstream license) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the WSOLA time-stretch algorithm is the study target; never linked (weak-copyleft rows stay quarantined pending owner verdict). QUARANTINE row 436. [Wave 47 Lane A]
+
+#### JythonMusic 🚫 GPL-3.0 — QUARANTINED (new row 437)
+- **What:** blkbrd/jythonmusic — JythonMusic: open-source environment for music-making and creative programming (Jython libs for music, MIDI, OSC, GUI).
+- **URL:** https://github.com/blkbrd/jythonmusic
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2017-03-21)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — the Jython music API is a study reference for educational music-coding UX; never linked. QUARANTINE row 437. [Wave 47 Lane A]
+
+#### Superpowered 🚫 honest negative (closed SDK)
+- **What:** Superpowered — commercial low-latency C++/JS audio SDK: interactive audio, networking, and crypto SDKs with a free tier.
+- **URL:** https://superpowered.com
+- **License:** 🚫 Closed SDK — proprietary license; free tier is not open source (verified 2026-10-08 via superpowered.com, HTTP 200)
+- **Free tier:** Free tier with proprietary license
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest negative — capable low-latency audio SDK, but closed source; listed so nobody mistakes the free tier for open. Prefer cubeb/miniaudio/LabSound. [Wave 47 Lane A]
+
+#### Master Audio 🚫 honest negative (closed Unity asset)
+- **What:** Dark Tonic's Master Audio — popular Unity audio-manager asset: pooling, ducking, playlists, and adaptive music features.
+- **URL:** https://www.darktonic.com
+- **License:** 🚫 Closed commercial asset — proprietary (verified 2026-10-08 via darktonic.com, HTTP 200)
+- **Free tier:** Paid asset
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative — the adaptive-music/pooling feature set is the reference for what to build open, but the asset itself is closed and Unity-only. [Wave 47 Lane A]

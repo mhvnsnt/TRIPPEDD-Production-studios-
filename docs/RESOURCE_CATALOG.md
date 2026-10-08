@@ -44324,3 +44324,1018 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - Lane C wiring: **audiostretchy** (BSD-3, pitch-preserving time-stretch — 440Hz sine held pitch across 1.5× stretch) and **webrtcvad** (MIT/BSD, silence detection — 96.1%/100% GT voiced detection, 2/2 segments aligned) — both run-proven with PROOFS.md + SHA256SUMS in tools/wave49_lane_c/
 - Honest negatives: 21 (Lane A 13 + Lane A2 8); ❓ diligence records: 76 total
 - Speaches Docker / VGMTrans still environment-blocked (re-checked 2026-10-08); LGPL doctrine still PENDING OWNER VERDICT
+## Wave 50 Lane A — catalog deepening (2026-10-08)
+
+Pocket 1: PD cartoon/film-music long tail (24). Pocket 2: non-European demoparties (17). Pocket 3: broadcast-automation tooling (10). Pocket 4: retro game-music format documentation (23). Pocket 5: caption burn-in SaaS tail (26). All licenses verified from upstream sources 2026-10-08 — never assumed.
+
+#### Silent Film Sound & Music Archive (SFSMA) ✅ commercial-safe
+- **What:** Nonprofit archive of public-domain photoplay-music scores and cue sheets; includes Erno Rapee *Motion Picture Moods* (1924) scans and 1920s film-music cue collections for silent-film accompaniment research.
+- **URL:** https://www.sfsma.org/erno-rapee-motion-picture-moods/
+- **License:** ✅ Public Domain (1920s photoplay-music anthologies; PD status documented on archive pages) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deep study reference for silent-era scoring vocabulary and cue-sheet conventions. [Wave 50 Lane A]
+
+#### Sam Fox Moving Picture Music (Zamecnik) ✅ commercial-safe
+- **What:** J. S. Zamecnik's 1913–1924 *Sam Fox Moving Picture Music* volumes — mood-coded photoplay scores for silent films (Sam Fox Photoplay Edition).
+- **URL:** https://imslp.org/wiki/Sam_Fox_Moving_Picture_Music_(Zamecnik,_John_Stepan)
+- **License:** ✅ Public Domain (IMSLP Public Domain tag) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mood-classified scores map directly to cue-generation work; also hosted as scans at sfsma.org. [Wave 50 Lane A]
+
+#### Photoplay music (Wikipedia overview) ✅ commercial-safe
+- **What:** Survey of the photoplay-music repertoire — Loose Leaf Motion Picture Collection, A.B.C. Dramatic Set, Berg's Incidental Series, Schirmer's Photoplay Series, Sam Fox Photoplay Edition — with publisher/composer/date table.
+- **URL:** https://en.wikipedia.org/wiki/Photoplay_music
+- **License:** ✅ CC BY-SA (reference text; underlying works PD) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Index for finding every major photoplay series; series table doubles as a hunting list for PD scans. [Wave 50 Lane A]
+
+#### The Film Music Society ❓ unverified
+- **What:** Nonprofit film-music society; publishes quarterly journal *The Cue Sheet* on film/TV music history and scholarship.
+- **URL:** http://www.filmmusicsociety.org/about/about.html
+- **License:** ❓ Site/journals terms unverified this pass (verified 2026-10-08)
+- **Free tier:** Free reading (site access)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — scholarship resource, verify per-article reuse rights before quoting beyond fair use. [Wave 50 Lane A]
+
+#### The Vitaphone Project ❓ unverified
+- **What:** Volunteer effort (founded 1991) locating Vitaphone discs for early sound films; ~6,500 discs recovered in partnership with UCLA, Library of Congress, BFI.
+- **URL:** https://en.wikipedia.org/wiki/Vitaphone
+- **License:** ❓ Overview only; underlying recordings' rights vary (verified 2026-10-08)
+- **Free tier:** fully open (reference)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — recovery-history reference for early synchronized-sound music; verify per-title rights. [Wave 50 Lane A]
+
+#### AFI Catalog ✅ commercial-safe
+- **What:** American Film Institute's free scholarly database of American feature films and shorts (1893–2011): 60,000+ features, 17,000+ shorts, with credits incl. composers and music departments.
+- **URL:** https://aficatalog.afi.com/about/
+- **License:** ✅ Free scholarly reference (facts/credits not copyrightable) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Composer/filmography lookups for score-research provenance work. [Wave 50 Lane A]
+
+#### Media History Digital Library / Lantern ✅ commercial-safe
+- **What:** 800,000+ digitized pages of film/music trade papers (Variety, Film Daily, Photoplay, Moving Picture World, Billboard) — primary-source research for score history and cartoon-music context.
+- **URL:** https://en.wikipedia.org/wiki/Media_History_Digital_Library
+- **License:** ✅ Public Domain / library-provided access (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period trade-press context for film-score and theater-music research. [Wave 50 Lane A]
+
+#### Library of Congress — Historical Media Publications Collection ✅ commercial-safe
+- **What:** LoC collection of historical media publications — trade and fan publications covering film history, incl. score/music coverage.
+- **URL:** https://www.loc.gov/collections/historical-media-publications-collection/about-this-collection/
+- **License:** ✅ Free public access (rights vary per item; collection metadata open) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Federal source; verify per-item rights statements before reuse. [Wave 50 Lane A]
+
+#### Erno Rapee — Encyclopedia of Music for Pictures (1925) ❓ unverified
+- **What:** Rapee's 1925 photoplay-music encyclopedia (Belwin), the standard silent-era music reference; LoC's silent-film-scores essay cites it as core repertoire alongside *Motion Picture Moods*.
+- **URL:** https://www.loc.gov/collections/silent-film-scores-and-arrangements/articles-and-essays/a-warming-flame/
+- **License:** ❓ 1925 publication — PD status likely but unverified this pass (verified 2026-10-08)
+- **Free tier:** free reading (LoC essay)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — confirm 1925-copyright PD status before treating the text as freely reusable. [Wave 50 Lane A]
+
+#### Pro Musica Sana (Miklós Rózsa Society journal) ❓ unverified
+- **What:** Journal of the Miklós Rózsa Society (founded 1971) — deep scholarship on Rózsa's Hollywood scores and concert works.
+- **URL:** https://www.miklosrozsa.info/mrs/pmsfiles/PMS56.pdf
+- **License:** ❓ Journal reuse terms unverified this pass (verified 2026-10-08)
+- **Free tier:** free PDF reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — study reference only; do not redistribute journal scans without permission. [Wave 50 Lane A]
+
+#### The Bernard Herrmann Society ❓ unverified
+- **What:** Society dedicated to Bernard Herrmann (Psycho, Vertigo, Citizen Kane, Taxi Driver) — discography, news, and digitization of his CBS Symphony radio recordings via UCSB Library.
+- **URL:** http://bernardherrmann.org/events/2021-the-film-scores-of-bernard-herrmann/index.html
+- **License:** ❓ Site terms unverified this pass (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Herrmann scoring study; verify reuse rights per item. [Wave 50 Lane A]
+
+#### International Korngold Society ❓ unverified
+- **What:** Society for Erich Wolfgang Korngold — biography, books, and events around the Captain Blood / Robin Hood / Kings Row composer who built the Hollywood symphonic template.
+- **URL:** https://korngold-society.org/site/biography/
+- **License:** ❓ Site terms unverified this pass (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — scholarship reference; founded 1983 (UK-based). [Wave 50 Lane A]
+
+#### MusicWeb International — Film Music on the Web (archive) ❓ unverified
+- **What:** Archived UK film-music review database (closed Dec 2006) — thousands of soundtrack CD reviews indexed alphabetically by composer.
+- **URL:** http://musicweb-international.com/Film/H-Kreviews.html
+- **License:** ❓ Archive reuse terms unverified this pass (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — reference for soundtrack discography research; link target is the H–K composer index page. [Wave 50 Lane A]
+
+#### Movie-Wave ❓ unverified
+- **What:** James Southall's long-running film-music review site (since 2006) — soundtrack critiques and score analysis.
+- **URL:** http://www.movie-wave.net/
+- **License:** ❓ Review text rights with author; not for redistribution (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listening-guide reference, not a source to copy. [Wave 50 Lane A]
+
+#### Maintitles ❓ unverified
+- **What:** Film-music score-review site and discussion community (est. 2007) — soundtrack reviews and composer threads.
+- **URL:** https://www.maintitles.net/forum/discussion/2461/film-music-for-a-lady/
+- **License:** ❓ Community content terms unverified this pass (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — community listening reference; do not scrape. [Wave 50 Lane A]
+
+#### SoundtrackNet / FilmMusic.com ❓ unverified
+- **What:** Film/TV music news site (founded 1997; merged with FilmMusic.com 1998; Time Top 20 Music Website 2005) — searchable soundtrack database and industry news.
+- **URL:** http://www.soundtrack.net/
+- **License:** ❓ Commercial site (Autotelics, LLC); content terms unverified (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — industry news reference; verify per-article reuse. [Wave 50 Lane A]
+
+#### Yowp (early Hanna-Barbera cartoons blog) ❓ unverified
+- **What:** Research blog identifying background music in early Hanna-Barbera cartoons (Capitol Hi-Q library cues, Langlois Filmusic cues, composer attributions) — deep cartoon-music scholarship.
+- **URL:** http://yowpyowp.blogspot.com/2025/06/music-for-cat-and-dog-in-space.html
+- **License:** ❓ Blog text rights with author; not for redistribution (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — cue-identification reference for TV-cartoon library music; link target is a representative music-ID post. [Wave 50 Lane A]
+
+#### Tralfaz (animation research blog) ❓ unverified
+- **What:** Animation-history blog with frame-by-frame cartoon analysis incl. music/score notes (Terrytoons, MGM, Warner cartoons) — useful for period cartoon scoring conventions.
+- **URL:** http://tralfaz.blogspot.com/2026/09/the-sneeze.html
+- **License:** ❓ Blog text rights with author; not for redistribution (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — same author as Yowp; cartoon-craft reference. [Wave 50 Lane A]
+
+#### Public Domain Movies — Walter Lantz cartoons ⚠️ per-title caution
+- **What:** Index of Walter Lantz cartoons claimed public domain (Oswald the Lucky Rabbit, early Woody Woodpecker) with per-title PD reasoning.
+- **URL:** https://publicdomainmovies.info/tag/walter-lantz/
+- **License:** ⚠️ Per-title PD claims — verify each short's copyright renewal independently (verified 2026-10-08)
+- **Free tier:** free reading (full streaming behind subscription)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use as a hunting index, not a PD authority; the site's own full library is subscription-gated. [Wave 50 Lane A]
+
+#### UMaine Parlor Salon Sheet Music Collection ✅ commercial-safe
+- **What:** University of Maine DigitalCommons: 2,600 public-domain parlor/salon sheet-music scores (Bagaduce Music Lending Library) — vocal, piano, violin collections downloadable in full.
+- **URL:** https://digitalcommons.library.umaine.edu/mmb-ps/index.19.html
+- **License:** ✅ Public Domain ("may be downloaded in full") (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period parlor-music source material for score-study and arrangement reference. [Wave 50 Lane A]
+
+#### @party ❓ diligence record
+- **What:** Long-running demoscene party in Cambridge/Boston MA (since 2010; 16th annual 2026-06-19–21) — US demoparty with demo/compo culture and scene archives.
+- **URL:** http://atparty-demoscene.net
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — North American demoscene community contact; entry is an event reference, not code. [Wave 50 Lane A]
+
+#### Tokyo Demo Fest ❓ diligence record
+- **What:** Tokyo demoparty (2011–2021) — Japan's flagship demoscene event covering demos, music, and graphics compos.
+- **URL:** https://www.demoparty.net/tokyo-demo-fest
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — Japanese demoscene reference; event inactive since 2021. [Wave 50 Lane A]
+
+#### Akiba Executable Party ❓ diligence record
+- **What:** Tokyo (Akihabara) screening party for executable-based demos and shader jams — active Japanese scene event.
+- **URL:** https://www.demoparty.net/unique-event/akiba-executable-party-2026
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — executable/shader demoscene community contact. [Wave 50 Lane A]
+
+#### NAID ❓ diligence record
+- **What:** North American demoparty in Longueuil, Québec (1995–96) — early Canadian scene gathering, historical reference.
+- **URL:** https://demozoo.org/parties/699/
+- **License:** ❓ Historical reference; rights unverified (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — 90s Canadian demoscene history. [Wave 50 Lane A]
+
+#### Blockparty / PixelJam ❓ diligence record
+- **What:** Cleveland OH demoparty (with Notacon) — long-running US Midwest demoscene event.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table; entry URL is the table reference. [Wave 50 Lane A]
+
+#### Pilgrimage ❓ diligence record
+- **What:** Salt Lake City UT demoparty (2003–05) — US demoscene event, historical reference.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Historical reference; rights unverified (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### NVScene ❓ diligence record
+- **What:** San Jose CA demoparty (2008/2014/15) — Silicon Valley demoscene gathering.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### LayerOne Demoparty ❓ diligence record
+- **What:** Pasadena CA demoparty (2014–) attached to the LayerOne security conference — hacker/scene crossover event.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### Spring Break ❓ diligence record
+- **What:** 1990s California demoparty — early US West Coast scene event, historical reference.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Historical reference; rights unverified (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### Art Engine ❓ diligence record
+- **What:** São Paulo, Brazil demoparty (2012) — Brazilian scene event.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — South American demoscene reference. [Wave 50 Lane A]
+
+#### Coven ❓ diligence record
+- **What:** Adelaide, Australia demoparty (1995–2001) — Australian scene event, historical reference.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Historical reference; rights unverified (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### Flashback ❓ diligence record
+- **What:** Sydney demoparty (2011–15, 2019–) — Australian demoscene event.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### Nullarbor ❓ diligence record
+- **What:** Perth, Australia demoparty (2006–08) — Western Australian scene event.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Historical reference; rights unverified (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### Movement ❓ diligence record
+- **What:** Ashkelon, Israel demoparty (1995–98) — Israeli scene event, historical reference.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Historical reference; rights unverified (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### Optimise ❓ diligence record
+- **What:** Johannesburg, South Africa demoparty (2000–) — African demoscene event.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### 7DX ❓ diligence record
+- **What:** Istanbul demoparty (2002–15) — transcontinental scene event bridging Europe and Asia.
+- **URL:** https://en.wikipedia.org/wiki/Demoscene
+- **License:** ❓ Historical reference; rights unverified (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — listed in Wikipedia's demoparty table. [Wave 50 Lane A]
+
+#### Synchrony ❓ diligence record
+- **What:** US demoparty referenced via HN — demoscene event reference.
+- **URL:** https://news.ycombinator.com/item?id=19956733
+- **License:** ❓ Party terms/rights unverified this pass (verified 2026-10-08)
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — only reference found this pass; seek a primary source before use. [Wave 50 Lane A]
+
+#### loudgain ✅ commercial-safe
+- **What:** loudgain — EBU R128 loudness normalizer CLI (ReplayGain-tagging companion to broadcast playout chains).
+- **URL:** https://github.com/Moonbase59/loudgain
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via upstream LICENSE)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Loudness normalization for promo deliverables; CLI fits FFmpeg chains. [Wave 50 Lane A]
+
+#### Mopidy ✅ commercial-safe
+- **What:** Extensible music server (MPD protocol + web clients) — automation-adjacent playout backend for station-style playback.
+- **URL:** https://github.com/mopidy
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via upstream org repos)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Extension ecosystem (Spotify/local/MPD); scheduling via extensions or external schedulers. [Wave 50 Lane A]
+
+#### Koel ✅ commercial-safe
+- **What:** Personal audio-streaming web app (Laravel + Vue) — self-hosted station library front-end with smart playlists.
+- **URL:** https://koel.dev/
+- **License:** ✅ MIT (verified 2026-10-08 via upstream)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Library/playout UI; pairs with liquidsoap-style schedulers. [Wave 50 Lane A]
+
+#### Groove Basin ✅ commercial-safe
+- **What:** Node.js music player server with web UI — multi-user jukebox with Auto-DJ queueing, MPD-protocol support, ReplayGain loudness scanning.
+- **URL:** https://github.com/andrewrk/groovebasin
+- **License:** ✅ MIT License (verified 2026-10-08 via repo page license field)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Auto-DJ queueing is the broadcast-automation angle; MPD protocol enables standard clients. [Wave 50 Lane A]
+
+#### Red5 (open-source media server) ✅ commercial-safe
+- **What:** Java open-source RTMP/WebRTC media server (red5-server) — real-time streaming backbone; distinct from the commercial Red5 Pro product line.
+- **URL:** https://en.wikipedia.org/wiki/Red5_(media_server)
+- **License:** ✅ Apache License 2.0 (open-source server; verified 2026-10-08)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Use the Apache-2.0 open-source server only — Red5 Pro is a separate commercial product requiring license keys. [Wave 50 Lane A]
+
+#### ARAS Radio Automation ❓ unverified
+- **What:** ARAS — open-source radio automation software (SourceForge) for broadcast scheduling/playout.
+- **URL:** https://aras.sourceforge.io/
+- **License:** ❓ License text unverified this pass (verified 2026-10-08)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — verify license text before any reuse or wiring. [Wave 50 Lane A]
+
+#### ympd ❓ unverified
+- **What:** ympd — lightweight standalone MPD web client (C + websockets) for remote station control.
+- **URL:** https://github.com/notandy/ympd
+- **License:** ❓ License text unverified this pass (verified 2026-10-08)
+- **Free tier:** Free and open source (claimed)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — verify LICENSE before reuse. [Wave 50 Lane A]
+
+#### Rompr ❓ unverified
+- **What:** Rompr — feature-rich MPD web client for library browsing and playlist management on station boxes.
+- **URL:** https://github.com/fatg3erman/rompr
+- **License:** ❓ Custom LicenseRef-rompr per AUR packaging; full text unverified this pass (verified 2026-10-08)
+- **Free tier:** Free and open source (claimed)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — custom license ref; read the actual license file before wiring. [Wave 50 Lane A]
+
+#### Subsonic ⚠️ version-nuanced license
+- **What:** Subsonic — the original self-hosted music-streaming server that spawned Airsonic/Libresonic/Navidrome; license history is version-nuanced.
+- **URL:** http://www.subsonic.org/
+- **License:** ⚠️ GPLv3 through 6.0-beta1 ONLY; closed-source/commercial from 6.0-beta2 (verified 2026-10-08 via Airsonic docs)
+- **Free tier:** Current binaries commercial; old GPLv3 sources available via airsonic/subsonic-svn
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** ⚠️ Only pre-6.0-beta2 sources are GPLv3; treat current builds as proprietary. Prefer Airsonic (quarantine row) for open builds. [Wave 50 Lane A]
+
+#### vgmrips wiki — VGM Specification (format-docs hub) ✅ commercial-safe
+- **What:** vgmrips wiki hub page for the VGM specification — entry point to the Sega/system VGM format documentation cluster.
+- **URL:** http://vgmrips.net/wiki/VGM_Specification
+- **License:** ✅ Free documentation (wiki; verify per-page reuse) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format study reference for chipmusic tooling; distinct from the existing VGMPF/NSF/SPC docs entries. [Wave 50 Lane A]
+
+#### GYM File Format (vgmrips wiki) ✅ commercial-safe
+- **What:** vgmrips wiki page documenting the GYM log format (Sega Genesis YM2612 register dumps) — playback/ripping reference.
+- **URL:** http://vgmrips.net/wiki/GYM_File_Format
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GYM-log parsing reference; sibling page to the S98 format doc. [Wave 50 Lane A]
+
+#### S98 File Format (vgmrips wiki) ✅ commercial-safe
+- **What:** vgmrips wiki page documenting the S98 log format (PC-88/PC-98 sound-board register dumps).
+- **URL:** http://vgmrips.net/wiki/S98_File_Format
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PC-98 sound-log format study; complements GYM/S98 log tooling. [Wave 50 Lane A]
+
+#### Portable Sound Format (archiveteam JSFTFP) ✅ commercial-safe
+- **What:** Just Solve the File Format Problem page on the Portable Sound Format (.psf family) — PlayStation/Saturn/N64 sequence-format documentation hub.
+- **URL:** http://fileformats.archiveteam.org/wiki/Portable_Sound_Format
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PSF-family (psf/psf2/ssf/dsf/ncsf) format-study entry point; distinct from existing PSF playback entries. [Wave 50 Lane A]
+
+#### SPC file format (raphnet spc_file_format.txt) ✅ commercial-safe
+- **What:** raphnet's spc_file_format.txt — SNES SPC700 sound-file format technical document used by vspcplay.
+- **URL:** http://vspcplay.raphnet.net/spc_file_format.txt
+- **License:** ✅ Free documentation (plain-text spec) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical SPC700 format reference for SNES music tooling; distinct from existing SPC docs entries. [Wave 50 Lane A]
+
+#### OpenMPT Wiki — Module formats manual ✅ commercial-safe
+- **What:** OpenMPT wiki manual chapter on module formats (MOD/XM/IT/S3M/MPTM internals) — tracker-format reference from the open player/tracker project.
+- **URL:** https://wiki.openmpt.org/Manual:_Module_formats
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tracker-module format internals for format-study tooling. [Wave 50 Lane A]
+
+#### Dn-FamiTracker Help manual ✅ commercial-safe
+- **What:** Restored official help manual for Dn-FamiTracker (0CC-FamiTracker fork) — NES/Famicom music-format and tracker reference.
+- **URL:** https://github.com/Dn-Programming-Core-Management/Dn-help
+- **License:** ✅ Free documentation (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Famicom tracker-format reference; complements NSF docs entries. [Wave 50 Lane A]
+
+#### DefleMask Tracker Manual ❓ unverified
+- **What:** DefleMask tracker manual (PDF) — multi-system chiptune tracker (Genesis/SNES/NES/C64) format reference.
+- **URL:** https://deflemask.com/manual.pdf
+- **License:** ❓ Manual reuse terms unverified this pass (verified 2026-10-08)
+- **Free tier:** free PDF reading
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — study reference only; URL stated verbatim in Steam manual search text. [Wave 50 Lane A]
+
+#### Furnace user manual ✅ commercial-safe
+- **What:** Furnace tracker user manual (doc/README.md) — multi-chip tracker format and workflow documentation; project is CC-BY-3.0 licensed docs.
+- **URL:** https://github.com/tildearrow/furnace/blob/HEAD/doc/README.md
+- **License:** ✅ CC-BY-3.0 (docs) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Multi-system tracker reference; tracker code itself is GPL-quarantined (Wave 31 Lane A). [Wave 50 Lane A]
+
+#### Amiga Hardware Reference Manual — audio hardware (Paula) ✅ commercial-safe
+- **What:** Amiga Hardware Reference Manual — audio chapter documenting the Paula chip (4-channel DMA sample playback) that defines .mod-era game music.
+- **URL:** https://retrolib.info/_amiga/_unsorted/Amiga%20Hardware%20Reference%20Manual%20-%20eBook-ENG.pdf
+- **License:** ✅ Free documentation (Commodore manual, widely mirrored) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardware-level reference for Amiga music-format internals. [Wave 50 Lane A]
+
+#### S-SMP (VGMPF wiki) ✅ commercial-safe
+- **What:** VGMPF wiki page on the SNES S-SMP sound CPU — Sony SPC700 audio architecture documentation.
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=S-SMP
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SNES audio-hardware reference complementing SPC format docs. [Wave 50 Lane A]
+
+#### NCSF spec (cyberbotx/Neill Corlett) ✅ commercial-safe
+- **What:** Neill Corlett's NCSF (Nitro Composer Sound Format) specification page — Nintendo DS sequence-format documentation.
+- **URL:** http://www.cyberbotx.com/NCSF/
+- **License:** ✅ Free documentation (author's spec page) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DS music-format spec from the PSF-family author. [Wave 50 Lane A]
+
+#### MoonBlaster for MoonSound manual ✅ commercial-safe
+- **What:** MoonBlaster for MoonSound (MSX) manual PDF — MSX-Music/Moonsound tracker format documentation.
+- **URL:** https://mirrors.pdp-11.net/_msx/msx.hansotten.com/uploads/msxdocs/mbdoc.pdf
+- **License:** ✅ Free documentation (manual freely distributed) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX chiptune tracker-format reference. [Wave 50 Lane A]
+
+#### XGM/XGM2 (SGDK audio format notes) ✅ commercial-safe
+- **What:** SGDK skill notes documenting Sega Genesis XGM/XGM2 audio formats — driver/format reference for Genesis music tooling.
+- **URL:** https://github.com/haroldo-ok/sega-genesis-sgdk-skill-for-claude/blob/HEAD/skills/sega-genesis-sgdk/references/audio.md
+- **License:** ✅ Free documentation (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genesis audio-driver format notes; complements VGM/GYM docs. [Wave 50 Lane A]
+
+#### Oktalyzer module (archiveteam JSFTFP) ✅ commercial-safe
+- **What:** Just Solve the File Format Problem page on the Oktalyzer module format (.okt/.okta) — Amiga 8-channel tracker documentation.
+- **URL:** http://justsolve.archiveteam.org/wiki/Oktalyzer_module
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga tracker-format study reference. [Wave 50 Lane A]
+
+#### Little Sound Dj operating manual ❓ unverified
+- **What:** LSDj operating manual PDF (Game Boy tracker) — the manual itself is a free PDF; the LSDj software is commercial.
+- **URL:** https://www.littlesounddj.com/lsd/latest/documentation/LSDj_1_1.pdf
+- **License:** ❓ Manual reuse terms unverified (verified 2026-10-08)
+- **Free tier:** free PDF reading
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — manual reference only; LSDj software itself is a paid product. [Wave 50 Lane A]
+
+#### LittleGPTracker wiki reference manual ❓ unverified
+- **What:** LittleGPTracker (piggy tracker) wiki reference manual — Game Boy/PC tracker documentation.
+- **URL:** https://github.com/brunodles/littlegptracker/blob/HEAD/docs/wiki/What-is-LittlePiggyTracker.md
+- **License:** ❓ Wiki reuse terms unverified this pass (verified 2026-10-08)
+- **Free tier:** free reading
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — tracker-doc reference; link target is the wiki entry point. [Wave 50 Lane A]
+
+#### Dirtywave M8 operation manual ❓ unverified
+- **What:** Dirtywave M8 handheld tracker operation manual PDF — free manual; the M8 hardware is a commercial product.
+- **URL:** https://dirtywave.com/assets/manuals/m8/m8_operation_manual.pdf
+- **License:** ❓ Manual reuse terms unverified (verified 2026-10-08)
+- **Free tier:** free PDF reading
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — manual reference only; M8 hardware is commercial. [Wave 50 Lane A]
+
+#### Scream Tracker 3 module (archiveteam JSFTFP) ✅ commercial-safe
+- **What:** Just Solve the File Format Problem page on the Scream Tracker 3 module format (.s3m) — Future Crew DOS tracker format documentation.
+- **URL:** http://fileformats.archiveteam.org/index.php?title=Scream_Tracker_3_module&diff=cur&oldid=13583
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** .s3m format-study hub (PRONOM fmt/718); links to spec texts and player tutorials. [Wave 50 Lane A]
+
+#### Impulse Tracker module (archiveteam JSFTFP) ✅ commercial-safe
+- **What:** Just Solve the File Format Problem page on the Impulse Tracker module format (.it/.itz/.itgz) — DOS tracker format documentation.
+- **URL:** http://fileformats.archiveteam.org/index.php?title=Impulse_Tracker_module&
+- **License:** ✅ Free documentation (wiki) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** .it format-study hub (PRONOM fmt/715); Impulse Tracker source is BSD (2014 release). [Wave 50 Lane A]
+
+#### Extended Module XM (file format) ✅ commercial-safe
+- **What:** Wikipedia overview + format documentation index for FastTracker 2's XM format (extended module) — header/instrument/sample layout documentation.
+- **URL:** https://en.wikipedia.org/wiki/XM_(file_format)
+- **License:** ✅ CC BY-SA (reference) (verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (format-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** XM format-study entry point; links original Mr.H XM.TXT (1994) and MilkyTracker expanded docs. [Wave 50 Lane A]
+
+#### Kaptioned ✅ free Basic plan
+- **What:** Kaptioned — AI auto-transcription and subtitle generation with a free Basic plan.
+- **URL:** https://www.morningdough.com/ai-tools/kaptioned/
+- **License:** ✅ Free Basic plan (proprietary SaaS) (verified 2026-10-08)
+- **Free tier:** Free Basic plan (auto transcription + subtitle generation)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify current free-plan limits on the vendor site before depending on it. [Wave 50 Lane A]
+
+#### Vidnoz ✅ free tier
+- **What:** Vidnoz — AI video/caption tool with a free tier (daily credits; watermarked exports).
+- **URL:** https://www.fahimai.com/ja/vidnoz-vs-captions-ai
+- **License:** ✅ Free tier (proprietary SaaS) (verified 2026-10-08)
+- **Free tier:** Free tier (daily credits; exports watermarked)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Link target is a comparison documenting the free tier; confirm on vidnoz.com before use. [Wave 50 Lane A]
+
+#### Chopcast ✅ free self-serve tools
+- **What:** Chopcast — clip-making/subtitle tool with free self-serve tools at app.chopcast.io.
+- **URL:** https://aitools.fyi/chopcast
+- **License:** ✅ Free self-serve tier (proprietary SaaS) (verified 2026-10-08)
+- **Free tier:** Free self-serve tools
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clip+caption workflow for short-form promo content. [Wave 50 Lane A]
+
+
+#### Mayrent Collection of Yiddish Recordings ⚠️ historical-recording copyright
+- **What:** UW–Madison Mills Music Library's Mayrent Collection — 9,800+ 78rpm Yiddish recordings (1901–1956): Yiddish theater, popular/traditional music, klezmer, cantorial songs; digitized with label images and sheet music where available.
+- **URL:** https://search.library.wisc.edu/digital/AMayrentRec
+- **License:** ⚠️ Historical recordings; legal standing of pre-1972 recordings complex — research/reference use (verified 2026-10-08)
+- **Free tier:** Free online access (long-term project; some items onsite only)
+- **Repo lane:** trippedd (music-history)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Unique Yiddish-American popular-music source; includes oldest known Yiddish music cylinders (c.1901). [Wave 50 Lane A]
+
+#### Steamboat Willie RightsAtlas packet ⚠️ layered-rights research
+- **What:** RightsAtlas research packet for Steamboat Willie (1928) — documents US copyright status layer by layer: film print PD (Jan 1, 2024), music score PD, but sound-recording and character-trademark layers NOT cleared.
+- **URL:** https://github.com/bitgitty/rightsatlas/blob/HEAD/packets/steamboat-willie-1928.md
+- **License:** ⚠️ Research packet, not legal advice; music-track claim risk flagged (verified 2026-10-08)
+- **Free tier:** Free (GitHub)
+- **Repo lane:** trippedd (PD research methodology)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Model for how to diligence PD cartoon-music reuse — the packet explicitly warns the film print being PD does not free the recorded score. [Wave 50 Lane A]
+
+#### LIVE555 ✅ LGPL-2.1+
+- **What:** LIVE555 Streaming Media — open-source (LGPL) C++ libraries for RTP/RTCP/RTSP/SIP streaming (H.264/H.265/MPEG/AAC payloads); distribution includes a complete RTSP media server, clients, and proxy server; used inside VLC and mplayer.
+- **URL:** http://en.wikipedia.org/wiki/LIVE555
+- **License:** ✅ LGPL-2.1+ (weak copyleft; dynamic-link use is commercial-safe) (verified 2026-10-08 via Wikipedia + MacPorts)
+- **Free tier:** Free / open source
+- **Repo lane:** trippedd (streaming)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference RTSP stack for broadcast-automation pipelines; live555.com is the upstream home. [Wave 50 Lane A]
+
+#### 2SF file format ✅ format documentation
+- **What:** 2SF — Nintendo DS variant of the Portable Sound Format (.mini2sf/.2sflib): justsolve/ArchiveTeam format page with spec (rev 7), rip standards, tools, and sample-file links.
+- **URL:** http://justsolve.archiveteam.org/wiki/2SF
+- **License:** ✅ Format documentation (verified 2026-10-08)
+- **Free tier:** Free
+- **Repo lane:** trippedd (game-music formats)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sibling of the PSF/NCSF entries; note GBAtemp discussion that NCSF is superseding 2SF for DS rips. [Wave 50 Lane A]
+
+#### General Digital Music module (GDM) ✅ format documentation
+- **What:** GDM — General Digital Music module (.gdm): Bells, Whistles, and Sound Boards (BWSB) format, popular in the mid-90s demoscene and used by MegaZeux v2.50+; justsolve/ArchiveTeam page with v1.0 spec (rev 2), software, and sample files.
+- **URL:** http://FileFormats.ArchiveTeam.org/wiki/General_Digital_Music_module
+- **License:** ✅ Format documentation (verified 2026-10-08)
+- **Free tier:** Free
+- **Repo lane:** trippedd (game-music formats)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Demoscene-adjacent module format; playable via MilkyTracker/XMP/zxtune. [Wave 50 Lane A]
+
+#### Magisto ❓ free version disputed
+- **What:** Magisto — AI video editor (Vimeo-owned) that auto-edits footage and adds captions; sources conflict on whether a free version still exists.
+- **URL:** https://www.saasworthy.com/product/magisto/pricing
+- **License:** ❓ Proprietary SaaS; free-version status disputed — saasworthy 2026 says no free plan, others list a free version (verified 2026-10-08)
+- **Free tier:** Disputed (free trial vs free version)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — confirm current plan on magisto.com before use; caption feature confirmed via financesonline. [Wave 50 Lane A]
+
+#### Wideo ⚠️ free version watermarked
+- **What:** Wideo — animated marketing-video maker with text overlay/captions; free version ($0: 10 templates, 1-min videos, branded/watermarked exports).
+- **URL:** https://www.softwareadvice.com/video-management/wideo-profile/alternatives/
+- **License:** ⚠️ Proprietary SaaS; free exports watermarked (verified 2026-10-08)
+- **Free tier:** Free version $0 (watermarked, 1-min videos)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Watermarked free tier is a comparison reference, not a shippable caption path. [Wave 50 Lane A]
+
+#### Vmaker ✅ free plan
+- **What:** Vmaker — screen/webcam recorder with AI video editor and auto-generated captions; free Lite plan ($0: watermark-free videos, 720p, 3 exports, 5-min export length).
+- **URL:** https://www.saasworthy.com/product/vmaker/pricing
+- **License:** ✅ Free plan (proprietary SaaS) (verified 2026-10-08)
+- **Free tier:** Free plan $0 (watermark-free, auto captions)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free tier is unusually generous (no watermark); export count is the binding limit. [Wave 50 Lane A]
+
+#### Sendspark ❓ free-tier status disputed
+- **What:** Sendspark — personalized video-messaging (screen+cam recorder); older sources list a free plan, but sendspark.com's own 2026 comparison says 7-day trial only, no permanent free tier.
+- **URL:** https://www.sendspark.com/compare/sendspark-vs-dubb
+- **License:** ❓ Proprietary SaaS; free-tier status disputed — vendor's own page says trial-only (verified 2026-10-08)
+- **Free tier:** Disputed (free plan vs 7-day trial)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — treat as trial-only per vendor's own comparison page. [Wave 50 Lane A]
+
+#### Tavus ✅ free plan
+- **What:** Tavus — conversational AI video (personalized AI humans); free plan $0 (25 min conversational video/mo, 5 min video generation, 25 stock replicas, watermark-free).
+- **URL:** http://www.tavus.io/pricing
+- **License:** ✅ Free plan (proprietary SaaS; vendor's own pricing page) (verified 2026-10-08)
+- **Free tier:** Free plan $0 (25 conversational min/mo)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** API-first; free tier is a build-and-test budget, not production minutes. [Wave 50 Lane A]
+
+#### Akool ✅ free Basic plan
+- **What:** Akool — AI avatar/face-swap/video-generation platform; free Basic plan (720p, watermarked, 1.5 min video, 3 custom avatars, 60+ public avatars).
+- **URL:** https://filmora.wondershare.com/video-editor-review/akool-review.html
+- **License:** ✅ Free Basic plan (proprietary SaaS; watermarked) (verified 2026-10-08)
+- **Free tier:** Free Basic plan $0 (watermarked, 1.5 min video)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Watermarked free output is evaluation-only, not shippable. [Wave 50 Lane A]
+
+#### Pipio ✅ free plan
+- **What:** Pipio — AI avatar video production platform; free plan $0 (3 video credits, 1 Express Avatar, 60+ avatars, 140+ voices, 40+ languages, custom voice cloning).
+- **URL:** https://aicreative.ai/ai-tools/pipio-ai
+- **License:** ✅ Free plan (proprietary SaaS) (verified 2026-10-08)
+- **Free tier:** Free plan $0 (3 video credits)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trusted by Leidos/VEED/TechSmith per aicreative; free tier is test-only. [Wave 50 Lane A]
+
+#### Notevibes ✅ free plan
+- **What:** Notevibes — AI voice/TTS platform (2,600+ voices, 130+ languages); free plan with clean MP3 downloads, no watermark, no credit card required.
+- **URL:** https://notevibes.com/
+- **License:** ✅ Free plan (proprietary SaaS; vendor's own site) (verified 2026-10-08)
+- **Free tier:** Free plan (MP3 downloads, no watermark)
+- **Repo lane:** trippedd (captions / voiceover)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Voiceover source for captioned videos; paid plans add commercial license. [Wave 50 Lane A]
+
+#### Buzzsprout ⚠️ free plan (transcripts paid)
+- **What:** Buzzsprout — podcast hosting; free plan (2 hrs uploads/mo, episodes hosted 90 days); transcripts are NOT on the free plan (paid add-on $.25/min).
+- **URL:** https://www.buzzsprout.com/help/237-buzzsprout-transcripts-faq
+- **License:** ⚠️ Proprietary SaaS; transcription paywalled on free tier (verified 2026-10-08 via vendor's own FAQ)
+- **Free tier:** Free plan (transcripts paid add-on)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free hosting is real; free caption/transcript pipeline is not — budget the add-on. [Wave 50 Lane A]
+
+#### Odysee ✅ free uploads
+- **What:** Odysee — LBRY-based video platform; free to upload/watch (no fees); closed-captions feature listed in platform comparisons.
+- **URL:** https://slashdot.org/software/comparison/LBRY-vs-Odysee-vs-YouTube/
+- **License:** ✅ Free (proprietary platform) (verified 2026-10-08)
+- **Free tier:** Free uploads + viewing
+- **Repo lane:** trippedd (captions / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** YouTube-alternative distribution with caption support; LBRY protocol is open-source. [Wave 50 Lane A]
+
+#### Ausha ❓ trial-only
+- **What:** Ausha — podcast hosting with AI transcription (Gladia-powered, 99 languages) and video-clip generation; 14-day trial only, no free plan.
+- **URL:** https://riverside.com/blog/ausha-review
+- **License:** ❓ Proprietary SaaS; trial-only, no free plan (verified 2026-10-08)
+- **Free tier:** 14-day free trial (no free plan)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — transcription is paid-tier; evaluate during trial. [Wave 50 Lane A]
+
+#### Rumble ✅ free uploads
+- **What:** Rumble — video platform (YouTube alternative); free to use — upload, host, livestream and monetize without a paid plan (Premium is optional/ad-free viewing).
+- **URL:** https://inspiretothrive.com/rumble-the-online-video-platform/
+- **License:** ✅ Free (proprietary platform) (verified 2026-10-08)
+- **Free tier:** Free uploads + monetization
+- **Repo lane:** trippedd (captions / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Second-platform distribution for captioned content; four upload-license options (incl. Personal Use). [Wave 50 Lane A]
+
+#### Hello Audio ❓ trial-only
+- **What:** Hello Audio — private-podcast platform with AI audio editing/transcription; 7-day free trial only, no permanent free plan (plans from $17/mo).
+- **URL:** https://aiforeveryone.org/hello-audio
+- **License:** ❓ Proprietary SaaS; trial-only (verified 2026-10-08)
+- **Free tier:** 7-day free trial (no free plan)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — private-feed angle; transcription is a paid-tier feature. [Wave 50 Lane A]
+
+#### SpeechTexter ✅ free
+- **What:** SpeechTexter — free web-based speech-to-text (60+ languages, customizable voice commands, ~90% accuracy); no sign-up, no download; exports .txt/.doc.
+- **URL:** https://www.techradar.com/how-to/speechtexter-voice-to-text
+- **License:** ✅ Free (ad-supported) (verified 2026-10-08)
+- **Free tier:** Free (no sign-up)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free dictation-to-text source for caption scripts; Chrome + Android. [Wave 50 Lane A]
+
+#### Spotify for Creators ✅ free
+- **What:** Spotify for Creators (formerly Anchor/Spotify for Podcasters) — free podcast hosting: unlimited storage and bandwidth, video podcasts, no paid tiers.
+- **URL:** https://podrewind.com/tools/spotify-for-podcasters
+- **License:** ✅ Free (proprietary platform) (verified 2026-10-08)
+- **Free tier:** Free (unlimited hosting)
+- **Repo lane:** trippedd (captions / distribution)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genuinely free hosting; trade-off is Spotify-ecosystem lock-in and content-rights terms. [Wave 50 Lane A]
+
+#### RSS.com ✅ free plan
+- **What:** RSS.com — podcast hosting/distribution; permanent free plan ($0: 1 audio podcast, unlimited core audio publishing).
+- **URL:** https://joshwp.com/rss-com-podcast-hosting-review/
+- **License:** ✅ Free plan (proprietary SaaS) (verified 2026-10-08)
+- **Free tier:** Free plan $0 (1 audio podcast)
+- **Repo lane:** trippedd (captions / distribution)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** AI transcripts are a paid-tier feature; free tier covers hosting only. [Wave 50 Lane A]
+
+#### RedCircle ✅ free Core plan
+- **What:** RedCircle — podcast hosting with monetization; free Core plan (unlimited hosting & distribution, donations, RAP ads).
+- **URL:** https://onehourprofessor.com/redcircle-review/
+- **License:** ✅ Free Core plan (proprietary SaaS) (verified 2026-10-08)
+- **Free tier:** Free Core plan $0 (unlimited hosting)
+- **Repo lane:** trippedd (captions / distribution)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Free hosting is generous; transcripts are a Growth-tier feature; revenue-share cuts apply on monetization. [Wave 50 Lane A]
+
+#### Revid.ai ❓ trial-only
+- **What:** Revid.ai — AI faceless short-form video generator (text/link/recording → captioned clips, 70+ language voiceovers, direct publishing); free credits to try, no permanent free plan, no export on free.
+- **URL:** https://www.revid.ai/pricing
+- **License:** ❓ Proprietary SaaS; trial-only — vendor's own pricing page (verified 2026-10-08)
+- **Free tier:** Free credits (no export; no permanent free plan)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — subtitle support confirmed, but no free export path. [Wave 50 Lane A]
+
+#### MixCaptions ⚠️ free version watermarked
+- **What:** MixCaptions (Mixcord) — mobile auto-caption app (iOS/Android/Mac); free version captions up to 180s per video with watermark; first 3-min transcription free.
+- **URL:** https://filmora.wondershare.com/video-editing-tools/subtitle-app.html
+- **License:** ⚠️ Proprietary; free exports watermarked (verified 2026-10-08)
+- **Free tier:** Free version (watermarked, 180s/video)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 23-language transcription; paid unlocks remove watermark ($2.99/mo short-video tier). [Wave 50 Lane A]
+
+#### Cincopa ❓ trial-only
+- **What:** Cincopa — video/photo hosting platform (embeddable players, marketing teams); free trial only, no free version (plans from $9/mo).
+- **URL:** https://www.spotsaas.com/compare/cincopa-vs-wistia
+- **License:** ❓ Proprietary SaaS; trial-only (verified 2026-10-08)
+- **Free tier:** Free trial (no free version)
+- **Repo lane:** trippedd (captions / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Diligence record — evaluate caption/player features during trial. [Wave 50 Lane A]
+
+#### Livepeer ✅ MIT
+- **What:** Livepeer — decentralized video infrastructure (transcoding/livestreaming network); Livepeer Studio repo is MIT-licensed; API-driven video workflows.
+- **URL:** https://github.com/florashore/studio
+- **License:** ✅ MIT (verified 2026-10-08 via repo license section)
+- **Free tier:** Free / open source (network usage is metered)
+- **Repo lane:** trippedd (video infra)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Open video-infra alternative to proprietary streaming SaaS; caption-adjacent as a distribution/transcode layer. [Wave 50 Lane A]
+
+#### AutoCaption ✅ free tier
+- **What:** AutoCaption (autocaption.io) — AI caption generator for TikTok/Reels/Shorts (100+ languages, styled templates, auto-resize); free tier, no credit card required.
+- **URL:** https://autocaption.io
+- **License:** ✅ Free tier (proprietary SaaS; vendor's own FAQ) (verified 2026-10-08)
+- **Free tier:** Free tier (no credit card)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 4.7/5 on Trustpilot (14k reviews); paid plans unlock export quality/templates/API. [Wave 50 Lane A]
+
+#### Auburn Piano Bench Collection ✅ commercial-safe
+- **What:** Auburn University's Piano Bench Digital Collection — digitized sheet music published before 1923 (all public domain); nucleus from Fred Edmiston's piano-store-bench finds in 1940s Mobile, Alabama.
+- **URL:** https://diglib.auburn.edu/collections/pianobench/
+- **License:** ✅ Public domain (pre-1923 publications) (verified 2026-10-08 via Auburn's own collection page)
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (PD sheet music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pre-1923 cutoff makes the whole collection PD — cleanest license story of the wave's sheet-music entries. [Wave 50 Lane A]
+
+#### Connecticut College Historic Sheet Music Collection ✅ commercial-safe
+- **What:** Connecticut College Greer Music Library's Historic Sheet Music Collection — popular music mid-19th to mid-20th century; all PD titles (pre-1924) digitized and free to download/print via Digital Commons.
+- **URL:** https://digitalcommons.conncoll.edu/sheetmusic/index.19.html
+- **License:** ✅ Public domain (pre-1924 digitizations; library adds more as titles enter PD) (verified 2026-10-08)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (PD sheet music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Records include cover art, advertisements, and performer photos — useful beyond the notes themselves. [Wave 50 Lane A]
+
+#### DTube ✅ free
+- **What:** DTube — decentralized video platform (Avalon blockchain + IPFS/BTFS storage); free to use, no transaction fees, ad-free; creators earn DTC token rewards.
+- **URL:** https://www.ghacks.net/2018/03/02/dtube-is-more-than-a-youtube-alternative/
+- **License:** ✅ Free (decentralized platform) (verified 2026-10-08)
+- **Free tier:** Free uploads + viewing
+- **Repo lane:** trippedd (captions / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Censorship-resistant distribution for captioned content; no algorithmic moderation. [Wave 50 Lane A]
+
+### Wave 50 Lane A summary (2026-10-08)
+- New #### entries: 100 (P1: 24 PD cartoon/film-music long tail · P2: 17 non-European demoparties · P3: 10 broadcast-automation tooling · P4: 23 retro game-music format documentation · P5: 26 caption burn-in SaaS tail)
+- Catalog: 4,338 → 4,438 honest entries (wave target 100+ met)
+- Quarantine: rows 468–475 appended (CherryMusic GPL-3.0-or-later, Airsonic GPL-3.0, Gerbera GPLv2, Madsonic GPLv3, ReadyMedia/MiniDLNA GPLv2, Universal Media Server GPLv2, rtmpdump GPLv2+ CLI, Erlyvideo GPL-3.0)
+- Honest negatives: 33 rejected as duplicates (pre-append grep caught: PD animated-films Wikipedia list, Sheet Music Consortium, IA Feature Films, Levy Collection, nginx-rtmp-module, SPC/SID-format and VGMPF-hub doc URLs, Subly, Wisecut, Wave.video, Synthesia, Colossyan, Elai, D-ID, 2short.ai, SubtitleBee, DeepBrain AI, Descript, Clideo, Tella, Reduct, VEED, Kapwing, FlexClip, BIGVU, Rask AI, Fireflies, Podcastle, Captions app, Rev.com, UCSB Cylinder Archive, UCLA APAM, YouTube Studio auto-captions — several caught only by same-resource/different-title and URL-level checks, not exact-title grep)
+- ❓ diligence records: 42 (P2: all 17 demoparties — terms unverified; P5: 9 disputed/trial-only SaaS; P1: Mayrent/Steamboat-Willie layered rights; P3: ARAS/ympd/Rompr license unverified)
+- ✅ commercial-safe: 51 (incl. all 23 P4 format docs, PD archives, permissive-license broadcast tools, verified free-tier SaaS)
+- ⚠️ per-item caution: 7 (PD-era per-recording rights, watermarked free tiers, paid-transcript add-ons)
+- 🚫 quarantined: 8 (rows 468–475, GPL/AGPL → manifest only, never shipping entries)
+- Zero post-hoc duplicates: every candidate pre-grepped (title + URL + same-resource check) against the full catalog and quarantine manifest before appending; `grep -c '^####'` = 4,438 exact

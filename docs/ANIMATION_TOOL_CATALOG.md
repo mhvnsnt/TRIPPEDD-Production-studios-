@@ -1533,3 +1533,70 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 
 ## Utilities
 <!-- format converters, batch tools, misc animation helpers -->
+
+#### FreeTexturePacker ✅ commercial-safe
+- **What:** Open-source sprite-sheet/atlas packer (web + CLI + gulp/webpack): trims, packs, exports JSON/XML/CSS for animation frames.
+- **URL:** https://github.com/odrick/free-tex-packer
+- **License:** MIT (verified 2026-10-07 via GitHub API license field)
+- **Free tier:** fully open (online tool free)
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### ShoeBox ⚠️ proprietary-freeware
+- **What:** Renderhjs drag-and-drop sprite tools: sprite slicer/packer, bitmap-font generator with optical kerning, extrude/padding control.
+- **URL:** https://alternativeto.net/software/sprite-sheet-packer/
+- **License:** FREEWARE, proprietary — no open-source licence grant found (verified 2026-10-07 via AlternativeTo licence field: Free/Proprietary). Free to use; do not redistribute or embed.
+- **Free tier:** free download (Adobe AIR app; ageing)
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### Bulk Rename Utility ⚠️ commercial-licence-required
+- **What:** Deep batch renamer (regex, EXIF/ID3 tags, numbering, JS rules) — normalize frame-sequence and asset filenames before pipeline ingest.
+- **URL:** https://www.bulkRenameUtility.co.uk/License.php
+- **License:** Free for personal/private home use ONLY; commercial/business/government use requires a paid per-computer licence (verified 2026-10-07 via upstream EULA). Windows-only.
+- **Free tier:** free (personal); paid (commercial)
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### fileseq ✅ commercial-safe
+- **What:** Python library for frame-range/file-sequence parsing (`1-100x2`, `1,5-10`) — the sequence-math layer for batch render/encode scripts.
+- **URL:** https://github.com/justinfx/fileseq
+- **License:** MIT (verified 2026-10-07 via repo LICENSE raw)
+- **Free tier:** fully open
+- **Dedup:** RESOURCE_CATALOG.md hit for fileseq — animation-pocket entry.
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### oiiotool (OpenImageIO) ✅ commercial-safe
+- **What:** `oiiotool`/`iconvert` — industrial image-sequence ops: colorspace conversion, resize, channel shuffle, metadata, deep-compositing prep; OCIO-aware.
+- **URL:** https://github.com/OpenImageIO/oiio
+- **License:** Apache-2.0 (verified 2026-10-07 via repo LICENSE.md raw; GitHub html_url fetch was rate-limited, URL re-verify before wiring)
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+
+#### ExifTool ⚠️ license-restricted (quarantined)
+- **What:** Read/write EXIF/IPTC/XMP metadata on images and video — stamp episode/version metadata, verify deliverable tags.
+- **URL:** https://github.com/exiftool/exiftool
+- **License:** GPL-3.0 per GitHub (upstream dual Artistic/GPL) (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 41 — CLI use only.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### gifsicle ⚠️ license-restricted (quarantined)
+- **What:** GIF assembler/optimizer (CLI): build looping GIFs from frames, interlace, crop, optimize — the classic loop-deliverable tool.
+- **URL:** https://github.com/kohler/gifsicle
+- **License:** GPL-2.0 (verified 2026-10-07 via GitHub API license field)
+- **Quarantine:** [ANIMATION_QUARANTINE.md](ANIMATION_QUARANTINE.md) row 42 — CLI use only.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+
+#### Timing-sheet / X-sheet generators ❓ verify-before-use
+- **What:** Honest negative — no dominant, actively-maintained FOSS standalone timing-sheet generator with a verified licence was found this pass. Options: OpenToonz's Xsheet (BSD-3-Clause, covered in the 2D-animation lane — dedup, use that); `manuq/xsheet` (FLOSS paperless-animation app, early development — https://github.com/manuq/xsheet — NO licence file in repo, treat as ❓ until licensed); Animation X-Sheet (https://animationxsheet.com/) is a COMMERCIAL product. Recommendation: generate timing sheets as CSV from episode timing scripts (repo-internal) until a licensed tool is confirmed.
+- **License:** ❓ unverified per tool — see above
+- **Free tier:** varies
+- **Dedup:** 2D-animation lane covers OpenToonz Xsheet (RESOURCE_CATALOG.md line 97: OpenToonz, BSD-3-Clause)
+- **Repo lane:** trippedd-studio (utilities pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5

@@ -37752,3 +37752,183 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Active (pushed 2026-10-05). The Unlicense grant is the most permissive server option in the catalog — compare OvenMediaEngine (quarantined, AGPL). [Wave 42 Lane A]
+
+#### CheapBeats ⚠️ commercial label — Montreal chiptune netlabel
+- **What:** Long-running chiptune netlabel (started by James/David + a second James, Montreal scene) — dozens of chip releases plus scene compilations like the CheapBeats All-Star 26-track comp; albums sold direct (comp was $8; merch bundles) rather than CC-free.
+- **URL:** https://chipmusic.org/forums/topic/16673/cheapbeats-allstar/
+- **License:** ⚠️ Commercial label — releases sold, no blanket open license found (verified 2026-10-08 via the label's own ChipMusic.org announcement thread). Per-release terms only.
+- **Free tier:** Paid releases (streaming previews via community posts)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference/discovery only — nothing here is cleared for scoring. Useful as a chiptune A&R map (26-artist comp = a roster of the late-2000s/early-2010s chip scene). [Wave 43 Lane A]
+
+#### Ubiktune ⚠️ free-majority — chiptune netlabel (est. 2006, ZX Spectrum roots)
+- **What:** Chiptune/videogame-music netlabel started 2006, originally focused on ZX Spectrum-composed music; artists include coda, Danimal Cannon, Shnabubula, Zabutom, Yoann Turpin, Maxo, subPixel. Most catalog historically free digital; select full-lengths and physicals priced (e.g. the 2012 Pilot Bundle: 7 priced albums for $1).
+- **URL:** https://freemusicarchive.org/label/Ubiktune
+- **License:** ⚠️ Free-majority, per-release check mandatory — most albums free but no blanket CC grant verified (verified 2026-10-08 via FMA label page + Destructoid 2012 bundle coverage). Assume all-rights-reserved unless an item page states otherwise.
+- **Free tier:** Most albums free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong scene catalog for score reference and (where item-level terms allow) sourcing. FMA hosts 3 albums / ~95K plays — start license checks there. [Wave 43 Lane A]
+
+#### Data Airlines ⚠️ rights-reserved — Marseille/Malmö retro-gaming chiptune label (est. 2007)
+- **What:** Label for retro-gaming, indie electronics, chiptune and retro-future design, run from Marseille (France) and Malmö (Sweden), est. 2007, demo/crackscene roots. 80+ catalog numbers (DATA018–DATA995+), incl. the 108-track Old School Musical OST (DATA079) and LSDJ: Year Zero (DATA995). Digital + cassette editions.
+- **URL:** https://dataairlines.bandcamp.com/album/old-school-musical-the-original-video-game-soundtrack-data079
+- **License:** ⚠️ All rights reserved (verified 2026-10-08 via Bandcamp release pages — "license: all rights reserved" on sampled releases). Commercial label, no open licensing.
+- **Free tier:** Paid downloads (streaming previews on Bandcamp)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference only — nothing cleared for use. Notable as the most productive EU chiptune label of its era; the DATA-catalog numbering is a useful release index for scene research. [Wave 43 Lane A]
+
+#### GameChops ⚠️ CC (variant unpinned) — Dj CUTMAN's VGM remix label (est. 2012)
+- **What:** Record label for video game remixes founded by Dj CUTMAN (Chris Davidson), described in scene press as the largest licensed VGM remix label — chiptune/EDM/lofi/jazz covers of game soundtracks (Zelda & Chill, Turbo Mode, Smooth McGroove Remixed). Mechanical licensing handled via Loudr so royalties flow to original composers.
+- **URL:** https://gamechops.com/turbo-mode/
+- **License:** ⚠️ CC variant unpinned — the label's own channel description states releases carry a Creative Commons license permitting use in content/videos provided you download legally, credit the remixer, and link back (verified 2026-10-08 via GameChops YouTube channel "About GameChops" text). Underlying compositions remain the original publishers' — verify per release.
+- **Free tier:** Free downloads on select releases
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The most promising "usable chip music" label found so far IF the CC claim holds per release — but every track is a derivative of a copyrighted game composition, so commercial use needs per-release clearance regardless of the label's CC statement. Good candidate for a per-release audit lane. [Wave 43 Lane A]
+
+#### A Bit of Chiptune ⚠️ rights-reserved — chiptune collective + indie label
+- **What:** Social-space and indie label for chiptune, digital fusion and micromusic — community compilation albums (Muscle Wizard, Ascend Together, Rxx), monthly showcases, and the Infinite Lives streamed live-show series (co-curated with All You Can Eat; ~$10K raised for artists/charities in 2020). Bandcamp hosts the comp catalog.
+- **URL:** https://web.archive.org/web/20240418205500/https://abitofchiptune.com/
+- **License:** ⚠️ All rights reserved on Bandcamp releases (verified 2026-10-08 via Bandcamp track pages — "license: all rights reserved"). No blanket open license.
+- **Free tier:** Name-your-price on some comps (e.g. Rxx)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference/community only. Valuable as a living chiptune community hub (Discord, showcases, compilations) — a sourcing contact point if we ever commission original chip work. [Wave 43 Lane A]
+
+#### 8static — label arm audit (correction) ❓ terms unverified
+- **What:** CORRECTION to the prior catalog entry ("8static — chiptune event series audit (not a label)"): This Week in Chiptune's release roundup lists "new albums from Cheap Dinosaurs (8static)" — i.e. 8static (Philadelphia's monthly chipmusic showcase at PhilaMOCA, running since 2008, plus the 8static Festival) has released label albums, not just events. Label arm exists; license terms unverified.
+- **URL:** https://thisweekinchiptune.com/dubmood/page/2/
+- **License:** ❓ Terms unverified (verified 2026-10-08 via This Week in Chiptune release listing; prior entry's "not a label" claim is superseded by the Cheap Dinosaurs (8static) release evidence).
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Small correction entry — do not use for sourcing until terms are pinned. Kept so no sibling lane re-audits the "not a label" claim. [Wave 43 Lane A]
+
+#### Descript — AI editor with caption burn-in on the free plan ⚠️ proprietary SaaS — genuine free tier
+- **What:** Transcript-based AI audio/video editor — auto captions with styling, export as burned-in (hardcoded) video or separate SRT/VTT. Free plan: 1 transcription hour/month, unlimited captions/styling, 720p watermarked export; burn-in caption export included on free.
+- **URL:** https://www.descript.com/blog/article/capcut-captions-arent-free-anymore-heres-a-better-option
+- **License:** Proprietary SaaS (verified 2026-10-08 via Descript's own blog: free plan includes caption generation, styling, and burned-in or SRT/VTT export).
+- **Free tier:** Genuine free plan — 1 hr transcription/mo, 720p watermarked exports, unlimited captions
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The burn-in export being on the free tier (per their own blog) makes this the strongest free SaaS caption-burn-in path found in round 3. Watermark only matters for client deliverables; fine for internal caption drafts. Same blog notes CapCut's auto captions are no longer free — do not list CapCut as a free path. [Wave 43 Lane A]
+
+#### Subly — auto-subtitle/caption SaaS with free version ⚠️ proprietary SaaS — free version
+- **What:** Browser-based auto subtitling — automatic transcription, open or closed captions, SRT upload/editing, timeline timing adjustments, translation; API and Zoom integrations. UK company, founded 2019.
+- **URL:** https://www.getsubly.com/post/why-subtitles-make-content-complete
+- **License:** Proprietary SaaS (verified 2026-10-08 via Subly blog + third-party software directories: free version exists, paid from $17/mo).
+- **Free tier:** Free version (limits unpublished on pages checked); paid from $17/mo
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Subly's own blog states subtitling remains free for content creators — treat as genuine free version, but pin the exact free limits (minutes/styles/export) before relying on it. [Wave 43 Lane A]
+
+#### Headliner — audiogram/caption SaaS with Forever Free tier ⚠️ proprietary SaaS — genuine free tier
+- **What:** Podcast-to-video growth platform — automatic audiograms, AI clip generation, auto captioning/styling, YouTube Shorts automation (Video Clips Automation launched Sept 2026, currently free). 1.5M+ creators per company.
+- **URL:** https://www.headliner.app/blog/2026/09/14/youtube-video-clips-automation-headliner-release/
+- **License:** Proprietary SaaS (verified 2026-10-08 via Headliner's own release notes + third-party pricing coverage).
+- **Free tier:** Forever Free — limited unwatermarked videos/month, unlimited watermarked, 10 min transcription/mo; video clipping/captioning in beta free on all tiers (verify still active)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Podcast-shaped rather than film-shaped, but the captioned-clip pipeline is directly reusable for promo cutdowns. Beta-free captioning may not last — timestamp this entry (2026-10-08). [Wave 43 Lane A]
+
+#### TurboScribe — Whisper transcription with free daily tier ⚠️ proprietary SaaS — generous free tier
+- **What:** AI transcription (Whisper large-v3 class engine) in 98+ languages with speaker recognition and export to SRT/VTT/DOCX/PDF/TXT. Free tier: 3 transcriptions/day, up to 30 minutes each, all export formats included.
+- **URL:** https://thetoolsverse.com/tools/turboscribe
+- **License:** Proprietary SaaS (verified 2026-10-08 via third-party pricing reviews reading TurboScribe's own pricing page Aug 2026: free = 3×30-min/day; Unlimited $10/mo annual).
+- **Free tier:** Genuine free tier — 3 files/day, 30 min each, SRT/VTT export included
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the most generous free transcription tiers found — SRT/VTT export on free makes it a viable caption-source for burn-in via ffmpeg/libass pipelines. No API. [Wave 43 Lane A]
+
+#### VideoCaptions.AI — caption-first AI subtitler with free credits ⚠️ proprietary SaaS — free plan (vendor-claimed)
+- **What:** Caption-first AI subtitling tool positioned as a Descript alternative — word-level animated captions, AI transcription, export. Free plan: 250 welcome credits at signup, no watermarks; paid from $7.99/mo.
+- **URL:** https://www.videocaptions.ai/vs/descript
+- **License:** Proprietary SaaS (verified 2026-10-08 via vendor's own comparison page; independent confirmation not obtained).
+- **Free tier:** Free plan — 250 welcome credits, no watermarks (vendor-claimed)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Vendor-claimed free plan — treat with the usual single-source caution until a second source confirms. Listed so no sibling lane re-discovers it. [Wave 43 Lane A]
+
+#### GBS File Specification v1.02 ❓ wiki-doc
+- **What:** The GBS (Game Boy Sound System) file format specification, v1.02 — the header/loader spec for Game Boy chiptune rips (successor to the GBR format; referenced from the ArchiveTeam file-format wiki alongside the Pan Docs "Everything You Always Wanted To Know About GAMEBOY" doc).
+- **URL:** http://fileformats.archiveteam.org/index.php?title=GBS&
+- **License:** ❓ Terms unverified (verified 2026-10-08: spec exists and is referenced; no reuse grant pinned).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GBS rips pair with the already-cataloged gbsplay (quarantined GPL tool, Wave 31) — the spec is the format-reference complement for any GBS parse/read work. [Wave 43 Lane A]
+
+#### SAP Format Specification ❓ community spec
+- **What:** The SAP (Slightly Atari Player) music format specification — the header/metadata + 6502 player-code format for Atari 8-bit POKEY chiptunes (INIT/PLAY addresses, author/title/date fields, TYPE B/R variants). Maintained alongside the ASAP (Another Slight Atari Player) project.
+- **URL:** https://en.wikipedia.org/wiki/SAP_(file_format)
+- **License:** ❓ Community spec, no reuse grant pinned (verified 2026-10-08: spec referenced from Wikipedia external links; ASAP project hosts the canonical text).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the already-cataloged RMT format doc entry — together they cover the Atari POKEY tracker-music stack (authoring format + distribution wrapper). [Wave 43 Lane A]
+
+#### AY file format documentation (Patrik Rak) ❓ community doc
+- **What:** The AY chiptune rip-format description by Patrik Rak (designed for his DeliAY/DeliTracker Amiga plugin; second life via James McKay's AYPlay/AYMake) — Z80/AY-3-8910 machine-code rip format for ZX Spectrum/Amstrad CPC music, Motorola byte order, signed relative pointers. Supersedes the obsolete VTX/AYM formats.
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=AY
+- **License:** ❓ Community doc, no reuse grant pinned (verified 2026-10-08 via VGMPF AY page + z80 FAQ text describing Rak's format).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The AY format is the ZX Spectrum scene's SID-equivalent rip standard — essential reference for any Speccy music ingest. Distinct from the YM log format (separate entry). [Wave 43 Lane A]
+
+#### MDX format documentation (vampirefrog/mdxtools) ⚠️ GPL-repo docs (see quarantine row 394)
+- **What:** docs/MDX.md in the mdxtools repo — field-level documentation of the Sharp X68000 MDX music format (title bytes, PDX filename, BASE-relative u16 offset table, 9-track and 16-track PCM8 forms) plus companion MML/PDX docs. MDX is MML-compiled music for the YM2151 + MSM6258 chips.
+- **URL:** https://github.com/vampirefrog/mdxtools
+- **License:** ⚠️ Documentation lives in a GPL-3.0 repo (verified 2026-10-08 via GitHub API spdx_id) — read-only reference; the code is quarantined (row 394). Do not copy code paths into shipping work.
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strongest English-language MDX format doc found (repo pushed 2026-07-15, actively maintained). Follows the catalog's Furnace-.fur precedent: doc referenced, code quarantined. [Wave 43 Lane A]
+
+#### SNDH file structure (rev 2.00 / 2.10) ❓ community doc
+- **What:** The SNDH / Atari SoundHeader file-structure specification by Jochen Knaus (BDC, Aura demogroup) — the standard wrapper for Atari ST chip music: original song + embedded 68000 replayer + unified header (SNDH magic, tag metadata TITL/COMM/YEAR, init/exit/play calling interface).
+- **URL:** http://justsolve.archiveteam.org/wiki/Atari_SoundHeader
+- **License:** ❓ Community doc, no reuse grant pinned (verified 2026-10-08: rev 2.00 and 2.10 spec texts referenced from the ArchiveTeam wiki).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SNDH is the Atari ST equivalent of SID/PSF — the archive at sndh.atari.org is the definitive ST music collection, and this spec is the key to reading it. [Wave 43 Lane A]
+
+#### YM format technical documentation (VGMPF) ⚠️ per-wiki terms
+- **What:** The VGMPF wiki's technical documentation of the YM chiptune log format — LHA-wrapped AY-3-8910/YM2149 register logs (YM3!–YM6! header versions), version feature matrix (digital instruments from YM4, sync effects from YM5), and master-clock adaptation notes across ZX Spectrum/Atari ST/Amstrad CPC.
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=YM
+- **License:** ⚠️ Per-wiki terms (verified 2026-10-08 via VGMPF YM page).
+- **Free tier:** N/A (not a service)
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the AY format entry — AY is the Z80 rip format, YM is the register-log format; together they cover the two dominant AY-3-8910 music encodings. [Wave 43 Lane A]
+
+#### stijnfrishert/libLSDJ — LSDj save-format library + de-facto format docs ✅ commercial-safe
+- **What:** C library for reading/writing the LSDj (Little Sound DJ, Game Boy tracker) save-file format — lsdsng-export/import tools plus format handling code that documents the .sav layout in practice. The most complete public description of the LSDj song format.
+- **URL:** https://github.com/stijnfrishert/libLSDJ
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2024-05-02)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (format reference)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT makes this the only commercial-safe code path into LSDj song data in the catalog — format docs AND working import/export in one. LSDj is the dominant Game Boy tracker, so this unlocks the whole LSDj song corpus for tooling. [Wave 43 Lane A]

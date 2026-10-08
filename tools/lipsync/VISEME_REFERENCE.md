@@ -40,6 +40,19 @@ Rhubarb's Preston Blair set applies:
 | y (Y) | C |
 | h (HH) | X/H |
 
+## Wave 2 extensions (whisper-align pipeline)
+
+CMUdict emits four Arpabet phones the Wave 1 table did not list; the Wave 2
+pipeline maps them into the same mouth classes (documented in
+`whisper_align_to_timeline.py`):
+
+| Phoneme | Viseme | Rationale |
+|---------|--------|-----------|
+| IH (ɪ) | A | same vowel class as the Wave 1 IY row |
+| ER (ɝː) | C | mid-open relaxed, same class as EH/AE row |
+| NG | C | nasal, same class as N |
+| SH, ZH | C | sibilant fricatives, same class as S/Z |
+
 ## Notes for the episode pipeline
 
 - Timeline JSON rows are gapless: `end[i] == start[i+1]`, first row starts at

@@ -4073,3 +4073,89 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 4 Lane A: mismatched-topology path morphing = robust 2D squash-stretch on hand-drawn parts.
 
 <!-- end lane A wave 4 batch 2: easing + shape morph (5 entries) -->
+
+#### cannon-es ✅
+- **What:** Lightweight 3D physics engine in JavaScript/TypeScript — maintained fork of cannon.js with tree-shakeable ESM/CJS builds; rigid bodies, constraints, vehicles, compound shapes, sleeping.
+- **URL:** https://github.com/pmndrs/cannon-es
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** bake secondary physics on 3D puppet proxies — spring-joint chains for tails/ears/capes and constraint-driven jiggle solved at bake time, then exported as animation curves.
+- **Lane note:** Wave 4 Lane A: constraint + spring joints are the procedural jiggle primitive; pmndrs maintenance makes it pipeline-trustworthy.
+
+#### Rapier ✅
+- **What:** 2D/3D physics engines for Rust (rapier2d/rapier3d, f32/f64) with C, JS/TS (WASM), Python, and Bevy bindings — SIMD-batched constraint solver, soft bodies, CCD, character controllers.
+- **URL:** https://github.com/dimforge/rapier
+- **License:** Apache-2.0 (verified 2026-10-08: GitHub repo page License field).
+- **Use:** bake ragdoll/soft-body secondary motion for cartoon characters offline (Rust or Python bindings) — jello-style squash on impacts, rope/chain constraints on costume elements.
+- **Lane note:** Wave 4 Lane A: soft-body + joint support in a permissive engine = bakeable cartoon jiggle.
+
+#### planck.js ✅
+- **What:** JavaScript/TypeScript rewrite of Box2D for cross-platform HTML5 — idiomatic JS API, readable/editable code, full 2D rigid-body feature set.
+- **URL:** https://github.com/piqnt/planck.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE.txt).
+- **Use:** 2D secondary motion in web tooling — distance-joint chains for hair/cape drag and revolute-joint ragdolls on 2D puppet proxies, baked to keyframes.
+- **Lane note:** Wave 4 Lane A: the JS Box2D lineage engine for joint-chain secondary motion in browser-based pipeline tools.
+
+#### matter-js ✅
+- **What:** Original-JS 2D rigid-body physics engine for the web — constraints, compound/concave bodies, sleeping, time scaling, and (notably) soft-body + cloth demos.
+- **URL:** https://github.com/liabru/matter-js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — The MIT License (MIT)").
+- **Use:** its cloth/soft-body constraint demos are ready-made 2D jiggle prototypes — spring-constraint capes, bellies, and bounce props baked from the sim.
+- **Lane note:** Wave 4 Lane A: shipped soft-body/cloth demos make it the fastest route to 2D cartoon jiggle.
+
+#### p2.js ❓
+- **What:** JavaScript 2D physics library by the cannon.js author — springs, advanced constraints (distance/lock/gear/prismatic), ragdoll demo, motors, friction/restitution; the spring-demo engine.
+- **URL:** https://github.com/schteppe/p2.js
+- **License:** ❓ unverified (2026-10-08: GitHub license field unasserted; LICENSE file present at repo root — confirm MIT-family terms before commercial use).
+- **Use:** spring-constraint secondary motion on 2D rigs (its Springs demo is a canned jiggle reference); ragdoll demo drives secondary impact flails.
+- **Lane note:** Wave 4 Lane A: same author's spring-first physics — the spring demo is a secondary-motion tutorial; honesty badge until LICENSE is read.
+
+#### Box2D v3 ✅
+- **What:** The 2D physics engine for games (Erin Catto), v3 rewritten in portable C17 — data-oriented, multithreaded + SIMD, CCD, joint limits/motors/springs/friction, deterministic stepping.
+- **URL:** https://github.com/erincatto/box2d
+- **License:** MIT (verified 2026-10-08: upstream README "## License — Box2D is developed by Erin Catto and uses the MIT license", corroborated by ecosyste.ms listing).
+- **Use:** bake 2D secondary motion deterministically — spring-joint costume chains and revolute-joint limb ragdolls for 2D cartoon pipelines and Godot-side baking.
+- **Lane note:** Wave 4 Lane A: deterministic MIT 2D physics with explicit spring joints — reproducible jiggle bakes.
+
+#### jbox2d ✅
+- **What:** Native Java port of Box2D (+ LiquidFun liquid particles) — rigid bodies, stable stacking, joint motors, CCD, ray casts, sensors, serialization.
+- **URL:** https://github.com/jbox2d/jbox2d
+- **License:** BSD-2-Clause (verified 2026-10-08: GitHub org jbox2d repository listing license field).
+- **Use:** Java-side baking of 2D secondary motion (joint-chain drag on costume pieces, particle splashes) for Java-based pipeline tools.
+- **Lane note:** Wave 4 Lane A: JVM-native joint/particle physics for secondary-motion bakes in Java tooling.
+
+#### dyn4j ✅
+- **What:** 100% Java 2D collision detection + physics engine — continuous collision, convex decomposition, joints, deterministic stepping; explicitly "free for use in commercial and non-commercial applications".
+- **URL:** https://github.com/dyn4j/dyn4j
+- **License:** BSD-3-Clause (verified 2026-10-08: GitHub repo page License field + README commercial-use statement).
+- **Use:** headless Java baking of secondary motion — joint-chain cape/hair sims baked to curves; deterministic enough for reproducible cartoon jiggle takes.
+- **Lane note:** Wave 4 Lane A: pure-JVM deterministic 2D physics with commercial-use language in the README.
+
+#### Oimo.js ✅
+- **What:** Lightweight 3D physics engine for JavaScript — full JS port of OimoPhysics: spheres/boxes/cylinders/particles, distance/ball-and-socket/hinge/wheel/slider/prismatic joints, Web Worker multithreading, ragdoll demo.
+- **URL:** https://github.com/lo-th/Oimo.js/
+- **License:** MIT (verified 2026-10-08: jsDelivr npm package listing "License: MIT"; code4fukui maintained-fork README "## License — MIT License — see LICENSE").
+- **Use:** quick web-side 3D jiggle tests — ragdoll demo is a secondary-motion flail reference; worker-threaded so it doesn't block tool UIs.
+- **Lane note:** Wave 4 Lane A: featherweight 3D joint physics with a ragdoll demo — instant secondary-motion sketchpad.
+
+#### ammo.js ✅
+- **What:** Direct Emscripten port of Bullet to JavaScript — identical API/functionality to Bullet (soft-body rope/cloth/volume demos included), prebuilt + self-buildable.
+- **URL:** https://github.com/kripken/ammo.js
+- **License:** zlib (verified 2026-10-08: upstream README "ammo.js is zlib licensed, just like Bullet").
+- **Use:** web-side Bullet soft-body cloth/rope/volume for cartoon jiggle — bake SoftBody-cloth capes and volume squashes, then sample to keyframes.
+- **Lane note:** Wave 4 Lane A: Bullet's soft-body cloth/volume in JS = the classic cartoon squash primitive.
+
+#### Bullet Physics ✅
+- **What:** The professional open-source collision/rigid-body/soft-body dynamics SDK (C++) — cloth, rope, and deformable volumes with two-way rigid interaction, 6DOF constraints for ragdolls, vehicle/character controllers, Python bindings.
+- **URL:** https://github.com/bulletphysics/bullet3
+- **License:** zlib (verified 2026-10-08: upstream fork README "Bullet and PyBullet are distributed under the zlib license"; Bullet 2.83 manual "free for commercial use under the ZLib license").
+- **Use:** offline bake of 3D secondary motion — soft-body cloth capes, rope hair, volume squash on impacts, constraint ragdolls; the reference engine the whole pocket descends from.
+- **Lane note:** Wave 4 Lane A: zlib soft-body cloth/rope/volume is the heavyweight cartoon-squash backend.
+
+#### Newton Dynamics ✅
+- **What:** Deterministic real-time physics engine (C++) by Julio Jerez — exact (non-iterative) solver, rigid bodies, vehicle/ragdoll support; used in Amnesia/SOMA/Mount & Blade.
+- **URL:** https://github.com/juliojerez/newton-dynamics
+- **License:** zlib (verified 2026-10-08: upstream README "License — Newton Dynamics is licensed under the zlib open source license"; Wikipedia infobox "License: zlib License").
+- **Use:** deterministic rigid-body secondary motion bakes — exact solver gives stable, reproducible joint-chain costume sims without jitter.
+- **Lane note:** Wave 4 Lane A: the deterministic-solver engine — stable secondary takes you can re-render frame-identically.
+
+<!-- end lane A wave 4 batch 3: physics engines (12 entries) -->

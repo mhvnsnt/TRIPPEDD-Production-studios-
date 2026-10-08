@@ -25859,3 +25859,563 @@ not run). See `tools/captions/proofs/wave24_lane_b/PROOF.md`.
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Not a pipeline source — cataloged as the rights-holder contact of last resort for HMV/Columbia/Parlophone-era recordings. [Wave 25 Lane A]
+
+## Wave 26 — Lane A (PD score-archive continuation · retro-tracker ecosystem depth) — 55 entries (2026-10-07)
+
+### Pocket 1 — PD score-archive continuation (25 entries)
+
+#### Early Music Online (Royal Holloway / British Library) ⚠️ NONCOMMERCIAL — JISC Open Education licence, not PD-commercial
+- **What:** 320+ volumes of 16th-century printed-music anthologies (British Library holdings, RISM B/I), ~10,000 individually indexed compositions — vocal polyphony partbooks + early keyboard/plucked-string tablatures from Italy, Germany, France, England, Belgium.
+- **URL:** royalholloway.ac.uk — Early Music Online project page (browse via Royal Holloway digital repository / British Library Catalogue).
+- **License:** ⚠️ NONCOMMERCIAL — official project page: "You may not use the content for commercial purposes. The digitised content is copyright © The British Library Board, and is made available for non-commercial use under JISC's Open Education User Licence." Education/teaching/research/private-study only.
+- **Free tier:** Free browsing.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest catch: PD-era music, but the *digitizations* carry a BL copyright + NC licence — reference/research only, never in the commercial score chain. [Wave 26 Lane A]
+
+#### Josquin Research Project ❓ open-access, no explicit reuse license found this pass
+- **What:** Stanford/CCARH digital edition of Renaissance vocal music ca. 1420–1520 (Josquin, Busnois, Dufay, Ockeghem, Obrecht, Mouton, de la Rue, de Orto); searchable scores + analysis tools; Humdrum/PDF/MIDI/MEI downloads.
+- **URL:** josquin.stanford.edu; score mirror github.com/josquin-research-project/jrp-scores.
+- **License:** ❓ Site describes itself as open-access; the GitHub score mirror returns NOASSERTION (no license file) via API — no reuse grant located this pass.
+- **Free tier:** Free access/downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify reuse terms with the project before shipping use of the editions. [Wave 26 Lane A]
+
+#### CMME — Computerized Mensural Music Editing Project ❓ free online access, no explicit license
+- **What:** Utrecht-based scholarly initiative publishing free online electronic editions of early music (Dufay, Josquin, Machaut, Palestrina, Tallis); CMME XML format importable by Verovio.
+- **URL:** cmme.org; score mirror github.com/tdumitrescu/cmme-music.
+- **License:** ❓ "Free online access to new, high-quality early music scores" per project description — no explicit reuse license found this pass.
+- **Free tier:** Free access.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Editions are modern scholarly work — confirm terms before reuse. [Wave 26 Lane A]
+
+#### The Lost Voices Project ❓ facsimiles + modern transcriptions, terms unverified
+- **What:** Haverford/CESR project on 16th-c. French chansons printed by Nicolas Du Chemin (1549–1568) — ~380 chansons; facsimiles of all 16 partbook sets plus modern transcriptions, scholarly commentary, and reconstruction tools.
+- **URL:** digitalduchemin.org.
+- **License:** ❓ Site invites readers to "make productive use of these resources" — no explicit license located this pass.
+- **Free tier:** Free access.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use. [Wave 26 Lane A]
+
+#### Open Hymnal Project ✅ commercial-safe (PD hymns, per site)
+- **What:** Freely distributable database of Christian hymnody — hymn texts, MIDI, and arrangements maintained by Brian J. Dumont; hymns added as they enter the public domain.
+- **URL:** openhymnal.org.
+- **License:** ✅ Site's own framing is public-domain hymnody, freely distributable/downloadable; verify per-hymn for non-US use.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Good PD hymn-tune/melody source for scoring beds. [Wave 26 Lane A]
+
+#### smallchurchmusic.com ⚠️ free church backing files, site terms unstated
+- **What:** Free piano/organ/band backing MP3s, MIDIs, and PDF scores for hymns — sources PD hymn tunes via Hymnary.org / Cyber Hymnal links.
+- **URL:** smallchurchmusic.com.
+- **License:** ⚠️ Underlying hymn tunes are PD-era, but the site's own recordings/arrangements carry no stated reuse grant — free-for-church-use framing, commercial reuse unverified.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tunes are the PD value; treat the site's audio files as reference only. [Wave 26 Lane A]
+
+#### NinSheetMusic ⚠️ fan arrangements of Nintendo-copyrighted music
+- **What:** Long-running archive (est. 2004) of fan-made piano arrangements + MIDIs of Nintendo game music, with quality-checked submissions.
+- **URL:** ninsheetmusic.org.
+- **License:** ⚠️ Arrangements are fan transcriptions; site FAQ permits use in videos with arranger + site credit, but the underlying compositions are Nintendo-copyrighted (Nintendo pursued sheet-music enforcement in 2024) — commercial reuse is risky.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference/research only for the commercial pipeline. [Wave 26 Lane A]
+
+#### VGMusic.com (Video Game Music Archive) ⚠️ fan MIDI transcriptions, no reuse grant
+- **What:** One of the oldest VGM sites (est. 1996) — 30,000+ fan-sequenced MIDI files of video game music across ~47 platforms.
+- **URL:** vgmusic.com.
+- **License:** ⚠️ Fan transcriptions of copyrighted game music; non-commercial fan site with no explicit reuse grant — reference/research only.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful as transcription references; never as shippable music. [Wave 26 Lane A]
+
+#### VGMdb ⚠️ soundtrack metadata database, per-item media rights
+- **What:** Community database of video game + anime soundtrack releases — album/tracklist/artist/label relationships, cover scans.
+- **URL:** vgmdb.net.
+- **License:** ⚠️ Factual metadata is reference-usable; cover art and media carry per-item rights — no blanket grant.
+- **Free tier:** Free access.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Metadata/discovery layer only. [Wave 26 Lane A]
+
+#### Project2612 🚫 rip-risk — Sega Genesis VGM rips
+- **What:** Archive of Sega Genesis/Mega Drive music rips in VGM format.
+- **URL:** project2612.org (locate via search before use).
+- **License:** 🚫 Game-music rips — no rights grant; do-not-use in any shipping path.
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Documented as an honest negative — format reference only, never pull audio. [Wave 26 Lane A]
+
+#### UnExoticA ⚠️ per-module rights — Amiga game-music archive
+- **What:** Long-running Amiga game-music archive (unexotica.org) — module files with composer credits.
+- **URL:** unexotica.org (locate via search before use).
+- **License:** ⚠️ Per-module composer rights — no blanket grant; reference/research only.
+- **Free tier:** Free access.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Module-format reference; check per-module rights before any use. [Wave 26 Lane A]
+
+#### Exotica ⚠️ per-module rights — Amiga music archive
+- **What:** Amiga music archive (exotica.org.uk) — game/demo music modules.
+- **URL:** exotica.org.uk (locate via search before use).
+- **License:** ⚠️ Per-module rights — no blanket grant; reference/research only.
+- **Free tier:** Free access.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same posture as UnExoticA. [Wave 26 Lane A]
+
+#### Remix64 ⚠️ per-artist rights — C64 remix community
+- **What:** Commodore 64 remix community (remix64.com) — modern remixes of SID-era game music, per-artist uploads.
+- **URL:** remix64.com.
+- **License:** ⚠️ Per-artist rights on remixes; underlying SID compositions remain with original rights holders — no blanket grant.
+- **Free tier:** Free streaming/downloads per artist.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/reference only. [Wave 26 Lane A]
+
+#### Slay Radio ❓ C64/Amiga remix radio, stream-only, no reuse grant
+- **What:** 24/7 internet radio (est. 1999, Gothenburg) playing C64/Amiga remixes — playlist sourced from R:K:O (Remix.Kwed.Org) and C64Audio.com; live shows.
+- **URL:** slayradio.org.
+- **License:** ❓ Stream-only; no reuse grant located this pass — listening reference only.
+- **Free tier:** Free stream.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Good ears-on reference for retro remix production aesthetics. [Wave 26 Lane A]
+
+#### Nectarine ❓ demoscene radio, stream-only, no reuse grant
+- **What:** Demoscene radio (est. ~2001/2004, Germany) — 24/7 chiptune/tracker/demoscene stream at 192kbps plus a large song/artist database (SID/MOD/XM/IT/MP3/FLAC).
+- **URL:** scenestream.net/demovibes (locate via search before use).
+- **License:** ❓ Stream-only; no reuse grant located this pass — listening reference only.
+- **Free tier:** Free stream.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference for tracker-music production aesthetics. [Wave 26 Lane A]
+
+#### GilvaSunner 🚫 dead — Nintendo copyright termination
+- **What:** Formerly the largest YouTube video-game-music channel; terminated after repeated Nintendo copyright strikes (2022).
+- **URL:** n/a (channel removed).
+- **License:** 🚫 Dead — documented as an honest negative; the takedown is the cautionary tale for VGM sourcing.
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Included so nobody re-discovers it as a "source." [Wave 26 Lane A]
+
+#### 8bitcollective 🚫 dead — 8-bit music community
+- **What:** Former 8-bit/chiptune music community and release site.
+- **URL:** n/a (site dead).
+- **License:** 🚫 Dead — documented as an honest negative.
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Do not source from mirrors claiming its catalog. [Wave 26 Lane A]
+
+#### Swedish Musical Heritage ⚠️ free editions, no explicit reuse license
+- **What:** Royal Swedish Academy of Music project (levandemusikarv.se) — database of Swedish composers plus free critical-edition score downloads (e.g., Roman, Åkerberg).
+- **URL:** levandemusikarv.se (locate via search before use).
+- **License:** ⚠️ Scores offered as free downloads; no explicit reuse license located this pass — verify per-edition before shipping use.
+- **Free tier:** Free downloads.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD-era Swedish repertoire in modern editions — strong reference value. [Wave 26 Lane A]
+
+#### Schrank II (SLUB Dresden) ❓ Hofkirche manuscript collection, portal unconfirmed
+- **What:** The Dresden court-church (Hofkirche) music manuscript collection held by SLUB Dresden — core source for 18th-c. Dresden court music (Zelenka, Hasse, etc.).
+- **URL:** No dedicated portal confirmed this pass — locate via SLUB Digital Collections search before use.
+- **License:** ❓ Per-item SLUB terms govern; not verified this pass.
+- **Free tier:** Free browsing where digitized.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify digitization status and terms per item. [Wave 26 Lane A]
+
+#### Cantus Index ❓ federated chant catalogue + JSON API, terms unverified
+- **What:** Central hub for chant research (cantusindex.org) — catalogue of chant texts/melodies for Office and Mass federating 11 databases (~1.2M chants, 3,300+ sources) via Cantus IDs; JSON API documented.
+- **URL:** cantusindex.org.
+- **License:** ❓ Academic project; no explicit reuse license located this pass.
+- **Free tier:** Free access + API.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Companion to the catalog's existing Cantus Database entry (the Index is the catalogue layer; the Database is the inventory layer). [Wave 26 Lane A]
+
+#### ITMA — Irish Traditional Music Archive ❓ free online access, reuse terms unverified
+- **What:** Ireland's national public archive for traditional music/song/dance (Dublin) — 100,000+ items; digitized audio, print collections (incl. 19th-c. ballad sheets), and scores increasingly available via its online Digital Library.
+- **URL:** itma.ie.
+- **License:** ❓ Collections "freely available worldwide" online for study; explicit reuse terms not verified this pass.
+- **Free tier:** Free online access.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify per-collection terms before any use beyond study. [Wave 26 Lane A]
+
+#### Zophar's Domain 🚫 rip-risk — emulation/ROM-adjacent music section
+- **What:** Long-running emulation site whose music section hosts game-music rips.
+- **URL:** zophar.net (locate via search before use).
+- **License:** 🚫 Game rips — no rights grant; do-not-use in any shipping path.
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Documented as an honest negative. [Wave 26 Lane A]
+
+#### SMS Power 🚫 rip-risk — Sega 8-bit VGM rips
+- **What:** Sega 8-bit preservation site (smspower.org); music section hosts VGM rips of Master System/Game Gear titles.
+- **URL:** smspower.org.
+- **License:** 🚫 Game rips — no rights grant for the music files; do-not-use in any shipping path.
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Respected preservation project, but its music files are not licensable to us. [Wave 26 Lane A]
+
+#### SiIvaGunner ⚠️ parody-remix channel, underlying works copyrighted
+- **What:** YouTube channel publishing parody/mashup "high quality rips" of video game music — transformative parody framing.
+- **URL:** youtube.com (locate via search before use).
+- **License:** ⚠️ Parody/transformative context, but underlying compositions are copyrighted — no grant usable by us; reference only.
+- **Free tier:** Free streaming.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful as a reference for mashup/remix arrangement craft; never source audio. [Wave 26 Lane A]
+
+#### Medieval Music Database (La Trobe) ❓ 10,000-work medieval corpus, terms unverified
+- **What:** La Trobe University library database (mmdb.com.au) — ~10,000 medieval works (chant, liturgical polyphony, secular late-medieval music) with manuscript images and modern-notation transcriptions; still live.
+- **URL:** mmdb.com.au.
+- **License:** ❓ No explicit reuse terms located this pass.
+- **Free tier:** Free browsing.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Verify terms before shipping use of transcriptions. [Wave 26 Lane A]
+
+### Pocket 2 — Retro-tracker ecosystem depth (30 entries)
+
+#### Arkos Tracker 3 ✅ commercial-safe (MIT, provenance-verified 2026-10-07)
+- **What:** Open-source AY/YM chiptune tracker by Julien Nevo (Targhan) — successor to Arkos Tracker 2; targets Amstrad CPC, ZX Spectrum, MSX, Atari ST, Oric.
+- **URL:** julien-nevo.com/arkostracker (locate via search before use).
+- **License:** ✅ MIT — AT3 ships LICENSE.txt (MIT, "Copyright (c) 2016-2025 Julien Nevo"); AT2 players were MIT per the archived website FAQ (both confirmed via the kieranhj/arkos-player-bbc provenance docs, 2026-10-07). Note: the SongTo*.exe exporters are NOT covered — use the players.
+- **Free tier:** Free download.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The existing "Arkos Tracker 2 ❓" catalog entry stands; this is the distinct AT3 release with a verified MIT grant. [Wave 26 Lane A]
+
+#### Micromod (Martin Cameron) ✅ commercial-safe (BSD-3-Clause, API verified 2026-10-07)
+- **What:** MOD/S3M/XM player libraries by Martin Cameron (martincameron/micromod) — the maintained successor to the public-domain IbXM; Java + C ("micromod-c") variants.
+- **URL:** github.com/martincameron/micromod.
+- **License:** ✅ BSD-3-Clause (GitHub API spdx_id verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tracker-format playback without GPL — candidate for in-pipeline module rendering. [Wave 26 Lane A]
+
+#### jfxr ✅ commercial-safe (BSD-3-Clause, README-stated)
+- **What:** Web-based chiptune/SFX synthesizer by Thomas ten Cate (ttencate/jfxr) — the maintained fork-line of the sfxr family with a fuller UI.
+- **URL:** github.com/ttencate/jfxr (live demo at jfxr.frozenfractal.com).
+- **License:** ✅ BSD-3-Clause — README states "The code itself is under a three-clause BSD license" (no LICENSE file in tree; README is the grant evidence, verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Distinct from the catalog's existing jsfxr entry. [Wave 26 Lane A]
+
+#### DaisySP ✅ commercial-safe (MIT, raw LICENSE fetched 2026-10-07)
+- **What:** Electrosmith's DSP library for embedded audio (Daisy platform) — oscillators, filters, physical-modeling voices; usable as a general DSP reference/codebase.
+- **URL:** github.com/electro-smith/DaisySP.
+- **License:** ✅ MIT — raw LICENSE fetched 2026-10-07 ("Published under the MIT license").
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** API returned NOASSERTION (machine-detection gap) — raw LICENSE confirms MIT. [Wave 26 Lane A]
+
+#### Meyda ✅ commercial-safe (MIT, API verified 2026-10-07) — WIRED with proof
+- **What:** Web-Audio audio-feature extraction library (MFCC, chroma, spectral centroid/rolloff, energy, RMS, etc.) — the standard JS MIR feature extractor.
+- **URL:** github.com/hughrawlinson/meyda.
+- **License:** ✅ MIT (GitHub API spdx_id verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** wired-proof — smoke test in docs/wave26/proofs/meyda-smoke/ (synthesized WAV → node extraction → real feature output, 2026-10-07).
+- **Notes:** Proof artifact: scripts + real output committed on this branch. Candidate for cartoon music-analysis (tempo/brightness descriptors per cue). [Wave 26 Lane A]
+
+#### DeaDBeeF ✅ commercial-safe (zlib, COPYING fetched 2026-10-07)
+- **What:** Modular music player (DeaDBeeF-Player/deadbeef) with tracker-format plugin support — lightweight, scriptable.
+- **URL:** github.com/DeaDBeeF-Player/deadbeef.
+- **License:** ✅ zlib — COPYING is the zlib/libpng license text verbatim (API returned NOASSERTION; raw COPYING verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 26 Lane A]
+
+#### Audacious ✅ commercial-safe (BSD, COPYING fetched 2026-10-07)
+- **What:** Lightweight BSD-licensed audio player with broad module/tracker format support via plugins.
+- **URL:** github.com/audacious-media-player/audacious.
+- **License:** ✅ BSD — COPYING carries the BSD "Redistribution and use in source and binary forms" grant (API NOASSERTION; raw COPYING verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 26 Lane A]
+
+#### PortAudio ✅ commercial-safe (MIT, LICENSE.txt fetched 2026-10-07)
+- **What:** Portable real-time audio I/O library (PortAudio/portaudio) — the cross-platform audio backend under countless music tools.
+- **URL:** github.com/PortAudio/portaudio.
+- **License:** ✅ MIT — LICENSE.txt MIT-style grant fetched 2026-10-07 (API NOASSERTION).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 26 Lane A]
+
+#### RtAudio ✅ commercial-safe (MIT, LICENSE fetched 2026-10-07)
+- **What:** Gary Scavone's realtime audio I/O C++ classes (thestk/rtaudio) — STK-family, minimal-dependency audio backend.
+- **URL:** github.com/thestk/rtaudio.
+- **License:** ✅ MIT — LICENSE MIT-style grant fetched 2026-10-07 (API NOASSERTION).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 26 Lane A]
+
+#### RtMidi ✅ commercial-safe (MIT, LICENSE fetched 2026-10-07)
+- **What:** Gary Scavone's realtime MIDI I/O C++ classes (thestk/rtmidi) — the standard cross-platform MIDI backend.
+- **URL:** github.com/thestk/rtmidi.
+- **License:** ✅ MIT — LICENSE MIT-style grant fetched 2026-10-07 (API NOASSERTION).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with the catalog's existing mido/pretty_midi Python MIDI entries for native pipelines. [Wave 26 Lane A]
+
+#### PortMidi ✅ commercial-safe (MIT, license.txt fetched 2026-10-07)
+- **What:** Portable real-time MIDI library (PortMidi/portmidi) — MIDI I/O + score-time utilities.
+- **URL:** github.com/PortMidi/portmidi.
+- **License:** ✅ MIT — license.txt MIT-style grant fetched 2026-10-07 (API NOASSERTION).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 26 Lane A]
+
+#### LittleGPTracker ⚠️ license conflict — canonical BSD-3-Clause vs community GPLv3 forks
+- **What:** Little Piggy Tracker by Marc Nostromo (m-.-n) — LSDJ-style tracker for portable consoles/handhelds (PSP, Miyoo Mini, Windows/macOS/Linux).
+- **URL:** github.com/Mdashdotdashn/LittleGPTracker.
+- **License:** ⚠️ CONFLICT — canonical repo LICENSE reads "BSD 3-Clause License, Copyright (c) 2018, Discodirt", but active community forks (brunodles, djdiskmachine, romainguerif) all assert GPLv3 crediting Marc Nostromo. Unresolved this pass — treat as encumbered.
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Flagged for the coordinator: do not wire until the license conflict is resolved upstream. [Wave 26 Lane A]
+
+#### BeRoTracker ⚠️ freeware — no open-source grant found
+- **What:** Impulse-Tracker-style module tracker by Benjamin Rosseaux (berotracker.com) — 256 channels, OPL3 FM voices, VST2/VST3/CLAP hosting, MOD/XM/S3M/IT + 42 AdLib format imports.
+- **URL:** berotracker.com (locate via search before use).
+- **License:** ⚠️ Freeware — "free download" per KVR/Wikipedia; no open-source grant found this pass. (Corrected: commonly misremembered as public domain — it is not.)
+- **Free tier:** Free download.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Standalone-tool use only; never redistributed. [Wave 26 Lane A]
+
+#### uFMOD ⚠️ freeware — no open grant (commonly misremembered as PD)
+- **What:** Tiny x86-assembly XM player library by Asterix/Quantum (ufmod.sourceforge.io) — demoscene/game BGM staple.
+- **URL:** ufmod.sourceforge.io.
+- **License:** ⚠️ Freeware — Wikipedia infobox lists "License: Freeware"; source available (FASM) but no open-source grant located. (Corrected: commonly misremembered as public domain — only the XM-format spec doc was released to PD.)
+- **Free tier:** Free download.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 26 Lane A]
+
+#### XPMCK ❓ no license file in canonical repo
+- **What:** Cross-Platform Music Compiler Kit by Mic (mic-/xpmck) — MML compiler targeting PC-88/98, X68000, Mega Drive, PCE, MSX sound chips.
+- **URL:** github.com/mic-/xpmck.
+- **License:** ❓ No LICENSE/COPYING file in the canonical repo tree and no license statement in the README — unverified this pass.
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Verify with the author before any use. [Wave 26 Lane A]
+
+#### libOPNMIDI ⚠️ LGPL-3.0 — no new quarantine row per LGPL rule
+- **What:** Wohlstand's Yamaha YM2612/OPN2 MIDI synthesizer library (Wohlstand/libOPNMIDI).
+- **URL:** github.com/Wohlstand/libOPNMIDI.
+- **License:** ⚠️ LGPL-3.0 (GitHub API spdx_id verified 2026-10-07) — weak copyleft; no new quarantine row per the standing LGPL rule (doctrine pending owner verdict).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 26 Lane A]
+
+#### WildMIDI ⚠️ LGPL-3.0 (library) — no new quarantine row per LGPL rule
+- **What:** Software MIDI synthesizer (Mindwerks/wildmidi) — library + player.
+- **URL:** github.com/Mindwerks/wildmidi.
+- **License:** ⚠️ Library is LGPL-3.0 (player is GPL-3.0) per COPYING ("For the library: see docs/license/LGPLv3.txt"), verified 2026-10-07 — weak copyleft; no new quarantine row per the standing LGPL rule.
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use the library only, never the GPL player binary, in any pipeline context. [Wave 26 Lane A]
+
+#### libmikmod ⚠️ LGPL-2.1 — no new quarantine row per LGPL rule
+- **What:** Module-playback library (sezero/mikmod, libmikmod/) — MOD/XM/S3M/IT playback, the classic Unix module engine.
+- **URL:** github.com/sezero/mikmod.
+- **License:** ⚠️ LGPL-2.1 — README: "libmikmod is covered by the GNU Lesser General Public License v2.1" (verified 2026-10-07) — weak copyleft; no new quarantine row per the standing LGPL rule.
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The bundled `mikmod` player binary is GPL-2.0 — quarantined separately (new row 250). [Wave 26 Lane A]
+
+#### libADLMIDI 🚫 GPL-3.0 — QUARANTINED (new row 239)
+- **What:** Wohlstand's AdLib/OPL3 MIDI synthesizer library (Wohlstand/libADLMIDI).
+- **URL:** github.com/Wohlstand/libADLMIDI.
+- **License:** 🚫 GPL-3.0 (GitHub API spdx_id verified 2026-10-07 — commonly misremembered as MIT; it is not).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only — never linked into shipping paths. [Wave 26 Lane A]
+
+#### ChibiTracker 🚫 GPL-2.0 — QUARANTINED (new row 240)
+- **What:** Windows sample tracker by Juan Linietsky (reduz/chibitracker) — Google Code export.
+- **URL:** github.com/reduz/chibitracker.
+- **License:** 🚫 GPL-2.0 (GitHub API spdx_id verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### JSIDPlay2 🚫 GPL-2.0 — QUARANTINED (new row 241)
+- **What:** Java SID (C64) player/emulator by Ken Händel (kenchis/JSIDPlay2).
+- **URL:** github.com/kenchis/JSIDPlay2.
+- **License:** 🚫 GPL-2.0 (GitHub API spdx_id verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### Cardinal 🚫 GPL-3.0 — QUARANTINED (new row 242)
+- **What:** DISTRHO's free/open virtual-modular synth plugin (VCV Rack fork) — DPF-based, runs as VST2/VST3/LV2/CLAP.
+- **URL:** github.com/DISTRHO/Cardinal.
+- **License:** 🚫 GPL-3.0 (GitHub API spdx_id verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### Strudel 🚫 AGPL-3.0 — QUARANTINED (new row 243)
+- **What:** TidalCycles-family browser live-coding music environment (tidalcycles/strudel) — pattern-based composition in the browser.
+- **URL:** github.com/tidalcycles/strudel.
+- **License:** 🚫 AGPL-3.0 (GitHub API spdx_id verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### BespokeSynth 🚫 GPL-3.0 — QUARANTINED (new row 244)
+- **What:** Modular software synthesizer with a live-patching UI (BespokeSynth/BespokeSynth).
+- **URL:** github.com/BespokeSynth/BespokeSynth.
+- **License:** 🚫 GPL-3.0 (GitHub API spdx_id verified 2026-10-07).
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### Cmajor 🚫 GPL-3.0-or-later (dual commercial) — QUARANTINED (new row 245)
+- **What:** Cmajor (SoundStacks/cmajor) — the audio DSP language/runtime succeeding SOUL, for writing portable audio DSP.
+- **URL:** github.com/SoundStacks/cmajor.
+- **License:** 🚫 GPL-3.0-or-later / commercial dual — LICENSE.md verified 2026-10-07 ("Cmajor is published under a dual GPLv3 (or later) / Commercial license"). Commonly mislabeled ISC — it is not.
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only unless the commercial license is purchased. [Wave 26 Lane A]
+
+#### Psycle 🚫 GPL-2.0 (current code) — QUARANTINED (new row 246)
+- **What:** Modular tracker/DAW (SourceForge psycle) — Buzz-paradigm machines + tracker sequencer, VST support.
+- **URL:** sourceforge.net/projects/psycle/.
+- **License:** 🚫 GPL-2.0 — SourceForge lists "GNU General Public License version 2.0 (GPLv2), Public Domain" for the current codebase. Lineage note: Arguru released the v1.0 sources as public domain; the current team's code is GPL-2.0. Quarantined on the current license.
+- **Free tier:** Free download.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### Dn-FamiTracker 🚫 GPL-2.0-or-later — QUARANTINED (row 123 exists)
+- **What:** Maintained FamiTracker continuation (Gumball2415/Dn-FamiTracker) — NES/Famicom chiptune tracker with expanded chips (VRC6/7, FDS, N163, 5B).
+- **URL:** github.com/Gumball2415/Dn-FamiTracker.
+- **License:** 🚫 GPL-2.0-or-later — README: "The application and the source code are distributed under the GNU GPL 2 license or any later version" (verified 2026-10-07); FDS/N163 emulation deps are GPL-3.0-only; the original NSF driver is unlicensed (no grant).
+- **Free tier:** Free download.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Row 123 already quarantined — catalog entry added for discoverability only. Research lane only. [Wave 26 Lane A]
+
+#### FamiTracker (original, jsr) 🚫 GPL-2.0 — QUARANTINED (new row 247)
+- **What:** The original NES/Famicom tracker by Jonathan Liss (jsr) — famitracker.com source distributions.
+- **URL:** famitracker.com.
+- **License:** 🚫 GPL-2.0 — app/source under GPL-2.0 per the maintained forks' license documentation (Dn-FamiTracker README lineage notes, verified 2026-10-07). Explicit carve-out: the original NSF driver source is "explicitly *not* under the GPL" — source-available with no explicit license (no grant).
+- **Free tier:** Free download.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### Aldrin 🚫 GPL-2.0 — QUARANTINED (new row 248)
+- **What:** Open-source Buzz-clone modular tracker/sequencer for Linux (SourceForge aldrin) by Anders Petersson.
+- **URL:** sourceforge.net/projects/aldrin/.
+- **License:** 🚫 GPL-2.0 — SourceForge license field verified 2026-10-07 (commonly misremembered as BSD — it is not).
+- **Free tier:** Free download.
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+#### mikmod (player) 🚫 GPL-2.0 — QUARANTINED (new row 250)
+- **What:** The classic Unix module player binary bundled with libmikmod (sezero/mikmod, `mikmod/`).
+- **URL:** github.com/sezero/mikmod.
+- **License:** 🚫 GPL-2.0 — README: "Mikmod player is covered by the GNU General Public License v2" (verified 2026-10-07). The libmikmod *library* is LGPL-2.1 and cataloged separately as ⚠️.
+- **Free tier:** n/a (code).
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 26 Lane A]
+
+## Entry count — Wave 26 Lane A
+
+**+55 honest `####` entries → 2,563 total** (2,508 + 55). Breakdown: 25 PD score-archive continuation (pocket 1) · 30 retro-tracker ecosystem depth (pocket 2). Quarantine: **12 new rows (239–250)** — libADLMIDI GPL-3.0 · ChibiTracker GPL-2.0 · JSIDPlay2 GPL-2.0 · Cardinal GPL-3.0 · Strudel AGPL-3.0 · BespokeSynth GPL-3.0 · Cmajor GPL-3.0-or-later · Psycle GPL-2.0 · FamiTracker-original GPL-2.0 · Aldrin GPL-2.0 · SoundTracker-Unix GPL-2.0-or-later · mikmod-player GPL-2.0. (Dn-FamiTracker catalog entry maps to existing row 123 — no new row.) License corrections caught this wave: Cmajor is NOT ISC (dual GPL-3.0-or-later/commercial); libADLMIDI is NOT MIT (GPL-3.0); Aldrin is NOT BSD (GPL-2.0); BeRoTracker is NOT public domain (freeware); uFMOD is NOT public domain (freeware); Psycle current code is GPL-2.0 (only v1.0 was PD); LittleGPTracker has an unresolved BSD-vs-GPLv3 conflict. One tool wired with real proof: Meyda (MIT) — docs/wave26/proofs/meyda-smoke/.

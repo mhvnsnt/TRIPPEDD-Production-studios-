@@ -453,6 +453,251 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 
 <!-- end lane A2: frame interpolation / inbetweening (12 entries) -->
 
+#### EMA-VFI ✅ — inter-frame attention for efficient VFI (CVPR 2023)
+- **What:** Motion+appearance extraction via inter-frame attention; state-of-the-art on benchmarks with lighter compute than flow-heavy nets.
+- **URL:** https://github.com/MCG-NJU/EMA-VFI
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** primary neural interpolator for episode slow-mo and fps upconversion; EMA-VFI-DR variant handles repeating-pattern ("picket fence") artefacts better than RIFE.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+
+#### IFRNet ✅ — intermediate feature refine network, single-pass multi-frame (CVPR 2022)
+- **What:** Merges flow estimation + context refinement into one encoder-decoder; predicts 7 intermediates in one forward pass (30→240fps).
+- **URL:** https://github.com/ltkong218/IFRNet
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** multi-frame interpolation for slow-motion beats; fast inference, mobile-friendly.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+
+#### IFRNet-ncnn-vulkan ✅ — IFRNet as portable ncnn binaries (CPU/GPU/iGPU)
+- **What:** nihui's ncnn port of IFRNet: portable Windows/Linux/macOS executables, no CUDA/PyTorch needed.
+- **URL:** https://github.com/nihui/ifrnet-ncnn-vulkan
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** batch interpolation on machines without PyTorch; same deployment story as rife-ncnn-vulkan (covered Wave 1).
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### AdaCoF ✅ — adaptive collaboration of flows (CVPR 2020)
+- **What:** Generalized warping module (kernel weights + offsets per pixel) covering most warping ops as special cases; dual-frame adversarial loss.
+- **URL:** https://github.com/HyeongminLEE/AdaCoF-pytorch
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** complex-motion interpolation where flow methods smear; strong Middlebury benchmark lineage.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### CAIN ✅ — channel attention is all you need for VFI (AAAI 2020)
+- **What:** Channel-attention interpolation network; simple, fast, strong baseline that later methods compare against.
+- **URL:** https://github.com/myungsub/CAIN
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** lightweight interpolation baseline; good speed/quality trade for batch episode work.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### BMBC ✅ — bilateral motion estimation with bilateral cost volume (ECCV 2020)
+- **What:** Bilateral motion + dynamic filters for symmetric/asymmetric motion; explicit occlusion reasoning.
+- **URL:** https://github.com/JunHeum/BMBC
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** occlusion-heavy action beats; pairs with ABME from the same author.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### ABME ✅ — asymmetric bilateral motion estimation (ICCV 2021)
+- **What:** Refines BMBC with asymmetric bilateral motion fields; top-tier on Vimeo90K/UCF101.
+- **URL:** https://github.com/JunHeum/ABME
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** high-quality interpolation for hero shots; heavier than RIFE/IFRNet but cleaner on hard motion.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### FLAVR ✅ — flow-agnostic 3D space-time conv interpolation (WACV 2023)
+- **What:** No optical flow at all: 3D space-time convolutions reason about non-linear motion/occlusions implicitly; 3× faster than prior SOTA on 8× interpolation.
+- **URL:** https://github.com/tarun005/FLAVR
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** 8× slow-motion where flow estimation fails (motion blur, deforming shapes); flow-free = fewer failure modes.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### ST-MFNet ✅ — spatio-temporal multi-flow network (CVPR 2022)
+- **What:** Multi-flow fields + 3D CNN blending for large-motion interpolation; strong on high-res inputs.
+- **URL:** https://github.com/danielism97/ST-MFNet
+- **License:** MIT (verified 2026-10-08 via GitHub API license field; also LDMVFI paper Table 11)
+- **Use:** large-motion cartoon/action interpolation; complements flow-free FLAVR.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### MMagic ✅ — OpenMMLab's unified generative toolbox (BasicVSR++, EDVR, RIFE)
+- **What:** Successor to MMEditing: VSR + VFI + generation under one Apache-2.0 roof — BasicVSR++/BasicVSR/IconVSR/EDVR for restoration, plus interpolation models.
+- **URL:** https://github.com/open-mmlab/mmagic
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** one dependency for both frame interpolation AND video restoration/upscaling of episode masters.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+
+#### DAIN-ncnn-vulkan ✅ — DAIN as portable ncnn binaries
+- **What:** nihui's ncnn port of Depth-Aware Video Frame Interpolation (covered Wave 1): no-framework binaries for CPU/GPU.
+- **URL:** https://github.com/nihui/dain-ncnn-vulkan
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** DAIN-quality interpolation on machines without PyTorch; depth-aware occlusion handling in portable form.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+
+#### ToonCrafter ✅ — generative cartoon interpolation (SIGGRAPH Asia 2024)
+- **What:** Diffusion-based generative interpolation for cartoons: synthesizes genuinely new inbetween content (not just warping) for large motions.
+- **URL:** https://github.com/Doubiiu/ToonCrafter
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** cartoon shots where warping interpolators collapse (large pose changes); generative fill between keys.
+- **Free tier:** fully open (heavy GPU)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 5/5
+
+#### Sketch-guided cartoon inbetweening ✅ — TVCG 2021 (Xiaoyu Li et al.)
+- **What:** Frame synthesis guided by an intermediate sketch: artist draws the key lines, the net fills the cartoon frame — human-in-the-loop inbetweening.
+- **URL:** https://github.com/xiaoyu258/Inbetweening
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** animator-assisted inbetweening: rough sketch → full colored frame; closest to a real cartoon production workflow.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### EDEN ✅ — diffusion-based large-motion VFI (CVPR 2025)
+- **What:** Enhanced Diffusion for high-quality large-motion video frame interpolation; diffusion prior handles motions that break warping methods.
+- **URL:** https://github.com/bbldCVer/EDEN
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Use:** extreme-motion interpolation where all warping methods fail; slow but highest ceiling.
+- **Free tier:** fully open (heavy GPU)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 5/5
+
+#### SGM-VFI ✅ — sparse global matching for large-motion VFI (CVPR 2024)
+- **What:** Sparse global matching (built on GMFlow/RAFT/EMA-VFI/RIFE/IFRNet lineage) targeting large motions efficiently.
+- **URL:** https://github.com/MCG-NJU/SGM-VFI
+- **License:** Apache-2.0 (verified 2026-10-08 via repo README license section)
+- **Use:** large-motion interpolation with EMA-VFI-family efficiency; MCG-NJU lineage pairs with EMA-VFI.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+
+#### SAFA ✅ — scale-adaptive feature aggregation for anime space-time super-resolution (WACV 2024)
+- **What:** Anime-tuned space-time video super-resolution from RIFE's author (hzwer); the anime-scene optimization RIFE v4.7+ drew from.
+- **URL:** https://github.com/hzwer/WACV2024-SAFA
+- **License:** MIT (verified 2026-10-08 via GitHub API license field)
+- **Use:** upscale + temporally-consistent enhance of anime/cartoon frames; quality pass after interpolation.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+
+#### AnimeInbet ⚠️ no licence file in repo
+- **What:** ICCV 2023 "Deep Geometrized Cartoon Line Inbetweening": geometrizes raster line drawings into endpoint graphs and reframes inbetweening as graph fusion — built for sparse line art where raster interpolators blur.
+- **URL:** https://github.com/lisiyao21/AnimeInbet
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). Research code; no rights granted — verify with authors before any use.
+- **Use:** line-art inbetweening research reference; do not ship outputs commercially until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+
+#### SoftSplat (softmax-splatting) ⚠️ no licence file in repo
+- **What:** CVPR 2020 differentiable forward warping via softmax splatting — the splatting primitive behind EISAI's SoftsplatLite and many VFI nets.
+- **URL:** https://github.com/sniklaus/softmax-splatting
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research primitive only; reimplement or use licensed derivatives.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+
+#### SoftSplat-Full ⚠️ no licence file in repo
+- **What:** Full-model implementation of the Softmax Splatting VFI paper (JHLew) — complete trainable interpolation net.
+- **URL:** https://github.com/JHLew/SoftSplat-Full
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research reference only until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+
+#### SepConv (sepconv-slomo) ⚠️ no licence file in repo
+- **What:** Video frame interpolation via adaptive separable convolution (the SepConv paper implementation) — kernel-based, no explicit flow.
+- **URL:** https://github.com/sniklaus/sepconv-slomo
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research reference only until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+
+#### VFIformer ⚠️ no licence file in repo
+- **What:** Video frame interpolation with transformers (Video-Frame-Interpolation-Transformer) — attention-based motion modeling.
+- **URL:** https://github.com/zhshi0816/Video-Frame-Interpolation-Transformer
+- **License:** ❓ NO LICENCE FILE in repo (verified 2026-10-08 via GitHub API — license field empty). No rights granted.
+- **Use:** research reference only until licensed.
+- **Free tier:** n/a — unlicensed
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+
+#### XVFI 🚫 research and education only — honest exclusion
+- **What:** ICCV 2021 (oral) eXtreme video frame interpolation for 4K multi-frame scenarios — sharp on high-res, large-motion.
+- **URL:** https://github.com/JihyongOh/XVFI
+- **License:** Research and education only (per LDMVFI paper Table 11, arXiv 2303.09508; no licence file in repo). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### CDFI 🚫 research use only — honest exclusion
+- **What:** Compressive Dynamic Flow Interpolation (Ding et al. 2021) — efficient VFI via dynamic flow compression.
+- **URL:** https://github.com/tding1/CDFI
+- **License:** Research use only (per LDMVFI paper Table 11, arXiv 2303.09508). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### VFFormer 🚫 research use only — honest exclusion
+- **What:** Vectorized frame former (Lu et al. 2022) — transformer VFI with vectorized attention.
+- **URL:** https://github.com/dvlab-research/VFFormer
+- **License:** Research use only (per LDMVFI paper Table 11, arXiv 2303.09508). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** research-only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### GIMM-VFI 🚫 S-Lab 1.0 non-commercial — honest exclusion
+- **What:** NeurIPS 2024 generalizable implicit motion modeling for VFI (KAIST VIC Lab lineage) — implicit motion fields instead of explicit flow.
+- **URL:** https://github.com/GSeanCDAT/GIMM-VFI
+- **License:** S-Lab License 1.0 — non-commercial (verified 2026-10-08 via repo LICENSE raw: "S-Lab License 1.0, Copyright 2024 S-Lab"). NOT commercial-safe. **EXCLUDED**.
+- **Free tier:** non-commercial only
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### FlowFrames 🚫 proprietary freeware — honest exclusion
+- **What:** Popular RIFE/DAIN GUI for frame interpolation (N00MKRAD, itch.io) — the user-friendly interpolation app the RIFE authors pin.
+- **URL:** https://nmkd.itch.io/flowframes
+- **License:** Proprietary freeware (no open-source licence grant). **EXCLUDED** from the FOSS pipeline — use rife-ncnn-vulkan / IFRNet-ncnn-vulkan CLIs instead.
+- **Free tier:** free download (proprietary)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### SVP (SmoothVideo Project) 🚫 proprietary commercial — honest exclusion
+- **What:** Real-time frame interpolation for video playback (SVPflow); the classic smooth-motion engine.
+- **URL:** https://www.svp-team.com
+- **License:** Proprietary commercial (paid; no open-source licence grant). **EXCLUDED** — use RIFE/IFRNet/EMA-VFI instead.
+- **Free tier:** paid trial (proprietary)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
+#### Topaz Video AI 🚫 proprietary commercial — honest exclusion
+- **What:** Commercial video enhancement suite (interpolation + upscaling + stabilization); the paid reference for interpolation quality.
+- **URL:** https://www.topazlabs.com/topaz-video-ai
+- **License:** Proprietary commercial (paid licence; no open-source grant). **EXCLUDED** — use FLAVR/ABME/SAFA + MMagic instead.
+- **Free tier:** paid (proprietary)
+- **Repo lane:** trippedd-studio (inbetweening-depth pocket)
+- **Pipeline impact:** 0/5 (excluded) · **Wire-up difficulty:** n/a
+
 ## Storyboarding / animatics / previz
 <!-- boards, timing sheets, scene assembly -->
 

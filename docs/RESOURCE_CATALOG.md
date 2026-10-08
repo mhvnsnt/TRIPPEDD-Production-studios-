@@ -41262,3 +41262,435 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Honest negative — superb viewing reference (McLaren animation timing studies for the cartoon pipeline), but nothing cleared for compositing. [Wave 47 Lane A]
+
+### Pocket 2 — retro sound-chip hardware docs round 2 (34 entries + 9 quarantine pointers)
+
+#### zeptobars ✅ commercial-safe (CC-BY die shots)
+- **What:** zeptobars.com — high-resolution silicon die shots of classic chips (CPUs, sound chips, support ICs), the visual companion to decap/reverse-engineering work.
+- **URL:** https://zeptobars.com
+- **License:** ✅ CC-BY — die photographs published under Creative Commons Attribution (verified 2026-10-08 via zeptobars.com, HTTP 200; site's stated CC-BY photo policy)
+- **Free tier:** Free browsing/download of die shots
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Visual die reference for the chip-doc lane — pair with siliconpr0n decap writeups and Ken Shirriff's reverse-engineering notes. [Wave 47 Lane A]
+
+#### TubeTime ✅ commercial-safe (blog, fair-use excerpts)
+- **What:** Eric Schlaepfer's TubeTime — decap photography, curve-tracer IC teardowns, and reverse-engineering writeups (SID-adjacent MOS parts, vintage synth ICs).
+- **URL:** https://tubetime.us
+- **License:** ✅ Blog content freely readable; die photos by the author, reuse per site terms (verified 2026-10-08 via tubetime.us, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Decap/reference lane — the die-shot + schematic-tracing posts are the practical guide to how decap projects document chips. [Wave 47 Lane A]
+
+#### siliconpr0n ⚠️ per-article rights (decap writeups)
+- **What:** siliconpr0n.org — community decap project: die shots, delayering writeups, and reverse-engineered schematics of classic ICs.
+- **URL:** https://siliconpr0n.org
+- **License:** ⚠️ Per-article — community-contributed decap content; no blanket reuse grant (verified 2026-10-08 via siliconpr0n.org; curl 403 is bot protection, site live)
+- **Free tier:** Free browsing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Decap lane — read the writeups for methodology; treat die images as reference, not assets, unless the contributor grants reuse. [Wave 47 Lane A]
+
+#### Ken Shirriff's blog ✅ commercial-safe (CC-BY)
+- **What:** righto.com — Ken Shirriff's reverse-engineering blog: 8085/6502/Z80 die analysis, 555 timer silicon, and vintage synth-chip teardowns with annotated die photos.
+- **URL:** https://www.righto.com
+- **License:** ✅ CC-BY — blog content published under Creative Commons Attribution (verified 2026-10-08 via righto.com footer/license statement, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The single best-written silicon reverse-engineering reference on the web — the methodology posts (how to read a die, how to trace a netlist) transfer directly to sound-chip work. [Wave 47 Lane A]
+
+#### kevtris.org ✅ commercial-safe (author's docs)
+- **What:** Kevin Horton's BlueTech site — FPGA console project docs, NES/SNES hardware notes, and cycle-level hardware observations from the kevtris FPGA cores.
+- **URL:** https://kevtris.org
+- **License:** ✅ Author-published docs, freely readable (verified 2026-10-08 via kevtris.org — "Projects Directory", live site)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardware-docs lane — kevtris's cycle-observation notes are a primary source for FPGA reimplementation behavior. Dated but still cited. [Wave 47 Lane A]
+
+#### ULX3S ✅ commercial-safe (CERN-OHL hardware)
+- **What:** ULX3S — open-source Lattice ECP5 FPGA board (the retro-core community's workhorse for MiSTer-adjacent and standalone chip reimplementations).
+- **URL:** https://ulx3s.github.io
+- **License:** ✅ CERN-OHL — open hardware; gateware examples vary per core (verified 2026-10-08 via ulx3s.github.io, HTTP 200)
+- **Free tier:** Open hardware design files
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Hardware lane — the board that open FPGA sound-chip cores target; check each core's own license before use (many are GPL — quarantined separately). [Wave 47 Lane A]
+
+#### C64 Wiki ⚠️ wiki (reference)
+- **What:** c64-wiki.com — community C64 encyclopedia: SID chip articles, register maps, known-bug lists, and programming tutorials.
+- **URL:** https://www.c64-wiki.com
+- **License:** ⚠️ Wiki — community text, freely readable; reuse per wiki terms (verified 2026-10-08 via c64-wiki.com, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SID reference lane — the register-map and filter-bug articles are the practical companion to the 6581 datasheet. [Wave 47 Lane A]
+
+#### Hidden Palace ⚠️ research (protos/docs)
+- **What:** hiddenpalace.org — video-game prototype preservation: protos, dev docs, and source-adjacent materials with research articles.
+- **URL:** https://www.hiddenpalace.org
+- **License:** ⚠️ Research archive — protos are copyrighted originals; site is a research resource, not a reuse grant (verified 2026-10-08 via hiddenpalace.org, HTTP 200)
+- **Free tier:** Free research access
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Prototype-audio lane — unreleased builds sometimes contain earlier/different sound drivers; research value, not a code source. [Wave 47 Lane A]
+
+#### The Cutting Room Floor ⚠️ wiki (reference)
+- **What:** tcrf.net — wiki documenting unused content, regional differences, and dev leftovers in games, including sound-driver and audio findings.
+- **URL:** https://tcrf.net
+- **License:** ⚠️ Wiki — community text, freely readable (verified 2026-10-08 via tcrf.net; curl 403 is bot protection, site live)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audio-archaeology lane — the sound-driver and unused-music findings document how retail games actually drove the chips. [Wave 47 Lane A]
+
+#### Nocash GBAtek ✅ commercial-safe (author's docs)
+- **What:** Martin Korth's GBAtek — the definitive Game Boy Advance hardware reference: APU channels, DMA audio, timers, and BIOS sound calls.
+- **URL:** https://problemkaputt.de/gbatek.htm
+- **License:** ✅ Author-published technical reference, freely readable (verified 2026-10-08 via problemkaputt.de/gbatek.htm, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GBA audio-programming bible — the APU/DMA-audio sections are required reading before touching GBA sound cores. Companion to the Nocash PSX docs already cataloged. [Wave 47 Lane A]
+
+#### Nocash fullsnes ✅ commercial-safe (author's docs)
+- **What:** Martin Korth's fullsnes — SNES hardware reference: SPC700 APU, DSP registers, and DMA audio paths.
+- **URL:** https://problemkaputt.de/fullsnes.htm
+- **License:** ✅ Author-published technical reference, freely readable (verified 2026-10-08 via problemkaputt.de/fullsnes.htm)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SNES APU/DSP bible — the SPC700 + DSP register docs are the primary source for SNES audio reimplementation. [Wave 47 Lane A]
+
+#### Nerdly Pleasures ✅ commercial-safe (blog)
+- **What:** nerdlypleasures.blogspot.com — retro-hardware blog with deep dives on sound chips, FM synthesis history, and DOS audio hardware.
+- **URL:** https://nerdlypleasures.blogspot.com
+- **License:** ✅ Blog content, freely readable (verified 2026-10-08 via nerdlypleasures.blogspot.com, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chip-history lane — the OPL/AdLib and PC-speaker deep dives give the "why it sounds like that" behind the datasheets. [Wave 47 Lane A]
+
+#### Retro Game Mechanics Explained ⚠️ reference (YouTube, all rights reserved)
+- **What:** YouTube channel reverse-engineering retro game code — SMB/SMW glitch mechanics, RNG, and audio-adjacent engine behavior explained from disassembly.
+- **URL:** https://www.youtube.com/@rgmechex
+- **License:** ⚠️ All rights reserved — videos are reference viewing, not reusable assets (verified 2026-10-08 via youtube.com/@rgmechex, HTTP 200)
+- **Free tier:** Free viewing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference viewing only — the disassembly walkthroughs teach how retail games drove the APU; no footage reuse. [Wave 47 Lane A]
+
+#### Displaced Gamers ⚠️ reference (YouTube, all rights reserved)
+- **What:** YouTube channel on NES/Famicom hardware — mapper audio expansions, FDS disk audio, and console-mod hardware docs in video form.
+- **URL:** https://www.youtube.com/@DisplacedGamers
+- **License:** ⚠️ All rights reserved — reference viewing (verified 2026-10-08 via youtube.com/@DisplacedGamers, HTTP 200)
+- **Free tier:** Free viewing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Expansion-audio lane — the FDS/VRC6/N163 hardware videos pair with the nesdev wiki docs below. [Wave 47 Lane A]
+
+#### The 8-Bit Guy ⚠️ reference (YouTube, all rights reserved)
+- **What:** David Murray's retro-computing channel — C64/Atari/IBM hardware restorations with SID/POKEY-adjacent audio segments.
+- **URL:** https://www.youtube.com/@The8BitGuy
+- **License:** ⚠️ All rights reserved — reference viewing (verified 2026-10-08 via youtube.com/@The8BitGuy, HTTP 200)
+- **Free tier:** Free viewing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Restoration-context lane — how the original hardware (and its audio) actually behaved on real machines. [Wave 47 Lane A]
+
+#### Adrian's Digital Basement ⚠️ reference (YouTube, all rights reserved)
+- **What:** Adrian Black's retro repair channel — board-level repairs of C64/Amiga/Atari with SID/Paula/POKEY audio-path debugging.
+- **URL:** https://www.youtube.com/@AdriansDigitalBasement
+- **License:** ⚠️ All rights reserved — reference viewing (verified 2026-10-08 via youtube.com/@AdriansDigitalBasement, HTTP 200)
+- **Free tier:** Free viewing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Board-level audio-path lane — the SID-filter and Paula-output repair videos show the analog side datasheets skip. [Wave 47 Lane A]
+
+#### Modern Vintage Gamer ⚠️ reference (YouTube, all rights reserved)
+- **What:** MVG's channel — emulation accuracy, FPGA (MiSTer), and retro-hardware deep dives with developer interviews.
+- **URL:** https://www.youtube.com/@ModernVintageGamer
+- **License:** ⚠️ All rights reserved — reference viewing (verified 2026-10-08 via youtube.com/@ModernVintageGamer, HTTP 200)
+- **Free tier:** Free viewing
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Accuracy-discourse lane — the emulator/FPGA accuracy videos frame what "cycle-accurate" claims actually mean. [Wave 47 Lane A]
+
+#### Nesdev wiki — Namco 163 audio ✅ commercial-safe (wiki docs)
+- **What:** Nesdev wiki's N163 page — Namco 163 expansion-audio documentation: wavetable channels, register map, and game usage notes.
+- **URL:** https://www.nesdev.org/wiki/N163
+- **License:** ✅ Wiki technical documentation, freely readable (verified 2026-10-08 via nesdev.org/wiki/N163, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Expansion-audio lane — the N163 wavetable docs are the primary source for Famicom expansion sound beyond VRC6. [Wave 47 Lane A]
+
+#### Nesdev wiki — FDS audio ✅ commercial-safe (wiki docs)
+- **What:** Nesdev wiki's FDS audio page — Famicom Disk System wavetable + FM-ish modulator documentation with register details.
+- **URL:** https://www.nesdev.org/wiki/FDS_audio
+- **License:** ✅ Wiki technical documentation, freely readable (verified 2026-10-08 via nesdev.org/wiki/FDS_audio, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** FDS audio lane — wavetable synthesis docs for the disk-system channel; pairs with the Displaced Gamers hardware video. [Wave 47 Lane A]
+
+#### System 16 ⚠️ reference (arcade hardware museum)
+- **What:** system16.com — arcade hardware museum: board/chipset documentation, sound-chip inventories per board, and manufacturer histories.
+- **URL:** https://www.system16.com
+- **License:** ⚠️ Reference site — freely readable; no reuse grant on the compiled data (verified 2026-10-08 via system16.com; curl 403 is bot protection, site live)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arcade chip-inventory lane — look up which sound chips (YM2151, OKI ADPCM, QSound…) shipped on which boards before writing reimplementations. [Wave 47 Lane A]
+
+#### KLOV ⚠️ reference (arcade museum)
+- **What:** Killer List of Videogames (arcade-museum.com) — arcade game/board database with hardware and sound-chip details per title.
+- **URL:** https://www.arcade-museum.com
+- **License:** ⚠️ Reference database — freely readable (verified 2026-10-08 via arcade-museum.com, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to System 16 — cross-check board/sound-chip pairings per game title. [Wave 47 Lane A]
+
+#### ConsoleMods Wiki ⚠️ wiki (modding docs)
+- **What:** consolemods.org — console modding wiki: hardware revisions, audio-path mods, and region/bios documentation across retro consoles.
+- **URL:** https://consolemods.org
+- **License:** ⚠️ Wiki — community docs, freely readable (verified 2026-10-08 via consolemods.org; curl 403 is bot protection, site live)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardware-revision lane — the audio-output mod pages document the analog stage after the chip, which emulators usually ignore. [Wave 47 Lane A]
+
+#### RetroRGB ⚠️ reference (site, freely readable)
+- **What:** retrorgb.com — retro video/audio hardware news and guides: RGB mods, upscalers, and audio-path quality comparisons.
+- **URL:** https://retrorgb.com
+- **License:** ⚠️ Site content, freely readable (verified 2026-10-08 via retrorgb.com, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Signal-path lane — the audio-quality comparisons (original vs modded output stages) are the reality check for "accurate" audio claims. [Wave 47 Lane A]
+
+#### NEC Retro ⚠️ wiki (reference)
+- **What:** necretro.org — NEC/PC Engine/TurboGrafx hardware and software wiki with HuC6280 sound documentation.
+- **URL:** https://necretro.org
+- **License:** ⚠️ Wiki — community docs, freely readable (verified 2026-10-08 via necretro.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PCE audio lane — HuC6280 wavetable docs alongside the Sega Retro wiki already cataloged. [Wave 47 Lane A]
+
+#### bunniestudios ✅ commercial-safe (blog, CC)
+- **What:** Andrew "bunnie" Huang's blog — hardware-hacking deep dives: Xbox/SoC teardowns, open-hardware methodology, and supply-chain security.
+- **URL:** https://www.bunniestudios.com
+- **License:** ✅ Blog content freely shared (verified 2026-10-08 via bunniestudios.com, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardware-hacking methodology lane — the teardown writeups are the professional-grade version of decap-adjacent documentation. [Wave 47 Lane A]
+
+#### retroreversing ⚠️ license-undeclared (docs repo)
+- **What:** retroreversing/retroreversing — community repo of retro hardware/software reverse-engineering notes, including FPGA/Verilog hardware-emulation pages.
+- **URL:** https://github.com/retroreversing/retroreversing
+- **License:** ⚠️ License undeclared — docs repo; no LICENSE file found (checked 2026-10-08); treat text as reference-only
+- **Free tier:** Free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** FPGA-docs lane — the Verilog hardware-emulation pages index open console-in-FPGA projects; read, don't copy, until a license is declared. [Wave 47 Lane A]
+
+#### MOS 6581 SID datasheet (1982 preliminary) ✅ PD-adjacent (vendor doc scan)
+- **What:** Scanned MOS Technology 6581 Sound Interface Device preliminary datasheet (Oct 1982) on the Internet Archive — the original SID spec.
+- **URL:** https://archive.org/details/mos_6581_sid_preliminary_october_1982
+- **License:** ✅ Vendor datasheet scan — factual technical content; scan hosted on IA (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download (PDF)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The SID primary source — register map, filter theory, and the famous "preliminary" gaps that explain SID quirks. Pair with the C64 Wiki bug lists. [Wave 47 Lane A]
+
+#### General Instrument AY-3-8910 datasheet ✅ PD-adjacent (vendor doc scan)
+- **What:** Scanned GI AY-3-8910 programmable sound generator datasheet on the Internet Archive.
+- **URL:** https://archive.org/details/General_Instrument_AY-3-8910
+- **License:** ✅ Vendor datasheet scan — factual technical content (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download (PDF)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PSG primary source — the AY/YM2149 family register map behind countless 8-bit sound cores. [Wave 47 Lane A]
+
+#### Yamaha YM2151 technical reference ✅ PD-adjacent (vendor doc scan)
+- **What:** Yamaha YM2151 (OPM) technical reference on the Internet Archive — FM operator layouts, register maps, and timing.
+- **URL:** https://archive.org/details/yamaha-ym2151-technical-reference
+- **License:** ✅ Vendor doc scan — factual technical content (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arcade-FM primary source — the YM2151 drove a generation of arcade boards; pairs with the quarantined jt51 FPGA core. [Wave 47 Lane A]
+
+#### Yamaha YM2203 (OPN) application manual ✅ PD-adjacent (vendor doc scan)
+- **What:** Yamaha OPN YM2203 application manual on the Internet Archive — FM + SSG register documentation with application circuits.
+- **URL:** https://archive.org/details/opn-ym-2203-application-manual
+- **License:** ✅ Vendor doc scan — factual technical content (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PC-88/98 FM primary source — the OPN manual's application circuits show the analog output stage, not just registers. [Wave 47 Lane A]
+
+#### Yamaha YM2608 datasheet (Japanese) ✅ PD-adjacent (vendor doc scan)
+- **What:** YM2608 (OPNA) datasheet, Japanese edition, on the Internet Archive.
+- **URL:** https://archive.org/details/ym-2608-j-1
+- **License:** ✅ Vendor doc scan — factual technical content (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PC-98 FM primary source (Japanese text, register tables are universal) — OPNA's FM+SSG+rhythm layout. [Wave 47 Lane A]
+
+#### Yamaha chip datasheets collection ✅ PD-adjacent (vendor doc scans)
+- **What:** archive.org collection of Yamaha sound-chip datasheets (OPL/OPN/OPM family coverage in one place).
+- **URL:** https://archive.org/details/yamaha-chip-jpn
+- **License:** ✅ Vendor doc scans — factual technical content (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bulk Yamaha lane — covers the YM2612/YM3812/YM2413 gaps where no clean single-item scan surfaced; the OPL2/OPN2 register maps live here. [Wave 47 Lane A]
+
+#### Yamaha YMF262 (OPL3) datasheet ✅ PD-adjacent (vendor doc scan)
+- **What:** Yamaha YMF262M OPL3 FM sound-source datasheet on the Internet Archive.
+- **URL:** https://archive.org/details/ymf-262-m-opl-3-fm-sound-source-datasheet-yamaha
+- **License:** ✅ Vendor doc scan — factual technical content (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS-FM primary source — the OPL3 register map behind the entire DOS game-music era. [Wave 47 Lane A]
+
+#### Sega Genesis software manual + technical bulletins (1989–1990) ✅ PD-adjacent (vendor doc scans)
+- **What:** Official Sega Genesis software manual and technical bulletins on the Internet Archive — 68000/Z80 memory maps, VDP, and the Z80-driven YM2612 audio path.
+- **URL:** https://archive.org/details/genesis-software-and-technical-bulletins-manual
+- **License:** ✅ Vendor doc scans — factual technical content (verified 2026-10-08 via archive.org advancedsearch)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genesis-audio primary source — how Sega told developers to drive the YM2612 via the Z80; the official counterpart to emulator-core behavior. [Wave 47 Lane A]
+
+#### jotego/jt51 🚫 GPL-3.0 — QUARANTINED (new row 419)
+- **What:** jotego/jt51 — FPGA (Verilog) implementation of the Yamaha YM2151 (OPM) FM chip.
+- **URL:** https://github.com/jotego/jt51
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-07-29)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone study; never linked. The cycle reference for YM2151 behavior; pair with the archived YM2151 technical reference above. QUARANTINE row 419. [Wave 47 Lane A]
+
+#### jotego/jt49 🚫 GPL-3.0 — QUARANTINED (new row 420)
+- **What:** jotego/jt49 — FPGA (Verilog) implementation of the AY-3-8910/YM2149 PSG.
+- **URL:** https://github.com/jotego/jt49
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-08-02)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone study; never linked. Pairs with the AY-3-8910 datasheet above. QUARANTINE row 420. [Wave 47 Lane A]
+
+#### jotego/jt6295 🚫 GPL-3.0 — QUARANTINED (new row 421)
+- **What:** jotego/jt6295 — FPGA (Verilog) implementation of the OKI MSM6295 ADPCM voice chip.
+- **URL:** https://github.com/jotego/jt6295
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-08-16)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone study; never linked. The ADPCM reference for arcade voice/sample playback. QUARANTINE row 421. [Wave 47 Lane A]
+
+#### jotego/jtcores (JTFRAME) 🚫 GPL-3.0 — QUARANTINED (new row 422)
+- **What:** jotego/jtcores — JTFRAME arcade-FPGA framework (SDRAM controller, video/audio path, OSD) plus the jt12/jtopl FM core library; the old standalone jotego/jtframe repo now lives here as modules/jtframe.
+- **URL:** https://github.com/jotego/jtcores
+- **License:** 🚫 GPL-3.0 — JTFRAME README: "Whatever you find useful is fine as long as you follow the GPLv3 license" (verified 2026-10-08 via upstream modules/jtframe/README.md)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone study; never linked. The framework behind the jt51/jt49/jt6295 cores. QUARANTINE row 422. [Wave 47 Lane A]
+
+#### Nuked-OPLL 🚫 GPL-2.0 — QUARANTINED (new row 423)
+- **What:** nukeykt/Nuked-OPLL — cycle-accurate Yamaha YM2413 (OPLL) emulator.
+- **URL:** https://github.com/nukeykt/Nuked-OPLL
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2023-01-19)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. The reference-accurate OPLL core; prefer the Yamaha datasheet collection above for shipping-path docs. QUARANTINE row 423. [Wave 47 Lane A]
+
+#### Nuked-PSG 🚫 GPL-2.0 — QUARANTINED (new row 424)
+- **What:** nukeykt/Nuked-PSG — cycle-accurate SN76489-family PSG emulator.
+- **URL:** https://github.com/nukeykt/Nuked-PSG
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2023-04-15)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone tool use; never linked. Reference PSG behavior for Master System/Game Gear audio. QUARANTINE row 424. [Wave 47 Lane A]
+
+#### MiSTer Main 🚫 GPL-3.0 — QUARANTINED (new row 425)
+- **What:** MiSTer-devel/Main_MiSTer — the MiSTer FPGA framework (HPS/IO, OSD, scaler, audio path) that hosts the cycle-accurate console cores.
+- **URL:** https://github.com/MiSTer-devel/Main_MiSTer
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-08, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — never linked. The framework around MiSTer's NES/SNES/Genesis APU cores; study the audio path, don't ship it. QUARANTINE row 425. [Wave 47 Lane A]
+
+#### VerilogBoy 🚫 OHDL-1.0 (MPL-based weak copyleft) — QUARANTINED (new row 426)
+- **What:** zephray/VerilogBoy — open-source Game Boy-compatible console in Verilog RTL (SM83 CPU + Game Boy APU) plus FPGA handheld hardware.
+- **URL:** https://github.com/zephray/VerilogBoy
+- **License:** 🚫 OHDL-1.0 — "Open Hardware Description License Version 1.0 (Based on the MPL 2.0 RC2)" (verified 2026-10-08 via raw LICENSE fetch) — weak copyleft, quarantined per standing weak-copyleft convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone study; never linked. The GB APU RTL is the cycle reference for Game Boy audio. QUARANTINE row 426. [Wave 47 Lane A]
+
+#### Papilio Audio 🚫 GPL-3.0 — QUARANTINED (new row 427)
+- **What:** gadgetfactory/papilio_audio — PlatformIO library driving FPGA SID 6581, YM2149, and POKEY sound-chip emulations on the Papilio Arcade board.
+- **URL:** https://github.com/gadgetfactory/papilio_audio
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via upstream README "License: GPL-3.0"; pushed 2025-12-06, active)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — standalone study; never linked. Three classic chips behind one Wishbone API — useful register-map cross-check. QUARANTINE row 427. [Wave 47 Lane A]

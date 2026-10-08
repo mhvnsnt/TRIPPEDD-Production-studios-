@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 204 rows · 189 distinct projects (rows 201–204 appended Wave 21 Lane D, 2026-10-07; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families — AGPL 26 rows · GPL 155 rows (incl. -or-later/-only variants) · LGPL-2.1 3 rows (154 GPAC, 165 Csound, 184 libgme) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row · GPLv3+/MPLv2+ 0 rows (row 151 delisted) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). LGPL doctrine still pending owner verdict. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
+- **Quarantined (copyleft) — 234 rows · 215 distinct projects (rows 232–234 appended Wave 23 Lane B: spreads AGPL-3.0, spreadpi GPL-2.0, YASW GPL-3.0; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families — AGPL 33 rows · GPL 176 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, +1) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row · GPLv3+/MPLv2+ 0 rows (row 151 delisted) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). LGPL doctrine still pending owner verdict. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
 
 - **Non-commercial / research-only — research lane only, never shipped (Wave-1 list, 17):** Spine (Esoteric Software) (Proprietary commercial (trial = evaluation only)); PureRef (Proprietary; free Personal license (non-commercial)); Wav2Lip (Custom non-commercial (personal/research only)); Coqui XTTS v2 (CPML 1.0 (Coqui Public Model License) on the XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)); Bark (suno-ai) (MIT code BUT README states model is CC-BY 4.0 NC due to EnCodec neural-codec backend (verified via README text quoted in forks)); BBC Sound Effects Archive (RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music press + BBC terms)); Stable Video Diffusion (Stability AI Community License (non-commercial)); LTX-Video (Apache-2.0 (code) + LTX Open Weights / Community License (weights)); HunyuanVideo (Tencent Hunyuan Community License Agreement (custom, verified)); SkyReels-V2 (Skywork Community License (custom, verified)); Pika (free tier) (Pika Terms of Service (proprietary)); Runway (free tier) (Runway Terms of Use (proprietary)); Luma (free tier) (Luma Terms (proprietary)); Hailuo AI / MiniMax (free tier) (MiniMax Terms (proprietary)); Kling AI (free tier) (Kling Terms (proprietary)); Pixverse (free tier) (Pixverse Terms (proprietary)); LTX Studio (free tier) (LTX Studio Terms (proprietary)) Later waves added more NC/research-gated items (not in the original 17 — documented in the wave notes): Spark-TTS + F5-TTS NC weights; IndexTTS (bilibili Model Use License); SUPIR, StableSR, CodeFormer, Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license); PlayHT/PlayAI (shut down 2025-12-31); Dia/VibeVoice (permissive licenses but vendor research-intent terms — see docs/VOICE_COMMERCIAL_USE_WAVE5.md).
 
@@ -23445,3 +23445,968 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
 - **Status:** not-started
 - **Notes:** Listening/reference only. [Wave 22 Lane A]
+
+
+## Wave 23 (2026-10-07) — netlabels, national-library AV, EBU-TT carriage, book scanners, rights vocab, military bands, 78rpm
+
+#### Internet Archive — Netlabels collection ⚠️ directory — per-item CC check
+- **What:** The Internet Archive's own curated "netlabels" collection: 2,014 label sub-collections, 77,007 audio items (counts verified 2026-10-07 via archive.org advancedsearch API). The surviving home of the 2000s netlabel scene — every release carries a per-item `licenseurl` field.
+- **URL:** https://archive.org/details/netlabels
+- **License:** ⚠️ Per-item CC licenses — most items are CC-BY-NC-* (research lane only); filter to `licenseurl` containing `/licenses/by/`, `/publicdomain/zero/`, or `/publicdomain/mark/` for the commercial-safe slice. Check EACH item.
+- **Free tier:** free streaming + downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Discovery layer for all three waves' netlabel audits (W19/W20/W23). Workflow: advancedsearch `collection:netlabels AND mediatype:audio`, read `licenseurl` per item, keep proof. [Wave 23 Lane A]
+
+#### On-Mix (ONMP) ⚠️ mixed — 61 CC-BY items of 240
+- **What:** Dutch e-label (est. 2006, on-mix.com) — non-genre-specific netlabel, 240 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Aon-mix
+- **License:** ⚠️ Mixed — 61 of 240 audio items carry CC-BY licenseurl (44× CC-BY 3.0, 16× CC-BY 3.0 NL, 1× CC-BY 4.0; verified 2026-10-07); the rest are BY-NC*. Sonicsquirrel lists no blanket label license — per-item check mandatory.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Largest clean subset found in this wave's 90-collection sweep. Filter `licenseurl` for `/licenses/by/` (plain BY only, not by-nc). [Wave 23 Lane A]
+
+#### Quantum Bit Netlabel ⚠️ mixed — 26 CC-BY items of 122
+- **What:** Italian electronic netlabel — 122 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Aquantumbit-label
+- **License:** ⚠️ Mixed — 26 of 122 audio items carry CC-BY licenseurl (23× CC-BY 3.0, 2× CC-BY 2.5 IT, 1× CC-BY 4.0; verified 2026-10-07); remainder BY-NC/BY-SA/BY-ND.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use only the plain-BY items; the 43 BY-SA/BY-ND items need per-release review. [Wave 23 Lane A]
+
+#### Toucan Music ⚠️ mixed — 19 CC-BY items of 208
+- **What:** UK eclectic netlabel (Toucan) — 208 releases on archive.org; appeared on a 2017 netlabel podcast tracklist.
+- **URL:** https://archive.org/search?query=collection%3Atoucan
+- **License:** ⚠️ Mixed — 19 of 208 audio items carry CC-BY licenseurl (9× CC-BY 3.0, 7× CC-BY 2.0 UK, 3× CC-BY 2.5; verified 2026-10-07); 124 BY-NC, 63 BY-SA.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 23 Lane A]
+
+#### Vulpiano Records ⚠️ mixed — 17 clean items of 232
+- **What:** Netlabel, 232 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Avulpiano-records
+- **License:** ⚠️ Mixed — 17 of 232 audio items carry CC-BY/CC0 licenseurl (verified 2026-10-07); 208 BY-NC.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Small clean slice of a mostly-NC label — filter, don't browse. [Wave 23 Lane A]
+
+#### ComputerMusicNeix ⚠️ mixed — 15 clean items of 227
+- **What:** Netlabel, 227 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Acomputermusicneix
+- **License:** ⚠️ Mixed — 15 of 227 audio items carry CC-BY licenseurl (verified 2026-10-07); 127 BY-NC, 74 BY-SA.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 23 Lane A]
+
+#### Tales About Nothing ⚠️ mixed — 14 clean items of 356
+- **What:** Netlabel, 356 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Atalesaboutnothing
+- **License:** ⚠️ Mixed — 14 of 356 audio items carry CC0/CC-BY licenseurl (4× CC0 1.0, 10× CC-BY 3.0; verified 2026-10-07); 194 BY-SA, 107 BY-NC.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 23 Lane A]
+
+#### D-Trash Records ⚠️ mixed — 9 CC-BY items of 220
+- **What:** Canadian breakcore/hard-electronic netlabel (D-Trash) — 220 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Ad-trash-records
+- **License:** ⚠️ Mixed — 9 of 220 audio items carry CC-BY licenseurl (5× CC-BY 2.5 CA, 2× CC-BY 4.0, 2× CC-BY 3.0; verified 2026-10-07); 140 BY-NC.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Aggressive electronic styles fit horror/action scoring; verify each item's licenseurl. [Wave 23 Lane A]
+
+#### Rodent Tapes ⚠️ mixed — 16 clean items of 837
+- **What:** Netlabel (Rodent Tapes backstage collection) — 837 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Arodenttapesbackstage
+- **License:** ⚠️ Mixed — 16 of 837 audio items carry CC0/PDM licenseurl (12× PDM 1.0, 3× PDM 1.0 http, 1× CC0; verified 2026-10-07); 787 BY-NC.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 23 Lane A]
+
+#### nowaytwowayout ⚠️ mixed — 16 clean items of 532
+- **What:** Netlabel, 532 releases on archive.org.
+- **URL:** https://archive.org/search?query=collection%3Anowaytwowayout
+- **License:** ⚠️ Mixed — 16 of 532 audio items carry CC-BY licenseurl (verified 2026-10-07); 509 BY-NC.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 23 Lane A]
+
+#### Southern City's Lab ⚠️ mixed — 10 clean items of 214
+- **What:** Russian DIY netlabel (est. 2012) — indie rock, garage, punk, IDM, sound art; 214 releases on archive.org; Bandcamp page claims "a Creative Commons license" with variant unpinned.
+- **URL:** https://archive.org/search?query=collection%3Asouthern-citys-lab
+- **License:** ⚠️ Mixed — 10 of 214 audio items carry CC-BY/CC0 licenseurl (verified 2026-10-07); 197 BY-NC. Label-level variant never pinned → per-item check mandatory.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Secondary sources (Paperblog) confirm CC but not the variant — the IA metadata is the only pinned evidence. [Wave 23 Lane A]
+
+#### Opsound (archived pool) ✅ CC BY-SA — gift-economy sound pool
+- **What:** Sal Randolph's pioneering free-culture music pool (2002–; site now defunct) — uncurated CC sound pool; works hosted by contributors, indexed centrally, many mirrored into the IA netlabels collection.
+- **URL:** https://archive.org/details/netlabels (surviving files via the IA netlabels collection)
+- **License:** ✅ CC BY-SA (typically 2.5; some plain CC-BY) — documented on Creative Commons' own feature page on Opsound ("licensed under a Creative Commons Attribution Share-Alike license… people can use freely — even for commerce"), 2026-10-07.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Label site dead — source the actual files from IA mirrors and keep the licenseurl proof. Share-alike applies to adaptations synced to picture (CC BY-SA adaptation rule) — fine for score beds, flag for trailer use. [Wave 23 Lane A]
+
+#### Shtooka Project ⚠️ CC-licensed spoken-word collections
+- **What:** Cooperative project (Nicolas Vion) building free audio collections of words/expressions/proverbs spoken by native speakers — 75,000+ recordings across 15+ languages (French, Russian, Ukrainian, English, Dutch, Czech, Chinese, German…); feeds the Tatoeba/Lingua Libre ecosystem.
+- **URL:** https://wiki.creativecommons.org/index.php?title=Shtooka_Project_-_free_audio_collections_of_words (CC directory listing; collections at shtooka.net)
+- **License:** ⚠️ Listed in Creative Commons' own content directory as a CC-licensed sound portal; French Wikipedia describes the collections as released "sous licence libre" — variant varies by collection, confirm per collection before use.
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (dialogue/VO reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pronunciation/VO reference goldmine for multilingual dialogue; not music — do not file under score. [Wave 23 Lane A]
+
+---
+
+#### Europeana Sounds / Europeana Music / Europeana Radio ⚠️ per-item rights
+- **What:** The Europeana Sounds aggregation: 600,000+ audio files from 24 European institutions (12 countries; incl. the British Library, BnF, DNB/Deutsches Musikarchiv, National Library of Latvia, CNRS sound archives) — music, spoken word, environment recordings, radio programmes, sound effects; plus the Europeana Music thematic portal and Europeana Radio (200,000-track shuffle).
+- **URL:** https://www.europeana.eu/en (project results: https://www.dnb.de/EN/Professionell/ProjekteKooperationen/Projektarchiv/2017/europeanaSounds/europeanaSounds_node.html)
+- **License:** ⚠️ Per-item rights via Europeana's "Can I use it?" filter (CC0/CC-BY/PDM/rightsstatements.org) — verified 2026-10-07 via DNB's project page. Much of the corpus is in-copyright; filter to open licences only.
+- **Free tier:** free streaming
+- **Repo lane:** trippedd (music/sfx)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** This is the open-AV face of the DNB Deutsches Musikarchiv (which has no public digital reuse itself — see negatives). CNRS contributed 38,000 sounds, mostly pre-1963 for free access. [Wave 23 Lane A]
+
+#### National Diet Library (Japan) — Historical Recordings Collection (Rekion) ⚠️ expired-copyright subset
+- **What:** NDL's Historical Recordings Collection: ~50,000 early Japanese 78rpm/metal-disc recordings (c. 1900–1950) — traditional Japanese music, folk, rakugo, kabuki, classical, opera, popular music, speeches.
+- **URL:** https://dl.ndl.go.jp/ (collection announcement: https://www.ndl.go.jp/en/news/ — Rekion; NDL Newsletter No.192)
+- **License:** ⚠️ The NDL itself flags "recordings with expired copyright" as the internet-available subset (~1,090+ items per NDL Newsletter 192; ~2,400 streaming online per NDL announcement Dec 2017, verified 2026-10-07 via infodocket quoting NDL) — the rest is on-premises/partner-library only.
+- **Free tier:** free streaming (expired-copyright subset)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NDL bibliographic open datasets include the Rekion metadata — machine-filterable. Period Japanese scoring material unavailable anywhere else. [Wave 23 Lane A]
+
+#### Gallica (BnF) — documents sonores ⚠️ per-item "Droits"
+- **What:** The audio layer of Gallica: 52,004 audio recordings (2024 count) — early French speech (incl. the 1911 Archives de la parole), historical recordings, radio.
+- **URL:** https://gallica.bnf.fr/ (filter: type de document "Enregistrement sonore"; conditions: https://www.bnf.fr/fr/conditions-dutilisation-de-gallica)
+- **License:** ⚠️ Per-item "Droits" field. Verified 2026-10-07: Europeana PRO states Gallica materials are "royalty-free and available free of charge when used strictly for private purpose"; Wave-20 verification stands — commercial reuse of even PD-marked items needs a BnF agreement. Check the item's rights statement, then the CGU.
+- **Free tier:** free streaming
+- **Repo lane:** trippedd (music/sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Companion to the existing general Gallica entry — this is the audio-specific rights lane. BnF sound archive holds 1M+ recordings total; only the digitized Gallica subset is online. [Wave 23 Lane A]
+
+#### Library and Archives Canada — Virtual Gramophone ⚠️ per-item copyright
+- **What:** LAC's discography of Canadian 78rpm recordings (c. 1900–1950s) — early Canadian music, speeches, humour; full label transcriptions per record.
+- **URL:** https://www.bac-lac.gc.ca/eng/discover/films-videos-sound-recordings/virtual-gramophone/
+- **License:** ⚠️ Per item — LAC transcribes each record's label rights notice; no blanket reuse grant. Verified 2026-10-07: pre-1955 Canadian sound recordings are commonly public domain under Canadian rules (LAC public-domain guidelines), but donor/label restrictions can still apply — confirm on the item page.
+- **Free tier:** free streaming/reference
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strongest North-American PD-78rpm lane after the IA Great 78 quarantine. [Wave 23 Lane A]
+
+#### National Library of Australia — Oral History and Folklore collection ⚠️ per-item access conditions
+- **What:** NLA's OH&F collection — Australia's most significant oral-history interview and folklore field-recording program (incl. extensive musician interviews); 1,000+ recordings delivered online with timed summaries/transcripts.
+- **URL:** https://www.library.gov.au/services/copyright-library-collections/rights-and-oral-history-and-folklore-collection (rights page)
+- **License:** ⚠️ Per-item access conditions set by interviewees (verified 2026-10-07 on NLA's own rights page): tiers range from "open for research, personal copies and public use" (usable) to "written permission required for public use" (clearance needed). Check each record's access statement.
+- **Free tier:** free streaming (open tier)
+- **Repo lane:** trippedd (dialogue/VO reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Companion to the existing Trove entry — this is the audio-oral-history rights lane. Published sound recordings: 70 years from publication (AU). [Wave 23 Lane A]
+
+#### National Library of Israel — National Sound Archive ⚠️ per-item "Possible uses"
+- **What:** The NLI Music Department's National Sound Archive — the world's largest collection of ethnographic and commercial recordings of Israeli and Jewish music (records, CDs, tapes; half commercial via legal deposit/purchase, half field/interview/Kol Yisrael recordings).
+- **URL:** https://www.nli.org.il/en/at-your-service/who-we-are/collections/music-collection (usage FAQ: https://www.nli.org.il/en/at-your-service/reference/online-access)
+- **License:** ⚠️ Per item — NLI's own FAQ (verified 2026-10-07): "The NLI does not own the copyright of the items in its collections… On each item's information page you will find a section labeled 'Possible uses'" — check it per item.
+- **Free tier:** free streaming (where permitted)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** [Wave 23 Lane A]
+
+#### Österreichische Mediathek ⚠️ reference archive — per-recording rights
+- **What:** Austria's national audio/video archive (shellac, vinyl, tapes, DAT, CDs, video; incl. the Günther Schifter inter-war shellac collection, post-war Rot-Weiß-Rot radio, Burgtheater premieres from 1955) — online portals incl. "Österreich am Wort" (9,000+ recordings).
+- **URL:** https://www.mediathek.at/ (Austrian National Library use terms: https://www.onb.ac.at/en/use)
+- **License:** ⚠️ Reference archive — no blanket reuse. Verified 2026-10-07: ONB's use page states ONB asserts no copyright of its own over online content but "the user must clarify any existing third-party rights to the content individually before any subsequent use."
+- **Free tier:** free streaming
+- **Repo lane:** trippedd (music/sfx)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial reuse = individual clearance per recording. [Wave 23 Lane A]
+
+#### Swiss National Sound Archives (Fonoteca) ⚠️ streaming open, reuse licensed
+- **What:** The sound archive of Switzerland — a section of the Swiss National Library; 500,000+ sound carriers (classical, rock, jazz, folk, spoken word, field recordings, interviews).
+- **URL:** https://www.fonoteca.ch/
+- **License:** ⚠️ Verified 2026-10-07: online catalogue searchable and recordings listenable via the website / ~50 AV stations; copying "possible for private purposes against payment and on request also for professional purposes" — i.e. reuse is paid/permission-based, not open.
+- **Free tier:** free streaming
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference value high, reuse cost non-zero — budget for licensing if sampled. [Wave 23 Lane A]
+
+#### BAnQ numérique ⚠️ CC/PD license badges per item
+- **What:** The digital portal of Bibliothèque et Archives nationales du Québec (Quebec's national library + archives) — 3M+ digitized documents; legal deposit covers sound recordings since 1992.
+- **URL:** https://numerique.banq.qc.ca/
+- **License:** ⚠️ Per-item badges — verified 2026-10-07: since spring 2019 BAnQ marks works with Creative Commons / public-domain badges (100,000 documents released into the public domain); filter by the item's licence badge.
+- **Free tier:** free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Francophone-North-American counterpart to Gallica's rights regime. [Wave 23 Lane A]
+
+#### Memobase (Memoriav) ⚠️ per-item rights
+- **What:** Switzerland's national AV-heritage network portal — aggregates AV metadata from 67 Swiss institutions (incl. the Swiss National Sound Archives, Cinémathèque suisse).
+- **URL:** https://memobase.ch/
+- **License:** ⚠️ Per-item rights — verified 2026-10-07: Swiss Federal Archives notes that publishing or commercially using held AV records requires a permit; rights vary by contributing institution — check per item.
+- **Free tier:** free discovery/streaming
+- **Repo lane:** trippedd (music/sfx)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Discovery layer, not a rights grant — pair with the Fonoteca entry. [Wave 23 Lane A]
+
+---
+
+#### EBU Tech 3370s1 — EBU-TT Part 3 carriage over WebSocket ✅ free reference doc + LIVE SMOKE TEST PASSED
+- **What:** The supplement to Tech 3370 that defines the WebSocket carriage mechanism for EBU-TT Live document sequences between processing nodes (node→node transfer, `{sequence_identifier}/{action}` path format with `publish`/`subscribe` actions, HTTP-upgrade/TLS-friendly TCP).
+- **URL:** https://tech.ebu.ch/publications/tech3370s1 (spec page; free PDF download — verified live 2026-10-07)
+- **License:** ✅ Free reference doc (EBU copyright; free PDF download — cite, don't redistribute). Verified 2026-10-07: page resolves and states "carriage of EBU‑TT Part 3 over WebSocket is specified in EBU Tech 3370s1" (cross-confirmed on the Tech 3370 page).
+- **Free tier:** N/A (spec document)
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** smoke-tested (see proof)
+- **Notes:** **REAL SMOKE TEST EXECUTED 2026-10-07 — PASSED.** Installed `bbc/ebu-tt-live-toolkit` @ ce813b3 in a venv (ebu-tt-live 3.0.3, Python 3.12, twisted 23.10.0, autobahn 20.12.3); generated the pyxb bindings per the repo Makefile; ran `ws_smoke_producer.py` (Twisted `BroadcastServerFactory` + `TwistedWSPushProducer` + `WebsocketProducerCarriage` on 127.0.0.1:9000) against `ws_smoke_consumer.py` (`BroadcastClientFactory` + `TwistedWSConsumer` + `WebsocketConsumerCarriage` at `ws://localhost:9000/SmokeTest1/subscribe`). Result: **4/4 documents received, all `sequence_identifier="SmokeTest1"`, sequence numbers [4,5,6,7] monotonic and unique**, ~4.2 KB of real EBU-TT Live XML each (`<tt:tt … ebuttp:sequenceIdentifier="SmokeTest1" ebuttp:sequenceNumber="4" …`), parsed by the toolkit's own XML→document adapter. Proof: `docs/wave23/proof/ws_smoke_producer.py`, `docs/wave23/proof/ws_smoke_consumer.py`, `docs/wave23/proof/received.json`, `docs/wave23/proof/SMOKE_RESULT.txt`, `docs/wave23/proof/consumer_smoke.log`. **Genuine upstream bug found during the test:** the toolkit hands `str` payloads to autobahn's `sendMessage()`, which asserts `bytes` on autobahn ≥ 20.x (`AssertionError: "payload" must have type bytes`) — the WebSocket send path is broken out-of-the-box on modern autobahn. The harness works around it with UTF-8 encode/decode at the test edges; the toolkit itself was not patched. Also hit and documented: `setuptools≥81` removed `pkg_resources` (pinned `setuptools<81`), and the installed wheel misses `pyproject.toml` that `ebu_tt_live/project.py` reads at import (copied in for the test). [Wave 23 Lane B]
+
+#### bbc/ebu-tt-live-toolkit — actively maintained BBC fork ✅ commercial-safe
+- **What:** The BBC's fork of the EBU-TT Live interoperability toolkit — the Python reference implementation of Tech 3370 (nodes, carriages incl. WebSocket, IMSC HRM validator, `ebu-dummy-encoder` / `ebu-simple-producer` / `ebu-simple-consumer` scripts). This fork, not the ebu-org original, is where current development happens (pushed 2026-10-07; the ebu/ original last pushed 2023).
+- **URL:** https://github.com/bbc/ebu-tt-live-toolkit
+- **License:** ✅ BSD-3-Clause (verified 2026-10-07 via GitHub API `spdx_id`; fork of ebu/ebu-tt-live-toolkit which carries the same license)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** smoke-tested (this is the codebase the passing smoke test ran against)
+- **Notes:** Distinct from the Wave-17 entry (ebu/ebu-tt-live-toolkit) — different repo, active maintenance, IMSC HRM validator additions. Install caveats documented in the Tech 3370s1 entry (bindings generation, setuptools pin, autobahn bytes bug). [Wave 23 Lane B]
+
+#### ETSI TS 102 796 — HbbTV: EBU-TT-D subtitle carriage ✅ free reference doc
+- **What:** The HbbTV specification's subtitle clause (§7.3.1.5): terminals must render EBU-TT-D documents (UTF-8, ≤8 concurrent regions), in-band carriage with MPEG DASH per the DVB DASH spec and ISOBMFF per EBU Tech 3381, plus mandatory out-of-band carriage as a single XML document over HTTP (≤512 kByte). The distribution-side counterpart to the Live (contribution-side) carriage work above.
+- **URL:** https://www.etsi.org/deliver/etsi_ts/102700_102799/102796/01.04.01_60/ts_102796v010401p.pdf (free ETSI download — verified 2026-10-07)
+- **License:** ✅ Free reference doc (ETSI specs are free to download; ETSI copyright — cite, don't redistribute)
+- **Free tier:** N/A (spec document)
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Relevant if episodes ever ship HbbTV/broadcast-style caption tracks: this is the normative receiver contract for EBU-TT-D. Zero catalog hits for HbbTV/102796 before this wave. [Wave 23 Lane B]
+
+#### EBU Tech 3381 — Carriage of EBU-TT-D in ISOBMFF ✅ free reference doc
+- **What:** EBU spec (v1.0, Oct 2014) defining how EBU-TT-D distribution documents are stored/carried in ISO Base Media File Format (ISO/IEC 14496-12) — the file-carriage companion to the live WebSocket carriage, referenced normatively by HbbTV/TS 102 796 for downloaded content.
+- **URL:** https://tech.ebu.ch/publications/tech3381 (spec page; free PDF download — verified live 2026-10-07)
+- **License:** ✅ Free reference doc (EBU copyright; free PDF download — cite, don't redistribute)
+- **Free tier:** N/A (spec document)
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Completes the EBU-TT-D carriage picture alongside Tech 3370s1 (live/WebSocket) and TS 102 796 (HbbTV/DASH). Zero catalog hits before this wave. [Wave 23 Lane B]
+
+#### w3c/tt-module-live — W3C TTML Live draft (incl. WebSocket carriage text) ❓ no license assertion
+- **What:** The W3C Timed Text Working Group's TTML Live draft, derived from EBU Tech 3370/3370s1: re-bases the live-document semantics on TTML1 and carries a full WebSocket carriage specification section plus a documented delta file (`w3c-submission-changes.md`) explaining every change vs Tech 3370s1. Dormant since ~2021 (8 open issues) — useful as a second normative-leaning description of the WebSocket carriage.
+- **URL:** https://github.com/w3c/tt-module-live
+- **License:** ❓ GitHub API returns `spdx_id: NOASSERTION` (no license file in repo; verified 2026-10-07). The spec text is a W3C-group draft (read/reference as with other W3C drafts), but there is no code-license grant — do not lift code from it without checking.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (captions/EBU-TT)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Read-only reference value: the `w3c-submission-changes.md` delta is the clearest public explanation of what Tech 3370s1's WebSocket carriage requires. Not a live project — monitor only. [Wave 23 Lane B]
+
+---
+
+#### DIY Book Scanner Archivist ("Standard") — Public Domain ✅
+- **What:** Daniel Reetz's V-shaped-platen DIY book scanner: the canonical open book-scanner design (lighting/cameras/book rig, counterweighted removable cradle, ~1,000 pages/hour for a skilled operator, 12×15″ scan area, ~300 DPI with 16MP cameras). Six years of design rationale published as a 22,000-word build site.
+- **URL:** https://diybookscanner.org/archivist/ (plans + rationale)
+- **License:** ✅ Public Domain — the author's own write-up states "this scanner is Public Domain" and "Open Hardware frame (now Public Domain) and completely Open Source control system based on the Raspberry Pi computer" (verified 2026-10-07 on diybookscanner.org/archivist). Note the Hackaday-cited rationale: Reetz deliberately chose public domain over open-hardware licenses (which he considered unenforceable for hardware).
+- **Free tier:** free plans; build cost is parts (~$300 for the original trash-build)
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5 (physical build)
+- **Status:** not-started
+- **Notes:** The reference design everything else in this pocket descends from. Community support: the diybookscanner.org forum (tens of thousands of posts). [Wave 23 Lane B]
+
+#### pi-scan (Tenrec Builders) — Raspberry Pi capture appliance ✅ commercial-safe
+- **What:** "Pi Scan is a simple, robust capture appliance for book scanners. It runs on a Raspberry Pi 2." — the kiosk software that configures CHDK cameras, triggers captures, and saves scans to USB/SD. The recommended controller software for the Archivist Quill.
+- **URL:** https://github.com/Tenrec-Builders/pi-scan
+- **License:** ✅ BSD-2-Clause (verified 2026-10-07 via GitHub API `spdx_id`)
+- **Free tier:** N/A (self-hosted)
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive license, still watched upstream (updated 2026-08). Pairs with the Quill hardware below. [Wave 23 Lane B]
+
+#### Voussoir (jglev/voussoir; upstream ytsutano/bookscan) — single-camera de-keystoning ✅ commercial-safe
+- **What:** Automatic de-keystoning for single-camera DIY book scanners: detects glyphs pasted in page corners, digitally flattens pages, auto-splits spreads into cropped page images. Suggested workflow: voussoir → darktable → ScanTailor.
+- **URL:** https://github.com/jglev/voussoir (fork; canonical upstream https://github.com/ytsutano/bookscan)
+- **License:** ✅ ISC (verified 2026-10-07 via GitHub API `spdx_id` on both the jglev fork and the ytsutano upstream — both ISC)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** C++, archived upstream (jglev fork archived; ytsutano upstream dormant since 2016) but the license is clean and the tool fills the single-camera niche the dual-camera Archivist designs don't. [Wave 23 Lane B]
+
+#### awesome-scanning (ad-si) — curated scanning-resource list ✅ commercial-safe
+- **What:** Curated list of paper/document/book scanning projects: devices (Archivist, Linear Book Scanner, Arduino auto-scanner), apps (ScanTailor, YASW, Voussoir…), libraries, dewarping research, and the Ishikawa Watanabe high-speed digitization lab links. The discovery index for this whole pocket.
+- **URL:** https://github.com/ad-si/awesome-scanning
+- **License:** ✅ ISC (verified 2026-10-07 via GitHub API `spdx_id`)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization/research)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-item licenses still need checking (the list itself flags commercial vs open-source) — several entries below were verified starting from this list. [Wave 23 Lane B]
+
+#### Linear Book Scanner (Google / Dany Qumsiyeh) — vacuum page-turning automatic scanner ⚠️ open-source claim, patent caveat
+- **What:** The Google 20%-project automatic book scanner: a book glides over linear imaging sensors while vacuum suction turns pages — ~1,000 pages in ~90 minutes, ~$1,500 in parts, non-destructive to spines.
+- **URL:** https://linearbookscanner.org ("The design is open-source, so anyone can build one." — verified 2026-10-07)
+- **License:** ⚠️ "Open-source" per the project site and contemporary press (2012), but **no specific open-hardware license text** (no CERN OHL/TAPR/CC statement) was found on linearbookscanner.org — and the design is covered by **US Patent 8,711,448** ("Linear book scanner", Google Inc./Dany Qumsiyeh, issued 2014-04-29; verified via patent records). Whether Google granted a patent license alongside the "open source" release is unverified. Treat as research-only until the patent position is clarified.
+- **Free tier:** free plans (site); ~$1,500 parts
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5 (complex electromechanical build)
+- **Status:** not-started
+- **Notes:** The patent is the trap: "open source" without a patent grant is not a safe build license. Do not build commercially without clearance. [Wave 23 Lane B]
+
+#### Archivist Quill (Tenrec Builders) — aluminum-frame Archivist successor ❓ no license statement found
+- **What:** The Archivist's successor design by Jonathon Duerig / Tenrec Builders: aluminum-extrusion + steel/plastic frame (lighter/cheaper than the plywood Archivist), 1300×825×580 mm, 18 kg, up to 300×400 mm pages, ~1,000+ pages/hour, Raspberry Pi + Pi Scan controller, CHDK cameras. Free plans + full assembly guide published.
+- **URL:** http://tenrec.builders/quill/guide/ (guide); plans via https://diybookscanner.org/forum/viewtopic.php?f=28&t=2593 (forum thread)
+- **License:** ❓ No license statement found on the guide site or forum plans post (checked 2026-10-07) — "free plans" is not an open-hardware license. Designed by Jonathon Duerig and Tenrec Builders (a commercial kit vendor; kits discontinued). Treat as all-rights-reserved until a license is stated.
+- **Free tier:** free plans download; parts extra
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5 (physical build)
+- **Status:** not-started
+- **Notes:** Functionally the best-documented buildable design, but the license gap blocks commercial builds. The Pi Scan controller software (above) IS BSD-2-Clause — only the frame design is unverified. [Wave 23 Lane B]
+
+#### Book Scan Wizard — camera-scan post-processor ❓ no license text located
+- **What:** Steve Devore's Java post-processor for camera-based book scanning: crop/rotate/de-keystone/DPI correction, color/lighting correction, batch-apply to page sets, direct upload to the Internet Archive (OCR → searchable PDF/ePub handled IA-side). The classic DIY-bookscanner pipeline tool.
+- **URL:** https://sourceforge.net/projects/bookscanwizard/
+- **License:** ❓ Described as "open-source software" by the Internet Archive (blog.archive.org, 2011), but **no license text was locatable**: the SourceForge project page shows no license field, and the SourceForge code browser returned HTTP 403 on 2026-10-07 (not retried per access policy). Read the license inside the distribution before wiring.
+- **Free tier:** free download
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Old (Java 7/8 era, last releases ~2015) — expect bit-rot on modern JDKs. License verification is the blocker, not the age. [Wave 23 Lane B]
+
+#### diybookscanner.org forum — the book-scanning community knowledge base ❓ reference only
+- **What:** The DIY Book Scanner community forum: tens of thousands of build posts — Archivist/Quill build logs, camera/CHDK notes, lighting discussions, plan mirrors (Quill DXFs, TIFLIC builds), troubleshooting. The living companion to the static plan sites.
+- **URL:** https://diybookscanner.org/forum/
+- **License:** ❓ Community-contributed content, no site-wide license statement found — reference/reading only; don't republish build content without checking per-post terms.
+- **Free tier:** free to read
+- **Repo lane:** trippedd (digitization/research)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Where the Quill plans actually live (forum thread t=2593) — the canonical plan host, not tenrec.builders. [Wave 23 Lane B]
+
+#### DIYBookScanner/spreads — modular book-digitization workflow assistant 🚫 AGPL-3.0 — QUARANTINED
+- **What:** "Modular workflow assistant for book digitization" — capture, post-processing, and output pipeline for DIY scanners (the software side of the DIYBookScanner org).
+- **URL:** https://github.com/DIYBookScanner/spreads (canonical org repo; jbaiter/spreads is an archived fork of it)
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-07 via GitHub API `spdx_id` on both the org repo and the fork)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** quarantined (AGPL code — research lane only, never wired into shipping paths, per docs/LICENSE_QUARANTINE.md)
+- **Notes:** Dormant since 2016. AGPL means even network use triggers source-sharing — quarantine stands regardless of dormancy. [Wave 23 Lane B]
+
+#### DIYBookScanner/spreadpi — Raspberry Pi scanner-control image 🚫 GPL-2.0 — QUARANTINED
+- **What:** "Raspberry Pi image for controlling a DIYBookScanner via spreads" — the Pi-side control system the Archivist write-up calls "completely Open Source".
+- **URL:** https://github.com/DIYBookScanner/spreadpi
+- **License:** 🚫 GPL-2.0 (verified 2026-10-07 via GitHub API `spdx_id`)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** quarantined (GPL code — research lane only, never wired into shipping paths, per docs/LICENSE_QUARANTINE.md)
+- **Notes:** Dormant since 2015. The permissive pi-scan (BSD-2-Clause, above) is the safe substitute for Pi-based capture control. [Wave 23 Lane B]
+
+#### ScanTailor Advanced (4lex4) — scan post-processing workhorse 🚫 GPL-3.0 — QUARANTINED
+- **What:** The maintained ScanTailor fork (merges Featured + Enhanced forks, adds fixes): dewarping, page splitting, deskew, margins, binarization/thresholding, DjVu/PDF output — the standard post-processing stage after camera capture.
+- **URL:** https://github.com/4lex4/scantailor-advanced
+- **License:** 🚫 GPL-3.0 (verified 2026-10-07 via GitHub API `spdx_id`)
+- **Free tier:** N/A (desktop app)
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** quarantined (GPL code — research lane only as a linked library; standalone desktop use does not infect the pipeline, per the quarantine doctrine)
+- **Notes:** The most genuinely useful tool in this pocket for scan cleanup — usable as a standalone desktop step, never as an imported library. Upstream scantailor.org release is likewise GPL. [Wave 23 Lane B]
+
+#### YASW (Yet Another Scan Wizard) — camera-image corrector 🚫 GPLv3 — QUARANTINED
+- **What:** Qt/C++ post-processor for camera-captured pages: keystone/perspective correction, cropping, batch-apply across page series, tuned for archive.org's de-warped/cropped/color upload requirements.
+- **URL:** https://sourceforge.net/projects/yascanw/
+- **License:** 🚫 "GNU General Public License version 3.0 (GPLv3)" (verified 2026-10-07 on the SourceForge project page's License field)
+- **Free tier:** free download (Linux/Windows/BSD)
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** quarantined (GPL code — research lane only, per docs/LICENSE_QUARANTINE.md)
+- **Notes:** Beta status, last updated years ago. ScanTailor Advanced (above) supersedes it functionally. [Wave 23 Lane B]
+
+#### Internet Archive Scribe — honest negative 🚫 proprietary hardware, not open
+- **What:** The Internet Archive's internally-developed V-shaped book scanner (dual cameras, foot-pedal glass platen, ~500 pages/hour) and its "Table Top Scribe" product.
+- **URL:** https://blog.archive.org/2015/10/22/special-book-collections-come-online-with-the-table-top-scribe/ (product announcement)
+- **License:** 🚫 Proprietary — internally developed (AIP Engineering), sold commercially as the Table Top Scribe ($9,999 base model, verified via the IA blog). An old SourceForge project (`scribesw`) once hosted related software, but the hardware was never released under an open-hardware license.
+- **Free tier:** N/A (commercial product)
+- **Repo lane:** trippedd (digitization)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started (excluded — documented as a negative so nobody re-researches it)
+- **Notes:** Included as an honest negative: the pocket asked for open-hardware scanners, and the Scribe — despite the "Scribe" name appearing in open-culture contexts — is proprietary hardware. [Wave 23 Lane B]
+
+---
+
+#### RightsStatements.org — standardized rights statements for cultural heritage ✅ free to reference
+- **What:** The standardized rights-statement vocabulary for cultural heritage institutions: 12 statements (5 In Copyright, 4 No Copyright, 3 Other) as persistent dereferenceable URIs (`http://rightsstatements.org/vocab/{CODE}/1.0/`), published as linked data (SKOS, JSON-LD/Turtle via content negotiation), designed for `dc:rights` / `edm:rights`. Supported by DPLA and Europeana. Stewardship moved to Digital Scholar (the nonprofit behind Zotero and Omeka) — announced on the homepage (verified 2026-10-07).
+- **URL:** https://rightsstatements.org/en/ ; vocabulary index http://rightsstatements.org/vocab/1.0/
+- **License:** ✅ Free to reference — the machine-readable data model is CC0-1.0 (verified 2026-10-07 via GitHub API on rightsstatements/data-model). The statements are high-level summaries, not licenses: the site's own documentation says to use Creative Commons tools for licensing your own creations.
+- **Free tier:** N/A (vocabulary)
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** This is the filtering mechanism for every archive pull: per-item `edm:rights`/`dc:rights` URIs are the authority Wave 16's "public archive ≠ public domain" lesson points to. The 12 statements follow as individual entries. [Wave 23 Lane B]
+
+#### In Copyright (InC) — http://rightsstatements.org/vocab/InC/1.0/ ✅
+- **What:** "This Rights Statement can be used for an Item that is in copyright" — the institution has determined the item is in copyright and either holds rights, has permission, or relies on an exception/limitation (e.g. fair use).
+- **URL:** http://rightsstatements.org/vocab/InC/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** InC items are NOT reusable without permission — this URI is the "do not pull" signal. [Wave 23 Lane B]
+
+#### In Copyright – EU Orphan Work (InC-OW-EU) — http://rightsstatements.org/vocab/InC-OW-EU/1.0/ ✅
+- **What:** For works identified as Orphan Works under EU Directive 2012/28/EU (books, journals, audiovisual — excludes photography/visual arts), applied only by beneficiary institutions registered in the EUIPO orphan-works database.
+- **URL:** http://rightsstatements.org/vocab/InC-OW-EU/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** EU-only permitted uses; not a US-usable orphan-work category. [Wave 23 Lane B]
+
+#### In Copyright – Educational Use Permitted (InC-EDU) — http://rightsstatements.org/vocab/InC-EDU/1.0/ ✅
+- **What:** In-copyright items the rights-holding institution makes available for educational reuse.
+- **URL:** http://rightsstatements.org/vocab/InC-EDU/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Educational-use permission ≠ commercial production use — "permitted" is scoped. [Wave 23 Lane B]
+
+#### In Copyright – Non-Commercial Use Permitted (InC-NC) — http://rightsstatements.org/vocab/InC-NC/1.0/ ✅
+- **What:** In-copyright items the rights-holder makes available for non-commercial reuse.
+- **URL:** http://rightsstatements.org/vocab/InC-NC/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC-scoped — commercial series production cannot rely on it. [Wave 23 Lane B]
+
+#### In Copyright – Rights-holder(s) Unlocatable or Unidentifiable (InC-RUU) — http://rightsstatements.org/vocab/InC-RUU/1.0/ ✅
+- **What:** In-copyright items where no rights-holder could be identified/located after reasonable investigation (non-EU; EU orphan works must use InC-OW-EU).
+- **URL:** http://rightsstatements.org/vocab/InC-RUU/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Unlocatable" ≠ public domain — reuse risk stays with the reuser. [Wave 23 Lane B]
+
+#### No Copyright – Contractual Restrictions (NoC-CR) — http://rightsstatements.org/vocab/NoC-CR/1.0/ ✅
+- **What:** Public-domain items the institution contractually must restrict (e.g. donor agreements); the institution should link the specific restrictions.
+- **URL:** http://rightsstatements.org/vocab/NoC-CR/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD underlying work, but the contract binds the institution's copy — check the linked restrictions before pulling. [Wave 23 Lane B]
+
+#### No Copyright – Non-Commercial Use Only (NoC-NC) — http://rightsstatements.org/vocab/NoC-NC/1.0/ ✅
+- **What:** Public-domain works digitized in public-private partnerships (built for the European Libraries/Google partnerships) where partners agreed to limit third-party commercial use of the digital surrogate.
+- **URL:** http://rightsstatements.org/vocab/NoC-NC/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The underlying work is PD, but this statement's NC term governs the surrogate most archives actually serve. [Wave 23 Lane B]
+
+#### No Copyright – Other Known Legal Restrictions (NoC-OKLR) — http://rightsstatements.org/vocab/NoC-OKLR/1.0/ ✅
+- **What:** PD items blocked from free reuse by non-copyright law (cultural-heritage protections, traditional cultural expression, etc.); institution should link the restrictions.
+- **URL:** http://rightsstatements.org/vocab/NoC-OKLR/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Seen in the wild on Europeana (their Tier-C example record uses exactly this URI in `edm:rights`). [Wave 23 Lane B]
+
+#### No Copyright – United States (NoC-US) — http://rightsstatements.org/vocab/NoC-US/1.0/ ✅
+- **What:** Items the institution has determined are free of copyright under US law (not for orphan works; requires an actual status effort).
+- **URL:** http://rightsstatements.org/vocab/NoC-US/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The primary "safe to pull" signal for US federal-adjacent and pre-1931 materials in DPLA/Europeana feeds. [Wave 23 Lane B]
+
+#### Copyright Not Evaluated (CNE) — http://rightsstatements.org/vocab/CNE/1.0/ ✅
+- **What:** Copyright status has not been evaluated — no determination made.
+- **URL:** http://rightsstatements.org/vocab/CNE/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Unknown = not safe. Treat CNE items as unpullable until evaluated. [Wave 23 Lane B]
+
+#### Copyright Undetermined (UND) — http://rightsstatements.org/vocab/UND/1.0/ ✅
+- **What:** Status unknown after an unsuccessful effort to determine it (key facts missing).
+- **URL:** http://rightsstatements.org/vocab/UND/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** As with CNE: undetermined means do not pull. [Wave 23 Lane B]
+
+#### No Known Copyright (NKC) — http://rightsstatements.org/vocab/NKC/1.0/ ✅
+- **What:** Status not conclusively determined, but the institution has reasonable cause to believe copyright no longer applies.
+- **URL:** http://rightsstatements.org/vocab/NKC/1.0/
+- **License:** ✅ Vocabulary term, free to reference (data model CC0-1.0)
+- **Repo lane:** trippedd (provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Weaker than NoC-US (belief, not determination) — pull only with per-item judgment. [Wave 23 Lane B]
+
+#### rightsstatements.org data model (JSON-LD / Turtle) — CC0-1.0 ✅ commercial-safe
+- **What:** The machine-readable vocabulary itself: SKOS concept scheme with all 12 statements, served as JSON-LD/Turtle/RDF via content negotiation at the statement URIs; source in the `rightsstatements/data-model` GitHub org (includes the technical-infrastructure white papers).
+- **URL:** https://github.com/rightsstatements/data-model
+- **License:** ✅ CC0-1.0 (verified 2026-10-07 via GitHub API `spdx_id`)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** This is what a provenance-checking script consumes: fetch the statement URI with `Accept: application/ld+json` and read the machine-readable terms instead of scraping HTML. [Wave 23 Lane B]
+
+#### RightsStatements.org white paper — "Recommendations for Standardized International Rights Statements" ✅ free reference doc
+- **What:** The founding specification document: statement definitions, URI design rules (`{domain}/vocab/{CODE}/{version}/` with mandatory trailing slash), SKOS/RDF data-modeling decisions, and HTTP interaction patterns for the linked-data publication.
+- **URL:** http://rightsstatements.org/files/151002recommendations_for_standardized_international_rights_statements.pdf
+- **License:** ✅ Free reference doc (published by the consortium; cite, don't redistribute)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Normative background for the 12 entries above (e.g. the trailing-slash rule, the InC-RUU vs InC-OW-EU split). [Wave 23 Lane B]
+
+#### PA Digital Rights Statement Selection Tool — CC-BY-2.0 ✅ commercial-safe
+- **What:** Gabriel Galson's interactive step-by-step tool (2018) for determining an item's rights status and picking the correct standardized statement — the practical "which URI do I use" wizard DPLA hubs point contributors to.
+- **URL:** https://padigital.org/wp-content/uploads/2018/10/Rights-Statement-Selection-Tool_Galson.pdf (interactive PDF; referenced from dpla/dpla-frontend)
+- **License:** ✅ CC-BY-2.0 (verified 2026-10-07 via the DPLA frontend repo's copyright.md attribution line)
+- **Free tier:** free
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution required (CC-BY-2.0, Gabriel Galson). Useful as the decision procedure behind any automated rights-filtering script. [Wave 23 Lane B]
+
+#### ODRL 2.2 (Open Digital Rights Language) — W3C Recommendation ✅ free reference
+- **What:** The W3C policy-expression language for machine-readable usage statements: information model + vocabulary + JSON-LD/XML encodings for permissions, prohibitions, duties over assets (policies: Agreement, Offer, Set, …). The generic rights-expression layer underneath statement vocabularies like rightsstatements.org.
+- **URL:** https://www.w3.org/TR/odrl-vocab/ (W3C Recommendation 15 Feb 2018 — verified 2026-10-07)
+- **License:** ✅ Free reference (W3C permissive document license; Recommendation may be cited/used as reference material)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Heavier machinery than rightsstatements.org URIs — relevant if the pipeline ever needs to express conditional grants (e.g. "non-commercial display until date X") rather than just labeling status. [Wave 23 Lane B]
+
+#### IIIF Presentation API 3.0 — `rights` / `requiredStatement` patterns ✅ free reference
+- **What:** IIIF's machine-readable rights pattern: the `rights` property "MUST be drawn from the set of Creative Commons license URIs, the RightsStatements.org rights statement URIs, or those added via the extension mechanism" (e.g. `"rights": "http://rightsstatements.org/vocab/InC/1.0/"`), with `requiredStatement` carrying the human-readable attribution/terms.
+- **URL:** https://iiif.io/api/presentation/3.0/#rights (verified 2026-10-07 via the spec section as quoted in implementation guides)
+- **License:** ✅ Free reference (IIIF specs are openly published; cite, don't redistribute)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** This is why the rightsstatements.org URIs matter mechanically: IIIF manifests (LOC, NLS, and other Wave-22 sources) carry them in `rights`, so a harvester can filter PD-vs-restricted at the manifest level before downloading a single pixel. [Wave 23 Lane B]
+
+#### ccREL (Creative Commons Rights Expression Language) ✅ free reference
+- **What:** CC's RDFa/XMP vocabulary for machine-readable copyright-license expression (`cc:permits`, `cc:requires`, `cc:prohibits` over `cc:License`), published as a W3C Member Submission (2008-05-01). The predecessor that ODRL and rightsstatements.org thinking built on.
+- **URL:** https://www.w3.org/Submission/2008/SUBM-ccREL-20080501/ (verified 2026-10-07 via W3C submissions index)
+- **License:** ✅ Free reference (W3C Member Submission — read/reference; publication indicates no W3C endorsement, per the submission terms)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Legacy but still the namespace (`https://creativecommons.org/ns#`) that CC license deeds expose as RDFa — a harvester reading CC license pages meets ccREL, not ODRL. [Wave 23 Lane B]
+
+#### Europeana Licensing Framework + Data Exchange Agreement ✅ free reference
+- **What:** Europeana's rights regime: the Data Exchange Agreement requires every digital object to carry a rights statement in `edm:rights` (metadata itself under CC0), drawn from the allowed list — CC licenses/PDM/CC0 plus the rightsstatements.org URIs (Europeana's own Tier-C example uses `edm:rights rdf:resource="http://rightsstatements.org/vocab/NoC-OKLR/1.0/"`). The framework's IPR deliverables document the migration from Europeana-specific statements to rightsstatements.org terms.
+- **URL:** https://pro.europeana.eu/page/documentation-of-updates-to-the-data-exchange-agreement (DEA; verified 2026-10-07)
+- **License:** ✅ Free reference (pro.europeana.eu publications; cite, don't redistribute)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Europeana is the largest live deployment of the vocabulary — its `edm:rights` values are the filter keys for any Europeana harvesting. [Wave 23 Lane B]
+
+#### DPLA MAP — standardized rights statement requirements ✅ free reference
+- **What:** The Digital Public Library of America's Metadata Application Profile: `dc:rights`/`edm:rights` must carry a standardized rights statement — "Recommend Controlled Vocabulary, e.g., Rightsstatements.org; Creative Commons Licenses; URI" (verified in dpla/dpla-frontend's hub metadata docs, e.g. `http://rightsstatements.org/vocab/NoC-US/1.0/` as the worked example), with the DPLA Standardized Rights Statement Implementation Guidelines as the how-to.
+- **URL:** https://github.com/dpla/dpla-frontend/blob/HEAD/public/static/local/oklahoma/metadata.md (hub docs quoting the requirement; verified 2026-10-07)
+- **License:** ✅ Free reference (DPLA project docs)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (research/discovery, provenance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DPLA-side counterpart to the Europeana entry: together they cover the two aggregators rightsstatements.org names as its supporters. [Wave 23 Lane B]
+
+---
+
+#### USMC "The Commandant's Own" Drum & Bugle Corps ✅ federal PD
+- **What:** The Marine Corps' second premier ensemble (est. 1934, Marine Barracks Washington) — 85-member drum & bugle corps; bugle calls, drum cadences, marches, jazz stylings.
+- **URL:** https://www.drumcorps.marines.mil
+- **License:** ✅ US federal work — PD recordings; unit posts DVIDS unit page (dvidshub.net/unit/CMC-DBC) and its own ringtones were explicitly described as "personally recorded ... public domain music". Per-item composition caution as above.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from "The President's Own" (already cataloged). [Wave 23 Lane C]
+
+#### U.S. Naval Academy Band ✅ federal PD
+- **What:** The Navy's oldest continuously serving band — active-duty enlisted Navy musicians (Annapolis); ceremonial + concert repertoire.
+- **URL:** https://usna.edu/USNABand
+- **License:** ✅ US federal work — PD recordings; per-item composition caution. AUDITION PDFs carry an "auditions only" disclaimer (same trap as the Army Band entry) — do not reuse audition excerpts.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the U.S. Navy Band (already cataloged). [Wave 23 Lane C]
+
+#### West Point Band (U.S. Military Academy) ✅ federal PD
+- **What:** The Army's oldest band (USMA, West Point NY) — Concert Band, Jazz Knights, the Hellcats field music; free public listening room historically at band.westpoint.edu.
+- **URL:** https://band.westpoint.edu
+- **License:** ✅ US federal work — PD recordings; per-item composition caution (the Jazz Knights' Ellington/commissions are copyrighted charts).
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the U.S. Army Band "Pershing's Own" (already cataloged). [Wave 23 Lane C]
+
+#### USAF Academy Band ✅ federal PD recordings
+- **What:** The Air Force Academy's band (Peterson AFB / USAFA, Colorado Springs) — Wild Blue Country, Blue Steel, Stellar Brass ensembles; pop/rock, country, concert repertoire.
+- **URL:** https://www.music.af.mil/Bands/US-Air-Force-Academy-Band/
+- **License:** ✅ US federal work — PD recordings; STRONG per-item composition caution — ensembles record copyrighted pop arrangements (e.g., "Believer", "Count on Me") that do NOT clear. Same USAF Band Recordings Archive restriction (⚠️ entry already in catalog) applies to the master archive.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the USAF Band (Washington) entries. [Wave 23 Lane C]
+
+#### USAF regional/field bands (Band of the West, Band of the Pacific, etc.) ⚠️ licence-gated despite federal PD
+- **What:** The USAF's regional bands under music.af.mil (Band of the West, Band of the Pacific, Band of Mid-America, Heritage of America Band, etc.) — concert/ceremonial recordings.
+- **URL:** https://www.music.af.mil/Bands/
+- **License:** ⚠️ Mixed: recordings are US federal works in principle, but the USAF's own Band Recordings Archive restricts reuse to "radio and public service broadcasting, recruiting, educational activities, troop morale ... only within the scope of these Department of the Air Force activities" (catalog's standing ⚠️ entry). Safe lane = DVIDS items individually marked PUBLIC DOMAIN. Do not treat the music.af.mil archive as freely reusable.
+- **Free tier:** Stream/download within the restriction
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest-negative-adjacent ⚠️: cataloged so nobody mistakes the regional-band archive for the designated PD subset (USAF Public-Domain-Music page, already cataloged ✅). [Wave 23 Lane C]
+
+#### Banda Musicale dell'Arma dei Carabinieri (IT) ⚠️ rights-reserved
+- **What:** The official band of the Italian Carabinieri (Rome, est. 1820, 102 musicians, dir. Col. Massimo Martinelli) — military marches, operatic/symphonic, jazz; distinct from the already-cataloged Army band (Banda Musicale dell'Esercito Italiano).
+- **URL:** http://www.carabinieri.it/arma/oggi/la-banda-musicale
+- **License:** ⚠️ No reuse grant on carabinieri.it properties (checked 2026-10-07) — assume rights-reserved, verify before reuse. Italy has no government-work PD provision for recordings.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Muzica Reprezentativă a Armatei Române (RO) ⚠️ rights-reserved
+- **What:** The Representative Music of the Romanian Army (MoD) — marches, national anthem, concert repertoire; community LP rips circulate on Internet Archive (user uploads of label pressings — NOT a rights clearance).
+- **URL:** No verbatim official URL captured this pass — locate via mapn.ro / Romanian MoD channels; NOT the archive.org community uploads.
+- **License:** ⚠️ No reuse grant on Romanian MoD properties (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. The IA "Fanfara reprezentativa a Armatei" uploads are user-ripped vinyl — do not treat IA availability as PD. [Wave 23 Lane C]
+
+#### Gvardeyski predstavitelen duhov orkestar — Bulgarian National Guards Band (BG) ⚠️ rights-reserved
+- **What:** The Representative Brass Band of Bulgaria's National Guards Unit (est. 1951, Sofia) — marches, folk, classical, jazz; traces to Bulgaria's first military band (1879).
+- **URL:** https://www.guards-bg.com/
+- **License:** ⚠️ No reuse grant on Bulgarian MOD/Guards properties (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Zrazkovo-pokazovyi orkestr ZSU — Ukrainian Armed Forces Exemplary Band (UA) ⚠️ explicit rights-reserved
+- **What:** Ukraine's state military wind band (Kyiv, est. 1945) — marches, wind repertoire; own site zpo.org.ua.
+- **URL:** https://zpo.org.ua
+- **License:** ⚠️ The band's own site footer: "Copyright ©2026 All rights reserved" (verified 2026-10-07) — explicit rights reservation; modern recordings are not reusable. Date-gated lane: pre-1956 published recordings are PD in the EU (Directive 2011/77/EU, 70 years from publication).
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only; strongest self-stated rights reservation found this wave. [Wave 23 Lane C]
+
+#### A.V. Aleksandrov Ensemble ("Red Army Choir") (RU) ⚠️ rights-reserved
+- **What:** The Russian Army's Academic Song and Dance Ensemble (est. 1928) — the world's most-recorded military choir/band; official site on the Russian MOD domain (redarmychorus.mil.ru).
+- **URL:** https://en.wikipedia.org/wiki/Alexandrov_Ensemble
+- **License:** ⚠️ Russian MOD property, no reuse grant (checked 2026-10-07) — assume rights-reserved. Beware third-party "official album" sites (redarmychoir.com is a commercial/licensing operation, NOT a rights grant).
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. A dedicated Kremlin/Presidential Orchestra entry was NOT made — no standalone official site located this pass. [Wave 23 Lane C]
+
+#### Reprezentativni orkestar Garde — Serbian Armed Forces Guard Band (RS) ⚠️ rights-reserved
+- **What:** The Representative Orchestra of the Serbian Guard (est. 1945, Topčider) — wind, strings, jazz and stage orchestras; tradition traced to the first Serbian military band (1831, Kragujevac).
+- **URL:** https://sr.wikipedia.org/wiki/Репрезентативни_оркестар_гарде
+- **License:** ⚠️ Serbian MOD property (odbrana.mod.gov.rs coverage), no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Orkestar Oružanih snaga RH — Croatian Armed Forces Orchestra (HR) ⚠️ rights-reserved
+- **What:** Croatia's Armed Forces Orchestra (Simfonijski puhački orkestar OSRH) — symphonic wind repertoire, festival/tattoo performances; coverage via morh.hr.
+- **URL:** https://hr.wikipedia.org/wiki/Orkestar_Oružanih_snaga_Republike_Hrvatske
+- **License:** ⚠️ Croatian MOD property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Vojenská hudba Ozbrojených síl SR — Slovak Armed Forces Military Music (SK) ⚠️ rights-reserved
+- **What:** Slovakia's military bands (Vojenská hudba OS SR, Bratislava; Vojenská hudba Banská Bystrica) — ceremonial and concert repertoire; coverage via mosr.sk.
+- **URL:** No verbatim official URL captured this pass — locate via mosr.sk (Slovak MOD).
+- **License:** ⚠️ Slovak MOD property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Musique Militaire Grand-Ducale (LU) ⚠️ rights-reserved
+- **What:** Luxembourg's Army military band (Orchestre d'harmonie, dir. LtCol Jean-Claude Braun) — concert/ceremonial repertoire with commercial album releases.
+- **URL:** http://armee.public.lu/fr/engager/offres-demploi/postes-militaires/musicien-militaire.html
+- **License:** ⚠️ Official-site media marked "© Armée luxembourgeoise" (verified 2026-10-07) — rights reserved; the band also releases commercial albums (label copyright).
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Armed Forces of Malta Band (MT) ⚠️ rights-reserved
+- **What:** Malta's platoon-sized military band (44 musicians, AFM 4th Regiment; traces to the Royal Malta Artillery Band, 1890) — ceremonial/parade repertoire.
+- **URL:** http://afm.gov.mt
+- **License:** ⚠️ AFM property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### UAE Armed Forces Band (AE) ⚠️ rights-reserved
+- **What:** The UAE's premier military band (under Armed Forces General Staff since 1991; marching band + pipe band, Abu Dhabi) — also the Abu Dhabi Police Brass Band doubles as a military band.
+- **URL:** https://en.wikipedia.org/wiki/United_Arab_Emirates_Armed_Forces_Band
+- **License:** ⚠️ UAE MOD property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Omani Royal Guard Military Band (OM) ⚠️ rights-reserved
+- **What:** The seniormost band of the Sultan of Oman's Armed Forces (Royal Guard of Oman, est. 1981; battalion-sized: infantry band, mounted band, jazz band, steel band, pipes & drums, symphonic orchestra, school of music).
+- **URL:** https://en.wikipedia.org/wiki/Omani_Royal_Guard_Military_Band
+- **License:** ⚠️ Royal Guard of Oman property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Egyptian Armed Forces Symphonic Band (EG) ⚠️ rights-reserved (one PD-marked US-shot item)
+- **What:** Egypt's main military band (est. 1957) — state ceremonies, anthems, parades; regular Spasskaya Tower/Edinburgh Tattoo participant.
+- **URL:** https://www.dvidshub.net/video/976043/bright-star-25-egyptian-band-and-weapons-demo
+- **License:** ⚠️ Egyptian MOD property, no reuse grant (checked 2026-10-07). EXCEPTION: the DVIDS URL above is a US Army-shot B-roll package of an Egyptian band performance explicitly marked PUBLIC DOMAIN — usable, verify per item.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Only the DVIDS-marked item is cleared; the band's own recordings are rights-reserved. [Wave 23 Lane C]
+
+#### Jordanian Armed Forces Band (JO) ⚠️ rights-reserved
+- **What:** The Jordanian Army/Armed Forces band (Amman) — national pieces, military shows; 2025 Basel Tattoo participant.
+- **URL:** No verbatim official URL captured this pass — locate via jaf.mil.jo (Jordanian Armed Forces) / Petra news coverage.
+- **License:** ⚠️ Jordanian Armed Forces property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Sri Lanka Army Band (LK) ⚠️ rights-reserved
+- **What:** Sri Lanka's representative military band (est. 1950, Panagoda; under the Sri Lanka Army General Service Corps) — Western Band, brass bands, hevisi/cultural troupes; tri-service contingent placed at Spasskaya Tower 2018.
+- **URL:** https://alt.army.lk/slagsc/band
+- **License:** ⚠️ Official site footer "© 2026 Sri Lanka Army" (verified 2026-10-07) — rights reserved.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Nepali Army Band (NP) ⚠️ rights-reserved
+- **What:** The Nepali Army's brass + pipe band — Army Day parades, state ceremony; 2025 joint display with Indian Army and US III MEF Band.
+- **URL:** https://www.nepalarmy.mil.np/viewnews/595
+- **License:** ⚠️ Nepali Army property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Moroccan Royal Guard fanfare (Garde royale) (MA) ⚠️ rights-reserved
+- **What:** The Moroccan Royal Guard's mounted fanfare band (Rabat) — ceremonial repertoire for state functions.
+- **URL:** No verbatim official URL captured this pass — locate via Moroccan Royal Guard / FAR channels.
+- **License:** ⚠️ Royal Guard property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Ghana Armed Forces Central Band (GH) ⚠️ rights-reserved
+- **What:** Ghana's senior military band (AFCB, under the Support Services Brigade; origins to 1824 Gold Coast) — state/military ceremonies, plus the Armed Forces Music School.
+- **URL:** https://gafonline.mil.gh/blog-details/armed-forces-central-band-conducts-high-impact-music-workshop-for-lincoln-community-school
+- **License:** ⚠️ Ghana Armed Forces property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Nigerian Armed Forces bands (NG) ⚠️ rights-reserved
+- **What:** Nigeria's service bands (Army Band Corps, Navy Directorate of Music, NAF bands) — ceremonial/parade repertoire with active new-music commissioning.
+- **URL:** No verbatim official URL captured this pass — locate via defencehq.mil.ng.
+- **License:** ⚠️ Nigerian Armed Forces property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Agrupación Sinfónica del Ejército (AR) ⚠️ rights-reserved
+- **What:** The Argentine Army's symphonic band (Colegio Militar de la Nación, El Palomar) — marches, ceremonial, concert repertoire; joint performances with the Bundeswehr (Berlin 2007).
+- **URL:** https://es.wikipedia.org/wiki/Agrupación_Sinfónica_del_Ejército
+- **License:** ⚠️ Argentine MOD/Army property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 23 Lane C]
+
+#### Banda del Batallón Guardia Presidencial (CO) ⚠️ rights-reserved
+- **What:** Colombia's Presidential Guard Battalion band (Bogotá, est. 1927) — 32 musicians for protocol/ceremonial music; seed of the Orquesta Sinfónica de Vientos del Ejército Nacional.
+- **URL:** https://revistas.unal.edu.co/index.php/ensayo/article/download/62021/58319/314929
+- **License:** ⚠️ Colombian Army property, no reuse grant (checked 2026-10-07) — assume rights-reserved, verify before reuse.
+- **Free tier:** Free streaming via official channels
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. URL is a scholarly musicology article (Univ. Nacional de Colombia) documenting the band. [Wave 23 Lane C]
+
+<!-- POCKET 2 — DATE-PD 78RPM ARCHIVES (8) -->
+
+#### Dismarc (EU Discovering Music Archives portal) ❓ portal status unverified this pass
+- **What:** The EU "Discovering Music Archives" project portal — federated catalog of European music archives (field recordings, 78s, manuscripts); a metadata aggregator, NOT an audio host.
+- **URL:** No verbatim URL verified this pass — dismarc.org did not load during the check window; do not treat as live.
+- **License:** ❓ Portal unreachable this pass (could be a local fetch failure, not confirmed dead) — rights model was per-contributing-archive. Use Europeana (already cataloged) instead.
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: the portal cannot be verified as live, and it was metadata-only even when live — no audio downloads were ever offered. [Wave 23 Lane C]
+
+#### CHARM — AHRC Research Centre for the History and Analysis of Recorded Music ❓ project ended 2009; streaming status uncertain
+- **What:** The 2004–2009 AHRC research centre (King's College London / Royal Holloway / Sheffield) — online discography of the Gramophone Company (pre-war) plus ~5,000 digitized 78rpm sides made available for research; legacy site still crawled.
+- **URL:** https://charm.rhul.ac.uk/download/download.html
+- **License:** ❓ Research access only as described in REF impact case studies (caseStudyId=41296); the audio-search availability is not verified as live today. Rights statements on the legacy site were never a commercial grant.
+- **Free tier:** Free research access (if still live)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Valuable as a discography/dating index; verify audio availability per-item before any ingest. Discography PDFs downloadable with authors' permission. [Wave 23 Lane C]
+
+#### The Online 78 rpm Discographical Project ⚠️ metadata-only, no audio
+- **What:** Long-running web discography of 78rpm records in numerical order by record company (78discography.com) — used by the Internet Archive itself to date Great 78 sides; full dataset mirrored on archive.org.
+- **URL:** http://www.78discography.com
+- **License:** ⚠️ Metadata reference only — the site hosts NO audio. Useful for dating/label identification; no reuse risk, no audio value.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest-negative-as-audio-source: keep strictly as a discography/dating index (also via https://archive.org/details/78discographyCom4192017). [Wave 23 Lane C]
+
+#### Belfer Cylinders Digital Connection (Syracuse University) ❓ digitized audio online; rights per-item
+- **What:** Syracuse University Libraries' digital gateway to its Belfer Audio Laboratory and Archive — 20,000+ cylinders (12,000 unique titles) plus 100,000 78rpm recordings catalogued; cylinders digitized and listenable online.
+- **URL:** https://library.syracuse.edu/scrc/collections/digitalasset/cylinders.php
+- **License:** ❓ Streaming access offered by the library; per-item rights and download terms not verified this pass — treat as reference/listening-only until checked.
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Distinct from the UCSB Cylinder Archive (already cataloged); per-item rights check required. [Wave 23 Lane C]
+
+#### Internet Archive "78 RPMs and Cylinder Recordings" parent collection ⚠️ per-item rights; Great 78 is the contested subset
+- **What:** The IA parent collection (archive.org/details/georgeblood + community uploads) — 385,000+ 78rpm sides including the Great 78 Project transfers, BGSU's 78rpm collection, and community uploads.
+- **URL:** https://archive.org/details/georgeblood
+- **License:** ⚠️ PER-ITEM: the Great 78 Project subset is settlement-contested (🚫 per the catalog's standing entry — do NOT ship); BGSU and community uploads have their own per-item rights; date-PD lane = pre-1923 recordings (Music Modernization Act) with per-item verification. IA availability ≠ clearance.
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Distinct from the catalog's Great 78 entry (which covers only the contested subset); this entry covers the parent collection's non-Great-78 material and its per-item posture. [Wave 23 Lane C]
+
+#### Swiss National Sound Archives (Fonoteca nazionale) ⚠️ listen on-site; copies paid/private-use
+- **What:** Switzerland's official sound archive (since 1987, section of the Swiss National Library, Lugano) — 500,000+ sound carriers; searchable database with streaming listening on the website.
+- **URL:** https://en.wikipedia.org/wiki/Swiss_National_Sound_Archives
+- **License:** ⚠️ Listening on the website is free; COPIES are "possible for private purposes against payment and on request also for professional purposes" — i.e., downloads are paid/private-use only, no commercial grant. Rights per item.
+- **Free tier:** Free streaming on site
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Honest negative for production use; listening/reference only unless licensed. [Wave 23 Lane C]
+
+#### AFRS transcription recordings (Internet Archive) ✅ US federal PD works; per-item composition caution
+- **What:** Armed Forces Radio Service transcription discs (est. by the US War Department 26 May 1942) — Command Performance, G.I. Journal, Mail Call, Victory Parade, V-Discs; extensive IA uploads (e.g., JAW's AFRS collection) with some items explicitly marked Public Domain Mark 1.0.
+- **URL:** https://archive.org/details/AFRS-15
+- **License:** ✅ Recordings produced by the AFRS for the US War Department are US federal works (PD). STRONG per-item caution: many AFRS programs embed commercial recordings (G.I. Jive played commercial records; V-Discs used commercial sources) — those embedded performances are NOT covered by the federal-work grant. Verify the program source before shipping.
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Military-band-relevant programs (One Night Stand, AFRS Band Wagon) are the highest-value lane. [Wave 23 Lane C]
+
+#### Virtual Gramophone — Library and Archives Canada ❓ selected digitized audio; rights per-item
+- **What:** LAC's "Virtual Gramophone" — discography of Canadian 78rpm recordings with selected digitized audio, biographies, and historical background (surfaced via Harvard Library's early-sound-recordings research guide).
+- **URL:** https://www.bac-lac.gc.ca/eng/discover/films-videos-sound-recordings/virtual-gramophone/Pages/internet.aspx
+- **License:** ❓ Selected audio offered by LAC; per-item rights and download terms not verified this pass — reference/listening-only until checked.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Per-item check required before ingest. [Wave 23 Lane C]
+
+<!-- DEDUP / STATUS-CHECK NOTES (not new entries — for coordinator reference) -->

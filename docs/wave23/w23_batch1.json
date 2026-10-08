@@ -1,0 +1,474 @@
+{
+ "sirona-records": {
+  "n": 887,
+  "counts": {
+   "nc": 871,
+   "unknown": 14,
+   "clean": 1,
+   "other": 1
+  },
+  "uploaders": [
+   [
+    "",
+    887
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  }
+ },
+ "mahorka": {
+  "n": 506,
+  "counts": {
+   "nc": 478,
+   "unknown": 17,
+   "other": 10,
+   "clean": 1
+  },
+  "uploaders": [
+   [
+    "",
+    506
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  }
+ },
+ "eg0cide": {
+  "n": 261,
+  "counts": {
+   "nc": 236,
+   "other": 15,
+   "unknown": 5,
+   "clean": 5
+  },
+  "uploaders": [
+   [
+    "",
+    261
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/4.0/": 1,
+   "http://creativecommons.org/publicdomain/zero/1.0/": 4
+  }
+ },
+ "netwaves": {
+  "n": 784,
+  "counts": {
+   "nc": 738,
+   "unknown": 41,
+   "clean": 2,
+   "other": 3
+  },
+  "uploaders": [
+   [
+    "",
+    784
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 2
+  }
+ },
+ "monokrak": {
+  "n": 283,
+  "counts": {
+   "nc": 237,
+   "other": 44,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    283
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "pueblo_nuevo": {
+  "n": 283,
+  "counts": {
+   "nc": 266,
+   "unknown": 13,
+   "other": 4
+  },
+  "uploaders": [
+   [
+    "",
+    283
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "panospria": {
+  "n": 98,
+  "counts": {
+   "nc": 90,
+   "unknown": 7,
+   "other": 1
+  },
+  "uploaders": [
+   [
+    "",
+    98
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "deepindub": {
+  "n": 219,
+  "counts": {
+   "nc": 150,
+   "other": 4,
+   "unknown": 64,
+   "clean": 1
+  },
+  "uploaders": [
+   [
+    "",
+    219
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  }
+ },
+ "labelnetlabel": {
+  "n": 51,
+  "counts": {
+   "nc": 44,
+   "other": 3,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    51
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "test_tube": {
+  "n": 58,
+  "counts": {
+   "unknown": 58
+  },
+  "uploaders": [
+   [
+    "",
+    58
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "webbed_hand": {
+  "n": 295,
+  "counts": {
+   "nc": 288,
+   "clean": 6,
+   "unknown": 1
+  },
+  "uploaders": [
+   [
+    "",
+    295
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/us/": 5,
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  }
+ },
+ "comfort_stand": {
+  "n": 87,
+  "counts": {
+   "unknown": 4,
+   "nc": 83
+  },
+  "uploaders": [
+   [
+    "",
+    87
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "netwaves-bpm": {
+  "n": 230,
+  "counts": {
+   "nc": 201,
+   "unknown": 29
+  },
+  "uploaders": [
+   [
+    "",
+    230
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "zimmer": {
+  "n": 214,
+  "counts": {
+   "unknown": 43,
+   "nc": 168,
+   "other": 2,
+   "clean": 1
+  },
+  "uploaders": [
+   [
+    "",
+    214
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/de/": 1
+  }
+ },
+ "1bit_wonder": {
+  "n": 33,
+  "counts": {
+   "nc": 33
+  },
+  "uploaders": [
+   [
+    "",
+    33
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "takepillsdie": {
+  "n": 223,
+  "counts": {
+   "nc": 214,
+   "other": 9
+  },
+  "uploaders": [
+   [
+    "",
+    223
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "wm": {
+  "n": 123,
+  "counts": {
+   "nc": 117,
+   "unknown": 6
+  },
+  "uploaders": [
+   [
+    "",
+    123
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "afmusic": {
+  "n": 162,
+  "counts": {
+   "other": 2,
+   "nc": 143,
+   "unknown": 16,
+   "clean": 1
+  },
+  "uploaders": [
+   [
+    "",
+    162
+   ]
+  ],
+  "clean_lu": {
+   "https://creativecommons.org/licenses/by/4.0/": 1
+  }
+ },
+ "miga": {
+  "n": 51,
+  "counts": {
+   "nc": 49,
+   "unknown": 1,
+   "other": 1
+  },
+  "uploaders": [
+   [
+    "",
+    51
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "no-source": {
+  "n": 71,
+  "counts": {
+   "nc": 64,
+   "other": 5,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    71
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "nishi": {
+  "n": 119,
+  "counts": {
+   "nc": 73,
+   "unknown": 46
+  },
+  "uploaders": [
+   [
+    "",
+    119
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "zeromoon": {
+  "n": 176,
+  "counts": {
+   "nc": 123,
+   "unknown": 49,
+   "other": 2,
+   "clean": 2
+  },
+  "uploaders": [
+   [
+    "",
+    176
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/us/": 2
+  }
+ },
+ "bfw-recordings": {
+  "n": 256,
+  "counts": {
+   "nc": 234,
+   "unknown": 19,
+   "other": 3
+  },
+  "uploaders": [
+   [
+    "",
+    256
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "yesnowave": {
+  "n": 139,
+  "counts": {
+   "nc": 132,
+   "other": 3,
+   "unknown": 3,
+   "clean": 1
+  },
+  "uploaders": [
+   [
+    "",
+    139
+   ]
+  ],
+  "clean_lu": {
+   "https://creativecommons.org/licenses/by/4.0/": 1
+  }
+ },
+ "on-mix": {
+  "n": 240,
+  "counts": {
+   "clean": 61,
+   "nc": 169,
+   "other": 9,
+   "unknown": 1
+  },
+  "uploaders": [
+   [
+    "",
+    240
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 44,
+   "http://creativecommons.org/licenses/by/3.0/nl/": 16,
+   "http://creativecommons.org/licenses/by/4.0/": 1
+  }
+ },
+ "senmuthdiscography": {
+  "n": 212,
+  "counts": {
+   "nc": 208,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    212
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "luis-antero-field-recordings": {
+  "n": 174,
+  "counts": {
+   "nc": 120,
+   "other": 51,
+   "unknown": 3
+  },
+  "uploaders": [
+   [
+    "",
+    174
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "pharmacom": {
+  "n": 100,
+  "counts": {
+   "unknown": 45,
+   "nc": 8,
+   "other": 47
+  },
+  "uploaders": [
+   [
+    "",
+    100
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "dadaist-audio": {
+  "n": 187,
+  "counts": {
+   "nc": 187
+  },
+  "uploaders": [
+   [
+    "",
+    187
+   ]
+  ],
+  "clean_lu": {}
+ },
+ "murmure-intemporel": {
+  "n": 190,
+  "counts": {
+   "nc": 190
+  },
+  "uploaders": [
+   [
+    "",
+    190
+   ]
+  ],
+  "clean_lu": {}
+ }
+}

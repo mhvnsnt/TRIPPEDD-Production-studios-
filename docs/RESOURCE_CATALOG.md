@@ -36268,3 +36268,183 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
 - **Status:** not-started
 - **Notes:** Traffic/billing sub-pocket is proprietary-only; reference/research only. [Wave 40 Lane A]
+
+#### CPC-Power ⚠️ per-item rights — all rights reserved
+- **What:** CPC-Power — Amstrad CPC heritage database (games, demos, utilities, disk dumps with AY music); French/English/German/Spanish community archive
+- **URL:** https://www.cpc-power.com/
+- **License:** ⚠️ per-item — site footer: "© 2007-2026 tous droits réservés. Reproduction sans autorisation interdite. Tous les titres utilisés appartiennent à leurs propriétaires respectifs." (verified 2026-10-08 via cpc-power.com)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amstrad CPC AY-music long tail; no blanket reuse grant — per-title rights. [Wave 40 Lane A]
+
+#### CPCRulez ❓ unverified
+- **What:** CPCRulez — French Amstrad CPC community portal: game tests/reviews, demos, AY music coverage, active forums
+- **URL:** https://cpcrulez.fr/
+- **License:** unverified — no blanket license found (verified 2026-10-08 via spectrumcomputing.co.uk forum reference + cpcrulez.fr)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CPC community/music long tail; per-item rights assumed. [Wave 40 Lane A]
+
+#### Radio 6581 ❓ stream terms unverified
+- **What:** Radio 6581 — C64 remix & SID station, 24/7 (est. 2008 by The Punisher!!!); live shows, SID/remix programming; stream + Android app + Alexa skill
+- **URL:** https://csdb.dk/group/?id=11429 (CSDb group page; stream: https://securestreams5.autopo.st:1977/live)
+- **License:** unverified — stream-only, no reuse grant found (verified 2026-10-08 via csdb.dk group page)
+- **Free tier:** free to listen
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SID/remix radio long tail; listen/reference only — no redistribution grant. [Wave 40 Lane A]
+
+#### MSX Resource Center ❓ per-item rights
+- **What:** MSX Resource Center (msx.org) — largest online MSX community (est. 1996): news, forums, wiki, downloads DB, MSX Music player; PSG/SCC/FM-PAC music coverage
+- **URL:** https://www.msx.org/
+- **License:** unverified — per-item rights, no blanket license (verified 2026-10-08 via msx.org; © 1996-2026 Microcomputer & Related Culture Foundation)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX music/scene long tail; active (2026 posts). [Wave 40 Lane A]
+
+#### File Hunter (MSX) ❓ per-item rights
+- **What:** File Hunter — "The Complete MSX Download Archive" (download.file-hunter.com): Games, Demos, Disk-Magazines, Music/, Magazines, Books; ~100GB+ curated tree with torrents
+- **URL:** https://download.file-hunter.com
+- **License:** unverified — per-file rights, server rules ask takedown requests via contact (verified 2026-10-08 via download.file-hunter.com index)
+- **Free tier:** free to browse/download (no download managers; donor tier exists)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX music + diskmag long tail; dedicated Music/ and Disk-Magazines/ sections. [Wave 40 Lane A]
+
+#### AtariOnline.pl ❓ unverified
+- **What:** AtariOnline.pl — Polish Atari computers community portal (400/800, XL/XE, ST): news, forums, POKEY/SAP music scene coverage
+- **URL:** https://atarionline.pl
+- **License:** unverified — no blanket license found (verified 2026-10-08 via sitelike.org listing)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari 8-bit community/music long tail; Polish-language. [Wave 40 Lane A]
+
+#### AtariAge ❓ per-item rights
+- **What:** AtariAge — Atari community hub (2600/5200/7800/Lynx/Jaguar/8-bit): forums, homebrew releases (many with original TIA/POKEY music), store, programming sections
+- **URL:** https://forums.atariage.com/
+- **License:** unverified — per-post/per-release rights, no blanket license (verified 2026-10-08 via forums.atariage.com)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari homebrew/music long tail; homebrew ROMs often free downloads with per-release terms. [Wave 40 Lane A]
+
+#### Atari-Forum ❓ per-item rights
+- **What:** Atari-Forum — Atari ST/STE/Falcon/TT community board: demos, games, "Professionals: Hardware, coding, music, graphic" sections; menu-disk archive links (Stonish)
+- **URL:** https://Atari-Forum.com/
+- **License:** unverified — per-post rights, no blanket license (verified 2026-10-08 via Atari-Forum.com board index; active 2026)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST YM-music/scene long tail. [Wave 40 Lane A]
+
+#### Stonish (Atari ST menu disks) ❓ per-disk rights
+- **What:** Stonish — 1,566→2,500+ Atari ST menu-disk archive (Euroswap, FOFT, Special FX, Pure Energy menus); menus are the ST scene's music-disk format — now merged into Atari Legend's menu section, preserved on Internet Archive
+- **URL:** https://www.atarilegend.com/menusets (successor; original stonish.net retired 2021)
+- **License:** unverified — per-disk/production rights (verified 2026-10-08 via pouet.net topic 10214 + atari-forum.com merger notice)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Actual menu-disk (music-disk format) collection; Atari Legend already cataloged separately — this entry covers the Stonish collection identity. [Wave 40 Lane A]
+
+#### LemonAmiga ❓ per-item rights
+- **What:** LemonAmiga — interactive Amiga games database: screenshots, reviews, ratings, docs, cheats, downloads, videos, emulators, music, forums
+- **URL:** https://www.lemonamiga.com/
+- **License:** unverified — per-item rights, no blanket license (verified 2026-10-08 via sitezilla/milonic profiles)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga game-music long tail via per-game music sections. [Wave 40 Lane A]
+
+#### AmigaLove ❓ per-item rights
+- **What:** AmigaLove — Amiga/Commodore community: Games Library, Software Archive (shareware/freeware ADFs), forums; growing preservation collection
+- **URL:** https://www.amigalove.com/
+- **License:** unverified — per-item rights (verified 2026-10-08 via amigalove.com; shareware/freeware sections)
+- **Free tier:** free to browse/download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga preservation/music long tail; community-curated. [Wave 40 Lane A]
+
+#### AmigaWorld.net ❓ per-item rights
+- **What:** AmigaWorld.net — Amiga computer community portal: news, discussion forums, FAQs, technical support
+- **URL:** https://amigaworld.net
+- **License:** unverified — per-post rights, no blanket license (verified 2026-10-08 via sitelike.org listing)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga community long tail. [Wave 40 Lane A]
+
+#### Amiga Future ❓ per-issue rights
+- **What:** Amiga Future — bimonthly Amiga print magazine (German/English, issue 181 = July 2026): interviews, reviews, demoscene specials, Reader CD with Classic/AmigaOS4/AROS/MorphOS software; older issues free online, article DB ~5,000 articles
+- **URL:** https://www.amigafuture.de
+- **License:** unverified — per-issue/article rights, commercial print magazine (verified 2026-10-08 via amigans.net + amigatronics.com coverage)
+- **Free tier:** older issues free online; current issues paid
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga demoscene/music press long tail; still publishing 2026. [Wave 40 Lane A]
+
+#### Famicompo ❓ per-entry rights
+- **What:** Famicompo — NES/Famicom 2A03 music competition (est. 2003): NSF-format entries (originals + covers), yearly Famicompo Mini editions; long-running chiptune compo archive
+- **URL:** https://www.zophar.net/news-archive/famicompo-begins-for-nes-music-5295.html (launch coverage; entries in NSF format)
+- **License:** unverified — per-entry composer rights (verified 2026-10-08 via Zophar's Domain news archive + Slashdot 2003 coverage)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NES chiptune compo long tail; NSF entries are the music-disk-adjacent format for NES. [Wave 40 Lane A]
+
+#### NintendoAge ❓ per-item rights
+- **What:** NintendoAge — NES/collector community (est. 2003): forums, monthly e-zine (PDF), price guides, ROM-dump preservation projects, homebrew releases with 2A03 music
+- **URL:** http://www.nintendoage.com/
+- **License:** unverified — per-item rights (verified 2026-10-08 via retromags.com + dcemu.co.uk coverage; ROM-dump projects are "legally dicey" per Retromags)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NES community/music long tail; e-zine back issues archived at Retromags. [Wave 40 Lane A]
+
+#### Sega-16 ❓ per-article rights
+- **What:** Sega-16 — Sega hardware-legacy site (est. 2004, Ken Horowitz): in-depth reviews, industry interviews, features across Genesis/32X/Mega-CD/Master System/Game Gear/Dreamcast
+- **URL:** http://www.sega-16.com
+- **License:** unverified — per-article rights (verified 2026-10-08 via info.sonicretro.org/Sega-16)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sega music-history long tail (composer interviews). [Wave 40 Lane A]
+
+#### Retromags ❓ per-scan rights
+- **What:** Retromags — video-game magazine preservation archive: scanned magazines incl. NintendoAge e-zines, Nintendo Power-era publications; community scanning project
+- **URL:** https://www.retromags.com/
+- **License:** unverified — per-scan/per-publisher rights (verified 2026-10-08 via retromags.com NintendoAge e-zine topic)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Magazine-scan long tail; type-in programs and coverdisk music in scans. [Wave 40 Lane A]
+
+#### Genesis8bit ❓ unverified
+- **What:** Genesis8bit — Amstrad CPC links hub: curated directory of CPC games/demos/utilities/music sites (CPC-Power, CPCRulez, demogroups)
+- **URL:** https://www.genesis8bit.com/amstrad/links/linkgame.php
+- **License:** unverified — link directory, no content license (verified 2026-10-08 via genesis8bit.com)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CPC discovery long tail; directory only. [Wave 40 Lane A]

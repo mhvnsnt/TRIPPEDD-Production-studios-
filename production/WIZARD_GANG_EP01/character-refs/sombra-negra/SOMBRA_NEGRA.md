@@ -30,3 +30,6 @@ No `_repaired` variant exists for Sombra Negra.
   other character GLB faces +X. Flagged for the animation/rig pipeline.
 - The GLB is a multi-part model (~20 meshes); the still composites them all.
 - No alt attire GLB exists for Sombra Negra.
+
+## Owner verdict (2026-10-07)
+- Thigh shards = LOOSE PARTS / TASSELS on his tights — INTENTIONAL, part of the outfit. They need INDIVIDUAL RIGGING (separate bones/weights for animation).

@@ -18,3 +18,9 @@ Note: owner said 3 attires besides robed; 4 are filed (3 GLB + cardsuit). Owner 
 ## Defects / gaps
 - **RENDER FAILURE — `CIPHER_feral.glb`, `CIPHER_rigged.glb`:** Blender 4.0.2 rejects EXT_meshopt_compression. No decompress path available. Not needed — v2 feral covers the feral look.
 - Rendered GLBs face +X in Blender space (camera side `+x`).
+
+## Owner verdict (2026-10-07)
+- ALL FOUR unrobed attires LOCKED: feral, minion, base Blackheart, card suit. (Owner: "I want all.")
+
+## Owner verdict (2026-10-07)
+- ALL FOUR unrobed attires LOCKED: feral, minion, base Blackheart, card suit. (Owner: "I want all.")

@@ -23,6 +23,10 @@
 - [ ] **S10 — No cropped heads/feet.** Full figures with headroom/footroom in every frame. Outpaint, never center-crop, when reframing aspect ratios. *Seed: 16:9 v1 cropped 4 shots; rebuilt as v2 (2026-10-07).*
 - [ ] **S11 — Robe colors locked.** Ashes scarlet · Onyx green · Theory purple · Cipher yellow · Echo pink · Static deep blue · Hollow orange · Sombra black/purple trim · Kiko white fur. No drift.
 - [ ] **S17 — No repeated scenes, no frozen segments.** Every story beat gets a NEW visual — never replay the same shot 2+ times with tiny variations, never hold a freeze frame where motion belongs. *Seed: EP01 1:48–2:10 replayed the BBQ lineup 3–4x then froze; replaced with new scene (owner critique #1, 2026-10-07).*
+- [ ] **S18 — Hood-off faces match the locked likeness.** Whenever a hood comes off, the visible person must look like that character's hand-picked card — never a random face. *Seed: owner 2026-10-07; enforced via EP02 likeness bible.*
+- [ ] **S19 — No duplicate characters in one scene.** No two copies of the same robe color, no robed + unrobed version of the same person standing together. Enforced from EP02 onward. *Seed: owner 2026-10-07 — EP01 explicitly EXEMPT (he finds the accidental doubles funny there).*
+- [ ] **S20 — Same-character likeness holds across every shot.** One character = one face, one body, every shot. No likeness alterations of the same character between shots — ESPECIALLY not within the same scene. Batch-check all shots in a scene against the same card before any ship. *Seed: owner 2026-10-07 — his pre-announced EP02 critique #1.*
+- [ ] **S21 — Characters must match their hand-picked character card art.** The cards the owner named, was shown, and hand-picked are the law — robed AND unrobed, card art AND attires AND GLBs. A character that "looks nothing like" their card is a defect, full stop. *Seed: owner 2026-10-07 — his pre-announced EP02 critique #2.*
 
 ## Canon guards
 - [ ] **S12 — The two winks stay unstated.** The 5-of-9 overlap (Cipher/Echo/Onyx/Static/Hollow = five robed figures) and Ashes-as-Narrator are visible, NEVER explained on screen.

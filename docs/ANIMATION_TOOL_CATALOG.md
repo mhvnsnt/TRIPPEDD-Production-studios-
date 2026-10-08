@@ -2774,3 +2774,706 @@ source of mouth-timing truth for spot-checking aligner output.
 - **License:** custom license — free of charge, **no redistribution** (verified — upstream README: "you must register at the website and download it from there"); Microsoft holds copyright. **Verify per use.**
 - **Use:** HVite forced alignment as a methodological reference; historical baseline for any new aligner evaluation.
 - **Lane note:** Wave 2 Lane B: awareness entry; the no-redistribution term rules out pipeline distribution.
+
+## Audio-reactive animation (music/beat → motion)
+<!-- Wave 3 Lane A pocket 1: tools that turn audio into animation timing —
+     beat/onset detection, score/MIDI/symbolic analysis, stems → motion layers,
+     OSC/MIDI bridges, visualizers and creative-coding frameworks.
+     Supplements (does not duplicate) the Wave-1 "Dialogue-to-animation / beat
+     timing" section and the Wave-2 librosa/aubio/madmom/essentia entries. -->
+
+#### pyAudioAnalysis ✅
+- **What:** Python audio feature extraction + segmentation (music/speech/silence classification, speaker diarization, silence/event boundaries); numpy/scipy stack, no heavy models.
+- **URL:** https://github.com/tyiannak/pyAudioAnalysis
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id).
+- **Use:** segment episode music beds into sections/events → drive shot and beat changes in animatics; silence detection for pause-aware motion holds.
+- **Lane note:** Wave 3 Lane A: listed for music-bed structure analysis.
+
+#### torchaudio ✅
+- **What:** PyTorch audio I/O + DSP — spectral-flux onset, VAD, resampling, effects; scriptable tensor ops on CPU/GPU.
+- **URL:** https://github.com/pytorch/audio
+- **License:** BSD-2-Clause (verified — GitHub license API spdx_id).
+- **Use:** spectral-flux onset envelopes → bake keyframe impulses on transients (drum hits → camera punch); resample all stems to pipeline rates in one place.
+- **Lane note:** Wave 3 Lane A: the tensor-native onset source for beat-driven keyframing.
+
+#### Basic Pitch ✅
+- **What:** Spotify's neural audio→MIDI (polyphonic pitch/note transcription); pip-installable, runs on CPU.
+- **URL:** https://github.com/spotify/basic-pitch
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id).
+- **Use:** transcribe theme/score audio to MIDI note events → trigger animation events (note-on → gesture accent, pitch height → motion height) with no score on hand.
+- **Lane note:** Wave 3 Lane A: audio→note events when only a recording exists.
+
+#### music21 ✅
+- **What:** Musicology toolkit — parse MusicXML/MIDI/scores; streams, meter, key and key-change analysis.
+- **URL:** https://github.com/cuthbertLab/music21
+- **License:** BSD-3-Clause (verified — GitHub license API spdx_id).
+- **Use:** when a score exists (MusicXML/MIDI), derive bar/beat/meter maps → quantize animation cuts and gesture accents to the real musical grid.
+- **Lane note:** Wave 3 Lane A: symbolic-score timing source; pairs with pretty_midi/mido.
+
+#### pretty_midi ✅
+- **What:** Lightweight MIDI parsing/manipulation — note lists, tempo maps, downbeat estimation; clean Python API.
+- **URL:** https://github.com/craffel/pretty-midi
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** read MIDI mockups → beat/downbeat arrays → generate keyframe timing tables for beat-locked walk cycles and gesture hits.
+- **Lane note:** Wave 3 Lane A: the MIDI→timing-table workhorse.
+
+#### mido ✅
+- **What:** Python MIDI message I/O — ports, files, realtime; the standard MIDI plumbing library.
+- **URL:** https://github.com/mido/mido
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** realtime MIDI clock/notes → live-drive animation previews; parse MIDI files for event lists feeding the animatic timeline.
+- **Lane note:** Wave 3 Lane A: MIDI transport layer for live audio-reactive previews.
+
+#### partitura ✅
+- **What:** Symbolic music analysis from JKU/OFAI — note arrays, score↔performance alignments, performance codecs.
+- **URL:** https://github.com/CPJKU/partitura
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id).
+- **Use:** align a performed score to its notation → expressive-timing curves (rubato) → humanize beat-locked animation so it breathes with the performance instead of the grid.
+- **Lane note:** Wave 3 Lane A: score-vs-performance timing for non-mechanical motion.
+
+#### msaf ✅
+- **What:** Music Structure Analysis Framework — segment boundaries + labels (verse/chorus), multiple algorithms with evaluation.
+- **URL:** https://github.com/urinieto/msaf
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** auto-segment theme songs/scores into sections → cut animatic shots on real musical boundaries instead of guessed ones.
+- **Lane note:** Wave 3 Lane A: section-boundary source for music-driven editing.
+
+#### mir_eval ✅
+- **What:** The standard MIR evaluation metrics (beat, onset, melody, structure) — the yardstick beat trackers are scored against.
+- **URL:** https://github.com/craffel/mir_eval
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** validate any beat/onset grid before it drives animation timing — a bad grid baked into keyframes is expensive to undo.
+- **Lane note:** Wave 3 Lane A: the "measure twice" gate for beat-driven motion.
+
+#### beat_this ✅
+- **What:** CPJKU joint beat+downbeat tracker (transformer); state-of-the-art accuracy on standard benchmarks. (Mentioned in the BeatNet entry's see-also; this is its full entry.)
+- **URL:** https://github.com/CPJKU/beat_this
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** highest-accuracy beat/downbeat grids for beat-locked animation (walk cycles, gesture hits, camera cuts on the 1).
+- **Lane note:** Wave 3 Lane A: the accuracy pick when madmom's NC models are off the table.
+
+#### ORCA ✅
+- **What:** Hundred Rabbits' esoteric livecoding sequencer — tiny pattern language driving MIDI/OSC; visual, deterministic.
+- **URL:** https://github.com/hundredrabbits/Orca
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** compose trigger patterns (bangs on musical phrases) → OSC → fire animation events and gesture accents in sync with a composed sequence.
+- **Lane note:** Wave 3 Lane A: pattern-sequenced animation triggers.
+
+#### FoxDot ⚠️ CC-BY-SA-4.0 (share-alike)
+- **What:** Python live-coding music environment (SuperCollider backend) — pattern-based composition with a friendly syntax.
+- **URL:** https://github.com/Qirky/FoxDot
+- **License:** CC-BY-SA-4.0 (verified — repo LICENSE file; commonly assumed MIT — it is NOT). **Verify per use** — share-alike obligations on derived works.
+- **Use:** live-coded musical patterns → timed triggers for animation previz jams; the pattern clock doubles as an animation metronome. Research/previz use.
+- **Lane note:** Wave 3 Lane A: ⚠️ share-alike; keep derived pipeline code separate.
+
+#### python-osc ✅
+- **What:** Clean Python OSC (Open Sound Control) client/server — the lingua franca between audio tools and visual apps.
+- **URL:** https://github.com/attwad/python-osc
+- **License:** Unlicense (verified — GitHub license API spdx_id; public-domain dedication).
+- **Use:** THE bridge: Pd/ORCA/DAWs send OSC → Python animation tools receive beat/onset/parameter messages and bake keyframes from them.
+- **Lane note:** Wave 3 Lane A: the glue for audio→animation messaging.
+
+#### python-rtmidi ✅
+- **What:** Python bindings for RtMidi — realtime MIDI in/out with low latency.
+- **URL:** https://github.com/SpotlightKid/python-rtmidi
+- **License:** MIT (verified — repo docs "Copyright & License" section: "released unter the MIT License").
+- **Use:** realtime MIDI clock/notes from controllers/DAWs → drive live animation previews; tap-tempo → set animatic BPM from a performed feel.
+- **Lane note:** Wave 3 Lane A: realtime MIDI transport for live reactive sessions.
+
+#### Meyda ✅
+- **What:** Real-time audio feature extraction in JavaScript (RMS, spectral centroid, chroma, MFCC) via Web Audio; runs in the browser.
+- **URL:** https://github.com/hughrawlinson/meyda
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** in-browser audio-reactive graphics: episode audio analyzed live → drive web-based animatic/preview motion (PWA control-plane visuals).
+- **Lane note:** Wave 3 Lane A: the web-side feature extractor for reactive previews.
+
+#### three.js AudioAnalyser ✅
+- **What:** three.js built-in FFT/waveform analyser (AnalyserNode wrapper) — frequency + time-domain data per frame. (Distinct from the catalog's three.js BVHLoader entry — different feature, different use.)
+- **URL:** https://github.com/mrdoob/three.js
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** drive WebGL scene motion from episode audio in the browser (camera pulse on bass, particle bursts on transients) for interactive previews.
+- **Lane note:** Wave 3 Lane A: browser-native audio→motion for the PWA surface.
+
+#### CAVA ✅
+- **What:** Console-based Audio Visualizer for ALSA/PulseAudio/PipeWire — FFT bars in the terminal, highly configurable.
+- **URL:** https://github.com/karlstav/cava
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** headless sanity-check that an audio feed is live and beat-present before a reactive-animation render; config-driven spectrum logging.
+- **Lane note:** Wave 3 Lane A: the "is the audio actually playing" probe for reactive pipelines.
+
+#### openFrameworks ✅
+- **What:** C++ creative-coding toolkit — audio input/FFT addons, OpenGL rendering, OSC/MIDI built in.
+- **URL:** https://github.com/openframeworks/openFrameworks
+- **License:** MIT (verified — repo README: "distributed under the MIT License ... commercial or non-commercial").
+- **Use:** build bespoke audio-reactive animation instruments (spectrum-driven motion studies, beat-synced previz renders).
+- **Lane note:** Wave 3 Lane A: the C++ creative-coding route to reactive motion.
+
+#### Cinder ✅
+- **What:** C++ creative-coding library — audio input, FFT, timeline animation, GPU rendering.
+- **URL:** https://github.com/cinder/Cinder
+- **License:** BSD-3-Clause (verified — repo LICENSE: BSD redistribution terms).
+- **Use:** native audio-reactive animation sketches with deterministic timelines for render-farm use; the BSD-licensed alternative to openFrameworks.
+- **Lane note:** Wave 3 Lane A: listed alongside openFrameworks for license choice.
+
+#### PipeWire ✅
+- **What:** Linux audio/video server (the PulseAudio/JACK successor) — pro-audio routing with video support.
+- **URL:** https://github.com/PipeWire/pipewire (upstream: https://pipewire.org)
+- **License:** MIT (verified — repo COPYING: "All PipeWire source files are licensed under the MIT License").
+- **Use:** route DAW/analysis-app audio into the animation workstation's capture path for reactive recording sessions on Linux.
+- **Lane note:** Wave 3 Lane A: the plumbing that makes desktop audio-reactive work possible.
+
+#### RtAudio ✅
+- **What:** Lightweight C++ realtime audio I/O — the engine under python-rtmidi and many others.
+- **URL:** https://github.com/thestk/rtaudio
+- **License:** MIT-style permissive (verified — repo LICENSE: "Permission is hereby granted, free of charge ... without restriction").
+- **Use:** embed low-latency audio capture in C++ animation tools that react to live input (mic/instrument → motion).
+- **Lane note:** Wave 3 Lane A: embeddable capture for reactive C++ tools.
+
+#### PortAudio ✅
+- **What:** Portable realtime audio I/O library — the cross-platform standard (used by Audacity and others).
+- **URL:** https://github.com/PortAudio/portaudio (upstream: http://www.portaudio.com)
+- **License:** MIT-style permissive (verified — repo license header: MIT terms).
+- **Use:** cross-platform audio capture for reactive animation apps (Windows/macOS/Linux) — same slot as RtAudio, wider platform reach.
+- **Lane note:** Wave 3 Lane A: the portable capture layer.
+
+#### TouchDesigner ⚠️ free non-commercial tier only
+- **What:** Node-based visual development for realtime audio-reactive visuals — CHOPs analyze audio and drive geometry/instancing/rendering.
+- **URL:** https://derivative.ca/
+- **License:** proprietary — free **Non-Commercial** license for personal/educational use ONLY (verified — docs.derivative.ca: "free for non-commercial use ONLY"); Commercial is $600. **Verify per use** — episode work needs a paid license.
+- **Use:** the reference implementation of audio-reactive show visuals; previz/R&D only on the free tier — never in the commercial pipeline without a license.
+- **Lane note:** Wave 3 Lane A: ⚠️ NC; the category king, honestly badged.
+
+#### Ultimate Vocal Remover ✅
+- **What:** GUI + models for vocal/stem separation (Demucs-family) — isolate vocals, drums, bass, other from a mixed track.
+- **URL:** https://github.com/Anjok07/ultimatevocalremovergui
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** split a mixed music bed into stems → drive separate animation layers (drums → camera shake, bass → bounce, vocals → gesture energy).
+- **Lane note:** Wave 3 Lane A: stems-as-motion-layers; the multi-track reactive source.
+
+#### projectM 🚫 LGPL-2.1
+- **What:** The MilkDrop-compatible music visualizer reimplementation — preset-driven audio-reactive visuals (thousands of community presets).
+- **URL:** https://github.com/projectM-visualizer/projectm
+- **License:** LGPL-2.1 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** reference for preset-driven reactive visuals; standalone-app use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### p5.js 🚫 LGPL-2.1
+- **What:** JavaScript creative-coding library with p5.sound — FFT, amplitude, beat-approximation in the browser.
+- **URL:** https://github.com/processing/p5.js
+- **License:** LGPL-2.1 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** browser audio-reactive sketches for previz; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; Meyda covers the slot.
+
+#### Processing 🚫 GPL-2.0 (PDE) / LGPL (core)
+- **What:** The classic creative-coding IDE + Java core library (Minim/Sound audio analysis).
+- **URL:** https://github.com/processing/processing
+- **License:** GPL-2.0 for the PDE, LGPL for the core library (verified — repo README: "We use GPL v2 ... For the 'core' library, it's LGPL"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** audio-reactive sketching reference; standalone use only.
+- **Lane note:** Wave 3 Lane A: split license documented honestly.
+
+#### BTrack 🚫 GPL-3.0
+- **What:** Real-time beat tracking (Adam Stark) — C++ with onset detection + tempo/beat agents.
+- **URL:** https://github.com/adamstark/BTrack
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** realtime beat-tracking reference; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; beat_this covers the slot.
+
+#### tempo-cnn 🚫 AGPL-3.0
+- **What:** CNN tempo estimation (Schreiber) — joint tempo/octave prediction from mel-spectrograms.
+- **URL:** https://github.com/hendriks73/tempo-cnn
+- **License:** AGPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** tempo-estimation reference; standalone use only.
+- **Lane note:** Wave 3 Lane A: AGPL blocks everything downstream.
+
+#### MARSYAS 🚫 GPL-2.0
+- **What:** The veteran music-analysis framework (C++) — onset, tempo, timbre, genre; prototype of a generation of MIR tools.
+- **URL:** https://github.com/marsyas/marsyas
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** historical reference for beat/onset algorithm design; standalone use only.
+- **Lane note:** Wave 3 Lane A: awareness entry; license blocks pipeline use.
+
+#### Sonic Annotator 🚫 GPL-2.0
+- **What:** Batch audio feature extractor — runs Vamp plugins over file collections, emits CSV/RDF timing data.
+- **URL:** https://github.com/sonic-visualiser/sonic-annotator
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** batch-extract onset/beat/chroma features to CSV → feed timing tables into animation tools via files (no linking); standalone use only.
+- **Lane note:** Wave 3 Lane A: file-based interop keeps the GPL at arm's length.
+
+#### QM Vamp Plugins 🚫 GPL-2.0
+- **What:** Queen Mary Vamp plugin suite — onset detection, beat tracking, chroma, MFCC, segmentation (the research-grade feature set).
+- **URL:** https://github.com/c4dm/qm-vamp-plugins
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** reference feature implementations; run under Sonic Annotator, consume the CSVs downstream.
+- **Lane note:** Wave 3 Lane A: the plugin suite behind the Annotator entry.
+
+#### TarsosDSP 🚫 GPL-3.0
+- **What:** Java audio analysis/synthesis framework — pitch, onset, beat, filters; Android-capable.
+- **URL:** https://github.com/JorenSix/TarsosDSP
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** JVM/Android audio-analysis reference; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### JACK2 🚫 GPL-2.0
+- **What:** The pro-audio connection kit — sample-accurate routing between audio apps with transport sync.
+- **URL:** https://github.com/jackaudio/jack2 (upstream: https://jackaudio.org)
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** route DAW audio into analysis tools with transport sync; the pre-PipeWire pro standard. Standalone use only.
+- **Lane note:** Wave 3 Lane A: PipeWire covers the slot commercially.
+
+#### libltc 🚫 LGPL-3.0
+- **What:** Linear Timecode (SMPTE LTC) encode/decode library — audio timecode for sync.
+- **URL:** https://github.com/x42/libltc
+- **License:** LGPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** sync animation timelines to LTC timecode striped on an audio track; standalone-tool use only.
+- **Lane note:** Wave 3 Lane A: timecode sync for audio-locked playback.
+
+#### Hydrogen 🚫 GPL-2.0
+- **What:** Pattern-based drum machine — program beats, export stems/MIDI.
+- **URL:** https://github.com/hydrogen-music/hydrogen
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** compose drum patterns → export MIDI/stems → drive beat-locked animation; the app is the instrument, files are the interop.
+- **Lane note:** Wave 3 Lane A: file-based beat authorship.
+
+#### MuseScore 🚫 GPL-3.0
+- **What:** Full notation editor — scores, parts, MusicXML/MIDI export.
+- **URL:** https://github.com/MuseScore/MuseScore (upstream: https://musescore.org)
+- **License:** GPL-3.0 (verified — repo license file: "under the terms of the GNU General Public License version 3"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** notate/arrange cues → export MusicXML/MIDI → music21/pretty_midi timing pipeline; the editor stays standalone.
+- **Lane note:** Wave 3 Lane A: notation front-end for the symbolic timing chain.
+
+#### ossia score 🚫 GPL-3.0
+- **What:** Interactive intermedia sequencer — timelines driving audio, video, lighting, and OSC from one score.
+- **URL:** https://github.com/ossia/score (upstream: https://ossia.io)
+- **License:** GPL-3.0 (verified — repo LICENSE is the GPL v3 text). **QUARANTINED** — never wired into shipping paths.
+- **Use:** show-control reference: one timeline firing animation cues from musical position; standalone use only.
+- **Lane note:** Wave 3 Lane A: the intermedia-show-control slot.
+
+#### VSXu 🚫 GPL-3.0
+- **What:** Audio-visualizer / realtime graphics platform — module graph with FFT-driven visuals and presets.
+- **URL:** https://github.com/vovoid/vsxu
+- **License:** GPL-3.0 (verified — repo: "All code (C and C++) is released under the GNU GPL 3.0"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** realtime audio-reactive visual reference; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+<!-- end lane A wave 3 pocket 1: audio-reactive animation (39 entries; 15 GPL-family rows → quarantine 104–118) -->
+
+## Cartoon SFX synthesis (procedural sound effects)
+<!-- Wave 3 Lane A pocket 2: open-source SFX *synthesis/generation* for cartoons —
+     boings, zaps, whooshes, impacts. Procedural tools only; sample libraries are
+     included ONLY where public-domain/CC0 (the one honest exception class).
+     Supplements the Wave-1 "Sound design / SFX libraries" section and the jsfxr entry. -->
+
+#### TIC-80 ✅
+- **What:** MIT-licensed fantasy console with a built-in SFX editor (waveform/slide/vibrato envelopes) — the tracker-style chiptune SFX workflow, fully open.
+- **URL:** https://github.com/nesbox/TIC-80
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** design retro cartoon SFX (zaps, boings, coin blips) in the editor; export WAVs for episode beds.
+- **Lane note:** Wave 3 Lane A: the open fantasy-console SFX bench.
+
+#### Godot ✅
+- **What:** MIT game engine whose audio server supports fully procedural SFX — generate AudioStreamWAV buffers in GDScript at runtime.
+- **URL:** https://github.com/godotengine/godot
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** synthesize cartoon SFX in-engine (pitch-randomized boings, filtered-noise whooshes) so every playback can vary; prototype SFX logic that ships with the game.
+- **Lane note:** Wave 3 Lane A: procedural SFX where the game already lives.
+
+#### Bevy ✅
+- **What:** Rust game engine (MIT/Apache) with a rodio-based audio stack — synthesize and spatialize SFX in code.
+- **URL:** https://github.com/bevyengine/bevy
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id; dual MIT/Apache).
+- **Use:** code-driven cartoon SFX for Rust tooling/games; deterministic synthesis for reproducible episode stems.
+- **Lane note:** Wave 3 Lane A: the Rust procedural-audio slot.
+
+#### raylib ✅
+- **What:** Simple C game library with procedural sound generation (GenSound*: sine/square/triangle/saw/noise with envelopes).
+- **URL:** https://github.com/raysan5/raylib
+- **License:** Zlib (verified — GitHub license API spdx_id).
+- **Use:** sketch cartoon SFX in C with zero dependencies — generate, tweak, export; embed the recipes in tools.
+- **Lane note:** Wave 3 Lane A: the zero-friction C synthesis sketchpad.
+
+#### LÖVE ✅
+- **What:** Lua game framework (zlib) — love.audio + love.sound SoundData: synthesize buffers sample-by-sample in Lua.
+- **URL:** https://github.com/love2d/love
+- **License:** Zlib (verified — repo license listing: "LOVE ... License: zlib").
+- **Use:** script cartoon SFX recipes in Lua (whoosh = noise × bandpass sweep); hot-reload the SFX design session.
+- **Lane note:** Wave 3 Lane A: Lua-speed SFX iteration.
+
+#### SFML ✅
+- **What:** C++ multimedia library (zlib) — custom sf::SoundStream lets you synthesize audio callbacks directly.
+- **URL:** https://github.com/SFML/SFML
+- **License:** Zlib (verified — GitHub license API spdx_id).
+- **Use:** C++ procedural SFX with a clean API; generate cartoon impacts/zaps as streaming buffers.
+- **Lane note:** Wave 3 Lane A: the C++ synthesis plumbing.
+
+#### Allegro 5 ✅
+- **What:** C game library (zlib-style) with an audio addon — sample synthesis and mixing.
+- **URL:** https://github.com/liballeg/allegro5
+- **License:** Zlib-style permissive (verified — repo: "Permission is granted to anyone to use this software for any purpose, including commercial applications").
+- **Use:** C-level procedural cartoon SFX for tools and games; another zlib C option alongside raylib.
+- **Lane note:** Wave 3 Lane A: listed for license/API choice.
+
+#### Phaser ✅
+- **What:** MIT JavaScript game framework — Web Audio API synthesis for SFX (oscillators, noise, envelopes).
+- **URL:** https://github.com/photonstorm/phaser
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** web-episode/interactive SFX: synthesize UI boings, zap stingers, and whoosh transitions in the browser, no assets needed.
+- **Lane note:** Wave 3 Lane A: web-side procedural SFX.
+
+#### SoLoud ✅
+- **What:** C/C++ audio engine (zlib) with procedural SFX + a speech synthesizer — tiny, embeddable.
+- **URL:** https://github.com/jarikomppa/soloud
+- **License:** Zlib/libpng (verified — repo: "SoLoud proper is licensed under the zlib/libpng license").
+- **Use:** embed cartoon SFX synthesis (plus robot-voice SFX via its speech synth) in C/C++ tools and games.
+- **Lane note:** Wave 3 Lane A: SFX + speech-synth in one embeddable engine.
+
+#### miniaudio ✅
+- **What:** Single-file C audio library — playback, capture, mixing, filtering, procedural generation; public-domain-or-MIT-0, your choice.
+- **URL:** https://github.com/mackron/miniaudio
+- **License:** Public Domain (Unlicense) OR MIT-0 — your choice (verified — repo LICENSE: "available as a choice of the following licenses ... ALTERNATIVE 1 - Public Domain").
+- **Use:** drop-in synthesis/decoding for SFX tools; generate cartoon SFX buffers with no build-system pain.
+- **Lane note:** Wave 3 Lane A: the single-header SFX swiss-army knife.
+
+#### SDL_mixer ✅
+- **What:** SDL's audio mixer (zlib) — chunk playback, effects (position, distance), format decoding.
+- **URL:** https://github.com/libsdl-org/SDL_mixer
+- **License:** Zlib (verified — GitHub license API spdx_id).
+- **Use:** play back and layer synthesized cartoon SFX with panning/distance in SDL-based tools and games.
+- **Lane note:** Wave 3 Lane A: the playback/mixing side of procedural SFX.
+
+#### STK ✅
+- **What:** The Synthesis ToolKit (CCRMA) — physical-modeling instruments: shakers, modal bars, bowed strings, brass; C++.
+- **URL:** https://github.com/thestk/stk
+- **License:** MIT-style permissive (verified — repo LICENSE: "Permission is hereby granted, free of charge ... without restriction").
+- **Use:** physical-model cartoon impacts — shakers for rattles, modal bars for bonks/boings with real resonant character.
+- **Lane note:** Wave 3 Lane A: physical modeling beats oscillators for cartoon impacts.
+
+#### Soundpipe ✅
+- **What:** Lightweight C DSP module library (Paul Batchelor) — oscillators, filters, envelopes, reverbs as composable modules.
+- **URL:** https://github.com/PaulBatchelor/Soundpipe
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** build cartoon SFX recipes in C from DSP primitives (zap = pitch-swept square + fast decay; whoosh = noise + sweeping bandpass).
+- **Lane note:** Wave 3 Lane A: the C DSP LEGO for SFX recipes.
+
+#### Sporth ✅
+- **What:** Stack-based procedural audio language on top of Soundpipe — SFX patches as tiny text programs.
+- **URL:** https://github.com/PaulBatchelor/Sporth
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** write cartoon SFX as one-liner patches; version-control SFX designs as text; render offline to WAV.
+- **Lane note:** Wave 3 Lane A: SFX-as-code in its most compact form.
+
+#### Maximilian ✅
+- **What:** C++ audio synthesis DSP library (Mick Grierson) — oscillators, samplers, filters, FFT, granular.
+- **URL:** https://github.com/micknoise/Maximilian
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** C++ SFX synthesis with granular and spectral tools — stretch/scrub cartoon sounds into whooshes and risers.
+- **Lane note:** Wave 3 Lane A: granular/spectral SFX design in C++.
+
+#### Tonic ✅
+- **What:** Cross-platform C++ audio synthesis (iOS/macOS/Android/desktop) — efficient synth building blocks.
+- **URL:** https://github.com/TonicAudio/Tonic
+- **License:** Unlicense (verified — GitHub license API spdx_id; public-domain dedication).
+- **Use:** synthesize cartoon SFX in native mobile/desktop tools with no licensing friction at all.
+- **Lane note:** Wave 3 Lane A: public-domain synthesis building blocks.
+
+#### DPF ✅
+- **What:** DISTRHO Plugin Framework (ISC) — write one SFX plugin, build LV2/VST2/VST3/CLAP/JACK from it.
+- **URL:** https://github.com/DISTRHO/DPF
+- **License:** ISC (verified — GitHub license API spdx_id).
+- **Use:** turn a cartoon-SFX DSP recipe (bitcrusher, spring, pitch-drop) into a real plugin the sound team can use in any DAW.
+- **Lane note:** Wave 3 Lane A: ship SFX recipes as plugins.
+
+#### CLAP ✅
+- **What:** The modern open plugin standard (CLever Audio Plugin) — MIT-licensed SDK, per-note expression, fast scanning.
+- **URL:** https://github.com/free-audio/clap
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** the target format for new SFX instruments/effects — no proprietary SDK terms.
+- **Lane note:** Wave 3 Lane A: the open plugin standard for SFX tools.
+
+#### LV2 ✅
+- **What:** The open audio plugin standard (spec under ISC) — instruments and effects with a big SFX-relevant ecosystem.
+- **URL:** https://github.com/lv2/lv2
+- **License:** ISC (verified — GitHub license API spdx_id).
+- **Use:** build/use LV2 SFX plugins (distortion, pitch-shift, spring reverb) in open DAW chains.
+- **Lane note:** Wave 3 Lane A: the open plugin ecosystem for SFX processing.
+
+#### Airwindows ✅
+- **What:** Chris Johnson's 300+ DSP plugins — MIT-licensed, including bitcrushers, spring reverbs, tape/vinyl color, and weirdness perfect for cartoon SFX.
+- **URL:** https://github.com/airwindows/airwindows
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** process synthesized SFX through characterful DSP (lofi, spring, distortion) to get cartoon grit without sample libraries.
+- **Lane note:** Wave 3 Lane A: the MIT DSP candy store for SFX finishing.
+
+#### Scribbletune ✅
+- **What:** JavaScript algorithmic music/SFX library (MIT) — patterns, scales, clips exported to MIDI or rendered in-browser.
+- **URL:** https://github.com/walmik/scribbletune
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** algorithmically generate SFX-adjacent musical stingers (risers, hits, zaps-as-melodies) in JS; drive web episode audio.
+- **Lane note:** Wave 3 Lane A: code-composed stingers and transitions.
+
+#### Pizzicato ✅
+- **What:** Web Audio synthesis library — concise API for oscillators, noise, filters, and effects in the browser.
+- **URL:** https://github.com/alemangui/pizzicato
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** quick browser SFX sketches (boing = sine pitch-drop + wobble); embed in web tools for the sound team.
+- **Lane note:** Wave 3 Lane A: the fastest web SFX sketchpad.
+
+#### Resonance Audio ✅
+- **What:** Google's spatial-audio SDK (Apache-2.0) — HRTF binaural, occlusion, reverb zones.
+- **URL:** https://github.com/resonance-audio/resonance-audio
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id).
+- **Use:** place cartoon SFX in 3D space (whoosh flies past the camera, bonk lands behind) for game/interactive mixes.
+- **Lane note:** Wave 3 Lane A: spatialization for synthesized SFX.
+
+#### Steam Audio ✅
+- **What:** Valve's spatial-audio SDK (Apache-2.0) — physics-based occlusion, HRTF, Ambisonics.
+- **URL:** https://github.com/ValveSoftware/steam-audio
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id).
+- **Use:** 3D-placed cartoon SFX with real occlusion for game scenes; the Valve alternative to Resonance.
+- **Lane note:** Wave 3 Lane A: listed for engine choice.
+
+#### Pure Data ✅
+- **What:** Miller Puckette's visual dataflow language for audio — patch oscillators/filters/envelopes into SFX; OSC/MIDI out.
+- **URL:** https://github.com/pure-data/pure-data (upstream: https://puredata.info)
+- **License:** BSD-3-Clause ("Standard Improved BSD License"; verified — repo LICENSE.txt).
+- **Use:** THE procedural cartoon-SFX patching bench: boing = resonant filter sweep, whoosh = noise + sweeping bandpass, zap = FM burst; render stems offline or drive animation via OSC.
+- **Lane note:** Wave 3 Lane A: the canonical open SFX synthesis environment.
+
+#### Vamp Plugin SDK ✅
+- **What:** The SDK for Vamp audio-analysis plugins (onset, pitch, chroma) — write once, run in hosts.
+- **URL:** https://github.com/vamp-plugins/vamp-plugin-sdk
+- **License:** MIT-style permissive (verified — SDK COPYING: "Permission is hereby granted, free of charge ...").
+- **Use:** build custom analysis plugins (e.g. transient→SFX-trigger detectors) that run in Vamp hosts.
+- **Lane note:** Wave 3 Lane A: build the detectors that trigger SFX from audio.
+
+#### Kenney (game audio) ✅
+- **What:** Kenney.nl asset packs including dedicated audio packs (RPG SFX, UI sounds, jingles) — every asset CC0.
+- **URL:** https://kenney.nl/assets
+- **License:** CC0-1.0 (verified — kenney.nl licensing; all assets public-domain dedication; corroborated by downstream attributions).
+- **Use:** the honest PD fallback: CC0 UI zaps, hits, and jingles where synthesis isn't worth it; no attribution required.
+- **Lane note:** Wave 3 Lane A: public-domain sample exception — all packs CC0.
+
+#### NASA sound library ✅
+- **What:** NASA's official sound collection (SoundCloud) — rocket launches, satellite beeps, plasma/radio emissions, mission chatter.
+- **URL:** https://soundcloud.com/nasa
+- **License:** Public Domain (verified — U.S. government work; NASA audio is not copyrighted; multiple press/NASA statements concur).
+- **Use:** PD raw material for sci-fi cartoon SFX: rocket roars → launch whooshes, satellite beeps → UI blips, plasma emissions → alien zaps.
+- **Lane note:** Wave 3 Lane A: public-domain sample exception; don't imply NASA endorsement.
+
+#### OpenMPT ✅
+- **What:** Open ModPlug Tracker — the classic module tracker (IT/XM/S3M/MOD), now BSD-licensed.
+- **URL:** https://github.com/OpenMPT/openmpt
+- **License:** BSD-3-Clause (verified — GitHub license API spdx_id).
+- **Use:** compose chiptune cartoon SFX and jingles in tracker tradition; render stems for episodes.
+- **Lane note:** Wave 3 Lane A: the BSD tracker for retro SFX composition.
+
+#### MusicGen / AudioGen ⚠️ MIT code / CC-BY-NC-4.0 weights
+- **What:** Meta's text-to-music (MusicGen) and text-to-SFX (AudioGen) models — promptable neural audio generation (audiocraft repo).
+- **URL:** https://github.com/facebookresearch/audiocraft
+- **License:** MIT for the CODE (verified — GitHub license API spdx_id; README: "code ... released under the MIT license"); model WEIGHTS are CC-BY-NC-4.0 (verified — README: "models weights ... CC-BY-NC 4.0"; HF cardData.license). **Verify per use** — weights are non-commercial.
+- **Use:** prompt "cartoon boing" / "laser zap" → neural SFX drafts for previz and temp tracks (non-commercial); code use is fine.
+- **Lane note:** Wave 3 Lane A: ⚠️ for the weight license split; temp-track generation only.
+
+#### AudioLDM ⚠️ CC-BY-NC-SA-4.0
+- **What:** Latent-diffusion text-to-audio — promptable SFX/music generation with strong quality.
+- **URL:** https://github.com/haoheliu/AudioLDM
+- **License:** CC-BY-NC-SA-4.0 (verified — repo LICENSE file; commonly assumed MIT — it is NOT). **Verify per use** — non-commercial, share-alike.
+- **Use:** text-prompted cartoon SFX drafts for previz/temp (non-commercial only).
+- **Lane note:** Wave 3 Lane A: ⚠️ NC-SA; research/temp use.
+
+#### AudioLDM2 ⚠️ CC-BY-NC-SA-4.0
+- **What:** AudioLDM's successor — improved text-to-audio with "language of audio" pretraining.
+- **URL:** https://github.com/haoheliu/AudioLDM2
+- **License:** CC-BY-NC-SA-4.0 (verified — repo LICENSE file). **Verify per use** — non-commercial, share-alike.
+- **Use:** same slot as AudioLDM with better prompt adherence; temp-track generation only.
+- **Lane note:** Wave 3 Lane A: ⚠️ NC-SA; research/temp use.
+
+#### Stable Audio Open ⚠️ MIT code / custom NC-ish weight terms
+- **What:** Stability AI's open-weights text-to-audio (up to 47s stereo) with training/inference code.
+- **URL:** https://github.com/Stability-AI/stable-audio-tools
+- **License:** MIT for the CODE (verified — GitHub license API spdx_id); the stable-audio-open-1.0 WEIGHTS sit behind gated custom terms (verified — HF model page: license "other", gated). **Verify per use** — treat weights as non-commercial until legal clears them.
+- **Use:** longer neural SFX beds and transitions for previz; code is safe, weights need review.
+- **Lane note:** Wave 3 Lane A: ⚠️ for the gated weight terms.
+
+#### Tango ⚠️ CC-BY-NC-ND-4.0
+- **What:** Text-to-audio generation (Surrey/Declare Lab) — promptable SFX and short music.
+- **URL:** https://github.com/declare-lab/tango
+- **License:** CC-BY-NC-ND-4.0 (verified — repo LICENSE file; the most restrictive in this pocket). **Verify per use** — non-commercial, no derivatives.
+- **Use:** awareness only — the ND term blocks even transforming outputs; listed so nobody grabs it by accident.
+- **Lane note:** Wave 3 Lane A: ⚠️ NC-ND; effectively research-only.
+
+#### ZynAddSubFX 🚫 GPL-2.0
+- **What:** The veteran open synth — additive, subtractive, FM, and pad synthesis; a SFX-design workhorse.
+- **URL:** https://github.com/zynaddsubfx/zynaddsubfx (upstream: https://zynaddsubfx.sourceforge.io)
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** design cartoon SFX with deep synthesis (morphing pads → risers, FM → zaps); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Surge XT 🚫 GPL-3.0
+- **What:** The flagship open hybrid synth (formerly commercial) — wavetable/FM/virtual-analog with deep modulation.
+- **URL:** https://github.com/surge-synthesizer/surge
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** the SFX-design power synth (lasers, risers, impacts); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Vital 🚫 GPL-3.0
+- **What:** Matt Tytel's spectral-warping wavetable synth — the modern free synth with a huge preset culture.
+- **URL:** https://github.com/mtytel/vital
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** wavetable cartoon SFX (morphing zaps, talking bass wobbles); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Odin 2 🚫 GPL-3.0
+- **What:** TheWaveWarden's 24-voice VA/FM/wavetable synth — big sound, clean UI.
+- **URL:** https://github.com/TheWaveWarden/odin2
+- **License:** GPL-3.0 (verified — repo README: "distributed under the GNU GPLv3"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** analog-style cartoon SFX (boings, slides, sirens); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Dexed 🚫 GPL-3.0
+- **What:** The DX7 FM clone — the definitive open FM synth; THE 80s-cartoon zap machine.
+- **URL:** https://github.com/asb2m10/dexed
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** FM cartoon SFX (electric zaps, metallic bonks, bell pings); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: FM is the cartoon-zap synthesis method; license blocks pipeline use.
+
+#### VCV Rack 🚫 GPL-3.0
+- **What:** The open virtual-modular synth platform — patch oscillators/filters/sequencers like hardware.
+- **URL:** https://github.com/VCVRack/Rack
+- **License:** GPL-3.0 (verified — repo LICENSES page: "under the terms of the GNU General Public License ... version 3"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** modular cartoon-SFX patching (boing = spring reverb + pitch envelope); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Cardinal 🚫 GPL-3.0
+- **What:** DISTRHO's VCV-Rack-based plugin — the Rack modular environment as a plugin in any DAW.
+- **URL:** https://github.com/DISTRHO/Cardinal
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** modular SFX inside a DAW session; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Helm 🚫 GPL-3.0
+- **What:** Matt Tytel's polyphonic synth — clean, fast, great for bread-and-butter SFX timbres.
+- **URL:** https://github.com/mtytel/helm
+- **License:** GPL-3.0 (verified — repo license body: GPL v3 text). **QUARANTINED** — never wired into shipping paths.
+- **Use:** straightforward subtractive cartoon SFX; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Csound 🚫 LGPL-2.1
+- **What:** The venerable text-based synthesis language — orchestras and scores; infinite SFX programmability.
+- **URL:** https://github.com/csound/csound (upstream: https://csound.com)
+- **License:** LGPL-2.1 (verified — GitHub license API spdx_id). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** score-driven cartoon SFX composition; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention.
+
+#### OpenAL Soft 🚫 LGPL-2.1
+- **What:** The open 3D-audio implementation — positional audio, HRTF, effects extensions.
+- **URL:** https://github.com/kcat/openal-soft
+- **License:** LGPL-2.1 (verified — repo: "GNU LIBRARY GENERAL PUBLIC LICENSE Version 2"). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** 3D-placed cartoon SFX in tools/games via a stable API; standalone/dynamic-link use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention.
+
+#### SuperCollider 🚫 GPL-3.0
+- **What:** The live-coding synthesis language/server — the academic standard for procedural audio.
+- **URL:** https://github.com/supercollider/supercollider
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** algorithmic cartoon-SFX composition and research; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### ChucK 🚫 GPL-2.0
+- **What:** Strongly-timed live-coding audio language (Princeton/CCRMA) — sample-accurate synthesis control.
+- **URL:** https://github.com/ccrma/chuck
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** precisely-timed SFX synthesis experiments; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### PlugData 🚫 GPL-3.0
+- **What:** Pure Data as a DAW plugin (LV2/VST3/CLAP/standalone) — patch Pd SFX inside a session.
+- **URL:** https://github.com/plugdata-team/plugdata
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** Pd cartoon-SFX patches inside the DAW; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; vanilla Pd (BSD) covers the slot.
+
+#### FAUST 🚫 LGPL-2.1
+- **What:** Functional DSP language — write SFX processors once, compile to C++/Rust/WebAssembly/plugins.
+- **URL:** https://github.com/grame-cncm/faust
+- **License:** LGPL-2.1 (verified — repo: "under the terms of the GNU Lesser General Public License"). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** formally-specified SFX DSP compiled to any target; research/standalone use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention.
+
+#### Furnace 🚫 GPL-2.0-or-later
+- **What:** Multi-system chiptune tracker — dozens of chip emulations (YM2612, SN76489, NES, C64...).
+- **URL:** https://github.com/tildearrow/furnace
+- **License:** GPL-2.0-or-later (verified — repo: "most of Furnace is under the GNU General Public License (GPL) version 2 or later"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** authentic chip cartoon SFX across classic hardware voices; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Schism Tracker 🚫 GPL-2.0
+- **What:** The Impulse Tracker clone — IT-format tracking with a faithful UI.
+- **URL:** https://github.com/schismtracker/schismtracker
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** IT-tradition cartoon SFX and jingles; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; OpenMPT (BSD) covers the slot.
+
+#### MilkyTracker 🚫 GPL-3.0
+- **What:** FastTracker II clone — XM module tracking, beloved for chip SFX.
+- **URL:** https://github.com/milkytracker/MilkyTracker
+- **License:** GPL-3.0 for the app (verified — repo: "The rest of MilkyTracker remains covered by the GPL" v3; the MilkyPlay player lib is BSD). **QUARANTINED** — never wired into shipping paths.
+- **Use:** XM cartoon SFX composition; render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### ADLMIDI 🚫 GPL-3.0
+- **What:** OPL3 (Yamaha YMF262) FM chip emulation with MIDI input — THE DOS-game cartoon sound.
+- **URL:** https://github.com/Wohlstand/libADLMIDI
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** authentic OPL3 cartoon SFX (the AdLib/SoundBlaster zap palette); render offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### OPNMIDI 🚫 LGPL-3.0
+- **What:** YM2612 (Genesis/Mega Drive) FM chip emulation with MIDI input.
+- **URL:** https://github.com/Wohlstand/libOPNMIDI
+- **License:** LGPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** Genesis-era cartoon SFX palette; render offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention.
+
+#### hvcc 🚫 GPL-3.0
+- **What:** Compiles Pure Data patches to portable C (plus JUCE/DPF/Wwise targets) — deploy Pd SFX patches as code.
+- **URL:** https://github.com/Wasted-Audio/hvcc
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** turn a Pd cartoon-SFX patch into embeddable C for research builds; the output's licensing needs review before any ship.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### swh-plugins 🚫 GPL-2.0
+- **What:** Steve Harris's LADSPA plugin classics — the original open plugin collection (decimators, vinyl, pitch-shift, weirdness).
+- **URL:** https://github.com/swh/ladspa
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** lofi/degrade cartoon SFX processing in LADSPA hosts; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; Airwindows (MIT) covers the slot.
+
+#### Flocking 🚫 GPL-2.0
+- **What:** Web Audio synthesis framework (Colin Clark) — declarative unit-generator graphs in the browser.
+- **URL:** https://github.com/colinbdclark/Flocking
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id; commonly assumed MIT — it is NOT). **QUARANTINED** — never wired into shipping paths.
+- **Use:** browser SFX synthesis research; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; Pizzicato (MIT) covers the slot.
+
+#### MBROLA 🚫 AGPL-3.0 (voices: non-commercial)
+- **What:** Diphone speech synthesizer (TCTS Lab, Mons) — phoneme+prosody in, speech out; the classic robot-voice engine.
+- **URL:** https://github.com/numediart/MBROLA
+- **License:** AGPL-3.0 for the engine (verified — GitHub license API spdx_id); the VOICE databases are free for non-commercial, non-military use only (verified — project terms). **QUARANTINED** — never wired into shipping paths.
+- **Use:** robot/alien cartoon voice SFX for temp tracks (non-commercial); standalone use only.
+- **Lane note:** Wave 3 Lane A: double restriction — AGPL engine, NC voices.
+
+#### PaulXStretch 🚫 GPL-3.0
+- **What:** The PaulStretch extreme time-stretcher as a plugin/app — turn any blip into an hour-long evolving whoosh.
+- **URL:** https://github.com/essej/PaulXStretch
+- **License:** GPL-3.0 (verified — repo license body). **QUARANTINED** — never wired into shipping paths.
+- **Use:** extreme-stretch cartoon SFX (impacts → cavernous booms, zaps → evolving drones); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Dragonfly Reverb 🚫 GPL-3.0
+- **What:** Open algorithmic + hall reverbs (Michael Willis) — the go-to free reverb for SFX space.
+- **URL:** https://github.com/michaelwillis/dragonfly-reverb
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** put cartoon SFX in cartoon spaces (caverns, halls); render stems offline; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+<!-- end lane A wave 3 pocket 2: cartoon SFX synthesis (59 entries; 25 GPL-family rows → quarantine 119–143) -->

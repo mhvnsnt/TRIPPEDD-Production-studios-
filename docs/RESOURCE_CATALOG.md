@@ -47589,3 +47589,1060 @@ Lane C wired 2 permissive-licensed audio tools with real proofs, extending the W
 - Catalog: 4,541 -> 4,542 honest entries (`grep -c '^####'`)
 - Quarantine: unchanged (no GPL code linked/imported; ffmpeg used only as external binary)
 - Honest findings: noisereduce blind stationary mode destroys program audio (70.6% RMS loss — documented negative control); global SNR-vs-pristine rejected as a denoise metric (segmental metrics used); linear peak attenuation rejected (can't un-clip PCM16 rail)
+## Wave 53 Lane A — catalog deepening (2026-10-08)
+
+### P1 — PD cartoon/film-music long tail round 2 (post-1930 animation scores, cartoon music libraries, PD sheet-music sources)
+
+#### SFSMA — Silent Film Sound & Music Archive (Rapée scan) ✅ public domain
+- **What:** Volunteer archive hosting a full scan of Ernö Rapée's *Motion Picture Moods for Pianists and Organists* (G. Schirmer, 1924) — the landmark photoplay mood-music reference, donated by Rodney Sauer (Mont Alto).
+- **URL:** https://www.sfsma.org/erno-rapee-motion-picture-moods/
+- **License:** ✅ Public domain (1924 US publication; PD in US)
+- **Free tier:** Free downloads (book split into components for size)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 52-mood edge index organizes classical extracts, national airs, and original photoplay pieces — directly reusable as a silent/cartoon scoring vocabulary. Per-country caveat: EU life+70 (Rapée d.1945) may still cover some pieces outside the US. [Wave 53 Lane A]
+
+#### Digital Chicago — Zamecnik "Hurry Music (for struggles)" (1913) ✅ public domain
+- **What:** Photoplay cue for struggle/chase scenes from *Sam Fox Moving Picture Music Vol. 1* (1913) — item page explicitly marked Rights: Public domain, sheet music for piano.
+- **URL:** https://digitalchicagohistory.org/items/show/920
+- **License:** ✅ Public domain (1913 publication; item page rights statement)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sourced from the Silent Film Sound & Music Archive. The "hurry music" archetype is the direct ancestor of cartoon chase scoring. [Wave 53 Lane A]
+
+#### Digital Chicago — Zamecnik "Mexican or Spanish Music" (1913) ✅ public domain
+- **What:** Photoplay cue for "Mexican or Spanish" scenes from *Sam Fox Moving Picture Music Vol. 1* (1913) — item page explicitly marked Rights: Public domain.
+- **URL:** https://www.digitalchicagohistory.org/exhibits/show/max-wants-a-divorce/item/927
+- **License:** ✅ Public domain (1913 publication; item page rights statement)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period ethnic-scene cueing conventions documented; useful as a historical reference for how early film music handled locale cues. [Wave 53 Lane A]
+
+#### Digital Chicago — Zamecnik "Lively" (Vol. 3, 1914) ✅ public domain
+- **What:** Photoplay cue for silent-movie comedy from *Sam Fox Moving Picture Music Vol. 3* (1914) — item page explicitly marked Rights: Public domain.
+- **URL:** https://digitalchicagohistory.org/items/show/924
+- **License:** ✅ Public domain (1914 publication; item page rights statement)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Comedy-scene photoplay cue — the structural template for 1930s cartoon comedy scoring. [Wave 53 Lane A]
+
+#### Digital Chicago — Zamecnik "Comedy Scene" (Vol. 3, 1914) ✅ public domain
+- **What:** Photoplay cue for silent-movie comedy from *Sam Fox Moving Picture Music Vol. 3* (1914) — item page explicitly marked Rights: Public domain.
+- **URL:** https://www.digitalchicagohistory.org/exhibits/show/max-wants-a-divorce/item/919
+- **License:** ✅ Public domain (1914 publication; item page rights statement)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the "Lively" cue above — two distinct comedy moods from the same 1914 volume. [Wave 53 Lane A]
+
+#### Digital Chicago — Zamecnik "Reception Music" (Vol. 3, 1914) ✅ public domain
+- **What:** Photoplay cue for reception/formal scenes from *Sam Fox Moving Picture Music Vol. 3* (1914) — item page explicitly marked Rights: Public domain, sheet music for piano.
+- **URL:** https://digitalchicagohistory.org/items/show/929
+- **License:** ✅ Public domain (1914 publication; item page rights statement)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Formal/society-scene cue — completes the Digital Chicago Zamecnik mood set (hurry, comedy x2, locale, formal). [Wave 53 Lane A]
+
+#### Digital Chicago — "Max Wants a Divorce" photoplay themes exhibit ✅ public domain
+- **What:** Exhibit documenting 15 PD photoplay themes (Zamecnik, Ilgenfritz, etc.) researched from the Balaban and Katz theater archive and arranged into a scored 1917 silent short — a worked method demo for scoring silent/cartoon film from PD cues.
+- **URL:** https://digitalchicagohistory.org/exhibits/show/max-wants-a-divorce/photoplay_music_themes
+- **License:** ✅ Public domain (underlying themes 1913–1914 publications)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The methodology (research archive → select mood cues → arrange/orchestrate with transitions) is directly portable to scoring PD cartoon restorations. [Wave 53 Lane A]
+
+#### The Skeleton Dance (1929) ✅ public domain (US, 2025-01-01)
+- **What:** First Silly Symphony (Disney/Iwerks, 1929) — copyright renewed 1957, entered US public domain January 1, 2025 as a 1929 publication. Music by Carl Stalling.
+- **URL:** https://en.wikipedia.org/wiki/The_Skeleton_Dance
+- **License:** ✅ Public domain in the US (1929 publication, 95-year term expired)
+- **Free tier:** Free (Wikimedia Commons hosts the full short)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The embedded Stalling score lapses with the film in the US, but separately-published Stalling sheet music has its own term — layered-rights note. EU caveat: Stalling d.1972, still under copyright in life+70 countries. Companion to the cataloged Steamboat Willie RightsAtlas packet. [Wave 53 Lane A]
+
+#### LOC Citizen DJ ✅ public domain (US government work)
+- **What:** Library of Congress open-source project building hip-hop sample packs from public-domain National Jukebox recordings — code and PD audio, with per-collection rights statements citing the Music Modernization Act (pre-1923 recordings PD since 2022-01-01).
+- **URL:** https://github.com/libraryofcongress/citizen-dj
+- **License:** ✅ Public domain (US federal government work; audio packs PD per collection rights pages)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The _explore/_use markdown files are citable PD-rights references per Jukebox sub-collection (opera, spoken word). Audio is stream/download per collection terms — verify per pack. [Wave 53 Lane A]
+
+#### SFSMA — Sam Fox Moving Picture Music Vols. 1 & 3 ✅ public domain
+- **What:** SFSMA-hosted scans of J.S. Zamecnik's *Sam Fox Moving Picture Music* Vols. 1 (1913) and 3 (1914) — the pioneering original photoplay-music volumes; Digital Chicago item pages mark the individual cues Rights: Public domain.
+- **URL:** http://www.sfsma.org/ARK/22915/sam-fox-moving-picture-music-vol-1/
+- **License:** ✅ Public domain (1913/1914 US publications)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zamecnik wrote nearly all of Sam Fox's photoplay output 1913–1929 (hundreds of pieces); the four *Moving Picture Music* volumes (1913–1924) are the core PD cartoon-scoring vocabulary. Later Sam Fox photoplay editions (1919–1922) need per-volume PD checks. [Wave 53 Lane A]
+
+#### Open Music Archive ⚠️ PD in UK only — per-country check required
+- **What:** UK collaborative archive (Eileen Simpson / Ben White) sourcing, digitizing, and distributing out-of-copyright sound recordings — 1920s jazz/blues/music-hall/folk, Edison/Diamond Disc material, tag-browsable.
+- **URL:** http://www.openmusicarchive.org/
+- **License:** ⚠️ Public domain in the UK only — site FAQ states recordings are PD in the UK and warns non-UK downloaders that compositions/recordings may be bound by different copyright laws
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest per-country trap: a track PD in the UK (life+70, 50-year recording term at digitization) may still be under US copyright. Verify each track against US terms before commercial use. [Wave 53 Lane A]
+
+#### UCSB Cylinder Audio Archive ⚠️ per-item rights
+- **What:** UCSB Library's digitized collection of 15,000+ phonograph cylinders (1893–mid-1920s) — popular song, vaudeville, minstrelsy, band music, speeches; free streaming/download.
+- **URL:** https://www.library.ucsb.edu/special-collections/performing-arts/cylinders
+- **License:** ⚠️ Per-item — pre-1923 recordings PD in the US under the Music Modernization Act (2022-01-01); 1923+ recordings have staggered federal terms; UCSB notes it rarely holds copyright
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 650 vernacular home cylinders are on the National Recording Registry. Period-correct source for 1900s–1920s atmosphere beds; check each recording's date before reuse. [Wave 53 Lane A]
+
+#### The Great 78 Project ⚠️ per-item rights — label litigation settled 2025
+- **What:** Internet Archive initiative (with ARChive of Contemporary Music, George Blood L.P.) digitizing 78rpm singles/cylinders 1880–1960 — 400,000+ recordings as of 2025, presented as historical artifacts with multi-stylus transfers.
+- **URL:** https://en.wikipedia.org/wiki/The_Great_78_Project
+- **License:** ⚠️ Per-item — pre-1923 recordings PD in the US (MMA); later recordings' rights vary. NOTE: Sony/UMG sued IA over this project in 2023 (2,749→4,142 recordings); settled under NDA in 2025 — the settlement leaves per-item status murky for post-1922 commercial recordings
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Safest use: pre-1923 sides and clearly non-commercial material; treat post-1922 major-label sides as rights-encumbered until verified. [Wave 53 Lane A]
+
+#### DAHR — Discography of American Historical Recordings ⚠️ Sony streaming license
+- **What:** UCSB's database of 460,000+ master recordings from the 78rpm era (Victor, Columbia, Okeh, Edison, Brunswick, Decca) with 90,000+ free streams — the authoritative discography for dating and identifying early recordings.
+- **URL:** https://library.ucsb.edu/special-collections/performing-arts/victor
+- **License:** ⚠️ Discography metadata reusable for research; audio streams under a gratis Sony license (streaming, not download/reuse) — in-copyright recordings are NOT cleared for reuse
+- **Free tier:** Free search + streaming
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Primary value is provenance: matrix numbers, recording dates, and company data to verify whether a given recording is pre-1923 (PD) — use it as the diligence tool before pulling audio from the Great 78 Project or Jukebox. [Wave 53 Lane A]
+
+#### National Jukebox (Library of Congress) ⚠️ streaming-only
+- **What:** LOC's streaming collection of 10,000+ historical Victor/Columbia/OKeh recordings (1901–1925), licensed gratis from Sony Music — free to the public, stream-only.
+- **URL:** https://www.loc.gov/collections/national-jukebox/about-this-collection/
+- **License:** ⚠️ Streaming-only under Sony gratis license; pre-1923 recordings are PD in the US per the Music Modernization Act (LOC Citizen DJ rights pages confirm), but the Jukebox stream itself is not a download/reuse grant
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use for listening/reference and PD verification; for reusable audio go to Citizen DJ packs or pre-1923 Great 78 sides instead. [Wave 53 Lane A]
+
+#### Sinkin' in the Bathtub (1930) ⚠️ film PD, embedded songs layered
+- **What:** First Looney Tunes short (Harman-Ising/Bosko, released 1930-04-19) — erroneously copyrighted 1930, never renewed; PD in the US. Music directed by Frank Marsales with Abe Lyman's Brunswick orchestra.
+- **URL:** https://en.wikipedia.org/wiki/Sinkin%27_in_the_Bathtub
+- **License:** ⚠️ Film PD in the US (copyright not renewed) — BUT the score is built from then-current Warner Bros. catalog songs ("Singin' in the Bathtub" 1929, "Tiptoe Through the Tulips", "Lady Luck", "I'm Forever Blowing Bubbles", "Painting the Clouds with Sunshine"), which had their own sheet-music copyrights and renewals
+- **Free tier:** Free (archive.org/details/SinkinInTheBathtub)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Textbook layered-rights case: PD film ≠ PD soundtrack. The picture and the Marsales arrangements as embedded are usable; lifting individual songs needs per-song verification. [Wave 53 Lane A]
+
+#### Fleischer Color Classics (Internet Archive) ⚠️ per-item PD
+- **What:** IA collection of 30+ Fleischer Color Classics shorts (1934–1940) — "Poor Cinderella", "Dancing on the Moon", "Christmas Comes But Once a Year", etc.
+- **URL:** https://archive.org/details/FleischersColorClassics
+- **License:** ⚠️ Per-item — 1934–1940 Paramount releases; renewals likely for most; do NOT assume PD from IA hosting alone
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** IA hosting is not a PD determination. Useful as a viewing reference for Fleischer's music-driven series; each short needs a renewal search before any reuse. [Wave 53 Lane A]
+
+#### Max Fleischer Collection (Internet Archive) ⚠️ per-item PD
+- **What:** IA collection of 30+ Fleischer shorts including Color Classics and Hunky & Spunky entries.
+- **URL:** https://archive.org/details/max-fleischer-collection
+- **License:** ⚠️ Per-item — same renewal caveat as the Color Classics collection; uploader assertions are not rights research
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Overlaps the FleischersColorClassics item — treat as a viewing mirror, not a second rights source. [Wave 53 Lane A]
+
+#### 1930 Fleischer Screen Song "Strike Up the Band" ⚠️ per-item PD
+- **What:** IA item for the 1930 Fleischer Screen Song sing-along short — Screen Songs (1929–1938) featured the bouncing ball over popular hits of the day plus later guest stars (Calloway, Vallee, Merman).
+- **URL:** https://archive.org/details/1930FleischerScreenSongStrikeUpTheBand
+- **License:** ⚠️ 1930 film publication is PD in the US as of 2026-01-01, BUT Screen Songs were built around popular songs of the day — each featured song needs its own check; syndication prints often cut the sing-along sequences
+- **Free tier:** Free streaming/download
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Same layered-rights pattern as Sinkin' in the Bathtub: PD picture, encumbered songbook. [Wave 53 Lane A]
+
+#### Talkartoons PD filmography ⚠️ per-item PD
+- **What:** Wikipedia's Talkartoons filmography with a "Video if in the public domain" column linking PD Fleischer Talkartoons (1929–1930) to Wikimedia Commons video — Noah's Lark (1929), Radio Riot (1930), Hot Dog (1930, first Lou Fleischer score).
+- **URL:** https://en.wikipedia.org/wiki/Talkartoons
+- **License:** ⚠️ Per-item — 1929–1930 entries PD in the US; 1931+ entries not yet (95-year term)
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hot Dog (1930) is the first Fleischer cartoon scored by Lou Fleischer and uses Eddie Peabody's "Saint Louis Blues" recording — another layered-rights flag (W.C. Handy composition, 1914, PD; the Peabody recording's status is separate). [Wave 53 Lane A]
+
+#### Mont Alto Motion Picture Orchestra ⚠️ commercial recordings
+- **What:** Five-piece chamber ensemble (formed 1989/1994) reviving silent-film orchestra practice — 125+ films scored from historic photoplay libraries, 40+ scores recorded for DVD/Blu-ray/TCM.
+- **URL:** https://silentfilm.org/mont-alto-motion-picture-orchestra/
+- **License:** ⚠️ Commercial recordings (not PD, not cleared for reuse) — value is as a practice reference and photoplay-library authority
+- **Free tier:** N/A (commercial)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rodney Sauer's compiled-score essays (e.g. the Beggars of Life cue-sheet reconstruction) document authentic photoplay compilation method; Sauer donated the Rapée scan to SFSMA. Do not lift their recordings. [Wave 53 Lane A]
+
+#### Famous Players Orchestra ⚠️ commercial recordings
+- **What:** Silent-film accompaniment orchestra documenting photoplay-era performance practice; site covers the history of composed-for-picture folios (Frelinger 1909, Fischer/Lake 1912, Zamecnik/Sam Fox 1913–14, Gordon/Levy 1914, Remick/Lampe 1914).
+- **URL:** https://fporchestra.org/the-music/
+- **License:** ⚠️ Commercial recordings — historical reference only
+- **Free tier:** N/A (commercial)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The folio chronology on this page is a useful bibliography for PD photoplay sources: Frelinger's 1909 anthology predates Becce's Kinothek (1919) as the first photoplay collection. [Wave 53 Lane A]
+
+#### FreePD (Kevin MacLeod) — CLOSED 2025 ⚠️ mirrors only, per-track diligence
+- **What:** Kevin MacLeod's public-domain music library (CC0 dedications by contributing artists) — **shut down in late 2025**; the catalog survives only in community mirrors.
+- **URL:** https://en.wikipedia.org/wiki/Kevin_MacLeod
+- **License:** ⚠️ Site closed 2025; surviving tracks were CC0 per-track — verify each track's dedication via the mirrors, do not assume the whole mirror is clean
+- **Free tier:** Free (mirrors)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mirrors: Internet Archive item `allfreepdmusicbykuronekony4n` and GitHub 0lhi/FreePD. Do NOT confuse with MacLeod's main Incompetech catalog, which is CC-BY (attribution required), not PD. [Wave 53 Lane A]
+
+#### FreePD community mirrors — provenance doc ⚠️ per-track diligence
+- **What:** Third-party documentation of the FreePD mirror chain: IA item `allfreepdmusicbykuronekony4n` plus a Wayback-Machine license-verification method (snapshot of freepd.com/upbeat.php, 2025-01-06) used to confirm per-track CC0 claims.
+- **URL:** https://github.com/aeytechnologiesllc/sunrise-farm/blob/HEAD/public/audio/CREDITS.md
+- **License:** ⚠️ Per-track CC0 claims verified against Wayback snapshots — replicate the verification, don't trust the mirror blindly
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** This is the honest pattern for dead PD libraries: mirror + dated Wayback license evidence + per-track credit table. Adopt it for any other defunct source we rely on. [Wave 53 Lane A]
+
+#### Open Library — Motion Picture Moods (1970 reprint) ⚠️ edition check required
+- **What:** Open Library work record for Rapée's *Motion Picture Moods* — lists the 1970 Arno Press reprint (ISBN 0405016352), notes original G. Schirmer 1924 publication.
+- **URL:** https://openlibrary.org/works/OL13508167W/Motion_picture_moods_for_pianists_and_organists
+- **License:** ⚠️ The 1970 reprint edition has its own (lapsed or renewed) status — use the 1924 original / SFSMA scan for PD purposes, not the reprint metadata
+- **Free tier:** Free (metadata)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Edition-level diligence matters: reprints can carry new copyrights (new introductions, resetting). The 1924 Schirmer first edition is the safe PD anchor. [Wave 53 Lane A]
+
+#### Ernö Rapée (Wikipedia) — publications bibliography ⚠️ resource
+- **What:** Biography/publications list: *Encyclopedia of Music for Pictures* (Belwin, 1925) and *Motion Picture Moods for Pianists and Organists* (Schirmer, 1924), plus Rapée's photoplay pieces (Agitatos, Tender Memories, etc.).
+- **URL:** https://en.wikipedia.org/wiki/Ern%C3%B6_Rap%C3%A9e
+- **License:** ⚠️ Resource page (not a rights grant) — 1924/1925 US publications are PD in the US; EU life+70 (d.1945) still runs
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The *Encyclopedia* (1925) entered US PD 2021-01-01; no verified full scan captured this pass — SFSMA is the known host to check first. [Wave 53 Lane A]
+
+#### Photoplay music (Wikipedia) — publisher series table ⚠️ resource
+- **What:** Overview of the photoplay-music repertory with a publisher/composer/date table: Carl Fischer/Lake (1914–16), Photo-Play Music Co./Luz (1915–20), Berg's (1916–17), Schirmer/Langey (1916–23), Chappell/Breil (1917), Sam Fox/Zamecnik (1919–22).
+- **URL:** https://en.wikipedia.org/wiki/Photoplay_music
+- **License:** ⚠️ Resource page — each series needs per-publication PD dating (pre-1931 US publications are PD in the US)
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use as the hunting map for round-3: every series in this table with pre-1931 volumes is a candidate PD photoplay source. [Wave 53 Lane A]
+
+#### silentsaregolden.com — J.S. Zamecnik biography ⚠️ resource
+- **What:** Biography documenting Zamecnik's Sam Fox output: four *Moving Picture Music* volumes (1913–1924), five *Photoplay Edition* volumes, theater/orchestra series, and the "World Events March" (Fox Movietone newsreel theme, 1930s).
+- **URL:** http://www.silentsaregolden.com/articles/Zamecnik.html
+- **License:** ⚠️ Resource page — 1913–1924 volumes PD in the US; 1930s newsreel theme NOT PD
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Draws the PD boundary inside one composer's catalog: the photoplay volumes are safe, the Movietone theme is not. [Wave 53 Lane A]
+
+#### Sheet Music Consortium ❓ discontinued 2026 — diligence record
+- **What:** Former UCLA-hosted OAI metadata harvester unifying 100,000+ sheet-music records across member libraries (UCLA, Indiana/IN Harmony, Johns Hopkins/Levy, Duke, LOC, 20+ partners).
+- **URL:** https://www.teachingmusichistory.com/acadp_listings/sheet-music-consortium/
+- **License:** ❓ Service discontinued by UCLA Library in 2026 (resource constraints) — centralized search is dead; member collections live on via direct links
+- **Free tier:** Free (was)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not link users to the dead harvester. UCLA's APAM page now lists direct member-collection links. Per-item rights at each member library still vary (1780–1980 spans). [Wave 53 Lane A]
+
+#### Swing You Sinners (1930) ❓ uploader PD claim — renewal unverified
+- **What:** Fleischer Talkartoon (1930), musically-driven early sound cartoon; a YouTube uploader asserts PD status citing expired/non-renewed copyright.
+- **URL:** https://www.youtube.com/watch?v=h_4C_RJArKE
+- **License:** ❓ Uploader claim only — 1930 publication WOULD be PD in the US as of 2026-01-01 if unrenewed, but no renewal search was captured this pass
+- **Free tier:** Free (streaming)
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not rely on the claim until a Copyright Office renewal search confirms non-renewal. Contrast with Sinkin' in the Bathtub, where non-renewal is documented. [Wave 53 Lane A]
+
+#### GeekTyrant — 2025 public-domain class ❓ secondary source
+- **What:** Roundup of works entering US PD on 2025-01-01: Popeye (1929 Thimble Theatre), 12 more Mickey shorts (incl. The Karnival Kid — white gloves), The Skeleton Dance, plus 1929 books and 1924 recordings.
+- **URL:** https://geektyrant.com/news/popeye-more-mickey-mouse-the-skeleton-dance-and-more-enter-the-public-domain-in-2025/
+- **License:** ❓ Secondary journalism — the 1929-publication rule it cites is correct US law, but verify each work individually
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful as a watchlist generator for round-3 (1929 cartoon scores entering PD), not as a rights authority. [Wave 53 Lane A]
+
+#### Digital Trends — public-domain music sites roundup ❓ verify each
+- **What:** Roundup of PD/royalty-free music sites: FreePD, Free Music Archive, Musopen, Open Music Archive, Moby Gratis.
+- **URL:** https://www.digitaltrends.com/home-theater/best-public-domain-music-sites/
+- **License:** ❓ Roundup — conflates "public domain", "royalty-free", and "free download"; each listed site needs its own license audit (FMA is per-track licenses, Moby Gratis is a non-commercial license application)
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: "royalty-free" ≠ public domain. This article is a lead list, not a clearance source. [Wave 53 Lane A]
+
+#### see-this-sound.at — cue-sheet/photoplay history ❓ resource
+- **What:** Essay tracing film-music practice: Edison's 1910 Frankenstein cue sheet (first), Sam Fox Moving Picture Music (1913, Zamecnik), Becce's Kinothek (1919), Rapée's 1924 collection, and the first original film scores (Saint-Saëns 1908, Ippolitov-Ivanov 1909, Weiß 1913, Honegger 1923, Meisel 1925, Shostakovich 1929, Eisler/Hindemith).
+- **URL:** http://see-this-sound.at/print/71.html
+- **License:** ❓ Resource page — pre-1931 publications cited are PD in the US; verify each
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The original-score chronology is the deep-history complement to the photoplay folios: Saint-Saëns' 1908 score is the earliest composed-for-film music in the PD. [Wave 53 Lane A]
+
+#### thefreelibrary.com — silent film music resources guide ❓ resource
+- **What:** Guide to silent-film music resources: photoplay albums ("Hurry Music", "Mysterioso"), publisher series (Carl Fischer Theatrical Budget/Loose Leaf, Photo-Play Music Co. ABC sets, Berg's Incidental, Schirmer's Photoplay), and the Balaban & Katz theater library holdings (141 Lake numbers, 116 Zamecnik).
+- **URL:** https://www.thefreelibrary.com/Using+resources+for+silent+film+music-a0470559667
+- **License:** ❓ Resource guide — publications cited are 1909–1920s (PD in the US); verify each
+- **Free tier:** Free
+- **Repo lane:** trippedd (film-restoration / music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documents that working theater libraries held MORE Zamecnik/Lake than any classical composer — evidence that PD photoplay music, not concert repertoire, was the real scoring language of the era. [Wave 53 Lane A]
+### P2 — Broadcast EAS/SCTE tooling round 2 (encoders, cue inserters, EAS decoders, SCTE-35/104/225 libs, SDR receive pipeline)
+
+#### superkabuki/SCTE-35_Sidecar_Files ✅ commercial-safe
+- **What:** Sample SCTE-35 sidecar files (XML/JSON/binary) for testing threefive-based cue parsing pipelines.
+- **URL:** https://github.com/superkabuki/SCTE-35_Sidecar_Files
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / scte)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Test fixtures, not code — wire freely. Pairs with the quarantined threefive lib entry below. [Wave 53 Lane A]
+
+#### fishloa/rust-dvb ✅ commercial-safe
+- **What:** Rust DVB workspace with `dvb-scte35` and the new `scte104` crate — ANSI/SCTE 104 automation→encoder messaging (multiple/single operation messages, splice_request, time_signal, insert_descriptor), symmetric parse/serialize, no_std.
+- **URL:** https://github.com/fishloa/rust-dvb
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / scte)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The only permissive SCTE-104 implementation found this wave; scte104 crate was blocked on sourcing the (free-from-SCTE) spec PDF — verify spec coverage before wiring. [Wave 53 Lane A]
+
+#### HonestLocksmith/dsame ✅ commercial-safe
+- **What:** Python EAS/SAME alert message decoder — decodes demodulated SAME headers, filters by SAME/event code, emits readable text or runs an external program. Upstream of the cataloged cuppa-joe/dsame fork.
+- **URL:** https://github.com/honestlocksmith/dsame
+- **License:** ✅ ISC (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / eas)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Distinct upstream repo (HonestLocksmith), not a duplicate of the cataloged cuppa-joe/dsame entry — canonical source, last pushed 2022-02-20. Requires RTL-SDR/weather-radio + demodulator (multimon-ng, quarantined row 361). [Wave 53 Lane A]
+
+#### Owen29276/TFT-EAS-911-Pi-Decoder ✅ commercial-safe
+- **What:** Full EAS monitoring + remote-control system for the TFT EAS 911 ENDEC on Raspberry Pi — J103 serial SAME-header logger (JSONL), J303 COM3 controller (originate/test/record/PTT), web dashboard.
+- **URL:** https://github.com/owen29276/tft-eas-911-pi-decoder
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; README badge agrees)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / eas)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Hardware-gated (needs TFT EAS 911 unit) but the SAME header builder/decoder utilities are reusable study material. AI-assisted development disclosed in README. [Wave 53 Lane A]
+
+#### jhonjrd/EAS-SAMEmon ✅ commercial-safe
+- **What:** Real-time EAS/SAME emergency-alert monitor for North America (US/CA/MX) via RTL-SDR — 100% native Python receive pipeline (no multimon-ng dependency), SASMEX support, Home Assistant webhooks.
+- **URL:** https://github.com/jhonjrd/eas-samemon
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / eas)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** alertparser partially derived from dsame (rewritten for multi-region). Receive-only, experimental — not an alerting device. [Wave 53 Lane A]
+
+#### wonderingStars/foxsdr-plugins ✅ commercial-safe
+- **What:** FoxSDR plugin catalogue including an EAS/SAME 1.0.0 plugin — decodes US EAS/SAME digital headers from demodulated NFM audio, prints event/issuer/counties/validity/originator in words, with header-vote logic (2-of-3 agree, 3-merge, lone = unconfirmed).
+- **URL:** https://github.com/wonderingstars/foxsdr-plugins
+- **License:** ✅ MIT (verified 2026-10-08 via README: "All are MIT-licensed"; GitHub API spdx null = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / eas)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Written clean-room from 47 CFR 11.31; carries a legal notice quoting 11.45 (no transmitting EAS codes/Attention Signal outside real emergency/authorized test). Decode-only, not an alerting device. [Wave 53 Lane A]
+
+#### pothosware/SoapySDR ✅ commercial-safe
+- **What:** Vendor-neutral SDR hardware abstraction layer — the plugin API that lets EAS/SAME receive pipelines (EAS-SAMEmon, SatDump, gqrx) talk to RTL-SDR, Airspy, LimeSDR, USRP without per-device code.
+- **URL:** https://github.com/pothosware/SoapySDR
+- **License:** ✅ BSL-1.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Infrastructure for the whole SDR receive pipeline below; Boost license is permissive. [Wave 53 Lane A]
+
+#### pothosware/SoapyRTLSDR ✅ commercial-safe
+- **What:** SoapySDR plugin module for RTL-SDR dongles — the cheapest EAS/SAME and NOAA-APT receive hardware path.
+- **URL:** https://github.com/pothosware/SoapyRTLSDR
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The underlying rtl-sdr driver itself is GPL-2.0 (quarantined row 506) — this plugin module is MIT but links the GPL driver, so treat deployments as GPL-affected. [Wave 53 Lane A]
+
+#### myriadrf/LimeSuite ✅ commercial-safe
+- **What:** Driver/GUI/API for LimeSDR hardware — wideband TX/RX SDR usable as a lab EAS/SAME test transmitter or wideband monitor.
+- **URL:** https://github.com/myriadrf/LimeSuite
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source (hardware costs extra)
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** TX-capable hardware + EAS codes = legal hazard; lab/receive use only, per 47 CFR 11.45. [Wave 53 Lane A]
+
+#### zacstewart/apt-decoder ✅ commercial-safe
+- **What:** Minimal-dependency Python NOAA APT weather-satellite decoder (WAV→PNG) with resample helpers — the simplest readable APT implementation for study.
+- **URL:** https://github.com/zacstewart/apt-decoder
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub license endpoint)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** APT is the receive-pipeline cousin of SAME (both ride NOAA VHF); useful as DSP study material. README notes wxtoimg is dead and apt-dec/atp-dec as alternatives. [Wave 53 Lane A]
+
+#### zietzm/satellite ✅ commercial-safe
+- **What:** Haskell NOAA APT satellite-signal decoder (WAV→grayscale PNG), Stack/Nix builds, CI-tested.
+- **URL:** https://github.com/zietzm/satellite
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via GitHub license endpoint)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Niche language (Haskell) but a clean second implementation to cross-check APT DSP against the Python decoders. [Wave 53 Lane A]
+
+#### superkabuki/threefive_is_scte35 🚫 GPL-2.0 — QUARANTINED (new row 481)
+- **What:** threefive — Python SCTE-35 decode/encode library + CLI (Cue/Stream classes, base64/hex/bytes/JSON/XML, MPEGTS/HLS/CMAF, multicast/UDP/HTTPS).
+- **URL:** https://github.com/superkabuki/threefive_is_scte35
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / scte)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** License correction: superkabuki/threefive is 404 — threefive_is_scte35 is the canonical repo (futzer lineage, 1M+ installs). Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### hiltonfam/Project-Sentinel 🚫 GPL-3.0 — QUARANTINED (new row 482)
+- **What:** Offline-first NOAA SAME/EAS alert relay — decodes SAME from SDR audio, county-filters, fans out to Meshtastic mesh with spool/replay.
+- **URL:** https://github.com/hiltonfam/project-sentinel
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / eas)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### RCGV1/Meshtastic-SAME-EAS-Alerter 🚫 GPL-3.0 — QUARANTINED (new row 483)
+- **What:** Upstream SAME-decoding + Meshtastic delivery project that Project-Sentinel extends — SAME decoding, county filtering, alert formatting, Meshtastic CLI delivery.
+- **URL:** https://github.com/RCGV1/Meshtastic-SAME-EAS-Alerter
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / eas)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### libretime/libretime 🚫 AGPL-3.0 — QUARANTINED (new row 484)
+- **What:** Radio broadcast automation platform (Airtime fork) — web scheduling, playout, live assist.
+- **URL:** https://github.com/libretime/libretime
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / automation)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### sourcefabric/airtime 🚫 AGPL-3.0 — QUARANTINED (new row 485)
+- **What:** Original Airtime radio automation (archived 2021) — ancestor of LibreTime; broadcast scheduling/playout reference.
+- **URL:** https://github.com/sourcefabric/airtime
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / automation)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Archived upstream — LibreTime is the maintained fork. Quarantined — study only. [Wave 53 Lane A]
+
+#### cpvalente/ontime 🚫 GPL-3.0 — QUARANTINED (new row 486)
+- **What:** OnTime — web-based rundown/timekeeping for live events with a broadcast clock view.
+- **URL:** https://github.com/cpvalente/ontime
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via README license section + badge; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / automation)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### SuperFlyTV/SuperConductor 🚫 AGPL-3.0 — QUARANTINED (new row 487)
+- **What:** SuperConductor — rundown/playout controller for CasparCG Server, BMD ATEM, OBS Studio, vMix, OSC and HTTP devices.
+- **URL:** https://github.com/SuperFlyTV/SuperConductor
+- **License:** 🚫 AGPL-3.0-or-later (verified 2026-10-08 via README license section; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / automation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### catalinii/minisatip 🚫 GPL-2.0 — QUARANTINED (new row 488)
+- **What:** minisatip — SAT>IP server and DVB streamer (satellite/cable/terrestrial/ATSC to IP).
+- **URL:** https://github.com/catalinii/minisatip
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / dvb)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### tvheadend/tvheadend 🚫 GPL-3.0 — QUARANTINED (new row 489)
+- **What:** Tvheadend — TV streaming server and DVR for DVB/ATSC/IPTV with EPG, timeshift, and recording.
+- **URL:** https://github.com/tvheadend/tvheadend
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / dvb)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### MythTV/mythtv 🚫 GPL-2.0 — QUARANTINED (new row 490)
+- **What:** MythTV — open-source DVR/personal video recorder with DVB/ATSC capture, scheduling, and commercial-flagging hooks.
+- **URL:** https://github.com/MythTV/mythtv
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / dvb)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### erikkaashoek/Comskip 🚫 GPL-2.0 — QUARANTINED (new row 491)
+- **What:** Comskip — commercial-block detector for broadcast recordings (the open cue-generation counterpart to SCTE-35 cue insertion).
+- **URL:** https://github.com/erikkaashoek/Comskip
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / scte)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### KDE/kaffeine 🚫 GPL-2.0 — QUARANTINED (new row 492)
+- **What:** Kaffeine — KDE DVB/ATSC media player with digital-TV viewing and recording.
+- **URL:** https://github.com/KDE/kaffeine
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / dvb)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### stoth68000/libklvanc 🚫 LGPL-2.1 — QUARANTINED (new row 493)
+- **What:** libklvanc — VANC parse/generate library for SDI: SMPTE ST 334 (CEA-708), ST 2016 (AFD), SCTE-104 ad triggers, ST 2038, ST 12-2 timecodes, RDD 8, ST 2108-1 HDR — encoders AND decoders with checksum handling.
+- **URL:** https://github.com/stoth68000/libklvanc
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via README "# LICENSE — LGPL-V2.1"; GitHub API spdx null = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / scte)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Weak-copyleft row — stays quarantined pending owner verdict per the SoundTouch (row 436) precedent. The SCTE-104 story: SCTE-104 (automation→encoder) is the upstream of SCTE-35 splice_info_section. [Wave 53 Lane A]
+
+#### stoth68000/klvanc-tools 🚫 LGPL-2.1 — QUARANTINED (new row 494)
+- **What:** klvanc-tools — real-world SDI capture/VANC tools built on libklvanc with Blackmagic Decklink cards.
+- **URL:** https://github.com/stoth68000/klvanc-tools
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via README "# LICENSE — LGPL-V2.1"; GitHub API spdx null = detection gap)
+- **Free tier:** Free and open source (Decklink hardware extra)
+- **Repo lane:** trippedd (broadcast / scte)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Weak-copyleft row — stays quarantined pending owner verdict per the SoundTouch (row 436) precedent. [Wave 53 Lane A]
+
+#### gnuradio/gnuradio 🚫 GPL-3.0 — QUARANTINED (new row 495)
+- **What:** GNU Radio — the SDR DSP framework behind EAS/SAME demodulation experiments, APT decoding, and custom broadcast-signal tooling.
+- **URL:** https://github.com/gnuradio/gnuradio
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### EttusResearch/uhd 🚫 GPL-3.0 — QUARANTINED (new row 496)
+- **What:** UHD — USRP hardware driver (Ettus Research); the pro-grade SDR backend for wideband EAS/SAME monitoring and lab test transmission.
+- **URL:** https://github.com/EttusResearch/uhd
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via repo LICENSE.md: "UHD and MPM themselves, are, by default, licensed under the GPLv3"; GitHub API detection gap)
+- **Free tier:** Free and open source (USRP hardware extra)
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### greatscottgadgets/hackrf 🚫 GPL-2.0 — QUARANTINED (new row 497)
+- **What:** HackRF host tools/firmware — low-cost half-duplex SDR for EAS/SAME and APT receive experiments.
+- **URL:** https://github.com/greatscottgadgets/hackrf
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source (HackRF hardware extra)
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### Nuand/bladeRF 🚫 LGPL-2.1/GPL-2.0 mixed — QUARANTINED (new row 498)
+- **What:** bladeRF SDR: FPGA HDL + FX3 firmware (MIT), libbladeRF (LGPL-2.1), bladeRF-cli (GPL-2.0), Linux kernel driver (GPL-2.0).
+- **URL:** https://github.com/Nuand/bladeRF
+- **License:** 🚫 Mixed — libbladeRF LGPL-2.1, bladeRF-cli GPL-2.0 (verified 2026-10-08 via repo COPYING component table; GitHub API detection gap)
+- **Free tier:** Free and open source (bladeRF hardware extra)
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** GPL components force quarantine per standing rule despite the LGPL library. [Wave 53 Lane A]
+
+#### SatDump/SatDump 🚫 GPL-3.0 — QUARANTINED (new row 499)
+- **What:** SatDump — universal satellite data decoder (NOAA APT/Meteor LRPT and many more), the modern successor to wxtoimg-class tools.
+- **URL:** https://github.com/SatDump/SatDump
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### gqrx-sdr/gqrx 🚫 GPL-3.0 — QUARANTINED (new row 500)
+- **What:** Gqrx — open-source SDR receiver (the GUI most NOAA-APT and SAME hobby pipelines start from).
+- **URL:** https://github.com/gqrx-sdr/gqrx
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### AlexandreRouma/SDRPlusPlus 🚫 GPL-3.0 — QUARANTINED (new row 501)
+- **What:** SDR++ (SDRPlusPlus) — cross-platform SDR receiver, faster/lighter Gqrx alternative.
+- **URL:** https://github.com/AlexandreRouma/SDRPlusPlus
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### jopohl/urh 🚫 GPL-3.0 — QUARANTINED (new row 502)
+- **What:** Universal Radio Hacker — wireless-protocol analysis (demodulate, decode, fuzz, re-transmit) for reverse-engineering unknown RF protocols.
+- **URL:** https://github.com/jopohl/urh
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. Re-transmit capability = same 47 CFR 11.45 caution as LimeSuite for EAS-adjacent work. [Wave 53 Lane A]
+
+#### miek/inspectrum 🚫 GPL-3.0 — QUARANTINED (new row 503)
+- **What:** inspectrum — offline RF signal analysis/visualization for reverse-engineering captured IQ.
+- **URL:** https://github.com/miek/inspectrum
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### wb2osz/direwolf 🚫 GPL-2.0 — QUARANTINED (new row 504)
+- **What:** Dire Wolf — software AX.25 packet-radio TNC/modem (APRS) — the packet-data cousin in the emergency-comms stack next to SAME.
+- **URL:** https://github.com/wb2osz/direwolf
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### Xastir/Xastir 🚫 GPL-2.0 — QUARANTINED (new row 505)
+- **What:** Xastir — APRS mapping/tracking client for amateur-radio emergency communications.
+- **URL:** https://github.com/Xastir/Xastir
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via repo COPYING = GPLv2 text; GitHub API detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### osmocom/rtl-sdr 🚫 GPL-2.0 — QUARANTINED (new row 506)
+- **What:** rtl-sdr — Osmocom driver for RTL2832U dongles; the $30 receive hardware behind nearly every hobby EAS/SAME/APT pipeline in this wave.
+- **URL:** https://github.com/osmocom/rtl-sdr
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. Note the licensing trap: the MIT SoapyRTLSDR module above links this GPL driver. [Wave 53 Lane A]
+
+#### martinber/noaa-apt 🚫 GPL-3.0 — QUARANTINED (new row 507)
+- **What:** noaa-apt — the canonical NOAA APT weather-satellite image decoder (WAV→PNG with GUI/CLI).
+- **URL:** https://github.com/martinber/noaa-apt
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub license endpoint)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### n5fpp/noaa-apt 🚫 GPL-3.0 — QUARANTINED (new row 508)
+- **What:** noaa-apt (Rust) — independent Rust NOAA APT decoder written as a learning exercise; second implementation for DSP cross-checking.
+- **URL:** https://github.com/n5fpp/noaa-apt
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub license endpoint)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### merbanan/rtl_433 🚫 GPL-2.0 — QUARANTINED (new row 509)
+- **What:** rtl_433 — decoder for 433MHz ISM-band sensors (weather stations, etc.) — the environmental-sensor side of the weather-alert receive stack.
+- **URL:** https://github.com/merbanan/rtl_433
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### airspy/airspyone_host ❓ license unverified this pass
+- **What:** AirSpy host software (libairspy + tools) for AirSpy SDR receivers.
+- **URL:** https://github.com/airspy/airspyone_host
+- **License:** ❓ Unverified — GitHub API spdx null, no LICENSE/COPYING file in repo root; AirSpy documents BSD terms for host tools but that was not confirmed in-repo this pass
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / sdr)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — do not wire or rely on until the license is confirmed in-repo. [Wave 53 Lane A]
+### P3 — Open video-archive tooling round 2 (ingest, checksums, migration, preservation beyond Wave 49/52 finds)
+
+#### restic/restic ✅ commercial-safe
+- **What:** Fast, deduplicating, encrypted backup program — the archive-storage backend for preservation copies (S3/B2/local backends, lock-free, verifiable).
+- **URL:** https://github.com/restic/restic
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / archive-storage)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** `restic check` gives cryptographic fixity verification over the whole repository — the modern answer to the checksum-manifest workflow. Wire freely. [Wave 53 Lane A]
+
+#### borgbackup/borg ✅ commercial-safe
+- **What:** BorgBackup — deduplicating, compressing, authenticated-encryption backup with mountable archives; the self-hosted alternative to restic for preservation storage.
+- **URL:** https://github.com/borgbackup/borg
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via repo LICENSE BSD-style text; GitHub API detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / archive-storage)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Append-only mode suits write-once preservation stores. Wire freely. [Wave 53 Lane A]
+
+#### rclone/rclone ✅ commercial-safe
+- **What:** "rsync for cloud storage" — 70+ backends (S3, B2, Drive, SFTP); sync/copy/check with checksums; the migration workhorse for moving preservation packages between stores.
+- **URL:** https://github.com/rclone/rclone
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / archive-storage)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** `rclone check` verifies fixity across backends after migration — pairs with the checksum tools below. Wire freely. [Wave 53 Lane A]
+
+#### log2timeline/plaso ✅ commercial-safe
+- **What:** Plaso — forensic timeline generator (log2timeline) from disk images, logs, and file metadata; chain-of-custody documentation for ingested media.
+- **URL:** https://github.com/log2timeline/plaso
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / forensics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Provenance companion to the quarantined Sleuth Kit below: use plaso timelines to document acquisition events for donated/legacy media drives. Wire freely. [Wave 53 Lane A]
+
+#### sleuthkit/autopsy ✅ commercial-safe
+- **What:** Autopsy — GUI digital-forensics platform (file carving, keyword search, timeline, EXIF) for recovering media from failing/legacy drives during ingest.
+- **URL:** https://github.com/sleuthkit/autopsy
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via README: "Autopsy 4 is released under the Apache 2.0 license"; GitHub API detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / forensics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Sleuth Kit core it drives is mixed-license (quarantined row 525) — Autopsy itself is Apache-2.0, but deployments pulling TSK inherit the quarantine caveat. Wire the GUI with care. [Wave 53 Lane A]
+
+#### digital-preservation/droid ✅ commercial-safe
+- **What:** DROID — The National Archives (UK) file-format identification tool against the PRONOM registry; batch identification and container signatures for ingest triage.
+- **URL:** https://github.com/digital-preservation/droid
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / identification)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** License correction: nationalarchives/droid and TheNationalArchives/droid are both 404 — digital-preservation/droid is the canonical repo. Pairs with the cataloged Siegfried/FIDO PRONOM tools. Wire freely. [Wave 53 Lane A]
+
+#### ReFirmLabs/binwalk ✅ commercial-safe
+- **What:** Binwalk — firmware/file-carving analysis tool; extracts embedded files, filesystems, and media blobs from opaque donor images and legacy containers.
+- **URL:** https://github.com/ReFirmLabs/binwalk
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / forensics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Ingest use case: carve video/audio payloads out of proprietary camera-card dumps and dead NLE project containers. Wire freely. [Wave 53 Lane A]
+
+#### NationalSecurityAgency/ghidra ✅ commercial-safe
+- **What:** Ghidra — NSA's software reverse-engineering suite; for archives, the tool of last resort for understanding obsolete proprietary codecs, container parsers, and legacy ingest utilities with no source.
+- **URL:** https://github.com/NationalSecurityAgency/ghidra
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / forensics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Study-only framing: RE work stays in the lab for format documentation; do not ship derived decoders without legal review. Wire freely as a tool. [Wave 53 Lane A]
+
+#### Parchive/par2cmdline 🚫 GPL-2.0 — QUARANTINED (new row 510)
+- **What:** par2cmdline — PAR2 parity-volume creation/verification/repair; forward-error-correction for archival media against bit-rot and partial loss.
+- **URL:** https://github.com/Parchive/par2cmdline
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / fixity)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The checksums-plus-repair layer above plain manifests: PAR2 can REBUILD damaged archive files, not just detect damage. Quarantined — study only. [Wave 53 Lane A]
+
+#### tahoe-lafs/zfec 🚫 GPL-2.0 — QUARANTINED (new row 511)
+- **What:** zfec — fast erasure-coding library (Reed-Solomon); the coding-theory primitive behind PAR2-style redundancy for striped archive storage.
+- **URL:** https://github.com/tahoe-lafs/zfec
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via README: "You may use this package under the GNU General Public License, version 2"; GitHub API NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / fixity)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### RsyncProject/rsync 🚫 GPL-3.0 — QUARANTINED (new row 512)
+- **What:** rsync — the delta-transfer standard for archive migration and mirroring; --checksum mode gives fixity-verified transfers.
+- **URL:** https://github.com/RsyncProject/rsync
+- **License:** 🚫 GPL-3.0-or-later (verified 2026-10-08 via README "the GNU General Public License, found in the file COPYING"; GitHub API NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / migration)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined as code — but note the honest boundary: shelling out to the system rsync binary (as rclone-style external process) is the standard compliant pattern; linking librsync is the quarantined path. [Wave 53 Lane A]
+
+#### bup/bup 🚫 LGPL-2.0 — QUARANTINED (new row 513)
+- **What:** bup — git-protocol-based backup with rolling-checksum deduplication; efficient versioned preservation stores for large media trees.
+- **URL:** https://github.com/bup/bup
+- **License:** 🚫 LGPL-2.0 (verified 2026-10-08 via repo LICENSE: "the files in this project may be distributed under the terms of the following license. (The LGPL version 2.)"; GitHub API detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / archive-storage)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Weak-copyleft row — stays quarantined pending owner verdict per the SoundTouch (row 436) precedent. [Wave 53 Lane A]
+
+#### cdrdao/cdrdao 🚫 GPL-2.0 — QUARANTINED (new row 514)
+- **What:** cdrdao — disc-at-once CD/DVD writing and ripping with full TOC control; reads audio/data discs to BIN/CUE for preservation imaging.
+- **URL:** https://github.com/cdrdao/cdrdao
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / ingest)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### bcoudurier/FFmbc 🚫 GPL-2.0 — QUARANTINED (new row 515)
+- **What:** FFmbc — broadcast-oriented FFmpeg fork (MXF/DNXHD/XDCAM workflows); the preservation-transcode tool for broadcast tape formats.
+- **URL:** https://github.com/bcoudurier/FFmbc
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via README: "FFmbc license is GPL v2"; GitHub API NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / transcode)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### Exiv2/exiv2 🚫 GPL-2.0 — QUARANTINED (new row 516)
+- **What:** Exiv2 — EXIF/IPTC/XMP metadata read/write library for stills; metadata extraction and normalization during photo/film-still ingest.
+- **URL:** https://github.com/Exiv2/exiv2
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via README "License (GPLv2)"; GitHub API NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / metadata)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only; the cataloged ExifTool entry remains the permissive metadata path. [Wave 53 Lane A]
+
+#### vapoursynth/vapoursynth 🚫 LGPL-2.1 — QUARANTINED (new row 517)
+- **What:** VapourSynth — scriptable video filtering framework (the AviSynth successor); restoration chains (denoise, deinterlace, dust/scratch) as Python scripts.
+- **URL:** https://github.com/vapoursynth/vapoursynth
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / processing)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Weak-copyleft row — stays quarantined pending owner verdict per the SoundTouch (row 436) precedent. [Wave 53 Lane A]
+
+#### AviSynth/AviSynthPlus 🚫 GPL-2.0 — QUARANTINED (new row 518)
+- **What:** AviSynth+ — frameserving video scripting (multithreaded AviSynth fork); legacy restoration scripts still target this API.
+- **URL:** https://github.com/AviSynth/AviSynthPlus
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via upstream documentation of GPLv2; no license file in repo root — detection gap noted)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / processing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### fitstool/fits 🚫 LGPL-2.1 — QUARANTINED (new row 519)
+- **What:** FITS (File Information Tool Set, Harvard) — wraps JHOVE, DROID, ExifTool, MediaInfo etc. into one XML technical-metadata output for preservation ingest.
+- **URL:** https://github.com/fitstool/fits
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / identification)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** License correction: canonical org is fitstool (not harvard-lts). Weak-copyleft row — stays quarantined pending owner verdict per the SoundTouch (row 436) precedent. [Wave 53 Lane A]
+
+#### artefactual/atom 🚫 AGPL-3.0 — QUARANTINED (new row 520)
+- **What:** AtoM (Access to Memory) — web-based archival description and access portal (ISAD(G)/DACS); the public face for a restored-film archive.
+- **URL:** https://github.com/artefactual/atom
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / access)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. Pairs with the quarantined Archivematica (row 446) ingest pipeline. [Wave 53 Lane A]
+
+#### Islandora/islandora 🚫 GPL-2.0 — QUARANTINED (new row 521)
+- **What:** Islandora 2.x — Drupal-based digital-asset management with Fedora Commons repository backend; collection management for digitized AV.
+- **URL:** https://github.com/Islandora/islandora
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / access)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### omeka/Omeka 🚫 GPL-3.0 — QUARANTINED (new row 522)
+- **What:** Omeka Classic — web publishing platform for cultural-heritage collections and exhibits.
+- **URL:** https://github.com/omeka/Omeka
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / access)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### omeka/omeka-s 🚫 GPL-3.0 — QUARANTINED (new row 523)
+- **What:** Omeka S — linked-open-data collection management (successor to Omeka Classic); multi-site exhibit publishing over shared item pools.
+- **URL:** https://github.com/omeka/omeka-s
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / access)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. Distinct product from Omeka Classic — separate row. [Wave 53 Lane A]
+
+#### collectiveaccess/providence 🚫 GPL-3.0 — QUARANTINED (new row 524)
+- **What:** CollectiveAccess Providence — collections-management backend for museums/archives (cataloging, media handling, finding aids).
+- **URL:** https://github.com/collectiveaccess/providence
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / access)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### sleuthkit/sleuthkit 🚫 mixed GPL-family — QUARANTINED (new row 525)
+- **What:** The Sleuth Kit — filesystem/disk-image forensics library and CLI (fls, icat, mmls) for recovering media from donor drives during ingest.
+- **URL:** https://github.com/sleuthkit/sleuthkit
+- **License:** 🚫 Mixed — licenses/ directory ships Apache-2.0, GNUv2, GNUv3, IBM, BSD, CPL-1.0, and MIT texts (verified 2026-10-08 via repo licenses/ listing; GitHub API detection gap); GPL-family components force quarantine per standing rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / forensics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. The Apache-2.0 Autopsy GUI above is the permissive interface; this is the encumbered engine. [Wave 53 Lane A]
+
+#### Ardour/ardour 🚫 GPL-2.0 — QUARANTINED (new row 526)
+- **What:** Ardour — full multitrack DAW; optical-soundtrack restoration, dialogue editing, and re-recording mixes for restored films.
+- **URL:** https://github.com/Ardour/ardour
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via repo COPYING = GPLv2 text; GitHub API NOASSERTION = detection gap)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### enzo1982/freac 🚫 GPL-2.0 — QUARANTINED (new row 527)
+- **What:** fre:ac — audio converter/ripper (MP3/MP4/M4A/WMA/Ogg/FLAC/AAC/WAV/Bonk); CD ripping and batch transcode for audio-archive ingest.
+- **URL:** https://github.com/enzo1982/freac
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+#### cfv-project/cfv 🚫 GPL-2.0 — QUARANTINED (new row 528)
+- **What:** cfv — checksum-file verifier (.sfv/.csv/.md5/.sha1/.torrent/.par/.par2); the classic fixity-check CLI for archive manifests.
+- **URL:** https://github.com/cfv-project/cfv
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / fixity)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only. Note: cfv reads PAR2 manifests but par2cmdline (row 510) does the repair. [Wave 53 Lane A]
+
+#### ddennedy/dvgrab 🚫 GPL-2.0 — QUARANTINED (new row 529)
+- **What:** dvgrab — FireWire DV/HDV capture to AVI/MOV; the standard tool for tape-based DV ingest before file-based workflows.
+- **URL:** https://github.com/ddennedy/dvgrab
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / ingest)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. Complements the cataloged vrecord (file/SDI ingest) for the DV-tape era. [Wave 53 Lane A]
+
+#### salsaman/LiVES 🚫 GPL-3.0 — QUARANTINED (new row 530)
+- **What:** LiVES — video editor/VJ tool with frame-accurate cutting; quick access-copy trimming and clip extraction for archive derivatives.
+- **URL:** https://github.com/salsaman/lives
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; canonical owner/repo is salsaman/lives)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (film-restoration / editing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study only, never linked into shipping paths. [Wave 53 Lane A]
+
+### Wave 53 Lane A summary (2026-10-08)
+- New #### entries: 104 (P1: 34 PD cartoon/film-music round 2 · P2: 41 broadcast EAS/SCTE round 2 · P3: 29 open video-archive tooling round 2)
+- Catalog: 4,658 → 4,762 honest entries (wave target 4,760 met; `grep -c '^####'` to confirm)
+- Quarantine: rows 481–530 appended (50 distinct: 29 P2 + 21 P3, zero supersedes/delists; weak-copyleft rows — libklvanc/klvanc-tools/bladeRF-lib LGPL-2.1, VapourSynth LGPL-2.1, FITS LGPL-2.1, bup LGPL-2.0 — stay quarantined pending owner verdict per the SoundTouch row 436 precedent)
+- Honest negatives: Raymond Scott "Powerhouse"/Quintet (copyrighted, not PD); Stalling/Bradley/Curtin post-1929 scores (copyrighted); Purple Planet Music (royalty-free, not PD — URL not captured); SDRangel (GitHub repo gone, 404 both cases); hashdeep (no verified canonical repo URL — SourceForge canonical, hashdeep/hashdeep 404); dvdisaster (dvdisaster/dvdisaster 404); DCP-o-matic (dcpomatic/dcpomatic 404 — upstream carlh.net, URL not captured); cdrtools (schilytools/schilytools 404 — upstream moved to Codeberg, URL not captured); CUETools/shntool/XLD/Gnome Wave Cleaner/GramoFile (repos not found); MCEBuddy (closed-source commercial now); Kino (no verified repo URL); AEO-Light (location unverified); ResourceSpace (montala/ResourceSpace 404); lockss/lockss (404); futzu/gumd (404 — futzu/gums exists, license NULL); Moby Gratis (non-commercial license application, not PD); Evertz/Imagine/Harmonic/Broadpeak/DekTec/Zixi (commercial, out of scope); w_scan/Kaffeine-class stragglers folded into kaffeine row
+- Already-cataloged tools excluded from new rows (pre-append title+URL grep caught: cuppa-joe/dsame, multimon-ng row 361, futzu/cuei, futzu/adbreak2, futzu/six2scte35, futzu/x9k3, futzu/m3ufu, superkabuki/SuperKabuki, scunning1987/pois_reference_server, Comcast/scte224structs, m1tk4/wireshark-scte, m2amedia/scte35dump, jcheshire/same-endec, g34hweatherspotter/eas-alert-decoder, ntvmb/eas-same-encoder, sleepyninja0o/dsame3, astronautlabs/scte104, KR8MER/eas-station row 358, globaleas/EAS.js row 360, CasparCG, DVBlast row 362, MuMuDVB row 363, VDR row 364, DVBInspector row 370, OpenCaster row 372, TSDuck, Liquidsoap row 356, Rivendell row 293, AzuraCast row 290, OpenBroadcaster row 294, dash.js, hls.js, shaka-player, video.js, Clappr, SRS, MediaMTX, nginx-rtmp, Jitsi, LiveKit, Owncast, mistserver, Red5, eSpeak-NG, OBS Studio, SubtitleEdit, FFMS2, asdcplib, LTFS, vrecord, QCTools row 445, JHOVE row 447, DV Analyzer row 467, Guymager, dcfldd, ddrescue, OpenCBM, libewf, bulk_extractor, xjadeo, dvdauthor, Ingex, Emularity, Browsertrix, pywb, ArchiveBox, veraPDF row 465, replayweb.page row 466, RAWcooked, DVRescue, BWFMetaEdit, MediaInfo, mkvalidator, BMX, FIDO, Siegfried, Tika, Bagger, Exactly, Fixity, FFV1, DSpace, Fedora Commons, Samvera Hyrax, ArchivesSpace, BitCurator, Steamboat Willie RightsAtlas, Flip the Frog Fiddlesticks, Popeye debut, Betty Boop More Pep, Van Beuren Aesop's, Terrytoons, ComiColor, IMSLP, Mutopia, Musopen, Levy Sheet Music, LosslessCut, Avidemux, StaxRip, MKVToolNix, VidCoder, VirtualDub2, Hybrid)
+- ❓ diligence records: 7 (Sheet Music Consortium discontinued 2026, Swing You Sinners uploader claim, GeekTyrant 2025 PD class, Digital Trends PD-sites roundup, see-this-sound.at cue-sheet history, thefreelibrary silent-film-music guide, airspyone_host license unverified)
+- ✅ commercial-safe: 29 (10 P1 incl. 8 PD-verified + 2 PD-resource, 11 P2, 8 P3) · ⚠️ per-item/caution: 18 (all P1 layered-rights/PD-boundary) · 🚫 quarantined: 50 (rows 481–530)
+- License corrections logged: superkabuki/threefive 404 → canonical is superkabuki/threefive_is_scte35 (GPL-2.0); FITS canonical org is fitstool (not harvard-lts); DROID canonical repo is digital-preservation/droid (nationalarchives/droid and TheNationalArchives/droid both 404); LiVES canonical is salsaman/lives; noaa-apt canonical is martinber/noaa-apt (a1ecbr0wn/noaa-apt 404); MCEBuddy2x/MCEBuddy 404 (project closed-source now); honestlocksmith/dsame is the ISC upstream of cataloged cuppa-joe/dsame; SoapyRTLSDR is MIT but links GPL-2.0 rtl-sdr driver (deployment caveat noted); rsync external-binary vs librsync-linking boundary noted
+- Coordinator flags (not fixed — lane boundary): prior waves marked LosslessCut/Avidemux/StaxRip ✅ commercial-safe despite GPL-family licenses (rows predate this lane); MediaConch row 151 delisted but upstream now reads GPLv3+/MPLv2+ (Wave 52 note stands — re-verification still open)
+- Zero post-hoc duplicates: every candidate pre-grepped (title + URL) against the full catalog and quarantine manifest before appending

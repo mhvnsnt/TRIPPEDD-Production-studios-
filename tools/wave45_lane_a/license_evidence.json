@@ -1,0 +1,82 @@
+{
+ "chiptune2.js": {
+  "repo": "dspital/chiptune2.js",
+  "spdx": null,
+  "license_name": null,
+  "pushed_at": null,
+  "archived": null,
+  "license_head": "FETCH-FAIL: HTTP Error 404: Not Found"
+ },
+ "webaudio-mod-player": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "buzztracker": {
+  "repo": "buzztracker/buzztracker",
+  "spdx": null,
+  "license_name": null,
+  "pushed_at": null,
+  "archived": null,
+  "license_head": "FETCH-FAIL: HTTP Error 404: Not Found"
+ },
+ "0CC-FamiTracker": {
+  "repo": "HertzDevil/0CC-FamiTracker",
+  "spdx": "GPL-2.0",
+  "license_name": "GNU General Public License v2.0",
+  "pushed_at": "2023-03-18T01:13:13Z",
+  "archived": false,
+  "license_head": "\t\t    GNU GENERAL PUBLIC LICENSE\r | \t\t       Version 2, June 1991\r | \r |  Copyright (C) 1989, 1991 Free Software Foundation, Inc.\r |                        51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA\r |  Everyone is permitted to copy and distribute verbatim copies\r |  of this license document, but changing it is not allowed.\r | \r | \t\t\t    Preamble\r | \r |   The licenses for most software are designed to t"
+ },
+ "helio-workstation": {
+  "repo": "helio-fm/helio-workstation",
+  "spdx": "GPL-3.0",
+  "license_name": "GNU General Public License v3.0",
+  "pushed_at": "2026-09-22T16:18:32Z",
+  "archived": false,
+  "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/> |  Everyone is permitted to copy and distribute verbatim copies |  of this license document, but changing it is not allowed. |  |                             Preamble |  |   The GNU General Public License is a free, copyleft license for | software an"
+ },
+ "gme.js": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "libxmp.js": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "nsf2midi": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "Highly Experimental": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "Highly Theoretical": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "X68Sound": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "mdxplay": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "werkkzeug": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "V2M": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "Clinkster": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "Oidos": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "FMP": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "AmigaAMP": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "ProTracker 2.3D": {
+  "note": "repo path unresolved \u2014 needs web search"
+ },
+ "foo_dumb": {
+  "note": "repo path unresolved \u2014 needs web search"
+ }
+}

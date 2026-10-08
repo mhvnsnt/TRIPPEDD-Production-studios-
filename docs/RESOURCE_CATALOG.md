@@ -38890,3 +38890,753 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### chiptune2.js (deskjet) ❓ no license grant found
+- **What:** chiptune2.js — JavaScript library that plays tracker module files (MOD/XM/S3M/IT) in the browser via WebAudio; libopenmpt compiled with Emscripten. Demo at deskjet.github.io/chiptune2.js.
+- **URL:** https://github.com/deskjet/chiptune2.js
+- **License:** ❓ unverified — no LICENSE file in repo, no license statement in README, GitHub API spdx None (verified 2026-10-08). The underlying libopenmpt is BSD-3-Clause, but this wrapper has no grant.
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Useful browser-side module replay reference; do not ship without resolving the missing license. [Wave 45 Lane A]
+
+#### webaudio-mod-player (electronoora) ✅ MIT
+- **What:** webaudio-mod-player — MOD/S3M/XM module player implemented in pure JavaScript using the Web Audio API; runs fully in-browser (demo: mod.haxor.fi). By Noora Halme (electronoora).
+- **URL:** https://github.com/electronoora/webaudio-mod-player
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; pushed 2023-08-31)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Hand-written replay (not libopenmpt) — good study reference for WebAudio tracker mixing. [Wave 45 Lane A]
+
+#### foo_dumb (DUMB Module Decoder) ⚠️ freeware component
+- **What:** foo_dumb — foobar2000 input component playing tracker modules (MOD/S3M/XM/IT/669/PTM/PSM/MTM/UMX) via the DUMB library.
+- **URL:** https://wiki.hydrogenaudio.org/index.php?title=Foobar2000:Components (listed under Game Sound decoders)
+- **License:** ⚠️ freeware component — no open-source grant found for the component itself; the underlying DUMB library is custom-permissive (verified Wave 7). Component removed from the official foobar2000 repository; available via third-party mirrors.
+- **Free tier:** free download (foobar2000/Windows only)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference only — foobar2000/Windows-only, no source grant. [Wave 45 Lane A]
+
+#### Buzztrax 🚫 LGPL-2.1 — QUARANTINED (new row 401)
+- **What:** Buzztrax — open-source (ex-Buzztard) Jeskola Buzz clone / modular music studio for Linux; preserves playability of Buzz compositions (songs built from virtual generators/effects wired in a modular grid).
+- **URL:** https://github.com/Buzztrax/buzztrax
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08: GitHub API spdx_id LGPL-2.1; pushed 2024-04-10) — weak copyleft, quarantined per LGPL doctrine (pending owner verdict)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only. Buzz-machine replay path for Linux. [Wave 45 Lane A]
+
+#### Buzztrax/buzzmachines ⚠️ per-machine licenses
+- **What:** buzzmachines — collection of open-sourced Jeskola Buzz machines (audio generators/effects using the Buzz plugin API), published so they can be rebuilt for new platforms and fixed.
+- **URL:** https://github.com/Buzztrax/buzzmachines
+- **License:** ⚠️ no single license — upstream README states "There is no single license that applies to all machines. Please check individual" machine licenses (verified 2026-10-08; GitHub API NOASSERTION)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Per-machine license audit required before any use. [Wave 45 Lane A]
+
+#### JeskolaBuzzVST (nstarke) ✅ MIT
+- **What:** JeskolaBuzzVST (BuzzBridge VST3) — Windows VST3 wrapper for Buzz machine effects and generators; lets Buzz machines run as VST3 plugins.
+- **URL:** https://github.com/nstarke/JeskolaBuzzVST
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; raw LICENSE = MIT text; pushed 2026-07-07, active)
+- **Free tier:** source on GitHub, 18 releases
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Bridge for the Buzz machine ecosystem into modern DAWs. [Wave 45 Lane A]
+
+#### Jeskola Buzz ⚠️ freeware, closed source
+- **What:** Jeskola Buzz — the original free modular software music studio by Oskari Tammelin (named after his demogroup Jeskola); tracker-style sequencing + AudioMulch-style modular machine wiring. Development halted 2000 (lost source), restarted 2008.
+- **URL:** http://jeskola.net/buzz/
+- **License:** ⚠️ freeware, closed source — free download, no source grant; Buzz plugin SDK headers carry a freeware-only notice (per Wikipedia, verified 2026-10-08)
+- **Free tier:** free download (Windows)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Historical reference; songs playable via Buzztrax (quarantined) or Buzz itself. [Wave 45 Lane A]
+
+#### MilkyTracker 🚫 GPL-3.0-or-later — QUARANTINED (row 124)
+- **What:** MilkyTracker — open-source FastTracker II clone (MOD/XM tracker) for modern platforms.
+- **URL:** https://milkytracker.org/
+- **License:** 🚫 GPL-3.0-or-later (quarantine row 124, verified Wave 42 Lane B)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Row 124 already quarantined — catalog entry added for discoverability only. Research lane only. [Wave 45 Lane A]
+
+#### Schism Tracker 🚫 GPL-2.0 — QUARANTINED (row 125)
+- **What:** Schism Tracker — open-source Impulse Tracker clone (IT/S3M/XM/MOD) for modern platforms.
+- **URL:** https://schismtracker.org/
+- **License:** 🚫 GPL-2.0 (quarantine row 125, verified Wave 42 Lane B)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Row 125 already quarantined — catalog entry added for discoverability only. Research lane only. [Wave 45 Lane A]
+
+#### CoolModFiles 🚫 GPL-3.0 — QUARANTINED (row 397)
+- **What:** CoolModFiles (no42-org) — web-based MOD/AHX/TFMX player.
+- **URL:** https://github.com/no42-org/CoolModFiles
+- **License:** 🚫 GPL-3.0 (quarantine row 397, verified Wave 44 Lane A)
+- **Free tier:** web player
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Row 397 already quarantined — catalog entry added for discoverability only. Research lane only. [Wave 45 Lane A]
+
+#### libtfmxaudiodecoder 🚫 GPL-2.0 — QUARANTINED (row 398)
+- **What:** libtfmxaudiodecoder (mschwendt) — TFMX/MDAT audio decoder library (Chris Huelsbeck's Amiga format).
+- **URL:** https://github.com/mschwendt/libtfmxaudiodecoder
+- **License:** 🚫 GPL-2.0 (quarantine row 398, verified Wave 44 Lane A)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Row 398 already quarantined — catalog entry added for discoverability only. Research lane only. [Wave 45 Lane A]
+
+#### Open Cubic Player 🚫 GPL — QUARANTINED (row 272)
+- **What:** Open Cubic Player — classic DOS/Unix module player (MOD/XM/S3M/IT and many more).
+- **URL:** https://www.cubic.org/player/
+- **License:** 🚫 GPL (quarantine row 272, verified Wave 34)
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Row 272 already quarantined — catalog entry added for discoverability only. Research lane only. [Wave 45 Lane A]
+
+#### Helio Workstation 🚫 GPL-3.0 — QUARANTINED (new row 402)
+- **What:** Helio Workstation — open-source linear sequencer/DAW with tracker influences (helio-fm).
+- **URL:** https://github.com/helio-fm/helio-workstation
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08: GitHub API spdx_id GPL-3.0; raw LICENSE = GPL v3 text; pushed 2026-09-22, active)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 45 Lane A]
+
+#### 0CC-FamiTracker 🚫 GPL-2.0 — QUARANTINED (new row 403)
+- **What:** 0CC-FamiTracker — NES/Famicom tracker fork extending FamiTracker (HertzDevil); the lineage Dn-FamiTracker builds on.
+- **URL:** https://github.com/HertzDevil/0CC-FamiTracker
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: GitHub API spdx_id GPL-2.0; raw LICENSE = GPL v2 text; pushed 2023-03-18)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 45 Lane A]
+
+#### Highly Theoretical (standalone core) 🚫 GPL-2.0-or-later — QUARANTINED (new row 404)
+- **What:** Highly Theoretical — Sega Saturn/Dreamcast SSF/DSF replay core (standalone, kode54's core); the original Winamp plugin by Neill Corlett plays SSF/DSF/miniSSF/miniDSF.
+- **URL:** https://www.neillcorlett.com/etc/htdemo/ (original plugin); standalone core vendored in kog/xpcog
+- **License:** 🚫 GPL-2.0-or-later for the standalone core (verified 2026-10-08: kog/xpcog docs select the GPL-2.0-or-later C68k implementation); the original Winamp plugin is closed freeware
+- **Free tier:** source / free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Research lane only. [Wave 45 Lane A]
+
+#### Highly Experimental ⚠️ freeware Winamp/XMPlay plugin
+- **What:** Highly Experimental — Neill Corlett's Winamp/XMPlay plugin playing PSF1/PSF2 (Portable Sound Format) rips; the reference PSF player.
+- **URL:** https://www.neillcorlett.com/
+- **License:** ⚠️ freeware, closed source — free download, no source grant (verified 2026-10-08 via VGMPF wiki + Wikipedia)
+- **Free tier:** free download (Windows)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** For open-source PSF replay see openpsf (MIT) below. [Wave 45 Lane A]
+
+#### openpsf (myst6re) ✅ MIT
+- **What:** openpsf — tiny C/C++ library to stream PSF files (PlayStation sound rips); shares code with the Highly Experimental PSF decoder.
+- **URL:** https://github.com/myst6re/openpsf
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; pushed 2021-07-17)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Commercial-safe PSF replay path. [Wave 45 Lane A]
+
+#### nsf2midi (Gigo) ⚠️ closed-source freeware
+- **What:** nsf2midi — classic Win32 GUI tool converting NES Sound Format (.nsf) music to Standard MIDI files via frame-based APU emulation.
+- **URL:** http://gigo.retrogames.com/download.html
+- **License:** ⚠️ closed source, freeware — "Not Specified (Closed Source)" per loveemu/vgmdocs conversion-tools index (verified 2026-10-08)
+- **Free tier:** free download (Windows, 32-bit)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** For an open reimplementation see nihondo/miditrack's nsf2midi CLI. [Wave 45 Lane A]
+
+#### BASSMOD (un4seen) ⚠️ free for non-commercial use only
+- **What:** BASSMOD — un4seen developments' MOD/XM/S3M/IT/MTM/UMX replay library (the module-playback sibling of the BASS audio library).
+- **URL:** https://www.un4seen.com/bassmod.html
+- **License:** ⚠️ proprietary — free for non-commercial use only; commercial use requires a license from un4seen (verified 2026-10-08 via un4seen licensing + third-party confirmations)
+- **Free tier:** free download (non-commercial)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NC-only — not commercial-safe. [Wave 45 Lane A]
+
+#### X68Sound (rururutan) ❓ no license grant found
+- **What:** X68Sound — X68000 sound-core DLL (m_puusan's original + rururutan's patch collection); emulates the X68000's FM/ADPCM sound hardware, used by MDX players.
+- **URL:** https://github.com/rururutan/X68Sound
+- **License:** ❓ unverified — no LICENSE file in repo, no license statement in README (Japanese docs), GitHub API spdx None (verified 2026-10-08); repo active (pushed 2025-12-11)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Do not ship without resolving the missing grant. [Wave 45 Lane A]
+
+#### ProTracker 2.3D clone (8bitbubsy/pt2-clone) ✅ BSD-3-Clause
+- **What:** pt2-clone — highly accurate open-source clone of ProTracker 2.3D for Windows/macOS/Linux by Olav "8bitbubsy" Sorensen; Amiga-filter modeling, MOD2WAV export.
+- **URL:** https://github.com/8bitbubsy/pt2-clone
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08: GitHub API spdx_id BSD-3-Clause; pushed 2026-09-17, active; also per Wikipedia)
+- **Free tier:** source on GitHub, binaries at 16-bits.org
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference-accurate ProTracker replay; commercial-safe. [Wave 45 Lane A]
+
+#### Adlib Tracker II ⚠️ freeware, source-available, no license grant
+- **What:** Adlib Tracker II — the classic OPL2/OPL3 FM-chip tracker (DOS/Windows/Linux) by subz3ro/Altair; A2I/A2M formats, very accurate OPL3 emulation, WAV recording.
+- **URL:** http://www.adlibtracker.net/
+- **License:** ⚠️ freeware — free downloads + program sourcecode published on the official site, but no license/grant statement found on adlibtracker.net (verified 2026-10-08)
+- **Free tier:** free download + source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** For a cleanly-licensed AT2 replayer see adlibtracker2replay (MIT) below. [Wave 45 Lane A]
+
+#### adlibtracker2replay (kosmonautdnb) ✅ MIT
+- **What:** adlibtracker2replay — FreeDOS/DOS music replayer for Surprise! Adlib Tracker 2 (.sa2) songs; 286-assembly → 386 flat-mode C++ conversion by kosmonautdnb (demo scene).
+- **URL:** https://github.com/kosmonautdnb/adlibtracker2replay
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; pushed 2026-05-29, active)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial-safe AT2 replay path. [Wave 45 Lane A]
+
+#### AmigaAMP ⚠️ closed freeware
+- **What:** AmigaAMP — realtime multi-format audio player for Amiga (MP3/OGG/MIDI/AAC/streaming) by Thomas Wenzel.
+- **URL:** http://www.amigaamp.de/
+- **License:** ⚠️ closed freeware — free download, no source grant for the app itself (verified 2026-10-08 via MorphOS Storage + xacp-zz9000 docs; note: the ZZ9000 engine port is separately LGPL-2.1-or-later)
+- **Free tier:** free download (Amiga/MorphOS)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Reference only. [Wave 45 Lane A]
+
+#### .werkkzeug (farbrausch/fr_public) ✅ BSD / public-domain per project
+- **What:** .werkkzeug — Farbrausch's demotool suite (werkkzeug3/werkkzeug4); the authoring environment behind their 64k/4k intros, with the V2 synth and kkrunchy compressor.
+- **URL:** https://github.com/farbrausch/fr_public
+- **License:** ✅ BSD license or public domain, stated per project — upstream README: "All of this is released either under a BSD license or put in the public domain (stated per project)" (verified 2026-10-08)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Check the per-project statement before use. [Wave 45 Lane A]
+
+#### V2 synthesizer (farbrausch/fr_public) ✅ BSD / public-domain per project
+- **What:** V2 — Farbrausch's multifunctional MIDI-driven software synthesizer (by kb_); the realtime music engine behind fr-08 .the .product, .kkrieger, fr-041 debris and all their intros.
+- **URL:** https://github.com/farbrausch/fr_public (v2/ directory)
+- **License:** ✅ BSD license or public domain, stated per project — same upstream fr_public grant as .werkkzeug (verified 2026-10-08)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The definitive demoscene 64k synth; check per-project statement. [Wave 45 Lane A]
+
+#### Doria — Finnish National Library digital collections ✅ PD holdings
+- **What:** Doria — the National Library of Finland's digital repository; hosts digitized public-domain sheet music and music manuscripts among its collections.
+- **URL:** https://www.doria.fi/
+- **License:** ✅ public-domain holdings downloadable — Doria marks PD items; per-item rights statements govern (verified 2026-10-08: site live)
+- **Free tier:** free access, no login
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check per-item rights marks before shipping. [Wave 45 Lane A]
+
+#### Staatsbibliothek Berlin — Digitale Sammlungen ✅ PD music digitizations
+- **What:** Digitale Sammlungen — the Berlin State Library's digital collections; large holdings of digitized public-domain music prints and manuscripts.
+- **URL:** https://digital.staatsbibliothek-berlin.de/
+- **License:** ✅ public-domain digitizations free to use — SBB marks PD items; per-item rights govern (verified 2026-10-08: site live)
+- **Free tier:** free access, no login
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the largest European music-digitization portals. [Wave 45 Lane A]
+
+#### Arnold Schoenberg Center (Vienna) ✅ research archive, PD Schoenberg scores
+- **What:** Arnold Schönberg Center — Vienna's Schoenberg archive ( Belmont? no — Vienna); holds Schoenberg's manuscripts, with a digital archive of scores and writings.
+- **URL:** https://schoenberg.at/
+- **License:** ✅ Schoenberg's own works are public domain (d. 1951); archive provides digital access for research (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Manuscript scans primarily; check per-item terms. [Wave 45 Lane A]
+
+#### Carl Nielsen Edition (Danish Royal Library) ✅ free scholarly scores
+- **What:** Carl Nielsen Edition — the Danish government's complete critical edition of Nielsen's works (1994–2009, 32 volumes); the Royal Library offers scores and commentaries as free downloads.
+- **URL:** https://www.kb.dk/ (Carl Nielsen Edition section)
+- **License:** ✅ free downloads — "The scores are now all available for download free of charge at the website of the Danish Royal Library" (verified 2026-10-08 via multiple secondary sources; Nielsen d. 1931, PD)
+- **Free tier:** free downloads, no login
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Model national-edition open-access practice. [Wave 45 Lane A]
+
+#### Viola da Gamba Society of America ✅ free downloadable viol music
+- **What:** VdGSA — the Viola da Gamba Society of America's site; "a selection of free downloadable music is publicly available" plus members' PDFs of VdGSA News music.
+- **URL:** https://vdgsa.org/
+- **License:** ✅ free downloads offered by the society (verified 2026-10-08 via Wikipedia: "A selection of free downloadable music is publicly available")
+- **Free tier:** free selection; members get more
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-music viol repertoire; editions are society-provided. [Wave 45 Lane A]
+
+#### The Lute Society (UK) ✅ free tablature downloads
+- **What:** The Lute Society (UK) — lute-society.org; publishes free downloadable tablature (baroque lute intabulations, ensemble pieces) plus a portal of downloadable-tablature sites.
+- **URL:** https://www.lutesociety.org/
+- **License:** ✅ free downloads offered on the society site (verified 2026-10-08: "Update to our free baroque lute tabulature download page" and free-downloads news)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Includes the Lute Online Resources Portal linking Dartmouth, Gerbode and other tab archives. [Wave 45 Lane A]
+
+#### Lute Society of America ✅ free TREE edition PDFs
+- **What:** Lute Society of America — lutesocietyofamerica.org; TREE (Teaching Resources for Early-music Education?) editions including free PDFs (e.g. "30 Easy pieces for Renaissance Lute").
+- **URL:** https://lutesocietyofamerica.org/
+- **License:** ✅ free PDF downloads offered (verified 2026-10-08: "Download PDF" on edition pages)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Also maintains the lute-tablature-sites directory. [Wave 45 Lane A]
+
+#### Sarge Gerbode's lutemusic.org ✅ 7000+ free lute tablatures
+- **What:** lutemusic.org — Sarge Gerbode's archive of 7000+ lute pieces in French tablature (PDF); "one of the best lute tab sites around" per the LSA.
+- **URL:** https://www.lutemusic.org/
+- **License:** ✅ free downloads (verified 2026-10-08 via LSA tablature-sites page)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Renaissance/baroque lute repertoire in tablature. [Wave 45 Lane A]
+
+#### Bodleian Broadside Ballads ✅ PD ballad archive
+- **What:** Bodleian Libraries Broadside Ballads — ballads.bodleian.ox.ac.uk; Oxford's digitized broadside-ballad collection (17th–19th century song sheets, many with tunes).
+- **URL:** https://ballads.bodleian.ox.ac.uk/
+- **License:** ✅ public-domain materials (17th–19th c. broadsides); digitized for research (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tunes + texts; check per-item statements. [Wave 45 Lane A]
+
+#### Kurt Weill Foundation ⚠️ mostly in-copyright, research/licensing
+- **What:** Kurt Weill Foundation for Music — kwf.org; the Weill/Lenya research center and publisher of the Kurt Weill Edition; scores largely still in copyright.
+- **URL:** https://www.kwf.org/
+- **License:** ⚠️ mostly in-copyright — Weill d. 1950; foundation licenses performances; not a free-scores source (verified 2026-10-08: site live, scores section is edition/licensing)
+- **Free tier:** research resources free; scores licensed
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Included as a negative result — do not treat as PD. [Wave 45 Lane A]
+
+#### Aaron Copland Collection (Library of Congress) ⚠️ per-item rights
+- **What:** Aaron Copland Collection — the Library of Congress's Copland archive (manuscripts, correspondence); some digitized items online.
+- **URL:** https://www.loc.gov/collections/aaron-copland/
+- **License:** ⚠️ per-item rights — Copland d. 1990, much still in copyright; LoC rights statements govern (verified 2026-10-08: collection exists; page bot-blocked this pass)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research value; not a PD-scores source. [Wave 45 Lane A]
+
+#### National Library of Norway — digital collections ⚠️ per-item rights
+- **What:** Nasjonalbiblioteket digital — nb.no; Norway's national library digital collections including digitized music prints and manuscripts.
+- **URL:** https://www.nb.no/
+- **License:** ⚠️ per-item rights statements govern; PD materials marked (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check per-item marks before shipping. [Wave 45 Lane A]
+
+#### National Library of Sweden — digital collections ⚠️ per-item rights
+- **What:** Kungliga biblioteket digital — kb.se; Sweden's national library digital collections including music holdings.
+- **URL:** https://www.kb.se/
+- **License:** ⚠️ per-item rights statements govern (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check per-item marks before shipping. [Wave 45 Lane A]
+
+#### Austrian National Library — digital collections ⚠️ per-item rights
+- **What:** Österreichische Nationalbibliothek digital — onb.ac.at; Austria's national library digital collections including music manuscripts and prints.
+- **URL:** https://www.onb.ac.at/
+- **License:** ⚠️ per-item rights statements govern (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check per-item marks before shipping. [Wave 45 Lane A]
+
+#### Danish Royal Library (kb.dk) ⚠️ per-item rights, Nielsen Edition free
+- **What:** Det Kgl. Bibliotek digital — kb.dk; Denmark's national library; hosts the free Carl Nielsen Edition plus broader digitized music collections.
+- **URL:** https://www.kb.dk/
+- **License:** ⚠️ per-item rights govern; the Carl Nielsen Edition scores are explicitly free downloads (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** See also the dedicated Carl Nielsen Edition entry. [Wave 45 Lane A]
+
+#### Royal Library of Belgium (KBR) ⚠️ per-item rights
+- **What:** KBR digital — kbr.be; Belgium's national library digital collections including music holdings.
+- **URL:** https://www.kbr.be/
+- **License:** ⚠️ per-item rights statements govern (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Check per-item marks before shipping. [Wave 45 Lane A]
+
+#### Fasola.org — Sacred Harp resources ✅ free shape-note resources
+- **What:** fasola.org — Sacred Harp Musical Heritage Association resources; shape-note singing resources, indexes, and links for the Sacred Harp tradition.
+- **URL:** https://fasola.org/
+- **License:** ✅ free resources (verified 2026-10-08: site live; Sacred Harp tradition materials)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements the Sacred Harp catalog entry with the living-tradition hub. [Wave 45 Lane A]
+
+#### Small Church Music ✅ free hymn PDFs + MIDI
+- **What:** Small Church Music — smallchurchmusic.com; free PDF scores, MIDI files and backing tracks for hymns (for churches).
+- **URL:** https://www.smallchurchmusic.com/
+- **License:** ✅ free downloads offered (verified 2026-10-08: "Free Music Backing Files for Churches — With PDF Scores, With Midi files")
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hymn arrangements; check per-song terms. [Wave 45 Lane A]
+
+#### NetHymnal ✅ PD hymn archive
+- **What:** NetHymnal — nethymnal.org; online hymnal archive of public-domain hymns.
+- **URL:** https://www.nethymnal.org/
+- **License:** ✅ public-domain hymns (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements Hymnary/Open Hymnal/Cyber Hymnal entries. [Wave 45 Lane A]
+
+#### Battle of the Bits ⚠️ per-entry rights (chipmusic battle community)
+- **What:** Battle of the Bits — battleofthebits.org; long-running chipmusic battle/ladder community (formats: chip, sample, MIDI); entries by participants.
+- **URL:** https://battleofthebits.org/
+- **License:** ⚠️ per-entry rights — no blanket grant found on site (verified 2026-10-08: site live); entrants retain rights
+- **Free tier:** free to listen/participate
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask entrants before shipping any track. [Wave 45 Lane A]
+
+#### SLAY Radio ⚠️ streaming-only (C64 remix radio)
+- **What:** SLAY Radio — slayradio.org; long-running C64 remix internet radio (also runs remix competitions).
+- **URL:** https://www.slayradio.org/
+- **License:** ⚠️ streaming-only — no reuse grant; remix compo rules require original/prior-unpublished entries, remixers keep rights (verified 2026-10-08: site live)
+- **Free tier:** free stream
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listening/reference only. [Wave 45 Lane A]
+
+#### Couchblip ❓ Belgian netlabel, license undeclared
+- **What:** Couchblip — Belgian netlabel (demoscene-adjacent electronica).
+- **URL:** https://couchblip.com/
+- **License:** ❓ unverified — site live but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Sutemos ❓ Lithuanian netlabel, license undeclared
+- **What:** Sutemos — Lithuanian netlabel (sutemos.net).
+- **URL:** https://www.sutemos.net/
+- **License:** ❓ unverified — site live but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Eg0cide Productions ⚠️ free downloads, license undeclared
+- **What:** Eg0cide — netlabel with free download releases; full catalog mirrored on archive.org.
+- **URL:** https://eg0cide.com/
+- **License:** ⚠️ free downloads offered, but no license statement found on site (verified 2026-10-08: "Free download releases", archive.org full-catalog mirror)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping; check archive.org item licenses. [Wave 45 Lane A]
+
+#### Digital Diamonds 🚫 all rights reserved
+- **What:** Digital Diamonds — digitaldiamonds.co.uk netlabel.
+- **URL:** https://www.digitaldiamonds.co.uk/
+- **License:** 🚫 all rights reserved — "2025 digitaldiamonds.co.uk - All Rights Reserved" (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Do not use. Listed to prevent accidental reuse. [Wave 45 Lane A]
+
+#### Mindwaves Music ❓ netlabel, license undeclared
+- **What:** Mindwaves Music — mindwaves-music.com netlabel.
+- **URL:** https://www.mindwaves-music.com/
+- **License:** ❓ unverified — site live but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Databloem ❓ netlabel, license undeclared
+- **What:** Databloem — databloem.com netlabel.
+- **URL:** https://databloem.com/
+- **License:** ❓ unverified — site live but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Xynthetic ❓ netlabel (Bandcamp), license undeclared
+- **What:** Xynthetic — netlabel on Bandcamp (xynthetic.bandcamp.com).
+- **URL:** https://xynthetic.bandcamp.com/
+- **License:** ❓ unverified — Bandcamp page live, no license statement found (verified 2026-10-08)
+- **Free tier:** streaming
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Cajid Media ❓ netlabel, license undeclared
+- **What:** Cajid Media — cajid.com netlabel.
+- **URL:** https://cajid.com/
+- **License:** ❓ unverified — site live but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Still Heat ❓ netlabel (Bandcamp), license undeclared
+- **What:** Still Heat — netlabel on Bandcamp.
+- **URL:** https://stillheat.bandcamp.com/
+- **License:** ❓ unverified — Bandcamp page live, no license statement found (verified 2026-10-08)
+- **Free tier:** streaming
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Quiet Design ❓ netlabel, license undeclared
+- **What:** Quiet Design — quietdesign.us netlabel.
+- **URL:** https://quietdesign.us/
+- **License:** ❓ unverified — site live but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Testtube ❓ Portuguese netlabel, site dead
+- **What:** Testtube — Portuguese netlabel (testtube.com, now dead).
+- **URL:** https://testtube.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Neo Ouija ❓ netlabel, site dead
+- **What:** Neo Ouija — netlabel (neo-ouija.com, now dead).
+- **URL:** https://www.neo-ouija.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Zhelezobeton ❓ Russian netlabel, site dead
+- **What:** Zhelezobeton — Russian experimental netlabel (zhelezobeton.ru, now dead).
+- **URL:** https://zhelezobeton.ru/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Etalabel ❓ netlabel, site dead
+- **What:** Etalabel — netlabel (etalabel.com, now dead).
+- **URL:** https://etalabel.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Worm Interface ❓ netlabel, site dead
+- **What:** Worm Interface — netlabel (worminterface.com, now dead).
+- **URL:** https://worminterface.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Mirakel ❓ netlabel, site dead
+- **What:** Mirakel — netlabel (mirakel-musik.com, now dead).
+- **URL:** https://mirakel-musik.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Crazy Language ❓ netlabel, site dead
+- **What:** Crazy Language — netlabel (crazylanguagemusic.com, now dead).
+- **URL:** https://crazylanguagemusic.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Eerik Inpuj Sound ❓ netlabel, site dead
+- **What:** Eerik Inpuj Sound — netlabel (eerikinpjatsound.com, now dead).
+- **URL:** https://eerikinpjatsound.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Serein ❓ netlabel, site dead
+- **What:** Serein — netlabel (serein.com, now dead).
+- **URL:** https://serein.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Driftless Recordings ❓ netlabel, site gone (404)
+- **What:** Driftless Recordings — netlabel (driftlessrecordings.com, now 404).
+- **URL:** https://driftlessrecordings.com/ (404 as of 2026-10-08)
+- **License:** ❓ unverifiable — site gone (verified 2026-10-08)
+- **Free tier:** none (gone)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Kvitnu ❓ Ukrainian experimental label, license undeclared
+- **What:** Kvitnu — Ukrainian experimental/electronic label (kvitnu.com).
+- **URL:** https://kvitnu.com/
+- **License:** ❓ unverified — site live (JS) but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Thinner ❓ German netlabel, site dead
+- **What:** Thinner — German netlabel (thinner.cc, now 521/dead).
+- **URL:** https://www.thinner.cc/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Autoplate ❓ netlabel, domain hijacked
+- **What:** Autoplate — netlabel (autoplate.org); domain now serves SEO spam (hijacked).
+- **URL:** https://autoplate.org/ (hijacked as of 2026-10-08)
+- **License:** ❓ unverifiable — domain hijacked (verified 2026-10-08)
+- **Free tier:** none
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Highpoint Lowlife ❓ netlabel, license undeclared
+- **What:** Highpoint Lowlife — "Computer musicz. label, events, radio show" (highpointlowlife.com).
+- **URL:** https://highpointlowlife.com/
+- **License:** ❓ unverified — site live but no license/terms statement found (verified 2026-10-08)
+- **Free tier:** site live
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Boltfish ❓ netlabel (Bandcamp), license undeclared
+- **What:** Boltfish — netlabel on Bandcamp.
+- **URL:** https://boltfish.bandcamp.com/
+- **License:** ❓ unverified — Bandcamp page live, no license statement found (verified 2026-10-08)
+- **Free tier:** streaming
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Plexiphones ❓ netlabel, site dead
+- **What:** Plexiphones — netlabel (plexiphones.com, now 503/dead).
+- **URL:** https://www.plexiphones.com/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Instabil ❓ netlabel, site dead
+- **What:** Instabil — netlabel (instabil.org, now dead).
+- **URL:** https://instabil.org/ (dead as of 2026-10-08)
+- **License:** ❓ unverifiable — site dead (verified 2026-10-08)
+- **Free tier:** none (dead)
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** 0/5
+- **Status:** not-started
+- **Notes:** Listed to close the loop; check archive.org mirrors. [Wave 45 Lane A]
+
+#### Rybka ❓ netlabel (Bandcamp), license undeclared
+- **What:** Rybka — netlabel on Bandcamp.
+- **URL:** https://rybka.bandcamp.com/
+- **License:** ❓ unverified — Bandcamp page live, no license statement found (verified 2026-10-08)
+- **Free tier:** streaming
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]

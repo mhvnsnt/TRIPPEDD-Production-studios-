@@ -32034,3 +32034,255 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Check the license note on each pack before use — the honest pattern for sample-pack reuse. [Wave 36 Lane A]
+
+### Angle 2 — caption/karaoke/subtitle long tail
+
+#### Karaoke Mugen ✅ MIT
+- **What:** Karaoke Mugen — karaoke session manager and player: mpv-based video player plus web interfaces for managing playlists and letting guests/public request songs (also streamer-friendly).
+- **URL:** https://github.com/karaoke-mugen/karaokemugen-app
+- **License:** ✅ MIT (verified 2026-10-08: upstream README — "Karaoke Mugen is licensed under MIT License"; nixpkgs packaging request concurs).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The maintained open karaoke host; pairs with kmlint (QC) and karaokebase (song data). [Wave 36 Lane A]
+
+#### kmlint (karaoke-tools) ✅ MIT
+- **What:** kmlint — linter that finds common mistakes in Karaoke Mugen karaoke repositories (.kara.json metadata + ASS lyric timing validation).
+- **URL:** https://github.com/karaoke-tools/kmlint
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Karaoke-timing QC tooling — validates ASS lyric files before they reach the player. [Wave 36 Lane A]
+
+#### karaokebase ⚠️ ODbL / CC-BY-SA (sync data) — lyrics ARR
+- **What:** karaokebase — the Karaoke Mugen karaoke database: .kara.json metadata, .ass lyric timing files, tag JSON; media files are not in the repo (fetched by the app).
+- **URL:** https://github.com/karaokemugen/karaokebase
+- **License:** ⚠️ Database under ODbL; the ASS sync/timing work under CC-BY-SA 4.0; the lyrics themselves remain the property of their respective rights holders (verified 2026-10-08: upstream README license section).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The timing/sync data is the reusable part; never redistribute lyric text commercially. [Wave 36 Lane A]
+
+#### OpenKaraoke (zaidzaihan) ✅ MIT
+- **What:** OpenKaraoke — web-based karaoke party solution (2025): rooms, WebSocket endpoints, playlist management, recording capabilities on the roadmap; inspired by PiKaraoke.
+- **URL:** https://github.com/zaidzaihan/OpenKaraoke
+- **License:** ✅ MIT (verified 2026-10-08: upstream README — "This project is open source and available under the MIT License"; GitHub API detection gap).
+- **Free tier:** Free/open
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Newer web-native alternative to Karaoke Mugen for hosted karaoke sessions. [Wave 36 Lane A]
+
+#### nomadkaraoke/karaoke-generator ❓ license undeclared (archived)
+- **What:** karaoke-generator — pipeline attempting to fully automate the creation of karaoke music videos; archived 2025 (successor project: karaoke-gen).
+- **URL:** via github.com/nomadkaraoke/karaoke-generator (verified 2026-10-08 via GitHub API — repo exists, archived)
+- **License:** ❓ No license declared (verified 2026-10-08: GitHub API NOASSERTION); archived 2025.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Pipeline ideas only — no reuse grant; see also the danielrosehill ASS-karaoke generator entry. [Wave 36 Lane A]
+
+#### Karaoke-Music-Vid-Generator (danielrosehill) ❓ license undeclared
+- **What:** Karaoke-Music-Vid-Generator — ASS karaoke subtitles + waveform + Ken Burns template music-video generator.
+- **URL:** via github.com/danielrosehill/Karaoke-Music-Vid-Generator (verified 2026-10-08 via GitHub API — repo exists)
+- **License:** ❓ No license declared (verified 2026-10-08: GitHub API NOASSERTION).
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Template ideas for karaoke-video assembly; license undeclared = no reuse. [Wave 36 Lane A]
+
+#### TTML2 (W3C Recommendation) ✅ W3C document license
+- **What:** Timed Text Markup Language 2 (TTML2) — the W3C Recommendation: the XML caption/subtitle standard behind broadcast TTML, IMSC, and EBU-TT profiles.
+- **URL:** via the W3C (Recommendation track — locate the TTML2 TR page before citing)
+- **License:** ✅ W3C document license (standard for W3C Recommendations — confirm in the spec's Status section; permissive for reference and implementation).
+- **Free tier:** Free to read/implement
+- **Repo lane:** trippedd (captions/specs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The normative reference for TTML-family caption work; pairs with the existing ttconv and imscJS entries. [Wave 36 Lane A]
+
+#### WebVTT (W3C) ✅ W3C document license
+- **What:** WebVTT — the W3C Web Video Text Tracks format: the web-native caption/subtitle/chapter/metadata track format (also carried in HLS/DASH).
+- **URL:** via the W3C (Recommendation track — locate the WebVTT TR page before citing)
+- **License:** ✅ W3C document license (standard for W3C Recommendations — confirm in the spec's Status section).
+- **Free tier:** Free to read/implement
+- **Repo lane:** trippedd (captions/specs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the existing webvtt-py / node-webvtt / hls.js entries — the spec behind the tooling. [Wave 36 Lane A]
+
+#### IMSC 1.3 (W3C) ✅ W3C document license
+- **What:** TTML Profiles for Internet Media Subtitles and Captions 1.3 (IMSC) — the W3C subtitle/caption profile used in broadcast and streaming (ATSC, DVB, HbbTV).
+- **URL:** via the W3C (Recommendation track — locate the IMSC TR page before citing)
+- **License:** ✅ W3C document license (standard for W3C Recommendations — confirm in the spec's Status section).
+- **Free tier:** Free to read/implement
+- **Repo lane:** trippedd (captions/specs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The broadcast profile of TTML; pairs with the existing imscJS renderer entry. [Wave 36 Lane A]
+
+#### EBU Tech 3264 (STL) ⚠️ EBU terms — reference only
+- **What:** EBU Tech 3264 — the EBU Subtitling data exchange format (STL) specification: the broadcast interchange format for subtitle files.
+- **URL:** via tech.ebu.ch (EBU Tech 3264 PDF — free download; locate before citing)
+- **License:** ⚠️ EBU copyright; free to download and read — reference only, no redistribution grant.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/specs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The spec behind .stl broadcast subtitle files; pairs with the existing EBU-TT Live toolkit and EBU-TT-D XSD entries. [Wave 36 Lane A]
+
+#### USF (Universal Subtitle Format) doc ❓ terms unverified
+- **What:** USF — the XML-based Universal Subtitle Format: format description for reading and writing USF subtitle files.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 36 Lane A]
+
+#### JACOsub (JSS) format doc ❓ terms unverified
+- **What:** JACOsub — the JSS subtitle format (Amiga-era, still used for fansubs): format description for reading/writing JSS files.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 36 Lane A]
+
+#### MicroDVD (SUB) format doc ❓ terms unverified
+- **What:** MicroDVD — the frame-based .SUB subtitle format (e.g. {1}{25}Hello): format description for reading/writing MicroDVD files.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 36 Lane A]
+
+#### SubViewer (SUB) format doc ❓ terms unverified
+- **What:** SubViewer — the time-based .SUB subtitle format (e.g. 00:00:01.00,00:00:04.00): format description for reading/writing SubViewer files (v1/v2).
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; distinct from the frame-based MicroDVD .SUB. [Wave 36 Lane A]
+
+#### SBV (YouTube) format doc ❓ terms unverified
+- **What:** SBV — YouTube's SubViewer-derived caption format (0:00:01.000,0:00:04.000): format description for reading/writing SBV files.
+- **URL:** Canonical URL not verified this pass — documented in YouTube help and converter docs; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only. [Wave 36 Lane A]
+
+#### KAR (MIDI karaoke) format doc ❓ terms unverified
+- **What:** KAR — the MIDI karaoke file format (.kar): format description covering the lyric meta-events embedded in Standard MIDI Files.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the format PyKaraoke plays (quarantine row 274). [Wave 36 Lane A]
+
+#### RealText (RT) format doc ❓ terms unverified
+- **What:** RealText — RealNetworks' streaming text format (.rt): format description for reading/writing RealText caption files.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; legacy streaming-caption format. [Wave 36 Lane A]
+
+#### CD+G (CD Graphics) format doc ❓ terms unverified
+- **What:** CD+G — the CD Graphics subcode format behind CDG karaoke discs (MP3+G/OGG+G): format description of the graphics subchannels.
+- **URL:** Canonical URL not verified this pass — mirrored widely (the Red Book spec is Philips-licensed; community docs circulate); locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the format PyKaraoke and OpenKJ play. [Wave 36 Lane A]
+
+#### LRC format doc ❓ terms unverified
+- **What:** LRC — the de-facto lyric time-tag format ([mm:ss.xx] lines, plus ID tags and word-level extensions): format description for reading/writing LRC files.
+- **URL:** Canonical URL not verified this pass — mirrored widely; locate via search before use.
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; pairs with the existing whisper-lrc entry. [Wave 36 Lane A]
+
+#### SAMI (Microsoft) format doc ❓ terms unverified
+- **What:** SAMI — Microsoft's Synchronized Accessible Media Interchange (.smi): format description for reading/writing SAMI caption files.
+- **URL:** Canonical URL not verified this pass — the MSDN spec page is the canonical source; locate via search before use.
+- **License:** ❓ Microsoft documentation terms; reference only.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; legacy Windows Media caption format. [Wave 36 Lane A]
+
+#### UltraStar TXT song format doc ❓ terms unverified
+- **What:** The UltraStar/UltraStar-Deluxe song .txt format (BPM, GAP, note tuples with pitches and lyric syllables) — documented in the UltraStar-Deluxe project docs.
+- **URL:** via the UltraStar-Deluxe project docs (locate before use)
+- **License:** ❓ Doc terms unverified; the documenting project is GPL (quarantine row 237).
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (captions/formats)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the karaoke-timing format behind the quarantined UltraStar-Deluxe player. [Wave 36 Lane A]
+
+#### PyKaraoke 🚫 LGPL-2.0 — QUARANTINED (row 274)
+- **What:** PyKaraoke — cross-platform karaoke player (CDG incl. MP3+G/OGG+G/WAV+G, MIDI .KAR/.MID, MPEG); built on pygame + wxPython.
+- **URL:** https://sourceforge.net/projects/pykaraoke
+- **License:** LGPL-2.0 (verified 2026-10-08: SourceForge license field "GNU Library or Lesser General Public License version 2.0 (LGPLv2)"; author Kelvin Lawson's mailing-list statement confirms LGPL was deliberately chosen).
+- **Free tier:** Fully free/open-source.
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** LGPL-QUARANTINE: LGPL-2.0 — do NOT link into closed builds; safe as a standalone karaoke player (its output/video is unaffected). Quarantine row 274. [Wave 36 Lane A]
+
+#### Lyriks (simon0302010/Lyriks) 🚫 GPL-3.0 — QUARANTINED (row 275)
+- **What:** Lyriks — lyric/karaoke video CLI: Demucs + Whisper + FFmpeg pipeline that builds lyric videos from audio.
+- **URL:** https://github.com/simon0302010/Lyriks (verified 2026-10-08 via GitHub API)
+- **License:** GPL-3.0 (verified 2026-10-08: GitHub API spdx_id GPL-3.0).
+- **Free tier:** Fully free/open-source.
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-QUARANTINE: GPL-3.0 — do NOT embed in closed builds; safe as a standalone lyric-video step (outputs video). Quarantine row 275. [Wave 36 Lane A]
+
+#### OpenKJ 🚫 GPL-3.0 — QUARANTINED (row 277)
+- **What:** OpenKJ — cross-platform open-source karaoke show hosting software: singer rotation, key changer, tempo control, CDG display, remote request server, break-music fades, auto performance recording.
+- **URL:** https://github.com/OpenKJ/OpenKJ
+- **License:** GPL-3.0 (verified 2026-10-08: GitHub API spdx_id GPL-3.0 on OpenKJ/OpenKJ).
+- **Free tier:** Fully free/open-source.
+- **Repo lane:** trippedd (captions/karaoke)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-QUARANTINE: GPL-3.0 — do NOT embed in closed builds; safe as a standalone karaoke-hosting app. Quarantine row 277. [Wave 36 Lane A]
+
+#### Capture2Text (GSam) 🚫 GPL-3.0 — QUARANTINED (row 278)
+- **What:** Capture2Text — Windows screen-capture OCR tool: OCR any screen region via hotkey, 90+ languages, CLI + GUI, Google Translate and text-to-speech hooks.
+- **URL:** https://sourceforge.net/projects/capture2text/
+- **License:** GPL-3.0 (verified 2026-10-08: SourceForge license field "GNU General Public License version 3.0 (GPLv3)"; source headers carry the GPL-3.0-or-later boilerplate).
+- **Free tier:** Fully free/open-source.
+- **Repo lane:** trippedd (captions/ocr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started · **QUARANTINED (GPL/AGPL)**
+- **Notes:** GPL-QUARANTINE: GPL-3.0 — do NOT embed in closed builds; safe as a standalone OCR step (outputs text). Note: an unrelated MIT rewrite exists (paivikero/capture2text) — do not conflate with the GSam original. Quarantine row 278. [Wave 36 Lane A]

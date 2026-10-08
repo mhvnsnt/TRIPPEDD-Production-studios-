@@ -30361,3 +30361,549 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Repo lane:** trippedd (chiptune/formats)
 - **Status:** not-started
 - **Notes:** Honest negative: checked, still no verifiable grant. [Wave 32 Lane A]
+
+#### Deepgram — audit $200 one-time credit, not a recurring free tier ⚠️ burnable credit
+- **What:** Deepgram voice AI platform (STT/TTS) with hosted APIs and pre-recorded + streaming endpoints.
+- **URL:** https://deepgram.com/
+- **License:** ⚠️ Proprietary SaaS. Free tier verified 2026-10-08 via web search: **$200 one-time credit, no card required** — a burnable credit grant, not a recurring free tier. Commercial use of API output while credit lasts is allowed under their ToS; pricing page confirms pay-as-you-go after credits.
+- **Free tier:** $200 one-time credit (no recurring free plan)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Resolves the Deepgram ❓. Use the credit for a one-time bulk transcription pass; do NOT build a recurring pipeline on it — provision TurboScribe or YouTube Studio ASR for the durable free path. [Wave 33 Lane A]
+
+#### Rev — audit free 45 AI minutes/month, English-only, thin tier ⚠️ license-conditional
+- **What:** Rev transcription/captioning service (human + AI), ADA-compliant captions.
+- **URL:** https://www.rev.com/
+- **License:** ⚠️ Proprietary SaaS. Free tier verified 2026-10-08 via web search: **45 minutes of AI transcription/captions per month, English only** — a genuinely free but thin tier; human services and non-English AI are paid. Caption output usable commercially under their ToS.
+- **Free tier:** 45 AI min/mo free (English only)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the Rev ❓. Thin tier — good for short-form caption verification, not bulk work. [Wave 33 Lane A]
+
+#### AWS Transcribe — audit 60 min/mo free for 12 months only ⚠️ time-boxed
+- **What:** Amazon's managed speech-to-text service, part of AWS.
+- **URL:** https://aws.amazon.com/transcribe/pricing/
+- **License:** ⚠️ Proprietary cloud service. Free tier verified 2026-10-08 via web search: **60 minutes/month free for the first 12 months only** (some docs note new accounts may instead receive a $200 credit grant). After the window, standard per-minute pricing applies. Resolves the two duplicate AWS Transcribe ❓ entries.
+- **Free tier:** 60 min/mo for 12 months (time-boxed, not perpetual)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Resolves both AWS Transcribe ❓ entries. Only useful as a 12-month bootstrap; opt out of human-review/training data sharing in console settings per their data-privacy terms. [Wave 33 Lane A]
+
+#### Nova AI — audit free plan with 30 subtitle min + 20-min watermarked exports ⚠️ license-conditional
+- **What:** Nova AI online video editor with auto-subtitles (wearenova.ai).
+- **URL:** https://wearenova.ai/
+- **License:** ⚠️ Proprietary SaaS. Free plan verified 2026-10-08 via web search: **30 subtitle minutes + 20 minutes of watermarked video exports** on the free plan. Commercial use of exports allowed per ToS, but watermark limits shipping use.
+- **Free tier:** 30 subtitle min; 20-min watermarked exports
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the Nova AI ❓. Fine for caption generation; burn-in exports are watermarked — export SRT and render elsewhere. [Wave 33 Lane A]
+
+#### CaptionHub — audit NO free plan, custom/enterprise pricing only 🚫 no-free-tier
+- **What:** CaptionHub broadcast captioning/subtitling SaaS (captionhub.com).
+- **URL:** https://captionhub.com/
+- **License:** 🚫 Proprietary SaaS, **no free plan** — vendor FAQ (via Saasworthy) explicitly says "CaptionHub does not offer a free plan"; pricing is custom/£40+/mo with trial only. Resolves the CaptionHub ❓ as an honest negative.
+- **Free tier:** None (trial only)
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Do not pipeline on CaptionHub; nothing free to consume. [Wave 33 Lane A]
+
+#### Web Captioner → Maestra captioner — audit original site SHUT DOWN; Maestra replacement is free unlimited live captioning ⚠️ live-only
+- **What:** Web Captioner (webcaptioner.com) — the well-known free browser live-captioning tool.
+- **URL:** https://live.maestra.ai/captioner (Maestra's replacement; original webcaptioner.com is shut down)
+- **License:** ⚠️ The **original webcaptioner.com is SHUT DOWN**; Maestra (which acquired Web Captioner) hosts a live replacement at live.maestra.ai/captioner — verified 2026-10-08 via web search as **free, unlimited live captioning, no account required**. It is LIVE captioning only (mic input); it does NOT burn captions into files.
+- **Free tier:** Free unlimited live captioning (no account)
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the Web Captioner ❓ with a correction: never link the dead webcaptioner.com. Live-only — for file captions use TurboScribe or Subtitle Horse. [Wave 33 Lane A]
+
+#### Aiko — audit $24 one-time purchase, NOT free; on-device Whisper with SRT export ⚠️ paid-app
+- **What:** Aiko — on-device audio transcription app (macOS) by Sindre Sorhus, Whisper-based.
+- **URL:** https://sindresorhus.com/aiko
+- **License:** ⚠️ Paid app: the developer's own page states **$24 one-time purchase** (third-party "free" claims are stale). No recurring cost; on-device Whisper; SRT export. Resolves the Aiko ❓.
+- **Free tier:** None (paid $24 one-time)
+- **Repo lane:** trippedd (captions/transcription)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not free — listed for completeness. For the free on-device path use faster-whisper via the local-voice skill instead. [Wave 33 Lane A]
+
+#### Subtitle Horse — audit genuine free tier, no registration ✅ commercial-safe
+- **What:** Subtitle Horse (subtitle-horse.com) — browser-based subtitle editor (SRT/TimedText/WebVTT).
+- **URL:** https://subtitle-horse.com/
+- **License:** ✅ Free version with **no registration**; exports SRT, TimedText, WebVTT (verified 2026-10-08 via web search). Resolves the Subtitle Horse ❓ — the most genuinely free caption-file tool in this lane.
+- **Free tier:** Free, no registration
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Recommended free path for manual caption correction and SRT export after TurboScribe/Rev ASR. [Wave 33 Lane A]
+
+#### SubtitleNEXT — audit paid pro software, trial only 🚫 no-free-tier
+- **What:** SubtitleNEXT — professional subtitling software (subtitlenext.com).
+- **URL:** https://subtitlenext.com/
+- **License:** 🚫 Paid pro software: Novice €350 / Explorer €900 / Expert €2950, or Vlogger rental €280/mo; trial only. No free tier. Resolves the SubtitleNEXT ❓ as an honest negative.
+- **Free tier:** None (trial only)
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Broadcast-grade tool; nothing free to consume. Skip. [Wave 33 Lane A]
+
+#### FAB Subtitler — audit paid broadcast software, no free tier; crack/warez repos ignored 🚫 no-free-tier
+- **What:** FAB Subtitler — broadcast subtitling software (FAB Media).
+- **URL:** via fab-media vendor channels
+- **License:** 🚫 Paid broadcast software; no free tier found (verified 2026-10-08 via web search). Search results are polluted with crack/warez repos falsely claiming "MIT" — those are pirate repos, NOT the vendor, and were ignored. Resolves the FAB Subtitler ❓ as an honest negative.
+- **Free tier:** None
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Do not touch the "MIT-licensed FAB" repos — piracy bait. [Wave 33 Lane A]
+
+#### MovieCaptioner — audit paid ~$99.95, 14-day trial 🚫 no-free-tier
+- **What:** MovieCaptioner — desktop captioning software by SynchriMedia.
+- **URL:** https://www.synchrimedia.com/
+- **License:** 🚫 Paid (~$99.95), 14-day trial only (verified 2026-10-08 via web search). No free tier. Resolves the MovieCaptioner ❓ as an honest negative.
+- **Free tier:** None (14-day trial)
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Skip for the free pipeline. [Wave 33 Lane A]
+
+#### community-captioner — audit README declares CC BY-SA 4.0; v2 is CC BY-NC-SA 4.0 ⚠️ share-alike, v2 noncommercial
+- **What:** community-captioner — open-source community captioning tool (GitHub: amateurmenace/community-captioner).
+- **URL:** https://github.com/amateurmenace/community-captioner
+- **License:** ⚠️ The README now **declares CC BY-SA 4.0** (verified 2026-10-08 via web search) — share-alike is unusual for code and must be kept isolated from proprietary codebases. **v2 is CC BY-NC-SA 4.0** = 🚫 non-commercial. Resolves the community-captioner ❓.
+- **Free tier:** Free / open source
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Use only for reference/inspiration; do not vendor the code into shipping builds without share-alike compliance, and never use v2 in commercial work. [Wave 33 Lane A]
+
+#### Newgrounds Audio Portal — audit default license CC BY-NC-SA 3.0 on older uploads, per-track terms now 🚫 noncommercial-default
+- **What:** Newgrounds Audio Portal (newgrounds.com/audio) — massive user-uploaded music archive, chip/EDM-heavy.
+- **URL:** https://www.newgrounds.com/audio
+- **License:** 🚫 Older uploads default to **CC BY-NC-SA 3.0**; current uploads carry **per-track license badges** that vary (verified 2026-10-08 via web search). Treat the portal as non-commercial by default — per-track check required before any use.
+- **Free tier:** Free streaming/downloads per track
+- **Repo lane:** trippedd (chiptune/music sourcing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do NOT treat "free download" as commercial-safe here; check each track's license badge. [Wave 33 Lane A]
+
+#### Da! Heard-It Records — audit CC BY-NC-ND 4.0, free downloads 🚫 noncommercial
+- **What:** Da! Heard-It Records — chiptune/8-bit-leaning netlabel active since 2006 (dahearditrecords.bandcamp.com).
+- **URL:** https://dahearditrecords.bandcamp.com/
+- **License:** 🚫 **CC BY-NC-ND 4.0** verified on Bandcamp release pages (verified 2026-10-08 via web search). Free downloads, but non-commercial and no-derivatives — not shippable.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune)
+- **Status:** not-started
+- **Notes:** Great listening/reference resource for chiptune A&R, but the NC-ND terms block shipping in commercial builds. [Wave 33 Lane A]
+
+#### SectionZ — audit CC-licensed electronic music community, per-track CC variants ⚠️ per-track-terms
+- **What:** SectionZ — long-running CC-licensed electronic music community (650+ CC tracks per a 2006 Creative Commons feature).
+- **URL:** via sectionz.com community channels
+- **License:** ⚠️ Community releases under **per-track Creative Commons variants** (verified 2026-10-08 via web search); verify each track's CC badge — BY/BY-SA are commercial-safe, BY-NC variants are not.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune/electronic sourcing)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-track license check mandatory. [Wave 33 Lane A]
+
+#### Protodome — audit free name-your-price downloads, license undeclared ⚠️ ask-before-shipping
+- **What:** Protodome (Blake Troise) — UK chiptune artist, Bandcamp (protodome.bandcamp.com).
+- **URL:** https://protodome.bandcamp.com/
+- **License:** ⚠️ Bandcamp **name-your-price ("Enter £0.00 for free download")** but **no license field set** on the releases (verified 2026-10-08 via web search). Free download ≠ grant: ask the artist before commercial use.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong chiptune reference artist; contact for sync terms before shipping. [Wave 33 Lane A]
+
+#### Noisechannel (NoiChan) — audit chiptune netlabel, free name-your-price releases, license undeclared ⚠️ ask-before-shipping
+- **What:** Noisechannel / NoiChan — chiptune community netlabel (noisechannel.bandcamp.com), e.g. NC072 "Triforce Tunes (2nd Level)" compilation.
+- **URL:** https://noisechannel.bandcamp.com/
+- **License:** ⚠️ Releases are **name-your-price** with a **blank license field** on Bandcamp (verified 2026-10-08 via web search). Free download ≠ grant; per-release terms undeclared.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ask artists/label before commercial use. [Wave 33 Lane A]
+
+#### A Bit of Chiptune — audit social-space + indie chiptune label, terms unverified ⚠️ community-label
+- **What:** A Bit of Chiptune — social-space and indie label for "unapologetically digital" music (chiptune, digital fusion, micromusic); monthly showcases, community submissions.
+- **URL:** https://abitofchiptune.com/
+- **License:** ⚠️ Indie/community label model; no blanket CC or commercial-use grant found (verified 2026-10-08 via web search). Resolves the earlier A Bit of Chiptune ❓ — per-release/artist terms apply.
+- **Free tier:** Free streams/showcases
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Great A&R channel for chiptune collaborators; license per artist. [Wave 33 Lane A]
+
+#### Demovibes — audit free demoscene music mixtapes, per-track licensing ⚠️ per-track-terms
+- **What:** Demovibes — curated mixtape series of "the finest demoscene music" (demovibes.org), also archived on scene.org and mirrored via CVGM (cvgm.net/demovibes).
+- **URL:** https://www.demovibes.org/
+- **License:** ⚠️ Mixtapes are **free to download legally**, but constituent tracks carry **per-artist terms** — demoscene artists retain rights unless they state otherwise (verified 2026-10-08 via web search). Treat mixes as reference/listening, not as a reuse pool.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune/demoscene)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excellent taste/reference source for chip production; clear each track's artist terms before reuse. [Wave 33 Lane A]
+
+#### 8bit.fm — audit chiptune streaming radio, no reuse grant ⚠️ streaming-only
+- **What:** 8bit.fm — chiptune internet radio stream (http://8bit.fm/main.pls), 128kbps MP3.
+- **URL:** http://8bit.fm/main.pls
+- **License:** ⚠️ Streaming radio only; **no download or reuse grant** for the music played (verified 2026-10-08 via web search). Listening/research use only.
+- **Free tier:** Free streaming
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference listening for chiptune styles; do not rip for production. [Wave 33 Lane A]
+
+#### Chiptune Radio / Chiptune Jukebox (Pirillo) — audit free procedural NES music generator with WAV/MIDI export ⚠️ output-license-undeclared
+- **What:** Chiptune Radio (arcade.pirillo.com/chiptune-radio.html) — free browser-based procedural 8-bit music generator (NES 2A03 emulation); sister app Chiptune Jukebox generates endless albums. WAV (with smpl loop chunks for Unity/Godot), stems, and MIDI export.
+- **URL:** https://arcade.pirillo.com/chiptune-radio.html
+- **License:** ⚠️ Free to use with **no account, no limits, no watermarks** (verified 2026-10-08 via web search), but the **license of generated output is not stated** on the page. Generated loops are procedurally composed (nothing sampled), which is favorable, but get written terms before shipping in a commercial product.
+- **Free tier:** Fully free, unlimited export
+- **Repo lane:** trippedd (chiptune/generative music)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Strong candidate for placeholder/temp game music (seamless loops with loop-point metadata); verify output license before production use. [Wave 33 Lane A]
+
+#### Geometric Lullaby — audit vaporwave label, free NYOP downloads, all-rights-reserved ⚠️ not-commercial-safe
+- **What:** Geometric Lullaby — prolific vaporwave/slushwave label (geometriclullaby.bandcamp.com), 100+ catalog numbers, free-or-purchase downloads.
+- **URL:** https://geometriclullaby.bandcamp.com/
+- **License:** ⚠️ Downloads are **name-your-price/free**, but no CC statement — Bandcamp default **all rights reserved** (verified 2026-10-08 via web search). Vaporwave is sample-heavy (plunderphonics) — not commercial-safe.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (vaporwave/adjacent sourcing)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listening/reference only; never ship these tracks. [Wave 33 Lane A]
+
+#### Business Casual — audit vaporwave internet label est. 2013, free NYOP, all rights reserved ⚠️ not-commercial-safe
+- **What:** business casual — vaporwave internet music label (businesscasual87.bandcamp.com), 500+ back-catalog releases, weekly Friday releases.
+- **URL:** https://businesscasual87.bandcamp.com/
+- **License:** ⚠️ Releases are **free/name-your-price**, but pages state **"all rights reserved"** (verified 2026-10-08 via web search). Not a free-culture label.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (vaporwave/adjacent sourcing)
+- **Status:** not-started
+- **Notes:** Reference only; not shippable. [Wave 33 Lane A]
+
+#### My Pet Flamingo — audit commercial label, TimeSlave sublabel 🚫 not-free
+- **What:** My Pet Flamingo — synthwave/vaporwave label, sublabel of TimeSlave Recordings.
+- **URL:** via mypetflamingo.co.uk / Bandcamp
+- **License:** 🚫 Commercial label (verified 2026-10-08 via web search); all-rights-reserved, paid releases. Not a free-culture source.
+- **Free tier:** None
+- **Repo lane:** trippedd (synthwave reference)
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 33 Lane A]
+
+#### TimeSlave Recordings — audit commercial UK synthwave label 🚫 not-free
+- **What:** TimeSlave Recordings — UK synthwave label (timeslaves.bandcamp.com).
+- **URL:** https://timeslaves.bandcamp.com/
+- **License:** 🚫 Commercial; all-rights-reserved (verified 2026-10-08 via web search). Nothing free to consume.
+- **Free tier:** None
+- **Repo lane:** trippedd (synthwave reference)
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 33 Lane A]
+
+#### Tiny Waves — audit VGM remix albums (Nintendo derivatives), all-rights-reserved 🚫 derivative-risk
+- **What:** Tiny Waves — VGM remix album project (chip-adjacent remixes of Nintendo music).
+- **URL:** via tinywaves Bandcamp channels
+- **License:** 🚫 All-rights-reserved; releases are **derivatives of Nintendo compositions** (verified 2026-10-08 via web search). Double risk: no free-culture grant AND underlying copyrighted compositions.
+- **Free tier:** Free streams
+- **Repo lane:** trippedd (chiptune)
+- **Status:** not-started
+- **Notes:** Never ship; textbook example of why "free chiptune download" ≠ usable. [Wave 33 Lane A]
+
+#### Halley Labs — audit Lapfox Trax imprint, all rights reserved 🚫 not-free
+- **What:** Halley Labs — electronic music imprint associated with Lapfox Trax (halleylabs.com).
+- **URL:** https://halleylabs.com/
+- **License:** 🚫 **"All rights reserved"** on Bandcamp (verified 2026-10-08 via web search). Commercial label.
+- **Free tier:** None
+- **Repo lane:** trippedd (electronic reference)
+- **Status:** not-started
+- **Notes:** Honest negative — reference only. [Wave 33 Lane A]
+
+#### Black Screen Records — audit commercial VGM soundtrack label 🚫 not-free
+- **What:** Black Screen Records — Cologne-based VGM soundtrack label/distributor (blackscreenrecords.bandcamp.com).
+- **URL:** https://blackscreenrecords.bandcamp.com/
+- **License:** 🚫 Commercial label/distributor; all-rights-reserved (verified 2026-10-08 via web search). Nothing free to consume.
+- **Free tier:** None
+- **Repo lane:** trippedd (VGM reference)
+- **Status:** not-started
+- **Notes:** Honest negative. [Wave 33 Lane A]
+
+#### Data Discs — audit commercial VGM label, SEGA-licensed 🚫 not-free
+- **What:** Data Discs — London VGM label (datadiscs.bandcamp.com), officially SEGA-licensed vinyl/CD releases.
+- **URL:** https://datadiscs.bandcamp.com/
+- **License:** 🚫 Commercial; **"all rights reserved"** on Bandcamp (verified 2026-10-08 via web search). One free/pay-what-you-want Zelda-inspired release exists, but the underlying compositions are © Nintendo — unusable.
+- **Free tier:** None (one PWYW exception, still encumbered)
+- **Repo lane:** trippedd (VGM reference)
+- **Status:** not-started
+- **Notes:** Honest negative. [Wave 33 Lane A]
+
+#### Curaga Records — audit commercial VGM lo-fi remix label 🚫 not-free
+- **What:** Curaga Records — VGM lo-fi remix label, commercial vinyl/CD releases.
+- **URL:** via curagarecords channels
+- **License:** 🚫 Commercial; derivatives of copyrighted VGM (verified 2026-10-08 via web search). Nothing free to consume.
+- **Free tier:** None
+- **Repo lane:** trippedd (VGM reference)
+- **Status:** not-started
+- **Notes:** Honest negative. [Wave 33 Lane A]
+
+#### Coucou Netlabel — audit CC-licensed chiptune/micromusic netlabel, free downloads ⚠️ CC-variant-undeclared
+- **What:** Coucou Netlabel — Italian/French chiptune/micromusic netlabel (coucounetlabel.blogspot.com), 27+ releases (Fish and Chip 8bit, Chrono Triggers, compilations).
+- **URL:** http://coucounetlabel.blogspot.com/
+- **License:** ⚠️ Releases described as **"under Creative Commons License"** with free downloads (verified 2026-10-08 via web search), but the **CC variant is undeclared** — most likely a BY-NC-SA era-typical grant. Confirm per-release before any commercial use.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (chiptune)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Period-correct netlabel archive; assume NC until a release page says otherwise. [Wave 33 Lane A]
+
+#### Schubert-Online — audit Austrian Academy of Sciences PD manuscript/early-edition archive ✅ PD-content
+- **What:** Schubert-Online (schubert-online.at) — the world's largest collection of Schubert music manuscripts (500+) and first/early editions (600+), plus autograph letters; hosted by the Austrian Academy of Sciences.
+- **URL:** https://schubert-online.at/
+- **License:** ✅ **Public domain content** — Franz Schubert died 1828; manuscripts and 19th-century first editions are PD (verified 2026-10-08 via web search). Resolves the Schubert-Online reference — no ❓ entry existed, added as a new PD archive.
+- **Free tier:** Free online access to all digital images
+- **Repo lane:** trippedd (PD sheet music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Autograph manuscripts are PD; note scans are images (not engraved scores) — best for research/reference and facsimile-style art assets. [Wave 33 Lane A]
+
+#### Chopin Early Editions — audit UChicago 400+ first/early editions, digitized ✅ PD-content
+- **What:** Chopin Early Editions — University of Chicago Library digitization of 400+ first and early printed editions of Chopin's works (all published before 1881), searchable by title/genre/plate number.
+- **URL:** http://chopin.lib.uchicago.edu/home.html
+- **License:** ✅ **Public domain content** — pre-1881 editions of a composer who died 1849 (verified 2026-10-08 via web search). New PD archive.
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (PD sheet music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Variant texts across concurrent national editions make this a scholar-grade source for historically informed performance assets. [Wave 33 Lane A]
+
+#### Village Music Project — audit free English country-dance manuscript digitizations ✅ PD-melodies
+- **What:** The Village Music Project (village-music-project.org.uk) — volunteer digitization of English village musicians' handwritten tune books (e.g., Cahusac's 24 Country Dances 1758), with ABC notation and PDFs.
+- **URL:** https://www.village-music-project.org.uk/
+- **License:** ✅ **Public domain melodies** — 18th/19th-century traditional dance tunes (verified 2026-10-08 via web search). The transcriptions are volunteer-contributed; traditional tunes themselves are PD. New PD archive.
+- **Free tier:** Free downloads (ABC + PDF)
+- **Repo lane:** trippedd (PD folk tunes)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excellent source of period dance music for game/film temp and reference; ABC notation imports straight into notation pipelines. [Wave 33 Lane A]
+
+#### The Gilbert & Sullivan Archive — audit free vocal scores, libretti, MIDIs ✅ PD-content
+- **What:** The Gilbert and Sullivan Archive (gsarchive.net) — per-opera pages with downloadable vocal scores (PDF), libretti (PDF/Word), complete MIDI sets, plus cast lists and reviews.
+- **URL:** https://gsarchive.net/
+- **License:** ✅ **Public domain content** — Gilbert (d. 1911), Sullivan (d. 1900); 19th-century vocal scores offered as free PDF downloads (verified 2026-10-08 via web search). New PD archive.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (PD operetta)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the richest single-composer PD score sources outside IMSLP; MIDIs useful for temp tracks. [Wave 33 Lane A]
+
+#### GregoBase — audit Gregorian chant score database, free GABC/PDF/SVG ✅ PD-melodies
+- **What:** GregoBase (gregobase.selapa.net) — extensive database of Gregorian chant scores (nearly the entire Graduale Romanum and Liber Usualis), downloadable as GABC source, PDF, SVG, EPS, PNG.
+- **URL:** https://gregobase.selapa.net/
+- **License:** ✅ **Public domain melodies** — medieval chant repertoire; community-transcribed GABC encodings offered freely (verified 2026-10-08 via web search). New PD archive.
+- **Free tier:** Free downloads in all formats
+- **Repo lane:** trippedd (PD chant/sacred)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GABC source format pairs with the Gregorio engraving toolchain (already in catalog) for regenerating chant scores. [Wave 33 Lane A]
+
+#### Cantorion — audit free Welsh choral archive, PD-claimed items ⚠️ per-score-rights
+- **What:** Cantorion — online archive of Welsh choral music and hymns, browsable by choir type/difficulty.
+- **URL:** via cantorion.org channels
+- **License:** ⚠️ Archive describes its holdings as **public domain** traditional Welsh choral works, but rights are asserted per score and the upstream site's own rights page was not directly verified this pass (verified 2026-10-08 via web search of secondary descriptions). Treat per-score rights as needing confirmation.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (PD choral)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for traditional Welsh repertoire; verify each score's rights flag before shipping. [Wave 33 Lane A]
+
+#### Southern Folklife Collection — audit UNC research archive, rights per item ❓ not-a-free-pool
+- **What:** The Southern Folklife Collection (UNC Chapel Hill, Wilson Library) — 160,000+ sound recordings, 3,000+ videos, song folios, posters, manuscripts documenting old-time/bluegrass/blues/gospel/Cajun/zydeco.
+- **URL:** https://library.unc.edu/wilson/sfc
+- **License:** ❓ **Research archive — rights are per-item**; many recordings are commercial-era (78s, LPs) and NOT public domain (verified 2026-10-08 via web search). It is not a free-use music pool.
+- **Free tier:** Free on-site research; limited digitized streaming
+- **Repo lane:** trippedd (folk research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest classification: world-class research archive, not a PD source. Use for research; license each item individually. [Wave 33 Lane A]
+
+#### Digital Library of Appalachia — audit free repository, rights per item ❓ not-a-free-pool
+- **What:** The Digital Library of Appalachia (acadla.org) — Appalachian College Association's free repository of 12,000+ items: bluegrass recordings, oral histories, photos, letters, diaries.
+- **URL:** http://www.acadla.org/
+- **License:** ❓ Free to browse, but **rights are per-item** and many recordings are 20th-century commercial/folk-process material (verified 2026-10-08 via web search). Not a PD music pool.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (folk research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest classification: research archive, not a free-use source. [Wave 33 Lane A]
+
+#### WPA California Folk Music Project — audit LOC 35-hour field-recording collection ⚠️ per-recording-rights
+- **What:** The WPA California Folk Music Project (Library of Congress, American Folklife Center) — 35 hours of 1938–1940 field recordings by Sidney Robertson Cowell in 12 languages, plus photos, drawings, field notes; all digitized and viewable online.
+- **URL:** https://www.loc.gov/collections/sidney-robertson-cowell-northern-california-folk-music/
+- **License:** ⚠️ LOC presents the collection as historical record; **rights vary per recording** (performer rights, unpublished-work rules) — check each item's rights statement (verified 2026-10-08 via web search).
+- **Free tier:** Free streaming/access
+- **Repo lane:** trippedd (folk research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Invaluable ethnographic source; do not treat field recordings as automatically PD. [Wave 33 Lane A]
+
+#### Opera Arias Database — audit 540-opera aria/scene reference DB ✅ reference
+- **What:** Opera-Arias.com — aria database covering 175+ composers, 530+ operas, ~2,900 arias, 7,400+ scenes, 2,800 singers; scene pages with YouTube, libretto links, and sheet-music links.
+- **URL:** https://www.opera-arias.com/
+- **License:** ✅ **Reference database** — informational (metadata + links); no rights claimed over the underlying PD repertoire. Note: the old aria-database.com domain is now a spam "data solutions" site — use opera-arias.com.
+- **Free tier:** Free
+- **Repo lane:** trippedd (opera research)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best quick index for aria hunting before pulling scores from IMSLP/OperaGlass. [Wave 33 Lane A]
+
+#### OperaGlass — audit Stanford 170+ PD opera/oratorio libretti with explicit PD statement ✅ PD-texts
+- **What:** OperaGlass (opera.stanford.edu) — Stanford's opera resource: synopses, libretti, source texts, performance histories, discographies; the Libretti Homepage hosts 170+ opera and oratorio libretti.
+- **URL:** http://opera.stanford.edu/libretti/
+- **License:** ✅ The site states: **"Unless otherwise noted, all libretti posted at this site are in the original languages and in the public domain"** (verified 2026-10-08 via web search). Note: HTML formatting of posted texts is copyrighted by transcribers/editors — use the text content, not their layout.
+- **Free tier:** Free
+- **Repo lane:** trippedd (PD opera texts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Explicit upstream PD grant — one of the cleanest libretto sources. [Wave 33 Lane A]
+
+#### Nigel Gatherer's Scottish Collection — audit free Scottish/Irish tune archive ⚠️ mixed-rights
+- **What:** Nigel Gatherer's Scottish Collection (nigelgatherer.com/tunes) — hundreds of Scottish/Irish traditional tune sets with free PDF standard notation, mandolin/whistle/ukulele tabs, and MP3s; plus his own published tune collections.
+- **URL:** https://nigelgatherer.com/tunes/scots-index.html
+- **License:** ⚠️ **Mixed**: traditional tunes are PD, but the site also publishes **Gatherer's own compositions** and tunes by named modern composers (e.g., Brian McNeill) without a blanket license (verified 2026-10-08 via web search). Source field on each set tells which.
+- **Free tier:** Free PDFs/MP3s
+- **Repo lane:** trippedd (PD folk tunes)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Stick to sets marked "Trad."; skip composer-credited sets unless cleared. [Wave 33 Lane A]
+
+#### VWML / Full English — audit world's biggest free traditional folk archive ✅ PD-content
+- **What:** The Full English (vwml.org) — EFDSS's searchable digital archive: 44,000 records, 58,000+ digitized images from 19 collectors (Cecil Sharp, Percy Grainger, Vaughan Williams, Lucy Broadwood).
+- **URL:** https://www.vwml.org/
+- **License:** ✅ **Public domain content** — early-20th-century field collections of traditional song/tune; EFDSS offers it as a free archive (verified 2026-10-08 via web search). Resolves the Full English ❓.
+- **Free tier:** Free
+- **Repo lane:** trippedd (PD folk)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the Village Music Project and North Atlantic Tune List for English-trad coverage. [Wave 33 Lane A]
+
+#### Bodleian — Broadside Ballads — audit 30,000-ballad archive ✅ PD-content
+- **What:** The Bodleian Library Broadside Ballads — ~30,000 English printed ballad sheets (16th–20th c.) with scanned images, indexed by title/first line/subject; some with scores and sound files. High-res images rolling out on Digital Bodleian (summer 2026).
+- **URL:** https://www.bodleian.ox.ac.uk/collections-and-resources/special-collections/finding-aids-and-catalogues/ballads
+- **License:** ✅ **Public domain content** — 16th–19th-century broadsides are PD; site notes copyright is limited to educational use of their *images/interface* (verified 2026-10-08 via web search). Resolves the Broadside Ballads ❓. For tune settings, pair with Bruce Olson's free ABC transcriptions of Simpson's broadside tunes (via folkopedia).
+- **Free tier:** Free
+- **Repo lane:** trippedd (PD ballads)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The EBBA (UCSB) entry below complements this with 8,000 early ballads + tune recordings. [Wave 33 Lane A]
+
+#### Beethoven-Haus Bonn Digital Archive — audit 9,990 free documents, PD content ✅ PD-content
+- **What:** The Beethoven-Haus Bonn Digital Archive (beethoven.de) — 9,990 digitized documents (150,000+ pages): ~3,442 printed scores/prints/books, 2,478 music/text manuscripts, pictures and objects; free with PDF downloads (1920px), DFG/Mirador viewers.
+- **URL:** https://www.beethoven.de/en/s/archiv-digi
+- **License:** ✅ **Public domain content** — Beethoven manuscripts and first editions (verified 2026-10-08 via web search). Resolves the two Beethoven-Haus ❓ entries. Note: highest-res scans are internal-use only; the 1920px public downloads are the usable tier.
+- **Free tier:** Free
+- **Repo lane:** trippedd (PD manuscripts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Facsimile-grade source for Beethoven iconography and manuscript study; audio samples included. [Wave 33 Lane A]
+
+#### Juilliard Manuscript Collection — audit digitized autographs, PD content ✅ PD-content
+- **What:** The Juilliard Manuscript Collection (juilliardmanuscriptcollection.org) — 140 autograph manuscripts, sketches, engravers' proofs and first editions (Bach, Mozart, Beethoven incl. the Ninth Symphony proof and Grosse Fuge autograph, Brahms, Stravinsky); all manuscript scores digitized, free to view.
+- **URL:** https://juilliardmanuscriptcollection.org/
+- **License:** ✅ **Public domain content** — autographs of long-dead composers (verified 2026-10-08 via web search). Resolves the Juilliard ❓. Note: a few 20th-century items exist — check per item.
+- **Free tier:** Free
+- **Repo lane:** trippedd (PD manuscripts)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Composer's-own-hand sources; best for facsimile art and scholarly reference. [Wave 33 Lane A]
+
+#### EBBA — English Broadside Ballad Archive (UCSB) — audit 8,000 early ballads free ✅ PD-content
+- **What:** EBBA (ebba.english.ucsb.edu) — UC Santa Barbara's English Broadside Ballad Archive: ~8,000 early broadside ballads with multiple images, deep cataloguing, and tune recordings (+ links to 1,500 Bodleian ballads).
+- **URL:** https://ebba.english.ucsb.edu/
+- **License:** ✅ **Public domain content** — 17th-century ballads, freely accessible (verified 2026-10-08 via web search). Resolves the EBBA ❓.
+- **Free tier:** Free
+- **Repo lane:** trippedd (PD ballads)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The tune recordings make this the most *usable* broadside archive for performance reference. [Wave 33 Lane A]
+
+#### Oremus Hymnal — audit lectionary hymn-suggestion index ⚠️ per-hymn-rights
+- **What:** The Oremus Hymnal (oremus.org/hymnal, hymnal.oremus.org) — hymn suggestions for lectionary Years A/B/C with per-Sunday tables.
+- **URL:** http://www.oremus.org/hymnal/yearb.html
+- **License:** ⚠️ **Index, not a score archive**; per-hymn rights vary — some hymns were *removed* from the server for copyright reasons (verified 2026-10-08 via web search). PD hymns are usable; check each.
+- **Free tier:** Free
+- **Repo lane:** trippedd (hymn research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful as a curated PD-hymn discovery index, not a download pool. [Wave 33 Lane A]
+
+#### CMAA MusicaSacra — audit largest free sacred-music resource collection ✅ free-resources
+- **What:** The Church Music Association of America (musicasacra.com) — "the largest collection of free resources" for sacred music: Parish Book of Chant, Parish Book of Motets, rare and ancient scores, forum-shared editions.
+- **URL:** http://musicasacra.com/
+- **License:** ✅ **Free resources** — CMAA's stated mission includes free scores for parish use; ancient/chant repertoire is PD; new compositions are offered free by their composers (verified 2026-10-08 via web search). Per-item composer terms apply to modern works.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (PD sacred)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deepest free Catholic sacred-music pool; complements GregoBase and Corpus Christi Watershed. [Wave 33 Lane A]
+
+#### Sheet Music Consortium — audit UCLA service DISCONTINUED 2026; partner collections live ⚠️ service-dead
+- **What:** The Sheet Music Consortium — UCLA-hosted meta-search over 100,000+ digitized sheet-music records from UCLA, Indiana, Johns Hopkins, Duke, LOC and others.
+- **URL:** https://www.library.wisc.edu/music/research-help/sheet-music-scores-online/ (directory; original UCLA service discontinued)
+- **License:** ⚠️ **Service discontinued**: UCLA discontinued the central search in 2026 due to resource constraints — use the **direct partner-collection links** (Duke Historic American Sheet Music, Levy Collection, IN Harmony, etc.) instead (verified 2026-10-08 via web search). Resolves the Sheet Music Consortium ❓ entries with a correction.
+- **Free tier:** Free (via partner sites)
+- **Repo lane:** trippedd (PD sheet music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not link the dead UCLA search; route users to the partner collections, most already cataloged. [Wave 33 Lane A]
+
+#### Neue Mozart-Ausgabe Online — audit free scholarly scores, PERSONAL-STUDY-ONLY license ⚠️ license-conditional
+- **What:** The Neue Mozart-Ausgabe Online / Digital Mozart Edition — Internationale Stiftung Mozarteum + Packard Humanities Institute's free web edition of Mozart's complete works (125 volumes, 24,000 pages of music + 8,000 pages of critical reports).
+- **URL:** via mozarteum.at digital channels (Digital Mozart Edition)
+- **License:** ⚠️ Free to view, but the site's license agreement restricts use to **"personal study"** with copies only under fair use — **no redistribution grant** (verified 2026-10-08 via web search; digital rights acquired from Bärenreiter). Resolves the Mozarteum NMA ❓.
+- **Free tier:** Free access, no login
+- **Repo lane:** trippedd (PD scholarly scores)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mozart's music is PD, but the *edition's* typography is licensed for personal study only — read and perform from it, but do not republish the scans. [Wave 33 Lane A]
+
+#### North Atlantic Tune List — audit free tune DB with sheet music/ABC/MP3 ⚠️ mixed-rights
+- **What:** The North Atlantic Tune List (natunelist.net) — hundreds of tunes from Scandinavia, the British Isles, Quebec, Cape Breton, New England, Appalachia, with MP3s, sheet music, PDF, and ABC notation per tune; plus a links page of traditional-music resources.
+- **URL:** https://natunelist.net/
+- **License:** ⚠️ **Mixed**: entries carry a Source field — "Trad." tunes are PD, but some entries are **named-composer copyrighted tunes** (e.g., "Blue Hill Waltz © 2017") (verified 2026-10-08 via web search).
+- **Free tier:** Free
+- **Repo lane:** trippedd (PD folk tunes)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter to Source: Trad. entries for the PD pipeline. [Wave 33 Lane A]
+
+#### Amidon Choral Music — audit free SATB choral downloads ⚠️ per-arrangement-terms
+- **What:** Amidon Community Music (amidoncommunitymusic.com) — Peter & Mary Alice Amidon's choral arrangements (a cappella SATB, piano/SATB), steeped in traditional music, spirituals, and shape-note hymns; 30+ free downloads plus a paid store.
+- **URL:** https://amidoncommunitymusic.com/
+- **License:** ⚠️ **Free downloads offered** on the site (e.g., "Free download. You get piano/SATB and vocal score pdfs"), but arrangements are the Amidons' copyrighted work — free for use per the site's offering, not a CC grant (verified 2026-10-08 via web search). Underlying traditional melodies are PD.
+- **Free tier:** 30+ free PDF/MP3 downloads
+- **Repo lane:** trippedd (choral arrangements)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excellent small-choir repertoire source; honor the free-not-CC distinction. [Wave 33 Lane A]
+
+#### Corpus Christi Watershed — audit nonprofit sacred-music library, 99% free ✅ free-resources
+- **What:** Corpus Christi Watershed (ccwatershed.org) — Texas nonprofit promoting Gregorian chant and polyphony: thousands of free scores, recordings, training videos; Lalemande Library with 25,000+ pages of rare chant books in free PDF.
+- **URL:** http://www.ccwatershed.org/
+- **License:** ✅ **99% free of charge** per the organization's own statements (National Catholic Register profile); chant/polyphony repertoire is PD; new compositions are offered free by the nonprofit (verified 2026-10-08 via web search).
+- **Free tier:** Free downloads (scores, recordings, videos)
+- **Repo lane:** trippedd (PD sacred)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Practice videos + scores + organ accompaniments per feast make this the most *usable* free liturgical-music library found this wave. [Wave 33 Lane A]
+
+---
+
+## Wave 33 Lane A summary
+- **Added:** 55 honest entries (12 caption ❓ audits, 19 chiptune-label deep-dives, 24 PD score-archive entries/audits).
+- **Honest drops (failures documented, no entries):** Pure Toast Records (no such chiptune label found); Kittenrobot Records (Josie Cotton's indie-rock label, not chiptune); Digital Force Records (could not verify a chiptune label by that name); Dented Records (UK hip-hop/drum'n'bass label, not chiptune); Chip'n'Damned (could not verify); Boije Collection (could not verify live URL/PD claim this pass); Small Church Music (could not verify).
+- **Already audited by prior waves — skipped to avoid duplicates:** VEED, Clideo, Zeemo, Submagic, Captions.ai, OpusClip, TurboScribe, Audext, Kapwing, YouTube auto-captions, Traditional Tune Archive.
+- **Key finding:** the free-culture chiptune label landscape is overwhelmingly all-rights-reserved or NC — true CC commercial-safe chiptune labels are rare; the PD score-archive tail was far richer (OperaGlass's explicit PD statement and Beethoven-Haus's 9,990 free documents are the standouts).
+- **Quarantine rows added:** 0 (no GPL/AGPL/LGPL encountered).

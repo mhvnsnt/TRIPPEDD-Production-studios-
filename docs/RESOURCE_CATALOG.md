@@ -3120,8 +3120,8 @@ Format matches docs/RESOURCE_CATALOG.md. All licenses verified at upstream
 - **Free tier:** fully open
 - **Repo lane:** both (lip-sync-tools)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Forced alignment + diarization power auto subtitle timing and multi-speaker splits [Wave 4]
+- **Status:** WIRED — run-proven (Wave 58 Lane C, 2026-10-08)
+- **Notes:** Forced alignment + diarization power auto subtitle timing and multi-speaker splits [Wave 4]. Wave 58: ECAPA-TDNN embeddings (192-dim) on REAL Kokoro 3-voice dialogue at window level (1.5 s/0.25 s) → SpectralCluster → DER 0.4084 / JER 0.5478 (collar 0.0); auto-k merges the two female voices, forced k=3 recovers all three (DER 0.3359) — see tools/wave58_lane_c/PROOFS.md. (Wave 56 proved synthetic-fixture embeddings: DER 0.0 on tones; this wave is the real-voice step.)
 
 #### pyannote.audio ✅
 - **What:** Speaker diarization and segmentation toolkit

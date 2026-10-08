@@ -26999,3 +26999,844 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
 - **Status:** not-started
 - **Notes:** Android-only, no export/edit — a reference implementation, not a pipeline component. [Wave 26 Lane B]
+
+
+---
+
+## Wave 27 — Lane A: PD score-archive long tail, chiptune ecosystem, caption burn-in SaaS
+
+### J. Public-domain score archives, long tail (17)
+
+#### Moravian Music Foundation ⚠️ unverified
+- **What:** Public-domain Moravian church music archive — historic sheet music and music manuscripts from the Moravian tradition, maintained as a free digital library.
+- **URL:** https://www.moravianmusic.org
+- **License:** Proprietary archive terms — per-work PD status not explicitly stated site-wide (verified 2026-10-07; needs per-file review)
+- **Free tier:** Free browsing/download (archive); usage rights per item
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Niche historic-tradition source; treat as research library, not a licensed corpus. [Wave 27 Lane A]
+
+#### BandMusic PDF Library ✅ commercial-safe
+- **What:** Free PDF sheet music library focused on concert band / wind ensemble literature; public-domain and freely-licensed scores for download.
+- **URL:** https://bandmusicpdf.org
+- **License:** Public domain / free scores (site stated; verified 2026-10-07)
+- **Free tier:** 100% free downloads
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Wind-band-only niche — useful for brassy arrangement source material. [Wave 27 Lane A]
+
+#### Sam DeVincent Collection ⚠️ unverified
+- **What:** Smithsonian (NMAH Archives) sheet-music collection — large 19th–20th c. American popular sheet music archive with digital scans.
+- **URL:** https://www.si.edu/object/archives/sova-nmah-ac-0300-s16
+- **License:** Smithsonian archive terms — PD varies by item, not blanket (verified 2026-10-07)
+- **Free tier:** Free online access to scans; commercial reuse per item
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Research/archive source; verify PD per item before pipeline use. [Wave 27 Lane A]
+
+#### Sacred Harp ⚠️ unverified
+- **What:** Shape-note Sacred Harp hymnody archive and community hub — historic tunebooks, minutes, and recordings of the Sacred Harp tradition.
+- **URL:** https://fasola.org
+- **License:** Community archive; per-work rights vary (verified 2026-10-07)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Historic shape-note tradition source; not a licensed PD corpus wholesale. [Wave 27 Lane A]
+
+#### Global Chant Database ❓ unverified
+- **What:** Research database of Gregorian chant sources — indexed chant repertory for scholars (sources, melodies, texts).
+- **URL:** https://globalchant.org
+- **License:** Research database; license terms unverified (verified 2026-10-07)
+- **Free tier:** Free access (academic use)
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Scholarly index rather than score downloads; chants are historic but verify per edition. [Wave 27 Lane A]
+
+#### RISM Online ✅ commercial-safe
+- **What:** Répertoire International des Sources Musicales — authoritative metadata catalog of musical sources worldwide (manuscripts, editions); links to digitized items.
+- **URL:** https://rism.online
+- **License:** Metadata catalog (free to query); per-source rights belong to holding institutions (verified 2026-10-07)
+- **Free tier:** 100% free search
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Discovery layer for PD sources, not a direct score host itself. [Wave 27 Lane A]
+
+#### Musedata ❓ unverified
+- **What:** Digital music research archive of encoded scores (classical repertoire in machine-readable encodings) for analysis and scholarship.
+- **URL:** https://www.musedata.org
+- **License:** Research archive; terms unverified (verified 2026-10-07)
+- **Free tier:** Free access (academic)
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Encoded-score format useful for programmatic music work if terms allow. [Wave 27 Lane A]
+
+#### E. Azalia Hackley Collection ✅ commercial-safe
+- **What:** Detroit Public Library collection documenting African-American performing arts — sheet music, recordings, ephemera (strong PD-era materials).
+- **URL:** https://detroitpubliclibrary.org/research/e-azalia-hackley-collection
+- **License:** Library archive; PD-era materials usable with per-item verification (verified 2026-10-07)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** High cultural value for period-appropriate material; confirm PD per item. [Wave 27 Lane A]
+
+#### The Spirituals Database ❓ unverified
+- **What:** Database of African-American spirituals — lyrics, tune information, and bibliographic data on the spirituals repertory.
+- **URL:** https://www.spirituals-database.com
+- **License:** Database terms unverified (verified 2026-10-07)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Repertory is largely historic/PD but the site's own terms need review. [Wave 27 Lane A]
+
+#### 8notes ⚠️ unverified
+- **What:** Large free sheet-music site (sheet music, lessons, music theory) — free tier plus premium; classical and modern arrangements.
+- **URL:** https://www.8notes.com
+- **License:** Proprietary — free downloads for personal use; commercial use requires license (verified 2026-10-07)
+- **Free tier:** Free downloads with account; premium removes limits
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Educational/practice source; modern arrangements NOT PD — per-item rights check required. [Wave 27 Lane A]
+
+#### Comhaltas Archive ⚠️ unverified
+- **What:** Comhaltas Ceoltóirí Éireann digital archive — Irish traditional music recordings, tune manuscripts, and session materials.
+- **URL:** https://archive.comhaltas.ie
+- **License:** Archive terms — per-item rights vary (verified 2026-10-07)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Tunes themselves are traditional (long PD) but recordings/editions carry rights — research source. [Wave 27 Lane A]
+
+#### FluteTunes ⚠️ unverified
+- **What:** Free sheet-music library for flute — graded scores, duets, etudes; mix of classical arrangements and educational pieces.
+- **URL:** https://www.flutetunes.com
+- **License:** Site terms — free for personal/educational use; commercial rights per piece (verified 2026-10-07)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Flute-specific niche; modern arrangements not PD — check per piece. [Wave 27 Lane A]
+
+#### Delcamp ⚠️ unverified
+- **What:** Classical guitar (Delcamp) sheet-music forum library — graded classical guitar scores from community and public domain sources.
+- **URL:** https://www.classicalguitardelcamp.com
+- **License:** Forum/community terms; per-piece rights vary (verified 2026-10-07)
+- **Free tier:** Free with forum registration
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Community-sourced — verify each score's PD status; good guitar-niche coverage. [Wave 27 Lane A]
+
+#### lutemusic.org ✅ commercial-safe
+- **What:** Free lute music archive — Renaissance/Baroque lute tablatures and scores for historical plucked strings.
+- **URL:** https://lutemusic.org
+- **License:** Historic repertory, public domain (verified 2026-10-07)
+- **Free tier:** 100% free
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Early-music tablature source — niche but clean PD. [Wave 27 Lane A]
+
+#### National Library of Wales — Welsh traditional music ✅ commercial-safe
+- **What:** NLW digital collection of Welsh traditional music — manuscripts, tunes, and historic Welsh musical sources.
+- **URL:** https://www.library.wales/information/welsh-traditional-music
+- **License:** Library open-access terms; historic materials PD-era (verified 2026-10-07)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Welsh-tradition niche; per-item check for edited/annotated editions. [Wave 27 Lane A]
+
+#### TMI — Traditional Music Index ❓ unverified
+- **What:** Indiana University Traditional Music Index — searchable index of traditional music publications and tune sources.
+- **URL:** https://chmtl.indiana.edu/tmi
+- **License:** Academic index; terms unverified (verified 2026-10-07)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Index of sources, not a score host — discovery tool. [Wave 27 Lane A]
+
+#### TML — Traditional Music Library ❓ unverified
+- **What:** Indiana University Traditional Music Library — full-text traditional music tune archive companion to the TMI index.
+- **URL:** https://chmtl.indiana.edu/tml
+- **License:** Academic archive; terms unverified (verified 2026-10-07)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Full-text traditional tunes; confirm rights per item before pipeline use. [Wave 27 Lane A]
+
+### K. Chiptune / retro-tracker ecosystem depth (13)
+
+#### libmodplug ✅ commercial-safe
+- **What:** Public-domain module-music playback library (MOD/S3M/XM/IT) — classic decoder lineage for tracker formats.
+- **URL:** https://sourceforge.net/projects/modplug-xmms/
+- **License:** Public Domain (verified 2026-10-07, upstream SourceForge project page)
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PD makes it shipping-safe where LGPL alternatives are not; older codebase. [Wave 27 Lane A]
+
+#### vgmstream ✅ commercial-safe
+- **What:** Streaming-audio library for hundreds of video-game music formats (VGM, ADX, BRSTM, etc.) — the standard game-audio decoder.
+- **URL:** https://github.com/vgmstream/vgmstream/
+- **License:** ISC (verified 2026-10-07, upstream repo LICENSE)
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Deepest format coverage of any game-audio decoder; ISC = shipping-safe. [Wave 27 Lane A]
+
+#### VGMToolbox ✅ commercial-safe
+- **What:** Windows toolkit for ripping/converting video-game music data — extraction, conversion, and format utilities for game audio assets.
+- **URL:** https://sourceforge.net/projects/vgmtoolbox/
+- **License:** MIT (verified 2026-10-07, upstream SourceForge page)
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Ripping toolkit — MIT is clean; respect per-game asset rights on output. [Wave 27 Lane A]
+
+#### MilkyPlay ✅ commercial-safe
+- **What:** MilkyTracker playback library (BSD-3-Clause) — renders MilkyTracker modules (.mod/.xm) programmatically; the tracker app itself remains license-quarantined.
+- **URL:** https://github.com/milkytracker/MilkyTracker
+- **License:** BSD-3-Clause (verified 2026-10-07, upstream repo) — library only; the MilkyTracker app stays in quarantine (rows 124/171)
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Shipping-safe playback library split from the quarantined app — same split as used for libxmp/libopenmpt handling. [Wave 27 Lane A]
+
+#### PicoTracker ✅ commercial-safe
+- **What:** Chiptune tracker targeting retro handhelds (LSDJ-style workflow) — BSD-3-Clause tracker with a small, focused feature set.
+- **URL:** https://github.com/xiphonics/picotracker
+- **License:** BSD-3-Clause (verified 2026-10-07, upstream repo)
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Modern BSD tracker for retro workflow; good reference for chiptune UX. [Wave 27 Lane A]
+
+#### vgm2wav ⚠️ LGPL-2.1
+- **What:** VGM-to-WAV converter for video-game music files — batch-decodes VGM rips to WAV.
+- **URL:** https://github.com/weinerjm/vgm2wav
+- **License:** LGPL-2.1 (verified 2026-10-07, upstream repo) — badge ⚠️; dynamic-link only in shipping paths
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** LGPL means build-process care; converter output (WAV) is content, not code. [Wave 27 Lane A]
+
+#### NEZPlug ✅ commercial-safe
+- **What:** NSF/NSFe (NES music) playback plugin — zlib/libpng-licensed chiptune player core for Nintendo sound formats.
+- **URL:** https://sourceforge.net/projects/nezplug/
+- **License:** zlib/libpng (verified 2026-10-07, upstream SourceForge page)
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NES-music playback core; permissive license = shipping-safe. [Wave 27 Lane A]
+
+#### Game_Music_Emu ⚠️ LGPL-2.1 — QUARANTINED
+- **What:** Multi-system chiptune emulation library (GBS, NSF, SPC, VGM, etc.) — accurate emulated playback of retro console audio.
+- **URL:** https://github.com/libgme/game-music-emu
+- **License:** LGPL-2.1 (verified 2026-10-07, upstream repo) — badge ⚠️; existing quarantine row 184; no new row added
+- **Free tier:** 100% free/open
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** QUARANTINED (row 184)
+- **Notes:** Kept out of shipping paths per LGPL doctrine; static builds are off-limits. [Wave 27 Lane A]
+
+#### ACID64 ⚠️ closed-freeware
+- **What:** C64 SID tune player/editor for Windows — freeware SID music tool by the Acid64 team.
+- **URL:** https://acid64.com
+- **License:** Closed freeware (verified 2026-10-07, upstream site) — badge ⚠️
+- **Free tier:** Freeware (no payment); source not available
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Reference/tooling only; cannot be wired into builds. [Wave 27 Lane A]
+
+#### Beepola ⚠️ freeware-unverified
+- **What:** ZX Spectrum beeper-music tracker — composes 1-bit beeper chiptunes for the ZX Spectrum.
+- **URL:** https://freestuff.grok.co.uk/beepola/
+- **License:** Freeware — license terms unverified upstream (verified 2026-10-07); badge ⚠️
+- **Free tier:** Freeware download
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** 1-bit beeper niche; treat as a reference/composition tool, not a library. [Wave 27 Lane A]
+
+#### PixiTracker ⚠️ proprietary-demo
+- **What:** Minimalist pixel-art chiptune tracker (desktop + mobile) by WarmPlace — demo version freely available.
+- **URL:** https://warmplace.ru/soft/pixitracker/
+- **License:** Proprietary demo (verified 2026-10-07, upstream site) — badge ⚠️
+- **Free tier:** Free demo; paid full version
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Composition tool reference only; demo limits apply. [Wave 27 Lane A]
+
+#### Audio Overload ⚠️ freeware
+- **What:** Multi-format chiptune player for classic console music (SPC, NSF, GYM, etc.) — macOS/Windows freeware.
+- **URL:** https://bannister.org/software/ao.htm
+- **License:** Freeware (verified 2026-10-07, upstream site) — badge ⚠️
+- **Free tier:** Freeware download
+- **Repo lane:** trippedd (audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Player reference; not a library — cannot be wired. [Wave 27 Lane A]
+
+#### ASMA — Atari SAP Music Archive ⚠️ rights-vary
+- **What:** Community archive of Atari 8-bit SAP music (thousands of tunes by scene composers) — the Atari chiptune preservation hub.
+- **URL:** https://asma.atari.org
+- **License:** Free archive; per-tune rights vary by composer (verified 2026-10-07) — badge ⚠️
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (reference/music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Preservation archive, not a license grant — per-tune composer rights must be checked. [Wave 27 Lane A]
+
+### L. Caption burn-in SaaS alternatives (53)
+
+#### Hour One ❓ unverified
+- **What:** AI avatar video platform — text-to-video with virtual presenters and automatic captions for generated videos.
+- **URL:** https://hourone.ai
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial available (limits per vendor; commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Avatar-video leg; caption support is a generator feature, not a general captioning tool. [Wave 27 Lane A]
+
+#### Rephrase.ai ❓ unverified
+- **What:** AI avatar video creation studio — script-to-video with synthetic presenters and caption generation.
+- **URL:** https://rephrase.ai
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial available (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Genuinely new vs Wave 26 list; avatar-generated videos ship with captions. [Wave 27 Lane A]
+
+#### DeepBrain AI ❓ unverified
+- **What:** AI Studios — text-to-video AI avatar platform with auto captions and multilingual voice.
+- **URL:** https://www.aistudios.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial available (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** AI Studios platform; captions are part of generated-video output. [Wave 27 Lane A]
+
+#### Virbo ❓ unverified
+- **What:** Wondershare's AI avatar video generator — talking-head videos from scripts with caption support.
+- **URL:** https://virbo.wondershare.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial available (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Wondershare sibling of KwiCut below; captions baked into generated videos. [Wave 27 Lane A]
+
+#### Lumen5 ❓ unverified
+- **What:** AI video maker — turns scripts/articles into videos with automatic caption overlays.
+- **URL:** https://lumen5.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan available with watermark (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Script-to-video with caption styling; useful for text-post → captioned-clip pipeline. [Wave 27 Lane A]
+
+#### Animoto ❓ unverified
+- **What:** Drag-and-drop video maker — templates with caption/text overlay support for marketing videos.
+- **URL:** https://animoto.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan with watermark; paid removes watermark (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Template video maker; captions via text overlays rather than transcription. [Wave 27 Lane A]
+
+#### Biteable ❓ unverified
+- **What:** Animated video maker — explainer/marketing videos with animated text captions.
+- **URL:** https://biteable.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan with watermark (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Animated-text captions, not speech transcription — complementary to caption tools. [Wave 27 Lane A]
+
+#### Wave.video ❓ unverified
+- **What:** Online video editor/maker — auto captions, live streaming, and video hosting in one suite.
+- **URL:** https://wave.video/online-video-editor
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan available (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Editor + auto-captions + streaming; distinct from the hosting-only entries. [Wave 27 Lane A]
+
+#### Typito ❓ unverified
+- **What:** Online video editor built around text overlays — auto-caption generation with brand styling.
+- **URL:** https://typito.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial; watermarked exports (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Caption styling-first editor; strong brand-template angle. [Wave 27 Lane A]
+
+#### Moovly ❓ unverified
+- **What:** Online video creation platform — templates, text animation, and caption support for business videos.
+- **URL:** https://moovly.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan available (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Business-video templates with caption text layers. [Wave 27 Lane A]
+
+#### Animaker ❓ unverified
+- **What:** Animated video maker — DIY animation with auto captions and voiceover tools.
+- **URL:** https://animaker.com
+- **License:** Proprietary SaaS (verified 2026-10-07; referenced only as a stock-footage link in another entry — no standalone entry existed)
+- **Free tier:** Free plan with watermark (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Animation-first; captions via voiceover transcription in generated videos. [Wave 27 Lane A]
+
+#### Vyond ❓ unverified
+- **What:** Professional animated video platform (ex-GoAnimate) — character animation with captions and voiceover.
+- **URL:** https://www.vyond.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial only (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Enterprise animation; caption support via voiceover tracks. [Wave 27 Lane A]
+
+#### Powtoon ❓ unverified
+- **What:** Animated presentation/video maker — templates with caption and text-animation support.
+- **URL:** https://www.powtoon.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan with watermark (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Presentation-video captions; marketing/educational use case. [Wave 27 Lane A]
+
+#### Renderforest ❓ unverified
+- **What:** All-in-one branding/video platform — intro videos, animation, and caption support.
+- **URL:** https://www.renderforest.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan with watermark (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Logo/intro videos with caption layers; branding-adjacent. [Wave 27 Lane A]
+
+#### Steve AI ❓ unverified
+- **What:** AI video generator — text-to-video with AI voices and auto captions.
+- **URL:** https://www.steve.ai
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial available (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Text-to-video with captions as part of generated output. [Wave 27 Lane A]
+
+#### Yepic ❓ unverified
+- **What:** AI avatar video platform — studio-quality talking-head videos with auto captions.
+- **URL:** https://www.yepic.ai
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial available (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Avatar videos with captioning; multilingual angle. [Wave 27 Lane A]
+
+#### Guidde ❓ unverified
+- **What:** AI documentation video platform — auto-generates how-to videos with captions from screen captures.
+- **URL:** https://www.guidde.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan available (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tutorial-video niche with auto-captions; distinct documentation use case. [Wave 27 Lane A]
+
+#### Adobe Express ❓ unverified
+- **What:** Adobe's free creative suite — caption quick-action (Adobe Research-backed) adds captions to videos; free tier.
+- **URL:** https://research.adobe.com (Adobe Express caption quick-action article; verified 2026-10-07)
+- **License:** Proprietary — Adobe terms; free tier exists (verified 2026-10-07)
+- **Free tier:** Free plan with caption quick-actions (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Adobe's free-tier caption path — useful when Adobe stack is already in use. [Wave 27 Lane A]
+
+#### Movavi ❓ unverified
+- **What:** Movavi Subtitle Editor / video suite — subtitle creation and video editing with caption styling.
+- **URL:** https://www.movavi.com/tools/subtitle-editor/
+- **License:** Proprietary (verified 2026-10-07)
+- **Free tier:** Free tools/trial; paid suite (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Desktop-first subtitle editor; offline-friendly alternative to browser tools. [Wave 27 Lane A]
+
+#### Cloudflare Stream ❓ unverified
+- **What:** Video hosting/CDN with AI automatic captions — Stream generates captions on upload (announced via Cloudflare blog).
+- **URL:** https://blog.cloudflare.com/stream-automatic-captions-with-ai/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Pay-as-you-go (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CDN + AI captions in one bill — delivery-stack caption leg. [Wave 27 Lane A]
+
+#### Dacast ❓ unverified
+- **What:** Live-streaming/video platform with 608/708 caption support — broadcast captioning for live and VOD.
+- **URL:** https://www.dacast.com/blog/live-streaming-video-provider-with-608-708-caption-support/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Broadcast-caption angle (608/708); live-streaming niche. [Wave 27 Lane A]
+
+#### SproutVideo ❓ unverified
+- **What:** Business video hosting — automated captions/subtitles included for on-demand videos at no extra cost (per vendor pricing page); SRT/VTT upload supported.
+- **URL:** https://sproutvideo.com/pricing
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial; captions included in plans (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Automated captions bundled free with hosting — zero-marginal-cost caption leg. [Wave 27 Lane A]
+
+#### JW Player ❓ unverified
+- **What:** Enterprise video platform (player + hosting) — supports captions/subtitles tracks; accessibility features for hosted video.
+- **URL:** https://www.jwplayer.com/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial; enterprise pricing (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Player-level caption support; enterprise video leg. [Wave 27 Lane A]
+
+#### Brightcove ❓ unverified
+- **What:** Enterprise video platform — AI-powered captions, translation, and audio description for VOD and live (per Brightcove accessibility announcements).
+- **URL:** https://www.brightcove.com/blog/new-accessibility-features
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Enterprise/demo (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** AI caption + translation + dubbing stack; accessibility-first enterprise leg. [Wave 27 Lane A]
+
+#### Cloudinary ❓ unverified
+- **What:** Media management platform — free browser caption tool plus API/auto-transcription add-ons for video captioning at scale.
+- **URL:** https://cloudinary.com/tools/add-captions-to-video
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan with generous transformations; free browser caption tool (commercial terms per ToS unverified)
+- **Repo lane:** captions/api
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** API-first captioning + free browser tool — strong pipeline candidate. [Wave 27 Lane A]
+
+#### Vidyard ❓ unverified
+- **What:** Business video platform — free computer-generated captions, plus paid human transcription; caption editing in-app.
+- **URL:** https://knowledge.vidyard.com/hc/en-us/articles/360037999214
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan with auto captions (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free-tier auto captions on the support doc; sales-video niche. [Wave 27 Lane A]
+
+#### VN Video Editor ❓ unverified
+- **What:** Free mobile/desktop video editor (vlognow.me) — Auto Captions feature with batch caption generation and caption templates.
+- **URL:** https://vlognow.me/
+- **License:** Proprietary — free app (verified 2026-10-07 via app changelog)
+- **Free tier:** Free app; Auto Captions included (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Free auto-captioning in a mobile editor — zero-cost field captioning. [Wave 27 Lane A]
+
+#### PowerDirector ❓ unverified
+- **What:** CyberLink video editor (desktop + mobile) — AI Speech-to-Text auto captions and subtitle generation.
+- **URL:** https://www.cyberlink.com/products/powerdirector-video-editing-software-mac/overview_en_NZ.html?r=1
+- **License:** Proprietary — freemium (verified 2026-10-07)
+- **Free tier:** Free version with watermark; Auto Captions is a premium benefit (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** AI speech-to-text captions baked into a full NLE; desktop pipeline option. [Wave 27 Lane A]
+
+#### Elai ❓ unverified
+- **What:** AI avatar video platform — script-to-video with auto captions and multilingual support.
+- **URL:** https://elai.io
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial (1 min video); paid from $23/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/ai-video
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Auto captions on higher plans per reviews; avatar-video niche. [Wave 27 Lane A]
+
+#### Vimeo auto-captions ❓ unverified
+- **What:** Vimeo hosting — automatic closed captions on uploads (99 languages), plus AI translation and live auto captions.
+- **URL:** https://Vimeo.com/features/product-updates-winter-24/multi-language-auto-captions
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Auto captions require paid plan (Starter/Plus+); free plan excluded (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Paid-tier captions with 99-language support and AI translation — separate entry from generic Vimeo hosting. [Wave 27 Lane A]
+
+#### SubtitleO ❓ unverified
+- **What:** Whisper-powered online auto-subtitle generator — customizable styles, multilingual, free plan with watermark.
+- **URL:** https://subtitleo.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan (watermark); paid from $5/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Whisper-based caption tool — cheap dedicated caption leg. [Wave 27 Lane A]
+
+#### VideofaST ❓ unverified
+- **What:** AI automatic subtitle generator for short videos — 99+ languages, word highlighting, 1080P export; free 3 videos/mo.
+- **URL:** https://videofa.st/en/add-subtitles-to-video/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan: 3 videos/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Short-video caption niche with strong free tier. [Wave 27 Lane A]
+
+#### elevate.io ❓ unverified
+- **What:** Blackbird plc's browser-based collaborative video editor — cloud editing with caption support for creator teams.
+- **URL:** https://www.elevate.io/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free tier/creator plan (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Collaborative cloud editing with Epidemic Sound integration; captions in the edit flow. [Wave 27 Lane A]
+
+#### Choppity ❓ unverified
+- **What:** AI clip maker — long video → viral Shorts/Reels with word-by-word animated captions, 95%+ accuracy, speaker colors.
+- **URL:** https://www.choppity.com/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan available (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Caption-first clip repurposing; animated captions are the product. [Wave 27 Lane A]
+
+#### PlainScribe ❓ unverified
+- **What:** AI transcription service — $2/hour automatic transcription with subtitles, timecoding, and API access.
+- **URL:** https://www.plainscribe.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial/version; then $2/hour (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cheap pay-per-hour transcription with subtitle export — transcription leg. [Wave 27 Lane A]
+
+#### Hippo Video ❓ unverified
+- **What:** Video personalization platform — screen recording, video emails, and closed captions on the free plan.
+- **URL:** https://www.hippovideo.io/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan includes Closed Captions; Pro $20/user/mo annual (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free-tier closed captions; sales-video niche. [Wave 27 Lane A]
+
+#### SUBIT AI ❓ unverified
+- **What:** Free AI subtitle generator — Whisper + FFmpeg pipeline, no-watermark exports on free plan (30 energy/day).
+- **URL:** http://subitai.com
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free plan 30 energy/day; Pro $10/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Not the old open-source SubiT subtitle downloader (different project); Whisper-based free captioning. [Wave 27 Lane A]
+
+#### Spikes Studio ❓ unverified
+- **What:** AI clipping/caption platform for creators — auto captions and short-form repurposing.
+- **URL:** https://spikes.studio
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free tier available (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Caption + clipping combo; creator-focused. [Wave 27 Lane A]
+
+#### OpencutAI ❓ unverified
+- **What:** AI video editing tool — caption generation as part of an AI-assisted editing workflow.
+- **URL:** https://www.producthunt.com/products/opencut-ai
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Availability per Product Hunt listing (commercial terms per ToS unverified)
+- **Repo lane:** captions/editors
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Emerging tool; verify current feature set before wiring. [Wave 27 Lane A]
+
+#### Translate.Video ❓ unverified
+- **What:** Video translation + subtitle platform — translate videos and generate multilingual captions.
+- **URL:** https://translate.video
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free tier available (commercial terms per ToS unverified)
+- **Repo lane:** captions/translation
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Translation-first caption tool; multilingual distribution leg. [Wave 27 Lane A]
+
+#### FocuSee ❓ unverified
+- **What:** iMobie screen recorder with auto-zoom and caption features — tutorial video creation with captions.
+- **URL:** https://focusee.imobie.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free trial (commercial terms per ToS unverified)
+- **Repo lane:** captions/recording
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Screen-recording + captions for tutorial content. [Wave 27 Lane A]
+
+#### Streamio ❓ unverified
+- **What:** Video hosting/streaming platform with caption support for hosted content.
+- **URL:** https://streamio.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Plans per vendor (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Hosting leg with caption tracks; streaming niche. [Wave 27 Lane A]
+
+#### Gumlet ❓ unverified
+- **What:** Video hosting/optimization CDN — caption track support for streamed video.
+- **URL:** https://www.gumlet.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free tier available (commercial terms per ToS unverified)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** CDN + captions; delivery-stack option. [Wave 27 Lane A]
+
+#### Akkadu ❓ unverified
+- **What:** AI video translation platform — dubbing and subtitle generation for global distribution.
+- **URL:** https://akkadu.ai
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free trial (commercial terms per ToS unverified)
+- **Repo lane:** captions/translation
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dubbing + subtitles; localization leg. [Wave 27 Lane A]
+
+#### SendShort ❓ unverified
+- **What:** AI short-form video maker — auto captions for Shorts/Reels/TikTok repurposing.
+- **URL:** https://sendshort.ai
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free tier available (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Short-form captioning; social-clip pipeline leg. [Wave 27 Lane A]
+
+#### ScreenPal ❓ unverified
+- **What:** Screen recorder + video editor (ex-Screencast-O-Matic) — captioning for tutorial and training videos.
+- **URL:** https://screenpal.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free plan available (commercial terms per ToS unverified)
+- **Repo lane:** captions/recording
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Established screen recorder; caption support for training content. [Wave 27 Lane A]
+
+#### Alitu ❓ unverified
+- **What:** Podcast/video creation platform — automated editing with transcription and caption export.
+- **URL:** https://alitu.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free trial (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Podcast-originated; transcription-to-caption workflow. [Wave 27 Lane A]
+
+#### Scripsy ❓ unverified
+- **What:** AI YouTube transcription + summarization — instant transcripts with timestamps, SRT/TXT/DOCX/PDF export, API access.
+- **URL:** https://scripsy.ai
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial/version; paid from $4/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Replaced faster-whisper (already an entry) as a genuinely new transcription leg; SRT export makes it caption-usable. [Wave 27 Lane A]
+
+#### AddSubtitle.ai ❓ unverified
+- **What:** Talecast's AI subtitle/translation platform — browser-based subtitling, translation, and lip-sync dubbing; API access.
+- **URL:** https://addsubtitle.ai/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial/flexible plans; paid from $15/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/translation
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Replaced Simon Says (already an entry); subtitle + lip-sync translation stack. [Wave 27 Lane A]
+
+#### BlitzCut ❓ unverified
+- **What:** AI video clipping tool — auto captions for short-form content repurposing.
+- **URL:** https://blitzcutai.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free tier available (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clip + caption combo for social repurposing. [Wave 27 Lane A]
+
+#### AirCaption ❓ unverified
+- **What:** AI caption generator — automatic captions for video content.
+- **URL:** https://aircaption.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free tier available (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dedicated caption generator; lightweight pipeline leg. [Wave 27 Lane A]
+
+#### Gglot ❓ unverified
+- **What:** AI transcription/translation platform — subtitles, translation, and API; pricing $14.99–$149/mo per vendor pricing page.
+- **URL:** https://gglot.com/audio-translator/
+- **License:** Proprietary SaaS (verified 2026-10-07)
+- **Free tier:** Free trial (commercial terms per ToS unverified)
+- **Repo lane:** captions/transcription
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Added as EasySub replacement (EasySub was a Wave 13 dup); subtitle + translation + API. [Wave 27 Lane A]
+
+#### KwiCut ❓ unverified
+- **What:** Wondershare's AI video caption tool — auto-generated subtitles with free trial.
+- **URL:** https://kwicut.wondershare.com
+- **License:** Proprietary SaaS (verified 2026-10-07; URL from earlier passes)
+- **Free tier:** Free trial; paid from $7.99/mo (commercial terms per ToS unverified)
+- **Repo lane:** captions/saas
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Added as Offeo replacement (Offeo's caption feature unverified); dedicated caption SaaS. [Wave 27 Lane A]

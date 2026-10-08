@@ -36862,3 +36862,503 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Premier player-internals documentation — docs/playroutine-anatomy.md is self-contained. [Wave 40 Lane A]
+
+#### ebu/ebu-tt-live-toolkit — EBU-TT Live reference toolkit (BSD-3) ✅ commercial-safe
+- **What:** EBU-TT Live reference implementation — Python toolkit for the EBU-TT Live (EBU Tech 3370) interoperable live-subtitling framework: WebSocket carriage, node/clock sync, sequence numbering.
+- **URL:** https://github.com/ebu/ebu-tt-live-toolkit
+- **License:** BSD-3-Clause (verified 2026-10-08 via EBU project page + raw LICENCE.txt BSD-style text)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Upstream EBU repo — distinct from the BBC fork already cataloged. Reference implementation for testing live-caption ingest paths. [Wave 41 Lane A]
+
+#### didrod205/captionkit — Swift caption parsing/rendering ✅ commercial-safe
+- **What:** CaptionKit — Swift library for caption/subtitle parsing and rendering (SRT/VTT) aimed at iOS/macOS video players.
+- **URL:** https://github.com/didrod205/captionkit
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight Swift caption renderer for Apple-platform playback tooling. [Wave 41 Lane A]
+
+#### InnoCaption — free FCC-funded live call captioning ⚠️ proprietary freeware
+- **What:** FCC-certified live call captioning app (iOS/Android + InnoCaption Web) — real-time captions for phone calls via AI speech recognition or live human stenographers (CART); visual voicemail; Bluetooth hearing-aid streaming.
+- **URL:** https://innocaption.com
+- **License:** Proprietary freeware (verified 2026-10-08 via official site + Google Play listing)
+- **Free tier:** Free for individuals with hearing loss in the US — federally funded, FCC certified; AI and stenographer caption modes
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Not a developer API — listed as the reference free live-call-captioning service for accessibility workflows. [Wave 41 Lane A]
+
+#### Apple Live Captions — on-device system captions ⚠️ proprietary freeware (OS-bundled)
+- **What:** Built-in accessibility feature (iPhone 11+/iOS 16+, supported iPads, Apple-silicon Macs) — on-device real-time transcription of FaceTime calls, system audio, and media playback; fully private.
+- **URL:** https://support.apple.com/guide/iphone/get-live-captions-iph96b94c1c2/ios (feature docs; no standalone product URL)
+- **License:** Proprietary — bundled with Apple OS (verified 2026-10-08 via Apple support docs + third-party guides)
+- **Free tier:** Free with the OS; on-device, works offline after language-model download
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zero-cost captioning for Apple-device workflows; transcript is read-only in the system UI. [Wave 41 Lane A]
+
+#### Windows Live Captions — on-device system captions ⚠️ proprietary freeware (OS-bundled)
+- **What:** Built-in Windows 11 (22H2+) accessibility feature (Win+Ctrl+L) — on-device real-time captions for any audio routed through the PC; current builds support 40 languages, Copilot+ PCs add live translation.
+- **URL:** https://support.microsoft.com/windows/use-live-captions-to-better-understand-audio-b52da59c-14b8-4330-bf6c-6d089733d2a6 (feature docs; no standalone product URL)
+- **License:** Proprietary — bundled with Windows 11 (verified 2026-10-08 via Microsoft docs + press coverage)
+- **Free tier:** Free with Windows 11; on-device after one-time language-pack download
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for captioning stream/meeting audio on Windows capture machines at zero cost. [Wave 41 Lane A]
+
+#### Chrome Live Caption — on-device browser captions ⚠️ proprietary freeware (browser-bundled)
+- **What:** Chrome's built-in Live Caption (Settings → Accessibility) — on-device real-time captions for any audio playing in the browser via local speech model; floating bubble, English-focused, read-only.
+- **URL:** https://support.google.com/chrome/answer/10538231 (feature docs; chrome://settings/accessibility)
+- **License:** Proprietary — bundled with Chrome (verified 2026-10-08 via Google support docs + third-party guides)
+- **Free tier:** Free; on-device, audio never leaves the device
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quick fallback for browser-based captioning; not editable/exportable — pair with an extension (e.g. LessonScriptor, below) when transcripts must be saved. [Wave 41 Lane A]
+
+#### Vocena — free unlimited live captions (Mac/iOS) ⚠️ proprietary SaaS — free tier verified 2026-10-08
+- **What:** Live-caption app for Mac (macOS 15.5+) and iPhone/iPad — floating always-on-top captions for system audio or microphone, session library, TXT or timestamped SRT export; on-device speech recognition (cloud model optional on paid tier).
+- **URL:** https://freelivecaption.com
+- **License:** Proprietary SaaS (verified 2026-10-08 via maker's 2026-10-07 live-caption guide)
+- **Free tier:** Live captions free with no time limit; translation paid; SRT export included
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rare free unlimited live-caption tool that also exports SRT — directly usable for caption-file production on Mac. [Wave 41 Lane A]
+
+#### LessonScriptor — editable live captions Chrome extension ⚠️ proprietary SaaS — free mode verified 2026-10-08
+- **What:** Chrome extension adding live, editable captions to any video in the browser (YouTube, lectures, meeting recordings) — 14+ languages, editable transcripts exportable as Markdown or plain text.
+- **URL:** https://lessonscriptor.com
+- **License:** Proprietary SaaS (verified 2026-10-08 via vendor site)
+- **Free tier:** Free mode — install from Chrome Web Store, works immediately, no account required
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fills the gap Chrome's built-in Live Caption leaves (editable/exportable transcripts, headphones-friendly). [Wave 41 Lane A]
+
+#### Dunebru/livecaptions — on-device Mac caption app ✅ commercial-safe
+- **What:** Live Captions — open-source macOS menu-bar app: real-time captions for any audio (ScreenCaptureKit system audio or microphone), on-device streaming recognizer (~1s latency), floating overlay, transcript window with copy, optional on-device translation to 20 languages (macOS 15+).
+- **URL:** https://github.com/Dunebru/livecaptions
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (captions)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Signed/notarized release builds; candidate for wiring a free on-device captioning step into the pipeline. [Wave 41 Lane A]
+
+#### files.scene.org diskmag collection ❓ license unverified
+- **What:** scene.org's diskmag file collection — browsable/downloadable archive of demoscene diskmagazines via FTP/HTTP mirrors.
+- **URL:** https://files.scene.org/browse/mags/
+- **License:** Unverified — per-magazine rights vary; the collection as a whole has no single license (checked 2026-10-08)
+- **Free tier:** free to browse/download
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Primary source for diskmag issues; treat individual mags' content as rights-unknown for reuse. [Wave 41 Lane A]
+
+#### archive.scene.org mirrors ❓ license unverified
+- **What:** Mirror network for scene.org — FTP/HTTP mirrors of the full scene.org archive including diskmags, demos, and music.
+- **URL:** https://archive.scene.org
+- **License:** Unverified — mirror of per-release rights (checked 2026-10-08)
+- **Free tier:** free to browse/download
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fallback mirror when files.scene.org is slow; same rights caveat. [Wave 41 Lane A]
+
+#### Internet Archive demoscene collection ✅ commercial-safe (per-item rights)
+- **What:** archive.org "demoscene" community collection — demoscene productions, diskmags, music, and party materials; HTTP 200 verified 2026-10-08.
+- **URL:** https://archive.org/details/demoscene
+- **License:** Internet Archive terms; per-item licenses vary (verified 2026-10-08 via HTTP 200 + collection page)
+- **Free tier:** free to browse/download/stream
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful for long-tail diskmag issues not on scene.org; check per-item rights before reuse. [Wave 41 Lane A]
+
+#### ansilove/libansilove — ANSI/ASCII to PNG renderer ✅ commercial-safe
+- **What:** libansilove — C library (plus `ansilove` CLI) converting ANSI/ASCII art (ANS, ASC, NFO, DIZ) to PNG, with SAUCE metadata support.
+- **URL:** https://github.com/ansilove/libansilove
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (text-art)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rendering engine behind many .nfo viewers — wireable for thumbnailing diskmag/.nfo archives. [Wave 41 Lane A]
+
+#### Blocktronics — ANSI/ASCII art group + archive ❓ license unverified
+- **What:** Blocktronics — modern ANSI/ASCII art group (est. 2008); blocktronics.org hosts the 16colo.rs art-archive mirror; 43 packs, 2,500+ artworks (2008–2022).
+- **URL:** http://blocktronics.org
+- **License:** Unverified — per-artwork rights; releases free to download (checked 2026-10-08 via 16colo.rs group page)
+- **Free tier:** free to browse/download
+- **Repo lane:** trippedd (text-art)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern textmode-art source; individual artist rights unknown — treat as browse/download, not bulk reuse. [Wave 41 Lane A]
+
+#### Mistigris — ANSI art group ❓ license unverified
+- **What:** Mistigris — ANSI art group site; HTTP 200 verified 2026-10-08.
+- **URL:** https://mistigris.org
+- **License:** Unverified — per-artwork rights (checked 2026-10-08)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (text-art)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to Blocktronics for textmode-art research. [Wave 41 Lane A]
+
+#### Phrack Magazine archive ❓ license unverified
+- **What:** Phrack Magazine (phrack.org) — long-running hacker e-zine text archive, issues 1–70+, plain-text/HTML.
+- **URL:** http://phrack.org
+- **License:** Unverified — e-zine text; per-article rights (checked 2026-10-08; site live)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (research)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Text-scene adjacent (underground e-zines); research/reference value for textmode culture. [Wave 41 Lane A]
+
+#### artpacks.org — ANSI/ASCII artpack archive ❓ license unverified
+- **What:** Artpacks.org — browsable archive of ANSI/ASCII artpacks with web and mobile viewing; HTTP 200 verified 2026-10-08.
+- **URL:** https://artpacks.org
+- **License:** Unverified — per-pack artist rights (checked 2026-10-08)
+- **Free tier:** free to browse/download
+- **Repo lane:** trippedd (text-art)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements 16colo.rs for artpack research; same per-artist rights caveat. [Wave 41 Lane A]
+
+#### ps3dev/PSL1GHT — open-source PS3 homebrew SDK ✅ commercial-safe
+- **What:** PSL1GHT — open-source PlayStation 3 homebrew SDK: libraries, samples, and toolchain glue as a complement to Sony's proprietary SDK.
+- **URL:** https://github.com/ps3dev/PSL1GHT
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** PS3 was uncovered in round 1; docs/samples useful for any PS3 homebrew reference work. [Wave 41 Lane A]
+
+#### VUEngine/VUEngine-Core — Virtual Boy engine ✅ commercial-safe
+- **What:** VUEngine Core — open-source game engine for the Nintendo Virtual Boy (GCC toolchain target), with examples and hardware abstraction.
+- **URL:** https://github.com/VUEngine/VUEngine-Core
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Virtual Boy was uncovered in round 1. [Wave 41 Lane A]
+
+#### VUEngine/VUEngine-Studio — Virtual Boy IDE ✅ commercial-safe
+- **What:** VUEngine Studio — IDE/tooling companion to VUEngine Core for Virtual Boy development.
+- **URL:** https://github.com/VUEngine/VUEngine-Studio
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Companion entry to VUEngine-Core; same license/owner. [Wave 41 Lane A]
+
+#### drojaazu/megadev — Mega Drive/Genesis dev kit ✅ commercial-safe
+- **What:** megadev — Mega Drive/Genesis development kit: build tooling, examples, and hardware notes for 68000 homebrew.
+- **URL:** https://github.com/drojaazu/megadev
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Alternate Genesis toolchain docs alongside SGDK/Marsdev. [Wave 41 Lane A]
+
+#### haroldo-ok/choice4genesis — Genesis choice-game framework ✅ commercial-safe
+- **What:** choice4genesis — framework for building choice-based/visual-novel style games on Sega Mega Drive/Genesis.
+- **URL:** https://github.com/haroldo-ok/choice4genesis
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Niche Genesis genre framework; docs useful for narrative-game homebrew reference. [Wave 41 Lane A]
+
+#### devkitPro/libogc — GameCube/Wii library ✅ commercial-safe
+- **What:** libogc — open-source library for Nintendo GameCube and Wii homebrew (part of devkitPro's devkitPPC ecosystem): hardware access, GX graphics, audio, input.
+- **URL:** https://github.com/devkitPro/libogc
+- **License:** zlib (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** GameCube/Wii were uncovered in round 1; permissive zlib license. [Wave 41 Lane A]
+
+#### JayFoxRox/nxdk — Xbox (original) dev kit ❓ license unverified
+- **What:** nxdk — open-source SDK for original Xbox homebrew development.
+- **URL:** https://github.com/JayFoxRox/nxdk
+- **License:** Unverified — no top-level license detected; components include GPLv2/LGPL-licensed parts (checked 2026-10-08 via GitHub API spdx None + repo file listing)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Original Xbox was uncovered in round 1. Mixed-license components — treat as docs reference only until license is clarified; do not lift code. [Wave 41 Lane A]
+
+#### BigEvilCorporation/megadrive_samples — Genesis audio samples ❓ license unverified
+- **What:** megadrive_samples — sample/audio assets for Sega Mega Drive/Genesis development.
+- **URL:** https://github.com/BigEvilCorporation/megadrive_samples
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free to download
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Asset pack, not code; rights unknown — audition before any use. [Wave 41 Lane A]
+
+#### WonderfulToolchain/wonderful-i8086 — WonderSwan/i8086 toolchain ⚠️ license-conditional (per-file)
+- **What:** wonderful-i8086 — toolchain target for Intel 8086 (WonderSwan homebrew via the WonderfulToolchain): assembler/linker support and runtime pieces.
+- **URL:** https://github.com/WonderfulToolchain/wonderful-i8086
+- **License:** Mixed per-file — runtime under GPL-3.0-with-exception, other parts zlib (verified 2026-10-08 via repo license docs; ❓ not fully mapped)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** WonderSwan was uncovered in round 1. Per-file licensing means: docs reference is fine; check per-file headers before lifting any code. [Wave 41 Lane A]
+
+#### ameliandev/ngpc-project-template — Neo Geo Pocket project template ❓ license unverified
+- **What:** ngpc-project-template — starter template for Neo Geo Pocket homebrew projects.
+- **URL:** https://github.com/ameliandev/ngpc-project-template
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free to use as template
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Neo Geo Pocket was uncovered in round 1; template structure is the reference value. [Wave 41 Lane A]
+
+#### tixul/ngpcraft_live_editor — Neo Geo Pocket live editor ✅ commercial-safe
+- **What:** ngpcraft_live_editor — live tile/map editor targeting Neo Geo Pocket homebrew.
+- **URL:** https://github.com/tixul/ngpcraft_live_editor
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Companion to the NGPC template above; editor tooling for NGPC graphics workflows. [Wave 41 Lane A]
+
+#### bebbo/amiga-gcc — Amiga GCC toolchain ❓ license unverified
+- **What:** amiga-gcc — GCC-based cross-compiler toolchain for Amiga (m68k) development, with Amiga-specific patches.
+- **URL:** https://github.com/bebbo/amiga-gcc
+- **License:** Unverified — no top-level SPDX detected; GCC components are GPL-family by nature (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Docs/build reference only; compiler toolchain — do not treat output or bundled libs as permissively licensed without checking. [Wave 41 Lane A]
+
+#### switchbrew/libnx — Nintendo Switch library ✅ commercial-safe
+- **What:** libnx — open-source library for Nintendo Switch homebrew (libnx / devkitPro devkitA64 ecosystem): system services, graphics, input.
+- **URL:** https://github.com/switchbrew/libnx
+- **License:** ISC (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Switch was uncovered in round 1; permissive ISC license. [Wave 41 Lane A]
+
+#### SDK-1600 — Intellivision SDK ❓ license unverified
+- **What:** SDK-1600 — homebrew SDK/documentation for the Mattel Intellivision (CP1610).
+- **URL:** http://sdk-1600.spatula-city.org/
+- **License:** Unverified — site does not state a license (checked 2026-10-08)
+- **Free tier:** free to browse/download
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Intellivision was uncovered in round 1; docs reference value. [Wave 41 Lane A]
+
+#### vitasdk/vita-toolchain — PlayStation Vita toolchain ✅ commercial-safe
+- **What:** vita-toolchain — open-source PlayStation Vita toolchain (compiler/binutils build scripts, headers) from the vitasdk project.
+- **URL:** https://github.com/vitasdk/vita-toolchain
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (devkit-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Vita was uncovered in round 1. Honest caveat: sibling vitasdk repos are mixed-license (newlib GPL-2.0, vdpm LGPL-2.1) — this repo itself is MIT, but treat the full SDK as mixed. [Wave 41 Lane A]
+
+#### keithah/threefive.js — SCTE-35 TypeScript port (WIRED) ✅ commercial-safe
+- **What:** threefive.js — TypeScript port of the `threefive` SCTE-35 parser/encoder (MPEG-TS splice_info_section decode/encode); published on npm as `threefive-scte35`.
+- **URL:** https://github.com/keithah/threefive.js
+- **License:** MIT (verified 2026-10-08 via README `## License` section + npm package metadata)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** in-progress — wired in tools/wave41_lane_a/threefivejs/ with decode proof
+- **Notes:** Wired because the Python original (superkabuki/threefive_is_scte35) is GPL-2.0 — quarantined (row 379), NOT wired. This MIT port is the commercial-safe path. Proof: `tools/wave41_lane_a/threefivejs/decode_cue.mjs` decodes a known SCTE-35 base64 cue → `proof_decode.json` (TimeSignal, table_id 0xfc, Segmentation Descriptor type 17 = Program End); see `tools/wave41_lane_a/PROOFS.md` + `SHA256SUMS`. [Wave 41 Lane A]
+
+#### futzu/cuei — SCTE-35 cue parser ✅ commercial-safe
+- **What:** cuei — SCTE-35 cue parsing/insertion utilities by the threefive author (futzuek).
+- **URL:** https://github.com/futzu/cuei
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Companion to the SCTE-35 tool family; BSD-licensed unlike the GPL Python threefive. [Wave 41 Lane A]
+
+#### ggouzi/HLS-SCTE35-monitoring — SCTE-35 HLS monitor ✅ commercial-safe
+- **What:** HLS-SCTE35-monitoring — tool for monitoring SCTE-35 markers in HLS streams.
+- **URL:** https://github.com/ggouzi/HLS-SCTE35-monitoring
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Operational monitoring for ad-insertion markers in HLS delivery. [Wave 41 Lane A]
+
+#### futzu/adbreak2 — SCTE-35 ad-break tool ✅ commercial-safe
+- **What:** adbreak2 — SCTE-35 ad-break insertion/manipulation tool.
+- **URL:** https://github.com/futzu/adbreak2
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** BSD-licensed ad-break tooling from the threefive author's tool family. [Wave 41 Lane A]
+
+#### futzu/six2scte35 — SCTE-35 converter ✅ commercial-safe
+- **What:** six2scte35 — converts SCTE-104/legacy splice signals to SCTE-35.
+- **URL:** https://github.com/futzu/six2scte35
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Bridges SCTE-104 (upstream automation) to SCTE-35 (distribution) — pairs with astronautlabs/scte104 below. [Wave 41 Lane A]
+
+#### jcheshire/same-endec — SAME encoder/decoder ✅ commercial-safe
+- **What:** same-endec — encoder/decoder for SAME (Specific Area Message Encoding) EAS headers.
+- **URL:** https://github.com/jcheshire/same-endec
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Core SAME codec for EAS tooling depth; MIT is the commercial-safe path (contrast GPL eas-tools-decoder, quarantined row 383). [Wave 41 Lane A]
+
+#### g34hweatherspotter/eas-alert-decoder — EAS alert decoder ✅ commercial-safe
+- **What:** eas-alert-decoder — decodes Emergency Alert System SAME alerts from audio.
+- **URL:** https://github.com/g34hweatherspotter/eas-alert-decoder
+- **License:** MIT (verified 2026-10-08 via README license statement)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Weather-spotter-oriented EAS decode tooling. [Wave 41 Lane A]
+
+#### futzu/x9k3 — HLS segmenter + SCTE-35 injector ❓ license unverified
+- **What:** x9k3 — adaptive-bitrate HLS segmenter with SCTE-35 injection support.
+- **URL:** https://github.com/futzu/x9k3
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Listed in awesome-broadcasting's SCTE-35 section; license unknown — docs reference only until clarified. [Wave 41 Lane A]
+
+#### futzu/m3ufu — M3U/HLS playlist tool ❓ license unverified
+- **What:** m3ufu — M3U8/HLS playlist manipulation utility (SCTE-35 marker aware).
+- **URL:** https://github.com/futzu/m3ufu
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Playlist-side companion to the SCTE-35 tool family; license unknown. [Wave 41 Lane A]
+
+#### superkabuki/SuperKabuki — broadcast tool collection ❓ license unverified
+- **What:** SuperKabuki — broadcast/streaming tool collection by the threefive author.
+- **URL:** https://github.com/superkabuki/SuperKabuki
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Author's broader toolset; license unknown — do not lift code. [Wave 41 Lane A]
+
+#### scunning1987/pois_reference_server — SCTE-224 POIS reference ❓ license unverified
+- **What:** pois_reference_server — reference Placement Opportunity Information Service (SCTE-224) server implementation.
+- **URL:** https://github.com/scunning1987/pois_reference_server
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** SCTE-224 reference for dynamic ad insertion; pairs with Comcast/scte224structs (below). License unknown. [Wave 41 Lane A]
+
+#### sleepyninja0o/dsame3 — SAME decoder (Python 3) ❓ license unverified
+- **What:** dsame3 — Python 3 rewrite/port of the dsame SAME/EAS decoder (the original cuppa-joe/dsame is already cataloged).
+- **URL:** https://github.com/sleepyninja0o/dsame3
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Python 3 port of an already-cataloged decoder; distinct repo, license unknown. [Wave 41 Lane A]
+
+#### ntvmb/eas-same-encoder — EAS SAME encoder ❓ license unverified
+- **What:** eas-same-encoder — encoder for EAS SAME alert headers.
+- **URL:** https://github.com/ntvmb/eas-same-encoder
+- **License:** Unverified — no license detected (checked 2026-10-08 via GitHub API spdx None)
+- **Free tier:** free and open source (source-available)
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Encoder-side companion to the SAME decoders above; license unknown. [Wave 41 Lane A]
+
+#### astronautlabs/scte104 — SCTE-104 TypeScript client ✅ commercial-safe
+- **What:** scte104 — TypeScript implementation of the SCTE-104 TCP/IP protocol (client library + CLI for sending splice start/end to automation/injector systems); bitstream serialization via @astronautlabs/bitstream.
+- **URL:** https://github.com/astronautlabs/scte104
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The SCTE-104 (upstream automation signaling) counterpart to the SCTE-35 tools; npm-installable CLI. [Wave 41 Lane A]
+
+#### m1tk4/wireshark-scte — SCTE-104 Wireshark dissector ✅ commercial-safe
+- **What:** wireshark-scte — Wireshark protocol dissector for SCTE-104.
+- **URL:** https://github.com/m1tk4/wireshark-scte
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Listed in awesome-broadcasting's SCTE-35/104 section; packet-level debugging for SCTE-104. [Wave 41 Lane A]
+
+#### xqq/libaribcaption — ARIB caption decoder ✅ commercial-safe
+- **What:** libaribcaption — decoder for ARIB STD-B24 captions (Japanese broadcast captioning standard).
+- **URL:** https://github.com/xqq/libaribcaption
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Japanese broadcast caption path; complements the CEA-608/708 tooling already cataloged. [Wave 41 Lane A]
+
+#### m2amedia/scte35dump — SCTE-35 dump tool ✅ commercial-safe
+- **What:** scte35dump — tool for dumping/inspecting SCTE-35 sections from transport streams.
+- **URL:** https://github.com/m2amedia/scte35dump
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Inspection/debugging companion to the SCTE-35 encode/decode tools. [Wave 41 Lane A]
+
+#### Comcast/scte224structs — SCTE-224 data structures ✅ commercial-safe
+- **What:** scte224structs — SCTE-224 (ESNI/placement opportunity) data structures from Comcast.
+- **URL:** https://github.com/Comcast/scte224structs
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free and open source
+- **Repo lane:** trippedd (broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Standards-side SCTE-224 structs; pairs with the POIS reference server above. [Wave 41 Lane A]

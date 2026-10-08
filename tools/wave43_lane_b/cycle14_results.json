@@ -1,0 +1,389 @@
+{
+  "checked_at": "2026-10-08T10:00:00.548110+00:00",
+  "results": {
+    "row61_kitscenarist": {
+      "repo": "dimkanovikov/KITScenarist",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "dimkanovikov",
+      "archived": true,
+      "pushed_at": "2023-08-01T04:02:43Z",
+      "default_branch": "develop",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 35149,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribute verbatim "
+    },
+    "row168_chaptertool": {
+      "repo": "tautcony/ChapterTool",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "tautcony",
+      "archived": false,
+      "pushed_at": "2026-10-08T02:37:21Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 32472,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/> |  Everyone is permitted to copy and distribute verbatim c"
+    },
+    "row199_mml2vgm": {
+      "repo": "rjungemann/mml2vgm",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "rjungemann",
+      "archived": false,
+      "pushed_at": "2026-06-14T04:16:15Z",
+      "default_branch": "main",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE.txt",
+      "license_http": 200,
+      "license_bytes": 35148,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribute verbatim "
+    },
+    "row200_tinyvgm": {
+      "repo": "SudoMaker/TinyVGM",
+      "expected": "AGPL-3.0",
+      "live": true,
+      "owner": "SudoMaker",
+      "archived": false,
+      "pushed_at": "2023-06-25T04:06:27Z",
+      "default_branch": "master",
+      "spdx_id": "AGPL-3.0",
+      "license_key": "agpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 34523,
+      "license_markers": [
+        "affero",
+        "agpl",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU AFFERO GENERAL PUBLIC LICENSE |                        Version 3, 19 November 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribut"
+    },
+    "row208_unpaper": {
+      "repo": "unpaper/unpaper",
+      "expected": "GPL-2.0-only",
+      "live": true,
+      "owner": "unpaper",
+      "archived": false,
+      "pushed_at": "2024-07-11T20:44:57Z",
+      "default_branch": "main",
+      "spdx_id": null,
+      "license_key": null,
+      "spdx_match_expected": false,
+      "license_path": null
+    },
+    "row211_bookreader": {
+      "repo": "internetarchive/bookreader",
+      "expected": "AGPL-3.0",
+      "live": true,
+      "owner": "internetarchive",
+      "archived": false,
+      "pushed_at": "2026-10-07T20:28:01Z",
+      "default_branch": "master",
+      "spdx_id": "AGPL-3.0",
+      "license_key": "agpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 34520,
+      "license_markers": [
+        "affero",
+        "agpl",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU AFFERO GENERAL PUBLIC LICENSE |                        Version 3, 19 November 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/> |  Everyone is permitted to copy and distribute"
+    },
+    "row212_openslide": {
+      "repo": "openslide/openslide",
+      "expected": "LGPL-2.0",
+      "live": true,
+      "owner": "openslide",
+      "archived": false,
+      "pushed_at": "2026-10-04T18:47:35Z",
+      "default_branch": "main",
+      "spdx_id": "LGPL-2.1",
+      "license_key": "lgpl-2.1",
+      "spdx_match_expected": false,
+      "license_path": "COPYING.LESSER",
+      "license_http": 200,
+      "license_bytes": 26419,
+      "license_markers": [
+        "free software foundation",
+        "mit "
+      ],
+      "license_head": "                  GNU LESSER GENERAL PUBLIC LICENSE |                        Version 2.1, February 1999 |  |  Copyright (C) 1991, 1999 Free Software Foundation, Inc. |  <https://fsf.org/> |  Everyone is permitted to copy and distr"
+    },
+    "row213_pedalboard": {
+      "repo": "spotify/pedalboard",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "spotify",
+      "archived": false,
+      "pushed_at": "2026-10-07T19:51:01Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 35149,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribute verbatim "
+    },
+    "row214_matchering": {
+      "repo": "sergree/matchering",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "sergree",
+      "archived": false,
+      "pushed_at": "2026-10-07T14:04:36Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 35149,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribute verbatim "
+    },
+    "row141_simple_diarizer": {
+      "repo": "cvqluu/simple_diarizer",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "cvqluu",
+      "archived": false,
+      "pushed_at": "2024-05-02T03:05:41Z",
+      "default_branch": "main",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 35144,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribute verbatim "
+    },
+    "row142_libretranslate": {
+      "repo": "LibreTranslate/LibreTranslate",
+      "expected": "AGPL-3.0",
+      "live": true,
+      "owner": "LibreTranslate",
+      "archived": false,
+      "pushed_at": "2026-09-28T00:52:25Z",
+      "default_branch": "main",
+      "spdx_id": "AGPL-3.0",
+      "license_key": "agpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 34523,
+      "license_markers": [
+        "affero",
+        "agpl",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU AFFERO GENERAL PUBLIC LICENSE |                        Version 3, 19 November 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribut"
+    },
+    "row143_translators": {
+      "repo": "UlionTse/translators",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "UlionTse",
+      "archived": false,
+      "pushed_at": "2026-01-26T19:15:38Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 35148,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/> |  Everyone is permitted to copy and distribute verbatim "
+    },
+    "row68_helm": {
+      "repo": "mtytel/helm",
+      "expected": "GPL-3.0",
+      "live": true,
+      "owner": "mtytel",
+      "archived": true,
+      "pushed_at": "2022-09-24T04:23:20Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "license_key": "gpl-3.0",
+      "spdx_match_expected": true,
+      "license_path": "COPYING",
+      "license_http": 200,
+      "license_bytes": 35147,
+      "license_markers": [
+        "affero",
+        "free software foundation",
+        "mit ",
+        "or any later version"
+      ],
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 3, 29 June 2007 |  |  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/> |  Everyone is permitted to copy and distribute verbatim c"
+    },
+    "row236_telxcc": {
+      "repo": "kanongil/telxcc",
+      "expected": "GPL-2.0-or-later",
+      "live": true,
+      "owner": "kanongil",
+      "archived": true,
+      "pushed_at": "2025-09-20T11:29:10Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "license_key": "other",
+      "spdx_match_expected": false,
+      "license_path": "LICENSE",
+      "license_http": 200,
+      "license_bytes": 2091,
+      "license_markers": [
+        "free software foundation",
+        "mit "
+      ],
+      "license_head": "(c) 2011-2014 Forers, s. r. o.: telxcc |  | Some portions/inspirations: | (c) 2007 Vincent Penne, telx.c : Minimalistic Teletext subtitles decoder | (c) 2001-2005 by dvb.matt, ProjectX java dvb decoder | (c) Dave Chapman <dave@dch"
+    },
+    "row208_unpaper_README": {
+      "http": 200,
+      "len": 3261,
+      "has_gpl2_grant": true,
+      "has_spdx_id": true,
+      "head": "<!-- | SPDX-FileCopyrightText: 2005 The unpaper authors |  | SPDX-License-Identifier: GPL-2.0-only | --> |  | unpaper | ======= |  | Originally written by Jens Gulden \u2014 see AUTHORS for more information. | The entire `unpaper` project is lic"
+    },
+    "row155_mkvtoolnix": {
+      "http": 200,
+      "live": true,
+      "owner": "mbunkus",
+      "archived": false,
+      "pushed_at": "2026-09-28T21:52:58+02:00"
+    },
+    "row155_mkvtoolnix_COPYING": {
+      "http": 200,
+      "bytes": 18092,
+      "is_gpl_v2_june_1991": true,
+      "head": "                    GNU GENERAL PUBLIC LICENSE |                        Version 2, June 1991 |  |  Copyright (C) 1989, 1991 Free Software Foundation, Inc., |  51 Frankl"
+    },
+    "row134_hennepin": {
+      "url": "https://catalog.hathitrust.org/Record/011366889",
+      "http": 403,
+      "live": false,
+      "len": 0,
+      "followup": "bot-fetch 403; re-verified via live browser render 2026-10-08: catalog record LIVE, Use and Reproduction Note reads \"This image may not be reproduced for any reason without the express written consent of the Hennepin County Library.\" \u2014 terms unchanged"
+    },
+    "row135_austin": {
+      "url": "http://library.austintexas.gov/ahc/reproduction-policies-and-procedures",
+      "http": 403,
+      "live": false,
+      "len": 0,
+      "followup": "bot-fetch 403; re-verified via live browser render 2026-10-08: Reproduction Policies page LIVE, one-time-use-only, written permission required, no alteration \u2014 terms unchanged"
+    },
+    "row136_sacramento": {
+      "url": "https://www.centerforsacramentohistory.org/collections-research/using-our-collections",
+      "http": 200,
+      "live": true,
+      "len": 36640,
+      "terms_found": {
+        "$10-$200": true,
+        "use fees": true
+      }
+    },
+    "row137_arizona": {
+      "url": "https://azmemory.azlibrary.gov/nodes/view/237273",
+      "http": 200,
+      "live": true,
+      "len": 40000,
+      "terms_found": {
+        "retained by this institution": true,
+        "permission to re-use": true
+      }
+    },
+    "row138_maryland": {
+      "url": "https://msa.maryland.gov/msa/refserv/html/use.html",
+      "http": 200,
+      "live": true,
+      "len": 6775,
+      "terms_found": {
+        "Permission is required for any and all": true,
+        "Special Collections": true
+      }
+    },
+    "row139_chicago": {
+      "url": "https://www.chipublib.org/about-cpls-digital-collections/",
+      "http": 200,
+      "live": true,
+      "len": 40000,
+      "terms_found": {
+        "Copyright and Takedown": false,
+        "written permission of the copyright owners": false
+      },
+      "followup": "direct fetch 200 but key terms on separate policy source; re-verified via live render of cpldc/cpldc-jekyll about.md@HEAD: \"requires the written permission of the copyright owners\", no PD statement \u2014 terms unchanged"
+    },
+    "row140_kingcounty": {
+      "url": "https://kingcounty.gov/uk-ua/dept/kcit/data-information-services/gis-center/about/terms-conditions-copyrights",
+      "http": "ERR",
+      "live": false,
+      "len": 45,
+      "terms_found": {
+        "permitted to sell": false,
+        "written agreement": false
+      },
+      "followup": "EN-canonical URL empty-body via both curl and browser; terms verified via current kingcounty.gov crawl: \"no one is permitted to sell this information except in accordance with a written agreement with King County\" \u2014 terms unchanged; no evidence of change"
+    }
+  }
+}

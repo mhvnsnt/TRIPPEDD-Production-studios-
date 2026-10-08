@@ -37932,3 +37932,961 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** MIT makes this the only commercial-safe code path into LSDj song data in the catalog — format docs AND working import/export in one. LSDj is the dominant Game Boy tracker, so this unlocks the whole LSDj song corpus for tooling. [Wave 43 Lane A]
+
+## Wave 44 Lane A — new entries (2026-10-08)
+
+### Pocket 1 — chiptune label deep-dives Round 3 (regional scenes: Brazilian, Japanese, Eastern European, Nordic)
+
+#### Chippanze ❓ unverified
+- **What:** Chippanze — chiptune netlabel from Belo Horizonte, Brazil (Famitracker/Famicom-style releases)
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — netlabel release terms not published on a readable page (verified 2026-10-08 via chipmusic.org netlabel-list thread; Brazilian chiptune label corroborated via artist release credit "Released by Chippanze label")
+- **Free tier:** netlabel releases historically free to download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Brazilian regional chiptune scene label; exact release catalog archived across artist pages. [Wave 44 Lane A]
+
+#### 16 Dimensional Records ❓ unverified
+- **What:** 16 Dimensional Records — Japanese free chiptune netlabel; released free NES-style chiptune albums "Gone Square" / "Go Square"
+- **URL:** https://www.engadget.com/2007-04-03-two-free-nes-style-music-albums-released.html
+- **License:** unverified — releases distributed free; no license/terms statement on the coverage page (verified 2026-10-08 via Engadget 2007 article)
+- **Free tier:** free albums
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Japanese NES-style chiptune netlabel; releases documented via press coverage, label page itself not reachable. [Wave 44 Lane A]
+
+#### Otherman Records 🚫 NC
+- **What:** Otherman Records — free Breakcore/IDM/Chiptune netlabel from Japan
+- **URL:** https://othermanrecords.bandcamp.com/track/breakcore-gives-me-boobz?action=download
+- **License:** all rights reserved — Bandcamp page states "free Breakcore/IDM/Chiptune Netlabel from Japan" but no reuse grant; default Bandcamp all-rights-reserved (verified 2026-10-08 via bandcamp page)
+- **Free tier:** free to stream/download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Japanese breakcore/IDM/chiptune crossover netlabel; not cleared for reuse. [Wave 44 Lane A]
+
+#### UGU ❓ unverified
+- **What:** UGU — Japanese otaku/anime/moe/akiba music netlabel (chiptune-adjacent)
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list as "OTAKU/ANIME/MOE/AKIBA music netlabel in Japan"; no license/terms statement (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free to download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Japanese akiba-scene netlabel; thin English-language footprint. [Wave 44 Lane A]
+
+#### CDM Records 🚫 NC
+- **What:** CDM Records — Japanese lo-bit speedcore chiptune label (M3 doujin music event releases, e.g. "LO-BIT SPEEDCORE VOL.018")
+- **URL:** https://www.youtube.com/watch?v=ZcmBE1Qr9YY
+- **License:** all rights reserved — releases marked (C)(P) 2026 CDM RECORDS; no reuse grant (verified 2026-10-08 via M3-2026 release video)
+- **Free tier:** streams free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Japanese doujin speedcore/chiptune label; active through M3 events; not cleared for reuse. [Wave 44 Lane A]
+
+#### DISCONINJAZ ❓ unverified
+- **What:** DISCONINJAZ — chiptune netlabel (Moscow/Barcelona axis), released Penny & Ashtay, Bonus Stage, Bottlesmoker and others
+- **URL:** https://www.gamemusic4all.com/blog/2009/05/disconinjaz-chiptune-netlabel-releases-penny-and-ashtay-bonus-stage-and-bottlesmoker-walls-messenger-day
+- **License:** unverified — free netlabel releases; no license/terms statement on coverage (verified 2026-10-08 via gamemusic4all article)
+- **Free tier:** free netlabel releases
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Eastern European chiptune netlabel with real release catalog; label site itself archived/offline. [Wave 44 Lane A]
+
+#### DWD Records ❓ unverified
+- **What:** DWD Records (dwdrecords.org.ua) — Ukrainian chiptune weblabel
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; label domain offline, no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ukrainian regional chiptune weblabel; only list-level evidence survives. [Wave 44 Lane A]
+
+#### 8BittersBurg ❓ unverified
+- **What:** 8BittersBurg — St. Petersburg chiptune weblabel
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; label site archived, no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Russian (St. Petersburg) regional chiptune weblabel; only list-level evidence survives. [Wave 44 Lane A]
+
+#### Nation of Skweee ❓ unverified
+- **What:** Nation of Skweee — Scandinavian skweee/chip-adjacent electronic scene hub (Sweden/Finland axis)
+- **URL:** https://en.wikipedia.org/wiki/Skweee
+- **License:** unverified — scene hub, not a conventional label; no release terms published (verified 2026-10-08 via Wikipedia Skweee article)
+- **Free tier:** scene information free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Nordic skweee scene nexus; documents affiliated micro-labels (Flogsta Danshall, Harmönia, Dødpop, Mässy). [Wave 44 Lane A]
+
+#### Flogsta Danshall ❓ unverified
+- **What:** Flogsta Danshall — Swedish skweee/chip-adjacent micro-label (Uppsala scene)
+- **URL:** https://en.wikipedia.org/wiki/Skweee
+- **License:** unverified — micro-label; no license/terms statement (verified 2026-10-08 via Wikipedia Skweee article)
+- **Free tier:** releases historically free/digital
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Swedish Nordic scene label; thin surviving footprint. [Wave 44 Lane A]
+
+#### Harmönia ❓ unverified
+- **What:** Harmönia — Finnish skweee/chip-adjacent micro-label
+- **URL:** https://en.wikipedia.org/wiki/Skweee
+- **License:** unverified — micro-label; no license/terms statement (verified 2026-10-08 via Wikipedia Skweee article)
+- **Free tier:** releases historically free/digital
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Finnish Nordic scene label; thin surviving footprint. [Wave 44 Lane A]
+
+#### Dødpop ❓ unverified
+- **What:** Dødpop — Norwegian skweee/chip-adjacent micro-label
+- **URL:** https://en.wikipedia.org/wiki/Skweee
+- **License:** unverified — micro-label; no license/terms statement (verified 2026-10-08 via Wikipedia Skweee article)
+- **Free tier:** releases historically free/digital
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Norwegian Nordic scene label; thin surviving footprint. [Wave 44 Lane A]
+
+#### Mässy ❓ unverified
+- **What:** Mässy — Finnish skweee/chip-adjacent micro-label
+- **URL:** https://en.wikipedia.org/wiki/Skweee
+- **License:** unverified — micro-label; no license/terms statement (verified 2026-10-08 via Wikipedia Skweee article)
+- **Free tier:** releases historically free/digital
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Finnish Nordic scene label; thin surviving footprint. [Wave 44 Lane A]
+
+#### The X-Dump Netlabel ❓ unverified
+- **What:** The X-Dump Netlabel — Swedish netlabel (Psilodump "Psilodumputer" 2006, catalog XD-CD-001)
+- **URL:** https://www.discogs.com/release/605276-Psilodump-Psilodumputer?redirected=true
+- **License:** unverified — netlabel; no license/terms statement on Discogs release record (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Swedish chiptune netlabel with cataloged releases (Discogs-evidence). [Wave 44 Lane A]
+
+#### Metrodub ❓ unverified
+- **What:** Metrodub (.no) — Norwegian chiptune netlabel
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; label domain offline, no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Norwegian regional chiptune netlabel; only list-level evidence survives. [Wave 44 Lane A]
+
+#### Hexawe ✅ commercial-safe
+- **What:** Hexawe — netlabel for Piggy Tracker (LSDJ-adjacent handheld tracker) releases
+- **URL:** https://freemusicarchive.org/label/Hexawe/bio/
+- **License:** CC BY 3.0 (verified 2026-10-08 via freemusicarchive.org label page)
+- **Free tier:** free to download, CC BY 3.0 reuse with attribution
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only regional-scene label this wave with an explicit commercial-safe grant; handheld-tracker scene releases. [Wave 44 Lane A]
+
+#### Piston Source ❓ unverified
+- **What:** Piston Source — PxTone (pixel/chiptune composition tool) netlabel
+- **URL:** http://en.wikipedia.org/wiki/PxTone
+- **License:** unverified — PxTone-community netlabel; no license/terms statement (verified 2026-10-08 via Wikipedia PxTone external-links corroboration and chipmusic.org forum references)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PxTone-ecosystem netlabel; companion to the PxTone format entry in Pocket 3. [Wave 44 Lane A]
+
+#### Pixelmod Records ❓ unverified
+- **What:** Pixelmod Records — chiptune netlabel; released "Merry Pixmas" 2008 compilation (goto80, 8 Bit Weapon, little-scale)
+- **URL:** http://venuspatrol.com/2008/12/listen-pixelmod-records-merry
+- **License:** unverified — free compilation; no license/terms statement on coverage (verified 2026-10-08 via Venus Patrol article)
+- **Free tier:** free compilation
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Real compilation with named artists; label page itself not reachable. [Wave 44 Lane A]
+
+#### Chipdipdrops ❓ unverified
+- **What:** Chipdipdrops — lolicore/chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lolicore-adjacent chiptune micro-label; only list-level evidence survives. [Wave 44 Lane A]
+
+#### Chip'n'Damned ❓ unverified
+- **What:** Chip'n'Damned — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Petite&Jolie ❓ unverified
+- **What:** Petite&Jolie — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Cheese 'n' Beer ❓ unverified
+- **What:** Cheese 'n' Beer — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### R-bot Records ❓ unverified
+- **What:** R-bot Records — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Future:Komp ❓ unverified
+- **What:** Future:Komp — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Drama Core ❓ unverified
+- **What:** Drama Core — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Dancing is Forbidden ❓ unverified
+- **What:** Dancing is Forbidden — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Hand Held Heros ❓ unverified
+- **What:** Hand Held Heros — chiptune micro-label (handheld-tracker scene)
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Handheld-scene micro-label; only list-level evidence survives. [Wave 44 Lane A]
+
+#### Heavy 7 Productions ❓ unverified
+- **What:** Heavy 7 Productions — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Dotnum Dunton ❓ unverified
+- **What:** Dotnum Dunton — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Beep City ❓ unverified
+- **What:** Beep City — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Bitmasters ❓ unverified
+- **What:** Bitmasters — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### 4CR ❓ unverified
+- **What:** 4CR — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Select Start Records ❓ unverified
+- **What:** Select Start Records — Ann Arbor (US) chiptune label with free downloads
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — free-download label; no license/terms statement (verified 2026-10-08)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** US Midwest regional chiptune label. [Wave 44 Lane A]
+
+#### SuperButton ❓ unverified
+- **What:** SuperButton — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Radio Graffiti ❓ unverified
+- **What:** Radio Graffiti — chiptune label with vinyl releases
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — vinyl label; no license/terms statement (verified 2026-10-08)
+- **Free tier:** physical releases (paid)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chiptune-on-vinyl label; physical catalog. [Wave 44 Lane A]
+
+#### Treble Death System ❓ unverified
+- **What:** Treble Death System — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### Nite Owl Records ❓ unverified
+- **What:** Nite Owl Records — chiptune micro-label
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — listed on chipmusic.org net-label list; no terms recoverable (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Only list-level evidence survives. [Wave 44 Lane A]
+
+#### 56KBPS ❓ unverified
+- **What:** 56KBPS — Mexican/Latin American chiptune netlabel
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — Latin American regional netlabel; no license/terms statement (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Latin American regional chiptune scene label. [Wave 44 Lane A]
+
+#### Ds10 Forum ❓ unverified
+- **What:** Ds10 Forum — Korg DS-10 (Nintendo DS synth) community netlabel
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — community netlabel; no license/terms statement (verified 2026-10-08)
+- **Free tier:** netlabel releases historically free
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Korg DS-10 handheld-synth community label. [Wave 44 Lane A]
+
+#### Pause ❓ unverified
+- **What:** Pause — chiptune netlabel (Disasterpeace / Eirik Phlogiston associated), ~100 releases, closed June 2013
+- **URL:** https://archive.org/details/pause_netlabel
+- **License:** unverified — full archive on archive.org; individual release terms vary (verified 2026-10-08 via archive.org netlabel collection)
+- **Free tier:** free archive downloads
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Significant archived catalog (~100 releases); check per-release terms before reuse. [Wave 44 Lane A]
+
+#### Stonedwave Records ❓ unverified
+- **What:** Stonedwave Records (stonedwave.de) — German chiptune label founded 2006 by CHIP TRONIC, with vinyl releases
+- **URL:** https://chipmusic.org/forums/topic/1748/netlabel-list/
+- **License:** unverified — label with vinyl catalog; no license/terms statement (verified 2026-10-08)
+- **Free tier:** physical releases (paid)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** German chiptune label with physical releases. [Wave 44 Lane A]
+
+#### Infloresce Records ❓ unverified
+- **What:** Infloresce Records — active chip label (documented in Chiptune Monthly #28, Oct 2026)
+- **URL:** https://www.patreon.com/ChiptuneMonthly/posts/chiptune-monthly-171234351
+- **License:** unverified — active label; release terms not stated in coverage (verified 2026-10-08 via Chiptune Monthly)
+- **Free tier:** unknown
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Currently-active chip label; worth a direct licensing ask before any use. [Wave 44 Lane A]
+
+### Pocket 2 — caption burn-in SaaS Round 4 (OSS caption/subtitle burn-in CLIs and tools)
+
+#### AssRender ✅ commercial-safe (source MIT)
+- **What:** AssRender (pinterf) — libass-based subtitle renderer for AviSynth/VapourSynth; burns ASS subtitles into video frames
+- **URL:** https://github.com/pinterf/assrender
+- **License:** MIT (source code); binaries distributed under GPL — source grant is commercial-safe (verified 2026-10-08 via Avisynth wiki: "Source code is MIT license, binaries are GPL")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The classic ASS burn-in filter for the AviSynth/VapourSynth caption pipeline; build from source to stay on the MIT grant. [Wave 44 Lane A]
+
+#### auto-subtitle (imcf) ✅ commercial-safe
+- **What:** imcf/auto-subtitle — Python CLI that transcribes video with Whisper and burns subtitles in with ffmpeg
+- **URL:** https://github.com/imcf/auto-subtitle
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** End-to-end transcribe-then-burn CLI; pairs with WhisperX word timestamps for karaoke-style burn-in. [Wave 44 Lane A]
+
+#### vid2cc-ai ✅ commercial-safe
+- **What:** 0xdilshan/vid2cc-ai — Python CLI generating captions and hardcoding them into video (--hardcode burn-in via ffmpeg)
+- **URL:** https://github.com/0xdilshan/vid2cc-ai
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dedicated hardcode/burn-in path for AI-generated captions. [Wave 44 Lane A]
+
+#### ffmpeg-mcp-lite ✅ commercial-safe
+- **What:** matheus-rech/ffmpeg-mcp-lite — MCP server exposing ffmpeg caption burn-in as an agent-callable tool
+- **URL:** https://github.com/matheus-rech/ffmpeg-mcp-lite
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lets agents drive ffmpeg subtitle burn-in through the MCP tool protocol. [Wave 44 Lane A]
+
+#### PyAV ✅ commercial-safe
+- **What:** PyAV-Org/PyAV — Pythonic bindings for FFmpeg libraries (containers, codecs, filters) for programmatic burn-in pipelines
+- **URL:** https://github.com/PyAV-Org/PyAV
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Build custom caption-burn pipelines in Python without shelling out to ffmpeg. [Wave 44 Lane A]
+
+#### imageio-ffmpeg ✅ commercial-safe
+- **What:** imageio/imageio-ffmpeg — Python ffmpeg wrapper for frame-accurate video read/write (caption overlay pipelines)
+- **URL:** https://github.com/imageio/imageio-ffmpeg
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight ffmpeg I/O for Python caption-burn scripts. [Wave 44 Lane A]
+
+#### AudioToASS ✅ commercial-safe
+- **What:** chen3/AudioToASS — converts audio to ASS subtitle files (timed karaoke-style captions ready for burn-in)
+- **URL:** https://github.com/chen3/AudioToASS
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Audio-to-ASS step feeding assrender/ffmpeg burn-in. [Wave 44 Lane A]
+
+#### sub-and-sync ✅ commercial-safe
+- **What:** cstoicescu/sub-and-sync — subtitle synchronization CLI (aligns subtitle timing to audio before burn-in)
+- **URL:** https://github.com/cstoicescu/sub-and-sync
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fixes drifted subtitle timing prior to hardcoding. [Wave 44 Lane A]
+
+#### subsync (tympanix) ✅ commercial-safe
+- **What:** tympanix/subsync — subtitle synchronization tool (audio-based subtitle alignment)
+- **URL:** https://github.com/tympanix/subsync
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Not the archived GPL sc0ty/subsync (quarantined) — this is the separate Apache-2.0 implementation. [Wave 44 Lane A]
+
+#### autosubsync ✅ commercial-safe
+- **What:** oseiskar/autosubsync — automatic subtitle synchronization CLI
+- **URL:** https://github.com/oseiskar/autosubsync
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Auto-sync step for the caption-burn workflow. [Wave 44 Lane A]
+
+#### subclip ✅ commercial-safe
+- **What:** palamut62/subclip — subtitle clip/cut tooling for caption workflows
+- **URL:** https://github.com/palamut62/subclip
+- **License:** MIT (verified 2026-10-08 via GitHub README license section; GitHub API spdx NOASSERTION = detection gap, license file present)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT grant stated in README; API detection gap noted honestly. [Wave 44 Lane A]
+
+#### WhisperX ✅ commercial-safe
+- **What:** m-bain/whisperx — Whisper with word-level timestamps and speaker diarization; feeds karaoke-style caption burn-in
+- **URL:** https://github.com/m-bain/whisperx
+- **License:** BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Word timestamps make styled/word-highlight burn-in possible; the transcription engine behind several auto-subtitle CLIs. [Wave 44 Lane A]
+
+#### pyannote-audio ✅ commercial-safe
+- **What:** pyannote/pyannote-audio — neural speaker-diarization toolkit; labels "who spoke when" for captioned video
+- **URL:** https://github.com/pyannote/pyannote-audio
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diarization layer for multi-speaker caption burn-in. [Wave 44 Lane A]
+
+#### SpeechBrain ✅ commercial-safe
+- **What:** speechbrain/speechbrain — PyTorch speech toolkit (ASR, diarization, enhancement) for caption pipelines
+- **URL:** https://github.com/speechbrain/speechbrain
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Full speech-processing toolkit behind transcription/diarization for captions. [Wave 44 Lane A]
+
+#### ESPnet ✅ commercial-safe
+- **What:** espnet/espnet — end-to-end speech processing toolkit (ASR/TTS) for caption generation
+- **URL:** https://github.com/espnet/espnet
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Research-grade ASR for caption pipelines. [Wave 44 Lane A]
+
+#### sherpa-onnx ✅ commercial-safe
+- **What:** k2-fsa/sherpa-onnx — ONNX-runtime speech recognition (streaming + offline ASR) for caption generation
+- **URL:** https://github.com/k2-fsa/sherpa-onnx
+- **License:** Apache-2.0 (verified 2026-10-08 via raw LICENSE fetch)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Deployable ONNX ASR runtime; good fit for offline caption-burn workers. [Wave 44 Lane A]
+
+#### FFmpeg subtitles-filter burn-in recipe ⚠️ license-caveat workflow
+- **What:** FFmpeg `subtitles` video-filter burn-in recipe — hardcodes SRT/ASS/VTT into video via libass (`-vf subtitles=file.srt`)
+- **URL:** https://ffmpeg.org/ffmpeg-filters.html#subtitles-1
+- **License:** workflow doc; ffmpeg itself is LGPL-2.1+ / GPL depending on build configuration — verify the build's license before shipping (caveat noted, not assumed)
+- **Free tier:** free OSS tooling
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The canonical hardcode path; pair with WhisperX word-timed ASS for styled burn-in. [Wave 44 Lane A]
+
+#### FFmpeg drawtext caption overlay recipe ⚠️ license-caveat workflow
+- **What:** FFmpeg `drawtext` filter caption overlay recipe — renders text captions directly onto frames without subtitle files
+- **URL:** https://ffmpeg.org/ffmpeg-filters.html#drawtext-1
+- **License:** workflow doc; ffmpeg itself is LGPL-2.1+ / GPL depending on build configuration — verify the build's license before shipping (caveat noted, not assumed)
+- **Free tier:** free OSS tooling
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** File-free caption overlay; useful for dynamic/lower-third style burned captions. [Wave 44 Lane A]
+
+### Pocket 3 — tracker format docs Round 3 (player/emulator documentation: format specs, replay libraries, format references)
+
+#### TFMX / MDAT format docs (VGMPF) ⚠️ wiki-terms
+- **What:** TFMX (The Final Musicsystem EXtended) / MDAT module format documentation — Amiga tracker format by Chris Hülsbeck
+- **URL:** https://vgmpf.com/Wiki/index.php?title=TFMX
+- **License:** community wiki — per-wiki terms, no explicit content license (verified 2026-10-08 via vgmpf.com page)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documents the TFMX tracker format; replay code is separately quarantined (libtfmxaudiodecoder GPL-2.0). [Wave 44 Lane A]
+
+#### HES format docs (ArchiveTeam) ❓ unverified
+- **What:** HES (Hudson Entertainment System / PC Engine) music format documentation — references "HES Music Format Spec v1.00"
+- **URL:** http://justsolve.archiveteam.org/wiki/HES
+- **License:** unverified — community format wiki, no explicit content license (verified 2026-10-08 via justsolve.archiveteam.org)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PC Engine/TurboGrafx-16 HES format spec reference. [Wave 44 Lane A]
+
+#### Portable Sound Format (PSF family) docs (Wikipedia) ⚠️ share-alike text
+- **What:** Portable Sound Format — PSF family documentation covering SSF, DSF, USF, GSF, 2SF, QSF console-audio container formats
+- **URL:** https://en.wikipedia.org/wiki/Portable_Sound_Format
+- **License:** CC BY-SA (Wikipedia text) (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One page documents the whole PSF sub-format family (PS1/PS2/N64/GBA/DS QSound variants). [Wave 44 Lane A]
+
+#### PSF format docs (VGMPF) ⚠️ wiki-terms
+- **What:** PSF (Portable Sound Format) — PlayStation ripped-audio format documentation on VGMPF
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=PSF
+- **License:** community wiki — per-wiki terms, no explicit content license (verified 2026-10-08 via vgmpf.com page)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** VGMPF's PSF page complements the Wikipedia family overview. [Wave 44 Lane A]
+
+#### MIDI format docs (VGMPF) ⚠️ wiki-terms
+- **What:** MIDI (Musical Instrument Digital Interface) format documentation — SMF types 0/1/2, extensions (.mid/.midi/.kar/.smf)
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=MIDI
+- **License:** community wiki — per-wiki terms, no explicit content license (verified 2026-10-08 via vgmpf.com page)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Game-music-oriented MIDI reference (Dave Smith/Sequential, 1983). [Wave 44 Lane A]
+
+#### VGMPF Format Output taxonomy ⚠️ wiki-terms
+- **What:** VGMPF "Format Output" — taxonomy of game-audio format output types (digital audio, MIDI, FM synthesis, PSG)
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=Format_Output
+- **License:** community wiki — per-wiki terms, no explicit content license (verified 2026-10-08 via vgmpf.com page)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful index for classifying tracker/ripped formats by output hardware. [Wave 44 Lane A]
+
+#### VGMPF Amiga music docs ⚠️ wiki-terms
+- **What:** VGMPF Amiga music documentation — Amiga tracker/music overview (linked from the AY format page's external links)
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=Amiga
+- **License:** community wiki — per-wiki terms, no explicit content license (verified 2026-10-08 via vgmpf.com page)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga-side tracker/music context for the format family. [Wave 44 Lane A]
+
+#### PxTone format docs (Wikipedia) ⚠️ share-alike text
+- **What:** PxTone — Daisuke "Pixel" Amaya's chiptune composition tool and its .ptcop/.pttune formats, documented on Wikipedia
+- **URL:** http://en.wikipedia.org/wiki/PxTone
+- **License:** CC BY-SA (Wikipedia text) (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the Piston Source netlabel entry (Pocket 1); documents the PxTone format features. [Wave 44 Lane A]
+
+#### VGMPF Genesis music/sound docs ⚠️ wiki-terms
+- **What:** VGMPF Sega Genesis page — YM2612 + SN76496 sound hardware, GEMS/SMPS sound drivers, VGM logging notes
+- **URL:** https://www.vgmpf.com/Wiki/index.php?title=Genesis
+- **License:** community wiki — per-wiki terms, no explicit content license (verified 2026-10-08 via vgmpf.com page)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genesis sound-driver/format context (GEMS, SMPS, VGM logging). [Wave 44 Lane A]
+
+#### ArchiveTeam "Audio and Music" format index ❓ unverified
+- **What:** Just Solve the File Format Problem — "Audio and Music" index: hundreds of game-audio formats (BRSTM, AST, J2B/XMP Game Module, Doom MUS, id Music Format, Ken's Adlib KLM, Sierra AGI/SCI, Westwood ADL/AUD, Xbox IMA ADPCM, MusicXML, Mario Paint MPC, etc.)
+- **URL:** http://justsolve.archiveteam.org/index.php?title=Audio_and_Music&oldid=49607
+- **License:** unverified — community format wiki, no explicit content license (verified 2026-10-08 via justsolve.archiveteam.org)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Master index; several entries below are individual formats listed here. [Wave 44 Lane A]
+
+#### ArchiveTeam "Game data files" format index ❓ unverified
+- **What:** Just Solve the File Format Problem — "Game data files" index: game-audio formats incl. Electronic Arts MUS, Epic Megagames MASI, Doom MUS, Interplay ACM, Inverse Frequency Sound format
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format wiki, no explicit content license (verified 2026-10-08 via justsolve.archiveteam.org)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion index to "Audio and Music". [Wave 44 Lane A]
+
+#### Pan Docs — Game Boy audio ❓ community doc
+- **What:** Pan Docs "Audio" — the single most comprehensive technical reference to Game Boy audio hardware (APU channels, registers)
+- **URL:** https://gbdev.io/pandocs/Audio
+- **License:** community documentation — no explicit content license pinned on the page (verified 2026-10-08 via gbdev.io)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Game Boy sound bible for emulator/player developers. [Wave 44 Lane A]
+
+#### NESdev Wiki — APU ❓ community doc
+- **What:** NESdev Wiki "APU" — NES audio processing unit reference (5 channels: 2 pulse, triangle, noise, DMC; registers $4000–$4017)
+- **URL:** https://www.nesdev.org/wiki/APU
+- **License:** community documentation — no explicit content license pinned on the page (verified 2026-10-08 via nesdev.org)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical NES APU reference for emulator and music-engine developers. [Wave 44 Lane A]
+
+#### Blargg's NES APU Sound Hardware Reference ❓ community doc
+- **What:** "NES APU Sound Hardware Reference" (apu_ref.txt, 2004.1.30, by blargg) — test-hardware-derived NES sound reference
+- **URL:** https://www.nesdev.org/apu_ref.txt
+- **License:** community documentation — free text file, no explicit license (verified 2026-10-08 via nesdev.org)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Based on tests on a real 1988 NTSC NES; complements the NESdev wiki APU page. [Wave 44 Lane A]
+
+#### Brad Taylor 2A03 technical reference ❓ community doc
+- **What:** "2A03 technical reference" (first release 4-23-2004, by Brad Taylor) — covers NES CPU including sound
+- **URL:** http://nesdev.org/2A03%20technical%20reference.txt
+- **License:** community documentation — free text file, no explicit license (verified 2026-10-08 via nesdev.org text-file index)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listed in the NESdev text-file archive alongside apu_ref.txt. [Wave 44 Lane A]
+
+#### GBSOUND.txt ❓ community doc
+- **What:** GBSOUND.txt — Game Boy sound programming document (mirrored in bwhitman/pushpin src)
+- **URL:** https://github.com/bwhitman/pushpin/blob/master/src/gbsound.txt
+- **License:** community documentation — no explicit license in the mirror (verified 2026-10-08 via GitHub)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Classic Game Boy sound programming text; provenance is the pushpin repo mirror. [Wave 44 Lane A]
+
+#### Rodrigo Copetti — Game Boy architecture ❓ community doc
+- **What:** "Game Boy architecture" by Rodrigo Copetti — deep-dive on Game Boy internals including the audio subsystem
+- **URL:** https://www.copetti.org/writings/consoles/game-boy
+- **License:** community documentation — no explicit content license pinned (verified 2026-10-08 via copetti.org)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Accessible architecture write-up covering how GB audio hardware works. [Wave 44 Lane A]
+
+#### awesome-gbdev ❓ community doc index
+- **What:** warren-lockhart/awesome-gbdev — curated index of Game Boy development resources (docs, tools, emulators)
+- **URL:** https://github.com/warren-lockhart/awesome-gbdev/blob/HEAD/README.md
+- **License:** community index — no explicit license pinned on the README (verified 2026-10-08 via GitHub)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Jump-off index for GB audio/player/emulator documentation. [Wave 44 Lane A]
+
+#### vgmplay-js-2 ✅ commercial-safe
+- **What:** niekvlessert/vgmplay-js-2 — web-based video game music player bundling replay libraries (libvgm, game-music-emu, lazyusf, vgmstream, libkss, libmoonsound, sexypsf)
+- **URL:** https://github.com/niekvlessert/vgmplay-js-2
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id; active, pushed 2026-08-12)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Browser VGM player; documents supported formats per bundled replay lib (incl. KSS variants MGS/BGM/OPX/MPK/MBM, Moonsound MWM/MWK). [Wave 44 Lane A]
+
+#### QOA ✅ commercial-safe
+- **What:** phoboslab/qoa — "Quite OK Audio" format: tiny, fast lossy audio codec with a fully documented spec
+- **URL:** https://github.com/phoboslab/qoa
+- **License:** MIT (verified 2026-10-08 via raw LICENSE fetch; GitHub API flaked, license file confirmed)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Single-header codec with readable spec; useful reference for compact audio in players. [Wave 44 Lane A]
+
+#### ahx2play ✅ commercial-safe
+- **What:** 8bitbubsy/ahx2play — portable AHX/THX (Abyss' Highest eXperience) Amiga tracker replay routine
+- **URL:** https://github.com/8bitbubsy/ahx2play
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive AHX replay lib (used by CoolModFiles); AHX format docs already cataloged. [Wave 44 Lane A]
+
+#### vgmstream ✅ commercial-safe (permissive COPYING)
+- **What:** vgmstream/vgmstream — streamed-audio decoder library for hundreds of game-audio formats (ADX, BRSTM, FSB, HCA, VAG, BCSTM, AST, BRR…)
+- **URL:** https://github.com/vgmstream/vgmstream
+- **License:** permissive — raw COPYING grants "use, copy, modify, and distribute for any purpose with or without fee" (verified 2026-10-08 via raw COPYING; GitHub API spdx NOASSERTION = detection gap)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The reference implementation behind game-streaming-audio format support; doubles as format documentation. [Wave 44 Lane A]
+
+#### N64 Soundbank Tool ✅ commercial-safe
+- **What:** N64 Soundbank Tool (by SubDrag) — extracts sound data as MIDI/DLS from N64 ROMs (USF conversion toolchain)
+- **URL:** https://github.com/loveemu/vgmdocs/blob/master/Conversion_Tools_for_Video_Game_Music.md
+- **License:** Unlicense (public domain dedication) (verified 2026-10-08 via loveemu/vgmdocs conversion-tools doc)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** N64 audio extraction path; documented in the vgmdocs conversion-tools index (vgmdocs itself is CC BY-SA 4.0 — see quarantine). [Wave 44 Lane A]
+
+#### SameBoy ✅ commercial-safe
+- **What:** LIJI32/SameBoy — accuracy-focused Game Boy/Game Boy Color emulator with well-documented APU emulation
+- **URL:** https://github.com/LIJI32/SameBoy
+- **License:** MIT (Expat) — "All files and directories in this repository, except for the iOS and HexFiend directories, are licensed under the Expat License" (verified 2026-10-08 via raw LICENSE)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Cycle-accurate GB APU implementation doubles as executable audio documentation. [Wave 44 Lane A]
+
+#### SDL_mixer ✅ commercial-safe
+- **What:** libsdl-org/SDL_mixer — audio mixer library (module music via bundled decoders, WAV/OGG/MP3/FLAC playback) used by countless players
+- **URL:** https://github.com/libsdl-org/SDL_mixer
+- **License:** Zlib (verified 2026-10-08 via GitHub API spdx_id; active, pushed 2026-09-29)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive audio backend for tracker/module players. [Wave 44 Lane A]
+
+#### Epic Megagames MASI / PSM format ❓ unverified
+- **What:** Epic Megagames MASI (PSM) — Epic's tracker music format (Unreal-era), listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### J2B — XMP Game Module ❓ unverified
+- **What:** J2B (XMP Game Module) — Jazz Jackrabbit tracker module format, listed in the ArchiveTeam "Audio and Music" index
+- **URL:** http://justsolve.archiveteam.org/index.php?title=Audio_and_Music&oldid=49607
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### Doom MUS format ❓ unverified
+- **What:** Doom MUS — id Software's MUS music format (Doom), listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### id Software Music Format ❓ unverified
+- **What:** id Software Music Format — id's native music format family entry in the ArchiveTeam "Audio and Music" index
+- **URL:** http://justsolve.archiveteam.org/index.php?title=Audio_and_Music&oldid=49607
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### Ken's Adlib Music (KLM) ❓ unverified
+- **What:** Ken's Adlib Music (KLM) — Ken Silverman's AdLib music format, listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### Interplay ACM ❓ unverified
+- **What:** Interplay ACM — Interplay's compressed audio format, listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### Sierra AGI / SCI sound ❓ unverified
+- **What:** Sierra AGI / SCI sound formats — Sierra adventure-game audio formats, listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### Westwood ADL / AUD ❓ unverified
+- **What:** Westwood Studios ADL / AUD — Westwood's audio formats, listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### Electronic Arts MUS ❓ unverified
+- **What:** Electronic Arts MUS — EA's music format, listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]
+
+#### Xbox IMA ADPCM ❓ unverified
+- **What:** Xbox IMA ADPCM — Xbox ADPCM audio variant, listed in the ArchiveTeam format indexes
+- **URL:** http://justsolve.archiveteam.org/wiki/Game_data_files
+- **License:** unverified — community format index, no explicit content license (verified 2026-10-08)
+- **Free tier:** free to read
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Format stub in the ArchiveTeam index; deeper spec needed before implementation. [Wave 44 Lane A]

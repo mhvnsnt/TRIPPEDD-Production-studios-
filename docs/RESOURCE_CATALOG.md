@@ -25557,3 +25557,305 @@ not run). See `tools/captions/proofs/wave24_lane_b/PROOF.md`.
 *Wave 24 Lane B — 39 `####` entries, all licenses verified from upstream sources
 2026-10-07. Tools wired: dscore (DER), webrtcvad (VAD→segments), Pillow
 (caption card) — all with real proofs under `tools/captions/proofs/wave24_lane_b/`.*
+#### Happy New Year Recordings (IA netlabel) ✅ CC-BY — tiny all-clean netlabel
+- **What:** IA netlabel sub-collection: 5/5 sampled audio items carry plain CC-BY (no NC/ND) licenseurls — 100% clean majority, the only clean-majority survivor in the Wave-25 185-collection IA sweep (batches: 90 + 60 previously).
+- **URL:** https://archive.org/details/happy-new-year-recordings
+- **License:** CC-BY 4.0 per-item (verified 2026-10-07 via IA advancedsearch.php licenseurl audit; clean_lu = BY only)
+- **Free tier:** N/A (free downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest size caveat: only 5 items — clean but thin. Per-item check still advised before wiring. [Wave 25 Lane A]
+
+#### kusoj (IA netlabel) ✅ CC-BY majority (8/12 clean, zero NC)
+- **What:** IA netlabel sub-collection: 8 of 12 sampled audio items carry clean CC licenses (CC-BY), 0 NC, 4 unknown — clean majority with zero NC contamination.
+- **URL:** https://archive.org/details/kusoj
+- **License:** CC-BY per-item (verified 2026-10-07 via IA advancedsearch.php licenseurl audit; clean_lu = BY only)
+- **Free tier:** N/A (free downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 4 items have no licenseurl — use only the 8 CC-BY-flagged items. [Wave 25 Lane A]
+
+#### marly-records (IA netlabel) ✅ CC-BY — tiny all-clean netlabel
+- **What:** IA netlabel sub-collection: 2/2 sampled audio items CC-BY, zero NC/unknown.
+- **URL:** https://archive.org/details/marly-records
+- **License:** CC-BY 4.0 per-item (verified 2026-10-07 via IA advancedsearch.php licenseurl audit)
+- **Free tier:** N/A (free downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest size caveat: only 2 items. [Wave 25 Lane A]
+
+#### NSK Digital Collections (National and University Library in Zagreb, Croatia) ⚠️ per-item rights — PD subset explicitly unrestricted
+- **What:** Digitized holdings of Croatia's national library (3M+ physical items): rare books, manuscripts, newspapers, music. Best terms page found this wave: PD-labeled items "may be used without any restrictions (downloaded, shared, modified, etc.)" with mandatory "Source: National and University Library in Zagreb" attribution; copyrighted/CC-labeled items carry per-record rights flags and are private-study-only without holder permission.
+- **URL:** https://www.nsk.hr/en/ (regulations: https://nsk.hr/wp-content/uploads/2023/11/REGULA1.pdf, §9)
+- **License:** ⚠️ per-item (verified 2026-10-07 from the English "Regulations concerning the terms and conditions of using the holdings and services" — PD subset unrestricted-with-attribution; non-PD needs permission)
+- **Free tier:** free web portals
+- **Repo lane:** trippedd (plates/reference; audio rare)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** One of the few national-library terms pages that explicitly separates unrestricted PD assets from rights-restricted ones. Requests for reuse: digitalna@nsk.hr. [Wave 25 Lane A]
+
+#### dLib.si (Digital Library of Slovenia / NUK Ljubljana) ⚠️ per-item rights
+- **What:** The national e-content aggregator of the National and University Library of Slovenia: rare books, manuscripts, music sheets, posters, maps, and heavily used OCR'd press/periodicals back to the late 18th century. Full-text search, no per-item global license — rights follow the item.
+- **URL:** https://www.dlib.si
+- **License:** ⚠️ per-item (verified 2026-10-07 via secondary documentation; no blanket open license published — treat like other European national libraries: PD-era material usable, 20th-century material checked per record)
+- **Free tier:** free access
+- **Repo lane:** trippedd (plates/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** AV-specific audio holdings not inventoried this pass — plate/reference use only for now. [Wave 25 Lane A]
+
+#### MEK / Hungarian Electronic Library (National Széchényi Library) ⚠️ nonprofit/private-study grant
+- **What:** Hungary's oldest digital library (18,000+ volumes at last count): Hungarian literary canon (Petőfi, Arany, Ady), scholarship, periodicals (EPA), images (DKA). Rights page (vmek.oszk.hu permission form) explicitly grants publication "for educational, scientific or other nonprofit purposes"; private users may copy for private purposes; authors/owners retain copyrights, proprietary and commercial rights.
+- **URL:** https://mek.oszk.hu/ (rights: http://vmek.oszk.hu/html/irattar/engedely_eng.pdf)
+- **License:** ⚠️ nonprofit/private-study grant (verified 2026-10-07 from the MEK publication/copyright permission document — NOT commercial-safe as a blanket; commercial use needs the author/owner)
+- **Free tier:** free access
+- **Repo lane:** trippedd (reference; Hungarian-language mostly)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Mostly Hungarian-language texts — reference/research value; commercial pipelines cannot assume the online grant covers reuse. [Wave 25 Lane A]
+
+#### Biblioteca Nacional Digital Brasil (bndigital / Hemeroteca Digital) ⚠️ per-item rights
+- **What:** Digital collections of the Fundação Biblioteca Nacional (Rio): manuscripts, maps, prints, music, plus the Hemeroteca Digital Brasileira newspaper portal (memoria.bn.br). UNESCO PBDL documents ~13M images of bibliographic materials in the public domain across the Portuguese-Brazilian portal (BNP + FBN + 50 partner institutions).
+- **URL:** https://bndigital.bn.gov.br/ · https://memoria.bn.br/
+- **License:** ⚠️ per-item (verified 2026-10-07 via UNESCO policy-monitoring platform: large PD image corpus, but no machine-readable per-record license — check the record before wiring)
+- **Free tier:** free access
+- **Repo lane:** trippedd (plates/reference)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The EDA (copyright registration office) sits inside the FBN — their in-house corpus is custody-of-authorship, not open. Use only items carrying PD marks. [Wave 25 Lane A]
+
+#### Internet Culturale (Italian Digital Library / ICCU) ⚠️ MIC BY-NC commercial-fee regime
+- **What:** Italy's national digital library portal (Ministry of Culture / ICCU): digitized books, manuscripts, images, scores from 46+ libraries and 101 archives.
+- **URL:** https://www.internetculturale.it/
+- **License:** ⚠️ NC-leaning (verified 2026-10-07: under the Codice dei beni culturali, Italian cultural-heritage institutions label digitized PD holdings "MIC BY NC" — commercial reuse requires prior authorization and a fee to the holding institution; Wikimedia's 2022/2023 diff posts document the regime)
+- **Free tier:** free access
+- **Repo lane:** trippedd (reference only — plates not commercial-safe)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest negative for commercial plates: PD-in-the-US ≠ commercial-safe here — the institution claims a commercial-use fee on its digitizations. Treat as reference/research only. [Wave 25 Lane A]
+
+#### BEIC Digital Library — BeicDL (Milan) ⚠️ per-item rights
+- **What:** The European Library of Information and Culture's digital library: 27,000+ digital objects, 3,000 authors, freely accessible; includes the 223,000-negative Paolo Monti photographic archive, portions released under open licenses by BEIC.
+- **URL:** https://www.beic.it/
+- **License:** ⚠️ per-item (verified 2026-10-07 via secondary sources; Monti archive items carry BEIC open licenses, general corpus per-record)
+- **Free tier:** free access
+- **Repo lane:** trippedd (plates/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Italian MIC BY-NC caveat (see Internet Culturale) may apply to items held by Italian public institutions — verify the license flag on the record page. [Wave 25 Lane A]
+
+#### Bibliotheca Alexandrina — Digital Assets Repository (DAR) ⚠️ tiered access
+- **What:** BA's digitized collections portal (175,000+ Arabic books per BA): PD books readable/downloadable in full; copyrighted works limited to ~5% preview for personal/academic/scientific research. Also hosts audio/video/slides collections with per-asset access-right metadata (metadata-only / thumbnail / excerpt / full).
+- **URL:** http://dar.bibalex.org
+- **License:** ⚠️ tiered (verified 2026-10-07 from BA news/FAQ: 18,000+ complete PD books free; in-copyright = 5% research-only; AV uses library study rooms only)
+- **Free tier:** free access tiers
+- **Repo lane:** trippedd (reference/plates for PD tier)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** AV material is largely on-premises (Arts & Multimedia study rooms) — the web-usable tier is the PD book/image corpus. Side note: BA's Digital Assets Factory (DAF) digitization workflow tool was released GPL-2.0 — code-quarantine candidate, not cataloged as entry. [Wave 25 Lane A]
+
+#### Tímarit.is / Handrit.is (National and University Library of Iceland) ⚠️ per-item rights
+- **What:** Iceland's national library digital portals: Tímarit.is = OCR'd journals and newspapers (2002, joint with the Faroe Islands and Greenland national libraries); Handrit.is = manuscript catalog + digital library (with the Árni Magnússon Institute); plus antique maps of Iceland. Library signed the Berlin Open Access Declaration (2012).
+- **URL:** https://timarit.is · https://handrit.is
+- **License:** ⚠️ per-item (verified 2026-10-07 via Wikipedia/secondary: open access for digitized heritage; 20th-century newspapers in copyright — use pre-cutoff issues, Iceland is life+70)
+- **Free tier:** free access
+- **Repo lane:** trippedd (plates/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Iceland is Nordic but NOT Scandinavian — fits the non-Scandinavian pocket. Text-heavy corpus; plate value is antique maps + early-periodical mastheads/imagery. [Wave 25 Lane A]
+#### AWS Transcribe (free tier) ❓ unverified this pass
+- **What:** Amazon's STT with automatic language ID, speaker diarization, custom vocabularies; caption output via the Transcribe streaming/batch API + SRT/VTT post-format.
+- **URL:** https://aws.amazon.com/transcribe/
+- **License:** ❓ (60 minutes/month free for 12 months widely reported; not re-verified from AWS pricing this pass)
+- **Free tier:** reported 60 min/mo free (12 mo) — VERIFY before wiring
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** ToS caveat even if free tier confirms: AWS service terms apply; training-opt-out is an account setting, not a default — verify before uploading production audio. [Wave 25 Lane A]
+
+#### Google Cloud Speech-to-Text (free tier) ❓ unverified this pass
+- **What:** Google's STT v1/v2 with word-level confidence, diarization, model adaptation; VTT/SRT via post-processing of word timestamps.
+- **URL:** https://cloud.google.com/speech-to-text
+- **License:** ❓ (60 minutes/month free widely reported; not re-verified from GCP pricing this pass)
+- **Free tier:** reported 60 min/mo free — VERIFY before wiring
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Candidate for Wave-26 ToS deep read. [Wave 25 Lane A]
+
+#### DAHR — Columbia label discography (UCSB American Discography Project) ⚠️ matrix data; PD-era audio streamable
+- **What:** The Columbia Master Book Discography (Brian Rust / Tim Brooks, licensed from ABC-CLIO) inside DAHR: domestic Columbia recordings before 1934 — 327,000+ total DAHR matrixes across Victor, Columbia, OKeh, Berliner, Edison, Zonophone, Leeds & Catlin, Brunswick, Decca. 6,000 pre-1925 Columbia sides digitized for the LoC National Jukebox; ~40,000 masters streamable via UCSB.
+- **URL:** https://adp.library.ucsb.edu/
+- **License:** ⚠️ (verified 2026-10-07 via library.ucsb.edu: matrix metadata free; streaming is noncommercial/research — PD items downloadable; audio through-1925 PD per MMA)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — PD-era sides only)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** General DAHR entry already cataloged; this is the label-specific deep-dive (per-item rights verification doctrine: PD-date + transfer provenance). [Wave 25 Lane A]
+
+#### DAHR — OKeh label discography (UCSB) ⚠️ matrix data; PD-era audio streamable
+- **What:** The Discography of OKeh Records 1918–1934 (Ross Laird / Brian Rust, licensed from ABC-CLIO/Praeger) inside DAHR — the "race records"/jazz/blues label arm, deep early-jazz and blues catalog.
+- **URL:** https://adp.library.ucsb.edu/
+- **License:** ⚠️ (verified 2026-10-07 via library.ucsb.edu news: ADP licensed electronic publication rights for OKeh; same streaming terms as the Columbia entry — noncommercial streaming, PD items downloadable)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — PD-era sides only)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Through-1925 OKeh sides are PD per MMA as of 2026-10-07; 1926+ sides date-gated per issue year. [Wave 25 Lane A]
+
+#### DAHR — Brunswick label discography (UCSB) ⚠️ matrix data; PD-era audio streamable
+- **What:** Brunswick Records: A Discography of Recordings 1916–1931 (Ross Laird, Greenwood Press, licensed) inside DAHR — jazz, dance-band, and early electrical-era catalog.
+- **URL:** https://adp.library.ucsb.edu/
+- **License:** ⚠️ (verified 2026-10-07 via library.ucsb.edu: licensed discography data; same streaming terms — noncommercial streaming, PD items downloadable)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — PD-era sides only)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Through-1925 Brunswick sides PD per MMA. [Wave 25 Lane A]
+
+#### Public Domain 4U ❓ PD-music collection, terms unverified this pass
+- **What:** Long-running collection of free public-domain music downloads with an accompanying copyright-law explainer (MMA timeline: pre-1923 PD, 1923–1946 100-year terms, etc.).
+- **URL:** https://publicdomain4u.com/
+- **License:** ❓ (verified 2026-10-07: site exists, publishes MMA-correct PD-date guidance; per-track rights documentation not audited this pass — check individual tracks)
+- **Free tier:** free downloads
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Candidate for Wave-26 per-track audit. [Wave 25 Lane A]
+
+#### Tinfoil.com — Edison cylinder reference ❓ rights unverified
+- **What:** Long-running collector reference for Edison phonograph cylinders: discographical data and cylinder-era history (complements the catalog's UCSB Cylinder Archive and LoC/NPS Edison entries).
+- **URL:** http://www.tinfoil.com/
+- **License:** ❓ (site is a collector reference; per-item audio rights not audited this pass)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — research lane)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference only — do not source audio from here without per-item verification. [Wave 25 Lane A]
+#### 383records (IA netlabel) ✅ CC-BY majority (3/4 clean, zero NC)
+- **What:** IA netlabel sub-collection: 3 of 4 sampled audio items carry clean CC-BY licenseurls, 0 NC, 1 unknown — clean majority.
+- **URL:** https://archive.org/details/383records
+- **License:** CC-BY per-item (verified 2026-10-07 via IA advancedsearch.php licenseurl audit; clean_lu = BY only)
+- **Free tier:** N/A (free downloads)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest size caveat: only 4 items. One of four clean-majority survivors in the Wave-25 sweep (happy-new-year-recordings 5/5, kusoj 8/12, marly-records 2/2, 383records 3/4). [Wave 25 Lane A]
+
+#### Nova A.I. (free plan) ⚠️ watermarked, 30 min subtitles/mo, read ToS
+- **What:** Web-based AI video editor with auto-subtitle generation, SRT/VTT/TXT download, and 75-language subtitle translation.
+- **URL:** https://wearenova.ai/
+- **License:** ⚠️ proprietary ToS (free tier verified 2026-10-07 from vendor pricing page wearenova.ai/pricing: Free = $0/mo, watermarked exports, 30 min subtitles + 30 min translate, 1,000 chars TTS, 2 GB upload, 20-min max export)
+- **Free tier:** 30 min subtitles/month free, watermarked
+- **Repo lane:** trippedd (captions — research lane only)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ToS caveat: vendor terms/data-use policy not read this pass — do not upload production footage until reviewed. [Wave 25 Lane A]
+
+#### Wavel AI (free plan) ⚠️ AI subtitles on free tier, but NO exports
+- **What:** AI subtitle generator with 100+ languages, auto subtitles, subtitle translation, audio-to-text; caption-packaging export formats SRT/VTT/DOC/MP4 on paid tiers.
+- **URL:** https://wavel.ai/
+- **License:** ⚠️ (verified 2026-10-07 from vendor pricing page wavel.ai/api-pricing: Free = $0/mo, 10 credits; the AI Subtitles plan table shows "NO Exports" for the Free tier — subtitle downloads unlock on Lite $25/mo+)
+- **Free tier:** free plan exists but subtitle exports require paid tier
+- **Repo lane:** trippedd (captions — research lane only)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative-in-an-entry: the free tier demos subtitle generation but blocks the actual caption packaging (no SRT/VTT export). Cataloged as diligence, not a wiring target. [Wave 25 Lane A]
+
+#### Dubverse (free plan) ⚠️ 20 credits/month, SRT export included
+- **What:** AI subtitling/dubbing platform: auto subtitles (95% claimed accuracy per vendor help center), 60+ languages, multispeaker, SRT download from the project page (download limits per plan).
+- **URL:** https://dubverse.ai/
+- **License:** ⚠️ proprietary ToS (free tier verified 2026-10-07 via saasworthy/aihungry plan tables: Free = INR 0, 20 credits/month, no rollover, .mp4/.mp3/.SRT support; vendor ToS not read)
+- **Free tier:** 20 credits/month free with SRT export
+- **Repo lane:** trippedd (captions — research lane only)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ToS caveat: vendor terms/data-retention not read this pass. [Wave 25 Lane A]
+
+#### quso.ai (formerly vidyo.ai) — free plan ⚠️ 75 min/month, read ToS
+- **What:** AI video-repurposing platform (ex-vidyo.ai): auto-video captioning with social templates, Intelliclips virality scoring, clip-to-Shorts/Reels/TikTok with burned-in captions.
+- **URL:** https://quso.ai/
+- **License:** ⚠️ proprietary ToS (free tier verified 2026-10-07 via multiple 2026 comparison reviews: Free = $0, capped at 75 minutes/month; vendor ToS not read)
+- **Free tier:** 75 min/month free
+- **Repo lane:** trippedd (captions — research lane only)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The caption-packaging angle is burned-in social captions; SRT-sidecar export not confirmed on the free tier — verify before wiring. [Wave 25 Lane A]
+
+#### Type Studio ❓ free tier exists; limits unpinned this pass
+- **What:** Text-based AI video editor: auto transcription, subtitle generation, podcast/repurposing tools (Descript-style).
+- **URL:** https://toolhunter.ai/ai-tool/type-studio (directory listing — vendor site URL not grounded in search results this pass; do not wire until vendor site is visited)
+- **License:** ❓ (free tier existence reported by third-party directory; vendor pricing page not re-verified this pass)
+- **Free tier:** free tier reported — VERIFY limits before wiring
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Honest caveat: neither the free-tier minute cap nor the ToS was verified this pass. [Wave 25 Lane A]
+
+#### AWS Transcribe (free tier) ❓ 60 min/mo reported, verify + training opt-out
+- **What:** Amazon's STT with automatic language ID, speaker diarization, custom vocabularies; caption output via batch/streaming API + SRT/VTT post-format.
+- **URL:** https://aws.amazon.com/transcribe/
+- **License:** ❓ (60 minutes/month free for 12 months widely reported; not re-verified from AWS pricing this pass)
+- **Free tier:** reported 60 min/mo free (12 mo) — VERIFY before wiring
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** ToS caveat: AWS service terms apply; ML-training opt-out is an account setting, not a default — verify before uploading production audio. [Wave 25 Lane A]
+
+#### Google Cloud Speech-to-Text (free tier) ❓ 60 min/mo reported, verify
+- **What:** Google's STT v1/v2 with word-level confidence, diarization, model adaptation; VTT/SRT via post-processing of word timestamps.
+- **URL:** https://cloud.google.com/speech-to-text
+- **License:** ❓ (60 minutes/month free widely reported; not re-verified from GCP pricing this pass)
+- **Free tier:** reported 60 min/mo free — VERIFY before wiring
+- **Repo lane:** trippedd (captions)
+- **Status:** not-started
+- **Notes:** Candidate for Wave-26 ToS deep read. [Wave 25 Lane A]
+
+#### DAHR — Decca label discography (UCSB) ⚠️ matrix data; PD-era audio streamable
+- **What:** Decca discography (Philip Stuart's Decca Classical Discography data family) inside DAHR — the later electrical-era major, 1930s–40s dance bands, jazz, and classical.
+- **URL:** https://adp.library.ucsb.edu/
+- **License:** ⚠️ (verified 2026-10-07 via library.ucsb.edu: DAHR's label list includes Decca among Victor, Columbia, OKeh, Berliner, Edison, Zonophone, Leeds & Catlin, Brunswick — same noncommercial-streaming / PD-downloadable terms)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — PD-era sides only)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Decca's PD-era coverage starts 1920s–30s — far fewer pre-1926 sides than Victor/Columbia; date-verify every issue. [Wave 25 Lane A]
+
+#### DAHR — Berliner Gramophone label discography (UCSB) ⚠️ matrix data; PD-era audio streamable
+- **What:** The Berliner Gramophone Company discography (1890s–1900) inside DAHR — the earliest US disc recordings, all pre-1923 and therefore PD.
+- **URL:** https://adp.library.ucsb.edu/
+- **License:** ⚠️ (verified 2026-10-07 via library.ucsb.edu: Berliner listed among DAHR's licensed label discographies; same streaming terms; catalog already has the LoC Emile Berliner entry for the discs themselves)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — all sides PD-era)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Every Berliner side is pre-1923 → PD per MMA; compositions may still be copyrighted — check composition PD per title. [Wave 25 Lane A]
+
+#### DAHR — Zonophone label discography (UCSB) ⚠️ matrix data; PD-era audio streamable
+- **What:** The Zonophone discography inside DAHR — Victor's budget-label arm, early-1900s popular recordings.
+- **URL:** https://adp.library.ucsb.edu/
+- **License:** ⚠️ (verified 2026-10-07 via library.ucsb.edu: Zonophone listed among DAHR's licensed label discographies; same streaming terms)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — PD-era sides only)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Through-1925 Zonophone sides PD per MMA. [Wave 25 Lane A]
+
+#### ARSC — Association for Recorded Sound Collections ❓ research org, not a rights source
+- **What:** The professional association for recorded-sound research: annual conference, ARSC Journal (2,200+ articles/reviews online), ARSC Guide to Audio Preservation, research grants (up to $1,000, deadline Jan 31), and a Copyright & Fair Use committee.
+- **URL:** https://arsc-audio.org/
+- **License:** ❓ (org entry — publishes research, not a license grantor; verified 2026-10-07 via arsc-audio.org)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — research lane)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The rights-reasoning resource for the PD-label pocket: ARSC's Copyright & Fair Use committee work and Guide to Audio Preservation are the honest references for per-item rights verification. [Wave 25 Lane A]
+
+#### EMI Archive Trust ❓ research reference, not a download source
+- **What:** UK charity (est. 1996) holding the EMI/Gramophone Company archives at Hayes: 2M+ recordings, 1.5M photographs, matrix cards, 78rpm metals, the original His Master's Voice painting. Open to researchers by appointment.
+- **URL:** https://www.emiarchivetrust.org
+- **License:** ❓ (verified 2026-10-07 via Wikipedia + directory listings; archive access is by appointment — no bulk download license; Universal Music owns the underlying rights)
+- **Free tier:** N/A
+- **Repo lane:** trippedd (music — research lane)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Not a pipeline source — cataloged as the rights-holder contact of last resort for HMV/Columbia/Parlophone-era recordings. [Wave 25 Lane A]

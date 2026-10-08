@@ -108,3 +108,59 @@ Convention matches [LICENSE_QUARANTINE.md](LICENSE_QUARANTINE.md).
 | 101 | Mimic 3 | github.com/MycroftAI/mimic3 | AGPL-3.0 | 2026-10-08 (Lane B W2; commonly mislabeled Apache — it is NOT) | Neural TTS with duration output. Awareness only. |
 | 102 | RHVoice | github.com/RHVoice/RHVoice | GPL-2.0 | 2026-10-08 (Lane B W2) | Multilingual TTS. Awareness only. |
 | 103 | SPPAS | github.com/brigittebigi/sppas | AGPL-3.0 | 2026-10-08 (Lane B W2; commonly mislabeled GPL — it is AGPL) | Speech annotation/phonetization. Awareness only. |
+| 104 | projectM | github.com/projectM-visualizer/projectm | LGPL-2.1 | 2026-10-08 (GitHub API license field) | Lane A W3. MilkDrop-compatible music visualizer. Awareness only. |
+| 105 | p5.js | github.com/processing/p5.js | LGPL-2.1 | 2026-10-08 (GitHub API license field) | Lane A W3. Creative-coding lib w/ p5.sound. Awareness only. |
+| 106 | Processing | github.com/processing/processing | GPL-2.0 (PDE) / LGPL (core) | 2026-10-08 (repo README: "We use GPL v2 ... For the 'core' library, it's LGPL") | Lane A W3. Creative-coding IDE + Java core. Awareness only. |
+| 107 | BTrack | github.com/adamstark/BTrack | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Real-time beat tracking. Awareness only. |
+| 108 | tempo-cnn | github.com/hendriks73/tempo-cnn | AGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. CNN tempo estimation. Awareness only. |
+| 109 | MARSYAS | github.com/marsyas/marsyas | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Veteran music-analysis framework. Awareness only. |
+| 110 | Sonic Annotator | github.com/sonic-visualiser/sonic-annotator | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Batch Vamp feature extractor. File-based interop only. |
+| 111 | QM Vamp Plugins | github.com/c4dm/qm-vamp-plugins | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. QMUL onset/beat/chroma plugin suite. Awareness only. |
+| 112 | TarsosDSP | github.com/JorenSix/TarsosDSP | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Java audio analysis framework. Awareness only. |
+| 113 | JACK2 | github.com/jackaudio/jack2 | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Pro-audio connection kit. Awareness only. |
+| 114 | libltc | github.com/x42/libltc | LGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. SMPTE LTC timecode lib. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 115 | Hydrogen | github.com/hydrogen-music/hydrogen | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Pattern drum machine. Awareness only. |
+| 116 | MuseScore | github.com/MuseScore/MuseScore | GPL-3.0 | 2026-10-08 (repo license file: GPL v3 terms) | Lane A W3. Notation editor; MusicXML/MIDI export. Awareness only. |
+| 117 | ossia score | github.com/ossia/score | GPL-3.0 | 2026-10-08 (repo LICENSE is GPL v3 text) | Lane A W3. Intermedia show-control sequencer. Awareness only. |
+| 118 | VSXu | github.com/vovoid/vsxu | GPL-3.0 | 2026-10-08 (repo: "All code (C and C++) is released under the GNU GPL 3.0") | Lane A W3. Audio-visualizer platform. Awareness only. |
+| 119 | ZynAddSubFX | github.com/zynaddsubfx/zynaddsubfx | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Additive/subtractive/FM synth. Awareness only. |
+| 120 | Surge XT | github.com/surge-synthesizer/surge | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Hybrid wavetable/FM/VA synth. Awareness only. |
+| 121 | Vital | github.com/mtytel/vital | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Spectral-warping wavetable synth. Awareness only. |
+| 122 | Odin 2 | github.com/TheWaveWarden/odin2 | GPL-3.0 | 2026-10-08 (repo README: "distributed under the GNU GPLv3") | Lane A W3. 24-voice VA/FM/wavetable synth. Awareness only. |
+| 123 | Dexed | github.com/asb2m10/dexed | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. DX7 FM clone. Awareness only. |
+| 124 | VCV Rack | github.com/VCVRack/Rack | GPL-3.0 | 2026-10-08 (repo LICENSES page: GPL v3) | Lane A W3. Virtual modular synth platform. Awareness only. |
+| 125 | Cardinal | github.com/DISTRHO/Cardinal | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Rack-as-plugin (LV2/VST3/CLAP). Awareness only. |
+| 126 | Helm | github.com/mtytel/helm | GPL-3.0 | 2026-10-08 (repo license body: GPL v3 text) | Lane A W3. Polyphonic subtractive synth. Awareness only. |
+| 127 | Csound | github.com/csound/csound | LGPL-2.1 | 2026-10-08 (GitHub API license field) | Lane A W3. Text-based synthesis language. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 128 | OpenAL Soft | github.com/kcat/openal-soft | LGPL-2.1 | 2026-10-08 (repo: "GNU LIBRARY GENERAL PUBLIC LICENSE Version 2") | Lane A W3. 3D audio implementation. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 129 | SuperCollider | github.com/supercollider/supercollider | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Live-coding synthesis language. Awareness only. |
+| 130 | ChucK | github.com/ccrma/chuck | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Strongly-timed audio language. Awareness only. |
+| 131 | PlugData | github.com/plugdata-team/plugdata | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Pure Data as DAW plugin. Awareness only. |
+| 132 | FAUST | github.com/grame-cncm/faust | LGPL-2.1 | 2026-10-08 (repo: "under the terms of the GNU Lesser General Public License") | Lane A W3. Functional DSP language. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 133 | Furnace | github.com/tildearrow/furnace | GPL-2.0-or-later | 2026-10-08 (repo: "most of Furnace is under the GNU GPL version 2 or later") | Lane A W3. Multi-system chiptune tracker. Awareness only. |
+| 134 | Schism Tracker | github.com/schismtracker/schismtracker | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Impulse Tracker clone. Awareness only. |
+| 135 | MilkyTracker | github.com/milkytracker/MilkyTracker | GPL-3.0 (app; player lib BSD) | 2026-10-08 (repo: "The rest of MilkyTracker remains covered by the GPL" v3) | Lane A W3. FastTracker II clone. Awareness only. |
+| 136 | ADLMIDI | github.com/Wohlstand/libADLMIDI | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. OPL3 FM chip emulation. Awareness only. |
+| 137 | OPNMIDI | github.com/Wohlstand/libOPNMIDI | LGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. YM2612 FM chip emulation. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 138 | hvcc | github.com/Wasted-Audio/hvcc | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Pd-patch-to-C compiler. Awareness only. |
+| 139 | swh-plugins | github.com/swh/ladspa | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Steve Harris LADSPA classics. Awareness only. |
+| 140 | Flocking | github.com/colinbdclark/Flocking | GPL-2.0 | 2026-10-08 (GitHub API license field; commonly assumed MIT — it is NOT) | Lane A W3. Web Audio synthesis framework. Awareness only. |
+| 141 | MBROLA | github.com/numediart/MBROLA | AGPL-3.0 (voices: non-commercial, non-military) | 2026-10-08 (GitHub API license field; voice terms per project docs) | Lane A W3. Diphone speech synthesizer. Double restriction — engine + voices. Awareness only. |
+| 142 | PaulXStretch | github.com/essej/PaulXStretch | GPL-3.0 | 2026-10-08 (repo license body) | Lane A W3. Extreme time-stretcher. Awareness only. |
+| 143 | Dragonfly Reverb | github.com/michaelwillis/dragonfly-reverb | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Algorithmic/hall reverbs. Awareness only. |
+| 144 | Praat | github.com/praat/praat (upstream: praat.org) | GPL-3.0-or-later | 2026-10-08 (praat.org manual § License via official mirror README) | Lane A W3. Phonetics workbench. Awareness only. |
+| 145 | Sonic Visualiser | github.com/sonic-visualiser/sonic-visualiser | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Visual audio-analysis workbench. Awareness only. |
+| 146 | Tony | github.com/sonic-visualiser/tony | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Pitch-track annotation. Awareness only. |
+| 147 | alass | github.com/kaegi/alass | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Subtitle-audio synchronizer. Awareness only. |
+| 148 | Peaks.js | github.com/bbc/peaks.js | LGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Waveform overview component. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 149 | Tenacity | github.com/tenacityteam/tenacity | GPL-2.0 | 2026-10-08 (repo license file: "distributed under the terms of the GNU GPL Version 2") | Lane A W3. Community Audacity fork. Awareness only. |
+| 150 | audiowaveform | github.com/bbc/audiowaveform | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Waveform-data generator. Awareness only. |
+| 151 | OBS Studio | github.com/obsproject/obs-studio | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Live production / broadcast graphics switcher. Awareness only. |
+| 152 | CasparCG | github.com/CasparCG/server | GPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Broadcast graphics/playout server. Awareness only. |
+| 153 | PyonFX | github.com/CoffeeStraw/PyonFX | LGPL-3.0 | 2026-10-08 (upstream README: "licensed under the LGPL v3.0 License") | Lane A W3. ASS karaoke/typesetting effects. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 154 | Cairo | cairographics.org (gitlab.freedesktop.org/cairo/cairo) | LGPL-2.1 / MPL-1.1 (dual) | 2026-10-08 (cairographics.org + source headers) | Lane A W3. 2D vector graphics library. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 155 | libvips | github.com/libvips/libvips | LGPL-2.1 | 2026-10-08 (GitHub API license field) | Lane A W3. Streaming image processor. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 156 | GStreamer | gstreamer.freedesktop.org | LGPL (core all-LGPL) | 2026-10-08 (gstreamer.freedesktop.org licensing FAQ) | Lane A W3. Multimedia framework; textoverlay/compositor. Weak copyleft — quarantined pending owner LGPL doctrine. |
+| 157 | Snowmix | sourceforge.net/projects/snowmix/ | GPL-3.0 | 2026-10-08 (SourceForge: "GNU General Public License version 3.0 (GPLv3)") | Lane A W3. Scriptable live video mixer. Awareness only. |
+| 158 | Xibo | github.com/xibosignage/xibo | AGPL-3.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Digital-signage CMS/player. Awareness only. |
+| 159 | ccextractor | github.com/CCExtractor/ccextractor | GPL-2.0 | 2026-10-08 (GitHub API license field) | Lane A W3. Broadcast caption extractor. Awareness only. |

@@ -22552,8 +22552,8 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** N/A (Rust + PyTorch)
 - **Repo lane:** trippedd (audio/restoration)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
-- **Status:** not-started
-- **Notes:** Step up from noisereduce when noise is non-stationary (crowds, wind, room tone shifts). [Wave 22 Lane A]
+- **Status:** WIRED — run-proven (Wave 56 Lane C, 2026-10-08)
+- **Notes:** Step up from noisereduce when noise is non-stationary (crowds, wind, room tone shifts). [Wave 22 Lane A] Proof: tools/wave56_lane_c/wire_deepfilternet.py + proofs/deepfilternet/ — real Wave-51 Kokoro VO (7.825 s) with calibrated 10 dB-SNR noise: white-noise SNR 10.0→15.9 dB (+5.9), AM band-limited noise 10.0→14.4 dB (+4.4); clean no-op RMS Δ 4.07%, corr 0.99665; byte-deterministic; 6/7 checks PASS (relative non-stationary advantage gate missed by 0.5 dB on synthetic fixture, documented). deepfilternet 0.5.6 + DeepFilterNet3 (8.4 MB ckpt, upstream repo, dual-licensed project). Build note: deepfilterlib sdist needs Rust/Cargo; /tmp is 512 MB tmpfs — use lane-local TMPDIR/CARGO_TARGET_DIR; venv-local torchaudio.backend shim needed for torchaudio≥2.9.
 
 #### PaddleSpeech ✅ commercial-safe
 - **What:** Baidu's all-in-one speech toolkit — ASR, TTS, text analysis, and audio classification; production-grade Chinese/English speech pipelines
@@ -38247,8 +38247,8 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Free tier:** free OSS
 - **Repo lane:** trippedd (pipeline)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
-- **Status:** not-started
-- **Notes:** Full speech-processing toolkit behind transcription/diarization for captions. [Wave 44 Lane A]
+- **Status:** WIRED — run-proven (Wave 56 Lane C, 2026-10-08)
+- **Notes:** Full speech-processing toolkit behind transcription/diarization for captions. [Wave 44 Lane A] Proof: tools/wave56_lane_c/wire_speechbrain_ecapa.py + proofs/speechbrain_ecapa/ — ECAPA-TDNN (speechbrain/spkrec-ecapa-voxceleb, HF card license:apache-2.0, ungated) speaker embeddings on synthetic 2-speaker dialogue (A1,B1,A2,B2, distinct utterances per speaker): 4×192 embeddings, min intra-speaker cosine 0.8663 vs max inter-speaker 0.7180 (margin +0.1483), byte-deterministic; 6/6 checks PASS. speechbrain 1.1.1, torch 2.14.1+cpu. Install note: pull CPU torch from the PyTorch CPU index first or pip grabs 2.3 GB of CUDA wheels.
 
 #### ESPnet ✅ commercial-safe
 - **What:** espnet/espnet — end-to-end speech processing toolkit (ASR/TTS) for caption generation

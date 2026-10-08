@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 238 rows · 215 distinct projects (Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 31 rows · GPL 163 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · GPLv3+/MPLv2+ 0 rows (row 151 delisted) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. LGPL doctrine still pending owner verdict. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
+- **Quarantined (copyleft) — 255 rows · 232 distinct projects (Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 32 rows · GPL 179 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · GPLv3+/MPLv2+ 0 rows (row 151 delisted) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. LGPL doctrine still pending owner verdict. Wave-26 Lane C spot-check (2026-10-08): 10/10 confirmed on never-audited rows (2 aeneas, 9 FlowFrames, 17 OpenShot, 20 piper-tts, 36 Inkscape, 50 Wick Editor, 67 Dexed, 80 ComfyUI-Manager, 126 Hydrogen, 131 NYC Parks Photo Archive) — zero relicensing events. Wave-26 Lane A: +12 rows 239–250 (retro-tracker GPL/AGPL). Wave-26 Lane B: +5 rows 251–255 (caption/karaoke GPL; renumbered from 239–243 at merge to resolve Lane A/B collision). Counts refreshed: 255 rows · 232 distinct. LGPL doctrine still pending owner verdict. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag.
 
 - **Non-commercial / research-only — research lane only, never shipped (Wave-1 list, 17):** Spine (Esoteric Software) (Proprietary commercial (trial = evaluation only)); PureRef (Proprietary; free Personal license (non-commercial)); Wav2Lip (Custom non-commercial (personal/research only)); Coqui XTTS v2 (CPML 1.0 (Coqui Public Model License) on the XTTS-v2 weights — non-commercial only (verified via multiple third-party license audits)); Bark (suno-ai) (MIT code BUT README states model is CC-BY 4.0 NC due to EnCodec neural-codec backend (verified via README text quoted in forks)); BBC Sound Effects Archive (RemArc Licence — personal/educational/research ONLY, non-commercial (verified via music press + BBC terms)); Stable Video Diffusion (Stability AI Community License (non-commercial)); LTX-Video (Apache-2.0 (code) + LTX Open Weights / Community License (weights)); HunyuanVideo (Tencent Hunyuan Community License Agreement (custom, verified)); SkyReels-V2 (Skywork Community License (custom, verified)); Pika (free tier) (Pika Terms of Service (proprietary)); Runway (free tier) (Runway Terms of Use (proprietary)); Luma (free tier) (Luma Terms (proprietary)); Hailuo AI / MiniMax (free tier) (MiniMax Terms (proprietary)); Kling AI (free tier) (Kling Terms (proprietary)); Pixverse (free tier) (Pixverse Terms (proprietary)); LTX Studio (free tier) (LTX Studio Terms (proprietary)) Later waves added more NC/research-gated items (not in the original 17 — documented in the wave notes): Spark-TTS + F5-TTS NC weights; IndexTTS (bilibili Model Use License); SUPIR, StableSR, CodeFormer, Fish Speech (Fish Audio Research License), AnimeGANv2/v3 (author NC license); PlayHT/PlayAI (shut down 2025-12-31); Dia/VibeVoice (permissive licenses but vendor research-intent terms — see docs/VOICE_COMMERCIAL_USE_WAVE5.md).
 
@@ -13918,6 +13918,7 @@ Convention: badge ❓ = proprietary ToS, free-tier terms verified via the cited 
 - **Pipeline impact: 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** not-started
 - **Notes:** Model-training opt-out is a paid-tier behavior ("Free tier data may be used for training") — never run unreleased episode audio through the free tier. [Wave 12 Lane C]
+- **Wave 26 re-verification (2026-10-07):** Re-checked https://www.gladia.io/pricing — entry STANDS. The "~10 hrs/month" claims in secondary sources were wrong/stale; the page still grants €50 one-time no-expiry credits (~80+ h). Also confirmed: Growth tier now shows automatic training opt-out (free/Starter does not). [Wave 26 Lane B]
 
 #### Rev — transcription/caption service, ADA-compliant captions ❓ unverified
 - **What:** Established transcription platform: AI transcription + human-verified 99% option, ADA/FCC-compliant captioning, interactive caption editor, Zoom/YouTube integrations, Rev.ai API.
@@ -18567,15 +18568,16 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Status:** not-started
 - **Notes:** Honest scope: this is NOT burn-in — captions live in TikTok's player only and don't export with the video file. Useful as a zero-cost accessibility layer for TikTok distribution, not as a caption-production tool. Accuracy ~80–85% per third-party guides — always review before publishing. [Wave 17 Lane B]
 
-#### Amara — nonprofit community captioning ✅ commercial-safe
+#### Amara — nonprofit community captioning ⚠️ workspace-closed
 - **What:** 501(c)(3) nonprofit platform (Participatory Culture Foundation) for subtitling/captioning public YouTube/Vimeo videos collaboratively; editor + SRT/DFXP/SBV/WebVTT/TXT/SSA export.
 - **URL:** https://amara.org/
 - **License:** Platform is proprietary (was AGPL, closed-sourced Jan 2020 per Wikipedia) but the public subtitling workspace is free to use; you keep your subtitle files.
-- **Free tier:** Free public workspace — subtitle any public video URL, collaborate, export all standard formats. Private workspace = paid (Amara On Demand).
+- **Free tier:** ⚠️ Public Workspace CLOSED 2026-04-30 — paid teams only (Editor / On Demand / Enterprise per amara.org homepage, 2026-10-07).
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** The only nonprofit in this lane — no watermark games, no credit metering on the public side. Constraint: public workspace means public videos; don't route unreleased episode cuts through it. [Wave 17 Lane B]
+- **Wave 26 correction (2026-10-07):** Amara announced Public Workspace closure 2026-03-27 and closed it 2026-04-30 (per Wikipedia, crawled 2026-10-05); thousands of community subtitles were deleted unless transferred. The homepage now shows only Editor / On Demand / Enterprise — no public workspace. License status unchanged (still proprietary; no re-open-sourcing found). Free-tier line above corrected in place. [Wave 26 Lane B]
 
 #### Transkriptor — 90-min trial, SRT export ⚠️ license-conditional
 - **What:** Upload-based AI transcription (100+ languages) with speaker labels, timestamps, sentiment; exports DOC/PDF/SRT/TXT.
@@ -25785,12 +25787,12 @@ not run). See `tools/captions/proofs/wave24_lane_b/PROOF.md`.
 
 #### Type Studio ❓ free tier exists; limits unpinned this pass
 - **What:** Text-based AI video editor: auto transcription, subtitle generation, podcast/repurposing tools (Descript-style).
-- **URL:** https://toolhunter.ai/ai-tool/type-studio (directory listing — vendor site URL not grounded in search results this pass; do not wire until vendor site is visited)
+- **URL:** https://typestudio.co (vendor domain confirmed 2026-10-07 via two independent slashdot.org directory pages: Company Type Studio, founded 2020, Germany, pricing from $14/mo, Free Version: Yes, Free Trial: Yes. NOTE: a live-browser visit is still needed to verify the vendor site's free-tier limits — deferred because generic subagents cannot operate a live browser; see docs/wave26/lane-b.md)
 - **License:** ❓ (free tier existence reported by third-party directory; vendor pricing page not re-verified this pass)
 - **Free tier:** free tier reported — VERIFY limits before wiring
 - **Repo lane:** trippedd (captions)
 - **Status:** not-started
-- **Notes:** Honest caveat: neither the free-tier minute cap nor the ToS was verified this pass. [Wave 25 Lane A]
+- **Notes:** Honest caveat: neither the free-tier minute cap nor the ToS was verified this pass. Vendor URL updated in place (was a directory listing); ❓ badge retained until a live visit pins the limits. [Wave 25 Lane A / Wave 26 Lane B]
 
 #### AWS Transcribe (free tier) ❓ 60 min/mo reported, verify + training opt-out
 - **What:** Amazon's STT with automatic language ID, speaker diarization, custom vocabularies; caption output via batch/streaming API + SRT/VTT post-format.
@@ -26419,3 +26421,581 @@ not run). See `tools/captions/proofs/wave24_lane_b/PROOF.md`.
 ## Entry count — Wave 26 Lane A
 
 **+55 honest `####` entries → 2,563 total** (2,508 + 55). Breakdown: 25 PD score-archive continuation (pocket 1) · 30 retro-tracker ecosystem depth (pocket 2). Quarantine: **12 new rows (239–250)** — libADLMIDI GPL-3.0 · ChibiTracker GPL-2.0 · JSIDPlay2 GPL-2.0 · Cardinal GPL-3.0 · Strudel AGPL-3.0 · BespokeSynth GPL-3.0 · Cmajor GPL-3.0-or-later · Psycle GPL-2.0 · FamiTracker-original GPL-2.0 · Aldrin GPL-2.0 · SoundTracker-Unix GPL-2.0-or-later · mikmod-player GPL-2.0. (Dn-FamiTracker catalog entry maps to existing row 123 — no new row.) License corrections caught this wave: Cmajor is NOT ISC (dual GPL-3.0-or-later/commercial); libADLMIDI is NOT MIT (GPL-3.0); Aldrin is NOT BSD (GPL-2.0); BeRoTracker is NOT public domain (freeware); uFMOD is NOT public domain (freeware); Psycle current code is GPL-2.0 (only v1.0 was PD); LittleGPTracker has an unresolved BSD-vs-GPLv3 conflict. One tool wired with real proof: Meyda (MIT) — docs/wave26/proofs/meyda-smoke/.
+## Wave 26 — Lane B (caption burn-in SaaS alternatives · self-hosted caption packaging tools) — 55 entries (2026-10-07)
+
+# Wave 26 Lane B — caption burn-in SaaS alternatives + self-hosted caption packaging tools
+
+Lane: captions (SaaS caption burn-in alternatives, self-hosted packaging tools, pro subtitling software, freeware packaging, live captioning) · Date: 2026-10-07 · Worker: subagent Lane B
+
+**Entry count: 55 new `####` entries.** Dedup: every candidate was grepped against `docs/RESOURCE_CATALOG.md` (`^####` headings) and the caption sections before adding. Already covered and NOT re-listed: everything in Waves 12/14/17 caption sections, Wave 24 Lane B long tail, xy-VSFilter/xySubFilter (quarantine row 198), VisualSubSync (quarantine row 197), ffsubsync, telxcc (quarantine row 236), Subtitle Edit, Aegisub, QCTools (quarantine row 235), AtomicParsley (quarantine row 238), Gladia, Amara, Type Studio (Wave-25 follow-ups, corrected in lane note).
+Also researched but dropped as unverifiable within budget: Annotation Edit (no substantive sources), DVDStyler/DeVeDe/Bombono/AVStoDVD/TCAX/mkclean/scc2srt (could not ground).
+
+
+
+## A. Self-hosted / open-source caption packaging tools (12)
+
+#### ReadAlongs/Studio ✅
+- **What:** Web-based audio/text alignment studio (National Research Council Canada) — generates aligned captions/transcripts from audiobooks and spoken audio; exports VTT/subtitles.
+- **URL:** https://github.com/ReadAlongs/Studio
+- **License:** MIT (verified 2026-10-07: GitHub API spdx_id)
+- **Free tier:** N/A — self-hosted, fully free
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Permissive license, clean wire-up target for the pipeline's own captions on dubbed/narrated audio. [Wave 26 Lane B]
+
+#### tehendri/ai-video-captions ✅
+- **What:** Dockerized self-hosted caption burn-in pipeline — faster-whisper transcription + FFmpeg hardsub rendering with 6 caption styles.
+- **URL:** https://github.com/tehendri/ai-video-captions
+- **License:** MIT (verified 2026-10-07: GitHub API spdx_id)
+- **Free tier:** N/A — self-hosted, fully free
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Closest direct self-hosted equivalent of CapCut-style caption burn-in; strong wire-up candidate. [Wave 26 Lane B]
+
+#### OpenScreen ✅
+- **What:** Free open-source automatic-zoom screen recorder (Screen Studio alternative) — on-device Whisper captions burned into the video, MP4/H.264/H.265/GIF export, CLI included; commercial use allowed.
+- **URL:** https://github.com/getopenscreen/openscreen
+- **License:** MIT (verified 2026-10-07: GitHub API spdx_id; pushed 2026-10-07)
+- **Free tier:** N/A — fully free, no export paywall (unlike Screen Studio)
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The open-source Screen Studio: on-device Whisper burn-in, ~264MB model, 15-language caption translation via a provider you connect. Strong wire-up candidate. [Wave 26 Lane B]
+
+#### videocr ✅
+- **What:** Python library extracting hardcoded (burned-in) subtitles from videos via Tesseract OCR → SRT; the reverse pipeline leg (recover captions from burnt-in masters).
+- **URL:** https://github.com/apm1467/videocr/blob/master/README.md
+- **License:** MIT (verified 2026-10-07: GitHub API spdx_id)
+- **Free tier:** N/A — self-hosted, fully free
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** CPU-intensive (Tesseract); useful for recovering caption text from videos where only a burnt-in master survives. [Wave 26 Lane B]
+
+#### Belle Nuit Subtitler ⚠️
+- **What:** Subtitle spotting/editing/rendering for video editing, DVD authoring and digital cinema; exports burnt-in subtitles (documented ffmpegX workflow); went open-source and free 2016-03-29.
+- **URL:** http://belle-nuit.com/belle-nuit-subtitler
+- **License:** LGPL (weak copyleft — announced 2016: "source code of the program is released under the GNU Lesser General Public License")
+- **Free tier:** N/A — free download, no longer sold
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Mac tool, last build 2016-era; LGPL means link-not-fork for any bundling. [Wave 26 Lane B]
+
+#### community-captioner ❓
+- **What:** Free open-source live captioning for OBS — OBS plugin adding real-time captions via Google Speech Recognition (amateurmenace/community-captioner).
+- **URL:** https://github.com/amateurmenace/community-captioner
+- **License:** ❓ unverified — no license file found on the repo (GitHub API 2026-10-07); README claims "Free, open-source" but no license grants rights. Do NOT bundle until clarified.
+- **Free tier:** N/A — self-hosted
+- **Repo lane:** captions/live
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Useful for live pipeline streams (OBS overlay captions); v2 adds Whisper + SRT/VTT export (same license caveat). [Wave 26 Lane B]
+
+#### VidSubX ❓
+- **What:** Free program extracting hardcoded (burned-in) subtitles from a video into an external subtitle file — subtitle-area detection, batch mode, PaddleOCR multilingual.
+- **URL:** https://github.com/voun7/VidSubX
+- **License:** ❓ unverified — no license file found on the repo (GitHub API 2026-10-07). Treat as all-rights-reserved until a license is published.
+- **Free tier:** N/A — self-hosted
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Caption-recovery tool; pair with videocr-style pipelines. [Wave 26 Lane B]
+
+#### Performous 🚫 (GPL-2.0-or-later — QUARANTINE row 239)
+- **What:** Open-source karaoke singing game with word-level lyric timing and on-screen lyric rendering; caption-adjacent timing display engine.
+- **URL:** https://github.com/performous/performous
+- **License:** GPL-2.0-or-later (verified 2026-10-07: LICENSE.md text)
+- **Free tier:** N/A — self-hosted
+- **Repo lane:** captions/karaoke
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strong copyleft — QUARANTINE row 239. Standalone-tool use only. [Wave 26 Lane B]
+
+#### Vocaluxe 🚫 (GPL-3.0 — QUARANTINE row 240)
+- **What:** Karaoke game (UltraStar derivative) with real-time lyric line rendering and pitch display.
+- **URL:** https://github.com/Vocaluxe/Vocaluxe
+- **License:** GPL-3.0 (verified 2026-10-07: GitHub API spdx_id)
+- **Free tier:** N/A — self-hosted
+- **Repo lane:** captions/karaoke
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strong copyleft — QUARANTINE row 240. Standalone-tool use only. [Wave 26 Lane B]
+
+#### subSync (sc0ty) 🚫 (GPL-3.0 — QUARANTINE row 241)
+- **What:** Automatic subtitle synchronization — aligns subtitle timing to audio waveforms (Python/C).
+- **URL:** https://github.com/sc0ty/subSync
+- **License:** GPL-3.0 (verified 2026-10-07: GitHub API spdx_id)
+- **Free tier:** N/A — self-hosted
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Distinct from ffsubsync/VisualSubSync. Strong copyleft — QUARANTINE row 241. [Wave 26 Lane B]
+
+#### Subler 🚫 (GPLv2 — QUARANTINE row 242)
+- **What:** macOS MP4/M4V muxer for tagging and adding subtitle tracks (SRT/VTT → embedded soft captions).
+- **URL:** https://github.com/SublerApp/Subler
+- **License:** GPLv2 (verified 2026-10-07: LICENSE text)
+- **Free tier:** N/A — self-hosted
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Strong copyleft — QUARANTINE row 242. [Wave 26 Lane B]
+
+#### stream_closed_captioner_phoenix 🚫 (GPL-3.0 — QUARANTINE row 243)
+- **What:** Twitch closed-captioner extension (talk2megooseman) — live speech-to-text captioning for Twitch streams, browser overlay + SRT/VTT export.
+- **URL:** https://github.com/talk2megooseman/stream_closed_captioner_phoenix
+- **License:** GPL-3.0 (verified 2026-10-07: GitHub API spdx_id; active — pushed 2026-08-31)
+- **Free tier:** N/A — self-hosted
+- **Repo lane:** captions/live
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Strong copyleft — QUARANTINE row 243. Live-captioning overlay for stream pipelines. [Wave 26 Lane B]
+
+## B. Freeware caption packaging tools (3)
+
+#### Hybrid (Selur video encoder) ❓
+- **What:** Free video encoder/transcoder (Selur's Hybrid) with extensive subtitle handling — soft-to-hard subtitle burn-in workflows via bundled FFmpeg/mencoder toolset.
+- **URL:** http://www.selur.de
+- **License:** ❓ proprietary freeware — free to use; ToS/closed-source not verified.
+- **Free tier:** Fully free (no paid tier)
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** URL quoted verbatim from a search-result snippet, not a fetched page; download/ToS unverified. GUI-first batch burn-in for hardsub encodes. [Wave 26 Lane B]
+
+#### SupRip ❓
+- **What:** Free Windows tool that OCR-detects text within video frames so subtitle files aren't lost when encoding DVD video — DVD VobSub → SRT recovery.
+- **URL:** https://www.atenao.net/translation-blog/subtitling-software/
+- **License:** ❓ proprietary freeware — free to use; ToS not verified.
+- **Free tier:** Fully free
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Legacy tool (DVD-era); still referenced in 2026 subtitling-software roundups. [Wave 26 Lane B]
+
+#### MKVcleaver ❓
+- **What:** Free Windows GUI (by Ilia Bakhmoutski) extracting subtitle, audio, video and attachment tracks from MKV files; batch processing; front-end over MKVToolNix.
+- **URL:** http://mkvcleaver-x64.updatestar.com
+- **License:** ❓ proprietary freeware — free to use; ToS not verified.
+- **Free tier:** Fully free (portable version available)
+- **Repo lane:** captions/packaging
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Requires MKVToolNix installed; Windows-only. Subtitle-track extraction leg of the packaging pipeline. [Wave 26 Lane B]
+
+## C. Live captioning / translation services (7)
+
+#### SyncWords ❓
+- **What:** Live AI captioning + translation platform (events, webinars, broadcasts); SRT/VTT delivery and caption API.
+- **URL:** https://www.syncwords.com/pricing/
+- **License:** Proprietary SaaS
+- **Free tier:** ❓ trial on request only — terms from vendor page; no public free tier confirmed
+- **Repo lane:** captions/live
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Live AI captions priced from ~$30/hr; live-event caption leg. [Wave 26 Lane B]
+
+#### Wordly ❓
+- **What:** AI-powered live translation and captioning for Zoom/Teams/Meet events; real-time multilingual captions.
+- **URL:** https://wordly.ai/zoom-translation
+- **License:** Proprietary SaaS
+- **Free tier:** ❓ free trial reported (secondary source); pricing custom/quoted
+- **Repo lane:** captions/live
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cheapest routine-meeting coverage per third-party comparison vs KUDO/Interprefy hybrid pricing. [Wave 26 Lane B]
+
+#### VITAC ❓
+- **What:** Broadcast captioning services (now part of Verbit) — live and offline closed captioning for TV/streaming, CEA-608/708 delivery.
+- **URL:** https://vitac.com/
+- **License:** Proprietary service
+- **Free tier:** ❓ enterprise/quoted; no public free tier
+- **Repo lane:** captions/broadcast
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Broadcast-grade caption leg; enterprise contracts only. [Wave 26 Lane B]
+
+#### KUDO ❓
+- **What:** Live AI-translated audio + captions for meetings/events (70+ languages AI; 200+ spoken+sign with human interpreters); hourly pricing, marketplace/pay-as-you-go/annual plans.
+- **URL:** https://kudo.ai/pricing-plans-and-features/
+- **License:** Proprietary SaaS
+- **Free tier:** ❓ no free trial per third-party tests (contact for demo); no public pricing
+- **Repo lane:** captions/live
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Event-scale live captioning; opaque pricing is a budget risk. [Wave 26 Lane B]
+
+#### CaptionHub ❓
+- **What:** Cloud captioning/localization platform — ASR captions, hardcoded subtitle rendering add-on, 30+ export formats, API; teams workflow.
+- **URL:** https://www.softwareadvice.com/closed-captioning/captionhub-profile/
+- **License:** Proprietary SaaS
+- **Free tier:** ❓ no free plan (saasworthy); free trial reported (softwareadvice); pricing sources conflict (£40/mo vs $27,937/yr Professional)
+- **Repo lane:** captions/SaaS
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Conflicting pricing across directories — treat as enterprise-leaning; verify on vendor site before quoting. [Wave 26 Lane B]
+
+#### Closed Caption Creator ❓
+- **What:** Broadcast-focused caption/subtitle editor — auto captioning with speaker ID, QC, 30+ caption formats incl. embedded 608/708, burn-in export; 7-day free trial (no CC).
+- **URL:** https://www.closedcaptioncreator.com/pricing.html
+- **License:** Proprietary SaaS (vendor pricing page fetched 2026-10-07)
+- **Free tier:** 7-day free trial, no credit card; Starter $30/mo ($25 annual) incl. 300 auto-captioning min/mo; Pro $60/mo ($50 annual) incl. 600 min + SCC/MCC/EBU-STL export + 608/708 embedding ($2/file + $0.40/GB)
+- **Repo lane:** captions/SaaS
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Format depth (608/708 embedding, SCC/MCC/EBU-STL) is the differentiator for broadcast delivery. [Wave 26 Lane B]
+
+#### Ai-Media ❓
+- **What:** LEXI AI-powered captioning toolkit — LEXI Translate (live translated captions) with free 10-hr trial; LEXI Recorded from $0.20/min; broadcast captioning services.
+- **URL:** https://www.ai-media.tv/our-products/lexi-ai-powered-captioning-tool-kit/lexi-translate/
+- **License:** Proprietary SaaS
+- **Free tier:** Free 10-hour LEXI Translate trial (vendor page)
+- **Repo lane:** captions/live
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Live-translation caption leg with a real trial allowance. [Wave 26 Lane B]
+
+## D. Professional subtitling software (5)
+
+#### OOONA ❓
+- **What:** Cloud subtitling/localization platform for broadcasters and media localizers (founded 2012, Israel); full subtitle authoring, QC, project management.
+- **URL:** https://Slashdot.org/software/comparison/Gridly-vs-OOONA/
+- **License:** Proprietary SaaS
+- **Free tier:** ❓ ~€29/mo per directory; free trial reported; free-version claims conflict across sources — unverified
+- **Repo lane:** captions/pro
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Industry-standard subtitling workstation in the cloud; pricing needs vendor verification. [Wave 26 Lane B]
+
+#### EZTitles ❓
+- **What:** Professional desktop subtitling software (TV/DVD/Blu-ray/closed captions); AI speech-to-text + translation; editions €80–100/mo, lifetime €1,720–3,380; Premiere/Avid plug-ins burn subtitles into video.
+- **URL:** https://eztitles.com:443/eztitles-subtitling-software/license-editions
+- **License:** Proprietary (vendor pricing page fetched 2026-10-07)
+- **Free tier:** Free demo limited to 25 subtitles/file (no registration); 30-day trials on request; Subtitling Assistant AI minutes are pay-as-you-go
+- **Repo lane:** captions/pro
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Demo is genuinely usable for small jobs; rental (€30/week One) covers single projects. [Wave 26 Lane B]
+
+#### SubtitleNEXT ❓
+- **What:** Professional subtitling suite with "burnin over picture" (subtitle burn-in to media files), live subtitling, DVB/teletext streams; Vlogger monthly rental €280/mo incl. 240 min AI transcription; bundles €350–2,950.
+- **URL:** https://shop.pbteu.com/product/subtitlenext-vlogger-multi-language-monthly-rent/
+- **License:** Proprietary (PBT EU shop page fetched 2026-10-07)
+- **Free tier:** ❓ free trial reported (GoTranscript guide); no free tier
+- **Repo lane:** captions/pro
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Native burn-in-to-file + live-stream subtitling; rental model fits single-project needs. [Wave 26 Lane B]
+
+#### FAB Subtitler ❓
+- **What:** Broadcast subtitling package (F.A. Bernhardt GmbH) — Standard edition prepares subtitle files; Pro inserts open/teletext subtitles into SDI streams and teletext/DVB subtitles into transport-stream files.
+- **URL:** https://en.freedownloadmanager.org/Windows-PC/amp/FAB-Subtitler.html
+- **License:** Proprietary — demo license; not freeware (per VideoHelp forum)
+- **Free tier:** Demo download only; paid product
+- **Repo lane:** captions/broadcast
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Broadcast/SDI caption insertion — niche but the only entry covering teletext-into-TS insertion. [Wave 26 Lane B]
+
+#### MovieCaptioner ❓
+- **What:** Desktop closed-captioning software (SynchriMedia, Mac/Windows) — type-along caption timing, SCC/CEA-608 export workarounds, YouTube export.
+- **URL:** https://larryjordan.com/articles/product-review-synchrimedias-moviecaptioner/
+- **License:** Proprietary
+- **Free tier:** 14-day free trial; $99.95 one-time (per Larry Jordan review)
+- **Repo lane:** captions/pro
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Review is dated but substantive; one-time pricing is rare in this category. [Wave 26 Lane B]
+
+## E. Captioning / transcription services (7)
+
+#### 3Play Media ❓
+- **What:** Captioning + transcription + audio-description services; broadcast captioning, ASR + human review tiers.
+- **URL:** https://www.softwareadvice.co.uk/software/310178/3play-media
+- **License:** Proprietary service
+- **Free tier:** ❓ free trial reported; no free version
+- **Repo lane:** captions/service
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Full-service captioning vendor; human-review tier for broadcast accuracy. [Wave 26 Lane B]
+
+#### Verbit ❓
+- **What:** AI + human transcription/captioning platform; Standard plan $24/mo includes SRT caption export; 30-min one-time free transcription.
+- **URL:** https://verbit.ai/pricing-package/
+- **License:** Proprietary SaaS
+- **Free tier:** 30-minute one-time free transcription; Standard $24/mo with SRT export
+- **Repo lane:** captions/service
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Parent of VITAC (broadcast arm). [Wave 26 Lane B]
+
+#### Cielo24 ❓
+- **What:** Captioning/transcription service (self-serve web app + enterprise API); foreign-language captions; searchable interactive transcripts.
+- **URL:** https://www.prweb.com/releases/cielo24-introduces-self-serve-captioning-and-transcription-service-894521609.html
+- **License:** Proprietary service
+- **Free tier:** 120 free minutes of mechanical transcription on signup (per secondary sources); self-serve under $1/min
+- **Repo lane:** captions/service
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free-minute signup credit is the hook; verify current terms on vendor site (PR is 2018). [Wave 26 Lane B]
+
+#### Scribie ❓
+- **What:** Manual transcription service with $10 free demo credits; per-minute human transcription.
+- **URL:** https://gotranscript.com/transcription-services-compared/provider/scribie
+- **License:** Proprietary service
+- **Free tier:** $10 demo credits reported; one directory disputes the free trial — conflict noted
+- **Repo lane:** captions/service
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Sources conflict on the trial; treat free tier as unverified until tested. [Wave 26 Lane B]
+
+#### Amberscript ❓
+- **What:** AI transcription/subtitling with human review; 10-min free trial; $10 one-off credit packs.
+- **URL:** https://5app.ai/app/amberscript/
+- **License:** Proprietary SaaS
+- **Free tier:** 10-minute free trial reported (secondary source); $10 one-off purchase
+- **Repo lane:** captions/service
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Low-commitment pricing (one-off packs) suits single-video jobs. [Wave 26 Lane B]
+
+#### Colibri.ai ❓
+- **What:** AI meeting transcription; free-forever 5 hrs/mo (English-only); paid tiers for more languages/hours.
+- **URL:** https://colibri.ai/pricing
+- **License:** Proprietary SaaS
+- **Free tier:** Free forever 5 hours/month (English-only) — vendor pricing page
+- **Repo lane:** captions/live
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Genuinely free recurring tier for meeting caption archives. [Wave 26 Lane B]
+
+#### Superwhisper ❓
+- **What:** macOS speech-to-text app with local small models on the free tier; Pro $8.49/mo unlocks larger models.
+- **URL:** https://superwhisper.com/best-speech-to-text
+- **License:** Proprietary app
+- **Free tier:** Free tier with small local models; Pro $8.49/mo
+- **Repo lane:** captions/desktop
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Local-model free tier = privacy-friendly dictation/caption drafting on Mac. [Wave 26 Lane B]
+
+## F. AI video editors with caption burn-in (12)
+
+#### Nova AI ❓
+- **What:** AI video editor with auto subtitles/translation; free 30 min subtitles/translation (watermarked exports).
+- **URL:** https://www.aitechsuite.com/tools/13707
+- **License:** Proprietary SaaS
+- **Free tier:** Free 30 min subtitles/translation; exports watermarked (secondary source)
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Watermark on free exports limits free-tier usefulness for shipping. [Wave 26 Lane B]
+
+#### Wisecut ⚠️
+- **What:** AI video editor — auto captions, silence removal, punch-in; free tier processes 60 min/mo at 360p.
+- **URL:** https://aitools.fyi/wisecut
+- **License:** Proprietary SaaS
+- **Free tier:** ⚠️ Free tier processes 60 min/mo (360p) but DOWNLOADS require paid — effectively trial-only for exports
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Badge downgraded: free tier is a preview, not a usable export path. [Wave 26 Lane B]
+
+#### Gling ❓
+- **What:** AI video editor (silence/caption cleanup) — free 1 hr/mo, watermarked, SRT export available.
+- **URL:** http://www.gling.ai/pricing
+- **License:** Proprietary SaaS
+- **Free tier:** Free 1 hr/mo, watermarked, SRT export (vendor pricing)
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SRT export on free tier is useful even with watermarked video. [Wave 26 Lane B]
+
+#### Timebolt ❓
+- **What:** Silence-removal + caption video editor; free Basic tier (watermarked, no save); $17/mo paid.
+- **URL:** https://www.snapy.ai/post/top-3-alternatives-of-timebolt-for-silence-removing-from-video
+- **License:** Proprietary SaaS
+- **Free tier:** Free Basic (watermarked, no save) — secondary source
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free tier is evaluation-only; $17/mo is the working tier. [Wave 26 Lane B]
+
+#### Reduct.video ❓
+- **What:** Text-based video editor — 5-hr free trial, SRT export, custom caption styles for burn-in.
+- **URL:** https://reduct.video/blog/descript-alternatives/
+- **License:** Proprietary SaaS
+- **Free tier:** 5-hour free trial (vendor blog)
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Custom caption styles + SRT export make it a Descript-style burn-in alternative. [Wave 26 Lane B]
+
+#### Kamua ❓
+- **What:** AI video repurposing editor with auto captions; free plan with limited minutes (per aibucket); spotsaas disputes the free plan — conflict noted.
+- **URL:** https://www.aibucket.io/tools/kamua-ai
+- **License:** Proprietary SaaS
+- **Free tier:** ❓ free plan reported by one directory, disputed by another — unverified
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Conflicting sources; verify on vendor site before relying on free tier. [Wave 26 Lane B]
+
+#### AutoPod ❓
+- **What:** Premiere Pro plugin — AI multicam/podcast editing with auto captions; $29/mo; 30-day trial.
+- **URL:** https://aitools.fyi/autopod
+- **License:** Proprietary plugin
+- **Free tier:** 30-day free trial (secondary source); $29/mo paid
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Premiere-native caption burn-in for podcast pipelines. [Wave 26 Lane B]
+
+#### Qlip.ai (DEFUNCT — honest negative)
+- **What:** Was an AI short-form video/caption tool — ACQUIRED by Livestorm (May 2026), now sold as "Livestorm AI Studio" paid add-on (€2,000/yr). No longer available as a standalone product.
+- **URL:** https://exemplary.ai/qlip-ai-alternative
+- **License:** N/A — defunct
+- **Free tier:** None
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 0/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Listed as an honest negative so future waves don't re-research it. [Wave 26 Lane B]
+
+#### 2short.ai ❓
+- **What:** AI shorts/clips generator with auto captions; free Starter 30 min analysis/mo; un-watermarked 1080p exports per appscribed (percuity disputes — conflict).
+- **URL:** https://appscribed.com/software/2short-ai-review/
+- **License:** Proprietary SaaS
+- **Free tier:** Free Starter 30 min analysis/mo; watermark status disputed across sources
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Clips pipeline with burn-in captions; verify watermark terms before shipping. [Wave 26 Lane B]
+
+#### Munch ❓
+- **What:** AI video repurposing (long→shorts) with auto captions; no free tier — sample projects only; from $49/mo.
+- **URL:** https://www.nemovideo.com/blog/what-is-munch-ai-review-2026
+- **License:** Proprietary SaaS
+- **Free tier:** None — sample projects only (secondary source)
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** No usable free tier; listed for completeness of the repurposing-editor set. [Wave 26 Lane B]
+
+#### ContentFries ❓
+- **What:** Content repurposing editor with captions; free 120 upload minutes; from $19/mo.
+- **URL:** https://coldiq.com/tools/contentfries
+- **License:** Proprietary SaaS
+- **Free tier:** Free 120 upload minutes (secondary source); from $19/mo
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Generous free upload allowance for repurposing tests. [Wave 26 Lane B]
+
+#### Capsho ❓
+- **What:** AI content repurposing (podcast→clips/posts) with caption generation; $99/mo; 7-day trial.
+- **URL:** https://bestfreeaitools.io/ai-tools/capsho-ai-review/
+- **License:** Proprietary SaaS
+- **Free tier:** 7-day free trial (secondary source); $99/mo
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pricey; trial-only evaluation. [Wave 26 Lane B]
+
+## G. Screen recorders with auto-captions (3)
+
+#### Tella (screen recorder) ❓
+- **What:** Styled screen-and-camera recorder with auto-subtitles and noise removal; 4K export.
+- **URL:** https://trainn.co/blog/loom-vs-tella/
+- **License:** Proprietary SaaS
+- **Free tier:** Free plan $0 (limited videos, Tella branding) per trainn; 7-day free trial; Pro $13–16/seat/mo
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Named with disambiguator — not the Blender-StellarToon entry. Auto-subtitles burn into tutorial/demo recordings. [Wave 26 Lane B]
+
+#### Screen Studio ❓
+- **What:** macOS auto-styled screen recorder — on-device Whisper captions (burned in) + transcript export, auto-zoom, silence trim; up to 4K60.
+- **URL:** https://github.com/getopenscreen/openscreen/blob/HEAD/website/src/pages/alternatives/screen-studio.mdx
+- **License:** Proprietary (subscription)
+- **Free tier:** ❓ NO free tier — export is behind $29/mo or $108/yr paywall (verified via two independent September-2026 sources); one-time licence withdrawn Oct 2025
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A (no usable free path)
+- **Status:** not-started
+- **Notes:** The closed original that OpenScreen (MIT, this wave) clones — use OpenScreen instead. [Wave 26 Lane B]
+
+#### Camtasia ❓
+- **What:** Screen recording + video editing suite with AI-generated captions, speech-to-text transcription, SCORM export.
+- **URL:** https://www.getapp.com/collaboration-software/a/camtasia/
+- **License:** Proprietary
+- **Free tier:** Starter free (watermarked exports); Essentials $179.88/yr; 30-day trial of full app
+- **Repo lane:** captions/burn-in
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free Starter exports are watermarked; caption features span all tiers. [Wave 26 Lane B]
+
+## H. Video API / hosting with captions (4)
+
+#### api.video ❓
+- **What:** Video API — Captions API for VTT upload + AI transcript generation; programmatic caption attachment to VOD.
+- **URL:** https://docs.api.video/vod/add-captions
+- **License:** Proprietary API (vendor docs fetched 2026-10-07)
+- **Free tier:** ❓ free trial on request; usage-based pricing
+- **Repo lane:** captions/API
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** API-first caption attachment — strong wire-up candidate for programmatic delivery. [Wave 26 Lane B]
+
+#### ZapCap ❓
+- **What:** Video Captions API — $0.10/min, free trial with no credit card; AI caption generation endpoint.
+- **URL:** https://www.producthunt.com/products/zapcap?launch=zapcap
+- **License:** Proprietary API
+- **Free tier:** Free trial, no CC (Product Hunt launch page); $0.10/min paid
+- **Repo lane:** captions/API
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Simple per-minute API pricing; trial allows real integration testing. [Wave 26 Lane B]
+
+#### Bunny Stream ❓
+- **What:** Video hosting/CDN with Transcribe AI (Whisper-powered, $0.10/min, 14-day free trial, $1/mo minimum) + SRT/VTT caption upload; captions API-adjacent.
+- **URL:** https://bunny.net/stream/transcribe-ai/
+- **License:** Proprietary SaaS
+- **Free tier:** 14-day free trial; $1/mo minimum; transcription $0.10/min
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Hosting + transcription + caption tracks in one bill — cheap delivery stack. [Wave 26 Lane B]
+
+#### Wistia ❓
+- **What:** Video hosting/marketing platform — free computer-generated transcripts and captions (95% accuracy) on ALL plans including free.
+- **URL:** http://support.wistia.com/en/articles/8274062-transcripts-and-captions
+- **License:** Proprietary SaaS
+- **Free tier:** Free plan $0 exists; auto transcripts/captions free on all plans (vendor support article)
+- **Repo lane:** captions/hosting
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Free-tier auto-captions on hosted video — zero-cost caption leg for marketing clips. [Wave 26 Lane B]
+
+## I. Free live captioning (2)
+
+#### Web Captioner ❓
+- **What:** Free live browser captioning (speech-to-text overlay for streams/presentations); no account needed; Pro adds accuracy/translation.
+- **URL:** https://maestra.ai/tools/web-captioner
+- **License:** Proprietary (free tool)
+- **Free tier:** Free unlimited live captioning, no account/credit card (secondary source)
+- **Repo lane:** captions/live
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Original webcaptioner.com appears absorbed into Maestra's tool suite; terms via Maestra page. [Wave 26 Lane B]
+
+#### Google Live Transcribe ✅
+- **What:** Free Android real-time captioning app (Google Research + Gallaudet) — 70–80+ languages, on-screen live captions, optional offline mode; 500M+ downloads.
+- **URL:** https://en.wikipedia.org/wiki/Live_Transcribe
+- **License:** Apache-2.0 (open-sourced August 2019, per Wikipedia)
+- **Free tier:** 100% free, no paid tiers (secondary sources, 2026)
+- **Repo lane:** captions/live
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** N/A
+- **Status:** not-started
+- **Notes:** Android-only, no export/edit — a reference implementation, not a pipeline component. [Wave 26 Lane B]

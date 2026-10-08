@@ -22480,7 +22480,7 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** N/A (pip)
 - **Repo lane:** trippedd (audio)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
+- **Status:** WIRED — run-proven (Wave 55 Lane C, 2026-10-08). Proof: tools/wave55_lane_c/wire_audiomentations.py → proofs/audiomentations/result.json + SHA256SUMS (PROOFS.md). Real Wave-52 denoised VO (7.825 s, 24 kHz): Gain −6 dB exact (RMS ratio 0.501187), seeded Gaussian noise bit-identical (σ=amplitude per upstream source), degraded SNR 20.09 dB (predicted 20.10 dB), PitchShift +2 st → 494.50 Hz (expect 493.88 Hz). FINDING: dual-RNG design — HighPassFilter consumes Python's random; seed both np.random and random for reproducibility. License re-verified upstream 2026-10-08: MIT.
 - **Notes:** Useful for stress-testing restoration chains against degraded variants. [Wave 22 Lane A]
 
 #### Open-Unmix ✅ commercial-safe
@@ -22532,7 +22532,7 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Free tier:** N/A (pip)
 - **Repo lane:** trippedd (audio)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
+- **Status:** WIRED — run-proven (Wave 55 Lane C, 2026-10-08). Proof: tools/wave55_lane_c/wire_resampy.py → proofs/resampy/result.json + SHA256SUMS (PROOFS.md). Real Wave-52 denoised VO (7.825 s, 24 kHz): 1 kHz tone 24k→48k SNR 130.77 dB; VO 24k→48k exact 375600 frames, duration preserved; same-rate bit-identity; stereo podcast master → 48 kHz; bit-deterministic. FINDING: 48k→24k kaiser_best anti-alias −3 dB point ≈ 10,830 Hz (not output Nyquist) — full-band 24→48→24 round-trip only 24.23 dB SNR; below 10 kHz round-trip transparent (92.03 dB). Keep 24 kHz master as archive source of truth. License re-verified upstream 2026-10-08: ISC.
 - **Notes:** Standardize archive audio sample rates before any restoration chain. [Wave 22 Lane A]
 
 #### RNNoise ✅ commercial-safe

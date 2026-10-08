@@ -3969,3 +3969,67 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 3 Lane C: included for awareness with the honest badge; no Ubisoft code/data enters commercial paths.
 
 <!-- end lane C wave 3: audio-driven animation retiming (9 entries; 2 GPL-family rows → quarantine 104–105) -->
+
+## Depth / segmentation for 2.5D parallax
+
+Monocular depth estimation, image/video segmentation & matting, layer decomposition and multiplane-image methods — everything needed to turn flat plates into 2.5D parallax shots. [Wave 4 Lane B]
+
+### Monocular depth estimation
+
+#### ZoeDepth ✅
+- **What:** Metric depth estimation from a single image — combines relative and metric depth (MiDaS + DPT backbones) with zero-shot transfer; torch.hub one-liner inference.
+- **URL:** https://github.com/isl-org/ZoeDepth
+- **License:** MIT (verified 2026-10-08: upstream README License badge "License: MIT").
+- **Use:** depth maps from plates → multiplane layer offsets; metric scale variant calibrates parallax displacement in world units.
+- **Lane note:** Wave 4 Lane B: drop-in depth-map generator for flat-plate → 2.5D camera moves.
+
+#### Depth Anything V2 ⚠️ weight-tier caveat — verify per use
+- **What:** Foundation model for monocular depth estimation (NeurIPS 2024) — fine-grained detail, robust open-world inference, image + video inference scripts.
+- **URL:** https://github.com/DepthAnything/Depth-Anything-V2
+- **License:** Apache-2.0 for the code repo (verified 2026-10-08: GitHub repo metadata "License: Apache License 2.0 (Apache-2.0)"). **Weight tiers differ:** Small = Apache-2.0, Base/Large/Giant = CC-BY-NC-4.0 non-commercial (verified 2026-10-08: upstream README "## LICENSE — Video-Depth-Anything-Small model is under the Apache-2.0 license. Video-Depth-Anything-Base/Large model is under the CC-BY-NC-4.0 license"; multiple downstream audits confirm Small Apache-2.0 / Base+ CC-BY-NC-4.0).
+- **Use:** high-detail depth maps for hero plates (Small tier is the commercially-safe choice); metric-depth variant for world-scale parallax.
+- **Lane note:** Wave 4 Lane B: best quality-per-effort depth estimator in the pocket, but ONLY the Small tier is commercial-safe.
+
+#### Marigold ✅
+- **What:** Diffusion-based (Stable Diffusion repurposed) affine-invariant monocular depth estimation — extremely sharp depth discontinuities at object edges; also a normals variant.
+- **URL:** https://github.com/prs-eth/marigold
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "License: Apache-2.0" badge).
+- **Use:** hero-frame depth for edge-critical plates (hair, foliage, character silhouettes); slower than discriminative models — still frames, not per-frame video.
+- **Lane note:** Wave 4 Lane B: the edge-quality depth option for plates where parallax layers must cut cleanly.
+
+#### Depth Pro ⚠️ Apple custom license — verify per use
+- **What:** Apple's foundation model for zero-shot metric monocular depth (ICLR 2025) — sharp high-frequency depth, metric scale, focal-length estimation; 2.25 MP depth map in ~0.3 s on GPU. (Upstream moved to github.com/apple-aiml-research/ml-depth-pro; github.com/apple/ml-depth-pro redirects.)
+- **URL:** https://github.com/apple/ml-depth-pro
+- **License:** Apple custom terms, NOT an OSI license (verified 2026-10-08: GitHub repo metadata "License: Other (NOASSERTION)"; upstream README "## License — This sample code is released under the LICENSE terms. The model weights are released under the LICENSE terms"). Downstream audits describe it as Apple Sample Code License text — "provided for your personal, non-commercial use only" — and the HF release under Apple's own ML-research (apple-amlr) non-commercial terms. **Commercial status unresolved — verify per use.**
+- **Use:** metric depth + focal-length estimates for camera-solved parallax shots; reference quality target for the commercial-safe estimators.
+- **Lane note:** Wave 4 Lane B: included for awareness as the quality bar; keep OUT of commercial paths until Apple terms are cleared.
+
+#### MoGe ✅
+- **What:** Microsoft's monocular geometry estimator (CVPR'25 Oral) — metric point maps, metric depth, surface normals, validity masks and camera FOV from a single open-domain image (v2 adds sharp detail + metric scale).
+- **URL:** https://github.com/microsoft/moge
+- **License:** MIT (verified 2026-10-08: upstream README "## License — MoGe code is released under the MIT license"; vendored DINOv2 code is Meta Apache-2.0).
+- **Use:** point-map + normal outputs feed mesh-warp / proxy-geometry parallax (not just depth planes); normals drive relighting on displaced layers.
+- **Lane note:** Wave 4 Lane B: the geometry-complete estimator — depth + normals + point maps for true 2.5D camera projection.
+
+#### DPT ✅
+- **What:** Dense Prediction Transformers (Ranftl et al., ICCV 2021) — ViT backbone + convolutional decoder for dense prediction; the architecture behind MiDaS v3 monocular depth and many segmentation heads.
+- **URL:** https://github.com/isl-org/DPT
+- **License:** MIT (verified 2026-10-08: upstream README "### License — MIT License"; third-party THIRD_PARTY_NOTICES confirm).
+- **Use:** baseline depth backbone for the parallax pipeline; also the reference dense-prediction architecture when training custom depth heads.
+- **Lane note:** Wave 4 Lane B: the classic dense-prediction baseline everything else is compared against.
+
+#### PatchFusion ✅
+- **What:** End-to-end tile-based framework for HIGH-RESOLUTION monocular metric depth — runs a base depth model (ZoeDepth / Depth-Anything) on tiles and fuses them, keeping detail at 2K+ plate resolutions.
+- **URL:** https://github.com/zhyever/PatchFusion
+- **License:** MIT (verified 2026-10-08: upstream README "License: MIT" badge).
+- **Use:** sharp depth maps for high-res background plates where single-pass estimators smear fine detail (architecture, foliage, crowd plates).
+- **Lane note:** Wave 4 Lane B: the hi-res-plate depth option — tile fusion keeps parallax layers crisp at 2K+.
+
+#### Video Depth Anything ⚠️ weight-tier caveat — verify per use
+- **What:** Consistent depth estimation for super-long videos (CVPR 2025 Highlight) — sliding-window diffusion/transformer hybrid that kills per-frame depth flicker on clips of 5+ minutes.
+- **URL:** https://github.com/DepthAnything/Video-Depth-Anything
+- **License:** Apache-2.0 code; weights split by tier (verified 2026-10-08: upstream README "## LICENSE — Video-Depth-Anything-Small model is under the Apache-2.0 license. Video-Depth-Anything-Base/Large model is under the CC-BY-NC-4.0 license. For business cooperation, please send an email to Hengkai Guo"). Small tier only is commercial-safe.
+- **Use:** temporally stable depth for moving-plate parallax shots and depth-driven camera moves — the no-flicker requirement for video plates.
+- **Lane note:** Wave 4 Lane B: the video-depth backbone; Small tier keeps it commercial-safe.
+
+<!-- end lane B wave 4 batch 1: monocular depth (8 entries) -->

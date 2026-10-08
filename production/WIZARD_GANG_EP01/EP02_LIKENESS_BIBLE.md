@@ -364,3 +364,8 @@ Every shot lists its characters and the anchor file for each. The generator prom
 a character cites the anchor file BY NAME. Verification is visual: the checker opens
 the anchor card and the shot frame side by side and confirms face/body/attire/pendant
 before the shot ships. Visual FAIL overrides any numerical pass.
+
+## ONYX CARTOON SKIN TONE (owner 2026-10-07 — anti-whitewash lock)
+- **#986646** (rgb 152,102,70) — sampled via dropper from her hand in ep02-shot-11-3.png (correct).
+- Onyx is a BLACK woman: body skin is ALWAYS this tone. Her FACE is fully painted white (clown-style, canon) — the white face is paint, never her skin.
+- Defect caught 2026-10-07: ep02-shot-27-1.png rendered her HANDS pale/whitewashed. Every Onyx render must have hands/body checked against #986646 before approval.

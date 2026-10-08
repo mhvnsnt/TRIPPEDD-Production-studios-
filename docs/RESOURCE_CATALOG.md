@@ -29883,3 +29883,155 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Resolves the ❓ entry. Genuinely useful free clipper IF the watermark-free claim holds — flag for verification before any published use. GOTCHA: relies on the video's EXISTING captions for analysis; uncaptioned source video limits it. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+### D. Demoscene / musicdisk deep catalog — Wave 32 Lane A (2026-10-08)
+
+#### Project 2612 🚫 rip-risk — Sega Genesis/Mega Drive VGM archive
+- **What:** Per-game VGM/VGZ music packages for Sega Genesis/Mega Drive (complete music dumps with track listings, loop points, composer/publisher credits per package).
+- **URL:** http://project2612.org (verified via archive.org mirrors of its per-game packages, Oct 2026)
+- **License:** 🚫 Game music rips — composers/publishers credited per package, no reuse grant. Same family as SMS Power / VGMrips.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference value for YM2612/SN76489 arrangement study (loop metadata, per-game completeness); NOT a music source. [Wave 32 Lane A]
+
+#### OC ReMix — video game music remix community 🚫 noncommercial content policy
+- **What:** 5,000+ judged fan remixes of video game music (searchable by game/composer/system/remixer); BitTorrent bundles.
+- **URL:** https://ocremix.org (Content Policy verified via ocremix.org wiki, Sep 2026 page generation)
+- **License:** 🚫 Custom Content Policy: non-exclusive license to use/redistribute/incorporate ONLY with NO profit made; attribution to ReMixer + "OverClocked ReMix (www.ocremix.org)" required. Underlying compositions remain publisher-copyrighted — commercial use needs the original publisher's license.
+- **Free tier:** Free downloads, no registration
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arrangement-craft reference (judged quality bar, production writeups); the NC clause + publisher rights make it research-only. ZirconTrax (their licensable catalog) is the commercial path, not the archive. [Wave 32 Lane A]
+
+#### SOASC — Stone Oakvalley's Authentic SID Collection ⚠️ per-tune rights
+- **What:** Automated REAL-hardware recordings (MOS 6581/8580 SID chips) of the HVSC + Compute's Gazette SID collections to MP3/FLAC — 48k+ tunes × multiple chip revisions (~145k files at last count).
+- **URL:** https://www.6581-8580.com (verified live Oct 2026; project site + stone-oakvalley-studios.com)
+- **License:** ⚠️ Per-tune composer rights (same as HVSC); project is a non-profit private preservation effort, no blanket reuse grant.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The reference for what SID music ACTUALLY sounds like on hardware vs emulators (chip-revision comparisons). Research/listening only. [Wave 32 Lane A]
+
+#### Mirsoft — World of Game Music ⚠️ per-file rights
+- **What:** Long-running database of video games with downloadable Amiga/PC game-music modules and MIDIs.
+- **URL:** http://www.mirsoft.info (verified live; gamemusic.php section)
+- **License:** ⚠️ Per-file rights — no published license grant; game-music rips/modules.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful as a module-format corpus index (MOD/MIDI per game); not a cleared music source. [Wave 32 Lane A]
+
+#### Hornet Archive — first Internet demo archive (1992–1998) ⚠️ per-file rights
+- **What:** The first major Internet demoscene file repository (16k+ files, 7GB: demos, tracker music, graphics, diskmags, demoparty releases, 1987–1998). Closed 1998-09-22; files permanently moved to scene.org in 2002.
+- **URL:** https://hornet.org (verified live Oct 2026 — archive front + DemoNews archive + music-contest pages)
+- **License:** ⚠️ Per-production rights; historical material, no blanket grant.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical value: the 6 international Music Contests + Hornet MODs vol. 1/2 and MindCandy compilations are early-90s tracker-music time capsules. Live files now resolve via scene.org. [Wave 32 Lane A]
+
+#### Defacto2 — BBS/scene file archive ⚠️ per-file rights
+- **What:** Scene file database (demos, intros, musicdisks, cracktros, NFO art) with per-file pages and downloads; documents BBS-era artifacts.
+- **URL:** https://defacto2.net (verified live Oct 2026)
+- **License:** ⚠️ Per-file rights — files are scene productions, no blanket reuse grant.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Musicdisk/cracktro section complements pouët/demozoo indexes with BBS-era files scene.org never carried. Research only. [Wave 32 Lane A]
+
+#### SMW Central — custom music (SPC) section ⚠️ per-author rights
+- **What:** Super Mario World hacking community's moderated custom-music section: thousands of SNES SPC ports with author credits (ports of game music + originals for ROM hacks).
+- **URL:** https://www.smwcentral.net (custom music section; verified active Oct 2026)
+- **License:** ⚠️ Per-author rights — submissions remain the authors' property; many ports are of copyrighted game compositions. No reuse grant.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** N-SPC arrangement study corpus (how composers fit music into the SNES 8-channel/64KB-ARAM box); porting technique notes are the value, not the audio. [Wave 32 Lane A]
+
+#### Modules.pl — Polish tracker-module archive ⚠️ per-module rights
+- **What:** Module download archive (MOD/XM/S3M/IT) used as a source by Amiga tooling (AmiModRadio lists it alongside AMP/Modland/ModArchive).
+- **URL:** https://modules.pl (verified referenced as live download source, 2026)
+- **License:** ⚠️ Per-module rights — no published blanket license; modules remain authors' copyright.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One more .mod/.xm/.s3m/.it corpus mirror beyond the covered hubs; per-module check before any use. [Wave 32 Lane A]
+
+#### Modland — terms audit ⚠️ per-module rights
+- **What:** Long-running FTP module archive (ftp.modland.com/pub/modules — author-organized MOD/XM/S3M/IT/MED/SID tree).
+- **URL:** https://ftp.modland.com (audited via live mirror index nnty.fun, Oct 2026, showing the ftp.modland.com path tree)
+- **License:** ⚠️ Per-module rights — NO published license grant found; modules organized by author directories, authors retain copyright (standard scene-archive posture; DMCA-style takedown contact published on mirrors).
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Largest per-author-organized module tree after AMP; the author-directory structure is itself the rights signal (no PD/CC filtering — check each module). Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### SNESmusic.org — terms audit 🚫 nonprofit/personal use only
+- **What:** The most complete SPC archive (per-game RSN sets + whole-archive torrent, 707 seeders at last count).
+- **URL:** http://snesmusic.org (audited via the site's OWN disclaimer page, crawled Oct 2026)
+- **License:** 🚫 Site's own words: all files copyrighted by respective artists/companies; "educational and personal non-profit use only … fair use samples for preservation purposes only"; every further use needs the copyright holder's approval.
+- **Free tier:** Free downloads + torrent
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry — and the finding is a DOWNGRADE to 🚫: the site explicitly limits use to nonprofit/personal. Reference corpus for SPC format study only. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Trax in Space — terms audit ⚠️ per-upload license
+- **What:** Community tracker-music upload archive (registration-gated uploads).
+- **URL:** https://www.traxinspace.com (audited via contemporary user reports of its upload terms, Renoise forum 2007)
+- **License:** ⚠️ Per-upload license — upload flow historically required accepting a license grant (CC-style per contemporary reports); no current public terms page verified this pass, so per-module check stands.
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (music/tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Community-upload model means SOME modules may carry CC grants — check the per-module license field where present. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Nectarine — stream audit ⚠️ stream-only
+- **What:** Demoscene music radio (scenemusic.net): 24/7 stream + ~35k-song artist/group database (SID/MOD/XM/IT through FLAC/MP3/AAC).
+- **URL:** https://www.scenemusic.net (audited via retro32 writeup + Kodi wiki addon docs; stream live 2026)
+- **License:** ⚠️ Stream-only — a tribute streaming site; no download/reuse grant published. Tracks remain their artists' copyright.
+- **Free tier:** Free 24/7 stream (192kbps)
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Listening/reference only — the database is the discovery value (artist/group cross-references). Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### SceneSat — stream audit ⚠️ stream-only
+- **What:** Demoscene/chiptune/netlabel/game-music radio (Stockholm, est. 2004): 24/7 stream + live demoparty broadcasts + show archive.
+- **URL:** https://scenesat.com (audited live 2026-10-08 — on-air schedule current, Deadline 2026 party coverage)
+- **License:** ⚠️ Stream-only — non-profit volunteer station; no download/reuse grant.
+- **Free tier:** Free 24/7 streams (MP3 up to 320kbps, AAC+)
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. NOTE: hosts the Mod Archive's download mirrors ("hosted by SceneSat") — the mirror-hosting relationship is worth knowing when pulling Mod Archive files. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Slay Radio — stream audit ⚠️ stream-only
+- **What:** C64/Amiga remix radio (slayradio.org, streaming 24/7 since 1999): classic SID tunes, modern remixes, live DJ shows with archives.
+- **URL:** https://www.slayradio.org (audited live 2026-10-08 — show schedule current)
+- **License:** ⚠️ Stream-only — station streams remixes; no reuse grant; remix rights sit with remixers + original composers.
+- **Free tier:** Free 24/7 stream
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Listening/reference only. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Pouët.net — index audit ⚠️ per-production rights
+- **What:** Demoscene production index + BBS (est. 2000): prods link to downloads hosted on scene.org or author sites; active news feed.
+- **URL:** https://www.pouet.net (audited live 2026-10-08 — BBS active, news feed current, downloads "lobstregated at Scene.org")
+- **License:** ⚠️ Per-production rights — the index grants no license; each production's rights sit with its authors. Download URLs are external.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/reference)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. The musicdisk prod-type filter is the music-discovery path; rights must be checked per production (scene.org hosting ≠ rights grant). Resolves the ❓ with terms. [Wave 32 Lane A]

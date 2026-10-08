@@ -39640,3 +39640,153 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### Clinkster (Loonies) ❓ source-available, license undeclared
+- **What:** Clinkster — software synthesizer by Blueberry/Loonies for 4k intros; VST instrument (Windows/Mac) with source, simple 18-slider interface, phase-modulation stereo sound, player source for Windows.
+- **URL:** https://www.pouet.net/prod.php?which=61592 (pouët.net prod page)
+- **License:** ❓ unverified — source distributed with the VST, but no license statement found (verified 2026-10-08 via pouët.net nfo)
+- **Free tier:** free download + source
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Ask before shipping. [Wave 45 Lane A]
+
+#### miditrack (nihondo) ❓ no license grant found
+- **What:** miditrack — command-line utilities converting chiptune formats to MIDI: nsf2midi, spc2midi, vgm2midi (clean-room reimplementation, not Gigo's).
+- **URL:** https://github.com/nihondo/miditrack
+- **License:** ❓ unverified — no LICENSE file, GitHub API spdx None (verified 2026-10-08)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Do not ship without resolving the missing grant. [Wave 45 Lane A]
+
+#### Oidos (askeksa) ✅ Zlib
+- **What:** Oidos — software synthesizer based on additive synthesis, for music in very small executables (4k/8k intros); unique 'overtone' and 'fatness' parameters.
+- **URL:** https://github.com/askeksa/Oidos
+- **License:** ✅ Zlib (verified 2026-10-08: GitHub API spdx_id Zlib; pushed 2026-03-07, active)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial-safe 4k-synth path. [Wave 45 Lane A]
+
+#### Soundbox (mbitsnbites) ❓ no license grant found
+- **What:** Soundbox — HTML5 synth music tracker/editor, suitable for creating music for small JavaScript demos (4K/8K).
+- **URL:** https://github.com/mbitsnbites/soundbox
+- **License:** ❓ unverified — no LICENSE file, GitHub API spdx None (verified 2026-10-08; pushed 2023-08-31)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Do not ship without resolving the missing grant. [Wave 45 Lane A]
+
+#### libxm (Artefact2) ✅ WTFPL
+- **What:** libxm — small XM (FastTracker II Extended Module) player library in C; minimal-dependency replay.
+- **URL:** https://github.com/Artefact2/libxm
+- **License:** ✅ WTFPL (verified 2026-10-08: GitHub API spdx_id WTFPL; pushed 2025-12-24, active)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Commercial-safe tiny XM replay (distinct from libxmp). [Wave 45 Lane A]
+
+#### ghostsyn (juippi/faemiyah) ❓ no license grant found
+- **What:** ghostsyn — software synthesizer for 4k Linux intros (ia32 assembly + C++ tracker, FreeBSD/Linux); visual graph editor, tracker-like UI, reverb/delay/compressor.
+- **URL:** https://github.com/juippi/ghostsyn
+- **License:** ❓ unverified — no LICENSE file, GitHub API spdx None (verified 2026-10-08)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Do not ship without resolving the missing grant. [Wave 45 Lane A]
+
+#### DATTRACK (kcitak04/mobtrack) ❓ no license grant found
+- **What:** DATTRACK — mobile Amiga-style music tracker (Web Audio/AudioWorklet) in one HTML file + Android APK; 8 stereo tracks, 4-op FM/PAD/LEAD synths, MOD import/export, WAV/AIFF/FLAC/Ogg export.
+- **URL:** https://github.com/kcitak04/mobtrack
+- **License:** ❓ unverified — no LICENSE file, GitHub API spdx None (verified 2026-10-08; pushed 2026-09-26, active)
+- **Free tier:** source on GitHub, web app + APK
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Do not ship without resolving the missing grant. [Wave 45 Lane A]
+
+#### WaveSabre (logicomacorp) ✅ MIT
+- **What:** WaveSabre — software synthesizer and toolchain for music in 64K intros (Logicoma/Conspiracy); Slaughter (wavetable+FM+formant), Falcon (subtractive+unison), Adultery.
+- **URL:** https://github.com/logicomacorp/WaveSabre
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; pushed 2025-06-12)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial-safe 64k-synth path. [Wave 45 Lane A]
+
+#### pulsejet (logicomacorp) ✅ MIT
+- **What:** pulsejet — bespoke sample-compression codec for 64k intros (Logicoma); squeezes samples into tiny executables.
+- **URL:** https://github.com/logicomacorp/pulsejet
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; pushed 2024-03-21)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial-safe. [Wave 45 Lane A]
+
+#### chipsound (gamosoft) ❓ no license grant found
+- **What:** chipsound — modern, themeable browser-based player for tracker music (MOD/S3M/XM/IT); drag-and-drop, zero install, at chipsound.com.
+- **URL:** https://github.com/gamosoft/chipsound
+- **License:** ❓ unverified — GitHub API NOASSERTION, no LICENSE file found (verified 2026-10-08; pushed 2026-09-25, active)
+- **Free tier:** source on GitHub, live player
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Do not ship without resolving the missing grant. [Wave 45 Lane A]
+
+#### chiptune-meta-player (ngeiswei) ❓ no license grant found
+- **What:** chiptune-meta-player — shell script playing chiptunes in random order from various archives (Modland, Mod Archive, HVSC, ASMA, SNESMusic, etc.); documents 13 chiptune archive URLs.
+- **URL:** https://github.com/ngeiswei/chiptune-meta-player
+- **License:** ❓ unverified — GitHub API spdx None (verified 2026-10-08)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful archive-URL reference list. [Wave 45 Lane A]
+
+#### vgmp (niekvlessert) ✅ MIT
+- **What:** VGMP — fast offline-first Android player for video game music formats (VGM/VGZ, NSF/GBS/SPC, KSS, trackers, MIDI, Doom MUS); VGMRips downloader, per-chip volume, per-channel spectrum.
+- **URL:** https://github.com/niekvlessert/vgmp
+- **License:** ✅ MIT (verified 2026-10-08: GitHub API spdx_id MIT; pushed 2026-03-02)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial-safe Android chiptune player reference. [Wave 45 Lane A]
+
+#### modsamplemaster.org ❓ module info database
+- **What:** .mod Sample Master — module info database (modsamplemaster.org); detailed metadata for tracker modules (format, author, SHA1/SHA256, Demozoo links, Modarchive/Modland instances).
+- **URL:** https://modsamplemaster.org/
+- **License:** ❓ unverified — no license/terms statement found (verified 2026-10-08)
+- **Free tier:** free access
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Metadata reference; not a download source. [Wave 45 Lane A]
+
+#### Axiom (monadgroup) ❓ no license grant found
+- **What:** Axiom — powerful realtime node-based audio synthesizer (demoscene-adjacent).
+- **URL:** https://github.com/monadgroup/axiom
+- **License:** ❓ unverified — GitHub API NOASSERTION (verified 2026-10-08)
+- **Free tier:** source on GitHub
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Do not ship without resolving the missing grant. [Wave 45 Lane A]
+
+#### Abyss AHX Tunes (amigascne.org) ❓ historical archive, license undeclared
+- **What:** Abyss AHX Tunes — historical Amiga AHX/THX chiptune archive (amigascne.org/abyss); online since 1997, last updated 1998.
+- **URL:** http://amigascne.org/abyss/ahx/tunes.html
+- **License:** ❓ unverified — no license/terms statement found on the 1998-era page (verified 2026-10-08: site live)
+- **Free tier:** free access
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical reference; ask before shipping. [Wave 45 Lane A]

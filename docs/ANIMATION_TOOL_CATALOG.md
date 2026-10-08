@@ -4202,3 +4202,49 @@ Monocular depth estimation, image/video segmentation & matting, layer decomposit
 - **Lane note:** Wave 4 Lane B: the MIT text-to-mask tool — code is clean, check weight terms separately.
 
 <!-- end lane B wave 4 batch 4: segmentation part 2 (7 entries) -->
+
+### Layer decomposition / multiplane image (MPI) / 2.5D synthesis
+
+#### AdaMPI ⚠️ non-commercial — research only
+- **What:** Single-view view synthesis in the wild with learned Adaptive Multiplane Images (SIGGRAPH 2022) — predicts an adaptive MPI from one in-the-wild image; includes the warp-back self-supervision strategy for training on single-view collections.
+- **URL:** https://github.com/yxuhan/AdaMPI
+- **License:** custom non-commercial (verified 2026-10-08: upstream README "## License and Citation — This repository can only be used for personal/research/non-commercial purposes."). **Non-commercial only.**
+- **Use:** the canonical MPI reference for single-image → 3D-photo parallax; warp-back training strategy is reusable technique knowledge.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge — the MPI method everything is compared against, NC terms block shipping.
+
+#### 3D Ken Burns ⚠️ non-commercial — CC BY-NC-SA 4.0
+- **What:** 3D Ken Burns effect from a single image (TOG 2019, Adobe Research) — depth → point cloud → inpainted novel views along a camera path; the original automatic 2.5D camera-move system.
+- **URL:** https://github.com/sniklaus/3d-ken-burns
+- **License:** CC BY-NC-SA 4.0 (verified 2026-10-08: upstream README "## license — This is a project by Adobe Research. It is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0) and may only be used for non-commercial purposes."). **Non-commercial only.**
+- **Use:** reference implementation of the full single-image → camera-move pipeline; camera-path design patterns are reusable.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge — the granddaddy of automatic parallax moves, NC terms block shipping.
+
+#### 3D Photo Inpainting ✅
+- **What:** 3D photography using context-aware layered depth inpainting (CVPR 2020) — depth → layered depth images (LDI) with color+depth inpainting of occluded regions → mesh for novel-view rendering.
+- **URL:** https://github.com/vt-vl-lab/3d-photo-inpainting/
+- **License:** MIT (verified 2026-10-08: upstream README "## License — This work is licensed under MIT License. See LICENSE for details"; LICENSE file is MIT text). Caveat: builds on EdgeConnect (CC-BY-NC per downstream ports) — verify bundled components before shipping.
+- **Use:** layered-depth-image parallax with inpainted occlusions — the commercial-safe single-image 3D-photo pipeline; LDI is the natural layer format for the editor.
+- **Lane note:** Wave 4 Lane B: the MIT-licensed 3D-photo pipeline — depth → LDI → inpaint → mesh, directly shippable with the EdgeConnect caveat checked.
+
+#### OmnimatteRF ✅
+- **What:** Robust omnimatte with 3D background modeling (ICCV 2023) — decomposes a video into dynamic 2D foreground RGBA layers + a static 3D (TensoRF) background; successor to Omnimatte.
+- **URL:** https://github.com/peterzs/omnimatterf
+- **License:** MIT (verified 2026-10-08: upstream README "## Acknowledgements — The code is available under the MIT license").
+- **Use:** video-plate decomposition into foreground layers + clean background plate — the source layers for video parallax shots and background replacement.
+- **Lane note:** Wave 4 Lane B: the MIT video layer-decomposer — foreground/background split as editable layers.
+
+#### One Shot 3D Photography ✅
+- **What:** Facebook's one-shot 3D photography (SIGGRAPH 2020) — single image → depth → layered mesh for real-time 3D photos; the production version of the Facebook 3D-photo feature.
+- **URL:** https://github.com/shishenghuang/one_shot_3d_photography
+- **License:** MIT (verified 2026-10-08: upstream README "## License — This work is licensed under MIT License. See LICENSE for details").
+- **Use:** real-time single-image 3D-photo meshes; the shipping-proven path from plate to view-dependent parallax.
+- **Lane note:** Wave 4 Lane B: the production-proven MIT 3D-photo code — Facebook's own shipping pipeline.
+
+#### Layered Neural Atlases ✅
+- **What:** Layered neural atlases for consistent video editing (SIGGRAPH Asia 2021) — unwraps a video into layered 2D atlases (foreground/background) via end-to-end optimization; edits painted once propagate consistently across frames.
+- **URL:** https://github.com/ykasten/layered-neural-atlases
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)").
+- **Use:** consistent layered decomposition of video plates — edit the atlas once (repaint, relight, replace) and it holds across the whole parallax shot.
+- **Lane note:** Wave 4 Lane B: the MIT atlas representation — video → editable layers with temporal consistency built in.
+
+<!-- end lane B wave 4: 2.5D parallax (37 entries; 4 GPL-family rows → quarantine 167-170) -->

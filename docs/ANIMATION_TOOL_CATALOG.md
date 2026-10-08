@@ -4151,3 +4151,54 @@ Monocular depth estimation, image/video segmentation & matting, layer decomposit
 - **Lane note:** Wave 4 Lane B: the one-model universal segmenter — fewer checkpoints to manage in the plate pipeline.
 
 <!-- end lane B wave 4 batch 3: segmentation part 1 (8 entries) -->
+
+#### SegFormer ⚠️ non-commercial — NVIDIA Source Code License
+- **What:** Simple and efficient semantic segmentation with Mix Transformer encoders (NeurIPS 2021, NVIDIA) — B0–B5 family; the classic fast semantic segmenter.
+- **URL:** https://github.com/NVlabs/SegFormer
+- **License:** NVIDIA Source Code License, non-commercial (verified 2026-10-08: upstream README "## License — Please check the LICENSE file. SegFormer may be used non-commercially, meaning for research or evaluation purposes only"). **Non-commercial only.**
+- **Use:** lightweight semantic masks for quick plate analysis; reference for replacing with Mask2Former/OneFormer in commercial paths.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; HF transformers re-implementation (Apache-2.0) exists but NVIDIA weights stay NC.
+
+#### MODNet ✅
+- **What:** Real-time trimap-free portrait matting via objective decomposition (AAAI 2022) — semantic + detail + fusion heads with self-supervised consistency; 67 FPS at 512×512.
+- **URL:** https://github.com/ZHKKKe/MODNet
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "## License — The code, models, and demos in this repository (excluding GIF files under the folder doc/gif) are released under the Apache License 2.0 license").
+- **Use:** real-time alpha mattes for human subjects in parallax shots — foreground character cutout without a trimap; also ships an official ONNX export script.
+- **Lane note:** Wave 4 Lane B: the real-time human matting workhorse for character-layer extraction.
+
+#### P3M ⚠️ verify per use — code license unstated
+- **What:** Privacy-preserving portrait matting (ACM MM 2021) — multi-task dense prediction on the P3M-10k face-blurred dataset; strong on real-world portraits.
+- **URL:** https://github.com/JizhiziLi/P3M
+- **License:** dataset P3M-10k released under MIT per its dataset release agreement (downstream citations also record "MIT"; one analysis notes CC BY 4.0 with attribution for the dataset). **No explicit license statement found for the code itself — verify per use.**
+- **Use:** portrait-matte quality reference trained on face-blurred real photos; privacy-safe training-data pattern for custom matting models.
+- **Lane note:** Wave 4 Lane B: included with the honest badge — dataset terms are permissive, code terms need a direct read.
+
+#### DINOv2 ✅
+- **What:** Meta's self-supervised vision foundation model — rich dense features from ViT-S/B/L/g; the feature backbone behind depth, matching and segmentation adapters.
+- **URL:** https://github.com/facebookresearch/dinov2
+- **License:** Apache-2.0 (verified 2026-10-08: multiple downstream THIRD_PARTY_LICENSES — "DINOv2 is Apache-2.0 licensed"; upstream MODEL_CARD + LICENSE).
+- **Use:** feature backbone for mask refinement and correspondence between parallax layers; frozen features for plate element retrieval/matching.
+- **Lane note:** Wave 4 Lane B: the universal feature extractor the rest of the stack fine-tunes on.
+
+#### SimpleClick ✅
+- **What:** Interactive image segmentation with plain Vision Transformers (ICCV 2023) — click-based mask refinement; plain-ViT backends load MAE-pretrained weights.
+- **URL:** https://github.com/uncbiag/SimpleClick
+- **License:** MIT (verified 2026-10-08: upstream README "## License — The code is released under the MIT License"; downstream vendoring notices concur).
+- **Use:** human-in-the-loop mask correction in the plate editor — click to fix layer boundaries SAM missed.
+- **Lane note:** Wave 4 Lane B: the MIT click-to-fix tool for interactive layer cleanup.
+
+#### TRACER ✅
+- **What:** Extreme attention-guided salient object tracing network — edge-sharp salient object detection with FFT-based masked edge attention; SOTA on 5 SOD benchmarks.
+- **URL:** https://github.com/Karel911/TRACER
+- **License:** Apache-2.0 (verified 2026-10-08: downstream license audit — "TRACER is licensed under Apache License 2.0"; arXiv paper links the repo as the release).
+- **Use:** salient-object masks as the first auto-cut pass on plates; edge-attention gives cleaner layer boundaries than plain saliency.
+- **Lane note:** Wave 4 Lane B: the permissive salient-object cutter for fast foreground/background splits.
+
+#### CLIPSeg ✅
+- **What:** Image segmentation using text AND image prompts (CVPR 2022) — CLIP-conditioned decoder; "a photo of a wrestler" → mask without class training.
+- **URL:** https://github.com/timojl/clipseg
+- **License:** MIT for source code excluding model weights (verified 2026-10-08: upstream README "### License — The source code files in this repository (excluding model weights) are released under MIT license").
+- **Use:** text-prompted masks for named plate elements ("crowd", "ring ropes", "turnbuckle"); lightweight alternative to Grounded-SAM for simple prompts.
+- **Lane note:** Wave 4 Lane B: the MIT text-to-mask tool — code is clean, check weight terms separately.
+
+<!-- end lane B wave 4 batch 4: segmentation part 2 (7 entries) -->

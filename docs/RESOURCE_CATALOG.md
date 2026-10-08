@@ -7554,8 +7554,8 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Free tier:** fully free
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** PBS-maintained; format normalization for the caption pipeline. [Wave 7 A]
+- **Status:** WIRED — run-proven (Wave 54 Lane C, 2026-10-08)
+- **Notes:** PBS-maintained; format normalization for the caption pipeline. [Wave 7 A] Proof: tools/wave54_lane_c/wire_pycaption.py (pycaption 2.3.13, Apache-2.0 re-verified via GitHub API spdx_id) — real Wave-53 proof SRT (22 cues) converted to WebVTT/SCC/DFXP/SAMI + round-trips: WebVTT/DFXP/SAMI lossless (22 cues, text exact, 0 us timing error); SCC text-lossless (22/22) but timing drifts (max 883.6 ms abs start error — upstream SCCReader time-base quirk, documented; keep SRT/WebVTT as source of truth); byte-deterministic; 18/18 checks PASS. Artifacts: proofs/pycaption/ + SHA256SUMS + PROOFS.md. Quirk: DFXP reader emits BeautifulSoup XMLParsedAsHTMLWarning when lxml absent — harmless here.
 
 #### srt ✅ commercial-safe
 - **What:** Python SRT parsing and composition library
@@ -7564,8 +7564,8 @@ Five Wave-4 quarantine rows had no catalog entry at all (reconciliation gap foun
 - **Free tier:** fully free
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
-- **Status:** not-started
-- **Notes:** Tiny and dependable; SRT read/write for tooling. [Wave 7 A]
+- **Status:** WIRED — run-proven (Wave 54 Lane C, 2026-10-08)
+- **Notes:** Tiny and dependable; SRT read/write for tooling. [Wave 7 A] Proof: tools/wave54_lane_c/wire_srt_lib.py (srt 3.5.3, MIT re-verified via GitHub API spdx_id) — real Wave-53 proof SRT: 22 cues parsed, parse→compose byte-identical (867 B), cues monotonic and inside 7.825 s audio, 22 words match ground truth; +500 ms retime exact on first/last cue, shifted file re-parses to 22 cues; byte-deterministic; 10/10 checks PASS. Artifacts: proofs/srt_lib/ + SHA256SUMS + PROOFS.md.
 
 #### webvtt-py ✅ commercial-safe
 - **What:** Python WebVTT read/write/segment library

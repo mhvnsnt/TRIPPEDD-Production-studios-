@@ -33944,3 +33944,417 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Honest drops (failures documented, no entries):** Werkkzeug1 (no verifiable upstream/license located); kkrunchy (covered by the existing fr_public entry — lives in farbrausch/fr_public); V2 synth (covered by fr_public); NightFoxLib (no repo located); Tonc (license not verified this pass — coranac.com fetch failed); amiga-gcc (canonical bebbo repo 404s, only third-party mirrors remain); NESLib/Shiru (no GitHub upstream located); Kick Assembler, 64tass, vasm, vbcc, ACME, pasmo (upstream/license not verified this pass); HuC, Fusion-C, SDCC (already covered or unverified); NYT/WNYC audiogram-generator (repo 404s/gone); Exomizer commercial use (NC — cataloged as research-only instead).
 - **Quarantine rows added:** 16 (rows 279–294: GBDK-2020 GPL-2.0+LE, devkitSMS GPL-2.0+exception, PSn00bSDK MPL-2.0, mkpsxiso GPL-2.0, WLA DX GPL-2.0-or-later, batari Basic GPL-2.0, DASM GPL-2.0, 7800basic GPL-2.0, MSXgl CC-BY-SA-4.0, CPCtelera LGPL-3.0, ngdevkit LGPL-3.0, AzuraCast AGPL-3.0, AntennaPod GPL-3.0, BUTT GPL-2.0, Rivendell GPL-2.0, OpenBroadcaster AGPL-3.0). Header counts refreshed: 294 rows · 271 distinct.
 - **Key findings:** the retro homebrew SDK space is overwhelmingly permissive (MIT/zlib/Unlicense dominate; the GPL entries cluster around assemblers and BASIC compilers, most with output exemptions); the demoscene compressor space splits cleanly (Crinkler/Shrinkler/ZX7/ZX0/LZSA commercial-safe vs Exomizer NC); the podcast/radio open-source space is thin on permissive licenses (AzuraCast AGPL, AntennaPod GPL, BUTT/Rivendell GPL, OpenBroadcaster AGPL — libebur128 MIT and the Podlove BSD/MIT tools are the commercial-safe islands); the CC0/CC-BY game-audio long tail is heavily picked-over (major packs all cataloged in earlier waves — Abundant Music CC0 and MachinimaSound's 2026 license change were the two fresh finds).
+
+## Wave 38 Lane A — new entries (2026-10-08)
+
+### Pocket 1: Open film/VFX production tool tail (color pipelines, DIT, VFX plates, production management)
+
+#### xSTUDIO ✅ commercial-safe
+- **What:** xSTUDIO — Academy Software Foundation playback/review application for VFX editorial review (successor lineage to RV-style review)
+- **URL:** https://github.com/AcademySoftwareFoundation/xstudio
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on AcademySoftwareFoundation/xstudio)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** ASWF review app; pairs with Open RV for the review lane. [Wave 38 Lane A]
+
+#### Open RV ✅ commercial-safe
+- **What:** Open RV — Academy Software Foundation image-sequence/movie review player (the open-sourced Autodesk RV)
+- **URL:** https://github.com/AcademySoftwareFoundation/OpenRV
+- **License:** Apache-2.0 (verified 2026-10-08 via raw LICENSE.md: "Open RV code base is licensed pursuant to Apache 2.0"; GitHub API returns NOASSERTION = detection gap, the file is the source of truth)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The industry-standard review player, now open. Dailies/review lane for the cartoon pipeline. [Wave 38 Lane A]
+
+#### colour (colour-science) ✅ commercial-safe
+- **What:** colour — Python colour-science toolkit (colour models, transfer functions, chromatic adaptation, spectral data)
+- **URL:** https://github.com/colour-science/colour
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id on colour-science/colour)
+- **Free tier:** fully open (pip-installable)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The reference implementation for colour math; useful for LUT generation and color-pipeline validation scripts. [Wave 38 Lane A]
+
+#### OpenColorIO-Config-ACES ✅ commercial-safe
+- **What:** OpenColorIO-Config-ACES — the official ACES OCIO configuration (ACES 1.x/2.x reference configs for production color pipelines)
+- **URL:** https://github.com/AcademySoftwareFoundation/OpenColorIO-Config-ACES
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Drop-in ACES config for the already-wired OpenColorIO; gives the pipeline a real scene-referred color backbone. [Wave 38 Lane A]
+
+#### CTL (aces-aswf) ✅ commercial-safe
+- **What:** CTL — the Color Transformation Language interpreter (AMPAS/ASWF): the reference implementation that executes ACES CTL transforms
+- **URL:** https://github.com/aces-aswf/CTL
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on aces-aswf/CTL; note: repo moved from ampas/ctl — redirect confirmed)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Executes the actual ACES math; niche but the canonical color-transform runtime. [Wave 38 Lane A]
+
+#### MaterialX ✅ commercial-safe
+- **What:** MaterialX — Academy Software Foundation open standard for rich material/look definitions (shaders, patterns, BxDFs) with code generation
+- **URL:** https://github.com/AcademySoftwareFoundation/MaterialX
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Material interchange for the 3D side; Blender ships MaterialX support (see Blender license manifest). [Wave 38 Lane A]
+
+#### OpenUSD ✅ commercial-safe (modified Apache 2.0 — trademark clause differs)
+- **What:** OpenUSD — Pixar's Universal Scene Description: interchange, layering, and composition for 3D scenes
+- **URL:** https://github.com/PixarAnimationStudios/OpenUSD
+- **License:** Tomorrow Open Source Technology License 1.0 — a modified Apache 2.0 (verified 2026-10-08 via raw LICENSE.txt: "differs from the original Apache License 2.0 in the following manner. Section 6 (Trademarks) is different"; GitHub API NOASSERTION = detection gap). Permissive; the only delta is the trademark section.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The 3D scene interchange standard; AYON ships USD resolvers for it. Trademark-clause delta noted honestly — no copyleft. [Wave 38 Lane A]
+
+#### OpenVDB ✅ commercial-safe
+- **What:** OpenVDB — Academy Software Foundation sparse volumetric data library (smoke, fire, clouds)
+- **URL:** https://github.com/AcademySoftwareFoundation/openvdb
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Volumetric interchange; overkill for the 2D cartoon but the honest tail entry for the VFX pocket. [Wave 38 Lane A]
+
+#### Alembic ✅ commercial-safe
+- **What:** Alembic — ILM-originated geometry cache interchange (baked animation, sim caches)
+- **URL:** https://github.com/alembic/alembic
+- **License:** BSD-3-Clause (verified 2026-10-08 via raw LICENSE.txt carrying SPDX-License-Identifier: BSD 3-Clause; GitHub API NOASSERTION = detection gap)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Baked-geometry handoff between DCCs; Blender reads/writes Alembic natively. [Wave 38 Lane A]
+
+#### Ptex ✅ commercial-safe
+- **What:** Ptex — Disney's per-face texture mapping system (no UVs needed)
+- **URL:** https://github.com/wdas/ptex
+- **License:** BSD-style (verified 2026-10-08 via raw LICENSE: classic BSD redistribution conditions, © Disney Enterprises; GitHub API NOASSERTION = detection gap)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Niche texture path; honest tail entry. [Wave 38 Lane A]
+
+#### Partio ✅ commercial-safe
+- **What:** Partio — Disney's particle I/O library (reads/writes particle caches across formats)
+- **URL:** https://github.com/wdas/partio
+- **License:** BSD-style (verified 2026-10-08 via raw LICENSE: BSD conditions, © Disney Enterprises; GitHub API NOASSERTION = detection gap)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Particle-cache interchange; honest tail entry. [Wave 38 Lane A]
+
+#### OpenShadingLanguage ✅ commercial-safe
+- **What:** OpenShadingLanguage — Academy Software Foundation shading language for programmable shaders in renderers
+- **URL:** https://github.com/AcademySoftwareFoundation/OpenShadingLanguage
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Renderer-side shading language; deep tail, documented for completeness. [Wave 38 Lane A]
+
+#### DJV (grizzlypeak3d) ✅ commercial-safe
+- **What:** DJV — Darby Johnston's professional image-sequence review/playback tool (VFX dailies viewer)
+- **URL:** https://github.com/grizzlypeak3d/DJV
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id; note: repo moved from darbyjohnston/DJV — redirect confirmed)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight dailies viewer; simpler wire-up than Open RV for quick sequence checks. [Wave 38 Lane A]
+
+#### LightZone ✅ commercial-safe
+- **What:** LightZone — digital darkroom / raw photo editor (zone-system based editing)
+- **URL:** https://github.com/ktgw0316/LightZone
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id on ktgw0316/LightZone, the maintained fork)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** DIT-adjacent raw processing with a permissive license (unlike the GPL raw editors in quarantine). [Wave 38 Lane A]
+
+#### AYON ⚠️ conditional — server is Fair Source (FSL-1.1-ALv2), addons Apache-2.0
+- **What:** AYON — Ynput's modular animation/VFX/games pipeline platform (asset management, production tracking, publishing); successor to OpenPype
+- **URL:** https://github.com/ynput/ayon-backend
+- **License:** ⚠️ MIXED — AYON Server (ayon-backend, ayon-frontend) moved from Apache-2.0 to Functional Source License FSL-1.1-ALv2 (verified 2026-10-08 via Ynput's "AYON server is adopting Fair Source" announcement + the license-change commits; Fair Source is NOT OSI open source — it restricts competing-service use). Desktop integrations and addons remain Apache-2.0. NOT commercial-safe as a blanket grant.
+- **Free tier:** source-available; self-hostable under FSL terms
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** The honest catch of this wave: AYON looks like the permissive ftrack alternative but the server is Fair Source since v1.7.0 (2025). Usable for internal production tracking, but read FSL-1.1 before any commercial distribution or hosted offering. [Wave 38 Lane A]
+
+#### OpenPype ✅ commercial-safe (archived upstream)
+- **What:** OpenPype — Ynput's previous-generation open pipeline (production tracking, publishing); archived in favor of AYON
+- **URL:** https://github.com/ynput/OpenPype
+- **License:** MIT (verified 2026-10-08 via raw LICENSE: "MIT License, Copyright (c) 2020 Orbi Tools s.r.o."; repo is ARCHIVED upstream)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Archived; useful as reference/study material or a frozen self-hosted tracker. Note: older docs referenced GPL-3.0 — the current upstream LICENSE file is MIT. [Wave 38 Lane A]
+
+#### LibRaw ⚠️ license-conditional (LGPL-2.1 / CDDL dual — no quarantine row per LGPL rule)
+- **What:** LibRaw — raw-image decoder library (powers most open raw workflows; DIT staple)
+- **URL:** https://github.com/LibRaw/LibRaw
+- **License:** ⚠️ Dual LGPL-2.1 / CDDL (verified 2026-10-08 via repo root: LICENSE.LGPL + LICENSE.CDDL; GitHub API NOASSERTION = detection gap). Weak copyleft — no new quarantine row per the standing LGPL rule (doctrine pending owner verdict); do not link into shipping code meanwhile.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The raw-decode engine behind DIT tooling; standalone-tool use is the safe framing. [Wave 38 Lane A]
+
+#### dcraw ❓ unverified (no license statement located)
+- **What:** dcraw — Dave Coffin's venerable command-line raw photo decoder (the reference raw implementation)
+- **URL:** https://www.decamod.com/ (author site; no canonical repo)
+- **License:** ❓ No license statement located this pass — the source carries no explicit grant. Do NOT assume public domain; read before any use.
+- **Free tier:** free download
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Honest ❓: widely mirrored, but no verifiable license text found. Prefer LibRaw (above) where a grant exists. [Wave 38 Lane A]
+
+#### TuttleOFX ⚠️ license-conditional (multi-license incl. LGPL-2.1 — no quarantine row per LGPL rule)
+- **What:** TuttleOFX — open plug-in framework + command-line nodes for VFX compositing (OFX-based plate tools)
+- **URL:** https://github.com/tuttleofx/TuttleOFX
+- **License:** ⚠️ Multi-license — pick one: TuttleOFX Public License v1 ("less restrictive version of LGPL"), LGPL-2.1, or GPL-2 (verified 2026-10-08 via raw COPYING.md; GitHub API NOASSERTION = detection gap). No new quarantine row per the standing LGPL rule (LGPL-2.1 is an offered option); treat as weak-copyleft until the owner rules.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** OFX plate-processing nodes; the honest VFX-plate tail entry. [Wave 38 Lane A]
+
+#### ButtleOFX ⚠️ license-conditional (follows TuttleOFX license — no quarantine row per LGPL rule)
+- **What:** ButtleOFX — node-graph GUI front-end for TuttleOFX compositing graphs
+- **URL:** https://github.com/buttleofx/ButtleOFX
+- **License:** ⚠️ "Follows the TuttleOFX license" (verified 2026-10-08 via README.md; no LICENSE file in repo). Same multi-license posture as TuttleOFX above.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** GUI companion to TuttleOFX; early-development status per its own README. [Wave 38 Lane A]
+
+#### CGRU / Afanasy ⚠️ license-conditional (LGPL-3.0 — no quarantine row per LGPL rule)
+- **What:** CGRU — open render-farm manager with the Afanasy scheduler (Blender/Houdini/Nuke job distribution)
+- **URL:** https://github.com/CGRU/cgru
+- **License:** ⚠️ LGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id). No new quarantine row per the standing LGPL rule (doctrine pending owner verdict).
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The permissive-ish render-queue answer next to the quarantined GPL render managers; run as a standalone service, don't link its code. [Wave 38 Lane A]
+
+#### BlenderQueue ✅ commercial-safe
+- **What:** BlenderQueue — local render queue for Blender: headless .blend inspection, per-job overrides, live progress, MP4 previews, desktop notifications
+- **URL:** https://github.com/alexnovoab90/BlenderQueue
+- **License:** MIT (verified 2026-10-08 via project README "MIT — see LICENSE")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Single-machine render queue that matches the Blender-heavy pipeline; binds to localhost only by design. [Wave 38 Lane A]
+
+#### OpenImageDenoise (RenderKit/oidn) ✅ commercial-safe
+- **What:** Intel Open Image Denoise — high-performance ML denoising for ray-traced renders (Academy Technical Achievement Award 2025)
+- **URL:** https://github.com/RenderKit/oidn
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on RenderKit/oidn; Intel's docs confirm "released under the permissive Apache 2.0 license")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Denoise 3D preview/final renders; note the canonical repo is RenderKit/oidn (not the plausible-but-wrong RenderKit/OpenImageDenoise path). [Wave 38 Lane A]
+
+#### Embree (RenderKit/embree) ✅ commercial-safe
+- **What:** Intel Embree — high-performance ray-tracing kernels (the ray caster inside many renderers)
+- **URL:** https://github.com/RenderKit/embree
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id on RenderKit/embree)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Ray-tracing kernel library; deep infrastructure tail. [Wave 38 Lane A]
+
+#### OpenSubdiv ✅ commercial-safe (modified Apache 2.0 — trademark clause differs)
+- **What:** OpenSubdiv — Pixar's subdivision-surface evaluation library (the subdiv engine inside Blender et al.)
+- **URL:** https://github.com/PixarAnimationStudios/OpenSubdiv
+- **License:** Tomorrow Open Source Technology License 1.0 — modified Apache 2.0, trademark section differs (verified 2026-10-08 via raw LICENSE.txt; GitHub API NOASSERTION = detection gap). Same honest framing as OpenUSD.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Subdiv math library; infrastructure tail. [Wave 38 Lane A]
+
+#### SeExpr ✅ commercial-safe (Apache 2.0 with trademark modification)
+- **What:** SeExpr — Disney's embeddable expression language (procedural values in DCC tools)
+- **URL:** https://github.com/wdas/SeExpr
+- **License:** Apache-2.0 with a Section 6 Trademarks modification (verified 2026-10-08 via raw LICENSE: "Licensed under the Apache License, Version 2.0 … and the following modification to it: Section 6 Trademarks"; GitHub API NOASSERTION = detection gap)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Expression engine for procedural rigging/shading hooks; deep tail. [Wave 38 Lane A]
+
+#### Imath ✅ commercial-safe
+- **What:** Imath — Academy Software Foundation math library for graphics/VFX (vectors, matrices, boxes, shears)
+- **URL:** https://github.com/AcademySoftwareFoundation/Imath
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The math under OpenEXR et al.; infrastructure tail. [Wave 38 Lane A]
+
+#### Field3D ✅ commercial-safe (archived upstream)
+- **What:** Field3D — Sony Pictures Imageworks' voxel data interchange format (density fields for volumetrics)
+- **URL:** https://github.com/imageworks/Field3D
+- **License:** BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id; repo ARCHIVED upstream)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Archived; largely superseded by OpenVDB but the honest format tail. [Wave 38 Lane A]
+
+#### MLT ⚠️ license-conditional (LGPL-2.1 — no quarantine row per LGPL rule)
+- **What:** MLT — the multimedia framework underneath Kdenlive/Shotcut (timeline, filters, producers/consumers)
+- **URL:** https://github.com/mltframework/mlt
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id). No new quarantine row per the standing LGPL rule; do not link into shipping code meanwhile.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The engine behind the quarantined editors; usable as a standalone framework/service. [Wave 38 Lane A]
+
+#### Melted ⚠️ license-conditional (LGPL-2.1, archived — no quarantine row per LGPL rule)
+- **What:** Melted — MLT playout server (clip playlist playout over the MLT framework)
+- **URL:** https://github.com/mltframework/melted
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id; repo ARCHIVED). No new quarantine row per the standing LGPL rule.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (captions/broadcast)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Archived playout server; reference value for broadcast-playout designs. [Wave 38 Lane A]
+
+#### Lensfun ⚠️ license-conditional (LGPL-3.0 — no quarantine row per LGPL rule)
+- **What:** Lensfun — photographic lens correction database + library (distortion, TCA, vignetting profiles)
+- **URL:** https://github.com/lensfun/lensfun
+- **License:** ⚠️ LGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id). No new quarantine row per the standing LGPL rule.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** DIT lens-correction data; standalone-tool framing. [Wave 38 Lane A]
+
+#### BWFMetaEdit ✅ commercial-safe (public domain)
+- **What:** BWFMetaEdit — MediaArea's Broadcast Wave Format bext-chunk editor (embed/describe bext metadata in WAVs); originally built for the Library of Congress / FADGI
+- **URL:** https://github.com/MediaArea/BWFMetaEdit
+- **License:** ✅ Public domain (verified 2026-10-08 via raw License.html: "This code is in the public domain; do with it what you wish"; GitHub API NOASSERTION = detection gap)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DIT metadata hygiene for WAV deliverables; the rare public-domain production tool. [Wave 38 Lane A]
+
+#### Wekan ✅ commercial-safe
+- **What:** Wekan — MIT-licensed kanban boards (Trello alternative) for production task tracking
+- **URL:** https://github.com/wekan/wekan
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight production board without the AGPL strings of Taiga/Leantime (both quarantined this wave). [Wave 38 Lane A]
+
+#### Phabricator ✅ commercial-safe (archived upstream)
+- **What:** Phabricator — Phacility's code-review / task-tracking / wiki suite (Differential, Maniphest)
+- **URL:** https://github.com/phacility/phabricator
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id; upstream ARCHIVED — Phacility wound down)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Archived but functional; heavyweight — only if the production tracker needs code review attached. [Wave 38 Lane A]
+
+#### Planka ⚠️ license-conditional (custom community license, not OSI)
+- **What:** Planka — project/kanban boards with a polished UI (production task tracking)
+- **URL:** https://github.com/plankanban/planka
+- **License:** ⚠️ PLANKA Community License v1.1 (verified 2026-10-08 via raw LICENSE.md — custom source-available license, NOT OSI-approved; commercial license sold separately). Read before wiring; not a blanket commercial-safe grant.
+- **Free tier:** source-available (self-hosted under community terms)
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pretty but custom-licensed — Wekan (MIT, above) is the safer kanban pick. [Wave 38 Lane A]
+
+#### OpenVKL ✅ commercial-safe
+- **What:** Intel Open VKL — high-performance volume computation kernels (sampling, gradients, ray marching over VDB volumes)
+- **URL:** https://github.com/RenderKit/openvkl
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Volume-rendering kernels; pairs with OpenVDB. Infrastructure tail. [Wave 38 Lane A]
+
+#### OSPRay ✅ commercial-safe
+- **What:** Intel OSPRay — scalable ray-tracing engine for scientific/VFX visualization
+- **URL:** https://github.com/RenderKit/ospray
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** CPU ray tracer; infrastructure tail for the render-engine shelf. [Wave 38 Lane A]
+
+#### LuxCoreRender ✅ commercial-safe
+- **What:** LuxCoreRender — physically-based unbiased renderer (LuxCore API + Blender addon)
+- **URL:** https://github.com/LuxCoreRender/LuxCore
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Permissive-licensed path tracer with a Blender addon — the safe alternative to GPL renderers for 3D cutscene work. [Wave 38 Lane A]
+
+#### appleseed ✅ commercial-safe
+- **What:** appleseed — modern physically-based renderer (unbiased + interactive), with Blender/Maya bridges
+- **URL:** https://github.com/appleseedhq/appleseed
+- **License:** MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** MIT-licensed renderer; another safe 3D-render shelf option next to LuxCoreRender. [Wave 38 Lane A]
+
+#### pbrt-v4 ✅ commercial-safe
+- **What:** pbrt-v4 — Matt Pharr/Jakob/Wenzel's physically-based ray tracer, v4 (the textbook renderer, now GPU-capable)
+- **URL:** https://github.com/mmp/pbrt-v4
+- **License:** Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id; note: earlier pbrt versions were BSD — v4 is Apache-2.0)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** The reference renderer from the PBRT book; study/reference value for render-engine work. [Wave 38 Lane A]
+
+#### GStreamer ⚠️ license-conditional (LGPL-2.1 — no quarantine row per LGPL rule)
+- **What:** GStreamer — the pipeline-based multimedia framework (capture → process → stream; the engine behind Pitivi and many broadcast tools)
+- **URL:** https://github.com/GStreamer/gstreamer
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via raw LICENSE on main: "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"; GitHub API NOASSERTION = detection gap). No new quarantine row per the standing LGPL rule.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The broadcast/streaming framework everything else plugs into; use as a standalone framework, don't link into shipping code until the LGPL doctrine resolves. [Wave 38 Lane A]

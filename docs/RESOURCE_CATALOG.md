@@ -30035,3 +30035,149 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Resolves the ❓ entry. The musicdisk prod-type filter is the music-discovery path; rights must be checked per production (scene.org hosting ≠ rights grant). Resolves the ❓ with terms. [Wave 32 Lane A]
+
+### E. Regional / PD score archives — Wave 32 Lane A (2026-10-08)
+
+#### Henrik Norbeck's ABC Tunes ⚠️ per-tune (transcriptions © author; melodies traditional)
+- **What:** Free online tune book: 3,400+ Irish/Swedish/traditional tunes in ABC format (sheet music + lyrics), transcribed over 30+ years; updated Jan 2026.
+- **URL:** http://norbeck.nu/abc/ (verified live Oct 2026 — About page + news)
+- **License:** ⚠️ Melodies are traditional/PD folk material; the TRANSCRIPTIONS are © Henrik Norbeck (site states "All transcriptions © 2013 Henrik Norbeck" on the tune-book pages). No explicit commercial license published — treat transcriptions as ©, melodies as traditional.
+- **Free tier:** Free access, donation-supported
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The folk-melody corpus is the value (session tunes are PD); don't lift his typeset editions verbatim into commercial products without checking. [Wave 32 Lane A]
+
+#### Austrian National Library — Department of Music ⚠️ per-item rights
+- **What:** Austria's central music archive: ~60,000 music manuscripts (Haydn/Mozart/Beethoven/Schubert/Bruckner/Strauss/Berg autographs, Viennese court orchestra), ~130,000 music prints, 8,000 librettos, composer bequests; Beethoven Digital = entire Beethoven inventory digitised.
+- **URL:** https://www.onb.ac.at/en/departments/department-of-music (verified Oct 2026)
+- **License:** ⚠️ Per-item rights; reproductions "subject to copyright" per the library's own use terms. Manuscripts of long-dead composers are PD-age but the library asserts per-item terms.
+- **Free tier:** Free online access to digital holdings
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** First-edition/manuscript study source (urtext research); check per-item rights before reuse. Complements the covered bavarikon (BSB) entry for the German/Austrian axis. [Wave 32 Lane A]
+
+#### British Library — digitised music manuscripts ⚠️ per-item rights
+- **What:** ~1,000 digitised manuscripts online incl. ~60 music manuscripts: 16th–17th c. English keyboard sources (My Ladye Nevells Booke 1591, Mulliner Book, Cosyn/Forster virginal books), 97 vols Handel autographs, Stefan Zweig collection (Mozart/Beethoven/Bach).
+- **URL:** https://www.bl.uk (verified via RISM news, Oct 2024 — post-cyber-attack restoration batch)
+- **License:** ⚠️ Per-item rights; manuscripts themselves are PD-age (16th–19th c.) but BL's digital delivery carries per-item terms.
+- **Free tier:** Free online viewing/download
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early-music manuscript study (pre-1700 keyboard repertoire is firmly PD). Verify per-item download terms. [Wave 32 Lane A]
+
+#### Early Music Online (Royal Holloway) ⚠️ noncommercial (JISC Open Education licence)
+- **What:** 10,000 digitised images from 320 volumes of 16th-century printed-music anthologies, from British Library holdings.
+- **URL:** https://www.earlymusiconline.org (via Royal Holloway, University of London; verified via Wikipedia's digital-music-library list, Sep 2026)
+- **License:** ⚠️ Non-commercial use under JISC's Open Education User Licence (per the collection description) — NC, not commercial-safe.
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 16th-c. printed anthologies = PD-age content under an NC site licence; research/study use. [Wave 32 Lane A]
+
+#### Düben Collection Database Catalogue (Uppsala) ⚠️ per-item rights
+- **What:** 2,300-item database catalogue with metadata + scanned facsimiles of 17th/early-18th c. music manuscripts and prints (the Düben collection).
+- **URL:** via Uppsala University Library, Department of Musicology (verified via Wikipedia's digital-music-library list, Sep 2026)
+- **License:** ⚠️ Per-item rights (library digitisation portal; no blanket grant published).
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Baroque manuscript study (Buxtehude circle repertoire); PD-age content, per-item portal terms. [Wave 32 Lane A]
+
+#### Frances G. Spencer Collection of American Sheet Music (Baylor) ⚠️ per-item rights
+- **What:** 30,000 pieces of American sheet music, late 18th c. through early 20th c. (Baylor University).
+- **URL:** via Baylor University (verified via Wikipedia's digital-music-library list, Sep 2026)
+- **License:** ⚠️ Per-item rights; date span crosses the PD line — pre-1923 pieces are PD-age, later ones need per-item check.
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pairs with the Templeton (MSU) and Levy (JHU) collections for 19th-c. American popular sheet music; filter by publication date for PD. [Wave 32 Lane A]
+
+#### Ignaz Pleyel Early Editions (U. Iowa) ⚠️ per-item rights
+- **What:** 200 early printed + manuscript scores of Ignaz Pleyel (1757–1831), including arrangements of large orchestral works published within the composer's lifetime (University of Iowa).
+- **URL:** via University of Iowa Libraries (verified via Wikipedia's digital-music-library list, Sep 2026)
+- **License:** ⚠️ Per-item rights (portal default); lifetime editions of a composer dead since 1831 are PD-age.
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Classical-era chamber/keyboard study source. [Wave 32 Lane A]
+
+#### Music Treasures Consortium ⚠️ per-item rights
+- **What:** Cross-institutional aggregator of digitised music manuscripts and prints (16th–20th c.) from the Library of Congress, British Library, Bavarian State Library, NYPL, the Morgan, Newberry, Beethoven-Haus Bonn, Harvard, Juilliard, Johns Hopkins, Princeton, Iowa, Washington, and Yale.
+- **URL:** via Library of Congress (verified via Harvard's music research guide, 2026)
+- **License:** ⚠️ Per-item rights — each contributing institution's terms govern its items.
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The meta-search layer above the single-institution portals (complements the Sheet Music Consortium entry); always drill to the holding institution's terms. [Wave 32 Lane A]
+
+#### Duke — Historic American Sheet Music ⚠️ per-item rights
+- **What:** 3,000+ pieces of American sheet music published 1850–1920, from Duke's Rare Book, Manuscript, and Special Collections Library.
+- **URL:** via Duke University Libraries (verified via U. Portland music research guide, 2026)
+- **License:** ⚠️ Per-item rights; the 1850–1920 date range means the bulk is PD-age, but per-item verification stands.
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Third leg (with Templeton/MSU and Spencer/Baylor) of the US 19th-c. popular sheet-music triangle; cover art is a bonus reference corpus. [Wave 32 Lane A]
+
+#### KernScores — license audit ⚠️ CC BY-NC-SA engravings, underlying works PD
+- **What:** 7.8M+ notes in 108k Humdrum **kern files (CCARH/Stanford): Bach through Joplin, searchable by composer/genre; the symbolic-score corpus behind music21 tutorials.
+- **URL:** http://kern.humdrum.org (audited via metio/plinky commit documenting the licence, Jul 2026 + kern.humdrum.org live)
+- **License:** ⚠️ The ENGRAVINGS are Craig Stuart Sapp's, licensed CC-BY-NC-SA-4.0 (attribution + noncommercial + sharealike); some collections are rights-reserved. Underlying compositions are PD — but the encodings are NOT CC0.
+- **Free tier:** Free access/download
+- **Repo lane:** trippedd (music/scores)
+- **Status:** not-started
+- **Notes:** CORRECTS the ❓ entry with a real finding: NC on the encodings, so no commercial score-data products from KernScores files; PD-composition analysis/research is fine. Per-collection check (Beethoven/Scriabin/Chopin/Hummel sets are rights-reserved per the importer notes). Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Templeton Digital Sheet Music Collection — terms audit ⚠️ large PD portion, some restricted
+- **What:** 22,000+ pieces from the Charles H. Templeton Sr. collection (Mississippi State), covering all eras of music reproduction.
+- **URL:** https://scholarsjunction.msstate.edu/cht-sheet-music/ (audited via the repository's own collection statement, 2026)
+- **License:** ⚠️ Per-item: "A large portion of these pieces are in the public domain (not copyrighted) and are available for download directly from the repository, some restricted titles are available upon request."
+- **Free tier:** Free downloads (PD portion)
+- **Repo lane:** trippedd (music/scores)
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry — better than feared: the repository itself marks the PD portion as directly downloadable. Filter to PD-marked items. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### IN Harmony: Sheet Music from Indiana — terms audit ⚠️ per-item (mixed 1840s–1980)
+- **What:** ~10,000 pieces from 4 Indiana institutions (IU Lilly Library, Indiana State Library, Indiana State Museum, Indiana Historical Society); IMLS-funded, federated search.
+- **URL:** https://webapp1.dlib.indiana.edu/inharmony/ (audited via project site + grant proposal, 2026)
+- **License:** ⚠️ Per-item rights — collections span 1840 (Harrison campaign song) through the 1960s–1980, so PD and in-copyright pieces sit side by side; no blanket grant.
+- **Free tier:** Free online access
+- **Repo lane:** trippedd (music/scores)
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. Date-filter for pre-1923 pieces when mining PD material. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Werner Icking Music Archive — status audit ⚠️ scores now via IMSLP; site = MusiXTeX software archive
+- **What:** The pioneering volunteer-typeset PD sheet-music archive (GMD → Aarhus → Paldam IT).
+- **URL:** http://icking-music-archive.org/ (audited live 2026-10-08 — site is up, now framed as the MusiXTeX software archive; hosting by Choralia, backup by CPDL)
+- **License:** ⚠️ The SCORE collection was merged into IMSLP over 2012–2014 — per-work IMSLP terms now govern the scores. The standalone site now hosts MusiXTeX (open-source typesetting) software.
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scores)
+- **Status:** not-started
+- **Notes:** Resolves both ❓ entries: don't hunt the old WIMA score tree — use IMSLP's WIMA category. The MusiXTeX toolchain itself (TeX-based engraving) is the surviving standalone value. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### abcnotation.com — copyright audit ⚠️ per-tune copyright policy, actively managed
+- **What:** ~800,000 folk/traditional tunes in 390,000 files; the abc tune search indexes web-wide ABC collections.
+- **URL:** https://abcnotation.com (audited via the site's own search + copyright pages, Oct 2026)
+- **License:** ⚠️ Per-tune: the site publishes a copyright policy + copyright-consent list; tunes flagged as possibly-copyright show NO music ("This tune may be copyright, so no music is displayed here"); pop/rock explicitly excluded.
+- **Free tier:** Free access, MIDI + sheet rendering
+- **Repo lane:** trippedd (music/scores)
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry. The consent-list mechanism is the honest signal — traditional tunes are PD, modern compositions are withheld. Check the per-tune flag. Resolves the ❓ with terms. [Wave 32 Lane A]
+
+#### Traditional Tune Archive — license audit ⚠️ CC BY-NC-SA 3.0 (noncommercial)
+- **What:** 50,000+ annotated traditional tunes (Ireland, Britain, North America) in standard + ABC notation, with historical annotations and discographic references (successor to The Fiddler's Companion).
+- **URL:** https://tunearch.org (audited via Wikipedia's TTA article, 2026)
+- **License:** ⚠️ CC Attribution-NonCommercial-ShareAlike 3.0 Unported — NC, so not commercial-safe; annotations/engravings under NC terms.
+- **Free tier:** Free access
+- **Repo lane:** trippedd (music/scores)
+- **Status:** not-started
+- **Notes:** Resolves the ❓ entry with a real license (CC BY-NC-SA 3.0): research/annotation value, no commercial reuse of the archive's materials. Underlying traditional melodies remain PD as melodies. Resolves the ❓ with terms. [Wave 32 Lane A]

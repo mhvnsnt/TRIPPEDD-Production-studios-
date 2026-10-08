@@ -4028,4 +4028,61 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Use:** deblur and denoise archival footage frames; motion-deblur checkpoint for shaky archival plates.
 - **Lane note:** Wave 4 Lane D: the deblur/denoise transformer for the restoration chain — pairs with SR stages for damaged footage.
 
+#### DeblurGAN-v2 ✅
+- **What:** GAN motion-deblurring (ICCV 2019, VITA-Group) with fast FPN-Inception generator; one forward pass deblurs a frame.
+- **URL:** https://github.com/VITA-Group/DeblurGANv2
+- **License:** BSD-style (verified 2026-10-08: upstream LICENSE reproduces BSD 2-clause redistribution terms, copyright Jun-Yan Zhu and Taesung Park, per Open Model Zoo legal info; ecosyste.ms tags it "other" so the license text was read directly).
+- **Use:** single-frame motion-deblur for shaky archival plates before the SR stage.
+- **Lane note:** Wave 4 Lane D: classical GAN deblur for the damage-repair pass — lightweight compared to transformer deblurrers.
+
+#### MPRNet ✅
+- **What:** Multi-stage progressive image restoration (CVPR 2021) — one network family with pretrained heads for deraining, denoising, and deblurring.
+- **URL:** https://github.com/swz30/MPRNet
+- **License:** MIT (verified 2026-10-08: upstream LICENSE added per maintainer reply to the "missing license file" issue; same author family as MIT-licensed Restormer).
+- **Use:** derain + denoise + deblur archival frames; the all-round damage-repair net for scratched/dusty film frames.
+- **Lane note:** Wave 4 Lane D: multi-damage restoration net — rain/scratch streaks, noise, and blur in one model family.
+
+#### FastDVDnet ✅
+- **What:** Very fast deep video denoising without flow estimation (Tassano et al.) — temporally coherent noise reduction with very low flicker, orders of magnitude faster than DVDnet.
+- **URL:** https://github.com/m-tassano/fastdvdnet
+- **License:** MIT (verified 2026-10-08: upstream README ABOUT section "Licence: MIT", Matias Tassano; downstream project links https://github.com/m-tassano/fastdvdnet/blob/master/LICENSE as MIT).
+- **Use:** temporal denoising of noisy archival video — kills grain flicker without optical flow.
+- **Lane note:** Wave 4 Lane D: the video-native denoiser for the restoration chain; pairs with Real-ESRGAN in the classic smart-upscaler pipeline.
+
+#### DeOldify ✅
+- **What:** Deep-learning colorization and restoration of old images AND video (NoGAN training; artistic/stable/video models); self-trained weights also MIT.
+- **URL:** https://github.com/jantic/DeOldify
+- **License:** MIT (verified 2026-10-08: upstream repo License metadata "MIT License (MIT)"; README: "All code in this repository is under the MIT license" and the pretrained weights are MIT too; repo archived Oct 2024 but live).
+- **Use:** colorize B&W archival footage plates; video colorizer path for entire scenes.
+- **Lane note:** Wave 4 Lane D: the canonical open colorization tool for archival footage — archived but the weights/code remain MIT.
+
+#### DDColor ✅
+- **What:** Photo-realistic image colorization via dual decoders (ICCV 2023, DAMO/Alibaba) — pixel decoder + query-based color decoder on ConvNeXt backbone.
+- **URL:** https://github.com/piddnad/DDColor
+- **License:** Apache-2.0 (verified 2026-10-08: third-party notices file of an old-photo restoration platform: "License: Apache License 2.0 (full text in ddcolor/LICENSE)").
+- **Use:** modern alternative to DeOldify for B&W archival frame colorization with fewer artifacts.
+- **Lane note:** Wave 4 Lane D: the current-generation colorizer for archival plates — pairs with DeOldify for the colorization pass.
+
+#### RestoreFormer++ ✅
+- **What:** Face restoration with a high-quality dictionary/codebook transformer — same CodeFormer family, Apache-2.0 licensed, no StyleGAN2-prior entanglement.
+- **URL:** https://github.com/wzhouxiff/RestoreFormerPlusPlus
+- **License:** Apache-2.0 (verified 2026-10-08: restoration-workflow model stack lists RestoreFormer/RestoreFormer++ as "Apache-2.0" and "commercial-safe").
+- **Use:** commercial-safe face restoration for archival faces where GFPGAN's license caveat bites.
+- **Lane note:** Wave 4 Lane D: the commercial-clean face restorer — the answer to the GFPGAN ⚠️ entanglement.
+
+#### CodeFormer ⚠️ non-commercial (S-Lab License 1.0) — verify per use
+- **What:** Transformer-based face restoration with a learned codebook prior — the most popular/controllable face restorer in the ComfyUI/ReActor ecosystem.
+- **URL:** https://github.com/sczhou/CodeFormer
+- **License:** S-Lab License 1.0 — **non-commercial only** (verified 2026-10-08: licensing survey — "CodeFormer | S-Lab License 1.0 | Non-commercial only | Explicitly requires contacting authors for commercial use").
+- **Use:** reference-quality face restoration for non-commercial archival research; inform heuristics without shipping weights.
+- **Lane note:** Wave 4 Lane D: included with the honest badge — the famous face restorer, blocked from commercial paths by its license.
+
+#### GPEN ⚠️ academic / non-commercial use only — verify per use
+- **What:** GAN Prior Embedded Network for blind face restoration in the wild (Alibaba, CVPR 2021) — 512/1024/2048 face restoration plus colorization and inpainting heads.
+- **URL:** https://github.com/yangxy/GPEN
+- **License:** custom — "© Alibaba, 2021. For academic and non-commercial use only." (verified 2026-10-08: upstream README License section, widely mirrored).
+- **Use:** high-res face restoration reference for research; 1024-color head doubles as a face colorizer.
+- **Lane note:** Wave 4 Lane D: the high-res face restorer — honest ⚠️, academic/non-commercial only.
+
+<!-- end lane D wave 4 batch 2: deblur/colorize/faces (8 entries) -->
 <!-- end lane D wave 4 batch 1: restoration SR/deblur (8 entries) -->

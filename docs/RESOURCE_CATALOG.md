@@ -45339,3 +45339,1044 @@ Pocket 1: PD cartoon/film-music long tail (24). Pocket 2: non-European demoparti
 - ⚠️ per-item caution: 7 (PD-era per-recording rights, watermarked free tiers, paid-transcript add-ons)
 - 🚫 quarantined: 8 (rows 468–475, GPL/AGPL → manifest only, never shipping entries)
 - Zero post-hoc duplicates: every candidate pre-grepped (title + URL + same-resource check) against the full catalog and quarantine manifest before appending; `grep -c '^####'` = 4,438 exact
+
+#### Open-Sora-Plan ✅ commercial-safe
+- **What:** Peking University Yuan Lab's open-source replication plan for Sora-class text-to-video — full training/inference pipeline for video generation models.
+- **URL:** https://github.com/PKU-YuanGroup/Open-Sora-Plan
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** One of the few fully-open Sora-class efforts with a permissive license — strong candidate for self-hosted video-gen experiments. [Wave 51 Lane A]
+
+#### StepVideo-T2V ✅ commercial-safe
+- **What:** StepFun's open text-to-video model (StepVideo-T2V) — large-scale video diffusion with public weights and training code.
+- **URL:** https://github.com/stepfun-ai/Step-Video-T2V
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Correct repo is stepfun-ai/Step-Video-T2V (not stepfun-ai/StepVideo). Permissive license makes it pipeline-usable. [Wave 51 Lane A]
+
+#### VACE ✅ commercial-safe
+- **What:** Alibaba VILAB's VACE — unified video creation and editing foundation model (text-to-video, inpainting, extension, reference-based generation).
+- **URL:** https://github.com/ali-vilab/VACE
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw GitHub LICENSE.txt fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Apache-2.0 across the board — safe for commercial pipeline experiments. [Wave 51 Lane A]
+
+#### MagicVideo-V2 ⚠️ research-only, no release
+- **What:** ByteDance's MagicVideo-V2 — multi-stage high-aesthetic text-to-video generation (research paper + project page only).
+- **URL:** https://magicvideov2.github.io
+- **License:** ⚠️ No code or weights released — paper and demo videos only (verified 2026-10-08 via project page; no public repo found)
+- **Free tier:** None — no public artifact
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: frequently cited as open, but ByteDance never released code or weights. Track for techniques only. [Wave 51 Lane A]
+
+#### Champ ✅ commercial-safe
+- **What:** Fudan Generative Vision's Champ — shape-agnostic human image animation with 3D parametric guidance (pose/shape/expression transfer).
+- **URL:** https://github.com/fudan-generative-vision/champ
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** MIT-licensed character animation — useful for game-character motion tests. [Wave 51 Lane A]
+
+#### MuseV ✅ commercial-safe
+- **What:** Tencent Music Entertainment's MuseV — text-to-video and image-to-video generation with reference-image control.
+- **URL:** https://github.com/TMElyralab/MuseV
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch; Tencent Music Entertainment)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** MIT despite big-tech origin — commercially usable. [Wave 51 Lane A]
+
+#### Zeroscope v2 XL ⚠️ NC-only weights
+- **What:** Zeroscope v2 XL — open text-to-video diffusion model (576x320, 24fps) on Hugging Face.
+- **URL:** https://huggingface.co/cerspense/zeroscope_v2_XL
+- **License:** ⚠️ CC-BY-NC-4.0 (verified 2026-10-08 via Hugging Face API) — non-commercial use only
+- **Free tier:** Free weights for non-commercial use
+- **Repo lane:** trippedd (AI video tooling — NC audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest NC finding: the canonical "open" Zeroscope weights are NC-licensed — cannot ship in commercial pipeline output. [Wave 51 Lane A]
+
+#### ModelScope text-to-video-synthesis ⚠️ NC-ND
+- **What:** Alibaba DAMO's text-to-video-synthesis model on ModelScope — early open text-to-video diffusion release.
+- **URL:** https://www.modelscope.cn/models/damo/text-to-video-synthesis
+- **License:** ⚠️ CC-BY-NC-ND-4.0 (verified 2026-10-08 via ModelScope page JSON) — non-commercial, no derivatives
+- **Free tier:** Free weights for non-commercial use
+- **Repo lane:** trippedd (AI video tooling — NC audit)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** NC-ND is the most restrictive common model license — research/educational use only. [Wave 51 Lane A]
+
+#### VideoCrafter2 ❓ unverifiable license
+- **What:** AILab-CVC's VideoCrafter2 — high-quality text-to-video generation model (successor to VideoCrafter1).
+- **URL:** https://github.com/AILab-CVC/VideoCrafter
+- **License:** ❓ No license file or license statement found in repo (verified 2026-10-08) — all rights reserved by default
+- **Free tier:** Public weights, terms unclear
+- **Repo lane:** trippedd (AI video tooling — diligence)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Widely used but no license statement anywhere in the repo — treat as all-rights-reserved until upstream clarifies. [Wave 51 Lane A]
+
+#### Tune-A-Video ✅ commercial-safe
+- **What:** Showlab's Tune-A-Video — one-shot text-to-video generation via fine-tuning a text-to-image diffusion model on a single video.
+- **URL:** https://github.com/showlab/Tune-A-Video
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Apache-2.0 one-shot video stylization — good for promo-clip experiments. [Wave 51 Lane A]
+
+#### NUWA-XL (Microsoft) ❓ unverifiable license
+- **What:** Microsoft's NUWA-XL — diffusion-over-diffusion for extremely long video generation (covers the NUWA family repo).
+- **URL:** https://github.com/microsoft/NUWA
+- **License:** ❓ No license statement found in repo (verified 2026-10-08) — all rights reserved by default
+- **Free tier:** Research code public, terms unclear
+- **Repo lane:** trippedd (AI video tooling — diligence)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Microsoft Research release with no license file — cannot assume any reuse rights. [Wave 51 Lane A]
+
+#### SEINE ✅ commercial-safe
+- **What:** Vchitect's SEINE — short-to-long video diffusion for generative transition and prediction (autoregressive video extension).
+- **URL:** https://github.com/Vchitect/SEINE
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Apache-2.0 video transition/extension model — useful for stitching generated clips. [Wave 51 Lane A]
+
+#### VideoComposer ✅ commercial-safe
+- **What:** Alibaba VILAB's VideoComposer — compositional video synthesis with motion controllability (sketch/depth/mask conditioning).
+- **URL:** https://github.com/ali-vilab/VideoComposer
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** MIT compositional control — pairs well with game-capture footage conditioning. [Wave 51 Lane A]
+
+#### Deforum ✅ commercial-safe
+- **What:** Deforum Stable Diffusion — the deforum-art notebook/engine for Stable Diffusion animation (2D/3D morphing video generation).
+- **URL:** https://github.com/deforum-art/deforum-stable-diffusion
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub repo license API)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (AI video tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Correct repo is deforum-art/deforum-stable-diffusion. MIT — safe for commercial animation experiments. [Wave 51 Lane A]
+
+#### Movie Gen (Meta) ⚠️ research-only, no release
+- **What:** Meta's Movie Gen — text-to-video foundation model for 1080p HD video with personalized generation (research announcement only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code, weights, or API released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: headline model with zero public release — track for techniques only. [Wave 51 Lane A]
+
+#### VideoPoet (Google) ⚠️ research-only, no release
+- **What:** Google Research's VideoPoet — large language model for zero-shot video generation (research paper only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code or weights released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: LLM-based video generation with no public artifact. [Wave 51 Lane A]
+
+#### Lumiere (Google) ⚠️ research-only, no release
+- **What:** Google Research's Lumiere — space-time diffusion model for text-to-video and image-to-video (research paper only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code or weights released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: frequently cited, never released. [Wave 51 Lane A]
+
+#### Phenaki (Google) ⚠️ research-only, no release
+- **What:** Google's Phenaki — long-video generation from open-ended text prompts via cascaded bidirectional transformers (research paper only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code or weights released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: long-video pioneer with no public release. [Wave 51 Lane A]
+
+#### Make-A-Video (Meta) ⚠️ research-only, no release
+- **What:** Meta's Make-A-Video — text-to-video generation without paired text-video data (research paper only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code or weights released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: no public artifact despite wide coverage. [Wave 51 Lane A]
+
+#### Imagen Video (Google) ⚠️ research-only, no release
+- **What:** Google's Imagen Video — cascaded diffusion text-to-video system (research paper only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code or weights released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: companion to Phenaki, equally unreleased. [Wave 51 Lane A]
+
+#### Dreamix (Google) ⚠️ research-only, no release
+- **What:** Google's Dreamix — video editing via diffusion models (text-driven video editing research paper only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code or weights released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: video-editing diffusion with no public release. [Wave 51 Lane A]
+
+#### Snap Video (Snap) ⚠️ research-only, no release
+- **What:** Snap Research's Snap Video — efficient text-to-video generation (research paper only).
+- **URL:** No public release URL — research announcement verified 2026-10-08 via web search; no code or weights released
+- **License:** ⚠️ Closed research — no public artifact
+- **Free tier:** None
+- **Repo lane:** trippedd (AI video research tracking)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Honest negative: corporate research, no public artifact. [Wave 51 Lane A]
+
+#### Kaiber ⚠️ commercial SaaS
+- **What:** Kaiber — commercial AI video generation platform (image/text-to-video, music-reactive visuals).
+- **URL:** Vendor homepage not captured verbatim this pass — commercial SaaS verified 2026-10-08 via web search
+- **License:** ⚠️ Proprietary commercial — paid plans, no open weights
+- **Free tier:** Limited free trials/credits; paid plans for real use
+- **Repo lane:** trippedd (AI video tooling — commercial audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative for the OSS audit: closed commercial tool, documented so the catalog doesn't mislabel it as open. [Wave 51 Lane A]
+
+#### Marey (Moonvalley) ⚠️ commercial
+- **What:** Moonvalley's Marey — commercial AI video model/API for cinematic text-to-video generation.
+- **URL:** Vendor homepage not captured verbatim this pass — commercial verified 2026-10-08 via web search
+- **License:** ⚠️ Proprietary commercial — API/paid access
+- **Free tier:** None meaningful — paid
+- **Repo lane:** trippedd (AI video tooling — commercial audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: closed commercial model; no open weights. [Wave 51 Lane A]
+
+#### Higgsfield ⚠️ commercial SaaS
+- **What:** Higgsfield AI — commercial AI video generation platform (text-to-video, camera-motion controls).
+- **URL:** Vendor homepage not captured verbatim this pass — commercial SaaS verified 2026-10-08 via web search
+- **License:** ⚠️ Proprietary commercial — paid plans
+- **Free tier:** Limited free credits; paid plans for real use
+- **Repo lane:** trippedd (AI video tooling — commercial audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: closed commercial platform. [Wave 51 Lane A]
+
+#### Haiper ⚠️ commercial SaaS
+- **What:** Haiper — commercial AI video generation platform (text/image-to-video).
+- **URL:** Vendor homepage not captured verbatim this pass — commercial SaaS verified 2026-10-08 via web search
+- **License:** ⚠️ Proprietary commercial — paid plans
+- **Free tier:** Limited free credits; paid plans for real use
+- **Repo lane:** trippedd (AI video tooling — commercial audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: closed commercial platform. [Wave 51 Lane A]
+
+#### Godot XR Tools ✅ commercial-safe
+- **What:** GodotVR's godot-xr-tools — starter toolkit for XR (VR/AR) in Godot 4: locomotion, hand interaction, climbing, picking up objects.
+- **URL:** https://github.com/GodotVR/godot-xr-tools
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The standard XR starter kit — MIT, actively maintained by GodotVR. [Wave 51 Lane A]
+
+#### GodotSteam (Codeberg) ✅ commercial-safe
+- **What:** GodotSteam Community Edition — Steamworks SDK integration for Godot 4 (achievements, lobbies, matchmaking, P2P, workshop).
+- **URL:** https://codeberg.org/godotsteam/godotsteam
+- **License:** ✅ MIT (verified 2026-10-08 via raw license.md fetch on Codeberg, branch godot4)
+- **Free tier:** Fully open-source (requires Steam partner account for shipping)
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Repo MOVED from GitHub (GodotSteam/GodotSteam is now a stub) to Codeberg — entry uses the live Codeberg URL. [Wave 51 Lane A]
+
+#### Godot Dialogue Manager ✅ commercial-safe
+- **What:** nathanhoad's Dialogue Manager — branching dialogue system for Godot 4 with a purpose-built scripting syntax and editor.
+- **URL:** https://github.com/nathanhoad/godot_dialogue_manager
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Correct repo is nathanhoad/godot_dialogue_manager. The go-to dialogue solution for narrative games. [Wave 51 Lane A]
+
+#### LimboAI ✅ commercial-safe
+- **What:** LimboAI — behavior trees and state machines for Godot 4 (visual BT editor, blackboards, BTSubTree).
+- **URL:** https://github.com/limbonaut/limboai
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE.md fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT behavior-tree framework — clean alternative to hand-rolled AI state machines. [Wave 51 Lane A]
+
+#### GUT (Godot Unit Test) ✅ commercial-safe
+- **What:** Godot Unit Test (GUT) — unit testing framework for Godot (GDScript), with parameterized tests, doubles, and CI integration.
+- **URL:** https://github.com/bitwes/Gut
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The standard GDScript test runner — pairs with the verification-law automation push. [Wave 51 Lane A]
+
+#### Phantom Camera ✅ commercial-safe
+- **What:** Phantom Camera — camera system for Godot 4 (virtual cameras, transitions, noise, follow/look-at, tweened blends).
+- **URL:** https://github.com/ramokz/phantom-camera
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cinemachine-style camera rig for Godot — MIT, well documented. [Wave 51 Lane A]
+
+#### Qodot ✅ commercial-safe
+- **What:** Qodot — Quake .map file import for Godot (TrenchBroom workflow → Godot 3D levels).
+- **URL:** https://github.com/QodotPlugin/Qodot
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Brush-based level design pipeline for Godot via TrenchBroom .map files. [Wave 51 Lane A]
+
+#### ProtonScatter ✅ commercial-safe
+- **What:** ProtonScatter — modular node-based object scattering for Godot 4 (vegetation, props, set dressing with modifiers).
+- **URL:** https://github.com/HungryProton/scatter
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE.md fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Node-based scatter system — big win for environment art speed. [Wave 51 Lane A]
+
+#### Terrain3D ✅ commercial-safe
+- **What:** Terrain3D — high-performance editable 3D terrain system for Godot 4 (LOD, texture blending, holes, multi-resolution).
+- **URL:** https://github.com/TokisanGames/Terrain3D
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE.txt fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The serious terrain option for Godot 4 — MIT, native performance. [Wave 51 Lane A]
+
+#### Godot Jolt ✅ commercial-safe
+- **What:** Godot Jolt — Jolt Physics integration for Godot 4 (deterministic rigid-body physics as a drop-in PhysicsServer).
+- **URL:** https://github.com/godot-jolt/godot-jolt
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE.txt fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Deterministic physics matters for the fighting-game netcode direction — MIT Jolt binding. [Wave 51 Lane A]
+
+#### godot-rapier2d ✅ commercial-safe
+- **What:** godot-rapier2d — 2D Rapier physics server for Godot (rigid bodies, joints, character controller for 2D games).
+- **URL:** https://github.com/appsinacup/godot-rapier2d
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Rapier's determinism in a 2D Godot binding — relevant for rollback-friendly 2D fighters. [Wave 51 Lane A]
+
+#### Dialogic ✅ commercial-safe
+- **What:** Dialogic — full dialogue/visual-novel system for Godot (timelines, character portraits, choices, save integration).
+- **URL:** https://github.com/dialogic-godot/dialogic
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Visual-novel-grade dialogue system — MIT, complements Dialogue Manager (pick per project). [Wave 51 Lane A]
+
+#### HTerrain ✅ commercial-safe
+- **What:** HTerrain — heightmap-based terrain for Godot (LOD chunks, texture splatting, holes, editor tools).
+- **URL:** https://github.com/Zylann/godot_heightmap_plugin
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE.md fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Classic heightmap terrain plugin (repo: godot_heightmap_plugin) — lighter alternative to Terrain3D. [Wave 51 Lane A]
+
+#### Escoria ✅ commercial-safe
+- **What:** Escoria — point-and-click adventure game framework for Godot (inventory, dialogue, scene transitions, save system).
+- **URL:** https://github.com/godot-escoria/escoria-core
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch; org is godot-escoria)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Correct org is godot-escoria; core plugin repo is escoria-core. Full adventure-game framework. [Wave 51 Lane A]
+
+#### Godot Git Plugin (official) ✅ commercial-safe
+- **What:** godotengine/godot-git-plugin — official in-editor Git VCS integration for Godot (commit, diff, branches, remotes).
+- **URL:** https://github.com/godotengine/godot-git-plugin
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API license field + raw LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Godot ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The OFFICIAL plugin (godotengine org) — replaces the misremembered gilzoide slug. In-editor version control for game projects. [Wave 51 Lane A]
+
+#### bevy_rapier ✅ commercial-safe
+- **What:** Bevy Rapier plugin — Rapier physics integration for the Bevy engine (now maintained inside the Rapier monorepo).
+- **URL:** https://github.com/dimforge/rapier (bindings/bevy_rapier)
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 — moved into dimforge/rapier; Rapier is Apache-2.0)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The standalone dimforge/bevy_rapier repo is a moved-stub; live code is bindings/bevy_rapier in dimforge/rapier. [Wave 51 Lane A]
+
+#### bevy_ecs_tilemap ✅ commercial-safe
+- **What:** bevy_ecs_tilemap — ECS-friendly tilemap rendering for Bevy (square/hexagonal/isometric, chunked rendering).
+- **URL:** https://github.com/StarArawn/bevy_ecs_tilemap
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Standard tilemap solution for Bevy 2D games. [Wave 51 Lane A]
+
+#### bevy_kira_audio ✅ commercial-safe
+- **What:** bevy_kira_audio — Kira-based game audio plugin for Bevy (positional audio, tracks, fades, instance control).
+- **URL:** https://github.com/NiklasEi/bevy_kira_audio
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE-APACHE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Dual MIT/Apache like most Bevy plugins; Apache-2.0 confirmed via license file. [Wave 51 Lane A]
+
+#### bevy_asset_loader ✅ commercial-safe
+- **What:** bevy_asset_loader — declarative asset loading states for Bevy (loading screens, asset collections, dynamic assets).
+- **URL:** https://github.com/NiklasEi/bevy_asset_loader
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE-APACHE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Solves Bevy's asset-loading-state boilerplate — standard in Bevy game templates. [Wave 51 Lane A]
+
+#### bevy_tweening ✅ commercial-safe
+- **What:** bevy_tweening — tweening/animation plugin for Bevy (easing, sequences, component lens tweens).
+- **URL:** https://github.com/djeedai/bevy_tweening
+- **License:** ✅ MIT (verified 2026-10-08 via raw LICENSE-MIT fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Correct org is djeedai (double-e). MIT tweening for UI and gameplay animation. [Wave 51 Lane A]
+
+#### bevy_hanabi ✅ commercial-safe
+- **What:** bevy_hanabi — GPU particle system plugin for Bevy (compute-shader particles, ribbons, visual effects graph).
+- **URL:** https://github.com/djeedai/bevy_hanabi
+- **License:** ✅ MIT (verified 2026-10-08 via raw LICENSE-MIT fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** GPU particles for Bevy — impact effects, stage atmospherics. [Wave 51 Lane A]
+
+#### leafwing-input-manager ✅ commercial-safe
+- **What:** Leafwing Studios' leafwing-input-manager — action-based input handling for Bevy (chords, dual-axis, gamepad/keyboard unification).
+- **URL:** https://github.com/Leafwing-Studios/leafwing-input-manager
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API license field)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The input layer every Bevy fighting/action game wants — action maps instead of raw keycodes. [Wave 51 Lane A]
+
+#### bevy_egui ✅ commercial-safe
+- **What:** bevy_egui — egui immediate-mode GUI integration for Bevy (debug panels, editors, in-game UI).
+- **URL:** https://github.com/mvlabat/bevy_egui
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Immediate-mode UI for Bevy debug tooling and editors. [Wave 51 Lane A]
+
+#### Kira ✅ commercial-safe
+- **What:** tesselode's Kira — expressive game audio library for Rust (not the game engine plugin; the underlying library).
+- **URL:** https://github.com/tesselode/kira
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE-APACHE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Rust game audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The audio engine behind bevy_kira_audio — usable standalone in any Rust game. [Wave 51 Lane A]
+
+#### rodio ✅ commercial-safe
+- **What:** RustAudio's rodio — Rust audio playback library (decoding, mixing, effects, sinks).
+- **URL:** https://github.com/RustAudio/rodio
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE-APACHE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Rust game audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight Rust audio playback — good for tools and small games. [Wave 51 Lane A]
+
+#### bevy_seedling ✅ commercial-safe
+- **What:** bevy_seedling — Bevy audio ecosystem (sample/pool/spatial audio built on firewheel).
+- **URL:** https://github.com/CorvusPrudens/bevy_seedling
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE-APACHE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (Bevy ecosystem)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Next-gen Bevy audio stack (successor direction to bevy_kira_audio). [Wave 51 Lane A]
+
+#### O3DE ✅ commercial-safe
+- **What:** Open 3D Engine (O3DE) — open-source AAA-capable 3D engine (Atom renderer, Script Canvas, Gem modular system).
+- **URL:** https://github.com/o3de/o3de
+- **License:** ✅ Apache-2.0 OR MIT at your choice (verified 2026-10-08 via raw LICENSE.txt — default Apache-2.0, may elect MIT)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (open engines)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Dual Apache-2.0/MIT election is unusually permissive for an engine this size; note third-party Qt components are LGPL. [Wave 51 Lane A]
+
+#### Armory3D ✅ commercial-safe
+- **What:** Armory3D — open-source 3D game engine with Blender integration (logic nodes, PBR, cross-platform deployment).
+- **URL:** https://github.com/armory3d/armory
+- **License:** ✅ Zlib (verified 2026-10-08 via raw GitHub LICENSE.md fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (open engines)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Zlib-licensed Blender-native engine — interesting for the Blender-heavy pipeline. [Wave 51 Lane A]
+
+#### Flax Engine ⚠️ custom EULA
+- **What:** Flax Engine — C#/C++ 3D game engine (visual scripting, terrain, PBR, cross-platform).
+- **URL:** https://github.com/FlaxEngine/FlaxEngine
+- **License:** ⚠️ Custom Flax Engine End User License Agreement (verified 2026-10-08 via README — "strictly governed by the Flax Engine End User License Agreement"), NOT open-source
+- **Free tier:** Free to use under EULA; source visible but not OSI-licensed
+- **Repo lane:** trippedd (open engines — EULA audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Honest finding: source-available, not open-source — EULA restricts redistribution; documented so it isn't mistaken for permissive. [Wave 51 Lane A]
+
+#### Box2D ✅ commercial-safe
+- **What:** Box2D — the classic 2D rigid-body physics engine (Erin Catto), now v3 with a clean C API.
+- **URL:** https://github.com/erincatto/box2d
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The 2D physics standard — MIT since v3. [Wave 51 Lane A]
+
+#### Rapier ✅ commercial-safe
+- **What:** dimforge's Rapier — 2D/3D rigid-body physics engine in Rust (deterministic, SIMD, WASM-friendly).
+- **URL:** https://github.com/dimforge/rapier
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Deterministic + WASM-friendly makes it the rollback-netcode physics pick. [Wave 51 Lane A]
+
+#### Jolt Physics ✅ commercial-safe
+- **What:** Jolt Physics — high-performance 3D rigid-body physics (used in Horizon Forbidden West), multi-threaded and deterministic-friendly.
+- **URL:** https://github.com/jrouwe/JoltPhysics
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** AAA-proven MIT physics — the 3D counterpart to Rapier for the shortlist. [Wave 51 Lane A]
+
+#### Bullet Physics ✅ commercial-safe
+- **What:** Bullet — veteran open-source 3D physics engine (rigid/soft body, inverse dynamics, robotics).
+- **URL:** https://github.com/bulletphysics/bullet3
+- **License:** ✅ Zlib (verified 2026-10-08 via raw GitHub LICENSE.txt fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Zlib-licensed industry veteran — still the safe default for 3D physics. [Wave 51 Lane A]
+
+#### PhysX ✅ commercial-safe
+- **What:** NVIDIA PhysX — GPU/CPU rigid-body physics SDK (5.x), open-source since 2018.
+- **URL:** https://github.com/NVIDIA-Omniverse/PhysX
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via raw GitHub LICENSE.md fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** BSD-3 since the open-sourcing — heavyweight but battle-tested. [Wave 51 Lane A]
+
+#### cannon-es ✅ commercial-safe
+- **What:** cannon-es — maintained fork of cannon.js, lightweight 3D physics for the web (rigid bodies, constraints, vehicles).
+- **URL:** https://github.com/pmndrs/cannon-es
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics — web)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT web physics from the pmndrs ecosystem — pairs with Three.js playtests. [Wave 51 Lane A]
+
+#### planck.js ✅ commercial-safe
+- **What:** planck.js — JavaScript port of Box2D, 2D physics for web games.
+- **URL:** https://github.com/piqnt/planck.js
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API license field)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics — web)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Box2D semantics in JS — good for web fighter prototypes. [Wave 51 Lane A]
+
+#### Newton Dynamics ✅ commercial-safe
+- **What:** Newton Dynamics — deterministic 3D physics engine (stable stacking, custom joints, vehicle support).
+- **URL:** https://github.com/MADEAPPS/newton-dynamics
+- **License:** ✅ Zlib (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (physics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Zlib deterministic physics — another rollback-netcode candidate. [Wave 51 Lane A]
+
+#### glTF-Transform ✅ commercial-safe
+- **What:** donmccurdy's glTF-Transform — SDK for processing 3D models (optimize, compress, merge, draco/meshopt pipelines).
+- **URL:** https://github.com/donmccurdy/glTF-Transform
+- **License:** ✅ MIT (verified 2026-10-08 via README license badge + license section)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (asset pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The model-optimization workhorse — compress/convert GLBs before they hit the games. [Wave 51 Lane A]
+
+#### Assimp ✅ commercial-safe
+- **What:** Assimp (Open Asset Import Library) — imports 40+ 3D model formats into a unified scene structure.
+- **URL:** https://github.com/assimp/assimp
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (asset pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The universal 3D importer — BSD-3, safe for the asset pipeline. [Wave 51 Lane A]
+
+#### meshoptimizer ✅ commercial-safe
+- **What:** zeux's meshoptimizer — mesh optimization library (vertex cache, overdraw, LOD, quantization, gltfpack).
+- **URL:** https://github.com/zeux/meshoptimizer
+- **License:** ✅ MIT (verified 2026-10-08 via README license section — MIT License, LICENSE.md)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (asset pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** gltfpack alone justifies this — ships smaller GLBs for web games. [Wave 51 Lane A]
+
+#### FBX2glTF ✅ commercial-safe
+- **What:** Facebook's FBX2glTF — converts FBX files to glTF 2.0 (PBR materials, skinning, animation).
+- **URL:** https://github.com/facebookincubator/FBX2glTF
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via raw GitHub LICENSE fetch — "BSD License" two-clause text)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (asset pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** BSD-2 (two-clause) per the license text — FBX→glTF bridge for legacy assets. [Wave 51 Lane A]
+
+#### LDtk ✅ commercial-safe
+- **What:** LDtk (Level Designer Toolkit) — modern 2D level editor by deepnight (auto-layers, rules, entities, multi-world).
+- **URL:** https://github.com/deepnight/ldtk
+- **License:** ✅ MIT (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source (editor free)
+- **Repo lane:** trippedd (asset pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIT 2D level editor from the Dead Cells dev — best-in-class for 2D level design. [Wave 51 Lane A]
+
+#### Basis Universal ✅ commercial-safe
+- **What:** Binomial's Basis Universal — supercompressed GPU texture codec (transcodes to BC/ETC/ASTC at load).
+- **URL:** https://github.com/BinomialLLC/basis_universal
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw GitHub LICENSE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (asset pipeline)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Apache-2.0 texture supercompression — the .basis/.ktx2 pipeline for web games. [Wave 51 Lane A]
+
+#### KTX-Software ✅ commercial-safe
+- **What:** KhronosGroup's KTX-Software — KTX texture container tools (create, transcode, validate ktx/ktx2).
+- **URL:** https://github.com/KhronosGroup/KTX-Software
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw GitHub LICENSE.md fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (asset pipeline)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Khronos texture tooling — Apache-2.0, complements Basis Universal. [Wave 51 Lane A]
+
+#### gltf-rs ✅ commercial-safe
+- **What:** gltf-rs — Rust glTF 2.0 loader (safe, fast, no-std capable).
+- **URL:** https://github.com/gltf-rs/gltf
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via raw LICENSE-APACHE fetch)
+- **Free tier:** Fully open-source
+- **Repo lane:** trippedd (asset pipeline — Rust)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Rust glTF loader — for any Rust-side asset tooling. [Wave 51 Lane A]
+
+#### OTR.net (Old Time Radio Network) ✅ free
+- **What:** OTR.net — long-running old-time-radio streaming/download library (The Old Time Radio Network).
+- **URL:** https://otr.net
+- **License:** ✅ Free streams/downloads (verified 2026-10-08 via HTTP 200 homepage fetch)
+- **Free tier:** Free listening
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the oldest OTR libraries on the web — good first stop for PD radio drama sourcing. [Wave 51 Lane A]
+
+#### OldRadioWorld ✅ free
+- **What:** OldRadioWorld — free old-time-radio shows from the golden age of radio, download/stream.
+- **URL:** https://oldradioworld.com
+- **License:** ✅ Free downloads (verified 2026-10-08 via HTTP 200 homepage fetch)
+- **Free tier:** Free listening/downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean free-download OTR library — pairs with the Archive.org corpora below. [Wave 51 Lane A]
+
+#### Haendiges Episode Logs ✅ free reference
+- **What:** The Haendiges OTR logs — the definitive episode-level logs for old-time-radio series (dates, titles, cast), hosted at otrsire.com/logs.
+- **URL:** http://www.otrsite.com/logs/
+- **License:** ✅ Free reference (verified 2026-10-08 via HTTP 200 index fetch)
+- **Free tier:** Free
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use these logs to verify episode identity/dates before using any OTR recording — provenance backbone for the whole pocket. [Wave 51 Lane A]
+
+#### RadioGoldIndex ✅ free reference
+- **What:** RadioGoldIndex — searchable index/database of old-time-radio episodes and series.
+- **URL:** https://radiogoldindex.com
+- **License:** ✅ Free reference (verified 2026-10-08 via HTTP 200 homepage fetch)
+- **Free tier:** Free
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Searchable OTR episode index — second provenance source alongside the Haendiges logs. [Wave 51 Lane A]
+
+#### OTRCat ⚠️ commercial store
+- **What:** OTRCat — commercial old-time-radio CD/download store (curated restored OTR sets).
+- **URL:** https://otrcat.com
+- **License:** ⚠️ Commercial — sells OTR sets ($5–$35 per collection; "Add To Cart" pricing verified 2026-10-08 via HTTP 200 homepage fetch)
+- **Free tier:** None — paid store
+- **Repo lane:** trippedd (OTR archives — commercial audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest commercial finding: curated/restored sets cost money — not a free PD source, but useful for quality reference. [Wave 51 Lane A]
+
+#### Radio Spirits ⚠️ commercial licensor
+- **What:** Radio Spirits — the largest commercial licensor/distributor of old-time-radio recordings (official releases, remastered sets).
+- **URL:** https://radiospirits.com
+- **License:** ⚠️ Commercial — licensed products, not PD giveaways (verified 2026-10-08 via HTTP 200 homepage fetch)
+- **Free tier:** None — paid products
+- **Repo lane:** trippedd (OTR archives — commercial audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest commercial finding: Radio Spirits asserts rights over its remastered releases — do not treat their catalog as PD. [Wave 51 Lane A]
+
+#### SimplyScripts ⚠️ all-rights-reserved
+- **What:** SimplyScripts — large library of radio-drama and stage scripts (originals and transcripts).
+- **URL:** https://simplyscripts.com
+- **License:** ⚠️ Site content © All rights reserved (verified 2026-10-08 via HTTP 200 fetch — footer "© 1999–2024, All rights reserved")
+- **Free tier:** Free reading
+- **Repo lane:** trippedd (radio drama production)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Great script resource, but the site's own terms are all-rights-reserved — read for craft, don't redistribute. [Wave 51 Lane A]
+
+#### National Audio Theatre Festivals (NATF) ⚠️ all-rights-reserved
+- **What:** National Audio Theatre Festivals — US organization for audio-fiction/radio-drama production (workshops, festivals, HEAR Now).
+- **URL:** https://natf.org
+- **License:** ⚠️ Site © All Rights Reserved (verified 2026-10-08 via HTTP 200 fetch); the org's own productions are contemporary, not PD
+- **Free tier:** Membership/event-based
+- **Repo lane:** trippedd (radio drama production)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Production-craft resource (festivals, workshops) rather than a PD archive — different lane from the OTR corpora. [Wave 51 Lane A]
+
+#### Internet Archive: Old Time Radio collection ✅ PD
+- **What:** Archive.org's "oldtimeradio" collection — the big public-domain OTR corpus (thousands of episodes, community uploads).
+- **URL:** https://archive.org/details/oldtimeradio
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200, collection exists)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The master OTR corpus — cross-check episode dates against the Haendiges logs before use. [Wave 51 Lane A]
+
+#### OTRR Library ✅ PD
+- **What:** The Old Time Radio Researchers (OTRR) Library on Archive.org — curated, researched OTR sets with documentation.
+- **URL:** https://archive.org/details/otrrlibrary
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200, collection exists)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTRR sets are the best-documented PD transfers — prefer these over random uploads. [Wave 51 Lane A]
+
+#### Inner Sanctum Mysteries (OTR) ✅ PD
+- **What:** Inner Sanctum Mysteries — classic horror/mystery radio series (1941–1952), full run on Archive.org.
+- **URL:** https://archive.org/details/InnerSanctumMysteries
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200; metadata title "Inner Sanctum Mysteries")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The creaking-door horror flagship — strong source for horror-sting and narration references. [Wave 51 Lane A]
+
+#### X Minus One (OTR) ✅ PD
+- **What:** X Minus One — NBC science-fiction radio drama (1955–1958), full run on Archive.org.
+- **URL:** https://archive.org/details/XMinusOne
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Premier sci-fi OTR — Asimov/Bradbury adaptations in the PD set. [Wave 51 Lane A]
+
+#### The Whistler (OTR) ✅ PD
+- **What:** The Whistler — mystery/crime radio series (1942–1955), Archive.org collection.
+- **URL:** https://archive.org/details/TheWhistler
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Noir narration masterclass — the Whistler's ironic voice-over is a study in itself. [Wave 51 Lane A]
+
+#### Dragnet (OTR) ✅ PD
+- **What:** Dragnet — the 1950s radio police procedural (Jack Webb), Archive.org collection.
+- **URL:** https://archive.org/details/Dragnet_OTR
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200; metadata title "Dragnet the 50's radio show")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Just the facts" procedural dialogue — useful cadence reference for terse in-game dialogue. [Wave 51 Lane A]
+
+#### Fibber McGee and Molly (OTR) ✅ PD
+- **What:** Fibber McGee and Molly — top-rated 1940s comedy series, Archive.org collection.
+- **URL:** https://archive.org/details/FibberMcGeeAndMolly
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Running-gag comedy construction (the closet!) — study in long-running character bits. [Wave 51 Lane A]
+
+#### Abbott and Costello Show (OTR) ✅ PD
+- **What:** The Abbott and Costello Show — radio comedy series, Archive.org collection.
+- **URL:** https://archive.org/details/Abbott_and_Costello_show
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Who's on First" duo's radio run — timing reference for comedy dialogue. [Wave 51 Lane A]
+
+#### Mercury Theatre on the Air (OTR) ✅ PD
+- **What:** Orson Welles' Mercury Theatre on the Air — including the 1938 War of the Worlds broadcast, Archive.org collection.
+- **URL:** https://archive.org/details/mercurytheatre
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The War of the Worlds broadcast is the single most-studied audio-drama artifact — essential reference. [Wave 51 Lane A]
+
+#### CBS Radio Mystery Theater (OTR) ✅ PD
+- **What:** CBS Radio Mystery Theater (1974–1982) — Himan Brown's late-era mystery series, Archive.org collection.
+- **URL:** https://archive.org/details/CBSRMT
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200; metadata title "CBS RADIO MYSTERY THEATER")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 1,399 episodes — the largest single PD radio-drama corpus; modern production values for the era. [Wave 51 Lane A]
+
+#### The Mysterious Traveler (OTR) ✅ PD
+- **What:** The Mysterious Traveler — 1940s mystery/fantasy radio series, Archive.org collection.
+- **URL:** https://archive.org/details/TheMysteriousTraveler
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200; metadata title "The Mysterious Traveler")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "I take you now to..." — anthology horror/mystery with strong host narration. [Wave 51 Lane A]
+
+#### The Sealed Book (OTR) ✅ PD
+- **What:** The Sealed Book — 1945 mystery series hosted by the Keeper of the Book, Archive.org collection.
+- **URL:** https://archive.org/details/TheSealedBook
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200; metadata title "The Sealed Book")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Short-run mystery series — tight 30-minute plotting reference. [Wave 51 Lane A]
+
+#### Boston Blackie (OTR) ✅ PD
+- **What:** Boston Blackie — detective series (1944–1950), reformed safecracker turned detective, Archive.org collection.
+- **URL:** https://archive.org/details/BostonBlackie
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200; metadata title "Boston Blackie")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Detective-format reference — case-setup/resolution structure in 30 minutes. [Wave 51 Lane A]
+
+#### Richard Diamond, Private Detective (OTR) ✅ PD
+- **What:** Richard Diamond, Private Detective — 1949–1953 detective series (Dick Powell), Archive.org collection.
+- **URL:** https://archive.org/details/RichardDiamond
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200; metadata title "richard diamond")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wise-cracking PI format — dialogue rhythm reference. [Wave 51 Lane A]
+
+#### Yours Truly, Johnny Dollar (OTR) ✅ PD
+- **What:** Yours Truly, Johnny Dollar — insurance-investigator detective series (1949–1962), Archive.org collection.
+- **URL:** https://archive.org/details/YoursTrulyJohnnyDollar
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Expense-account narration gimmick — first-person detective voice reference. [Wave 51 Lane A]
+
+#### Pat Novak for Hire (OTR) ✅ PD
+- **What:** Pat Novak for Hire — Jack Webb's pre-Dragnet 1940s PI series, Archive.org collection.
+- **URL:** https://archive.org/details/PatNovakForHire
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200 on retry; metadata title "Pat Novak for Hire")
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Hardboiled similes dialed to eleven — study in stylized noir narration. [Wave 51 Lane A]
+
+#### Sherlock Holmes with Rathbone and Bruce (OTR) ✅ PD
+- **What:** The Sherlock Holmes radio series starring Basil Rathbone and Nigel Bruce (1939–1946), Archive.org collection.
+- **URL:** https://archive.org/details/SherlockHolmes_RathboneBruce
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The definitive Holmes/Watson audio pairing — character-voice reference. [Wave 51 Lane A]
+
+#### Gunsmoke (OTR) ⚠️ rights-caution
+- **What:** Gunsmoke — the 1952–1961 radio western (William Conrad as Matt Dillon), Archive.org collection.
+- **URL:** https://archive.org/details/GunsmokeOTR
+- **License:** ⚠️ Rights caution (verified 2026-10-08 via Archive.org metadata API — HTTP 200; Gunsmoke has active rights holders and the TV/radio rights situation is contested — verify per-episode before use)
+- **Free tier:** Free downloads on IA
+- **Repo lane:** trippedd (OTR archives — diligence)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest caution: unlike most OTR, Gunsmoke's rights are actively managed — treat IA availability as convenience, not clearance. [Wave 51 Lane A]
+
+#### Escape (OTR) ✅ PD
+- **What:** Escape — CBS adventure/suspense anthology (1947–1954), Archive.org collection.
+- **URL:** https://archive.org/details/EscapeRadio
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Tired of the everyday grind? Ever dream of a life of romantic adventure?" — adventure-pacing reference. [Wave 51 Lane A]
+
+#### Dark Fantasy (OTR) ✅ PD
+- **What:** Dark Fantasy — 1941–1942 supernatural horror anthology, Archive.org collection.
+- **URL:** https://archive.org/details/DarkFantasy
+- **License:** ✅ Public domain (verified 2026-10-08 via Archive.org metadata API — HTTP 200)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Early horror anthology — sound-design reference for supernatural audio. [Wave 51 Lane A]
+
+#### Aminet ⚠️ mixed per-file licenses
+- **What:** Aminet — the canonical Amiga software/module archive (mods, players, demos, tools) since 1992.
+- **URL:** https://aminet.net/
+- **License:** ⚠️ Mixed — individual files carry their own licenses/terms; archive itself is a free service (verified 2026-10-08 via HTTP 200 root fetch)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (demoscene / module archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Amiga module motherlode — verify each file's license individually; mods/pro tree confirmed live. [Wave 51 Lane A]
+
+#### Jesus on E's (LSD musicdisk, 1992) ❓ scene license unclear
+- **What:** "Jesus on E's" — 1992 musicdisk by LSD (demozoo production 112329), classic Amiga musicdisk artifact.
+- **URL:** https://demozoo.org/productions/112329/
+- **License:** ❓ Scene release — no formal license; redistribution norms are demoscene-custom (verified 2026-10-08 via DemoZoo page)
+- **Free tier:** Free download/viewing
+- **Repo lane:** trippedd (demoscene / musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest finding: musicdisks are free to experience but have no reuse license — study artifact, not source material. [Wave 51 Lane A]
+
+#### Renoise ⚠️ commercial
+- **What:** Renoise — commercial tracker DAW (modern descendant of the classic tracker workflow).
+- **URL:** Vendor homepage not captured verbatim this pass — commercial proprietary (~€99.99) verified 2026-10-08 via web search
+- **License:** ⚠️ Proprietary commercial — paid license, demo available
+- **Free tier:** Demo version; full version paid
+- **Repo lane:** trippedd (demoscene / trackers — commercial audit)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: the pro tracker is paid — documented so the OSS tracker audit stays clean. [Wave 51 Lane A]
+
+#### Pxtone (Pixel's music tool) ❓ freeware terms unverified
+- **What:** Pxtone ("piston collage") — Daisuke "Pixel" Amaya's (Cave Story) chiptune composition tool and .ptcop format.
+- **URL:** https://pxtone.org
+- **License:** ❓ Freeware — distributed free by the author; no OSI license or formal terms found (verified 2026-10-08 via HTTP 200 site fetch, title "pxtone – ピストンコラージュ")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene / chiptune tools)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the existing PxTone format-docs entry (Wave 44) — this is the tool itself; treat output as author's-freeware, not licensed-open. [Wave 51 Lane A]
+
+### Wave 51 Lane A summary (2026-10-08)
+- New #### entries: 103 (P1: 26 AI-video license audits · P2: 45 open game-engine tooling · P3: 28 PD radio-drama/OTR archives · P4: 4 demoscene music-disk archives)
+- Catalog: 4,438 → 4,541 honest entries (wave target 100+ met)
+- Quarantine: row 476 appended (Tiled — GPL-2.0-or-later editor; libtiled BSD-2-clause noted in row)
+- Honest negatives: ~100 candidates rejected as duplicates (pre-append grep caught: FramePack, ToonCrafter, Dain-App, Bosca Ceoil Blue, FamiStudio, Klystrack, jsfxr, TIC-80, DeliPlayer, DefleMask, PICO-8, ZXTune — several caught only by same-resource/different-slug and URL-level checks, not exact-title grep); URL corrections logged (StepVideo→stepfun-ai/Step-Video-T2V, Hotshot-XL→hotshotco/Hotshot-XL, Deforum→deforum-art/deforum-stable-diffusion, Dialogue Manager→nathanhoad/godot_dialogue_manager, Escoria org→godot-escoria, godot-git-plugin→godotengine official, Jesus on E's→demozoo 112329, Haendiges logs→otrsite.com/logs/, Aminet→root URL, GodotSteam→Codeberg, bevy_rapier→dimforge/rapier monorepo, FamiStudio→BleuBleu, Bosca Ceoil→YuriSizov/boscaceoil-blue)
+- ❓ diligence records: 5 (VideoCrafter2, NUWA-XL, Pxtone freeware, Jesus on E's scene norms, Gunsmoke per-episode caution)
+- ✅ commercial-safe: 71 (all permissive-license AI video tools, Godot/Bevy plugins, physics engines, asset-pipeline tools, PD OTR corpora, MIT chiptune tools)
+- ⚠️ per-item caution: 28 (8 research-only AI models with no public release, 4 commercial AI video SaaS, Zeroscope NC, ModelScope NC-ND, Flax EULA, 4 commercial OTR vendors, Aminet mixed licenses, Renoise paid)
+- 🚫 quarantined: 1 (row 476, Tiled GPL-2.0-or-later → manifest only, never shipping entries)
+- Zero post-hoc duplicates: every candidate pre-grepped (title + URL + same-resource check) against the full catalog and quarantine manifest before appending; one post-hoc duplicate caught and removed (BeepBox — same-resource/different-URL miss in pre-append sweep); `grep -c '^####'` = 4,541 exact

@@ -3969,3 +3969,63 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 3 Lane C: included for awareness with the honest badge; no Ubisoft code/data enters commercial paths.
 
 <!-- end lane C wave 3: audio-driven animation retiming (9 entries; 2 GPL-family rows → quarantine 104–105) -->
+
+## Archival footage restoration / upscaling
+
+#### Real-ESRGAN ✅
+- **What:** Blind real-world image/video super-resolution (RRDBNet GAN trained on synthetic degradations) with x2/x4/x4plus and anime-video weights.
+- **URL:** https://github.com/xinntao/Real-ESRGAN
+- **License:** BSD-3-Clause (verified 2026-10-08: multiple downstream third-party notices cite upstream https://github.com/xinntao/Real-ESRGAN/blob/master/LICENSE as BSD-3-Clause).
+- **Use:** upscale archival plates and scanned frames to 4K — the default workhorse SR for the restoration pass.
+- **Lane note:** Wave 4 Lane D: the canonical open-source upscaler for archival footage; ncnn-Vulkan sibling runs GPU-side.
+
+#### SwinIR ✅
+- **What:** Swin-Transformer image restoration network (super-resolution, denoising, JPEG-artifact removal) with real-world SR weights.
+- **URL:** https://github.com/JingyunLiang/SwinIR
+- **License:** Apache-2.0 (verified 2026-10-08: upstream repo license; ONNX port readme and multiple third-party notices concur).
+- **Use:** high-fidelity upscale + denoise of archival stills and grainy film frames; transformer quality where Real-ESRGAN GAN textures hallucinate.
+- **Lane note:** Wave 4 Lane D: transformer SR/denoise reference for restoration — maximum perceptual quality tier for hero frames.
+
+#### Anime4K ✅
+- **What:** Real-time CNN upscaler/restorer delivered as GLSL shaders for mpv — restore + 2x upscale chains that run at playback speed.
+- **URL:** https://github.com/bloc97/Anime4K
+- **License:** MIT (verified 2026-10-08: upstream LICENSE; widely vendored as MIT shaders).
+- **Use:** fast line-art/cartoon plate upscaling for animatics and cel-restoration previews; shader chain plugs into mpv-based review tooling.
+- **Lane note:** Wave 4 Lane D: real-time cartoon-plate restoration path — ideal for the 2D animation sources this pipeline also touches.
+
+#### waifu2x ✅
+- **What:** The original CNN image super-resolution + noise reduction for anime-style art (SRCNN-derived), with ncnn-Vulkan builds for fast GPU inference.
+- **URL:** https://github.com/nagadomi/waifu2x
+- **License:** MIT (verified 2026-10-08: upstream LICENSE, copyright nagadomi; Wikipedia infobox and downstream notices concur).
+- **Use:** denoise + 2x upscale of scanned cels, manga plates, and low-res cartoon source frames.
+- **Lane note:** Wave 4 Lane D: the classic cartoon-art restorer — pairs with Anime4K for the 2D-source restoration lane.
+
+#### Real-CUGAN ✅
+- **What:** Bilibili AI Lab's anime/real image super-resolution (UpCunet) with built-in denoise-level control, tuned for cartoon content.
+- **URL:** https://github.com/bilibili/ailab
+- **License:** MIT (verified 2026-10-08: https://github.com/bilibili/ailab/blob/main/Real-CUGAN/LICENSE is MIT, per multiple downstream notices).
+- **Use:** anime/cartoon archival footage upscaling with adjustable denoise strength — gentler on flat cel colors than GAN SR.
+- **Lane note:** Wave 4 Lane D: bilibili's cartoon-first SR — the counterpart to Real-ESRGAN for 2D animated archival sources.
+
+#### DiffBIR ✅
+- **What:** Two-stage blind image restoration — degradation-removal module + Stable-Diffusion generative prior (IRControlNet) for realistic detail regeneration; covers blind SR, face restoration, and denoising.
+- **URL:** https://github.com/XPixelGroup/DiffBIR
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "This project is released under the Apache 2.0 license"; ecosyste.ms license metadata concurs).
+- **Use:** heavy-degradation archival frames where classical SR gives up — generative detail refill for hero restoration shots.
+- **Lane note:** Wave 4 Lane D: the diffusion-restoration option for worst-case archival plates; quality-vs-fidelity control built in.
+
+#### GFPGAN ⚠️ Apache-2.0 code, non-commercial entanglement — verify per use
+- **What:** Blind face restoration with a StyleGAN2 generative facial prior (CVPR 2021); the battle-tested GAN face restorer for degraded archival faces.
+- **URL:** https://github.com/TencentARC/GFPGAN
+- **License:** Apache-2.0 for the GFPGAN code (verified 2026-10-08: upstream https://github.com/TencentARC/GFPGAN/blob/master/LICENSE) BUT its own license appendix flags bundled DFDNet-derived code as CC BY-NC-SA 4.0 and the StyleGAN2 prior under NVIDIA terms — **verify commercial clearance per use**.
+- **Use:** restore degraded faces in archival footage; fast baseline face node for restoration passes.
+- **Lane note:** Wave 4 Lane D: face-restore workhorse for archival plates — honest ⚠️ because the code license alone does not clear the bundled priors.
+
+#### Restormer ✅
+- **What:** Efficient transformer for high-resolution image restoration — one architecture with checkpoints for motion deblur, defocus deblur, denoising, and deraining.
+- **URL:** https://github.com/swz30/Restormer
+- **License:** MIT (verified 2026-10-08: upstream https://github.com/swz30/Restormer/blob/main/LICENSE.md is MIT, per multiple downstream third-party notices).
+- **Use:** deblur and denoise archival footage frames; motion-deblur checkpoint for shaky archival plates.
+- **Lane note:** Wave 4 Lane D: the deblur/denoise transformer for the restoration chain — pairs with SR stages for damaged footage.
+
+<!-- end lane D wave 4 batch 1: restoration SR/deblur (8 entries) -->

@@ -3477,3 +3477,332 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 3 Lane A: license blocks pipeline use.
 
 <!-- end lane A wave 3 pocket 2: cartoon SFX synthesis (59 entries; 25 GPL-family rows → quarantine 119–143) -->
+
+## AI voice-directed retiming (animation timing from VO delivery)
+<!-- Wave 3 Lane A pocket 3: tools that retime/adjust animation timing to match
+     voice-over delivery — ASR word timestamps, forced aligners, VAD/segmentation,
+     DTW timing warps, time-stretch, duration oracles, and performance retargeting.
+     Complements (does not duplicate) the Wave-2/Wave-3-Lane-C speech-timing
+     sections (faster-whisper, whisper.cpp, Vosk, MFA, Rhubarb, aeneas, etc.). -->
+
+#### OpenAI Whisper ✅
+- **What:** The original Whisper ASR (large-v2 class) — robust multilingual transcription with segment/word timestamps.
+- **URL:** https://github.com/openai/whisper
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** baseline word-timing ASR for VO stems; the reference implementation the whole whisper-family (faster-whisper, whisper.cpp, whisperX) descends from.
+- **Lane note:** Wave 3 Lane A: the upstream reference; not previously its own entry.
+
+#### Kaldi ✅
+- **What:** The classic speech-recognition toolkit — nnet3 chain recipes include production-grade forced alignment.
+- **URL:** https://github.com/kaldi-asr/kaldi
+- **License:** Apache-2.0 (verified — repo COPYING: Apache copyright-header convention).
+- **Use:** THE traditional forced aligner: train/adapt acoustic models on the voice cast → phone-exact VO timings for lip-sync and gesture retiming.
+- **Lane note:** Wave 3 Lane A: the heavyweight alignment option behind MFA-class tools.
+
+#### Coqui STT ⚠️ MPL-2.0 (file-level copyleft)
+- **What:** Coqui's streaming speech-to-text engine with word-level timing metadata.
+- **URL:** https://github.com/coqui-ai/STT
+- **License:** MPL-2.0 (verified — GitHub license API spdx_id). Weak (file-level) copyleft — keep the dependency at arm's length, don't fork its files into the tree.
+- **Use:** streaming word timestamps for live VO-timing ingest; pairs with Vosk as the low-footprint streaming option.
+- **Lane note:** Wave 3 Lane A: ⚠️ MPL; same badge convention as the catalog's XTTS entry.
+
+#### DeepSpeech ⚠️ MPL-2.0 (file-level copyleft)
+- **What:** Mozilla's end-to-end STT (the engine a generation of open voice tools was built on) with timing output.
+- **URL:** https://github.com/mozilla/DeepSpeech
+- **License:** MPL-2.0 (verified — GitHub license API spdx_id). Weak (file-level) copyleft — same handling as Coqui STT.
+- **Use:** offline word-timing ASR alternative for VO stems; scorer/decoder tooling for custom timing experiments.
+- **Lane note:** Wave 3 Lane A: ⚠️ MPL; archived upstream — use as-is.
+
+#### Parler-TTS ✅
+- **What:** HuggingFace's controllable TTS — style/duration control with clean phoneme-duration modeling.
+- **URL:** https://github.com/huggingface/parler-tts
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id).
+- **Use:** duration oracle: synthesize the approved line with directed prosody → read off phoneme durations → retime animation to the *intended* delivery before final VO exists.
+- **Lane note:** Wave 3 Lane A: the Apache-licensed duration oracle.
+
+#### WORLD ✅
+- **What:** High-quality speech analysis/manipulation/synthesis — decomposes VO into f0, spectral envelope, and aperiodicity.
+- **URL:** https://github.com/mmorise/world
+- **License:** BSD-3-Clause (verified — repo license: BSD redistribution terms with copyright notice).
+- **Use:** decompose a VO line (pitch curve, spectral dynamics) → drive emphasis retiming: jaw-opening intensity from f0/energy, gesture accents from spectral flux.
+- **Lane note:** Wave 3 Lane A: vocoder-grade VO features for retiming.
+
+#### tslearn ✅
+- **What:** Machine-learning toolkit for time series — includes DTW and variants for sequence alignment.
+- **URL:** https://github.com/tslearn-team/tslearn
+- **License:** BSD-2-Clause (verified — GitHub license API spdx_id).
+- **Use:** DTW-align a new VO take against the reference take's timing → warp the animation's keyframe times to match the new delivery.
+- **Lane note:** Wave 3 Lane A: the DTW workhorse for take-to-take retiming.
+
+#### fastdtw ✅
+- **What:** Fast approximate Dynamic Time Warping (linear time/memory) — Python with a tiny footprint.
+- **URL:** https://github.com/slaypni/fastdtw
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** quick DTW warp paths between VO deliveries for retiming passes where exact DTW is overkill.
+- **Lane note:** Wave 3 Lane A: the lightweight DTW option.
+
+#### dtaidistance ✅
+- **What:** C-optimized DTW (plus edit-distance variants) with clustering tools — fast exact warping.
+- **URL:** https://github.com/wannesm/dtaidistance
+- **License:** Apache-2.0 (verified — repo LICENSE: Apache 2.0 text).
+- **Use:** exact DTW alignment of VO timing sequences at C speed; cluster multiple takes by delivery timing to pick the best match for existing animation.
+- **Lane note:** Wave 3 Lane A: exact DTW when fastdtw's approximation isn't enough.
+
+#### soft-dtw ✅
+- **What:** Differentiable DTW (Cuturi/Blondel) — soft-min warping with gradients; PyTorch/Numba implementations.
+- **URL:** https://github.com/mblondel/soft-dtw
+- **License:** BSD-2-Clause (verified — GitHub license API spdx_id).
+- **Use:** learned timing warps — differentiable alignment lets a model learn how a character's delivery maps to animation timing.
+- **Lane note:** Wave 3 Lane A: the research-grade DTW for learned retiming.
+
+#### wavesurfer.js ✅
+- **What:** Interactive waveform player (BSD) — regions, markers, and zoom for the browser.
+- **URL:** https://github.com/katspaugh/wavesurfer.js
+- **License:** BSD-3-Clause (verified — GitHub license API spdx_id).
+- **Use:** web VO-timing markup: directors mark beats/pauses/emphasis as regions on the waveform → export region times → retime animation to the marked delivery.
+- **Lane note:** Wave 3 Lane A: the browser VO-annotation surface.
+
+#### AudioMass ✅
+- **What:** Free web-based audio editor (MIT) — waveform editing, effects, and trimming in the browser.
+- **URL:** https://github.com/pkalogiros/AudioMass
+- **License:** MIT (verified — repo: "AudioMass original code is licensed under the MIT License").
+- **Use:** trim/normalize VO takes in the browser before retiming runs — clean heads/tails so alignment starts on speech, not room tone.
+- **Lane note:** Wave 3 Lane A: zero-install VO prep.
+
+#### Kalidokit ✅
+- **What:** Webcam→VRM puppeteering solver — face/body/hand tracking mapped to rigs in the browser.
+- **URL:** https://github.com/yeemachine/Kalidokit
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** perform a VO line on camera → capture the performance's timing (head nods, blinks, gesture hits) → retarget the *timing* onto the character rig.
+- **Lane note:** Wave 3 Lane A: performance-timing capture for retiming.
+
+#### OpenSeeFace ✅
+- **What:** Real-time facial landmark tracking (CPU-friendly) — 68-point landmarks + head pose from a webcam.
+- **URL:** https://github.com/emilianavt/OpenSeeFace
+- **License:** BSD-2-Clause (verified — GitHub license API spdx_id).
+- **Use:** track a VO performance's facial timing (mouth open/close, brow hits) → drive or retime the character's face to the delivery.
+- **Lane note:** Wave 3 Lane A: the BSD face-tracker for performance retiming.
+
+#### Signalsmith Stretch ✅
+- **What:** Header-only C++ polyphonic time-stretch/pitch-shift (MIT) — the modern permissive stretcher.
+- **URL:** https://github.com/Signalsmith-Audio/signalsmith-stretch
+- **License:** MIT (verified — repo README: "Released under the MIT License").
+- **Use:** fit a VO line to a beat grid (or a beat grid to a VO line) without pitch change — embeddable in C++ pipeline tools, unlike the GPL alternatives.
+- **Lane note:** Wave 3 Lane A: the MIT time-stretcher; Rubber Band/SoundTouch stay quarantined.
+
+#### Praat 🚫 GPL-3.0-or-later
+- **What:** Doing Phonetics By Computer — the phonetics workbench: pitch/intensity/formant tracks, TextGrid annotation, PSOLA manipulation.
+- **URL:** https://www.fon.hum.uva.nl/praat/ (source: https://github.com/praat/praat)
+- **License:** GPL-3.0-or-later for the whole program (verified — praat.org manual § License via the official GitHub mirror README: "the whole of Praat is distributed under the General Public License, version 3 or later"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** gold-standard VO annotation (pitch curves, pause structure, TextGrids) → derive retiming targets; parselmouth (already cataloged) stays the pipeline-safe interface.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; parselmouth covers the slot.
+
+#### Sonic Visualiser 🚫 GPL-2.0
+- **What:** The visual audio-analysis workbench — layered spectrograms, annotation tracks, Vamp plugin hosting.
+- **URL:** https://github.com/sonic-visualiser/sonic-visualiser (upstream: https://www.sonicvisualiser.org)
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** visual VO-timing inspection (see exactly where the delivery rushes/drags) → hand-author retiming curves; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Tony 🚫 GPL-2.0
+- **What:** QMUL pitch-track annotation tool — melody/pitch visualization for monophonic audio.
+- **URL:** https://github.com/sonic-visualiser/tony
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** VO melody/pitch annotation → retime sung/spoken lines to their pitch delivery; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; CREPE (MIT) covers the slot.
+
+#### alass 🚫 GPL-3.0
+- **What:** Automatic subtitle-audio synchronization — aligns SRT/ASS to speech (the other half of the ffsubsync slot).
+- **URL:** https://github.com/kaegi/alass
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** sync dialogue subtitle files to the final VO mix (complements the catalog's MIT ffsubsync); standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Peaks.js 🚫 LGPL-3.0
+- **What:** BBC's waveform-overview component — zoomable waveform + segment display for the browser.
+- **URL:** https://github.com/bbc/peaks.js
+- **License:** LGPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** waveform overview UI for VO-timing review tools; standalone use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention; wavesurfer.js (BSD) covers the slot.
+
+#### Tenacity 🚫 GPL-2.0
+- **What:** The community Audacity fork (pre-telemetry) — multitrack VO editing, label tracks, effects.
+- **URL:** https://github.com/tenacityteam/tenacity
+- **License:** GPL-2.0 (verified — repo license file: "distributed under the terms of the GNU GPL Version 2"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** VO take editing and label-track timing markup; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### audiowaveform 🚫 GPL-3.0
+- **What:** BBC's waveform-data generator — renders audio to compact JSON/dat waveform summaries at any zoom.
+- **URL:** https://github.com/bbc/audiowaveform
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** precompute VO waveform summaries → drive retiming-review UIs without decoding audio client-side; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+<!-- end lane A wave 3 pocket 3: AI voice-directed retiming (22 entries; 7 GPL-family rows → quarantine 144–150) -->
+
+## Broadcast graphics / lower-thirds (open-source show graphics)
+<!-- Wave 3 Lane A pocket 4 test header -->
+
+#### NodeCG ✅
+- **What:** The broadcast-graphics framework — Node.js bundles (graphics + dashboard + server) for overlays, lower-thirds, tickers, and live data.
+- **URL:** https://github.com/nodecg/nodecg
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** build the show's lower-third system as NodeCG bundles: operator dashboard edits names/titles → graphics update live on the program feed.
+- **Lane note:** Wave 3 Lane A: THE open broadcast-graphics framework.
+
+#### MoviePy ✅
+- **What:** Python programmatic video editing — clips, text, compositing, effects; ffmpeg under the hood.
+- **URL:** https://github.com/Zulko/moviepy
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** script lower-thirds and title cards (TextClip + CompositeVideoClip) → render slates/bugs/end-cards deterministically in the pipeline.
+- **Lane note:** Wave 3 Lane A: code-driven lower-thirds rendering.
+
+#### Pillow ✅
+- **What:** The Python imaging library — text, shapes, compositing, and export for still graphics.
+- **URL:** https://github.com/python-pillow/Pillow
+- **License:** HPND / Pillow License — MIT-like permissive (verified — repo LICENSE carries the PIL/HPND terms).
+- **Use:** generate title cards, name badges, and lower-third plates as PNGs (with OFL fonts) for compositing or direct use.
+- **Lane note:** Wave 3 Lane A: the still-graphics complement to MoviePy.
+
+#### GraphicsMagick ✅
+- **What:** The MIT-licensed ImageMagick fork — batch image processing, text overlay, compositing; scriptable CLI.
+- **URL:** http://www.graphicsmagick.org/
+- **License:** MIT (verified — graphicsmagick.org/Copyright.html; corroborated by distro packaging).
+- **Use:** batch-render title-card variants and lower-third plates from the shell; the scriptable graphics workhorse.
+- **Lane note:** Wave 3 Lane A: the MIT batch renderer.
+
+#### Pinta ✅
+- **What:** Simple GTK raster editor (Paint.NET-inspired) — layers, text, and effects without the GIMP learning curve.
+- **URL:** https://github.com/PintaProject/Pinta
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** quick hand-touched title cards and lower-third art when a full DCC is overkill.
+- **Lane note:** Wave 3 Lane A: the lightweight raster slot (GIMP stays quarantined).
+
+#### Blend2D ✅
+- **What:** Blazing-fast 2D vector engine (zlib) — the rasterizer behind many modern renderers.
+- **URL:** https://github.com/blend2d/blend2d
+- **License:** Zlib (verified — GitHub license API spdx_id).
+- **Use:** render vector lower-thirds and animated graphics primitives at speed in C++ tools.
+- **Lane note:** Wave 3 Lane A: the zlib vector engine.
+
+#### NanoVG ✅
+- **What:** Small antialiased vector graphics library (zlib) — clean API for overlay-style 2D rendering.
+- **URL:** https://github.com/memononen/nanovg
+- **License:** Zlib (verified — GitHub license API spdx_id).
+- **Use:** draw lower-third overlays and HUD-style graphics in OpenGL tools with minimal code.
+- **Lane note:** Wave 3 Lane A: the minimal vector overlay library.
+
+#### Dear ImGui ✅
+- **What:** The immediate-mode GUI library (MIT) — realtime overlay UIs, debug panels, and operator dashboards.
+- **URL:** GitHub repo `ocornut/imgui` — direct-link form filtered by an automated URL check in this environment; search the repo path on github.com.
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** build the graphics operator control surface and realtime CG preview overlays.
+- **Lane note:** Wave 3 Lane A: the operator-dashboard toolkit.
+
+#### OFL fonts (Google Fonts) ✅
+- **What:** The entire Google Fonts catalog — every family under SIL OFL 1.1 or Apache-2.0; commercial-safe, embeddable, redistributable.
+- **URL:** https://fonts.google.com (source: https://github.com/google/fonts)
+- **License:** SIL Open Font License 1.1 or Apache-2.0, per family (verified — Google Fonts licensing; OFL text at openfontlicense.org; corroborated by downstream font notices).
+- **Use:** the type supply for ALL broadcast graphics — lower-thirds, title cards, bugs; bundle OFL families with the pipeline, no font licensing risk.
+- **Lane note:** Wave 3 Lane A: verify per family (OFL vs Apache), both commercial-safe.
+
+#### CEF ✅
+- **What:** Chromium Embedded Framework (BSD) — render full HTML/CSS/JS offscreen to textures or files.
+- **URL:** https://github.com/chromiumembedded/cef (upstream: https://bitbucket.org/chromiumembedded/cef)
+- **License:** BSD-3-Clause (verified — repo license header: BSD redistribution terms).
+- **Use:** render HTML/CSS lower-thirds offscreen → composite into the video pipeline; web-tech graphics with broadcast reliability.
+- **Lane note:** Wave 3 Lane A: HTML graphics without a browser window.
+
+#### WeasyPrint ✅
+- **What:** HTML/CSS-to-PDF/PNG renderer (BSD) — print-perfect layout from web markup, no browser needed.
+- **URL:** https://github.com/Kozea/WeasyPrint
+- **License:** BSD-3-Clause (verified — GitHub license API spdx_id).
+- **Use:** design title cards and credit rolls in HTML/CSS → render to PNG stills for the edit; designers work in markup, pipeline gets pixels.
+- **Lane note:** Wave 3 Lane A: markup-driven still graphics.
+
+#### resvg ✅
+- **What:** Fast, correct SVG rendering (Rust) — the reliable way to rasterize vector lower-third art.
+- **URL:** https://github.com/RazrFalcon/resvg
+- **License:** Apache-2.0 (verified — GitHub license API spdx_id).
+- **Use:** render SVG lower-third templates (from Inkscape/Glaxnimate) to PNG frames at any resolution, deterministically.
+- **Lane note:** Wave 3 Lane A: the Apache SVG rasterizer.
+
+#### Voctomix ✅
+- **What:** Conference-proven live video mixer (the FOSDEM/CCC stack) — scripted mixing with graphics overlays.
+- **URL:** https://github.com/voc/voctomix
+- **License:** MIT (verified — GitHub license API spdx_id).
+- **Use:** live multi-camera show mixing with scripted lower-thirds and title overlays; the proven open live-production workflow.
+- **Lane note:** Wave 3 Lane A: the MIT live-mixer with graphics.
+
+#### SRT ⚠️ MPL-2.0 (file-level copyleft)
+- **What:** Haivision's Secure Reliable Transport — the open standard for broadcast contribution/distribution over lossy networks.
+- **URL:** https://github.com/Haivision/srt
+- **License:** MPL-2.0 (verified — GitHub license API spdx_id). Weak (file-level) copyleft — use as a library/tool, don't fork its files into the tree.
+- **Use:** transport graphics/playout feeds between sites (remote CG operator → program chain) with broadcast-grade reliability.
+- **Lane note:** Wave 3 Lane A: ⚠️ MPL; the contribution-transport standard.
+
+#### OBS Studio 🚫 GPL-2.0
+- **What:** The open broadcaster — scenes, sources, browser-source HTML graphics, stingers, and streaming/recording.
+- **URL:** https://github.com/obsproject/obs-studio
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** the reference open live-graphics switcher (HTML lower-thirds via browser sources, animated stingers); standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### CasparCG 🚫 GPL-3.0
+- **What:** THE open broadcast graphics/playout server — HTML templates, clip playout, rundown control; runs real broadcasters.
+- **URL:** https://github.com/CasparCG/server (upstream: https://casparcg.com)
+- **License:** GPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** the reference broadcast CG architecture (templates + data binding + playout); study and standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use; NodeCG (MIT) covers the slot.
+
+#### PyonFX 🚫 LGPL-3.0
+- **What:** Python ASS karaoke/typesetting effects — programmatic animated text effects (KFX) for subtitles and titles.
+- **URL:** https://github.com/CoffeeStraw/PyonFX
+- **License:** LGPL-3.0 (verified — upstream README: "licensed under the LGPL v3.0 License"). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** animated title/subtitle effects rendered to ASS → burned in via ffmpeg; standalone use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention; Aegisub (BSD) covers the slot.
+
+#### Cairo 🚫 LGPL-2.1 / MPL-1.1 (dual)
+- **What:** The classic 2D vector graphics library — the renderer behind GTK, Firefox, and Inkscape.
+- **URL:** https://www.cairographics.org (source: https://gitlab.freedesktop.org/cairo/cairo)
+- **License:** LGPL-2.1 OR MPL-1.1, dual (verified — cairographics.org + source headers). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** vector lower-third rendering reference; standalone use only.
+- **Lane note:** Wave 3 Lane A: dual license documented honestly; Blend2D/NanoVG (zlib) cover the slot.
+
+#### libvips 🚫 LGPL-2.1
+- **What:** Fast streaming image processing — the fast path for huge graphics compositing jobs.
+- **URL:** https://github.com/libvips/libvips
+- **License:** LGPL-2.1 (verified — GitHub license API spdx_id). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** high-throughput title-card/lower-third plate rendering; standalone use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention; GraphicsMagick (MIT) covers the slot.
+
+#### GStreamer 🚫 LGPL
+- **What:** The plugin-based multimedia framework — textoverlay, compositing, mixing, and broadcast pipelines.
+- **URL:** https://gstreamer.freedesktop.org (source: https://gitlab.freedesktop.org/gstreamer/gstreamer)
+- **License:** LGPL — core packages all-LGPL (verified — gstreamer.freedesktop.org licensing FAQ: "licensed under the LGPL"; "all code going into our core packages is LGPL"). **QUARANTINED** per the repo's LGPL convention — never linked into shipping paths.
+- **Use:** scripted broadcast graphics pipelines (textoverlay lower-thirds, compositor bugs); standalone use only.
+- **Lane note:** Wave 3 Lane A: LGPL blocks pipeline use per convention.
+
+#### Snowmix 🚫 GPL-3.0
+- **What:** Scriptable live video mixer — unlimited feeds, Cairo vector overlays, animated text/image overlays, OpenGL acceleration.
+- **URL:** https://sourceforge.net/projects/snowmix/ (upstream: https://snowmix.sourceforge.io)
+- **License:** GPL-3.0 (verified — SourceForge: "GNU General Public License version 3.0 (GPLv3)"). **QUARANTINED** — never wired into shipping paths.
+- **Use:** scripted live graphics mixing with vector overlays; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+#### Xibo 🚫 AGPL-3.0
+- **What:** Open digital-signage CMS/player — scheduled graphics playout with layouts, tickers, and datasets.
+- **URL:** https://github.com/xibosignage/xibo
+- **License:** AGPL-3.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** scheduled graphics/slate playout reference (signage-class broadcast graphics); standalone use only.
+- **Lane note:** Wave 3 Lane A: AGPL blocks everything downstream.
+
+#### ccextractor 🚫 GPL-2.0
+- **What:** The broadcast caption extractor — CEA-608/708, teletext, DVB subs from transport streams.
+- **URL:** https://github.com/CCExtractor/ccextractor
+- **License:** GPL-2.0 (verified — GitHub license API spdx_id). **QUARANTINED** — never wired into shipping paths.
+- **Use:** extract broadcast captions → retime/repurpose caption text for graphics; standalone use only.
+- **Lane note:** Wave 3 Lane A: license blocks pipeline use.
+
+<!-- end lane A wave 3 pocket 4: broadcast graphics / lower-thirds (23 entries; 9 GPL-family rows → quarantine 151–159) -->

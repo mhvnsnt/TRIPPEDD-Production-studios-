@@ -32837,3 +32837,1110 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Honest drops (failures documented, no entries):** Highly Experimental (PSF player — no license located); PyTranscriber (license ambiguous across forks); tixy.land (repo not located); PiKaraoke (repo not located); karaoke-eternal (unverified); Serein/Monomate/20kbps/Block Fort/Prescription Records/Tokyo Drone Patrol/coucou records/Cymbalism/Adelaide/Zomb/Reset/DMT/Catskull/Firestorm netlabels (unverified this pass); MPT format (dropped — confusable with OpenMPT's MPTM); GDM format (already covered by the Wave 32 DSMI-family entry); 669/STM/FAR/ULT/MTM/DMF/AMF/DSM/PTM/OKT per-format docs (already covered by the Wave 32 family entries).
 - **Quarantine rows added:** 5 (rows 274–278: PyKaraoke LGPL-2.0, Lyriks GPL-3.0, snes_spc LGPL-2.1, OpenKJ GPL-3.0, Capture2Text GPL-3.0). Header counts refreshed: 278 rows · 255 distinct.
 - **Key findings:** the open demoscene-source space clusters around 4k tools (4klang/Sointu MIT, fr_public BSD/PD) while famous demo sources (Elevated, apEx) are NC; Shadertoy's CC-BY-NC-SA default makes the-library-of-shaders (CC0) the commercial-safe shader reference; the karaoke space splits cleanly (Karaoke Mugen/kmlint/OpenKaraoke MIT vs PyKaraoke/OpenKJ/Capture2Text/Lyriks copyleft); console-format docs concentrate on CC0 (SNESDev) vs informal community docs (❓) for the Amiga/PC tracker long tail; ModArchive's per-module Distribution license is redistribution-only, not a reuse grant.
+## Wave 37 Lane A — new entries (2026-10-08)
+
+### Angle 4 — Retro-console homebrew SDK docs
+
+#### GBDK-2020 — QUARANTINED (row 279), linking exception covers ROM output
+- **What:** The maintained Game Boy / Game Boy Color C toolchain: GBDK library, SDCC patches, makefiles, examples, and docs for building GB/GBC ROMs in C and asm
+- **URL:** https://github.com/gbdk-2020/gbdk-2020
+- **License:** GPLv2+LE — LICENSE file verified 2026-10-08: library/SDCC parts are GPLv2 **with linking exception**; the LICENSE states there is no requirement to include or credit any GBDK-2020 licenses or authors when distributing a compiled ROM binary. QUARANTINED (row 279) as GPL-family code; ROM output is covered by the linking exception, never the toolchain sources.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Successor to the classic GBDK; the linking exception is what makes ROM output commercial-safe. Do not link or vendor the toolchain sources into shipping code. [Wave 37 Lane A]
+
+#### RGBDS ✅ commercial-safe
+- **What:** Rednex Game Boy Development System — the standard GB/GBC assembler + linker + fixed ROM header toolchain (RGBASM/RGBLINK/RGBFIX/RGBGFX)
+- **URL:** https://github.com/gbdev/rgbds
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The de-facto GB homebrew assembler; pairs with GBDK-2020 or standalone. [Wave 37 Lane A]
+
+#### SGDK ✅ commercial-safe
+- **What:** SGDK — complete Sega Mega Drive / Genesis development kit by Stephane Dallongeville (C toolchain, sprite engine, XGM sound driver, resource compiler)
+- **URL:** https://github.com/Stephane-D/SGDK
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The dominant Mega Drive homebrew SDK; XGM driver is the standard for Genesis music/SFX in homebrew. [Wave 37 Lane A]
+
+#### Marsdev ✅ commercial-safe
+- **What:** Cross-platform Mega Drive / 32X toolchain (m68k + SH-2 GCC toolchains, build scripts, examples) by andwn
+- **URL:** https://github.com/andwn/marsdev
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The 32X-capable alternative to SGDK. [Wave 37 Lane A]
+
+#### cc65 ✅ commercial-safe
+- **What:** Complete C and assembler toolchain for 6502 systems: cc65 C compiler, ca65 macro assembler, ld65 linker — targets NES, C64, Apple II, Atari 8-bit, Lynx, and more
+- **URL:** https://github.com/cc65/cc65
+- **License:** zlib (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The standard C toolchain for 6502 homebrew; ca65/ld65 also usable standalone for pure-asm NES/C64 projects. [Wave 37 Lane A]
+
+#### asm6f ✅ commercial-safe
+- **What:** Community fork of Loopy's ASM6 — a small, fast 6502 assembler popular for NES homebrew
+- **URL:** https://github.com/freem/asm6f
+- **License:** Permissive public-domain-style grant — LICENSE.txt verified 2026-10-08: free software; you may use, modify, and/or redistribute any part in any fashion.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The beginner-friendly NES assembler behind many first homebrew ROMs; maintained fork of the Loopy original. [Wave 37 Lane A]
+
+#### ZGB ✅ commercial-safe
+- **What:** Game Boy / Game Boy Color game engine (C, built on GBDK/SDCC) with sprite management, scrolling, music, and bank switching
+- **URL:** https://github.com/Zal0/ZGB
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The fastest path from zero to a playable GB/GBC homebrew; hUGEDriver already cataloged separately. [Wave 37 Lane A]
+
+#### GBT Player ✅ commercial-safe
+- **What:** Music player library for the PSG audio channels of the Game Boy, Game Boy Color, and GBA (by AntonioND)
+- **URL:** https://github.com/AntonioND/gbt-player
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with GBT-format trackers for GB/GBC/GBA music. [Wave 37 Lane A]
+
+#### devkitSMS — QUARANTINED (row 280), public-domain libs + GPLv2 crt0 exception
+- **What:** Development kit and libraries for Sega Master System / Game Gear / SG-1000 / SC-3000: SMSlib, PSGlib, crt0 startup, and build tools
+- **URL:** https://github.com/sverx/devkitSMS
+- **License:** Mixed — LICENSES.txt verified 2026-10-08: libraries (SMSlib, PSGlib, SGlib, MBMlib, tools) are **public domain (Unlicense)**; crt0 startup files are **GPLv2 with a special exception** (see the note in crt0 sources). QUARANTINED (row 280) for the GPLv2 crt0.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The standard SMS/GG homebrew kit; SMS Power! community's reference toolchain. [Wave 37 Lane A]
+
+#### PSn00bSDK — QUARANTINED (row 281), MPL-2.0 larger-work allowance
+- **What:** Open-source PlayStation 1 SDK: C/C++ toolchain plus libpsn00b libraries abstracting the PSX hardware (GPU, SPU, CD, controllers)
+- **URL:** https://github.com/Lameguy64/PSn00bSDK
+- **License:** MPL-2.0 for the SDK core — LICENSE.md verified 2026-10-08: the license allows use of the SDK in a closed-source project ("larger work") but requires sharing changes made to the SDK itself. QUARANTINED (row 281) per the MPL-2.0 precedent (row 148).
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The clean-room path off Sony's PSY-Q; mkpsxiso (bundled) is separately GPL-2.0 (row 282). [Wave 37 Lane A]
+
+#### nugget ✅ commercial-safe
+- **What:** Bare-metal PSX libraries and examples by spicyjpeg (pcsx-redux org): GPU, DMA, IRQ, and SPU helpers for original PlayStation homebrew
+- **URL:** https://github.com/pcsx-redux/nugget
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Lower-level companion to PSn00bSDK from the PCSX-Redux team; MIT makes it the simplest license story in PSX homebrew. [Wave 37 Lane A]
+
+#### mkpsxiso 🚫 GPL-2.0 — QUARANTINED (row 282)
+- **What:** PlayStation 1 ISO builder (creates Mode 2/XA disc images from an XML layout) by Lameguy64 — the standard PSX homebrew disc-mastering tool
+- **URL:** https://github.com/Lameguy64/mkpsxiso
+- **License:** GPL-2.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 282). Standalone-tool use (building an ISO) does not infect the game; never link its code into shipping tools. [Wave 37 Lane A]
+
+#### libdragon ✅ commercial-safe
+- **What:** Open-source Nintendo 64 SDK: RDP/RSP graphics, audio, controller, EEPROM/SRAM/FlashRAM, and filesystem support — the homebrew alternative to the official N64 SDK
+- **URL:** https://github.com/DragonMinded/libdragon
+- **License:** Unlicense (GitHub API spdx_id verified 2026-10-08) — public domain dedication
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Powers the modern N64 homebrew scene; Unlicense is the cleanest possible grant. [Wave 37 Lane A]
+
+#### KallistiOS ✅ commercial-safe (attribution mandatory)
+- **What:** Independent Sega Dreamcast development library/OS: hardware drivers, filesystem, networking, and a GCC cross-toolchain — powers most Dreamcast homebrew and indie releases
+- **URL:** https://github.com/KallistiOS/KallistiOS
+- **License:** KOS License (BSD-like, permissive) — README verified 2026-10-08: its flexible permissive license allows both homebrew and commercial use with little restrictions besides proper attribution; attribution is not optional.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The Dreamcast homebrew standard; keep the attribution notice in any shipped product. [Wave 37 Lane A]
+
+#### Butano ✅ commercial-safe
+- **What:** Modern C++ Game Boy Advance engine (sprites, backgrounds, audio, text) by GValiente — the current recommended GBA framework
+- **URL:** https://github.com/GValiente/butano
+- **License:** zlib (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The post-HAM GBA standard; zlib license, active maintenance, extensive examples. [Wave 37 Lane A]
+
+#### BlocksDS ✅ commercial-safe
+- **What:** Modern Nintendo DS homebrew SDK (community-maintained toolchain lineage): libraries, examples, and build system
+- **URL:** https://github.com/blocksds/sdk
+- **License:** Permissive — licenses/ directory verified 2026-10-08 contains CC0-1.0, MIT, and zlib texts (no copyleft)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The community-maintained NDS path; check the per-component license file before vendoring. [Wave 37 Lane A]
+
+#### libnds ✅ commercial-safe
+- **What:** Nintendo DS hardware-access library (devkitPro): 2D/3D graphics, audio, WiFi, and filesystem for NDS homebrew
+- **URL:** https://github.com/devkitPro/libnds
+- **License:** zlib — libnds_license.txt verified 2026-10-08: permission granted to anyone to use for any purpose, including commercial applications, and to alter and redistribute freely.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** devkitPro's NDS library under the permissive zlib grant — the safe NDS baseline. [Wave 37 Lane A]
+
+#### pspsdk ✅ commercial-safe
+- **What:** Open-source PlayStation Portable SDK (pspdev): toolchain, libraries, and samples for PSP homebrew
+- **URL:** https://github.com/pspdev/pspsdk
+- **License:** BSD-3-Clause — LICENSE text verified 2026-10-08 (classic BSD-3 redistribution clauses)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The pspdev community SDK; BSD-3 keeps the license story simple. [Wave 37 Lane A]
+
+#### ps2sdk ✅ commercial-safe
+- **What:** Open-source PlayStation 2 SDK (ps2dev): EE/IOP libraries, toolchain, and samples for PS2 homebrew
+- **URL:** https://github.com/ps2dev/ps2sdk
+- **License:** Academic Free License 2.0 — LICENSE text verified 2026-10-08 (OSI-approved permissive)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The ps2dev community SDK; AFL-2.0 is permissive and commercial-safe. [Wave 37 Lane A]
+
+#### Jo Engine ✅ commercial-safe
+- **What:** Open-source 2D/3D game engine for the Sega Saturn (C) by Johannes Fetz — sprites, polygons, sound, and CD support
+- **URL:** https://github.com/johannes-fetz/joengine
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** The approachable Saturn entry point; clean-room implementation independent of Sega's SDKs. [Wave 37 Lane A]
+
+#### Yaul ✅ commercial-safe
+- **What:** Yet Another (Sega Saturn) Library — low-level Saturn SDK: SCU, VDP1/VDP2, SMPC, and sound drivers
+- **URL:** https://github.com/yaul-org/libyaul
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** The lower-level Saturn complement to Jo Engine; MIT throughout. [Wave 37 Lane A]
+
+#### PVSnesLib ✅ commercial-safe
+- **What:** SNES development library (C + asm) by alekmaul: sprites, backgrounds, Mode 7, sound driver, and examples
+- **URL:** https://github.com/alekmaul/pvsneslib
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The practical SNES homebrew path; pairs with WLA DX or ca65 (WLA DX is GPL-quarantined, row 283). [Wave 37 Lane A]
+
+#### WLA DX 🚫 GPL-2.0-or-later — QUARANTINED (row 283)
+- **What:** Multi-platform cross-assembler package: GB-Z80/Z80/6502/65816/6809/SPC-700/SuperFX and more — the SNES/GB homebrew assembler standard
+- **URL:** https://github.com/vhelin/wla-dx
+- **License:** GPL-2.0-or-later — LICENSE verified 2026-10-08 (SPDX identifier in file)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 283). Assembler output (ROMs) is not infected; never link the assembler code into shipping tools. [Wave 37 Lane A]
+
+#### batari Basic 🚫 GPL-2.0 — QUARANTINED (row 284)
+- **What:** BASIC-like language for creating Atari 2600 games — compiles to 6502 with kernel management
+- **URL:** https://github.com/batari-Basic/batari-Basic
+- **License:** GPL-2.0 — README verified 2026-10-08: batari Basic is provided under GPL v2, BUT the license does not apply to Atari 2600 games created with it; you may license your games however you wish.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 284). Games built with it are explicitly exempt; the compiler sources stay quarantined. [Wave 37 Lane A]
+
+#### DASM 🚫 GPL-2.0 — QUARANTINED (row 285)
+- **What:** DASM macro assembler — the classic 6502/6803/68HC11/8048 assembler behind decades of Atari 2600 homebrew
+- **URL:** https://github.com/dasm-assembler/dasm
+- **License:** GPL-2.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 285). Assembler output is not infected; never link the assembler into shipping code. [Wave 37 Lane A]
+
+#### 7800basic 🚫 GPL-2.0 — QUARANTINED (row 286)
+- **What:** BASIC-like language for creating Atari 7800 games (6502), by Mike Saarna and the 7800-devtools team
+- **URL:** https://github.com/7800-devtools/7800basic
+- **License:** GPL-2.0 for the language source; CC0 for included/auto-generated 6502 assembly — LICENSE.txt verified 2026-10-08
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 286). Generated game code is CC0; the compiler sources stay quarantined. [Wave 37 Lane A]
+
+#### IntyBASIC ✅ commercial-safe
+- **What:** IntyBASIC compiler for the Intellivision (CP1610) by Oscar Toledo G. — BASIC dialect compiling to native Intellivision binaries
+- **URL:** https://github.com/nanochess/IntyBASIC
+- **License:** BSD-3-Clause — LICENSE text verified 2026-10-08 (classic BSD-3 redistribution clauses)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Intellivision homebrew standard; permissive BSD grant. [Wave 37 Lane A]
+
+#### MSXgl 🚫 CC-BY-SA-4.0 — QUARANTINED (row 287)
+- **What:** The MSX Game Library in C — hardware abstraction, sprites, sound (PSG/SCC), and compression for MSX1/2/2+/Turbo-R homebrew
+- **URL:** https://github.com/aoineko-fr/MSXgl
+- **License:** CC-BY-SA-4.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 287). Share-alike on a code library bars commercial wiring; research/reference only until relicensed or replaced. [Wave 37 Lane A]
+
+#### sjasmplus ✅ commercial-safe
+- **What:** SJAsmPlus — Z80 cross-assembler for ZX Spectrum / Amstrad CPC / MSX development
+- **URL:** https://github.com/sjasmplus/sjasmplus
+- **License:** zlib (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The maintained Z80 assembler; zlib keeps it wiring-safe. [Wave 37 Lane A]
+
+#### z88dk ✅ commercial-safe
+- **What:** C and assembler toolchain for Z80 systems: ZX Spectrum, Amstrad CPC, MSX, ColecoVision, Game Boy, and 100+ other Z80 targets
+- **URL:** https://github.com/z88dk/z88dk
+- **License:** Clarified Artistic License — LICENSE verified 2026-10-08 (OSI-approved permissive)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The broadest Z80 C toolchain; Clarified Artistic is permissive. Massive target list beyond the big consoles. [Wave 37 Lane A]
+
+#### CPCtelera 🚫 LGPL-3.0 — QUARANTINED (row 288)
+- **What:** Amstrad CPC game engine/framework (C + asm): sprites, tilemaps, sound, and keyboard/joystick for CPC homebrew
+- **URL:** https://github.com/lronaldo/cpctelera
+- **License:** LGPL-3.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 288) per the LGPL rule (doctrine pending owner verdict; stays quarantined meanwhile). [Wave 37 Lane A]
+
+#### ngdevkit 🚫 LGPL-3.0 — QUARANTINED (row 289)
+- **What:** Neo Geo homebrew development kit: 68k toolchain, sprite/background libraries, and sound drivers for MVS/AES homebrew
+- **URL:** https://github.com/dciabrin/ngdevkit
+- **License:** LGPL-3.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 289) per the LGPL rule. The Neo Geo homebrew path; research only until the LGPL doctrine resolves. [Wave 37 Lane A]
+
+#### Pan Docs ✅ commercial-safe
+- **What:** The definitive Game Boy hardware technical reference (gbdev/pandocs) — every register, timing quirk, and undocumented behavior
+- **URL:** https://github.com/gbdev/pandocs
+- **License:** CC0-1.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The GB/GBC hardware bible; CC0 means the text itself can be quoted and vendored. [Wave 37 Lane A]
+
+#### GBATEK ❓ widely-mirrored tech doc
+- **What:** Martin Korth's (nocash) GBA/NDS hardware specifications — the low-level register/timing reference for GBA and Nintendo DS homebrew
+- **URL:** Canonical URL not verified this pass (problemkaputt.de) — mirrored widely; locate via search before use
+- **License:** ❓ No license statement located this pass. Distributed for implementer reference; do not redistribute the text itself.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Doc-only; the GBA/NDS counterpart to Pan Docs. Same widely-mirrored-tech-doc pattern as the Wave 36 tracker format docs. [Wave 37 Lane A]
+
+#### Data Crystal ❓ wiki terms unverified this pass
+- **What:** The ROM-hacking and retro-console hardware wiki (successor to Romhacking.net's wiki): hardware docs, assembly tutorials, and format notes
+- **URL:** https://datacrystal.org
+- **License:** ❓ Wiki license not verified this pass — treat as read-only reference; do not redistribute wiki text.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference only; the community knowledge base for console hardware quirks and hacking techniques. [Wave 37 Lane A]
+
+### Angle 1 — Demoscene demopack/graphics long tail
+
+#### Crinkler ✅ commercial-safe
+- **What:** The dominant executable compressor for 1k/4k/8k Windows demoscene intros — compressing linker by Rune L. H. Stubbe (Mentor/TBC) and Aske Simon Christensen (Blueberry/Loonies)
+- **URL:** https://github.com/runestubbe/Crinkler
+- **License:** zlib — README verified 2026-10-08: distributed under the Zlib license; you may integrate it into your own tools/toolchains.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tools)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The 4k toolchain standard; zlib means it can be vendored into build tooling. [Wave 37 Lane A]
+
+#### Shrinkler ✅ commercial-safe
+- **What:** Amiga executable file compressor by Blueberry (Loonies) — the best-ratio Amiga cruncher, with cross-platform host tools
+- **URL:** https://bitbucket.org/askeksa/shrinkler (canonical per pouet.net prod page)
+- **License:** Permissive "Shrinkler License" (ISC-style) — license text verified 2026-10-08 via the JS port carrying the original grant: permission to use, copy, modify, and/or distribute for any purpose with or without fee.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tools)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The Amiga 4k standard; decruncher is tiny enough for intro use. [Wave 37 Lane A]
+
+#### ZX7 ✅ commercial-safe
+- **What:** Optimal LZ77/LZSS data compressor for Z80 by Einar Saukas — the standard retro-platform compressor with tiny decrunchers
+- **URL:** License audit via https://github.com/bedazzle/compressors-js (per-compressor table)
+- **License:** BSD-3-Clause — per the compressors-js per-compressor license table (third-party audit, flagged as such; upstream re-verify before vendoring)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tools)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** devkitSMS bundles ZX7 routines (noted in its LICENSES.txt); the decruncher is a few dozen bytes. [Wave 37 Lane A]
+
+#### ZX0 ✅ commercial-safe
+- **What:** ZX7's improved successor — optimal LZ77/LZSS compressor by Einar Saukas with better ratio and similarly tiny Z80/6502 decrunchers
+- **URL:** License audit via https://github.com/bedazzle/compressors-js (per-compressor table)
+- **License:** BSD-3-Clause — per the compressors-js per-compressor license table (third-party audit, flagged as such; upstream re-verify before vendoring)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tools)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Prefer ZX0 over ZX7 for new work; same BSD-3 grant per the audit. [Wave 37 Lane A]
+
+#### LZSA ✅ commercial-safe
+- **What:** Byte-aligned LZ77 compressor family (LZSA1/LZSA2) by Emmanuel Marty — fast decompression, tiny 6502/Z80/68000 decrunchers
+- **URL:** https://github.com/emmanuel-marty/lzsa
+- **License:** zlib — README verified 2026-10-08: the LZSA code is available under the Zlib license (matchfinder is CC0)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tools)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The modern alternative to ZX0/aPLib; assembly decrunchers included. [Wave 37 Lane A]
+
+#### Exomizer 🚫 non-commercial — research/reference only
+- **What:** 6502/Z80 data compressor by Magnus Lind — the classic C64/8-bit cruncher with entropy-coded output
+- **URL:** https://bitbucket.org/magli143/exomizer/wiki/Home (canonical)
+- **License:** Non-commercial, non-profit use only — verified 2026-10-08 via two third-party audits: cpcsyntaxerror THIRD_PARTY_NOTICES.md and compressors-js ("Non-commercial / zlib"). Upstream re-verify before any use.
+- **Free tier:** free for non-commercial use
+- **Repo lane:** trippedd (demoscene/tools)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NC bars commercial use; study the entropy-coding technique, never ship. Prefer ZX0/LZSA for commercial-safe compression. [Wave 37 Lane A]
+
+#### demoscene.fr ⚠️ per-production rights
+- **What:** French demoscene portal — productions, articles, and party coverage with a francophone scene focus
+- **URL:** https://www.demoscene.fr (locate via search)
+- **License:** ⚠️ Per-production rights — portal terms unverified this pass; treat productions as browse/learn.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (demoscene/portals)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements pouet.net/demozoo with French-scene coverage. [Wave 37 Lane A]
+
+#### Evoke ❓ demoparty, terms unverified
+- **What:** Evoke — the German demoscene party (Cologne), one of the largest annual demo competitions
+- **URL:** https://www.evoke.eu (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Competition entries are the resource; check each prod's license on pouet/demozoo. [Wave 37 Lane A]
+
+#### Assembly demoparty ❓ terms unverified
+- **What:** Assembly — the Finnish demoscene/gaming party (Helsinki), running since 1992; major demo compo premieres
+- **URL:** https://www.assembly.org (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the oldest parties; entries surface on scene.org/pouet. [Wave 37 Lane A]
+
+#### Outline ❓ demoparty, terms unverified
+- **What:** Outline — the Dutch demoscene party; the demoscene-only counterpart to the Netherlands' larger festivals
+- **URL:** https://www.outlineparty.nl (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Entries surface on scene.org/pouet; check per-prod licenses. [Wave 37 Lane A]
+
+#### The Gathering ❓ demoparty, terms unverified
+- **What:** The Gathering — Norway's massive computer party (Hamar), with demoscene compos alongside gaming
+- **URL:** https://www.gathering.org (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Demo compo entries are the resource; per-prod license checks apply. [Wave 37 Lane A]
+
+#### Lovebyte ❓ sizecoding party, terms unverified
+- **What:** Lovebyte — the annual sizecoding demoparty (byte-size-limited compos: 256b, 1k, 4k)
+- **URL:** https://www.lovebyte.party (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The sizecoding technique reference alongside sizecoding.org; entries are per-author rights. [Wave 37 Lane A]
+
+#### Demosplash ❓ demoparty, terms unverified
+- **What:** Demosplash — the US demoscene party (Pittsburgh, Carnegie Mellon); North America's demoscene anchor event
+- **URL:** https://www.demosplash.org (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** US scene entries; per-prod license checks apply. [Wave 37 Lane A]
+
+#### Function ❓ demoparty, terms unverified
+- **What:** Function — the Hungarian demoscene party (Budapest); Central Europe's demo compo fixture
+- **URL:** https://www.function.hu (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Entries surface on scene.org/pouet; check per-prod licenses. [Wave 37 Lane A]
+
+#### Sundown ❓ demoparty, terms unverified
+- **What:** Sundown — the UK demoscene party; Britain's demo compo gathering
+- **URL:** https://www.sundown.party (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** UK scene entries; per-prod license checks apply. [Wave 37 Lane A]
+
+#### Datastorm ❓ demoparty, terms unverified
+- **What:** Datastorm — the Swedish demoscene party (Gothenburg); demo compos with a strong 8-bit presence
+- **URL:** https://www.datastorm.se (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 8-bit compos are the chiptune-relevant slice; per-prod checks apply. [Wave 37 Lane A]
+
+#### Solskogen ❓ demoparty, terms unverified
+- **What:** Solskogen — the Norwegian demoscene party; demo and intro compos in the Scandinavian tradition
+- **URL:** https://www.solskogen.no (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Entries surface on scene.org/pouet; check per-prod licenses. [Wave 37 Lane A]
+
+#### Chaos Constructions ❓ demoparty, terms unverified
+- **What:** Chaos Constructions — the Russian demoscene festival (St. Petersburg); the largest Eastern European demo event
+- **URL:** https://www.chaosconstructions.ru (locate via search)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum and PC compos are strong here; per-prod checks apply. [Wave 37 Lane A]
+
+#### Breakpoint ❓ demoparty, terms unverified
+- **What:** Breakpoint — the legendary German Easter demoparty (2003–2010, Bingen); its compo winners defined an era
+- **URL:** Historical; entries archived on scene.org/pouet/demozoo
+- **License:** ❓ Event is defunct; per-production rights on the archives
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Historical reference; the fr_public-era 64ks premiered here. [Wave 37 Lane A]
+
+#### Cookie ❓ demoparty, terms unverified
+- **What:** Cookie — the French demoscene party; France's demo compo fixture
+- **URL:** locate via search (cookie-party.fr)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Entries surface on scene.org/pouet; check per-prod licenses. [Wave 37 Lane A]
+
+#### Syntax ❓ demoparty, terms unverified
+- **What:** Syntax — the Australian demoscene party (Melbourne); the Southern Hemisphere's demo compo
+- **URL:** locate via search (syntaxparty.org)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** AU scene entries; per-prod license checks apply. [Wave 37 Lane A]
+
+#### Nova demoparty ❓ terms unverified
+- **What:** Nova — the demoscene party (various editions); demo and intro compos
+- **URL:** Locate via search (multiple events share the name — confirm the demoscene edition)
+- **License:** ❓ Event site terms unverified this pass
+- **Free tier:** n/a (event)
+- **Repo lane:** trippedd (demoscene/parties)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Name collides with non-scene events; verify before citing. [Wave 37 Lane A]
+
+#### SHADERed ✅ commercial-safe
+- **What:** SHADERed — open-source shader editor/IDE: GLSL/HLSL editing, debugging, and preview with a code-first workflow
+- **URL:** https://github.com/dfranx/SHADERed
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The MIT shader IDE; pairs with the-library-of-shaders (CC0) for commercial-safe shader study. [Wave 37 Lane A]
+
+#### The Book of Shaders — honest negative (browse/learn only, ARR)
+- **What:** The Book of Shaders — Patricio Gonzalez Vivo's widely-used gentle GLSL tutorial (fractals, noise, shapes)
+- **URL:** https://github.com/patriciogonzalezvivo/thebookofshaders
+- **License:** All Rights Reserved — LICENSE section verified 2026-10-08. No reuse grant located.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (demoscene/graphics)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Honest negative: read and learn, do not lift code or examples. Use the-library-of-shaders (CC0) for reusable shaders. [Wave 37 Lane A]
+
+#### raylib ✅ commercial-safe
+- **What:** raylib — simple, batteries-included C game/graphics library (2D/3D, audio, input); the rapid-prototyping standard
+- **URL:** https://github.com/raysan5/raylib
+- **License:** zlib (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** both (prototyping)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** zlib, no dependencies; ideal for demo-tool prototypes and graphics experiments. [Wave 37 Lane A]
+
+#### sokol ✅ commercial-safe
+- **What:** sokol — minimal cross-platform C headers for 3D graphics, audio, and app scaffolding by Andre Weissflog
+- **URL:** https://github.com/floooh/sokol
+- **License:** zlib (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** both (prototyping)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The header-only path to cross-platform GL/D3D11/Metal/WebGPU; pairs with Dear ImGui. [Wave 37 Lane A]
+
+#### bgfx ✅ commercial-safe
+- **What:** bgfx — cross-platform rendering library (D3D9-12, OpenGL, Vulkan, Metal) with a shader pipeline
+- **URL:** https://github.com/bkaradzic/bgfx
+- **License:** BSD-2-Clause (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** both (graphics)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Heavier than sokol; the right call when multiple backends must be supported from one codebase. [Wave 37 Lane A]
+
+#### Dear ImGui ✅ commercial-safe
+- **What:** Dear ImGui — the immediate-mode GUI library by Omar Cornut; the standard for demo tools, debug UIs, and shader parameter panels
+- **URL:** locate via search (ocornut imgui on GitHub)
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** both (tools)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MIT, backend-agnostic; the default UI layer for any internal graphics tooling. [Wave 37 Lane A]
+
+#### 16colo.rs — ANSI artpack archive (per-artist rights)
+- **What:** 16colo.rs — the browsable ANSI/ASCII artpack archive (ACiD, iCE, and modern packs)
+- **URL:** locate via search (16colo.rs)
+- **License:** Per-artist rights — the archive is a preservation resource; individual packs carry their own terms. Do not lift art without checking.
+- **Free tier:** Free to browse
+- **Repo lane:** god-molecule (design reference)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference only; ANSI aesthetics for title cards and interstitials. [Wave 37 Lane A]
+
+#### CPCWiki ❓ wiki terms unverified this pass
+- **What:** CPCWiki — the Amstrad CPC community wiki: hardware docs, programming tutorials, and demo techniques
+- **URL:** locate via search (cpcwiki.eu)
+- **License:** ❓ Wiki license not verified this pass — treat as read-only reference.
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro/homebrew)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The CPC counterpart to Pan Docs/GBATEK; reference only until terms are verified. [Wave 37 Lane A]
+
+#### AssemblyTV — stream archive (terms unverified)
+- **What:** AssemblyTV — the Assembly demoparty's stream/video archive of compos and seminars
+- **URL:** locate via search (assemblytv.net)
+- **License:** Stream/archive terms unverified this pass — watch/learn; do not re-upload or clip without checking.
+- **Free tier:** Free to watch
+- **Repo lane:** trippedd (demoscene/history)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference only; compo footage for studying demo pacing and presentation. [Wave 37 Lane A]
+
+#### Meteoriks — awards (terms unverified)
+- **What:** The Meteoriks — the annual demoscene awards (voted by the scene); the canon list of landmark productions
+- **URL:** locate via search (meteoriks.org)
+- **License:** Site terms unverified this pass — the winners list is a reference, not a grant.
+- **Free tier:** Free to browse
+- **Repo lane:** trippedd (demoscene/history)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Use as a curated watch-list; check each prod's license before reuse. [Wave 37 Lane A]
+
+#### AltaCast — open-source streaming encoder (third-party audit)
+- **What:** AltaCast — continuation of the Oddcast/Edcast Icecast/SHOUTcast streaming encoder for Windows
+- **URL:** locate via search (altacast.com)
+- **License:** Free, Open Source — per AlternativeTo listing verified 2026-10-08 (third-party audit, flagged as such; upstream re-verify). Edcast lineage was GPL-family.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The BUTT alternative for Windows Icecast/SHOUTcast sourcing; confirm the exact license from upstream before wiring. [Wave 37 Lane A]
+
+### Angle 3 — Podcast/radio production tools tail
+
+#### AzuraCast — QUARANTINED (row 290), AGPL-3.0
+- **What:** AzuraCast — self-hosted web radio management suite: stream scheduling, playlists, DJ accounts, and listener stats
+- **URL:** https://github.com/AzuraCast/AzuraCast
+- **License:** AGPL-3.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open (self-hosted)
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 290). The self-hosted radio station in a box; AGPL bars wiring into shipping paths. [Wave 37 Lane A]
+
+#### AntennaPod — QUARANTINED (row 291), GPL-3.0
+- **What:** AntennaPod — the open-source Android podcast client: subscriptions, downloads, chapters, and playback
+- **URL:** https://github.com/AntennaPod/AntennaPod
+- **License:** GPL-3.0 (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 291). Reference for podcast-client UX and chapter support; code stays quarantined. [Wave 37 Lane A]
+
+#### libebur128 ✅ commercial-safe
+- **What:** libebur128 — the EBU R128 loudness measurement library (integrated loudness, LRA, true peak)
+- **URL:** https://github.com/jiixyj/libebur128
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The MIT loudness meter; wire into the podcast/radio mastering chain for EBU R128 / podcast-platform compliance. [Wave 37 Lane A]
+
+#### Podlove Web Player ✅ commercial-safe
+- **What:** Podlove Web Player — the open podcast web player: chapters, transcripts, and share clips
+- **URL:** https://github.com/podlove/podlove-web-player
+- **License:** BSD-2-Clause — LICENSE file verified 2026-10-08 (2-Clause BSD text)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The embeddable podcast player; BSD-2 keeps it wiring-safe. [Wave 37 Lane A]
+
+#### Podlove Subscribe Button ✅ commercial-safe
+- **What:** Podlove Subscribe Button — the one-click podcast subscribe widget (covers AntennaPod, Apple Podcasts, Overcast, etc.)
+- **URL:** https://github.com/podlove/podlove-subscribe-button
+- **License:** MIT (GitHub API spdx_id verified 2026-10-08)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MIT; the standard subscribe widget for podcast landing pages. [Wave 37 Lane A]
+
+#### Podcasting 2.0 namespace ✅ open specification
+- **What:** The Podcasting 2.0 namespace — the open RSS extension spec: transcripts, chapters, funding, podping, and value blocks
+- **URL:** locate via search (podcasting2.org / github.com/Podcastindex-org/podcast-namespace)
+- **License:** Open specification — the namespace spec is published for implementers; no license barrier to implementing.
+- **Free tier:** free to implement
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The modern podcast RSS vocabulary; implement transcript/chapter tags for maximum client compatibility. [Wave 37 Lane A]
+
+#### Podping ✅ open protocol
+- **What:** Podping — the Hive-based notification protocol that tells podcast apps a feed has updated (part of Podcasting 2.0)
+- **URL:** locate via search (podcasting2.org/podping)
+- **License:** Open protocol specification — free to implement.
+- **Free tier:** free to use
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Faster feed-update propagation than polling; implement alongside the 2.0 namespace. [Wave 37 Lane A]
+
+#### Podcast Index API — API ToS, verify before wiring
+- **What:** The Podcast Index API — open podcast directory search/API (podcastindex.org)
+- **URL:** locate via search (podcastindex.org)
+- **License:** API Terms of Service — free for developers; read the ToS before wiring. API key required.
+- **Free tier:** free tier (API)
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The open podcast directory; useful for discovery features. ToS-gated, not a license grant. [Wave 37 Lane A]
+
+#### Listen Notes API — API ToS, verify before wiring
+- **What:** The Listen Notes podcast search API — episode-level search across the podcast corpus
+- **URL:** locate via search (listennotes.com/api)
+- **License:** API Terms of Service — free tier available; read the ToS before wiring.
+- **Free tier:** free tier (API)
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Best-in-class podcast search API; ToS-gated. [Wave 37 Lane A]
+
+#### iTunes Search API — API ToS, verify before wiring
+- **What:** Apple's iTunes Search API — podcast (and music/app) lookup by the platform's own directory
+- **URL:** locate via search (Apple iTunes Search API docs)
+- **License:** Apple Terms of Service — free to query; read the ToS before wiring.
+- **Free tier:** free tier (API)
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The canonical podcast directory API; ToS-gated. [Wave 37 Lane A]
+
+#### BUTT — QUARANTINED (row 292), GPL-2.0
+- **What:** BUTT (broadcast using this tool) — the easy multi-OS Icecast/SHOUTcast streaming client by Daniel Nothen
+- **URL:** https://danielnoethen.de/butt/ (canonical; source mirrors on SourceForge/GitHub)
+- **License:** GPL-2.0 — verified 2026-10-08 via SourceForge project page ("GNU General Public License version 2.0 (GPLv2)") and GPL-2.0 forks.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 292). Standalone-tool use (streaming) is fine; never link its code into shipping tools. [Wave 37 Lane A]
+
+#### Rivendell — QUARANTINED (row 293), GPL-2.0
+- **What:** Rivendell — the full broadcast radio automation system (playout, scheduling, logging) for Linux
+- **URL:** https://github.com/ElvishArtisan/rivendell
+- **License:** GPL-2.0 — LICENSES/GPLv2.txt verified 2026-10-08 in the repo.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 293). Professional broadcast automation; research/reference only. [Wave 37 Lane A]
+
+#### OpenBroadcaster — QUARANTINED (row 294), AGPL-3.0
+- **What:** OpenBroadcaster — community radio automation and streaming platform (observer/obplayer components)
+- **URL:** https://github.com/openbroadcaster (org; observer/obplayer repos)
+- **License:** AGPL-3.0 — verified 2026-10-08 via GitHub API spdx_id on openbroadcaster/observer and obplayer.
+- **Free tier:** fully open
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 294). AGPL bars wiring into shipping paths. [Wave 37 Lane A]
+
+#### LadioCast — proprietary free (ToS-unverified)
+- **What:** LadioCast — free Mac/Windows Icecast/SHOUTcast/RTMP stream encoder with a 4x4 audio mixer
+- **URL:** locate via search (LadioCast by Yosirou Sawayanagi)
+- **License:** Proprietary, free — per third-party listings verified 2026-10-08 ("Licence: Free"). Vendor ToS not read this pass; read before wiring.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The Mac encoder of choice; free but proprietary — ToS check required. [Wave 37 Lane A]
+
+#### RadioDJ — proprietary free (ToS-unverified)
+- **What:** RadioDJ — free Windows radio automation software (playout, scheduling, database)
+- **URL:** locate via search (radiodj.ro)
+- **License:** Proprietary, free for use — vendor terms not read this pass; read before wiring.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The free Windows playout standard; proprietary — ToS check required. [Wave 37 Lane A]
+
+#### PlayIt Live — proprietary free (ToS-unverified)
+- **What:** PlayIt Live — free Windows radio playout/automation with voice tracking
+- **URL:** locate via search (playitsoftware.com)
+- **License:** Proprietary, free — vendor terms not read this pass; read before wiring.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Voice-tracked playout for free; proprietary — ToS check required. [Wave 37 Lane A]
+
+#### ZaraRadio — proprietary free, discontinued (ToS-unverified)
+- **What:** ZaraRadio — the classic free Windows radio automation/playlist scheduler (discontinued, still widely used)
+- **URL:** locate via search (zaraarsoft / ZaraRadio)
+- **License:** Proprietary, free — discontinued; vendor terms not read this pass.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Legacy but entrenched; no updates — evaluate RadioDJ/PlayIt Live first. [Wave 37 Lane A]
+
+#### Rocket Broadcaster — freemium proprietary (ToS-unverified)
+- **What:** Rocket Broadcaster — Windows Icecast/SHOUTcast streaming encoder (free and Pro tiers)
+- **URL:** locate via search (rocketbroadcaster.com)
+- **License:** Proprietary, freemium — free tier per AlternativeTo ("Freemium, Proprietary") verified 2026-10-08; vendor ToS not read this pass.
+- **Free tier:** free tier
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The polished Windows encoder; free tier is ToS-gated. [Wave 37 Lane A]
+
+#### VB-Audio Cable — donationware (ToS-unverified)
+- **What:** VB-Audio Virtual Cable — the donationware virtual audio device for routing audio between apps on Windows
+- **URL:** locate via search (vb-audio.com)
+- **License:** Proprietary donationware — free to use with donation prompt; vendor terms not read this pass.
+- **Free tier:** free (donationware)
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Essential plumbing for podcast/radio chains on Windows; proprietary — ToS check required. [Wave 37 Lane A]
+
+#### Shoutcast DNAS — proprietary ToS (verify before wiring)
+- **What:** SHOUTcast DNAS — the SHOUTcast distributed network audio server for internet radio streaming
+- **URL:** locate via search (shoutcast.com/broadcast)
+- **License:** Proprietary Terms of Service — free to use per vendor; read the ToS before wiring.
+- **Free tier:** free tier
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The commercial directory-backed alternative to Icecast (GPL, already cataloged); ToS-gated. [Wave 37 Lane A]
+
+#### Levelator — free (grant unverified this pass)
+- **What:** The Levelator — the classic free podcast loudness leveler (drag-and-drop MP3/WAV normalization)
+- **URL:** locate via search (The Levelator by GigaVox)
+- **License:** Proprietary, free — grant terms not verified this pass; read before wiring.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Legacy but still referenced; verify the grant before use. Auphonic/libebur128 are the maintained paths. [Wave 37 Lane A]
+
+#### AudioMass ❓ license not located this pass
+- **What:** AudioMass — the free browser-based multitrack audio editor (pkalogiros)
+- **URL:** locate via search (audiomass.co / pkalogiros/AudioMass on GitHub)
+- **License:** ❓ No license statement located this pass (GitHub API spdx_id: NOASSERTION; README has no license section). Do not wire until verified.
+- **Free tier:** free to use in browser
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful as a zero-install editor; license must be verified before any integration. [Wave 37 Lane A]
+
+#### ocenaudio — proprietary free (ToS-unverified)
+- **What:** ocenaudio — the free cross-platform audio editor (VST support, spectrogram) by OCEN
+- **URL:** locate via search (ocenaudio.com)
+- **License:** Proprietary, free for use — vendor terms not read this pass; read before wiring.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The free Audacity-adjacent editor; proprietary — ToS check required. [Wave 37 Lane A]
+
+#### Cakewalk by BandLab — proprietary free (ToS-unverified)
+- **What:** Cakewalk by BandLab — the full professional Windows DAW, free (formerly SONAR)
+- **URL:** locate via search (cakewalk.com)
+- **License:** Proprietary, free — vendor terms not read this pass; read before wiring.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** A complete DAW for free; proprietary — ToS check required. [Wave 37 Lane A]
+
+#### Waveform Free — proprietary free (ToS-unverified)
+- **What:** Tracktion Waveform Free — the free tier of the Waveform DAW (unlimited tracks)
+- **URL:** locate via search (tracktion.com)
+- **License:** Proprietary, free tier — vendor terms not read this pass; read before wiring.
+- **Free tier:** free tier
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cross-platform free DAW tier; proprietary — ToS check required. [Wave 37 Lane A]
+
+#### EBU R128 ✅ open specification
+- **What:** EBU R128 — the European loudness standard (integrated loudness, loudness range, true peak) for broadcast and podcast
+- **URL:** locate via search (EBU Tech 3341/3342/3343/3344)
+- **License:** Open specification — EBU technical recommendations are published for implementers.
+- **Free tier:** free to implement
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The loudness target behind libebur128 and Auphonic; implement -16 LUFS for podcasts. [Wave 37 Lane A]
+
+#### OPML ✅ open format
+- **What:** OPML (Outline Processor Markup Language) — the XML format for podcast subscription list exchange
+- **URL:** locate via search (OPML 2.0 spec by Dave Winer)
+- **License:** Open format — published for implementers.
+- **Free tier:** free to implement
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The subscription-list interchange format; support OPML import/export in any podcast tooling. [Wave 37 Lane A]
+
+#### RSS 2.0 ✅ open specification
+- **What:** RSS 2.0 — the syndication spec underlying all podcast feeds (with the iTunes/Podcasting-2.0 extensions)
+- **URL:** locate via search (RSS 2.0 spec, Harvard Law)
+- **License:** Open specification — published for implementers.
+- **Free tier:** free to implement
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The foundation; every podcast feature builds on RSS 2.0 + namespaces. [Wave 37 Lane A]
+
+#### ID3 chapters (CHAP/CTOC) ✅ open specification
+- **What:** ID3v2 CHAP/CTOC frames — the embedded chapter-marker spec for MP3 podcast files
+- **URL:** locate via search (ID3v2.4 structure document, id3.org)
+- **License:** Open specification — published for implementers.
+- **Free tier:** free to implement
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The MP3 chapter standard; complements Podlove Chapters and the 2.0 chapters tag. [Wave 37 Lane A]
+
+#### Podlove Chapters ✅ open specification
+- **What:** Podlove Simple Chapters — the open chapter format (MP4 and PSC variants) for podcast episodes
+- **URL:** locate via search (podlove.org simple-chapters)
+- **License:** Open specification — published for implementers.
+- **Free tier:** free to implement
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The chapter format behind the Podlove Publisher/Web Player; pairs with ID3 CHAP for MP3. [Wave 37 Lane A]
+
+#### Forecast — proprietary free (ToS-unverified)
+- **What:** Forecast — Marco Arment's free Mac chapter encoder for MP3 podcasts (with Overcast chapter-image support)
+- **URL:** locate via search (Marco Arment Forecast)
+- **License:** Proprietary, free — vendor terms not read this pass; read before wiring.
+- **Free tier:** free
+- **Repo lane:** trippedd (podcast/radio)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The chapter-encoding tool of record for MP3; proprietary — ToS check required. [Wave 37 Lane A]
+
+### Angle 2 — Open game-audio sample packs (CC0/CC-BY, commercial-safe)
+
+#### Abundant Music ✅ commercial-safe
+- **What:** Abundant Music — the algorithmic MIDI composer by Per Nyblom; generates endless royalty-free melodies
+- **URL:** https://abundant-music.com
+- **License:** CC0 — verified 2026-10-08 via the AbundantMusic.NET README citing the app's Help/Credits: all songs are licensed under CC0 ("No rights reserved"); the composer code is MIT.
+- **Free tier:** free to use
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CC0 generative music; render the MIDI through any soundfont for game-ready loops. [Wave 37 Lane A]
+
+#### Twin Musicom ✅ commercial-safe
+- **What:** Twin Musicom — large royalty-free music library (twinmusicom.org) covering electronic, cinematic, and seasonal tracks
+- **URL:** https://www.twinmusicom.org
+- **License:** CC-BY 4.0 — verified 2026-10-08 via multiple third-party attributions (track licensed under Creative Commons Attribution 4.0, commercial use allowed with credit).
+- **Free tier:** free to use
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution required; strong catalog for game menus and background beds. [Wave 37 Lane A]
+
+#### ModeAudio ✅ commercial-safe
+- **What:** ModeAudio — royalty-free sample packs, loops, and synth presets; 1GB of free sounds via newsletter signup
+- **URL:** https://modeaudio.com
+- **License:** Royalty-free — verified 2026-10-08 via site text: all sample packs described as royalty-free; 1GB free sounds offered.
+- **Free tier:** 1GB free
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read the per-pack license on download; the free 1GB is the entry point. [Wave 37 Lane A]
+
+#### Dan-O (danosongs) ✅ commercial-safe
+- **What:** DanoSongs — royalty-free production music library by Dan O'Connor (rock, electronic, orchestral, meditation)
+- **URL:** https://www.danosongs.com
+- **License:** CC-BY (attribution) — verified 2026-10-08 via multiple sources: free under Creative Commons with attribution; commercial use allowed.
+- **Free tier:** free to use
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution required; good for game trailers and background music. [Wave 37 Lane A]
+
+#### SoundMorph ✅ commercial-safe
+- **What:** SoundMorph — professional sound-design libraries (Montreal); royalty-free SFX collections for games and film
+- **URL:** https://soundmorph.com
+- **License:** Royalty-free — verified 2026-10-08 via third-party product listings (100% Royalty-Free Commercial License on libraries).
+- **Free tier:** free packs available
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Read the per-pack license; the free packs are the commercial-safe entry point. [Wave 37 Lane A]
+
+#### Sawsquarenoise — per-album CC check required
+- **What:** sawsquarenoise / rolemusic — Spanish chiptune/micromusic artist; large catalog on Free Music Archive
+- **URL:** https://sawsquarenoise.com (rolemusic.sawsquarenoise.com for the license page)
+- **License:** Per-album Creative Commons — verified 2026-10-08: the artist's license page states each album may have different licences; observed CC-BY 4.0 and CC-BY-NC-SA 4.0. Check the album before use; NC albums are excluded.
+- **Free tier:** free to use (per license)
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chiptune gold for retro games, but the per-album check is mandatory — never assume. [Wave 37 Lane A]
+
+#### Dogmazic — per-track CC check required
+- **What:** Dogmazic — the French Creative Commons music archive (formerly a major CC netlabel hub)
+- **URL:** locate via search (dogmazic.net)
+- **License:** Per-track Creative Commons — the archive hosts CC-licensed music; check each track's license. Many NC; use only plain CC-BY/CC0 tracks.
+- **Free tier:** free to use (per license)
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Filter for commercial-safe licenses; the archive is large but mixed. [Wave 37 Lane A]
+
+#### r/Drumkits — per-kit terms, community resource
+- **What:** r/Drumkits — the Reddit drum-kit/sample community; user-uploaded kits and breaks
+- **URL:** locate via search (reddit.com/r/Drumkits)
+- **License:** Per-kit terms — community uploads with varying grants; verify each kit's stated license. Treat as unverified by default.
+- **Free tier:** free to download
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** High variance; only use kits with an explicit commercial-safe grant. [Wave 37 Lane A]
+
+#### Detunized — free packs (per-pack terms unverified)
+- **What:** Detunized — Ableton Live Packs and sample instruments (Dresden); periodic free Live Packs (Blinker, ESSkrush, Operator 53)
+- **URL:** https://www.detunized.com
+- **License:** Free packs offered — per-pack terms not verified this pass; read before use. Commercial catalog is paid.
+- **Free tier:** free packs available
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ableton-focused; verify each free pack's terms before wiring into game audio. [Wave 37 Lane A]
+
+#### MachinimaSound ✅ commercial-safe
+- **What:** MachinimaSound — cinematic royalty-free music library by the Kiilstofte brothers (games, film, content creators)
+- **URL:** https://machinimasound.com
+- **License:** Custom royalty-free license v1.2 (June 2026) — verified 2026-10-08: grants a non-exclusive, worldwide, irrevocable license for personal and commercial projects with attribution; Legacy Tracks remain CC-BY 4.0.
+- **Free tier:** free to use
+- **Repo lane:** trippedd (game-audio)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Attribution required under the current license; Legacy Tracks are CC-BY 4.0. Note the license changed in 2026 — do not rely on old CC-BY assumptions for new tracks. [Wave 37 Lane A]
+
+## Wave 37 Lane A summary (2026-10-08)
+- **Added:** 109 honest `####` entries → **3306 total** (`####` headings): 35 retro-console homebrew SDK docs (Angle 4) · 34 demoscene demopack/graphics long tail (Angle 1) · 30 podcast/radio production tools (Angle 3) · 10 open game-audio sample packs (Angle 2).
+- **License verification:** every license verified from upstream (GitHub API spdx_id, upstream README/LICENSE text, official spec/license pages) or third-party license audits where upstream was silent (flagged as such); no licenses assumed. Notable: GBDK-2020 GPLv2+LE (linking exception covers ROM output); devkitSMS mixed PD/GPLv2+exception; PSn00bSDK MPL-2.0 (larger-work allowance); PSn00bSDK-bundled mkpsxiso GPL-2.0; batari Basic/7800basic GPL-2.0 with explicit output exemptions (CC0 generated code for 7800basic); MSXgl CC-BY-SA-4.0; KallistiOS KOS License (BSD-like, attribution mandatory); libdragon Unlicense; z88dk Clarified Artistic License; Crinkler zlib; Shrinkler permissive ISC-style; ZX7/ZX0 BSD-3-Clause (third-party audit); LZSA zlib; Exomizer non-commercial/non-profit only (two audits); thebookofshaders ARR (honest negative); AzuraCast AGPL-3.0; AntennaPod GPL-3.0; BUTT/Rivendell GPL-2.0; OpenBroadcaster AGPL-3.0; Abundant Music CC0; Twin Musicom CC-BY 4.0; MachinimaSound custom royalty-free v1.2 (Legacy Tracks CC-BY 4.0 — license changed 2026, old CC-BY assumptions invalid for new tracks).
+- **Dedup:** pre-append grep against all 3,197 existing headings; 2 collisions found and dropped before append (Hugi — covered by the existing Hugi diskmag entry; Auphonic — covered by the existing Auphonic entry); 2 near-collisions renamed for clarity (Assembly → Assembly demoparty; Nova → Nova demoparty). Zero post-hoc duplicates.
+- **Honest drops (failures documented, no entries):** Werkkzeug1 (no verifiable upstream/license located); kkrunchy (covered by the existing fr_public entry — lives in farbrausch/fr_public); V2 synth (covered by fr_public); NightFoxLib (no repo located); Tonc (license not verified this pass — coranac.com fetch failed); amiga-gcc (canonical bebbo repo 404s, only third-party mirrors remain); NESLib/Shiru (no GitHub upstream located); Kick Assembler, 64tass, vasm, vbcc, ACME, pasmo (upstream/license not verified this pass); HuC, Fusion-C, SDCC (already covered or unverified); NYT/WNYC audiogram-generator (repo 404s/gone); Exomizer commercial use (NC — cataloged as research-only instead).
+- **Quarantine rows added:** 16 (rows 279–294: GBDK-2020 GPL-2.0+LE, devkitSMS GPL-2.0+exception, PSn00bSDK MPL-2.0, mkpsxiso GPL-2.0, WLA DX GPL-2.0-or-later, batari Basic GPL-2.0, DASM GPL-2.0, 7800basic GPL-2.0, MSXgl CC-BY-SA-4.0, CPCtelera LGPL-3.0, ngdevkit LGPL-3.0, AzuraCast AGPL-3.0, AntennaPod GPL-3.0, BUTT GPL-2.0, Rivendell GPL-2.0, OpenBroadcaster AGPL-3.0). Header counts refreshed: 294 rows · 271 distinct.
+- **Key findings:** the retro homebrew SDK space is overwhelmingly permissive (MIT/zlib/Unlicense dominate; the GPL entries cluster around assemblers and BASIC compilers, most with output exemptions); the demoscene compressor space splits cleanly (Crinkler/Shrinkler/ZX7/ZX0/LZSA commercial-safe vs Exomizer NC); the podcast/radio open-source space is thin on permissive licenses (AzuraCast AGPL, AntennaPod GPL, BUTT/Rivendell GPL, OpenBroadcaster AGPL — libebur128 MIT and the Podlove BSD/MIT tools are the commercial-safe islands); the CC0/CC-BY game-audio long tail is heavily picked-over (major packs all cataloged in earlier waves — Abundant Music CC0 and MachinimaSound's 2026 license change were the two fresh finds).

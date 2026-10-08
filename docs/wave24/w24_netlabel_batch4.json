@@ -1,0 +1,603 @@
+{
+ "immoralbasementrec": {
+  "n": 1795,
+  "counts": {
+   "clean": 1,
+   "nc": 14,
+   "other": 0,
+   "unknown": 1780
+  },
+  "uploaders": [
+   [
+    "",
+    1795
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/4.0/": 1
+  },
+  "title": "Immoral Basement Records",
+  "index_count": 1801
+ },
+ "rumpfunkrecords": {
+  "n": 22,
+  "counts": {
+   "clean": 0,
+   "nc": 21,
+   "other": 0,
+   "unknown": 1
+  },
+  "uploaders": [
+   [
+    "",
+    22
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Rumpfunk Records",
+  "index_count": 1319
+ },
+ "genetic-trance": {
+  "n": 921,
+  "counts": {
+   "clean": 583,
+   "nc": 19,
+   "other": 5,
+   "unknown": 314
+  },
+  "uploaders": [
+   [
+    "",
+    921
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 566,
+   "http://creativecommons.org/licenses/by/3.0/": 9,
+   "https://creativecommons.org/licenses/by/4.0/": 1,
+   "http://creativecommons.org/licenses/by/4.0/": 1,
+   "https://creativecommons.org/publicdomain/mark/1.0/": 1,
+   "http://creativecommons.org/publicdomain/mark/1.0/": 5
+  },
+  "title": "Genetic Trance",
+  "index_count": 946
+ },
+ "treetrunk": {
+  "n": 822,
+  "counts": {
+   "clean": 531,
+   "nc": 207,
+   "other": 81,
+   "unknown": 3
+  },
+  "uploaders": [
+   [
+    "",
+    822
+   ]
+  ],
+  "clean_lu": {
+   "https://creativecommons.org/licenses/by/4.0/": 21,
+   "http://creativecommons.org/publicdomain/mark/1.0/": 376,
+   "https://creativecommons.org/publicdomain/mark/1.0/": 53,
+   "http://creativecommons.org/licenses/by/3.0/": 25,
+   "http://creativecommons.org/licenses/by/2.5/": 10,
+   "http://creativecommons.org/licenses/by/3.0/us/": 44,
+   "http://creativecommons.org/licenses/by/4.0/": 2
+  },
+  "title": "Treetrunk",
+  "index_count": 832
+ },
+ "deepxrec": {
+  "n": 599,
+  "counts": {
+   "clean": 61,
+   "nc": 524,
+   "other": 2,
+   "unknown": 12
+  },
+  "uploaders": [
+   [
+    "",
+    599
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 61
+  },
+  "title": "Deep-X Recordings",
+  "index_count": 599
+ },
+ "unclassedmedia": {
+  "n": 322,
+  "counts": {
+   "clean": 0,
+   "nc": 25,
+   "other": 0,
+   "unknown": 297
+  },
+  "uploaders": [
+   [
+    "",
+    322
+   ]
+  ],
+  "clean_lu": {},
+  "title": "unclassed media",
+  "index_count": 541
+ },
+ "clinicalarchives": {
+  "n": 528,
+  "counts": {
+   "clean": 0,
+   "nc": 515,
+   "other": 0,
+   "unknown": 13
+  },
+  "uploaders": [
+   [
+    "",
+    528
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Clinical Archives",
+  "index_count": 530
+ },
+ "oloil": {
+  "n": 522,
+  "counts": {
+   "clean": 513,
+   "nc": 0,
+   "other": 0,
+   "unknown": 9
+  },
+  "uploaders": [
+   [
+    "",
+    522
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/4.0/": 311,
+   "http://creativecommons.org/licenses/by/2.1/jp/": 56,
+   "http://creativecommons.org/licenses/by/3.0/": 87,
+   "https://creativecommons.org/licenses/by/4.0/": 59
+  },
+  "title": "OL Oil",
+  "index_count": 522
+ },
+ "bumpfoot": {
+  "n": 503,
+  "counts": {
+   "clean": 0,
+   "nc": 499,
+   "other": 1,
+   "unknown": 3
+  },
+  "uploaders": [
+   [
+    "",
+    503
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Bump Foot",
+  "index_count": 515
+ },
+ "monotonik": {
+  "n": 511,
+  "counts": {
+   "clean": 0,
+   "nc": 89,
+   "other": 169,
+   "unknown": 253
+  },
+  "uploaders": [
+   [
+    "",
+    511
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Monotonik",
+  "index_count": 514
+ },
+ "blocsonic": {
+  "n": 424,
+  "counts": {
+   "clean": 2,
+   "nc": 422,
+   "other": 0,
+   "unknown": 0
+  },
+  "uploaders": [
+   [
+    "",
+    424
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 2
+  },
+  "title": "blocSonic",
+  "index_count": 425
+ },
+ "dustedwaxkingdom": {
+  "n": 398,
+  "counts": {
+   "clean": 0,
+   "nc": 393,
+   "other": 1,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    398
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Dusted Wax Kingdom",
+  "index_count": 399
+ },
+ "asaguare": {
+  "n": 382,
+  "counts": {
+   "clean": 1,
+   "nc": 377,
+   "other": 0,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    382
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  },
+  "title": "Asaguare",
+  "index_count": 382
+ },
+ "noisecollector": {
+  "n": 354,
+  "counts": {
+   "clean": 180,
+   "nc": 6,
+   "other": 145,
+   "unknown": 23
+  },
+  "uploaders": [
+   [
+    "",
+    354
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 124,
+   "http://creativecommons.org/licenses/by/3.0/us/": 55,
+   "http://creativecommons.org/licenses/by/2.5/": 1
+  },
+  "title": "NoiseCollector",
+  "index_count": 369
+ },
+ "20kbps": {
+  "n": 312,
+  "counts": {
+   "clean": 3,
+   "nc": 115,
+   "other": 149,
+   "unknown": 45
+  },
+  "uploaders": [
+   [
+    "",
+    312
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/1.0/": 2,
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  },
+  "title": "20kbps",
+  "index_count": 313
+ },
+ "usc-label": {
+  "n": 312,
+  "counts": {
+   "clean": 7,
+   "nc": 1,
+   "other": 300,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    312
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1,
+   "http://creativecommons.org/licenses/by/4.0/": 6
+  },
+  "title": "USC \u2022 United Studios Corporation",
+  "index_count": 312
+ },
+ "bayview-financial-trading-group": {
+  "n": 307,
+  "counts": {
+   "clean": 0,
+   "nc": 0,
+   "other": 219,
+   "unknown": 88
+  },
+  "uploaders": [
+   [
+    "",
+    307
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Bayview Financial Trading Group",
+  "index_count": 308
+ },
+ "kahvi": {
+  "n": 267,
+  "counts": {
+   "clean": 69,
+   "nc": 18,
+   "other": 136,
+   "unknown": 44
+  },
+  "uploaders": [
+   [
+    "",
+    267
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/1.0/": 69
+  },
+  "title": "Kahvi Collective",
+  "index_count": 268
+ },
+ "irish-metal-archive": {
+  "n": 266,
+  "counts": {
+   "clean": 52,
+   "nc": 172,
+   "other": 38,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    266
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/mark/1.0/": 49,
+   "http://creativecommons.org/publicdomain/zero/1.0/": 3
+  },
+  "title": "IRISH-METAL ARCHIVE",
+  "index_count": 266
+ },
+ "kreislauf": {
+  "n": 234,
+  "counts": {
+   "clean": 0,
+   "nc": 233,
+   "other": 1,
+   "unknown": 0
+  },
+  "uploaders": [
+   [
+    "",
+    234
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Kreislauf",
+  "index_count": 234
+ },
+ "god": {
+  "n": 223,
+  "counts": {
+   "clean": 3,
+   "nc": 88,
+   "other": 2,
+   "unknown": 130
+  },
+  "uploaders": [
+   [
+    "",
+    223
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 3
+  },
+  "title": "God Rekidz",
+  "index_count": 224
+ },
+ "we-are-all-ghosts": {
+  "n": 216,
+  "counts": {
+   "clean": 1,
+   "nc": 196,
+   "other": 2,
+   "unknown": 17
+  },
+  "uploaders": [
+   [
+    "",
+    216
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  },
+  "title": "we are all ghosts",
+  "index_count": 216
+ },
+ "ammd-label": {
+  "n": 161,
+  "counts": {
+   "clean": 0,
+   "nc": 0,
+   "other": 155,
+   "unknown": 6
+  },
+  "uploaders": [
+   [
+    "",
+    161
+   ]
+  ],
+  "clean_lu": {},
+  "title": "AMMD",
+  "index_count": 212
+ },
+ "fwonk": {
+  "n": 201,
+  "counts": {
+   "clean": 2,
+   "nc": 190,
+   "other": 5,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    201
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/2.0/uk/": 2
+  },
+  "title": "Fwonk",
+  "index_count": 201
+ },
+ "electronic-musik": {
+  "n": 197,
+  "counts": {
+   "clean": 0,
+   "nc": 188,
+   "other": 2,
+   "unknown": 7
+  },
+  "uploaders": [
+   [
+    "",
+    197
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Electronic Musik",
+  "index_count": 197
+ },
+ "kraimusic": {
+  "n": 168,
+  "counts": {
+   "clean": 60,
+   "nc": 71,
+   "other": 22,
+   "unknown": 15
+  },
+  "uploaders": [
+   [
+    "",
+    168
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 24,
+   "https://creativecommons.org/licenses/by/4.0/": 30,
+   "http://creativecommons.org/licenses/by/4.0/": 6
+  },
+  "title": "krai music",
+  "index_count": 171
+ },
+ "hanahata-discography": {
+  "n": 163,
+  "counts": {
+   "clean": 1,
+   "nc": 0,
+   "other": 90,
+   "unknown": 72
+  },
+  "uploaders": [
+   [
+    "",
+    163
+   ]
+  ],
+  "clean_lu": {
+   "https://creativecommons.org/licenses/by/4.0/": 1
+  },
+  "title": "hanahata",
+  "index_count": 164
+ },
+ "silent-flow": {
+  "n": 162,
+  "counts": {
+   "clean": 0,
+   "nc": 157,
+   "other": 3,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    162
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Silent Flow",
+  "index_count": 164
+ },
+ "phonocake": {
+  "n": 161,
+  "counts": {
+   "clean": 3,
+   "nc": 143,
+   "other": 11,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    161
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 2,
+   "http://creativecommons.org/licenses/by/3.0/de/": 1
+  },
+  "title": "Phonocake",
+  "index_count": 162
+ },
+ "soisloscerdos-netlabel": {
+  "n": 104,
+  "counts": {
+   "clean": 2,
+   "nc": 88,
+   "other": 1,
+   "unknown": 13
+  },
+  "uploaders": [
+   [
+    "",
+    104
+   ]
+  ],
+  "clean_lu": {
+   "https://creativecommons.org/publicdomain/mark/1.0/": 1,
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  },
+  "title": "Soisloscerdos Netlabel",
+  "index_count": 155
+ }
+}

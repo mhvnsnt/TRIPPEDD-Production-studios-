@@ -1,0 +1,125 @@
+{
+  "source": "archive.org advancedsearch API",
+  "queries": {
+    "southern_harmony_1835": [
+      {
+        "identifier": "imslp-southern-harmony-walker-william",
+        "title": "The Southern Harmony",
+        "date": "1835-01-01T00:00:00Z",
+        "item_url": "https://archive.org/details/imslp-southern-harmony-walker-william"
+      },
+      {
+        "identifier": "southernharmonym0000walk",
+        "title": "The Southern harmony and musical companion : containing a choice collection of tunes, hymns, psalms, odes, and anthems .",
+        "date": "1835-01-01T00:00:00Z",
+        "item_url": "https://archive.org/details/southernharmonym0000walk"
+      }
+    ],
+    "christian_harmony": [
+      {
+        "identifier": "artofsinth00lawa",
+        "title": "The Art of singing : in three parts, to wit, I. The Musical primer, II. The Christian harmony, III. The Musical magazine",
+        "date": "1803-01-01T00:00:00Z",
+        "item_url": "https://archive.org/details/artofsinth00lawa"
+      },
+      {
+        "identifier": "2012-county-line-singing",
+        "title": "2012 County Line Christian Harmony Singing",
+        "date": "2012-01-15T00:00:00Z",
+        "item_url": "https://archive.org/details/2012-county-line-singing"
+      },
+      {
+        "identifier": "2017-RI-Christian-Harmony",
+        "title": "2017 Rhode Island Christian Harmony Singing",
+        "date": "2017-06-24T00:00:00Z",
+        "item_url": "https://archive.org/details/2017-RI-Christian-Harmony"
+      },
+      {
+        "identifier": "2013-county-line-singing",
+        "title": "2013 County Line Christian Harmony Singing",
+        "date": "2013-01-20T00:00:00Z",
+        "item_url": "https://archive.org/details/2013-county-line-singing"
+      },
+      {
+        "identifier": "2017-georgia-christian-harmony-convention",
+        "title": "2017 Georgia State Christian Harmony Convention",
+        "date": "2017-12-03T00:00:00Z",
+        "item_url": "https://archive.org/details/2017-georgia-christian-harmony-convention"
+      },
+      {
+        "identifier": "2018-creel-memorial",
+        "title": "2018 Creel Memorial Christian Harmony Singing",
+        "date": "2018-01-21T00:00:00Z",
+        "item_url": "https://archive.org/details/2018-creel-memorial"
+      },
+      {
+        "identifier": "chminute-book-1986",
+        "title": "Minutes of Christian Harmony Singings Held in Walker, Winston and Cullman Counties Alabama, 1986",
+        "date": "1987-01-01T00:00:00Z",
+        "item_url": "https://archive.org/details/chminute-book-1986"
+      },
+      {
+        "identifier": "2016-creel-memorial",
+        "title": "2016 Creel Memorial Christian Harmony Singing",
+        "date": "2016-01-17T00:00:00Z",
+        "item_url": "https://archive.org/details/2016-creel-memorial"
+      },
+      {
+        "identifier": "2015-georgia-christian-harmony-convention",
+        "title": "2015 Georgia State Christian Harmony Convention",
+        "date": "2015-12-06T00:00:00Z",
+        "item_url": "https://archive.org/details/2015-georgia-christian-harmony-convention"
+      },
+      {
+        "identifier": "2025-georgia-christian-harmony-convention",
+        "title": "2025 Georgia State Christian Harmony Convention",
+        "date": "2025-12-14T00:00:00Z",
+        "item_url": "https://archive.org/details/2025-georgia-christian-harmony-convention"
+      }
+    ],
+    "new_harp_of_columbia": [
+      {
+        "identifier": "09-22-13-headricks-chapel",
+        "title": "Headrick Chapel New Harp of Columbia Singing, Sept. 22, 2013",
+        "date": "2013-09-22T00:00:00Z",
+        "item_url": "https://archive.org/details/09-22-13-headricks-chapel"
+      },
+      {
+        "identifier": "2018-09-22-valley-view",
+        "title": "Wears Valley New Harp of Columbia Convention at Valley View, Sept. 22, 2018",
+        "date": "2018-09-22T00:00:00Z",
+        "item_url": "https://archive.org/details/2018-09-22-valley-view"
+      },
+      {
+        "identifier": "companiontonewha0000maria",
+        "title": "A companion to the new harp of columbia",
+        "date": "2003-01-01T00:00:00Z",
+        "item_url": "https://archive.org/details/companiontonewha0000maria"
+      },
+      {
+        "identifier": "2018-09-23-headrick-chapel",
+        "title": "Wears Valley New Harp of Columbia Convention at Headrick Chapel, Sept. 23, 2018",
+        "date": "2018-09-23T00:00:00Z",
+        "item_url": "https://archive.org/details/2018-09-23-headrick-chapel"
+      },
+      {
+        "identifier": "09-25-16-headrick-chapeli",
+        "title": "New Harp of Columbia Singing at Headrick Chapel, Sept. 25, 2016",
+        "date": "2016-09-25T00:00:00Z",
+        "item_url": "https://archive.org/details/09-25-16-headrick-chapeli"
+      },
+      {
+        "identifier": "2014-headrick",
+        "title": "New Harp of Columbia Singing at Headrick Chapel, Sept. 28, 2014",
+        "date": "2014-09-28T00:00:00Z",
+        "item_url": "https://archive.org/details/2014-headrick"
+      },
+      {
+        "identifier": "newharpofcolumbi0000unse",
+        "title": "The New harp of Columbia",
+        "date": "1978-01-01T00:00:00Z",
+        "item_url": "https://archive.org/details/newharpofcolumbi0000unse"
+      }
+    ]
+  }
+}

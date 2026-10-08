@@ -50273,3 +50273,305 @@ Regional labels, events, and scene hubs. Every URL verified live this pass via H
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Cross-reference with the GI AY-3-8910/8912/8913 datasheet entries. [Wave 55 Lane A]
+
+### P3 — open broadcast-automation tail (30 entries)
+
+#### beets ✅ commercial-safe
+- **What:** beetbox/beets — music library manager and MusicBrainz tagger (autotagging, duplicate handling, playlist automation for broadcast libraries).
+- **URL:** https://github.com/beetbox/beets
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / library automation)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Library-hygiene automation for station music pools. [Wave 55 Lane A]
+
+#### kurento/kurento ✅ commercial-safe
+- **What:** Kurento WebRTC Media Server — media-server toolkit (transcoding, mixing, recording) for broadcast contribution pipelines.
+- **URL:** https://github.com/kurento/kurento
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Contribution/mixing leg for live broadcast chains. [Wave 55 Lane A]
+
+#### arut/nginx-rtmp-module ✅ commercial-safe
+- **What:** NGINX-based media streaming server module (RTMP ingest, HLS/DASH relay) — the classic self-hosted live-ingest workhorse.
+- **URL:** https://github.com/arut/nginx-rtmp-module
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Ingest tier for station streaming; pair with a permissive player. [Wave 55 Lane A]
+
+#### gwuhaolin/livego ✅ commercial-safe
+- **What:** Live video streaming server in Go (RTMP/HLS/HTTP-FLV) — lightweight self-hosted live server.
+- **URL:** https://github.com/gwuhaolin/livego
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Go alternative to nginx-rtmp for live ingest. [Wave 55 Lane A]
+
+#### illuspas/Node-Media-Server ✅ commercial-safe
+- **What:** Node.js implementation of an RTMP/HTTP-FLV media server — JS-native live ingest for Node broadcast stacks.
+- **URL:** https://github.com/illuspas/Node-Media-Server
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Node-native ingest option. [Wave 55 Lane A]
+
+#### Red5/red5-server ✅ commercial-safe
+- **What:** Red5 Server core — open-source media server (RTMP/WebRTC streaming) for broadcast distribution.
+- **URL:** https://github.com/Red5/red5-server
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Full media-server option; heavier than livego/nginx-rtmp. [Wave 55 Lane A]
+
+#### pion/ion-sfu ✅ commercial-safe
+- **What:** Pure-Go WebRTC SFU (Selective Forwarding Unit) — fan-out leg for low-latency broadcast contribution.
+- **URL:** https://github.com/pion/ion-sfu
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Pairs with the cataloged pion/webrtc stack. [Wave 55 Lane A]
+
+#### Moonbase59/loudgain ✅ commercial-safe
+- **What:** ReplayGain 2.0 loudness normalizer based on EBU R128 / ITU-R BS.1770 — broadcast loudness compliance tagging for music libraries.
+- **URL:** https://github.com/Moonbase59/loudgain
+- **License:** ✅ BSD-style (verified 2026-10-08: COPYING file — redistribution with/without modification permitted, retain copyright)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / loudness)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Loudness-normalize station libraries before playout; complements libebur128 (already cataloged). [Wave 55 Lane A]
+
+#### desbma/r128gain ⚠️ license-conditional
+- **What:** Fast audio loudness scanner & tagger (ReplayGain v2 / R128) — archived upstream.
+- **URL:** https://github.com/desbma/r128gain
+- **License:** ⚠️ LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id; repo archived) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / loudness)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Archived — prefer loudgain (BSD) for new wiring; keep for R128 scan workflows. [Wave 55 Lane A]
+
+#### Haivision/srt ⚠️ license-conditional
+- **What:** Secure, Reliable, Transport (SRT) protocol — broadcast contribution transport for lossy networks.
+- **URL:** https://github.com/Haivision/srt
+- **License:** ⚠️ MPL-2.0 (verified 2026-10-08 via GitHub API spdx_id) — file-level copyleft; link with care
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / contribution)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The standard open contribution protocol; MPL means keep it at arm's length from shipping code. [Wave 55 Lane A]
+
+#### bigbluebutton/bigbluebutton ⚠️ license-conditional
+- **What:** Complete web conferencing system (virtual classes) — LGPL-licensed broadcast-adjacent live production platform.
+- **URL:** https://github.com/bigbluebutton/bigbluebutton
+- **License:** ⚠️ LGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id) — weak copyleft, no quarantine row per the LGPL rule
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / live production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 5/5
+- **Status:** not-started
+- **Notes:** Heavy lift; listed for live-remote-production completeness. [Wave 55 Lane A]
+
+#### rafael2k/darkice ❓ unverified
+- **What:** DarkIce — live audio streamer; records from an audio interface and encodes to Icecast/Shoutcast servers.
+- **URL:** https://github.com/rafael2k/darkice
+- **License:** ❓ Unverified (verified 2026-10-08: GitHub API spdx_id NONE — no LICENSE/COPYING in repo root; darkice.org unreachable this pass — license NOT assumed)
+- **Free tier:** Free and open source (claimed)
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — read the license from a release tarball before any use. [Wave 55 Lane A]
+
+#### mixxxdj/mixxx 🚫 GPL-2.0-or-later — QUARANTINED (row 537)
+- **What:** Mixxx — free DJ software for live mixes (broadcast performance / live-assist desk).
+- **URL:** https://github.com/mixxxdj/mixxx
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08: LICENSE file "either version 2 of the License, or (at your option) any later version")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / performance)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only, never linked into shipping paths. [Wave 55 Lane A]
+
+#### meetecho/janus-gateway 🚫 GPL-3.0 — QUARANTINED (row 538)
+- **What:** Janus WebRTC Server — general-purpose WebRTC gateway for broadcast contribution.
+- **URL:** https://github.com/meetecho/janus-gateway
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### navidrome/navidrome 🚫 GPL-3.0 — QUARANTINED (row 539)
+- **What:** Navidrome — personal music streaming server (Subsonic-compatible).
+- **URL:** https://github.com/navidrome/navidrome
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### ampache/ampache 🚫 AGPL-3.0 — QUARANTINED (row 540)
+- **What:** Ampache — web audio/video streaming application + file manager.
+- **URL:** https://github.com/ampache/ampache
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### jellyfin/jellyfin 🚫 GPL-2.0 — QUARANTINED (row 541)
+- **What:** Jellyfin — free-software media system server backend & API.
+- **URL:** https://github.com/jellyfin/jellyfin
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### badaix/snapcast 🚫 GPL-3.0 — QUARANTINED (row 542)
+- **What:** Snapcast — synchronous multiroom audio player (broadcast distribution to synced endpoints).
+- **URL:** https://github.com/badaix/snapcast
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### MusicPlayerDaemon/MPD 🚫 GPL-2.0 — QUARANTINED (row 543)
+- **What:** Music Player Daemon — headless music server (the classic automation backend).
+- **URL:** https://github.com/MusicPlayerDaemon/MPD
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### tenacityteam/tenacity 🚫 GPL-2.0 — QUARANTINED (row 544)
+- **What:** Tenacity — Audacity-fork audio editor (broadcast production/editing).
+- **URL:** https://github.com/tenacityteam/tenacity
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: LICENSE.txt "distributed under the terms of the GNU GPL Version 2")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### metabrainz/picard 🚫 GPL-2.0 — QUARANTINED (row 545)
+- **What:** Picard — cross-platform music tagger powered by the MusicBrainz database.
+- **URL:** https://github.com/metabrainz/picard
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / library)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### ChristopheJacquet/PiFmRds 🚫 GPL-3.0 — QUARANTINED (row 546)
+- **What:** PiFmRds — FM-RDS transmitter using the Raspberry Pi's PWM (micro-broadcast hardware).
+- **URL:** https://github.com/ChristopheJacquet/PiFmRds
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / transmission)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — build/use yourself; check local transmission law before airing. [Wave 55 Lane A]
+
+#### IDJC — Internet DJ Console 🚫 GPL-2.0 — QUARANTINED (row 547)
+- **What:** IDJC — internet radio DJ console / live broadcast desk (playout + streaming + VoIP call-in).
+- **URL:** https://idjc.sourceforge.io/
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: SourceForge project page states "General Public License version 2.0 (GPLv2)")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / playout)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only; canonical lives on SourceForge (GitHub mirrors unofficial). [Wave 55 Lane A]
+
+#### AirenSoft/OvenMediaEngine 🚫 AGPL-3.0 — QUARANTINED (row 548)
+- **What:** OvenMediaEngine — sub-second-latency live streaming server.
+- **URL:** https://github.com/AirenSoft/OvenMediaEngine
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / streaming)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### gpodder/gpodder 🚫 GPL-3.0 — QUARANTINED (row 549)
+- **What:** gPodder — podcast client with subscription/download automation.
+- **URL:** https://github.com/gpodder/gpodder
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### jackaudio/jack2 🚫 GPL-2.0 — QUARANTINED (row 550)
+- **What:** JACK2 — the JACK audio connection kit (pro-audio low-latency routing between broadcast tools).
+- **URL:** https://github.com/jackaudio/jack2
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / routing)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### kaivehmanen/ecasound 🚫 GPL-2.0 — QUARANTINED (row 551)
+- **What:** Ecasound — multitrack-capable audio recorder and effect processor (CLI automation-friendly).
+- **URL:** https://github.com/kaivehmanen/ecasound
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: COPYING references "GNU General Public License (see the file 'COPYING.GPL')")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### Ardour/ardour 🚫 GPL-2.0 — QUARANTINED (row 552)
+- **What:** Ardour — professional digital audio workstation (broadcast production/mixing).
+- **URL:** https://github.com/Ardour/ardour
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: COPYING "GNU GENERAL PUBLIC LICENSE Version 2, June 1991")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / production)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### podlibre/castopod 🚫 AGPL-3.0 — QUARANTINED (row 553)
+- **What:** Castopod — open-source podcast hosting platform (publishing automation for broadcasters).
+- **URL:** https://github.com/podlibre/castopod
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / distribution)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
+
+#### Campcaster 🚫 GPL-2.0 — QUARANTINED (row 554)
+- **What:** Campcaster — legacy open-source radio broadcast automation suite (2009-era, inactive upstream).
+- **URL:** https://sourceforge.net/projects/campcaster/
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: SourceForge project page states "General Public License version 2.0 (GPLv2)")
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (broadcast / automation)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — historical reference only (predecessor lineage to Airtime/LibreTime). [Wave 55 Lane A]

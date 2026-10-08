@@ -42460,3 +42460,315 @@ Also researched but dropped as unverifiable within budget: Annotation Edit (no s
 - **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
 - **Status:** not-started
 - **Notes:** Avant-garde animation reference — permission-hosted, so treat as view-only research unless the item is independently PD. [Wave 48 Lane A]
+
+### Pocket 2 — chip-music tracker long tail (31 entries)
+
+#### Uxn ✅ commercial-safe (MIT, sourcehut verified 2026-10-08)
+- **What:** 100r's Uxn — stack-machine fantasy computer with a built-in tracker-style music workflow (varvara ecosystem).
+- **URL:** https://git.sr.ht/~rabbits/uxn
+- **License:** ✅ MIT (verified 2026-10-08 via sourcehut repo tree listing MIT license)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Fantasy-console chip composition target — tiny ROMs, tracker-native workflow; study the varvara audio device for minimal chip-synth design. [Wave 48 Lane A]
+
+#### GB Studio ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** chrismaltby/gb-studio — drag-and-drop retro game creator for Game Boy; includes a built-in chiptune music editor (hUGETracker lineage).
+- **URL:** https://github.com/chrismaltby/gb-studio
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-04)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The GB music editor is the approachable end of the tracker spectrum — study its UX for onboarding non-tracker musicians. [Wave 48 Lane A]
+
+#### GBT Player ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** AntonioND/gbt-player — music player library for the GB/GBC/GBA PSG audio channels (pairs with GBT Player tracker format).
+- **URL:** https://github.com/AntonioND/gbt-player
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-06)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference GB PSG replayer implementation — clean-room readable, MIT-clean for study. [Wave 48 Lane A]
+
+#### SGDK ✅ commercial-safe (MIT, GitHub API verified 2026-10-08)
+- **What:** Stephane-D/SGDK — open Sega Mega Drive dev kit shipping the XGM/XGM2 sound drivers (tracker-adjacent composition toolchain).
+- **URL:** https://github.com/Stephane-D/SGDK
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-01)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** XGM2 driver is the modern Genesis music path — study its tracker-to-driver pipeline for YM2612 composition UX. [Wave 48 Lane A]
+
+#### bfxr ✅ commercial-safe (Apache-2.0, README verified 2026-10-08)
+- **What:** increpare/bfxr — Flash/AIR port of sfxr: the classic retro SFX generator (pickup/coin, laser, explosion presets).
+- **URL:** https://github.com/increpare/bfxr
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via readme.MD "license: http://www.apache.org/licenses/LICENSE-2.0.html")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chip-SFX generation reference — the 7-generator-function model is the fastest path to placeholder retro SFX. [Wave 48 Lane A]
+
+#### sfxr (al_sfxr) ✅ commercial-safe (MIT, README verified 2026-10-08)
+- **What:** leiradel/al_sfxr — header-only C library port of DrPetter's sfxr sound-effect synthesizer.
+- **URL:** https://github.com/leiradel/al_sfxr
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub README carrying the MIT license text, © 2007 Tomas Pettersson / 2020 Andre Leiradella)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Embeddable chip-SFX synth — header-only, MIT-clean, drop-in for procedural retro SFX. [Wave 48 Lane A]
+
+#### jsfxr ✅ commercial-safe (Unlicense, GitHub API verified 2026-10-08)
+- **What:** chr15m/jsfxr — JavaScript port of sfxr; browser-based retro sound-effect generator (sfxr.me).
+- **URL:** https://github.com/chr15m/jsfxr
+- **License:** ✅ Unlicense (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-05-05)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Web-native chip-SFX generation — useful reference for in-browser SFX tooling. [Wave 48 Lane A]
+
+#### NSFPlay ✅ commercial-safe (permissive author grant, verified 2026-10-08)
+- **What:** Brad Smith's NSFPlay — full-featured open-source NSF/NSFE player (standalone + Winamp plugin), all NES expansion chips, WAV logger, debugger.
+- **URL:** https://bbbradsmith.github.io/nsfplay/
+- **License:** ✅ Permissive — author's notice: "You may reuse this code without restriction" (verified 2026-10-08 via rainwarrior fork README restating Brad Smith's grant)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference NES audio emulation — the most accurate NSF playback path; study the expansion-chip implementations. [Wave 48 Lane A]
+
+#### MaxYMiser ⚠️ freeware — no redistributable open grant
+- **What:** gwEm's MaxYMiser — the actively-developed Atari ST YM2149 chip tracker (FastTracker II-style editing, full MIDI).
+- **URL:** http://www.preromanbritain.com/maxymiser/
+- **License:** ⚠️ Freeware — "maxYMiser is free" per the author's site; no open-source grant stated (verified 2026-10-08 via preromanbritain.com, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Study the FT2-style editing UX on real YM hardware constraints; binaries are free but not redistributable as source. [Wave 48 Lane A]
+
+#### DigiBooster ⚠️ freeware — no redistributable open grant
+- **What:** DigiBooster 3 — Amiga-origin tracker (ProTracker lineage → software multi-channel mixing), still maintained.
+- **URL:** http://www.digibooster.de
+- **License:** ⚠️ Freeware — "kostenlos!" per the official site; no open-source grant stated (verified 2026-10-08 via digibooster.de, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Amiga tracker-evolution study — the DBM0 module format docs on-site are worth reading alongside the tool. [Wave 48 Lane A]
+
+#### RMT (Raster Music Tracker) ⚠️ freeware — no redistributable open grant
+- **What:** Raster's RMT — cross-platform tool for making Atari XL/XE POKEY music on PC, with Raster's own mature music routine.
+- **URL:** http://raster.infos.cz/atari/rmt/rmt.htm
+- **License:** ⚠️ Freeware — freely downloadable from the author's site; no formal license grant found (verified 2026-10-08 via raster.infos.cz, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** POKEY composition reference — note the GPL-3.0 Qt6 RITMO port (quarantine row 441) as the open-source lineage. [Wave 48 Lane A]
+
+#### Open Cubic Player ⚠️ freeware — no redistributable open grant
+- **What:** Open Cubic Player — veteran module player for Linux/Unix/DOS/Windows (MOD/S3M/XM/IT and dozens of formats).
+- **URL:** https://www.cubic.org/player/
+- **License:** ⚠️ Freeware — freely downloadable; no license grant stated on site (verified 2026-10-08 via cubic.org, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Format-coverage reference for module playback testing; prefer libopenmpt for anything linked. [Wave 48 Lane A]
+
+#### PlayerPRO ⚠️ open-source listing, license file unverified
+- **What:** PlayerPRO — classic Mac music composer/sound editor (SoundTracker) for MOD/S3M/XM/IT, now cross-platform via SourceForge.
+- **URL:** https://sourceforge.net/projects/playerpro/
+- **License:** ⚠️ Listed under SourceForge "Open Source Software"; specific license file not verified this pass (verified 2026-10-08 via sourceforge.net, HTTP 200)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mac tracker-history study — verify the actual license file before any code reuse. [Wave 48 Lane A]
+
+#### game-music-emu 🚫 LGPL-2.1 — QUARANTINED (new row 438)
+- **What:** libgme/game-music-emu — Blargg's video game music emulation library (NSF, SPC, VGM, GBS, HES, AY, KSS, SAP and more).
+- **URL:** https://github.com/libgme/game-music-emu
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-09-08) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — the definitive multi-format chip emulation core; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 438. [Wave 48 Lane A]
+
+#### Odin2 🚫 GPL-3.0 — QUARANTINED (new row 439)
+- **What:** TheWaveWarden/odin2 — Odin 2 open-source synthesizer plugin (24-voice, modular-style).
+- **URL:** https://github.com/TheWaveWarden/odin2
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via LICENSE raw "distributed under the GNU GPLv3"; pushed 2025-09-07)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the voice architecture and modulation matrix; never linked. QUARANTINE row 439. [Wave 48 Lane A]
+
+#### NitroTracker 🚫 GPL-3.0 — QUARANTINED (new row 440)
+- **What:** NitrousTracker/nitroustracker — FastTracker II-style XM tracker for Nintendo DS/DSi (0xtob's NitroTracker lineage, actively maintained fork).
+- **URL:** https://github.com/NitrousTracker/nitroustracker
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via README "NitrousTracker: GNU General Public License v3"; original GPL-3.0 per CDM)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — the only serious handheld-stylus tracker UX case study; never linked. QUARANTINE row 440. [Wave 48 Lane A]
+
+#### RITMO Music Tracker 🚫 GPL-3.0 — QUARANTINED (new row 441)
+- **What:** gianlucarenzi/RITMO-Music-Tracker — Qt6 cross-platform port of RMT, the Atari XL/XE POKEY music tracker.
+- **URL:** https://github.com/gianlucarenzi/RITMO-Music-Tracker
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; pushed 2026-10-05)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — modern open-source POKEY tracker implementation; never linked. QUARANTINE row 441. [Wave 48 Lane A]
+
+#### MadTracker3 🚫 LGPL-2.0 — QUARANTINED (new row 442)
+- **What:** MadTracker-FOSS/MadTracker3 — open continuation of the MadTracker tracker-sequencer (VST/ASIO/ReWire lineage).
+- **URL:** https://github.com/MadTracker-FOSS/MadTracker3
+- **License:** 🚫 LGPL-2.0 (verified 2026-10-08 via project README "MadTracker is released under the GNU LGPLv2"; GitHub API NOASSERTION) — weak copyleft, quarantined per standing convention
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — study the tracker+VST hybrid architecture; never linked (weak-copyleft row pending owner verdict). QUARANTINE row 442. [Wave 48 Lane A]
+
+#### NotSo Fatso 🚫 GPL-2.0-or-later — QUARANTINED (new row 443)
+- **What:** NotSo Fatso — Winamp NSF/NSFE input plugin with high-accuracy NES APU and all 6 expansion-chip emulation.
+- **URL:** https://www.zophar.net/utilities/nsf/notso-fatso.html
+- **License:** 🚫 GPL-2.0-or-later (verified 2026-10-08 via xmplay_gamemusic_plugin README: "the combined plugin is GPLv2+ because NotSo Fatso is GPL-2+")
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Research lane only — expansion-chip emulation accuracy reference; never linked. QUARANTINE row 443. [Wave 48 Lane A]
+
+#### Furnace Tracker 🚫 GPL-3.0 — QUARANTINED (row 271 exists)
+- **What:** tildearrow/furnace — Furnace: multi-system chiptune tracker (dozens of sound chips, .fur format).
+- **URL:** https://github.com/tildearrow/furnace
+- **License:** 🚫 GPL-3.0 — quarantined (row 271 exists; the catalog already carries the .fur format-docs entry)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Research lane only — the broadest chip-coverage tracker in existence; study its per-chip abstraction, never link. QUARANTINE row 271 (existing). [Wave 48 Lane A]
+
+#### TriloTracker ❓ no license file found in repo
+- **What:** cornelisser/TriloTracker — MSX/SMS music tracker for PSG+SCC, PSG+FM, and PSG+FM chip combos.
+- **URL:** https://github.com/cornelisser/TriloTracker
+- **License:** ❓ No LICENSE file in repo (GitHub API license null; pushed 2026-05-27) — grant unverified this pass
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — promising MSX/SMS tracker but no license grant on record; treat as all-rights-reserved until verified. [Wave 48 Lane A]
+
+#### SNESMod ❓ no license file found in repo
+- **What:** mukunda-/snesmod — SNES audio library: Impulse Tracker music + sound-effect streaming on the SPC700.
+- **URL:** https://github.com/mukunda-/snesmod
+- **License:** ❓ No LICENSE file in repo (GitHub API license null; pushed 2025-02-01) — grant unverified this pass
+- **Free tier:** Free download
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — the canonical IT→SNES path, but no license grant on record; verify before reuse. [Wave 48 Lane A]
+
+#### PPMCK ❓ official site unreachable this pass
+- **What:** PPMCK — MML (Music Macro Language) compiler kit for NES/Famicom music.
+- **URL:** http://ppmck.mmlclub.net
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — historically freeware, unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — MML composition path for NES; re-verify if the site returns. [Wave 48 Lane A]
+
+#### OctaMED Soundstudio ❓ official site unreachable this pass
+- **What:** OctaMED Soundstudio — the classic Amiga MED-line tracker (successor to OctaMED).
+- **URL:** https://www.octamed.co.uk
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — historically freeware, unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — key Amiga tracker lineage gap; re-verify if the site returns. [Wave 48 Lane A]
+
+#### Soundtrakker 128 ❓ official site unreachable this pass
+- **What:** Soundtrakker 128 — BSC's Amstrad CPC tracker.
+- **URL:** http://www.soundtrakker.org
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — historically freeware, unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Diligence record — CPC tracker gap; re-verify if the site returns. [Wave 48 Lane A]
+
+#### SID Factory II ❓ official site unreachable this pass
+- **What:** SID Factory II — modern Windows-based C64 SID composition tool.
+- **URL:** https://www.sidfactory2.com
+- **License:** ❓ Official site unreachable 2026-10-08 (connection failed) — grant unverified this pass
+- **Free tier:** Unknown
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Diligence record — notable modern SID tool; re-verify if the site returns. [Wave 48 Lane A]
+
+#### NSF format documentation (NESDev wiki) ⚠️ per-wiki terms
+- **What:** NESDev wiki's NSF page — the NES Sound Format technical specification.
+- **URL:** https://www.nesdev.org/wiki/NSF
+- **License:** ⚠️ Per-wiki terms — technical doc, no blanket reuse grant (verified 2026-10-08 via nesdev.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical NSF spec reference — pair with NSFPlay for an NSF playback study path. [Wave 48 Lane A]
+
+#### VGM file format specification (SMS Power) ❓ terms unverified
+- **What:** SMS Power's VGM file-format documentation — the Video Game Music format spec.
+- **URL:** https://www.smspower.org/Music/VGMFileFormat
+- **License:** ❓ Terms unverified — widely-mirrored tech doc (verified 2026-10-08 via smspower.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical VGM spec — the logging-format complement to tracker formats. [Wave 48 Lane A]
+
+#### SMPS format documentation (Sonic Retro) ⚠️ per-wiki terms
+- **What:** Sonic Retro wiki's SMPS page — Sega's SMPS sound-driver format (Genesis-era tracker-adjacent).
+- **URL:** https://info.sonicretro.org/SMPS
+- **License:** ⚠️ Per-wiki terms — technical doc, no blanket reuse grant (verified 2026-10-08 via info.sonicretro.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genesis driver-format reference — complements the SGDK/XGM2 entry for the Sega music path. [Wave 48 Lane A]
+
+#### SID file format specification (HVSC) ❓ terms unverified
+- **What:** HVSC's SID_file_format.txt — the PlaySID/SID file format specification.
+- **URL:** https://www.hvsc.c64.org/download/C64Music/DOCUMENTS/SID_file_format.txt
+- **License:** ❓ Terms unverified — widely-mirrored tech doc (verified 2026-10-08 via hvsc.c64.org, HTTP 200)
+- **Free tier:** Free
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Canonical SID container spec — pairs with the HVSC collection entry. [Wave 48 Lane A]
+
+#### SAP format documentation (ASAP docs) 🚫 GPL-2.0 — quarantined (row 259 exists)
+- **What:** SAP (Atari SAP Music Archive) format docs, shipped with ASAP (Another Slight Atari Player).
+- **URL:** https://github.com/grayscale/asap
+- **License:** 🚫 GPL-2.0 — quarantined (row 259 exists; catalog already carries the ASAP entry)
+- **Free tier:** free OSS
+- **Repo lane:** trippedd (music/scoring)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research lane only — POKEY format spec lives inside a GPL codebase; read, don't lift. QUARANTINE row 259 (existing). [Wave 48 Lane A]

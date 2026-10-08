@@ -50869,6 +50869,1134 @@ Regional labels, events, and scene hubs. Every URL verified live this pass via H
 - **Notes:** Quarantined — study/standalone use only. [Wave 55 Lane A]
 
 
+### Wave 56 Lane A — Pocket 1: PD radio-drama round 5 — per-episode transcriptions/metadata (36)
+
+Round 5 targets OTRR certified singles sets and per-show/per-episode deep dives not covered in rounds 1–4, prioritizing items that bundle episode-level metadata (PDF/TXT logs, transcription notes). Six OTRR "Certified" metadata stubs with zero audio files (Abbot_and_Costello, The_Great_Gildersleeve, Philip_Marlowe, Hopalong_Cassidy, Challenge_of_the_Yukon, Maintained_Frontier_Gentleman) were verified live but excluded as file-less — not cataloged.
+
+#### OTRR_YoursTrulyJohnnyDollar_Singles (OTR) ✅ PD
+- **What:** OTRR "Yours Truly, Johnny Dollar - Single Episodes": 721 audio files spanning the 1949–1962 insurance-investigator procedural (all three Dollar eras).
+- **URL:** https://archive.org/details/OTRR_YoursTrulyJohnnyDollar_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-ND 2.5 uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 721 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Largest single-show OTRR singles set in this wave; era-spanning reference for hard-boiled first-person narration. [Wave 56 Lane A]
+
+#### OTRR_YoursTrulyJohnnyDollar_Singles_Bob_Bailey (OTR) ✅ PD
+- **What:** OTRR "Yours Truly, Johnny Dollar - Single Episodes - Bob Bailey 15 Minute Episodes": 276 audio files, the 15-minute Bailey era.
+- **URL:** https://archive.org/details/OTRR_YoursTrulyJohnnyDollar_Singles_Bob_Bailey
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-ND 4.0 uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 276 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Era-sliced companion to the main singles set; tight 15-minute procedural pacing reference. [Wave 56 Lane A]
+
+#### OTRR_YoursTrulyJohnnyDollar_Singles_Bob_Bailey_2 (OTR) ✅ PD
+- **What:** OTRR "Yours Truly, Johnny Dollar - Single Episodes - Bob Bailey 30 Minute Episodes": 179 audio files, the expanded 30-minute Bailey era.
+- **URL:** https://archive.org/details/OTRR_YoursTrulyJohnnyDollar_Singles_Bob_Bailey_2
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-ND 4.0 uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 179 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Era-sliced companion; compare against the 15-minute set for how the same lead plays longer-form stories. [Wave 56 Lane A]
+
+#### OTRR_Sam_Spade_Singles (OTR) ✅ PD
+- **What:** OTRR "The Adventures of Sam Spade - Single Episodes": 198 audio files + 6 document files (Howard Duff as Spade, 1946–1951).
+- **URL:** https://archive.org/details/OTRR_Sam_Spade_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 198 audio + 6 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bundled documents give episode-level metadata; dry-witted detective dialogue reference. [Wave 56 Lane A]
+
+#### OTRR_Our_Miss_Brooks_Singles (OTR) ✅ PD
+- **What:** OTRR "Our Miss Brooks Singles": 358 audio files (Eve Arden, 1948–1957 school comedy).
+- **URL:** https://archive.org/details/OTRR_Our_Miss_Brooks_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 358 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sitcom timing and ensemble banter reference; large single-show set. [Wave 56 Lane A]
+
+#### OTRR_Duffys_Tavern_Singles (OTR) ✅ PD
+- **What:** OTRR "Duffy's Tavern Singles": 241 audio files (Ed Gardner's barroom comedy, 1941–1951).
+- **URL:** https://archive.org/details/OTRR_Duffys_Tavern_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY 3.0 US uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 241 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Malaprop-laden Brooklyn patter; useful for stylized comic-voice reference. [Wave 56 Lane A]
+
+#### OTRR_Challenge_of_the_Yukon_Singles (OTR) ✅ PD
+- **What:** OTRR "Challenge of the Yukon - Single Episodes": 1,260 audio files + 10 document files (Sergeant Preston of the Yukon, 1938–1955).
+- **URL:** https://archive.org/details/OTRR_Challenge_of_the_Yukon_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-ND 3.0 US uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 1,260 audio + 10 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** One of the largest OTR singles sets on archive.org; northern-adventure narration and animal-sidekick (Yukon King) scoring cues. [Wave 56 Lane A]
+
+#### OTRR_Philip_Marlowe_Singles (OTR) ✅ PD
+- **What:** OTRR "Adventures of Philip Marlowe - Single Episodes": 105 audio files + 88 document files (Van Heflin/Gerald Mohr as Marlowe).
+- **URL:** https://archive.org/details/OTRR_Philip_Marlowe_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-SA 3.0 uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 105 audio + 88 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Round 5's richest transcription bundle — 88 document files of episode-level metadata; top pick for per-episode metadata pulls. [Wave 56 Lane A]
+
+#### OTRR_FrontierGentleman_Singles (OTR) ✅ PD
+- **What:** OTRR "Frontier Gentleman Singles": 91 audio files (John Dehner as J.B. Kendall, western anthology, 1958).
+- **URL:** https://archive.org/details/OTRR_FrontierGentleman_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 91 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complete-series-scale set (the show ran 41 episodes; set includes related material); literate western narration. [Wave 56 Lane A]
+
+#### OTRR_Abbott_Costello_Singles (OTR) ✅ PD
+- **What:** OTRR "Abbott and Costello - Single Episodes": 336 audio files + 1 document file (1940s comedy duo).
+- **URL:** https://archive.org/details/OTRR_Abbott_Costello_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 336 audio + 1 document file)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rapid-fire duo timing reference ("Who's on First" lineage). [Wave 56 Lane A]
+
+#### Otrr_The_Great_Gildersleeve_Singles (OTR) ✅ PD
+- **What:** OTRR "The Great Gildersleeve - Single Episodes": 543 audio files + 8 document files (Harold Peary/Willard Waterman, 1941–1957).
+- **URL:** https://archive.org/details/Otrr_The_Great_Gildersleeve_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; item carries a CC BY-NC-ND 4.0 uploader-packaging tag — transfer packaging, not broadcast copyright; verified 2026-10-08: metadata API HTTP 200, title match, 543 audio + 8 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bundled documents give episode-level metadata; small-town sitcom ensemble reference. [Wave 56 Lane A]
+
+#### OTRR_Have_Gun_Singles (OTR) ⚠️ rights-caution
+- **What:** OTRR "Have Gun, Will Travel - Single Episodes": 225 audio files + 4 document files (John Dehner as Paladin, 1958–1960).
+- **URL:** https://archive.org/details/OTRR_Have_Gun_Singles
+- **License:** ⚠️ rights-caution (item carries a CC BY-SA 4.0 uploader-packaging tag — transfer packaging, not broadcast copyright; the property's TV/film lineage stays encumbered; verified 2026-10-08: metadata API HTTP 200, title match, 225 audio + 4 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Western procedural with a literate gunfighter lead; caution per the Gunsmoke precedent — verify chain of title before commercial use. [Wave 56 Lane A]
+
+#### MercuryTheatreOnTheAir381030WarOfTheWorlds (OTR) ✅ PD
+- **What:** Single-episode deep dive: "Mercury Theatre On The Air 38 10 30 War Of The Worlds" — the 1938-10-30 Orson Welles broadcast, 2 audio files.
+- **URL:** https://archive.org/details/MercuryTheatreOnTheAir381030WarOfTheWorlds
+- **License:** ✅ Public domain (underlying 1938 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The single most famous OTR episode; fake-news-bulletin structure is a masterclass in escalating realism. [Wave 56 Lane A]
+
+#### MercuryTheatre19380711Dracula (OTR) ✅ PD
+- **What:** Single-episode deep dive: "Mercury Theatre 1938 07 11 Dracula" — Welles's Dracula with 2 audio + 2 document files.
+- **URL:** https://archive.org/details/MercuryTheatre19380711Dracula
+- **License:** ✅ Public domain (underlying 1938 US radio broadcast; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio + 2 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bundled documents add episode metadata; horror-narration reference from the Mercury peak. [Wave 56 Lane A]
+
+#### 1946MercurySummerTheatre (OTR) ✅ PD
+- **What:** "1946 Mercury Summer Theatre (part 1)": 30 audio files from the 1946 Mercury summer series.
+- **URL:** https://archive.org/details/1946MercurySummerTheatre
+- **License:** ✅ Public domain (underlying 1946 US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 30 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Post-war Mercury anthology; strong dramatic-acting reference. [Wave 56 Lane A]
+
+#### HQSherlockRathboneTCS (OTR) ✅ PD
+- **What:** "Sherlock Holmes Basil Rathbone": 32 audio files (Rathbone/Bruce, 1940s).
+- **URL:** https://archive.org/details/HQSherlockRathboneTCS
+- **License:** ✅ Public domain (underlying 1940s US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 32 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Definitive Holmes/Watson dynamic; deduction-dialogue pacing reference. [Wave 56 Lane A]
+
+#### superman_otr (OTR) ⚠️ rights-caution
+- **What:** "The Adventures of Superman": 172 audio files (1940s–1950s Superman radio serial).
+- **URL:** https://archive.org/details/superman_otr
+- **License:** ⚠️ rights-caution (Superman character/trademark stays encumbered despite the broadcasts' age; verified 2026-10-08: metadata API HTTP 200, title match, 172 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Serialized adventure pacing; caution per the Lone Ranger precedent — character rights, not broadcast copyright, are the risk. [Wave 56 Lane A]
+
+#### TheGreenHornet (OTR) ⚠️ rights-caution
+- **What:** "The Green Hornet": 134 audio files (1930s–1950s masked-crimefighter serial); item carries an explicit CC0 1.0 mark.
+- **URL:** https://archive.org/details/TheGreenHornet
+- **License:** ⚠️ rights-caution (item carries CC0 1.0 Universal — verified 2026-10-08: metadata API HTTP 200, title match, 134 audio files — but the Green Hornet character/trademark stays encumbered)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dual-hero (Britt Reid/Green Hornet) structure; CC0 covers the transfers, not the character. [Wave 56 Lane A]
+
+#### Lum and Abner — 1646-episode set (OTR) ✅ PD
+- **What:** "Lum and Abner - 1646 episodes of the classic Old Time Radio Show": 1,647 audio files, one of the largest single-show OTR sets on archive.org.
+- **URL:** https://archive.org/details/l-a-1953-11-20-xx-thanksgiving-in-pine-ridge
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 1,647 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 15-minute rural-comedy serial format; enormous corpus for dialogue-pattern mining. [Wave 56 Lane A]
+
+#### TheLifeOfRiley (OTR) ✅ PD
+- **What:** "The Life of Riley 132 Eps": 264 audio files + 132 document files; item carries an explicit Public Domain Mark 1.0.
+- **URL:** https://archive.org/details/TheLifeOfRiley
+- **License:** ✅ Public domain (explicit Public Domain Mark 1.0 on the item; verified 2026-10-08: metadata API HTTP 200, title match, 264 audio + 132 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 132 document files = episode-level metadata at scale; blue-collar sitcom reference with the cleanest rights mark in the wave. [Wave 56 Lane A]
+
+#### MyFavoriteHusband (OTR) ✅ PD
+- **What:** "My Favorite Husband": 111 audio files (Lucille Ball, 1948–1951; the direct ancestor of I Love Lucy).
+- **URL:** https://archive.org/details/MyFavoriteHusband
+- **License:** ✅ Public domain (item carries a public-domain license URL; verified 2026-10-08: metadata API HTTP 200, title match, 111 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sitcom-to-TV pipeline history; Ball's radio comic timing reference. [Wave 56 Lane A]
+
+#### The_Bob_Hope_Program (OTR) ✅ PD
+- **What:** "The_Bob_Hope_Program": 406 audio files (Bob Hope's long-running comedy-variety show); item carries a public-domain license URL.
+- **URL:** https://archive.org/details/The_Bob_Hope_Program
+- **License:** ✅ Public domain (item carries a public-domain license URL; verified 2026-10-08: metadata API HTTP 200, title match, 406 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Topical monologue + sketch + guest-star structure; variety-pacing reference. [Wave 56 Lane A]
+
+#### TheAldrichFamily (OTR) ✅ PD
+- **What:** "The Aldrich Family 97 Eps": 194 audio files + 97 document files (teen sitcom, 1939–1953).
+- **URL:** https://archive.org/details/TheAldrichFamily
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 194 audio + 97 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 97 document files of episode metadata; "Hen-ree!" catchphrase-era ensemble comedy. [Wave 56 Lane A]
+
+#### LightsOutoldTimeRadio (OTR) ✅ PD
+- **What:** "Lights Out (Old Time Radio)": 172 audio files (Arch Oboler's horror anthology, 1930s–1940s).
+- **URL:** https://archive.org/details/LightsOutoldTimeRadio
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 172 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Chicken Heart" lineage — extreme horror-radio sound-design reference; pairs with the Inner Sanctum round-4 entries. [Wave 56 Lane A]
+
+
+#### the-shadow-1938-10-09-141-death-stalks-the-shadow (OTR) ⚠️ rights-caution
+- **What:** "The Shadow - 239 Episodes of the Old Time Radio Drama": 239 audio files (1937–1954, Orson Welles through Brett Morrison eras).
+- **URL:** https://archive.org/details/the-shadow-1938-10-09-141-death-stalks-the-shadow
+- **License:** ⚠️ rights-caution (underlying broadcasts are PD-era, but The Shadow character/trademark stays encumbered; verified 2026-10-08: metadata API HTTP 200, title match, 239 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The deep Shadow corpus; caution per the Lone Ranger/Green Hornet precedent — character rights, not broadcast copyright, are the risk. [Wave 56 Lane A]
+
+#### TheShadowSeason1 (OTR) ⚠️ rights-caution
+- **What:** "The Shadow Season 1": 32 audio files, season-sliced Shadow set.
+- **URL:** https://archive.org/details/TheShadowSeason1
+- **License:** ⚠️ rights-caution (The Shadow character/trademark stays encumbered; verified 2026-10-08: metadata API HTTP 200, title match, 32 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Season-sliced companion to the 239-episode set; same character-rights caution. [Wave 56 Lane A]
+
+#### lights-out-1943-04-20-29-kill (OTR) ✅ PD
+- **What:** "Lights Out - 71 Episodes of the Old Time Radio program": 71 audio files of Arch Oboler's horror anthology.
+- **URL:** https://archive.org/details/lights-out-1943-04-20-29-kill
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 71 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Compact horror-anthology set; pairs with the LightsOutoldTimeRadio round-5 entry. [Wave 56 Lane A]
+
+#### sherlockholmes_otr (OTR) ✅ PD
+- **What:** "Sherlock Holmes OTR - Basil Rathbone and Nigel Bruce": 104 audio files; item carries an explicit Public Domain Mark 1.0.
+- **URL:** https://archive.org/details/sherlockholmes_otr
+- **License:** ✅ Public domain (explicit Public Domain Mark 1.0 on the item; verified 2026-10-08: metadata API HTTP 200, title match, 104 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The cleanest-rights Rathbone/Bruce set (PD Mark 1.0); larger than the HQSherlockRathboneTCS set. [Wave 56 Lane A]
+
+#### Our_Miss_Brooks_190_Episodes (OTR) ✅ PD
+- **What:** "Our Miss Brooks - 190 Episodes": 189 audio files + 187 document files (Eve Arden).
+- **URL:** https://archive.org/details/Our_Miss_Brooks_190_Episodes
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 189 audio + 187 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 187 document files = episode-level metadata at scale; top transcription pick alongside Philip Marlowe and Life of Riley. [Wave 56 Lane A]
+
+#### the-burns-and-allen-show-1934-09-26-2-leaving-for-america (OTR) ✅ PD
+- **What:** "Burns and Allen - 272 Episodes of the George Burns and Gracie Allen Show": 272 audio files (1934–1950).
+- **URL:** https://archive.org/details/the-burns-and-allen-show-1934-09-26-2-leaving-for-america
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 272 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The definitive Burns & Allen corpus; Gracie Allen's illogical-logic dialogue is a unique comic-voice study. [Wave 56 Lane A]
+
+#### town-hall-tonight-1938-06-08-232-music-publisher-needs-a-tune (OTR) ✅ PD
+- **What:** "Fred Allen (Version 2) - 277 Episodes of Fred Allen's Old Time Radio Show": 277 audio files (Town Hall Tonight era).
+- **URL:** https://archive.org/details/town-hall-tonight-1938-06-08-232-music-publisher-needs-a-tune
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 277 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Topical satire and "Allen's Alley" man-on-the-street structure; variety-comedy reference. [Wave 56 Lane A]
+
+#### OtrBlondie (OTR) ✅ PD
+- **What:** "Blondie 42 Eps": 84 audio files + 42 document files (Blondie & Dagwood, 1940s); item carries an explicit Public Domain Mark 1.0.
+- **URL:** https://archive.org/details/OtrBlondie
+- **License:** ✅ Public domain (explicit Public Domain Mark 1.0 on the item; verified 2026-10-08: metadata API HTTP 200, title match, 84 audio + 42 document files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PD Mark 1.0 with bundled episode documents; domestic-sitcom timing reference. [Wave 56 Lane A]
+
+#### vicandsade1 (OTR) ✅ PD
+- **What:** "Vic and Sade (1)": 152 audio files (Paul Rhymer's 15-minute rural slice-of-life, 1930s–1940s); item carries a public-domain license URL.
+- **URL:** https://archive.org/details/vicandsade1
+- **License:** ✅ Public domain (item carries a public-domain license URL; verified 2026-10-08: metadata API HTTP 200, title match, 152 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Minimalist two-hander dialogue; naturalistic speech-pattern reference. [Wave 56 Lane A]
+
+#### Tom_Mix (OTR) ✅ PD
+- **What:** "Tom Mix": 26 audio files (Tom Mix Ralston Straight Shooters western adventure); item carries a public-domain license URL.
+- **URL:** https://archive.org/details/Tom_Mix
+- **License:** ✅ Public domain (item carries a public-domain license URL; verified 2026-10-08: metadata API HTTP 200, title match, 26 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Juvenile western serial; small set, clean rights mark. [Wave 56 Lane A]
+
+#### The-Cisco-Kid-VER.2 (OTR) ✅ PD
+- **What:** "The-Cisco-Kid": 146 audio files (the Cisco Kid western adventure, 1940s–1950s).
+- **URL:** https://archive.org/details/The-Cisco-Kid-VER.2
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: metadata API HTTP 200, title match, 146 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** "Oh, Pancho! Oh, Cisco!" duo-western formula; adventure-serial pacing. [Wave 56 Lane A]
+
+#### SkyKing (OTR) ✅ PD
+- **What:** "Sky King": 16 audio files (aviation western adventure); item carries a public-domain license URL.
+- **URL:** https://archive.org/details/SkyKing
+- **License:** ✅ Public domain (item carries a public-domain license URL; verified 2026-10-08: metadata API HTTP 200, title match, 16 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Small aviation-adventure set; clean rights mark. [Wave 56 Lane A]
+
+### Wave 56 Lane A — Pocket 2: retro homebrew SDK docs round 2 (26)
+
+Round 1 (Angle 4) covered the core toolchains (GBDK-2020, RGBDS, SGDK, cc65, libdragon, KallistiOS, pspsdk, …). Round 2 targets SDK docs, community wikis, and dev-adjacent tooling not yet cataloged. Dropped honest negatives: neogeodev.org (000), mc.pp.se (000), z80.info (000), Relaunch64 (upstream not locatable — sjPlot/Relaunch64 is an unrelated R package name collision), romhacking.net (403 + ROM-hack gray — skipped, not cataloged).
+
+#### llvm-mos/llvm-mos ✅ commercial-safe
+- **What:** llvm-mos — port of LLVM to the MOS 6502 and related processors (modern C/C++ toolchain for 6502-family homebrew).
+- **URL:** https://github.com/llvm-mos/llvm-mos
+- **License:** ✅ Apache-2.0 with LLVM Exceptions (verified 2026-10-08: raw LICENSE.TXT "The LLVM Project is under the Apache License v2.0 with LLVM Exceptions"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The modern alternative to cc65 for 6502 targets (NES, C64, Atari, Apple II); full LLVM optimizer on 8-bit. [Wave 56 Lane A]
+
+#### GeorgRottensteiner/C64Studio ✅ commercial-safe
+- **What:** C64 Studio — .NET-based IDE for C64 game development in assembler and BASIC (editor, debugger, sprite/charset tools).
+- **URL:** https://github.com/GeorgRottensteiner/C64Studio
+- **License:** ✅ MIT (verified 2026-10-08: raw license.md "The MIT License (MIT) Copyright (c) 2011 - 2019 Georg Rottensteiner"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Full C64 dev environment under MIT — assembler + asset pipeline in one IDE. [Wave 56 Lane A]
+
+#### MLXXXp/Arduboy2 ✅ commercial-safe
+- **What:** Arduboy2 — the canonical library for Arduboy (ATmega32u4 open handheld) game development.
+- **URL:** https://github.com/MLXXXp/Arduboy2
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08: raw LICENSE.txt "Licensed under the BSD 3-clause license"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Modern-retro handheld SDK; clean BSD terms for commercial handheld titles. [Wave 56 Lane A]
+
+#### ColdSauce/psxsdk ⚠️ custom license — modification source-sharing required
+- **What:** psxsdk — community-maintained collection of tools and libraries for PlayStation 1 homebrew development (GitHub clone of the old Google Code project).
+- **URL:** https://github.com/ColdSauce/psxsdk
+- **License:** ⚠️ custom (verified 2026-10-08: raw license.txt — "You can use this library for any project, commercial and non-commercial, open-source and closed-source. But if you modify the library, you must redistribute the source for the modifications" — file-level share-alike; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Commercial use allowed, but any library modification triggers source-sharing — treat like weak copyleft; the Google Code original is dead, this clone is the live copy. [Wave 56 Lane A]
+
+#### Optiroc/BRRtools ❓ license unverified
+- **What:** BRRtools — the most evolved converters between RIFF WAV and the SNES BRR sound format (by Bregalad, maintained by Optiroc).
+- **URL:** https://github.com/Optiroc/BRRtools
+- **License:** ❓ unverified (no license file in repo; README describes the tools as "open source" but states no terms; GitHub API spdx_id null — nothing to govern yet)
+- **Free tier:** Free and open source (terms unclear)
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Essential SNES audio pipeline piece; do not ship derivatives until terms are confirmed with the authors. [Wave 56 Lane A]
+
+#### tonc (GBA programming tutorial) ❓ terms unverified
+- **What:** Tonc — Cearn's (Jasper Vijn's) complete Game Boy Advance programming tutorial (coranac.com; hardware, graphics, audio, assembly).
+- **URL:** https://www.coranac.com/tonc/text/toc.htm
+- **License:** ❓ terms unverified (site live, HTTP 200, 2026-10-08; no license/copyright statement located in page text this pass)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The canonical GBA dev tutorial; read-and-learn safe, redistribution terms unconfirmed. [Wave 56 Lane A]
+
+#### n64.dev (n64brew docs) ❓ wiki terms unverified
+- **What:** n64.dev — the n64brew community's Nintendo 64 development documentation hub.
+- **URL:** https://n64.dev/
+- **License:** ❓ wiki terms unverified (site live, HTTP 200, 2026-10-08; no content-license statement located in homepage HTML this pass)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern N64 homebrew reference (libdragon-era); pair with the cataloged libdragon entry. [Wave 56 Lane A]
+
+#### psx.dev (PlayStation dev wiki) ❓ wiki terms unverified
+- **What:** psx.dev — community PlayStation 1 development wiki (hardware docs, tutorials, toolchain notes).
+- **URL:** http://www.psx.dev/
+- **License:** ❓ wiki terms unverified (site live, HTTP 200 via www redirect, 2026-10-08; no content-license statement located this pass)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PSX homebrew knowledge base; complements the PSn00bSDK/nugget toolchain entries. [Wave 56 Lane A]
+
+#### codebase64.org ❓ community wiki terms unverified
+- **What:** Codebase64 — community C64 assembly programming wiki (tutorials, routines, hardware notes).
+- **URL:** https://codebase64.org/
+- **License:** ❓ community wiki terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Practical 6502/C64 routine library; verify per-page terms before copying code into shipping work. [Wave 56 Lane A]
+
+#### nesdoug.com (NESDoug tutorials) ❓ terms unverified
+- **What:** NESDoug — long-running NES homebrew tutorial series (neslib-based, beginner to advanced).
+- **URL:** https://www.nesdoug.com/
+- **License:** ❓ terms unverified (site live, HTTP 200, 2026-10-08; no license statement located this pass)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements the cataloged neslib/FamiTone2 entries; read-and-learn safe. [Wave 56 Lane A]
+
+#### wiki.devkitpro.org ❓ bot-walled this pass
+- **What:** devkitPro wiki — official documentation for devkitARM/devkitPPC/devkitA64 and the associated portlibs.
+- **URL:** https://wiki.devkitpro.org/
+- **License:** ❓ unverified (HTTP 403 to curl this pass — bot-walled; terms not checked)
+- **Free tier:** Free to read (in a browser)
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The GBA/DS/Switch homebrew toolchain docs; 403 is a bot wall, not a dead site — retry from a browser session. [Wave 56 Lane A]
+
+#### command-tab/awesome-n64-development ❓ no license file
+- **What:** awesome-n64-development — curated list of N64 development resources (toolchains, docs, emulators, example ROMs).
+- **URL:** https://github.com/command-tab/awesome-n64-development
+- **License:** ❓ no license file (GitHub API spdx_id null; no license statement in README this pass — list links out, does not redistribute)
+- **Free tier:** Free and open source (index only)
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery index for the N64 homebrew ecosystem; follow each link's own terms. [Wave 56 Lane A]
+
+#### skilldrick/easy6502 ❓ no license statement
+- **What:** Easy 6502 — interactive in-browser 6502 assembly tutorial with a working simulator (by Nick Morgan/skilldrick).
+- **URL:** https://github.com/skilldrick/easy6502
+- **License:** ❓ no license statement (no LICENSE file; no license/copyright text in README or index page this pass; GitHub API spdx_id null)
+- **Free tier:** Free to read/use
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Excellent 6502 onboarding ramp; learn-from safe, redistribution terms unconfirmed. [Wave 56 Lane A]
+
+#### pokitto/PokittoLib ❓ no license file
+- **What:** PokittoLib — library for making programs on Pokitto DIY retro-gaming hardware (ARM Cortex-M0+, Arduino-compatible).
+- **URL:** https://github.com/pokitto/PokittoLib
+- **License:** ❓ no license file (no LICENSE/COPYING in repo root; no license statement in README this pass; GitHub API spdx_id null)
+- **Free tier:** Free and open source (terms unclear)
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** DIY handheld SDK; confirm terms with the Pokitto team before shipping commercial titles on it. [Wave 56 Lane A]
+
+#### wiibrew.org ❓ wiki terms unverified
+- **What:** WiiBrew — the Wii homebrew development wiki (hardware docs, toolchain guides, homebrew catalog).
+- **URL:** https://wiibrew.org/
+- **License:** ❓ wiki terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wii is firmly retro-homebrew territory now; complements the cataloged devkitPro/libogc entry. [Wave 56 Lane A]
+
+#### 3dbrew.org ❓ wiki terms unverified
+- **What:** 3DBrew — the Nintendo 3DS homebrew development wiki (hardware, services, file formats).
+- **URL:** https://3dbrew.org/
+- **License:** ❓ wiki terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Deep 3DS hardware documentation; read-and-learn safe. [Wave 56 Lane A]
+
+#### gbadev.org ❓ community terms unverified
+- **What:** GBADev — Game Boy Advance development community (forums, docs, toolchain pointers).
+- **URL:** https://gbadev.org/
+- **License:** ❓ community terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Community complement to tonc and the devkitPro docs. [Wave 56 Lane A]
+
+#### gbdev.io ❓ community hub terms unverified
+- **What:** gbdev.io — Game Boy development community hub (docs index, tools, homebrew scene).
+- **URL:** https://gbdev.io/
+- **License:** ❓ community hub terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Distinct from the cataloged awesome-gbdev list (that is a link index; this is the community site/docs hub). [Wave 56 Lane A]
+
+#### atariwiki.org ❓ wiki terms unverified
+- **What:** AtariWiki — Atari 8-bit computer wiki (hardware docs, programming guides, peripheral notes).
+- **URL:** https://atariwiki.org/
+- **License:** ❓ wiki terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Complements the round-3 "De Re Atari"/"Mapping the Atari" scan entries with living wiki docs. [Wave 56 Lane A]
+
+#### randomterrain.com ❓ tutorial terms unverified
+- **What:** Random Terrain — Atari 2600 programming tutorials and homebrew resources (long-running hobbyist tutorial site).
+- **URL:** https://randomterrain.com/
+- **License:** ❓ tutorial terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2600 "racing the beam" tutorials; read-and-learn safe. [Wave 56 Lane A]
+
+#### meonwax/acme 🚫 GPL-2.0 — QUARANTINED (row 558)
+- **What:** ACME — multi-platform cross-assembler for 6502/6510/65816 CPUs (Marco Baye).
+- **URL:** https://github.com/meonwax/acme
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 56 Lane A]
+
+#### sehugg/8bitworkshop 🚫 GPL-3.0 — QUARANTINED (row 559)
+- **What:** 8bitworkshop — web-based IDE for 8-bit programming and Verilog development (in-browser assembler/C toolchains).
+- **URL:** https://github.com/sehugg/8bitworkshop
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 56 Lane A]
+
+#### bluemonkmn/sgdk2 🚫 GPL-2.0 — QUARANTINED (row 560)
+- **What:** SGDK2 — IDE for building 2-D scrolling games without required coding (Windows desktop + HTML5 targets; distinct from the Genesis SGDK).
+- **URL:** https://github.com/bluemonkmn/sgdk2
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08: SGDK2IDE/COPYING.txt "GNU GENERAL PUBLIC LICENSE Version 2, June 1991"; GitHub API spdx_id null — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 56 Lane A]
+
+#### andrzejsliwa/64tass 🚫 GPL-2.0 — QUARANTINED (row 561)
+- **What:** 64tass — cross-assembler for 6502-family microprocessors (by soci/singular); this repo is a git clone of the canonical SourceForge project.
+- **URL:** https://github.com/andrzejsliwa/64tass
+- **License:** 🚫 GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id; canonical upstream is 64tass.sourceforge.net)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only; prefer the SourceForge canonical for issue tracking. [Wave 56 Lane A]
+
+#### X16Community/x16-docs ⚠️ CC BY-SA — QUARANTINED (row 562)
+- **What:** x16-docs — Commander X16 official documentation (the modern 8-bit computer's hardware/software reference).
+- **URL:** https://github.com/X16Community/x16-docs
+- **License:** ⚠️ CC BY-SA (docs carry CC BY-SA per the repo description "Commander X16 Documentation (CC BY-SA)"; GitHub API spdx_id null — description governs; share-alike docs → quarantined per the CC BY-SA precedent)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — share-alike documentation; read-and-learn safe, do not fold text into proprietary docs. [Wave 56 Lane A]
+
+#### Gamebuino/Gamebuino-META 🚫 LGPL-3.0 — QUARANTINED (row 563)
+- **What:** Gamebuino-META — the Gamebuino META handheld's API (Arduino-IDE-compatible retro handheld SDK).
+- **URL:** https://github.com/Gamebuino/Gamebuino-META
+- **License:** 🚫 LGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id; weak copyleft stays quarantined per pending owner ruling)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (retro SDK docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 56 Lane A]
+
+### Wave 56 Lane A — Pocket 3: open video-archive tooling round 2 (36)
+
+Round 1 covered the RF-decode flagship (vhs-decode) and encoders (x264/x265); film-restoration rounds covered the QC/preservation stack. Round 2 targets analog-video digitization siblings, archival codecs, streaming-server plumbing, and web-archive tooling. Dropped honest negatives: happycube/ld-decode2 (no such repo — the ld-analyse work continues on happycube/ld-decode branches), oyvindln/ld-analyse + oyvindln/cxadc (both 404 — consolidated into the ld-decode/vhs-decode repos; see the ld-analyse/improvements branch), wolfgangw/dcp_inspect (upstream gone, only a translations fork remains), VideoLAN/libRIST (moved off GitHub to VideoLAN's GitLab — not verified this pass), NLA/squidwarc (404 — canonical is N0taN3rd/Squidwarc, cataloged below).
+
+#### nihui/waifu2x-ncnn-vulkan ✅ commercial-safe
+- **What:** waifu2x-ncnn-vulkan — waifu2x image/video upscaler (ncnn Vulkan port, fast on Intel/AMD/NVIDIA/Apple Silicon).
+- **URL:** https://github.com/nihui/waifu2x-ncnn-vulkan
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Practical upscaler for low-res archival footage; CLI-first, scriptable. [Wave 56 Lane A]
+
+#### xinntao/Real-ESRGAN-ncnn-vulkan ✅ commercial-safe
+- **What:** Real-ESRGAN-ncnn-vulkan — Real-ESRGAN practical restoration upscaler (ncnn Vulkan port).
+- **URL:** https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan
+- **License:** ✅ MIT (verified 2026-10-08: raw LICENSE "The MIT License (MIT) Copyright (c) 2021 Xintao Wang"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Pairs with the cataloged Real-ESRGAN entry; the ncnn build is the deployable artifact. [Wave 56 Lane A]
+
+#### nihui/dain-ncnn-vulkan ✅ commercial-safe
+- **What:** dain-ncnn-vulkan — DAIN depth-aware video frame interpolation (ncnn Vulkan port).
+- **URL:** https://github.com/nihui/dain-ncnn-vulkan
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Slow-motion generation from archival footage; research lane. [Wave 56 Lane A]
+
+#### nihui/cain-ncnn-vulkan ✅ commercial-safe
+- **What:** cain-ncnn-vulkan — CAIN channel-attention frame interpolation (ncnn Vulkan port).
+- **URL:** https://github.com/nihui/cain-ncnn-vulkan
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Alternative interpolation model to RIFE/DAIN for comparison passes. [Wave 56 Lane A]
+
+#### Jaded-Encoding-Thaumaturgy/vs-denoise ✅ commercial-safe
+- **What:** vs-denoise — VapourSynth denoising, regression, and motion-compensation functions.
+- **URL:** https://github.com/Jaded-Encoding-Thaumaturgy/vs-denoise
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id; repo archived — read-only)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Scriptable denoise for digitized analog footage; archived — pin the last commit. [Wave 56 Lane A]
+
+#### MediaArea/MOVMetaEdit ✅ commercial-safe
+- **What:** MOVMetaEdit — MediaArea's basic MOV/MP4 metadata editor (same FADGI lineage as the cataloged AVIMetaEdit/BWFMetaEdit).
+- **URL:** https://github.com/MediaArea/MOVMetaEdit
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Clean-terms metadata surgery for QuickTime-family archival files. [Wave 56 Lane A]
+
+#### cisco/openh264 ✅ commercial-safe
+- **What:** OpenH264 — Cisco's open-source H.264 codec (includes the binary-licensed prebuilt module).
+- **URL:** https://github.com/cisco/openh264
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The clean-room H.264 path; Cisco's patent-license pass-through covers the prebuilt binary. [Wave 56 Lane A]
+
+#### AOMediaCodec/libavif ✅ commercial-safe
+- **What:** libavif — library for encoding/decoding AVIF stills (AV1 image format).
+- **URL:** https://github.com/AOMediaCodec/libavif
+- **License:** ✅ BSD-2-Clause-equivalent (verified 2026-10-08: raw LICENSE — BSD conditions, "Copyright 2019 Joe Drago"; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Royalty-free still-image format for archival thumbnails and keyframe plates. [Wave 56 Lane A]
+
+#### libjxl/libjxl ✅ commercial-safe
+- **What:** libjxl — JPEG XL reference implementation (royalty-free next-gen still codec).
+- **URL:** https://github.com/libjxl/libjxl
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lossless-capable archival still format; strong JPEG-transcoding story for photo archives. [Wave 56 Lane A]
+
+#### phoboslab/qoi ✅ commercial-safe
+- **What:** QOI — the "Quite OK Image Format" for fast lossless image compression (single-header).
+- **URL:** https://github.com/phoboslab/qoi
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Trivially embeddable lossless stills for pipeline intermediates. [Wave 56 Lane A]
+
+#### uclouvain/openjpeg ✅ commercial-safe
+- **What:** OpenJPEG — official JPEG 2000 codec (the DCP archival still codec).
+- **URL:** https://github.com/uclouvain/openjpeg
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08: raw LICENSE — "made available under the 2-clauses BSD License", UCL/Benoit Macq; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** JPEG 2000 is the DCP frame codec — pairs with the cataloged OpenDCP entry. [Wave 56 Lane A]
+
+#### gopro/cineform-sdk ✅ commercial-safe
+- **What:** CineForm SDK — GoPro's CineForm intermediate video codec SDK.
+- **URL:** https://github.com/gopro/cineform-sdk
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Wavelet intermediate codec; Apache terms make it the clean mezzanine option. [Wave 56 Lane A]
+
+#### aja-video/ntv2 ✅ commercial-safe
+- **What:** NTV2 SDK — AJA Video's open-source SDK for their capture/playout hardware (Kona/Io).
+- **URL:** https://github.com/aja-video/ntv2
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source (hardware sold separately)
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** MIT-licensed pro capture SDK — the digitization-ingest hardware path. [Wave 56 Lane A]
+
+#### jech/galene ✅ commercial-safe
+- **What:** Galène — videoconference server (single-binary, web-based).
+- **URL:** https://github.com/jech/galene
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight self-hosted conferencing for remote QC review sessions. [Wave 56 Lane A]
+
+#### wallabag/wallabag ✅ commercial-safe
+- **What:** wallabag — self-hostable read-it-later application (save and classify articles).
+- **URL:** https://github.com/wallabag/wallabag
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight article archiving; MIT where the Pocket/Instapaper alternatives are proprietary. [Wave 56 Lane A]
+
+#### go-shiori/shiori ✅ commercial-safe
+- **What:** Shiori — simple Go bookmark manager with archival features.
+- **URL:** https://github.com/go-shiori/shiori
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Single-binary bookmark archiver; pairs with ArchiveBox for link preservation. [Wave 56 Lane A]
+
+#### webrecorder/warcio ✅ commercial-safe
+- **What:** warcio — streaming WARC/ARC library for fast web-archive I/O (Python).
+- **URL:** https://github.com/webrecorder/warcio
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The standard Python WARC reader/writer for web-archive pipelines. [Wave 56 Lane A]
+
+#### iipc/jwarc ✅ commercial-safe
+- **What:** JWarc — Java library for reading/writing WARC files with a typed API (IIPC).
+- **URL:** https://github.com/iipc/jwarc
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** JVM-side WARC tooling from the International Internet Preservation Consortium. [Wave 56 Lane A]
+
+#### N0taN3rd/Squidwarc ✅ commercial-safe
+- **What:** Squidwarc — high-fidelity, user-scriptable archival crawler using headless Chrome/Chromium.
+- **URL:** https://github.com/N0taN3rd/Squidwarc
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id; the NLA/squidwarc path 404s — this is the canonical repo)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Browser-fidelity web archiving for JS-heavy pages that wget-style crawlers miss. [Wave 56 Lane A]
+
+#### archivesunleashed/aut ✅ commercial-safe
+- **What:** Archives Unleashed Toolkit (AUT) — open-source toolkit for analyzing web archives at scale (Spark-based).
+- **URL:** https://github.com/archivesunleashed/aut
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Scholarly web-archive analytics; heavyweight (Spark) but the standard for WARC research. [Wave 56 Lane A]
+
+#### Y2Z/monolith ✅ commercial-safe
+- **What:** Monolith — CLI/GUI tool and library for saving complete web pages as a single HTML file.
+- **URL:** https://github.com/Y2Z/monolith
+- **License:** ✅ CC0-1.0 (verified 2026-10-08 via GitHub API spdx_id — public-domain dedication)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-file page snapshots under CC0 — the simplest durable page-archive primitive. [Wave 56 Lane A]
+
+#### mpeg5/xevc ✅ commercial-safe
+- **What:** xevc/xevd — MPEG-5 EVC (Essential Video Coding) extra-fast encoder/decoder (Samsung reference).
+- **URL:** https://github.com/mpeg5/xevc
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08: raw COPYING — BSD conditions, "Copyright(c) 2020 Samsung Electronics Co., Ltd."; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Royalty-free-profile EVC baseline; patent diligence still required for the full profile. [Wave 56 Lane A]
+
+#### OpenVisualCloud/SVT-VP9 ✅ commercial-safe
+- **What:** SVT-VP9 — Scalable Video Technology VP9 encoder (Intel).
+- **URL:** https://github.com/OpenVisualCloud/SVT-VP9
+- **License:** ✅ BSD-2-Clause-Patent (verified 2026-10-08: raw LICENSE.md "SPDX short identifier: BSD-2-Clause-Patent", Intel copyright; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Royalty-free VP9 at scale; pairs with the cataloged libvpx entry. [Wave 56 Lane A]
+
+#### mozilla/mozjpeg ✅ commercial-safe
+- **What:** MozJPEG — improved JPEG encoder (Mozilla's libjpeg-turbo fork).
+- **URL:** https://github.com/mozilla/mozjpeg
+- **License:** ✅ BSD-style (verified 2026-10-08: raw LICENSE.md — libjpeg-turbo's BSD-style licenses: IJG License + BSD; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Drop-in smaller JPEGs for archival thumbnail/contact-sheet pipelines. [Wave 56 Lane A]
+
+#### google/guetzli ✅ commercial-safe
+- **What:** Guetzli — Google's perceptual JPEG encoder (slow, very small files).
+- **URL:** https://github.com/google/guetzli
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id; repo archived)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Archived but functional; best for one-time archival JPEG optimization, not interactive use. [Wave 56 Lane A]
+
+#### amiaopensource/ffmprovisr ✅ commercial-safe
+- **What:** ffmprovisr — the AMIA Open Source community's repository of useful FFmpeg commands for archivists (recipes, not code).
+- **URL:** https://github.com/amiaopensource/ffmprovisr
+- **License:** ✅ CC BY 4.0 (verified 2026-10-08: the live ffmprovisr site footer — "This work is licensed under a Creative Commons Attribution 4.0 International License"; GitHub API spdx_id null — site text governs)
+- **Free tier:** Free to read/use
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Archivist-vetted FFmpeg recipes (transcode, QC, fixity); CC BY means attribute on reuse. [Wave 56 Lane A]
+
+#### happycube/cxadc-linux3 ❓ license unverified
+- **What:** cxadc-linux3 — CX2388x direct ADC capture driver for Linux 3.x+ 64-bit (raw RF capture hardware path for the vhs-decode/ld-decode family).
+- **URL:** https://github.com/happycube/cxadc-linux3
+- **License:** ❓ unverified (no COPYING/LICENSE file in repo; no license statement in README this pass; GitHub API spdx_id null)
+- **Free tier:** Free and open source (terms unclear)
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Kernel-driver RF capture for analog ingest; confirm terms before distributing builds. [Wave 56 Lane A]
+
+#### PREMIS (Library of Congress) ✅ US federal PD
+- **What:** PREMIS — the Library of Congress preservation-metadata standard (Data Dictionary for Preservation Metadata).
+- **URL:** https://www.loc.gov/standards/premis/
+- **License:** ✅ US federal public domain (LOC standard; site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read/implement
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** The preservation-metadata vocabulary for describing archival video objects; pairs with the cataloged BagIt/FADGI entries. [Wave 56 Lane A]
+
+#### happycube/ld-decode 🚫 GPL-3.0 — QUARANTINED (row 564)
+- **What:** ld-decode — software-defined LaserDisc decoder (the original C++/Qt decoder; superseded in part by vhs-decode).
+- **URL:** https://github.com/happycube/ld-decode
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only; the ld-analyse work continues on this repo's branches (no separate repo). [Wave 56 Lane A]
+
+#### JuniorIsAJitterbug/tbc-video-export 🚫 GPL-3.0 — QUARANTINED (row 565)
+- **What:** tbc-video-export — tool for exporting S-Video/CVBS-type TBC captures to video files (vhs-decode pipeline stage).
+- **URL:** https://github.com/JuniorIsAJitterbug/tbc-video-export
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 56 Lane A]
+
+#### MediaArea/DVAnalyzer 🚫 GPL-3.0 — QUARANTINED (row 566)
+- **What:** DVAnalyzer — MediaArea's technical DV stream analyzer (error concealment reporting for tape transfers).
+- **URL:** https://github.com/MediaArea/DVAnalyzer
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only; note the sibling MOVMetaEdit/AVIMetaEdit are MIT/CC0. [Wave 56 Lane A]
+
+#### exiftool/exiftool 🚫 GPL-3.0 — QUARANTINED (row 567)
+- **What:** ExifTool — Phil Harvey's metadata reader/writer for image/video/audio files (the archival metadata workhorse).
+- **URL:** https://github.com/exiftool/exiftool
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id on the GitHub mirror; upstream describes itself as Perl Artistic License or GPL — either way copyleft-adjacent, quarantined)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — standalone CLI use only, never linked into shipping code. [Wave 56 Lane A]
+
+#### tubearchivist/tubearchivist 🚫 GPL-3.0 — QUARANTINED (row 568)
+- **What:** TubeArchivist — self-hosted YouTube media server (subscribe, download, index, and serve channels as an archive).
+- **URL:** https://github.com/tubearchivist/tubearchivist
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only; respect source ToS and copyright on what it archives. [Wave 56 Lane A]
+
+#### jjjake/internetarchive 🚫 AGPL-3.0 — QUARANTINED (row 569)
+- **What:** internetarchive — the official Python library + CLI for archive.org (upload, download, search, metadata).
+- **URL:** https://github.com/jjjake/internetarchive
+- **License:** 🚫 AGPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quarantined — standalone CLI use only; the AGPL bites on networked deployment. [Wave 56 Lane A]
+
+#### WikiTeam/wikiteam 🚫 GPL-3.0 — QUARANTINED (row 570)
+- **What:** WikiTeam — tools for downloading and preserving wikis, from Wikipedia to the tiniest wikis (ArchiveTeam).
+- **URL:** https://github.com/WikiTeam/wikiteam
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 56 Lane A]
+
+#### eoyilmaz/displaycal-py3 🚫 GPL-3.0 — QUARANTINED (row 571)
+- **What:** DisplayCAL modernization project — display calibration/profiling (Python 3 port of DisplayCAL).
+- **URL:** https://github.com/eoyilmaz/displaycal-py3
+- **License:** 🚫 GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (video-archive tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only; the color-pipeline QC path for calibrated archival review. [Wave 56 Lane A]
+
+### Wave 56 Lane A — Pocket 4: demoscene musicdisk archives round 2 (12)
+
+Earlier waves cataloged the major archives (Modland, Mod Archive, AMP, UnExoticA, HVSC, ASMA, SNDH, Project2612, SNESmusic, Zophar, VGM Rips, Remix64, BotB, 8bitpeoples, Ubiktune, ChipMusic.org, OCRemix, Demozoo, Pouët, scene.org, …). Round 2 targets replay libraries, chiptune trackers, netlabel/radio survivors, and reference databases not yet covered.
+
+#### gregpoulos/chipfs ✅ commercial-safe
+- **What:** ChipFS — read-only FUSE filesystem presenting chiptune files (NES .nsf, Game Boy .gbs, SNES .spc) as folders of playable WAV tracks (lets media servers like Navidrome stream chip music).
+- **URL:** https://github.com/gregpoulos/chipfs
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Chiptune-as-filesystem for archive streaming; MIT is clean. [Wave 56 Lane A]
+
+#### digital-sound-antiques/libkss ✅ commercial-safe
+- **What:** libkss — player library for MSX music formats (KSS/KSSX, MuSICA BGM, MGSDRV MGS, MPK, MoonBlaster MBM, OPLLDriver OPX), forked from MSXplug.
+- **URL:** https://github.com/digital-sound-antiques/libkss
+- **License:** ✅ ISC (verified 2026-10-08: raw LICENSE.md — ISC text, "Copyright (c) 2015 Mitsutaka Okazaki"; GitHub API spdx_id NOASSERTION — file text governs; caveat: the kss-drivers submodule is explicitly NOT covered by this license — check its terms separately)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The MSX-music replay path; honor the submodule caveat before bundling. [Wave 56 Lane A]
+
+#### chiptunes-win-discography-flac-lossless ⚠️ per-artist rights
+- **What:** "Chiptunes = WIN Discography FLAC Lossless" — fan-preserved complete discography of the Chiptunes = WIN netlabel (30 compilations, 2012–2019, FLAC + VBR MP3).
+- **URL:** https://archive.org/details/chiptunes-win-discography-flac-lossless
+- **License:** ⚠️ per-artist rights (fan-made preservation archive; no item-level license; verified 2026-10-08: metadata API HTTP 200, title match, 6 files — the uploader notes "Support the artists if their stuff is out there")
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Reference listening only — each track's rights sit with its artist; do not redistribute commercially. [Wave 56 Lane A]
+
+#### MSX Wiki — BGM Players ❓ wiki terms unverified
+- **What:** MSX Resource Center wiki page cataloging BGM players (MSX and non-MSX chiptune players, incl. KSS tooling).
+- **URL:** https://www.msx.org/wiki/BGM_Players
+- **License:** ❓ wiki terms unverified (site live, HTTP 200, 2026-10-08)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery index for MSX/KSS replay tooling; complements the libkss entry. [Wave 56 Lane A]
+
+#### radiosega.net ❓ per-track rights
+- **What:** RadioSEGA — long-running Sega music web radio (game-music streams, request shows).
+- **URL:** https://www.radiosega.net/
+- **License:** ❓ per-track rights (site live, HTTP 200, 2026-10-08; stream licenses cover listening, not redistribution)
+- **Free tier:** Free to listen
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Listening/reference only — a radio stream is not a download archive. [Wave 56 Lane A]
+
+#### musical-artifacts.com ❓ bot-walled this pass
+- **What:** Musical Artifacts — archive of virtual instruments, samples, and sound artifacts (community uploads).
+- **URL:** https://musical-artifacts.com/
+- **License:** ❓ unverified (HTTP 403 to curl this pass — bot-walled; per-artifact terms not checked)
+- **Free tier:** Free (per-artifact terms)
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 403 is a bot wall, not a dead site — verify per-artifact licenses from a browser session before reuse. [Wave 56 Lane A]
+
+#### discogs.com ❓ bot-walled this pass
+- **What:** Discogs — the community-built music database and marketplace (releases, labels, credits).
+- **URL:** https://www.discogs.com/
+- **License:** ❓ unverified (HTTP 403 to curl this pass — bot-walled; database terms not checked)
+- **Free tier:** Free to read (API has rate limits)
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference database for release/credit metadata; check the API ToS before wiring. [Wave 56 Lane A]
+
+#### mobygames.com ❓ bot-walled this pass
+- **What:** MobyGames — video-game database (releases, credits, cover art) with deep music-credit data.
+- **URL:** https://www.mobygames.com/
+- **License:** ❓ unverified (HTTP 403 to curl this pass — bot-walled; database terms not checked)
+- **Free tier:** Free to read (API has rate limits)
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference database for game-music credits; check the API ToS before wiring. [Wave 56 Lane A]
+
+#### ivanpirog/vortextracker ❓ license unverified
+- **What:** vortextracker — Vortex Tracker II clone for AY/YM chiptune tracking (ZX Spectrum / Atari ST music).
+- **URL:** https://github.com/ivanpirog/vortextracker
+- **License:** ❓ unverified (no license file; no license statement in README this pass; GitHub API spdx_id null)
+- **Free tier:** Free and open source (terms unclear)
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** AY/YM tracker; confirm terms with the maintainer before shipping derivatives. [Wave 56 Lane A]
+
+#### atsidaev/beepola ⚠️ custom restrictive license
+- **What:** Beepola — 1-bit music editor for the ZX Spectrum (by Chris Cowley); this repo is a mirror of the currently-unavailable original source.
+- **URL:** https://github.com/atsidaev/beepola
+- **License:** ⚠️ custom restrictive (verified 2026-10-08: raw LICENSE.txt — "The bits of the code written by me, Chris Cowley, are copyright me and may not be used in any derivative work without written permission UNLESS" attribution + conditions; GitHub API spdx_id NOASSERTION — file text governs)
+- **Free tier:** Free to use (derivative restrictions apply)
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Not commercial-safe as-is — derivative works need written permission; research/reference only. [Wave 56 Lane A]
+
+#### AoiMoe/nezplug ❓ license unverified
+- **What:** nezplug — NEZPlug Winamp plugin sources for NSF/GBS/HES/AY/SAP/SPC chiptune playback.
+- **URL:** https://github.com/AoiMoe/nezplug
+- **License:** ❓ unverified (old VC++ project tree; no license file or statement located this pass; GitHub API spdx_id null)
+- **Free tier:** Free and open source (terms unclear)
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Historical replay source; treat as reference until terms are confirmed. [Wave 56 Lane A]
+
+#### thysbelon/web-chiptune-player 🚫 LGPL-2.1 — QUARANTINED (row 572)
+- **What:** web-chiptune-player — JS library for embedding chiptune playback in websites (VGM/SPC/PSF/GSF/KSS via libvgm, snes_spc, game-music-emu).
+- **URL:** https://github.com/thysbelon/web-chiptune-player
+- **License:** 🚫 LGPL-2.1 (verified 2026-10-08 via GitHub API spdx_id; weak copyleft stays quarantined per pending owner ruling)
+- **Free tier:** Free and open source
+- **Repo lane:** trippedd (music archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Quarantined — study/standalone use only. [Wave 56 Lane A]
+
+### Wave 56 Lane A summary (2026-10-08)
+- New #### entries: 110 (P1: 36 PD radio-drama round 5 — 3 Johnny Dollar OTRR singles sets + Sam Spade/Our Miss Brooks/Duffy's Tavern/Challenge of the Yukon/Philip Marlowe (88-doc transcription bundle)/Frontier Gentleman/Abbott & Costello/Gildersleeve/Have Gun Will Travel singles + Mercury War of the Worlds/Dracula/1946 Summer Theatre + Rathbone Holmes (PD Mark) + Superman/Green Hornet/Shadow x2 (rights-caution) + 1646-ep Lum & Abner + Life of Riley (132 docs, PD Mark) + My Favorite Husband + Bob Hope + Aldrich Family (97 docs) + Lights Out x2 + 239-ep Shadow + 71-ep Lights Out + 272-ep Burns & Allen + 277-ep Fred Allen + Blondie (PD Mark) + Vic and Sade + Tom Mix + Cisco Kid + Sky King + Our Miss Brooks 190-ep (187 docs) · P2: 26 retro homebrew SDK docs round 2 — 3 permissive (llvm-mos, C64Studio, Arduboy2) + 1 custom-caution (psxsdk) + 16 unverified (BRRtools, tonc, n64.dev, psx.dev, codebase64, NESDoug, devkitPro wiki, awesome-n64, easy6502, PokittoLib, WiiBrew, 3DBrew, GBADev, gbdev.io, AtariWiki, Random Terrain) + 6 quarantined · P3: 36 open video-archive tooling round 2 — 27 permissive (4 nihui ncnn upscalers/interpolators, vs-denoise, MOVMetaEdit, openh264, libavif, libjxl, qoi, openjpeg, cineform, ntv2, galene, wallabag, shiori, warcio, jwarc, Squidwarc, AUT, monolith, xevc, SVT-VP9, mozjpeg, guetzli, ffmprovisr) + 1 PD (PREMIS) + 1 unverified (cxadc) + 8 quarantined (incl. ld-decode, exiftool, internetarchive) · P4: 12 demoscene musicdisk archives round 2 — 2 permissive (chipfs, libkss) + 1 caution (chiptunes-win) + 1 restrictive (beepola) + 7 unverified + 1 quarantined)
+- Catalog: 4,980 → 5,090 honest entries (wave target 5,080+ met; `grep -c '^####'` to confirm)
+- Quarantine: rows 558–572 appended (15 distinct: 12 GPL + 1 AGPL + 2 LGPL + 1 CC BY-SA docs; zero supersedes/delists)
+- Honest negatives: 6 OTRR "Certified" metadata stubs with zero files excluded (not cataloged); ld-decode2 (no such repo); ld-analyse/cxadc GitHub paths 404 (consolidated into ld-decode/vhs-decode); dcp_inspect (upstream gone); libRIST (moved to VideoLAN GitLab, unverified); NLA/squidwarc (404 — canonical is N0taN3rd); Relaunch64 (upstream not locatable); neogeodev.org/mc.pp.se/z80.info (000); romhacking.net (403 + gray, skipped); FamiStudio renamed BleuRaven→BleuBleu (old path 404s — corrected in dropped dupe)
+- Dedup rejections (pre-append title+URL grep): 29 — vvenc, kvazaar, nginx-rtmp-module, red5-server, streamlink (title dupes); ArchiveBox, FamiStudio, vgmtrans, opus/libopus, vgmp, yt-dlp, hivelytracker, klystrack, nsfplay, soloud, miniaudio, stb, vorbis/libvorbis, flac, snes9x, PixelVision8, mediamtx, owncast, rife-ncnn (URL dupes — existing entries under different titles)
+- Badge summary: ✅ permissive/PD 63 · ⚠️ caution 9 (Have Gun, Superman, Green Hornet, Shadow x2, psxsdk custom, x16-docs CC BY-SA, chiptunes-win, beepola) · ❓ unverified 24 · 🚫 quarantined 14
+- License notes: CC BY-NC(-ND/-SA) uploader tags on OTRR sets are transfer packaging, not broadcast copyright (per Wave 55 convention); explicit PD Mark 1.0 / CC0 / publicdomain marks honored where the item carries them (Life of Riley, Blondie, Rathbone Holmes, Green Hornet CC0); NOASSERTION cases resolved via raw LICENSE/COPYING text (llvm-mos, C64Studio, Arduboy2, Real-ESRGAN-ncnn, libavif, openjpeg, xevc, SVT-VP9, mozjpeg, sgdk2, psxsdk, klystrack, nsfplay); X16Community/x16-docs quarantined on CC BY-SA (share-alike docs precedent)
+- Coordinator flags (not fixed — lane boundary): ArchiveBox row 464 + catalog entry claim GPL-3.0-only per Wave 49, but upstream LICENSE today reads MIT (Copyright (c) 2026 Nick Sweeting; GitHub API spdx_id MIT) — possible relicense or prior misverification; recommend re-verification cycle before any delist; catalog badge left untouched
+
+
 ### Wave 55 Lane A summary (2026-10-08)
 - New #### entries: 115 (P1: 27 PD radio-drama round 4 — Dragnet/Whistler OTRR singles sets + 4 Whistler quarterly Signal-era slices + 8 single-episode deep dives + BDP Quiet Please + 3 Lux season singles + 2 Lux star-vehicle episodes + CBS Radio Workshop set/collection/single + Escape "Three Skeleton Key" + Inner Sanctum Welles lost-episode/collection · P2: 29 sound-chip docs round 3 — 5 bitsavers Yamaha (YMF289B/YMF715x/YM3012/YM3014B/YMZ284) + 12 archive.org scans (AY-3-8913, Amiga HRM, GB CPU Manual, De Re Atari, C64 PRG, Mapping the Atari, N64 manual, Atari ST Internals, MSX TDB, C128 guide, Apple IIGS HR, BBC AUG) + 2 SNESDev CC0 wiki (S-DSP, S-SMP) + 10 NESdev wiki (6 APU channel pages + 4 expansion-audio) · P3: 30 broadcast-automation tail — 8 permissive + 3 LGPL/MPL caution + 1 unverified (darkice) + 18 GPL/AGPL quarantined · P4: 29 caption burn-in round 5 — 21 permissive + 4 LGPL/FTL caution + 1 NC honest-negative + 3 GPL quarantined)
 - Catalog: 4,865 → 4,980 honest entries (wave target 4,970+ met; `grep -c '^####'` to confirm)

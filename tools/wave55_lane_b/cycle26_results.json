@@ -1,0 +1,286 @@
+{
+  "fetched": [
+    "https://sourceforge.net/projects/opencubicplayer/",
+    "https://raw.githubusercontent.com/absadiki/subsai/main/LICENSE",
+    "https://sourceforge.net/projects/pykaraoke/",
+    "https://raw.githubusercontent.com/simon0302010/Lyriks/main/LICENSE",
+    "https://raw.githubusercontent.com/OpenKJ/OpenKJ/master/LICENSE",
+    "https://sourceforge.net/projects/capture2text/",
+    "https://raw.githubusercontent.com/gbdk-2020/gbdk-2020/develop/LICENSE",
+    "https://raw.githubusercontent.com/sverx/devkitSMS/master/LICENSES.txt",
+    "https://codeberg.org/api/v1/repos/mbunkus/mkvtoolnix",
+    "https://codeberg.org/mbunkus/mkvtoolnix/raw/branch/main/COPYING",
+    "https://codeberg.org/api/v1/repos/uzu/tidal",
+    "https://codeberg.org/uzu/tidal/raw/branch/main/LICENSE"
+  ],
+  "repos": {
+    "tildearrow/furnace": {
+      "full_name": "tildearrow/furnace",
+      "archived": false,
+      "pushed_at": "2026-10-07T23:11:31Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "tildearrow",
+      "private": false
+    },
+    "absadiki/subsai": {
+      "full_name": "absadiki/subsai",
+      "archived": false,
+      "pushed_at": "2026-04-20T01:29:19Z",
+      "default_branch": "main",
+      "spdx_id": "GPL-3.0",
+      "owner": "absadiki",
+      "private": false
+    },
+    "simon0302010/Lyriks": {
+      "full_name": "simon0302010/Lyriks",
+      "archived": false,
+      "pushed_at": "2025-07-09T06:15:11Z",
+      "default_branch": "main",
+      "spdx_id": "GPL-3.0",
+      "owner": "simon0302010",
+      "private": false
+    },
+    "OpenKJ/OpenKJ": {
+      "full_name": "OpenKJ/OpenKJ",
+      "archived": false,
+      "pushed_at": "2025-12-15T20:29:22Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "OpenKJ",
+      "private": false
+    },
+    "gbdk-2020/gbdk-2020": {
+      "full_name": "gbdk-2020/gbdk-2020",
+      "archived": false,
+      "pushed_at": "2026-10-06T23:31:25Z",
+      "default_branch": "develop",
+      "spdx_id": "NOASSERTION",
+      "owner": "gbdk-2020",
+      "private": false
+    },
+    "sverx/devkitSMS": {
+      "full_name": "sverx/devkitSMS",
+      "archived": false,
+      "pushed_at": "2026-09-29T16:08:23Z",
+      "default_branch": "master",
+      "spdx_id": null,
+      "owner": "sverx",
+      "private": false
+    },
+    "mtytel/helm": {
+      "full_name": "mtytel/helm",
+      "archived": true,
+      "pushed_at": "2022-09-24T04:23:20Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "mtytel",
+      "private": false
+    },
+    "kanongil/telxcc": {
+      "full_name": "kanongil/telxcc",
+      "archived": true,
+      "pushed_at": "2025-09-20T11:29:10Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "kanongil",
+      "private": false
+    },
+    "155-mkvtoolnix": {
+      "full_name": "mbunkus/mkvtoolnix",
+      "archived": false,
+      "updated_at": "2026-09-28T21:52:58+02:00",
+      "owner": "mbunkus"
+    },
+    "uzu-tidal": {
+      "full_name": "uzu/tidal",
+      "archived": false,
+      "updated_at": "2026-07-02T08:30:35+02:00",
+      "owner": "uzu"
+    },
+    "animate1978/MB-Lab": {
+      "full_name": "animate1978/MB-Lab",
+      "archived": true,
+      "pushed_at": "2024-07-21T02:46:17Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "animate1978",
+      "private": false
+    },
+    "subdownloader/subdownloader": {
+      "full_name": "subdownloader/subdownloader",
+      "archived": true,
+      "pushed_at": "2025-02-05T11:39:33Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "subdownloader",
+      "private": false
+    },
+    "mpc-hc/mpc-hc": {
+      "full_name": "mpc-hc/mpc-hc",
+      "archived": true,
+      "pushed_at": "2020-04-24T11:04:40Z",
+      "default_branch": "develop",
+      "spdx_id": "GPL-3.0",
+      "owner": "mpc-hc",
+      "private": false
+    },
+    "scantailor/scantailor": {
+      "full_name": "scantailor/scantailor",
+      "archived": true,
+      "pushed_at": "2020-11-29T04:31:29Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "scantailor",
+      "private": false
+    },
+    "tidalcycles/strudel": {
+      "full_name": "tidalcycles/strudel",
+      "archived": true,
+      "pushed_at": "2025-06-19T15:56:31Z",
+      "default_branch": "main",
+      "spdx_id": "AGPL-3.0",
+      "owner": "tidalcycles",
+      "private": false
+    },
+    "sc0ty/subSync": {
+      "full_name": "sc0ty/subsync",
+      "archived": true,
+      "pushed_at": "2024-10-01T13:47:06Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "sc0ty",
+      "private": false
+    },
+    "bugbakery/audapolis": {
+      "full_name": "bugbakery/audapolis",
+      "archived": false,
+      "pushed_at": "2026-06-24T10:33:39Z",
+      "default_branch": "main",
+      "spdx_id": "AGPL-3.0",
+      "owner": "bugbakery",
+      "private": false
+    },
+    "kaltura-community/server": {
+      "full_name": "kaltura-community/server",
+      "archived": false,
+      "pushed_at": "2024-05-17T22:44:57Z",
+      "default_branch": "Tucana-20.11.0",
+      "spdx_id": "AGPL-3.0",
+      "owner": "kaltura-community",
+      "private": false
+    }
+  },
+  "raw": {
+    "271-README": {
+      "url": "https://raw.githubusercontent.com/tildearrow/furnace/main/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "272-sf-ocp": {
+      "url": "https://sourceforge.net/projects/opencubicplayer/",
+      "status": 200,
+      "bytes": 60000,
+      "sha256": "80f69fa568bd469e9dedaf1b565c825d0188cc91d08fbf60b4625317fed44212",
+      "head": "<!doctype html><html class=\"no-js\" lang=\"en\">\n    <head>\n        \n\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" />\n\n        \n        \n        \n    \n        \n        <script src=\"//a.fsdn.com/con/js/min/sf.sandiego-cmp-top.js?1791389504\"></script>\n\n        \n    \n\n        "
+    },
+    "272-sf-ocp2": {
+      "url": "https://sourceforge.net/projects/open-cubic-player/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "273-LICENSE": {
+      "url": "https://raw.githubusercontent.com/absadiki/subsai/main/LICENSE",
+      "status": 200,
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware a"
+    },
+    "274-sf-pykaraoke": {
+      "url": "https://sourceforge.net/projects/pykaraoke/",
+      "status": 200,
+      "bytes": 60000,
+      "sha256": "8f492a4c5d605b70c12a4edd215eeafa5723f0ec4b79165cf58cb79189694913",
+      "head": "<!doctype html><html class=\"no-js\" lang=\"en\">\n    <head>\n        \n\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" />\n\n        \n        \n        \n    \n        \n        <script src=\"//a.fsdn.com/con/js/min/sf.sandiego-cmp-top.js?1791389504\"></script>\n\n        \n    \n\n        "
+    },
+    "275-LICENSE": {
+      "url": "https://raw.githubusercontent.com/simon0302010/Lyriks/main/LICENSE",
+      "status": 200,
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware a"
+    },
+    "276-slacknet": {
+      "url": "https://www.slack.net/~ant/audio/libraries.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "277-LICENSE": {
+      "url": "https://raw.githubusercontent.com/OpenKJ/OpenKJ/master/LICENSE",
+      "status": 200,
+      "bytes": 35141,
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware an"
+    },
+    "278-sf-capture2text": {
+      "url": "https://sourceforge.net/projects/capture2text/",
+      "status": 200,
+      "bytes": 60000,
+      "sha256": "12a91866e4d0ce1fe019b30259bce55599d944d092f643adfc9889ec1f5889a8",
+      "head": "<!doctype html><html class=\"no-js\" lang=\"en\">\n    <head>\n        \n\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" />\n\n        \n        \n        \n    \n        \n        <script src=\"//a.fsdn.com/con/js/min/sf.sandiego-cmp-top.js?1791389504\"></script>\n\n        \n    \n\n        "
+    },
+    "279-LICENSE": {
+      "url": "https://raw.githubusercontent.com/gbdk-2020/gbdk-2020/develop/LICENSE",
+      "status": 200,
+      "bytes": 3456,
+      "sha256": "18095f7690d1565e267e51b2954bd59108231e0c5dd2d5837e226ddcb6f1c4f7",
+      "head": "\n\n### Overview of Licenses in GBDK-2020\n\nSee the relevant licensing files in the LICENSES folder for details on the entries below\n\n\n### For the End User\nQ: What license information is required when distributing the compiled ROM (binary) of my game?\n\nA: There is no requirement to include or credit any of the GBDK-2020 licenses or authors, although credit of GBDK-2020 is appreciated.\n   This is diff"
+    },
+    "280-LICENSES": {
+      "url": "https://raw.githubusercontent.com/sverx/devkitSMS/master/LICENSES.txt",
+      "status": 200,
+      "bytes": 1332,
+      "sha256": "42413458864a52e986729d9f41405ff684d760b2e94b313ac948b0c2ad6edac2",
+      "head": "devkitSMS/crt0/crt0_sms.s  is licensed under GPL2 with a \"special exception\", please read note in crt0/src/crt0_sms.s\ndevkitSMS/crt0/crt0_sg.s   is licensed under GPL2 with a \"special exception\", please read note in crt0/src/crt0_sg.s\ndevkitSMS/ihx2sms          is public domain. For more information, please refer to http://unlicense.org\ndevkitSMS/assets2banks     is public domain. For more informa"
+    },
+    "155-COPYING": {
+      "url": "https://codeberg.org/mbunkus/mkvtoolnix/raw/branch/main/COPYING",
+      "status": 200,
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The licenses for most softwa"
+    },
+    "uzu-LICENSE": {
+      "url": "https://codeberg.org/uzu/tidal/raw/branch/main/LICENSE",
+      "status": 200,
+      "bytes": 35106,
+      "sha256": "804821a9171f6eb0e0d26635922480bf479c2d646c2609f6273a85191949b8df",
+      "head": "              GNU GENERAL PUBLIC LICENSE\n                Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                     Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware and other kinds of wor"
+    },
+    "271-README-master": {
+      "url": "https://raw.githubusercontent.com/tildearrow/furnace/master/README.md",
+      "status": 200,
+      "bytes": 21317,
+      "sha256": "855d5ce09d04ef3ba140a4143737542d2ec85ec0f3441146ed9eed0906b423a3",
+      "head": "# Furnace (chiptune tracker)\n\n![screenshot](papers/screenshot3.png)\n\nthe biggest multi-system chiptune tracker ever made!\n\n[mini-site](https://tildearrow.org/furnace/) | [downloads](#downloads) | [installation](#installation) | [Unix/Linux packages](#packages)\n\n[documentation/discussion/help](#quick-references) | [developer info](#developer-info)\n\n---\n## downloads\n\ncheck out the [Releases](https://github.com/tildearrow/furnace/releases) page. available for Windows, macOS and Linux.\n\nfor other operating systems, you may [build the source](#developer-info).\n\n[see here](https://nightly.link/tilde"
+    },
+    "271-license-doc": {
+      "url": "https://raw.githubusercontent.com/tildearrow/furnace/master/doc/1-general/license.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "276-slacknet-wayback": {
+      "url": "https://web.archive.org/web/2025id_/https://www.slack.net/~ant/audio/libraries.html",
+      "error": "HTTP Error 404: NOT FOUND"
+    },
+    "276-libgme-license": {
+      "url": "https://raw.githubusercontent.com/blargg/libgme/master/license.txt",
+      "error": "HTTP Error 404: Not Found"
+    }
+  },
+  "notes": [
+    "=== CYCLE 26: rows 271-280 ===",
+    "FETCH FAIL https://raw.githubusercontent.com/tildearrow/furnace/main/README.md: HTTP Error 404: Not Found",
+    "FETCH FAIL https://sourceforge.net/projects/open-cubic-player/: HTTP Error 404: Not Found",
+    "FETCH FAIL https://www.slack.net/~ant/audio/libraries.html: HTTP Error 404: Not Found",
+    "GH API FAIL repos/SmilingWolf/snes_spc: gh: Not Found (HTTP 404)",
+    "=== DRIFT WATCH ===",
+    "=== GOAL 3: moved repos live-check ==="
+  ]
+}

@@ -3969,3 +3969,1071 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 3 Lane C: included for awareness with the honest badge; no Ubisoft code/data enters commercial paths.
 
 <!-- end lane C wave 3: audio-driven animation retiming (9 entries; 2 GPL-family rows → quarantine 104–105) -->
+
+## Depth / segmentation for 2.5D parallax
+
+Monocular depth estimation, image/video segmentation & matting, layer decomposition and multiplane-image methods — everything needed to turn flat plates into 2.5D parallax shots. [Wave 4 Lane B]
+
+### Monocular depth estimation
+
+#### ZoeDepth ✅
+- **What:** Metric depth estimation from a single image — combines relative and metric depth (MiDaS + DPT backbones) with zero-shot transfer; torch.hub one-liner inference.
+- **URL:** https://github.com/isl-org/ZoeDepth
+- **License:** MIT (verified 2026-10-08: upstream README License badge "License: MIT").
+- **Use:** depth maps from plates → multiplane layer offsets; metric scale variant calibrates parallax displacement in world units.
+- **Lane note:** Wave 4 Lane B: drop-in depth-map generator for flat-plate → 2.5D camera moves.
+
+#### Depth Anything V2 ⚠️ weight-tier caveat — verify per use
+- **What:** Foundation model for monocular depth estimation (NeurIPS 2024) — fine-grained detail, robust open-world inference, image + video inference scripts.
+- **URL:** https://github.com/DepthAnything/Depth-Anything-V2
+- **License:** Apache-2.0 for the code repo (verified 2026-10-08: GitHub repo metadata "License: Apache License 2.0 (Apache-2.0)"). **Weight tiers differ:** Small = Apache-2.0, Base/Large/Giant = CC-BY-NC-4.0 non-commercial (verified 2026-10-08: upstream README "## LICENSE — Video-Depth-Anything-Small model is under the Apache-2.0 license. Video-Depth-Anything-Base/Large model is under the CC-BY-NC-4.0 license"; multiple downstream audits confirm Small Apache-2.0 / Base+ CC-BY-NC-4.0).
+- **Use:** high-detail depth maps for hero plates (Small tier is the commercially-safe choice); metric-depth variant for world-scale parallax.
+- **Lane note:** Wave 4 Lane B: best quality-per-effort depth estimator in the pocket, but ONLY the Small tier is commercial-safe.
+
+#### Marigold ✅
+- **What:** Diffusion-based (Stable Diffusion repurposed) affine-invariant monocular depth estimation — extremely sharp depth discontinuities at object edges; also a normals variant.
+- **URL:** https://github.com/prs-eth/marigold
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "License: Apache-2.0" badge).
+- **Use:** hero-frame depth for edge-critical plates (hair, foliage, character silhouettes); slower than discriminative models — still frames, not per-frame video.
+- **Lane note:** Wave 4 Lane B: the edge-quality depth option for plates where parallax layers must cut cleanly.
+
+#### Depth Pro ⚠️ Apple custom license — verify per use
+- **What:** Apple's foundation model for zero-shot metric monocular depth (ICLR 2025) — sharp high-frequency depth, metric scale, focal-length estimation; 2.25 MP depth map in ~0.3 s on GPU. (Upstream moved to github.com/apple-aiml-research/ml-depth-pro; github.com/apple/ml-depth-pro redirects.)
+- **URL:** https://github.com/apple/ml-depth-pro
+- **License:** Apple custom terms, NOT an OSI license (verified 2026-10-08: GitHub repo metadata "License: Other (NOASSERTION)"; upstream README "## License — This sample code is released under the LICENSE terms. The model weights are released under the LICENSE terms"). Downstream audits describe it as Apple Sample Code License text — "provided for your personal, non-commercial use only" — and the HF release under Apple's own ML-research (apple-amlr) non-commercial terms. **Commercial status unresolved — verify per use.**
+- **Use:** metric depth + focal-length estimates for camera-solved parallax shots; reference quality target for the commercial-safe estimators.
+- **Lane note:** Wave 4 Lane B: included for awareness as the quality bar; keep OUT of commercial paths until Apple terms are cleared.
+
+#### MoGe ✅
+- **What:** Microsoft's monocular geometry estimator (CVPR'25 Oral) — metric point maps, metric depth, surface normals, validity masks and camera FOV from a single open-domain image (v2 adds sharp detail + metric scale).
+- **URL:** https://github.com/microsoft/moge
+- **License:** MIT (verified 2026-10-08: upstream README "## License — MoGe code is released under the MIT license"; vendored DINOv2 code is Meta Apache-2.0).
+- **Use:** point-map + normal outputs feed mesh-warp / proxy-geometry parallax (not just depth planes); normals drive relighting on displaced layers.
+- **Lane note:** Wave 4 Lane B: the geometry-complete estimator — depth + normals + point maps for true 2.5D camera projection.
+
+#### DPT ✅
+- **What:** Dense Prediction Transformers (Ranftl et al., ICCV 2021) — ViT backbone + convolutional decoder for dense prediction; the architecture behind MiDaS v3 monocular depth and many segmentation heads.
+- **URL:** https://github.com/isl-org/DPT
+- **License:** MIT (verified 2026-10-08: upstream README "### License — MIT License"; third-party THIRD_PARTY_NOTICES confirm).
+- **Use:** baseline depth backbone for the parallax pipeline; also the reference dense-prediction architecture when training custom depth heads.
+- **Lane note:** Wave 4 Lane B: the classic dense-prediction baseline everything else is compared against.
+
+#### PatchFusion ✅
+- **What:** End-to-end tile-based framework for HIGH-RESOLUTION monocular metric depth — runs a base depth model (ZoeDepth / Depth-Anything) on tiles and fuses them, keeping detail at 2K+ plate resolutions.
+- **URL:** https://github.com/zhyever/PatchFusion
+- **License:** MIT (verified 2026-10-08: upstream README "License: MIT" badge).
+- **Use:** sharp depth maps for high-res background plates where single-pass estimators smear fine detail (architecture, foliage, crowd plates).
+- **Lane note:** Wave 4 Lane B: the hi-res-plate depth option — tile fusion keeps parallax layers crisp at 2K+.
+
+#### Video Depth Anything ⚠️ weight-tier caveat — verify per use
+- **What:** Consistent depth estimation for super-long videos (CVPR 2025 Highlight) — sliding-window diffusion/transformer hybrid that kills per-frame depth flicker on clips of 5+ minutes.
+- **URL:** https://github.com/DepthAnything/Video-Depth-Anything
+- **License:** Apache-2.0 code; weights split by tier (verified 2026-10-08: upstream README "## LICENSE — Video-Depth-Anything-Small model is under the Apache-2.0 license. Video-Depth-Anything-Base/Large model is under the CC-BY-NC-4.0 license. For business cooperation, please send an email to Hengkai Guo"). Small tier only is commercial-safe.
+- **Use:** temporally stable depth for moving-plate parallax shots and depth-driven camera moves — the no-flicker requirement for video plates.
+- **Lane note:** Wave 4 Lane B: the video-depth backbone; Small tier keeps it commercial-safe.
+
+<!-- end lane B wave 4 batch 1: monocular depth (8 entries) -->
+
+#### DepthCrafter ⚠️ non-commercial — research/academic only
+- **What:** Diffusion-based video depth — generates temporally consistent long depth sequences for open-world videos (CVPR 2025 Highlight) by jointly denoising a whole frame window.
+- **URL:** https://github.com/Tencent/DepthCrafter
+- **License:** Tencent custom non-commercial license (verified 2026-10-08: upstream LICENSE quoted — "You agree to use the DepthCrafter only for academic, research and education purposes, and refrain from using it for any commercial or production purposes under any circumstances."). Also built on Stable Video Diffusion XT (Stability AI Non-Commercial Community License). **Verify per use; no commercial/production use.**
+- **Use:** the quality reference for flicker-free video depth on moving plates; informs what the commercial-safe video-depth stack (VDA-Small) must beat.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; no Tencent code/weights enter commercial paths.
+
+#### ChronoDepth ✅
+- **What:** Temporally consistent video depth from video diffusion priors (CVPR 2025) — sliding-window diffusion inference over clips; MIT-licensed research code.
+- **URL:** https://github.com/jiahao-shao1/ChronoDepth
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)"). Caveat: the default inference config pulls `stabilityai/stable-video-diffusion-img2vid-xt` (Stability AI Non-Commercial Community License) — swap the base before any commercial use.
+- **Use:** research baseline for diffusion-consistent video depth; technique reference for stabilizing depth across parallax shot frames.
+- **Lane note:** Wave 4 Lane B: the MIT research reference for how diffusion priors kill depth flicker.
+
+#### DistDepth ⚠️ non-commercial — CC-BY-NC
+- **What:** Distilled monocular indoor depth (CVPR 2022) — distills a DPT "expert" into a practical indoor depth model; ships depth-aware AR demo effects (virtual object insertion, object dragging).
+- **URL:** https://github.com/ennioennio/distdepth
+- **License:** CC-BY-NC (verified 2026-10-08: upstream README "## License — DistDepth is CC-BY-NC licensed, as found in the LICENSE file"). **Non-commercial only.**
+- **Use:** indoor-plate depth reference; AR insertion demos as a preview technique for placing parallax cutouts.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; indoor-depth distillation technique reference.
+
+#### LeReS ⚠️ non-commercial — Adobe Research license
+- **What:** Learning to Recover 3D Scene Shape from a single image (CVPR 2021) — affine-invariant depth + point-cloud reconstruction; part of the AdelaiDepth toolbox.
+- **URL:** https://github.com/aim-uofa/AdelaiDepth/
+- **License:** non-commercial license from Adobe Research (verified 2026-10-08: upstream LeReS README "## License — This project is under a non-commercial license from Adobe Research. See the LICENSE file for details."). Other AdelaiDepth projects are 2-clause BSD non-commercial. **Verify per use.**
+- **Use:** scene-shape reconstruction reference for single-image 3D; technique reference for point-cloud-backed parallax.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; Adobe NC terms block commercial use.
+
+#### CREStereo ✅
+- **What:** Practical stereo matching via cascaded recurrent network with adaptive correlation (CVPR 2022, Megvii) — robust real-world stereo depth from image pairs.
+- **URL:** https://github.com/megvii-research/CREStereo
+- **License:** Apache-2.0 (verified 2026-10-08: downstream README license audit — "[RAFT-Stereo](https://github.com/princeton-vl/RAFT-Stereo) is licensed under the MIT license, [LoFTR](https://github.com/zju3dv/LoFTR) and [CREStereo](https://github.com/megvii-research/CREStereo) are licensed under the Apache 2.0 license").
+- **Use:** stereo-pair depth for dual-camera plates; fallback depth source when monocular estimators disagree.
+- **Lane note:** Wave 4 Lane B: the permissive stereo-depth option alongside RAFT-Stereo.
+
+#### RAFT-Stereo ✅
+- **What:** Recurrent All-Pairs Field Transforms for stereo matching (Princeton) — iterative disparity refinement from all-pairs correlations; strong cross-dataset generalization.
+- **URL:** https://github.com/princeton-vl/RAFT-Stereo
+- **License:** MIT (verified 2026-10-08: third-party build metadata — "Target license: MIT (declared in `princeton-vl/RAFT-Stereo`)"; downstream READMEs concur).
+- **Use:** stereo depth from plate pairs for true-baseline parallax; calibration target for monocular depth scale.
+- **Lane note:** Wave 4 Lane B: the MIT stereo baseline — real baseline beats monocular guessing for two-view plates.
+
+#### IGEV-Stereo ✅
+- **What:** Iterative Geometry Encoding Volume for stereo matching (CVPR 2023 / TPAMI 2025) — combined geometry+context cost volume with ConvGRU updates; #1 on KITTI 2015/2012 reflective; faster than RAFT-Stereo; includes IGEV-MVS for multi-view.
+- **URL:** https://github.com/gangweiX/IGEV
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)").
+- **Use:** high-accuracy stereo disparity for multi-view parallax plates; the stereo upgrade path from RAFT-Stereo.
+- **Lane note:** Wave 4 Lane B: the accurate-and-fast MIT stereo matcher for multi-view 2.5D.
+
+#### UniDepth ⚠️ non-commercial — CC-BY-NC 4.0
+- **What:** Universal monocular metric depth (CVPR 2024 + V2 2025, ETH Zürich) — metric depth in meters + camera intrinsics + per-pixel 3D point map + confidence from one RGB image, no camera metadata needed.
+- **URL:** https://github.com/lpiccinelli-eth/UniDepth
+- **License:** CC-BY-NC 4.0 (verified 2026-10-08: downstream license audits — "Upstream code (lpiccinelli-eth/UniDepth) | CC BY-NC 4.0 — non-commercial"; "The License of the models is Attribution-NonCommercial 4.0 International"). **Non-commercial only.**
+- **Use:** intrinsics-free metric reconstruction reference; technique reference for camera-solved parallax.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; MoGe is the commercial-safe alternative.
+
+<!-- end lane B wave 4 batch 2: stereo + NC depth (8 entries) -->
+
+### Segmentation / matting for layer cutting
+
+#### HQ-SAM ✅
+- **What:** Segment Anything in High Quality (NeurIPS 2023) — adds an HQ output token to SAM/SAM2 decoders for sharper boundary detail; v2 tracks the SAM 2.1 Hiera-Large backbone.
+- **URL:** https://github.com/SysCV/sam-hq
+- **License:** Apache-2.0 (verified 2026-10-08: upstream sam-hq2 README "## License — The HQ-SAM 2, SAM 2 model checkpoints, SAM 2 demo code (front-end and back-end), and SAM 2 training code are licensed under Apache 2.0").
+- **Use:** boundary-crisp masks for cutting parallax layers — hair, fingers, torn edges where plain SAM bleeds.
+- **Lane note:** Wave 4 Lane B: the edge-quality upgrade over SAM2 for layer cutout masks.
+
+#### MobileSAM ✅
+- **What:** Lightweight SAM — replaces the 632M ViT-H encoder with a 5M TinyViT; ~12 ms/image on a single GPU, same prompt pipeline as SAM.
+- **URL:** https://github.com/ChaoningZhang/MobileSAM
+- **License:** Apache-2.0 (verified 2026-10-08: upstream app README frontmatter "license: apache-2.0" + "## License — The model is licensed under the Apache 2.0 license"; multiple downstream license audits concur).
+- **Use:** interactive mask cutting in the plate-prep tool — click/box prompts at near-interactive speed on modest GPUs.
+- **Lane note:** Wave 4 Lane B: the fast promptable cutter for interactive parallax-layer authoring.
+
+#### FastSAM ⚠️ license-lineage risk — verify per use
+- **What:** Fast Segment Anything — YOLOv8-seg-based one-pass segment-everything; real-time instance masks without the SAM two-stage pipeline.
+- **URL:** https://github.com/CASIA-IVA-Lab/FastSAM
+- **License:** upstream README claims Apache-2.0 (verified 2026-10-08: "## License — The model is licensed under the [Apache 2.0 license](LICENSE)"), BUT the model is built on YOLOv8 code/weights which are AGPL-3.0 (Ultralytics) — downstream license audits flag the AGPL lineage explicitly ("Note the AGPL-3.0 license (Ultralytics YOLOv8 lineage)"). **Do not treat as commercial-safe without a legal read.**
+- **Use:** fastest segment-everything pass for auto-layering whole plates; technique reference for real-time mask generation.
+- **Lane note:** Wave 4 Lane B: included with the honest badge — speed is real, the license lineage is not clean.
+
+#### EdgeSAM ⚠️ non-commercial — NTU S-Lab License 1.0
+- **What:** Prompt-in-the-loop distilled SAM for on-device deployment — RepViT backbone, CoreML/iOS demo app; distilled from SAM with prompt-aware training.
+- **URL:** https://github.com/chongzhou96/EdgeSAM
+- **License:** NTU S-Lab License 1.0 (verified 2026-10-08: upstream README "## License — This project is licensed under NTU S-Lab License 1.0. Redistribution and use should follow this license"). S-Lab 1.0 is strictly non-commercial. **Verify per use.**
+- **Use:** on-device mask cutting reference; distillation technique for shrinking SAM-family models into the editor.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; MobileSAM is the commercial-safe lightweight pick.
+
+#### Grounding DINO ✅
+- **What:** Open-set object detection marrying DINO with grounded pre-training (ECCV 2024) — text prompts ("person", "wrestling ring") produce boxes; the standard text→box front end for Grounded-SAM pipelines.
+- **URL:** https://github.com/IDEA-Research/GroundingDINO
+- **License:** Apache-2.0 (verified 2026-10-08: upstream maintainer answer — "Our license is Apache 2.0, which allows you to use our model weights and project within the scope of the license"; ecosyste.ms metadata "License apache-2.0").
+- **Use:** text-prompted detection → SAM/HQ-SAM mask → clean character cutouts; "find the wrestler" automation for plate layering.
+- **Lane note:** Wave 4 Lane B: the text-prompt half of the Grounded-SAM layer-cutting pipeline.
+
+#### OWL-ViT ✅
+- **What:** Google's open-vocabulary object detection (ECCV 2022, v2 NeurIPS 2023) — CLIP-backed text-prompted detection; code AND checkpoints Apache-2.0.
+- **URL:** https://github.com/google-research/scenic
+- **License:** Apache-2.0 (verified 2026-10-08: upstream scenic `projects/owl_vit` README "## License — Both the code and the model checkpoints are licensed under the Apache 2.0 license").
+- **Use:** alternative text-prompted detector for plate element discovery; runs in HF transformers for easy pipeline integration.
+- **Lane note:** Wave 4 Lane B: the Google open-vocab detector — fully commercial-clean, weights included.
+
+#### Mask2Former ✅
+- **What:** Masked-attention mask transformer for universal image segmentation (CVPR 2022) — one architecture for semantic, instance and panoptic segmentation; strong ADE20K/Cityscapes/COCO models.
+- **URL:** https://github.com/facebookresearch/Mask2Former
+- **License:** MIT (verified 2026-10-08: upstream README "## License — The majority of Mask2Former is licensed under a MIT License"; portions Swin MIT / Deformable-DETR Apache-2.0).
+- **Use:** dense semantic masks for automatic plate decomposition (sky/water/person/vehicle classes → parallax planes); panoptic masks for crowd plates.
+- **Lane note:** Wave 4 Lane B: the commercial-safe universal segmenter for auto-layering plates by class.
+
+#### OneFormer ✅
+- **What:** One transformer for universal image segmentation (CVPR 2023) — single model, single training run, task-token conditioned across semantic/instance/panoptic.
+- **URL:** https://github.com/SHI-Labs/OneFormer
+- **License:** MIT (verified 2026-10-08: upstream README "License: MIT" badge; ecosyste.ms metadata "License: mit").
+- **Use:** single-model universal segmentation for plate analysis; task-token switches between class masks and instance cutouts.
+- **Lane note:** Wave 4 Lane B: the one-model universal segmenter — fewer checkpoints to manage in the plate pipeline.
+
+<!-- end lane B wave 4 batch 3: segmentation part 1 (8 entries) -->
+
+#### SegFormer ⚠️ non-commercial — NVIDIA Source Code License
+- **What:** Simple and efficient semantic segmentation with Mix Transformer encoders (NeurIPS 2021, NVIDIA) — B0–B5 family; the classic fast semantic segmenter.
+- **URL:** https://github.com/NVlabs/SegFormer
+- **License:** NVIDIA Source Code License, non-commercial (verified 2026-10-08: upstream README "## License — Please check the LICENSE file. SegFormer may be used non-commercially, meaning for research or evaluation purposes only"). **Non-commercial only.**
+- **Use:** lightweight semantic masks for quick plate analysis; reference for replacing with Mask2Former/OneFormer in commercial paths.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; HF transformers re-implementation (Apache-2.0) exists but NVIDIA weights stay NC.
+
+#### MODNet ✅
+- **What:** Real-time trimap-free portrait matting via objective decomposition (AAAI 2022) — semantic + detail + fusion heads with self-supervised consistency; 67 FPS at 512×512.
+- **URL:** https://github.com/ZHKKKe/MODNet
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "## License — The code, models, and demos in this repository (excluding GIF files under the folder doc/gif) are released under the Apache License 2.0 license").
+- **Use:** real-time alpha mattes for human subjects in parallax shots — foreground character cutout without a trimap; also ships an official ONNX export script.
+- **Lane note:** Wave 4 Lane B: the real-time human matting workhorse for character-layer extraction.
+
+#### P3M ⚠️ verify per use — code license unstated
+- **What:** Privacy-preserving portrait matting (ACM MM 2021) — multi-task dense prediction on the P3M-10k face-blurred dataset; strong on real-world portraits.
+- **URL:** https://github.com/JizhiziLi/P3M
+- **License:** dataset P3M-10k released under MIT per its dataset release agreement (downstream citations also record "MIT"; one analysis notes CC BY 4.0 with attribution for the dataset). **No explicit license statement found for the code itself — verify per use.**
+- **Use:** portrait-matte quality reference trained on face-blurred real photos; privacy-safe training-data pattern for custom matting models.
+- **Lane note:** Wave 4 Lane B: included with the honest badge — dataset terms are permissive, code terms need a direct read.
+
+#### DINOv2 ✅
+- **What:** Meta's self-supervised vision foundation model — rich dense features from ViT-S/B/L/g; the feature backbone behind depth, matching and segmentation adapters.
+- **URL:** https://github.com/facebookresearch/dinov2
+- **License:** Apache-2.0 (verified 2026-10-08: multiple downstream THIRD_PARTY_LICENSES — "DINOv2 is Apache-2.0 licensed"; upstream MODEL_CARD + LICENSE).
+- **Use:** feature backbone for mask refinement and correspondence between parallax layers; frozen features for plate element retrieval/matching.
+- **Lane note:** Wave 4 Lane B: the universal feature extractor the rest of the stack fine-tunes on.
+
+#### SimpleClick ✅
+- **What:** Interactive image segmentation with plain Vision Transformers (ICCV 2023) — click-based mask refinement; plain-ViT backends load MAE-pretrained weights.
+- **URL:** https://github.com/uncbiag/SimpleClick
+- **License:** MIT (verified 2026-10-08: upstream README "## License — The code is released under the MIT License"; downstream vendoring notices concur).
+- **Use:** human-in-the-loop mask correction in the plate editor — click to fix layer boundaries SAM missed.
+- **Lane note:** Wave 4 Lane B: the MIT click-to-fix tool for interactive layer cleanup.
+
+#### TRACER ✅
+- **What:** Extreme attention-guided salient object tracing network — edge-sharp salient object detection with FFT-based masked edge attention; SOTA on 5 SOD benchmarks.
+- **URL:** https://github.com/Karel911/TRACER
+- **License:** Apache-2.0 (verified 2026-10-08: downstream license audit — "TRACER is licensed under Apache License 2.0"; arXiv paper links the repo as the release).
+- **Use:** salient-object masks as the first auto-cut pass on plates; edge-attention gives cleaner layer boundaries than plain saliency.
+- **Lane note:** Wave 4 Lane B: the permissive salient-object cutter for fast foreground/background splits.
+
+#### CLIPSeg ✅
+- **What:** Image segmentation using text AND image prompts (CVPR 2022) — CLIP-conditioned decoder; "a photo of a wrestler" → mask without class training.
+- **URL:** https://github.com/timojl/clipseg
+- **License:** MIT for source code excluding model weights (verified 2026-10-08: upstream README "### License — The source code files in this repository (excluding model weights) are released under MIT license").
+- **Use:** text-prompted masks for named plate elements ("crowd", "ring ropes", "turnbuckle"); lightweight alternative to Grounded-SAM for simple prompts.
+- **Lane note:** Wave 4 Lane B: the MIT text-to-mask tool — code is clean, check weight terms separately.
+
+<!-- end lane B wave 4 batch 4: segmentation part 2 (7 entries) -->
+
+### Layer decomposition / multiplane image (MPI) / 2.5D synthesis
+
+#### AdaMPI ⚠️ non-commercial — research only
+- **What:** Single-view view synthesis in the wild with learned Adaptive Multiplane Images (SIGGRAPH 2022) — predicts an adaptive MPI from one in-the-wild image; includes the warp-back self-supervision strategy for training on single-view collections.
+- **URL:** https://github.com/yxuhan/AdaMPI
+- **License:** custom non-commercial (verified 2026-10-08: upstream README "## License and Citation — This repository can only be used for personal/research/non-commercial purposes."). **Non-commercial only.**
+- **Use:** the canonical MPI reference for single-image → 3D-photo parallax; warp-back training strategy is reusable technique knowledge.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge — the MPI method everything is compared against, NC terms block shipping.
+
+#### 3D Ken Burns ⚠️ non-commercial — CC BY-NC-SA 4.0
+- **What:** 3D Ken Burns effect from a single image (TOG 2019, Adobe Research) — depth → point cloud → inpainted novel views along a camera path; the original automatic 2.5D camera-move system.
+- **URL:** https://github.com/sniklaus/3d-ken-burns
+- **License:** CC BY-NC-SA 4.0 (verified 2026-10-08: upstream README "## license — This is a project by Adobe Research. It is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0) and may only be used for non-commercial purposes."). **Non-commercial only.**
+- **Use:** reference implementation of the full single-image → camera-move pipeline; camera-path design patterns are reusable.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge — the granddaddy of automatic parallax moves, NC terms block shipping.
+
+#### 3D Photo Inpainting ✅
+- **What:** 3D photography using context-aware layered depth inpainting (CVPR 2020) — depth → layered depth images (LDI) with color+depth inpainting of occluded regions → mesh for novel-view rendering.
+- **URL:** https://github.com/vt-vl-lab/3d-photo-inpainting/
+- **License:** MIT (verified 2026-10-08: upstream README "## License — This work is licensed under MIT License. See LICENSE for details"; LICENSE file is MIT text). Caveat: builds on EdgeConnect (CC-BY-NC per downstream ports) — verify bundled components before shipping.
+- **Use:** layered-depth-image parallax with inpainted occlusions — the commercial-safe single-image 3D-photo pipeline; LDI is the natural layer format for the editor.
+- **Lane note:** Wave 4 Lane B: the MIT-licensed 3D-photo pipeline — depth → LDI → inpaint → mesh, directly shippable with the EdgeConnect caveat checked.
+
+#### OmnimatteRF ✅
+- **What:** Robust omnimatte with 3D background modeling (ICCV 2023) — decomposes a video into dynamic 2D foreground RGBA layers + a static 3D (TensoRF) background; successor to Omnimatte.
+- **URL:** https://github.com/peterzs/omnimatterf
+- **License:** MIT (verified 2026-10-08: upstream README "## Acknowledgements — The code is available under the MIT license").
+- **Use:** video-plate decomposition into foreground layers + clean background plate — the source layers for video parallax shots and background replacement.
+- **Lane note:** Wave 4 Lane B: the MIT video layer-decomposer — foreground/background split as editable layers.
+
+#### One Shot 3D Photography ✅
+- **What:** Facebook's one-shot 3D photography (SIGGRAPH 2020) — single image → depth → layered mesh for real-time 3D photos; the production version of the Facebook 3D-photo feature.
+- **URL:** https://github.com/shishenghuang/one_shot_3d_photography
+- **License:** MIT (verified 2026-10-08: upstream README "## License — This work is licensed under MIT License. See LICENSE for details").
+- **Use:** real-time single-image 3D-photo meshes; the shipping-proven path from plate to view-dependent parallax.
+- **Lane note:** Wave 4 Lane B: the production-proven MIT 3D-photo code — Facebook's own shipping pipeline.
+
+#### Layered Neural Atlases ✅
+- **What:** Layered neural atlases for consistent video editing (SIGGRAPH Asia 2021) — unwraps a video into layered 2D atlases (foreground/background) via end-to-end optimization; edits painted once propagate consistently across frames.
+- **URL:** https://github.com/ykasten/layered-neural-atlases
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)").
+- **Use:** consistent layered decomposition of video plates — edit the atlas once (repaint, relight, replace) and it holds across the whole parallax shot.
+- **Lane note:** Wave 4 Lane B: the MIT atlas representation — video → editable layers with temporal consistency built in.
+
+<!-- end lane B wave 4: 2.5D parallax (37 entries; 4 GPL-family rows → quarantine 167-170) -->
+## glTF animation runtime / interop
+
+glTF-focused animation players, runtimes, compressors, converters, and retargeting tooling. Covers what the earlier `## Animation formats / conversion / playback` section does not: the glTF-specific runtime stack (loaders, validators, mesh/animation compression, USD↔glTF bridges) and the skeletal-animation libraries that feed glTF pipelines.
+
+#### Khronos glTF-Sample-Viewer ✅
+- **What:** Official Khronos WebGL reference viewer for glTF 2.0 — PBR rendering, skeletal animation playback, skinning/morph targets, extension conformance checks.
+- **URL:** https://github.com/KhronosGroup/glTF-Sample-Viewer
+- **License:** Apache-2.0 (verified 2026-10-08: GitHub license metadata via ecosyste.ms index — apache-2.0, LICENSE.md present in repo root).
+- **Use:** reference runtime for playing back skinned/morph animation tracks exactly per spec; conformance baseline before shipping animated GLBs.
+- **Lane note:** Wave 4 Lane C: the canonical glTF animation runtime the whole pocket is measured against.
+
+#### Google model-viewer ✅
+- **What:** `<model-viewer>` web component for embedding interactive 3D (glTF/GLB) with AR support — animation clips, camera controls, annotations.
+- **URL:** https://github.com/google/model-viewer
+- **License:** Apache-2.0 (verified 2026-10-08: upstream LICENSE; npm README "## License — Apache License Version 2.0, Copyright © 2018 Google"; cited by multiple downstream notices).
+- **Use:** zero-build animated-GLB playback and QA on product/marketing pages; auto-rotate + animation-name control for asset review.
+- **Lane note:** Wave 4 Lane C: the drop-in web runtime for animated glTF delivery — no engine needed.
+
+#### three-gltf-viewer (Don McCurdy) ✅
+- **What:** Lightweight drag-and-drop three.js preview for glTF 2.0 models — inspects materials, lighting, and animation playback; ships as web + Electron desktop app.
+- **URL:** https://github.com/donmccurdy/three-gltf-viewer
+- **License:** MIT (verified 2026-10-08: GitHub repo license field "MIT License (MIT)" via multiple ecosystem mirrors; upstream LICENSE file).
+- **Use:** quick animation debugging (play/pause clips, wireframe, skinning visualization) before routing assets into the promo pipeline.
+- **Lane note:** Wave 4 Lane C: the animator's quick-look glTF player — animation testing without an engine.
+
+#### Babylon.js ✅
+- **What:** Full WebGL/WebGPU 3D engine with first-class glTF loader, animation groups, skeletons, morph targets, and retargeting utilities; ships the Babylon Sandbox viewer.
+- **URL:** https://github.com/BabylonJS/Babylon.js
+- **License:** Apache-2.0 (verified 2026-10-08: upstream license.md — Apache License 2.0; Wikipedia + multiple downstream THIRD_PARTY_NOTICES concur. Note: Havok physics runtime ships under its own terms).
+- **Use:** interactive runtime for animated glTF characters (animation groups, blend, additive layers); Sandbox as the shareable animation-review link.
+- **Lane note:** Wave 4 Lane C: engine-grade glTF animation runtime alternative to three.js, with built-in animation blending.
+
+#### Google Filament ✅
+- **What:** Real-time PBR rendering engine (C++, Android/iOS/Web) with `gltfio`, a dedicated glTF 2.0 loader supporting skinned and morph-target animation.
+- **URL:** https://github.com/google/filament
+- **License:** Apache-2.0 (verified 2026-10-08: Maven Central POM metadata "The Apache Software License, Version 2.0" for com.google.android.filament:gltfio-android; upstream LICENSE).
+- **Use:** native mobile/embedded playback of animated GLBs with filmic PBR — the runtime behind Android 3D model viewers.
+- **Lane note:** Wave 4 Lane C: the native-side glTF animation runtime — gltfio is the loader contract to test against.
+
+#### PlayCanvas ✅
+- **What:** WebGL/WebGPU game engine (MIT) with native glTF/GLB import, skeletal animation, animation blending trees, and a browser editor.
+- **URL:** https://github.com/playcanvas/engine
+- **License:** MIT (verified 2026-10-08: upstream README — "The PlayCanvas Engine is released under the MIT license"; official docs concur).
+- **Use:** web-native engine playback of animated glTF characters; editor timeline for blocking entrance-kit-style animation passes.
+- **Lane note:** Wave 4 Lane C: the lightweight open web engine for animated glTF — MIT-clean alternative for browser playback.
+
+#### A-Frame ✅
+- **What:** Entity-component HTML framework over three.js for WebXR scenes; glTF models (with animations) load via declarative `<a-gltf-model>` / gltf-model components.
+- **URL:** https://github.com/aframevr/aframe
+- **License:** MIT (verified 2026-10-08: GitHub repo license field "MIT License (MIT)"; Wikipedia concurs).
+- **Use:** rapid WebXR staging of animated characters — declare scene, drop GLB, trigger animation clips from components.
+- **Lane note:** Wave 4 Lane C: HTML-declarative glTF animation playback for AR/VR staging without engine code.
+
+#### AR.js ✅
+- **What:** Web-based AR library (marker, image, and location tracking) that renders glTF/GLB models — including animated ones — through three.js and A-Frame integrations.
+- **URL:** https://github.com/AR-js-org/AR.js
+- **License:** MIT (verified 2026-10-08: GitHub repo license field "MIT License (MIT)" for AR-js-org/AR.js).
+- **Use:** AR placement of animated glTF characters (entrance-kit characters on a real stage); marker-triggered animation playback.
+- **Lane note:** Wave 4 Lane C: the AR delivery path for animated glTF — marker/image tracking around animated models.
+
+#### O3DE (Open 3D Engine) ✅
+- **What:** AAA-capable open 3D engine (ex-Amazon Lumberyard) with glTF import, EMotion FX animation system, blend trees, and retargeting.
+- **URL:** https://github.com/o3de/o3de
+- **License:** Apache-2.0 OR MIT at the licensee's option (verified 2026-10-08: upstream LICENSE.txt — default Apache-2.0, may elect MIT; contributions under both).
+- **Use:** full engine runtime for glTF characters with professional animation graphs; Asset Processor bakes glTF into engine animation assets.
+- **Lane note:** Wave 4 Lane C: the heavyweight open glTF runtime — EMotion FX animation stack with dual permissive licensing.
+
+#### Stride ✅
+- **What:** C# cross-platform game engine (ex-Xenko) with glTF import and a node-based animation system (clips, blending, procedural layers).
+- **URL:** https://github.com/stride3d/stride
+- **License:** MIT (verified 2026-10-08: upstream README — "Stride is covered by the MIT License"; relicensed from GPLv3 at Xenko 3.0, 2018).
+- **Use:** .NET-side runtime for animated glTF characters; animation composition via the editor's animation assets.
+- **Lane note:** Wave 4 Lane C: the C#/.NET glTF animation runtime — MIT-clean since the 2018 relicense.
+
+<!-- end lane C wave 4 batch 1: gltf runtimes 1-10 (10 entries; 0 GPL) -->
+#### Urho3D ✅
+- **What:** Lightweight cross-platform C++ 2D/3D game engine with model/animation import, skeletal blending, and animation state machines.
+- **URL:** https://github.com/urho3d/Urho3D
+- **License:** MIT (verified 2026-10-08: upstream README — "released under the MIT license", License.txt).
+- **Use:** embeddable native runtime for animated characters on desktop/mobile; small footprint for companion preview tools.
+- **Lane note:** Wave 4 Lane C: the featherweight native engine — animated model playback where a full AAA engine is overkill.
+
+#### OGRE (Object-Oriented Graphics Rendering Engine) ✅
+- **What:** Scene-oriented C++ 3D rendering engine with skeletal animation, animation blending, and Assimp-backed mesh/animation import for development tooling.
+- **URL:** https://github.com/OGRECave/ogre
+- **License:** MIT (verified 2026-10-08: upstream docs — "The OGRE rendering engine itself is licensed under the MIT License"; LGPL only before v1.7).
+- **Use:** renderer for custom animation tooling (turntables, batch renders of animated GLB batches via Assimp import).
+- **Lane note:** Wave 4 Lane C: the classic scene-graph renderer — animation playback substrate for in-house QC tools.
+
+#### Panda3D ✅
+- **What:** Python/C++ game engine (Disney/CMU origin) with graphics, audio, collision, and an Actor/AnimControl animation system.
+- **URL:** https://github.com/panda3d/panda3d
+- **License:** BSD-3-Clause / revised BSD (verified 2026-10-08: upstream README — "licensed under the Modified BSD License"; Wikipedia + OpenHub concur).
+- **Use:** Python-driven runtime for animated characters; rapid prototyping of animation state logic in the pipeline's scripting layer.
+- **Lane note:** Wave 4 Lane C: the Python-first engine — scriptable animated-character runtime for tooling and prototypes.
+
+#### panda3d-gltf ✅
+- **What:** glTF utilities for Panda3D — Python file loader adding native glTF/GLB support (including animation data) to Panda3D's Loader classes, plus `gltf2bam` CLI and a `gltf-viewer`.
+- **URL:** https://github.com/dualword/panda3d-gltf
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "## License — [B3D 3-Clause]" i.e. BSD-3-Clause).
+- **Use:** get animated GLBs into Panda3D (`skip_animations` flag controls animation conversion; `gltf2bam` bakes them for the engine).
+- **Lane note:** Wave 4 Lane C: the Panda3D↔glTF animation bridge — the loader that carries animation tracks into the engine.
+
+#### Cocos Creator ✅
+- **What:** Cross-platform 2D/3D game engine with an animation editor, skeletal/morph animation clips, and glTF asset import for web and native targets.
+- **URL:** https://github.com/cocos/cocos-engine
+- **License:** MIT (engine) (verified 2026-10-08: upstream cocos-engine README — "written in JavaScript and licensed under MIT"; the editor builds on the same framework).
+- **Use:** web/mobile runtime for animated glTF characters; built-in animation editor for blocking and retiming clips.
+- **Lane note:** Wave 4 Lane C: the mobile-first glTF animation runtime — MIT engine with an integrated animation editor.
+
+#### Defold ⚠️ source-available, not OSI open source — verify per use
+- **What:** Lua-scripted cross-platform game engine (King/Defold Foundation) that imports 3D models, skeletons, and animations as glTF 2.0 (`.gltf`/`.glb`) with a visual animation editor.
+- **URL:** https://github.com/defold/defold
+- **License:** Defold License 1.0 (verified 2026-10-08: defold.com/license — derived from Apache-2.0 with an added condition: you may not "sell or otherwise commercialise the Work or Derivative Works as a Game Engine Product"; games made with it are unrestricted; not OSI-approved).
+- **Use:** ship animated glTF characters in lightweight 2D/3D games; editor bakes glTF skeletons/animations into Defold collections.
+- **Lane note:** Wave 4 Lane C: glTF-native engine import path — honest badge because the engine itself is source-available, not permissively licensed.
+
+#### react-360 ❓ license unconfirmed — archived
+- **What:** Facebook's archived framework for interactive 360/VR experiences in the browser (React + three.js); v2.0 added glTF support including animations and custom shaders.
+- **URL:** https://github.com/facebookarchive/react-360
+- **License:** ❓ (verified 2026-10-08: archived by owner Dec 15, 2020, read-only; no upstream LICENSE text retrievable in available sources — Facebook's other archived projects moved to MIT, but react-360 itself is unconfirmed. Treat as research reference, not a dependency).
+- **Use:** historical reference for React-driven glTF animation playback patterns in 360/VR contexts.
+- **Lane note:** Wave 4 Lane C: included for lineage (React + three.js glTF animation) with the honest badge — archived and unlicensed-verified.
+
+#### gltfjsx (pmndrs) ✅
+- **What:** CLI that turns GLTFs into declarative JSX components (`npx gltfjsx model.gltf`) — plots nodes/materials/animations as React Three Fiber components, with `--transform` (Draco, prune, resize) and `--bones` declarative bone layouts.
+- **URL:** https://github.com/pmndrs/gltfjsx
+- **License:** MIT (verified 2026-10-08: GitHub license metadata via awesomeopensource index — mit).
+- **Use:** convert animated GLBs into editable R3F components — wire animation clips, bones, and materials directly into React code for web players.
+- **Lane note:** Wave 4 Lane C: the glTF→React bridge for animated models — declarative bones make animation wiring trivial.
+
+#### ViroReact ✅
+- **What:** React Native AR/VR platform (ViroMedia → community → ReactVision) rendering animated 3D objects (incl. glTF-era formats) on ARKit/ARCore/Meta headsets.
+- **URL:** https://github.com/ViroCommunity/viro
+- **License:** MIT (verified 2026-10-08: viromedia org repo listing — "ViroReact: AR and VR using React Native — MIT License"; community fork carries it forward).
+- **Use:** ship animated characters to mobile AR via React Native; drive glTF animation clips from JS scene logic.
+- **Lane note:** Wave 4 Lane C: the React Native AR/VR delivery path — MIT-licensed runtime for animated characters on phones and headsets.
+
+#### CesiumJS ✅
+- **What:** WebGL globe/maps library with a full glTF 2.0 model pipeline — loads animated models (articulations, skins, node animations) for geospatial visualization.
+- **URL:** https://github.com/CesiumGS/cesium
+- **License:** Apache-2.0 (verified 2026-10-08: @cesium/engine README — "Apache 2.0. CesiumJS is free for both commercial and non-commercial use").
+- **Use:** place animated glTF characters in real-world geospatial scenes; model animation API drives per-model clip playback.
+- **Lane note:** Wave 4 Lane C: the geospatial glTF runtime — animated models in WGS84 context, Apache-clean.
+
+<!-- end lane C wave 4 batch 2: gltf runtimes 11-20 (10 entries; 0 GPL) -->
+#### glTF-Transform ✅
+- **What:** glTF 2.0 SDK for JavaScript/TypeScript (Node + Web) — read, edit, write, optimize, and compress glTF assets via scripting API and CLI (`@gltf-transform/functions` incl. animation resampling/quantization).
+- **URL:** https://github.com/donmccurdy/glTF-Transform
+- **License:** MIT (verified 2026-10-08: GitHub license field "MIT License (MIT)"; upstream README license badge + LICENSE.md).
+- **Use:** the workhorse of the delivery pipeline — compress skinned animation tracks (quantize/resample), dedupe, Draco/meshopt, and validate before shipping GLBs.
+- **Lane note:** Wave 4 Lane C: the central glTF animation optimization SDK — every animated GLB passes through it.
+
+#### meshoptimizer + gltfpack ✅
+- **What:** GPU mesh optimization library (vertex cache, overdraw, simplification, quantization) plus `gltfpack`, the CLI that automatically optimizes glTF files — incl. animation track quantization.
+- **URL:** https://github.com/zeux/meshoptimizer
+- **License:** MIT (verified 2026-10-08: upstream LICENSE.md — MIT, Copyright Arseny Kapoulkine; gltf/ README "under the terms of MIT License").
+- **Use:** shrink animated GLBs for web delivery — quantize animation samplers, simplify skinned meshes, emit EXT_meshopt_compression output.
+- **Lane note:** Wave 4 Lane C: the mesh+animation compressor behind KHR_meshopt_compression — size wins for animated web delivery.
+
+#### Khronos glTF-Validator ✅
+- **What:** Official Khronos conformance validator for glTF 2.0 — checks JSON schema, accessor/buffer integrity, skinning, and animation track correctness (CLI, Node, web).
+- **URL:** https://github.com/KhronosGroup/glTF-Validator
+- **License:** Apache-2.0 (verified 2026-10-08: multiple independent licensing tables list Apache-2.0 for KhronosGroup/glTF-Validator; official Khronos tool).
+- **Use:** gate every animated GLB in CI — catches malformed animation samplers, bad skinning weights, and spec violations before render.
+- **Lane note:** Wave 4 Lane C: the conformance gate for the whole animation pipeline — fail fast on broken animation data.
+
+#### KTX-Software ✅
+- **What:** Khronos KTX texture container library and CLI tools (`ktx create/convert/encode`) — produces KTX2 with Basis Universal / UASTC supercompression for glTF's `KHR_texture_basisu`.
+- **URL:** https://github.com/KhronosGroup/KTX-Software
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README carries SPDX-License-Identifier: Apache-2.0; Unity needle-mirror THIRD PARTY NOTICES concur. Caveat: the optional Ericsson ETC decoder source file is proprietary — disabled by default, never enable it).
+- **Use:** bake animated characters' textures into KTX2/BasisU so the GLB + textures stay GPU-ready and small on web/mobile.
+- **Lane note:** Wave 4 Lane C: the texture side of animated-GLB delivery — KTX2 is what makes BasisU textures work in glTF.
+
+#### Basis Universal ✅
+- **What:** Binomial's supercompressed GPU texture codec — transcodes once, deploys to ETC1/2, BC1-7, ASTC, PVRTC on any GPU; the codec behind glTF `KHR_texture_basisu`.
+- **URL:** https://github.com/BinomialLLC/basis_universal
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "License/Legal" section — reference encoder/transcoder under Apache 2.0 LICENSE; trademark notice applies).
+- **Use:** encode animated-character texture sets to BasisU for cross-GPU delivery inside compressed GLBs.
+- **Lane note:** Wave 4 Lane C: the codec that makes one texture set work on every GPU the animated model plays on.
+
+#### Draco ✅
+- **What:** Google's 3D mesh/point-cloud compression library (with JS/WASM decoders) — the codec behind glTF `KHR_draco_mesh_compression`.
+- **URL:** https://github.com/google/draco
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "## License — Apache License 2.0" linking the LICENSE file).
+- **Use:** Draco-compress animated character geometry inside GLBs; decoders ship with three.js/Babylon for runtime playback.
+- **Lane note:** Wave 4 Lane C: the geometry compressor for animated glTF — pairs with meshopt as the two sanctioned mesh codecs.
+
+#### pygltflib ✅
+- **What:** Python library for reading, writing, and managing glTF/glTF 2.0 objects — dataclass-style access to scenes, nodes, skins, and animation channels/samplers.
+- **URL:** https://github.com/KhronosGroup/pygltflib
+- **License:** MIT (verified 2026-10-08: conda-forge feedstock records "Package license: MIT"; now KhronosGroup-maintained).
+- **Use:** Python-side surgery on animation tracks — rewrite samplers, rename clips, batch-fix skins across a character roster.
+- **Lane note:** Wave 4 Lane C: the Python scalpel for glTF animation data — scriptable track edits the JS SDKs don't cover.
+
+#### fastgltf ✅
+- **What:** Modern C++17 glTF parser/loader — fast GLB parsing, extension handling, and buffer-source policies for runtime asset staging.
+- **URL:** https://github.com/spnda/fastgltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "fastgltf (spnda) — safe-donor — MIT").
+- **Use:** drop-in fast loader for native tools that ingest animated GLBs (previews, converters, QC harnesses).
+- **Lane note:** Wave 4 Lane C: the speed-first native glTF loader — ingest path for animation tooling in C++.
+
+#### cgltf ✅
+- **What:** Single-file C99 glTF 2.0 parser and writer — dependency-free, trivially vendored into any C/C++ codebase.
+- **URL:** https://github.com/jkuhlmann/cgltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "cgltf (jkuhlmann) — safe-donor — MIT").
+- **Use:** embed glTF animation parsing directly in native tools (rig repair, batch retarget) with zero dependencies.
+- **Lane note:** Wave 4 Lane C: the zero-dependency glTF reader/writer — animation data access from a single C file.
+
+#### tinygltf ✅
+- **What:** Header-only C++ glTF 2.0 loader/saver (v3 is a C mainline) — tiny footprint for tools and prototypes that need glTF in/out.
+- **URL:** https://github.com/syoyo/tinygltf
+- **License:** MIT (verified 2026-10-08: glTF runtime donor table — "tinygltf (syoyo) — safe-donor — MIT"; upstream "Licensed under MIT license").
+- **Use:** quick native prototypes that read animated GLBs and write modified copies (test fixtures, format experiments).
+- **Lane note:** Wave 4 Lane C: the header-only glTF workhorse — fastest route to animated-GLB I/O in small tools.
+
+<!-- end lane C wave 4 batch 3: gltf tooling/compression 21-30 (10 entries; 0 GPL) -->
+#### FBX2glTF ✅
+- **What:** Command-line converter from FBX to glTF — bakes skeletons, skins, and animation clips into spec-compliant glTF output.
+- **URL:** https://github.com/facebookincubator/FBX2glTF
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "## License — FBX2glTF is licensed under the 3-clause BSD license").
+- **Use:** the FBX→glTF on-ramp for animated characters — convert mocap/DCC exports with animation intact before optimization.
+- **Lane note:** Wave 4 Lane C: the canonical FBX animation importer for glTF pipelines — BSD-clean.
+
+#### CesiumGS gltf-pipeline + obj2gltf ✅
+- **What:** Node.js content-pipeline tools for glTF — glTF↔GLB conversion, buffer/texture embedding, Draco compression, glTF 1.0→2.0 upgrades (gltf-pipeline); OBJ→glTF/GLB conversion with PBR material mapping (obj2gltf).
+- **URL:** https://github.com/CesiumGS/gltf-pipeline
+- **License:** Apache-2.0 (verified 2026-10-08: gltf-pipeline README license-apache badge → upstream LICENSE.md; obj2gltf is the sibling CesiumGS tool under the same org terms).
+- **Use:** normalize incoming models to animated GLBs — convert OBJ sources, embed buffers, Draco-compress before the validator gate.
+- **Lane note:** Wave 4 Lane C: the Cesium model-ingest pair — format normalization ahead of animation compression.
+
+#### usd_from_gltf (Google) ❓ license unconfirmed
+- **What:** C++ library, CLI, and USD import plugin converting glTF/GLB (rigid and skinned animation, Draco meshes, PBR materials) to USDA/USDZ for AR Quick Look.
+- **URL:** https://github.com/google/usd_from_gltf
+- **License:** ❓ (verified 2026-10-08: upstream README retrievable but no license statement confirmed in available sources; Google notes it is "not an officially supported Google product" — verify before depending on it).
+- **Use:** convert animated GLBs to USDZ for iOS AR delivery; preview glTF animation inside USDView via the import plugin.
+- **Lane note:** Wave 4 Lane C: the glTF→USD bridge for animation — honest badge until its license is pinned down.
+
+#### Ozz Animation ✅
+- **What:** Open-source C++ skeletal animation library and toolset — runtime sampling, blending layers, IK, and offline animation optimization/compression tools.
+- **URL:** https://github.com/guillaumeblanc/ozz-animation
+- **License:** MIT (verified 2026-10-08: upstream README — "distributed under the MIT License (MIT)").
+- **Use:** sample and blend glTF-imported animation clips in native runtimes; offline tools compress tracks before glTF export.
+- **Lane note:** Wave 4 Lane C: the runtime skeletal-animation engine that pairs with glTF loaders — sampling, blending, and track optimization.
+
+#### ACL (Animation Compression Library) ✅
+- **What:** Header-only C++ library for high-ratio skeletal animation compression — uniformly-sampled, key-reduction, and spline algorithms with a fast decompression runtime.
+- **URL:** https://github.com/nfrechette/acl
+- **License:** MIT (verified 2026-10-08: nfrechette/acl README — "This project uses the MIT license").
+- **Use:** compress animation clips at authoring time beyond what glTF quantization alone achieves; decompress at runtime in native players.
+- **Lane note:** Wave 4 Lane C: the animation-track compressor — complements meshopt by targeting the clip data itself.
+
+#### three-vrm ✅
+- **What:** pixiv's three.js VRM loader — renders VRM humanoid avatars (a glTF extension: VRoid/VRM 0.x/1.0) with spring-bone secondary animation and humanoid retargeting.
+- **URL:** https://github.com/pixiv/three-vrm
+- **License:** MIT (verified 2026-10-08: independent licensing table — "@pixiv/three-vrm 3.5.5 | MIT | registry.npmjs.org").
+- **Use:** play VRM avatar animation in web pipelines; VRM humanoid bone mapping gives cross-character retargeting for free.
+- **Lane note:** Wave 4 Lane C: the web VRM runtime — glTF-extension avatars with built-in humanoid retargeting and spring bones.
+
+#### UniVRM ✅
+- **What:** glTF-based VRM format implementation for Unity — imports/exports VRM 0.x/1.0 and glTF 2.0 (UniGLTF), with humanoid rig mapping, spring bones, and first-person/look-at components.
+- **URL:** https://github.com/vrm-c/UniVRM
+- **License:** MIT (verified 2026-10-08: upstream README "## License — MIT License (./LICENSE.txt)"; includes UniGLTF glTF import/export).
+- **Use:** author VRM avatars with retargetable humanoid rigs in Unity, export to glTF/VRM for web playback; spring-bone secondary motion ships with the format.
+- **Lane note:** Wave 4 Lane C: the Unity-side VRM/glTF implementation — humanoid retargeting standard for avatar pipelines.
+
+#### mGear ✅
+- **What:** Rigging and animation framework for Autodesk Maya — Shifter modular rig builder, C++ solvers, synoptic pickers, and mocap HumanIK mapping tools; v5 drops PyMEL.
+- **URL:** https://github.com/mgear-dev/mgear
+- **License:** MIT (verified 2026-10-08: upstream README — "MGEAR is under the terms of the MIT License").
+- **Use:** build production character rigs in Maya whose skeletons/skins export cleanly to glTF; Shifter biped templates standardize joint layouts for retargeting.
+- **Lane note:** Wave 4 Lane C: the DCC rigging framework that feeds glTF — standardized rigs make downstream retargeting deterministic.
+
+<!-- end lane C wave 4 batch 4: converters/animation interop 31-38 (8 entries; 0 GPL; quarantine rows 171-172) -->
+## Archival footage restoration / upscaling
+
+#### Real-ESRGAN ✅
+- **What:** Blind real-world image/video super-resolution (RRDBNet GAN trained on synthetic degradations) with x2/x4/x4plus and anime-video weights.
+- **URL:** https://github.com/xinntao/Real-ESRGAN
+- **License:** BSD-3-Clause (verified 2026-10-08: multiple downstream third-party notices cite upstream https://github.com/xinntao/Real-ESRGAN/blob/master/LICENSE as BSD-3-Clause).
+- **Use:** upscale archival plates and scanned frames to 4K — the default workhorse SR for the restoration pass.
+- **Lane note:** Wave 4 Lane D: the canonical open-source upscaler for archival footage; ncnn-Vulkan sibling runs GPU-side.
+
+#### SwinIR ✅
+- **What:** Swin-Transformer image restoration network (super-resolution, denoising, JPEG-artifact removal) with real-world SR weights.
+- **URL:** https://github.com/JingyunLiang/SwinIR
+- **License:** Apache-2.0 (verified 2026-10-08: upstream repo license; ONNX port readme and multiple third-party notices concur).
+- **Use:** high-fidelity upscale + denoise of archival stills and grainy film frames; transformer quality where Real-ESRGAN GAN textures hallucinate.
+- **Lane note:** Wave 4 Lane D: transformer SR/denoise reference for restoration — maximum perceptual quality tier for hero frames.
+
+#### Anime4K ✅
+- **What:** Real-time CNN upscaler/restorer delivered as GLSL shaders for mpv — restore + 2x upscale chains that run at playback speed.
+- **URL:** https://github.com/bloc97/Anime4K
+- **License:** MIT (verified 2026-10-08: upstream LICENSE; widely vendored as MIT shaders).
+- **Use:** fast line-art/cartoon plate upscaling for animatics and cel-restoration previews; shader chain plugs into mpv-based review tooling.
+- **Lane note:** Wave 4 Lane D: real-time cartoon-plate restoration path — ideal for the 2D animation sources this pipeline also touches.
+
+#### waifu2x ✅
+- **What:** The original CNN image super-resolution + noise reduction for anime-style art (SRCNN-derived), with ncnn-Vulkan builds for fast GPU inference.
+- **URL:** https://github.com/nagadomi/waifu2x
+- **License:** MIT (verified 2026-10-08: upstream LICENSE, copyright nagadomi; Wikipedia infobox and downstream notices concur).
+- **Use:** denoise + 2x upscale of scanned cels, manga plates, and low-res cartoon source frames.
+- **Lane note:** Wave 4 Lane D: the classic cartoon-art restorer — pairs with Anime4K for the 2D-source restoration lane.
+
+#### Real-CUGAN ✅
+- **What:** Bilibili AI Lab's anime/real image super-resolution (UpCunet) with built-in denoise-level control, tuned for cartoon content.
+- **URL:** https://github.com/bilibili/ailab
+- **License:** MIT (verified 2026-10-08: https://github.com/bilibili/ailab/blob/main/Real-CUGAN/LICENSE is MIT, per multiple downstream notices).
+- **Use:** anime/cartoon archival footage upscaling with adjustable denoise strength — gentler on flat cel colors than GAN SR.
+- **Lane note:** Wave 4 Lane D: bilibili's cartoon-first SR — the counterpart to Real-ESRGAN for 2D animated archival sources.
+
+#### DiffBIR ✅
+- **What:** Two-stage blind image restoration — degradation-removal module + Stable-Diffusion generative prior (IRControlNet) for realistic detail regeneration; covers blind SR, face restoration, and denoising.
+- **URL:** https://github.com/XPixelGroup/DiffBIR
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "This project is released under the Apache 2.0 license"; ecosyste.ms license metadata concurs).
+- **Use:** heavy-degradation archival frames where classical SR gives up — generative detail refill for hero restoration shots.
+- **Lane note:** Wave 4 Lane D: the diffusion-restoration option for worst-case archival plates; quality-vs-fidelity control built in.
+
+#### GFPGAN ⚠️ Apache-2.0 code, non-commercial entanglement — verify per use
+- **What:** Blind face restoration with a StyleGAN2 generative facial prior (CVPR 2021); the battle-tested GAN face restorer for degraded archival faces.
+- **URL:** https://github.com/TencentARC/GFPGAN
+- **License:** Apache-2.0 for the GFPGAN code (verified 2026-10-08: upstream https://github.com/TencentARC/GFPGAN/blob/master/LICENSE) BUT its own license appendix flags bundled DFDNet-derived code as CC BY-NC-SA 4.0 and the StyleGAN2 prior under NVIDIA terms — **verify commercial clearance per use**.
+- **Use:** restore degraded faces in archival footage; fast baseline face node for restoration passes.
+- **Lane note:** Wave 4 Lane D: face-restore workhorse for archival plates — honest ⚠️ because the code license alone does not clear the bundled priors.
+
+#### Restormer ✅
+- **What:** Efficient transformer for high-resolution image restoration — one architecture with checkpoints for motion deblur, defocus deblur, denoising, and deraining.
+- **URL:** https://github.com/swz30/Restormer
+- **License:** MIT (verified 2026-10-08: upstream https://github.com/swz30/Restormer/blob/main/LICENSE.md is MIT, per multiple downstream third-party notices).
+- **Use:** deblur and denoise archival footage frames; motion-deblur checkpoint for shaky archival plates.
+- **Lane note:** Wave 4 Lane D: the deblur/denoise transformer for the restoration chain — pairs with SR stages for damaged footage.
+
+#### DeblurGAN-v2 ✅
+- **What:** GAN motion-deblurring (ICCV 2019, VITA-Group) with fast FPN-Inception generator; one forward pass deblurs a frame.
+- **URL:** https://github.com/VITA-Group/DeblurGANv2
+- **License:** BSD-style (verified 2026-10-08: upstream LICENSE reproduces BSD 2-clause redistribution terms, copyright Jun-Yan Zhu and Taesung Park, per Open Model Zoo legal info; ecosyste.ms tags it "other" so the license text was read directly).
+- **Use:** single-frame motion-deblur for shaky archival plates before the SR stage.
+- **Lane note:** Wave 4 Lane D: classical GAN deblur for the damage-repair pass — lightweight compared to transformer deblurrers.
+
+#### MPRNet ✅
+- **What:** Multi-stage progressive image restoration (CVPR 2021) — one network family with pretrained heads for deraining, denoising, and deblurring.
+- **URL:** https://github.com/swz30/MPRNet
+- **License:** MIT (verified 2026-10-08: upstream LICENSE added per maintainer reply to the "missing license file" issue; same author family as MIT-licensed Restormer).
+- **Use:** derain + denoise + deblur archival frames; the all-round damage-repair net for scratched/dusty film frames.
+- **Lane note:** Wave 4 Lane D: multi-damage restoration net — rain/scratch streaks, noise, and blur in one model family.
+
+#### FastDVDnet ✅
+- **What:** Very fast deep video denoising without flow estimation (Tassano et al.) — temporally coherent noise reduction with very low flicker, orders of magnitude faster than DVDnet.
+- **URL:** https://github.com/m-tassano/fastdvdnet
+- **License:** MIT (verified 2026-10-08: upstream README ABOUT section "Licence: MIT", Matias Tassano; downstream project links https://github.com/m-tassano/fastdvdnet/blob/master/LICENSE as MIT).
+- **Use:** temporal denoising of noisy archival video — kills grain flicker without optical flow.
+- **Lane note:** Wave 4 Lane D: the video-native denoiser for the restoration chain; pairs with Real-ESRGAN in the classic smart-upscaler pipeline.
+
+#### DeOldify ✅
+- **What:** Deep-learning colorization and restoration of old images AND video (NoGAN training; artistic/stable/video models); self-trained weights also MIT.
+- **URL:** https://github.com/jantic/DeOldify
+- **License:** MIT (verified 2026-10-08: upstream repo License metadata "MIT License (MIT)"; README: "All code in this repository is under the MIT license" and the pretrained weights are MIT too; repo archived Oct 2024 but live).
+- **Use:** colorize B&W archival footage plates; video colorizer path for entire scenes.
+- **Lane note:** Wave 4 Lane D: the canonical open colorization tool for archival footage — archived but the weights/code remain MIT.
+
+#### DDColor ✅
+- **What:** Photo-realistic image colorization via dual decoders (ICCV 2023, DAMO/Alibaba) — pixel decoder + query-based color decoder on ConvNeXt backbone.
+- **URL:** https://github.com/piddnad/DDColor
+- **License:** Apache-2.0 (verified 2026-10-08: third-party notices file of an old-photo restoration platform: "License: Apache License 2.0 (full text in ddcolor/LICENSE)").
+- **Use:** modern alternative to DeOldify for B&W archival frame colorization with fewer artifacts.
+- **Lane note:** Wave 4 Lane D: the current-generation colorizer for archival plates — pairs with DeOldify for the colorization pass.
+
+#### RestoreFormer++ ✅
+- **What:** Face restoration with a high-quality dictionary/codebook transformer — same CodeFormer family, Apache-2.0 licensed, no StyleGAN2-prior entanglement.
+- **URL:** https://github.com/wzhouxiff/RestoreFormerPlusPlus
+- **License:** Apache-2.0 (verified 2026-10-08: restoration-workflow model stack lists RestoreFormer/RestoreFormer++ as "Apache-2.0" and "commercial-safe").
+- **Use:** commercial-safe face restoration for archival faces where GFPGAN's license caveat bites.
+- **Lane note:** Wave 4 Lane D: the commercial-clean face restorer — the answer to the GFPGAN ⚠️ entanglement.
+
+#### CodeFormer ⚠️ non-commercial (S-Lab License 1.0) — verify per use
+- **What:** Transformer-based face restoration with a learned codebook prior — the most popular/controllable face restorer in the ComfyUI/ReActor ecosystem.
+- **URL:** https://github.com/sczhou/CodeFormer
+- **License:** S-Lab License 1.0 — **non-commercial only** (verified 2026-10-08: licensing survey — "CodeFormer | S-Lab License 1.0 | Non-commercial only | Explicitly requires contacting authors for commercial use").
+- **Use:** reference-quality face restoration for non-commercial archival research; inform heuristics without shipping weights.
+- **Lane note:** Wave 4 Lane D: included with the honest badge — the famous face restorer, blocked from commercial paths by its license.
+
+#### GPEN ⚠️ academic / non-commercial use only — verify per use
+- **What:** GAN Prior Embedded Network for blind face restoration in the wild (Alibaba, CVPR 2021) — 512/1024/2048 face restoration plus colorization and inpainting heads.
+- **URL:** https://github.com/yangxy/GPEN
+- **License:** custom — "© Alibaba, 2021. For academic and non-commercial use only." (verified 2026-10-08: upstream README License section, widely mirrored).
+- **Use:** high-res face restoration reference for research; 1024-color head doubles as a face colorizer.
+- **Lane note:** Wave 4 Lane D: the high-res face restorer — honest ⚠️, academic/non-commercial only.
+
+#### Bringing-Old-Photos-Back-to-Life ✅
+- **What:** Microsoft's old-photo restoration (CVPR 2020 oral) — scratch/dust detection and removal, face enhancement, and global restoration in one pipeline.
+- **URL:** https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life
+- **License:** MIT (verified 2026-10-08: third-party notices of an old-photo restoration platform — "License: MIT License (full text in `LICENSE-Bringing-Old-Photos-Back-to-Life`)").
+- **Use:** scratch/dust removal and face enhancement on scanned archival photo plates before plate ingest.
+- **Lane note:** Wave 4 Lane D: the dedicated old-photo damage-repair tool — scratches, fading, and faces in one MIT package.
+
+#### DeepRemaster ⚠️ non-commercial (CC BY-NC-SA 4.0) — verify per use
+- **What:** Temporal source-reference attention networks for comprehensive video enhancement (SIGGRAPH Asia 2019) — removes film noise, improves contrast/sharpness, and colorizes from manually colored reference frames.
+- **URL:** https://github.com/junjiey66/siggraphasia2019_remastering
+- **License:** CC BY-NC-SA 4.0 (verified 2026-10-08: upstream README License section — "This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License").
+- **Use:** reference-guided remaster of vintage footage — research/non-commercial pass; informs in-house heuristics.
+- **Lane note:** Wave 4 Lane D: the canonical vintage-video remastering paper implementation — honest ⚠️ for its NC terms.
+
+#### SpeexDSP ✅
+- **What:** Xiph's DSP library — spectral-subtraction noise suppression, multi-channel acoustic echo cancellation, voice activity detection, and high-quality resampling.
+- **URL:** https://github.com/xiph/speexdsp
+- **License:** BSD (verified 2026-10-08: multiple vendoring projects record "SpeexDSP (Xiph) — BSD license"; BSD-3-Clause per vendored COPYING).
+- **Use:** lightweight noise suppression + resampling for archival dialogue stems and field recordings.
+- **Lane note:** Wave 4 Lane D: the permissive DSP toolkit for dialogue-stem cleanup — no neural weights required.
+
+#### Open-Unmix ✅
+- **What:** Reference implementation for music source separation (UMX) — separates vocals, drums, bass, and "other" from a mix with pretrained PyTorch models.
+- **URL:** https://github.com/sigsep/open-unmix-pytorch
+- **License:** MIT (verified 2026-10-08: upstream README "### License — MIT").
+- **Use:** isolate vocals from archival music beds and mixed stems to recover clean dialogue.
+- **Lane note:** Wave 4 Lane D: MIT source-separation for dialogue extraction — the permissive alternative to proprietary stem splitters.
+
+#### Ultimate Vocal Remover (UVR) ✅
+- **What:** Vocal remover GUI bundling MDX-Net, Demucs, and VR-architecture models for vocal/instrumental separation with a large public model zoo.
+- **URL:** https://github.com/Anjok07/ultimatevocalremovergui
+- **License:** MIT (verified 2026-10-08: upstream README "The Ultimate Vocal Remover GUI code is MIT-licensed"; models under MIT terms with attribution to UVR and its developers).
+- **Use:** extract clean vocal/dialogue stems from archival mixes — the practical workbench for dialogue recovery.
+- **Lane note:** Wave 4 Lane D: the dialogue-stem extraction workbench — MIT code, models usable with attribution.
+
+#### vocal-remover (tsurumeso) ✅
+- **What:** The original VR-architecture vocal remover — lightweight neural vocal/instrumental separation that UVR later built on.
+- **URL:** https://github.com/tsurumeso/vocal-remover
+- **License:** MIT (verified 2026-10-08: audited third-party notices — "License: MIT, copyright 2019 tsurumeso").
+- **Use:** scriptable vocal extraction for batch dialogue-stem cleanup.
+- **Lane note:** Wave 4 Lane D: the original lightweight vocal separator — pairs with UVR for the audio-cleanup lane.
+
+#### BWF MetaEdit ✅
+- **What:** MediaArea tool that embeds, validates, and exports metadata in Broadcast WAVE Format (BWF) files; supports the FADGI Broadcast WAVE Metadata Embedding Guidelines.
+- **URL:** https://github.com/mediaarea/bwfmetaedit
+- **License:** Public domain (verified 2026-10-08: upstream README — "[Public domain](https://mediaarea.net/BWFMetaEdit/License) for the code developed by us").
+- **Use:** validate and embed preservation metadata in archival audio deliverables — the BWF QC step.
+- **Lane note:** Wave 4 Lane D: archival-audio metadata QC — public domain, from the FADGI-funded preservation toolchain.
+
+#### OpenEXR ✅
+- **What:** The motion-picture industry's HDR image storage format — specification + reference implementation for lossless/compressed high-bit-depth archival frames.
+- **URL:** https://github.com/AcademySoftwareFoundation/openexr
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "OpenEXR is released under the BSD-3-Clause license"; ASWF project page concurs).
+- **Use:** archival master container for restored plates — HDR, multi-channel, lossless plate storage.
+- **Lane note:** Wave 4 Lane D: the archival container for restored footage masters — industry-standard, permissively licensed.
+
+<!-- end lane D wave 4 batch 3: photo/audio-restoration + archival QC (8 entries) -->
+<!-- end lane D wave 4 batch 2: deblur/colorize/faces (8 entries) -->
+<!-- end lane D wave 4 batch 1: restoration SR/deblur (8 entries) -->
+
+## Cartoon mouth-swap / viseme performance systems
+
+#### Inochi2D ✅
+- **What:** Open-source 2D puppet animation suite — rig 2D characters with parameterized mouth/eye/head motion and drive them live from webcam face tracking.
+- **URL:** https://github.com/Inochi2D/inochi-creator
+- **License:** BSD-2-Clause (verified 2026-10-08: official FAQ + ecosyste.ms repository metadata).
+- **Use:** build 2D cartoon mouth-swap puppets whose mouths are performed live or from recorded tracking instead of frame-by-frame lip-sync.
+- **Lane note:** Wave 4 Lane D: the flagship open-source 2D mouth-swap performance tool — puppet visemes, not phoneme extraction.
+
+#### StyleHEAT ✅
+- **What:** One-shot high-resolution editable talking-face generation via a pretrained StyleGAN — drive a single portrait with video motion or audio (SadTalker module).
+- **URL:** https://github.com/OpenTalker/StyleHEAT
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file; project moved from FeiiYin/StyleHEAT to OpenTalker).
+- **Use:** generate audio-driven talking-head performance from a single character portrait for stylized talking shots.
+- **Lane note:** Wave 4 Lane D: one-shot audio-driven head performance — portrait in, speaking performance out.
+
+#### FaceFormer ✅
+- **What:** Transformer that autoregressively synthesizes realistic 3D facial-motion sequences (accurate lip movements) from raw audio + a neutral 3D face mesh.
+- **URL:** https://github.com/EvelynFan/FaceFormer
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** generate 3D mouth/face performance curves from dialogue audio, then retarget onto a character rig's blendshapes.
+- **Lane note:** Wave 4 Lane D: audio → 3D facial motion curves — a viseme driver for mesh-based characters rather than a 2D sprite swapper.
+
+#### CodeTalker ✅
+- **What:** Speech-driven 3D facial animation via a discrete motion codebook prior — raw audio + neutral face template in, vivid 3D facial motion with accurate lips out.
+- **URL:** https://github.com/Doubiiu/CodeTalker
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** audio-driven 3D face performance for dialogue shots; ships a Colab demo for quick voice-to-face-motion tests.
+- **Lane note:** Wave 4 Lane D: codebook-prior viseme synthesis — pairs with FaceFormer as the 3D audio-to-face-motion tier.
+
+#### GeneFace ✅
+- **What:** Generalized high-fidelity audio-driven 3D talking-face synthesis (ICLR 2023) — NeRF-based renderer driven by pitch-aware audio-to-motion landmarks.
+- **URL:** https://github.com/yerfor/GeneFace
+- **License:** MIT (verified 2026-10-08: upstream repo metadata and LICENSE file).
+- **Use:** synthesize talking-head video from a target person video + new dialogue audio; real-time-capable RAD-NeRF renderer.
+- **Lane note:** Wave 4 Lane D: the NeRF talking-head performance system — same authors' GeneFace++ also released upstream.
+
+#### LatentSync ⚠️ Apache-2.0 code, weight/model chain — verify per use
+- **What:** Audio-conditioned latent diffusion that re-syncs the mouth region of existing video to new audio, preserving identity and context.
+- **URL:** https://github.com/bytedance/LatentSync
+- **License:** Apache-2.0 for the code (verified 2026-10-08: repo metadata "License: Apache License 2.0") BUT model weights are OpenRAIL++ and the pipeline requires InsightFace (non-commercial) — **verify per use**.
+- **Use:** re-perform mouth motion on existing footage to match a new dialogue take without re-animating.
+- **Lane note:** Wave 4 Lane D: diffusion mouth-swap on real footage — the honest ⚠️ is the weight chain, not the code.
+
+#### InfiniteTalk ⚠️ Apache-2.0 code, base-model weight terms — verify per use
+- **What:** Unlimited-length audio-driven talking-video generation — sparse-frame video dubbing that syncs lips, head, body, and expressions (image- or video-to-video).
+- **URL:** https://github.com/MeiGen-AI/InfiniteTalk
+- **License:** Apache-2.0 for the code (verified 2026-10-08: upstream LICENSE.txt + repo metadata) BUT built on Wan2.1-I2V base weights under the WAN license — **verify weight terms per use**.
+- **Use:** full-performance dubbing of talking shots to new dialogue audio; streaming mode for long segments.
+- **Lane note:** Wave 4 Lane D: whole-body audio-driven performance, not just lips — code is clean, the base-model license needs a check.
+
+<!-- end lane D wave 4 batch 4: mouthswap part 1 (9 entries; Kalidokit dropped — already in catalog) -->
+#### Hallo2 ⚠️ MIT code, non-commercial dependency chain — verify per use
+- **What:** Long-duration, high-resolution audio-driven portrait animation (ICLR 2025) — image + English audio in, minutes-long talking performance out.
+- **URL:** https://github.com/fudan-generative-vision/hallo2
+- **License:** MIT for the code (verified 2026-10-08: repo metadata + LICENSE file) BUT inference downloads InsightFace models (non-commercial) and SD1.5 weights, and the optional CodeFormer video-SR feature is under S-Lab License 1.0 per the repo README — **verify per use**.
+- **Use:** long-form talking-head performance from a single portrait + dialogue audio; built-in face/background upsampling pass.
+- **Lane note:** Wave 4 Lane D: the long-duration audio-driven performer — honest ⚠️ for the bundled model licenses.
+
+#### X-Portrait ⚠️ Apache-2.0 code, SD-derived weights — verify per use
+- **What:** Expressive portrait animation with hierarchical motion attention (SIGGRAPH 2024) — transfer head pose and detailed facial expression from a driving video onto a reference portrait.
+- **URL:** https://github.com/bytedance/X-Portrait
+- **License:** Apache-2.0 for the code (verified 2026-10-08: repo metadata + LICENSE.txt) BUT checkpoints are SD1.5-derived — **check CreativeML OpenRAIL-M terms per use**.
+- **Use:** video-driven face performance transfer — perform the mouth/face on camera, transfer it onto the character portrait.
+- **Lane note:** Wave 4 Lane D: performance-transfer rather than audio-driven — the puppeteer's own face becomes the mouth-swap source.
+
+#### DECA ⚠️ non-commercial scientific research only
+- **What:** Detailed Expression Capture and Animation (SIGGRAPH 2021) — reconstructs an animatable detailed 3D face (FLAME-based) with disentangled expression parameters from in-the-wild images.
+- **URL:** https://github.com/YadiraF/DECA
+- **License:** "This code and model are available for non-commercial scientific research purposes" (verified 2026-10-08: upstream README License section) — ⚠️.
+- **Use:** capture expression/mouth parameters from reference footage to drive character-face animation in research/pipeline prototyping.
+- **Lane note:** Wave 4 Lane D: expression-capture tier for viseme performance — NC terms keep it research-side only.
+
+#### EMOCA ⚠️ non-commercial scientific research only
+- **What:** Emotion-driven monocular face capture and animation (CVPR 2022) — reconstructs 3D faces with emotion-detailed expressions, built on DECA.
+- **URL:** https://github.com/radekd91/emoca
+- **License:** "available for non-commercial scientific research purposes" (verified 2026-10-08: upstream README License section) — ⚠️.
+- **Use:** emotion-aware facial performance capture; expression coefficients feed mouth/face animation in non-commercial pipeline work.
+- **Lane note:** Wave 4 Lane D: EMOCA's expression detail is the viseme-quality upgrade over plain landmark tracking — NC-licensed.
+
+#### LIA ⚠️ CC BY-NC 4.0
+- **What:** Latent Image Animator — animates images via latent-space navigation (ICLR 2022); driving-video motion transferred onto a source portrait.
+- **URL:** https://github.com/wyhsirius/LIA
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: third-party THIRD_PARTY_NOTICES citing the upstream license text) — ⚠️.
+- **Use:** video-driven portrait performance for previz and non-commercial talking-character tests.
+- **Lane note:** Wave 4 Lane D: lightweight latent-space performance transfer — NC keeps it out of commercial shots.
+
+#### PersonaLive ⚠️ Apache-2.0 code, academic-research-only disclaimer
+- **What:** Real-time, streamable diffusion framework for expressive portrait image animation (CVPR 2026) — infinite-length portrait performance with online inference and webcam mode.
+- **URL:** https://github.com/GVCLab/PersonaLive
+- **License:** Apache-2.0 per repo metadata BUT README disclaimer states "This project is released for academic research only" (verified 2026-10-08: upstream README) — **verify per use**.
+- **Use:** live-streamed talking-character performance from a portrait; research reference for real-time mouth-swap pipelines.
+- **Lane note:** Wave 4 Lane D: the live-performance end of the spectrum — real-time webcam-driven portrait animation.
+
+#### PIRender ⚠️ CC BY-NC 4.0
+- **What:** Controllable portrait image generation via semantic neural rendering (ICCV 2021) — drive face motion with disentangled 3DMM parameters, including audio-driven facial reenactment.
+- **URL:** https://github.com/RenYurui/PIRender
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: upstream LICENSE.md) — ⚠️.
+- **Use:** 3DMM-parameter mouth/face performance and audio-driven reenactment for non-commercial talking-head work.
+- **Lane note:** Wave 4 Lane D: 3DMM-coefficient puppet controls — intuitive expression parameters rather than audio black-box.
+
+#### EmoTalk ⚠️ CC BY-NC 4.0
+- **What:** Speech-driven emotional disentanglement for 3D face animation (ICCV 2023) — audio with different emotions in, realistic 3D facial animation with matching emotional expression out; renders via Blender.
+- **URL:** https://github.com/psyai-net/EmoTalk_release
+- **License:** CC BY-NC 4.0 (verified 2026-10-08: README License section; "For commercial licensing, please contact fanzhaoxin@psyai.net") — ⚠️.
+- **Use:** emotion-aware 3D mouth/face performance from dialogue audio; Blender render path fits existing 3D tooling.
+- **Lane note:** Wave 4 Lane D: the emotional-expression tier of audio-driven 3D viseme performance — NC-licensed.
+
+<!-- end lane D wave 4 batch 5: mouthswap part 2 (8 entries) — section complete -->
+## Procedural secondary animation (spring / jiggle / squash-stretch)
+
+#### Rebound ✅
+- **What:** Java library that models spring dynamics for animations — stiffness/damping/friction spring models driven by a physics stepper; the classic reference spring engine (also has a JS port).
+- **URL:** https://github.com/facebookarchive/rebound
+- **License:** BSD (verified 2026-10-08: GitHub repo page README "## License — BSD License" section; repo archived).
+- **Use:** reference spring integrator for secondary-motion prototypes — hair/cape/belly bounce driven by damped springs; port the stepper into JS/Blender tooling for procedural jiggle on cartoon characters.
+- **Lane note:** Wave 4 Lane A: the original Facebook spring-physics animation library — ground truth for spring secondary motion.
+
+#### dynamics.js ✅
+- **What:** JavaScript library for physics-based animations — spring, bounce, gravity, forceWithGravity, and bezier dynamics types on DOM/SVG/plain objects with frequency/friction/bounciness parameters.
+- **URL:** https://github.com/michaelvillar/dynamics.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page README "## License — The MIT License (MIT)").
+- **Use:** spring/bounce-driven UI and 2D-puppet motion in web-based cartoon tooling — overshoot and settle on squash-stretch hits without hand-keying the settle.
+- **Lane note:** Wave 4 Lane A: pure spring/bounce/gravity tween types map directly to cartoon squash-and-stretch and overshoot.
+
+#### react-spring ✅
+- **What:** Spring-physics-first cross-platform animation library (React DOM + react-three-fiber) — declarative/interactive animations defaulting to real spring physics with stiffness/damping/tension configs.
+- **URL:** https://github.com/pmndrs/react-spring
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** spring-driven motion in React-based production tools (animatics previewers, rigging dashboards) and @react-spring/three for secondary-motion tests on 3D puppet proxies.
+- **Lane note:** Wave 4 Lane A: spring-physics-first; react-three-fiber target makes it the web-to-3D spring bridge for the pipeline.
+
+#### react-motion ✅
+- **What:** Spring-based React animation library — the original stiffness/damping `spring()` helper with `<Motion>`, `<StaggeredMotion>`, and `<TransitionMotion>` components; natural interrupted-animation handling.
+- **URL:** https://github.com/chenglou/react-motion
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** staggered spring chains on multi-part 2D puppets (limbs trailing the torso like drag/follow-through) in web animatic tooling.
+- **Lane note:** Wave 4 Lane A: react-spring's predecessor — StaggeredMotion is literally overlapping action on UI elements.
+
+#### Motion (Framer Motion) ✅
+- **What:** Modern animation library for React, JS, and Vue with a hybrid engine — springs, inertia, gestures, layout transitions, scroll-linked effects, and timelines; the renamed continuation of Framer Motion.
+- **URL:** https://github.com/motiondivision/motion
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — Motion is MIT licensed"; core library MIT — the paid Motion+ extras are separate).
+- **Use:** spring/inertia-driven motion tests for 2D puppet rigs in web tooling; gesture + timeline APIs for previz of overlapping-action beats.
+- **Lane note:** Wave 4 Lane A: the catalog already holds Remotion — this is the distinct spring/gesture twin; the spring solver lineage fits the pocket.
+
+#### Velocity.js ✅
+- **What:** Accelerated JavaScript animation engine — fast, feature-rich standalone alternative to jQuery animate, with spring/easing motion, color/unit interpolation, and UI pack presets.
+- **URL:** https://github.com/julianshapiro/velocity
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — MIT License").
+- **Use:** high-performance DOM/CSS secondary motion in web-based cartoon previz — squash-stretch punches on UI cards/titles and title-card bounce-ins.
+- **Lane note:** Wave 4 Lane A: battle-tested motion engine; the UI-pack spring presets are canned squash-and-stretch recipes.
+
+#### KUTE.js ✅
+- **What:** JavaScript animation engine (18 components) — transforms, colors, SVG stroke drawing, path morphing (svgMorph implements D3/flubber-style shape interpolation), text write-up, scroll tweening.
+- **URL:** https://github.com/thednp/kute.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** SVG path morphing = 2D squash-and-stretch on cartoon shapes — morph a limb/blob between keyframes, stroke-drawn speed lines, morphing mouth shapes driven by spring tweens.
+- **Lane note:** Wave 4 Lane A: the SVG-morph + draw-stroke components are 2D cartoon secondary motion primitives.
+
+#### Bounce.js ✅
+- **What:** Tool + JS library for generating CSS3 keyframe animations — chainable scale/rotate/translate/skew components with bounce/sway/hardbounce/hardsway easings and stiffness/bounces parameters.
+- **URL:** https://github.com/tictail/bounce.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** generate baked squash-and-stretch keyframes (splat, sway) for web cartoon overlays and title cards; the visual editor is a fast way to design cartoon impact bounces.
+- **Lane note:** Wave 4 Lane A: purpose-built cartoon bounce generator — stiffness/bounces params are literally squash-stretch knobs.
+
+<!-- end lane A wave 4 batch 1: spring/tween engines (9 entries) -->
+
+#### bezier-easing ✅
+- **What:** Tiny cubic-bezier easing implementation (CSS `transition-timing-function` equivalent) with Newton-Raphson/dichotomic fast lookup — the easing curve evaluator used by React Native, lottie-web, and Velocity.
+- **URL:** https://github.com/gre/bezier-easing
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — MIT License").
+- **Use:** evaluate custom overshoot/anticipation curves for squash-stretch tweens anywhere a tween engine needs a curve — embed the 60-line evaluator in Blender/Python tooling for cartoon timing curves.
+- **Lane note:** Wave 4 Lane A: the canonical cartoon-ease evaluator — anticipation/overshoot curves ARE squash-stretch timing.
+
+#### Vivus ✅
+- **What:** Lightweight dependency-free JS library that animates SVGs as if drawn live — stroke-dashoffset draw-on with delayed/sync/oneByOne/scenario timing modes and custom path timing functions (EASE_OUT_BOUNCE included).
+- **URL:** https://github.com/maxwellito/vivus
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** draw-on animation for cartoon title cards, speed lines, and hand-drawn FX overlays in web promos; bounce timing function gives stroke-drawn squash-and-stretch feel.
+- **Lane note:** Wave 4 Lane A: procedural stroke-draw secondary FX with a built-in bounce ease — 2D cartoon linework in motion.
+
+#### flubber ✅
+- **What:** Shape-interpolation library for smooth morphs between arbitrary 2D shapes — `interpolate`/`toCircle`/`toRect`/`separate`/`combine` return t∈[0,1] interpolators on SVG path strings or point rings; handles topology mismatches without inversion jumps.
+- **URL:** https://github.com/veltman/flubber
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "### License — MIT License").
+- **Use:** morph 2D cartoon blobs/limbs/mouths between key shapes with a spring driver on t — true 2D squash-and-stretch morphing for SVG puppet parts and impact splats.
+- **Lane note:** Wave 4 Lane A: smooth arbitrary-shape morphing is the 2D equivalent of squash-and-stretch volume preservation.
+
+#### Rough.js ✅
+- **What:** Small graphics library that renders hand-drawn, sketchy primitives (lines, curves, arcs, polygons, circles, SVG paths) on Canvas and SVG — seeded, wobbly linework generation.
+- **URL:** https://github.com/rough-stuff/rough
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field).
+- **Use:** generate wobbling "boiling line" cartoon linework — re-seed per frame for hand-drawn jitter on web-drawn FX, titles, and sketch-style puppet overlays.
+- **Lane note:** Wave 4 Lane A: seeded sketchy-line generation is procedural cartoon wobble — line boil as secondary motion.
+
+#### d3-interpolate-path ✅
+- **What:** Zero-dependency SVG `<path>` interpolator that handles mismatched point counts — extends both paths to equal point counts then lerps, with De Casteljau bezier handling and command-array API for canvas/WebGL.
+- **URL:** https://github.com/pbeshai/d3-interpolate-path
+- **License:** BSD-3-Clause (verified 2026-10-08: GitHub repo page License field).
+- **Use:** morph SVG puppet parts (arms, tails, squash blobs) between keyed path poses without topology matching; command-array API drives canvas/WebGL 2D puppet renderers.
+- **Lane note:** Wave 4 Lane A: mismatched-topology path morphing = robust 2D squash-stretch on hand-drawn parts.
+
+<!-- end lane A wave 4 batch 2: easing + shape morph (5 entries) -->
+
+#### cannon-es ✅
+- **What:** Lightweight 3D physics engine in JavaScript/TypeScript — maintained fork of cannon.js with tree-shakeable ESM/CJS builds; rigid bodies, constraints, vehicles, compound shapes, sleeping.
+- **URL:** https://github.com/pmndrs/cannon-es
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE file).
+- **Use:** bake secondary physics on 3D puppet proxies — spring-joint chains for tails/ears/capes and constraint-driven jiggle solved at bake time, then exported as animation curves.
+- **Lane note:** Wave 4 Lane A: constraint + spring joints are the procedural jiggle primitive; pmndrs maintenance makes it pipeline-trustworthy.
+
+#### Rapier ✅
+- **What:** 2D/3D physics engines for Rust (rapier2d/rapier3d, f32/f64) with C, JS/TS (WASM), Python, and Bevy bindings — SIMD-batched constraint solver, soft bodies, CCD, character controllers.
+- **URL:** https://github.com/dimforge/rapier
+- **License:** Apache-2.0 (verified 2026-10-08: GitHub repo page License field).
+- **Use:** bake ragdoll/soft-body secondary motion for cartoon characters offline (Rust or Python bindings) — jello-style squash on impacts, rope/chain constraints on costume elements.
+- **Lane note:** Wave 4 Lane A: soft-body + joint support in a permissive engine = bakeable cartoon jiggle.
+
+#### planck.js ✅
+- **What:** JavaScript/TypeScript rewrite of Box2D for cross-platform HTML5 — idiomatic JS API, readable/editable code, full 2D rigid-body feature set.
+- **URL:** https://github.com/piqnt/planck.js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + LICENSE.txt).
+- **Use:** 2D secondary motion in web tooling — distance-joint chains for hair/cape drag and revolute-joint ragdolls on 2D puppet proxies, baked to keyframes.
+- **Lane note:** Wave 4 Lane A: the JS Box2D lineage engine for joint-chain secondary motion in browser-based pipeline tools.
+
+#### matter-js ✅
+- **What:** Original-JS 2D rigid-body physics engine for the web — constraints, compound/concave bodies, sleeping, time scaling, and (notably) soft-body + cloth demos.
+- **URL:** https://github.com/liabru/matter-js
+- **License:** MIT (verified 2026-10-08: GitHub repo page License field + README "## License — The MIT License (MIT)").
+- **Use:** its cloth/soft-body constraint demos are ready-made 2D jiggle prototypes — spring-constraint capes, bellies, and bounce props baked from the sim.
+- **Lane note:** Wave 4 Lane A: shipped soft-body/cloth demos make it the fastest route to 2D cartoon jiggle.
+
+#### p2.js ❓
+- **What:** JavaScript 2D physics library by the cannon.js author — springs, advanced constraints (distance/lock/gear/prismatic), ragdoll demo, motors, friction/restitution; the spring-demo engine.
+- **URL:** https://github.com/schteppe/p2.js
+- **License:** ❓ unverified (2026-10-08: GitHub license field unasserted; LICENSE file present at repo root — confirm MIT-family terms before commercial use).
+- **Use:** spring-constraint secondary motion on 2D rigs (its Springs demo is a canned jiggle reference); ragdoll demo drives secondary impact flails.
+- **Lane note:** Wave 4 Lane A: same author's spring-first physics — the spring demo is a secondary-motion tutorial; honesty badge until LICENSE is read.
+
+#### Box2D v3 ✅
+- **What:** The 2D physics engine for games (Erin Catto), v3 rewritten in portable C17 — data-oriented, multithreaded + SIMD, CCD, joint limits/motors/springs/friction, deterministic stepping.
+- **URL:** https://github.com/erincatto/box2d
+- **License:** MIT (verified 2026-10-08: upstream README "## License — Box2D is developed by Erin Catto and uses the MIT license", corroborated by ecosyste.ms listing).
+- **Use:** bake 2D secondary motion deterministically — spring-joint costume chains and revolute-joint limb ragdolls for 2D cartoon pipelines and Godot-side baking.
+- **Lane note:** Wave 4 Lane A: deterministic MIT 2D physics with explicit spring joints — reproducible jiggle bakes.
+
+#### jbox2d ✅
+- **What:** Native Java port of Box2D (+ LiquidFun liquid particles) — rigid bodies, stable stacking, joint motors, CCD, ray casts, sensors, serialization.
+- **URL:** https://github.com/jbox2d/jbox2d
+- **License:** BSD-2-Clause (verified 2026-10-08: GitHub org jbox2d repository listing license field).
+- **Use:** Java-side baking of 2D secondary motion (joint-chain drag on costume pieces, particle splashes) for Java-based pipeline tools.
+- **Lane note:** Wave 4 Lane A: JVM-native joint/particle physics for secondary-motion bakes in Java tooling.
+
+#### dyn4j ✅
+- **What:** 100% Java 2D collision detection + physics engine — continuous collision, convex decomposition, joints, deterministic stepping; explicitly "free for use in commercial and non-commercial applications".
+- **URL:** https://github.com/dyn4j/dyn4j
+- **License:** BSD-3-Clause (verified 2026-10-08: GitHub repo page License field + README commercial-use statement).
+- **Use:** headless Java baking of secondary motion — joint-chain cape/hair sims baked to curves; deterministic enough for reproducible cartoon jiggle takes.
+- **Lane note:** Wave 4 Lane A: pure-JVM deterministic 2D physics with commercial-use language in the README.
+
+#### Oimo.js ✅
+- **What:** Lightweight 3D physics engine for JavaScript — full JS port of OimoPhysics: spheres/boxes/cylinders/particles, distance/ball-and-socket/hinge/wheel/slider/prismatic joints, Web Worker multithreading, ragdoll demo.
+- **URL:** https://github.com/lo-th/Oimo.js/
+- **License:** MIT (verified 2026-10-08: jsDelivr npm package listing "License: MIT"; code4fukui maintained-fork README "## License — MIT License — see LICENSE").
+- **Use:** quick web-side 3D jiggle tests — ragdoll demo is a secondary-motion flail reference; worker-threaded so it doesn't block tool UIs.
+- **Lane note:** Wave 4 Lane A: featherweight 3D joint physics with a ragdoll demo — instant secondary-motion sketchpad.
+
+#### ammo.js ✅
+- **What:** Direct Emscripten port of Bullet to JavaScript — identical API/functionality to Bullet (soft-body rope/cloth/volume demos included), prebuilt + self-buildable.
+- **URL:** https://github.com/kripken/ammo.js
+- **License:** zlib (verified 2026-10-08: upstream README "ammo.js is zlib licensed, just like Bullet").
+- **Use:** web-side Bullet soft-body cloth/rope/volume for cartoon jiggle — bake SoftBody-cloth capes and volume squashes, then sample to keyframes.
+- **Lane note:** Wave 4 Lane A: Bullet's soft-body cloth/volume in JS = the classic cartoon squash primitive.
+
+#### Bullet Physics ✅
+- **What:** The professional open-source collision/rigid-body/soft-body dynamics SDK (C++) — cloth, rope, and deformable volumes with two-way rigid interaction, 6DOF constraints for ragdolls, vehicle/character controllers, Python bindings.
+- **URL:** https://github.com/bulletphysics/bullet3
+- **License:** zlib (verified 2026-10-08: upstream fork README "Bullet and PyBullet are distributed under the zlib license"; Bullet 2.83 manual "free for commercial use under the ZLib license").
+- **Use:** offline bake of 3D secondary motion — soft-body cloth capes, rope hair, volume squash on impacts, constraint ragdolls; the reference engine the whole pocket descends from.
+- **Lane note:** Wave 4 Lane A: zlib soft-body cloth/rope/volume is the heavyweight cartoon-squash backend.
+
+#### Newton Dynamics ✅
+- **What:** Deterministic real-time physics engine (C++) by Julio Jerez — exact (non-iterative) solver, rigid bodies, vehicle/ragdoll support; used in Amnesia/SOMA/Mount & Blade.
+- **URL:** https://github.com/juliojerez/newton-dynamics
+- **License:** zlib (verified 2026-10-08: upstream README "License — Newton Dynamics is licensed under the zlib open source license"; Wikipedia infobox "License: zlib License").
+- **Use:** deterministic rigid-body secondary motion bakes — exact solver gives stable, reproducible joint-chain costume sims without jitter.
+- **Lane note:** Wave 4 Lane A: the deterministic-solver engine — stable secondary takes you can re-render frame-identically.
+
+<!-- end lane A wave 4 batch 3: physics engines (12 entries) -->
+
+#### MuJoCo ✅
+- **What:** Multi-Joint dynamics with Contact — DeepMind's general-purpose physics simulator (C/C++ with C API, Python bindings, Unity plugin, WASM) for articulated structures; MJCF scene language, MJX JAX branch.
+- **URL:** https://github.com/google-deepmind/mujoco
+- **License:** Apache-2.0 (verified 2026-10-08: GitHub repo page License field + README "## License and Disclaimer — Source code is licensed under the Apache License, Version 2.0").
+- **Use:** high-fidelity offline secondary motion — tendon/spring-driven hair and soft-tissue jiggle on articulated character models via Python bindings; bake to curves.
+- **Lane note:** Wave 4 Lane A: the research-grade articulated-body engine — spring/tendon secondary dynamics with Python batch baking.
+
+#### Project Chrono ✅
+- **What:** Open-source C++ multi-physics package (Wisconsin) — rigid/flexible multibody systems, deformable bodies (FEA), granular dynamics, fluid-solid interaction; Python and C# APIs.
+- **URL:** https://github.com/projectchrono/chrono
+- **License:** BSD-3-Clause (verified 2026-10-08: upstream README "Distributed under a permissive BSD license"; project FAQ "released under a BSD-3 license").
+- **Use:** deformable-body (FEA) squash on cartoon characters — compliant shells/beams for jello-style volume jiggle baked offline via the Python API.
+- **Lane note:** Wave 4 Lane A: FEA deformable bodies under BSD-3 — the continuum-mechanics route to true squash-and-stretch.
+
+#### Taichi ✅
+- **What:** Python-embedded parallel programming language (LLVM JIT → GPU/CPU) built for high-performance numerical simulation — MPM, fluids, elastic bodies, differentiable physics in a few lines of Python.
+- **URL:** https://github.com/taichi-dev/taichi
+- **License:** Apache-2.0 (verified 2026-10-08: LinuxLinks listing "License: Apache License 2.0"; AUR python-taichi "Licenses: Apache-2.0"; MIT CSAIL open-source page "Apache-2.0 license").
+- **Use:** write custom GPU cloth/soft-body/jiggle solvers in Python for cartoon secondary motion (MPM jelly, mass-spring capes) and bake the sim to animation curves.
+- **Lane note:** Wave 4 Lane A: programmable GPU physics in Python — custom squash-stretch solvers without writing CUDA.
+
+#### verlet-js ✅
+- **What:** Simple Verlet-integration physics engine in JS — particles, distance constraints, angular constraints; ships cloth and spiderweb examples from three primitives.
+- **URL:** https://github.com/subprotocol/verlet-js
+- **License:** MIT (verified 2026-10-08: upstream README "## License — You may use verlet-js under the terms of the MIT License (See LICENSE)").
+- **Use:** tiny embeddable 2D cloth/hair solver for web tooling — constraint-net capes and wobble props baked from the cloth example's primitives.
+- **Lane note:** Wave 4 Lane A: three-primitive Verlet cloth = the smallest possible jiggle backend.
+
+#### KawaiiPhysics ✅
+- **What:** Simple bone-physics plugin for Unreal Engine 4/5 — spring/constraint-driven secondary motion on bones (hair, skirts, accessories) with limits, colliders, XPBD bone constraints, and wind forces.
+- **URL:** https://github.com/pafuhana1213/kawaiiphysics
+- **License:** MIT (verified 2026-10-08: upstream README "## License — [MIT License](.../blob/master/LICENSE)").
+- **Use:** UE-side reference for secondary-motion tuning — XPBD bone constraints and collider limits show how to keep cartoon jiggle stable on fast moves.
+- **Lane note:** Wave 4 Lane A: UE's beloved open jiggle solver with XPBD constraints — the stability reference for spring bones.
+
+#### JigglePhysics ✅
+- **What:** Relativistic squash-and-stretch jigglebone physics for Unity — per-bone AND per-vertex squash/stretch, acceleration-based solve (elevators don't break it), animated-skeleton target poses, ScriptableObject configs.
+- **URL:** https://github.com/naelstrof/JigglePhysics
+- **License:** MIT (verified 2026-10-08: third-party notice "Jiggle Rig code developed by naelstrof under MIT License: https://github.com/naelstrof/JigglePhysics").
+- **Use:** study the per-vertex squash-and-stretch formulation for GPU-side secondary motion; acceleration-based solve is the fix for moving-platform jiggle bugs.
+- **Lane note:** Wave 4 Lane A: per-vertex squash-and-stretch is literally the pocket's namesake feature, MIT-licensed.
+
+#### godot-jigglebones ✅
+- **What:** Godot 4 editor addon bringing jigglebones — spring-driven secondary bones for hair/capes/props with editor tooling; the Godot-native answer to Dynamic Bone.
+- **URL:** https://github.com/yaelatletl/godot-jigglebones
+- **License:** MIT (verified 2026-10-08: upstream README "# License — MIT" + LICENSE file per DeepWiki).
+- **Use:** secondary motion on Godot character rigs — spring bones for cartoon hair/capes that can be baked or played live in Godot-based previz.
+- **Lane note:** Wave 4 Lane A: Godot's open jigglebone addon — the engine-native secondary-motion route.
+

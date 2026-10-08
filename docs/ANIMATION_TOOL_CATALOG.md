@@ -3969,3 +3969,282 @@ source of mouth-timing truth for spot-checking aligner output.
 - **Lane note:** Wave 3 Lane C: included for awareness with the honest badge; no Ubisoft code/data enters commercial paths.
 
 <!-- end lane C wave 3: audio-driven animation retiming (9 entries; 2 GPL-family rows → quarantine 104–105) -->
+
+## Depth / segmentation for 2.5D parallax
+
+Monocular depth estimation, image/video segmentation & matting, layer decomposition and multiplane-image methods — everything needed to turn flat plates into 2.5D parallax shots. [Wave 4 Lane B]
+
+### Monocular depth estimation
+
+#### ZoeDepth ✅
+- **What:** Metric depth estimation from a single image — combines relative and metric depth (MiDaS + DPT backbones) with zero-shot transfer; torch.hub one-liner inference.
+- **URL:** https://github.com/isl-org/ZoeDepth
+- **License:** MIT (verified 2026-10-08: upstream README License badge "License: MIT").
+- **Use:** depth maps from plates → multiplane layer offsets; metric scale variant calibrates parallax displacement in world units.
+- **Lane note:** Wave 4 Lane B: drop-in depth-map generator for flat-plate → 2.5D camera moves.
+
+#### Depth Anything V2 ⚠️ weight-tier caveat — verify per use
+- **What:** Foundation model for monocular depth estimation (NeurIPS 2024) — fine-grained detail, robust open-world inference, image + video inference scripts.
+- **URL:** https://github.com/DepthAnything/Depth-Anything-V2
+- **License:** Apache-2.0 for the code repo (verified 2026-10-08: GitHub repo metadata "License: Apache License 2.0 (Apache-2.0)"). **Weight tiers differ:** Small = Apache-2.0, Base/Large/Giant = CC-BY-NC-4.0 non-commercial (verified 2026-10-08: upstream README "## LICENSE — Video-Depth-Anything-Small model is under the Apache-2.0 license. Video-Depth-Anything-Base/Large model is under the CC-BY-NC-4.0 license"; multiple downstream audits confirm Small Apache-2.0 / Base+ CC-BY-NC-4.0).
+- **Use:** high-detail depth maps for hero plates (Small tier is the commercially-safe choice); metric-depth variant for world-scale parallax.
+- **Lane note:** Wave 4 Lane B: best quality-per-effort depth estimator in the pocket, but ONLY the Small tier is commercial-safe.
+
+#### Marigold ✅
+- **What:** Diffusion-based (Stable Diffusion repurposed) affine-invariant monocular depth estimation — extremely sharp depth discontinuities at object edges; also a normals variant.
+- **URL:** https://github.com/prs-eth/marigold
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "License: Apache-2.0" badge).
+- **Use:** hero-frame depth for edge-critical plates (hair, foliage, character silhouettes); slower than discriminative models — still frames, not per-frame video.
+- **Lane note:** Wave 4 Lane B: the edge-quality depth option for plates where parallax layers must cut cleanly.
+
+#### Depth Pro ⚠️ Apple custom license — verify per use
+- **What:** Apple's foundation model for zero-shot metric monocular depth (ICLR 2025) — sharp high-frequency depth, metric scale, focal-length estimation; 2.25 MP depth map in ~0.3 s on GPU. (Upstream moved to github.com/apple-aiml-research/ml-depth-pro; github.com/apple/ml-depth-pro redirects.)
+- **URL:** https://github.com/apple/ml-depth-pro
+- **License:** Apple custom terms, NOT an OSI license (verified 2026-10-08: GitHub repo metadata "License: Other (NOASSERTION)"; upstream README "## License — This sample code is released under the LICENSE terms. The model weights are released under the LICENSE terms"). Downstream audits describe it as Apple Sample Code License text — "provided for your personal, non-commercial use only" — and the HF release under Apple's own ML-research (apple-amlr) non-commercial terms. **Commercial status unresolved — verify per use.**
+- **Use:** metric depth + focal-length estimates for camera-solved parallax shots; reference quality target for the commercial-safe estimators.
+- **Lane note:** Wave 4 Lane B: included for awareness as the quality bar; keep OUT of commercial paths until Apple terms are cleared.
+
+#### MoGe ✅
+- **What:** Microsoft's monocular geometry estimator (CVPR'25 Oral) — metric point maps, metric depth, surface normals, validity masks and camera FOV from a single open-domain image (v2 adds sharp detail + metric scale).
+- **URL:** https://github.com/microsoft/moge
+- **License:** MIT (verified 2026-10-08: upstream README "## License — MoGe code is released under the MIT license"; vendored DINOv2 code is Meta Apache-2.0).
+- **Use:** point-map + normal outputs feed mesh-warp / proxy-geometry parallax (not just depth planes); normals drive relighting on displaced layers.
+- **Lane note:** Wave 4 Lane B: the geometry-complete estimator — depth + normals + point maps for true 2.5D camera projection.
+
+#### DPT ✅
+- **What:** Dense Prediction Transformers (Ranftl et al., ICCV 2021) — ViT backbone + convolutional decoder for dense prediction; the architecture behind MiDaS v3 monocular depth and many segmentation heads.
+- **URL:** https://github.com/isl-org/DPT
+- **License:** MIT (verified 2026-10-08: upstream README "### License — MIT License"; third-party THIRD_PARTY_NOTICES confirm).
+- **Use:** baseline depth backbone for the parallax pipeline; also the reference dense-prediction architecture when training custom depth heads.
+- **Lane note:** Wave 4 Lane B: the classic dense-prediction baseline everything else is compared against.
+
+#### PatchFusion ✅
+- **What:** End-to-end tile-based framework for HIGH-RESOLUTION monocular metric depth — runs a base depth model (ZoeDepth / Depth-Anything) on tiles and fuses them, keeping detail at 2K+ plate resolutions.
+- **URL:** https://github.com/zhyever/PatchFusion
+- **License:** MIT (verified 2026-10-08: upstream README "License: MIT" badge).
+- **Use:** sharp depth maps for high-res background plates where single-pass estimators smear fine detail (architecture, foliage, crowd plates).
+- **Lane note:** Wave 4 Lane B: the hi-res-plate depth option — tile fusion keeps parallax layers crisp at 2K+.
+
+#### Video Depth Anything ⚠️ weight-tier caveat — verify per use
+- **What:** Consistent depth estimation for super-long videos (CVPR 2025 Highlight) — sliding-window diffusion/transformer hybrid that kills per-frame depth flicker on clips of 5+ minutes.
+- **URL:** https://github.com/DepthAnything/Video-Depth-Anything
+- **License:** Apache-2.0 code; weights split by tier (verified 2026-10-08: upstream README "## LICENSE — Video-Depth-Anything-Small model is under the Apache-2.0 license. Video-Depth-Anything-Base/Large model is under the CC-BY-NC-4.0 license. For business cooperation, please send an email to Hengkai Guo"). Small tier only is commercial-safe.
+- **Use:** temporally stable depth for moving-plate parallax shots and depth-driven camera moves — the no-flicker requirement for video plates.
+- **Lane note:** Wave 4 Lane B: the video-depth backbone; Small tier keeps it commercial-safe.
+
+<!-- end lane B wave 4 batch 1: monocular depth (8 entries) -->
+
+#### DepthCrafter ⚠️ non-commercial — research/academic only
+- **What:** Diffusion-based video depth — generates temporally consistent long depth sequences for open-world videos (CVPR 2025 Highlight) by jointly denoising a whole frame window.
+- **URL:** https://github.com/Tencent/DepthCrafter
+- **License:** Tencent custom non-commercial license (verified 2026-10-08: upstream LICENSE quoted — "You agree to use the DepthCrafter only for academic, research and education purposes, and refrain from using it for any commercial or production purposes under any circumstances."). Also built on Stable Video Diffusion XT (Stability AI Non-Commercial Community License). **Verify per use; no commercial/production use.**
+- **Use:** the quality reference for flicker-free video depth on moving plates; informs what the commercial-safe video-depth stack (VDA-Small) must beat.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; no Tencent code/weights enter commercial paths.
+
+#### ChronoDepth ✅
+- **What:** Temporally consistent video depth from video diffusion priors (CVPR 2025) — sliding-window diffusion inference over clips; MIT-licensed research code.
+- **URL:** https://github.com/jiahao-shao1/ChronoDepth
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)"). Caveat: the default inference config pulls `stabilityai/stable-video-diffusion-img2vid-xt` (Stability AI Non-Commercial Community License) — swap the base before any commercial use.
+- **Use:** research baseline for diffusion-consistent video depth; technique reference for stabilizing depth across parallax shot frames.
+- **Lane note:** Wave 4 Lane B: the MIT research reference for how diffusion priors kill depth flicker.
+
+#### DistDepth ⚠️ non-commercial — CC-BY-NC
+- **What:** Distilled monocular indoor depth (CVPR 2022) — distills a DPT "expert" into a practical indoor depth model; ships depth-aware AR demo effects (virtual object insertion, object dragging).
+- **URL:** https://github.com/ennioennio/distdepth
+- **License:** CC-BY-NC (verified 2026-10-08: upstream README "## License — DistDepth is CC-BY-NC licensed, as found in the LICENSE file"). **Non-commercial only.**
+- **Use:** indoor-plate depth reference; AR insertion demos as a preview technique for placing parallax cutouts.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; indoor-depth distillation technique reference.
+
+#### LeReS ⚠️ non-commercial — Adobe Research license
+- **What:** Learning to Recover 3D Scene Shape from a single image (CVPR 2021) — affine-invariant depth + point-cloud reconstruction; part of the AdelaiDepth toolbox.
+- **URL:** https://github.com/aim-uofa/AdelaiDepth/
+- **License:** non-commercial license from Adobe Research (verified 2026-10-08: upstream LeReS README "## License — This project is under a non-commercial license from Adobe Research. See the LICENSE file for details."). Other AdelaiDepth projects are 2-clause BSD non-commercial. **Verify per use.**
+- **Use:** scene-shape reconstruction reference for single-image 3D; technique reference for point-cloud-backed parallax.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; Adobe NC terms block commercial use.
+
+#### CREStereo ✅
+- **What:** Practical stereo matching via cascaded recurrent network with adaptive correlation (CVPR 2022, Megvii) — robust real-world stereo depth from image pairs.
+- **URL:** https://github.com/megvii-research/CREStereo
+- **License:** Apache-2.0 (verified 2026-10-08: downstream README license audit — "[RAFT-Stereo](https://github.com/princeton-vl/RAFT-Stereo) is licensed under the MIT license, [LoFTR](https://github.com/zju3dv/LoFTR) and [CREStereo](https://github.com/megvii-research/CREStereo) are licensed under the Apache 2.0 license").
+- **Use:** stereo-pair depth for dual-camera plates; fallback depth source when monocular estimators disagree.
+- **Lane note:** Wave 4 Lane B: the permissive stereo-depth option alongside RAFT-Stereo.
+
+#### RAFT-Stereo ✅
+- **What:** Recurrent All-Pairs Field Transforms for stereo matching (Princeton) — iterative disparity refinement from all-pairs correlations; strong cross-dataset generalization.
+- **URL:** https://github.com/princeton-vl/RAFT-Stereo
+- **License:** MIT (verified 2026-10-08: third-party build metadata — "Target license: MIT (declared in `princeton-vl/RAFT-Stereo`)"; downstream READMEs concur).
+- **Use:** stereo depth from plate pairs for true-baseline parallax; calibration target for monocular depth scale.
+- **Lane note:** Wave 4 Lane B: the MIT stereo baseline — real baseline beats monocular guessing for two-view plates.
+
+#### IGEV-Stereo ✅
+- **What:** Iterative Geometry Encoding Volume for stereo matching (CVPR 2023 / TPAMI 2025) — combined geometry+context cost volume with ConvGRU updates; #1 on KITTI 2015/2012 reflective; faster than RAFT-Stereo; includes IGEV-MVS for multi-view.
+- **URL:** https://github.com/gangweiX/IGEV
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)").
+- **Use:** high-accuracy stereo disparity for multi-view parallax plates; the stereo upgrade path from RAFT-Stereo.
+- **Lane note:** Wave 4 Lane B: the accurate-and-fast MIT stereo matcher for multi-view 2.5D.
+
+#### UniDepth ⚠️ non-commercial — CC-BY-NC 4.0
+- **What:** Universal monocular metric depth (CVPR 2024 + V2 2025, ETH Zürich) — metric depth in meters + camera intrinsics + per-pixel 3D point map + confidence from one RGB image, no camera metadata needed.
+- **URL:** https://github.com/lpiccinelli-eth/UniDepth
+- **License:** CC-BY-NC 4.0 (verified 2026-10-08: downstream license audits — "Upstream code (lpiccinelli-eth/UniDepth) | CC BY-NC 4.0 — non-commercial"; "The License of the models is Attribution-NonCommercial 4.0 International"). **Non-commercial only.**
+- **Use:** intrinsics-free metric reconstruction reference; technique reference for camera-solved parallax.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; MoGe is the commercial-safe alternative.
+
+<!-- end lane B wave 4 batch 2: stereo + NC depth (8 entries) -->
+
+### Segmentation / matting for layer cutting
+
+#### HQ-SAM ✅
+- **What:** Segment Anything in High Quality (NeurIPS 2023) — adds an HQ output token to SAM/SAM2 decoders for sharper boundary detail; v2 tracks the SAM 2.1 Hiera-Large backbone.
+- **URL:** https://github.com/SysCV/sam-hq
+- **License:** Apache-2.0 (verified 2026-10-08: upstream sam-hq2 README "## License — The HQ-SAM 2, SAM 2 model checkpoints, SAM 2 demo code (front-end and back-end), and SAM 2 training code are licensed under Apache 2.0").
+- **Use:** boundary-crisp masks for cutting parallax layers — hair, fingers, torn edges where plain SAM bleeds.
+- **Lane note:** Wave 4 Lane B: the edge-quality upgrade over SAM2 for layer cutout masks.
+
+#### MobileSAM ✅
+- **What:** Lightweight SAM — replaces the 632M ViT-H encoder with a 5M TinyViT; ~12 ms/image on a single GPU, same prompt pipeline as SAM.
+- **URL:** https://github.com/ChaoningZhang/MobileSAM
+- **License:** Apache-2.0 (verified 2026-10-08: upstream app README frontmatter "license: apache-2.0" + "## License — The model is licensed under the Apache 2.0 license"; multiple downstream license audits concur).
+- **Use:** interactive mask cutting in the plate-prep tool — click/box prompts at near-interactive speed on modest GPUs.
+- **Lane note:** Wave 4 Lane B: the fast promptable cutter for interactive parallax-layer authoring.
+
+#### FastSAM ⚠️ license-lineage risk — verify per use
+- **What:** Fast Segment Anything — YOLOv8-seg-based one-pass segment-everything; real-time instance masks without the SAM two-stage pipeline.
+- **URL:** https://github.com/CASIA-IVA-Lab/FastSAM
+- **License:** upstream README claims Apache-2.0 (verified 2026-10-08: "## License — The model is licensed under the [Apache 2.0 license](LICENSE)"), BUT the model is built on YOLOv8 code/weights which are AGPL-3.0 (Ultralytics) — downstream license audits flag the AGPL lineage explicitly ("Note the AGPL-3.0 license (Ultralytics YOLOv8 lineage)"). **Do not treat as commercial-safe without a legal read.**
+- **Use:** fastest segment-everything pass for auto-layering whole plates; technique reference for real-time mask generation.
+- **Lane note:** Wave 4 Lane B: included with the honest badge — speed is real, the license lineage is not clean.
+
+#### EdgeSAM ⚠️ non-commercial — NTU S-Lab License 1.0
+- **What:** Prompt-in-the-loop distilled SAM for on-device deployment — RepViT backbone, CoreML/iOS demo app; distilled from SAM with prompt-aware training.
+- **URL:** https://github.com/chongzhou96/EdgeSAM
+- **License:** NTU S-Lab License 1.0 (verified 2026-10-08: upstream README "## License — This project is licensed under NTU S-Lab License 1.0. Redistribution and use should follow this license"). S-Lab 1.0 is strictly non-commercial. **Verify per use.**
+- **Use:** on-device mask cutting reference; distillation technique for shrinking SAM-family models into the editor.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; MobileSAM is the commercial-safe lightweight pick.
+
+#### Grounding DINO ✅
+- **What:** Open-set object detection marrying DINO with grounded pre-training (ECCV 2024) — text prompts ("person", "wrestling ring") produce boxes; the standard text→box front end for Grounded-SAM pipelines.
+- **URL:** https://github.com/IDEA-Research/GroundingDINO
+- **License:** Apache-2.0 (verified 2026-10-08: upstream maintainer answer — "Our license is Apache 2.0, which allows you to use our model weights and project within the scope of the license"; ecosyste.ms metadata "License apache-2.0").
+- **Use:** text-prompted detection → SAM/HQ-SAM mask → clean character cutouts; "find the wrestler" automation for plate layering.
+- **Lane note:** Wave 4 Lane B: the text-prompt half of the Grounded-SAM layer-cutting pipeline.
+
+#### OWL-ViT ✅
+- **What:** Google's open-vocabulary object detection (ECCV 2022, v2 NeurIPS 2023) — CLIP-backed text-prompted detection; code AND checkpoints Apache-2.0.
+- **URL:** https://github.com/google-research/scenic
+- **License:** Apache-2.0 (verified 2026-10-08: upstream scenic `projects/owl_vit` README "## License — Both the code and the model checkpoints are licensed under the Apache 2.0 license").
+- **Use:** alternative text-prompted detector for plate element discovery; runs in HF transformers for easy pipeline integration.
+- **Lane note:** Wave 4 Lane B: the Google open-vocab detector — fully commercial-clean, weights included.
+
+#### Mask2Former ✅
+- **What:** Masked-attention mask transformer for universal image segmentation (CVPR 2022) — one architecture for semantic, instance and panoptic segmentation; strong ADE20K/Cityscapes/COCO models.
+- **URL:** https://github.com/facebookresearch/Mask2Former
+- **License:** MIT (verified 2026-10-08: upstream README "## License — The majority of Mask2Former is licensed under a MIT License"; portions Swin MIT / Deformable-DETR Apache-2.0).
+- **Use:** dense semantic masks for automatic plate decomposition (sky/water/person/vehicle classes → parallax planes); panoptic masks for crowd plates.
+- **Lane note:** Wave 4 Lane B: the commercial-safe universal segmenter for auto-layering plates by class.
+
+#### OneFormer ✅
+- **What:** One transformer for universal image segmentation (CVPR 2023) — single model, single training run, task-token conditioned across semantic/instance/panoptic.
+- **URL:** https://github.com/SHI-Labs/OneFormer
+- **License:** MIT (verified 2026-10-08: upstream README "License: MIT" badge; ecosyste.ms metadata "License: mit").
+- **Use:** single-model universal segmentation for plate analysis; task-token switches between class masks and instance cutouts.
+- **Lane note:** Wave 4 Lane B: the one-model universal segmenter — fewer checkpoints to manage in the plate pipeline.
+
+<!-- end lane B wave 4 batch 3: segmentation part 1 (8 entries) -->
+
+#### SegFormer ⚠️ non-commercial — NVIDIA Source Code License
+- **What:** Simple and efficient semantic segmentation with Mix Transformer encoders (NeurIPS 2021, NVIDIA) — B0–B5 family; the classic fast semantic segmenter.
+- **URL:** https://github.com/NVlabs/SegFormer
+- **License:** NVIDIA Source Code License, non-commercial (verified 2026-10-08: upstream README "## License — Please check the LICENSE file. SegFormer may be used non-commercially, meaning for research or evaluation purposes only"). **Non-commercial only.**
+- **Use:** lightweight semantic masks for quick plate analysis; reference for replacing with Mask2Former/OneFormer in commercial paths.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge; HF transformers re-implementation (Apache-2.0) exists but NVIDIA weights stay NC.
+
+#### MODNet ✅
+- **What:** Real-time trimap-free portrait matting via objective decomposition (AAAI 2022) — semantic + detail + fusion heads with self-supervised consistency; 67 FPS at 512×512.
+- **URL:** https://github.com/ZHKKKe/MODNet
+- **License:** Apache-2.0 (verified 2026-10-08: upstream README "## License — The code, models, and demos in this repository (excluding GIF files under the folder doc/gif) are released under the Apache License 2.0 license").
+- **Use:** real-time alpha mattes for human subjects in parallax shots — foreground character cutout without a trimap; also ships an official ONNX export script.
+- **Lane note:** Wave 4 Lane B: the real-time human matting workhorse for character-layer extraction.
+
+#### P3M ⚠️ verify per use — code license unstated
+- **What:** Privacy-preserving portrait matting (ACM MM 2021) — multi-task dense prediction on the P3M-10k face-blurred dataset; strong on real-world portraits.
+- **URL:** https://github.com/JizhiziLi/P3M
+- **License:** dataset P3M-10k released under MIT per its dataset release agreement (downstream citations also record "MIT"; one analysis notes CC BY 4.0 with attribution for the dataset). **No explicit license statement found for the code itself — verify per use.**
+- **Use:** portrait-matte quality reference trained on face-blurred real photos; privacy-safe training-data pattern for custom matting models.
+- **Lane note:** Wave 4 Lane B: included with the honest badge — dataset terms are permissive, code terms need a direct read.
+
+#### DINOv2 ✅
+- **What:** Meta's self-supervised vision foundation model — rich dense features from ViT-S/B/L/g; the feature backbone behind depth, matching and segmentation adapters.
+- **URL:** https://github.com/facebookresearch/dinov2
+- **License:** Apache-2.0 (verified 2026-10-08: multiple downstream THIRD_PARTY_LICENSES — "DINOv2 is Apache-2.0 licensed"; upstream MODEL_CARD + LICENSE).
+- **Use:** feature backbone for mask refinement and correspondence between parallax layers; frozen features for plate element retrieval/matching.
+- **Lane note:** Wave 4 Lane B: the universal feature extractor the rest of the stack fine-tunes on.
+
+#### SimpleClick ✅
+- **What:** Interactive image segmentation with plain Vision Transformers (ICCV 2023) — click-based mask refinement; plain-ViT backends load MAE-pretrained weights.
+- **URL:** https://github.com/uncbiag/SimpleClick
+- **License:** MIT (verified 2026-10-08: upstream README "## License — The code is released under the MIT License"; downstream vendoring notices concur).
+- **Use:** human-in-the-loop mask correction in the plate editor — click to fix layer boundaries SAM missed.
+- **Lane note:** Wave 4 Lane B: the MIT click-to-fix tool for interactive layer cleanup.
+
+#### TRACER ✅
+- **What:** Extreme attention-guided salient object tracing network — edge-sharp salient object detection with FFT-based masked edge attention; SOTA on 5 SOD benchmarks.
+- **URL:** https://github.com/Karel911/TRACER
+- **License:** Apache-2.0 (verified 2026-10-08: downstream license audit — "TRACER is licensed under Apache License 2.0"; arXiv paper links the repo as the release).
+- **Use:** salient-object masks as the first auto-cut pass on plates; edge-attention gives cleaner layer boundaries than plain saliency.
+- **Lane note:** Wave 4 Lane B: the permissive salient-object cutter for fast foreground/background splits.
+
+#### CLIPSeg ✅
+- **What:** Image segmentation using text AND image prompts (CVPR 2022) — CLIP-conditioned decoder; "a photo of a wrestler" → mask without class training.
+- **URL:** https://github.com/timojl/clipseg
+- **License:** MIT for source code excluding model weights (verified 2026-10-08: upstream README "### License — The source code files in this repository (excluding model weights) are released under MIT license").
+- **Use:** text-prompted masks for named plate elements ("crowd", "ring ropes", "turnbuckle"); lightweight alternative to Grounded-SAM for simple prompts.
+- **Lane note:** Wave 4 Lane B: the MIT text-to-mask tool — code is clean, check weight terms separately.
+
+<!-- end lane B wave 4 batch 4: segmentation part 2 (7 entries) -->
+
+### Layer decomposition / multiplane image (MPI) / 2.5D synthesis
+
+#### AdaMPI ⚠️ non-commercial — research only
+- **What:** Single-view view synthesis in the wild with learned Adaptive Multiplane Images (SIGGRAPH 2022) — predicts an adaptive MPI from one in-the-wild image; includes the warp-back self-supervision strategy for training on single-view collections.
+- **URL:** https://github.com/yxuhan/AdaMPI
+- **License:** custom non-commercial (verified 2026-10-08: upstream README "## License and Citation — This repository can only be used for personal/research/non-commercial purposes."). **Non-commercial only.**
+- **Use:** the canonical MPI reference for single-image → 3D-photo parallax; warp-back training strategy is reusable technique knowledge.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge — the MPI method everything is compared against, NC terms block shipping.
+
+#### 3D Ken Burns ⚠️ non-commercial — CC BY-NC-SA 4.0
+- **What:** 3D Ken Burns effect from a single image (TOG 2019, Adobe Research) — depth → point cloud → inpainted novel views along a camera path; the original automatic 2.5D camera-move system.
+- **URL:** https://github.com/sniklaus/3d-ken-burns
+- **License:** CC BY-NC-SA 4.0 (verified 2026-10-08: upstream README "## license — This is a project by Adobe Research. It is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0) and may only be used for non-commercial purposes."). **Non-commercial only.**
+- **Use:** reference implementation of the full single-image → camera-move pipeline; camera-path design patterns are reusable.
+- **Lane note:** Wave 4 Lane B: included for awareness with the honest badge — the granddaddy of automatic parallax moves, NC terms block shipping.
+
+#### 3D Photo Inpainting ✅
+- **What:** 3D photography using context-aware layered depth inpainting (CVPR 2020) — depth → layered depth images (LDI) with color+depth inpainting of occluded regions → mesh for novel-view rendering.
+- **URL:** https://github.com/vt-vl-lab/3d-photo-inpainting/
+- **License:** MIT (verified 2026-10-08: upstream README "## License — This work is licensed under MIT License. See LICENSE for details"; LICENSE file is MIT text). Caveat: builds on EdgeConnect (CC-BY-NC per downstream ports) — verify bundled components before shipping.
+- **Use:** layered-depth-image parallax with inpainted occlusions — the commercial-safe single-image 3D-photo pipeline; LDI is the natural layer format for the editor.
+- **Lane note:** Wave 4 Lane B: the MIT-licensed 3D-photo pipeline — depth → LDI → inpaint → mesh, directly shippable with the EdgeConnect caveat checked.
+
+#### OmnimatteRF ✅
+- **What:** Robust omnimatte with 3D background modeling (ICCV 2023) — decomposes a video into dynamic 2D foreground RGBA layers + a static 3D (TensoRF) background; successor to Omnimatte.
+- **URL:** https://github.com/peterzs/omnimatterf
+- **License:** MIT (verified 2026-10-08: upstream README "## Acknowledgements — The code is available under the MIT license").
+- **Use:** video-plate decomposition into foreground layers + clean background plate — the source layers for video parallax shots and background replacement.
+- **Lane note:** Wave 4 Lane B: the MIT video layer-decomposer — foreground/background split as editable layers.
+
+#### One Shot 3D Photography ✅
+- **What:** Facebook's one-shot 3D photography (SIGGRAPH 2020) — single image → depth → layered mesh for real-time 3D photos; the production version of the Facebook 3D-photo feature.
+- **URL:** https://github.com/shishenghuang/one_shot_3d_photography
+- **License:** MIT (verified 2026-10-08: upstream README "## License — This work is licensed under MIT License. See LICENSE for details").
+- **Use:** real-time single-image 3D-photo meshes; the shipping-proven path from plate to view-dependent parallax.
+- **Lane note:** Wave 4 Lane B: the production-proven MIT 3D-photo code — Facebook's own shipping pipeline.
+
+#### Layered Neural Atlases ✅
+- **What:** Layered neural atlases for consistent video editing (SIGGRAPH Asia 2021) — unwraps a video into layered 2D atlases (foreground/background) via end-to-end optimization; edits painted once propagate consistently across frames.
+- **URL:** https://github.com/ykasten/layered-neural-atlases
+- **License:** MIT (verified 2026-10-08: GitHub repo metadata "License: MIT License (MIT)").
+- **Use:** consistent layered decomposition of video plates — edit the atlas once (repaint, relight, replace) and it holds across the whole parallax shot.
+- **Lane note:** Wave 4 Lane B: the MIT atlas representation — video → editable layers with temporal consistency built in.
+
+<!-- end lane B wave 4: 2.5D parallax (37 entries; 4 GPL-family rows → quarantine 167-170) -->

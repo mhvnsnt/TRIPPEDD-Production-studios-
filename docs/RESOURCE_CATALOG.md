@@ -48646,3 +48646,1064 @@ Lane C wired 2 permissive-licensed audio tools with real proofs, extending the W
 - License corrections logged: superkabuki/threefive 404 → canonical is superkabuki/threefive_is_scte35 (GPL-2.0); FITS canonical org is fitstool (not harvard-lts); DROID canonical repo is digital-preservation/droid (nationalarchives/droid and TheNationalArchives/droid both 404); LiVES canonical is salsaman/lives; noaa-apt canonical is martinber/noaa-apt (a1ecbr0wn/noaa-apt 404); MCEBuddy2x/MCEBuddy 404 (project closed-source now); honestlocksmith/dsame is the ISC upstream of cataloged cuppa-joe/dsame; SoapyRTLSDR is MIT but links GPL-2.0 rtl-sdr driver (deployment caveat noted); rsync external-binary vs librsync-linking boundary noted
 - Coordinator flags (not fixed — lane boundary): prior waves marked LosslessCut/Avidemux/StaxRip ✅ commercial-safe despite GPL-family licenses (rows predate this lane); MediaConch row 151 delisted but upstream now reads GPLv3+/MPLv2+ (Wave 52 note stands — re-verification still open)
 - Zero post-hoc duplicates: every candidate pre-grepped (title + URL) against the full catalog and quarantine manifest before appending
+
+### Wave 54 Lane A — Pocket 1: PD radio-drama round 3 — per-show per-season deep dives (37)
+
+Per-year / per-season / per-era Archive.org items for shows cataloged in earlier waves. Every item verified this pass via the Archive.org advancedsearch API (`q=identifier:<id>`, numFound=1) plus the metadata API (HTTP 200, title match, audio-file count recorded). OTRR singles items carry a CC BY-NC-ND 4.0 tag in item-level metadata (the uploader's transfer packaging); the underlying pre-1978 US radio broadcasts are treated as public domain per the OTR non-renewal basis used in earlier waves — the tag is noted per entry, never hidden.
+
+#### Suspense (OTR) — 1942 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1942": all surviving 1942 Suspense broadcasts (15 audio files), the show's debut year.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1942
+- **License:** ✅ Public domain (underlying 1942 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title "Suspense - Single Episodes - 1942", 15 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level metadata carries a CC BY-NC-ND 4.0 tag from the OTRR uploader (transfer packaging, not the broadcast copyright). Cross-check episode dates against the Haendiges logs. [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1943 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1943": 46 audio files from Suspense's first full season.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1943
+- **License:** ✅ Public domain (underlying 1943 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 46 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). Includes the famous "Sorry, Wrong Number" era broadcasts — verify dates via Haendiges logs. [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1944 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1944": 51 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1944
+- **License:** ✅ Public domain (underlying 1944 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 51 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1945 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1945": 98 audio files, the largest single-year Suspense set.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1945
+- **License:** ✅ Public domain (underlying 1945 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 98 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1946 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1946": 50 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1946
+- **License:** ✅ Public domain (underlying 1946 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 50 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1947 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1947": 48 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1947
+- **License:** ✅ Public domain (underlying 1947 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 48 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1948 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1948": 42 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1948
+- **License:** ✅ Public domain (underlying 1948 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 42 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1949 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1949": 44 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1949
+- **License:** ✅ Public domain (underlying 1949 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 44 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The only Suspense year-item with NO licenseurl in item metadata — cleanest of the set. [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1950 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1950": 42 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1950
+- **License:** ✅ Public domain (underlying 1950 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 42 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1951 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1951": 78 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1951
+- **License:** ✅ Public domain (underlying 1951 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 78 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1952 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1952": 38 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1952
+- **License:** ✅ Public domain (underlying 1952 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 38 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1953 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1953": 39 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1953
+- **License:** ✅ Public domain (underlying 1953 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 39 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1954 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1954": 46 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1954
+- **License:** ✅ Public domain (underlying 1954 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 46 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1955 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1955": 50 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1955
+- **License:** ✅ Public domain (underlying 1955 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 50 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1956 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1956": 46 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1956
+- **License:** ✅ Public domain (underlying 1956 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 46 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1957 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1957": 51 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1957
+- **License:** ✅ Public domain (underlying 1957 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 51 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1958 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1958": 52 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1958
+- **License:** ✅ Public domain (underlying 1958 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 52 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1959 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1959": 50 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1959
+- **License:** ✅ Public domain (underlying 1959 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 50 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1960 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1960": 48 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1960
+- **License:** ✅ Public domain (underlying 1960 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 48 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1961 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1961": 25 audio files.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1961
+- **License:** ✅ Public domain (underlying 1961 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 25 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). [Wave 54 Lane A]
+
+#### Suspense (OTR) — 1962 season ✅ PD
+- **What:** OTRR certified "Suspense — Single Episodes — 1962": 39 audio files, the show's final year.
+- **URL:** https://archive.org/details/OTRR_Suspense_Singles_By_Year_1962
+- **License:** ✅ Public domain (underlying 1962 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 39 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Item-level CC BY-NC-ND 4.0 uploader tag noted (see 1942 entry). Completes the 21-year per-year Suspense run (1942–1962). [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 1 (1937–38) ⚠️ rights-caution
+- **What:** "The Shadow Season 01 (9-26-37 to 3-20-38)": 38 audio files — the first full Orson Welles season.
+- **URL:** https://archive.org/details/the_shadow_season_01_9-26-37_to_3-20-38
+- **License:** ⚠️ Rights-caution — inherits the show-level caution on The Shadow (character/rights encumbrance); item metadata carries no license grant (verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 38 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only until rights position is cleared — same caution as the cataloged "The Shadow (OTR)" show entry. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 2 (1938–39) ⚠️ rights-caution
+- **What:** "The Shadow Season 02 (9-25-38 to 3-19-39)": 52 audio files — Welles's second season.
+- **URL:** https://archive.org/details/the_shadow_season_02_9-25-38to3-19-39
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 52 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 5 (1941–42) ⚠️ rights-caution
+- **What:** "The Shadow Season 05 (9-28-41 to 3-22-42)": 34 audio files — the Bill Johnstone era.
+- **URL:** https://archive.org/details/the_shadow_season_05_9-28-41_to_3-22-42
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 34 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 10 (1946–47) ⚠️ rights-caution
+- **What:** "The Shadow Season 10 (9-8-46 to 6-8-47)": 38 audio files — the Bret Morrison era.
+- **URL:** https://archive.org/details/the_shadow_season10_9-8-46_to_6-8-47
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 38 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 12 (1948–49) ⚠️ rights-caution
+- **What:** "The Shadow Season 12 (9-12-48 to 6-5-49)": 36 audio files.
+- **URL:** https://archive.org/details/the_shadow_season12_9-12-48_to_6-5-49
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 36 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 17 (1953–54) ⚠️ rights-caution
+- **What:** "The Shadow Season 17 (9-6-53 to 7-25-54)": 16 audio files — the show's final season.
+- **URL:** https://archive.org/details/season_17_9-6-53_to_7-25-54
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title "The Shadow Season 17 (9-6-53 to 7-25-54)", 16 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. Identifier lacks the "the_shadow" prefix (uploader naming) — URL verified character-for-character via advancedsearch. [Wave 54 Lane A]
+
+#### The Jack Benny Program (OTR) — 1952–1953 era ✅ PD
+- **What:** OTRR "Jack Benny — Single Episodes — 1952-1953": 78 audio files from the show's late-radio peak.
+- **URL:** https://archive.org/details/OTRR_Jack_Benny_Singles_1952-1953
+- **License:** ✅ Public domain (underlying 1952–53 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 78 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Era deep-dive for the cataloged "The Jack Benny Program (OTR)" show entry — per-era rather than whole-run. [Wave 54 Lane A]
+
+#### The Jack Benny Program (OTR) — guest-star appearances ✅ PD
+- **What:** OTRR "Jack Benny — Single Episodes — As A Guest Star 1": 104 audio files of Benny guest appearances on other shows.
+- **URL:** https://archive.org/details/OTRR_Jack_Benny_Singles_GuestStar_01
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title "Jack Benny - Single Episodes - As A Guest Star 1", 104 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cross-show collection — useful for voice/provenance work across programs. Per-episode rights vary by host show; treat as reference. [Wave 54 Lane A]
+
+#### Yours Truly, Johnny Dollar (OTR) — Robert Readick era ✅ PD
+- **What:** OTRR "Yours Truly, Johnny Dollar — Single Episodes — Robert Readick": 21 audio files from Readick's 1949 run as Dollar.
+- **URL:** https://archive.org/details/OTRR_YoursTrulyJohnnyDollar_Singles_Robert_Readick
+- **License:** ✅ Public domain (underlying 1949 US radio broadcasts; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match, 21 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Per-actor-era deep dive for the cataloged Johnny Dollar show entry. Item-level CC BY-NC-ND 4.0 uploader tag noted (same OTRR packaging as the Suspense set). [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 3 (1939–40) ⚠️ rights-caution
+- **What:** "The Shadow Season 03 (9-17-39 to 4-7-40)": 72 audio files — the first full Bill Johnstone season.
+- **URL:** https://archive.org/details/the_shadow_season_03_9-17-39_to_4-7-40
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch hit, metadata API HTTP 200, title match, 72 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 4 (1940–41) ⚠️ rights-caution
+- **What:** "The Shadow Season 04 (9-29-40 to 4-20-41)": 89 audio files.
+- **URL:** https://archive.org/details/the_shadow_season_04_9-29-40_to_4-20-41
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch hit, metadata API HTTP 200, title match, 89 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 6 (1942–43) ⚠️ rights-caution
+- **What:** "The Shadow Season 06 (9-27-42 to 3-21-43)": 17 audio files.
+- **URL:** https://archive.org/details/the_shadow_season_06_9-27-42_to-3-21-43
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch hit, metadata API HTTP 200, title match, 17 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 7 (1943–44) ⚠️ rights-caution
+- **What:** "The Shadow Season 07 (9-26-43 to 4-16-44)": 18 audio files.
+- **URL:** https://archive.org/details/the_shadow_season_07_9-26-43_to_4-16-44
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch hit, metadata API HTTP 200, title match, 18 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 8 (1944–45) ⚠️ rights-caution
+- **What:** "The Shadow Season 08 (9-24-44 to 4-15-45)": 20 audio files.
+- **URL:** https://archive.org/details/the_shadow_season_08_9-24-44_to_4-15-45
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch hit, metadata API HTTP 200, title match, 20 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — Season 11 (1947–48) ⚠️ rights-caution
+- **What:** "The Shadow Season 11 (9-7-47 to 5-30-48)": 89 audio files.
+- **URL:** https://archive.org/details/the_shadow_season_11_9-7-47_to_5-30-48
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch hit, metadata API HTTP 200, title match, 89 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. [Wave 54 Lane A]
+
+#### The Shadow (OTR) — B.F. Goodrich Summer Season (1938) ⚠️ rights-caution
+- **What:** 'The Shadow "B.F. Goodrich Summer Season (3-27-38 to 9-18-38)': 77 audio files — the sponsored summer replacement run between seasons 1 and 2.
+- **URL:** https://archive.org/details/the_shadow_b.f._goodrich_summerseason_3-27-38_to_9-18-38
+- **License:** ⚠️ Rights-caution — inherits the show-level caution (verified 2026-10-08: advancedsearch hit, metadata API HTTP 200, title match, 77 audio files)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/reference only — see Season 1 note. Identifier contains periods (uploader naming) — URL verified character-for-character via advancedsearch. [Wave 54 Lane A]
+
+### Wave 54 Lane A — Pocket 2: retro sound-chip emulator docs round 2 (27)
+
+Sound-chip datasheets, manufacturer manuals, and console dev docs. Every Archive.org item verified this pass via the advancedsearch API (numFound=1) plus the metadata API (HTTP 200, title match, PDF filenames confirmed in item file lists). None carries a license grant in item metadata — badge ⚠️ manufacturer-doc scan, consistent with the cataloged bitsavers.org ⚠️ entry and Wave 47 precedent. Documentation-use only, not redistribution stock.
+
+#### Yamaha YMF262/OPL3 datasheet (1994) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YMF262 (OPL3) datasheet, November 1994 — the FM chip behind Sound Blaster Pro/16 cards and thousands of DOS game soundtracks.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMF2_4823649
+- **License:** ⚠️ Manufacturer-doc scan (no license grant in item metadata; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title "components :: yamaha :: YMF262 199411", PDF YMF262_199411.pdf confirmed)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Pairs with the OPL3 emulator cores cataloged in earlier waves. [Wave 54 Lane A]
+
+#### Yamaha Y8950/MSX-Audio datasheet (1986) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha Y8950 (MSX-Audio) datasheet, August 1986 — OPL + ADPCM cartridge audio for MSX.
+- **URL:** https://archive.org/details/bitsavers_yamahaY895_378303
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. [Wave 54 Lane A]
+
+#### Yamaha YM2203/OPN datasheet (1989) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YM2203 (OPN) datasheet, November 1989 — 3ch FM + 3ch SSG, the NEC PC-8801/9801 sound chip.
+- **URL:** https://archive.org/details/bitsavers_yamahaYM22_3373139
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. [Wave 54 Lane A]
+
+#### Yamaha YM2151/OPM datasheet (1991) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YM2151 (OPM) datasheet, December 1991 — 8ch FM, the arcade (Sega System 16, Capcom CPS) and Sharp X68000 chip.
+- **URL:** https://archive.org/details/bitsavers_yamahaYM21_2429553
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Distinct from the YM2151 technical-reference item caught as a Wave 47 dupe and excluded. [Wave 54 Lane A]
+
+#### Yamaha YM2413/OPLL datasheet (1986) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YM2413 (OPLL) datasheet, April 1986 — the cost-reduced FM chip in the Sega Master System and MSX-Music.
+- **URL:** https://archive.org/details/bitsavers_yamahaYM24_340078
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. [Wave 54 Lane A]
+
+#### Yamaha YMZ280B datasheet (1996) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YMZ280B datasheet, October 1996 — 8ch PCM/ADPCM wavetable synth used in late arcade boards.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMZ2_5239369
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. [Wave 54 Lane A]
+
+#### Yamaha YM2149/SSG datasheet (1992) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YM2149 (SSG) datasheet, September 1992 — Yamaha's AY-3-8910-compatible square-wave/noise chip (Atari ST).
+- **URL:** https://archive.org/details/bitsavers_yamahaYM21_3070829
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Cross-reference with the AY-3-8910 items below — same register map lineage. [Wave 54 Lane A]
+
+#### Yamaha YMF289B/OPL3-L datasheet (1994) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YMF289B (OPL3-L, low-power OPL3) datasheet, December 1994 — laptop/embedded OPL3 variant.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMF2_3564181
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. [Wave 54 Lane A]
+
+#### Yamaha YM3012 DAC datasheet (1992) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YM3012 DAC datasheet, April 1992 — the stereo floating DAC paired with OPL/OPN FM chips.
+- **URL:** https://archive.org/details/bitsavers_yamahaYM30_1684942
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Companion to the YM2203/YM2151 datasheets above. [Wave 54 Lane A]
+
+#### Yamaha YM3439 datasheet (1991) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YM3439 datasheet, June 1991 — CMOS OPN2 variant (Sega Genesis/Mega Drive).
+- **URL:** https://archive.org/details/bitsavers_yamahaYM34_2622172
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Genesis chiptune accuracy reference. [Wave 54 Lane A]
+
+#### Yamaha YMZ284 datasheet (1994) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the official Yamaha YMZ284 datasheet, November 1994 — 8ch SSG-compatible sound chip.
+- **URL:** https://archive.org/details/bitsavers_yamahaYMZ2_3024318
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. [Wave 54 Lane A]
+
+#### Yamaha LSI Condensed Catalog (1989) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the 1989 Yamaha LSI Condensed Catalog — the full Yamaha chip lineup snapshot (FM, DAC, video, MIDI) in one document.
+- **URL:** https://archive.org/details/bitsavers_yamaha1989atalog_4034561
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Index document for the whole Yamaha sound-chip family above. [Wave 54 Lane A]
+
+#### TI TMS5220 Voice Synthesis Processor Data Manual (1981) ⚠️ manufacturer-doc scan
+- **What:** Bitsavers scan of the TI TMS5220 Voice Synthesis Processor Data Manual, preliminary June 1981 — LPC speech synthesis (Speak & Spell lineage).
+- **URL:** https://archive.org/details/bitsavers_tidataBooksisProcessorDataManualpreliminaryJun81_7901308
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Preliminary manual — register-level detail for TMS5220 emulators. [Wave 54 Lane A]
+
+#### TMS5220 IC datasheet ⚠️ manufacturer-doc scan
+- **What:** Standalone "IC Datasheet: TMS5220" item — condensed pin/register reference for the TI speech chip.
+- **URL:** https://archive.org/details/TMS5220
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Companion to the full TMS5220 data manual above. [Wave 54 Lane A]
+
+
+#### GI AY-3-8910/8912 datasheet (Feb 1979) ⚠️ manufacturer-doc scan
+- **What:** "AY 3 8910 8912 Feb 1979" — the original General Instrument AY-3-8910/8912 Programmable Sound Generator datasheet, February 1979.
+- **URL:** https://archive.org/details/AY-3-8910-8912_Feb-1979
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Distinct from the Wave 47 `General_Instrument_AY-3-8910` item (dedup-caught). [Wave 54 Lane A]
+
+#### GI AY-3-8910/8912/8913 Programmable Sound Generator (undated) ⚠️ manufacturer-doc scan
+- **What:** "General Instruments AY 3 8910 AY 3 8912 AY 3 8913 Programmable Sound Generator [undated]" — undated GI PSG family datasheet covering the 8913 package variant.
+- **URL:** https://archive.org/details/General_Instruments_AY-3-8910_AY-3-8912_AY-3-8913_Programmable_Sound_Generator_u
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. The 8913 (28-pin, no I/O ports) variant datasheet — rarer than the 8910 scan. [Wave 54 Lane A]
+
+#### SN76489 user manual (SPSG v1) ⚠️ manufacturer-doc scan
+- **What:** "spsg sn76489 user manual v1." (manualzilla mirror) — user manual for the TI SN76489 PSG (Sega Master System, BBC Micro, ColecoVision).
+- **URL:** https://archive.org/details/manualzilla-id-5993527
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. [Wave 54 Lane A]
+
+#### De Re Atari (1982) ⚠️ manufacturer-doc scan
+- **What:** "De Re Atari (1982)(Atari)" — the official Atari technical reference by Chris Crawford et al., covering ANTIC/GTIA/POKEY internals.
+- **URL:** https://archive.org/details/ataribooks-de-re-atari
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. POKEY audio programming chapters are the sound-chip-relevant portion. [Wave 54 Lane A]
+
+#### SNES Development Manual ⚠️ manufacturer-doc scan
+- **What:** "SNES Development Manual" (Books 1+2) — official Nintendo developer documentation including the SPC700/S-DSP audio subsystem.
+- **URL:** https://archive.org/details/SNESDevManual
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Leaked-era official docs — reference, not redistribution stock. [Wave 54 Lane A]
+
+#### Sega Genesis Software Manual ⚠️ manufacturer-doc scan
+- **What:** "Sega Genesis Software Manual" — official Sega developer manual covering the 68000, Z80 sound CPU, YM2612 FM and SN76489 PSG.
+- **URL:** https://archive.org/details/sega-genesis-software-manual
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. The canonical YM2612 programming reference for Genesis chiptune tooling. [Wave 54 Lane A]
+
+#### Gameboy Programming Manual ⚠️ manufacturer-doc scan
+- **What:** "Gameboy Programming Manual" (manualzilla mirror) — developer manual including the Game Boy's 4-channel sound hardware (2 square, wave, noise).
+- **URL:** https://archive.org/details/manualzilla-id-5977717
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. LSDJ/chip-tracker-relevant sound register documentation. [Wave 54 Lane A]
+
+#### MSX Technical Data Book ⚠️ manufacturer-doc scan
+- **What:** "MSX Technical Data Book" — official MSX system technical documentation including PSG (AY-3-8910) and MSX-Audio/MSX-Music cartridge specs.
+- **URL:** https://archive.org/details/MSXTechnicalDataBook
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Companion to the Y8950/YM2413 datasheets above. [Wave 54 Lane A]
+
+#### Commodore Amiga Hardware Reference Manual ⚠️ manufacturer-doc scan
+- **What:** "Commodore Amiga Hardware Reference Manual [600dpi][ocr]" — the official Amiga manual with the Paula audio chip (4ch 8-bit PCM) reference.
+- **URL:** https://archive.org/details/commodore-amiga-hardware-reference-manual-600dpiocr
+- **License:** ⚠️ Manufacturer-doc scan (no license grant; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Documentation-use only. Paula/DMA audio chapters are the sound-chip-relevant portion. [Wave 54 Lane A]
+
+#### VisualChips wiki backup ⚠️ wiki snapshot
+- **What:** "Wiki - VisualChips" — full wiki backup of visual6502.org/VisualChips, the die-shot/transistor-level chip reverse-engineering project (6502, SID, and other chips visually decapped and traced).
+- **URL:** https://archive.org/details/wiki-visual6502org_wiki
+- **License:** ⚠️ Wiki snapshot (no license grant in item metadata; verified 2026-10-08: advancedsearch numFound=1, metadata API HTTP 200, title match)
+- **Free tier:** Free downloads
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Die-shot reference for transistor-accurate emulator work (reSID-style). Community wiki content — attribution to VisualChips contributors expected. [Wave 54 Lane A]
+
+#### Nocash Everynes (NES technical docs) ⚠️ documentation
+- **What:** Martin Korth's "Everynes" — exhaustive NES/FC hardware documentation (CPU, PPU, APU, mappers), the standard homebrew reference.
+- **URL:** http://problemkaputt.de/everynes.htm
+- **License:** ⚠️ Documentation (Nocash's docs are free to read/use for development; no formal license file — verified 2026-10-08: HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The APU chapters (2A03/2A07) are the sound-chip-relevant portion. Companion to the cataloged Nocash GBATEK entry. [Wave 54 Lane A]
+
+#### Nocash PSX-SPX (PlayStation technical docs) ⚠️ documentation
+- **What:** Martin Korth's "PSX-SPX" — exhaustive PlayStation 1 hardware documentation including the SPU (24ch ADPCM sound).
+- **URL:** http://problemkaputt.de/psx-spx.htm
+- **License:** ⚠️ Documentation (Nocash's docs are free to read/use for development; no formal license file — verified 2026-10-08: HTTP 200)
+- **Free tier:** Free to read
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The SPU chapters are the sound-chip-relevant portion. [Wave 54 Lane A]
+
+#### vintage-soundchip-collection (DL1XY) ❓ unverified
+- **What:** DL1XY's vintage-soundchip-collection — GitHub repo collecting vintage sound-chip documentation/datasheets.
+- **URL:** https://github.com/DL1XY/vintage-soundchip-collection
+- **License:** ❓ Unverified (GitHub API reports no SPDX license; README carries no license statement — checked 2026-10-08)
+- **Free tier:** Free to clone
+- **Repo lane:** trippedd (emulator docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Useful index of chip docs; the underlying datasheets are manufacturer docs (see ⚠️ items above). Do not redistribute contents until license is clarified. [Wave 54 Lane A]
+
+### Wave 54 Lane A — Pocket 3: open film-restoration tooling round 3 (19)
+
+Film/photo restoration, codecs, and archival tooling. Every GitHub license verified this pass via the GitHub API license endpoint (spdx_id) and/or the upstream license file/README. GPL-family tools are quarantined (rows 531–536) for linking/redistribution constraints; their catalog entries below cover standalone-tool use (rendered output is yours) per the AviSynth+/VapourSynth precedent.
+
+#### rembg (background removal) ✅ permissive
+- **What:** danielgatis/rembg — AI background removal tool/library (U²-Net), batch-friendly for plate cleanup.
+- **URL:** https://github.com/danielgatis/rembg
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Rotoscoping-adjacent plate cleanup; CLI + Python API. [Wave 54 Lane A]
+
+#### hdr10plus_tool ✅ permissive
+- **What:** quietvoid/hdr10plus_tool — Rust CLI for injecting/verifying HDR10+ dynamic metadata in HEVC streams.
+- **URL:** https://github.com/quietvoid/hdr10plus_tool
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mastering-stage HDR10+ metadata round-trip tooling. [Wave 54 Lane A]
+
+#### dovi_tool ✅ permissive
+- **What:** quietvoid/dovi_tool — Rust CLI for Dolby Vision (RPU) metadata extraction, injection, and conversion.
+- **URL:** https://github.com/quietvoid/dovi_tool
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Companion to hdr10plus_tool; Dolby Vision profile 8.1 workflows. [Wave 54 Lane A]
+
+#### rav1e (AV1 encoder) ✅ permissive
+- **What:** xiph/rav1e — the fastest/safest AV1 encoder (Rust), Xiph's production AV1 encoder.
+- **URL:** https://github.com/xiph/rav1e
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (codecs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Royalty-free AV1 mezzanine/delivery encodes; pairs with dav1d below. [Wave 54 Lane A]
+
+#### dav1d (AV1 decoder) ✅ permissive
+- **What:** videolan/dav1d — fast, small AV1 decoder (C, SIMD), the reference production AV1 decoder.
+- **URL:** https://github.com/videolan/dav1d
+- **License:** ✅ BSD-2-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (codecs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Only body-mention in prior waves — first #### entry. Decode-side of the rav1e pipeline. [Wave 54 Lane A]
+
+#### SVT-AV1 (AV1 encoder) ✅ permissive
+- **What:** AOMediaCodec/SVT-AV1 — Intel/Netflix's scalable AV1 encoder, production-grade VOD encoding.
+- **URL:** https://github.com/AOMediaCodec/SVT-AV1
+- **License:** ✅ BSD-3-Clause-Clear (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (codecs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Higher-efficiency alternative to rav1e for offline batch encodes. [Wave 54 Lane A]
+
+#### kornia (differentiable computer vision) ✅ permissive
+- **What:** kornia/kornia — differentiable computer vision library for PyTorch (geometric transforms, filters, augmentations on GPU).
+- **URL:** https://github.com/kornia/kornia
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** GPU frame-restoration research (denoise/deblur as differentiable ops). [Wave 54 Lane A]
+
+#### libvpx (VP8/VP9 codec) ✅ permissive
+- **What:** webmproject/libvpx — the reference VP8/VP9 encoder/decoder library (WebM).
+- **URL:** https://github.com/webmproject/libvpx
+- **License:** ✅ BSD-3-Clause (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (codecs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Legacy-web delivery codec; VP9 still the pragmatic royalty-free streaming codec. [Wave 54 Lane A]
+
+
+#### kopia (backup/archival) ✅ permissive
+- **What:** kopia/kopia — fast, encrypted, deduplicating backup tool with snapshotting — archival-grade media backup.
+- **URL:** https://github.com/kopia/kopia
+- **License:** ✅ Apache-2.0 (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (archival)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Master-archive backup discipline for restoration projects (checksummed snapshots). [Wave 54 Lane A]
+
+#### libdeflate ✅ permissive
+- **What:** ebiggers/libdeflate — heavily optimized DEFLATE/zlib/gzip library for fast lossless compression.
+- **URL:** https://github.com/ebiggers/libdeflate
+- **License:** ✅ MIT (verified 2026-10-08 via GitHub API spdx_id)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (archival)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Drop-in speed win anywhere zlib is used (PNG/TIFF pipelines). [Wave 54 Lane A]
+
+#### jhead (EXIF tool) ✅ public-domain
+- **What:** jhead — command-line EXIF/JPEG header manipulator (strip/rotate/set timestamps), public-domain software by Matthias Wandel.
+- **URL:** https://www.sentex.ca/~mwandel/jhead/
+- **License:** ✅ Public domain ("The software is public domain." — verified 2026-10-08 via the author's official site, sentex.ca/~mwandel/jhead/)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (archival)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Photo-ingest metadata normalization (timestamps, rotation) for restoration archives. [Wave 54 Lane A]
+
+#### PhotoDemon (photo editor) ✅ permissive
+- **What:** tannerhelland/PhotoDemon — portable, open-source photo editor (VB6/.NET), batch processing and RAW support.
+- **URL:** https://github.com/tannerhelland/PhotoDemon
+- **License:** ✅ BSD (README states "PhotoDemon is BSD-licensed"; verified 2026-10-08 — GitHub API reports NOASSERTION, a detection gap, but the README license statement is explicit)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lightweight stills retouch for restoration reference frames. [Wave 54 Lane A]
+
+#### GraphicsMagick (image processing) ✅ permissive
+- **What:** GraphicsMagick — fork of ImageMagick focused on stability/API for batch image processing (format conversion, resizing, compositing).
+- **URL:** https://www.graphicsmagick.org/
+- **License:** ✅ MIT-style (verified 2026-10-08 via the official Copyright.html: "applied the 'MIT' style license", GraphicsMagick Group 2002–2026)
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Batch plate conversion workhorse; more stable API than ImageMagick for pipeline embedding. [Wave 54 Lane A]
+
+#### OpenDCP (digital cinema packaging) ✅ commercial-safe — standalone tool use
+- **What:** tmeiczin/OpenDCP — open-source Digital Cinema Package (DCP) mastering tool (JPEG2000 → MXF → DCP).
+- **URL:** https://github.com/tmeiczin/OpenDCP
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id) — **quarantined: row 531.** As a standalone tool, mastered output is yours; do not link its code into shipping binaries or redistribute modified builds without source.
+- **Free tier:** fully free
+- **Repo lane:** trippedd (delivery)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Festival/theatrical delivery mastering. Only body-mention in prior waves — first #### entry. [Wave 54 Lane A]
+
+#### x264 (H.264 encoder) ✅ commercial-safe — standalone tool use
+- **What:** x264 — the reference H.264/AVC encoder (VideoLAN). Canonical repo is code.videolan.org/videolan/x264 (GitHub videolan/x264 and bitbucket mirrors are stale/absent — verified 2026-10-08: both 404).
+- **URL:** https://code.videolan.org/videolan/x264
+- **License:** GPL-2.0 (verified 2026-10-08 via the canonical COPYING fetched from VideoLAN GitLab master) — **quarantined: row 532.** Standalone-tool use only; commercial H.264 encoding also needs MPEG-LA patent-pool licensing — this entry is for the software copyright position only.
+- **Free tier:** fully free (software)
+- **Repo lane:** trippedd (codecs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Still the practical H.264 reference; prefer royalty-free AV1/VP9 for new delivery. [Wave 54 Lane A]
+
+#### x265 (HEVC encoder) ✅ commercial-safe — standalone tool use
+- **What:** Multicorewareinc/x265 — the reference H.265/HEVC encoder. Canonical repo is github.com/Multicorewareinc/x265 (bitbucket.org/multicoreware/x265 404s — verified 2026-10-08).
+- **URL:** https://github.com/Multicorewareinc/x265
+- **License:** GPL-2.0 (verified 2026-10-08 via GitHub API spdx_id) — **quarantined: row 533.** Standalone-tool use only; HEVC patent pools (MPEG-LA/VelOS) apply to commercial encoding.
+- **Free tier:** fully free (software)
+- **Repo lane:** trippedd (codecs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Archival mezzanine encodes where HEVC density matters. [Wave 54 Lane A]
+
+#### vhs-decode (analog video RF capture) ✅ commercial-safe — standalone tool use
+- **What:** oyvindln/vhs-decode — software-defined VHS/Laserdisc decoding from raw RF captures (Domino's fork lineage; ld-decode redirects to this repo — folded in as a note, not a separate entry).
+- **URL:** https://github.com/oyvindln/vhs-decode
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id) — **quarantined: row 534.** Standalone-tool use only (decode your own tapes; output is yours).
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** Tape-ingest path for analog restoration (VHS → RF capture → software decode beats any capture card). [Wave 54 Lane A]
+
+#### Hugin (panorama/photo stitcher) ✅ commercial-safe — standalone tool use
+- **What:** Hugin — open-source panorama photo stitcher (alignment, HDR merging, exposure fusion). Canonical repo is hg.code.sf.net/p/hugin/hugin; official site hugin.sourceforge.io (verified 2026-10-08: site serves license text "version 2 of the License, or (at your option) any later version").
+- **URL:** https://hugin.sourceforge.io/
+- **License:** GPL-2.0-or-later (verified 2026-10-08 via official site license text) — **quarantined: row 535.** Standalone-tool use only.
+- **Free tier:** fully free
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Set-stitching and plate assembly for restoration reference photography. [Wave 54 Lane A]
+
+#### Kinograph (film digitization hardware/software) ✅ commercial-safe — standalone tool use
+- **What:** kinograph/kinograph_machine — open-source film scanner hardware + software for digitizing 8mm/16mm/35mm film.
+- **URL:** https://github.com/kinograph/kinograph_machine
+- **License:** GPL-3.0 (verified 2026-10-08 via GitHub API spdx_id) — **quarantined: row 536.** Build/use the hardware and software yourself; do not commercialize modified designs without source.
+- **Free tier:** fully free (designs)
+- **Repo lane:** trippedd (restoration)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 4/5
+- **Status:** not-started
+- **Notes:** DIY film-ingest path — the front door of the whole restoration pipeline. [Wave 54 Lane A]
+
+### Wave 54 Lane A — Pocket 4: chiptune label regional round 4 (20)
+
+Regional labels, events, and scene hubs. Every URL verified live this pass via HTTP (200) or noted honestly (403 bot-walled, dead domains). Bandcamp label pages carry per-release rights — badge ❓ unless terms are published. Event entries are ⚠️ (per-artist rights; reference, not music stock).
+
+#### Lost Frog Productions (Japan) ❓ unverified
+- **What:** Lost Frog Productions — Tokyo chiptune/netlabel, active since 1992; described as one of Japan's longest-running chip labels (Bandcamp hub).
+- **URL:** https://lostfrog.bandcamp.com/
+- **License:** ❓ Unverified (Bandcamp label page; no label-wide license terms published — verified 2026-10-08: HTTP 200)
+- **Free tier:** streaming free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/reference only; license per release before any use. [Wave 54 Lane A]
+
+#### Ano(t)raks (Tokyo) ❓ unverified
+- **What:** Ano(t)raks — Tokyo indie/netlabel releasing chiptune and electronic works (Bandcamp hub, active since 2012).
+- **URL:** https://anotraks.bandcamp.com/
+- **License:** ❓ Unverified (no label-wide terms — verified 2026-10-08: HTTP 200)
+- **Free tier:** streaming free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/reference only. [Wave 54 Lane A]
+
+#### Skull Triangle Skull (Sapporo) ❓ unverified
+- **What:** Skull Triangle Skull — Sapporo-based chiptune label (Bandcamp hub, active since 2012).
+- **URL:** https://skulltriangleskull.bandcamp.com/
+- **License:** ❓ Unverified (no label-wide terms — verified 2026-10-08: HTTP 200)
+- **Free tier:** streaming free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/reference only. [Wave 54 Lane A]
+
+#### Canata Records (Tokyo) ❓ unverified
+- **What:** Canata Records — Tokyo indie label with chiptune/electronic releases (Bandcamp hub, active since 2006).
+- **URL:** https://canatarecords.bandcamp.com/
+- **License:** ❓ Unverified (no label-wide terms — verified 2026-10-08: HTTP 200)
+- **Free tier:** streaming free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/reference only. [Wave 54 Lane A]
+
+#### M3 — Music Media-Mix Market (Tokyo) ⚠️ event
+- **What:** M3 (Music Media-Mix Market) — semiannual Tokyo doujin music convention (since 1998, 1,000+ circles) at Tokyo Ryutsu Center; a major physical-market channel for chiptune doujin circles.
+- **URL:** https://www.m3net.jp/
+- **License:** ⚠️ Event (per-circle rights; verified 2026-10-08: HTTP 200)
+- **Free tier:** n/a (event admission)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sourcing/reference channel for Japanese chiptune releases, not a rights source. [Wave 54 Lane A]
+
+#### DoujinStyle (doujin music archive) ❓ unverified
+- **What:** DoujinStyle.com — non-commercial doujin music/game archive with a chiptune tag index; cultural-preservation database for Japanese doujin releases.
+- **URL:** https://doujinstyle.com/
+- **License:** ❓ Unverified (site states non-commercial preservation intent; per-creator rights — verified 2026-10-08: HTTP 200)
+- **Free tier:** free to browse
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Research/dedup reference for Japanese chiptune releases. [Wave 54 Lane A]
+
+#### Latino Resiste (Colombia) ❓ unverified
+- **What:** Latino Resiste — Colombian chiptune/electronic netlabel (Bandcamp hub).
+- **URL:** https://latinoresiste.bandcamp.com/
+- **License:** ❓ Unverified (no label-wide terms — verified 2026-10-08: HTTP 200)
+- **Free tier:** streaming free
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/reference only; first Latin-American label in this regional round. [Wave 54 Lane A]
+
+#### Bloody Fist Records (Newcastle, AU) ❓ bot-walled
+- **What:** Bloody Fist Records — Newcastle, Australia hardcore/tracker label (1994–2004); tracker/Amiga hardcore with deep chip-music lineage.
+- **URL:** https://www.discogs.com/label/ (Discogs label page — 403 bot-walled; details corroborated via search snippets 2026-10-08)
+- **License:** ❓ Unverified (defunct label; Discogs page bot-walled)
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Historical reference only — defunct 2004, page unreachable behind bot-wall. Recorded for scene-history completeness. [Wave 54 Lane A]
+
+#### VGMCon (Minneapolis) ⚠️ event
+- **What:** VGMCon — Minneapolis video-game-music convention with chiptune programming (2026 edition announced).
+- **URL:** https://vgmcon.org/
+- **License:** ⚠️ Event (per-artist rights; verified 2026-10-08: HTTP 200)
+- **Free tier:** n/a (event admission)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Midwest US scene hub; reference, not music stock. [Wave 54 Lane A]
+
+#### Bit Gen Gamer Fest (Baltimore) ⚠️ event
+- **What:** Bit Gen Gamer Fest — Baltimore one-day video-game-music festival (20th edition 2026), a MAGFest subsidiary event with chiptune lineups.
+- **URL:** https://www.bitgengamerfest.com/about
+- **License:** ⚠️ Event (per-artist rights; verified 2026-10-08: HTTP 200)
+- **Free tier:** n/a (event admission)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Regional (Baltimore/DC) VGM/chiptune festival; reference. [Wave 54 Lane A]
+
+#### Bit Rot (Brooklyn) ⚠️ event
+- **What:** Bit Rot — Brooklyn chiptune show series at Wonderville (1186 Broadway), bridging the NYC local scene with international acts.
+- **URL:** https://www.wonderville.nyc/events/bit-rot-2023
+- **License:** ⚠️ Event (per-artist rights; verified 2026-10-08: HTTP 200)
+- **Free tier:** n/a (show admission)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NYC local-scene anchor; reference. [Wave 54 Lane A]
+
+#### Chipspace (MAGFest chiptune stage) ⚠️ event
+- **What:** Chipspace — MAGFest's dedicated chiptune stage/space (open mic, curated showcases, workshops), running since 2012; the US scene's main convention gathering point.
+- **URL:** https://super.magfest.org/activities/music/chipspace/
+- **License:** ⚠️ Event (per-artist rights; verified 2026-10-08 via official MAGFest page)
+- **Free tier:** n/a (convention admission)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Curated showcases by netlabels (Chiptunes=WIN, geekbeatradio); reference and community-contact channel. [Wave 54 Lane A]
+
+#### Chip Bit Day (Manchester, UK) ⚠️ event
+- **What:** Chip Bit Day — Manchester UK chiptune event, documented in a scene feature (analogue trash).
+- **URL:** https://www.analoguetrash.com/blog/chip-bit-day
+- **License:** ⚠️ Event (per-artist rights; verified 2026-10-08: HTTP 200)
+- **Free tier:** n/a (event admission)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Northern-England scene marker; reference. [Wave 54 Lane A]
+
+#### Nerdapalooza (Orlando, defunct) ⚠️ event
+- **What:** Nerdapalooza — Orlando nerd-music festival (2007–2013, defunct) with chiptune/nerdcore programming.
+- **URL:** https://en.wikipedia.org/wiki/Nerdapalooza
+- **License:** ⚠️ Event — defunct (verified 2026-10-08 via Wikipedia: HTTP 200)
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Scene-history reference; festival ended 2013. Recorded for completeness with defunct status explicit. [Wave 54 Lane A]
+
+#### This Week in Chiptune (podcast) ❓ unverified
+- **What:** This Week in Chiptune — Philadelphia-based chiptune news/discussion podcast by DJ CUTMAN (2013–2017, ~200 episodes).
+- **URL:** https://ThisWeekInChiptune.com/
+- **License:** ❓ Unverified (podcast archive; episode music rights per-artist — verified 2026-10-08: HTTP 200)
+- **Free tier:** free to stream
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Scene-history/oral-history resource; not music stock. [Wave 54 Lane A]
+
+#### What Happened to Chiptune? (podcast) ❓ unverified
+- **What:** "What Happened to Chiptune?" — 2024 chiptune-scene podcast series (iHeart), with per-episode reference links (Eindbaas, Pulsewave, 8bitpeoples, Monotonik, Micromusic).
+- **URL:** https://www.iheart.com/podcast/269-what-happened-to-chiptune-122884959/
+- **License:** ❓ Unverified (podcast; verified 2026-10-08: HTTP 200)
+- **Free tier:** free to stream
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Discovery/oral-history resource; episode show-notes are a link-map of the scene. [Wave 54 Lane A]
+
+
+#### Eindbaas (Utrecht) ⚠️ event/collective
+- **What:** Eindbaas — Utrecht, Netherlands chiptune collective/event series (10-year anniversary edition 2019 at EKKO); Game Boy/Atari/Amiga live shows.
+- **URL:** https://eindbaas.org/
+- **License:** ⚠️ Event (per-artist rights; verified 2026-10-08: HTTP 200)
+- **Free tier:** n/a (event admission)
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dutch scene anchor; reference. [Wave 54 Lane A]
+
+#### Hyperwave (London) ❓ bot-walled
+- **What:** Hyperwave — London chiptune club night (Lower Third); event page bot-walled (403).
+- **URL:** https://dice.fm/event/nvnm58-hyperwave-27th-sep-the-lower-third-london-tickets (403 bot-walled — verified 2026-10-08)
+- **License:** ❓ Unverified (event ticketing page unreachable behind bot-wall)
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** London scene marker; page is a dated ticket listing — re-verify before relying on it. [Wave 54 Lane A]
+
+#### Europe in 8 Bits (documentary) ⚠️ film
+- **What:** "Europe in 8 Bits" — 2014 documentary by Javier Polo (Turanga Films) on the European chip-music scene (Game Boy, NES, Atari ST, Amiga, C64 artists).
+- **URL:** http://www.europein8bits.com/
+- **License:** ⚠️ Film (commercial documentary; verified 2026-10-08: HTTP 200)
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Scene-history/oral-history resource; watch, don't excerpt. [Wave 54 Lane A]
+
+#### Blip Festival: Reformat the Planet (documentary) ⚠️ film
+- **What:** "Blip Festival: Reformat the Planet" (2008, dir. Paul Owens, 2 Player Productions) — documentary on the 2006 Blip Festival and the 2000s NYC chiptune scene; SXSW 2008 official selection.
+- **URL:** https://WWW.JUSTWATCH.COM/us/movie/reformat-the-planet
+- **License:** ⚠️ Film (commercial documentary; streaming via rental/subscription per JustWatch — verified 2026-10-08)
+- **Free tier:** n/a
+- **Repo lane:** trippedd (music)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Link is a where-to-watch listing, not the film itself. Scene-history resource. [Wave 54 Lane A]
+
+
+### Wave 54 Lane A summary (2026-10-08)
+- New #### entries: 103 (P1: 37 PD radio-drama round 3 — 21 Suspense per-year + 13 Shadow per-season + 2 Jack Benny era + 1 Johnny Dollar actor-era · P2: 27 retro sound-chip docs round 2 — 24 archive.org + everynes + psx-spx + DL1XY · P3: 19 film-restoration tooling round 3 — 13 permissive + 6 GPL standalone-tool · P4: 20 chiptune regional round 4 — labels/events/hubs/documentaries)
+- Catalog: 4,762 → 4,865 honest entries (wave target 4,870+ not met by this lane alone; `grep -c '^####'` to confirm)
+- Quarantine: rows 531–536 appended (6 distinct: OpenDCP GPL-3.0, x264 GPL-2.0, x265 GPL-2.0, vhs-decode GPL-3.0, Hugin GPL-2.0-or-later, kinograph_machine GPL-3.0; zero supersedes/delists)
+- Honest negatives: AcademySoftwareFoundation/openfx-io (404 both cases); bitbucket.org/multicoreware/x265 (404 — canonical is GitHub Multicorewareinc/x265); videolan/x264 + multicoreware/x265 GitHub paths (404 — canonicals are VideoLAN GitLab / GitHub Multicorewareinc); narrominded.com (dead, 000); michitarex.com (dead, 000); PROGRESSIVE FOrM / Minus N / Tanukineiri Records (no verifiable label URLs found); Vancouver Chip Music Society / ChipLabs / FutureSound Beijing (named in demoscene docs, no verifiable URL); Outtaspec Tucson (no verifiable URL); ld-decode (redirects to oyvindln/vhs-decode — folded in as note, not a separate entry); General_Instrument_AY-3-8910 + yamaha-ym2151-technical-reference (Wave 47 dupes caught by pre-append grep, dropped)
+- Dedup rejections (pre-append title+URL grep): 4 — fraunhoferhhi/vvdec (cataloged 37487), Chiptune Monthly Patreon (cataloged 38113), chipwiki.ru (cataloged 40081), MOS 6581 SID datasheet (cataloged 41259)
+- Badge summary: ✅ permissive/PD 47 (21 Suspense PD + 2 Jack Benny PD + 1 Johnny Dollar PD + 13 P3 permissive incl. 6 standalone-tool GPL) · ⚠️ caution 43 (13 Shadow rights-caution + 24 P2 manufacturer-doc scans + 2 Nocash docs + 1 VisualChips wiki snapshot + 3 P4 events/films) · ❓ unverified 13 (1 DL1XY + 12 P4 labels/hubs/podcasts/newsletters incl. 2 bot-walled) · 🚫 quarantined 6 (rows 531–536)
+- License notes: 20 of 21 Suspense OTRR items carry an item-level CC BY-NC-ND 4.0 tag (uploader transfer packaging, not broadcast copyright — noted per entry; 1949 item has no tag); The Shadow inherits show-level rights caution; jhead is public domain per the author's official site; PhotoDemon is BSD per README (GitHub API NOASSERTION = detection gap); GraphicsMagick is MIT-style per official Copyright.html; Hugin GPL-2.0-or-later verified via official site license text
+- Coordinator flags (not fixed — lane boundary): none new; prior-wave flags stand
+- Zero post-hoc duplicates: every candidate pre-grepped (title + URL) against the full catalog and quarantine manifest before appending; 4 pre-append rejections logged above

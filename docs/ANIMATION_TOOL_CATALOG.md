@@ -877,6 +877,99 @@ Every license verified from upstream sources, never assumed. GPL/AGPL family →
 - **Repo lane:** trippedd-studio (compositing/post pocket)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
 
+### Video inpainting
+<!-- Wave 3 Lane B pocket: object removal / plate cleanup / wire removal. Code license AND weights license verified separately upstream 2026-10-08. -->
+
+#### STTN ⚠️ check-model-license
+- **What:** ECCV 2020 joint Spatial-Temporal Transformer Network for video inpainting — fills missing regions in all input frames simultaneously via multi-scale patch-based attention + spatial-temporal adversarial loss; object removal and completion.
+- **URL:** https://github.com/researchmm/STTN
+- **License:** MIT code (verified 2026-10-08 via GitHub API spdx_id); MODEL WEIGHTS (.pth via Google Drive) carry no license statement in the repo — verify the weights' terms before commercial use.
+- **Free tier:** fully open (code); weights terms undeclared
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Notes:** Wave 3 Lane B pocket. Older (2020) but MIT = the cleanest transformer-era video-inpainting code grant in this family. Ships a `test.py` for masked-video completion from a checkpoint.
+
+#### FGT ⚠️ check-model-license
+- **What:** ECCV 2022 Flow-Guided Transformer for video inpainting — optical-flow-guided local + global transformers; strong on large-motion object removal.
+- **URL:** https://github.com/hitachinsk/FGT
+- **License:** MIT code (verified 2026-10-08 via GitHub API spdx_id + repo LICENSE badge); pretrained weights (Drive) carry no separate license statement — verify before commercial use.
+- **Free tier:** fully open (code); weights terms undeclared
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Notes:** Wave 3 Lane B pocket. Same author lineage as ISVI below; Colab demo available for evaluation without a local install.
+
+#### ISVI ⚠️ check-model-license
+- **What:** CVPR 2022 Inertia-Guided Flow Completion and Style Fusion for video inpainting — flow completion + style fusion from the FGT group.
+- **URL:** https://github.com/hitachinsk/ISVI
+- **License:** MIT code (verified 2026-10-08 via GitHub API spdx_id); pretrained weights terms undeclared — verify before commercial use.
+- **Free tier:** fully open (code); weights terms undeclared
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Notes:** Wave 3 Lane B pocket.
+
+#### FGVC ⚠️ check-model-license
+- **What:** ECCV 2020 Flow-edge Guided Video Completion — flow-edge guidance for temporally consistent object removal; the ancestor FGT/ProPainter-lineage methods build on.
+- **URL:** https://github.com/vt-vl-lab/FGVC
+- **License:** MIT code (verified 2026-10-08: LICENSE raw opens "MIT License", Virginia Tech Vision and Learning Lab; README "licensed under MIT License"); pretrained weights terms undeclared — verify before commercial use.
+- **Free tier:** fully open (code); weights terms undeclared
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Notes:** Wave 3 Lane B pocket.
+
+#### LaMa ✅ commercial-safe
+- **What:** Resolution-robust large-mask image inpainting (Fourier convolutions) — strong on large missing regions, fast inference; run per-frame with deflicker for sequences.
+- **URL:** https://github.com/advimman/lama
+- **License:** Apache-2.0 code AND weights (verified 2026-10-08 via GitHub API spdx_id) — commercial-safe.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Notes:** Wave 3 Lane B pocket. Image model, not video — but the only inpainting network here with a clean commercial weight grant; pair with frame deflicker for plate sequences.
+
+#### OpenCV inpaint ✅ commercial-safe
+- **What:** `cv2.inpaint` — classical Telea (FMM) and Navier-Stokes inpainting; no weights, no training; scratch/dust/wire cleanup on plates.
+- **URL:** https://github.com/opencv/opencv (photo module)
+- **License:** Apache-2.0 (verified 2026-10-08: LICENSE raw is Apache License 2.0, 4.x branch) — commercial-safe.
+- **Free tier:** fully open
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Notes:** Wave 3 Lane B pocket. The zero-legal-risk baseline for small-defect repair before reaching for neural inpainting.
+
+#### FuseFormer ❓ unverified — no license statement
+- **What:** CVPR 2022 FuseFormer — transformer fusing soft splits; widely used video-inpainting baseline (E2FGVI builds on it).
+- **URL:** https://github.com/ruiliu-ai/FuseFormer
+- **License:** ❓ UNVERIFIED — no LICENSE file (GitHub API 404) and no license section in README (direct fetch 2026-10-08). Treat as all-rights-reserved: research/evaluation only until the authors clarify.
+- **Free tier:** unknown terms
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 0/5 (unverified) · **Wire-up difficulty:** n/a
+- **Notes:** Wave 3 Lane B pocket. Honest negative: cannot be wired into any path without a license grant.
+
+#### IIVI ❓ unverified — no license statement
+- **What:** ICCV 2021 Internal Video Inpainting by Implicit Long-range Propagation — zero-shot: learns from the video itself, no pretrained weights, no optical flow; extends to 4K.
+- **URL:** https://github.com/Tengfei-Wang/Implicit-Internal-Video-Inpainting
+- **License:** ❓ UNVERIFIED — no LICENSE file (GitHub API 404), README asserts no terms (direct fetch 2026-10-08). Treat as all-rights-reserved. Note: zero-shot means no weight-license problem even if the code were cleared.
+- **Free tier:** unknown terms
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 0/5 (unverified) · **Wire-up difficulty:** n/a
+- **Notes:** Wave 3 Lane B pocket. ~4 h/GPU internal learning per clip — slow but self-contained; good research fallback for shots no pretrained model covers.
+
+#### COCOCO / Video-Inpaint-Anything ❓ unverified — no license statement
+- **What:** Text-guided video inpainting for consistency/controllability (SD1.5-inpainting + motion modules + SAM2 masks); ships a Gradio "Video-Inpaint-Anything" demo.
+- **URL:** https://github.com/zibojia/COCOCO
+- **License:** ❓ UNVERIFIED — no LICENSE file (GitHub API 404), no license section in README (direct fetch 2026-10-08). Chained dependencies: requires SD1.5-inpainting weights (CreativeML Open RAIL-M license) + CoCoCo checkpoints (no stated terms). Research/evaluation only.
+- **Free tier:** unknown terms
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 0/5 (unverified) · **Wire-up difficulty:** n/a
+- **Notes:** Wave 3 Lane B pocket. Text-prompt control is the differentiator; the license chain is the blocker.
+
+#### PowerPaint ❓ unverified — no license statement
+- **What:** High-quality versatile image inpainting (diffusion, task-prompt conditioned) — text-guided object removal/fill; usable per-frame on plates.
+- **URL:** https://github.com/Sanster/PowerPaint
+- **License:** ❓ UNVERIFIED — no LICENSE file (GitHub API 404), no license section in README (direct fetch 2026-10-08). Treat as all-rights-reserved.
+- **Free tier:** unknown terms
+- **Repo lane:** trippedd-studio (compositing/post pocket)
+- **Pipeline impact:** 0/5 (unverified) · **Wire-up difficulty:** n/a
+- **Notes:** Wave 3 Lane B pocket.
+
 
 ## Transitions
 <!-- wipe / smash-cut / fade / dissolve libraries, transition effect packs, Adult Swim-style hard-cut tooling -->

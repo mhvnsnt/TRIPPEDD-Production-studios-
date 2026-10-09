@@ -1068,3 +1068,8 @@ Owner law: GPL/AGPL-licensed code is **quarantined** — it is NEVER linked, imp
 **Wave 62 Lane A note:** rows 587–594 appended 2026-10-08 (8 distinct: 1 GPL-3.0 SDK-docs (GameShellDocs), 3 AGPL-3.0 (PeerTube, MediaCMS, Supysonic), 3 GPL-3.0 (xwax, FreeShow, MediaPortal-1), 1 LGPL-3.0 (BigBlueButton — doctrine pending, stays quarantined); zero supersedes/delists. Next row 595.
 
 **Wave 63 Lane A note:** rows 595–602 appended 2026-10-08 (8 distinct: 3 GPL-2.0 (Sneedacity, Sonic Visualiser, amsynth), 1 GPL-3.0 (MuseScore Studio desktop app — distinct from the cataloged Musescore.com proprietary site), 1 GPL-3.0 (OB-Xd), 2 LGPL-2.1 (projectM, p5.js — doctrine pending, stay quarantined), 1 AGPL-3.0 (Hydra livecoding visuals); zero supersedes/delists. Next row 603.
+| 603 | absadiki/subsai (https://github.com/absadiki/subsai) | GPL-3.0 (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id; repo moved from abdeladim-s/subsai) — AI subtitle generator (Whisper-based) | caption/tooling | trippedd | standalone tool use only — never linked into shipping code | PENDING |
+| 604 | byroot/pysrt (https://github.com/byroot/pysrt) | GPL-3.0 (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id) — Python SRT subtitle parser/editor | caption/tooling | trippedd | standalone tool use only — never linked into shipping code | PENDING |
+| 605 | kaegi/alass (https://github.com/kaegi/alass) | GPL-3.0 (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id) — automatic subtitle synchronization | caption/tooling | trippedd | standalone tool use only — never linked into shipping code | PENDING |
+
+**Wave 66 Lane A note:** rows 603–605 appended 2026-10-09 (3 distinct: subsai, pysrt, alass — all GPL-3.0 caption tooling; zero supersedes/delists. Next row 606.

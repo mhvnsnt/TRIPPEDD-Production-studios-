@@ -63068,3 +63068,126 @@ Round 3 goes for the permissive-licensed graphics/audio/physics/AI-inference too
 
 ### Wave 66 Lane A — P3 PD radio-drama round 15 (2026-10-09, coordinator-direct)
 42 entries appended: 7 each — Pat Novak for Hire (Sam Tolliver, Death In Harold Square, Dixie Gilian, Rubin Callaway's Pictures x2 sources, OTRR Singles, OTRR Certified), Green Hornet (Smuggler Signs His Name, Last Words Mean Sabotage, Not One Cent For Tribute, Mr. Big's Drugstore Racket, oldtimeradio collection, A Slip Of The Lip, Whatever Became Of 1968 — all ⚠️ character-rights caution per Lone Ranger precedent), Night Beat (Flowers On The Water, Digitally Restored collection, Lost Souls, BDP collection, +3 paired-episode items), Rocky Jordan (oldtimeradio collection, Up In Flames, Lady From Istanbul, Two O'Clock Man, BDP collection, +2 paired items), Man Called X (A Man A Girl A Plot, Mekong River Dam, Worth Her Weight In Gold, Burma Peninsula, Spirit Of The Snows, Guns On The Niger, OTRR Singles), Casey Crime Photographer (7 dated episodes 1947–1954). All 42 archive.org metadata-verified 2026-10-09 (title match + audio file counts). 2 identifier dupes replaced (Pat Novak "Fleet Lady", NightBeat collection — already cataloged). Green Hornet badged ⚠️ (character rights, not broadcast — same doctrine as Lone Ranger). Licenseurl-absent stated per Wave-59 diligence rule.
+
+#### m1guelpf/auto-subtitle ✅ commercial-safe
+- **What:** auto-subtitle — OpenAI Whisper-based automatic subtitle generator CLI (SRT output).
+- **URL:** https://github.com/m1guelpf/auto-subtitle
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Whisper CLI subtitle generator. [Wave 66 Lane A]
+
+#### Montreal-Forced-Aligner ✅ commercial-safe
+- **What:** Montreal Forced Aligner — forced speech-text alignment toolkit (Kaldi-based, word/phone boundaries).
+- **URL:** https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Word-level alignment for ASR-assisted diarization turns. [Wave 66 Lane A]
+
+#### silero-vad ✅ commercial-safe
+- **What:** Silero VAD — pre-trained enterprise-grade voice activity detector (PyTorch).
+- **URL:** https://github.com/snakers4/silero-vad
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Neural VAD alternative to webrtcvad for the diarization pipeline. [Wave 66 Lane A]
+
+#### py-webrtcvad ✅ commercial-safe
+- **What:** py-webrtcvad — Python bindings for the WebRTC voice activity detector.
+- **URL:** https://github.com/wiseman/py-webrtcvad
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: direct LICENSE read — "The MIT License (MIT)", copyright 2016 John Wiseman; GitHub API spdx was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The VAD already wired in Lane C's diarization pipeline — catalog entry. [Wave 66 Lane A]
+
+#### vosk-api ✅ commercial-safe
+- **What:** Vosk — offline open-source speech recognition toolkit (models for 20+ languages, small footprint).
+- **URL:** https://github.com/alphacep/vosk-api
+- **License:** ✅ Apache-2.0 (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Offline STT for caption/ASR-assisted diarization. [Wave 66 Lane A]
+
+#### whisper-ctranslate2 ✅ commercial-safe
+- **What:** whisper-ctranslate2 — Whisper speech recognition optimized with CTranslate2 (fast inference).
+- **URL:** https://github.com/Softcatala/whisper-ctranslate2
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fast Whisper inference for subtitle generation. [Wave 66 Lane A]
+
+#### python-sounddevice ✅ commercial-safe
+- **What:** python-sounddevice — Python audio I/O via PortAudio (play/record NumPy arrays).
+- **URL:** https://github.com/spatialaudio/python-sounddevice
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audio I/O for voice-pipeline tooling. [Wave 66 Lane A]
+
+#### python-soundfile ✅ commercial-safe
+- **What:** python-soundfile — Python audio file I/O via libsndfile (WAV/FLAC/OGG read/write).
+- **URL:** https://github.com/bastibe/python-soundfile
+- **License:** ✅ BSD-3-Clause (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audio file I/O for the voice pipeline. [Wave 66 Lane A]
+
+#### PyAudio ✅ commercial-safe
+- **What:** PyAudio — Python bindings for PortAudio (cross-platform audio I/O).
+- **URL:** https://github.com/jleb/pyaudio
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: PyPI license field "MIT", repo exists; GitHub API spdx was unasserted)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Classic audio I/O bindings. [Wave 66 Lane A]
+
+#### julius ✅ commercial-safe
+- **What:** Julius — open-source large-vocabulary continuous speech recognition decoder.
+- **URL:** https://github.com/julius-speech/julius
+- **License:** ✅ BSD-3-Clause (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Classic LVCSR decoder. [Wave 66 Lane A]
+
+#### asteroid ✅ commercial-safe
+- **What:** asteroid — PyTorch-based audio source separation toolkit (speech enhancement/separation recipes).
+- **URL:** https://github.com/asteroid-team/asteroid
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Source separation for dialogue isolation. [Wave 66 Lane A]
+
+#### speechbrain ✅ commercial-safe
+- **What:** SpeechBrain — PyTorch speech toolkit (ASR, speaker recognition, diarization, enhancement).
+- **URL:** https://github.com/speechbrain/speechbrain
+- **License:** ✅ Apache-2.0 (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The toolkit behind Lane C's ECAPA-TDNN embeddings — catalog entry. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P4 caption-tooling tail round 2 (2026-10-09, coordinator-direct)
+12 entries appended: m1guelpf/auto-subtitle, Montreal-Forced-Aligner, silero-vad, py-webrtcvad, vosk-api, whisper-ctranslate2, python-sounddevice, python-soundfile, PyAudio, julius, asteroid, speechbrain. All licenses verified upstream (10 GitHub API spdx_id, 1 direct LICENSE read for py-webrtcvad, 1 PyPI field for PyAudio). +3 quarantine rows 603–605 (absadiki/subsai GPL-3.0, byroot/pysrt GPL-3.0, kaegi/alass GPL-3.0 — all GitHub API spdx_id). Honest drops: webvtt-py/ttconv/imscJS/Resemblyzer/ffsubsync/CTranslate2/sherpa-onnx/auditok/gentle/autosub/whisper_streaming/whisper-webui/whisper-diarization/subaligner/pocketsphinx/wenet/pyroomacoustics/OpenVoice/F5-TTS/Kokoro/Tortoise-TTS/WhisperLive (all already cataloged), Tencent/TenVAD (repo does not exist), Coqui TTS (MPL-2.0 — weak-copyleft quarantine doctrine pending, not cataloged). Caption tail now genuinely thin — recommend broadcast-automation round 3 or a new angle for Wave 67.

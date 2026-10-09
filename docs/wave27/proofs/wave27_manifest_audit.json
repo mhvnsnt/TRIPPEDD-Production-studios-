@@ -1,0 +1,41 @@
+{
+ "tool": "wave27_manifest_audit.py",
+ "run_at_utc": "2026-10-08T01:17:55.504469+00:00",
+ "manifest": "docs/LICENSE_QUARANTINE.md",
+ "checks": {
+  "rows_expected": 255,
+  "rows_found": 255,
+  "missing_rows": [],
+  "extra_rows_above_255": [],
+  "duplicate_rows": [],
+  "rows_with_empty_license_cell": [],
+  "rows_with_empty_audit_cell": [],
+  "live_rows_without_verification_marker": [
+   {
+    "row": 63,
+    "name": "marytts",
+    "license": "LGPL-3.0"
+   },
+   {
+    "row": 66,
+    "name": "Surge XT",
+    "license": "GPL-3.0"
+   },
+   {
+    "row": 75,
+    "name": "Dragonfly Reverb",
+    "license": "GPL-3.0"
+   }
+  ],
+  "audit_status_distribution": {
+   "PENDING": 246,
+   "SUPERSEDED": 4,
+   "DEDUPED": 1,
+   "STANDALONE-TOOL USE ONLY UNDER GPL": 1,
+   "CLEARED (RELICENSED BSD-2-CLAUSE)": 1,
+   "DELISTED": 1,
+   "SUPERSEDED BY ROW 93 (SAME UPSTREAM AUBIO/AUBIO; WAVE 23 LANE D DUPLICATE FIND": 1
+  }
+ },
+ "pass": false
+}

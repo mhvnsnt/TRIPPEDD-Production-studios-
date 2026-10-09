@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+ <head>
+  <styling>
+   <style tts:color="white" tts:fontFamily="monospace" tts:fontSize="1c" xml:id="default"/>
+  </styling>
+  <layout>
+   <region tts:displayAlign="after" tts:textAlign="center" xml:id="bottom"/>
+  </layout>
+ </head>
+ <body>
+  <div region="bottom" xml:lang="en-US">
+   <p begin="00:00:00.000" end="00:00:00.740" region="bottom" style="default">
+    Ladies
+   </p>
+   <p begin="00:00:00.740" end="00:00:01.020" region="bottom" style="default">
+    and
+   </p>
+   <p begin="00:00:01.020" end="00:00:01.400" region="bottom" style="default">
+    gentlemen,
+   </p>
+   <p begin="00:00:01.820" end="00:00:01.980" region="bottom" style="default">
+    the
+   </p>
+   <p begin="00:00:01.980" end="00:00:02.140" region="bottom" style="default">
+    streets
+   </p>
+   <p begin="00:00:02.140" end="00:00:02.400" region="bottom" style="default">
+    are
+   </p>
+   <p begin="00:00:02.400" end="00:00:02.720" region="bottom" style="default">
+    watching
+   </p>
+   <p begin="00:00:02.720" end="00:00:03.180" region="bottom" style="default">
+    tonight.
+   </p>
+   <p begin="00:00:03.780" end="00:00:04.020" region="bottom" style="default">
+    Two
+   </p>
+   <p begin="00:00:04.020" end="00:00:04.380" region="bottom" style="default">
+    fighters
+   </p>
+   <p begin="00:00:04.380" end="00:00:04.760" region="bottom" style="default">
+    step
+   </p>
+   <p begin="00:00:04.760" end="00:00:04.980" region="bottom" style="default">
+    into
+   </p>
+   <p begin="00:00:04.980" end="00:00:05.180" region="bottom" style="default">
+    the
+   </p>
+   <p begin="00:00:05.180" end="00:00:05.420" region="bottom" style="default">
+    alley
+   </p>
+   <p begin="00:00:05.420" end="00:00:05.840" region="bottom" style="default">
+    and
+   </p>
+   <p begin="00:00:05.840" end="00:00:06.080" region="bottom" style="default">
+    only
+   </p>
+   <p begin="00:00:06.080" end="00:00:06.320" region="bottom" style="default">
+    one
+   </p>
+   <p begin="00:00:06.320" end="00:00:06.540" region="bottom" style="default">
+    walks
+   </p>
+   <p begin="00:00:06.540" end="00:00:06.760" region="bottom" style="default">
+    out
+   </p>
+   <p begin="00:00:06.760" end="00:00:06.960" region="bottom" style="default">
+    with
+   </p>
+   <p begin="00:00:06.960" end="00:00:07.060" region="bottom" style="default">
+    the
+   </p>
+   <p begin="00:00:07.060" end="00:00:07.320" region="bottom" style="default">
+    crown.
+   </p>
+  </div>
+ </body>
+</tt>

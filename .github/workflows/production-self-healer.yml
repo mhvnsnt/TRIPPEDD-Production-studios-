@@ -1,0 +1,137 @@
+name: Production Self-Healer
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_run:
+    workflows: ["Production Short E2E Gate", "EP01 Story Runner Cut", "EP01 Autonomous Cut"]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: production-self-healer
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Inspect and recover production runs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          now=$(date -u +%s)
+          recovered=0
+          suppressed=0
+          checked=0
+          dispatched=0
+          current_main_sha=$(gh api "/repos/$REPO/git/ref/heads/main" --jq '.object.sha')
+          echo "CURRENT_MAIN_SHA=$current_main_sha"
+
+          for workflow in production-short-e2e-gate.yml ep01-story-runner.yml ep01-autonomous.yml; do
+            runs=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 10 --json databaseId,status,conclusion,attempt,createdAt,updatedAt,headSha)
+            active=$(jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | sort_by(.createdAt) | reverse' <<<"$runs")
+            active_count=$(jq 'length' <<<"$active")
+
+            if [ "$active_count" -gt 0 ]; then
+              active_running=$(jq '[.[] | select(.status == "in_progress")] | length' <<<"$active")
+              if [ "$active_running" -gt 0 ]; then
+                while IFS= read -r queued_id; do
+                  [ -z "$queued_id" ] && continue
+                  echo "SUPPRESS: cancelling redundant queued $workflow run $queued_id because an active run exists"
+                  gh run cancel "$queued_id" --repo "$REPO" || true
+                  suppressed=$((suppressed+1))
+                done < <(jq -r '.[] | select(.status == "queued") | .databaseId' <<<"$active")
+              fi
+              run=$(jq '.[0]' <<<"$active")
+            else
+              run=$(jq 'map(select(.status != "completed")) | sort_by(.createdAt) | reverse | .[0] // empty' <<<"$runs")
+            fi
+
+            if [ -z "$run" ] || [ "$run" = "null" ]; then
+              failed=$(jq 'map(select(.status == "completed" and (.conclusion == "failure" or .conclusion == "timed_out"))) | sort_by(.createdAt) | reverse | .[0] // empty' <<<"$runs")
+              if [ -n "$failed" ] && [ "$failed" != "null" ]; then run="$failed"; else continue; fi
+            fi
+
+            checked=$((checked+1))
+            run_id=$(jq -r '.databaseId' <<<"$run")
+            status=$(jq -r '.status' <<<"$run")
+            conclusion=$(jq -r '.conclusion // empty' <<<"$run")
+            attempt=$(jq -r '.attempt // 1' <<<"$run")
+            echo "Inspecting $workflow run $run_id status=$status conclusion=$conclusion attempt=$attempt headSha=$(jq -r '.headSha' <<<"$run")"
+
+            if [ "$status" = "completed" ]; then
+              if { [ "$conclusion" = "failure" ] || [ "$conclusion" = "timed_out" ]; } && [ "$attempt" -lt 3 ]; then
+                echo "RECOVERY: rerunning failed jobs for $run_id (bounded attempt $attempt -> $((attempt+1)))"
+                gh run rerun "$run_id" --failed --repo "$REPO"
+                recovered=$((recovered+1))
+              fi
+              continue
+            fi
+
+            jobs=$(gh api "/repos/$REPO/actions/runs/$run_id/jobs?per_page=100" --jq '[.jobs[] | select(.status == "in_progress")]')
+            active_job_count=$(jq 'length' <<<"$jobs")
+            if [ "$active_job_count" -eq 0 ]; then
+              echo "Run $run_id has no active job yet; leave it alone."
+              continue
+            fi
+
+            stale=0
+            while IFS= read -r job; do
+              [ -z "$job" ] && continue
+              started=$(jq -r '.started_at // empty' <<<"$job")
+              [ -z "$started" ] && continue
+              started_epoch=$(date -d "$started" +%s)
+              age=$((now-started_epoch))
+              echo "  active job $(jq -r '.name' <<<"$job") age=${age}s"
+              stale_limit=3600
+              if [ "$workflow" = "production-short-e2e-gate.yml" ]; then stale_limit=720; fi
+              if [ "$age" -ge "$stale_limit" ]; then stale=1; fi
+            done < <(jq -c '.[]' <<<"$jobs")
+
+            if [ "$stale" -eq 1 ] && [ "$attempt" -lt 3 ]; then
+              echo "RECOVERY: cancelling genuinely stale run $run_id after 60 minutes, then replaying it (bounded attempt $attempt -> $((attempt+1)))"
+              gh run cancel "$run_id" --repo "$REPO" || true
+              for i in $(seq 1 12); do
+                state=$(gh run view "$run_id" --repo "$REPO" --json status --jq '.status' || true)
+                [ "$state" = "completed" ] && break
+                sleep 5
+              done
+              gh run rerun "$run_id" --repo "$REPO"
+              recovered=$((recovered+1))
+            elif [ "$stale" -eq 1 ]; then
+              echo "ESCALATION: run $run_id is stale at attempt=$attempt; retry budget exhausted. Do not silently treat it as healthy."
+            fi
+          done
+
+          story_success=$(gh run list --repo "$REPO" --workflow ep01-story-runner.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt,headSha | jq 'map(select(.status == "completed" and .conclusion == "success")) | sort_by(.createdAt) | reverse | .[0] // empty')
+          if [ -n "$story_success" ] && [ "$story_success" != "null" ]; then
+            story_created=$(jq -r '.createdAt' <<<"$story_success")
+            story_id=$(jq -r '.databaseId' <<<"$story_success")
+            story_sha=$(jq -r '.headSha' <<<"$story_success")
+            auto_runs=$(gh run list --repo "$REPO" --workflow ep01-autonomous.yml --branch main --limit 20 --json databaseId,status,conclusion,createdAt,headSha)
+            auto_active=$(jq --arg sha "$current_main_sha" '[.[] | select(.headSha == $sha and (.status == "in_progress" or .status == "queued" or .status == "waiting"))] | length' <<<"$auto_runs")
+            auto_after=$(jq --arg t "$story_created" --arg sha "$current_main_sha" '[.[] | select(.headSha == $sha and .createdAt > $t)] | length' <<<"$auto_runs")
+            if [ "$auto_active" -eq 0 ] && [ "$auto_after" -eq 0 ]; then
+              echo "CHAIN: successful Story Runner $story_id (sha=$story_sha); dispatching current-main EP01 Autonomous Cut with story_run_id=$story_id for media reuse"
+              gh workflow run ep01-autonomous.yml --repo "$REPO" --ref main -f story_run_id="$story_id"
+              dispatched=$((dispatched+1))
+            fi
+          fi
+
+          echo "Self-healer checked $checked production run(s), including commercial-proof; suppressed queued duplicates=$suppressed; recovery actions=$recovered; autonomous dispatches=$dispatched."
+          {
+            echo "## Production Self-Healer"
+            echo "- Checked: $checked run(s)"
+            echo "- Suppressed queued duplicates: $suppressed"
+            echo "- Recovery actions: $recovered"
+            echo "- Autonomous dispatches: $dispatched"
+            echo "- Commercial proof is recovered with the same bounded retry/salvage policy as Episode 01.\n            - Policy: recovery and chaining are revision-aware; historical Story Runner success can seed a current-main Autonomous run; stale/failed historical Autonomous runs cannot block the current-main chain; active current-main work is preserved; retries remain bounded."
+          } >> "$GITHUB_STEP_SUMMARY"

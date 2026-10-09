@@ -1,0 +1,46 @@
+version: 1
+studio: TRIPPEDD
+policy:
+  default_backend: github_actions
+  blender_backend: flamenco
+  distributed_backend: opencue
+  deterministic_media_backend: ffmpeg
+  editorial_backend: kdenlive_mlt
+  fallback: local_resumable
+  never_restart_completed_work: true
+  require_measured_progress: true
+
+backends:
+  flamenco:
+    upstream: https://projects.blender.org/studio/flamenco
+    release: v3.9.3
+    job_types: [blender, ffmpeg, file_management, exec]
+    checkpoint_unit: frame_or_task
+    preferred_for: [blender_animation, blender_compositing]
+  opencue:
+    upstream: https://github.com/AcademySoftwareFoundation/OpenCue
+    release: v1.19.1
+    job_types: [render_task, frame_range, batch]
+    checkpoint_unit: frame_or_task
+    preferred_for: [large_parallel_jobs, multi_worker_render]
+  ffmpeg:
+    job_types: [encode, mux, transcode, qc]
+    checkpoint_unit: segment
+    preferred_for: [final_master, commercial_encode]
+  kdenlive_mlt:
+    upstream: https://invent.kde.org/multimedia/kdenlive
+    job_types: [editorial_export]
+    checkpoint_unit: segment
+    preferred_for: [timeline_export]
+
+routing:
+  rules:
+    - when: blender_scene
+      backend: flamenco
+    - when: independent_frame_tasks >= 8
+      backend: opencue
+    - when: final_encode
+      backend: ffmpeg
+    - when: editorial_timeline
+      backend: kdenlive_mlt
+  fallback_order: [github_actions, local_resumable]

@@ -1,0 +1,65 @@
+# PROOFS — edge-tts: FAILED (environment network block)
+
+Date: 2026-10-07. edge-tts 7.2.8 installed cleanly via pip.
+
+## What works
+
+- `pip install edge-tts` — OK.
+- `edge-tts --list-voices` (plain HTTPS through the sandbox egress proxy)
+  — OK, returns the full voice table.
+
+## What fails: speech synthesis
+
+Synthesis opens a **WebSocket** (`wss://speech.platform.bing.com/
+cognitiveservices/websocket/v1`). On this sandbox the wss handshake
+hangs and dies with:
+
+    aiohttp.client_exceptions.SocketTimeoutError:
+        Timeout on reading data from socket
+
+A minimal `aiohttp.ws_connect` to the same endpoint through the proxy
+hangs identically (>60s), while plain HTTPS GET to the same host
+returns HTTP 400 immediately — so the sandbox egress proxy completes
+HTTPS but not the WebSocket upgrade to `speech.platform.bing.com`.
+
+Two related environment quirks found while diagnosing (documented for
+anyone retrying on an open network):
+
+1. edge-tts passes `proxy=None` explicitly to aiohttp, which *disables*
+   env-proxy use → direct connection fails in the sandbox. Workaround:
+   `edge-tts --proxy "$https_proxy" ...`
+2. edge-tts pins its TLS trust to `certifi.where()`, which lacks the
+   sandbox's MITM egress CA → `CERTIFICATE_VERIFY_FAILED`. Workaround:
+   append `/run/hatch/egress-tls/ca-bundle.pem` to the venv's
+   `certifi/cacert.pem` (done in this venv).
+
+## Verdict
+
+**FAILED** — not a tool defect; the sandbox network blocks the wss
+synthesis stream. No `edge_tts_test.mp3` was produced (a 0-byte file from
+the failed run was deleted, not kept). Re-run the README command on an
+unrestricted network to complete the smoke test. The scratch-VO caveat
+in `README.md` (unofficial endpoint, throttling risk) stands regardless.
+
+## Wave-2 retry (2026-10-07): STILL BLOCKED
+
+Retried with the documented workaround (`edge-tts --proxy "$https_proxy"`), edge-tts 7.2.8 fresh-installed. Result: identical `aiohttp.client_exceptions.SocketTimeoutError: Timeout on reading data from socket` on the wss handshake to `speech.platform.bing.com`; output file 0 bytes. The sandbox egress proxy still completes plain HTTPS but not the WebSocket upgrade. Conclusion unchanged: edge-tts synthesis is not usable from this sandbox; retry only on an open network (local machine, CI runner, or VPS). The proxy env-var workaround is necessary but not sufficient here.
+
+## Wave-3 retry (2026-10-07): STILL BLOCKED (new exact error)
+
+Fresh install into `~/venvs/wave3-voice` (the Wave-2 install was lost to an
+infra restart) + the CA-bundle append, then:
+
+    edge-tts --proxy "$https_proxy" --voice en-US-AriaNeural \
+        --text "The council does not explain itself. It declares." \
+        --write-media /tmp/edge_tts_retry2.mp3
+
+Result: `aiohttp.client_exceptions.WSServerHandshakeError: 101,
+message='Invalid connection header'` on the wss handshake to
+`speech.platform.bing.com` (Wave 2 saw a socket timeout on the same
+handshake; the proxy now rejects the upgrade outright). Output: 0 bytes
+(deleted, not kept). Conclusion unchanged: **edge-tts synthesis is not
+usable from this sandbox.** Full detail in
+`tools/voice/sherpa-tts/PROOFS_edge_tts.md`. Working offline replacement:
+`sherpa-tts` — real synthesis proof in
+`tools/voice/sherpa-tts/PROOFS.md`.

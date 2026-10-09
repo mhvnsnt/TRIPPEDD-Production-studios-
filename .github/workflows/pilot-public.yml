@@ -2,22 +2,10 @@ name: EP01 Showrunner Cut
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - production/EP01/RUN-PUBLIC-BUILD
-      - .github/workflows/pilot-public.yml
-      - scripts/run-public-pilot.ts
-      - scripts/bin/whisper
-      - production/EP01/generated/blender/**
-      - src/server/publicDriveFolder.ts
-      - src/server/queueManager.ts
-      - src/server/mediaPipeline.ts
-      - src/server/pilotRenderer.ts
-      - src/server/productionMemory.ts
 
 concurrency:
   group: ep01-showrunner-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: read

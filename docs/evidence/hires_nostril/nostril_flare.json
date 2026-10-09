@@ -1,0 +1,61 @@
+{
+  "flareMM": 2.4,
+  "bandMM": 9.0,
+  "perNostril": {
+    "nostril_R": {
+      "rimPointsDrawn": 47,
+      "cageVertsSelected": 12,
+      "vertsMoved": 52,
+      "rimSpanAlongLateralMM": 13.69,
+      "outwardSign": "-x",
+      "widestBeforeMM": 25.67,
+      "widestAfterMM": 26.53,
+      "widenedByMM": 0.86
+    },
+    "nostril_L": {
+      "rimPointsDrawn": 48,
+      "cageVertsSelected": 10,
+      "vertsMoved": 17,
+      "rimSpanAlongLateralMM": 9.9,
+      "outwardSign": "+x",
+      "widestBeforeMM": 34.73,
+      "widestAfterMM": 35.24,
+      "widenedByMM": 0.52
+    }
+  },
+  "isolation": {
+    "eyebrow_R": {
+      "movedVertsWithin6mm": 0,
+      "closestMM": 63.44
+    },
+    "eyelid_R_upper": {
+      "movedVertsWithin6mm": 0,
+      "closestMM": 50.47
+    },
+    "eyelid_R_lower": {
+      "movedVertsWithin6mm": 0,
+      "closestMM": 46.43
+    },
+    "eyebrow_L": {
+      "movedVertsWithin6mm": 0,
+      "closestMM": 67.54
+    },
+    "eyelid_L_upper": {
+      "movedVertsWithin6mm": 0,
+      "closestMM": 55.48
+    },
+    "eyelid_L_lower": {
+      "movedVertsWithin6mm": 0,
+      "closestMM": 52.04
+    }
+  },
+  "maxDisplacementMM": 2.321,
+  "vertsMoved": 69,
+  "authority": "built from renders/_rig_measure/linework_3d.json -- the rims the owner drew. The rim chooses the cage vertices; the cage supplies their positions, so the weak grazing depth on his left rim cannot move anything to the wrong place.",
+  "supersedes": {
+    "nose_sneer": "moves tissue 13.3 mm from his R rim / 17.6 mm from his L",
+    "facs_noseSneer_R": "58.8 - 90.6 mm from his rims",
+    "facs_noseSneer_L": "71.5 - 91.8 mm from his rims",
+    "note": "kept in the file, unused -- generated content is never deleted."
+  }
+}

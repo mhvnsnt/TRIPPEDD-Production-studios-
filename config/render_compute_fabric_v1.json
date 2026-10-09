@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "name": "TRIPPEDD Render/Compute Fabric v1",
+  "principle": "OOM is a worker failure, never an application failure.",
+  "control_plane": {"ui": "God Molecule Studio", "api": "TRIPPEDD Production Studios"},
+  "execution": {"default": "external_worker", "local_fallback": "subprocess_worker", "render_backend": "blender", "blender_orchestrator": "flamenco", "artifact_store": "filesystem_or_s3_compatible"},
+  "job_states": ["QUEUED","RUNNING","RENDERING","QC","CREATIVE_FINAL","FAILED","OOM","RECOVERY","CANCELLED"],
+  "recovery": {"max_attempts": 3, "ordered_actions": ["reduce_lod","reduce_environment_instances","reduce_texture_resolution","reduce_output_resolution","reduce_frame_range","route_to_gpu_worker"], "never": ["telemetry_as_creative_final","identity_substitution","silent_state_promotion"]},
+  "mars_policy": {"canonical_asset": "MARS_CANONICAL", "immutable_source": true, "identity_substitution": false, "lod_chain": ["MASTER","PRODUCTION","ANIMATION","PREVIEW"]},
+  "creative_final_gate": ["all_declared_frames_exist","all_declared_frames_nonzero","manifest_seed_matches","mars_sha256_matches","no_telemetry_substitution","render_exit_code_zero","qc_passed"]
+}

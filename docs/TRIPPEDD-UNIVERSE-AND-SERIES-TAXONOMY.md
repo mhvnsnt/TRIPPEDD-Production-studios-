@@ -18,6 +18,8 @@ This distinction is canonical and should be preserved in production metadata, ed
 | **TRIPPEDD** | Flagship TV program/show | `show: TRIPPEDD` |
 | **The Walk** | Pilot episode of the TRIPPEDD TV show | `show: TRIPPEDD`, `episode: The Walk` |
 | **The Bastard** | Separate series property inside the studio universe | `series: The Bastard` |
+| **Wizard Gang** | Separate series property inside the studio universe (AshLane robed council; in-game name TBD) | `series: Wizard Gang` |
+| **Wizard Gang segment** | A Wizard Gang appearance embedded in a TRIPPEDD episode | `parentShow: TRIPPEDD`, `series: Wizard Gang` |
 | **Bastard segment** | A Bastard appearance embedded in a TRIPPEDD episode | `parentShow: TRIPPEDD`, `series: The Bastard` |
 | **Bastard episode** | A future standalone episode of The Bastard | `show: The Bastard` |
 | **Bannon storyline** | Main Bannon continuity / narrative | `storyline: Bannon` |
@@ -44,6 +46,11 @@ TRIPPEDD PRODUCTION STUDIOS
 │   ├── standalone episodes (future)
 │   └── independent trailers/promos/interstitials (future)
 │
+├── WIZARD GANG (separate series property)
+│   ├── appearances inside TRIPPEDD (`recurringKey: WIZARD_GANG`)
+│   ├── standalone shorts (WIZARD_GANG_SHORT_01 "The Council Rises" — in production)
+│   └── independent trailers/promos/interstitials (future)
+│
 └── Other future studio properties
 ```
 
@@ -67,6 +74,20 @@ Example:
 
 The editorial system must preserve both identities. It must not flatten the segment into “TRIPPEDD content” or detach it from the episode that actually contains it.
 
+The same rule applies to Wizard Gang segments:
+
+```json
+{
+  "studio": "TRIPPEDD Production Studios",
+  "parentShow": "TRIPPEDD",
+  "series": "Wizard Gang",
+  "segmentType": "SERIES_INTERSTITIAL",
+  "storyline": "AshLane",
+  "continuity": "WIZARD_GANG_CANON",
+  "recurringKey": "WIZARD_GANG"
+}
+```
+
 ## Why this structure matters
 
 TRIPPEDD can function like a network rather than a single-format show. The flagship program can introduce characters, visual languages, worlds, and experiments that later graduate into their own properties.
@@ -76,6 +97,25 @@ A recurring Bastard segment can therefore evolve:
 `ONE-OFF IMAGE → SHORT SEGMENT → RECURRING INTERSTITIAL → STANDALONE SHORT → THE BASTARD SERIES`
 
 The reverse is also allowed: a standalone Bastard episode can later appear as a condensed or altered segment inside TRIPPEDD.
+
+## Wizard Gang's relationship to AshLane
+
+Wizard Gang uses AshLane robed-council material but does not require the audience to know the main AshLane storyline.
+
+Its continuity is canon-anchored, not ambiguous: the council's roster, robe colors, and visual rules come from the AshLane STORY_BIBLE.md (Robed Council, lines 262–299). The segment reveals the council's **presence**, never its secrets — the secret-leadership reveal must never appear in player-facing material (STORY_BIBLE.md line 279).
+
+The production database distinguishes, as with other series:
+
+- `storyCanon`: the established AshLane narrative
+- `seriesCanon`: Wizard Gang's internal continuity (`docs/series/WIZARD-GANG.md`)
+- `crossCanonReference`: the robed council == the AshLane secret council
+- `continuityConfidence`: CONFIRMED_BY_CANON_DOCS
+
+Wizard Gang follows the same graduation ladder:
+
+`ONE-OFF IMAGE → SHORT SEGMENT → RECURRING INTERSTITIAL → STANDALONE SHORT → THE WIZARD GANG SERIES`
+
+It launches already holding three rungs at once: SHORT 01 is the standalone short, its bumper cut is the recurring interstitial, and it carries the series title and metadata as the series pilot.
 
 ## The Bastard's relationship to Bannon
 

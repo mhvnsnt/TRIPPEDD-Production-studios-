@@ -1,0 +1,73 @@
+name: Visual Render Inspection Packet
+
+on:
+  workflow_dispatch:
+    inputs:
+      media_glob:
+        description: "Space-separated render files to inspect"
+        required: true
+        default: "public/production/*.mp4 .artifacts/god-molecule/mars-oral/preview/*.png"
+      frame_count:
+        description: "Representative frames per video"
+        required: false
+        default: "12"
+  repository_dispatch:
+    types: [visual_render_inspection]
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  packet:
+    name: Build visual evidence packet
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      MEDIA_GLOB: ${{ inputs.media_glob }}
+      FRAME_COUNT: ${{ inputs.frame_count }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install visual inspection stack
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg imagemagick
+          python -m pip install --upgrade pip pillow
+      - name: Locate render media
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/visual-input
+          found=0
+          while IFS= read -r pattern; do
+            [[ -z "$pattern" ]] && continue
+            for f in $pattern; do
+              if [[ -f "$f" && -s "$f" ]]; then cp -n "$f" /tmp/visual-input/; found=1; fi
+            done
+          done < <(printf '%s' "$MEDIA_GLOB" | tr ' ' '\n')
+          if [[ "$found" != 1 ]]; then
+            echo "VISUAL_PACKET: FAIL — no render media matched."
+            find public production .artifacts artifacts -type f 2>/dev/null | head -200 || true
+            exit 40
+          fi
+      - name: Build evidence packet
+        run: |
+          set -euo pipefail
+          python tools/visual/make_visual_packet.py /tmp/visual-input/* --out visual-inspection-packet --frames "${FRAME_COUNT:-12}"
+      - name: Upload visual packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: VISUAL-RENDER-INSPECTION-${{ github.run_id }}
+          path: visual-inspection-packet/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publish artifact contract
+        run: |
+          {
+            echo "## Visual Render Inspection"
+            echo
+            echo "Original media, representative frames, hashes and ffprobe metadata were uploaded."
+            echo "Visual verdict: NOT AUTO-CLAIMED"
+          } >> "$GITHUB_STEP_SUMMARY"

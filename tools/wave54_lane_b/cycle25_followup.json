@@ -1,0 +1,101 @@
+{
+  "fetched": [
+    "https://raw.githubusercontent.com/staxrip/staxrip/master/License.txt",
+    "https://raw.githubusercontent.com/frno7/psgplay/main/README.md",
+    "https://raw.githubusercontent.com/mmitch/gbsplay/master/README.md",
+    "https://raw.githubusercontent.com/vgmrips/vgmtools/master/LICENSE",
+    "https://raw.githubusercontent.com/pepijn-devries/protrackr2/master/DESCRIPTION",
+    "https://sourceforge.net/projects/qmmp-dev/",
+    "https://raw.githubusercontent.com/elrinth/xmplay_gamemusic_plugin/main/README.md"
+  ],
+  "repos": {
+    "bugbakery/audapolis": {
+      "full_name": "bugbakery/audapolis",
+      "archived": false,
+      "pushed_at": "2026-06-24T10:33:39Z",
+      "default_branch": "main",
+      "spdx_id": "AGPL-3.0",
+      "owner": "bugbakery"
+    }
+  },
+  "raw": {
+    "audit-staxrip-LICENSE2": {
+      "url": "https://raw.githubusercontent.com/staxrip/staxrip/master/License.txt",
+      "status": 200,
+      "bytes": 1081,
+      "sha256": "8fda339286eb3a93e5edef37c6aec9909e6e490df67be60cb96670529ef74ba5",
+      "head": "\ufeff\nMIT License\n\nCopyright (C) 2002-2026 StaxRip Authors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the \"Software\"),\nto deal in the Software without restriction, including without limitation\nthe rights to use, copy, modify, merge, publish, distribute, sublicense,\nand/or sell copies of the Software, and to permi"
+    },
+    "268-LICENSE": {
+      "url": "https://raw.githubusercontent.com/frno7/psgplay/main/LICENSE",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "268-README": {
+      "url": "https://raw.githubusercontent.com/frno7/psgplay/main/README.md",
+      "status": 200,
+      "bytes": 17311,
+      "sha256": "e3a050936f11667ab34bcbc57eb38f9e8e2f3a8b6261caa9d350e3ac5d2fe48f",
+      "head": "![compilation workflow](https://github.com/frno7/psgplay/actions/workflows/compilation.yml/badge.svg)\n\n![Atari ST loading screen](https://raw.githubusercontent.com/frno7/psgplay/main/doc/atari-load.png)\n![Atari ST main menu](https://raw.githubusercontent.com/frno7/psgplay/main/doc/atari-main.png)\n\nPSG play is a music player and emulator for the\n[Atari ST](https://en.wikipedia.org/wiki/Atari_ST)\n[P"
+    },
+    "266-README2": {
+      "url": "https://raw.githubusercontent.com/mmitch/gbsplay/master/README.md",
+      "status": 200,
+      "bytes": 2997,
+      "sha256": "4af17926c9435395df6fcfe276f52af96b8d9b07d2b0d8eea7afb448bfd4ae62",
+      "head": "# gbsplay - A Gameboy sound player\n\n[![Code coverage status](https://codecov.io/github/mmitch/gbsplay/coverage.svg)](https://codecov.io/github/mmitch/gbsplay?branch=master)\n[![Linux Build status](https://github.com/mmitch/gbsplay/workflows/Linux%20Build/badge.svg)](https://github.com/mmitch/gbsplay/actions?query=workflow%3A%22Linux+Build%22)\n[![FreeBSD Build status](https://github.com/mmitch/gbspl"
+    },
+    "269-LICENSE2": {
+      "url": "https://raw.githubusercontent.com/vgmrips/vgmtools/master/LICENSE",
+      "status": 200,
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The licenses for most softwa"
+    },
+    "270-DESCRIPTION2": {
+      "url": "https://raw.githubusercontent.com/pepijn-devries/protrackr2/master/DESCRIPTION",
+      "status": 200,
+      "bytes": 1780,
+      "sha256": "4d8f67f61caff05d3adf0f717566d1c933e21f05d6800587b5e5e709de3071d9",
+      "head": "Package: ProTrackR2\nTitle: Manipulate and Play 'ProTracker' Modules\nVersion: 0.1.1\nAuthors@R: c(\n    person(\"Pepijn\", \"de Vries\", role = c(\"aut\", \"cre\"),\n    email = \"pepijn.devries@outlook.com\",\n    comment = c(ORCID = \"0000-0002-7961-6646\")),\n    person(\"Olav\", \"S\u00f8rensen\", role = c(\"aut\"),\n    comment = c(\"Developer of the ProTracker 2.3d clone\"))\n    )\nMaintainer: Pepijn de Vries <pepijn.devri"
+    },
+    "261-sfpage2": {
+      "url": "https://sourceforge.net/projects/qmmp-dev/",
+      "status": 200,
+      "bytes": 60000,
+      "sha256": "ec59f451e93a2b19a3eb3ae547eefef502d4dd686e795287d74e535d9ab2bf33",
+      "head": "<!doctype html><html class=\"no-js\" lang=\"en\">\n    <head>\n        \n\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" />\n\n        \n        \n        \n    \n        \n        <script src=\"//a.fsdn.com/con/js/min/sf.sandiego-cmp-top.js?1791389504\"></script>\n\n        \n    \n\n        "
+    },
+    "261-header": {
+      "url": "https://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp/src/main.cpp",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "262-gamemusic-readme2": {
+      "url": "https://raw.githubusercontent.com/elrinth/xmplay_gamemusic_plugin/main/README.md",
+      "status": 200,
+      "bytes": 17539,
+      "sha256": "5337daa8638f6f30dd767c0494b9a6f51c921e6ddf23713c7c69ce51337f33d5",
+      "head": "# xmp-gamemusic 1.0.12\n\nNative **32-bit** XMPlay input plugin for chip / console music.\nDisplay name **Game Music**. DLL `xmp-gamemusic.dll`.\n\nThis replaces FIX94 / mudlord `xmp-gme` and the Winamp **NEZplug** /\n**NotSo Fatso** plugins with **one** native plugin. It is not a wrapper\nof `in_nez.dll` or `in_notsofatso.dll`.\n\nIntended home: `Elrinth/xmplay_gamemusic_plugin`.\n\nClassic XMPlay is **32-b"
+    },
+    "265-official-site": {
+      "url": "http://www.adlibtracker.net/",
+      "error": "Remote end closed connection without response"
+    }
+  },
+  "notes": [
+    "=== FOLLOW-UP ===",
+    "staxrip root files: ['.gitattributes', '.github', '.gitignore', 'CHANGELOG-SUPPORTER.md', 'CHANGELOG.md', 'Docs', 'Images', 'License.txt', 'README.md', 'Source']",
+    "GH API FAIL repos/kaltura/server: gh: Not Found (HTTP 404)",
+    "kaltura/server: None",
+    "bugbakery/audapolis: {'full_name': 'bugbakery/audapolis', 'archived': False, 'pushed_at': '2026-06-24T10:33:39Z', 'default_branch': 'main', 'spdx_id': 'AGPL-3.0', 'owner': 'bugbakery'}",
+    "FETCH FAIL https://raw.githubusercontent.com/frno7/psgplay/main/LICENSE: HTTP Error 404: Not Found",
+    "psgplay root: ['.github', '.gitignore', '.gitmodules', 'INSTALL', 'Makefile', 'README.md', 'doc', 'include', 'lib', 'licence', 'script', 'system', 'test']",
+    "gbsplay root: ['.github', '.gitignore', 'CODINGSTYLE', 'COPYRIGHT', 'Doxyfile', 'HISTORY', 'INSTALL.md', 'LICENCE', 'Makefile', 'PACKAGING.md', 'README.md', 'captures', 'cfgparser.c', 'cfgparser.h', 'check_buildflags.sh', 'check_install_uninstall.sh', 'check_plugout_wav.sh', 'check_plugouts.sh', 'common.h', 'configure', 'contrib', 'crc32.c', 'crc32.h', 'depend.sh', 'desktop', 'examples', 'filewriter.c', 'filewriter.h', 'gbcpu.c', 'gbcpu.h', 'gbhw.c', 'gbhw.h', 'gblfsr.c', 'gblfsr.h', 'gbs.c', 'gbs2gb.c', 'gbs_internal.h', 'gbsformat.txt', 'gbsinfo.c', 'gbsplay.c', 'gen_impulse_h.c', 'gen_linkercfg.sh', 'impulsegen.c', 'impulsegen.h', 'libgbs.h', 'libgbs_whitelist.txt', 'man', 'mapper.c', 'mapper.h', 'midifile.c', 'midifile.h', 'mime', 'player.c', 'player.h', 'playercfg.h', 'plugout.c', 'plugout.h', 'plugout_alsa.c', 'plugout_altmidi.c', 'plugout_devdsp.c', 'plugout_dsound.c', 'plugout_iodumper.c', 'plugout_midi.c', 'plugout_nas.c', 'plugout_pipewire.c', 'plugout_pulse.c', 'plugout_sdl.c', 'plugout_stdout.c', 'plugout_vgm.c', 'plugout_wav.c', 'po', 'terminal.h', 'terminal_posix.c', 'terminal_windows.c', 'test.h', 'test_gbs.c', 'util.c', 'util.h', 'xgbsplay.c']",
+    "vgmtools root: ['.gitattributes', '.gitignore', 'CMakeLists.txt', 'LICENSE', 'README.md', 'ReadMe.txt', 'SourceReadme.txt', 'VGMFile.h', 'chip_cmp.c', 'chip_srom.c', 'chip_strp.c', 'chip_strp.h', 'chiptext.c', 'chiptext.h', 'common.h', 'dacopt.c', 'dro2vgm.c', 'imf2vgm.c', 'opl_23.c', 'opt_oki.c', 'optdac.c', 'optvgm.cpp', 'optvgm32.c', 'optvgmrf.c', 'pcm_optimizer.cpp', 'pcm_optimizer.h', 'ptch-test-vgms', 'raw2vgm.c', 'stdbool.h', 'stdtype.h', 'vc6', 'vgm2txt.c', 'vgm_cmp.c', 'vgm_cnt.c', 'vgm_dbc.c', 'vgm_dscmp.c', 'vgm_dso.c', 'vgm_facc.c', 'vgm_lib.h', 'vgm_mono.c', 'vgm_ndlz.c', 'vgm_ptch.c', 'vgm_ren.c', 'vgm_smp1.c', 'vgm_sptd.c', 'vgm_spts.c', 'vgm_sro.c', 'vgm_stat.c', 'vgm_tag.c', 'vgm_trim.c', 'vgm_trml.c', 'vgm_tt.cpp', 'vgm_vol.c', 'vgmlpfnd.c', 'vgmmerge.c', 'zlib', 'zlib1.dll']",
+    "FETCH FAIL https://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp/src/main.cpp: HTTP Error 404: Not Found",
+    "267-upstream-site: 13638 bytes sha 8e4ff1bd21ef | <! SECTION is Home > <!patch for depend> <!patch for depend> <!patch for depend> <!patch for depend> <!patch for depend> <!patch for depend> <html> <h",
+    "267-sf-page: 60000 bytes sha 9dd8a48361b0 | <!doctype html><html class=\"no-js\" lang=\"en\">     <head>                   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />      ",
+    "262-zophar: 7048 bytes sha 90d799c1db7a |  <html>\r <head>\r   <title>NotSo Fatso - Nintendo NSF Utility in Audio Players Category - Zophar's Domain\r  </title>\r   <link rel=\"stylesheet\" href=\"/i",
+    "264-README: ERROR HTTP Error 404: Not Found",
+    "FETCH FAIL http://www.adlibtracker.net/: Remote end closed connection without response"
+  ]
+}

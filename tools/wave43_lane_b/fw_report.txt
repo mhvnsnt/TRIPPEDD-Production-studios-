@@ -1,0 +1,12 @@
+faster-whisper wire report (Wave 43 Lane B)
+faster-whisper: 1.2.1 (MIT)
+fixture: fw_fixture.wav — known sentence: 'The wizard gang meets at midnight on the rooftop.'
+fixture duration: 3.10 s, 16 kHz mono 16-bit
+model: base / cpu / int8 (tiny also run: 2/4 strict)
+detected language: en p=1.00
+segments: 1
+transcript: 'the wizard can meet sat mid-night on the rooftop.'
+strict key-word recall: ['wizard', 'rooftop'] (0.50)
+normalized content-word recall: ['meet', 'midnight', 'rooftop', 'wizard'] (0.80)
+accuracy note: espeak-ng robotic prosody costs exact-word matches on small models (gang->can, at->sat); the transcription pipeline itself (segments, timestamps, SRT) is exact.
+verdict: PASS

@@ -1,0 +1,25 @@
+{
+  "row": 214,
+  "name": "matchering",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "sergree/matchering",
+  "api": {
+    "full_name": "sergree/matchering",
+    "archived": false,
+    "pushed_at": "2026-10-07T14:04:36Z",
+    "stargazers_count": 2654,
+    "default_branch": "master",
+    "owner": "sergree",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 35149
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

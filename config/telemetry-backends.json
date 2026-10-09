@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "purpose": "durable live production telemetry with open-source observability backends",
+  "canonical_ledger": "public/production/.progress/*.json",
+  "sinks": {
+    "github_issue": {
+      "status": "production",
+      "role": "always-on durable fallback for GitHub Actions live retrieval",
+      "implemented_by": "scripts/production/publish-live-telemetry.sh",
+      "interval_seconds": 5
+    },
+    "opentelemetry_collector": {
+      "status": "production-candidate",
+      "role": "vendor-neutral metrics/traces/log transport when a collector endpoint is provisioned",
+      "environment": "TRIPPEDD_OTEL_EXPORTER_OTLP_ENDPOINT",
+      "protocol": "OTLP/HTTP",
+      "source": "https://opentelemetry.io/docs/collector/",
+      "promotion_gate": "real EP01 run reaches collector and metrics can be queried independently of GitHub Actions logs"
+    },
+    "prometheus_pushgateway": {
+      "status": "production-candidate",
+      "role": "optional batch-job metrics sink",
+      "environment": "TRIPPEDD_PUSHGATEWAY_URL",
+      "source": "https://prometheus.io/docs/instrumenting/pushing/",
+      "promotion_gate": "real EP01 run pushes measured progress and stale series lifecycle is verified"
+    }
+  },
+  "rules": [
+    "The production progress ledger remains canonical; external telemetry is a mirror, never the source of truth.",
+    "No percentage, rate, or ETA may be fabricated from wall-clock time alone.",
+    "Missing telemetry is UNKNOWN and triggers bounded recovery rather than healthy RUNNING.",
+    "Telemetry publishing must never block or cancel a healthy production process.",
+    "GitHub Actions log availability must never be treated as the only live-observability channel."
+  ]
+}

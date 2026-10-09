@@ -1,0 +1,47 @@
+{
+ "tool": "WeGA RESTful API",
+ "base": "http://www.weber-gesamtausgabe.de/api/v1",
+ "keyless": true,
+ "openapi_title": "WeGA API",
+ "path_count": 14,
+ "paths": [
+  "/search/entity",
+  "/repositories/items",
+  "/documents/findByAuthor/{authorID}",
+  "/application/newID",
+  "/code/findByElement/{element}",
+  "/documents/findByDate",
+  "/repositories",
+  "/documents/findByMention/{docID}",
+  "/documents",
+  "/application/status",
+  "/documents/{docID}",
+  "/documents/otd",
+  "/application/preferences",
+  "/facets/{facet}"
+ ],
+ "findByDate_sample": {
+  "docType": "diaries",
+  "uri": "https://weber-gesamtausgabe.de/A064400",
+  "title": "Montag, 26. Februar 1810 (Stuttgart, Heilbronn)",
+  "docID": "A064400"
+ },
+ "search_entity_hits": 200,
+ "search_entity_sample": {
+  "docType": "addenda",
+  "uri": "https://weber-gesamtausgabe.de/A120210",
+  "title": "Weber-Studien Band 10",
+  "docID": "A120210"
+ },
+ "document_fetch": {
+  "docID": "A064400",
+  "list_len": 1,
+  "first_item_keys": [
+   "docType",
+   "uri",
+   "title",
+   "docID"
+  ]
+ },
+ "result": "PASS"
+}

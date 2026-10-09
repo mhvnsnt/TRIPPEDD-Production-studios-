@@ -1,0 +1,38 @@
+{
+  "schema": "trippedd.god-molecule.bridge.v1",
+  "show_repo": "mhvnsnt/God-Molecule-Show-Studio",
+  "production_repo": "mhvnsnt/TRIPPEDD-Production-studios-",
+  "show_ref": "main",
+  "production_ref": "main",
+  "authority": {
+    "show_bible": "mhvnsnt/God-Molecule-Show-Studio:src/components/ShowBible.tsx",
+    "episode_data": "mhvnsnt/God-Molecule-Show-Studio:src/data.ts",
+    "production_canon": "mhvnsnt/TRIPPEDD-Production-studios-:docs/god_molecule/GOD_MOLECULE_CANON.md",
+    "canonical_character": "MARS_CANONICAL"
+  },
+  "direction": "God-Molecule-Show-Studio defines show/bible canon; TRIPPEDD-Production-studios- owns executable production workers and evidence. TRIPPEDD may mirror canon snapshots, never silently rewrite them.",
+  "sync_policy": [
+    "Read both main branches before God Molecule production changes.",
+    "Production workers live in TRIPPEDD unless they are UI/show-bible code.",
+    "Show-bible changes originate in God-Molecule-Show-Studio and are mirrored into TRIPPEDD canon with source commit recorded.",
+    "Executable evidence is authoritative only when the artifact exists and its QC gate passes.",
+    "MARS_CANONICAL is immutable and cannot be replaced by donor/generated assets."
+  ],
+  "active_episode": {
+    "id": "ep-01",
+    "title": "The Recursive Room",
+    "seed": 742918,
+    "world_id": "GM-WORLD-0001"
+  },
+  "active_production_order": [
+    "oral protrusion gate",
+    "oral aperture evidence",
+    "jaw separation",
+    "audio-driven Rhubarb lip-sync",
+    "expressions and blinking",
+    "real render evidence",
+    "memory-safe seeded world",
+    "small registered Gaussian layer",
+    "episode packaging"
+  ]
+}

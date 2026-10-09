@@ -1,0 +1,7 @@
+Metropolitan Museum of Art — Open Access (CC0 1.0 Universal)
+Source: https://www.metmuseum.org/about-the-met/policies-and-documents/open-access
+"Images of public-domain artworks ... available for unrestricted use under
+Creative Commons Zero (CC0)."
+Files in this directory were downloaded 2026-10-07 via the Met Collection API
+with isPublicDomain=true filter; each file's object record was individually
+verified isPublicDomain=true before download. See MANIFEST.json.

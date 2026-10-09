@@ -5,6 +5,24 @@ export interface ComedySignal { id: string; type: ComedySignalType; score: numbe
 export interface GagCandidate { id: string; sourceFileId?: string; title: string; score: number; signals: ComedySignal[]; tags: string[]; callbackKeys: string[]; reviewState: 'MACHINE_SUGGESTED' | 'HUMAN_ACCEPTED' | 'HUMAN_REJECTED'; }
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
 
+function parseTime(value: unknown): number | undefined {
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
+  const text = String(value ?? '').trim();
+  if (!text) return undefined;
+  const numeric = Number(text);
+  if (Number.isFinite(numeric)) return numeric;
+  const parts = text.split(':').map(Number);
+  if (parts.some(part => !Number.isFinite(part)) || parts.length < 2) return undefined;
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  return parts[0] * 3600 + parts[1] * 60 + parts[2];
+}
+
+function sceneRange(scene: any): { start?: number; end?: number } {
+  const start = parseTime(scene?.startTime ?? scene?.['Start Time (seconds)'] ?? scene?.['Start Time'] ?? scene?.start ?? scene?.['Start']);
+  const end = parseTime(scene?.endTime ?? scene?.['End Time (seconds)'] ?? scene?.['End Time'] ?? scene?.end ?? scene?.['End']);
+  return { start, end };
+}
+
 export function discoverComedy(input: { sourceFileId?: string; transcript?: { segments?: Array<{ start?: number; end?: number; text?: string }> } | null; scenes?: any[]; ocr?: string; }): GagCandidate[] {
   const candidates: GagCandidate[] = [];
   const segments = input.transcript?.segments ?? [];
@@ -22,6 +40,29 @@ export function discoverComedy(input: { sourceFileId?: string; transcript?: { se
     if (/\b(just|anyway|whatever|never mind|it's fine|its fine|no big deal|wasn't shit|was not shit|nothing|forgot|lost|where is|can't find|cannot find)\b/i.test(text)) signals.push({ id: randomUUID(), type: 'MUNDANE_BUTTON', score: 0.56, startTime: current.start, endTime: current.end, evidence: `Possible anticlimactic/denial button: ${text.slice(0, 180)}`, source: 'TRANSCRIPT' });
     if (signals.length) candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: text.length > 80 ? `${text.slice(0, 77)}...` : text, score: clamp(signals.reduce((sum, signal) => sum + signal.score, 0) / signals.length + (signals.length > 1 ? 0.12 : 0)), signals, tags: [...new Set(signals.map(signal => signal.type.toLowerCase()))], callbackKeys: extractCallbackKeys(text), reviewState: 'MACHINE_SUGGESTED' });
   }
+
+  // A transcript is not the only source of editorial evidence. When Whisper is
+  // unavailable or returns no segments, PySceneDetect still gives us physical,
+  // time-bounded source regions. Preserve those regions as low-confidence
+  // machine suggestions instead of declaring the episode unevidenced.
+  if (!candidates.length && Array.isArray(input.scenes) && input.scenes.length) {
+    for (let index = 0; index < input.scenes.length; index++) {
+      const range = sceneRange(input.scenes[index]);
+      if (range.start === undefined || range.end === undefined || range.end <= range.start) continue;
+      const duration = range.end - range.start;
+      candidates.push({
+        id: randomUUID(),
+        sourceFileId: input.sourceFileId,
+        title: `Scene ${index + 1} · ${duration.toFixed(1)}s evidence window`,
+        score: clamp(0.30 + Math.min(duration, 30) / 300),
+        signals: [{ id: randomUUID(), type: 'VISUAL_GAG', score: 0.30, startTime: range.start, endTime: range.end, evidence: `Shot-boundary evidence from PySceneDetect; no transcript-derived gag claim was available.`, source: 'SCENE' }],
+        tags: ['scene-evidence', 'machine-select', 'no-transcript'],
+        callbackKeys: [],
+        reviewState: 'MACHINE_SUGGESTED',
+      });
+    }
+  }
+
   const ocr = String(input.ocr ?? '').trim();
   if (ocr) candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: 'On-screen text / prop opportunity', score: 0.45, signals: [{ id: randomUUID(), type: 'VISUAL_GAG', score: 0.45, evidence: ocr.slice(0, 500), source: 'VISUAL' }], tags: ['ocr', 'visual-gag'], callbackKeys: extractCallbackKeys(ocr), reviewState: 'MACHINE_SUGGESTED' });
   return candidates.sort((a, b) => b.score - a.score);

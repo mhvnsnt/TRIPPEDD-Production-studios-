@@ -1,0 +1,188 @@
+version: 3
+purpose: god-molecule-production-runtime
+policy:
+  source_first: true
+  agent_callable: true
+  pin_revisions: true
+  verify_after_install: true
+  likeness_safe_editing: true
+  supplied_media_is_source_of_truth: true
+  weights:
+    allowed: true
+    storage: lfs_or_artifact_cache
+    never_bake_secrets: true
+environment_stack:
+  world_seed:
+    required: true
+    recipe: seed -> voxel_macro_layout -> deterministic_scene_manifest
+  gaussian_splat:
+    required_for_captured_3d: false
+    recipe: references -> COLMAP_or_Meshroom -> Nerfstudio/gsplat -> validated_splat
+projects:
+  - name: blender
+    repo: https://github.com/blender/blender.git
+    lane: 3d_animation
+  - name: comfyui
+    repo: https://github.com/comfyanonymous/ComfyUI.git
+    lane: image_generation
+  - name: wan2.1
+    repo: https://github.com/Wan-Video/Wan2.1.git
+    lane: image_video_generation
+  - name: hunyuanvideo
+    repo: https://github.com/Tencent-Hunyuan/HunyuanVideo.git
+    lane: video_generation
+  - name: cogvideox
+    repo: https://github.com/THUDM/CogVideo.git
+    lane: video_generation
+  - name: ltx-video
+    repo: https://github.com/Lightricks/LTX-Video.git
+    lane: video_generation
+  - name: open-sora
+    repo: https://github.com/hpcaitech/Open-Sora.git
+    lane: video_generation
+  - name: animatediff
+    repo: https://github.com/guoyww/AnimateDiff.git
+    lane: motion_generation
+  - name: diffusers
+    repo: https://github.com/huggingface/diffusers.git
+    lane: generation_runtime
+  - name: controlnet
+    repo: https://github.com/lllyasviel/ControlNet.git
+    lane: controlled_generation
+  - name: ip-adapter
+    repo: https://github.com/tencent-ailab/IP-Adapter.git
+    lane: identity_conditioning
+  - name: segment-anything-2
+    repo: https://github.com/facebookresearch/sam2.git
+    lane: segmentation
+  - name: realesrgan
+    repo: https://github.com/xinntao/Real-ESRGAN.git
+    lane: restoration_upscale
+  - name: gfpgan
+    repo: https://github.com/TencentARC/GFPGAN.git
+    lane: face_restoration
+  - name: mediapipe
+    repo: https://github.com/google-ai-edge/mediapipe.git
+    lane: tracking
+  - name: whisper
+    repo: https://github.com/openai/whisper.git
+    lane: transcription
+  - name: demucs
+    repo: https://github.com/facebookresearch/demucs.git
+    lane: audio_separation
+  - name: pyscenedetect
+    repo: https://github.com/Breakthrough/PySceneDetect.git
+    lane: shot_detection
+  - name: ffmpeg
+    repo: https://github.com/FFmpeg/FFmpeg.git
+    lane: media_io
+  - name: kdenlive
+    repo: https://github.com/KDE/kdenlive.git
+    lane: editorial
+  - name: natron
+    repo: https://github.com/NatronGitHub/Natron.git
+    lane: compositing
+  - name: opentoonz
+    repo: https://github.com/opentoonz/opentoonz.git
+    lane: 2d_animation
+  - name: synfig
+    repo: https://github.com/synfig/synfig.git
+    lane: 2d_animation
+  - name: tripo-face-rig
+    repo: https://github.com/mdj128/facial-animation.git
+    lane: tripo_head_rigging
+  - name: google-gnm-head
+    repo: https://github.com/google/GNM.git
+    lane: oral_anatomy_and_expression
+    license: Apache-2.0
+    role: identity-safe donor for teeth, tongue, lower-face expression and measurable jaw opening; never replaces MARS_CANONICAL
+  - name: gnm-studio
+    repo: https://github.com/Saganaki22/GNM-Studio.git
+    lane: gnm_custom_head_fit_and_runtime
+    license: Apache-2.0
+    role: fit a GNM facial subspace to supplied Mars reference renders and export a reusable expression/oral runtime
+  - name: gnm-webcam-puppet
+    repo: https://github.com/edualvarado/gnm-webcam-puppet.git
+    lane: gnm_differential_face_tracking
+    license: Apache-2.0
+    role: reference implementation for differential mouth landmark solving; use only the GNM/Apache-2.0 components and record third-party notices
+  - name: facecap-threejs-r184
+    repo: https://github.com/mrdoob/three.js.git
+    lane: oral_anatomy_expression_reference
+    license: MIT
+    role: pinned FaceCap 52-target oral/face donor; preserve Face Cap credit and exact asset hash; never replaces MARS_CANONICAL
+  - name: openfacefx
+    repo: https://github.com/OpenFaceFX/OpenFaceFX.git
+    lane: lipsync_visemes
+  - name: pantomatrix
+    repo: https://github.com/PantoMatrix/PantoMatrix.git
+    lane: speech_to_face_body_motion
+  - name: blendcap
+    repo: https://github.com/Arcomade/BlendCap.git
+    lane: performance_capture
+  - name: character-animation-pipeline
+    repo: https://github.com/flora6907/character-animation-pipeline.git
+    lane: image_to_rigged_character
+  - name: moface
+    repo: https://github.com/vlarine/moface.git
+    lane: face_motion_blender
+  - name: animato
+    repo: https://github.com/otdnnc/Animato.git
+    lane: text_to_animation
+  - name: pitch-tts
+    repo: https://github.com/adam-cyclones/pitch-tts.git
+    lane: speech_to_animation_timing
+  - name: luanti
+    repo: https://github.com/luanti-org/luanti.git
+    lane: voxel_world_seed
+  - name: worldgen
+    repo: https://github.com/randyau/worldgen.git
+    lane: procedural_world_generation
+  - name: blockbench
+    repo: https://github.com/JannisX11/blockbench.git
+    lane: block_world_asset_authoring
+  - name: colmap
+    repo: https://github.com/colmap/colmap.git
+    lane: camera_reconstruction
+  - name: meshroom
+    repo: https://github.com/alicevision/meshroom.git
+    lane: photogrammetry
+  - name: nerfstudio
+    repo: https://github.com/nerfstudio-project/nerfstudio.git
+    lane: gaussian_scene_reconstruction
+  - name: gsplat
+    repo: https://github.com/nerfstudio-project/gsplat.git
+    lane: gaussian_rasterization
+  - name: gsplat-js
+    repo: https://github.com/huggingface/gsplat.js.git
+    lane: gaussian_web_preview
+  - name: openusd
+    repo: https://github.com/PixarAnimationStudios/OpenUSD.git
+    lane: scene_interchange
+asset_ingest:
+  drive_model:
+    provider: google_drive
+    file_id: 1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl
+    source_url: https://drive.google.com/file/d/1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl/view?usp=drivesdk
+    intended_lane: tripo_head_rigging
+    status: awaiting_drive_connector_or_download
+    required_checks:
+      - identify_file_type
+      - checksum
+      - archive_or_mesh_inventory
+      - dimensions_and_units
+      - topology_report
+      - material_texture_inventory
+      - facial_landmark_scan
+      - rig_readiness_report
+      - preserve_original_immutable
+production_gates:
+  - source_integrity
+  - likeness_integrity
+  - geometry_integrity
+  - animation_integrity
+  - environment_integrity
+  - render_integrity
+  - audio_sync
+  - provenance
+  - final_episode_qc

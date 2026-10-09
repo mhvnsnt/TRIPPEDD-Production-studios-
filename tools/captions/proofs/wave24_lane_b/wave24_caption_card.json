@@ -1,0 +1,20 @@
+{
+  "tool": "Pillow (HPND) + Noto Sans Regular/Bold (OFL-1.1)",
+  "pillow_version": "12.3.0",
+  "output": "/home/hatch/workspace/trippedd-studio/tools/captions/proofs/wave24_lane_b/wave24_caption_card.png",
+  "size": [
+    1920,
+    1080
+  ],
+  "font": "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf",
+  "title": "WIZARD GANG",
+  "subtitle": "EP01 \u201cTHE SUMMIT\u201d",
+  "caption_bar_text": "[music] \u266a synth swell \u266a",
+  "title_band_nonbg_pixels": 37675,
+  "caption_bar_nonbg_pixels": 4996,
+  "assertions": [
+    "PNG re-opened at 1920x1080",
+    "title band contains rendered glyphs",
+    "caption bar contains rendered glyphs incl. U+266A"
+  ]
+}

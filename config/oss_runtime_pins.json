@@ -1,0 +1,42 @@
+{
+  "schema": "trippedd.oss-runtime-pins/v1",
+  "purpose": "Pinned open-source Python capabilities exercised by CI without treating imports as production evidence",
+  "packages": [
+    {
+      "name": "OpenImageIO",
+      "version": "3.1.17.0",
+      "role": "exact image reopen, inspection and processing",
+      "source": "https://github.com/AcademySoftwareFoundation/OpenImageIO",
+      "evidence_status": "NOT_ATTEMPTED"
+    },
+    {
+      "name": "MaterialX",
+      "version": "1.39.5",
+      "role": "portable material and look-development interchange",
+      "source": "https://github.com/AcademySoftwareFoundation/MaterialX",
+      "evidence_status": "NOT_ATTEMPTED"
+    },
+    {
+      "name": "opencue-pycue",
+      "version": "1.19.1",
+      "role": "OpenCue scheduler client",
+      "source": "https://github.com/AcademySoftwareFoundation/OpenCue",
+      "evidence_status": "NOT_ATTEMPTED"
+    },
+    {
+      "name": "opencue-pyoutline",
+      "version": "1.19.1",
+      "role": "deterministic OpenCue job/layer construction",
+      "source": "https://github.com/AcademySoftwareFoundation/OpenCue",
+      "evidence_status": "NOT_ATTEMPTED"
+    }
+  ],
+  "policy": {
+    "runtime_import_is_not_production_evidence": true,
+    "tool_presence_is_capability_only": true,
+    "render_output_must_be_retrieved_and_reopened": true,
+    "visual_qc_required": true,
+    "physical_qc_required_when_applicable": true,
+    "failed_or_missing_outputs_cannot_be_promoted_to_pass": true
+  }
+}

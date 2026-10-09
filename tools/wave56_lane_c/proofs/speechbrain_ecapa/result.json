@@ -1,0 +1,79 @@
+{
+  "model": "speechbrain/spkrec-ecapa-voxceleb",
+  "embedding_dim": 192,
+  "segments": [
+    "A1",
+    "B1",
+    "A2",
+    "B2"
+  ],
+  "checks": [
+    {
+      "name": "embedding_shape",
+      "status": "PASS",
+      "detail": "shape (4, 192)"
+    },
+    {
+      "name": "embeddings_finite",
+      "status": "PASS",
+      "detail": "no NaN/Inf"
+    },
+    {
+      "name": "speaker_separation",
+      "status": "PASS",
+      "detail": "min intra 0.8663 vs max inter 0.7180 (margin +0.1483)"
+    },
+    {
+      "name": "same_segment_near_one",
+      "status": "PASS",
+      "detail": "diag [1.0, 1.0, 1.0, 1.0]"
+    },
+    {
+      "name": "embeddings_deterministic",
+      "status": "PASS",
+      "detail": "max|diff| = 0.0"
+    },
+    {
+      "name": "runs_to_completion",
+      "status": "PASS",
+      "detail": "34.0 s end-to-end"
+    }
+  ],
+  "cosine_similarity": [
+    [
+      1.0,
+      0.718,
+      0.8663,
+      0.7075
+    ],
+    [
+      0.718,
+      1.0,
+      0.6614,
+      0.9083
+    ],
+    [
+      0.8663,
+      0.6614,
+      1.0,
+      0.6409
+    ],
+    [
+      0.7075,
+      0.9083,
+      0.6409,
+      1.0
+    ]
+  ],
+  "min_intra_sim": 0.8663,
+  "max_inter_sim": 0.718,
+  "separation_margin": 0.1483,
+  "determinism_max_abs_diff": 0.0,
+  "elapsed_s": 34.0,
+  "sha256": {
+    "embeddings.pt": "79eff78da81791da8e5fc20b6cb0c26505b3196a58bddeab1f7c0fa8863d86e4",
+    "fixture_2spk.wav": "e5e5e596af39f22885fea9319204e84ceb1da5287148190f5753f35767b7356d"
+  },
+  "passed": 6,
+  "failed": 0
+}

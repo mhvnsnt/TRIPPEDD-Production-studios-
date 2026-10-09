@@ -1,0 +1,467 @@
+{
+ "183": {
+  "row": 183,
+  "claim": "LGPL-3.0",
+  "repos": {
+   "rism-digital/verovio": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2026-10-08T08:16:37Z",
+    "default_branch": "develop",
+    "spdx_id": "LGPL-3.0",
+    "owner": "rism-digital"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/rism-digital/verovio/development/COPYING",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   },
+   {
+    "url": "https://raw.githubusercontent.com/rism-digital/verovio/master/COPYING",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": true,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim "
+   },
+   {
+    "url": "https://raw.githubusercontent.com/rism-digital/verovio/development/LICENSE",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   }
+  ]
+ },
+ "184": {
+  "row": 184,
+  "claim": "LGPL-2.1",
+  "repos": {
+   "libgme/game-music-emu": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2026-09-08T05:36:02Z",
+    "default_branch": "master",
+    "spdx_id": "LGPL-2.1",
+    "owner": "libgme"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/libgme/game-music-emu/master/gme/LICENSE.txt",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   },
+   {
+    "url": "https://raw.githubusercontent.com/libgme/game-music-emu/master/COPYING",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   },
+   {
+    "url": "https://raw.githubusercontent.com/libgme/game-music-emu/main/README.md",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   }
+  ]
+ },
+ "186": {
+  "row": 186,
+  "claim": "AGPL-3.0 (+ Section 7 trademark terms)",
+  "repos": {
+   "zrythm/zrythm": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2026-10-04T07:48:21Z",
+    "default_branch": "master",
+    "spdx_id": "NOASSERTION",
+    "owner": "zrythm"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/zrythm/zrythm/master/LICENSES/LicenseRef-ZrythmLicense.txt",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": true,
+     "or_later": false,
+     "trademark": true
+    },
+    "head": "Zrythm is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License (GNU AGPL) as published by the Free Software Foundation, either version 3 of the License, or (at "
+   }
+  ]
+ },
+ "187": {
+  "row": 187,
+  "claim": "GPLv2",
+  "repos": {},
+  "fetches": [
+   {
+    "url": "https://sourceforge.net/projects/cheesetracker/",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "<!doctype html><html class=\"no-js\" lang=\"en\">     <head>                   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1."
+   },
+   {
+    "url": "https://cheesetracker.sourceforge.net/",
+    "status": 200,
+    "bytes": 8350,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "<html><head> <title>CheeseTracker</title>  </head> <body> <table> <tr><td>   <table>   <tr><td><a href=\"http://sourceforge.net\"><img src=\"http://sflogo.sourceforge.net/sflogo.php?group_id=26617&amp;type=2\" width=\"125\" he"
+   }
+  ]
+ },
+ "188": {
+  "row": 188,
+  "claim": "GPL-2.0",
+  "repos": {
+   "nengxu/rosegarden": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2014-04-25T17:47:37Z",
+    "default_branch": "master",
+    "spdx_id": "GPL-2.0",
+    "owner": "nengxu"
+   },
+   "tedfelix/rosegarden-official": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2026-10-05T19:50:21Z",
+    "default_branch": "master",
+    "spdx_id": "GPL-2.0",
+    "owner": "tedfelix"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/nengxu/rosegarden/master/COPYING",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": false,
+     "gpl2": true,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "                    GNU GENERAL PUBLIC LICENSE                        Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.,  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA  Everyone "
+   },
+   {
+    "url": "https://raw.githubusercontent.com/tedfelix/rosegarden-official/master/COPYING",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": false,
+     "gpl2": true,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "                    GNU GENERAL PUBLIC LICENSE                        Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.,  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA  Everyone "
+   },
+   {
+    "url": "https://www.rosegardenmusic.com/",
+    "status": 200,
+    "bytes": 3920,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "<!DOCTYPE html> <html>   <head>     <title>Rosegarden: music software for Linux</title>     <link rel=\"stylesheet\" href=\"/css/screen.css\" media=\"screen\">     <link rel=\"icon\" type=\"image/png\" href=\"/images/icon.png\"/>   "
+   }
+  ]
+ },
+ "189": {
+  "row": 189,
+  "claim": "GPL-3.0",
+  "repos": {
+   "iina/iina": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2026-10-08T02:35:33Z",
+    "default_branch": "develop",
+    "spdx_id": "GPL-3.0",
+    "owner": "iina"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/iina/iina/develop/LICENSE",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": true,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim c"
+   },
+   {
+    "url": "https://raw.githubusercontent.com/iina/iina/main/LICENSE",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   }
+  ]
+ },
+ "190": {
+  "row": 190,
+  "claim": "GPL-2.0",
+  "repos": {
+   "smplayer-dev/smplayer": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2026-10-06T07:39:50Z",
+    "default_branch": "master",
+    "spdx_id": "GPL-2.0",
+    "owner": "smplayer-dev"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/smplayer-dev/smplayer/master/Copying.txt",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": false,
+     "gpl2": true,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "\t\t    GNU GENERAL PUBLIC LICENSE\r \t\t       Version 2, June 1991\r \r  Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\r  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\r  Everyone is permitted to copy an"
+   },
+   {
+    "url": "https://raw.githubusercontent.com/smplayer-dev/smplayer/master/COPYING",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   }
+  ]
+ },
+ "191": {
+  "row": 191,
+  "claim": "GPL-3.0",
+  "repos": {
+   "mpc-hc/mpc-hc": {
+    "exists": true,
+    "archived": true,
+    "pushed_at": "2020-04-24T11:04:40Z",
+    "default_branch": "develop",
+    "spdx_id": "GPL-3.0",
+    "owner": "mpc-hc"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/mpc-hc/mpc-hc/master/COPYING.txt",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": true,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim c"
+   },
+   {
+    "url": "https://raw.githubusercontent.com/mpc-hc/mpc-hc/master/COPYING",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   }
+  ]
+ },
+ "192": {
+  "row": 192,
+  "claim": "GPLv3",
+  "repos": {},
+  "fetches": [
+   {
+    "url": "https://sourceforge.net/projects/mpcbe/",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "<!doctype html><html class=\"no-js\" lang=\"en\">     <head>                   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1."
+   }
+  ]
+ },
+ "193": {
+  "row": 193,
+  "claim": "GPL-3.0",
+  "repos": {
+   "celluloid-player/celluloid": {
+    "exists": true,
+    "archived": false,
+    "pushed_at": "2026-10-04T22:57:28Z",
+    "default_branch": "master",
+    "spdx_id": "GPL-3.0",
+    "owner": "celluloid-player"
+   }
+  },
+  "fetches": [
+   {
+    "url": "https://raw.githubusercontent.com/celluloid-player/celluloid/master/COPYING",
+    "status": 200,
+    "bytes": 12001,
+    "signals": {
+     "gpl3": true,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": "                     GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim "
+   },
+   {
+    "url": "https://raw.githubusercontent.com/celluloid-player/celluloid/main/COPYING",
+    "status": "ERR",
+    "bytes": null,
+    "signals": {
+     "gpl3": false,
+     "gpl2": false,
+     "lgpl3": false,
+     "lgpl2": false,
+     "agpl3": false,
+     "or_later": false,
+     "trademark": false
+    },
+    "head": ""
+   }
+  ]
+ }
+}

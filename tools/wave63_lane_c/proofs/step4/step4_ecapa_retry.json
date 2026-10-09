@@ -1,0 +1,17 @@
+{
+  "diag_cos_downstream_denoised": {
+    "AB": 0.1619,
+    "AC": 0.6311,
+    "BC": 0.1524
+  },
+  "n_windows_denoised": 166,
+  "diag_cos_raw_control": {
+    "AB": 0.1524,
+    "AC": 0.6259,
+    "BC": 0.1416
+  },
+  "n_windows_raw": 166,
+  "model": "speechbrain/spkrec-ecapa-voxceleb",
+  "batch": 32,
+  "note": "GT-informed bonus diagnostic; production speaker path never sees denoised audio (Wave-61 law: denoise downstream of embeddings only)"
+}

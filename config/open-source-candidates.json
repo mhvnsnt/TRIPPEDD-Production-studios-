@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 2,
+  "policy": "Open-source is a capability source, not a goal by itself. A candidate remains non-canonical until license/provenance, reproducible install, real-input smoke, measured output, recovery/resume, artifact compatibility, and regression evidence are recorded.",
+  "maturity": [
+    "DISCOVERED",
+    "RESEARCHED",
+    "CANDIDATE",
+    "INTEGRATED",
+    "SMOKE_TESTED",
+    "VALIDATED",
+    "PRODUCTION",
+    "DEPRECATED",
+    "QUARANTINED",
+    "REJECTED"
+  ],
+  "promotionGates": [
+    "upstream and license/model provenance verified",
+    "reproducible install or provisioning path",
+    "real TRIPPEDD input smoke test",
+    "measured output and performance evidence",
+    "canonical artifact/provenance compatibility",
+    "failure and recovery/resume exercise",
+    "no regression against deterministic fallback",
+    "telemetry exposes percent, elapsed, rate, ETA and current operation or reports UNKNOWN"
+  ],
+  "candidates": [
+    {
+      "id": "opentimelineio",
+      "domain": "Editorial / Interchange",
+      "upstream": "https://github.com/AcademySoftwareFoundation/OpenTimelineIO",
+      "status": "CANDIDATE",
+      "integration": "editorial timeline interchange and deterministic assembly manifests"
+    },
+    {
+      "id": "openassetio",
+      "domain": "Assets / Interchange",
+      "upstream": "https://github.com/OpenAssetIO/OpenAssetIO",
+      "status": "CANDIDATE",
+      "integration": "asset identity and cross-application asset resolution"
+    },
+    {
+      "id": "kitsu",
+      "domain": "Production Management",
+      "upstream": "https://github.com/cgwire/kitsu",
+      "status": "CANDIDATE",
+      "integration": "projects, tasks, review, production tracking and approvals"
+    },
+    {
+      "id": "ayon",
+      "domain": "Production / DCC Pipeline",
+      "upstream": "https://github.com/ynput/ayon-core",
+      "status": "CANDIDATE",
+      "integration": "publishing, DCC integration, project/product/version tracking"
+    },
+    {
+      "id": "pyblish",
+      "domain": "Asset Validation / QC",
+      "upstream": "https://github.com/pyblish/pyblish-base",
+      "status": "CANDIDATE",
+      "integration": "collector/validator/publisher architecture for asset preflight"
+    },
+    {
+      "id": "openusd",
+      "domain": "3D / Scene Description",
+      "upstream": "https://github.com/PixarAnimationStudios/OpenUSD",
+      "status": "CANDIDATE",
+      "integration": "scene graph, composition, asset interchange and future Hydra paths"
+    },
+    {
+      "id": "materialx",
+      "domain": "Materials / Look Development",
+      "upstream": "https://github.com/AcademySoftwareFoundation/MaterialX",
+      "status": "CANDIDATE",
+      "integration": "portable material and look-description interchange"
+    },
+    {
+      "id": "openimageio",
+      "domain": "Image / Texture IO",
+      "upstream": "https://github.com/AcademySoftwareFoundation/OpenImageIO",
+      "status": "CANDIDATE",
+      "integration": "high-performance image and texture inspection/conversion"
+    },
+    {
+      "id": "openexr",
+      "domain": "HDR / Image IO",
+      "upstream": "https://github.com/AcademySoftwareFoundation/openexr",
+      "status": "CANDIDATE",
+      "integration": "HDR/linear image sequence and interchange"
+    },
+    {
+      "id": "opencolorio",
+      "domain": "Color / Image Finishing",
+      "upstream": "https://github.com/AcademySoftwareFoundation/OpenColorIO",
+      "status": "CANDIDATE",
+      "integration": "color transforms, ACES/OCIO configs and deterministic color management"
+    },
+    {
+      "id": "vapoursynth",
+      "domain": "Video Processing / Restoration",
+      "upstream": "https://github.com/vapoursynth/vapoursynth",
+      "status": "CANDIDATE",
+      "integration": "optional programmable restoration/filtering backend"
+    },
+    {
+      "id": "gstreamer",
+      "domain": "Media Processing / Ingest",
+      "upstream": "https://gitlab.freedesktop.org/gstreamer/gstreamer",
+      "status": "CANDIDATE",
+      "integration": "media graphs, stream inspection and alternate ingest/transcode backend"
+    },
+    {
+      "id": "faster-whisper",
+      "domain": "Media Intelligence / Transcript",
+      "upstream": "https://github.com/SYSTRAN/faster-whisper",
+      "status": "CANDIDATE",
+      "integration": "local accelerated speech transcription fallback/augmentation"
+    },
+    {
+      "id": "silero-vad",
+      "domain": "Media Intelligence / Audio",
+      "upstream": "https://github.com/snakers4/silero-vad",
+      "status": "CANDIDATE",
+      "integration": "voice activity detection before transcription and dialogue segmentation"
+    },
+    {
+      "id": "demucs",
+      "domain": "Audio / Source Separation",
+      "upstream": "https://github.com/facebookresearch/demucs",
+      "status": "CANDIDATE",
+      "integration": "optional dialogue/music/effects stem separation"
+    },
+    {
+      "id": "mlt",
+      "domain": "Editorial / Rendering",
+      "upstream": "https://github.com/mltframework/mlt",
+      "status": "CANDIDATE",
+      "integration": "multitrack deterministic editorial render backend"
+    },
+    {
+      "id": "frei0r",
+      "domain": "VFX / Effects",
+      "upstream": "https://github.com/dyne/frei0r",
+      "status": "CANDIDATE",
+      "integration": "portable open video-effect plugin layer"
+    },
+    {
+      "id": "blender",
+      "domain": "Animation / 3D / Rendering",
+      "upstream": "https://github.com/blender/blender",
+      "status": "INTEGRATED",
+      "integration": "canonical 3D/Bastard/animation render path; must remain checkpointed and telemetry-supervised"
+    },
+    {
+      "id": "opencue",
+      "domain": "Compute / Render Farm",
+      "upstream": "https://github.com/AcademySoftwareFoundation/OpenCue",
+      "status": "CANDIDATE",
+      "integration": "distributed render scheduling, workers, resource allocation and recovery"
+    },
+    {
+      "id": "flamenco",
+      "domain": "Compute / Blender Farm",
+      "upstream": "https://projects.blender.org/studio/flamenco",
+      "status": "CANDIDATE",
+      "integration": "Blender-focused render orchestration and worker scheduling"
+    },
+    {
+      "id": "act",
+      "domain": "Compute / Workflow Reproduction",
+      "upstream": "https://github.com/nektos/act",
+      "status": "CANDIDATE",
+      "integration": "local reproduction of GitHub Actions workflows to reduce hosted-minute waste"
+    },
+    {
+      "id": "opentelemetry",
+      "domain": "Observability / Telemetry",
+      "upstream": "https://github.com/open-telemetry/opentelemetry-collector",
+      "status": "CANDIDATE",
+      "integration": "vendor-neutral traces, metrics and logs alongside durable production ledger"
+    },
+    {
+      "id": "prometheus",
+      "domain": "Observability / Metrics",
+      "upstream": "https://github.com/prometheus/prometheus",
+      "status": "CANDIDATE",
+      "integration": "historical production metrics and resource telemetry sink"
+    },
+    {
+      "id": "grafana",
+      "domain": "Observability / Studio UI",
+      "upstream": "https://github.com/grafana/grafana",
+      "status": "CANDIDATE",
+      "integration": "operator dashboards for runs, workers, throughput, failures and recovery"
+    },
+    {
+      "id": "vmaf",
+      "domain": "QC / Perceptual Validation",
+      "upstream": "https://github.com/Netflix/vmaf",
+      "status": "CANDIDATE",
+      "integration": "measurable perceptual video regression scoring"
+    },
+    {
+      "id": "media-conch",
+      "domain": "QC / Delivery Compliance",
+      "upstream": "https://github.com/MediaArea/MediaConch",
+      "status": "CANDIDATE",
+      "integration": "machine-checkable media conformance and policy validation"
+    },
+    {
+      "id": "qctools",
+      "domain": "QC / Broadcast Media",
+      "upstream": "https://github.com/bavc/qctools",
+      "status": "CANDIDATE",
+      "integration": "technical video inspection and quality diagnostics"
+    },
+    {
+      "id": "ardour",
+      "domain": "Audio / Sound Finishing",
+      "upstream": "https://github.com/Ardour/ardour",
+      "status": "CANDIDATE",
+      "integration": "optional multitrack audio finishing backend"
+    },
+    {
+      "id": "krita",
+      "domain": "2D / Illustration / Animation",
+      "upstream": "https://github.com/KDE/krita",
+      "status": "CANDIDATE",
+      "integration": "2D asset creation and animation interchange path"
+    },
+    {
+      "id": "godot",
+      "domain": "Interactive / Game Extensions",
+      "upstream": "https://github.com/godotengine/godot",
+      "status": "CANDIDATE",
+      "integration": "interactive, game-extension and real-time experimental format path"
+    },
+    {
+      "id": "meshroom",
+      "domain": "3D / Photogrammetry",
+      "upstream": "https://github.com/alicevision/meshroom",
+      "status": "CANDIDATE",
+      "integration": "multi-view identity geometry and complete head/neck reconstruction"
+    },
+    {
+      "id": "alicevision",
+      "domain": "3D / Photogrammetry",
+      "upstream": "https://github.com/alicevision/AliceVision",
+      "status": "CANDIDATE",
+      "integration": "photogrammetric reconstruction backend for Meshroom"
+    },
+    {
+      "id": "colmap",
+      "domain": "3D / Photogrammetry",
+      "upstream": "https://github.com/colmap/colmap",
+      "status": "CANDIDATE",
+      "integration": "alternate SfM/MVS camera and geometry reconstruction backend"
+    },
+    {
+      "id": "trellis2",
+      "domain": "AI / Image-to-3D",
+      "upstream": "https://github.com/microsoft/TRELLIS.2",
+      "status": "CANDIDATE",
+      "integration": "high-fidelity image-to-3D asset generation for reusable character geometry"
+    },
+    {
+      "id": "wan2.1",
+      "domain": "AI / Video Generation",
+      "upstream": "https://github.com/Wan-Video/Wan2.1",
+      "status": "CANDIDATE",
+      "integration": "reference-conditioned image/video generation and video editing lane"
+    },
+    {
+      "id": "google-gnm-head",
+      "domain": "Character / Oral Anatomy / Facial Expression",
+      "upstream": "https://github.com/google/GNM",
+      "status": "CANDIDATE",
+      "license": "Apache-2.0",
+      "integration": "MARS_CANONICAL oral-anatomy donor: upper/lower teeth, tongue, lower-face expression basis and measured jaw-open bridge; never replaces canonical exterior identity"
+    },
+    {
+      "id": "gnm-studio",
+      "domain": "Character / Identity Fit / Facial Runtime",
+      "upstream": "https://github.com/Saganaki22/GNM-Studio",
+      "status": "CANDIDATE",
+      "license": "Apache-2.0 for project and preserved Google GNM terms for GNM assets; inspect THIRD_PARTY_NOTICES before promotion",
+      "integration": "local-first GNM runtime and photo-guided custom-head fitting used to derive a mouth/lip deformation donor from Mars reference renders"
+    },
+    {
+      "id": "gnm-webcam-puppet",
+      "domain": "Character / Differential Face Tracking",
+      "upstream": "https://github.com/edualvarado/gnm-webcam-puppet",
+      "status": "CANDIDATE",
+      "license": "verify upstream notices before promotion",
+      "integration": "reference solver for differential MediaPipe-to-GNM mouth correspondence and temporal mouth tracking"
+    }
+  ],
+  "fallbackLaw": "No candidate may become a single point of failure. Every promoted capability must retain a deterministic fallback or explicit UNKNOWN state.",
+  "activeProductionLaw": "Do not restart or replace active EP01 production solely to test an OSS candidate. Test candidates in isolated smoke/validation paths and promote only after evidence."
+}

@@ -1,0 +1,27 @@
+[Unit]
+Description=TRIPPEDD Autonomous GitHub JIT Supervisor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=trippedd
+Group=trippedd
+WorkingDirectory=/opt/trippedd-production
+EnvironmentFile=/etc/trippedd/autonomous-runner.env
+ExecStart=/usr/bin/python3 -m supervisor.autonomous_supervisor
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/trippedd-production
+ReadWritePaths=/opt/trippedd-runner
+CapabilityBoundingSet=
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
+
+[Install]
+WantedBy=multi-user.target

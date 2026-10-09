@@ -1,0 +1,34 @@
+{
+  "schema": "trippedd.asset-registry/v1",
+  "status": "SOURCE_RESOLVED",
+  "rules": {
+    "identity_is_typed": true,
+    "filename_is_not_identity": true,
+    "binary_payload_required_for_execution": true,
+    "proxy_assets_cannot_satisfy_canonical_character": true
+  },
+  "assets": {
+    "MARS_CANONICAL": {
+      "type": "canonical_character_source",
+      "source_repo": "mhvnsnt/God-Molecule-Show-Studio",
+      "source_ref": "main",
+      "source_path": ".trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl.blend",
+      "source_git_blob_sha": "b42f8ffa1bbfdba7817682ddcd86c8059dae9c26",
+      "size_bytes": 860756,
+      "execution_requirement": "MATERIALIZE_BINARY_BEFORE_BLENDER",
+      "proxy_paths": [
+        ".trippedd_assets/mars_proxy.glb",
+        ".trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl_proxy.blend",
+        ".trippedd_assets/mars_source_1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl_proxy.glb"
+      ],
+      "proxy_policy": "inspection_or_fallback_only; never evidence_of_MARS_CANONICAL"
+    }
+  },
+  "resolution": {
+    "worker_must_materialize": true,
+    "worker_must_hash_materialized_bytes": true,
+    "worker_must_compare_source_sha_before_render": true,
+    "hash_mismatch": "BLOCKED",
+    "missing_binary": "BLOCKED"
+  }
+}

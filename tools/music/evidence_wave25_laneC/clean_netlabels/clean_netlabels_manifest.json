@@ -1,0 +1,240 @@
+{
+  "generated_at": "2026-10-08T00:54:25.266005+00:00",
+  "lane": "Wave 25 Lane C",
+  "clean_definition": "CC0-1.0 / PDM-1.0 / CC-BY-4.0 / CC-BY-3.0 only",
+  "collections": {
+    "happy-new-year-recordings": {
+      "items_scanned": 5,
+      "clean_items": 5,
+      "skipped": 0,
+      "skip_detail": [],
+      "items": [
+        {
+          "identifier": "ShadowOfTheDollsOssicles2CompositionsUsingProcessedFieldRecordings",
+          "title": "Shadow of the Dolls: Ossicles #2: compositions using processed field recordings + a remix",
+          "license": "CC-BY-3.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/3.0/us/",
+          "creator": "the Beige Channel",
+          "details_url": "https://archive.org/details/ShadowOfTheDollsOssicles2CompositionsUsingProcessedFieldRecordings",
+          "download_prefix": "https://archive.org/download/ShadowOfTheDollsOssicles2CompositionsUsingProcessedFieldRecordings/"
+        },
+        {
+          "identifier": "AMUSANT",
+          "title": "AMUSANT!",
+          "license": "CC-BY-3.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/3.0/us/",
+          "creator": "the Beige Channel",
+          "details_url": "https://archive.org/details/AMUSANT",
+          "download_prefix": "https://archive.org/download/AMUSANT/"
+        },
+        {
+          "identifier": "WhyNotTakeADaydreamAndWearIt",
+          "title": "WHY NOT TAKE A DAYDREAM AND WEAR IT",
+          "license": "CC-BY-3.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/3.0/us/",
+          "creator": "the Beige Channel",
+          "details_url": "https://archive.org/details/WhyNotTakeADaydreamAndWearIt",
+          "download_prefix": "https://archive.org/download/WhyNotTakeADaydreamAndWearIt/"
+        },
+        {
+          "identifier": "AutumnRainInTheYard",
+          "title": "Autumn Rain in the Yard",
+          "license": "CC-BY-3.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/3.0/us/",
+          "creator": "the Beige Channel",
+          "details_url": "https://archive.org/details/AutumnRainInTheYard",
+          "download_prefix": "https://archive.org/download/AutumnRainInTheYard/"
+        },
+        {
+          "identifier": "EnjoyVictoriaBayOssicles1UneditedFieldRecordings",
+          "title": "Enjoy Victoria Bay: Ossicles #1: unedited field recordings",
+          "license": "CC-BY-3.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/3.0/us/",
+          "creator": "the Beige Channel",
+          "details_url": "https://archive.org/details/EnjoyVictoriaBayOssicles1UneditedFieldRecordings",
+          "download_prefix": "https://archive.org/download/EnjoyVictoriaBayOssicles1UneditedFieldRecordings/"
+        }
+      ]
+    },
+    "kusoj": {
+      "items_scanned": 12,
+      "clean_items": 8,
+      "skipped": 4,
+      "skip_detail": [
+        {
+          "identifier": "remixes2008",
+          "class": "unknown",
+          "reason": "no licenseurl on item"
+        },
+        {
+          "identifier": "aztronuts_vol_2",
+          "class": "unknown",
+          "reason": "no licenseurl on item"
+        },
+        {
+          "identifier": "aztronuts_vol_2mix",
+          "class": "unknown",
+          "reason": "no licenseurl on item"
+        },
+        {
+          "identifier": "aztronuts",
+          "class": "unknown",
+          "reason": "no licenseurl on item"
+        }
+      ],
+      "items": [
+        {
+          "identifier": "placard",
+          "title": "placard9 selective recordings",
+          "license": "CC-PD-dedication (legacy)",
+          "licenseurl": "http://creativecommons.org/licenses/publicdomain/",
+          "creator": "KTK",
+          "details_url": "https://archive.org/details/placard",
+          "download_prefix": "https://archive.org/download/placard/"
+        },
+        {
+          "identifier": "nullbomb-coverz2020",
+          "title": "2020 covers of popular songs",
+          "license": "PDM-1.0",
+          "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/",
+          "creator": "nullbomb",
+          "details_url": "https://archive.org/details/nullbomb-coverz2020",
+          "download_prefix": "https://archive.org/download/nullbomb-coverz2020/"
+        },
+        {
+          "identifier": "nullbomb",
+          "title": "Nullbomb creatures 2005-2006",
+          "license": "CC-BY-2.5",
+          "licenseurl": "http://creativecommons.org/licenses/by/2.5/",
+          "creator": null,
+          "details_url": "https://archive.org/details/nullbomb",
+          "download_prefix": "https://archive.org/download/nullbomb/"
+        },
+        {
+          "identifier": "madshanghai",
+          "title": "madshanghai",
+          "license": "CC-PD-dedication (legacy)",
+          "licenseurl": "http://creativecommons.org/licenses/publicdomain/",
+          "creator": "kusoj",
+          "details_url": "https://archive.org/details/madshanghai",
+          "download_prefix": "https://archive.org/download/madshanghai/"
+        },
+        {
+          "identifier": "jackson_m",
+          "title": "Michael Jackson Jackson Requiem",
+          "license": "CC-BY-3.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/3.0/",
+          "creator": "Rutty Pussiot",
+          "details_url": "https://archive.org/details/jackson_m",
+          "download_prefix": "https://archive.org/download/jackson_m/"
+        },
+        {
+          "identifier": "aztronuts_peels",
+          "title": "aztronuts_peels",
+          "license": "CC-PD-dedication (legacy)",
+          "licenseurl": "http://creativecommons.org/licenses/publicdomain/",
+          "creator": "astronuts",
+          "details_url": "https://archive.org/details/aztronuts_peels",
+          "download_prefix": "https://archive.org/download/aztronuts_peels/"
+        },
+        {
+          "identifier": "infernus",
+          "title": "One of the many nameless",
+          "license": "CC-BY-2.5",
+          "licenseurl": "http://creativecommons.org/licenses/by/2.5/",
+          "creator": "infernus",
+          "details_url": "https://archive.org/details/infernus",
+          "download_prefix": "https://archive.org/download/infernus/"
+        },
+        {
+          "identifier": "RedroDrum",
+          "title": "Redro drum",
+          "license": "CC0-1.0",
+          "licenseurl": "http://creativecommons.org/publicdomain/zero/1.0/",
+          "creator": "nullbomb",
+          "details_url": "https://archive.org/details/RedroDrum",
+          "download_prefix": "https://archive.org/download/RedroDrum/"
+        }
+      ]
+    },
+    "marly-records": {
+      "items_scanned": 2,
+      "clean_items": 2,
+      "skipped": 0,
+      "skip_detail": [],
+      "items": [
+        {
+          "identifier": "first_try_mr",
+          "title": "\"first try\"",
+          "license": "CC-BY-4.0",
+          "licenseurl": "https://creativecommons.org/licenses/by/4.0/",
+          "creator": "-\u200b\u200b-\u200b\u200b\u200b-\u200b\u200b\u200b-\u200b\u200b\u200b-\u200b\u200b-",
+          "details_url": "https://archive.org/details/first_try_mr",
+          "download_prefix": "https://archive.org/download/first_try_mr/"
+        },
+        {
+          "identifier": "yuxta",
+          "title": "Yuxta",
+          "license": "CC-BY-4.0",
+          "licenseurl": "https://creativecommons.org/licenses/by/4.0/",
+          "creator": "La Agonia de Desear Existir",
+          "details_url": "https://archive.org/details/yuxta",
+          "download_prefix": "https://archive.org/download/yuxta/"
+        }
+      ]
+    },
+    "383records": {
+      "items_scanned": 4,
+      "clean_items": 3,
+      "skipped": 1,
+      "skip_detail": [
+        {
+          "identifier": "Maverick-On-A-Vinyl",
+          "class": "unknown",
+          "reason": "no licenseurl on item"
+        }
+      ],
+      "items": [
+        {
+          "identifier": "MVRCK383ToTheMoon",
+          "title": "MVRCK 383 To The Moon",
+          "license": "CC-BY-4.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/4.0/",
+          "creator": "MVRCK383",
+          "details_url": "https://archive.org/details/MVRCK383ToTheMoon",
+          "download_prefix": "https://archive.org/download/MVRCK383ToTheMoon/"
+        },
+        {
+          "identifier": "HowCouldILove",
+          "title": "How Could I Love",
+          "license": "CC-BY-4.0",
+          "licenseurl": "http://creativecommons.org/licenses/by/4.0/",
+          "creator": "MVRCK383",
+          "details_url": "https://archive.org/details/HowCouldILove",
+          "download_prefix": "https://archive.org/download/HowCouldILove/"
+        },
+        {
+          "identifier": "diva_20201118",
+          "title": "DIVA (prod. Vin ace)",
+          "license": "CC-BY-4.0",
+          "licenseurl": "https://creativecommons.org/licenses/by/4.0/",
+          "creator": "MVRCK383",
+          "details_url": "https://archive.org/details/diva_20201118",
+          "download_prefix": "https://archive.org/download/diva_20201118/"
+        }
+      ]
+    }
+  },
+  "smoke_download": {
+    "collection": "happy-new-year-recordings",
+    "identifier": "ShadowOfTheDollsOssicles2CompositionsUsingProcessedFieldRecordings",
+    "license": "CC-BY-3.0",
+    "file": "01ChicBoutique.mp3",
+    "bytes": 4643563,
+    "sha256": "4f0657ec4ed160d3f2dfe49c7576f942bb673580f042e67f20d928e1015bc713",
+    "ffprobe_duration_s": 290.089813,
+    "download_url": "https://archive.org/download/ShadowOfTheDollsOssicles2CompositionsUsingProcessedFieldRecordings/01ChicBoutique.mp3",
+    "binary_committed": false,
+    "note": "Binary verified then deleted; hash retained as proof."
+  }
+}

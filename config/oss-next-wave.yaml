@@ -1,0 +1,164 @@
+schema: tripped.oss-next-wave/v1
+purpose: Additional open-source capabilities selected to remove single-tool and single-backend bottlenecks.
+status_rule: Registered is not validated. Each project must pass provenance, install, real-input smoke, measured output, recovery, and regression gates before production promotion.
+projects:
+  - id: rclone
+    upstream: https://github.com/rclone/rclone
+    domain: external-asset-transport
+    role: resumable Drive/object-storage transport fallback
+  - id: comfyui
+    upstream: https://github.com/comfyanonymous/ComfyUI
+    domain: image-video-orchestration
+    role: node-based generation/editing and workflow execution
+  - id: diffusers
+    upstream: https://github.com/huggingface/diffusers
+    domain: generative-model-runtime
+    role: modular image/video diffusion fallback and adapters
+  - id: controlnet
+    upstream: https://github.com/lllyasviel/ControlNet
+    domain: reference-conditioning
+    role: pose/depth/edge/structure conditioning
+  - id: ip-adapter
+    upstream: https://github.com/tencent-ailab/IP-Adapter
+    domain: identity-reference-conditioning
+    role: image-reference conditioning without uncontrolled identity regeneration
+  - id: sam2
+    upstream: https://github.com/facebookresearch/sam2
+    domain: segmentation
+    role: subject isolation, masks and tracking
+  - id: realesrgan
+    upstream: https://github.com/xinntao/Real-ESRGAN
+    domain: restoration-upscale
+    role: deterministic/open image restoration fallback
+  - id: gfpgan
+    upstream: https://github.com/TencentARC/GFPGAN
+    domain: face-restoration
+    role: optional face restoration with likeness QC gate
+  - id: mediapipe
+    upstream: https://github.com/google-ai-edge/mediapipe
+    domain: landmarks-tracking
+    role: face/hand/body landmarks and tracking
+  - id: animate-diff
+    upstream: https://github.com/guoyww/AnimateDiff
+    domain: image-to-video
+    role: motion module fallback for image-derived animation
+  - id: cogvideox
+    upstream: https://github.com/THUDM/CogVideo
+    domain: video-generation
+    role: alternate video generation/continuation lane
+  - id: hunyuan-video
+    upstream: https://github.com/Tencent/HunyuanVideo
+    domain: video-generation
+    role: high-end alternate video generation lane
+  - id: opensora
+    upstream: https://github.com/hpcaitech/Open-Sora
+    domain: video-generation
+    role: research/experimental video generation lane
+  - id: openfacefx
+    upstream: https://github.com/tp7g/FaceFX
+    domain: facial-animation
+    role: viseme/face animation interchange; verify upstream before promotion
+  - id: pantomatrix
+    upstream: https://github.com/PantoMatrix/PantoMatrix
+    domain: performance-animation
+    role: speech-to-face/body motion research lane
+  - id: blendcap
+    upstream: https://github.com/cgtinker/BlendCap
+    domain: performance-capture
+    role: markerless body/hand/face capture into Blender
+  - id: moface
+    upstream: https://github.com/cgtinker/moface
+    domain: facial-animation
+    role: Blender face motion capture addon
+  - id: animato
+    upstream: https://github.com/Animating-with-Blender/Animato
+    domain: character-animation
+    role: text-to-animation research lane for rigged Blender characters
+  - id: makehuman
+    upstream: https://github.com/makehumancommunity/makehuman
+    domain: character-tools
+    role: procedural human utilities and reference geometry
+  - id: mpfb2
+    upstream: https://github.com/makehumancommunity/mpfb2
+    domain: blender-character-tools
+    role: MakeHuman/Blender character tooling
+  - id: opentoonz
+    upstream: https://github.com/opentoonz/opentoonz
+    domain: 2d-animation
+    role: frame/cutout animation and effects
+  - id: synfig
+    upstream: https://github.com/synfig/synfig
+    domain: 2d-animation
+    role: vector/bitmap tweening and bone animation
+  - id: natron
+    upstream: https://github.com/NatronGitHub/Natron
+    domain: compositing
+    role: node compositing, keying, roto and VFX
+  - id: kdenlive
+    upstream: https://github.com/KDE/kdenlive
+    domain: editorial
+    role: open NLE and final assembly fallback
+  - id: ffmpeg
+    upstream: https://github.com/FFmpeg/FFmpeg
+    domain: media-core
+    role: codec, transcode, mux, demux and assembly backbone
+  - id: pyside6
+    upstream: https://code.qt.io/pyside/pyside-setup.git
+    domain: operator-ui
+    role: native production control-panel option
+  - id: openusd
+    upstream: https://github.com/PixarAnimationStudios/OpenUSD
+    domain: scene-interchange
+    role: structured 3D scene and asset interchange
+  - id: materialx
+    upstream: https://github.com/AcademySoftwareFoundation/MaterialX
+    domain: look-development
+    role: portable material graphs
+  - id: openimageio
+    upstream: https://github.com/AcademySoftwareFoundation/OpenImageIO
+    domain: image-io
+    role: robust image/texture conversion and inspection
+  - id: openexr
+    upstream: https://github.com/AcademySoftwareFoundation/openexr
+    domain: hdr-io
+    role: HDR/linear image sequence interchange
+  - id: opencolorio
+    upstream: https://github.com/AcademySoftwareFoundation/OpenColorIO
+    domain: color-management
+    role: deterministic color transforms
+  - id: qctools
+    upstream: https://github.com/bavc/qctools
+    domain: media-qc
+    role: technical video inspection
+  - id: vmaf
+    upstream: https://github.com/Netflix/vmaf
+    domain: perceptual-qc
+    role: measurable video quality regression
+  - id: media-conch
+    upstream: https://github.com/MediaArea/MediaConch
+    domain: delivery-qc
+    role: media conformance validation
+  - id: faster-whisper
+    upstream: https://github.com/SYSTRAN/faster-whisper
+    domain: speech-to-text
+    role: local transcript fallback
+  - id: silero-vad
+    upstream: https://github.com/snakers4/silero-vad
+    domain: speech-segmentation
+    role: local voice activity detection
+  - id: demucs
+    upstream: https://github.com/facebookresearch/demucs
+    domain: audio-separation
+    role: dialogue/music/effects separation
+  - id: ardour
+    upstream: https://github.com/Ardour/ardour
+    domain: audio-finishing
+    role: multitrack audio finishing option
+  - id: gstreamer
+    upstream: https://gitlab.freedesktop.org/gstreamer/gstreamer
+    domain: media-pipeline
+    role: alternate streaming/ingest/transcode graph
+  - id: vapoursynth
+    upstream: https://github.com/vapoursynth/vapoursynth
+    domain: restoration
+    role: programmable video restoration/filter backend

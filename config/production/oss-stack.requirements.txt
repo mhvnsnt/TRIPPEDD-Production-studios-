@@ -1,0 +1,9 @@
+# TRIPPEDD production open-source media stack.
+# Keep this file boring and explicit: the pipeline is only considered green
+# when every package below imports/runs successfully in CI.
+scenedetect-headless==0.7.1
+opencv-python-headless>=4.10,<5
+faster-whisper==1.2.1
+opentimelineio==0.18.1
+av>=14,<17
+numpy>=2,<3

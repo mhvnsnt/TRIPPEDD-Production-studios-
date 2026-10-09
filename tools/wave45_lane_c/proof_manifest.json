@@ -1,0 +1,71 @@
+{
+  "lane": "trippedd-wave45-lane-c",
+  "tools_wired": [
+    {
+      "name": "sherpa-onnx",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/k2-fsa/sherpa-onnx/blob/master/LICENSE",
+      "script": "sherpa_smoke.py",
+      "proof": "proofs/sherpa_smoke_proof.json",
+      "status": "WIRED"
+    },
+    {
+      "name": "faster-whisper",
+      "license": "MIT",
+      "license_url": "https://github.com/SYSTRAN/faster-whisper/blob/master/LICENSE",
+      "script": "faster_whisper_smoke.py",
+      "proof": "proofs/faster_whisper_smoke_proof.json",
+      "status": "WIRED"
+    },
+    {
+      "name": "whisperx",
+      "license": "BSD-2-Clause",
+      "license_url": "https://github.com/m-bain/whisperX/blob/main/LICENSE",
+      "script": null,
+      "proof": null,
+      "status": "NOT_WIRED_INSTALL_FAILED_DISK_FULL"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b728df7483e2a47732b4952a8f146bf36bddb54de8be453ac3ef5cdb369c2a49"
+    },
+    {
+      "path": "PROOFS.md",
+      "sha256": "685d659dc80f4dde9a50c5ff433f700a3cedad4a5b4ba35678450e674021ddfe"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sha256": "727f169da0f1c5b8f619141fde413732da12aea6e206245c7582142faab226c8"
+    },
+    {
+      "path": "sherpa_smoke.py",
+      "sha256": "0de73270735b16bb11db2fe3e87705e9fdc68078f43515c2f57ee6cd69d3332d"
+    },
+    {
+      "path": "faster_whisper_smoke.py",
+      "sha256": "40cbfd3011d3db218a718c81b6a938e1269b1bafaead9b7c92d77026869cfaf2"
+    },
+    {
+      "path": "fixtures/fixture.wav",
+      "sha256": "7681fe1e00c5a3997db461a0be2b56387200cb29e2e9a27d140f22b40b92c7ee"
+    },
+    {
+      "path": "fixtures/fixture_16k.wav",
+      "sha256": "6a7c3c6d8a3c2dcdced6642f48c501aaf48d911bf12076d2dd8adb6794a1c367"
+    },
+    {
+      "path": "proofs/sherpa_smoke_proof.json",
+      "sha256": "b67e3449886941f2dbda117975a9127e36676cb2b29c4fef0bd6698d98fc988d"
+    },
+    {
+      "path": "proofs/faster_whisper_smoke_proof.json",
+      "sha256": "a263fd514b88dc2d8f0262241058649a53ac2a7b694f71f0e189002ab3867e9f"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "78c75ed60e6f3bdd664b641d1dea87aa8b911df3996bf082988f7a8c42fffaf8"
+    }
+  ]
+}

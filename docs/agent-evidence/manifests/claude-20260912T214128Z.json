@@ -1,0 +1,72 @@
+{
+  "schema": "trippedd.agent-evidence/v1",
+  "agent": "claude",
+  "commit": "ab6f3990594860dd4b7ec93342078fb76eeb4ef2",
+  "status": "UNKNOWN",
+  "created": "20260912T214128Z",
+  "artifacts": [
+    {
+      "path": "docs/evidence/hair/HAIR_CLAY_CONTACT.png",
+      "sha256": "99796586b96a68e0e83ec9d45a9fb75232420d5108d60095a8f179e030d782f4",
+      "bytes": 362872,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hair/HAIR_CLAY_TOP.png",
+      "sha256": "47e49239b25ea3f6bee33bb18f18caff9942f3c533bedbff488b51255f3b51b8",
+      "bytes": 508075,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hair/HAIR_CLAY_SIDE.png",
+      "sha256": "d1121a371254bcaaa588f30a73eaa3b124fc27cbbfc1900d5177c4e351f05974",
+      "bytes": 626121,
+      "mime": "image/png"
+    },
+    {
+      "path": "docs/evidence/hair/index.json",
+      "sha256": "ca670cb4a7533c9076a9a5611bc74eeb0300661065a6c69bc54b4fbd2dff2188",
+      "bytes": 7698,
+      "mime": "application/json"
+    }
+  ],
+  "commands": [
+    "vendor/blender/blender -b -P tools/hair/inspect_hair_geometry.py --"
+  ],
+  "gates": [
+    {
+      "name": "source_unmodified",
+      "result": "PASS",
+      "detail": "read-only import, sha256 recorded"
+    },
+    {
+      "name": "texture_cannot_fake_it",
+      "result": "PASS",
+      "detail": "base colour forced flat grey, normal map unlinked"
+    },
+    {
+      "name": "multi_angle",
+      "result": "PASS",
+      "detail": "TOP BACK SIDE THREEQ, not one frame"
+    },
+    {
+      "name": "architecture_identified",
+      "result": "PASS",
+      "detail": "cap with sculpted dread forms, not separate strands"
+    },
+    {
+      "name": "lock_segmentation",
+      "result": "NOT_ATTEMPTED",
+      "detail": "five discriminators failed; the sixth (inter-lock concave valleys) is named but not built"
+    },
+    {
+      "name": "hair_rig",
+      "result": "NOT_ATTEMPTED",
+      "detail": "no bones, no physics, nothing moves yet"
+    }
+  ],
+  "notes": [
+    "MARS_MESH is ONE connected component and carries NO hair bones -- every lock is rigid-skinned to 'head'. An island-split or one-bone-per-strand rig is structurally impossible.",
+    "The crown is a fused shell; the hanging lengths resolve into ~20-25 sculpted locks. Both true of one surface, which is why no global threshold separated it."
+  ]
+}

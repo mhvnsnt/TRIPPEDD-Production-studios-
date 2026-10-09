@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 3,
+  "policy": "github-first-until-budget-or-capacity-bound-then-self-hosted-or-farm",
+  "selection": {
+    "default": "github-actions",
+    "workflowFallback": "self-hosted-actions",
+    "manualFallback": "local",
+    "renderFallback": "flamenco",
+    "distributedFallback": "opencue",
+    "workflowReproduction": "act"
+  },
+  "backends": [
+    {
+      "id": "github-actions",
+      "role": "cloud-orchestration",
+      "status": "production",
+      "costDomain": "github-hosted-minutes",
+      "notes": "Canonical CI/CD path while hosted Actions capacity is available."
+    },
+    {
+      "id": "self-hosted-actions",
+      "role": "workflow-execution-failover",
+      "status": "production-candidate",
+      "costDomain": "owned-or-cloud-hardware",
+      "routingLabels": ["self-hosted", "trippedd-production"],
+      "notes": "Runs the same GitHub Actions workflow contracts on owned hardware when hosted capacity or budget becomes the constraint. Must be explicitly registered and online before routing production jobs."
+    },
+    {
+      "id": "local",
+      "role": "full-production-fallback",
+      "status": "production-candidate",
+      "costDomain": "local-hardware",
+      "entrypoint": "scripts/production/local-ep01-fallback.sh",
+      "notes": "Runs EP01 production stages directly without GitHub-hosted runners."
+    },
+    {
+      "id": "act",
+      "role": "workflow-reproduction",
+      "status": "candidate",
+      "project": "nektos/act",
+      "notes": "Runs compatible GitHub Actions workflows locally in Docker; use for workflow parity, not as the render farm itself."
+    },
+    {
+      "id": "flamenco",
+      "role": "blender-render-farm",
+      "status": "service-candidate",
+      "project": "Blender Studio Flamenco",
+      "versionTarget": "3.9.3",
+      "license": "GPL-3.0",
+      "notes": "Stable self-hosted Blender render manager. Promotion remains blocked until real EP01 smoke, measured output, recovery, and canonical artifact gates pass."
+    },
+    {
+      "id": "opencue",
+      "role": "distributed-render-and-task-farm",
+      "status": "service-candidate",
+      "project": "AcademySoftwareFoundation/OpenCue",
+      "notes": "Distributed task/render queue for multi-machine, hybrid, and larger studio workloads. Promotion remains evidence-gated."
+    }
+  ],
+  "promotionGates": [
+    "license-reviewed",
+    "installed-or-reprovisionable",
+    "real-EP01-input-smoke-test",
+    "measured-output",
+    "failure-recovery-tested",
+    "canonical-artifact-compatible",
+    "no-regression"
+  ]
+}

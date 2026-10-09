@@ -1,0 +1,46 @@
+{
+  "schema": "trippedd.agent-evidence/v1",
+  "agent": "wave21-laneB",
+  "commit": "e64474b14eebabce34deadd980b9382231df69fc",
+  "status": "PASS",
+  "artifacts": [
+    {
+      "path": "tools/music/evidence_wave21_laneB/audio/blocsonic_donnie-ozone_something-to-say_192kb.mp3",
+      "sha256": "18adb118325be5a4d080bc5f0bc764221f832eb487834d22a502bac1d03a0d7a",
+      "bytes": 5142878,
+      "mime": "audio/mpeg"
+    },
+    {
+      "path": "tools/music/evidence_wave21_laneB/manifest_wave21_laneB.json",
+      "sha256": "a5fa50cc03bce0fc8ac31cc15c382ace6f3c4d498362101e5f7c20131b80ab4b",
+      "bytes": 14107,
+      "mime": "application/json"
+    }
+  ],
+  "commands": [
+    "python3 tools/music/wave21_laneB_netlabel_wireup.py"
+  ],
+  "gates": [
+    {
+      "name": "blocsSonic release-list pull (releases.rss, 20 items)",
+      "result": "PASS"
+    },
+    {
+      "name": "blocsSonic free MP3 download + SHA-256 + ffprobe (179s audio)",
+      "result": "PASS"
+    },
+    {
+      "name": "GameChops /music/ release-list pull (11 slugs)",
+      "result": "PASS"
+    },
+    {
+      "name": "GameChops direct free-MP3 download",
+      "result": "FAIL"
+    }
+  ],
+  "notes": [
+    "GameChops MP3 not fetchable without interaction: release pages route downloads via Bandcamp/Spotify embeds (Bandcamp free downloads need email capture). Recorded honestly in tools manifest.",
+    "blocSonic track is CC BY-NC-SA 4.0 per label catalog page; research-lane only, not commercial-safe.",
+    "Entry badges: 5x NC-family (research-only), 1x CC-unspecified (GameChops), 19x unverified (research-only until terms confirmed)."
+  ]
+}

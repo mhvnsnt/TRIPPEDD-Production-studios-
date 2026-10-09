@@ -1,0 +1,7 @@
+1
+00:00:00,500 --> 00:00:02,000
+Wizard Gang caption smoke test
+
+2
+00:00:02,000 --> 00:00:03,000
+L-SMASH remux preserves tx3g

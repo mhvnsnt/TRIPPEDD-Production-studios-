@@ -1,0 +1,21 @@
+{
+  "row": 145,
+  "name": "Bento4",
+  "claimed": "Dual GPL-2.0-or-later / commercial",
+  "kind": "github",
+  "ref": "axiomatic-systems/Bento4",
+  "api": {
+    "full_name": "axiomatic-systems/Bento4",
+    "archived": false,
+    "pushed_at": "2026-06-27T10:29:30Z",
+    "stargazers_count": 2507,
+    "default_branch": "master",
+    "owner": "axiomatic-systems",
+    "spdx_id": null,
+    "license_name": null
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": null,
+  "mechanical_verdict": "CONFIRMED (manual: per-file grant + README dual-license)",
+  "manual_review": "2026-10-08: Bento4 has no root LICENSE (unchanged from Waves 15/21); per-file grant verified in Ap4File.h header: 'either version 2, or (at your option) any later version' under Bento4|GPL; README License section confirms dual-license model. Repo live, not archived, pushed 2026-06-27T10:29:30Z, 2507 stars. Dual GPL-2.0-or-later/commercial stands."
+}

@@ -1,0 +1,152 @@
+{
+  "wave": 66,
+  "lane": "C",
+  "goal": "tighten blind speaker-count decision",
+  "quarantine": "ECAPA always on RAW audio; no denoise upstream",
+  "fixture": {
+    "vad": {
+      "n_segs": 9,
+      "speech_s": 38.48,
+      "frac": 0.897
+    },
+    "baseline": {
+      "grid": "1.5s/0.25s",
+      "embedding_source": "wave65-cache",
+      "n_win": 166,
+      "kept_n": 102,
+      "thr": 0.01089,
+      "k": 3,
+      "margin": 1.721,
+      "gaps": {
+        "2": 0.00401,
+        "3": 0.09323,
+        "4": 0.05419,
+        "5": 0.02614
+      },
+      "stability": {
+        "B": 20,
+        "ks": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          3,
+          4,
+          5,
+          5,
+          5,
+          5,
+          3,
+          5,
+          4,
+          3,
+          4
+        ],
+        "mode": 3,
+        "p_mode": 0.55,
+        "dist": {
+          "3": 11,
+          "4": 4,
+          "5": 5
+        }
+      },
+      "purity": 1.0,
+      "map": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "DER": 0.0382,
+      "JER": 0.0378,
+      "DER_c025": 0.0081,
+      "JER_c025": 0.0077,
+      "miss": 1.275,
+      "FA": 0.225,
+      "conf": 0.0,
+      "n_segs": 9,
+      "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_base.rttm",
+      "spotcheck": {
+        "n": 8,
+        "cos_min": 1.0,
+        "cos_mean": 1.0
+      }
+    },
+    "exp_c_asr_turns": {
+      "asr": {
+        "n_words": 116,
+        "seconds": 59.7,
+        "model": "base.en-int8-cpu",
+        "ipu_gap_s": 1.0,
+        "n_ipus_raw": 5,
+        "mean_ipu_s": 7.26,
+        "n_ipus_embedded": 5
+      },
+      "count": {
+        "k": 2,
+        "margin": 6.741,
+        "gaps": {
+          "2": 0.24312,
+          "3": 0.03607
+        },
+        "stability": {
+          "B": 20,
+          "ks": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "mode": 2,
+          "p_mode": 1.0,
+          "dist": {
+            "2": 20
+          }
+        }
+      },
+      "purity": 0.5704,
+      "map": {
+        "0": "C",
+        "1": "A"
+      },
+      "DER": 0.4892,
+      "JER": 0.648,
+      "DER_c025": 0.4487,
+      "JER_c025": 0.6358,
+      "miss": 0.45,
+      "FA": 1.9,
+      "conf": 16.875,
+      "n_segs": 5,
+      "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_c_ipu.rttm"
+    }
+  },
+  "deepfilternet": {
+    "expected_role": "downstream-of-embeddings only (caption/ASR path)",
+    "df3_checkpoint_cache": "/home/hatch/.cache/DeepFilterNet/DeepFilterNet3",
+    "checkpoint_bytes_present": true,
+    "import": "failed: ModuleNotFoundError: No module named 'deepfilternet'",
+    "deepfilterlib": "missing: deepfilterlib has no cp312 wheel on PyPI and needs a Rust toolchain (ModuleNotFoundError)",
+    "wired": false
+  },
+  "elapsed_s": 169.4
+}

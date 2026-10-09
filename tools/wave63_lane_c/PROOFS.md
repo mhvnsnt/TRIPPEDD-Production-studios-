@@ -101,7 +101,28 @@ venv/bin/pip install --no-cache-dir --no-deps "pyannote.metrics==4.1" \
 Installed: webrtcvad==2.0.10, spectralcluster==0.2.22,
 scikit-learn==1.9.1 (joblib, threadpoolctl, cloudpickle, narwhals),
 pyannote.metrics==4.1, pyannote.core==6.0.1, sortedcontainers==2.4.0;
-system numpy 1.26.4 / scipy 1.11.4. Full pin list to be appended to
+system numpy 1.26.4 / scipy 1.11.4. Full pin list at
+`~/workspace/agent-ops/venv-manifests/wave63-lane-c.txt`.
+
+Step-4 retry venv (`venv_step4/`, gitignored, `--system-site-packages`):
+
+```bash
+python3 -m venv --system-site-packages venv_step4
+venv_step4/bin/pip install --no-cache-dir -U pip
+venv_step4/bin/pip install --no-cache-dir \
+  --index-url https://download.pytorch.org/whl/cpu \
+  torch==2.14.1+cpu torchaudio==2.11.0+cpu
+venv_step4/bin/pip install --no-cache-dir "speechbrain==1.1.1"
+# ECAPA weights (upstream speechbrain/spkrec-ecapa-voxceleb bytes) via
+# direct HTTPS into scratch/step4/local_sb/ (huggingface_hub xet stalled
+# on this VM's proxy); run with HF_HUB_OFFLINE=1, OMP/MKL threads=1:
+HF_HUB_OFFLINE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 MALLOC_ARENA_MAX=2 \
+  ./venv_step4/bin/python wire_step4_ecapa_retry.py
+```
+
+Step-4 installed: torch==2.14.1+cpu, torchaudio==2.11.0+cpu,
+speechbrain==1.1.1 (+ sentencepiece, hyperpyyaml, soundfile, cffi,
+ruamel.yaml). Pins appended to
 `~/workspace/agent-ops/venv-manifests/wave63-lane-c.txt`.
 
 ## License audit (wired path only — no new third-party tool wired)
@@ -129,12 +150,68 @@ lane code. Quarantine code is never imported. No GPL components.
 - SHA-256 over every file above: `SHA256SUMS`.
 
 Scripts: `wire_vad_coverage_recovery.py` (all three variants, one run),
-`run.sh` reproduces it.
+`run.sh` reproduces it. Step-4: `wire_step4_ecapa_retry.py` →
+`proofs/step4/step4_ecapa_retry.json` (GT-mean cosines, denoised vs raw
+control, 166 windows each).
+
+## Step-4 ECAPA downstream-mix diagnostic — RETRY COMPLETED (was Wave-62 §7.1)
+
+Wave-62's step-4 (GT-mean cosine diagnostic on the downstream-denoised
+mix) was SIGKILLed 4 times by the OOM killer on the loaded VM and omitted.
+This wave retried it in a standalone single-thread process (threads=1,
+windows batched at 32, `MALLOC_ARENA_MAX=2`) with a fresh minimal
+torch==2.14.1+cpu + speechbrain==1.1.1 venv (`venv_step4/`, gitignored)
+and completed cleanly: **STEP4_RETRY_DONE, no SIGKILL.**
+
+Setup notes (honest): the venv install took ~40 min (196 MB torch wheel
+at ~230 KB/s through the egress proxy); `huggingface_hub`'s xet transfer
+for the ECAPA checkpoint stalled at 0 bytes ("connection struggling"),
+so the four weight files (upstream `speechbrain/spkrec-ecapa-voxceleb`
+bytes) were fetched via direct HTTPS into `scratch/step4/local_sb/` and
+the script points SpeechBrain at the local dir (documented in the
+script). One curl pass left `embedding_model.ckpt` truncated at
+52,305,920 bytes (its GOT line never printed — the loop had no `set -e`);
+caught by the zip-integrity check, resumed to a valid 233-entry zip.
+
+GT-mean cosine similarities (166 windows, 1.5 s / 0.25 s, same model and
+windowing for both — the comparison that matters is within this run):
+
+| input | cos(A,B) | cos(A,C) | cos(B,C) |
+|---|---|---|---|
+| downstream-denoised clean mix (Wave-62 `downstream_denoised_mix.wav`) | 0.1619 | 0.6311 | 0.1524 |
+| raw fixture audio (matched control) | 0.1524 | 0.6259 | 0.1416 |
+| Δ (denoised − raw) | +0.0095 | **+0.0052** | +0.0108 |
+
+**Reading:** downstream denoise (applied AFTER diarization, to
+per-speaker segments cut on hypothesis boundaries) moves the two female
+speaker means together by **+0.005** — two orders of magnitude below the
+Wave-61 UPSTREAM-denoise effect (cos A/C 0.5905 → 0.7438, Δ +0.153, which
+collapsed the eigengap count 3 → 2). The quarantine holds: denoising on
+the caption path does not meaningfully erode speaker separability in
+ECAPA space. (Consistent with Wave-62's downstream SNR finding:
+10.0 → 16.5 dB caption-path gain with the speaker path untouched.)
+
+Two bugs caught and fixed during the retry (both documented in the
+script; neither affects any published Wave-62 number since that
+diagnostic never ran):
+1. The Wave-62 draft computed window-center time as `i * 0.25 + 0.75`
+   with `i` a SAMPLE offset — every window missed all GT turns and the
+   first retry printed NaN cosines. Fixed to `i / SR + WIN_S / 2`; the
+   script now asserts non-empty per-speaker window sets and finite
+   embeddings so a silent NaN can never ship.
+2. A stale `speechbrain_models/hyperparams.yaml` symlink from the
+   killed first attempt made SpeechBrain re-resolve the HF hub id
+   (xet stall); cleared the savedir and re-ran fully local
+   (`HF_HUB_OFFLINE=1`).
+
+Proof artifact: `proofs/step4/step4_ecapa_retry.json`
+(SHA-256 in `SHA256SUMS`). Script: `wire_step4_ecapa_retry.py`
+(venv recipe in "Environment notes" below).
 
 ## Honest failures / deferred items
 
-1. **Step-4 ECAPA downstream-mix diagnostic (Wave-62 §7.1) — attempted
-   separately this wave**; see the step-4 section below for the outcome.
+1. ~~Step-4 ECAPA downstream-mix diagnostic~~ — completed this wave
+   (see section above).
 2. `reference.rttm` expected SHA was initially transcribed wrong in the
    script (a made-up placeholder); caught by the script's own SHA gate
    on first run, fixed to the true on-disk value `e759d68f…`, which

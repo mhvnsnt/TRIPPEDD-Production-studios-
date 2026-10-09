@@ -62392,3 +62392,256 @@ Round 3 goes for the permissive-licensed graphics/audio/physics/AI-inference too
 
 ### Wave 66 Lane A — P1 SDK docs round 12 (2026-10-09, coordinator-direct)
 27 entries appended: PlatformIO, RIOT-OS, Apache NuttX, TinyGo, KiCad, Blender Manual, Haxe Manual, Skia, FFmpeg, GStreamer, AV1 spec, Direct3D 12, Metal, WebRTC, Nakama, Photon Engine, Netcode for GameObjects, Batocera, Recalbox, Arduboy Wiki, PINE64 Wiki, FamiStudio Documentation, SunVox Documentation, PSXDEV, SNESdev Wiki, itch.io Developer Docs, Playnite. All HTTP 200 live 2026-10-09, all docs ❓. Honest drops: love2d.org/wiki (403 bot-wall), wiki.odroid.com (403 bot-wall), famitracker.com/wiki (down — 000/500), furnace doc/ (404 — repo restructured), gamedev.dcemulation.org (timeout), docs.clockworkpi.com (timeout), en.wikibooks.org/wiki/Atari_2600 (404), O3DE/Stride/GLFW/NESdev/OpenMPT-wiki/codebase64/RetroArch-docs (already cataloged as docs entries), LiveKit docs (near-dupe of LiveKit tool entry), Matroska specs page (near-dupe of IETF CELLAR RFC entries). Dedup: pre-append `####`-header greps.
+
+#### Blaxa-Muxa — AER (december 2014) ❓ landmark musicdisk
+- **What:** "Blaxa-Muxa" — AER ZX Spectrum demo/musicdisk (released december 2014); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=64633
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; ZX Spectrum/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum musicdisk. [Wave 66 Lane A]
+
+#### Dont Fear the Beeper — Abrimaal (2015) ❓ landmark musicdisk
+- **What:** "Dont Fear the Beeper" — Abrimaal ZX Spectrum musicdisk (8th at CC Winter / DiHalt Lite 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=64928
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; ZX Spectrum/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum 1-bit musicdisk. [Wave 66 Lane A]
+
+#### Sounds of the 80s — Triad (2015) ❓ landmark musicdisk
+- **What:** "Sounds of the 80s" — Triad Commodore 64 musicdisk (4th at Gubbdata 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=65286
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 80s-themed musicdisk. [Wave 66 Lane A]
+
+#### Chiperia Issue #2 — The Chiperia Project (april 2015) ❓ landmark musicdisk
+- **What:** "Chiperia Issue #2" — The Chiperia Project Amiga OCS/ECS musicdisk (released april 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=65325
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged Issues #3 and #6)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk magazine, issue 2. [Wave 66 Lane A]
+
+#### ＿|￣|○ (may 2015) ❓ landmark musicdisk
+- **What:** "＿|￣|○" — Commodore 64 musicdisk (released may 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=65575
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### Ohne Dich (august 2015) ❓ landmark musicdisk
+- **What:** "Ohne Dich" — VIC 20 demo/musicdisk (released august 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66244
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; VIC 20/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** VIC 20 musicdisk. [Wave 66 Lane A]
+
+#### Zyron's music collection 01 — Tronix (2015) ❓ landmark musicdisk
+- **What:** "Zyron's music collection 01" — Tronix Amiga OCS/ECS musicdisk (10th at Gerp 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66268
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga music collection disk. [Wave 66 Lane A]
+
+#### V Microcompo AY music-disk — AAMSX & CulturaChip (february 2015) ❓ landmark musicdisk
+- **What:** "V Microcompo AY music-disk" — AAMSX & CulturaChip MSX musicdisk (released february 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66464
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; MSX/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged XII MICROCOMPO AY/SCR2 V.5)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX AY-chip musicdisk, volume 5. [Wave 66 Lane A]
+
+#### Chiperia Gerp Edition — The Chiperia Project (2015) ❓ landmark musicdisk
+- **What:** "Chiperia Gerp Edition" — The Chiperia Project Amiga OCS/ECS 96k musicdisk (1st at TRSAC 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66491
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged Issues #3 and #6)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk, Gerp edition. [Wave 66 Lane A]
+
+#### Musicdisk [VI MICROCOMPO AY VOL.2] — AAMSX & CulturaChip (december 2015) ❓ landmark musicdisk
+- **What:** "Musicdisk [VI MICROCOMPO AY VOL.2]" — AAMSX & CulturaChip MSX musicdisk (released december 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66676
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; MSX/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged XII MICROCOMPO AY/SCR2 V.5)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX AY-chip musicdisk, volume 6. [Wave 66 Lane A]
+
+#### Coolism — Effect (2015) ❓ landmark musicdisk
+- **What:** "Coolism" — Effect Atari ST musicdisk (STNICCC 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66717
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Atari ST/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged "Coolism — Depth (2009)")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST musicdisk. [Wave 66 Lane A]
+
+#### Northern Star — Booze Design (december 2015) ❓ landmark musicdisk
+- **What:** "Northern Star" — Booze Design Commodore 64 musicdisk (released december 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66752
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### The Gift — Agenda & Masters Of Electric City & Lamers (january 2016) ❓ landmark musicdisk
+- **What:** "The Gift" — Agenda & Masters Of Electric City & Lamers Atari XL/XE musicdisk (released january 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66782
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Atari XL/XE/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari 8-bit musicdisk. [Wave 66 Lane A]
+
+#### Yaemon's Tunebox 2 — Brutal (january 2016) ❓ landmark musicdisk
+- **What:** "Yaemon's Tunebox 2" — Brutal Commodore 64 musicdisk (released january 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66870
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 tune collection disk. [Wave 66 Lane A]
+
+#### David Bowie Tribute — Delysid & Finnish Gold (2016) ❓ landmark musicdisk
+- **What:** "David Bowie Tribute" — Delysid & Finnish Gold Commodore 64 musicdisk (2nd at BCC Party 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=67003
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 Bowie-tribute musicdisk. [Wave 66 Lane A]
+
+#### Liten Sopp — Svenonacid (2016) ❓ landmark musicdisk
+- **What:** "Liten Sopp" — Svenonacid Commodore 64 musicdisk (4th at End of the World 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=67016
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### Arriba las manos! (hands up!) — Pungas De Villa Martelli (2016) ❓ landmark musicdisk
+- **What:** "Arriba las manos! (hands up!)" — Pungas De Villa Martelli Commodore 64 musicdisk (4th at Decrunch 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=67462
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### 1-Bit Mechanistic (august 2016) ❓ landmark musicdisk
+- **What:** "1-Bit Mechanistic" — ZX Spectrum musicdisk (released august 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68015
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; ZX Spectrum/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum 1-bit musicdisk. [Wave 66 Lane A]
+
+#### Beeb-Tracker — bitshifters collective (august 2016) ❓ landmark musicdisk
+- **What:** "Beeb-Tracker" — bitshifters collective BBC Micro musicdisk (released august 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68038
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; BBC Micro/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** BBC Micro tracker musicdisk. [Wave 66 Lane A]
+
+#### Ninja Gaiden — bitshifters collective (august 2016) ❓ landmark musicdisk
+- **What:** "Ninja Gaiden" — bitshifters collective BBC Micro musicdisk (released august 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68039
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; BBC Micro/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged record-label mention)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** BBC Micro musicdisk. [Wave 66 Lane A]
+
+#### Indie vibes (Android version) — kiki-prods (october 2016) ❓ landmark musicdisk
+- **What:** "Indie vibes (Android version)" — kiki-prods Android musicdisk (released october 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68336
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Android/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Android musicdisk. [Wave 66 Lane A]
+
+#### Modular Sounds 2 — Artstate (2016) ❓ landmark musicdisk
+- **What:** "Modular Sounds 2" — Artstate Commodore 64 musicdisk (X 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68392
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 modular-synth musicdisk. [Wave 66 Lane A]
+
+#### Mix Box #1 — The New Dimension (september 2016) ❓ landmark musicdisk
+- **What:** "Mix Box #1" — The New Dimension Commodore 64 musicdisk (released september 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=70062
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### Nostalgia #1 — Fanatic2k (2016) ❓ landmark musicdisk
+- **What:** "Nostalgia #1" — Fanatic2k Amiga AGA musicdisk (released 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=90135
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga AGA/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga AGA musicdisk. [Wave 66 Lane A]
+
+#### Kombi-nacja — Vulture Design (2015) ❓ landmark musicdisk
+- **What:** "Kombi-nacja" — Vulture Design Commodore 64 musicdisk (2nd at RetroKomp / LOAD ERROR 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=95440
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P2 landmark musicdisk round 10 (2026-10-09, coordinator-direct)
+25 entries appended: pouët vote-sorted musicdisk chart (order=avg) page 7 — Blaxa-Muxa, Dont Fear the Beeper, Sounds of the 80s, Chiperia Issue #2, ＿|￣|○, Ohne Dich, Zyron's music collection 01, V Microcompo AY music-disk, Chiperia Gerp Edition, VI MICROCOMPO AY VOL.2, Coolism (Effect 2015), Northern Star, The Gift, Yaemon's Tunebox 2, David Bowie Tribute, Liten Sopp, Arriba las manos!, 1-Bit Mechanistic, Beeb-Tracker, Ninja Gaiden (bitshifters), Indie vibes (Android), Modular Sounds 2, Mix Box #1, Nostalgia #1, Kombi-nacja. 0 pouët-ID dupes; 4 title near-hits confirmed distinct (Coolism 2009 vs 2015, Chiperia issues #2/Gerp vs #3/#6, MICROCOMPO AY vols 5/6 vs XII, Ninja Gaiden label mention). All ❓ per-release rights. Pouët chart note: top.php is gone (404) — prodlist.php?type[]=musicdisk&order=avg is the current vote-sorted chart path.

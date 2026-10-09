@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "show": "In the Bushes",
+  "sequence": "EP01-origin-opening",
+  "fps": 24,
+  "shots": [
+    {"id":"S01","start":0,"duration":48,"action":"night_ambience_and_teens_panic"},
+    {"id":"S02","start":48,"duration":36,"action":"teen_shouts_title_phrase","dialogue":"IN THE BUSHES!"},
+    {"id":"S03","start":84,"duration":36,"action":"six_pack_and_open_cans_throw_into_bush"},
+    {"id":"S04","start":120,"duration":48,"action":"beer_splash_and_transform"},
+    {"id":"S05","start":168,"duration":36,"action":"busch_wakes_and_looks_away"},
+    {"id":"S06","start":204,"duration":24,"action":"reaction_hold"},
+    {"id":"S07","start":228,"duration":48,"action":"title_card","text":"IN THE BUSHES"}
+  ],
+  "characterStates": ["busch_wake","busch_transform","busch_look_away","busch_reaction"],
+  "productionRule": "The spoken phrase must precede the title card; Busch's look-away must remain a distinct beat between transformation and title."
+}

@@ -3,7 +3,7 @@
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
   "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "mediainfo", "exiftool", "bwfmetaedit", "vmaf", "kdenlive", "mlt", "olive", "shotcut", "audacity", "ardour", "rubberband", "aubio", "opencolorio", "openassetio", "usd", "materialx", "openvdb", "natron", "embree", "flamenco", "opencue", "demucs", "pyblish", "kitsu", "zou", "pytorch", "onnxruntime", "prometheus", "grafana", "opentelemetry"],
+  "optional": ["blender", "mediainfo", "exiftool", "bwfmetaedit", "vmaf", "kdenlive", "mlt", "olive", "shotcut", "audacity", "ardour", "rubberband", "aubio", "opencolorio", "openassetio", "usd", "materialx", "openvdb", "natron", "embree", "flamenco", "opencue", "demucs", "pyblish", "kitsu", "zou", "pytorch", "onnxruntime", "prometheus", "grafana", "opentelemetry", "opentoonz"],
   "interchange": {
     "editorial": "OpenTimelineIO",
     "assets": "OpenAssetIO",
@@ -17,6 +17,7 @@
     "deterministicMedia": "ffmpeg",
     "analysis": ["ffprobe", "mediainfo", "opencv", "pyscenedetect", "whisper", "tesseract", "exiftool"],
     "procedural3D": ["blender", "openvdb", "embree"],
+    "traditional2D": "opentoonz",
     "editorial": ["kdenlive", "olive", "shotcut"],
     "editorialRender": "mlt",
     "compositing": "natron",

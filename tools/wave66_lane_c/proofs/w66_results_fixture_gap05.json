@@ -1,0 +1,503 @@
+{
+  "wave": 66,
+  "lane": "C",
+  "goal": "tighten blind speaker-count decision",
+  "quarantine": "ECAPA always on RAW audio; no denoise upstream",
+  "fixture": {
+    "vad": {
+      "n_segs": 9,
+      "speech_s": 38.48,
+      "frac": 0.897
+    },
+    "baseline": {
+      "grid": "1.5s/0.25s",
+      "embedding_source": "wave65-cache",
+      "n_win": 166,
+      "kept_n": 102,
+      "thr": 0.01089,
+      "k": 3,
+      "margin": 1.721,
+      "gaps": {
+        "2": 0.00401,
+        "3": 0.09323,
+        "4": 0.05419,
+        "5": 0.02614
+      },
+      "stability": {
+        "B": 20,
+        "ks": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          3,
+          4,
+          5,
+          5,
+          5,
+          5,
+          3,
+          5,
+          4,
+          3,
+          4
+        ],
+        "mode": 3,
+        "p_mode": 0.55,
+        "dist": {
+          "3": 11,
+          "4": 4,
+          "5": 5
+        }
+      },
+      "purity": 1.0,
+      "map": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "DER": 0.0382,
+      "JER": 0.0378,
+      "DER_c025": 0.0081,
+      "JER_c025": 0.0077,
+      "miss": 1.275,
+      "FA": 0.225,
+      "conf": 0.0,
+      "n_segs": 9,
+      "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_base.rttm",
+      "spotcheck": {
+        "n": 8,
+        "cos_min": 1.0,
+        "cos_mean": 1.0
+      }
+    },
+    "exp_a_long_windows": {
+      "a_win1p5_hop0p25": {
+        "grid": "1.5s/0.25s",
+        "embedding_source": "wave65-cache",
+        "n_win": 166,
+        "kept_n": 102,
+        "thr": 0.01089,
+        "k": 3,
+        "margin": 1.721,
+        "gaps": {
+          "2": 0.00401,
+          "3": 0.09323,
+          "4": 0.05419,
+          "5": 0.02614
+        },
+        "stability": {
+          "B": 20,
+          "ks": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            4,
+            5,
+            5,
+            5,
+            5,
+            3,
+            5,
+            4,
+            3,
+            4
+          ],
+          "mode": 3,
+          "p_mode": 0.55,
+          "dist": {
+            "3": 11,
+            "4": 4,
+            "5": 5
+          }
+        },
+        "purity": 1.0,
+        "map": {
+          "0": "B",
+          "1": "C",
+          "2": "A"
+        },
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "n_segs": 9,
+        "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_base.rttm",
+        "spotcheck": {
+          "n": 8,
+          "cos_min": 1.0,
+          "cos_mean": 1.0
+        }
+      },
+      "a_win2p0_hop0p5": {
+        "win_s": 2.0,
+        "hop_s": 0.5,
+        "n_win": 82,
+        "kept_n": 42,
+        "k": 3,
+        "margin": 4.31,
+        "gaps": {
+          "2": 0.0,
+          "3": 0.51194,
+          "4": 0.00262,
+          "5": 0.11879
+        },
+        "stability": {
+          "B": 20,
+          "ks": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            3,
+            4,
+            3,
+            3,
+            4,
+            4,
+            3,
+            3,
+            5,
+            4,
+            3,
+            4
+          ],
+          "mode": 3,
+          "p_mode": 0.65,
+          "dist": {
+            "3": 13,
+            "4": 6,
+            "5": 1
+          }
+        },
+        "purity": 1.0,
+        "map": {
+          "0": "B",
+          "1": "C",
+          "2": "A"
+        },
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "n_segs": 9,
+        "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_a_win2p0_hop0p5.rttm"
+      },
+      "a_win2p5_hop0p5": {
+        "win_s": 2.5,
+        "hop_s": 0.5,
+        "n_win": 81,
+        "kept_n": 33,
+        "k": 3,
+        "margin": 7.351,
+        "gaps": {
+          "2": 0.0,
+          "3": 0.64555,
+          "4": 0.04298,
+          "5": 0.08782
+        },
+        "stability": {
+          "B": 20,
+          "ks": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            5,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "mode": 3,
+          "p_mode": 0.95,
+          "dist": {
+            "3": 19,
+            "5": 1
+          }
+        },
+        "purity": 1.0,
+        "map": {
+          "0": "B",
+          "1": "C",
+          "2": "A"
+        },
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "n_segs": 9,
+        "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_a_win2p5_hop0p5.rttm"
+      },
+      "a_win3p0_hop0p5": {
+        "win_s": 3.0,
+        "hop_s": 0.5,
+        "n_win": 80,
+        "kept_n": 24,
+        "k": 3,
+        "margin": 1.97,
+        "gaps": {
+          "2": 0.25925,
+          "3": 0.51062,
+          "4": 0.08526,
+          "5": 0.01974
+        },
+        "stability": {
+          "B": 20,
+          "ks": [
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            2,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            2,
+            3,
+            2,
+            3
+          ],
+          "mode": 3,
+          "p_mode": 0.7,
+          "dist": {
+            "2": 6,
+            "3": 14
+          }
+        },
+        "purity": 1.0,
+        "map": {
+          "0": "A",
+          "1": "B",
+          "2": "C"
+        },
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "n_segs": 9,
+        "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_a_win3p0_hop0p5.rttm"
+      },
+      "a_win2p5_hop0p25": {
+        "win_s": 2.5,
+        "hop_s": 0.25,
+        "n_win": 162,
+        "kept_n": 66,
+        "k": 3,
+        "margin": 1.402,
+        "gaps": {
+          "2": 0.00657,
+          "3": 0.12706,
+          "4": 0.09064,
+          "5": 0.02165
+        },
+        "stability": {
+          "B": 20,
+          "ks": [
+            4,
+            3,
+            5,
+            5,
+            4,
+            4,
+            5,
+            5,
+            3,
+            3,
+            5,
+            5,
+            4,
+            3,
+            5,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "mode": 4,
+          "p_mode": 0.4,
+          "dist": {
+            "3": 5,
+            "4": 8,
+            "5": 7
+          }
+        },
+        "purity": 1.0,
+        "map": {
+          "0": "B",
+          "1": "C",
+          "2": "A"
+        },
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "n_segs": 9,
+        "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_a_win2p5_hop0p25.rttm"
+      }
+    },
+    "exp_b_energy_prior": {
+      "energy": {
+        "n_frames": 117,
+        "k_bic": 9,
+        "bic": {
+          "1": 148.4,
+          "2": 51.5,
+          "3": 5.4,
+          "4": -43.8,
+          "5": -64.4,
+          "6": -74.6,
+          "7": -89.1,
+          "8": -99.7,
+          "9": -105.0,
+          "10": -104.5
+        }
+      },
+      "eigengap": {
+        "k": 3,
+        "margin": 1.721,
+        "gaps": {
+          "2": 0.00401,
+          "3": 0.09323,
+          "4": 0.05419,
+          "5": 0.02614
+        }
+      },
+      "combined": {
+        "k_final": 3,
+        "source": "eigengap(margin>=trust)",
+        "trust_thr": 1.5
+      },
+      "fixture_validation": {
+        "gt_k": 3,
+        "prior_agrees_with_gt": false,
+        "adopted": true
+      }
+    },
+    "exp_c_asr_turns": {
+      "asr": {
+        "n_words": 116,
+        "seconds": 43.0,
+        "model": "base.en-int8-cpu",
+        "n_ipus_raw": 15,
+        "mean_ipu_s": 1.89,
+        "n_ipus_embedded": 15
+      },
+      "count": {
+        "k": 2,
+        "margin": 3.622,
+        "gaps": {
+          "2": 0.31389,
+          "3": 0.08667,
+          "4": 0.06924,
+          "5": 0.04354
+        },
+        "stability": {
+          "B": 20,
+          "ks": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2
+          ],
+          "mode": 2,
+          "p_mode": 0.85,
+          "dist": {
+            "2": 17,
+            "3": 3
+          }
+        }
+      },
+      "purity": 0.6829,
+      "map": {
+        "0": "C",
+        "1": "B"
+      },
+      "DER": 0.3626,
+      "JER": 0.5193,
+      "DER_c025": 0.33,
+      "JER_c025": 0.5009,
+      "miss": 0.975,
+      "FA": 1.175,
+      "conf": 12.1,
+      "n_segs": 9,
+      "hyp_rttm": "/home/hatch/workspace/trippedd-studio-w66c/tools/wave66_lane_c/proofs/hyp_c_ipu.rttm"
+    }
+  },
+  "deepfilternet": {
+    "expected_role": "downstream-of-embeddings only (caption/ASR path)",
+    "df3_checkpoint_cache": "/home/hatch/.cache/DeepFilterNet/DeepFilterNet3",
+    "checkpoint_bytes_present": true,
+    "import": "failed: ModuleNotFoundError: No module named 'deepfilternet'",
+    "deepfilterlib": "missing: deepfilterlib has no cp312 wheel on PyPI and needs a Rust toolchain (ModuleNotFoundError)",
+    "wired": false
+  },
+  "elapsed_s": 390.7
+}

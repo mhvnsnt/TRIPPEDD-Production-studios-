@@ -62645,3 +62645,426 @@ Round 3 goes for the permissive-licensed graphics/audio/physics/AI-inference too
 
 ### Wave 66 Lane A — P2 landmark musicdisk round 10 (2026-10-09, coordinator-direct)
 25 entries appended: pouët vote-sorted musicdisk chart (order=avg) page 7 — Blaxa-Muxa, Dont Fear the Beeper, Sounds of the 80s, Chiperia Issue #2, ＿|￣|○, Ohne Dich, Zyron's music collection 01, V Microcompo AY music-disk, Chiperia Gerp Edition, VI MICROCOMPO AY VOL.2, Coolism (Effect 2015), Northern Star, The Gift, Yaemon's Tunebox 2, David Bowie Tribute, Liten Sopp, Arriba las manos!, 1-Bit Mechanistic, Beeb-Tracker, Ninja Gaiden (bitshifters), Indie vibes (Android), Modular Sounds 2, Mix Box #1, Nostalgia #1, Kombi-nacja. 0 pouët-ID dupes; 4 title near-hits confirmed distinct (Coolism 2009 vs 2015, Chiperia issues #2/Gerp vs #3/#6, MICROCOMPO AY vols 5/6 vs XII, Ninja Gaiden label mention). All ❓ per-release rights. Pouët chart note: top.php is gone (404) — prodlist.php?type[]=musicdisk&order=avg is the current vote-sorted chart path.
+
+#### Pat Novak, for Hire — "Sam Tolliver" (04-09-49) ✅ PD
+- **What:** "Pat Novak For Hire - Sam Tolliver (04-09-49)" — single episode of the Jack Webb waterfront detective series.
+- **URL:** https://archive.org/details/uj9es4yrmge1qhpynxq6ceu2wujt28tipf6aihix
+- **License:** ✅ Public domain (underlying US radio broadcast 1949; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — "Death In Harold Square" (11-30-47) ✅ PD
+- **What:** "Pat Novak For Hire \"Death In Harold Square\" (11-30-47)" — Boxcars711 single episode.
+- **URL:** https://archive.org/details/9edubzbpy6gdb55bhqs51hftwcwvg22njuvpmedw
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — "Dixie Gilian" (11-24-46) ✅ PD
+- **What:** "Pat Novak For Hire \"Dixie Gilian\" (11-24-46)" — Boxcars711 single episode.
+- **URL:** https://archive.org/details/fezgfir1daxeew3wnk313v6dulh7jfjndd8jfiti
+- **License:** ✅ Public domain (underlying US radio broadcast 1946; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — KYAG #10 "Rubin Callaway's Pictures" ✅ PD
+- **What:** "KYAG #10 - Pat Novak For Hire - Rubin Callaway's Pictures" — KYAG old-time-radio presentation.
+- **URL:** https://archive.org/details/ycr4dqxew811viarhkiyflipx4z9trqhuox3ygxb
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — "Rubin Callaway's Pictures" (Boxcars711) ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Pat Novak For Hire \"Rubin Callaway's Pictures\"" — Boxcars711 podcast episode.
+- **URL:** https://archive.org/details/awn5eaocpijphopzfzlopjmlnh7frlgnjy03sbys
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — Single Episodes (OTRR) ✅ PD
+- **What:** "Pat Novak, For Hire - Single Episodes" — OTRR single-episodes collection, 63 audio files.
+- **URL:** https://archive.org/details/OTRR_Pat_Novak_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 63 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTRR singles collection. [Wave 66 Lane A]
+
+#### Pat Novak for Hire — OTRR Certified Collection ✅ PD
+- **What:** "Pat Novak for Hire" — OTRR certified collection (episodes zip-bundled).
+- **URL:** https://archive.org/details/OTRR_Certified_Pat_Novak_for_Hire_872
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match; episodes in zip; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTRR certified collection. [Wave 66 Lane A]
+
+#### The Green Hornet — "The Smuggler Signs His Name" (39-11-25) ⚠️ rights-caution
+- **What:** "Green Hornet 39 11 25 The Smuggler Signs His Name" — single episode of the Green Hornet radio serial.
+- **URL:** https://archive.org/details/GreenHornet391125TheSmugglerSignsHisName
+- **License:** ⚠️ rights-caution (underlying 1939 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; Green Hornet character rights remain commercially exploited — broadcast PD but character caution per Lone Ranger precedent)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only — do not ship Green Hornet audio or character references without clearance. [Wave 66 Lane A]
+
+#### The Green Hornet — "Last Words Mean Sabotage" (42-09-26) ⚠️ rights-caution
+- **What:** "Green Hornet 42 09 26 Last Words Mean Sabotage" — single episode.
+- **URL:** https://archive.org/details/GreenHornet420926LastWordsMeanSabotage
+- **License:** ⚠️ rights-caution (underlying 1942 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet — "Not One Cent For Tribute" (39-06-13) ⚠️ rights-caution
+- **What:** "Green Hornet 39 06 13 Not One Cent For Tribute" — single episode.
+- **URL:** https://archive.org/details/GreenHornet390613NotOneCentForTribute
+- **License:** ⚠️ rights-caution (underlying 1939 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet — "Mr. Big's Drugstore Racket" (46-10-20) ⚠️ rights-caution
+- **What:** "The Green Hornet OTR from www.stardustotr.com" — episode "Mr. Big's Drugstore Racket" (46-10-20), 56 audio files in item.
+- **URL:** https://archive.org/details/461020MrBigsDrugstoreRacket
+- **License:** ⚠️ rights-caution (underlying 1946 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 56 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet (Radio Series) — oldtimeradio collection ⚠️ rights-caution
+- **What:** "The Green Hornet (Radio Series)" — oldtimeradio collection, 315 audio files spanning the 1936+ run.
+- **URL:** https://archive.org/details/green_hornet_radio
+- **License:** ⚠️ rights-caution (underlying US radio broadcasts from 1936; verified 2026-10-09: metadata API HTTP 200, title match, 315 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet — "A Slip Of The Lip" (42-05-23) ⚠️ rights-caution
+- **What:** "Green Hornet 42 5 23 A Slip Of The Lip" — single episode.
+- **URL:** https://archive.org/details/GreenHornet42523ASlipOfTheLip
+- **License:** ⚠️ rights-caution (underlying 1942 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### Whatever Became Of — The Green Hornet (Al Hodges, 1968) ⚠️ rights-caution
+- **What:** "Whatever Became Of 1968 The Green Hornet Al Hodges" — 1968 retrospective interview episode.
+- **URL:** https://archive.org/details/WhateverBecameOf1968TheGreenHornetAlHodges
+- **License:** ⚠️ rights-caution (1968 broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### Night Beat — "Flowers On The Water" ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Night Beat \"Flowers On The Water\"" — Frank Lovejoy noir detective series episode.
+- **URL:** https://archive.org/details/zainornhj44un6ewxq5ikrvpszjjxpbjbvmqvrjp
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Night Beat (Digitally Restored) with Frank Lovejoy ✅ PD
+- **What:** "Night Beat (Digitally Restored) with Frank Lovejoy" — restored run collection, 60 audio files.
+- **URL:** https://archive.org/details/Night-Beat
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 60 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Restored collection. [Wave 66 Lane A]
+
+#### Night Beat — "Lost Souls" ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Night Beat \"Lost Souls\"" — single episode.
+- **URL:** https://archive.org/details/tkq4n3ljqlhotcebvpmuoafg7zkoy12kol5ugnl7
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Night Beat — Ron Bowser-John Dunning Project ✅ PD
+- **What:** "Ron Bowser-John Dunning Project - Night Beat" — curated collection, 138 audio files.
+- **URL:** https://archive.org/details/BDP_NightBeat
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 138 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Curated collection. [Wave 66 Lane A]
+
+#### Night Beat and Have Gun, Will Travel ✅ PD
+- **What:** "Night Beat and Have Gun, Will Travel" — paired-episode item.
+- **URL:** https://archive.org/details/psh0fuaolfpy0h9xnctell2kmjovtfexcyvxg6jl
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### Night Beat and Suspense ✅ PD
+- **What:** "Night Beat and Suspense" — paired-episode item.
+- **URL:** https://archive.org/details/svz1ws0vcocgfaql3xu7soyd6zlvl1mdp3incgw5
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### The Whistler and Night Beat ✅ PD
+- **What:** "The Whistler and Night Beat" — paired-episode item.
+- **URL:** https://archive.org/details/alfjhayjh0cmidl71vos5x1xgunlasf3pt7hbdpu
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### Rocky Jordan — oldtimeradio collection ✅ PD
+- **What:** "Rocky Jordan" — oldtimeradio collection of the Cairo detective series, 97 audio files.
+- **URL:** https://archive.org/details/RockyJordan
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 97 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Show collection. [Wave 66 Lane A]
+
+#### Rocky Jordan — "Up In Flames" ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Rocky Jordan \"Up In Flames\"" — single episode.
+- **URL:** https://archive.org/details/qqritslrizjd47i1cfsqw7pxka7azq52fwrlobtv
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Rocky Jordan — "The Lady From Istanbul" ✅ PD
+- **What:** "The Lady From Istanbul by Rocky Jordan" — single episode.
+- **URL:** https://archive.org/details/7g9rbxwai7glsvkblctqdcxptfunjxvfzslvi2rn
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Rocky Jordan and The Whistler ✅ PD
+- **What:** "Rocky Jordan and The Whistler" — paired-episode item.
+- **URL:** https://archive.org/details/royskisluu3ccdflvmqynxm9ybsxkzxawzdudkkq
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### High Adventure and Rocky Jordan ✅ PD
+- **What:** "High Adventure and Rocky Jordan" — paired-episode item.
+- **URL:** https://archive.org/details/msqxuvvduzza2whd4rlqiqt6zyxskxl5sbfbpzhx
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### Rocky Jordan — "The Two O'Clock Man" (03-06-49) ✅ PD
+- **What:** "Rocky Jordan - The Two O'Clock Man (03-06-49)" — single episode.
+- **URL:** https://archive.org/details/pquwg1lhqpahw0llart638wai7uedugorndbns3m
+- **License:** ✅ Public domain (underlying US radio broadcast 1949; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Rocky Jordan — Ron Bowser-John Dunning Project ✅ PD
+- **What:** "Ron Bowser-John Dunning Project - Rocky Jordan" — curated collection, 132 audio files.
+- **URL:** https://archive.org/details/BDP_RockyJordan
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 132 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Curated collection. [Wave 66 Lane A]
+
+#### The Man Called X — "A Man A Girl A Plot" (05-25-51) ✅ PD
+- **What:** "The Man Called X - A Man A Girl A Plot (05-25-51)" — Herbert Marshall espionage series episode.
+- **URL:** https://archive.org/details/1cnkrco9qmsxldoq0an3ysnbwnic9kxj1xadcsfr
+- **License:** ✅ Public domain (underlying US radio broadcast 1951; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Mekong River Dam" (48-08-08) ✅ PD
+- **What:** "The Man Called X 48 08 08 Mekong River Dam" — single episode.
+- **URL:** https://archive.org/details/TheManCalledX480808MekongRiverDam
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Man Called X — "Worth Her Weight In Gold" (48-09-05) ✅ PD
+- **What:** "Man Called X 48 09 05 Worth Her Weight In Gold" — single episode.
+- **URL:** https://archive.org/details/ManCalledX480905WorthHerWeightInGold
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Burma Peninsula" (48-08-22) ✅ PD
+- **What:** "The Man Called X 48 08 22 Burma Peninsula" — single episode.
+- **URL:** https://archive.org/details/TheManCalledX480822BurmaPeninsula
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Spirit Of The Snows" ✅ PD
+- **What:** "Spirit Of The Snows by The Man Called X" — single episode.
+- **URL:** https://archive.org/details/shirfz3qq6ajvqtg0afhbxuknx1p3vjkrsbwwqty
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Guns On The Niger" ✅ PD
+- **What:** "Guns On The Niger by The Man Called X" — single episode.
+- **URL:** https://archive.org/details/dqphpvinfbgisxp94nqzgvr2v5l77utg8qd1evbz
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — Single Episodes (OTRR) ✅ PD
+- **What:** "The Man Called X - Single Episodes" — OTRR single-episodes collection, 230 audio files.
+- **URL:** https://archive.org/details/OTRR_Man_Called_X_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 230 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTRR singles collection. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "Murder in Black and White" (1948-03-18) ✅ PD
+- **What:** "Casey, Crime Photographer 1948-03-18 Murder in Black and White" — single episode.
+- **URL:** https://archive.org/details/casey480318
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey Crime Photographer — "After Turkey The Bill" (47-11-27) ✅ PD
+- **What:** "Casey Crime Photographer 47 11 27 After Turkey The Bill" — single episode.
+- **URL:** https://archive.org/details/CaseyCrimePhotographer471127AfterTurkeyTheBill
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "Pick-Up" (1947-05-22) ✅ PD
+- **What:** "Casey, Crime Photographer 1947-05-22 Pick-Up" — single episode.
+- **URL:** https://archive.org/details/casey470522
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "Road Angel" (1954-01-13) ✅ PD
+- **What:** "Casey, Crime Photographer 1954-01-13 Road Angel" — single episode.
+- **URL:** https://archive.org/details/casey540113
+- **License:** ✅ Public domain (underlying US radio broadcast 1954; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "The Serpent Goddess" (1947-12-04) ✅ PD
+- **What:** "Casey, Crime Photographer 1947-12-04 The Serpent Goddess" — single episode.
+- **URL:** https://archive.org/details/casey471204
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "The Upholstery" (1949-11-17 / 1950-11-16) ✅ PD
+- **What:** "Casey, Crime Photographer 1949-11-17 and 1950-11-16 The Upholstery" — two broadcasts, 5 audio files.
+- **URL:** https://archive.org/details/casey491117501116
+- **License:** ✅ Public domain (underlying US radio broadcasts 1949/1950; verified 2026-10-09: metadata API HTTP 200, title match, 5 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Two-broadcast item. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "The Fire" (1950-04-06) ✅ PD
+- **What:** "Casey, Crime Photographer 1950-04-06 The Fire" — single episode.
+- **URL:** https://archive.org/details/casey500406
+- **License:** ✅ Public domain (underlying US radio broadcast 1950; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P3 PD radio-drama round 15 (2026-10-09, coordinator-direct)
+42 entries appended: 7 each — Pat Novak for Hire (Sam Tolliver, Death In Harold Square, Dixie Gilian, Rubin Callaway's Pictures x2 sources, OTRR Singles, OTRR Certified), Green Hornet (Smuggler Signs His Name, Last Words Mean Sabotage, Not One Cent For Tribute, Mr. Big's Drugstore Racket, oldtimeradio collection, A Slip Of The Lip, Whatever Became Of 1968 — all ⚠️ character-rights caution per Lone Ranger precedent), Night Beat (Flowers On The Water, Digitally Restored collection, Lost Souls, BDP collection, +3 paired-episode items), Rocky Jordan (oldtimeradio collection, Up In Flames, Lady From Istanbul, Two O'Clock Man, BDP collection, +2 paired items), Man Called X (A Man A Girl A Plot, Mekong River Dam, Worth Her Weight In Gold, Burma Peninsula, Spirit Of The Snows, Guns On The Niger, OTRR Singles), Casey Crime Photographer (7 dated episodes 1947–1954). All 42 archive.org metadata-verified 2026-10-09 (title match + audio file counts). 2 identifier dupes replaced (Pat Novak "Fleet Lady", NightBeat collection — already cataloged). Green Hornet badged ⚠️ (character rights, not broadcast — same doctrine as Lone Ranger). Licenseurl-absent stated per Wave-59 diligence rule.

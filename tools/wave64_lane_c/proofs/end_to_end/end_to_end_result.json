@@ -1,0 +1,461 @@
+{
+  "wave": 64,
+  "lane": "C",
+  "task": "end-to-end pipeline",
+  "vad_cfg": {
+    "agg": 0,
+    "frame_ms": 10,
+    "pad": 0.3,
+    "use_pad": true
+  },
+  "checks": [
+    {
+      "name": "fixture_shas",
+      "pass": true,
+      "detail": "wave58 fixture SHA-verified"
+    },
+    {
+      "name": "real_ecapa_embeddings",
+      "pass": true,
+      "detail": "step-1 real-compute ECAPA embeddings loaded (166, 192) (computed on RAW audio \u2014 quarantine: no upstream denoise)"
+    },
+    {
+      "name": "recommended_vad",
+      "pass": true,
+      "detail": "VAD recall=0.9728 prec=0.9938 segs=9"
+    },
+    {
+      "name": "blind_k3",
+      "pass": true,
+      "detail": "eigengap blind k=3 margin=1.72x"
+    },
+    {
+      "name": "purity",
+      "pass": true,
+      "detail": "frame purity=1.0 map={0: 'B', 1: 'C', 2: 'A'}"
+    },
+    {
+      "name": "e2e_beats_wave63",
+      "pass": true,
+      "detail": "end-to-end F1 DER=0.0382 vs wave63 0.0712 (task-1 torch-free recommended: 0.0382)"
+    },
+    {
+      "name": "no_confusion",
+      "pass": true,
+      "detail": "confusion=0.0s"
+    },
+    {
+      "name": "hypothesis_written",
+      "pass": true,
+      "detail": "/home/hatch/workspace/wave64-laneC/tools/wave64_lane_c/proofs/end_to_end/hypothesis_e2e_F1.rttm"
+    },
+    {
+      "name": "events_have_text",
+      "pass": true,
+      "detail": "9/9 events carry GT turn text (pipeline supplies who/when \u2014 no ASR)"
+    },
+    {
+      "name": "ass_written",
+      "pass": true,
+      "detail": "captions_e2e.ass 1934 bytes"
+    },
+    {
+      "name": "libass_clean",
+      "pass": true,
+      "detail": "libass stderr errors: 0"
+    },
+    {
+      "name": "burned_mp4",
+      "pass": true,
+      "detail": "burned_captions_e2e.mp4 1699368 bytes"
+    },
+    {
+      "name": "burn_pixel_on",
+      "pass": true,
+      "detail": "caption-ON band diff 11.77/255 (> 2.0)"
+    },
+    {
+      "name": "burn_pixel_off",
+      "pass": true,
+      "detail": "caption-OFF band diff 0.00/255 (< 1.0)"
+    }
+  ],
+  "gate_sweep": {
+    "0.02": {
+      "kept": 102,
+      "k": 3,
+      "margin": 1.72,
+      "purity": 1.0,
+      "map": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "F0": {
+        "DER": 0.0712,
+        "JER": 0.07,
+        "miss": 2.675,
+        "FA": 0.125,
+        "conf": 0.0,
+        "DER_c025": 0.0283,
+        "JER_c025": 0.0274,
+        "segments": [
+          [
+            0.0,
+            4.5,
+            "A"
+          ],
+          [
+            5.0,
+            10.5,
+            "B"
+          ],
+          [
+            11.25,
+            15.25,
+            "C"
+          ],
+          [
+            16.0,
+            19.75,
+            "A"
+          ],
+          [
+            20.25,
+            24.0,
+            "B"
+          ],
+          [
+            24.75,
+            29.25,
+            "C"
+          ],
+          [
+            30.0,
+            33.5,
+            "A"
+          ],
+          [
+            34.0,
+            37.25,
+            "B"
+          ],
+          [
+            38.25,
+            42.25,
+            "C"
+          ]
+        ]
+      },
+      "F1": {
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "segments": [
+          [
+            0.0,
+            4.5,
+            "A"
+          ],
+          [
+            5.0,
+            10.5,
+            "B"
+          ],
+          [
+            11.0,
+            15.25,
+            "C"
+          ],
+          [
+            16.0,
+            20.0,
+            "A"
+          ],
+          [
+            20.25,
+            24.25,
+            "B"
+          ],
+          [
+            24.75,
+            29.25,
+            "C"
+          ],
+          [
+            30.0,
+            33.5,
+            "A"
+          ],
+          [
+            34.0,
+            37.5,
+            "B"
+          ],
+          [
+            38.0,
+            42.5,
+            "C"
+          ]
+        ]
+      }
+    },
+    "0.04": {
+      "kept": 102,
+      "k": 3,
+      "margin": 1.72,
+      "purity": 1.0,
+      "map": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "F0": {
+        "DER": 0.0712,
+        "JER": 0.07,
+        "miss": 2.675,
+        "FA": 0.125,
+        "conf": 0.0,
+        "DER_c025": 0.0283,
+        "JER_c025": 0.0274,
+        "segments": [
+          [
+            0.0,
+            4.5,
+            "A"
+          ],
+          [
+            5.0,
+            10.5,
+            "B"
+          ],
+          [
+            11.25,
+            15.25,
+            "C"
+          ],
+          [
+            16.0,
+            19.75,
+            "A"
+          ],
+          [
+            20.25,
+            24.0,
+            "B"
+          ],
+          [
+            24.75,
+            29.25,
+            "C"
+          ],
+          [
+            30.0,
+            33.5,
+            "A"
+          ],
+          [
+            34.0,
+            37.25,
+            "B"
+          ],
+          [
+            38.25,
+            42.25,
+            "C"
+          ]
+        ]
+      },
+      "F1": {
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "segments": [
+          [
+            0.0,
+            4.5,
+            "A"
+          ],
+          [
+            5.0,
+            10.5,
+            "B"
+          ],
+          [
+            11.0,
+            15.25,
+            "C"
+          ],
+          [
+            16.0,
+            20.0,
+            "A"
+          ],
+          [
+            20.25,
+            24.25,
+            "B"
+          ],
+          [
+            24.75,
+            29.25,
+            "C"
+          ],
+          [
+            30.0,
+            33.5,
+            "A"
+          ],
+          [
+            34.0,
+            37.5,
+            "B"
+          ],
+          [
+            38.0,
+            42.5,
+            "C"
+          ]
+        ]
+      }
+    },
+    "0.08": {
+      "kept": 102,
+      "k": 3,
+      "margin": 1.72,
+      "purity": 1.0,
+      "map": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "F0": {
+        "DER": 0.0712,
+        "JER": 0.07,
+        "miss": 2.675,
+        "FA": 0.125,
+        "conf": 0.0,
+        "DER_c025": 0.0283,
+        "JER_c025": 0.0274,
+        "segments": [
+          [
+            0.0,
+            4.5,
+            "A"
+          ],
+          [
+            5.0,
+            10.5,
+            "B"
+          ],
+          [
+            11.25,
+            15.25,
+            "C"
+          ],
+          [
+            16.0,
+            19.75,
+            "A"
+          ],
+          [
+            20.25,
+            24.0,
+            "B"
+          ],
+          [
+            24.75,
+            29.25,
+            "C"
+          ],
+          [
+            30.0,
+            33.5,
+            "A"
+          ],
+          [
+            34.0,
+            37.25,
+            "B"
+          ],
+          [
+            38.25,
+            42.25,
+            "C"
+          ]
+        ]
+      },
+      "F1": {
+        "DER": 0.0382,
+        "JER": 0.0378,
+        "miss": 1.275,
+        "FA": 0.225,
+        "conf": 0.0,
+        "DER_c025": 0.0081,
+        "JER_c025": 0.0077,
+        "segments": [
+          [
+            0.0,
+            4.5,
+            "A"
+          ],
+          [
+            5.0,
+            10.5,
+            "B"
+          ],
+          [
+            11.0,
+            15.25,
+            "C"
+          ],
+          [
+            16.0,
+            20.0,
+            "A"
+          ],
+          [
+            20.25,
+            24.25,
+            "B"
+          ],
+          [
+            24.75,
+            29.25,
+            "C"
+          ],
+          [
+            30.0,
+            33.5,
+            "A"
+          ],
+          [
+            34.0,
+            37.5,
+            "B"
+          ],
+          [
+            38.0,
+            42.5,
+            "C"
+          ]
+        ]
+      }
+    }
+  },
+  "best_gate": "0.02",
+  "pixel": {
+    "on_mean_abs_diff": 11.767,
+    "off_mean_abs_diff": 0.0
+  },
+  "elapsed_s": 92.2,
+  "checks_pass": "14/14"
+}

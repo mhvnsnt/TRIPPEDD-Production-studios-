@@ -1,4 +1,5 @@
 venv/
+venv_torch/
 __pycache__/
 *.pyc
 scratch/

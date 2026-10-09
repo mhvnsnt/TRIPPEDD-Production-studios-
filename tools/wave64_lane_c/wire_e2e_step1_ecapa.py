@@ -37,7 +37,8 @@ import wire_vad_coverage_recovery as w63  # noqa: E402
 
 HF_REPO = "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/resolve/main"
 NEED_FILES = ["hyperparams.yaml", "embedding_model.ckpt",
-              "mean_var_norm_emb.ckpt"]
+              "mean_var_norm_emb.ckpt", "classifier.ckpt",
+              "label_encoder.txt"]
 
 
 def fetch_weights():
@@ -63,6 +64,20 @@ def fetch_weights():
     txt = open(os.path.join(SCRATCH, "hyperparams.yaml")).read()
     assert "embedding_model.ckpt" in txt and "mean_var_norm" in txt, \
         "unexpected hyperparams.yaml content"
+    # Point pretrained_path at the LOCAL dir so the Pretrainer resolves
+    # bare local filenames instead of the HF hub id (fully offline).
+    import re
+    hp = os.path.join(SCRATCH, "hyperparams.yaml")
+    txt = open(hp).read()
+    if f"pretrained_path: {SCRATCH}" not in txt:
+        txt2 = re.sub(r"^pretrained_path:.*$",
+                      f"pretrained_path: {SCRATCH}", txt,
+                      flags=re.MULTILINE)
+        assert txt2 != txt, "pretrained_path line not found"
+        open(hp, "w").write(txt2)
+        print("  hyperparams.yaml patched to fully-local paths", flush=True)
+    else:
+        print("  hyperparams.yaml already fully-local", flush=True)
 
 
 def main():
@@ -96,33 +111,40 @@ def main():
     win, hop = int(1.5 * 16000), int(0.25 * 16000)
     idxs = list(range(0, len(audio) - win + 1, hop))
     assert len(idxs) == 166, len(idxs)
-    embs = []
-    B = 8
-    with torch.no_grad():
-        for i in range(0, len(idxs), B):
-            batch = np.stack([audio[j:j + win] for j in idxs[i:i + B]])
-            wavs = torch.from_numpy(batch.astype(np.float32))
-            e = clf.encode_batch(wavs, normalize_wav=True)
-            embs.append(e.squeeze(1).cpu().numpy())
-            print(f"  encoded {min(i + B, len(idxs))}/{len(idxs)} windows",
-                  flush=True)
-    embs = np.concatenate(embs, axis=0).astype(np.float64)
-    assert embs.shape == (166, 192) and np.all(np.isfinite(embs))
-    np.save(os.path.join(PROOFS, "embeddings_all166.npy"), embs)
+    npy_path = os.path.join(PROOFS, "embeddings_all166.npy")
+    if os.path.isfile(npy_path):
+        embs = np.load(npy_path).astype(np.float64)
+        assert embs.shape == (166, 192) and np.all(np.isfinite(embs))
+        print("  loaded cached embeddings_all166.npy (row p = window p)",
+              flush=True)
+    else:
+        embs = []
+        B = 8
+        with torch.no_grad():
+            for i in range(0, len(idxs), B):
+                batch = np.stack([audio[j:j + win] for j in idxs[i:i + B]])
+                wavs = torch.from_numpy(batch.astype(np.float32))
+                e = clf.encode_batch(wavs)  # sb 1.1.1: (wavs, wav_lens, normalize)
+                embs.append(e.squeeze(1).cpu().numpy())
+                print(f"  encoded {min(i + B, len(idxs))}/{len(idxs)} windows",
+                      flush=True)
+        embs = np.concatenate(embs, axis=0).astype(np.float64)
+        assert embs.shape == (166, 192) and np.all(np.isfinite(embs))
+        np.save(npy_path, embs)
     check("embeddings_computed", True,
-          f"166x192 ECAPA embeddings on raw audio, "
-          f"batch={B}, threads=1")
+          "166x192 ECAPA embeddings on raw audio (threads=1)")
 
-    # validate against the fixture embeddings.pt (canonical 160 windows)
+    # validate against the fixture embeddings.pt (canonical 160 windows).
+    # NOTE: embs row p == grid window NUMBER p (0..165); a08 holds window
+    # numbers; canon maps window number -> fixture embeddings.pt row.
     _, rmsv, _, _ = w63.window_grid(audio)
     thr08 = w63.SILENCE_FRAC * float(np.max(rmsv))
     a08 = np.flatnonzero(rmsv >= thr08)
     assert len(a08) == 160
     canon = {int(j): i for i, j in enumerate(a08)}
-    grid_pos = {j: p for p, j in enumerate(idxs)}
     rec_rows, fix_rows = [], []
     for j in a08:
-        rec_rows.append(embs[grid_pos[int(j)]])
+        rec_rows.append(embs[int(j)])
         fix_rows.append(fixture_emb[canon[int(j)]])
     rec_rows = np.stack(rec_rows)
     fix_rows = np.stack(fix_rows)

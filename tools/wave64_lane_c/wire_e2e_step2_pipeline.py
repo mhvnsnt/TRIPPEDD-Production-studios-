@@ -79,7 +79,7 @@ def esc_ass(t):
     return t.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
 
 
-def pipeline_run(audio, turns, all_emb, grid_pos, vad_segs, sil_frac):
+def pipeline_run(audio, turns, all_emb, vad_segs, sil_frac):
     """Full diarization run on real-compute embeddings. Returns dict."""
     idxs, rmsv, _, _ = w63.window_grid(audio)
     thr = sil_frac * float(np.max(rmsv))
@@ -88,7 +88,8 @@ def pipeline_run(audio, turns, all_emb, grid_pos, vad_segs, sil_frac):
             if w63.inside_vad(j * HOP_S, j * HOP_S + WIN_S, vad_segs)]
     if len(kept) < 2:
         return {"failed": "kept<2"}
-    emb = all_emb[np.asarray([grid_pos[int(j)] for j in kept])]
+    # all_emb row p == grid window NUMBER p (step 1 convention)
+    emb = all_emb[np.asarray([int(j) for j in kept])]
     k_est, eigs, gaps, margin = w63.eigengap_laplacian(emb)
     from spectralcluster import SpectralClusterer
     cl = SpectralClusterer(min_clusters=k_est, max_clusters=k_est,
@@ -96,7 +97,7 @@ def pipeline_run(audio, turns, all_emb, grid_pos, vad_segs, sil_frac):
     labels = np.asarray(cl.predict(emb), dtype=int)
     n_frames = int(math.ceil((len(audio) / SR) / HOP_S))
     frames_f0 = w63.label_v2c_no_fill(kept, labels, vad_segs, n_frames)
-    frames_f1 = w64.fill_within_vad(frames_f0, vad_segs, n_frames)
+    frames_f1 = w63.fill_within_vad(frames_f0, vad_segs, n_frames)
     cmap, purity, _ = w63.hungarian_map(frames_f0, turns)
     spk_of = {c: cmap[c] for c in set(frames_f0[frames_f0 != -1].tolist())}
     out = {"kept": len(kept), "k": k_est, "margin": round(margin, 2),
@@ -146,14 +147,14 @@ def main():
           f"VAD recall={rec:.4f} prec={prec:.4f} segs={len(vad_segs)}")
 
     idxs = list(range(0, len(audio) - int(WIN_S * SR) + 1, int(HOP_S * SR)))
-    grid_pos = {int(j): p for p, j in enumerate(idxs)}
+    assert len(idxs) == 166  # window numbers 0..165 == all_emb rows
 
     # energy-gate sweep incl. LOOSENING (deferred from task 1)
     print("gate sweep (real-compute embeddings, all 166 windows):",
           flush=True)
     sweep = {}
     for sil in (0.02, 0.04, 0.08):
-        pr = pipeline_run(audio, turns, all_emb, grid_pos, vad_segs, sil)
+        pr = pipeline_run(audio, turns, all_emb, vad_segs, sil)
         sweep[str(sil)] = pr
         f1 = pr["F1"]
         print(f"  gate={sil}: kept={pr['kept']} k={pr['k']} "

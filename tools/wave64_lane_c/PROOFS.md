@@ -163,3 +163,84 @@ MIT lane code. Quarantine code is never imported. No GPL components.
    hidden.
 3. The min-DER pad=0.35 config is reported but NOT recommended: FA
    1.025 s is 4.5× the recommended config's for a −10% DER gain.
+
+---
+
+# Task 2 — FULL end-to-end pipeline (raw → VAD → ECAPA-TDNN → eigengap → forced-k → Hungarian → DER/JER → ASS caption burn-in)
+
+Status: COMPLETE, 14/14 + 5/5 checks PASS.
+
+Wire scripts: `wire_e2e_step1_ecapa.py` (torch venv `venv_torch/`,
+gitignored: torch==2.14.1+cpu, torchaudio==2.11.0+cpu,
+speechbrain==1.1.1) and `wire_e2e_step2_pipeline.py` (torch-free lane
+venv). VAD = the task-1 recommended config (agg 0, 10 ms, 0.3 s pad).
+
+## Step 1 — real ECAPA-TDNN recompute (5/5 PASS)
+
+Recomputed 192-dim SpeechBrain ECAPA embeddings for ALL 166 grid
+windows on RAW fixture audio (single-thread, batch 8 — no OOM).
+Weights = upstream `speechbrain/spkrec-ecapa-voxceleb` bytes fetched via
+direct HTTPS into `scratch/ecapa_weights/` (huggingface_hub xet stalls
+on this VM's proxy); `hyperparams.yaml` patched to fully-local
+`pretrained_path` so the Pretrainer never touches the hub
+(`HF_HUB_OFFLINE=1`). Two bugs caught and fixed: the pretrainer wanted
+4 files (classifier.ckpt + label_encoder.txt were missing from the
+fetch list) and `encode_batch()` takes no `normalize_wav` kwarg in
+speechbrain 1.1.1.
+
+- **cosine(recomputed, fixture embeddings.pt) = 1.000000 (min/max/mean)**
+  — the real compute reproduces the Wave-58 fixture embeddings
+  bit-for-bit in angle. The torch-free parse trick used in task 1 (and
+  Waves 59/60/63) is validated end-to-end.
+- GT-mean cosines on the recompute: A/B 0.1524, A/C 0.6259, B/C 0.1416
+  — byte-matching Wave-63 step-4's raw-audio control row.
+
+## Step 2 — pipeline + gate-loosening + caption burn-in (14/14 PASS)
+
+| energy gate | energy-speech windows | kept (strict VAD) | k | F1 DER | miss | FA | conf |
+|---|---|---|---|---|---|---|---|
+| 0.02 (loosened) | 164 | 102 | 3 | **0.0382** | 1.275 | 0.225 | 0.0 |
+| 0.04 (loosened) | 163 | 102 | 3 | **0.0382** | 1.275 | 0.225 | 0.0 |
+| 0.08 (Wave-58) | 160 | 102 | 3 | **0.0382** | 1.275 | 0.225 | 0.0 |
+
+Gate loosening is an honest negative: the extra 3–4 sub-gate windows
+are all inter-turn-gap windows that the strict VAD-inclusion drops, so
+kept stays 102 and DER is unchanged. The VAD — not the energy gate — is
+the binding coverage constraint (consistent with Phase D's invariance).
+
+- End-to-end hypothesis RTTM is **byte-identical** to the task-1
+  torch-free recommended RTTM (diff-verified) — real ECAPA in the loop
+  changes nothing, as the cosine-1.0 check predicted.
+- DER 0.0382 / JER 0.0378 (collar 0.0); 0.0081 / 0.0077 at collar 0.25.
+  Blind eigengap k=3 (margin 1.72x), purity 1.0, map {0:B, 1:C, 2:A}.
+- Caption path: `captions_e2e.srt` + `captions_e2e.ass` (per-speaker
+  colors, GT turn text — pipeline supplies who/when, no ASR), ffmpeg
+  burn-in onto the **RAW mix** → `burned_captions_e2e.mp4` (1.7 MB).
+  Pixel gates: caption-ON band diff 11.77/255 (> 2.0), caption-OFF
+  0.00/255 (< 1.0); libass stderr clean; caption frame visually
+  verified (cyan [B] caption over waveform at t=5 s).
+
+## Quarantine accounting (downstream denoise)
+
+Denoise NEVER touches the speaker path in either task: embeddings are
+computed on raw audio (step-1 cosine-1.0 proof). The downstream
+DeepFilterNet3 caption-path stage was NOT run in this lane:
+`deepfilternet` ships a pure-Python wheel but its `DeepFilterLib`
+dependency has no cp312 manylinux wheel and this VM has no Rust
+toolchain to build it (Wave-62's lane-local Rust toolchain was cleaned
+up); the DF3 checkpoint bytes remain cached in
+`~/.cache/DeepFilterNet/` from Wave-62. The burn-in therefore goes onto
+the raw mix, and the quarantine holds trivially — recorded here, not
+hidden. Re-running the downstream denoise only needs a cp311 (or Rust)
+environment; the hypothesis RTTM it would consume is committed above.
+
+## Task-2 proof artifacts (under `tools/wave64_lane_c/proofs/end_to_end/`)
+
+- `embeddings_all166.npy` — real-compute ECAPA embeddings, all 166
+  windows (SHA in `SHA256SUMS`).
+- `ecapa_recompute_result.json` — step-1 checks + cosine validation.
+- `end_to_end_result.json` — gate sweep, DER/JER, pixel checks.
+- `hypothesis_e2e_F1.rttm` — final hypothesis (byte-identical to the
+  task-1 recommended RTTM).
+- `captions_e2e.srt` / `captions_e2e.ass` / `waves_e2e.mp4` /
+  `burned_captions_e2e.mp4` (+ frame_on/off.raw pixel evidence).

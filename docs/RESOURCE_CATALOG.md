@@ -62119,3 +62119,276 @@ Round 3 goes for the permissive-licensed graphics/audio/physics/AI-inference too
 
 ### Wave 65 Lane A summary (2026-10-08)
 125 entries appended 2026-10-08: P1 SDK docs round 11 (40 — ESP32 IDF, Arduino, MicroPython, CircuitPython, Adafruit Learning System, SparkFun guides, Zephyr RTOS, FreeRTOS, micro:bit, Unity manual, GameMaker manual, Bevy learn, Fyrox API, PlayCanvas developer docs, LearnOpenGL, Vulkan tutorial, WebGL fundamentals, Quilez articles, bgfx docs, sokol docs, macroquad API, raylib cheatsheet, Pygame docs, Arcade library docs, JUCE docs, Tiled manual, Box2D manual, AtariAge 2600 programming, pcsx-redux wiki, MiSTer FPGA wiki, BGB manual, DOSBox Staging docs, QEMU docs, Bochs docs, MAMEdev wiki, Cemu site, Redox OS book, TempleOS docs, Fuchsia docs, CHIP-8 wiki; all HTTP 200 live 2026-10-08, all docs ❓); P2 landmark musicdisk round 9 (25 — pouët chart page 6: TED Vibes 2, Star Bars Compo Votepack, Paula Doing SID+, Rob Hubbard's 1985 Recollection, OVeRclocked Remix, Lostmax, Amiga Chip Addiction Vol 1, No-Skip Mix 2022 Ed, XII MICROCOMPO AY/SCR2 V.5, AI Illusion, Love in the Mix, Ear Shaver, Party x Leben Remixer, Machine Yearning, chipo django 2, TED Vibes, The Nomad, The Beautiful Machine Vol. 2, Lo-fi SID Music to Study/Relax to, Dankollection, Bachtracking, Machine EP, Chipsystem, Feedback #14 Classic Edition, Feedback #14; 0 ID/title dupes; all ❓); P3 PD radio-drama round 14 (40 — 6 each Boston Blackie, Lights Out, Quiet Please, Dimension X, Sherlock Holmes, Campbell Playhouse + 4 Richard Diamond; all archive.org metadata-verified, all ✅ established-PD per Wave 59 ruling); P4 demoscene tooling round 3 (20 — bgfx, sokol, Dear ImGui, Tracy, RenderDoc, meshoptimizer, Draco, KTX-Software, msdfgen, miniaudio, SoLoud, DPF, CLAP, libopenmpt, libsamplerate, Opus, EnTT, Box2D, PhysX, whisper.cpp; 13 GitHub API spdx_id + 7 direct license-text reads, all permissive ✅, zero quarantined). 0 quarantine rows added (next row still 603). Catalog: 5,971 → 6,096 honest #### entries (target 6,070+ met). Dedup rejections (pre-append): P1 — 6 domain dupes (smspower.org, wiki.neogeodev.org, randomterrain.com, amigadev.elowar.com, melonDS wiki, doc.babylonjs.com), SDL wiki (cataloged round 10), thebookofshaders.com (ARR honest-negative already cataloged — docs entry would contradict); P2 — 0 (2 title near-hits confirmed distinct: OverClocked ReMix site, tim.kahn microcompositions); P3 — 0 identifier dupes + 3 verification-FAIL replacements + 10+ access-restricted Boxcars711 pods + modern-wrapper exclusions; P4 — 2 true dupes (phoboslab/qoi, bulletphysics/bullet3). Honest negatives/drops: raspberrypi.com/documentation + docs.unrealengine.com (403 bot-wall), pjrc.com (unreachable), freertos.org/Documentation 404 (canonical root used), fyrox.rs/docs 404 (docs.rs used), learnopengl.com 406 to bare curl (browser UA live — noted), jotego/jtframe 404, dolphin-emu.org/docs 403, 9p.io unreachable, soloud-audio.com down, Night Beat (1 new single only), Dark Fantasy (1 new single only), RichardDiamondSingsdickPowell (zip-only modern fan edit). LGPL doctrine still PENDING OWNER VERDICT.
+
+#### PlatformIO Documentation ❓ documentation-only
+- **What:** PlatformIO documentation (docs.platformio.org) — PlatformIO embedded IDE/build-system manuals, board/platform registry docs.
+- **URL:** https://docs.platformio.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Embedded toolchain docs for firmware-adjacent tooling. [Wave 66 Lane A]
+
+#### RIOT-OS Documentation ❓ documentation-only
+- **What:** RIOT-OS documentation (doc.riot-os.org) — RIOT IoT operating system API reference and user manuals.
+- **URL:** https://doc.riot-os.org/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; riot-os.org/api/ 404s — doc.riot-os.org is canonical; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** IoT RTOS API reference. [Wave 66 Lane A]
+
+#### Apache NuttX Documentation ❓ documentation-only
+- **What:** Apache NuttX documentation — NuttX real-time operating system user guides and API docs.
+- **URL:** https://nuttx.apache.org/docs/latest/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Apache RTOS docs. [Wave 66 Lane A]
+
+#### TinyGo Documentation ❓ documentation-only
+- **What:** TinyGo documentation (tinygo.org/docs) — TinyGo Go-compiler-for-microcontrollers guides and language reference.
+- **URL:** https://tinygo.org/docs/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs.tinygo.org timed out — tinygo.org/docs is canonical; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Go-for-embedded language docs. [Wave 66 Lane A]
+
+#### KiCad Documentation ❓ documentation-only
+- **What:** KiCad documentation (docs.kicad.org) — KiCad EDA suite manuals: schematic, PCB layout, scripting API.
+- **URL:** https://docs.kicad.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** EDA/hardware docs for merch/hardware-adjacent work. [Wave 66 Lane A]
+
+#### Blender Manual ❓ documentation-only
+- **What:** Blender Manual (docs.blender.org/manual) — official Blender user manual: modeling, rigging, animation, rendering.
+- **URL:** https://docs.blender.org/manual/en/latest/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Core reference for the Blender-headless render path. [Wave 66 Lane A]
+
+#### Haxe Manual ❓ documentation-only
+- **What:** Haxe manual (haxe.org/manual) — Haxe cross-platform language reference and standard-library docs.
+- **URL:** https://haxe.org/manual/introduction.html
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Haxe language reference (distinct from HaxeFlixel docs, already cataloged). [Wave 66 Lane A]
+
+#### Skia Documentation ❓ documentation-only
+- **What:** Skia documentation (skia.org/docs) — Skia 2D graphics library user guides and API docs.
+- **URL:** https://skia.org/docs/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2D graphics library docs backing Chrome/Android rendering. [Wave 66 Lane A]
+
+#### FFmpeg Documentation ❓ documentation-only
+- **What:** FFmpeg documentation (ffmpeg.org/documentation.html) — FFmpeg CLI, library (libav*) and filter documentation.
+- **URL:** https://ffmpeg.org/documentation.html
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Core A/V pipeline reference — every render/conversion lane uses this. [Wave 66 Lane A]
+
+#### GStreamer Documentation ❓ documentation-only
+- **What:** GStreamer documentation — GStreamer multimedia framework manuals, plugin reference, API docs.
+- **URL:** https://gstreamer.freedesktop.org/documentation/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Streaming/media-pipeline framework reference. [Wave 66 Lane A]
+
+#### AV1 Specification ❓ documentation-only
+- **What:** AV1 bitstream specification (aomediacodec.github.io/av1-spec) — the Alliance for Open Media AV1 codec spec.
+- **URL:** https://aomediacodec.github.io/av1-spec/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; aomedia.org/av1/specification/ 404s — this is canonical; spec text royalty-free per AOM patent policy)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Royalty-free codec spec for future encode targets. [Wave 66 Lane A]
+
+#### Direct3D 12 Documentation ❓ documentation-only
+- **What:** Direct3D 12 documentation (Microsoft Learn) — D3D12 programming guide and API reference.
+- **URL:** https://learn.microsoft.com/en-us/windows/win32/direct3d12
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Windows GPU API reference. [Wave 66 Lane A]
+
+#### Metal Documentation ❓ documentation-only
+- **What:** Metal documentation (Apple Developer) — Apple Metal graphics/compute API guides and reference.
+- **URL:** https://developer.apple.com/documentation/metal
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Apple GPU API reference. [Wave 66 Lane A]
+
+#### WebRTC Documentation ❓ documentation-only
+- **What:** WebRTC documentation (webrtc.org) — WebRTC real-time communication getting-started guides and native API docs.
+- **URL:** https://webrtc.org/getting-started/overview
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Real-time streaming reference (distinct from webrtcvad tool entry). [Wave 66 Lane A]
+
+#### Nakama Documentation ❓ documentation-only
+- **What:** Nakama documentation (Heroic Labs) — Nakama open-source game-server docs: auth, storage, realtime multiplayer.
+- **URL:** https://heroiclabs.com/docs/nakama/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Open-source game backend docs. [Wave 66 Lane A]
+
+#### Photon Engine Documentation ❓ documentation-only
+- **What:** Photon Engine documentation (doc.photonengine.com) — Photon multiplayer SDK docs: PUN, Fusion, Quantum, Voice, Chat.
+- **URL:** https://doc.photonengine.com
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from Netflix Photon IMF validator already cataloged)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Multiplayer SDK docs. [Wave 66 Lane A]
+
+#### Netcode for GameObjects Documentation ❓ documentation-only
+- **What:** Netcode for GameObjects documentation (Unity) — Unity's first-party multiplayer networking package manuals.
+- **URL:** https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Unity multiplayer package docs. [Wave 66 Lane A]
+
+#### Batocera Wiki ❓ documentation-only
+- **What:** Batocera wiki (wiki.batocera.org) — Batocera.linux retro-gaming distribution user and developer docs.
+- **URL:** https://wiki.batocera.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro-gaming distro docs. [Wave 66 Lane A]
+
+#### Recalbox Wiki ❓ documentation-only
+- **What:** Recalbox wiki (wiki.recalbox.com) — Recalbox retro-gaming OS documentation.
+- **URL:** https://wiki.recalbox.com
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro-gaming OS docs. [Wave 66 Lane A]
+
+#### Arduboy Wiki ❓ documentation-only
+- **What:** Arduboy wiki (github.com/Arduboy/Arduboy/wiki) — Arduboy handheld game development guides and API docs.
+- **URL:** https://github.com/Arduboy/Arduboy/wiki
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from Arduboy2 tool entry)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 8-bit handheld dev docs. [Wave 66 Lane A]
+
+#### PINE64 Wiki ❓ documentation-only
+- **What:** PINE64 wiki (wiki.pine64.org) — PINE64 single-board-computer and device documentation.
+- **URL:** https://wiki.pine64.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SBC hardware docs. [Wave 66 Lane A]
+
+#### FamiStudio Documentation ❓ documentation-only
+- **What:** FamiStudio documentation (famistudio.org/doc.html) — FamiStudio NES/Famicom music editor manuals.
+- **URL:** https://famistudio.org/doc.html
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from FamiStudio tool entry)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chiptune composer docs for music pipeline. [Wave 66 Lane A]
+
+#### SunVox Documentation ❓ documentation-only
+- **What:** SunVox documentation (warmplace.ru/soft/sunvox) — SunVox modular synth/tracker manuals and guides.
+- **URL:** https://www.warmplace.ru/soft/sunvox/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from SunVox tool entry)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modular synth docs for music pipeline. [Wave 66 Lane A]
+
+#### PSXDEV ❓ documentation-only
+- **What:** PSXDEV (psx.dev) — PlayStation 1 homebrew development community docs and tutorials.
+- **URL:** https://www.psx.dev
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PS1 homebrew dev docs. [Wave 66 Lane A]
+
+#### SNESdev Wiki ❓ documentation-only
+- **What:** SNESdev wiki (snes.nesdev.org) — Super Nintendo development wiki: hardware docs, tutorials, tools.
+- **URL:** https://snes.nesdev.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from NESdev Wiki entries)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SNES homebrew dev wiki. [Wave 66 Lane A]
+
+#### itch.io Developer Documentation ❓ documentation-only
+- **What:** itch.io developer documentation (itch.io/docs) — itch.io game-distribution, API, and butler CLI docs.
+- **URL:** https://itch.io/docs
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from itch.io asset-pack entries)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Publishing-path docs for the no-store distribution strategy. [Wave 66 Lane A]
+
+#### Playnite Documentation ❓ documentation-only
+- **What:** Playnite documentation (playnite.link/docs) — Playnite open-source game-library manager manuals and extension API.
+- **URL:** https://www.playnite.link/docs
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Game-library manager docs and extension API. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P1 SDK docs round 12 (2026-10-09, coordinator-direct)
+27 entries appended: PlatformIO, RIOT-OS, Apache NuttX, TinyGo, KiCad, Blender Manual, Haxe Manual, Skia, FFmpeg, GStreamer, AV1 spec, Direct3D 12, Metal, WebRTC, Nakama, Photon Engine, Netcode for GameObjects, Batocera, Recalbox, Arduboy Wiki, PINE64 Wiki, FamiStudio Documentation, SunVox Documentation, PSXDEV, SNESdev Wiki, itch.io Developer Docs, Playnite. All HTTP 200 live 2026-10-09, all docs ❓. Honest drops: love2d.org/wiki (403 bot-wall), wiki.odroid.com (403 bot-wall), famitracker.com/wiki (down — 000/500), furnace doc/ (404 — repo restructured), gamedev.dcemulation.org (timeout), docs.clockworkpi.com (timeout), en.wikibooks.org/wiki/Atari_2600 (404), O3DE/Stride/GLFW/NESdev/OpenMPT-wiki/codebase64/RetroArch-docs (already cataloged as docs entries), LiveKit docs (near-dupe of LiveKit tool entry), Matroska specs page (near-dupe of IETF CELLAR RFC entries). Dedup: pre-append `####`-header greps.

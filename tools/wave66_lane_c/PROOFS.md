@@ -67,10 +67,10 @@ is fragile under resampling even where the point estimate is right.
 
 | grid (win/hop) | fixture k | margin | stability | DER | JER | production k | margin | stability |
 |---|---|---|---|---|---|---|---|---|
-| 1.5 s / 0.25 s (baseline) | 3 | 1.72x | 0.55 | 0.0382 | 0.0378 | 3 | 1.02x | TBD |
-| 2.0 s / 0.5 s | 3 | 4.31x | 0.65 | 0.0382 | 0.0378 | TBD | TBD | TBD |
-| **2.5 s / 0.5 s** | **3** | **7.35x** | **0.95** | **0.0382** | **0.0378** | TBD | TBD | TBD |
-| 3.0 s / 0.5 s | 3 | 1.97x | 0.70 | 0.0382 | 0.0378 | TBD | TBD | TBD |
+| 1.5 s / 0.25 s (baseline) | 3 | 1.72x | 0.55 | 0.0382 | 0.0378 | 3 | 1.02x | 0.25 |
+| 2.0 s / 0.5 s | 3 | 4.31x | 0.65 | 0.0382 | 0.0378 | 1 | 1.26x | 0.40 |
+| **2.5 s / 0.5 s** | **3** | **7.35x** | **0.95** | **0.0382** | **0.0378** | 1 | 1.16x | 0.25 |
+| 3.0 s / 0.5 s | 3 | 1.97x | 0.70 | 0.0382 | 0.0378 | 7 | 1.24x | 0.40 |
 | 2.5 s / 0.25 s | 3 | 1.40x | 0.40 | 0.0382 | 0.0378 | TBD | TBD | TBD |
 
 Fixture reading: **2.5 s windows at 0.5 s hop are the sweet spot** — margin
@@ -82,6 +82,18 @@ hop → margin collapses to 1.40x, stability 0.40 — correlated samples flatten
 the gap spectrum. 3.0 s windows overshoot (fewer kept windows, 24/80, margin
 back down to 1.97x). DER is identical across all five grids: the count
 decision tightens without moving a single boundary.
+
+Production (real EP01, blind) reading: the baseline's k=3 (1.02x, stab 0.25)
+looks like phantom structure from correlated short windows. The 2.0 s and
+2.5 s grids **agree on k=1** (1.26x/1.16x) — consistent with a
+single-narrator episode (98.5% continuous speech, 12 VAD segments). The 3.0 s
+grid jumps to k=7: with 25 s average VAD segments, 3 s windows fit inside
+VAD but straddle speaker turns *within* a segment, creating mixed embeddings
+and phantom clusters — the same overshoot the fixture showed (margin 1.97x).
+Honest caveat: no GT exists, so k=1 is the better-supported hypothesis, not
+a proven finding — margins stay weak (1.2x) because a single dominant voice
+gives the gap spectrum little to bite on. The fixture anchoring is what makes
+the long-window decision trustworthy: it gets GT right with 7.35x margin.
 
 ## Experiment (b): VAD-gated energy clustering as count prior — REJECTED
 

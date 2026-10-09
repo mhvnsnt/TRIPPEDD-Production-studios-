@@ -16,10 +16,6 @@ on:
       - src/server/pilotRenderer.ts
       - src/server/productionMemory.ts
 
-concurrency:
-  group: ep01-autonomous-${{ github.ref }}
-  cancel-in-progress: false
-
 permissions:
   contents: read
 
@@ -34,7 +30,9 @@ jobs:
     timeout-minutes: 20
     strategy:
       fail-fast: false
-      max-parallel: 6
+      # Blender's headless EEVEE software path aborts under concurrent EGL contexts on hosted runners.
+      # Keep one renderer active; frame checkpoints make this resumable and deterministic.
+      max-parallel: 1
       matrix:
         include:
           - { chunk: '01', start: 1, end: 12 }
@@ -94,6 +92,7 @@ jobs:
           import subprocess
           result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_subjectivity.py'])
           print(f'Blender render exit code: {result.returncode}')
+          raise SystemExit(result.returncode)
           PY
           actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
           test "$actual" -eq "$expected"
@@ -188,6 +187,7 @@ jobs:
           import subprocess
           result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_bastard_tag.py'])
           print(f'Blender terminal-tag exit code: {result.returncode}')
+          raise SystemExit(result.returncode)
           PY
           test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
           test -s production/EP01/generated/blender/ep01_bastard_tag.blend

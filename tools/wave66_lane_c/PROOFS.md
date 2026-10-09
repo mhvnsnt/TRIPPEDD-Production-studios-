@@ -71,7 +71,7 @@ is fragile under resampling even where the point estimate is right.
 | 2.0 s / 0.5 s | 3 | 4.31x | 0.65 | 0.0382 | 0.0378 | 1 | 1.26x | 0.40 |
 | **2.5 s / 0.5 s** | **3** | **7.35x** | **0.95** | **0.0382** | **0.0378** | 1 | 1.16x | 0.25 |
 | 3.0 s / 0.5 s | 3 | 1.97x | 0.70 | 0.0382 | 0.0378 | 7 | 1.24x | 0.40 |
-| 2.5 s / 0.25 s | 3 | 1.40x | 0.40 | 0.0382 | 0.0378 | TBD | TBD | TBD |
+| 2.5 s / 0.25 s | 3 | 1.40x | 0.40 | 0.0382 | 0.0378 | not measured (restart) | — | — |
 
 Fixture reading: **2.5 s windows at 0.5 s hop are the sweet spot** — margin
 1.72x → 7.35x, stability 0.55 → 0.95, DER/JER unchanged at 0.0382/0.0378.
@@ -103,7 +103,10 @@ k-means on [log RMS, Δlog RMS] over VAD-gated 0.25 s frames, k by BIC.
   k=9 is exactly the turn count: energy clusters track turn-level loudness,
   not speaker identity. The transparent fallback rule (trust eigengap iff
   margin ≥ 1.5x) correctly kept k=3 on the fixture.
-- Production: TBD.
+- Production: energy-BIC k = **10** (the search ceiling) — BIC decreases
+  monotonically from k=1 (−204) to k=10 (−1816): the energy features have NO
+  natural cluster structure, the prior just slices the loudness continuum.
+  The fallback rule would adopt k=10, which is absurd.
 
 Honest conclusion: the energy prior is not validated and is NOT adopted.
 It measures prosody/turn energy, an independent-but-wrong evidence family
@@ -125,8 +128,63 @@ margin and high stability — confidently wrong**. The failure is
 threshold-fragile (15 IPUs at 0.5 s vs 5 at 1.0 s from the same 9-turn audio)
 and merges two of the three Kokoro voices at turn granularity: with few,
 short, noisy turn samples the Laplacian has no structure to separate them.
-Production (blind) measurement: TBD — but the fixture gate failure means
-this approach cannot be trusted for the count decision.
+- Production: **could not be measured** — the ASR stage returned only
+  **10 words for the full 300 s** (see "Real EP01 audio contains no speech"
+  below): 5 IPUs, 3 with embeddings → the eigengap hit a single-sample edge
+  case (`max() on empty`, donor edge in `eigengap_laplacian`) and the run
+  exited honestly instead of fabricating a count. faster-whisper itself is
+  fine (116 words on the 43 s fixture) — there is simply no speech to turn
+  into turns.
+
+Honest conclusion: (c) is rejected — it fails the fixture gate (confidently
+wrong count) AND has no measurable input on the real episode audio.
+
+## CRITICAL FINDING: the "real EP01 audio" contains no speech
+
+`production/WIZARD_GANG_EP01/audio-orig.m4a` (the file Wave 65 used for the
+"real episode audio" production run) is a **music/effects bed with
+essentially no speech**:
+
+- faster-whisper base.en (validated: 116 words on the 43 s fixture):
+  **10 words in the full 300 s** (60 s slice probes at 0/60/150/240 s:
+  1/0/0/0 words; the single word was "Oh" at 44.6 s).
+- The episode video's own audio track (`wizard-gang-ep01-16x9.mp4`, 30–100 s
+  probe): 5 words — the episode is visual + music in the sampled sections.
+- `VOICE_STATUS.md` (2026-10-07) confirms: **no episode dialogue has been
+  voiced** — every line is PENDING/HELD awaiting the owner's script approval.
+  There is no multi-speaker EP01 dialogue audio in existence.
+
+Consequences, stated plainly:
+1. webrtcvad at aggressiveness 0 passes music as speech (98.5% "speech") —
+   the VAD operating point is too permissive for music beds. Any future
+   production diarization must gate on ASR word presence (or a music-robust
+   VAD), not webrtcvad alone.
+2. The Wave-65 production run and this wave's production counts measured
+   **speaker count on music texture, not speakers**. The (a) production
+   numbers above are honest blind measurements of the file's content, but
+   they are not speaker counts of an episode — there are no episode speakers
+   to count yet.
+3. The GT-anchored multi-speaker evidence in this lane is the Wave-65
+   fixture (3 real voices, 9 turns) — that is where the 2.5 s / 0.5 s
+   recommendation earns its keep.
+
+## Supplementary: blind count on real single-speaker voice
+
+`wire_cipher_voice_check.py`: the three cipher-refs voice clips
+(backstage-manic 20 s, interview-loop 30 s, ring-taunt 20 s — real voice
+recordings, one speaker, three different recording setups/effects),
+concatenated with 1 s gaps (72 s total, read-only sources).
+
+| grid | k | margin | stability | kept |
+|---|---|---|---|---|
+| 1.5 s / 0.25 s (baseline) | 5 | 1.70x | 0.45 | 249/283 |
+| 2.5 s / 0.5 s | 5 | 1.10x | 0.60 | 121/140 |
+
+Both grids overcount a single speaker as 5 — the three clips' different
+mics/rooms/effects fragment the voiceprint (condition mismatch, a known
+ECAPA limitation), and longer windows do NOT fix it. Honest limitation:
+window length tightens the count against short-window noise (fixture), not
+against acoustic-condition fragmentation. Proof: `proofs/w66_cipher_voice_count.json`.
 
 ## DeepFilterNet — BLOCKED (environment absent, recorded honestly)
 
@@ -184,11 +242,19 @@ ASR incidents (honest, both fixed in-script):
 
 ## Proof artifacts (all under `tools/wave66_lane_c/proofs/`)
 
-See `SHA256SUMS` (covers proofs + wire script + install/run.sh +
-venv-pins.txt). `w66_results_fixture_gap05.json` (full fixture pass),
-`w66_results_fixture_c_gap10.json` ((c) gap-sensitivity),
-`w66_results.json` (production pass). Hypothesis RTTMs per grid
-(`hyp_<tag>.rttm`) for the fixture grids.
+See `SHA256SUMS` (covers proofs + wire scripts + install/run.sh +
+venv-pins.txt).
+- `w66_results_fixture_gap05.json` — full fixture pass (baseline + a/b/c).
+- `w66_results_fixture_c_gap10.json` — fixture (c) IPU-gap sensitivity.
+- `w66_results_production_a.json` — production (a) grids (from
+  `w66_production_run.log`; JSON checkpoint lost to a service restart).
+- `w66_results_production_b.json` — production (b) energy prior.
+- `w66_results_production_c.json` — production (c) attempt (documents the
+  no-speech ASR failure).
+- `w66_cipher_voice_count.json` — real single-speaker voice check.
+- `hyp_<tag>.rttm` — fixture hypothesis RTTMs per grid.
+- `w66_production_run.log`, `w66_prod_b.log`, `w66_prod_c.log`,
+  `w66_cipher_voice.log` — run logs.
 
 ## License audit
 

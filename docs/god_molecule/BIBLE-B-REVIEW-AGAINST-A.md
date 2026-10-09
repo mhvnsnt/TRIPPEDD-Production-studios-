@@ -105,16 +105,17 @@ When the bibles merge into one, these A-only elements must survive:
 - **Visual bible specifics** — six lighting types, organic vs world materials/shaders, camera language, six grades (Base, Void, Cosmic, Dream, Night, Comedy).
 - **Animation priorities** — gaze, eye direction, facial expressions, GNM teeth/tongue micro-deformations.
 
-## Verdict log
+## Verdict log (owner 2026-10-09)
 
 | # | Claim | Verdict | Date |
 |---|-------|---------|------|
-| 1A | 14-reality list | | |
-| 1B | Central questions + stupid joke | | |
-| 1C | Nine traits | | |
-| 1D | Observer/audience roles | | |
-| 1E | 15 laws (per-law) | | |
-| 1F | Scale stack | | |
-| 1G | Splat pipeline detail | | |
+| 1A | 14-reality list | **KEEP** — owner wrote some of it; valid schema. Expand to almost-infinite worlds. Deep-research the inspirations for God Molecule: Off the Air, Xavier: Renegade Angel, Eastern Mind: The Lost Souls of Tong-Nou. | 2026-10-09 |
+| 1B | Central questions + stupid joke | **KEEP** — owner wrote it essentially. | 2026-10-09 |
+| 1C | Nine traits | **KEEP** — owner wrote it. | 2026-10-09 |
+| 1D | Observer/audience roles | **KEEP** — owner said it; verify wording against the documented production conversation. | 2026-10-09 |
+| 1E | 15 laws (per-law) | **KEEP in principle** — written throughout the conversation; some may be misunderstood or too literal. Align each law against the owner's other show laws before finalizing. | 2026-10-09 |
+| 1F | Scale stack | **KEEP** — owner wrote it; expand it. | 2026-10-09 |
+| 1G | Splat pipeline detail | **KEEP** — matches the production-conversation understanding of the show/environment/universe. Clean merge, no contradiction. | 2026-10-09 |
 
 *No B claim was found that directly contradicts A. The risk is addition, not contradiction.*
+*Next: merge-into-one, informed by the inspiration research and the law-alignment pass.*

@@ -31,7 +31,18 @@ clip-02, 03, 04, 06, 08, 09, 10, 11, 12, 14, 16, 17, 18, 19, 20, 23, 26, 27, 28
 
 ### clip-05 (street crew)
 - 2026-10-10: Extracted 100 frames @ 10fps 640x360. Created 3 cartoon keyframes.
-- 2026-10-10: EbSynth running with multi-keyframe anchoring (0, 49, 99). ETA ~65 min.
+- 2026-10-10: EbSynth started with multi-keyframe anchoring (0, 49, 99). Process DIED in runtime restart (~09:30 CDT). /tmp partial output LOST.
+- 2026-10-10 09:38 CDT: Resumed. Found end keyframe was BLACK (clip fades to black at frame 100). Rebuilt end keyframe from frame 80 (bright, clear). Restarted EbSynth with anchors (0, 49, 79), --keep-frames for crash recovery. ETA ~65 min.
+
+### clip-15 (basketball)
+- 2026-10-10: INTRA-CLIP DRIFT confirmed — frame 1 is 2D cartoon, frame 20+ is photorealistic. Same content, style changes mid-clip.
+- 2026-10-10: Extracted 100 frames. Created 3 cartoon keyframes (start/mid/end) via bilateral+edge+saturation filter. Mid keyframe VERIFIED: clean 2D cartoon.
+- Status: QUEUED — will run EbSynth after clip-05 (2 CPUs, can't parallelize).
+
+### clip-22 (podcast)
+- 2026-10-10: INTRA-CLIP DRIFT confirmed — frame 1 is 2D cartoon, frame 50 is photorealistic (realistic skin, pores).
+- 2026-10-10: Extracted 100 frames. Created 3 cartoon keyframes (start/mid/end). Mid keyframe VERIFIED: clean 2D cartoon.
+- Status: QUEUED — will run EbSynth after clip-15.
 
 ## Kaggle Staging
 

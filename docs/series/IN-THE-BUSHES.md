@@ -6,6 +6,9 @@
 **First intended use:** Embedded segments inside TRIPPEDD episodes + standalone shorts
 **Narrative connection:** Standalone property (no game tie-in established in sources)
 **Dialogue profile:** TBD — not established in sources
+**Tone / comedy style (owner 2026-10-09):** a 12 oz. Mouse / Home Movies type of
+show — ultra-crude, lo-fi, deadpan. That is the owner's own description and the
+best explanation of the show's vibe.
 **Primary storytelling:** Character acting through plant-body deformation — foliage, squash/stretch, eye direction, branch/leaf movement
 
 ## Series premise
@@ -58,17 +61,21 @@ Hard canon guards for production:
 | Character | Visual lock | Role | Status | Source |
 |---|---|---|---|---|
 | Busch | Small irregular green bush, expressive face, bright red shoes, crayon outline | Lead (established) | **Confirmed** | 2026-09-15 concept art |
-| Mr. Gold | Purple, large red hat, white limbs, oversized body, toothy grin | Future recurring character | **Confirmed design; first appearance TBD** | 2026-09-15 concept art |
+| Mr. Gold | Blue blob, red top hat w/ gold buckle, gold teeth, stick limbs (Drive expression sheet); 2026-09-15 describes a purple character w/ large red hat — owner resolves | Future recurring character | **Confirmed design; first appearance TBD** | 2026-09-15 concept art + Drive art |
+| Mr. Tree | Brown trunk, green canopy tree | TBD | **Confirmed as character; role TBD** | Drive art (owner 2026-10-09: separate from Mr. Gold) |
+| Cool Dad | Lanky, cap, big shoes | TBD — father of the deadpan kid | **Sketch exists; role TBD** | Drive art |
+| Deadpan Kid | Not drawn — named only | TBD — kid of the cool dad | **Named; design TBD** | Drive art filename |
 | Procedural teen system cast | — | Opening cast pipeline | **Referenced; details TBD** | 2026-09-15 concept art |
 
 **Open items (stay TBD — owner decision required):**
 
-- Tone and comedy style (not established in sources).
 - Episode/segment structure and runtime.
 - Dialogue profile — does the show talk, and in what register?
-- The full cast beyond Busch and Mr. Gold.
 - Mr. Gold's first scheduled scene.
+- Mr. Tree's role and first appearance.
+- Cool Dad and Deadpan Kid — roles and first appearances.
 - Relationship between the characters (friends? rivals? unknown?).
+- Resolution: Mr. Gold's Drive design (blue blob, top hat) vs the 2026-09-15 description (purple, large red hat).
 
 ## How In the Bushes enters TRIPPEDD
 

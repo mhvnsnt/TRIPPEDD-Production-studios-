@@ -1,0 +1,12 @@
+{
+  "id": "ep01-lost-acid-generated-board",
+  "episodeId": "EP01",
+  "title": "The Lost Acid — Generated Reference Board",
+  "sourceImage": "a_dense_cinematic_storyboard_episode_pitch_board.png",
+  "sha256": "57cae0ebbe76ab1ddf7f88a85edd28343c1c03cea4dee82301f185fdba2abff2",
+  "generatedOn": "2026-09-08",
+  "role": "visual-development-reference",
+  "binaryUploadStatus": "LOCAL_GENERATED_ARTIFACT",
+  "svgCompanion": "assets/references/ep01/lost-acid-subjectivity-board.svg",
+  "notes": "Generated board depicts the intended EP01 ending and the Reality/Subjectivity transition. The SVG companion is committed to the repository; the PNG is retained locally until a binary-capable repository upload path is available."
+}

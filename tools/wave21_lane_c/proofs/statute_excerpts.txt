@@ -1,0 +1,98 @@
+# Wave 21 Lane C — statute/policy excerpts grounding the catalog License claims.
+# Each quote is brief (fair-use excerpt) and cites the source URL it was read from.
+# Verified 2026-10-07.
+
+## 1. Sweden — Act (1960:729) on Copyright in Literary and Artistic Works, Art. 9
+Source: https://www.wipo.int/wipolex/en/text/580486
+"Article 9. Copyright does not subsist in 1. laws and other regulations, 2. decisions by public
+authorities, 3. reports by Swedish public authorities, 4. official translations of texts mentioned
+under 1.-3. Copyright subsists, however, in works of the following kinds when they form part of a
+document mentioned in the first Paragraph: 1. maps, 2. works of visual arts, 3. musical works, or
+4. works of poetry."
+=> Military-band RECORDINGS are not covered; musical works expressly retained.
+
+## 2. Norway — Copyright Act (åndsverkloven, 2018), § 9
+Source: https://www.wipo.int/wipolex/en/text/464711
+"9.-(1) Acts, administrative orders, legal decisions and similar official documents are not subject
+to copyright. (2) The provision of subsection (1) shall not apply to works appearing as independent
+contributions in the documents mentioned in subsection (1)."
+=> Musical recordings not covered.
+
+## 3. Denmark — Consolidated Act No. 1144 of 23 October 2014, Art. 9
+Source: https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Denmark
+(Quoting 1144/2014 Art. 9): "Acts, administrative orders, legal decisions and similar official
+documents are not subject to copyright. This does not apply to works appearing as independent
+contributions in these documents."
+=> Musical recordings not covered.
+
+## 4. Finland — Copyright Act (404/1961), § 9
+Source: https://mycourses.aalto.fi/pluginfile.php/2201108/mod_folder/content/0/Cupore%20-%20Copyright%20Law.pdf?forcedownload=1
+"Section 9 of the Copyright Act lists the works which are exempted from protection. These include
+laws and decrees and other official documents made or commissioned by public authorities or other
+public bodies."
+=> Musical recordings not covered.
+
+## 5. Japan — Copyright Act (Act No. 48 of 1970), Art. 13
+Source: https://www.japaneselawtranslation.go.jp/en/laws/download/2506/09/s45Aa000480304en5.0_h21A73.pdf
+"(Works not subject to copyright) Article 13: The following works are not subject to the rights
+provided for in this Chapter: (i) the Constitution and other laws and regulations; (ii)
+notifications, instructions, circular notices, and other similar materials issued by a national or
+local government agency...; (iii) judgments, decisions, orders, and decrees of the courts...;
+(iv) translations and compilations of the materials listed in the preceding three items, which are
+made by a national or local government agency..."
+=> JSDF band recordings not covered.
+
+## 6. Republic of Korea — Copyright Act, Art. 7 (Works Not Protected)
+Source: https://www.wipo.int/wipolex/en/legislation/details/16953
+"Article 7 (Works Not Protected) No work which falls under any of the following subparagraphs shall
+be protected under this Act: 1. Constitution, Acts, treaties, decrees, and municipal ordinances and
+rules; 2. Bulletins, public notifications, directives and others similar thereto which are issued by
+the central or local government; 3. Judgments, decisions, orders, or adjudications of courts...
+4. Compilations or translations of works as referred to in subparagraphs 1 through 3 which are
+produced by the central or local government"
+=> Military-band recordings not covered.
+
+## 7. China — Copyright Law of the PRC (2020 Amendment), Art. 5
+Source: https://en.wikisource.org/wiki/Copyright_Law_of_the_People%27s_Republic_of_China_(2020)
+"Article 5: This Law shall not apply to: (1) laws and regulations, resolutions, decisions and orders
+of State organs, other documents of a legislative, administrative or judicial nature and the
+official translations thereof; (2) mere information about facts or happenings; and (3) calendars,
+numerical tables and forms of general use, and formulas."
+=> PLA band recordings not covered.
+
+## 8. India — Copyright Act, 1957, § 52(1)(za)
+Source: https://www.cabkgoyal.com/section-52-the-copyright-act-1957/
+"(za) the performance of a literary, dramatic or musical work or the communication to the public of
+such work or of a sound recording in the course of any bona fide religious ceremony or an official
+ceremony held by the Central Government or the State Government or any local authority."
+=> Performance AT an official ceremony is non-infringing, but this does NOT make the
+recording itself public domain; §17(d) makes the government first owner of government works with a
+60-year term (§28).
+
+## 9. Singapore — Copyright Act 2021, government works
+Source: https://commons.wikimedia.org/wiki/Commons:Copyright_rules_by_territory/Singapore
+"Government: Publish + 70 years" (terms run to year end).
+=> SAF band recordings are government works with a 70-year-from-publication term; modern
+recordings are rights-reserved. Corroborated by https://www.scconline.com/blog/post/2022/01/07/singapore-copyright-act-2021/
+
+## 10. NDL (Japan) — Music and Audio-Visual Materials Room
+Source: https://www.ndl.go.jp/en/tokyo/music/manuscript
+"Permission is required to use music manuscripts and documents. Permission is limited to research
+and study purposes only." / "Downloading and storing any of this data is prohibited by NDL"
+(per University of Tokyo guide to NDL Digital Collections).
+=> Archive access is NOT a reuse license.
+
+## 11. National Library of Norway — online music library
+Source: https://www.uio.no/ritmo/english/news-and-events/events/conferences/2026/daim/presentation_08062026.pdf
+(University of Oslo / National Library presentation): "Recordings that are rightscleared or public
+domain can also be accessed online outside the NLN premises." / "Published audio recordings up to
+1958 can be streamed openly by agreement with TONO (copyright holders of musical works)."
+=> Streaming-only for ≤1958 via collective agreement; per-item rights; streaming ≠ reuse license.
+
+## 12. Nordic "Protection of Classics" (klassikerskyddet)
+Source: https://en.wikipedia.org/wiki/Protection_of_Classics
+"According to this stipulation, it is forbidden to treat a work of art in a manner which violates
+cultural interests after the death of the author. This concerns also cases in which the copyright
+is no longer in force or has never existed, that is, material in the public domain."
+=> Even date-PD Nordic works carry a residual cultural-protection restriction; cases exist in
+Norway, Denmark, and Finland.

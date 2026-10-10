@@ -1,0 +1,31 @@
+{
+  "$schema": "trippedd.mars-hair-completion/v1",
+  "source": "assets/source_models/MARS_source.glb",
+  "authority": "measured_source_geometry",
+  "simulation": "Blender_5.2_XPBD",
+  "stages": [
+    "segment_hair_from_source",
+    "pin_roots_to_deformed_head",
+    "pre_roll_to_equilibrium",
+    "enable_surface_collision",
+    "enable_edge_contacts",
+    "measure_penetration",
+    "render_front_side_three_quarter",
+    "publish_motion_receipt"
+  ],
+  "qualityRules": {
+    "rootGiveMaxMM": 3.0,
+    "penetrationToleranceMM": 0.5,
+    "visualProofRequired": true,
+    "selfCollision": "NOT_ATTEMPTED_UNTIL_SUPPORTED",
+    "noCreepAsMotion": true
+  },
+  "physics": {
+    "deformingCollider": true,
+    "edgeContacts": true,
+    "preRollFramesMinimum": 120,
+    "equilibriumRequired": true,
+    "residualErrorMustBeRecorded": true
+  },
+  "unknownNeverPass": true
+}

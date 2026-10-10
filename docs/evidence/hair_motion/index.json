@@ -1,0 +1,671 @@
+{
+  "set": "hair_motion",
+  "label": "EVIDENCE",
+  "sourceCommit": "4d0bc8c572402e0f6d1a6c07cd4ac48b3a5c9d65",
+  "sourceAsset": {
+    "path": "assets/rigs/MARS_FACE.blend",
+    "note": "MARS_source.glb NOT touched. The cloth runs on a throwaway HAIR_SIM object carved from a COPY; MARS_MESH's stored geometry is unchanged."
+  },
+  "control": "Blender native CLOTH on hair-only geometry, pinned by the measured HAIR_PIN gradient",
+  "measurements": {
+    "peakTipSecondaryMM": 53.59,
+    "peakRootTravelMM": 132.09,
+    "lagFramesCrossCorrelation": 5,
+    "rootTipCorrelation": 0.334,
+    "maxHairRootGiveMM": 3.128,
+    "maxSkinRigidResidualMM": 0.0,
+    "tipVerts": 2825,
+    "rootVerts": 1644,
+    "frames": 36,
+    "yawDeg": 38.0
+  },
+  "qc": {
+    "physical": {
+      "verified": true,
+      "engine": "BLENDER_EEVEE_NEXT",
+      "checks": [
+        {
+          "check": "the hair actually deforms, not just rides the head",
+          "pass": true,
+          "detail": "53.59 mm peak at the tips with the head's FULL rigid transform removed by Kabsch"
+        },
+        {
+          "check": "it lags the head",
+          "pass": true,
+          "detail": "cross-correlation +5 frames, r=0.33 -- decoupled, not carried"
+        },
+        {
+          "check": "HIS SKIN IS NOT IN THE SOLVER",
+          "pass": true,
+          "detail": "skin rigid residual 0.0000 mm; the face comes straight from the armature"
+        },
+        {
+          "check": "judged as a sequence, two angles",
+          "pass": true,
+          "detail": "36 frames x FRONT and SIDE"
+        },
+        {
+          "check": "motion is plausible for DREADLOCKS",
+          "pass": false,
+          "detail": "it is not. By f33-f36 the locks stand out nearly horizontally and have not settled after a 38 deg turn. Dreads are heavy and stiff; this reads as loose hair in wind. bending_stiffness 6 / mass 0.25 / air_damping 1.4 are too soft for these forms"
+        },
+        {
+          "check": "self-collision",
+          "pass": false,
+          "detail": "OFF this pass. Locks can pass through one another; not obviously visible at this amplitude but it is not physically right"
+        }
+      ]
+    },
+    "visual": {
+      "verdict": "PENDING",
+      "reviewer": "claude",
+      "notes": "MECHANISM PASSES, REALISM DOES NOT. The hair genuinely swings and trails the head, and his face stays crisp in every frame -- which is the 0.0000 mm skin residual showing visually, and a direct fix of the earlier pass where his jaw softened. But the amplitude is wrong for dreadlocks: too floppy, still swinging at the end of the take. Stiffness/mass/damping need a tuning pass against real dreadlock footage before this gets a visual PASS.",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "PENDING"
+  },
+  "frames": [
+    {
+      "frame": "HAIR_MOTION_FRONT_STRIP.png",
+      "repoPath": "docs/evidence/hair_motion/HAIR_MOTION_FRONT_STRIP.png",
+      "sha256": "b02597b32064599bda978a9470f3c85085d564d5ef726aebd6de50258fec01f4",
+      "bytes": 240256,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "HAIR_MOTION_SIDE_STRIP.png",
+      "repoPath": "docs/evidence/hair_motion/HAIR_MOTION_SIDE_STRIP.png",
+      "sha256": "312780a987895bf591ab5793883ec8b59dc5783d2a5e5ef53610459913748058",
+      "bytes": 458837,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_01.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_01.png",
+      "sha256": "4774a0a088c18955c20e68001a5fde27ea2c1f221c9b1ebb6723bcd220da8322",
+      "bytes": 423041,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_02.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_02.png",
+      "sha256": "f3b7af219373679b6189eb74ce7e22329dd9841ee413ea8328124aaef9c95b86",
+      "bytes": 424149,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_03.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_03.png",
+      "sha256": "087c9196701cf34b2265f69cfa10e265914edd4efc0719c78bfa6e313c076691",
+      "bytes": 425226,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_04.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_04.png",
+      "sha256": "984fb8465a4d0dfbf0ce0dc00713f6dbabd996b15bfd25b68cb6b0f3f9034088",
+      "bytes": 426486,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_05.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_05.png",
+      "sha256": "ccf695cea70568de800bcbada2b9c8fcef44477572824e3081855120ea84cf7c",
+      "bytes": 427474,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_06.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_06.png",
+      "sha256": "f312012e0da54e9097bd7dd0fb53bf370991d60932a5f1b838b5d43337e6f3fe",
+      "bytes": 428518,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_07.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_07.png",
+      "sha256": "f2f3239afffa18894f0f55b20cc4ceb01c8150881d9af638e3e07210298db81e",
+      "bytes": 428324,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_08.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_08.png",
+      "sha256": "8b061ec9a3047f113ab7b6221b0f79850ba641ea6989c0ef18e8fa386e6c5cab",
+      "bytes": 427821,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_09.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_09.png",
+      "sha256": "37349bdb66e791698177ba2242f7565ea23562c439b2dcfe710c7d3563a8ece1",
+      "bytes": 427429,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_10.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_10.png",
+      "sha256": "0c70dde41e1c18ceddfdc822a45b00f7733dcb88fffe40ce1b35bfb40cc04702",
+      "bytes": 427372,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_11.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_11.png",
+      "sha256": "80504d6c730eb12160c9148e0f3d4c3ddba922f657012408b764ec29663db960",
+      "bytes": 427635,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_12.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_12.png",
+      "sha256": "499c712048f06650d26c6f67dc4fa4682c182bdd8aa1dcac0e085c1c859db9aa",
+      "bytes": 428115,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_13.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_13.png",
+      "sha256": "688e670238881001effb50cd53beb93969dc92516cd1b1089bce4fb4bad5ee62",
+      "bytes": 428453,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_14.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_14.png",
+      "sha256": "357b7a2d4faad5aa6b32eb941e85b9edcfdd4dbaf053b1ee33295dda45f8470c",
+      "bytes": 428042,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_15.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_15.png",
+      "sha256": "295ea05e9fa012f51b87d174a2b24106d62210259e5705e02ad64ab2c1b49deb",
+      "bytes": 427139,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_16.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_16.png",
+      "sha256": "c9567f76a97298be1e6e6cced5df2a8b2a571425c97ac58e0d57d238f451bcea",
+      "bytes": 425886,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_17.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_17.png",
+      "sha256": "2693438063035e7b7bd620e67830c19202ad3ba94e8e2078721be4f73204e819",
+      "bytes": 424636,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_18.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_18.png",
+      "sha256": "2db497fc67ea1b812596d7cb1642ba989e84155679bea38160b917715ab97e2a",
+      "bytes": 423490,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_19.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_19.png",
+      "sha256": "e0c2a9ff6bc41d5a144ca7dc37edf51a8ad94b0ddcbbd043ed507d7eedab4009",
+      "bytes": 423431,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_20.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_20.png",
+      "sha256": "262cfb4ebffc3ed1377a86d7407e2f09fc12d6dcd26f08ef06827938652ba072",
+      "bytes": 423525,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_21.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_21.png",
+      "sha256": "7be403a31383023b1f2ab9a5baaa47f5b409de954eda08ab4685ece81dfd23ca",
+      "bytes": 424530,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_22.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_22.png",
+      "sha256": "65fde491292809978e7b2c8f939c3752557632ff4b6fcb02debf45c23a858b1a",
+      "bytes": 423437,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_23.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_23.png",
+      "sha256": "23163323f91bcf027cd5eb361cf4c0b94ea706ea7b391715eef6286f2ec9f4ad",
+      "bytes": 420272,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_24.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_24.png",
+      "sha256": "53013ee1ba09ce296d98078c25c2d75b8662550d0b0537e9c3d2f8f374256beb",
+      "bytes": 417562,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_25.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_25.png",
+      "sha256": "ec7833ee3f3d290798a9ab4d37718feee5ed029e573fbb04f9d3c835621aeac4",
+      "bytes": 415766,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_26.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_26.png",
+      "sha256": "ae4b35ebf5118479613e9a74bfb5b4a5e05da32a292d8967e22935824b9ce910",
+      "bytes": 414143,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_27.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_27.png",
+      "sha256": "ecbc69514697274f231ae2a05a3908bbf1a9ab91cbc3a1657cb0d9721d5f0b16",
+      "bytes": 413534,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_28.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_28.png",
+      "sha256": "e14066f6f203fbc9a9de1bab50818c945d117daed93217a53fe7a7ecc7920119",
+      "bytes": 413956,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_29.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_29.png",
+      "sha256": "6b3e0bb05d6d3d4be07e9db87d88bfc76383ed1f0b51e3d1acd4adfffef4054c",
+      "bytes": 414517,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_30.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_30.png",
+      "sha256": "9d7ff47dd877eeb93db7ed7f650301865c023de376f873789966e5649e95d20c",
+      "bytes": 416646,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_31.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_31.png",
+      "sha256": "0b6ce2fb8e630ec472246c1fa6aa0aae6df350f7090f20e41afd9029a3f37913",
+      "bytes": 418579,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_32.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_32.png",
+      "sha256": "523afffcf9d64673f9cdf2e57300766ebca25ec720e15ec3da44cd07a3c29b71",
+      "bytes": 421810,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_33.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_33.png",
+      "sha256": "53077f293529d1a23b2f169ddb51a543523397c2f7a3b196510babd3485eae37",
+      "bytes": 424731,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_34.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_34.png",
+      "sha256": "c30b0a22d016f319a6e84a68430f50b37e91f95338d76dc47e249e620a65e846",
+      "bytes": 423978,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_35.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_35.png",
+      "sha256": "3f4badd4a54fd7d048dfd9b71491c8d3894b8ccd830abc9bfcadbcb18b475635",
+      "bytes": 423671,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_FRONT_36.png",
+      "repoPath": "docs/evidence/hair_motion/hair_FRONT_36.png",
+      "sha256": "5f064ee9013b43376a527f40b69b5060e34e764f076e53e88a0e4aa971cf7291",
+      "bytes": 423041,
+      "camera": "orthographic FRONT",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_01.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_01.png",
+      "sha256": "27334a7836f8483aad49bdc204a4240da2c2c18cc4f6d456b1018c1e56e28941",
+      "bytes": 427225,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_02.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_02.png",
+      "sha256": "6da8ffc4ed1d29e7454ce8b03fd6d71a6ff6c185415a74caf9bd9c57e804c358",
+      "bytes": 427361,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_03.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_03.png",
+      "sha256": "197ccb85cbb495b43cafe4f7237272621c4e0c2b42791a40703d30299a2e2951",
+      "bytes": 427928,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_04.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_04.png",
+      "sha256": "c184c226d37b1af35f331b033c201fb7b1b7b8b14b9ad00ed64daee9d9a66326",
+      "bytes": 427185,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_05.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_05.png",
+      "sha256": "c93fc64cb66a45f92b171a004c2d45169a026fc30565ced5bcdc6b206a961947",
+      "bytes": 425062,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_06.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_06.png",
+      "sha256": "512137fb8fd7e120510abda707b8933be4399b6d583e402bd1213cce070ebdda",
+      "bytes": 423623,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_07.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_07.png",
+      "sha256": "3ae4d1a08d6ecc61abc599256d3e232581bdb0115a466ef6b8432fb9d7db4754",
+      "bytes": 423071,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_08.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_08.png",
+      "sha256": "2ad68f0660e4b142bfc97597bece3f186f95a863ac90f493638968ab6d033f03",
+      "bytes": 422250,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_09.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_09.png",
+      "sha256": "7a8ab080aad7f8bd7475b13d0b34fde47a3d7a28b441600278f0ef9d504b4fa9",
+      "bytes": 421896,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_10.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_10.png",
+      "sha256": "e92fc4259883624b823f1505dc84df5e4d30cff75fd234ff8ccc67694b3641be",
+      "bytes": 421826,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_11.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_11.png",
+      "sha256": "90a38ff4dc3da0b23eecb519201f83c71c0095f54b8d4b7ff635f82e83548348",
+      "bytes": 422048,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_12.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_12.png",
+      "sha256": "f880a45a67828db0dc7bbf6d3987b9798c8fb09ab227e4824322bb65433172a0",
+      "bytes": 422762,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_13.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_13.png",
+      "sha256": "0b4396598c45990da004b6adc1f584f8c0e763bb9b1872ed820e4ed818df5986",
+      "bytes": 423363,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_14.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_14.png",
+      "sha256": "85318731ea322f947bfeead82ebef52307978dd7a356cf01a8a3bd41334c1a16",
+      "bytes": 424659,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_15.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_15.png",
+      "sha256": "c86da07f81043a75364b97746177a3a00d298eaf1304fd7182dfff45bb6e8ca1",
+      "bytes": 426063,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_16.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_16.png",
+      "sha256": "9108b70ffb6d7b32ab40d644475b58da826ca8d7d276650fed26a444881ae77b",
+      "bytes": 427843,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_17.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_17.png",
+      "sha256": "284f9e1ff20053218dc4c7c3f1d91e3cbb51384c4665bafe921e311caddcfa71",
+      "bytes": 428039,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_18.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_18.png",
+      "sha256": "f337ddb767b6f7b2a8f512d86b4d8517f9378b18ea326e2b0d32b6cc2239baad",
+      "bytes": 427115,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_19.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_19.png",
+      "sha256": "bba24da823502f551b02ae3374d75871cbae475990fbbbef71c8660d3f40b981",
+      "bytes": 427984,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_20.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_20.png",
+      "sha256": "35fcc8457f21ad1f8abcfafa99fdb7450c40128e5c41b78d1fd886dbfee99f50",
+      "bytes": 430582,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_21.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_21.png",
+      "sha256": "e10e9bde7f1f9d0717511f14bdecbbdd00072cfbb19a065d2a6fb1b7622211b6",
+      "bytes": 431139,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_22.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_22.png",
+      "sha256": "442df936c86bcdd5e1b6c284a4fd9fd7f67c8fa035130405242965b41059b8f4",
+      "bytes": 431581,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_23.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_23.png",
+      "sha256": "44b8100affe67b49e4e5cf88a02e7208d0be039e5728b42e2ca151e2af8df487",
+      "bytes": 431720,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_24.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_24.png",
+      "sha256": "400caa96e18fd0850a764fc53d91aa4a5940c046cb74166b7a357d5fa72d80aa",
+      "bytes": 431990,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_25.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_25.png",
+      "sha256": "91cc9cbb2698ba903d0f8c718a4b9f00e806902a13d459b48b6b95bc79f15a56",
+      "bytes": 431845,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_26.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_26.png",
+      "sha256": "96019c37e90df2c03f05a97580bb3b395e09ba4d56ece58ade40571fd88cca77",
+      "bytes": 431990,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_27.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_27.png",
+      "sha256": "c30ac154dc36e8b714ed3c01b7ed64d1966507be8d53aa3c179bd3c5785503c1",
+      "bytes": 432094,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_28.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_28.png",
+      "sha256": "58d45e5e982c3ec39dafa1f0a1a356de1c2c1944da0102ae76ee5001cfe4274a",
+      "bytes": 431997,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_29.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_29.png",
+      "sha256": "e5b09b3684987e7a143673e4be043f6a5204e8d3652b725ed74458ad4e400486",
+      "bytes": 431828,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_30.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_30.png",
+      "sha256": "bda8df16268fcf08951c3cfebb7311ff6be96fe728f847fb5494b6a8327a5303",
+      "bytes": 431905,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_31.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_31.png",
+      "sha256": "92e491b6b93ce4bb7d35c5bf7164c7780f55ee606b1bbd07fe56329caa06b43b",
+      "bytes": 431900,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_32.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_32.png",
+      "sha256": "6f104fe37114300a43fadfb686b1d719cb658f6d9952b330a4313b448ccca9fd",
+      "bytes": 432072,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_33.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_33.png",
+      "sha256": "c0d79f81837a85613614c3682ba0838296a0c84aebfad0c76e3fae710bbf6fe7",
+      "bytes": 431391,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_34.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_34.png",
+      "sha256": "ff39a3d42a99dd16757a00a9ef3bc847ede24c95afa0bc6cb05cf27037947652",
+      "bytes": 430740,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_35.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_35.png",
+      "sha256": "dc3a290a11fcf367caba9d230c771b35da8470ddb0edc84181a174c6b70c1981",
+      "bytes": 429994,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    },
+    {
+      "frame": "hair_SIDE_36.png",
+      "repoPath": "docs/evidence/hair_motion/hair_SIDE_36.png",
+      "sha256": "712276a1ea28ced084190a49447a1a0918c52a9201104ffe8d3f80208c58dab0",
+      "bytes": 427225,
+      "camera": "orthographic SIDE",
+      "label": "EVIDENCE"
+    }
+  ],
+  "reproduce": "vendor/blender/blender -b -P tools/hair/hair_motion.py --",
+  "bugsFoundAndFixedThisPass": [
+    "cloth on the WHOLE mesh put his face in the solver -- his jaw softened visibly while every number passed. Now a hair-only sim object; the skin cannot deform by construction.",
+    "Blender cloth simulates in OBJECT-LOCAL space and ignores object-level animation, so an animated o.matrix_world produced a head that turned and hair that never felt it. The turn is driven by the head BONE now.",
+    "in background Blender the point cache never builds from frame stepping alone -- it must be baked explicitly, and an unbaked cache reads as exactly 0.00 mm of motion.",
+    "writing armature-deformed positions into the render mesh while it still carried its own Armature modifier applied the rotation TWICE; Kabsch cancelled it and the secondary motion read exactly 0.000 mm on every frame.",
+    "the 'pinned region is rigid' gate was measuring HAIR ROOTS, which are inside the cloth and are supposed to give. It now measures the SKIN, which is what it was named for.",
+    "lag by comparing two argmaxes over a full oscillation reported 17 frames on a signal whose true cross-correlation lag was 0 -- it had picked opposite half-cycles.",
+    "'secondary motion' that subtracted only the roots' TRANSLATION reported 29.4 mm of phantom motion at r=0.97 lag 0 -- a rigid yaw sweep, since a tip far from the pivot travels a long way with no deformation. Kabsch removes the full rigid transform."
+  ]
+}

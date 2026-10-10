@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Run the first-shot Blender render without fabricating evidence."""
+"""Run the first-shot Blender render without fabricating evidence.
+
+The worker requires an explicit, existing .blend scene. It validates the
+first-shot contract before invoking Blender, records the exact source-scene
+hash, and only writes rendered=true evidence after the expected PNG exists
+and passes the repository render-evidence verifier.
+"""
 from __future__ import annotations
 
 import argparse
@@ -39,7 +45,10 @@ def run_contract_validator(repo_root: Path) -> None:
         raise RuntimeError(f"missing contract validator: {validator}")
     result = subprocess.run(
         [sys.executable, str(validator), "--repo-root", str(repo_root)],
-        cwd=repo_root, text=True, capture_output=True, check=False,
+        cwd=repo_root,
+        text=True,
+        capture_output=True,
+        check=False,
     )
     if result.returncode != 0 or "FIRST_SHOT_CONTRACT: PASS" not in result.stdout:
         raise RuntimeError("first-shot contract validation failed\n" + result.stdout + result.stderr)
@@ -58,7 +67,10 @@ def verify_receipt(repo_root: Path, receipt: Path) -> None:
         raise RuntimeError(f"missing render evidence verifier: {verifier}")
     result = subprocess.run(
         [sys.executable, str(verifier), "--receipt", str(receipt)],
-        cwd=repo_root, text=True, capture_output=True, check=False,
+        cwd=repo_root,
+        text=True,
+        capture_output=True,
+        check=False,
     )
     if result.returncode != 0 or "RENDER_EVIDENCE: PASS" not in result.stdout:
         raise RuntimeError("render evidence verification failed\n" + result.stdout + result.stderr)
@@ -66,15 +78,33 @@ def verify_receipt(repo_root: Path, receipt: Path) -> None:
 
 def build_receipt(repo_root: Path, receipt: Path, blend: Path, png: Path, frame: int, version: str) -> dict:
     width, height = png_dimensions(png)
+    # The evidence verifier resolves relative artifact paths from the receipt
+    # directory. Keep the receipt relocatable by recording the rendered file
+    # relative to that directory, never relative to the repository root.
     artifact_path = str(png.relative_to(receipt.parent)) if png.is_relative_to(receipt.parent) else str(png)
     return {
-        "schema": SCHEMA, "rendered": True, "shot_id": SHOT_ID,
-        "scene_id": SCENE_ID, "world_id": WORLD_ID, "executor": "Blender",
+        "schema": SCHEMA,
+        "rendered": True,
+        "shot_id": SHOT_ID,
+        "scene_id": SCENE_ID,
+        "world_id": WORLD_ID,
+        "executor": "Blender",
         "blender_version": version,
-        "source_scene": {"path": str(blend.relative_to(repo_root)) if blend.is_relative_to(repo_root) else str(blend), "sha256": sha256_file(blend)},
+        "source_scene": {
+            "path": str(blend.relative_to(repo_root)) if blend.is_relative_to(repo_root) else str(blend),
+            "sha256": sha256_file(blend),
+        },
         "frame": frame,
-        "artifact": {"path": artifact_path, "sha256": sha256_file(png), "bytes": png.stat().st_size, "format": "png", "width": width, "height": height},
-        "visual_qc": "NOT_EVALUATED", "physical_qc": "NOT_EVALUATED",
+        "artifact": {
+            "path": artifact_path,
+            "sha256": sha256_file(png),
+            "bytes": png.stat().st_size,
+            "format": "png",
+            "width": width,
+            "height": height,
+        },
+        "visual_qc": "NOT_EVALUATED",
+        "physical_qc": "NOT_EVALUATED",
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -105,14 +135,17 @@ def main() -> int:
             raise RuntimeError(f"resolved Blender scene does not exist: {blend}")
         if blend.suffix.lower() != ".blend":
             raise RuntimeError("--blend must point to a .blend file")
+
         blender = args.blender or shutil.which("blender")
         if not blender:
             raise RuntimeError("Blender executable not found; provide --blender or install Blender on the worker")
+
         version = blender_version(blender)
         prefix = output_dir / SHOT_ID
         command = [blender, "-b", str(blend), "-o", str(prefix), "-F", "PNG", "-f", str(args.frame)]
         if args.enable_autoexec:
             command.insert(1, "--enable-autoexec")
+
         result = subprocess.run(command, cwd=repo_root, text=True, capture_output=True, check=False)
         log_path.write_text(result.stdout + "\n--- STDERR ---\n" + result.stderr, encoding="utf-8")
         expected = Path(f"{prefix}{args.frame:04d}.png")
@@ -120,7 +153,9 @@ def main() -> int:
             raise RuntimeError(f"Blender render failed with exit code {result.returncode}; see {log_path}")
         if not expected.is_file():
             raise RuntimeError(f"Blender exited successfully but produced no expected PNG: {expected}")
-        receipt.write_text(json.dumps(build_receipt(repo_root, receipt, blend, expected, args.frame, version), indent=2) + "\n", encoding="utf-8")
+
+        data = build_receipt(repo_root, receipt, blend, expected, args.frame, version)
+        receipt.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         verify_receipt(repo_root, receipt)
         print(f"RENDER_EVIDENCE: PASS {receipt}")
         print("VISUAL_QC: NOT_EVALUATED")
@@ -128,7 +163,17 @@ def main() -> int:
         print("PRODUCTION_GATE: BLOCKED_UNTIL_QC")
         return 0
     except Exception as exc:
-        receipt.write_text(json.dumps({"schema": SCHEMA, "rendered": False, "shot_id": SHOT_ID, "scene_id": SCENE_ID, "world_id": WORLD_ID, "executor": "Blender", "error": str(exc), "generated_at": datetime.now(timezone.utc).isoformat()}, indent=2) + "\n", encoding="utf-8")
+        failure = {
+            "schema": SCHEMA,
+            "rendered": False,
+            "shot_id": SHOT_ID,
+            "scene_id": SCENE_ID,
+            "world_id": WORLD_ID,
+            "executor": "Blender",
+            "error": str(exc),
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        }
+        receipt.write_text(json.dumps(failure, indent=2) + "\n", encoding="utf-8")
         print("RENDER_EVIDENCE: BLOCKED")
         print(str(exc))
         return 1

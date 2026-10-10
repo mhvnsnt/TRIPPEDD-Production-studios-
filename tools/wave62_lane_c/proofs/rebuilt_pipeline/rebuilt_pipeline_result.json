@@ -1,0 +1,548 @@
+{
+  "checks": [
+    {
+      "name": "fixture_sha",
+      "status": "PASS",
+      "detail": "dialogue.wav 666cc1b94bd7"
+    },
+    {
+      "name": "gt_sha",
+      "status": "PASS",
+      "detail": "ground_truth.json 3bfbdbddb43e"
+    },
+    {
+      "name": "ref_rttm_sha",
+      "status": "PASS",
+      "detail": "reference.rttm e759d68f3d9d"
+    },
+    {
+      "name": "fixture_duration",
+      "status": "PASS",
+      "detail": "42.90 s, 9 turns, 3 voices"
+    },
+    {
+      "name": "embed_shape_fixture",
+      "status": "PASS",
+      "detail": "shape=(160, 192), finite"
+    },
+    {
+      "name": "grid_gate_reproduced",
+      "status": "PASS",
+      "detail": "grid=166, speech=160, thr=0.01089"
+    },
+    {
+      "name": "noise_calibration",
+      "status": "PASS",
+      "detail": "input SNR 10.0 dB (target 10.0)"
+    },
+    {
+      "name": "main_eigengap_k3",
+      "status": "PASS",
+      "detail": "production-path E1a k=3 (margin 2.11x)"
+    },
+    {
+      "name": "main_all_speakers",
+      "status": "PASS",
+      "detail": "mapped ['A', 'B', 'C']"
+    },
+    {
+      "name": "main_der_finite",
+      "status": "PASS",
+      "detail": "main DER=0.1158 JER=0.1156"
+    },
+    {
+      "name": "main_beats_wave60_baseline",
+      "status": "FAIL",
+      "detail": "main DER 0.1158 vs Wave-60 baseline 0.0941"
+    },
+    {
+      "name": "upstream_clean_eigengap_k",
+      "status": "PASS",
+      "detail": "upstream-clean E1a k=3 (margin 2.67x)"
+    },
+    {
+      "name": "upstream_clean_hurts_or_neutral",
+      "status": "PASS",
+      "detail": "upstream_clean DER 0.1285 vs main 0.1158 (expect upstream >= main: denoise hurts or at best neutral)"
+    },
+    {
+      "name": "upstream_noisy_k_flip",
+      "status": "PASS",
+      "detail": "upstream_noisy k=2 DER=0.4275 vs bypass k=3 DER=0.2239"
+    },
+    {
+      "name": "upstream_noisy_hurts",
+      "status": "PASS",
+      "detail": "Wave-61 re-confirm: upstream+denoise DER 0.4275 > no-denoise DER 0.2239"
+    },
+    {
+      "name": "cos_ac_rises_upstream",
+      "status": "PASS",
+      "detail": "cos(A,C): main=0.6243 vs upstream=0.6326 (mechanism: denoise pushes speaker means together)"
+    }
+  ],
+  "variants": {
+    "main_clean": {
+      "tag": "main_clean",
+      "mode": "main",
+      "upstream_denoise": false,
+      "vad_nseg": 9,
+      "vad_segments": [
+        [
+          0.03,
+          4.51
+        ],
+        [
+          5.02,
+          10.49
+        ],
+        [
+          11.22,
+          15.27
+        ],
+        [
+          16.04,
+          19.81
+        ],
+        [
+          20.35,
+          24.1
+        ],
+        [
+          24.85,
+          29.25
+        ],
+        [
+          30.02,
+          33.51
+        ],
+        [
+          34.07,
+          37.31
+        ],
+        [
+          38.18,
+          42.28
+        ]
+      ],
+      "vad_recall": 0.9351,
+      "vad_precision": 1.0,
+      "windows_grid": 166,
+      "windows_speech_energy": 160,
+      "windows_kept_vad": 94,
+      "energy_gate_thr": 0.010889333486637008,
+      "embed_source": "wave58 committed embeddings.pt (raw-audio slices, NO upstream denoise)",
+      "embed_s": 0.0,
+      "embed_shape": [
+        94,
+        192
+      ],
+      "embed_finite": true,
+      "eigengap_k": 3,
+      "eigengap_eigenvalues": [
+        0.0,
+        0.0,
+        0.0043,
+        0.12,
+        0.1748,
+        0.1968,
+        0.2217
+      ],
+      "eigengap_gaps": {
+        "2": 0.0043,
+        "3": 0.1157,
+        "4": 0.0548,
+        "5": 0.022
+      },
+      "eigengap_margin": 2.11,
+      "n_clusters_found": 3,
+      "diag_cos": {
+        "AB": 0.1348,
+        "AC": 0.6243,
+        "BC": 0.1319
+      },
+      "frames_labeled": 139,
+      "frames_total": 172,
+      "cluster_to_speaker": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "frame_purity": 1.0,
+      "speakers_mapped": [
+        "A",
+        "B",
+        "C"
+      ],
+      "n_hyp_segments": 9,
+      "DER_c0.0": 0.1158,
+      "JER_c0.0": 0.1156,
+      "components_c0.0": {
+        "missed detection": 4.55,
+        "false alarm": 0.0,
+        "confusion": 0.0,
+        "total": 39.3
+      },
+      "DER_c0.25": 0.0628,
+      "JER_c0.25": 0.0625,
+      "components_c0.25": {
+        "missed detection": 2.325,
+        "false alarm": 0.0,
+        "confusion": 0.0,
+        "total": 37.05
+      }
+    },
+    "upstream_clean": {
+      "tag": "upstream_clean",
+      "mode": "upstream",
+      "upstream_denoise": true,
+      "denoise_s": 146.1,
+      "conditioned_sha256": "71cd5d6e6b66b9e373b19a6eedb7d79e4aff92711beb61894eb8eceb077087d6",
+      "vad_nseg": 9,
+      "vad_segments": [
+        [
+          0.1,
+          4.51
+        ],
+        [
+          5.02,
+          10.18
+        ],
+        [
+          11.22,
+          15.27
+        ],
+        [
+          16.04,
+          19.84
+        ],
+        [
+          20.35,
+          23.91
+        ],
+        [
+          24.84,
+          29.25
+        ],
+        [
+          30.02,
+          33.51
+        ],
+        [
+          34.06,
+          37.31
+        ],
+        [
+          38.18,
+          42.28
+        ]
+      ],
+      "vad_recall": 0.9226,
+      "vad_precision": 1.0,
+      "windows_grid": 166,
+      "windows_speech_energy": 160,
+      "windows_kept_vad": 92,
+      "energy_gate_thr": 0.010603588819583785,
+      "embed_source": "ECAPA recomputed fresh on denoised audio",
+      "embed_s": 228.3,
+      "embed_shape": [
+        92,
+        192
+      ],
+      "embed_finite": true,
+      "eigengap_k": 3,
+      "eigengap_eigenvalues": [
+        0.0,
+        0.0,
+        0.0043,
+        0.123,
+        0.1527,
+        0.1971,
+        0.2608
+      ],
+      "eigengap_gaps": {
+        "2": 0.0043,
+        "3": 0.1186,
+        "4": 0.0297,
+        "5": 0.0444
+      },
+      "eigengap_margin": 2.67,
+      "n_clusters_found": 3,
+      "diag_cos": {
+        "AB": 0.1535,
+        "AC": 0.6326,
+        "BC": 0.1537
+      },
+      "frames_labeled": 137,
+      "frames_total": 172,
+      "cluster_to_speaker": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "frame_purity": 1.0,
+      "speakers_mapped": [
+        "A",
+        "B",
+        "C"
+      ],
+      "n_hyp_segments": 9,
+      "DER_c0.0": 0.1285,
+      "JER_c0.0": 0.1284,
+      "components_c0.0": {
+        "missed detection": 5.05,
+        "false alarm": 0.0,
+        "confusion": 0.0,
+        "total": 39.3
+      },
+      "DER_c0.25": 0.0762,
+      "JER_c0.25": 0.076,
+      "components_c0.25": {
+        "missed detection": 2.825,
+        "false alarm": 0.0,
+        "confusion": 0.0,
+        "total": 37.05
+      }
+    },
+    "upstream_noisy": {
+      "tag": "upstream_noisy",
+      "mode": "upstream",
+      "upstream_denoise": true,
+      "denoise_s": 196.8,
+      "conditioned_sha256": "dfd393c6588249d0d41526f6887072dafd1c80b12e7ad0821cd82d3b708713d2",
+      "vad_nseg": 10,
+      "vad_segments": [
+        [
+          0.0,
+          4.43
+        ],
+        [
+          5.06,
+          10.11
+        ],
+        [
+          11.21,
+          15.23
+        ],
+        [
+          16.04,
+          19.81
+        ],
+        [
+          20.34,
+          23.9
+        ],
+        [
+          23.96,
+          24.45
+        ],
+        [
+          24.85,
+          29.17
+        ],
+        [
+          30.01,
+          33.48
+        ],
+        [
+          34.06,
+          37.3
+        ],
+        [
+          38.19,
+          42.23
+        ]
+      ],
+      "vad_recall": 0.9201,
+      "vad_precision": 0.9937,
+      "windows_grid": 166,
+      "windows_speech_energy": 158,
+      "windows_kept_vad": 88,
+      "energy_gate_thr": 0.010659682750781906,
+      "embed_source": "ECAPA recomputed fresh on denoised audio",
+      "embed_s": 230.3,
+      "embed_shape": [
+        88,
+        192
+      ],
+      "embed_finite": true,
+      "eigengap_k": 2,
+      "eigengap_eigenvalues": [
+        0.0,
+        0.0,
+        0.0545,
+        0.0935,
+        0.1257,
+        0.1567,
+        0.2338
+      ],
+      "eigengap_gaps": {
+        "2": 0.0545,
+        "3": 0.039,
+        "4": 0.0322,
+        "5": 0.031
+      },
+      "eigengap_margin": 1.4,
+      "n_clusters_found": 2,
+      "diag_cos": {
+        "AB": 0.3465,
+        "AC": 0.7438,
+        "BC": 0.2835
+      },
+      "frames_labeled": 133,
+      "frames_total": 172,
+      "cluster_to_speaker": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6767,
+      "speakers_mapped": [
+        "B",
+        "C"
+      ],
+      "n_hyp_segments": 9,
+      "DER_c0.0": 0.4275,
+      "JER_c0.0": 0.5635,
+      "components_c0.0": {
+        "missed detection": 6.05,
+        "false alarm": 0.0,
+        "confusion": 10.75,
+        "total": 39.3
+      },
+      "DER_c0.25": 0.3927,
+      "JER_c0.25": 0.5407,
+      "components_c0.25": {
+        "missed detection": 3.925,
+        "false alarm": 0.0,
+        "confusion": 10.625,
+        "total": 37.05
+      }
+    },
+    "bypass_noisy": {
+      "tag": "bypass_noisy",
+      "mode": "bypass",
+      "upstream_denoise": false,
+      "vad_nseg": 11,
+      "vad_segments": [
+        [
+          0.0,
+          4.43
+        ],
+        [
+          4.75,
+          10.05
+        ],
+        [
+          10.61,
+          11.17
+        ],
+        [
+          11.23,
+          15.2
+        ],
+        [
+          16.06,
+          19.68
+        ],
+        [
+          20.36,
+          23.73
+        ],
+        [
+          24.01,
+          24.5
+        ],
+        [
+          24.7,
+          29.17
+        ],
+        [
+          29.95,
+          33.42
+        ],
+        [
+          34.03,
+          37.15
+        ],
+        [
+          38.29,
+          42.16
+        ]
+      ],
+      "vad_recall": 0.9089,
+      "vad_precision": 0.9746,
+      "windows_grid": 166,
+      "windows_speech_energy": 166,
+      "windows_kept_vad": 88,
+      "energy_gate_thr": 0.011024339199146162,
+      "embed_source": "ECAPA recomputed fresh on noisy audio",
+      "embed_s": 217.0,
+      "embed_shape": [
+        88,
+        192
+      ],
+      "embed_finite": true,
+      "eigengap_k": 3,
+      "eigengap_eigenvalues": [
+        0.0,
+        0.0,
+        0.0335,
+        0.1421,
+        0.1575,
+        0.1637,
+        0.1884
+      ],
+      "eigengap_gaps": {
+        "2": 0.0335,
+        "3": 0.1086,
+        "4": 0.0153,
+        "5": 0.0062
+      },
+      "eigengap_margin": 3.24,
+      "n_clusters_found": 3,
+      "diag_cos": {
+        "AB": 0.0816,
+        "AC": 0.5905,
+        "BC": 0.0785
+      },
+      "frames_labeled": 133,
+      "frames_total": 172,
+      "cluster_to_speaker": {
+        "0": "B",
+        "1": "A",
+        "2": "C"
+      },
+      "frame_purity": 0.9318,
+      "speakers_mapped": [
+        "A",
+        "B",
+        "C"
+      ],
+      "n_hyp_segments": 13,
+      "DER_c0.0": 0.2239,
+      "JER_c0.0": 0.2623,
+      "components_c0.0": {
+        "missed detection": 6.3,
+        "false alarm": 0.25,
+        "confusion": 2.25,
+        "total": 39.3
+      },
+      "DER_c0.25": 0.1775,
+      "JER_c0.25": 0.2191,
+      "components_c0.25": {
+        "missed detection": 4.325,
+        "false alarm": 0.125,
+        "confusion": 2.125,
+        "total": 37.05
+      }
+    }
+  },
+  "honest_findings": [
+    "The production topology puts NO denoise before the embedding stage. The fixture embeddings were computed on raw audio by Wave-58; kept windows are bit-identical raw slices of that grid, so rows are exact (no recompute, no torch needed on this path).",
+    "The ablation recomputes ECAPA fresh on denoised/noisy audio to re-confirm the Wave-61 finding with this wave's own numbers.",
+    "diag_cos is GT-informed (not part of the blind pipeline)."
+  ],
+  "total_s": 1142.4,
+  "passed": 15,
+  "failed": 1
+}

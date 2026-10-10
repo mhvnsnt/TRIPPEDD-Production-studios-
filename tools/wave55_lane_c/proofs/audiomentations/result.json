@@ -1,0 +1,72 @@
+{
+  "source": {
+    "frames": 187800,
+    "sr": 24000,
+    "rms": 0.050562506223167346
+  },
+  "gain_ratio": 0.5011872053292734,
+  "gain_expected": 0.5011872336272722,
+  "degraded_snr_db": 20.092878849243732,
+  "degraded_snr_predicted_db": 20.09717176145461,
+  "pitch_measured_hz": 494.5,
+  "pitch_expected_hz": 493.8833012561241,
+  "dual_rng_note": "HighPassFilter consumes Python's random module; both RNGs must be seeded for reproducibility",
+  "degraded_rms": 0.03414602134971409,
+  "checks": [
+    {
+      "name": "source_load",
+      "ok": true,
+      "detail": "frames=187800 sr=24000"
+    },
+    {
+      "name": "gain_minus6db",
+      "ok": true,
+      "detail": "RMS ratio=0.501187 expect=0.501187 (real dB gain applied)"
+    },
+    {
+      "name": "noise_reproducible",
+      "ok": true,
+      "detail": "same seed -> bit-identical degraded variant"
+    },
+    {
+      "name": "noise_amplitude",
+      "ok": true,
+      "detail": "added-noise RMS=0.005002 expect=0.005000 (Gaussian std=amplitude per upstream source)"
+    },
+    {
+      "name": "noise_snr_matches_params",
+      "ok": true,
+      "detail": "degraded SNR=20.09 dB, predicted from params=20.10 dB"
+    },
+    {
+      "name": "pitch_shift_2st",
+      "ok": true,
+      "detail": "dominant freq=494.50 Hz expect=493.88 Hz (real resampling pitch)"
+    },
+    {
+      "name": "degrade_chain",
+      "ok": true,
+      "detail": "frames preserved=187800, finite, RMS 0.0506->0.0341"
+    },
+    {
+      "name": "degrade_written",
+      "ok": true,
+      "detail": "375644 bytes"
+    },
+    {
+      "name": "chain_deterministic",
+      "ok": true,
+      "detail": "np.random.seed + random.seed -> bit-identical degraded WAV"
+    },
+    {
+      "name": "take_variation",
+      "ok": true,
+      "detail": "take2 variant: pitch -1.5 st, gain +1.5 dB, frames=187800"
+    }
+  ],
+  "upstream": {
+    "repo": "iver56/audiomentations",
+    "license": "MIT",
+    "verified": "2026-10-08 via GitHub API spdx_id"
+  }
+}

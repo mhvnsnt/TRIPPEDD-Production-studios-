@@ -1,0 +1,25 @@
+{
+  "row": 123,
+  "name": "Dn-FamiTracker",
+  "claimed": "GPL-2.0-or-later",
+  "kind": "github",
+  "ref": "AlbenBustamante/Dn-FamiTracker",
+  "api": {
+    "full_name": "AlbenBustamante/Dn-FamiTracker",
+    "archived": false,
+    "pushed_at": "2022-07-16T11:45:44Z",
+    "stargazers_count": 0,
+    "default_branch": "master",
+    "owner": "AlbenBustamante",
+    "spdx_id": "NOASSERTION",
+    "license_name": "Other"
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "LICENSE.txt",
+    "branch": "master",
+    "bytes": 18387
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

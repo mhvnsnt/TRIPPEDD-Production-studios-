@@ -1,0 +1,68 @@
+{
+ "helm": {
+  "path": "repos/mtytel/helm",
+  "archived": true,
+  "pushed_at": "2022-09-24T04:23:20Z",
+  "spdx_id": "GPL-3.0",
+  "owner": "mtytel",
+  "error": null
+ },
+ "telxcc": {
+  "path": "repos/kanongil/telxcc",
+  "archived": true,
+  "pushed_at": "2025-09-20T11:29:10Z",
+  "spdx_id": "NOASSERTION",
+  "owner": "kanongil",
+  "error": null
+ },
+ "mblab": {
+  "path": "repos/animate1978/MB-Lab",
+  "archived": true,
+  "pushed_at": "2024-07-21T02:46:17Z",
+  "spdx_id": "NOASSERTION",
+  "owner": "animate1978",
+  "error": null
+ },
+ "piper_gpl": {
+  "path": "repos/OHF-Voice/piper1-gpl",
+  "archived": false,
+  "pushed_at": "2026-10-06T21:23:53Z",
+  "spdx_id": "GPL-3.0",
+  "owner": "OHF-Voice",
+  "error": null
+ },
+ "mimic3": {
+  "path": "repos/MycroftAI/mimic3",
+  "archived": false,
+  "pushed_at": "2025-03-25T12:29:08Z",
+  "spdx_id": "AGPL-3.0",
+  "owner": "MycroftAI",
+  "error": null
+ },
+ "sovits": {
+  "path": "repos/svc-develop-team/so-vits-svc",
+  "archived": true,
+  "pushed_at": "2023-11-11T13:11:31Z",
+  "spdx_id": "AGPL-3.0",
+  "owner": "svc-develop-team",
+  "error": null
+ },
+ "seedvc": {
+  "path": "repos/Plachtaa/Seed-VC",
+  "archived": true,
+  "pushed_at": "2025-04-20T05:27:10Z",
+  "spdx_id": "GPL-3.0",
+  "owner": "Plachtaa",
+  "error": null
+ },
+ "tidal_old": {
+  "path": "repos/tidalcycles/Tidal",
+  "archived": true,
+  "pushed_at": "2025-06-13T19:22:15Z",
+  "spdx_id": "GPL-3.0"
+ },
+ "mkvtoolnix_codeberg": {
+  "status": 200,
+  "archived": false
+ }
+}

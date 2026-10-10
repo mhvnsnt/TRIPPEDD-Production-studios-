@@ -1,0 +1,3922 @@
+{
+  "count": 7458,
+  "next": "https://demozoo.org/api/v1/productions/?page=2&production_type=7",
+  "previous": null,
+  "results": [
+    {
+      "url": "https://demozoo.org/api/v1/productions/199579/",
+      "demozoo_url": "https://demozoo.org/productions/199579/",
+      "id": 199579,
+      "title": "0x01-30DAYS",
+      "author_nicks": [
+        {
+          "name": "TSAR",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/53337/",
+            "id": 53337,
+            "name": "TSAR",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2010-06",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/1/",
+          "id": 1,
+          "name": "Windows"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/167270/",
+      "demozoo_url": "https://demozoo.org/productions/167270/",
+      "id": 167270,
+      "title": "1-Bit Mechanistic",
+      "author_nicks": [
+        {
+          "name": "Tufty",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/32508/",
+            "id": 32508,
+            "name": "Tufty",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2016-08",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/2/",
+          "id": 2,
+          "name": "ZX Spectrum"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95040/",
+      "demozoo_url": "https://demozoo.org/productions/95040/",
+      "id": 95040,
+      "title": "#1 Rhythm Device – Acid Rock",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/198316/",
+      "demozoo_url": "https://demozoo.org/productions/198316/",
+      "id": 198316,
+      "title": "1 Year",
+      "author_nicks": [
+        {
+          "name": "20th Century Composers",
+          "abbreviation": "20CC",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/7643/",
+            "id": 7643,
+            "name": "20th Century Composers",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989-06-17",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/78375/",
+      "demozoo_url": "https://demozoo.org/productions/78375/",
+      "id": 78375,
+      "title": "1hparaxtasszony",
+      "author_nicks": [
+        {
+          "name": "Innocent",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/1278/",
+            "id": 1278,
+            "name": "Innocent",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2004-10-02",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/1/",
+          "id": 1,
+          "name": "Windows"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/294630/",
+      "demozoo_url": "https://demozoo.org/productions/294630/",
+      "id": 294630,
+      "title": "1st Ear-Ache",
+      "author_nicks": [
+        {
+          "name": "Tronic",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/90647/",
+            "id": 90647,
+            "name": "Tronic",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1988-11-28",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/169802/",
+      "demozoo_url": "https://demozoo.org/productions/169802/",
+      "id": 169802,
+      "title": "1st Real Musicpack",
+      "author_nicks": [
+        {
+          "name": "Doctor Mabuse Orgasm Crackings",
+          "abbreviation": "D.O.C.",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/650/",
+            "id": 650,
+            "name": "Doctor Mabuse Orgasm Crackings",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1987-12",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/284317/",
+      "demozoo_url": "https://demozoo.org/productions/284317/",
+      "id": 284317,
+      "title": "1st Year Anniversary MusicPack",
+      "author_nicks": [
+        {
+          "name": "T-Matic",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/22114/",
+            "id": 22114,
+            "name": "T-Matic",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1997-10-29",
+      "supertype": "production",
+      "platforms": [],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "anniversary"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/227860/",
+      "demozoo_url": "https://demozoo.org/productions/227860/",
+      "id": 227860,
+      "title": "2 In A Retrogaming Tent (When I'm Cleaning Podcasts)",
+      "author_nicks": [
+        {
+          "name": "CMAP",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/103549/",
+            "id": 103549,
+            "name": "CMAP",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2016-02-06",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/283577/",
+      "demozoo_url": "https://demozoo.org/productions/283577/",
+      "id": 283577,
+      "title": "2 Of A Kind",
+      "author_nicks": [
+        {
+          "name": "NutCase",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/7477/",
+            "id": 7477,
+            "name": "NutCase",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1998-02-23",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "xm"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/78662/",
+      "demozoo_url": "https://demozoo.org/productions/78662/",
+      "id": 78662,
+      "title": "#2 The Krupps - True Work",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989-08-11",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/224343/",
+      "demozoo_url": "https://demozoo.org/productions/224343/",
+      "id": 224343,
+      "title": "The 2 Unlemmingted Experience",
+      "author_nicks": [
+        {
+          "name": "Aspects",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/96928/",
+            "id": 96928,
+            "name": "Aspects",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1994",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/228445/",
+      "demozoo_url": "https://demozoo.org/productions/228445/",
+      "id": 228445,
+      "title": "2 Unlimited - No Limit",
+      "author_nicks": [
+        {
+          "name": "ERM",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/104253/",
+            "id": 104253,
+            "name": "ERM",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1993",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/227861/",
+      "demozoo_url": "https://demozoo.org/productions/227861/",
+      "id": 227861,
+      "title": "2 Unlimited (RGDS Megamix)",
+      "author_nicks": [
+        {
+          "name": "CMAP",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/103549/",
+            "id": 103549,
+            "name": "CMAP",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2015-11-16",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/59907/",
+      "demozoo_url": "https://demozoo.org/productions/59907/",
+      "id": 59907,
+      "title": "2D",
+      "author_nicks": [
+        {
+          "name": "Remedy",
+          "abbreviation": "RMD",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/6701/",
+            "id": 6701,
+            "name": "Remedy",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1993-02-27",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/1/",
+          "id": 1,
+          "name": "Demo",
+          "supertype": "production"
+        },
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "megademo",
+        "german-language",
+        "antifascism"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/270829/",
+      "demozoo_url": "https://demozoo.org/productions/270829/",
+      "id": 270829,
+      "title": "2nd Difference",
+      "author_nicks": [
+        {
+          "name": "Orange",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/487/",
+            "id": 487,
+            "name": "Orange",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1995-03",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/323246/",
+      "demozoo_url": "https://demozoo.org/productions/323246/",
+      "id": 323246,
+      "title": "2nd Stiff's Music Collection",
+      "author_nicks": [
+        {
+          "name": "Apidya",
+          "abbreviation": "APD",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/18144/",
+            "id": 18144,
+            "name": "Apidya",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1999-08",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/128691/",
+      "demozoo_url": "https://demozoo.org/productions/128691/",
+      "id": 128691,
+      "title": "2Pack - First Contact",
+      "author_nicks": [
+        {
+          "name": "Elysium",
+          "abbreviation": "ESM",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/8857/",
+            "id": 8857,
+            "name": "Elysium",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2014-12-14",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/168286/",
+      "demozoo_url": "https://demozoo.org/productions/168286/",
+      "id": 168286,
+      "title": "3 Day Hardcore Megamix",
+      "author_nicks": [
+        {
+          "name": "SHITTS",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/69882/",
+            "id": 69882,
+            "name": "SHITTS",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1993",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/98181/",
+      "demozoo_url": "https://demozoo.org/productions/98181/",
+      "id": 98181,
+      "title": "3 From One",
+      "author_nicks": [
+        {
+          "name": "Chryseis",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/6704/",
+            "id": 6704,
+            "name": "Chryseis",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1993-05-27",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/367366/",
+      "demozoo_url": "https://demozoo.org/productions/367366/",
+      "id": 367366,
+      "title": "3 Hours Battle",
+      "author_nicks": [
+        {
+          "name": "Artline Designs",
+          "abbreviation": "ALD",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/14295/",
+            "id": 14295,
+            "name": "Artline Designs",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2018-05-19",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/78660/",
+      "demozoo_url": "https://demozoo.org/productions/78660/",
+      "id": 78660,
+      "title": "#3 John Harrison - The Dead Walk",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989-08-25",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/236230/",
+      "demozoo_url": "https://demozoo.org/productions/236230/",
+      "id": 236230,
+      "title": "3 Musicstuecke",
+      "author_nicks": [
+        {
+          "name": "Andreas Starr",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/59577/",
+            "id": 59577,
+            "name": "Andreas Starr",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1988",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/278278/",
+      "demozoo_url": "https://demozoo.org/productions/278278/",
+      "id": 278278,
+      "title": "3CHNLS4BIT",
+      "author_nicks": [
+        {
+          "name": "Stu",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/9928/",
+            "id": 9928,
+            "name": "Stu",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2005-10-10",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/395863/",
+      "demozoo_url": "https://demozoo.org/productions/395863/",
+      "id": 395863,
+      "title": "3D",
+      "author_nicks": [
+        {
+          "name": "NotSoft",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/9595/",
+            "id": 9595,
+            "name": "NotSoft",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": null,
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/2/",
+          "id": 2,
+          "name": "ZX Spectrum"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/8256/",
+      "demozoo_url": "https://demozoo.org/productions/8256/",
+      "id": 8256,
+      "title": "3D-Net-Analyzer (D.O.C Demo 2)",
+      "author_nicks": [
+        {
+          "name": "Doctor Mabuse Orgasm Crackings",
+          "abbreviation": "D.O.C.",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/650/",
+            "id": 650,
+            "name": "Doctor Mabuse Orgasm Crackings",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1988-11",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "hdd"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/169013/",
+      "demozoo_url": "https://demozoo.org/productions/169013/",
+      "id": 169013,
+      "title": "3rd-Division Musicdisk",
+      "author_nicks": [
+        {
+          "name": "Bionic",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/70248/",
+            "id": 70248,
+            "name": "Bionic",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990-05",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "cli-menu"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/192147/",
+      "demozoo_url": "https://demozoo.org/productions/192147/",
+      "id": 192147,
+      "title": "3rd Punk",
+      "author_nicks": [
+        {
+          "name": "Orange",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/487/",
+            "id": 487,
+            "name": "Orange",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1995-07",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/233543/",
+      "demozoo_url": "https://demozoo.org/productions/233543/",
+      "id": 233543,
+      "title": "4-Coders II Pack",
+      "author_nicks": [
+        {
+          "name": "Amega Industries",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/69471/",
+            "id": 69471,
+            "name": "Amega Industries",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1991",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/157324/",
+      "demozoo_url": "https://demozoo.org/productions/157324/",
+      "id": 157324,
+      "title": "The 4 Dimension of Acid",
+      "author_nicks": [
+        {
+          "name": "Plauze",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/5799/",
+            "id": 5799,
+            "name": "Plauze",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1994",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/317440/",
+      "demozoo_url": "https://demozoo.org/productions/317440/",
+      "id": 317440,
+      "title": "4-Mat Tunes",
+      "author_nicks": [
+        {
+          "name": "A Bit On The Side PD",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/135437/",
+            "id": 135437,
+            "name": "A Bit On The Side PD",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "no-credits-given"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/121266/",
+      "demozoo_url": "https://demozoo.org/productions/121266/",
+      "id": 121266,
+      "title": "4 Musics",
+      "author_nicks": [
+        {
+          "name": "Epsilon",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/2525/",
+            "id": 2525,
+            "name": "Epsilon",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": null,
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95041/",
+      "demozoo_url": "https://demozoo.org/productions/95041/",
+      "id": 95041,
+      "title": "#4 Telex – Radio Radio",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/284659/",
+      "demozoo_url": "https://demozoo.org/productions/284659/",
+      "id": 284659,
+      "title": "4Play",
+      "author_nicks": [
+        {
+          "name": "Hornet",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/8923/",
+            "id": 8923,
+            "name": "Hornet",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1995-10-01",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "4ch",
+        "no-coded-component"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/336368/",
+      "demozoo_url": "https://demozoo.org/productions/336368/",
+      "id": 336368,
+      "title": "4th Music-Disc",
+      "author_nicks": [
+        {
+          "name": "Wizards of Illusions",
+          "abbreviation": "WOI",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/140815/",
+            "id": 140815,
+            "name": "Wizards of Illusions",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989-08-19",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "corrupted-file"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95290/",
+      "demozoo_url": "https://demozoo.org/productions/95290/",
+      "id": 95290,
+      "title": "The 4th Rendez-Vous",
+      "author_nicks": [
+        {
+          "name": "The Lost Boys",
+          "abbreviation": "TLB",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/2031/",
+            "id": 2031,
+            "name": "The Lost Boys",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": null,
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95599/",
+      "demozoo_url": "https://demozoo.org/productions/95599/",
+      "id": 95599,
+      "title": "The 4th Rendzvous",
+      "author_nicks": [
+        {
+          "name": "SBP-Crew",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/40034/",
+            "id": 40034,
+            "name": "SBP-Crew",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/285836/",
+      "demozoo_url": "https://demozoo.org/productions/285836/",
+      "id": 285836,
+      "title": "5 Years Of Alternate Worlds",
+      "author_nicks": [
+        {
+          "name": "Alternate Worlds",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/117545/",
+            "id": 117545,
+            "name": "Alternate Worlds",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1996-01",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "mod"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95042/",
+      "demozoo_url": "https://demozoo.org/productions/95042/",
+      "id": 95042,
+      "title": "#5 Yello – Lost Again",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/186495/",
+      "demozoo_url": "https://demozoo.org/productions/186495/",
+      "id": 186495,
+      "title": "5th Gear Musix",
+      "author_nicks": [
+        {
+          "name": "Xenex Demozone 68000",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/32016/",
+            "id": 32016,
+            "name": "Xenex Demozone 68000",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990-03-27",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/30437/",
+      "demozoo_url": "https://demozoo.org/productions/30437/",
+      "id": 30437,
+      "title": "5th Generation and Darkness Party 1992 Music Disk",
+      "author_nicks": [
+        {
+          "name": "5th Generation",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/1299/",
+            "id": 1299,
+            "name": "Fifth Generation",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1992-09-28",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95043/",
+      "demozoo_url": "https://demozoo.org/productions/95043/",
+      "id": 95043,
+      "title": "#6 Psyche – Black Panther",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/373290/",
+      "demozoo_url": "https://demozoo.org/productions/373290/",
+      "id": 373290,
+      "title": "6 Years Ago",
+      "author_nicks": [
+        {
+          "name": "IES",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/13403/",
+            "id": 13403,
+            "name": "IES",
+            "is_group": true
+          }
+        },
+        {
+          "name": "Replay",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/11043/",
+            "id": 11043,
+            "name": "Replay",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1997-12-28",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/252970/",
+      "demozoo_url": "https://demozoo.org/productions/252970/",
+      "id": 252970,
+      "title": "The 6th Sense 1",
+      "author_nicks": [
+        {
+          "name": "Partek",
+          "abbreviation": "PTK",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/73920/",
+            "id": 73920,
+            "name": "Partek",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1994-05-25",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95044/",
+      "demozoo_url": "https://demozoo.org/productions/95044/",
+      "id": 95044,
+      "title": "#7 Carlos Peron – Commando (Soundtrack)",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/75827/",
+      "demozoo_url": "https://demozoo.org/productions/75827/",
+      "id": 75827,
+      "title": "007 Demo",
+      "author_nicks": [
+        {
+          "name": "ST Squad",
+          "abbreviation": "STS",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/34424/",
+            "id": 34424,
+            "name": "ST Squad",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989-06-24",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/283576/",
+      "demozoo_url": "https://demozoo.org/productions/283576/",
+      "id": 283576,
+      "title": "7 Songs",
+      "author_nicks": [
+        {
+          "name": "Ooze Labs",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/26332/",
+            "id": 26332,
+            "name": "Ooze Labs",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1997-01-16",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/21372/",
+      "demozoo_url": "https://demozoo.org/productions/21372/",
+      "id": 21372,
+      "title": "8-Bit Jungle",
+      "author_nicks": [
+        {
+          "name": "Unstable Label",
+          "abbreviation": "UNS",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/6284/",
+            "id": 6284,
+            "name": "Unstable Label",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2011-09",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "hdd"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/128555/",
+      "demozoo_url": "https://demozoo.org/productions/128555/",
+      "id": 128555,
+      "title": "8 Channels",
+      "author_nicks": [
+        {
+          "name": "Mister Beep",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/11564/",
+            "id": 11564,
+            "name": "Mister Beep",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2009-11",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/2/",
+          "id": 2,
+          "name": "ZX Spectrum"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "beep",
+        "tk90x",
+        "zx-spectrum-48k"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/78659/",
+      "demozoo_url": "https://demozoo.org/productions/78659/",
+      "id": 78659,
+      "title": "#8 Technotronic - Come On",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989-12-25",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/285378/",
+      "demozoo_url": "https://demozoo.org/productions/285378/",
+      "id": 285378,
+      "title": "9 Inches of Bass",
+      "author_nicks": [
+        {
+          "name": "Pure",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/19658/",
+            "id": 19658,
+            "name": "Pure",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1995-06",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/78661/",
+      "demozoo_url": "https://demozoo.org/productions/78661/",
+      "id": 78661,
+      "title": "#9 Technotronic - Get Up",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990-01-01",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/283151/",
+      "demozoo_url": "https://demozoo.org/productions/283151/",
+      "id": 283151,
+      "title": "9x10",
+      "author_nicks": [
+        {
+          "name": "Blackwolf",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/44385/",
+            "id": 44385,
+            "name": "Blackwolf",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1996-04-18",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "s3m"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/259299/",
+      "demozoo_url": "https://demozoo.org/productions/259299/",
+      "id": 259299,
+      "title": "The 10 Best Tunes Gathering 1992 - 1",
+      "author_nicks": [
+        {
+          "name": "Spaceballs",
+          "abbreviation": "SPB",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/3/",
+            "id": 3,
+            "name": "Spaceballs",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1992-04-19",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/259300/",
+      "demozoo_url": "https://demozoo.org/productions/259300/",
+      "id": 259300,
+      "title": "The 10 Best Tunes Gathering 1992 - 2",
+      "author_nicks": [
+        {
+          "name": "Spaceballs",
+          "abbreviation": "SPB",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/3/",
+            "id": 3,
+            "name": "Spaceballs",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1992-04-19",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/259301/",
+      "demozoo_url": "https://demozoo.org/productions/259301/",
+      "id": 259301,
+      "title": "The 10 Best Tunes Gathering 1992 - 3",
+      "author_nicks": [
+        {
+          "name": "Spaceballs",
+          "abbreviation": "SPB",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/3/",
+            "id": 3,
+            "name": "Spaceballs",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1992-04-19",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/263677/",
+      "demozoo_url": "https://demozoo.org/productions/263677/",
+      "id": 263677,
+      "title": "10 Cool Tunes",
+      "author_nicks": [
+        {
+          "name": "Trilogy",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/711/",
+            "id": 711,
+            "name": "Trilogy",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1989",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "requires-kickstart-1.2"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95329/",
+      "demozoo_url": "https://demozoo.org/productions/95329/",
+      "id": 95329,
+      "title": "#10 Laid Back – Bakerman",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/8363/",
+      "demozoo_url": "https://demozoo.org/productions/8363/",
+      "id": 8363,
+      "title": "10 Years HVSC",
+      "author_nicks": [
+        {
+          "name": "HVSC Crew",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/73182/",
+            "id": 73182,
+            "name": "HVSC Crew",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2006-11-28",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/314915/",
+      "demozoo_url": "https://demozoo.org/productions/314915/",
+      "id": 314915,
+      "title": "11 Nice Tunes",
+      "author_nicks": [
+        {
+          "name": "Delta 4",
+          "abbreviation": "D4",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/107660/",
+            "id": 107660,
+            "name": "Delta 4",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1987",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95330/",
+      "demozoo_url": "https://demozoo.org/productions/95330/",
+      "id": 95330,
+      "title": "#11 The Varese Mix",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/283399/",
+      "demozoo_url": "https://demozoo.org/productions/283399/",
+      "id": 283399,
+      "title": "11Mins In Cosmic's House",
+      "author_nicks": [
+        {
+          "name": "Cosmic",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/116702/",
+            "id": 116702,
+            "name": "Cosmic",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [
+        {
+          "name": "Radical Rhythms",
+          "abbreviation": "RR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/9929/",
+            "id": 9929,
+            "name": "Radical Rhythms",
+            "is_group": true
+          }
+        }
+      ],
+      "release_date": "1995-08",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/95331/",
+      "demozoo_url": "https://demozoo.org/productions/95331/",
+      "id": 95331,
+      "title": "#12 Jean Michel Jarre – Calypso",
+      "author_nicks": [
+        {
+          "name": "Varese Sarabande Records",
+          "abbreviation": "VSR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/41032/",
+            "id": 41032,
+            "name": "Varese Sarabande Records",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990-07-09",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "lost",
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/318274/",
+      "demozoo_url": "https://demozoo.org/productions/318274/",
+      "id": 318274,
+      "title": "15 Years of Scene Spirit",
+      "author_nicks": [
+        {
+          "name": "lft",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/3621/",
+            "id": 3621,
+            "name": "lft",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2022-02-19",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/138336/",
+      "demozoo_url": "https://demozoo.org/productions/138336/",
+      "id": 138336,
+      "title": "16 Bit-Musik",
+      "author_nicks": [
+        {
+          "name": "Rali-Soft",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/58886/",
+            "id": 58886,
+            "name": "Rali-Soft",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1988-02",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo",
+        "star-wars-theme",
+        "stallone"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/119657/",
+      "demozoo_url": "https://demozoo.org/productions/119657/",
+      "id": 119657,
+      "title": "20 Seconds....",
+      "author_nicks": [
+        {
+          "name": "7UP",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/33491/",
+            "id": 33491,
+            "name": "7UP",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": null,
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/125294/",
+      "demozoo_url": "https://demozoo.org/productions/125294/",
+      "id": 125294,
+      "title": "20 Seconds Demo",
+      "author_nicks": [
+        {
+          "name": "The Mysterons",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/54531/",
+            "id": 54531,
+            "name": "The Mysterons",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": null,
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "sampledemo"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/175798/",
+      "demozoo_url": "https://demozoo.org/productions/175798/",
+      "id": 175798,
+      "title": "20 Years HVSC",
+      "author_nicks": [
+        {
+          "name": "HVSC Crew",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/73182/",
+            "id": 73182,
+            "name": "HVSC Crew",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2016-07-12",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/199528/",
+      "demozoo_url": "https://demozoo.org/productions/199528/",
+      "id": 199528,
+      "title": "20 Years Ravebusters Remixes",
+      "author_nicks": [
+        {
+          "name": "The Ravebusters",
+          "abbreviation": "TRBS",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/48648/",
+            "id": 48648,
+            "name": "The Ravebusters",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2007-03",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/1/",
+          "id": 1,
+          "name": "Windows"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/98342/",
+      "demozoo_url": "https://demozoo.org/productions/98342/",
+      "id": 98342,
+      "title": "20 Years Samar",
+      "author_nicks": [
+        {
+          "name": "Samar Productions",
+          "abbreviation": "SMR",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/5088/",
+            "id": 5088,
+            "name": "Samar Productions",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2013-09-14",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "dubstep",
+        "anniversary"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/199199/",
+      "demozoo_url": "https://demozoo.org/productions/199199/",
+      "id": 199199,
+      "title": "020CRC : 'The, Media Cult'",
+      "author_nicks": [
+        {
+          "name": "CorneRCut",
+          "abbreviation": "CRC",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/31128/",
+            "id": 31128,
+            "name": "CorneRCut",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2002-10-03",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/1/",
+          "id": 1,
+          "name": "Windows"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/188171/",
+      "demozoo_url": "https://demozoo.org/productions/188171/",
+      "id": 188171,
+      "title": "23 Celsius",
+      "author_nicks": [
+        {
+          "name": "23 Celsius Crew",
+          "abbreviation": "23C",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/50875/",
+            "id": 50875,
+            "name": "23 Celsius Crew",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": null,
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/41/",
+          "id": 41,
+          "name": "Commodore 16/Plus 4"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/230307/",
+      "demozoo_url": "https://demozoo.org/productions/230307/",
+      "id": 230307,
+      "title": "24 Hour E Fix",
+      "author_nicks": [
+        {
+          "name": "Quartz",
+          "abbreviation": "QTZ",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/28507/",
+            "id": 28507,
+            "name": "Quartz",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1992-08",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/174679/",
+      "demozoo_url": "https://demozoo.org/productions/174679/",
+      "id": 174679,
+      "title": "32 Shades of Brown",
+      "author_nicks": [
+        {
+          "name": "iNSANE",
+          "abbreviation": "INS",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/610/",
+            "id": 610,
+            "name": "iNSANE",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2017-07-15",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/353958/",
+      "demozoo_url": "https://demozoo.org/productions/353958/",
+      "id": 353958,
+      "title": "40 Years Of Magic",
+      "author_nicks": [
+        {
+          "name": "Devilmarkus",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/50768/",
+            "id": 50768,
+            "name": "Devilmarkus",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2024-07-11",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/36/",
+          "id": 36,
+          "name": "Amstrad CPC"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/114121/",
+      "demozoo_url": "https://demozoo.org/productions/114121/",
+      "id": 114121,
+      "title": "64'er Langspieldiskette",
+      "author_nicks": [
+        {
+          "name": "The Works",
+          "abbreviation": "TW",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/50774/",
+            "id": 50774,
+            "name": "The Works",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1986",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "incomplete-credits"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/63660/",
+      "demozoo_url": "https://demozoo.org/productions/63660/",
+      "id": 63660,
+      "title": "64 Kb Chip Disk",
+      "author_nicks": [
+        {
+          "name": "Eclipse",
+          "abbreviation": "ECL",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/7987/",
+            "id": 7987,
+            "name": "Eclipse",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1996-03-03",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/338729/",
+      "demozoo_url": "https://demozoo.org/productions/338729/",
+      "id": 338729,
+      "title": "69 Positions (98%)",
+      "author_nicks": [
+        {
+          "name": "Vulture Design",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/23405/",
+            "id": 23405,
+            "name": "Vulture Design",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2005-08-28",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/365931/",
+      "demozoo_url": "https://demozoo.org/productions/365931/",
+      "id": 365931,
+      "title": "69 positions 100%",
+      "author_nicks": [
+        {
+          "name": "Vulture Design",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/23405/",
+            "id": 23405,
+            "name": "Vulture Design",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2006-12-27",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/281277/",
+      "demozoo_url": "https://demozoo.org/productions/281277/",
+      "id": 281277,
+      "title": "82 Ditties",
+      "author_nicks": [
+        {
+          "name": "Blues Muz'",
+          "abbreviation": "BM",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/7577/",
+            "id": 7577,
+            "name": "Blues Muz'",
+            "is_group": true
+          }
+        },
+        {
+          "name": "SHAPE",
+          "abbreviation": "SHP",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/947/",
+            "id": 947,
+            "name": "SHAPE",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2006-07-15",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "6581"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/233748/",
+      "demozoo_url": "https://demozoo.org/productions/233748/",
+      "id": 233748,
+      "title": "86 Musics",
+      "author_nicks": [
+        {
+          "name": "Analog",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/1513/",
+            "id": 1513,
+            "name": "Analog",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1991-06",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/371259/",
+      "demozoo_url": "https://demozoo.org/productions/371259/",
+      "id": 371259,
+      "title": "90s Rewind",
+      "author_nicks": [
+        {
+          "name": "Void",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/10054/",
+            "id": 10054,
+            "name": "Void",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2025-04-20",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "cdtv"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/179682/",
+      "demozoo_url": "https://demozoo.org/productions/179682/",
+      "id": 179682,
+      "title": "The 100 Most Remembered 64 Game-Tunes",
+      "author_nicks": [
+        {
+          "name": "Per Håkan Sundell",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/2976/",
+            "id": 2976,
+            "name": "PHS",
+            "is_group": false
+          }
+        },
+        {
+          "name": "Ron Birk",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/7740/",
+            "id": 7740,
+            "name": "Il Scuro",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/184902/",
+      "demozoo_url": "https://demozoo.org/productions/184902/",
+      "id": 184902,
+      "title": "101 - A Tribute to Depeche Mode",
+      "author_nicks": [
+        {
+          "name": "Nostalgia",
+          "abbreviation": "N0",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/16350/",
+            "id": 16350,
+            "name": "Nostalgia",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1998-02",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "depeche-mode"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/155187/",
+      "demozoo_url": "https://demozoo.org/productions/155187/",
+      "id": 155187,
+      "title": "00000101 Years C4",
+      "author_nicks": [
+        {
+          "name": "ChromeDemon",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/64572/",
+            "id": 64572,
+            "name": "ChromeDemon",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2002-08",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/7/",
+          "id": 7,
+          "name": "Linux"
+        },
+        {
+          "url": "https://demozoo.org/api/v1/platforms/1/",
+          "id": 1,
+          "name": "Windows"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/7945/",
+      "demozoo_url": "https://demozoo.org/productions/7945/",
+      "id": 7945,
+      "title": "128 Demo",
+      "author_nicks": [
+        {
+          "name": "Castor Cracking Group",
+          "abbreviation": "CCG",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/9114/",
+            "id": 9114,
+            "name": "Castor Cracking Group",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1987",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/2/",
+          "id": 2,
+          "name": "ZX Spectrum"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/7946/",
+      "demozoo_url": "https://demozoo.org/productions/7946/",
+      "id": 7946,
+      "title": "128 Music",
+      "author_nicks": [
+        {
+          "name": "Castor Cracking Group",
+          "abbreviation": "CCG",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/9114/",
+            "id": 9114,
+            "name": "Castor Cracking Group",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1987",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/2/",
+          "id": 2,
+          "name": "ZX Spectrum"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/7947/",
+      "demozoo_url": "https://demozoo.org/productions/7947/",
+      "id": 7947,
+      "title": "128 Music 2",
+      "author_nicks": [
+        {
+          "name": "Castor Cracking Group",
+          "abbreviation": "CCG",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/9114/",
+            "id": 9114,
+            "name": "Castor Cracking Group",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1987",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/2/",
+          "id": 2,
+          "name": "ZX Spectrum"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/279578/",
+      "demozoo_url": "https://demozoo.org/productions/279578/",
+      "id": 279578,
+      "title": "303bcnAnthems",
+      "author_nicks": [
+        {
+          "name": "Obsolete",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/107888/",
+            "id": 107888,
+            "name": "Obsolete",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2020-06-26",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/6/",
+          "id": 6,
+          "name": "Amiga AGA"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "ahx"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/73398/",
+      "demozoo_url": "https://demozoo.org/productions/73398/",
+      "id": 73398,
+      "title": "505's Blubbersongs",
+      "author_nicks": [
+        {
+          "name": "Paradox",
+          "abbreviation": "PDX",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/6088/",
+            "id": 6088,
+            "name": "Paradox",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2007-05-24",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/98496/",
+      "demozoo_url": "https://demozoo.org/productions/98496/",
+      "id": 98496,
+      "title": "604 Music Disk",
+      "author_nicks": [
+        {
+          "name": "Digitallusions",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/46699/",
+            "id": 46699,
+            "name": "Digitallusions",
+            "is_group": true
+          }
+        },
+        {
+          "name": "Digitronic",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/32209/",
+            "id": 32209,
+            "name": "Trideja",
+            "is_group": true
+          }
+        },
+        {
+          "name": "EuphoniX",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/46695/",
+            "id": 46695,
+            "name": "EuphoniX",
+            "is_group": true
+          }
+        },
+        {
+          "name": "Mistigris",
+          "abbreviation": "Mist",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/22737/",
+            "id": 22737,
+            "name": "Mistigris",
+            "is_group": true
+          }
+        },
+        {
+          "name": "Radiance",
+          "abbreviation": "RDC",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/46698/",
+            "id": 46698,
+            "name": "Radiance",
+            "is_group": true
+          }
+        },
+        {
+          "name": "Sonic Equinox",
+          "abbreviation": "SE",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/46697/",
+            "id": 46697,
+            "name": "Sonic Equinox",
+            "is_group": true
+          }
+        },
+        {
+          "name": "The Immortal Syndicate",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/46700/",
+            "id": 46700,
+            "name": "The Immortal Syndicate",
+            "is_group": true
+          }
+        },
+        {
+          "name": "the New Media Group",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/46694/",
+            "id": 46694,
+            "name": "the New Media Group",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1996-05-31",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/4/",
+          "id": 4,
+          "name": "MS-Dos"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/75171/",
+      "demozoo_url": "https://demozoo.org/productions/75171/",
+      "id": 75171,
+      "title": "The 700 Club",
+      "author_nicks": [
+        {
+          "name": "Mic",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/30473/",
+            "id": 30473,
+            "name": "Mic",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2010-07",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/34/",
+          "id": 34,
+          "name": "Nintendo SNES/Super FamiCom"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/375238/",
+      "demozoo_url": "https://demozoo.org/productions/375238/",
+      "id": 375238,
+      "title": "711 Music Collection 1.1",
+      "author_nicks": [
+        {
+          "name": "dEViLOCk",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/16044/",
+            "id": 16044,
+            "name": "dEViLOCk",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1991",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/3/",
+          "id": 3,
+          "name": "Commodore 64"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/227522/",
+      "demozoo_url": "https://demozoo.org/productions/227522/",
+      "id": 227522,
+      "title": "808 State: In Yer Face",
+      "author_nicks": [
+        {
+          "name": "Doctor QE",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/103172/",
+            "id": 103172,
+            "name": "Doctor QE",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1994",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/167976/",
+      "demozoo_url": "https://demozoo.org/productions/167976/",
+      "id": 167976,
+      "title": "808 State Remixes",
+      "author_nicks": [
+        {
+          "name": "Beatmaster",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/69019/",
+            "id": 69019,
+            "name": "Beatmaster",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1990-11",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/128034/",
+      "demozoo_url": "https://demozoo.org/productions/128034/",
+      "id": 128034,
+      "title": "0913",
+      "author_nicks": [
+        {
+          "name": "Live!",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/588/",
+            "id": 588,
+            "name": "Live!",
+            "is_group": true
+          }
+        },
+        {
+          "name": "Ultrasyd",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/6279/",
+            "id": 6279,
+            "name": "Ultrasyd",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2014-12-06",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/9/",
+          "id": 9,
+          "name": "Atari ST/E"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": [
+        "ste"
+      ]
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/228198/",
+      "demozoo_url": "https://demozoo.org/productions/228198/",
+      "id": 228198,
+      "title": "1492 - Conquest of Paradise",
+      "author_nicks": [
+        {
+          "name": "Acechan",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/103866/",
+            "id": 103866,
+            "name": "Acechan",
+            "is_group": false
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1993-12-01",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/228448/",
+      "demozoo_url": "https://demozoo.org/productions/228448/",
+      "id": 228448,
+      "title": "The 1992 Dance Remix",
+      "author_nicks": [
+        {
+          "name": "ERM",
+          "abbreviation": "",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/104253/",
+            "id": 104253,
+            "name": "ERM",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1992-12-24",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/5/",
+          "id": 5,
+          "name": "Amiga OCS/ECS"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/217270/",
+      "demozoo_url": "https://demozoo.org/productions/217270/",
+      "id": 217270,
+      "title": "The 1995 Happy Hardcore Remix",
+      "author_nicks": [
+        {
+          "name": "Overlords",
+          "abbreviation": "OVL",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/62892/",
+            "id": 62892,
+            "name": "Overlords",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "1995",
+      "supertype": "production",
+      "platforms": [
+        {
+          "url": "https://demozoo.org/api/v1/platforms/6/",
+          "id": 6,
+          "name": "Amiga AGA"
+        }
+      ],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    },
+    {
+      "url": "https://demozoo.org/api/v1/productions/163313/",
+      "demozoo_url": "https://demozoo.org/productions/163313/",
+      "id": 163313,
+      "title": "1999: An .XM Odyssey - The Year We Lost Contact",
+      "author_nicks": [
+        {
+          "name": "Mistigris",
+          "abbreviation": "Mist",
+          "releaser": {
+            "url": "https://demozoo.org/api/v1/releasers/22737/",
+            "id": 22737,
+            "name": "Mistigris",
+            "is_group": true
+          }
+        }
+      ],
+      "author_affiliation_nicks": [],
+      "release_date": "2016-09-19",
+      "supertype": "production",
+      "platforms": [],
+      "types": [
+        {
+          "url": "https://demozoo.org/api/v1/production_types/7/",
+          "id": 7,
+          "name": "Musicdisk",
+          "supertype": "production"
+        }
+      ],
+      "tags": []
+    }
+  ]
+}

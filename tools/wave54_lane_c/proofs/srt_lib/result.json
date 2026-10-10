@@ -1,0 +1,67 @@
+{
+  "tool": "srt (cdown/srt)",
+  "version": "3.5.3",
+  "license": "MIT (GitHub API spdx_id, 2026-10-08)",
+  "source": "/home/hatch/workspace/agent-ops/wave54-lanes/w54c/tools/wave53_lane_c/proofs/subtitle_stage/vo_line.srt",
+  "cues": 22,
+  "words": 22,
+  "caption_span": [
+    "0:00:00",
+    "0:00:07.320000"
+  ],
+  "shift_ms": 500,
+  "checks": [
+    {
+      "name": "parse 22 cues",
+      "pass": true,
+      "detail": "n=22"
+    },
+    {
+      "name": "compose round-trip byte-equal",
+      "pass": true,
+      "detail": "867 bytes"
+    },
+    {
+      "name": "cues monotonic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "cues inside 7.825s audio",
+      "pass": true,
+      "detail": "span 0:00:00 .. 0:00:07.320000"
+    },
+    {
+      "name": "22 words total",
+      "pass": true,
+      "detail": "words=22"
+    },
+    {
+      "name": "first cue shifted exactly +500ms",
+      "pass": true,
+      "detail": "0:00:00 -> 0:00:00.500000"
+    },
+    {
+      "name": "last cue shifted exactly +500ms",
+      "pass": true,
+      "detail": "0:00:07.320000 -> 0:00:07.820000"
+    },
+    {
+      "name": "shifted file re-parses",
+      "pass": true,
+      "detail": "n=22"
+    },
+    {
+      "name": "shifted timing matches",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "compose deterministic",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "checks_passed": 10,
+  "checks_total": 10
+}

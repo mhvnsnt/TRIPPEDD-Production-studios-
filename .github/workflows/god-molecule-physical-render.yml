@@ -15,6 +15,8 @@ on:
     paths:
       - "tools/character/**"
       - "tools/environment/**"
+      - "scripts/verify_image_artifact.py"
+      - "scripts/verify_image_artifact_test.py"
       - "config/god_molecule_trippedd_bridge.json"
       - "config/god_molecule_asset_registry.json"
       - "config/opensource_production_stack.json"
@@ -43,6 +45,11 @@ jobs:
           git lfs pull || true
           python3 -m pip install --user gdown opentimelineio
 
+      - name: Test image artifact verifier adversarially
+        run: |
+          set -euxo pipefail
+          python3 scripts/verify_image_artifact_test.py
+
       - name: Provision optional OSS Python APIs
         run: |
           set -uo pipefail
@@ -50,9 +57,14 @@ jobs:
           : > .artifacts/evidence/oss-python-install.log
           for package in OpenImageIO PyOpenColorIO MaterialX openassetio; do
             echo "=== $package ===" | tee -a .artifacts/evidence/oss-python-install.log
+            set +e
             python3 -m pip install --user "$package" 2>&1 | tee -a .artifacts/evidence/oss-python-install.log
             status=${PIPESTATUS[0]}
+            set -e
             echo "exit=$status" | tee -a .artifacts/evidence/oss-python-install.log
+            if [ "$status" -ne 0 ]; then
+              echo "OPTIONAL_OSS_PACKAGE_UNAVAILABLE: $package (continuing; this must not block Blender/oral work)" | tee -a .artifacts/evidence/oss-python-install.log
+            fi
           done
 
       - name: Install portable Blender
@@ -69,6 +81,25 @@ jobs:
           set -euxo pipefail
           mkdir -p .artifacts/evidence
           python3 tools/environment/probe_oss_stack.py | tee .artifacts/evidence/oss-capability-probe.log
+
+      - name: Resolve OSS runtime capability contract
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/evidence
+          OSS_RUNTIME_CONTRACT="$PWD/.artifacts/evidence/oss_runtime_contract.json" \
+            python3 tools/environment/oss_runtime_contract.py | tee .artifacts/evidence/oss-runtime-contract.log
+          test -s .artifacts/evidence/oss_runtime_contract.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('.artifacts/evidence/oss_runtime_contract.json')
+          data = json.loads(p.read_text())
+          assert data['fail_closed'] is True
+          assert data['evidence_status'] == 'NOT_ATTEMPTED'
+          assert data['policy']['capability_presence_is_not_evidence'] is True
+          print('OSS_RUNTIME_CONTRACT: VERIFIED_CAPABILITY_ONLY')
+          print(json.dumps(data['summary'], indent=2))
+          PY
 
       - name: Retrieve public Drive production folder
         env:
@@ -124,6 +155,16 @@ jobs:
           stat -c 'MARS_BYTES=%s' "$MARS_PATH" | tee .artifacts/evidence/mars.size.txt
           echo "MARS_CANONICAL: VERIFIED"
 
+      - name: Recover broad MARS oral skin artifacts (review only)
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/god-molecule/mars-oral-artifact-recovery
+          bash tools/character/run_mars_oral_artifact_recovery.sh \
+            assets/rigs/MARS_FACE.blend \
+            renders/_rig_measure/mouth_anatomy.json \
+            assets/variants/MARS_FACE_ORAL_SKIN_RECOVERY_REVIEW.blend \
+            .artifacts/god-molecule/mars-oral-artifact-recovery
+
       - name: Execute first God Molecule creative shot
         run: |
           set -euo pipefail
@@ -138,6 +179,37 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/environment/verify_creative_final.py .artifacts/god-molecule/first-shot | tee .artifacts/evidence/first-shot-receipt.log
+
+      - name: Inspect exact rendered frames with OIIO
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/evidence/image-inspection
+          for frame in .artifacts/god-molecule/first-shot/frames/frame_*.png; do
+            [ -f "$frame" ] || continue
+            name=$(basename "$frame" .png)
+            python3 scripts/verify_image_artifact.py --image "$frame" > ".artifacts/evidence/image-inspection/${name}.json"
+            python3 - <<PY
+          import json
+          from pathlib import Path
+          p = Path('.artifacts/evidence/image-inspection/${name}.json')
+          data = json.loads(p.read_text())
+          assert data['evidence_status'] == 'NOT_ATTEMPTED'
+          assert data['policy']['inspection_is_not_production_approval'] is True
+          print('IMAGE_ARTIFACT_INSPECTION: PASS ${name}', data['backend'])
+          PY
+          done
+
+      - name: Validate OCIO configuration when explicitly supplied
+        if: ${{ env.OCIO != '' }}
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          mkdir -p .artifacts/evidence/ocio
+          if command -v ociocheck >/dev/null 2>&1; then
+            ociocheck --iconfig "$OCIO" | tee .artifacts/evidence/ocio/ociocheck.log
+          else
+            echo "OCIO_CHECK: NOT_AVAILABLE" | tee .artifacts/evidence/ocio/ociocheck.log
+          fi
 
       - name: Execute oral repair and aperture survey
         if: ${{ inputs.run_oral != 'false' }}

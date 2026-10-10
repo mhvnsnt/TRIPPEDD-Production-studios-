@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-08",
+  "cycle": 7,
+  "rows": {
+    "31": {
+      "tool": "Blender VSE",
+      "source": "https://www.blender.org/about/license/",
+      "http": 200,
+      "source_gpl2_or_later_mentioned": true,
+      "binary_gpl3_mentioned": false,
+      "notes": "blender.org license page reachable; binary-vs-source split claimed prior waves"
+    },
+    "32": {
+      "repo": "chaiNNer-org/chaiNNer",
+      "api": {
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/chaiNNer-org/chaiNNer",
+        "license": "GPL-3.0",
+        "owner": "chaiNNer-org",
+        "pushed_at": "2026-10-01T02:26:42Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/chaiNNer-org/chaiNNer/main/LICENSE",
+      "license_text_snippet": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim ",
+      "expected_spdx": "GPL-3.0",
+      "expected_snippet_found": false
+    },
+    "37": {
+      "repo": "KDE/kdenlive",
+      "api": {
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/KDE/kdenlive",
+        "license": "GPL-3.0",
+        "owner": "KDE",
+        "pushed_at": "2026-10-08T07:12:10Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/KDE/kdenlive/master/COPYING",
+      "license_text_snippet": "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007  Copyright \u00a9 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies of this license document, but changing i",
+      "expected_spdx": "GPL-3.0",
+      "expected_snippet_found": false
+    },
+    "39": {
+      "repo": "LibreSprite/LibreSprite",
+      "api": {
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/LibreSprite/LibreSprite",
+        "license": "GPL-2.0",
+        "owner": "LibreSprite",
+        "pushed_at": "2026-10-04T12:53:27Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/LibreSprite/LibreSprite/master/LICENSE.txt",
+      "license_text_snippet": "                    GNU GENERAL PUBLIC LICENSE                        Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.,  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA  Everyone ",
+      "expected_spdx": "GPL-2.0",
+      "expected_snippet_found": false
+    },
+    "40": {
+      "repo": "salsaman/LiVES",
+      "api": {
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/salsaman/LiVES",
+        "license": "GPL-3.0",
+        "owner": "salsaman",
+        "pushed_at": "2024-08-18T20:48:40Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/salsaman/LiVES/master/COPYING",
+      "license_text_snippet": " \t\t    GNU GENERAL PUBLIC LICENSE \t\t       Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this license docu",
+      "expected_spdx": "GPL-3.0",
+      "expected_snippet_found": false
+    },
+    "50": {
+      "repo": "Wicklets/wick-editor",
+      "api": {
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/Wicklets/wick-editor",
+        "license": "GPL-3.0",
+        "owner": "Wicklets",
+        "pushed_at": "2023-03-06T16:32:41Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/Wicklets/wick-editor/master/LICENSE",
+      "license_text_snippet": "HTTP 404",
+      "expected_spdx": "GPL-3.0",
+      "expected_snippet_found": false
+    },
+    "51": {
+      "repo": "GradientGamer-XD/goo-engine",
+      "api": {
+        "archived": false,
+        "fork": true,
+        "html_url": "https://github.com/GradientGamer-XD/goo-engine",
+        "license": "NOASSERTION",
+        "owner": "GradientGamer-XD",
+        "pushed_at": "2026-06-03T01:06:03Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/GradientGamer-XD/goo-engine/master/COPYING",
+      "license_text_snippet": "Blender uses the GNU General Public License, which describes the rights to distribute or change the code.   Please read this file for the full license. doc/license/GPL-license.txt  Apart from the GNU GPL, Blender is not ",
+      "expected_spdx": null,
+      "expected_snippet_found": true
+    },
+    "41": {
+      "repo": "OHF-Voice/piper1-gpl",
+      "api": {
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/OHF-Voice/piper1-gpl",
+        "license": "GPL-3.0",
+        "owner": "OHF-Voice",
+        "pushed_at": "2026-10-06T21:23:53Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/OHF-Voice/piper1-gpl/main/LICENSE",
+      "license_text_snippet": "HTTP 404",
+      "expected_spdx": "GPL-3.0",
+      "expected_snippet_found": false
+    },
+    "33": {
+      "tool": "Cinelerra-GG Infinity",
+      "site": "https://cinelerra-gg.org/",
+      "http": "ERR HTTPSConnectionPool(host='www.cinelerra-gg.org', port=443): Max retries exceeded with url: /en (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "final_url": "https://cinelerra-gg.org/",
+      "license_note": "upstream manual appendix Features5.pdf \u00a7D: codebase licensed GPLv2+"
+    },
+    "36": {
+      "tool": "Inkscape",
+      "canonical": "gitlab.com/inkscape/inkscape",
+      "copying_url": "https://gitlab.com/inkscape/inkscape/-/raw/main/COPYING",
+      "copying_head": "HTTP 404"
+    }
+  },
+  "drift_watch": {
+    "helm": {
+      "repo": "mtytel/helm",
+      "archived": true,
+      "fork": false,
+      "html_url": "https://github.com/mtytel/helm",
+      "license": "GPL-3.0",
+      "owner": "mtytel",
+      "pushed_at": "2022-09-24T04:23:20Z"
+    },
+    "telxcc": {
+      "repo": "kanongil/telxcc",
+      "archived": true,
+      "fork": false,
+      "html_url": "https://github.com/kanongil/telxcc",
+      "license": "NOASSERTION",
+      "owner": "kanongil",
+      "pushed_at": "2025-09-20T11:29:10Z"
+    },
+    "mkvtoolnix": {
+      "codeberg": "https://codeberg.org/mbunkus/mkvtoolnix",
+      "http": 200,
+      "final_url": "https://codeberg.org/mbunkus/mkvtoolnix"
+    }
+  },
+  "followup": {
+    "50_wick": "LICENSE.md (not LICENSE) on master = GPL v3 29 June 2007 text; file-name corrected",
+    "41_piper1-gpl": "COPYING on main = GPL v3 29 June 2007 text; supersede pointer (row 41 -> row 20) intact",
+    "36_inkscape": "GitLab default branch is master; COPYING = 'Most Inkscape source code is available under the GNU General Public License, version 2 or later.'",
+    "31_blender": "page confirms 'GNU GPL Version 2 or later' (source) + binaries 'compatible under the newer [GPL v3 or later]'",
+    "33_cinelerra": "site 200 (https://www.cinelerra-gg.org/en), git repo 200; manual Features5.pdf text not independently re-fetched (JS-rendered site); GPLv2+ citation carried forward from official manual appendix",
+    "telxcc_license_api": "GitHub API license field now NOASSERTION (detection drift); raw LICENSE boilerplate 'either version 2 of the License, or (at your option) any later version' still present -> GPL-2.0-or-later stands, no relicense"
+  }
+}

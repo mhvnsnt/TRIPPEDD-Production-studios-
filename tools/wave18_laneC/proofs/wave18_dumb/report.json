@@ -1,0 +1,20 @@
+{
+  "tool": "DUMB (Dynamic Universal Music Bibliotheque) \u2014 kode54/dumb, custom permissive (zlib-style)",
+  "catalog": "#### DUMB (Dynamic Universal Music Bibliotheque)",
+  "built": "cmake -DBUILD_EXAMPLES=OFF -DBUILD_ALLEGRO4=OFF (Allegro4 absent on VM; examples need argtable2, absent) -> libdumb.a",
+  "wiring": "tools/wave18_laneC/dumb_mod2wav/mod2wav.c \u2014 minimal renderer using dumb_load_any + duh_render_int; requires dumb_register_stdfiles() first (filesystem-agnostic design; segfault without it, found via ASan)",
+  "input": "tools/wave18_laneC/dumb_mod2wav/make_smoke_mod.py \u2014 synthesizes a valid ProTracker M.K. MOD (2 patterns, 4 channels, C-major arpeggio) so the fixture is license-clean",
+  "proof": {
+    "smoke.mod": {
+      "bytes": 3196,
+      "sha256": "53665fe9b4ba2a93fff824f989c7fb70ae2ac44dd2c56e0e49c54e86cfc80930"
+    },
+    "proof.wav": {
+      "bytes": 2116844,
+      "sha256": "97743f78d10b1defbb218992928f7447750a667db7bbbc93f2f2aac6f3f04313"
+    }
+  },
+  "verification": "ffprobe: pcm_s16le 44100Hz stereo 12.000s; PCM analysis RMS=674.0 peak=13595 -> non-silent, real module audio",
+  "notes": "dumbout.c example was not built (needs argtable2); wrote own renderer instead. 2.1MB WAV is the largest proof file, under the 100MB rule.",
+  "wave": "Wave 18 Lane C (2026-10-07)"
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "trippedd.mars-facial-linework/v1",
+  "character": "Mars",
+  "status": "P0_CANONICAL_BINARIES_PRESENT",
+  "purpose": "Authoritative front-facing linework plates for eye / brow / eyelid / nostril placement",
+  "color_legend": {
+    "red": "eyebrow line",
+    "yellow": "UPPER eyelid margin  AND (lower on the face) the nostril rims",
+    "green": "LOWER eyelid margin",
+    "note": "yellow means two different features. They are separated by the widest gap in their own vertical spread, never by a hardcoded row. Pure #00FF00 in the border band is the registration mark burned in by annotation_base.py, not a drawn mark."
+  },
+  "plates": [
+    {
+      "id": "mars_linework_front_close",
+      "path": "assets/references/mars_facial_linework/mars_linework_front_close.png",
+      "view": "frontal_close",
+      "annotations": [
+        "brows",
+        "eyelids",
+        "nostrils"
+      ],
+      "sha256": "3e6558fa0bc23b1750a92c8bc23163ac9790db2e744e89609d984169c849fcd0",
+      "bytes": 2333054,
+      "resolution": [
+        1600,
+        1600
+      ],
+      "present": true,
+      "invertible": true,
+      "camera": "orthographic, aligned to his measured head frame; the exact basis and framing are reproduced by tools/character/face_plate.py, and the registration marks prove the returned plate was not cropped or rescaled",
+      "extracted": "renders/_rig_measure/linework.json"
+    },
+    {
+      "id": "mars_linework_front_full",
+      "path": "assets/references/mars_facial_linework/mars_linework_front_full.png",
+      "view": "frontal_full_head",
+      "annotations": [
+        "brows",
+        "eyelids",
+        "nostrils",
+        "third_eye_emblem"
+      ],
+      "sha256": "93bb563dde9564f56e3b804030f1c676a73327aaadce3edf7bb7bb6f1b525761",
+      "bytes": 2186614,
+      "resolution": [
+        1600,
+        1600
+      ],
+      "present": true,
+      "invertible": false,
+      "camera": "world-front ortho on an earlier plate; kept as reference, NOT invertible (the head rests pitched ~32.6 deg back, so this view is from below)"
+    }
+  ],
+  "agent_instruction": "Do not claim these plates are missing. This directory + index is the discoverability surface. Use these before any facial measurement or Blender facial authority work.",
+  "related": [
+    "assets/donor/gnm_eyes/",
+    "assets/donor/gnm_face/",
+    "assets/donor/facs/",
+    "assets/rigs/MARS_face_state.json",
+    "assets/rigs/face_validation.json"
+  ],
+  "updated": "2026-09-12",
+  "finding": {
+    "headline": "MediaPipe's FaceLandmarker misfits THIS face by one feature vertically.",
+    "measured": "Run directly on the clean plate: its eyebrow ring lands on his EYES, its eyelid rings land on his CHEEKS, its nose_alar ring lands on his UPPER LIP.",
+    "consequence": "renders/_rig_measure/canonical_fit.json was built from those landmarks, so it inherits the same error -- and reported a 0.0000 mm residual while doing so, because a perfect warp onto anchors that sit on the wrong features is a perfect fit to the wrong question.",
+    "worstDisagreementMM": 38.9,
+    "authority": "These owner-drawn plates supersede canonical_fit.json for eyelid, eyebrow and nostril placement. OWNER LAW #5: what he draws is the observation."
+  },
+  "tools": {
+    "render_a_new_plate": "vendor/blender/blender -b -P tools/character/annotation_base.py --",
+    "read_his_marks_back": "./.trippedd_venv/bin/python tools/character/ingest_linework.py",
+    "shared_plate_geometry": "tools/character/face_plate.py"
+  }
+}

@@ -1,0 +1,2 @@
+decoded: w=256 h=128 channels_in=3 forced=3
+wrote decoded.ppm + decoded.bmp

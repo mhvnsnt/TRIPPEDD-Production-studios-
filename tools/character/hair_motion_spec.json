@@ -1,0 +1,44 @@
+{
+  "schema": "trippedd.mars-hair-motion/v1",
+  "character": "MARS",
+  "status": "QUEUED",
+  "authority": "assets/source_models/MARS_source.glb",
+  "policy": {
+    "preserve_render_surface": true,
+    "no_global_remesh": true,
+    "no_texture_rebake": true,
+    "deformation": "non_destructive",
+    "primary_motion": "bone_or_shape_key",
+    "secondary_motion": "blender_simulation_or_controlled_spring",
+    "collision": "head_surface",
+    "self_collision": "required_for_dense_locks",
+    "visual_proof": "multi_frame_sequence_required"
+  },
+  "lanes": [
+    {
+      "name": "scalp_roots",
+      "status": "PENDING"
+    },
+    {
+      "name": "dreadlocks",
+      "status": "PENDING"
+    },
+    {
+      "name": "tips",
+      "status": "PENDING"
+    },
+    {
+      "name": "ear_clearance",
+      "status": "PENDING"
+    }
+  ],
+  "gates": [
+    "source_mesh_identity",
+    "uv_material_preservation",
+    "root_attachment",
+    "head_collision",
+    "tip_secondary_motion",
+    "multi_angle_render"
+  ],
+  "evidence": "docs/agent-evidence/README.md"
+}

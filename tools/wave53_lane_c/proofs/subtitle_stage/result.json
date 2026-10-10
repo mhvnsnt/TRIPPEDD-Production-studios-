@@ -1,0 +1,42 @@
+{
+  "tool": "faster-whisper",
+  "upstream_license": "MIT",
+  "wire_script_license": "MIT",
+  "model": "whisper-tiny (OpenAI weights, MIT)",
+  "input": "/home/hatch/workspace/agent-ops/wave53-lanes/w53c/tools/wave52_lane_c/proofs/audio_mastering/master_podcast_16lufs_stereo.wav",
+  "input_duration_s": 7.825,
+  "ground_truth_line": "Ladies and gentlemen, the streets are watching tonight. Two fighters step into the alley, and only one walks out with the crown.",
+  "hypothesis": " Ladies  and  gentlemen,  the  streets  are  watching  tonight.  Two  fighters  step  into  the  alley  and  only  one  walks  out  with  the  crown.",
+  "wer": 0.0,
+  "language": "en",
+  "language_probability": 1.0,
+  "n_segments": 2,
+  "n_words": 22,
+  "timing_coverage_s": [
+    0.0,
+    7.32
+  ],
+  "model_load_s": 3.01,
+  "decode_s": 2.11,
+  "mux": {
+    "mp4": "deliverable_subtitled.mp4",
+    "mux_ok": true,
+    "streams": "stream,aac,audio\nstream,mov_text,subtitle",
+    "subtitle_present": true,
+    "roundtrip_cues_equal": true
+  },
+  "checks": {
+    "segments>0": true,
+    "words>0": true,
+    "language_en": true,
+    "wer<=0.15": true,
+    "word_timings_monotonic": true,
+    "timings_in_audio_bounds": true,
+    "coverage_within_audio": true,
+    "mux_ok": true,
+    "subtitle_track_present": true,
+    "subtitle_roundtrip_cues_equal": true,
+    "determinism_two_runs_identical": true
+  },
+  "PASS": true
+}

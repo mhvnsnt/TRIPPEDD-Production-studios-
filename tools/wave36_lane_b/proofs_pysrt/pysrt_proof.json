@@ -1,0 +1,31 @@
+{
+  "tool": "pysrt",
+  "tool_version": "1.1.2 (PyPI)",
+  "tool_license": "GPL-3.0 \u2014 QUARANTINE row 94; exercised ONLY as a standalone tool (quarantine framing: standalone tool use / research only, never linked into shipping paths)",
+  "input": {
+    "url": "https://raw.githubusercontent.com/byroot/pysrt/master/tests/static/utf-8.srt",
+    "path": "utf-8.srt",
+    "bytes": 92640,
+    "note": "real .srt from pysrt's own upstream test fixtures (French subtitle file, AllSubs.org provenance)"
+  },
+  "parse": {
+    "subtitles": 1332,
+    "first_start": "00:00:01,000",
+    "first_end": "00:00:04,000",
+    "last_start": "01:37:19,634",
+    "span_s": 5848.634,
+    "total_text_chars": 43429
+  },
+  "round_trip": {
+    "reemitted": "utf-8_reemitted.srt",
+    "reparsed_count": 1332,
+    "lossless": true
+  },
+  "shift": {
+    "delta_ms": 2000,
+    "verified_all": true,
+    "file": "utf-8_shifted_plus2s.srt",
+    "first_start_after": "00:00:03,000"
+  },
+  "ran": "2026-10-08"
+}

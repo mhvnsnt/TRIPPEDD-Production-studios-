@@ -1,0 +1,83 @@
+[
+  {
+    "layer": 0,
+    "start": 0.5,
+    "end": 2.5,
+    "style": "Default",
+    "name": "",
+    "margin": {
+      "left": 10,
+      "right": 10,
+      "vertical": 10
+    },
+    "effect": null,
+    "alignment": 2,
+    "slices": [
+      {
+        "style": "Default",
+        "fragments": [
+          {
+            "tag": {},
+            "text": "The council does not explain itself.",
+            "drawing": null
+          }
+        ]
+      }
+    ],
+    "q": 2
+  },
+  {
+    "layer": 0,
+    "start": 3,
+    "end": 4.5,
+    "style": "Default",
+    "name": "",
+    "margin": {
+      "left": 10,
+      "right": 10,
+      "vertical": 10
+    },
+    "effect": null,
+    "alignment": 2,
+    "slices": [
+      {
+        "style": "Default",
+        "fragments": [
+          {
+            "tag": {},
+            "text": "It declares.",
+            "drawing": null
+          }
+        ]
+      }
+    ],
+    "q": 2
+  },
+  {
+    "layer": 0,
+    "start": 5,
+    "end": 7,
+    "style": "Default",
+    "name": "",
+    "margin": {
+      "left": 10,
+      "right": 10,
+      "vertical": 10
+    },
+    "effect": null,
+    "alignment": 2,
+    "slices": [
+      {
+        "style": "Default",
+        "fragments": [
+          {
+            "tag": {},
+            "text": "And the street listens.",
+            "drawing": null
+          }
+        ]
+      }
+    ],
+    "q": 2
+  }
+]

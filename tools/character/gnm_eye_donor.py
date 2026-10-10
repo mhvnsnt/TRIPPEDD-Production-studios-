@@ -35,6 +35,38 @@ if not os.path.exists(NPZ):
 d = np.load(NPZ, allow_pickle=True)
 V = d["template_vertex_positions"].astype(np.float64)
 TRIS = d["triangles"].astype(np.int64)
+# Globe width as a multiple of the measured fissure, and how far back it is
+# seated as a fraction of its own diameter. Swept and measured, not chosen:
+# tools/character/sweep_eye_fit.sh reports the socket showing through the
+# aperture for each pair.
+NO_PAINTED = "--no-painted" in argv   # fall back to the contour centroid
+# AN EYEBALL IS 24 mm AND IT DOES NOT BULGE OUT OF A FACE.
+# Owner: "you kinda have the eyeballs kind of, like, bulging... the eyes are too
+# big and round at rest". Correct, and it was a bad trade I made: the aperture
+# sweep showed socket at the canthi, so I inflated the globe to x1.20 (33 mm)
+# and pushed it FORWARD until it plugged the cut. A sphere pushed through a
+# 6.5 mm slit protrudes past the lid margins, and lids cannot occlude something
+# that sticks out in front of them -- which is exactly the big round look.
+#   FILL 0.835 -> 24.0 mm, the real thing, through his measured 28.7 mm fissure.
+#   SEAT 0.46  -> the corneal apex sits at the lid plane, not in front of it.
+# The socket that then shows at the inner corners is NOT a hole to be plugged.
+# The inner canthus of a real eye IS dark tissue. It is coloured as such rather
+# than papered over with more sphere.
+#
+# (kept for the record) The earlier grid search over scale, depth and height --
+
+# globe scale, depth and height (96 combinations, each re-swept with 325 rays
+# through the actual cut) says the hole is closed by DEPTH, not by size:
+# every entry at -0.45 of the globe radius forward reads 0% socket, down to
+# scale x1.05. Size only buys coverage once the hole is already shut.
+#   as built   x1.04 seat 0.30  ->  hole 16.3% / 10.2%
+#   chosen     x1.20 seat 0.125 ->  hole  0.0% /  0.0%, 87-90% backed by globe
+# The middle of the zero-hole band, so the globe stays near anatomical size
+# instead of being inflated until it plugs the cut.
+FILL = float(opt("--fill", "0.835"))
+SEAT = float(opt("--seat", "0.46"))          # kept for --no-derived-seat callers
+# A real cornea stands slightly proud of the lid margin. 1.5 mm, in his units.
+CORNEA_PROUD = float(opt("--cornea-proud-mm", "1.5")) * (0.1930 / 50.0)
 names = [str(x) for x in d["vertex_group_names"]]
 vg = d["vertex_groups"]
 def group(n): return np.where(vg[names.index(n)] > 0.5)[0]
@@ -60,6 +92,27 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     ez = np.cross(ex, ey); ez /= np.linalg.norm(ez)
     Mm = np.stack([ex, ey, ez], axis=1)                      # local -> world
 
+    # SEAT ON THE MODEL'S OWN EYE, NOT ON THE CONTOUR CENTROID.
+    # The lid contour is a detector's opinion about where a lid margin runs, and
+    # its centroid sits wherever his lids happen to be asymmetric. The SCAN
+    # knows better: his eyes are PAINTED INTO THE TEXTURE, so the painted sclera
+    # is his own eye at his own position. Measured by measure_painted_eyes.py:
+    #   eye L  painted centre is +4.4 mm ABOVE the contour centroid
+    #   eye R  painted centre is +2.7 mm ABOVE it
+    # Every pass has seated the globes that far low, which is exactly what the
+    # owner reported. Lateral and vertical come from the painted eye; DEPTH
+    # stays with the ring, because a patch painted on the surface says nothing
+    # about how far behind it the globe sits.
+    _pe = os.path.abspath("renders/_rig_measure/painted_eyes.json")
+    if os.path.exists(_pe) and not NO_PAINTED:
+        _pj = json.load(open(_pe))["eyes"].get("eye_%s" % side)
+        if _pj:
+            _d = np.array(_pj["centre"], float) - centre_m
+            _lateral = _d - float(np.dot(_d, ey)) * ey       # drop the depth part
+            centre_m = centre_m + _lateral
+            print("eye %s: seated on the PAINTED eye, %+.1f mm off the contour centroid"
+                  % (side, float(np.linalg.norm(_lateral)) / (0.1930 / 50.0)))
+
     # ── the donor eye ───────────────────────────────────────────────────────
     idx = group(comp)
     keep = np.zeros(len(V), bool); keep[idx] = True
@@ -69,11 +122,17 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     P = V[used]
     centre_g = P.mean(0)
 
-    # An eyeball is about 80% of the palpebral fissure across -- a measured
-    # proportion, not a sphere dropped at a bounding-box fraction. Scale on the
-    # DONOR EYEBALL's own diameter so the iris lands at the right size too.
-    diam_g = float(np.linalg.norm(P.max(0) - P.min(0)))
-    S = (fissure_m * 0.80) / diam_g
+    # THE BALL MUST FILL THE APERTURE. 0.80 of the fissure was the textbook
+    # ratio and it rendered as a wound: 20% of the cut was not covered by
+    # eyeball, so the dark socket showed as a rim around each eye. A lid margin
+    # wraps the globe -- the fissure is a WINDOW ONTO the ball, never a hole
+    # wider than it. 1.04 leaves the lids overlapping the sclera everywhere.
+    # DIAMETER, not the bbox DIAGONAL. np.linalg.norm(max-min) is sqrt(3) times
+    # the diameter for a sphere, so scaling by it built every globe 1.73x too
+    # small -- which is why a socket rim kept showing however the ball was
+    # seated, and why three passes of moving it never fixed anything.
+    diam_g = float((P.max(0) - P.min(0)).max())
+    S = (fissure_m * FILL) / diam_g
 
     UP_G = np.array([0.0, 1.0, 0.0]); INTO_G = np.array([0.0, 0.0, -1.0])
     Mg = np.stack([np.cross(INTO_G, UP_G), INTO_G, UP_G], axis=1)
@@ -81,7 +140,24 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
     W = (local * S) @ Mm.T + centre_m
     # Seat it so its front pole sits just behind the lid plane rather than
     # bulging through the skin.
-    W = W + ey * (fissure_m * 0.80 * 0.34)
+    # Seat it only just behind the lid plane. At 0.34 of the radius the globe
+    # sat too deep and the lower lid margin outran it, leaving a dark crescent
+    # under each eye that reads as a wound rather than an eye.
+    # SEAT DERIVED PER EYE, FROM HIS OWN LID RING.
+    # A shared SEAT fraction cannot be right for both eyes: measured, the most
+    # FORWARD point of the lid ring sits 3.3 mm in front of its centroid on the
+    # left and only 1.7 mm on the right, so one constant either sinks one globe
+    # (socket showing through 35% of the aperture) or bulges the other. Put the
+    # corneal apex a real 1.5 mm proud of the lid margin on EACH eye and the
+    # depth follows from geometry instead of a knob.
+    _R = float(max(W.max(0) - W.min(0))) * 0.5
+    _ring_fwd = float(((ring - centre_m) @ ey).min())      # -ve = in front
+    _push = _R + _ring_fwd - CORNEA_PROUD
+    W = W + ey * _push
+    print("eye %s: globe %.1f mm · ring front %+.1f mm · seated %+.1f mm back "
+          "(apex %.1f mm proud of the margin)"
+          % (side, _R * 2 / (0.1930 / 50.0), _ring_fwd / (0.1930 / 50.0),
+             _push / (0.1930 / 50.0), CORNEA_PROUD / (0.1930 / 50.0)))
 
     cls = np.zeros(len(used), np.int32)      # 0 sclera
     for ci, gname in ((1, "irises"), (2, "pupils")):
@@ -99,8 +175,17 @@ for side, comp in (("L", "left_eye"), ("R", "right_eye")):
         "marsEyeCentre": [round(float(c), 5) for c in centre_m],
         "fissureWidth": round(fissure_m, 5), "lidOpening": round(opening_m, 5),
         "aspect": round(opening_m / fissure_m, 3),
-        "eyeballDiameter": round(float(diam_g * S), 5),
-        "scale": round(S, 6),
+        # RECORD WHAT WAS WRITTEN, NOT WHAT WAS INTENDED.
+        # diam_g * S is the diameter this SHOULD come out at, measured in GNM's
+        # own orientation. The eye is not a sphere, so after rotating it into
+        # Mars's eye frame the extent is not identical -- 0.1154 intended vs
+        # 0.1114 exported. A manifest that states the intent cannot be used to
+        # detect a stale mesh, which is exactly what it was needed for.
+        "eyeballDiameter": round(float(max(W.max(0) - W.min(0))), 5),
+        "eyeballDiameterIntended": round(float(diam_g * S), 5),
+        "eyeballDiameterMM": round(float(max(W.max(0) - W.min(0))) / (0.1930 / 50.0), 1),
+        "globeOverFissure": round(float(max(W.max(0) - W.min(0))) / fissure_m, 3),
+        "scale": round(S, 6), "fill": FILL, "seat": SEAT,
         "parts": {"sclera": int((cls == 0).sum()), "iris": int((cls == 1).sum()),
                   "pupil": int((cls == 2).sum())},
     }

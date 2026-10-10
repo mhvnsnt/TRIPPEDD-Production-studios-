@@ -292,6 +292,62 @@
       "status": "CANDIDATE",
       "license": "verify upstream notices before promotion",
       "integration": "reference solver for differential MediaPipe-to-GNM mouth correspondence and temporal mouth tracking"
+    },
+    {
+      "id": "quadpype",
+      "domain": "studio-pipeline",
+      "upstream": "https://github.com/quadproduction/quadpype",
+      "status": "CANDIDATE",
+      "integration": "assetTracking + publishing + DCC workflow"
+    },
+    {
+      "id": "avalon",
+      "domain": "studio-pipeline",
+      "upstream": "https://github.com/getavalon/core",
+      "status": "CANDIDATE",
+      "integration": "asset publishing + workfiles"
+    },
+    {
+      "id": "openpipeline",
+      "domain": "studio-pipeline",
+      "upstream": "https://github.com/OpenPipelinePipeline/OpenPipeline",
+      "status": "CANDIDATE",
+      "integration": "pipeline conventions + revisioned production data"
+    },
+    {
+      "id": "openmontage",
+      "domain": "agentic-video-production",
+      "upstream": "https://github.com/calesthio/OpenMontage",
+      "status": "CANDIDATE",
+      "integration": "AI orchestration + editorial automation + QC"
+    },
+    {
+      "id": "openusd-26.08",
+      "domain": "scene-description",
+      "upstream": "https://github.com/PixarAnimationStudios/OpenUSD",
+      "status": "CANDIDATE",
+      "integration": "sceneGraph + asset interchange"
+    },
+    {
+      "id": "svt-av1",
+      "domain": "encoding",
+      "upstream": "https://gitlab.com/AOMediaCodec/SVT-AV1",
+      "status": "CANDIDATE",
+      "integration": "deterministic media encoding"
+    },
+    {
+      "id": "chronow",
+      "domain": "agent-temporal-reasoning",
+      "upstream": "https://github.com/Hmbown/chronow",
+      "status": "CANDIDATE",
+      "integration": "agent runtime + production timestamps + scheduling + temporal validation"
+    },
+    {
+      "id": "agentic-time",
+      "domain": "agent-temporal-reasoning",
+      "upstream": "https://github.com/agentralabs/agentic-time",
+      "status": "CANDIDATE",
+      "integration": "agent memory + production schedule + duration estimation + freshness"
     }
   ],
   "fallbackLaw": "No candidate may become a single point of failure. Every promoted capability must retain a deterministic fallback or explicit UNKNOWN state.",

@@ -1,0 +1,49 @@
+{
+  "tool": "ffmpeg_ass_caption_burnin",
+  "license": "MIT (this wire script); ffmpeg invoked as external binary, not embedded",
+  "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "source": {
+    "file": "input_clip.mp4",
+    "size_bytes": 163780,
+    "dur_s": 10.0,
+    "size": "640x360@30"
+  },
+  "ass": {
+    "file": "captions.ass",
+    "events": 3,
+    "windows_s": [
+      [
+        0.5,
+        3.0
+      ],
+      [
+        3.5,
+        6.0
+      ],
+      [
+        6.5,
+        9.0
+      ]
+    ]
+  },
+  "output": {
+    "file": "burned.mp4",
+    "size_bytes": 177524,
+    "ffprobe_dur_s": 10.008,
+    "video_ok": true,
+    "audio_ok": true
+  },
+  "pixel_ground_truth": {
+    "subtitle_band_rows": [
+      237,
+      360
+    ],
+    "caption_on_t1_5s_mean_abs_diff": 7.03,
+    "caption_off_t9_5s_mean_abs_diff": 0.51,
+    "caption_on_fullframe_mean_abs_diff": 2.42,
+    "pass_caption_changed": true,
+    "pass_nocaption_unchanged": true
+  },
+  "libass_error_lines": [],
+  "pass": true
+}

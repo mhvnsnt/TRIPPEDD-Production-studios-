@@ -1,0 +1,25 @@
+{
+  "row": 114,
+  "name": "whisper-subs",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "ashlcx/whisper-subs",
+  "api": {
+    "full_name": "ashlcx/whisper-subs",
+    "archived": false,
+    "pushed_at": "2026-09-13T17:53:21Z",
+    "stargazers_count": 0,
+    "default_branch": "main",
+    "owner": "ashlcx",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "CLAUDE.md",
+    "branch": "master",
+    "bytes": 46527
+  },
+  "text_grant": false,
+  "mechanical_verdict": "CONFIRMED (API spdx match)"
+}

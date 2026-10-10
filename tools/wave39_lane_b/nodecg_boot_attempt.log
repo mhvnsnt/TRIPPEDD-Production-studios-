@@ -1,0 +1,39 @@
+[nodecg] Changed process.cwd to /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/nodecg
+2026-10-08 08:55:27 - [37minfo[39m: [server] Starting NodeCG 2.2.0 (Running on Node.js v24.20.0)
+[nodecg] process.cwd is /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server, expected /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/nodecg
+Error: Could not locate the bindings file. Tried:
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/Debug/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/out/Debug/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/Debug/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/out/Release/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/Release/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/default/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/compiled/24.20.0/linux/x64/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node
+ → /home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/lib/binding/node-v137-linux-x64/better_sqlite3.node
+    at bindings (/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/bindings/bindings.js:126:9)
+    at new Database (/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/lib/database.js:48:64)
+    at BetterSqlite3Driver.Database [as sqlite] (/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/lib/database.js:11:10)
+    at BetterSqlite3Driver.createDatabaseConnection (/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/typeorm/driver/better-sqlite3/BetterSqlite3Driver.js:88:41)
+    at async BetterSqlite3Driver.connect (/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/typeorm/driver/sqlite-abstract/AbstractSqliteDriver.js:171:35)
+    at async DataSource.initialize (/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/typeorm/data-source/DataSource.js:136:9) {
+  tries: [
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/Debug/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/Release/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/out/Debug/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/Debug/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/out/Release/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/Release/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/build/default/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/compiled/24.20.0/linux/x64/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/addon-build/release/install-root/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/addon-build/debug/install-root/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/addon-build/default/install-root/better_sqlite3.node',
+    '/home/hatch/workspace/.worktrees/w39b/tools/wave39_lane_b/nodecg_server/node_modules/better-sqlite3/lib/binding/node-v137-linux-x64/better_sqlite3.node'
+  ]
+}

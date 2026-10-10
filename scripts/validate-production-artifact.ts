@@ -5,7 +5,10 @@ import { spawn } from 'node:child_process';
 
 const root = process.cwd();
 const outputDir = path.join(root, 'public', 'production');
-const cutNames = [process.env.TRIPPEDD_OUTPUT_BASENAME || 'EP01-STORY-RUNNER'];
+const cutNames = [
+  process.env.TRIPPEDD_OUTPUT_BASENAME || 'EP01-AUTONOMOUS',
+  ...(process.env.TRIPPEDD_QC_SECONDARY_CUT ? [process.env.TRIPPEDD_QC_SECONDARY_CUT] : []),
+];
 
 type Probe = {
   duration: number;
@@ -15,6 +18,7 @@ type Probe = {
 };
 
 function exists(file: string) { return fs.access(file).then(() => true).catch(() => false); }
+
 async function probe(file: string): Promise<Probe> {
   const args = ['-v', 'error', '-show_entries', 'format=duration,size', '-show_entries', 'stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels', '-of', 'json', file];
   return await new Promise((resolve, reject) => {

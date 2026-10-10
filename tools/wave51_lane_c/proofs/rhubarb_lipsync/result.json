@@ -1,0 +1,46 @@
+{
+  "tool": "rhubarb-lip-sync",
+  "upstream_license": "MIT",
+  "wire_script_license": "MIT",
+  "version_line": "Rhubarb Lip Sync version 1.14.0",
+  "binary": "/home/hatch/workspace/agent-ops/wave51-lanes/w51c/tools/wave51_lane_c/.scratch/rhubarb/Rhubarb-Lip-Sync-1.14.0-Linux/rhubarb",
+  "res_dir_present": true,
+  "res_files": [
+    "sphinx"
+  ],
+  "input_wav": "/home/hatch/workspace/agent-ops/wave51-lanes/w51c/tools/wave51_lane_c/proofs/kokoro_tts/voice_line.wav",
+  "audio_duration_s": 7.825,
+  "dialog_file": "/home/hatch/workspace/agent-ops/wave51-lanes/w51c/tools/wave51_lane_c/proofs/rhubarb_lipsync/dialog.txt",
+  "n_events": 45,
+  "shapes_used": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "X"
+  ],
+  "first_event_s": 0.0,
+  "last_event_end_s": 7.83,
+  "speech_coverage": 0.81,
+  "deterministic": true,
+  "tsv_sha256": "79204bea7ff567829da2c92f3a522926612ccb3eb2028799a738319d375a539c",
+  "tsv_bytes": 315,
+  "checks": {
+    "version_ok": true,
+    "run1_ok": true,
+    "run2_ok": true,
+    "min_events": true,
+    "shapes_valid": true,
+    "timestamps_monotonic": true,
+    "within_audio": true,
+    "first_event_prompt": true,
+    "coverage_above_half": true,
+    "deterministic": true,
+    "res_dir_ok": true
+  },
+  "PASS": true
+}

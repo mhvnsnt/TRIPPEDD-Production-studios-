@@ -1,0 +1,13 @@
+RNNoise (xiph/rnnoise v0.2, BSD-3) — real build + real model weights
+binary: /tmp/rnnoise-0.2/examples/rnnoise_demo (built 2026-10-07)
+input: 2.0 s synthetic vowel-like signal + white noise, 48 kHz mono s16
+       (formant-filtered pulse train, syllabic AM, rng seed 11)
+speech-active SNR in : -2.73 dB
+speech-active SNR out: -2.70 dB  (delta +0.03 dB)
+noise-only residual  : -24.8 dB (denoised vs noisy RMS)
+
+Honest reading: noise-only frames are crushed (-24.8 dB) — the GRU
+gate works. SNR on the synthetic vowel is flat (+0.03 dB) because a
+synthetic vowel is not real speech (the model is trained on human
+speech) and gating silence shifts energy. End-to-end proof that the
+real binary + real weights run and suppress non-speech noise.

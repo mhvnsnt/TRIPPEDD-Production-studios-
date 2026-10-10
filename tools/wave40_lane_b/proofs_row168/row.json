@@ -1,0 +1,25 @@
+{
+  "row": 168,
+  "name": "ChapterTool",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "tautcony/ChapterTool",
+  "api": {
+    "full_name": "tautcony/ChapterTool",
+    "archived": false,
+    "pushed_at": "2026-10-08T02:37:21Z",
+    "stargazers_count": 113,
+    "default_branch": "master",
+    "owner": "tautcony",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 32472
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

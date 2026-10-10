@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Resolve the optional OSS stack into an explicit runtime capability contract.
 
-This is deliberately capability-only: it never promotes tool presence, a successful
-import, or a viewer launch into render/QC evidence. Production evidence still requires
-exact artifact retrieval/reopen plus the existing physical/visual gates.
+Capability discovery never becomes render or QC evidence. Production evidence
+still requires exact artifact retrieval/reopen plus physical and visual gates.
 """
 from __future__ import annotations
 
@@ -24,6 +23,7 @@ PYTHON_CAPABILITIES = {
     "OpenColorIO": "PyOpenColorIO",
     "MaterialX": "MaterialX",
     "OpenAssetIO": "openassetio",
+    "OpenCuePyOutline": "outline",
 }
 
 BINARY_CAPABILITIES = {
@@ -37,6 +37,9 @@ BINARY_CAPABILITIES = {
     "COLMAP": "colmap",
     "Natron": "Natron",
     "OpenCue": "cueadmin",
+    "OpenCueSubmit": "cuesubmit",
+    "OpenCueCommand": "cuecmd",
+    "OpenCueRun": "pycuerun",
     "Rez": "rez",
     "OpenRV": "rv",
     "xSTUDIO": "xstudio",
@@ -46,6 +49,7 @@ ENVIRONMENT_CAPABILITIES = {
     "OpenEXR": ("OpenEXR_HOME", "OPENEXR_ROOT"),
     "MaterialX": ("MATERIALX_HOME", "MATERIALX_ROOT"),
     "OpenAssetIO": ("OPENASSETIO_HOME", "OPENASSETIO_ROOT"),
+    "CUEBOT": ("CUEBOT_HOSTS",),
 }
 
 
@@ -79,7 +83,7 @@ def env_hint(names: tuple[str, ...]) -> dict[str, object]:
 
 def main() -> int:
     result = {
-        "schema_version": 1,
+        "schema_version": 2,
         "status": "CAPABILITY_CONTRACT",
         "fail_closed": True,
         "evidence_status": "NOT_ATTEMPTED",
@@ -89,20 +93,21 @@ def main() -> int:
             "visual_qc_required": True,
             "physical_qc_required_when_applicable": True,
             "proxy_never_canonical": True,
+            "opencue_is_dispatcher_not_source_of_truth": True,
         },
         "python": {label: python_module(module) for label, module in PYTHON_CAPABILITIES.items()},
         "binaries": {label: command_version(command) for label, command in BINARY_CAPABILITIES.items()},
         "environment": {label: env_hint(names) for label, names in ENVIRONMENT_CAPABILITIES.items()},
     }
-    executable_or_importable = sum(1 for value in result["python"].values() if value["available"])
-    executable_or_importable += sum(1 for value in result["binaries"].values() if value["available"])
+    available_runtime = sum(1 for value in result["python"].values() if value["available"])
+    available_runtime += sum(1 for value in result["binaries"].values() if value["available"])
     declared_runtime = len(result["python"]) + len(result["binaries"])
-    hinted_environment = sum(1 for value in result["environment"].values() if value["available"])
+    environment_hints = sum(1 for value in result["environment"].values() if value["available"])
     result["summary"] = {
-        "available_runtime_capabilities": executable_or_importable,
+        "available_runtime_capabilities": available_runtime,
         "declared_runtime_capabilities": declared_runtime,
-        "runtime_coverage_fraction": round(executable_or_importable / declared_runtime, 4) if declared_runtime else 0.0,
-        "environment_hints_present": hinted_environment,
+        "runtime_coverage_fraction": round(available_runtime / declared_runtime, 4) if declared_runtime else 0.0,
+        "environment_hints_present": environment_hints,
         "environment_hints_are_not_runtime_coverage": True,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

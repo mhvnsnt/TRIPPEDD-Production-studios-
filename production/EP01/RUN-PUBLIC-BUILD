@@ -28,3 +28,9 @@ SOURCE RECOVERY: gdown 6.2 per-file resumable ingest, partial-success preservati
 RCLONE RECOVERY: when authorized Drive credentials are configured, rclone is the preferred alternate transport for source recovery, with per-file retries, real transfer stats, durable destination preservation, and measured PARTIAL/COMPLETE states. It is an authenticated API path, not a quota bypass; missing credentials leave gdown/cookies as the public-source fallback.
 OSS OBSERVABILITY: OpenTelemetry Collector + Prometheus-compatible telemetry are the production observability path; the durable ledger remains canonical until retrieval/recovery gates pass. OpenTelemetry Collector is vendor-neutral and supports retries/batching; Prometheus Pushgateway remains opt-in for batch metrics.
 FINISH CONTRACT: do not call a stage healthy without measured telemetry; preserve every successful artifact; continue from checkpoints; fail fast on genuine blockers; never burn another six-hour window on a black-box run.
+FAST FIRST ASSEMBLY: bounded source analysis, Whisper deferred from the first evidence pass, serialized analyzer workers to prevent CPU oversubscription, resumable segment cache.
+RENDER RECOVERY (2026-09-09): explicit Blender exit-code capture; validated-frame fallback assembly; persistent caches.
+OSS STACK: OpenAssetIO + OpenTimelineIO + OpenCV + PySceneDetect + Tesseract + faster-whisper + FFmpeg/ffprobe + MediaInfo.
+BASTARD TAG: 2D cinematic comic-book terminal art; Blender 3D is not used for Bannon/The Bastard at this stage.
+AUTONOMY: bounded self-healing workflow and production OSS co-builder are committed alongside the pipeline.
+

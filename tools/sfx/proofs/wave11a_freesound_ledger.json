@@ -1,0 +1,152 @@
+{
+  "tool": "freesound_cc0_ledger.py (Wave 11 Lane A)",
+  "checked": 13,
+  "commercial_safe": 13,
+  "not_commercial_safe": 0,
+  "errors": 0,
+  "ledger": [
+    {
+      "url": "https://freesound.org/people/straget/sounds/414921/",
+      "uploader": "straget",
+      "sound_id": "414921",
+      "title": "Freesound - A Walk with stop.wav by straget",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/straget/sounds/403762/",
+      "uploader": "straget",
+      "sound_id": "403762",
+      "title": "Freesound - Waves at the beach cliff 2.wav by straget",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/Timbre/sounds/730404/",
+      "uploader": "Timbre",
+      "sound_id": "730404",
+      "title": "Freesound - tri-state white-noise by Timbre",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/jalastram/sounds/386649/",
+      "uploader": "jalastram",
+      "sound_id": "386649",
+      "title": "Freesound - SFX_Jump_19.wav by jalastram",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/plasterbrain/sounds/399094/",
+      "uploader": "plasterbrain",
+      "sound_id": "399094",
+      "title": "Freesound - Cartoon Pinch by plasterbrain",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/kyles/sounds/407042/",
+      "uploader": "kyles",
+      "sound_id": "407042",
+      "title": "Freesound - coffee plantation under cover of large coffee plants like jungle sma",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/m1a2t3z4/sounds/112213/",
+      "uploader": "m1a2t3z4",
+      "sound_id": "112213",
+      "title": "Freesound - Window breaking.MP3 by m1a2t3z4",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/Vrymaa/sounds/805466/",
+      "uploader": "Vrymaa",
+      "sound_id": "805466",
+      "title": "Freesound - Night Crickets 02 by Vrymaa",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/s/660262/",
+      "uploader": "unknown",
+      "sound_id": "660262",
+      "title": "Freesound - River flowing sound. by Tom_Kaszuba",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/bruno.auzet/sounds/670300/",
+      "uploader": "bruno.auzet",
+      "sound_id": "670300",
+      "title": "Freesound - tree cut down.wav by bruno.auzet",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/ScenarioPlanet/sounds/785679/",
+      "uploader": "ScenarioPlanet",
+      "sound_id": "785679",
+      "title": "Freesound - SFX: Damaged reel-to-reel tape sounds by ScenarioPlanet",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/wjoojoo/sounds/197753/",
+      "uploader": "wjoojoo",
+      "sound_id": "197753",
+      "title": "Freesound - paddling_in_lake_lbj_08232013_3.flac by wjoojoo",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    },
+    {
+      "url": "https://freesound.org/people/Jofae/sounds/380482/",
+      "uploader": "Jofae",
+      "sound_id": "380482",
+      "title": "Freesound - Chime Notification by Jofae",
+      "license_slugs_found": [
+        "zero/1.0"
+      ],
+      "license": "zero/1.0",
+      "commercial_safe": true
+    }
+  ]
+}

@@ -26,6 +26,14 @@ An established TRIPPEDD network show/property in the broader programming library
 
 A developing **Trippedd recurring segment and potential standalone show/property**. Existing Mars visual direction and shader work belong to the development record and should remain linked to future production artifacts rather than being disposable chat context.
 
+### Wizard Gang
+
+A developing **TRIPPEDD recurring segment and potential standalone series/property**. The robed council of AshLane's Hollows district (SWMG-inspired visual language; the in-game proprietary name is TBD — never "Shadow Wizard Money Gang" in-game).
+
+Wizard Gang is the first property launched under the studio's development rule that is simultaneously developed as **a short, a segment, and a series**: the same ~50-second production is a standalone short, a recurring segment embedded in TRIPPEDD show episodes (via hard cut, `recurringKey: WIZARD_GANG`), and the pilot material of the standalone Wizard Gang series. Series bible: `docs/series/WIZARD-GANG.md`. Segment definition: `docs/WIZARD_GANG_SEGMENT.md`. First production package: `production/WIZARD_GANG_SHORT_01/` ("The Council Rises"), currently at the storyboard-approval gate.
+
+Its ~50-second short form is the AshLane game-commercial form: staged entrance cinematics in the El Toro de Oro style (multiple camera angles, lighting changes, real mocap — never procedural animation), original/licensed-safe audio, canon-locked text only.
+
 ## TRIPPEDD network bumper / ident
 
 The first short production proof will also function as a **10–20 second TRIPPEDD network commercial/ident**. It is not an episode and not a throwaway synthetic test. It is a miniature expression of the network's actual programming identity.

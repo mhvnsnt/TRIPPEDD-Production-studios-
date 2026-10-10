@@ -1,0 +1,4 @@
+source frames: 24 PNGs 320x180
+wrote /home/hatch/workspace/agent-ops/wave48-lanes/lane-b/tools/wave48_lane_b/proofs_moviepy/out.mp4 (25246 bytes)
+decoded: duration=2.000s fps=12.0 frames~24
+middle-frame mean-abs-diff vs source: 1.655 (gate < 8.0)

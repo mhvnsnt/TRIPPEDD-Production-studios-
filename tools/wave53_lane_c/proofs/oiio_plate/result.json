@@ -1,0 +1,40 @@
+{
+  "tool": "OpenImageIO",
+  "upstream_license": "Apache-2.0",
+  "wire_script_license": "MIT",
+  "oiio_version": "3.1.18.1",
+  "input": "/home/hatch/workspace/agent-ops/wave53-lanes/w53c/tools/wave50_lane_c/proofs/caption_burnin/proof_frame_1_5s.png",
+  "input_whc": [
+    640,
+    360,
+    3
+  ],
+  "oiio_pixelstats_avg": [
+    0.468892,
+    0.486941,
+    0.499456
+  ],
+  "numpy_avg": [
+    0.468871,
+    0.486868,
+    0.499361
+  ],
+  "stats_max_abs_disagree": 9.584426879882812e-05,
+  "exr_roundtrip_max_abs_diff": 0.00024324655532836914,
+  "metadata_roundtrip_ok": true,
+  "exr_bytes": 100243,
+  "jpeg_q95_max_abs_diff": 0.998124,
+  "jpeg_q95_bytes": 33364,
+  "exr_determinism_byte_identical": true,
+  "elapsed_s": 0.63,
+  "checks": {
+    "input_read_ok": true,
+    "oiio_stats_agree_numpy": true,
+    "exr_is_half": true,
+    "exr_roundtrip_maxdiff_le_0.002": true,
+    "metadata_roundtrip": true,
+    "exr_writes_byte_identical": true,
+    "jpeg_lossy_measured": true
+  },
+  "PASS": true
+}

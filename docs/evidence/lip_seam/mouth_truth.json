@@ -1,0 +1,123 @@
+{
+  "schema": "trippedd.mouth-truth/v1",
+  "mouthWidth": 0.193036,
+  "outOfFace": [
+    0.01976800709962845,
+    -0.9863783717155457,
+    0.1633000522851944
+  ],
+  "rigs": {
+    "AFTER": {
+      "rig": "/tmp/claude-0/-home-user/624f7576-436f-5bd8-9248-49a6c3abcba9/scratchpad/BRIDGED.blend",
+      "hideRenderWas": {
+        "MARS_MOUTH_SOCK": true,
+        "MARS_TEETH_UPPER": true,
+        "MARS_TEETH_LOWER": true,
+        "MARS_TONGUE": true
+      },
+      "poses": {
+        "rest": {
+          "beauty": "AFTER_rest_beauty.png",
+          "id": "AFTER_rest_id.png",
+          "pixelShare": {
+            "his_skin": 99.39,
+            "cavity": 0.003061224489795918,
+            "teeth": 0.07428571428571429,
+            "gums": 0.04469387755102041,
+            "tongue": 0.006530612244897959,
+            "sock": 0.48142857142857143,
+            "background": 0.0,
+            "ORAL_TOTAL": 0.61
+          },
+          "pixels": 490000
+        },
+        "jaw18": {
+          "beauty": "AFTER_jaw18_beauty.png",
+          "id": "AFTER_jaw18_id.png",
+          "pixelShare": {
+            "his_skin": 91.91755102040817,
+            "cavity": 0.03571428571428571,
+            "teeth": 1.366326530612245,
+            "gums": 1.9714285714285715,
+            "tongue": 0.753265306122449,
+            "sock": 3.9557142857142855,
+            "background": 0.0,
+            "ORAL_TOTAL": 8.082448979591838
+          },
+          "pixels": 490000
+        },
+        "open": {
+          "beauty": "AFTER_open_beauty.png",
+          "id": "AFTER_open_id.png",
+          "pixelShare": {
+            "his_skin": 86.84938775510204,
+            "cavity": 0.054285714285714284,
+            "teeth": 2.3714285714285714,
+            "gums": 4.401020408163265,
+            "tongue": 2.369183673469388,
+            "sock": 3.9546938775510205,
+            "background": 0.0,
+            "ORAL_TOTAL": 13.15061224489796
+          },
+          "pixels": 490000
+        }
+      }
+    },
+    "PROMOTED": {
+      "rig": "assets/rigs/MARS_FACE.blend",
+      "hideRenderWas": {
+        "MARS_MOUTH_SOCK": false,
+        "MARS_TEETH_UPPER": false,
+        "MARS_TEETH_LOWER": false,
+        "MARS_TONGUE": false
+      },
+      "poses": {
+        "rest": {
+          "beauty": "PROMOTED_rest_beauty.png",
+          "id": "PROMOTED_rest_id.png",
+          "pixelShare": {
+            "his_skin": 99.40959183673469,
+            "cavity": 0.002857142857142857,
+            "teeth": 0.0636734693877551,
+            "gums": 0.03816326530612245,
+            "tongue": 0.006530612244897959,
+            "sock": 0.4791836734693877,
+            "background": 0.0,
+            "ORAL_TOTAL": 0.5904081632653061
+          },
+          "pixels": 490000
+        },
+        "jaw18": {
+          "beauty": "PROMOTED_jaw18_beauty.png",
+          "id": "PROMOTED_jaw18_id.png",
+          "pixelShare": {
+            "his_skin": 91.93632653061225,
+            "cavity": 0.03326530612244898,
+            "teeth": 1.3318367346938775,
+            "gums": 2.087551020408163,
+            "tongue": 0.7104081632653061,
+            "sock": 3.900612244897959,
+            "background": 0.0,
+            "ORAL_TOTAL": 8.063673469387755
+          },
+          "pixels": 490000
+        },
+        "open": {
+          "beauty": "PROMOTED_open_beauty.png",
+          "id": "PROMOTED_open_id.png",
+          "pixelShare": {
+            "his_skin": 86.89775510204082,
+            "cavity": 0.06346938775510204,
+            "teeth": 2.273265306122449,
+            "gums": 5.055102040816327,
+            "tongue": 2.1989795918367347,
+            "sock": 3.5114285714285716,
+            "background": 0.0,
+            "ORAL_TOTAL": 13.102244897959185
+          },
+          "pixels": 490000
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "helm": {
+    "archived": true,
+    "owner": "mtytel",
+    "pushed_at": "2022-09-24T04:23:20Z",
+    "spdx_id": "GPL-3.0",
+    "default_branch": "master",
+    "stars": 2505,
+    "note": "still owner-archived; ownership unchanged (mtytel)"
+  },
+  "helm_top_forks": [
+    {
+      "full_name": "DatanoiseTV/helm",
+      "stars": 6,
+      "pushed": "2020-11-11T19:42:19Z"
+    },
+    {
+      "full_name": "poweraudio/helm",
+      "stars": 3,
+      "pushed": "2024-09-08T06:17:07Z"
+    },
+    {
+      "full_name": "mekayama/helm",
+      "stars": 2,
+      "pushed": "2015-07-09T21:11:22Z"
+    },
+    {
+      "full_name": "AJ-Gonzalez/helm-apple-silicon",
+      "stars": 2,
+      "pushed": "2026-09-21T03:21:35Z"
+    },
+    {
+      "full_name": "rockola/helm",
+      "stars": 2,
+      "pushed": "2019-08-20T01:04:50Z"
+    }
+  ],
+  "helm_conclusion": "No official successor, no ownership change, no relicense. AJ-Gonzalez/helm-apple-silicon still the freshest recurring maintenance fork (pushed 2026-09-21).",
+  "telxcc": {
+    "archived": true,
+    "owner": "kanongil",
+    "pushed_at": "2025-09-20T11:29:10Z",
+    "spdx_id": "NOASSERTION (detection gap)",
+    "note": "raw LICENSE still GPL-2.0-or-later boilerplate per prior waves"
+  },
+  "telxcc_top_forks": [
+    {
+      "full_name": "braincoded/telxcc",
+      "stars": 1,
+      "pushed": "2014-09-10T13:29:27Z"
+    },
+    {
+      "full_name": "xylographe/telxcc",
+      "stars": 0,
+      "pushed": "2026-03-17T00:49:20Z"
+    },
+    {
+      "full_name": "carlanton/teletext-ingest",
+      "stars": 0,
+      "pushed": "2017-05-25T21:26:31Z"
+    }
+  ],
+  "telxcc_conclusion": "No standout successor, no ownership change, no relicense."
+}

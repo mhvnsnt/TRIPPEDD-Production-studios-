@@ -1,0 +1,29 @@
+WAVE 21 LANE C — PROOF OF EXPLICITLY-PD MILITARY-BAND RECORDING
+================================================================
+File: kimi_ga_yo_1930_ToyamaArmyBand.ogg
+Commons file: File:Kimi ga Yo 1930.ogg
+Source URL (verbatim from Wikimedia Commons API):
+https://upload.wikimedia.org/wikipedia/commons/e/e5/Kimi_ga_Yo_1930.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+SHA-256: 83de438f0ba5e9fbf8aa239260fde7d3e7d6b41f67a0644c4fde3ca16349954b
+Bytes: 1470108 (matches Commons imageinfo size exactly)
+Duration: 90.4 s (ffprobe)
+Format: Ogg Vorbis
+Performer (Commons extmetadata Artist): Toyama Army School Military Band
+  (Imperial Japanese Army — IN-POCKET jurisdiction: Japan)
+Performance/recording: 1930 (per Commons file description)
+Commons license tag: Public domain
+Downloaded: 2026-10-07 by Wave 21 Lane C agent via curl.
+
+PD RATIONALE (verified 2026-10-07):
+- Japan: sound recordings are protected 70 years from publication
+  (Copyright Act as amended 2018). A 1930 publication expired at end of 2000.
+- EU: phonogram rights expire 70 years after lawful publication
+  (Directive 2011/77/EU). Expired end of 2000.
+- US: foreign recording restored under URAA; pre-1978 published foreign
+  works get 95 years from publication = 1930+95 -> expired end of 2025.
+  PD in the US from 2026-01-01.
+- Composition (Kimigayo): ancient lyrics; melody adapted by Franz Eckert
+  (d. 1916) from older material -> composition long PD worldwide.
+CONCLUSION: recording is public domain in JP, EU, and US. Ship-grade.
+NOTE: This is a historical Imperial Japanese Army band recording, not a
+modern JSDF production (modern JSDF recordings are all-rights-reserved).

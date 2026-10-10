@@ -1,0 +1,177 @@
+{
+ "1": {
+  "repo": "readbeyond/aeneas",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "AGPL-3.0",
+  "pushed_at": "2026-07-25T10:22:31Z",
+  "forks": 277,
+  "message": null,
+  "raw_fetch": {
+   "README.md": {
+    "branch": "master",
+    "head200": "# aeneas  **aeneas** is a Python/C library and a set of tools to automagically synchronize audio and text (aka forced alignment).  * Version: 1.7.3 * Date: 2017-03-15 * Developed by: [ReadBeyond](http"
+   }
+  }
+ },
+ "3": {
+  "repo": "AnimeEffectsDevs/AnimeEffects",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "GPL-3.0",
+  "pushed_at": "2026-07-12T01:20:22Z",
+  "forks": 27,
+  "message": null,
+  "raw_fetch": {
+   "LICENSE": {
+    "branch": "master",
+    "head200": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/> Everyone is permitted to copy and dis"
+   }
+  }
+ },
+ "4": {
+  "repo": "AUTOMATIC1111/stable-diffusion-webui",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "AGPL-3.0",
+  "pushed_at": "2026-03-02T07:00:53Z",
+  "forks": 32601,
+  "message": null,
+  "raw_fetch": {
+   "LICENSE.txt": {
+    "branch": "master",
+    "head200": "                    GNU AFFERO GENERAL PUBLIC LICENSE                        Version 3, 19 November 2007                      Copyright (c) 2023 AUTOMATIC1111   Copyright (C) 2007 Free Software Founda"
+   }
+  }
+ },
+ "5": {
+  "repo": "Comfy-Org/ComfyUI",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "GPL-3.0",
+  "pushed_at": "2026-10-08T04:47:17Z",
+  "forks": 16205,
+  "message": null,
+  "raw_fetch": {
+   "LICENSE": {
+    "branch": "master",
+    "head200": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and "
+   }
+  }
+ },
+ "6": {
+  "repo": "Hope2333/enve",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "GPL-3.0",
+  "pushed_at": "2026-08-27T09:31:59Z",
+  "forks": 0,
+  "message": null,
+  "raw_fetch": {}
+ },
+ "8": {
+  "repo": "jliljebl/flowblade",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "GPL-3.0",
+  "pushed_at": "2026-10-05T11:39:03Z",
+  "forks": 207,
+  "message": null,
+  "raw_fetch": {
+   "LICENSE": {
+    "branch": "master",
+    "head200": "GNU GENERAL PUBLIC LICENSE  Version 3, 29 June 2007  Copyright \u00a9 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies of this license do"
+   }
+  }
+ },
+ "10": {
+  "repo": "perarnia/fSpy",
+  "exists": true,
+  "archived": false,
+  "default_branch": "develop",
+  "spdx_id": "GPL-3.0",
+  "pushed_at": "2022-12-08T17:16:22Z",
+  "forks": 241,
+  "message": null,
+  "raw_fetch": {
+   "LICENSE": {
+    "branch": "master",
+    "head200": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and "
+   }
+  }
+ },
+ "11": {
+  "repo": "mbasaglia/glaxnimate",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "NOASSERTION",
+  "pushed_at": "2023-11-27T18:55:32Z",
+  "forks": 7,
+  "message": null,
+  "raw_fetch": {
+   "COPYING": {
+    "branch": "master",
+    "head200": "LICENSES/GPL-3.0-or-later.txt"
+   }
+  }
+ },
+ "12": {
+  "repo": "KDE/krita",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "GPL-3.0",
+  "pushed_at": "2026-10-08T01:52:09Z",
+  "forks": 875,
+  "message": null,
+  "raw_fetch": {
+   "COPYING": {
+    "branch": "master",
+    "head200": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and d"
+   }
+  }
+ },
+ "15": {
+  "repo": "mypaint/mypaint",
+  "exists": true,
+  "archived": false,
+  "default_branch": "master",
+  "spdx_id": "GPL-2.0",
+  "pushed_at": "2026-09-13T21:36:20Z",
+  "forks": 449,
+  "message": null,
+  "raw_fetch": {
+   "Licenses.md": {
+    "branch": "master",
+    "head200": "## Licenses and Copyrights  MyPaint's copyrights and applicable licenses are enumerated in machine-readable form in the file named [Licenses.dep5][DEP5LIC]. This file is also fairly human-readable pla"
+   }
+  }
+ },
+ "68": {
+  "repo": "mtytel/helm",
+  "exists": true,
+  "archived": true,
+  "default_branch": "master",
+  "spdx_id": "GPL-3.0",
+  "pushed_at": "2022-09-24T04:23:20Z",
+  "forks": 233,
+  "message": null
+ },
+ "236": {
+  "repo": "kanongil/telxcc",
+  "exists": true,
+  "archived": true,
+  "default_branch": "master",
+  "spdx_id": "NOASSERTION",
+  "pushed_at": "2025-09-20T11:29:10Z",
+  "forks": 14,
+  "message": null
+ }
+}

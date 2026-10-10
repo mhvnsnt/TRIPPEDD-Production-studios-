@@ -1,0 +1,17 @@
+{
+  "project": "OpenScore Lieder",
+  "license": "CC0-1.0 (repo COPYING / README)",
+  "source_url": "https://raw.githubusercontent.com/OpenScore/Lieder/main/scores/Beethoven%2C_Ludwig_van/6_Lieder%2C_Op.48/1_Bitten/lc5115311.mxl",
+  "mxl_bytes": 5920,
+  "parts": 2,
+  "measures": 92,
+  "notes": 527,
+  "movement_title": "Bitten",
+  "creators": [
+    "Transcribed by DanielR from IMSLP #26415.",
+    "Ludwig van Beethoven",
+    "Christian F\u00fcrchtegott Gellert"
+  ],
+  "parsed_with": "stdlib zipfile+xml.etree (no binary deps)",
+  "artifact": "tools/wave18_laneA/proofs/wave18_openscore/report.json"
+}

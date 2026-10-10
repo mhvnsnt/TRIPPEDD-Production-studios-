@@ -1,0 +1,1465 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:dcndl="http://ndl.go.jp/dcndl/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="2.0">
+  <channel>
+    <title>源氏物語 - 国立国会図書館サーチ OpenSearch</title>
+    <link>https://ios-v2-prod-eks-alb.ndlsearch.ndl.go.jp/api/opensearch?title=%E6%BA%90%E6%B0%8F%E7%89%A9%E8%AA%9E</link>
+    <description>Search results for title=源氏物語</description>
+    <language>ja</language>
+    <openSearch:totalResults>34677</openSearch:totalResults>
+    <openSearch:startIndex>1</openSearch:startIndex>
+    <openSearch:itemsPerPage>200</openSearch:itemsPerPage>
+    <item>
+      <title>アーサー・ウェイリー英訳源氏物語の諸問題・第二部(下)--澪標・蓬生・関屋・絵合・松風</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I834961</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェイリー英訳源氏物語の諸問題・第二部(下)--澪標・蓬生・関屋・絵合・松風</li><li>タイトル（読み）：アーサー ウェイリー エイヤク ゲンジ モノガタリ ノ ショ モンダイ ダイニブ ゲ ミオツクシ ヨモギウ セキヤ エアワセ マツカゼ</li><li>責任表示：井上 英明</li></ul>]]></description>
+      <author>井上 英明,井上 英明</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I834961</guid>
+      <pubDate>Fri, 11 Jul 2008 22:40:29 +0900</pubDate>
+      <dc:title>アーサー・ウェイリー英訳源氏物語の諸問題・第二部(下)--澪標・蓬生・関屋・絵合・松風</dc:title>
+      <dcndl:titleTranscription>アーサー ウェイリー エイヤク ゲンジ モノガタリ ノ ショ モンダイ ダイニブ ゲ ミオツクシ ヨモギウ セキヤ エアワセ マツカゼ</dcndl:titleTranscription>
+      <dc:creator>井上 英明</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">834961</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZK21</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I834961"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520572358006738304"/>
+      <dc:description>掲載誌：比較文学年誌 / 早稲田大学比較文学研究室「比較文学年誌」編集委員会 編(通号 3) p.83～103</dc:description>
+    </item>
+    <item>
+      <title>アーサー･ウエイリー英訳源氏物語の諸問題･第三部･上 : 薄雲･槿･乙女</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000136-I1050282813004815232</link>
+      <description><![CDATA[<p>1967-12-01,<p><ul><li>タイトル：アーサー･ウエイリー英訳源氏物語の諸問題･第三部･上 : 薄雲･槿･乙女</li></ul>]]></description>
+      <author>井上, 英明</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000136-I1050282813004815232</guid>
+      <pubDate>Fri, 25 Sep 2026 11:13:32 +0900</pubDate>
+      <dc:title>アーサー･ウエイリー英訳源氏物語の諸問題･第三部･上 : 薄雲･槿･乙女</dc:title>
+      <dc:creator>井上, 英明</dc:creator>
+      <dc:date xsi:type="dcterms:W3CDTF">1967-12-01</dc:date>
+      <dcterms:issued>1967-12-01</dcterms:issued>
+      <rdfs:seeAlso rdf:resource="https://bunkyo.repo.nii.ac.jp/records/6131"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1050282813004815232"/>
+      <dc:description>掲載誌：研究紀要 1967-12-01 p.38-60</dc:description>
+    </item>
+    <item>
+      <title>アーサー･ウェイリー英訳源氏物語の諸問題･第二部･上 : 賢木･花散里･須磨･明石</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000136-I1050282813004819200</link>
+      <description><![CDATA[<p>1966-12-01,<p><ul><li>タイトル：アーサー･ウェイリー英訳源氏物語の諸問題･第二部･上 : 賢木･花散里･須磨･明石</li></ul>]]></description>
+      <author>井上, 英明</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000136-I1050282813004819200</guid>
+      <pubDate>Fri, 25 Sep 2026 11:13:32 +0900</pubDate>
+      <dc:title>アーサー･ウェイリー英訳源氏物語の諸問題･第二部･上 : 賢木･花散里･須磨･明石</dc:title>
+      <dc:creator>井上, 英明</dc:creator>
+      <dc:date xsi:type="dcterms:W3CDTF">1966-12-01</dc:date>
+      <dcterms:issued>1966-12-01</dcterms:issued>
+      <rdfs:seeAlso rdf:resource="https://bunkyo.repo.nii.ac.jp/records/6146"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1050282813004819200"/>
+      <dc:description>掲載誌：研究紀要 1966-12-01 p.72-87</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェイリー</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I029128104</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェイリー</li><li>タイトル（読み）：アーサー ・ ウェイリー</li><li>責任表示：植田 恭代</li><li>シリーズ名：外国人の発見した日本(NIPPON) ; 言語と文学 : 日本語・日本神話・源氏物語</li><li>シリーズ名（読み）：ガイコクジン ノ ハッケン シタ ニホン(NIPPON) ; ゲンゴ ト ブンガク : ニホンゴ ・ ニホン シンワ ・ ゲンジ モノガタリ</li></ul>]]></description>
+      <author>植田 恭代,植田 恭代</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I029128104</guid>
+      <pubDate>Tue, 19 Dec 2023 23:52:10 +0900</pubDate>
+      <dc:title>アーサー・ウェイリー</dc:title>
+      <dcndl:titleTranscription>アーサー ・ ウェイリー</dcndl:titleTranscription>
+      <dc:creator>植田 恭代</dc:creator>
+      <dcndl:seriesTitle>外国人の発見した日本(NIPPON) ; 言語と文学 : 日本語・日本神話・源氏物語</dcndl:seriesTitle>
+      <dcndl:seriesTitleTranscription>ガイコクジン ノ ハッケン シタ ニホン(NIPPON) ; ゲンゴ ト ブンガク : ニホンゴ ・ ニホン シンワ ・ ゲンジ モノガタリ</dcndl:seriesTitleTranscription>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">029128104</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZG71</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I029128104"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523388080612708608"/>
+      <dc:description>掲載誌：アジア遊学 219 p.55-59</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェイリー : 『源氏物語』の翻訳者</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000002-I000009916654</link>
+      <description><![CDATA[<p>白水社,2008,978-4-560-03191-9<p><ul><li>タイトル：アーサー・ウェイリー : 『源氏物語』の翻訳者</li><li>タイトル（読み）：アーサー ウェイリー : ゲンジ モノガタリ ノ ホンヤクシャ</li><li>責任表示：平川祐弘 著</li><li>NDC(9)：913.369</li></ul>]]></description>
+      <author>平川, 祐弘, 1931-,平川祐弘 著</author>
+      <category>図書</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000002-I000009916654</guid>
+      <pubDate>Fri, 22 Aug 2025 22:18:01 +0900</pubDate>
+      <dc:title>アーサー・ウェイリー : 『源氏物語』の翻訳者</dc:title>
+      <dcndl:titleTranscription>アーサー ウェイリー : ゲンジ モノガタリ ノ ホンヤクシャ</dcndl:titleTranscription>
+      <dc:creator>平川, 祐弘, 1931-</dc:creator>
+      <dcndl:creatorTranscription>ヒラカワ, スケヒロ, 1931-</dcndl:creatorTranscription>
+      <dc:publisher>白水社</dc:publisher>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:date xsi:type="dcterms:W3CDTF">2008</dc:date>
+      <dcterms:issued>2008.11</dcterms:issued>
+      <dcndl:price>4000円</dcndl:price>
+      <dc:extent>480, 8p</dc:extent>
+      <dc:identifier xsi:type="dcndl:ISBN">978-4-560-03191-9</dc:identifier>
+      <dc:identifier xsi:type="dcndl:NDLBibID">000009916654</dc:identifier>
+      <dc:identifier xsi:type="dcndl:JPNO">21564260</dc:identifier>
+      <dc:subject>Waley, Arthur, 1889-1966</dc:subject>
+      <dc:subject xsi:type="dcndl:NDLC">KG58</dc:subject>
+      <dc:subject xsi:type="dcndl:NDC9">913.369</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.hokkaido.jp/wo/opc_srh/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.sapporo.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1008000097721"/>
+      <rdfs:seeAlso rdf:resource="https://www.plib.pref.aomori.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1103003770"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.iwate.jp/opac/advanced-search"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.miyagi.jp/winj/opac/switch-detail-iccap.do?bibid=1101085867"/>
+      <rdfs:seeAlso rdf:resource="https://www.apl.pref.akita.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000000312446"/>
+      <rdfs:seeAlso rdf:resource="https://opac.lib.pref.yamagata.jp/winj/opac/switch-detail-iccap.do?bibid=1101786656"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.fcs.ed.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001102532608"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.ibaraki.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001001626346"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.pref.tochigi.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1101529904"/>
+      <rdfs:seeAlso rdf:resource="https://www1.library.pref.gunma.jp/winj/opac/switch-detail-iccap.do?bibid=1101710006"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.saitama.jp//winj/opac/switch-detail-iccap.do?bibid=1100874072"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.city.saitama.jp/bookdetail?num=2217815&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.chiba.lg.jp/licsxp-iopac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000001912339"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.chiba.jp/licsxp-opac/WOpacTifSchCmpdDispAction.do"/>
+      <rdfs:seeAlso rdf:resource="https://catalog.library.metro.tokyo.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1107668436"/>
+      <rdfs:seeAlso rdf:resource="https://www.klnet.pref.kanagawa.jp/winj/opac/switch-detail-iccap.do?bibid=1103567498"/>
+      <rdfs:seeAlso rdf:resource="https://opac.lib.city.yokohama.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1108080804"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.kawasaki.jp/bookdetail?num=1794551&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://opac.pref-lib.niigata.niigata.jp/winj/opac/switch-detail-iccap.do?bibid=1106301376"/>
+      <rdfs:seeAlso rdf:resource="https://lib2.lib.pref.toyama.jp/opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009810804141"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.ishikawa.lg.jp/wo/opc_srh/srh_detail/1100000186447/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library-archives.pref.fukui.lg.jp/wo/opc_srh/srh_detail/1104797224/"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.yamanashi.jp/licsxp-opac/WOpacMnuTopInitAction.do"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.pref.gifu.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1102496568"/>
+      <rdfs:seeAlso rdf:resource="https://www.tosyokan.pref.shizuoka.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000810499736"/>
+      <rdfs:seeAlso rdf:resource="https://www.toshokan.city.shizuoka.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001101543078"/>
+      <rdfs:seeAlso rdf:resource="http://websv.aichi-pref-library.jp/winj/opac/switch-detail-iccap.do?bibid=1182179965"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.nagoya.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000810114602"/>
+      <rdfs:seeAlso rdf:resource="https://www.shiga-pref-library.jp/wo/opc_srh/srh_detail/2175703/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kyoto.jp/bib/?B10672650"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.osaka.jp/bib/?B12397294"/>
+      <rdfs:seeAlso rdf:resource="https://www.oml.city.osaka.lg.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000011756227"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib-sakai.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000800396885"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.hyogo.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1102891018"/>
+      <rdfs:seeAlso rdf:resource="https://opacsvr01.library.pref.nara.jp/opac/volume/536536"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.wakayama-c.ed.jp/winj/opac/switch-detail-iccap.do?bibid=1100547493"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.pref.tottori.jp/winj/opac/switch-detail-iccap.do?bibid=1101545264"/>
+      <rdfs:seeAlso rdf:resource="https://www2.library.pref.shimane.lg.jp/opac/switch-detail-iccap.do?bibid=1101196479"/>
+      <rdfs:seeAlso rdf:resource="https://opac.libnet.pref.okayama.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009811130799"/>
+      <rdfs:seeAlso rdf:resource="https://www2.hplibra.pref.hiroshima.jp/bib/?B11478559"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.city.hiroshima.jp/winj/opac/switch-detail-iccap.do?bibid=1103039274"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.yamaguchi.lg.jp//wo/opc_srh/srh_detail/1000590536/"/>
+      <rdfs:seeAlso rdf:resource="https://alislibopac.bunmori.tokushima.jp/winj/opac/switch-detail-iccap.do?bibid=1102826660"/>
+      <rdfs:seeAlso rdf:resource="https://www.ehimetosyokan.jp/winj/opac/switch-detail-iccap.do?bibid=1100577374"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.pref.fukuoka.jp/winj/opac/switch-detail-iccap.do?bibid=1106563036"/>
+      <rdfs:seeAlso rdf:resource="https://www.toshokan.city.fukuoka.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1100402752"/>
+      <rdfs:seeAlso rdf:resource="https://opac.miraionlibrary.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000000496681"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kumamoto.jp/winj/opac/switch-detail-iccap.do?bibid=1100885610"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.oita.jp/winj/opac/switch-detail-iccap.do?bibid=1100374955"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.miyazaki.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1101324804"/>
+      <rdfs:seeAlso rdf:resource="https://www2.library.pref.kagoshima.jp/kento/opac/switch-detail-iccap.do?bibid=1108062924"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.okinawa.jp/winj/opac/switch-detail-iccap.do?bibid=1100436096"/>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R100000002-I000009916654"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1970023484979751599"/>
+      <rdfs:seeAlso rdf:resource="https://www.books.or.jp/book-details/9784560031919"/>
+      <dc:description> 2008</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェイリー最晩年の源氏物語観</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I361395</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェイリー最晩年の源氏物語観</li><li>タイトル（読み）：アーサー ウェイリー サイ バンネン ノ ゲンジ モノガタリカン</li><li>責任表示：井上 英明</li></ul>]]></description>
+      <author>井上 英明,井上 英明</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I361395</guid>
+      <pubDate>Mon, 29 Jan 2001 23:32:46 +0900</pubDate>
+      <dc:title>アーサー・ウェイリー最晩年の源氏物語観</dc:title>
+      <dcndl:titleTranscription>アーサー ウェイリー サイ バンネン ノ ゲンジ モノガタリカン</dcndl:titleTranscription>
+      <dc:creator>井上 英明</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">361395</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZK21</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I361395"/>
+      <rdfs:seeAlso rdf:resource="https://doi.org/10.20613/hikaku.15.0_14"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1390282680811982976"/>
+      <dc:description>掲載誌：比較文学 / 日本比較文学会 [編](通号 15) p.14～24</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェイリーと『源氏物語』を読む(前篇)「雨夜の品定め」に見える男女観</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I10360793</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェイリーと『源氏物語』を読む(前篇)「雨夜の品定め」に見える男女観</li><li>タイトル（読み）：アーサー ウェイリー ト ゲンジ モノガタリ オ ヨム ゼンペン アマヨ ノ シナサダメ ニ ミエル ダンジョカン</li><li>責任表示：平川 祐弘</li></ul>]]></description>
+      <author>平川 祐弘,平川 祐弘</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I10360793</guid>
+      <pubDate>Fri, 2 Oct 2009 22:43:28 +0900</pubDate>
+      <dc:title>アーサー・ウェイリーと『源氏物語』を読む(前篇)「雨夜の品定め」に見える男女観</dc:title>
+      <dcndl:titleTranscription>アーサー ウェイリー ト ゲンジ モノガタリ オ ヨム ゼンペン アマヨ ノ シナサダメ ニ ミエル ダンジョカン</dcndl:titleTranscription>
+      <dc:creator>平川 祐弘</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">10360793</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZG22</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I10360793"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520291854987353984"/>
+      <dc:description>掲載誌：東京人 8(通号 270) p.139～145</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェイリーと『源氏物語』を読む(後篇)「雨夜の品定め」に見える男女観</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I10399215</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェイリーと『源氏物語』を読む(後篇)「雨夜の品定め」に見える男女観</li><li>タイトル（読み）：アーサー ウェイリー ト ゲンジ モノガタリ オ ヨム コウヘン アマヨ ノ シナサダメ ニ ミエル ダンジョカン</li><li>責任表示：平川 祐弘</li></ul>]]></description>
+      <author>平川 祐弘,平川 祐弘</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I10399215</guid>
+      <pubDate>Fri, 30 Oct 2009 22:38:56 +0900</pubDate>
+      <dc:title>アーサー・ウェイリーと『源氏物語』を読む(後篇)「雨夜の品定め」に見える男女観</dc:title>
+      <dcndl:titleTranscription>アーサー ウェイリー ト ゲンジ モノガタリ オ ヨム コウヘン アマヨ ノ シナサダメ ニ ミエル ダンジョカン</dcndl:titleTranscription>
+      <dc:creator>平川 祐弘</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">10399215</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZG22</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I10399215"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520573330002913664"/>
+      <dc:description>掲載誌：東京人 10(通号 272) p.140～145</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェイリーの源氏物語論</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I9768283</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェイリーの源氏物語論</li><li>タイトル（読み）：アーサー ウェイリー ノ ゲンジ モノガタリ ロン</li><li>責任表示：井原 眞理子</li></ul>]]></description>
+      <author>井原 眞理子,井原 眞理子</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I9768283</guid>
+      <pubDate>Fri, 30 Jan 2009 22:44:03 +0900</pubDate>
+      <dc:title>アーサー・ウェイリーの源氏物語論</dc:title>
+      <dcndl:titleTranscription>アーサー ウェイリー ノ ゲンジ モノガタリ ロン</dcndl:titleTranscription>
+      <dc:creator>井原 眞理子</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">9768283</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZK22</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I9768283"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520854805771485440"/>
+      <dc:description>掲載誌：國文學 : 解釈と教材の研究 / 學燈社 [編] 3(通号 781) p.160～167</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェイリーの肖像--「源氏物語」の英訳者の才能</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I223954</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェイリーの肖像--「源氏物語」の英訳者の才能</li><li>タイトル（読み）：アーサー ウェイリー ノ ショウゾウ ゲンジ モノガタリ ノ エイヤクシャ ノ サイノウ</li><li>責任表示：モリス アイヴァン</li></ul>]]></description>
+      <author>モリス アイヴァン,モリス アイヴァン</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I223954</guid>
+      <pubDate>Fri, 31 Mar 2000 06:05:18 +0900</pubDate>
+      <dc:title>アーサー・ウェイリーの肖像--「源氏物語」の英訳者の才能</dc:title>
+      <dcndl:titleTranscription>アーサー ウェイリー ノ ショウゾウ ゲンジ モノガタリ ノ エイヤクシャ ノ サイノウ</dcndl:titleTranscription>
+      <dc:creator>モリス アイヴァン</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">223954</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I223954"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523388079655130112"/>
+      <dc:description>掲載誌：展望(通号 136) p.157～174</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェーリーの朝顔斎院解釈--『源氏物語』の西洋における受容(1)</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I8633848</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェーリーの朝顔斎院解釈--『源氏物語』の西洋における受容(1)</li><li>タイトル（読み）：アーサー ウェーリー ノ アサガオサイイン カイシャク ゲンジ モノガタリ ノ セイヨウ ニ オケル ジュヨウ 1</li><li>責任表示：太田 素子</li></ul>]]></description>
+      <author>太田 素子,太田 素子</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I8633848</guid>
+      <pubDate>Fri, 23 Feb 2007 22:46:22 +0900</pubDate>
+      <dc:title>アーサー・ウェーリーの朝顔斎院解釈--『源氏物語』の西洋における受容(1)</dc:title>
+      <dcndl:titleTranscription>アーサー ウェーリー ノ アサガオサイイン カイシャク ゲンジ モノガタリ ノ セイヨウ ニ オケル ジュヨウ 1</dcndl:titleTranscription>
+      <dc:creator>太田 素子</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">8633848</dc:identifier>
+      <dc:subject>源氏物語の翻訳</dc:subject>
+      <dc:subject xsi:type="dcndl:NDLC">ZV1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I8633848"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1050282812711412992"/>
+      <dc:description>掲載誌：大手前大学人文科学部論集 / 大手前大学人文科学部 編 6 p.83～92</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェーリーの朝顔斎院解釈 : 『源氏物語』の西洋における受容(1)</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000025-I010480001438488</link>
+      <description><![CDATA[<p>大手前大学・大手前短期大学,2005,<p><ul><li>タイトル：アーサー・ウェーリーの朝顔斎院解釈 : 『源氏物語』の西洋における受容(1)</li><li>責任表示：OTA, Motoko,太田, 素子</li></ul>]]></description>
+      <author>OTA, Motoko,太田, 素子,OTA, Motoko,太田, 素子</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000025-I010480001438488</guid>
+      <pubDate>Fri, 12 Jun 2026 13:48:16 +0900</pubDate>
+      <dc:title>アーサー・ウェーリーの朝顔斎院解釈 : 『源氏物語』の西洋における受容(1)</dc:title>
+      <dc:creator>OTA, Motoko</dc:creator>
+      <dc:creator>太田, 素子</dc:creator>
+      <dc:publisher>大手前大学・大手前短期大学</dc:publisher>
+      <dc:date xsi:type="dcterms:W3CDTF">2005</dc:date>
+      <dcterms:issued>2005</dcterms:issued>
+      <dc:subject>源氏物語の翻訳</dc:subject>
+      <dc:description>出版タイプ： VoR</dc:description>
+      <dc:description>AA11529669</dc:description>
+      <rdfs:seeAlso rdf:resource="https://otemae.repo.nii.ac.jp/records/571"/>
+      <dc:description>掲載誌：大手前大学人文科学部論集 2005 p.A83-A92</dc:description>
+    </item>
+    <item>
+      <title>アーサー・ウェリー英訳源氏物語の諸問題</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I810685</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：アーサー・ウェリー英訳源氏物語の諸問題</li><li>タイトル（読み）：アーサー ウェリー エイヤク ゲンジ モノガタリ ノ ショ モンダイ</li><li>責任表示：井上 英明</li></ul>]]></description>
+      <author>井上 英明,井上 英明</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I810685</guid>
+      <pubDate>Fri, 15 Jan 2010 22:39:38 +0900</pubDate>
+      <dc:title>アーサー・ウェリー英訳源氏物語の諸問題</dc:title>
+      <dcndl:titleTranscription>アーサー ウェリー エイヤク ゲンジ モノガタリ ノ ショ モンダイ</dcndl:titleTranscription>
+      <dc:creator>井上 英明</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">810685</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZK21</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I810685"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520572357367765760"/>
+      <dc:description>掲載誌：比較文学年誌 / 早稲田大学比較文学研究室「比較文学年誌」編集委員会 編(通号 1) p.175～202</dc:description>
+    </item>
+    <item>
+      <title>アーサーウェリー英訳『源氏物語』出現の時代的背景とウェリーの『源氏物語』観</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000025-I014700006264273</link>
+      <description><![CDATA[<p>1974-03,<p><ul><li>タイトル：アーサーウェリー英訳『源氏物語』出現の時代的背景とウェリーの『源氏物語』観</li><li>タイトル（読み）：アーサーウェリー エイヤク ゲンジ モノガタリ シュツゲン ノ ジダイテキ ハイケイ ト ウェリー ノ ゲンジ モノガタリ カン</li><li>責任表示：岡, テイ子</li></ul>]]></description>
+      <author>岡, テイ子,岡, テイ子</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000025-I014700006264273</guid>
+      <pubDate>Thu, 3 Oct 2024 19:34:58 +0900</pubDate>
+      <dc:title>アーサーウェリー英訳『源氏物語』出現の時代的背景とウェリーの『源氏物語』観</dc:title>
+      <dcndl:titleTranscription>アーサーウェリー エイヤク ゲンジ モノガタリ シュツゲン ノ ジダイテキ ハイケイ ト ウェリー ノ ゲンジ モノガタリ カン</dcndl:titleTranscription>
+      <dc:creator>岡, テイ子</dc:creator>
+      <dcndl:creatorTranscription>オカ, テイコ</dcndl:creatorTranscription>
+      <dc:date xsi:type="dcterms:W3CDTF">1974-03</dc:date>
+      <dcterms:issued>1974-03</dcterms:issued>
+      <dc:description>出版タイプ： NA</dc:description>
+      <rdfs:seeAlso rdf:resource="https://opac.agulin.aoyama.ac.jp/iwjs0011opc/TF01311697"/>
+      <dc:description>掲載誌：青山語文 1974-03 p.39-49</dc:description>
+    </item>
+    <item>
+      <title>アーサーウェリー英訳『源氏物語』出現の時代的背景とウェリーの『源氏物語』観</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000136-I1574231876969584256</link>
+      <description><![CDATA[<p>1974-03,<p><ul><li>タイトル：アーサーウェリー英訳『源氏物語』出現の時代的背景とウェリーの『源氏物語』観</li></ul>]]></description>
+      <author>岡 テイ子</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000136-I1574231876969584256</guid>
+      <pubDate>Fri, 25 Sep 2026 11:13:32 +0900</pubDate>
+      <dc:title>アーサーウェリー英訳『源氏物語』出現の時代的背景とウェリーの『源氏物語』観</dc:title>
+      <dc:creator>岡 テイ子</dc:creator>
+      <dc:date xsi:type="dcterms:W3CDTF">1974-03</dc:date>
+      <dcterms:issued>1974-03</dcterms:issued>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1574231876969584256"/>
+      <dc:description>掲載誌：青山語文 1974-03 p.39-49</dc:description>
+    </item>
+    <item>
+      <title>挨拶のことばと源氏物語 ： 其の一、竹取物語と宇津保物語と枕草子から</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000136-I1390583394350257536</link>
+      <description><![CDATA[<p>2000-03-01,<p><ul><li>タイトル：挨拶のことばと源氏物語 ： 其の一、竹取物語と宇津保物語と枕草子から</li><li>タイトル（読み）：アイサツ　ノ　コトバ　ト　ゲンジ　モノガタリ　：　ソノイチ　タケトリ　モノガタリ　ト　ウツホ　モノガタリ　ト　マクラノソウシ　カラ</li></ul>]]></description>
+      <author>上野 辰義</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000136-I1390583394350257536</guid>
+      <pubDate>Fri, 25 Sep 2026 11:13:32 +0900</pubDate>
+      <dc:title>挨拶のことばと源氏物語 ： 其の一、竹取物語と宇津保物語と枕草子から</dc:title>
+      <dcndl:titleTranscription>アイサツ　ノ　コトバ　ト　ゲンジ　モノガタリ　：　ソノイチ　タケトリ　モノガタリ　ト　ウツホ　モノガタリ　ト　マクラノソウシ　カラ</dcndl:titleTranscription>
+      <dc:creator>上野 辰義</dc:creator>
+      <dc:date xsi:type="dcterms:W3CDTF">2000-03-01</dc:date>
+      <dcterms:issued>2000-03-01</dcterms:issued>
+      <rdfs:seeAlso rdf:resource="https://bukkyo.alma.exlibrisgroup.com/discovery/fulldisplay?context=L&amp;vid=81BU_INST:Services&amp;docid=alma991006875100506201"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1390583394350257536"/>
+      <dc:description>掲載誌：文学部論集 2000-03-01 p.17-29</dc:description>
+    </item>
+    <item>
+      <title>挨拶のことばと源氏物語--其の一、竹取物語と宇津保物語と枕草紙から</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5517743</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：挨拶のことばと源氏物語--其の一、竹取物語と宇津保物語と枕草紙から</li><li>タイトル（読み）：アイサツ ノ コトバ ト ゲンジ モノガタリ ソノ 1 タケトリ モノガタリ ト ウツホ モノガタリ ト マクラノソウシ カラ</li><li>責任表示：上野 辰義</li></ul>]]></description>
+      <author>上野 辰義,上野 辰義</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5517743</guid>
+      <pubDate>Wed, 30 Mar 2022 01:53:52 +0900</pubDate>
+      <dc:title>挨拶のことばと源氏物語--其の一、竹取物語と宇津保物語と枕草紙から</dc:title>
+      <dcndl:titleTranscription>アイサツ ノ コトバ ト ゲンジ モノガタリ ソノ 1 タケトリ モノガタリ ト ウツホ モノガタリ ト マクラノソウシ カラ</dcndl:titleTranscription>
+      <dc:creator>上野 辰義</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5517743</dc:identifier>
+      <dc:subject>源氏物語</dc:subject>
+      <dc:subject xsi:type="dcndl:NDLC">ZH7</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5517743"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520853832927258624"/>
+      <dc:description>掲載誌：文学部論集 = Journal of the Faculty of Letters / 佛教大学研究推進機構会議, 文学部論集編集会議 編 84 p.17～29</dc:description>
+    </item>
+    <item>
+      <title>愛さないけど愛されたい : 身勝手な女の『源氏物語』</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I032367367</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛さないけど愛されたい : 身勝手な女の『源氏物語』</li><li>タイトル（読み）：アイサナイ ケド アイサレタイ : ミガッテ ナ オンナ ノ 『 ゲンジ モノガタリ 』</li><li>責任表示：井野 葉子</li></ul>]]></description>
+      <author>井野 葉子,井野 葉子</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I032367367</guid>
+      <pubDate>Tue, 13 Sep 2022 19:26:31 +0900</pubDate>
+      <dc:title>愛さないけど愛されたい : 身勝手な女の『源氏物語』</dc:title>
+      <dcndl:titleTranscription>アイサナイ ケド アイサレタイ : ミガッテ ナ オンナ ノ 『 ゲンジ モノガタリ 』</dcndl:titleTranscription>
+      <dc:creator>井野 葉子</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">032367367</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZK22</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I032367367"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520856362152723072"/>
+      <dc:description>掲載誌：平安朝文学研究 / 平安朝文学研究会 編 26 p.33-35</dc:description>
+    </item>
+    <item>
+      <title>愛した、書いた、祈った(第16回)『源氏物語』への運命</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I9673960</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛した、書いた、祈った(第16回)『源氏物語』への運命</li><li>タイトル（読み）：アイシタ カイタ イノッタ ダイ16カイ ゲンジ モノガタリ エノ ウンメイ</li><li>責任表示：瀬戸内 寂聴,尾崎 真理子</li></ul>]]></description>
+      <author>瀬戸内 寂聴,尾崎 真理子,瀬戸内 寂聴,尾崎 真理子</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I9673960</guid>
+      <pubDate>Fri, 24 Oct 2008 22:37:03 +0900</pubDate>
+      <dc:title>愛した、書いた、祈った(第16回)『源氏物語』への運命</dc:title>
+      <dcndl:titleTranscription>アイシタ カイタ イノッタ ダイ16カイ ゲンジ モノガタリ エノ ウンメイ</dcndl:titleTranscription>
+      <dc:creator>瀬戸内 寂聴</dc:creator>
+      <dc:creator>尾崎 真理子</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">9673960</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW6</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I9673960"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522543655000904064"/>
+      <dc:description>掲載誌：婦人公論 22(通号 1260) p.56～59</dc:description>
+    </item>
+    <item>
+      <title>愛執の構図--紫の上の嫉妬</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I199128</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛執の構図--紫の上の嫉妬</li><li>タイトル（読み）：アイシュウ ノ コウズ ムラサキ ノ ウエ ノ シット</li><li>責任表示：後藤 祥子</li><li>シリーズ名：源氏物語における人間(特集) ; 光源氏--人間造型と世界</li><li>シリーズ名（読み）：ゲンジ モノガタリ ニ オケル ニンゲン トクシュウ ; ヒカルゲンジ ニンゲン ゾウケイ ト セカイ</li></ul>]]></description>
+      <author>後藤 祥子,後藤 祥子</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I199128</guid>
+      <pubDate>Mon, 4 Dec 2000 23:26:14 +0900</pubDate>
+      <dc:title>愛執の構図--紫の上の嫉妬</dc:title>
+      <dcndl:titleTranscription>アイシュウ ノ コウズ ムラサキ ノ ウエ ノ シット</dcndl:titleTranscription>
+      <dc:creator>後藤 祥子</dc:creator>
+      <dcndl:seriesTitle>源氏物語における人間(特集) ; 光源氏--人間造型と世界</dcndl:seriesTitle>
+      <dcndl:seriesTitleTranscription>ゲンジ モノガタリ ニ オケル ニンゲン トクシュウ ; ヒカルゲンジ ニンゲン ゾウケイ ト セカイ</dcndl:seriesTitleTranscription>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">199128</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZK22</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I199128"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523106605093778816"/>
+      <dc:description>掲載誌：國文學 : 解釈と教材の研究 / 學燈社 [編] 7 p.121～132</dc:description>
+    </item>
+    <item>
+      <title>哀傷歌における『源氏物語』摂取</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000136-I1390283659858578176</link>
+      <description><![CDATA[<p>2015-01-01,<p><ul><li>タイトル：哀傷歌における『源氏物語』摂取</li></ul>]]></description>
+      <author>君嶋 亜紀</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000136-I1390283659858578176</guid>
+      <pubDate>Fri, 25 Sep 2026 11:13:32 +0900</pubDate>
+      <dc:title>哀傷歌における『源氏物語』摂取</dc:title>
+      <dc:creator>君嶋 亜紀</dc:creator>
+      <dc:date xsi:type="dcterms:W3CDTF">2015-01-01</dc:date>
+      <dcterms:issued>2015-01-01</dcterms:issued>
+      <dc:subject>和歌</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://doi.org/10.9748/hcs.2015.319"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1390283659858578176"/>
+      <dc:description>掲載誌：人間生活文化研究 25 2015-01-01 p.319-323</dc:description>
+    </item>
+    <item>
+      <title>哀傷と死--源氏物語試論</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I2013710</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：哀傷と死--源氏物語試論</li><li>タイトル（読み）：アイショウ ト シ ゲンジ モノガタリ シロン</li><li>責任表示：今西 祐一郎</li></ul>]]></description>
+      <author>今西 祐一郎,今西 祐一郎</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I2013710</guid>
+      <pubDate>Thu, 4 Feb 1999 05:17:40 +0900</pubDate>
+      <dc:title>哀傷と死--源氏物語試論</dc:title>
+      <dcndl:titleTranscription>アイショウ ト シ ゲンジ モノガタリ シロン</dcndl:titleTranscription>
+      <dc:creator>今西 祐一郎</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">2013710</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZK22</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I2013710"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520290884063706240"/>
+      <dc:description>掲載誌：国語国文 / 京都大学文学部国語学国文学研究室 編 8 p.p1～23</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000002-I000004178561</link>
+      <description><![CDATA[<p>文藝春秋,2003,4-16-365100-4<p><ul><li>タイトル：愛する源氏物語</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ</li><li>責任表示：俵万智 著</li><li>NDC(9)：913.363</li></ul>]]></description>
+      <author>俵, 万智, 1962-,俵万智 著</author>
+      <category>図書</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000002-I000004178561</guid>
+      <pubDate>Fri, 14 Aug 2026 00:04:16 +0900</pubDate>
+      <dc:title>愛する源氏物語</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ</dcndl:titleTranscription>
+      <dc:creator>俵, 万智, 1962-</dc:creator>
+      <dcndl:creatorTranscription>タワラ, マチ, 1962-</dcndl:creatorTranscription>
+      <dc:publisher>文藝春秋</dc:publisher>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:date xsi:type="dcterms:W3CDTF">2003</dc:date>
+      <dcterms:issued>2003.7</dcterms:issued>
+      <dcndl:price>1476円</dcndl:price>
+      <dc:extent>285p</dc:extent>
+      <dc:identifier xsi:type="dcndl:ISBN">4-16-365100-4</dc:identifier>
+      <dc:identifier xsi:type="dcndl:ISBN13">4-16-365100-4</dc:identifier>
+      <dc:identifier xsi:type="dcndl:NDLBibID">000004178561</dc:identifier>
+      <dc:identifier xsi:type="dcndl:JPNO">20440673</dc:identifier>
+      <dc:subject>源氏物語</dc:subject>
+      <dc:subject xsi:type="dcndl:NDLC">KG59</dc:subject>
+      <dc:subject xsi:type="dcndl:NDC9">913.363</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.hokkaido.jp/wo/opc_srh/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.sapporo.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1006300052203"/>
+      <rdfs:seeAlso rdf:resource="https://www.plib.pref.aomori.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1102438918"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.iwate.jp/opac/advanced-search"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.miyagi.jp/winj/opac/switch-detail-iccap.do?bibid=1100221121"/>
+      <rdfs:seeAlso rdf:resource="https://www.apl.pref.akita.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009810467540"/>
+      <rdfs:seeAlso rdf:resource="https://opac.lib.pref.yamagata.jp/winj/opac/switch-detail-iccap.do?bibid=1100425440"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.ibaraki.jp/licsxp-kopac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001000991843"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.pref.tochigi.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1100314738"/>
+      <rdfs:seeAlso rdf:resource="https://www1.library.pref.gunma.jp/winj/opac/switch-detail-iccap.do?bibid=1100417198"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.city.saitama.jp/bookdetail?num=1219343&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.chiba.jp/licsxp-opac/WOpacTifSchCmpdDispAction.do"/>
+      <rdfs:seeAlso rdf:resource="https://catalog.library.metro.tokyo.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1105910333"/>
+      <rdfs:seeAlso rdf:resource="https://www.klnet.pref.kanagawa.jp/winj/opac/switch-detail-iccap.do?bibid=1102009202"/>
+      <rdfs:seeAlso rdf:resource="https://opac.lib.city.yokohama.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1103050402"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.kawasaki.jp/bookdetail?num=226116&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.sagamihara.kanagawa.jp/TOSHOW/asp/WwShousaiKen.aspx?FCode=1029697"/>
+      <rdfs:seeAlso rdf:resource="https://opac.pref-lib.niigata.niigata.jp/winj/opac/switch-detail-iccap.do?bibid=1105070085"/>
+      <rdfs:seeAlso rdf:resource="https://lib2.lib.pref.toyama.jp/opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009810425348"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.ishikawa.lg.jp/wo/opc_srh/srh_detail/1009910446938/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library-archives.pref.fukui.lg.jp/wo/opc_srh/srh_detail/1104363243/"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.pref.gifu.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1100067026"/>
+      <rdfs:seeAlso rdf:resource="https://www.toshokan.city.shizuoka.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001100298481"/>
+      <rdfs:seeAlso rdf:resource="http://websv.aichi-pref-library.jp/winj/opac/switch-detail-iccap.do?bibid=1160415414"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.nagoya.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009913027268"/>
+      <rdfs:seeAlso rdf:resource="http://opac1.library.pref.mie.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1102119858"/>
+      <rdfs:seeAlso rdf:resource="https://www.shiga-pref-library.jp/wo/opc_srh/srh_detail/1665452/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kyoto.jp/bib/?B10521378"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.osaka.jp/bib/?B11124165"/>
+      <rdfs:seeAlso rdf:resource="https://www.oml.city.osaka.lg.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000010567519"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib-sakai.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000001626245"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.hyogo.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1102217304"/>
+      <rdfs:seeAlso rdf:resource="http://opacsvr01.library.pref.nara.jp/mylimedio/search/book.do?bibid=270673"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.wakayama-c.ed.jp/winj/opac/switch-detail-iccap.do?bibid=1100444713"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.pref.tottori.jp/winj/opac/switch-detail-iccap.do?bibid=1101096714"/>
+      <rdfs:seeAlso rdf:resource="https://opac.libnet.pref.okayama.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009810481225"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.city.hiroshima.jp/winj/opac/switch-detail-iccap.do?bibid=1100007237"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.yamaguchi.lg.jp//wo/opc_srh/srh_detail/9810351443/"/>
+      <rdfs:seeAlso rdf:resource="https://alislibopac.bunmori.tokushima.jp/winj/opac/switch-detail-iccap.do?bibid=1101346827"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kagawa.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1108473171"/>
+      <rdfs:seeAlso rdf:resource="https://www.ehimetosyokan.jp/winj/opac/switch-detail-iccap.do?bibid=1100055535"/>
+      <rdfs:seeAlso rdf:resource="https://www.toshokan.city.fukuoka.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1102739437"/>
+      <rdfs:seeAlso rdf:resource="https://www2.tosyo-saga.jp/kentosyo2/opac/switch-detail-iccap.do?bibid=1100588185"/>
+      <rdfs:seeAlso rdf:resource="https://opac.miraionlibrary.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009810592011"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.oita.jp/winj/opac/switch-detail-iccap.do?bibid=1109430496"/>
+      <rdfs:seeAlso rdf:resource="https://www2.library.pref.kagoshima.jp/kento/opac/switch-detail-iccap.do?bibid=1103038143"/>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R100000002-I000004178561"/>
+      <rdfs:seeAlso rdf:resource="https://library.sapie.or.jp/cgi-bin/CN1MN1?S00101=J00DTL04&amp;S00222=1020387"/>
+      <rdfs:seeAlso rdf:resource="https://library.sapie.or.jp/cgi-bin/CN1MN1?S00101=J00DTL04&amp;S00222=1021156"/>
+      <rdfs:seeAlso rdf:resource="https://library.sapie.or.jp/cgi-bin/CN1MN1?S00101=J00DTL04&amp;S00222=1042355"/>
+      <rdfs:seeAlso rdf:resource="https://library.sapie.or.jp/cgi-bin/CN1MN1?S00101=J00DTL04&amp;S00222=1053787"/>
+      <rdfs:seeAlso rdf:resource="https://library.sapie.or.jp/cgi-bin/CN1MN1?S00101=J00DTL04&amp;S00222=1053957"/>
+      <rdfs:seeAlso rdf:resource="https://mina.ndl.go.jp/books/R100000049-I000007802275"/>
+      <rdfs:seeAlso rdf:resource="https://mina.ndl.go.jp/books/R100000049-I000008100153"/>
+      <rdfs:seeAlso rdf:resource="https://mina.ndl.go.jp/books/R100000049-I027545887"/>
+      <rdfs:seeAlso rdf:resource="https://mina.ndl.go.jp/books/R100000073-I10375762"/>
+      <rdfs:seeAlso rdf:resource="https://www.kanabun.or.jp/CARIN/CARINOPACLINK.HTM?ID=B00128218"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1971149384849294080"/>
+      <rdfs:seeAlso rdf:resource="https://www.books.or.jp/book-details/9784163651002"/>
+      <dc:description> 2003</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000002-I000011201770</link>
+      <description><![CDATA[<p>下,埼玉福祉会,2011,978-4-88419-719-3<p><ul><li>タイトル：愛する源氏物語</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ</li><li>責任表示：俵万智 著</li><li>シリーズ名：大活字本シリーズ</li><li>シリーズ名（読み）：ダイカツジボン シリーズ</li><li>NDC(9)：913.363</li></ul>]]></description>
+      <author>俵, 万智, 1962-,俵万智 著</author>
+      <category>図書</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000002-I000011201770</guid>
+      <pubDate>Fri, 14 Aug 2026 00:04:04 +0900</pubDate>
+      <dc:title>愛する源氏物語</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ</dcndl:titleTranscription>
+      <dc:creator>俵, 万智, 1962-</dc:creator>
+      <dcndl:creatorTranscription>タワラ, マチ, 1962-</dcndl:creatorTranscription>
+      <dcndl:volume>下</dcndl:volume>
+      <dcndl:seriesTitle>大活字本シリーズ</dcndl:seriesTitle>
+      <dcndl:seriesTitleTranscription>ダイカツジボン シリーズ</dcndl:seriesTitleTranscription>
+      <dc:publisher>埼玉福祉会</dc:publisher>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:date xsi:type="dcterms:W3CDTF">2011</dc:date>
+      <dcterms:issued>2011.5</dcterms:issued>
+      <dcndl:price>3000円</dcndl:price>
+      <dc:extent>300p</dc:extent>
+      <dc:identifier xsi:type="dcndl:ISBN">978-4-88419-719-3</dc:identifier>
+      <dc:identifier xsi:type="dcndl:NDLBibID">000011201770</dc:identifier>
+      <dc:identifier xsi:type="dcndl:JPNO">21943356</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">YT31</dc:subject>
+      <dc:subject xsi:type="dcndl:NDC9">913.363</dc:subject>
+      <dc:description>底本: 文春文庫「愛する源氏物語」</dc:description>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.sapporo.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1008000417167"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.miyagi.jp/winj/opac/switch-detail-iccap.do?bibid=1101354296"/>
+      <rdfs:seeAlso rdf:resource="https://www.apl.pref.akita.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000000577466"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.fcs.ed.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001102796903"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.ibaraki.jp/licsxp-kopac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001001934390"/>
+      <rdfs:seeAlso rdf:resource="https://www1.library.pref.gunma.jp/winj/opac/switch-detail-iccap.do?bibid=1102022424"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.city.saitama.jp/bookdetail?num=139368&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.chiba.lg.jp//licsxp-iopac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000002203466"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.chiba.jp/licsxp-opac/WOpacTifSchCmpdDispAction.do"/>
+      <rdfs:seeAlso rdf:resource="https://catalog.library.metro.tokyo.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1108428723"/>
+      <rdfs:seeAlso rdf:resource="https://opac.lib.city.yokohama.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1111052184"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.kawasaki.jp/bookdetail?num=2173017&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.ishikawa.lg.jp/wo/opc_srh/srh_detail/1100000456193/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library-archives.pref.fukui.lg.jp/wo/opc_srh/srh_detail/1105051300/"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.yamanashi.jp/licsxp-opac/WOpacMnuTopInitAction.do"/>
+      <rdfs:seeAlso rdf:resource="https://www.toshokan.city.shizuoka.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001101866705"/>
+      <rdfs:seeAlso rdf:resource="http://websv.aichi-pref-library.jp/winj/opac/switch-detail-iccap.do?bibid=1182455885"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.nagoya.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001110023890"/>
+      <rdfs:seeAlso rdf:resource="http://opac1.library.pref.mie.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1110056952"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kyoto.jp/bib/?B10726809"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.osaka.jp/bib/?B12673191"/>
+      <rdfs:seeAlso rdf:resource="https://www.oml.city.osaka.lg.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000012312418"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib-sakai.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1007000098401"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.wakayama-c.ed.jp/winj/opac/switch-detail-iccap.do?bibid=1102294984"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.pref.tottori.jp/winj/opac/switch-detail-iccap.do?bibid=1101827690"/>
+      <rdfs:seeAlso rdf:resource="https://opac.libnet.pref.okayama.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009811438547"/>
+      <rdfs:seeAlso rdf:resource="https://www2.hplibra.pref.hiroshima.jp/bib/?B11663824"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.city.hiroshima.jp/winj/opac/switch-detail-iccap.do?bibid=1103307711"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.yamaguchi.lg.jp//wo/opc_srh/srh_detail/1000879831/"/>
+      <rdfs:seeAlso rdf:resource="https://alislibopac.bunmori.tokushima.jp/winj/opac/switch-detail-iccap.do?bibid=1103303294"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kagawa.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1100449766"/>
+      <rdfs:seeAlso rdf:resource="https://www.ehimetosyokan.jp/winj/opac/switch-detail-iccap.do?bibid=1101049323"/>
+      <rdfs:seeAlso rdf:resource="https://opac.library.kochi.jp/winj/opac/switch-detail-iccap.do?bibid=1109374475"/>
+      <rdfs:seeAlso rdf:resource="https://opac.miraionlibrary.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000001034777"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.oita.jp/winj/opac/switch-detail-iccap.do?bibid=1102095438"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.miyazaki.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1101674147"/>
+      <rdfs:seeAlso rdf:resource="https://www2.library.pref.kagoshima.jp/kento/opac/switch-detail-iccap.do?bibid=1111049450"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.okinawa.jp/winj/opac/switch-detail-iccap.do?bibid=1100808680"/>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R100000002-I000011201770"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1971993809762701972"/>
+      <rdfs:seeAlso rdf:resource="https://www.books.or.jp/book-details/9784884197193"/>
+      <dc:description> 2011</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(最終回)浮舟の心</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6334154</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(最終回)浮舟の心</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ サイシュウカイ ウキフネ ノ ココロ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6334154</guid>
+      <pubDate>Mon, 18 Nov 2002 22:40:12 +0900</pubDate>
+      <dc:title>愛する源氏物語(最終回)浮舟の心</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ サイシュウカイ ウキフネ ノ ココロ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6334154</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6334154"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521980705860048768"/>
+      <dc:description>掲載誌：文芸春秋 15 p.257～260,図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000002-I000011201769</link>
+      <description><![CDATA[<p>上,埼玉福祉会,2011,978-4-88419-718-6<p><ul><li>タイトル：愛する源氏物語</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ</li><li>責任表示：俵万智 著</li><li>シリーズ名：大活字本シリーズ</li><li>シリーズ名（読み）：ダイカツジボン シリーズ</li><li>NDC(9)：913.363</li></ul>]]></description>
+      <author>俵, 万智, 1962-,俵万智 著</author>
+      <category>図書</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000002-I000011201769</guid>
+      <pubDate>Fri, 14 Aug 2026 00:04:04 +0900</pubDate>
+      <dc:title>愛する源氏物語</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ</dcndl:titleTranscription>
+      <dc:creator>俵, 万智, 1962-</dc:creator>
+      <dcndl:creatorTranscription>タワラ, マチ, 1962-</dcndl:creatorTranscription>
+      <dcndl:volume>上</dcndl:volume>
+      <dcndl:seriesTitle>大活字本シリーズ</dcndl:seriesTitle>
+      <dcndl:seriesTitleTranscription>ダイカツジボン シリーズ</dcndl:seriesTitleTranscription>
+      <dc:publisher>埼玉福祉会</dc:publisher>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:date xsi:type="dcterms:W3CDTF">2011</dc:date>
+      <dcterms:issued>2011.5</dcterms:issued>
+      <dcndl:price>3000円</dcndl:price>
+      <dc:extent>304p</dc:extent>
+      <dc:identifier xsi:type="dcndl:ISBN">978-4-88419-718-6</dc:identifier>
+      <dc:identifier xsi:type="dcndl:NDLBibID">000011201769</dc:identifier>
+      <dc:identifier xsi:type="dcndl:JPNO">21943354</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">YT31</dc:subject>
+      <dc:subject xsi:type="dcndl:NDC9">913.363</dc:subject>
+      <dc:description>底本: 文春文庫「愛する源氏物語」</dc:description>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.sapporo.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1008000417166"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.miyagi.jp/winj/opac/switch-detail-iccap.do?bibid=1101354295"/>
+      <rdfs:seeAlso rdf:resource="https://www.apl.pref.akita.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000000577465"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.fcs.ed.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001102796902"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.ibaraki.jp/licsxp-kopac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001001934389"/>
+      <rdfs:seeAlso rdf:resource="https://www1.library.pref.gunma.jp/winj/opac/switch-detail-iccap.do?bibid=1102022423"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.chiba.lg.jp//licsxp-iopac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000002203465"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.chiba.jp/licsxp-opac/WOpacTifSchCmpdDispAction.do"/>
+      <rdfs:seeAlso rdf:resource="https://catalog.library.metro.tokyo.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1108428722"/>
+      <rdfs:seeAlso rdf:resource="https://opac.lib.city.yokohama.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1111052183"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.kawasaki.jp/bookdetail?num=2173016&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.ishikawa.lg.jp/wo/opc_srh/srh_detail/1100000456192/"/>
+      <rdfs:seeAlso rdf:resource="https://www.library-archives.pref.fukui.lg.jp/wo/opc_srh/srh_detail/1105051299/"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.yamanashi.jp/licsxp-opac/WOpacMnuTopInitAction.do"/>
+      <rdfs:seeAlso rdf:resource="https://www.toshokan.city.shizuoka.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001101866704"/>
+      <rdfs:seeAlso rdf:resource="http://websv.aichi-pref-library.jp/winj/opac/switch-detail-iccap.do?bibid=1182455884"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.nagoya.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1001110023889"/>
+      <rdfs:seeAlso rdf:resource="http://opac1.library.pref.mie.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1110056951"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kyoto.jp/bib/?B10726808"/>
+      <rdfs:seeAlso rdf:resource="https://www.oml.city.osaka.lg.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000012312417"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib-sakai.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1007000098400"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.wakayama-c.ed.jp/winj/opac/switch-detail-iccap.do?bibid=1102294983"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.pref.tottori.jp/winj/opac/switch-detail-iccap.do?bibid=1101827689"/>
+      <rdfs:seeAlso rdf:resource="https://opac.libnet.pref.okayama.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1009811438546"/>
+      <rdfs:seeAlso rdf:resource="https://www2.hplibra.pref.hiroshima.jp/bib/?B11663823"/>
+      <rdfs:seeAlso rdf:resource="http://www.library.city.hiroshima.jp/winj/opac/switch-detail-iccap.do?bibid=1103307710"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.yamaguchi.lg.jp//wo/opc_srh/srh_detail/1000879830/"/>
+      <rdfs:seeAlso rdf:resource="https://alislibopac.bunmori.tokushima.jp/winj/opac/switch-detail-iccap.do?bibid=1103303293"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kagawa.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1100449765"/>
+      <rdfs:seeAlso rdf:resource="https://www.ehimetosyokan.jp/winj/opac/switch-detail-iccap.do?bibid=1101049322"/>
+      <rdfs:seeAlso rdf:resource="https://opac.library.kochi.jp/winj/opac/switch-detail-iccap.do?bibid=1109374474"/>
+      <rdfs:seeAlso rdf:resource="https://opac.miraionlibrary.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000001034776"/>
+      <rdfs:seeAlso rdf:resource="https://library.pref.oita.jp/winj/opac/switch-detail-iccap.do?bibid=1102095437"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.pref.miyazaki.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1101674146"/>
+      <rdfs:seeAlso rdf:resource="https://www2.library.pref.kagoshima.jp/kento/opac/switch-detail-iccap.do?bibid=1111049449"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.okinawa.jp/winj/opac/switch-detail-iccap.do?bibid=1100808679"/>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R100000002-I000011201769"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1970867909855806503"/>
+      <rdfs:seeAlso rdf:resource="https://www.books.or.jp/book-details/9784884197186"/>
+      <dc:description> 2011</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000002-I000008512027</link>
+      <description><![CDATA[<p>文藝春秋,2007,978-4-16-754807-0<p><ul><li>タイトル：愛する源氏物語</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ</li><li>責任表示：俵万智 著</li><li>シリーズ名：文春文庫</li><li>シリーズ名（読み）：ブンシュン ブンコ</li><li>NDC(9)：913.363</li></ul>]]></description>
+      <author>俵, 万智, 1962-,俵万智 著</author>
+      <category>図書</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000002-I000008512027</guid>
+      <pubDate>Fri, 14 Aug 2026 00:04:11 +0900</pubDate>
+      <dc:title>愛する源氏物語</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ</dcndl:titleTranscription>
+      <dc:creator>俵, 万智, 1962-</dc:creator>
+      <dcndl:creatorTranscription>タワラ, マチ, 1962-</dcndl:creatorTranscription>
+      <dcndl:seriesTitle>文春文庫</dcndl:seriesTitle>
+      <dcndl:seriesTitleTranscription>ブンシュン ブンコ</dcndl:seriesTitleTranscription>
+      <dc:publisher>文藝春秋</dc:publisher>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:date xsi:type="dcterms:W3CDTF">2007</dc:date>
+      <dcterms:issued>2007.4</dcterms:issued>
+      <dcndl:price>533円</dcndl:price>
+      <dc:extent>331p</dc:extent>
+      <dc:identifier xsi:type="dcndl:ISBN">978-4-16-754807-0</dc:identifier>
+      <dc:identifier xsi:type="dcndl:NDLBibID">000008512027</dc:identifier>
+      <dc:identifier xsi:type="dcndl:JPNO">21218912</dc:identifier>
+      <dc:subject>源氏物語</dc:subject>
+      <dc:subject xsi:type="dcndl:NDLC">KG59</dc:subject>
+      <dc:subject xsi:type="dcndl:NDC9">913.363</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://www.library.city.sapporo.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1006700409624"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.miyagi.jp/winj/opac/switch-detail-iccap.do?bibid=1100638649"/>
+      <rdfs:seeAlso rdf:resource="https://www.lib.city.saitama.jp/bookdetail?num=2134907&amp;ctg=1"/>
+      <rdfs:seeAlso rdf:resource="https://www.library-archives.pref.fukui.lg.jp/wo/opc_srh/srh_detail/1104667572/"/>
+      <rdfs:seeAlso rdf:resource="https://www.oml.city.osaka.lg.jp/licsxp-opac/WOpacMsgNewListToTifTilDetailAction.do?tilcod=1000011401063"/>
+      <rdfs:seeAlso rdf:resource="https://www2.library.pref.shimane.lg.jp/opac/switch-detail-iccap.do?bibid=1101082558"/>
+      <rdfs:seeAlso rdf:resource="https://www.library.pref.kagawa.lg.jp/winj/opac/switch-detail-iccap.do?bibid=1100111719"/>
+      <rdfs:seeAlso rdf:resource="http://www.lib.pref.fukuoka.jp/winj/opac/switch-detail-iccap.do?bibid=1106394452"/>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R100000002-I000008512027"/>
+      <rdfs:seeAlso rdf:resource="https://library.sapie.or.jp/cgi-bin/CN1MN1?S00101=J00DTL04&amp;S00222=1196895"/>
+      <rdfs:seeAlso rdf:resource="https://library.sapie.or.jp/cgi-bin/CN1MN1?S00101=J00DTL04&amp;S00222=2911455"/>
+      <rdfs:seeAlso rdf:resource="https://mina.ndl.go.jp/books/R100000073-I14979967"/>
+      <rdfs:seeAlso rdf:resource="https://www.kanabun.or.jp/CARIN/CARINOPACLINK.HTM?ID=B00171962"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1971712334740599361"/>
+      <rdfs:seeAlso rdf:resource="https://www.books.or.jp/book-details/1675480700000000000P"/>
+      <rdfs:seeAlso rdf:resource="https://www.books.or.jp/book-details/9784167548070"/>
+      <dc:description> 2007</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(1)和歌は心の結晶</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I4915460</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(1)和歌は心の結晶</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 1 ワカ ワ ココロ ノ ケッショウ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I4915460</guid>
+      <pubDate>Mon, 20 Dec 1999 22:39:07 +0900</pubDate>
+      <dc:title>愛する源氏物語(1)和歌は心の結晶</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 1 ワカ ワ ココロ ノ ケッショウ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">4915460</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I4915460"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520854805301928320"/>
+      <dc:description>掲載誌：文芸春秋 1 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(11)同時進行恋愛</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5502578</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(11)同時進行恋愛</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 11 ドウジ シンコウ レンアイ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5502578</guid>
+      <pubDate>Mon, 4 Dec 2000 23:36:10 +0900</pubDate>
+      <dc:title>愛する源氏物語(11)同時進行恋愛</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 11 ドウジ シンコウ レンアイ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5502578</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5502578"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521417756060692864"/>
+      <dc:description>掲載誌：文芸春秋 14 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(12)会わずに口説く</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5547909</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(12)会わずに口説く</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 12 アワズ ニ クドク</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5547909</guid>
+      <pubDate>Mon, 4 Dec 2000 23:36:18 +0900</pubDate>
+      <dc:title>愛する源氏物語(12)会わずに口説く</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 12 アワズ ニ クドク</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5547909</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5547909"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522825130940905472"/>
+      <dc:description>掲載誌：文芸春秋 15 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(13)BC!な源氏</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5591259</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(13)BC!な源氏</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 13 BC ナ ゲンジ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5591259</guid>
+      <pubDate>Mon, 18 Dec 2000 23:24:51 +0900</pubDate>
+      <dc:title>愛する源氏物語(13)BC!な源氏</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 13 BC ナ ゲンジ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5591259</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5591259"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523388079957183232"/>
+      <dc:description>掲載誌：文芸春秋 1 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(14)朝顔の闇</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5628712</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(14)朝顔の闇</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 14 アサガオ ノ ヤミ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5628712</guid>
+      <pubDate>Mon, 29 Jan 2001 23:38:08 +0900</pubDate>
+      <dc:title>愛する源氏物語(14)朝顔の闇</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 14 アサガオ ノ ヤミ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5628712</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5628712"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523388080092778496"/>
+      <dc:description>掲載誌：文芸春秋 2 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(15)夕霧の初恋</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5656396</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(15)夕霧の初恋</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 15 ユウギリ ノ ハツコイ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5656396</guid>
+      <pubDate>Mon, 26 Feb 2001 23:12:10 +0900</pubDate>
+      <dc:title>愛する源氏物語(15)夕霧の初恋</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 15 ユウギリ ノ ハツコイ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5656396</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5656396"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523951029833020416"/>
+      <dc:description>掲載誌：文芸春秋 3 p.257～260,図中付1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(16)玉鬘の攻防</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5694446</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(16)玉鬘の攻防</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 16 タマカズラ ノ コウボウ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5694446</guid>
+      <pubDate>Mon, 26 Mar 2001 22:52:34 +0900</pubDate>
+      <dc:title>愛する源氏物語(16)玉鬘の攻防</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 16 タマカズラ ノ コウボウ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5694446</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5694446"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521417754849468672"/>
+      <dc:description>掲載誌：文芸春秋 4 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(17)破天荒な和歌</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5725426</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(17)破天荒な和歌</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 17 ハテンコウ ナ ワカ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5725426</guid>
+      <pubDate>Mon, 23 Apr 2001 22:40:06 +0900</pubDate>
+      <dc:title>愛する源氏物語(17)破天荒な和歌</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 17 ハテンコウ ナ ワカ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5725426</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5725426"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521699230261467904"/>
+      <dc:description>掲載誌：文芸春秋 5 p.257～260,図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(18)和歌対決のゆくえ</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5755617</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(18)和歌対決のゆくえ</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 18 ワカ タイケツ ノ ユクエ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5755617</guid>
+      <pubDate>Fri, 26 May 2006 22:52:15 +0900</pubDate>
+      <dc:title>愛する源氏物語(18)和歌対決のゆくえ</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 18 ワカ タイケツ ノ ユクエ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5755617</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5755617"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520010380178723200"/>
+      <dc:description>掲載誌：文芸春秋 6 p.257～260,図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(19)紫の上の悲しみ</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5787782</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(19)紫の上の悲しみ</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 19 ムラサキ ノ ウエ ノ カナシミ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5787782</guid>
+      <pubDate>Mon, 18 Jun 2001 22:43:04 +0900</pubDate>
+      <dc:title>愛する源氏物語(19)紫の上の悲しみ</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 19 ムラサキ ノ ウエ ノ カナシミ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5787782</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5787782"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520573330229035904"/>
+      <dc:description>掲載誌：文芸春秋 7 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(2)あなたのために</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I4941667</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(2)あなたのために</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 2 アナタ ノ タメニ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I4941667</guid>
+      <pubDate>Fri, 10 Feb 2006 22:35:22 +0900</pubDate>
+      <dc:title>愛する源氏物語(2)あなたのために</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 2 アナタ ノ タメニ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">4941667</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I4941667"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522543654968483072"/>
+      <dc:description>掲載誌：文芸春秋 2 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(20)身分って何?</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5824841</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(20)身分って何?</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 20 ミブンッテ ナニ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5824841</guid>
+      <pubDate>Mon, 16 Jul 2001 22:53:41 +0900</pubDate>
+      <dc:title>愛する源氏物語(20)身分って何?</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 20 ミブンッテ ナニ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5824841</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5824841"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523106605349191424"/>
+      <dc:description>掲載誌：文芸春秋 8 p.257～260,図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(21)引き止める心</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5861648</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(21)引き止める心</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 21 ヒキトメル ココロ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5861648</guid>
+      <pubDate>Mon, 13 Aug 2001 23:04:30 +0900</pubDate>
+      <dc:title>愛する源氏物語(21)引き止める心</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 21 ヒキトメル ココロ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5861648</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5861648"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522262179712156800"/>
+      <dc:description>掲載誌：文芸春秋 9 p.257～260,別図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(22)辛さくらべ</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5900326</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(22)辛さくらべ</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 22 ツラサ クラベ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5900326</guid>
+      <pubDate>Tue, 25 Sep 2001 22:47:34 +0900</pubDate>
+      <dc:title>愛する源氏物語(22)辛さくらべ</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 22 ツラサ クラベ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5900326</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5900326"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522262180418893696"/>
+      <dc:description>掲載誌：文芸春秋 11 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(23)口説き下手</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5931519</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(23)口説き下手</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 23 クドキ ベタ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5931519</guid>
+      <pubDate>Mon, 22 Oct 2001 22:32:58 +0900</pubDate>
+      <dc:title>愛する源氏物語(23)口説き下手</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 23 クドキ ベタ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5931519</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5931519"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522543655075406336"/>
+      <dc:description>掲載誌：文芸春秋 13 p.257～260,図別1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(24)紫の上の死</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5957948</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(24)紫の上の死</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 24 ムラサキ ノ ウエ ノ シ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5957948</guid>
+      <pubDate>Mon, 19 Nov 2001 22:45:00 +0900</pubDate>
+      <dc:title>愛する源氏物語(24)紫の上の死</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 24 ムラサキ ノ ウエ ノ シ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5957948</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5957948"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522543655037190144"/>
+      <dc:description>掲載誌：文芸春秋 14 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(25)君亡き一年</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5987575</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(25)君亡き一年</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 25 キミ ナキ 1ネン</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5987575</guid>
+      <pubDate>Mon, 16 Dec 2002 22:43:09 +0900</pubDate>
+      <dc:title>愛する源氏物語(25)君亡き一年</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 25 キミ ナキ 1ネン</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5987575</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5987575"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522543655492845568"/>
+      <dc:description>掲載誌：文芸春秋 1 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(26)薫のはじまり</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6046963</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(26)薫のはじまり</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 26 カオル ノ ハジマリ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6046963</guid>
+      <pubDate>Tue, 12 Feb 2002 22:35:05 +0900</pubDate>
+      <dc:title>愛する源氏物語(26)薫のはじまり</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 26 カオル ノ ハジマリ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6046963</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6046963"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521417755673469056"/>
+      <dc:description>掲載誌：文芸春秋 3 p.257～260,図別1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(27)ふたつのタイプ</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6076842</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(27)ふたつのタイプ</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 27 フタツ ノ タイプ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6076842</guid>
+      <pubDate>Fri, 22 Mar 2002 22:25:10 +0900</pubDate>
+      <dc:title>愛する源氏物語(27)ふたつのタイプ</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 27 フタツ ノ タイプ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6076842</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6076842"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520854805759122304"/>
+      <dc:description>掲載誌：文芸春秋 4 p.257～260,図別1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(28)添い寝の効果</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6104177</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(28)添い寝の効果</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 28 ソイネ ノ コウカ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6104177</guid>
+      <pubDate>Mon, 22 Apr 2002 22:44:30 +0900</pubDate>
+      <dc:title>愛する源氏物語(28)添い寝の効果</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 28 ソイネ ノ コウカ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6104177</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6104177"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523388080501018240"/>
+      <dc:description>掲載誌：文芸春秋 6 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(29)薫の大作戦</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6134887</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(29)薫の大作戦</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 29 カオル ノ ダイサクセン</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6134887</guid>
+      <pubDate>Mon, 17 Jun 2002 22:43:24 +0900</pubDate>
+      <dc:title>愛する源氏物語(29)薫の大作戦</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 29 カオル ノ ダイサクセン</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6134887</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6134887"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523669555496824832"/>
+      <dc:description>掲載誌：文芸春秋 7 p.257～260,図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(3)雨夜の品定め</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I4986459</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(3)雨夜の品定め</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 3 アマヨ ノ シナサダメ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I4986459</guid>
+      <pubDate>Mon, 6 Mar 2000 23:56:25 +0900</pubDate>
+      <dc:title>愛する源氏物語(3)雨夜の品定め</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 3 アマヨ ノ シナサダメ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">4986459</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I4986459"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523388079995474688"/>
+      <dc:description>掲載誌：文芸春秋 4 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(30)大君の絶望</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6163431</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(30)大君の絶望</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 30 オオイギミ ノ ゼツボウ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6163431</guid>
+      <pubDate>Mon, 16 Dec 2002 22:43:10 +0900</pubDate>
+      <dc:title>愛する源氏物語(30)大君の絶望</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 30 オオイギミ ノ ゼツボウ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6163431</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6163431"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521417755285084800"/>
+      <dc:description>掲載誌：文芸春秋 8 p.257～260,図1枚</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(31)プレイボーイの言葉</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6193239</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(31)プレイボーイの言葉</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 31 プレイボーイ ノ コトバ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6193239</guid>
+      <pubDate>Tue, 16 Jul 2002 02:26:18 +0900</pubDate>
+      <dc:title>愛する源氏物語(31)プレイボーイの言葉</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 31 プレイボーイ ノ コトバ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6193239</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6193239"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1520291856009732096"/>
+      <dc:description>掲載誌：文芸春秋 10 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(32)夫婦喧嘩も和歌で</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6232122</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(32)夫婦喧嘩も和歌で</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 32 フウフゲンカ モ ワカ デ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6232122</guid>
+      <pubDate>Mon, 26 Aug 2002 22:45:17 +0900</pubDate>
+      <dc:title>愛する源氏物語(32)夫婦喧嘩も和歌で</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 32 フウフゲンカ モ ワカ デ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6232122</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6232122"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523388079629232768"/>
+      <dc:description>掲載誌：文芸春秋 11 p.257～260,図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(33)恋の人形</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6292011</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(33)恋の人形</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 33 コイ ノ ヒトガタ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6292011</guid>
+      <pubDate>Mon, 7 Oct 2002 22:41:32 +0900</pubDate>
+      <dc:title>愛する源氏物語(33)恋の人形</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 33 コイ ノ ヒトガタ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6292011</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6292011"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523106605339601920"/>
+      <dc:description>掲載誌：文芸春秋 13 p.257～260,図別1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(34)匂宮の情熱</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I6301773</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(34)匂宮の情熱</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 34 ニオウノミヤ ノ ジョウネツ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I6301773</guid>
+      <pubDate>Mon, 21 Oct 2002 22:43:31 +0900</pubDate>
+      <dc:title>愛する源氏物語(34)匂宮の情熱</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 34 ニオウノミヤ ノ ジョウネツ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">6301773</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I6301773"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521980705083965824"/>
+      <dc:description>掲載誌：文芸春秋 14 p.257～260,図1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(4)逃げる女</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5300063</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(4)逃げる女</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 4 ニゲル オンナ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5300063</guid>
+      <pubDate>Mon, 4 Dec 2000 23:36:00 +0900</pubDate>
+      <dc:title>愛する源氏物語(4)逃げる女</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 4 ニゲル オンナ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5300063</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5300063"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522825129684679552"/>
+      <dc:description>掲載誌：文芸春秋 5 p.257～260,図256</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(5)末摘花のボキャ貧</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5330730</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(5)末摘花のボキャ貧</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 5 スエツムハナ ノ ボキャヒン</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5330730</guid>
+      <pubDate>Mon, 22 May 2000 22:40:19 +0900</pubDate>
+      <dc:title>愛する源氏物語(5)末摘花のボキャ貧</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 5 スエツムハナ ノ ボキャヒン</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5330730</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5330730"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523106604990155520"/>
+      <dc:description>掲載誌：文芸春秋 6 p.257～260,図1枚</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(6)ああ、からころも</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5381261</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(6)ああ、からころも</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 6 アア カラ コロ モ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5381261</guid>
+      <pubDate>Mon, 3 Jul 2000 22:43:52 +0900</pubDate>
+      <dc:title>愛する源氏物語(6)ああ、からころも</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 6 アア カラ コロ モ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5381261</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5381261"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1522543653339687296"/>
+      <dc:description>掲載誌：文芸春秋 7 p.257～260,図中付1p</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(7)恋のテクニシャン</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5412901</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(7)恋のテクニシャン</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 7 コイ ノ テクニシャン</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5412901</guid>
+      <pubDate>Mon, 4 Dec 2000 23:36:02 +0900</pubDate>
+      <dc:title>愛する源氏物語(7)恋のテクニシャン</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 7 コイ ノ テクニシャン</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5412901</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5412901"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521136279718185216"/>
+      <dc:description>掲載誌：文芸春秋 9 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(8)朧月夜が一番</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5449842</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(8)朧月夜が一番</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 8 オボロヅキヨ ガ イチバン</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5449842</guid>
+      <pubDate>Mon, 4 Dec 2000 23:36:05 +0900</pubDate>
+      <dc:title>愛する源氏物語(8)朧月夜が一番</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 8 オボロヅキヨ ガ イチバン</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5449842</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5449842"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1523669555719981184"/>
+      <dc:description>掲載誌：文芸春秋 10 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>愛する源氏物語(9)恋の分かれ道</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R000000004-I5481764</link>
+      <description><![CDATA[<p><p><ul><li>タイトル：愛する源氏物語(9)恋の分かれ道</li><li>タイトル（読み）：アイスル ゲンジ モノガタリ 9 コイ ノ ワカレミチ</li><li>責任表示：俵 万智</li></ul>]]></description>
+      <author>俵 万智,俵 万智</author>
+      <category>記事</category>
+      <category>デジタル</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R000000004-I5481764</guid>
+      <pubDate>Mon, 25 Sep 2000 22:40:09 +0900</pubDate>
+      <dc:title>愛する源氏物語(9)恋の分かれ道</dc:title>
+      <dcndl:titleTranscription>アイスル ゲンジ モノガタリ 9 コイ ノ ワカレミチ</dcndl:titleTranscription>
+      <dc:creator>俵 万智</dc:creator>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:identifier xsi:type="dcndl:NDLBibID">5481764</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">ZW1</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R000000004-I5481764"/>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1521980706021292288"/>
+      <dc:description>掲載誌：文芸春秋 11 p.257～260</dc:description>
+    </item>
+    <item>
+      <title>会津版源氏物語</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000136-I1971149384822976185</link>
+      <description><![CDATA[<p>[長尾修一],2016,<p><ul><li>タイトル：会津版源氏物語</li><li>タイトル（読み）：アイズバン ゲンジ モノガタリ</li><li>責任表示：長尾修一訳・解</li><li>NDC(9)：913.369</li></ul>]]></description>
+      <author>長尾, 修一,長尾修一訳・解</author>
+      <category>図書</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000136-I1971149384822976185</guid>
+      <pubDate>Fri, 25 Sep 2026 11:13:32 +0900</pubDate>
+      <dc:title>会津版源氏物語</dc:title>
+      <dcndl:titleTranscription>アイズバン ゲンジ モノガタリ</dcndl:titleTranscription>
+      <dc:creator>長尾, 修一</dc:creator>
+      <dcndl:creatorTranscription>ナガオ, シュウイチ</dcndl:creatorTranscription>
+      <dc:publisher>[長尾修一]</dc:publisher>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:date xsi:type="dcterms:W3CDTF">2016</dc:date>
+      <dcterms:issued>2016.7</dcterms:issued>
+      <dc:identifier xsi:type="dcndl:NIIBibID">BB22143647</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">KG58</dc:subject>
+      <dc:subject xsi:type="dcndl:NDC9">913.369</dc:subject>
+      <dc:description>上の巻上: 桐壺・帚木・空蝉・夕顔・若紫・末摘花</dc:description>
+      <dc:description>上の巻下: 紅葉賀・花宴・葵・賢木・花散里・須磨・明石</dc:description>
+      <rdfs:seeAlso rdf:resource="https://cir.nii.ac.jp/crid/1971149384822976185"/>
+      <dc:description> 2016</dc:description>
+    </item>
+    <item>
+      <title>会津版源氏物語</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000002-I027499578</link>
+      <description><![CDATA[<p>上の巻 上,[長尾修一],2016,<p><ul><li>タイトル：会津版源氏物語</li><li>タイトル（読み）：アイズバン ゲンジ モノガタリ</li><li>責任表示：長尾修一 訳・解</li><li>NDC(9)：913.369</li></ul>]]></description>
+      <author>長尾, 修一,長尾修一 訳・解</author>
+      <category>図書</category>
+      <category>紙</category>
+      <guid isPermaLink="true">https://ndlsearch.ndl.go.jp/books/R100000002-I027499578</guid>
+      <pubDate>Tue, 13 Sep 2016 23:09:10 +0900</pubDate>
+      <dc:title>会津版源氏物語</dc:title>
+      <dcndl:titleTranscription>アイズバン ゲンジ モノガタリ</dcndl:titleTranscription>
+      <dc:creator>長尾, 修一</dc:creator>
+      <dcndl:creatorTranscription>ナガオ, シュウイチ</dcndl:creatorTranscription>
+      <dcndl:volume>上の巻 上</dcndl:volume>
+      <dc:publisher>[長尾修一]</dc:publisher>
+      <dcndl:publicationPlace>JP</dcndl:publicationPlace>
+      <dc:date xsi:type="dcterms:W3CDTF">2016</dc:date>
+      <dcterms:issued>2016.7</dcterms:issued>
+      <dc:extent>1冊</dc:extent>
+      <dc:identifier xsi:type="dcndl:NDLBibID">027499578</dc:identifier>
+      <dc:identifier xsi:type="dcndl:JPNO">22783054</dc:identifier>
+      <dc:subject xsi:type="dcndl:NDLC">KG58</dc:subject>
+      <dc:subject xsi:type="dcndl:NDC9">913.369</dc:subject>
+      <rdfs:seeAlso rdf:resource="https://ndlsearch.ndl.go.jp/books/R100000002-I027499578"/>
+      <dc:description> 2016</dc:description>
+    </item>
+    <item>
+      <title>会津版源氏物語</title>
+      <link>https://ndlsearch.ndl.go.jp/books/R100000002-I027499573</link>
+    

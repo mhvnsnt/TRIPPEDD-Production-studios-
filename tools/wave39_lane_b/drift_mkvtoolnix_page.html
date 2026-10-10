@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="codeberg-auto">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>mbunkus/mkvtoolnix: Creating and working with Matroska files - Codeberg.org</title>
+	<link rel="manifest" href="/manifest.json">
+	<meta name="author" content="mbunkus">
+	<meta name="description" content="mkvtoolnix - Creating and working with Matroska files">
+	<meta name="keywords" content="git,non-profit,foss,oss,free,software,open,source,code,hosting">
+	<meta name="referrer" content="same-origin">
+
+
+	<link rel="alternate" type="application/atom+xml" title="" href="/mbunkus/mkvtoolnix.atom">
+	<link rel="alternate" type="application/rss+xml" title="" href="/mbunkus/mkvtoolnix.rss">
+
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/assets/img/favicon.png" type="image/png">
+
+	
+<script>
+	
+	window.addEventListener('error', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.addEventListener('unhandledrejection', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.config = {
+		appUrl: 'https:\/\/codeberg.org\/',
+		appSubUrl: '',
+		assetVersionEncoded: encodeURIComponent('16.0.0-dev-753-6bcc6da0~gitea-1.22.0'), 
+		assetUrlPrefix: '\/assets',
+		runModeIsProd:  true ,
+		customEmojis: new Set(["git","gitea","codeberg","gitlab","github","gogs","forgejo"]),
+		pageData: {"DATETIMESTRINGS":{"FUTURE":"in future","NOW":"now","relativetime.1day":"yesterday","relativetime.1month":"last month","relativetime.1week":"last week","relativetime.1year":"last year"},"PLURALSTRINGS_FALLBACK":{},"PLURALSTRINGS_LANG":{"relativetime.days":["%d day ago","%d days ago"],"relativetime.duration.days":["%d day","%d days"],"relativetime.duration.hours":["%d hour","%d hours"],"relativetime.duration.mins":["%d minute","%d minutes"],"relativetime.duration.months":["%d month","%d months"],"relativetime.duration.secs":["%d second","%d seconds"],"relativetime.duration.weeks":["%d week","%d weeks"],"relativetime.duration.years":["%d year","%d years"],"relativetime.hours":["%d hour ago","%d hours ago"],"relativetime.mins":["%d minute ago","%d minutes ago"],"relativetime.months":["%d month ago","%d months ago"],"relativetime.weeks":["%d week ago","%d weeks ago"],"relativetime.years":["%d year ago","%d years ago"]},"PLURAL_RULE_FALLBACK":0,"PLURAL_RULE_LANG":0},
+		notificationSettings: {"EventSourceUpdateTime":10000,"MaxTimeout":60000,"MinTimeout":10000,"TimeoutStep":10000}, 
+		enableTimeTracking:  true ,
+		
+		mermaidMaxSourceCharacters:  50000 ,
+		
+		i18n: {
+			copy_success: "Copied!",
+			copy_error: "Copy failed",
+			error_occurred: "An error occurred",
+			network_error: "Network error",
+			remove_label_str: "Remove item \"%s\"",
+			modal_confirm: "Confirm",
+			modal_cancel: "Cancel",
+			more_items: "More items",
+			incorrect_root_url: "This Forgejo instance is configured to be served on \"https://codeberg.org/\". You are currently viewing Forgejo through a different URL, which may cause parts of the application to break. The canonical URL is controlled by Forgejo admins via the ROOT_URL setting in the app.ini.",
+		},
+	};
+	
+	window.config.pageData = window.config.pageData || {};
+</script>
+<script src="/assets/js/webcomponents.js?v=16.0.0-dev-753-6bcc6da0~gitea-1.22.0"></script>
+
+	
+
+	
+	<meta property="og:title" content="mkvtoolnix">
+
+	<meta property="og:description" content="Creating and working with Matroska files">
+
+
+	<meta property="og:url" content="https://codeberg.org/mbunkus/mkvtoolnix">
+
+
+	<meta property="og:type" content="object">
+
+
+	<meta property="og:image" content="https://codeberg.org/mbunkus/mkvtoolnix/-/summary-card">
+	
+		<meta property="og:image:width" content="1200">
+	
+	
+		<meta property="og:image:height" content="600">
+	
+	
+		<meta property="og:image:alt" content="Summary card of repository mbunkus/mkvtoolnix, described as: Creating and working with Matroska files">
+	
+
+<meta property="og:site_name" content="Codeberg.org">
+
+	<link rel="stylesheet" href="/assets/css/index.css?v=16.0.0-dev-753-6bcc6da0~gitea-1.22.0">
+<link rel="stylesheet" href="/assets/css/theme-codeberg-auto.css?v=16.0.0-dev-753-6bcc6da0~gitea-1.22.0">
+
+	
+</head>
+<body class="no-js" hx-swap="outerHTML" hx-ext="morph" hx-push-url="false">
+	
+	<noscript>
+		<style>
+			#tou-announcement { display: flex !important; justify-content: center; }
+			#tou-announcement > :first-child, #tou-announcement > :last-child { display: none; }
+		</style>
+	</noscript>
+	<div id="tou-announcement" class="tw-hidden">
+		<div style="width: 108.3px"></div>
+		<div>
+		<span>Codeberg has changed its Terms of Use. <a href="https://codeberg.org/Codeberg/org/compare/17bdb39b0c1ecd0e423f3ba592650ce57fcdfbf5..71149c7fc95ccfeae36109b5cddca339e4aa1473?files=TermsOfUse.md#diff-d760d688bb9b929b62db808bfc76abe4493d095a">View complete changes</a>.</span>
+		<ol>
+			<li>LLM-generated content is being restricted. <a href="https://codeberg.org/Codeberg/org/commit/71149c7fc95ccfeae36109b5cddca339e4aa1473">View change</a> or <a href="https://blog.codeberg.org/protecting-our-floss-commons-from-llms.html">read the blog post</a></li>
+			<li>Cryptocurrency projects are no longer allowed. <a href="https://codeberg.org/Codeberg/org/commit/f383b648fd733ab88083dc390b91e77cd7589980">View change</a></li>
+		</ol>
+		</div>
+		<button class="ui secondary button small"><svg viewBox="0 0 16 16" class="svg octicon-x" aria-hidden="true" width="16" height="16"><path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-3.22 3.22a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06"/></svg> Dismiss</button>
+	</div>
+	<div class="full height">
+		<noscript>
+			<div class="tw-ml-2 tw-mr-2 tw-text-center tw-text-text-light-2">This website requires JavaScript.</div>
+		</noscript>
+
+		
+
+		
+			
+
+
+<nav id="navbar" aria-label="Navigation bar">
+	<div class="navbar-left ui secondary menu">
+		
+		<a class="item" id="navbar-logo" href="/" aria-label="Home">
+			<div class="branding" aria-hidden="true">
+				<img width="30" height="30" loading="lazy" class="light-logo" src="/assets/img/svg/cb-logo.svg" alt="Logo">
+				<img width="30" height="30" loading="lazy" class="dark-logo" src="/assets/img/svg/cb-logo-mono.svg" alt="Logo">
+			</div>
+		</a>
+
+		
+		<div class="ui secondary menu item navbar-mobile-right only-mobile">
+			
+			<button class="item tw-w-auto ui icon mini button tw-p-2 tw-m-0" id="navbar-expand-toggle" aria-label="Toggle menu"><svg viewBox="0 0 16 16" class="svg octicon-three-bars" aria-hidden="true" width="16" height="16"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75m0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75M1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5"/></svg></button>
+		</div>
+
+		
+		
+			<a class="item" href="/explore/repos">Explore</a>
+		
+
+		
+			<a class="item" target="_blank" href="https://docs.codeberg.org/getting-started/what-is-codeberg/#what-is-codeberg-e.v.%3F">About</a>
+			<a class="item" target="_blank" href="https://docs.codeberg.org/getting-started/faq/">FAQ</a>
+			<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.codeberg.org">Help</a>
+		
+
+		<a class="item donation-pretty" href="https://donate.codeberg.org">Donate</a>
+	</div>
+
+	
+	<div class="navbar-right ui secondary menu">
+		
+			
+				<a class="item" href="/user/sign_up">
+					<svg viewBox="0 0 16 16" class="tw-mr-1 svg octicon-person" aria-hidden="true" width="16" height="16"><path d="M10.561 8.073a6 6 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6 6 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0M10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0"/></svg>
+					<span>Register</span>
+				</a>
+			
+			<a class="item" rel="nofollow" href="/user/login?redirect_to=%2fmbunkus%2fmkvtoolnix">
+				<svg viewBox="0 0 16 16" class="tw-mr-1 svg octicon-sign-in" aria-hidden="true" width="16" height="16"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm6.56 4.5h5.69a.75.75 0 0 1 0 1.5H8.56l1.97 1.97a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L6.22 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734Z"/></svg>
+				<span>Sign in</span>
+			</a>
+		
+	</div>
+</nav>
+
+		
+
+
+
+<div role="main" aria-label="mbunkus/mkvtoolnix: Creating and working with Matroska files" class="page-content repository file list ">
+	<div class="secondary-nav">
+
+	<div class="ui container">
+		<div class="repo-header">
+			<div class="flex-item tw-items-center">
+				<div class="flex-item-leading">
+					
+
+	<img class="ui avatar tw-align-middle" src="/repo-avatars/a44aa813f6b8c8527b036823db02283efda765cde39c5a33c5ade4b5536ac864" width="24" height="24" alt="mbunkus/mkvtoolnix">
+
+
+				</div>
+				<div class="flex-item-main">
+					<div class="flex-item-title tw-font-normal">
+						<a class="muted" href="/mbunkus">mbunkus</a>/<a class="muted tw-font-semibold" href="/mbunkus/mkvtoolnix">mkvtoolnix</a>
+					</div>
+				</div>
+				<div class="flex-item-trailing">
+					
+					
+						
+					
+					
+					
+				</div>
+			</div>
+			
+				<div class="repo-buttons button-row">
+					
+					
+					
+					
+					<a class="ui compact small basic button" href="/mbunkus/mkvtoolnix.rss" data-tooltip-content="RSS feed">
+						<svg viewBox="0 0 16 16" class="svg octicon-rss" aria-hidden="true" width="16" height="16"><path d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.5 10.5 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7 7 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.5 5.5 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489M2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/></svg>
+					</a>
+					
+					
+	
+	<div class="ui disabled labeled button" data-tooltip-content="Sign in to watch this repository.">
+		<div class="ui compact small basic button">
+			<svg viewBox="0 0 16 16" class="svg octicon-eye" aria-hidden="true" width="16" height="16"><path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14s-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2M1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5s2.825-.742 3.955-1.715c1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5s-2.825.742-3.955 1.715c-1.124.967-1.954 2.096-2.366 2.717M8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10"/></svg><span class="text not-mobile">Watch</span>
+		</div>
+		<a class="ui basic label" href="/mbunkus/mkvtoolnix/watchers"
+			aria-label="11 watchers"
+			>
+			11
+		</a>
+	</div>
+
+
+					
+					<form hx-target="this" hx-post="/mbunkus/mkvtoolnix/action/star" hx-on::after-settle="this.querySelector('button').focus()" method="post" action="/mbunkus/mkvtoolnix/action/star">
+	<div class="ui labeled button" data-tooltip-content="Sign in to star this repository.">
+		<button type="submit" class="ui compact small basic button" disabled aria-label="Star">
+			
+				<svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25m0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41z"/></svg><span class="text not-mobile">Star</span>
+			
+		</button>
+		<a hx-boost="false" class="ui basic label" href="/mbunkus/mkvtoolnix/stars"
+			aria-label="97 stars"
+			>
+			97
+		</a>
+	</div>
+</form>
+
+					
+					
+					
+
+
+	<div class="ui labeled button
+		
+			disabled
+		"
+		
+			data-tooltip-content="Sign in to fork this repository."
+		
+	>
+		<a class="ui compact small basic button"
+			
+				
+			
+		>
+			<svg viewBox="0 0 16 16" class="svg octicon-repo-forked" aria-hidden="true" width="16" height="16"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0M5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0m6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5m-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0"/></svg><span class="text not-mobile">Fork</span>
+		</a>
+		<dialog id="fork-repo-modal">
+			<article>
+				<header>You've already forked mkvtoolnix</header>
+				<div class="content tw-text-left">
+					<div class="ui list">
+						
+					</div>
+					
+				</div>
+			</article>
+		</dialog>
+		<a class="ui basic label" href="/mbunkus/mkvtoolnix/forks"
+			aria-label="20 forks"
+			>
+			20
+		</a>
+	</div>
+
+
+
+
+					
+					
+				</div>
+			
+		</div>
+		
+		
+		
+	</div>
+
+	<overflow-menu class="ui container secondary pointing tabular top attached borderless menu tw-pt-0 tw-my-0">
+		
+			<div class="overflow-menu-items">
+				
+					<a class="active item" href="/mbunkus/mkvtoolnix">
+						<svg viewBox="0 0 16 16" class="svg octicon-code" aria-hidden="true" width="16" height="16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg> Code
+					</a>
+				
+
+				
+					<a class="item" href="/mbunkus/mkvtoolnix/issues">
+						<svg viewBox="0 0 16 16" class="svg octicon-issue-opened" aria-hidden="true" width="16" height="16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0"/></svg> Issues
+						
+							<span class="ui small label">35</span>
+						
+					</a>
+				
+
+				
+
+				
+					<a class="item" href="/mbunkus/mkvtoolnix/pulls">
+						<svg viewBox="0 0 16 16" class="svg octicon-git-pull-request" aria-hidden="true" width="16" height="16"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25m5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354M3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0"/></svg> Pull requests
+						
+							<span class="ui small label">3</span>
+						
+					</a>
+				
+
+				
+
+				
+
+				
+
+				
+					<a class="item" href="/mbunkus/mkvtoolnix/wiki">
+						<svg viewBox="0 0 16 16" class="svg octicon-book" aria-hidden="true" width="16" height="16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.74 3.74 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574M8.755 4.75l-.004 7.322a3.75 3.75 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25"/></svg> Wiki
+					</a>
+				
+
+				
+
+				
+					<a class="item" href="/mbunkus/mkvtoolnix/activity">
+						<svg viewBox="0 0 16 16" class="svg octicon-pulse" aria-hidden="true" width="16" height="16"><path d="M6 2c.306 0 .582.187.696.471L10 10.731l1.304-3.26A.75.75 0 0 1 12 7h3.25a.75.75 0 0 1 0 1.5h-2.742l-1.812 4.528a.751.751 0 0 1-1.392 0L6 4.77 4.696 8.03A.75.75 0 0 1 4 8.5H.75a.75.75 0 0 1 0-1.5h2.742l1.812-4.529A.75.75 0 0 1 6 2"/></svg> Activity
+					</a>
+				
+
+				
+
+				
+
+				
+
+				
+			</div>
+		
+	</overflow-menu>
+	<div class="ui tabs divider"></div>
+</div>
+
+	<div class="ui container ">
+		
+
+
+
+
+	<div id="flash-message" hx-swap-oob="true"></div>
+
+
+		
+		<div class="repo-description">
+			<div id="repo-desc" class="tw-break-anywhere tw-text-16">
+				
+				<span class="description">Creating and working with Matroska files</span>
+				
+			</div>
+		</div>
+		<div class="repo-topics tw-my-2" id="repo-topics">
+			
+			
+		</div>
+		
+		
+
+		
+			
+			
+		
+		
+
+
+
+
+
+
+
+
+
+
+		
+		
+<div class="ui segments repository-summary tw-mt-1 tw-mb-0">
+	<div class="ui segment repository-menu">
+		
+			<a class="item muted " href="/mbunkus/mkvtoolnix/commits/branch/main">
+				<svg viewBox="0 0 16 16" class="svg octicon-history" aria-hidden="true" width="16" height="16"><path d="m.427 1.927 1.215 1.215a8.002 8.002 0 1 1-1.6 5.685.75.75 0 1 1 1.493-.154 6.5 6.5 0 1 0 1.18-4.458l1.358 1.358A.25.25 0 0 1 3.896 6H.25A.25.25 0 0 1 0 5.75V2.104a.25.25 0 0 1 .427-.177M7.75 4a.75.75 0 0 1 .75.75v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.75.75 0 0 1 7 8.25v-3.5A.75.75 0 0 1 7.75 4"/></svg> <b>16,707</b> commits
+			</a>
+			<a class="item muted " href="/mbunkus/mkvtoolnix/branches">
+				<svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.5 2.5 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25m-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0m8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5M4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/></svg> <b>1</b> branch
+			</a>
+			
+				<a class="item muted " href="/mbunkus/mkvtoolnix/tags">
+					<svg viewBox="0 0 16 16" class="svg octicon-tag" aria-hidden="true" width="16" height="16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775m1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg> <b>254</b> tags
+				</a>
+			
+			<span class="item" data-tooltip-content="git: 375 MiB, lfs: 0 B">
+				
+				<svg viewBox="0 0 16 16" class="svg octicon-database" aria-hidden="true" width="16" height="16"><path d="M1 3.5c0-.626.292-1.165.7-1.59.406-.422.956-.767 1.579-1.041C4.525.32 6.195 0 8 0s3.475.32 4.722.869c.622.274 1.172.62 1.578 1.04.408.426.7.965.7 1.591v9c0 .626-.292 1.165-.7 1.59-.406.422-.956.767-1.579 1.041C11.476 15.68 9.806 16 8 16c-1.805 0-3.475-.32-4.721-.869-.623-.274-1.173-.62-1.579-1.04-.408-.426-.7-.965-.7-1.591Zm1.5 0c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 5.205 6.353 5.5 8 5.5s3.101-.295 4.118-.742c.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55s-.058-.318-.282-.551c-.227-.237-.591-.483-1.101-.707C11.102 1.795 9.647 1.5 8 1.5s-3.101.295-4.118.742c-.508.224-.873.471-1.1.708-.224.232-.282.417-.282.55m0 4.5c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 9.705 6.353 10 8 10s3.101-.295 4.118-.742c.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55V5.724c-.241.15-.503.286-.778.407C11.475 6.68 9.805 7 8 7s-3.475-.32-4.721-.869a6 6 0 0 1-.779-.407Zm0 2.225V12.5c0 .133.058.318.282.55.227.237.592.484 1.1.708 1.016.447 2.471.742 4.118.742s3.102-.295 4.117-.742c.51-.224.874-.47 1.101-.707.224-.233.282-.418.282-.551v-2.275c-.241.15-.503.285-.778.406-1.247.549-2.917.869-4.722.869s-3.475-.32-4.721-.869a6 6 0 0 1-.779-.406"/></svg> <b>375</b> MiB
+			</span>
+		
+	</div>
+	
+		<details class="stats" id="language-stats">
+			<summary>
+				<stats-bar>
+					
+						<div class="slice" style="width: 90.2%; background-color: #f34b7d" data-tooltip-placement="top" data-tooltip-content=C&#43;&#43; data-tooltip-follow-cursor="horizontal"></div>
+					
+						<div class="slice" style="width: 4.7%; background-color: #701516" data-tooltip-placement="top" data-tooltip-content=Ruby data-tooltip-follow-cursor="horizontal"></div>
+					
+						<div class="slice" style="width: 2.8%; background-color: #555555" data-tooltip-placement="top" data-tooltip-content=C data-tooltip-follow-cursor="horizontal"></div>
+					
+						<div class="slice" style="width: 0.8%; background-color: #cccccc" data-tooltip-placement="top" data-tooltip-content=M4 data-tooltip-follow-cursor="horizontal"></div>
+					
+						<div class="slice" style="width: 0.7%; background-color: #89e051" data-tooltip-placement="top" data-tooltip-content=Shell data-tooltip-follow-cursor="horizontal"></div>
+					
+						<div class="slice" style="width: 0.6%; background-color: #cccccc" data-tooltip-placement="top" data-tooltip-content=other data-tooltip-follow-cursor="horizontal"></div>
+					
+				</stats-bar>
+			</summary>
+			<ul>
+				
+					<li>
+						<i class="color-icon" style="background-color: #f34b7d"></i>
+						<span>
+							
+								C&#43;&#43;
+							
+						</span>
+						90.2%
+					</li>
+				
+					<li>
+						<i class="color-icon" style="background-color: #701516"></i>
+						<span>
+							
+								Ruby
+							
+						</span>
+						4.7%
+					</li>
+				
+					<li>
+						<i class="color-icon" style="background-color: #555555"></i>
+						<span>
+							
+								C
+							
+						</span>
+						2.8%
+					</li>
+				
+					<li>
+						<i class="color-icon" style="background-color: #cccccc"></i>
+						<span>
+							
+								M4
+							
+						</span>
+						0.8%
+					</li>
+				
+					<li>
+						<i class="color-icon" style="background-color: #89e051"></i>
+						<span>
+							
+								Shell
+							
+						</span>
+						0.7%
+					</li>
+				
+					<li>
+						<i class="color-icon" style="background-color: #cccccc"></i>
+						<span>
+							
+								Other
+							
+						</span>
+						0.6%
+					</li>
+				
+			</ul>
+		</details>
+	
+</div>
+
+
+		
+		
+		
+		<div class="repo-button-row">
+			<div class="button-sequence tw-gap-y-2">
+				
+
+
+
+
+
+
+	
+
+
+
+
+<script type="module">
+	const data = {
+		'textReleaseCompare': "Compare",
+		'textCreateTag': "Create tag %s",
+		'textCreateBranch': "Create branch %s",
+		'textCreateBranchFrom': "from \"%s\"",
+		'textBranches': "Branches",
+		'textTags': "Tags",
+		'textDefaultBranchLabel': "default",
+
+		'mode': 'branches',
+		'showBranchesInDropdown':  true ,
+		'searchFieldPlaceholder': 'Filter branch or tag...',
+		'branchForm':  null ,
+		'disableCreateBranch':  true ,
+		'setAction':  null ,
+		'submitForm':  null ,
+		'viewType': "branch",
+		'refName': "main",
+		'commitIdShort': "13fb7b3866",
+		'tagName': "",
+		'branchName': "main",
+		'noTag':  null ,
+		'defaultSelectedRefName': "main",
+		'repoDefaultBranch': "main",
+		'enableFeed':  true ,
+		'rssURLPrefix': '\/mbunkus\/mkvtoolnix/rss/branch/',
+		'branchURLPrefix': '\/mbunkus\/mkvtoolnix/src/branch/',
+		'branchURLSuffix': '',
+		'tagURLPrefix': '\/mbunkus\/mkvtoolnix/src/tag/',
+		'tagURLSuffix': '',
+		'repoLink': "/mbunkus/mkvtoolnix",
+		'treePath': "",
+		'branchNameSubURL': "branch/main",
+		'noResults': "No results found.",
+	};
+	
+	window.config.pageData.branchDropdownDataList = window.config.pageData.branchDropdownDataList || [];
+	window.config.pageData.branchDropdownDataList.push(data);
+</script>
+
+<div class="js-branch-tag-selector ">
+	
+	<div class="ui dropdown custom">
+		<button class="branch-dropdown-button gt-ellipsis ui basic small compact button tw-flex tw-m-0">
+			<span class="text tw-flex tw-items-center tw-mr-1 gt-ellipsis">
+				
+					
+						<svg viewBox="0 0 16 16" class="svg octicon-git-branch" aria-hidden="true" width="16" height="16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.5 2.5 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25m-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0m8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5M4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/></svg>
+					
+					<strong ref="dropdownRefName" class="tw-ml-2 tw-inline-block gt-ellipsis">main</strong>
+				
+			</span>
+			<svg viewBox="0 0 16 16" class="dropdown icon svg octicon-triangle-down" aria-hidden="true" width="14" height="14"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427"/></svg>
+		</button>
+	</div>
+</div>
+
+				
+					
+					
+					
+					
+					<a id="new-pull-request" role="button" class="ui compact basic button" href="/mbunkus/mkvtoolnix/compare/main...main"
+						data-tooltip-content="Compare">
+						<svg viewBox="0 0 16 16" class="svg octicon-git-pull-request" aria-hidden="true" width="16" height="16"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25m5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354M3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0"/></svg>
+					</a>
+				
+				
+				
+					<a href="/mbunkus/mkvtoolnix/find/branch/main" class="ui compact basic button">Find a file</a>
+				
+
+				
+
+				
+				
+
+
+
+
+			</div>
+			<div class="tw-flex tw-items-center max-[390px]:tw-w-full">
+				
+				
+					<div class="clone-panel ui action tiny input max-[390px]:tw-w-full">
+						
+
+	<button class="ui small button" id="repo-clone-https" data-link="https://codeberg.org/mbunkus/mkvtoolnix.git">
+		HTTPS
+	</button>
+
+
+<input id="repo-clone-url" size="20" class="js-clone-url" value="https://codeberg.org/mbunkus/mkvtoolnix.git" readonly>
+<button class="ui small icon button" id="clipboard-btn" data-tooltip-content="Copy URL" data-clipboard-target="#repo-clone-url" aria-label="Copy URL">
+	<svg viewBox="0 0 16 16" class="svg octicon-copy" aria-hidden="true" width="14" height="14"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg>
+</button>
+
+						<button class="ui small jump dropdown icon button" data-tooltip-content="More operations">
+							<svg viewBox="0 0 16 16" class="svg octicon-kebab-horizontal" aria-hidden="true" width="16" height="16"><path d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg>
+							<div class="menu">
+								
+									<a class="item archive-link" href="/mbunkus/mkvtoolnix/archive/main.zip" rel="nofollow"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-zip" aria-hidden="true" width="16" height="16"><path d="M3.5 1.75v11.5c0 .09.048.173.126.217a.75.75 0 0 1-.752 1.298A1.75 1.75 0 0 1 2 13.25V1.75C2 .784 2.784 0 3.75 0h5.586c.464 0 .909.185 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 12.25 15h-.5a.75.75 0 0 1 0-1.5h.5a.25.25 0 0 0 .25-.25V4.664a.25.25 0 0 0-.073-.177L9.513 1.573a.25.25 0 0 0-.177-.073H7.25a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5h-3a.25.25 0 0 0-.25.25m3.75 8.75h.5c.966 0 1.75.784 1.75 1.75v3a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1-.75-.75v-3c0-.966.784-1.75 1.75-1.75M6 5.25a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 6 5.25m.75 2.25h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5M8 6.75A.75.75 0 0 1 8.75 6h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 8 6.75M8.75 3h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5M8 9.75A.75.75 0 0 1 8.75 9h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 8 9.75m-1 2.5v2.25h1v-2.25a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25"/></svg>Download ZIP</a>
+									<a class="item archive-link" href="/mbunkus/mkvtoolnix/archive/main.tar.gz" rel="nofollow"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-zip" aria-hidden="true" width="16" height="16"><path d="M3.5 1.75v11.5c0 .09.048.173.126.217a.75.75 0 0 1-.752 1.298A1.75 1.75 0 0 1 2 13.25V1.75C2 .784 2.784 0 3.75 0h5.586c.464 0 .909.185 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 12.25 15h-.5a.75.75 0 0 1 0-1.5h.5a.25.25 0 0 0 .25-.25V4.664a.25.25 0 0 0-.073-.177L9.513 1.573a.25.25 0 0 0-.177-.073H7.25a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5h-3a.25.25 0 0 0-.25.25m3.75 8.75h.5c.966 0 1.75.784 1.75 1.75v3a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1-.75-.75v-3c0-.966.784-1.75 1.75-1.75M6 5.25a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 6 5.25m.75 2.25h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5M8 6.75A.75.75 0 0 1 8.75 6h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 8 6.75M8.75 3h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5M8 9.75A.75.75 0 0 1 8.75 9h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 8 9.75m-1 2.5v2.25h1v-2.25a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25"/></svg>Download TAR.GZ</a>
+									<a class="item archive-link" href="/mbunkus/mkvtoolnix/archive/main.bundle" rel="nofollow"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-package" aria-hidden="true" width="16" height="16"><path d="m8.878.392 5.25 3.045c.54.314.872.89.872 1.514v6.098a1.75 1.75 0 0 1-.872 1.514l-5.25 3.045a1.75 1.75 0 0 1-1.756 0l-5.25-3.045A1.75 1.75 0 0 1 1 11.049V4.951c0-.624.332-1.201.872-1.514L7.122.392a1.75 1.75 0 0 1 1.756 0M7.875 1.69l-4.63 2.685L8 7.133l4.755-2.758-4.63-2.685a.25.25 0 0 0-.25 0M2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432Zm6.25 8.271 4.625-2.683a.25.25 0 0 0 .125-.216V5.677L8.75 8.432Z"/></svg>Download BUNDLE</a>
+								
+								
+								
+									<a class="item js-clone-url-editor" data-href-template="vscode://vscode.git/clone?url={url}"><svg viewBox="-1 -1 34 34" class="tw-mr-2 svg gitea-open-with-vscode" aria-hidden="true" width="16" height="16"><path d="M30.9 3.4 24.3.3a2 2 0 0 0-2.3.4L9.4 12.2 3.9 8c-.5-.4-1.2-.4-1.7 0L.4 9.8c-.5.5-.5 1.4 0 2L5.2 16 .4 20.3c-.5.6-.5 1.5 0 2L2.2 24c.5.5 1.2.5 1.7 0l5.5-4L22 31.2a2 2 0 0 0 2.3.4l6.6-3.2a2 2 0 0 0 1.1-1.8V5.2a2 2 0 0 0-1.1-1.8M24 23.3 14.4 16 24 8.7z"/></svg>Open with VS Code</a>
+								
+									<a class="item js-clone-url-editor" data-href-template="vscodium://vscode.git/clone?url={url}"><svg xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 16 16" class="tw-mr-2 svg gitea-open-with-vscodium" aria-hidden="true" width="16" height="16"><path fill-rule="nonzero" d="m10.2.2.5-.3c.3 0 .5.2.7.4l.2.8-.2 1-.8 2.4c-.3 1-.4 2 0 2.9l.8-2c.2 0 .4.1.4.3l-.3 1L9.2 13l3.1-2.9c.3-.2.7-.5.8-1a2 2 0 0 0-.3-1c-.2-.5-.5-.9-.6-1.4l.1-.7c.1-.1.3-.2.5-.1.2 0 .3.2.4.4.3.5.4 1.2.5 1.8l.6-1.2c0-.2.2-.4.4-.6l.4-.2c.2 0 .4.3.4.4v.6l-.8 1.6-1.4 1.8 1-.4c.2 0 .6.2.7.5 0 .2 0 .4-.2.5-.3.2-.6.2-1 .2-1 0-2.2.6-2.9 1.4L9.6 15c-.4.4-.9 1-1.4.8-.8-.1-.8-1.3-1-1.8 0-.3-.2-.6-.4-.7-.3-.2-.5-.3-.8-.3-.6-.1-1.2 0-1.8-.2l-.8-.4-.4-.7c-.3-.6-.3-1.2-.5-1.8A4 4 0 0 0 1 8l-.4-.4v-.4c.2-.2.5-.2.7 0 .5.2.5.8 1 1.1V6.2s.3-.1.4 0l.2.5L3 9c.4-.4.6-1 .5-1.5L3.4 7l.3-.2c.2 0 .3.2.4.3v.7c0 .6-.3 1.1-.4 1.7-.2.4-.3 1-.1 1.4.1.5.5.9.9 1 .5.3 1.1.4 1.7.4-.4-.6-.7-1.2-.7-2 0-.7.4-1.3.6-2C6.3 7 5.7 5.8 4.8 5l-1.5-.7c-.4-.2-.7-.7-.7-1.2.3-.1.7 0 1 .1L5 4.5l.6.1c.2-.3 0-.6-.2-.8-.3-.5-1-.6-1.3-1a.9.9 0 0 1-.2-.8c0-.2.3-.4.5-.4.4 0 .7.3.9.5.8.8 1.2 1.8 1.4 3s0 2.5-.2 3.7c0 .3-.2.5-.1.8l.2.2c.2 0 .4 0 .5-.2.4-.3.8-.8.9-1.3l.1-1.2.1-.6.4-.2.3.3v.6c-.1.5-.2 1-.5 1.6a2 2 0 0 1-.6 1l-1 1c-.1.2-.2.6-.1.9 0 .2.2.4.4.5.4.2.8.2 1 0 .3-.1.5-.4.7-.6l.5-1.4.4-2.5C9.7 7 9.6 6 9 5.2c-.2-.4-.5-.7-1-1l-1-.8c-.2-.3-.4-.7-.3-1.2h.6c.4.1.7.4.9.8s.4.8.9 1l-1-2c-.1-.3-.3-.5-.2-.8 0-.2.2-.4.4-.4s.4.1.5.3l.2.5 1 3.1a4 4 0 0 0 .4-2.3L10 1V.2Z"/></svg>Open with VSCodium</a>
+								
+									<a class="item js-clone-url-editor" data-href-template="jetbrains://idea/checkout/git?idea.required.plugins.id=Git4Idea&amp;checkout.repo={url}"><svg xml:space="preserve" viewBox="0 0 70 70" class="tw-mr-2 svg gitea-open-with-jetbrains" aria-hidden="true" width="16" height="16"><linearGradient id="gitea-open-with-jetbrains__a" x1=".79" x2="33.317" y1="40.089" y2="40.089" gradientUnits="userSpaceOnUse"><stop offset=".258" style="stop-color:#f97a12"/><stop offset=".459" style="stop-color:#b07b58"/><stop offset=".724" style="stop-color:#577bae"/><stop offset=".91" style="stop-color:#1e7ce5"/><stop offset="1" style="stop-color:#087cfa"/></linearGradient><path d="M17.7 54.6.8 41.2l8.4-15.6L33.3 35z" style="fill:url(#gitea-open-with-jetbrains__a)"/><linearGradient id="gitea-open-with-jetbrains__b" x1="25.767" x2="79.424" y1="24.88" y2="54.57" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#f97a12"/><stop offset=".072" style="stop-color:#cb7a3e"/><stop offset=".154" style="stop-color:#9e7b6a"/><stop offset=".242" style="stop-color:#757b91"/><stop offset=".334" style="stop-color:#537bb1"/><stop offset=".432" style="stop-color:#387ccc"/><stop offset=".538" style="stop-color:#237ce0"/><stop offset=".655" style="stop-color:#147cef"/><stop offset=".792" style="stop-color:#0b7cf7"/><stop offset="1" style="stop-color:#087cfa"/></linearGradient><path d="m70 18.7-1.3 40.5L41.8 70 25.6 59.6 49.3 35 38.9 12.3l9.3-11.2z" style="fill:url(#gitea-open-with-jetbrains__b)"/><linearGradient id="gitea-open-with-jetbrains__c" x1="63.228" x2="48.29" y1="42.915" y2="-1.719" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#fe315d"/><stop offset=".078" style="stop-color:#cb417e"/><stop offset=".16" style="stop-color:#9e4e9b"/><stop offset=".247" style="stop-color:#755bb4"/><stop offset=".339" style="stop-color:#5365ca"/><stop offset=".436" style="stop-color:#386ddb"/><stop offset=".541" style="stop-color:#2374e9"/><stop offset=".658" style="stop-color:#1478f3"/><stop offset=".794" style="stop-color:#0b7bf8"/><stop offset="1" style="stop-color:#087cfa"/></linearGradient><path d="M70 18.7 48.7 43.9l-9.8-31.6 9.3-11.2z" style="fill:url(#gitea-open-with-jetbrains__c)"/><linearGradient id="gitea-open-with-jetbrains__d" x1="10.72" x2="55.524" y1="16.473" y2="90.58" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#fe315d"/><stop offset=".04" style="stop-color:#f63462"/><stop offset=".104" style="stop-color:#df3a71"/><stop offset=".167" style="stop-color:#c24383"/><stop offset=".291" style="stop-color:#ad4a91"/><stop offset=".55" style="stop-color:#755bb4"/><stop offset=".917" style="stop-color:#1d76ed"/><stop offset="1" style="stop-color:#087cfa"/></linearGradient><path d="M33.7 58.1 5.6 68.3l4.5-15.8L16 33.1 0 27.7 10.1 0l22 2.7 21.6 24.7z" style="fill:url(#gitea-open-with-jetbrains__d)"/><path d="M13.7 13.5h43.2v43.2H13.7z" style="fill:#000"/><path d="M17.7 48.6h16.2v2.7H17.7zM29.4 22.4v-3.3h-9v3.3H23v11.3h-2.6V37h9v-3.3h-2.5V22.4zM38 37.3c-1.4 0-2.6-.3-3.5-.8s-1.7-1.2-2.3-1.9l2.5-2.8c.5.6 1 1 1.5 1.3s1.1.5 1.7.5c.7 0 1.3-.2 1.8-.7.4-.5.6-1.2.6-2.3V19.1h4v11.7c0 1.1-.1 2-.4 2.8s-.7 1.4-1.3 2c-.5.5-1.2 1-2 1.2-.8.3-1.6.5-2.6.5" style="fill:#fff"/></svg>Open with Intellij IDEA</a>
+								
+							</div>
+						</button>
+						<script>
+	
+	
+	
+	
+	
+	
+	(window.updateCloneStates = function() {
+		const httpsBtn = document.getElementById('repo-clone-https');
+		const sshBtn = document.getElementById('repo-clone-ssh');
+		const value = localStorage.getItem('repo-clone-protocol') || 'https';
+		const isSSH = value === 'ssh' && sshBtn || value !== 'ssh' && !httpsBtn;
+
+		if (httpsBtn) {
+			httpsBtn.textContent = window.origin.split(':')[0].toUpperCase();
+			httpsBtn.classList.toggle('primary', !isSSH);
+			httpsBtn.classList.toggle('basic', isSSH);
+		}
+		if (sshBtn) {
+			sshBtn.classList.toggle('primary', isSSH);
+			sshBtn.classList.toggle('basic', !isSSH);
+		}
+
+		const btn = isSSH ? sshBtn : httpsBtn;
+		if (!btn) return;
+
+		
+		function toOriginUrl(urlStr) {
+			try {
+				if (urlStr.startsWith('http://') || urlStr.startsWith('https://') || urlStr.startsWith('/')) {
+					const {origin, protocol, hostname, port} = window.location;
+					const url = new URL(urlStr, origin);
+					url.protocol = protocol;
+					url.hostname = hostname;
+					url.port = port || (protocol === 'https:' ? '443' : '80');
+					return url.toString();
+				}
+			} catch {}
+			return urlStr;
+		}
+		const link = toOriginUrl(btn.getAttribute('data-link'));
+
+		for (const el of document.getElementsByClassName('js-clone-url')) {
+			el[el.nodeName === 'INPUT' ? 'value' : 'textContent'] = link;
+		}
+		for (const el of document.getElementsByClassName('js-clone-url-editor')) {
+			el.href = el.getAttribute('data-href-template').replace('{url}', encodeURIComponent(link));
+		}
+	})();
+</script>
+
+					</div>
+				
+				
+			</div>
+		</div>
+
+		
+			
+
+			
+
+		
+
+		
+			
+			
+			
+			
+			
+			<table id="repo-files-table" class="ui single line table tw-mt-0" >
+	<caption class="tw-sr-only">
+		Repository files (latest commit first)
+	</caption>
+	<thead class="tw-sr-only">
+		<th>Filename</th>
+		<th>Latest commit message</th>
+		<th>Latest commit date</th>
+	</thead>
+	<tbody>
+		<tr class="commit-list">
+			<td class="tw-overflow-hidden repo-files-table-latest-commit-cell repo-files-table-latest-commit-left" colspan="2">
+				<div class="tw-flex">
+					<div class="latest-commit">
+						
+	
+		<img loading="lazy" alt="" class="ui avatar tw-align-middle tw-mr-2" src="/avatars/1f3c89980ac00d7a6fe42267319ed09a?size=64" title="jakubdriver" width="24" height="24"/>
+		
+			<a class="muted author-wrapper" title="JakubDriver" href="/jakubdriver"><strong>JakubDriver</strong></a>
+		
+	
+	
+
+	
+	
+		
+			
+		
+	
+
+<a href="/mbunkus/mkvtoolnix/commit/13fb7b38662d65de9503b3574a5573d514a261b7" rel="nofollow" class="sha label isSigned isVerified">
+	<span class="shortsha">13fb7b3866</span><div class="signature">
+	
+		<span class="signature-author" title="mbunkus / 74AF00ADF2E32C85">
+			
+				<svg viewBox="0 0 14 16" class="svg gitea-lock" aria-hidden="true" width="16" height="16"><path d="M12.5 7h-.75V4.75A4.756 4.756 0 0 0 7 0a4.756 4.756 0 0 0-4.75 4.75V7H1.5A1.5 1.5 0 0 0 0 8.5v6A1.5 1.5 0 0 0 1.5 16h11a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 12.5 7M9.25 7h-4.5V4.75C4.75 3.51 5.76 2.5 7 2.5s2.25 1.01 2.25 2.25z"/></svg>
+				<img loading="lazy" alt="" class="ui avatar tw-align-middle" src="/avatars/71311b5a88be39dd6e1765795bc0f015a1c4b6a52651db08b9ff6c8fdffe62d6?size=64" title="Moritz Bunkus" width="28" height="28"/>
+			
+		</span>
+	
+</div>
+</a>
+
+	
+
+	
+	<span class="grey commit-summary" title="man page translations: update Polish"><span class="message-wrapper"><a href="/mbunkus/mkvtoolnix/commit/13fb7b38662d65de9503b3574a5573d514a261b7" class="default-link muted">man page translations: update Polish</a></span>
+		
+	</span>
+
+
+					</div>
+				</div>
+			</td>
+			<td class="text grey right age repo-files-table-latest-commit-cell tw-py-0"><relative-time prefix="" tense="past" datetime="2026-09-28T21:52:48+02:00" data-tooltip-content data-tooltip-interactive="true">2026-09-28 21:52:48 +02:00</relative-time></td>
+		</tr>
+		
+		
+			
+			
+			<tr data-entryname=".tx" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/.tx" title=".tx">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>.tx
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/718d1ac53f80ecdcef185b9483241f1f7680b344" class="default-link muted">transifex: migrate config to format of new command line client</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2021-12-19T11:13:09+01:00" data-tooltip-content data-tooltip-interactive="true">2021-12-19 11:13:09 +01:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="ac" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/ac" title="ac">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>ac
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/d833af1e957251c2f2b91d11897f11e454a18ce1" class="default-link muted">require libEBML 1.4.7, libMatroska 1.7.2</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-08-23T21:40:29+02:00" data-tooltip-content data-tooltip-interactive="true">2026-08-23 21:40:29 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="doc" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/doc" title="doc">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>doc
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/13fb7b38662d65de9503b3574a5573d514a261b7" class="default-link muted">man page translations: update Polish</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-28T21:52:48+02:00" data-tooltip-content data-tooltip-interactive="true">2026-09-28 21:52:48 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="examples" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/examples" title="examples">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>examples
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/36d35783d70e053eb7fa3fb41354bdb25dc6f7f7" class="default-link muted">update project home page URL &amp; maintainer email address</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2025-10-21T10:58:16+02:00" data-tooltip-content data-tooltip-interactive="true">2025-10-21 10:58:16 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="lib" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/lib" title="lib">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>lib
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/1495126138e086080f0163bee27fafbdf956a1d0" class="default-link muted">avilib: guard against heap overflow due to integer multiplication wrapping</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-08-25T13:49:21+02:00" data-tooltip-content data-tooltip-interactive="true">2026-08-25 13:49:21 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="packaging" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/packaging" title="packaging">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>packaging
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/fd809b6c5270a2e3974d87a523258da00b3083d6" class="default-link muted">packaging/macOS: patch Qt for invisible check boxes on macOS 27</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-17T09:39:23-05:00" data-tooltip-content data-tooltip-interactive="true">2026-09-17 09:39:23 -05:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="po" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/po" title="po">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>po
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/524c118dea43876bb5e7ecebaaeff53bf61c09dc" class="default-link muted">program translations: update Polish</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-28T21:48:25+02:00" data-tooltip-content data-tooltip-interactive="true">2026-09-28 21:48:25 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="rake.d" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/rake.d" title="rake.d">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>rake.d
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/38b85ae905574fd37fc913017c3a3535aeec06b4" class="default-link muted">manually convert SVG to PNG with Inkscape, then PNGs to ICO with ImageMagick</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-07-18T11:38:51+02:00" data-tooltip-content data-tooltip-interactive="true">2026-07-18 11:38:51 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="share" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/share" title="share">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>share
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/e85150f7e615f9f735f2187d48e808dc56adfe01" class="default-link muted">bump version number, set release code name</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-14T15:56:10+02:00" data-tooltip-content data-tooltip-interactive="true">2026-09-14 15:56:10 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="src" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/src" title="src">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>src
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/1735de63f11828e70d65637dbb838a46653fed4c" class="default-link muted">cosmetics: alignment</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-20T10:25:36-03:00" data-tooltip-content data-tooltip-interactive="true">2026-09-20 10:25:36 -03:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="tests" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/tests" title="tests">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg>tests
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/ebd8445b1185d35d6bdbb9c1463757fbc9aa7c29" class="default-link muted">mkvmerge: AVC: set stereo mode from frame packing arrangement SEI</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-20T10:25:18-03:00" data-tooltip-content data-tooltip-interactive="true">2026-09-20 10:25:18 -03:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="tools" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/tools/development" title="tools/development">
+									
+									
+									<svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-directory-fill" aria-hidden="true" width="16" height="16"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1z"/></svg><span class="text light-2">tools</span>/development
+									
+								</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/bfc791cca9763b494f66379953b9509b5187bc9a" class="default-link muted">rename meta info file to use <code class="inline-code-block">metainfo.xml</code> extension</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-07-25T09:32:37+02:00" data-tooltip-content data-tooltip-interactive="true">2026-07-25 09:32:37 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname=".gitignore" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/.gitignore" title=".gitignore"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>.gitignore</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/38b85ae905574fd37fc913017c3a3535aeec06b4" class="default-link muted">manually convert SVG to PNG with Inkscape, then PNGs to ICO with ImageMagick</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-07-18T11:38:51+02:00" data-tooltip-content data-tooltip-interactive="true">2026-07-18 11:38:51 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname=".gitmodules" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/.gitmodules" title=".gitmodules"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>.gitmodules</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/73463a33b89c99f11b3ac0f5ae329254dadfe6a3" class="default-link muted">fmt conversion: bundle fmt in lib/fmt for OSes that don&#39;t include it</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2018-11-20T21:30:27+01:00" data-tooltip-content data-tooltip-interactive="true">2018-11-20 21:30:27 +01:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="AUTHORS" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/AUTHORS" title="AUTHORS"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>AUTHORS</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/a152e5a87d5cfc56abdb4af15ca814e394584cf5" class="default-link muted">NEWS.md, AUTHORS: add note about new Czech translator</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-08-09T15:17:42+02:00" data-tooltip-content data-tooltip-interactive="true">2026-08-09 15:17:42 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="autogen.sh" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/autogen.sh" title="autogen.sh"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>autogen.sh</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/12e5b75969ee18740601bf3b48dc347cf76f27d3" class="default-link muted">autogen.sh: remove ineffective version check for autoconf</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2022-11-04T18:57:40+01:00" data-tooltip-content data-tooltip-interactive="true">2022-11-04 18:57:40 +01:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="build-config.in" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/build-config.in" title="build-config.in"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>build-config.in</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/bfc791cca9763b494f66379953b9509b5187bc9a" class="default-link muted">rename meta info file to use <code class="inline-code-block">metainfo.xml</code> extension</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-07-25T09:32:37+02:00" data-tooltip-content data-tooltip-interactive="true">2026-07-25 09:32:37 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="Building.for.Windows.md" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/Building.for.Windows.md" title="Building.for.Windows.md"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>Building.for.Windows.md</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/e85150f7e615f9f735f2187d48e808dc56adfe01" class="default-link muted">bump version number, set release code name</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-14T15:56:10+02:00" data-tooltip-content data-tooltip-interactive="true">2026-09-14 15:56:10 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="CODE_OF_CONDUCT.md" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/CODE_OF_CONDUCT.md" title="CODE_OF_CONDUCT.md"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>CODE_OF_CONDUCT.md</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/beaf157e0374111d18ae0baddeb92a4a52ed4b01" class="default-link muted">add Code of Conduct</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2017-11-18T15:52:20+01:00" data-tooltip-content data-tooltip-interactive="true">2017-11-18 15:52:20 +01:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="configure.ac" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/configure.ac" title="configure.ac"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>configure.ac</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/e85150f7e615f9f735f2187d48e808dc56adfe01" class="default-link muted">bump version number, set release code name</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-14T15:56:10+02:00" data-tooltip-content data-tooltip-interactive="true">2026-09-14 15:56:10 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="COPYING" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/COPYING" title="COPYING"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>COPYING</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/ca3c5d51a637594110d63a4dd72a85fd1f053df7" class="default-link muted">Update the copy of GPLv2 to the latest version from the FSF</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2012-03-05T16:28:56+01:00" data-tooltip-content data-tooltip-interactive="true">2012-03-05 16:28:56 +01:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="drake" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/drake" title="drake"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file-symlink-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 12.25 15h-7a.75.75 0 0 1 0-1.5h7a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75a.25.25 0 0 0-.25.25V4.5a.75.75 0 0 1-1.5 0Zm-.5 10.487v1.013a.75.75 0 0 1-1.5 0v-1.012a3.75 3.75 0 0 1 3.77-3.749L4 8.49V6.573a.25.25 0 0 1 .42-.183l2.883 2.678a.25.25 0 0 1 0 .366L4.42 12.111a.25.25 0 0 1-.42-.183V9.99l-.238-.003a2.25 2.25 0 0 0-2.262 2.25m8-10.675V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>drake</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/5245f74b0eca3d72eb31fee47ef1540dbd746090" class="default-link muted">Revert &#34;build system: remove included drake&#34;</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2022-04-11T21:36:55+02:00" data-tooltip-content data-tooltip-interactive="true">2022-04-11 21:36:55 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="INSTALL" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/INSTALL" title="INSTALL"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>INSTALL</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/a2fd94093ba1b30461426d7a1d076a43fdf3ee64" class="default-link muted">INSTALL: update name of README.md file</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2014-09-01T14:58:12+02:00" data-tooltip-content data-tooltip-interactive="true">2014-09-01 14:58:12 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="install-sh" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/install-sh" title="install-sh"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>install-sh</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/8d8d6d78a0be569154233cb50e647831cd39a68b" class="default-link muted">Add flags for setting the colour properties for a video track</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2016-07-02T20:24:10+02:00" data-tooltip-content data-tooltip-interactive="true">2016-07-02 20:24:10 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="mkinstalldirs" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/mkinstalldirs" title="mkinstalldirs"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>mkinstalldirs</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/cefb6e797d45a9aa2a7c7a0b03c9f6b97309173c" class="default-link muted">switched to auto*</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2003-02-16T12:09:37Z" data-tooltip-content data-tooltip-interactive="true">2003-02-16 12:09:37 +00:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="NEWS.md" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/NEWS.md" title="NEWS.md"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>NEWS.md</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/ebd8445b1185d35d6bdbb9c1463757fbc9aa7c29" class="default-link muted">mkvmerge: AVC: set stereo mode from frame packing arrangement SEI</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-20T10:25:18-03:00" data-tooltip-content data-tooltip-interactive="true">2026-09-20 10:25:18 -03:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="Rakefile" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/Rakefile" title="Rakefile"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>Rakefile</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/bfc791cca9763b494f66379953b9509b5187bc9a" class="default-link muted">rename meta info file to use <code class="inline-code-block">metainfo.xml</code> extension</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-07-25T09:32:37+02:00" data-tooltip-content data-tooltip-interactive="true">2026-07-25 09:32:37 +02:00</relative-time></td>
+			</tr>
+		
+			
+			
+			<tr data-entryname="README.md" data-ready="true" class="ready entry">
+				<td class="name four wide">
+					<span class="truncate">
+						
+							
+								<a class="muted" href="/mbunkus/mkvtoolnix/src/branch/main/README.md" title="README.md"><svg viewBox="0 0 16 16" class="tw-mr-2 svg octicon-file" aria-hidden="true" width="16" height="16"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg>README.md</a>
+							
+						
+					</span>
+				</td>
+				<td class="message nine wide">
+					<span class="truncate">
+						
+							
+							<a href="/mbunkus/mkvtoolnix/commit/e85150f7e615f9f735f2187d48e808dc56adfe01" class="default-link muted">bump version number, set release code name</a>
+						
+					</span>
+				</td>
+				<td class="text right age three wide"><relative-time prefix="" tense="past" datetime="2026-09-14T15:56:10+02:00" data-tooltip-content data-tooltip-interactive="true">2026-09-14 15:56:10 +02:00</relative-time></td>
+			</tr>
+		
+	</tbody>
+</table>
+
+	<div id="readme" class="tab-size-4 non-diff-file-content">
+
+	
+
+	<h4 class="file-header ui top attached header tw-flex tw-items-center tw-justify-between tw-flex-wrap">
+		<div class="file-header-left tw-flex tw-items-center tw-pr-4 tw-flex-wrap tw-gap-2">
+			
+				<svg viewBox="0 0 16 16" class="svg octicon-book" aria-hidden="true" width="16" height="16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.74 3.74 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574M8.755 4.75l-.004 7.322a3.75 3.75 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25"/></svg>
+				<strong><a class="default-link muted" href="#readme">README.md</a></strong>
+			
+		</div>
+		<div class="file-header-right file-actions tw-flex tw-items-center tw-flex-wrap">
+			
+			
+			
+		</div>
+	</h4>
+	<div class="ui bottom attached table unstackable segment">
+		
+		<div class="file-view markup markdown">
+			
+				<h1 id="user-content-mkvtoolnix-102-0" dir="auto">MKVToolNix 102.0</h1>
+<h1 id="user-content-table-of-contents" dir="auto">Table of contents</h1>
+<ol dir="auto">
+<li><a href="#user-content-1-introduction" rel="nofollow">Introduction</a></li>
+<li><a href="#user-content-2-installation" rel="nofollow">Installation</a>
+<ol dir="auto">
+<li><a href="#user-content-21-requirements" rel="nofollow">Requirements</a>
+<ol dir="auto">
+<li><a href="#user-content-211-hard-requirements" rel="nofollow">Hard requirements</a></li>
+<li><a href="#user-content-212-requirements-with-bundled-fallbacks" rel="nofollow">Requirements with bundled fallbacks</a></li>
+</ol>
+</li>
+<li><a href="#user-content-22-optional-components" rel="nofollow">Optional components</a></li>
+<li><a href="#user-content-23-building-libebml-and-libmatroska" rel="nofollow">Building libEBML and libMatroska</a></li>
+<li><a href="#user-content-24-building-mkvtoolnix" rel="nofollow">Building MKVToolNix</a>
+<ol dir="auto">
+<li><a href="#user-content-241-getting-and-building-a-development-snapshot" rel="nofollow">Getting and building a development snapshot</a></li>
+<li><a href="#user-content-242-configuration-and-compilation" rel="nofollow">Configuration and compilation</a></li>
+</ol>
+</li>
+<li><a href="#user-content-25-notes-for-compilation-on-opensolaris" rel="nofollow">Notes for compilation on (Open)Solaris</a></li>
+<li><a href="#user-content-26-unit-tests" rel="nofollow">Unit tests</a></li>
+</ol>
+</li>
+<li><a href="#user-content-3-reporting-bugs-security-issues-getting-support" rel="nofollow">Reporting bugs &amp; security issues &amp; getting support</a>
+<ol dir="auto">
+<li><a href="#user-content-31-reporting-bugs" rel="nofollow">Reporting bugs</a></li>
+<li>[Reporting seucrity issues)(#32-reporting-security-issues)</li>
+<li><a href="#user-content-33-getting-support" rel="nofollow">Getting support</a></li>
+</ol>
+</li>
+<li><a href="#user-content-4-test-suite-and-continuous-integration-tests" rel="nofollow">Test suite and continuous integration tests</a></li>
+<li><a href="#user-content-5-code-of-conduct" rel="nofollow">Code of Conduct</a></li>
+<li><a href="#user-content-6-included-third-party-components-and-their-licenses" rel="nofollow">Included third-party components and their licenses</a>
+<ol dir="auto">
+<li><a href="#user-content-61-avilib" rel="nofollow">avilib</a></li>
+<li><a href="#user-content-63-libebml" rel="nofollow">libEBML</a></li>
+<li><a href="#user-content-64-libmatroska" rel="nofollow">libMatroska</a></li>
+<li><a href="#user-content-65-librmff" rel="nofollow">librmff</a></li>
+<li><a href="#user-content-66-nlohmanns-json" rel="nofollow">nlohmann&#39;s JSON</a></li>
+<li><a href="#user-content-67-pugixml" rel="nofollow">pugixml</a></li>
+<li><a href="#user-content-68-utf8-cpp" rel="nofollow">utf8-cpp</a></li>
+<li><a href="#user-content-69-oxygen-icons-and-sound-files" rel="nofollow">Oxygen icons and sound files</a></li>
+<li><a href="#user-content-610-mkvtoolnix-icons" rel="nofollow">MKVToolNix icons</a></li>
+<li><a href="#user-content-611-qtwaitingspinner" rel="nofollow">QtWaitingSpinner</a></li>
+<li><a href="#user-content-612-fancy-tab-widget" rel="nofollow">Fancy tab widget</a></li>
+<li><a href="#user-content-613-fmt" rel="nofollow">fmt</a></li>
+<li><a href="#user-content-613-qgscollapsiblegroupbox" rel="nofollow">QgsCollapsibleGroupBox</a></li>
+</ol>
+</li>
+</ol>
+<hr/>
+<h1 id="user-content-1-introduction" dir="auto">1. Introduction</h1>
+<p dir="auto">With these tools one can get information about (via mkvinfo) Matroska
+files, extract tracks/data from (via mkvextract) Matroska files and create
+(via mkvmerge) Matroska files from other media files. Matroska is a new
+multimedia file format aiming to become THE new container format for
+the future. You can find more information about it and its underlying
+technology, the Extensible Binary Meta Language (EBML), at</p>
+<p dir="auto"><a href="http://www.matroska.org/" rel="nofollow">http://www.matroska.org/</a></p>
+<p dir="auto">The full documentation for each command is now maintained in its
+man page only. Type <code>mkvmerge -h</code> to get you started.</p>
+<p dir="auto">This code comes under the GPL v2 (see www.gnu.org or the file COPYING).
+Modify as needed.</p>
+<p dir="auto">The icons are based on the work of Alexandr Grigorcea and modified by
+Eduard Geier. They&#39;re licensed under the terms of the
+<a href="http://creativecommons.org/licenses/by/3.0/" rel="nofollow">Creative Commons Attribution 3.0 Unported license</a>.</p>
+<p dir="auto">The newest version can always be found at
+<a href="https://mkvtoolnix.download/" rel="nofollow">https://mkvtoolnix.download/</a></p>
+<p dir="auto">Moritz Bunkus <a href="mailto:mo@bunkus.online" rel="nofollow">mo@bunkus.online</a></p>
+<h1 id="user-content-2-installation" dir="auto">2. Installation</h1>
+<p dir="auto">If you want to compile the tools yourself, you must first decide
+if you want to use a &#39;proper&#39; release version or the current
+development version. As both Matroska and MKVToolNix are under heavy
+development, there might be features available in the git repository
+that are not available in the releases. On the other hand the git
+repository version might not even compile.</p>
+<h2 id="user-content-2-1-requirements" dir="auto">2.1. Requirements</h2>
+<h3 id="user-content-2-1-1-hard-requirements" dir="auto">2.1.1. Hard requirements</h3>
+<p dir="auto">In order to compile MKVToolNix, you need a couple of libraries. Most of
+them should be available pre-compiled for your distribution. The
+programs and libraries you absolutely need are:</p>
+<ul dir="auto">
+<li>
+<p dir="auto">A C++ compiler that supports the C++20 standard or newer. For GCC
+this means at least v10; for clang v10 or later.</p>
+</li>
+<li>
+<p dir="auto"><a href="http://downloads.xiph.org/releases/ogg/" rel="nofollow">libOgg</a> and
+<a href="http://downloads.xiph.org/releases/vorbis/" rel="nofollow">libVorbis</a> for access to Ogg/OGM
+files and Vorbis support</p>
+</li>
+<li>
+<p dir="auto"><a href="http://www.zlib.net/" rel="nofollow">zlib</a> — a compression library</p>
+</li>
+<li>
+<p dir="auto"><a href="http://www.boost.org/" rel="nofollow">Boost</a> — Several of Boost&#39;s libraries are
+used, e.g. <code>filesystem</code>, <code>multi-precision</code>, <code>operators</code>,
+<code>system</code>. At least v1.74.0 is required.</p>
+</li>
+</ul>
+<p dir="auto">Furthermore you need to have several programs installed:</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="http://xmlsoft.org/libxslt/" rel="nofollow">libxslt&#39;s xsltproc binary</a> and
+<a href="https://sourceforge.net/projects/docbook/files/docbook-xsl/" rel="nofollow">DocBook XSL stylesheets</a>
+— for creating man pages from XML documents</p>
+</li>
+<li>
+<p dir="auto"><a href="https://inkscape.org" rel="nofollow">Inkscape</a> and
+<a href="https://imagemagick.org/" rel="nofollow">ImageMagick</a> — for converting SVG icons
+into different types</p>
+</li>
+</ul>
+<p dir="auto">You also need the <code>rake</code> or <code>drake</code> build program. I suggest <code>rake</code>
+v10.0.0 or newer (this is included with Ruby 2.1) as it offers
+parallel builds out of the box. If you only have an earlier version of
+<code>rake</code>, you can install and use the <code>drake</code> gem for the same gain.</p>
+<h3 id="user-content-2-1-2-requirements-with-bundled-fallbacks" dir="auto">2.1.2. Requirements with bundled fallbacks</h3>
+<p dir="auto">Several required libraries might not be available for your
+distribution. Therefore they&#39;re bundled with the MKVToolNix source
+code. The <code>configure</code> script will look for those libraries and use
+existing versions if present. If not, the bundled versions are used
+instead.</p>
+<p dir="auto">It is highly recommended to install the versions provided by your
+distribution instead of relying on the bundled versions.</p>
+<p dir="auto">These libraries are:</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="http://fmtlib.net/" rel="nofollow">fmt</a> — a small, safe and fast formatting
+library. Version 8.0.0 or later is required.</p>
+</li>
+<li>
+<p dir="auto"><a href="http://dl.matroska.org/downloads/libebml/" rel="nofollow">libEBML v1.4.7</a> or later
+and <a href="http://dl.matroska.org/downloads/libmatroska/" rel="nofollow">libMatroska v1.7.2</a>
+or later for low-level access to Matroska files. Instructions on how to
+compile them are a bit further down in this file.</p>
+</li>
+<li>
+<p dir="auto"><a href="https://www.bunkus.org/videotools/librmff/index.html" rel="nofollow">librmff</a> — a
+library for accessing RealMedia files</p>
+</li>
+<li>
+<p dir="auto"><a href="https://github.com/nlohmann/json" rel="nofollow">nlohmann&#39;s JSON</a> — JSON for
+Modern C++</p>
+</li>
+<li>
+<p dir="auto"><a href="http://www.qt.io/" rel="nofollow">Qt</a> v6.2.0 or newer — a cross-platform library
+including a UI toolkit. The library is needed for all programs, even
+if you decide not to build MKVToolNix GUI.</p>
+</li>
+<li>
+<p dir="auto"><a href="http://pugixml.org/" rel="nofollow">pugixml</a> — light-weight, simple and fast XML
+parser for C++ with XPath support</p>
+</li>
+<li>
+<p dir="auto"><a href="http://utfcpp.sourceforge.net/" rel="nofollow">utf8-cpp</a> — UTF-8 with C++ in a
+Portable Way</p>
+</li>
+</ul>
+<h2 id="user-content-2-2-optional-components" dir="auto">2.2. Optional components</h2>
+<p dir="auto">Other libraries are optional and only limit the features that are
+built. These include:</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="https://github.com/commonmark/cmark" rel="nofollow">cmark</a> — the CommonMark
+parsing and rendering library in C is required when building
+MKVToolNix GUI.</p>
+</li>
+<li>
+<p dir="auto"><a href="http://downloads.xiph.org/releases/flac/" rel="nofollow">libFLAC</a> for FLAC
+support (Free Lossless Audio Codec)</p>
+</li>
+<li>
+<p dir="auto"><a href="https://www.po4a.org/" rel="nofollow">po4a</a> for building the translated man pages</p>
+</li>
+</ul>
+<h2 id="user-content-2-3-building-libebml-and-libmatroska" dir="auto">2.3. Building libEBML and libMatroska</h2>
+<p dir="auto">This is optional as MKVToolNix comes with its own set of the
+libraries. It will use them if no version is found on the system.</p>
+<p dir="auto">Start by either downloading the latest releases of
+<a href="http://dl.matroska.org/downloads/libebml/" rel="nofollow">libEBML</a> and
+<a href="http://dl.matroska.org/downloads/libmatroska/" rel="nofollow">libMatroska</a> or by
+getting fresh copies from their git repositories:</p>
+<pre><code>git clone https://github.com/Matroska-Org/libebml.git
+git clone https://github.com/Matroska-Org/libmatroska.git
+</code></pre>
+<p dir="auto">First build and install libEBML according to the included
+instructions. Afterwards do the same for libMatroska.</p>
+<h2 id="user-content-2-4-building-mkvtoolnix" dir="auto">2.4. Building MKVToolNix</h2>
+<p dir="auto">Either download the current release from
+<a href="https://mkvtoolnix.download/" rel="nofollow">the MKVToolNix home page</a>
+and unpack it or get a development snapshot from my Git repository.</p>
+<h3 id="user-content-2-4-1-getting-and-building-a-development-snapshot" dir="auto">2.4.1. Getting and building a development snapshot</h3>
+<p dir="auto">You can ignore this subsection if you want to build from a release
+tarball.</p>
+<p dir="auto">All you need for Git repository access is to download a Git client
+from the Git homepage at <a href="http://git-scm.com/" rel="nofollow">http://git-scm.com/</a>. There are clients
+for both Unix/Linux and Windows.</p>
+<p dir="auto">First clone my Git repository with this command:</p>
+<pre><code>git clone https://codeberg.org/mbunkus/mkvtoolnix.git
+</code></pre>
+<p dir="auto">Now change to the MKVToolNix directory with <code>cd mkvtoolnix</code> and run
+<code>./autogen.sh</code> which will generate the &#34;configure&#34; script. You need
+the GNU &#34;autoconf&#34; utility for this step.</p>
+<h3 id="user-content-2-4-2-configuration-and-compilation" dir="auto">2.4.2. Configuration and compilation</h3>
+<p dir="auto">If you have run <code>make install</code> for both libraries, then <code>configure</code>
+should automatically find the libraries&#39; position. Otherwise you need
+to tell <code>configure</code> where the libEBML and libMatroska include and
+library files are:</p>
+<pre><code>./configure \
+  --with-extra-includes=/where/i/put/libebml\;/where/i/put/libmatroska \
+  --with-extra-libs=/where/i/put/libebml/make/linux\;/where/i/put/libmatroska/make/linux
+</code></pre>
+<p dir="auto">Now run <code>rake</code> and, as &#34;root&#34;, <code>rake install</code>.</p>
+<h3 id="user-content-2-4-3-if-things-go-wrong" dir="auto">2.4.3. If things go wrong</h3>
+<p dir="auto">By default the commands executed by the build system aren&#39;t
+output. You can change that by adding <code>V=1</code> as an argument to the
+<code>rake</code> command.</p>
+<p dir="auto">If <code>rake</code> executes too many processes at once, then you&#39;ve stumbled
+across a known bug in <code>rake</code>. In that case you should install the
+<code>drake</code> Ruby gem and use the command <code>drake</code> instead of
+<code>rake</code>. <code>drake</code> supports parallelism properly and doesn&#39;t try to
+execute all jobs at once.</p>
+<h2 id="user-content-2-5-notes-for-compilation-on-open-solaris" dir="auto">2.5. Notes for compilation on (Open)Solaris</h2>
+<p dir="auto">You can compile MKVToolNix with Sun&#39;s sunstudio compiler, but you need
+additional options for <code>configure</code>:</p>
+<pre><code>./configure --prefix=/usr \
+  CXX=&#34;/opt/sunstudio12.1/bin/CC -library=stlport4&#34; \
+  CXXFLAGS=&#34;-D_POSIX_PTHREAD_SEMANTICS&#34; \
+  --with-extra-includes=/where/i/put/libebml\;/where/i/put/libmatroska \
+  --with-extra-libs=/where/i/put/libebml/make/linux\;/where/i/put/libmatroska/make/linux
+</code></pre>
+<h2 id="user-content-2-6-unit-tests" dir="auto">2.6. Unit tests</h2>
+<p dir="auto">Building and running unit tests is completely optional. If you want to
+do this, you have to follow these steps:</p>
+<ol dir="auto">
+<li>
+<p dir="auto">Download the &#34;googletest&#34; framework from
+<a href="https://github.com/google/googletest/" rel="nofollow">https://github.com/google/googletest/</a> (at the time of writing the
+file to download was &#34;googletest-release-1.8.0.tar.gz&#34;)</p>
+</li>
+<li>
+<p dir="auto">Extract the archive somewhere and create a symbolic link to its
+<code>googletest-release-1.8.0/googletest</code> sub-directory
+inside MKVToolNix&#39; <code>lib</code> directory and call it <code>gtest</code>, e.g. like this:</p>
+<p dir="auto"><code>ln -s /path/to/googletest-release-1.8.0/googletest lib/gtest</code></p>
+</li>
+<li>
+<p dir="auto">Configure MKVToolNix normally.</p>
+</li>
+<li>
+<p dir="auto">Build the unit test executable and run it with</p>
+<pre><code> rake tests:run_unit
+</code></pre>
+</li>
+</ol>
+<h1 id="user-content-3-reporting-bugs-security-issues-getting-support" dir="auto">3. Reporting bugs &amp; security issues &amp; getting support</h1>
+<h1 id="user-content-3-1-reporting-bugs" dir="auto">3.1. Reporting bugs</h1>
+<p dir="auto">If you&#39;re sure you&#39;ve found a bug — e.g. if one of my programs crashes
+with an obscur error message, or if the resulting file is missing part
+of the original data, then by all means submit a bug report.</p>
+<p dir="auto">I use <a href="https://codeberg.org/mbunkus/mkvtoolnix/issues" rel="nofollow">Codeberg&#39;s issue system</a>
+as my bug database. You can submit your bug reports there. Please be as
+verbose as possible — e.g. include the command line, if you use Windows
+or Linux etc.pp.</p>
+<p dir="auto">If at all possible, please include sample files as well so that I can
+reproduce the issue. If they are larger than 1 MB, please upload
+them somewhere and post a link in the issue. You can also upload them
+to my FTP server. Details on how to connect can be found in the
+<a href="https://codeberg.org/mbunkus/mkvtoolnix/wiki/FTP-server" rel="nofollow">MKVToolNix FAQ</a>.</p>
+<h1 id="user-content-3-2-reporting-security-issues" dir="auto">3.2. Reporting security issues</h1>
+<p dir="auto">If you think you&#39;ve found a security issue, please reach out via email
+to the author, Moritz Bunkus <a href="mailto:mo@bunkus.online" rel="nofollow">mo@bunkus.online</a>. Please don&#39;t file an
+issue on Codeberg for it as security issues are usually sensitive &amp;
+Codeberg doesn&#39;t support private/restricted access to issues. I will
+prioritize reported security issues over regular bug reports. Thank
+you.</p>
+<h1 id="user-content-3-3-getting-support" dir="auto">3.3. Getting support</h1>
+<p dir="auto">The issue tracker above is not meant for general support which you can
+find in the following places:</p>
+<ul dir="auto">
+<li>The <a href="https://help.mkvtoolnix.download/" rel="nofollow">MKVToolNix help forum</a> is
+suitable for all kinds of questions.</li>
+<li>The MKVToolNix thread on <a href="http://forum.doom9.org/showthread.php?t=155732" rel="nofollow">Doom9&#39;s
+forum</a> is more
+suited for in-depth technical questions.</li>
+<li>There&#39;s also the IRC channel <code>#matroska</code> on the <a href="https://libera.chat/" rel="nofollow">Libera IRC
+network</a> where we hang out. The main
+MKVToolNix author Moritz Bunkus is known as &#34;mosu&#34; there.</li>
+</ul>
+<h1 id="user-content-4-test-suite-and-continuous-integration-tests" dir="auto">4. Test suite and continuous integration tests</h1>
+<p dir="auto">MKVToolNix contains a lot of test cases in order to detect regressions
+before they&#39;re released. Regressions include both compilation issues
+as well as changes from expected program behavior.</p>
+<p dir="auto">As mentioned in section 2.6., MKVToolNix comes with a set of unit
+tests based on the Google Test library in the <code>tests/unit</code>
+sub-directory that you can run yourself. These cover only a small
+amount of code, and any effort to extend them would be most welcome.</p>
+<p dir="auto">A second test suite exists that targets the program behavior, e.g. the
+output generated by mkvmerge when specific options are used with
+specific input files. These are the test cases in the <code>tests</code>
+directory itself. Unfortunately the files they run on often contain
+copyrighted material that I cannot distribute. Therefore you cannot
+run them yourself.</p>
+<p dir="auto">A third pillar of the testing effort is the
+<a href="https://buildbot.mkvtoolnix.download/" rel="nofollow">continuous integration tests</a>
+run on a Buildbot instance. These are run automatically for each
+commit made to the git repository. The tests include:</p>
+<ul dir="auto">
+<li>building of all the packages for Linux distributions that I
+normally provide for download myself in both 32-bit and 64-bit
+variants</li>
+<li>building of the Windows installer and portable packages in both
+32-bit and 64-bit variants</li>
+<li>building with both g++ and clang++</li>
+<li>building and running the unit tests</li>
+<li>building and running the test file test suite</li>
+<li>building with all optional features disabled</li>
+</ul>
+<h1 id="user-content-5-code-of-conduct" dir="auto">5. Code of Conduct</h1>
+<p dir="auto">Please note that this project is released with a
+<a href="/mbunkus/mkvtoolnix/src/branch/main/CODE_OF_CONDUCT.md" rel="nofollow">Code of Conduct</a>. By participating in this project
+you agree to abide by its terms.</p>
+<h1 id="user-content-6-included-third-party-components-and-their-licenses" dir="auto">6. Included third-party components and their licenses</h1>
+<p dir="auto">MKVToolNix includes and uses the following libraries &amp; artwork:</p>
+<h2 id="user-content-6-1-avilib" dir="auto">6.1. avilib</h2>
+<p dir="auto">Reading and writing AVI files. Originally part of the <code>transcode</code>
+package.</p>
+<ul dir="auto">
+<li>Copyright: 1999 Rainer Johanni <a href="mailto:Rainer@Johanni.de" rel="nofollow">Rainer@Johanni.de</a></li>
+<li>License: GNU General Public License v2 or later</li>
+<li>URL: the <code>transcode</code> project doesn&#39;t seem to have a home page anymore</li>
+<li>Corresponding files: <code>lib/avilib-0.6.10/*</code></li>
+</ul>
+<h2 id="user-content-6-2-libebml" dir="auto">6.2. libEBML</h2>
+<p dir="auto">A C++ library to parse EBML files</p>
+<ul dir="auto">
+<li>Copyright: 2002-2021 Steve Lhomme et. al.</li>
+<li>License: GNU Lesser General Public License v2.1 or later (see <code>doc/licenses/LGPL-2.1.txt</code>)</li>
+<li>URL: <a href="http://www.matroska.org/" rel="nofollow">http://www.matroska.org/</a></li>
+<li>Corresponding files: <code>lib/libebml/*</code></li>
+</ul>
+<h2 id="user-content-6-3-libmatroska" dir="auto">6.3. libMatroska</h2>
+<p dir="auto">A C++ library to parse Matroska files</p>
+<ul dir="auto">
+<li>Copyright: 2002-2020 Steve Lhomme et. al.</li>
+<li>License: GNU Lesser General Public License v2.1 or later (see <code>doc/licenses/LGPL-2.1.txt</code>)</li>
+<li>URL: <a href="http://www.matroska.org/" rel="nofollow">http://www.matroska.org/</a></li>
+<li>Corresponding files: <code>lib/libmatroska/*</code></li>
+</ul>
+<h2 id="user-content-6-4-librmff" dir="auto">6.4. librmff</h2>
+<p dir="auto">librmff is short for &#39;RealMedia file format access library&#39;. It aims
+at providing the programmer an easy way to read and write RealMedia
+files.</p>
+<ul dir="auto">
+<li>Copyright: Moritz Bunkus</li>
+<li>License: GNU Lesser General Public License v2.1 or later (see <code>doc/licenses/LGPL-2.1.txt</code>)</li>
+<li>URL: <a href="https://www.bunkus.org/videotools/librmff/index.html" rel="nofollow">https://www.bunkus.org/videotools/librmff/index.html</a></li>
+<li>Corresponding files: <code>lib/librmff/*</code></li>
+</ul>
+<h2 id="user-content-6-5-nlohmann-s-json" dir="auto">6.5. nlohmann&#39;s JSON</h2>
+<p dir="auto">JSON for Modern C++</p>
+<ul dir="auto">
+<li>Copyright: 2013-2021 Niels Lohmann</li>
+<li>License: MIT (see <code>doc/licenses/nlohmann-json-MIT.txt</code>)</li>
+<li>URL: <a href="https://github.com/nlohmann/json" rel="nofollow">https://github.com/nlohmann/json</a></li>
+<li>Corresponding files: <code>lib/nlohmann-json/*</code></li>
+</ul>
+<h2 id="user-content-6-6-pugixml" dir="auto">6.6. pugixml</h2>
+<p dir="auto">An XML processing library</p>
+<ul dir="auto">
+<li>Copyright: 2006–2020 by Arseny Kapoulkine <a href="mailto:arseny.kapoulkine@gmail.com" rel="nofollow">arseny.kapoulkine@gmail.com</a></li>
+<li>License: MIT (see <code>doc/licenses/pugixml-MIT.txt</code>)</li>
+<li>URL: <a href="https://pugixml.org/" rel="nofollow">https://pugixml.org/</a></li>
+<li>Corresponding files: <code>lib/pugixml/*</code></li>
+</ul>
+<h2 id="user-content-6-7-utf8-cpp" dir="auto">6.7. utf8-cpp</h2>
+<p dir="auto">UTF-8 with C++ in a Portable Way</p>
+<ul dir="auto">
+<li>Copyright: 2006-2021 Nemanja Trifunovic</li>
+<li>License: Boost Software License 1.0 (see <code>doc/licenses/Boost-1.0.txt</code>)</li>
+<li>URL: <a href="https://github.com/nemtrif/utfcpp/" rel="nofollow">https://github.com/nemtrif/utfcpp/</a></li>
+<li>Corresponding files: <code>lib/utf8-cpp/*</code></li>
+</ul>
+<h2 id="user-content-6-8-oxygen-icons-and-sound-files" dir="auto">6.8. Oxygen icons and sound files</h2>
+<p dir="auto">A lot of the icons included in this package originate from the Oxygen
+Project. These include all files in the <code>share/icons/oxygen</code>
+sub-directory.</p>
+<p dir="auto">All of the sound files in the <code>share/sounds</code> sub-directory originate
+from the Oxygen project.</p>
+<ul dir="auto">
+<li>License: GNU Lesser General Public License v3 (see <code>doc/licenses/LGPL-3.0.txt</code>)</li>
+<li>URL: <a href="https://techbase.kde.org/Projects/Oxygen" rel="nofollow">https://techbase.kde.org/Projects/Oxygen</a></li>
+<li>Corresponding files:
+<ul dir="auto">
+<li><code>share/icons/oxygen/*</code></li>
+<li><code>share/sounds/*</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="user-content-6-9-mkvtoolnix-icons" dir="auto">6.9. MKVToolNix icons</h2>
+<ul dir="auto">
+<li>Copyright:
+<ul dir="auto">
+<li>2011 Alexandr Grigorcea <a href="mailto:cahr.gr@gmail.com" rel="nofollow">cahr.gr@gmail.com</a></li>
+<li>2012 Eduard Geier <a href="mailto:edu.g@online.de" rel="nofollow">edu.g@online.de</a></li>
+<li>2012 Ben Humpert <a href="mailto:ben@an3k.de" rel="nofollow">ben@an3k.de</a></li>
+</ul>
+</li>
+<li>License: Creative Commons Attribution 3.0 Unported (CC BY 3.0) (see <code>doc/licenses/CC-BY-3.0.txt</code>)</li>
+<li>Corresponding files: <code>share/icons/*/mkv*</code></li>
+</ul>
+<h2 id="user-content-6-10-qtwaitingspinner" dir="auto">6.10. QtWaitingSpinner</h2>
+<p dir="auto">A highly configurable, custom Qt widget for showing &#34;waiting&#34; or
+&#34;loading&#34; spinner icons in Qt applications</p>
+<ul dir="auto">
+<li>Copyright:
+<ul dir="auto">
+<li>2012–2014 by Alexander Turkin</li>
+<li>2014 by William Hallatt</li>
+<li>2015 by Jacob Dawid</li>
+</ul>
+</li>
+<li>License: MIT (see <code>doc/licenses/QtWaitingSpinner-MIT.txt</code>)</li>
+<li>URL: <a href="https://github.com/snowwlex/QtWaitingSpinner" rel="nofollow">https://github.com/snowwlex/QtWaitingSpinner</a></li>
+<li>Corresponding files: <code>src/mkvtoolnix-gui/util/waiting_spinning_widget.{h,cpp}</code></li>
+</ul>
+<h2 id="user-content-6-11-fancy-tab-widget" dir="auto">6.11. Fancy tab widget</h2>
+<p dir="auto">A beefed-up tab widget class for Qt extracted from the Qt Creator project</p>
+<ul dir="auto">
+<li>Copyright: 2011 Nokia Corporation and/or its subsidiary(-ies).</li>
+<li>License: GNU General Public License v2 (see <code>COPYING</code>)</li>
+<li>Corresponding files: <code>src/mkvtoolnix-gui/util/fancy_tab_widget.{h,cpp}</code></li>
+</ul>
+<h2 id="user-content-6-12-fmt" dir="auto">6.12. fmt</h2>
+<p dir="auto">Small, safe and fast formatting library</p>
+<ul dir="auto">
+<li>Copyright: 2012–present by Victor Zverovich</li>
+<li>License: BSD (see <code>doc/licenses/fmt-BSD.txt</code>)</li>
+<li>URL: <a href="https://fmt.dev/latest/" rel="nofollow">https://fmt.dev/latest/</a></li>
+<li>Corresponding files: <code>lib/fmt/*</code></li>
+</ul>
+<h2 id="user-content-6-13-qgscollapsiblegroupbox" dir="auto">6.13. QgsCollapsibleGroupBox</h2>
+<p dir="auto">A groupbox that collapses/expands when toggled. Extracted from the QGIS project.</p>
+<ul dir="auto">
+<li>Copyright: 2012–present by Etienne Tourigny</li>
+<li>License: GNU General Public License v2 or later (see <code>COPYING</code>)</li>
+<li>URL: <a href="https://github.com/qgis/QGIS" rel="nofollow">https://github.com/qgis/QGIS</a></li>
+<li>Corresponding files: <code>src/mkvtoolnix-gui/util/qgs_collapsible_group_box.{h,cpp}</code></li>
+</ul>
+<h2 id="user-content-6-14-windows-theme" dir="auto">6.14. Windows theme</h2>
+<p dir="auto">The theme (palette) used on Windows</p>
+<ul dir="auto">
+<li>Copyright: 2016 The Qt Company Ltd.</li>
+<li>License: GNU General Public License v2 (see <code>COPYING</code>)</li>
+<li>Corresponding files: <code>src/mkvtoolnix-gui/app/windows.cpp</code></li>
+</ul>
+
+			
+		</div>
+	</div>
+</div>
+
+
+
+		
+	</div>
+</div>
+
+
+	
+
+	</div>
+
+	
+
+	<footer class="page-footer" role="group" aria-label="Footer">
+	<div class="grid" aria-label="Links">
+		<div class="not-mobile">
+			<div class="branding" aria-hidden="true">
+				<img class="light-logo" loading="lazy" src="/assets/img/svg/cb-logo.svg" alt="Logo">
+				<img class="dark-logo" loading="lazy" src="/assets/img/svg/cb-logo-mono.svg" alt="Logo">
+			</div>
+			<div class="powered-by">
+				<div class="title">Powered by </div>
+				<a target="_blank" rel="noopener noreferrer" href="https://forgejo.org" aria-label="Forgejo">
+					<div class="branding" aria-hidden="true">
+						<img class="light-logo" loading="lazy" src="/assets/img/svg/forgejo-wordmark.svg" alt="Forgejo logo">
+						<img class="dark-logo" loading="lazy" src="/assets/img/svg/forgejo-wordmark-mono.svg" alt="Forgejo logo">
+					</div>
+				</a>
+				with <a class="tw-mt-0" href="/Codeberg-Infrastructure/forgejo" target="_blank">modifications</a>
+			</div>
+		</div>
+		<div>
+			<b id="codeberg-codeberg">Codeberg</b>
+			<ul>
+				<li><a href="https://blog.codeberg.org" target="_blank">Blog</a></li>
+				<li><a href="https://docs.codeberg.org" target="_blank">Documentation</a></li>
+				<li><a href="/Codeberg/Community/issues">Community issues</a></li>
+				
+				<li><a href="/Codeberg/Contributing">Contributing</a>
+				<li><a href="https://docs.codeberg.org/contact/#abuse" target="_blank">Report abuse</a>
+			</ul>
+		</div>
+		<div>
+			<b id="codeberg-association">Association</b>
+			<ul>
+				<li><a href="https://docs.codeberg.org/getting-started/what-is-codeberg/#what-is-codeberg-e.v.%3F" target="_blank">Who are we?</a></li>
+				<li><a href="https://codeberg.org/codeberg/org/src/en/bylaws.md" target="_blank">Bylaws / Satzung</a></li>
+				<li><a href="https://docs.codeberg.org/improving-codeberg/donate/" target="_blank">Donate</a></li>
+				<li><a href="https://join.codeberg.org" target="_blank">Join / Support</a></li>
+				<li><a href="https://docs.codeberg.org/contact/" target="_blank">Contact</a></li>
+			</ul>
+		</div>
+		<div>
+			<b id="codeberg-service">Services</b>
+			<ul>
+				<li><a href="https://codeberg.page" target="_blank">Codeberg Pages</a></li>
+				<li><a href="https://translate.codeberg.org" target="_blank">Codeberg Translate</a></li>
+				<li><a href="https://docs.codeberg.org/ci/#using-codeberg's-instance-of-woodpecker-ci" target="_blank">Woodpecker CI</a></li>
+				
+					<li><a href="/api/swagger">Forgejo API</a></li>
+				
+				<li><a href="https://status.codeberg.eu" target="_blank">Status page</a></li>
+			</ul>
+		</div>
+		<div>
+			<b id="codeberg-legal">Legal</b>
+			<ul>
+				<li><a href="https://codeberg.org/codeberg/org/src/Imprint.md" target="_blank">Imprint / Impressum</a></li>
+				<li><a href="/codeberg/org/src/PrivacyPolicy.md" target="_blank">Privacy Policy</a></li>
+				<li><a href="/assets/licenses.txt">Licenses</a></li>
+				<li><a href="/codeberg/org/src/TermsOfUse.md">Terms of Use</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom-grid">
+		<div class="footer-social">
+			<a href="https://social.anoxinon.de/@Codeberg" target="_blank" rel="noopener noreferrer">Mastodon</a> |
+			<a href="matrix:r/codeberg-space:matrix.org?action=join" target="_blank" rel="noopener noreferrer">Matrix Space</a>
+			<a href="https://matrix.to/#/#codeberg-space:matrix.org" target="_blank" rel="noopener noreferrer">(Web link)</a>
+			<button class="btn interact-fg tw-p-2 tw-inline" data-clipboard-text="#codeberg-space:matrix.org" data-tooltip-content="Copy to clipboard"><svg viewBox="0 0 16 16" class="svg octicon-copy" aria-hidden="true" width="14" height="14"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg></button>
+			<p class="only-mobile">
+				<a target="_blank" rel="noopener noreferrer" href="https://forgejo.org">Powered by Forgejo</a>
+			</p>
+		</div>
+		<div class="footer-language-switch">
+			<div class="ui language bottom floating slide up dropdown link item button">
+				<svg viewBox="0 0 16 16" class="svg octicon-globe" aria-hidden="true" width="16" height="16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M5.78 8.75a9.64 9.64 0 0 0 1.363 4.177q.383.64.857 1.215c.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a10 10 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.51 6.51 0 0 0 4.666 5.5q-.184-.271-.352-.552c-.715-1.192-1.437-2.874-1.581-4.948m-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948q.18-.295.353-.552a6.51 6.51 0 0 0-4.666 5.5m10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948q-.18.296-.353.552a6.51 6.51 0 0 0 4.666-5.5Zm2.733-1.5a6.51 6.51 0 0 0-4.666-5.5q.184.272.353.552c.714 1.192 1.436 2.874 1.58 4.948Z"/></svg>
+				<div class="text">English</div>
+				<div class="menu language-menu">
+					
+						<a lang="id-ID" data-url="/?lang=id-ID" class="item ">Bahasa Indonesia</a>
+					
+						<a lang="da" data-url="/?lang=da" class="item ">Dansk</a>
+					
+						<a lang="de-DE" data-url="/?lang=de-DE" class="item ">Deutsch</a>
+					
+						<a lang="en-US" data-url="/?lang=en-US" class="item active selected">English</a>
+					
+						<a lang="es-ES" data-url="/?lang=es-ES" class="item ">Español</a>
+					
+						<a lang="eo" data-url="/?lang=eo" class="item ">Esperanto</a>
+					
+						<a lang="fil" data-url="/?lang=fil" class="item ">Filipino</a>
+					
+						<a lang="fr-FR" data-url="/?lang=fr-FR" class="item ">Français</a>
+					
+						<a lang="it-IT" data-url="/?lang=it-IT" class="item ">Italiano</a>
+					
+						<a lang="lv-LV" data-url="/?lang=lv-LV" class="item ">Latviešu</a>
+					
+						<a lang="hu-HU" data-url="/?lang=hu-HU" class="item ">Magyar nyelv</a>
+					
+						<a lang="nl-NL" data-url="/?lang=nl-NL" class="item ">Nederlands</a>
+					
+						<a lang="nds" data-url="/?lang=nds" class="item ">Plattdüütsch</a>
+					
+						<a lang="pl-PL" data-url="/?lang=pl-PL" class="item ">Polski</a>
+					
+						<a lang="pt-PT" data-url="/?lang=pt-PT" class="item ">Português de Portugal</a>
+					
+						<a lang="pt-BR" data-url="/?lang=pt-BR" class="item ">Português do Brasil</a>
+					
+						<a lang="sl" data-url="/?lang=sl" class="item ">Slovenščina</a>
+					
+						<a lang="fi-FI" data-url="/?lang=fi-FI" class="item ">Suomi</a>
+					
+						<a lang="sv-SE" data-url="/?lang=sv-SE" class="item ">Svenska</a>
+					
+						<a lang="tr-TR" data-url="/?lang=tr-TR" class="item ">Türkçe</a>
+					
+						<a lang="cs-CZ" data-url="/?lang=cs-CZ" class="item ">Čeština</a>
+					
+						<a lang="el-GR" data-url="/?lang=el-GR" class="item ">Ελληνικά</a>
+					
+						<a lang="bg" data-url="/?lang=bg" class="item ">Български</a>
+					
+						<a lang="ru-RU" data-url="/?lang=ru-RU" class="item ">Русский</a>
+					
+						<a lang="uk-UA" data-url="/?lang=uk-UA" class="item ">Українська</a>
+					
+						<a lang="fa-IR" data-url="/?lang=fa-IR" class="item ">فارسی</a>
+					
+						<a lang="ja-JP" data-url="/?lang=ja-JP" class="item ">日本語</a>
+					
+						<a lang="zh-CN" data-url="/?lang=zh-CN" class="item ">简体中文</a>
+					
+						<a lang="zh-TW" data-url="/?lang=zh-TW" class="item ">繁體中文（台灣）</a>
+					
+						<a lang="zh-HK" data-url="/?lang=zh-HK" class="item ">繁體中文（香港）</a>
+					
+						<a lang="ko-KR" data-url="/?lang=ko-KR" class="item ">한국어</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tw-hidden">
+		
+			Page: 210ms<br>
+			Template: 74ms
+		
+	</div>
+  
+	
+		<div class="symbol-of-tolerance" role="img"></div>
+	
+</footer>
+
+
+	<script src="/assets/js/index.js?v=16.0.0-dev-753-6bcc6da0~gitea-1.22.0" onerror="alert('Failed to load asset files from {path}. Please make sure the asset files can be accessed.'.replace('{path}', this.src))"></script>
+
+	
+</body>
+</html>
+

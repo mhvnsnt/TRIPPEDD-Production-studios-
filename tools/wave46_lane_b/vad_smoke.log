@@ -1,0 +1,14 @@
+[w46b-vad] input : tools/lipsync/proofs/wave2/whisperx_upgrade/static_voice_test_16k.wav
+[w46b-vad] input sha256: ae8acb2fecfe03fec261387100e833a902e076613178d4594d905f154b6d0ced
+[w46b-vad] model : bundled silero_vad_v6.onnx (faster-whisper 1.2.1)
+[w46b-vad] model sha256: 4cbf549b8326f60f80f2536d9eefeb450a9abe83365a098031c89719f1be17d2
+[w46b-vad] onnxruntime 1.30.0, providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+[w46b-vad] decoded 12.93s @ 16000 Hz in 0.04s
+[w46b-vad] VAD inference took 0.08s (CPU, 166.2x realtime)
+[w46b-vad] speech segments found: 1; total voiced: 12.934s of 12.93s
+[w46b-vad]   speech 0.000s -> 12.934s (12.934s)
+[w46b-vad] wrote vad_timestamps.json (1 segments) + vad_proof_meta.json
+[w46b-vad] total wall time 0.40s — VERDICT: WIRED
+[w46b-vad] static_voice_test_16k: 1 segments: 0.00-12.93s
+[w46b-vad] rhubarb_speech_3s: 1 segments: 0.12-3.05s
+[w46b-vad] wrote vad_timestamps_tight.json

@@ -1,0 +1,5 @@
+noisereduce wire-up (Wave 22 Lane A, 2026-10-07)
+2s 440Hz sine + white noise @16kHz
+noisy SNR: -2.97 dB
+reduced SNR: 0.21 dB
+improvement: 3.18 dB

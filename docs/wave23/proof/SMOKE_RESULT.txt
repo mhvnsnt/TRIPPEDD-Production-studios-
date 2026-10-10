@@ -1,0 +1,17 @@
+=== EBU-TT Live WebSocket carriage smoke test — final run (2026-10-07) ===
+producer: bbc/ebu-tt-live-toolkit @ ce813b3, ebu-tt-live 3.0.3, Python 3.12, autobahn 20.12.3, twisted 23.10.0
+path: ws://localhost:9000/SmokeTest1/subscribe  (Tech 3370s1 {sequence_identifier}/{action} path format)
+
+--- consumer verdict (received.json) ---
+pass: True
+received: 4 / 4
+seq identifiers all match: True
+seq numbers: [4, 5, 6, 7]
+monotonic+unique: True
+
+--- sample document head (first 200 chars of received XML) ---
+<?xml version="1.0" encoding="UTF-8"?> <tt:tt xml:lang="en-GB" ttp:timeBase="clock" ttp:clockMode="local" ttp:cellResolution="32 15" ebuttp:sequenceIdentifier="SmokeTest1" ebuttp:sequenceNumber="4" xm
+
+--- consumer stdout tail ---
+INFO:document_logger:Document SmokeTest1__7 inserted into sequence
+CONSUMER_DONE received=4 pass=True

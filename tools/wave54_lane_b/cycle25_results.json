@@ -1,0 +1,354 @@
+{
+  "fetched": [
+    "https://gitlab.com/api/v4/projects/kode54%2Flazyusf2",
+    "https://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp/COPYING",
+    "https://www.zophar.net/utilities/nsf/notso-fatso.html",
+    "https://raw.githubusercontent.com/elrinth/xmplay_gamemusic_plugin/main/README.md",
+    "https://raw.githubusercontent.com/audapolis/audapolis/main/LICENSE",
+    "https://raw.githubusercontent.com/ijsf/at2/master/README.md",
+    "http://sc68.atari.org",
+    "https://raw.githubusercontent.com/Zeinok/sc68/master/COPYING",
+    "https://sourceforge.net/projects/sc68/",
+    "https://raw.githubusercontent.com/mifi/lossless-cut/master/LICENSE",
+    "https://raw.githubusercontent.com/mean00/avidemux2/master/COPYING",
+    "https://codeberg.org/api/v1/repos/mbunkus/mkvtoolnix",
+    "https://codeberg.org/mbunkus/mkvtoolnix/raw/branch/main/COPYING",
+    "https://codeberg.org/api/v1/repos/uzu/tidal",
+    "https://codeberg.org/uzu/tidal/raw/branch/main/LICENSE",
+    "https://gitlab.com/api/v4/projects/uade-music-player%2Fuade",
+    "https://sourceforge.net/projects/asap/"
+  ],
+  "repos": {
+    "260-lazyusf2": {
+      "path": "kode54/lazyusf2",
+      "archived": null,
+      "last_activity_at": "2022-03-10T05:00:06.145Z",
+      "default_branch": "main"
+    },
+    "audapolis/audapolis": {
+      "full_name": "bugbakery/audapolis",
+      "archived": false,
+      "pushed_at": "2026-06-24T10:33:39Z",
+      "default_branch": "main",
+      "spdx_id": "AGPL-3.0",
+      "owner": "bugbakery",
+      "private": false
+    },
+    "ijsf/at2": {
+      "full_name": "ijsf/at2",
+      "archived": false,
+      "pushed_at": "2018-12-25T22:16:08Z",
+      "default_branch": "master",
+      "spdx_id": null,
+      "owner": "ijsf",
+      "private": false
+    },
+    "mmitch/gbsplay": {
+      "full_name": "mmitch/gbsplay",
+      "archived": false,
+      "pushed_at": "2026-09-28T18:13:41Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "mmitch",
+      "private": false
+    },
+    "frno7/psgplay": {
+      "full_name": "frno7/psgplay",
+      "archived": false,
+      "pushed_at": "2026-09-08T06:17:37Z",
+      "default_branch": "main",
+      "spdx_id": null,
+      "owner": "frno7",
+      "private": false
+    },
+    "vgmrips/vgmtools": {
+      "full_name": "vgmrips/vgmtools",
+      "archived": false,
+      "pushed_at": "2026-08-16T16:41:23Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-2.0",
+      "owner": "vgmrips",
+      "private": false
+    },
+    "pepijn-devries/protrackr2": {
+      "full_name": "pepijn-devries/ProTrackR2",
+      "archived": false,
+      "pushed_at": "2025-11-20T21:10:28Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "pepijn-devries",
+      "private": false
+    },
+    "mifi/lossless-cut": {
+      "full_name": "mifi/lossless-cut",
+      "archived": false,
+      "pushed_at": "2026-09-30T22:09:42Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-2.0",
+      "owner": "mifi",
+      "private": false
+    },
+    "mean00/avidemux2": {
+      "full_name": "mean00/avidemux2",
+      "archived": false,
+      "pushed_at": "2026-10-07T23:44:32Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "mean00",
+      "private": false
+    },
+    "staxrip/staxrip": {
+      "full_name": "staxrip/staxrip",
+      "archived": false,
+      "pushed_at": "2026-09-27T10:49:27Z",
+      "default_branch": "master",
+      "spdx_id": "MIT",
+      "owner": "staxrip",
+      "private": false
+    },
+    "mtytel/helm": {
+      "full_name": "mtytel/helm",
+      "archived": true,
+      "pushed_at": "2022-09-24T04:23:20Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "mtytel",
+      "private": false
+    },
+    "kanongil/telxcc": {
+      "full_name": "kanongil/telxcc",
+      "archived": true,
+      "pushed_at": "2025-09-20T11:29:10Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "kanongil",
+      "private": false
+    },
+    "155-mkvtoolnix": {
+      "full_name": "mbunkus/mkvtoolnix",
+      "archived": false,
+      "updated_at": "2026-09-28T21:52:58+02:00",
+      "owner": "mbunkus"
+    },
+    "uzu-tidal": {
+      "full_name": "uzu/tidal",
+      "archived": false,
+      "updated_at": "2026-07-02T08:30:35+02:00",
+      "owner": "uzu"
+    },
+    "animate1978/MB-Lab": {
+      "full_name": "animate1978/MB-Lab",
+      "archived": true,
+      "pushed_at": "2024-07-21T02:46:17Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "animate1978",
+      "private": false
+    },
+    "subdownloader/subdownloader": {
+      "full_name": "subdownloader/subdownloader",
+      "archived": true,
+      "pushed_at": "2025-02-05T11:39:33Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "subdownloader",
+      "private": false
+    },
+    "mpc-hc/mpc-hc": {
+      "full_name": "mpc-hc/mpc-hc",
+      "archived": true,
+      "pushed_at": "2020-04-24T11:04:40Z",
+      "default_branch": "develop",
+      "spdx_id": "GPL-3.0",
+      "owner": "mpc-hc",
+      "private": false
+    },
+    "scantailor/scantailor": {
+      "full_name": "scantailor/scantailor",
+      "archived": true,
+      "pushed_at": "2020-11-29T04:31:29Z",
+      "default_branch": "master",
+      "spdx_id": "NOASSERTION",
+      "owner": "scantailor",
+      "private": false
+    },
+    "tidalcycles/strudel": {
+      "full_name": "tidalcycles/strudel",
+      "archived": true,
+      "pushed_at": "2025-06-19T15:56:31Z",
+      "default_branch": "main",
+      "spdx_id": "AGPL-3.0",
+      "owner": "tidalcycles",
+      "private": false
+    },
+    "sc0ty/subSync": {
+      "full_name": "sc0ty/subsync",
+      "archived": true,
+      "pushed_at": "2024-10-01T13:47:06Z",
+      "default_branch": "master",
+      "spdx_id": "GPL-3.0",
+      "owner": "sc0ty",
+      "private": false
+    },
+    "cmajor-lang/cmajor": {
+      "full_name": "cmajor-lang/cmajor",
+      "archived": false,
+      "pushed_at": "2026-10-08T09:41:22Z",
+      "default_branch": "main",
+      "spdx_id": "NOASSERTION",
+      "owner": "cmajor-lang",
+      "private": false
+    },
+    "257-uade": {
+      "path": "uade-music-player/uade",
+      "archived": null,
+      "last_activity_at": "2026-09-20T18:20:41.443Z",
+      "default_branch": "master"
+    }
+  },
+  "raw": {
+    "260-COPYING": {
+      "url": "https://gitlab.com/kode54/lazyusf2/-/raw/master/COPYING",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "260-README": {
+      "url": "https://gitlab.com/kode54/lazyusf2/-/raw/master/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "261-COPYING-svn": {
+      "url": "https://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp/COPYING",
+      "status": 200,
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The licenses for most softwa"
+    },
+    "261-sf-page": {
+      "url": "https://sourceforge.net/projects/qmmp/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "262-zophar": {
+      "url": "https://www.zophar.net/utilities/nsf/notso-fatso.html",
+      "status": 200,
+      "bytes": 7048,
+      "sha256": "90d799c1db7aac8943d745850535ae561d580b73288488a4562f5f1936550e60",
+      "head": "\n<html>\r\n<head>\r\n  <title>NotSo Fatso - Nintendo NSF Utility in Audio Players Category - Zophar's Domain\r\n\n</title>\r\n  <link rel=\"stylesheet\" href=\"/images/music.css\" type=\"text/css\" />\r\n  <link rel=\"stylesheet\" href=\"/images/main_extra.css\" type=\"text/css\" />\r\n  <link rel=\"shortcut icon\" href=\"/images/favicon.ico\" type=\"image/x-icon\">\r\n  <meta charset=\"UTF-8\">\r\n  <script src=\"https://ajax.googlea"
+    },
+    "262-gamemusic-readme": {
+      "url": "https://raw.githubusercontent.com/elrinth/xmplay_gamemusic_plugin/main/README.md",
+      "status": 200,
+      "bytes": 17539,
+      "sha256": "5337daa8638f6f30dd767c0494b9a6f51c921e6ddf23713c7c69ce51337f33d5",
+      "head": "# xmp-gamemusic 1.0.12\n\nNative **32-bit** XMPlay input plugin for chip / console music.\nDisplay name **Game Music**. DLL `xmp-gamemusic.dll`.\n\nThis replaces FIX94 / mudlord `xmp-gme` and the Winamp **NEZplug** /\n**NotSo Fatso** plugins with **one** native plugin. It is not a wrapper\nof `in_nez.dll` or `in_notsofatso.dll`.\n\nIntended home: `Elrinth/xmplay_gamemusic_plugin`.\n\nClassic XMPlay is **32-b"
+    },
+    "263-LICENSE": {
+      "url": "https://raw.githubusercontent.com/audapolis/audapolis/main/LICENSE",
+      "status": 200,
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+      "head": "                    GNU AFFERO GENERAL PUBLIC LICENSE\n                       Version 3, 19 November 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU Affero General Public License is a free, copyleft lice"
+    },
+    "264-README": {
+      "url": "https://raw.githubusercontent.com/kaltura/server/master/README.md",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "265-README": {
+      "url": "https://raw.githubusercontent.com/ijsf/at2/master/README.md",
+      "status": 200,
+      "bytes": 25048,
+      "sha256": "2f8dd147e891961c3883500981c46d7c16877170903a3d3a5cf8acf31d391ce5",
+      "head": "```\r\n+====================-                      -=+\r\n|                                             |\r\n|   /|DLiB TR/|CK3R ][ SDL Revision History   |\r\n|                                             |\r\n+=-                   -=======================+\r\n\r\n\r\nFor complete AT2 revision history refer to:\r\nhttp://www.adlibtracker.net/files/revision.htm\r\n\r\n\r\n* version 2.4.24\r\n  released: 12/24/2018\r\n\r\n  . f"
+    },
+    "266-README": {
+      "url": "https://raw.githubusercontent.com/mmitch/gbsplay/master/README",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "267-upstream-site": {
+      "url": "http://sc68.atari.org",
+      "status": 200,
+      "bytes": 13638,
+      "sha256": "8e4ff1bd21efe3381688c8c417607ea8570a02c2f1e7aaac7ecd966e12842227",
+      "head": "<! SECTION is Home >\n<!patch for depend>\n<!patch for depend>\n<!patch for depend>\n<!patch for depend>\n<!patch for depend>\n<!patch for depend>\n<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\">\n<meta name=\"author\"             content=\"Ben(jamin) Gerard (ben@sashipa.com)\">\n<meta name=\"copyright\"          content=\"2001/08/18 sashipa\">\n<meta name=\"description\"       "
+    },
+    "267-COPYING-mirror": {
+      "url": "https://raw.githubusercontent.com/Zeinok/sc68/master/COPYING",
+      "status": 200,
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware an"
+    },
+    "267-sf-page": {
+      "url": "https://sourceforge.net/projects/sc68/",
+      "status": 200,
+      "bytes": 60000,
+      "sha256": "9dd8a48361b00366526ba35856ba471c59f09d82494716df12f297d7c684d4d9",
+      "head": "<!doctype html><html class=\"no-js\" lang=\"en\">\n    <head>\n        \n\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" />\n\n        \n        \n        \n    \n        \n        <script src=\"//a.fsdn.com/con/js/min/sf.sandiego-cmp-top.js?1791389504\"></script>\n\n        \n    \n\n        "
+    },
+    "268-COPYING": {
+      "url": "https://raw.githubusercontent.com/frno7/psgplay/master/COPYING",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "269-COPYING": {
+      "url": "https://raw.githubusercontent.com/vgmrips/vgmtools/master/COPYING",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "270-DESCRIPTION": {
+      "url": "https://raw.githubusercontent.com/pepijn-devries/protrackr2/main/DESCRIPTION",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "audit-losslesscut-LICENSE": {
+      "url": "https://raw.githubusercontent.com/mifi/lossless-cut/master/LICENSE",
+      "status": 200,
+      "bytes": 17958,
+      "sha256": "ed4033ab1ae27bdff154db7f90a24a2ed166dc52bf0dcdc50f805e837448a802",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The licenses for most softwa"
+    },
+    "audit-avidemux-COPYING": {
+      "url": "https://raw.githubusercontent.com/mean00/avidemux2/master/COPYING",
+      "status": 200,
+      "bytes": 18010,
+      "sha256": "65465ed6d7a3d43968939d96b23902faa66d5efc5ccfa857c0d7a1b1991d1816",
+      "head": "\t\t    GNU GENERAL PUBLIC LICENSE \n\t\t       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.\n                       59 Temple Place, Suite 330, Boston, MA  02111-1307  USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n\t\t\t    Preamble\n\n  The licenses for most software are designed to take away y"
+    },
+    "audit-staxrip-LICENSE": {
+      "url": "https://raw.githubusercontent.com/staxrip/staxrip/master/LICENSE",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "155-COPYING": {
+      "url": "https://codeberg.org/mbunkus/mkvtoolnix/raw/branch/main/COPYING",
+      "status": 200,
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "head": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The licenses for most softwa"
+    },
+    "uzu-LICENSE": {
+      "url": "https://codeberg.org/uzu/tidal/raw/branch/main/LICENSE",
+      "status": 200,
+      "bytes": 35106,
+      "sha256": "804821a9171f6eb0e0d26635922480bf479c2d646c2609f6273a85191949b8df",
+      "head": "              GNU GENERAL PUBLIC LICENSE\n                Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                     Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware and other kinds of wor"
+    },
+    "259-asap-sf-page": {
+      "url": "https://sourceforge.net/projects/asap/",
+      "status": 200,
+      "bytes": 60000,
+      "sha256": "05a8c44ee88e40217808d095afed56592d31deff24dd63efa62952100217b35d",
+      "head": "<!doctype html><html class=\"no-js\" lang=\"en\">\n    <head>\n        \n\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" />\n\n        \n        \n        \n    \n        \n        <script src=\"//a.fsdn.com/con/js/min/sf.sandiego-cmp-top.js?1791389504\"></script>\n\n        \n    \n\n        "
+    }
+  },
+  "notes": [
+    "=== CYCLE 25: rows 260-270 ===",
+    "FETCH FAIL https://gitlab.com/kode54/lazyusf2/-/raw/master/COPYING: HTTP Error 404: Not Found",
+    "FETCH FAIL https://gitlab.com/kode54/lazyusf2/-/raw/master/README.md: HTTP Error 404: Not Found",
+    "FETCH FAIL https://sourceforge.net/projects/qmmp/: HTTP Error 404: Not Found",
+    "GH API FAIL repos/kode54/foo_gep: gh: Not Found (HTTP 404)",
+    "GH API FAIL repos/kaltura/server: gh: Not Found (HTTP 404)",
+    "FETCH FAIL https://raw.githubusercontent.com/kaltura/server/master/README.md: HTTP Error 404: Not Found",
+    "FETCH FAIL https://raw.githubusercontent.com/mmitch/gbsplay/master/README: HTTP Error 404: Not Found",
+    "FETCH FAIL https://raw.githubusercontent.com/frno7/psgplay/master/COPYING: HTTP Error 404: Not Found",
+    "FETCH FAIL https://raw.githubusercontent.com/vgmrips/vgmtools/master/COPYING: HTTP Error 404: Not Found",
+    "FETCH FAIL https://raw.githubusercontent.com/pepijn-devries/protrackr2/main/DESCRIPTION: HTTP Error 404: Not Found",
+    "=== GPL AUDIT ===",
+    "FETCH FAIL https://raw.githubusercontent.com/staxrip/staxrip/master/LICENSE: HTTP Error 404: Not Found",
+    "=== DRIFT WATCH ==="
+  ]
+}

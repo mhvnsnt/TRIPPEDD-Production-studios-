@@ -1,0 +1,24 @@
+{
+  "schema": "tripped.visual_anatomy.open_source.v1",
+  "reference_policy": "immutable_pixels",
+  "projects": [
+    {"name":"Blender","role":["modeling","rigging","cloth","rendering"],"source":"https://github.com/blender/blender"},
+    {"name":"Rigify","role":["autorigger","facial_rig","eye_rig","jaw_rig"],"source":"https://github.com/blender/blender-addons/tree/main/rigify"},
+    {"name":"CVAT Community","role":["annotation","segmentation","keypoints","3d_annotation","qa"],"source":"https://github.com/cvat-ai/cvat","license":"MIT core"},
+    {"name":"Segment Anything 2","role":["interactive_segmentation","tracking"],"source":"https://github.com/facebookresearch/sam2"},
+    {"name":"Open3D","role":["mesh","point_cloud","registration","reconstruction"],"source":"https://github.com/isl-org/Open3D"},
+    {"name":"MeshLab","role":["mesh_processing","remeshing","inspection"],"source":"https://github.com/cnr-isti-vclab/meshlab"},
+    {"name":"CGAL","role":["computational_geometry","isotropic_remeshing"],"source":"https://github.com/CGAL/cgal"},
+    {"name":"Instant Meshes","role":["automatic_remeshing","quad_topology"],"source":"https://github.com/wjakob/instant-meshes"},
+    {"name":"OpenSubdiv","role":["subdivision_surfaces"],"source":"https://github.com/PixarAnimationStudios/OpenSubdiv"},
+    {"name":"Nerfstudio","role":["scene_reconstruction","nerf"],"source":"https://github.com/nerfstudio-project/nerfstudio"},
+    {"name":"gsplat","role":["gaussian_splatting","rasterization"],"source":"https://github.com/nerfstudio-project/gsplat"},
+    {"name":"modl","role":["local_image_generation","image_to_image","mask_inpainting","segmentation","composition"],"source":"https://github.com/modl-org/modl"}
+  ],
+  "promotion": {
+    "canonical_source_immutable": true,
+    "require_rendered_proof": true,
+    "require_measurement_proof": true,
+    "require_provenance": true
+  }
+}

@@ -1,0 +1,513 @@
+[
+  {
+    "start": 0.0,
+    "end": 0.03,
+    "viseme": "X",
+    "mouth_shape": "REST \u2014 closed/neutral",
+    "hold_s": 0.03
+  },
+  {
+    "start": 0.03,
+    "end": 0.18,
+    "viseme": "D",
+    "mouth_shape": "U \u2014 rounded (o, oo: 'you', 'council')",
+    "hold_s": 0.15
+  },
+  {
+    "start": 0.18,
+    "end": 0.25,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 0.25,
+    "end": 0.67,
+    "viseme": "X",
+    "mouth_shape": "REST \u2014 closed/neutral",
+    "hold_s": 0.42
+  },
+  {
+    "start": 0.67,
+    "end": 0.81,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 0.81,
+    "end": 1.09,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.28
+  },
+  {
+    "start": 1.09,
+    "end": 1.3,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.21
+  },
+  {
+    "start": 1.3,
+    "end": 1.58,
+    "viseme": "X",
+    "mouth_shape": "REST \u2014 closed/neutral",
+    "hold_s": 0.28
+  },
+  {
+    "start": 1.58,
+    "end": 2.26,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.68
+  },
+  {
+    "start": 2.26,
+    "end": 2.4,
+    "viseme": "D",
+    "mouth_shape": "U \u2014 rounded (o, oo: 'you', 'council')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 2.4,
+    "end": 2.54,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 2.54,
+    "end": 2.61,
+    "viseme": "G",
+    "mouth_shape": "FV \u2014 lower lip on teeth ('fire', 'five')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 2.61,
+    "end": 2.96,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.35
+  },
+  {
+    "start": 2.96,
+    "end": 3.06,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.1
+  },
+  {
+    "start": 3.06,
+    "end": 3.47,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.41
+  },
+  {
+    "start": 3.47,
+    "end": 3.82,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.35
+  },
+  {
+    "start": 3.82,
+    "end": 3.89,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 3.89,
+    "end": 4.03,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 4.03,
+    "end": 4.38,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.35
+  },
+  {
+    "start": 4.38,
+    "end": 4.51,
+    "viseme": "A",
+    "mouth_shape": "AI \u2014 wide open (i, e: 'fire', 'see')",
+    "hold_s": 0.13
+  },
+  {
+    "start": 4.51,
+    "end": 4.91,
+    "viseme": "X",
+    "mouth_shape": "REST \u2014 closed/neutral",
+    "hold_s": 0.4
+  },
+  {
+    "start": 4.91,
+    "end": 5.05,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 5.05,
+    "end": 5.12,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 5.12,
+    "end": 5.19,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 5.19,
+    "end": 5.26,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 5.26,
+    "end": 5.36,
+    "viseme": "A",
+    "mouth_shape": "AI \u2014 wide open (i, e: 'fire', 'see')",
+    "hold_s": 0.1
+  },
+  {
+    "start": 5.36,
+    "end": 5.46,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.1
+  },
+  {
+    "start": 5.46,
+    "end": 5.53,
+    "viseme": "A",
+    "mouth_shape": "AI \u2014 wide open (i, e: 'fire', 'see')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 5.53,
+    "end": 5.6,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 5.6,
+    "end": 5.68,
+    "viseme": "A",
+    "mouth_shape": "AI \u2014 wide open (i, e: 'fire', 'see')",
+    "hold_s": 0.08
+  },
+  {
+    "start": 5.68,
+    "end": 5.73,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.05
+  },
+  {
+    "start": 5.73,
+    "end": 5.84,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.11
+  },
+  {
+    "start": 5.84,
+    "end": 5.98,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 5.98,
+    "end": 6.12,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 6.12,
+    "end": 6.47,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.35
+  },
+  {
+    "start": 6.47,
+    "end": 7.02,
+    "viseme": "X",
+    "mouth_shape": "REST \u2014 closed/neutral",
+    "hold_s": 0.55
+  },
+  {
+    "start": 7.02,
+    "end": 7.37,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.35
+  },
+  {
+    "start": 7.37,
+    "end": 7.44,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 7.44,
+    "end": 7.58,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 7.58,
+    "end": 7.72,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 7.72,
+    "end": 7.8,
+    "viseme": "A",
+    "mouth_shape": "AI \u2014 wide open (i, e: 'fire', 'see')",
+    "hold_s": 0.08
+  },
+  {
+    "start": 7.8,
+    "end": 8.48,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.68
+  },
+  {
+    "start": 8.48,
+    "end": 8.55,
+    "viseme": "D",
+    "mouth_shape": "U \u2014 rounded (o, oo: 'you', 'council')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 8.55,
+    "end": 8.62,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 8.62,
+    "end": 8.76,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 8.76,
+    "end": 9.11,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.35
+  },
+  {
+    "start": 9.11,
+    "end": 9.25,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 9.25,
+    "end": 9.32,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 9.32,
+    "end": 9.46,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 9.46,
+    "end": 9.6,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 9.6,
+    "end": 9.67,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 9.67,
+    "end": 9.74,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 9.74,
+    "end": 9.81,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.07
+  },
+  {
+    "start": 9.81,
+    "end": 10.02,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.21
+  },
+  {
+    "start": 10.02,
+    "end": 10.49,
+    "viseme": "D",
+    "mouth_shape": "U \u2014 rounded (o, oo: 'you', 'council')",
+    "hold_s": 0.47
+  },
+  {
+    "start": 10.49,
+    "end": 10.54,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.05
+  },
+  {
+    "start": 10.54,
+    "end": 10.72,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.18
+  },
+  {
+    "start": 10.72,
+    "end": 10.86,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.14
+  },
+  {
+    "start": 10.86,
+    "end": 10.94,
+    "viseme": "A",
+    "mouth_shape": "AI \u2014 wide open (i, e: 'fire', 'see')",
+    "hold_s": 0.08
+  },
+  {
+    "start": 10.94,
+    "end": 10.99,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.05
+  },
+  {
+    "start": 10.99,
+    "end": 11.17,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.18
+  },
+  {
+    "start": 11.17,
+    "end": 11.26,
+    "viseme": "A",
+    "mouth_shape": "AI \u2014 wide open (i, e: 'fire', 'see')",
+    "hold_s": 0.09
+  },
+  {
+    "start": 11.26,
+    "end": 11.31,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.05
+  },
+  {
+    "start": 11.31,
+    "end": 11.36,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.05
+  },
+  {
+    "start": 11.36,
+    "end": 11.57,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.21
+  },
+  {
+    "start": 11.57,
+    "end": 11.78,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.21
+  },
+  {
+    "start": 11.78,
+    "end": 12.1,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.32
+  },
+  {
+    "start": 12.1,
+    "end": 12.16,
+    "viseme": "C",
+    "mouth_shape": "E \u2014 teeth slightly apart ('everybody', 'session')",
+    "hold_s": 0.06
+  },
+  {
+    "start": 12.16,
+    "end": 12.29,
+    "viseme": "B",
+    "mouth_shape": "MBP \u2014 lips pressed (m, b, p: 'baby', 'move')",
+    "hold_s": 0.13
+  },
+  {
+    "start": 12.29,
+    "end": 12.5,
+    "viseme": "E",
+    "mouth_shape": "O \u2014 rounded open ('or')",
+    "hold_s": 0.21
+  },
+  {
+    "start": 12.5,
+    "end": 12.78,
+    "viseme": "F",
+    "mouth_shape": "L \u2014 tongue on teeth ('like', 'signal')",
+    "hold_s": 0.28
+  },
+  {
+    "start": 12.78,
+    "end": 12.93,
+    "viseme": "X",
+    "mouth_shape": "REST \u2014 closed/neutral",
+    "hold_s": 0.15
+  },
+  {
+    "start": 12.93,
+    "end": 12.93,
+    "viseme": "X",
+    "mouth_shape": "REST \u2014 closed/neutral",
+    "hold_s": 0.0
+  }
+]

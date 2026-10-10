@@ -1,0 +1,23 @@
+{
+  "tool": "validate_ebuttd.py",
+  "wave": "20-lane-b",
+  "run_at": "2026-10-07T22:42:20.082075+00:00",
+  "xsd_source": "https://github.com/ebu/ebu-tt-d-xsd (BSD-3-Clause, GitHub API spdx_id BSD-3-Clause)",
+  "sample_source": "https://github.com/IRT-Open-Source/irt-ebu-tt-d-application-samples (Apache-2.0)",
+  "fetched": {
+    "ebutt_d.xsd": 12133,
+    "ebutt_datatypes.xsd": 3410,
+    "ebutt_metadata.xsd": 10296,
+    "ebutt_styling.xsd": 1171,
+    "metadata.xsd": 353,
+    "parameter.xsd": 981,
+    "styling.xsd": 6675,
+    "sample.xml": 2744
+  },
+  "errors": [],
+  "schema_valid": true,
+  "sample_valid_against_schema": true,
+  "validation_errors": [],
+  "root_tag": "{http://www.w3.org/ns/ttml}tt",
+  "verdict": "PASS"
+}

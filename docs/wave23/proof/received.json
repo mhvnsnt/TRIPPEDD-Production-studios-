@@ -1,0 +1,39 @@
+{
+  "received_count": 4,
+  "expected": 4,
+  "all_sequence_identifiers_match": true,
+  "sequence_numbers": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "sequence_numbers_monotonic_unique": true,
+  "pass": true,
+  "documents": [
+    {
+      "sequence_identifier": "SmokeTest1",
+      "sequence_number": 4,
+      "xml_bytes": 4270,
+      "text_hint": "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <tt:tt xml:lang=\"en-GB\" ttp:timeBase=\"clock\" ttp:clockMode=\"local\" ttp:cellResolution=\"32 15\" ebuttp:sequenceIdentifier=\"SmokeTest1\" ebuttp:sequenceNumber=\"4\" xm"
+    },
+    {
+      "sequence_identifier": "SmokeTest1",
+      "sequence_number": 5,
+      "xml_bytes": 4270,
+      "text_hint": "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <tt:tt xml:lang=\"en-GB\" ttp:timeBase=\"clock\" ttp:clockMode=\"local\" ttp:cellResolution=\"32 15\" ebuttp:sequenceIdentifier=\"SmokeTest1\" ebuttp:sequenceNumber=\"5\" xm"
+    },
+    {
+      "sequence_identifier": "SmokeTest1",
+      "sequence_number": 6,
+      "xml_bytes": 4202,
+      "text_hint": "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <tt:tt xml:lang=\"en-GB\" ttp:timeBase=\"clock\" ttp:clockMode=\"local\" ttp:cellResolution=\"32 15\" ebuttp:sequenceIdentifier=\"SmokeTest1\" ebuttp:sequenceNumber=\"6\" xm"
+    },
+    {
+      "sequence_identifier": "SmokeTest1",
+      "sequence_number": 7,
+      "xml_bytes": 4610,
+      "text_hint": "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <tt:tt xml:lang=\"en-GB\" ttp:timeBase=\"clock\" ttp:clockMode=\"local\" ttp:cellResolution=\"32 15\" ebuttp:sequenceIdentifier=\"SmokeTest1\" ebuttp:sequenceNumber=\"7\" xm"
+    }
+  ]
+}

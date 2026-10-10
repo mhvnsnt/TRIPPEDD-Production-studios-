@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "policy": "Research-backed capability registry; optional integrations are never allowed to replace the deterministic FFmpeg/OTIO path until benchmarked and QC-verified.",
+  "capabilities": [
+    {
+      "name": "VapourSynth",
+      "role": "programmable video processing, restoration, filtering",
+      "status": "candidate",
+      "license": "LGPL-2.1",
+      "source": "https://github.com/vapoursynth/vapoursynth",
+      "integration": "optional post-processing backend"
+    },
+    {
+      "name": "frei0r",
+      "role": "portable open video-effect plugin ecosystem",
+      "status": "candidate",
+      "license": "GPL-compatible free/open-source licenses",
+      "source": "https://github.com/dyne/frei0r",
+      "integration": "effects backend for MLT/FFmpeg-compatible workflows"
+    },
+    {
+      "name": "Bento4",
+      "role": "ISO-MP4 inspection, muxing, atom/box validation and packaging",
+      "status": "candidate",
+      "license": "dual-license open-source distribution",
+      "source": "https://github.com/axiomatic-systems/Bento4",
+      "integration": "deep MP4 QC after ffprobe/mediainfo"
+    },
+    {
+      "name": "Silero VAD",
+      "role": "voice activity detection before transcription and dialogue segmentation",
+      "status": "candidate",
+      "license": "model/code licensing must be recorded at deployment time",
+      "source": "https://github.com/snakers4/silero-vad",
+      "integration": "pre-Whisper speech segmentation"
+    },
+    {
+      "name": "Demucs",
+      "role": "dialogue/music/effects source separation and audio stem extraction",
+      "status": "candidate",
+      "license": "MIT for the Demucs project; model provenance/license recorded separately",
+      "source": "https://github.com/facebookresearch/demucs",
+      "integration": "optional audio-analysis/remix stage"
+    },
+    {
+      "name": "MLT",
+      "role": "multitrack media engine and deterministic editorial rendering backend",
+      "status": "adopted",
+      "license": "LGPL-2.1",
+      "source": "https://github.com/mltframework/mlt",
+      "integration": "editorial render backend"
+    },
+    {
+      "name": "Kdenlive",
+      "role": "open-source professional editorial application",
+      "status": "adopted",
+      "license": "GPL-3.0",
+      "source": "https://github.com/KDE/kdenlive",
+      "integration": "human editorial lock/review backend"
+    },
+    {
+      "name": "OpenCue",
+      "role": "production render scheduling and distributed task management",
+      "status": "planned",
+      "source": "https://github.com/AcademySoftwareFoundation/OpenCue",
+      "integration": "future distributed render backend"
+    }
+  ],
+  "selectionRules": [
+    "Prefer maintained upstream projects over abandoned forks.",
+    "Record license and model provenance before production use.",
+    "Keep every expensive analysis stage resumable and cacheable.",
+    "Never make an optional AI/model dependency a single point of failure.",
+    "Require deterministic before/after media QC for every new processing backend.",
+    "Content-address generated outputs so a backend can be swapped without invalidating evidence."
+  ]
+}

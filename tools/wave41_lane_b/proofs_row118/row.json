@@ -1,0 +1,26 @@
+{
+  "row": 118,
+  "name": "MB-Lab",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "animate1978/MB-Lab",
+  "api": {
+    "full_name": "animate1978/MB-Lab",
+    "archived": true,
+    "pushed_at": "2024-07-21T02:46:17Z",
+    "stargazers_count": 2027,
+    "default_branch": "master",
+    "owner": "animate1978",
+    "spdx_id": "NOASSERTION",
+    "license_name": "Other"
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "README.md",
+    "branch": "master",
+    "bytes": 1766
+  },
+  "text_grant": false,
+  "readme_fallback": true,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

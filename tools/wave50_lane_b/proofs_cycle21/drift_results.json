@@ -1,0 +1,81 @@
+{
+  "68": {
+    "repo": "mtytel/helm",
+    "api_status": 200,
+    "spdx_id": "GPL-3.0",
+    "archived": true,
+    "owner": "mtytel",
+    "pushed_at": "2022-09-24T04:23:20Z"
+  },
+  "236": {
+    "repo": "kanongil/telxcc",
+    "api_status": 200,
+    "spdx_id": "NOASSERTION",
+    "archived": true,
+    "owner": "kanongil",
+    "pushed_at": "2025-09-20T11:29:10Z"
+  },
+  "195": {
+    "repo": "subdownloader/subdownloader",
+    "api_status": 200,
+    "spdx_id": "GPL-3.0",
+    "archived": true,
+    "owner": "subdownloader",
+    "pushed_at": "2025-02-05T11:39:33Z"
+  },
+  "43": {
+    "repo": "Plachtaa/seed-vc",
+    "api_status": 200,
+    "spdx_id": "GPL-3.0",
+    "archived": true,
+    "owner": "Plachtaa",
+    "pushed_at": "2025-04-20T05:27:10Z"
+  },
+  "24": {
+    "repo": "svc-develop-team/so-vits-svc",
+    "api_status": 200,
+    "spdx_id": "AGPL-3.0",
+    "archived": true,
+    "owner": "svc-develop-team",
+    "pushed_at": "2023-11-11T13:11:31Z"
+  },
+  "103": {
+    "repo": "DISTRHO/DISTRHO-Ports",
+    "api_status": 200,
+    "spdx_id": null,
+    "archived": false,
+    "owner": "DISTRHO",
+    "pushed_at": "2025-09-14T22:38:50Z"
+  },
+  "42": {
+    "repo": "praat/praat.github.io",
+    "api_status": 200,
+    "spdx_id": null,
+    "archived": false,
+    "owner": "praat",
+    "pushed_at": "2026-10-06T18:08:04Z"
+  },
+  "16": {
+    "repo": "olive-editor/olive",
+    "api_status": 200,
+    "spdx_id": "GPL-3.0",
+    "archived": false,
+    "owner": "olive-editor",
+    "pushed_at": "2024-12-05T10:34:17Z"
+  },
+  "148": {
+    "repo": "mkiol/dsnote",
+    "api_status": 200,
+    "spdx_id": "MPL-2.0",
+    "archived": false,
+    "owner": "mkiol",
+    "pushed_at": "2026-10-03T16:32:46Z"
+  },
+  "155": {
+    "repo": "codeberg.org/mbunkus/mkvtoolnix",
+    "api_status": 200,
+    "archived": false,
+    "owner": "mbunkus",
+    "pushed_at": "2026-09-28T21:52:58+02:00"
+  }
+}

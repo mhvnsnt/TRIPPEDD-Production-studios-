@@ -1,0 +1,144 @@
+{
+  "info": {
+    "ScriptType": "v4.00+",
+    "PlayResX": "1280",
+    "PlayResY": "720"
+  },
+  "styles": {
+    "format": [
+      "Name",
+      "Fontname",
+      "Fontsize",
+      "PrimaryColour",
+      "SecondaryColour",
+      "OutlineColour",
+      "BackColour",
+      "Bold",
+      "Italic",
+      "Underline",
+      "StrikeOut",
+      "ScaleX",
+      "ScaleY",
+      "Spacing",
+      "Angle",
+      "BorderStyle",
+      "Outline",
+      "Shadow",
+      "Alignment",
+      "MarginL",
+      "MarginR",
+      "MarginV",
+      "Encoding"
+    ],
+    "style": [
+      {
+        "Name": "Default",
+        "Fontname": "Noto Sans",
+        "Fontsize": "48",
+        "PrimaryColour": "&H00FFFFFF",
+        "SecondaryColour": "&H000019FF",
+        "OutlineColour": "&H00000000",
+        "BackColour": "&H80000000",
+        "Bold": "0",
+        "Italic": "0",
+        "Underline": "0",
+        "StrikeOut": "0",
+        "ScaleX": "100",
+        "ScaleY": "100",
+        "Spacing": "0",
+        "Angle": "0",
+        "BorderStyle": "1",
+        "Outline": "2",
+        "Shadow": "1",
+        "Alignment": "2",
+        "MarginL": "10",
+        "MarginR": "10",
+        "MarginV": "10",
+        "Encoding": "1"
+      }
+    ]
+  },
+  "events": {
+    "format": [
+      "Layer",
+      "Start",
+      "End",
+      "Style",
+      "Name",
+      "MarginL",
+      "MarginR",
+      "MarginV",
+      "Effect",
+      "Text"
+    ],
+    "comment": [],
+    "dialogue": [
+      {
+        "Layer": 0,
+        "Start": 0.5,
+        "End": 2.5,
+        "Style": "Default",
+        "Name": "",
+        "MarginL": 0,
+        "MarginR": 0,
+        "MarginV": 0,
+        "Effect": null,
+        "Text": {
+          "raw": "The council does not explain itself.",
+          "combined": "The council does not explain itself.",
+          "parsed": [
+            {
+              "tags": [],
+              "text": "The council does not explain itself.",
+              "drawing": []
+            }
+          ]
+        }
+      },
+      {
+        "Layer": 0,
+        "Start": 3,
+        "End": 4.5,
+        "Style": "Default",
+        "Name": "",
+        "MarginL": 0,
+        "MarginR": 0,
+        "MarginV": 0,
+        "Effect": null,
+        "Text": {
+          "raw": "It declares.",
+          "combined": "It declares.",
+          "parsed": [
+            {
+              "tags": [],
+              "text": "It declares.",
+              "drawing": []
+            }
+          ]
+        }
+      },
+      {
+        "Layer": 0,
+        "Start": 5,
+        "End": 7,
+        "Style": "Default",
+        "Name": "",
+        "MarginL": 0,
+        "MarginR": 0,
+        "MarginV": 0,
+        "Effect": null,
+        "Text": {
+          "raw": "And the street listens.",
+          "combined": "And the street listens.",
+          "parsed": [
+            {
+              "tags": [],
+              "text": "And the street listens.",
+              "drawing": []
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

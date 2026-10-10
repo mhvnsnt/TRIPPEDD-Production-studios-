@@ -42,8 +42,22 @@ The studio should support first-class segment formats:
 - RECURRING_GAG
 - OUTTAKE_OR_META
 - HYBRID
+- SURREAL_SHORT — random, needs no context; the visual work, editing, and setup make it funny. 5–22s, deadpan delivery, one gag per unit. (Reference: @ctrlcollin-style deadpan surreal shorts.)
+- VFX_TRICK_BIT — an obvious, simple composite trick played straight: tiny-self on a table via green screen / overlay / background removal, clones, scale gags. The visible cheapness of the trick is part of the joke.
+- GAME_CLIP_VOICEOVER — 5–15s of the network's own game/show footage with narrator voiceover in deadpan meme-speak and a lowercase caption. Every unit doubles as promotion for its source game or show.
 
 A segment can contain multiple media modes and can transition between them without becoming a new episode.
+
+## Assembly method (owner directive 2026-10-09)
+
+The show is assembled Adult Swim-block style:
+
+1. **Base timeline** — the owner's Drive footage, edited and ordered, forms the spine of the episode.
+2. **Cross-show segments and tags cut in between** — segments, bumpers, tags, and fake commercials from the network's other shows are edited into the gaps, the way a programming block weaves show → bumper → tag → commercial → back to show.
+3. **Identity is preserved on both sides** — per `TRIPPEDD-UNIVERSE-AND-SERIES-TAXONOMY.md`, an embedded segment keeps its own series identity and its parent-show identity (see `docs/WIZARD_GANG_SEGMENT.md` for the embedding mechanics and `docs/TRIPPEDD-NETWORK-SLATE.md` for the canonical slate).
+4. **Interstitial grammar** — bumps, fake commercials, viewer cards, and transition stings follow `docs/PROGRAMMING-AND-INTERSTITIAL-GRAMMAR.md`; they are first-class programming units, not filler.
+
+The assembly is editorial, not chronological: the Physical Source Timeline stays authoritative about what was shot, and the episode records the constructed presentation.
 
 ## Editorial principles
 

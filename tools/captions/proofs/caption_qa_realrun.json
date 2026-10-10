@@ -1,0 +1,74 @@
+{
+  "file": "proofs/faster_whisper_test.srt",
+  "cues": 8,
+  "errors": 0,
+  "warnings": 11,
+  "findings": [
+    {
+      "severity": "WARNING",
+      "cue": 1,
+      "code": "flash",
+      "detail": "cue 1: duration 0.36s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 2,
+      "code": "flash",
+      "detail": "cue 2: duration 0.32s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 2,
+      "code": "reading-speed",
+      "detail": "cue 2: 21.9 chars/sec > 20"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 3,
+      "code": "flash",
+      "detail": "cue 3: duration 0.22s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 4,
+      "code": "flash",
+      "detail": "cue 4: duration 0.22s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 5,
+      "code": "flash",
+      "detail": "cue 5: duration 0.36s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 6,
+      "code": "flash",
+      "detail": "cue 6: duration 0.50s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 7,
+      "code": "flash",
+      "detail": "cue 7: duration 0.08s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 7,
+      "code": "reading-speed",
+      "detail": "cue 7: 25.0 chars/sec > 20"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 8,
+      "code": "flash",
+      "detail": "cue 8: duration 0.42s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 8,
+      "code": "reading-speed",
+      "detail": "cue 8: 21.4 chars/sec > 20"
+    }
+  ]
+}

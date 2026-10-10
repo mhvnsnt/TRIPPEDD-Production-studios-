@@ -1,0 +1,30 @@
+{
+  "tool": "Furnace",
+  "quarantine_rows": [
+    122,
+    271
+  ],
+  "upstream": "tildearrow/furnace",
+  "release": "v0.6.8.3",
+  "release_asset": "furnace-0.6.8.3-linux-x86_64.tar.gz",
+  "binary_cached_at": "/home/hatch/.cache/furnace_wire",
+  "binary_in_git": false,
+  "fixture": "Exquisite Invitation.fur",
+  "proof_artifact": "proof_render.wav",
+  "wav": {
+    "riff": "RIFF",
+    "wave": "WAVE",
+    "audio_format_pcm": true,
+    "channels": 2,
+    "sample_rate": 44100,
+    "bits_per_sample": 16,
+    "data_bytes": 10164176,
+    "duration_s": 57.62
+  },
+  "version_rc": 0,
+  "export_rc": 0,
+  "sha256": {
+    "Exquisite Invitation.fur": "ac63e01921b31b660b1f50afaa3a33f42127cc6e148bf7ff658059ef6bf72054",
+    "proof_render.wav": "769503a61752caaaf72ea7406b4edb938132b5d2b4a81973c0425bc9d6fe693e"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "tool": "wire_nodecg28_boot.py",
+  "nodecg": "2.8.0",
+  "better_sqlite3": "12.11.1",
+  "node": "v24.20.0",
+  "gates": {
+    "install": true,
+    "sqlite_native": true,
+    "bundle_present": true,
+    "server_booted_graphic_200": true,
+    "graphic_markup": true,
+    "panel_200": true,
+    "socketio_200": true,
+    "log_server_running": true,
+    "log_node24": true,
+    "log_extension_loaded": true,
+    "log_extension_mounted": true,
+    "log_replicant_live": true
+  }
+}

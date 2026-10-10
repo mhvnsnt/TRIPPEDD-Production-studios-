@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:tts="http://www.w3.org/ns/ttml#styling">
+ <head>
+  <styling>
+   <style tts:color="white" tts:fontFamily="monospace" tts:fontSize="1c" xml:id="default"/>
+  </styling>
+  <layout>
+   <region tts:displayAlign="after" tts:textAlign="center" xml:id="bottom"/>
+  </layout>
+ </head>
+ <body>
+  <div region="bottom" xml:lang="en-US">
+   <p begin="00:00:00.500" end="00:00:02.500" region="bottom" style="default">
+    The council does not explain itself.
+   </p>
+   <p begin="00:00:03.000" end="00:00:04.500" region="bottom" style="default">
+    It declares.
+   </p>
+   <p begin="00:00:05.000" end="00:00:07.000" region="bottom" style="default">
+    And the street listens.
+   </p>
+  </div>
+ </body>
+</tt>

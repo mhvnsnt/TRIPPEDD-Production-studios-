@@ -1,0 +1,292 @@
+schema: trippedd-oss-umbrella/v1
+policy:
+  model: full-repo-vendored-at-runtime
+  rule: "Prefer complete mature upstream projects; integrate through explicit adapters and preserve upstream boundaries."
+  no_fake_available: true
+  license_audit_required: true
+projects:
+  - id: comfyui
+    repo: https://github.com/Comfy-Org/ComfyUI.git
+    role: AI-assisted image/video/3D/audio graph engine
+    activation: gpu-optional
+    license: GPL-3.0
+  - id: opencue
+    repo: https://github.com/AcademySoftwareFoundation/OpenCue.git
+    ref: v1.19.1
+    role: distributed render/job orchestration
+    activation: render-farm
+    license: Apache-2.0
+  - id: openassetio
+    repo: https://github.com/OpenAssetIO/OpenAssetIO.git
+    role: asset identity/interchange boundary
+    activation: asset-management
+    license: Apache-2.0
+  - id: opencolorio
+    repo: https://github.com/AcademySoftwareFoundation/OpenColorIO.git
+    role: color management
+    activation: always
+    license: BSD-3-Clause
+  - id: kdenlive
+    repo: https://github.com/KDE/kdenlive.git
+    role: editorial GUI/render fallback
+    activation: editor-optional
+    license: GPL-2.0-or-later
+  - id: opentoonz
+    repo: https://github.com/opentoonz/opentoonz.git
+    role: full 2D animation, cutout rigging, effects and scene authoring
+    activation: animation-2d
+    license: BSD-3-Clause
+  - id: natron
+    repo: https://github.com/NatronGitHub/Natron.git
+    role: node-based compositing, rotoscoping, tracking, keying and VFX
+    activation: compositing
+    license: GPL-2.0-or-later
+  - id: kitsu
+    repo: https://github.com/cgwire/kitsu.git
+    role: production tracking, shot review and delivery state
+    activation: production-tracking
+    license: AGPL-3.0
+  - id: quadpype
+    repo: https://github.com/quadproduction/quadpype.git
+    role: 2D/3D/VFX pipeline integration and publishing
+    activation: pipeline-integration
+    license: MIT
+wiring:
+  source: PhysicalSourceTimeline -> media adapters
+  analysis: ffprobe + PySceneDetect + OpenCV + faster-whisper + Tesseract
+  editorial: OpenTimelineIO -> native pilot assembly -> optional Kdenlive/MLT
+  render: Blender -> FFmpeg -> optional OpenCue dispatch
+  color: OpenColorIO
+  assets: OpenAssetIO
+  generative: ComfyUI -> explicit approved source/artifact handoff
+  animation2d: OpenToonz -> shot renders -> Natron/Blender composite
+  compositing: Natron -> live-action + 2D + 3D + generated-media plates
+  production_tracking: Kitsu -> shot/asset/review/delivery state
+  pipeline_integration: QuadPype -> DCC/publish/version boundaries
+  editorial_analysis: Auto-Editor -> silence/dead-air analysis -> editor-ready timelines
+  source_triage: LosslessCut/FFmpeg -> verified source orientation and fast selects
+  reframing: FrameShift -> subject-aware aspect-ratio normalization
+  observability: repo-observer -> production telemetry -> self-healer
+
+  - id: auto-editor
+    repo: https://github.com/WyattBlue/auto-editor.git
+    role: silence/dead-air removal and editor-ready timeline generation
+    activation: editorial-analysis
+    license: Public-Domain-or-MIT
+  - id: losslesscut
+    repo: https://github.com/mifi/lossless-cut.git
+    role: fast source triage, lossless cutting, segment inspection and rotation repair
+    activation: source-triage
+    license: GPL-2.0-or-later
+  - id: frameshift
+    repo: https://github.com/fralapo/FrameShift.git
+    role: automated aspect-ratio reframing with subject-aware crop
+    activation: reframing
+    license: MIT
+
+  - id: glaxnimate
+    repo: https://github.com/Glaxnimate/Glaxnimate.git
+    role: vector motion graphics and 2D scene animation
+    activation: animation-2d-motion
+    license: GPL-3.0
+  - id: opencolorio
+    repo: https://github.com/AcademySoftwareFoundation/OpenColorIO.git
+    role: deterministic color management across Blender, compositing and editorial
+    activation: color-management
+    license: BSD-3-Clause
+  - id: openimageio
+    repo: https://github.com/AcademySoftwareFoundation/OpenImageIO.git
+    role: production image I/O, EXR and image-sequence processing
+    activation: image-pipeline
+    license: BSD-3-Clause
+  - id: openassetio
+    repo: https://github.com/AcademySoftwareFoundation/OpenAssetIO.git
+    role: asset identity and cross-DCC interchange
+    activation: asset-interchange
+    license: Apache-2.0
+  - id: opentimelineio
+    repo: https://github.com/AcademySoftwareFoundation/OpenTimelineIO.git
+    role: authoritative editorial interchange and timeline round-tripping
+    activation: editorial-interchange
+    license: Apache-2.0
+  - id: opencue
+    repo: https://github.com/AcademySoftwareFoundation/OpenCue.git
+    role: distributed render scheduling and dependency-aware execution
+    activation: render-farm
+    license: Apache-2.0
+
+  - id: flamenco
+    repo: https://projects.blender.org/studio/flamenco.git
+    role: Blender-native render-farm management and worker scheduling
+    activation: render-farm-blender
+    license: Apache-2.0
+  - id: blender-studio-pipeline
+    repo: https://projects.blender.org/studio/blender-studio-pipeline.git
+    role: production folder structure, shot building, asset pipeline and Blender studio tooling
+    activation: studio-pipeline
+    license: GPL-3.0
+  - id: syncthing
+    repo: https://github.com/syncthing/syncthing.git
+    role: resilient peer-to-peer synchronization of production media and shared assets
+    activation: media-sync
+    license: MPL-2.0
+  - id: djv
+    repo: https://github.com/darbyjohnston/DJV.git
+    role: professional image-sequence and review playback
+    activation: review
+    license: BSD-3-Clause
+  - id: vfxplatform
+    repo: https://github.com/VFXPlatform/vfxplatform.git
+    role: pinned VFX dependency compatibility reference
+    activation: dependency-governance
+    license: BSD-3-Clause
+  - id: moviepy
+    repo: https://github.com/Zulko/moviepy.git
+    role: programmable editorial assembly, titles, overlays and media transformations
+    activation: programmable-editor
+    license: MIT
+
+  - id: krita
+    repo: https://github.com/KDE/krita.git
+    role: hand-drawn 2D animation, paint-over, concept and frame-by-frame assets
+    activation: animation-2d-raster
+    license: GPL-3.0
+  - id: grease-pencil
+    repo: https://projects.blender.org/studio/grease-pencil.git
+    role: Blender 2D/3D hybrid animation and storyboarding
+    activation: animation-hybrid
+    license: GPL-3.0
+  - id: storyboarder
+    repo: https://github.com/wonderunit/storyboarder.git
+    role: rapid storyboard and shot planning
+    activation: preproduction-storyboard
+    license: MIT
+  - id: audacity
+    repo: https://github.com/audacity/audacity.git
+    role: dialogue cleanup, waveform editing and audio preparation
+    activation: audio-editing
+    license: GPL-3.0
+  - id: ardour
+    repo: https://github.com/Ardour/ardour.git
+    role: multitrack audio production, mixing and mastering
+    activation: audio-mixing
+    license: GPL-2.0-or-later
+  - id: rtmidi
+    repo: https://github.com/thestk/rtmidi.git
+    role: low-latency MIDI control for animation/audio workflows
+    activation: realtime-control
+    license: MIT
+
+  - id: openvdb
+    repo: https://github.com/AcademySoftwareFoundation/openvdb.git
+    role: sparse volumetric data for smoke, fire, destruction and procedural VFX
+    activation: volumetrics
+    license: MPL-2.0
+  - id: openshadinglanguage
+    repo: https://github.com/AcademySoftwareFoundation/OpenShadingLanguage.git
+    role: procedural shading and look-development language
+    activation: shading
+    license: BSD-3-Clause
+  - id: materialx
+    repo: https://github.com/AcademySoftwareFoundation/MaterialX.git
+    role: portable material and look-development interchange
+    activation: materials
+    license: Apache-2.0
+  - id: usd
+    repo: https://github.com/PixarAnimationStudios/OpenUSD.git
+    role: scene description, asset composition and interchange for complex 3D productions
+    activation: scene-interchange
+    license: Apache-2.0
+  - id: openexr
+    repo: https://github.com/AcademySoftwareFoundation/openexr.git
+    role: HDR image sequence interchange and high-dynamic-range production storage
+    activation: image-format
+    license: BSD-3-Clause
+  - id: openfx
+    repo: https://github.com/AcademySoftwareFoundation/openfx.git
+    role: standardized VFX plugin interface across host applications
+    activation: vfx-plugins
+    license: BSD-3-Clause
+
+  - id: wan2.1
+    repo: https://github.com/Wan-Video/Wan2.1.git
+    role: open video generation foundation for text-to-video and image-to-video
+    activation: generative-video
+    license: Apache-2.0
+  - id: ltx-video
+    repo: https://github.com/Lightricks/LTX-Video.git
+    role: controllable text/image/video generation and video-to-video workflows
+    activation: generative-video
+    license: Apache-2.0
+  - id: opensora
+    repo: https://github.com/hpcaitech/Open-Sora.git
+    role: open video generation research and training/inference pipeline
+    activation: generative-video-research
+    license: Apache-2.0
+  - id: instantid
+    repo: https://github.com/instantX-research/InstantID.git
+    role: identity-preserving image generation from reference faces
+    activation: identity-lock
+    license: Apache-2.0
+  - id: ip-adapter
+    repo: https://github.com/tencent-ailab/IP-Adapter.git
+    role: image-reference conditioning and visual identity/style control
+    activation: reference-conditioning
+    license: Apache-2.0
+  - id: liveportrait
+    repo: https://github.com/KlingTeam/LivePortrait.git
+    role: portrait animation with stitching and retargeting control
+    activation: portrait-animation
+    license: MIT
+  - id: musetalk
+    repo: https://github.com/TMElyralab/MuseTalk.git
+    role: audio-driven lip synchronization and generated-character dialogue
+    activation: lip-sync
+    license: MIT
+  - id: ace-step
+    repo: https://github.com/ace-step/ACE-Step.git
+    role: local music generation, editing, remixing and vocal/accompaniment workflows
+    activation: music-generation
+    license: Apache-2.0
+
+  - id: identity-lock-contract
+    repo: internal-production-contract
+    role: enforce reference-image identity continuity and reject unrequested facial/body changes
+    activation: identity-qc
+    license: internal
+
+  - id: hunyuanvideo
+    repo: https://github.com/Tencent-Hunyuan/HunyuanVideo.git
+    role: high-quality open video text-to-video and image-to-video generation
+    activation: generative-video
+    license: custom-model-license
+  - id: hunyuanvideo-1.5
+    repo: https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5.git
+    role: lighter video generation for lower-VRAM production workers
+    activation: generative-video-edge
+    license: custom-model-license
+  - id: flux
+    repo: https://github.com/black-forest-labs/flux.git
+    role: high-quality controllable image generation foundation
+    activation: generative-image
+    license: mixed-model-license
+  - id: cogvideox
+    repo: https://github.com/THUDM/CogVideo.git
+    role: additional open video generation and image-to-video path
+    activation: generative-video-alt
+    license: Apache-2.0
+  - id: rife
+    repo: https://github.com/hzwer/ECCV2022-RIFE.git
+    role: frame interpolation and motion-rate finishing
+    activation: frame-interpolation
+    license: MIT
+  - id: realesrgan
+    repo: https://github.com/xinntao/Real-ESRGAN.git
+    role: image/video restoration and upscaling
+    activation: restoration-upscale
+    license: BSD-3-Clause
+  - id: codeformer
+    repo: https://github.com/sczhou/CodeFormer.git
+    role: face restoration for controlled cleanup, never identity replacement
+    activation: face-restoration
+    license: S-Lab License 1.0

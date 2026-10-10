@@ -1,0 +1,236 @@
+{
+  "57": {
+    "row": 57,
+    "name": "ChatTTS",
+    "claimed": "AGPL-3.0",
+    "kind": "github",
+    "ref": "2noise/ChatTTS",
+    "api": {
+      "full_name": "2noise/ChatTTS",
+      "archived": false,
+      "pushed_at": "2026-04-10T16:33:48Z",
+      "stargazers_count": 39889,
+      "default_branch": "main",
+      "owner": "2noise",
+      "spdx_id": "AGPL-3.0",
+      "license_name": "GNU Affero General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 34523
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "59": {
+    "row": 59,
+    "name": "DiffSVC",
+    "claimed": "AGPL-3.0",
+    "kind": "github",
+    "ref": "prophesier/diff-svc",
+    "api": {
+      "full_name": "prophesier/diff-svc",
+      "archived": false,
+      "pushed_at": "2026-06-06T09:49:46Z",
+      "stargazers_count": 2720,
+      "default_branch": "main",
+      "owner": "prophesier",
+      "spdx_id": "AGPL-3.0",
+      "license_name": "GNU Affero General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE.md",
+      "branch": "master",
+      "bytes": 34523
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "60": {
+    "row": 60,
+    "name": "Trelby",
+    "claimed": "GPL-2.0",
+    "kind": "github",
+    "ref": "trelby/trelby",
+    "api": {
+      "full_name": "trelby/trelby",
+      "archived": false,
+      "pushed_at": "2025-10-21T15:56:32Z",
+      "stargazers_count": 349,
+      "default_branch": "master",
+      "owner": "trelby",
+      "spdx_id": "GPL-2.0",
+      "license_name": "GNU General Public License v2.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 15122
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "71": {
+    "row": 71,
+    "name": "LMMS",
+    "claimed": "GPL-2.0",
+    "kind": "github",
+    "ref": "LMMS/lmms",
+    "api": {
+      "full_name": "LMMS/lmms",
+      "archived": false,
+      "pushed_at": "2026-09-27T21:00:26Z",
+      "stargazers_count": 10444,
+      "default_branch": "master",
+      "owner": "LMMS",
+      "spdx_id": "GPL-2.0",
+      "license_name": "GNU General Public License v2.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE.txt",
+      "branch": "master",
+      "bytes": 17987
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "145": {
+    "row": 145,
+    "name": "Bento4",
+    "claimed": "Dual GPL-2.0-or-later / commercial",
+    "kind": "github",
+    "ref": "axiomatic-systems/Bento4",
+    "api": {
+      "full_name": "axiomatic-systems/Bento4",
+      "archived": false,
+      "pushed_at": "2026-06-27T10:29:30Z",
+      "stargazers_count": 2507,
+      "default_branch": "master",
+      "owner": "axiomatic-systems",
+      "spdx_id": null,
+      "license_name": null
+    },
+    "spdx_verdict": "API-NOASSERTION",
+    "license_file": null,
+    "mechanical_verdict": "NEEDS REVIEW"
+  },
+  "201": {
+    "row": 201,
+    "name": "open-subs/opensubs",
+    "claimed": "AGPL-3.0",
+    "kind": "github",
+    "ref": "open-subs/opensubs",
+    "api": {
+      "full_name": "open-subs/opensubs",
+      "archived": false,
+      "pushed_at": "2026-10-08T08:21:29Z",
+      "stargazers_count": 49,
+      "default_branch": "main",
+      "owner": "open-subs",
+      "spdx_id": "AGPL-3.0",
+      "license_name": "GNU Affero General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 34523
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "202": {
+    "row": 202,
+    "name": "ProjectX",
+    "claimed": "GPL-2.0",
+    "kind": "sourceforge",
+    "ref": "project-x",
+    "sf_license_snippet": "GNU General Public License version 2.0 (GPLv2)",
+    "sf_200": true,
+    "sf_registered_snippet": "Registered",
+    "mechanical_verdict": "CONFIRMED (SF license field)"
+  },
+  "203": {
+    "row": 203,
+    "name": "CasparCG Server",
+    "claimed": "GPL-3.0",
+    "kind": "github",
+    "ref": "CasparCG/server",
+    "api": {
+      "full_name": "CasparCG/server",
+      "archived": false,
+      "pushed_at": "2026-09-30T19:40:54Z",
+      "stargazers_count": 1092,
+      "default_branch": "master",
+      "owner": "CasparCG",
+      "spdx_id": "GPL-3.0",
+      "license_name": "GNU General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 35147
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "204": {
+    "row": 204,
+    "name": "dvbsnoop",
+    "claimed": "GPL-2.0",
+    "kind": "github-mirrors",
+    "ref": "a4tunado/dvbsnoop;cotdp/dvbsnoop;Duckbox-Developers/dvbsnoop",
+    "mirrors": [
+      {
+        "repo": "a4tunado/dvbsnoop",
+        "archived": false,
+        "pushed_at": "2012-07-09T07:59:17Z",
+        "spdx_id": "GPL-2.0"
+      },
+      {
+        "repo": "cotdp/dvbsnoop",
+        "archived": false,
+        "pushed_at": "2026-10-07T16:30:56Z",
+        "spdx_id": "GPL-2.0"
+      },
+      {
+        "repo": "Duckbox-Developers/dvbsnoop",
+        "archived": false,
+        "pushed_at": "2024-12-13T16:35:10Z",
+        "spdx_id": "GPL-2.0"
+      }
+    ],
+    "mechanical_verdict": "CONFIRMED (mirrors agree)"
+  },
+  "205": {
+    "row": 205,
+    "name": "Calamari OCR",
+    "claimed": "GPL-3.0",
+    "kind": "github",
+    "ref": "Calamari-OCR/calamari",
+    "api": {
+      "full_name": "Calamari-OCR/calamari",
+      "archived": false,
+      "pushed_at": "2026-06-23T22:11:57Z",
+      "stargazers_count": 1199,
+      "default_branch": "master",
+      "owner": "Calamari-OCR",
+      "spdx_id": "GPL-3.0",
+      "license_name": "GNU General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 35203
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  }
+}

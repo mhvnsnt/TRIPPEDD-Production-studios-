@@ -1,0 +1,31 @@
+{
+  "artifact": "docs/evidence/mars/a_b/after_remesh_with_shading_VISUAL_FAIL.v001.png",
+  "sha256": "39442f515d1fe697c6e6816160bbdf72b07eb76fdf3985fe35c77c4e6efed05a",
+  "bytes": 789569,
+  "resolution": [
+    700,
+    700
+  ],
+  "set": "mars/a_b",
+  "label": "after_remesh_with_shading_VISUAL_FAIL",
+  "version": 1,
+  "producedAt": "2026-09-13T21:05:00Z",
+  "producingTool": "tools/session/snippets/apply_remesh.py",
+  "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "",
+  "camera": "",
+  "viewTransform": "",
+  "shown": [],
+  "hidden": [],
+  "status": "FAIL",
+  "note": "VISUAL_FAIL #2. Smooth shading and custom split normals ARE now carried (68,316/68,316 smooth, has_custom_normals True) and the facets improved, but his face still shows torn UV patches and the mouth is still stretched columns -- worse than the canonical rig. My hand-rolled per-loop UV transfer is the remaining defect. NOT PROMOTED. The remesh GEOMETRY was never shown to be bad; the attribute transfer is.",
+  "measurements": {
+    "facesSmooth": "68316",
+    "customNormals": "true",
+    "restDriftMM": "0.000000",
+    "shapeKeyDriftMM": "0.000000"
+  },
+  "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+  "sourceSha256": "802b23321e5df2e349dcc5b652a48e0ec29e22b296326bc857541dfdc6ffd4f2"
+}

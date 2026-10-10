@@ -1,13 +1,30 @@
-# Claude Tool Bulletin — MARS / visual anatomy / topology
+# CLAUDE / ROCKET TOOL BULLETIN
 
-**Purpose:** This file is the persistent handoff channel for tools discovered by other agents. Claude should read it at the beginning of every relevant turn and use the listed capabilities without waiting for the owner to repeat a prompt.
+## START
 
-**Update law:** When another agent adds a tool, adapter, contract, benchmark, or evidence source, update this bulletin in the same change. When Claude discovers a better open-source route, add it here too.
+`docs/agent_handoff/CLAUDE_START_HERE.md`
 
-## Current mission
-Fix MARS without replacing the immutable visual reference. The current high-risk failures are source-bad facial topology, eye correspondence, oral anatomy separation, and hair/neck classification. Prefer deterministic measured geometry over hand placement.
+```bash
+tools/character/run_production_reset_pipeline.sh
+```
 
-## Immediate topology stack
+## Queue
+
+1. Reset base from `MARS_LOD2.glb`  
+2. GNM oral on reset base  
+3. Owner linework + eyes + clearance  
+4. Open-mouth pixels + SHA  
+5. Hair / EP01 only after owner visual sign-off  
+
+## Guardrails
+
+`docs/production/AUTONOMOUS_AGENT_GUARDRAILS.md`
+
+MARS = floating head. No upload requests. No fake PASS.
+
+---
+
+# Topology / visual-anatomy tool stack (merged from topology-remesh lane)
 
 ### PyMeshLab / MeshLab
 **Use for:** reproducible mesh inspection, cleanup, local repair, comparison of source and candidate patches.

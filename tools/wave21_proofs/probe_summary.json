@@ -1,0 +1,41 @@
+[
+  {
+    "probe": "NDL Search OpenSearch",
+    "url": "https://ndlsearch.ndl.go.jp/api/opensearch?title=%E6%BA%90%E6%B0%8F%E7%89%A9%E8%AA%9E",
+    "http": 200,
+    "bytes_saved": 120000,
+    "sample": "/home/hatch/workspace/trippedd-studio/tools/wave21_proofs/ndl_opensearch_sample.xml",
+    "error": null
+  },
+  {
+    "probe": "Finna API",
+    "url": "https://api.finna.fi/v1/search?lookfor=kartta&limit=2&lng=en-gb",
+    "http": 200,
+    "bytes_saved": 3478,
+    "sample": "/home/hatch/workspace/trippedd-studio/tools/wave21_proofs/finna_search_sample.json",
+    "error": null,
+    "imageRights_seen": [
+      "CC BY 4.0",
+      "CC BY 4.0"
+    ]
+  },
+  {
+    "probe": "DDB API v2 version",
+    "url": "https://api.deutsche-digitale-bibliothek.de/2/version",
+    "http": 200,
+    "bytes_saved": 3,
+    "sample": "/home/hatch/workspace/trippedd-studio/tools/wave21_proofs/ddb_v2_version.txt",
+    "error": null,
+    "note": "/2/search?q= returned 404 during Wave 21; search route shape unverified, deferred to the ddb CLI (maschinenlesbar-org) per its docs"
+  },
+  {
+    "probe": "Gallica IIIF manifest",
+    "url": "https://gallica.bnf.fr/iiif/ark:/12148/bpt6k5738219s/manifest.json",
+    "http": 200,
+    "bytes_saved": 120000,
+    "sample": "/home/hatch/workspace/trippedd-studio/tools/wave21_proofs/gallica_iiif_manifest_sample.json",
+    "error": null,
+    "manifest_license_field": "https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica",
+    "note": "HTTP 200 via urllib (2026-10-07); server-side curl got a 403 bot-block, so a browser-like user agent matters. Truncated at 120KB by probe cap. BnF oai.bnf.fr was unreachable (empty reply) from this host."
+  }
+]

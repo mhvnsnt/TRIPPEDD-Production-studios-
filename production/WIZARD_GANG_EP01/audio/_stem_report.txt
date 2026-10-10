@@ -1,0 +1,21 @@
+s10_the_summons.wav | 12.0s | 0:50-1:02 | peak 0.550 | rms 0.1310 | Summons tension: sub-bass flare, wind, heartbeat drums, rising tom roll into the meeting.
+s11_the_meeting.wav | 16.0s | 1:02-1:18 | peak 0.500 | rms 0.1330 | Solemn ritual taiko under the opening; drums die at 13.5s when the candle gutters out.
+s12_order_of_business.wav | 20.0s | 1:18-1:38 | peak 0.500 | rms 0.0929 | Roll-call snare cadence; 8 solemn stabs for 8 names; Ashes' declaration hit; dice-rattle hint.
+s13_the_derail_begins.wav | 32.0s | 1:38-2:10 | peak 0.500 | rms 0.1528 | Solemn pad decays into a warm 90bpm cookout boombap; grill sizzle; comedic bass fill into Act 2.
+s14_dice_game.wav | 10.0s | 2:10-2:20 | peak 0.500 | rms 0.1153 | Tense swingy groove; dice shaker roll; rimshot when Cipher rolls aces — the map is gone.
+s15_arcade.wav | 10.0s | 2:20-2:30 | peak 0.450 | rms 0.0784 | Original chiptune bounce; claw-servo blips; plushie-win sparkle.
+s16_basketball.wav | 9.0s | 2:30-2:39 | peak 0.500 | rms 0.1356 | 90s hoop bounce; synth whistle accents; ball-bounce thumps.
+s17_bodega.wav | 9.0s | 2:39-2:48 | peak 0.450 | rms 0.1193 | Lo-fi stroll with vinyl crackle; the war fund buys chips.
+s18_night_market.wav | 10.0s | 2:48-2:58 | peak 0.500 | rms 0.1348 | Sway groove; ominous low pulse when the IT SEES tag glows.
+s19_subway.wav | 9.0s | 2:58-3:07 | peak 0.500 | rms 0.1156 | Train-chug rhythm; driving bass; 'tactical movement' field trip.
+s20_bridge.wav | 8.0s | 3:07-3:15 | peak 0.450 | rms 0.0910 | Tense sparse pizz groove; the 'classified exchange' is mozzarella sticks.
+s21_parking_garage.wav | 8.0s | 3:15-3:23 | peak 0.420 | rms 0.0728 | Minimal spy-ish pulse; folding chairs; total secrecy.
+s22_skate_park.wav | 9.0s | 3:23-3:32 | peak 0.520 | rms 0.1097 | Pop-punk-ish bounce; crash at the failed trick; one comedic low 'womp'.
+s23_studio.wav | 9.0s | 3:32-3:41 | peak 0.500 | rms 0.0917 | Talk-show bounce; mic-feedback squeal when Static hijacks the mic.
+s24_carnival.wav | 10.0s | 3:41-3:51 | peak 0.450 | rms 0.1444 | Dark original calliope waltz; music stops DEAD for Sombra's stone face.
+s25_grill_incident.wav | 6.0s | 3:51-3:57 | peak 0.550 | rms 0.1051 | Fire riser + flare hit; hard cut to casual 'everything's fine' plucks.
+s26_the_pier.wav | 8.0s | 3:57-4:05 | peak 0.450 | rms 0.0920 | Kiko alone: fog bed, fog horns, sparse theatrical plucks.
+s27_the_adjunction.wav | 25.0s | 4:10-4:35 | peak 0.500 | rms 0.1265 | Warm 76bpm night groove; fireworks blooms; ember bed; groove thins at the end.
+s28_the_photo_button.wav | 20.0s | 4:35-4:55 | peak 0.500 | rms 0.1185 | Warm swell + 'nothing was resolved' motif; flash at 16.5s; 2s freeze; quiet.
+s29_ident.wav | 5.0s | 4:55-5:00 | peak 0.550 | rms 0.1016 | Logo sting: sub hit, shimmer gliss, trippy wobble under the TRIPPEDD card.
+ep01_full_mix_0050-0500.wav | 250.14s | 0:50-5:00 | full show mix

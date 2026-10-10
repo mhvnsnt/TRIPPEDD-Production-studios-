@@ -1,4 +1,5 @@
 node_modules/
+.next/
 build/
 dist/
 coverage/
@@ -94,3 +95,17 @@ assets/rigs/MARS_FACE_HIRES_UNPROMOTED.blend1
 # OWNER LAW #2 is satisfied by the video and the contact sheet, which ARE committed.
 # Never add a rule here that hides a model, a rig or a final render (OWNER LAW #6).
 docs/evidence/perform/_frames/
+
+# Video masters are Drive-canonical (GH001: never commit >100MB). See structural rule.
+production/WIZARD_GANG_EP01/wizard-gang-ep01-*.mp4
+production/WIZARD_GANG_EP01/shots/*.mp4
+production/WIZARD_GANG_SHORT_01/shots/*.mp4
+
+# EP02 visual cut (2026-10-08): video masters are Drive-canonical (GH001).
+production/WIZARD_GANG_EP01/wizard-gang-ep02-*.mp4
+production/WIZARD_GANG_EP01/ep02-newshow-video.mp4
+production/WIZARD_GANG_EP01/ep02-segments/
+production/WIZARD_GANG_EP01/pilot-50s.mp4
+production/WIZARD_GANG_EP01/silence250.m4a
+production/WIZARD_GANG_EP01/newshow_list.txt
+.scratch/

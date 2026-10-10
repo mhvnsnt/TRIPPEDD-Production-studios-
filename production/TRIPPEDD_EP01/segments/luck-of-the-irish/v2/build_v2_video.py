@@ -50,12 +50,12 @@ else:
 run(FF + ["-ss", "22.9", "-t", "1.1", "-i", V1, "-i", SB, "-i", SL, "-an",
     "-filter_complex",
     "[0:v]setpts=PTS-STARTPTS,format=yuv420p,"
-    "scale=w='1920*(1+0.07*exp(-pow((t-0.25)*6,2)))':h='1080*(1+0.07*exp(-pow((t-0.25)*6,2)))':eval=frame,"
+    "scale=w='2*round(1920*(1+0.07*exp(-pow((t-0.25)*6,2)))/2)':h='2*round(1080*(1+0.07*exp(-pow((t-0.25)*6,2)))/2)':eval=frame,"
     "crop=1920:1080,"
     "eq=saturation='1+0.6*exp(-pow((t-0.3)*4,2))',format=gbrp[base];"
-    "[1:v]scale=1920:1080,format=gbrp,fade=t=in:st=0:d=0.08,fade=t=out:st=0.18:d=0.15[sbf];"
+    "[1:v]loop=loop=-1:size=32767,trim=duration=1.1,setpts=N/FRAME_RATE/TB,scale=1920:1080,format=gbrp,fade=t=in:st=0:d=0.08,fade=t=out:st=0.18:d=0.15[sbf];"
     "[base][sbf]blend=all_mode=screen:all_opacity=0.9,format=gbrp[fl];"
-    "[2:v]scale=1920:1080,format=gbrp,rotate=a='0.15*t':ow=1920:oh=1080:c=black@0[slr];"
+    "[2:v]loop=loop=-1:size=32767,trim=duration=1.1,setpts=N/FRAME_RATE/TB,scale=1920:1080,format=gbrp,rotate=a='0.15*t':ow=1920:oh=1080:c=black@0[slr];"
     "[fl][slr]blend=all_mode=screen:all_opacity=0.15,format=yuv420p[out]",
     "-map", "[out]", "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "16",
     "seg02-ignite.mp4"], "seg02 ignite")
@@ -65,7 +65,7 @@ run(FF + ["-ss", "24", "-t", "4", "-i", V1, "-i", SL, "-an",
     "-filter_complex",
     "[0:v]setpts=PTS-STARTPTS,format=yuv420p,eq=saturation=1.35,"
     "colorbalance=gs=0.25:gm=0.15,format=gbrp[base];"
-    "[1:v]scale=1920:1080,format=gbrp,rotate=a='0.12*t':ow=1920:oh=1080:c=black@0[slr];"
+    "[1:v]loop=loop=-1:size=32767,trim=duration=4,setpts=N/FRAME_RATE/TB,scale=1920:1080,format=gbrp,rotate=a='0.12*t':ow=1920:oh=1080:c=black@0[slr];"
     "[base][slr]blend=all_mode=screen:all_opacity=0.22,format=yuv420p[out]",
     "-map", "[out]", "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "16",
     "seg04-live-l1.mp4"], "seg04 live L1")
@@ -76,7 +76,7 @@ run(FF + ["-ss", "28", "-t", "7", "-i", V1, "-i", SL, "-an",
     "[0:v]setpts=PTS-STARTPTS,format=yuv420p,eq=saturation=1.55,"
     "colorbalance=gs=0.4:gm=0.25,"
     "drawbox=x=0:y=0:w=iw:h=ih:color=0xAAFFAA@0.55:t=fill:enable='between(t,3.5,3.57)+between(t,5.5,5.57)',format=gbrp[base];"
-    "[1:v]scale=1920:1080,format=gbrp,rotate=a='0.1*t':ow=1920:oh=1080:c=black@0[slr];"
+    "[1:v]loop=loop=-1:size=32767,trim=duration=7,setpts=N/FRAME_RATE/TB,scale=1920:1080,format=gbrp,rotate=a='0.1*t':ow=1920:oh=1080:c=black@0[slr];"
     "[base][slr]blend=all_mode=screen:all_opacity=0.32,format=yuv420p[out]",
     "-map", "[out]", "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "16",
     "seg06-live-l2.mp4"], "seg06 live L2")
@@ -120,13 +120,14 @@ run(FF + ["-i", M3, "-i", HERO, "-an", "-filter_complex",
     "-map", "[out]", "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "16",
     "seg09-iris.mp4"], "seg09 iris")
 
-# ---------- 4. mascot hero hold: starburst bg pulsing + mascot floating (2.5s) ----------
-run(FF + ["-i", SB, "-i", HERO, "-an", "-filter_complex",
+# ---------- 4. mascot hero hold: starburst bg pulsing + full mascot floating (2.5s) ----------
+HEROFULL = "hero-key.png"  # pre-converted; webp decode trips scale
+run(FF + ["-i", SB, "-i", HEROFULL, "-an", "-filter_complex",
     "[0:v]loop=loop=-1:size=32767,trim=duration=2.5,setpts=N/FRAME_RATE/TB,"
-    "scale=w='1920*(1+0.06*sin(2*PI*t/1.2))':h='1080*(1+0.06*sin(2*PI*t/1.2))':eval=frame,"
+    "scale=w='2*round(2048*(1+0.05*sin(2*PI*t/1.2))/2)':h='2*round(1152*(1+0.05*sin(2*PI*t/1.2))/2)':eval=frame,"
     "crop=1920:1080,format=yuv420p[bg];"
     "[1:v]loop=loop=-1:size=32767,trim=duration=2.5,setpts=N/FRAME_RATE/TB,"
-    "scale=900:-1,format=rgba[fg];"
+    "format=rgba[fg];"
     "[bg][fg]overlay=x='(W-w)/2':y='(H-h)/2+18*sin(2*PI*t/1.5)':format=yuv420,format=yuv420p[out]",
     "-map", "[out]", "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "16",
     "seg10-mascot.mp4"], "seg10 mascot")

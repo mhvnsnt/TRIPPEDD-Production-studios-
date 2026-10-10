@@ -32,7 +32,7 @@ print(f"  TOTAL video: {total:.2f}s", flush=True)
 inputs, filt = [], ""
 for i, s in enumerate(SEGS):
     inputs += ["-i", s]
-    filt += f"[{i}:v]setpts=PTS-STARTPTS,fps=30,format=yuv420p[v{i}];"
+    filt += f"[{i}:v]setpts=PTS-STARTPTS,scale=1920:1080,fps=30,format=yuv420p[v{i}];"
 filt += "".join(f"[v{i}]" for i in range(len(SEGS)))
 filt += f"concat=n={len(SEGS)}:v=1:a=0,format=yuv420p[vout]"
 run(FF + inputs + ["-filter_complex", filt, "-map", "[vout]", "-r", "30",

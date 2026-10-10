@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "assetId": "busch",
+  "show": "In the Bushes",
+  "character": "Busch",
+  "purpose": "Reusable 2D animation source for the EP01 origin opening and future episodes.",
+  "style": {
+    "philosophy": "limited-animation, silhouette-first, expressive posing, deliberately economical",
+    "originality": "All character construction is original studio material; open-source software is infrastructure only."
+  },
+  "states": [
+    "busch_idle",
+    "busch_wake",
+    "busch_transform",
+    "busch_confused",
+    "busch_drunk",
+    "busch_surprised",
+    "busch_look_away",
+    "busch_reaction"
+  ],
+  "animation_primitives": [
+    "hold",
+    "eye_swap",
+    "mouth_swap",
+    "branch_sway",
+    "body_tilt",
+    "camera_push",
+    "impact_shake",
+    "beer_splash",
+    "reaction_pause"
+  ],
+  "sourceFormats": ["SVG", "OpenToonz-compatible raster/vector source"],
+  "provenance": {
+    "creativeSource": "TRIPPEDD Production Studios original design",
+    "softwareInfrastructure": ["OpenToonz", "Blender Grease Pencil", "FFmpeg"],
+    "thirdPartyArtCopied": false
+  }
+}

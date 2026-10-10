@@ -1,0 +1,168 @@
+{
+  "schema": "trippedd.lip-seam/v1",
+  "rig": "../../../tmp/claude-0/-home-user/624f7576-436f-5bd8-9248-49a6c3abcba9/scratchpad/CANON.cut.blend",
+  "authority": "renders/_rig_measure/mouth_anatomy.json inner-lip contour",
+  "authorityCheckedAgainst": {
+    "headSurfaceMeanMM": 1.15,
+    "sockRimMeanMM": 4.28,
+    "sockRimToTeethMeanMM": 2.83,
+    "paintedTextureGreenAtContour": [
+      0.128,
+      0.055
+    ],
+    "note": "the MediaPipe pass that put his eyelids on his cheeks put his mouth within 1.2 mm of his skin -- checked, not assumed"
+  },
+  "zoneMM": 9.0,
+  "hardMM": 3.5,
+  "seamEdgesSplit": 82,
+  "vertsBefore": 27721,
+  "vertsAfter": 27865,
+  "upperLipVerts": 181,
+  "lowerLipVerts": 233,
+  "originalVertexDriftMM": 0.0,
+  "shapeKeysCarried": 89,
+  "seamAperture": [
+    {
+      "pose": "rest",
+      "meanMM": 0.0,
+      "maxMM": 0.0
+    },
+    {
+      "pose": "jaw 18 deg",
+      "meanMM": 25.664,
+      "maxMM": 26.983
+    },
+    {
+      "pose": "jaw 30 deg",
+      "meanMM": 42.45,
+      "maxMM": 44.643
+    },
+    {
+      "pose": "jaw 18 + lip_lower_depress",
+      "meanMM": 26.06,
+      "maxMM": 27.272
+    },
+    {
+      "pose": "jaw 18 + lower_depress + upper_raise",
+      "meanMM": 25.803,
+      "maxMM": 27.272
+    },
+    {
+      "pose": "jaw 30 + both lip keys",
+      "meanMM": 42.679,
+      "maxMM": 45.121
+    },
+    {
+      "pose": "jaw 30 + both + mouth_funnel",
+      "meanMM": 44.356,
+      "maxMM": 46.683
+    },
+    {
+      "pose": "facs_jawOpen 1.0",
+      "meanMM": 0.0,
+      "maxMM": 0.0
+    },
+    {
+      "pose": "facs_jawOpen + jaw 30 + lips + funnel",
+      "meanMM": 44.7,
+      "maxMM": 47.281
+    }
+  ],
+  "teethVisibleBefore": [
+    {
+      "pose": "rest",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "jaw 18 deg",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "jaw 30 deg",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "jaw 18 + lip_lower_depress",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "jaw 18 + lower_depress + upper_raise",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "jaw 30 + both lip keys",
+      "visible": 5,
+      "of": 240
+    },
+    {
+      "pose": "jaw 30 + both + mouth_funnel",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "facs_jawOpen 1.0",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "facs_jawOpen + jaw 30 + lips + funnel",
+      "visible": 0,
+      "of": 240
+    }
+  ],
+  "teethVisibleAfter": [
+    {
+      "pose": "rest",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "jaw 18 deg",
+      "visible": 20,
+      "of": 240
+    },
+    {
+      "pose": "jaw 30 deg",
+      "visible": 22,
+      "of": 240
+    },
+    {
+      "pose": "jaw 18 + lip_lower_depress",
+      "visible": 29,
+      "of": 240
+    },
+    {
+      "pose": "jaw 18 + lower_depress + upper_raise",
+      "visible": 26,
+      "of": 240
+    },
+    {
+      "pose": "jaw 30 + both lip keys",
+      "visible": 33,
+      "of": 240
+    },
+    {
+      "pose": "jaw 30 + both + mouth_funnel",
+      "visible": 44,
+      "of": 240
+    },
+    {
+      "pose": "facs_jawOpen 1.0",
+      "visible": 0,
+      "of": 240
+    },
+    {
+      "pose": "facs_jawOpen + jaw 30 + lips + funnel",
+      "visible": 72,
+      "of": 240
+    }
+  ],
+  "bestBefore": 5,
+  "bestAfter": 72,
+  "of": 240
+}

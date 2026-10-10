@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '*/10 * * * *'
   workflow_run:
-    workflows: ["EP01 Story Runner Cut", "EP01 Autonomous Cut"]
+    workflows: ["Production Short E2E Gate", "EP01 Story Runner Cut", "EP01 Autonomous Cut"]
     types: [completed]
   workflow_dispatch:
 
@@ -35,7 +35,7 @@ jobs:
           current_main_sha=$(gh api "/repos/$REPO/git/ref/heads/main" --jq '.object.sha')
           echo "CURRENT_MAIN_SHA=$current_main_sha"
 
-          for workflow in ep01-story-runner.yml ep01-autonomous.yml; do
+          for workflow in production-short-e2e-gate.yml ep01-story-runner.yml ep01-autonomous.yml; do
             runs=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 10 --json databaseId,status,conclusion,attempt,createdAt,updatedAt,headSha)
             active=$(jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | sort_by(.createdAt) | reverse' <<<"$runs")
             active_count=$(jq 'length' <<<"$active")
@@ -91,7 +91,9 @@ jobs:
               started_epoch=$(date -d "$started" +%s)
               age=$((now-started_epoch))
               echo "  active job $(jq -r '.name' <<<"$job") age=${age}s"
-              if [ "$age" -ge 3600 ]; then stale=1; fi
+              stale_limit=3600
+              if [ "$workflow" = "production-short-e2e-gate.yml" ]; then stale_limit=720; fi
+              if [ "$age" -ge "$stale_limit" ]; then stale=1; fi
             done < <(jq -c '.[]' <<<"$jobs")
 
             if [ "$stale" -eq 1 ] && [ "$attempt" -lt 3 ]; then
@@ -124,12 +126,12 @@ jobs:
             fi
           fi
 
-          echo "Self-healer checked $checked production run(s); suppressed queued duplicates=$suppressed; recovery actions=$recovered; autonomous dispatches=$dispatched."
+          echo "Self-healer checked $checked production run(s), including commercial-proof; suppressed queued duplicates=$suppressed; recovery actions=$recovered; autonomous dispatches=$dispatched."
           {
             echo "## Production Self-Healer"
             echo "- Checked: $checked run(s)"
             echo "- Suppressed queued duplicates: $suppressed"
             echo "- Recovery actions: $recovered"
             echo "- Autonomous dispatches: $dispatched"
-            echo "- Policy: recovery and chaining are revision-aware; historical Story Runner success can seed a current-main Autonomous run; stale/failed historical Autonomous runs cannot block the current-main chain; active current-main work is preserved; retries remain bounded."
+            echo "- Commercial proof is recovered with the same bounded retry/salvage policy as Episode 01.\n            - Policy: recovery and chaining are revision-aware; historical Story Runner success can seed a current-main Autonomous run; stale/failed historical Autonomous runs cannot block the current-main chain; active current-main work is preserved; retries remain bounded."
           } >> "$GITHUB_STEP_SUMMARY"

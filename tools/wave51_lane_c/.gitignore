@@ -1,0 +1,7 @@
+# Wave 51 Lane C — tool-wiring lane
+# Keep env/scratch out of the repo: only wire scripts, PROOFS.md,
+# SHA256SUMS, and committed proof artifacts travel.
+.venv/
+.scratch/
+__pycache__/
+*.pyc

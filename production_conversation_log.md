@@ -266,3 +266,22 @@ This file is the persistent production-session log requested by the producer. Ne
 - `12d84551b60466ca3bff670537d42d97ee30b4e2` — intermediate Bastard checkpoint layout attempt; superseded by the corrected chunk-isolated implementation.
 - `434d49da057e8283ab9b2d21ea9561012be5e989` — Bastard frame checkpoints isolated per chunk so each completed checkpoint is independently restorable.
 - `e3f7959c3d473099ceaf45081e7d2e7508527cbf` — technical QC strengthened to enforce H.264 / 1920x1080 / 24 fps / audio invariants.
+
+
+## 2026-09-10 — Full open-source render-stack expansion
+
+### Producer
+> Pull whatever full open source things are necessary to make the render process and strategy fast, efficient and reliable. Pull in mature projects as independent components under the TRIPPEDD umbrella, cooperating with the production studio and with each other. Get the commercial done, preserve salvageable V3/V4/V5 work, and make the render/animation pipeline actually work.
+
+### Agent
+Implemented the first concrete umbrella expansion rather than merely documenting candidate tools.
+
+- Added `opensource/render-stack/README.md` defining independent open-source render subsystems and promotion gates.
+- Added `opensource/render-stack/backend-contract.yaml` with explicit backend routing: Flamenco for Blender animation, OpenCue for large distributed task/frame jobs, FFmpeg for deterministic media encode/mux/QC, Kdenlive/MLT for editorial export, with local resumable fallback.
+- Added `tools/opensource/bootstrap-render-stack.sh` to provision the complete upstream Flamenco and OpenCue repositories at pinned releases rather than copying isolated snippets.
+- Updated `.github/workflows/production-short-e2e-gate.yml` so changes to the render stack trigger the proof workflow, the full Flamenco/OpenCue trees are provisioned before production work, and the EP01 renderer can use a configured render concurrency (default 4) instead of being hard-coded to 1.
+- Preserved the existing salvage law: completed EP01 chunks are reused before rerendering; prior run artifacts are not thrown away merely because a later stage stalls.
+
+Research check: OpenCue v1.19.1 is the current documented stable release and includes a distributed Rust scheduler plus event-driven monitoring. Flamenco is the Blender Studio render-farm framework and is designed to distribute Blender rendering and other command-line tasks across workers. The new TRIPPEDD layer keeps both independent and evidence-gated rather than making either a blind critical dependency.
+
+Current limitation: the GitHub connector can write commits, but this environment does not expose a workflow-dispatch operation, so I cannot honestly claim that the newly-triggered push run has completed until GitHub reports it. The repository changes themselves are real and committed.

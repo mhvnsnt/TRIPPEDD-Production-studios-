@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "purpose": "Identity-safe oral anatomy and facial-expression bridge for MARS_CANONICAL",
+  "source_of_truth": "MARS_CANONICAL remains the exterior identity mesh. Open anatomy is an inserted/retargeted subsystem, never a replacement head.",
+  "donor": {
+    "name": "google-gnm-head-v3",
+    "repo": "https://github.com/google/GNM",
+    "license": "Apache-2.0",
+    "model": "gnm/shape/data/versions/v3_0/gnm_head.npz",
+    "capabilities": [
+      "upper/lower teeth and gums",
+      "tongue",
+      "383 expression components",
+      "253 identity components",
+      "4-joint head/eye rig",
+      "named anatomical vertex groups"
+    ],
+    "facecap": {
+      "name": "three.js FaceCap r184",
+      "repo": "https://github.com/mrdoob/three.js",
+      "license": "MIT",
+      "sha256": "6BFCE6D0FCBB5839F5102B79733007859FEF7C5DF6D9EB49E2264542810B5F64",
+      "role": "independent oral/52-target reference; never replaces MARS_CANONICAL"
+    }
+  },
+  "bridge": [
+    "provision pinned FaceCap and Google GNM assets into worker cache",
+    "build oral-only GNM donor from teeth, gums, tongue and mouth_sock groups",
+    "derive canonical jaw-open from the released GNM expression decoder with rigid upper/lower dental handling",
+    "measure MARS mouth frame and fit the donor to it",
+    "use the fitted GNM mouth_sock as the cavity cutter/liner; no primitive sphere/cube/slab",
+    "duplicate MARS surface before surgery; preserve canonical source hash and exterior vertices outside the repaired mouth",
+    "add one identity-safe MARS jaw-open shell key driven by donor lower-dental travel",
+    "drive donor anatomy and shell from one jaw/viseme signal",
+    "retarget real Rhubarb phoneme timing through OpenFaceFX/Oculus visemes",
+    "validate mouth gap, dental travel, tongue containment, blink closure and source integrity"
+  ],
+  "controls": {
+    "jaw_open": "measured/retargeted lower-face opening",
+    "viseme_AA": "jaw_open + open-mouth lower-face deformation",
+    "viseme_EE": "lip spread with bounded jaw contribution",
+    "viseme_OH": "rounded mouth + jaw contribution",
+    "viseme_MM": "lip closure; teeth/tongue hidden",
+    "viseme_FF": "lower-lip/upper-tooth relationship",
+    "blink_L": "independent eyelid control",
+    "blink_R": "independent eyelid control",
+    "tongue": "independent bounded GNM tongue control"
+  },
+  "hard_gates": [
+    "MARS_CANONICAL exterior identity source remains immutable",
+    "oral donor provenance/license/hash recorded",
+    "GNM mouth_sock is present and non-empty",
+    "no sphere/cube/flat-slab cavity geometry",
+    "jaw_open creates nonzero visible oral gap",
+    "upper teeth remain anchored while lower teeth move coherently",
+    "tongue remains inside the oral volume at neutral/half/full open",
+    "MM closes and AA/OH opens",
+    "both eyelids visibly close",
+    "no telemetry/placeholder can satisfy animation gates",
+    "UNKNOWN is never PASS"
+  ]
+}

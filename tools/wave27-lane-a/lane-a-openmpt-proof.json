@@ -1,0 +1,18 @@
+{
+  "library": "/usr/lib/x86_64-linux-gnu/libopenmpt.so.0",
+  "library_license": "BSD-3-Clause (commercial-safe)",
+  "mod_bytes": 2492,
+  "mod_channels": 4,
+  "duration_seconds_measured": 7.68,
+  "frames_rendered": 373440,
+  "sample_rate": 48000,
+  "peak_amplitude": 0.5733,
+  "rms_amplitude": 0.1789,
+  "wav_bytes": 1493804,
+  "checks": {
+    "duration_within_expected_3_to_12s": true,
+    "frames_match_duration": true,
+    "audio_non_silent_rms_gt_0.01": true,
+    "no_clipping_peak_le_1.0": true
+  }
+}

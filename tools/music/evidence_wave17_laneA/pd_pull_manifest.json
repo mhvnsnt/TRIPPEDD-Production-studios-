@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-10-07T20:54:15.483018+00:00",
+  "pulls": [
+    {
+      "source": "wikimedia-commons",
+      "title": "File:A Chantar2.ogg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/A_Chantar2.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_evidence": "Commons extmetadata LicenseShortName='Public domain' on file page",
+      "file": "pd_audio/commons_A_Chantar2.ogg",
+      "sha256": "77d235e4f3c970f94b30b70c0405db2feb7285f6d11cc32ad5171c5c28a5f71f",
+      "bytes": 1035483,
+      "ffprobe": {
+        "ok": true,
+        "duration": "70.500000",
+        "size": "1035483",
+        "streams": [
+          {
+            "codec": "vorbis",
+            "type": "audio",
+            "dur": "70.500000"
+          }
+        ]
+      }
+    },
+    {
+      "source": "wikimedia-commons",
+      "title": "File:Caruso, Journet, Charles Gounod's Faust, 'O merveille! ... A moi les plaisirs'.ogg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Caruso%2C_Journet%2C_Charles_Gounod%27s_Faust%2C_%27O_merveille%21_..._A_moi_les_plaisirs%27.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license_evidence": "Commons extmetadata LicenseShortName='Public domain' on file page",
+      "file": "pd_audio/commons_Caruso%2C_Journet%2C_Charles_Gounod%27s_Faust%2C_%27O_merveille%21_..._A_moi_les_plaisirs%27.ogg",
+      "sha256": "eb9df8639636ef0fb8266f5548b98158ef1b54877bf0aabbb58e3b05abaaf890",
+      "bytes": 2698477,
+      "ffprobe": {
+        "ok": true,
+        "duration": "219.428571",
+        "size": "2698477",
+        "streams": [
+          {
+            "codec": "vorbis",
+            "type": "audio",
+            "dur": "219.428571"
+          }
+        ]
+      }
+    },
+    {
+      "source": "mutopia",
+      "title": "bethena.mid",
+      "url": "https://www.mutopiaproject.org/ftp/JoplinS/bethena/bethena.mid",
+      "license_evidence": "Mutopia: composition is PD; MIDI is the project's own engraving (per-piece license listed on site)",
+      "file": "pd_audio/mutopia_bethena.mid",
+      "sha256": "7e4c0b5a9402f112b90a8bf39558bc781f1909e9a023878f850456b9eda3390f",
+      "bytes": 23688,
+      "ffprobe": {
+        "ok": false,
+        "error": ""
+      }
+    }
+  ],
+  "failures": [
+    {
+      "source": "open-music-archive",
+      "what": "audio link discovery",
+      "reason": "no direct mp3/ogg/wav links on homepage (JS-driven or rel-linked)"
+    }
+  ],
+  "notes": "mutopia_bethena.mid: Joplin 'Bethena' concert waltz, PD composition; ffprobe cannot probe MIDI (expected \u2014 MIDI is note data, not audio); file header verified as Standard MIDI (MThd) below."
+}

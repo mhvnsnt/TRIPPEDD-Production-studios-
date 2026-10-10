@@ -217,6 +217,18 @@ export interface Segment {
   description: string;
   formatId?: string;
   locationId?: string;
+  /**
+   * The EP01 canon segment this realises. Present means the production graph
+   * and the locked blueprint agree about what this is.
+   */
+  canonSegmentId?: string;
+  /**
+   * How far the production actually is. NOT_STARTED is the honest state for a
+   * segment the creator has locked into the episode and nobody has built yet —
+   * it belongs in the graph, visibly unbuilt, rather than being left out and
+   * quietly forgotten.
+   */
+  productionState?: 'NOT_STARTED' | 'IN_PROGRESS' | 'BUILT';
   performances: Performance[];
   gags: Gag[];
   sourceClips: SourceClip[]; // Direct source materials
@@ -769,7 +781,15 @@ export interface CaptureSession {
 
 // --- Media Queue Pipeline ---
 
-export type QueueJobState = 'DISCOVERED' | 'QUEUED' | 'DOWNLOADING/STREAMING' | 'PROBING' | 'ANALYZING' | 'EVIDENCE_READY' | 'NEEDS_REVIEW' | 'FAILED' | 'UNAVAILABLE' | 'RETRYABLE_FAILURE';
+export type QueueJobState =
+  | 'DISCOVERED' | 'QUEUED' | 'DOWNLOADING/STREAMING' | 'PROBING' | 'ANALYZING'
+  | 'EVIDENCE_READY' | 'NEEDS_REVIEW' | 'FAILED' | 'UNAVAILABLE'
+  | 'RETRYABLE_FAILURE'
+  /**
+   * Admitted work that cannot start yet because disk or memory is short. It is
+   * WAITING, not failed: the governor retries it when resources free up.
+   */
+  | 'RESOURCE_WAIT';
 
 export interface ToolRunProvenance {
   executionState: 'ADAPTER_DEFINED' | 'EXECUTED';
@@ -792,6 +812,26 @@ export interface ToolRunProvenance {
     cpuPercent?: number;
     ramMB?: number;
   };
+  /** Working directory the process was explicitly launched in. */
+  cwd?: string;
+  /** How memory measurement went, including the honest no-sample case. */
+  resourceSampling?: ResourceSampling;
+}
+
+/**
+ * Result of sampling a real child process's memory.
+ *
+ * A process that exits before the first sampling tick legitimately yields NO
+ * measurement. That is recorded as sampleCount 0 with a reason — never as a
+ * zero-byte reading, which would be a fabricated number dressed as telemetry.
+ */
+export interface ResourceSampling {
+  sampleCount: number;
+  samplingIntervalMs: number;
+  peakRssMB?: number;
+  avgRssMB?: number;
+  status: 'SAMPLED' | 'NO_SAMPLE_CAPTURED' | 'SAMPLING_UNSUPPORTED';
+  reason?: string;
 }
 
 export interface JobToolStatus {

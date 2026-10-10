@@ -1,0 +1,41 @@
+{
+  "measurement": {
+    "MW": 0.193,
+    "carvedFrom_B": [
+      "MARS_CAVITY"
+    ],
+    "definition": "a vertex of A inside the SOLID volume of B; depth = distance to B's nearest surface",
+    "frames": [
+      1,
+      1
+    ],
+    "geometry": "docs/evidence/collision/oral_rest_geometry.npz",
+    "mmPerUnit": 0.00386,
+    "perFrameMaxMM": [
+      0.547
+    ],
+    "perFrameViolatingVerts": [
+      2
+    ],
+    "samplesPerFrame": 80,
+    "selfCollisionWorstMM": null,
+    "tool": "libigl generalized winding number (FAST_WINDING_NUMBER) + trimesh/FCL, on evaluated Blender geometry",
+    "totalSamples": 80,
+    "worstFrame": 1
+  },
+  "mode": "BLOCK",
+  "pair": "MARS_TEETH_UPPER->MARS_MESH (minus MARS_CAVITY)",
+  "penetrationMM": {
+    "max": 0.5469952697404614,
+    "p50": 0.0,
+    "p90": 0.0,
+    "p99": 0.5469889599619535
+  },
+  "proxyHash": "42144aa2964f73d77e0f0be2f037e0708f0e86e757a0686111c2c06eb9bbe4e8",
+  "schema": "trippedd.contact-measurement/v1",
+  "selfCollision": "NOT_ATTEMPTED",
+  "sourceHash": "5cb1c5acfe8fb6c7164a2f143ffb1932a99ca8b9030ede5f04da17e8754f981b",
+  "toleranceMM": 0.5,
+  "violatingSamples": 2,
+  "visualEvidence": "docs/evidence/collision/oral_MARS_TEETH_UPPER__MARS_MESH.png"
+}

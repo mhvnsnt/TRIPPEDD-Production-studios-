@@ -21,6 +21,8 @@ import { DriveIngestWorkspace } from './components/DriveIngestWorkspace';
 import { PeopleCastWorkspace } from './components/PeopleCastWorkspace';
 import { ProductionControlWorkspace } from './components/ProductionControlWorkspace';
 import { PhysicalEvidenceWorkspace } from './components/PhysicalEvidenceWorkspace';
+import { EditorialReviewWorkspace } from './components/EditorialReviewWorkspace';
+import { MakeTheShowWorkspace } from './components/MakeTheShowWorkspace';
 import { StudioAtmosphere } from './components/StudioAtmosphere';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wrench } from 'lucide-react';
@@ -47,6 +49,8 @@ export default function App() {
       case 'people_cast': return <PeopleCastWorkspace />;
       case 'control': return <ProductionControlWorkspace />;
       case 'physical_evidence': return <PhysicalEvidenceWorkspace />;
+      case 'make_show': return <MakeTheShowWorkspace />;
+      case 'editorial_review': return <EditorialReviewWorkspace />;
       case 'production': return <ActiveProduction />;
       case 'pilot_build': return <PilotBuildWorkspace />;
       case 'formats': return <FormatsWorkspace />;
@@ -58,6 +62,7 @@ export default function App() {
       case 'story': return <StoryWorkspace />;
       case 'jobs': return <JobsPipeline />;
       case 'assets': return <AssetWorkspace />;
+      // Placeholders for un-implemented tools/views
       case 'tool_video':
       case 'tool_comfy':
       case 'tool_blender':

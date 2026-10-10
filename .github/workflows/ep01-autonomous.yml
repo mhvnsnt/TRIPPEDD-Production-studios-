@@ -11,10 +11,6 @@ on:
         required: false
         type: string
 
-concurrency:
-  group: ep01-autonomous-${{ github.ref }}
-  cancel-in-progress: false
-
 permissions:
   actions: read
   contents: read
@@ -31,7 +27,9 @@ jobs:
     timeout-minutes: 20
     strategy:
       fail-fast: false
-      max-parallel: 6
+      # Blender's headless EEVEE software path aborts under concurrent EGL contexts on hosted runners.
+      # Keep one renderer active; frame checkpoints make this resumable and deterministic.
+      max-parallel: 1
       matrix:
         include:
           - { chunk: '01', start: 1, end: 12 }
@@ -89,10 +87,16 @@ jobs:
         run: |
           set -euo pipefail
           expected=$((TRIPPEDD_FRAME_END - TRIPPEDD_FRAME_START + 1))
-          existing=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' 2>/dev/null | wc -l || true)
+          mkdir -p "$TRIPPEDD_FRAME_DIR"
+          existing=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c 2>/dev/null | wc -l || true)
           echo "Chunk ${{ matrix.chunk }}: ${existing}/${expected} checkpoint frames already present"
-          time blender -b --python production/EP01/generated/blender/build_subjectivity.py
-          actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' | wc -l)
+          python - <<'PY'
+          import subprocess
+          result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_subjectivity.py'])
+          print(f'Blender render exit code: {result.returncode}')
+          raise SystemExit(result.returncode)
+          PY
+          actual=$(find "$TRIPPEDD_FRAME_DIR" -maxdepth 1 -type f -name 'frame-*.jpg' -size +0c | wc -l)
           test "$actual" -eq "$expected"
           printf -v start_padded '%04d' "$TRIPPEDD_FRAME_START"
           printf -v end_padded '%04d' "$TRIPPEDD_FRAME_END"
@@ -220,12 +224,20 @@ jobs:
       - name: Build generated Bastard terminal tag
         if: ${{ inputs.story_run_id == '' }}
         run: |
-          blender -b --python production/EP01/generated/blender/build_bastard_tag.py
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          result = subprocess.run(['blender', '-b', '--python', 'production/EP01/generated/blender/build_bastard_tag.py'])
+          print(f'Blender terminal-tag exit code: {result.returncode}')
+          raise SystemExit(result.returncode)
+          PY
           test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+          test -s production/EP01/generated/blender/ep01_bastard_tag.blend
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name -of json production/EP01/generated/blender/ep01_bastard_tag.mp4
       - name: Install open-source media stack
         run: |
           python -m pip install --upgrade pip
-          python -m pip install --cache-dir "$HOME/.cache/pip" 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0'
+          python -m pip install --cache-dir "$HOME/.cache/pip" 'gdown>=6.1.0' 'scenedetect-headless>=0.7.1' 'opencv-python-headless>=4.10' 'faster-whisper>=1.2.0' 'opentimelineio>=0.17.0' 'openassetio==1.0.2'
       - name: Activate production transcription wrapper
         run: |
           chmod +x scripts/bin/whisper
@@ -259,6 +271,26 @@ jobs:
           test -s public/production/EP01-AUTONOMOUS.otio
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.ffprobe.json
           mediainfo public/production/EP01-AUTONOMOUS.mp4 > public/production/EP01-AUTONOMOUS.mediainfo.txt
+          python - <<'PY'
+          import opentimelineio as otio
+          timeline = otio.adapters.read_from_file('public/production/EP01-AUTONOMOUS.otio')
+          if not timeline.tracks:
+              raise SystemExit('OTIO validation failed: timeline has no tracks')
+          print('OpenTimelineIO validation OK:', timeline.name or 'EP01-AUTONOMOUS', 'tracks=', len(timeline.tracks))
+          PY
+      - name: Write autonomous artifact manifest
+        run: |
+          set -euo pipefail
+          manifest="public/production/EP01-AUTONOMOUS.manifest.sha256"
+          : > "$manifest"
+          sha256sum \
+            public/production/EP01-AUTONOMOUS.mp4 \
+            public/production/EP01-AUTONOMOUS.json \
+            public/production/EP01-AUTONOMOUS.otio \
+            production/EP01/generated/blender/ep01_subjectivity.mp4 \
+            production/EP01/generated/blender/ep01_bastard_tag.mp4 \
+            > "$manifest"
+          test "$(wc -l < "$manifest")" -eq 5
       - name: Upload autonomous cut
         uses: actions/upload-artifact@v4
         with:
@@ -269,6 +301,8 @@ jobs:
             public/production/EP01-AUTONOMOUS.otio
             public/production/EP01-AUTONOMOUS.ffprobe.json
             public/production/EP01-AUTONOMOUS.mediainfo.txt
+            public/production/EP01-AUTONOMOUS.manifest.sha256
+            production/EP01/generated/blender/ep01_subjectivity.blend
             production/EP01/generated/blender/ep01_subjectivity.mp4
             production/EP01/generated/blender/subjectivity-qc.json
             production/EP01/generated/blender/subjectivity-mediainfo.txt

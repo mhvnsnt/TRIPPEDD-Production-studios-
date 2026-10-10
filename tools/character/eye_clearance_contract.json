@@ -1,0 +1,39 @@
+{
+  "schema": "trippedd.eye-clearance-contract/v1",
+  "status": "ACTIVE",
+  "donor": {
+    "path": "assets/donor/gnm_eyes/",
+    "manifest": "assets/donor/gnm_eyes/manifest.json",
+    "source": "ICT-VGL/ICT-FaceKit",
+    "vertsPerEye": 1926,
+    "parts": ["eyeball", "eye_occlusion", "lacrimal"]
+  },
+  "classFilter": {
+    "required": true,
+    "measureOnly": "globe",
+    "ignore": ["eye_occlusion", "lacrimal", "socket"]
+  },
+  "restBeforeBlink": true,
+  "localTravelOnly": true,
+  "noInventedGeometry": true,
+  "passRequires": ["ladder_receipt", "rendered_frames_reopened"],
+  "shrinkwrap": {
+    "target": "globe",
+    "snapMode": "Outside Surface",
+    "offsetMM_start": 0.4,
+    "order": "before_solidify"
+  },
+  "baseline_mm": {
+    "centreDepth": 14.24,
+    "nearestVertexToLid": 0.49,
+    "note": "post rigid re-seat; supersedes 82/55 placement error"
+  },
+  "ladderSteps": ["open", "intermediate", "closed"],
+  "ossNextLayer": [
+    "ICT-FaceKit",
+    "Google GNM",
+    "AniEyelid",
+    "example_based_facial_rigging",
+    "Blender native Shrinkwrap"
+  ]
+}

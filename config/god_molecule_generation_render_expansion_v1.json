@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Expand God Molecule generation, animation, rendering and environment coverage without replacing MARS_CANONICAL.",
+  "policy": {
+    "openSourceCapabilityNotGoal": true,
+    "identitySubstitution": false,
+    "noFakePass": true,
+    "licenseReviewBeforePromotion": true
+  },
+  "stacks": [
+    {
+      "name": "Wan 2.2",
+      "role": "image-to-video,text-to-video,video generation",
+      "lane": "video-generation"
+    },
+    {
+      "name": "LTX-2.3",
+      "role": "audio-video generation and video synthesis",
+      "lane": "video-generation"
+    },
+    {
+      "name": "HunyuanVideo 1.5",
+      "role": "cinematic video generation",
+      "lane": "video-generation"
+    },
+    {
+      "name": "CogVideoX",
+      "role": "text/image-to-video",
+      "lane": "video-generation"
+    },
+    {
+      "name": "Mochi 1",
+      "role": "video generation",
+      "lane": "video-generation"
+    },
+    {
+      "name": "Open-Sora",
+      "role": "open video generation research lane",
+      "lane": "video-generation"
+    },
+    {
+      "name": "AnimateDiff",
+      "role": "motion module for diffusion animation",
+      "lane": "video-generation"
+    },
+    {
+      "name": "Allegro",
+      "role": "video generation",
+      "lane": "video-generation"
+    },
+    {
+      "name": "Stable Video Diffusion",
+      "role": "image-to-video baseline",
+      "lane": "video-generation"
+    },
+    {
+      "name": "VideoCrafter2",
+      "role": "text/image-to-video research lane",
+      "lane": "video-generation"
+    },
+    {
+      "name": "Animate Anyone",
+      "role": "character motion transfer research lane",
+      "lane": "character-video"
+    },
+    {
+      "name": "MagicAnimate",
+      "role": "human image animation",
+      "lane": "character-video"
+    },
+    {
+      "name": "LivePortrait",
+      "role": "portrait animation and driving",
+      "lane": "character-video"
+    },
+    {
+      "name": "MusePose",
+      "role": "pose-guided human animation",
+      "lane": "character-video"
+    },
+    {
+      "name": "MimicMotion",
+      "role": "motion transfer",
+      "lane": "character-video"
+    },
+    {
+      "name": "Hallo2",
+      "role": "audio-driven portrait animation",
+      "lane": "character-video"
+    },
+    {
+      "name": "SadTalker",
+      "role": "talking-head animation fallback",
+      "lane": "character-video"
+    },
+    {
+      "name": "Wav2Lip",
+      "role": "lip-sync fallback",
+      "lane": "facial-animation"
+    },
+    {
+      "name": "EchoMimic",
+      "role": "audio-driven portrait animation",
+      "lane": "character-video"
+    },
+    {
+      "name": "First Order Motion Model",
+      "role": "motion-transfer legacy lane",
+      "lane": "character-video"
+    },
+    {
+      "name": "Instant-NGP",
+      "role": "NeRF reconstruction/rendering",
+      "lane": "neural-3d"
+    },
+    {
+      "name": "Nerfstudio",
+      "role": "NeRF and Gaussian scene reconstruction",
+      "lane": "neural-3d"
+    },
+    {
+      "name": "gsplat",
+      "role": "CUDA Gaussian rasterization/training",
+      "lane": "gaussian"
+    },
+    {
+      "name": "SuGaR",
+      "role": "Gaussian-to-mesh reconstruction",
+      "lane": "gaussian"
+    },
+    {
+      "name": "GaussianEditor",
+      "role": "Gaussian scene editing",
+      "lane": "gaussian"
+    },
+    {
+      "name": "COLMAP",
+      "role": "SfM camera reconstruction",
+      "lane": "photogrammetry"
+    },
+    {
+      "name": "Meshroom",
+      "role": "photogrammetry reconstruction",
+      "lane": "photogrammetry"
+    },
+    {
+      "name": "Open3D",
+      "role": "point cloud, geometry and registration",
+      "lane": "geometry"
+    },
+    {
+      "name": "Blender",
+      "role": "canonical 3D scene, animation and rendering",
+      "lane": "render"
+    },
+    {
+      "name": "Flamenco",
+      "role": "Blender render farm orchestration",
+      "lane": "render-orchestration"
+    },
+    {
+      "name": "OpenCue",
+      "role": "distributed render scheduling",
+      "lane": "render-orchestration"
+    },
+    {
+      "name": "CGRU/Afanasy",
+      "role": "render farm scheduling alternative",
+      "lane": "render-orchestration"
+    },
+    {
+      "name": "Natron",
+      "role": "node-based compositing",
+      "lane": "compositing"
+    },
+    {
+      "name": "OpenColorIO",
+      "role": "color management",
+      "lane": "color"
+    },
+    {
+      "name": "OpenImageIO",
+      "role": "image processing and texture pipeline",
+      "lane": "image-processing"
+    },
+    {
+      "name": "OpenEXR",
+      "role": "HDR/linear intermediate image format",
+      "lane": "image-processing"
+    },
+    {
+      "name": "OpenTimelineIO",
+      "role": "editorial interchange",
+      "lane": "editorial"
+    },
+    {
+      "name": "FFmpeg",
+      "role": "media encode/decode and final delivery",
+      "lane": "media"
+    }
+  ],
+  "routing": {
+    "video": "Wan 2.2|LTX-2.3|HunyuanVideo 1.5|CogVideoX|Mochi 1|Open-Sora|AnimateDiff|Allegro|Stable Video Diffusion|VideoCrafter2",
+    "character": "LivePortrait|MagicAnimate|MusePose|MimicMotion|Hallo2|EchoMimic|Animate Anyone",
+    "face": "OpenFaceFX|Wav2Lip|SadTalker",
+    "scene": "COLMAP|Meshroom|Nerfstudio|gsplat|SuGaR|GaussianEditor|Open3D|Instant-NGP",
+    "render": "Blender|Flamenco|OpenCue|CGRU/Afanasy",
+    "finish": "Natron|OpenColorIO|OpenImageIO|OpenEXR|FFmpeg|OpenTimelineIO"
+  },
+  "promotion": "A lane is promoted only after installation, smoke execution, artifact verification, recovery test, provenance capture, and license review.",
+  "next": "Wire adapters and worker routing before adding more model families."
+}

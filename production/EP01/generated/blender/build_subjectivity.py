@@ -1,18 +1,15 @@
 """EP01 subjectivity sequence generator.
 
-Run with Blender in background mode. The render range is controlled by:
-  TRIPPEDD_FRAME_START / TRIPPEDD_FRAME_END
-  TRIPPEDD_FRAME_DIR
-
-Frames are rendered individually and existing frames are skipped. This makes
-small CI chunks restartable: a worker can die without requiring an entire
-animation range to be rendered again.
+Run with Blender in background mode. Frames are rendered in contiguous animation
+ranges so Blender can keep scene/render state hot between frames. Existing
+checkpoint images are preserved and missing ranges are resumed only.
 
 The sequence is explicitly GENERATED and is never physical source evidence.
 """
 import bpy
 import math
 import os
+import shutil
 import time
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
@@ -84,6 +81,8 @@ scene.render.image_settings.quality = 92
 scene.render.fps = 24
 scene.frame_start = 1
 scene.frame_end = 144
+if hasattr(scene.render, "use_persistent_data"):
+    scene.render.use_persistent_data = True
 
 for frame in (1, 36, 72, 108, 144):
     camera.location = (math.sin(frame * 0.035) * 4, -18 + frame * 0.035, 4 + math.cos(frame * 0.03) * 2)
@@ -96,19 +95,19 @@ scene["TRIPPEDD_SEQUENCE_ID"] = "ep01-lost-acid-subjectivity"
 scene["TRIPPEDD_PURPOSE"] = "Audience sees the character's subjective experience; character may dismiss it on return to live action."
 scene["TRIPPEDD_SOURCE_TRUTH"] = "This scene is not physical source evidence."
 scene["TRIPPEDD_EDITORIAL_RETURN"] = "Return to live action before the character says it was not even shit."
-scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS"
+scene["TRIPPEDD_RENDER_PROFILE"] = "EEVEE_NEXT_2_SAMPLES_960x540_JPEG_FRAME_CHECKPOINTS_BATCHED"
 scene["TRIPPEDD_FRAME_RANGE"] = f"{FRAME_START}-{FRAME_END}"
 
 chunk_blend = os.path.join(FRAME_DIR, f"subjectivity-{FRAME_START:04d}-{FRAME_END:04d}.blend")
+canonical_blend = os.path.join(OUTPUT_DIR, "ep01_subjectivity.blend")
+
 expected = FRAME_END - FRAME_START + 1
 started = time.time()
-completed = 0
 
 
 def progress_notice(frame, event):
-    global completed
-    completed = frame - FRAME_START + 1
     elapsed = max(time.time() - started, 0.001)
+    completed = frame - FRAME_START + 1
     rate = completed / elapsed
     remaining = expected - completed
     eta = remaining / rate if rate > 0 else 0
@@ -129,35 +128,74 @@ def progress_notice(frame, event):
         flush=True,
     )
 
+
+def missing_ranges(start, end):
+    missing = []
+    for frame in range(start, end + 1):
+        path = os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")
+        if not os.path.isfile(path) or os.path.getsize(path) == 0:
+            missing.append(frame)
+    ranges = []
+    if not missing:
+        return ranges
+    range_start = previous = missing[0]
+    for frame in missing[1:]:
+        if frame != previous + 1:
+            ranges.append((range_start, previous))
+            range_start = frame
+        previous = frame
+    ranges.append((range_start, previous))
+    return ranges
+
+ranges = missing_ranges(FRAME_START, FRAME_END)
+print(f"[subjectivity] missing ranges: {ranges or 'none'}", flush=True)
+original_start, original_end = scene.frame_start, scene.frame_end
+
+# Report already-rendered frames so progress telemetry accounts for resumed work.
 for frame in range(FRAME_START, FRAME_END + 1):
     frame_path = os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")
     if os.path.isfile(frame_path) and os.path.getsize(frame_path) > 0:
         print(f"[subjectivity] checkpoint exists: frame {frame}")
         progress_notice(frame, "checkpoint-hit")
-        continue
 
-    scene.frame_set(frame)
-    scene.render.filepath = frame_path
-    progress_notice(frame - 1 if frame > FRAME_START else FRAME_START - 1, "render-start") if frame > FRAME_START else print(
-        f"PRODUCTION_PROGRESS stage=subjectivity status=RUNNING progress=[--------------------] 0.0% work=0/{expected} elapsed=0.0s rate=0.000 frames/s eta=UNKNOWN frame={frame} event=render-start bytes=0",
-        flush=True,
-    )
-    print(f"[subjectivity] rendering frame {frame}/{FRAME_END}", flush=True)
-    bpy.ops.render.render(write_still=True)
+progress_notice(FRAME_START - 1, "render-start")
 
-    if not os.path.isfile(frame_path) or os.path.getsize(frame_path) == 0:
-        raise RuntimeError(f"Blender did not produce expected frame: {frame_path}")
+for start, end in ranges:
+    scene.frame_start = start
+    scene.frame_end = end
+    scene.render.filepath = os.path.join(FRAME_DIR, "frame-")
+    print(f"[subjectivity] rendering range {start}-{end} ({end - start + 1} frames)", flush=True)
+    bpy.ops.render.render(animation=True, write_still=True)
 
-    scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = frame
+    for frame in range(start, end + 1):
+        frame_path = os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")
+        if not os.path.isfile(frame_path) or os.path.getsize(frame_path) == 0:
+            raise RuntimeError(f"Blender did not produce expected frame: {frame_path}")
+        scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = frame
+
     bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
-    print(f"[subjectivity] completed frame {frame}", flush=True)
-    progress_notice(frame, "frame-complete")
+    shutil.copy2(chunk_blend, canonical_blend)
+    print(f"[subjectivity] completed range {start}-{end}", flush=True)
+    progress_notice(end, "range-complete")
 
+scene.frame_start, scene.frame_end = original_start, original_end
+scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = FRAME_END
 bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
+shutil.copy2(chunk_blend, canonical_blend)
+
+actual = sum(
+    1 for frame in range(FRAME_START, FRAME_END + 1)
+    if os.path.isfile(os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg"))
+    and os.path.getsize(os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")) > 0
+)
+if actual != expected:
+    raise RuntimeError(f"Subjectivity checkpoint count mismatch: {actual}/{expected}")
+if not os.path.isfile(canonical_blend) or os.path.getsize(canonical_blend) == 0:
+    raise RuntimeError(f"Canonical subjectivity blend missing: {canonical_blend}")
 elapsed = max(time.time() - started, 0.001)
 print(
     f"PRODUCTION_FINAL stage=subjectivity status=COMPLETED progress=[####################] 100.0% "
     f"work={expected}/{expected} elapsed={elapsed:.1f}s rate={expected/elapsed:.3f} frames/s eta=0s",
     flush=True,
 )
-print(f"[subjectivity] complete: frames {FRAME_START}-{FRAME_END}", flush=True)
+print(f"[subjectivity] complete: frames {FRAME_START}-{FRAME_END}; canonical blend ready", flush=True)

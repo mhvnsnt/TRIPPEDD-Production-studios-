@@ -1,0 +1,46 @@
+{
+  "source": "google/GNM v3_0",
+  "license": "Apache-2.0",
+  "fit": {
+    "scale": 3.874077,
+    "meanLandmarkError": 0.015738,
+    "errorPercentOfHeadHeight": 1.866,
+    "eyePairingSwapped": true,
+    "method": "Umeyama similarity from five landmarks that mean the same thing on both heads: two eye centres, nose tip, chin, lip centre"
+  },
+  "correspondence": {
+    "k": 4,
+    "maxDistance": 0.035,
+    "marsVerts": 23985,
+    "mapped": 7819,
+    "note": "unmapped = dreadlocks and neck termination; the donor is bald"
+  },
+  "regions": [
+    "forehead_region",
+    "left_brow_region",
+    "middle_brow_region",
+    "right_brow_region",
+    "left_temple_region",
+    "right_temple_region",
+    "left_orbital_region",
+    "right_orbital_region",
+    "left_zygomatic_region",
+    "right_zygomatic_region",
+    "nose_region",
+    "left_parotid_region",
+    "right_parotid_region",
+    "left_infraorbital_region",
+    "right_infraorbital_region",
+    "left_cheek_region",
+    "right_cheek_region",
+    "upper_lip_region",
+    "lower_lip_region",
+    "chin_region"
+  ],
+  "expressionBasis": {
+    "total": 383,
+    "lowerFace": 150,
+    "leftEye": 100,
+    "rightEye": 100
+  }
+}

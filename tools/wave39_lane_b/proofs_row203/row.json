@@ -1,0 +1,25 @@
+{
+  "row": 203,
+  "name": "CasparCG Server",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "CasparCG/server",
+  "api": {
+    "full_name": "CasparCG/server",
+    "archived": false,
+    "pushed_at": "2026-09-30T19:40:54Z",
+    "stargazers_count": 1092,
+    "default_branch": "master",
+    "owner": "CasparCG",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 35147
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

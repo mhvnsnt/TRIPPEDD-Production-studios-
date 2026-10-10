@@ -19,18 +19,25 @@ The 20-second E2E gate must exercise the actual creative commercial path rather 
 ## Connector reality
 GitHub repository access is currently available for repository operations, but some discovery/execution operations have timed out or are not exposed. Do not claim a commit/run occurred unless the tool returns a real GitHub result.
 
-## Current commercial builder
-scripts/production/build-network-commercial.py is the active deterministic mixed-media commercial builder. It currently contains four five-second visual segments for THE BASTARD, GOD MOLECULE, SMOKE & MIRRORS, and TRIPPEDD, with moving geometric overlays, scanlines/grain/palette treatment, TRIPPEDD wordmark, and generated audio. It is a stronger baseline than the former static proof but must be integrated into the real E2E gate and improved toward authored mixed-media animation.
+## Canonical commercial builder
+The canonical V4 Blender builder is scripts/production/blender/build-network-commercial-v4.py. The four-show contract is exactly:
+- THE BASTARD
+- IN THE BUSHES
+- GOD MOLECULE
+- TRIPPEDD
+
+Smoke & Mirrors is explicitly forbidden.
+
+The older scripts/production/build-network-commercial.py remains a deterministic fallback/legacy builder and must not override the canonical V4 creative contract.
 
 ## Working principle
 AI is a co-author/tool, not a replacement for the user's source material or taste. Preserve authorship, source evidence, checkpoints, artifacts, and measurable QC.
-
 
 ## 2026-09-10 — V4 commercial hardening / connector-independent execution
 
 User directed the production pipeline to continue, harden the commercial, and stop treating the ChatGPT↔GitHub execution channel as the production dependency.
 
-Verified the GitHub connector is operational again: repository access is currently authenticated with admin/maintain/push permissions for `mhvnsnt/TRIPPEDD-Production-studios-`.
+Verified the GitHub connector is operational again: repository access is currently authenticated with admin/maintain/push permissions for mhvnsnt/TRIPPEDD-Production-studios-.
 
 Creative correction applied:
 - Replaced the weak V3 commercial source with an authored four-show kinetic motion-graphics source.
@@ -46,7 +53,7 @@ Hardening intent:
 - Continue toward the real EP01 autonomous/story-runner cuts only after the commercial proof is genuinely green.
 
 Commits:
-- `54a43192fa46fe2d98f42b48cf3159ca5793f2f8` — initial V4 authored motion/audio rebuild.
-- `ac47ba848d0ed05798f44da4c78e28f6e0073941` — corrected commercial audio input indexing.
+- 54a43192fa46fe2d98f42b48cf3159ca5793f2f8 — initial V4 authored motion/audio rebuild.
+- ac47ba848d0ed05798f44da4c78e28f6e0073941 — corrected commercial audio input indexing.
 
-Important: the workflow run was not yet observable from the commit's workflow-run endpoint at the time of this log update, so no PASS is being claimed until an actual run and artifact are verified.
+Important: the workflow run was not observable from the commit's workflow-run endpoint at the time of this log update, so no PASS is being claimed until an actual run and artifact are verified.

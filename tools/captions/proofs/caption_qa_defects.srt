@@ -1,0 +1,24 @@
+1
+00:00:00,500 --> 00:00:02,500
+The council does not explain itself.
+
+2
+00:00:02,200 --> 00:00:03,200
+It declares, and it declares again loudly.
+
+3
+00:00:03,500 --> 00:00:03,900
+This line is deliberately far too long for broadcast safe.
+
+4
+00:00:04,000 --> 00:00:05,000
+
+
+5
+00:00:05,000 --> 00:00:05,000
+Blink.
+
+6
+00:00:16,000 --> 00:00:18,000
+And the street listens.
+

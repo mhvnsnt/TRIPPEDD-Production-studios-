@@ -6,6 +6,10 @@ on:
       - hardening/v5-mixed-media-commercial-oss-umbrella-2026-09-10
   workflow_dispatch:
 
+# Story Runner is a manual comparison lane. Canonical push-triggered production
+# is handled by the Showrunner and Autonomous workflows; keeping this lane manual
+# prevents duplicate expensive renders on every production change.
+
 concurrency:
   group: ep01-story-runner-${{ github.ref }}
   cancel-in-progress: false
@@ -180,6 +184,13 @@ jobs:
           test -s public/production/EP01-STORY-RUNNER.json
           test -s public/production/EP01-STORY-RUNNER.otio
           test -s public/production/production-artifact-qc.json
+      - name: Build 2D comic Bastard terminal tag
+        run: |
+          set -euo pipefail
+          bun run scripts/build-bastard-tag-2d.ts
+          test -s production/EP01/generated/comic/bannon-the-bastard-terminal.svg
+          test -s production/EP01/generated/comic/ep01_bastard_tag.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,avg_frame_rate -of json production/EP01/generated/comic/ep01_bastard_tag.mp4 > production/EP01/generated/comic/ep01_bastard_tag.ffprobe.json
       - name: Upload EP01 production artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -190,5 +201,8 @@ jobs:
             public/production/EP01-STORY-RUNNER.otio
             public/production/production-artifact-qc.json
             public/production/build-identity.txt
+            production/EP01/generated/comic/bannon-the-bastard-terminal.svg
+            production/EP01/generated/comic/ep01_bastard_tag.mp4
+            production/EP01/generated/comic/ep01_bastard_tag.ffprobe.json
           if-no-files-found: error
           retention-days: 30

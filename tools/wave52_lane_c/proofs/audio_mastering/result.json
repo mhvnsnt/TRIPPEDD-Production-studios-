@@ -1,0 +1,125 @@
+{
+  "tool": "audio_mastering_chain",
+  "wave": 52,
+  "lane": "C",
+  "utc": "2026-10-08T12:56:27.754882+00:00",
+  "checks": [
+    {
+      "name": "input_matches_wave51_vo",
+      "pass": true,
+      "detail": "sr=24000 frames=187800 ch=1 rms=0.0511 sha=1540b8320f85f6e5"
+    },
+    {
+      "name": "pyloudnorm_agrees_with_ffmpeg_ebur128",
+      "pass": true,
+      "detail": "pyloudnorm=-25.32 LUFS ebur128=-25.20 LUFS (pre-normalization)"
+    },
+    {
+      "name": "noisereduce_clean_with_profile_safe",
+      "pass": true,
+      "detail": "clean VO rms 0.0511 -> 0.0506 (delta -1.1%), corr 0.99979 \u2014 safe no-op pass"
+    },
+    {
+      "name": "noisereduce_silence_floor_suppression",
+      "pass": true,
+      "detail": "silence-region noise floor 0.01002 -> 0.00045 (-27.0 dB, -40 dBFS white noise)"
+    },
+    {
+      "name": "noisereduce_speech_fidelity",
+      "pass": true,
+      "detail": "speech-region corr(denoised, clean)=0.9800 (honest: musical-gate artifacts remain \u2014 error RMS 0.0253 vs speech RMS 0.0771)"
+    },
+    {
+      "name": "master_podcast_-16lufs_lufs",
+      "pass": true,
+      "detail": "ebur128 -17.00 LUFS vs target -16.0 (tol 1.0, peak_limited=True)"
+    },
+    {
+      "name": "master_podcast_-16lufs_true_peak",
+      "pass": true,
+      "detail": "true peak -2.00 dBFS <= -1.0 dBTP ceiling"
+    },
+    {
+      "name": "master_podcast_-16lufs_layout",
+      "pass": true,
+      "detail": "ch=2 (expect 2), duration 7.825s, LRA 2.90 LU"
+    },
+    {
+      "name": "master_broadcast_-24lufs_lufs",
+      "pass": true,
+      "detail": "ebur128 -23.90 LUFS vs target -24.0 (tol 0.5, peak_limited=False)"
+    },
+    {
+      "name": "master_broadcast_-24lufs_true_peak",
+      "pass": true,
+      "detail": "true peak -4.30 dBFS <= -1.0 dBTP ceiling"
+    },
+    {
+      "name": "master_broadcast_-24lufs_layout",
+      "pass": true,
+      "detail": "ch=1 (expect 1), duration 7.825s, LRA 3.00 LU"
+    },
+    {
+      "name": "mastering_byte_deterministic",
+      "pass": true,
+      "detail": "two identical runs -> sha 97f299c834125b8d"
+    },
+    {
+      "name": "denoise_byte_deterministic",
+      "pass": true,
+      "detail": "repeat denoise -> identical bytes"
+    }
+  ],
+  "findings": [
+    "NEGATIVE CONTROL: stationary noisereduce with no y_noise profile on the clean VO removed 70.6% of signal RMS (0.0511 -> 0.0150) \u2014 the gate treats program material as noise. Production rule: never run blind; always supply a silence/room-tone profile."
+  ],
+  "notes": [
+    "silence profile: 39 frames (0.78 s), rms 0.000029 \u2014 used as the stationary noise reference"
+  ],
+  "input": {
+    "path": "tools/wave51_lane_c/proofs/kokoro_tts/voice_line.wav",
+    "sr": 24000,
+    "frames": 187800,
+    "rms": 0.05112,
+    "duration_s": 7.825,
+    "integrated_lufs_pyloudnorm": -25.32,
+    "integrated_lufs_ebur128": -25.2
+  },
+  "noisereduce": {
+    "blind_no_profile_rms_loss_pct": 70.6,
+    "clean_with_profile_rms_delta_pct": -1.09,
+    "clean_with_profile_corr": 0.99979,
+    "silence_floor_suppression_db": -27.0,
+    "speech_region_corr": 0.98
+  },
+  "podcast_-16lufs": {
+    "path": "tools/wave52_lane_c/proofs/audio_mastering/master_podcast_16lufs_stereo.wav",
+    "target_lufs": -16.0,
+    "measured_lufs": -17.0,
+    "lra_lu": 2.9,
+    "true_peak_dbtp": -2.0,
+    "peak_limited": true,
+    "channels": 2,
+    "bytes": 751278
+  },
+  "broadcast_-24lufs": {
+    "path": "tools/wave52_lane_c/proofs/audio_mastering/master_broadcast_24lufs_mono.wav",
+    "target_lufs": -24.0,
+    "measured_lufs": -23.9,
+    "lra_lu": 3.0,
+    "true_peak_dbtp": -4.3,
+    "peak_limited": false,
+    "channels": 1,
+    "bytes": 375644
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "noisereduce": "3.0.3",
+    "pyloudnorm": "csteinmetz1/pyloudnorm (MIT)",
+    "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+    "license_policy": "permissive only (MIT/Apache-2.0/BSD/ISC)"
+  },
+  "summary_pass": true,
+  "summary": "13/13 checks PASS"
+}

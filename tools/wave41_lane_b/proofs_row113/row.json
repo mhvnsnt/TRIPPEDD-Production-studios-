@@ -1,0 +1,20 @@
+{
+  "row": 113,
+  "name": "Subtitle Workshop",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "dekked/subtitleworkshop",
+  "api": {
+    "full_name": "dekked/subtitleworkshop",
+    "archived": false,
+    "pushed_at": "2013-03-24T00:10:34Z",
+    "stargazers_count": 43,
+    "default_branch": "master",
+    "owner": "dekked",
+    "spdx_id": null,
+    "license_name": null
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": null,
+  "mechanical_verdict": "NEEDS REVIEW"
+}

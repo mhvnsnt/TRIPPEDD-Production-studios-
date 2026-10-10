@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "purpose": "God Molecule deterministic hybrid environment generation",
+  "principle": "voxel/world-seed structure provides deterministic macro layout; Gaussian splats provide captured physical appearance; Blender/OpenUSD provides canonical scene assembly and animation.",
+  "source_of_truth": {
+    "seed": "immutable per-scene world seed",
+    "reference_media": "supplied photography/video",
+    "captured_geometry": "COLMAP/Meshroom outputs",
+    "splats": "trained Gaussian scene representation",
+    "canonical_character": "MARS_CANONICAL"
+  },
+  "lanes": {
+    "voxel_world": [
+      {"name":"luanti","repo":"https://github.com/luanti-org/luanti","role":"deterministic voxel/world-seed substrate"},
+      {"name":"worldgen","repo":"https://github.com/randyau/worldgen","role":"procedural terrain, climate and world-history seed generation"},
+      {"name":"blockbench","repo":"https://github.com/JannisX11/blockbench","role":"block/low-poly asset authoring and conversion"}
+    ],
+    "capture_reconstruction": [
+      {"name":"colmap","repo":"https://github.com/colmap/colmap","role":"camera poses and sparse/dense reconstruction input"},
+      {"name":"meshroom","repo":"https://github.com/alicevision/meshroom","role":"photogrammetry fallback and reconstruction graph"},
+      {"name":"nerfstudio","repo":"https://github.com/nerfstudio-project/nerfstudio","role":"NeRF/3D reconstruction and Gaussian-scene workflows"}
+    ],
+    "gaussian_splats": [
+      {"name":"gsplat","repo":"https://github.com/nerfstudio-project/gsplat","role":"CUDA Gaussian rasterization/training backend"},
+      {"name":"gsplat-js","repo":"https://github.com/huggingface/gsplat.js","role":"web preview/inspection of Gaussian scenes"}
+    ],
+    "scene_assembly": [
+      {"name":"blender","repo":"https://github.com/blender/blender","role":"canonical scene assembly, camera, lighting, animation and render"},
+      {"name":"openusd","repo":"https://github.com/PixarAnimationStudios/OpenUSD","role":"scene interchange and layered environment assembly"}
+    ]
+  },
+  "recipe": [
+    "accept immutable world_seed",
+    "generate voxel macro-layout",
+    "export deterministic terrain/object manifests",
+    "ingest supplied photographs/video",
+    "recover camera poses with COLMAP or Meshroom",
+    "train/build Gaussian scene with Nerfstudio + gsplat",
+    "validate splat bounds, density and camera coverage",
+    "project/align splat scene to world-seed coordinates",
+    "assemble voxel geometry + splat appearance + canonical Mars in Blender/OpenUSD",
+    "render 3D or flatten to 2D plates",
+    "send plates through Tonnō/Natron/FFmpeg finishing",
+    "record seed, source hashes, backend versions and output hashes"
+  ],
+  "fallback_policy": {
+    "no_gpu": "use voxel/mesh proxy and defer Gaussian training; never fake a completed splat",
+    "splat_failure": "retain photogrammetry/mesh reconstruction and continue scene assembly",
+    "reconstruction_failure": "retain deterministic voxel scene and source plates",
+    "render_oom": "reduce proxy complexity or tile/segment the render; never substitute a telemetry frame for a creative final without explicit artifact labeling"
+  },
+  "qc": ["seed_reproducibility","source_provenance","camera_coverage","splat_bounds","scene_scale","character_identity","frame_activity","render_integrity"]
+}

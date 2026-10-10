@@ -1,0 +1,25 @@
+name: OpenCue Adapter Test
+
+on:
+  pull_request:
+    paths:
+      - "tools/environment/opencue_first_shot_dispatch.py"
+      - "tests/test_opencue_first_shot_dispatch.py"
+      - ".github/workflows/opencue-adapter-test.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/environment/opencue_first_shot_dispatch.py"
+      - "tests/test_opencue_first_shot_dispatch.py"
+      - ".github/workflows/opencue-adapter-test.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run fail-closed OpenCue adapter tests
+        run: python3 -m unittest -v tests/test_opencue_first_shot_dispatch.py

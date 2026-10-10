@@ -1,0 +1,41 @@
+{
+  "measurement": {
+    "MW": 0.193,
+    "carvedFrom_B": [
+      "MARS_CAVITY"
+    ],
+    "definition": "a vertex of A inside the SOLID volume of B; depth = distance to B's nearest surface",
+    "frames": [
+      1,
+      1
+    ],
+    "geometry": "docs/evidence/collision/oral_broken10mm_geometry.npz",
+    "mmPerUnit": 0.00386,
+    "perFrameMaxMM": [
+      0.71935
+    ],
+    "perFrameViolatingVerts": [
+      1
+    ],
+    "samplesPerFrame": 146,
+    "selfCollisionWorstMM": null,
+    "tool": "libigl generalized winding number (FAST_WINDING_NUMBER) + trimesh/FCL, on evaluated Blender geometry",
+    "totalSamples": 146,
+    "worstFrame": 1
+  },
+  "mode": "BLOCK",
+  "pair": "MARS_TONGUE->MARS_MESH (minus MARS_CAVITY)",
+  "penetrationMM": {
+    "max": 0.719354394308341,
+    "p50": 0.0,
+    "p90": 0.0,
+    "p99": 0.36503850400028165
+  },
+  "proxyHash": "bb7e9f993885a2f60654b4c5800349d08242987a17c4f35715c2d50c38b17159",
+  "schema": "trippedd.contact-measurement/v1",
+  "selfCollision": "NOT_ATTEMPTED",
+  "sourceHash": "aec3b92752192fd2e17f32f1b00ce4ef0ac5a5f8011d0c99e150e386daf101a9",
+  "toleranceMM": 0.5,
+  "violatingSamples": 1,
+  "visualEvidence": "docs/evidence/collision/negcontrol_tongue_through_cheek_MARS_TONGUE__MARS_MESH.png"
+}

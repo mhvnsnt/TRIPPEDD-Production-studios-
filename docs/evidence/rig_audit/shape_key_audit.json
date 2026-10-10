@@ -1,0 +1,959 @@
+{
+  "moveThresholdMM": 0.3,
+  "authority": "renders/_rig_measure/linework_3d.json -- the lines the owner drew",
+  "onTargetToleranceMM": 8.0,
+  "counts": {
+    "ON_TARGET": 3,
+    "MISPLACED": 34,
+    "UNJUDGED": 47,
+    "MOVES_NOTHING": 2
+  },
+  "keys": [
+    {
+      "key": "nostril_flare",
+      "verts": 56,
+      "maxMM": 2.32,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 6.2,
+      "expected": [
+        "nostril_R",
+        "nostril_L"
+      ],
+      "expectedNearest": "nostril_R",
+      "medianMMFromExpected": 6.2,
+      "verdict": "ON_TARGET"
+    },
+    {
+      "key": "nostril_flare_L",
+      "verts": 67,
+      "maxMM": 5.52,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 7.5,
+      "expected": [
+        "nostril_R",
+        "nostril_L"
+      ],
+      "expectedNearest": "nostril_R",
+      "medianMMFromExpected": 7.5,
+      "verdict": "ON_TARGET"
+    },
+    {
+      "key": "nostril_flare_R",
+      "verts": 35,
+      "maxMM": 5.33,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 7.8,
+      "expected": [
+        "nostril_R",
+        "nostril_L"
+      ],
+      "expectedNearest": "nostril_L",
+      "medianMMFromExpected": 7.8,
+      "verdict": "ON_TARGET"
+    },
+    {
+      "key": "nose_sneer",
+      "verts": 145,
+      "maxMM": 3.88,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 13.3,
+      "expected": [
+        "nostril_R",
+        "nostril_L"
+      ],
+      "expectedNearest": "nostril_R",
+      "medianMMFromExpected": 13.3,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "nose_wrinkle",
+      "verts": 208,
+      "maxMM": 4.13,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 27.0,
+      "expected": [
+        "nostril_R",
+        "nostril_L"
+      ],
+      "expectedNearest": "nostril_R",
+      "medianMMFromExpected": 27.0,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_noseSneer_R",
+      "verts": 2932,
+      "maxMM": 10.11,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 58.8,
+      "expected": [
+        "nostril_R",
+        "nostril_L"
+      ],
+      "expectedNearest": "nostril_L",
+      "medianMMFromExpected": 58.8,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeBlink_R",
+      "verts": 106,
+      "maxMM": 6.4,
+      "landsOn": "eyelid_L_lower",
+      "medianMMFromLanded": 30.5,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 60.7,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookOut_R",
+      "verts": 173,
+      "maxMM": 2.41,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 25.7,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 62.9,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeWide_R",
+      "verts": 59,
+      "maxMM": 2.58,
+      "landsOn": "eyelid_L_lower",
+      "medianMMFromLanded": 22.9,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 62.9,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookIn_R",
+      "verts": 168,
+      "maxMM": 2.21,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 26.5,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 63.6,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookUp_R",
+      "verts": 140,
+      "maxMM": 2.56,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 29.0,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 64.4,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookDown_R",
+      "verts": 157,
+      "maxMM": 5.43,
+      "landsOn": "eyelid_L_lower",
+      "medianMMFromLanded": 30.5,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 64.8,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "brow_down_R",
+      "verts": 187,
+      "maxMM": 7.58,
+      "landsOn": "eyelid_L_upper",
+      "medianMMFromLanded": 10.5,
+      "expected": [
+        "eyebrow_R"
+      ],
+      "expectedNearest": "eyebrow_R",
+      "medianMMFromExpected": 64.9,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "brow_up_R",
+      "verts": 235,
+      "maxMM": 10.91,
+      "landsOn": "eyelid_L_upper",
+      "medianMMFromLanded": 10.7,
+      "expected": [
+        "eyebrow_R"
+      ],
+      "expectedNearest": "eyebrow_R",
+      "medianMMFromExpected": 65.4,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "blink_R",
+      "verts": 74,
+      "maxMM": 21.75,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 30.2,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 65.6,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_browInnerUp_R",
+      "verts": 1303,
+      "maxMM": 5.75,
+      "landsOn": "eyebrow_L",
+      "medianMMFromLanded": 34.4,
+      "expected": [
+        "eyebrow_R"
+      ],
+      "expectedNearest": "eyebrow_R",
+      "medianMMFromExpected": 67.6,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeBlink_L",
+      "verts": 105,
+      "maxMM": 7.19,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 25.0,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 67.7,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeWide_L",
+      "verts": 69,
+      "maxMM": 2.86,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 22.9,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 67.7,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "blink_L",
+      "verts": 117,
+      "maxMM": 25.39,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 27.2,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 69.1,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "brow_down_L",
+      "verts": 248,
+      "maxMM": 7.26,
+      "landsOn": "eyelid_R_upper",
+      "medianMMFromLanded": 8.9,
+      "expected": [
+        "eyebrow_L"
+      ],
+      "expectedNearest": "eyebrow_L",
+      "medianMMFromExpected": 69.3,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "brow_up_L",
+      "verts": 292,
+      "maxMM": 10.5,
+      "landsOn": "eyelid_R_upper",
+      "medianMMFromLanded": 11.5,
+      "expected": [
+        "eyebrow_L"
+      ],
+      "expectedNearest": "eyebrow_L",
+      "medianMMFromExpected": 69.8,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "squint_R",
+      "verts": 58,
+      "maxMM": 2.61,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 28.1,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 70.5,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookUp_L",
+      "verts": 147,
+      "maxMM": 2.83,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 27.9,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 71.3,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookDown_L",
+      "verts": 158,
+      "maxMM": 6.41,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 26.2,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 71.4,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookOut_L",
+      "verts": 154,
+      "maxMM": 2.41,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 29.3,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 71.5,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_noseSneer_L",
+      "verts": 2859,
+      "maxMM": 10.07,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 58.4,
+      "expected": [
+        "nostril_R",
+        "nostril_L"
+      ],
+      "expectedNearest": "nostril_R",
+      "medianMMFromExpected": 71.5,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeLookIn_L",
+      "verts": 152,
+      "maxMM": 2.24,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 29.3,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 71.7,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_browDown_R",
+      "verts": 1077,
+      "maxMM": 6.16,
+      "landsOn": "eyelid_L_upper",
+      "medianMMFromLanded": 23.9,
+      "expected": [
+        "eyebrow_R"
+      ],
+      "expectedNearest": "eyebrow_R",
+      "medianMMFromExpected": 72.8,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_browInnerUp_L",
+      "verts": 1413,
+      "maxMM": 5.99,
+      "landsOn": "eyebrow_R",
+      "medianMMFromLanded": 34.9,
+      "expected": [
+        "eyebrow_L"
+      ],
+      "expectedNearest": "eyebrow_L",
+      "medianMMFromExpected": 74.5,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "squint_L",
+      "verts": 53,
+      "maxMM": 2.57,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 30.9,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 77.5,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_browDown_L",
+      "verts": 1283,
+      "maxMM": 6.33,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 26.3,
+      "expected": [
+        "eyebrow_L"
+      ],
+      "expectedNearest": "eyebrow_L",
+      "medianMMFromExpected": 87.3,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeSquint_L",
+      "verts": 795,
+      "maxMM": 3.29,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 46.7,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 107.3,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_eyeSquint_R",
+      "verts": 836,
+      "maxMM": 3.63,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 50.6,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 107.7,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_browOuterUp_L",
+      "verts": 2388,
+      "maxMM": 8.32,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 39.8,
+      "expected": [
+        "eyebrow_L"
+      ],
+      "expectedNearest": "eyebrow_L",
+      "medianMMFromExpected": 111.5,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_browOuterUp_R",
+      "verts": 2353,
+      "maxMM": 8.54,
+      "landsOn": "eyelid_L_upper",
+      "medianMMFromLanded": 45.7,
+      "expected": [
+        "eyebrow_R"
+      ],
+      "expectedNearest": "eyebrow_R",
+      "medianMMFromExpected": 114.7,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_cheekSquint_R",
+      "verts": 4043,
+      "maxMM": 6.16,
+      "landsOn": "eyelid_L_upper",
+      "medianMMFromLanded": 62.3,
+      "expected": [
+        "eyelid_R_upper",
+        "eyelid_R_lower"
+      ],
+      "expectedNearest": "eyelid_R_lower",
+      "medianMMFromExpected": 121.9,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "facs_cheekSquint_L",
+      "verts": 3841,
+      "maxMM": 6.14,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 59.4,
+      "expected": [
+        "eyelid_L_upper",
+        "eyelid_L_lower"
+      ],
+      "expectedNearest": "eyelid_L_upper",
+      "medianMMFromExpected": 122.4,
+      "verdict": "MISPLACED"
+    },
+    {
+      "key": "cheek_puff_L",
+      "verts": 360,
+      "maxMM": 4.87,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 48.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "cheek_puff_R",
+      "verts": 450,
+      "maxMM": 4.87,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 37.0,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "cheek_suck_L",
+      "verts": 221,
+      "maxMM": 3.34,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 48.1,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "cheek_suck_R",
+      "verts": 272,
+      "maxMM": 3.34,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 32.0,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_cheekPuff_L",
+      "verts": 2114,
+      "maxMM": 13.77,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 74.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_cheekPuff_R",
+      "verts": 2222,
+      "maxMM": 13.95,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 59.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_cheekRaiser_L",
+      "verts": 2147,
+      "maxMM": 6.73,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 64.5,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_cheekRaiser_R",
+      "verts": 2264,
+      "maxMM": 6.74,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 62.9,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_jawForward",
+      "verts": 4208,
+      "maxMM": 10.97,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 91.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_jawLeft",
+      "verts": 3559,
+      "maxMM": 8.83,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 83.7,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_jawOpen",
+      "verts": 5332,
+      "maxMM": 41.6,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 89.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_jawRight",
+      "verts": 3762,
+      "maxMM": 8.83,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 85.8,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthClose",
+      "verts": 1021,
+      "maxMM": 41.15,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 59.0,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthDimple_L",
+      "verts": 1004,
+      "maxMM": 8.52,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 66.3,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthDimple_R",
+      "verts": 1206,
+      "maxMM": 8.69,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 52.1,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthFrown_L",
+      "verts": 1482,
+      "maxMM": 6.04,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 71.9,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthFrown_R",
+      "verts": 1598,
+      "maxMM": 6.01,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 57.9,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthFunnel",
+      "verts": 3272,
+      "maxMM": 11.6,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 76.1,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthLeft",
+      "verts": 3366,
+      "maxMM": 18.49,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 73.8,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthLowerDown_L",
+      "verts": 556,
+      "maxMM": 4.45,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 83.3,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthLowerDown_R",
+      "verts": 560,
+      "maxMM": 4.53,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 75.3,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthPress_L",
+      "verts": 1332,
+      "maxMM": 4.08,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 60.5,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthPress_R",
+      "verts": 1365,
+      "maxMM": 4.28,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 48.6,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthPucker",
+      "verts": 3284,
+      "maxMM": 11.11,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 76.1,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthRight",
+      "verts": 3484,
+      "maxMM": 18.53,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 74.6,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthRollLower",
+      "verts": 957,
+      "maxMM": 12.58,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 84.9,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthRollUpper",
+      "verts": 748,
+      "maxMM": 11.43,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 42.8,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthShrugLower",
+      "verts": 1337,
+      "maxMM": 11.17,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 86.8,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthShrugUpper",
+      "verts": 299,
+      "maxMM": 6.1,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 38.6,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthSmile_L",
+      "verts": 2711,
+      "maxMM": 15.3,
+      "landsOn": "eyelid_R_lower",
+      "medianMMFromLanded": 75.7,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthSmile_R",
+      "verts": 3042,
+      "maxMM": 15.34,
+      "landsOn": "eyelid_L_upper",
+      "medianMMFromLanded": 74.4,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthStretch_L",
+      "verts": 1287,
+      "maxMM": 9.93,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 72.7,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthStretch_R",
+      "verts": 1537,
+      "maxMM": 9.93,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 58.6,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthUpperUp_L",
+      "verts": 1357,
+      "maxMM": 8.73,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 57.7,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "facs_mouthUpperUp_R",
+      "verts": 1512,
+      "maxMM": 8.54,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 49.3,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_compress",
+      "verts": 339,
+      "maxMM": 2.25,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 43.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_corner_L_in",
+      "verts": 89,
+      "maxMM": 4.44,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 44.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_corner_L_up",
+      "verts": 92,
+      "maxMM": 5.56,
+      "landsOn": "nostril_R",
+      "medianMMFromLanded": 44.5,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_corner_R_in",
+      "verts": 119,
+      "maxMM": 4.3,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 36.6,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_corner_R_up",
+      "verts": 125,
+      "maxMM": 5.39,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 36.7,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_lower_curl",
+      "verts": 176,
+      "maxMM": 3.08,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 44.2,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_lower_depress",
+      "verts": 231,
+      "maxMM": 5.25,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 46.3,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_protrude",
+      "verts": 405,
+      "maxMM": 4.5,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 43.7,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_seal",
+      "verts": 397,
+      "maxMM": 3.75,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 43.7,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_upper_curl",
+      "verts": 131,
+      "maxMM": 2.53,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 37.0,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_upper_raise",
+      "verts": 153,
+      "maxMM": 4.27,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 37.0,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "mouth_funnel",
+      "verts": 381,
+      "maxMM": 5.3,
+      "landsOn": "nostril_L",
+      "medianMMFromLanded": 43.8,
+      "expected": null,
+      "verdict": "UNJUDGED"
+    },
+    {
+      "key": "lip_corner_L_wide",
+      "verts": 0,
+      "maxMM": 0.0,
+      "verdict": "MOVES_NOTHING",
+      "expected": null
+    },
+    {
+      "key": "lip_corner_R_wide",
+      "verts": 0,
+      "maxMM": 0.0,
+      "verdict": "MOVES_NOTHING",
+      "expected": null
+    }
+  ],
+  "note": "A key is ON_TARGET only if its moving tissue sits within 8 mm of the feature its NAME claims, measured against the owner's own drawn lines. UNJUDGED means there is no owner linework for that feature yet (the mouth) -- that is NOT_ATTEMPTED, never a pass."
+}

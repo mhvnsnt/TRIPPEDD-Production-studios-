@@ -1,0 +1,72 @@
+name: Production Rebuild and Recovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "What to restart"
+        required: true
+        type: choice
+        options:
+          - commercial
+          - story-runner
+          - autonomous
+          - all
+        default: all
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: production-rebuild-recovery
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Inspect retained artifacts and dispatch clean current-main runs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          TARGET: ${{ inputs.target }}
+        run: |
+          set -euo pipefail
+          sha=$(gh api "/repos/$REPO/git/ref/heads/main" --jq '.object.sha')
+          echo "RECOVERY_MAIN_SHA=$sha"
+          echo "RECOVERY_TARGET=$TARGET"
+          echo "POLICY=preserve prior artifacts; never delete salvage; restart only current-main work"
+
+          dispatch() {
+            local workflow="$1"
+            shift
+            runs=$(gh run list --repo "$REPO" --workflow "$workflow" --branch main --limit 20 --json databaseId,status,headSha)
+            active=$(jq --arg sha "$sha" '[.[] | select(.headSha == $sha and (.status == "queued" or .status == "in_progress" or .status == "waiting"))] | length' <<<"$runs")
+            if [ "$active" -gt 0 ]; then
+              echo "SKIP $workflow: current-main run already active"
+              return
+            fi
+            echo "DISPATCH $workflow on current main $sha"
+            gh workflow run "$workflow" --repo "$REPO" --ref main "$@"
+          }
+
+          if [ "$TARGET" = commercial ] || [ "$TARGET" = all ]; then
+            dispatch production-short-e2e-gate.yml
+          fi
+          if [ "$TARGET" = story-runner ] || [ "$TARGET" = all ]; then
+            dispatch ep01-story-runner.yml
+          fi
+          if [ "$TARGET" = autonomous ] || [ "$TARGET" = all ]; then
+            dispatch ep01-autonomous.yml
+          fi
+
+          {
+            echo "## Production Rebuild / Recovery"
+            echo "- Main SHA: $sha"
+            echo "- Target: $TARGET"
+            echo "- Previous artifacts are retained as salvage."
+            echo "- New work is always dispatched from current main."
+            echo "- Existing current-main runs are never duplicated."
+          } >> "$GITHUB_STEP_SUMMARY"

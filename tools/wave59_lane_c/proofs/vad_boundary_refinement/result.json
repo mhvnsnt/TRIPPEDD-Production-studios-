@@ -1,0 +1,171 @@
+{
+  "checks": [
+    {
+      "name": "dialogue.wav resumed with SHA-256 match",
+      "pass": true,
+      "measured": "sha=666cc1b94bd72127... audio=42.90s"
+    },
+    {
+      "name": "ground truth spans full audio (no orphan tail)",
+      "pass": true,
+      "measured": "audio=42.90s last_turn_end=42.50s"
+    },
+    {
+      "name": "VAD deterministic (two runs identical)",
+      "pass": true,
+      "measured": "14 intervals, 6.0s CPU"
+    },
+    {
+      "name": "VAD covers GT speech (coverage >= 0.95)",
+      "pass": false,
+      "measured": "coverage=0.7786 vad_speech=30.60s gt_speech=39.30s"
+    },
+    {
+      "name": "embedding shapes sane ((N,192))",
+      "pass": true,
+      "measured": "base=(160, 192) vad=(132, 192) windows=166"
+    },
+    {
+      "name": "embeddings finite",
+      "pass": true,
+      "measured": "no NaN/Inf"
+    },
+    {
+      "name": "cluster count within [2,4] (base auto)",
+      "pass": true,
+      "measured": "2 clusters"
+    },
+    {
+      "name": "clustering deterministic across runs (all 4 configs)",
+      "pass": true,
+      "measured": "all re-runs identical"
+    },
+    {
+      "name": "Hungarian cluster->speaker map exists (base auto)",
+      "pass": true,
+      "measured": "map={0: 'B', 1: 'C'}"
+    },
+    {
+      "name": "baseline replication: DER0 within 1e-3 of Wave-58 (0.4084)",
+      "pass": true,
+      "measured": "DER0=0.4084"
+    },
+    {
+      "name": "VAD DER0 <= base DER0 (boundary refinement helps or not)",
+      "pass": false,
+      "measured": "base=0.4084 vad=0.4707"
+    }
+  ],
+  "voices": [
+    "af_bella",
+    "af_heart",
+    "am_puck"
+  ],
+  "speakers": [
+    "A",
+    "B",
+    "C"
+  ],
+  "dialogue_s": 42.9,
+  "vad": {
+    "n_intervals": 14,
+    "speech_s": 30.6,
+    "gt_coverage": 0.7786,
+    "threshold": 0.5,
+    "snap_tol_s": 0.25,
+    "overlap_gate": 0.5
+  },
+  "windows": 166,
+  "speech_windows": {
+    "base": 160,
+    "vad": 132
+  },
+  "configs": {
+    "base_auto": {
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6879,
+      "speech_frames": 157,
+      "DER0": 0.4084,
+      "JER0": 0.5478,
+      "DER25": 0.3556,
+      "JER25": 0.517,
+      "comp0": {
+        "missed detection": 0.0,
+        "false alarm": 3.7,
+        "confusion": 12.35,
+        "total": 39.3
+      }
+    },
+    "base_k3": {
+      "clusters": 3,
+      "cluster_map": {
+        "0": "B",
+        "1": "A",
+        "2": "C"
+      },
+      "frame_purity": 1.0,
+      "speech_frames": 157,
+      "DER0": 0.0941,
+      "JER0": 0.0844,
+      "DER25": 0.0425,
+      "JER25": 0.0395,
+      "comp0": {
+        "missed detection": 0.0,
+        "false alarm": 3.7,
+        "confusion": 0.0,
+        "total": 39.3
+      }
+    },
+    "vad_auto": {
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6833,
+      "speech_frames": 120,
+      "DER0": 0.4707,
+      "JER0": 0.5846,
+      "DER25": 0.4386,
+      "JER25": 0.5633,
+      "comp0": {
+        "missed detection": 8.7,
+        "false alarm": 0.0,
+        "confusion": 9.8,
+        "total": 39.3
+      }
+    },
+    "vad_k3": {
+      "clusters": 3,
+      "cluster_map": {
+        "0": "B",
+        "1": "A",
+        "2": "C"
+      },
+      "frame_purity": 1.0,
+      "speech_frames": 120,
+      "DER0": 0.2214,
+      "JER0": 0.22,
+      "DER25": 0.1741,
+      "JER25": 0.1724,
+      "comp0": {
+        "missed detection": 8.7,
+        "false alarm": 0.0,
+        "confusion": 0.0,
+        "total": 39.3
+      }
+    }
+  },
+  "timings_s": {
+    "ecapa_load": 6.5,
+    "vad": 6.0,
+    "embed": 48.8,
+    "cluster": 3.346,
+    "total": 70.4
+  },
+  "pass_rate": "9/11"
+}

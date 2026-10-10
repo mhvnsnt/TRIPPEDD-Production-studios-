@@ -1,0 +1,706 @@
+[File]
+    size = 302956
+    [ftyp: File Type Box]
+        position = 0
+        size = 32
+        major_brand = isom : ISO Base Media file format version 1
+        minor_version = 512
+        compatible_brands
+            brand[0] = isom : ISO Base Media file format version 1
+            brand[1] = iso2 : ISO Base Media file format version 2
+            brand[2] = avc1 : Advanced Video Coding extensions
+            brand[3] = mp41 : MP4 version 1
+    [moov: Movie Box]
+        position = 32
+        size = 2297
+        [mvhd: Movie Header Box]
+            position = 40
+            size = 108
+            version = 0
+            flags = 0x000000
+            creation_time = UTC 2026/10/07, 21:56:14
+            modification_time = UTC 2026/10/07, 21:56:14
+            timescale = 600
+            duration = 1800 (00:00:03.000)
+            rate = 1.000000
+            volume = 1.000000
+            reserved = 0x0000
+            reserved = 0x00000000
+            reserved = 0x00000000
+            transformation matrix
+                | a, b, u |   | 1.000000, 0.000000, 0.000000 |
+                | c, d, v | = | 0.000000, 1.000000, 0.000000 |
+                | x, y, w |   | 0.000000, 0.000000, 1.000000 |
+            pre_defined = 0x00000000
+            pre_defined = 0x00000000
+            pre_defined = 0x00000000
+            pre_defined = 0x00000000
+            pre_defined = 0x00000000
+            pre_defined = 0x00000000
+            next_track_ID = 3
+        [iods: Object Descriptor Box]
+            position = 148
+            size = 42
+            version = 0
+            flags = 0x000000
+            [tag = 0x10: MP4_IOD]
+                expandableClassSize = 25
+                ObjectDescriptorID = 1
+                URL_Flag = 0
+                includeInlineProfileLevelFlag = 0
+                reserved = 0xf
+                ODProfileLevelIndication = 0xff
+                sceneProfileLevelIndication = 0xff
+                audioProfileLevelIndication = 0x29
+                visualProfileLevelIndication = 0x7f
+                graphicsProfileLevelIndication = 0xff
+                [tag = 0x0e: ES_ID_Inc]
+                    expandableClassSize = 4
+                    Track_ID = 1
+                [tag = 0x0e: ES_ID_Inc]
+                    expandableClassSize = 4
+                    Track_ID = 2
+        [trak: Track Box]
+            position = 190
+            size = 908
+            [tkhd: Track Header Box]
+                position = 198
+                size = 92
+                version = 0
+                flags = 0x000003
+                    Track enabled
+                    Track in movie
+                creation_time = UTC 2026/10/07, 21:56:14
+                modification_time = UTC 2026/10/07, 21:56:14
+                track_ID = 1
+                reserved = 0x00000000
+                duration = 1800 (00:00:03.000)
+                reserved = 0x00000000
+                reserved = 0x00000000
+                layer = 0
+                alternate_group = 0
+                volume = 0.000000
+                reserved = 0x0000
+                transformation matrix
+                    | a, b, u |   | 1.000000, 0.000000, 0.000000 |
+                    | c, d, v | = | 0.000000, 1.000000, 0.000000 |
+                    | x, y, w |   | 0.000000, 0.000000, 1.000000 |
+                width = 320.000000
+                height = 240.000000
+            [edts: Edit Box]
+                position = 290
+                size = 36
+                [elst: Edit List Box]
+                    position = 298
+                    size = 28
+                    version = 0
+                    flags = 0x000000
+                    entry_count = 1
+                    entry[0]
+                        segment_duration = 1800
+                        media_time = 0
+                        media_rate = 1.000000
+            [mdia: Media Box]
+                position = 326
+                size = 772
+                [mdhd: Media Header Box]
+                    position = 334
+                    size = 32
+                    version = 0
+                    flags = 0x000000
+                    creation_time = UTC 2026/10/07, 21:56:14
+                    modification_time = UTC 2026/10/07, 21:56:14
+                    timescale = 12288
+                    duration = 36864 (00:00:03.000)
+                    language = und
+                    pre_defined = 0x0000
+                [hdlr: Handler Reference Box]
+                    position = 366
+                    size = 45
+                    version = 0
+                    flags = 0x000000
+                    pre_defined = 0x00000000
+                    handler_type = vide
+                    reserved = 0x00000000
+                    reserved = 0x00000000
+                    reserved = 0x00000000
+                    name = VideoHandler
+                [minf: Media Information Box]
+                    position = 411
+                    size = 687
+                    [vmhd: Video Media Header Box]
+                        position = 419
+                        size = 20
+                        version = 0
+                        flags = 0x000001
+                        graphicsmode = 0
+                        opcolor
+                            { R, G, B } = { 0, 0, 0 }
+                    [dinf: Data Information Box]
+                        position = 439
+                        size = 36
+                        [dref: Data Reference Box]
+                            position = 447
+                            size = 28
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 1
+                            [url : Data Entry Url Box]
+                                position = 463
+                                size = 12
+                                version = 0
+                                flags = 0x000001
+                                location = in the same file
+                    [stbl: Sample Table Box]
+                        position = 475
+                        size = 623
+                        [stsd: Sample Description Box]
+                            position = 483
+                            size = 183
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 1
+                            [avc1: Visual Description]
+                                position = 499
+                                size = 167
+                                reserved = 0x000000000000
+                                data_reference_index = 1
+                                pre_defined = 0x0000
+                                reserved = 0x0000
+                                pre_defined = 0x00000000
+                                pre_defined = 0x00000000
+                                pre_defined = 0x00000000
+                                width = 320
+                                height = 240
+                                horizresolution = 72.000000
+                                vertresolution = 72.000000
+                                reserved = 0x00000000
+                                frame_count = 1
+                                compressorname_length = 21
+                                compressorname = Lavc62.28.102 libx264
+                                depth = 0x0018 (colour with no alpha)
+                                pre_defined = 0xffffffff
+                                [avcC: AVC Configuration Box]
+                                    position = 585
+                                    size = 45
+                                    configurationVersion = 1
+                                    AVCProfileIndication = 66
+                                    profile_compatibility = 0xc0
+                                    AVCLevelIndication = 13
+                                    reserved = 0x3f
+                                    lengthSizeMinusOne = 3
+                                    reserved = 0x07
+                                    numOfSequenceParameterSets = 1
+                                    numOfPictureParameterSets = 1
+                                [btrt: MPEG-4 Bit Rate Box]
+                                    position = 630
+                                    size = 20
+                                    bufferSizeDB = 8658
+                                    maxBitrate = 810080
+                                    avgBitrate = 731416
+                                [pasp: Pixel Aspect Ratio Box]
+                                    position = 650
+                                    size = 16
+                                    hSpacing = 1
+                                    vSpacing = 1
+                        [stts: Decoding Time to Sample Box]
+                            position = 666
+                            size = 24
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 1
+                            entry[0]
+                                sample_count = 72
+                                sample_delta = 512
+                        [stss: Sync Sample Box]
+                            position = 690
+                            size = 20
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 1
+                            sample_number[0] = 1
+                        [stsc: Sample To Chunk Box]
+                            position = 710
+                            size = 40
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 2
+                            entry[0]
+                                first_chunk = 1
+                                samples_per_chunk = 13
+                                sample_description_index = 1
+                            entry[1]
+                                first_chunk = 6
+                                samples_per_chunk = 7
+                                sample_description_index = 1
+                        [stsz: Sample Size Box]
+                            position = 750
+                            size = 308
+                            version = 0
+                            flags = 0x000000
+                            sample_size = 0 (variable)
+                            sample_count = 72
+                            entry_size[0] = 8658
+                            entry_size[1] = 3534
+                            entry_size[2] = 2982
+                            entry_size[3] = 4223
+                            entry_size[4] = 4203
+                            entry_size[5] = 3331
+                            entry_size[6] = 4105
+                            entry_size[7] = 3807
+                            entry_size[8] = 3165
+                            entry_size[9] = 3811
+                            entry_size[10] = 4083
+                            entry_size[11] = 3147
+                            entry_size[12] = 4024
+                            entry_size[13] = 3862
+                            entry_size[14] = 2911
+                            entry_size[15] = 3980
+                            entry_size[16] = 3712
+                            entry_size[17] = 3348
+                            entry_size[18] = 4000
+                            entry_size[19] = 4022
+                            entry_size[20] = 3365
+                            entry_size[21] = 3775
+                            entry_size[22] = 4118
+                            entry_size[23] = 3055
+                            entry_size[24] = 4094
+                            entry_size[25] = 3945
+                            entry_size[26] = 2973
+                            entry_size[27] = 3917
+                            entry_size[28] = 4016
+                            entry_size[29] = 2771
+                            entry_size[30] = 3922
+                            entry_size[31] = 3686
+                            entry_size[32] = 3115
+                            entry_size[33] = 3989
+                            entry_size[34] = 3896
+                            entry_size[35] = 2950
+                            entry_size[36] = 3984
+                            entry_size[37] = 4082
+                            entry_size[38] = 3056
+                            entry_size[39] = 3888
+                            entry_size[40] = 3933
+                            entry_size[41] = 3271
+                            entry_size[42] = 3627
+                            entry_size[43] = 3747
+                            entry_size[44] = 3021
+                            entry_size[45] = 3876
+                            entry_size[46] = 4175
+                            entry_size[47] = 3287
+                            entry_size[48] = 4132
+                            entry_size[49] = 4125
+                            entry_size[50] = 3231
+                            entry_size[51] = 4310
+                            entry_size[52] = 4164
+                            entry_size[53] = 3208
+                            entry_size[54] = 4040
+                            entry_size[55] = 3965
+                            entry_size[56] = 3288
+                            entry_size[57] = 4052
+                            entry_size[58] = 4400
+                            entry_size[59] = 3183
+                            entry_size[60] = 4027
+                            entry_size[61] = 4125
+                            entry_size[62] = 3121
+                            entry_size[63] = 4101
+                            entry_size[64] = 4177
+                            entry_size[65] = 3407
+                            entry_size[66] = 4531
+                            entry_size[67] = 4383
+                            entry_size[68] = 3329
+                            entry_size[69] = 4231
+                            entry_size[70] = 4635
+                            entry_size[71] = 3674
+                        [stco: Chunk Offset Box]
+                            position = 1058
+                            size = 40
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 6
+                            chunk_offset[0] = 2345
+                            chunk_offset[1] = 64397
+                            chunk_offset[2] = 116988
+                            chunk_offset[3] = 167754
+                            chunk_offset[4] = 220801
+                            chunk_offset[5] = 270652
+        [trak: Track Box]
+            position = 1098
+            size = 1105
+            [tkhd: Track Header Box]
+                position = 1106
+                size = 92
+                version = 0
+                flags = 0x000003
+                    Track enabled
+                    Track in movie
+                creation_time = UTC 2026/10/07, 21:56:14
+                modification_time = UTC 2026/10/07, 21:56:14
+                track_ID = 2
+                reserved = 0x00000000
+                duration = 1800 (00:00:03.000)
+                reserved = 0x00000000
+                reserved = 0x00000000
+                layer = 0
+                alternate_group = 0
+                volume = 1.000000
+                reserved = 0x0000
+                transformation matrix
+                    | a, b, u |   | 1.000000, 0.000000, 0.000000 |
+                    | c, d, v | = | 0.000000, 1.000000, 0.000000 |
+                    | x, y, w |   | 0.000000, 0.000000, 1.000000 |
+                width = 0.000000
+                height = 0.000000
+            [edts: Edit Box]
+                position = 1198
+                size = 36
+                [elst: Edit List Box]
+                    position = 1206
+                    size = 28
+                    version = 0
+                    flags = 0x000000
+                    entry_count = 1
+                    entry[0]
+                        segment_duration = 1800
+                        media_time = 1024
+                        media_rate = 1.000000
+            [mdia: Media Box]
+                position = 1234
+                size = 969
+                [mdhd: Media Header Box]
+                    position = 1242
+                    size = 32
+                    version = 0
+                    flags = 0x000000
+                    creation_time = UTC 2026/10/07, 21:56:14
+                    modification_time = UTC 2026/10/07, 21:56:14
+                    timescale = 44100
+                    duration = 133324 (00:00:03.023)
+                    language = und
+                    pre_defined = 0x0000
+                [hdlr: Handler Reference Box]
+                    position = 1274
+                    size = 45
+                    version = 0
+                    flags = 0x000000
+                    pre_defined = 0x00000000
+                    handler_type = soun
+                    reserved = 0x00000000
+                    reserved = 0x00000000
+                    reserved = 0x00000000
+                    name = SoundHandler
+                [minf: Media Information Box]
+                    position = 1319
+                    size = 884
+                    [smhd: Sound Media Header Box]
+                        position = 1327
+                        size = 16
+                        version = 0
+                        flags = 0x000000
+                        balance = 0.000000
+                        reserved = 0x0000
+                    [dinf: Data Information Box]
+                        position = 1343
+                        size = 36
+                        [dref: Data Reference Box]
+                            position = 1351
+                            size = 28
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 1
+                            [url : Data Entry Url Box]
+                                position = 1367
+                                size = 12
+                                version = 0
+                                flags = 0x000001
+                                location = in the same file
+                    [stbl: Sample Table Box]
+                        position = 1379
+                        size = 824
+                        [stsd: Sample Description Box]
+                            position = 1387
+                            size = 106
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 1
+                            [mp4a: Audio Description]
+                                position = 1403
+                                size = 90
+                                reserved = 0x000000000000
+                                data_reference_index = 1
+                                reserved = 0x0000
+                                reserved = 0x0000
+                                reserved = 0x00000000
+                                channelcount = 2
+                                samplesize = 16
+                                pre_defined = 0
+                                reserved = 0
+                                samplerate = 44100.000000
+                                [esds: Elemental Stream Descriptor Box]
+                                    position = 1439
+                                    size = 54
+                                    version = 0
+                                    flags = 0x000000
+                                    [tag = 0x03: ES_Descriptor]
+                                        expandableClassSize = 37
+                                        ES_ID = 0
+                                        streamDependenceFlag = 0
+                                        URL_Flag = 0
+                                        OCRstreamFlag = 0
+                                        streamPriority = 0
+                                        [tag = 0x04: DecoderConfigDescriptor]
+                                            expandableClassSize = 23
+                                            objectTypeIndication = 0x40 (Audio ISO/IEC 14496-3)
+                                            streamType = 0x05 (AudioStream)
+                                            upStream = 0
+                                            reserved = 1
+                                            bufferSizeDB = 272
+                                            maxBitrate = 73368
+                                            avgBitrate = 0 (variable bitrate)
+                                            [tag = 0x05: DecoderSpecificInfo]
+                                                expandableClassSize = 5
+                                                [AudioSpecificConfig]
+                                                    audioObjectType = 2 (AAC LC (Low Complexity))
+                                                    samplingFrequencyIndex = 4
+                                                    channelConfiguration = 1
+                                                    [GASpecificConfig]
+                                                        frameLengthFlag = 0
+                                                        dependsOnCoreCoder = 0
+                                                        extensionFlag = 0
+                                        [tag = 0x06: SLConfigDescriptor]
+                                            expandableClassSize = 1
+                                            predefined = 2
+                        [stts: Decoding Time to Sample Box]
+                            position = 1493
+                            size = 32
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 2
+                            entry[0]
+                                sample_count = 130
+                                sample_delta = 1024
+                            entry[1]
+                                sample_count = 1
+                                sample_delta = 204
+                        [stsc: Sample To Chunk Box]
+                            position = 1525
+                            size = 40
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 2
+                            entry[0]
+                                first_chunk = 1
+                                samples_per_chunk = 22
+                                sample_description_index = 1
+                            entry[1]
+                                first_chunk = 6
+                                samples_per_chunk = 21
+                                sample_description_index = 1
+                        [stsz: Sample Size Box]
+                            position = 1565
+                            size = 544
+                            version = 0
+                            flags = 0x000000
+                            sample_size = 0 (variable)
+                            sample_count = 131
+                            entry_size[0] = 258
+                            entry_size[1] = 258
+                            entry_size[2] = 147
+                            entry_size[3] = 186
+                            entry_size[4] = 217
+                            entry_size[5] = 187
+                            entry_size[6] = 178
+                            entry_size[7] = 202
+                            entry_size[8] = 206
+                            entry_size[9] = 264
+                            entry_size[10] = 205
+                            entry_size[11] = 218
+                            entry_size[12] = 226
+                            entry_size[13] = 164
+                            entry_size[14] = 188
+                            entry_size[15] = 215
+                            entry_size[16] = 187
+                            entry_size[17] = 223
+                            entry_size[18] = 219
+                            entry_size[19] = 186
+                            entry_size[20] = 172
+                            entry_size[21] = 227
+                            entry_size[22] = 218
+                            entry_size[23] = 209
+                            entry_size[24] = 170
+                            entry_size[25] = 212
+                            entry_size[26] = 194
+                            entry_size[27] = 185
+                            entry_size[28] = 195
+                            entry_size[29] = 220
+                            entry_size[30] = 173
+                            entry_size[31] = 211
+                            entry_size[32] = 245
+                            entry_size[33] = 172
+                            entry_size[34] = 216
+                            entry_size[35] = 198
+                            entry_size[36] = 224
+                            entry_size[37] = 160
+                            entry_size[38] = 214
+                            entry_size[39] = 166
+                            entry_size[40] = 180
+                            entry_size[41] = 229
+                            entry_size[42] = 231
+                            entry_size[43] = 224
+                            entry_size[44] = 192
+                            entry_size[45] = 200
+                            entry_size[46] = 171
+                            entry_size[47] = 231
+                            entry_size[48] = 174
+                            entry_size[49] = 212
+                            entry_size[50] = 183
+                            entry_size[51] = 214
+                            entry_size[52] = 182
+                            entry_size[53] = 223
+                            entry_size[54] = 201
+                            entry_size[55] = 203
+                            entry_size[56] = 236
+                            entry_size[57] = 197
+                            entry_size[58] = 187
+                            entry_size[59] = 158
+                            entry_size[60] = 180
+                            entry_size[61] = 227
+                            entry_size[62] = 191
+                            entry_size[63] = 186
+                            entry_size[64] = 248
+                            entry_size[65] = 208
+                            entry_size[66] = 205
+                            entry_size[67] = 184
+                            entry_size[68] = 184
+                            entry_size[69] = 238
+                            entry_size[70] = 177
+                            entry_size[71] = 186
+                            entry_size[72] = 221
+                            entry_size[73] = 197
+                            entry_size[74] = 178
+                            entry_size[75] = 198
+                            entry_size[76] = 208
+                            entry_size[77] = 215
+                            entry_size[78] = 189
+                            entry_size[79] = 211
+                            entry_size[80] = 212
+                            entry_size[81] = 209
+                            entry_size[82] = 180
+                            entry_size[83] = 179
+                            entry_size[84] = 197
+                            entry_size[85] = 252
+                            entry_size[86] = 194
+                            entry_size[87] = 195
+                            entry_size[88] = 184
+                            entry_size[89] = 201
+                            entry_size[90] = 192
+                            entry_size[91] = 191
+                            entry_size[92] = 225
+                            entry_size[93] = 200
+                            entry_size[94] = 229
+                            entry_size[95] = 205
+                            entry_size[96] = 175
+                            entry_size[97] = 232
+                            entry_size[98] = 197
+                            entry_size[99] = 181
+                            entry_size[100] = 185
+                            entry_size[101] = 181
+                            entry_size[102] = 231
+                            entry_size[103] = 213
+                            entry_size[104] = 196
+                            entry_size[105] = 184
+                            entry_size[106] = 193
+                            entry_size[107] = 227
+                            entry_size[108] = 193
+                            entry_size[109] = 209
+                            entry_size[110] = 181
+                            entry_size[111] = 224
+                            entry_size[112] = 175
+                            entry_size[113] = 202
+                            entry_size[114] = 195
+                            entry_size[115] = 193
+                            entry_size[116] = 239
+                            entry_size[117] = 208
+                            entry_size[118] = 202
+                            entry_size[119] = 178
+                            entry_size[120] = 201
+                            entry_size[121] = 209
+                            entry_size[122] = 206
+                            entry_size[123] = 190
+                            entry_size[124] = 224
+                            entry_size[125] = 205
+                            entry_size[126] = 182
+                            entry_size[127] = 196
+                            entry_size[128] = 197
+                            entry_size[129] = 272
+                            entry_size[130] = 5
+                        [stco: Chunk Offset Box]
+                            position = 2109
+                            size = 40
+                            version = 0
+                            flags = 0x000000
+                            entry_count = 6
+                            chunk_offset[0] = 55418
+                            chunk_offset[1] = 59951
+                            chunk_offset[2] = 112584
+                            chunk_offset[3] = 163345
+                            chunk_offset[4] = 216377
+                            chunk_offset[5] = 298842
+                        [sgpd: Sample Group Description Box]
+                            position = 2149
+                            size = 26
+                            version = 1
+                            flags = 0x000000
+                            grouping_type = roll
+                            default_length = 2 (constant)
+                            entry_count = 1
+                            roll_distance[0] = -1
+                        [sbgp: Sample to Group Box]
+                            position = 2175
+                            size = 28
+                            version = 0
+                            flags = 0x000000
+                            grouping_type = roll
+                            entry_count = 1
+                            entry[0]
+                                sample_count = 131
+                                group_description_index = 1
+        [udta: User Data Box]
+            position = 2203
+            size = 126
+            [meta: Meta Box]
+                position = 2211
+                size = 118
+                version = 0
+                flags = 0x000000
+                [hdlr: Handler Reference Box]
+                    position = 2223
+                    size = 61
+                    version = 0
+                    flags = 0x000000
+                    pre_defined = 0x00000000
+                    handler_type = mdir
+                    reserved = 0x00000000
+                    reserved = 0x00000000
+                    reserved = 0x00000000
+                    name = L-SMASH iTunes Media Handler
+                [ilst: Metadata Item List Box]
+                    position = 2284
+                    size = 45
+                    [©too: Metadata Item Box (Encoding Tool)]
+                        position = 2292
+                        size = 37
+                        [data: Data Box]
+                            position = 2300
+                            size = 29
+                            reserved = 0
+                            type_set_identifier = 0 (basic type set)
+                            type_code = 1 (UTF-8)
+                            the_locale = 0
+                            value = Lavf62.12.102
+    [mdat: Media Data Box]
+        position = 2329
+        size = 300597
+    [free: Free Space Box]
+        position = 302926
+        size = 30

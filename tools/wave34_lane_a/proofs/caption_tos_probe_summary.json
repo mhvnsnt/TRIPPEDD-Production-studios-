@@ -1,0 +1,100 @@
+{
+  "tool": "caption_tos_probe.py",
+  "wave": "34 Lane A",
+  "ran_at_utc": "2026-10-08T06:17:41Z",
+  "results": {
+    "vitac": {
+      "url": "https://www.vitac.com/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_vitac.html",
+      "bytes": 212767,
+      "keyword_hits": {}
+    },
+    "ai-media": {
+      "url": "https://www.ai-media.tv/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_ai-media.html",
+      "bytes": 438607,
+      "keyword_hits": {}
+    },
+    "ooona": {
+      "url": "https://www.ooona.net/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_ooona.html",
+      "bytes": 798709,
+      "keyword_hits": {
+        "free trial": 1
+      }
+    },
+    "eztitles": {
+      "url": "https://www.eztitles.com/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_eztitles.html",
+      "bytes": 221309,
+      "keyword_hits": {
+        "free trial": 6,
+        "pricing": 10,
+        "\\$\\s?\\d+": 24
+      }
+    },
+    "verbit": {
+      "url": "https://verbit.ai/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_verbit.html",
+      "bytes": 240850,
+      "keyword_hits": {}
+    },
+    "cielo24": {
+      "url": "https://www.cielo24.com/plans",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_cielo24.html",
+      "bytes": 114,
+      "keyword_hits": {}
+    },
+    "scribie": {
+      "url": "https://scribie.com/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_scribie.html",
+      "bytes": 188480,
+      "keyword_hits": {
+        "pricing": 7,
+        "\\$\\s?\\d+": 11
+      }
+    },
+    "getmunch": {
+      "url": "https://www.getmunch.com/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_getmunch.html",
+      "bytes": 650749,
+      "keyword_hits": {
+        "free trial": 3,
+        "pricing": 14,
+        "\\$\\s?\\d+": 6
+      }
+    },
+    "symbl": {
+      "url": "https://symbl.ai/",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 500: Internal Server Error",
+      "note": "Page could not be fetched; catalog audit verdicts rest on web-search evidence instead."
+    },
+    "3playmedia": {
+      "url": "https://www.3playmedia.com/",
+      "ok": true,
+      "http_status": 200,
+      "artifact": "proofs/tos_3playmedia.html",
+      "bytes": 188409,
+      "keyword_hits": {
+        "pricing": 6
+      }
+    }
+  }
+}

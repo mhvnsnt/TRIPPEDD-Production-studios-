@@ -1,0 +1,255 @@
+{
+  "61": {
+    "row": 61,
+    "name": "KITScenarist",
+    "claimed": "GPL-3.0",
+    "kind": "github",
+    "ref": "dimkanovikov/KITScenarist",
+    "api": {
+      "full_name": "dimkanovikov/KITScenarist",
+      "archived": true,
+      "pushed_at": "2023-08-01T04:02:43Z",
+      "stargazers_count": 350,
+      "default_branch": "develop",
+      "owner": "dimkanovikov",
+      "spdx_id": "GPL-3.0",
+      "license_name": "GNU General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 35115
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)",
+    "notes": "archived=True on dimkanovikov/KITScenarist (pushed 2023-08-01) \u2014 upstream archived; raw LICENSE = GPL v3 29 June 2007 text (35115 bytes), API spdx GPL-3.0. No relicense; quarantine unchanged."
+  },
+  "123": {
+    "row": 123,
+    "name": "Dn-FamiTracker",
+    "claimed": "GPL-2.0-or-later",
+    "kind": "github",
+    "ref": "AlbenBustamante/Dn-FamiTracker",
+    "api": {
+      "full_name": "AlbenBustamante/Dn-FamiTracker",
+      "archived": false,
+      "pushed_at": "2022-07-16T11:45:44Z",
+      "stargazers_count": 0,
+      "default_branch": "master",
+      "owner": "AlbenBustamante",
+      "spdx_id": "NOASSERTION",
+      "license_name": "Other"
+    },
+    "spdx_verdict": "API-NOASSERTION",
+    "license_file": {
+      "path": "LICENSE.txt",
+      "branch": "master",
+      "bytes": 18387
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "168": {
+    "row": 168,
+    "name": "ChapterTool",
+    "claimed": "GPL-3.0",
+    "kind": "github",
+    "ref": "tautcony/ChapterTool",
+    "api": {
+      "full_name": "tautcony/ChapterTool",
+      "archived": false,
+      "pushed_at": "2026-10-08T02:37:21Z",
+      "stargazers_count": 113,
+      "default_branch": "master",
+      "owner": "tautcony",
+      "spdx_id": "GPL-3.0",
+      "license_name": "GNU General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 32472
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "199": {
+    "row": 199,
+    "name": "mml2vgm",
+    "claimed": "GPL-3.0",
+    "kind": "github",
+    "ref": "rjungemann/mml2vgm",
+    "api": {
+      "full_name": "rjungemann/mml2vgm",
+      "archived": false,
+      "pushed_at": "2026-06-14T04:16:15Z",
+      "stargazers_count": 0,
+      "default_branch": "main",
+      "owner": "rjungemann",
+      "spdx_id": "GPL-3.0",
+      "license_name": "GNU General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE.txt",
+      "branch": "master",
+      "bytes": 35148
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "200": {
+    "row": 200,
+    "name": "TinyVGM",
+    "claimed": "AGPL-3.0",
+    "kind": "github",
+    "ref": "SudoMaker/TinyVGM",
+    "api": {
+      "full_name": "SudoMaker/TinyVGM",
+      "archived": false,
+      "pushed_at": "2023-06-25T04:06:27Z",
+      "stargazers_count": 27,
+      "default_branch": "master",
+      "owner": "SudoMaker",
+      "spdx_id": "AGPL-3.0",
+      "license_name": "GNU Affero General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 34523
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "208": {
+    "row": 208,
+    "name": "unpaper",
+    "claimed": "GPL-2.0-only",
+    "kind": "github",
+    "ref": "unpaper/unpaper",
+    "api": {
+      "full_name": "unpaper/unpaper",
+      "archived": false,
+      "pushed_at": "2024-07-11T20:44:57Z",
+      "stargazers_count": 1206,
+      "default_branch": "main",
+      "owner": "unpaper",
+      "spdx_id": null,
+      "license_name": null
+    },
+    "spdx_verdict": "API-NOASSERTION",
+    "license_file": {
+      "path": "README.md",
+      "branch": "master",
+      "bytes": 3263
+    },
+    "text_grant": false,
+    "readme_fallback": true,
+    "mechanical_verdict": "CONFIRMED (manual-review: README-hosted SPDX grant)",
+    "manual_review": "CONFIRMED: README.md header comment 'SPDX-License-Identifier: GPL-2.0-only' + body 'The entire unpaper project is licensed under GNU GPL v2. Some of the individual files are licensed under the MIT or Apache 2.0 licenses. Each file contains an SPDX license header specifying its license. The text of all three licenses is available under LICENSES.' \u2014 README-hosted grant (no root license file by design, REUSE per-file headers). GitHub API spdx None = detection gap. GPL-2.0-only stands; quarantine unchanged."
+  },
+  "211": {
+    "row": 211,
+    "name": "Internet Archive BookReader",
+    "claimed": "AGPL-3.0",
+    "kind": "github",
+    "ref": "internetarchive/bookreader",
+    "api": {
+      "full_name": "internetarchive/bookreader",
+      "archived": false,
+      "pushed_at": "2026-10-07T20:28:01Z",
+      "stargazers_count": 1180,
+      "default_branch": "master",
+      "owner": "internetarchive",
+      "spdx_id": "AGPL-3.0",
+      "license_name": "GNU Affero General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 34520
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "212": {
+    "row": 212,
+    "name": "OpenSlide",
+    "claimed": "LGPL-2.1",
+    "kind": "github",
+    "ref": "openslide/openslide",
+    "api": {
+      "full_name": "openslide/openslide",
+      "archived": false,
+      "pushed_at": "2026-10-04T18:47:35Z",
+      "stargazers_count": 519,
+      "default_branch": "main",
+      "owner": "openslide",
+      "spdx_id": "LGPL-2.1",
+      "license_name": "GNU Lesser General Public License v2.1"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "COPYING.LESSER",
+      "branch": "master",
+      "bytes": 26419
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "213": {
+    "row": 213,
+    "name": "pedalboard",
+    "claimed": "GPL-3.0",
+    "kind": "github",
+    "ref": "spotify/pedalboard",
+    "api": {
+      "full_name": "spotify/pedalboard",
+      "archived": false,
+      "pushed_at": "2026-10-07T19:51:01Z",
+      "stargazers_count": 6340,
+      "default_branch": "master",
+      "owner": "spotify",
+      "spdx_id": "GPL-3.0",
+      "license_name": "GNU General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 35149
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  },
+  "214": {
+    "row": 214,
+    "name": "matchering",
+    "claimed": "GPL-3.0",
+    "kind": "github",
+    "ref": "sergree/matchering",
+    "api": {
+      "full_name": "sergree/matchering",
+      "archived": false,
+      "pushed_at": "2026-10-07T14:04:36Z",
+      "stargazers_count": 2654,
+      "default_branch": "master",
+      "owner": "sergree",
+      "spdx_id": "GPL-3.0",
+      "license_name": "GNU General Public License v3.0"
+    },
+    "spdx_verdict": "MATCH",
+    "license_file": {
+      "path": "LICENSE",
+      "branch": "master",
+      "bytes": 35149
+    },
+    "text_grant": true,
+    "mechanical_verdict": "CONFIRMED (license text matches)"
+  }
+}

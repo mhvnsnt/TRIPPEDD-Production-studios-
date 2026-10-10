@@ -1,0 +1,16 @@
+{
+  "tool": "pull_plate.py (Wave 10 Lane A)",
+  "title": "Untitled SD clip (StrangerFestival 2009 remix)",
+  "source": "Open Beelden (Netherlands Institute for Sound and Vision)",
+  "source_url": "https://www.openbeelden.nl/files/19/20004.19991.!.mp4",
+  "license": "CC BY-SA 3.0 NL (per-item license on openbeelden.nl; commercial use allowed with attribution + share-alike)",
+  "license_proof": "https://openbeelden.nl/api.en",
+  "file": "20004.19991.!.mp4",
+  "sha256": "420167fa8babc6f78d9ffe3282309b169361f00162508f34b0150f8d7086895a",
+  "bytes": 11485241,
+  "duration_s": 81.16,
+  "width": 320,
+  "height": 240,
+  "codec": "h264",
+  "fps": "25/1"
+}

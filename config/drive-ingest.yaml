@@ -1,0 +1,60 @@
+schema: tripped.drive-ingest/v1
+purpose: Authenticated, resumable Google Drive transport for production assets.
+
+primary:
+  id: rclone
+  upstream: https://github.com/rclone/rclone
+  protocol: google-drive
+  modes: [oauth2, service_account]
+  capabilities: [list, metadata, download, upload, resume, checksum, retry, rate_limit]
+  install: "rclone"
+  config_env:
+    - RCLONE_CONFIG
+    - RCLONE_DRIVE_CLIENT_ID
+    - RCLONE_DRIVE_CLIENT_SECRET
+    - RCLONE_DRIVE_SCOPE
+    - RCLONE_DRIVE_SERVICE_ACCOUNT_FILE
+
+secondary:
+  id: google-drive-api
+  upstream: https://developers.google.com/workspace/drive/api/guides/about-sdk
+  protocol: google-drive-api-v3
+  capabilities: [metadata, download, upload]
+  auth: oauth2
+
+routing:
+  first_attempt: primary
+  on_failure: secondary
+  on_auth_failure: request_operator_authorization
+  on_transport_failure: retry_then_secondary
+  on_partial_download: resume_from_checkpoint
+
+asset:
+  known_file_id: 1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl
+  known_url: https://drive.google.com/file/d/1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl/view?usp=drivesdk
+  role: god_molecule_mars_tripo_head_model
+  expected_formats: [glb, gltf, obj, fbx, blend, usd, usdz]
+  preserve_source: true
+  checksum_before_processing: true
+  ingest_directory: production/god-molecule/ingest/drive
+  gates:
+    - resolve_file_id
+    - authenticate
+    - download_to_immutable_staging
+    - checksum
+    - identify_format
+    - inventory_mesh_and_materials
+    - measure_units_and_dimensions
+    - inspect_topology
+    - detect_face_landmarks
+    - assess_rig_readiness
+    - likeness_integrity_check
+
+operator_contract:
+  required_if: [oauth_consent, credential_creation, private_file_permission]
+  never_request_again_if_existing_runtime_credential_works: true
+
+recovery:
+  policy_file: config/PRODUCTION_BLOCKAGE_RECOVERY_LAW.md
+  do_not_stop_on_missing_connector: true
+  alternate_transport_required: true

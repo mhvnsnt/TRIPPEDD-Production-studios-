@@ -27,6 +27,11 @@ const checks: Record<string, Spec> = {
   tesseract: { command: 'tesseract', args: ['--version'] },
   otio: { command: 'python3', args: ['-c', 'import opentimelineio as otio; print(otio.__version__)'] },
   blender: { command: 'blender', args: ['--version'] },
+  openimageio: { command: 'oiiotool', args: ['--version'] },
+  openexr: { command: 'exrheader', args: ['--help'] },
+  imagemagick: { command: 'magick', args: ['-version'] },
+  sox: { command: 'sox', args: ['--version'] },
+  rubberband: { command: 'rubberband', args: ['--help'] },
   mediainfo: { command: 'mediainfo', args: ['--Version'] },
   exiftool: { command: 'exiftool', args: ['-ver'] },
   bwfmetaedit: { command: 'bwfmetaedit', args: ['--version'] },
@@ -55,6 +60,8 @@ const checks: Record<string, Spec> = {
   opentelemetry: { command: 'python3', args: ['-c', 'import opentelemetry; print("opentelemetry import OK")'] },
   flamenco: { command: 'flamenco', args: ['--version'] },
   opencue: { command: 'cueadmin', args: ['-version'] },
+  demucs: { command: 'demucs', args: ['--help'] },
+  flamenco: { command: 'flamenco-manager', args: ['--version'] },
   kitsu: { service: true, note: 'Kitsu server/API candidate; requires a configured service endpoint' },
   zou: { service: true, note: 'Zou service/API candidate; requires a configured service endpoint' }
 };
@@ -85,7 +92,8 @@ const report = {
     missingOptionalToolsAreNotFailures: true,
     serviceCandidatesAreNotPretendedToBeInstalled: true,
     fakeAvailabilityIsForbidden: true,
-    reportIsTechnicalOnly: true
+    reportIsTechnicalOnly: true,
+    openSourceFirst: true
   }
 };
 

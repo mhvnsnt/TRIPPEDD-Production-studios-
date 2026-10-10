@@ -1,0 +1,566 @@
+{
+ "nostressnetlabel": {
+  "n": 154,
+  "counts": {
+   "clean": 0,
+   "nc": 151,
+   "other": 3,
+   "unknown": 0
+  },
+  "uploaders": [
+   [
+    "",
+    154
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Nostress Netlabel",
+  "index_count": 154
+ },
+ "amp_records": {
+  "n": 151,
+  "counts": {
+   "clean": 0,
+   "nc": 138,
+   "other": 2,
+   "unknown": 11
+  },
+  "uploaders": [
+   [
+    "",
+    151
+   ]
+  ],
+  "clean_lu": {},
+  "title": "A.M.P-RECS",
+  "index_count": 151
+ },
+ "hippocamp": {
+  "n": 148,
+  "counts": {
+   "clean": 0,
+   "nc": 44,
+   "other": 38,
+   "unknown": 66
+  },
+  "uploaders": [
+   [
+    "",
+    148
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Hippocamp",
+  "index_count": 149
+ },
+ "ruidemos": {
+  "n": 142,
+  "counts": {
+   "clean": 0,
+   "nc": 95,
+   "other": 28,
+   "unknown": 19
+  },
+  "uploaders": [
+   [
+    "",
+    142
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Ruidemos",
+  "index_count": 148
+ },
+ "c_mshot_records": {
+  "n": 141,
+  "counts": {
+   "clean": 23,
+   "nc": 4,
+   "other": 28,
+   "unknown": 86
+  },
+  "uploaders": [
+   [
+    "",
+    141
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 14,
+   "http://creativecommons.org/licenses/by/3.0/": 9
+  },
+  "title": "C_mshot Records",
+  "index_count": 146
+ },
+ "robo-robotica": {
+  "n": 146,
+  "counts": {
+   "clean": 29,
+   "nc": 107,
+   "other": 1,
+   "unknown": 9
+  },
+  "uploaders": [
+   [
+    "",
+    146
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 3,
+   "http://creativecommons.org/licenses/by/3.0/us/": 26
+  },
+  "title": "Robo Robotica",
+  "index_count": 146
+ },
+ "deathrootssyndicate": {
+  "n": 144,
+  "counts": {
+   "clean": 0,
+   "nc": 0,
+   "other": 0,
+   "unknown": 144
+  },
+  "uploaders": [
+   [
+    "",
+    144
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Death Roots Syndicate",
+  "index_count": 144
+ },
+ "green-field-recordings": {
+  "n": 139,
+  "counts": {
+   "clean": 0,
+   "nc": 110,
+   "other": 26,
+   "unknown": 3
+  },
+  "uploaders": [
+   [
+    "",
+    139
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Green Field Recordings",
+  "index_count": 143
+ },
+ "fuselab": {
+  "n": 139,
+  "counts": {
+   "clean": 0,
+   "nc": 101,
+   "other": 1,
+   "unknown": 37
+  },
+  "uploaders": [
+   [
+    "",
+    139
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Fuselab",
+  "index_count": 139
+ },
+ "1834label": {
+  "n": 138,
+  "counts": {
+   "clean": 0,
+   "nc": 0,
+   "other": 0,
+   "unknown": 138
+  },
+  "uploaders": [
+   [
+    "",
+    138
+   ]
+  ],
+  "clean_lu": {},
+  "title": "1834",
+  "index_count": 138
+ },
+ "just-not-normal": {
+  "n": 137,
+  "counts": {
+   "clean": 0,
+   "nc": 135,
+   "other": 0,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    137
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Just Not Normal",
+  "index_count": 137
+ },
+ "end-of-music": {
+  "n": 136,
+  "counts": {
+   "clean": 0,
+   "nc": 60,
+   "other": 0,
+   "unknown": 76
+  },
+  "uploaders": [
+   [
+    "",
+    136
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Universit\u00e0 Degli Studi Del Male/End Of Music",
+  "index_count": 136
+ },
+ "haklofirecord": {
+  "n": 134,
+  "counts": {
+   "clean": 0,
+   "nc": 131,
+   "other": 1,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    134
+   ]
+  ],
+  "clean_lu": {},
+  "title": "H.A.K. Lo-Fi Record",
+  "index_count": 134
+ },
+ "section-27": {
+  "n": 130,
+  "counts": {
+   "clean": 0,
+   "nc": 127,
+   "other": 1,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    130
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Section 27",
+  "index_count": 132
+ },
+ "netlabel-Maravines": {
+  "n": 112,
+  "counts": {
+   "clean": 105,
+   "nc": 2,
+   "other": 0,
+   "unknown": 5
+  },
+  "uploaders": [
+   [
+    "",
+    112
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/mark/1.0/": 78,
+   "https://creativecommons.org/licenses/by/4.0/": 7,
+   "https://creativecommons.org/publicdomain/mark/1.0/": 18,
+   "http://creativecommons.org/licenses/by/4.0/": 1,
+   "https://creativecommons.org/publicdomain/zero/1.0/": 1
+  },
+  "title": "Maravines",
+  "index_count": 131
+ },
+ "timetheory": {
+  "n": 130,
+  "counts": {
+   "clean": 0,
+   "nc": 124,
+   "other": 4,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    130
+   ]
+  ],
+  "clean_lu": {},
+  "title": "time theory",
+  "index_count": 131
+ },
+ "happypuppy": {
+  "n": 124,
+  "counts": {
+   "clean": 7,
+   "nc": 108,
+   "other": 6,
+   "unknown": 3
+  },
+  "uploaders": [
+   [
+    "",
+    124
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 3,
+   "http://creativecommons.org/publicdomain/mark/1.0/": 1,
+   "https://creativecommons.org/licenses/by/4.0/": 3
+  },
+  "title": "Happy Puppy Records",
+  "index_count": 128
+ },
+ "stillborntwinsrecords": {
+  "n": 123,
+  "counts": {
+   "clean": 1,
+   "nc": 44,
+   "other": 66,
+   "unknown": 12
+  },
+  "uploaders": [
+   [
+    "",
+    123
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 1
+  },
+  "title": "Stillborn Twins Records (SBT)",
+  "index_count": 127
+ },
+ "ouimnet": {
+  "n": 124,
+  "counts": {
+   "clean": 0,
+   "nc": 63,
+   "other": 0,
+   "unknown": 61
+  },
+  "uploaders": [
+   [
+    "",
+    124
+   ]
+  ],
+  "clean_lu": {},
+  "title": "OUIM.net",
+  "index_count": 124
+ },
+ "basic_sounds": {
+  "n": 123,
+  "counts": {
+   "clean": 0,
+   "nc": 87,
+   "other": 36,
+   "unknown": 0
+  },
+  "uploaders": [
+   [
+    "",
+    123
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Basic Sounds",
+  "index_count": 123
+ },
+ "stoneage-records": {
+  "n": 123,
+  "counts": {
+   "clean": 0,
+   "nc": 123,
+   "other": 0,
+   "unknown": 0
+  },
+  "uploaders": [
+   [
+    "",
+    123
+   ]
+  ],
+  "clean_lu": {},
+  "title": "StoneAge Records",
+  "index_count": 123
+ },
+ "top40": {
+  "n": 122,
+  "counts": {
+   "clean": 1,
+   "nc": 79,
+   "other": 0,
+   "unknown": 42
+  },
+  "uploaders": [
+   [
+    "",
+    122
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 1
+  },
+  "title": "top-40.org",
+  "index_count": 122
+ },
+ "nks-international": {
+  "n": 121,
+  "counts": {
+   "clean": 3,
+   "nc": 27,
+   "other": 87,
+   "unknown": 4
+  },
+  "uploaders": [
+   [
+    "",
+    121
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 3
+  },
+  "title": "NKS International",
+  "index_count": 122
+ },
+ "rebound": {
+  "n": 121,
+  "counts": {
+   "clean": 0,
+   "nc": 119,
+   "other": 0,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    121
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Rebound",
+  "index_count": 121
+ },
+ "illphabetik": {
+  "n": 120,
+  "counts": {
+   "clean": 1,
+   "nc": 1,
+   "other": 0,
+   "unknown": 118
+  },
+  "uploaders": [
+   [
+    "",
+    120
+   ]
+  ],
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/2.5/": 1
+  },
+  "title": "illphabetik",
+  "index_count": 120
+ },
+ "oracle-online": {
+  "n": 117,
+  "counts": {
+   "clean": 0,
+   "nc": 87,
+   "other": 10,
+   "unknown": 20
+  },
+  "uploaders": [
+   [
+    "",
+    117
+   ]
+  ],
+  "clean_lu": {},
+  "title": "ORACLE",
+  "index_count": 117
+ },
+ "mav-records": {
+  "n": 116,
+  "counts": {
+   "clean": 0,
+   "nc": 114,
+   "other": 1,
+   "unknown": 1
+  },
+  "uploaders": [
+   [
+    "",
+    116
+   ]
+  ],
+  "clean_lu": {},
+  "title": "MAV [0kbps] Records",
+  "index_count": 116
+ },
+ "abdicate_cell": {
+  "n": 114,
+  "counts": {
+   "clean": 0,
+   "nc": 111,
+   "other": 2,
+   "unknown": 1
+  },
+  "uploaders": [
+   [
+    "",
+    114
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Abdicate Cell",
+  "index_count": 115
+ },
+ "digital-diamonds": {
+  "n": 114,
+  "counts": {
+   "clean": 0,
+   "nc": 105,
+   "other": 9,
+   "unknown": 0
+  },
+  "uploaders": [
+   [
+    "",
+    114
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Digital Diamonds Netlabel",
+  "index_count": 114
+ },
+ "kittyonfire": {
+  "n": 112,
+  "counts": {
+   "clean": 0,
+   "nc": 110,
+   "other": 0,
+   "unknown": 2
+  },
+  "uploaders": [
+   [
+    "",
+    112
+   ]
+  ],
+  "clean_lu": {},
+  "title": "Kitty On Fire Records",
+  "index_count": 113
+ }
+}

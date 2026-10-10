@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal Game Video Production Manifest",
+  "type": "object",
+  "required": ["project", "game", "character", "source", "timeline", "outputs", "verification"],
+  "properties": {
+    "project": {"type":"string"},
+    "game": {"type":"string"},
+    "character": {
+      "type":"object",
+      "required":["id","displayName","asset"],
+      "properties":{
+        "id":{"type":"string"},
+        "displayName":{"type":"string"},
+        "asset":{"type":"string"},
+        "attire":{"type":"string"},
+        "rigVerified":{"type":"boolean"}
+      }
+    },
+    "source": {
+      "type":"object",
+      "required":["build","runtimeCapture"],
+      "properties":{
+        "build":{"type":"string"},
+        "runtimeCapture":{"type":"boolean"},
+        "captureSource":{"type":"string"}
+      }
+    },
+    "timeline": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["t","type"],
+        "properties":{
+          "t":{"type":"number","minimum":0},
+          "type":{"enum":["TRON","PYRO","PYRO_RING","SMOKE","LIGHT","CAMERA","MUSIC","HOLD"]},
+          "payload":{"type":"object"}
+        }
+      }
+    },
+    "outputs": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["path","sha256"],
+        "properties":{
+          "path":{"type":"string"},
+          "sha256":{"type":"string","pattern":"^[A-Fa-f0-9]{64}$"}
+        }
+      }
+    },
+    "verification": {
+      "type":"object",
+      "required":["runtimeAssetVerified","deformationVerified","crossGameIsolation","audioChecked"],
+      "properties":{
+        "runtimeAssetVerified":{"type":"boolean"},
+        "deformationVerified":{"type":"boolean"},
+        "crossGameIsolation":{"type":"boolean"},
+        "audioChecked":{"type":"boolean"},
+        "notes":{"type":"string"}
+      }
+    }
+  }
+}

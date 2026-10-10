@@ -1,0 +1,35 @@
+[
+  {
+    "objectID": 340468,
+    "title": "Landscape (recto); Landscape (verso)",
+    "artist": "Perugino (Pietro di Cristoforo Vannucci)",
+    "isPublicDomain": true,
+    "file": "perugino-landscape-340468.jpg",
+    "bytes": 2369231,
+    "source_url": "https://images.metmuseum.org/CRDImages/dp/original/DP811071.jpg",
+    "object_url": "https://www.metmuseum.org/art/collection/search/340468",
+    "license": "CC0 1.0 (Met Open Access)"
+  },
+  {
+    "objectID": 10181,
+    "title": "Landscape",
+    "artist": "Ralph Albert Blakelock",
+    "isPublicDomain": true,
+    "file": "blakelock-landscape-10181.jpg",
+    "bytes": 1605457,
+    "source_url": "https://images.metmuseum.org/CRDImages/ad/original/ap29.35.jpg",
+    "object_url": "https://www.metmuseum.org/art/collection/search/10181",
+    "license": "CC0 1.0 (Met Open Access)"
+  },
+  {
+    "objectID": 359362,
+    "title": "Landscape",
+    "artist": "Edgar Degas",
+    "isPublicDomain": true,
+    "file": "degas-landscape-359362.jpg",
+    "bytes": 2664506,
+    "source_url": "https://images.metmuseum.org/CRDImages/dp/original/DP815958.jpg",
+    "object_url": "https://www.metmuseum.org/art/collection/search/359362",
+    "license": "CC0 1.0 (Met Open Access)"
+  }
+]

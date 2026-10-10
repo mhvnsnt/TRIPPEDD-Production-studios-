@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "status": "PRODUCTION_REGISTRY",
+  "purpose": "Bridge canonical characters and episode canon into deterministic, evidence-backed God Molecule scene production.",
+  "source_of_truth": {
+    "episode_canon": "docs/creative/EP01-THE-WALK-CANON.md",
+    "episode_machine_canon": "src/core/canon/episode01.ts",
+    "environment_stack": "config/god_molecule_environment_stack.json",
+    "canonical_character": "assets/rigs/MARS_face_state.json"
+  },
+  "authority": [
+    "LOCKED_CANON",
+    "USER_OVERRIDE",
+    "AI_DERIVED",
+    "AI_PROPOSAL",
+    "UNSPECIFIED"
+  ],
+  "production_lanes": {
+    "character": {
+      "MARS": {
+        "status": "ACTIVE",
+        "identity": "MARS_CANONICAL",
+        "next_gate": "visual_face_pass",
+        "rule": "Do not replace or regenerate the canonical scan identity."
+      }
+    },
+    "episode01": [
+      {"id":"EP01_COLD_OPEN","title":"Cold Open","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"},
+      {"id":"EP01_MOTEL","title":"Motel","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"},
+      {"id":"EP01_SHUMAFIED","title":"Shumafied","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"},
+      {"id":"EP01_SHUMAFIED_LETDOWN_CIGAR_SETUP","title":"Shumafied Disappointment + Cigar Setup","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"},
+      {"id":"EP01_LUCK_OF_THE_IRISH","title":"Luck of the Irish","canon":"LOCKED_CANON","treatment":"LOCKED_CANON"},
+      {"id":"EP01_CIGARS_WALK","title":"Cigars / The Walk","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"},
+      {"id":"EP01_BAG_SEQUENCE","title":"Bag Sequence","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"},
+      {"id":"EP01_JOE","title":"Joe","canon":"LOCKED_CANON","treatment":"UNSPECIFIED","method":"2D_RECONSTRUCTION"},
+      {"id":"EP01_TV","title":"TV","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"},
+      {"id":"EP01_CLOTHED_AND_CONFUSED","title":"Clothed and Confused","canon":"LOCKED_CANON","treatment":"LOCKED_CANON","method":"REALISTIC_SURVIVAL_DOCUMENTARY"},
+      {"id":"EP01_SMOKING","title":"Smoking / Hanging Out","canon":"LOCKED_CANON","treatment":"UNSPECIFIED"}
+    ]
+  },
+  "scene_contract": {
+    "required": [
+      "scene_id",
+      "canon_segment_id",
+      "world_seed",
+      "environment_recipe",
+      "characters",
+      "props",
+      "camera",
+      "lighting",
+      "production_method",
+      "source_provenance",
+      "render_outputs",
+      "evidence_set"
+    ],
+    "status_flow": ["PLANNED","ASSEMBLY","RENDERED","PUBLISHED","QC","APPROVED","BLOCKED"],
+    "fail_closed": true
+  },
+  "evidence_contract": {
+    "pixels_required": true,
+    "published_root": "docs/evidence/",
+    "manifest_required": true,
+    "physical_and_visual_gates_required": true,
+    "visual_fail_overrides_physical_pass": true,
+    "missing_pixels_status": "BLOCKED"
+  },
+  "environment_policy": {
+    "deterministic_seed_required": true,
+    "world_seed_per_scene": true,
+    "preferred_assembly": ["Blender", "OpenUSD"],
+    "reconstruction_backends": ["COLMAP", "Meshroom", "Nerfstudio", "gsplat"],
+    "fallbacks_must_remain_honest": true,
+    "never_claim_rendered_from_plan": true
+  },
+  "next_execution": [
+    "finish Mars face visual gate",
+    "build first canonical Mars scene slice",
+    "attach real environment recipe and deterministic world seed",
+    "render front/mouth/profile plus scene camera coverage",
+    "publish actual pixels and provenance",
+    "run physical and visual QC",
+    "promote only after evidence is green",
+    "expand scene slice into reusable world/location assets",
+    "repeat across EP01 canon segments"
+  ]
+}

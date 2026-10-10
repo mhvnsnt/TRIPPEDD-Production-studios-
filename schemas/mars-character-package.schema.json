@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tripped://schemas/mars-character-package.schema.json",
+  "title": "MarsCharacterPackage",
+  "type": "object",
+  "required": ["schemaVersion","characterId","source","identity","geometry","materials","rig","facialAnimation","provenance","state"],
+  "properties": {
+    "schemaVersion": {"type":"integer","const":1},
+    "characterId": {"type":"string","const":"MARS"},
+    "source": {
+      "type":"object",
+      "required":["provider","fileId","uri","sha256","bytes","mimeType","owner"],
+      "properties": {
+        "provider":{"type":"string","const":"google-drive"},
+        "fileId":{"type":"string"},
+        "uri":{"type":"string"},
+        "sha256":{"type":"string","pattern":"^[a-fA-F0-9]{64}$"},
+        "bytes":{"type":"integer","minimum":1},
+        "mimeType":{"type":"string"},
+        "owner":{"type":"string"}
+      }
+    },
+    "identity": {
+      "type":"object",
+      "required":["canonical","referenceSet","likenessStatus"],
+      "properties": {
+        "canonical":{"type":"boolean"},
+        "referenceSet":{"type":"array","items":{"type":"string"}},
+        "likenessStatus":{"enum":["UNKNOWN","PASS","FAIL"]}
+      }
+    },
+    "geometry": {
+      "type":"object",
+      "required":["vertices","faces","bounds","units","topologyStatus"],
+      "properties": {
+        "vertices":{"type":["integer","string"]},
+        "faces":{"type":["integer","string"]},
+        "bounds":{"type":"object"},
+        "units":{"type":"string"},
+        "topologyStatus":{"enum":["UNKNOWN","PASS","FAIL"]}
+      }
+    },
+    "materials": {"type":"object"},
+    "rig": {
+      "type":"object",
+      "required":["detected","bones","facialLandmarks","status"],
+      "properties": {
+        "detected":{"enum":["UNKNOWN","YES","NO"]},
+        "bones":{"type":["integer","string"]},
+        "facialLandmarks":{"type":["integer","string"]},
+        "status":{"enum":["UNKNOWN","READY","INCOMPLETE","FAIL"]}
+      }
+    },
+    "facialAnimation": {
+      "type":"object",
+      "required":["visemeSource","controlCount","status"],
+      "properties": {
+        "visemeSource":{"type":"string"},
+        "controlCount":{"type":["integer","string"]},
+        "status":{"enum":["UNKNOWN","READY","INCOMPLETE","FAIL"]}
+      }
+    },
+    "provenance": {
+      "type":"object",
+      "required":["sourcePreserved","operations"],
+      "properties": {
+        "sourcePreserved":{"type":"boolean"},
+        "operations":{"type":"array","items":{"type":"object"}}
+      }
+    },
+    "state": {"enum":["INCOMPLETE","READY","MARS_CANONICAL","REJECTED"]}
+  }
+}

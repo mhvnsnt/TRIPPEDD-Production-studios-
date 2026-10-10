@@ -1,0 +1,25 @@
+{
+  "row": 205,
+  "name": "Calamari OCR",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "Calamari-OCR/calamari",
+  "api": {
+    "full_name": "Calamari-OCR/calamari",
+    "archived": false,
+    "pushed_at": "2026-06-23T22:11:57Z",
+    "stargazers_count": 1199,
+    "default_branch": "master",
+    "owner": "Calamari-OCR",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 35203
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

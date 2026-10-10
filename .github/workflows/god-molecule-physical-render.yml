@@ -1,0 +1,240 @@
+name: God Molecule Physical Render Worker
+
+on:
+  workflow_dispatch:
+    inputs:
+      drive_folder_url:
+        description: "Public Drive folder containing canonical Mars and production assets"
+        required: false
+        default: "https://drive.google.com/drive/folders/1Y6NppaQwnM2zutvF_hsIQZCq02BQrNb8"
+      run_oral:
+        description: "Run oral repair/survey when donor and mouth frame are available"
+        required: false
+        default: "true"
+  push:
+    paths:
+      - "tools/character/**"
+      - "tools/environment/**"
+      - "scripts/verify_image_artifact.py"
+      - "scripts/verify_image_artifact_test.py"
+      - "config/god_molecule_trippedd_bridge.json"
+      - "config/god_molecule_asset_registry.json"
+      - "config/opensource_production_stack.json"
+      - "docs/production-studio/god-molecule-first-shot.json"
+      - ".github/workflows/god-molecule-physical-render.yml"
+
+jobs:
+  physical-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout with LFS
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 1
+
+      - name: Install render dependencies
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y curl wget unzip xz-utils git-lfs python3-pip libgl1 libegl1 libx11-6 libxrender1 libxi6 libxfixes3 libxxf86vm1 libxkbcommon0
+          git lfs pull || true
+          python3 -m pip install --user gdown opentimelineio
+
+      - name: Test image artifact verifier adversarially
+        run: |
+          set -euxo pipefail
+          python3 scripts/verify_image_artifact_test.py
+
+      - name: Provision optional OSS Python APIs
+        run: |
+          set -uo pipefail
+          mkdir -p .artifacts/evidence
+          : > .artifacts/evidence/oss-python-install.log
+          for package in OpenImageIO PyOpenColorIO MaterialX openassetio; do
+            echo "=== $package ===" | tee -a .artifacts/evidence/oss-python-install.log
+            set +e
+            python3 -m pip install --user "$package" 2>&1 | tee -a .artifacts/evidence/oss-python-install.log
+            status=${PIPESTATUS[0]}
+            set -e
+            echo "exit=$status" | tee -a .artifacts/evidence/oss-python-install.log
+            if [ "$status" -ne 0 ]; then
+              echo "OPTIONAL_OSS_PACKAGE_UNAVAILABLE: $package (continuing; this must not block Blender/oral work)" | tee -a .artifacts/evidence/oss-python-install.log
+            fi
+          done
+
+      - name: Install portable Blender
+        run: |
+          set -eux
+          mkdir -p vendor
+          curl -L --fail --retry 4 -o /tmp/blender.tar.xz https://download.blender.org/release/Blender4.2/blender-4.2.1-linux-x64.tar.xz
+          tar -xJf /tmp/blender.tar.xz -C vendor
+          ln -sfn "$PWD/vendor/blender-4.2.1-linux-x64/blender" "$PWD/vendor/blender"
+          "$PWD/vendor/blender" --version
+
+      - name: Probe open-source production stack
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/evidence
+          python3 tools/environment/probe_oss_stack.py | tee .artifacts/evidence/oss-capability-probe.log
+
+      - name: Resolve OSS runtime capability contract
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/evidence
+          OSS_RUNTIME_CONTRACT="$PWD/.artifacts/evidence/oss_runtime_contract.json" \
+            python3 tools/environment/oss_runtime_contract.py | tee .artifacts/evidence/oss-runtime-contract.log
+          test -s .artifacts/evidence/oss_runtime_contract.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('.artifacts/evidence/oss_runtime_contract.json')
+          data = json.loads(p.read_text())
+          assert data['fail_closed'] is True
+          assert data['evidence_status'] == 'NOT_ATTEMPTED'
+          assert data['policy']['capability_presence_is_not_evidence'] is True
+          print('OSS_RUNTIME_CONTRACT: VERIFIED_CAPABILITY_ONLY')
+          print(json.dumps(data['summary'], indent=2))
+          PY
+
+      - name: Retrieve public Drive production folder
+        env:
+          DRIVE_FOLDER_URL: ${{ inputs.drive_folder_url || 'https://drive.google.com/drive/folders/1Y6NppaQwnM2zutvF_hsIQZCq02BQrNb8' }}
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/drive
+          python3 -m gdown --folder "$DRIVE_FOLDER_URL" -O .artifacts/drive --no-cookies || true
+          find .artifacts/drive -type f -printf '%p %s bytes\n' | sort | head -500
+
+      - name: Retrieve public God Molecule lab source
+        env:
+          GOD_REPO: mhvnsnt/God-Molecule-Show-Studio
+        run: |
+          set -euxo pipefail
+          mkdir -p .artifacts/god-molecule-source
+          git clone --depth=1 "https://github.com/${GOD_REPO}.git" .artifacts/god-molecule-source/repo
+          echo "GOD_MOLECULE_SOURCE: AVAILABLE" | tee .artifacts/god-molecule-source/state.txt
+          find .artifacts/god-molecule-source/repo -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' -o -iname '*mouth*frame*.json' -o -iname '*gnm*donor*.npz' \) -print | sort | tee .artifacts/god-molecule-source/candidates.txt
+
+      - name: Build evidence inventory
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/evidence
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f -printf '%p %s bytes\n' 2>/dev/null | sort -u > .artifacts/evidence/inventory.txt
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*MARS*CANONICAL*' -o -iname '*mars*.glb' -o -iname '*mars*.gltf' -o -iname '*mars*.blend' \) -print 2>/dev/null | sort -u > .artifacts/evidence/mars_candidates.txt || true
+          find .artifacts/drive .artifacts/god-molecule-source/repo -type f \( -iname '*gnm*donor*.npz' -o -iname '*mouth*frame*.json' \) -print 2>/dev/null | sort -u > .artifacts/evidence/oral_candidates.txt || true
+          cat .artifacts/evidence/mars_candidates.txt
+          cat .artifacts/evidence/oral_candidates.txt
+
+      - name: Select canonical Mars
+        run: |
+          set -euo pipefail
+          if [ ! -s .artifacts/evidence/mars_candidates.txt ]; then
+            echo "MARS_CANONICAL: NOT_FOUND" | tee .artifacts/evidence/state.txt
+            exit 42
+          fi
+          MARS_PATH=$(grep -E "/mars_source_.*\.blend$|/MARS_CANONICAL.*\.(blend|glb|gltf)$" .artifacts/evidence/mars_candidates.txt | head -n1 || true)
+          [ -n "$MARS_PATH" ] || MARS_PATH=$(head -n1 .artifacts/evidence/mars_candidates.txt)
+          if [ ! -s "$MARS_PATH" ]; then
+            echo "MARS_CANONICAL: FAIL — selected payload is missing or empty" | tee .artifacts/evidence/state.txt
+            exit 43
+          fi
+          case "$MARS_PATH" in
+            *.blend|*.glb|*.gltf) ;;
+            *)
+              echo "MARS_CANONICAL: FAIL — selection is not a supported physical payload: $MARS_PATH" | tee .artifacts/evidence/state.txt
+              exit 44
+              ;;
+          esac
+          printf '%s\n' "$MARS_PATH" > .artifacts/evidence/mars_path.txt
+          sha256sum "$MARS_PATH" | tee .artifacts/evidence/mars.sha256
+          stat -c 'MARS_BYTES=%s' "$MARS_PATH" | tee .artifacts/evidence/mars.size.txt
+          echo "MARS_CANONICAL: VERIFIED"
+
+      - name: Recover broad MARS oral skin artifacts (review only)
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/god-molecule/mars-oral-artifact-recovery
+          bash tools/character/run_mars_oral_artifact_recovery.sh \
+            assets/rigs/MARS_FACE.blend \
+            renders/_rig_measure/mouth_anatomy.json \
+            assets/variants/MARS_FACE_ORAL_SKIN_RECOVERY_REVIEW.blend \
+            .artifacts/god-molecule/mars-oral-artifact-recovery
+
+      - name: Execute first God Molecule creative shot
+        run: |
+          set -euo pipefail
+          MARS_PATH=$(cat .artifacts/evidence/mars_path.txt)
+          export MARS_CANONICAL_PATH="$PWD/$MARS_PATH"
+          export BLENDER_BIN="$PWD/vendor/blender"
+          export GM_WORLD_SEED=742918
+          export GM_OUTPUT="$PWD/.artifacts/god-molecule/first-shot"
+          tools/environment/run_first_creative_shot.sh | tee .artifacts/evidence/first-shot-execution.log
+
+      - name: Reopen exact rendered bytes
+        run: |
+          set -euo pipefail
+          python3 tools/environment/verify_creative_final.py .artifacts/god-molecule/first-shot | tee .artifacts/evidence/first-shot-receipt.log
+
+      - name: Inspect exact rendered frames with OIIO
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/evidence/image-inspection
+          for frame in .artifacts/god-molecule/first-shot/frames/frame_*.png; do
+            [ -f "$frame" ] || continue
+            name=$(basename "$frame" .png)
+            python3 scripts/verify_image_artifact.py --image "$frame" > ".artifacts/evidence/image-inspection/${name}.json"
+            python3 - <<PY
+          import json
+          from pathlib import Path
+          p = Path('.artifacts/evidence/image-inspection/${name}.json')
+          data = json.loads(p.read_text())
+          assert data['evidence_status'] == 'NOT_ATTEMPTED'
+          assert data['policy']['inspection_is_not_production_approval'] is True
+          print('IMAGE_ARTIFACT_INSPECTION: PASS ${name}', data['backend'])
+          PY
+          done
+
+      - name: Execute oral repair and aperture survey
+        if: ${{ inputs.run_oral != 'false' }}
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          MARS_PATH=$(cat .artifacts/evidence/mars_path.txt)
+          DONOR=$(find .artifacts/drive .artifacts/god-molecule-source/repo -type f -iname '*gnm*donor*.npz' -print -quit 2>/dev/null || true)
+          FRAME=$(find .artifacts/drive .artifacts/god-molecule-source/repo -type f -iname '*mouth*frame*.json' -print -quit 2>/dev/null || true)
+          if [ -z "$DONOR" ] || [ -z "$FRAME" ]; then
+            echo "ORAL_EXECUTION: BLOCKED — exact donor NPZ or measured mouth-frame JSON not found"
+            exit 43
+          fi
+          mkdir -p .artifacts/god-molecule/mars-oral/render
+          vendor/blender/blender -b "$MARS_PATH" --python tools/character/build_mars_oral_bridge.py -- \
+            --donor-npz "$DONOR" --mouth-frame "$FRAME" \
+            --output "$PWD/.artifacts/god-molecule/mars-oral/MARS_ORAL_REPAIRED.blend" \
+            --render-dir "$PWD/.artifacts/god-molecule/mars-oral/render"
+          vendor/blender/blender -b "$PWD/.artifacts/god-molecule/mars-oral/MARS_ORAL_REPAIRED.blend" \
+            --python tools/character/survey_oral_aperture.py -- \
+            --mouth-frame "$FRAME" \
+            --output "$PWD/.artifacts/god-molecule/mars-oral/survey.json"
+
+      - name: Package evidence
+        if: always()
+        run: |
+          set +e
+          mkdir -p .artifacts/evidence
+          date -u +%FT%TZ > .artifacts/evidence/completed_utc.txt
+          find .artifacts -type f -printf '%p %s bytes\n' | sort > .artifacts/evidence/final_inventory.txt
+          tar -czf god-molecule-physical-evidence.tgz .artifacts
+
+      - name: Upload physical evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: god-molecule-physical-evidence-${{ github.run_id }}
+          path: god-molecule-physical-evidence.tgz
+          if-no-files-found: error
+          retention-days: 14

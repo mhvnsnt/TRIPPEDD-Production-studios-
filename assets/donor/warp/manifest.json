@@ -1,0 +1,20 @@
+{
+  "source": "ICT-VGL/ICT-FaceKit",
+  "license": "MIT",
+  "method": "thin-plate-spline non-rigid warp (scipy RBFInterpolator) on top of the Umeyama similarity fit, driven by landmarks + both lid contours + both lip contours + the painted eye centres",
+  "why": "a similarity transform has 7 degrees of freedom for a whole head, so it cannot put the eye, the mouth and the lids all in the right place at once on a face that is not a scaled human. Every part then needs hand-seating and each correction breaks the last one.",
+  "correspondences": 84,
+  "residualBeforeMM": {
+    "mean": 5.92,
+    "worst": 15.68
+  },
+  "residualAfterMM": {
+    "mean": 0.0,
+    "worst": 0.0
+  },
+  "triangleAreaRatio": {
+    "median": 1.016,
+    "p1": 0.334,
+    "p99": 2.186
+  }
+}

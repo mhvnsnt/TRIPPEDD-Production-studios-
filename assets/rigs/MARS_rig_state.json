@@ -1,0 +1,85 @@
+{
+  "character": "MARS",
+  "lod": "LOD2",
+  "characterPremise": "MARS IS A FLOATING-HEAD BEING. The absence of a body is intentional character design, not missing geometry. Never invent a torso, never treat the neck termination as a defect.",
+  "jawTravelAt16deg": 0.11756,
+  "jawVerticesMovedAt16deg": 7015,
+  "sourceAnatomy": "renders/_rig_measure/face_anatomy.json",
+  "bones": [
+    "root",
+    "neck",
+    "head",
+    "jaw",
+    "eye_L",
+    "eye_R"
+  ],
+  "jawHinge": [
+    -0.00783,
+    -0.11779,
+    0.34331
+  ],
+  "jawHingeSource": "measured ear midpoint (temporomandibular joint)",
+  "jawWeightedVertices": 7017,
+  "shapeKeys": {
+    "viseme_AA": 2826,
+    "viseme_EE": 390,
+    "viseme_OH": 1272,
+    "viseme_MM": 821,
+    "viseme_FF": 469,
+    "blink_L": 297,
+    "blink_R": 359,
+    "brow_up": 1324,
+    "smile": 1635
+  },
+  "removedDeadKeys": [],
+  "meshVertices": 47021,
+  "mouthSurgeryReverted": {
+    "what": "bmesh edge-splitting of the lip seam",
+    "why": "It tore the surface. The split edges rendered as jagged shards on the chin and lip, VISIBLE AT REST before any animation \u2014 so it damaged the likeness rather than enabling speech. The owner rule is absolute: never alter his likeness.",
+    "measured": "aperture gain was only +40% (0.01321 -> 0.01850) for that damage",
+    "status": "REVERTED. The rig is rebuilt clean from the canonical master by rig_mars.py."
+  },
+  "innerMouth": {
+    "method": "procedurally fitted to MEASURED landmarks; exterior scan never modified",
+    "apertureMethod": "boolean DIFFERENCE driven by jaw rotation (NOT edge splitting, which tore the face)",
+    "objects": {
+      "MARS_CAVITY": {
+        "parentBone": "head",
+        "verts": 222
+      },
+      "MARS_TEETH_UPPER": {
+        "parentBone": "head",
+        "verts": 80
+      },
+      "MARS_TEETH_UPPER_GUM": {
+        "parentBone": "head",
+        "verts": 192
+      },
+      "MARS_TEETH_LOWER": {
+        "parentBone": "jaw",
+        "verts": 80
+      },
+      "MARS_TEETH_LOWER_GUM": {
+        "parentBone": "jaw",
+        "verts": 192
+      },
+      "MARS_TONGUE": {
+        "parentBone": "jaw",
+        "verts": 146,
+        "shapeKeys": [
+          "tongue_up",
+          "tongue_out"
+        ]
+      },
+      "MARS_APERTURE_CUTTER": {
+        "parentBone": "jaw",
+        "verts": 222
+      }
+    },
+    "mouthWidth": 0.21381,
+    "exteriorVertsUnchanged": 47021,
+    "upperTeethRide": "head",
+    "lowerTeethRide": "jaw",
+    "tongueRides": "jaw"
+  }
+}

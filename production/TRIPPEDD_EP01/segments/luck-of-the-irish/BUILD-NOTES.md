@@ -32,3 +32,15 @@
 - Iris demo: frames at t=1/2/2.5/3/4 — iris closes on source, full-green swap, iris opens on transform. Reads clearly. PASS.
 - Title card: frame read — bold emerald type, legible. PASS.
 - Disclaimers: frame read — all 13 present and readable, none clipped. PASS (after one rewrap fix).
+
+## FINAL RENDER (2026-10-10) — luck-of-the-irish-commercial-final.mp4
+
+**Status: BUILT AND VERIFIED.** 53.4s, 1920x1080, h264+aac, 1600 frames.
+
+**Source:** `VID_20260906_160938849` (base-cut lane find) — Shot A [0:00–0:12] far/slow-zoom chilling → Shot B [0:12–0:30] closer angle, "Look at the Irish." spoken ~0:18 (production audio kept) → Shot C [0:30–0:35] fourth-wall break direct to camera. A,B,C order per CLAUDE.md.
+
+**Effect beat (owner: right time, right scene):** Shot C ends on the t=35 direct-to-camera freeze frame → 0.5s hold → green iris closes (1.5s, linear, soft edge, emerald 0x00A86B — That's-all-folks style) → 0.3s green hold → iris opens (1.5s) revealing the hood-leprechaun transform (exact spec prompt on the actual Shot C frame: same grin/dreadlocks/beard, glowing green iris eyes, green tracksuit — likeness preserved) → 2.5s hold → title card (4s) → 13 disclaimers (8s).
+
+**Audio:** production audio through Shot C; synthesized noise-swell whoosh across the 3.3s transition; silence on transform hold/title/disclaimers.
+
+**Build notes:** maskedmerge misbehaved (blended ~50/50 regardless of mask); xfade circlecrop/circleopen closed too fast (non-linear). Final uses hand-rolled linear iris via geq mask → alphamerge → overlay. First concat attempt (demuxer) broke video past 35s; final uses single-pass concat filter. All 8 beats frame-verified + audio levels checked (speech -24.4dB, whoosh -19.6dB, cards -91dB).

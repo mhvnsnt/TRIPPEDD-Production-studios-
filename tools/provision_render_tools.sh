@@ -52,8 +52,15 @@ if [ ! -e .trippedd_libs/libGLESv2.so.2 ]; then
 fi
 
 echo
-echo "ready. Run facial landmarking with:"
-echo "  LD_LIBRARY_PATH=\"\$PWD/.trippedd_libs:\$LD_LIBRARY_PATH\" .trippedd_venv/bin/python tools/character/measure_face.py --stage 2"
+echo "provisioning open-source face landmark authority (MVMP)..."
+./tools/character/provision_face_vision.sh
+
+echo
+echo "ready. Run MVMP facial landmark authority with:"
+echo "  .trippedd_venv/bin/python tools/character/measure_face_mvmp.py --debug renders/_rig_measure/mvmp_debug"
+echo
+echo "Legacy MediaPipe landmarking is still available with:"
+echo "  LD_LIBRARY_PATH=\"$PWD/.trippedd_libs:$LD_LIBRARY_PATH\" .trippedd_venv/bin/python tools/character/measure_face.py --stage 2"
 
 # PyMeshLab: MeshLab's engine as a Python API -- isotropic remeshing, quadric
 # decimation, hole filling, non-manifold repair, and selection-scoped versions of

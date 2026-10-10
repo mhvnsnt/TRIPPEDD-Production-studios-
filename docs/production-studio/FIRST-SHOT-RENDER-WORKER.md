@@ -26,6 +26,8 @@ SHA-256 + byte count + PNG dimensions
         v
 render receipt
         |
+        +--> exact-byte evidence verifier
+        |
         +--> visual QC
         +--> physical QC
         |
@@ -42,6 +44,7 @@ production promotion (later gate)
 - A non-zero Blender exit blocks the receipt.
 - A successful Blender exit without the expected PNG also blocks the receipt.
 - `rendered=true` is written only after the PNG exists and its bytes can be inspected.
+- The repository's render-evidence verifier is run against the generated receipt before the worker reports success.
 - Visual and physical QC remain `NOT_EVALUATED`; this worker never promotes the production gate.
 - Blender auto-execution is disabled unless `--enable-autoexec` is explicitly supplied.
 
@@ -61,8 +64,8 @@ The worker uses Blender's background render path and requests PNG output. OpenCu
 
 The current God Molecule environment definition is a USD scene contract, while the repository does not claim that the USD reference alone is a complete renderable Blender scene. Requiring the resolved `.blend` prevents the pipeline from turning a plan or reference layer into fake render evidence.
 
-The next production step is therefore to produce the **real resolved Blender scene artifact** containing the canonical Mars asset, the deterministic world assembly, camera, and render settings. Once that exists on a worker with Blender installed, this wrapper can create the first actual render receipt.
+The next production step is therefore to produce the **real resolved Blender scene artifact** containing the canonical Mars asset, deterministic world assembly, camera, and render settings. Once that exists on a worker with Blender installed, this wrapper can create the first actual render receipt.
 
 ## Open-source integration
 
-The worker follows patterns worth importing from the open-source Blender/MCP ecosystem: keep `.blend` as the editable scene artifact, use staged physical and visual QA, checkpoint risky edits, and treat rendered images as evidence rather than replacements for the source scene. These patterns are complementary to TRIPPEDD's existing production graph and fail-closed evidence rules.
+The worker adopts useful patterns from current open-source Blender/MCP work: keep `.blend` as the editable source artifact; use typed, inspectable operations; checkpoint risky edits; perform staged physical QA before beauty renders; capture viewport/render evidence; and make visual validation a separate gate rather than treating a successful script execution as proof. These patterns complement TRIPPEDD's existing production graph and fail-closed evidence rules.

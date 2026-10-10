@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Run the first-shot Blender render without fabricating evidence."""
+"""Run the first-shot Blender render without fabricating evidence.
+
+The worker requires an explicit, existing .blend scene. It validates the
+first-shot contract before invoking Blender, records the exact source-scene
+hash, and only writes rendered=true evidence after the expected PNG exists
+and passes the repository render-evidence verifier.
+"""
 from __future__ import annotations
 
 import argparse
@@ -26,7 +32,8 @@ def sha256_file(path: Path) -> str:
 
 
 def png_dimensions(path: Path) -> tuple[int, int]:
-    data = path.read_bytes()
+    with path.open("rb") as handle:
+        data = handle.read(24)
     if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
         raise ValueError("rendered artifact is not a valid PNG")
     return int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")
@@ -54,8 +61,26 @@ def blender_version(blender: str) -> str:
     return result.stdout.splitlines()[0].strip() if result.stdout.splitlines() else "unknown"
 
 
+def verify_receipt(repo_root: Path, receipt: Path) -> None:
+    verifier = repo_root / "scripts" / "verify_render_evidence.py"
+    if not verifier.is_file():
+        raise RuntimeError(f"missing render evidence verifier: {verifier}")
+    result = subprocess.run(
+        [sys.executable, str(verifier), "--receipt", str(receipt)],
+        cwd=repo_root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0 or "RENDER_EVIDENCE: PASS" not in result.stdout:
+        raise RuntimeError("render evidence verification failed\n" + result.stdout + result.stderr)
+
+
 def build_receipt(repo_root: Path, receipt: Path, blend: Path, png: Path, frame: int, version: str) -> dict:
     width, height = png_dimensions(png)
+    # The evidence verifier resolves relative artifact paths from the receipt
+    # directory. Keep the receipt relocatable by recording the rendered file
+    # relative to that directory, never relative to the repository root.
     artifact_path = str(png.relative_to(receipt.parent)) if png.is_relative_to(receipt.parent) else str(png)
     return {
         "schema": SCHEMA,
@@ -84,21 +109,6 @@ def build_receipt(repo_root: Path, receipt: Path, blend: Path, png: Path, frame:
     }
 
 
-def verify_receipt(repo_root: Path, receipt: Path) -> None:
-    verifier = repo_root / "scripts" / "verify_render_evidence.py"
-    if not verifier.is_file():
-        raise RuntimeError(f"missing render evidence verifier: {verifier}")
-    result = subprocess.run(
-        [sys.executable, str(verifier), "--receipt", str(receipt)],
-        cwd=repo_root,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
-    if result.returncode != 0 or "RENDER_EVIDENCE: PASS" not in result.stdout:
-        raise RuntimeError("render receipt verification failed\n" + result.stdout + result.stderr)
-
-
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[1])
@@ -117,6 +127,7 @@ def main() -> int:
     receipt = (args.receipt or output_dir / "render-receipt.json").resolve()
     log_path = (args.log or output_dir / "blender.log").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
+    receipt.parent.mkdir(parents=True, exist_ok=True)
 
     try:
         run_contract_validator(repo_root)
@@ -130,7 +141,7 @@ def main() -> int:
             raise RuntimeError("Blender executable not found; provide --blender or install Blender on the worker")
 
         version = blender_version(blender)
-        prefix = output_dir / "GM-WORLD-0001-FIRST-SHOT"
+        prefix = output_dir / SHOT_ID
         command = [blender, "-b", str(blend), "-o", str(prefix), "-F", "PNG", "-f", str(args.frame)]
         if args.enable_autoexec:
             command.insert(1, "--enable-autoexec")

@@ -56,6 +56,33 @@ These requirements are production targets, NOT filenames and NOT evidence of abs
 - `docs/production/TRIPPEDD-CONVERSATION-LIBRARY-ASSET-RECOVERY.md` (commit `6f16f30f`): Library inventory + transfer plan; binaries → `assets/references/trippedd-library-recovery/` via Git LFS or media store (no fake/placeholder binaries).
 - `assets/references/ep01/library-recovery-manifest.md` (commit `d7363894`): verified Library items index.
 
+## MAJOR FIND (2026-10-10, verified in repo source): THE EFFECT EXISTS AS BUILT CODE
+
+**CODE = PRESENT. RENDERED MEDIA = MISSING.** The green iris effect was built as a pipeline — its code, prompts, and gag copy are in the repo, but its rendered outputs (transformed leprechaun frames, green iris transition video, title card, disclaimer) have NOT been located. Do not claim the outputs exist.
+
+### The pipeline — `src/core/pipeline/effects.ts` (origin/main, verified)
+
+`EffectOrchestrator.runLuckOfTheIrish` (lines 26–66), three stages:
+1. **Extract Frame** — ffmpeg `extract_frame` from the base plate video.
+2. **Transform Frame** — ComfyUI `transform_character`, prompt: `"Hood Leprechaun, 8k, photorealistic, glowing green iris"` (line 43). Variant in `src/components/JobsPipeline.tsx:161`: `"Hood Leprechaun, 8k, photorealistic, glowing green iris, wearing green track suit"`.
+3. **Green Iris & Freeze** — ffmpeg `green_iris_freeze`: That's-all-folks-style iris in/out, freeze frame, parameters for iris color/thickness, open/close direction, center position, timing/easing, optional sparkle glow + optional commercial title reveal (`LuckOfTheIrishParams`, lines 4–16).
+
+`EffectOrchestrator.generateCommercialPackage` (lines 68–110) chains the full commercial: iris result → ComfyUI title card (`"Commercial title card: LUCK OF THE IRISH, bold green typography, 4k"`) → ComfyUI disclaimer (`"Legal disclaimer screen, white text on black background, fine print"`) → ffmpeg `concatenate_sequence`.
+
+### The gag copy — `src/core/pipeline/gags.ts` (verified)
+
+`LUCK_OF_THE_IRISH_DISCLAIMERS` — all 13 present (ids 001–013), e.g. 001 `CANONICAL_ORIGINAL`: "Luck of the Irish is not responsible for luck, Ireland, leprechauns, gold, or any resulting bullshit." 007: "Side effects may include confusion, confidence, temporary wealth, permanent stupidity, and unexplained green objects."
+
+### The registered asset — `src/core/assets/registry.ts` (verified)
+
+`ast_leprechaun_v001` → `/assets/luck_leprechaun_v001.png`, registered as ComfyUI `concept_art`, `verificationState: 'UNVERIFIED'`, sceneId `sc_04_irish`, project `prj_luck_01`. **The PNG file itself is NOT in the repo** (verified: `git ls-tree` empty). Registration without binary = the concept art was planned/referenced, never committed.
+
+### What this changes
+
+- The hunt for the green iris effect is now TWO hunts: (a) rendered outputs of this pipeline (transformed frames, iris transition video) — searched accessible media, **not found**; (b) the pipeline's *inputs* (which base-plate footage it ran on) — unknown.
+- The pipeline is runnable: given a base plate + ComfyUI + ffmpeg, the effect can be REGENERATED rather than only searched for. That's an owner decision (regenerate vs. keep hunting originals).
+- Shot mapping: the pipeline's iris+freeze+title+disclaimer sequence corresponds to Shot C (fourth-wall break "LUCK OF THE IRISH!!!" + generative handoff) and the fake commercial itself. Shots A/B (suspense zooms) have no corresponding code found.
+
 ## Handoff to base-cut lane
 
 No CONFIRMED green-iris/LOTI assets → **slate gaps remain** for the Luck of the Irish commercial in the EP01 base cut. Reopen this hunt when: (a) Library binaries transfer, (b) additional Drive folders are ingested, (c) remaining transcripts complete. Do not rebuild the commercial from scratch until those are exhausted. Do not silently replace real footage with generated storyboards.

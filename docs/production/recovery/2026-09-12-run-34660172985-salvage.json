@@ -1,0 +1,48 @@
+{
+  "schema": "trippedd.recovery-salvage/v1",
+  "runId": "34660172985",
+  "headSha": "c605f5a67fbe358a3bda4f6dfa8eba9e1d68c069",
+  "artifact": {
+    "name": "god-molecule-physical-evidence-34660172985",
+    "sha256": "ea2b214fab831c6737458860460a83dd12ce708867d670a0017316a9156184e2",
+    "bytes": 15425,
+    "status": "RECOVERED_PROVENANCE_NOT_RENDER_EVIDENCE"
+  },
+  "salvaged": [
+    {"path": ".artifacts/god-molecule-source/source.txt", "class": "CANONICAL_SOURCE_IDENTITY"},
+    {"path": ".artifacts/drive/2026-09-11-oral-protrusion-gate.md", "class": "PRODUCTION_DECISION_RECORD"},
+    {"path": ".artifacts/drive/survey_oral_aperture.py", "class": "RECOVERABLE_TOOL"},
+    {"path": ".artifacts/drive/build_mars_oral_bridge.py", "class": "RECOVERABLE_TOOL"},
+    {"path": ".artifacts/drive/APPLY_ORAL_FIX.sh", "class": "RECOVERY_WRAPPER"},
+    {"path": ".artifacts/drive/TRIPPEDD-oral-fix.tar.gz", "class": "BUNDLED_RECOVERY_SOURCE"},
+    {"path": ".artifacts/evidence/final_inventory.txt", "class": "RUN_INVENTORY"},
+    {"path": ".artifacts/evidence/completed_utc.txt", "class": "RUN_TIMESTAMP"}
+  ],
+  "not_promoted": [
+    "creative_render",
+    "visual_qc",
+    "physical_qc",
+    "production_pass",
+    "canonical_scene_approval"
+  ],
+  "current_tree_reconciliation": {
+    "oral_bridge": "ALREADY_PRESENT_ON_MAIN",
+    "oral_aperture_survey": "ALREADY_PRESENT_ON_MAIN",
+    "duplicate_code_to_avoid": true
+  },
+  "open_source_lanes": [
+    "Blender",
+    "OpenImageIO",
+    "OpenCue",
+    "OpenRV",
+    "xSTUDIO"
+  ],
+  "evidence_policy": {
+    "pixels_required": true,
+    "exact_sha256_required": true,
+    "visual_qc_required": true,
+    "physical_qc_required_when_applicable": true,
+    "failed_run_artifacts_may_be_salvaged_as_provenance": true,
+    "failed_run_artifacts_may_not_be_promoted_to_pass": true
+  }
+}

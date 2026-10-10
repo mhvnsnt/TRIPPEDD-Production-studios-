@@ -1,11 +1,5 @@
-import { LiveSessionDoor } from './live-session-door';
-import { RocketStudio } from './rocket-studio';
-import { SessionOpsPanels } from './session-ops-panels';
+import { StudioClient } from './studio-client';
 
 export default function Page() {
-  return <>
-    <RocketStudio />
-    <LiveSessionDoor />
-    <SessionOpsPanels />
-  </>;
+  return <StudioClient />;
 }

@@ -1,0 +1,98 @@
+{
+  "schema": "trippedd.reference-pixels/v1",
+  "rule": "REFERENCE PIXELS ARE IMMUTABLE. An annotation layer may add points, curves, masks, labels, IDs, arrows and measurements. It must NOT regenerate, repaint, restyle, reconstruct, beautify, sharpen, alter or replace any underlying pixel. A visually similar replacement image is NOT linework evidence: it destroys the spatial correspondence the whole pipeline depends on. The sha256 below is what makes that checkable rather than promised.",
+  "repo": "mhvnsnt/TRIPPEDD-Production-studios-",
+  "branch": "main",
+  "files": [
+    {
+      "path": "docs/evidence/annotations/MARS_hero_starfield.png",
+      "sha256": "24cceb8e4d5053fc4fa9535a094931d4047d070343245271386a3f1231c9815f",
+      "bytes": 5589439,
+      "resolution": "3840x2160",
+      "status": "PRESENT",
+      "what": "IMMUTABLE PIXEL AUTHORITY -- the character as he reads. Annotate ON TOP of this; never regenerate it.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/docs/evidence/annotations/MARS_hero_starfield.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/evidence/annotations/MARS_hero_starfield.png"
+    },
+    {
+      "path": "docs/evidence/annotations/MARS_annotation_wireframe.png",
+      "sha256": "7e495ec421f7239a6e44a838efa2be01c38e9f814bca92c266dd5251b9d9501a",
+      "bytes": 1261342,
+      "resolution": "688x1529",
+      "status": "PRESENT",
+      "what": "Owner's Tripo overlay on the grey wireframe: EYE_L_upper_lid/_lower_lid/_aperture/_contour, NOSE_nostril_L_*, ORAL_* (vermilion, gap, irises, corneal, gums, glint, boundary), HAIR_ROOT with LOCK_0001..LOCK_0025, and an explicit NECK EXCLUSION GATE.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/docs/evidence/annotations/MARS_annotation_wireframe.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/evidence/annotations/MARS_annotation_wireframe.png"
+    },
+    {
+      "path": "docs/evidence/annotations/MARS_annotation_semantic.png",
+      "sha256": "64fb0bd08f170c2f708975c71d0fe1eeb0400b49a35b2c67220e2226b5a2c12b",
+      "bytes": 1231439,
+      "resolution": "688x1529",
+      "status": "PRESENT",
+      "what": "Owner's Tripo overlay on the textured head: HEAD_ANATOMY hierarchy (per-eye aperture/upper_lid/lower_lid/inner_canthus/outer_canthus/iris/pupil/corneal_center; BROW_L/R; NOSE alar rims, nostril apertures, columella, tip; MOUTH lip boundaries, corners, oral gap, centerline, teeth_visible, tongue_visible, tooth_glint) and EXCLUSIONS: neck_region_mask_ID, ear_L_mask_ID, ear_R_mask_ID.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/docs/evidence/annotations/MARS_annotation_semantic.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/evidence/annotations/MARS_annotation_semantic.png"
+    },
+    {
+      "path": "docs/evidence/annotations/MARS_tripo_source_stats.png",
+      "sha256": "d93f21dec5753947c0c9340404c6eca32126f205ec84db4daa8938bd19e668e8",
+      "bytes": 1346882,
+      "resolution": "1080x2400",
+      "status": "PRESENT",
+      "what": "Source model's own numbers: 1,940,858 faces / 1,000,504 vertices, topology Triangle.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/docs/evidence/annotations/MARS_tripo_source_stats.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/evidence/annotations/MARS_tripo_source_stats.png"
+    },
+    {
+      "path": "assets/references/mars_facial_linework/mars_linework_front_close.png",
+      "sha256": "3e6558fa0bc23b1750a92c8bc23163ac9790db2e744e89609d984169c849fcd0",
+      "bytes": 2333054,
+      "resolution": "1600x1600",
+      "status": "PRESENT",
+      "what": "Earlier owner-marked plate (close). NOTE: its lifted 3D lines land on his FOREHEAD on the rig mesh -- see ARBITER below.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/assets/references/mars_facial_linework/mars_linework_front_close.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/assets/references/mars_facial_linework/mars_linework_front_close.png"
+    },
+    {
+      "path": "assets/references/mars_facial_linework/mars_linework_front_full.png",
+      "sha256": "93bb563dde9564f56e3b804030f1c676a73327aaadce3edf7bb7bb6f1b525761",
+      "bytes": 2186614,
+      "resolution": "1600x1600",
+      "status": "PRESENT",
+      "what": "Earlier owner-marked plate (full).",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/assets/references/mars_facial_linework/mars_linework_front_full.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/assets/references/mars_facial_linework/mars_linework_front_full.png"
+    },
+    {
+      "path": "docs/evidence/blink_own/ARBITER_linework_vs_painted.png",
+      "sha256": "c80dd049cf096e692f8dd395cebb2127da9c373736106cc1a862f9895605179e",
+      "bytes": 978720,
+      "resolution": "760x760",
+      "status": "PRESENT",
+      "what": "THE ARBITER: both candidate authorities rendered on his face at once. White dotted = linework_3d.json 'eyelid' lines (on his FOREHEAD/BROW RIDGE). Magenta = painted eyes from his own UVs (on his EYES). 85 mm apart.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/docs/evidence/blink_own/ARBITER_linework_vs_painted.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/evidence/blink_own/ARBITER_linework_vs_painted.png"
+    },
+    {
+      "path": "docs/evidence/blink_own/PAINTED_FLAT_EYES.png",
+      "sha256": "bd8186345f730b0cf1e82abfd6c800ec906624101acfdfbc146695ee532dac52",
+      "bytes": 1046349,
+      "resolution": "900x900",
+      "status": "PRESENT",
+      "what": "Painted lid outline traced at SOURCE resolution, flat-lit with specular unlinked. Red = upper lid, green = lower lid, wrapped on his painted sclera.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/docs/evidence/blink_own/PAINTED_FLAT_EYES.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/evidence/blink_own/PAINTED_FLAT_EYES.png"
+    },
+    {
+      "path": "docs/evidence/place/MARS_place_plate.png",
+      "sha256": "255f6e16ae418da235cb03c78748a04efb42b5030546ddcaec2b3d22e2fb8a1d",
+      "bytes": 1617030,
+      "resolution": "1024x1024",
+      "status": "PRESENT",
+      "what": "Front ortho plate with a per-pixel POSITION MAP alongside it (position_map.npz): a tap at (x,y) returns an exact 3D surface point, no raycast, no depth prior.",
+      "raw": "https://raw.githubusercontent.com/mhvnsnt/TRIPPEDD-Production-studios-/main/docs/evidence/place/MARS_place_plate.png",
+      "blob": "https://github.com/mhvnsnt/TRIPPEDD-Production-studios-/blob/main/docs/evidence/place/MARS_place_plate.png"
+    }
+  ]
+}

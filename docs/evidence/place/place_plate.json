@@ -1,0 +1,33 @@
+{
+  "schema": "trippedd.place-plate/v1",
+  "plate": "docs/evidence/place/MARS_place_plate.png",
+  "positionMap": "docs/evidence/place/position_map.npz",
+  "res": 1024,
+  "grid": 512,
+  "orthoScale": 0.9423932764929598,
+  "mmPerUnit": 0.00386,
+  "camera": {
+    "centre": [
+      -0.036371253535807974,
+      0.05879383809192651,
+      0.3356679047068227
+    ],
+    "right": [
+      0.9952072396645115,
+      -0.05471600627325721,
+      0.08104757107309377
+    ],
+    "up": [
+      -0.03908810238236603,
+      0.5371278391217026,
+      0.8425946858915002
+    ],
+    "forward": [
+      -0.08963632283560599,
+      -0.8417243272580134,
+      0.5324147692641102
+    ]
+  },
+  "surfaceHitFraction": 0.7164,
+  "note": "pos[j][i] is the exact 3D surface point the camera sees at that cell. A tap needs no raycast and no depth prior; NaN means the tap missed the head and must be refused rather than snapped somewhere plausible."
+}

@@ -1,0 +1,28 @@
+{
+  "tool": "pysubs2",
+  "license": "MIT",
+  "version": "1.9.0",
+  "fixture_cues": 5,
+  "shift_ms": 2500,
+  "first_cue_start_ms": 3500,
+  "expected_first_cue_start_ms": 3500,
+  "round_trips": {
+    "shifted.srt": {
+      "cues": 5,
+      "starts_ok": true,
+      "texts_ok": true
+    },
+    "converted.ass": {
+      "cues": 5,
+      "starts_ok": true,
+      "texts_ok": true
+    },
+    "converted.vtt": {
+      "cues": 5,
+      "starts_ok": true,
+      "texts_ok": true
+    }
+  },
+  "ssaevent_math_ok": true,
+  "verdict": "PASS"
+}

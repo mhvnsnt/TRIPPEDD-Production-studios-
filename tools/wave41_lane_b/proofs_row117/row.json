@@ -1,0 +1,26 @@
+{
+  "row": 117,
+  "name": "AviSynth+",
+  "claimed": "GPL-2.0-OR-LATER",
+  "kind": "github",
+  "ref": "avisynth/avisynthplus",
+  "api": {
+    "full_name": "AviSynth/AviSynthPlus",
+    "archived": false,
+    "pushed_at": "2026-10-05T08:57:35Z",
+    "stargazers_count": 1208,
+    "default_branch": "master",
+    "owner": "AviSynth",
+    "spdx_id": null,
+    "license_name": null
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "README.md",
+    "branch": "master",
+    "bytes": 2679
+  },
+  "text_grant": false,
+  "readme_fallback": true,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

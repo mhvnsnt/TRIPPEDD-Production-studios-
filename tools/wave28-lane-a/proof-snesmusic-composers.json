@@ -1,0 +1,208 @@
+{
+  "source": "https://snesmusic.org/v2/select.php?view=composers&char=A&limit=0",
+  "page_bytes": 22981,
+  "composers_A_sample_count": 50,
+  "composers": [
+    {
+      "name": "A Flock of Seagulls",
+      "href": "profile.php?profile=composer&selected=3256"
+    },
+    {
+      "name": "A. Suda",
+      "href": "profile.php?profile=composer&selected=681"
+    },
+    {
+      "name": "A. Yamao",
+      "href": "profile.php?profile=composer&selected=247"
+    },
+    {
+      "name": "ABC",
+      "href": "profile.php?profile=composer&selected=3250"
+    },
+    {
+      "name": "ABS Systems",
+      "href": "profile.php?profile=composer&selected=1011"
+    },
+    {
+      "name": "Abusan (\u3042\u3076\u3055\u3093)",
+      "href": "profile.php?profile=composer&selected=659"
+    },
+    {
+      "name": "Accept",
+      "href": "profile.php?profile=composer&selected=3239"
+    },
+    {
+      "name": "Acceptance",
+      "href": "profile.php?profile=composer&selected=1978"
+    },
+    {
+      "name": "Acidtone",
+      "href": "profile.php?profile=composer&selected=1979"
+    },
+    {
+      "name": "Ackey",
+      "href": "profile.php?profile=composer&selected=963"
+    },
+    {
+      "name": "Adam Cherrington",
+      "href": "profile.php?profile=composer&selected=2752"
+    },
+    {
+      "name": "Adam Skorupa",
+      "href": "profile.php?profile=composer&selected=1802"
+    },
+    {
+      "name": "Ado Mizumori (\u6c34\u68ee\u4e9c\u571f)",
+      "href": "profile.php?profile=composer&selected=2542"
+    },
+    {
+      "name": "Aeju Murasame (\u7d2b\u96e8\u967d\u6a39)",
+      "href": "profile.php?profile=composer&selected=1780"
+    },
+    {
+      "name": "Aesop Rock",
+      "href": "profile.php?profile=composer&selected=1939"
+    },
+    {
+      "name": "AFI",
+      "href": "profile.php?profile=composer&selected=2835"
+    },
+    {
+      "name": "Afrika Bambaataa",
+      "href": "profile.php?profile=composer&selected=3199"
+    },
+    {
+      "name": "Afu-Ra",
+      "href": "profile.php?profile=composer&selected=2297"
+    },
+    {
+      "name": "Agony Scene",
+      "href": "profile.php?profile=composer&selected=2449"
+    },
+    {
+      "name": "Ahmed",
+      "href": "profile.php?profile=composer&selected=2406"
+    },
+    {
+      "name": "Ai Yamashita",
+      "href": "profile.php?profile=composer&selected=1724"
+    },
+    {
+      "name": "Air",
+      "href": "profile.php?profile=composer&selected=2043"
+    },
+    {
+      "name": "Ak'Sent",
+      "href": "profile.php?profile=composer&selected=2084"
+    },
+    {
+      "name": "AK4711",
+      "href": "profile.php?profile=composer&selected=2310"
+    },
+    {
+      "name": "Aka Ishibashi",
+      "href": "profile.php?profile=composer&selected=673"
+    },
+    {
+      "name": "Akari Kaida (\u6d77\u7530\u660e\u91cc)",
+      "href": "profile.php?profile=composer&selected=358"
+    },
+    {
+      "name": "Akemi Kimura (\u6728\u6751\u660e\u7f8e)",
+      "href": "profile.php?profile=composer&selected=1679"
+    },
+    {
+      "name": "Aki Hata (\u7551\u4e9c\u8cb4)",
+      "href": "profile.php?profile=composer&selected=1211"
+    },
+    {
+      "name": "Aki Zaitsu",
+      "href": "profile.php?profile=composer&selected=724"
+    },
+    {
+      "name": "Akihiko Mori (\u68ee\u5f70\u5f66)",
+      "href": "profile.php?profile=composer&selected=38"
+    },
+    {
+      "name": "Akihiko Narita (\u6210\u7530\u6681\u5f66)",
+      "href": "profile.php?profile=composer&selected=2506"
+    },
+    {
+      "name": "Akihiro Akamatsu",
+      "href": "profile.php?profile=composer&selected=22"
+    },
+    {
+      "name": "Akihiro Honda (\u672c\u7530\u6643\u5f18)",
+      "href": "profile.php?profile=composer&selected=1783"
+    },
+    {
+      "name": "Akihiro Juuichiya (\u5341\u4e00\u8c37\u660e\u5e83)",
+      "href": "profile.php?profile=composer&selected=1163"
+    },
+    {
+      "name": "Akihiro Komori (\u5c0f\u68ee\u662d\u5b8f)",
+      "href": "profile.php?profile=composer&selected=2580"
+    },
+    {
+      "name": "Akihiro Nishida (\u897f\u7530\u660e\u5e83)",
+      "href": "profile.php?profile=composer&selected=1621"
+    },
+    {
+      "name": "Akihiro Sato (\u4f50\u85e4\u662d\u6d0b)",
+      "href": "profile.php?profile=composer&selected=1131"
+    },
+    {
+      "name": "Akihito Okawa (\u5927\u5ddd\u6643\u53f2)",
+      "href": "profile.php?profile=composer&selected=976"
+    },
+    {
+      "name": "Akikaz",
+      "href": "profile.php?profile=composer&selected=1088"
+    },
+    {
+      "name": "Akiko Goto",
+      "href": "profile.php?profile=composer&selected=443"
+    },
+    {
+      "name": "Akiko Hashimoto (\u6a4b\u672c\u660e\u5b50)",
+      "href": "profile.php?profile=composer&selected=573"
+    },
+    {
+      "name": "Akiko Ishibashi",
+      "href": "profile.php?profile=composer&selected=1549"
+    },
+    {
+      "name": "Akiko Ito (\u3044\u3068\u3046\u3042\u304d\u3053)",
+      "href": "profile.php?profile=composer&selected=1113"
+    },
+    {
+      "name": "Akiko Kosaka",
+      "href": "profile.php?profile=composer&selected=494"
+    },
+    {
+      "name": "Akinaga Yoshida",
+      "href": "profile.php?profile=composer&selected=159"
+    },
+    {
+      "name": "Akinori Sawa (\u6ca2\u5f70\u8a18)",
+      "href": "profile.php?profile=composer&selected=708"
+    },
+    {
+      "name": "Akinori Suzuki (\u9234\u6728\u79cb\u5247)",
+      "href": "profile.php?profile=composer&selected=1467"
+    },
+    {
+      "name": "Akio Dobashi (\u571f\u6a4b\u5b89\u9a0e\u592b)",
+      "href": "profile.php?profile=composer&selected=1392"
+    },
+    {
+      "name": "Akio Ohmori",
+      "href": "profile.php?profile=composer&selected=305"
+    },
+    {
+      "name": "Akira Fujiwara (\u85e4\u539f\u73b2)",
+      "href": "profile.php?profile=composer&selected=1646"
+    }
+  ],
+  "note": "metadata only; no audio downloaded"
+}

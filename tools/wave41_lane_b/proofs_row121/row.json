@@ -1,0 +1,25 @@
+{
+  "row": 121,
+  "name": "AivisSpeech",
+  "claimed": "LGPL-3.0",
+  "kind": "github",
+  "ref": "Aivis-Project/AivisSpeech",
+  "api": {
+    "full_name": "Aivis-Project/AivisSpeech",
+    "archived": false,
+    "pushed_at": "2026-07-12T17:24:57Z",
+    "stargazers_count": 482,
+    "default_branch": "master",
+    "owner": "Aivis-Project",
+    "spdx_id": "LGPL-3.0",
+    "license_name": "GNU Lesser General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "README.md",
+    "branch": "master",
+    "bytes": 25806
+  },
+  "text_grant": null,
+  "mechanical_verdict": "CONFIRMED (API spdx match; odd license text kept for manual)"
+}

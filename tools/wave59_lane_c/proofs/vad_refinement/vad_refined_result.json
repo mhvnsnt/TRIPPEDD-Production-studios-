@@ -1,0 +1,267 @@
+{
+  "checks": [
+    {
+      "name": "fixture SHAs match wave58 committed artifacts",
+      "pass": true,
+      "measured": "dialogue.wav + GT verified"
+    },
+    {
+      "name": "embeddings.pt SHA matches wave58; (160,192) finite float32 extracted without torch",
+      "pass": true,
+      "measured": "shape=(160, 192)"
+    },
+    {
+      "name": "wave58 window grid + energy gate reproduced",
+      "pass": true,
+      "measured": "grid=166 speech=160 thr=0.01089 max_rms=0.13612"
+    },
+    {
+      "name": "webrtcvad loads; decisions cover full audio",
+      "pass": true,
+      "measured": "4290 10ms decisions, 11 segments"
+    },
+    {
+      "name": "webrtcvad (default agg=2) speech recall vs GT",
+      "pass": false,
+      "measured": "recall=0.8038 precision=1.0000 segments=11 (default config under-recalls TTS speech: real finding)"
+    },
+    {
+      "name": "tuned VAD (sweep) recall >= 0.90, precision >= 0.99",
+      "pass": true,
+      "measured": "agg=0 pad=0.2s recall=0.9359 precision=1.0 nseg=9"
+    },
+    {
+      "name": "silero-vad variant runnable",
+      "pass": false,
+      "measured": "no torch in this env (home disk 100% full at build); silero-vad needs torch -> unavailable"
+    },
+    {
+      "name": "V0 reproduces wave58 DER (0.4084 \u00b10.005)",
+      "pass": true,
+      "measured": "V0 DER0=0.4084"
+    },
+    {
+      "name": "V0 reproduces wave58 JER (0.5478 \u00b10.005)",
+      "pass": true,
+      "measured": "V0 JER0=0.5478"
+    },
+    {
+      "name": "V2a keeps zero VAD-boundary-straddling windows",
+      "pass": true,
+      "measured": "dropped 94 straddlers, kept 66"
+    },
+    {
+      "name": "DER/JER finite for all variants",
+      "pass": true,
+      "measured": "V0=0.4084, V1=0.3753, V2a=0.4084, V2b=0.3511, V2c=0.3416"
+    },
+    {
+      "name": "V2a boundary MAE <= V0",
+      "pass": true,
+      "measured": "V0=0.6556s V2a=0.2389s"
+    },
+    {
+      "name": "V2c (tuned VAD) boundary MAE <= V0",
+      "pass": true,
+      "measured": "V0=0.6556s V2c=0.0694s"
+    }
+  ],
+  "design": "torch-free; embeddings from wave58 embeddings.pt (SHA-verified); VAD-constrained windows are bit-identical hop-grid slices",
+  "vad_webrtcvad_s": 0.4,
+  "vad_sweep": [
+    {
+      "agg": 0,
+      "pad_s": 0.0,
+      "n_segments": 9,
+      "recall": 0.8443,
+      "precision": 1.0
+    },
+    {
+      "agg": 0,
+      "pad_s": 0.2,
+      "n_segments": 9,
+      "recall": 0.9359,
+      "precision": 1.0
+    },
+    {
+      "agg": 1,
+      "pad_s": 0.0,
+      "n_segments": 9,
+      "recall": 0.8443,
+      "precision": 1.0
+    },
+    {
+      "agg": 1,
+      "pad_s": 0.2,
+      "n_segments": 9,
+      "recall": 0.9359,
+      "precision": 1.0
+    },
+    {
+      "agg": 2,
+      "pad_s": 0.0,
+      "n_segments": 11,
+      "recall": 0.8038,
+      "precision": 1.0
+    },
+    {
+      "agg": 2,
+      "pad_s": 0.2,
+      "n_segments": 9,
+      "recall": 0.9102,
+      "precision": 1.0
+    },
+    {
+      "agg": 3,
+      "pad_s": 0.0,
+      "n_segments": 14,
+      "recall": 0.7639,
+      "precision": 1.0
+    },
+    {
+      "agg": 3,
+      "pad_s": 0.2,
+      "n_segments": 9,
+      "recall": 0.8997,
+      "precision": 1.0
+    }
+  ],
+  "vad_tuned_config": {
+    "agg": 0,
+    "pad_s": 0.2,
+    "n_segments": 9,
+    "recall": 0.9359,
+    "precision": 1.0
+  },
+  "variants": {
+    "V0_baseline": {
+      "n_windows_kept": 160,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6879,
+      "window_accuracy": 0.6887,
+      "window_structural_error": 0.3113,
+      "boundary_mae_s": 0.6556,
+      "DER_collar0": 0.4084,
+      "JER_collar0": 0.5478,
+      "DER_collar0.25": 0.3556,
+      "JER_collar0.25": 0.517,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 3.7,
+        "confusion": 12.35,
+        "total": 39.3
+      }
+    },
+    "V1_no_fill": {
+      "n_windows_kept": 160,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6993,
+      "window_accuracy": 0.6887,
+      "window_structural_error": 0.3113,
+      "boundary_mae_s": 0.1583,
+      "DER_collar0": 0.3753,
+      "JER_collar0": 0.5291,
+      "DER_collar0.25": 0.334,
+      "JER_collar0.25": 0.5021,
+      "components_collar0_s": {
+        "missed_detection": 1.225,
+        "false_alarm": 1.925,
+        "confusion": 11.6,
+        "total": 39.3
+      }
+    },
+    "V2a_vad_real": {
+      "n_windows_kept": 66,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6643,
+      "window_accuracy": 0.697,
+      "window_structural_error": 0.303,
+      "boundary_mae_s": 0.2389,
+      "DER_collar0": 0.4084,
+      "JER_collar0": 0.5606,
+      "DER_collar0.25": 0.3758,
+      "JER_collar0.25": 0.5416,
+      "components_collar0_s": {
+        "missed_detection": 4.3,
+        "false_alarm": 0.0,
+        "confusion": 11.75,
+        "total": 39.3
+      }
+    },
+    "V2b_vad_oracle": {
+      "n_windows_kept": 106,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6879,
+      "window_accuracy": 0.6981,
+      "window_structural_error": 0.3019,
+      "boundary_mae_s": 0.5333,
+      "DER_collar0": 0.3511,
+      "JER_collar0": 0.5077,
+      "DER_collar0.25": 0.3198,
+      "JER_collar0.25": 0.4923,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 1.45,
+        "confusion": 12.35,
+        "total": 39.3
+      }
+    },
+    "V2c_vad_tuned": {
+      "n_windows_kept": 95,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6839,
+      "window_accuracy": 0.6842,
+      "window_structural_error": 0.3158,
+      "boundary_mae_s": 0.0694,
+      "DER_collar0": 0.3416,
+      "JER_collar0": 0.5051,
+      "DER_collar0.25": 0.3171,
+      "JER_collar0.25": 0.4914,
+      "components_collar0_s": {
+        "missed_detection": 0.775,
+        "false_alarm": 0.475,
+        "confusion": 12.175,
+        "total": 39.3
+      }
+    }
+  },
+  "diagnostics": {
+    "straddling_windows_gt": 54,
+    "straddling_windows_vad": 94,
+    "straddling_windows_tuned": 65,
+    "vad_segments": 11,
+    "vad_tuned_segments": 9
+  },
+  "delta_V2c_vs_V0": {
+    "DER_collar0": 0.0668,
+    "JER_collar0": 0.0427,
+    "window_structural_error": -0.0045,
+    "verdict": "IMPROVED"
+  },
+  "delta_V2a_vs_V0": {
+    "DER_collar0": 0.0,
+    "verdict": "NO_IMPROVEMENT"
+  },
+  "total_s": 11.0,
+  "pass_rate": "11/13"
+}

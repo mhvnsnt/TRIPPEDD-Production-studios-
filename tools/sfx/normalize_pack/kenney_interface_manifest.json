@@ -1,0 +1,506 @@
+{
+  "packdir": "/home/hatch/workspace/trippedd-studio/tools/sfx/kenney-interface-sounds",
+  "files": {
+    "back_001.ogg": {
+      "bytes": 6997,
+      "sha256": "07db973f79f6ae0f2edc34561e7592e24d0577455919fb602cb8ecc0da991dcf",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "back_002.ogg": {
+      "bytes": 7029,
+      "sha256": "61581c58194e3f19f531072edabbc344204c7e0a2887b8ededce4357bcf09195",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "back_003.ogg": {
+      "bytes": 7208,
+      "sha256": "ff5e87de1230b1a5f1fa83e5a4ba9d7eb1c07154267ac34b510a17d4caa03cef",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "back_004.ogg": {
+      "bytes": 6923,
+      "sha256": "c22e3c49f42c2a5ba6748e91283efe124f32822469c1258c3e5d7b3d7ab9361c",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "bong_001.ogg": {
+      "bytes": 4848,
+      "sha256": "d21d0f0b782445db579d11e2506b24cd1ac9d664ee33aeaf807761aa7b6fd710",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "click_001.ogg": {
+      "bytes": 4876,
+      "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "click_002.ogg": {
+      "bytes": 4275,
+      "sha256": "adcd1f4adc35f1b41bc1b5bbefeff7aa44f2f3f0d96d3199b544140c7c1e761c",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "click_003.ogg": {
+      "bytes": 4371,
+      "sha256": "2fa929138bc3a0f432696588f66eac94b8f6d463905ec8808c6461ce4b054292",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "click_004.ogg": {
+      "bytes": 4486,
+      "sha256": "09e2c1b643b71b9aff9932b4e02d78db116446b9a14b00a5b2a9b28d2668fd8e",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "click_005.ogg": {
+      "bytes": 4410,
+      "sha256": "a3ee7ebb036bc3cdc218ae52bb27548c4f49bcf07505274f8b61b1af8236acc2",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "close_001.ogg": {
+      "bytes": 9915,
+      "sha256": "44af8249b933e0fd35ec957a638bb1a0b01f85b53fbe9674bf77bd3ca3168ef4",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "close_002.ogg": {
+      "bytes": 14752,
+      "sha256": "bc4279d2bb2bf86592473eab6a8eab55e51b54a8619315000dbd780a83b102d8",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "close_003.ogg": {
+      "bytes": 15648,
+      "sha256": "39a1a7f3bc001766c1881841e9903c6b16f5a10b5666e0791d7f6444677d8b05",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "close_004.ogg": {
+      "bytes": 16263,
+      "sha256": "41b41e01ac75f4bc5a9c8dc3b0de744fa7f877757463692783c12a8ae4bfae6b",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "confirmation_001.ogg": {
+      "bytes": 8968,
+      "sha256": "063564703b6094d70718a3e787a55cc9141611e4ecd6b6637f8828f79b4a8c3a",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "confirmation_002.ogg": {
+      "bytes": 14169,
+      "sha256": "33b17a9a9a2397c62b285c52c33a907fdffb476909c99e42dde603f6a7a8b12c",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "confirmation_003.ogg": {
+      "bytes": 9535,
+      "sha256": "3091bf0be0497f825769ee0733ca7bdc3bcd59bd6c6e8f2ba8f93d580ff38022",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "confirmation_004.ogg": {
+      "bytes": 12391,
+      "sha256": "568967a3d9f8a8f6af54ea01729c4882284308f2a27d78c07ffd7ee0d6951661",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "drop_001.ogg": {
+      "bytes": 5859,
+      "sha256": "692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "drop_002.ogg": {
+      "bytes": 6411,
+      "sha256": "4ac4d1cef7e936965cbf795852ca2020300b9e2ba7daa59f2bf4f1f7bf416218",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "drop_003.ogg": {
+      "bytes": 6288,
+      "sha256": "43d086d50f90493a98cd2e09aa6dbf150d164f1578e1ec768d21cb185571ad87",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "drop_004.ogg": {
+      "bytes": 7230,
+      "sha256": "10738707f9300f9b963ceba46d5da2ed4a221faf7d39484a643c2d3bc151c5f2",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_001.ogg": {
+      "bytes": 7373,
+      "sha256": "46e67425d16339772e8d328fb36a49426c9467418686e11beeb71ff84b0f6433",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_002.ogg": {
+      "bytes": 7369,
+      "sha256": "76810ec365f41078fd0507101da5bb7b8730fe011dde43908329fdabd8575e79",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_003.ogg": {
+      "bytes": 12256,
+      "sha256": "885b28175c7b511118bcffab95675b48bbac9005cf6514656ebdad979276b3ab",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_004.ogg": {
+      "bytes": 6393,
+      "sha256": "0b574cea597d96507e782ae9764f88482ce49f46e931e57054bf7150047f2d69",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_005.ogg": {
+      "bytes": 7266,
+      "sha256": "3f75b11df5b06d68d2c25fbf0e9c9d9e7dd9250562a4007ee34856b8a309a2ae",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_006.ogg": {
+      "bytes": 8288,
+      "sha256": "a97513d7fd2b12b1210c423be943b4c1ab0e899b11db95855e9b74836e646ae0",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_007.ogg": {
+      "bytes": 10225,
+      "sha256": "f1ee4c1ac8bfe1a82eacb54b26f49e8974bab93bcf10c01800bc10dbf730f559",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "error_008.ogg": {
+      "bytes": 9215,
+      "sha256": "eba17ecb2a426bfd4a8a6acff5f8a86202b6424a77af0fd842e37809a1ab6d81",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glass_001.ogg": {
+      "bytes": 6103,
+      "sha256": "183eebee20eb0a532b0b85104d139cbf2673eb66d95c3cc733ac9ea98362e7e8",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glass_002.ogg": {
+      "bytes": 4917,
+      "sha256": "08e972c73e53c91d6d310e107e80db60edce78ae47225889a028e628a6f3da49",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glass_003.ogg": {
+      "bytes": 5732,
+      "sha256": "9a6f16e3c2eff6fe5d017a4755a28306b14555728831cd00d70308e8f9689566",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glass_004.ogg": {
+      "bytes": 8323,
+      "sha256": "2379b58f953e3d86982aa8cddcae763022c6258e9820171bf905ce58b4e97766",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glass_005.ogg": {
+      "bytes": 6206,
+      "sha256": "1f6c88008d0d9fe449197512811785e1d4638daf408a96a4a02756530e019172",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glass_006.ogg": {
+      "bytes": 6956,
+      "sha256": "840500be48078f1210f1fd7a9ac4e5665ed9b6f4a2b8dce91a237152a65e94cc",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glitch_001.ogg": {
+      "bytes": 5121,
+      "sha256": "da78c642bbd95da2c364ed0e991ebbfc5a4c0d281165d932b5819e0dd31a39d2",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glitch_002.ogg": {
+      "bytes": 5473,
+      "sha256": "1da06a2e63ce131f5e0316ca27c75fc0d672db7a8f9b986c70693f2bd992eabc",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glitch_003.ogg": {
+      "bytes": 4915,
+      "sha256": "d55e0c64aee9f1ab2ba9523d0e256ca76639c3ec2f230405e2ff25aff36020b3",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "glitch_004.ogg": {
+      "bytes": 5225,
+      "sha256": "d0f4db4d12f88592bc328bd621d356d099eaa2dda37bab37a6cf17891c5026d1",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_001.ogg": {
+      "bytes": 12111,
+      "sha256": "fd3e75e1de2f2fda90aceeacaeb0427ac8bddd3b07a6ce2a8f9ba923df3771f9",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_002.ogg": {
+      "bytes": 9915,
+      "sha256": "cc51162cb4506158b953b121bf479aad070056533ade5c5cd2f980183127ceb4",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_003.ogg": {
+      "bytes": 11748,
+      "sha256": "df16f25d45189f5d44d6a482ab20d5067350ca8525a9affa1f8ce599e31a20a5",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_004.ogg": {
+      "bytes": 17723,
+      "sha256": "59c7a24b204be24d2a44a86d1e4d18c2cf51fa0446967a14b2590e8fb3afaf34",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_005.ogg": {
+      "bytes": 20900,
+      "sha256": "0ee06fc3ee494723fc95b2224f9dc0af857f2903e7f94d5d33d8e67f454b3cf7",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_006.ogg": {
+      "bytes": 11618,
+      "sha256": "f050b3bb77cb0b901bc8df43d2cc1872c353aebae10b4030cf8ae681726ad343",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_007.ogg": {
+      "bytes": 8097,
+      "sha256": "3400931f3f3a1e9cf253efef9069bcdf053edd2234e4ee9bf88977c389943484",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_008.ogg": {
+      "bytes": 9085,
+      "sha256": "57c074e600e193a303ce781c04c0ccc191c6030f9f106594fd94a65e55435c17",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "maximize_009.ogg": {
+      "bytes": 7650,
+      "sha256": "b4d56386258b3cc1c8f6e5a22465f8cd65de3d4309e022664050f43151e466cd",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_001.ogg": {
+      "bytes": 11924,
+      "sha256": "8481912bc7fa5828924a00ef15b6cd613b994956e0817bd3122065c9b2896d2d",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_002.ogg": {
+      "bytes": 9441,
+      "sha256": "670e47846dc003fe29d39c8dfebb8635bfcacae3c0916392c0e8bff659493ad6",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_003.ogg": {
+      "bytes": 11739,
+      "sha256": "400e1041499de85ec8b5529a35ff36787288175c4696cf2018ecff24a3a3fd29",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_004.ogg": {
+      "bytes": 17099,
+      "sha256": "fcfe6fbb03a728e90b907f34d2ec7bf3ea1857397c3e47ee01990c1be059e4f6",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_005.ogg": {
+      "bytes": 19501,
+      "sha256": "4e6792a98c75d3ff187c0c55561c38c569e02c64757ebebb98831cfe84e3e172",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_006.ogg": {
+      "bytes": 11292,
+      "sha256": "39d7c47855b9642f43548b7b132c20e20a1490c7eb13d10008c32fcb24da19f8",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_007.ogg": {
+      "bytes": 7677,
+      "sha256": "e951505044de0d5d87b72ce7f312ac3fbbdde025ec8c10db70f9d2651a2c8947",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_008.ogg": {
+      "bytes": 9298,
+      "sha256": "bc14c17875436dcaaf809c25db5e61454dbc35612880f329ff37a95ef9b6a865",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "minimize_009.ogg": {
+      "bytes": 7665,
+      "sha256": "885c20fc8b5b52226288794842a403821cd16e9800ec1d76be7a2f1655542eb8",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "open_001.ogg": {
+      "bytes": 9834,
+      "sha256": "a27c6bb0df7da1e6af5dd5937593c98bc58b6e513f42fe6a3254cd6a6949c648",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "open_002.ogg": {
+      "bytes": 14975,
+      "sha256": "24ff224fe2c09c6aed1b41249825382dc74cf324b887ff279d8494912ce2beee",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "open_003.ogg": {
+      "bytes": 15046,
+      "sha256": "bcdca6b5c9c33aa15ca3fb18a1fa8d98a01b528b85be08c5a610e57c75fc022d",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "open_004.ogg": {
+      "bytes": 15879,
+      "sha256": "4e02b8287bc4d9e7bf7a889cb9e48613c8eb22a310dfb0bf29c2bfd0a1e4bea5",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "pluck_001.ogg": {
+      "bytes": 6317,
+      "sha256": "be97ec4893a02d6eccfb678daa76c83e34cb2583b834ec2593d2641def739fa4",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "pluck_002.ogg": {
+      "bytes": 6941,
+      "sha256": "c977fe249ff42d1c93a552b33abc13a8399df3879fa510475426e5c4bbac1da9",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "question_001.ogg": {
+      "bytes": 11700,
+      "sha256": "abb8f9e4eb2071491b0b15f84ee302386b1847609310c1b000ae174639a6cc5a",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "question_002.ogg": {
+      "bytes": 9455,
+      "sha256": "46056f10c70dda860e93bd27b66f4d33c0b7154eff28def06471b50028efa5b3",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "question_003.ogg": {
+      "bytes": 8233,
+      "sha256": "00bafc564e29c12e99da584864a750260e7110378251d63d3aa5b3d727836efe",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "question_004.ogg": {
+      "bytes": 9821,
+      "sha256": "585ecb58b529dc49b5c5ce5ba93427bf73b7052bae55e49c43ba8f169c93ac99",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scratch_001.ogg": {
+      "bytes": 8989,
+      "sha256": "5c294d2e1a6b6d07ee2d75b17105a55ad3527e5482dd60652dc49c2ea4c70096",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scratch_002.ogg": {
+      "bytes": 9319,
+      "sha256": "2b07edafc1f3f49c4813f2b0ae9481c566c1f9962a22d5f5b79da7111e058e56",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scratch_003.ogg": {
+      "bytes": 8849,
+      "sha256": "2d80371b55ebe2e8b916b84093a8ae7717d09a80c6b617079ade5bd0dacba7b7",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scratch_004.ogg": {
+      "bytes": 16478,
+      "sha256": "26009c67ef90ee7a5a2bc458ef9e7f5a9da83da9397a830cff9e4a1813914687",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scratch_005.ogg": {
+      "bytes": 15824,
+      "sha256": "65742c15dca9853611e1c9e83bd04ac0d693f79896715cafa90bad39745d7a62",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scroll_001.ogg": {
+      "bytes": 21633,
+      "sha256": "320c6aafb2c7a503eae508dc443b72d7f7c0a317bfd16813157ed400cd04cf16",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scroll_002.ogg": {
+      "bytes": 24628,
+      "sha256": "6fbcda22bc45349c66f1ba4b56d6c211b12264e83667de4b9af1e4ffcef74be5",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scroll_003.ogg": {
+      "bytes": 29488,
+      "sha256": "c2fecaa6e37c73d7141d0bd303d1c2231428d97c19ce83d50236a56804818643",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scroll_004.ogg": {
+      "bytes": 20348,
+      "sha256": "431398a3c12ba3aa30ead97f3e2f9b05eb00978facf04b31bda138ab77a2f54c",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "scroll_005.ogg": {
+      "bytes": 20448,
+      "sha256": "e39d059462225efa31f758fb2e01871cc96781972b5062873a24a55c88174e02",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_001.ogg": {
+      "bytes": 5468,
+      "sha256": "aec0c31ea934a35936ae0d2ab8fac8123c93aa5647f935853a58dbaf90278b7a",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_002.ogg": {
+      "bytes": 5463,
+      "sha256": "4cc6ac5341b9b2c86fef80c347de028e9ab9f2e037586ac7d9fa59a403a1c012",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_003.ogg": {
+      "bytes": 6901,
+      "sha256": "9a612fd2f513d52a296906b41071c990f75defe56be3bee60d2d4e2423b51b8b",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_004.ogg": {
+      "bytes": 6909,
+      "sha256": "eb6cb435f3f2ab14f85f46a2bdd9073ec511d0f1f8d8c890c6636045703a5fd4",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_005.ogg": {
+      "bytes": 6767,
+      "sha256": "ad09146e4ea33b931b2f5dfb4051a4f1fe4a36f1a48c42c5e9269c292ae21214",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_006.ogg": {
+      "bytes": 8101,
+      "sha256": "b44550fa8d3276c072ce7c3c1315d949f7a28a95bc22b3618ad4eea62eac8abe",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_007.ogg": {
+      "bytes": 6580,
+      "sha256": "cd4390dd2b24f09016a5fa1be63334fa0f1859811f4cf29c02e8e2750f6a2cd0",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "select_008.ogg": {
+      "bytes": 6339,
+      "sha256": "f703b6b1c62dae1c246a46d5c2442802588f68be2df4d17e0d65cf7e0dbfc826",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "switch_001.ogg": {
+      "bytes": 6753,
+      "sha256": "3b74efad87f1e69dbd1d05c5ad952ab90859b5a3d11da6ec5bd79b4f03b42afa",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "switch_002.ogg": {
+      "bytes": 7097,
+      "sha256": "6fc395be2ad1f99ce318a5d28f98fb76dbeb676d83a0b28239d8c1fb90736180",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "switch_003.ogg": {
+      "bytes": 9653,
+      "sha256": "ca12dd32103f401481d5aff56d5e9831174e99bb577139c09b07d046eb8b837e",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "switch_004.ogg": {
+      "bytes": 7248,
+      "sha256": "541c19cc1ab712a9efc5765df602e7d0da09d9cafdd297ce1e19b092289fd62f",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "switch_005.ogg": {
+      "bytes": 7814,
+      "sha256": "e94dfab6fd6558068ab3ea97e22e4b4f16b83ee440e6abf33ec4c4e9fbe8a70e",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "switch_006.ogg": {
+      "bytes": 7873,
+      "sha256": "2676ddc4e341ee557b4d1dc8767ef8655540d66fb3ded6a1614080dbc4dc6f18",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "switch_007.ogg": {
+      "bytes": 7921,
+      "sha256": "eeaf60c2abc7e1b715e2b032401bcbf6b3753b77f96b238f861a034a75515967",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "tick_001.ogg": {
+      "bytes": 4497,
+      "sha256": "9d057b918024c787bbe6c00beed13a7ef72a3fa0c259add3cef36582792f4230",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "tick_002.ogg": {
+      "bytes": 4514,
+      "sha256": "869442f54214be902ec7437f79e400dc91c1bfd90d18a6dd2d5b7e41ffbf457b",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "tick_004.ogg": {
+      "bytes": 5031,
+      "sha256": "0253d5f7d8d2afbbc370eac2a4539bb844239f0c98343e516d376b137c06d27c",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "toggle_001.ogg": {
+      "bytes": 7369,
+      "sha256": "ca1d2dde5f0b286abac4f070e23edab8f30927c8a533665cdf2ac6492a415e49",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "toggle_002.ogg": {
+      "bytes": 8056,
+      "sha256": "1f564f5520cfa0764028ce245ad97599d3ece8f0ab504554c403af92ac72b900",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "toggle_003.ogg": {
+      "bytes": 8654,
+      "sha256": "7e69aba356d590826cce291bbd9dc6a85d7c53858b0e3712fcad30e1ad080b23",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    },
+    "toggle_004.ogg": {
+      "bytes": 6695,
+      "sha256": "d7bf2236fc95a0fe1e3b278259392bcb062644e2d4ec5f9c96f7c09a9928262f",
+      "stats": "basic-only (stdlib cannot decode this format)"
+    }
+  },
+  "warnings": []
+}

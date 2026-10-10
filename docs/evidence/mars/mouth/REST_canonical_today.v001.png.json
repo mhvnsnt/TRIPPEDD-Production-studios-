@@ -1,0 +1,30 @@
+{
+  "artifact": "docs/evidence/mars/mouth/REST_canonical_today.v001.png",
+  "sha256": "644a56864882ef7a206f56b8829c3704192345b244928a6ffba74ddd462b300b",
+  "bytes": 754636,
+  "resolution": [
+    700,
+    700
+  ],
+  "set": "mars/mouth",
+  "label": "REST_canonical_today",
+  "version": 1,
+  "producedAt": "2026-09-13T21:24:06Z",
+  "producingTool": "tools/character/mouth_proof.py",
+  "producingCommit": "74e112548c2f7549e616cdf20a09ff40376f7974",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "",
+  "camera": "",
+  "viewTransform": "",
+  "shown": [],
+  "hidden": [],
+  "status": "FAIL",
+  "note": "The ONE failing check: REST reads cavity 1.9% + tongue 0.1% of the mouth area against yesterday's 0.6% + 0.0%. His lips do not quite meet at rest.",
+  "measurements": {
+    "restCavityPct": "1.9",
+    "restTonguePct": "0.1",
+    "restTeethPct": "0.3"
+  },
+  "sourceArtifact": "assets/rigs/MARS_FACE.blend",
+  "sourceSha256": "7c8b3d7073c240676530cca6d50b96662a042c6d053388fb340a5b74160765ea"
+}

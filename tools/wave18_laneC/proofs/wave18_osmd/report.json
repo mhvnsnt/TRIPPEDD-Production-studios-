@@ -1,0 +1,19 @@
+{
+  "tool": "OpenSheetMusicDisplay 2.2.0 \u2014 opensheetmusicdisplay/opensheetmusicdisplay, BSD-3-Clause",
+  "catalog": "#### OpenSheetMusicDisplay",
+  "wiring": "tools/wave18_laneC/osmd/osmd_render.cjs \u2014 headless render of MusicXML via jsdom; lessons: set globals (document/window/Node/Element) BEFORE require, npm canvas package needed for VexFlow text metrics (apt libcairo2-dev etc.), stub container offsetWidth (jsdom has no layout) and pass pageFormat:'A4_P' or the page collapses to width 0",
+  "input": "beethoven_op48_no1.musicxml extracted from Lane A's OpenScore Lieder pull (tools/wave18_laneA/proofs/wave18_openscore/lc5115311.mxl, CC0)",
+  "proof": {
+    "proof.svg": {
+      "bytes": 1610863,
+      "sha256": "4e996a36d873bba8b228c72d99db202e71ea7722542238045b176219eab95125",
+      "stavenote_groups": 408
+    },
+    "page1.png": {
+      "bytes": 252912,
+      "sha256": "98bc73fff32cb8c0433ea3cf38f5d8e69c8d556b390a3270daa1f8b4e21651cd"
+    }
+  },
+  "verification": "page1.png inspected visually: correct engraved notation \u2014 '6 Lieder, Op.48 / Bitten', Voice + Pianoforte staves, lyrics underlaid, dynamics (p, cresc.). 2 pages rendered.",
+  "wave": "Wave 18 Lane C (2026-10-07)"
+}

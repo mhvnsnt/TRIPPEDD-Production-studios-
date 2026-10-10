@@ -1,0 +1,16 @@
+{
+  "tool": "pull_plate.py (Wave 10 Lane A)",
+  "title": "Film Mystery (1937 Dreft screen ad)",
+  "source": "Prelinger Archives (via Internet Archive)",
+  "source_url": "https://archive.org/download/FilmMyst1937/FilmMyst1937_512kb.mp4",
+  "license": "Public Domain (Prelinger Archives ephemeral film)",
+  "license_proof": "https://archive.org/details/FilmMyst1937",
+  "file": "FilmMyst1937_512kb.mp4",
+  "sha256": "9e9d74418735d89366abe9366a129c653845b5a9f3521e4e5b03709e7a6227db",
+  "bytes": 4251795,
+  "duration_s": 60.13,
+  "width": 320,
+  "height": 240,
+  "codec": "h264",
+  "fps": "2997/100"
+}

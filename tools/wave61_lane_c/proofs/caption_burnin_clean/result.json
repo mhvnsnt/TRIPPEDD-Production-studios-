@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "name": "hypothesis_events",
+      "status": "PASS",
+      "detail": "9 hypothesis events (9 GT turns)"
+    },
+    {
+      "name": "audio_duration",
+      "status": "PASS",
+      "detail": "denoised audio 42.90 s"
+    },
+    {
+      "name": "events_have_text",
+      "status": "PASS",
+      "detail": "9/9 events carry GT turn text"
+    },
+    {
+      "name": "srt_roundtrip",
+      "status": "PASS",
+      "detail": "9/9 SRT blocks parse back with timestamps"
+    },
+    {
+      "name": "ass_written",
+      "status": "PASS",
+      "detail": "captions.ass 1942 bytes, 9 Dialogue lines"
+    },
+    {
+      "name": "waveform_video",
+      "status": "PASS",
+      "detail": "waves.mp4 42.90 s, 640x360@30"
+    },
+    {
+      "name": "libass_clean",
+      "status": "PASS",
+      "detail": "libass stderr errors: 0"
+    },
+    {
+      "name": "burned_duration",
+      "status": "PASS",
+      "detail": "burned 42.900000 s vs audio 42.90 s"
+    },
+    {
+      "name": "burn_pixel_on",
+      "status": "PASS",
+      "detail": "caption-ON band diff 11.73/255 (> 2.0)"
+    },
+    {
+      "name": "burn_pixel_off",
+      "status": "PASS",
+      "detail": "caption-OFF band diff 0.00/255 (< 1.0)"
+    }
+  ],
+  "on_off_times": {
+    "on": 2.375,
+    "off": 0.0
+  },
+  "pixel": {
+    "on_mean_abs_diff": 11.732,
+    "off_mean_abs_diff": 0.0
+  },
+  "passed": 10,
+  "failed": 0
+}

@@ -1,0 +1,53 @@
+{
+  "tool": "nryant/dscore (BSD-2-Clause), vendored scorelib + NIST md-eval-22.pl",
+  "file_id": "wave24_demo",
+  "collar_s": 0.25,
+  "reference_turns": [
+    {
+      "speaker": "spk_A",
+      "onset": 0.0,
+      "offset": 3.0
+    },
+    {
+      "speaker": "spk_B",
+      "onset": 3.5,
+      "offset": 6.5
+    }
+  ],
+  "hypothesis_perfect_der_pct": 0.0,
+  "hypothesis_degraded": [
+    {
+      "speaker": "spk_A",
+      "onset": 0.5,
+      "offset": 3.0,
+      "defect": "missed first 0.5 s"
+    },
+    {
+      "speaker": "spk_A",
+      "onset": 3.5,
+      "offset": 6.5,
+      "defect": "speaker confusion (should be spk_B)"
+    },
+    {
+      "speaker": "spk_B",
+      "onset": 7.0,
+      "offset": 8.0,
+      "defect": "false alarm"
+    }
+  ],
+  "hypothesis_degraded_der_pct": 70.0,
+  "per_file_der_pct": {
+    "wave24_demo": 70.0
+  },
+  "assertions": [
+    "RTTM write->load round-trip lossless",
+    "validate_rttm passes on ref + degraded",
+    "perfect hypothesis DER == 0.0",
+    "degraded hypothesis DER > 10.0"
+  ],
+  "rttm_files": [
+    "/home/hatch/workspace/trippedd-studio/tools/captions/proofs/wave24_lane_b/wave24_ref.rttm",
+    "/home/hatch/workspace/trippedd-studio/tools/captions/proofs/wave24_lane_b/wave24_hyp_perfect.rttm",
+    "/home/hatch/workspace/trippedd-studio/tools/captions/proofs/wave24_lane_b/wave24_hyp_degraded.rttm"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "row": 200,
+  "name": "TinyVGM",
+  "claimed": "AGPL-3.0",
+  "kind": "github",
+  "ref": "SudoMaker/TinyVGM",
+  "api": {
+    "full_name": "SudoMaker/TinyVGM",
+    "archived": false,
+    "pushed_at": "2023-06-25T04:06:27Z",
+    "stargazers_count": 27,
+    "default_branch": "master",
+    "owner": "SudoMaker",
+    "spdx_id": "AGPL-3.0",
+    "license_name": "GNU Affero General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE",
+    "branch": "master",
+    "bytes": 34523
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

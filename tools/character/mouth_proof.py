@@ -28,6 +28,12 @@ ENGINE = opt("--engine", "BLENDER_EEVEE_NEXT")
 SAMPLES = int(opt("--samples", "64"))
 RES = int(opt("--res", "900"))
 ONLY = opt("--only", "")
+SET = opt("--set", "mouth")
+# EEVEE runs on software GL in this container, so every extra camera costs real
+# minutes. The mouth sheet needs all three views; an expression is judged from
+# the front, with profile for the nose and brow, and the mouth camera adds
+# nothing to a brow raise. Naming the views beats rendering ones nobody reads.
+CAMS = opt("--cams", "front,mouth,profile").split(",")
 os.makedirs(OUT, exist_ok=True)
 
 F = MouthFrame(); MW = F.MW
@@ -48,29 +54,25 @@ kb = head.data.shape_keys.key_blocks
 # Every value below is a control this rig actually has, and the render is the
 # arbiter of whether the combination reads. That is the whole reason the control
 # layer exists instead of one blob-shaped key per phoneme.
-POSES = [
-    ("01_REST", 0.0, {}, {}),
-    ("02_OPEN", 18.0, {"lip_lower_depress": 0.35, "lip_upper_raise": 0.15}, {}),
-    ("03_WIDE", 31.0, {"lip_lower_depress": 0.70, "lip_upper_raise": 0.45,
-                       "lip_corner_L_up": 0.20, "lip_corner_R_up": 0.20},
-                      {"tongue_root": (-14, 0, 0), "tongue_mid": (-8, 0, 0)}),
-    ("04_AA", 23.0, {"lip_lower_depress": 0.55, "lip_upper_raise": 0.30},
-                    {"tongue_root": (-8, 0, 0), "tongue_mid": (-5, 0, 0)}),
-    ("05_OH", 15.0, {"mouth_funnel": 0.95, "lip_protrude": 0.70,
-                     "lip_corner_L_in": 0.85, "lip_corner_R_in": 0.85,
-                     "lip_lower_depress": 0.25}, {"tongue_root": (-6, 0, 0)}),
-    ("06_EE", 6.0, {"lip_corner_L_wide": 1.0, "lip_corner_R_wide": 1.0,
-                    "lip_upper_raise": 0.35, "lip_lower_depress": 0.18},
-                   {"tongue_mid": (10, 0, 0), "tongue_tip": (8, 0, 0)}),
-    ("07_MM", 0.0, {"lip_seal": 1.0, "lip_compress": 0.65}, {}),
-    ("08_FF", 5.0, {"lip_lower_curl": 0.95, "lip_upper_raise": 0.25,
-                    "lip_corner_L_wide": 0.30, "lip_corner_R_wide": 0.30}, {}),
-    ("09_BLINK", 0.0, {"blink_L": 1.0, "blink_R": 1.0}, {}),
-    ("10_SMILE", 4.0, {"lip_corner_L_up": 1.0, "lip_corner_R_up": 1.0,
-                       "lip_corner_L_wide": 0.65, "lip_corner_R_wide": 0.65,
-                       "cheek_puff_L": 0.25, "cheek_puff_R": 0.25,
-                       "squint_L": 0.35, "squint_R": 0.35}, {}),
-]
+from face_poses import POSES, FACS_POSES
+# ── the FACS set: the NAMED expressions, which is a different question ──────
+# The mouth set asks "is there an oral cavity in there". This one asks "does a
+# named expression reach the screen" -- blinking, brows, nostril flare, smile,
+# the things a face does. They share the rig, the lighting and the cameras on
+# purpose: two proof tools would drift apart and one of them would quietly stop
+# being run.
+if SET == "facs":
+    POSES = FACS_POSES
+elif SET != "mouth":
+    sys.exit("unknown --set %r (have: mouth, facs)" % SET)
+
+# A pose naming a control this rig does not have would silently render as REST
+# and the sheet would look like a working expression system doing nothing.
+_missing = sorted({k for _, _, sh, _ in POSES for k in sh if k not in kb})
+if _missing:
+    sys.exit("these poses name controls that do not exist on the rig: %s"
+             % ", ".join(_missing))
+
 if ONLY:
     POSES = [p for p in POSES if ONLY in p[0]]
 
@@ -223,6 +225,68 @@ CAM_MOUTH = camera("CAM_MOUTH", tuple(V(mouth_w) + V((0.05, -0.85, 0.10))), mout
 CAM_PROFILE = camera("CAM_PROFILE", (CENTRE.x - 2.30, CENTRE.y - 0.05, CENTRE.z),
                      (CENTRE.x, CENTRE.y, CENTRE.z), 70)
 
+def _load_rgb(path):
+    import numpy as _np
+    im = bpy.data.images.load(path)
+    try:
+        buf = _np.empty(len(im.pixels), _np.float32); im.pixels.foreach_get(buf)
+        w, h = im.size
+        return buf.reshape(h, w, 4)[:, :, :3]     # Blender rows run bottom-up
+    finally:
+        bpy.data.images.remove(im)
+
+def pixel_delta(a, b, box=None):
+    """Mean absolute RGB difference between two rendered frames, 0..1.
+
+    A WHOLE-FRAME MEAN IS THE WRONG UNIT AND IT FAILED A WORKING BLINK.
+    Measured: one lid scored 0.00110 and both lids 0.00266 against a 0.0015 bar
+    -- consistent with each other and with a real blink, and rejected purely
+    because two eyelids are a tiny fraction of a full-head frame while a brow
+    raise is a large one. Judging both against the same number asks a blink to
+    repaint as much of the image as a brow does.
+    `box` is a normalised (x0, y0, x1, y1) region, so the delta is measured
+    where the control acts. Same lesson as MOVE_EPS: the threshold has to be in
+    the units of the thing being measured."""
+    if a == b or not (os.path.exists(a) and os.path.exists(b)): return 0.0
+    import numpy as _np
+    pa, pb = _load_rgb(a), _load_rgb(b)
+    if pa.shape != pb.shape: return 0.0
+    if box:
+        h, w, _ = pa.shape
+        x0, y0, x1, y1 = box
+        cx0, cx1 = max(0, int(x0 * w)), min(w, max(int(x1 * w), int(x0 * w) + 1))
+        cy0, cy1 = max(0, int(y0 * h)), min(h, max(int(y1 * h), int(y0 * h) + 1))
+        pa, pb = pa[cy0:cy1, cx0:cx1], pb[cy0:cy1, cx0:cx1]
+        if pa.size == 0: return 0.0
+    return float(_np.abs(pa - pb).mean())
+
+from bpy_extras.object_utils import world_to_camera_view
+
+def moved_region(cam, pad=0.03):
+    """The normalised screen box the CURRENT pose actually displaces.
+
+    Derived from the live evaluated mesh against the rest mesh, so it covers
+    bone motion and shape keys alike rather than trusting a pose dictionary."""
+    deps = bpy.context.evaluated_depsgraph_get()
+    ev = head.evaluated_get(deps); m = ev.to_mesh()
+    cur = [head.matrix_world @ v.co.copy() for v in m.vertices]
+    ev.to_mesh_clear()
+    if not hasattr(moved_region, "rest"):
+        return None
+    rest = moved_region.rest
+    if len(rest) != len(cur): return None
+    pts = [c for c, r in zip(cur, rest) if (c - r).length > MW * 0.004]
+    if not pts: return None
+    uv = [world_to_camera_view(scene, cam, p) for p in pts]
+    xs = [u.x for u in uv]; ys = [u.y for u in uv]
+    return (min(xs) - pad, min(ys) - pad, max(xs) + pad, max(ys) + pad)
+
+def snapshot_rest():
+    deps = bpy.context.evaluated_depsgraph_get()
+    ev = head.evaluated_get(deps); m = ev.to_mesh()
+    moved_region.rest = [head.matrix_world @ v.co.copy() for v in m.vertices]
+    ev.to_mesh_clear()
+
 # ── run ─────────────────────────────────────────────────────────────────────
 report, rest_survey = [], None
 for (name, jaw, shapes, tongue) in POSES:
@@ -237,9 +301,26 @@ for (name, jaw, shapes, tongue) in POSES:
                        for k in ("skin", "cavity", "teeth", "gum", "tongue", "eye")}}
     report.append(row)
     for cam, tag in ((CAM_FULL, "front"), (CAM_MOUTH, "mouth"), (CAM_PROFILE, "profile")):
+        if tag not in CAMS: continue
         scene.camera = cam
         scene.render.filepath = os.path.join(OUT, "%s_%s.png" % (name, tag))
         bpy.ops.render.render(write_still=True)
+    # DOES IT REACH THE SCREEN? Every measurement above is geometry, and
+    # geometry that moves behind an occluder or below the shading threshold is
+    # a control that is real and invisible. Compare the actual rendered pixels
+    # against REST. This is the cheapest possible version of the visual gate
+    # and it catches the case no vertex count can.
+    _front = os.path.join(OUT, "%s_front.png" % name)
+    _rest_front = os.path.join(OUT, "01_REST_front.png")
+    if name == "01_REST":
+        snapshot_rest()
+        row["movedRegion"] = None
+    else:
+        row["movedRegion"] = [round(c, 4) for c in (moved_region(CAM_FULL) or (0, 0, 1, 1))]
+    row["frontPixelDeltaVsRest"] = round(pixel_delta(_front, _rest_front), 5)
+    row["regionPixelDeltaVsRest"] = round(
+        pixel_delta(_front, _rest_front,
+                    box=row["movedRegion"] if row["movedRegion"] else None), 5)
     print("%-10s jaw %4.1f  gap %6.2f%% HH   skin %5.1f%%  cavity %5.1f%%  teeth %5.1f%%  "
           "gum %4.1f%%  tongue %5.1f%%"
           % (name, jaw, row["lipGapPercentOfHeadHeight"], row["visible"]["skin"],
@@ -253,8 +334,60 @@ def check(label, ok, detail):
     checks.append({"check": label, "pass": bool(ok), "detail": detail})
     print("  %s  %-42s %s" % ("PASS" if ok else "FAIL", label, detail))
 
-print("\nMOUTH_ANATOMY_VERIFIED gate")
-if "01_REST" in by:
+GATE = "FACE_EXPRESSION_VERIFIED" if SET == "facs" else "MOUTH_ANATOMY_VERIFIED"
+print("\n%s gate" % GATE)
+
+if SET == "facs":
+    for r in report:
+        if r["pose"] == "01_REST": continue
+        check("%s reaches the screen" % r["pose"], r["regionPixelDeltaVsRest"] > 0.004,
+              "pixel delta %.5f inside the region it moves (%.5f over the whole frame)"
+              % (r["regionPixelDeltaVsRest"], r["frontPixelDeltaVsRest"]))
+    # THE EYES ARE NOT IN THE MOUTH SURVEY. The ray grid is aimed at the mouth
+    # with span 1.25 MW, so `eye` reads 0.0% at rest and in every pose -- asking
+    # it about a blink is asking an instrument that cannot see the eyes whether
+    # the eyes changed, and it answers "no" forever. That is the same shape as
+    # the gum row reading 0.0% while gums were plainly in frame. The blink's
+    # GEOMETRY verdict is measured in rig_face.py (lid travel toward closure, as
+    # a fraction of each eye's own opening) and recorded in MARS_face_state.json;
+    # this sheet's job is to confirm it reaches the PIXELS.
+    br = state.get("blink", {})
+    for sd in ("L", "R"):
+        b = br.get("blink_%s" % sd)
+        if not b: continue
+        check("blink_%s closes, not opens (geometry)" % sd, b["openingsTravelled"] >= 0.8,
+              "%s travels %+.2f of the eye's own opening (occlusion %.0f%%, which is NOT "
+              "the verdict)" % (b["chosen"], b["openingsTravelled"], b["occlusionPercent"]))
+    if "03_BLINK_L_ONLY" in by and "02_BLINK" in by:
+        one, both = by["03_BLINK_L_ONLY"], by["02_BLINK"]
+        check("one lid moves about half of what two lids move",
+              one["frontPixelDeltaVsRest"] > 0
+              and 0.3 < one["frontPixelDeltaVsRest"] / both["frontPixelDeltaVsRest"] < 0.75,
+              "one lid %.5f vs both %.5f = %.0f%% of the two-lid change"
+              % (one["frontPixelDeltaVsRest"], both["frontPixelDeltaVsRest"],
+                 100 * one["frontPixelDeltaVsRest"] / max(both["frontPixelDeltaVsRest"], 1e-9)))
+    if "10_JAW_OPEN" in by and "01_REST" in by:
+        # facs_jawOpen is a SKIN shape. It does not rotate the jaw bone, so the
+        # lower arch and tongue -- which ride that bone -- stay put. Stated as a
+        # measurement rather than hidden: the shape is real, the wiring to the
+        # bone is the next piece of work.
+        check("the FACS jaw shape parts the lips on its own",
+              by["10_JAW_OPEN"]["lipGap"] > by["01_REST"]["lipGap"] + MW * 0.005,
+              "gap %.2f%% of head height vs %.2f%% at rest -- skin only; the jaw BONE is "
+              "what carries the lower arch, and driving it from this shape is not wired yet"
+              % (by["10_JAW_OPEN"]["lipGapPercentOfHeadHeight"],
+                 by["01_REST"]["lipGapPercentOfHeadHeight"]))
+    if "12_DISGUST" in by and "05_NOSTRIL_FLARE" in by:
+        # COMPARE THE TWO FRAMES, NOT THEIR DISTANCES FROM A THIRD ONE. Two
+        # different faces can sit the same distance from REST; |d1 - d2| was
+        # 0.00031 for two visibly different expressions because the sneer
+        # dominates the area in both. Ask the real question directly.
+        d = pixel_delta(os.path.join(OUT, "12_DISGUST_front.png"),
+                        os.path.join(OUT, "05_NOSTRIL_FLARE_front.png"))
+        check("a compound is not just its largest part", d > 0.004,
+              "disgust vs sneer-alone differ by %.5f across the frame" % d)
+
+if SET == "mouth" and "01_REST" in by:
     r = by["01_REST"]
     check("REST reads as a closed mouth",
           r["visible"]["cavity"] + r["visible"]["tongue"] < 1.0,
@@ -280,12 +413,18 @@ if "07_MM" in by:
     check("MM closes the mouth", by["07_MM"]["visible"]["cavity"] < 1.0,
           "cavity %.1f%%" % by["07_MM"]["visible"]["cavity"])
 
+# A gate with nothing in it reports "0/0 pass" and reads as a clean sheet. That
+# is the same shape as every false green in this project: NOT_ATTEMPTED wearing
+# the costume of SUCCEEDED.
+if not checks:
+    sys.exit("THE GATE RAN ZERO CHECKS for --set %s. That is NOT_ATTEMPTED, not a pass." % SET)
 passed = sum(1 for c in checks if c["pass"])
-json.dump({"engine": ENGINE, "samples": SAMPLES, "poses": report, "checks": checks,
+json.dump({"engine": ENGINE, "samples": SAMPLES, "set": SET, "gate": GATE,
+           "poses": report, "checks": checks,
            "verified": passed == len(checks),
            "method": "grid of rays fired at the mouth, classified by the MATERIAL each one "
                      "lands on; renders from a full-head camera and a mouth camera per pose"},
           open(os.path.join(OUT, "mouth_proof.json"), "w"), indent=2)
 print("\n%d/%d checks pass — %s" % (passed, len(checks),
-      "MOUTH_ANATOMY_VERIFIED" if passed == len(checks) else "NOT VERIFIED"))
+      GATE if passed == len(checks) else "NOT VERIFIED"))
 print("frames → %s" % OUT)

@@ -1,0 +1,21 @@
+{
+  "$schema":"trippedd.gaussian-world-contract/v1",
+  "authority":"Blender-production-with-external-world-data",
+  "unknownNeverPass":true,
+  "worldSources":["2d_plate","photo_set","video_capture","procedural_heightmap","gaussian_scene"],
+  "upstreams":["gsplat","OpenSplat","Worldsmith","bene-proggen-maps"],
+  "requiredEvidence":["sourceHash","cameraCalibration","coordinateSystem","worldScale","outputHash","gaussianCount","actualPixelEvidence"],
+  "handoff":{
+    "environmentIsDerivative":true,
+    "canonicalMARSMutationForbidden":true,
+    "blenderIsAnimationAuthority":true,
+    "cameraTransferRequired":true
+  },
+  "quality":{
+    "requiredViews":["front","three_quarter","side"],
+    "sourceOutputHashRequired":true,
+    "numericalQCRequired":true,
+    "actualPixelEvidenceRequired":true,
+    "staleCacheForbidden":true
+  }
+}

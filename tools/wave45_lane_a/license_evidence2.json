@@ -1,0 +1,42 @@
+{
+ "chiptune2.js": {
+  "repo": "deskjet/chiptune2.js",
+  "spdx": null,
+  "pushed": "2024-06-15T11:37:05Z",
+  "archived": false,
+  "head": "FETCH-FAIL: HTTP Error 404: Not Found"
+ },
+ "Buzztrax": {
+  "repo": "Buzztrax/buzztrax",
+  "spdx": "LGPL-2.1",
+  "pushed": "2024-04-10T11:53:58Z",
+  "archived": false,
+  "head": "                  GNU LESSER GENERAL PUBLIC LICENSE |                        Version 2.1, February 1999 |  |  Copyright (C) 1991, 1999 Free Software Foundation, Inc. |  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA |  Everyone is permitted to copy and distribute verbatim copies |  of this license"
+ },
+ "buzzmachines": {
+  "repo": "Buzztrax/buzzmachines",
+  "spdx": "NOASSERTION",
+  "pushed": "2022-09-15T16:40:15Z",
+  "archived": false,
+  "head": "There is no single license that applies to all machines. Please check individual | author directories or machine sources. |  | "
+ },
+ "JeskolaBuzzVST": {
+  "repo": "nstarke/JeskolaBuzzVST",
+  "spdx": "MIT",
+  "pushed": "2026-07-07T01:34:05Z",
+  "archived": false,
+  "head": "MIT License |  | Copyright (c) 2026 Nicholas Starke |  | Permission is hereby granted, free of charge, to any person obtaining a copy | of this software and associated documentation files (the \"Software\"), to deal | in the Software without restriction, including without limitation the rights | to use, copy, modif"
+ },
+ "webaudio-mod-player": {
+  "repo": "scribu/webaudio-mod-player",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "gme.js": {
+  "repo": "drhelius/gme.js",
+  "error": "HTTP Error 403: rate limit exceeded"
+ },
+ "nsf2midi": {
+  "repo": "acemasterjb/nfs2midi",
+  "error": "HTTP Error 404: Not Found"
+ }
+}

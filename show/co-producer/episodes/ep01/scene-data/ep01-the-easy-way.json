@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "show": "Co-Producer",
+  "episode": {
+    "id": "ep01",
+    "title": "The Easy Way",
+    "target_duration_seconds": 90,
+    "format": "short"
+  },
+  "production": {
+    "fps": 24,
+    "resolution": "1920x1080",
+    "safe_margin_percent": 5,
+    "audio_sample_rate_hz": 48000,
+    "animation_philosophy": "limited_animation"
+  },
+  "assets": {
+    "characters": ["protagonist", "instigator", "straight_man", "wild_card"],
+    "locations": ["generic_room_workplace"],
+    "props": ["small_box"]
+  },
+  "shots": [
+    {"id":"S01","start":0,"end":8,"camera":"slow_push_in","characters":["protagonist"],"poses":{"protagonist":"neutral"},"actions":["notice_box"],"audio":["room_tone","dialogue_protagonist"]},
+    {"id":"S02","start":8,"end":18,"camera":"locked","characters":["protagonist","instigator"],"poses":{"protagonist":"reaching","instigator":"reaction"},"actions":["instigator_stops_reach","mouth_swap_dialogue"],"audio":["dialogue_protagonist","dialogue_instigator"]},
+    {"id":"S03","start":18,"end":30,"camera":"quick_push_in","characters":["protagonist","instigator"],"poses":{"protagonist":"confused","instigator":"conspiratorial"},"actions":["reveal_rube_system","prop_swap"],"audio":["dialogue_instigator","mechanical_click"]},
+    {"id":"S04","start":30,"end":44,"camera":"locked_wide","characters":["protagonist","instigator","straight_man"],"poses":{"protagonist":"confused","instigator":"confident","straight_man":"deadpan"},"actions":["straight_man_points_to_box"],"audio":["dialogue_straight_man"]},
+    {"id":"S05","start":44,"end":60,"camera":"locked_wide","characters":["protagonist","instigator","straight_man","wild_card"],"poses":{"wild_card":"intense"},"actions":["wild_card_operates_system","system_shakes"],"audio":["dialogue_wild_card","mechanical_rattle","escalation_sfx"]},
+    {"id":"S06","start":60,"end":72,"camera":"impact_push","characters":["protagonist","instigator","straight_man","wild_card"],"poses":{"wild_card":"surprised"},"actions":["box_translate","box_falls"],"audio":["rattle","impact"]},
+    {"id":"S07","start":72,"end":82,"camera":"locked_medium","characters":["protagonist"],"poses":{"protagonist":"exhausted"},"actions":["pick_up_box","simple_walk","carry_box"],"audio":["footsteps"]},
+    {"id":"S08","start":82,"end":90,"camera":"locked_wide","characters":["protagonist","instigator","straight_man","wild_card"],"poses":{"protagonist":"neutral","instigator":"neutral","straight_man":"reaction","wild_card":"blank"},"actions":["silent_hold","straight_man_looks_camera"],"audio":["room_tone","silence","button_sfx"]}
+  ],
+  "presets": {
+    "camera": ["locked","slow_push_in","quick_push_in","impact_push"],
+    "character": ["mouth_swap","two_frame_reaction","walk","point","hold"],
+    "effects": ["shake","impact","prop_translate"]
+  },
+  "validation": {
+    "max_characters_per_shot": 4,
+    "max_unique_character_poses": 20,
+    "primary_location_count": 1,
+    "primary_prop_count": 1,
+    "requires_final_button": true
+  }
+}

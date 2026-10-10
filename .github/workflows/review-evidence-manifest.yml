@@ -1,0 +1,157 @@
+name: Review evidence manifest
+
+on:
+  push:
+    paths:
+      - 'docs/evidence/**'
+      - 'tools/environment/build_review_manifest.py'
+      - 'tools/environment/probe_oss_functional.py'
+      - 'tools/environment/inspect_image_artifact.py'
+      - 'tools/environment/reconcile_evidence_lineage.py'
+      - '.github/workflows/review-evidence-manifest.yml'
+  pull_request:
+    paths:
+      - 'docs/evidence/**'
+      - 'tools/environment/build_review_manifest.py'
+      - 'tools/environment/probe_oss_functional.py'
+      - 'tools/environment/inspect_image_artifact.py'
+      - 'tools/environment/reconcile_evidence_lineage.py'
+      - '.github/workflows/review-evidence-manifest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Assert evidence bytes are materialized
+        run: |
+          set -euo pipefail
+          git lfs install --local
+          git lfs pull
+          test -s docs/evidence/mouth/index.json
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('docs/evidence/mouth/01_REST_front.png')
+          data = p.read_bytes()
+          if data.startswith(b'version https://git-lfs.github.com/spec/v1'):
+              raise SystemExit('BLOCKED: evidence PNG is still a Git LFS pointer')
+          if data[:8] != b'\x89PNG\r\n\x1a\n':
+              raise SystemExit('BLOCKED: evidence artifact is not a materialized PNG')
+          print(f'EVIDENCE_BYTES: MATERIALIZED {p} ({len(data)} bytes)')
+          PY
+
+      - name: Build exact-pixel review manifest
+        id: build_review_manifest
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/evidence
+          python3 tools/environment/build_review_manifest.py \
+            --index docs/evidence/mouth/index.json \
+            --output .artifacts/evidence/mouth-review-manifest.json \
+            | tee .artifacts/evidence/mouth-review-manifest.log
+
+      - name: Audit every committed evidence hash
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p .artifacts/evidence
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          index = json.loads(Path('docs/evidence/mouth/index.json').read_text())
+          mismatches = []
+          missing = []
+          for frame in index.get('frames', []):
+              rel = Path(frame['repoPath'])
+              if not rel.is_file():
+                  missing.append(frame['repoPath'])
+                  continue
+              h = hashlib.sha256(rel.read_bytes()).hexdigest()
+              expected = frame.get('sha256')
+              if h != expected:
+                  mismatches.append({'path': frame['repoPath'], 'expected': expected, 'actual': h, 'bytes': rel.stat().st_size})
+          report = {'schema':'trippedd.evidence-hash-audit/v1','frames':len(index.get('frames', [])),'mismatches':mismatches,'missing':missing,'exact_match':not mismatches and not missing}
+          Path('.artifacts/evidence/evidence-hash-audit.json').write_text(json.dumps(report, indent=2)+'\n')
+          print(f"EVIDENCE_HASH_AUDIT: frames={report['frames']} mismatches={len(mismatches)} missing={len(missing)}")
+          for item in mismatches:
+              print(f"HASH_MISMATCH: {item['path']} expected={item['expected']} actual={item['actual']} bytes={item['bytes']}")
+          for item in missing:
+              print(f"EVIDENCE_MISSING: {item}")
+          PY
+
+      - name: Reconcile evidence lineage against Git history
+        if: always()
+        run: |
+          set -euo pipefail
+          python3 tools/environment/reconcile_evidence_lineage.py \
+            --index docs/evidence/mouth/index.json \
+            --output .artifacts/evidence/evidence-lineage-reconciliation.json \
+            | tee .artifacts/evidence/evidence-lineage-reconciliation.log
+
+      - name: Functional OSS probes
+        if: always()
+        run: |
+          set -euo pipefail
+          python3 tools/environment/probe_oss_functional.py \
+            --output .artifacts/evidence/oss-functional-probes.json \
+            | tee .artifacts/evidence/oss-functional-probes.log
+
+      - name: Inspect exact production image artifacts
+        if: always()
+        run: |
+          set -euo pipefail
+          python3 tools/environment/inspect_image_artifact.py \
+            docs/evidence/mouth/01_REST_front.png \
+            --output .artifacts/evidence/first-image-inspection.json \
+            | tee .artifacts/evidence/first-image-inspection.log
+
+      - name: Enforce review-manifest and probe policy
+        if: always()
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest_path = Path('.artifacts/evidence/mouth-review-manifest.json')
+          probes_path = Path('.artifacts/evidence/oss-functional-probes.json')
+          inspection_path = Path('.artifacts/evidence/first-image-inspection.json')
+          audit = json.loads(Path('.artifacts/evidence/evidence-hash-audit.json').read_text())
+          assert '${{ steps.build_review_manifest.outcome }}' == 'success', 'REVIEW_MANIFEST: BLOCKED'
+          assert audit['exact_match'] is True, f"EVIDENCE_HASH_AUDIT: BLOCKED ({len(audit['mismatches'])} mismatches, {len(audit['missing'])} missing)"
+          assert manifest_path.is_file(), 'review manifest missing'
+          assert probes_path.is_file(), 'OSS probe receipt missing'
+          assert inspection_path.is_file(), 'image inspection receipt missing'
+          manifest = json.loads(manifest_path.read_text())
+          probes = json.loads(probes_path.read_text())
+          inspection = json.loads(inspection_path.read_text())
+          assert manifest['schema'] == 'trippedd.review-manifest/v1'
+          assert manifest['evidence_status'] == 'NOT_ATTEMPTED'
+          assert manifest['policy']['exact_pixel_sha256_required'] is True
+          assert manifest['policy']['review_manifest_is_not_visual_qc'] is True
+          assert manifest['policy']['review_manifest_is_not_physical_qc'] is True
+          assert manifest['frames'], 'no evidence frames discovered'
+          assert probes['schema'] == 'trippedd.oss-functional-probes/v1'
+          assert probes['evidence_status'] == 'NOT_ATTEMPTED'
+          assert probes['policy']['functional_probe_is_not_production_evidence'] is True
+          assert probes['policy']['tool_availability_never_promotes_production'] is True
+          assert inspection['evidence_status'] == 'NOT_ATTEMPTED'
+          print(f"REVIEW_MANIFEST: VERIFIED {len(manifest['frames'])} exact-pixel references")
+          print('IMAGE_INSPECTION: VERIFIED AS ARTIFACT INSPECTION ONLY')
+          print('OSS_FUNCTIONAL_PROBES: VERIFIED AS CAPABILITY TESTS ONLY')
+          PY
+
+      - name: Upload review and OSS probe manifests
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trippedd-review-and-oss-probes-${{ github.run_id }}
+          path: .artifacts/evidence/

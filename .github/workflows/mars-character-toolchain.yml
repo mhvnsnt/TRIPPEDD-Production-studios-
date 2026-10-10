@@ -1,0 +1,53 @@
+name: MARS character toolchain
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'config/mars-character-toolchain.json'
+      - 'tools/character/validate_mars_character_toolchain.py'
+      - 'tools/character/linework_eye_authority_gate.py'
+      - 'assets/rigs/MARS_linework_authority.json'
+      - 'assets/references/mars_facial_linework/**'
+      - '.github/workflows/mars-character-toolchain.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate character stack contract
+        run: python3 tools/character/validate_mars_character_toolchain.py
+
+      - name: Validate owner eye authority
+        run: python3 tools/character/linework_eye_authority_gate.py
+
+      - name: Assert physical execution is not fabricated
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('config/mars-character-toolchain.json')
+          data = json.loads(p.read_text())
+          assert data['authority']['visualTruth'] == 'rendered pixels'
+          assert data['authority']['unknownIsNeverPass'] is True
+          assert data['authority']['visualFailOverridesNumericalPass'] is True
+          print('CONTRACT_OK: physical execution remains receipt-gated')
+          PY
+
+  note:
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Explain physical gate
+        run: |
+          echo 'This workflow validates the orchestration contract only.'
+          echo 'It does NOT claim Blender, GNM, Rigify, Pinocchio, or a live session executed.'
+          echo 'Physical MARS promotion still requires runtime artifacts, reopened pixels, SHA-256, and receipt evidence.'

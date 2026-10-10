@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "name": "nodecg bundle-parser accepts trippedd-lowerthird",
+      "status": "PASS",
+      "detail": "name=trippedd-lowerthird panels=1 graphics=1 ext=true"
+    },
+    {
+      "name": "extension.js registers lowerThird Replicant",
+      "status": "PASS",
+      "detail": "log lines=2 replicants=lowerThird"
+    },
+    {
+      "name": "dashboard panel + graphic HTML wired to replicant",
+      "status": "PASS",
+      "detail": "panel: #push + replicant write; graphic: #lt/#name/#title + replicant read"
+    },
+    {
+      "name": "full server boot attempt (documents blocker)",
+      "status": "PASS",
+      "detail": "server starts, then dies at TypeORM better-sqlite3 init (no Node 24 binding) — see nodecg_boot_attempt.log"
+    }
+  ],
+  "ok": true
+}

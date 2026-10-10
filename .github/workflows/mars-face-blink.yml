@@ -57,7 +57,7 @@ jobs:
 
       - name: Validate face semantic authority
         run: |
-          python tools/character/validate_face_authority.py
+          python tools/character/validate_mvmp_face_authority.py
 
       - name: Build eye sockets from the authority
         run: |

@@ -1,0 +1,56 @@
+{
+  "file": "proofs/caption_qa_defects.srt",
+  "cues": 6,
+  "errors": 3,
+  "warnings": 4,
+  "findings": [
+    {
+      "severity": "WARNING",
+      "cue": 2,
+      "code": "reading-speed",
+      "detail": "cue 2: 42.0 chars/sec > 20"
+    },
+    {
+      "severity": "ERROR",
+      "cue": 2,
+      "code": "overlap",
+      "detail": "cue 2 starts 00:00:02,200 before cue 1 ends 00:00:02,500"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 3,
+      "code": "flash",
+      "detail": "cue 3: duration 0.40s < 1s"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 3,
+      "code": "reading-speed",
+      "detail": "cue 3: 145.0 chars/sec > 20"
+    },
+    {
+      "severity": "WARNING",
+      "cue": 3,
+      "code": "long-line",
+      "detail": "cue 3 line 1: 58 chars > 42"
+    },
+    {
+      "severity": "ERROR",
+      "cue": 4,
+      "code": "empty-text",
+      "detail": "cue 4: no caption text"
+    },
+    {
+      "severity": "ERROR",
+      "cue": 5,
+      "code": "zero-duration",
+      "detail": "cue 5: start 00:00:05,000 >= end 00:00:05,000"
+    },
+    {
+      "severity": "INFO",
+      "cue": 6,
+      "code": "dead-air",
+      "detail": "11.0s gap before cue 6 (check intentional)"
+    }
+  ]
+}

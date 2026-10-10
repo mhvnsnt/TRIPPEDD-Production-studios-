@@ -1,0 +1,16 @@
+{
+  "tool": "pull_plate.py (Wave 10 Lane A)",
+  "title": "A Mother (Gerda Tiren, 1884), NM 7501",
+  "source": "Nationalmuseum Sweden via Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gerda_Tir%C3%A9n_-_A_Mother_-_NM_7501_-_Nationalmuseum.jpg",
+  "license": "Public Domain",
+  "license_proof": "https://commons.wikimedia.org/wiki/File:Gerda_Tir%C3%A9n_-_A_Mother_-_NM_7501_-_Nationalmuseum.jpg",
+  "file": "Gerda_Tir%C3%A9n_-_A_Mother_-_NM_7501_-_Nationalmuseum.jpg",
+  "sha256": "63380b47f3456000a886221d2b2c880de4931f85f776701c573db1557fd8ca6f",
+  "bytes": 215632,
+  "duration_s": 0.04,
+  "width": 901,
+  "height": 1000,
+  "codec": "mjpeg",
+  "fps": "25/1"
+}

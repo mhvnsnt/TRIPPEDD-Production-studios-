@@ -1,0 +1,19 @@
+{
+  "tool": "threefive.js (threefive-scte35 npm)",
+  "upstream": "https://github.com/keithah/threefive.js",
+  "license": "MIT (README license section; verified 2026-10-08)",
+  "input_format": "base64",
+  "splice_command": "TimeSignal",
+  "table_id": "0xfc",
+  "pts_adjustment": 0,
+  "descriptors": [
+    {
+      "tag": 2,
+      "name": "Segmentation Descriptor",
+      "identifier": "CUEI",
+      "segmentation_type_id": 17,
+      "segmentation_message": "Program End",
+      "segmentation_upid_type": 15
+    }
+  ]
+}

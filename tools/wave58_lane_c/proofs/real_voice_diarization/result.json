@@ -1,0 +1,96 @@
+{
+  "checks": [
+    {
+      "name": "3 distinct Kokoro voices rendered (9 turns)",
+      "pass": true,
+      "measured": "voices=['af_bella', 'af_heart', 'am_puck'] turns=9"
+    },
+    {
+      "name": "ground truth spans full audio (no orphan tail)",
+      "pass": true,
+      "measured": "audio=42.90s last_turn_end=42.50s"
+    },
+    {
+      "name": "embedding shape (N_speech_windows, 192)",
+      "pass": true,
+      "measured": "shape=(160, 192) windows=166 speech=160 silence=6"
+    },
+    {
+      "name": "embeddings finite",
+      "pass": true,
+      "measured": "no NaN/Inf"
+    },
+    {
+      "name": "silence gate sane: every turn mostly speech",
+      "pass": true,
+      "measured": "thr=0.01089 max_rms=0.13612"
+    },
+    {
+      "name": "cluster count within [2,4]",
+      "pass": true,
+      "measured": "2 clusters"
+    },
+    {
+      "name": "clustering deterministic across runs",
+      "pass": true,
+      "measured": "re-run identical"
+    },
+    {
+      "name": "Hungarian cluster->speaker map exists",
+      "pass": true,
+      "measured": "map={0: 'B', 1: 'C'}"
+    },
+    {
+      "name": "frame-level purity (window labels vs GT)",
+      "pass": false,
+      "measured": "0.6879 over 157 speech frames"
+    },
+    {
+      "name": "DER finite & reported (collar 0.0)",
+      "pass": true,
+      "measured": "DER=0.4084 (miss=0.000s fa=3.700s conf=12.350s / 39.3s)"
+    },
+    {
+      "name": "JER finite & reported (collar 0.0)",
+      "pass": true,
+      "measured": "JER=0.5478"
+    }
+  ],
+  "voices": [
+    "af_bella",
+    "af_heart",
+    "am_puck"
+  ],
+  "speakers": [
+    "A",
+    "B",
+    "C"
+  ],
+  "dialogue_s": 42.9,
+  "windows": 166,
+  "speech_windows": 160,
+  "clusters": 2,
+  "cluster_map": {
+    "0": "B",
+    "1": "C"
+  },
+  "frame_purity": 0.6879,
+  "DER_collar0": 0.4084,
+  "JER_collar0": 0.5478,
+  "DER_collar0.25": 0.3556,
+  "JER_collar0.25": 0.517,
+  "components_collar0_s": {
+    "missed_detection": 0.0,
+    "false_alarm": 3.7000000000000046,
+    "confusion": 12.35,
+    "total": 39.3
+  },
+  "timings_s": {
+    "tts_synth": "n/a",
+    "ecapa_load": 0.6,
+    "embed": 16.0,
+    "cluster": 0.637,
+    "total": 20.1
+  },
+  "pass_rate": "10/11"
+}

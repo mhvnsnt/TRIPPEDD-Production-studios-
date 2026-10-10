@@ -1,0 +1,58 @@
+{
+  "faceRegion": {
+    "centre": [
+      -0.02508,
+      -0.33369,
+      0.34148
+    ],
+    "radius": 0.32971,
+    "radiusMM": 85.4
+  },
+  "camera": {
+    "name": "face",
+    "res": 1100,
+    "orthoScale": 0.881099,
+    "cameraOrigin": [
+      -0.296097,
+      -2.829851,
+      1.984235
+    ]
+  },
+  "meshes": {
+    "SOURCE": {
+      "status": "MEASURED",
+      "file": "assets/source_models/MARS_source.glb",
+      "trianglesTotal": 1940858,
+      "trianglesInFaceRegion": 353752,
+      "medianEdgeMM": 0.485,
+      "p95EdgeMM": 1.042,
+      "medianTriAreaMM2": 0.0791,
+      "render": "MARS_quality_SOURCE.png"
+    },
+    "LOD1": {
+      "status": "MEASURED",
+      "file": "assets/source_models/MARS_LOD1.glb",
+      "trianglesTotal": 155265,
+      "trianglesInFaceRegion": 22454,
+      "medianEdgeMM": 1.785,
+      "p95EdgeMM": 5.511,
+      "medianTriAreaMM2": 0.7677,
+      "render": "MARS_quality_LOD1.png"
+    },
+    "PIPELINE": {
+      "status": "MEASURED",
+      "file": "assets/rigs/MARS_FACE.glb",
+      "trianglesTotal": 56000,
+      "trianglesInFaceRegion": 15498,
+      "medianEdgeMM": 2.023,
+      "p95EdgeMM": 11.661,
+      "medianTriAreaMM2": 1.1938,
+      "render": "MARS_quality_PIPELINE.png"
+    }
+  },
+  "verdict": {
+    "faceTrianglesKeptPct": 4.38,
+    "edgeLengthGrewBy": 4.17,
+    "plain": "the face pipeline renders 4.38% of the source's face triangles; its median edge is 2.02 mm against the source's 0.48 mm, 4.2x longer. That is the faceting the owner is seeing, and it is geometry, not texture."
+  }
+}

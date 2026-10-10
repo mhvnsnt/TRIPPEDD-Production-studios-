@@ -1,0 +1,139 @@
+{
+  "source": "google/GNM v3_0 gnm_head.npz",
+  "license": "Apache-2.0",
+  "fit": {
+    "scale": 3.125644,
+    "anchor": "DENTAL ARCH (inter-molar), not lip width",
+    "targetArchWidthMM": 57.0,
+    "donorArchWidthNative": 0.070405,
+    "marsMouthWidth": 0.193036,
+    "gnmLipGroupWidth": 0.048782,
+    "rejectedLipAnchoredScale": 3.957152,
+    "whyRejected": "a lip-anchored scale put the arch at 72.2 mm inside a 62 mm cavity; the back of it punched through the cavity walls and rendered as fangs at the mouth corners",
+    "method": "similarity transform between two MEASURED mouth frames, scaled so the dental arch matches published inter-molar width"
+  },
+  "components": {
+    "upper_teeth_and_gums": {
+      "vertices": 1440,
+      "triangles": 2828,
+      "classCounts": {
+        "other": 0,
+        "teeth": 738,
+        "gums": 702,
+        "tongue": 0
+      },
+      "bboxMarsWorld": [
+        [
+          -0.13684,
+          -0.41887,
+          0.20481
+        ],
+        [
+          0.07697,
+          -0.20649,
+          0.29015
+        ]
+      ]
+    },
+    "lower_teeth_and_gums": {
+      "vertices": 1440,
+      "triangles": 2828,
+      "classCounts": {
+        "other": 0,
+        "teeth": 738,
+        "gums": 702,
+        "tongue": 0
+      },
+      "bboxMarsWorld": [
+        [
+          -0.15588,
+          -0.41593,
+          0.15565
+        ],
+        [
+          0.10838,
+          -0.23461,
+          0.23276
+        ]
+      ]
+    },
+    "tongue": {
+      "vertices": 933,
+      "triangles": 1824,
+      "classCounts": {
+        "other": 0,
+        "teeth": 0,
+        "gums": 0,
+        "tongue": 933
+      },
+      "bboxMarsWorld": [
+        [
+          -0.09311,
+          -0.40093,
+          0.15959
+        ],
+        [
+          0.05119,
+          -0.18393,
+          0.23912
+        ]
+      ]
+    },
+    "mouth_sock": {
+      "vertices": 406,
+      "triangles": 752,
+      "classCounts": {
+        "other": 406,
+        "teeth": 0,
+        "gums": 0,
+        "tongue": 0
+      },
+      "bboxMarsWorld": [
+        [
+          -0.15779,
+          -0.42553,
+          0.16055
+        ],
+        [
+          0.10069,
+          -0.19806,
+          0.28449
+        ]
+      ]
+    }
+  },
+  "tongueExpressions": [
+    "tongue_mean",
+    "tongue_000",
+    "tongue_001",
+    "tongue_002",
+    "tongue_003",
+    "tongue_004",
+    "tongue_005",
+    "tongue_006",
+    "tongue_007",
+    "tongue_008",
+    "tongue_009",
+    "tongue_010",
+    "tongue_011",
+    "tongue_012",
+    "tongue_013",
+    "tongue_014",
+    "tongue_015",
+    "tongue_016",
+    "tongue_017",
+    "tongue_018",
+    "tongue_019",
+    "tongue_020",
+    "tongue_021",
+    "tongue_022",
+    "tongue_023",
+    "tongue_024",
+    "tongue_025",
+    "tongue_026",
+    "tongue_027",
+    "tongue_028",
+    "tongue_029",
+    "tongue_030"
+  ]
+}

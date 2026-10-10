@@ -1,0 +1,5 @@
+webrtcvad VAD proof
+aggressiveness=2 frames=233 voiced=141 ratio=0.605
+segments(s): [(0.99, 3.09), (3.99, 6.12)]
+truth(s): [(1.0, 3.0), (4.0, 6.0)]
+verdict: PASS

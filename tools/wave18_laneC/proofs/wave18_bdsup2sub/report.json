@@ -1,0 +1,30 @@
+{
+  "tool": "BDSup2Sub \u2014 mjuhasz/BDSup2Sub, Apache-2.0",
+  "catalog": "#### BDSup2Sub",
+  "built": "no prebuilt jar (0 GitHub releases); Maven blocked (egress proxy: 'Unsupported or unrecognized SSL message' fetching plugins); compiled 107 sources with javac 21 using curl-fetched commons-cli-1.2 + java-image-scaling-0.8.5; macify (Mac-only GUI helper) 404s on Maven Central -> compile-only shim in macify-shim/ (never on CLI path), documented in its README",
+  "wiring": "tools/wave18_laneC/bdsup2sub/make_smoke_sup.py \u2014 synthesizes a valid PGS .sup (epoch-start PCS + WDS + PDS + RLE ODS + END @1.0s, clearing PCS @4.0s); bitmap rendered with PIL/DejaVu; RLE emits BDSup2Sub's own dialect (00 40..7F = long zero run, 00 80..BF = short color run, 00 C0..FF = long color run \u2014 differs from Blu-ray spec, read from SupBD.java)",
+  "proof": {
+    "smoke.sup": {
+      "bytes": 12709,
+      "sha256": "b863034a8704d1db6f3667c0169078410611589d2cffce72d699851a1de2af4a"
+    },
+    "smoke_out.sub": {
+      "bytes": 6144,
+      "sha256": "1d8156b3ae676e5d815d11e7e8b744d38750ba690d95fb3b0c9cb9093cf9fc33"
+    },
+    "smoke_out.idx": {
+      "bytes": 1069,
+      "sha256": "b794a43a12cd1f6ddd5ca32f7ad3ecd9ee8265948291b1fcc728c108612c8ec7"
+    },
+    "smoke_bdn.xml": {
+      "bytes": 650,
+      "sha256": "cc380b02a99fb97c60bfb04a10ec10cb1f0424eee6a354265b5222b63d0b3b64"
+    },
+    "smoke_bdn_0001.png": {
+      "bytes": 113266,
+      "sha256": "8ba220d38df91c8c20ba08a4e868e4081bba256427e8371dea2ace5a42ffd050"
+    }
+  },
+  "verification": "SUP->VobSub: clean run, 0 warnings; .idx is valid v7 VobSub (1920x1080, timestamp 00:00:01:000, lang en). SUP->BDN XML/PNG: smoke_bdn_0001.png inspected visually \u2014 'WIZARD GANG / PGS caption smoke test' with black outline on transparent, exactly the synthetic input. Note: BDSup2Sub cannot export SRT (image-based formats only, no OCR) \u2014 README states this.",
+  "wave": "Wave 18 Lane C (2026-10-07)"
+}

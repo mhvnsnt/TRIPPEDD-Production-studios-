@@ -1,0 +1,294 @@
+{
+  "checks": [
+    {
+      "name": "fixture SHAs match wave58 committed artifacts",
+      "pass": true,
+      "measured": "dialogue.wav + ground_truth.json + hypothesis.rttm verified vs SHA256SUMS"
+    },
+    {
+      "name": "embeddings.pt SHA matches wave58; (160,192) finite float32, torch-free",
+      "pass": true,
+      "measured": "shape=(160, 192)"
+    },
+    {
+      "name": "wave58 window grid + energy gate reproduced",
+      "pass": true,
+      "measured": "grid=166 speech=160 thr=0.01089 max_rms=0.13612"
+    },
+    {
+      "name": "donor negative control reproduces auto-k failure",
+      "pass": true,
+      "measured": "donor eigengap k=2 (max_delta_norm=7.2949)"
+    },
+    {
+      "name": "primary estimator E1a selects k in [2,6]",
+      "pass": true,
+      "measured": "E1a k=3 (gaps={2: 0.0073, 3: 0.0948, 4: 0.0014, 5: 0.0241})"
+    },
+    {
+      "name": "V0 baseline hypothesis RTTM byte-identical to wave58 committed hypothesis.rttm",
+      "pass": true,
+      "measured": "byte-identical=True"
+    },
+    {
+      "name": "auto-k reproduces wave58 DER (0.4084 \u00b10.005)",
+      "pass": true,
+      "measured": "DER0=0.4084 JER0=0.5478"
+    },
+    {
+      "name": "forced k=3 measured (deterministic); wave58's uncommitted 0.3359 diagnostic does NOT reproduce",
+      "pass": true,
+      "measured": "DER0=0.0941 JER0=0.0844 purity=1.0 map={'0': 'B', '1': 'A', '2': 'C'} (wave58 ad-hoc reported 0.3359)"
+    },
+    {
+      "name": "primary estimator k matches forced k=3 count",
+      "pass": true,
+      "measured": "E1a k=3"
+    },
+    {
+      "name": "estimator DER matches forced-k DER (\u00b10.005) [goal: beat or match 0.3359]",
+      "pass": true,
+      "measured": "est DER0=0.0941 vs forced DER0=0.0941"
+    },
+    {
+      "name": "DER/JER finite for all variants",
+      "pass": true,
+      "measured": "auto_k=0.4084, forced_k3=0.0941, est_E1a=0.0941, est_E2=0.4084, est_E3=0.4084, xcheck_kmeans_k3=0.0941"
+    }
+  ],
+  "design": "torch-free; embeddings = wave58 embeddings.pt (SHA-verified, raw float32 parse); wave58-verbatim window grid + frame labeling (with fill)",
+  "estimator_s": 11.1,
+  "estimators": {
+    "E1a_eigengap_laplacian_knn7_abs": {
+      "k": 3,
+      "eigenvalues": [
+        0.0,
+        0.003893,
+        0.011175,
+        0.105952,
+        0.107347,
+        0.131443,
+        0.141744
+      ],
+      "gaps": {
+        "2": 0.007282,
+        "3": 0.094777,
+        "4": 0.001395,
+        "5": 0.024096
+      },
+      "note": "PRIMARY (wired): textbook von Luxburg, fixed a priori"
+    },
+    "E1b_eigengap_laplacian_knn7_ratio": {
+      "k": 3,
+      "ratios": {
+        "2": 2.8708,
+        "3": 9.4815,
+        "4": 1.0132,
+        "5": 1.2245
+      },
+      "note": "diagnostic"
+    },
+    "E1c_eigengap_laplacian_unpruned_abs": {
+      "k": 2,
+      "eigenvalues": [
+        0.0,
+        0.862715,
+        0.952744,
+        0.962249,
+        0.973253,
+        0.975519,
+        0.978303
+      ],
+      "gaps": {
+        "2": 0.090029,
+        "3": 0.009506,
+        "4": 0.011004,
+        "5": 0.002266
+      },
+      "note": "diagnostic"
+    },
+    "E1d_eigengap_laplacian_unpruned_ratio": {
+      "k": 2,
+      "ratios": {
+        "2": 1.1044,
+        "3": 1.01,
+        "4": 1.0114,
+        "5": 1.0023
+      },
+      "note": "diagnostic"
+    },
+    "E2_BIC_kmeans": {
+      "k": 2,
+      "BIC": {
+        "2": 1871.3,
+        "3": 2835.6,
+        "4": 3804.9,
+        "5": 4778.0,
+        "6": 5750.8
+      },
+      "inertia": {
+        "2": 95.5,
+        "3": 86.8,
+        "4": 81.5,
+        "5": 78.2,
+        "6": 75.0
+      },
+      "note": "diagnostic"
+    },
+    "E3_silhouette_kmeans": {
+      "k": 2,
+      "silhouette": {
+        "2": 0.351,
+        "3": 0.2888,
+        "4": 0.2969,
+        "5": 0.2526,
+        "6": 0.2304
+      },
+      "note": "diagnostic"
+    },
+    "E0_donor_eigengap_negative_control": {
+      "k": 2,
+      "max_delta_norm": 7.2949,
+      "eigenvalues_desc": [
+        99.815376,
+        13.682901,
+        4.790075,
+        3.557791,
+        2.660487
+      ],
+      "note": "SpectralCluster's own auto-k machinery; expected k=2"
+    }
+  },
+  "variants": {
+    "auto_k": {
+      "k_min": 2,
+      "k_max": 4,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6879,
+      "DER_collar0": 0.4084,
+      "JER_collar0": 0.5478,
+      "DER_collar0.25": 0.3556,
+      "JER_collar0.25": 0.517,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 3.7,
+        "confusion": 12.35,
+        "total": 39.3
+      }
+    },
+    "forced_k3": {
+      "k_min": 3,
+      "k_max": 3,
+      "clusters": 3,
+      "cluster_map": {
+        "0": "B",
+        "1": "A",
+        "2": "C"
+      },
+      "frame_purity": 1.0,
+      "DER_collar0": 0.0941,
+      "JER_collar0": 0.0844,
+      "DER_collar0.25": 0.0425,
+      "JER_collar0.25": 0.0395,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 3.7,
+        "confusion": 0.0,
+        "total": 39.3
+      }
+    },
+    "est_E1a": {
+      "k_min": 3,
+      "k_max": 3,
+      "clusters": 3,
+      "cluster_map": {
+        "0": "B",
+        "1": "A",
+        "2": "C"
+      },
+      "frame_purity": 1.0,
+      "DER_collar0": 0.0941,
+      "JER_collar0": 0.0844,
+      "DER_collar0.25": 0.0425,
+      "JER_collar0.25": 0.0395,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 3.7,
+        "confusion": 0.0,
+        "total": 39.3
+      }
+    },
+    "est_E2": {
+      "k_min": 2,
+      "k_max": 2,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6879,
+      "DER_collar0": 0.4084,
+      "JER_collar0": 0.5478,
+      "DER_collar0.25": 0.3556,
+      "JER_collar0.25": 0.517,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 3.7,
+        "confusion": 12.35,
+        "total": 39.3
+      }
+    },
+    "est_E3": {
+      "k_min": 2,
+      "k_max": 2,
+      "clusters": 2,
+      "cluster_map": {
+        "0": "B",
+        "1": "C"
+      },
+      "frame_purity": 0.6879,
+      "DER_collar0": 0.4084,
+      "JER_collar0": 0.5478,
+      "DER_collar0.25": 0.3556,
+      "JER_collar0.25": 0.517,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 3.7,
+        "confusion": 12.35,
+        "total": 39.3
+      }
+    },
+    "xcheck_kmeans_k3": {
+      "k_min": 3,
+      "k_max": 3,
+      "clusters": 3,
+      "cluster_map": {
+        "0": "B",
+        "1": "C",
+        "2": "A"
+      },
+      "frame_purity": 1.0,
+      "DER_collar0": 0.0941,
+      "JER_collar0": 0.0844,
+      "DER_collar0.25": null,
+      "JER_collar0.25": null,
+      "components_collar0_s": {
+        "missed_detection": 0.0,
+        "false_alarm": 3.7,
+        "confusion": 0.0,
+        "total": 39.3
+      },
+      "note": "oracle-k cross-check, NOT an estimator variant"
+    }
+  },
+  "delta_est_vs_auto": {
+    "DER_collar0": 0.3143,
+    "verdict": "IMPROVED"
+  },
+  "total_s": 15.3,
+  "pass_rate": "11/11"
+}

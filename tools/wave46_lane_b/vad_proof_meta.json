@@ -1,0 +1,29 @@
+{
+ "tool": "silero-vad v6 (Apache-2.0) via faster-whisper bundled ONNX + onnxruntime CPU",
+ "date": "2026-10-08",
+ "wave": 46,
+ "lane": "B",
+ "input": "tools/lipsync/proofs/wave2/whisperx_upgrade/static_voice_test_16k.wav",
+ "input_sha256": "ae8acb2fecfe03fec261387100e833a902e076613178d4594d905f154b6d0ced",
+ "input_duration_s": 12.934,
+ "sampling_rate": 16000,
+ "model": "faster_whisper/assets/silero_vad_v6.onnx (bundled in faster-whisper wheel, no download)",
+ "model_sha256": "4cbf549b8326f60f80f2536d9eefeb450a9abe83365a098031c89719f1be17d2",
+ "faster_whisper": "1.2.1",
+ "onnxruntime": "1.30.0",
+ "providers": [
+  "AzureExecutionProvider",
+  "CPUExecutionProvider"
+ ],
+ "vad_params": {
+  "threshold": 0.5,
+  "min_speech_duration_ms": 250,
+  "min_silence_duration_ms": 2000,
+  "speech_pad_ms": 400
+ },
+ "segments": 1,
+ "voiced_s": 12.934,
+ "inference_s": 0.08,
+ "total_s": 0.4,
+ "verdict": "WIRED \u2014 CPU smoke test end-to-end OK"
+}

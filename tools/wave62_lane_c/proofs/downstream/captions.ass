@@ -1,0 +1,23 @@
+[Script Info]
+Title: wave62 downstream captions
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SpkA,Noto Sans,26,&H0000D7FF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,0.5,2,30,30,40,1
+Style: SpkB,Noto Sans,26,&H00FFE500,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,0.5,2,30,30,40,1
+Style: SpkC,Noto Sans,26,&H00C87AFF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,0.5,2,30,30,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.25,0:00:04.50,SpkA,,0,0,0,,[{\b1}A{\b0}] Alright, we're rolling. The street is quiet tonight, just the way we planned it.
+Dialogue: 0,0:00:05.25,0:00:10.25,SpkB,,0,0,0,,[{\b1}B{\b0}] Quiet is good. Last time the corner was crawling with onlookers before we even started.
+Dialogue: 0,0:00:11.25,0:00:15.25,SpkC,,0,0,0,,[{\b1}C{\b0}] I brought the chalk. We can mark the lines before the crowd shows up.
+Dialogue: 0,0:00:16.25,0:00:19.75,SpkA,,0,0,0,,[{\b1}A{\b0}] Mark them wide. Nobody should be guessing where the boundary is.
+Dialogue: 0,0:00:20.50,0:00:24.00,SpkB,,0,0,0,,[{\b1}B{\b0}] And the water table? Somebody has to keep the bottles on ice.
+Dialogue: 0,0:00:25.00,0:00:29.25,SpkC,,0,0,0,,[{\b1}C{\b0}] I already filled the cooler. Ice, towels, and a spare roll of tape.
+Dialogue: 0,0:00:30.25,0:00:33.50,SpkA,,0,0,0,,[{\b1}A{\b0}] Good. Now we just wait for the lights to come on over the alley.
+Dialogue: 0,0:00:34.25,0:00:37.25,SpkB,,0,0,0,,[{\b1}B{\b0}] When they do, we walk in steady. No rush, no noise.
+Dialogue: 0,0:00:38.25,0:00:42.25,SpkC,,0,0,0,,[{\b1}C{\b0}] Steady wins. The ones who rush always trip on the first line.

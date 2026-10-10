@@ -1,0 +1,142 @@
+{
+  "generated_at": "2026-10-07T23:05:51.429695+00:00",
+  "lane": "Wave 21 Lane B",
+  "targets": [
+    "blocSonic",
+    "GameChops"
+  ],
+  "pulls": [
+    {
+      "target": "blocSonic",
+      "kind": "release_list",
+      "source": "https://blocsonic.com/releases.rss",
+      "count": 20,
+      "sample": [
+        {
+          "title": "Tha Silent Partner \u201cShe Looked So Good (Single Version)\u201d (BSUNI0030)",
+          "link": "https://blocsonic.com/releases/tha-silent-partner/she-looked-so-good-single-version/",
+          "pubDate": "Fri, 25 Sep 2026 00:00:00 GMT"
+        },
+        {
+          "title": "Headsnack \u201cWrite Your Own Rhymes\u201d (BSOG0157)",
+          "link": "https://blocsonic.com/releases/headsnack/write-your-own-rhymes/",
+          "pubDate": "Fri, 07 Aug 2026 00:00:00 GMT"
+        },
+        {
+          "title": "Donnie Ozone \u201cBackground Music For A Barbecue (Featuring Cheese N Pot-C)\u201d (BSUNI0029)",
+          "link": "https://blocsonic.com/releases/donnie-ozone/background-music-for-a-barbecue-featuring-cheese-n-pot-c/",
+          "pubDate": "Tue, 14 Jul 2026 00:00:00 GMT"
+        },
+        {
+          "title": "P.U.C.K. \u201cKAKKI presents P.U.C.K.: Outskirts of P.U.C.K. Land\u201d (BSMX0241)",
+          "link": "https://blocsonic.com/releases/puck/kakki-presents-puck-outskirts-of-puck-land/",
+          "pubDate": "Tue, 14 Jul 2026 00:00:00 GMT"
+        },
+        {
+          "title": "Y.K.Beats \u201cNever Off Always On (Featuring Cheese N Pot-C & Donnie Ozone)\u201d (BS450081)",
+          "link": "https://blocsonic.com/releases/yk-beats/never-off-always-on/",
+          "pubDate": "Tue, 14 Jul 2026 00:00:00 GMT"
+        },
+        {
+          "title": "P.U.C.K. \u201cUltimate Party Album\u201d (BSOG0156)",
+          "link": "https://blocsonic.com/releases/puck/ultimate-party-album/",
+          "pubDate": "Tue, 14 Jul 2026 00:00:00 GMT"
+        },
+        {
+          "title": "Cheese N Pot-C \u201cKAKKI Presents Cheese N Pot-C: Liquor Cabinet b/w Taps\u201d (BS450080)",
+          "link": "https://blocsonic.com/releases/cheese-n-pot-c/kakki-presents-cheese-n-pot-c-liquor-cabinet-b-w-taps/",
+          "pubDate": "Fri, 12 Jun 2026 00:00:00 GMT"
+        },
+        {
+          "title": "Donnie Ozone \u201cSomething to Say\u201d (BSUNI0028)",
+          "link": "https://blocsonic.com/releases/donnie-ozone/something-to-say/",
+          "pubDate": "Fri, 22 May 2026 00:00:00 GMT"
+        },
+        {
+          "title": "CLOUDWARMER \u201cI Know the World Reasonably Well and Am Right About Everything\u201d (BSOG0155)",
+          "link": "https://blocsonic.com/releases/cloudwarmer/i-know-the-world-reasonably-well-and-am-right-about-everything/",
+          "pubDate": "Fri, 15 May 2026 00:00:00 GMT"
+        },
+        {
+          "title": "Donnie Ozone \u201cHow Will It End? b/w Slopoke\u201d (BS450079)",
+          "link": "https://blocsonic.com/releases/donnie-ozone/how-will-it-end-bw-slopoke/",
+          "pubDate": "Fri, 27 Mar 2026 00:00:00 GMT"
+        }
+      ]
+    },
+    {
+      "target": "blocSonic",
+      "kind": "audio_download",
+      "release": "Donnie Ozone \u2014 Something to Say (BSUNI0028, 2026)",
+      "release_url": "https://blocsonic.com/releases/donnie-ozone/something-to-say/",
+      "license_on_page": "by-nc-sa 4.0&quot;],&quot;slug&quot;:[0,&quot;by-nc-sa-40&quot;],&quot;url&quot;:[0,&quot;http://creativecommons.org/licenses/by-nc-sa/4.0/&quot;],&quot;filename&quot;:[0,&quot;55860ae82c65c.png&quot;],&quot;permission_required&quot;:[0,0],&quot;image&quot;:[0,{&quot;imported&quot;:[0,{&quot;src&quot;:[0,&quot;/_astro/55860ae82c65c.B2o6zxl7.png&quot;],&quot;width&quot;:[0,134],&quot;height&quot;:[0,30],&quot;format&quot;:[0,&quot;png&quot;]}]}]}],&quot;length&quot;:[0,&quot;2:59&quot;],&quot;filename&quot;:[0,&quot;01-SomethingtoSay_192kb.mp3&quot;],&quot;lyrics&quot;:[0,null],&quot;youtube_id&quot;:[0,&quot;&quot;],&quot;release&quot;:[0,{&quot;id&quot;:[0,609],&quot;title&quot;:[0,&quot;Something to Say&quot;],&quot;slug&quot;:[0,&quot;something-to-say&quot;],&quot;artist&quot;:[0,&quot;donnie-ozone&quot;],&quot;catalog_number&quot;:[0,&quot;BSUNI0028&quot;],&quot;filehost_url_root&quot;:[0,&quot;https://s3.wasabisys.com/blocsonic/releases/unidrops/bsuni0028&quot;],&quot;release_date&quot;:[3,&quot;2026-05-22T00:00:00.000Z&quot;],&quot;commercial_status&quot;:[0,0],&quot;purchase_intro&quot;:[0,null],&quot;type&quot;:[0,&quot;unidrops&quot;],&quot;license&quot;:[0,{&quot;name&quot;:[0,&quot;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&quot;],&quot;short_name&quot;:[0,&quot;by-nc-sa 4.0&quot;],&quot;slug&quot;:[0,&quot;by-nc-sa-40&quot;],&quot;url&quot;:[0,&quot;http://creativecommons.org/licenses/by-nc-sa/4.0/&quot;],&quot;filename&quot;:[0,&quot;55860ae82c65c.png&quot;],&quot;permission_required&quot;:[0,0],&quot;image&quot;:[0,{&quot;imported&quot;:[0,{&quot;src&quot;:[0,&quot;/_astro/55860ae82c65c.B2o6zxl7.png&quot;],&quot;width&quot;:[0,134],&quot;height&quot;:[0,30],&quot;format&quot;:[0,&quot;png&quot;]}]}]}],&quot;meta&quot;:[0,{&quot;page_title&quot;:[0,&quot;Donnie Ozone \u201cSomething to Say\u201d&quot;],&quot;description&quot;:[0,&quot;Donnie Ozone drops \u201cSomething to Say,\u201d his 24th blocSonic release and 4th of 2026. Download the new uniDrop free in FLAC, OGG, or MP3. Creative Commons licensed.&quot;]}],&quot;content&quot;:[0,&quot;&lt;p&gt;Brooklyn\u2019s resident old-school flow merchant, &lt;a href=\\&quot;https://blocsonic.com/artists/donnie-ozone/\\&quot;&gt;&lt;strong&gt;Donnie Ozone&lt;/strong&gt;&lt;/a&gt;, is back with his 24th blocSonic drop \u2014 and his fourth of the year alone. The man doesn\u2019t slow down. &amp;quot;Something to Say&amp;quot; lands today as a fresh uniDrop\u2026 a one-track surprise from a guy whose pen has been a fixture around here since 2016.&lt;/p&gt;\\n&lt;p&gt;Quick recap for the newcomers. Donnie\u2019s the alternative rap fixture who built his name uploading Creative Commons acapellas to ccMixter back in 2012\u2026 voice-for-hire to producers worldwide, eventually finding his home base on the Bloc. He\u2019s collabed with everyone from UK producer SKOL to half our roster. He hosts Tha Bloc Report. He shows up every Netlabel Day without fail. Dude IS the community.&lt;/p&gt;\\n&lt;p&gt;\u201cSomething to Say\u201d is exactly what the title promises. A statement. A reminder. A nod to anyone who\u2019s ever wondered if their voice mattered while shouting into the algorithmic void. Spoiler: it does.&lt;/p&gt;\\n&lt;p&gt;Yo Donnie! Thank you for another TASTY uniDrop! More fly ish for fans to enjoy!&lt;/p&gt;\\n&lt;p&gt;Of course, thanks once again to you for downloading &amp;amp; listening. We always strive to deliver the music you\u2019ll love. Please spread the word about blocSonic, if you enjoy what we do. Remember\u2026 everything we release is cool to share! Always keep the music moving\u2026 share it\u2026 blog it\u2026 podcast it! If you\u2019re in radio\u2026 support independent music and broadcast it!&lt;/p&gt;&quot;],&quot;images&quot;:[1,[[0,{&quot;sort&quot;:[0,0],&quot;filename&quot;:[0,&quot;donnie-ozone-something-to-say-cover.jpg&quot;],&quot;alt&quot;:[0,&quot;Cover art for \u201cSomething to Say\u201d by Donnie Ozone&quot;],&quot;imported&quot;:[0,{&quot;src&quot;:[0,&quot;/_astro/donnie-ozone-something-to-say-cover.NDer6VzS.jpg&quot;],&quot;width&quot;:[0,1418],&quot;height&quot;:[0,1418],&quot;format&quot;:[0,&quot;jpg&quot;]}]}],[0,{&quot;sort&quot;:[0,1],&quot;filename&quot;:[0,&quot;donnie-ozone-something-to-say-insert.jpg&quot;],&quot;alt&quot;:[0,&quot;Album insert art for \u201cSomething to Say\u201d by Donnie Ozone&quot;],&quot;imported&quot;:[0,{&quot;src&quot;:[0,&quot;/_astro/donnie-ozone-something-to-say-insert.BH2aFVRc.jpg&quot;],&quot;width&quot;:[0,2851],&quot;height&quot;:[0,1418],&quot;format&quot;:[0,&quot;jpg&quot;]}]}]]],&quot;discs&quot;:[0],&quot;archives&quot;:[1,[[0,{&quot;id&quot;:[0,4902],&quot;filename&quot;:[0,&quot;00-BSUNI0028_FLAC.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-music-flac&quot;],&quot;type&quot;:[0,&quot;music&quot;],&quot;label&quot;:[0,&quot;flac&quot;],&quot;note&quot;:[0,null],&quot;description&quot;:[0,&quot;&quot;]}],[0,{&quot;id&quot;:[0,4903],&quot;filename&quot;:[0,&quot;00-BSUNI0028_320Kbs_MP3.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-music-320-mp3&quot;],&quot;type&quot;:[0,&quot;music&quot;],&quot;label&quot;:[0,&quot;320-mp3&quot;],&quot;note&quot;:[0,null],&quot;description&quot;:[0,&quot;&quot;]}],[0,{&quot;id&quot;:[0,4904],&quot;filename&quot;:[0,&quot;00-BSUNI0028_192Kbs_MP3.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-music-192-mp3&quot;],&quot;type&quot;:[0,&quot;music&quot;],&quot;label&quot;:[0,&quot;192-mp3&quot;],&quot;note&quot;:[0,null],&quot;description&quot;:[0,&quot;&quot;]}],[0,{&quot;id&quot;:[0,4905],&quot;filename&quot;:[0,&quot;00-BSUNI0028_OGG.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-music-ogg&quot;],&quot;type&quot;:[0,&quot;music&quot;],&quot;label&quot;:[0,&quot;ogg&quot;],&quot;note&quot;:[0,null],&quot;description&quot;:[0,&quot;&quot;]}],[0,{&quot;id&quot;:[0,4906],&quot;filename&quot;:[0,&quot;00-BSUNI0028_Art_EPS_Format.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-art-eps&quot;],&quot;type&quot;:[0,&quot;art&quot;],&quot;label&quot;:[0,&quot;eps&quot;],&quot;note&quot;:[0,null],&quot;description&quot;:[0,&quot;&quot;]}],[0,{&quot;id&quot;:[0,4907],&quot;filename&quot;:[0,&quot;00-BSUNI0028_Art_PDF_Format.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-art-pdf&quot;],&quot;type&quot;:[0,&quot;art&quot;],&quot;label&quot;:[0,&quot;pdf&quot;],&quot;note&quot;:[0,null],&quot;description&quot;:[0,&quot;&quot;]}],[0,{&quot;id&quot;:[0,4908],&quot;filename&quot;:[0,&quot;00-BSUNI0028_Art_TIF_Format.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-art-tif&quot;],&quot;type&quot;:[0,&quot;art&quot;],&quot;label&quot;:[0,&quot;tif&quot;],&quot;note&quot;:[0,null],&quot;description&quot;:[0,&quot;&quot;]}],[0,{&quot;id&quot;:[0,4909],&quot;filename&quot;:[0,&quot;00-BSUNI0028.pdf.zip&quot;],&quot;slug&quot;:[0,&quot;bsuni0028-pdf-pdf&quot;],&quot;type&quot;:[0,&quot;pdf&quot;],&quot;label&quot;:[0,&quot;pdf&quot;],&quot;note&quot;:[0,&quot;11 Pages&quot;],&quot;description&quot;:[0,&quot;&quot;]}]]],&quot;related&quot;:[1,[[0,&quot;2026-03-27-how-will-it-end-bw-slopoke&quot;],[0,&quot;2026-02-27-she-got-lost-featuring-cheese&quot;],[0,&quot;2026-01-30-boom-scat&quot;],[0,&quot;2025-07-14-ppt&quot;],[0,&quot;2025-01-24-its-only-me-featuring-duckett&quot;],[0,&quot;2024-09-27-three-more-hours-featuring-ketsa&quot;],[0,&quot;2024-07-14-eyes-open&quot;],[0,&quot;2023-10-13-my-reeboks-not-u-remix&quot;],[0,&quot;2023-07-14-give-thanks&quot;],[0,&quot;2023-06-02-dust-on-wax-ggg-mixx-featuring-puck&quot;],[0,&quot;2022-12-09-dust-on-wax&quot;],[0,&quot;2022-07-14-zeopolis-featuring-cheese-n-pot-c&quot;]]],&quot;options&quot;:[1,[]],&quot;categories&quot;:[1,[[0,&quot;blocsonic&quot;],[0,&quot;digital&quot;]]],&quot;created&quot;:[3,&quot;2026-05-22T10:02:00.000Z&quot;],&quot;href&quot;:[0,&quot;/releases/donnie-ozone/something-to-say/&quot;],&quot;genres&quot;:[0]}],&quot;created&quot;:[3,&quot;2026-05-22T10:02:00.000Z&quot;],&quot;seconds&quot;:[0,179],&quot;artist_and_title&quot;:[0,&quot;Donnie Ozone - Something to Say&quot;],&quot;href&quot;:[0,&quot;/releases/track/bsuni0028-disc-1-donnie-ozone-something-to-say/&quot;],&quot;file_url&quot;:[0,&quot;https://assets.blocsonic.com/releases/unidrops/bsuni0028/01-SomethingtoSay_192kb.mp3&quot;]}]]]}",
+      "mp3_url": "https://assets.blocsonic.com/releases/unidrops/bsuni0028/01-SomethingtoSay_192kb.mp3",
+      "file": "evidence_wave21_laneB/audio/blocsonic_donnie-ozone_something-to-say_192kb.mp3",
+      "bytes": 5142878,
+      "sha256": "18adb118325be5a4d080bc5f0bc764221f832eb487834d22a502bac1d03a0d7a",
+      "ffprobe": {
+        "ok": true,
+        "duration": "179.000000",
+        "size": "5142878",
+        "streams": [
+          {
+            "codec": "mp3",
+            "type": "audio",
+            "dur": "179.000000"
+          },
+          {
+            "codec": "png",
+            "type": "video",
+            "dur": "179.000000"
+          }
+        ]
+      }
+    },
+    {
+      "target": "GameChops",
+      "kind": "release_list",
+      "source": "https://gamechops.com/music/",
+      "count": 11,
+      "sample_slugs": [
+        "https://gamechops.com/fis-farewell-lofi-flip/",
+        "https://gamechops.com/fm-fusion-final-fantasy/",
+        "https://gamechops.com/gravity-well-cobalt-core-remix/",
+        "https://gamechops.com/national-park-jazz/",
+        "https://gamechops.com/poke-ambient-2/",
+        "https://gamechops.com/poke-emo/",
+        "https://gamechops.com/rosalinas-waltz/",
+        "https://gamechops.com/sheiks-song-lofi-mix/",
+        "https://gamechops.com/the-roost-radio/",
+        "https://gamechops.com/wp-json/"
+      ],
+      "sample_titles": [
+        "FM Fusion: Final Fantasy",
+        "Fi&#8217;s Farewell Lofi Flip",
+        "Gravity Well (Cobalt Core remix)",
+        "National Park Jazz",
+        "Pok\u00e9 Ambient 2",
+        "Pok\u00e9 Emo",
+        "Rosalina&#8217;s Waltz",
+        "Sheik&#8217;s Song (lofi) Mix",
+        "The Roost Radio",
+        "Zelda &amp; Lofi: Ocarina of Time"
+      ]
+    },
+    {
+      "target": "GameChops",
+      "kind": "download_path_probe",
+      "release_url": "https://gamechops.com/gravity-well-cobalt-core-remix/",
+      "creative_commons_mention_on_page": false,
+      "bandcamp_embed_present": true,
+      "note": "label is CC-licensed per gamechops.com homepage; per-release free download requires Bandcamp interaction"
+    }
+  ],
+  "failures": [
+    {
+      "target": "GameChops",
+      "kind": "audio_download",
+      "release_url": "https://gamechops.com/gravity-well-cobalt-core-remix/",
+      "error": "no direct mp3/zip download on release page; downloads route via Bandcamp/Spotify embeds (bandcamp_embed_present=True). Free MP3 not fetchable without email-capture interaction."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "tool": "webrtcvad",
+  "license": "MIT (Python wrapper, wiseman/py-webrtcvad) + BSD (WebRTC VAD core)",
+  "input": "/home/hatch/workspace/agent-ops/wave49-lanes/lane-c/tools/wave49_lane_c/proofs/input/vad_test.wav",
+  "sample_rate_hz": 16000,
+  "frame_ms": 30,
+  "aggressiveness": 2,
+  "total_frames": 166,
+  "region_stats": [
+    {
+      "start": 0.0,
+      "end": 1.0,
+      "label": "silence",
+      "speech_frame_rate": 0.029,
+      "frames": 34
+    },
+    {
+      "start": 1.0,
+      "end": 2.5,
+      "label": "voiced",
+      "speech_frame_rate": 0.961,
+      "frames": 51
+    },
+    {
+      "start": 2.5,
+      "end": 3.5,
+      "label": "silence",
+      "speech_frame_rate": 0.147,
+      "frames": 34
+    },
+    {
+      "start": 3.5,
+      "end": 5.0,
+      "label": "voiced",
+      "speech_frame_rate": 1.0,
+      "frames": 50
+    }
+  ],
+  "segments": [
+    {
+      "start_s": 0.9,
+      "end_s": 2.82,
+      "dur_s": 1.92
+    },
+    {
+      "start_s": 3.42,
+      "end_s": 4.98,
+      "dur_s": 1.56
+    }
+  ],
+  "expected_segments": 2,
+  "pass": true
+}

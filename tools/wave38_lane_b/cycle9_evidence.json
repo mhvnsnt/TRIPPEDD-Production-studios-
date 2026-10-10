@@ -1,0 +1,353 @@
+{
+  "date": "2026-10-08",
+  "cycle": 9,
+  "rows": {
+    "81": {
+      "repo": "ltdrdata/ComfyUI-Impact-Pack",
+      "expected_spdx": "GPL-3.0",
+      "note": "root LICENSE.txt = GPL-3.0 text",
+      "api": {
+        "archived": false,
+        "default_branch": "Main",
+        "fork": false,
+        "forks_count": 399,
+        "html_url": "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
+        "license": "GPL-3.0",
+        "owner": "ltdrdata",
+        "pushed_at": "2026-04-19T17:07:11Z"
+      },
+      "license_path": "LICENSE.txt",
+      "license_url": "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Impact-Pack/master/LICENSE.txt",
+      "license_bytes": 35149,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this lice",
+      "expected_snippet_found": true,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "82": {
+      "repo": "Kosinkadink/ComfyUI-VideoHelperSuite",
+      "expected_spdx": "GPL-3.0",
+      "note": "root LICENSE = GPL-3.0 text",
+      "api": {
+        "archived": false,
+        "default_branch": "main",
+        "fork": false,
+        "forks_count": 386,
+        "html_url": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
+        "license": "GPL-3.0",
+        "owner": "Kosinkadink",
+        "pushed_at": "2026-09-02T06:48:06Z"
+      },
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/Kosinkadink/ComfyUI-VideoHelperSuite/main/LICENSE",
+      "license_bytes": 35149,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this lice",
+      "expected_snippet_found": true,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "88": {
+      "repo": "Yoshimi/yoshimi",
+      "expected_spdx": "GPL-2.0-or-later",
+      "note": "COPYING foreword '-or-later' clause; API often NOASSERTION",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 46,
+        "html_url": "https://github.com/Yoshimi/yoshimi",
+        "license": "NOASSERTION",
+        "owner": "Yoshimi",
+        "pushed_at": "2026-09-06T17:25:23Z"
+      },
+      "license_path": "COPYING",
+      "license_url": "https://raw.githubusercontent.com/Yoshimi/yoshimi/master/COPYING",
+      "license_bytes": 50604,
+      "license_head": "Foreword:  For a time there was confusion over the precise license version applicable to Yoshimi.  It has been confirmed as Version 2, or (at your option) any later version.  =================================================================",
+      "expected_snippet_found": true,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed",
+      "manual_review": "COPYING foreword grants \"Version 2, or (at your option) any later version\" \u2014 GPL-2.0-or-later stands; API NOASSERTION = detection gap"
+    },
+    "100": {
+      "repo": "supercollider/supercollider",
+      "expected_spdx": "GPL-3.0-or-later",
+      "note": "README grant + scsynth headers => effective -or-later",
+      "api": {
+        "archived": false,
+        "default_branch": "develop",
+        "fork": false,
+        "forks_count": 853,
+        "html_url": "https://github.com/supercollider/supercollider",
+        "license": "GPL-3.0",
+        "owner": "supercollider",
+        "pushed_at": "2026-10-07T22:45:59Z"
+      },
+      "license_path": "COPYING",
+      "license_url": "https://raw.githubusercontent.com/supercollider/supercollider/main/COPYING",
+      "license_bytes": 35147,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this licen",
+      "expected_snippet_found": false,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed",
+      "manual_review": "COPYING is plain GPL-3.0 text; README license section says \"available under Version 3 the GNU General Public License\" (no explicit -or-later); scsynth source headers (SC_World.cpp) grant \"either version 2 ... or (at your option) any later version\" -> effective GPL-3.0-or-later stands per Wave-21 analysis"
+    },
+    "101": {
+      "repo": "tidalcycles/Tidal",
+      "expected_spdx": "GPL-3.0",
+      "note": "canonical moved: tidalcycles/TidalCycles 404s -> tidalcycles/Tidal",
+      "api": {
+        "archived": true,
+        "default_branch": "main",
+        "fork": false,
+        "forks_count": 272,
+        "html_url": "https://github.com/tidalcycles/Tidal",
+        "license": "GPL-3.0",
+        "owner": "tidalcycles",
+        "pushed_at": "2025-06-13T19:22:15Z"
+      },
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/tidalcycles/Tidal/main/LICENSE",
+      "license_bytes": 35106,
+      "license_head": "              GNU GENERAL PUBLIC LICENSE                 Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this license document, ",
+      "expected_snippet_found": true,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed",
+      "manual_review": "repo-moved chain: tidalcycles/TidalCycles 404s -> tidalcycles/Tidal (archived 2025-06-13, GPL-3.0 badge) -> ACTIVE development moved to codeberg.org/uzu/tidal (200, LICENSE = GPL v3 29 June 2007, 35,106 bytes)"
+    },
+    "102": {
+      "repo": "VCVRack/Rack",
+      "expected_spdx": "GPL-3.0-or-later",
+      "note": "Sec-7 Non-Commercial Plugin License Exception; API NOASSERTION",
+      "api": {
+        "archived": false,
+        "default_branch": "v2",
+        "fork": false,
+        "forks_count": 470,
+        "html_url": "https://github.com/VCVRack/Rack",
+        "license": "NOASSERTION",
+        "owner": "VCVRack",
+        "pushed_at": "2025-11-04T08:47:14Z"
+      },
+      "license_path": "LICENSE.md",
+      "license_url": "https://raw.githubusercontent.com/VCVRack/Rack/master/LICENSE.md",
+      "license_bytes": 2869,
+      "license_head": "# VCV Rack licenses  VCV Rack Free **source code and binaries** are copyright \u00a9 2016-2023 VCV.  This program is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](https://www.gnu.org",
+      "expected_snippet_found": true,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed",
+      "manual_review": "LICENSE.md = grant text with Section-7 Non-Commercial Plugin License Exception; -or-later clause confirmed; API NOASSERTION = detection gap"
+    },
+    "106": {
+      "repo": "teras/Jubler",
+      "expected_spdx": "AGPL-3.0",
+      "note": "README claims 'GNU Affero General Public License v3'",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 19,
+        "html_url": "https://github.com/teras/Jubler",
+        "license": "AGPL-3.0",
+        "owner": "teras",
+        "pushed_at": "2026-10-02T15:30:42Z"
+      },
+      "license_path": "LICENSE",
+      "license_url": "https://raw.githubusercontent.com/teras/Jubler/master/LICENSE",
+      "license_bytes": 34523,
+      "license_head": "                    GNU AFFERO GENERAL PUBLIC LICENSE                        Version 3, 19 November 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  o",
+      "expected_snippet_found": true,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "107": {
+      "repo": "GNOME/gnome-subtitles",
+      "expected_spdx": "GPL-2.0-or-later",
+      "note": "claim from RPM package metadata; check repo truth",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 4,
+        "html_url": "https://github.com/GNOME/gnome-subtitles",
+        "license": "GPL-2.0",
+        "owner": "GNOME",
+        "pushed_at": "2026-03-15T19:39:29Z"
+      },
+      "license_path": "COPYING",
+      "license_url": "https://raw.githubusercontent.com/GNOME/gnome-subtitles/master/COPYING",
+      "license_bytes": 18011,
+      "license_head": "\t\t    GNU GENERAL PUBLIC LICENSE \t\t       Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.                        51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA  Everyone is permitted to copy and dist",
+      "expected_snippet_found": true,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed",
+      "manual_review": "GNOME/gnome-subtitles: API spdx GPL-2.0, COPYING = GPL v2 June 1991 text; RPM metadata -or-later clause not contradicted in-repo"
+    },
+    "108": {
+      "repo": "Ivshti/opensubtitles-api",
+      "expected_spdx": "GPL-3.0-or-later",
+      "note": "README grant vs package.json 'GPL-3.0' self-conflict on file",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 0,
+        "html_url": "https://github.com/Ivshti/opensubtitles-api",
+        "license": "NONE",
+        "owner": "Ivshti",
+        "pushed_at": "2015-09-25T13:40:31Z"
+      },
+      "license_path": "README.md",
+      "license_url": "https://raw.githubusercontent.com/Ivshti/opensubtitles-api/master/README.md",
+      "license_bytes": 7279,
+      "license_head": "# opensubtitles-api  **[OpenSubtitles.org](http://www.opensubtitles.org/) api wrapper for downloading and uploading subtitles.**  Based on Promises and thus working asynchronously (thanks to Bluebird), this module uses XML-RPC (thanks to xm",
+      "expected_snippet_found": false,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed (upstream self-conflict recorded)",
+      "manual_review": "README.md contains full GPL text with \"either version 3 of the License, or (at your option) any later version\" (line-wrapped; mechanical snippet missed); package.json still pins \"GPL-3.0\" \u2014 upstream self-conflict stands, quarantine unaffected either way; API spdx NONE = no declared license"
+    },
+    "109": {
+      "repo": "CCExtractor/ccextractor",
+      "expected_spdx": "GPL-2.0",
+      "note": "upstream README pins GPL v2.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 593,
+        "html_url": "https://github.com/CCExtractor/ccextractor",
+        "license": "GPL-2.0",
+        "owner": "CCExtractor",
+        "pushed_at": "2026-10-02T03:58:26Z"
+      },
+      "license_path": "LICENSE.txt",
+      "license_url": "https://raw.githubusercontent.com/CCExtractor/ccextractor/master/LICENSE.txt",
+      "license_bytes": 18092,
+      "license_head": null,
+      "expected_snippet_found": null,
+      "api_spdx_ok": true,
+      "verdict": "CONFIRMED as claimed",
+      "manual_review": "fetch-path correction: license file is LICENSE.txt (tree lookup), not COPYING \u2014 GPL v2 June 1991 text (18,092 bytes)"
+    }
+  },
+  "drift_watch": {
+    "helm": {
+      "repo": "mtytel/helm",
+      "api": {
+        "archived": true,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 233,
+        "html_url": "https://github.com/mtytel/helm",
+        "license": "GPL-3.0",
+        "owner": "mtytel",
+        "pushed_at": "2022-09-24T04:23:20Z"
+      },
+      "top_forks": [
+        {
+          "full_name": "DatanoiseTV/helm",
+          "pushed_at": "2020-11-11T19:42:19Z",
+          "stargazers_count": 6
+        },
+        {
+          "full_name": "poweraudio/helm",
+          "pushed_at": "2024-09-08T06:17:07Z",
+          "stargazers_count": 3
+        },
+        {
+          "full_name": "rockola/helm",
+          "pushed_at": "2019-08-20T01:04:50Z",
+          "stargazers_count": 2
+        },
+        {
+          "full_name": "mekayama/helm",
+          "pushed_at": "2015-07-09T21:11:22Z",
+          "stargazers_count": 2
+        },
+        {
+          "full_name": "AJ-Gonzalez/helm-apple-silicon",
+          "pushed_at": "2026-09-21T03:21:35Z",
+          "stargazers_count": 2
+        },
+        {
+          "full_name": "QuillLumim/helm",
+          "pushed_at": "2022-07-05T05:55:05Z",
+          "stargazers_count": 1
+        },
+        {
+          "full_name": "matt6626/helm",
+          "pushed_at": "2022-12-29T02:18:00Z",
+          "stargazers_count": 1
+        },
+        {
+          "full_name": "hartsantler/helm",
+          "pushed_at": "2019-07-14T11:17:26Z",
+          "stargazers_count": 1
+        }
+      ]
+    },
+    "telxcc": {
+      "repo": "kanongil/telxcc",
+      "api": {
+        "archived": true,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 14,
+        "html_url": "https://github.com/kanongil/telxcc",
+        "license": "NOASSERTION",
+        "owner": "kanongil",
+        "pushed_at": "2025-09-20T11:29:10Z"
+      },
+      "top_forks": [
+        {
+          "full_name": "braincoded/telxcc",
+          "pushed_at": "2014-09-10T13:29:27Z",
+          "stargazers_count": 1
+        },
+        {
+          "full_name": "wazerstar/telxcc",
+          "pushed_at": "2020-11-27T09:38:20Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "hamza-u/teletext_decoder",
+          "pushed_at": "2018-01-23T10:33:35Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "DezoVartovnik/telxcc",
+          "pushed_at": "2017-01-14T22:50:48Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "joncampbell123/telxcc",
+          "pushed_at": "2017-01-14T22:50:48Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "beeeeswax/telxcc",
+          "pushed_at": "2017-01-14T22:50:48Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "max-verem/telxcc",
+          "pushed_at": "2017-01-11T10:44:43Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "carlanton/teletext-ingest",
+          "pushed_at": "2017-05-25T21:26:33Z",
+          "stargazers_count": 0
+        }
+      ]
+    },
+    "mkvtoolnix": {
+      "http": 200,
+      "final_url": "https://codeberg.org/mbunkus/mkvtoolnix",
+      "copying_http": 200,
+      "copying_bytes": 18092,
+      "copying_gplv2": true
+    }
+  },
+  "summary": "10/10 confirmed as claimed; 1 repo-moved chain (row 101: TidalCycles -> Tidal (archived) -> codeberg.org/uzu/tidal active); 1 upstream self-conflict recorded (row 108); 1 fetch-path correction (row 109: LICENSE.txt); 2 API detection gaps (rows 88, 102)"
+}

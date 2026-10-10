@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:02,740
+<font color="#00FF00"> The</font>  Council  does  not  explain  itself,  it  declares.
+
+2
+00:00:00,000 --> 00:00:02,740
+ The <font color="#00FF00"> Council</font>  does  not  explain  itself,  it  declares.
+
+3
+00:00:00,000 --> 00:00:02,740
+ The  Council <font color="#00FF00"> does</font>  not  explain  itself,  it  declares.
+
+4
+00:00:00,000 --> 00:00:02,740
+ The  Council  does <font color="#00FF00"> not</font>  explain  itself,  it  declares.
+
+5
+00:00:00,000 --> 00:00:02,740
+ The  Council  does  not <font color="#00FF00"> explain</font>  itself,  it  declares.
+
+6
+00:00:00,000 --> 00:00:02,740
+ The  Council  does  not  explain <font color="#00FF00"> itself,</font>  it  declares.
+
+7
+00:00:00,000 --> 00:00:02,740
+ The  Council  does  not  explain  itself, <font color="#00FF00"> it</font>  declares.
+
+8
+00:00:00,000 --> 00:00:02,740
+ The  Council  does  not  explain  itself,  it <font color="#00FF00"> declares.</font>
+

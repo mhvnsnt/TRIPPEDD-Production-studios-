@@ -1,0 +1,89 @@
+{
+  "version": 8,
+  "authority": "TRIPPEDD_PRODUCTION",
+  "canonical_character": "MARS_CANONICAL",
+  "continuous_work": true,
+  "unknown_is_never_pass": true,
+  "rocket_runtime": {
+    "state": "CLOUD_UNAVAILABLE",
+    "resume_contract": "docs/agent_handoff/ROCKET_CLOUD_RECOVERY_RUNBOOK.md",
+    "rule": "when cloud returns, resume the durable queue and runtime integration without waiting for a new owner prompt",
+    "forbidden": ["fabricated Blender execution", "fabricated renders", "fabricated measurements", "dashboard-only production implementation"]
+  },
+  "critical_visual_truth": {
+    "mouth_failure": "skin_stretches_inside_open_mouth",
+    "diagnosis": "synthetic radial MARS skin jaw deformation, not missing cavity",
+    "pixel_measurement_correction": "oral donor geometry was hide_render=True, so rendered pixels contained MARS skin while ray geometry still contained oral anatomy",
+    "required_fix": "GNM internal anatomy motion plus MARS-own-crease lip ownership plus explicit persistent render visibility plus actual pixel-ID evidence",
+    "forbidden_fix": "interpolated_ellipse_skin_deformation"
+  },
+  "tasks": [
+    {
+      "id": "rocket-cloud-recovery",
+      "problem": "cloud_blender_runtime_temporarily_unavailable",
+      "status": "WAITING_FOR_REAL_RUNTIME",
+      "route": ["health probe", "worker capabilities", "real job API", "command-center live state", "real render/validation dispatch", "artifact/evidence ingestion"],
+      "handoff": "docs/agent_handoff/ROCKET_CLOUD_RECOVERY_RUNBOOK.md",
+      "hard_stop": "do_not_claim_runtime_execution_until_a_real_worker_probe_and_artifact_receipt_exist"
+    },
+    {
+      "id": "mars-mouth-gnm-motion",
+      "problem": "skin_stretching_inside_existing_open_cavity",
+      "status": "FIXED_IN_BRIDGE",
+      "route": ["GNM oral donor", "GNM canonical mouth-open expression", "internal teeth/gums/tongue motion", "MARS canonical skin zero synthetic jaw displacement"],
+      "commit": "f32e8a174c84b37eff0f677204ba1108161e8aed",
+      "gate": "SKIN_JAW_MOTION_MAX == 0",
+      "hard_stop": "never reintroduce radial or height-interpolated skin jaw deformation"
+    },
+    {
+      "id": "mars-mouth-render-truth",
+      "problem": "pixel_truth_disagreed_with_geometry_because_oral_objects_were_hidden_for_render",
+      "status": "PIXEL_GATED_IN_RUNNER",
+      "tools": ["tools/character/audit_mars_oral_render_visibility.py", "tools/character/render_mars_oral_pixel_truth.py", "tools/character/run_mars_oral_repair.sh"],
+      "commits": ["a530649dc9fceedff3dac878fa14ce2fab29da0a", "598e46c6995e58a391e4363e61da34743dfe43ce", "67c59af39b74e5a0e364a3b096d4e628949d0257", "ee5e1d2bf8d1ec1c4523b2f3dc2601d49695ded4"],
+      "required_measurements": ["hide_render_before", "hide_render_after", "camera_visible_after", "persisted_corrected_blend", "actual_render_pixels", "image_sha256"],
+      "hard_stop": "no_pixel_truth_claim while oral render visibility is UNKNOWN or FAIL",
+      "note": "pseudonormal/protrusion sign is geometry diagnostic only; pixel appearance is authoritative for visual claims"
+    },
+    {
+      "id": "mars-mouth-lip-seam",
+      "problem": "upper_lower_lip_ownership_and_aperture_motion",
+      "status": "CHAIN_GATE_READY",
+      "tools": ["tools/character/derive_mars_lip_crease_candidates.py", "tools/character/validate_mars_lip_candidate_chain.py"],
+      "commits": ["32ccb1509523cd8f5e66d4d343778caf1900eb47", "aebb3113685d7a0cb7ae8da9bae5dc0ffabaaadd"],
+      "method": ["measured mouth-frame locality", "actual mesh edge topology", "face-normal dihedral", "existing edge-crease data when present", "actual edge connectivity"],
+      "required_measurements": ["candidate_count", "component_count", "spanning_component_count", "upper_lower_ownership", "skin_motion_inside_aperture", "pixel_proof"],
+      "authority": "MARS_CANONICAL mesh crease/seam",
+      "hard_stop": "do_not_replace_canonical_mars_or_rebuild_whole_mouth; no deformation promotion unless exactly one connected candidate component spans both mouth corners and pixel proof passes",
+      "forbidden": ["interpolated_ellipse_skin_deformation", "height_cutoff", "world_space_radial_jaw_motion", "connecting_edges_by_spatial_proximity"]
+    },
+    {
+      "id": "mars-eye-weld-first",
+      "problem": "fragmented_eye_topology_and_sliver_triangles",
+      "status": "NEXT",
+      "route": ["weld", "prove_zero_vertex_motion", "preserve_uv_shape_keys", "remesh_only_after_weld"],
+      "hard_stop": "no_remesh_before_zero_motion_weld_receipt"
+    },
+    {
+      "id": "component-registration",
+      "problem": "deterministic_donor_to_canonical_alignment",
+      "status": "IMPLEMENTED",
+      "tool": "tools/visual_anatomy/component_registration.py",
+      "authority": "landmark_kabsch",
+      "optional_refinement": "Open3D_ICP",
+      "hard_stop": "fail_on_rms_or_max_residual_threshold"
+    },
+    {
+      "id": "assembly-provenance",
+      "problem": "untrusted_import_transforms",
+      "status": "QUEUED",
+      "required_fields": ["source_sha256", "target_sha256", "transform", "units", "landmark_set", "rms_residual", "max_residual"]
+    },
+    {
+      "id": "deformation-preservation",
+      "problem": "component_transfer_must_not_break_animation_data",
+      "status": "QUEUED",
+      "required_fields": ["uv_preserved", "shape_keys_preserved", "armature_preserved", "weights_preserved"]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "prompt-first-production-stack",
+  "purpose": "Let an operator send natural-language production prompts and have authorized AI tooling perform real scene, animation, world-building, rendering, and review work before autonomous agents are fully online.",
+  "principle": "Prompt-first now; autonomous takeover later. Both use the same production contracts and evidence gates.",
+  "statusRule": "REGISTERED_IS_NOT_VALIDATED",
+  "executionPolicy": {
+    "real_software_only": true,
+    "preserve_canonical_assets": true,
+    "write_to_workspaces_before_promotion": true,
+    "every_mutation_requires_lineage": true,
+    "actual_pixels_required_for_visual_claims": true,
+    "unknown_never_pass": true,
+    "human_final_greenlight": true
+  },
+  "direct_control_backends": [
+    {
+      "id": "blender-mcp-primary",
+      "upstream": "https://github.com/MCPBlender/blender-mcp",
+      "engine": "Blender",
+      "roles": ["scene_creation", "modeling", "materials", "object_manipulation", "rendering"],
+      "selection": "PRIMARY_CANDIDATE",
+      "reason": "Prompt-driven Blender control through MCP with two-way scene communication."
+    },
+    {
+      "id": "blender-mcp-comprehensive",
+      "upstream": "https://github.com/RFingAdam/mcp-blender",
+      "engine": "Blender",
+      "roles": ["modeling", "rigging", "animation", "physics", "geometry_nodes", "rendering", "baking", "export", "vision_refinement"],
+      "selection": "PRIMARY_CANDIDATE_FOR_BROAD_TOOL_COVERAGE",
+      "reason": "Large structured Blender tool surface plus render/analyze/refine loop."
+    },
+    {
+      "id": "blender-ai-agent",
+      "upstream": "https://github.com/ahmedsayed1911/Blender-AI-Agent",
+      "engine": "Blender",
+      "roles": ["prompt_to_3d", "validated_generation", "vision_review", "semantic_motion", "artifact_export", "rollback"],
+      "selection": "REVIEW_AND_INTEGRATION_CANDIDATE",
+      "reason": "Local-first architecture explicitly couples prompt planning, controlled Blender mutation, read-only vision review, motion, and artifact tracking."
+    },
+    {
+      "id": "unreal-mcp",
+      "upstream": "https://github.com/x0cipher/unreal-mcp",
+      "engine": "Unreal Engine",
+      "roles": ["actors", "assets", "materials", "blueprints", "world_building", "editor_execution"],
+      "selection": "UNREAL_CANDIDATE",
+      "reason": "Direct natural-language control of a live Unreal Editor through MCP."
+    },
+    {
+      "id": "hayba",
+      "upstream": "https://github.com/zajalist/hayba",
+      "engine": "Unreal Engine",
+      "roles": ["world_building", "PCG", "spatial_reasoning", "sequencer", "animation", "materials", "physics", "visual_grounding"],
+      "selection": "UNREAL_SPATIAL_CANDIDATE",
+      "reason": "Spatial/procedural world-building stack with MCP, PCG registry, cognitive map, and visual grounding."
+    },
+    {
+      "id": "unreal-mcp-large-tool-surface",
+      "upstream": "https://github.com/kks3800/Unreal_MCP",
+      "engine": "Unreal Engine",
+      "roles": ["blueprints", "materials", "UMG", "behavior_trees", "PCG", "MetaSounds", "editor_automation"],
+      "selection": "EXPERIMENTAL_CANDIDATE",
+      "reason": "Large open-source MCP surface for direct editor construction; requires real-engine smoke testing before adoption."
+    }
+  ],
+  "prompt_contract": {
+    "input": ["intent", "canon_constraints", "asset_constraints", "style_constraints", "shot_or_world_scope", "desired_output"],
+    "planner_outputs": ["production_plan", "tool_calls", "asset_dependencies", "render_plan", "qc_plan"],
+    "execution_outputs": ["scene_delta", "animation_artifacts", "render_artifacts", "logs", "lineage_manifest"],
+    "review_outputs": ["actual_pixels", "measurements", "visual_verdict", "failure_reason", "next_action"]
+  },
+  "handoff": {
+    "current_mode": "HUMAN_PROMPT_DRIVEN",
+    "future_mode": "AUTONOMOUS_AGENT_DRIVEN",
+    "shared_contract": "same tools, same lineage, same QC, same evidence rules",
+    "migration_rule": "Do not create a second production implementation for autonomous mode; autonomous agents inherit the prompt-first execution lane."
+  },
+  "promotion_gates": [
+    "upstream_and_license_verified",
+    "reproducible_install_or_source_checkout",
+    "real_engine_smoke_test",
+    "real_production_input_smoke_test",
+    "measured_output",
+    "actual_pixel_reopen",
+    "failure_and_recovery_exercise",
+    "provenance_recorded",
+    "unknown_never_pass"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "tool": "meyda",
+  "version": "5.6.3",
+  "license": "MIT (github.com/hughrawlinson/meyda)",
+  "input": "test-440.wav — 2s mono 16-bit PCM @44100Hz, 440Hz sine + 0.4*880Hz harmonic (synthesized, no copyrighted audio)",
+  "frame0": {
+    "rms": 0.22749877161131604,
+    "energy": 26.498913835344762,
+    "spectralCentroid": 6.5873547404181805,
+    "spectralRolloff": 1037.6470588235293,
+    "zeroCrossingRate": 10,
+    "spectralFlatness": 0.00034796568785815845,
+    "mfcc_first5": [
+      67.31337745264767,
+      56.78707089443544,
+      29.61062903016704,
+      -3.1792494554057216,
+      -29.2493250128723
+    ],
+    "chroma_peak_bin": 9
+  },
+  "mfcc_mean_first5_over_full_buffer": [
+    67.28613348137289,
+    56.774275488878196,
+    29.629910181893123,
+    -3.1351786286397685,
+    -29.20672410511411
+  ],
+  "frames_analyzed": 172
+}

@@ -9,6 +9,19 @@ V1 = os.path.join(os.path.dirname(D), "luck-of-the-irish-commercial-final.mp4")
 SR = 44100
 OUT = os.path.join(D, "v3-audio-beats.wav")
 
+# hit times computed by assemble_v3.py (smear-free beat edit)
+ht = {}
+with open(os.path.join(D, "comp", "v3-hittimes.txt")) as f:
+    for line in f:
+        k, v = line.strip().split("=")
+        ht[k] = float(v)
+HITS = [ht["H1"], ht["H2"], ht["H3"], ht["H4"], ht["H5"]]
+T_JUMP, T_HOLD_END = ht["JUMP"], ht["JUMP"] + 1.5
+T_FREEZE_END = T_HOLD_END + 0.3
+T_POOF_END = T_FREEZE_END + 0.4
+T_MASCOT_END = T_POOF_END + 2.0
+print(f"audio hits: {[f'{h:.2f}' for h in HITS]} jump={T_JUMP:.2f} mascot_end={T_MASCOT_END:.2f}")
+
 # 1. production bed: v1 audio 0->40s
 raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", "0", "-t", "40", "-i", V1,
                       "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True)
@@ -25,14 +38,14 @@ def add(stereo, t, dur, fn):
 
 rng = np.random.default_rng(7)
 
-# 2. riser 22.9->35: rising filtered noise, Hulk-hum style low throb + sheen
+# 2. riser 22.9->T_JUMP: rising filtered noise, Hulk-hum style low throb + sheen
 def riser(t, dur):
     env = (t/dur)**2.2
     noise = rng.standard_normal(len(t))
     # crude rising sweep: mix of low throb (55->110Hz) and airy noise
     throb = np.sin(2*np.pi*(55+55*t/dur)*t) * 0.5
     return (noise*0.25 + throb) * env * 0.55
-add(mix, 22.9, 12.1, riser)
+add(mix, 22.9, T_JUMP-22.9, riser)
 
 # 3. impacts at each HIT: punchy sine-drop + click
 def impact(t, dur, base=90.0):
@@ -40,15 +53,15 @@ def impact(t, dur, base=90.0):
     tone = np.sin(2*np.pi*np.cumsum(f)/SR) * np.exp(-t*9)
     click = rng.standard_normal(len(t)) * np.exp(-t*60) * 0.6
     return (tone*0.9 + click) * 0.8
-for ht in [25.0, 27.0, 29.0, 31.5, 33.5, 35.3]:
-    add(mix, ht, 0.6, impact)
+for htx in HITS + [T_FREEZE_END]:
+    add(mix, htx, 0.6, impact)
 
-# 4. poof burst @35.3: soft noise whoosh
+# 4. poof burst @T_FREEZE_END: soft noise whoosh
 def poof(t, dur):
     return rng.standard_normal(len(t)) * np.exp(-((t-0.15)/0.12)**2) * 0.5
-add(mix, 35.3, 0.5, poof)
+add(mix, T_FREEZE_END, 0.5, poof)
 
-# 5. reveal sting @35.7: bright rising major arp (C E G C), cartoon hero
+# 5. reveal sting @T_POOF_END: bright rising major arp (C E G C), cartoon hero
 def sting(t, dur):
     notes = [261.63, 329.63, 392.0, 523.25]
     y = np.zeros_like(t)
@@ -58,10 +71,10 @@ def sting(t, dur):
         tt = t[m]-st
         y[m] += np.sin(2*np.pi*f0*tt)*np.exp(-tt*4)*0.35
     return y
-add(mix, 35.7, 1.2, sting)
+add(mix, T_POOF_END, 1.2, sting)
 
-# 6. cards near-silent: duck everything after 39s
-duck = int(39*SR)
+# 6. cards near-silent: duck everything after T_MASCOT_END+1
+duck = int((T_MASCOT_END+1)*SR)
 if duck < n:
     fade = np.linspace(1, 0, min(n-duck, 2*SR))
     mix[duck:duck+len(fade)] *= fade[:, None]

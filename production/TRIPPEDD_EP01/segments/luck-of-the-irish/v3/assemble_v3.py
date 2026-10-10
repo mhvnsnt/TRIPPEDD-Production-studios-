@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
-"""LOTI v3 final assembly — per-part beat structure.
-Run from v3/ dir after EbSynth segments (segA..segE styled.mp4) complete.
+"""LOTI v3 final assembly — per-part beat structure, smear-free edit.
+EbSynth mid-segment interpolation frames were muddy (QC'd by eye); the edit
+keeps only clean keyframe-anchored ranges and lands each part-change under a
+campy HIT (flash + starburst/poof/spin). Timing is computed, not hardcoded.
 
-Beat map (t in seconds):
+Beat map (computed below):
   0-22.9   v1 footage
-  22.9-25.0 segA: clean -> S1 EYES ignite        HIT1 @25.0  white flash + starburst
-  25.0-27.0 segB: S1 -> S2 ELF EARS pop          HIT2 @27.0  white flash + poof pop
-  27.0-29.0 segC: S2 -> S3 GRIN widens           HIT3 @29.0  green flash + starburst
-  29.0-31.5 segD: S3 -> S4 green TRACKSUIT       HIT4 @31.5  white flash + SPIN + starburst
-  31.5-33.5 segE: S4 -> S5 80% at the JUMP       HIT5 @33.5  flash + speedlines + punch-in
-  33.5-35.0 K3 hold (hero beat)
-  35.0-35.3 freeze | 35.3-35.7 poof | 35.7-37.7 mascot reveal (100%)
-  37.7+ iris -> swap card -> title -> slogan -> disclaimers -> end button
+  beatA: clean -> EYES ignite (gradual)            HIT1 @endA
+  beatB: eyes -> | EARS pop                        HIT2 @cutB
+  beatC: ears -> | GRIN widens                      HIT3 @cutC
+  beatD: grin -> | green TRACKSUIT (+spin gag)      HIT4 @cutD
+  beatE: tracksuit -> | 80% at the JUMP             HIT5 @cutE
+  K3 hero hold 1.5s -> freeze 0.3s -> poof 0.4s -> mascot reveal 2.0s (100%)
+  iris -> swap card -> title -> slogan -> disclaimers -> end button
 """
 import subprocess, os, sys
 
@@ -23,9 +24,18 @@ COMP = os.path.join(D, "comp")
 V2 = os.path.join(os.path.dirname(D), "v2")
 SEG = os.path.dirname(D)
 FF = ["ffmpeg", "-y", "-v", "error"]
-HITS = [25.0, 27.0, 29.0, 31.5, 33.5]
-FLASH_D = 0.4   # 12 frames @30fps — the PR '93 twenty-frame flash grammar, tightened
+FPS_WORK = 8
+FLASH_D = 0.4
 POP_D = 0.5
+
+# (segment, [clean ranges as (start,end) inclusive, 0-based]) — from eye QC
+BEATS = [
+    ("beatA", "segA", [(0, 16)],  "eyes"),
+    ("beatB", "segB", [(0, 5), (12, 15)], "ears"),
+    ("beatC", "segC", [(0, 4), (12, 15)], "grin"),
+    ("beatD", "segD", [(0, 3), (14, 19)], "tracksuit"),
+    ("beatE", "segE", [(0, 4), (13, 15)], "jump80"),
+]
 
 def run(cmd, label):
     print(f"[{label}]", flush=True)
@@ -38,11 +48,6 @@ def dur(p):
                         "-of", "csv=p=0", p], capture_output=True, text=True)
     return float(o.stdout.strip())
 
-# sanity: all 5 EbSynth outputs must exist
-for s in ["segA", "segB", "segC", "segD", "segE"]:
-    p = os.path.join(EBS, s, "styled.mp4")
-    assert os.path.exists(p), f"MISSING {p} — EbSynth not done"
-
 os.makedirs(COMP, exist_ok=True)
 
 # 1. base 0->22.9 from v1
@@ -50,77 +55,104 @@ run(FF + ["-ss", "0", "-t", "22.9", "-i", V1, "-vf", "fps=30,format=yuv420p",
           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-preset", "fast",
           f"{COMP}/v3-p1-base.mp4"], "p1 base 0-22.9")
 
-# 2. normalize each styled segment to 1080p30
-seg_durs = []
-for s in ["segA", "segB", "segC", "segD", "segE"]:
-    out = f"{COMP}/v3-{s}.mp4"
-    run(FF + ["-i", f"{EBS}/{s}/styled.mp4", "-vf",
-              "scale=1920:1080:flags=lanczos,fps=30,format=yuv420p",
-              "-c:v", "libx264", "-crf", "18", "-preset", "fast", out], f"{s} normalize")
-    seg_durs.append(dur(out))
-print("seg durations:", seg_durs, flush=True)
+# 2. build beat clips from clean frame ranges; compute timeline
+#    (symlink selected frames -> image2 with explicit framerate; concat demuxer
+#    miscounts still-image segments)
+t = 22.9
+beat_info = {}
+for name, seg, ranges, label in BEATS:
+    seldir = f"{COMP}/{name}-sel"
+    run(["rm", "-rf", seldir], f"clean {name}-sel")
+    os.makedirs(seldir, exist_ok=True)
+    idx = 0
+    for a, b in ranges:
+        for n in range(a, b + 1):
+            os.symlink(os.path.abspath(f"{EBS}/{seg}/styled-frames/styled-{n:04d}.png"),
+                       f"{seldir}/sel-{idx:04d}.png")
+            idx += 1
+    nframes = idx
+    cut_t = (ranges[0][1] - ranges[0][0] + 1) / FPS_WORK if len(ranges) > 1 else None
+    bd = nframes / FPS_WORK
+    out = f"{COMP}/v3-{name}.mp4"
+    run(FF + ["-framerate", str(FPS_WORK), "-i", f"{seldir}/sel-%04d.png",
+              "-vf", "scale=1920:1080:flags=lanczos,fps=30,format=yuv420p",
+              "-c:v", "libx264", "-crf", "18", "-preset", "fast", out],
+        f"{name} ({label}) {nframes}f")
+    got = int(subprocess.run(["ffprobe", "-v", "error", "-count_frames",
+              "-select_streams", "v:0", "-show_entries", "stream=nb_read_frames",
+              "-of", "csv=p=0", out], capture_output=True, text=True).stdout.strip())
+    assert got == round(bd * 30), f"{name}: expected {round(bd*30)}f got {got}f"
+    beat_info[name] = {"start": t, "dur": bd,
+                       "cut": (t + cut_t) if cut_t else None,
+                       "end": t + bd}
+    t += bd
 
-# 3. starburst pop clip (0.5s, scales 0.3->1.25 with slight overshoot)
+H1 = beat_info["beatA"]["end"]          # eyes done
+H2 = beat_info["beatB"]["cut"]          # ears pop
+H3 = beat_info["beatC"]["cut"]          # grin
+H4 = beat_info["beatD"]["cut"]          # tracksuit + spin
+H5 = beat_info["beatE"]["cut"]          # jump 80%
+T_JUMP = beat_info["beatE"]["end"]
+print(f"HITS: {H1:.3f} {H2:.3f} {H3:.3f} {H4:.3f} {H5:.3f} JUMP={T_JUMP:.3f}", flush=True)
+with open(f"{COMP}/v3-hittimes.txt", "w") as f:
+    f.write(f"H1={H1}\nH2={H2}\nH3={H3}\nH4={H4}\nH5={H5}\nJUMP={T_JUMP}\n")
+
+# 3. starburst pop clip + poof pop clip (authored)
 run(["python3", "-c", f"""
 from PIL import Image
-import subprocess, io, os
+import os
 sb = Image.open('{FX}/starburst.png').convert('RGBA')
 os.makedirs('{COMP}/sb_frames', exist_ok=True)
 for i in range(15):
-    t = i/14
-    s = 0.3 + 0.95*t + 0.08*(t**2)
+    tt = i/14
+    s = 0.3 + 0.95*tt + 0.08*(tt**2)
     w,h = int(900*s), int(900*s)
     p = sb.resize((w,h), Image.LANCZOS)
     c = Image.new('RGBA',(900,900),(0,0,0,0))
     c.alpha_composite(p, ((900-w)//2,(900-h)//2))
     c.save(f'{COMP}/sb_frames/sb-%02d.png' % i)
-print('sb frames done')
-"""], "starburst frames")
-run(FF + ["-framerate", "30", "-i", f"{COMP}/sb_frames/sb-%02d.png",
-          "-vf", "scale=900:900,format=yuva420p",
-          "-c:v", "libx264", "-pix_fmt", "yuva420p", "-crf", "18",
-          f"{COMP}/v3-starburst-pop.mp4"], "starburst pop clip")
-
-# 4. poof pop clip (0.5s, scales up, for ears beat)
-run(["python3", "-c", f"""
-from PIL import Image
-import os
 poof = Image.open('{FX}/poof.png').convert('RGBA')
 os.makedirs('{COMP}/pf_frames', exist_ok=True)
 for i in range(15):
-    t = i/14
-    s = 0.25 + 1.1*t
+    tt = i/14
+    s = 0.25 + 1.1*tt
     w,h = int(700*s), int(700*s)
     p = poof.resize((w,h), Image.LANCZOS)
     c = Image.new('RGBA',(700,700),(0,0,0,0))
     c.alpha_composite(p, ((700-w)//2,(700-h)//2))
     c.save(f'{COMP}/pf_frames/pf-%02d.png' % i)
-print('poof frames done')
-"""], "poof frames")
+print('pop frames done')
+"""], "pop frames")
+run(FF + ["-framerate", "30", "-i", f"{COMP}/sb_frames/sb-%02d.png",
+          "-vf", "scale=900:900,format=yuva420p",
+          "-c:v", "libx264", "-pix_fmt", "yuva420p", "-crf", "18",
+          f"{COMP}/v3-starburst-pop.mp4"], "starburst pop clip")
 run(FF + ["-framerate", "30", "-i", f"{COMP}/pf_frames/pf-%02d.png",
           "-vf", "scale=700:700,format=yuva420p",
           "-c:v", "libx264", "-pix_fmt", "yuva420p", "-crf", "18",
           f"{COMP}/v3-poof-pop.mp4"], "poof pop clip")
 
-# 5. K3 hold 1.5s: last segE frame, punch-in (hero beat before the freeze)
-run(FF + ["-i", f"{COMP}/v3-segE.mp4", "-filter_complex",
-          "[0:v]trim=start_frame=58:end_frame=59,setpts=PTS-STARTPTS,"
-          "zoompan=z='1+0.08*on/45':d=45:s=1920x1080:fps=30,format=yuv420p[v]",
-          "-map", "[v]", "-t", "1.5", "-c:v", "libx264", "-pix_fmt", "yuv420p",
-          "-crf", "18", f"{COMP}/v3-k3hold.mp4"], "k3 hold 33.5-35")
+# 4. K3 hero hold 1.5s from beatE's last styled frame (punch-in)
+K3PNG = os.path.abspath(f"{EBS}/segE/styled-frames/styled-0015.png")
+run(FF + ["-loop", "1", "-framerate", "30", "-i", K3PNG,
+          "-vf", "scale=1920:1080,"
+          "zoompan=z='1+0.08*on/45':d=45:s=1920x1080:fps=30,format=yuv420p",
+          "-t", "1.5", "-c:v", "libx264", "-pix_fmt", "yuv420p",
+          "-crf", "18", f"{COMP}/v3-k3hold.mp4"], "k3 hold")
+T_HOLD_END = T_JUMP + 1.5
 
-# 6. freeze 0.3s (same frame, no zoom)
-run(FF + ["-i", f"{COMP}/v3-segE.mp4", "-vf",
-          "trim=start_frame=58:end_frame=59,setpts=PTS-STARTPTS,fps=30,format=yuv420p",
-          "-t", "0.3", "-c:v", "libx264", "-crf", "18",
-          f"{COMP}/v3-freeze.mp4"], "freeze 35-35.3")
+# 5. freeze 0.3s (same frame, no zoom)
+run(FF + ["-loop", "1", "-framerate", "30", "-t", "0.3", "-i", K3PNG,
+          "-vf", "scale=1920:1080,format=yuv420p",
+          "-c:v", "libx264", "-crf", "18",
+          f"{COMP}/v3-freeze.mp4"], "freeze")
+T_FREEZE_END = T_HOLD_END + 0.3
 
-# 7. poof 0.4s over freeze (mascot transition)
+# 6. poof 0.4s over freeze
 run(["python3", "-c", f"""
 from PIL import Image
-import subprocess, io, os
-fr = subprocess.run(['ffmpeg','-v','error','-i','{COMP}/v3-freeze.mp4','-frames:v','1','-f','image2pipe','-vcodec','png','-'],capture_output=True)
-base = Image.open(io.BytesIO(fr.stdout)).convert('RGBA').resize((1920,1080))
+import os
+base = Image.open('{K3PNG}').convert('RGBA').resize((1920,1080))
 poof = Image.open('{FX}/poof.png').convert('RGBA')
 os.makedirs('{COMP}/poof_frames', exist_ok=True)
 for i in range(12):
@@ -133,9 +165,11 @@ print('poof frames done')
 """], "poof frames")
 run(FF + ["-framerate", "30", "-i", f"{COMP}/poof_frames/p-%02d.png",
           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18",
-          f"{COMP}/v3-poof.mp4"], "poof 35.3-35.7")
+          f"{COMP}/v3-poof.mp4"], "poof")
+T_POOF_END = T_FREEZE_END + 0.4
+T_MASCOT_END = T_POOF_END + 2.0
 
-# 8. iris: mascot reveal -> 2D swap card (reuse v2 card + circlecrop xfade)
+# 7. iris: mascot reveal -> 2D swap card
 run(FF + ["-i", f"{COMP}/mascot_reveal.mp4", "-i", f"{V2}/card-2d-swap.mp4", "-filter_complex",
           "[0:v]trim=0:1.0,setpts=PTS-STARTPTS[mh];"
           "[1:v]trim=0:1.0,setpts=PTS-STARTPTS,format=yuv420p[sw];"
@@ -145,10 +179,10 @@ run(FF + ["-i", f"{COMP}/mascot_reveal.mp4", "-i", f"{V2}/card-2d-swap.mp4", "-f
 run(FF + ["-ss", "1.0", "-i", f"{V2}/card-2d-swap.mp4", "-c:v", "libx264", "-pix_fmt", "yuv420p",
           "-crf", "18", f"{COMP}/v3-swaprest.mp4"], "swap rest")
 
-# 9. concat base (no hits yet)
-parts = [f"{COMP}/v3-p1-base.mp4", f"{COMP}/v3-segA.mp4", f"{COMP}/v3-segB.mp4",
-         f"{COMP}/v3-segC.mp4", f"{COMP}/v3-segD.mp4", f"{COMP}/v3-segE.mp4",
-         f"{COMP}/v3-k3hold.mp4", f"{COMP}/v3-freeze.mp4", f"{COMP}/v3-poof.mp4",
+# 8. concat base
+parts = [f"{COMP}/v3-p1-base.mp4"] + [f"{COMP}/v3-{b}.mp4" for b in
+         ["beatA", "beatB", "beatC", "beatD", "beatE"]] + \
+        [f"{COMP}/v3-k3hold.mp4", f"{COMP}/v3-freeze.mp4", f"{COMP}/v3-poof.mp4",
          f"{COMP}/mascot_reveal.mp4", f"{COMP}/v3-iris.mp4", f"{COMP}/v3-swaprest.mp4",
          os.path.join(SEG, "title-card.mp4"), f"{V2}/card-slogan-1.mp4",
          os.path.join(SEG, "disclaimers-card.mp4"), f"{V2}/card-thats-the-irish-folks.mp4"]
@@ -161,8 +195,9 @@ run(FF + ["-f", "concat", "-safe", "0", "-i", f"{COMP}/v3-concat.txt",
           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-preset", "fast",
           f"{COMP}/v3-base.mp4"], "base concat")
 
-# 10. hits pass: flashes + starburst/poof pops + speedlines + spin at HIT4
-#    starburst placements: HIT1,HIT3,HIT4,HIT5 center; HIT2 ears -> poof pop
+# 9. hits pass — flashes/starbursts/poof/speedlines/spin at computed times
+def win(t0, d=FLASH_D):
+    return f"between(t,{t0:.3f},{t0+d:.3f})"
 fc = "[0:v]format=yuv420p[base];"
 inputs = ["-i", f"{COMP}/v3-base.mp4",
           "-loop", "1", "-t", str(FLASH_D), "-i", f"{FX}/flash_white.png",
@@ -170,44 +205,42 @@ inputs = ["-i", f"{COMP}/v3-base.mp4",
           "-i", f"{COMP}/v3-starburst-pop.mp4",
           "-i", f"{COMP}/v3-poof-pop.mp4",
           "-loop", "1", "-i", f"{FX}/speedlines.png"]
-flash_w, flash_g, sb, pf, sl = 1, 2, 3, 4, 5
-fc += (f"[{flash_w}:v]scale=1920:1080,format=yuva420p,fade=t=in:st=0:d=0.1:alpha=1,"
-       f"fade=t=out:st={FLASH_D-0.15}:d=0.15:alpha=1[fw];"
-       f"[{flash_g}:v]scale=1920:1080,format=yuva420p,fade=t=in:st=0:d=0.1:alpha=1,"
-       f"fade=t=out:st={FLASH_D-0.15}:d=0.15:alpha=1[fg];"
-       f"[{sb}:v]format=yuva420p[sb];[{pf}:v]format=yuva420p[pf];"
-       f"[{sl}:v]scale=1920:1080,format=yuva420p[sl];")
+fc += (f"[1:v]scale=1920:1080,format=yuva420p,"
+       f"fade=t=in:st=0:d=0.08:alpha=1,fade=t=out:st={FLASH_D-0.12}:d=0.12:alpha=1[fw];"
+       f"[2:v]scale=1920:1080,format=yuva420p,"
+       f"fade=t=in:st=0:d=0.08:alpha=1,fade=t=out:st={FLASH_D-0.12}:d=0.12:alpha=1[fg];"
+       f"[3:v]format=yuva420p[sb];[4:v]format=yuva420p[pf];"
+       f"[5:v]scale=1920:1080,format=yuva420p[sl];")
 cur = "base"
-# HIT1 @25.0: white flash + starburst center
-fc += (f"[{cur}][fw]overlay=0:0:enable='between(t,25.0,25.4)'[b1];"
-       f"[b1][sb]overlay=(W-w)/2:(H-h)/2:enable='between(t,25.0,25.5)'[b2];")
-cur = "b2"
-# HIT2 @27.0: white flash + poof pop (ears, upper-center)
-fc += (f"[{cur}][fw]overlay=0:0:enable='between(t,27.0,27.4)'[b3];"
-       f"[b3][pf]overlay=(W-w)/2:(H-h)/2-260:enable='between(t,27.0,27.5)'[b4];")
-cur = "b4"
-# HIT3 @29.0: green flash + starburst center
-fc += (f"[{cur}][fg]overlay=0:0:enable='between(t,29.0,29.4)'[b5];"
-       f"[b5][sb]overlay=(W-w)/2:(H-h)/2:enable='between(t,29.0,29.5)'[b6];")
-cur = "b6"
-# HIT4 @31.5: white flash + starburst + SPIN (clothes spin-morph gag)
+# HIT1 eyes: white flash + starburst
+fc += (f"[{cur}][fw]overlay=0:0:enable='{win(H1)}'[b1];"
+       f"[b1][sb]overlay=(W-w)/2:(H-h)/2:enable='{win(H1, POP_D)}'[b2];"); cur = "b2"
+# HIT2 ears: white flash + poof pop (upper center)
+fc += (f"[{cur}][fw]overlay=0:0:enable='{win(H2)}'[b3];"
+       f"[b3][pf]overlay=(W-w)/2:(H-h)/2-260:enable='{win(H2, POP_D)}'[b4];"); cur = "b4"
+# HIT3 grin: green flash + starburst
+fc += (f"[{cur}][fg]overlay=0:0:enable='{win(H3)}'[b5];"
+       f"[b5][sb]overlay=(W-w)/2:(H-h)/2:enable='{win(H3, POP_D)}'[b6];"); cur = "b6"
+# HIT4 tracksuit: white flash + SPIN (clothes spin-morph gag) + starburst
 fc += (f"[{cur}]split=2[sp0][sp1];"
-       f"[sp0]trim=start=31.5:end=32.1,setpts=PTS-STARTPTS,"
-       f"rotate='2*PI*(t)/0.6':fillcolor=black,format=yuv420p[spun];"
-       f"[sp1][spun]overlay=0:0:enable='between(t,31.5,32.1)'[b7];"
-       f"[b7][fw]overlay=0:0:enable='between(t,31.5,31.9)'[b8];"
-       f"[b8][sb]overlay=(W-w)/2:(H-h)/2:enable='between(t,31.5,32.0)'[b9];")
-cur = "b9"
-# HIT5 @33.5: white flash + speedlines during the hold
-fc += (f"[{cur}][fw]overlay=0:0:enable='between(t,33.5,33.9)'[b10];"
-       f"[b10][sl]overlay=0:0:format=auto:enable='between(t,33.5,35.0)'[vout];")
+       f"[sp0]trim=start={H4:.3f}:end={H4+0.6:.3f},setpts=PTS-STARTPTS,"
+       f"rotate='2*PI*t/0.6':fillcolor=black,format=yuv420p[spun];"
+       f"[sp1][spun]overlay=0:0:enable='{win(H4, 0.6)}'[b7];"
+       f"[b7][fw]overlay=0:0:enable='{win(H4)}'[b8];"
+       f"[b8][sb]overlay=(W-w)/2:(H-h)/2:enable='{win(H4, POP_D)}'[b9];"); cur = "b9"
+# HIT5 jump: white flash + speedlines through the hold
+fc += (f"[{cur}][fw]overlay=0:0:enable='{win(H5)}'[b10];"
+       f"[b10][sl]overlay=0:0:format=auto:enable='{win(T_JUMP, 1.5)}'[vout];")
 fc += "[vout]format=yuv420p[v]"
 run(FF + inputs + ["-filter_complex", fc, "-map", "[v]",
           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-preset", "fast",
           f"{COMP}/v3-hits.mp4"], "HITS pass")
 
-# 11. final: hits video + v3 audio
-run(FF + ["-i", f"{COMP}/v3-hits.mp4", "-i", os.path.join(D, "v3-audio-38s.wav"),
+# 10. audio with impacts at computed hit times (built by build_audio_v3.py reading hittimes)
+run(["python3", os.path.join(D, "build_audio_v3.py")], "v3 audio")
+
+# 11. final mux
+run(FF + ["-i", f"{COMP}/v3-hits.mp4", "-i", os.path.join(D, "v3-audio-beats.wav"),
           "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest",
           "-movflags", "+faststart",
           os.path.join(D, "luck-of-the-irish-commercial-v3.mp4")], "FINAL MUX")

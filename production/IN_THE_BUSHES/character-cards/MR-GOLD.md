@@ -4,9 +4,12 @@
 **Status:** Design confirmed; first appearance TBD (not inserted without a story reason)
 **Source:** `docs/series/in-the-bushes/character-art/Screenshot_20260912-*.png` (6-expression sheet, owner Drive, 2026-09-12)
 
-## Visual lock (Drive art)
+## Visual lock (Drive art — sampled, not eyeballed)
 
-- Blue blob body, red top hat with gold buckle, gold teeth, stick arms/legs
+- Body: **#4000E0** — vivid blue-violet. Owner calls it **purple**; that is the canon color name.
+- Hat: **#E04040** — bright red top hat with gold buckle (**~#C08020** gold)
+- Teeth: gold (**~#C08020**)
+- Stick arms/legs, white outline strokes
 - Six locked expressions: grinning, mouthless, happy-eyes, deadpan, laughing, +1
 - Handmade/crayon outline, intentionally rough and exaggerated
 

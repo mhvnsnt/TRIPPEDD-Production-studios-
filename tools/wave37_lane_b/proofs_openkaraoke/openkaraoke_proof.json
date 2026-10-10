@@ -1,0 +1,24 @@
+{
+  "tool": "OpenKaraoke",
+  "tool_version": "upstream git HEAD 793f4a2b9ff1a9f5e02b7db69d3a08cedad40a87",
+  "tool_license": "MIT (catalog: OpenKaraoke (zaidzaihan) \u2705 MIT, verified 2026-10-08)",
+  "repo": "https://github.com/zaidzaihan/OpenKaraoke.git",
+  "run": {
+    "port": 8471,
+    "room_id": "650980",
+    "server": "real uvicorn + FastAPI backend (main.py + rooms.py, unmodified upstream)",
+    "messages": 25
+  },
+  "checks": [
+    "room_id is a 6-digit code",
+    "host join -> user_joined broadcast + empty queue_list",
+    "client join -> user_joined broadcast seen by host",
+    "enqueue song A -> queue_list(1) with added_by=Singer1 + auto-Play broadcast",
+    "enqueue song B -> queue_list(2), no auto-play",
+    "song_ended -> queue advances to song B + auto-Play B broadcast",
+    "comment -> comment broadcast to all clients",
+    "control Pause -> control broadcast to all clients"
+  ],
+  "transcript": "openkaraoke_transcript.json",
+  "ran": "2026-10-08"
+}

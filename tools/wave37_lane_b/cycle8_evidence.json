@@ -1,0 +1,319 @@
+{
+  "date": "2026-10-08",
+  "cycle": 8,
+  "rows": {
+    "74": {
+      "repo": "jatinchowdhury18/AnalogTapeModel",
+      "expected_spdx": "GPL-3.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 78,
+        "html_url": "https://github.com/jatinchowdhury18/AnalogTapeModel",
+        "license": "GPL-3.0",
+        "owner": "jatinchowdhury18",
+        "pushed_at": "2025-04-09T07:59:02Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/jatinchowdhury18/AnalogTapeModel/master/LICENSE",
+      "license_bytes": 35149,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this lice",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "87": {
+      "repo": "NatronGitHub/Natron",
+      "expected_spdx": "GPL-2.0",
+      "api": {
+        "archived": false,
+        "default_branch": "RB-2.6",
+        "fork": false,
+        "forks_count": 409,
+        "html_url": "https://github.com/NatronGitHub/Natron",
+        "license": "GPL-2.0",
+        "owner": "NatronGitHub",
+        "pushed_at": "2026-07-24T09:49:49Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/NatronGitHub/Natron/master/LICENSE.txt",
+      "license_bytes": 18092,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.,  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA  Everyone is permitted to copy",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed",
+      "path_note": "canonical path corrected this wave (was recorded as NatronGit/Natron)"
+    },
+    "89": {
+      "repo": "obsproject/obs-studio",
+      "expected_spdx": "GPL-2.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 10500,
+        "html_url": "https://github.com/obsproject/obs-studio",
+        "license": "GPL-2.0",
+        "owner": "obsproject",
+        "pushed_at": "2026-10-08T02:04:30Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/obsproject/obs-studio/master/COPYING",
+      "license_bytes": 18092,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.,  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA  Everyone is permitted to copy",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "90": {
+      "repo": "videolan/vlc",
+      "expected_spdx": "GPL-2.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 6229,
+        "html_url": "https://github.com/videolan/vlc",
+        "license": "GPL-2.0",
+        "owner": "videolan",
+        "pushed_at": "2026-10-07T15:56:27Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/videolan/vlc/master/COPYING",
+      "license_bytes": 18092,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 2, June 1991   Copyright (C) 1989, 1991 Free Software Foundation, Inc.,  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA  Everyone is permitted to copy",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "93": {
+      "repo": "aubio/aubio",
+      "expected_spdx": "GPL-3.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 428,
+        "html_url": "https://github.com/aubio/aubio",
+        "license": "GPL-3.0",
+        "owner": "aubio",
+        "pushed_at": "2026-04-10T16:42:19Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/aubio/aubio/master/COPYING",
+      "license_bytes": 35147,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this licen",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed",
+      "path_note": null
+    },
+    "95": {
+      "repo": "darktable-org/darktable",
+      "expected_spdx": "GPL-3.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 1456,
+        "html_url": "https://github.com/darktable-org/darktable",
+        "license": "GPL-3.0",
+        "owner": "darktable-org",
+        "pushed_at": "2026-10-08T00:47:54Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/darktable-org/darktable/master/LICENSE",
+      "license_bytes": 35147,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this licen",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "96": {
+      "repo": "domlysz/BlenderGIS",
+      "expected_spdx": "GPL-3.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 1530,
+        "html_url": "https://github.com/domlysz/BlenderGIS",
+        "license": "GPL-3.0",
+        "owner": "domlysz",
+        "pushed_at": "2025-12-20T18:19:10Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/domlysz/BlenderGIS/master/LICENSE",
+      "license_bytes": 35149,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this lice",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed"
+    },
+    "97": {
+      "repo": "kaegi/alass",
+      "expected_spdx": "GPL-3.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 75,
+        "html_url": "https://github.com/kaegi/alass",
+        "license": "GPL-3.0",
+        "owner": "kaegi",
+        "pushed_at": "2023-12-28T02:07:02Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/kaegi/alass/master/LICENSE",
+      "license_bytes": 35147,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this licen",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed",
+      "path_note": "canonical path corrected this wave (was recorded as akaikat/alass)"
+    },
+    "98": {
+      "repo": "morpheus65535/bazarr",
+      "expected_spdx": "GPL-3.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 419,
+        "html_url": "https://github.com/morpheus65535/bazarr",
+        "license": "GPL-3.0",
+        "owner": "morpheus65535",
+        "pushed_at": "2026-10-08T01:16:50Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/morpheus65535/bazarr/master/LICENSE",
+      "license_bytes": 35147,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this licen",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed",
+      "path_note": "canonical path corrected this wave (was recorded as morrolinux/bazarr)"
+    },
+    "99": {
+      "repo": "otsaloma/gaupol",
+      "expected_spdx": "GPL-3.0",
+      "api": {
+        "archived": false,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 36,
+        "html_url": "https://github.com/otsaloma/gaupol",
+        "license": "GPL-3.0",
+        "owner": "otsaloma",
+        "pushed_at": "2026-09-21T19:02:09Z"
+      },
+      "license_url": "https://raw.githubusercontent.com/otsaloma/gaupol/master/COPYING",
+      "license_bytes": 35147,
+      "license_head": "                    GNU GENERAL PUBLIC LICENSE                        Version 3, 29 June 2007   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this licen",
+      "expected_snippet_found": true,
+      "verdict": "CONFIRMED as claimed"
+    }
+  },
+  "drift_watch": {
+    "helm": {
+      "repo": "mtytel/helm",
+      "api": {
+        "archived": true,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 233,
+        "html_url": "https://github.com/mtytel/helm",
+        "license": "GPL-3.0",
+        "owner": "mtytel",
+        "pushed_at": "2022-09-24T04:23:20Z"
+      },
+      "top_forks": [
+        {
+          "full_name": "DatanoiseTV/helm",
+          "pushed_at": "2020-11-11T19:42:19Z",
+          "stargazers_count": 6
+        },
+        {
+          "full_name": "poweraudio/helm",
+          "pushed_at": "2024-09-08T06:17:07Z",
+          "stargazers_count": 3
+        },
+        {
+          "full_name": "rockola/helm",
+          "pushed_at": "2019-08-20T01:04:50Z",
+          "stargazers_count": 2
+        },
+        {
+          "full_name": "mekayama/helm",
+          "pushed_at": "2015-07-09T21:11:22Z",
+          "stargazers_count": 2
+        },
+        {
+          "full_name": "AJ-Gonzalez/helm-apple-silicon",
+          "pushed_at": "2026-09-21T03:21:35Z",
+          "stargazers_count": 2
+        },
+        {
+          "full_name": "QuillLumim/helm",
+          "pushed_at": "2022-07-05T05:55:05Z",
+          "stargazers_count": 1
+        },
+        {
+          "full_name": "matt6626/helm",
+          "pushed_at": "2022-12-29T02:18:00Z",
+          "stargazers_count": 1
+        },
+        {
+          "full_name": "hartsantler/helm",
+          "pushed_at": "2019-07-14T11:17:26Z",
+          "stargazers_count": 1
+        }
+      ]
+    },
+    "telxcc": {
+      "repo": "kanongil/telxcc",
+      "api": {
+        "archived": true,
+        "default_branch": "master",
+        "fork": false,
+        "forks_count": 14,
+        "html_url": "https://github.com/kanongil/telxcc",
+        "license": "NOASSERTION",
+        "owner": "kanongil",
+        "pushed_at": "2025-09-20T11:29:10Z"
+      },
+      "top_forks": [
+        {
+          "full_name": "braincoded/telxcc",
+          "pushed_at": "2014-09-10T13:29:27Z",
+          "stargazers_count": 1
+        },
+        {
+          "full_name": "wazerstar/telxcc",
+          "pushed_at": "2020-11-27T09:38:20Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "hamza-u/teletext_decoder",
+          "pushed_at": "2018-01-23T10:33:35Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "DezoVartovnik/telxcc",
+          "pushed_at": "2017-01-14T22:50:48Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "joncampbell123/telxcc",
+          "pushed_at": "2017-01-14T22:50:48Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "beeeeswax/telxcc",
+          "pushed_at": "2017-01-14T22:50:48Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "max-verem/telxcc",
+          "pushed_at": "2017-01-11T10:44:43Z",
+          "stargazers_count": 0
+        },
+        {
+          "full_name": "carlanton/teletext-ingest",
+          "pushed_at": "2017-05-25T21:26:33Z",
+          "stargazers_count": 0
+        }
+      ]
+    },
+    "mkvtoolnix": {
+      "http": 200,
+      "final_url": "https://codeberg.org/mbunkus/mkvtoolnix",
+      "copying_http": 200,
+      "copying_bytes": 18092,
+      "copying_gplv2": true
+    }
+  }
+}

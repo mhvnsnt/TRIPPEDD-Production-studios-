@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BDN Version="0.93" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BD-03-006-0093b BDN File Format.xsd">
+  <Description>
+    <Name Title="smoke_bdn" Content=""/>
+    <Language Code="eng"/>
+    <Format VideoFormat="1080p" FrameRate="25" DropFrame="False"/>
+    <Events Type="Graphic" FirstEventInTC="00:00:01:00" LastEventOutTC="00:00:04:00" NumberofEvents="1"/>
+  </Description>
+  <Events>
+    <Event InTC="00:00:01:00" OutTC="00:00:04:00" Forced="False">
+      <Graphic Width="800" Height="140" X="560" Y="880">smoke_bdn_0001.png</Graphic>
+    </Event>
+  </Events>
+</BDN>

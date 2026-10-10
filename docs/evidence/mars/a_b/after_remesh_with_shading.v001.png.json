@@ -1,0 +1,34 @@
+{
+  "artifact": "docs/evidence/mars/a_b/after_remesh_with_shading.v001.png",
+  "sha256": "39442f515d1fe697c6e6816160bbdf72b07eb76fdf3985fe35c77c4e6efed05a",
+  "bytes": 789569,
+  "resolution": [
+    700,
+    700
+  ],
+  "set": "mars/a_b",
+  "label": "after_remesh_with_shading",
+  "version": 1,
+  "producedAt": "2026-09-13T21:04:31Z",
+  "producingTool": "tools/session/snippets/render_and_publish.py",
+  "producingCommit": "b9fe6549862dc1d254ed93d1d94a09a69239d6e8",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "4.2.1 LTS",
+  "camera": "orthographic, out of his face (+fwd), ortho_scale=MW*2.6, jaw 30 + lip keys",
+  "viewTransform": "Standard",
+  "shown": [
+    "MARS_EYE_L",
+    "MARS_EYE_R",
+    "MARS_MESH",
+    "MARS_MOUTH_SOCK",
+    "MARS_TEETH_LOWER",
+    "MARS_TEETH_UPPER",
+    "MARS_TONGUE"
+  ],
+  "hidden": [],
+  "status": "PENDING",
+  "note": "Stage C re-run with smooth shading and custom split normals carried across. 34,147 verts, 89 keys, 11 groups, 68,316/68,316 faces smooth, custom normals True, survivor rest+shape-key drift 0.000000 mm. REVIEW ONLY -- canonical untouched.",
+  "measurements": {},
+  "sourceArtifact": "renders/_remesh/MARS_FACE_REMESHED.blend",
+  "sourceSha256": "802b23321e5df2e349dcc5b652a48e0ec29e22b296326bc857541dfdc6ffd4f2"
+}

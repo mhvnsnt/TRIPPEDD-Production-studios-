@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srw:searchRetrieveResponse xmlns:ns6="http://gallica.bnf.fr/namespaces/gallica/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <srw:version>1.2</srw:version>
+    <srw:echoedSearchRetrieveRequest>
+        <srw:query>gallica all "musique militaire"</srw:query>
+        <srw:version>1.2</srw:version>
+    </srw:echoedSearchRetrieveRequest>
+    <srw:numberOfRecords>130373</srw:numberOfRecords>
+    <srw:extraResponseData>&lt;numberOfRecordsDecollapser&gt;4111168&lt;/numberOfRecordsDecollapser&gt;</srw:extraResponseData>
+    <srw:records>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1960</dc:date>
+                    <dc:description>BnF-Partenariats, Collection sonore - Believe</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>1 disque : 45 t ; 17 cm</dc:format>
+                    <dc:format>disc</dc:format>
+                    <dc:format>disque microsillon</dc:format>
+                    <dc:format>multipart/mixed</dc:format>
+                    <dc:format>Nombre total de vues : 8</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k8821889x</dc:identifier>
+                    <dc:identifier>Numéro commercial : DECCA 450988</dc:identifier>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb378431534</dc:relation>
+                    <dc:rights>conditions spécifiques d'utilisation - BnF-Partenariats, Collection sonore - Believe</dc:rights>
+                    <dc:rights>restricted use</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Audiovisuel, E-17698</dc:source>
+                    <dc:title>Musique militaire</dc:title>
+                    <dc:type>sound</dc:type>
+                    <dc:type>document sonore</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>0</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k8821889x.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k8821889x</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k8821889x.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k8821889x.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k8821889x.thumbnail</thumbnail>
+                <typedoc>sonores</typedoc>
+                <uri>bpt6k8821889x</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1960</dc:date>
+                    <dc:description>BnF-Partenariats, Collection sonore - Believe</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>1 disque : 45 t ; 17 cm</dc:format>
+                    <dc:format>disc</dc:format>
+                    <dc:format>disque microsillon</dc:format>
+                    <dc:format>multipart/mixed</dc:format>
+                    <dc:format>Nombre total de vues : 9</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k88218873</dc:identifier>
+                    <dc:identifier>Numéro commercial : DECCA 450971</dc:identifier>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb37843140s</dc:relation>
+                    <dc:rights>conditions spécifiques d'utilisation - BnF-Partenariats, Collection sonore - Believe</dc:rights>
+                    <dc:rights>restricted use</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Audiovisuel, E-17696</dc:source>
+                    <dc:title>Musique militaire</dc:title>
+                    <dc:type>sound</dc:type>
+                    <dc:type>document sonore</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>1</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k88218873.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k88218873</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k88218873.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k88218873.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k88218873.thumbnail</thumbnail>
+                <typedoc>sonores</typedoc>
+                <uri>bpt6k88218873</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Van Campenhout, François (1799-1848). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Sousa, John Philip (1854-1932). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Sousa, John Philip (1854-1932). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Rouget de Lisle, Claude Joseph (1760-1836). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Petit, Fernand (18..-1940). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Miller, Glenn (1904-1944). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Meacham, F. W.. Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Liesenfelt, Paul. Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Clowez, Victor (1908-1973). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Clérisse, Robert (1899-1973). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Cappé, Paul (1869-1931). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Blémant, Louis (1864-1934). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Alazard, Joseph (1877-1958). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Torch, Sidney (1908-1990). Direction d'orchestre</dc:creator>
+                    <dc:creator>Semler-Collery, Jules (1902-1988). Interprète</dc:creator>
+                    <dc:creator>Liesenfelt, Paul. Direction d'orchestre</dc:creator>
+                    <dc:creator>Giambelli, Arthur. Direction d'orchestre</dc:creator>
+                    <dc:creator>Clérisse, Robert (1899-1973). Direction d'orchestre</dc:creator>
+                    <dc:date>1962</dc:date>
+                    <dc:description>Titre uniforme : [Stars and stripes for ever]</dc:description>
+                    <dc:description>Titre uniforme : [El capitán]</dc:description>
+                    <dc:description>Titre uniforme : [La Marseillaise]. Adapt.</dc:description>
+                    <dc:description>Titre uniforme : [Marche de la deuxième Division blindée]</dc:description>
+                    <dc:description>Titre uniforme : [Hymne de l'infanterie de marine]</dc:description>
+                    <dc:description>Titre uniforme : [Saint-Cyr]</dc:description>
+                    <dc:description>Collection : Grande diffusion</dc:description>
+                    <dc:description>Comprend : LA MARSEILLAISE / ROUGET DE L'ISLE - Orchestr. de P. DUPONT ; La Musique de l'Air dir. Commandant Robert CLERISSE - MARCHE DE LA LEGION ETRANGERE / transcription de DOERING et QUERU ; la Musique de l'Air dir. Capitaine LIESENFELT - LA BRABANCONNE - hymne national belge / VAN CAMPENHOUT - harmonisé par WESLY ; La Musique de l'Air dir. Commandant Robert CLERISSE - STARS AND STRIPES FOR EVER : Hymne national des U.S.A. / SOUSA ; Sidney TORCH et son orchestre - AMERICAN PATROL : marche / MEACHAM ; Orchestre militaire dir. Arthur GIAMBELLI - EL CAPITAN - marche / SOUSA ; Orchestre militaire dir. Arthur GIAMBELLI - SEMPER FIDELIS : marche / SOUSA ; Sidney TORCH et son orchestre - A TRAVERS LA GEORGIE - marche ("Marchin' through Georgia") / G. MILLER ; La Musique de l'Air dir. Commandant Robert CLERISSE - DEFILE DES BATAILLONS - pas redoublé / L. BLEMONT ; la Musique de l'Air dir. Commandant Robert CLERISSE - MARCHE DE LA 2ème D.B. - défilé / V. CLOWEZ ; la Musique de l'Air dir. Capitaine LIESENFELT - HYMNE DE L'INFANTERIE DE MARINE / CAPPE ; Musique des Equipages de la Flotte dir. J. SEMLER-COLERY - PAVILLON HAUT : marche de l'Armée de l'Air (dédiée à M. le Général d'Armée Edmond Jouhaud, Chef d'Etat-Major de l'Armée de l'Air) / Paul LIESENFELT ; la Musique de l'Air dir. Capitaine LIESENFELT - COMMANDOS DU CIEL - marche officielle des Commandos-Parachutistes de l'Air / Paul LIESENFELT ; la Musique de l'Air dir. Capitaine LIESENFELT - MARCHE DU 129ème - Défilé / Robert CLERISSE ; la Musique de l'Air dir. Commandant Robert CLERISSE - SALUT AU 85ème - Défilé / Fernand PETIT ; la Musique de l'Air dir. Commandant Robert CLERISSE - SAINT-CYR : pas redoublé / J. ALAZARD ; la Musique de l'Air dir. Capitaine LIESENFELT</dc:description>
+                    <dc:description>BnF-Partenariats, Collection sonore - Believe</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>1 disque : 33 t ; 30 cm</dc:format>
+                    <dc:format>disc</dc:format>
+                    <dc:format>disque microsillon</dc:format>
+                    <dc:format>multipart/mixed</dc:format>
+                    <dc:format>Nombre total de vues : 20</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k88095870</dc:identifier>
+                    <dc:identifier>NUMAUD-8809587</dc:identifier>
+                    <dc:identifier>Numéro commercial : Odéon XOC1005</dc:identifier>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb13870915x</dc:relation>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb13919506z</dc:relation>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb119381658</dc:relation>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb140087357</dc:relation>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb13858924d</dc:relation>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb13980448w</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb37944375d</dc:relation>
+                    <dc:rights>conditions spécifiques d'utilisation - BnF-Partenariats, Collection sonore - Believe</dc:rights>
+                    <dc:rights>restricted use</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Audiovisuel, B-12352</dc:source>
+                    <dc:title>MUSIQUE MILITAIRE</dc:title>
+                    <dc:type>sound</dc:type>
+                    <dc:type>document sonore</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>2</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k88095870.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k88095870</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k88095870.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k88095870.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k88095870.thumbnail</thumbnail>
+                <typedoc>sonores</typedoc>
+                <uri>bpt6k88095870</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:contributor>Donjean, Gustave (1827-1897). Illustrateur</dc:contributor>
+                    <dc:creator>Chaudoir, Félix (1856-1904). Compositeur</dc:creator>
+                    <dc:date>1889</dc:date>
+                    <dc:description>Titre uniforme : Chaudoir, Félix (1856-1904). Compositeur. [Derrière la musique militaire. Piano]</dc:description>
+                    <dc:description>Polkas (piano) -- +* 1801......- 1900......+:XIXe siècle:</dc:description>
+                    <dc:description>Piano, Musique de -- +* 1801......- 1900......+:XIXe siècle:</dc:description>
+                    <dc:format>5 p. : couv. ill. ; 35 cm</dc:format>
+                    <dc:format>application/pdf</dc:format>
+                    <dc:format>Nombre total de vues : 6</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k395216c</dc:identifier>
+                    <dc:identifier>NUMM-395216</dc:identifier>
+                    <dc:publisher>Répertoire Paulus (Paris)</dc:publisher>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb15563721k</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb41183217f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Musique, N-11243</dc:source>
+                    <dc:title>Derrière la musique militaire : polka brillante : [pour piano] / par Félix Chaudoir ; [ill. par] Donjean</dc:title>
+                    <dc:type>Genre musical : polka</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>3</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k395216c.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k395216c</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k395216c.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k395216c.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k395216c.thumbnail</thumbnail>
+                <typedoc>partitions</typedoc>
+                <uri>bpt6k395216c</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Rauski, François-Joseph (1837-1910). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Ganne, Louis (1862-1923). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Clowez, Victor (1908-1973). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Alazard, Joseph (1877-1958). Auteur ou responsable intellectuel</dc:creator>
+                    <dc:creator>Clérisse, Robert (1899-1973). Direction d'orchestre</dc:creator>
+                    <dc:date>1957</dc:date>
+                    <dc:description>Titre uniforme : [Marche lorraine]</dc:description>
+                    <dc:description>Titre uniforme : [Marche de la deuxième Division blindée]</dc:description>
+                    <dc:description>Titre uniforme : [Saint-Cyr]</dc:description>
+                    <dc:description>Comprend : MARCHE LORRAINE - SAINT-CYR - MARCHE DE LA 2e D.B. - LE REGIMENT DE SAMBRE-ET-MEUSE</dc:description>
+                    <dc:description>BnF-Partenariats, Collection sonore - Believe</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>1 disque : 45 t ; 17 cm</dc:format>
+                    <dc:format>disc</dc:format>
+                    <dc:format>disque microsillon</dc:format>
+                    <dc:format>multipart/mixed</dc:format>
+                    <dc:format>Nombre total de vues : 8</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k8834528d</dc:identifier>
+                    <dc:identifier>Numéro commercial : Philips 424050PE</dc:identifier>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb139391424</dc:relation>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb140087357</dc:relation>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb13980448w</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb37976601s</dc:relation>
+                    <dc:rights>conditions spécifiques d'utilisation - BnF-Partenariats, Collection sonore - Believe</dc:rights>
+                    <dc:rights>restricted use</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Audiovisuel, E-1999</dc:source>
+                    <dc:title>MUSIQUE MILITAIRE / la Musique Militaire de l'Armée de l'Air dir. Ct R. CLERISSE</dc:title>
+                    <dc:type>sound</dc:type>
+                    <dc:type>document sonore</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>4</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k8834528d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k8834528d</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k8834528d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k8834528d.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k8834528d.thumbnail</thumbnail>
+                <typedoc>sonores</typedoc>
+                <uri>bpt6k8834528d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+    </srw:records>
+    <srw:nextRecordPosition>6</srw:nextRecordPosition>
+</srw:searchRetrieveResponse>

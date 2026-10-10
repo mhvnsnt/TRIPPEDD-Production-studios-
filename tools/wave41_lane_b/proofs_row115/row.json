@@ -1,0 +1,25 @@
+{
+  "row": 115,
+  "name": "jev-subtitle-translator",
+  "claimed": "GPL-3.0-OR-LATER",
+  "kind": "github",
+  "ref": "geeklinkdev/jev-subtitle-translator",
+  "api": {
+    "full_name": "GeekLinkDev/jev-subtitle-translator",
+    "archived": false,
+    "pushed_at": "2026-09-29T04:54:23Z",
+    "stargazers_count": 9,
+    "default_branch": "main",
+    "owner": "GeekLinkDev",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH-family(-or-later-clause-not-asserted-by-API)",
+  "license_file": {
+    "path": "CONTRIBUTING.md",
+    "branch": "master",
+    "bytes": 709
+  },
+  "text_grant": false,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

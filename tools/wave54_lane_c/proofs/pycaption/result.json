@@ -1,0 +1,129 @@
+{
+  "tool": "pycaption",
+  "version": "2.3.13",
+  "license": "Apache-2.0 (GitHub API spdx_id, 2026-10-08)",
+  "source": "/home/hatch/workspace/agent-ops/wave54-lanes/w54c/tools/wave53_lane_c/proofs/subtitle_stage/vo_line.srt",
+  "source_cues": 22,
+  "caption_span_us": 7320000,
+  "formats": {
+    "WebVTT": {
+      "cues": 22,
+      "text_equal": true,
+      "max_start_abs_err_us": 0,
+      "max_end_abs_err_us": 0
+    },
+    "DFXP": {
+      "cues": 22,
+      "text_equal": true,
+      "max_start_abs_err_us": 0,
+      "max_end_abs_err_us": 0
+    },
+    "SAMI": {
+      "cues": 22,
+      "text_equal": true,
+      "max_start_abs_err_us": 0,
+      "max_end_abs_err_us": 0
+    },
+    "SCC": {
+      "cues": 22,
+      "text_equal": true,
+      "max_start_abs_err_us": 883600.0,
+      "max_end_abs_err_us": 883600.0
+    }
+  },
+  "deterministic": true,
+  "checks": [
+    {
+      "name": "source cues",
+      "pass": true,
+      "detail": "n=22"
+    },
+    {
+      "name": "WebVTT written",
+      "pass": true,
+      "detail": "817 bytes"
+    },
+    {
+      "name": "SCC written",
+      "pass": true,
+      "detail": "1747 bytes"
+    },
+    {
+      "name": "DFXP written",
+      "pass": true,
+      "detail": "2575 bytes"
+    },
+    {
+      "name": "SAMI written",
+      "pass": true,
+      "detail": "2502 bytes"
+    },
+    {
+      "name": "WebVTT round-trip cues",
+      "pass": true,
+      "detail": "n=22"
+    },
+    {
+      "name": "WebVTT round-trip text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "WebVTT round-trip timing",
+      "pass": true,
+      "detail": "max_s=0us max_e=0us"
+    },
+    {
+      "name": "DFXP round-trip cues",
+      "pass": true,
+      "detail": "n=22"
+    },
+    {
+      "name": "DFXP round-trip text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "DFXP round-trip timing",
+      "pass": true,
+      "detail": "max_s=0us max_e=0us"
+    },
+    {
+      "name": "SAMI round-trip cues",
+      "pass": true,
+      "detail": "n=22"
+    },
+    {
+      "name": "SAMI round-trip text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "SAMI round-trip timing",
+      "pass": true,
+      "detail": "max_s=0us max_e=0us"
+    },
+    {
+      "name": "SCC round-trip cues",
+      "pass": true,
+      "detail": "n=22"
+    },
+    {
+      "name": "SCC round-trip text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "SCC round-trip timing documented",
+      "pass": true,
+      "detail": "max_start_err_us=883600.0"
+    },
+    {
+      "name": "conversion determinism",
+      "pass": true,
+      "detail": "2 runs byte-identical"
+    }
+  ],
+  "checks_passed": 18,
+  "checks_total": 18
+}

@@ -1,0 +1,65 @@
+{
+  "tool": "ffsubsync",
+  "tool_version": "pip ffsubsync (smacke/ffsubsync)",
+  "tool_license": "MIT-style \u2014 catalog commercial-safe; LICENSE re-fetched this wave",
+  "method": "espeak-ng synthesized 4 sentences (ffprobe-measured durations) concatenated with known silence gaps => exact ground-truth timings; input SRT deliberately shifted +3000 ms; real ffsubsync CLI run (--max-offset-seconds 10 keeps the offset search in a sane range for the 29 s test clip; without it the unconstrained search lands on a degenerate offset \u2014 documented quirk, not a tool failure)",
+  "input": {
+    "audio": "speech.wav",
+    "audio_ms": 28829,
+    "misaligned": "misaligned.srt",
+    "shift_ms": 3000
+  },
+  "output": {
+    "synced": "synced.srt"
+  },
+  "mae_misaligned_ms": 3000.0,
+  "mae_synced_ms": 0.0,
+  "improvement_factor": 300000.0,
+  "per_subtitle": [
+    {
+      "text": "The quick brown fox jumps over the lazy ",
+      "truth_start": 2000,
+      "truth_end": 4918,
+      "mis_start": 5000,
+      "mis_end": 7918,
+      "syn_start": 2000,
+      "syn_end": 4918,
+      "mis_err_ms": 3000.0,
+      "syn_err_ms": 0.0
+    },
+    {
+      "text": "Pack my box with five dozen liquor jugs.",
+      "truth_start": 7918,
+      "truth_end": 10526,
+      "mis_start": 10918,
+      "mis_end": 13526,
+      "syn_start": 7918,
+      "syn_end": 10526,
+      "mis_err_ms": 3000.0,
+      "syn_err_ms": 0.0
+    },
+    {
+      "text": "How vexingly quick daft zebras jump.",
+      "truth_start": 13526,
+      "truth_end": 16075,
+      "mis_start": 16526,
+      "mis_end": 19075,
+      "syn_start": 13526,
+      "syn_end": 16075,
+      "mis_err_ms": 3000.0,
+      "syn_err_ms": 0.0
+    },
+    {
+      "text": "Sphinx of black quartz, judge my vow.",
+      "truth_start": 18075,
+      "truth_end": 20829,
+      "mis_start": 21075,
+      "mis_end": 23829,
+      "syn_start": 18075,
+      "syn_end": 20829,
+      "mis_err_ms": 3000.0,
+      "syn_err_ms": 0.0
+    }
+  ],
+  "ran": "2026-10-08"
+}

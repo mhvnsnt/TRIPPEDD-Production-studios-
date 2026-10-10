@@ -1,0 +1,133 @@
+{
+  "set": "hair",
+  "label": "EVIDENCE",
+  "sourceCommit": "ab6f3990594860dd4b7ec93342078fb76eeb4ef2",
+  "sourceAsset": {
+    "path": "assets/source_models/MARS_source.glb",
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "tris": 1940858,
+    "note": "READ ONLY. Nothing in this investigation modified the source (OWNER LAW: it is the render authority)."
+  },
+  "question": "Are the dreadlocks separate strands, one fused shell, or a cap with sculpted forms?",
+  "answer": "A CAP WITH SCULPTED DREAD FORMS. Measured and then SEEN: the crown is one continuous fused shell with no separation between locks, while the perimeter and the hanging lengths resolve into ~20-25 individually sculpted locks with real gaps and rounded tips. Both statements are true of the same surface, which is exactly why no single global threshold separated it.",
+  "topology": {
+    "connectedComponents": 1,
+    "note": "MARS_MESH: 23,830 verts / 71,012 edges / ONE connected component. The dreads are welded to the head, so an object-count or island-split rig is structurally impossible.",
+    "rigState": "MARS_MESH carries 6 vertex groups -- root, neck, head, jaw, eye_L, eye_R. There are NO hair bones. The entire head including every lock is rigid-skinned to 'head'."
+  },
+  "discriminatorsTried": [
+    {
+      "name": "distance to the canonical face cloud",
+      "result": "FAIL",
+      "detail": "unimodal, quantiles 0.3/27.4/66.3/95.4/133.7/163.5 mm -- no threshold separates"
+    },
+    {
+      "name": "tube saturation (graph hops vs euclidean spread), on the CAGE",
+      "result": "FAIL",
+      "detail": "6-hop patch extent: 55.2 mm near the face vs 63.0 mm far from it. The cage's ~2.02 mm edges make a 6-hop patch ~60 mm across, far wider than a lock"
+    },
+    {
+      "name": "tube saturation, on the 1.1M SOURCE",
+      "result": "FAIL",
+      "detail": "26-hop patch extent grows monotonically with distance from the face (17.5 -> 22.1 mm median) instead of saturating. A lock is NOT a thin tube here -- the forms are chunky"
+    },
+    {
+      "name": "base-colour texture hue",
+      "result": "FAIL",
+      "detail": "median hue 239-240 deg in EVERY distance band. The violet in lit renders is shading, not albedo. The texture does not distinguish hair from skin at all"
+    },
+    {
+      "name": "shape diameter function (inward normal ray)",
+      "result": "FAIL",
+      "detail": "median SDF 132/161/112 mm across face/mid/far bands -- the sculpted locks are not thin slabs, so the ray does not exit quickly"
+    },
+    {
+      "name": "radial layer count from inside the skull",
+      "result": "PARTIAL",
+      "detail": "0 crossings 67.5%, 1 crossing 13.0%, 2+ 19.5%. Real structure, but layer 2+ has a SMALLER median distance to the face (44.5 mm) than layer 0 (74.7 mm), so it is not cleanly reading hair-over-skull"
+    }
+  ],
+  "whyTheyAllFailed": "Every one assumed hair is globally distinguishable from skull by a single property. The clay renders show it is not: the crown is fused and the lengths are separate, so a discriminator that fits the tips washes out on the cap and vice versa.",
+  "architectureDecision": {
+    "chosen": "CAP + SCULPTED FORMS",
+    "implication": "Do NOT segment individual locks as independent objects and do NOT build one bone per strand -- the crown has no seams to cut along. Treat it as ONE surface with a ROOT ZONE (fused crown, follows the head rigidly) and a FREE ZONE (the hanging lengths, which take secondary motion), with the boundary measured rather than picked.",
+    "nextDiscriminator": "The gaps BETWEEN locks are the real signal, not the locks themselves. Concave valleys (negative mean curvature ridges) run between adjacent locks in the free zone and are absent on the fused crown. That is a local measure and it is the one that matches what the renders show."
+  },
+  "qc": {
+    "physical": {
+      "verified": true,
+      "checks": [
+        {
+          "check": "source mesh unmodified",
+          "pass": true,
+          "detail": "read-only import; sha256 recorded above"
+        },
+        {
+          "check": "texture cannot fake the answer",
+          "pass": true,
+          "detail": "base colour forced flat grey and the normal map unlinked before rendering"
+        },
+        {
+          "check": "multiple angles, not one frame",
+          "pass": true,
+          "detail": "TOP, BACK, SIDE, THREEQ"
+        }
+      ]
+    },
+    "visual": {
+      "verdict": "PASS",
+      "reviewer": "claude",
+      "notes": "The four clay views resolve individual lock tips around the perimeter and a continuous fused cap across the crown. The feature in question IS visible in the frames, which is what makes this a visual PASS for the QUESTION ASKED -- it is NOT a pass for any hair rig, which does not exist yet.",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "PASS_FOR_INVESTIGATION_ONLY"
+  },
+  "frames": [
+    {
+      "frame": "HAIR_CLAY_BACK.png",
+      "repoPath": "docs/evidence/hair/HAIR_CLAY_BACK.png",
+      "sha256": "aba8aa1e947cfd1b7f7159fbaa13b0bbece70b26659f9a665012091436c5f9f5",
+      "bytes": 595456,
+      "camera": "orthographic, BACK, aligned to his measured head frame",
+      "label": "EVIDENCE",
+      "shading": "CLAY -- base colour forced flat grey, base-colour texture and normal map UNLINKED. A photogrammetry texture can paint strand detail onto geometry that has none, and that was the question."
+    },
+    {
+      "frame": "HAIR_CLAY_CONTACT.png",
+      "repoPath": "docs/evidence/hair/HAIR_CLAY_CONTACT.png",
+      "sha256": "99796586b96a68e0e83ec9d45a9fb75232420d5108d60095a8f179e030d782f4",
+      "bytes": 362872,
+      "camera": "orthographic, CONTACT, aligned to his measured head frame",
+      "label": "EVIDENCE",
+      "shading": "CLAY -- base colour forced flat grey, base-colour texture and normal map UNLINKED. A photogrammetry texture can paint strand detail onto geometry that has none, and that was the question."
+    },
+    {
+      "frame": "HAIR_CLAY_SIDE.png",
+      "repoPath": "docs/evidence/hair/HAIR_CLAY_SIDE.png",
+      "sha256": "d1121a371254bcaaa588f30a73eaa3b124fc27cbbfc1900d5177c4e351f05974",
+      "bytes": 626121,
+      "camera": "orthographic, SIDE, aligned to his measured head frame",
+      "label": "EVIDENCE",
+      "shading": "CLAY -- base colour forced flat grey, base-colour texture and normal map UNLINKED. A photogrammetry texture can paint strand detail onto geometry that has none, and that was the question."
+    },
+    {
+      "frame": "HAIR_CLAY_THREEQ.png",
+      "repoPath": "docs/evidence/hair/HAIR_CLAY_THREEQ.png",
+      "sha256": "a8a04995880d038716b37df054fe0dc7e766d7047e712f9bbe27e0fbbb854760",
+      "bytes": 596436,
+      "camera": "orthographic, THREEQ, aligned to his measured head frame",
+      "label": "EVIDENCE",
+      "shading": "CLAY -- base colour forced flat grey, base-colour texture and normal map UNLINKED. A photogrammetry texture can paint strand detail onto geometry that has none, and that was the question."
+    },
+    {
+      "frame": "HAIR_CLAY_TOP.png",
+      "repoPath": "docs/evidence/hair/HAIR_CLAY_TOP.png",
+      "sha256": "47e49239b25ea3f6bee33bb18f18caff9942f3c533bedbff488b51255f3b51b8",
+      "bytes": 508075,
+      "camera": "orthographic, TOP, aligned to his measured head frame",
+      "label": "EVIDENCE",
+      "shading": "CLAY -- base colour forced flat grey, base-colour texture and normal map UNLINKED. A photogrammetry texture can paint strand detail onto geometry that has none, and that was the question."
+    }
+  ],
+  "reproduce": "vendor/blender/blender -b -P tools/hair/inspect_hair_geometry.py --"
+}

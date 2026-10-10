@@ -33,19 +33,45 @@ import numpy as np
 # stays capable of a pupil the moment a scene asks for one.
 APPEAR = json.load(open(os.path.abspath("assets/rigs/MARS_appearance.json")))
 VARIANT = opt("--variant", APPEAR.get("activeVariant", "canonical"))
+# HOW MUCH OF THE MEASURED LID CONTOUR TO CUT.
+# 0.86 cuts an opening wider than a correctly-seated 23 mm globe can back, so
+# rays over the top of the eye reach the socket tunnel -- 18% of the aperture.
+# Inflating the globe to plug that is what produced the bulging, too-round eye
+# the owner rejected. The opening is the thing that should be smaller: a rest
+# eye is NARROW, and a wide-eyed look comes from lifting the lid, not from
+# carving a bigger hole. Swept against the real cut, not chosen.
+INFLATE = float(opt("--inflate", "0.78"))
+PROBE = "--probe" in argv        # report the hole instead of refusing, for diagnosis
 if VARIANT not in APPEAR["variants"]:
     sys.exit("unknown appearance variant %r; have %s" % (VARIANT, list(APPEAR["variants"])))
 VSPEC = APPEAR["variants"][VARIANT]
 
 A = json.load(open("renders/_rig_measure/mouth_anatomy.json"))
-C = A["contours"]
+C = dict(A["contours"])
+# CUT THE APERTURE FROM MEDIAPIPE'S LID RINGS. The coarse contour is a rough
+# outline; the rings are the actual lid margins (opening 6.5 mm, fissure 24.6 /
+# 24.3 mm) and they are what the eye opening should be shaped like.
+_ELP = "renders/_rig_measure/eyelids.json"
+if os.path.exists(_ELP):
+    _EL = json.load(open(_ELP))["eyes"]
+    for _s in ("L", "R"):
+        _e = _EL.get("eye_%s" % _s)
+        if _e:
+            C["eye_%s_upper" % _s] = _e["upper"]
+            C["eye_%s_lower" % _s] = _e["lower"]
+    print("aperture cut from MediaPipe's lid rings, not the coarse contour")
+# Every anatomical size in this project is stated through the measured mouth
+# width: MW = 50 mm, so 1 mm = MW/50. An eyeball is 24 mm and a palpebral
+# fissure is 28-30 mm, which is what makes "too small" a measurable claim
+# rather than an impression.
+MW_ANCHOR = 0.1930
 EM = json.load(open(os.path.join(DONOR, "manifest.json")))
 
 bpy.ops.wm.open_mainfile(filepath=SRC)
 head = bpy.data.objects["MARS_MESH"]
 scene = bpy.context.scene
 for stale in list(bpy.data.objects):
-    if stale.name.startswith(("MARS_EYE", "MARS_LID_CUTTER")):
+    if stale.name.startswith(("MARS_EYE", "MARS_LID_CUTTER", "MARS_LASH")):
         bpy.data.objects.remove(stale, do_unlink=True)
 for md in [m for m in head.modifiers if m.name.startswith("EYE_APERTURE")]:
     head.modifiers.remove(md)
@@ -71,7 +97,10 @@ _cache = {}
 def M(key):
     if key not in _cache: _cache[key] = spec_mat(key)
     return _cache[key]
-M_SOCKET = M("ORAL")
+# The socket is NOT oral tissue. Using the maroon oral material there put a red
+# rim around each eye wherever the globe did not quite reach the lid margin.
+# A near-black cool neutral reads as shadow, which is what an eye socket is.
+M_SOCKET = M("SOCKET")
 # class 0 sclera, 1 iris, 2 pupil -> whatever THIS VARIANT says they are
 PARTS = VSPEC["eyeParts"]
 CLASS_MAT = {0: M(PARTS["sclera"]), 1: M(PARTS["iris"]), 2: M(PARTS["pupil"])}
@@ -108,8 +137,10 @@ for side in ("L", "R"):
     rings = []
     # Straight prism through the lid: the aperture in the skin is the measured
     # contour, full size, because the rest pose of an eye is OPEN.
-    for depth, inflate in ((-fissure * 0.35, 1.0), (fissure * 0.06, 1.0),
-                           (fissure * 0.40, 0.92), (fissure * 0.70, 0.55)):
+    # Cut slightly INSIDE the measured contour. MediaPipe's lid contour traces
+    # the outer lid margin; cutting the whole of it leaves more hole than eye.
+    for depth, inflate in ((-fissure * 0.35, INFLATE), (fissure * 0.06, INFLATE),
+                           (fissure * 0.40, 0.80), (fissure * 0.70, 0.48)):
         rings.append([bm.verts.new(M @ V((p.x * inflate, depth, p.z * inflate))) for p in loc])
     N = len(loc)
     for a, b in zip(rings, rings[1:]):
@@ -160,8 +191,57 @@ for side in ("L", "R"):
     ball = bpy.data.objects.new("MARS_EYE_%s" % side, eme)
     scene.collection.objects.link(ball)
     ball.rotation_mode = "XYZ"
+
+    # THE GEOMETRY MUST BE THE SIZE THE DONOR SAYS IT IS.
+    # MARS_ORAL.blend carried eyeballs of 17.3 mm for weeks while the donor npz
+    # held 28.9 mm and its manifest agreed with the npz. The ratio was 1.673,
+    # which is sqrt(3) -- these were the PRE-FIX globes from before the bbox
+    # diagonal bug was corrected. The donor was fixed; this blend, which is
+    # written in place and was never in the pipeline script, was not rebuilt.
+    # Every eye measurement taken since was taken on the old geometry.
+    # So: compare what landed against what the donor recorded, every run.
+    _w = [ball.matrix_world @ v.co for v in eme.vertices]
+    _ext = max(max(p[i] for p in _w) - min(p[i] for p in _w) for i in range(3))
+    _e = EM["eyes"]["eye_%s" % side]
+    # Compare against the ASSEMBLY extent when the donor is a multi-part eye:
+    # occlusion and lacrimal reach past the globe, so checking the object's bbox
+    # against a globe-only diameter is comparing two different things.
+    _claim = _e.get("assemblyExtent", _e["eyeballDiameter"])
+    if abs(_ext - _claim) > _claim * 0.02:
+        sys.exit("EYE %s IS NOT THE SIZE THE DONOR RECORDED: %.4f in the blend vs %.4f in "
+                 "assets/donor/gnm_eyes/manifest.json (ratio %.3f). A donor and the mesh "
+                 "built from it disagreeing means one of them is stale -- re-run "
+                 "gnm_eye_donor.py." % (side, _ext, _claim, _claim / max(_ext, 1e-9)))
+    # EYELASHES: ICT geometry, dark and unlit, riding the LID not the globe.
+    _lp = os.path.join(DONOR, "lash_%s.npz" % side)
+    if os.path.exists(_lp):
+        _lf = np.load(_lp)
+        _lm = bpy.data.meshes.new("MARS_LASH_%s_MESH" % side)
+        _lm.from_pydata([tuple(map(float, v)) for v in _lf["vertices"]], [],
+                        [tuple(map(int, t)) for t in _lf["triangles"]])
+        _lm.validate(verbose=False)
+        _lash_mat = bpy.data.materials.get("MARS_LASH_MAT")
+        if _lash_mat is None:
+            _lash_mat = bpy.data.materials.new("MARS_LASH_MAT")
+            _lash_mat.use_nodes = True
+            _b = _lash_mat.node_tree.nodes.get("Principled BSDF")
+            if _b:
+                _b.inputs["Base Color"].default_value = (0.02, 0.022, 0.03, 1.0)
+                _b.inputs["Roughness"].default_value = 0.55
+        _lm.materials.append(_lash_mat)
+        for _p in _lm.polygons: _p.use_smooth = True
+        _lo = bpy.data.objects.new("MARS_LASH_%s" % side, _lm)
+        scene.collection.objects.link(_lo)
+        print("eye %s: %d eyelash verts inserted (ICT geometry, dark unlit material)"
+              % (side, len(_lf["vertices"])))
+
     report["eye_%s" % side] = {"eyeballVerts": len(verts), "cutterVolume": round(vol, 8),
-                               "variant": VARIANT, "eyeParts": PARTS}
+                               "variant": VARIANT, "eyeParts": PARTS,
+                               "eyeballDiameter": round(_ext, 5),
+                               "diameterMM": round(_ext / (MW_ANCHOR / 50.0), 1),
+                               "fissureWidth": round(EM["eyes"]["eye_%s" % side]["fissureWidth"], 5),
+                               "globeOverFissure": round(
+                                   _ext / EM["eyes"]["eye_%s" % side]["fissureWidth"], 3)}
 
 print("\nexterior %d -> %d verts (the lid apertures)" % (before_n, len(head.data.vertices)))
 
@@ -183,6 +263,58 @@ for side in ("L", "R"):
           % (side, hits["eyeball"], hits["skin"], hits["miss"]))
     if hits["eyeball"] < 8:
         sys.exit("EYE %s IS STILL BEHIND SKIN — the aperture did not open" % side)
+
+    # DOES THE GLOBE FILL THE APERTURE? The line of rays above only asks whether
+    # the eye is behind skin, and a globe at 60% of the fissure width passes it
+    # comfortably -- the central rays still land on the ball while the socket
+    # gapes at both ends. That is the render the owner described: a small low
+    # eye with a dark crescent above it. Sweep the WHOLE aperture instead and
+    # count what is behind it: anything that is neither eyeball nor skin is a
+    # hole in his face.
+    ax = (up[-1] - up[0]); fis = ax.length; ax = ax.normalized()
+    upv = (up[len(up) // 2] - lo[len(lo) // 2]); opening = upv.length; upv = upv.normalized()
+    grid = {"eyeball": 0, "skin": 0, "socket": 0, "nothing": 0}
+    bad = []
+    for i in range(25):
+        for j in range(13):
+            fu, fw = (i / 24.0 - 0.5) * 2.0, (j / 12.0 - 0.5) * 2.0
+            o = (centre + ax * (fu * fis * 0.48)
+                        + upv * (fw * opening * 0.48) + V((0, -0.5, 0)))
+            hit, loc_, nor, idx, ob, mw = scene.ray_cast(deps, o, V((0, 1, 0)))
+            if not hit:
+                grid["nothing"] += 1
+                bad.append((round(fu, 2), round(fw, 2)))
+            elif ob.name.startswith("MARS_EYE_"):
+                grid["eyeball"] += 1
+            else:
+                try:
+                    mi = ob.data.polygons[idx].material_index
+                    mn = ob.data.materials[mi].name if 0 <= mi < len(ob.data.materials) else ""
+                except Exception:
+                    mn = ""
+                k = "socket" if "SOCKET" in mn or "ORAL" in mn else "skin"
+                grid[k] += 1
+                if k == "socket": bad.append((round(fu, 2), round(fw, 2)))
+    tot = sum(grid.values())
+    backed = 100.0 * grid["eyeball"] / tot
+    report["eye_%s" % side]["apertureFill"] = {k: v for k, v in grid.items()}
+    report["eye_%s" % side]["apertureBackedByGlobePercent"] = round(backed, 1)
+    print("       aperture sweep: eyeball %.0f%% · skin %.0f%% · SOCKET %.0f%% · nothing %.0f%%"
+          % (backed, 100.0 * grid["skin"] / tot,
+             100.0 * grid["socket"] / tot, 100.0 * grid["nothing"] / tot))
+    if bad:
+        # WHERE the hole is decides the fix. A ring of socket at the canthi is a
+        # globe too narrow for the cut; a band along the top or bottom is a cut
+        # taller than the globe; a blob in the middle is a globe seated too deep.
+        bu = [b[0] for b in bad]; bw = [b[1] for b in bad]
+        print("       hole at: along-fissure %+.2f..%+.2f of half-width · "
+              "vertical %+.2f..%+.2f of half-opening · |u|>0.7 in %d of %d"
+              % (min(bu), max(bu), min(bw), max(bw),
+                 sum(1 for u in bu if abs(u) > 0.7), len(bu)))
+    if grid["socket"] + grid["nothing"] > tot * 0.02 and not PROBE:
+        sys.exit("EYE %s HAS A HOLE IN IT: %.0f%% of the aperture shows socket or open space "
+                 "rather than eyeball or lid. The globe does not fill the cut."
+                 % (side, 100.0 * (grid["socket"] + grid["nothing"]) / tot))
 
 bpy.ops.wm.save_as_mainfile(filepath=OUT)
 json.dump(report, open("renders/_rig_measure/eye_sockets.json", "w"), indent=2)

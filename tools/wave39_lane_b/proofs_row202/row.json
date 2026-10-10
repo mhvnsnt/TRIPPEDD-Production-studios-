@@ -1,0 +1,11 @@
+{
+  "row": 202,
+  "name": "ProjectX",
+  "claimed": "GPL-2.0",
+  "kind": "sourceforge",
+  "ref": "project-x",
+  "sf_license_snippet": "GNU General Public License version 2.0 (GPLv2)",
+  "sf_200": true,
+  "sf_registered_snippet": "Registered",
+  "mechanical_verdict": "CONFIRMED (SF license field)"
+}

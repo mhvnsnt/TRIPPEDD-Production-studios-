@@ -1,0 +1,16 @@
+1
+00:00:02,000 --> 00:00:04,918
+The quick brown fox jumps over the lazy dog.
+
+2
+00:00:07,918 --> 00:00:10,526
+Pack my box with five dozen liquor jugs.
+
+3
+00:00:13,526 --> 00:00:16,075
+How vexingly quick daft zebras jump.
+
+4
+00:00:18,075 --> 00:00:20,829
+Sphinx of black quartz, judge my vow.
+

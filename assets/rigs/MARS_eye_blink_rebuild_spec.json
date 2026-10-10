@@ -1,0 +1,51 @@
+{
+  "schema": "trippedd.mars-eye-blink-rebuild/v1",
+  "character": "MARS",
+  "authority": "assets/rigs/MARS_linework_authority.json",
+  "sourceGeometry": "assets/source_models/MARS_LOD2.glb",
+  "rigIdentity": "assets/rigs/MARS_ORAL.blend",
+  "targets": {
+    "eyeOpeningMM": {
+      "L": 7.08,
+      "R": 8.24
+    },
+    "lineworkPoints": 382,
+    "maxReprojectionPx": 0.0016
+  },
+  "seating": {
+    "fitTo": "measured upper/lower eyelid lines",
+    "fitOrder": [
+      "eye center/socket",
+      "upper eyelid",
+      "lower eyelid",
+      "brow exclusion"
+    ],
+    "oldMediaPipeFit": "DO_NOT_USE",
+    "canonicalFit": "DO_NOT_USE_AS_INDEPENDENT_EVIDENCE"
+  },
+  "blink": {
+    "driver": "drawn eyelid lines",
+    "browInfluence": 0.0,
+    "sequence": [
+      {"frame": 0, "state": "OPEN", "weight": 0.0},
+      {"frame": 6, "state": "HALF", "weight": 0.5},
+      {"frame": 12, "state": "CLOSED", "weight": 1.0},
+      {"frame": 18, "state": "HALF", "weight": 0.5},
+      {"frame": 24, "state": "OPEN", "weight": 0.0}
+    ],
+    "proof": "rendered sequence only",
+    "singleFrameProof": "REJECTED"
+  },
+  "gates": {
+    "lineworkAuthority": "REQUIRED",
+    "3dLift": "REQUIRED",
+    "surfaceLanding": "REQUIRED",
+    "browExclusion": "REQUIRED",
+    "openHalfClosedReopen": "REQUIRED",
+    "visualEvidence": "REQUIRED"
+  },
+  "nostrils": {
+    "status": "WEAK_ORTHOGRAPHIC_DEPTH",
+    "action": "do not let nostril uncertainty contaminate eye/blink seating"
+  }
+}

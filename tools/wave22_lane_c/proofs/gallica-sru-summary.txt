@@ -1,0 +1,12 @@
+query: gallica all "musique militaire"
+endpoint: https://gallica.bnf.fr/SRU (SRU 1.2, dublincore schema)
+numberOfRecords: 130373
+first titles:
+  - Musique militaire
+  - Musique militaire
+  - MUSIQUE MILITAIRE
+  - Derrière la musique militaire : polka brillante : [pour piano] / par Félix Chaudoir ; [ill. par] Donjean
+  - MUSIQUE MILITAIRE / la Musique Militaire de l'Armée de l'Air dir. Ct R. CLERISSE
+creators: ['Van Campenhout, François (1799-1848). Auteur ou responsable intellectuel', 'Sousa, John Philip (1854-1932). Auteur ou responsable intellectuel', 'Sousa, John Philip (1854-1932). Auteur ou responsable intellectuel', 'Rouget de Lisle, Claude Joseph (1760-1836). Auteur ou responsable intellectuel', 'Petit, Fernand (18..-1940). Auteur ou responsable intellectuel']
+dates: ['1960', '1960', '1962', '1889', '1957']
+raw XML saved: gallica-sru-musique-militaire.xml (20217 bytes)

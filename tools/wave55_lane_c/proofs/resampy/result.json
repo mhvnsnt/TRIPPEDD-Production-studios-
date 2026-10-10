@@ -1,0 +1,76 @@
+{
+  "source": {
+    "frames": 187800,
+    "sr": 24000,
+    "channels": 1
+  },
+  "tone_snr_db": 130.7736841696831,
+  "tone_align_lag": 288,
+  "downsample_3db_hz": 10830.305771242838,
+  "roundtrip_10k_lowpass_snr_db": 92.03222949713442,
+  "roundtrip_10k_lowpass_max_abs_err": 2.471763106905167e-05,
+  "roundtrip_fullband_snr_db": 24.230700093187906,
+  "roundtrip_fullband_max_abs_err": 0.07536840688682263,
+  "checks": [
+    {
+      "name": "source_load",
+      "ok": true,
+      "detail": "mono frames=187800 sr=24000 dur=7.825000s"
+    },
+    {
+      "name": "tone_snr_24k_to_48k",
+      "ok": true,
+      "detail": "SNR=130.77 dB (lag=288) \u2014 real sinc SRC, not a copy"
+    },
+    {
+      "name": "vo_up_24k_48k",
+      "ok": true,
+      "detail": "frames 187800 -> 375600 (expect 375600), dur=7.825000s"
+    },
+    {
+      "name": "vo_up_finite",
+      "ok": true,
+      "detail": "min=-0.357689 max=0.517415"
+    },
+    {
+      "name": "rolloff_3db_point",
+      "ok": true,
+      "detail": "-3 dB at ~10830 Hz (10.75k:-1.67dB, 11k:-5.82dB)"
+    },
+    {
+      "name": "roundtrip_below_10k",
+      "ok": true,
+      "detail": "lag=0: 10k-lowpassed round-trip SNR=92.03 dB, max abs err=2.47e-05"
+    },
+    {
+      "name": "roundtrip_fullband_documented",
+      "ok": true,
+      "detail": "lag=0: full-band round-trip SNR=24.23 dB (max err 7.54e-02) \u2014 expected lossy above ~10.8 kHz, this is the documented filter behavior, not a wire defect"
+    },
+    {
+      "name": "same_rate_identity",
+      "ok": true,
+      "detail": "max diff=0.00e+00"
+    },
+    {
+      "name": "stereo_up",
+      "ok": true,
+      "detail": "shape (187800, 2) -> (375600, 2), channels preserved"
+    },
+    {
+      "name": "determinism",
+      "ok": true,
+      "detail": "two full 24k->48k runs -> bit-identical float32"
+    },
+    {
+      "name": "filter_variant_differs",
+      "ok": true,
+      "detail": "kaiser_fast output differs from kaiser_best (both real ops)"
+    }
+  ],
+  "upstream": {
+    "repo": "bmcfee/resampy",
+    "license": "ISC",
+    "verified": "2026-10-08 via GitHub API spdx_id"
+  }
+}

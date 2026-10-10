@@ -1,0 +1,29 @@
+{
+  "audio": "cipher-refs concat (real single-speaker voice)",
+  "dur_s": 72.0,
+  "vad_speech_s": 71.4,
+  "cipher_win1p5_hop0p25": {
+    "k": 5,
+    "margin": 1.702,
+    "kept": "249/283",
+    "stability": 0.45,
+    "stab_dist": {
+      "1": 1,
+      "2": 3,
+      "3": 2,
+      "4": 5,
+      "5": 9
+    }
+  },
+  "cipher_win2p5_hop0p5": {
+    "k": 5,
+    "margin": 1.098,
+    "kept": "121/140",
+    "stability": 0.6,
+    "stab_dist": {
+      "3": 3,
+      "4": 12,
+      "5": 5
+    }
+  }
+}

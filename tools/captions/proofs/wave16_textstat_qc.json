@@ -1,0 +1,30 @@
+{
+  "cues": 3,
+  "over_cps_limit": 0,
+  "entries": [
+    {
+      "cue": 1,
+      "chars_per_sec": 18.0,
+      "flesch_reading_ease": 73.8,
+      "flesch_kincaid_grade": 4.5,
+      "lexicon_count": 6,
+      "syllable_backend": "pyphen"
+    },
+    {
+      "cue": 2,
+      "chars_per_sec": 8.0,
+      "flesch_reading_ease": 77.9,
+      "flesch_kincaid_grade": 2.9,
+      "lexicon_count": 2,
+      "syllable_backend": "pyphen"
+    },
+    {
+      "cue": 3,
+      "chars_per_sec": 11.5,
+      "flesch_reading_ease": 97.0,
+      "flesch_kincaid_grade": 0.7,
+      "lexicon_count": 4,
+      "syllable_backend": "pyphen"
+    }
+  ]
+}

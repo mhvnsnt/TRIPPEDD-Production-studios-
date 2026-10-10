@@ -1,0 +1,121 @@
+{
+  "input_embeddings": "tools/wave56_lane_c/proofs/speechbrain_ecapa/embeddings.pt",
+  "input_sha256": "79eff78da81791da8e5fc20b6cb0c26505b3196a58bddeab1f7c0fa8863d86e4",
+  "reference_segments": [
+    {
+      "start": 0.0,
+      "end": 1.5,
+      "speaker": "A"
+    },
+    {
+      "start": 1.7,
+      "end": 3.2,
+      "speaker": "B"
+    },
+    {
+      "start": 3.4,
+      "end": 4.9,
+      "speaker": "A"
+    },
+    {
+      "start": 5.1,
+      "end": 6.6,
+      "speaker": "B"
+    }
+  ],
+  "cluster_labels": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "cluster_to_speaker": {
+    "0": "A",
+    "1": "B"
+  },
+  "hypothesis_segments": [
+    {
+      "start": 0.0,
+      "end": 1.5,
+      "speaker": "A"
+    },
+    {
+      "start": 1.7,
+      "end": 3.2,
+      "speaker": "B"
+    },
+    {
+      "start": 3.4,
+      "end": 4.9,
+      "speaker": "A"
+    },
+    {
+      "start": 5.1,
+      "end": 6.6,
+      "speaker": "B"
+    }
+  ],
+  "DER": 0.0,
+  "JER": 0.0,
+  "DER_breakdown": {
+    "miss": 0.0,
+    "false_alarm": 0.0,
+    "confusion": 0.0,
+    "total": 6.0
+  },
+  "elapsed_s": 1.0,
+  "checks": [
+    {
+      "name": "embeddings_pt_sha256_matches_wave56",
+      "status": "PASS",
+      "detail": "sha256=79eff78da81791da\u2026 matches"
+    },
+    {
+      "name": "embedding_shape",
+      "status": "PASS",
+      "detail": "shape (4, 192)"
+    },
+    {
+      "name": "embeddings_finite",
+      "status": "PASS",
+      "detail": "no NaN/Inf"
+    },
+    {
+      "name": "cluster_count_is_2",
+      "status": "PASS",
+      "detail": "2 clusters: [0, 1, 0, 1]"
+    },
+    {
+      "name": "cluster_deterministic",
+      "status": "PASS",
+      "detail": "re-run identical: [0, 1, 0, 1]"
+    },
+    {
+      "name": "speaker_purity",
+      "status": "PASS",
+      "detail": "A1/A2->c0, B1/B2->c1, map {0: 'A', 1: 'B'}"
+    },
+    {
+      "name": "der_is_zero",
+      "status": "PASS",
+      "detail": "DER=0.0000 (4/4 segments correct)"
+    },
+    {
+      "name": "jer_is_zero",
+      "status": "PASS",
+      "detail": "JER=0.0000 (per-speaker perfect)"
+    },
+    {
+      "name": "runs_to_completion",
+      "status": "PASS",
+      "detail": "1.0 s end-to-end"
+    }
+  ],
+  "sha256": {
+    "reference.rttm": "5b49d46f7565e39d112aaa84ac2dee1bf9025706e527a6ca8fae553b2c5c74bf",
+    "hypothesis.rttm": "5b49d46f7565e39d112aaa84ac2dee1bf9025706e527a6ca8fae553b2c5c74bf",
+    "result.json": "cdfbc2632206ce7f0fa012f20daa27963ada15142281c486776ff2c3be81a0ec"
+  },
+  "passed": 9,
+  "failed": 0
+}

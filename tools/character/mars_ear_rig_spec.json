@@ -1,0 +1,22 @@
+{
+  "$schema": "trippedd.mars-ear-rig/v1",
+  "source": "assets/source_models/MARS_source.glb",
+  "authority": "measured_source_geometry",
+  "sourceImmutable": true,
+  "sides": ["L", "R"],
+  "regions": ["helix", "antihelix", "concha", "tragus", "antitragus", "lobule", "rim"],
+  "controls": {
+    "ear_left": ["earL_upper", "earL_mid", "earL_lobe", "earL_fold"],
+    "ear_right": ["earR_upper", "earR_mid", "earR_lobe", "earR_fold"]
+  },
+  "requirements": {
+    "leftRightIndependent": true,
+    "headAttachment": "stable",
+    "silhouette": "measured",
+    "proofViews": ["front", "three_quarter_left", "three_quarter_right", "side_left", "side_right", "rear"]
+  },
+  "allowedMethods": ["armature", "lattice", "surface_deform", "local_corrective_shape"],
+  "forbiddenMethods": ["invented_ear_mesh", "global_remesh", "source_mesh_replacement"],
+  "gate": "numerical_measurement_plus_multi_view_visual_proof",
+  "unknownNeverPass": true
+}

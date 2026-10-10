@@ -1,0 +1,278 @@
+{
+  "set": "oral_diagnosis",
+  "publishedBy": "tools/publish_evidence.py",
+  "retrieve": "docs/evidence/oral_diagnosis/<frame>  (committed; also listed in README.md)",
+  "runId": "local",
+  "sourceAsset": {
+    "assetId": "MARS_HEAD_SOURCE",
+    "character": "MARS",
+    "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+    "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+  },
+  "qc": {
+    "physical": {
+      "verified": null,
+      "checks": [],
+      "engine": null,
+      "samples": null
+    },
+    "visual": {
+      "verdict": "PENDING",
+      "reviewer": "",
+      "notes": "",
+      "rule": "VISUAL_FAIL outranks a passing physical gate. PENDING is not PASS."
+    },
+    "status": "FAIL"
+  },
+  "frames": [
+    {
+      "frame": "00_TARGET_the_mouth_that_worked.png",
+      "publishedSha256": "d7d712dcc51fca0321586a7ecb056f0f1dd885f554a1bc59ec54119ad6ced4d5",
+      "repoPath": "docs/evidence/oral_diagnosis/00_TARGET_the_mouth_that_worked.png",
+      "productionPath": "renders/_oral_diagnosis/00_TARGET_the_mouth_that_worked.png",
+      "sha256": "d7d712dcc51fca0321586a7ecb056f0f1dd885f554a1bc59ec54119ad6ced4d5",
+      "sourceSha8": "d7d712dc",
+      "bytes": 874125,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "00_TARGET_the_mouth_that",
+      "camera": "worked",
+      "aliases": [
+        "00_TARGET_the_mouth_that_worked",
+        "target_the_mouth_that_worked",
+        "00_worked"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/00_TARGET_the_mouth_that_worked.png"
+    },
+    {
+      "frame": "01_TODAY_oral_parts_hidden.png",
+      "publishedSha256": "b6444b722fb746e234ccf8dc122bb5afbe61e12dd881cae7bf537b910ac95460",
+      "repoPath": "docs/evidence/oral_diagnosis/01_TODAY_oral_parts_hidden.png",
+      "productionPath": "renders/_oral_diagnosis/01_TODAY_oral_parts_hidden.png",
+      "sha256": "83e07c3e36fdf6bebf1fa3e653d9638ad33d366a8465dc4c15f7ac00165b59aa",
+      "sourceSha8": "83e07c3e",
+      "bytes": 706942,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "01_TODAY_oral_parts",
+      "camera": "hidden",
+      "aliases": [
+        "01_TODAY_oral_parts_hidden",
+        "today_oral_parts_hidden",
+        "01_hidden"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/01_TODAY_oral_parts_hidden.png"
+    },
+    {
+      "frame": "02_TODAY_oral_parts_unhidden.png",
+      "publishedSha256": "1825185573fe8779f3f75b71fbc9c3bf367c3f20a5665bb867d16334d60f363f",
+      "repoPath": "docs/evidence/oral_diagnosis/02_TODAY_oral_parts_unhidden.png",
+      "productionPath": "renders/_oral_diagnosis/02_TODAY_oral_parts_unhidden.png",
+      "sha256": "4876a4dba915681154e4d222b5306ea0705cfe915948a3d03fcca88d5abce114",
+      "sourceSha8": "4876a4db",
+      "bytes": 654978,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "02_TODAY_oral_parts",
+      "camera": "unhidden",
+      "aliases": [
+        "02_TODAY_oral_parts_unhidden",
+        "today_oral_parts_unhidden",
+        "02_unhidden"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/02_TODAY_oral_parts_unhidden.png"
+    },
+    {
+      "frame": "03_MY_CAVITY_PAINT_made_it_worse.png",
+      "publishedSha256": "5bfe40803a6d656246f8dd10b80a23bfe9d87633497f67767b0588a0fc57eb72",
+      "repoPath": "docs/evidence/oral_diagnosis/03_MY_CAVITY_PAINT_made_it_worse.png",
+      "productionPath": "renders/_oral_diagnosis/03_MY_CAVITY_PAINT_made_it_worse.png",
+      "sha256": "52f420910ddd906b2010877a576311612d2f48ec2353640eb020950f95b6aa3d",
+      "sourceSha8": "52f42091",
+      "bytes": 613135,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "03_MY_CAVITY_PAINT_made_it",
+      "camera": "worse",
+      "aliases": [
+        "03_MY_CAVITY_PAINT_made_it_worse",
+        "my_cavity_paint_made_it_worse",
+        "03_worse"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/03_MY_CAVITY_PAINT_made_it_worse.png"
+    },
+    {
+      "frame": "04_FALSECOLOUR_by_material.png",
+      "publishedSha256": "38adf4cf4dc1996ad22286c80eebc539b3d4b7111b855de68a5de10aa5e839e2",
+      "repoPath": "docs/evidence/oral_diagnosis/04_FALSECOLOUR_by_material.png",
+      "productionPath": "renders/_oral_diagnosis/04_FALSECOLOUR_by_material.png",
+      "sha256": "154e5f16bfd362eb66fdaf6d1fcd3edcb86a82db8db43621dbe6f0c98a13a071",
+      "sourceSha8": "154e5f16",
+      "bytes": 458802,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "04_FALSECOLOUR_by",
+      "camera": "material",
+      "aliases": [
+        "04_FALSECOLOUR_by_material",
+        "falsecolour_by_material",
+        "04_material"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/04_FALSECOLOUR_by_material.png"
+    },
+    {
+      "frame": "05_MARS_rigged_cavity_protrudes.png",
+      "publishedSha256": "f8faba91a03457200d79e810d0a8adfe2cdd96df4de06accf3bcc6e0a88bd6a6",
+      "repoPath": "docs/evidence/oral_diagnosis/05_MARS_rigged_cavity_protrudes.png",
+      "productionPath": "renders/_oral_diagnosis/05_MARS_rigged_cavity_protrudes.png",
+      "sha256": "83656e49debb5a5b466cec971720feebbf6977bfdf51b18d67fd336604724ae7",
+      "sourceSha8": "83656e49",
+      "bytes": 551985,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "05_MARS_rigged_cavity",
+      "camera": "protrudes",
+      "aliases": [
+        "05_MARS_rigged_cavity_protrudes",
+        "mars_rigged_cavity_protrudes",
+        "05_protrudes"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": "prev/05_MARS_rigged_cavity_protrudes.png"
+    },
+    {
+      "frame": "06_REBUILT_after_rig_face_fix.png",
+      "publishedSha256": "595eb8ea765a461ef0cdc23e682c2394e372d9812932efea6fda8dd3317a7bf4",
+      "repoPath": "docs/evidence/oral_diagnosis/06_REBUILT_after_rig_face_fix.png",
+      "productionPath": "renders/_oral_diagnosis/06_REBUILT_after_rig_face_fix.png",
+      "sha256": "cc53bb40a56c1c76324c745bedbf256c0247aed5bfac61d7fbfdc9ca548aa75f",
+      "sourceSha8": "cc53bb40",
+      "bytes": 598032,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "06_REBUILT_after_rig_face",
+      "camera": "fix",
+      "aliases": [
+        "06_REBUILT_after_rig_face_fix",
+        "rebuilt_after_rig_face_fix",
+        "06_fix"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    },
+    {
+      "frame": "07_FALSECOLOUR_the_centre_is_his_skin.png",
+      "publishedSha256": "ed125998e56803ff06cb0067d48838098034b7d30094ab260711f6cde6f3eeac",
+      "repoPath": "docs/evidence/oral_diagnosis/07_FALSECOLOUR_the_centre_is_his_skin.png",
+      "productionPath": "renders/_oral_diagnosis/07_FALSECOLOUR_the_centre_is_his_skin.png",
+      "sha256": "f192e5b304aa0fc0643b87e75870628ee70edf474d7987075fa60c4532d59b6d",
+      "sourceSha8": "f192e5b3",
+      "bytes": 435985,
+      "renderedPx": [
+        900,
+        900
+      ],
+      "publishedPx": [
+        900,
+        900
+      ],
+      "pose": "07_FALSECOLOUR_the_centre_is_his",
+      "camera": "skin",
+      "aliases": [
+        "07_FALSECOLOUR_the_centre_is_his_skin",
+        "falsecolour_the_centre_is_his_skin",
+        "07_skin"
+      ],
+      "sourceAsset": {
+        "assetId": "MARS_HEAD_SOURCE",
+        "character": "MARS",
+        "sha256": "e317d06aba68c7cdf56a3e3a0b639770714a8a1f7287897f74672cb191d0fff1",
+        "driveFileId": "1RKxHGkgoKe0hZf7a2kObqzKpgqKfkrhl"
+      },
+      "prev": null
+    }
+  ],
+  "measurements": []
+}

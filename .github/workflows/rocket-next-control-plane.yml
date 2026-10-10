@@ -1,0 +1,29 @@
+name: Rocket Next Control Plane
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-next:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Validate TypeScript
+        run: npx tsc --noEmit
+      - name: Build Rocket Next surface
+        run: npm run next:build
+      - name: Build canonical Vite studio
+        run: npm run build

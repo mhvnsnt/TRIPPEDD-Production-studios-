@@ -1,0 +1,23 @@
+{
+  "ffmpeg_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+  "ffmpeg_exe_bytes": 79826272,
+  "src": {
+    "file": "ffmpeg_test.mp4",
+    "bytes": 13290,
+    "duration_s": 2.0,
+    "resolution": "640x360",
+    "fps": "30"
+  },
+  "frame_png": {
+    "file": "ffmpeg_frame.png",
+    "bytes": 40218,
+    "ihdr": [
+      640,
+      360
+    ]
+  },
+  "transcode_180p": {
+    "file": "ffmpeg_test_360p.mp4",
+    "bytes": 9107
+  }
+}

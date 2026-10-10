@@ -1,0 +1,31 @@
+{
+  "tool": "L-SMASH \u2014 l-smash/l-smash, ISC",
+  "catalog": "#### L-SMASH",
+  "built": "./configure && make -> liblsmash.a + cli/remuxer, cli/muxer, cli/boxdumper, cli/timelineeditor (clean build, no extra deps)",
+  "wiring": "tools/wave18_laneC/lsmash/smoke_remux.sh \u2014 ffmpeg builds a 3s captioned MP4 (h264+aac+SRT-as-tx3g), remuxes via l-smash remuxer CLI, inventories streams with ffprobe, dumps box structure with boxdumper",
+  "proof": {
+    "src_captioned.mp4": {
+      "bytes": 304334,
+      "sha256": "12d2c3c0efe17ca117952efd4ff37cc6282193266867969c3abb4cd01e319e58"
+    },
+    "remuxed.mp4": {
+      "bytes": 302956,
+      "sha256": "4c443daa25b63c4465de066538c6f2247eb933e74980fdcb87049785da51fa99"
+    },
+    "streams.txt": {
+      "bytes": 332,
+      "sha256": "e732ea55b6da1fca830010cbf043b2767925a3c84560fc2580402a6ddffc6173"
+    },
+    "box_src.txt": {
+      "bytes": 50842,
+      "sha256": "2a30b111a8ba3d02bde0ad13c846b3c90540cbd072f4f58926d1d75154d72d85"
+    },
+    "box_remuxed.txt": {
+      "bytes": 32363,
+      "sha256": "1af014d43055dc32ce6d2c2ed15b25b8d6a95a2e2e7b520caaa3de3545f96724"
+    }
+  },
+  "verification": "remux completed; ffprobe: h264+aac survive intact (3.000s). HONEST LIMIT: the remuxer CLI drops the tx3g subtitle track (3 traks in -> 2 traks out; boxdumper --box confirms tx3g present in source, absent in remux). boxdumper still gives full box visibility for caption-track QA.",
+  "notes": "Caption-packaging verdict: L-SMASH CLI is an A/V remuxer, not a caption-track packager in this form; the muxer CLI may support text tracks but that is untested this lane.",
+  "wave": "Wave 18 Lane C (2026-10-07)"
+}

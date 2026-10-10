@@ -1,0 +1,305 @@
+{
+ "sutemos": {
+  "n": 29,
+  "counts": {
+   "unknown": 26,
+   "nc": 2,
+   "other": 1
+  },
+  "clean_lu": {}
+ },
+ "rodenttapesbackstage": {
+  "n": 837,
+  "counts": {
+   "nc": 787,
+   "clean": 16,
+   "other": 29,
+   "unknown": 5
+  },
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/mark/1.0/": 3,
+   "https://creativecommons.org/publicdomain/mark/1.0/": 12,
+   "http://creativecommons.org/publicdomain/zero/1.0/": 1
+  }
+ },
+ "mnmnrecords": {
+  "n": 573,
+  "counts": {
+   "nc": 568,
+   "unknown": 1,
+   "other": 4
+  },
+  "clean_lu": {}
+ },
+ "jazzaria": {
+  "n": 567,
+  "counts": {
+   "nc": 565,
+   "unknown": 2
+  },
+  "clean_lu": {}
+ },
+ "o2label": {
+  "n": 325,
+  "counts": {
+   "nc": 298,
+   "unknown": 27
+  },
+  "clean_lu": {}
+ },
+ "dienstbar": {
+  "n": 470,
+  "counts": {
+   "nc": 417,
+   "other": 25,
+   "clean": 4,
+   "unknown": 24
+  },
+  "clean_lu": {
+   "https://creativecommons.org/licenses/by/4.0/": 1,
+   "https://creativecommons.org/publicdomain/mark/1.0/": 1,
+   "http://creativecommons.org/publicdomain/mark/1.0/": 2
+  }
+ },
+ "zh27": {
+  "n": 336,
+  "counts": {
+   "other": 174,
+   "nc": 161,
+   "clean": 1
+  },
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  }
+ },
+ "cianorbe": {
+  "n": 663,
+  "counts": {
+   "nc": 647,
+   "other": 12,
+   "clean": 2,
+   "unknown": 2
+  },
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 1,
+   "https://creativecommons.org/publicdomain/mark/1.0/": 1
+  }
+ },
+ "d-trash-records": {
+  "n": 220,
+  "counts": {
+   "nc": 140,
+   "unknown": 64,
+   "clean": 9,
+   "other": 7
+  },
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/2.5/ca/": 5,
+   "https://creativecommons.org/licenses/by/4.0/": 2,
+   "http://creativecommons.org/licenses/by/3.0/": 2
+  }
+ },
+ "postunder": {
+  "n": 65,
+  "counts": {
+   "nc": 51,
+   "unknown": 8,
+   "other": 6
+  },
+  "clean_lu": {}
+ },
+ "headphonica": {
+  "n": 121,
+  "counts": {
+   "unknown": 7,
+   "nc": 107,
+   "other": 6,
+   "clean": 1
+  },
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/de/": 1
+  }
+ },
+ "sp-net": {
+  "n": 161,
+  "counts": {
+   "other": 115,
+   "nc": 40,
+   "unknown": 6
+  },
+  "clean_lu": {}
+ },
+ "abandonment": {
+  "n": 167,
+  "counts": {
+   "nc": 167
+  },
+  "clean_lu": {}
+ },
+ "psychocandies-netlabel": {
+  "n": 168,
+  "counts": {
+   "nc": 167,
+   "unknown": 1
+  },
+  "clean_lu": {}
+ },
+ "17sons": {
+  "n": 175,
+  "counts": {
+   "nc": 173,
+   "unknown": 2
+  },
+  "clean_lu": {}
+ },
+ "ghgrnetlabel": {
+  "n": 175,
+  "counts": {
+   "nc": 159,
+   "other": 5,
+   "unknown": 11
+  },
+  "clean_lu": {}
+ },
+ "racketinmyhead": {
+  "n": 236,
+  "counts": {
+   "nc": 211,
+   "other": 24,
+   "unknown": 1
+  },
+  "clean_lu": {}
+ },
+ "surrism-phonoethics": {
+  "n": 238,
+  "counts": {
+   "nc": 232,
+   "other": 1,
+   "unknown": 5
+  },
+  "clean_lu": {}
+ },
+ "quantumbit-label": {
+  "n": 122,
+  "counts": {
+   "other": 43,
+   "nc": 53,
+   "clean": 26
+  },
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 23,
+   "http://creativecommons.org/licenses/by/2.5/it/": 2,
+   "http://creativecommons.org/licenses/by/4.0/": 1
+  }
+ },
+ "talesaboutnothing": {
+  "n": 356,
+  "counts": {
+   "nc": 107,
+   "other": 194,
+   "unknown": 41,
+   "clean": 14
+  },
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 4,
+   "http://creativecommons.org/licenses/by/3.0/": 10
+  }
+ },
+ "rawcoffinrec": {
+  "n": 352,
+  "counts": {
+   "unknown": 352
+  },
+  "clean_lu": {}
+ },
+ "diy-church": {
+  "n": 341,
+  "counts": {
+   "nc": 331,
+   "clean": 2,
+   "unknown": 6,
+   "other": 2
+  },
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/zero/1.0/": 2
+  }
+ },
+ "h-a-z-e": {
+  "n": 389,
+  "counts": {
+   "unknown": 13,
+   "nc": 371,
+   "other": 4,
+   "clean": 1
+  },
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/3.0/": 1
+  }
+ },
+ "killyourownarchive": {
+  "n": 500,
+  "counts": {
+   "unknown": 420,
+   "nc": 80
+  },
+  "clean_lu": {}
+ },
+ "raretunes": {
+  "n": 499,
+  "counts": {
+   "nc": 494,
+   "clean": 1,
+   "unknown": 3,
+   "other": 1
+  },
+  "clean_lu": {
+   "http://creativecommons.org/publicdomain/mark/1.0/": 1
+  }
+ },
+ "ende-records": {
+  "n": 630,
+  "counts": {
+   "unknown": 630
+  },
+  "clean_lu": {}
+ },
+ "love-torture": {
+  "n": 263,
+  "counts": {
+   "nc": 259,
+   "unknown": 4
+  },
+  "clean_lu": {}
+ },
+ "toucan": {
+  "n": 208,
+  "counts": {
+   "nc": 124,
+   "clean": 19,
+   "other": 63,
+   "unknown": 2
+  },
+  "clean_lu": {
+   "http://creativecommons.org/licenses/by/2.0/uk/": 7,
+   "http://creativecommons.org/licenses/by/3.0/": 9,
+   "http://creativecommons.org/licenses/by/2.5/": 3
+  }
+ },
+ "dna-production": {
+  "n": 208,
+  "counts": {
+   "nc": 203,
+   "unknown": 5
+  },
+  "clean_lu": {}
+ },
+ "mine-all-mine-records": {
+  "n": 200,
+  "counts": {
+   "nc": 193,
+   "unknown": 6,
+   "other": 1
+  },
+  "clean_lu": {}
+ }
+}

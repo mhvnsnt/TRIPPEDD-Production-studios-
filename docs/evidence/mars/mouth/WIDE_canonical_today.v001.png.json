@@ -1,0 +1,32 @@
+{
+  "artifact": "docs/evidence/mars/mouth/WIDE_canonical_today.v001.png",
+  "sha256": "7a5b1dafc228650d40d81d4b7e969426a7945d9437a149e9ec78a4e1fc2c2e54",
+  "bytes": 787955,
+  "resolution": [
+    700,
+    700
+  ],
+  "set": "mars/mouth",
+  "label": "WIDE_canonical_today",
+  "version": 1,
+  "producedAt": "2026-09-13T21:24:06Z",
+  "producingTool": "tools/character/mouth_proof.py",
+  "producingCommit": "74e112548c2f7549e616cdf20a09ff40376f7974",
+  "producingBranch": "claude/trippedd-toolchain-provisioning-8pccfc",
+  "blenderVersion": "",
+  "camera": "",
+  "viewTransform": "",
+  "shown": [],
+  "hidden": [],
+  "status": "PASS",
+  "note": "The canonical rig scored against YESTERDAY'S OWN GATE: 7 of 8 checks pass, and it BEATS yesterday on every anatomy check -- teeth 4.8% -> 8.7%, tongue 7.8% -> 8.4%, cavity 28.3% -> 28.5%. The single failure is REST: cavity 1.9% + tongue 0.1% where yesterday was 0.6% + 0.0%, i.e. his mouth is very slightly open at rest.",
+  "measurements": {
+    "wideTeethPct": "8.7",
+    "wideTonguePct": "8.4",
+    "wideCavityPct": "28.5",
+    "restCavityPct": "1.9",
+    "checksPassed": "7of8"
+  },
+  "sourceArtifact": "assets/rigs/MARS_FACE.blend",
+  "sourceSha256": "7c8b3d7073c240676530cca6d50b96662a042c6d053388fb340a5b74160765ea"
+}

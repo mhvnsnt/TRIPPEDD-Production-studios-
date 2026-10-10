@@ -195,46 +195,11 @@ run(FF + ["-f", "concat", "-safe", "0", "-i", f"{COMP}/v3-concat.txt",
           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-preset", "fast",
           f"{COMP}/v3-base.mp4"], "base concat")
 
-# 9. hits pass — flashes/starbursts/poof/speedlines/spin at computed times
-def win(t0, d=FLASH_D):
-    return f"between(t,{t0:.3f},{t0+d:.3f})"
-fc = "[0:v]format=yuv420p[base];"
-inputs = ["-i", f"{COMP}/v3-base.mp4",
-          "-loop", "1", "-t", str(FLASH_D), "-i", f"{FX}/flash_white.png",
-          "-loop", "1", "-t", str(FLASH_D), "-i", f"{FX}/flash_green.png",
-          "-i", f"{COMP}/v3-starburst-pop.mp4",
-          "-i", f"{COMP}/v3-poof-pop.mp4",
-          "-loop", "1", "-i", f"{FX}/speedlines.png"]
-fc += (f"[1:v]scale=1920:1080,format=yuva420p,"
-       f"fade=t=in:st=0:d=0.08:alpha=1,fade=t=out:st={FLASH_D-0.12}:d=0.12:alpha=1[fw];"
-       f"[2:v]scale=1920:1080,format=yuva420p,"
-       f"fade=t=in:st=0:d=0.08:alpha=1,fade=t=out:st={FLASH_D-0.12}:d=0.12:alpha=1[fg];"
-       f"[3:v]format=yuva420p[sb];[4:v]format=yuva420p[pf];"
-       f"[5:v]scale=1920:1080,format=yuva420p[sl];")
-cur = "base"
-# HIT1 eyes: white flash + starburst
-fc += (f"[{cur}][fw]overlay=0:0:enable='{win(H1)}'[b1];"
-       f"[b1][sb]overlay=(W-w)/2:(H-h)/2:enable='{win(H1, POP_D)}'[b2];"); cur = "b2"
-# HIT2 ears: white flash + poof pop (upper center)
-fc += (f"[{cur}][fw]overlay=0:0:enable='{win(H2)}'[b3];"
-       f"[b3][pf]overlay=(W-w)/2:(H-h)/2-260:enable='{win(H2, POP_D)}'[b4];"); cur = "b4"
-# HIT3 grin: green flash + starburst
-fc += (f"[{cur}][fg]overlay=0:0:enable='{win(H3)}'[b5];"
-       f"[b5][sb]overlay=(W-w)/2:(H-h)/2:enable='{win(H3, POP_D)}'[b6];"); cur = "b6"
-# HIT4 tracksuit: white flash + SPIN (clothes spin-morph gag) + starburst
-fc += (f"[{cur}]split=2[sp0][sp1];"
-       f"[sp0]trim=start={H4:.3f}:end={H4+0.6:.3f},setpts=PTS-STARTPTS,"
-       f"rotate='2*PI*t/0.6':fillcolor=black,format=yuv420p[spun];"
-       f"[sp1][spun]overlay=0:0:enable='{win(H4, 0.6)}'[b7];"
-       f"[b7][fw]overlay=0:0:enable='{win(H4)}'[b8];"
-       f"[b8][sb]overlay=(W-w)/2:(H-h)/2:enable='{win(H4, POP_D)}'[b9];"); cur = "b9"
-# HIT5 jump: white flash + speedlines through the hold
-fc += (f"[{cur}][fw]overlay=0:0:enable='{win(H5)}'[b10];"
-       f"[b10][sl]overlay=0:0:format=auto:enable='{win(T_JUMP, 1.5)}'[vout];")
-fc += "[vout]format=yuv420p[v]"
-run(FF + inputs + ["-filter_complex", fc, "-map", "[v]",
-          "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-preset", "fast",
-          f"{COMP}/v3-hits.mp4"], "HITS pass")
+# 9. hits pass — sequential (one hit per ffmpeg invocation).
+# The monolithic 11-overlay filter graph gets SIGKILLed on this box (~10s,
+# no OOM log); v3/run_hits_seq.py is the proven replacement (5 sequential
+# passes, ~2.5 min each). Old monolithic code preserved in git history.
+run(["python3", os.path.join(D, "run_hits_seq.py")], "HITS pass (sequential)")
 
 # 10. audio with impacts at computed hit times (built by build_audio_v3.py reading hittimes)
 run(["python3", os.path.join(D, "build_audio_v3.py")], "v3 audio")

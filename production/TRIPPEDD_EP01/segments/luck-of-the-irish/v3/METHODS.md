@@ -143,3 +143,16 @@ nothing about his body is ever generated in motion.
 - mascot_reveal.mp4: build command not preserved in scripts.
 - The planned per-keyframe hand-correction pass did not happen on s1–s4
   (verified by pixel diff); selection was the actual QC.
+
+## End-button rebuild (Porky-style sign-off) — 2026-10-10
+- Replaced the t52.5→end "THAT'S THE IRISH, FOLKS." text card with a Looney-Tunes-ending-style gag:
+  - **Rings plate**: drawn in PIL (build_endbutton.py) — concentric red/gold bullseye circles on near-black, 1920×1080. Drawn shapes, not lifted frames.
+  - **Pop-up**: the 100% mascot sticker (rebuilt from fx/sticker/mascot-cutout-raw.png + 7px white die-cut border) scales 0→1 with easeOutBack overshoot bounce while rising 160px, over 15 frames.
+  - **Timing** (121 frames @30fps = 4.033s): rings 0.8s → pop 0.5s → line 2.07s → hold 0.57s → hard cut to black (3 frames).
+  - **Line**: "Th-th-that's the Irish, folks!" — **TEMP VOICE, PLACEHOLDER**: ElevenLabs "Callum - Husky Trickster" (characters_animation), eleven_v3 model, peak-normalized to -1.5dB. Raw take saved as endbutton-line-temp.mp3. SWAPPABLE for the owner's own voice — re-run the audio build step in build_endbutton.py with the new line file.
+  - Splice: A=[0,44.466667) (video stream copy, 1334 frames exact; audio atrim+re-encoded AAC 128k to hit the exact boundary — transparent, higher bitrate than source) + W=[44.466667,56.533333) re-encoded (new disclaimer 241f + endseg 121f). Total 56.556s.
+- **AI vs manual, precisely**: rings drawn by hand-authored code (PIL shapes); mascot pop animation is keyframed scaling of the AI-image-edit keyframe cutout (same provenance as the other keyframes); the VOICE is AI TTS (ElevenLabs) and is explicitly TEMP.
+
+## Disclaimer-leak fix — 2026-10-10
+- The earlier disclaimer splice left 5 frames (44.4667–44.6333s) of the OLD 13-disclaimers card flashing before the new single disclaimer. Found by dense frame extraction + white-pixel classification + own-eyes verification.
+- Fixed by dragging the new single-disclaimer card backwards: the [44.466667, 52.5) window is now 100% the new card (241 frames from disclaimer-card-idx0.mp4 + 1-frame hold), hard-cut from the slogan card. Frame-by-frame QC confirms zero old-card frames.

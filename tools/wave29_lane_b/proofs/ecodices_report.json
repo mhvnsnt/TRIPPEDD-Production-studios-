@@ -1,0 +1,19 @@
+{
+ "tool": "e-codices IIIF Image API",
+ "base": "https://www.e-codices.unifr.ch/loris",
+ "identifier": "csg/csg-0359/csg-0359_000a.jp2",
+ "manuscript": "Cod. Sang. 359 (Stiftsbibliothek St. Gallen, c. 920/930), folio 000a",
+ "info_json": {
+  "context": "http://iiif.io/api/image/2/context.json",
+  "width": 3328,
+  "height": 4992,
+  "profile": "http://iiif.io/api/image/2/level2.json"
+ },
+ "thumbnail": {
+  "file": "ecodices_csg0359_000a_thumb.jpg",
+  "bytes": 4298,
+  "magic": "ffd8ff (JPEG)"
+ },
+ "keyless": true,
+ "result": "PASS"
+}

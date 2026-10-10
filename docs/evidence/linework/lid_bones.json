@@ -1,0 +1,85 @@
+{
+  "eye_L": {
+    "bones": [
+      "lid_T_L_00",
+      "lid_T_L_01",
+      "lid_T_L_02",
+      "lid_T_L_03",
+      "lid_T_L_04",
+      "lid_T_L_05",
+      "lid_T_L_06",
+      "lid_T_L_07",
+      "lid_T_L_08",
+      "lid_B_L_00",
+      "lid_B_L_01",
+      "lid_B_L_02",
+      "lid_B_L_03",
+      "lid_B_L_04",
+      "lid_B_L_05",
+      "lid_B_L_06",
+      "lid_B_L_07",
+      "lid_B_L_08"
+    ],
+    "eyeCentre": [
+      -0.15341,
+      -0.21019,
+      0.42651
+    ],
+    "radiusMM": 12.3
+  },
+  "eye_R": {
+    "bones": [
+      "lid_T_R_00",
+      "lid_T_R_01",
+      "lid_T_R_02",
+      "lid_T_R_03",
+      "lid_T_R_04",
+      "lid_T_R_05",
+      "lid_T_R_06",
+      "lid_T_R_07",
+      "lid_T_R_08",
+      "lid_B_R_00",
+      "lid_B_R_01",
+      "lid_B_R_02",
+      "lid_B_R_03",
+      "lid_B_R_04",
+      "lid_B_R_05",
+      "lid_B_R_06",
+      "lid_B_R_07",
+      "lid_B_R_08"
+    ],
+    "eyeCentre": [
+      0.10667,
+      -0.20639,
+      0.43921
+    ],
+    "radiusMM": 12.3
+  },
+  "blinkAngleDeg": {
+    "L": 23.91,
+    "R": 25.58
+  },
+  "method": "Rigify's approach: lid deform bones rooted at the eyeball centre, so the lid sweeps ALONG the globe and cannot pass through it. The blink angle is the angle the upper margin subtends at that centre -- read off the measured contours, not tuned.",
+  "driveTest": {
+    "status": "DOES_NOT_CLOSE_YET",
+    "measured": {
+      "eyeL": {
+        "open": 150,
+        "at23.9deg": 108,
+        "at35.9deg": 86,
+        "of": 231
+      },
+      "eyeR": {
+        "open": 150,
+        "at25.6deg": 149,
+        "at38.4deg": 135,
+        "of": 231
+      }
+    },
+    "twoKnownCauses": [
+      "WEIGHTS ARE NOT EXCLUSIVE. The lid groups were added with REPLACE, which sets the lid weight but does NOT remove the head/jaw weight those vertices already carry. Armature deform normalises, so a lid bone at w competes with head at 1.0 and only ever gets w/(1+w) of the motion. The head weight has to be reduced by the lid weight on those vertices.",
+      "ROTATION IS IN THE WRONG SPACE. pose_bone.rotation_quaternion is the bone's LOCAL space. I built the rotation from the WORLD fissure axis and assigned it directly, so each bone turned about its own rest axis instead of about the eye's lateral axis. It needs converting through the bone's rest matrix, or the bones need rolling onto that axis when they are created."
+    ],
+    "whyThisIsStillTheRightDirection": "The angle is READ from the geometry (23.9 / 25.6 deg, near-symmetric) rather than tuned, and a lid rooted at the eye centre cannot pass through the globe at any angle. Both defects above are wiring, not the approach."
+  }
+}

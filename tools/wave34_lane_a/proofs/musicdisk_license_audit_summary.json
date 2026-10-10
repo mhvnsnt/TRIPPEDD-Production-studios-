@@ -1,0 +1,32 @@
+{
+  "tool": "musicdisk_license_audit.py",
+  "wave": "34 Lane A",
+  "ran_at_utc": "2026-10-08T06:17:29Z",
+  "results": {
+    "demozoo_api_v1": {
+      "ok": true,
+      "url": "https://demozoo.org/api/v1/productions/?production_type=7",
+      "http_status": 200,
+      "artifact": "proofs/demozoo_musicdisk_api.json",
+      "result_count": 7458,
+      "type_discovery": {
+        "url": "https://demozoo.org/api/v1/production_types/",
+        "musicdisk_id": 7,
+        "n_types": 57
+      },
+      "note": "production_type is filtered by numeric id (7 = Musicdisk); name slug returns HTTP 400"
+    },
+    "StSound_LICENSE": {
+      "ok": true,
+      "url": "https://raw.githubusercontent.com/arnaud-carre/StSound/master/LICENSE",
+      "artifact": "proofs/StSound_LICENSE.txt",
+      "mit_marker": true
+    },
+    "sndh_player_LICENSE": {
+      "ok": true,
+      "url": "https://raw.githubusercontent.com/arnaud-carre/sndh-player/master/LICENSE",
+      "artifact": "proofs/sndh_player_LICENSE.txt",
+      "mit_marker": true
+    }
+  }
+}

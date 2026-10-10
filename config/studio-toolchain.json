@@ -2,33 +2,217 @@
   "schemaVersion": 6,
   "name": "TRIPPEDD Production Studios Open-Source Production Stack",
   "principle": "Every production capability must resolve to a real executable, library, service, project format, generated artifact, or explicit human gate. No fake AVAILABLE state.",
-  "required": ["ffmpeg", "ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "otio"],
-  "optional": ["blender", "openimageio", "openexr", "imagemagick", "sox", "rubberband", "kdenlive", "mlt", "frei0r", "vapoursynth", "zimg", "natron", "opencolorio", "openassetio", "opencue", "demucs", "flamenco", "silero-vad", "pyannote-audio", "bento4", "mkvtoolnix", "audacity", "vmaf", "svt-av1", "kitsu", "ayon", "pyblish", "quadpype", "stalker", "ardour", "pipewire", "carla", "openobserve", "argo-workflows", "lakefs"],
-  "interchange": {"editorial": "OpenTimelineIO", "assets": "OpenAssetIO", "color": "OpenColorIO", "media": "FFmpeg/FFprobe", "images": "OpenImageIO/OpenEXR", "videoProcessing": "VapourSynth", "effects": "frei0r", "sceneAndAssetGraph": "OpenUSD"},
+  "required": [
+    "ffmpeg",
+    "ffprobe",
+    "opencv",
+    "pyscenedetect",
+    "whisper",
+    "tesseract",
+    "otio"
+  ],
+  "optional": [
+    "blender",
+    "openimageio",
+    "openexr",
+    "imagemagick",
+    "sox",
+    "rubberband",
+    "kdenlive",
+    "mlt",
+    "frei0r",
+    "vapoursynth",
+    "zimg",
+    "natron",
+    "opencolorio",
+    "openassetio",
+    "opencue",
+    "demucs",
+    "flamenco",
+    "silero-vad",
+    "pyannote-audio",
+    "bento4",
+    "mkvtoolnix",
+    "audacity",
+    "vmaf",
+    "svt-av1",
+    "kitsu",
+    "ayon",
+    "pyblish",
+    "quadpype",
+    "stalker",
+    "ardour",
+    "pipewire",
+    "carla",
+    "openobserve",
+    "argo-workflows",
+    "lakefs",
+    "mediainfo",
+    "exiftool",
+    "bwfmetaedit",
+    "olive",
+    "shotcut",
+    "aubio",
+    "usd",
+    "materialx",
+    "openvdb",
+    "embree",
+    "zou",
+    "pytorch",
+    "onnxruntime",
+    "prometheus",
+    "grafana",
+    "opentelemetry",
+    "opentoonz"
+  ],
+  "interchange": {
+    "editorial": "OpenTimelineIO",
+    "assets": "OpenAssetIO",
+    "color": "OpenColorIO",
+    "media": "FFmpeg/FFprobe",
+    "images": "OpenImageIO/OpenEXR",
+    "videoProcessing": "VapourSynth",
+    "effects": "frei0r",
+    "sceneAndAssetGraph": "OpenUSD",
+    "scene": "OpenUSD",
+    "materials": "MaterialX",
+    "audio": "BWF/WAV"
+  },
   "backends": {
     "deterministicMedia": "ffmpeg",
-    "mediaInspection": ["ffprobe", "mediainfo", "bento4", "mkvtoolnix"],
-    "analysis": ["ffprobe", "opencv", "pyscenedetect", "whisper", "tesseract", "openimageio", "openexr", "silero-vad", "pyannote-audio", "cvat", "fiftyone"],
+    "mediaInspection": [
+      "ffprobe",
+      "mediainfo",
+      "bento4",
+      "mkvtoolnix"
+    ],
+    "analysis": [
+      "ffprobe",
+      "opencv",
+      "pyscenedetect",
+      "whisper",
+      "tesseract",
+      "openimageio",
+      "openexr",
+      "silero-vad",
+      "pyannote-audio",
+      "cvat",
+      "fiftyone",
+      "mediainfo",
+      "exiftool"
+    ],
     "procedural3D": "blender",
-    "editorial": ["kdenlive", "mlt", "natron"],
-    "videoProcessing": ["vapoursynth", "zimg", "imagemagick"],
+    "editorial": [
+      "kdenlive",
+      "mlt",
+      "natron",
+      "olive",
+      "shotcut"
+    ],
+    "videoProcessing": [
+      "vapoursynth",
+      "zimg",
+      "imagemagick"
+    ],
     "effects": "frei0r",
     "colorManagement": "opencolorio",
-    "assetInterchange": ["openassetio", "openusd"],
-    "assetTracking": ["kitsu", "ayon", "stalker", "quadpype"],
-    "publishing": ["pyblish", "openassetio"],
-    "distributedRendering": ["flamenco", "opencue", "argo-workflows"],
-    "audioStudio": ["ardour", "pipewire", "carla", "sox", "rubberband", "demucs", "audacity"],
-    "imageUtility": ["openimageio", "openexr", "imagemagick"],
-    "perceptualQC": ["vmaf", "qctools", "mediaConch"],
-    "deliveryCodecs": ["svt-av1"],
-    "observability": ["opentelemetry", "prometheus", "grafana", "loki", "tempo", "openobserve"],
-    "objectStorage": ["minio", "lakefs"]
+    "assetInterchange": [
+      "openassetio",
+      "openusd"
+    ],
+    "assetTracking": [
+      "kitsu",
+      "ayon",
+      "stalker",
+      "quadpype"
+    ],
+    "publishing": [
+      "pyblish",
+      "openassetio"
+    ],
+    "distributedRendering": [
+      "flamenco",
+      "opencue",
+      "argo-workflows"
+    ],
+    "audioStudio": [
+      "ardour",
+      "pipewire",
+      "carla",
+      "sox",
+      "rubberband",
+      "demucs",
+      "audacity"
+    ],
+    "imageUtility": [
+      "openimageio",
+      "openexr",
+      "imagemagick"
+    ],
+    "perceptualQC": [
+      "vmaf",
+      "qctools",
+      "mediaConch"
+    ],
+    "deliveryCodecs": [
+      "svt-av1"
+    ],
+    "observability": [
+      "opentelemetry",
+      "prometheus",
+      "grafana",
+      "loki",
+      "tempo",
+      "openobserve"
+    ],
+    "objectStorage": [
+      "minio",
+      "lakefs"
+    ],
+    "traditional2D": "opentoonz",
+    "editorialRender": "mlt",
+    "compositing": "natron",
+    "sceneInterchange": "usd",
+    "materialInterchange": "materialx",
+    "audio": [
+      "audacity",
+      "ardour",
+      "rubberband",
+      "aubio",
+      "demucs"
+    ],
+    "productionTracking": [
+      "kitsu",
+      "zou"
+    ]
   },
-  "episodeCuts": {"autonomous": "AUTONOMOUS", "storyRunner": "SHOWRUNNER", "sharedEvidencePolicy": "Both cuts consume the same physical-source evidence model; editorial interpretation remains separate."},
-  "productionPath": ["physical-source-ingest", "source-evidence-analysis", "asset-tracking-and-provenance", "editorial-evidence-selection", "otio-timeline", "generated-material-with-provenance", "deterministic-media-assembly", "technical-qc", "perceptual-qc-when-reference-exists", "artifact-publish", "human-editorial-lock", "showrunner-greenlight"],
+  "episodeCuts": {
+    "autonomous": "AUTONOMOUS",
+    "storyRunner": "SHOWRUNNER",
+    "sharedEvidencePolicy": "Both cuts consume the same physical-source evidence model; editorial interpretation remains separate."
+  },
+  "productionPath": [
+    "physical-source-ingest",
+    "source-evidence-analysis",
+    "asset-tracking-and-provenance",
+    "editorial-evidence-selection",
+    "otio-timeline",
+    "generated-material-with-provenance",
+    "deterministic-media-assembly",
+    "technical-qc",
+    "perceptual-qc-when-reference-exists",
+    "artifact-publish",
+    "human-editorial-lock",
+    "showrunner-greenlight"
+  ],
   "architecture": {
-    "executionBackends": ["github-hosted", "self-hosted", "flamenco", "opencue", "argo-workflows"],
+    "executionBackends": [
+      "github-hosted",
+      "self-hosted",
+      "flamenco",
+      "opencue",
+      "argo-workflows"
+    ],
     "cachePolicy": "Content-addressed deterministic artifacts are immutable and reusable across execution backends.",
     "failurePolicy": "Independent tasks retry without invalidating successful artifacts; assembly begins only after manifest validation.",
     "provenance": "Every generated media artifact records source evidence, generator identity, toolchain versions, and checksums.",
@@ -36,5 +220,21 @@
     "qcPolicy": "Technical media probes are mandatory; VMAF is reference-gated and must never be treated as a synthetic pass when no reference exists.",
     "publishPolicy": "Publishers must validate artifact identity, bytes, media streams, provenance, and resumable checkpoints before promotion."
   },
-  "policy": {"optionalToolsMayBeAbsent": true, "absenceMustBeExplicit": true, "archivedProjectsMustNotBeBlindlyProvisioned": true, "humanEditorialLockRequiredForFinalMaster": true, "generatedMaterialMustCarryProvenance": true, "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true, "openSourceFirst": true, "optionalAccelerationMustBeBenchmarked": true, "noToolReplacementWithoutDeterministicFallback": true, "modelLicensesMustBeRecorded": true, "thirdPartyAssetsMustCarryLicenseMetadata": true, "candidatePromotionRequiresInstallSmokeRealInputValidationProvenanceAndResumeEvidence": true}
+  "policy": {
+    "optionalToolsMayBeAbsent": true,
+    "absenceMustBeExplicit": true,
+    "archivedProjectsMustNotBeBlindlyProvisioned": true,
+    "humanEditorialLockRequiredForFinalMaster": true,
+    "generatedMaterialMustCarryProvenance": true,
+    "physicalSourceTimelineIsAuthoritativeForPhysicalEvents": true,
+    "openSourceFirst": true,
+    "optionalAccelerationMustBeBenchmarked": true,
+    "noToolReplacementWithoutDeterministicFallback": true,
+    "modelLicensesMustBeRecorded": true,
+    "thirdPartyAssetsMustCarryLicenseMetadata": true,
+    "candidatePromotionRequiresInstallSmokeRealInputValidationProvenanceAndResumeEvidence": true,
+    "thirdPartySourceIsNotVendoredByDefault": true,
+    "heavyBinariesUseReproducibleProvisioning": true,
+    "productionPromotionRequiresRealInputEvidence": true
+  }
 }

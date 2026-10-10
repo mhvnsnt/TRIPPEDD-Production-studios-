@@ -9,10 +9,18 @@ function parseTime(value: unknown): number | undefined {
   if (typeof value === 'number' && Number.isFinite(value)) return value;
   const text = String(value ?? '').trim();
   if (!text) return undefined;
-  if (/^\d+(?:\.\d+)?$/.test(text)) return Number(text);
+  const numeric = Number(text);
+  if (Number.isFinite(numeric)) return numeric;
   const parts = text.split(':').map(Number);
-  if (parts.length !== 3 || parts.some(part => !Number.isFinite(part))) return undefined;
+  if (parts.some(part => !Number.isFinite(part)) || parts.length < 2) return undefined;
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
   return parts[0] * 3600 + parts[1] * 60 + parts[2];
+}
+
+function sceneRange(scene: any): { start?: number; end?: number } {
+  const start = parseTime(scene?.startTime ?? scene?.['Start Time (seconds)'] ?? scene?.['Start Time'] ?? scene?.start ?? scene?.['Start']);
+  const end = parseTime(scene?.endTime ?? scene?.['End Time (seconds)'] ?? scene?.['End Time'] ?? scene?.end ?? scene?.['End']);
+  return { start, end };
 }
 
 export function discoverComedy(input: { sourceFileId?: string; transcript?: { segments?: Array<{ start?: number; end?: number; text?: string }> } | null; scenes?: any[]; ocr?: string; }): GagCandidate[] {
@@ -33,15 +41,25 @@ export function discoverComedy(input: { sourceFileId?: string; transcript?: { se
     if (signals.length) candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: text.length > 80 ? `${text.slice(0, 77)}...` : text, score: clamp(signals.reduce((sum, signal) => sum + signal.score, 0) / signals.length + (signals.length > 1 ? 0.12 : 0)), signals, tags: [...new Set(signals.map(signal => signal.type.toLowerCase()))], callbackKeys: extractCallbackKeys(text), reviewState: 'MACHINE_SUGGESTED' });
   }
 
-  if (!candidates.length && input.scenes?.length) {
-    for (const scene of input.scenes) {
-      const start = parseTime(scene['Start Time'] ?? scene['Start Timecode'] ?? scene.start ?? scene.startTime);
-      const end = parseTime(scene['End Time'] ?? scene['End Timecode'] ?? scene.end ?? scene.endTime);
-      if (start === undefined || end === undefined || end <= start) continue;
-      const duration = end - start;
-      if (duration < 0.5) continue;
-      const signal: ComedySignal = { id: randomUUID(), type: 'CONTINUITY', score: 0.22, startTime: start, endTime: end, evidence: `Scene boundary evidence (${duration.toFixed(2)}s scene); semantic comedy evidence unavailable and editorial review required.`, source: 'SCENE' };
-      candidates.push({ id: randomUUID(), sourceFileId: input.sourceFileId, title: `Scene select ${start.toFixed(2)}–${end.toFixed(2)}s`, score: 0.22, signals: [signal], tags: ['scene-evidence', 'editorial-review-required'], callbackKeys: [], reviewState: 'MACHINE_SUGGESTED' });
+  // A transcript is not the only source of editorial evidence. When Whisper is
+  // unavailable or returns no segments, PySceneDetect still gives us physical,
+  // time-bounded source regions. Preserve those regions as low-confidence
+  // machine suggestions instead of declaring the episode unevidenced.
+  if (!candidates.length && Array.isArray(input.scenes) && input.scenes.length) {
+    for (let index = 0; index < input.scenes.length; index++) {
+      const range = sceneRange(input.scenes[index]);
+      if (range.start === undefined || range.end === undefined || range.end <= range.start) continue;
+      const duration = range.end - range.start;
+      candidates.push({
+        id: randomUUID(),
+        sourceFileId: input.sourceFileId,
+        title: `Scene ${index + 1} · ${duration.toFixed(1)}s evidence window`,
+        score: clamp(0.30 + Math.min(duration, 30) / 300),
+        signals: [{ id: randomUUID(), type: 'VISUAL_GAG', score: 0.30, startTime: range.start, endTime: range.end, evidence: `Shot-boundary evidence from PySceneDetect; no transcript-derived gag claim was available.`, source: 'SCENE' }],
+        tags: ['scene-evidence', 'machine-select', 'no-transcript'],
+        callbackKeys: [],
+        reviewState: 'MACHINE_SUGGESTED',
+      });
     }
   }
 

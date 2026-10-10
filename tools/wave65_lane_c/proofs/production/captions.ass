@@ -1,0 +1,115 @@
+[Script Info]
+Title: wave65 production captions
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SPEAKER_00,Noto Sans,26,&H0000D7FF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,0.5,2,30,30,40,1
+Style: SPEAKER_01,Noto Sans,26,&H00FFE500,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,0.5,2,30,30,40,1
+Style: SPEAKER_02,Noto Sans,26,&H00C87AFF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,0.5,2,30,30,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:11.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 0.0s - 11.2s
+Dialogue: 0,0:00:11.25,0:00:11.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 11.2s - 11.5s
+Dialogue: 0,0:00:11.50,0:00:11.75,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 11.5s - 11.8s
+Dialogue: 0,0:00:11.75,0:00:12.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 11.8s - 12.2s
+Dialogue: 0,0:00:12.25,0:00:15.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 12.2s - 15.0s
+Dialogue: 0,0:00:15.00,0:00:15.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 15.0s - 15.5s
+Dialogue: 0,0:00:15.50,0:00:31.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 15.5s - 31.2s
+Dialogue: 0,0:00:31.75,0:00:38.75,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 31.8s - 38.8s
+Dialogue: 0,0:00:39.25,0:00:41.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 39.2s - 41.2s
+Dialogue: 0,0:00:43.75,0:00:48.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 43.8s - 48.0s
+Dialogue: 0,0:00:49.75,0:00:53.75,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 49.8s - 53.8s
+Dialogue: 0,0:00:54.00,0:00:58.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 54.0s - 58.0s
+Dialogue: 0,0:00:58.00,0:01:01.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 58.0s - 61.8s
+Dialogue: 0,0:01:01.75,0:01:18.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 61.8s - 78.2s
+Dialogue: 0,0:01:18.25,0:01:19.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 78.2s - 79.5s
+Dialogue: 0,0:01:19.50,0:01:34.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 79.5s - 94.8s
+Dialogue: 0,0:01:34.75,0:01:37.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 94.8s - 97.5s
+Dialogue: 0,0:01:37.75,0:01:44.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 97.8s - 104.2s
+Dialogue: 0,0:01:44.25,0:01:44.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 104.2s - 104.8s
+Dialogue: 0,0:01:44.75,0:01:45.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 104.8s - 105.5s
+Dialogue: 0,0:01:45.50,0:01:48.25,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 105.5s - 108.2s
+Dialogue: 0,0:01:48.25,0:01:49.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 108.2s - 109.0s
+Dialogue: 0,0:01:49.00,0:01:50.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 109.0s - 110.5s
+Dialogue: 0,0:01:50.50,0:01:52.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 110.5s - 112.2s
+Dialogue: 0,0:01:52.25,0:01:53.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 112.2s - 113.8s
+Dialogue: 0,0:01:53.75,0:01:54.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 113.8s - 114.0s
+Dialogue: 0,0:01:54.00,0:01:55.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 114.0s - 115.5s
+Dialogue: 0,0:01:55.50,0:01:56.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 115.5s - 116.2s
+Dialogue: 0,0:01:56.25,0:01:59.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 116.2s - 119.0s
+Dialogue: 0,0:01:59.00,0:01:59.50,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 119.0s - 119.5s
+Dialogue: 0,0:01:59.50,0:02:01.25,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 119.5s - 121.2s
+Dialogue: 0,0:02:01.25,0:02:03.00,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 121.2s - 123.0s
+Dialogue: 0,0:02:03.00,0:02:05.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 123.0s - 125.0s
+Dialogue: 0,0:02:05.00,0:02:05.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 125.0s - 125.2s
+Dialogue: 0,0:02:05.25,0:02:05.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 125.2s - 125.8s
+Dialogue: 0,0:02:05.75,0:02:07.00,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 125.8s - 127.0s
+Dialogue: 0,0:02:07.00,0:02:10.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 127.0s - 130.0s
+Dialogue: 0,0:02:10.00,0:02:19.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 130.0s - 139.5s
+Dialogue: 0,0:02:19.50,0:02:20.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 139.5s - 140.0s
+Dialogue: 0,0:02:20.00,0:02:40.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 140.0s - 160.2s
+Dialogue: 0,0:02:40.25,0:02:42.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 160.2s - 162.0s
+Dialogue: 0,0:02:42.00,0:02:42.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 162.0s - 162.2s
+Dialogue: 0,0:02:42.25,0:02:44.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 162.2s - 164.8s
+Dialogue: 0,0:02:44.75,0:02:45.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 164.8s - 165.0s
+Dialogue: 0,0:02:45.00,0:02:49.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 165.0s - 169.0s
+Dialogue: 0,0:02:49.00,0:02:49.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 169.0s - 169.2s
+Dialogue: 0,0:02:49.25,0:02:50.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 169.2s - 170.0s
+Dialogue: 0,0:02:50.00,0:02:52.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 170.0s - 172.8s
+Dialogue: 0,0:02:52.75,0:02:54.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 172.8s - 174.0s
+Dialogue: 0,0:02:54.00,0:02:55.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 174.0s - 175.8s
+Dialogue: 0,0:02:55.75,0:02:58.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 175.8s - 178.5s
+Dialogue: 0,0:02:58.50,0:03:10.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 178.5s - 190.2s
+Dialogue: 0,0:03:10.25,0:03:15.50,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 190.2s - 195.5s
+Dialogue: 0,0:03:15.50,0:03:15.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 195.5s - 195.8s
+Dialogue: 0,0:03:15.75,0:03:17.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 195.8s - 197.0s
+Dialogue: 0,0:03:17.00,0:03:17.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 197.0s - 197.5s
+Dialogue: 0,0:03:17.50,0:03:18.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 197.5s - 198.0s
+Dialogue: 0,0:03:18.00,0:03:18.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 198.0s - 198.5s
+Dialogue: 0,0:03:18.50,0:03:22.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 198.5s - 202.2s
+Dialogue: 0,0:03:22.25,0:03:22.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 202.2s - 202.5s
+Dialogue: 0,0:03:22.50,0:03:24.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 202.5s - 204.2s
+Dialogue: 0,0:03:24.25,0:03:24.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 204.2s - 204.8s
+Dialogue: 0,0:03:24.75,0:03:25.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 204.8s - 205.0s
+Dialogue: 0,0:03:25.00,0:03:27.00,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 205.0s - 207.0s
+Dialogue: 0,0:03:27.00,0:03:28.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 207.0s - 208.5s
+Dialogue: 0,0:03:28.50,0:03:28.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 208.5s - 208.8s
+Dialogue: 0,0:03:28.75,0:03:29.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 208.8s - 209.0s
+Dialogue: 0,0:03:29.00,0:03:30.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 209.0s - 210.5s
+Dialogue: 0,0:03:30.50,0:03:31.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 210.5s - 211.8s
+Dialogue: 0,0:03:31.75,0:03:32.00,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 211.8s - 212.0s
+Dialogue: 0,0:03:32.00,0:03:32.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 212.0s - 212.5s
+Dialogue: 0,0:03:32.50,0:03:34.00,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 212.5s - 214.0s
+Dialogue: 0,0:03:34.00,0:03:35.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 214.0s - 215.0s
+Dialogue: 0,0:03:35.00,0:03:37.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 215.0s - 217.2s
+Dialogue: 0,0:03:37.25,0:03:38.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 217.2s - 218.8s
+Dialogue: 0,0:03:38.75,0:03:39.50,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 218.8s - 219.5s
+Dialogue: 0,0:03:39.50,0:03:41.25,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 219.5s - 221.2s
+Dialogue: 0,0:03:41.25,0:03:42.00,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 221.2s - 222.0s
+Dialogue: 0,0:03:42.00,0:03:45.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 222.0s - 225.5s
+Dialogue: 0,0:03:45.50,0:03:54.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 225.5s - 234.8s
+Dialogue: 0,0:03:55.00,0:03:56.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 235.0s - 236.8s
+Dialogue: 0,0:03:56.75,0:03:58.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 236.8s - 238.2s
+Dialogue: 0,0:03:58.25,0:04:02.00,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 238.2s - 242.0s
+Dialogue: 0,0:04:02.00,0:04:02.50,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 242.0s - 242.5s
+Dialogue: 0,0:04:02.50,0:04:02.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 242.5s - 242.8s
+Dialogue: 0,0:04:02.75,0:04:09.75,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 242.8s - 249.8s
+Dialogue: 0,0:04:09.75,0:04:15.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 249.8s - 255.0s
+Dialogue: 0,0:04:15.00,0:04:15.50,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 255.0s - 255.5s
+Dialogue: 0,0:04:15.50,0:04:18.50,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 255.5s - 258.5s
+Dialogue: 0,0:04:18.50,0:04:18.75,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 258.5s - 258.8s
+Dialogue: 0,0:04:18.75,0:04:27.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 258.8s - 267.8s
+Dialogue: 0,0:04:27.75,0:04:28.00,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 267.8s - 268.0s
+Dialogue: 0,0:04:28.00,0:04:30.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 268.0s - 270.8s
+Dialogue: 0,0:04:30.75,0:04:34.50,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 270.8s - 274.5s
+Dialogue: 0,0:04:34.50,0:04:35.75,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 274.5s - 275.8s
+Dialogue: 0,0:04:35.75,0:04:53.50,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 275.8s - 293.5s
+Dialogue: 0,0:04:53.50,0:04:54.25,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 293.5s - 294.2s
+Dialogue: 0,0:04:54.75,0:04:56.25,SPEAKER_01,,0,0,0,,[{\b1}SPEAKER_01{\b0}] 294.8s - 296.2s
+Dialogue: 0,0:04:56.25,0:04:56.75,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 296.2s - 296.8s
+Dialogue: 0,0:04:56.75,0:04:57.00,SPEAKER_02,,0,0,0,,[{\b1}SPEAKER_02{\b0}] 296.8s - 297.0s
+Dialogue: 0,0:04:57.00,0:05:00.25,SPEAKER_00,,0,0,0,,[{\b1}SPEAKER_00{\b0}] 297.0s - 300.2s

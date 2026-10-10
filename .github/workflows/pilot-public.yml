@@ -18,9 +18,13 @@ on:
       - scripts/qc-ep01.ts
       - scripts/build-bastard-tag-2d.ts
 
-# Do not serialize this workflow at the workflow level. GitHub can leave a replacement
-# run pending with zero materialized jobs behind a stale concurrency lock. The pipeline
-# is already content-addressed and its expensive stages are independently cached.
+# NOTE (kept from 2026-09-09): GitHub can leave a replacement run pending with zero
+# materialized jobs behind a stale concurrency lock. If runs stall behind this group,
+# consider removing the workflow-level concurrency block below — the pipeline is
+# content-addressed and its expensive stages are independently cached.
+concurrency:
+  group: ep01-showrunner-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: read

@@ -10,6 +10,7 @@ import bpy
 import math
 import os
 import shutil
+import time
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../"))
 OUTPUT_DIR = os.path.join(ROOT, "production", "EP01", "generated", "blender")
@@ -100,6 +101,34 @@ scene["TRIPPEDD_FRAME_RANGE"] = f"{FRAME_START}-{FRAME_END}"
 chunk_blend = os.path.join(FRAME_DIR, f"subjectivity-{FRAME_START:04d}-{FRAME_END:04d}.blend")
 canonical_blend = os.path.join(OUTPUT_DIR, "ep01_subjectivity.blend")
 
+expected = FRAME_END - FRAME_START + 1
+started = time.time()
+
+
+def progress_notice(frame, event):
+    elapsed = max(time.time() - started, 0.001)
+    completed = frame - FRAME_START + 1
+    rate = completed / elapsed
+    remaining = expected - completed
+    eta = remaining / rate if rate > 0 else 0
+    percent = completed * 100.0 / expected
+    width = 20
+    filled = min(width, int(percent / 100.0 * width))
+    bar = "#" * filled + "-" * (width - filled)
+    bytes_done = sum(
+        os.path.getsize(os.path.join(FRAME_DIR, name))
+        for name in os.listdir(FRAME_DIR)
+        if name.startswith("frame-") and name.endswith(".jpg") and os.path.isfile(os.path.join(FRAME_DIR, name))
+    )
+    print(
+        f"PRODUCTION_PROGRESS stage=subjectivity status=RUNNING "
+        f"progress=[{bar}] {percent:.1f}% work={completed}/{expected} "
+        f"elapsed={elapsed:.1f}s rate={rate:.3f} frames/s eta={eta:.1f}s "
+        f"frame={frame} event={event} bytes={bytes_done}",
+        flush=True,
+    )
+
+
 def missing_ranges(start, end):
     missing = []
     for frame in range(start, end + 1):
@@ -122,6 +151,15 @@ ranges = missing_ranges(FRAME_START, FRAME_END)
 print(f"[subjectivity] missing ranges: {ranges or 'none'}", flush=True)
 original_start, original_end = scene.frame_start, scene.frame_end
 
+# Report already-rendered frames so progress telemetry accounts for resumed work.
+for frame in range(FRAME_START, FRAME_END + 1):
+    frame_path = os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")
+    if os.path.isfile(frame_path) and os.path.getsize(frame_path) > 0:
+        print(f"[subjectivity] checkpoint exists: frame {frame}")
+        progress_notice(frame, "checkpoint-hit")
+
+progress_notice(FRAME_START - 1, "render-start")
+
 for start, end in ranges:
     scene.frame_start = start
     scene.frame_end = end
@@ -138,6 +176,7 @@ for start, end in ranges:
     bpy.ops.wm.save_as_mainfile(filepath=chunk_blend)
     shutil.copy2(chunk_blend, canonical_blend)
     print(f"[subjectivity] completed range {start}-{end}", flush=True)
+    progress_notice(end, "range-complete")
 
 scene.frame_start, scene.frame_end = original_start, original_end
 scene["TRIPPEDD_LAST_COMPLETED_FRAME"] = FRAME_END
@@ -149,9 +188,14 @@ actual = sum(
     if os.path.isfile(os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg"))
     and os.path.getsize(os.path.join(FRAME_DIR, f"frame-{frame:04d}.jpg")) > 0
 )
-expected = FRAME_END - FRAME_START + 1
 if actual != expected:
     raise RuntimeError(f"Subjectivity checkpoint count mismatch: {actual}/{expected}")
 if not os.path.isfile(canonical_blend) or os.path.getsize(canonical_blend) == 0:
     raise RuntimeError(f"Canonical subjectivity blend missing: {canonical_blend}")
+elapsed = max(time.time() - started, 0.001)
+print(
+    f"PRODUCTION_FINAL stage=subjectivity status=COMPLETED progress=[####################] 100.0% "
+    f"work={expected}/{expected} elapsed={elapsed:.1f}s rate={expected/elapsed:.3f} frames/s eta=0s",
+    flush=True,
+)
 print(f"[subjectivity] complete: frames {FRAME_START}-{FRAME_END}; canonical blend ready", flush=True)

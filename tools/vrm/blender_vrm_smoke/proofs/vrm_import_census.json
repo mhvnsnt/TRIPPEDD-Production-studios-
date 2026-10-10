@@ -1,0 +1,23 @@
+{
+  "addon": "io_scene_vrm (VRM-Addon-for-Blender v4.7.2)",
+  "addon_enabled": true,
+  "vrm_file": "sample.vrm",
+  "armatures": [
+    {
+      "name": "Armature",
+      "bone_count": 167,
+      "has_humanoid_root": true,
+      "sample_bones": [
+        "Root",
+        "J_Bip_C_Hips",
+        "J_Aim_L_UpperLeg",
+        "J_Roll_L_UpperLeg",
+        "J_Sec_L_TopsUpperLegBack",
+        "J_Sec_L_TopsUpperLegBack_end",
+        "J_Sec_L_TopsUpperLegFront",
+        "J_Sec_L_TopsUpperLegFront_end"
+      ]
+    }
+  ],
+  "mesh_count": 5
+}

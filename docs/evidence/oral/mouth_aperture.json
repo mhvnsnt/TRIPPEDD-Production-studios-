@@ -1,0 +1,22 @@
+{
+  "schema": "trippedd.mouth-aperture/v1",
+  "rimSource": "MARS_MOUTH_SOCK open boundary (58 verts)",
+  "outwardMM": 30.0,
+  "inwardMM": 6.0,
+  "shrinkMM": 0.0,
+  "cutterNonManifoldEdges": 0,
+  "cutterSignedVolume": 0.00027653180737906334,
+  "teethVisibleRays": {
+    "jawClosed": [
+      4,
+      120
+    ],
+    "jawOpen18deg": [
+      1,
+      120
+    ]
+  },
+  "storedHeadVerts": 27721,
+  "storedShapeKeys": 88,
+  "whyNotTheOtherCutter": "MARS_rigged's MARS_APERTURE_CUTTER is a 1.3 mm flat plate (44.3 x 46.5 x 1.3 mm); a DIFFERENCE against it left the head's boundary edge count unchanged at 14"
+}

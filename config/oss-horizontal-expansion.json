@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Studio-wide open-source expansion map. Candidates are promoted independently per capability and never replace the canonical deterministic path without evidence.",
+  "promotionStates": ["DISCOVERED","RESEARCHED","CANDIDATE","INTEGRATED","SMOKE_TESTED","VALIDATED","PRODUCTION","QUARANTINED","DEPRECATED","REJECTED"],
+  "domains": {
+    "source-ingest": ["FFmpeg","MediaInfo","ExifTool"],
+    "media-intelligence": ["OpenCV","PySceneDetect","faster-whisper","Tesseract","Silero VAD"],
+    "editorial": ["OpenTimelineIO","MLT","Kdenlive","OpenMontage"],
+    "visual-production": ["Blender","OpenImageIO","OpenEXR","Natron","VapourSynth"],
+    "audio": ["SoX","Demucs","FFmpeg filters"],
+    "color": ["OpenColorIO"],
+    "assets-interchange": ["OpenAssetIO","OpenUSD","MaterialX"],
+    "qc-verification": ["MediaConch","QCTools","VMAF","Bento4"],
+    "encoding-delivery": ["FFmpeg","SVT-AV1"],
+    "compute-orchestration": ["Flamenco","OpenCue","self-hosted GitHub Actions","act"],
+    "pipeline-production-management": ["AYON","Pyblish","Kitsu","QuadPype"],
+    "observability": ["OpenTelemetry","Prometheus","Grafana"],
+    "agents-automation": ["OpenMontage","OpenTelemetry-compatible agent telemetry"],
+    "network-format-expansion": ["OpenUSD","OpenTimelineIO","OpenAssetIO","MaterialX"]
+  },
+  "evidenceGates": {
+    "license": "record upstream license and model/data terms",
+    "install": "reproducible install or provision procedure",
+    "realInput": "exercise against representative TRIPPEDD media or production artifact",
+    "measurement": "capture runtime, throughput, output metrics and resource use",
+    "artifact": "produce machine-readable output with identity/provenance",
+    "recovery": "kill/fail/resume test without invalidating completed work",
+    "qc": "known-good and known-bad fixture behavior",
+    "canonicalCompatibility": "preserve PhysicalSourceTimeline, editorial separation and artifact contracts",
+    "regression": "prove existing canonical path remains green"
+  },
+  "canonicalRules": [
+    "Never make an optional OSS tool a single point of failure.",
+    "Keep expensive analysis/render stages resumable and cacheable.",
+    "Content-address generated outputs where practical.",
+    "Physical source truth remains authoritative for physical events.",
+    "Story Runner and Autonomous share physical-source evidence but retain independent editorial interpretation.",
+    "UNKNOWN telemetry is never treated as healthy progress.",
+    "Hosted GitHub Actions remains first choice until budget/capacity bounds are demonstrated; local/farm backends are measured failover paths.",
+    "Do not merge an entire stale branch when only a capability is valuable; extract and reconcile the capability."
+  ],
+  "priorityQueue": [
+    {"capability":"distributed-rendering","candidates":["Flamenco","OpenCue"],"nextGate":"isolated real Blender render with worker failure/resume"},
+    {"capability":"perceptual-qc","candidates":["VMAF","QCTools","MediaConch"],"nextGate":"known-good/known-bad fixture scoring"},
+    {"capability":"asset-publishing","candidates":["OpenAssetIO","AYON","Pyblish"],"nextGate":"publish/retrieve round trip with provenance"},
+    {"capability":"scene-interchange","candidates":["OpenUSD","MaterialX"],"nextGate":"author/compose/reopen round trip"},
+    {"capability":"audio-intelligence","candidates":["Silero VAD","Demucs"],"nextGate":"real dialogue fixture with measurable segmentation/separation"},
+    {"capability":"editorial-automation","candidates":["OpenTimelineIO","MLT","OpenMontage"],"nextGate":"real source-to-artifact pipeline with independent QC"},
+    {"capability":"observability","candidates":["OpenTelemetry","Prometheus","Grafana"],"nextGate":"live production telemetry retrieval plus restart/recovery evidence"},
+    {"capability":"delivery-encoding","candidates":["SVT-AV1","Bento4"],"nextGate":"fixture encode/decode/package QC and benchmark"}
+  ]
+}

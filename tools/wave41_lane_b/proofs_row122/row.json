@@ -1,0 +1,25 @@
+{
+  "row": 122,
+  "name": "Furnace",
+  "claimed": "GPL-2.0-OR-LATER",
+  "kind": "github",
+  "ref": "tildearrow/furnace",
+  "api": {
+    "full_name": "tildearrow/furnace",
+    "archived": false,
+    "pushed_at": "2026-10-07T23:11:31Z",
+    "stargazers_count": 3862,
+    "default_branch": "master",
+    "owner": "tildearrow",
+    "spdx_id": "NOASSERTION",
+    "license_name": "Other"
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "README.md",
+    "branch": "master",
+    "bytes": 21317
+  },
+  "text_grant": false,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

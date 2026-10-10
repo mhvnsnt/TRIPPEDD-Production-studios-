@@ -10,11 +10,11 @@ from mathutils import Vector
 FPS = 24
 W, H = 1920, 1080
 DURATION = 6.0
-FRAME_START = 1
-FRAME_END = int(DURATION * FPS)
-OUT = Path('production/EP01/generated/blender/ep01_bastard_tag.mp4')
-BLEND = OUT.with_suffix('.blend')
-FRAME_DIR = OUT.parent / 'bastard_tag_frames'
+FRAME_START = int(os.environ.get('TRIPPEDD_FRAME_START', '1'))
+FRAME_END = int(os.environ.get('TRIPPEDD_FRAME_END', str(int(DURATION * FPS))))
+OUT = Path(os.environ.get('TRIPPEDD_OUT', 'production/EP01/generated/blender/ep01_bastard_tag.mp4'))
+BLEND = Path(os.environ.get('TRIPPEDD_BLEND_OUT', str(OUT.with_suffix('.blend'))))
+FRAME_DIR = Path(os.environ.get('TRIPPEDD_FRAME_DIR', str(OUT.parent / 'bastard_tag_frames')))
 PREFLIGHT = os.environ.get('TRIPPEDD_PREFLIGHT') == '1'
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -120,13 +120,13 @@ rain.keyframe_insert('location', frame=FRAME_START, index=2)
 rain.location.z -= 8
 rain.keyframe_insert('location', frame=FRAME_END, index=2)
 
+# Lightning: one brief flash. Energy is a LightData property, so keyframe the data block.
 bpy.ops.object.light_add(type='POINT', location=(0, 2, 7))
 flash = bpy.context.object
 flash.name = 'Bastard_Lightning'
 flash.data.energy = 0
-for f, e in [(1, 0), (36, 0), (42, 12000), (46, 0), (FRAME_END, 0)]:
-    flash.data.energy = e
-    flash.data.keyframe_insert('energy', frame=f)
+for f, e in [(1, 0), (36, 0), (42, 12000), (46, 0), (scene.frame_end, 0)]:
+    flash.data.energy = e; flash.data.keyframe_insert(data_path='energy', frame=f)
 
 bpy.ops.object.text_add(location=(0, 0, -1.8), rotation=(math.radians(90), 0, 0))
 title = bpy.context.object

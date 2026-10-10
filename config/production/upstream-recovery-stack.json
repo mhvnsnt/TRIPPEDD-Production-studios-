@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "policy": {
+    "mature_upstreams": "allowed",
+    "experimental_upstreams": "allowed",
+    "production_pass_requires": ["workflow_run", "media_artifact", "qc_evidence"],
+    "salvage_is_immutable": true
+  },
+  "bottleneck_lanes": {
+    "source_transport": ["rclone", "ffmpeg", "mediainfo"],
+    "decode_encode_integrity": ["ffmpeg", "bento4"],
+    "shot_detection": ["pyscenedetect"],
+    "editorial_interchange": ["opentimelineio"],
+    "color_and_image": ["opencolorio", "openimageio", "openexr"],
+    "scene_interchange": ["openusd"],
+    "render_dispatch": ["flamenco", "opencue"],
+    "editorial_fallback": ["kdenlive", "olive"],
+    "temporal_filtering": ["vapoursynth"],
+    "compositing": ["natron", "openfx", "gaffer"],
+    "animation": ["motion-canvas", "opentoonz", "pallaidium", "4brospix"],
+    "agent_orchestration": ["mcp-agent", "gaff"],
+    "asset_generation": ["comfyui", "hermes-asset-pipeline", "stablegen"],
+    "speech": ["whisperx", "piper"],
+    "audio_separation": ["demucs"],
+    "mixing": ["audacity", "ardour"],
+    "review_tracking": ["openrv", "kitsu", "ayon"]
+  },
+  "recovery": {
+    "commercial_stale_seconds": 720,
+    "episode_stale_seconds": 3600,
+    "max_attempts": 3,
+    "preserve_artifacts_before_restart": true,
+    "restart_source": "current-main"
+  }
+}

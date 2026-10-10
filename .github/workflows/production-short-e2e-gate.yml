@@ -1,0 +1,325 @@
+name: Production Short E2E Gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'production/network-ident/**'
+      - 'production/conversations/**'
+      - 'config/production/**'
+      - '.github/workflows/production-short-e2e-gate.yml'
+      - 'scripts/production/**'
+      - 'scripts/production/build-network-commercial.py'
+      - 'scripts/production/blender/**'
+      - 'scripts/run-public-pilot.ts'
+      - 'scripts/validate-production-artifact.ts'
+      - 'src/core/pipeline/**'
+      - 'src/core/editorial/**'
+      - 'github_app/**'
+      - 'supervisor/**'
+      - 'requirements-autonomous-bridge.txt'
+      - 'install/**'
+      - 'opensource/render-stack/**'
+      - 'tools/opensource/**'
+
+concurrency:
+  group: production-short-e2e-gate
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+# HARD GATE: one continuous authored commercial must traverse the same OSS
+# ingest -> analysis -> editorial -> render -> QC -> delivery path used by EP01.
+# Expected wall time: ~8 minutes. Hard job ceiling: 20 minutes.
+
+jobs:
+  short-e2e:
+    name: 20-second TRIPPEDD network commercial proof
+    runs-on: ${{ vars.TRIPPEDD_RUNNER_LABEL || 'ubuntu-latest' }}
+    timeout-minutes: 20
+    steps:
+      - name: Publish production ETA and watchdog policy
+        run: |
+          set -euo pipefail
+          {
+            echo "## Production Run ETA"
+            echo "- Expected completion: **~8 minutes on the canonical runner; measured runtime wins over estimates.**"
+            echo "- Hard ceiling: **20 minutes**"
+            echo "- Salvage policy: source/evidence checkpoint is uploaded before editorial work; a stuck run is replaced rather than babysat."
+            echo "- Telemetry policy: every major stage reports measured progress and elapsed time."
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "PRODUCTION_ETA_MINUTES=8"
+          echo "PRODUCTION_HARD_TIMEOUT_MINUTES=20"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify autonomous bridge hardening
+        run: |
+          set -euo pipefail
+          python3 scripts/production/test-connector-independent-bridge.py
+
+      - name: Hardened runner preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "RUNNER_NAME=${RUNNER_NAME:-unknown}"
+          echo "RUNNER_OS=${RUNNER_OS:-unknown}"
+          echo "RUNNER_ARCH=${RUNNER_ARCH:-unknown}"
+          echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
+          echo "GITHUB_RUN_ATTEMPT=$GITHUB_RUN_ATTEMPT"
+          test -n "${GITHUB_SHA:-}"
+          if [[ "${TRIPPEDD_RUNNER_LABEL:-}" != "" ]]; then
+            echo "TRIPPEDD_RUNNER_LABEL is configured: $TRIPPEDD_RUNNER_LABEL"
+          else
+            echo "TRIPPEDD_RUNNER_LABEL not configured; proof gate uses GitHub-hosted fallback."
+          fi
+          command -v python3
+          command -v bash
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install media/render stack
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg mediainfo exiftool imagemagick curl xz-utils libegl1 libgl1 libxrender1 libxkbcommon0 libxkbcommon-x11-0 tesseract-ocr rclone
+          command -v ffmpeg
+          command -v ffprobe
+          python -m pip install --upgrade pip
+          python -m pip install -r config/production/oss-stack.requirements.txt
+      - name: Install production dependencies
+        run: bun install --no-save
+      - name: Restore Blender toolchain cache
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/trippedd/blender
+            /opt/blender-4.5.13-linux-x64
+          key: blender-4.5.13-linux-x64-${{ runner.os }}-${{ runner.arch }}
+      - name: Install Blender only on cache miss
+        if: steps.blender-cache.outputs.cache-hit != 'true'
+        env:
+          BLENDER_VERSION: '4.5.13'
+          BLENDER_ARCHIVE: blender-4.5.13-linux-x64.tar.xz
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.cache/trippedd/blender
+          curl -fsSL "https://download.blender.org/release/Blender4.5/${BLENDER_ARCHIVE}" -o "$HOME/.cache/trippedd/blender/${BLENDER_ARCHIVE}"
+          curl -fsSL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256" -o /tmp/blender.sha256
+          grep "${BLENDER_ARCHIVE}" /tmp/blender.sha256 | sed "s#${BLENDER_ARCHIVE}#$HOME/.cache/trippedd/blender/${BLENDER_ARCHIVE}#" | sha256sum -c -
+          sudo tar -xJf "$HOME/.cache/trippedd/blender/${BLENDER_ARCHIVE}" -C /opt
+      - name: Activate cached Blender
+        run: |
+          set -euo pipefail
+          test -x /opt/blender-4.5.13-linux-x64/blender
+          sudo ln -sfn /opt/blender-4.5.13-linux-x64/blender /usr/local/bin/blender
+          blender --version | head -n 2
+      - name: Provision full open-source render backends
+        run: |
+          set -euo pipefail
+          bash tools/opensource/bootstrap-render-stack.sh
+          test -d .trippedd/opensource/flamenco/.git
+          for repo in flamenco opencue opentimelineio opencolorio openimageio openexr openvdb natron kitsu comfyui vapoursynth mlt; do
+            test -d ".trippedd/opensource/$repo/.git"
+          done
+          cat .trippedd/opensource/STACK-MANIFEST.txt
+          echo "FULL_UPSTREAM_PROJECTS=12"
+      - name: Verify open-source stack before production work
+        run: |
+          set -euo pipefail
+          bash scripts/production/verify-oss-stack.sh
+          mediainfo --Version
+          exiftool -ver
+          convert -version | head -n 1
+          blender --version | head -n 2
+      - name: Initialize run-local production ledger
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/trippedd-run-ledger
+          printf '%s\n' "run_id=$GITHUB_RUN_ID" "run_attempt=$GITHUB_RUN_ATTEMPT" "sha=$GITHUB_SHA" "started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" > /tmp/trippedd-run-ledger/run.txt
+      - name: Build continuous authored network commercial source
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/trippedd-e2e-source production/network-ident/generated
+          mkdir -p /tmp/trippedd-e2e-source
+          echo "STAGE_ETA creative-commercial=~6m hard_timeout=12m"
+          rm -rf /tmp/trippedd-v4
+          mkdir -p /tmp/trippedd-v4 public/production
+          timeout 12m blender -b --python scripts/production/blender/build-network-commercial-v4.py
+          test -s /tmp/trippedd-v4/frame_0001.png
+          test -s /tmp/trippedd-v4/frame_0480.png
+          # Compose the rendered 3D frames with an actual 48 kHz stereo music bed:
+          # low-end pulse, harmonic tones, filtered noise and rhythmic modulation.
+          ffmpeg -y -hide_banner -loglevel error             -framerate 24 -i /tmp/trippedd-v4/frame_%04d.png             -f lavfi -i "sine=frequency=55:sample_rate=48000:duration=20"             -f lavfi -i "sine=frequency=110:sample_rate=48000:duration=20"             -f lavfi -i "sine=frequency=220:sample_rate=48000:duration=20"             -f lavfi -i "anoisesrc=color=pink:amplitude=0.018:sample_rate=48000:duration=20"             -filter_complex "[1:a]volume=0.10,apulsator=hz=2.0[a1];[2:a]volume=0.06,apulsator=hz=1.0[a2];[3:a]volume=0.045,apulsator=hz=4.0[a3];[4:a]highpass=f=2200,lowpass=f=9000,volume=0.45[a4];[a1][a2][a3][a4]amix=inputs=4:duration=longest:normalize=0,volume=2.5,aresample=48000[a]"             -map 0:v -map "[a]" -t 20 -c:v libx264 -preset veryfast -crf 17 -pix_fmt yuv420p             -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart             public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
+          test -s public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
+          cp public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate,channels -of json /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/ffprobe.json
+          mediainfo --Output=JSON /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/mediainfo.json
+          exiftool -j /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/exiftool.json
+          sha256sum /tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4 > /tmp/trippedd-e2e-source/source.sha256
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          p='/tmp/trippedd-e2e-source/TRIPPEDD-NETWORK-IDENT.mp4'
+          # The proof source must be a moving four-show ident, not a static title card.
+          # Smoke & Mirrors is explicitly out of scope for this commercial.
+          for forbidden in ('SMOKE & MIRRORS', 'SMOKE AND MIRRORS'):
+              for source in ('scripts/production/build-network-commercial.py','scripts/production/blender/build-network-commercial-v4.py'):
+                  assert forbidden not in Path(source).read_text().upper(), (forbidden, source)
+          d=json.load(open('/tmp/trippedd-e2e-source/ffprobe.json'))
+          v=next(x for x in d['streams'] if x['codec_type']=='video')
+          a=next(x for x in d['streams'] if x['codec_type']=='audio')
+          assert int(v['width']) >= 1280 and int(v['height']) >= 720 and v['r_frame_rate']=='24/1'
+          assert 19.9 <= float(d['format']['duration']) <= 20.1 and int(d['format']['size']) > 0
+          assert int(a['sample_rate']) >= 44100 and int(a['channels']) >= 1
+          import hashlib
+          from pathlib import Path
+          frame_dir=Path('/tmp/trippedd-motion-frames')
+          frame_dir.mkdir(exist_ok=True)
+          subprocess.run(['ffmpeg','-v','error','-y','-i',p,'-vf','fps=1','-frames:v','20',str(frame_dir/'%02d.png')],check=True)
+          frames=sorted(frame_dir.glob('*.png'))
+          hashes=[hashlib.sha256(x.read_bytes()).hexdigest() for x in frames]
+          assert len(frames) >= 8 and len(set(hashes)) >= 4, f'creative commercial is too static: {len(set(hashes))} unique frames'
+          r=subprocess.run(['ffmpeg','-hide_banner','-i',p,'-af','volumedetect','-f','null','-'],capture_output=True,text=True,check=True)
+          mean=float(next(x.split(':')[1].split()[0] for x in r.stderr.splitlines() if 'mean_volume:' in x))
+          assert mean < -12.0, f'commercial audio too quiet: {mean} dB'
+          print('AUTHORED_NETWORK_COMMERCIAL_SOURCE=PASS')
+          print('UNIQUE_SAMPLED_FRAMES='+str(len(set(hashes))))
+          print('MEAN_AUDIO_DB='+str(mean))
+          PY
+      - name: Salvage source checkpoint before editorial work
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-E2E-SOURCE-CHECKPOINT
+          path: /tmp/trippedd-e2e-source/*
+          if-no-files-found: error
+          retention-days: 30
+      - name: Run actual source-analysis and editorial assembly path
+        env:
+          TRIPPEDD_TEST_MODE: 'true'
+          TRIPPEDD_TEST_SOURCE_DIR: /tmp/trippedd-e2e-source
+          TRIPPEDD_MEDIA_CACHE: ${{ github.workspace }}/.trippedd/media
+          TRIPPEDD_OUTPUT_DIR: ${{ github.workspace }}/public/production
+          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-NETWORK-IDENT-E2E
+          TRIPPEDD_EXPECTED_SOURCE_FILES: '1'
+          TRIPPEDD_CUT_MODE: SHOWRUNNER
+          TRIPPEDD_AUTO_FIRST_ASSEMBLY: 'false'
+          TRIPPEDD_ENABLE_WHISPER: 'true'
+          WHISPER_MODEL: tiny
+          TRIPPEDD_WHISPER_DEVICE: cpu
+          TRIPPEDD_WHISPER_COMPUTE_TYPE: int8
+          EP01_MAX_CLIPS: '1'
+          EP01_CLIP_PADDING: '0'
+          EP01_RENDER_CONCURRENCY: ${{ vars.TRIPPEDD_RENDER_CONCURRENCY || '4' }}
+        run: |
+          echo "STAGE_ETA assembly=~5m hard_timeout=10m"
+          timeout 10m bun run pilot:build:public
+
+      - name: Validate final commercial with production QC
+        env:
+          TRIPPEDD_OUTPUT_BASENAME: TRIPPEDD-NETWORK-IDENT-E2E
+        run: |
+          set -euo pipefail
+          echo "STAGE_ETA qc=~1m hard_timeout=3m"
+          timeout 3m bun run pilot:validate
+          test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4
+          test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
+          test -s public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
+          test -s public/production/production-artifact-qc.json
+          sha256sum public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4 > public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4.sha256
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          qc=json.loads(Path('public/production/production-artifact-qc.json').read_text())
+          assert qc['status']=='PASS', qc
+          media=qc['cuts']['TRIPPEDD-NETWORK-IDENT-E2E']
+          assert 19.9 <= media['duration'] <= 20.1, media
+          assert media['video']['width'] >= 1280 and media['video']['height'] >= 720, media
+          assert abs(media['video']['fps']-24) < 0.05, media
+          assert media['audio'] and media['audio']['sampleRate'] >= 44100, media
+          print('TRIPPEDD_NETWORK_COMMERCIAL_GATE=PASS')
+          print(json.dumps(media, indent=2))
+          PY
+      - name: Verify OTIO is parseable and represents one continuous source
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio').read_text())
+          assert data['OTIO_SCHEMA']=='Timeline.1'
+          tracks=data.get('tracks', [])
+          assert tracks and tracks[0]['children']
+          children=tracks[0]['children']
+          assert len(children) == 1, children
+          print('OTIO_PARSE=PASS')
+          print('OTIO_CONTINUITY=PASS clips=1')
+          PY
+      - name: Write immutable proof manifest
+        run: |
+          set -euo pipefail
+          sha256sum public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4 public/production/TRIPPEDD-NETWORK-IDENT-E2E.json public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio public/production/production-artifact-qc.json > public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
+          printf '%s\\n' "run_id=$GITHUB_RUN_ID" "run_attempt=$GITHUB_RUN_ATTEMPT" "sha=$GITHUB_SHA" "completed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
+      - name: Verify commercial content scope and motion/audio evidence
+        run: |
+          set -euo pipefail
+          test -s public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
+          ffprobe -v error -show_entries format=duration -of csv=p=0 public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 | awk '{ if ($1 < 19.9 || $1 > 20.1) exit 1 }'
+          ffmpeg -v error -i public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4 -vf "fps=1,select='gt(scene,0.02)'" -frames:v 12 -f null -
+          for show in "THE BASTARD" "IN THE BUSHES" "GOD MOLECULE" "TRIPPEDD"; do
+            grep -q "$show" scripts/production/blender/build-network-commercial-v4.py
+          done
+          ! grep -qiE 'SMOKE[[:space:]]*&?[[:space:]]*MIRRORS|SMOKE[[:space:]]+AND[[:space:]]+MIRRORS' scripts/production/blender/build-network-commercial-v4.py
+          echo "COMMERCIAL_SCOPE=PASS"
+          echo "COMMERCIAL_SHOW_COUNT=4"
+          echo "COMMERCIAL_FORBIDDEN_SHOW=PASS"
+      - name: Upload actual mixed-media commercial
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-NETWORK-COMMERCIAL-MIXED-MEDIA
+          path: |
+            public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.mp4
+            public/production/TRIPPEDD-NETWORK-COMMERCIAL-E2E.qc.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Preserve failure diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-E2E-RUN-DIAGNOSTICS
+          path: |
+            /tmp/trippedd-run-ledger/**
+            /tmp/trippedd-e2e-source/**
+            public/production/production-artifact-qc.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload network commercial proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: TRIPPEDD-NETWORK-COMMERCIAL-E2E-PROOF
+          path: |
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.mp4.sha256
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.PROOF-MANIFEST.sha256
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.json
+            public/production/TRIPPEDD-NETWORK-IDENT-E2E.otio
+            public/production/production-artifact-qc.json
+            /tmp/trippedd-e2e-source/ffprobe.json
+            /tmp/trippedd-e2e-source/mediainfo.json
+            /tmp/trippedd-e2e-source/exiftool.json
+            /tmp/trippedd-e2e-source/source.sha256
+          if-no-files-found: error
+          retention-days: 30
+
+# Production proof workflow is intentionally triggered by this change.
+# Promotion is gated on this run's exact main SHA and dispatches EP01 via the Actions API.

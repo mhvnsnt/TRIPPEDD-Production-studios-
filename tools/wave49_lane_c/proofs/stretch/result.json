@@ -1,0 +1,50 @@
+{
+  "tool": "audiostretchy",
+  "license": "BSD-3-Clause (verified via GitHub API spdx_id 2026-10-08)",
+  "pitch_probe": {
+    "input": "/home/hatch/workspace/agent-ops/wave49-lanes/lane-c/tools/wave49_lane_c/proofs/input/sine440.wav",
+    "output": "sine440_stretched_1.5x.wav",
+    "output_dur_s": 3.073,
+    "expected_dur_s": 3.0,
+    "dominant_freq_per_1s_window_hz": [
+      440.0,
+      440.0,
+      440.0
+    ],
+    "pass": true
+  },
+  "silence_mode_probe": {
+    "input": "/home/hatch/workspace/agent-ops/wave49-lanes/lane-c/tools/wave49_lane_c/proofs/input/tone_gap_tone.wav",
+    "runs": [
+      {
+        "name": "full_1.5x",
+        "params": {
+          "ratio": 1.5
+        },
+        "output": "gap_full_1.5x.wav",
+        "audio_extent_s": 5.273,
+        "expected_extent_s": 5.25,
+        "extent_within_5pct": true,
+        "interior_gap_s": 0.7,
+        "expected_gap_s": 0.75,
+        "gap_within_150ms": true
+      },
+      {
+        "name": "silence_separate",
+        "params": {
+          "ratio": 1.5,
+          "gap_ratio": 1.0
+        },
+        "output": "gap_silence_separate.wav",
+        "audio_extent_s": 5.023,
+        "expected_extent_s": 5.0,
+        "extent_within_5pct": true,
+        "interior_gap_s": 0.45,
+        "expected_gap_s": 0.5,
+        "gap_within_150ms": true
+      }
+    ]
+  },
+  "quirk": "silence-mode outputs are zero-padded to the full-ratio buffer (save_wav writes the whole pre-allocated buffer); trim trailing digital silence downstream \u2014 done in this proof.",
+  "pass": true
+}

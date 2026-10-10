@@ -1,0 +1,25 @@
+{
+  "tool": "wire_global_jukebox.py (wave30 lane C, re-run fresh 2026-10-08)",
+  "doi": "10.5281/zenodo.4898406",
+  "record": 4898406,
+  "download_url": "https://zenodo.org/records/4898406/files/theglobaljukebox/cantometrics-v0.1-alpha.zip?download=1",
+  "size": 3293252,
+  "md5": "2a814fd801b87ab561247b8b0f6184e6",
+  "sha256": "c39f64819938ca60d08a0f119bb2eecb2df502e166c65ed9748d3e12f350e73e",
+  "tables": {
+    "raw/data.csv": 5779,
+    "raw/songs.csv": 6043,
+    "raw/societies.csv": 1246,
+    "cldf/data.csv": 213823,
+    "cldf/songs.csv": 5779,
+    "cldf/societies.csv": 984,
+    "etc/codes.csv": 216,
+    "etc/variables.csv": 37
+  },
+  "gates": {
+    "download_md5_match": true,
+    "download_size_match": true,
+    "sha256_match": true,
+    "parse_shape_match": true
+  }
+}

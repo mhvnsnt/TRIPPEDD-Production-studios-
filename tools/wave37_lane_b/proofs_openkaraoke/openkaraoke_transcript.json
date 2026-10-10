@@ -1,0 +1,303 @@
+[
+  {
+    "t": 1791446407.546,
+    "dir": "http",
+    "msg": {
+      "GET /create-room": {
+        "room_id": "650980"
+      }
+    }
+  },
+  {
+    "t": 1791446407.584,
+    "dir": "host<-",
+    "msg": {
+      "type": "user_joined",
+      "username": "Host",
+      "is_host": true
+    }
+  },
+  {
+    "t": 1791446407.584,
+    "dir": "host<-",
+    "msg": {
+      "type": "queue_list",
+      "list": []
+    }
+  },
+  {
+    "t": 1791446407.587,
+    "dir": "cli<-",
+    "msg": {
+      "type": "user_joined",
+      "username": "Singer1",
+      "is_host": false
+    }
+  },
+  {
+    "t": 1791446407.587,
+    "dir": "cli<-",
+    "msg": {
+      "type": "queue_list",
+      "list": []
+    }
+  },
+  {
+    "t": 1791446407.587,
+    "dir": "host<-",
+    "msg": {
+      "type": "user_joined",
+      "username": "Singer1",
+      "is_host": false
+    }
+  },
+  {
+    "t": 1791446407.587,
+    "dir": "cli->",
+    "msg": {
+      "type": "queue_update",
+      "song": "Bohemian Rhapsody (Karaoke)"
+    }
+  },
+  {
+    "t": 1791446407.588,
+    "dir": "host<-",
+    "msg": {
+      "type": "queue_list",
+      "list": [
+        {
+          "song": {
+            "title": "Bohemian Rhapsody (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testAAA",
+            "duration": "5:55"
+          },
+          "added_by": "Singer1"
+        }
+      ]
+    }
+  },
+  {
+    "t": 1791446407.588,
+    "dir": "host<-",
+    "msg": {
+      "type": "control",
+      "command": "Play",
+      "song": {
+        "title": "Bohemian Rhapsody (Karaoke)",
+        "url": "https://www.youtube.com/watch?v=testAAA",
+        "duration": "5:55"
+      },
+      "username": "Singer1"
+    }
+  },
+  {
+    "t": 1791446407.588,
+    "dir": "cli<-",
+    "msg": {
+      "type": "queue_list",
+      "list": [
+        {
+          "song": {
+            "title": "Bohemian Rhapsody (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testAAA",
+            "duration": "5:55"
+          },
+          "added_by": "Singer1"
+        }
+      ]
+    }
+  },
+  {
+    "t": 1791446407.588,
+    "dir": "cli<-",
+    "msg": {
+      "type": "control",
+      "command": "Play",
+      "song": {
+        "title": "Bohemian Rhapsody (Karaoke)",
+        "url": "https://www.youtube.com/watch?v=testAAA",
+        "duration": "5:55"
+      },
+      "username": "Singer1"
+    }
+  },
+  {
+    "t": 1791446407.588,
+    "dir": "cli->",
+    "msg": {
+      "type": "queue_update",
+      "song": "Sweet Caroline (Karaoke)"
+    }
+  },
+  {
+    "t": 1791446407.588,
+    "dir": "host<-",
+    "msg": {
+      "type": "queue_list",
+      "list": [
+        {
+          "song": {
+            "title": "Bohemian Rhapsody (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testAAA",
+            "duration": "5:55"
+          },
+          "added_by": "Singer1"
+        },
+        {
+          "song": {
+            "title": "Sweet Caroline (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testBBB",
+            "duration": "3:21"
+          },
+          "added_by": "Singer1"
+        }
+      ]
+    }
+  },
+  {
+    "t": 1791446407.588,
+    "dir": "cli<-",
+    "msg": {
+      "type": "queue_list",
+      "list": [
+        {
+          "song": {
+            "title": "Bohemian Rhapsody (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testAAA",
+            "duration": "5:55"
+          },
+          "added_by": "Singer1"
+        },
+        {
+          "song": {
+            "title": "Sweet Caroline (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testBBB",
+            "duration": "3:21"
+          },
+          "added_by": "Singer1"
+        }
+      ]
+    }
+  },
+  {
+    "t": 1791446407.589,
+    "dir": "host->",
+    "msg": {
+      "type": "song_ended"
+    }
+  },
+  {
+    "t": 1791446407.589,
+    "dir": "host<-",
+    "msg": {
+      "type": "queue_list",
+      "list": [
+        {
+          "song": {
+            "title": "Sweet Caroline (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testBBB",
+            "duration": "3:21"
+          },
+          "added_by": "Singer1"
+        }
+      ]
+    }
+  },
+  {
+    "t": 1791446407.589,
+    "dir": "host<-",
+    "msg": {
+      "type": "control",
+      "command": "Play",
+      "song": {
+        "title": "Sweet Caroline (Karaoke)",
+        "url": "https://www.youtube.com/watch?v=testBBB",
+        "duration": "3:21"
+      },
+      "username": "Host"
+    }
+  },
+  {
+    "t": 1791446407.589,
+    "dir": "cli<-",
+    "msg": {
+      "type": "queue_list",
+      "list": [
+        {
+          "song": {
+            "title": "Sweet Caroline (Karaoke)",
+            "url": "https://www.youtube.com/watch?v=testBBB",
+            "duration": "3:21"
+          },
+          "added_by": "Singer1"
+        }
+      ]
+    }
+  },
+  {
+    "t": 1791446407.589,
+    "dir": "cli<-",
+    "msg": {
+      "type": "control",
+      "command": "Play",
+      "song": {
+        "title": "Sweet Caroline (Karaoke)",
+        "url": "https://www.youtube.com/watch?v=testBBB",
+        "duration": "3:21"
+      },
+      "username": "Host"
+    }
+  },
+  {
+    "t": 1791446407.589,
+    "dir": "cli->",
+    "msg": {
+      "type": "comment",
+      "comment": "Great pick!"
+    }
+  },
+  {
+    "t": 1791446407.59,
+    "dir": "host<-",
+    "msg": {
+      "type": "comment",
+      "comment": "Great pick!",
+      "username": "Singer1"
+    }
+  },
+  {
+    "t": 1791446407.59,
+    "dir": "cli<-",
+    "msg": {
+      "type": "comment",
+      "comment": "Great pick!",
+      "username": "Singer1"
+    }
+  },
+  {
+    "t": 1791446407.59,
+    "dir": "host->",
+    "msg": {
+      "type": "control",
+      "command": "Pause"
+    }
+  },
+  {
+    "t": 1791446407.59,
+    "dir": "host<-",
+    "msg": {
+      "type": "control",
+      "command": "Pause",
+      "username": "Host"
+    }
+  },
+  {
+    "t": 1791446407.59,
+    "dir": "cli<-",
+    "msg": {
+      "type": "control",
+      "command": "Pause",
+      "username": "Host"
+    }
+  }
+]

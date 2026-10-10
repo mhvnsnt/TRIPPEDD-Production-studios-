@@ -1,0 +1,16 @@
+{
+  "tool": "vidsplay_pull.py (Wave 11 Lane A)",
+  "clip_page": "https://www.vidsplay.com/lake-aerial-landscape/",
+  "source": "Vidsplay (www.vidsplay.com)",
+  "license": "Free for personal AND commercial use WITH attribution (visible credit link to Vidsplay.com)",
+  "license_proof": "free to use for any personal or commercial purposes with attribution",
+  "license_proof_source": "extracted from clip page HTML",
+  "sha256": "56a41d17bd0187a52c1eea7cb768d9b353b6fb40d4afb8557df31d4df448a37d",
+  "bytes": 92050639,
+  "duration_s": 18.48,
+  "width": 3840,
+  "height": 2160,
+  "codec": "h264",
+  "fps": "25/1",
+  "binary_note": "Clip downloaded to scratch only and NOT committed (see repo GH001 rule); this proof JSON is the artifact."
+}

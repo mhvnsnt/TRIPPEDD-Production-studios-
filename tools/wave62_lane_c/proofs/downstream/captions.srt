@@ -1,0 +1,36 @@
+1
+00:00:00,250 --> 00:00:04,500
+[A] Alright, we're rolling. The street is quiet tonight, just the way we planned it.
+
+2
+00:00:05,250 --> 00:00:10,250
+[B] Quiet is good. Last time the corner was crawling with onlookers before we even started.
+
+3
+00:00:11,250 --> 00:00:15,250
+[C] I brought the chalk. We can mark the lines before the crowd shows up.
+
+4
+00:00:16,250 --> 00:00:19,750
+[A] Mark them wide. Nobody should be guessing where the boundary is.
+
+5
+00:00:20,500 --> 00:00:24,000
+[B] And the water table? Somebody has to keep the bottles on ice.
+
+6
+00:00:25,000 --> 00:00:29,250
+[C] I already filled the cooler. Ice, towels, and a spare roll of tape.
+
+7
+00:00:30,250 --> 00:00:33,500
+[A] Good. Now we just wait for the lights to come on over the alley.
+
+8
+00:00:34,250 --> 00:00:37,250
+[B] When they do, we walk in steady. No rush, no noise.
+
+9
+00:00:38,250 --> 00:00:42,250
+[C] Steady wins. The ones who rush always trip on the first line.
+

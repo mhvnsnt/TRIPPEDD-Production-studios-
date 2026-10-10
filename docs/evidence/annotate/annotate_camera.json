@@ -1,0 +1,30 @@
+{
+  "image": "MARS_annotate_front.png",
+  "res": 1600,
+  "projection": "ORTHOGRAPHIC front, dead-on (no tilt, no yaw)",
+  "orthoScale": 1.029722,
+  "bounds": {
+    "min": [
+      -0.487976,
+      -0.485321,
+      3e-05
+    ],
+    "max": [
+      0.48346,
+      0.488129,
+      0.843201
+    ],
+    "centre": [
+      -0.002258,
+      0.001404,
+      0.421616
+    ],
+    "size": [
+      0.971436,
+      0.97345,
+      0.84317
+    ]
+  },
+  "howToInvertAMark": "u = px/res - 0.5 ; v = 0.5 - py/res ; world x = centre.x + u*orthoScale ; world z = centre.z + v*orthoScale ; then raycast from (x, min.y - 1, z) along +Y onto the mesh. This is exactly what measure_face.py stage 3 does, so the return path is proven.",
+  "pose": "REST -- every shape key zeroed and every bone cleared, so marks land on where features ARE rather than where a pose put them"
+}

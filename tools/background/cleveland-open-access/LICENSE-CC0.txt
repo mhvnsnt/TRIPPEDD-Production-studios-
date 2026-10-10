@@ -1,0 +1,7 @@
+Cleveland Museum of Art — Open Access (CC0 1.0 Universal)
+Source: https://www.clevelandart.org/open-access
+"High-resolution images and data related to the CMA's collection are made
+available under a Creative Commons Zero (CC0) designation."
+Files downloaded 2026-10-07 via openaccess-api.clevelandart.org with
+cc0=1&has_image=1 filter; each record verified share_license_status=="CC0"
+before download. See MANIFEST.json.

@@ -1,0 +1,236 @@
+name: Resumable Bastard terminal tag
+description: Render the Bastard terminal tag in independently durable frame chunks, reusing restored checkpoints and bounded parallelism.
+runs:
+  using: composite
+  steps:
+    - name: Prepare Bastard frame workspace
+      shell: bash
+      run: mkdir -p production/EP01/generated/blender/bastard_tag_frames
+
+    - name: Restore Bastard frames chunk 01
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-01/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-01-v4
+    - name: Restore Bastard frames chunk 02
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-02/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-02-v4
+    - name: Restore Bastard frames chunk 03
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-03/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-03-v4
+    - name: Restore Bastard frames chunk 04
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-04/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-04-v4
+    - name: Restore Bastard frames chunk 05
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-05/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-05-v4
+    - name: Restore Bastard frames chunk 06
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-06/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-06-v4
+    - name: Restore Bastard frames chunk 07
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-07/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-07-v4
+    - name: Restore Bastard frames chunk 08
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-08/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-08-v4
+    - name: Restore Bastard frames chunk 09
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-09/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-09-v4
+    - name: Restore Bastard frames chunk 10
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-10/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-10-v4
+    - name: Restore Bastard frames chunk 11
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-11/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-11-v4
+    - name: Restore Bastard frames chunk 12
+      uses: actions/cache/restore@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-12/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-12-v4
+
+    - name: Render missing Bastard chunks in bounded parallel batches
+      shell: bash
+      env:
+        TRIPPEDD_BASTARD_PARALLELISM: '3'
+      run: |
+        set -euo pipefail
+        root="$GITHUB_WORKSPACE/production/EP01/generated/blender/bastard_tag_frames"
+        script="production/EP01/generated/blender/build_bastard_tag.py"
+        parallelism="${TRIPPEDD_BASTARD_PARALLELISM:-3}"
+        state="$root/.progress-state"
+        mkdir -p "$state"
+        if [ ! -f "$state/start" ]; then date +%s > "$state/start"; fi
+        case "$parallelism" in 1|2|3|4) ;; *) echo "Invalid TRIPPEDD_BASTARD_PARALLELISM=$parallelism; using 3"; parallelism=3 ;; esac
+
+        progress_notice() {
+          local done=0 bytes=0 n dir frames percent now start elapsed rate remaining eta
+          for n in $(seq -w 1 12); do
+            dir="$root/chunk-$n"
+            frames=$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c 2>/dev/null | wc -l)
+            if [ "$frames" -gt 12 ]; then frames=12; fi
+            done=$((done + frames))
+            if [ -d "$dir" ]; then bytes=$((bytes + $(du -sb "$dir" 2>/dev/null | cut -f1 || echo 0))); fi
+          done
+          percent=$((done * 100 / 144))
+          now=$(date +%s)
+          start=$(cat "$state/start")
+          elapsed=$((now - start))
+          rate="0"
+          eta="calculating"
+          if [ "$elapsed" -gt 0 ] && [ "$done" -gt 0 ]; then
+            rate=$(awk -v d="$done" -v e="$elapsed" 'BEGIN { printf "%.3f", d/e }')
+            remaining=$((144 - done))
+            eta=$(awk -v r="$remaining" -v rate="$rate" 'BEGIN { if (rate > 0) printf "%ds", r/rate; else print "calculating" }')
+          fi
+          echo "::notice title=Bastard terminal tag::Bastard terminal tag: ${done}/144 frames (${percent}%) — ${rate} frames/s — ETA ${eta} — ${bytes} bytes"
+        }
+
+        valid_chunk() {
+          local dir="$1"
+          test "$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 12
+        }
+
+        render_chunk() {
+          local n="$1"
+          local start=$(( (n - 1) * 12 + 1 ))
+          local end=$(( n * 12 ))
+          local dir="$root/chunk-$(printf '%02d' "$n")"
+          mkdir -p "$dir"
+          if valid_chunk "$dir"; then
+            echo "BASTARD_CHUNK_CACHE_HIT chunk=$(printf '%02d' "$n") frames=12 bytes=$(du -sb "$dir" | cut -f1)"
+            progress_notice
+            return 0
+          fi
+          echo "BASTARD_CHUNK_START chunk=$(printf '%02d' "$n") frames=${start}-${end}"
+          TRIPPEDD_FRAME_START="$start" \
+          TRIPPEDD_FRAME_END="$end" \
+          TRIPPEDD_FRAME_DIR="$dir" \
+          blender -b --python "$script" &
+          local pid=$!
+          local last=-1
+          while kill -0 "$pid" 2>/dev/null; do
+            local count
+            count=$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c 2>/dev/null | wc -l)
+            if [ "$count" -ne "$last" ]; then
+              echo "::notice title=Bastard chunk $(printf '%02d' "$n")::Chunk $(printf '%02d' "$n"): ${count}/12 frames"
+              progress_notice
+              last="$count"
+            fi
+            sleep 5
+          done
+          wait "$pid"
+          test "$(find "$dir" -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 12
+          echo "BASTARD_CHUNK_COMPLETE chunk=$(printf '%02d' "$n") frames=12 bytes=$(du -sb "$dir" | cut -f1)"
+          progress_notice
+        }
+
+        progress_notice
+        for batch_start in 1 4 7 10; do
+          pids=()
+          for n in $(seq "$batch_start" $((batch_start + parallelism - 1))); do
+            test "$n" -le 12 || continue
+            render_chunk "$n" &
+            pids+=("$!")
+          done
+          for pid in "${pids[@]}"; do wait "$pid"; done
+          echo "BASTARD_BATCH_COMPLETE start=${batch_start}"
+          progress_notice
+        done
+
+    - name: Save Bastard frames chunk 01
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-01/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-01-v4
+    - name: Save Bastard frames chunk 02
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-02/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-02-v4
+    - name: Save Bastard frames chunk 03
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-03/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-03-v4
+    - name: Save Bastard frames chunk 04
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-04/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-04-v4
+    - name: Save Bastard frames chunk 05
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-05/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-05-v4
+    - name: Save Bastard frames chunk 06
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-06/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-06-v4
+    - name: Save Bastard frames chunk 07
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-07/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-07-v4
+    - name: Save Bastard frames chunk 08
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-08/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-08-v4
+    - name: Save Bastard frames chunk 09
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-09/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-09-v4
+    - name: Save Bastard frames chunk 10
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-10/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-10-v4
+    - name: Save Bastard frames chunk 11
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-11/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-11-v4
+    - name: Save Bastard frames chunk 12
+      uses: actions/cache/save@v4
+      with:
+        path: production/EP01/generated/blender/bastard_tag_frames/chunk-12/
+        key: bastard-tag-frames-${{ hashFiles('production/EP01/generated/blender/build_bastard_tag.py') }}-${{ runner.os }}-chunk-12-v4
+
+    - name: Assemble Bastard terminal tag
+      shell: bash
+      run: |
+        set -euo pipefail
+        root="$GITHUB_WORKSPACE/production/EP01/generated/blender/bastard_tag_frames"
+        mkdir -p production/EP01/generated/blender/bastard_tag_frames/all
+        rm -f production/EP01/generated/blender/bastard_tag_frames/all/frame-*.png
+        for n in $(seq -w 1 12); do
+          find "$root/chunk-$n" -maxdepth 1 -type f -name 'frame-*.png' -size +0c -print0 | xargs -0 -r -I{} cp "{}" production/EP01/generated/blender/bastard_tag_frames/all/
+        done
+        test "$(find production/EP01/generated/blender/bastard_tag_frames/all -maxdepth 1 -type f -name 'frame-*.png' -size +0c | wc -l)" -eq 144
+        echo "::notice title=Bastard terminal tag::Bastard terminal tag: 144/144 frames (100%) — assembling MP4"
+        ffmpeg -y -hide_banner -loglevel error -progress pipe:1 -nostats -framerate 24 -i production/EP01/generated/blender/bastard_tag_frames/all/frame-%04d.png -vf "scale=1920:1080:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 -movflags +faststart production/EP01/generated/blender/ep01_bastard_tag.mp4 2>&1 | awk -F= '/out_time_us=/{sec=$2/1000000; pct=sec/6*100; if(pct>100)pct=100; printf("::notice title=Bastard MP4 assembly::Bastard MP4 assembly: %.0f%% (%0.1fs/6.0s)\n", pct, sec)}'
+        test -s production/EP01/generated/blender/ep01_bastard_tag.mp4
+        echo "BASTARD_TAG_BYTES=$(stat -c '%s' production/EP01/generated/blender/ep01_bastard_tag.mp4)"
+        echo "::notice title=Bastard terminal tag::Bastard terminal tag: 144/144 frames (100%) — MP4 complete"

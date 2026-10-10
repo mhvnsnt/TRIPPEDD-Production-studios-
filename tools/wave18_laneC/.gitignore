@@ -1,0 +1,12 @@
+# Lane C build scratch — never commit
+src/
+node_modules/
+build/
+*.o
+*.a
+*.so
+target/
+mod2wav
+classes/
+sources.txt
+bdsup2sub-src/

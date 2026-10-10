@@ -1,0 +1,228 @@
+{
+ "le-colibri-necrophile": [
+  321,
+  {
+   "nc": 211,
+   "unknown": 108,
+   "other": 2
+  }
+ ],
+ "computermusicneix": [
+  227,
+  {
+   "other": 74,
+   "nc": 127,
+   "clean": 15,
+   "unknown": 11
+  }
+ ],
+ "vulpiano-records": [
+  232,
+  {
+   "nc": 208,
+   "clean": 17,
+   "unknown": 1,
+   "other": 6
+  }
+ ],
+ "southern-citys-lab": [
+  214,
+  {
+   "nc": 197,
+   "other": 6,
+   "unknown": 1,
+   "clean": 10
+  }
+ ],
+ "embajadoresdelamusicacolombiana": [
+  227,
+  {
+   "unknown": 227
+  }
+ ],
+ "nowaytwowayout": [
+  532,
+  {
+   "nc": 509,
+   "unknown": 7,
+   "clean": 16
+  }
+ ],
+ "mindblasting": [
+  286,
+  {
+   "nc": 277,
+   "clean": 2,
+   "unknown": 5,
+   "other": 2
+  }
+ ],
+ "free-music-charts": [
+  65,
+  {
+   "nc": 52,
+   "unknown": 13
+  }
+ ],
+ "vkrsradio": [
+  116,
+  {
+   "nc": 113,
+   "unknown": 3
+  }
+ ],
+ "sociopath-recordings": [
+  274,
+  {
+   "nc": 253,
+   "unknown": 17,
+   "clean": 2,
+   "other": 2
+  }
+ ],
+ "candymind": [
+  32,
+  {
+   "unknown": 13,
+   "nc": 19
+  }
+ ],
+ "lemoness": [
+  18,
+  {
+   "nc": 11,
+   "unknown": 1,
+   "other": 5,
+   "clean": 1
+  }
+ ],
+ "non_quality_audio": [
+  386,
+  {
+   "nc": 54,
+   "other": 322,
+   "unknown": 8,
+   "clean": 2
+  }
+ ],
+ "lost_children": [
+  79,
+  {
+   "unknown": 72,
+   "nc": 7
+  }
+ ],
+ "lostfrog": [
+  213,
+  {
+   "nc": 192,
+   "unknown": 21
+  }
+ ],
+ "irdial": [
+  29,
+  {
+   "unknown": 29
+  }
+ ],
+ "mimi": [
+  273,
+  {
+   "unknown": 273
+  }
+ ],
+ "mixgalaxy-records": [
+  34,
+  {
+   "nc": 34
+  }
+ ],
+ "ffs": [
+  155,
+  {
+   "nc": 154,
+   "other": 1
+  }
+ ],
+ "bad-panda": [
+  106,
+  {
+   "nc": 97,
+   "clean": 2,
+   "unknown": 5,
+   "other": 2
+  }
+ ],
+ "free_sample_zone": [
+  51,
+  {
+   "nc": 50,
+   "unknown": 1
+  }
+ ],
+ "hip-hop-farwest": [
+  56,
+  {
+   "unknown": 56
+  }
+ ],
+ "4-4-2": [
+  54,
+  {
+   "unknown": 53,
+   "nc": 1
+  }
+ ],
+ "birdsong": [
+  40,
+  {
+   "nc": 25,
+   "unknown": 15
+  }
+ ],
+ "dubroom": [
+  68,
+  {
+   "nc": 65,
+   "unknown": 3
+  }
+ ],
+ "postmoderncore": [
+  88,
+  {
+   "nc": 88
+  }
+ ],
+ "Onorezdi": [
+  30,
+  {
+   "unknown": 16,
+   "nc": 12,
+   "clean": 1,
+   "other": 1
+  }
+ ],
+ "001records": [
+  18,
+  {
+   "nc": 16,
+   "clean": 1,
+   "other": 1
+  }
+ ],
+ "zardonic": [
+  23,
+  {
+   "unknown": 18,
+   "nc": 5
+  }
+ ],
+ "experimedia": [
+  41,
+  {
+   "nc": 27,
+   "unknown": 13,
+   "other": 1
+  }
+ ]
+}

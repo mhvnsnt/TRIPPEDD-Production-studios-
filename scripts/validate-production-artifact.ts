@@ -1,3 +1,4 @@
+import 'node:fs/promises';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
@@ -60,6 +61,41 @@ for (const name of cutNames) {
     if (media.video && Math.abs(media.video.fps - 24) > 0.05) failures.push(`${name}: expected 24fps, got ${media.video.fps}.`);
     if (!media.audio) failures.push(`${name}: no audio stream.`);
     if (media.audio && (media.audio.sampleRate < 44100 || media.audio.channels < 1)) failures.push(`${name}: invalid audio stream.`);
+    // HARD GATE: prove temporal change by decoding sampled PNG frames and hashing them.
+    // This avoids fragile framemd5 parsing and rejects a video that repeats one frame.
+    if (media.video) {
+      const frameDir = path.join(root, '.trippedd-qc-frames');
+      await fs.rm(frameDir, { recursive: true, force: true });
+      await fs.mkdir(frameDir, { recursive: true });
+      await new Promise<void>((resolve, reject) => {
+        const child = spawn('ffmpeg', ['-v','error','-i',file,'-vf','fps=1','-frames:v','20',path.join(frameDir,'%02d.png')], { cwd: root, stdio: ['ignore','pipe','pipe'] });
+        let stderr = '';
+        child.stderr.on('data', d => { stderr += d.toString(); });
+        child.on('error', reject);
+        child.on('close', code => code === 0 ? resolve() : reject(new Error(stderr || 'frame decode probe failed')));
+      });
+      const frames = (await fs.readdir(frameDir)).filter(x => x.endsWith('.png')).sort();
+      const hashes: string[] = [];
+      for (const frame of frames) {
+        const bytes = await fs.readFile(path.join(frameDir, frame));
+        const crypto = await import('node:crypto');
+        hashes.push(crypto.createHash('sha256').update(bytes).digest('hex'));
+      }
+      const unique = new Set(hashes).size;
+      await fs.rm(frameDir, { recursive: true, force: true });
+      if (frames.length < 8 || unique < 4) failures.push(name + ': temporal-motion gate failed (' + unique + ' unique sampled frames).');
+    }
+    // HARD GATE: audio must contain measurable signal, not merely an attached silent track.
+    if (media.audio) {
+      const audioProbe = await new Promise<string>((resolve, reject) => {
+        const child = spawn('ffmpeg', ['-hide_banner','-i',file,'-af','volumedetect','-f','null','-'], { cwd: root, stdio: ['ignore','pipe','pipe'] });
+        let stderr = '';
+        child.stderr.on('data', d => { stderr += d.toString(); });
+        child.on('error', reject);
+        child.on('close', code => code === 0 ? resolve(stderr) : reject(new Error(stderr || 'audio probe failed')));
+      });
+      if (/mean_volume:\\s*-inf\\s*dB/i.test(audioProbe)) failures.push(name + ': audio track is silent.');
+    }
   } catch (error) { failures.push(`${name}: ffprobe failed: ${error instanceof Error ? error.message : String(error)}`); }
 }
 

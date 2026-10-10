@@ -1,0 +1,25 @@
+{
+  "row": 199,
+  "name": "mml2vgm",
+  "claimed": "GPL-3.0",
+  "kind": "github",
+  "ref": "rjungemann/mml2vgm",
+  "api": {
+    "full_name": "rjungemann/mml2vgm",
+    "archived": false,
+    "pushed_at": "2026-06-14T04:16:15Z",
+    "stargazers_count": 0,
+    "default_branch": "main",
+    "owner": "rjungemann",
+    "spdx_id": "GPL-3.0",
+    "license_name": "GNU General Public License v3.0"
+  },
+  "spdx_verdict": "MATCH",
+  "license_file": {
+    "path": "LICENSE.txt",
+    "branch": "master",
+    "bytes": 35148
+  },
+  "text_grant": true,
+  "mechanical_verdict": "CONFIRMED (license text matches)"
+}

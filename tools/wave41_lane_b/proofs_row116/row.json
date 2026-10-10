@@ -1,0 +1,25 @@
+{
+  "row": 116,
+  "name": "JUCE",
+  "claimed": "AGPL-3.0",
+  "kind": "github",
+  "ref": "juce-framework/JUCE",
+  "api": {
+    "full_name": "juce-framework/JUCE",
+    "archived": false,
+    "pushed_at": "2026-10-08T09:00:47Z",
+    "stargazers_count": 8957,
+    "default_branch": "master",
+    "owner": "juce-framework",
+    "spdx_id": "NOASSERTION",
+    "license_name": "Other"
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "LICENSE.md",
+    "branch": "master",
+    "bytes": 2718
+  },
+  "text_grant": false,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

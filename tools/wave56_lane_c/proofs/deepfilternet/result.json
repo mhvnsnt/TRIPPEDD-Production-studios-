@@ -1,0 +1,62 @@
+{
+  "fixture": "voice_line.wav",
+  "sr_model": 48000,
+  "snr_in_db": 10.0,
+  "checks": [
+    {
+      "name": "snr_improvement_noisy_white",
+      "status": "PASS",
+      "detail": "SNR 10.0 -> 15.9 dB (\u0394 +5.9 dB)"
+    },
+    {
+      "name": "snr_improvement_noisy_babble",
+      "status": "PASS",
+      "detail": "SNR 10.0 -> 14.4 dB (\u0394 +4.4 dB)"
+    },
+    {
+      "name": "nonstationary_advantage",
+      "status": "FAIL",
+      "detail": "babble \u0394 +4.4 dB vs white \u0394 +5.9 dB"
+    },
+    {
+      "name": "clean_noop_rms",
+      "status": "PASS",
+      "detail": "clean RMS delta 4.07% (< 5%)"
+    },
+    {
+      "name": "clean_noop_corr",
+      "status": "PASS",
+      "detail": "corr(clean, enhanced) = 0.99665"
+    },
+    {
+      "name": "byte_deterministic",
+      "status": "PASS",
+      "detail": "max|diff| = 0.0"
+    },
+    {
+      "name": "runs_to_completion",
+      "status": "PASS",
+      "detail": "3 enhances in 22.6 s total"
+    }
+  ],
+  "snr_in_noisy_white_db": 10.0,
+  "snr_out_noisy_white_db": 15.87,
+  "snr_improv_noisy_white_db": 5.87,
+  "snr_in_noisy_babble_db": 10.0,
+  "snr_out_noisy_babble_db": 14.44,
+  "snr_improv_noisy_babble_db": 4.44,
+  "clean_rms_delta_pct": 4.07,
+  "clean_corr": 0.99665,
+  "determinism_max_abs_diff": 0.0,
+  "enhance_ms_per_sec_audio": 2891.7,
+  "sha256": {
+    "fixture_clean.wav": "cc885785ed87fd8a9de77a2ccd8e4449f99ff04222013c9a10b159d0e0f0b2c0",
+    "fixture_noisy_babble.wav": "29a396a53073f0bbc19275df950b25b17800afe19ebcb2ca2473f68da707f5f6",
+    "fixture_noisy_white.wav": "b7d21ad34ca4e79003bd4b76313f5f9ae7187cedde1cc34885dec010a95dba85",
+    "out_clean.wav": "84139466ad047841552e0ffb4554d2ccfb442cce96f81767ccfdee5cf4c2f3b7",
+    "out_noisy_babble.wav": "e11159aab82110e2f610788bd08aafe9e9004c709c7b524b7c83083263eedc5a",
+    "out_noisy_white.wav": "c73b874fc049e24db77f7792013176715ec48f252534e682a3b4583805c0f3ef"
+  },
+  "passed": 6,
+  "failed": 1
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "trippedd.eyeball-placement/v1",
+  "authority": "docs/evidence/linework/linework_3d.json -- the lines the OWNER drew",
+  "corneaProtrusionMM": 1.5,
+  "note": "RIGID placement only. The globe geometry, radius and axes are unchanged; only where it sits was wrong.",
+  "eyes": {
+    "L": {
+      "verts": 1926,
+      "tris": 3714,
+      "radiusMM": 9.571,
+      "centreToHisApertureMM_before": 81.61,
+      "centreToHisApertureMM_after": 24.99,
+      "nearestGlobeVertToHisLidMM_before": 55.0,
+      "nearestGlobeVertToHisLidMM_after": 2.0,
+      "object": "MARS_EYE_L",
+      "autoDepthPushBackMM": 16.916
+    },
+    "R": {
+      "verts": 1926,
+      "tris": 3714,
+      "radiusMM": 8.728,
+      "centreToHisApertureMM_before": 81.82,
+      "centreToHisApertureMM_after": 14.43,
+      "nearestGlobeVertToHisLidMM_before": 55.81,
+      "nearestGlobeVertToHisLidMM_after": 1.92,
+      "object": "MARS_EYE_R",
+      "autoDepthPushBackMM": 7.198
+    }
+  }
+}

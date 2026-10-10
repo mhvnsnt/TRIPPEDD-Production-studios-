@@ -1,0 +1,25 @@
+{
+  "row": 119,
+  "name": "MakeHuman app",
+  "claimed": "AGPL-3.0",
+  "kind": "github",
+  "ref": "makehumancommunity/makehuman",
+  "api": {
+    "full_name": "makehumancommunity/makehuman",
+    "archived": false,
+    "pushed_at": "2024-08-19T03:15:34Z",
+    "stargazers_count": 1581,
+    "default_branch": "master",
+    "owner": "makehumancommunity",
+    "spdx_id": "NOASSERTION",
+    "license_name": "Other"
+  },
+  "spdx_verdict": "API-NOASSERTION",
+  "license_file": {
+    "path": "LICENSE.CODE.md",
+    "branch": "master",
+    "bytes": 34354
+  },
+  "text_grant": false,
+  "mechanical_verdict": "NEEDS REVIEW (text present but grant clause not matched mechanically)"
+}

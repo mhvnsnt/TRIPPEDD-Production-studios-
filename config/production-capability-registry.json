@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "operatingModel": "vertical-slice-plus-horizontal-expansion",
+  "promotionRule": "license-maintenance-install-real-input-integration-measurement-recovery-no-regression",
+  "capabilities": [
+    {
+      "id": "physical-source",
+      "axis": ["vertical", "horizontal"],
+      "area": "ingest-analysis",
+      "maturity": "production",
+      "next": "expand source provenance and partial-ingest recovery",
+      "impact": "preserve and understand every original source before editorial decisions",
+      "dependencies": ["ffmpeg", "ffprobe", "mediainfo", "opencv", "pyscenedetect", "faster-whisper", "tesseract"]
+    },
+    {
+      "id": "editorial-graph",
+      "axis": ["vertical", "horizontal"],
+      "area": "story-editorial",
+      "maturity": "active",
+      "next": "connect development ideas, physical chronology, editorial versions and derivative outputs",
+      "impact": "one source of truth across sketch, scripted, animation, reality and experimental formats",
+      "dependencies": ["opentimelineio", "productiongraph"]
+    },
+    {
+      "id": "render-recovery",
+      "axis": ["vertical"],
+      "area": "render-compute",
+      "maturity": "production",
+      "next": "replace wall-clock recovery with measured artifact-growth evidence",
+      "impact": "finish expensive renders without losing completed work",
+      "dependencies": ["github-actions", "durable-checkpoints", "blender"]
+    },
+    {
+      "id": "interchange",
+      "axis": ["horizontal"],
+      "area": "asset-scene-material",
+      "maturity": "candidate-contract",
+      "next": "validate OpenAssetIO/OpenColorIO/OpenUSD/MaterialX boundaries against real TRIPPEDD assets",
+      "impact": "reduce vendor/DCC lock-in as formats expand",
+      "dependencies": ["openassetio", "opencolorio", "openusd", "materialx"]
+    },
+    {
+      "id": "audio-intelligence",
+      "axis": ["vertical", "horizontal"],
+      "area": "audio",
+      "maturity": "candidate",
+      "next": "evidence-gate source-preserving Demucs branch for dialogue/music/isolation workflows",
+      "impact": "recover cleaner stems and enable alternate mixes without touching source audio",
+      "dependencies": ["demucs", "ffmpeg"]
+    },
+    {
+      "id": "publish-qc",
+      "axis": ["vertical", "horizontal"],
+      "area": "delivery",
+      "maturity": "production-plus-candidate",
+      "next": "add structured publish validators and reference-based perceptual QC where pairs exist",
+      "impact": "prevent technically invalid or provenance-incomplete deliverables",
+      "dependencies": ["ffprobe", "mediainfo", "pyblish-style-gates", "vmaf-optional"]
+    },
+    {
+      "id": "network-development",
+      "axis": ["horizontal"],
+      "area": "development",
+      "maturity": "architecture",
+      "next": "make projects, creators, formats, franchises and derivative opportunities queryable",
+      "impact": "turn finished work into a development library rather than a dead endpoint",
+      "dependencies": ["productiongraph", "provenance", "ai-orchestration"]
+    },
+    {
+      "id": "authored-studio-ui",
+      "axis": ["vertical", "horizontal"],
+      "area": "interface",
+      "maturity": "active",
+      "next": "expose production graph, evidence, live progress and creative development in an authored interface",
+      "impact": "make the studio feel like a creative operating environment rather than generic SaaS",
+      "dependencies": ["react", "vite", "motion", "tailwind"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+imageio-ffmpeg wire report (Wave 43 Lane B)
+imageio-ffmpeg: 0.6.0 (BSD-2-Clause)
+ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers
+ffmpeg exe: 79826272 bytes (static, pip-bundled)
+1. testsrc encode 640x360@30fps 2s -> ffmpeg_test.mp4 (13290 bytes)
+2. probe: duration 2.00s, 640x360, 30 fps
+3. frame @1.0s -> ffmpeg_frame.png (40218 bytes), IHDR 640x360 verified
+4. scale 320x180 transcode -> ffmpeg_test_360p.mp4 (9107 bytes)
+verdict: PASS — real encode/probe/extract/transcode, no stub

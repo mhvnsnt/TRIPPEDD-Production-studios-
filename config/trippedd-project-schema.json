@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trippedd.local/schemas/project.json",
+  "title": "TRIPPEDD Project",
+  "type": "object",
+  "required": ["id", "title", "formats", "status", "development", "production", "outputs"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "formats": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "LIVE_ACTION_SKETCH",
+          "SCRIPTED_COMEDY",
+          "SCRIPTED_NARRATIVE",
+          "ANIMATION",
+          "STOP_MOTION",
+          "HYBRID_ANIMATION",
+          "MUSIC",
+          "MUSIC_VIDEO",
+          "REALITY",
+          "UNSCRIPTED",
+          "DOCUMENTARY",
+          "INTERVIEW",
+          "PERSONALITY",
+          "SPECIAL",
+          "SOCIAL_SHORT",
+          "FEATURE",
+          "SERIES",
+          "GAME_INTERACTIVE",
+          "EXPERIMENTAL",
+          "MIXED_MEDIA"
+        ],
+        "uniqueItems": true
+      },
+      "minItems": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["IDEA", "DEVELOPMENT", "PRE_PRODUCTION", "PRODUCTION", "POST", "QC", "READY", "PUBLISHED", "ARCHIVED"]
+    },
+    "development": {
+      "type": "object",
+      "required": ["premise", "creatorIntent", "evidenceRefs"],
+      "properties": {
+        "premise": { "type": "string" },
+        "creatorIntent": { "type": "string" },
+        "audienceHypothesis": { "type": "string" },
+        "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+        "derivativeCandidates": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "production": {
+      "type": "object",
+      "properties": {
+        "physicalSources": { "type": "array", "items": { "type": "string" } },
+        "assets": { "type": "array", "items": { "type": "string" } },
+        "talent": { "type": "array", "items": { "type": "string" } },
+        "locations": { "type": "array", "items": { "type": "string" } },
+        "versions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "status"],
+        "properties": {
+          "kind": { "type": "string" },
+          "status": { "type": "string", "enum": ["PLANNED", "BUILDING", "READY", "PUBLISHED", "BLOCKED"] },
+          "target": { "type": "string" },
+          "sourceRefs": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

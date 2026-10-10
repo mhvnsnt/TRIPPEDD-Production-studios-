@@ -1,0 +1,28 @@
+{
+  "tool": "pd_score_downloader",
+  "license": "MIT (this wire script); downloaded artifact is public domain",
+  "archive_item": {
+    "identifier": "carner_44_2181",
+    "title": "Gladiolus Rag",
+    "creator": "Scott Joplin",
+    "date": "1907",
+    "publisher": "Jos. W. Stern & Co.",
+    "advancedsearch_query": "identifier:carner_44_2181"
+  },
+  "public_domain_basis": {
+    "us_publication_rule": "published 1907, before the 1930 US cutoff",
+    "composer_death": "Scott Joplin died 1917; life+70 expired 1987",
+    "note": "Provenance reasoning recorded for the catalog; not legal advice."
+  },
+  "download": {
+    "url": "https://archive.org/download/carner_44_2181/carner_44_2181.pdf",
+    "file": "carner_44_2181.pdf",
+    "size_bytes": 2391653,
+    "advertised_size_bytes": 2391653,
+    "size_match": true,
+    "pdf_magic_ok": true,
+    "page_count": 6,
+    "sha256": "1138be2ae94eb96548c686fa5ed9bb09d61bf5f5cbb3b629a3ae8baaa0d6ddfc"
+  },
+  "pass": true
+}

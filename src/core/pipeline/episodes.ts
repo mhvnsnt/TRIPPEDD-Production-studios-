@@ -1,5 +1,6 @@
 import { Episode, Segment, ContentProvenance } from '../types';
 import { FormatRegistry } from './formats';
+import { reconcileEpisode01 } from './episode01Reconcile';
 
 export class EpisodeRegistry {
   private static episodes = new Map<string, Episode>();
@@ -39,17 +40,19 @@ FormatRegistry.registerFormat({
   }
 });
 
-// Implement Episode 1 test fixture
-const episode1: Episode = {
-  id: 'EP01',
-  name: 'Pilot',
-  number: 1,
-  description: 'The first TRIPPEDD test episode combining reality reconstruction, adult animation parody, and documentary gags.',
-  status: 'PRODUCTION',
-  segments: [
-    {
+/**
+ * The segments that were actually authored for EP01. This list is NOT the
+ * episode — it predates the locked blueprint and puts Joe second and the Luck
+ * of the Irish commercial fourth, which the creator has corrected. It is the
+ * production work that exists; reconcileEpisode01 puts it in canon order and
+ * fills the gaps with visible placeholders.
+ */
+const EP01_AUTHORED_SEGMENTS: Segment[] = [
+  {
       id: 'SEG01',
       name: 'Motel Reality',
+      canonSegmentId: 'EP01_MOTEL',
+      productionState: 'BUILT',
       description: 'Raw live action footage of Mars and Tyneshia at the actual motel location.',
       formatId: 'REAL_EVENT_RECONSTRUCTION',
       locationId: 'REAL_MOTEL', // Will need to define REAL_MOTEL in formats/locations if not done
@@ -79,6 +82,8 @@ const episode1: Episode = {
     {
       id: 'SEG02',
       name: 'Joe Reconstruction',
+      canonSegmentId: 'EP01_JOE',
+      productionState: 'IN_PROGRESS',
       description: 'Reconstructed scene where Joe is generated via ComfyUI based on Tyneshia performance timing.',
       formatId: 'REAL_EVENT_RECONSTRUCTION',
       locationId: 'REAL_MOTEL',
@@ -112,6 +117,9 @@ const episode1: Episode = {
     {
       id: 'SEG03',
       name: 'Goodville Geography',
+      // Goodville is a gag FAMILY whose placement the creator has not locked.
+      // No canonSegmentId: it belongs to the episode, not to the locked spine.
+      productionState: 'IN_PROGRESS',
       description: 'Documentary gag where a real interview introduces the elastic distance to Nashville.',
       formatId: 'DOCUMENTARY_GAG',
       locationId: 'GOODVILLE_TN',
@@ -159,6 +167,8 @@ const episode1: Episode = {
     {
       id: 'SEG04',
       name: 'Luck of the Irish',
+      canonSegmentId: 'EP01_LUCK_OF_THE_IRISH',
+      productionState: 'IN_PROGRESS',
       description: 'Fake commercial gag. Live action suspense building up to a generative 4th-wall break.',
       formatId: 'TRIPPEDD_ADULT_ANIMATION_PARODY',
       performances: [
@@ -220,6 +230,7 @@ const episode1: Episode = {
     {
       id: 'SEG05',
       name: 'Goodville Cartoon',
+      productionState: 'NOT_STARTED',
       description: 'Animated cutaway happening in Goodville TN.',
       formatId: 'TRIPPEDD_ADULT_ANIMATION_PARODY',
       locationId: 'GOODVILLE_TN',
@@ -238,7 +249,27 @@ const episode1: Episode = {
         aggregate: 'FICTIONAL_CREATION'
       }
     }
-  ]
+];
+
+/**
+ * The episode as the creator locked it: canon order, every locked segment
+ * present, unbuilt ones marked NOT_STARTED rather than left out.
+ */
+const ep01 = reconcileEpisode01(EP01_AUTHORED_SEGMENTS);
+
+const episode1: Episode = {
+  id: 'EP01',
+  name: 'The Walk',
+  number: 1,
+  description:
+    'The pilot. Ordered by docs/creative/EP01-THE-WALK-CANON.md, not by the order the footage was shot ' +
+    'and not by the order these segments were authored.',
+  status: 'PRODUCTION',
+  segments: ep01.segments,
 };
+
+/** What is built, what is only planned, and what has no locked position. */
+export const EP01_RECONCILIATION = ep01.report;
+export { EP01_AUTHORED_SEGMENTS };
 
 EpisodeRegistry.registerEpisode(episode1);

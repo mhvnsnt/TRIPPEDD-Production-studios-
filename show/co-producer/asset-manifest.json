@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "show": "Co-Producer",
+  "asset_policy": {
+    "source_of_truth": "show/co-producer",
+    "prefer_reuse": true,
+    "new_asset_requires_justification": true,
+    "delivery_assets_separate_from_source": true
+  },
+  "characters": {
+    "protagonist": {"role":"practical lead","poses":["neutral","talking","pointing","reaction","walking","exaggerated"],"components":["head","eyes","mouth","body","arms","hands","legs"]},
+    "instigator": {"role":"escalation engine","poses":["neutral","talking","pointing","reaction","walking","exaggerated"],"components":["head","eyes","mouth","body","arms","hands","legs"]},
+    "straight_man": {"role":"reality anchor","poses":["neutral","talking","pointing","reaction","walking","exaggerated"],"components":["head","eyes","mouth","body","arms","hands","legs"]},
+    "wild_card": {"role":"unpredictable operator","poses":["neutral","talking","pointing","reaction","walking","exaggerated"],"components":["head","eyes","mouth","body","arms","hands","legs"]}
+  },
+  "locations": {
+    "generic_room_workplace": {"type":"interior","reusability":"high","camera_crops":["wide","medium","close"],"swappable_props":true}
+  },
+  "props": {
+    "small_box": {"type":"hand_prop","reusability":"high","variants":["closed","held","falling"]}
+  },
+  "presets": {
+    "camera": ["locked","slow_push_in","quick_push_in","impact_push"],
+    "character": ["hold","mouth_swap","point","walk","two_frame_reaction"],
+    "object": ["translate","drop","impact"],
+    "effects": ["shake","impact"]
+  }
+}

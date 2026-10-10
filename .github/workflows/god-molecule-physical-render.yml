@@ -199,6 +199,18 @@ jobs:
           PY
           done
 
+      - name: Validate OCIO configuration when explicitly supplied
+        if: ${{ env.OCIO != '' }}
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          mkdir -p .artifacts/evidence/ocio
+          if command -v ociocheck >/dev/null 2>&1; then
+            ociocheck --iconfig "$OCIO" | tee .artifacts/evidence/ocio/ociocheck.log
+          else
+            echo "OCIO_CHECK: NOT_AVAILABLE" | tee .artifacts/evidence/ocio/ociocheck.log
+          fi
+
       - name: Execute oral repair and aperture survey
         if: ${{ inputs.run_oral != 'false' }}
         continue-on-error: true

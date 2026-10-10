@@ -69,6 +69,15 @@ async function walkMedia(dir: string) {
   return files;
 }
 
+async function writeIngestReport(destination: string, report: Record<string, unknown>) {
+  const reportPath = path.join(destination, '.ingest-report.json');
+  await fs.writeFile(reportPath, JSON.stringify({
+    ...report,
+    generatedAt: new Date().toISOString(),
+    policy: 'individual inaccessible Drive files do not invalidate successfully downloaded source evidence',
+  }, null, 2));
+}
+
 function rcloneConfigured() {
   return Boolean(process.env.TRIPPEDD_RCLONE_REMOTE && process.env.TRIPPEDD_RCLONE_PATH);
 }
@@ -143,6 +152,7 @@ export async function downloadPublicDriveFolder(
     const recovered = await walkMedia(destination);
     if (rclone.completed === rclone.total && recovered.length >= rclone.total) {
       onProgress?.({ phase: 'COMPLETE', total: rclone.total, completed: rclone.total, failed: rclone.failed, current: `${rclone.total} usable media file(s) via rclone` });
+      await writeIngestReport(destination, { tool: 'rclone', rclone: { attempted: rclone.attempted, total: rclone.total, completed: rclone.completed, failed: rclone.failed }, partialSuccess: false, mediaFilesRecovered: recovered.length });
       return recovered;
     }
     if (recovered.length > 0) {
@@ -160,6 +170,7 @@ export async function downloadPublicDriveFolder(
     const existing = await walkMedia(destination);
     if (existing.length > 0) {
       onProgress?.({ phase: 'PARTIAL', total: Math.max(rclone.total, existing.length), completed: existing.length, failed: rclone.failed + 1, current: 'gdown manifest blocked; preserving recovered media', error: listing.stderr.trim() });
+      await writeIngestReport(destination, { tool: 'rclone+gdown', rclone: { attempted: rclone.attempted, total: rclone.total, completed: rclone.completed, failed: rclone.failed }, gdownManifest: { exitCode: listing.code }, partialSuccess: true, mediaFilesRecovered: existing.length });
       return existing;
     }
     throw new Error(`Unable to enumerate public Google Drive folder (gdown exit ${listing.code}). ${listing.stderr.trim()}`);
@@ -172,6 +183,7 @@ export async function downloadPublicDriveFolder(
     const existing = await walkMedia(destination);
     if (existing.length > 0) {
       onProgress?.({ phase: 'PARTIAL', total: Math.max(rclone.total, existing.length), completed: existing.length, failed: rclone.failed + 1, current: 'gdown manifest parse failed; preserving recovered media', error: error instanceof Error ? error.message : String(error) });
+      await writeIngestReport(destination, { tool: 'rclone+gdown', rclone: { attempted: rclone.attempted, total: rclone.total, completed: rclone.completed, failed: rclone.failed }, gdownManifest: { parseError: error instanceof Error ? error.message : String(error) }, partialSuccess: true, mediaFilesRecovered: existing.length });
       return existing;
     }
     throw new Error(`Unable to parse gdown folder manifest: ${error instanceof Error ? error.message : String(error)}`);
@@ -218,10 +230,12 @@ export async function downloadPublicDriveFolder(
   const expected = mediaEntries.length;
   if (files.length >= expected && expected > 0) {
     onProgress?.({ phase: 'COMPLETE', total: expected, completed: expected, failed, current: `${expected} usable media file(s)` });
+    await writeIngestReport(destination, { tool: 'rclone+gdown', rclone: { attempted: rclone.attempted, total: rclone.total, completed: rclone.completed, failed: rclone.failed }, gdown: { completed, failed, failures }, partialSuccess: false, mediaFilesRecovered: files.length });
     return files;
   }
 
   onProgress?.({ phase: 'PARTIAL', total: expected, completed: Math.min(files.length, expected), failed, current: `${files.length}/${expected} usable media file(s)` });
+  await writeIngestReport(destination, { tool: 'rclone+gdown', rclone: { attempted: rclone.attempted, total: rclone.total, completed: rclone.completed, failed: rclone.failed }, gdown: { completed, failed, failures }, partialSuccess: files.length > 0, mediaFilesRecovered: files.length });
   if (!files.length) {
     const detail = failures.slice(0, 3).join(' | ');
     throw new Error(`Public Google Drive produced no usable media files. ${failed}/${expected} downloads failed. ${detail}`.trim());

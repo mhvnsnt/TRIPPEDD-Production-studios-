@@ -53,7 +53,7 @@ Ranked by series-pipeline impact per wire-up effort. Wave-1 wiring (in progress)
 
 **Doctrine (one paragraph):** GPL/AGPL-licensed code is quarantined out of the shipping path until a license audit clears it — it may exist in the repos for reference/research, but no production script imports it, no build links it, no shipped artifact embeds it. Running a GPL app as a standalone tool (e.g. painting in Krita) does NOT infect the pipeline — the quarantine targets code integration, never tool usage or the artwork a tool produces. An item leaves quarantine only after a license audit documents a compatible relicense, a clean-room replacement, or a linking exception. Full manifest: docs/LICENSE_QUARANTINE.md.
 
-- **Quarantined (copyleft) — 594 rows · 568 distinct projects (Wave 62 Lane A: +8 rows 587–594 GameShellDocs/PeerTube/MediaCMS/Supysonic/xwax/FreeShow/BigBlueButton/MediaPortal-1; cycle 33 rows 341–350 10/10 re-verified) (Wave 41 Lane A: +10 rows 379–388; Wave 40 Lane A: +23 rows 356–378 (17 broadcast-automation deep tail, Kainote GPL-3.0, PgcEdit GPL, xmodits/CheeseCutter/TIATracker/komposter); Wave 39 Lane A: +22 rows 334–355 audio libs (libsndfile, JACK2, ChucK, KFR, FAAD2, HISE, pygame, munt, alsa-lib, LADSPA, mpg123, libmad, LAME, Audiere, TiMidity++, FFTW, zita-resampler, zita-convolver, DSSI, PulseAudio, RAVDESS, Sega Retro); Wave 38 Lane A: +39 rows 295–333 broadcast/media GPL stack; Wave 37 Lane A: +16 rows 279–294 retro-devkit GPL stack; Wave 36 Lane A: +5 rows 274–278 PyKaraoke LGPL-2.0 / Lyriks GPL-3.0 / snes_spc LGPL-2.1 / OpenKJ GPL-3.0 / Capture2Text GPL-3.0; Wave 35 Lane B: +1 row 273 SubsAI GPL; Wave 34 Lane A: +1 row 272 Open Cubic Player GPL; Wave 32 Lane A: +1 row 271 Furnace GPL; Wave 31 Lane A: +6 rows 265–270 retro-tracker GPL/AGPL (Adlib Tracker II, gbsplay GPL-1.0-or-later, sc68, psgplay, vgmtools, ProTrackR2); Wave 29 Lane A: +1 row 264 Kaltura AGPL-3.0; Wave 28 Lane A: +1 row 263 audapolis AGPL-3.0; Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 34 rows · GPL 195 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-26 Lane C spot-check (2026-10-08): 10/10 confirmed on never-audited rows (2 aeneas, 9 FlowFrames, 17 OpenShot, 20 piper-tts, 36 Inkscape, 50 Wick Editor, 67 Dexed, 80 ComfyUI-Manager, 126 Hydrogen, 131 NYC Parks Photo Archive) — zero relicensing events. Wave-26 Lane A: +12 rows 239–250 (retro-tracker GPL/AGPL). Wave-26 Lane B: +5 rows 251–255 (caption/karaoke GPL; renumbered from 239–243 at merge to resolve Lane A/B collision). Counts refreshed: 255 rows · 232 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-28 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (63 marytts LGPL-3.0 facts-only, 66 Surge XT GPL-3.0, 75 Dragonfly Reverb GPL-3.0, 8 Flowblade GPL-3.0-or-later, 16 Olive GPL-3.0 with canonical upstream corrected to olive-editor/olive, 21 Power Sequencer GPL-3.0-or-later, 29 Avidemux GPL-2.0, 32 chaiNNer GPL-3.0, 39 LibreSprite GPL-2.0, 40 LiVES GPL-3.0) — zero relicensing events, zero delists, zero supersedes. Counts unchanged: 255 rows · 232 distinct. Wave-28 Lane A: +1 row 263 audapolis AGPL-3.0. Counts refreshed: 263 rows · 254 distinct. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag. Wave-29 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (26 TupiTube GPL-2.0-family, 72 Ardour, 73 Audacity, 80 ComfyUI-Manager, 88 Yoshimi, 92 Parselmouth, 102 VCV Rack, 104 SPPAS, 155 MKVToolNix, 236 telxcc) — zero relicensing events, zero delists, zero supersedes; 1 repo-moved path update (row 155 MKVToolNix: GitHub mbunkus/mkvtoolnix 404s → canonical now codeberg.org/mbunkus/mkvtoolnix); row 236 telxcc now archived upstream. Counts refreshed: 264 rows · 241 distinct (Wave 31 Lane A refresh: 270 rows · 247 distinct; Wave 32 Lane A refresh: 271 rows · 248 distinct; re-verified by direct count Wave 34 Lane B, 2026-10-08 — header counts correct). Wave-34 Lane B re-verification cycle (2026-10-08): 10/10 confirmed (rows 48 VidCutter, 49 whisper-timestamped, 52 Blender-StellarToon, 53 2D-Cel-Toon-Shader-v2-Plus, 54 manga-image-translator, 56 libre-manga-translator, 76 RobustVideoMatting, 77 mmd_tools, 78 APISR, 79 ADetailer) — zero relicensing events; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text unchanged). Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-43 Lane B re-verification cycle 14 (2026-10-08): 19/19 confirmed — cycle-11 gap closed (rows 61, 168, 199, 200, 208, 211, 212, 213, 214 re-run fresh and stamped into the table; row 123 covered by Wave 42), next-10 rows 134–143 verified; zero relicenses, zero delists, zero supersedes; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text byte-identical). Counts synced: 393 rows · 369 distinct (manifest canonical). **Wave 43 coordinator post-merge: 394 rows · 370 distinct** (Lane A appended row 394 mdxtools GPL-3.0 after Lane B's sync). Wave 44 Lane A refresh: 400 rows · 376 distinct (+6 rows 395–400). Wave 45 coordinator refresh: 404 rows · 380 distinct (+4 rows 401–404). Wave 46 coordinator refresh: 418 rows · 393 distinct (+14 rows 405–418). Wave 47 coordinator refresh: 437 rows · 412 distinct (+19 rows 419–437). Wave 48 coordinator refresh: 451 rows · 426 distinct (+14 rows 438–451). Counts refreshed by independent recount Wave 49 Lane B, 2026-10-08: 451 row numbers present, no gaps; 23 dead/superseded markers per standing convention (rows 33, 111, 174, 234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Wave 49 coordinator refresh: 467 rows · 442 distinct (+16 rows 452–467; independent direct recount: 467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Catalog dedupe: 26 legacy duplicate #### entries removed (24 titles, all true same-URL dupes — incl. WhisperX ×3); honest count 4,332 → 4,306 before Lane A2 top-up. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 Lane B (2026-10-08): quarantine manifest independently recounted — 467 rows · 442 distinct (467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; counts UNCHANGED). Re-verification cycle 21: rows 207, 209, 210, 221, 222, 223, 227, 229, 230, 231 — 10/10 confirmed, zero relicenses, zero delists. Drift watch clean (Helm/telxcc/MKVToolNix/SubDownloader/Seed-VC/so-vits-svc/DISTRHO-Ports/Praat/Olive/dsnote all stable). LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 coordinator refresh (2026-10-08): 475 rows · 450 distinct (475 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; Lane A appended rows 468–475: CherryMusic, Airsonic, Gerbera, Madsonic, ReadyMedia/MiniDLNA, Universal Media Server, rtmpdump, Erlyvideo — all 8 distinct, zero supersedes/delists). Catalog: 4,338 → 4,438 honest #### entries (+100 Lane A; target 4,440+ MISSED by 2 — honest shortfall, Wave 51 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave50_lane_c/wire_caption_burnin.py (ffmpeg ASS burn-in, pixel-verified) + wire_pd_score.py (archive.org PD score fetch, byte-exact). LGPL doctrine still PENDING OWNER VERDICT. Wave 51 coordinator refresh (2026-10-08): 476 rows · 451 distinct (476 row numbers present, no gaps; Lane A appended row 476 Tiled GPL-2.0-or-later; Lane B re-verification cycle 22: rows 206, 225, 232, 233, 235, 237, 238, 239, 240, 241 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 206 ScanTailor now owner-archived upstream — license unaffected; drift watch 7/7 clean: Helm/telxcc/MB-Lab/SubDownloader still archived, MKVToolNix Codeberg-canonical, uzu/tidal active. Catalog: 4,438 → 4,541 honest #### entries (+103 Lane A; target 4,540+ met). Lane C wired 2 permissive tools with real proofs: tools/wave51_lane_c/ — Kokoro TTS (Apache-2.0, 9/9 checks PASS: 7.825s seeded VO take, -25.21 LUFS) + Rhubarb Lip Sync (MIT, 47 mouth events, 11/11 checks PASS, byte-identical TSV determinism). LGPL doctrine still PENDING OWNER VERDICT. Wave 52 coordinator refresh (2026-10-08): 480 rows · 455 distinct (480 row numbers present, no gaps; Lane A appended rows 477–480: enable3d LGPL-3.0, frei0r GPL-2.0, Qtractor GPL-2.0, Carla GPL-2.0-or-later — all 4 distinct, zero supersedes/delists; Lane B re-verification cycle 23: rows 234, 242–250 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 243 Strudel now owner-archived upstream — license unaffected; row 245 Cmajor canonical moved SoundStacks/cmajor → cmajor-lang/cmajor; drift watch 7/7 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix Codeberg-canonical, uzu/tidal active). Catalog: 4,541 → 4,658 honest #### entries (+117 Lane A incl. 61 OTR per-show deep dives, +1 Lane C pyloudnorm; GFPGAN Wave 2 ❓/Wave 6 ✅ duplicate merged by coordinator — kept the richer Wave 2 entry, folded v1.4 detail). Lane C wired 2 permissive tools with real proofs: tools/wave52_lane_c/ — noisereduce 3.0.3 (MIT, −27 dB noise-floor suppression on seeded fixture, safe no-op on clean VO) + pyloudnorm (MIT, ITU-R BS.1770; podcast master −17.0 LUFS / broadcast master −23.9 LUFS, ebur128 cross-check 0.12 LU, byte-deterministic). Flag for Wave 53: row 151 MediaConch discrepancy (delisted on BSD-2-Clause relicense, but SourceCode/License.html now reads GPLv3+/MPLv2+ — possible upstream relicense reversal; recommend re-verification). LGPL doctrine still PENDING OWNER VERDICT. Wave 53 coordinator refresh (2026-10-08): 530 rows · 505 distinct (530 row numbers present, no gaps; Lane A appended rows 481–530: 50 new rows, all live, zero supersedes/delists; 23 dead/superseded markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; row 249 literal-pipe repaired by coordinator. Lane B re-verification cycle 24: rows 155, 251–259 — 10/10 CONFIRMED, zero relicenses, zero delists; row 253 subSync now owner-archived upstream (license unaffected); repo-location notes: row 257 UADE canonical = gitlab.com/uade-music-player/uade, row 259 ASAP canonical = SourceForge asap/code (no official GitHub repo); drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix COPYING byte-identical 18,092 B, uzu/tidal LICENSE byte-identical 35,106 B). MediaConch row 151 discrepancy RESOLVED: NO relicense reversal — canonical MediaArea/MediaConch_SourceCode root LICENSE = BSD-2-Clause; the GPLv3+/MPLv2+ text lives only in the stale abandoned MediaArea/MediaConch repo (PREFORMA-era file, pushed 2021-09-29); DELISTED status stands, row note extended. Catalog: 4,658 → 4,762 honest #### entries (+104 Lane A; target 4,760+ met). Lane C wired 2 permissive tools with real proofs: tools/wave53_lane_c/ — faster-whisper subtitle stage (MIT, WER 0.0 vs ground truth on the real Wave-52 mastered VO WAV, SRT mux round-trip byte-equal, 11/11 checks PASS) + OpenImageIO HDR plate QC (Apache-2.0, EXR half-float round-trip max abs error 2.43e-04, 7/7 checks PASS). Wave 54 coordinator refresh (2026-10-08): 536 rows · 511 distinct (536 row numbers present, no gaps; Lane A appended rows 531–536: OpenDCP GPL-3.0, x264 GPL-2.0, x265 GPL-2.0, vhs-decode GPL-3.0, Hugin GPL-2.0-or-later, kinograph_machine GPL-3.0 — all 6 distinct, zero supersedes/delists; row 267 precision-corrected GPL-2.0-or-later → GPL-3.0-or-later (quarantine treatment unchanged). Lane B re-verification cycle 25: rows 260–270 — 10/10 CONFIRMED (9 clean + row 267 correction), zero relicenses, zero delists, zero supersedes; row 263 audapolis canonical moved audapolis/audapolis → bugbakery/audapolis (live); row 264 Kaltura canonical moved kaltura/server → kaltura-community/server (live). GPL audit RESOLVED: LosslessCut (GPL-2.0) + Avidemux (GPL-2.0) flags VALID — catalog badges corrected to quarantined-standalone; StaxRip flag FALSE POSITIVE — MIT verified, ✅ stands. Drift watch clean. Catalog: 4,762 → 4,865 honest #### entries (+103 Lane A; target 4,870+ MISSED by 5 — honest shortfall, Wave 55 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave54_lane_c/ — pycaption 2.3.13 (Apache-2.0, caption format normalization, 18/18 checks PASS) + srt 3.5.3 (MIT, SRT parse/compose/retime, 10/10 checks PASS). LGPL doctrine still PENDING OWNER VERDICT.) Wave 57 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (zero new rows; cycle 28: rows 291–300 10/10 confirmed; repo-move note 294 OpenBroadcaster; drift watch 7/7 clean). Catalog: 5,090 → 5,191 honest #### entries (+101 Lane A: retro homebrew SDK docs round 3 — Atari ST/Falcon, Amiga, X68000/FM Towns; landmark musicdisks pouët/demozoo; PD radio-drama round 6; target 5,190+ met). Lane C wired 2 permissive tools with real proofs: tools/wave57_lane_c/ — SpectralCluster (Apache-2.0, embed→cluster: ECAPA 192-dim 4-segment fixture clustered [0,1,0,1] deterministic) + pyannote-metrics (MIT, DER=0.0000 / JER=0.0000, 9/9 checks PASS) — full measured diarization stage closed; entries flipped WIRED — run-proven. LGPL doctrine still PENDING OWNER VERDICT. Wave 55 coordinator refresh (2026-10-08, missed on catalog): quarantine 557 rows · 532 distinct (+21 rows 537–557; Lane B re-verification cycle 26: rows 271–280 — 10/10 CONFIRMED, zero relicenses; row 272 Open Cubic Player precision-corrected to GPL-2.0; drift watch 10/10 clean; Kaltura/audapolis canonical-path updates). Catalog: 4,865 → 4,980 honest #### entries (+115 Lane A; target 4,970+ met). Lane C wired resampy (ISC, 24→48 kHz SRC, 130.77 dB SNR, honest round-trip caveat documented) + audiomentations (MIT, degradation-stress stage, seeded deterministic). Wave 56 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (+15 rows 558–572; row 464 ArchiveBox DELISTED — upstream relicensed GPL-3.0-only → MIT live 2026-10-08, catalog badge corrected to ✅; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Lane B re-verification cycle 27: rows 281–290 — 10/10 CONFIRMED, zero relicenses, zero delists; 4 GitHub API NOASSERTION gaps resolved by direct license-text reads; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 4,980 → 5,090 honest #### entries (+110 Lane A: PD radio-drama round 5, homebrew SDK docs round 2, video-archive tooling round 2, musicdisk archives round 2; target 5,080+ met). Lane C wired 2 permissive tools with real proofs in tools/wave56_lane_c/: DeepFilterNet (dual MIT/Apache-2.0 deep-NN speech denoiser — 6/7 checks PASS: +5.9 dB stationary / +4.4 dB non-stationary on the real Kokoro VO fixture, clean no-op, byte-deterministic; 1 honest relative-gate FAIL documented) + SpeechBrain ECAPA-TDNN speaker embeddings (Apache-2.0 — 6/6 checks PASS, intra/inter cosine margin +0.1483, byte-deterministic; diarization "who spoke when" stage). Pipeline now: text→VO→lip-sync→denoise+master→subtitles→normalize→SRC→**deep denoise + speaker embeddings**. Wave 58 coordinator refresh (2026-10-08): 576 rows · 550 distinct (576 row numbers present, no gaps; Lane A appended rows 573–576: BitJag atari 240p test suite GPL-2.0+, rmvlib LGPL-2.1, pce-devel/huc mixed (contains GPL components), BitJag install scripts GPL-3.0 — all 4 live, zero supersedes/delists; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Lane B re-verification cycle 29: rows 301–310 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 5,191 → 5,294 honest #### entries (+103 Lane A: SDK docs round 4 — PCE/TG-16, Neo Geo, 32X, Jaguar; landmark musicdisks pouet toplist #11–#25; PD radio-drama round 7 — 54 single-episode deep dives; target 5,290+ met). Lane C first REAL-VOICE diarization test with proof in tools/wave58_lane_c/: 3 Kokoro voices dialogue (ECAPA-TDNN 192-dim, 1.5s/0.25s windows → SpectralCluster → pyannote-metrics): DER 0.4084 / JER 0.5478 @collar 0.0; forced k=3 → DER 0.3359; auto-k merges the two female voices (embeddings contain all 3 voices, count selection is the failure); window-level DER ~0.34 is structural, next lane: VAD-boundary refinement. Flag for Wave 59: Lane A P3 single-episode badge discipline differs from Wave-55 single-episode 'underlying broadcast PD' reasoning — uniformity review requested. LGPL doctrine still PENDING OWNER VERDICT.) **Wave 59 coordinator refresh (2026-10-08): 576 rows · 550 distinct** (576 row numbers present, no gaps — independent direct recount; 24 dead/superseded/delisted markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; zero new rows this wave. Lane B re-verification cycle 30: rows 311–320 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row annotations stamped re-verified; drift watch 11/11 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical; OpenBroadcaster canonical path intact). Catalog: 5,294 → 5,401 honest #### entries (+107 Lane A: SDK docs round 5 — 35 arcade/homebrew console SDK docs, 18 landmark musicdisks (pouët toplist), 54 PD radio-drama round 8 single-episode deep dives; target 5,400+ met). OTR badge-discipline ruling (Lane A, documented in Wave 59 wave note): show-established-✅PD + stated licenseurl-absent diligence rule; Lone Ranger keeps ⚠️ caution (character rights, not broadcast). Lane C wired VAD-boundary diarization refinement with real proofs in tools/wave59_lane_c/: two independent implementations — webrtcvad-tuned (DER 0.4084 → 0.3416, JER 0.5478 → 0.5051, 11/13 checks PASS, torch-free) + silero-vad variant (tuned DER 0.4020 ~flat, forced-k=3 → DER 0.0941 confirming A/C female-voice merge is the embedding-side problem); dominant error is A↔C female-voice confusion (~12.2s of 13.4s), boundary methods cannot fix it. LGPL doctrine still PENDING OWNER VERDICT.)
+- **Quarantined (copyleft) — 594 rows · 568 distinct projects (Wave 62 Lane A: +8 rows 587–594 GameShellDocs/PeerTube/MediaCMS/Supysonic/xwax/FreeShow/BigBlueButton/MediaPortal-1; cycle 33 rows 341–350 10/10 re-verified) (Wave 41 Lane A: +10 rows 379–388; Wave 40 Lane A: +23 rows 356–378 (17 broadcast-automation deep tail, Kainote GPL-3.0, PgcEdit GPL, xmodits/CheeseCutter/TIATracker/komposter); Wave 39 Lane A: +22 rows 334–355 audio libs (libsndfile, JACK2, ChucK, KFR, FAAD2, HISE, pygame, munt, alsa-lib, LADSPA, mpg123, libmad, LAME, Audiere, TiMidity++, FFTW, zita-resampler, zita-convolver, DSSI, PulseAudio, RAVDESS, Sega Retro); Wave 38 Lane A: +39 rows 295–333 broadcast/media GPL stack; Wave 37 Lane A: +16 rows 279–294 retro-devkit GPL stack; Wave 36 Lane A: +5 rows 274–278 PyKaraoke LGPL-2.0 / Lyriks GPL-3.0 / snes_spc LGPL-2.1 / OpenKJ GPL-3.0 / Capture2Text GPL-3.0; Wave 35 Lane B: +1 row 273 SubsAI GPL; Wave 34 Lane A: +1 row 272 Open Cubic Player GPL; Wave 32 Lane A: +1 row 271 Furnace GPL; Wave 31 Lane A: +6 rows 265–270 retro-tracker GPL/AGPL (Adlib Tracker II, gbsplay GPL-1.0-or-later, sc68, psgplay, vgmtools, ProTrackR2); Wave 29 Lane A: +1 row 264 Kaltura AGPL-3.0; Wave 28 Lane A: +1 row 263 audapolis AGPL-3.0; Wave 23 Lane B: +3 rows 232–234 spreads AGPL-3.0 / spreadpi GPL-2.0 / YASW GPL-3.0; Wave 24 Lane B: +4 rows 235–238 QCTools GPL-3.0 / telxcc GPL-2.0-or-later / UltraStar-Deluxe GPL-2.0 / AtomicParsley GPL-2.0; row 215 aubio SUPERSEDED by row 93, Wave 23 Lane D duplicate find; row 151 MediaConch DELISTED on BSD-2-Clause relicense, Wave 21 Lane E):** license families, live rows only — AGPL 34 rows · GPL 195 rows (incl. -or-later/-only variants) · LGPL-2.1 4 rows (154 GPAC, 165 Csound, 184 libgme, 212 OpenSlide) · LGPL-3.0 3 rows (63 marytts, 121 AivisSpeech, 183 Verovio — SCOPE NOTE: delist recommendation pending owner verdict, all stay quarantined meanwhile) · MPL-2.0 1 row (148 dsnote — same pending verdict) · CeCILL-2.1 1 row (G'MIC — French GPL-compatible strong copyleft, stays quarantined) · ODbL-1.0 1 row · CC BY-SA 1 row · CC BY-NC-ND 1 row · municipal/state rights-restricted 10 rows. Duplicate/superseded groups, append-only (superseded rows kept with mapping, never renumbered): aeneas rows 1+2 · Seed-VC rows 43/58 · so-vits-svc rows 24/65 · LMMS rows 71/110 · Piper rows 20/41 (merged Wave 9 Lane B; dedup-note row 111) · Furnace 122/170 · MilkyTracker 124/171 · Schism Tracker 125/172 · Gaupol 99/185 (renumbered 170→185 at merge) · aubio 93/215 (Wave 23 Lane D duplicate find). Wave-10 Lane B audit: +2 rows (JUCE 116 — AGPL-3.0/GPL-3.0 dual, commercial license is the audit path; AviSynth+ 117 — GPL-2.0-or-later, C-interface plugin exception noted); Faust RELICENSED GPL-2.0 → LGPL-2.1-or-later upstream (no quarantine row; weak-copyleft watchlist); RTcmix GPL/Apache conflict resolved as Apache-2.0; VapourSynth verified LGPL-2.1 (watchlisted). Wave-19 Lane B audit: +2 rows (199 mml2vgm GPL-3.0, 200 TinyVGM AGPL-3.0); Lane A's 0CC-FamiTracker and j0CC-FamiTracker flags deduped to existing rows 174 and 123 (j0CC is Dn-FamiTracker's pre-rename identity — repo redirect confirmed). Wave-21 Lane E spot-check (2026-10-07): 8 confirmed (rows 61 KITScenarist, 100 SuperCollider, 108 opensubtitles-api, 145 Bento4, 201–204), 1 corrected (row 73 Audacity: GPL-2.0-or-later → GPL-3.0 per upstream LICENSE.txt 2021-12-21 rewording), 1 delisted (row 151 MediaConch → BSD-2-Clause relicense, dep-tree audit complete). Wave-23 Lane D spot-check (2026-10-07): 9 confirmed (rows 206, 207, 210, 221, 222, 223, 227, 229, 230, 231), 2 precision-fixed (row 206 ScanTailor → GPL-3.0-or-later, row 225 NormCap → GPL-3.0-or-later), 1 duplicate mapped (row 215 aubio SUPERSEDED by row 93). Wave-24 audit (2026-10-07): 13/13 confirmed — rows 232–234 re-verified + 10 spot-checks (28, 34, 35, 42, 48, 51, 55, 62, 64, 74; first verifications for 62 phonemizer and 64 Fooocus; repo-path precision notes on 28 Allosaurus and 74 CHOW Tape Model). Wave-25 Lane B spot-check (2026-10-07): 9/10 confirmed, 1 precision-fixed (row 236 telxcc: GPL-2.0 → GPL-2.0-or-later — original upstream deleted, surviving kanongil/telxcc fork is the license evidence; quarantine unaffected); first verifications for never-audited rows 24 (so-vits-svc), 38 (Kitsu), 124 (MilkyTracker), 125 (Schism Tracker), 129 (ETH E-Pics), 209 (IIPImage). Counts refreshed: 238 rows · 215 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-26 Lane C spot-check (2026-10-08): 10/10 confirmed on never-audited rows (2 aeneas, 9 FlowFrames, 17 OpenShot, 20 piper-tts, 36 Inkscape, 50 Wick Editor, 67 Dexed, 80 ComfyUI-Manager, 126 Hydrogen, 131 NYC Parks Photo Archive) — zero relicensing events. Wave-26 Lane A: +12 rows 239–250 (retro-tracker GPL/AGPL). Wave-26 Lane B: +5 rows 251–255 (caption/karaoke GPL; renumbered from 239–243 at merge to resolve Lane A/B collision). Counts refreshed: 255 rows · 232 distinct. Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-28 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (63 marytts LGPL-3.0 facts-only, 66 Surge XT GPL-3.0, 75 Dragonfly Reverb GPL-3.0, 8 Flowblade GPL-3.0-or-later, 16 Olive GPL-3.0 with canonical upstream corrected to olive-editor/olive, 21 Power Sequencer GPL-3.0-or-later, 29 Avidemux GPL-2.0, 32 chaiNNer GPL-3.0, 39 LibreSprite GPL-2.0, 40 LiVES GPL-3.0) — zero relicensing events, zero delists, zero supersedes. Counts unchanged: 255 rows · 232 distinct. Wave-28 Lane A: +1 row 263 audapolis AGPL-3.0. Counts refreshed: 263 rows · 254 distinct. Catalog entries for quarantined items carry 🚫 (copyleft code — research lane only, never wired) or ✅ with an explicit standalone-tool-use / separate-process framing plus a QUARANTINED status flag. Wave-29 Lane B spot-check (2026-10-07): 10/10 confirmed on never-audited rows (26 TupiTube GPL-2.0-family, 72 Ardour, 73 Audacity, 80 ComfyUI-Manager, 88 Yoshimi, 92 Parselmouth, 102 VCV Rack, 104 SPPAS, 155 MKVToolNix, 236 telxcc) — zero relicensing events, zero delists, zero supersedes; 1 repo-moved path update (row 155 MKVToolNix: GitHub mbunkus/mkvtoolnix 404s → canonical now codeberg.org/mbunkus/mkvtoolnix); row 236 telxcc now archived upstream. Counts refreshed: 264 rows · 241 distinct (Wave 31 Lane A refresh: 270 rows · 247 distinct; Wave 32 Lane A refresh: 271 rows · 248 distinct; re-verified by direct count Wave 34 Lane B, 2026-10-08 — header counts correct). Wave-34 Lane B re-verification cycle (2026-10-08): 10/10 confirmed (rows 48 VidCutter, 49 whisper-timestamped, 52 Blender-StellarToon, 53 2D-Cel-Toon-Shader-v2-Plus, 54 manga-image-translator, 56 libre-manga-translator, 76 RobustVideoMatting, 77 mmd_tools, 78 APISR, 79 ADetailer) — zero relicensing events; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text unchanged). Wave-36 Lane B re-verification cycle 7 (2026-10-08): 10/10 confirmed (rows 31 Blender VSE, 32 chaiNNer, 33 Cinelerra-GG, 36 Inkscape, 37 Kdenlive, 39 LibreSprite, 40 LiVES, 41 Piper-superseded-pointer, 50 Wick Editor, 51 Goo Engine) — zero relicensing events, zero delists; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix). LGPL doctrine still pending owner verdict. Wave-43 Lane B re-verification cycle 14 (2026-10-08): 19/19 confirmed — cycle-11 gap closed (rows 61, 168, 199, 200, 208, 211, 212, 213, 214 re-run fresh and stamped into the table; row 123 covered by Wave 42), next-10 rows 134–143 verified; zero relicenses, zero delists, zero supersedes; drift watch clean (Helm still owner-archived mtytel, telxcc still archived kanongil, MKVToolNix still codeberg.org/mbunkus/mkvtoolnix, COPYING GPL v2 text byte-identical). Counts synced: 393 rows · 369 distinct (manifest canonical). **Wave 43 coordinator post-merge: 394 rows · 370 distinct** (Lane A appended row 394 mdxtools GPL-3.0 after Lane B's sync). Wave 44 Lane A refresh: 400 rows · 376 distinct (+6 rows 395–400). Wave 45 coordinator refresh: 404 rows · 380 distinct (+4 rows 401–404). Wave 46 coordinator refresh: 418 rows · 393 distinct (+14 rows 405–418). Wave 47 coordinator refresh: 437 rows · 412 distinct (+19 rows 419–437). Wave 48 coordinator refresh: 451 rows · 426 distinct (+14 rows 438–451). Counts refreshed by independent recount Wave 49 Lane B, 2026-10-08: 451 row numbers present, no gaps; 23 dead/superseded markers per standing convention (rows 33, 111, 174, 234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Wave 49 coordinator refresh: 467 rows · 442 distinct (+16 rows 452–467; independent direct recount: 467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Catalog dedupe: 26 legacy duplicate #### entries removed (24 titles, all true same-URL dupes — incl. WhisperX ×3); honest count 4,332 → 4,306 before Lane A2 top-up. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 Lane B (2026-10-08): quarantine manifest independently recounted — 467 rows · 442 distinct (467 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; counts UNCHANGED). Re-verification cycle 21: rows 207, 209, 210, 221, 222, 223, 227, 229, 230, 231 — 10/10 confirmed, zero relicenses, zero delists. Drift watch clean (Helm/telxcc/MKVToolNix/SubDownloader/Seed-VC/so-vits-svc/DISTRHO-Ports/Praat/Olive/dsnote all stable). LGPL doctrine still PENDING OWNER VERDICT — weak-copyleft rows stay quarantined, this lane does not decide it. Wave 50 coordinator refresh (2026-10-08): 475 rows · 450 distinct (475 row numbers present, no gaps; 23 dead/superseded markers per standing convention; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; Lane A appended rows 468–475: CherryMusic, Airsonic, Gerbera, Madsonic, ReadyMedia/MiniDLNA, Universal Media Server, rtmpdump, Erlyvideo — all 8 distinct, zero supersedes/delists). Catalog: 4,338 → 4,438 honest #### entries (+100 Lane A; target 4,440+ MISSED by 2 — honest shortfall, Wave 51 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave50_lane_c/wire_caption_burnin.py (ffmpeg ASS burn-in, pixel-verified) + wire_pd_score.py (archive.org PD score fetch, byte-exact). LGPL doctrine still PENDING OWNER VERDICT. Wave 51 coordinator refresh (2026-10-08): 476 rows · 451 distinct (476 row numbers present, no gaps; Lane A appended row 476 Tiled GPL-2.0-or-later; Lane B re-verification cycle 22: rows 206, 225, 232, 233, 235, 237, 238, 239, 240, 241 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 206 ScanTailor now owner-archived upstream — license unaffected; drift watch 7/7 clean: Helm/telxcc/MB-Lab/SubDownloader still archived, MKVToolNix Codeberg-canonical, uzu/tidal active. Catalog: 4,438 → 4,541 honest #### entries (+103 Lane A; target 4,540+ met). Lane C wired 2 permissive tools with real proofs: tools/wave51_lane_c/ — Kokoro TTS (Apache-2.0, 9/9 checks PASS: 7.825s seeded VO take, -25.21 LUFS) + Rhubarb Lip Sync (MIT, 47 mouth events, 11/11 checks PASS, byte-identical TSV determinism). LGPL doctrine still PENDING OWNER VERDICT. Wave 52 coordinator refresh (2026-10-08): 480 rows · 455 distinct (480 row numbers present, no gaps; Lane A appended rows 477–480: enable3d LGPL-3.0, frei0r GPL-2.0, Qtractor GPL-2.0, Carla GPL-2.0-or-later — all 4 distinct, zero supersedes/delists; Lane B re-verification cycle 23: rows 234, 242–250 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row 243 Strudel now owner-archived upstream — license unaffected; row 245 Cmajor canonical moved SoundStacks/cmajor → cmajor-lang/cmajor; drift watch 7/7 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix Codeberg-canonical, uzu/tidal active). Catalog: 4,541 → 4,658 honest #### entries (+117 Lane A incl. 61 OTR per-show deep dives, +1 Lane C pyloudnorm; GFPGAN Wave 2 ❓/Wave 6 ✅ duplicate merged by coordinator — kept the richer Wave 2 entry, folded v1.4 detail). Lane C wired 2 permissive tools with real proofs: tools/wave52_lane_c/ — noisereduce 3.0.3 (MIT, −27 dB noise-floor suppression on seeded fixture, safe no-op on clean VO) + pyloudnorm (MIT, ITU-R BS.1770; podcast master −17.0 LUFS / broadcast master −23.9 LUFS, ebur128 cross-check 0.12 LU, byte-deterministic). Flag for Wave 53: row 151 MediaConch discrepancy (delisted on BSD-2-Clause relicense, but SourceCode/License.html now reads GPLv3+/MPLv2+ — possible upstream relicense reversal; recommend re-verification). LGPL doctrine still PENDING OWNER VERDICT. Wave 53 coordinator refresh (2026-10-08): 530 rows · 505 distinct (530 row numbers present, no gaps; Lane A appended rows 481–530: 50 new rows, all live, zero supersedes/delists; 23 dead/superseded markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; row 249 literal-pipe repaired by coordinator. Lane B re-verification cycle 24: rows 155, 251–259 — 10/10 CONFIRMED, zero relicenses, zero delists; row 253 subSync now owner-archived upstream (license unaffected); repo-location notes: row 257 UADE canonical = gitlab.com/uade-music-player/uade, row 259 ASAP canonical = SourceForge asap/code (no official GitHub repo); drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC still archived, MKVToolNix COPYING byte-identical 18,092 B, uzu/tidal LICENSE byte-identical 35,106 B). MediaConch row 151 discrepancy RESOLVED: NO relicense reversal — canonical MediaArea/MediaConch_SourceCode root LICENSE = BSD-2-Clause; the GPLv3+/MPLv2+ text lives only in the stale abandoned MediaArea/MediaConch repo (PREFORMA-era file, pushed 2021-09-29); DELISTED status stands, row note extended. Catalog: 4,658 → 4,762 honest #### entries (+104 Lane A; target 4,760+ met). Lane C wired 2 permissive tools with real proofs: tools/wave53_lane_c/ — faster-whisper subtitle stage (MIT, WER 0.0 vs ground truth on the real Wave-52 mastered VO WAV, SRT mux round-trip byte-equal, 11/11 checks PASS) + OpenImageIO HDR plate QC (Apache-2.0, EXR half-float round-trip max abs error 2.43e-04, 7/7 checks PASS). Wave 54 coordinator refresh (2026-10-08): 536 rows · 511 distinct (536 row numbers present, no gaps; Lane A appended rows 531–536: OpenDCP GPL-3.0, x264 GPL-2.0, x265 GPL-2.0, vhs-decode GPL-3.0, Hugin GPL-2.0-or-later, kinograph_machine GPL-3.0 — all 6 distinct, zero supersedes/delists; row 267 precision-corrected GPL-2.0-or-later → GPL-3.0-or-later (quarantine treatment unchanged). Lane B re-verification cycle 25: rows 260–270 — 10/10 CONFIRMED (9 clean + row 267 correction), zero relicenses, zero delists, zero supersedes; row 263 audapolis canonical moved audapolis/audapolis → bugbakery/audapolis (live); row 264 Kaltura canonical moved kaltura/server → kaltura-community/server (live). GPL audit RESOLVED: LosslessCut (GPL-2.0) + Avidemux (GPL-2.0) flags VALID — catalog badges corrected to quarantined-standalone; StaxRip flag FALSE POSITIVE — MIT verified, ✅ stands. Drift watch clean. Catalog: 4,762 → 4,865 honest #### entries (+103 Lane A; target 4,870+ MISSED by 5 — honest shortfall, Wave 55 clears it). Lane C wired 2 permissive tools with real proofs: tools/wave54_lane_c/ — pycaption 2.3.13 (Apache-2.0, caption format normalization, 18/18 checks PASS) + srt 3.5.3 (MIT, SRT parse/compose/retime, 10/10 checks PASS). LGPL doctrine still PENDING OWNER VERDICT.) Wave 57 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (zero new rows; cycle 28: rows 291–300 10/10 confirmed; repo-move note 294 OpenBroadcaster; drift watch 7/7 clean). Catalog: 5,090 → 5,191 honest #### entries (+101 Lane A: retro homebrew SDK docs round 3 — Atari ST/Falcon, Amiga, X68000/FM Towns; landmark musicdisks pouët/demozoo; PD radio-drama round 6; target 5,190+ met). Lane C wired 2 permissive tools with real proofs: tools/wave57_lane_c/ — SpectralCluster (Apache-2.0, embed→cluster: ECAPA 192-dim 4-segment fixture clustered [0,1,0,1] deterministic) + pyannote-metrics (MIT, DER=0.0000 / JER=0.0000, 9/9 checks PASS) — full measured diarization stage closed; entries flipped WIRED — run-proven. LGPL doctrine still PENDING OWNER VERDICT. Wave 55 coordinator refresh (2026-10-08, missed on catalog): quarantine 557 rows · 532 distinct (+21 rows 537–557; Lane B re-verification cycle 26: rows 271–280 — 10/10 CONFIRMED, zero relicenses; row 272 Open Cubic Player precision-corrected to GPL-2.0; drift watch 10/10 clean; Kaltura/audapolis canonical-path updates). Catalog: 4,865 → 4,980 honest #### entries (+115 Lane A; target 4,970+ met). Lane C wired resampy (ISC, 24→48 kHz SRC, 130.77 dB SNR, honest round-trip caveat documented) + audiomentations (MIT, degradation-stress stage, seeded deterministic). Wave 56 coordinator refresh (2026-10-08): quarantine 572 rows · 546 distinct (+15 rows 558–572; row 464 ArchiveBox DELISTED — upstream relicensed GPL-3.0-only → MIT live 2026-10-08, catalog badge corrected to ✅; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup). Lane B re-verification cycle 27: rows 281–290 — 10/10 CONFIRMED, zero relicenses, zero delists; 4 GitHub API NOASSERTION gaps resolved by direct license-text reads; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 4,980 → 5,090 honest #### entries (+110 Lane A: PD radio-drama round 5, homebrew SDK docs round 2, video-archive tooling round 2, musicdisk archives round 2; target 5,080+ met). Lane C wired 2 permissive tools with real proofs in tools/wave56_lane_c/: DeepFilterNet (dual MIT/Apache-2.0 deep-NN speech denoiser — 6/7 checks PASS: +5.9 dB stationary / +4.4 dB non-stationary on the real Kokoro VO fixture, clean no-op, byte-deterministic; 1 honest relative-gate FAIL documented) + SpeechBrain ECAPA-TDNN speaker embeddings (Apache-2.0 — 6/6 checks PASS, intra/inter cosine margin +0.1483, byte-deterministic; diarization "who spoke when" stage). Pipeline now: text→VO→lip-sync→denoise+master→subtitles→normalize→SRC→**deep denoise + speaker embeddings**. Wave 58 coordinator refresh (2026-10-08): 576 rows · 550 distinct (576 row numbers present, no gaps; Lane A appended rows 573–576: BitJag atari 240p test suite GPL-2.0+, rmvlib LGPL-2.1, pce-devel/huc mixed (contains GPL components), BitJag install scripts GPL-3.0 — all 4 live, zero supersedes/delists; 24 dead/superseded/delisted markers per standing convention — rows 33/111/174/234 stay live; −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup. Lane B re-verification cycle 29: rows 301–310 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; drift watch 10/10 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Catalog: 5,191 → 5,294 honest #### entries (+103 Lane A: SDK docs round 4 — PCE/TG-16, Neo Geo, 32X, Jaguar; landmark musicdisks pouet toplist #11–#25; PD radio-drama round 7 — 54 single-episode deep dives; target 5,290+ met). Lane C first REAL-VOICE diarization test with proof in tools/wave58_lane_c/: 3 Kokoro voices dialogue (ECAPA-TDNN 192-dim, 1.5s/0.25s windows → SpectralCluster → pyannote-metrics): DER 0.4084 / JER 0.5478 @collar 0.0; forced k=3 → DER 0.3359; auto-k merges the two female voices (embeddings contain all 3 voices, count selection is the failure); window-level DER ~0.34 is structural, next lane: VAD-boundary refinement. Flag for Wave 59: Lane A P3 single-episode badge discipline differs from Wave-55 single-episode 'underlying broadcast PD' reasoning — uniformity review requested. LGPL doctrine still PENDING OWNER VERDICT.) **Wave 59 coordinator refresh (2026-10-08): 576 rows · 550 distinct** (576 row numbers present, no gaps — independent direct recount; 24 dead/superseded/delisted markers per standing convention (rows 33/111/174/234 stay live); −1 aeneas rows-1+2; −1 Furnace rows-122+271 dup; zero new rows this wave. Lane B re-verification cycle 30: rows 311–320 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; row annotations stamped re-verified; drift watch 11/11 clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical; OpenBroadcaster canonical path intact). Catalog: 5,294 → 5,401 honest #### entries (+107 Lane A: SDK docs round 5 — 35 arcade/homebrew console SDK docs, 18 landmark musicdisks (pouët toplist), 54 PD radio-drama round 8 single-episode deep dives; target 5,400+ met). OTR badge-discipline ruling (Lane A, documented in Wave 59 wave note): show-established-✅PD + stated licenseurl-absent diligence rule; Lone Ranger keeps ⚠️ caution (character rights, not broadcast). Lane C wired VAD-boundary diarization refinement with real proofs in tools/wave59_lane_c/: two independent implementations — webrtcvad-tuned (DER 0.4084 → 0.3416, JER 0.5478 → 0.5051, 11/13 checks PASS, torch-free) + silero-vad variant (tuned DER 0.4020 ~flat, forced-k=3 → DER 0.0941 confirming A/C female-voice merge is the embedding-side problem); dominant error is A↔C female-voice confusion (~12.2s of 13.4s), boundary methods cannot fix it. LGPL doctrine still PENDING OWNER VERDICT.) **Wave 63 coordinator refresh (2026-10-08): 602 rows · 577 distinct** (Lane A appended rows 595–602: 8 copyleft demoscene/audio tools — all live; Lane B cycle 34: rows 351–360 10/10 CONFIRMED, zero relicenses, drift watch 10/10 clean; Lane C: VAD-coverage recovery DER 0.0712 new best + ECAPA step-4 diagnostic retry complete. Catalog: 5,700 → 5,831 honest #### entries — target 5,800+ met. LGPL doctrine still PENDING OWNER VERDICT).
 
 
 
@@ -18578,7 +18578,7 @@ Scoring lane: public-domain sheet music, scores, and classical recordings for ep
 - **Repo lane:** trippedd (captions)
 - **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
 - **Status:** WIRED — run-proven (Wave 57 Lane C, 2026-10-08)
-- **Notes:** The clustering half of embedding-based diarization without the pyannote HF-gated models: pair with any speaker-embedding extractor (Resemblyzer, WeSpeaker) → speaker-homogeneous caption cues. Author wq2012 is the Google researcher behind the original method. Wired 2026-10-08 on Wave-56 ECAPA embeddings: 2 clusters, DER 0.0, JER 0.0 — see tools/wave57_lane_c/PROOFS.md. [Wave 17 Lane B] [Wave 60 Lane C: embedding-side speaker-count estimators wired on the real-voice Wave-58 fixture — eigengap on k-NN(7)-sparsified symmetric normalized Laplacian selects k=3 (13x gap margin) vs the donor's own auto-k (k=2, merges the two female voices); estimated-k clustering → DER 0.0941 / JER 0.0844, matching forced k=3 and beating auto-k DER 0.4084. BIC (k=2) and silhouette (k=2) documented as failing on this fixture. Note: Wave 58's uncommitted forced-k diagnostic DER 0.3359 does not reproduce deterministically (re-measures 0.0941) — see tools/wave60_lane_c/PROOFS.md.]
+- **Notes:** The clustering half of embedding-based diarization without the pyannote HF-gated models: pair with any speaker-embedding extractor (Resemblyzer, WeSpeaker) → speaker-homogeneous caption cues. Author wq2012 is the Google researcher behind the original method. Wired 2026-10-08 on Wave-56 ECAPA embeddings: 2 clusters, DER 0.0, JER 0.0 — see tools/wave57_lane_c/PROOFS.md. [Wave 17 Lane B] [Wave 60 Lane C: embedding-side speaker-count estimators wired on the real-voice Wave-58 fixture — eigengap on k-NN(7)-sparsified symmetric normalized Laplacian selects k=3 (13x gap margin) vs the donor's own auto-k (k=2, merges the two female voices); estimated-k clustering → DER 0.0941 / JER 0.0844, matching forced k=3 and beating auto-k DER 0.4084. BIC (k=2) and silhouette (k=2) documented as failing on this fixture. Note: Wave 58's uncommitted forced-k diagnostic DER 0.3359 does not reproduce deterministically (re-measures 0.0941) — see tools/wave60_lane_c/PROOFS.md.] [Wave 63 Lane C: frame-labeling policy study on the same fixture/topology (VAD + dropped boundary-straddling windows + forced-k=3 SpectralCluster, labeling-only changes) — fill-within-VAD-speech (nearest labeled frame, same VAD segment only) DER 0.0712 / JER 0.0700 (miss 2.67 / FA 0.12 / conf 0.0) beats both V2c no-fill DER 0.1158 (miss 4.55 / FA 0.0, byte-identical reproduction of Wave-62) and global fill DER 0.0941 (miss 0.0 / FA 3.70, reproduces Wave-60's exact trade-off). Residual miss is the VAD recall ceiling (0.9351). Recommended production labeling policy — see tools/wave63_lane_c/PROOFS.md.]
 
 #### dscore (nryant) — diarization scoring toolkit ✅ commercial-safe
 - **What:** Reference diarization metrics: DER (diarization error rate), JER, with RTTM I/O and collar/forgiveness options — the NIST-style scoring harness.
@@ -58114,3 +58114,5083 @@ Round 3 continues the broadcast-automation pocket below rounds 1–2's coverage.
 
 ### Wave 62 coordinator summary (2026-10-08)
 Catalog: 5,600 → 5,700 honest #### entries (+100 Lane A; target 5,700+ met exactly). Quarantine: 586 → 594 rows · 568 distinct (rows 587–594, all live). Lane B re-verification cycle 33: rows 341–350 (munt, alsa-lib, LADSPA, mpg123, libmad, LAME, Audiere, TiMidity++, FFTW, zita-resampler) — 10/10 CONFIRMED, zero relicenses/delists/supersedes; drift watch clean (Helm/telxcc/MB-Lab/SubDownloader/MPC-HC/ScanTailor/Strudel/subSync still archived; MKVToolNix COPYING 18,092 B + uzu/tidal LICENSE 35,106 B byte-identical). Lane C rebuilt the diarization pipeline with denoise moved downstream of embeddings (Wave-61 production rule): re-measured DER 0.1158 / JER 0.1156 @collar 0.0 — honest delta vs Wave-60 0.0941/0.0844 decomposed as VAD-coverage trade-off (no-fill boundary drop: miss 4.55/FA 0.0 vs Wave-60 fill: miss 0.0/FA 3.70), NOT a separation regression; purity 1.0, confusion 0.0. Ablation re-confirms the Wave-61 rule: upstream denoise costs +0.2036 DER on noisy audio (0.2239 → 0.4275, k-flip 3→2); mechanism: GT-mean cos(A,C) rises 0.5905→0.7438 under noise. Downstream denoise gives +6.5 dB SNR with clean no-op (corr 0.99901) — value without touching the speaker path. Honest failure: step-4 ECAPA diagnostic on downstream mix incomplete (OOM SIGKILL 4×, documented in PROOFS.md §7, not simulated). Daemon restart mid-wave killed Lane A + Lane C workers; checkpoint resume recovered both (Lane A tree was clean, Lane C wire scripts intact). LGPL doctrine still PENDING OWNER VERDICT.
+### Wave 63 Lane A — Pocket 1: SDK docs round 9 (39)
+
+Round 9 pushes the SDK-docs pocket into the emulator dev-docs deep tail (Xenia, Mesen/Mesen2, BlastEm, FBNeo, Mednafen, FCEUX, DOSBox-X, 86Box — the 16 emulator wikis from round 6 plus Dolphin/DuckStation/PCSX2/RPCS3/melonDS/PPSSPP/bsnes/xemu/Vita3K/DeSmuME/Cemu/Azahar/ShadPS4/Panda3DS are already cataloged), retro-OS/assembler toolchain docs (Haiku, ReactOS, NASM, SDCC, Open Watcom, FreeDOS, MenuetOS), retro-computer dev knowledge bases (TI-99/4A Ninerpedia, Dragon 32/64, CoCo, Jupiter Ace), game-framework docs (HaxeFlixel, Allegro, SFML, Magnum, Panda3D, Irrlicht, Urho3D, LÖVE, PuzzleScript, Bitsy, Twine, Ren'Py, OHRRPGCE, RetroBlit, Pyxel), and niche hardware (OpenPandora, CD-i ICDIA, OpenDingux). Every URL verified live 2026-10-08 (HTTP 200; PCSX2/RPCS3/Dolphin/DuckStation dropped as cataloged dupes). Pyxel is MIT (raw LICENSE) → ✅; all docs/sites stay ❓ per precedent (docs carry no license grant — code not catalogued, nothing quarantined). Honest drops: flatassembler.net (unreachable), microw8.github.io (404), KolibriOS wiki (redirect loop), nuon-domination.com (unreachable), creativision.org (unreachable), exodus-emu.com (unreachable), phaser.io (403 bot-wall). Pre-append dedup: 4 title+URL dupes dropped (Dolphin Wiki, DuckStation Wiki, PCSX2 Developer Resources, RPCS3 Wiki — all cataloged Wave 60).
+
+#### Xenia Wiki ❓ documentation-only
+- **What:** Xenia — Xbox 360 emulator developer wiki (GPU/CPU emulation internals, contribution docs).
+- **URL:** https://github.com/xenia-project/xenia/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Xbox 360 emulation internals reference. [Wave 63 Lane A]
+
+#### Mesen2 Wiki ❓ documentation-only
+- **What:** Mesen2 — multi-system emulator developer wiki (NES/SNES/GB/GBA/PCE emulation docs).
+- **URL:** https://github.com/SourMesen/Mesen2/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cycle-accurate emulation dev reference. [Wave 63 Lane A]
+
+#### Mesen Wiki ❓ documentation-only
+- **What:** Mesen — NES/SNES/Game Boy emulator developer wiki (HD packs, debugger docs).
+- **URL:** https://github.com/SourMesen/Mesen/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Companion to the cataloged Mesen2 wiki entry. [Wave 63 Lane A]
+
+#### BlastEm Documentation ❓ documentation-only
+- **What:** BlastEm — cycle-accurate Genesis/Mega Drive emulator documentation (blastem.net docs).
+- **URL:** https://www.blastem.net
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genesis hardware-accuracy reference. [Wave 63 Lane A]
+
+#### FBNeo Wiki ❓ documentation-only
+- **What:** FinalBurn Neo — arcade emulator developer wiki (driver writing, build docs).
+- **URL:** https://github.com/finalburnneo/FBNeo/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arcade driver-development reference. [Wave 63 Lane A]
+
+#### Mednafen Documentation ❓ documentation-only
+- **What:** Mednafen — multi-system emulator official documentation (command-line options, netplay, debugger).
+- **URL:** https://mednafen.github.io/documentation/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CLI-first multi-system emulation reference. [Wave 63 Lane A]
+
+#### FCEUX ❓ documentation-only
+- **What:** FCEUX — NES/Famicom emulator site and documentation (fceux.com).
+- **URL:** https://fceux.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** NES tool-assisted emulation reference. [Wave 63 Lane A]
+
+#### DOSBox-X Wiki ❓ documentation-only
+- **What:** DOSBox-X — enhanced DOS emulator developer wiki (configuration, debugger, development).
+- **URL:** https://github.com/joncampbell123/dosbox-x/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS environment reference for retro-PC tooling. [Wave 63 Lane A]
+
+#### 86Box ❓ documentation-only
+- **What:** 86Box — x86/PC hardware emulator site and documentation (86box.net).
+- **URL:** https://86box.net/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Low-level x86 hardware emulation reference. [Wave 63 Lane A]
+
+#### Haiku API Documentation ❓ documentation-only
+- **What:** Haiku OS — official API documentation (haiku-os.org/docs/api).
+- **URL:** https://www.haiku-os.org/docs/api
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** BeOS-descendant OS dev reference. [Wave 63 Lane A]
+
+#### ReactOS Wiki ❓ documentation-only
+- **What:** ReactOS — open Windows-compatible OS wiki (development, architecture, Win32 internals).
+- **URL:** https://reactos.org/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Win32-compatible OS internals reference. [Wave 63 Lane A]
+
+#### NASM Manual ❓ documentation-only
+- **What:** NASM — Netwide Assembler official manual (nasm.us/doc).
+- **URL:** https://www.nasm.us/doc/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on manual page; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** x86 assembly reference for retro-PC tooling. [Wave 63 Lane A]
+
+#### SDCC Manual ❓ documentation-only
+- **What:** SDCC — Small Device C Compiler manual (sdccman.pdf, SourceForge).
+- **URL:** https://sdcc.sourceforge.net/doc/sdccman.pdf
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; manual PDF; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 8-bit target C compiler reference (Z80/6502/GB). [Wave 63 Lane A]
+
+#### Open Watcom ❓ documentation-only
+- **What:** Open Watcom — open-source C/C++/Fortran compiler project site (openwatcom.org).
+- **URL:** https://openwatcom.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS/Win16-era toolchain reference. [Wave 63 Lane A]
+
+#### FreeDOS Documentation ❓ documentation-only
+- **What:** FreeDOS — open DOS-compatible OS documentation (freedos.org).
+- **URL:** https://www.freedos.org
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS environment reference. [Wave 63 Lane A]
+
+#### MenuetOS ❓ documentation-only
+- **What:** MenuetOS — assembly-written OS site and documentation (menuetos.net).
+- **URL:** https://menuetos.net/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Pure-assembly OS reference. [Wave 63 Lane A]
+
+#### Ninerpedia (TI-99/4A) ❓ documentation-only
+- **What:** Ninerpedia — TI-99/4A development wiki (hardware, TMS9900 assembly, cartridge dev).
+- **URL:** https://www.ninerpedia.org
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** TI-99/4A homebrew knowledge base. [Wave 63 Lane A]
+
+#### World of Dragon Archive (Dragon 32/64) ❓ documentation-only
+- **What:** World of Dragon — Dragon 32/64 development archive (archive.worldofdragon.org).
+- **URL:** https://archive.worldofdragon.org
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dragon 32/64 dev knowledge base. [Wave 63 Lane A]
+
+#### Color Computer Archive (CoCo) ❓ documentation-only
+- **What:** Color Computer Archive — TRS-80 Color Computer development archive (colorcomputerarchive.com).
+- **URL:** https://colorcomputerarchive.com
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CoCo homebrew knowledge base. [Wave 63 Lane A]
+
+#### Jupiter Ace Archive ❓ documentation-only
+- **What:** Jupiter Ace — Forth-based ZX81-successor development archive (jupiter-ace.co.uk).
+- **URL:** https://www.jupiter-ace.co.uk
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Jupiter Ace Forth dev reference. [Wave 63 Lane A]
+
+#### HaxeFlixel Documentation ❓ documentation-only
+- **What:** HaxeFlixel — 2D game framework documentation (haxeflixel.com/documentation).
+- **URL:** https://haxeflixel.com/documentation/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Haxe 2D game framework reference. [Wave 63 Lane A]
+
+#### Allegro Documentation ❓ documentation-only
+- **What:** Allegro — game programming library documentation (liballeg.org).
+- **URL:** https://liballeg.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Classic game-dev library reference. [Wave 63 Lane A]
+
+#### SFML Documentation ❓ documentation-only
+- **What:** SFML — Simple and Fast Multimedia Library documentation (sfml-dev.org).
+- **URL:** https://www.sfml-dev.org/documentation/3.0.0/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C++ multimedia library reference. [Wave 63 Lane A]
+
+#### Magnum Documentation ❓ documentation-only
+- **What:** Magnum — lightweight C++ graphics engine documentation (doc.magnum.graphics).
+- **URL:** https://doc.magnum.graphics/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modular graphics engine reference. [Wave 63 Lane A]
+
+#### Panda3D Documentation ❓ documentation-only
+- **What:** Panda3D — 3D game engine documentation (docs.panda3d.org).
+- **URL:** https://docs.panda3d.org/1.10/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Python/C++ 3D engine reference. [Wave 63 Lane A]
+
+#### Irrlicht Documentation ❓ documentation-only
+- **What:** Irrlicht — 3D engine API documentation (irrlicht.sourceforge.io/docu).
+- **URL:** https://irrlicht.sourceforge.io/docu/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lightweight 3D engine reference. [Wave 63 Lane A]
+
+#### Urho3D Documentation ❓ documentation-only
+- **What:** Urho3D — 3D game engine documentation (urho3d.github.io).
+- **URL:** https://urho3d.github.io/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 3D engine reference. [Wave 63 Lane A]
+
+#### LÖVE ❓ documentation-only
+- **What:** LÖVE — 2D game framework site (love2d.org; wiki is bot-walled from this egress).
+- **URL:** https://love2d.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08 on main site; wiki returns 403 bot-wall — existence confirmed via main site; no license statement; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lua 2D framework reference; wiki bot-wall noted honestly. [Wave 63 Lane A]
+
+#### PuzzleScript Documentation ❓ documentation-only
+- **What:** PuzzleScript — puzzle-game scripting language documentation (puzzlescript.net).
+- **URL:** https://www.puzzlescript.net/Documentation/documentation.html
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Puzzle-game DSL reference. [Wave 63 Lane A]
+
+#### Bitsy Wiki ❓ documentation-only
+- **What:** Bitsy — tiny game-editor wiki (github.com/le-doux/bitsy/wiki).
+- **URL:** https://github.com/le-doux/bitsy/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on wiki; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bitsy game-editor reference. [Wave 63 Lane A]
+
+#### Twine Cookbook ❓ documentation-only
+- **What:** Twine — interactive-fiction cookbook (twinery.org/cookbook).
+- **URL:** https://twinery.org/cookbook/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Interactive-fiction authoring reference. [Wave 63 Lane A]
+
+#### Ren'Py Documentation ❓ documentation-only
+- **What:** Ren'Py — visual-novel engine documentation (renpy.org/doc/html).
+- **URL:** https://www.renpy.org/doc/html/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Visual-novel engine reference. [Wave 63 Lane A]
+
+#### OHRRPGCE Documentation ❓ documentation-only
+- **What:** OHRRPGCE — RPG creation engine documentation (hamsterrepublic.com/ohrrpgce/docs).
+- **URL:** https://hamsterrepublic.com/ohrrpgce/docs/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on docs; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** RPG-maker engine reference. [Wave 63 Lane A]
+
+#### Rockbox Development Guide ❓ docs; code GPL (noted, not quarantined)
+- **What:** Rockbox — open portable-media-player firmware development guide (rockbox.org/wiki/DevelopmentGuide).
+- **URL:** https://www.rockbox.org/wiki/DevelopmentGuide
+- **License:** ❓ docs license unverified (verified live HTTP 200, 2026-10-08; docs carry no license grant. Upstream CODE is GPL — noted honestly; the code is not catalogued here, so no quarantine row)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Portable-device firmware dev reference. [Wave 63 Lane A]
+
+#### RetroBlit Documentation ❓ documentation-only
+- **What:** RetroBlit — retro game framework documentation (retroblit.com).
+- **URL:** https://retroblit.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro game framework reference. [Wave 63 Lane A]
+
+#### kitao/pyxel ✅ commercial-safe
+- **What:** Pyxel — retro game engine for Python (wiki: github.com/kitao/pyxel/wiki).
+- **URL:** https://github.com/kitao/pyxel/wiki
+- **License:** ✅ MIT (verified Wave 63 Lane A, 2026-10-08: raw LICENSE — MIT License, Copyright (c) 2018-2026 Takashi Kitao; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MIT-licensed retro engine; wiki catalogued as docs. [Wave 63 Lane A]
+
+#### OpenPandora ❓ documentation-only
+- **What:** OpenPandora — open handheld console site and documentation (openpandora.org).
+- **URL:** https://www.openpandora.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Open handheld reference. [Wave 63 Lane A]
+
+#### ICDIA (International CD-i Association) ❓ documentation-only
+- **What:** ICDIA — Philips CD-i development association site (icdia.co.uk).
+- **URL:** https://www.icdia.co.uk/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CD-i development reference. [Wave 63 Lane A]
+
+#### OpenDingux ❓ documentation-only
+- **What:** OpenDingux — open handheld firmware project (github.com/OpenDingux org).
+- **URL:** https://github.com/OpenDingux
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; org page; per-repo licenses vary — docs carry no license grant; code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 1/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dingoo/OpenDingux handheld reference. [Wave 63 Lane A]
+### Wave 63 Lane A — Pocket 2: landmark musicdisk deep dives round 7 (27)
+
+Round 7 continues the landmark-musicdisk pocket down pouët's vote-sorted musicdisk prodlist (prodlist.php?type[]=musicdisk&order=thumbup — fetched live 2026-10-08; page 4 of the chart, below rounds 4–6's page-2/3 coverage). This round RESOLVES all 4 of Wave 61's remaining held musicdisks (Happy-Hardcore XMas EP 2002, Chipmusic Best Of 2001-2003, Alien Invasion, Awakening: Part2 — pouët prod IDs recovered via pouët's own search; the demozoo ID gap that blocked Wave 61 is bypassed by using pouët as the primary record). Every prod page verified LIVE on pouët 2026-10-08 (title + group + Musicdisk type via og:description). demozoo direct access remains Cloudflare-blocked — demozoo cross-links noted where search snippets establish them, not claimed as verified. No license statements on any scene prod record — all ❓, with NC-not-declared honest negatives. Honest drops: Turmoil — Sanity (pouët 3154 — same prod as catalog line 53565, title+group+year match, dropped as dupe); Chiperia Issue #3 (pouët 66373 — same prod as catalog line 53664, dropped as dupe); Watching Demos Can Kill You kept with dual musicdisk/wild typing noted. Pre-append dedup: 0 pouët-ID dupes, 2 title dupes dropped above.
+
+#### Watching Demos Can Kill You ! — Demoscene Stories (Oct 2007) ❓ landmark musicdisk
+- **What:** Watching Demos Can Kill You ! — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=32511
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk / wild for Windows, released in october 2007" — dual typing noted honestly)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### PostMODism — SandS (Dec 2005) ❓ landmark musicdisk
+- **What:** PostMODism — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=21005
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, incube compo 2005")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### hacks for tracks — Ephidrena (Jan 2005) ❓ landmark musicdisk
+- **What:** hacks for tracks — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Amiga AGA).
+- **URL:** https://www.pouet.net/prod.php?which=15633
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "4k / musicdisk for Amiga AGA, released in january 2005")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### 10 Years HVSC — HVSC Crew (Nov 2006) ❓ landmark musicdisk
+- **What:** 10 Years HVSC — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Commodore 64).
+- **URL:** https://www.pouet.net/prod.php?which=27518
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Commodore 64, released in november 2006")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### ST-Sound Advance — Oxygene (Oct 2001) ❓ landmark musicdisk
+- **What:** ST-Sound Advance — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Gameboy Advance).
+- **URL:** https://www.pouet.net/prod.php?which=3816
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Gameboy Advance, released in october 2001")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### warryorz — YM Rockerz (Dec 2003) ❓ landmark musicdisk
+- **What:** warryorz — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Atari ST).
+- **URL:** https://www.pouet.net/prod.php?which=11195
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Atari ST, n/a at Killer Instinct Exhibition 2003")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Hively Player Advance — Up Rough (Jan 2009) ❓ landmark musicdisk
+- **What:** Hively Player Advance — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Gameboy Advance).
+- **URL:** https://www.pouet.net/prod.php?which=52450
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Gameboy Advance, released in january 2009")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Happy-Hardcore Xmas EP 2003 — BaSShuT (Dec 2003) ❓ landmark musicdisk
+- **What:** Happy-Hardcore Xmas EP 2003 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=11216
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in december 2003")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4); series-mate of the resolved 2002 held item. [Wave 63 Lane A]
+
+#### Razor 1911 Chipdisk1 — Razor 1911 (Apr 2002) ❓ landmark musicdisk
+- **What:** Razor 1911 Chipdisk1 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=5684
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in april 2002")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Rebber Soul — Paradise (Apr 2006) ❓ landmark musicdisk
+- **What:** Rebber Soul — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=24446
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in april 2006")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Synthesized World 2 — SandS (Nov 2007) ❓ landmark musicdisk
+- **What:** Synthesized World 2 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=33282
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in november 2007")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Deadly Beats — CoolPHat (Nov 2003) ❓ landmark musicdisk
+- **What:** Deadly Beats — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=11105
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in november 2003")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Songs in the Key of YM — mOdmate & Jade & Evil (Apr 2025) ❓ landmark musicdisk
+- **What:** Songs in the Key of YM — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Atari ST/STe).
+- **URL:** https://www.pouet.net/prod.php?which=103888
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Atari ST / Atari STe, released in april 2025")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### The Sound of SceneSat Volume 4 — SceneSat (May 2018) ❓ landmark musicdisk
+- **What:** The Sound of SceneSat Volume 4 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (JavaScript).
+- **URL:** https://www.pouet.net/prod.php?which=76212
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for JavaScript, released in may 2018")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4); series-mate of the resolved SceneSat Vol 2. [Wave 63 Lane A]
+
+#### Modern Love Classics — MultiStyle Labs (Jul 2017) ❓ landmark musicdisk
+- **What:** Modern Love Classics — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Commodore 64).
+- **URL:** https://www.pouet.net/prod.php?which=71132
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Commodore 64, 4th at Nordlicht 2017")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### maxYMiser online compo 2006 — gwEm (Dec 2006) ❓ landmark musicdisk
+- **What:** maxYMiser online compo 2006 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Atari STe).
+- **URL:** https://www.pouet.net/prod.php?which=28369
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk / votedisk for Atari STe, released in december 2006")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### my spanish wankers — mandarine (Mar 2004) ❓ landmark musicdisk
+- **What:** my spanish wankers — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=11748
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in march 2004")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Christmas Chips 2 — Talent (Dec 2002) ❓ landmark musicdisk
+- **What:** Christmas Chips 2 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=8287
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in december 2002")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Trilobyte #12 — Nuance (Sep 2009) ❓ landmark musicdisk
+- **What:** Trilobyte #12 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows/Amiga PPC/RTG).
+- **URL:** https://www.pouet.net/prod.php?which=53911
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows / Amiga PPC/RTG, released in september 2009")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Happy-Hardcore XMAS EP 2007 — BaSShuT (Dec 2007) ❓ landmark musicdisk
+- **What:** Happy-Hardcore XMAS EP 2007 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=34175
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in december 2007")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4); series-mate of the resolved 2002 held item. [Wave 63 Lane A]
+
+#### Chip'n'Tuned Volume #1 — Surprise!Productions (Apr 2007) ❓ landmark musicdisk
+- **What:** Chip'n'Tuned Volume #1 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=30173
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in april 2007")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Tristar Remix Vol.1 — Tristar (Feb 2006) ❓ landmark musicdisk
+- **What:** Tristar Remix Vol.1 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=23330
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in february 2006")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Bits 'n' Pieces — Chimera Music (Nov 2008) ❓ landmark musicdisk
+- **What:** Bits 'n' Pieces — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=52065
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in november 2008")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Landmark musicdisk round 7 (pouët chart page 4). [Wave 63 Lane A]
+
+#### Happy-Hardcore XMas EP 2002 — BaSShuT (Dec 2002) ❓ landmark musicdisk
+- **What:** Happy-Hardcore XMas EP 2002 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=8255
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in december 2002")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID 8255 recovered via pouët search). [Wave 63 Lane A]
+
+#### Chipmusic Best Of 2001-2003 — Razor 1911 (Jun 2003) ❓ landmark musicdisk
+- **What:** Chipmusic Best Of 2001-2003 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=10341
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in june 2003"; demozoo search-snippet cross-confirms "Chipmusic Best of 2001 - 2003 — Windows - Musicdisk | Razor 1911 | Jul 2003")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID 10341 recovered via pouët search). [Wave 63 Lane A]
+
+#### Alien Invasion — Nectarine (Dec 2010) ❓ landmark musicdisk
+- **What:** Alien Invasion — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Linux/Windows/MacOSX PPC).
+- **URL:** https://www.pouet.net/prod.php?which=56430
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Linux / Windows / MacOSX PPC, released in december 2010")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID 56430; pouët 15688 is a same-title wild/animation prod by Flo — different prod, noted honestly). [Wave 63 Lane A]
+
+#### Awakening: Part2 — ALLien Senses (Apr 2006) ❓ landmark musicdisk
+- **What:** Awakening: Part2 — landmark musicdisk; title/group/Musicdisk-type match on pouët record (Windows).
+- **URL:** https://www.pouet.net/prod.php?which=24610
+- **License:** ❓ no license statement on record (verified 2026-10-08: pouët prod page live, typed "musicdisk for Windows, released in april 2006")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (musicdisks)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wave 61 held item RESOLVED (pouët ID 24610 recovered via pouët search); series-mate of the cataloged Awakening (pouët 21390). [Wave 63 Lane A]
+### Wave 63 Lane A — Pocket 3: PD radio-drama round 12 — per-episode deep dives (48)
+
+48 single-episode deep dives: 8 Burns and Allen, 6 The Great Gildersleeve, 6 Our Miss Brooks, 5 Lum and Abner, 6 Escape, 5 2000 Plus, 4 Tales of the Texas Rangers, 8 Fred Allen. Every item verified live against the archive.org metadata API on 2026-10-08 (HTTP 200, title match, 1–6 audio files, none access-restricted). Badge discipline per the Wave 59 uniformity ruling: ✅ on established show-level PD precedent with the item-level licenseurl-absent fact stated honestly (diligence-recorded, not assumed); no Lone Ranger/Shadow/Green Hornet character-rights shows in this round. Pre-append dedup: 1 catalog dupe dropped (Escape471001TheMostDangerousGame — replaced with Escape480215AncientSorceries); 1 transient metadata fetch failure re-verified OK (TheGreatGildersleeve420614GildyProducesAPlay). Honest shortfalls: Lum and Abner ships 5 (clean singles genuinely scarce — collections excluded), 2000 Plus ships 5 (3 candidates access-restricted), Tales of the Texas Rangers ships 4 (singles scarce — OTRR 92-episode/93-episode collections excluded per the multi-episode rule); Fred Allen + Burns and Allen carry the balance to 48.
+
+#### George Needs A Guest Star — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen 40 09 16 George Needs A Guest Star" — Burns and Allen (1940-09-16); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen400916GeorgeNeedsAGuestStar
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Santa And The Wicked Witch — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen Show 41 12 23 Santa And The Wicked Witch" — Burns and Allen (1941-12-23); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen411223ShowSantaAndTheWickedWitch
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Kiddie Party — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen 1940 07 29 Kiddie Party" — Burns and Allen (1940-07-29); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen19400729KiddieParty
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Gracie's Murder Mystery — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen 38 01 10 Gracie's Murder Mystery" — Burns and Allen (1938-01-10); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen380110GraciesMurderMystery
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Thanksgiving — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen 40 11 18 Thanksgiving" — Burns and Allen (1940-11-18); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen401118Thanksgiving
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Saint Patrick's Day Parade — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen 41 03 17 Saint Patrick's Day Parade" — Burns and Allen (1941-03-17); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen410317SaintPatricksDayParade
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### George And Jack As Gypsies — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen 48 01 08 George And Jack As Gypsies" — Burns and Allen (1948-01-08, Jack Benny guest); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen480108GeorgeAndJackAsGypsiesWithJackBenny
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Gracie's Mother Visits — Burns and Allen (OTR) ✅ PD
+- **What:** "Burns And Allen 48 05 20 Gracie's Mother Visits" — Burns and Allen (1948-05-20); single-episode deep dive.
+- **URL:** https://archive.org/details/BurnsAndAllen480520GraciesMotherVisits
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### New Years Costume Ball — The Great Gildersleeve (OTR) ✅ PD
+- **What:** "The Great Gildersleeve 47 01 01 New Years Costume Ball" — The Great Gildersleeve (1947-01-01); single-episode deep dive.
+- **URL:** https://archive.org/details/TheGreatGildersleeve470101NewYearsCostumeBall
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Eve's Mother Visits — The Great Gildersleeve (OTR) ✅ PD
+- **What:** "The Great Gildersleeve 44 06 04 Eve's Mother Visits" — The Great Gildersleeve (1944-06-04); single-episode deep dive.
+- **URL:** https://archive.org/details/TheGreatGildersleeve440604EvesMotherVisits
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The Canary Wont Sing — The Great Gildersleeve (OTR) ✅ PD
+- **What:** "The Great Gildersleeve 41 11 30 The Canary Wont Sing" — The Great Gildersleeve (1941-11-30); single-episode deep dive.
+- **URL:** https://archive.org/details/TheGreatGildersleeve411130TheCanaryWontSing
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Gildy Produces A Play — The Great Gildersleeve (OTR) ✅ PD
+- **What:** "The Great Gildersleeve 42 06 14 Gildy Produces A Play" — The Great Gildersleeve (1942-06-14); single-episode deep dive.
+- **URL:** https://archive.org/details/TheGreatGildersleeve420614GildyProducesAPlay
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files (first fetch transiently failed, re-verified); item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Leroy Smokes A Cigar — The Great Gildersleeve (OTR) ✅ PD
+- **What:** "The Great Gildersleeve 41 11 23 Leroy Smokes A Cigar" — The Great Gildersleeve (1941-11-23); single-episode deep dive.
+- **URL:** https://archive.org/details/TheGreatGildersleeve411123LeroySmokesACigar
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Xmas: Harold Peary — The Great Gildersleeve (OTR) ✅ PD
+- **What:** "The Great Gildersleeve: Xmas: Harold Peary" — The Great Gildersleeve (Christmas episode); single-episode deep dive.
+- **URL:** https://archive.org/details/the-great-gildersleeve.-xmas.-harold-peary.t-02
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 6 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The First Aid Course — Our Miss Brooks (OTR) ✅ PD
+- **What:** "Our Miss Brooks 51 06 03 The First Aid Course" — Our Miss Brooks (1951-06-03); single-episode deep dive.
+- **URL:** https://archive.org/details/OurMissBrooks510603TheFirstAidCourse
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Easter Outfit — Our Miss Brooks (OTR) ✅ PD
+- **What:** "Our Miss Brooks 49 04 17 Easter Outfit" — Our Miss Brooks (1949-04-17); single-episode deep dive.
+- **URL:** https://archive.org/details/OurMissBrooks490417EasterOutfit
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Burial Grounds — Our Miss Brooks (OTR) ✅ PD
+- **What:** "Our Miss Brooks 50 11 05 Burial Grounds" — Our Miss Brooks (1950-11-05); single-episode deep dive.
+- **URL:** https://archive.org/details/OurMissBrooks501105BurialGrounds
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Board Of Education Day Address — Our Miss Brooks (OTR) ✅ PD
+- **What:** "Our Miss Brooks 50 01 08 Board Of Education Day Address" — Our Miss Brooks (1950-01-08); single-episode deep dive.
+- **URL:** https://archive.org/details/OurMissBrooks500108BoardOfEducationDayAddress
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Mrs. Davis' Mother's Day Millinery — Our Miss Brooks (OTR) ✅ PD
+- **What:** "Our Miss Brooks 51 05 13 Mrs. Davis' Mother's Day Millinery" — Our Miss Brooks (1951-05-13); single-episode deep dive.
+- **URL:** https://archive.org/details/OurMissBrooks510513Mrs.DavisMothersDayMillinery
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Going To The Clayton High Football Game — Our Miss Brooks (OTR) ✅ PD
+- **What:** "Our Miss Brooks 48-10-31 (013) Going To The Clayton High Football Game" — Our Miss Brooks (1948-10-31); single-episode deep dive.
+- **URL:** https://archive.org/details/OurMissBrooks48-10-31013GoingToTheClaytonHighFootballGame
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Thanksgiving Dinner With Lum — Lum and Abner (OTR) ✅ PD
+- **What:** "The Lum And Abner Show 48 11 21 Thanksgiving Dinner With Lum" — Lum and Abner (1948-11-21); single-episode deep dive.
+- **URL:** https://archive.org/details/TheLumAndAbnerShow481121ThanksgivingDinnerWithLum
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### 1930's Broadcast — Lum and Abner (OTR) ✅ PD
+- **What:** "Lum and Abner 1930's broadcast." — Lum and Abner (1930s); single-episode deep dive.
+- **URL:** https://archive.org/details/file-003_20260213
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### January 1950 Broadcast — Lum and Abner (OTR) ✅ PD
+- **What:** "Lum and Abner January 1950" — Lum and Abner (1950-01); single-episode deep dive.
+- **URL:** https://archive.org/details/file-006_202604
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### 4th Of July Picnic — Lum and Abner (OTR) ✅ PD
+- **What:** "Lum And Abner 45 07 04 4th Of July Picnic" — Lum and Abner (1945-07-04); single-episode deep dive.
+- **URL:** https://archive.org/details/LumAndAbner4507044thOfJulyPicnic
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Pine Ridge Moving Picture Co — Lum and Abner (OTR) ✅ PD
+- **What:** "Lum And Abner 38 02 28 (0001) Pine Ridge Moving Picture Co" — Lum and Abner (1938-02-28); single-episode deep dive.
+- **URL:** https://archive.org/details/LumAndAbner3802280001PineRidgeMovingPictureCo
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Pollock And The Parrah Man — Escape (OTR) ✅ PD
+- **What:** "Escape 47 10 29 Pollock And The Parrah Man" — Escape (1947-10-29); single-episode deep dive.
+- **URL:** https://archive.org/details/Escape471029PollockAndTheParrahMan
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Three Good Witnesses — Escape (OTR) ✅ PD
+- **What:** "Escape 48 01 28 Three Good Witnesses" — Escape (1948-01-28); single-episode deep dive.
+- **URL:** https://archive.org/details/Escape480128ThreeGoodWitnesses
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Evening Primrose — Escape (OTR) ✅ PD
+- **What:** "Escape 47 11 05 Evening Primrose" — Escape (1947-11-05); single-episode deep dive.
+- **URL:** https://archive.org/details/Escape471105EveningPrimrose
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Taboo — Escape (OTR) ✅ PD
+- **What:** "Escape 47 12 03 Taboo" — Escape (1947-12-03); single-episode deep dive.
+- **URL:** https://archive.org/details/Escape471203Taboo
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The Grove Of Ashtaroth — Escape (OTR) ✅ PD
+- **What:** "Escape 48 03 06 The Grove Of Ashtaroth" — Escape (1948-03-06); single-episode deep dive.
+- **URL:** https://archive.org/details/Escape480306TheGroveOfAshtaroth
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Ancient Sorceries — Escape (OTR) ✅ PD
+- **What:** "Escape 48 02 15 Ancient Sorceries" — Escape (1948-02-15); single-episode deep dive.
+- **URL:** https://archive.org/details/Escape480215AncientSorceries
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### When The Machines Went Mad — 2000 Plus (OTR) ✅ PD
+- **What:** "2000 PLUS 50 04 26 When The Machines Went Mad" — 2000 Plus (1950-04-26); single-episode deep dive.
+- **URL:** https://archive.org/details/2000PLUS500426WhenTheMachinesWentMad
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Worlds Apart — 2000 Plus (OTR) ✅ PD
+- **What:** "2000 Plus 50 11 15 Worlds Apart" — 2000 Plus (1950-11-15); single-episode deep dive.
+- **URL:** https://archive.org/details/2000Plus501115WorldsApart
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The Green Thing — 2000 Plus (OTR) ✅ PD
+- **What:** "2000 Plus-500927-24-The Green Thing" — 2000 Plus (1950-09-27); single-episode deep dive.
+- **URL:** https://archive.org/details/h1i8vyjz5smipsjhhdiyihtrfzm5baisagmb3pea
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The Temple Of The Pharaohs — 2000 Plus (OTR) ✅ PD
+- **What:** "2000 Plus 51 12 26 The Temple Of The Pharaohs" — 2000 Plus (1951-12-26); single-episode deep dive.
+- **URL:** https://archive.org/details/2000Plus511226TheTempleOfThePharaohs
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The Flying Saucers — 2000 Plus (OTR) ✅ PD
+- **What:** "The Flying Saucers by 2000 Plus" — 2000 Plus; single-episode deep dive.
+- **URL:** https://archive.org/details/mibmbcmm6kllboqlutdhgfgbovlfpbwxmxt1ds66
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The Soft Touch — Tales of the Texas Rangers (OTR) ✅ PD
+- **What:** "Tales Of the Texas Rangers - The Soft Touch" — Tales of the Texas Rangers; single-episode deep dive.
+- **URL:** https://archive.org/details/0nc3akah7gnblaxb9q9se1uo51kfs7kidq5jyjwh
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Open and Shut — Tales of the Texas Rangers (OTR) ✅ PD
+- **What:** "Tales of the Texas Rangers-500923-12-Open and Shut" — Tales of the Texas Rangers (1950-09-23); single-episode deep dive.
+- **URL:** https://archive.org/details/vupnqcb11izojkimnahdh4jpb2sfcto5roemazhc
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Conspiracy — Tales of the Texas Rangers (OTR) ✅ PD
+- **What:** "Tales Of The Texas Rangers - Conspiracy" — Tales of the Texas Rangers; single-episode deep dive.
+- **URL:** https://archive.org/details/ipyklppsdblvxwwlygzlzl5etcqxvsv8a3miw2wd
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Play for Keeps — Tales of the Texas Rangers (OTR) ✅ PD
+- **What:** "Tales Of the Texas Rangers - Play for Keeps" — Tales of the Texas Rangers; single-episode deep dive.
+- **URL:** https://archive.org/details/ex2o5t7tfngps0wb5l1bl34fkx2jgiff3ihw0xwe
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### St. Patrick's Day Show — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show-370317-St. Patrick's Day Show" — The Fred Allen Show (1937-03-17); single-episode deep dive.
+- **URL:** https://archive.org/details/gbchxa0otkw0tou4hzex6mwfzrrgj6shecafxtxz
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Hillbilly Skit With Frank Sinatra — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show 45 10 21 Hillbilly Skit With Frank Sinatra" — The Fred Allen Show (1945-10-21); single-episode deep dive.
+- **URL:** https://archive.org/details/FredAllenShow451021HillbillySkitWithFrankSinatra
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Jack Benny's 10th Anniversary — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show 41 05 07 Jack Bennys' 10th Anniversary" — The Fred Allen Show (1941-05-07); single-episode deep dive.
+- **URL:** https://archive.org/details/FredAllenShow410507JackBennys10thAnniversary
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### The Curse Of Ra — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show 40 05 22 The Curse Of Ra" — The Fred Allen Show (1940-05-22); single-episode deep dive.
+- **URL:** https://archive.org/details/FredAllenShow400522TheCurseOfRa
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Fred Gets Hit On The Head By A Beer Barrel — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show 44 01 09 Fred Gets Hit On The Head By A Beer Barrel" — The Fred Allen Show (1944-01-09); single-episode deep dive.
+- **URL:** https://archive.org/details/FredAllenShow440109FredGetsHitOnTheHeadByABeerBarrel
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Lost Memory — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show 45 11 04 Lost Memory" — The Fred Allen Show (1945-11-04); single-episode deep dive.
+- **URL:** https://archive.org/details/FredAllenShow451104LostMemory
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Fred Makes Phil Harris An Offer — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show 46 05 19 Fred Makes Phil Harris An Offer" — The Fred Allen Show (1946-05-19); single-episode deep dive.
+- **URL:** https://archive.org/details/FredAllenShow460519FredMakesPhilHarrisAnOffer
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+
+#### Suing Fred Over Copyrights — Fred Allen Show (OTR) ✅ PD
+- **What:** "Fred Allen Show 47 03 23 Suing Fred Over Copyrights" — The Fred Allen Show (1947-03-23); single-episode deep dive.
+- **URL:** https://archive.org/details/FredAllenShow470323SuingFredOverCopyrights
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 12 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 63 Lane A]
+### Wave 63 Lane A — Pocket 4: demoscene tooling deep tail (17)
+
+The broadcast-automation pocket was declared exhausted in Wave 62 (honest shortfall vs ~8), so this wave takes the demoscene-tooling deep tail: 4k/shader tooling, ANSI/PETSCII art editors, creative-coding frameworks, livecoding/VJ tools, music-IR libraries, plus copyleft creative tools as quarantine rows. Every GitHub license verified upstream via GitHub API spdx_id, then raw LICENSE text where NOASSERTION. Permissive items get ✅ catalog entries; GPL/AGPL/LGPL items get 🚫 catalog entries + quarantine manifest rows 595–602. Pre-append dedup: heavy — ft2-clone, pt2-clone, iPlug2, exomizer, sfxr, bfxr, ChipTone, Jfxr, zxtune, HivelyTracker, FamiStudio, Yaul, DPF, Vortex Tracker, BeRoTracker, ProTrekkr, Psycle, ChibiTracker, Pixel Vision 8, Werkkzeug, SunVox, Renoise, ModPlug, FamiTracker, Dn-FamiTracker, DefleMask, GoatTracker, Shrinkler, LZSA, ORCA, audiocraft, tenacityteam/tenacity (already row 544) all dropped as cataloged/quarantined; playscii/PabloDraw/kkrunchy/VSXu/C64Debugger/RetroDebugger/Marq-PETSCII/MilkDrop dropped as unverifiable (404/dead-end, no canonical repo found).
+
+#### laurentlb/Shader_Minifier ✅ commercial-safe
+- **What:** Shader_Minifier — GLSL shader minifier for 4k/64k intros (renames, inlines, constant-folds).
+- **URL:** https://github.com/laurentlb/Shader_Minifier
+- **License:** ✅ Apache-2.0 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 4k-intro shader pipeline tool. [Wave 63 Lane A]
+
+#### blocktronics/moebius ✅ commercial-safe
+- **What:** Moebius — ANSI/ASCII art editor (Blocktronics).
+- **URL:** https://github.com/blocktronics/moebius
+- **License:** ✅ Apache-2.0 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern ANSI art editor. [Wave 63 Lane A]
+
+#### nurpax/petmate ✅ commercial-safe
+- **What:** Petmate — Commodore PETSCII graphics editor.
+- **URL:** https://github.com/nurpax/petmate
+- **License:** ✅ MIT (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PETSCII art editor for C64 graphics. [Wave 63 Lane A]
+
+#### openframeworks/openFrameworks ✅ commercial-safe
+- **What:** openFrameworks — creative-coding C++ toolkit (generative visuals, installations).
+- **URL:** https://github.com/openframeworks/openFrameworks
+- **License:** ✅ MIT (verified Wave 63 Lane A, 2026-10-08: raw LICENSE.md — "openFrameworks is distributed under the MIT License"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Creative-coding framework; demoscene-adjacent generative tool. [Wave 63 Lane A]
+
+#### erkkah/tigr ✅ commercial-safe
+- **What:** TIGR — TIny GRaphics library (single-header, public domain).
+- **URL:** https://github.com/erkkah/tigr
+- **License:** ✅ Public domain (verified Wave 63 Lane A, 2026-10-08: tigr.h header — "free and unencumbered software released into the public domain"; GitHub API spdx_id was NOASSERTION, no LICENSE file — public-domain dedication in source header)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Tiny graphics lib for demo tooling/prototypes. [Wave 63 Lane A]
+
+#### diwi/PixelFlow ✅ commercial-safe
+- **What:** PixelFlow — creative-coding/flow-field visual library (Processing/Java).
+- **URL:** https://github.com/diwi/PixelFlow
+- **License:** ✅ MIT (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Flow-field visuals library. [Wave 63 Lane A]
+
+#### flucoma/flucoma-core ✅ commercial-safe
+- **What:** FluCoMa core — creative machine-learning tools library (audio feature/decomposition).
+- **URL:** https://github.com/flucoma/flucoma-core
+- **License:** ✅ BSD-3-Clause (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Creative-ML audio tools; livecoding/demoscene-adjacent. [Wave 63 Lane A]
+
+#### craffel/mir_eval ✅ commercial-safe
+- **What:** mir_eval — music information retrieval evaluation library.
+- **URL:** https://github.com/craffel/mir_eval
+- **License:** ✅ MIT (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIR metrics library for audio-tool QC. [Wave 63 Lane A]
+
+#### jamoma/Jamoma ✅ commercial-safe
+- **What:** Jamoma — creative-coding framework for interactive art/music (Max-adjacent modular platform).
+- **URL:** https://github.com/jamoma/Jamoma
+- **License:** ✅ BSD-3-Clause (verified Wave 63 Lane A, 2026-10-08: raw License.txt — "New BSD License" terms; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Modular interactive-art framework. [Wave 63 Lane A]
+
+#### sneedacity/sneedacity 🚫 GPL-2.0 — QUARANTINED (row 595)
+- **What:** Sneedacity — Audacity fork (audio editor).
+- **URL:** https://github.com/sneedacity/sneedacity
+- **License:** 🚫 GPL-2.0 (verified Wave 63 Lane A, 2026-10-08: raw LICENSE.txt — "Audacity is distributed under the terms of the GNU GPL Version 2"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 595) — copyleft code; standalone-tool-use only, never linked into shipping code. [Wave 63 Lane A]
+
+#### sonic-visualiser/sonic-visualiser 🚫 GPL-2.0 — QUARANTINED (row 596)
+- **What:** Sonic Visualiser — audio visualisation and analysis application.
+- **URL:** https://github.com/sonic-visualiser/sonic-visualiser
+- **License:** 🚫 GPL-2.0 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 596) — copyleft code; standalone-tool-use only, never linked into shipping code. [Wave 63 Lane A]
+
+#### amsynth/amsynth 🚫 GPL-2.0 — QUARANTINED (row 597)
+- **What:** amsynth — analog-modelling software synthesizer.
+- **URL:** https://github.com/amsynth/amsynth
+- **License:** 🚫 GPL-2.0 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 597) — copyleft code; standalone-tool-use only, never linked into shipping code. [Wave 63 Lane A]
+
+#### 2DaT/Obxd 🚫 GPL-3.0 — QUARANTINED (row 598)
+- **What:** OB-Xd — Oberheim OB-X emulation synthesizer plugin.
+- **URL:** https://github.com/2DaT/Obxd
+- **License:** 🚫 GPL-3.0 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 598) — copyleft code; standalone-tool-use only, never linked into shipping code. [Wave 63 Lane A]
+
+#### projectM-visualizer/projectm 🚫 LGPL-2.1 — QUARANTINED (row 599)
+- **What:** projectM — MilkDrop-compatible music visualizer library.
+- **URL:** https://github.com/projectM-visualizer/projectm
+- **License:** 🚫 LGPL-2.1 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id; weak copyleft stays quarantined per pending owner ruling)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 599) — weak copyleft, doctrine pending; standalone-tool-use only. [Wave 63 Lane A]
+
+#### processing/p5.js 🚫 LGPL-2.1 — QUARANTINED (row 600)
+- **What:** p5.js — creative-coding JavaScript library.
+- **URL:** https://github.com/processing/p5.js
+- **License:** 🚫 LGPL-2.1 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id; weak copyleft stays quarantined per pending owner ruling)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 600) — weak copyleft, doctrine pending; standalone-tool-use only. [Wave 63 Lane A]
+
+#### museScore/MuseScore 🚫 GPL-3.0 — QUARANTINED (row 601)
+- **What:** MuseScore Studio — free/open-source music notation software (desktop app; distinct from the cataloged Musescore.com proprietary site).
+- **URL:** https://github.com/museScore/MuseScore
+- **License:** 🚫 GPL-3.0 (verified Wave 63 Lane A, 2026-10-08: raw LICENSE.txt on main branch — "GNU General Public License version 3"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 601) — copyleft code; standalone-tool-use only, never linked into shipping code. [Wave 63 Lane A]
+
+#### hydra-synth/hydra 🚫 AGPL-3.0 — QUARANTINED (row 602)
+- **What:** Hydra — livecoding networked visuals synthesizer (browser-based VJ/livecoding).
+- **URL:** https://github.com/hydra-synth/hydra
+- **License:** 🚫 AGPL-3.0 (verified Wave 63 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** QUARANTINED (row 602) — AGPL copyleft; standalone-tool-use only, never linked into shipping code. [Wave 63 Lane A]
+
+### Wave 63 Lane A summary (2026-10-08)
+131 entries appended 2026-10-08: P1 SDK docs round 9 (39 — emulator dev-docs deep tail: Xenia, Mesen/Mesen2, BlastEm, FBNeo, Mednafen, FCEUX, DOSBox-X, 86Box; retro-OS/toolchain: Haiku, ReactOS, NASM, SDCC, Open Watcom, FreeDOS, MenuetOS; retro-computer: TI-99/4A Ninerpedia, Dragon 32/64, CoCo, Jupiter Ace; frameworks: HaxeFlixel, Allegro, SFML, Magnum, Panda3D, Irrlicht, Urho3D, LÖVE, PuzzleScript, Bitsy, Twine, Ren'Py, OHRRPGCE, RetroBlit, Pyxel MIT; niche: OpenPandora, CD-i ICDIA, OpenDingux; 1 MIT, 38 docs ❓); P2 landmark musicdisk round 7 (27 — pouët chart page 4, 23 new + ALL 4 Wave 61 held items RESOLVED: Happy-Hardcore XMas EP 2002, Chipmusic Best Of 2001-2003, Alien Invasion, Awakening: Part2; all ❓); P3 PD radio-drama round 12 (48 — 8 Burns and Allen, 6 Gildersleeve, 6 Our Miss Brooks, 5 Lum and Abner, 6 Escape, 5 2000 Plus, 4 Texas Rangers, 8 Fred Allen; all archive.org metadata-verified, all ✅ established-PD per Wave 59 ruling); P4 demoscene tooling deep tail (17 — 9 permissive ✅: Shader_Minifier, Moebius, Petmate, openFrameworks, TIGR, PixelFlow, FluCoMa-core, mir_eval, Jamoma; 8 quarantined 🚫: Sneedacity, Sonic Visualiser, amsynth, OB-Xd, projectM, p5.js, MuseScore Studio, Hydra). 8 quarantine rows (595–602) in LICENSE_QUARANTINE.md. Catalog: 5,700 → 5,831 honest #### entries (target 5,800+ met). Dedup rejections (pre-append): P1 — Dolphin Wiki, DuckStation Wiki, PCSX2 Developer Resources, RPCS3 Wiki (all cataloged Wave 60); P2 — Turmoil/Sanity pouët 3154, Chiperia Issue #3 pouët 66373 (same-prod dupes of catalog lines 53565/53664); P3 — Escape471001TheMostDangerousGame (cataloged; replaced with AncientSorceries); P4 — 30+ (ft2-clone, pt2-clone, iPlug2, exomizer, sfxr, bfxr, ChipTone, Jfxr, zxtune, HivelyTracker, FamiStudio, Yaul, DPF, Vortex Tracker, BeRoTracker, ProTrekkr, Psycle, ChibiTracker, Pixel Vision 8, Werkkzeug, SunVox, Renoise, ModPlug, FamiTracker, Dn-FamiTracker, DefleMask, GoatTracker, Shrinkler, LZSA, ORCA, audiocraft, tenacity row 544 — all cataloged/quarantined). Honest negatives/drops: flatassembler.net (unreachable), microw8.github.io (404), KolibriOS wiki (redirect loop), nuon-domination.com + creativision.org + exodus-emu.com (unreachable), phaser.io (403 bot-wall), playscii/PabloDraw/kkrunchy/VSXu/C64Debugger/RetroDebugger/Marq-PETSCII/MilkDrop (no canonical repo — unverifiable), 6 access-restricted OTR items, 2 OTR collections excluded, 1 OTR multi-show combo excluded. Task-note discrepancy: brief said "pouët chart page 2" for round 7 — pages 2 and 3 were already covered by rounds 4–6, so round 7 honestly covers chart page 4 (next vote tier). LGPL doctrine still PENDING OWNER VERDICT.
+
+### Wave 64 Lane A summary (2026-10-08)
+140 entries appended 2026-10-08: P1 SDK docs round 10 (34 — N64 ultra64.ca/n64brew.dev, lxdream, yabause, Cxbx-Reloaded wiki, wiiubrew, switchbrew, vitasdk, MAME/ScummVM/EasyRPG/Solarus docs, M5Stack, 8bitworkshop, plutiedev, World of Spectrum, DOSBox wiki, Godot/MonoGame/Defold/Cocos/GDevelop/raylib/SDL/Stride/Flax/O3DE/Filament/OpenGL/Vulkan/WebGPU/GLFW/OpenBOR docs; 2 ✅ raylib+OpenBOR wikis on repo licenses, 32 docs ❓); P2 landmark musicdisk round 8 (19 — pouët chart page 5; 6 title-dupes dropped as cataloged: Music Dream I/II, ChipChop 16/17, Uncle Tom Sonix, Coolism; 0 ID dupes; no held items remain); P3 PD radio-drama round 13 (44 — 6 Fort Laramie, 6 Broadway Is My Beat, 4 Candy Matson, 6 Witch's Tale, 5 Exploring Tomorrow, 5 Gang Busters, 6 Hall of Fantasy, 6 Let George Do It; all archive.org metadata-verified, all ✅ established-PD per Wave 59 ruling); P4 demoscene tooling round 2 + caption tail (43 — shader/GPU: glslViewer, glslang, SPIRV-Tools, SPIRV-Cross, DirectXShaderCompiler, shaderc, glsl-optimizer, SwiftShader, ANGLE, Dawn; engines: PlayCanvas, openrndr, thi.ng, Filament, The-Forge, DiligentEngine, LumixEngine, Cocos, GDevelop, MonoGame, Kha, Starling, openfl, three.js, Babylon.js, A-Frame, react-three-fiber, twgl.js, luma.gl, deck.gl, regl, OGRE, LÖVE, HaxeFlixel, FNA, heaps; lz4, zstd, madmom; caption survivors: libjass, keras-ocr, pywhispercpp, pydub; all licenses verified upstream, zero quarantined). 0 quarantine rows added (all P4 licenses permissive; P1 docs ❓ per precedent — code not catalogued). Catalog: 5,831 → 5,971 honest #### entries (target 5,930+ met). Dedup rejections (pre-append): P1 — 0 (all 34 URLs absent); P2 — 6 title-dupes; P3 — 0 identifier dupes + 20+ access-restricted + 6 collections + 1 wrong-show + 1 modern re-recording + 3 same-episode avoidances; P4 — caption tail exhausted (24 already-cataloged tools), FlaxEngine dropped (custom EULA unverified), ardatan/glsl-optimizer gone (aras-p canonical used), Away3D core (no canonical repo). Honest negatives/drops: P1 — 3do.cdinteractive.co.uk (dead), docs.stride3d.net (dead), www.gpuweb.org (dead), openbor.com (525). LGPL doctrine still PENDING OWNER VERDICT.
+
+### Wave 64 Lane A — Pocket 1: SDK docs round 10 (34)
+
+Round 10 pushes the SDK-docs pocket into console/emulator docs not yet covered (N64: ultra64.ca, n64brew.dev; Dreamcast: lxdream.org; Saturn: yabause.org; Xbox: Cxbx-Reloaded wiki; Wii U: wiiubrew.org; Switch: switchbrew.org; Vita: vitasdk.org; arcade: MAME docs; adventure-engine: ScummVM/EasyRPG/Solarus docs), modern open-engine docs (Godot, MonoGame, Defold, Cocos, GDevelop, raylib, SDL, Stride, Flax, O3DE, Filament, OpenGL, Vulkan, WebGPU, GLFW, OpenBOR), dev-board docs (M5Stack), and retro knowledge bases (8bitworkshop, plutiedev, World of Spectrum, DOSBox wiki). Every URL verified live 2026-10-08 (HTTP 200). raylib and OpenBOR wikis are ✅ on their repos' verified permissive licenses (Zlib / BSD-3-Clause, Pyxel precedent); all standalone doc sites stay ❓ per precedent (docs carry no license grant — code not catalogued, nothing quarantined). Honest drops: 3do.cdinteractive.co.uk (dead), docs.stride3d.net (dead — doc.stride3d.net used instead), www.gpuweb.org (dead — gpuweb.github.io/gpuweb used instead), openbor.com (525 SSL failure — DCurrent/openbor/wiki used instead), awaytools/Away3D core repo (no canonical repo found). Pre-append dedup: 0 dupes (all 34 URLs absent from catalog).
+
+#### ultra64.ca ❓ documentation-only
+- **What:** ultra64.ca — Nintendo Ultra 64 / N64 development documentation (hardware reference, homebrew guides).
+- **URL:** https://ultra64.ca/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** N64 hardware dev reference. [Wave 64 Lane A]
+
+#### n64brew.dev ❓ documentation-only
+- **What:** n64brew.dev — Nintendo 64 homebrew community wiki (tutorials, toolchain, libdragon-adjacent knowledge).
+- **URL:** https://n64brew.dev/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** N64 homebrew community knowledge base. [Wave 64 Lane A]
+
+#### lxdream.org ❓ documentation-only
+- **What:** lxdream.org — lxdream Dreamcast emulator documentation (SH-4/PowerVR emulation internals).
+- **URL:** https://www.lxdream.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; emulator code is GPL — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dreamcast emulation internals reference. [Wave 64 Lane A]
+
+#### yabause.org ❓ documentation-only
+- **What:** yabause.org — Yabause Sega Saturn emulator documentation (Saturn hardware emulation notes).
+- **URL:** https://yabause.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; emulator code is GPL — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Saturn emulation reference. [Wave 64 Lane A]
+
+#### MAME Documentation ❓ documentation-only
+- **What:** MAME official documentation (docs.mamedev.org) — arcade/machine emulation dev docs, driver-writing guides.
+- **URL:** https://docs.mamedev.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; MAME code is GPL-2.0+ — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arcade emulation driver-writing reference. [Wave 64 Lane A]
+
+#### ScummVM Documentation ❓ documentation-only
+- **What:** ScummVM official documentation (docs.scummvm.org) — adventure-game engine internals, porting guides.
+- **URL:** https://docs.scummvm.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; ScummVM code is GPL-2.0+ — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Point-and-click engine porting reference. [Wave 64 Lane A]
+
+#### EasyRPG Wiki ❓ documentation-only
+- **What:** EasyRPG wiki (wiki.easyrpg.org) — RPG Maker 2000/2003-compatible engine documentation.
+- **URL:** https://wiki.easyrpg.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; EasyRPG code is GPL-3.0 — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** RPG Maker-compatible engine docs. [Wave 64 Lane A]
+
+#### Solarus Documentation ❓ documentation-only
+- **What:** Solarus documentation (docs.solarus-games.org) — Zelda-like 2D action-RPG engine docs (Lua API).
+- **URL:** https://docs.solarus-games.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; Solarus code is GPL-3.0 — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Action-RPG engine Lua API reference. [Wave 64 Lane A]
+
+#### WiiBrew ❓ documentation-only
+- **What:** WiiBrew (wiiubrew.org) — Wii U homebrew development wiki (hardware, IOSU, homebrew toolchain).
+- **URL:** https://wiiubrew.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; wiki terms unverified; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wii U homebrew knowledge base (complements cataloged WiiBrew). [Wave 64 Lane A]
+
+#### SwitchBrew ❓ documentation-only
+- **What:** SwitchBrew (switchbrew.org) — Nintendo Switch homebrew development wiki (Horizon OS, libnx-adjacent docs).
+- **URL:** https://switchbrew.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; wiki terms unverified; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Switch homebrew knowledge base. [Wave 64 Lane A]
+
+#### VitaSDK Documentation ❓ documentation-only
+- **What:** VitaSDK documentation (vitasdk.org) — PlayStation Vita homebrew SDK docs (toolchain, samples).
+- **URL:** https://vitasdk.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PS Vita homebrew SDK reference (complements cataloged HENkaku wiki). [Wave 64 Lane A]
+
+#### Cxbx-Reloaded Wiki ❓ documentation-only
+- **What:** Cxbx-Reloaded wiki — original Xbox emulator developer wiki (NV2A/kernel emulation docs).
+- **URL:** https://github.com/Cxbx-Reloaded/Cxbx-Reloaded/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; emulator code is GPL-2.0 — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Original-Xbox emulation internals reference. [Wave 64 Lane A]
+
+#### ares Documentation ❓ documentation-only
+- **What:** ares emulator documentation (ares-emu.net) — multi-system emulator dev docs (Near's accuracy-focused design notes).
+- **URL:** https://ares-emu.net/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Accuracy-focused multi-system emulation reference. [Wave 64 Lane A]
+
+#### M5Stack Documentation ❓ documentation-only
+- **What:** M5Stack official documentation (docs.m5stack.com) — ESP32 dev-board/module docs (M5Stack/Core/Cardputer).
+- **URL:** https://docs.m5stack.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ESP32 modular dev-board reference. [Wave 64 Lane A]
+
+#### 8bitworkshop ❓ documentation-only
+- **What:** 8bitworkshop.com — browser IDE + docs for 8-bit retro development (6502/Z80/Verilog targets).
+- **URL:** https://8bitworkshop.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** In-browser 8-bit dev environment + tutorials. [Wave 64 Lane A]
+
+#### Plutiedev ❓ documentation-only
+- **What:** plutiedev.com — Sega Mega Drive / Genesis programming guides (beginner-to-advanced tutorials).
+- **URL:** https://plutiedev.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Genesis homebrew tutorial series. [Wave 64 Lane A]
+
+#### World of Spectrum ❓ documentation-only
+- **What:** World of Spectrum (worldofspectrum.org) — ZX Spectrum archive + development documentation.
+- **URL:** https://worldofspectrum.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Spectrum software archive + dev docs (complements cataloged Spectrum Computing). [Wave 64 Lane A]
+
+#### DOSBox Wiki ❓ documentation-only
+- **What:** DOSBox official wiki (dosbox.com/wiki) — DOS emulation configuration, development, and hardware notes.
+- **URL:** https://www.dosbox.com/wiki/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; DOSBox code is GPL — code not catalogued here, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS emulation reference (complements cataloged DOSBox-X wiki). [Wave 64 Lane A]
+
+#### Godot Documentation ❓ documentation-only
+- **What:** Godot official documentation (docs.godotengine.org) — Godot engine manuals, API reference, tutorials.
+- **URL:** https://docs.godotengine.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; godot-docs repo license NOASSERTION on GitHub API; docs carry no license grant — engine code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Full Godot manual + class reference. [Wave 64 Lane A]
+
+#### MonoGame Documentation ❓ documentation-only
+- **What:** MonoGame documentation (docs.monogame.net) — XNA-successor framework docs (content pipeline, platform guides).
+- **URL:** https://docs.monogame.net/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C# game-framework reference. [Wave 64 Lane A]
+
+#### Defold Manuals ❓ documentation-only
+- **What:** Defold manuals (defold.com/manuals) — Defold engine documentation (Lua API, editor, platform guides).
+- **URL:** https://defold.com/manuals/introduction/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; docs.defold.com unreachable — manuals live on defold.com; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Defold engine manual (docs.defold.com dead, canonical moved). [Wave 64 Lane A]
+
+#### Cocos Documentation ❓ documentation-only
+- **What:** Cocos documentation (docs.cocos.com) — Cocos Creator engine docs (TypeScript API, editor).
+- **URL:** https://docs.cocos.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Cocos Creator manual + API reference. [Wave 64 Lane A]
+
+#### GDevelop Wiki ❓ documentation-only
+- **What:** GDevelop wiki (wiki.gdevelop.io) — no-code 2D game engine documentation and tutorials.
+- **URL:** https://wiki.gdevelop.io/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; wiki terms unverified; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-code engine wiki + tutorials. [Wave 64 Lane A]
+
+#### raysan5/raylib Wiki ✅ commercial-safe
+- **What:** raylib wiki — documentation for the raylib C game-programming library (examples, API guides).
+- **URL:** https://github.com/raysan5/raylib/wiki
+- **License:** ✅ Zlib (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id Zlib; wiki catalogued as docs per Pyxel precedent)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Zlib-licensed C game library wiki. [Wave 64 Lane A]
+
+#### SDL Wiki ❓ documentation-only
+- **What:** SDL wiki (wiki.libsdl.org) — Simple DirectMedia Layer documentation (API, migration guides).
+- **URL:** https://wiki.libsdl.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; wiki terms unverified; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SDL2/SDL3 API reference wiki. [Wave 64 Lane A]
+
+#### Stride Documentation ❓ documentation-only
+- **What:** Stride documentation (doc.stride3d.net) — Stride C# game engine manuals and API reference.
+- **URL:** https://doc.stride3d.net/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; docs.stride3d.net dead — doc.stride3d.net is canonical; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Stride engine docs (docs. subdomain dead, doc. canonical). [Wave 64 Lane A]
+
+#### Flax Documentation ❓ documentation-only
+- **What:** Flax documentation (docs.flaxengine.com) — Flax Engine manuals (C#/C++ API, editor).
+- **URL:** https://docs.flaxengine.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Flax Engine manual + API reference. [Wave 64 Lane A]
+
+#### O3DE Documentation ❓ documentation-only
+- **What:** O3DE documentation (o3de.org/docs) — Open 3D Engine manuals, API reference, and gem-writing guides.
+- **URL:** https://www.o3de.org/docs/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Open 3D Engine docs (engine itself cataloged separately). [Wave 64 Lane A]
+
+#### Filament Documentation ❓ documentation-only
+- **What:** Filament documentation (google.github.io/filament) — Google's physically-based rendering engine docs.
+- **URL:** https://google.github.io/filament/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PBR rendering engine guides. [Wave 64 Lane A]
+
+#### docs.gl ❓ documentation-only
+- **What:** docs.gl — Khronos OpenGL API reference documentation.
+- **URL:** https://docs.gl/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; Khronos docs; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OpenGL 4.x API reference. [Wave 64 Lane A]
+
+#### Vulkan Documentation ❓ documentation-only
+- **What:** Vulkan documentation (docs.vulkan.org) — Khronos Vulkan API reference and guides.
+- **URL:** https://docs.vulkan.org/
+- **License:** ❓ documentation-only (verified live HTTP 200 on retry 2026-10-08 — first fetch 403 bot-wall; Khronos docs; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Vulkan API reference (transient 403 on first fetch, honest note). [Wave 64 Lane A]
+
+#### WebGPU Specification ❓ documentation-only
+- **What:** WebGPU specification (gpuweb.github.io/gpuweb) — W3C GPU for the Web spec + explainer docs.
+- **URL:** https://gpuweb.github.io/gpuweb/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; www.gpuweb.org dead — GitHub Pages canonical; W3C spec, docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** WebGPU/WGSL spec reference. [Wave 64 Lane A]
+
+#### GLFW Documentation ❓ documentation-only
+- **What:** GLFW documentation (glfw.org/documentation.html) — OpenGL/Vulkan windowing library manual.
+- **URL:** https://www.glfw.org/documentation.html
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; no license statement on site; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GLFW API manual. [Wave 64 Lane A]
+
+#### DCurrent/openbor Wiki ✅ commercial-safe
+- **What:** OpenBOR wiki — documentation for the OpenBOR beat-'em-up engine (modding guides, scripting).
+- **URL:** https://github.com/DCurrent/openbor/wiki
+- **License:** ✅ BSD-3-Clause (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id BSD-3-Clause; openbor.com dead/525 — wiki is the canonical docs; Pyxel precedent)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Beat-'em-up engine wiki (openbor.com unreachable, wiki canonical). [Wave 64 Lane A]
+
+### Wave 64 Lane A — Pocket 2: landmark musicdisk deep dives round 8 (19)
+
+Round 8 continues the landmark-musicdisk pocket down pouët's vote-sorted musicdisk prodlist (prodlist.php?type[]=musicdisk&order=thumbup — fetched live 2026-10-08; page 5 of the chart, below rounds 4–7's page-2/3/4 coverage). No held items remain from Wave 61 (all 4 resolved in round 7). Every prod page verified LIVE on pouët 2026-10-08 (title + group + platform/type via og:title and og:description). No license statements on any scene prod record — all ❓, with NC-not-declared honest negatives. Honest drops (pre-append dedup): Music Dream II (pouët 3418), ChipChop 16 (pouët 65327), Uncle Tom Sonix (pouët 59019), Coolism (pouët 53244), Music Dream I (pouët 3179), ChipChop 17 (pouët 96558) — all already cataloged as #### entries (toplist vote drift moved them onto page 5). 0 pouët-ID dupes among the 19 below. demozoo direct access remains Cloudflare-blocked — demozoo cross-links not claimed.
+
+#### Bassknecht Mix Music Disc — Kakiarts (Oct 2007) ❓ landmark musicdisk
+- **What:** "Bassknecht Mix Music Disc" — Kakiarts Windows musicdisk (Oct 2007); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=32627
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement on scene prod record; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Windows musicdisk. [Wave 64 Lane A]
+
+#### Star Flake — Maniacs Of Noise (Jan 2006) ❓ landmark musicdisk
+- **What:** "Star Flake" — Maniacs Of Noise Commodore 64 musicdisk (Jan 2006); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=21785
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement on scene prod record; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk (chart page lists Phenomena-adjacent grouping — og:title confirms Maniacs Of Noise). [Wave 64 Lane A]
+
+#### MDMOD Player — Titan (Nordlicht 2022) ❓ landmark musicdisk
+- **What:** "MDMOD Player" — Titan Sega Genesis/Mega Drive demotool + musicdisk (1st at Nordlicht 2022); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=92359
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; dual demotool/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dual-typed demotool/musicdisk for Mega Drive. [Wave 64 Lane A]
+
+#### Orbtraxx #1 — Orb (Dec 2007) ❓ landmark musicdisk
+- **What:** "Orbtraxx #1" — Orb VIC-20 4k musicdisk (Dec 2007); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=34510
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; 4k/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** VIC-20 4k musicdisk. [Wave 64 Lane A]
+
+#### Xmastro — Funktion (Dec 2001) ❓ landmark musicdisk
+- **What:** "Xmastro" — Funktion Windows dentro/musicdisk (Dec 2001); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=4692
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; dentro/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dentro-typed Windows musicdisk. [Wave 64 Lane A]
+
+#### Zalza VS The World — Titan (Revision 2012) ❓ landmark musicdisk
+- **What:** "Zalza VS The World" — Titan Windows game/musicdisk (7th at Revision 2012); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=59096
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; dual game/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Dual-typed game/musicdisk. [Wave 64 Lane A]
+
+#### BitJam Remix Compo 2 — The Musicdisk — BitFellas & Rebels (UM 2009) ❓ landmark musicdisk
+- **What:** "BitJam Remix Compo 2 - The Musicdisk" — BitFellas & Rebels Windows musicdisk (3rd at the Ultimate Meeting 2009); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=54203
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Remix-compo musicdisk. [Wave 64 Lane A]
+
+#### Hybrid'Elic — CoolPHat (Dec 2002) ❓ landmark musicdisk
+- **What:** "Hybrid'Elic" — CoolPHat Windows musicdisk (Dec 2002); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=8260
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Windows musicdisk. [Wave 64 Lane A]
+
+#### koolnESS — The Furnace Posse (Multimatograf 2024) ❓ landmark musicdisk
+- **What:** "koolnESS" — The Furnace Posse MS-Dos musicdisk (1st at Multimatograf 2024); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=96920
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MS-Dos musicdisk, 2024 compo winner. [Wave 64 Lane A]
+
+#### spinning wheels — YM Rockerz (Apr 2002) ❓ landmark musicdisk
+- **What:** "spinning wheels" — YM Rockerz Atari ST musicdisk (Apr 2002); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=6158
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST musicdisk. [Wave 64 Lane A]
+
+#### Mirror — Andromeda (The Party 1992) ❓ landmark musicdisk
+- **What:** "Mirror" — Andromeda Amiga OCS/ECS musicdisk (The Party 1992); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=3614
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Classic Amiga musicdisk. [Wave 64 Lane A]
+
+#### TRSi Elektroshock — Tristar & Red Sector Inc. (Revision 2011) ❓ landmark musicdisk
+- **What:** "TRSi Elektroshock" — Tristar & Red Sector Inc. Windows musicdisk (7th at Revision 2011); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=56895
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; og:title confirms Tristar & Red Sector Inc.; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Windows musicdisk (chart page grouping ambiguous — og:title authoritative). [Wave 64 Lane A]
+
+#### happy-hardcore xmas ep 2010 — BaSShuT (Dec 2010) ❓ landmark musicdisk
+- **What:** "happy-hardcore xmas ep 2010" — BaSShuT Windows musicdisk (Dec 2010); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=56428
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Seasonal happy-hardcore musicdisk (companion to the cataloged 2002 XMas EP). [Wave 64 Lane A]
+
+#### Inner Spring — Vedem (Nov 2009) ❓ landmark musicdisk
+- **What:** "Inner Spring" — Vedem Windows musicdisk (Nov 2009); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=54121
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Windows musicdisk. [Wave 64 Lane A]
+
+#### Popstars — YM Rockerz (Error In Line 2003) ❓ landmark musicdisk
+- **What:** "Popstars" — YM Rockerz Atari ST musicdisk (Error In Line 2003); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=9454
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST musicdisk. [Wave 64 Lane A]
+
+#### Brus - the 4k musicdisk — Ephidrena (Mekka & Symposium 2001) ❓ landmark musicdisk
+- **What:** "Brus - the 4k musicdisk" — Ephidrena Amiga AGA 4k musicdisk (2nd at Mekka & Symposium 2001); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=2792
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; 4k/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga AGA 4k musicdisk. [Wave 64 Lane A]
+
+#### Shiru's 1-Bit Music Compilation Vol.2 — Shiru (Jan 2022) ❓ landmark musicdisk
+- **What:** "Shiru's 1-Bit Music Compilation Vol.2" — Shiru ZX Spectrum musicdisk (Jan 2022); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=90696
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum 1-bit music compilation. [Wave 64 Lane A]
+
+#### DisIsSid #4 HTML — Abyss (Dec 2011) ❓ landmark musicdisk
+- **What:** "DisIsSid #4 HTML" — Abyss JavaScript musicdisk (Dec 2011); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=58154
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Browser/JavaScript SID musicdisk. [Wave 64 Lane A]
+
+#### Zikdisk 2 — Paradize (Sep 2008) ❓ landmark musicdisk
+- **What:** "Zikdisk 2" — Paradize Atari ST/Ste musicdisk (Sep 2008); pouët vote-sorted musicdisk chart page 5.
+- **URL:** https://www.pouet.net/prod.php?which=51570
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST/Ste musicdisk. [Wave 64 Lane A]
+
+### Wave 64 Lane A — Pocket 3: PD radio-drama round 13 — per-episode deep dives (44)
+
+Round 13 continues the per-show per-episode deep dives below rounds 7–12's coverage. All 8 shows carry established ✅ PD show-level entries (Fort Laramie, Broadway Is My Beat, Candy Matson, The Witch's Tale, Exploring Tomorrow, Gang Busters, Hall of Fantasy, Let George Do It) — per Wave 59 ruling, single-episode items from an established-PD show carry ✅ WITH the established-PD note AND the item-level licenseurl-absent fact stated honestly. Every item verified via the archive.org metadata API on 2026-10-08 (live, not access-restricted, single-episode: ≤2 audio files, <60 files total). Uneven counts are honest: Candy Matson ships 4 and Exploring Tomorrow ships 5 (clean singles genuinely scarce — collections and Boxcars711 access-restricted pods excluded); Gang Busters ships 5 (remaining candidates were multi-show combos or 88-episode collections). Pre-append dedup (identifier vs catalog): 0 dupes. Honest negatives: 20+ access-restricted exclusions (Boxcars711 pods with private=true audio, KYAG pods), 6 multi-file/collection exclusions (Fort-Laramie 40-audio, BIMB490522Ep013 200-audio, otr_broadwayismybeat 10-audio, LGDI500109Ep168 406-audio, Exploring_Tomorrow 52-audio, Exploring-Tomororw 27-audio), 1 wrong-show exclusion (ilijclenwnuzcfjsuel5vydbw8hmopecupssrie9 titled "Blair Of The Mounties"), 1 modern re-recording exclusion (Candy Matson Black Cat "rerecorded from private script"), 3 same-episode dupe avoidances (Boatwright's Story, Time Heals/First Baby In Space, Devil Doctor). No Lone Ranger/Shadow/Green Hornet character-rights shows in this round.
+
+#### Fort Laramie — Audition Show (OTR) ✅ PD
+- **What:** "Fort Laramie - (Audition)" — Fort Laramie western (audition show); single-episode deep dive.
+- **URL:** https://archive.org/details/FortLaramie-audition
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item carries CC0 1.0 licenseurl mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Fort Laramie — Squaw Man (02-04-56) (OTR) ✅ PD
+- **What:** "Fort Laramie - Squaw Man" — Fort Laramie western (1956-02-04); single-episode deep dive.
+- **URL:** https://archive.org/details/FortLaramie-SquawMan
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item carries CC0 1.0 licenseurl mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Fort Laramie — The Boatwright's Story (1956) (OTR) ✅ PD
+- **What:** "Fort Laramie - The Boatwright's Story (1956)" — Fort Laramie western; single-episode deep dive.
+- **URL:** https://archive.org/details/otr_fortlaramie
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Fort Laramie — Old Enemy (07-15-56) (OTR) ✅ PD
+- **What:** "Fort Laramie 1956-07-15 Old Enemy" — Fort Laramie western; single-episode deep dive.
+- **URL:** https://archive.org/details/10f0519b-c7c0-4c3b-bf57-7076224dc0b0
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Fort Laramie — Captain's Widow (02-26-56) (OTR) ✅ PD
+- **What:** "Fort Laramie 56-02-26 (06) Captain's Widow" — Fort Laramie western; single-episode deep dive.
+- **URL:** https://archive.org/details/FortLaramie56-02-2606CaptainsWidow
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item carries CC0 1.0 licenseurl mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Fort Laramie — The Woman at Horse Creek (02-12-56) (OTR) ✅ PD
+- **What:** "Fort Laramie 56-02-12 (04) The Woman at Horse Creek" — Fort Laramie western; single-episode deep dive.
+- **URL:** https://archive.org/details/FortLaramie56-02-1204TheWomanAtHorseCreek
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item carries CC0 1.0 licenseurl mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Broadway Is My Beat — The Tom Keeler Murder Case (OTR) ✅ PD
+- **What:** "Broadway Is My Beat-The Tom Keeler Murder Case" — Broadway Is My Beat crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/t9pscbk8dqhhx15o2np6caf6c83hlzdnrhqlykix
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Broadway Is My Beat — The John Rand Murder Case (07-04-53) (OTR) ✅ PD
+- **What:** "Broadway Is My Beat 53 07 04 The John Rand Murder Case" — Broadway Is My Beat crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/BroadwayIsMyBeat530704TheJohnRandMurderCase
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Broadway Is My Beat — The Mary Gilbert Murder Case (11-26-49) (OTR) ✅ PD
+- **What:** "Broadway Is My Beat-491126-011-The Mary Gilbert Murder Case" — Broadway Is My Beat crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/xywoynarkvbb3ed99ht5prsduobfchri0fa3jwix
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Broadway Is My Beat — Henry Baker Case (OTR) ✅ PD
+- **What:** "Broadway Is My Beat - Henry Baker Case" — Broadway Is My Beat crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/0rfwsc68bwhsf1gbdvtmb0fospghwrbuvp1l25up
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Broadway Is My Beat — The Tommy Stafford Murder Case (04-14-50) (OTR) ✅ PD
+- **What:** "Broadway Is My Beat-500414-030-The Tommy Stafford Murder Case" — Broadway Is My Beat crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/jijmlew5mlbhzjbdjbcsvje3palnmxhchpzhre5y
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Broadway Is My Beat — Sgt Gordon Ellis (11-12-49) (OTR) ✅ PD
+- **What:** "Broadway Is My Beat-491112-009-Sgt Gordon Ellis" — Broadway Is My Beat crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/sqmqtvrodhyzouehqvnujepwgoktnhvwqdcozq0w
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Candy Matson — The Cable Car Case (07-07-49) (OTR) ✅ PD
+- **What:** "OTR-Candy Matson-490707-02-The Cable Car Case(2943)" — Candy Matson detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/osm7o0lkb5k07xfj27ongtv99d4rxw2ye6hvrjgv
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Candy Matson — The Donna Dunham Case (04-04-49) (OTR) ✅ PD
+- **What:** "Candy Matson-YUkon-2-8209(490404)The Donna Dunham Case" — Candy Matson detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/mqdramtflzxicnzlejy7ofy0xcbqvayocoszi01h
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Candy Matson — The Allison Gray Case Audition (09-21-52) (OTR) ✅ PD
+- **What:** "Candy Matson, YUkon 3-8309 - The Allison Gray Case - Audition - 09-21-52" — Candy Matson audition show; single-episode deep dive.
+- **URL:** https://archive.org/details/candy-matson-yukon-3-8309-aud-the-allison-gray-case-the-fortune-teller-09-21-52
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Candy Matson — The Donna Dunham Case (2009 upload) (OTR) ✅ PD
+- **What:** "Candy Matson YUkon 2 8209 The Donna Dunham Case ( 2009)" — Candy Matson detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/candy-matson-yukon-2-8209-the-donna-dunham-case-2009
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### The Witch's Tale — The Devil Doctor (02-19-37) (OTR) ✅ PD
+- **What:** "Witch's Tale 37 02 19 The Devil Doctor" — The Witch's Tale horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/WitchsTale370219TheDevilDoctor
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### The Witch's Tale — The Haunted Crossroads (10-12-37) (OTR) ✅ PD
+- **What:** "Witch's Tale 37 10 12 The Haunted Crossroads" — The Witch's Tale horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/WitchsTale371012TheHauntedCrossroads
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### The Witch's Tale — The Flying Dutchman (04-26-34) (OTR) ✅ PD
+- **What:** "Witch's Tale 34 04 26 The Flying Dutchman" — The Witch's Tale horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/WitchsTale340426TheFlyingDutchman
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### The Witch's Tale — The Entomologist (01-07-35) (OTR) ✅ PD
+- **What:** "The Witch's Tale 35 01 07 The Entomologist" — The Witch's Tale horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/TheWitchsTale350107TheEntomologist
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### The Witch's Tale — The Violin (OTR) ✅ PD
+- **What:** "The Violin by The Witch's Tale" — The Witch's Tale horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/uigxmiukkz0bskizudtm4nryodfky3oyvctsb1me
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### The Witch's Tale — The Spirits Of The Lake (OTR) ✅ PD
+- **What:** "The Spirits Of The Lake by The Witch's Tale" — The Witch's Tale horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/qlkgyegq0kelluouobo10kx46jcb5ho4txfn0fvw
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Exploring Tomorrow — Space Baby (OTR) ✅ PD
+- **What:** "Exploring Tomorrow - Space Baby-AKA-The First Baby In Space" — Exploring Tomorrow sci-fi anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/iwxrstoyxfa3j2lqxxnffkbvmfaafyarew0ic33i
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Exploring Tomorrow — The Diamond Mountain Of Venus (OTR) ✅ PD
+- **What:** "The Diamond Mountain Of Venus by Exploring Tomorrow" — Exploring Tomorrow sci-fi anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/tpvaehacgqr58gborqbs9wfhzj7rasp3btjvugmz
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Exploring Tomorrow — Episode 1 (OTR) ✅ PD
+- **What:** "Exploring Tomorrow - Episode 1" — Exploring Tomorrow sci-fi anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/otr_exploringtomorrow
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Exploring Tomorrow (1) (OTR) ✅ PD
+- **What:** "Exploring Tomorrow ( 1)" — Exploring Tomorrow sci-fi anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/exploring-tomorrow-1
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Exploring Tomorrow — Time Heals (OTR) ✅ PD
+- **What:** "Time Heals by Exploring Tomorrow" — Exploring Tomorrow sci-fi anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/canxhdvky4mxwfuk9j73lizucsy0si0aqa9fwurc
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Gang Busters — Bank Robbery, Jake And Ralph Fleagle (OTR) ✅ PD
+- **What:** "Gang Busters - Bank Robbery, Jake And Ralph Fleagle" — Gang Busters true-crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/mmtxgogzytps8bmmj6ksbtk1p7ifsag8jsiqituc
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Gang Busters — Texas Killer (OTR) ✅ PD
+- **What:** "Gang Busters - Texas Killer" — Gang Busters true-crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/dc9cwislmxdmdrmj0enz1iwwanrjifxubwffbaxd
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Gang Busters — The Case Of The Costumed Killer (07-14-44) (OTR) ✅ PD
+- **What:** "Gang Busters 44 07 14 The Case Of The Costumed Killer" — Gang Busters true-crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/GangBusters440714TheCaseOfTheCostumedKiller
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Gang Busters — The Case Of Matthew Cazzara (11-24-45) (OTR) ✅ PD
+- **What:** "Gang Busters-451124-0409-The Case Of Matthew Cazzara(2954)" — Gang Busters true-crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/qcnvvzcdclvstddtkcvz4o1nay4thpnnxy3qbwjv
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Gang Busters — Retro Radio Memories Ep. 51 (OTR) ✅ PD
+- **What:** "Retro Radio Memories Episode 051 (Gang Busters)" — Gang Busters true-crime drama; single-episode deep dive.
+- **URL:** https://archive.org/details/RetroRadioMemoriesEp51GangBusters
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Hall of Fantasy — The Jewels Of Kali (06-15-53) (OTR) ✅ PD
+- **What:** "Hall Of Fantasy 53 06 15 The Jewels Of Kali" — Hall of Fantasy horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/HallOfFantasy530615TheJewelsOfKali
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Hall of Fantasy — Man Size In Marble (04-10-47) (OTR) ✅ PD
+- **What:** "Hall Of Fantasy 47 04 10 Man Size In Marble" — Hall of Fantasy horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/HallOfFantasy470410ManSizeInMarble
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Hall of Fantasy — Demon Of The Night (04-13-53) (OTR) ✅ PD
+- **What:** "Hall Of Fantasy 53 04 13 Demon Of The Night" — Hall of Fantasy horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/HallOfFantasy530413DemonOfTheNight
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Hall of Fantasy — The Hand Of Botar (03-08-54) (OTR) ✅ PD
+- **What:** "Hall Of Fantasy 54 03 08 The Hand Of Botar" — Hall of Fantasy horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/HallOfFantasy540308TheHandOfBotar
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Hall of Fantasy — The Judge's House (04-03-47) (OTR) ✅ PD
+- **What:** "Hall Of Fantasy 47-04-03 (03) The Judge's House" — Hall of Fantasy horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/8vwb20ms49lpgvvhgvrbeuycp4ljvpt2ecnaiqid
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Hall of Fantasy — The Treasure Of Kublai Khan (OTR) ✅ PD
+- **What:** "The Treasure Of Kublai Khan by The Hall Of Fantasy" — Hall of Fantasy horror anthology; single-episode deep dive.
+- **URL:** https://archive.org/details/lip7vx8iwuusg67alzq312glwz2varqnequmr1ix
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Let George Do It — Tonight The Mayhem's Going To Be Different (OTR) ✅ PD
+- **What:** "Let George Do It - Tonight The Mayhem's Going To Be Different" — Let George Do It detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/xbbzupgvmh9alfgvmp0zkzaopveoxvtf0n2aiqkb
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Let George Do It — Christmas In January (OTR) ✅ PD
+- **What:** "Let George Do It - Christmas In January" — Let George Do It detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/6sboldce5xa38oogeqpqjhjupwveky1u5qxofias
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Let George Do It — Murder, It's A Gift (OTR) ✅ PD
+- **What:** "Let George Do It - Murder, It's A Gift" — Let George Do It detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/b5iarvdkly1x8kt3g8hp5fpwrmhvjdwi7ww4hfmg
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Let George Do It — How Guilty Can You Get (OTR) ✅ PD
+- **What:** "Let George Do It - How Guilty Can You Get" — Let George Do It detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/46numxxyxtji0iqxi6cntzufiknhfyjta7awkhcl
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Let George Do It — Drop Dead (07-23-51) (OTR) ✅ PD
+- **What:** "Let George Do It Drop Dead 07 23 51 HQ Old Time Radio Detective" — Let George Do It detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/LetGeorgeDoItDropDead072351HQOldTimeRadioDetective
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+#### Let George Do It — Seven Dead Years (OTR) ✅ PD
+- **What:** "Let George Do It-Seven Dead Years" — Let George Do It detective drama; single-episode deep dive.
+- **URL:** https://archive.org/details/hcztcnawww7ke0ysskhf07ztr24zetjqs7z9v3bj
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 13 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 64 Lane A]
+
+### Wave 64 Lane A — Pocket 4: demoscene tooling round 2 + caption/subtitle OSS tail (43)
+
+Round 2 of demoscene tooling (the caption/subtitle OSS tail was evaluated first per the brief — it is exhausted: libass, ffsubsync, autosub, pysubs2, webvtt-py, whisperx, insanely-fast-whisper, whisper-jax, whisper-webui, Aegisub, EasyOCR, PaddleOCR, RapidOCR, argos-translate, subliminal, vosk, Montreal Forced Aligner, gentle, auditok, auto-editor, moviepy, doctr, srt, pycaption are all already cataloged; only 4 new caption tools surfaced and they are folded in below). This round catalogs the permissive shader/GPU stack (glslViewer, glslang, SPIRV-Tools, SPIRV-Cross, DirectXShaderCompiler, shaderc, glsl-optimizer, SwiftShader, ANGLE, Dawn), open game engines/frameworks (PlayCanvas, openrndr, thi.ng, Filament, The-Forge, DiligentEngine, LumixEngine, Cocos, GDevelop, MonoGame, Kha, Starling, openfl, three.js, Babylon.js, A-Frame, react-three-fiber, twgl.js, luma.gl, deck.gl, regl, OGRE, LÖVE, HaxeFlixel, FNA, heaps), compression (lz4, zstd), audio ML (madmom), and the 4 surviving caption tools (libjass, keras-ocr, pywhispercpp, pydub). Every license VERIFIED upstream 2026-10-08 (GitHub API spdx_id or raw LICENSE file read — never assumed). Zero copyleft items in this pocket — nothing quarantined. Honest drops: FlaxEngine (custom EULA, not verified permissive — engine dropped; docs kept in P1 as ❓), ardatan/glsl-optimizer (repo gone — aras-p/glsl-optimizer MIT used instead), awaytools/Away3D core (no canonical repo found). Pre-append dedup: 0 dupes (all 43 absent from catalog as #### entries).
+
+#### patriciogonzalezvivo/glslViewer ✅ commercial-safe
+- **What:** glslViewer — live GLSL shader previewer/console tool (fragment + vertex, textures, audio-reactive).
+- **URL:** https://github.com/patriciogonzalezvivo/glslViewer
+- **License:** ✅ BSD-3-Clause (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Shader livecoding/preview console tool. [Wave 64 Lane A]
+
+#### KhronosGroup/glslang ✅ commercial-safe
+- **What:** glslang — Khronos GLSL/HLSL → SPIR-V reference compiler (validator + front end).
+- **URL:** https://github.com/KhronosGroup/glslang
+- **License:** ✅ BSD-style permissive (verified Wave 64 Lane A, 2026-10-08: raw LICENSE.txt — BSD-style redistribution grant covering preprocessing/parsing/codegen; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Reference shader compiler. [Wave 64 Lane A]
+
+#### KhronosGroup/SPIRV-Tools ✅ commercial-safe
+- **What:** SPIRV-Tools — Khronos SPIR-V assembler, disassembler, optimizer, and validator.
+- **URL:** https://github.com/KhronosGroup/SPIRV-Tools
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SPIR-V toolchain (pairs with glslang). [Wave 64 Lane A]
+
+#### KhronosGroup/SPIRV-Cross ✅ commercial-safe
+- **What:** SPIRV-Cross — Khronos SPIR-V → GLSL/HLSL/MSL cross-compiler (shader reflection + conversion).
+- **URL:** https://github.com/KhronosGroup/SPIRV-Cross
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Shader cross-compilation for multi-target demos. [Wave 64 Lane A]
+
+#### microsoft/DirectXShaderCompiler ✅ commercial-safe
+- **What:** DirectXShaderCompiler — Microsoft HLSL → DXIL/SPIR-V compiler (LLVM-based).
+- **URL:** https://github.com/microsoft/DirectXShaderCompiler
+- **License:** ✅ LLVM Release License — permissive (verified Wave 64 Lane A, 2026-10-08: raw LICENSE.TXT — LLVM Release License, University of Illinois/NCSA; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** HLSL compiler (LLVM-family permissive license). [Wave 64 Lane A]
+
+#### google/shaderc ✅ commercial-safe
+- **What:** shaderc — Google shader-compilation library (glslang + SPIRV-Tools wrapper with C API).
+- **URL:** https://github.com/google/shaderc
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — Apache License 2.0; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** NDK-friendly shader compilation API. [Wave 64 Lane A]
+
+#### aras-p/glsl-optimizer ✅ commercial-safe
+- **What:** glsl-optimizer — GLSL optimizer (Mesa-based, strips/converts shaders for mobile/WebGL).
+- **URL:** https://github.com/aras-p/glsl-optimizer
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: raw license.txt — "licensed according to the terms of the MIT license"; ardatan fork is gone — this is the canonical repo; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Shader size-optimizer for 4k/64k intros. [Wave 64 Lane A]
+
+#### google/swiftshader ✅ commercial-safe
+- **What:** SwiftShader — Google software Vulkan/OpenGL ES renderer (CPU fallback, CI rendering).
+- **URL:** https://github.com/google/swiftshader
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Software GL/Vulkan for headless shader testing. [Wave 64 Lane A]
+
+#### google/angle ✅ commercial-safe
+- **What:** ANGLE — Google OpenGL ES → Vulkan/Metal/D3D translation layer (Chromium's GL backend).
+- **URL:** https://github.com/google/angle
+- **License:** ✅ BSD-3-Clause (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — BSD redistribution grant; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Cross-platform GL ES translation. [Wave 64 Lane A]
+
+#### Dawn ✅ commercial-safe
+- **What:** Dawn — Chromium WebGPU implementation (Tint WGSL compiler + native backends).
+- **URL:** https://dawn.googlesource.com/dawn
+- **License:** ✅ BSD-3-Clause (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — BSD-3-Clause redistribution grant, "Copyright 2017-2026 The Dawn & Tint Authors")
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Native WebGPU + WGSL compiler. [Wave 64 Lane A]
+
+#### playcanvas/engine ✅ commercial-safe
+- **What:** PlayCanvas engine — open-source WebGL/WebGPU game engine (editor + runtime).
+- **URL:** https://github.com/playcanvas/engine
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Web-first 3D engine for browser demos. [Wave 64 Lane A]
+
+#### openrndr/openrndr ✅ commercial-safe
+- **What:** OPENRNDR — Kotlin creative-coding framework for interactive visuals (JVM).
+- **URL:** https://github.com/openrndr/openrndr
+- **License:** ✅ BSD-3-Clause (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — BSD redistribution grant, "Copyright (c) 2018, Edwin Jakobs, RNDR"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** JVM creative-coding framework (Processing-family). [Wave 64 Lane A]
+
+#### thi-ng/umbrella ✅ commercial-safe
+- **What:** thi.ng/umbrella — TypeScript creative-coding toolkit monorepo (generative art, DSP, WebGL).
+- **URL:** https://github.com/thi-ng/umbrella
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Modular TS toolkit for generative visuals. [Wave 64 Lane A]
+
+#### google/filament ✅ commercial-safe
+- **What:** Filament — Google physically-based rendering engine (Android/iOS/WebGL/C++).
+- **URL:** https://github.com/google/filament
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** PBR engine with real-time GI. [Wave 64 Lane A]
+
+#### ConfettiFX/The-Forge ✅ commercial-safe
+- **What:** The Forge — cross-platform rendering framework (Vulkan/Metal/DX12, low-level).
+- **URL:** https://github.com/ConfettiFX/The-Forge
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Low-level multi-API rendering framework. [Wave 64 Lane A]
+
+#### DiligentGraphics/DiligentEngine ✅ commercial-safe
+- **What:** Diligent Engine — modern cross-platform 3D graphics library (D3D11/12, GL, Vulkan, Metal).
+- **URL:** https://github.com/DiligentGraphics/DiligentEngine
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Cross-API 3D graphics abstraction. [Wave 64 Lane A]
+
+#### nem0/LumixEngine ✅ commercial-safe
+- **What:** Lumix Engine — lightweight open-source 3D game engine (C++, editor included).
+- **URL:** https://github.com/nem0/LumixEngine
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Lightweight C++ 3D engine. [Wave 64 Lane A]
+
+#### cocos/cocos-engine ✅ commercial-safe
+- **What:** Cocos Creator engine — open-source 2D/3D game engine (TypeScript).
+- **URL:** https://github.com/cocos/cocos-engine
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: raw LICENSE.md — MIT License, Chukong/Xiamen Yaji; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 2D/3D engine (docs cataloged in P1). [Wave 64 Lane A]
+
+#### 4ian/GDevelop ✅ commercial-safe
+- **What:** GDevelop — open-source no-code 2D/3D game engine (event system, web/mobile export).
+- **URL:** https://github.com/4ian/GDevelop
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: raw LICENSE.md — Core/GDJS/IDE/Extensions all MIT; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** No-code engine (wiki cataloged in P1). [Wave 64 Lane A]
+
+#### MonoGame/MonoGame ✅ commercial-safe
+- **What:** MonoGame — open-source XNA-successor game framework (C#, cross-platform).
+- **URL:** https://github.com/MonoGame/MonoGame
+- **License:** ✅ Microsoft Public License (Ms-PL) — permissive OSI-approved (verified Wave 64 Lane A, 2026-10-08: raw LICENSE.txt — "Microsoft Public License (Ms-PL)"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** XNA-compatible framework (docs cataloged in P1). [Wave 64 Lane A]
+
+#### Kode/Kha ✅ commercial-safe
+- **What:** Kha — ultra-portable low-level multimedia framework (Haxe, 20+ targets).
+- **URL:** https://github.com/Kode/Kha
+- **License:** ✅ Zlib (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Portable low-level framework (Armory3D's base). [Wave 64 Lane A]
+
+#### Gamua/Starling-Framework ✅ commercial-safe
+- **What:** Starling — ActionScript 3 2D GPU framework (Stage3D, game/UI rendering).
+- **URL:** https://github.com/Gamua/Starling-Framework
+- **License:** ✅ Simplified BSD (verified Wave 64 Lane A, 2026-10-08: raw LICENSE.md — "Simplified BSD License", Gamua GmbH; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** GPU-accelerated 2D framework. [Wave 64 Lane A]
+
+#### openfl/openfl ✅ commercial-safe
+- **What:** OpenFL — open-source Flash-API implementation for Haxe (games/apps, many targets).
+- **URL:** https://github.com/openfl/openfl
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Flash-compatible Haxe framework. [Wave 64 Lane A]
+
+#### mrdoob/three.js ✅ commercial-safe
+- **What:** three.js — JavaScript 3D library (WebGL/WebGPU, scenes, shaders, loaders).
+- **URL:** https://github.com/mrdoob/three.js
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The standard web 3D library (only MMDLoader was cataloged before). [Wave 64 Lane A]
+
+#### BabylonJS/Babylon.js ✅ commercial-safe
+- **What:** Babylon.js — full-featured WebGL/WebGPU 3D engine (Microsoft-backed).
+- **URL:** https://github.com/BabylonJS/Babylon.js
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Full 3D engine alternative to three.js. [Wave 64 Lane A]
+
+#### aframevr/aframe ✅ commercial-safe
+- **What:** A-Frame — web framework for VR/AR experiences (three.js-based, entity-component).
+- **URL:** https://github.com/aframevr/aframe
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Declarative WebXR framework. [Wave 64 Lane A]
+
+#### pmndrs/react-three-fiber ✅ commercial-safe
+- **What:** react-three-fiber — React renderer for three.js (declarative 3D scenes).
+- **URL:** https://github.com/pmndrs/react-three-fiber
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** React + three.js binding. [Wave 64 Lane A]
+
+#### greggman/twgl.js ✅ commercial-safe
+- **What:** twgl.js — tiny WebGL helper library (minimal boilerplate for raw WebGL demos).
+- **URL:** https://github.com/greggman/twgl.js
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id — canonical repo is greggman/twgl.js, not gfxfundamentals)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Minimal WebGL for shader demos. [Wave 64 Lane A]
+
+#### visgl/luma.gl ✅ commercial-safe
+- **What:** luma.gl — WebGL/WebGPU framework for data visualization (Uber vis.gl).
+- **URL:** https://github.com/visgl/luma.gl
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — "luma.gl is provided under the MIT license"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** GPU data-viz framework. [Wave 64 Lane A]
+
+#### visgl/deck.gl ✅ commercial-safe
+- **What:** deck.gl — WebGL-powered large-scale data visualization framework (Uber vis.gl).
+- **URL:** https://github.com/visgl/deck.gl
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Big-data GPU visualization. [Wave 64 Lane A]
+
+#### regl-project/regl ✅ commercial-safe
+- **What:** regl — functional WebGL wrapper (stateless, fast shader iteration).
+- **URL:** https://github.com/regl-project/regl
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Functional WebGL for livecoded visuals. [Wave 64 Lane A]
+
+#### OGRECave/ogre ✅ commercial-safe
+- **What:** OGRE — open-source 3D graphics engine (C++, long-lived scene-graph renderer).
+- **URL:** https://github.com/OGRECave/ogre
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Classic C++ 3D engine. [Wave 64 Lane A]
+
+#### love2d/love ✅ commercial-safe
+- **What:** LÖVE — 2D game framework for Lua (simple API, many platforms).
+- **URL:** https://github.com/love2d/love
+- **License:** ✅ zlib (verified Wave 64 Lane A, 2026-10-08: raw license.txt — "License: zlib" for LÖVE; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lua 2D framework (docs cataloged round 9; this is the engine). [Wave 64 Lane A]
+
+#### HaxeFlixel/flixel ✅ commercial-safe
+- **What:** HaxeFlixel — 2D game engine for Haxe/OpenFL (retro-friendly, sprite-based).
+- **URL:** https://github.com/HaxeFlixel/flixel
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Haxe 2D engine (docs cataloged round 9; this is the engine). [Wave 64 Lane A]
+
+#### FNA-XNA/FNA ✅ commercial-safe
+- **What:** FNA — XNA 4.0 reimplementation for open platforms (SDL2-based, game preservation).
+- **URL:** https://github.com/FNA-XNA/FNA
+- **License:** ✅ Microsoft Public License (Ms-PL) — permissive OSI-approved (verified Wave 64 Lane A, 2026-10-08: raw licenses/LICENSE — "Microsoft Public License (Ms-PL)"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** XNA reimplementation for XNA game preservation. [Wave 64 Lane A]
+
+#### HeapsIO/heaps ✅ commercial-safe
+- **What:** Heaps — Haxe high-performance game engine (2D/3D, used in Dead Cells).
+- **URL:** https://github.com/HeapsIO/heaps
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Production-proven Haxe engine. [Wave 64 Lane A]
+
+#### lz4/lz4 ✅ commercial-safe
+- **What:** LZ4 — extremely fast lossless compression library (frame + block formats).
+- **URL:** https://github.com/lz4/lz4
+- **License:** ✅ BSD-2-Clause for lib/ (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — "all files in the `lib` directory use a BSD 2-Clause license; all other files use GPL-2.0-or-later" — catalogued scope is the BSD library; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Fast compression for demo asset packing (GPL parts are CLI/examples, not the lib). [Wave 64 Lane A]
+
+#### facebook/zstd ✅ commercial-safe
+- **What:** Zstandard — fast lossless compression (Facebook/Meta, dictionary support).
+- **URL:** https://github.com/facebook/zstd
+- **License:** ✅ BSD (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — "BSD License For Zstandard software"; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern compression for asset pipelines. [Wave 64 Lane A]
+
+#### CPJKU/madmom ✅ commercial-safe
+- **What:** madmom — audio signal processing + music information retrieval library (Python).
+- **URL:** https://github.com/CPJKU/madmom
+- **License:** ✅ BSD-3-Clause for source files (verified Wave 64 Lane A, 2026-10-08: raw LICENSE — "all source code files are published under this license" BSD-3-Clause; data/model files carry separate terms — noted; GitHub API spdx_id was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** MIR library for beat/onset analysis (model files have separate terms). [Wave 64 Lane A]
+
+#### Arnavion/libjass ✅ commercial-safe
+- **What:** libjass — ASS/SSA subtitle renderer for browsers (JavaScript, libass-style).
+- **URL:** https://github.com/Arnavion/libjass
+- **License:** ✅ Apache-2.0 (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Browser ASS renderer (caption-tail survivor). [Wave 64 Lane A]
+
+#### faustomorales/keras-ocr ✅ commercial-safe
+- **What:** keras-ocr — Keras-based OCR pipeline (detector + recognizer, trainable).
+- **URL:** https://github.com/faustomorales/keras-ocr
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** OCR for caption extraction from frames (caption-tail survivor). [Wave 64 Lane A]
+
+#### absadiki/pywhispercpp ✅ commercial-safe
+- **What:** pywhispercpp — Python bindings for whisper.cpp (fast local Whisper inference).
+- **URL:** https://github.com/absadiki/pywhispercpp
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Lightweight Whisper Python binding (caption-tail survivor). [Wave 64 Lane A]
+
+#### jiaaro/pydub ✅ commercial-safe
+- **What:** pydub — Python audio manipulation library (slice, mix, format convert via ffmpeg).
+- **URL:** https://github.com/jiaaro/pydub
+- **License:** ✅ MIT (verified Wave 64 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audio prep for caption/VO pipelines (caption-tail survivor). [Wave 64 Lane A]
+### Wave 65 Lane A — Pocket 1: SDK docs round 11 (40)
+Round 11 goes deeper into the docs tail: MCU/embedded (ESP32, Arduino, MicroPython, CircuitPython, Adafruit, SparkFun, Zephyr, FreeRTOS, micro:bit), engine manuals (Unity, GameMaker, Bevy, Fyrox, PlayCanvas), graphics/API references (LearnOpenGL, Vulkan Tutorial, WebGL Fundamentals, Quilez articles, bgfx, sokol, macroquad, raylib cheatsheet, Pygame, Arcade), audio (JUCE API), and emulator/FPGA/OS dev docs (pcsx-redux, MiSTer wiki, BGB, DOSBox Staging, QEMU, Bochs, MAMEdev wiki, Cemu, Redox, TempleOS, Fuchsia, CHIP-8). Every URL returned live HTTP 200 on 2026-10-08 (LearnOpenGL needs a browser UA — bare curl gets 406, noted honestly). Docs-only entries carry no license grant; code is never catalogued in this pocket. Pre-append dedup: 6 domain dupes rejected (smspower.org, wiki.neogeodev.org, randomterrain.com, amigadev.elowar.com, melonDS wiki, doc.babylonjs.com), SDL wiki rejected (cataloged round 10), thebookofshaders.com rejected (ARR honest-negative already cataloged at line 33187 — docs entry would contradict it).
+#### ESP32 IDF Documentation ❓ documentation-only
+- **What:** Espressif official ESP32 IDF programming guide + API reference (Wi-Fi, Bluetooth, peripherals, FreeRTOS port).
+- **URL:** https://docs.espressif.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Espressif IoT dev reference. [Wave 65 Lane A]
+
+#### Arduino Documentation ❓ documentation-only
+- **What:** Official Arduino docs — language reference, board guides, and project tutorials.
+- **URL:** https://docs.arduino.cc/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arduino ecosystem reference. [Wave 65 Lane A]
+
+#### MicroPython Documentation ❓ documentation-only
+- **What:** MicroPython language/library reference + port guides (ESP32, RP2040, STM32, nRF).
+- **URL:** https://docs.micropython.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Embedded Python reference. [Wave 65 Lane A]
+
+#### CircuitPython Documentation ❓ documentation-only
+- **What:** Adafruit CircuitPython API reference + supported-board guides.
+- **URL:** https://docs.circuitpython.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Beginner-friendly embedded Python docs. [Wave 65 Lane A]
+
+#### Adafruit Learning System ❓ documentation-only
+- **What:** Adafruit's guide library — electronics, sensors, displays, CircuitPython projects.
+- **URL:** https://learn.adafruit.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Electronics project tutorials. [Wave 65 Lane A]
+
+#### SparkFun Guides ❓ documentation-only
+- **What:** SparkFun hookup guides and tutorials (sensors, Qwiic, Artemis, Thing Plus).
+- **URL:** https://learn.sparkfun.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Electronics hookup guides. [Wave 65 Lane A]
+
+#### Zephyr RTOS Documentation ❓ documentation-only
+- **What:** Zephyr Project docs — kernel services, drivers, devicetree, west meta-tool.
+- **URL:** https://docs.zephyrproject.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** RTOS for constrained devices. [Wave 65 Lane A]
+
+#### FreeRTOS Documentation ❓ documentation-only
+- **What:** FreeRTOS kernel documentation hub — tasks, queues, ports, memory management.
+- **URL:** https://www.freertos.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** RTOS kernel reference. [Wave 65 Lane A]
+
+#### micro:bit Documentation ❓ documentation-only
+- **What:** BBC micro:bit user guides plus MakeCode and MicroPython references.
+- **URL:** https://microbit.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Educational embedded docs. [Wave 65 Lane A]
+
+#### Unity Manual ❓ documentation-only
+- **What:** Unity engine manual + scripting API reference.
+- **URL:** https://docs.unity3d.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Unity engine reference (engine itself not catalogued). [Wave 65 Lane A]
+
+#### GameMaker Manual ❓ documentation-only
+- **What:** GameMaker Studio manual — GML language reference and IDE guides.
+- **URL:** https://manual.yoyogames.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GameMaker reference (engine not catalogued). [Wave 65 Lane A]
+
+#### Bevy Learning Docs ❓ documentation-only
+- **What:** Bevy engine book, examples, and migration guides.
+- **URL:** https://bevyengine.org/learn
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Bevy learning hub (complements cataloged Bevy engine). [Wave 65 Lane A]
+
+#### Fyrox API Docs ❓ documentation-only
+- **What:** docs.rs API reference for the Fyrox Rust game engine.
+- **URL:** https://docs.rs/fyrox
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rust engine API (complements cataloged Fyrox). [Wave 65 Lane A]
+
+#### PlayCanvas Developer Docs ❓ documentation-only
+- **What:** PlayCanvas WebGL engine developer documentation and user manual.
+- **URL:** https://developer.playcanvas.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** WebGL engine docs (complements cataloged PlayCanvas). [Wave 65 Lane A]
+
+#### LearnOpenGL ❓ documentation-only
+- **What:** Joey de Vries' open OpenGL tutorial series — modern pipeline, lighting, PBR, shadows.
+- **URL:** https://learnopengl.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modern OpenGL tutorial. SPECIAL NOTE: verified live HTTP 200 with browser UA 2026-10-08 — returns 406 to bare curl; docs-license terms not reviewed. [Wave 65 Lane A]
+
+#### Vulkan Tutorial ❓ documentation-only
+- **What:** Alexander Overvoorde's step-by-step Vulkan tutorial from instance to render loop.
+- **URL:** https://vulkan-tutorial.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Ground-up Vulkan tutorial. [Wave 65 Lane A]
+
+#### WebGL Fundamentals ❓ documentation-only
+- **What:** WebGL1/WebGL2 tutorials — basics through techniques and optimization.
+- **URL:** https://webglfundamentals.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** WebGL tutorial series. [Wave 65 Lane A]
+
+#### Inigo Quilez Articles ❓ documentation-only
+- **What:** Inigo Quilez's shader/math articles — SDFs, noise, raymarching, fractals.
+- **URL:** https://iquilezles.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Shader-math reference articles. [Wave 65 Lane A]
+
+#### bgfx Documentation ❓ documentation-only
+- **What:** bgfx rendering-library docs — examples, API overview, supported backends.
+- **URL:** https://bkaradzic.github.io/bgfx/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Render-backend docs (complements cataloged bgfx). [Wave 65 Lane A]
+
+#### sokol Documentation ❓ documentation-only
+- **What:** sokol headers docs/sample hub — HTML5 and native minimal-graphics examples.
+- **URL:** https://floooh.github.io/sokol-html5/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Minimal-headers gfx docs (complements cataloged sokol). [Wave 65 Lane A]
+
+#### Macroquad API Docs ❓ documentation-only
+- **What:** docs.rs API reference for the macroquad Rust game framework.
+- **URL:** https://docs.rs/macroquad
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rust game-framework API (complements cataloged macroquad library). [Wave 65 Lane A]
+
+#### raylib Cheatsheet ❓ documentation-only
+- **What:** raylib single-page API cheatsheet (all modules, functions, structs).
+- **URL:** https://raylib.com/cheatsheet/cheatsheet.html
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Quick API reference (complements cataloged raylib docs). [Wave 65 Lane A]
+
+#### Pygame Documentation ❓ documentation-only
+- **What:** Pygame API reference — sprites, mixer, draw, surfarray, time.
+- **URL:** https://www.pygame.org/docs/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Python game-dev API reference. [Wave 65 Lane A]
+
+#### Arcade Library Docs ❓ documentation-only
+- **What:** Python Arcade library API docs with examples and how-to guides.
+- **URL:** https://api.arcade.academy/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Python 2D game-library docs. [Wave 65 Lane A]
+
+#### JUCE Documentation ❓ documentation-only
+- **What:** JUCE framework API docs — audio plugins, DSP, GUI, networking.
+- **URL:** https://docs.juce.com/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audio-framework API. SPECIAL NOTE: JUCE code is GPL/commercial dual (quarantine row 116) — code not catalogued here. [Wave 65 Lane A]
+
+#### Tiled Manual ❓ documentation-only
+- **What:** Tiled map-editor manual — TMX format, automapping, tilesets, world files.
+- **URL:** https://doc.mapeditor.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Level-editor docs. SPECIAL NOTE: Tiled editor code is GPL-2.0-or-later (quarantine row 476) — code not catalogued here. [Wave 65 Lane A]
+
+#### Box2D Manual ❓ documentation-only
+- **What:** Box2D v3 documentation — physics concepts, joints, API usage.
+- **URL:** https://box2d.org/documentation/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2D physics manual (complements cataloged Box2D). [Wave 65 Lane A]
+
+#### AtariAge 2600 Programming for Newbies ❓ documentation-only
+- **What:** Andrew Davie's '2600 Programming for Newbies' tutorial series (6507, TIA, kernels).
+- **URL:** https://www.atariage.com/2600/programming/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari 2600 beginner tutorials. [Wave 65 Lane A]
+
+#### pcsx-redux Wiki ❓ documentation-only
+- **What:** PCSX-Redux PlayStation emulator developer wiki.
+- **URL:** https://github.com/grumpycoders/pcsx-redux/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PS1 emulation internals reference. [Wave 65 Lane A]
+
+#### MiSTer FPGA Wiki ❓ documentation-only
+- **What:** MiSTer-devel FPGA project wiki — cores, setup, development.
+- **URL:** https://github.com/MiSTer-devel/Wiki_MiSTer/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** FPGA retro-hardware wiki (complements cataloged MiSTer docs). [Wave 65 Lane A]
+
+#### BGB Manual ❓ documentation-only
+- **What:** BGB Game Boy emulator manual — debugger, link cable, accuracy notes.
+- **URL:** https://bgb.bircd.org/manual.html
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GB/GBC emulation + debugger reference. [Wave 65 Lane A]
+
+#### DOSBox Staging Documentation ❓ documentation-only
+- **What:** DOSBox Staging user and developer documentation.
+- **URL:** https://dosbox-staging.github.io/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** DOS emulation docs. SPECIAL NOTE: code is GPL-2.0-or-later (quarantine row 418) — code not catalogued here. [Wave 65 Lane A]
+
+#### QEMU Documentation ❓ documentation-only
+- **What:** QEMU system/user-mode emulator documentation.
+- **URL:** https://qemu.readthedocs.io/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Machine-emulation reference. [Wave 65 Lane A]
+
+#### Bochs Documentation ❓ documentation-only
+- **What:** Bochs x86 PC emulator documentation and configuration guides.
+- **URL:** https://bochs.sourceforge.io/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** x86 emulation reference. [Wave 65 Lane A]
+
+#### MAMEdev Wiki ❓ documentation-only
+- **What:** MAME developer wiki — driver writing, emulation theory, device docs.
+- **URL:** https://wiki.mamedev.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Arcade-emulation dev wiki (complements cataloged MAME docs). [Wave 65 Lane A]
+
+#### Cemu Official Site ❓ documentation-only
+- **What:** Cemu Wii U emulator official site — setup guide, options, compatibility info.
+- **URL:** https://www.cemu.info/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Wii U emulation guide (emulator itself not catalogued). [Wave 65 Lane A]
+
+#### Redox OS Book ❓ documentation-only
+- **What:** Redox OS book — microkernel OS in Rust, writing drivers and applications.
+- **URL:** https://doc.redox-os.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Rust microkernel OS docs. [Wave 65 Lane A]
+
+#### TempleOS Documentation ❓ documentation-only
+- **What:** TempleOS documentation — HolyC, kernel, ring-0-only design.
+- **URL:** https://templeos.org/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Terry Davis OS documentation. [Wave 65 Lane A]
+
+#### Fuchsia Documentation ❓ documentation-only
+- **What:** Google Fuchsia OS developer docs — Zircon kernel, components, FIDL.
+- **URL:** https://fuchsia.dev/
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Capability-based OS docs. [Wave 65 Lane A]
+
+#### CHIP-8 Wiki ❓ documentation-only
+- **What:** CHIP-8 technical reference wiki — opcodes, quirks, SUPER-CHIP/XO-CHIP extensions.
+- **URL:** https://github.com/mattmikolay/chip-8/wiki
+- **License:** ❓ documentation-only (verified live HTTP 200, 2026-10-08; site docs-license terms not reviewed — docs carry no license grant, code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** CHIP-8 emulator-authoring reference. [Wave 65 Lane A]
+
+### Wave 65 Lane A — Pocket 2: landmark musicdisk round 9 (25)
+Round 9 covers pouët's vote-sorted musicdisk chart page 6 (next vote tier after round 8's page 5). All 25 prods verified live 2026-10-08 via pouët og:title + og:description match. 0 ID dupes, 0 title dupes vs catalog (OverClocked ReMix-site and tim.kahn-microcompositions title hits confirmed as distinct items). All ❓ per musicdisk precedent — no license statements, NC not declared.
+#### TED Vibes 2 — Exceed (september 2023) ❓ landmark musicdisk
+- **What:** "TED Vibes 2" — Exceed C16/116/plus4 musicdisk (Function 2023 (6th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=95079
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; C16/116/plus4/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commodore 16/plus4 musicdisk. [Wave 65 Lane A]
+
+#### Star Bars Compo Votepack — Carillon & Cyberiad (september 2023) ❓ landmark musicdisk
+- **What:** "Star Bars Compo Votepack" — Carillon & Cyberiad Commodore 64 musicdisk (september 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=95008
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Commodore 64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 compo votepack musicdisk. [Wave 65 Lane A]
+
+#### Paula Doing SID+ — Artstate & Arkanix Labs (august 2023) ❓ landmark musicdisk
+- **What:** "Paula Doing SID+" — Artstate & Arkanix Labs Amiga OCS/ECS musicdisk (august 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94893
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk. [Wave 65 Lane A]
+
+#### Rob Hubbard's 1985 Recollection — Artstate (august 2023) ❓ landmark musicdisk
+- **What:** "Rob Hubbard's 1985 Recollection" — Artstate Amiga OCS/ECS musicdisk (august 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94864
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk. [Wave 65 Lane A]
+
+#### OVeRclocked Remix — Overlanders (july 2023) ❓ landmark musicdisk
+- **What:** "OVeRclocked Remix" — Overlanders Atari ST musicdisk (Sommarhack 2023 (6th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94623
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Atari ST/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST musicdisk. [Wave 65 Lane A]
+
+#### Lostmax — Psycho Hacking Force (july 2023) ❓ landmark musicdisk
+- **What:** "Lostmax" — Psycho Hacking Force Atari ST musicdisk (Sommarhack 2023 (9th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94621
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Atari ST/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST musicdisk. [Wave 65 Lane A]
+
+#### Amiga Chip Addiction Volume One — CMAP (july 2023) ❓ landmark musicdisk
+- **What:** "Amiga Chip Addiction Volume One" — CMAP Amiga OCS/ECS musicdisk (july 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94587
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga chip-music compilation. [Wave 65 Lane A]
+
+#### No-Skip Mix (2022 Edition) — Mayday! (june 2023) ❓ landmark musicdisk
+- **What:** "No-Skip Mix (2022 Edition)" — Mayday! Commodore 64 musicdisk (june 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=95710
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Commodore 64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 65 Lane A]
+
+#### [XII MICROCOMPO AY/SCR2 V.5] — CulturaChip & AAMSX (june 2023) ❓ landmark musicdisk
+- **What:** "[XII MICROCOMPO AY/SCR2 V.5]" — CulturaChip & AAMSX MSX musicdisk (june 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94927
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; MSX/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX microcompo musicdisk. [Wave 65 Lane A]
+
+#### AI Illusion — Artstate (june 2023) ❓ landmark musicdisk
+- **What:** "AI Illusion" — Artstate Amiga OCS/ECS musicdisk (june 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94525
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk. [Wave 65 Lane A]
+
+#### Love in the Mix — Artstate (may 2023) ❓ landmark musicdisk
+- **What:** "Love in the Mix" — Artstate Amiga OCS/ECS musicdisk (may 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94478
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk. [Wave 65 Lane A]
+
+#### Ear Shaver — Shiru (april 2023) ❓ landmark musicdisk
+- **What:** "Ear Shaver" — Shiru ZX Spectrum musicdisk (april 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94304
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; ZX Spectrum/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Spectrum musicdisk. [Wave 65 Lane A]
+
+#### Party x Leben Remixer — Poo-Brain (april 2023) ❓ landmark musicdisk
+- **What:** "Party x Leben Remixer" — Poo-Brain Android (wild) musicdisk (Revision 2023 (8th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94213
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Android (wild)/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Android wild musicdisk. [Wave 65 Lane A]
+
+#### Machine Yearning — lft (april 2023) ❓ landmark musicdisk
+- **What:** "Machine Yearning" — lft Commodore 64 (4k) musicdisk (Revision 2023 (6th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94190
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Commodore 64 (4k)/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 4k musicdisk. [Wave 65 Lane A]
+
+#### chipo django 2 — Rabenauge & bitshifters collective (april 2023) ❓ landmark musicdisk
+- **What:** "chipo django 2" — Rabenauge & bitshifters collective Atari STe / Amiga OCS/ECS / Acorn musicdisk (Revision 2023 (6th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94151
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Atari STe / Amiga OCS/ECS / Acorn/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Multi-platform musicdisk. [Wave 65 Lane A]
+
+#### TED Vibes — Exceed & Singular Crew (april 2023) ❓ landmark musicdisk
+- **What:** "TED Vibes" — Exceed & Singular Crew C16/116/plus4 musicdisk (Revision 2023 (9th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94108
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; C16/116/plus4/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Commodore 16/plus4 musicdisk. [Wave 65 Lane A]
+
+#### The Nomad — kiki-prods & Saturne (march 2023) ❓ landmark musicdisk
+- **What:** "The Nomad" — kiki-prods & Saturne Amiga AGA musicdisk (march 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94010
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga AGA/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga AGA musicdisk. [Wave 65 Lane A]
+
+#### The Beautiful Machine Vol. 2 — Artstate (march 2023) ❓ landmark musicdisk
+- **What:** "The Beautiful Machine Vol. 2" — Artstate Amiga OCS/ECS musicdisk (march 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=93880
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk. [Wave 65 Lane A]
+
+#### Lo-fi SID Music to Study/Relax to — Hackers (february 2023) ❓ landmark musicdisk
+- **What:** "Lo-fi SID Music to Study/Relax to" — Hackers Commodore 64 musicdisk (KozMOS 2023 (4th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=94411
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Commodore 64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 lo-fi musicdisk. [Wave 65 Lane A]
+
+#### Dankollection — unknown group (february 2023) ❓ landmark musicdisk
+- **What:** "Dankollection" — unknown group Amiga OCS/ECS musicdisk (Fjälldata 2023 (5th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=93842
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk (group unlisted on pouët). [Wave 65 Lane A]
+
+#### Bachtracking — Triad (february 2023) ❓ landmark musicdisk
+- **What:** "Bachtracking" — Triad Commodore 64 musicdisk (Fjälldata 2023 (6th)); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=93747
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Commodore 64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 Bach-themed musicdisk. [Wave 65 Lane A]
+
+#### Machine EP — Triad (february 2023) ❓ landmark musicdisk
+- **What:** "Machine EP" — Triad Commodore 64 musicdisk (Fjälldata 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=93746
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Commodore 64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 65 Lane A]
+
+#### Chipsystem — Hemoroids (february 2023) ❓ landmark musicdisk
+- **What:** "Chipsystem" — Hemoroids Atari ST musicdisk (february 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=93745
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Atari ST/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST musicdisk. [Wave 65 Lane A]
+
+#### Feedback #14 - Classic Edition — void (february 2023) ❓ landmark musicdisk
+- **What:** "Feedback #14 - Classic Edition" — void Amiga AGA musicdisk (Gerp 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=93546
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga AGA/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga AGA musicdisk. [Wave 65 Lane A]
+
+#### Feedback #14 — void (february 2023) ❓ landmark musicdisk
+- **What:** "Feedback #14" — void Amiga PPC/RTG musicdisk (february 2023); pouët vote-sorted musicdisk chart page 6.
+- **URL:** https://www.pouet.net/prod.php?which=93509
+- **License:** ❓ license unverified (verified live 2026-10-08: pouët og:title + og:description match; Amiga PPC/RTG/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga PPC/RTG musicdisk. [Wave 65 Lane A]
+
+### Wave 65 Lane A — Pocket 3: PD radio-drama round 14 — per-episode deep dives (40)
+Round 14 deep-dives 7 shows carrying established ✅ PD show-level entries from earlier rounds (Boston Blackie, Lights Out, Quiet Please, Dimension X, Sherlock Holmes, Campbell Playhouse, Richard Diamond) — all NEW episodes, none overlapping the 6 sample episodes cataloged per show in waves 52/56. Per Wave 59 ruling, single-episode items from an established-PD show carry ✅ WITH the established-PD note AND the item-level licenseurl fact stated honestly. Every item verified via the archive.org metadata API on 2026-10-08 (live, not access-restricted, single-episode: ≤2 audio files, <60 files total). Pre-append dedup (identifier vs catalog): 0 dupes. Honest negatives: 3 verification FAILS replaced — AChristmasCarol_20141223 (3 audio files, multi-file), RichardDiamond530802150LtLevinsonKidnappedRepeat501018 (403 files, collection), RichardDiamondPrivateDetective1949noWhistlingNoCommercialsTiny (254 files, collection); replacements verified PASS (Campbell 'Victoria Regina' single, Richard Diamond 'The Man Who Hated Women' public copy RichardDiamond_475). 10+ access-restricted exclusions (hex-ID Boxcars711 pods with private=true audio — Bill Kirby Murder Case, Man Who Hated Women pod, What Every Woman Knows, Counsellor At Law, The Bad Man, Campbell Victoria Regina pods are clean but the restricted ones dropped). Night Beat dropped entirely (only 1 new single exists — the show is single-poor), Dark Fantasy dropped (only 1 new single: Spawn Of The Sub Human — collections and Halloween-Spooktacular-2017 modern wrappers excluded). No Lone Ranger/Shadow/Green Hornet character-rights shows in this round.
+#### Boston Blackie — "The Ghost Of Florence Newton" (05-28-47) (OTR) ✅ PD
+- **What:** "The Ghost Of Florence Newton" — Boston Blackie (05-28-47); single-episode deep dive.
+- **URL:** https://archive.org/details/BostonBlackie470528TheGhostOfFlorenceNewton
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Boston Blackie — "Blackie Goes To Jail For Diamond Theft" (12-03-46) (OTR) ✅ PD
+- **What:** "Blackie Goes To Jail For Diamond Theft" — Boston Blackie (12-03-46); single-episode deep dive.
+- **URL:** https://archive.org/details/BostonBlackie19461203BlackieGoesToJailForDiamondTheft
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Boston Blackie — "Murder At The Circus" (04-14-48) (OTR) ✅ PD
+- **What:** "Murder At The Circus" — Boston Blackie (04-14-48); single-episode deep dive.
+- **URL:** https://archive.org/details/BostonBlackie480414MurderAtTheCircus
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 12 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Boston Blackie — "Mrs Boston Blackie" (06-06-45) (OTR) ✅ PD
+- **What:** "Mrs Boston Blackie" — Boston Blackie (06-06-45); single-episode deep dive.
+- **URL:** https://archive.org/details/BostonBlackie450606MrsBostonBlackie
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 12 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Boston Blackie — "Blackie And The Fur Thefts" (01-14-47) (OTR) ✅ PD
+- **What:** "Blackie And The Fur Thefts" — Boston Blackie (01-14-47); single-episode deep dive.
+- **URL:** https://archive.org/details/BostonBlackie470114BlackieAndTheFurThefts
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Boston Blackie — "Jacques Pierre And The Diamonds" (01-28-47) (OTR) ✅ PD
+- **What:** "Jacques Pierre And The Diamonds" — Boston Blackie (01-28-47); single-episode deep dive.
+- **URL:** https://archive.org/details/BostonBlackie470128JacquesPierreAndTheDiamonds
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 9 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Lights Out — "Cat Wife" (04-06-38) (OTR) ✅ PD
+- **What:** "Cat Wife" — Lights Out (04-06-38); single-episode deep dive.
+- **URL:** https://archive.org/details/LightsOutCatWife04061938
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Lights Out — "The Dream" (03-23-38) (OTR) ✅ PD
+- **What:** "The Dream" — Lights Out (03-23-38); single-episode deep dive.
+- **URL:** https://archive.org/details/LightsOut19380323TheDream
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Lights Out — "Profits Unlimited" (07-20-43) (OTR) ✅ PD
+- **What:** "Profits Unlimited" — Lights Out (07-20-43); single-episode deep dive.
+- **URL:** https://archive.org/details/LightsOut430720ProfitsUnlimited
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Lights Out — "Death Robbery" (07-16-47) (OTR) ✅ PD
+- **What:** "Death Robbery" — Lights Out (07-16-47); single-episode deep dive.
+- **URL:** https://archive.org/details/LightsOut19470716DeathRobbery
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 11 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Lights Out — "Knock At The Door" (12-15-42) (OTR) ✅ PD
+- **What:** "Knock At The Door" — Lights Out (12-15-42); single-episode deep dive.
+- **URL:** https://archive.org/details/LightsOut421215KnockAtTheDoor
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 11 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Lights Out — "The Sea" (undated) (OTR) ✅ PD
+- **What:** "The Sea" — Lights Out (undated); single-episode deep dive.
+- **URL:** https://archive.org/details/LightsOut--theSea
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item carries http://creativecommons.org/licenses/by/3.0/ licenseurl mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Quiet Please — "Shadow Of The Wings" (04-17-49) (OTR) ✅ PD
+- **What:** "Shadow Of The Wings" — Quiet Please (04-17-49); single-episode deep dive.
+- **URL:** https://archive.org/details/QuietPlease490417ShadowOfTheWings
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 12 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Quiet Please — "Kill Me Again" (11-17-47) (OTR) ✅ PD
+- **What:** "Kill Me Again" — Quiet Please (11-17-47); single-episode deep dive.
+- **URL:** https://archive.org/details/QuietPlease471117KillMeAgain
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 9 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Quiet Please — "Wear The Dead Man's Coat" (02-23-48) (OTR) ✅ PD
+- **What:** "Wear The Dead Man's Coat" — Quiet Please (02-23-48); single-episode deep dive.
+- **URL:** https://archive.org/details/QuietPlease480223WearTheDeadMansCoat
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Quiet Please — "If I Should Wake Before I Die" (02-27-49) (OTR) ✅ PD
+- **What:** "If I Should Wake Before I Die" — Quiet Please (02-27-49); single-episode deep dive.
+- **URL:** https://archive.org/details/QuietPlease490227IfIShouldWakeBeforeIDie
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Quiet Please — "Calling All Souls" (10-31-48) (OTR) ✅ PD
+- **What:** "Calling All Souls" — Quiet Please (10-31-48); single-episode deep dive.
+- **URL:** https://archive.org/details/QuietPlease481031CallingAllSouls
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Quiet Please — "Nothing Behind The Door" (06-08-47) (OTR) ✅ PD
+- **What:** "Nothing Behind The Door" — Quiet Please (06-08-47); single-episode deep dive.
+- **URL:** https://archive.org/details/QuietPlease470608NothingBehindTheDoor
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Dimension X — "The Man In The Moon" (07-14-50) (OTR) ✅ PD
+- **What:** "The Man In The Moon" — Dimension X (07-14-50); single-episode deep dive.
+- **URL:** https://archive.org/details/DimensionX500714TheManInTheMoon
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 10 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Dimension X — "Marionettes, Inc." (08-30-51) (OTR) ✅ PD
+- **What:** "Marionettes, Inc." — Dimension X (08-30-51); single-episode deep dive.
+- **URL:** https://archive.org/details/DimensionX19510830MarionettesInc
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Dimension X — "The Veldt" (08-09-51) (OTR) ✅ PD
+- **What:** "The Veldt" — Dimension X (08-09-51); single-episode deep dive.
+- **URL:** https://archive.org/details/DimensionXTheVeldt08091951
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Dimension X — "Dr Grimshaws Sanitarium" (09-22-50) (OTR) ✅ PD
+- **What:** "Dr Grimshaws Sanitarium" — Dimension X (09-22-50); single-episode deep dive.
+- **URL:** https://archive.org/details/DimensionX500922DrGrimshawsSanitarium
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Dimension X — "The Castaways" (08-11-50) (OTR) ✅ PD
+- **What:** "The Castaways" — Dimension X (08-11-50); single-episode deep dive.
+- **URL:** https://archive.org/details/DimensionX500811TheCastaways
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Dimension X — "Martian Chronicles" (08-18-50) (OTR) ✅ PD
+- **What:** "Martian Chronicles" — Dimension X (08-18-50); single-episode deep dive.
+- **URL:** https://archive.org/details/dimension-x-20-martian-chronicles-ray-bradbury-08-18-50
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 10 files, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Sherlock Holmes — "Professor Moriarity And The Diamond Jubilee" (12-07-47) (OTR) ✅ PD
+- **What:** "Professor Moriarity And The Diamond Jubilee" — Sherlock Holmes (12-07-47); single-episode deep dive.
+- **URL:** https://archive.org/details/SherlockHolmes471207ProfessorMoriarityAndTheDiamondJubilee
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Sherlock Holmes — "The Case Of The Missing Heiress" (10-05-47) (OTR) ✅ PD
+- **What:** "The Case Of The Missing Heiress" — Sherlock Holmes (10-05-47); single-episode deep dive.
+- **URL:** https://archive.org/details/SherlockHolmes471005TheCaseOfTheMissingHeiress
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 12 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Sherlock Holmes — "The Adventure Of The Malicious Moor" (01-03-49) (OTR) ✅ PD
+- **What:** "The Adventure Of The Malicious Moor" — Sherlock Holmes (01-03-49); single-episode deep dive.
+- **URL:** https://archive.org/details/SherlockHolmes490103TheAdventureOfTheMaliciousMoor
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 10 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Sherlock Holmes — "A Scandal In Bohemia" (10-12-54) (OTR) ✅ PD
+- **What:** "A Scandal In Bohemia" — Sherlock Holmes (10-12-54); single-episode deep dive.
+- **URL:** https://archive.org/details/SherlockHolmes541012AScandalInBohemia
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 10 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Sherlock Holmes — "Murder Beyond Mountains" (01-15-46) (OTR) ✅ PD
+- **What:** "Murder Beyond Mountains" — Sherlock Holmes (01-15-46); single-episode deep dive.
+- **URL:** https://archive.org/details/SherlockHolmes19460115MurderBeyondMountains
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Sherlock Holmes — "The Blue Carbuncle" (12-26-48) (OTR) ✅ PD
+- **What:** "The Blue Carbuncle" — Sherlock Holmes (12-26-48); single-episode deep dive.
+- **URL:** https://archive.org/details/SherlockHolmes-1948-12-26-TheBlueCarbuncle
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 2 audio files; item carries http://creativecommons.org/licenses/publicdomain/ licenseurl mark)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Campbell Playhouse — "Mutiny On The Bounty" (01-13-39) (OTR) ✅ PD
+- **What:** "Mutiny On The Bounty" — Campbell Playhouse (01-13-39); single-episode deep dive.
+- **URL:** https://archive.org/details/CampbellPlayhouse390113MutinyOnTheBounty
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 12 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Campbell Playhouse — "A Christmas Carol" (12-24-39) (OTR) ✅ PD
+- **What:** "A Christmas Carol" — Campbell Playhouse (12-24-39); single-episode deep dive.
+- **URL:** https://archive.org/details/CampbellPlayhouse391224AChristmasCarol_20151225
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 13 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Campbell Playhouse — "Wells Meets Welles" (10-28-40) (OTR) ✅ PD
+- **What:** "Wells Meets Welles" — Campbell Playhouse (10-28-40); single-episode deep dive.
+- **URL:** https://archive.org/details/CampbellPlayhouse401028WellsMeetsWelles
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 12 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Campbell Playhouse — "Jane Eyre" (undated) (OTR) ✅ PD
+- **What:** "Jane Eyre" — Campbell Playhouse (undated); single-episode deep dive.
+- **URL:** https://archive.org/details/janeeyreradio
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 11 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Campbell Playhouse — "Dinner At Eight (Lucille Ball)" (1940) (OTR) ✅ PD
+- **What:** "Dinner At Eight (Lucille Ball)" — Campbell Playhouse (1940); single-episode deep dive.
+- **URL:** https://archive.org/details/LUCILLEBALLInDINNERATEIGHTOnCampbellPlayhouse1940
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 13 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Campbell Playhouse — "Victoria Regina" (02-26-39) (OTR) ✅ PD
+- **What:** "Victoria Regina" — Campbell Playhouse (02-26-39); single-episode deep dive.
+- **URL:** https://archive.org/details/siwhaiascnvkjwfjnnmkxuz9bzzziej6nz2bdiom
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 9 files, 1 audio file; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Richard Diamond — "The Tom Waxman Bombing Case" (06-26-49) (OTR) ✅ PD
+- **What:** "The Tom Waxman Bombing Case" — Richard Diamond (06-26-49); single-episode deep dive.
+- **URL:** https://archive.org/details/RichardDiamondPrivateDetective490626TheTomWaxmanBombingCase
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 8 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Richard Diamond — "Dead Mans Letter" (11-08-50) (OTR) ✅ PD
+- **What:** "Dead Mans Letter" — Richard Diamond (11-08-50); single-episode deep dive.
+- **URL:** https://archive.org/details/RichardDiamondPrivateDetective501108DeadMansLetter
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 12 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Richard Diamond — "The Man Who Hated Women" (07-16-49) (OTR) ✅ PD
+- **What:** "The Man Who Hated Women" — Richard Diamond (07-16-49); single-episode deep dive.
+- **URL:** https://archive.org/details/RichardDiamond_475
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 7 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+#### Richard Diamond — "The Blind Man And The Cop Killer" (02-26-50) (OTR) ✅ PD
+- **What:** "The Blind Man And The Cop Killer" — Richard Diamond (02-26-50); single-episode deep dive.
+- **URL:** https://archive.org/details/RichardDiamond
+- **License:** ✅ Public domain (underlying US radio broadcast — established show-level PD precedent; verified 2026-10-08: metadata API HTTP 200, title match, 7 files, 2 audio files; item-level licenseurl ABSENT — diligence-recorded, not assumed)
+- **Free tier:** Free downloads/streams
+- **Repo lane:** trippedd (OTR archives)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTR round 14 per-episode deep dive; Wave 59 badge-discipline ruling applied. [Wave 65 Lane A]
+
+### Wave 65 Lane A — Pocket 4: demoscene tooling round 3 (20)
+Round 3 goes for the permissive-licensed graphics/audio/physics/AI-inference tooling tail: render backends (bgfx, sokol), GUI (Dear ImGui), profiler (Tracy), GPU debugger (RenderDoc), mesh/texture (meshoptimizer, Draco, KTX-Software, msdfgen), audio engines/APIs (miniaudio, SoLoud, DPF, CLAP, libopenmpt, libsamplerate, Opus), ECS/physics (EnTT, Box2D, PhysX), and local inference (whisper.cpp). Every license verified upstream 2026-10-08 — 13 via GitHub API spdx_id, 7 via direct license-text reads (Tracy BSD-3-Clause, KTX-Software Apache-2.0 SPDX, SoLoud zlib/libpng, miniaudio public-domain-or-MIT-0 header, libsamplerate BSD-2-Clause COPYING, Opus Xiph-BSD COPYING, PhysX BSD-3-Clause LICENSE.md). Zero quarantined. Pre-append dedup: 2 true-dup rejections (phoboslab/qoi, bulletphysics/bullet3 — already cataloged as #### entries).
+#### bkaradzic/bgfx ✅ commercial-safe
+- **What:** bgfx — Cross-platform graphics API-agnostic render library ("bring your own engine" backend).
+- **URL:** https://github.com/bkaradzic/bgfx
+- **License:** ✅ BSD-2-Clause (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Render-backend abstraction. [Wave 65 Lane A]
+
+#### floooh/sokol ✅ commercial-safe
+- **What:** sokol — Minimal cross-platform standalone C headers (gfx, audio, app, time).
+- **URL:** https://github.com/floooh/sokol
+- **License:** ✅ Zlib (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-header-style graphics/audio. [Wave 65 Lane A]
+
+#### ocornut/imgui ✅ commercial-safe
+- **What:** Dear ImGui — Bloat-free immediate-mode graphical user interface for C++.
+- **URL:** https://github.com/ocornut/imgui
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Debug/tooling UI. [Wave 65 Lane A]
+
+#### wolfpld/tracy ✅ commercial-safe
+- **What:** Tracy — Real-time frame profiler (CPU/GPU zones, memory, lock contention).
+- **URL:** https://github.com/wolfpld/tracy
+- **License:** ✅ BSD-3-Clause (verified Wave 65 Lane A, 2026-10-08: direct LICENSE text read — 3-clause BSD grant)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Performance profiling. [Wave 65 Lane A]
+
+#### baldurk/renderdoc ✅ commercial-safe
+- **What:** RenderDoc — Stand-alone graphics debugging tool (frame capture, pipeline inspection).
+- **URL:** https://github.com/baldurk/renderdoc
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** GPU frame debugging. [Wave 65 Lane A]
+
+#### zeux/meshoptimizer ✅ commercial-safe
+- **What:** meshoptimizer — Mesh optimization library — vertex cache, overdraw, quantization, simplification.
+- **URL:** https://github.com/zeux/meshoptimizer
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Mesh size/speed optimization. [Wave 65 Lane A]
+
+#### google/draco ✅ commercial-safe
+- **What:** Draco — Library for compressing/decompressing 3D geometric meshes and point clouds.
+- **URL:** https://github.com/google/draco
+- **License:** ✅ Apache-2.0 (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 3D mesh compression. [Wave 65 Lane A]
+
+#### KhronosGroup/KTX-Software ✅ commercial-safe
+- **What:** KTX-Software — KTX (Khronos Texture) library and tools — GPU texture container I/O.
+- **URL:** https://github.com/KhronosGroup/KTX-Software
+- **License:** ✅ Apache-2.0 (verified Wave 65 Lane A, 2026-10-08: LICENSE.md SPDX-License-Identifier)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Texture container tooling. [Wave 65 Lane A]
+
+#### Chlumsky/msdfgen ✅ commercial-safe
+- **What:** msdfgen — Multi-channel signed distance field generator for crisp text rendering.
+- **URL:** https://github.com/Chlumsky/msdfgen
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** SDF font generation. [Wave 65 Lane A]
+
+#### mackron/miniaudio ✅ commercial-safe
+- **What:** miniaudio — Audio playback and capture library in C — single source file, no dependencies.
+- **URL:** https://github.com/mackron/miniaudio
+- **License:** ✅ public domain or MIT-0 (verified Wave 65 Lane A, 2026-10-08: miniaudio.h header — 'Choice of public domain or MIT-0')
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-file audio engine. [Wave 65 Lane A]
+
+#### jarikomppa/soloud ✅ commercial-safe
+- **What:** SoLoud — Free, easy, portable audio engine for games.
+- **URL:** https://github.com/jarikomppa/soloud
+- **License:** ✅ zlib/libpng (verified Wave 65 Lane A, 2026-10-08: direct LICENSE text read — 'SoLoud proper is licensed under the zlib/libpng license')
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Game audio engine. [Wave 65 Lane A]
+
+#### DISTRHO/DPF ✅ commercial-safe
+- **What:** DISTRHO Plugin Framework — Plugin framework for developing cross-platform audio plugins (LV2/VST2/VST3/JACK).
+- **URL:** https://github.com/DISTRHO/DPF
+- **License:** ✅ ISC (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Audio-plugin framework. [Wave 65 Lane A]
+
+#### free-audio/clap ✅ commercial-safe
+- **What:** CLAP — CLever Audio Plugin API — open plugin standard.
+- **URL:** https://github.com/free-audio/clap
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Plugin API standard. [Wave 65 Lane A]
+
+#### OpenMPT/openmpt ✅ commercial-safe
+- **What:** libopenmpt — Cross-platform C/C++ module-playing library (MOD/XM/S3M/IT) from the OpenMPT project.
+- **URL:** https://github.com/OpenMPT/openmpt
+- **License:** ✅ BSD-3-Clause (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Tracker-module playback. [Wave 65 Lane A]
+
+#### erikd/libsamplerate ✅ commercial-safe
+- **What:** libsamplerate — Secret Rabbit Code — high-quality sample-rate conversion library.
+- **URL:** https://github.com/erikd/libsamplerate
+- **License:** ✅ BSD-2-Clause (verified Wave 65 Lane A, 2026-10-08: direct COPYING read — 2-condition BSD)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Sample-rate conversion. [Wave 65 Lane A]
+
+#### xiph/opus ✅ commercial-safe
+- **What:** Opus — Modern audio compression codec for the internet (speech + music).
+- **URL:** https://github.com/xiph/opus
+- **License:** ✅ BSD (verified Wave 65 Lane A, 2026-10-08: direct COPYING read — Xiph redistribution grant)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Voice/audio codec. [Wave 65 Lane A]
+
+#### skypjack/entt ✅ commercial-safe
+- **What:** EnTT — Fast and reliable entity-component system (ECS) for modern C++.
+- **URL:** https://github.com/skypjack/entt
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Game-object ECS. [Wave 65 Lane A]
+
+#### erincatto/box2d ✅ commercial-safe
+- **What:** Box2D — 2D physics engine for games (rigid bodies, joints, collision).
+- **URL:** https://github.com/erincatto/box2d
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** 2D physics. [Wave 65 Lane A]
+
+#### NVIDIAGameWorks/PhysX ✅ commercial-safe
+- **What:** NVIDIA PhysX SDK — NVIDIA PhysX physics SDK — rigid body, cloth, particles, vehicles.
+- **URL:** https://github.com/NVIDIAGameWorks/PhysX
+- **License:** ✅ BSD-3-Clause (verified Wave 65 Lane A, 2026-10-08: direct LICENSE.md read — 3-clause BSD grant)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** 3D physics SDK. [Wave 65 Lane A]
+
+#### ggml-org/whisper.cpp ✅ commercial-safe
+- **What:** whisper.cpp — Port of OpenAI's Whisper speech-recognition model in C/C++ (local inference).
+- **URL:** https://github.com/ggml-org/whisper.cpp
+- **License:** ✅ MIT (verified Wave 65 Lane A, 2026-10-08: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (demoscene/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Local speech-to-text. [Wave 65 Lane A]
+
+
+### Wave 65 Lane A summary (2026-10-08)
+125 entries appended 2026-10-08: P1 SDK docs round 11 (40 — ESP32 IDF, Arduino, MicroPython, CircuitPython, Adafruit Learning System, SparkFun guides, Zephyr RTOS, FreeRTOS, micro:bit, Unity manual, GameMaker manual, Bevy learn, Fyrox API, PlayCanvas developer docs, LearnOpenGL, Vulkan tutorial, WebGL fundamentals, Quilez articles, bgfx docs, sokol docs, macroquad API, raylib cheatsheet, Pygame docs, Arcade library docs, JUCE docs, Tiled manual, Box2D manual, AtariAge 2600 programming, pcsx-redux wiki, MiSTer FPGA wiki, BGB manual, DOSBox Staging docs, QEMU docs, Bochs docs, MAMEdev wiki, Cemu site, Redox OS book, TempleOS docs, Fuchsia docs, CHIP-8 wiki; all HTTP 200 live 2026-10-08, all docs ❓); P2 landmark musicdisk round 9 (25 — pouët chart page 6: TED Vibes 2, Star Bars Compo Votepack, Paula Doing SID+, Rob Hubbard's 1985 Recollection, OVeRclocked Remix, Lostmax, Amiga Chip Addiction Vol 1, No-Skip Mix 2022 Ed, XII MICROCOMPO AY/SCR2 V.5, AI Illusion, Love in the Mix, Ear Shaver, Party x Leben Remixer, Machine Yearning, chipo django 2, TED Vibes, The Nomad, The Beautiful Machine Vol. 2, Lo-fi SID Music to Study/Relax to, Dankollection, Bachtracking, Machine EP, Chipsystem, Feedback #14 Classic Edition, Feedback #14; 0 ID/title dupes; all ❓); P3 PD radio-drama round 14 (40 — 6 each Boston Blackie, Lights Out, Quiet Please, Dimension X, Sherlock Holmes, Campbell Playhouse + 4 Richard Diamond; all archive.org metadata-verified, all ✅ established-PD per Wave 59 ruling); P4 demoscene tooling round 3 (20 — bgfx, sokol, Dear ImGui, Tracy, RenderDoc, meshoptimizer, Draco, KTX-Software, msdfgen, miniaudio, SoLoud, DPF, CLAP, libopenmpt, libsamplerate, Opus, EnTT, Box2D, PhysX, whisper.cpp; 13 GitHub API spdx_id + 7 direct license-text reads, all permissive ✅, zero quarantined). 0 quarantine rows added (next row still 603). Catalog: 5,971 → 6,096 honest #### entries (target 6,070+ met). Dedup rejections (pre-append): P1 — 6 domain dupes (smspower.org, wiki.neogeodev.org, randomterrain.com, amigadev.elowar.com, melonDS wiki, doc.babylonjs.com), SDL wiki (cataloged round 10), thebookofshaders.com (ARR honest-negative already cataloged — docs entry would contradict); P2 — 0 (2 title near-hits confirmed distinct: OverClocked ReMix site, tim.kahn microcompositions); P3 — 0 identifier dupes + 3 verification-FAIL replacements + 10+ access-restricted Boxcars711 pods + modern-wrapper exclusions; P4 — 2 true dupes (phoboslab/qoi, bulletphysics/bullet3). Honest negatives/drops: raspberrypi.com/documentation + docs.unrealengine.com (403 bot-wall), pjrc.com (unreachable), freertos.org/Documentation 404 (canonical root used), fyrox.rs/docs 404 (docs.rs used), learnopengl.com 406 to bare curl (browser UA live — noted), jotego/jtframe 404, dolphin-emu.org/docs 403, 9p.io unreachable, soloud-audio.com down, Night Beat (1 new single only), Dark Fantasy (1 new single only), RichardDiamondSingsdickPowell (zip-only modern fan edit). LGPL doctrine still PENDING OWNER VERDICT.
+
+#### PlatformIO Documentation ❓ documentation-only
+- **What:** PlatformIO documentation (docs.platformio.org) — PlatformIO embedded IDE/build-system manuals, board/platform registry docs.
+- **URL:** https://docs.platformio.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Embedded toolchain docs for firmware-adjacent tooling. [Wave 66 Lane A]
+
+#### RIOT-OS Documentation ❓ documentation-only
+- **What:** RIOT-OS documentation (doc.riot-os.org) — RIOT IoT operating system API reference and user manuals.
+- **URL:** https://doc.riot-os.org/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; riot-os.org/api/ 404s — doc.riot-os.org is canonical; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** IoT RTOS API reference. [Wave 66 Lane A]
+
+#### Apache NuttX Documentation ❓ documentation-only
+- **What:** Apache NuttX documentation — NuttX real-time operating system user guides and API docs.
+- **URL:** https://nuttx.apache.org/docs/latest/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Apache RTOS docs. [Wave 66 Lane A]
+
+#### TinyGo Documentation ❓ documentation-only
+- **What:** TinyGo documentation (tinygo.org/docs) — TinyGo Go-compiler-for-microcontrollers guides and language reference.
+- **URL:** https://tinygo.org/docs/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs.tinygo.org timed out — tinygo.org/docs is canonical; docs carry no license grant)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Go-for-embedded language docs. [Wave 66 Lane A]
+
+#### KiCad Documentation ❓ documentation-only
+- **What:** KiCad documentation (docs.kicad.org) — KiCad EDA suite manuals: schematic, PCB layout, scripting API.
+- **URL:** https://docs.kicad.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** EDA/hardware docs for merch/hardware-adjacent work. [Wave 66 Lane A]
+
+#### Blender Manual ❓ documentation-only
+- **What:** Blender Manual (docs.blender.org/manual) — official Blender user manual: modeling, rigging, animation, rendering.
+- **URL:** https://docs.blender.org/manual/en/latest/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Core reference for the Blender-headless render path. [Wave 66 Lane A]
+
+#### Haxe Manual ❓ documentation-only
+- **What:** Haxe manual (haxe.org/manual) — Haxe cross-platform language reference and standard-library docs.
+- **URL:** https://haxe.org/manual/introduction.html
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Haxe language reference (distinct from HaxeFlixel docs, already cataloged). [Wave 66 Lane A]
+
+#### Skia Documentation ❓ documentation-only
+- **What:** Skia documentation (skia.org/docs) — Skia 2D graphics library user guides and API docs.
+- **URL:** https://skia.org/docs/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 2D graphics library docs backing Chrome/Android rendering. [Wave 66 Lane A]
+
+#### FFmpeg Documentation ❓ documentation-only
+- **What:** FFmpeg documentation (ffmpeg.org/documentation.html) — FFmpeg CLI, library (libav*) and filter documentation.
+- **URL:** https://ffmpeg.org/documentation.html
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Core A/V pipeline reference — every render/conversion lane uses this. [Wave 66 Lane A]
+
+#### GStreamer Documentation ❓ documentation-only
+- **What:** GStreamer documentation — GStreamer multimedia framework manuals, plugin reference, API docs.
+- **URL:** https://gstreamer.freedesktop.org/documentation/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Streaming/media-pipeline framework reference. [Wave 66 Lane A]
+
+#### AV1 Specification ❓ documentation-only
+- **What:** AV1 bitstream specification (aomediacodec.github.io/av1-spec) — the Alliance for Open Media AV1 codec spec.
+- **URL:** https://aomediacodec.github.io/av1-spec/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; aomedia.org/av1/specification/ 404s — this is canonical; spec text royalty-free per AOM patent policy)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Royalty-free codec spec for future encode targets. [Wave 66 Lane A]
+
+#### Direct3D 12 Documentation ❓ documentation-only
+- **What:** Direct3D 12 documentation (Microsoft Learn) — D3D12 programming guide and API reference.
+- **URL:** https://learn.microsoft.com/en-us/windows/win32/direct3d12
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Windows GPU API reference. [Wave 66 Lane A]
+
+#### Metal Documentation ❓ documentation-only
+- **What:** Metal documentation (Apple Developer) — Apple Metal graphics/compute API guides and reference.
+- **URL:** https://developer.apple.com/documentation/metal
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Apple GPU API reference. [Wave 66 Lane A]
+
+#### WebRTC Documentation ❓ documentation-only
+- **What:** WebRTC documentation (webrtc.org) — WebRTC real-time communication getting-started guides and native API docs.
+- **URL:** https://webrtc.org/getting-started/overview
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Real-time streaming reference (distinct from webrtcvad tool entry). [Wave 66 Lane A]
+
+#### Nakama Documentation ❓ documentation-only
+- **What:** Nakama documentation (Heroic Labs) — Nakama open-source game-server docs: auth, storage, realtime multiplayer.
+- **URL:** https://heroiclabs.com/docs/nakama/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Open-source game backend docs. [Wave 66 Lane A]
+
+#### Photon Engine Documentation ❓ documentation-only
+- **What:** Photon Engine documentation (doc.photonengine.com) — Photon multiplayer SDK docs: PUN, Fusion, Quantum, Voice, Chat.
+- **URL:** https://doc.photonengine.com
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from Netflix Photon IMF validator already cataloged)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Multiplayer SDK docs. [Wave 66 Lane A]
+
+#### Netcode for GameObjects Documentation ❓ documentation-only
+- **What:** Netcode for GameObjects documentation (Unity) — Unity's first-party multiplayer networking package manuals.
+- **URL:** https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.6
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Unity multiplayer package docs. [Wave 66 Lane A]
+
+#### Batocera Wiki ❓ documentation-only
+- **What:** Batocera wiki (wiki.batocera.org) — Batocera.linux retro-gaming distribution user and developer docs.
+- **URL:** https://wiki.batocera.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro-gaming distro docs. [Wave 66 Lane A]
+
+#### Recalbox Wiki ❓ documentation-only
+- **What:** Recalbox wiki (wiki.recalbox.com) — Recalbox retro-gaming OS documentation.
+- **URL:** https://wiki.recalbox.com
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Retro-gaming OS docs. [Wave 66 Lane A]
+
+#### Arduboy Wiki ❓ documentation-only
+- **What:** Arduboy wiki (github.com/Arduboy/Arduboy/wiki) — Arduboy handheld game development guides and API docs.
+- **URL:** https://github.com/Arduboy/Arduboy/wiki
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from Arduboy2 tool entry)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** 8-bit handheld dev docs. [Wave 66 Lane A]
+
+#### PINE64 Wiki ❓ documentation-only
+- **What:** PINE64 wiki (wiki.pine64.org) — PINE64 single-board-computer and device documentation.
+- **URL:** https://wiki.pine64.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SBC hardware docs. [Wave 66 Lane A]
+
+#### FamiStudio Documentation ❓ documentation-only
+- **What:** FamiStudio documentation (famistudio.org/doc.html) — FamiStudio NES/Famicom music editor manuals.
+- **URL:** https://famistudio.org/doc.html
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from FamiStudio tool entry)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Chiptune composer docs for music pipeline. [Wave 66 Lane A]
+
+#### SunVox Documentation ❓ documentation-only
+- **What:** SunVox documentation (warmplace.ru/soft/sunvox) — SunVox modular synth/tracker manuals and guides.
+- **URL:** https://www.warmplace.ru/soft/sunvox/
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from SunVox tool entry)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Modular synth docs for music pipeline. [Wave 66 Lane A]
+
+#### PSXDEV ❓ documentation-only
+- **What:** PSXDEV (psx.dev) — PlayStation 1 homebrew development community docs and tutorials.
+- **URL:** https://www.psx.dev
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** PS1 homebrew dev docs. [Wave 66 Lane A]
+
+#### SNESdev Wiki ❓ documentation-only
+- **What:** SNESdev wiki (snes.nesdev.org) — Super Nintendo development wiki: hardware docs, tutorials, tools.
+- **URL:** https://snes.nesdev.org
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from NESdev Wiki entries)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** SNES homebrew dev wiki. [Wave 66 Lane A]
+
+#### itch.io Developer Documentation ❓ documentation-only
+- **What:** itch.io developer documentation (itch.io/docs) — itch.io game-distribution, API, and butler CLI docs.
+- **URL:** https://itch.io/docs
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here; distinct from itch.io asset-pack entries)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Publishing-path docs for the no-store distribution strategy. [Wave 66 Lane A]
+
+#### Playnite Documentation ❓ documentation-only
+- **What:** Playnite documentation (playnite.link/docs) — Playnite open-source game-library manager manuals and extension API.
+- **URL:** https://www.playnite.link/docs
+- **License:** ❓ documentation-only (verified Wave 66 Lane A, 2026-10-09: HTTP 200 live; docs carry no license grant — code not catalogued here)
+- **Free tier:** Free access
+- **Repo lane:** trippedd (sdk-docs)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Game-library manager docs and extension API. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P1 SDK docs round 12 (2026-10-09, coordinator-direct)
+27 entries appended: PlatformIO, RIOT-OS, Apache NuttX, TinyGo, KiCad, Blender Manual, Haxe Manual, Skia, FFmpeg, GStreamer, AV1 spec, Direct3D 12, Metal, WebRTC, Nakama, Photon Engine, Netcode for GameObjects, Batocera, Recalbox, Arduboy Wiki, PINE64 Wiki, FamiStudio Documentation, SunVox Documentation, PSXDEV, SNESdev Wiki, itch.io Developer Docs, Playnite. All HTTP 200 live 2026-10-09, all docs ❓. Honest drops: love2d.org/wiki (403 bot-wall), wiki.odroid.com (403 bot-wall), famitracker.com/wiki (down — 000/500), furnace doc/ (404 — repo restructured), gamedev.dcemulation.org (timeout), docs.clockworkpi.com (timeout), en.wikibooks.org/wiki/Atari_2600 (404), O3DE/Stride/GLFW/NESdev/OpenMPT-wiki/codebase64/RetroArch-docs (already cataloged as docs entries), LiveKit docs (near-dupe of LiveKit tool entry), Matroska specs page (near-dupe of IETF CELLAR RFC entries). Dedup: pre-append `####`-header greps.
+
+#### Blaxa-Muxa — AER (december 2014) ❓ landmark musicdisk
+- **What:** "Blaxa-Muxa" — AER ZX Spectrum demo/musicdisk (released december 2014); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=64633
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; ZX Spectrum/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum musicdisk. [Wave 66 Lane A]
+
+#### Dont Fear the Beeper — Abrimaal (2015) ❓ landmark musicdisk
+- **What:** "Dont Fear the Beeper" — Abrimaal ZX Spectrum musicdisk (8th at CC Winter / DiHalt Lite 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=64928
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; ZX Spectrum/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum 1-bit musicdisk. [Wave 66 Lane A]
+
+#### Sounds of the 80s — Triad (2015) ❓ landmark musicdisk
+- **What:** "Sounds of the 80s" — Triad Commodore 64 musicdisk (4th at Gubbdata 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=65286
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 80s-themed musicdisk. [Wave 66 Lane A]
+
+#### Chiperia Issue #2 — The Chiperia Project (april 2015) ❓ landmark musicdisk
+- **What:** "Chiperia Issue #2" — The Chiperia Project Amiga OCS/ECS musicdisk (released april 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=65325
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged Issues #3 and #6)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk magazine, issue 2. [Wave 66 Lane A]
+
+#### ＿|￣|○ (may 2015) ❓ landmark musicdisk
+- **What:** "＿|￣|○" — Commodore 64 musicdisk (released may 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=65575
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### Ohne Dich (august 2015) ❓ landmark musicdisk
+- **What:** "Ohne Dich" — VIC 20 demo/musicdisk (released august 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66244
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; VIC 20/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** VIC 20 musicdisk. [Wave 66 Lane A]
+
+#### Zyron's music collection 01 — Tronix (2015) ❓ landmark musicdisk
+- **What:** "Zyron's music collection 01" — Tronix Amiga OCS/ECS musicdisk (10th at Gerp 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66268
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga music collection disk. [Wave 66 Lane A]
+
+#### V Microcompo AY music-disk — AAMSX & CulturaChip (february 2015) ❓ landmark musicdisk
+- **What:** "V Microcompo AY music-disk" — AAMSX & CulturaChip MSX musicdisk (released february 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66464
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; MSX/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged XII MICROCOMPO AY/SCR2 V.5)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX AY-chip musicdisk, volume 5. [Wave 66 Lane A]
+
+#### Chiperia Gerp Edition — The Chiperia Project (2015) ❓ landmark musicdisk
+- **What:** "Chiperia Gerp Edition" — The Chiperia Project Amiga OCS/ECS 96k musicdisk (1st at TRSAC 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66491
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga OCS/ECS/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged Issues #3 and #6)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga musicdisk, Gerp edition. [Wave 66 Lane A]
+
+#### Musicdisk [VI MICROCOMPO AY VOL.2] — AAMSX & CulturaChip (december 2015) ❓ landmark musicdisk
+- **What:** "Musicdisk [VI MICROCOMPO AY VOL.2]" — AAMSX & CulturaChip MSX musicdisk (released december 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66676
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; MSX/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged XII MICROCOMPO AY/SCR2 V.5)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** MSX AY-chip musicdisk, volume 6. [Wave 66 Lane A]
+
+#### Coolism — Effect (2015) ❓ landmark musicdisk
+- **What:** "Coolism" — Effect Atari ST musicdisk (STNICCC 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66717
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Atari ST/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged "Coolism — Depth (2009)")
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari ST musicdisk. [Wave 66 Lane A]
+
+#### Northern Star — Booze Design (december 2015) ❓ landmark musicdisk
+- **What:** "Northern Star" — Booze Design Commodore 64 musicdisk (released december 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66752
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### The Gift — Agenda & Masters Of Electric City & Lamers (january 2016) ❓ landmark musicdisk
+- **What:** "The Gift" — Agenda & Masters Of Electric City & Lamers Atari XL/XE musicdisk (released january 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66782
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Atari XL/XE/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Atari 8-bit musicdisk. [Wave 66 Lane A]
+
+#### Yaemon's Tunebox 2 — Brutal (january 2016) ❓ landmark musicdisk
+- **What:** "Yaemon's Tunebox 2" — Brutal Commodore 64 musicdisk (released january 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=66870
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 tune collection disk. [Wave 66 Lane A]
+
+#### David Bowie Tribute — Delysid & Finnish Gold (2016) ❓ landmark musicdisk
+- **What:** "David Bowie Tribute" — Delysid & Finnish Gold Commodore 64 musicdisk (2nd at BCC Party 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=67003
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 Bowie-tribute musicdisk. [Wave 66 Lane A]
+
+#### Liten Sopp — Svenonacid (2016) ❓ landmark musicdisk
+- **What:** "Liten Sopp" — Svenonacid Commodore 64 musicdisk (4th at End of the World 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=67016
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### Arriba las manos! (hands up!) — Pungas De Villa Martelli (2016) ❓ landmark musicdisk
+- **What:** "Arriba las manos! (hands up!)" — Pungas De Villa Martelli Commodore 64 musicdisk (4th at Decrunch 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=67462
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### 1-Bit Mechanistic (august 2016) ❓ landmark musicdisk
+- **What:** "1-Bit Mechanistic" — ZX Spectrum musicdisk (released august 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68015
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; ZX Spectrum/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** ZX Spectrum 1-bit musicdisk. [Wave 66 Lane A]
+
+#### Beeb-Tracker — bitshifters collective (august 2016) ❓ landmark musicdisk
+- **What:** "Beeb-Tracker" — bitshifters collective BBC Micro musicdisk (released august 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68038
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; BBC Micro/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** BBC Micro tracker musicdisk. [Wave 66 Lane A]
+
+#### Ninja Gaiden — bitshifters collective (august 2016) ❓ landmark musicdisk
+- **What:** "Ninja Gaiden" — bitshifters collective BBC Micro musicdisk (released august 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68039
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; BBC Micro/musicdisk typing noted; no license statement; NC not declared; distinct from cataloged record-label mention)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** BBC Micro musicdisk. [Wave 66 Lane A]
+
+#### Indie vibes (Android version) — kiki-prods (october 2016) ❓ landmark musicdisk
+- **What:** "Indie vibes (Android version)" — kiki-prods Android musicdisk (released october 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68336
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Android/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Android musicdisk. [Wave 66 Lane A]
+
+#### Modular Sounds 2 — Artstate (2016) ❓ landmark musicdisk
+- **What:** "Modular Sounds 2" — Artstate Commodore 64 musicdisk (X 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=68392
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 modular-synth musicdisk. [Wave 66 Lane A]
+
+#### Mix Box #1 — The New Dimension (september 2016) ❓ landmark musicdisk
+- **What:** "Mix Box #1" — The New Dimension Commodore 64 musicdisk (released september 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=70062
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+#### Nostalgia #1 — Fanatic2k (2016) ❓ landmark musicdisk
+- **What:** "Nostalgia #1" — Fanatic2k Amiga AGA musicdisk (released 2016); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=90135
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; Amiga AGA/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Amiga AGA musicdisk. [Wave 66 Lane A]
+
+#### Kombi-nacja — Vulture Design (2015) ❓ landmark musicdisk
+- **What:** "Kombi-nacja" — Vulture Design Commodore 64 musicdisk (2nd at RetroKomp / LOAD ERROR 2015); pouët vote-sorted musicdisk chart page 7.
+- **URL:** https://www.pouet.net/prod.php?which=95440
+- **License:** ❓ license unverified (verified live 2026-10-09: pouët og:title + og:description match; C64/musicdisk typing noted; no license statement; NC not declared)
+- **Free tier:** Free download
+- **Repo lane:** trippedd (demoscene/musicdisk)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** C64 musicdisk. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P2 landmark musicdisk round 10 (2026-10-09, coordinator-direct)
+25 entries appended: pouët vote-sorted musicdisk chart (order=avg) page 7 — Blaxa-Muxa, Dont Fear the Beeper, Sounds of the 80s, Chiperia Issue #2, ＿|￣|○, Ohne Dich, Zyron's music collection 01, V Microcompo AY music-disk, Chiperia Gerp Edition, VI MICROCOMPO AY VOL.2, Coolism (Effect 2015), Northern Star, The Gift, Yaemon's Tunebox 2, David Bowie Tribute, Liten Sopp, Arriba las manos!, 1-Bit Mechanistic, Beeb-Tracker, Ninja Gaiden (bitshifters), Indie vibes (Android), Modular Sounds 2, Mix Box #1, Nostalgia #1, Kombi-nacja. 0 pouët-ID dupes; 4 title near-hits confirmed distinct (Coolism 2009 vs 2015, Chiperia issues #2/Gerp vs #3/#6, MICROCOMPO AY vols 5/6 vs XII, Ninja Gaiden label mention). All ❓ per-release rights. Pouët chart note: top.php is gone (404) — prodlist.php?type[]=musicdisk&order=avg is the current vote-sorted chart path.
+
+#### Pat Novak, for Hire — "Sam Tolliver" (04-09-49) ✅ PD
+- **What:** "Pat Novak For Hire - Sam Tolliver (04-09-49)" — single episode of the Jack Webb waterfront detective series.
+- **URL:** https://archive.org/details/uj9es4yrmge1qhpynxq6ceu2wujt28tipf6aihix
+- **License:** ✅ Public domain (underlying US radio broadcast 1949; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — "Death In Harold Square" (11-30-47) ✅ PD
+- **What:** "Pat Novak For Hire \"Death In Harold Square\" (11-30-47)" — Boxcars711 single episode.
+- **URL:** https://archive.org/details/9edubzbpy6gdb55bhqs51hftwcwvg22njuvpmedw
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — "Dixie Gilian" (11-24-46) ✅ PD
+- **What:** "Pat Novak For Hire \"Dixie Gilian\" (11-24-46)" — Boxcars711 single episode.
+- **URL:** https://archive.org/details/fezgfir1daxeew3wnk313v6dulh7jfjndd8jfiti
+- **License:** ✅ Public domain (underlying US radio broadcast 1946; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — KYAG #10 "Rubin Callaway's Pictures" ✅ PD
+- **What:** "KYAG #10 - Pat Novak For Hire - Rubin Callaway's Pictures" — KYAG old-time-radio presentation.
+- **URL:** https://archive.org/details/ycr4dqxew811viarhkiyflipx4z9trqhuox3ygxb
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — "Rubin Callaway's Pictures" (Boxcars711) ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Pat Novak For Hire \"Rubin Callaway's Pictures\"" — Boxcars711 podcast episode.
+- **URL:** https://archive.org/details/awn5eaocpijphopzfzlopjmlnh7frlgnjy03sbys
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Pat Novak, for Hire — Single Episodes (OTRR) ✅ PD
+- **What:** "Pat Novak, For Hire - Single Episodes" — OTRR single-episodes collection, 63 audio files.
+- **URL:** https://archive.org/details/OTRR_Pat_Novak_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 63 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTRR singles collection. [Wave 66 Lane A]
+
+#### Pat Novak for Hire — OTRR Certified Collection ✅ PD
+- **What:** "Pat Novak for Hire" — OTRR certified collection (episodes zip-bundled).
+- **URL:** https://archive.org/details/OTRR_Certified_Pat_Novak_for_Hire_872
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match; episodes in zip; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTRR certified collection. [Wave 66 Lane A]
+
+#### The Green Hornet — "The Smuggler Signs His Name" (39-11-25) ⚠️ rights-caution
+- **What:** "Green Hornet 39 11 25 The Smuggler Signs His Name" — single episode of the Green Hornet radio serial.
+- **URL:** https://archive.org/details/GreenHornet391125TheSmugglerSignsHisName
+- **License:** ⚠️ rights-caution (underlying 1939 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; Green Hornet character rights remain commercially exploited — broadcast PD but character caution per Lone Ranger precedent)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only — do not ship Green Hornet audio or character references without clearance. [Wave 66 Lane A]
+
+#### The Green Hornet — "Last Words Mean Sabotage" (42-09-26) ⚠️ rights-caution
+- **What:** "Green Hornet 42 09 26 Last Words Mean Sabotage" — single episode.
+- **URL:** https://archive.org/details/GreenHornet420926LastWordsMeanSabotage
+- **License:** ⚠️ rights-caution (underlying 1942 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet — "Not One Cent For Tribute" (39-06-13) ⚠️ rights-caution
+- **What:** "Green Hornet 39 06 13 Not One Cent For Tribute" — single episode.
+- **URL:** https://archive.org/details/GreenHornet390613NotOneCentForTribute
+- **License:** ⚠️ rights-caution (underlying 1939 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet — "Mr. Big's Drugstore Racket" (46-10-20) ⚠️ rights-caution
+- **What:** "The Green Hornet OTR from www.stardustotr.com" — episode "Mr. Big's Drugstore Racket" (46-10-20), 56 audio files in item.
+- **URL:** https://archive.org/details/461020MrBigsDrugstoreRacket
+- **License:** ⚠️ rights-caution (underlying 1946 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 56 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet (Radio Series) — oldtimeradio collection ⚠️ rights-caution
+- **What:** "The Green Hornet (Radio Series)" — oldtimeradio collection, 315 audio files spanning the 1936+ run.
+- **URL:** https://archive.org/details/green_hornet_radio
+- **License:** ⚠️ rights-caution (underlying US radio broadcasts from 1936; verified 2026-10-09: metadata API HTTP 200, title match, 315 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### The Green Hornet — "A Slip Of The Lip" (42-05-23) ⚠️ rights-caution
+- **What:** "Green Hornet 42 5 23 A Slip Of The Lip" — single episode.
+- **URL:** https://archive.org/details/GreenHornet42523ASlipOfTheLip
+- **License:** ⚠️ rights-caution (underlying 1942 US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### Whatever Became Of — The Green Hornet (Al Hodges, 1968) ⚠️ rights-caution
+- **What:** "Whatever Became Of 1968 The Green Hornet Al Hodges" — 1968 retrospective interview episode.
+- **URL:** https://archive.org/details/WhateverBecameOf1968TheGreenHornetAlHodges
+- **License:** ⚠️ rights-caution (1968 broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; character-rights caution as above)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Study only. [Wave 66 Lane A]
+
+#### Night Beat — "Flowers On The Water" ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Night Beat \"Flowers On The Water\"" — Frank Lovejoy noir detective series episode.
+- **URL:** https://archive.org/details/zainornhj44un6ewxq5ikrvpszjjxpbjbvmqvrjp
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Night Beat (Digitally Restored) with Frank Lovejoy ✅ PD
+- **What:** "Night Beat (Digitally Restored) with Frank Lovejoy" — restored run collection, 60 audio files.
+- **URL:** https://archive.org/details/Night-Beat
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 60 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Restored collection. [Wave 66 Lane A]
+
+#### Night Beat — "Lost Souls" ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Night Beat \"Lost Souls\"" — single episode.
+- **URL:** https://archive.org/details/tkq4n3ljqlhotcebvpmuoafg7zkoy12kol5ugnl7
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Night Beat — Ron Bowser-John Dunning Project ✅ PD
+- **What:** "Ron Bowser-John Dunning Project - Night Beat" — curated collection, 138 audio files.
+- **URL:** https://archive.org/details/BDP_NightBeat
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 138 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Curated collection. [Wave 66 Lane A]
+
+#### Night Beat and Have Gun, Will Travel ✅ PD
+- **What:** "Night Beat and Have Gun, Will Travel" — paired-episode item.
+- **URL:** https://archive.org/details/psh0fuaolfpy0h9xnctell2kmjovtfexcyvxg6jl
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### Night Beat and Suspense ✅ PD
+- **What:** "Night Beat and Suspense" — paired-episode item.
+- **URL:** https://archive.org/details/svz1ws0vcocgfaql3xu7soyd6zlvl1mdp3incgw5
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### The Whistler and Night Beat ✅ PD
+- **What:** "The Whistler and Night Beat" — paired-episode item.
+- **URL:** https://archive.org/details/alfjhayjh0cmidl71vos5x1xgunlasf3pt7hbdpu
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### Rocky Jordan — oldtimeradio collection ✅ PD
+- **What:** "Rocky Jordan" — oldtimeradio collection of the Cairo detective series, 97 audio files.
+- **URL:** https://archive.org/details/RockyJordan
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 97 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Show collection. [Wave 66 Lane A]
+
+#### Rocky Jordan — "Up In Flames" ✅ PD
+- **What:** "Boxcars711 Old Time Radio Pod - Rocky Jordan \"Up In Flames\"" — single episode.
+- **URL:** https://archive.org/details/qqritslrizjd47i1cfsqw7pxka7azq52fwrlobtv
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Rocky Jordan — "The Lady From Istanbul" ✅ PD
+- **What:** "The Lady From Istanbul by Rocky Jordan" — single episode.
+- **URL:** https://archive.org/details/7g9rbxwai7glsvkblctqdcxptfunjxvfzslvi2rn
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Rocky Jordan and The Whistler ✅ PD
+- **What:** "Rocky Jordan and The Whistler" — paired-episode item.
+- **URL:** https://archive.org/details/royskisluu3ccdflvmqynxm9ybsxkzxawzdudkkq
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### High Adventure and Rocky Jordan ✅ PD
+- **What:** "High Adventure and Rocky Jordan" — paired-episode item.
+- **URL:** https://archive.org/details/msqxuvvduzza2whd4rlqiqt6zyxskxl5sbfbpzhx
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Paired-episode item. [Wave 66 Lane A]
+
+#### Rocky Jordan — "The Two O'Clock Man" (03-06-49) ✅ PD
+- **What:** "Rocky Jordan - The Two O'Clock Man (03-06-49)" — single episode.
+- **URL:** https://archive.org/details/pquwg1lhqpahw0llart638wai7uedugorndbns3m
+- **License:** ✅ Public domain (underlying US radio broadcast 1949; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Rocky Jordan — Ron Bowser-John Dunning Project ✅ PD
+- **What:** "Ron Bowser-John Dunning Project - Rocky Jordan" — curated collection, 132 audio files.
+- **URL:** https://archive.org/details/BDP_RockyJordan
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 132 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Curated collection. [Wave 66 Lane A]
+
+#### The Man Called X — "A Man A Girl A Plot" (05-25-51) ✅ PD
+- **What:** "The Man Called X - A Man A Girl A Plot (05-25-51)" — Herbert Marshall espionage series episode.
+- **URL:** https://archive.org/details/1cnkrco9qmsxldoq0an3ysnbwnic9kxj1xadcsfr
+- **License:** ✅ Public domain (underlying US radio broadcast 1951; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Mekong River Dam" (48-08-08) ✅ PD
+- **What:** "The Man Called X 48 08 08 Mekong River Dam" — single episode.
+- **URL:** https://archive.org/details/TheManCalledX480808MekongRiverDam
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Man Called X — "Worth Her Weight In Gold" (48-09-05) ✅ PD
+- **What:** "Man Called X 48 09 05 Worth Her Weight In Gold" — single episode.
+- **URL:** https://archive.org/details/ManCalledX480905WorthHerWeightInGold
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Burma Peninsula" (48-08-22) ✅ PD
+- **What:** "The Man Called X 48 08 22 Burma Peninsula" — single episode.
+- **URL:** https://archive.org/details/TheManCalledX480822BurmaPeninsula
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Spirit Of The Snows" ✅ PD
+- **What:** "Spirit Of The Snows by The Man Called X" — single episode.
+- **URL:** https://archive.org/details/shirfz3qq6ajvqtg0afhbxuknx1p3vjkrsbwwqty
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — "Guns On The Niger" ✅ PD
+- **What:** "Guns On The Niger by The Man Called X" — single episode.
+- **URL:** https://archive.org/details/dqphpvinfbgisxp94nqzgvr2v5l77utg8qd1evbz
+- **License:** ✅ Public domain (underlying US radio broadcast; verified 2026-10-09: metadata API HTTP 200, title match, 1 audio file; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### The Man Called X — Single Episodes (OTRR) ✅ PD
+- **What:** "The Man Called X - Single Episodes" — OTRR single-episodes collection, 230 audio files.
+- **URL:** https://archive.org/details/OTRR_Man_Called_X_Singles
+- **License:** ✅ Public domain (underlying US radio broadcasts; verified 2026-10-09: metadata API HTTP 200, title match, 230 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** OTRR singles collection. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "Murder in Black and White" (1948-03-18) ✅ PD
+- **What:** "Casey, Crime Photographer 1948-03-18 Murder in Black and White" — single episode.
+- **URL:** https://archive.org/details/casey480318
+- **License:** ✅ Public domain (underlying US radio broadcast 1948; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey Crime Photographer — "After Turkey The Bill" (47-11-27) ✅ PD
+- **What:** "Casey Crime Photographer 47 11 27 After Turkey The Bill" — single episode.
+- **URL:** https://archive.org/details/CaseyCrimePhotographer471127AfterTurkeyTheBill
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "Pick-Up" (1947-05-22) ✅ PD
+- **What:** "Casey, Crime Photographer 1947-05-22 Pick-Up" — single episode.
+- **URL:** https://archive.org/details/casey470522
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "Road Angel" (1954-01-13) ✅ PD
+- **What:** "Casey, Crime Photographer 1954-01-13 Road Angel" — single episode.
+- **URL:** https://archive.org/details/casey540113
+- **License:** ✅ Public domain (underlying US radio broadcast 1954; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "The Serpent Goddess" (1947-12-04) ✅ PD
+- **What:** "Casey, Crime Photographer 1947-12-04 The Serpent Goddess" — single episode.
+- **URL:** https://archive.org/details/casey471204
+- **License:** ✅ Public domain (underlying US radio broadcast 1947; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "The Upholstery" (1949-11-17 / 1950-11-16) ✅ PD
+- **What:** "Casey, Crime Photographer 1949-11-17 and 1950-11-16 The Upholstery" — two broadcasts, 5 audio files.
+- **URL:** https://archive.org/details/casey491117501116
+- **License:** ✅ Public domain (underlying US radio broadcasts 1949/1950; verified 2026-10-09: metadata API HTTP 200, title match, 5 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Two-broadcast item. [Wave 66 Lane A]
+
+#### Casey, Crime Photographer — "The Fire" (1950-04-06) ✅ PD
+- **What:** "Casey, Crime Photographer 1950-04-06 The Fire" — single episode.
+- **URL:** https://archive.org/details/casey500406
+- **License:** ✅ Public domain (underlying US radio broadcast 1950; verified 2026-10-09: metadata API HTTP 200, title match, 2 audio files; licenseurl absent — stated per Wave-59 diligence rule)
+- **Free tier:** Free download/stream
+- **Repo lane:** trippedd (otr)
+- **Pipeline impact:** 2/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Single-episode deep dive. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P3 PD radio-drama round 15 (2026-10-09, coordinator-direct)
+42 entries appended: 7 each — Pat Novak for Hire (Sam Tolliver, Death In Harold Square, Dixie Gilian, Rubin Callaway's Pictures x2 sources, OTRR Singles, OTRR Certified), Green Hornet (Smuggler Signs His Name, Last Words Mean Sabotage, Not One Cent For Tribute, Mr. Big's Drugstore Racket, oldtimeradio collection, A Slip Of The Lip, Whatever Became Of 1968 — all ⚠️ character-rights caution per Lone Ranger precedent), Night Beat (Flowers On The Water, Digitally Restored collection, Lost Souls, BDP collection, +3 paired-episode items), Rocky Jordan (oldtimeradio collection, Up In Flames, Lady From Istanbul, Two O'Clock Man, BDP collection, +2 paired items), Man Called X (A Man A Girl A Plot, Mekong River Dam, Worth Her Weight In Gold, Burma Peninsula, Spirit Of The Snows, Guns On The Niger, OTRR Singles), Casey Crime Photographer (7 dated episodes 1947–1954). All 42 archive.org metadata-verified 2026-10-09 (title match + audio file counts). 2 identifier dupes replaced (Pat Novak "Fleet Lady", NightBeat collection — already cataloged). Green Hornet badged ⚠️ (character rights, not broadcast — same doctrine as Lone Ranger). Licenseurl-absent stated per Wave-59 diligence rule.
+
+#### m1guelpf/auto-subtitle ✅ commercial-safe
+- **What:** auto-subtitle — OpenAI Whisper-based automatic subtitle generator CLI (SRT output).
+- **URL:** https://github.com/m1guelpf/auto-subtitle
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Whisper CLI subtitle generator. [Wave 66 Lane A]
+
+#### Montreal-Forced-Aligner ✅ commercial-safe
+- **What:** Montreal Forced Aligner — forced speech-text alignment toolkit (Kaldi-based, word/phone boundaries).
+- **URL:** https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Word-level alignment for ASR-assisted diarization turns. [Wave 66 Lane A]
+
+#### silero-vad ✅ commercial-safe
+- **What:** Silero VAD — pre-trained enterprise-grade voice activity detector (PyTorch).
+- **URL:** https://github.com/snakers4/silero-vad
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Neural VAD alternative to webrtcvad for the diarization pipeline. [Wave 66 Lane A]
+
+#### py-webrtcvad ✅ commercial-safe
+- **What:** py-webrtcvad — Python bindings for the WebRTC voice activity detector.
+- **URL:** https://github.com/wiseman/py-webrtcvad
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: direct LICENSE read — "The MIT License (MIT)", copyright 2016 John Wiseman; GitHub API spdx was NOASSERTION)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** The VAD already wired in Lane C's diarization pipeline — catalog entry. [Wave 66 Lane A]
+
+#### vosk-api ✅ commercial-safe
+- **What:** Vosk — offline open-source speech recognition toolkit (models for 20+ languages, small footprint).
+- **URL:** https://github.com/alphacep/vosk-api
+- **License:** ✅ Apache-2.0 (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Offline STT for caption/ASR-assisted diarization. [Wave 66 Lane A]
+
+#### whisper-ctranslate2 ✅ commercial-safe
+- **What:** whisper-ctranslate2 — Whisper speech recognition optimized with CTranslate2 (fast inference).
+- **URL:** https://github.com/Softcatala/whisper-ctranslate2
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 2/5
+- **Status:** not-started
+- **Notes:** Fast Whisper inference for subtitle generation. [Wave 66 Lane A]
+
+#### python-sounddevice ✅ commercial-safe
+- **What:** python-sounddevice — Python audio I/O via PortAudio (play/record NumPy arrays).
+- **URL:** https://github.com/spatialaudio/python-sounddevice
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audio I/O for voice-pipeline tooling. [Wave 66 Lane A]
+
+#### python-soundfile ✅ commercial-safe
+- **What:** python-soundfile — Python audio file I/O via libsndfile (WAV/FLAC/OGG read/write).
+- **URL:** https://github.com/bastibe/python-soundfile
+- **License:** ✅ BSD-3-Clause (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Audio file I/O for the voice pipeline. [Wave 66 Lane A]
+
+#### PyAudio ✅ commercial-safe
+- **What:** PyAudio — Python bindings for PortAudio (cross-platform audio I/O).
+- **URL:** https://github.com/jleb/pyaudio
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: PyPI license field "MIT", repo exists; GitHub API spdx was unasserted)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 1/5
+- **Status:** not-started
+- **Notes:** Classic audio I/O bindings. [Wave 66 Lane A]
+
+#### julius ✅ commercial-safe
+- **What:** Julius — open-source large-vocabulary continuous speech recognition decoder.
+- **URL:** https://github.com/julius-speech/julius
+- **License:** ✅ BSD-3-Clause (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 3/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Classic LVCSR decoder. [Wave 66 Lane A]
+
+#### asteroid ✅ commercial-safe
+- **What:** asteroid — PyTorch-based audio source separation toolkit (speech enhancement/separation recipes).
+- **URL:** https://github.com/asteroid-team/asteroid
+- **License:** ✅ MIT (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 4/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** Source separation for dialogue isolation. [Wave 66 Lane A]
+
+#### speechbrain ✅ commercial-safe
+- **What:** SpeechBrain — PyTorch speech toolkit (ASR, speaker recognition, diarization, enhancement).
+- **URL:** https://github.com/speechbrain/speechbrain
+- **License:** ✅ Apache-2.0 (verified Wave 66 Lane A, 2026-10-09: GitHub API spdx_id)
+- **Free tier:** fully open
+- **Repo lane:** trippedd (caption/tooling)
+- **Pipeline impact:** 5/5 · **Wire-up difficulty:** 3/5
+- **Status:** not-started
+- **Notes:** The toolkit behind Lane C's ECAPA-TDNN embeddings — catalog entry. [Wave 66 Lane A]
+
+### Wave 66 Lane A — P4 caption-tooling tail round 2 (2026-10-09, coordinator-direct)
+12 entries appended: m1guelpf/auto-subtitle, Montreal-Forced-Aligner, silero-vad, py-webrtcvad, vosk-api, whisper-ctranslate2, python-sounddevice, python-soundfile, PyAudio, julius, asteroid, speechbrain. All licenses verified upstream (10 GitHub API spdx_id, 1 direct LICENSE read for py-webrtcvad, 1 PyPI field for PyAudio). +3 quarantine rows 603–605 (absadiki/subsai GPL-3.0, byroot/pysrt GPL-3.0, kaegi/alass GPL-3.0 — all GitHub API spdx_id). Honest drops: webvtt-py/ttconv/imscJS/Resemblyzer/ffsubsync/CTranslate2/sherpa-onnx/auditok/gentle/autosub/whisper_streaming/whisper-webui/whisper-diarization/subaligner/pocketsphinx/wenet/pyroomacoustics/OpenVoice/F5-TTS/Kokoro/Tortoise-TTS/WhisperLive (all already cataloged), Tencent/TenVAD (repo does not exist), Coqui TTS (MPL-2.0 — weak-copyleft quarantine doctrine pending, not cataloged). Caption tail now genuinely thin — recommend broadcast-automation round 3 or a new angle for Wave 67.
+
+### Wave 66 coordinator summary (2026-10-09)
+106 entries appended: P1 SDK docs round 12 (+27), P2 landmark musicdisk round 10 (+25), P3 PD radio-drama round 15 (+42), P4 caption-tooling tail round 2 (+12). +3 quarantine rows 603–605 (absadiki/subsai GPL-3.0, byroot/pysrt GPL-3.0, kaegi/alass GPL-3.0 — all live, all GitHub API spdx_id). 0 quarantine-row collisions, zero supersedes/delists. Lane B re-verification cycle 37: rows 381–390 — 10/10 CONFIRMED, zero relicenses, zero delists, zero supersedes; 1 archiving-drift annotation (row 388 rust-wiiu/wut now owner-archived upstream, license unaffected). Lane C (tools/wave66_lane_c/): speaker-count tightening production run on real EP01 audio (wire_count_tightening.py, proofs committed incl. PROOFS.md) — 2.0 s and 2.5 s grids agree on k=1 (1.26x/1.16x margins) consistent with single-narrator EP01 (98.5% continuous speech), vs baseline 1.5 s grid k=3 at 1.02x (phantom structure from correlated short windows); 3.0 s overshoots to k=7 (same mixed-embedding failure the fixture showed); VAD-gated energy/BIC count prior REJECTED (k_bic=10 — energy is not a count signal); ASR-assisted turns deferred (no transcripts); DeepFilterNet remains downstream-only of embeddings (no cp312 wheel, Rust toolchain absent — quarantine holds); ECAPA always on RAW audio, no denoise upstream. Catalog: 6,096 → 6,202 honest #### entries (target 6,200+ met). LGPL doctrine still PENDING OWNER VERDICT.

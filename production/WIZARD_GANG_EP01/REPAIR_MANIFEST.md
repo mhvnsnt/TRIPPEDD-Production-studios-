@@ -29,20 +29,27 @@ clip-02, 03, 04, 06, 08, 09, 10, 11, 12, 14, 16, 17, 18, 19, 20, 23, 26, 27, 28
 
 ## Repair Log
 
-### clip-05 (street crew)
+### clip-05 (street crew) — ✅ PASS
 - 2026-10-10: Extracted 100 frames @ 10fps 640x360. Created 3 cartoon keyframes.
 - 2026-10-10: EbSynth started with multi-keyframe anchoring (0, 49, 99). Process DIED in runtime restart (~09:30 CDT). /tmp partial output LOST.
-- 2026-10-10 09:38 CDT: Resumed. Found end keyframe was BLACK (clip fades to black at frame 100). Rebuilt end keyframe from frame 80 (bright, clear). Restarted EbSynth with anchors (0, 49, 79), --keep-frames for crash recovery. ETA ~65 min.
+- 2026-10-10 09:38 CDT: Resumed. Found end keyframe was BLACK (clip fades to black at frame 100). Rebuilt end keyframe from frame 80. Restarted EbSynth.
+- 2026-10-10 09:45 CDT: **EbSynth output FAILED QC** — heavy smearing/artifacts on group scene (patch matching failed with 9 characters + camera movement).
+- 2026-10-10 09:47 CDT: **Pivoted to direct cartoon filter** (bilateral + adaptive edge + saturation boost) applied to every frame. Result: clean 2D cartoon, characters recognizable, no artifacts. **QC PASS.**
+- Final: clip-05-cartoon-30fps.mp4 (1280x720, 30fps, 10s). Awaiting owner approval before timeline insertion.
 
-### clip-15 (basketball)
+### clip-15 (basketball) — ✅ PASS
 - 2026-10-10: INTRA-CLIP DRIFT confirmed — frame 1 is 2D cartoon, frame 20+ is photorealistic. Same content, style changes mid-clip.
-- 2026-10-10: Extracted 100 frames. Created 3 cartoon keyframes (start/mid/end) via bilateral+edge+saturation filter. Mid keyframe VERIFIED: clean 2D cartoon.
-- Status: QUEUED — will run EbSynth after clip-05 (2 CPUs, can't parallelize).
+- 2026-10-10: Applied direct cartoon filter to all 300 frames @ 30fps. Intra-clip drift FIXED — entire clip now consistent 2D cartoon. Hollow's mask, dragon suit all clean. **QC PASS.**
+- Final: clip-15-cartoon-30fps.mp4 (1280x720, 30fps, 10s). Awaiting owner approval before timeline insertion.
 
-### clip-22 (podcast)
+### clip-22 (podcast) — ✅ PASS
 - 2026-10-10: INTRA-CLIP DRIFT confirmed — frame 1 is 2D cartoon, frame 50 is photorealistic (realistic skin, pores).
-- 2026-10-10: Extracted 100 frames. Created 3 cartoon keyframes (start/mid/end). Mid keyframe VERIFIED: clean 2D cartoon.
-- Status: QUEUED — will run EbSynth after clip-15.
+- 2026-10-10: Applied direct cartoon filter to all 300 frames @ 30fps. Intra-clip drift FIXED. Static recognizable, tattoos clear, ON AIR sign readable. **QC PASS.**
+- Final: clip-22-cartoon-30fps.mp4 (1280x720, 30fps, 10s). Awaiting owner approval before timeline insertion.
+
+## Method Note
+
+EbSynth (patch-based style propagation) FAILED on clip-05's complex group scene — smearing artifacts. Direct per-frame cartoon filtering (OpenCV: bilateralFilter + adaptiveThreshold edges + HSV saturation boost) proved superior for these shots: faster (~20s per 100 frames vs ~60min), no temporal artifacts, consistent style. EbSynth remains available for shots where the cartoon filter alone isn't enough, but wasn't needed here.
 
 ## Kaggle Staging
 

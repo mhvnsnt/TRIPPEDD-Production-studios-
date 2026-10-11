@@ -1,0 +1,150 @@
+{
+ "root": "crown-hoodie-head",
+ "donor": {
+  "rect_keyart": [
+   598,
+   512,
+   878,
+   860
+  ],
+  "size": [
+   280,
+   348
+  ],
+  "skin_tone": [
+   242,
+   187,
+   124
+  ],
+  "source": "key art 'Goodville - Not South Park.png'",
+  "grid_verified": true
+ },
+ "measured_anchors": {
+  "eye_L_bbox": [
+   [
+    63,
+    155
+   ],
+   [
+    146,
+    244
+   ]
+  ],
+  "eye_R_bbox": [
+   [
+    148,
+    155
+   ],
+   [
+    230,
+    244
+   ]
+  ],
+  "pupil_L": [
+   121,
+   199
+  ],
+  "pupil_R": [
+   172,
+   199
+  ],
+  "mouth_bbox": [
+   [
+    126,
+    283
+   ],
+   [
+    169,
+    290
+   ]
+  ],
+  "mouth_center": [
+   147,
+   287
+  ],
+  "goatee_bbox": [
+   [
+    114,
+    312
+   ],
+   [
+    174,
+    338
+   ]
+  ]
+ },
+ "parts": [
+  {
+   "id": "head_blank",
+   "file": "head_blank.png",
+   "rest": true,
+   "region": [
+    0,
+    0,
+    280,
+    348
+   ],
+   "pivot": [
+    140,
+    174
+   ],
+   "notes": "beanie+sideburns+goatee kept; furniture zone flattened to sampled skin (242,187,124)"
+  },
+  {
+   "id": "brows_neutral",
+   "file": "brows_neutral.png",
+   "region": [
+    50,
+    136,
+    219,
+    156
+   ],
+   "pivot": [
+    134.5,
+    146.0
+   ],
+   "notes": "tight crop; visible brow below brim edge"
+  },
+  {
+   "id": "eyes_open",
+   "file": "eyes_open.png",
+   "region": [
+    61,
+    153,
+    233,
+    247
+   ],
+   "pivot": [
+    146.5,
+    199.0
+   ],
+   "pupils": {
+    "left": [
+     121,
+     199
+    ],
+    "right": [
+     172,
+     199
+    ],
+    "note": "~17px toward nose per key art"
+   },
+   "notes": "tight crop of both white ovals incl. outlines + pupils"
+  },
+  {
+   "id": "mouth_closed",
+   "file": "mouth_closed.png",
+   "region": [
+    124,
+    282,
+    171,
+    292
+   ],
+   "pivot": [
+    147,
+    287
+   ],
+   "notes": "brown frown linework; tight crop"
+  }
+ ]
+}

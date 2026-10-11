@@ -37,3 +37,36 @@
 - Nerd props built (SP-flat, new): prop_controller.png, prop_d20.png, prop_card.png. Bong prop existing.
 - Variants rescaled (eyes 97,126 / mouth 95,177 / brows 95,79). Angles via feature-shift; profile from 34R.
 - torso_34/back at content scale. preview_sheet.png. All verified vs key art.
+
+## v2 rebuild — PROPER COMPOSITING (2026-10-11, subagent lane)
+Follows sten v2 method exactly (commit 259b8549). Script: kits/chet/build_v2.py (reproducible).
+
+### Measured anchors (donor = rembg u2net cut of head_keyart.png, canvas 281x229)
+Programmatic detection + grid.py visual verification (--no-crop, donor-native coords).
+- SKIN flat fill: (238,185,126) #EEB97E — forehead (237,185,127), cheek (239,185,125)
+- GLASSES zone: x 38-208, y 66-128 (frames + temples; separate layer, transparent lenses)
+- LENS L: x 78-117, y 79-116, center (97,97) | LENS R: x 129-167, y 81-118, center (149,99)
+- PUPIL L: (107,96) bbox x104-109 y93-99 | PUPIL R: (138,97) bbox x136-141 y94-99
+- NOSE (static, baked into blank): x 112-133, y 121-129
+- MOUTH (neutral): line x 109-133, y 145-149 + lip shade y154-155
+- BROWS: NONE visible in donor — glasses occupy the brow zone (no brows piece)
+- Full rig.json-format record: v2/anchors.json (parts: head, glasses, eyes, pupil_L/R, nose, mouth)
+
+### Build
+- head_blank: furniture zone flat-filled (feather 2px inside rect); only skin/furniture/white
+  replaced — hair (incl. sideburn strand at temple), green collar, nose preserved.
+  Glasses NOT baked. Faint frame-edge ghosts where dark edge pixels keyed as hair;
+  always covered by v2/glasses.png in real composites (same pattern as sten v2).
+- Tight furniture (PIL getbbox, recorded offsets): v2/glasses.png (169x62 @ 38,66),
+  v2/eyes_open.png (94x40 @ 76,79, whites+pupils, sits behind glasses),
+  v2/mouth_neutral.png (27x13 @ 108,144).
+- Partition is disjoint (eyes ring excludes glasses pixels) so compositing is exact.
+- VERIFY: composite blank+eyes+glasses+mouth reconstructs donor — untouched px 0 mismatched;
+  donor-opaque mismatches: 14 px, all intended flat-vs-shaded skin in the fill zone (delta ~15).
+  Zoom-compared vs donor: eyes, mouth, nose pixel-faithful.
+- head_34L/head_34R: SINGLE-PASS PIL AFFINE squeeze 0.85, BICUBIC, anchored at far edge
+  (34L: right edge; 34R: left edge), fillcolor transparent. Zoom-checked: single lines,
+  no ghosting/doubling (old warp-based ones discarded, not reused).
+- v2/preview_v2.png proof strip; preview_sheet.png rebuilt with v2 tight composites.
+- Old v1 pieces (head_base, glasses.png v1, full-canvas overlays) superseded by v2 — kept in
+  kit for now, manifest marks v2 as current.

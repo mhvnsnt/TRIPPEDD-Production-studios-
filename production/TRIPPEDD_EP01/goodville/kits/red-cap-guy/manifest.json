@@ -2,7 +2,7 @@
  "character": "red-cap-guy",
  "source": "assets/references/ep01/source/Goodville - Not South Park.png",
  "tier": "B",
- "note": "attempt 3 (2026-10-11): full rebuild from key art; angles via feature-shift.",
+ "note": "attempt 3 (2026-10-11): full rebuild from key art. v2 (same day): PROPER COMPOSITING rebuild \u2014 see 'v2' key; head_blank + tight furniture architecture, verified reconstruction.",
  "canvas": [
   600,
   900
@@ -720,5 +720,86 @@
   }
  ],
  "provenance": "hand-built PIL (supersampled 2x) + smart-extract rembg cutouts; no AI imagery; no flood-fill",
- "style": "South Park-esque flat cutout per key-art lock"
+ "style": "South Park-esque flat cutout per key-art lock",
+ "v2": {
+  "note": "v2 rebuild 2026-10-11 (PROPER COMPOSITING): head_blank architecture like Sten's v2. Donor = head_keyart.png (225x291). All anchors measured programmatically \u2014 see v2/anchors.json and v2/build_v2.py (rerunnable).",
+  "donor": "head_keyart.png",
+  "method": "measured-anchor PIL rebuild: ring-median skin inpaint for blank; tight content-bounded furniture crops; single-pass PIL AFFINE 3/4s (squeeze 0.85, BICUBIC, anchor far edge). No AI imagery; no flood-fill.",
+  "verified": "head_blank + furniture at recorded offsets reconstructs donor with max RGB diff 0 outside furniture (asserted in build script). All pieces inspected zoomed vs key art.",
+  "pieces": [
+   {
+    "file": "v2/head_blank.png",
+    "size": [
+     225,
+     291
+    ],
+    "method": "donor with furniture pixels inpainted (ring-median skin fill; inpaint mask = furniture dilated 2px to swallow outline AA ring)"
+   },
+   {
+    "file": "v2/eyes_open.png",
+    "size": [
+     121,
+     68
+    ],
+    "offset": [
+     44,
+     122
+    ],
+    "method": "tight crop of both eye whites + pupils + outlines from donor"
+   },
+   {
+    "file": "v2/brows_neutral.png",
+    "size": [
+     2,
+     2
+    ],
+    "offset": [
+     103,
+     100
+    ],
+    "method": "EMPTY placeholder \u2014 no brows exist in key art (thin lines at y~77-88 are the cap band edge)"
+   },
+   {
+    "file": "v2/mouth_neutral.png",
+    "size": [
+     33,
+     8
+    ],
+    "offset": [
+     88,
+     220
+    ],
+    "method": "tight crop of key-art smile stroke from donor"
+   },
+   {
+    "file": "v2/head_34L.png",
+    "size": [
+     225,
+     291
+    ],
+    "method": "single-pass PIL AFFINE squeeze 0.85 anchored RIGHT edge (Sten v2 convention)"
+   },
+   {
+    "file": "v2/head_34R.png",
+    "size": [
+     225,
+     291
+    ],
+    "method": "single-pass PIL AFFINE squeeze 0.85 anchored LEFT edge (Sten v2 convention)"
+   },
+   {
+    "file": "v2/preview_v2.png",
+    "method": "architecture proof: blank / +eyes / +full / 34L / 34R / donor"
+   },
+   {
+    "file": "v2/anchors.json",
+    "method": "measured pixel coordinates (eyes, pupils, mouth, nose, skin tones)"
+   },
+   {
+    "file": "v2/build_v2.py",
+    "method": "rerunnable builder \u2014 re-extracts everything from the donor"
+   }
+  ],
+  "identity": "red backwards cap, orange hair tufts, close-set white oval eyes (pupils toward center), no brows, nose stroke, small smile, chin stubble, white tank, bottle top at frame bottom \u2014 all held from donor"
+ }
 }

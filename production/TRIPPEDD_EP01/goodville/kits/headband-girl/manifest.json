@@ -580,7 +580,68 @@
    "file": "torso_back.png",
    "method": "extracted/derived",
    "notes": "attempt 3 (2026-10-11): rebuilt from key-art rembg cut, verified vs key art"
+  },
+  {
+   "file": "v2/head_blank.png",
+   "method": "measured-anchor rebuild",
+   "notes": "furniture zones (brows/eyes/mouth) feather-filled with sampled skin (154,96,52); hair protected; transparent eye sockets + brown box-fill removed; headband composited on top"
+  },
+  {
+   "file": "v2/eyes_open.png",
+   "method": "tight crop + redraw",
+   "anchor": {
+    "x": 31,
+    "y": 114
+   },
+   "notes": "tight 105x51: white ovals + 1px lid arcs hugging top edge + 2 short lash flicks at R-eye outer corner (key art)"
+  },
+  {
+   "file": "v2/pupils.png",
+   "method": "cleaned",
+   "anchor": {
+    "x": 60,
+    "y": 132
+   },
+   "notes": "tight 36x10: two dots only at measured centroids L(63.5,138.0) R(92.7,135.0); lash-flick junk + stray dots removed"
+  },
+  {
+   "file": "v2/brows_neutral.png",
+   "method": "extracted + mirrored",
+   "anchor": {
+    "x": 46,
+    "y": 98
+   },
+   "notes": "tight 64x7: clean left stroke (x46-65 y100-104) mirrored about x=77.5 for right brow; hair-blob junk removed; right inner bit kept"
+  },
+  {
+   "file": "v2/mouth_closed.png",
+   "method": "tight crop",
+   "anchor": {
+    "x": 86,
+    "y": 186
+   },
+   "notes": "tight 13x14: lip-reddish pixels only; skin box removed"
+  },
+  {
+   "file": "v2/head_34L.png",
+   "method": "single-pass PIL AFFINE",
+   "notes": "from v2 neutral full; squeeze 0.85 BICUBIC anchored at right (far) edge; no ghosting"
+  },
+  {
+   "file": "v2/head_34R.png",
+   "method": "single-pass PIL AFFINE",
+   "notes": "from v2 neutral full; squeeze 0.85 BICUBIC anchored at left (far) edge; no ghosting"
+  },
+  {
+   "file": "v2/head_neutral_full.png",
+   "method": "verified composite",
+   "notes": "head_blank + tight furniture @ recorded offsets; reconstructs donor modulo documented defect fixes"
+  },
+  {
+   "file": "v2/preview_v2.png",
+   "method": "proof panels",
+   "notes": "Sten-style: blank | +eyes | +eyes+brows | +full | 34L | 34R | DONOR"
   }
  ],
- "note": "attempt 3 (2026-10-11): full head rebuild from key art; furniture rescaled to donor anchors; 34L/34R/profile via feature-shift; torso_34/back."
+ "note": "v2 (2026-10-11): measured-anchor rebuild per Sten's method. TIGHT furniture + head_blank architecture; clean affine 34s; preview_sheet rebuilt as assembled character. Anchors in v2/anchors.json."
 }

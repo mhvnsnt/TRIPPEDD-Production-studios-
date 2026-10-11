@@ -56,8 +56,12 @@ confrontation → tailgate → random third-party honks — is a ready-made sket
 
 Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to right:
 
-1. **Beer-can guy** — heavyset, shaggy brown hair, mustache + chin goatee, arm tattoo,
-   "BEER" can. _Unidentified._
+1. **Amos Jr.** (beer-can guy) — heavyset, shaggy brown hair, mustache + chin goatee,
+   arm tattoo, "BEER" can. Named by Tyneshia (owner 2026-10-11): she picked him as the
+   next character to write and compared him to **Leonard Amos Farmer**, a high-school
+   friend of the owner and Tyneshia. The character is modeled character- and
+   personality-wise on Leonard **and** his father **Amos Sr.** (recently passed) — a
+   tribute to both, in memory of Amos Sr.
 2. **The kid** — blue/red bobble hat, cigarette in hand, chin patch. _Unidentified._
 3. **Purple headband girl** — hair in puffs, gold hoops, purple top. _Unidentified._
 4. **Crown hoodie (center)** — black beanie, TRIPPEDD crown hoodie, goatee. _Inferred as

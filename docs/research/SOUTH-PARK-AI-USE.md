@@ -174,3 +174,129 @@ Anything not on it is not South Park-verified:
 
 *Study written 2026-10-11 for TRIPPEDD Production Studios — Goodville Cartoon (SEG05)
 AI-use policy. Branch: `docs/south-park-ai-use`. Companion: `SOUTH-PARK-STUDY.md`.*
+
+---
+
+# WAVE 2 ADDENDUM (2026-10-11)
+
+Wave 2 went back after the five open questions wave 1 left. **Wave-2 top-line:** the
+AI Tools & Pipeline Developer posting still cannot be verified on any official
+channel — the "AI department" item in wave 1's top-line stays a rumor. Deep Voodoo's
+method is now documented in more detail and it is capture-heavy, not prompt-based:
+multi-camera capture of real actors' full emotional ranges, then AI face-swap applied
+in post. No 2024–2026 crew interviews describe any AI-assisted animation tooling in
+the show's pipeline. The "AI footage" in "Sora Not Sorry" was reportedly recreated by
+hand by the show's own animators, not generated with AI tools — and the episode's only
+real "AI use" is another joke writing credit. A practical shelf of assistive tools
+for OUR cutout pipeline is listed below; none of them are confirmed South Park tools.
+
+## Q1. The "AI Tools & Pipeline Developer" posting: still unverified
+
+Checked in wave 2: no official South Park Studios or Park County careers page was
+found listing the role; no LinkedIn company-page posting surfaced; no entertainment
+trade covered it. The only instance remains the third-party aggregator
+aijobs.whatsthebigdata.com, whose page shows the full posting text but no posting
+date, no application link, and no stated source. Industry context: dot.LA's "Streaming
+Studios' AI Hiring Spree" documents AI hiring across Disney, Netflix, Amazon, Apple,
+Warner Bros. Discovery, Paramount, and NBCUniversal during the strikes — South Park
+Studios is not named. So AI hiring is a real industry-wide trend, but this specific
+posting's attribution cannot be confirmed.
+**Verdict: stays UNVERIFIED.** Wave 1's top-line item (3) must be read with this
+caveat — do not cite an AI department as fact.
+Sources:
+- https://aijobs.whatsthebigdata.com/job/ai-tools-pipeline-developer (posting text; no date or source given)
+- https://dot.la/ai-companies-hiring-2668464486.html (industry-wide AI hiring; South Park not named)
+
+## Q2. Deep Voodoo's method, technically: capture-first, swap second
+
+A 2026 writeup of the company's method (reporting Stone's THR remarks and CCO
+Jennifer Howell's festival-panel comments) describes the working process: multi-camera
+capture sessions of real actors — "nine cameras capturing 300,000 images" — plus
+directed questioning to capture the full range of their emotional expressions, then
+roughly a month of editing/post work. In practice, "performer-first, no prompting"
+means: the AI never invents the performance. A real actor's captured performance is
+the input; the AI/ML face-swap does the replacement and blend in post. What gets
+depicted is always something a human actually did, with explicit authorization.
+Confirmed credit list for the company (same sources): *Sassy Justice* (2020),
+Kendrick Lamar's "The Heart Part 5" face morphs, Billy Joel's "Turn the Lights Back
+On" de-aging, Apple TV's *Before*, the Rolling Stones' "In The Stars," *Ted* season
+2, and a Dunkin' Donuts Super Bowl ad.
+Sources:
+- https://medium.com/@annie_7775/that-time-the-creators-of-south-park-accidentally-became-the-ai-industry-s-moral-compass-0cd41c96c253
+- https://siliconangle.com/2022/12/21/south-parks-trey-parker-matt-stone-raise-20m-deepfake-company/
+
+## Q3. 2024–2026 crew interviews on pipeline tooling: nothing found (negative finding)
+
+Every Eric Stough (animation director/producer) interview found dates to the
+2007–2015 era. No 2024–2026 interviews with South Park animation directors,
+technical directors, or producers were found discussing AI-assisted animation
+tooling, auto lip-sync, ML inbetweening, or pipeline automation for the show. The
+closest data point is the *Fractured But Whole* producer in a Kotaku interview:
+"There's no procedural generation of animation that's saving our butts here."
+**Verdict: negative finding, and a valid one.** There is no public evidence the show
+uses AI-assisted animation tooling in production.
+Sources:
+- https://kotaku.com/making-a-south-park-game-is-harder-than-youd-think-1796228738
+
+## Q4. The "AI footage" in "Sora Not Sorry": hand-made, not AI-made
+
+Film commentary on the episode (FilmoFilia) reports the in-episode "Sora-generated"
+videos were recreated by the show's own human animators in South Park's cutout
+style — traditional craft imitating AI output, not actual AI generation. That is a
+critic's reading, not crew-confirmed (no crew commentary on those sequences was
+found), but it is consistent with the confirmed manual pipeline. Separately,
+ScreenRant confirms the episode ends with Stan using ChatGPT to write a happy
+ending, and the show cheekily credits "ChatGPT" as the episode's co-writer — a
+repeat of the "Deep Learning" meta-joke pattern. So the only real "AI use" attached
+to the episode is another joke credit.
+**Verdict:** no evidence of actual AI tools being used ironically (or otherwise) to
+make the on-air AI depictions.
+Sources:
+- https://www.filmofilia.com/south-park-ai-deepfake-war-212659/
+- https://screenrant.com/south-parth-season-28-criticizes-ai/
+
+## Q5. The assistive-tool shelf for OUR cutout pipeline (not confirmed South Park tools)
+
+None of the tools below are confirmed South Park tools — this is the practical shelf
+for Goodville production under the "artist-facing utility, never generation"
+philosophy. The fit test for each: the artist still draws/owns the creative assets;
+the tool only automates placement.
+
+- **Auto lip-sync (artist draws visemes; tool places keyframes):** Rhubarb Lip Sync
+  (Daniel S. Wolf, open-source, offline — phoneme-to-viseme keyframes from voice
+  recordings; Blender addon exists at github.com/scaredyfish/blender-rhubarb-lipsync,
+  though not actively maintained for newer Blender); Charley3d "Lip Sync" Blender
+  addon (offline Vosk + Phonemizer + eSpeak, projects a viseme spritesheet onto the
+  face, ~25–30 languages — fits cutout workflows directly); 2D Lip Sync Pro (Blender
+  Grease Pencil v3, fully local); UNOMi AI lip-sync (Blender integration, EN/ES/ZH/
+  PT/FR/DE/KO/RU); SpeechGraphics and Reallusion Character Creator (speech-analysis
+  facial animation).
+- **AI inbetweening:** Cascadeur 2025.1's AI-driven Inbetweening (ML pose
+  interpolation) plus AutoPosing.
+- **Facial animation from audio:** NVIDIA Audio2Face.
+- **Style transfer for animation:** EbSynth (already in our toolkit).
+- **Caveat from working animators** (AvidAnimator/Medium survey of studio practice):
+  AI lip-sync is currently only reliable for rough early passes; extensive manual
+  artist input remains essential for quality results. That is exactly the philosophy:
+  the tool does grunt placement, the artist owns the performance.
+Sources:
+- https://github.com/Charley3d/lip-sync
+- https://superhivemarket.com/products/2d-lip-sync-pro
+- https://www.blendernation.com/2026/10/09/ceo-ai-powered-lip-sync/
+- https://github.com/scaredyfish/blender-rhubarb-lipsync
+- https://www.creativebloq.com/3d/animation-software/ai-makes-character-animation-faster-and-easier-in-cascadeur-2025-1
+- https://medium.com/@AvidAnimator/will-ai-replace-lip-sync-artist-ais-impact-on-lip-sync-artists-in-animation-studios-633d16bf75f7
+
+## Wave-2 verdict on the allowed list
+
+Wave 1's "Allowed AI uses for Goodville production" list stands. Wave 2 adds:
+1. The "AI department" item is NOT confirmed — remove it from any claims about what
+   South Park does; the posting stays a rumor.
+2. Deep Voodoo's method detail gives us the concrete template for any future
+   live-action-insert work: capture a real performance, get explicit consent, AI only
+   for the swap.
+3. The tool shelf in Q5 is approved for assistive use under the philosophy — with the
+   standing rule that final creative choices stay human.
+
+*Wave 2 written 2026-10-11 for TRIPPEDD Production Studios — Goodville Cartoon (SEG05)
+AI-use policy. Branch: `docs/south-park-ai-use-wave2`.*

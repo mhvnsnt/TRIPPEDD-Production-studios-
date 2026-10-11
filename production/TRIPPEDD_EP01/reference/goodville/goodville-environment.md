@@ -350,3 +350,8 @@ basement-dweller nerd**: computer, video games, D&D, trading cards, anime,
 World of Warcraft — "like that one guy from the South Park WoW episode."
 Original character, not based on a specific South Park character (owner
 2026-10-11). Name TBD — owner deciding.
+
+## Name locked: CHET (owner 2026-10-11)
+
+The basement nerd (key art cast #6, glasses, bong — computer/video games/D&D/
+trading cards/anime/WoW archetype) is named **CHET**. Owner-confirmed.

@@ -68,6 +68,180 @@
       "file": "arm_R_sep.png",
       "desc": "Full-piece set from car trio image (owner 2026-10-11): arm R sep. Wide extraction, complete arms, u2net.",
       "source": "owner-chatgpt-car-trio"
+    },
+    {
+      "file": "head_blank.png",
+      "desc": "Blank head for v2 furniture",
+      "source": "hand-built from extraction",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "brow_neutral.png",
+      "desc": "Brows neutral",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "brow_angry.png",
+      "desc": "Brows angry",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "brow_sad.png",
+      "desc": "Brows sad",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "brow_suspicious.png",
+      "desc": "Brows suspicious",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "brow_raised.png",
+      "desc": "Brows raised",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "eyes_angry.png",
+      "desc": "Eyes angry",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "eyes_look_L.png",
+      "desc": "Eyes look L",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "eyes_look_R.png",
+      "desc": "Eyes look R",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "eyes_look_up.png",
+      "desc": "Eyes look up",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "eyes_look_down.png",
+      "desc": "Eyes look down",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "mouth_smile.png",
+      "desc": "Mouth smile",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "mouth_smirk.png",
+      "desc": "Mouth smirk",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "mouth_zipper.png",
+      "desc": "Mouth zipper",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "mouth_yell.png",
+      "desc": "Mouth yell",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "mouth_jaw_flap.png",
+      "desc": "Mouth jaw flap",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "head_34l.png",
+      "desc": "Head 3/4 L",
+      "source": "derived from extraction",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "head_34r.png",
+      "desc": "Head 3/4 R",
+      "source": "derived from extraction",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "head_profile_L.png",
+      "desc": "Head profile L",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "head_profile_R.png",
+      "desc": "Head profile R",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "body_34l.png",
+      "desc": "Body 3/4 L",
+      "source": "derived from extraction",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "body_34r.png",
+      "desc": "Body 3/4 R",
+      "source": "derived from extraction",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "body_back.png",
+      "desc": "Body back",
+      "source": "derived from extraction",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "hand_relaxed.png",
+      "desc": "Hand relaxed",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "hand_open.png",
+      "desc": "Hand open",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "hand_fist.png",
+      "desc": "Hand fist",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "hand_point.png",
+      "desc": "Hand point",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "hand_grip.png",
+      "desc": "Hand grip",
+      "source": "hand-built",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
+    },
+    {
+      "file": "sheet_preview.png",
+      "desc": "Sheet preview",
+      "source": "generated",
+      "from": "owner ChatGPT trio images 2026-10-11 (junkyard + car)"
     }
   ],
   "provenance": {
@@ -78,19 +252,19 @@
     "arm_R_bent.png": "derived-from-extraction",
     "arm_R_punch.png": "derived-from-extraction",
     "body_full.png": "extracted",
-    "eyes_closed.png": "derived-from-extraction",
-    "eyes_happy.png": "derived-from-extraction",
-    "eyes_open.png": "derived-from-extraction",
+    "eyes_closed.png": "hand-built",
+    "eyes_happy.png": "hand-built",
+    "eyes_open.png": "hand-built",
     "eyes_worried.png": "derived-from-extraction",
     "head.png": "extracted",
     "leg_L.png": "derived-from-extraction",
     "leg_R.png": "derived-from-extraction",
     "legs.png": "extracted",
-    "mouth_frown.png": "derived-from-extraction",
+    "mouth_frown.png": "hand-built",
     "mouth_grin.png": "derived-from-extraction",
-    "mouth_neutral.png": "extracted",
-    "mouth_ooh.png": "derived-from-extraction",
-    "mouth_open.png": "derived-from-extraction",
+    "mouth_neutral.png": "hand-built",
+    "mouth_ooh.png": "hand-built",
+    "mouth_open.png": "hand-built",
     "preview.png": "extracted",
     "prop_chain.png": "extracted",
     "sit_legs.png": "derived-from-extraction",
@@ -99,8 +273,37 @@
     "walk_1.png": "derived-from-extraction",
     "walk_2.png": "derived-from-extraction",
     "walk_3.png": "derived-from-extraction",
-    "walk_4.png": "derived-from-extraction"
+    "walk_4.png": "derived-from-extraction",
+    "head_blank.png": "hand-built from extraction",
+    "brow_neutral.png": "hand-built",
+    "brow_angry.png": "hand-built",
+    "brow_sad.png": "hand-built",
+    "brow_suspicious.png": "hand-built",
+    "brow_raised.png": "hand-built",
+    "eyes_angry.png": "hand-built",
+    "eyes_look_L.png": "hand-built",
+    "eyes_look_R.png": "hand-built",
+    "eyes_look_up.png": "hand-built",
+    "eyes_look_down.png": "hand-built",
+    "mouth_smile.png": "hand-built",
+    "mouth_smirk.png": "hand-built",
+    "mouth_zipper.png": "hand-built",
+    "mouth_yell.png": "hand-built",
+    "mouth_jaw_flap.png": "hand-built",
+    "head_34l.png": "derived from extraction",
+    "head_34r.png": "derived from extraction",
+    "head_profile_L.png": "hand-built",
+    "head_profile_R.png": "hand-built",
+    "body_34l.png": "derived from extraction",
+    "body_34r.png": "derived from extraction",
+    "body_back.png": "derived from extraction",
+    "hand_relaxed.png": "hand-built",
+    "hand_open.png": "hand-built",
+    "hand_fist.png": "hand-built",
+    "hand_point.png": "hand-built",
+    "hand_grip.png": "hand-built",
+    "sheet_preview.png": "generated"
   },
-  "count": 30,
-  "built": "2026-10-11T17:59:53.657791+00:00"
+  "count": 65,
+  "built": "2026-10-11T21:14:18.920520+00:00"
 }

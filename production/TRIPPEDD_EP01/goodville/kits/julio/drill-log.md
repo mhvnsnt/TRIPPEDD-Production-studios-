@@ -14,3 +14,11 @@ Rebuilt EXTRACTION-FIRST per USE THE IMAGE LAW.
 - Assembly side-by-side vs source: pixel-identical reconstruction.
 - Face variants composited and eye-checked (bubba happy+grin verified).
 - No square cuts (pieces are full-frame aligned, joins seamless).
+
+## Gap fix 2026-10-11 (owner's defect notes)
+**Defect:** junkyard background showing through on cup-holding arm (viewer-right) below the elbow, between arm and shirt/jeans pocket.
+**Method (surgical alpha cleanup, PIL/numpy):**
+1. arm_R piece: erased gray junkyard pixels (lum 50-185, sat<55, not skin, not black shirt) at x=[395,445], y=[540,640] — 2260 px.
+2. Found body_full.png had a LARGER patch of the same junkyard (4874 px) at x=[370,445], y=[525,675] — erased directly (lum 50-210, not skin, not black).
+3. Rebuilt body_full + preview.png.
+**Verification:** zoomed check — arm, shirt, jeans edges clean, no background remnants. Final: clean.

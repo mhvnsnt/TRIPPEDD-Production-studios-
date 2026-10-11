@@ -9,7 +9,11 @@ methods, written so the TRIPPEDD crew can replicate the look and grammar for SEG
 
 **Status note (documented facts only):** SEG05 is recorded as NOT_STARTED in
 `src/core/pipeline/episodes.ts`; canon rule C07 (BLOCKING) states Goodville is a gag *family*,
-not one insert; placement in EP01 is not locked. Nothing in the final mapping section invents
+not one insert; placement in EP01 is not locked. A third owner-described gag —
+"If you're not from Goodville, don't come to Goodville" (town-pride gatekeeping gag riffing
+on the Nashville saying "if you're not from Nashville, don't move to Nashville") — was
+recorded in `docs/creative/EP01-THE-WALK-CANON.md` on 2026-10-10 (PR #133): documented but
+NOT locked canon per C08, placement not locked. Nothing in the final mapping section invents
 Goodville characters, names, episodes, or plots — examples there are clearly labeled
 hypothetical placeholders.
 
@@ -390,6 +394,7 @@ canon.
 | §6 ABT writing rule | Canon C07: Goodville is a gag family, not one insert | Each gag entry gets its own therefore/but beat chain; the "family" structure means gags are modular — each must stand alone like the show's scenes |
 | §6 Kids'-logic deadpan | Tagline "NOT SOUTH PARK. JUST AS STUPID." | The parody contract: dumb situations, flat delivery — the tagline is the writing brief |
 | §7 Sprint pipeline | NOT_STARTED status | Run the §8A sprint: voice → ABT draft → animatic → asset library → stepped animation → composite |
+| §5 Signage carries the joke load; §6 deadpan delivery | "If you're not from Goodville, don't come to Goodville" — owner-described gag (documented 2026-10-10, PR #133; per C08 NOT locked canon; placement not locked) | **Separate gag-family entry, not SEG05** — record as unplaced. IF it lands near cartoon material, the §5 signage vocabulary (town-sign or billboard variant) is its natural visual home and §6's deadpan delivery sells the gatekeeping. Do not fold it into the cartoon cutaway without an owner call |
 
 **Placeholder examples (NOT canon, illustrative only):** a hypothetical gag where a
 Goodville figure explains a town rule with total seriousness while the background signage

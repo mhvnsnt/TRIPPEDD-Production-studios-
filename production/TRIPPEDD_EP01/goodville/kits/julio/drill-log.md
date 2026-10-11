@@ -29,3 +29,19 @@ Owner's note: this "leaning over" pose should become a sheet pose pattern for ot
 - The surface itself is part of the piece (dark mass under the arms here = car roof; recolor/replace per scene).
 - To build for another character: extract or pose their upper body the same way, keep the surface as a separate swappable layer.
 - Documented here so future sheets (Amos at a counter, old head at a desk) follow the same pattern.
+
+## v2 cleanup pass (2026-10-11 — owner: "a lil messy, keep em but make better ones")
+
+v1 flaws found (eyes on, zoomed):
+- pose_lean_over: car mass was a lumpy black blob; light rim/halo where arms met the black.
+- outfit torsos (both): hard straight bottom cuts (square-cut violation).
+- bubba torso: black fringe remnants on left edge.
+- head_no_beanie: minor hair-edge roughness.
+
+v2 fixes (all cuts from /home/hatch/workspace/user/files/1000173536_14_nhu1.png):
+- rembg model per piece: u2net won for Julio head (isnet left dark RGB contamination on the face) and Bubba (no car wedge); isnet-general-use won for Dickie and Julio lean (detail); u2net_human_seg FAILED on Julio (blacked out the face) — do not use for dark-shaded faces.
+- pose_lean_over_v2: removed car window/door/mirror + Bubba's shirt chunk; kept clean car-roof band as the lean surface with a shaped bottom edge.
+- Both torsos: curved hems via sinusoidal alpha mask (no square cuts).
+- Edge treatment everywhere: 3px MinFilter erode + 0.7-0.8px Gaussian feather (kills halo/fringe).
+- Side-fringe killer: near-white pixel removal in edge zones.
+- v1 files untouched alongside v2 per owner.

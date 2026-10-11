@@ -109,6 +109,10 @@ Recorded in `src/core/pipeline/episodes.ts`:
 
 Owner-described gags (documented 2026-10-10; per C08 these are NOT locked canon — placement in EP01 not locked):
 - **"If you're not from Goodville, don't come to Goodville"** — town-pride gatekeeping gag riffing on the Nashville saying "if you're not from Nashville, don't move to Nashville."
+- **"Transplant drivers vs. Mario Kart locals"** — locals hate transplant drivers but drive like Mario Kart themselves, always honking; the irony engine behind the gatekeeping gag. Real incident logged 2026-10-10.
+
+Environment bible (real location → show location mapping, street culture, incident log):
+`production/TRIPPEDD_EP01/reference/goodville/goodville-environment.md`
 
 > ⚠️ There may be **more Goodville gags**. Only the ones listed above are recorded, and their
 > placement in EP01 is not locked.

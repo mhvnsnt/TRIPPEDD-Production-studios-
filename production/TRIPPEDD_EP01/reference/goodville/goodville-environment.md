@@ -342,3 +342,11 @@ named **STEN**. Owner-confirmed. (Correction noted 2026-10-11: the owner says
 the Stan-based look is the ONLY key-art figure he sees as based on an actual
 South Park character — no other SP-reference claims should be asserted about
 #3, #5, or #6 without his word. Show him the pictures; he identifies.)
+
+## Identity: the basement nerd (owner 2026-10-11)
+
+Key art cast #6 (glasses, brown hair, green shirt, bong) is **the classic
+basement-dweller nerd**: computer, video games, D&D, trading cards, anime,
+World of Warcraft — "like that one guy from the South Park WoW episode."
+Original character, not based on a specific South Park character (owner
+2026-10-11). Name TBD — owner deciding.

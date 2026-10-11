@@ -45,3 +45,9 @@ v2 fixes (all cuts from /home/hatch/workspace/user/files/1000173536_14_nhu1.png)
 - Edge treatment everywhere: 3px MinFilter erode + 0.7-0.8px Gaussian feather (kills halo/fringe).
 - Side-fringe killer: near-white pixel removal in edge zones.
 - v1 files untouched alongside v2 per owner.
+
+## Full-piece set (2026-10-11, car trio image)
+- 5 pieces: upper_with_face, head_sep, torso_sep, arm_L_sep, arm_R_sep
+- Method: u2net wide extraction (isnet left intrusions / blacked faces). Slab separation with 30px feathered overlaps; pieces composite seamlessly (verified by reassembly).
+- Neck lines: below chin/goatee/beard. No face parts in torso pieces.
+- NOTE: folded-arms pose — torso is visible shirt fragments (shirt hidden behind arms/beard); arm_L is small (left arm mostly hidden). Honest to the pose.

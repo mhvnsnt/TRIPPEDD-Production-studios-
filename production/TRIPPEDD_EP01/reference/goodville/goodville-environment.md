@@ -334,3 +334,11 @@ looks normal ("like an American") — both are true, the nod is the exception.
 
 Dickie character note (owner 2026-10-11): he's a mix of Eric Cartman and
 Trailer Park Boys' Ricky — the asshole dial turned up on both.
+
+## Name locked: STEN (owner 2026-10-11)
+
+The bobble-hat adult (key art cast #2, Stan's hat + blonde hair, smoker) is
+named **STEN**. Owner-confirmed. (Correction noted 2026-10-11: the owner says
+the Stan-based look is the ONLY key-art figure he sees as based on an actual
+South Park character — no other SP-reference claims should be asserted about
+#3, #5, or #6 without his word. Show him the pictures; he identifies.)

@@ -1,0 +1,174 @@
+{
+ "character": "Bubba (Bubbles-based) \u2014 the mobile home guys",
+ "identity_checklist": [
+  "rectangular glasses (separate layer)",
+  "light brown/blond hair",
+  "blue plaid button shirt",
+  "brown pants"
+ ],
+ "notes": "Preston Blair kit. Flat South Park cutout style, 600x900 registered canvas. Source: owner ChatGPT trio image (junkyard). Sweet face; \"Blower\" gag.",
+ "canvas": "600x900, character registered",
+ "source": "owner ChatGPT trio image /home/hatch/workspace/user/files/1000173537_10_cm4h.png",
+ "extracted_from_source": [
+  "hair"
+ ],
+ "hand_built": [
+  "everything else \u2014 incl. plaid pattern built procedurally, glasses as separate prop"
+ ],
+ "parts": [
+  {
+   "file": "arm_bent_L.png"
+  },
+  {
+   "file": "arm_bent_R.png"
+  },
+  {
+   "file": "arm_folded.png"
+  },
+  {
+   "file": "arm_punch_L.png"
+  },
+  {
+   "file": "arm_punch_R.png"
+  },
+  {
+   "file": "arm_straight_L.png"
+  },
+  {
+   "file": "arm_straight_R.png"
+  },
+  {
+   "file": "brows.png"
+  },
+  {
+   "file": "brows_angry.png"
+  },
+  {
+   "file": "brows_sad.png"
+  },
+  {
+   "file": "eyes_angry.png"
+  },
+  {
+   "file": "eyes_closed.png"
+  },
+  {
+   "file": "eyes_happy.png"
+  },
+  {
+   "file": "eyes_open.png"
+  },
+  {
+   "file": "eyes_sad.png"
+  },
+  {
+   "file": "eyes_scheming.png"
+  },
+  {
+   "file": "eyes_shocked.png"
+  },
+  {
+   "file": "feet.png"
+  },
+  {
+   "file": "hair.png"
+  },
+  {
+   "file": "hand_fist_L.png"
+  },
+  {
+   "file": "hand_fist_R.png"
+  },
+  {
+   "file": "hand_mitten_L.png"
+  },
+  {
+   "file": "hand_mitten_R.png"
+  },
+  {
+   "file": "hand_open_L.png"
+  },
+  {
+   "file": "hand_open_R.png"
+  },
+  {
+   "file": "hand_point_L.png"
+  },
+  {
+   "file": "hand_point_R.png"
+  },
+  {
+   "file": "head_base.png"
+  },
+  {
+   "file": "head_full.png"
+  },
+  {
+   "file": "legs_sit.png"
+  },
+  {
+   "file": "legs_stand.png"
+  },
+  {
+   "file": "legs_walk_01.png"
+  },
+  {
+   "file": "legs_walk_02.png"
+  },
+  {
+   "file": "legs_walk_03.png"
+  },
+  {
+   "file": "legs_walk_04.png"
+  },
+  {
+   "file": "legs_walk_05.png"
+  },
+  {
+   "file": "legs_walk_06.png"
+  },
+  {
+   "file": "mouth_closed.png"
+  },
+  {
+   "file": "mouth_frown.png"
+  },
+  {
+   "file": "mouth_grimace.png"
+  },
+  {
+   "file": "mouth_o.png"
+  },
+  {
+   "file": "mouth_open_med.png"
+  },
+  {
+   "file": "mouth_open_small.png"
+  },
+  {
+   "file": "mouth_open_wide.png"
+  },
+  {
+   "file": "mouth_smile.png"
+  },
+  {
+   "file": "prop_glasses.png"
+  },
+  {
+   "file": "pupils.png"
+  },
+  {
+   "file": "pupils_left.png"
+  },
+  {
+   "file": "pupils_right.png"
+  },
+  {
+   "file": "pupils_up.png"
+  },
+  {
+   "file": "torso_base.png"
+  }
+ ],
+ "piece_count": 51
+}

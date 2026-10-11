@@ -23,6 +23,17 @@ All parts share one 600x900 canvas with positions baked in — alpha-composite
 in `manifest.json → draw_order` for the full character.
 
 `tpb-trio-promo.png` — Tier A promotional title image (the likeness target).
+
+## The mobile home guys (owner 2026-10-11)
+
+`dickie/` (54pc), `bubba/` (51pc), `julio/` (51pc) — individual Preston Blair
+sheets for the real trio, built FROM the owner's ChatGPT trio image
+(`1000173537_10_cm4h.png`, the junkyard trio). Names LOCKED: Dickie
+(Ricky-based), Julio (Julian-based), Bubba (Bubbles-based). Likeness-critical
+pieces extracted via smart-extract/rembg (hair shapes, facial hair, flame/wolf
+graphic); dark clothing hand-built geometrically after rembg ate it;
+face furniture + pose variants hand-built in SP style. Every piece eye-verified
+against the source.
 `build_kits.py` — the builder. Re-run to regenerate everything.
 
 ## KIT-SPEC backfill (pending)

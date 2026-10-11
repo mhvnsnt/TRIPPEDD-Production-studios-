@@ -167,10 +167,16 @@ Anything not on it is not South Park-verified:
    never generation of the creative work itself.
 3. **LLM use confined to jokes ABOUT AI** — ChatGPT may write a deliberately bad
    ending as the bit. It does not write the show.
-4. **Explicitly NOT allowed:** AI voice cloning of performers (Stone refused it);
-   prompt-based image/video generation ("We're not typing in a prompt"); training on
-   or replicating anyone's likeness or IP without their explicit authorization (the
-   show itself satirizes exactly this in "Sora Not Sorry").
+4. **Explicitly NOT allowed:** prompt-based image/video generation ("We're not typing in a
+   prompt"); training on or replicating anyone's likeness or IP without their explicit
+   authorization (the show itself satirizes exactly this in "Sora Not Sorry").
+
+**Owner override (2026-10-11):** AI voice cloning IS used in TRIPPEDD/Goodville
+production — the owner's standing practice (voice pipeline, Chatterbox tests). The South
+Park rule bends here: cloning is **consent-gated only** (the Deep Voodoo philosophy —
+explicit authorization, never without it). No cloning of any real performer without
+their consent; characters based on real people get style-alike parody voices (house
+style, not impersonation), not clones.
 
 *Study written 2026-10-11 for TRIPPEDD Production Studios — Goodville Cartoon (SEG05)
 AI-use policy. Branch: `docs/south-park-ai-use`. Companion: `SOUTH-PARK-STUDY.md`.*

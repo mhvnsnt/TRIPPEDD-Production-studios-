@@ -233,3 +233,9 @@ Both exported at the final mix normalization level; reusable across the show.
   computed against the bed's own smoothed level to handle the riser crescendo).
 - Verified on pure bed stem: drone hits -72dB @33s, -24dB @34s.
 - Final: true peak -0.99dBFS, no clipping. Video stream untouched.
+
+## 2026-10-11 ~01:00 CDT — title card at 37-41s (owner)
+- Green "Luck of the Irish" title card (assets/luck-of-the-irish-title-card-green.jpg)
+  inserted as video 37-41s. Audio stream copied bit-identical (untouched).
+- Red variant saved as assets/luck-of-the-irish-title-card-red.jpg — RESERVED
+  for the next commercial (owner: next commercial uses the red one + a different disclaimer).

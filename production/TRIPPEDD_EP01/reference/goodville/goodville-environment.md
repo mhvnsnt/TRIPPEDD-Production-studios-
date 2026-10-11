@@ -128,6 +128,28 @@ Classic South Park pacing, delivery, and joke style — mixed with the owner's o
 culture references. South Park's parody-voice grammar (not direct impersonations) is the
 model for every character voice.
 
+## Character construction doctrine (owner 2026-10-11)
+
+Every Goodville character is built FROM THE PICTURES — the key art is the model sheet.
+Construction follows two disciplines at once:
+
+1. **South Park's construction grammar** (per `docs/research/SOUTH-PARK-STUDY.md`): the
+   character formula (circle heads, eye ovals, mitten hands, hat/anchor = identity),
+   stepped animation grammar, flat cutout parts.
+2. **Preston Blair-style character construction**: outfit, body, face, the whole
+   character — built as a complete construction from the reference, part by part,
+   measured against the picture. No invented proportions, no drift.
+
+**Hand-built, never AI-generated.** The key art was AI-generated, but that look is
+achievable by hand — and hand-building is how we hold the style lock. If AI tooling
+touches the show at all, it must NEVER drift the style: no AI slop, no "improved"
+rendering, no deviation from the locked look in any way. (The owner wants free
+ideation and thinking — but the production output holds the lock absolutely.)
+
+Extraction discipline per the SMART-WAY LAW: rembg + vision verification
+(sense → trace → cut → verify loop), never flood-fill; positioning from measured
+key-art anchors, never eyeballed.
+
 ## Production directive (owner 2026-10-10)
 
 "Steal it all, especially how they make their show and the whole pipeline." The Goodville

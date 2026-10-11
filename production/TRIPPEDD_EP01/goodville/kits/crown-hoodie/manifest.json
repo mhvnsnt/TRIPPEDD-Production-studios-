@@ -21,7 +21,7 @@
     "w": 282,
     "h": 208
    },
-   "notes": "flattened to flat skin #F2BB7B (box-fill artifacts removed) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+   "notes": "REBUILT attempt 3: color-keyed from key art (660,590)-(895,810); old had transparency holes."
   },
   {
    "file": "beanie.png",
@@ -550,7 +550,42 @@
     "h": 44
    },
    "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "brows_neutral.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "hair_full.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_34L.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_34R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_profile_R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "torso_34.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "torso_back.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
   }
  ],
- "note": "OWNER'S STAND-IN \u2014 likeness held to highest standard"
+ "note": "attempt 3 (2026-10-11): head rebuilt (owner stand-in, extra care); angles via feature-shift; torso_34/back."
 }

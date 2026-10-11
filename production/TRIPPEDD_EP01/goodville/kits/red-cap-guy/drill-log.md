@@ -26,3 +26,17 @@
   higher density
 - legs/feet/shoes invented (jeans blue, white sneakers): key art crops at
   the waist, so the lower body is SP-convention invention, not likeness
+
+## Attempt 3 rebuild (2026-10-11)
+- head_base was generic placeholder — rebuilt: rembg face cut + color-keyed red cap (170,54,31) + orange hair.
+- torso_base was faint outline — rebuilt: white tank via key, mirror-reconstructed occluded center (bottle prop separate).
+- prop_bottle_full.png (bottle+hand) extracted clean via rembg.
+- Variants rescaled (eyes 89,103 / mouth 89,163 / brows 90,73). Angles via feature-shift; profile from 34R.
+
+## Defect repair (2026-10-11) — blank white torso silhouettes
+- Root cause: white tank keyed out as background (white-on-white key too aggressive).
+- Fix: re-extracted from key art via luminance key (bright + low-sat, u2net dropped
+  the white tank). Kept comps 1+2 (tank body + right strap), excluded text overlay.
+  Bottle-occluded center filled with median tank color (232,221,214); bottle remains
+  separate prop. Green bottle-bleed cleaned. torso_34 = 0.85x squeeze of base;
+  torso_back = mirrored base + raised neckline. All three show the real tank now.

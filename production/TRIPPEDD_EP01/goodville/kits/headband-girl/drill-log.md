@@ -14,7 +14,7 @@
 - 2026-10-11: Hair isolated by luminance key caught the BROWN background post.
   Fixed with neutral-dark key (spread<30) + extraction-alpha silhouette constraint +
   manual post exclusion. Clean.
-- 2026-10-11: head_base first build had kid's hat + crown's beanie intruding (crop too
+- 2026-10-11: head_base first build had STEN's hat + crown's beanie intruding (crop too
   wide) and box-fill artifacts. Rebuilt from key art with skin-color key, tighter crop
   (435,505)-(625,810), flattened to #A06335, alpha maxed. Clean.
 - 2026-10-11: prop_earring_R came back EMPTY (gold key too strict on occluded hoop).
@@ -28,3 +28,16 @@
   and it's not a clear anchor).
 - The headband's center mark is very subtle in key art; the kit's mark is an
   interpretation of the dark squiggle.
+
+## Attempt 3 rebuild (2026-10-11)
+- Head stack rebuilt from key-art rembg cut (445,590)-(650,810): head_base (skin 150,94,54 + hair), headband.png (purple 141,97,140), donor eyes_open/pupils/brows_neutral/mouth_closed.
+- Expression variants rescaled to donor anchors (eyes 78,140 / mouth 105,190 / brows 100,106). Pupil direction variants from donor shift.
+- Angles: head_34L/34R (feature-shift), head_profile_R (from 34R + nose).
+- Torso: torso_34 (squeeze), torso_back (purple 107,70,103 constructed). preview_sheet.png added.
+
+## Defect repair (2026-10-11) — white rectangles on cheeks
+- Root cause: head_base/34L/34R/profile_R had rectangular transparent HOLES in the
+  lower cheek (leftover mouth-socket cut, oversized vs the actual mouth).
+- Fix: filled interior transparent regions in lower face (y>0.6h) with flat skin
+  #9A6034 (sampled). Eye sockets (upper face) preserved. Mouths composite on top
+  of the now-solid head. All 4 head angles verified clean.

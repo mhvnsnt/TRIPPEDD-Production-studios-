@@ -32,3 +32,17 @@
 - The hoodie's drawstring/hood details are simplified (key art shows a hood collar;
   kit has a basic collar shape).
 - Sideburns are an interpretation (thin in key art, partially occluded by beanie).
+
+## Attempt 3 rebuild (2026-10-11) — owner's stand-in, extra care
+- head_base.png had transparency HOLES — rebuilt via color-key from key art (660,590)-(895,810). rembg failed (black beanie dropped).
+- Layers: beanie (black), hair_full (brown sideburns), donor eyes_open/pupils/brows_neutral, drawn frown mouth_closed.
+- Variants rescaled to anchors (eyes 84,121 / mouth 117,187 / brows 117,70). Angles via feature-shift; profile from 34R + nose.
+- torso_34/back added. preview_sheet.png. All verified vs key art.
+
+## Defect repair (2026-10-11) — blank white eyes (no pupils)
+- Root cause: pupils.png existed as separate donor but was never composited into
+  head angles; also the donor had a cross-eyed error (L pupil right-of-center) +
+  edge smudge artifact.
+- Fix: drew clean pupils looking LEFT (17px left of eye center, per key art) on
+  head_base/34L/34R/profile_R and eyes_open.png. Removed old pupil remnants +
+  edge smudge. All heads verified with pupils.

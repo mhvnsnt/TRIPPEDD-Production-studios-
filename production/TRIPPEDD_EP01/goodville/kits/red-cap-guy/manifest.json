@@ -2,7 +2,7 @@
  "character": "red-cap-guy",
  "source": "assets/references/ep01/source/Goodville - Not South Park.png",
  "tier": "B",
- "note": "Visual design only \u2014 no invented personalities. Below-waist clothing invented from SP convention (key art crops at waist); everything above the waist measured from key art.",
+ "note": "attempt 3 (2026-10-11): full rebuild from key art; angles via feature-shift.",
  "canvas": [
   600,
   900
@@ -429,7 +429,7 @@
     "w": 175,
     "h": 241
    },
-   "notes": "skin circle + ears; dims measured from head_keyart tight bbox"
+   "notes": "REBUILT attempt 3: rembg face + color-keyed red cap; old was generic placeholder."
   },
   {
    "file": "head_keyart.png",
@@ -671,7 +671,52 @@
     "w": 600,
     "h": 900
    },
-   "notes": "tank / polo measured from key art; flat SP cutout"
+   "notes": "REBUILT attempt 3: white tank via key + mirror-reconstruct (bottle occluded center); old was faint outline."
+  },
+  {
+   "file": "hair_full.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "hat_cap_full.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_34L.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_34R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_profile_R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "preview.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "prop_bottle_full.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "torso_34.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "torso_back.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
   }
  ],
  "provenance": "hand-built PIL (supersampled 2x) + smart-extract rembg cutouts; no AI imagery; no flood-fill",

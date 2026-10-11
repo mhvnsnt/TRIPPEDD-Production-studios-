@@ -43,7 +43,7 @@
     "w": 179,
     "h": 160
    },
-   "notes": "re-cropped to (435,505)-(625,810) excluding kid hat + crown beanie; hair/band/hoops dropped by keys; features filled; flattened to #A06335 [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+   "notes": "REBUILT attempt 3: from key-art rembg cut (445,590)-(650,810); skin+hair actual colors, headband/features as separate layers."
   },
   {
    "file": "prop_earring_L.png",
@@ -296,7 +296,7 @@
     "w": 172,
     "h": 143
    },
-   "notes": "torso extraction cropped to clean region (kid hand/cig at top-left, black at right cut away) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+   "notes": "torso extraction cropped to clean region (STEN hand/cig at top-left, black at right cut away) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
   },
   {
    "file": "arm_straight_L.png",
@@ -550,6 +550,37 @@
     "h": 40
    },
    "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "brows_neutral.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key-art rembg cut, verified vs key art"
+  },
+  {
+   "file": "head_34L.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key-art rembg cut, verified vs key art"
+  },
+  {
+   "file": "head_34R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key-art rembg cut, verified vs key art"
+  },
+  {
+   "file": "head_profile_R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key-art rembg cut, verified vs key art"
+  },
+  {
+   "file": "torso_34.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key-art rembg cut, verified vs key art"
+  },
+  {
+   "file": "torso_back.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key-art rembg cut, verified vs key art"
   }
- ]
+ ],
+ "note": "attempt 3 (2026-10-11): full head rebuild from key art; furniture rescaled to donor anchors; 34L/34R/profile via feature-shift; torso_34/back."
 }

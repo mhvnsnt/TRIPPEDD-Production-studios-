@@ -222,6 +222,17 @@ converting a single verdict into a permanent law — "never AI-generated,"
 "painterly is trash," "flat is the eternal style." STOP. Track what he likes vs.
 what he doesn't, per piece. His direction on style is ongoing, not a box.
 
+**What the key art actually is (owner 2026-10-11):** the key art — the first
+original image — is the target for the WORLD and the SOUTH PARK LOOK, all of it.
+It looks like South Park, better than South Park. The agent's "painterly" vs.
+"flat" labels are HIS boxes, not the owner's — drop them. The real craft to
+understand: how South Park builds characters that stay CLOSE, especially when
+based on real people — like the old head holding Jim Lahey's likeness (he
+already looked like that in the key art, and the look was kept). THE GOAL for
+every based-on-a-person character (Dickie, Julio, Bubba, and going forward):
+South Park versions that actually look like the people — likeness THROUGH the
+South Park construction, the way the old head looks like Lahey.
+
 **The beef — mobile home guys vs. white trash trailer men (owner 2026-10-11):**
 The real trio — "the mobile home guys" — show up AFTER the old head, like:
 "what the fuck? We've been hearing about this shit." The old head's been saying

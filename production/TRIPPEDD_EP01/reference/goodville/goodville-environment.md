@@ -213,12 +213,14 @@ the reference lives.
   back, not filing. When he hands the recipe, cook.)
 - The imposter trio: names TBD for later.
 
-**Character art style rule (owner 2026-10-11 — the painterly drift):** character art
-is SOUTH PARK CHARACTER ART STYLE — flat South Park construction and rendering,
-like the actual show. The painterly trio version was TRASHED: painterly rendering
-sanded the likenesses off into random characters and drifted across three
-different art styles. The key art stays the world/promo style target, but
-CHARACTERS hold the South Park character-art lock. No drift.
+**Style feedback, accurately recorded (owner 2026-10-11):** the owner rejected ONE
+painterly trio image — the likenesses of Dickie/Julio/Bubba drifted into random
+characters and it didn't match the other trio art. That file was removed. He did
+NOT declare painterly dead as a style, and did NOT crown any one rendering the
+permanent style. CORRECTION 2026-10-11 (the boxing-in pattern): the agent keeps
+converting a single verdict into a permanent law — "never AI-generated,"
+"painterly is trash," "flat is the eternal style." STOP. Track what he likes vs.
+what he doesn't, per piece. His direction on style is ongoing, not a box.
 
 **The beef — mobile home guys vs. white trash trailer men (owner 2026-10-11):**
 The real trio — "the mobile home guys" — show up AFTER the old head, like:

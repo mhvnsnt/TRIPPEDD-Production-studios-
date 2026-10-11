@@ -260,3 +260,32 @@ the imposters have poisoned the well. They look MORE like the actual Bubbles, Ri
 and Julian from Trailer Park Boys — in South Park style — and they ACT like them.
 (Parody exemption applies; visual design + archetype behavior only, no invented
 canon beyond what the owner directs.)
+
+## Trio character writing (owner 2026-10-11 — DOCUMENTED, not locked canon per C08)
+
+**Dickie** (Ricky-based): acts like Trailer Park Boys' Ricky, but a little MORE
+asshole-y — "a little mixed with Cartman." He does the smokes thing: always
+after cigarettes, "bring me some smokes."
+
+**Bubba** (Bubbles-based): running gag — somebody (Dickie) calls him **"Blower"**
+and he snaps: "what the fuck, my name is not Blower, like, what the fuck?"
+
+**Julio** (Julian-based): spelled JULIO with a J. Running gag: some people
+pronounce it with an H ("Hulio"), like he's Mexican — even though he's not.
+He gets the Julian hero treatment: everybody's always "just wait till Julio
+gets back," like he's the hero of the trailer park — while at the same time
+everybody treats the whole trio like shit. Both things are true.
+
+## Method lessons (owner 2026-10-11)
+
+**Images beat text prompts.** The agent's failure pattern: reaching for text
+prompts to achieve what a reference image achieves better (the trio likeness
+work). When the job is "look like THIS," start from the image — reference in,
+not description in. Applies everywhere, not just character art.
+
+**Transformation edits are a repeatable process.** The Luck of the Irish
+commercial's transformation (green iris close/whoosh → iris opens on the
+transformed character, PR #109) worked and the owner approved the approach.
+The full process must be documented as a reusable recipe for future
+transformation edits/animation. (Follow-up task, parked while the show is
+the focus.)

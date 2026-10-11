@@ -96,3 +96,12 @@ px remaining in logo zone).
 **Verification:** every piece composited on head_blank and eye-checked
 zoomed vs key art. Reconstruction check: blank+eyes+brows+mouth vs donor =
 mean diff 3.0 (1.5% px differ, all at furniture edges — expected).
+
+## 2026-10-11 — v3 eye rebuild (SP adult construction)
+Research (report.md): adults = sideways ovals, inward tilt, tight spacing,
+small solid-black pupils. Old v2 eyes were generic upright circles.
+Rebuilt 11 variants in v3/ on the SAME anchor slots (pair 172x94 at (61,152)):
+open, closed, angry, happy, worried, look L/R/up/down, squint, half-lidded.
+Eye: 78x58 sideways oval, 12deg inward tilt, 26px pupils. Lids occlude the
+white (skin shapes, not floating lines). Verified zoomed on head_blank —
+reads as HIM, reads as South Park.

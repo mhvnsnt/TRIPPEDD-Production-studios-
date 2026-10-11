@@ -792,7 +792,27 @@
     338
    ]
   },
-  "measured_from": "v2/anchors.json (key art bbox 598,512,878,860)",
+  "measured_from": "v2/anchors.json; v3 eyes keep v2 anchor positions",
   "measured_date": "2026-10-11"
+ },
+ "eyes_v3": {
+  "dir": "v3/",
+  "construction": "SP adult: sideways ovals (78x58), 12deg inward tilt, small gap, 26px solid-black pupils",
+  "variants": [
+   "eyes_open",
+   "eyes_closed",
+   "eyes_angry",
+   "eyes_happy",
+   "eyes_worried",
+   "eyes_look_L",
+   "eyes_look_R",
+   "eyes_look_up",
+   "eyes_look_down",
+   "eyes_squint",
+   "eyes_half_lidded"
+  ],
+  "slot": "pair 172x94 at (61,152) on head_blank \u2014 same anchors as v2",
+  "built": "2026-10-11",
+  "verified": "zoomed composites on head_blank"
  }
 }

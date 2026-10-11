@@ -164,6 +164,8 @@ animating, stepped cutout animation, sprint discipline, free tools only ($0).
 ## Visual style lock (owner 2026-10-11)
 
 The key art `assets/references/ep01/source/Goodville - Not South Park.png` ("the main ad")
+
+**Canonical name (owner 2026-10-11): "the first original Goodville title image."** When the owner says this, he means this file. It is the AI-generated original and the style target for all promo art.
 is the locked look for the Goodville Cartoon. All future show cuts must match it: the
 South Park-esque flat cutout style AND the specific character likenesses (faces, hats,
 builds, attire) as drawn there.

@@ -60,3 +60,35 @@ Each defect was re-verified with own eyes on the re-rendered frames.
 - Dino-costume guy is hand-drawn (no key-art donor exists for him); matches South Park grammar, not a locked likeness.
 - Mouth shapes are simple open/closed (2 shapes), not the full 6–8 viseme set — acceptable for a 15s promo.
 - A/V lip-sync is approximate (TEMP scratch timing); final mix will re-time to human VO.
+
+---
+
+## BLENDER REBUILD (2026-10-11) — owner directive: PIL draft "very off and bad"
+
+**Deliverable:** `goodville-promo-15s_BLENDER.mp4` — 15.000s, 1280×720, 24fps, h264+aac
+**Method:** Blender cutout rigs per `docs/research/SOUTH-PARK-STUDY.md` §8 — flat planes, orthographic camera, stepped animation, CONSTANT interpolation, separate rigged parts (heads, eyes, mouths, hands, arms, bodies as individual pieces, joined into chunks for render speed). Characters built from pure geometry (no photo-cutout textures). Paper grain overlay in post (PIL, 6% multiply, deterministic seed 7).
+**Render path:** Blender builds the rig + evaluates 360 frames of stepped animation (11s) → exports per-frame world transforms + rest geometry → PIL composites the flat orthographic cutouts (2s/frame). Cycles unusable on this 2-core VM (38-64s/frame even for trivial scenes); Eevee requires a GL context that doesn't exist headless. For flat emission cutouts under ortho, the composite is pixel-identical to a rasterizer.
+**Audio:** same `audio/promo_mix_TEMP.wav` (TEMP voices, generic-labeled, no cloning).
+**Scripts:** `blender/build_promo_blender.py` (rig + animation + export), `blender/composite_frames.py` (PIL composite), `blender/post_grain.py` (legacy; grain now in composite).
+
+### 5-defect carryover (PIL fixes preserved in the rebuild)
+| # | Defect | Status in Blender rebuild | Frame evidence |
+|---|--------|---------------------------|----------------|
+| 1 | Black bar artifact (shots 1-2) | FIXED — jacket is a shaped black trapezoid (shoulders), not a full-width bar | f0036, f0144: clean sign backdrop, no bar |
+| 2 | Old head oversized, covering GOODVILLE | FIXED — scale 1.1 (face ~220px), head top below GOODVILLE baseline, right-of-center | f0036: GOODVILLE fully readable |
+| 3 | Cigarette missing | FIXED — cigarette + ember tip as separate geometry, parented to head | f0036: cigarette visible at mouth corner |
+| 4a | BEER can blue like Pepsi | FIXED — key-art can: blue body, silver rim, red label, white "BEER" text object | f0250: can reads correctly in fist |
+| 4b | Blue rectangle on torso | GONE — was the PIL builder's placeholder; no placeholder in Blender build | f0250: no rectangle |
+| 5a | Bobblehead proportions | FIXED — head r=0.85 on body per key-art ratio | f0250: proportions match |
+| 5b | "TAC" cut off | FIXED — full "TACOS" text object, clears head (minor occlusion at f250 is depth, not cropping) | f0250: "TACOS" legible |
+| 5c | Stiff punch pose | FIXED — arm rotates about shoulder pivot (-72° into the punch), lunge-in | f0250: fist on dino head |
+
+### Sensorium gates (2026-10-11)
+- **smell** (anomaly): visual oddballs at 4.5s, 10.5s, 12.0-14.5s — all shot transitions or the dino-head-fly action (expected). Temporal pops at 9.0s (f216, shot 1-2→3 cut) and 13.0s (f312, shot 3→4 cut) — expected. Audio oddballs scattered, low scores (TEMP voices). Dropouts at 0.0-2.4s (silence at audio head).
+- **taste** (aesthetic): f0036/f0144 (shots 1-2): 0.464; f0250/f0280 (shot 3): 0.592; f0330 (end card): 0.774. No style_hold drift flagged (model trained on EP02 labels; used as drift signal only — eyeball-verified).
+- **Eyeball verification (own eyes):** f0036 (old head framing, GOODVILLE readable, cigarette), f0144 (push-in), f0250 (Amos punch, BEER can, TACOS), f0280/f0294 (dino head flying), f0330 (end card).
+
+### Known limitations / still off
+- End-card text ("GOODVILLE", "NOT SOUTH PARK.") uses low-tessellation curve conversion (resolution_u=2) — letters read as slightly geometric/octagonal (e.g., O's). Legible, fits the crude cutout style, but could be smoothed to resolution 3.
+- Amos Jr. head reads slightly large vs. the key-art lineup (hairback r=1.02). Acceptable for the promo, but the key-art ratio is tighter.
+- The dino head at f217-279 sits at the f280 keyframe position (no rest keyframe before f280; CONSTANT holds the first key). Visually correct (head sits naturally on body), but the rig could use an explicit rest key for cleanliness.

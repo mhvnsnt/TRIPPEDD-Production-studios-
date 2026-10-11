@@ -314,3 +314,23 @@ Outfit research (TPB canon, for variation ideas):
 
 Queued behind: the extraction rebuild (feat/trio-sheets) finishing + the free
 gen stack's first proven end-to-end run.
+
+## The Canadian nod (owner 2026-10-11 — DIRECTING RULE, documented not locked per C08)
+
+Dickie, Bubba, Julio, and Lieutenant Dangly are Canadian — but you forget it
+sometimes, and that's the point. DEFAULT: they look like their normal
+character likenesses. No flap-head, no beady Pac-Man look. This matches South
+Park's own practice: Canadian celebrities on the show (Sarah McLachlan, James
+Cameron, Justin Bieber, Tom Green) are drawn WITHOUT the Canadian features so
+they stay identifiable — only the generic Canadians get the flap.
+
+THE NOD (rare, deliberate): in select scenes, the full South Park Canadian
+treatment lands as a reminder — the head splits horizontally, the top half
+bounces/flaps up and down while talking, the mouth goes all the way across
+the face. It's a "hey — he's Canadian" punchline, not the house style. Example
+already in the can: Dangly telling the punch story, head wobbling side to
+side like a South Park Canadian while the tale unspools. In the key art he
+looks normal ("like an American") — both are true, the nod is the exception.
+
+Dickie character note (owner 2026-10-11): he's a mix of Eric Cartman and
+Trailer Park Boys' Ricky — the asshole dial turned up on both.

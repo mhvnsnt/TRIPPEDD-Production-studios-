@@ -68,7 +68,30 @@
       "file": "arm_R_sep.png",
       "desc": "Full-piece set from car trio image (owner 2026-10-11): arm R sep. Wide extraction, complete arms, u2net.",
       "source": "owner-chatgpt-car-trio"
-    }
+    },
+    "brow_neutral.png",
+    "brow_angry.png",
+    "brow_sad.png",
+    "brow_suspicious.png",
+    "brow_raised.png",
+    "head_nobrows.png",
+    "eyes_angry.png",
+    "eyes_look_L.png",
+    "eyes_look_R.png",
+    "eyes_look_up.png",
+    "eyes_look_down.png",
+    "eyes_open_standalone.png",
+    "mouth_smile.png",
+    "mouth_grin_big.png",
+    "mouth_yell_cavern.png",
+    "mouth_zipper.png",
+    "torso_back.png",
+    "hand_open.png",
+    "hand_fist.png",
+    "hand_point.png",
+    "hand_grip.png",
+    "hand_relaxed.png",
+    "sheet_preview.png"
   ],
   "provenance": {
     "arm_L.png": "extracted",
@@ -99,8 +122,9 @@
     "walk_1.png": "derived-from-extraction",
     "walk_2.png": "derived-from-extraction",
     "walk_3.png": "derived-from-extraction",
-    "walk_4.png": "derived-from-extraction"
+    "walk_4.png": "derived-from-extraction",
+    "sheet_v1_2026-10-11": "Expression set: 5 brows, 6 new eyes, 4 new mouths (hand-built, verified). head_nobrows derived. torso_back derived (7 buttons removed). 5 hands hand-built. mouth_neutral rebuilt clean. PENDING: 3/4 + profile heads (likeness gate \u2014 see drill log)."
   },
-  "count": 30,
+  "count": 59,
   "built": "2026-10-11T17:59:53.668760+00:00"
 }

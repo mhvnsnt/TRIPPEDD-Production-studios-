@@ -38,3 +38,20 @@ v2 fixes (all cuts from /home/hatch/workspace/user/files/1000173536_14_nhu1.png)
 - 5 pieces: upper_with_face, head_sep, torso_sep, arm_L_sep, arm_R_sep
 - Method: u2net wide extraction (isnet left intrusions / blacked faces). Slab separation with 30px feathered overlaps; pieces composite seamlessly (verified by reassembly).
 - Neck lines: below chin/goatee/beard. No face parts in torso pieces.
+
+## 2026-10-11 — Full Preston Blair sheet v1 (subagent)
+Expression set: 5 brows (neutral/angry/sad/suspicious/raised, his softer style),
+6 new eyes (angry, look L/R/up/down, open_standalone for under-glasses),
+4 new mouths (smile, grin_big w/ teeth, yell_cavern, zipper). All hand-built
+on 415x805 registered canvas, verified composited.
+mouth_neutral rebuilt clean (original had shirt fragment caught in extraction).
+head_nobrows: 3 attempts (brows sit at y~195-225, higher than first estimated).
+Hands x5 (open/fist/point/grip/relaxed), SP mitten style, his skin tone.
+torso_back: derived via adjacent plaid cloning, 7 buttons removed (count them,
+not 5), pocket flaps softened.
+PENDING: 3/4 L/R + profile heads. 5 attempts failed likeness gate: gen.py
+img2img drifted (double glasses frames, 4 pupils), ai_edit kept likeness but
+refused the turn, mesh/affine warps seamed, hand-drawn profiles bowl-cut
+drifted. Per LIKENESS LAW nothing ships until it looks like HIM. Path:
+owner's ChatGPT angle turn, or self-hosted Qwen/Kontext.
+sheet_preview.png: model sheet v1 (2400x3000).

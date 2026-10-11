@@ -38,3 +38,33 @@ v2 fixes (all cuts from /home/hatch/workspace/user/files/1000173536_14_nhu1.png)
 - 5 pieces: upper_with_face, head_sep, torso_sep, arm_L_sep, arm_R_sep
 - Method: u2net wide extraction (isnet left intrusions / blacked faces). Slab separation with 30px feathered overlaps; pieces composite seamlessly (verified by reassembly).
 - Neck lines: below chin/goatee/beard. No face parts in torso pieces.
+
+## Full Preston Blair sheet (2026-10-11 — owner: "the full fucking Preston Blair sheet")
+New: 31 pieces (66 total in kit).
+
+### v2 face furniture architecture
+Problem: v1 furniture (eyes_open, mouth_neutral) used skin-backing patches that showed as visible rectangles on the painterly-rendered face.
+Fix: **head_blank.png** — extracted head with brow/eye/mouth zones filled via cheek-gradient skin clone (sampled from the character's own cheek column, USE THE IMAGE LAW). All new furniture is TRANSPARENT (no backing) and composites onto head_blank. v1 backing pieces retained for compatibility; v2 supersedes for new work.
+
+### Brows (5, separate set — owner's key-feature directive)
+neutral, angry, sad, suspicious, raised. Thick expressive bars in his hair color (87,50,32), matching his brow style.
+
+### Eyes (8 new + worried retained)
+open, closed/blink, angry (heavy lid lines), happy (closed arcs), look_L/R/up/down. White ovals (242,240,238) with dark outline, pupils (18,18,18). Geometry measured from extraction: centers (328,352)/(452,352), radii 48x68.
+
+### Mouths (9 new + grin retained)
+neutral, smile, frown, smirk (his signature asymmetric), zipper (SP zipper mouth), open, ooh, yell (big cavern), jaw_flap (dropped jaw for the Canadian nod). Mustache+goatee stay on the head; open mouths cover goatee with dark interior.
+
+### Angle heads (4)
+- head_34l/head_34r: slice-warp of head_blank (far side 0.86x) + furniture shifted toward near side, seam feathered. Verified no visible join.
+- head_profile_L/R: hand-built in flat SP style from his palette (hair mass, single eye/brow, nose bump, ear, mustache/goatee in profile). R = mirror of L.
+
+### Bodies (3)
+- body_34l/body_34r: slice-warp of extracted body_full, seam feathered.
+- body_back: derived from body_full — face scanline-filled with hair (back of head), print removed per-pixel (deviation from shirt-black baseline), chain removed. Verified no print ghosts.
+
+### Hands (5)
+relaxed (matches arm mitten), open, fist, point, grip (C-shape for cans). Skin tone, SP mitten style.
+
+### Verification
+Every furniture piece composited on head_blank and eye-checked zoomed. Combos verified: yell, suspicious, happy, sad, zipper, jaw-flap. Angle heads and bodies checked against source likeness. sheet_preview.png contact sheet generated.

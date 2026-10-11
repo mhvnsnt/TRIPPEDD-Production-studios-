@@ -14,7 +14,7 @@
 - 2026-10-11: Hair isolated by luminance key caught the BROWN background post.
   Fixed with neutral-dark key (spread<30) + extraction-alpha silhouette constraint +
   manual post exclusion. Clean.
-- 2026-10-11: head_base first build had kid's hat + crown's beanie intruding (crop too
+- 2026-10-11: head_base first build had STEN's hat + crown's beanie intruding (crop too
   wide) and box-fill artifacts. Rebuilt from key art with skin-color key, tighter crop
   (435,505)-(625,810), flattened to #A06335, alpha maxed. Clean.
 - 2026-10-11: prop_earring_R came back EMPTY (gold key too strict on occluded hoop).

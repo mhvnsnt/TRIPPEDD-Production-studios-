@@ -25,3 +25,8 @@
 - polo collar is simplified vs key art (two flaps + V); fine at scale
 - legs/feet/shoes invented (dark pants, dark shoes): key art crops at the
   waist, so the lower body is SP-convention invention, not likeness
+
+## Identity lock 2026-10-11 — THE BASEMENT NERD
+- Classic basement-dweller: computer, video games, D&D, trading cards, anime, WoW (South Park WoW-episode archetype).
+- ORIGINAL character — NOT based on a specific South Park character. Name TBD.
+- Sheet built around the identity: bong + nerd-signifier props (controller, D20, trading card).

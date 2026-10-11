@@ -1,4 +1,8 @@
-# Likeness drill log — kid (blue/red bobble hat)
+# Likeness drill log — STEN (blue/red bobble hat)
+
+NAME LOCKED 2026-10-11: STEN. Adult. Stan-based (the only SP-based key-art figure per owner).
+
+OWNER CORRECTION 2026-10-11: ADULT, not a STEN. STEN (Stan hat colors + blonde hair). Name TBD (Sten proposed).
 
 ## vs Tier A promo art (key art)
 - Matches: blue hat dome + red brim + red pom silhouette; blonde side tuft color (#F2C04E);
@@ -13,9 +17,9 @@
 - 2026-10-11: First extraction round — head included hand + girl's hair (bbox too wide);
   hat included forehead/eyes (rembg kept whole head blob); torso grabbed Amos's arm +
   girl's arm (wrong subject). Re-extracted with tighter bboxes.
-- 2026-10-11: round2 kid_head extraction came back DARK (rembg partial alpha, RGB
+- 2026-10-11: round2 STEN_head extraction came back DARK (rembg partial alpha, RGB
   (134,106,84) at 54% alpha vs key-art (248,195,155)). Re-extracted with larger crop
-  (kid_head_fix) — clean.
+  (STEN_head_fix) — clean.
 - 2026-10-11: Blonde tuft isolated by blue-channel key caught SKIN (big tan blob).
   Re-isolated from key art with blonde key (r>200&g>150&b<130) in tuft region — correct.
 - 2026-10-11: head_base had visible box-fill artifacts (filled feature regions read as
@@ -29,4 +33,4 @@
   or provide reference.
 - The cigarette grip hand is hand-built (not extracted); the key-art hand is small
   (~20px) and partially occluded.
-- No neutral brows in key art (kid has none visible); brows only on angry/sad per SP kid grammar.
+- No neutral brows in key art (adult grammar correction 2026-10-11: adults have visible brows; brows_neutral added — the old "SP STEN grammar" note was wrong, he is an adult).

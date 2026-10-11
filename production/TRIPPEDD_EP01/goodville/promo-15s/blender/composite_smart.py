@@ -94,6 +94,9 @@ def mask_oh_torso():
     d.rectangle([30, 0, 230, 190], fill=0)
     # green blob intruder (left edge)
     d.rectangle([0, 90, 65, h], fill=0)
+    # gray road background (top-left, unmasked in v1 -> floating gray box
+    # artifact in shots 1-2). Measured: x 0-38, y 28-92.
+    d.rectangle([0, 28, 38, 92], fill=0)
     # top background strip
     d.rectangle([0, 0, w, 28], fill=0)
     # soften the mask edge slightly to avoid a hard cut line
@@ -128,10 +131,13 @@ def mask_amos_arm():
 
 
 def extract_can():
-    """The real key-art BEER can (x 115-175, y 240-322 in the body texture).
-    It rides in the SP punch fist — the can is an identity anchor."""
-    im = Image.open(os.path.join(PROVE, "amos_full_body.png")).convert("RGBA")
-    return im.crop((115, 240, 175, 322))
+    """The real key-art BEER can via the SMART pipeline
+    (tools/smart-extract/proving_run/amos_beer_can.png — rembg ladder,
+    clean transparent background). Replaces the old opaque crop that
+    rendered as a white box. It rides in the SP punch fist — the can is
+    an identity anchor."""
+    return Image.open(os.path.join(
+        PROVE, "amos_beer_can.png")).convert("RGBA")
 
 
 def build_punch_arm(length_px, width_px, can_img, arm_scale):
@@ -221,6 +227,11 @@ def draw_oldhead(img, f, fobjs, parts):
     S = oh_scale(fobjs)
     # head center (screen)
     hcx, hcy = rig_head_screen(fobjs, "OH_head_geo", camx)
+    # FRAMING FIX (2026-10-11): shift down/right so the full tagline
+    # "SAME PEOPLE. DIFFERENT BULLSHIT." reads (matches PR #149 Blender
+    # rebuild framing). Torso stays grounded off the bottom frame edge.
+    hcx += 175
+    hcy += 50
     # torso: align its head-center to the rig head center, same scale
     torso = parts["oh_torso"]
     tx = hcx - OH_TORSO_HEAD_CX * S

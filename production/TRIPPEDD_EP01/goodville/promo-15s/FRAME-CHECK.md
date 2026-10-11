@@ -189,3 +189,37 @@ characters are the REAL key-art extractions, positioned by measurement.
 - The jaw split seam hides in the mouth line; on wide-open shapes a dark mouth
   interior is drawn behind (SP method).
 - Old head has no separate ember glow (key art shows none; matched exactly).
+
+## Defect-fix pass 2026-10-11 (parent-verified, 3 defects)
+
+### 1. WHITE RECTANGLE ARTIFACT (below-left of Amos Jr.'s torso, ~10.5s/11.7s)
+- **Root cause:** `extract_can()` cropped (115,240)-(175,322) from the smart
+  full-body extraction, whose alpha was ~250 everywhere (opaque) — the white
+  key-art background around the can rendered as a box in the fist.
+- **Fix:** re-extracted the can via the SMART pipeline
+  (`tools/smart-extract/extract.py`, rembg ladder, bbox from
+  `muse.visual_grounding` on the key art) → clean transparent background.
+  Asset: `tools/smart-extract/proving_run/amos_beer_can.png`
+  (+ `beer_can_spec.json`). `extract_can()` now loads it. No flood-fill.
+- **Verified:** white box GONE at 10.5s and 11.7s (own eyes on final MP4).
+  Can sits cleanly in the SP fist; key-art fingers blend with the tan fist.
+
+### 2. GRAY RECTANGLE ARTIFACT (floating left of old head's head, ~1s)
+- **Root cause:** unmasked gray road background at top-left of
+  `oldhead_body.png` (texture x 0-38, y 28-92; 1820 opaque px) — the
+  `mask_oh_torso()` rectangles missed it.
+- **Fix:** extended the pipeline mask in `mask_oh_torso()` with the measured
+  rectangle [0, 28, 38, 92]. No flood-fill.
+- **Verified:** gray box GONE at 1s and 5s (own eyes on final MP4).
+
+### 3. OLD HEAD COVERED THE TAGLINE (shots 1-2)
+- **Fix:** `draw_oldhead()` shifts the whole character down/right
+  (hcx += 175, hcy += 50) — matches PR #149 Blender rebuild framing.
+  Torso stays grounded off the bottom frame edge (no floating bust).
+- **Verified:** "SAME PEOPLE. DIFFERENT BULLSHIT." FULLY readable at 1s and
+  5s (own eyes on final MP4). (First attempt at +130 still clipped the final
+  "T." — bumped to +175 and re-verified.)
+
+### Sensorium gate (final MP4, 2026-10-11)
+- taste 0.538 (thr 0.35) PASS · style_hold 0.991 mean / 0.935 min (thr 0.7) PASS
+- smell: 2 severe_pops PASS · sync: no flags PASS · **OVERALL PASS**

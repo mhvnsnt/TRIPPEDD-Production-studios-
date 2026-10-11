@@ -182,6 +182,171 @@
       "file": "torso_no_viewerR_arm.png",
       "desc": "Owner's Gemini torso, viewer's-RIGHT (character's LEFT) arm missing \u2014 for left-arm movements. Background keyed out by parent 2026-10-11.",
       "source": "owner-gemini"
+    },
+    {
+      "file": "body_34L.png",
+      "desc": "3/4 body via smooth-displacement transform of body_full.png.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "body_34R.png",
+      "desc": "3/4 body via smooth-displacement transform of body_full.png.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "body_back.png",
+      "desc": "Hand-built back view (hair + tank); low likeness risk.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "body_sitting.png",
+      "desc": "Torso from body_full + invented legs (pending owner confirmation).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "brow_angry.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "brow_neutral.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "brow_raised.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "brow_sad.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "brow_suspicious.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "eyes_angry.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "eyes_happy.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "eyes_look_L.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "eyes_look_R.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "eyes_look_up.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "eyes_worried.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "hand_grip.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "hand_point.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "hand_relaxed.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "head_34L.png",
+      "desc": "3/4 head via smooth-displacement transform of head.png (gen.py img2img produced unusable glitch \u2014 documented).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "head_34R.png",
+      "desc": "3/4 head via smooth-displacement transform of head.png.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "head_profile.png",
+      "desc": "Near-profile derived from right-half of head.png (HIS pixels); no true profile exists in source. Honest derivation, not a redraw.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "legs_stand.png",
+      "desc": "INVENTED (no legs in key art) \u2014 pending owner confirmation.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "mouth_frown.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "mouth_grin.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "mouth_ooh.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "mouth_smile.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "mouth_smirk.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "mouth_yell.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "preview_sheet.png",
+      "desc": "Full-sheet piece (2026-10-11).",
+      "source": "sheet-build"
+    },
+    {
+      "file": "walk_1.png",
+      "desc": "INVENTED walk cycle \u2014 pending owner confirmation.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "walk_2.png",
+      "desc": "INVENTED walk cycle \u2014 pending owner confirmation.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "walk_3.png",
+      "desc": "INVENTED walk cycle \u2014 pending owner confirmation.",
+      "source": "sheet-build"
+    },
+    {
+      "file": "walk_4.png",
+      "desc": "INVENTED walk cycle \u2014 pending owner confirmation.",
+      "source": "sheet-build"
     }
   ],
   "source": "assets/references/ep01/source/Goodville - Not South Park.png",

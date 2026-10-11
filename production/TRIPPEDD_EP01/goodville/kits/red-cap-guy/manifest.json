@@ -1,0 +1,679 @@
+{
+ "character": "red-cap-guy",
+ "source": "assets/references/ep01/source/Goodville - Not South Park.png",
+ "tier": "B",
+ "note": "Visual design only \u2014 no invented personalities. Below-waist clothing invented from SP convention (key art crops at waist); everything above the waist measured from key art.",
+ "canvas": [
+  600,
+  900
+ ],
+ "draw_order": [
+  "legs_stand",
+  "feet_L",
+  "feet_R",
+  "torso_base",
+  "arm_straight_L",
+  "arm_folded_R",
+  "hand_mitten_L",
+  "hand_grip_bottle_R",
+  "hair",
+  "head_base",
+  "eyes_open",
+  "pupils",
+  "facial_hair",
+  "hat_cap",
+  "mouth_closed",
+  "prop_bottle"
+ ],
+ "identity_checklist": [
+  "backwards red cap with dark back opening + strap",
+  "orange side hair tufts",
+  "big white oval eyes, close-set",
+  "small smile, light chin stubble",
+  "white tank top, bare arms",
+  "green bottle prop held at chest"
+ ],
+ "palette": {
+  "skin": "#F0BC80*",
+  "eye_white": "#F1EEE9",
+  "ink": "#241C14",
+  "cap_red": "#A32E1E*",
+  "cap_dark": "#6E1914",
+  "cap_open": "#3A1512",
+  "cap_strap": "#7E241C*",
+  "hair_orange": "#AC6128*",
+  "hair_orange_dark": "#8A4E1F",
+  "tank": "#F5F5F5",
+  "bottle_green": "#2E7D33*",
+  "bottle_dark": "#1E5523",
+  "bottle_hi": "#7FBF7F",
+  "stubble": "#C89A68",
+  "jeans": "#3E5FAD!",
+  "shoe": "#E8E8E8!"
+ },
+ "palette_note": "* = single-pixel/sampled from key art; ! = invented (below-waist, key art crops at waist)",
+ "anchors": {
+  "head_center": [
+   300,
+   210
+  ],
+  "eye_L": [
+   253,
+   222
+  ],
+  "eye_R": [
+   320,
+   213
+  ],
+  "mouth": [
+   300,
+   263
+  ],
+  "shoulder_L": [
+   215,
+   372
+  ],
+  "shoulder_R": [
+   385,
+   372
+  ]
+ },
+ "parts": [
+  {
+   "file": "arm_bent_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "arm_bent_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "arm_folded_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "folded = key-art prop-hold pose"
+  },
+  {
+   "file": "arm_folded_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "folded = key-art prop-hold pose"
+  },
+  {
+   "file": "arm_punch_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "arm_punch_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "arm_straight_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "arm_straight_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "brows_angry.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": ""
+  },
+  {
+   "file": "brows_neutral.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "RC: expression-only (no resting brows in key art); GB: thin lines above glasses at rest"
+  },
+  {
+   "file": "brows_sad.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": ""
+  },
+  {
+   "file": "brows_scheming.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": ""
+  },
+  {
+   "file": "eyes_angry.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "eye centers/radii measured from head_keyart white blobs"
+  },
+  {
+   "file": "eyes_closed.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "eye centers/radii measured from head_keyart white blobs"
+  },
+  {
+   "file": "eyes_open.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "eye centers/radii measured from head_keyart white blobs"
+  },
+  {
+   "file": "eyes_sad.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "eye centers/radii measured from head_keyart white blobs"
+  },
+  {
+   "file": "eyes_scheming.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "eye centers/radii measured from head_keyart white blobs"
+  },
+  {
+   "file": "eyes_shocked.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "eye centers/radii measured from head_keyart white blobs"
+  },
+  {
+   "file": "facial_hair.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "chin/jaw stipple measured from extraction"
+  },
+  {
+   "file": "feet_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "shoes as circles cut in half (study s8B)"
+  },
+  {
+   "file": "feet_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "shoes as circles cut in half (study s8B)"
+  },
+  {
+   "file": "hair.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "behind-head layer (study s3); orange tufts / brown cap measured from extraction"
+  },
+  {
+   "file": "hand_fist_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "hand_fist_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "hand_grip_bottle_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "fist wrapped for the bottle"
+  },
+  {
+   "file": "hand_grip_bottle_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 943,
+    "y": 806,
+    "w": 64,
+    "h": 126
+   },
+   "notes": "registered to the folded-arm grip point (viewer-right, the key-art hold); key-art grip measured KA x[975,1020] y[860,910]"
+  },
+  {
+   "file": "hand_mitten_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "hand_mitten_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "hand_point_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "hand_point_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "hat_cap.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 903,
+    "y": 563,
+    "w": 169,
+    "h": 108
+   },
+   "notes": "measured from cap extraction (dome/opening/strap); separate accessory \u2014 hat = identity"
+  },
+  {
+   "file": "head_base.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "skin circle + ears; dims measured from head_keyart tight bbox"
+  },
+  {
+   "file": "head_keyart.png",
+   "method": "extracted",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "Tier A likeness reference (tight rembg cutout). NOT a rig part \u2014 drill target for head_base + features."
+  },
+  {
+   "file": "legs_sit.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": ""
+  },
+  {
+   "file": "legs_stand.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "rectangle legs (study s8B); below waist invented \u2014 key art crops at the waist"
+  },
+  {
+   "file": "legs_walk_01.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "stiff side-to-side shuffle, 6 stepped poses (study s8C)"
+  },
+  {
+   "file": "legs_walk_02.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "stiff side-to-side shuffle, 6 stepped poses (study s8C)"
+  },
+  {
+   "file": "legs_walk_03.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "stiff side-to-side shuffle, 6 stepped poses (study s8C)"
+  },
+  {
+   "file": "legs_walk_04.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "stiff side-to-side shuffle, 6 stepped poses (study s8C)"
+  },
+  {
+   "file": "legs_walk_05.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "stiff side-to-side shuffle, 6 stepped poses (study s8C)"
+  },
+  {
+   "file": "legs_walk_06.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "stiff side-to-side shuffle, 6 stepped poses (study s8C)"
+  },
+  {
+   "file": "mouth_closed.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "7 replacement mouths (study s4); smile = key-art signature"
+  },
+  {
+   "file": "mouth_grimace.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "7 replacement mouths (study s4); smile = key-art signature"
+  },
+  {
+   "file": "mouth_o.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "7 replacement mouths (study s4); smile = key-art signature"
+  },
+  {
+   "file": "mouth_open_med.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "7 replacement mouths (study s4); smile = key-art signature"
+  },
+  {
+   "file": "mouth_open_small.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "7 replacement mouths (study s4); smile = key-art signature"
+  },
+  {
+   "file": "mouth_open_wide.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "7 replacement mouths (study s4); smile = key-art signature"
+  },
+  {
+   "file": "mouth_smile.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "7 replacement mouths (study s4); smile = key-art signature"
+  },
+  {
+   "file": "prop_bottle.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 943,
+    "y": 806,
+    "w": 64,
+    "h": 126
+   },
+   "notes": "clean bottle measured from the extraction (w64 h126, neck, label band); the extraction's grip hand ghosted in rembg so a measured hand-build carries the prop"
+  },
+  {
+   "file": "pupils.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": "neutral"
+  },
+  {
+   "file": "pupils_left.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": ""
+  },
+  {
+   "file": "pupils_right.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": ""
+  },
+  {
+   "file": "pupils_up.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 900,
+    "y": 563,
+    "w": 175,
+    "h": 241
+   },
+   "notes": ""
+  },
+  {
+   "file": "torso_base.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 600,
+    "h": 900
+   },
+   "notes": "tank / polo measured from key art; flat SP cutout"
+  }
+ ],
+ "provenance": "hand-built PIL (supersampled 2x) + smart-extract rembg cutouts; no AI imagery; no flood-fill",
+ "style": "South Park-esque flat cutout per key-art lock"
+}

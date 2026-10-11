@@ -52,3 +52,12 @@ silent — staff later confirm he didn't say a word inside. The German was
 exclusively for the parking lot.
 
 Status: idea banked, not yet written.
+
+## "Death vs. the IRS" (bit premise, owner 2026-10-10)
+
+Death and taxes — but at least death is HONEST. Death doesn't hunt you down
+over fake make-believe paper cloth. The IRS will ruin your life over numbers
+somebody typed into a spreadsheet. When the alternative is the IRS, the grim
+reaper starts looking like a relief pitcher.
+
+Status: bit premise, not yet written.

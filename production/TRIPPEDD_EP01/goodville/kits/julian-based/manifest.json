@@ -1,0 +1,74 @@
+{
+  "character": "julian-based",
+  "name": null,
+  "name_tbd": true,
+  "note": "Visual design only \u2014 parody-riff original. Name, voice, personality and traits assigned by owner.",
+  "canvas": [
+    600,
+    900
+  ],
+  "draw_order": [
+    "body",
+    "arm_L",
+    "arm_R",
+    "prop_in_hand",
+    "hand_L",
+    "hand_R",
+    "head",
+    "eyes_open",
+    "mouth_closed"
+  ],
+  "anchors": {
+    "head_center": [
+      300,
+      215
+    ],
+    "head_r": 105,
+    "eye_L": [
+      267,
+      220
+    ],
+    "eye_R": [
+      333,
+      220
+    ],
+    "mouth": [
+      300,
+      298
+    ],
+    "shoulder_L": [
+      250,
+      372
+    ],
+    "shoulder_R": [
+      350,
+      372
+    ],
+    "hand_L": [
+      222,
+      542
+    ],
+    "hand_R": [
+      378,
+      542
+    ]
+  },
+  "identity_checklist": [
+    "slicked-back dark hair cap with comb lines (baked into head)",
+    "tight black short-sleeve tee, bare arms",
+    "upright symmetrical posture",
+    "confident smirk in mouth_closed",
+    "strong brow lines (baked into head)",
+    "signature prop: rum-and-coke style tumbler"
+  ],
+  "signature_prop": "tumbler (150x200)",
+  "palette": {
+    "ink": "#1A1A1A",
+    "skin": "#F0B070",
+    "skin_shadow": "#D6945C",
+    "white": "#F5F5F5",
+    "mouth_dark": "#4A281E"
+  },
+  "provenance": "hand-built PIL (supersampled 2x), no AI imagery",
+  "style": "South Park-esque flat cutout per key-art lock"
+}

@@ -64,6 +64,16 @@ Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to
    tribute to both, in memory of Amos Sr.
    - Trait (from the backstory below): deceptively fast for a big guy — when trouble
      comes, he vanishes. The big man who can completely disappear.
+   - Leonard's profile (owner 2026-10-11): real country guy, Winn-Dixie type;
+     Dukes-of-Hazzard car mechanic and car lover — orange car with the rebel flag like
+     the General Lee (a Monte Carlo or similar, near-original year, nice paint job);
+     asked the owner to paint Marilyn Monroe at the pyramids of Giza, naked, on the
+     car's roof. Owner's age, same graduation class; Scorpio, birthday late October
+     (owner uncertain). One of the only people the owner ever met that into Cheech
+     and Chong — they used to smoke and chill together all the time. Almost
+     stereotypical, it's funny: watches NASCAR with his whole family.
+   - Family: little brother, little sister (middle child), mom, and dad (Amos Sr.).
+     Rest of the family pale and blonde.
 2. **The kid** — blue/red bobble hat, cigarette in hand, chin patch. _Unidentified._
 3. **Purple headband girl** — hair in puffs, gold hoops, purple top. _Unidentified._
 4. **Crown hoodie (center)** — black beanie, TRIPPEDD crown hoodie, goatee. The owner's
@@ -81,6 +91,14 @@ Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to
      — reveal: it was a guy in a **dinosaur costume** out in Broadway traffic, and
      **beer-can guy (#1) was doin the beating.** (Broadway = Nashville's honky-tonk
      strip; maps to Goodville's main drag.)
+
+### Family / off-art characters
+
+- **Amos Sr.** (Leonard's dad) — not in the key art. Dark-skinned white guy, almost
+  Mexican-looking (owner's words: skin tone like mixed Black or Mexican), against the
+  rest of the family's pale blonde. Recently passed — the tribute character alongside
+  Amos Jr. Owner directive 2026-10-11: in the show he looks like a South Park version
+  of the real Amos Sr.
 
 ## Backstory reference — the woods run (Dooly County High)
 

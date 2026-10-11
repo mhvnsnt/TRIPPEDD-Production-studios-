@@ -139,3 +139,87 @@ Each defect was re-verified with own eyes on the re-rendered frames.
 - **Verified (own eyes):** artifact-region brown px 800→5 at 10.5s and 12.0s;
   Amos Jr.'s actual hair (head.png) intact — shaggy hair, mustache, goatee all
   present in fixed frames.
+
+## SMART REBUILD (2026-10-11) — PR #153
+
+Owner verdict: the likeness cut (PR #150) regressed on animation/fighting/body
+vs the Blender rebuild because flood-fill extractions were garbage going in.
+Rebuilt with the smart extraction pipeline (tools/smart-extract/, SMART-WAY LAW):
+characters are the REAL key-art extractions, positioned by measurement.
+
+### What changed
+- **Amos Jr.**: full key-art body (tools/smart-extract/proving_run/amos_full_body.png)
+  — shaggy brown hair, mustache + chin goatee, white tank, arm tattoo. Positioned
+  by head-center anchor (measured), never eyeballed, never stretched.
+- **Punch arm**: the key art has no punch arm. Built a proper SP-style rigged arm
+  (tan capsule + mitten fist, skin tone sampled from key art) with the REAL
+  key-art BEER can extracted and gripped in the fist. Amos punches WITH his beer.
+  Rotation follows the rig (empirically verified: PIL_angle = r_deg).
+- **Old head**: real key-art face (proving_run/oldhead_head.png — bald, aviators,
+  cigarette) with a split jaw (mouth line is the seam, SP cut-paper method);
+  real key-art torso (oldhead_body.png — jacket with collar/zipper). Grounded:
+  torso runs off the bottom frame edge.
+- **Animation**: rig data (blender_geo.json + blender_anim.json) drives all motion —
+  same stepped timing the owner approved. Dino head detaches and flies per rig.
+
+### Frames verified (own eyes — smart rebuild)
+- **f0001** (shot 1): old head IS the key-art character (bald, aviators, cigarette);
+  GOODVILLE sign fully readable; grounded, no floating; no mask artifacts.
+- **f0150** (shot 2): jaw split working (mouth shapes from rig); push-in holds.
+- **f0217** (shot 3): Amos IS the key-art character (shaggy hair, goatee, tank,
+  tattoo); SP punch arm at the anatomical shoulder with BEER can in fist; dino
+  in position; Broadway set dressed.
+- **f0251** (shot 3, punch): arm extended HORIZONTALLY toward the dino, fist with
+  can at the dino's head — the punch reads clearly, correct direction.
+- **f0281** (shot 3): follow-through; dino head detaching per rig.
+- **f0330** (shot 4): end card unchanged — "GOODVILLE — NOT SOUTH PARK. JUST AS STUPID."
+
+### Per-character likeness checklist (against key art — smart rebuild)
+- **Old head:** bald with side hair ✓, aviator sunglasses ✓, cigarette ✓ (baked
+  into the key-art extraction, no longer drawn separately), black key-art jacket
+  with collar/zipper/pocket ✓, grounded (torso off bottom edge) ✓
+- **Amos Jr.:** shaggy brown hair ✓, mustache + chin goatee ✓, white tank ✓,
+  arm tattoo ✓, BEER can ✓ (real key-art can in the SP fist), head/body ratio
+  matches key art ✓ (positioned by measurement, not stretched)
+- **Dino-costume guy:** green costume, flat SP grammar ✓ (unchanged, not a key-art character)
+
+### Known limitations (plainly)
+- Amos's viewer's-right arm is the key-art thin arm (at his side); only the
+  punching arm is the built SP arm. Both read correctly.
+- The jaw split seam hides in the mouth line; on wide-open shapes a dark mouth
+  interior is drawn behind (SP method).
+- Old head has no separate ember glow (key art shows none; matched exactly).
+
+## Defect-fix pass 2026-10-11 (parent-verified, 3 defects)
+
+### 1. WHITE RECTANGLE ARTIFACT (below-left of Amos Jr.'s torso, ~10.5s/11.7s)
+- **Root cause:** `extract_can()` cropped (115,240)-(175,322) from the smart
+  full-body extraction, whose alpha was ~250 everywhere (opaque) — the white
+  key-art background around the can rendered as a box in the fist.
+- **Fix:** re-extracted the can via the SMART pipeline
+  (`tools/smart-extract/extract.py`, rembg ladder, bbox from
+  `muse.visual_grounding` on the key art) → clean transparent background.
+  Asset: `tools/smart-extract/proving_run/amos_beer_can.png`
+  (+ `beer_can_spec.json`). `extract_can()` now loads it. No flood-fill.
+- **Verified:** white box GONE at 10.5s and 11.7s (own eyes on final MP4).
+  Can sits cleanly in the SP fist; key-art fingers blend with the tan fist.
+
+### 2. GRAY RECTANGLE ARTIFACT (floating left of old head's head, ~1s)
+- **Root cause:** unmasked gray road background at top-left of
+  `oldhead_body.png` (texture x 0-38, y 28-92; 1820 opaque px) — the
+  `mask_oh_torso()` rectangles missed it.
+- **Fix:** extended the pipeline mask in `mask_oh_torso()` with the measured
+  rectangle [0, 28, 38, 92]. No flood-fill.
+- **Verified:** gray box GONE at 1s and 5s (own eyes on final MP4).
+
+### 3. OLD HEAD COVERED THE TAGLINE (shots 1-2)
+- **Fix:** `draw_oldhead()` shifts the whole character down/right
+  (hcx += 175, hcy += 50) — matches PR #149 Blender rebuild framing.
+  Torso stays grounded off the bottom frame edge (no floating bust).
+- **Verified:** "SAME PEOPLE. DIFFERENT BULLSHIT." FULLY readable at 1s and
+  5s (own eyes on final MP4). (First attempt at +130 still clipped the final
+  "T." — bumped to +175 and re-verified.)
+
+### Sensorium gate (final MP4, 2026-10-11)
+- taste 0.538 (thr 0.35) PASS · style_hold 0.991 mean / 0.935 min (thr 0.7) PASS
+- smell: 2 severe_pops PASS · sync: no flags PASS · **OVERALL PASS**

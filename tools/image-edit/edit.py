@@ -16,6 +16,9 @@ Ops (applied left to right, state flows through):
   eyedropper  report color at --at / --region (hex + nearest name)
   fill        fill the current mask with --color
   restore     denoise + unsharp sharpen (cheap)
+  ai_edit     FREE one-turn AI image edit: --prompt "..." -> AI Horde img2img
+              (HF Qwen fallback), auto style_hold + face-likeness verification.
+              THE differentiator: FAILs the edit if the face drifted.
 
 Usage:
   edit.py INPUT -o OUTDIR --ops cutout,svg [--subject ...] [--bbox ...] [OP-OPTIONS]
@@ -362,9 +365,60 @@ def op_restore(job, args):
     job.report["verify"]["restore"] = "PASS"
     job.log("restore", {"denoise": args.denoise, "sharpen": args.sharpen}, p)
 
+def op_ai_edit(job, args):
+    """ai_edit: free one-turn AI image edit + self-verification (donor: ai_edit.py)."""
+    import tempfile
+    from PIL import Image
+    if not args.prompt:
+        raise SystemExit("ai_edit needs --prompt \"describe the edit in plain language\"")
+    import ai_edit as AE
+    tmp = tempfile.mkdtemp(prefix="ai_edit_")
+    src = os.path.join(tmp, "src.png")
+    dst = os.path.join(tmp, "out.png")
+    job.img.convert("RGB").save(src)
+    # run the backend chain directly (not via CLI) for in-pipeline use
+    order = [b.strip() for b in args.backends.split(",") if b.strip()]
+    available = dict(AE.BACKENDS)
+    errors, data, backend_used = {}, None, None
+    for name in order:
+        fn = available.get(name)
+        if not fn:
+            errors[name] = "unknown backend"
+            continue
+        try:
+            data, _meta = fn(src, args.prompt, max_wait=args.max_wait)
+            backend_used = name
+            break
+        except Exception as e:
+            errors[name] = f"{type(e).__name__}: {str(e)[:200]}"
+    if data is None:
+        job.report["verify"]["ai_edit"] = f"FAIL: all backends failed {errors}"
+        raise SystemExit(f"ai_edit failed: all backends failed: {errors}")
+    with open(dst, "wb") as f:
+        f.write(data)
+    job.img = Image.open(dst).convert("RGBA")
+    out = job.save("ai_edit.png")
+    detail = {"backend": backend_used, "prompt": args.prompt[:200],
+              "backend_errors": errors}
+    if args.no_verify:
+        job.report["verify"]["ai_edit"] = "DONE_UNVERIFIED"
+    else:
+        v = AE.verify_edit(src, dst, face_threshold=args.face_threshold)
+        detail.update(v)
+        job.report["verify"]["ai_edit"] = v["overall"] + \
+            f" backend={backend_used} style_hold={v.get('style_hold')} " \
+            f"face_drift={v.get('face_drift')}"
+        if v["overall"] == "FAIL":
+            job.log("ai_edit", detail, out)
+            raise SystemExit(
+                f"ai_edit verification FAILED (backend={backend_used} "
+                f"style_hold={v.get('style_hold')} face_drift={v.get('face_drift')} "
+                f"> threshold {args.face_threshold}). Output kept at {out} for inspection.")
+    job.log("ai_edit", detail, out)
+
 # ---------------------------------------------------------------- main
 OPS = ["cutout", "outline", "svg", "select", "recolor",
-       "eyedropper", "fill", "restore"]
+       "eyedropper", "fill", "restore", "ai_edit"]
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
@@ -384,13 +438,24 @@ def main():
     ap.add_argument("--width", type=int, default=6)
     ap.add_argument("--denoise", action="store_true")
     ap.add_argument("--sharpen", action="store_true")
+    # ai_edit options
+    ap.add_argument("--prompt", default="",
+                    help="ai_edit: plain-language edit instruction (one turn)")
+    ap.add_argument("--face-threshold", type=float, default=0.08,
+                    help="ai_edit: max allowed face-ROI drift 0..1 (FAIL above)")
+    ap.add_argument("--max-wait", type=int, default=480,
+                    help="ai_edit: max seconds per backend before falling through")
+    ap.add_argument("--backends", default="ai_horde,hf_qwen",
+                    help="ai_edit: backend order to try")
+    ap.add_argument("--no-verify", action="store_true",
+                    help="ai_edit: skip style_hold + face checks")
     args = ap.parse_args()
 
     job = Job(args.input, args.outdir)
     fn = {"cutout": op_cutout, "outline": op_outline, "svg": op_svg,
           "select": op_select, "recolor": op_recolor,
           "eyedropper": op_eyedropper, "fill": op_fill,
-          "restore": op_restore}
+          "restore": op_restore, "ai_edit": op_ai_edit}
     ops = [o.strip() for o in args.ops.split(",") if o.strip()]
     bad = [o for o in ops if o not in fn]
     if bad:

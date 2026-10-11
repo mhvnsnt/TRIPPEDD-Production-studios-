@@ -41,3 +41,42 @@
 - Fix: filled interior transparent regions in lower face (y>0.6h) with flat skin
   #9A6034 (sampled). Eye sockets (upper face) preserved. Mouths composite on top
   of the now-solid head. All 4 head angles verified clean.
+
+## v2 measured-anchor rebuild (2026-10-11, Sten's method)
+Donor: old full composite (head_base + brows_neutral + eyes_open + pupils + mouth_closed + headband), 205x220. Saved as v2/donor_reference.png.
+
+MEASURED ANCHORS (pixel coords, written down per MEASURED-ANCHOR LAW):
+- skin_rgb: (154,96,52) — cheek samples (45,155)/(100,205)
+- eye whites bbox: x31-125 y116-164 (from eyes_open.png alpha)
+- pupil centroids: L(63.5,138.0) R(92.7,135.0) (dark-dot connected components, pupils.png)
+- brow_L clean stroke: x46-65 y100-104; brow_R inner bit: x86-99 y98-99
+- mouth_closed content: x86-124 y181-199
+All saved in v2/anchors.json.
+
+DEFECTS FOUND IN DONOR PIECES (fixed in v2):
+1. brows_neutral.png: big dark HAIR BLOB on right (x~135-160) baked into the piece.
+   v2: clean left stroke mirrored about x=77.5 for right brow; blob removed.
+2. mouth_closed.png: big SKIN BOX (x86-124 y181-199) with lips painted at bottom.
+   v2: tight 13x14 crop of lip-reddish pixels only.
+3. pupils.png: eyelash-flick junk (x144-155 y116-152) + stray dots (x150-153).
+   v2: two dots only at measured centroids.
+4. head_base.png: transparent eye SOCKETS + brown BOX-FILL band in eye zone + painted
+   brows/mouth baked in.
+   v2/head_blank: zones feather-filled with sampled skin; hair (dark px) and gold
+   hoops protected from fill; sockets opaque; headband composited on top.
+5. Lid lines: old donor's lid line was the socket edge (vanishes on head_blank).
+   v2/eyes_open: 1px black arcs drawn hugging the top edge of each white oval +
+   2 short lash flicks at R-eye outer corner, matching key art.
+6. head_34L/34R: old ones had ghosted/doubled outlines from bad warps — NOT reused.
+   v2: single-pass PIL AFFINE squeeze 0.85, BICUBIC, anchored at far edge.
+
+VERIFICATION:
+- head_blank + tight furniture @ recorded offsets (v2/furniture_offsets.json)
+  reconstructs donor: 343 px differ (>60/765) out of 22351 — all in the fixed zones.
+- Zoomed vs key art: lid lines thin and hugging (key art has thin black upper lid
+  line); lash flicks short at R outer corner; brows thin arches; pupils cross-eyed
+  toward center like key art; small pinkish lips; purple headband with center mark;
+  gold hoops; big black loc puffs. Identity held.
+- preview_sheet.png rebuilt: assembled character (v2 head + earrings + torso + arms),
+  head angles, tight furniture grid, head_blank panel — character put together,
+  not scattered parts.

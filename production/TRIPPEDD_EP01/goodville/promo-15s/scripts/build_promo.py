@@ -2,10 +2,21 @@
 """Goodville Cartoon 15s promo — hand-built South Park-esque cutout animation.
 No AI-generated visuals. PIL cutout compositing (the digital paper-cutout method),
 stepped animation, flat colors, orthographic look.
+
+FIX PASS (parent-verified defects):
+1. Removed the black-bar jacket polygon (shots 1-2) — asset's own shoulders used.
+2. Old head scaled 2.0 -> 0.95 and lowered so the GOODVILLE sign stays readable.
+3. Cigarette drawn explicitly after the mouth shapes (was getting covered).
+4. Beer can redrawn as the key-art can (blue + red BEER label); the solid-blue
+   "Pepsi-like" baked-in can cropped out of the head asset; the blue-rectangle
+   placeholder ("beer can hint") replaced with a real can in the fist.
+5. Amos Jr. head 250px -> 0.72 scale (was bobblehead); TACOS sign moved clear of
+   Amos; punch arm re-posed to extend LEFT into the dino (was punching right,
+   away from the target).
 """
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-import os, subprocess
+import os
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS, FRAMES, AUDIO = (os.path.join(BASE, d) for d in ("assets", "frames", "audio"))
@@ -24,10 +35,21 @@ YELLOW = (255, 216, 0)
 DINO = (77, 166, 77)
 DINO_LT = (143, 214, 143)
 MOUTH_C = (42, 26, 18)
+CAN_BLUE = (35, 90, 175)
+CAN_RED = (185, 40, 40)
 
 keyart = Image.open('/home/hatch/workspace/trippedd-studio/assets/references/ep01/source/Goodville - Not South Park.png').convert('RGB')
-oldhead = Image.open(os.path.join(ASSETS, 'oldhead_body.png'))   # 275x369 head
-amos_head = Image.open(os.path.join(ASSETS, 'amosjr_head.png'))  # 250x250
+
+# FIX 1+4: trim extraction artifacts (non-destructive crops of the source assets)
+# oldhead_body.png 250x369: bottom ~93px is a solid black extraction band -> cut it,
+# the asset's own jacket/shoulders are the body (no drawn polygon needed).
+oldhead = Image.open(os.path.join(ASSETS, 'oldhead_body.png')).crop((0, 0, 250, 276))
+# amosjr_head.png 250x250: bottom region is a baked-in hand + Pepsi-like blue can
+# (extraction grab) -> cut it; the real can is drawn separately in the fist.
+amos_head = Image.open(os.path.join(ASSETS, 'amosjr_head.png')).crop((0, 0, 250, 188))
+
+OH_W, OH_H = oldhead.size   # 250 x 276
+AH_W, AH_H = amos_head.size  # 250 x 188
 
 def font(sz):
     for p in ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
@@ -46,22 +68,21 @@ d = ImageDraw.Draw(bg_street)
 d.rectangle([0, 0, W, 300], fill=SKY)                       # sky
 # buildings row
 d.rectangle([0, 180, 260, 470], fill=(180, 120, 90))        # left building
-d.rectangle([0, 180, 260, 470], outline=None)
 d.rectangle([40, 230, 220, 300], fill=(60, 50, 70))         # sign board
-d.rectangle([300, 150, 620, 470], fill=(150, 150, 160))     # motel-ish
+d.rectangle([300, 150, 620, 470], fill=(150, 150, 160))    # motel-ish
 d.rectangle([340, 200, 580, 270], fill=(200, 60, 60))       # red sign
 d.rectangle([660, 170, 980, 470], fill=(170, 140, 100))     # taco-ish
-d.rectangle([700, 220, 940, 290], fill=(60, 50, 70))
-d.rectangle([1020, 190, 1280, 470], fill=(140, 120, 130))    # right building
-d.rectangle([0, 470, W, 540], fill=SIDEWALK)                 # sidewalk
-d.rectangle([0, 540, W, H], fill=ROAD)                      # road
-for x in range(60, W, 160):                                  # lane dashes
+# FIX 5: TACOS board shifted left + smaller text so Amos Jr. never covers it
+d.rectangle([660, 220, 860, 290], fill=(60, 50, 70))
+d.rectangle([1020, 190, 1280, 470], fill=(140, 120, 130))   # right building
+d.rectangle([0, 470, W, 540], fill=SIDEWALK)                # sidewalk
+d.rectangle([0, 540, W, H], fill=ROAD)                     # road
+for x in range(60, W, 160):                                 # lane dashes
     d.rectangle([x, 622, x+80, 634], fill=(230, 200, 60))
 # signs text
-f_s = font(44)
-d.text((52, 238), "BAR", font=f_s, fill=(255, 255, 255))
-d.text((352, 208), "MOTEL", font=f_s, fill=(255, 255, 255))
-d.text((712, 228), "TACOS", font=f_s, fill=(255, 255, 255))
+d.text((52, 238), "BAR", font=font(44), fill=(255, 255, 255))
+d.text((352, 208), "MOTEL", font=font(44), fill=(255, 255, 255))
+d.text((672, 232), "TACOS", font=font(36), fill=(255, 255, 255))
 
 # shot 4: end card
 bg_card = Image.new('RGB', (W, H), (8, 8, 10))
@@ -85,34 +106,71 @@ grain = grain.point(lambda v: 235 + v//10)  # subtle
 
 def apply_grain(im):
     g = Image.merge('RGB', (grain, grain, grain))
-    return Image.blend(im, Image.composite(im, g, g), 0.0) if False else \
-        Image.fromarray(((np.asarray(im).astype(float)*0.94 + np.asarray(g).astype(float)*0.06)).astype(np.uint8))
+    return Image.fromarray(((np.asarray(im).astype(float)*0.94 + np.asarray(g).astype(float)*0.06)).astype(np.uint8))
 
 def shadow(im, x, y, w):
     d = ImageDraw.Draw(im, 'RGBA')
     d.ellipse([x-w//2, y-14, x+w//2, y+14], fill=(0, 0, 0, 70))
 
+# ---------- FIX 4: key-art beer can, drawn flat (blue + red BEER label) ----------
+def beer_can(scale=1.0):
+    w, h = int(46*scale), int(66*scale)
+    im = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([2, 6, w-2, h-2], radius=int(7*scale), fill=CAN_BLUE)
+    d.rectangle([2, 0, w-2, int(10*scale)], fill=(205, 205, 205))       # silver top rim
+    d.ellipse([2, 0, w-2, int(10*scale)], fill=(225, 225, 225))
+    d.rounded_rectangle([int(6*scale), int(20*scale), w-int(6*scale), h-int(12*scale)],
+                        radius=int(4*scale), fill=CAN_RED)              # red label band
+    fnt = font(max(8, int(13*scale)))
+    t = "BEER"
+    bb = d.textbbox((0, 0), t, font=fnt)
+    d.text(((w-(bb[2]-bb[0]))/2, int(30*scale)), t, font=fnt, fill=(255, 255, 255))
+    return im
+
+BEER_CAN = beer_can(1.0)
+
+# ---------- cigarette (drawn after the mouth so it is never covered) ----------
+def cigarette(scale):
+    """Small angled cigarette on its own layer; caller pastes at the mouth corner."""
+    w, h = int(34*scale), int(14*scale)
+    im = Image.new('RGBA', (w*2, h*3), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    x0, y0 = w//2, h
+    ln, wd = int(30*scale), max(3, int(7*scale))
+    d.rectangle([x0, y0-wd//2, x0+ln, y0+wd//2], fill=(215, 185, 135))       # paper
+    d.rectangle([x0, y0-wd//2, x0+int(8*scale), y0+wd//2], fill=(150, 110, 70))  # filter
+    d.ellipse([x0+ln-3, y0-wd//2, x0+ln+3, y0+wd//2], fill=(255, 120, 40))    # ember
+    return im.rotate(-12, resample=Image.BICUBIC, expand=True)
+
+CIG = cigarette(1.0)
+
 # ---------- old head assembly (shots 1-2) ----------
 def oldhead_frame(scale, bob, mouth):
-    """mouth: 0 closed, 1 small, 2 med, 3 wide. Head front-center like the key art."""
+    """mouth: 0 closed, 1 small, 2 med, 3 wide. Medium close-up, framed right of
+    center (echoing the key art where he stands at the right); GOODVILLE sign
+    stays fully readable above/left of the head."""
     im = bg_sign.copy()
-    hw, hh = int(250*scale), int(369*scale)
+    hw, hh = int(OH_W*scale), int(OH_H*scale)
     head = oldhead.resize((hw, hh), Image.LANCZOS)
-    hx, hy = 640 - hw//2, 30 + bob
-    # jacket: black trapezoid behind head
-    d = ImageDraw.Draw(im)
-    d.polygon([(hx-40, hy+hh-120), (hx+hw+40, hy+hh-120),
-               (hx+hw+90, H), (hx-90, H)], fill=BLACK)
+    # face center sits at asset-x ~125*scale; put the face at frame-x ~780
+    hx, hy = 780 - int(125*scale), 427 + bob
+    # FIX 1: no drawn jacket polygon (it read as a black bar). The asset's own
+    # cropped shoulders are the body.
     im.paste(head, (hx, hy), head)
-    # mouth shapes (relative to head box; actual mouth ~62% down, 60% across)
-    mx, my = hx + int(hw*0.54), hy + int(hh*0.42)  # measured in extraction
+    # mouth shapes (measured: mouth center ~ (0.54, 0.56) of the cropped asset)
+    mx, my = hx + int(hw*0.54), hy + int(hh*0.56)
     d = ImageDraw.Draw(im)
-    ms = int(30*scale)
+    ms = int(22*scale)
     if mouth == 0:
-        d.line([mx-ms, my, mx+ms, my], fill=MOUTH_C, width=max(3, int(5*scale)))
+        d.line([mx-ms, my, mx+ms, my], fill=MOUTH_C, width=max(3, int(4*scale)))
     else:
         wdt = [0.5, 0.8, 1.1][mouth-1] * ms
         d.ellipse([mx-wdt, my-wdt*0.8, mx+wdt, my+wdt*0.8], fill=MOUTH_C)
+    # FIX 3: cigarette drawn AFTER the mouth, at the mouth's right corner
+    # (key-art position), so the animated mouth never covers it.
+    cig = CIG.resize((int(CIG.width*scale), int(CIG.height*scale)), Image.LANCZOS)
+    im.paste(cig, (int(mx + hw*0.10), int(my - cig.height*0.35)), cig)
     return im
 
 # ---------- dino guy (hand-drawn, separate head layer) ----------
@@ -141,30 +199,49 @@ def dino_head():
 
 DINO_BODY, DINO_HEAD = dino_body(), dino_head()
 
-# ---------- Amos Jr. assembly ----------
-def amosjr(lunge, punch):
-    """punch 0 = windup, 1 = extended"""
-    im = Image.new('RGBA', (420, 560), (0, 0, 0, 0))
+# ---------- Amos Jr. assembly (FIX 5: redesigned proportions + punch) ----------
+# Canvas 620x560. Head 0.72 scale (was full 250px -> bobblehead). Punch arm
+# extends LEFT toward the dino (was drawn extending right, away from target).
+AH_SCALE = 0.72
+
+def amosjr(punch):
+    """punch 0 = windup (cocked), 1 = extended LEFT into the dino."""
+    im = Image.new('RGBA', (620, 560), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     # torso: white tank
-    d.polygon([(130, 200), (290, 200), (310, 480), (110, 480)], fill=WHITE)
-    d.polygon([(130, 200), (290, 200), (270, 250), (150, 250)], fill=(225, 225, 225))
-    # legs: blue jeans rects (simple)
-    d.rectangle([140, 480, 200, 560], fill=(70, 90, 140))
-    d.rectangle([220, 480, 280, 560], fill=(70, 90, 140))
-    # head
-    im.paste(amos_head, (85, 0), amos_head)
-    # right arm down (holds can) — simple
-    d.ellipse([60, 230, 130, 430], fill=SKIN)
-    d.ellipse([70, 400, 140, 470], fill=SKIN)          # fist w/ can
-    d.rectangle([78, 380, 132, 440], fill=(30, 80, 160))  # beer can hint
-    # left arm: punch
+    d.polygon([(330, 120), (480, 120), (500, 470), (310, 470)], fill=WHITE)
+    d.polygon([(330, 120), (480, 120), (465, 165), (345, 165)], fill=(225, 225, 225))
+    # legs: blue jeans
+    d.rectangle([350, 470, 410, 560], fill=(70, 90, 140))
+    d.rectangle([430, 470, 490, 560], fill=(70, 90, 140))
+    # head (can cropped out of the asset; real can goes in the fist)
+    hw2, hh2 = int(AH_W*AH_SCALE), int(AH_H*AH_SCALE)
+    im.paste(amos_head.resize((hw2, hh2), Image.LANCZOS), (315, 8),
+             amos_head.resize((hw2, hh2), Image.LANCZOS))
+    # arm tattoo (documented likeness item): small dark mark, viewer-left upper arm
+    d.ellipse([298, 205, 322, 232], outline=(40, 60, 90), width=3)
+    d.line([302, 218, 318, 218], fill=(40, 60, 90), width=2)
+    # right arm (viewer-right): hangs down, fist grips the beer can
+    d.ellipse([475, 200, 535, 390], fill=SKIN)          # arm
+    d.ellipse([472, 372, 544, 442], fill=SKIN)         # fist (behind the can)
+    # FIX 4: key-art beer can gripped in the fist (blue + red BEER label)
+    im.paste(BEER_CAN, (484, 366), BEER_CAN)
+    # finger lines over the can suggest the grip
+    for fy in (392, 406, 420):
+        d.line([484, fy, 528, fy], fill=SKIN_DK, width=3)
+    # left arm: the punch
     if punch == 0:
-        d.ellipse([290, 230, 350, 330], fill=SKIN)     # cocked back
-        d.ellipse([295, 290, 355, 350], fill=SKIN_DK)  # fist
+        # windup: arm cocked, fist near chest
+        d.polygon([(330, 190), (362, 218), (302, 302), (276, 276)], fill=SKIN)
+        d.ellipse([268, 264, 332, 328], fill=SKIN_DK)   # cocked fist
     else:
-        d.rectangle([290, 250, 420, 300], fill=SKIN)  # extended
-        d.ellipse([380, 235, 440, 315], fill=SKIN_DK)  # fist
+        # extended: arm drives LEFT into the dino, fist leading
+        d.polygon([(335, 185), (365, 235), (105, 285), (85, 225)], fill=SKIN)
+        d.ellipse([40, 210, 115, 290], fill=SKIN_DK)    # fist
+        # motion lines behind the fist
+        for i in range(3):
+            x0 = 135 + i*28
+            d.line([x0, 232+i*16, x0+34, 242+i*16], fill=(255, 255, 255, 170), width=4)
     return im
 
 # ---------- shot assembly ----------
@@ -177,11 +254,11 @@ def render():
             speaking = 7 <= f <= 58
             bob = -8 if speaking and (f//12) % 2 else 0
             mouth = mouth_cycle[(f//6) % len(mouth_cycle)] if speaking else 0
-            im = oldhead_frame(2.0, bob, mouth)
+            im = oldhead_frame(1.5, bob, mouth)
         elif f < 216:  # SHOT 2: old head push-in, line2a (3.3-10.7s)
             speaking = 79 <= f <= 257
             step = min(3, (f-72)//36)
-            scale = 2.0 + step*0.05
+            scale = 1.5 + step*0.023   # gentle push-in 1.50 -> 1.57
             bob = -8 if speaking and (f//12) % 2 else 0
             mouth = mouth_cycle[(f//6) % len(mouth_cycle)] if speaking else 0
             im = oldhead_frame(scale, bob, mouth)
@@ -189,7 +266,7 @@ def render():
             im = bg_street.copy()
             lf = f - 216  # 0..95
             # dino guy
-            dx, dy = 480, 300
+            dx, dy = 500, 300
             tilt = 0
             if 32 <= lf < 48 or 64 <= lf < 80:
                 tilt = -12  # reeling from punches
@@ -210,18 +287,19 @@ def render():
                 hy2 = int(dy+55 - k*260 + k*k*320)
                 head = hs.rotate(int(-k*220), resample=Image.BICUBIC, expand=True)
                 hpos = (hx, hy2)  # pasted AFTER Amos so it stays visible in flight
-            # Amos Jr.: windup / punch cycle
+            # Amos Jr.: windup / punch cycle, lunging in on the punches.
+            # Fist lands on the dino head: ax = dx + 48.
             if lf < 32:
-                am, ax = amosjr(0, 0), 760
+                am, ax = amosjr(0), 608
             elif lf < 48:
-                am, ax = amosjr(1, 1), 700   # punch 1, lunged
+                am, ax = amosjr(1), 548   # punch 1, lunged in
             elif lf < 64:
-                am, ax = amosjr(0, 0), 760
+                am, ax = amosjr(0), 608
             elif lf < 80:
-                am, ax = amosjr(1, 1), 700   # punch 2
+                am, ax = amosjr(1), 548   # punch 2
             else:
-                am, ax = amosjr(0, 0), 780   # standing, done
-            shadow(im, ax+210, 700, 260)
+                am, ax = amosjr(0), 628   # standing, done
+            shadow(im, ax+310, 700, 260)
             im.paste(am, (ax, 180), am)
             if head is not None and lf >= 64:
                 im.paste(head, hpos, head)  # flying head stays in front

@@ -1,0 +1,74 @@
+{
+  "character": "bubbles-based",
+  "name": null,
+  "name_tbd": true,
+  "note": "Visual design only \u2014 parody-riff original. Name, voice, personality and traits assigned by owner.",
+  "canvas": [
+    600,
+    900
+  ],
+  "draw_order": [
+    "body",
+    "arm_L",
+    "arm_R",
+    "prop_in_hand",
+    "hand_L",
+    "hand_R",
+    "head",
+    "eyes_open",
+    "mouth_closed"
+  ],
+  "anchors": {
+    "head_center": [
+      300,
+      220
+    ],
+    "head_r": 105,
+    "eye_L": [
+      248,
+      228
+    ],
+    "eye_R": [
+      352,
+      228
+    ],
+    "mouth": [
+      300,
+      302
+    ],
+    "shoulder_L": [
+      250,
+      368
+    ],
+    "shoulder_R": [
+      350,
+      368
+    ],
+    "hand_L": [
+      214,
+      548
+    ],
+    "hand_R": [
+      386,
+      548
+    ]
+  },
+  "identity_checklist": [
+    "big round glasses with thick rims (baked into head)",
+    "goofy buck teeth in mouth_open",
+    "messy brown hair tufts under dark navy toque",
+    "lanky build: slim torso, thin long limbs",
+    "goofy offset pupils in eyes_open",
+    "signature prop: kitty"
+  ],
+  "signature_prop": "kitty (220px)",
+  "palette": {
+    "ink": "#1A1A1A",
+    "skin": "#F0B070",
+    "skin_shadow": "#D6945C",
+    "white": "#F5F5F5",
+    "mouth_dark": "#4A281E"
+  },
+  "provenance": "hand-built PIL (supersampled 2x), no AI imagery",
+  "style": "South Park-esque flat cutout per key-art lock"
+}

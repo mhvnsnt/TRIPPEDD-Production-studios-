@@ -1,0 +1,74 @@
+{
+  "character": "ricky-based",
+  "name": null,
+  "name_tbd": true,
+  "note": "Visual design only \u2014 parody-riff original. Name, voice, personality and traits assigned by owner.",
+  "canvas": [
+    600,
+    900
+  ],
+  "draw_order": [
+    "body",
+    "arm_L",
+    "arm_R",
+    "prop_in_hand",
+    "hand_L",
+    "hand_R",
+    "head",
+    "eyes_open",
+    "mouth_closed"
+  ],
+  "anchors": {
+    "head_center": [
+      315,
+      230
+    ],
+    "head_r": 105,
+    "eye_L": [
+      267,
+      234
+    ],
+    "eye_R": [
+      363,
+      234
+    ],
+    "mouth": [
+      312,
+      312
+    ],
+    "shoulder_L": [
+      252,
+      374
+    ],
+    "shoulder_R": [
+      370,
+      390
+    ],
+    "hand_L": [
+      218,
+      552
+    ],
+    "hand_R": [
+      398,
+      566
+    ]
+  },
+  "identity_checklist": [
+    "greasy dark-brown longer hair, stringy locks past ears",
+    "horizontal navy/cream striped shirt",
+    "goatee: chin patch + thin mustache (baked into head)",
+    "slouch: leaning torso, uneven shoulders",
+    "half-lidded eyes in eyes_open",
+    "signature prop: cigarette"
+  ],
+  "signature_prop": "cigarette (150px)",
+  "palette": {
+    "ink": "#1A1A1A",
+    "skin": "#F0B070",
+    "skin_shadow": "#D6945C",
+    "white": "#F5F5F5",
+    "mouth_dark": "#4A281E"
+  },
+  "provenance": "hand-built PIL (supersampled 2x), no AI imagery",
+  "style": "South Park-esque flat cutout per key-art lock"
+}

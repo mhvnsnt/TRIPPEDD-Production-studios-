@@ -179,3 +179,17 @@ Kept alongside the lock: Tyneshia's grey-draft short animation. Owner's call 202
 it was a good commercial and draft — keep it as a teaser advertising the show, and it
 will surprise people when the finished show looks better than expected. Under-promise,
 over-deliver. (Its branch/location is TBD — needs filing into a repo per the salvage law.)
+
+## The Two Trios (owner 2026-10-11 — DOCUMENTED, not locked canon per C08)
+
+**The Imposter Trio** (AI base: `goodville/kits/tpb-trio-promo.png`, PR #162): three
+original Goodville residents who show up FIRST, pretending to be the real trio.
+Mischievous — they get into trouble and make a bad name for the trio. The old head
+is mad at them. They stick around as characters: always pretending to be the real
+trio, always getting into MORE trouble than the real trio ever does.
+
+**The Real Trio** (AI base: `goodville/kits/tpb-real-trio-promo.png`): arrive AFTER
+the imposters have poisoned the well. They look MORE like the actual Bubbles, Ricky,
+and Julian from Trailer Park Boys — in South Park style — and they ACT like them.
+(Parody exemption applies; visual design + archetype behavior only, no invented
+canon beyond what the owner directs.)

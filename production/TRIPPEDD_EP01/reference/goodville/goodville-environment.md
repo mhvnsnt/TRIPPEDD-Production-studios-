@@ -144,11 +144,16 @@ Construction follows two disciplines at once:
    character — built as a complete construction from the reference, part by part,
    measured against the picture. No invented proportions, no drift.
 
-**Hand-built, never AI-generated.** The key art was AI-generated, but that look is
-achievable by hand — and hand-building is how we hold the style lock. If AI tooling
-touches the show at all, it must NEVER drift the style: no AI slop, no "improved"
-rendering, no deviation from the locked look in any way. (The owner wants free
-ideation and thinking — but the production output holds the lock absolutely.)
+**Tier A (base/promo art) MAY be AI-generated.** The first original image was
+AI-generated and it is the target — new characters get their base art AI-generated
+in that same style FIRST (South Park versions of who they're based on), THEN the
+kits are hand-built from it. **Tier B (animation kits) is hand-built** from the
+Tier A base — never AI-generated pieces. What is NEVER allowed at any tier: AI
+slop — style drift, low-quality deviation, "improved" rendering that breaks the
+lock. (Correction 2026-10-11: the earlier "hand-built, never AI-generated"
+wording was the agent's overreach — it roadblocked the owner's explicit
+directive to AI-generate base characters like the original. The owner's directive
+outranks the agent's notes, always.)
 
 Extraction discipline per the SMART-WAY LAW: rembg + vision verification
 (sense → trace → cut → verify loop), never flood-fill; positioning from measured

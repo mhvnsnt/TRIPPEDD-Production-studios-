@@ -191,3 +191,37 @@ numpy synthesis (build_v3_score.py) — zero samples, zero library music, safe f
 - **Mix**: production audio untouched except the old temp-voice region (53.4→end)
   zeroed; peak-normalized to −1 dBFS, true peak −0.3 dBFS (no clipping). Video
   stream-copied, duration unchanged (56.53s).
+
+## Mix rev2 — owner notes 2026-10-10 ~22:07 CDT (build_v3_score_rev2.py)
+Rebuilt from the PRE-SCORE cut (git 402b1e42) — not layered on the scored cut.
+1. **Base muted 17.0→20.0s** (camera person's "alright" removed); 100ms
+   raised-cosine fades on mute edges, no clicks. Suspense bed continues under.
+2. **Base boosted ×2.5 on 32.0→34.0s** ("luck of the Irish!" punches);
+   100ms gain-envelope fades; peak in window 0.316→0.791 pre-norm.
+3. **Suspense bed DOUBLED** (×2.0 mix gain). Duck floor lowered 0.10→0.05 in
+   dialogue regions so the doubled bed never buries his voice (dialogue still
+   clearly on top: measured +9.6 dB in the 10–12s zone). Riser (29.5→34.5) still
+   rides at full gain EXCEPT a 0.6 dip under his 32–34s line (owner's own
+   condition: "if 2x buries the 32-34s line, back the bed off slightly") —
+   voice now +6.8 dB over the bed there (was −1.6 dB). Compromise noted.
+4. **Upbeat bed UNCHANGED** (owner: "good where it is volume wise").
+5. **v1 voice back in the cut** (owner: "v1 was better than v2 1000 percent").
+   v1 sits at its natural ~53.27s spot in the base — nothing re-placed, nothing
+   zeroed. v2 is OUT of the cut (verified ncorr 0.068 ≈ absent; v1 ncorr 0.871).
+- **Mix**: peak-normalized to −1 dBFS, true peak −1.10 dBFS (no clipping).
+  Video stream-copied (MD5-identical to pre-score), duration 56.555s unchanged.
+
+## Standalone score-bed assets (owner asset-save add 2026-10-10)
+- `audio/suspense-score-track-1.wav` — suspense bed at its FINAL doubled level
+  (0→34.5s, clean, no dialogue/voice). "Track 1" numbering: more may come.
+- `audio/luck_of_the_irish_commercial_track_music_score_jingle.wav` — upbeat bed
+  (34.8→56.5s, clean). Owner's display name: **"luck of the Irish commercial
+  track music score jingle"**.
+Both exported at the final mix normalization level; reusable across the show.
+
+## Voice asset admin
+- `audio/leprechaun-line-v1.wav` — the ORIGINAL temp ElevenLabs read. IN THE CUT.
+- `audio/leprechaun-line-v2.wav` — the Piper +3st directed read (former v2).
+  Preserved; NOT in the cut.
+- `audio/robot-porky-voice.wav` — byte copy of v2, per owner's naming
+  ("save v2 voice as robot porky voice in the files"). Asset only.

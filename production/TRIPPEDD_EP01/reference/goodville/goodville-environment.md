@@ -204,10 +204,11 @@ the reference lives.
 **Names (owner 2026-10-11):**
 - The real trio — LOCKED: **Dickie** (Ricky-based), **Julio** (Julian-based),
   **Bubba** (Bubbles-based). Parody names, owner's pick from proposals.
-- The old head (Lahey-based): STILL DECIDING. Frontrunner: **Lieutenant Dangly**
-  (Reno 911's Dangle energy). Also in the running: Jim Scully, Terry Lahey.
-  Direction: a play on Lahey being an officer, mixed with Reno 911 /
-  Brooklyn Nine-Nine name flavor — but the character stays Lahey-based.
+- The old head (Lahey-based): LOCKED — **Lieutenant James Dangly**. Friends call
+  him **Jim**; others call him **Dangly** or **Dangles**; some call him
+  **Lieutenant**. (Owner 2026-10-11.) Character stays Lahey-based; the name plays
+  the washed-up-officer angle with Reno 911 / Brooklyn Nine-Nine flavor.
+  Next: flesh out his character more (owner 2026-10-11).
   (Correction 2026-10-11: the owner gives direction BECAUSE he wants proposals
   back, not filing. When he hands the recipe, cook.)
 - The imposter trio: names TBD for later.

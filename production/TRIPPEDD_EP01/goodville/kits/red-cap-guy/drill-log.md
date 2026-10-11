@@ -26,3 +26,9 @@
   higher density
 - legs/feet/shoes invented (jeans blue, white sneakers): key art crops at
   the waist, so the lower body is SP-convention invention, not likeness
+
+## Attempt 3 rebuild (2026-10-11)
+- head_base was generic placeholder — rebuilt: rembg face cut + color-keyed red cap (170,54,31) + orange hair.
+- torso_base was faint outline — rebuilt: white tank via key, mirror-reconstructed occluded center (bottle prop separate).
+- prop_bottle_full.png (bottle+hand) extracted clean via rembg.
+- Variants rescaled (eyes 89,103 / mouth 89,163 / brows 90,73). Angles via feature-shift; profile from 34R.

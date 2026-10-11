@@ -587,5 +587,127 @@
    "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
   }
  ],
- "note": "attempt 3 (2026-10-11): head rebuilt (owner stand-in, extra care); angles via feature-shift; torso_34/back."
+ "note": "attempt 3 (2026-10-11): head rebuilt (owner stand-in, extra care); angles via feature-shift; torso_34/back. | v2 rebuild 2026-10-11: measured-anchor architecture (see v2_architecture).",
+ "v2_architecture": {
+  "method": "MEASURED-ANCHOR LAW: donor re-extracted from key art; anchors measured programmatically; grid.py visually verified",
+  "donor": {
+   "rect_keyart": [
+    598,
+    512,
+    878,
+    860
+   ],
+   "size": [
+    280,
+    348
+   ],
+   "skin_tone": [
+    242,
+    187,
+    124
+   ],
+   "source": "key art 'Goodville - Not South Park.png'",
+   "grid_verified": true
+  },
+  "parts": [
+   {
+    "id": "head_blank",
+    "file": "head_blank.png",
+    "rest": true,
+    "region": [
+     0,
+     0,
+     280,
+     348
+    ],
+    "pivot": [
+     140,
+     174
+    ],
+    "notes": "beanie+sideburns+goatee kept; furniture zone flattened to sampled skin (242,187,124)"
+   },
+   {
+    "id": "brows_neutral",
+    "file": "brows_neutral.png",
+    "region": [
+     50,
+     136,
+     219,
+     156
+    ],
+    "pivot": [
+     134.5,
+     146.0
+    ],
+    "notes": "tight crop; visible brow below brim edge"
+   },
+   {
+    "id": "eyes_open",
+    "file": "eyes_open.png",
+    "region": [
+     61,
+     153,
+     233,
+     247
+    ],
+    "pivot": [
+     146.5,
+     199.0
+    ],
+    "pupils": {
+     "left": [
+      121,
+      199
+     ],
+     "right": [
+      172,
+      199
+     ],
+     "note": "~17px toward nose per key art"
+    },
+    "notes": "tight crop of both white ovals incl. outlines + pupils"
+   },
+   {
+    "id": "mouth_closed",
+    "file": "mouth_closed.png",
+    "region": [
+     124,
+     282,
+     171,
+     292
+    ],
+    "pivot": [
+     147,
+     287
+    ],
+    "notes": "brown frown linework; tight crop"
+   }
+  ],
+  "files": {
+   "v2/head_blank.png": "donor silhouette, furniture zone flattened to (242,187,124), beanie+sideburns+goatee kept",
+   "v2/eyes_open.png": "tight crop, white ovals+outlines+pupils (pupils ~17px toward nose per key art)",
+   "v2/brows_neutral.png": "tight crop, visible brow below brim edge",
+   "v2/mouth_closed.png": "tight crop, brown frown linework",
+   "v2/head_34L.png": "single-pass PIL AFFINE squeeze 0.85 BICUBIC, anchor right edge",
+   "v2/head_34R.png": "single-pass PIL AFFINE squeeze 0.85 BICUBIC, anchor left edge",
+   "v2/head_profile_R.png": "single-pass PIL AFFINE squeeze 0.72 BICUBIC, anchor left edge (steep 3/4; true profile needs side donor)",
+   "v2/donor_head.png": "key-art extraction reference",
+   "v2/preview_v2.png": "v2 proof sheet",
+   "v2/anchors.json": "rig.json-format anchors (regions+pivots, donor coords)"
+  },
+  "supersedes": {
+   "head_base.png": "v2/head_blank.png (old had solid-BLACK eyes, no whites \u2014 likeness defect vs key art)",
+   "head_34L.png": "v2/head_34L.png (old had ghosted/doubled outlines)",
+   "head_34R.png": "v2/head_34R.png (old had ghosted/doubled outlines)",
+   "head_profile_R.png": "v2/head_profile_R.png (old had doubled eye outlines + ghost pupils)",
+   "beanie.png": "baked into v2/head_blank.png (old was 235x220, wrong canvas)",
+   "hair_full.png": "baked into v2/head_blank.png (sideburns extracted from key art)"
+  },
+  "verification": {
+   "reconstruct_diff_mean": 3.05,
+   "reconstruct_pct_over_30": 0.024,
+   "grid_check": "grid.py --no-crop overlay; all anchor boxes hug features; pupils land exactly",
+   "eyes": "white ovals confirmed vs key art (old kit had them BLACK)"
+  }
+ }
 }

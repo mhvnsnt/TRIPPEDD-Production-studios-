@@ -134,3 +134,15 @@ model for every character voice.
 Cartoon (SEG05) adopts the South Park production pipeline per
 `docs/research/SOUTH-PARK-STUDY.md` §§7–8: voice-first, asset library/templating before
 animating, stepped cutout animation, sprint discipline, free tools only ($0).
+
+## Visual style lock (owner 2026-10-11)
+
+The key art `assets/references/ep01/source/Goodville - Not South Park.png` ("the main ad")
+is the locked look for the Goodville Cartoon. All future show cuts must match it: the
+South Park-esque flat cutout style AND the specific character likenesses (faces, hats,
+builds, attire) as drawn there.
+
+Kept alongside the lock: Tyneshia's grey-draft short animation. Owner's call 2026-10-11:
+it was a good commercial and draft — keep it as a teaser advertising the show, and it
+will surprise people when the finished show looks better than expected. Under-promise,
+over-deliver. (Its branch/location is TBD — needs filing into a repo per the salvage law.)

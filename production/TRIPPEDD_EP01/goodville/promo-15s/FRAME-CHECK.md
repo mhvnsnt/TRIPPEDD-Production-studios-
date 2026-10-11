@@ -139,3 +139,53 @@ Each defect was re-verified with own eyes on the re-rendered frames.
 - **Verified (own eyes):** artifact-region brown px 800→5 at 10.5s and 12.0s;
   Amos Jr.'s actual hair (head.png) intact — shaggy hair, mustache, goatee all
   present in fixed frames.
+
+## SMART REBUILD (2026-10-11) — PR #153
+
+Owner verdict: the likeness cut (PR #150) regressed on animation/fighting/body
+vs the Blender rebuild because flood-fill extractions were garbage going in.
+Rebuilt with the smart extraction pipeline (tools/smart-extract/, SMART-WAY LAW):
+characters are the REAL key-art extractions, positioned by measurement.
+
+### What changed
+- **Amos Jr.**: full key-art body (tools/smart-extract/proving_run/amos_full_body.png)
+  — shaggy brown hair, mustache + chin goatee, white tank, arm tattoo. Positioned
+  by head-center anchor (measured), never eyeballed, never stretched.
+- **Punch arm**: the key art has no punch arm. Built a proper SP-style rigged arm
+  (tan capsule + mitten fist, skin tone sampled from key art) with the REAL
+  key-art BEER can extracted and gripped in the fist. Amos punches WITH his beer.
+  Rotation follows the rig (empirically verified: PIL_angle = r_deg).
+- **Old head**: real key-art face (proving_run/oldhead_head.png — bald, aviators,
+  cigarette) with a split jaw (mouth line is the seam, SP cut-paper method);
+  real key-art torso (oldhead_body.png — jacket with collar/zipper). Grounded:
+  torso runs off the bottom frame edge.
+- **Animation**: rig data (blender_geo.json + blender_anim.json) drives all motion —
+  same stepped timing the owner approved. Dino head detaches and flies per rig.
+
+### Frames verified (own eyes — smart rebuild)
+- **f0001** (shot 1): old head IS the key-art character (bald, aviators, cigarette);
+  GOODVILLE sign fully readable; grounded, no floating; no mask artifacts.
+- **f0150** (shot 2): jaw split working (mouth shapes from rig); push-in holds.
+- **f0217** (shot 3): Amos IS the key-art character (shaggy hair, goatee, tank,
+  tattoo); SP punch arm at the anatomical shoulder with BEER can in fist; dino
+  in position; Broadway set dressed.
+- **f0251** (shot 3, punch): arm extended HORIZONTALLY toward the dino, fist with
+  can at the dino's head — the punch reads clearly, correct direction.
+- **f0281** (shot 3): follow-through; dino head detaching per rig.
+- **f0330** (shot 4): end card unchanged — "GOODVILLE — NOT SOUTH PARK. JUST AS STUPID."
+
+### Per-character likeness checklist (against key art — smart rebuild)
+- **Old head:** bald with side hair ✓, aviator sunglasses ✓, cigarette ✓ (baked
+  into the key-art extraction, no longer drawn separately), black key-art jacket
+  with collar/zipper/pocket ✓, grounded (torso off bottom edge) ✓
+- **Amos Jr.:** shaggy brown hair ✓, mustache + chin goatee ✓, white tank ✓,
+  arm tattoo ✓, BEER can ✓ (real key-art can in the SP fist), head/body ratio
+  matches key art ✓ (positioned by measurement, not stretched)
+- **Dino-costume guy:** green costume, flat SP grammar ✓ (unchanged, not a key-art character)
+
+### Known limitations (plainly)
+- Amos's viewer's-right arm is the key-art thin arm (at his side); only the
+  punching arm is the built SP arm. Both read correctly.
+- The jaw split seam hides in the mouth line; on wide-open shapes a dark mouth
+  interior is drawn behind (SP method).
+- Old head has no separate ember glow (key art shows none; matched exactly).

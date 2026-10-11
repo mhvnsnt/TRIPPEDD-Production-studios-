@@ -331,6 +331,15 @@ is a defect.
 **Drift hazards:** young Muta face appearing (banned) · mask design changing between
 shots · unmasked face gaining paint.
 
+**VOICE — LOCKED (owner 2026-10-11):** ChatterboxTTS clone from Keiji Mutoh's real
+speaking voice (NOAH Feb 2023 Japanese interview). Medium-deep baritone, calm,
+unhurried, soft-spoken. **Three-voice system:** (1) Japanese primary (like Tosh
+from Family Guy — mostly speaks Japanese), (2) broken English with Japanese accent,
+(3) real Mutoh English clips (Hall of Fame, backstage) cut in where appropriate.
+**DO NOT change the vocal identity** — ranges/emotions can vary, core voice stays.
+Audio + VOICE.md: `character-rigs-v1-concept/kiko-v1-concept/voice/`
+(kiko-jp-robe.wav, kiko-en-robe.wav, kiko-jp-fur.wav, kiko-en-fur.wav — owner approved).
+
 **Drift hazards:** young Muta face appearing (banned) · mask design changing between
 shots · unmasked face gaining paint.
 

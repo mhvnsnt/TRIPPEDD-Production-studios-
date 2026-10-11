@@ -69,6 +69,11 @@ Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to
    - First line (owner 2026-10-10): **"I've seen some things..."** — delivered like a
      crotchety old man, in the Jim Lahey voice and style, done the way South Park does
      parody voices (house style, not impersonation).
+   - Bit (owner 2026-10-10) — the dinosaur story: *"One time... I saw a guy in traffic,
+     he beat up a dinosaur, ripped its head off, did ungodly things, unspeakable.."*
+     — reveal: it was a guy in a **dinosaur costume** out in Broadway traffic, and
+     **beer-can guy (#1) was doin the beating.** (Broadway = Nashville's honky-tonk
+     strip; maps to Goodville's main drag.)
 
 ## Voice direction (owner 2026-10-10)
 

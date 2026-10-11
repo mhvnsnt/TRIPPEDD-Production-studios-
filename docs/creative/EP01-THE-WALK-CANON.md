@@ -107,7 +107,10 @@ Recorded in `src/core/pipeline/episodes.ts`:
 - **Goodville Geography** — documentary gag on real interview material (the "45 minutes away" bit)
 - **Goodville Cartoon** — animated cutaway set in Goodville TN
 
-> ⚠️ There are **more Goodville gags**. They are not recorded here, and their
+Owner-described gags (documented 2026-10-10; per C08 these are NOT locked canon — placement in EP01 not locked):
+- **"If you're not from Goodville, don't come to Goodville"** — town-pride gatekeeping gag riffing on the Nashville saying "if you're not from Nashville, don't move to Nashville."
+
+> ⚠️ There may be **more Goodville gags**. Only the ones listed above are recorded, and their
 > placement in EP01 is not locked.
 
 ---
